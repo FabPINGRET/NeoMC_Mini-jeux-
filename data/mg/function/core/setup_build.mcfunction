@@ -4,6 +4,7 @@ function mg:lobby/build
 function mg:lobby/armory_build
 function mg:parkour/build
 function mg:plot/build
+function mg:party/build
 function mg:dust/build
 function mg:mirage/build
 function mg:nuketown/build

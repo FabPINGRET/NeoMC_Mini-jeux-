@@ -1,5 +1,9 @@
 # Retour au lobby de tous les participants + nettoyage du monde
 
+# Mini Party : pièces du mini-jeu (avant la remise à zéro des tags), ou fin de la partie si c'est le plateau qui s'arrête
+execute if score $mp mg.st matches 1 unless score $game mg.st matches 59 run function mg:party/reward
+execute if score $game mg.st matches 59 run function mg:party/end
+
 kill @e[tag=mg.ib]
 execute if score $game mg.st matches 57..58 run function mg:bb/cleanup
 execute as @a[tag=mg.play] run function mg:core/reset_player
@@ -47,4 +51,5 @@ scoreboard players set $state mg.st 0
 scoreboard players set $game mg.st 0
 function mg:vote/refresh
 
+execute if score $mp mg.st matches 1 run return run function mg:party/resume
 tellraw @a [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Retour au lobby — choisis le prochain jeu !","color":"gray"}]

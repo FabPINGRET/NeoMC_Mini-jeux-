@@ -10,6 +10,7 @@ scoreboard players enable @a mg.vote
 scoreboard players enable @a mg.bb
 scoreboard players enable @a mg.bw
 scoreboard players enable @a mg.pl
+scoreboard players enable @a mg.dice
 
 # Nouveaux joueurs (ou ré-init après setup)
 execute if score $setup mg.st matches 1 as @a[tag=!mg.init] run function mg:core/join
