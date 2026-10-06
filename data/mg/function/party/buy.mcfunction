@@ -1,4 +1,5 @@
 # Achat (@s, macro n = objectif de l'objet, p = prix, t = nom)
+$execute unless score @s mg.mpm matches $(p).. run function mg:party/shop_dialog
 $execute unless score @s mg.mpm matches $(p).. run return run tellraw @s [{"text":"Pas assez de pièces ($(p) nécessaires).","color":"red"}]
 $scoreboard players remove @s mg.mpm $(p)
 $scoreboard players add @s mg.$(n) 1
