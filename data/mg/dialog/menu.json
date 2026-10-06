@@ -23,14 +23,14 @@
     {
       "label": [
         {
-          "text": "★ MINI PARTY (5 tours)",
+          "text": "★ MINI PARTY (8 tours)",
           "color": "gold",
           "bold": true
         }
       ],
       "tooltip": [
         {
-          "text": "Plateau de 32 cases, dé, étoiles à 20 pièces, un mini-jeu après chaque tour",
+          "text": "Grande île à 7 zones, 88 cases et 2 embranchements, dé 1 à 10, étoiles à 20 pièces, un mini-jeu après chaque tour",
           "color": "gray"
         }
       ],
@@ -42,7 +42,7 @@
     {
       "label": [
         {
-          "text": "★ MINI PARTY (10 tours)",
+          "text": "★ MINI PARTY (15 tours)",
           "color": "gold",
           "bold": true
         }

@@ -7,7 +7,7 @@ execute if score $ev mg.st matches 1 run scoreboard players add @s mg.mpm 8
 execute if score $ev mg.st matches 1 run tellraw @a[tag=mg.mpp] [{"text":"? JACKPOT ! ","color":"green","bold":true},{"selector":"@s","color":"yellow"},{"text":" gagne 8 pièces.","color":"gold"}]
 
 execute if score $ev mg.st matches 2 run scoreboard players operation @s mg.mpi = $mps mg.st
-execute if score $ev mg.st matches 2 run scoreboard players remove @s mg.mpi 1
+execute if score $ev mg.st matches 2 run function mg:party/prev
 execute if score $ev mg.st matches 2 run function mg:party/place
 execute if score $ev mg.st matches 2 run tellraw @a[tag=mg.mpp] [{"text":"? TÉLÉPORTEUR ! ","color":"green","bold":true},{"selector":"@s","color":"yellow"},{"text":" est envoyé juste devant l'étoile.","color":"gray"}]
 
