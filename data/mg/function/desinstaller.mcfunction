@@ -88,6 +88,7 @@ team remove mg_red
 team remove mg_blue
 team remove mg_green
 team remove mg_yellow
+team remove mg_party
 tag @a remove mg.init
 tag @a remove mg.play
 tag @a remove mg.out
