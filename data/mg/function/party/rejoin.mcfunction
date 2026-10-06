@@ -1,5 +1,6 @@
-# Remet @s sur le plateau comme joueur (début, retour de mini-jeu, reconnexion)
+# Remet @s sur le plateau comme joueur (début, retour de mini-jeu, reconnexion, fin de survol)
 tag @s remove mg.out
+tag @s remove mg.mpview
 tag @s add mg.play
 gamemode adventure @s
 function mg:party/freeze
