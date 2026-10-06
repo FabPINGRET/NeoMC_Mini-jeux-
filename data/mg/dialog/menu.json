@@ -23,6 +23,44 @@
     {
       "label": [
         {
+          "text": "★ MINI PARTY (5 tours)",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Plateau de 32 cases, dé, étoiles à 20 pièces, un mini-jeu après chaque tour",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 59"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "★ MINI PARTY (10 tours)",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Version longue de la Mini Party",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 60"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "❄ Spleef",
           "color": "aqua"
         }

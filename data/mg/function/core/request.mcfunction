@@ -3,6 +3,12 @@
 scoreboard players operation $game mg.st = @s mg.go
 scoreboard players reset @s mg.go
 
+# Mini Party : 59 = 5 tours, 60 = 10 tours. Un jeu lancé hors Mini Party ($mpl) met fin à la partie en cours
+execute unless score $mpl mg.st matches 1 run scoreboard players set $mp mg.st 0
+execute if score $game mg.st matches 59 run scoreboard players set $mpmax mg.st 5
+execute if score $game mg.st matches 60 run scoreboard players set $mpmax mg.st 10
+execute if score $game mg.st matches 60 run scoreboard players set $game mg.st 59
+
 # Mob Arena à thème : 8 nether, 9 end, 10 ultra hard, 11 volant, 12 araignée → jeu 6 + thème $mt (1..5)
 scoreboard players set $sm mg.st 0
 execute if score $game mg.st matches 14 run scoreboard players set $sm mg.st 1
@@ -126,6 +132,7 @@ execute if score $game mg.st matches 36 if score $pbm mg.st matches 2 run tellra
 execute if score $game mg.st matches 56 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une ","color":"gray"},{"text":"COURSE DE BATEAUX SUR GLACE","color":"aqua","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
+execute if score $game mg.st matches 59 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une ","color":"gray"},{"text":"MINI PARTY","color":"gold","bold":true},{"text":" : plateau, dé, étoiles et mini-jeux (","color":"gray"},{"score":{"name":"$mpmax","objective":"mg.st"},"color":"yellow"},{"text":" tours) !","color":"gray"}]
 execute if score $game mg.st matches 6 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"MOB ARENA","color":"dark_green","bold":true},{"text":" !","color":"gray"}]
 execute if score $pc mg.st matches 1 run tellraw @a [{"text":"Mode ","color":"gray"},{"text":"CLASSES","color":"gold","bold":true},{"text":" : choisis ta classe d'équipement pendant le compte à rebours !","color":"gray"}]
 execute if score $mt mg.st matches 1 run tellraw @a [{"text":"Thème : ","color":"gray"},{"text":"NETHER","color":"red","bold":true},{"text":" — piglins, blazes, Roi Piglin","color":"gray"}]
@@ -159,6 +166,7 @@ execute if score $game mg.st matches 31 run function mg:quake/prepare
 execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
+execute if score $game mg.st matches 59 run function mg:party/prepare
 execute if score $game mg.st matches 7 unless score $sm mg.st matches 1..6 run function mg:sheepwar2/prepare
 execute if score $game mg.st matches 7 if score $sm mg.st matches 1 run function mg:sheepwar3/prepare
 execute if score $game mg.st matches 7 if score $sm mg.st matches 2 run function mg:sheepwar4/prepare

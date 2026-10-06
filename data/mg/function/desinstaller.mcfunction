@@ -67,6 +67,17 @@ scoreboard objectives remove mg.pl
 scoreboard objectives remove mg.plot
 scoreboard objectives remove mg.pcx
 scoreboard objectives remove mg.pcz
+scoreboard objectives remove mg.dice
+scoreboard objectives remove mg.dz
+scoreboard objectives remove mg.mpm
+scoreboard objectives remove mg.mpk
+scoreboard objectives remove mg.mpi
+scoreboard objectives remove mg.mpo
+scoreboard objectives remove mg.mpz
+kill @e[type=minecraft:text_display,tag=mg.mpdeco]
+kill @e[type=minecraft:text_display,tag=mg.mpdice]
+kill @e[type=minecraft:text_display,tag=mg.mpstar]
+data remove storage mg:party built
 data remove storage mg:plot owner
 kill @e[type=minecraft:text_display,tag=mg.pdisp]
 tag @a remove mg.inplot
