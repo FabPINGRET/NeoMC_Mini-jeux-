@@ -1,11 +1,3 @@
 # Affiche $dv sur le grand dé
-execute if score $dv mg.st matches 1 run data modify entity @e[type=minecraft:text_display,tag=mg.mpdice,limit=1] text set value [{"text":"1","color":"white","bold":true}]
-execute if score $dv mg.st matches 2 run data modify entity @e[type=minecraft:text_display,tag=mg.mpdice,limit=1] text set value [{"text":"2","color":"white","bold":true}]
-execute if score $dv mg.st matches 3 run data modify entity @e[type=minecraft:text_display,tag=mg.mpdice,limit=1] text set value [{"text":"3","color":"white","bold":true}]
-execute if score $dv mg.st matches 4 run data modify entity @e[type=minecraft:text_display,tag=mg.mpdice,limit=1] text set value [{"text":"4","color":"white","bold":true}]
-execute if score $dv mg.st matches 5 run data modify entity @e[type=minecraft:text_display,tag=mg.mpdice,limit=1] text set value [{"text":"5","color":"white","bold":true}]
-execute if score $dv mg.st matches 6 run data modify entity @e[type=minecraft:text_display,tag=mg.mpdice,limit=1] text set value [{"text":"6","color":"white","bold":true}]
-execute if score $dv mg.st matches 7 run data modify entity @e[type=minecraft:text_display,tag=mg.mpdice,limit=1] text set value [{"text":"7","color":"white","bold":true}]
-execute if score $dv mg.st matches 8 run data modify entity @e[type=minecraft:text_display,tag=mg.mpdice,limit=1] text set value [{"text":"8","color":"white","bold":true}]
-execute if score $dv mg.st matches 9 run data modify entity @e[type=minecraft:text_display,tag=mg.mpdice,limit=1] text set value [{"text":"9","color":"white","bold":true}]
-execute if score $dv mg.st matches 10 run data modify entity @e[type=minecraft:text_display,tag=mg.mpdice,limit=1] text set value [{"text":"10","color":"white","bold":true}]
+execute store result storage mg:party d.v int 1 run scoreboard players get $dv mg.st
+function mg:party/dice_show_m with storage mg:party d

@@ -1,13 +1,21 @@
-# Le dé (1 à 10) roule 1,5 s au-dessus du joueur puis s'arrête sur le résultat
+# Le dé (1 à 10, ou 2 / 3 dés avec un objet) roule au-dessus du joueur : vite, puis de plus en plus lentement, et s'arrête sur la dernière face
 scoreboard players remove $mpw mg.st 1
-execute store result score $dv mg.st run random value 1..10
-function mg:party/dice_show
-execute if score $mpw mg.st matches 1.. as @a[tag=mg.mpp] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 0.4 2
+scoreboard players operation $q mg.st = $mpw mg.st
+scoreboard players operation $q mg.st %= #2 mg.st
+scoreboard players operation $q4 mg.st = $mpw mg.st
+scoreboard players operation $q4 mg.st %= #4 mg.st
+execute if score $mpw mg.st matches 31.. run function mg:party/roll_face
+execute if score $mpw mg.st matches 13..30 if score $q mg.st matches 0 run function mg:party/roll_face
+execute if score $mpw mg.st matches 1..12 if score $q4 mg.st matches 0 run function mg:party/roll_face
 execute if score $mpw mg.st matches 1.. run return 0
 
 scoreboard players operation $mpr mg.st = $dv mg.st
+title @a[tag=mg.mpp] times 5 40 10
 title @a[tag=mg.mpp] title [{"score":{"name":"$dv","objective":"mg.st"},"color":"gold","bold":true}]
-title @a[tag=mg.mpp] subtitle [{"selector":"@a[tag=mg.mpcur]","color":"yellow"},{"text":" avance !","color":"gray"}]
+title @a[tag=mg.mpp] subtitle [{"selector":"@a[tag=mg.mpcur]","color":"yellow"},{"text":" avance de ","color":"gray"},{"score":{"name":"$dv","objective":"mg.st"},"color":"gold"},{"text":" case(s) !","color":"gray"}]
+execute if score $mdn mg.st matches 2 run tellraw @a[tag=mg.mpp] [{"text":"🎲🎲 ","color":"aqua"},{"score":{"name":"$d1","objective":"mg.st"},"color":"white"},{"text":" + ","color":"gray"},{"score":{"name":"$d2","objective":"mg.st"},"color":"white"},{"text":" = ","color":"gray"},{"score":{"name":"$dv","objective":"mg.st"},"color":"gold","bold":true}]
+execute if score $mdn mg.st matches 3 run tellraw @a[tag=mg.mpp] [{"text":"🎲🎲🎲 ","color":"light_purple"},{"score":{"name":"$d1","objective":"mg.st"},"color":"white"},{"text":" + ","color":"gray"},{"score":{"name":"$d2","objective":"mg.st"},"color":"white"},{"text":" + ","color":"gray"},{"score":{"name":"$d3","objective":"mg.st"},"color":"white"},{"text":" = ","color":"gray"},{"score":{"name":"$dv","objective":"mg.st"},"color":"gold","bold":true}]
 execute as @a[tag=mg.mpp] at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 1
+execute as @a[tag=mg.mpp] at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 1.5
 scoreboard players set $mph mg.st 3
-scoreboard players set $mpw mg.st 15
+scoreboard players set $mpw mg.st 40

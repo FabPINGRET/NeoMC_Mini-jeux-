@@ -1,0 +1,100 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "🎲 À TOI DE JOUER !",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Lance le dé (1 à 10), ou utilise un de tes objets (ton inventaire est affiché dans le chat).",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 1,
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🎲 LANCER LE DÉ",
+          "color": "green",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Un dé de 1 à 10",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.dice set 1"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🎲🎲 Utiliser un dé double",
+          "color": "aqua",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Deux dés : de 2 à 20",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.dice set 21"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🎲🎲🎲 Utiliser un dé triple",
+          "color": "light_purple",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Trois dés : de 3 à 30",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.dice set 22"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🔀 Utiliser un tuyau",
+          "color": "yellow",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Échange ta place avec un adversaire au hasard, puis lance ton dé",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.dice set 23"
+      }
+    }
+  ]
+}

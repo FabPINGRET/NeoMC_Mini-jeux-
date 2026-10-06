@@ -1,11 +1,11 @@
-# Type de la case de @s -> $ct (0 départ, 1 bleue, 2 rouge, 3 événement, 4 piège, 5 embranchement)
+# Type de la case de @s -> $ct (0 départ, 1 bleue, 2 rouge, 3 événement, 4 piège, 5 embranchement, 6 boutique)
 execute if score @s mg.mpi matches 0 run scoreboard players set $ct mg.st 0
 execute if score @s mg.mpi matches 1 run scoreboard players set $ct mg.st 2
 execute if score @s mg.mpi matches 2 run scoreboard players set $ct mg.st 1
 execute if score @s mg.mpi matches 3 run scoreboard players set $ct mg.st 1
 execute if score @s mg.mpi matches 4 run scoreboard players set $ct mg.st 2
 execute if score @s mg.mpi matches 5 run scoreboard players set $ct mg.st 1
-execute if score @s mg.mpi matches 6 run scoreboard players set $ct mg.st 3
+execute if score @s mg.mpi matches 6 run scoreboard players set $ct mg.st 6
 execute if score @s mg.mpi matches 7 run scoreboard players set $ct mg.st 3
 execute if score @s mg.mpi matches 8 run scoreboard players set $ct mg.st 1
 execute if score @s mg.mpi matches 9 run scoreboard players set $ct mg.st 2
@@ -20,7 +20,7 @@ execute if score @s mg.mpi matches 17 run scoreboard players set $ct mg.st 3
 execute if score @s mg.mpi matches 18 run scoreboard players set $ct mg.st 3
 execute if score @s mg.mpi matches 19 run scoreboard players set $ct mg.st 1
 execute if score @s mg.mpi matches 20 run scoreboard players set $ct mg.st 3
-execute if score @s mg.mpi matches 21 run scoreboard players set $ct mg.st 1
+execute if score @s mg.mpi matches 21 run scoreboard players set $ct mg.st 6
 execute if score @s mg.mpi matches 22 run scoreboard players set $ct mg.st 1
 execute if score @s mg.mpi matches 23 run scoreboard players set $ct mg.st 1
 execute if score @s mg.mpi matches 24 run scoreboard players set $ct mg.st 3
@@ -43,7 +43,7 @@ execute if score @s mg.mpi matches 40 run scoreboard players set $ct mg.st 3
 execute if score @s mg.mpi matches 41 run scoreboard players set $ct mg.st 1
 execute if score @s mg.mpi matches 42 run scoreboard players set $ct mg.st 3
 execute if score @s mg.mpi matches 43 run scoreboard players set $ct mg.st 1
-execute if score @s mg.mpi matches 44 run scoreboard players set $ct mg.st 3
+execute if score @s mg.mpi matches 44 run scoreboard players set $ct mg.st 6
 execute if score @s mg.mpi matches 45 run scoreboard players set $ct mg.st 1
 execute if score @s mg.mpi matches 46 run scoreboard players set $ct mg.st 1
 execute if score @s mg.mpi matches 47 run scoreboard players set $ct mg.st 1
@@ -58,7 +58,7 @@ execute if score @s mg.mpi matches 55 run scoreboard players set $ct mg.st 1
 execute if score @s mg.mpi matches 56 run scoreboard players set $ct mg.st 3
 execute if score @s mg.mpi matches 57 run scoreboard players set $ct mg.st 3
 execute if score @s mg.mpi matches 58 run scoreboard players set $ct mg.st 1
-execute if score @s mg.mpi matches 59 run scoreboard players set $ct mg.st 1
+execute if score @s mg.mpi matches 59 run scoreboard players set $ct mg.st 6
 execute if score @s mg.mpi matches 60 run scoreboard players set $ct mg.st 1
 execute if score @s mg.mpi matches 61 run scoreboard players set $ct mg.st 3
 execute if score @s mg.mpi matches 62 run scoreboard players set $ct mg.st 3
@@ -84,6 +84,6 @@ execute if score @s mg.mpi matches 81 run scoreboard players set $ct mg.st 1
 execute if score @s mg.mpi matches 82 run scoreboard players set $ct mg.st 1
 execute if score @s mg.mpi matches 83 run scoreboard players set $ct mg.st 1
 execute if score @s mg.mpi matches 84 run scoreboard players set $ct mg.st 4
-execute if score @s mg.mpi matches 85 run scoreboard players set $ct mg.st 2
+execute if score @s mg.mpi matches 85 run scoreboard players set $ct mg.st 6
 execute if score @s mg.mpi matches 86 run scoreboard players set $ct mg.st 3
 execute if score @s mg.mpi matches 87 run scoreboard players set $ct mg.st 1

@@ -129,7 +129,7 @@ def nearest(x, z):
     return (math.sqrt(best), bi) if bi >= 0 else (99, -1)
 
 # ------------------------------------------------------------------ cases (graphe)
-S_START, S_BLUE, S_RED, S_EVENT, S_TRAP, S_FORK = 0, 1, 2, 3, 4, 5
+S_START, S_BLUE, S_RED, S_EVENT, S_TRAP, S_FORK, S_SHOP = 0, 1, 2, 3, 4, 5, 6
 WEIGHTS = {  # bleue, rouge, événement, piège
     'A': (60, 15, 20, 5), 'B': (60, 15, 20, 5), 'C': (60, 15, 20, 5),
     'O1': (65, 10, 25, 0), 'I1': (35, 30, 15, 20),
@@ -190,6 +190,9 @@ for i, nd in enumerate(nodes):
     if t == S_TRAP and nodes[prv[i]].get('type') == S_TRAP:
         t = S_BLUE
     nd['type'] = t
+# boutiques : une par grande zone de passage
+for seg_ids, k in ((A, 6), (O1, 7), (B, 5), (O2, 10), (C, 3)):
+    nodes[seg_ids[k]]['type'] = S_SHOP
 
 # ------------------------------------------------------------------ colonnes de terrain
 R = range(-HALF, HALF + 1)
@@ -331,7 +334,7 @@ for i, (x, z, s, p) in enumerate(tun[::12]):
 
 # ------------------------------------------------------------------ cases
 CASE_BLOCK = {S_START: 'gold_block', S_BLUE: 'blue_concrete', S_RED: 'red_concrete', S_EVENT: 'lime_concrete',
-              S_TRAP: 'black_concrete', S_FORK: 'quartz_block'}
+              S_TRAP: 'black_concrete', S_FORK: 'quartz_block', S_SHOP: 'purple_concrete'}
 case_cmds = []
 for nd in nodes:
     x, z, y = nd['x'], ZC + nd['z'], nd['y']
@@ -765,7 +768,7 @@ def disp(tags, x, y, z, text, scale, extra=''):
             f'transformation:{{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[{scale}f,{scale}f,{scale}f]}}}}')
 
 LABEL = {S_START: ('DÉPART', 'gold'), S_BLUE: ('+3', 'aqua'), S_RED: ('-3', 'red'), S_EVENT: ('?', 'green'),
-         S_TRAP: ('☠', 'dark_gray'), S_FORK: ('⇆', 'white')}
+         S_TRAP: ('☠', 'dark_gray'), S_FORK: ('⇆', 'white'), S_SHOP: ('🛒', 'light_purple')}
 labels = ['kill @e[type=minecraft:text_display,tag=mg.mpdeco]']
 for nd in nodes:
     t, c = LABEL[nd['type']]
@@ -783,6 +786,7 @@ labels.append(disp(['mg.mpdeco'], -5.5, st['y'] + 4, W(st['z']) - 6.5,
                    '[{"text":"LÉGENDE","color":"gold","bold":true},{"text":"\\n■ bleue : +3 pièces","color":"aqua","bold":false},'
                    '{"text":"\\n■ rouge : -3 pièces","color":"red","bold":false},{"text":"\\n■ verte ? : surprise","color":"green","bold":false},'
                    '{"text":"\\n■ noire ☠ : piège","color":"gray","bold":false},{"text":"\\n■ blanche ⇆ : embranchement","color":"white","bold":false},'
+                   '{"text":"\\n■ violette 🛒 : boutique","color":"light_purple","bold":false},'
                    '{"text":"\\n★ étoile : 20 pièces","color":"yellow","bold":false}]', 1.6, 'alignment:"left",'))
 FORK_TXT = {FORK1: ('☀ Route de la plage', 'longue, tranquille', '♨ Raccourci du volcan', 'courte, dangereuse'),
             FORK2: ('❄ Tour du lac gelé', 'longue, tranquille', '❄ Grotte de glace', 'courte, piégeuse')}
@@ -810,7 +814,7 @@ for i in range(0, len(terrain), CH):
 parts.append(['# Mini Party, carte : grotte de glace, cases, château'] + tunnel_cmds + case_cmds + CASTLE)
 for i in range(0, len(deco), CH):
     parts.append([f'# Mini Party, carte : décor ({i // CH + 1})'] + deco[i:i + CH])
-parts.append(['# Mini Party, carte : panneaux'] + labels + ['data modify storage mg:party built set value 2b',
+parts.append(['# Mini Party, carte : panneaux'] + labels + ['data modify storage mg:party built set value 3b',
              'tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Plateau de la Mini Party construit.","color":"green"}]'])
 
 write('build', ['# (OP) Construit la carte de la Mini Party (île à z 15000, en plusieurs ticks pour éviter un pic de lag)',
@@ -823,7 +827,7 @@ for k, p in enumerate(parts, 1):
 
 write('place_c', ['# Pion : téléporte @s au centre de sa case (mg.mpi = 0..%d), le décalage est fait par party/place' % (N - 1)] +
       [f'execute if score @s mg.mpi matches {i} run return run tp @s {nd["x"] + 0.5} {nd["y"] + 1} {W(nd["z"]) + 0.5}' for i, nd in enumerate(nodes)])
-write('case_type', ['# Type de la case de @s -> $ct (0 départ, 1 bleue, 2 rouge, 3 événement, 4 piège, 5 embranchement)'] +
+write('case_type', ['# Type de la case de @s -> $ct (0 départ, 1 bleue, 2 rouge, 3 événement, 4 piège, 5 embranchement, 6 boutique)'] +
       [f'execute if score @s mg.mpi matches {i} run scoreboard players set $ct mg.st {nd["type"]}' for i, nd in enumerate(nodes)])
 write('is_fork', ['# $fk = 1 si la case de @s est un embranchement', 'scoreboard players set $fk mg.st 0'] +
       [f'execute if score @s mg.mpi matches {f} run scoreboard players set $fk mg.st 1' for f in (FORK1, FORK2)])
@@ -842,7 +846,8 @@ elig = [i for i, nd in enumerate(nodes) if nd['type'] in (S_BLUE, S_RED, S_EVENT
 write('star_pick', ['# Tire une case possible pour l\'étoile -> $mpsn', f'execute store result score $tmp mg.st run random value 1..{len(elig)}'] +
       [f'execute if score $tmp mg.st matches {k} run return run scoreboard players set $mpsn mg.st {i}' for k, i in enumerate(elig, 1)])
 fi = ['# Propose le choix de route à @s (embranchement de sa case)']
-for f, (n1, d1, n2, d2) in FORK_TXT.items():
+for k, (f, (n1, d1, n2, d2)) in enumerate(FORK_TXT.items(), 1):
+    fi.append(f'execute if score @s mg.mpi matches {f} run dialog show @s mg:party_fork_{k}')
     fi.append(f'execute if score @s mg.mpi matches {f} run tellraw @s [{{"text":"⇆ EMBRANCHEMENT : ","color":"white","bold":true}},'
               f'{{"text":"[1 : {n1}]","color":"yellow","click_event":{{"action":"run_command","command":"trigger mg.dice set 11"}},"hover_event":{{"action":"show_text","value":"{d1}"}}}},'
               f'{{"text":"  "}},{{"text":"[2 : {n2}]","color":"red","click_event":{{"action":"run_command","command":"trigger mg.dice set 12"}},"hover_event":{{"action":"show_text","value":"{d2}"}}}},'
@@ -850,14 +855,12 @@ for f, (n1, d1, n2, d2) in FORK_TXT.items():
     fi.append(f'execute if score @s mg.mpi matches {f} run tellraw @a[tag=mg.mpp,tag=!mg.mpcur] [{{"selector":"@s","color":"yellow"}},'
               f'{{"text":" hésite à l\'embranchement : {n1} ou {n2} ?","color":"gray"}}]')
 write('fork_info', fi)
-write('dice_show', ['# Affiche $dv sur le grand dé'] +
-      [f'execute if score $dv mg.st matches {v} run data modify entity @e[type=minecraft:text_display,tag=mg.mpdice,limit=1] text set value [{{"text":"{v}","color":"white","bold":true}}]' for v in range(1, 11)])
 
 old = os.path.join(OUT, 'build.mcfunction')
 print('cases', N, 'fork1', FORK1, 'fork2', FORK2, 'join', JOIN1, JOIN2,
       'segments', {g: sum(1 for n in nodes if n['seg'] == g) for g in SEG})
 print('terrain', len(terrain), 'deco', len(deco), 'tunnel', len(tunnel_cmds), 'parts', len(parts))
-print('types', {t: sum(1 for n in nodes if n['type'] == t) for t in range(6)})
+print('types', {t: sum(1 for n in nodes if n['type'] == t) for t in range(7)})
 
 # ------------------------------------------------------------------ aperçu PNG (optionnel)
 if len(sys.argv) > 2:
@@ -905,7 +908,7 @@ if len(sys.argv) > 2:
         if (x, z) in col and col[(x, z)]['land'] and (x, z) not in CASE_CELLS:
             X, Z = (x + HALF) * sc, (z + HALF) * sc
             img.rect(X + 1, Z + 1, X + 2, Z + 2, (20, 60, 20))
-    CC = {0: (255, 215, 0), 1: (30, 60, 220), 2: (220, 30, 30), 3: (40, 220, 40), 4: (0, 0, 0), 5: (255, 255, 255)}
+    CC = {0: (255, 215, 0), 1: (30, 60, 220), 2: (220, 30, 30), 3: (40, 220, 40), 4: (0, 0, 0), 5: (255, 255, 255), 6: (150, 40, 200)}
     for nd in nodes:
         X, Z = (nd['x'] + HALF) * sc, (nd['z'] + HALF) * sc
         img.rect(X - sc - 1, Z - sc - 1, X + 2 * sc, Z + 2 * sc, (255, 255, 255))
