@@ -4,6 +4,7 @@ execute as @a[tag=mg.mpp,tag=mg.mpview] if score @s mg.mpo = $mpt mg.st run func
 execute as @a[tag=mg.mpp,tag=mg.play] if score @s mg.mpo = $mpt mg.st run tag @s add mg.mpcur
 execute unless entity @a[tag=mg.mpcur] run return run function mg:party/next_turn
 execute as @a[tag=mg.mpcur] run function mg:party/focus_set
+function mg:party/bar_update
 
 scoreboard players set $mph mg.st 7
 scoreboard players set $mpw mg.st 30

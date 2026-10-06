@@ -6,6 +6,7 @@ execute as @a[tag=mg.mpp,gamemode=spectator] run gamemode adventure @s
 execute as @e[type=minecraft:armor_stand,tag=mg.mpfocus] run data merge entity @s {Glowing:0b}
 tag @e[type=minecraft:armor_stand] remove mg.mpfocus
 team leave @a[tag=mg.mpp]
+bossbar set mg:party visible false
 scoreboard players set $mpl mg.st 1
 scoreboard players set $state mg.st 0
 execute if entity @a[tag=mg.mpa] as @a[tag=mg.mpa,limit=1] run function mg:party/launch_as
