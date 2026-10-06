@@ -3,5 +3,6 @@ tag @s remove mg.out
 tag @s remove mg.mpview
 tag @s add mg.play
 gamemode spectator @s
+rotate @s -135 40
 team join mg_party @s
 function mg:party/place
