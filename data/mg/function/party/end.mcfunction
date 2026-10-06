@@ -7,5 +7,7 @@ tag @a remove mg.mpsw
 tag @a remove mg.mpview
 scoreboard players reset * mg.mpv
 kill @e[type=minecraft:text_display,tag=mg.mpdice]
+kill @e[type=minecraft:armor_stand,tag=mg.mppawn]
+tag @a remove mg.mpfree
 kill @e[type=minecraft:text_display,tag=mg.mpstar]
 clear @a minecraft:echo_shard

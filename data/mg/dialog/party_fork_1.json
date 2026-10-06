@@ -1,0 +1,62 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "⇆ EMBRANCHEMENT",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Choisis ta route !",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "☀ Route de la plage",
+          "color": "yellow",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Plus longue, tranquille",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.dice set 11"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "♨ Raccourci du volcan",
+          "color": "red",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Plus courte, dangereuse",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.dice set 12"
+      }
+    }
+  ]
+}

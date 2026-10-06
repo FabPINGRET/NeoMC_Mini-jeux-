@@ -75,6 +75,10 @@ scoreboard objectives remove mg.mpi
 scoreboard objectives remove mg.mpo
 scoreboard objectives remove mg.mpz
 scoreboard objectives remove mg.mpv
+scoreboard objectives remove mg.mid
+scoreboard objectives remove mg.mit
+scoreboard objectives remove mg.mip
+kill @e[type=minecraft:armor_stand,tag=mg.mppawn]
 kill @e[type=minecraft:text_display,tag=mg.mpdeco]
 kill @e[type=minecraft:text_display,tag=mg.mpdice]
 kill @e[type=minecraft:text_display,tag=mg.mpstar]

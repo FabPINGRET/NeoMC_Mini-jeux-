@@ -114,7 +114,7 @@ fill 26 64 14946 28 64 14948 minecraft:red_concrete
 fill 26 65 14946 28 67 14948 minecraft:air
 fill 32 64 14949 34 64 14951 minecraft:blue_concrete
 fill 32 65 14949 34 67 14951 minecraft:air
-fill 37 64 14953 39 64 14955 minecraft:lime_concrete
+fill 37 64 14953 39 64 14955 minecraft:purple_concrete
 fill 37 65 14953 39 67 14955 minecraft:air
 fill 43 64 14957 45 64 14959 minecraft:lime_concrete
 fill 43 65 14957 45 67 14959 minecraft:air
@@ -145,7 +145,7 @@ fill 68 64 15035 70 64 15037 minecraft:blue_concrete
 fill 68 65 15035 70 67 15037 minecraft:air
 fill 68 64 15042 70 64 15044 minecraft:lime_concrete
 fill 68 65 15042 70 67 15044 minecraft:air
-fill 68 64 15049 70 64 15051 minecraft:blue_concrete
+fill 68 64 15049 70 64 15051 minecraft:purple_concrete
 fill 68 65 15049 70 67 15051 minecraft:air
 fill 64 64 15055 66 64 15057 minecraft:blue_concrete
 fill 64 65 15055 66 67 15057 minecraft:air
@@ -191,7 +191,7 @@ fill 6 66 15065 8 66 15067 minecraft:lime_concrete
 fill 6 67 15065 8 69 15067 minecraft:air
 fill -1 66 15064 1 66 15066 minecraft:blue_concrete
 fill -1 67 15064 1 69 15066 minecraft:air
-fill -7 66 15062 -5 66 15064 minecraft:lime_concrete
+fill -7 66 15062 -5 66 15064 minecraft:purple_concrete
 fill -7 67 15062 -5 69 15064 minecraft:air
 fill -14 66 15061 -12 66 15063 minecraft:blue_concrete
 fill -14 67 15061 -12 69 15063 minecraft:air
@@ -222,7 +222,7 @@ fill -72 64 15020 -70 64 15022 minecraft:lime_concrete
 fill -72 65 15020 -70 67 15022 minecraft:air
 fill -72 64 15013 -70 64 15015 minecraft:blue_concrete
 fill -72 65 15013 -70 67 15015 minecraft:air
-fill -73 64 15006 -71 64 15008 minecraft:blue_concrete
+fill -73 64 15006 -71 64 15008 minecraft:purple_concrete
 fill -73 65 15006 -71 67 15008 minecraft:air
 fill -73 64 14999 -71 64 15001 minecraft:blue_concrete
 fill -73 65 14999 -71 67 15001 minecraft:air
@@ -274,7 +274,7 @@ fill -35 65 14952 -33 65 14954 minecraft:blue_concrete
 fill -35 66 14952 -33 68 14954 minecraft:air
 fill -29 65 14948 -27 65 14950 minecraft:black_concrete
 fill -29 66 14948 -27 68 14950 minecraft:air
-fill -22 64 14945 -20 64 14947 minecraft:red_concrete
+fill -22 64 14945 -20 64 14947 minecraft:purple_concrete
 fill -22 65 14945 -20 67 14947 minecraft:air
 fill -15 64 14946 -13 64 14948 minecraft:lime_concrete
 fill -15 65 14946 -13 67 14948 minecraft:air
