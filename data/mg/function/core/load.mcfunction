@@ -83,12 +83,13 @@ team add mg_green
 team modify mg_green color green
 team modify mg_green friendlyFire false
 team modify mg_green prefix [{"text":"⬤ ","color":"green"}]
-team add mg_party
-team modify mg_party collisionRule never
 team add mg_yellow
 team modify mg_yellow color yellow
 team modify mg_yellow friendlyFire false
 team modify mg_yellow prefix [{"text":"⬤ ","color":"yellow"}]
+team add mg_party
+team modify mg_party friendlyFire false
+team modify mg_party collisionRule never
 
 # --- Globals par défaut (seulement si absents) ---
 execute unless score $state mg.st = $state mg.st run scoreboard players set $state mg.st 0
