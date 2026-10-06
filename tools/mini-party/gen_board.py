@@ -840,21 +840,28 @@ write('prev', ['# Case précédente de @s'] +
       [f'execute if score @s mg.mpi matches {i} run return run scoreboard players set @s mg.mpi {prv[i]}' for i in range(N)])
 star_txt = '[{"text":"★","color":"yellow","bold":true},{"text":"\\n20 pièces","color":"gold","bold":false}]'
 write('star_place', ['# Panneau de l\'étoile sur la case $mps', 'kill @e[type=minecraft:text_display,tag=mg.mpstar]'] +
-      [f'execute if score $mps mg.st matches {i} run ' + disp(['mg.mpstar'], nd['x'] + 0.5, nd['y'] + 5, W(nd['z']) + 0.5, star_txt, 3)
-       for i, nd in enumerate(nodes) if nd['type'] in (S_BLUE, S_RED, S_EVENT)])
+      sum([[f'execute if score $mps mg.st matches {i} run ' + disp(['mg.mpstar', 'mg.mpstarlow'], nd['x'] + 0.5, nd['y'] + 5, W(nd['z']) + 0.5, star_txt, 3, 'see_through:1b,'),
+            f'execute if score $mps mg.st matches {i} run ' + disp(['mg.mpstar'], nd['x'] + 0.5, nd['y'] + 30, W(nd['z']) + 0.5,
+                                                                   '[{"text":"★","color":"yellow","bold":true}]', 12, 'see_through:1b,brightness:{sky:15,block:15},')]
+           for i, nd in enumerate(nodes) if nd['type'] in (S_BLUE, S_RED, S_EVENT)], []))
 elig = [i for i, nd in enumerate(nodes) if nd['type'] in (S_BLUE, S_RED, S_EVENT)]
 write('star_pick', ['# Tire une case possible pour l\'étoile -> $mpsn', f'execute store result score $tmp mg.st run random value 1..{len(elig)}'] +
       [f'execute if score $tmp mg.st matches {k} run return run scoreboard players set $mpsn mg.st {i}' for k, i in enumerate(elig, 1)])
 fi = ['# Propose le choix de route à @s (embranchement de sa case)']
 for k, (f, (n1, d1, n2, d2)) in enumerate(FORK_TXT.items(), 1):
     fi.append(f'execute if score @s mg.mpi matches {f} run dialog show @s mg:party_fork_{k}')
-    fi.append(f'execute if score @s mg.mpi matches {f} run tellraw @s [{{"text":"⇆ EMBRANCHEMENT : ","color":"white","bold":true}},'
-              f'{{"text":"[1 : {n1}]","color":"yellow","click_event":{{"action":"run_command","command":"trigger mg.dice set 11"}},"hover_event":{{"action":"show_text","value":"{d1}"}}}},'
-              f'{{"text":"  "}},{{"text":"[2 : {n2}]","color":"red","click_event":{{"action":"run_command","command":"trigger mg.dice set 12"}},"hover_event":{{"action":"show_text","value":"{d2}"}}}},'
-              f'{{"text":"  (choix au hasard dans 15 s)","color":"gray","bold":false}}]')
-    fi.append(f'execute if score @s mg.mpi matches {f} run tellraw @a[tag=mg.mpp,tag=!mg.mpcur] [{{"selector":"@s","color":"yellow"}},'
-              f'{{"text":" hésite à l\'embranchement : {n1} ou {n2} ?","color":"gray"}}]')
+    fi.append(f'execute if score @s mg.mpi matches {f} run tellraw @s [{{"text":"⇆ Fenêtre fermée ? ","color":"gray"}},'
+              f'{{"text":"[{n1}]","color":"yellow","click_event":{{"action":"run_command","command":"trigger mg.dice set 11"}},"hover_event":{{"action":"show_text","value":"{d1}"}}}},'
+              f'{{"text":"  "}},{{"text":"[{n2}]","color":"red","click_event":{{"action":"run_command","command":"trigger mg.dice set 12"}},"hover_event":{{"action":"show_text","value":"{d2}"}}}},'
+              f'{{"text":"  (au hasard dans 15 s)","color":"dark_gray"}}]')
 write('fork_info', fi)
+ROUTE = {FORK1: ('la route de la plage', 'le raccourci du volcan'), FORK2: ('le tour du lac gelé', 'la grotte de glace')}
+fm = ['# Annonce la route choisie par @s (case embranchement, choix $mpch)']
+for f, (r1, r2) in ROUTE.items():
+    for ch, r in ((1, r1), (2, r2)):
+        fm.append(f'execute if score @s mg.mpi matches {f} if score $mpch mg.st matches {ch} run tellraw @a[tag=mg.mpp] '
+                  f'[{{"text":"★ ","color":"gold"}},{{"selector":"@s","color":"yellow"}},{{"text":" prend {r}","color":"gray"}}]')
+write('fork_msg', fm)
 
 old = os.path.join(OUT, 'build.mcfunction')
 print('cases', N, 'fork1', FORK1, 'fork2', FORK2, 'join', JOIN1, JOIN2,

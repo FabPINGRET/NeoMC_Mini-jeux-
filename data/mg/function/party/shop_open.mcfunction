@@ -7,10 +7,8 @@ execute if score $tmp mg.st matches 3.. run return run function mg:party/shop_cl
 scoreboard players set $mph mg.st 8
 scoreboard players set $mpw mg.st 300
 title @s title [{"text":"🛒 BOUTIQUE","color":"light_purple","bold":true}]
-title @s subtitle [{"text":"Achète un objet dans la fenêtre","color":"yellow"}]
-tellraw @a[tag=mg.mpp,tag=!mg.mpcur] [{"selector":"@s","color":"yellow"},{"text":" s'arrête à la boutique 🛒","color":"gray"}]
-tellraw @s [{"text":"🛒 ","color":"light_purple"},{"text":"[🎲🎲 10]","color":"aqua","click_event":{"action":"run_command","command":"trigger mg.dice set 31"}},{"text":" "},{"text":"[🎲🎲🎲 18]","color":"light_purple","click_event":{"action":"run_command","command":"trigger mg.dice set 32"}},{"text":" "},{"text":"[🔀 15]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.dice set 33"}},{"text":" "},{"text":"[partir]","color":"gray","click_event":{"action":"run_command","command":"trigger mg.dice set 39"}}]
-tellraw @s [{"text":"● Tu as ","color":"gold"},{"score":{"name":"@s","objective":"mg.mpm"},"color":"yellow","bold":true},{"text":" pièces.","color":"gold"}]
+title @s subtitle [{"text":"Choisis un objet","color":"yellow"}]
+tellraw @s [{"text":"🛒 Tu as ","color":"light_purple"},{"score":{"name":"@s","objective":"mg.mpm"},"color":"gold","bold":true},{"text":" pièces.  ","color":"light_purple"},{"text":"[🎲🎲 10]","color":"aqua","click_event":{"action":"run_command","command":"trigger mg.dice set 31"},"hover_event":{"action":"show_text","value":"Dé double"}},{"text":" ","color":"gray"},{"text":"[🎲🎲🎲 18]","color":"light_purple","click_event":{"action":"run_command","command":"trigger mg.dice set 32"},"hover_event":{"action":"show_text","value":"Dé triple"}},{"text":" ","color":"gray"},{"text":"[🔀 15]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.dice set 33"},"hover_event":{"action":"show_text","value":"Tuyau"}},{"text":" ","color":"gray"},{"text":"[partir]","color":"gray","click_event":{"action":"run_command","command":"trigger mg.dice set 39"},"hover_event":{"action":"show_text","value":"Reprendre la route"}}]
 function mg:party/hud_bar
 dialog show @s mg:party_shop
 execute at @s run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 1 1.5

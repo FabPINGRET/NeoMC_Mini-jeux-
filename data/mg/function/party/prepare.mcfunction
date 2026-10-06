@@ -20,7 +20,7 @@ scoreboard players set @a[tag=mg.mpp] mg.mit 0
 scoreboard players set @a[tag=mg.mpp] mg.mip 0
 scoreboard players reset * mg.mpo
 scoreboard players set $mpn mg.st 0
-tellraw @a[tag=mg.mpp] [{"text":"Ordre de passage :","color":"gold"}]
+tellraw @a[tag=mg.mpp] [{"text":"★ ","color":"gold"},{"text":"Ordre de passage :","color":"gray"}]
 execute as @a[tag=mg.mpp,sort=random] run function mg:party/order_one
 kill @e[type=minecraft:armor_stand,tag=mg.mppawn]
 tag @a remove mg.mpfree
@@ -41,5 +41,4 @@ summon minecraft:text_display 0.5 70 14948.5 {Tags:["mg.mpdice"],billboard:"cent
 execute as @a[tag=mg.mpp] run function mg:party/rejoin
 execute as @a[tag=mg.mpp] run function mg:party/view_start
 function mg:party/hud
-tellraw @a[tag=mg.mpp] [{"text":"★ Menu de la Mini Party : ","color":"gold"},{"text":"touche « Actions rapides »","color":"yellow"},{"text":" (Options → Commandes) ou menu Échap → ★ Mini Party.","color":"gray"}]
-tellraw @a[tag=mg.mpp] [{"text":"Règles : ","color":"gold"},{"text":"chacun lance le dé (1 à 10) à son tour et avance. Case bleue +3 pièces, rouge -3, verte ? = surprise, noire ☠ = piège, blanche ⇆ = embranchement (tu choisis ta route). Passe sur l'étoile ★ avec 20 pièces pour l'acheter. Après chaque tour : un mini-jeu (vainqueur +10, les autres +3). Le plus d'étoiles gagne, puis le plus de pièces.","color":"gray"}]
+tellraw @a[tag=mg.mpp] [{"text":"★ ","color":"gold"},{"text":"Règles, carte et caméra : menu ","color":"gray"},{"text":"★ Mini Party","color":"gold"},{"text":" (touche Actions rapides, ou Échap).","color":"gray"}]
