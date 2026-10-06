@@ -21,13 +21,13 @@ execute as @a[tag=mg.mpp,sort=random] run function mg:party/order_one
 # Perchoir des spectateurs (reconnexion, abandon)
 scoreboard players set $px mg.st 0
 scoreboard players set $py mg.st 78
-scoreboard players set $pz mg.st 14300
+scoreboard players set $pz mg.st 15000
 
 # Étoile et grand dé
 execute store result score $mps mg.st run random value 1..31
 function mg:party/star_place
 kill @e[type=minecraft:text_display,tag=mg.mpdice]
-summon minecraft:text_display 0.5 67 14300.5 {Tags:["mg.mpdice"],billboard:"center",text:[{"text":"?","color":"white","bold":true}],background:-1442840576,transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[4f,4f,4f]}}
+summon minecraft:text_display 0.5 67 15000.5 {Tags:["mg.mpdice"],billboard:"center",text:[{"text":"?","color":"white","bold":true}],background:-1442840576,transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[4f,4f,4f]}}
 
 execute as @a[tag=mg.mpp] run function mg:party/rejoin
 function mg:party/hud

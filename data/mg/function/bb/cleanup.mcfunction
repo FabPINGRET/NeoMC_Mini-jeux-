@@ -1,5 +1,5 @@
 # Fin de partie Build Battle : retire les entités posées par les joueurs
-kill @e[type=!minecraft:player,tag=!mg.bbd,x=-140,y=0,z=13630,dx=280,dy=200,dz=145]
+kill @e[type=!minecraft:player,tag=!mg.bbd,x=-700,y=0,z=13600,dx=4000,dy=200,dz=800]
 tag @a remove mg.bm
 tag @a remove mg.bme
 tag @a remove mg.brk

@@ -10,6 +10,7 @@ scoreboard objectives setdisplay below_name
 scoreboard objectives remove mg.hp
 scoreboard objectives remove mg.fw
 scoreboard objectives remove mg.wc
+scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw

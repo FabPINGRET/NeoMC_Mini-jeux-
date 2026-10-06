@@ -37,6 +37,7 @@ scoreboard objectives add mg.vc dummy
 scoreboard objectives add mg.vb dummy [{"text":"☑ VOTES — prochain jeu","color":"green"}]
 scoreboard objectives add mg.fw minecraft.used:minecraft.blaze_rod
 scoreboard objectives add mg.wc minecraft.used:minecraft.wind_charge
+scoreboard objectives add mg.wd dummy
 scoreboard objectives add mg.ok dummy [{"text":"➶ KILLS — 10 pour gagner","color":"gold"}]
 scoreboard objectives add mg.qk dummy [{"text":"⚡ QUAKECRAFT ⚡","color":"aqua"}]
 scoreboard objectives add mg.ppc dummy

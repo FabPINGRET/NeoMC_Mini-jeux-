@@ -1,7 +1,8 @@
 # Armurerie du lobby (armes inoffensives pour s'amuser) — socles de ramassage à l'ouest du spawn
 kill @e[tag=mg.arm]
-fill -14 63 -9 -14 66 9 minecraft:deepslate_bricks
-fill -14 67 -9 -14 67 9 minecraft:polished_blackstone
+# (plus de mur : on rend le sol et l'air s'il avait été construit par une ancienne version)
+fill -14 63 -9 -14 63 9 minecraft:quartz_block
+fill -14 64 -9 -14 67 9 minecraft:air
 fill -13 63 -7 -11 63 -5 minecraft:polished_blackstone
 setblock -12 63 -6 minecraft:red_concrete
 fill -13 63 -7 -13 63 -7 minecraft:sea_lantern

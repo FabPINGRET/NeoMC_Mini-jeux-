@@ -7,7 +7,6 @@ team leave @s
 gamemode adventure @s
 effect clear @s
 function mg:core/attr_reset
-effect give @s minecraft:saturation infinite 0 true
 clear @s
 function mg:core/give_menu
 spawnpoint @s 0 64 0

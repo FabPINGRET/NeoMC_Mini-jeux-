@@ -82,6 +82,7 @@ clear @a minecraft:snowball
 scoreboard players reset @a mg.qs
 scoreboard players reset @a mg.fw
 scoreboard players reset @a mg.wc
+scoreboard players reset @a mg.wd
 scoreboard players set $timer mg.st 200
 scoreboard players set @a mg.deaths 0
 scoreboard players reset @a mg.us

@@ -6,7 +6,6 @@ gamemode adventure @s
 spawnpoint @s 0 64 0
 tp @s 0.5 64 0.5 facing 0.5 64 8.5
 effect clear @s
-effect give @s minecraft:saturation infinite 0 true
 function mg:core/give_menu
 
 tellraw @s [{"text":"\n✦ Bienvenue dans les MINI-JEUX ! ✦","color":"gold","bold":true}]
