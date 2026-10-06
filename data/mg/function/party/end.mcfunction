@@ -9,3 +9,4 @@ scoreboard players reset * mg.mpv
 kill @e[type=minecraft:text_display,tag=mg.mpdice]
 kill @e[type=minecraft:text_display,tag=mg.mpstar]
 clear @a minecraft:echo_shard
+team empty mg_party

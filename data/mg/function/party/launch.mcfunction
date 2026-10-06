@@ -3,6 +3,7 @@ function mg:party/pick
 title @a reset
 clear @a minecraft:echo_shard
 execute as @a[tag=mg.mpp] run function mg:core/attr_reset
+team leave @a[tag=mg.mpp]
 scoreboard players set $mpl mg.st 1
 scoreboard players set $state mg.st 0
 execute if entity @a[tag=mg.mpa] as @a[tag=mg.mpa,limit=1] run function mg:party/launch_as

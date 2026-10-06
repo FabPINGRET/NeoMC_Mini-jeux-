@@ -2,6 +2,7 @@
 tag @s remove mg.out
 tag @s remove mg.mpview
 tag @s add mg.play
+team join mg_party @s
 gamemode adventure @s
 function mg:party/freeze
 function mg:party/place
