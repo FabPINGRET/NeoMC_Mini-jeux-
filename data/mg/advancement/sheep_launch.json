@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "launch": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": "{mg_sheep:1b}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "mg:sheepwar/launch_adv"
+  }
+}

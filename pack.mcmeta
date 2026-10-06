@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "description": [
+      {"text": "Mini-Jeux Void 26.2", "color": "gold"},
+      {"text": "\nSpleef, TNT Run, PvP, Bedwars, Sheep War, Mob Arena", "color": "gray"}
+    ],
+    "min_format": [107, 0],
+    "max_format": [107, 99]
+  }
+}

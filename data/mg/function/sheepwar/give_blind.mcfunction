@@ -1,0 +1,2 @@
+# Donne 1 « Mouton des ténèbres » à @s (item dédié : on sait ce qu'on lance)
+give @s minecraft:coal[custom_data={mg_sheep:2b,mg_type:"blind"},custom_name=[{"text":"Mouton des ténèbres","color":"dark_gray","italic":false}],lore=[{"text":"Cécité 6 s autour de l'impact","color":"gray","italic":false}],enchantment_glint_override=true,consumable={consume_seconds:0.05,animation:"none",sound:"minecraft:entity.sheep.ambient",has_consume_particles:false}] 1

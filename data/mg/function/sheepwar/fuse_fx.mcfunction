@@ -1,0 +1,10 @@
+# Étincelles pendant la mèche (@s = mouton posé) — couleur selon le type
+execute if entity @s[tag=mg.k_super] run particle minecraft:electric_spark ~ ~0.8 ~ 0.3 0.4 0.3 0.1 6
+execute if entity @s[tag=mg.k_ultra] run particle minecraft:large_smoke ~ ~1 ~ 0.3 0.5 0.3 0.02 4
+execute if entity @s[tag=mg.k_mitra] run particle minecraft:crit ~ ~0.8 ~ 0.3 0.4 0.3 0.2 6
+execute unless entity @s[tag=mg.k] run particle minecraft:flame ~ ~0.8 ~ 0.15 0.2 0.15 0.01 2
+execute if entity @s[tag=mg.k_space] run particle minecraft:end_rod ~ ~0.8 ~ 0.3 0.4 0.3 0.02 4
+execute if entity @s[tag=mg.k_nausea] run particle minecraft:happy_villager ~ ~0.8 ~ 0.4 0.4 0.4 0.02 5
+execute if entity @s[tag=mg.k_freeze] run particle minecraft:snowflake ~ ~0.8 ~ 0.4 0.4 0.4 0.02 6
+execute if entity @s[tag=mg.k_blind] run particle minecraft:squid_ink ~ ~0.8 ~ 0.3 0.3 0.3 0.02 4
+execute if entity @s[tag=mg.k_fire] run particle minecraft:flame ~ ~0.8 ~ 0.3 0.3 0.3 0.04 6

@@ -1,0 +1,2 @@
+# Donne 1 « Mouton de feu » à @s (item dédié : on sait ce qu'on lance)
+give @s minecraft:blaze_powder[custom_data={mg_sheep:2b,mg_type:"fire"},custom_name=[{"text":"Mouton de feu","color":"gold","italic":false}],lore=[{"text":"Tapis de flammes 5 s","color":"gray","italic":false}],enchantment_glint_override=true,consumable={consume_seconds:0.05,animation:"none",sound:"minecraft:entity.sheep.ambient",has_consume_particles:false}] 1

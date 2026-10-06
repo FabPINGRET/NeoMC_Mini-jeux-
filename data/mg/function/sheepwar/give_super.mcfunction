@@ -1,0 +1,2 @@
+# Donne 1 « Mouton super explosif » à @s
+give @s minecraft:glowstone_dust[custom_data={mg_sheep:2b,mg_type:"super"},custom_name=[{"text":"Mouton SUPER explosif","color":"yellow","italic":false}],lore=[{"text":"Explose presque dès l'atterrissage","color":"gray","italic":false}],enchantment_glint_override=true,consumable={consume_seconds:0.05,animation:"none",sound:"minecraft:entity.sheep.ambient",has_consume_particles:false}] 1

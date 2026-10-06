@@ -1,0 +1,206 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "☠ MOB ARENA — THÈMES",
+    "color": "dark_green",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Coop : 10 vagues + boss (thèmes classiques) ou 20 vagues + boss à deux phases (thèmes XL). Choisis l'ambiance !",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "☠ Classique",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 6"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "♨ Nether",
+          "color": "red"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 8"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✦ End",
+          "color": "dark_purple"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 9"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☠ ULTRA HARD",
+          "color": "dark_red"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 10"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☁ Volant",
+          "color": "aqua"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 11"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✷ Araignée",
+          "color": "dark_green"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 12"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☠ Cathédrale maudite (20 vagues)",
+          "color": "dark_red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Gothique & sang : archers sur les balustrades, chauves-souris Wither, Comte de Sang",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 37"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚗ Laboratoire alchimique (20 vagues)",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Steampunk & poisons : sorcières, creepers chargés, Abomination Toxique",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 38"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Ψ Temple des profondeurs (20 vagues)",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Aquatique : noyés, gardiens, Émissaire du Kraken",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 39"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "♨ Forge du Titan (20 vagues)",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Nether & lave : piglins, magma cubes, blazes, Golem de Basalte",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 40"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✦ Vaisseau cybernétique (20 vagues)",
+          "color": "light_purple"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Sci-fi & vide : endermites, shulkers, phantoms, Cœur I.A. Corrompu",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 41"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au menu",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.menu"
+      }
+    }
+  ],
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  }
+}

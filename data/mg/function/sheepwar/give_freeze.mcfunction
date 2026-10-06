@@ -1,0 +1,2 @@
+# Donne 1 « Mouton glacé » à @s (item dédié : on sait ce qu'on lance)
+give @s minecraft:prismarine_crystals[custom_data={mg_sheep:2b,mg_type:"freeze"},custom_name=[{"text":"Mouton glacé","color":"aqua","italic":false}],lore=[{"text":"Bloque sur place 3 s","color":"gray","italic":false}],enchantment_glint_override=true,consumable={consume_seconds:0.05,animation:"none",sound:"minecraft:entity.sheep.ambient",has_consume_particles:false}] 1

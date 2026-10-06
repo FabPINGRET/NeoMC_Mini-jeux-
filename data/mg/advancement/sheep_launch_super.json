@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "launch": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": "{mg_type:\"super\"}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "mg:sheepwar/launch_adv_super"
+  }
+}

@@ -1,0 +1,15 @@
+# Ouverture du menu (@s = joueur) — chaque maillon est isolé, avec un plan B garanti
+scoreboard players reset @s mg.cs
+scoreboard players reset @s mg.menu
+
+# Réservé aux admins
+execute unless entity @s[tag=mg.admin] run function mg:vote/open
+execute unless entity @s[tag=mg.admin] run return 0
+
+# L'objet a pu être « consommé » par le clic → on le redonne (idempotent)
+function mg:core/give_menu
+
+# Plan A : fenêtre (dialog). Plan B : menu texte cliquable si la fenêtre n'a pas pu s'ouvrir
+scoreboard players set $dlg mg.st 0
+function mg:core/menu_dialog
+execute unless score $dlg mg.st matches 1 run function mg:core/menu_chat

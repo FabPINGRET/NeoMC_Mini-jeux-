@@ -1,0 +1,2 @@
+# Donne 1 « Mouton de l'espace » à @s (item dédié : on sait ce qu'on lance)
+give @s minecraft:amethyst_shard[custom_data={mg_sheep:2b,mg_type:"space"},custom_name=[{"text":"Mouton de l'espace","color":"light_purple","italic":false}],lore=[{"text":"Lévitation 3 s puis explosion","color":"gray","italic":false}],enchantment_glint_override=true,consumable={consume_seconds:0.05,animation:"none",sound:"minecraft:entity.sheep.ambient",has_consume_particles:false}] 1

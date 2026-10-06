@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "hit": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "source_entity": {
+            "type": "minecraft:wither_skeleton"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "mg:mobarena/cathedral/lifesteal"
+  }
+}

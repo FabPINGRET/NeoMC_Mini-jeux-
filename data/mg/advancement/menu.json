@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "use_menu": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": "{mg_menu:1b}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "mg:core/menu_adv"
+  }
+}

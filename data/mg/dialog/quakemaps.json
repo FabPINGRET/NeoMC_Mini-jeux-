@@ -1,0 +1,188 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "⚡ QUAKECRAFT — CHOISIS LA CARTE",
+    "color": "aqua",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Rayon instantané, un tir = un kill. Quelle arène ?",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "⚡ Néon (classique)",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Arène 31×31 en quartz, pyramide centrale, piliers et murets",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 31"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Volcan XL",
+          "color": "red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Très grande arène 61×61 : volcan central, tours de briques du Nether (30 kills)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 32"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Jungle XL",
+          "color": "dark_green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Très grande arène 61×61 : temple en ruine et arbres géants (30 kills)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 33"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☀ Désert",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Même taille que Néon : pyramide, obélisques et murets de grès",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 34"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "❄ Glacier (mini)",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Petite arène 19×19 de glace, parties rapides (20 kills)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 35"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☀ Poussière (style Dust)",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Petite carte 41×41 : Long A, Mid, tunnels B, sites A/B surélevés (20 kills, 6 min)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 43"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☀ Mirage (style Mirage)",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Petite carte 41×41 : Appartements, Mid, Fenêtre, Jungle, sites A/B (20 kills, 6 min)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 46"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☢ Nuketown (style Nuketown)",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Petite carte 49×35 : deux maisons face à face, bus au milieu, jardins et abri (20 kills, 6 min)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 49"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au menu",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.menu"
+      }
+    }
+  ],
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  }
+}

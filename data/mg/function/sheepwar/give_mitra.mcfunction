@@ -1,0 +1,2 @@
+# Donne 1 « Mouton mitraillette » à @s
+give @s minecraft:iron_nugget[custom_data={mg_sheep:2b,mg_type:"mitra"},custom_name=[{"text":"Mouton mitraillette","color":"gray","bold":true,"italic":false}],lore=[{"text":"3 explosions d'affilée","color":"gray","italic":false}],enchantment_glint_override=true,consumable={consume_seconds:0.05,animation:"none",sound:"minecraft:entity.sheep.ambient",has_consume_particles:false}] 1

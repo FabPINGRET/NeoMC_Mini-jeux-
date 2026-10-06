@@ -1,0 +1,122 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "★ NOTE CETTE CONSTRUCTION",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Clique sur une note : tu peux la modifier tant que le temps n'est pas écoulé.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 1,
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "★☆☆☆☆  1 — Raté",
+          "color": "red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Pas terrible",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.bb set 1"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "★★☆☆☆  2 — Moyen",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Bof",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.bb set 2"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "★★★☆☆  3 — Bien",
+          "color": "yellow"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Correct",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.bb set 3"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "★★★★☆  4 — Super",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Très réussi",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.bb set 4"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "★★★★★  5 — Épique",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Chef-d'œuvre !",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.bb set 5"
+      }
+    }
+  ],
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  }
+}

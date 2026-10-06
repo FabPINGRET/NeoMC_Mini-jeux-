@@ -1,0 +1,9 @@
+# Mob Arena — « skip » : on garde la classe actuelle (@s = joueur)
+execute unless score @s mg.cl matches 2..8 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Guerrier","color":"white","bold":true}]
+execute if score @s mg.cl matches 2 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Archer","color":"green","bold":true}]
+execute if score @s mg.cl matches 3 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Tank","color":"aqua","bold":true}]
+execute if score @s mg.cl matches 4 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Assassin","color":"dark_gray","bold":true}]
+execute if score @s mg.cl matches 5 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Mage","color":"light_purple","bold":true}]
+execute if score @s mg.cl matches 6 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Pyromane","color":"gold","bold":true}]
+execute if score @s mg.cl matches 7 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Berserker","color":"dark_red","bold":true}]
+execute if score @s mg.cl matches 8 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Poséidon","color":"dark_aqua","bold":true}]

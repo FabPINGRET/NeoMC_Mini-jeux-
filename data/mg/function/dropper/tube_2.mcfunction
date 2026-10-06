@@ -1,0 +1,25 @@
+# The Dropper (tube commun) — disposition n°2 (relatif à l'angle du tube : ~ ~ ~ = coin bas, 13x13 hors-tout, intérieur 11x11)
+fill ~1 ~2 ~1 ~11 ~63 ~11 minecraft:air
+fill ~1 ~62 ~1 ~11 ~62 ~11 minecraft:light_blue_stained_glass
+fill ~1 ~56 ~1 ~11 ~56 ~11 minecraft:red_concrete
+fill ~4 ~56 ~3 ~8 ~56 ~7 minecraft:air
+fill ~1 ~51 ~1 ~11 ~51 ~11 minecraft:orange_concrete
+fill ~4 ~51 ~4 ~8 ~51 ~8 minecraft:air
+fill ~1 ~46 ~1 ~11 ~46 ~11 minecraft:yellow_concrete
+fill ~4 ~46 ~5 ~8 ~46 ~9 minecraft:air
+fill ~1 ~41 ~1 ~11 ~41 ~11 minecraft:lime_concrete
+fill ~5 ~41 ~6 ~7 ~41 ~8 minecraft:air
+fill ~1 ~36 ~1 ~11 ~36 ~11 minecraft:cyan_concrete
+fill ~3 ~36 ~5 ~7 ~36 ~9 minecraft:air
+fill ~1 ~31 ~1 ~11 ~31 ~11 minecraft:light_blue_concrete
+fill ~4 ~31 ~5 ~8 ~31 ~9 minecraft:air
+fill ~1 ~26 ~1 ~11 ~26 ~11 minecraft:blue_concrete
+fill ~4 ~26 ~4 ~8 ~26 ~8 minecraft:air
+fill ~1 ~21 ~1 ~11 ~21 ~11 minecraft:purple_concrete
+fill ~5 ~21 ~5 ~7 ~21 ~7 minecraft:air
+fill ~1 ~16 ~1 ~11 ~16 ~11 minecraft:magenta_concrete
+fill ~5 ~16 ~5 ~7 ~16 ~7 minecraft:air
+fill ~1 ~11 ~1 ~11 ~11 ~11 minecraft:pink_concrete
+fill ~5 ~11 ~5 ~7 ~11 ~7 minecraft:air
+fill ~1 ~6 ~1 ~11 ~6 ~11 minecraft:white_concrete
+fill ~5 ~6 ~5 ~7 ~6 ~7 minecraft:air

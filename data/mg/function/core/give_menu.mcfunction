@@ -1,0 +1,4 @@
+# Donne l'objet menu (admins) ou l'objet de vote (autres joueurs)
+clear @s minecraft:carrot_on_a_stick
+execute if entity @s[tag=mg.admin] run item replace entity @s hotbar.4 with minecraft:carrot_on_a_stick[custom_name=[{"text":"≡ MENU","color":"gold","italic":false,"bold":true}],custom_data={mg_menu:1b},enchantment_glint_override=true,consumable={consume_seconds:0.05,animation:"none",sound:"minecraft:ui.button.click",has_consume_particles:false}]
+execute unless entity @s[tag=mg.admin] run item replace entity @s hotbar.4 with minecraft:carrot_on_a_stick[custom_name=[{"text":"☑ VOTE","color":"green","italic":false,"bold":true}],custom_data={mg_vote:1b},enchantment_glint_override=true,consumable={consume_seconds:0.05,animation:"none",sound:"minecraft:ui.button.click",has_consume_particles:false}]

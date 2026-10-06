@@ -1,0 +1,188 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "☁ SHEEP WAR — CHOISIS LA CARTE",
+    "color": "white",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Deux équipes, des moutons explosifs. Quelle carte ?",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "☁ Sheep War : classique",
+          "color": "white"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Grandes plateformes, mur d'obsidienne",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 5"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☁ Forteresses",
+          "color": "white"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Forteresses à étages, escaliers, tours",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 7"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☁ Bastions (petite carte)",
+          "color": "white"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Forteresses compactes, peu de joueurs",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 14"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▣ Cubes Voxel",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "2 cubes 25×25 suspendus, 3 étages en béton, façades en grès",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 15"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▼ Pyramides inversées",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Surface plate, le terrain rétrécit vers le vide",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 16"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "♨❄ Archipel bicolore",
+          "color": "red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Île de feu contre île de glace",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 17"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "≋ Double canyon",
+          "color": "dark_red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Falaise droite d'un côté, pente douce de l'autre, lave au fond",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 18"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☁ Nuages voxel",
+          "color": "light_purple"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Gros pavés de laine, béton et quartz flottants",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 19"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au menu",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.menu"
+      }
+    }
+  ],
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  }
+}

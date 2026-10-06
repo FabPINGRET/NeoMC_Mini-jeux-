@@ -1,0 +1,2 @@
+# Donne 1 « Mouton nauséeux » à @s (item dédié : on sait ce qu'on lance)
+give @s minecraft:slime_ball[custom_data={mg_sheep:2b,mg_type:"nausea"},custom_name=[{"text":"Mouton nauséeux","color":"green","italic":false}],lore=[{"text":"Nausée 10 s autour de l'impact","color":"gray","italic":false}],enchantment_glint_override=true,consumable={consume_seconds:0.05,animation:"none",sound:"minecraft:entity.sheep.ambient",has_consume_particles:false}] 1

@@ -1,0 +1,140 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "⚔ CHOISIS TA CLASSE",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Tu peux changer pendant tout le compte à rebours. Sans choix : Guerrier.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "⚔ Guerrier",
+          "color": "white"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Armure de fer, épée de fer, bouclier",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.cls set 1"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "➶ Archer",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Arc Puissance III + Recul, 40 flèches, rapide",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.cls set 2"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⛨ Tank",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Armure diamant, +4 cœurs, bouclier, plus lent",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.cls set 3"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☠ Assassin",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Très rapide, épée tranchante, 2 perles d'Ender",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.cls set 4"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✦ Mage",
+          "color": "light_purple"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Potions jetables : dégâts, ralentissement, soin",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.cls set 5"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "♨ Pyromane",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Mailles, épée et arc enflammés, immunisé au feu",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.cls set 6"
+      }
+    }
+  ],
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  }
+}

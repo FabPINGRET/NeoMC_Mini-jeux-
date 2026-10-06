@@ -1,0 +1,75 @@
+# Désinstallation (OP) — retire scoreboards, équipes, décor et zones chargées
+kill @e[type=minecraft:text_display,tag=mg.deco]
+kill @e[tag=mg.mob]
+kill @e[tag=mg.sheep]
+kill @e[tag=mg.npc]
+forceload remove all
+scoreboard objectives setdisplay sidebar
+scoreboard objectives setdisplay list
+scoreboard objectives setdisplay below_name
+scoreboard objectives remove mg.hp
+scoreboard objectives remove mg.fw
+scoreboard objectives remove mg.wc
+scoreboard objectives remove mg.vote
+scoreboard objectives remove mg.bb
+scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.bi
+scoreboard objectives remove mg.br
+scoreboard objectives remove mg.ba
+kill @e[type=minecraft:marker,tag=mg.bpm]
+kill @e[tag=mg.bbd]
+scoreboard objectives remove mg.vc
+scoreboard objectives remove mg.vb
+scoreboard objectives remove mg.ak
+scoreboard objectives remove mg.ag
+scoreboard objectives remove mg.cp
+scoreboard objectives remove mg.lp
+scoreboard objectives remove mg.ri
+scoreboard objectives remove mg.rp
+scoreboard objectives remove mg.tw
+scoreboard objectives remove mg.qk
+scoreboard objectives remove mg.pb
+scoreboard objectives remove mg.pi
+scoreboard objectives remove mg.ph
+scoreboard objectives remove mg.pt
+scoreboard objectives remove mg.ppc
+scoreboard objectives remove mg.ppt
+scoreboard objectives remove mg.ppb
+scoreboard objectives remove mg.ppf
+kill @e[type=minecraft:marker,tag=mg.pkm]
+kill @e[type=minecraft:text_display,tag=mg.pkd]
+scoreboard objectives remove mg.ks
+scoreboard objectives remove mg.gi
+scoreboard objectives remove mg.qp
+scoreboard objectives remove mg.qs
+scoreboard objectives remove mg.ts
+scoreboard objectives remove mg.dp
+scoreboard objectives remove mg.ln
+scoreboard objectives remove mg.lv
+scoreboard objectives remove mg.mb
+scoreboard objectives remove mg.st
+scoreboard objectives remove mg.t
+scoreboard objectives remove mg.wins
+scoreboard objectives remove mg.deaths
+scoreboard objectives remove mg.cs
+scoreboard objectives remove mg.us
+scoreboard objectives remove mg.menu
+scoreboard objectives remove mg.go
+scoreboard objectives remove mg.cd
+scoreboard objectives remove mg.cls
+scoreboard objectives remove mg.cl
+scoreboard objectives remove mg.opt
+scoreboard objectives remove mg.buy
+scoreboard objectives remove mg.lg
+scoreboard objectives remove mg.pk
+team remove mg_red
+team remove mg_blue
+team remove mg_green
+team remove mg_yellow
+tag @a remove mg.init
+tag @a remove mg.play
+tag @a remove mg.out
+tag @a remove mg.win
+tag @a remove mg.spectate
+tag @a remove mg.admin
+tellraw @a [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Désinstallé. Les constructions restent (les arènes ne sont pas effacées). Retire ensuite le datapack du dossier datapacks.","color":"gray"}]

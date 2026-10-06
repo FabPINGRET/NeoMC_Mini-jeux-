@@ -1,0 +1,2 @@
+# Donne 1 « Mouton ULTRA explosif » à @s
+give @s minecraft:nether_star[custom_data={mg_sheep:2b,mg_type:"ultra"},custom_name=[{"text":"Mouton ULTRA explosif","color":"dark_red","bold":true,"italic":false}],lore=[{"text":"Mèche plus longue, explosion bien plus puissante","color":"gray","italic":false}],enchantment_glint_override=true,consumable={consume_seconds:0.05,animation:"none",sound:"minecraft:entity.sheep.ambient",has_consume_particles:false}] 1

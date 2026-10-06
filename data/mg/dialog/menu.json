@@ -1,0 +1,596 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "✦ MINI-JEUX ✦",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Choisis un jeu : tous les joueurs (sauf spectateurs) sont téléportés !",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "❄ Spleef",
+          "color": "aqua"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 1"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "❍ Splegg",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 20"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "❍ Splegg XXL",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 21"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✊ Sumo",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 22"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✊ Sumo : arène complexe",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 24"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⬇ The Dropper",
+          "color": "aqua"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 23"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⬇ Dropper : tube commun",
+          "color": "aqua"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 25"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✷ TNT Run",
+          "color": "red"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 2"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✹ TNT Tag",
+          "color": "red"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 27"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▦ Block Party",
+          "color": "light_purple"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 28"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚓ Pluie d'Enclumes",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 29"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚓ Enclumes + sol troué",
+          "color": "red"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 42"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▮ Turf Wars",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 30"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚡ Quakecraft : cartes ▸",
+          "color": "aqua"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 10"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▓ Paintball (Splatoon)",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 36"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▓ Paintball : Mini-terrain",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Paintball 31×41, parties de 3 minutes",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 54"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▓ Paintball : Grand terrain",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Paintball 81×101, grosse bataille de 6 minutes",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 55"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⛵ Course de bateaux (glace)",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Circuit de glace de 300 blocs, 3 tours, 10 points de passage : le premier qui finit gagne",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 56"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✎ Build Battle : thème aléatoire",
+          "color": "green"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 57"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✎ Build Battle : Maître du mot",
+          "color": "dark_aqua"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 58"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ Arène PvP",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 3"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP : classes",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 13"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP : Poussière",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Arène PvP sur la carte Poussière (style Dust)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 44"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP classes : Poussière",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "PvP avec classes sur la carte Poussière (style Dust)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 45"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP : Mirage",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Arène PvP sur la carte Mirage (style Mirage)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 47"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP classes : Mirage",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "PvP avec classes sur la carte Mirage (style Mirage)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 48"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP : Nuketown",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Arène PvP sur la carte Nuketown (style Nuketown)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 50"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP classes : Nuketown",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "PvP avec classes sur la carte Nuketown (style Nuketown)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 51"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "➶ One in the Chamber",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 26"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "➶ OITC : Château",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "One in the Chamber 41×41 : donjon à étage, quatre tours à échelles",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 52"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "➶ OITC : Grande forêt",
+          "color": "dark_green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "One in the Chamber 71×71 : collines, arbres, ruines et tours de guet",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 53"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚑ Bedwars",
+          "color": "light_purple"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 4"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☁ Sheep War : cartes ▸",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 8"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☠ Mob Arena : thèmes ▸",
+          "color": "dark_green"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 7"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☑ Votes : lancer le plus voté",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Lance le jeu qui a reçu le plus de votes des joueurs",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 12"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☑ Votes : voir",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Affiche le détail des votes",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 98"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☑ Votes : réinitialiser",
+          "color": "red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Efface tous les votes",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 13"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Mode spectateur ON/OFF",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 1"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Classement des victoires",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 2"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⛔ Arrêter la partie en cours",
+          "color": "dark_red"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 9"
+      }
+    }
+  ],
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  }
+}
