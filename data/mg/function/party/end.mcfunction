@@ -5,6 +5,7 @@ tag @a remove mg.mpa
 tag @a remove mg.mpcur
 tag @a remove mg.mpsw
 tag @a remove mg.mpview
+tag @a remove mg.mpwin
 scoreboard players reset * mg.mpv
 kill @e[type=minecraft:text_display,tag=mg.mpdice]
 bossbar remove mg:party
