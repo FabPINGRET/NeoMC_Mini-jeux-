@@ -12,4 +12,4 @@ tellraw @a[tag=mg.mpp] [{"text":"🔀 TUYAU ! ","color":"yellow","bold":true},{"
 tag @a remove mg.mpsw
 execute at @s run playsound minecraft:entity.enderman.teleport master @a[tag=mg.mpp] ~ ~ ~ 1 1
 scoreboard players set $mpw mg.st 400
-dialog show @s mg:party_roll
+function mg:party/roll_dialog
