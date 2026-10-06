@@ -1,11 +1,21 @@
-# Fin de la Mini Party : classement (étoiles puis pièces) et victoire
+# Fin de la Mini Party : vainqueur = le plus d'étoiles, puis (à égalité) le plus de pièces ; classement trié
 scoreboard players set $mph mg.st 9
-execute as @a[tag=mg.mpp] run scoreboard players operation @s mg.mpz = @s mg.mpk
-execute as @a[tag=mg.mpp] run scoreboard players operation @s mg.mpz *= #1000 mg.st
-execute as @a[tag=mg.mpp] run scoreboard players operation @s mg.mpz += @s mg.mpm
-scoreboard players set $best mg.st -1
-execute as @a[tag=mg.mpp] if score @s mg.mpz > $best mg.st run scoreboard players operation $best mg.st = @s mg.mpz
-tellraw @a [{"text":"\n★ RÉSULTATS DE LA MINI PARTY ★","color":"gold","bold":true}]
-execute as @a[tag=mg.mpp] run tellraw @a [{"text":"  ","color":"gray"},{"selector":"@s","color":"white"},{"text":" : ★ ","color":"yellow"},{"score":{"name":"@s","objective":"mg.mpk"},"color":"yellow"},{"text":"   ● ","color":"gold"},{"score":{"name":"@s","objective":"mg.mpm"},"color":"gold"}]
 execute unless entity @a[tag=mg.mpp] run return run function mg:core/draw
-execute as @a[tag=mg.mpp] if score @s mg.mpz = $best mg.st run function mg:core/win_player
+
+# 1. Meilleur nombre d'étoiles, puis meilleures pièces parmi ceux qui l'ont
+scoreboard players set $bs mg.st -1
+execute as @a[tag=mg.mpp] if score @s mg.mpk > $bs mg.st run scoreboard players operation $bs mg.st = @s mg.mpk
+scoreboard players set $bc mg.st -1
+execute as @a[tag=mg.mpp] if score @s mg.mpk = $bs mg.st if score @s mg.mpm > $bc mg.st run scoreboard players operation $bc mg.st = @s mg.mpm
+tag @a remove mg.mpwin
+execute as @a[tag=mg.mpp] if score @s mg.mpk = $bs mg.st if score @s mg.mpm = $bc mg.st run tag @s add mg.mpwin
+
+# 2. Classement complet, du premier au dernier
+tellraw @a [{"text":"\n★ RÉSULTATS DE LA MINI PARTY ★","color":"gold","bold":true}]
+tag @a remove mg.mprk
+scoreboard players set $rk mg.st 0
+function mg:party/rank_next
+
+# 3. Victoire
+execute as @a[tag=mg.mpwin] run function mg:party/win
+tag @a remove mg.mprk
