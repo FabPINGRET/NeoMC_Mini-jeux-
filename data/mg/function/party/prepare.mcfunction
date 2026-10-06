@@ -33,6 +33,7 @@ scoreboard players set $pz mg.st 15000
 
 # Étoile et grand dé
 scoreboard players set $mps mg.st -1
+function mg:party/pick_reset
 function mg:party/star_move
 kill @e[type=minecraft:text_display,tag=mg.mpdice]
 summon minecraft:text_display 0.5 70 14948.5 {Tags:["mg.mpdice"],billboard:"center",text:[{"text":"?","color":"white","bold":true}],background:-1442840576,transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[3f,3f,3f]}}
