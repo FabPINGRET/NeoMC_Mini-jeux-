@@ -65,6 +65,7 @@ scoreboard objectives add mg.mpk dummy [{"text":"★","color":"yellow"}]
 scoreboard objectives add mg.mpi dummy
 scoreboard objectives add mg.mpo dummy
 scoreboard objectives add mg.mpz dummy
+scoreboard objectives add mg.mpv dummy
 
 # --- Équipes ---
 team add mg_red
@@ -99,6 +100,6 @@ execute if score $setup mg.st matches 1 run function mg:core/forceloads
 
 # Plots joueurs : construits automatiquement après une mise à jour du pack sur un monde déjà installé
 execute if score $setup mg.st matches 1 unless data storage mg:plot built run function mg:plot/build
-execute if score $setup mg.st matches 1 unless data storage mg:party built run schedule function mg:party/build 3s
+execute if score $setup mg.st matches 1 unless data storage mg:party {built:2b} run schedule function mg:party/build 3s
 
 tellraw @a [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Datapack chargé. ","color":"gray"},{"text":"Première fois ? Un OP lance ","color":"gray"},{"text":"/function mg:setup","color":"yellow"},{"text":" pour tout construire.","color":"gray"}]

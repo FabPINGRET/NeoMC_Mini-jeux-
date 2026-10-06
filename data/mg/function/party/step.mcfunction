@@ -1,7 +1,11 @@
-# Une case en avant (@s = joueur dont c'est le tour)
-scoreboard players add @s mg.mpi 1
-execute if score @s mg.mpi matches 32.. run scoreboard players set @s mg.mpi 0
+# Une case en avant (@s = joueur dont c'est le tour). Sur un embranchement : choix de la route d'abord
+function mg:party/is_fork
+execute if score $fk mg.st matches 1 if score $mpch mg.st matches 0 run return run function mg:party/fork_ask
+execute if score $fk mg.st matches 1 run function mg:party/next_fork
+execute if score $fk mg.st matches 0 run function mg:party/next
+scoreboard players set $mpch mg.st 0
 function mg:party/place
+execute at @s run tp @e[type=minecraft:text_display,tag=mg.mpdice,limit=1] ~ ~3.6 ~
 scoreboard players remove $mpr mg.st 1
 execute at @s run playsound minecraft:block.note_block.bell master @a[tag=mg.mpp] ~ ~ ~ 0.8 1.4
 title @a[tag=mg.mpp] actionbar [{"selector":"@s","color":"yellow"},{"text":" : encore ","color":"gray"},{"score":{"name":"$mpr","objective":"mg.st"},"color":"gold","bold":true},{"text":" case(s)","color":"gray"}]

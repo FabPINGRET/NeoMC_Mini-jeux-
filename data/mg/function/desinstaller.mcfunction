@@ -74,6 +74,7 @@ scoreboard objectives remove mg.mpk
 scoreboard objectives remove mg.mpi
 scoreboard objectives remove mg.mpo
 scoreboard objectives remove mg.mpz
+scoreboard objectives remove mg.mpv
 kill @e[type=minecraft:text_display,tag=mg.mpdeco]
 kill @e[type=minecraft:text_display,tag=mg.mpdice]
 kill @e[type=minecraft:text_display,tag=mg.mpstar]

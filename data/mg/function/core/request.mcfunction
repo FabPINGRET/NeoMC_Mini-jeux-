@@ -3,10 +3,10 @@
 scoreboard players operation $game mg.st = @s mg.go
 scoreboard players reset @s mg.go
 
-# Mini Party : 59 = 5 tours, 60 = 10 tours. Un jeu lancé hors Mini Party ($mpl) met fin à la partie en cours
+# Mini Party : 59 = 8 tours, 60 = 15 tours. Un jeu lancé hors Mini Party ($mpl) met fin à la partie en cours
 execute unless score $mpl mg.st matches 1 run scoreboard players set $mp mg.st 0
-execute if score $game mg.st matches 59 run scoreboard players set $mpmax mg.st 5
-execute if score $game mg.st matches 60 run scoreboard players set $mpmax mg.st 10
+execute if score $game mg.st matches 59 run scoreboard players set $mpmax mg.st 8
+execute if score $game mg.st matches 60 run scoreboard players set $mpmax mg.st 15
 execute if score $game mg.st matches 60 run scoreboard players set $game mg.st 59
 
 # Mob Arena à thème : 8 nether, 9 end, 10 ultra hard, 11 volant, 12 araignée → jeu 6 + thème $mt (1..5)
