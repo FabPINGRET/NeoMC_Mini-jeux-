@@ -80,6 +80,8 @@ team add mg_green
 team modify mg_green color green
 team modify mg_green friendlyFire false
 team modify mg_green prefix [{"text":"⬤ ","color":"green"}]
+team add mg_party
+team modify mg_party collisionRule never
 team add mg_yellow
 team modify mg_yellow color yellow
 team modify mg_yellow friendlyFire false

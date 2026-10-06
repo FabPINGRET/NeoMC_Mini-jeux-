@@ -821,7 +821,7 @@ for k, p in enumerate(parts, 1):
         p = p + [f'schedule function mg:party/build_{k + 1} 2t']
     write(f'build_{k}', p)
 
-write('place', ['# Pion : téléporte @s sur sa case (mg.mpi = 0..%d)' % (N - 1)] +
+write('place_c', ['# Pion : téléporte @s au centre de sa case (mg.mpi = 0..%d), le décalage est fait par party/place' % (N - 1)] +
       [f'execute if score @s mg.mpi matches {i} run return run tp @s {nd["x"] + 0.5} {nd["y"] + 1} {W(nd["z"]) + 0.5}' for i, nd in enumerate(nodes)])
 write('case_type', ['# Type de la case de @s -> $ct (0 départ, 1 bleue, 2 rouge, 3 événement, 4 piège, 5 embranchement)'] +
       [f'execute if score @s mg.mpi matches {i} run scoreboard players set $ct mg.st {nd["type"]}' for i, nd in enumerate(nodes)])
