@@ -415,6 +415,42 @@
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 99"
       }
+    },
+    {
+      "label": [
+        {
+          "text": "⌂ Aller sur mon plot",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Ton plot de construction (créatif, protégé par des murs invisibles)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.pl set 1"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "↩ Quitter mon plot",
+          "color": "yellow"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Retour au spawn",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.pl set 2"
+      }
     }
   ],
   "exit_action": {
