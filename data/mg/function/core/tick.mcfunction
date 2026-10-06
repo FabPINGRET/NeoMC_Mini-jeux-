@@ -9,7 +9,6 @@ scoreboard players enable @a mg.cls
 scoreboard players enable @a mg.vote
 scoreboard players enable @a mg.bb
 scoreboard players enable @a mg.bw
-scoreboard players enable @a mg.pl
 
 # Nouveaux joueurs (ou ré-init après setup)
 execute if score $setup mg.st matches 1 as @a[tag=!mg.init] run function mg:core/join
@@ -41,10 +40,6 @@ execute if score $setup mg.st matches 1 run function mg:lobby/armory_tick
 
 # Parkour du lobby
 execute if score $setup mg.st matches 1 run function mg:parkour/tick
-
-# Plots des joueurs
-execute as @a[scores={mg.pl=1..}] run function mg:plot/cmd
-execute if score $setup mg.st matches 1 run function mg:plot/tick
 
 # Machine à états
 execute if score $state mg.st matches 1 run function mg:core/countdown

@@ -1,0 +1,5 @@
+# @s = joueur : met la baguette feu d'artifice dans le slot 2 de la barre d'objets
+item replace entity @s hotbar.1 with minecraft:blaze_rod[custom_name=[{"text":"✦ Baguette feu d'artifice","color":"gold","bold":true,"italic":false}],lore=[{"text":"Clic droit : feu d'artifice dans le ciel (recharge 5 s)","color":"gray","italic":false}],enchantment_glint_override=true,consumable={consume_seconds:0.05,animation:"none",sound:"minecraft:entity.firework_rocket.launch",has_consume_particles:false}]
+# filet de sécurité : si le slot n'a pas pris l'objet, on l'ajoute à l'inventaire
+execute store result score $apc mg.st run clear @s minecraft:blaze_rod 0
+execute if score $apc mg.st matches 0 run give @s minecraft:blaze_rod[custom_name=[{"text":"✦ Baguette feu d'artifice","color":"gold","bold":true,"italic":false}],lore=[{"text":"Clic droit : feu d'artifice dans le ciel (recharge 5 s)","color":"gray","italic":false}],enchantment_glint_override=true,consumable={consume_seconds:0.05,animation:"none",sound:"minecraft:entity.firework_rocket.launch",has_consume_particles:false}]

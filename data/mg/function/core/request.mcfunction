@@ -64,7 +64,6 @@ tag @a remove mg.out
 execute store result score $n0 mg.st if entity @a[tag=mg.play]
 execute if score $n0 mg.st matches 0 run tellraw @s [{"text":"Aucun participant (tout le monde est en mode spectateur).","color":"red"}]
 execute if score $n0 mg.st matches 0 run return run scoreboard players set $game mg.st 0
-execute as @a[tag=mg.play,tag=mg.inplot] run function mg:plot/leave_game
 
 # État : compte à rebours de 10 s
 scoreboard players set $state mg.st 1
@@ -76,6 +75,7 @@ clear @a minecraft:snowball
 scoreboard players reset @a mg.qs
 scoreboard players reset @a mg.fw
 scoreboard players reset @a mg.wc
+scoreboard players reset @a mg.wd
 scoreboard players set $timer mg.st 200
 scoreboard players set @a mg.deaths 0
 scoreboard players reset @a mg.us

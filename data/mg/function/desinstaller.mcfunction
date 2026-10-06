@@ -10,6 +10,7 @@ scoreboard objectives setdisplay below_name
 scoreboard objectives remove mg.hp
 scoreboard objectives remove mg.fw
 scoreboard objectives remove mg.wc
+scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
@@ -62,14 +63,6 @@ scoreboard objectives remove mg.opt
 scoreboard objectives remove mg.buy
 scoreboard objectives remove mg.lg
 scoreboard objectives remove mg.pk
-scoreboard objectives remove mg.pl
-scoreboard objectives remove mg.plot
-scoreboard objectives remove mg.pcx
-scoreboard objectives remove mg.pcz
-data remove storage mg:plot owner
-kill @e[type=minecraft:text_display,tag=mg.pdisp]
-tag @a remove mg.inplot
-tag @a remove mg.plabel
 team remove mg_red
 team remove mg_blue
 team remove mg_green

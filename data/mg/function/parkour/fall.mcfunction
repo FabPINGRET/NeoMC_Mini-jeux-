@@ -6,3 +6,4 @@ execute as @e[type=minecraft:marker,tag=mg.pkc] if score @s mg.t = $ck mg.st at 
 tag @s remove mg.pkx
 title @s actionbar [{"text":"↺ Retour au checkpoint","color":"yellow"}]
 execute at @s run playsound minecraft:entity.enderman.teleport master @s ~ ~ ~ 0.6 1.2
+function mg:core/fall_heal

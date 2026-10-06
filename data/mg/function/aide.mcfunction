@@ -6,7 +6,6 @@ tellraw @s [{"text":"• Diagnostic (admins) : ","color":"gray"},{"text":"/funct
 tellraw @s [{"text":"• Devenir admin (OP) : ","color":"gray"},{"text":"/function mg:admin","color":"yellow"},{"text":" — ou ","color":"gray"},{"text":"/tag <joueur> add mg.admin","color":"yellow"}]
 tellraw @s [{"text":"• Spectateur ON/OFF (tous) : ","color":"gray"},{"text":"/trigger mg.opt set 1","color":"yellow"}]
 tellraw @s [{"text":"• Classement ON/OFF (tous) : ","color":"gray"},{"text":"/trigger mg.opt set 2","color":"yellow"}]
-tellraw @s [{"text":"• Mon plot de construction (tous) : ","color":"gray"},{"text":"/trigger mg.pl set 1","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.pl set 1"}},{"text":" ; retour au spawn : ","color":"gray"},{"text":"/trigger mg.pl set 2","color":"yellow"}]
 tellraw @s [{"text":"• Arrêter la partie (admins) : ","color":"gray"},{"text":"/trigger mg.opt set 9","color":"yellow"}]
 tellraw @s [{"text":"• Boutique Bedwars : ","color":"gray"},{"text":"parle au VILLAGEOIS de ton île","color":"yellow"}]
 tellraw @s [{"text":"• (OP) Installer / reconstruire : ","color":"gray"},{"text":"/function mg:setup","color":"yellow"}]

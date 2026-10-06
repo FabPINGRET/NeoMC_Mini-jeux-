@@ -39,14 +39,15 @@ tag @a remove mg.bmx
 scoreboard players set $bbn mg.st 0
 execute as @a[tag=mg.play,tag=!mg.bm,sort=random] run function mg:bb/assign_one
 scoreboard players set @a[tag=mg.play,tag=mg.bm] mg.bi -1
+function mg:bb/studio
 function mg:bb/build_used
 
 # Perchoir des spectateurs = studio
-scoreboard players set $px mg.st 0
+scoreboard players set $px mg.st -640
 scoreboard players set $py mg.st 70
 scoreboard players set $pz mg.st 13650
 
 # Téléportation
 execute as @a[tag=mg.play,scores={mg.bi=0..}] run function mg:bb/tp_builder
-tp @a[tag=mg.play,scores={mg.bi=-1}] 0.5 65 13650.5 0 10
+tp @a[tag=mg.play,scores={mg.bi=-1}] -639.5 65 13650.5 0 10
 execute if score $bbn mg.st matches 12.. if score $n0 mg.st matches 13.. run tellraw @a[tag=mg.play] [{"text":"✎ Plus de 12 joueurs : les derniers sont juges (ils votent sans construire).","color":"gray"}]

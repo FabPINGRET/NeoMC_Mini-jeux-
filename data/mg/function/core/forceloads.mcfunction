@@ -9,7 +9,21 @@ forceload add -48 11952 48 12048
 forceload add -24 12256 24 12324
 forceload add -56 12636 56 12764
 forceload add -80 13140 80 13260
-forceload add -136 13632 136 13768
+# Build Battle : parcelles très éloignées (640 blocs) pour qu'on ne voie pas les autres construire
+forceload remove -136 13632 136 13768
+forceload add -664 13624 -616 13676
+forceload add -24 13664 24 13724
+forceload add 616 13664 664 13724
+forceload add 1256 13664 1304 13724
+forceload add 1896 13664 1944 13724
+forceload add 2536 13664 2584 13724
+forceload add 3176 13664 3224 13724
+forceload add -24 14304 24 14364
+forceload add 616 14304 664 14364
+forceload add 1256 14304 1304 14364
+forceload add 1896 14304 1944 14364
+forceload add 2536 14304 2584 14364
+forceload add 3176 14304 3224 14364
 forceload add -16 284 16 316
 forceload add -24 4160 24 4240
 forceload add -48 4552 48 4648
