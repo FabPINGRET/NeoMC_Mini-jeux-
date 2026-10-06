@@ -53,6 +53,10 @@ scoreboard objectives add mg.lv dummy [{"text":"♥","color":"red"}]
 function mg:core/load_lg
 function mg:core/load_pk
 function mg:core/load_hp
+scoreboard objectives add mg.pl trigger
+scoreboard objectives add mg.plot dummy
+scoreboard objectives add mg.pcx dummy
+scoreboard objectives add mg.pcz dummy
 
 # --- Équipes ---
 team add mg_red
@@ -79,8 +83,12 @@ execute unless score $timer mg.st = $timer mg.st run scoreboard players set $tim
 execute unless score $sb mg.st = $sb mg.st run scoreboard players set $sb mg.st 0
 execute unless score $setup mg.st = $setup mg.st run scoreboard players set $setup mg.st 0
 execute unless score $tc mg.st = $tc mg.st run scoreboard players set $tc mg.st 0
+execute unless score $pn mg.st = $pn mg.st run scoreboard players set $pn mg.st 0
 
 # Zones chargées (après une mise à jour du pack, les nouvelles zones sont prises en compte)
 execute if score $setup mg.st matches 1 run function mg:core/forceloads
+
+# Plots joueurs : construits automatiquement après une mise à jour du pack sur un monde déjà installé
+execute if score $setup mg.st matches 1 unless data storage mg:plot built run function mg:plot/build
 
 tellraw @a [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Datapack chargé. ","color":"gray"},{"text":"Première fois ? Un OP lance ","color":"gray"},{"text":"/function mg:setup","color":"yellow"},{"text":" pour tout construire.","color":"gray"}]
