@@ -10,5 +10,7 @@ title @s title [{"text":"🛒 BOUTIQUE","color":"light_purple","bold":true}]
 title @s subtitle [{"text":"Achète un objet dans la fenêtre","color":"yellow"}]
 tellraw @a[tag=mg.mpp,tag=!mg.mpcur] [{"selector":"@s","color":"yellow"},{"text":" s'arrête à la boutique 🛒","color":"gray"}]
 tellraw @s [{"text":"🛒 ","color":"light_purple"},{"text":"[🎲🎲 10]","color":"aqua","click_event":{"action":"run_command","command":"trigger mg.dice set 31"}},{"text":" "},{"text":"[🎲🎲🎲 18]","color":"light_purple","click_event":{"action":"run_command","command":"trigger mg.dice set 32"}},{"text":" "},{"text":"[🔀 15]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.dice set 33"}},{"text":" "},{"text":"[partir]","color":"gray","click_event":{"action":"run_command","command":"trigger mg.dice set 39"}}]
+tellraw @s [{"text":"● Tu as ","color":"gold"},{"score":{"name":"@s","objective":"mg.mpm"},"color":"yellow","bold":true},{"text":" pièces.","color":"gold"}]
+function mg:party/hud_bar
 dialog show @s mg:party_shop
 execute at @s run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 1 1.5

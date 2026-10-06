@@ -76,6 +76,7 @@ scoreboard objectives remove mg.mpo
 scoreboard objectives remove mg.mpz
 scoreboard objectives remove mg.mpv
 scoreboard objectives remove mg.mid
+bossbar remove mg:party
 scoreboard objectives remove mg.mit
 scoreboard objectives remove mg.mip
 kill @e[type=minecraft:armor_stand,tag=mg.mppawn]

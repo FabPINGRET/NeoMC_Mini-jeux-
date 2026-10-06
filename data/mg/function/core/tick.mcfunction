@@ -11,6 +11,8 @@ scoreboard players enable @a mg.bb
 scoreboard players enable @a mg.bw
 scoreboard players enable @a mg.pl
 scoreboard players enable @a mg.dice
+execute as @a[scores={mg.dice=5..9}] run function mg:party/menu_cmd
+execute as @a[scores={mg.dice=3}] unless score $game mg.st matches 59 run function mg:party/menu_nomap
 
 # Nouveaux joueurs (ou ré-init après setup)
 execute if score $setup mg.st matches 1 as @a[tag=!mg.init] run function mg:core/join

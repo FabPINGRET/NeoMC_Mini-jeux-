@@ -1,0 +1,3 @@
+tellraw @s [{"text":"\n🎒 TON SAC","color":"yellow","bold":true}]
+tellraw @s [{"text":"★ Étoiles : ","color":"yellow"},{"score":{"name":"@s","objective":"mg.mpk"},"color":"white"},{"text":"    ● Pièces : ","color":"gold"},{"score":{"name":"@s","objective":"mg.mpm"},"color":"white"}]
+tellraw @s [{"text":"🎲🎲 Dés doubles : ","color":"aqua"},{"score":{"name":"@s","objective":"mg.mid"},"color":"white"},{"text":"    🎲🎲🎲 Dés triples : ","color":"light_purple"},{"score":{"name":"@s","objective":"mg.mit"},"color":"white"},{"text":"    🔀 Tuyaux : ","color":"yellow"},{"score":{"name":"@s","objective":"mg.mip"},"color":"white"}]
