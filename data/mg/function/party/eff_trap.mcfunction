@@ -4,4 +4,4 @@ execute at @e[type=minecraft:armor_stand,tag=mg.mpfocus,limit=1] run particle mi
 execute store result score $ev mg.st run random value 1..4
 execute if score $ev mg.st matches 1 if score @s mg.mpk matches 1.. run return run function mg:party/trap_star
 scoreboard players operation @s mg.mpm /= #2 mg.st
-tellraw @a[tag=mg.mpp] [{"text":"☠ PIÈGE ! ","color":"dark_red","bold":true},{"selector":"@s","color":"yellow"},{"text":" perd la moitié de ses pièces.","color":"gray"}]
+tellraw @a[tag=mg.mpp] [{"text":"★ ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" : ☠ piège, ","color":"gray"},{"text":"moitié des pièces perdue","color":"red"}]
