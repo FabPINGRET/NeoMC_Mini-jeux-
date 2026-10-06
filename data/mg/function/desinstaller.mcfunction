@@ -82,6 +82,7 @@ data remove storage mg:party built
 data remove storage mg:plot owner
 kill @e[type=minecraft:text_display,tag=mg.pdisp]
 tag @a remove mg.inplot
+tag @a remove mg.visit
 tag @a remove mg.plabel
 team remove mg_red
 team remove mg_blue

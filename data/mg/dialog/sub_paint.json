@@ -1,0 +1,92 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "▓ Paintball",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Peins le terrain : choisis la taille.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "▓ Paintball (Splatoon)",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 36"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▓ Paintball : Mini-terrain",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Paintball 31×41, parties de 3 minutes",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 54"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▓ Paintball : Grand terrain",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Paintball 81×101, grosse bataille de 6 minutes",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 55"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au menu",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.menu"
+      }
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "⚔ PvP : JOUEURS CONTRE JOUEURS",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Duels, équipes, tir… choisis ton mode de combat. Tous les joueurs (sauf spectateurs) sont téléportés !",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "⚔ Arène PvP ▸",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Arène PvP : choisis la carte et le mode (classes ou non).",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 23"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "➶ One in the Chamber ▸",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "3 vies, une flèche : choisis la carte.",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 24"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚑ Bedwars",
+          "color": "light_purple"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 4"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☁ Sheep War : cartes ▸",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 8"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚡ Quakecraft : cartes ▸",
+          "color": "aqua"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 10"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au menu",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.menu"
+      }
+    }
+  ],
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  }
+}

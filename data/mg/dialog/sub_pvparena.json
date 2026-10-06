@@ -1,0 +1,176 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "⚔ Arène PvP",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Arène PvP : choisis la carte et le mode (classes ou non).",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "⚔ Arène PvP",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 3"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP : classes",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 13"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP : Poussière",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Arène PvP sur la carte Poussière (style Dust)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 44"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP classes : Poussière",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "PvP avec classes sur la carte Poussière (style Dust)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 45"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP : Mirage",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Arène PvP sur la carte Mirage (style Mirage)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 47"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP classes : Mirage",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "PvP avec classes sur la carte Mirage (style Mirage)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 48"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP : Nuketown",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Arène PvP sur la carte Nuketown (style Nuketown)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 50"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP classes : Nuketown",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "PvP avec classes sur la carte Nuketown (style Nuketown)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 51"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au PvP",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 14"
+      }
+    }
+  ]
+}

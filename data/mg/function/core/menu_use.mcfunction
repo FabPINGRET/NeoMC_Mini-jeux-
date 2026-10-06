@@ -2,12 +2,12 @@
 scoreboard players reset @s mg.cs
 scoreboard players reset @s mg.menu
 
+# La canne a pu être « consommée » par le clic (ou manquer) → on la (re)donne, admins comme joueurs (idempotent)
+function mg:core/give_menu
+
 # Réservé aux admins
 execute unless entity @s[tag=mg.admin] run function mg:vote/open
 execute unless entity @s[tag=mg.admin] run return 0
-
-# L'objet a pu être « consommé » par le clic → on le redonne (idempotent)
-function mg:core/give_menu
 
 # Plan A : fenêtre (dialog). Plan B : menu texte cliquable si la fenêtre n'a pas pu s'ouvrir
 scoreboard players set $dlg mg.st 0
