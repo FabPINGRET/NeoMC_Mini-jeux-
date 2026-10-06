@@ -1,1 +1,1 @@
-attribute @e[tag=mg.tent] minecraft:max_health base set 30
+execute as @e[tag=mg.tent] run attribute @s minecraft:max_health base set 30

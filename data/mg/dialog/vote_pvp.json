@@ -1,0 +1,152 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "⚔ VOTE : QUEL PVP ?",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Vote pour un mode PvP. Un seul vote par joueur, modifiable.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "⚔ Arène PvP",
+          "color": "yellow"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Voter pour ce jeu (tu peux changer ton vote à tout moment)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 3"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP classes",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Voter pour ce jeu (tu peux changer ton vote à tout moment)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 4"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚑ Bedwars",
+          "color": "light_purple"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Voter pour ce jeu (tu peux changer ton vote à tout moment)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 5"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☁ Sheep War",
+          "color": "white"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Voter pour ce jeu (tu peux changer ton vote à tout moment)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 6"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚡ Quakecraft",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Voter pour ce jeu (tu peux changer ton vote à tout moment)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 15"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "➶ One in the Chamber",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Voter pour ce jeu (tu peux changer ton vote à tout moment)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 17"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au vote",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 97"
+      }
+    }
+  ],
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  }
+}

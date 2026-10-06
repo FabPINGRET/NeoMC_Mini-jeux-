@@ -23,6 +23,24 @@
     {
       "label": [
         {
+          "text": "⚔ PvP ▸",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Arène PvP, PvP classes, Bedwars, Sheep War, Quakecraft, One in the Chamber",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 90"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "❄ Spleef",
           "color": "aqua"
         }
@@ -59,79 +77,7 @@
     {
       "label": [
         {
-          "text": "⚔ Arène PvP",
-          "color": "yellow"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Voter pour ce jeu (tu peux changer ton vote à tout moment)",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.vote set 3"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "⚔ PvP classes",
-          "color": "gold"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Voter pour ce jeu (tu peux changer ton vote à tout moment)",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.vote set 4"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "⚑ Bedwars",
-          "color": "light_purple"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Voter pour ce jeu (tu peux changer ton vote à tout moment)",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.vote set 5"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "☁ Sheep War",
-          "color": "white"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Voter pour ce jeu (tu peux changer ton vote à tout moment)",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.vote set 6"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "☠ Mob Arena",
+          "text": "☠ PvE : Mob Arena",
           "color": "dark_green"
         }
       ],
@@ -275,24 +221,6 @@
     {
       "label": [
         {
-          "text": "⚡ Quakecraft",
-          "color": "aqua"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Voter pour ce jeu (tu peux changer ton vote à tout moment)",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.vote set 15"
-      }
-    },
-    {
-      "label": [
-        {
           "text": "▓ Paintball",
           "color": "gold"
         }
@@ -306,24 +234,6 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 16"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "➶ One in the Chamber",
-          "color": "gold"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Voter pour ce jeu (tu peux changer ton vote à tout moment)",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.vote set 17"
       }
     },
     {
@@ -450,6 +360,24 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.pl set 2"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "◎ Visiter les plots",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Liste des plots des autres joueurs : visite en spectateur",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.pl set 3"
       }
     }
   ],

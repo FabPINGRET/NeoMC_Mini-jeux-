@@ -1,0 +1,92 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "➶ One in the Chamber",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "3 vies, une flèche : choisis la carte.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "➶ One in the Chamber",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 26"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "➶ OITC : Château",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "One in the Chamber 41×41 : donjon à étage, quatre tours à échelles",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 52"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "➶ OITC : Grande forêt",
+          "color": "dark_green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "One in the Chamber 71×71 : collines, arbres, ruines et tours de guet",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 53"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au PvP",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 14"
+      }
+    }
+  ]
+}

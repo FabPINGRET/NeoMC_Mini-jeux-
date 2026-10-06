@@ -1,0 +1,68 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "✊ Sumo",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Éjecte les autres de la plateforme : choisis l'arène.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "✊ Sumo",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 22"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✊ Sumo : arène complexe",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 24"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au menu",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.menu"
+      }
+    }
+  ]
+}

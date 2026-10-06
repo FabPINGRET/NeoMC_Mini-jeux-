@@ -47,6 +47,11 @@ execute if score $setup mg.st matches 1 run function mg:parkour/tick
 execute as @a[scores={mg.pl=1..}] run function mg:plot/cmd
 execute if score $setup mg.st matches 1 run function mg:plot/tick
 
+# Canne ≡ MENU : refilée aux admins dès que leur inventaire est libre (toutes les 2 s ; hors partie, plot créatif, parkour, spectateur, créatif)
+scoreboard players add $gmt mg.t 1
+execute if score $gmt mg.t matches 40.. as @a[tag=mg.admin,tag=mg.init,tag=!mg.play,tag=!mg.out,tag=!mg.inplot,tag=!mg.pkr,tag=!mg.visit,gamemode=!spectator,gamemode=!creative] run function mg:core/give_menu_safe
+execute if score $gmt mg.t matches 40.. run scoreboard players set $gmt mg.t 0
+
 # Machine à états
 execute if score $state mg.st matches 1 run function mg:core/countdown
 execute if score $state mg.st matches 2 run function mg:core/game_tick
@@ -55,5 +60,5 @@ execute if score $state mg.st matches 3 run function mg:core/ending
 # Hors partie : nettoyage de sécurité + rattrapage du vide
 execute if score $state mg.st matches 0 run tag @a remove mg.play
 execute if score $state mg.st matches 0 run tag @a remove mg.out
-execute if score $state mg.st matches 0 as @a[gamemode=spectator] run function mg:core/back_to_lobby
+execute if score $state mg.st matches 0 as @a[gamemode=spectator,tag=!mg.visit] run function mg:core/back_to_lobby
 execute as @a[tag=mg.init,tag=!mg.play,tag=!mg.out] at @s run function mg:core/void_catch

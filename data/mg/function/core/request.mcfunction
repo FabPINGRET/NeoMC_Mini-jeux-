@@ -71,6 +71,7 @@ execute store result score $n0 mg.st if entity @a[tag=mg.play]
 execute if score $n0 mg.st matches 0 run tellraw @s [{"text":"Aucun participant (tout le monde est en mode spectateur).","color":"red"}]
 execute if score $n0 mg.st matches 0 run return run scoreboard players set $game mg.st 0
 execute as @a[tag=mg.play,tag=mg.inplot] run function mg:plot/leave_game
+execute as @a[tag=mg.play,tag=mg.visit] run function mg:plot/leave_game
 
 # État : compte à rebours de 10 s
 scoreboard players set $state mg.st 1

@@ -1,0 +1,68 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "❍ Splegg",
+    "color": "yellow",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Spleef aux œufs : choisis la version.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "❍ Splegg",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 20"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "❍ Splegg XXL",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 21"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au menu",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.menu"
+      }
+    }
+  ]
+}

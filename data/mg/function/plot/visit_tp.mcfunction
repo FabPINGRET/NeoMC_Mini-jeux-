@@ -1,0 +1,16 @@
+# Téléporte @s au-dessus du plot $v (spectateur : traverse les murs, peut voler partout)
+execute if score $v mg.t matches 1 run tp @s 89.5 72 37.5 0 40
+execute if score $v mg.t matches 2 run tp @s 68.5 72 68.5 0 40
+execute if score $v mg.t matches 3 run tp @s 37.5 72 89.5 0 40
+execute if score $v mg.t matches 4 run tp @s 0.5 72 96.5 0 40
+execute if score $v mg.t matches 5 run tp @s -37.5 72 89.5 0 40
+execute if score $v mg.t matches 6 run tp @s -68.5 72 68.5 0 40
+execute if score $v mg.t matches 7 run tp @s -89.5 72 37.5 0 40
+execute if score $v mg.t matches 8 run tp @s -96.5 72 0.5 0 40
+execute if score $v mg.t matches 9 run tp @s -89.5 72 -37.5 0 40
+execute if score $v mg.t matches 10 run tp @s -68.5 72 -68.5 0 40
+execute if score $v mg.t matches 11 run tp @s -37.5 72 -89.5 0 40
+execute if score $v mg.t matches 12 run tp @s 0.5 72 -96.5 0 40
+execute if score $v mg.t matches 13 run tp @s 37.5 72 -89.5 0 40
+execute if score $v mg.t matches 14 run tp @s 68.5 72 -68.5 0 40
+execute if score $v mg.t matches 15 run tp @s 89.5 72 -37.5 0 40

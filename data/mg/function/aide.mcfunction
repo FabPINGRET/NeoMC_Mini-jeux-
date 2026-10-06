@@ -7,7 +7,7 @@ tellraw @s [{"text":"• Devenir admin (OP) : ","color":"gray"},{"text":"/functi
 tellraw @s [{"text":"• Spectateur ON/OFF (tous) : ","color":"gray"},{"text":"/trigger mg.opt set 1","color":"yellow"}]
 tellraw @s [{"text":"• Classement ON/OFF (tous) : ","color":"gray"},{"text":"/trigger mg.opt set 2","color":"yellow"}]
 tellraw @s [{"text":"• Mini Party, plateau + mini-jeux (admins) : ","color":"gray"},{"text":"/trigger mg.go set 59","color":"yellow"},{"text":" (5 tours) ou ","color":"gray"},{"text":"60","color":"yellow"},{"text":" (10 tours) ; dé : ","color":"gray"},{"text":"/trigger mg.dice","color":"yellow"}]
-tellraw @s [{"text":"• Mon plot de construction (tous) : ","color":"gray"},{"text":"/trigger mg.pl set 1","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.pl set 1"}},{"text":" ; retour au spawn : ","color":"gray"},{"text":"/trigger mg.pl set 2","color":"yellow"}]
+tellraw @s [{"text":"• Mon plot de construction (tous) : ","color":"gray"},{"text":"/trigger mg.pl set 1","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.pl set 1"}},{"text":" ; retour au spawn : ","color":"gray"},{"text":"/trigger mg.pl set 2","color":"yellow"},{"text":" ; visiter les autres plots (spectateur) : ","color":"gray"},{"text":"/trigger mg.pl set 3","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.pl set 3"}}]
 tellraw @s [{"text":"• Arrêter la partie (admins) : ","color":"gray"},{"text":"/trigger mg.opt set 9","color":"yellow"}]
 tellraw @s [{"text":"• Boutique Bedwars : ","color":"gray"},{"text":"parle au VILLAGEOIS de ton île","color":"yellow"}]
 tellraw @s [{"text":"• (OP) Installer / reconstruire : ","color":"gray"},{"text":"/function mg:setup","color":"yellow"}]

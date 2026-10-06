@@ -2,6 +2,7 @@
 tag @s remove mg.play
 tag @s remove mg.out
 tag @s remove mg.win
+tag @s remove mg.visit
 tag @s remove mg.rsp
 team leave @s
 gamemode adventure @s
