@@ -1,4 +1,8 @@
 # Départ du parcours (@s = joueur sur le socle)
+execute if entity @s[tag=mg.elyf] run function mg:elytra/free_stop
+# Pas de baguette feu d'artifice ni de charges de vent pendant la course (rendue à la fin)
+execute store result score @s mg.ehw run clear @s minecraft:blaze_rod
+clear @s minecraft:wind_charge
 tag @s add mg.ely
 scoreboard players set @s mg.est 0
 scoreboard players set @s mg.ec 0

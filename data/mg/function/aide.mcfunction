@@ -24,3 +24,4 @@ tellraw @s [{"text":"• PvP classes : ","color":"gray"},{"text":"/trigger mg.cl
 tellraw @s [{"text":"• Mes statistiques (tous) : ","color":"gray"},{"text":"/trigger mg.opt set 25","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.opt set 25"}}]
 tellraw @s [{"text":"• Parcours d'élytra (tous) : socle bleu à l'est de la place du spawn, 8 anneaux chronométrés","color":"gray"}]
 tellraw @s [{"text":"• Hall des scores (tous) : au sud-ouest de la place ; le tableau à droite alterne classement général et classement par jeu","color":"gray"}]
+tellraw @s [{"text":"• Élytres libres (tous) : socle blanc au nord du socle du parcours ; remonte dessus pour les rendre","color":"gray"}]

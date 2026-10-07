@@ -48,6 +48,7 @@ scoreboard objectives add mg.et dummy
 scoreboard objectives add mg.eg dummy
 scoreboard objectives add mg.est dummy
 scoreboard objectives add mg.erb dummy
+scoreboard objectives add mg.ehw dummy
 scoreboard objectives add mg.ok dummy [{"text":"➶ KILLS — 10 pour gagner","color":"gold"}]
 scoreboard objectives add mg.qk dummy [{"text":"⚡ QUAKECRAFT ⚡","color":"aqua"}]
 scoreboard objectives add mg.ppc dummy

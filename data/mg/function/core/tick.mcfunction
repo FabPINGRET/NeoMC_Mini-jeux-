@@ -46,8 +46,14 @@ scoreboard players remove @a[scores={mg.fd=1..}] mg.fd 1
 # Parcours d'élytra : socle de départ, joueurs en vol, objets du parcours jamais conservés
 execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.ely,gamemode=adventure,x=16,y=63,z=-9,dx=0.99,dy=2.5,dz=0.99] run function mg:elytra/start
 execute as @a[tag=mg.ely] at @s run function mg:elytra/player
+# Élytres libres : socle (une fois par passage), joueurs en vol, objets jamais conservés hors du vol libre
+execute as @a[tag=mg.efp] unless entity @s[x=16,y=63,z=-21,dx=0.99,dy=2.5,dz=0.99] run tag @s remove mg.efp
+execute if score $setup mg.st matches 1 as @a[tag=!mg.efp,tag=!mg.play,tag=!mg.surv,tag=!mg.ely,gamemode=adventure,x=16,y=63,z=-21,dx=0.99,dy=2.5,dz=0.99] run function mg:elytra/free_pad
+execute as @a[tag=mg.elyf] at @s run function mg:elytra/free_tick
+execute if score $lan mg.t matches 20 run clear @a[tag=!mg.elyf] minecraft:elytra[minecraft:custom_data~{mg_elyf:1b}]
+execute if score $lan mg.t matches 20 run clear @a[tag=!mg.elyf] minecraft:firework_rocket[minecraft:custom_data~{mg_elyf:1b}]
 # Tableau à droite tournant (lobby) + reconstruction des ajouts du spawn s'ils ont été effacés
-execute if score $setup mg.st matches 1 if score $state mg.st matches 0 if score $sb mg.st matches 1 unless score $vn mg.st matches 1.. run function mg:hall/board_tick
+execute if score $setup mg.st matches 1 if score $state mg.st matches 0 if score $sb mg.st matches 1 run function mg:hall/board_tick
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block -16 64 25 minecraft:gold_block run function mg:hall/build
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 24 63 19 minecraft:gold_block run function mg:lobby/food_build
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 16 63 -9 minecraft:sea_lantern run function mg:elytra/build

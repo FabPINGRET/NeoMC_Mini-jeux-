@@ -73,3 +73,11 @@ setblock -42 132 -15 minecraft:sea_lantern
 setblock -48 138 -15 minecraft:sea_lantern
 setblock -42 138 -15 minecraft:sea_lantern
 summon minecraft:text_display -44.5 139.2 -14.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"🏁","color":"white","bold":true}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2f,2f,2f]}}
+
+# Socle « élytres libres »
+fill 14 63 -23 18 63 -19 minecraft:smooth_quartz
+fill 15 63 -22 17 63 -20 minecraft:white_concrete
+setblock 16 63 -21 minecraft:sea_lantern
+summon minecraft:item_display 16.5 66 -20.5 {Tags:["mg.elyd","mg.lspin","mg.lbob"],billboard:"fixed",item:{id:"minecraft:elytra"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.4f,1.4f,1.4f]}}
+summon minecraft:text_display 16.5 67.8 -20.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"🪽 Élytres libres","color":"white","bold":true}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.2f,1.2f,1.2f]}}
+summon minecraft:text_display 16.5 67.3 -20.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"Vol autour du spawn, fusées illimitées — remonte dessus pour les rendre","color":"gray"}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.7f,0.7f,0.7f]}}

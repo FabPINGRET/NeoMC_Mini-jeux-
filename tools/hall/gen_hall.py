@@ -49,7 +49,10 @@ os.makedirs(OUT, exist_ok=True)
 # ---------------------------------------------------------------- objectifs (appelé par core/load)
 W('objectives', ['# Objectifs des classements par jeu (généré par tools/hall/gen_hall.py)'] + [
     f'scoreboard objectives add mg.wg_{k} dummy [{{"text":"{q(l)}","color":"{c}","bold":true}},{{"text":" — victoires","color":"gray","bold":false}}]'
-    for k, l, c, _ in GAMES])
+    for k, l, c, _ in GAMES] + [
+    'scoreboard objectives modify mg.stp displayname [{"text":"▶ Parties jouées","color":"green","bold":true}]',
+    'scoreboard objectives modify mg.stk displayname [{"text":"⚔ Kills","color":"red","bold":true},{"text":" (toutes parties)","color":"gray","bold":false}]',
+    'scoreboard objectives modify mg.wins displayname [{"text":"✦ Victoires","color":"gold","bold":true},{"text":" (tous les jeux)","color":"gray","bold":false}]'])
 W('remove', ['# Désinstallation des classements et du hall'] +
   [f'scoreboard objectives remove mg.wg_{k}' for k, *_ in GAMES] +
   ['kill @e[tag=mg.hall]', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon'])
@@ -86,20 +89,28 @@ W('ely', ['# Record du parcours d\'élytra (@s, temps dans $es / $ecs) → hall'
     'data modify entity @e[type=minecraft:text_display,tag=mg.h_ely,limit=1] text set from storage mg:hall e.ely'])
 
 # ---------------------------------------------------------------- tableau à droite : rotation
-W('rotate', ['# Tableau à droite (lobby) : classement général 10 s, puis un jeu 6 s',
-    'execute if score $rph mg.st matches 1 run return run function mg:hall/rot_game',
-    'scoreboard players set $rph mg.st 1',
-    'scoreboard players set $hrt mg.st 200',
-    'scoreboard objectives setdisplay sidebar mg.wins'])
-W('rot_game', ['scoreboard players set $rph mg.st 0', 'scoreboard players set $hrt mg.st 120',
-    'scoreboard players set $rtry mg.st 0', 'function mg:hall/rot_next'])
-rn = ['# Jeu suivant ayant au moins un vainqueur (sinon classement général)',
+# Lobby, hors partie : un tableau toutes les 8 s — victoires, parties jouées, kills, puis chaque
+# jeu déjà gagné. Pendant des votes, le tableau des votes revient un affichage sur deux.
+BOARDS = [('mg.wins', None), ('mg.stp', None), ('mg.stk', None)] + [(f'mg.wg_{k}', None) for k, *_ in GAMES]
+W('rotate', ['# Tableau à droite : affichage suivant',
+    'execute if entity @a[scores={mg.wins=1..}] run scoreboard players set #any mg.wins 1',
+    'execute if entity @a[scores={mg.stp=1..}] run scoreboard players set #any mg.stp 1',
+    'execute if entity @a[scores={mg.stk=1..}] run scoreboard players set #any mg.stk 1',
+    'execute if score $vn mg.st matches 1.. unless score $rph mg.st matches 1 run return run function mg:hall/rot_votes',
+    'scoreboard players set $rph mg.st 0',
+    'scoreboard players set $hrt mg.st 160',
+    'scoreboard players set $rtry mg.st 0',
+    'function mg:hall/rot_next'])
+W('rot_votes', ['scoreboard players set $rph mg.st 1', 'scoreboard players set $hrt mg.st 120',
+    'scoreboard objectives setdisplay sidebar mg.vb'])
+W('rot_game', ['function mg:hall/rotate'])
+rn = ['# Tableau suivant ayant au moins un score (sinon victoires)',
       'scoreboard players add $rot mg.st 1',
-      f'execute unless score $rot mg.st matches 1..{len(GAMES)} run scoreboard players set $rot mg.st 1',
+      f'execute unless score $rot mg.st matches 1..{len(BOARDS)} run scoreboard players set $rot mg.st 1',
       'scoreboard players add $rtry mg.st 1',
-      f'execute if score $rtry mg.st matches {len(GAMES)+1}.. run return run scoreboard objectives setdisplay sidebar mg.wins']
-for i, (k, *_ ) in enumerate(GAMES, 1):
-    rn.append(f'execute if score $rot mg.st matches {i} if score #any mg.wg_{k} matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_{k}')
+      f'execute if score $rtry mg.st matches {len(BOARDS)+1}.. run return run scoreboard objectives setdisplay sidebar mg.wins']
+for i, (obj, _) in enumerate(BOARDS, 1):
+    rn.append(f'execute if score $rot mg.st matches {i} if score #any {obj} matches 1.. run return run scoreboard objectives setdisplay sidebar {obj}')
 rn.append('function mg:hall/rot_next')
 W('rot_next', rn)
 
