@@ -143,6 +143,7 @@ execute if score $setup mg.st matches 1 run function mg:core/rules
 execute if score $setup mg.st matches 1 unless data storage mg:kart built run schedule function mg:kart/build 5s
 execute if score $setup mg.st matches 1 if data storage mg:kart built unless data storage mg:kart built2 run schedule function mg:kart/t2/build 8s
 execute if score $setup mg.st matches 1 if data storage mg:kart built2 unless data storage mg:kart built3 run schedule function mg:kart/t3/build 10s
+execute if score $setup mg.st matches 1 unless data storage mg:dropadv built run schedule function mg:dropadv/build 40s
 
 # Zones chargées (après une mise à jour du pack, les nouvelles zones sont prises en compte)
 execute if score $setup mg.st matches 1 run function mg:core/forceloads

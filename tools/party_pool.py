@@ -15,7 +15,7 @@ M = 60 * 20   # une minute
 POOL = [
     (1, 'SPLEEF', 'aqua', 6 * M), (2, 'TNT RUN', 'red', 6 * M), (20, 'SPLEGG', 'yellow', 6 * M), (21, 'SPLEGG XXL', 'gold', 7 * M),
     (22, 'SUMO', 'gold', 6 * M), (24, 'SUMO COMPLEXE', 'gold', 6 * M), (23, 'THE DROPPER', 'aqua', 6 * M),
-    (25, 'DROPPER : TUBE COMMUN', 'aqua', 6 * M), (27, 'TNT TAG', 'red', 6 * M), (28, 'BLOCK PARTY', 'light_purple', 6 * M),
+    (25, 'DROPPER : TUBE COMMUN', 'aqua', 6 * M), (64, 'DROPPER : AVENTURE', 'aqua', 8 * M), (65, 'DROPPER : DÉFI', 'aqua', 6 * M), (27, 'TNT TAG', 'red', 6 * M), (28, 'BLOCK PARTY', 'light_purple', 6 * M),
     (29, "PLUIE D'ENCLUMES", 'dark_gray', 6 * M), (42, 'ENCLUMES + SOL TROUÉ', 'red', 6 * M),
     (3, 'ARÈNE PVP', 'yellow', 5 * M), (13, 'PVP : CLASSES', 'gold', 5 * M), (44, 'PVP : POUSSIÈRE', 'gold', 5 * M),
     (45, 'PVP : POUSSIÈRE (CLASSES)', 'gold', 5 * M), (47, 'PVP : MIRAGE', 'aqua', 5 * M), (48, 'PVP : MIRAGE (CLASSES)', 'aqua', 5 * M),
