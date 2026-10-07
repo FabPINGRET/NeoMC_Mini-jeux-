@@ -30,7 +30,11 @@ wr(os.path.join(DATA, 'mg/tags/block/kart_pass.json'), json.dumps({"values": [
     "minecraft:fern", "#minecraft:small_flowers", "minecraft:light", "minecraft:snow", "#minecraft:wool_carpets"]}, indent=2) + '\n')
 wr(os.path.join(DATA, 'mg/tags/block/kart_road.json'), json.dumps({"values": [
     "minecraft:gray_concrete", "minecraft:white_concrete", "minecraft:red_concrete", "minecraft:black_concrete",
-    "minecraft:orange_glazed_terracotta", "minecraft:lime_concrete", "minecraft:stone_bricks"]}, indent=2) + '\n')
+    "minecraft:orange_glazed_terracotta", "minecraft:lime_concrete", "minecraft:stone_bricks",
+    "minecraft:smooth_sandstone", "minecraft:light_blue_concrete", "minecraft:packed_mud", "minecraft:yellow_concrete",
+    "minecraft:green_concrete", "minecraft:spruce_planks", "minecraft:smooth_red_sandstone", "minecraft:orange_concrete",
+    "minecraft:polished_blackstone_bricks", "minecraft:red_nether_bricks", "minecraft:polished_blackstone",
+    "minecraft:gilded_blackstone"]}, indent=2) + '\n')
 
 # ------------------------------------------------------------------ modèle du kart
 COLORS = ['red', 'blue', 'lime', 'yellow', 'purple', 'orange', 'cyan', 'pink']
@@ -51,6 +55,9 @@ PASSENGERS = ','.join(part(*p) for p in PARTS)
 
 # ------------------------------------------------------------------ préparation, départ, fin
 fn('prepare', '''# Kart : préparation pendant le compte à rebours (zone chargée, pilotes sur la grille, karts dès que la zone est prête)
+execute unless score $ktr mg.st matches 1..2 run scoreboard players set $ktr mg.st 1
+execute if score $ktr mg.st matches 2 unless data storage mg:kart built2 run tellraw @a [{"text":"⚠ Le Royaume Koopa est encore en construction : course sur le Circuit Champignon.","color":"gold"}]
+execute if score $ktr mg.st matches 2 unless data storage mg:kart built2 run scoreboard players set $ktr mg.st 1
 function mg:kart/const
 function mg:kart/fl_add
 function mg:kart/mm_base
@@ -68,9 +75,6 @@ scoreboard players set #k12 mg.st 12
 scoreboard players set #k65 mg.st 65
 scoreboard players set #k120 mg.st 120
 scoreboard players set #kkmh mg.st 108
-scoreboard players set $px mg.st 0
-scoreboard players set $py mg.st 110
-scoreboard players set $pz mg.st 16500
 scoreboard players set $ktime mg.st 0
 scoreboard players set $kfo mg.st 0
 scoreboard players set $kend mg.st 0
@@ -79,6 +83,7 @@ scoreboard players set $gi mg.st 0
 kill @e[tag=mg.ib]
 kill @e[tag=mg.kpart]
 kill @e[tag=mg.kcam]
+kill @e[tag=mg.khz]
 gamemode adventure @a[tag=mg.play]
 clear @a[tag=mg.play]
 tag @a remove mg.kfin
@@ -115,6 +120,7 @@ execute unless score $state mg.st matches 1..2 run return 0
 execute unless function mg:kart/loaded_all run return run schedule function mg:kart/place_all 10t
 function mg:kart/gate_on
 function mg:kart/boxes
+function mg:kart/hazards
 execute as @a[tag=mg.play] at @s run function mg:kart/kart_new
 execute as @a[tag=mg.play] run function mg:kart/grid_face
 execute as @a[tag=mg.play] run function mg:kart/place_seat
@@ -200,6 +206,7 @@ fn('cleanup', '''# Fin de course (appelé par core/return_lobby)
 kill @e[tag=mg.kpart]
 kill @e[tag=mg.kcam]
 kill @e[type=minecraft:item_display,tag=mg.kbox]
+kill @e[tag=mg.khz]
 function mg:kart/fl_remove
 ''')
 
@@ -306,6 +313,7 @@ scoreboard players set $kbp mg.st 0
 execute if block ~ ~-0.5 ~ minecraft:orange_glazed_terracotta run scoreboard players set $kbp mg.st 1
 scoreboard players set $kwa mg.st 0
 execute if block ~ ~0.3 ~ minecraft:water run scoreboard players set $kwa mg.st 1
+execute if block ~ ~-0.5 ~ minecraft:lava run scoreboard players set $kwa mg.st 1
 execute store result score $kyy mg.st run data get entity @s Pos[1] 100
 execute store result score $kyaw mg.st run data get entity @s Rotation[0] 10
 ''')
@@ -405,6 +413,7 @@ fn('move', f'''# @s = kart : remis sur la route s'il s'y est enfoncé, nez tourn
 execute at @s unless block ~ ~ ~ #mg:kart_pass align y run tp @s ~ ~1 ~
 $execute at @s run tp @s ~ ~ ~ ~$(t) 0
 execute at @s on passengers unless entity @s[type=minecraft:player] run rotate @s ~ 0
+$execute if score $kg mg.st matches 1 at @s rotated $(h) 0 positioned ^ ^0.5 ^$(c) unless block ~ ~ ~ #mg:kart_pass if block ~ ~1 ~ #mg:kart_pass at @s if block ~ ~1.5 ~ #mg:kart_pass run tp @s ~ ~1 ~
 $execute at @s rotated $(h) 0 positioned ^ ^0.5 ^$(c) unless block ~ ~ ~ #mg:kart_pass run return run function mg:kart/bump {{v:$(v),h:$(h)}}
 $execute at @s rotated $(h) 0 run tp @s ^ ^$(v) ^$(d)
 {CAM}
@@ -737,6 +746,27 @@ execute as @a[tag=mg.play] if score @s mg.krk = $kr0 mg.st run tellraw @a[tag=!m
 scoreboard players add $kr0 mg.st 1
 function mg:kart/end_line
 ''')
+# ------------------------------------------------------------------ aiguillage vers le circuit ($ktr : 1 = Champignon, 2 = Royaume Koopa)
+for name in ('cp_check', 'cp_tp', 'bill_step', 'grid_tp', 'gate_on', 'gate_off', 'boxes', 'fl_add', 'fl_remove', 'mm_base', 'mm_show',
+             'mm_init', 'const', 'hazards', 'track_tick'):
+    fn(name, f"""# Aiguillage : table du circuit en cours (générée dans t1/ ou t2/)
+execute if score $ktr mg.st matches 2 run function mg:kart/t2/{name}
+execute unless score $ktr mg.st matches 2 run function mg:kart/t1/{name}
+""")
+fn('loaded_all', """execute if score $ktr mg.st matches 2 run return run function mg:kart/t2/loaded_all
+return run function mg:kart/t1/loaded_all
+""")
+fn('build', """# (OP) Construit le Circuit Champignon puis, s'il n'existe pas encore, le Royaume Koopa
+function mg:kart/t1/build
+""")
+fn('build_koopa', """# (OP) Reconstruit le Royaume Koopa seul
+function mg:kart/t2/build
+""")
+fn('step_down', """# @s = kart au-dessus d'une marche descendante : posé sur la marche du dessous
+tp @s ~ ~-1 ~
+execute at @s run function mg:kart/probe
+""")
+
 # objets Mario Kart (v3) : redéfinit item_roll, item_give, use_item, hit, speed, drive, tick, every4, shell_tick, hud
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'items_part.py'), encoding='utf-8').read())
 

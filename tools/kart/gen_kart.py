@@ -5,7 +5,7 @@
 """
 import math, os, random, sys, zlib, struct
 
-OUT = os.path.join(sys.argv[1], 'function', 'kart')
+OUT = os.path.join(sys.argv[1], 'function', 'kart', 't1')
 os.makedirs(OUT, exist_ok=True)
 ZC = 16500                  # centre du circuit (x 0, z 16500)
 HX, HZ = 140, 110           # demi-taille de la carte
@@ -376,9 +376,11 @@ for (x, z, yw) in CPS:
     fixed.append((x, z, yw))
 CPS = fixed
 
+import re
+T1 = re.compile(r'mg:kart/(build_wait|build_\d+|build|loaded_all|fl_add|fl_remove)\b')
 def write(name, lines):
     with open(os.path.join(OUT, name + '.mcfunction'), 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(lines) + '\n')
+        f.write(T1.sub(r'mg:kart/t1/\1', '\n'.join(lines)) + '\n')
 
 # passage d'un point (le joueur doit être à moins de 9 blocs du point attendu)
 write('cp_check', [f'# Point de passage attendu (mg.kcp) atteint ? ({K} points par tour)'] +
@@ -438,6 +440,7 @@ parts.append(['# Circuit : murs, château, départ'] + walls + castle + gantry)
 for i in range(0, len(deco), CH):
     parts.append(['# Circuit : décor'] + deco[i:i + CH])
 parts.append(['# Circuit : fin', 'function mg:kart/fl_remove', 'data modify storage mg:kart built set value 1b',
+              'execute unless data storage mg:kart built2 run schedule function mg:kart/t2/build 3s',
               'tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Circuit Champignon construit.","color":"green"}]'])
 write('build', ['# (OP) Construit le Circuit Champignon : zone chargée, puis construction dès que tous ses chunks sont prêts',
                 'function mg:kart/fl_add', 'scoreboard players set $kbw mg.st 0', 'schedule function mg:kart/build_wait 20t'])
@@ -485,8 +488,11 @@ write('mm_show', ['# Minimap : affiche les 15 lignes dans le tableau de droite (
       [f'$scoreboard players display name m{r:02d} mg.kmap $(l{r})' for r in range(MMR)])
 write('mm_init', ['# Minimap : lignes du tableau (ordre de haut en bas)'] + [f'scoreboard players set m{r:02d} mg.kmap {MMR - r}' for r in range(MMR)])
 
+write('hazards', ['# Circuit Champignon : pas de danger'])
+write('track_tick', ['# Circuit Champignon : pas de danger'])
 with open(os.path.join(OUT, 'const.mcfunction'), 'w', encoding='utf-8', newline='\n') as f:
     f.write(f'# Constantes du circuit (générées)\nscoreboard players set $kK mg.st {K}\nscoreboard players set $kLaps mg.st 3\n'
+            f'scoreboard players set $px mg.st 0\nscoreboard players set $py mg.st 110\nscoreboard players set $pz mg.st {ZC}\n'
             f'scoreboard players set #kmx0 mg.st {HX}\nscoreboard players set #kmz0 mg.st {ZC - HZ}\nscoreboard players set #kmc mg.st {MMC}\n'
             f'scoreboard players set #kmw mg.st {2 * HX + 1}\nscoreboard players set #kmr mg.st {MMR}\nscoreboard players set #kmh mg.st {2 * HZ + 1}\n')
 print('points de passage', K, '| commandes terrain', len(terrain), 'décor', len(deco), '| étapes', len(parts))

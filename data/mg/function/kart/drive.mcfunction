@@ -5,6 +5,7 @@ execute unless entity @e[tag=mg.kk] run function mg:kart/kk
 execute if score @s mg.kv matches 1.. run function mg:kart/view_cmd
 function mg:kart/seat
 execute as @e[type=minecraft:block_display,tag=mg.kk,limit=1] at @s run function mg:kart/probe
+execute if score $kg mg.st matches 0 if score @s mg.kvy matches ..0 as @e[type=minecraft:block_display,tag=mg.kk,limit=1] at @s unless block ~ ~-1.2 ~ #mg:kart_pass run function mg:kart/step_down
 
 scoreboard players set $kf mg.st 0
 scoreboard players set $kb mg.st 0

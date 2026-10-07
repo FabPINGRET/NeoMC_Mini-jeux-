@@ -1,4 +1,4 @@
-# Tirage final : un mini-jeu pas encore joué dans cette Mini Party (quand les 39 sont passés, le cycle recommence)
+# Tirage final : un mini-jeu pas encore joué dans cette Mini Party (quand les 40 sont passés, le cycle recommence)
 scoreboard players set $mgr mg.st 0
 execute unless score $mgp1 mg.st matches 1 run scoreboard players add $mgr mg.st 1
 execute unless score $mgp2 mg.st matches 1 run scoreboard players add $mgr mg.st 1
@@ -39,6 +39,7 @@ execute unless score $mgp36 mg.st matches 1 run scoreboard players add $mgr mg.s
 execute unless score $mgp37 mg.st matches 1 run scoreboard players add $mgr mg.st 1
 execute unless score $mgp38 mg.st matches 1 run scoreboard players add $mgr mg.st 1
 execute unless score $mgp39 mg.st matches 1 run scoreboard players add $mgr mg.st 1
+execute unless score $mgp40 mg.st matches 1 run scoreboard players add $mgr mg.st 1
 execute if score $mgr mg.st matches 0 run function mg:party/pick_reset
 execute store result storage mg:party pk.r int 1 run scoreboard players get $mgr mg.st
 function mg:party/pick_rand with storage mg:party pk
@@ -159,6 +160,9 @@ execute if score $mgq mg.st matches 0 run scoreboard players set $mgq mg.st -1
 execute unless score $mgp39 mg.st matches 1 run scoreboard players remove $mgq mg.st 1
 execute if score $mgq mg.st matches 0 run scoreboard players set $mgk mg.st 39
 execute if score $mgq mg.st matches 0 run scoreboard players set $mgq mg.st -1
+execute unless score $mgp40 mg.st matches 1 run scoreboard players remove $mgq mg.st 1
+execute if score $mgq mg.st matches 0 run scoreboard players set $mgk mg.st 40
+execute if score $mgq mg.st matches 0 run scoreboard players set $mgq mg.st -1
 execute if score $mgk mg.st matches 1 run scoreboard players set $mgp1 mg.st 1
 execute if score $mgk mg.st matches 2 run scoreboard players set $mgp2 mg.st 1
 execute if score $mgk mg.st matches 3 run scoreboard players set $mgp3 mg.st 1
@@ -198,5 +202,6 @@ execute if score $mgk mg.st matches 36 run scoreboard players set $mgp36 mg.st 1
 execute if score $mgk mg.st matches 37 run scoreboard players set $mgp37 mg.st 1
 execute if score $mgk mg.st matches 38 run scoreboard players set $mgp38 mg.st 1
 execute if score $mgk mg.st matches 39 run scoreboard players set $mgp39 mg.st 1
+execute if score $mgk mg.st matches 40 run scoreboard players set $mgp40 mg.st 1
 function mg:party/pick_show
 scoreboard players set $mpgt mg.st 0

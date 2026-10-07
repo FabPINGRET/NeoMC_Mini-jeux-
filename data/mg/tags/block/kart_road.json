@@ -6,6 +6,18 @@
     "minecraft:black_concrete",
     "minecraft:orange_glazed_terracotta",
     "minecraft:lime_concrete",
-    "minecraft:stone_bricks"
+    "minecraft:stone_bricks",
+    "minecraft:smooth_sandstone",
+    "minecraft:light_blue_concrete",
+    "minecraft:packed_mud",
+    "minecraft:yellow_concrete",
+    "minecraft:green_concrete",
+    "minecraft:spruce_planks",
+    "minecraft:smooth_red_sandstone",
+    "minecraft:orange_concrete",
+    "minecraft:polished_blackstone_bricks",
+    "minecraft:red_nether_bricks",
+    "minecraft:polished_blackstone",
+    "minecraft:gilded_blackstone"
   ]
 }

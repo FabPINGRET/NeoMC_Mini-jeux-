@@ -1,4 +1,3 @@
-# Zone du circuit libérée, puis zones permanentes rétablies
-forceload remove -140 16390 -1 16610
-forceload remove 0 16390 140 16610
-function mg:core/forceloads
+# Aiguillage : table du circuit en cours (générée dans t1/ ou t2/)
+execute if score $ktr mg.st matches 2 run function mg:kart/t2/fl_remove
+execute unless score $ktr mg.st matches 2 run function mg:kart/t1/fl_remove

@@ -5,6 +5,7 @@ function mg:lobby/armory_build
 function mg:parkour/build
 function mg:plot/build
 function mg:party/build
+data remove storage mg:kart built2
 function mg:kart/build
 function mg:dust/build
 function mg:mirage/build

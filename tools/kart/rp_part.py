@@ -9,7 +9,9 @@ RGB = {'red': 0xE53935, 'blue': 0x2962FF, 'lime': 0x64DD17, 'yellow': 0xFFD600, 
 SKIN = [('minecraft:yellow_dye', 'banana'), ('minecraft:leather_helmet[minecraft:dyed_color=3381555]', 'shell_green'),
         ('minecraft:leather_helmet[minecraft:dyed_color=13382451]', 'shell_red'),
         ('minecraft:leather_helmet[minecraft:dyed_color=3364351]', 'shell_blue'), ('minecraft:black_concrete', 'bobomb'),
-        ('minecraft:yellow_stained_glass', 'item_box')]
+        ('minecraft:yellow_stained_glass', 'item_box'), ('minecraft:chiseled_stone_bricks', 'thwomp'),
+        ('minecraft:red_mushroom_block', 'piranha'), ('minecraft:brown_mushroom_block', 'goomba'), ('minecraft:cactus', 'pokey'),
+        ('minecraft:coal_block', 'chomp'), ('minecraft:tropical_fish', 'cheep'), ('minecraft:fire_charge', 'podoboo')]
 
 def k3tf(f):
     return 'translation:[%sf,%sf,%sf],%s,scale:[%sf,%sf,%sf]' % (*[round(v * f, 3) for v in K3TR], FLIP, *[round(K3 * f, 3)] * 3)

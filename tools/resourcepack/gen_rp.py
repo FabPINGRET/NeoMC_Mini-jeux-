@@ -28,7 +28,7 @@ PAL = {'.': (0, 0, 0, 0), ' ': (0, 0, 0, 0), 'k': (20, 20, 24, 255), 'w': (250, 
        'y': (255, 222, 40, 255), 'Y': (196, 150, 20, 255), 'o': (255, 150, 30, 255), 'O': (200, 90, 10, 255),
        'r': (226, 40, 40, 255), 'R': (140, 16, 16, 255), 'g': (60, 200, 60, 255), 'G': (20, 120, 30, 255),
        'b': (60, 120, 255, 255), 'B': (20, 50, 170, 255), 'c': (120, 230, 255, 255), 'p': (170, 80, 220, 255), 'P': (90, 30, 140, 255),
-       't': (245, 220, 170, 255), 'n': (110, 70, 30, 255), 's': (255, 255, 255, 140)}
+       't': (245, 220, 170, 255), 'n': (110, 70, 30, 255), 'N': (70, 42, 18, 255), 's': (255, 255, 255, 140)}
 
 def pad(rows):
     rows = [r.ljust(16, '.')[:16] for r in rows]
@@ -138,6 +138,81 @@ wjson(os.path.join(A, 'models', 'item', 'kart.json'), {
     "elements": elements,
     "display": {"gui": {"rotation": [30, 225, 0], "translation": [0, 0, 0], "scale": [0.45, 0.45, 0.45]}}})
 item_def('kart', 'mg:item/kart', tint=-1)
+
+# ------------------------------------------------------------------ dangers du Royaume Koopa (modèles 3D, devant vers +z)
+HZ_TEX = {
+    'thwomp_side': ['dddddddddddddddd', 'dllllllllllllld', 'dlldllllllldlld', 'dllllllllllllld', 'dllllldlllllllld', 'dllllllllllllld',
+                    'dlllllllllldllld', 'dllldllllllllld', 'dllllllllllllld', 'dllllllldllllld', 'dldllllllllllld', 'dllllllllllllld',
+                    'dlllldlllllldld', 'dllllllllllllld', 'dllllllllllllld', 'dddddddddddddddd'],
+    'thwomp_face': ['dddddddddddddddd', 'dllllllllllllld', 'dlkkkllllllkkkld', 'dllkkkllllkkklld', 'dlllwwkllkwwllld', 'dlllwkkllkkwllld',
+                    'dllllllllllllld', 'dllllllllllllld', 'dlkkkkkkkkkkkkld', 'dlkwkwkwkwkwkkld', 'dlkkkkkkkkkkkkld', 'dlkwkwkwkwkwkkld',
+                    'dlkkkkkkkkkkkkld', 'dllllllllllllld', 'dllllllllllllld', 'dddddddddddddddd'],
+    'piranha_head': ['rrrrrrrrrrrrrrrr', 'rrwwrrrrrrrwwrrr', 'rwwwrrrrrrwwwwrr', 'rrwrrrrrrrrwwrrr', 'rrrrrrwwrrrrrrrr', 'rrrrrwwwwrrrrrrr',
+                     'rrrrrrwwrrrrrrwr', 'rwwrrrrrrrrrwwwr', 'wwwwrrrrrrrrrwrr', 'rwwrrrrwwrrrrrrr', 'rrrrrrwwwwrrrrrr', 'rrrrrrrwwrrrrrrr',
+                     'rrwwrrrrrrrrwwrr', 'rwwwwrrrrrrwwwwr', 'rrwwrrrrrrrrwwrr', 'rrrrrrrrrrrrrrrr'],
+    'piranha_mouth': ['rrrrrrrrrrrrrrrr', 'rrrwwwwwwwwwwrrr', 'rrwwwwwwwwwwwwrr', 'rwwkkkkkkkkkkwwr', 'rwkwkwkwkwkwkkwr', 'rwkkkkkkkkkkkkwr',
+                      'rwkkkkRRRRkkkkwr', 'rwkkkRRRRRRkkkwr', 'rwkkkkRRRRkkkkwr', 'rwkkkkkkkkkkkkwr', 'rwkwkwkwkwkwkkwr', 'rwwkkkkkkkkkkwwr',
+                      'rrwwwwwwwwwwwwrr', 'rrrwwwwwwwwwwrrr', 'rrrrrrrrrrrrrrrr', 'rrrrrrrrrrrrrrrr'],
+    'stem': ['gGgGgGgGgGgGgGgG'] * 16,
+    'goomba_head': ['nnnnnnnnnnnnnnnn', 'nnnnNnnnnnnnNnnn', 'nnnnnnnnnnnnnnnn', 'nNnnnnnnnnnNnnnn', 'nnnnnnnnnnnnnnnn', 'nnnnnnnNnnnnnnnn',
+                    'nnnnnnnnnnnnnnNn', 'nnnNnnnnnnnnnnnn', 'nnnnnnnnnnnnnnnn', 'nnnnnnnnnNnnnnnn', 'nnnnnnnnnnnnnnnn', 'nNnnnnnnnnnnnnnn',
+                    'nnnnnnnnnnnNnnnn', 'nnnnnNnnnnnnnnnn', 'nnnnnnnnnnnnnnnn', 'nnnnnnnnnnnnnnnn'],
+    'goomba_face': ['nnnnnnnnnnnnnnnn', 'nnkknnnnnnnnkknn', 'nnnkkknnnnkkknnn', 'nnnnwwkkkkwwnnnn', 'nnnnwkknnkkwnnnn', 'nnnnwkknnkkwnnnn',
+                    'nnnnwwwnnwwwnnnn', 'nnnnnnnnnnnnnnnn', 'ttttttttttttttttt', 'ttttttttttttttttt', 'ttwttttttttttwtt', 'ttwwttttttttwwtt',
+                    'tttttkkkkkkttttt', 'ttttttttttttttttt', 'ttttttttttttttttt', 'ttttttttttttttttt'],
+    'goomba_body': ['tttttttttttttttt'] * 16,
+    'goomba_feet': ['kkkkkkkkkkkkkkkk', 'kNkkkkkkkkkkkNkk'] * 8,
+    'pokey_body': ['yyyyyyyyyyyyyyyy', 'yykyyyyyyyykyyyy', 'yyyyyyykyyyyyyyy', 'yyyyyyyyyyyyyyky', 'ykyyyyyyyyyyyyyy', 'yyyyyykyyyyyyyyy',
+                   'yyyyyyyyyyyykyyy', 'yyykyyyyyyyyyyyy', 'yyyyyyyyykyyyyyy', 'yyyyyyyyyyyyyyyy', 'ykyyyyyyyyyyykyy', 'yyyyyykyyyyyyyyy',
+                   'yyyyyyyyyyyyyyyy', 'yyykyyyyyykyyyyy', 'yyyyyyyyyyyyyyyy', 'yyyyyyyyyyyyyyyy'],
+    'pokey_face': ['yyyyyyyyyyyyyyyy', 'yyyyyyyyyyyyyyyy', 'yyyyyyyyyyyyyyyy', 'yyykkyyyyyykkyyy', 'yyykkyyyyyykkyyy', 'yyykkyyyyyykkyyy',
+                   'yyyyyyyyyyyyyyyy', 'yyyyyyyyyyyyyyyy', 'yyyyyyyyyyyyyyyy', 'yyyyykkkkkkyyyyy', 'yyyykyyyyyykyyyy', 'yyyyyyyyyyyyyyyy',
+                   'yyyyyyyyyyyyyyyy', 'yyyyyyyyyyyyyyyy', 'yyyyyyyyyyyyyyyy', 'yyyyyyyyyyyyyyyy'],
+    'pokey_flower': ['ooooyyyyyyyyoooo'] * 16,
+    'chomp_side': ['kkkkkkkkkkkkkkkk', 'kkkkkkkkkkkkkkkk', 'kkdddkkkkkkkkkkk', 'kkddkkkkkkkkkkkk', 'kkdkkkkkkkkkkkkk', 'kkkkkkkkkkkkkkkk',
+                   'kkkkkkkkkkkkkkkk', 'kkkkkkkkkkkkkkkk', 'kkkkkkkkkkkkkkkk', 'kkkkkkkkkkkkkkkk', 'kkkkkkkkkkkkkkkk', 'kkkkkkkkkkkkkkkk',
+                   'kkkkkkkkkkkkkkkk', 'kkkkkkkkkkkkkkkk', 'kkkkkkkkkkkkkkkk', 'kkkkkkkkkkkkkkkk'],
+    'chomp_face': ['kkkkkkkkkkkkkkkk', 'kkwwwkkkkkkwwwkk', 'kwwwwwkkkkwwwwwk', 'kwwkkwkkkkwkkwwk', 'kwwkkwkkkkwkkwwk', 'kkwwwkkkkkkwwwkk',
+                   'kkkkkkkkkkkkkkkk', 'kwwwwwwwwwwwwwwk', 'kwkwkwkwkwkwkwwk', 'kRRRRRRRRRRRRRRk', 'kRRRrrrrrrrrRRRk', 'kRRRRRRRRRRRRRRk',
+                   'kwkwkwkwkwkwkwwk', 'kwwwwwwwwwwwwwwk', 'kkkkkkkkkkkkkkkk', 'kkkkkkkkkkkkkkkk'],
+}
+for name, rows in HZ_TEX.items():
+    png(os.path.join(A, 'textures', 'item', name + '.png'), pad([r[:16] for r in rows]), PAL)
+SPR2 = {
+    'cheep': ['', '', '    ww', '   rrrrr    rr', '  rrrrrrr  rrr', ' rrwkrrrrrrrrr', ' rrkkrrrrrrrrr', ' rrrrrrrrrrrr', ' wwrrrrrrr rrr',
+              '  wwrrrrr   rr', '   wwwww', '    ww'],
+    'podoboo': ['', '     oooo', '   ooyyyyoo', '  oyyyyyyyyo', '  oyywkyywkyo', ' oyyykkyykkyyo', ' oyyyyyyyyyyyo', ' oyyyyyyyyyyyo', '  oyyyyyyyyyo',
+                '  ooyyyyyyoo', '   oorrrroo', '    rr  rr', '   r  rr  r'],
+}
+for name, rows in SPR2.items():
+    png(os.path.join(A, 'textures', 'item', name + '.png'), pad(rows), PAL)
+    wjson(os.path.join(A, 'models', 'item', name + '.json'), {"parent": "minecraft:item/generated", "textures": {"layer0": f"mg:item/{name}"}})
+    item_def(name, f'mg:item/{name}')
+
+def ebox(fr, to, tex, front=None):
+    faces = {d: {"texture": f"#{front if (front and d == 'south') else tex}", "uv": [0, 0, 16, 16]} for d in ('north', 'south', 'east', 'west', 'up', 'down')}
+    return {"from": fr, "to": to, "faces": faces}
+HZ_MODELS = {
+    'thwomp': ({'s': 'thwomp_side', 'f': 'thwomp_face'},
+               [ebox([0, 0, 0], [16, 16, 16], 's', 'f')] +
+               [ebox([x, 16, z], [x + 3, 19, z + 3], 's') for x in (1, 6.5, 12) for z in (1, 12)] +
+               [ebox([-3, y, 6.5], [0, y + 3, 9.5], 's') for y in (3, 10)] + [ebox([16, y, 6.5], [19, y + 3, 9.5], 's') for y in (3, 10)]),
+    'piranha': ({'h': 'piranha_head', 'm': 'piranha_mouth', 'g': 'stem'},
+                [ebox([2, 5, 2], [14, 16, 14], 'h', 'm'), ebox([3, 4, 13], [13, 14, 15], 'm'), ebox([7, -10, 7], [9, 5, 9], 'g'),
+                 ebox([0, -6, 7], [7, -5, 11], 'g'), ebox([9, -4, 5], [16, -3, 9], 'g')]),
+    'goomba': ({'h': 'goomba_head', 'f': 'goomba_face', 'b': 'goomba_body', 'k': 'goomba_feet'},
+               [ebox([0, 7, 0], [16, 14, 16], 'h'), ebox([2, 3, 2], [14, 8, 14], 'b', 'f'), ebox([1, 14, 1], [15, 16, 15], 'h'),
+                ebox([2, 0, 3], [7, 3, 11], 'k'), ebox([9, 0, 3], [14, 3, 11], 'k')]),
+    'pokey': ({'b': 'pokey_body', 'f': 'pokey_face', 'o': 'pokey_flower'},
+              [ebox([3, 0, 3], [13, 9, 13], 'b'), ebox([3, 9, 3], [13, 18, 13], 'b'), ebox([2, 18, 2], [14, 29, 14], 'b', 'f'),
+               ebox([6, 29, 6], [10, 31, 10], 'o')]),
+    'chomp': ({'s': 'chomp_side', 'f': 'chomp_face'}, [ebox([0, 0, 0], [16, 16, 16], 's', 'f')]),
+}
+for name, (texs, els) in HZ_MODELS.items():
+    wjson(os.path.join(A, 'models', 'item', name + '.json'),
+          {"textures": {**{k: f"mg:item/{v}" for k, v in texs.items()}, "particle": f"mg:item/{list(texs.values())[0]}"}, "elements": els,
+           "display": {"gui": {"rotation": [30, 225, 0], "scale": [0.5, 0.5, 0.5]}}})
+    item_def(name, f'mg:item/{name}')
 
 # ------------------------------------------------------------------ pack.mcmeta, zip
 wjson(os.path.join(OUT, 'pack.mcmeta'), {"pack": {"description": [{"text": "NeoMC Mini-Jeux", "color": "gold"},
