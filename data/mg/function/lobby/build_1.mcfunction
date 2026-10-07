@@ -1,4 +1,4 @@
-# Spawn, partie 1/9 (généré par tools/lobby/gen_lobby.py)
+# Spawn, partie 1/11 (généré par tools/lobby/gen_lobby.py)
 fill -76 64 -8 -76 122 8 minecraft:air strict
 fill -75 64 -15 -75 122 15 minecraft:air strict
 fill -74 64 -19 -74 122 19 minecraft:air strict

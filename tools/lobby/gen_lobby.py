@@ -424,6 +424,94 @@ for deg in (33.75, 123.75, 213.75, 303.75):
         t += 0.5
     JETS.append((x, G, z))
 
+# ------------------------------------------------------------------ CIRCUIT DU SPAWN (kart libre) : départ derrière le garage, sort de l'île
+# entre les plots 3 et 4, grande boucle au sud au-dessus du vide (saut, boosts), revient entre les plots 4 et 5.
+KWP = [(0, 66), (9, 66.5), (15, 69), (18.5, 76), (18.5, 84), (18.5, 96), (18.5, 108), (19, 115), (28, 124), (48, 131), (72, 136), (92, 150),
+       (100, 172), (92, 196), (70, 208), (50, 203), (40, 188), (28, 172), (10, 166), (-8, 174), (-24, 192), (-46, 208), (-72, 210), (-94, 196),
+       (-102, 170), (-92, 146), (-70, 132), (-48, 126), (-28, 124), (-19, 115), (-18.5, 108), (-18.5, 96), (-18.5, 84), (-18.5, 76), (-15, 69), (-9, 66.5)]
+def catmull(p0, p1, p2, p3, t):
+    t2, t3 = t * t, t * t * t
+    return tuple(0.5 * ((2 * p1[i]) + (-p0[i] + p2[i]) * t + (2 * p0[i] - 5 * p1[i] + 4 * p2[i] - p3[i]) * t2 + (-p0[i] + 3 * p1[i] - 3 * p2[i] + p3[i]) * t3) for i in (0, 1))
+kraw = []
+for i in range(len(KWP)):
+    p0, p1, p2, p3 = KWP[i - 1], KWP[i], KWP[(i + 1) % len(KWP)], KWP[(i + 2) % len(KWP)]
+    for k in range(40): kraw.append(catmull(p0, p1, p2, p3, k / 40))
+KP = [kraw[0]]; acc = 0.0
+for a, b in zip(kraw, kraw[1:] + kraw[:1]):
+    d = math.dist(a, b)
+    while acc + d >= 0.5:
+        t = (0.5 - acc) / d; a = (a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t); d = math.dist(a, b); KP.append(a); acc = 0.0
+    acc += d
+KN = len(KP)
+def ktan(i):
+    a, b = KP[(i - 2) % KN], KP[(i + 2) % KN]; L = math.dist(a, b) or 1
+    return ((b[0] - a[0]) / L, (b[1] - a[1]) / L)
+def kyaw(dx, dz): return round(math.degrees(math.atan2(-dx, dz)), 1)
+kworst = min(math.dist(KP[i], KP[j]) for i in range(0, KN, 4) for j in range(i + 80, KN - (80 if i < 80 else 0), 4))
+assert kworst > 16, ('le circuit se croise', kworst)
+kbuck = {}
+for i, (x, z) in enumerate(KP): kbuck.setdefault((math.floor(x / 4), math.floor(z / 4)), []).append(i)
+def knear(x, z):
+    best, bi = 1e9, -1
+    for gx in range(math.floor(x / 4) - 2, math.floor(x / 4) + 3):
+        for gz in range(math.floor(z / 4) - 2, math.floor(z / 4) + 3):
+            for i in kbuck.get((gx, gz), ()):
+                d = (KP[i][0] - x) ** 2 + (KP[i][1] - z) ** 2
+                if d < best: best, bi = d, i
+    return (math.sqrt(best), bi) if bi >= 0 else (99, -1)
+KJ = min(range(KN), key=lambda i: math.dist(KP[i], (-59, 209)))
+KBOOST = [int(f * KN) for f in (0.12, 0.36, 0.62, 0.86)]
+KSTAMP = {}
+def kstamp(i, w1, w2, l1, l2, fn):
+    cx, cz = KP[i]; tx, tz = ktan(i); nx, nz = -tz, tx
+    for a in [l1 + k * 0.5 for k in range(int((l2 - l1) * 2) + 1)]:
+        for b in [w1 + k * 0.5 for k in range(int((w2 - w1) * 2) + 1)]:
+            KSTAMP[(round(cx + tx * a + nx * b), round(cz + tz * a + nz * b))] = fn(round(a), round(b))
+kstamp(0, -4.5, 4.5, -1, 1, lambda a, b: 'black_concrete' if (a + b) % 2 else 'white_concrete')
+for bi in KBOOST: kstamp(bi, -2, 2, 0, 3, lambda a, b: 'orange_glazed_terracotta')
+kstamp((KJ - 14) % KN, -4.5, 4.5, 0, 1.5, lambda a, b: 'lime_concrete')
+def kgap(x, z):
+    jx, jz = KP[KJ]; tx, tz = ktan(KJ)
+    return abs((x - jx) * tx + (z - jz) * tz) <= 2.5 and abs((x - jx) * -tz + (z - jz) * tx) < 9
+KROADC = set()
+for x in range(-115, 116):
+    for z in range(55, 225):
+        d, si = knear(x, z)
+        if d > 5.5 or kgap(x, z): continue
+        onisl = (x, z) in ISET
+        if d <= 4.5:
+            b = KSTAMP.get((x, z)) or ('gray_concrete' if d <= 3.5 else ('white_concrete' if d <= 4 else ('red_concrete' if (si // 6) % 2 else 'white_concrete')))
+            KROADC.add((x, z))
+            if onisl:
+                paint(x, z, b, 'b')
+                for y in range(64, 70): W.pop((x, y, z), None)
+            else:
+                put(x, G, z, b); put(x, G - 1, z, 'stone_bricks')
+                if si % 16 == 0 and d < 1: put(x, G + 2, z, 'light[level=13]')
+        elif not onisl:
+            put(x, G, z, 'stone_bricks'); put(x, G - 1, z, 'stone_brick_slab[type=top]')
+            put(x, G + 1, z, 'red_concrete' if (si // 8) % 2 else 'white_concrete'); put(x, G + 2, z, 'barrier')
+            if si % 24 == 0: put(x, G + 3, z, 'lantern')
+# portique de départ en damier et tapis d'embarquement (garage)
+sx_, sz_ = KP[0]; tx_, tz_ = ktan(0); nx_, nz_ = -tz_, tx_
+for o in (-6.5, 6.5):
+    px, pz = round(sx_ + nx_ * o), round(sz_ + nz_ * o)
+    for y in range(G, 71): put(px, y, pz, 'black_concrete' if y % 2 else 'white_concrete')
+for o in [k * 0.5 for k in range(-13, 14)]:
+    px, pz = round(sx_ + nx_ * o), round(sz_ + nz_ * o)
+    for y in (71, 72): put(px, y, pz, 'black_concrete' if (px + pz + y) % 2 else 'white_concrete')
+KPAD = (-1, 54)
+for x in range(KPAD[0], KPAD[0] + 3):
+    for z in range(KPAD[1], KPAD[1] + 3): paint(x, z, 'yellow_glazed_terracotta' if (x, z) != (KPAD[0] + 1, KPAD[1] + 1) else 'gold_block', 'b')
+KK = int(KN * 0.5 / 10)
+KCPS = []
+for k in range(KK):
+    i = int(k * KN / KK)
+    if (i - KJ) % KN < 12 or (KJ - i) % KN < 8: i = (KJ + 16) % KN            # jamais dans le trou du saut : après la réception
+    x, z = KP[i]; tx, tz = ktan(i)
+    KCPS.append((round(x, 1), round(z, 1), kyaw(tx, tz)))
+print('circuit du spawn : longueur', round(KN * 0.5), '| points de passage', KK, '| écart mini', round(kworst, 1))
+
 # ------------------------------------------------------------------ dessus de l'île
 for (x, z), b in TOP.items():
     put(x, G, z, b)
@@ -715,13 +803,13 @@ for i, p in enumerate(parts, 1):
     wr(f'lobby/build_{i}', [f'# Spawn, partie {i}/{len(parts)} (généré par tools/lobby/gen_lobby.py)'] + p + [f'schedule function {nxt} 1t'])
 wr('lobby/build', ['# Spawn : grande île flottante (générée par tools/lobby/gen_lobby.py), construite en plusieurs ticks',
                    'kill @e[type=minecraft:text_display,tag=mg.deco]',
-                   'forceload add -80 -80 80 80', 'forceload add 81 -32 144 32',
+                   'forceload add -80 -80 80 80', 'forceload add 81 -32 144 32', 'forceload add -115 81 115 225',
                    'tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Construction du spawn (quelques secondes)...","color":"gray"}]',
                    'schedule function mg:lobby/build_1 5s'])
 wr('lobby/build_end', ['# Fin de la construction du spawn : eau qui coule, décor, chargement des zones'] +
    [f'setblock {x} {y} {z} minecraft:water' for (x, y, z) in JETS] +
    ['function mg:lobby/deco', 'function mg:lobby/armory_build', 'function mg:parkour/build',
-    'forceload remove -80 -80 80 80', 'forceload remove 81 -32 144 32', 'function mg:core/forceloads', 'data modify storage mg:lobby v2 set value 1b',
+    'forceload remove -80 -80 80 80', 'forceload remove 81 -32 144 32', 'forceload remove -115 81 115 225', 'function mg:core/forceloads', 'data modify storage mg:lobby v4 set value 1b',
     'tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Spawn construit.","color":"green"}]'])
 
 # ------------------------------------------------------------------ entités de décor
@@ -779,13 +867,14 @@ for k in range(4):
                          rp('balloon', 'minecraft:leather_horse_armor', COLS[(k + j) % 6]), 1.3, BOB))
 # garage : karts sur le podium et sur la piste, boîtes ?, tuyaux, Thwomp, Goombas
 KC = [15022389, 2712319, 6610199, 16766720, 9315498, 16739584]
-for (x, y, m, c) in ((0.5, 67.05, 'kart_bolide', KC[0]), (-2.5, 66.05, 'kart', KC[1]), (3.5, 65.05, 'kart_costaud', KC[2])):
-    rpl.append(idisp(x, y, 48.5, rp(m, 'minecraft:leather_horse_armor', c), 1.4, SPIN))
-    vnl.append(idisp(x, y + 0.3, 48.5, vi('minecart'), 1.2, SPIN))
+for (x, y, m, c) in ((0.5, 67, 'kart_bolide', KC[0]), (-2.5, 66, 'kart', KC[1]), (3.5, 65, 'kart_costaud', KC[2])):
+    # le modèle est centré sur l'entité : on le remonte de la moitié de sa taille pour qu'il soit posé sur le podium
+    rpl.append(idisp(x, round(y + 0.5 * 1.4 + 0.02, 2), 48.5, rp(m, 'minecraft:leather_horse_armor', c), 1.4, SPIN))
+    vnl.append(idisp(x, round(y + 0.5 * 1.2 + 0.02, 2), 48.5, vi('minecart'), 1.2, SPIN))
 for k, ang in enumerate((40, 160, 280)):
     a = math.radians(ang); x, z = 8.5 * math.cos(a) + 0.5, 48.5 + 8.5 * math.sin(a)
     yaw = (math.degrees(math.atan2(-math.cos(a + math.pi / 2), math.sin(a + math.pi / 2)))) % 360
-    rpl.append(idisp(round(x, 2), 64.05, round(z, 2), rp(['kart_mini', 'kart', 'kart_bolide'][k], 'minecraft:leather_horse_armor', KC[3 + k]), 1.1, yaw=round(yaw, 1)))
+    rpl.append(idisp(round(x, 2), round(64 + 0.5 * 1.1 + 0.02, 2), round(z, 2), rp(['kart_mini', 'kart', 'kart_bolide'][k], 'minecraft:leather_horse_armor', KC[3 + k]), 1.1, yaw=round(yaw, 1)))
 for x in (-4.5, -1.5, 1.5, 4.5):
     rpl.append(idisp(x + 0.5, 74, 36.5, rp('item_box'), 1.0, BOTH))
 for (cx, cz) in PIPES: rpl.append(idisp(cx + 0.5, 68.2, cz + 0.5, rp('piranha'), 1.3, BOB, yaw=rnd.choice((0, 90, 180, 270))))
@@ -962,6 +1051,132 @@ wr('parkour/fall', ['# Chute (@s = coureur) : retour au dernier checkpoint, tour
                     'function mg:core/fall_heal'])
 print('parkour : fin y', FINY, '| seuils', {k: v - 3 for k, v in segmin.items()}, '| sauts', len(path))
 
+# ------------------------------------------------------------------ CIRCUIT DU SPAWN : tables du moteur (kart/t4) et mode kart libre (lobkart/)
+KY = G + 1
+wr('kart/t4/cp_check', [f'# Circuit du spawn : point de passage attendu (mg.kcp) atteint ? ({KK} points par tour) (généré par tools/lobby/gen_lobby.py)'] +
+   [f'execute if score @s mg.kcp matches {k} positioned {x} {KY} {z} if entity @e[type=minecraft:block_display,tag=mg.kk,distance=..9] run return run function mg:kart/cp_pass'
+    for k, (x, z, yw) in enumerate(KCPS)])
+wr('kart/t4/cp_tp', ['# Circuit du spawn : remise en piste (@s = kart) au point de passage $ki'] +
+   [f'execute if score $ki mg.st matches {k} run return run tp @s {x} {KY} {z} {yw} 0' for k, (x, z, yw) in enumerate(KCPS)])
+wr('kart/t4/bill_step', ['# Circuit du spawn : Bill Balle (@s = kart) vers le point de passage $ki'] +
+   [f'execute if score $ki mg.st matches {k} facing {x} {KY} {z} rotated ~ 0 run return run tp @s ^ ^ ^1.6 ~ ~' for k, (x, z, yw) in enumerate(KCPS)])
+wr('kart/t4/const', ['# Circuit du spawn : constantes', f'scoreboard players set $kK mg.st {KK}', 'scoreboard players set $kLaps mg.st 999'])
+grid = ['# Place @s (le pilote) sur une des 6 places de départ ($lgi 0..5), tourné vers la piste']
+for g in range(6):
+    back, side = 3 + (g // 2) * 4, (-2 if g % 2 == 0 else 2)
+    i = (-back * 2) % KN; tx, tz = ktan(i)
+    x, z = KP[i][0] + -tz * side, KP[i][1] + tx * side
+    grid.append(f'execute if score $lgi mg.st matches {g} run return run tp @s {round(x, 1)} {KY} {round(z, 1)} {kyaw(tx, tz)} 0')
+wr('lobkart/grid_tp', grid)
+LKC = ['scoreboard players set #km1 mg.st -1'] + [f'scoreboard players set #k{v} mg.st {v}' for v in (2, 3, 4, 5, 8, 10, 12, 20, 60, 65, 100, 120, 1000)] + \
+      ['scoreboard players set #kt85 mg.st 85', 'scoreboard players set #kt120 mg.st 120', 'scoreboard players set #kt90 mg.st 90', 'scoreboard players set #kkmh mg.st 108']
+wr('lobkart/consts', ['# Constantes du moteur du kart (les mêmes qu\'en course)'] + LKC)
+RESET = ['ksp', 'kdr', 'krc', 'kbo', 'khi', 'kst', 'kit', 'kic', 'kgd', 'kbill', 'kboo', 'kmg', 'kcp', 'klp', 'kvy', 'kfp', 'kps', 'kbl', 'krl', 'klt']
+BTN = ('tellraw @s [{"text":"🏎 ","color":"gold"},{"text":"Circuit du spawn : ","color":"gray"},'
+       '{"text":"[Descendre]","color":"red","bold":true,"click_event":{"action":"run_command","command":"trigger mg.opt set 27"},"hover_event":{"action":"show_text","value":"Ranger le kart et revenir au garage (/trigger mg.opt set 27)"}},'
+       '{"text":" ","color":"gray"},{"text":"[Vue assise]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 2"}},'
+       '{"text":" ","color":"gray"},{"text":"[Caméra de poursuite]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 1"}},'
+       '{"text":"  (T pour ouvrir le chat)","color":"dark_gray"}]')
+wr('lobkart/enter', ['# @s marche sur le tapis du garage : il monte dans un kart sur la ligne de départ du circuit du spawn',
+                     'tag @s add mg.lkz',
+                     'execute unless score $state mg.st matches 0 run return run tellraw @s [{"text":"⚠ Le kart libre n\'est pas disponible pendant une partie.","color":"red"}]',
+                     'execute store result score $lkn mg.st if entity @a[tag=mg.lk]',
+                     'execute if score $lkn mg.st matches 12.. run return run tellraw @s [{"text":"⚠ Trop de karts sur le circuit, réessaie dans un instant.","color":"red"}]',
+                     'function mg:parkour/quit', 'clear @s', 'effect clear @s', 'function mg:lobkart/consts',
+                     'scoreboard players add $lri mg.st 1', 'execute unless score $lri mg.st matches 100..999 run scoreboard players set $lri mg.st 100',
+                     'scoreboard players operation @s mg.ri = $lri mg.st'] +
+   [f'scoreboard players set @s mg.{k} 0' for k in RESET] +
+   ['execute unless score @s mg.kvm matches 0..1 run scoreboard players set @s mg.kvm 1', 'scoreboard players reset @s mg.qs', 'scoreboard players enable @s mg.kv',
+    'scoreboard players add $lgi mg.st 1', 'execute unless score $lgi mg.st matches 0..5 run scoreboard players set $lgi mg.st 0',
+    'function mg:lobkart/grid_tp', 'tag @s add mg.lk',
+    'execute at @s run function mg:kart/kart_new', 'function mg:kart/kk', 'tag @e[tag=mg.kk] add mg.lkart', 'function mg:kart/seat',
+    'tag @e[tag=mg.kk] remove mg.kk', 'tag @e[tag=mg.kcamc] remove mg.kcamc',
+    'title @s title [{"text":"🏁 CIRCUIT DU SPAWN","color":"gold","bold":true}]',
+    'title @s subtitle [{"text":"Z avancer, Q / D tourner, Espace en tournant = dérapage","color":"yellow"}]',
+    'execute at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.4', BTN])
+wr('lobkart/remove', ['# Range le kart de @s (et sa caméra, sa tête) sans le déplacer',
+                      'function mg:kart/kk',
+                      'execute as @e[type=minecraft:block_display,tag=mg.kk] on passengers run kill @s',
+                      'kill @e[tag=mg.kk]', 'kill @e[tag=mg.kcamc]',
+                      'execute as @e[type=minecraft:item_display,tag=mg.khead] if score @s mg.ri = $me mg.st run kill @s',
+                      'tag @s remove mg.lk', 'scoreboard players set @s mg.ri 0',
+                      'execute if entity @s[gamemode=spectator] run gamemode adventure @s'])
+wr('lobkart/leave', ['# @s quitte le circuit du spawn sans être ramené au garage (plot, survie, reconnexion)', 'execute if entity @s[tag=mg.lk] run function mg:lobkart/remove'])
+wr('lobkart/exit', ['# @s descend du kart : retour au garage',
+                    'execute unless entity @s[tag=mg.lk] run return 0',
+                    'function mg:lobkart/remove', 'tag @s add mg.lkz',
+                    f'tp @s 0.5 64 {KPAD[1] - 2.5} 180 0', 'function mg:core/give_menu',
+                    'title @s actionbar [{"text":"🏎 Kart rangé. À bientôt sur le circuit !","color":"gold"}]'])
+wr('lobkart/stop_all', ['# Une partie commence : tous les karts du spawn sont rangés', 'execute as @a[tag=mg.lk] run function mg:lobkart/exit'])
+wr('lobkart/claim', ['# @s (pilote du spawn) garde son kart et sa caméra (pas orphelins)', 'function mg:kart/kk', 'tag @e[tag=mg.kk] remove mg.lko', 'tag @e[tag=mg.kcamc] remove mg.lko',
+                     'tag @e[tag=mg.kk] remove mg.kk', 'tag @e[tag=mg.kcamc] remove mg.kcamc'])
+wr('lobkart/orphans', ['# Karts du spawn dont le pilote est parti (déconnexion) : rangés',
+                       'tag @e[type=minecraft:block_display,tag=mg.lkart] add mg.lko',
+                       'execute as @e[type=minecraft:item_display,tag=mg.kcam] if score @s mg.ri matches 100.. run tag @s add mg.lko',
+                       'execute as @a[tag=mg.lk] run function mg:lobkart/claim',
+                       'execute as @e[type=minecraft:block_display,tag=mg.lko] on passengers run kill @s',
+                       'kill @e[tag=mg.lko]'])
+wr('lobkart/tick', ['# Kart libre au spawn (chaque tick) : moteur du kart pour les pilotes mg.lk, sur le circuit du spawn',
+                    f'execute as @a[tag=mg.lkz] unless entity @s[x={KPAD[0]},y=63,z={KPAD[1]},dx=2.99,dy=2.5,dz=2.99] run tag @s remove mg.lkz',
+                    f'execute if score $state mg.st matches 0 as @a[tag=!mg.lk,tag=!mg.lkz,tag=!mg.play,tag=!mg.surv,tag=!mg.inplot,gamemode=adventure,x={KPAD[0]},y=63,z={KPAD[1]},dx=2.99,dy=2.5,dz=2.99] run function mg:lobkart/enter',
+                    'scoreboard players add $lko mg.st 1',
+                    'execute if score $lko mg.st matches 100.. run function mg:lobkart/orphans',
+                    'execute if score $lko mg.st matches 100.. run scoreboard players set $lko mg.st 0',
+                    'execute unless entity @a[tag=mg.lk] run return 0',
+                    'execute unless score $state mg.st matches 0 run return run function mg:lobkart/stop_all',
+                    'execute as @a[tag=mg.lk,gamemode=creative] run function mg:lobkart/leave',
+                    'execute as @a[tag=mg.lk,tag=mg.surv] run function mg:lobkart/leave',
+                    'scoreboard players operation $lkb mg.st = $kbat mg.st', 'scoreboard players set $kbat mg.st 0',
+                    'scoreboard players set $klob mg.st 1', 'function mg:kart/t4/const',
+                    'execute if score $rp mg.st matches 1 as @e[type=minecraft:block_display,tag=mg.lkart,tag=!mg.rps] at @s run function mg:kart/rp_skin',
+                    'execute if score $rp mg.st matches 1 as @e[tag=mg.fx,tag=!mg.rps] at @s run function mg:kart/rp_skin',
+                    'scoreboard players add @a[tag=mg.lk,scores={mg.klp=1..}] mg.klt 1',
+                    'execute as @a[tag=mg.lk] run function mg:kart/drive',
+                    'tag @e[tag=mg.kk] remove mg.kk', 'tag @e[tag=mg.kcamc] remove mg.kcamc',
+                    'execute as @e[type=minecraft:block_display,tag=mg.kart,tag=!mg.lkart] if score @s mg.ri matches 100.. run tag @s add mg.lkart',
+                    'scoreboard players add $kph mg.st 1', 'execute if score $kph mg.st matches 4.. run scoreboard players set $kph mg.st 0',
+                    'execute if score $kph mg.st matches 0 as @a[tag=mg.lk] run function mg:lobkart/hud',
+                    'scoreboard players set $klob mg.st 0', 'scoreboard players operation $kbat mg.st = $lkb mg.st', 'function mg:kart/const'])
+def tsd(score):   # secondes.dixièmes d'un score en ticks → $s, $d
+    return [f'scoreboard players operation $s mg.st = {score}', 'scoreboard players operation $s mg.st /= #k20 mg.st',
+            f'scoreboard players operation $d mg.st = {score}', 'scoreboard players operation $d mg.st %= #k20 mg.st', 'scoreboard players operation $d mg.st /= #k2 mg.st']
+wr('lobkart/hud', ['# Barre du bas du pilote du spawn (@s) : tour, chrono, meilleur tour, vitesse',
+                   'scoreboard players operation $kmh mg.st = @s mg.ksp', 'scoreboard players operation $kmh mg.st *= #kkmh mg.st', 'scoreboard players operation $kmh mg.st /= #k100 mg.st',
+                   'execute if score $kmh mg.st matches ..-1 run scoreboard players operation $kmh mg.st *= #km1 mg.st',
+                   'execute if score @s mg.klp matches 0 run return run title @s actionbar [{"text":"🏁 Passe la ligne de départ pour lancer le chrono  ","color":"gold"},{"score":{"name":"$kmh","objective":"mg.st"},"color":"aqua"},{"text":" km/h","color":"dark_aqua"}]']
+   + tsd('@s mg.klt') + ['scoreboard players operation $bs mg.st = @s mg.klb', 'scoreboard players operation $bs mg.st /= #k20 mg.st',
+                         'scoreboard players operation $bd mg.st = @s mg.klb', 'scoreboard players operation $bd mg.st %= #k20 mg.st', 'scoreboard players operation $bd mg.st /= #k2 mg.st',
+                         'execute unless score @s mg.klb matches 1.. run title @s actionbar [{"text":"🏁 Tour ","color":"gold"},{"score":{"name":"@s","objective":"mg.klp"},"color":"yellow","bold":true},{"text":"   ⏱ ","color":"gold"},{"score":{"name":"$s","objective":"mg.st"},"color":"white","bold":true},{"text":".","color":"white"},{"score":{"name":"$d","objective":"mg.st"},"color":"white"},{"text":" s   ","color":"gray"},{"score":{"name":"$kmh","objective":"mg.st"},"color":"aqua"},{"text":" km/h","color":"dark_aqua"}]',
+                         'execute if score @s mg.klb matches 1.. run title @s actionbar [{"text":"🏁 Tour ","color":"gold"},{"score":{"name":"@s","objective":"mg.klp"},"color":"yellow","bold":true},{"text":"   ⏱ ","color":"gold"},{"score":{"name":"$s","objective":"mg.st"},"color":"white","bold":true},{"text":".","color":"white"},{"score":{"name":"$d","objective":"mg.st"},"color":"white"},{"text":" s   ★ ","color":"gold"},{"score":{"name":"$bs","objective":"mg.st"},"color":"yellow"},{"text":".","color":"yellow"},{"score":{"name":"$bd","objective":"mg.st"},"color":"yellow"},{"text":" s   ","color":"gray"},{"score":{"name":"$kmh","objective":"mg.st"},"color":"aqua"},{"text":" km/h","color":"dark_aqua"}]'])
+wr('lobkart/lap', ['# Ligne d\'arrivée franchie par un pilote du spawn (@s) : tour chronométré, record perso et record du circuit',
+                   'scoreboard players add @s mg.klp 1',
+                   'execute if score @s mg.klp matches 1 run scoreboard players set @s mg.klt 0',
+                   'execute if score @s mg.klp matches 1 run return run title @s actionbar [{"text":"🏁 C\'est parti, le chrono tourne !","color":"green","bold":true}]']
+   + tsd('@s mg.klt') +
+   ['tellraw @s [{"text":"🏁 Tour en ","color":"gold"},{"score":{"name":"$s","objective":"mg.st"},"color":"white","bold":true},{"text":".","color":"white"},{"score":{"name":"$d","objective":"mg.st"},"color":"white"},{"text":" s","color":"gold"}]',
+    'execute at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 1.2',
+    'execute if score @s mg.klb matches 1.. if score @s mg.klt < @s mg.klb run tellraw @s [{"text":"★ Nouveau record perso !","color":"aqua","bold":true}]',
+    'execute unless score @s mg.klb matches 1.. run scoreboard players operation @s mg.klb = @s mg.klt',
+    'execute if score @s mg.klt < @s mg.klb run scoreboard players operation @s mg.klb = @s mg.klt',
+    'execute unless score $klrec mg.st matches 1.. run function mg:lobkart/record',
+    'execute if score $klrec mg.st matches 1.. if score @s mg.klt < $klrec mg.st run function mg:lobkart/record',
+    'scoreboard players set @s mg.klt 0'])
+wr('lobkart/record', ['# Nouveau record du circuit du spawn (@s ; $s / $d déjà calculés)',
+                      'scoreboard players operation $klrec mg.st = @s mg.klt',
+                      'tellraw @a[tag=!mg.surv] [{"text":"🏆 ","color":"gold"},{"selector":"@s","color":"yellow","bold":true},{"text":" bat le record du circuit du spawn : ","color":"gray"},{"score":{"name":"$s","objective":"mg.st"},"color":"gold","bold":true},{"text":".","color":"gold"},{"score":{"name":"$d","objective":"mg.st"},"color":"gold"},{"text":" s !","color":"gold"}]',
+                      'execute store result storage mg:lk s int 1 run scoreboard players get $s mg.st', 'execute store result storage mg:lk d int 1 run scoreboard players get $d mg.st',
+                      'function mg:lobkart/board with storage mg:lk'])
+wr('lobkart/board', ['# Panneau du record (macro $(s), $(d))', '$data modify entity @e[type=minecraft:text_display,tag=mg.lkboard,limit=1] text set value {text:"🏆 Record du tour : $(s).$(d) s",color:"gold"}'])
+wr('lobkart/board_refresh', ['# Réaffiche le record sur le panneau (après reconstruction du décor)', 'function mg:lobkart/consts'] + tsd('$klrec mg.st') +
+   ['execute store result storage mg:lk s int 1 run scoreboard players get $s mg.st', 'execute store result storage mg:lk d int 1 run scoreboard players get $d mg.st',
+    'function mg:lobkart/board with storage mg:lk'])
+KDECO = [tdisp(KPAD[0] + 1.5, 66.6, KPAD[1] + 1.5, '[{"text":"🏎 KART LIBRE","color":"gold","bold":true}]', 1.6),
+         tdisp(KPAD[0] + 1.5, 66.1, KPAD[1] + 1.5, '[{"text":"Marche sur le tapis pour monter dans un kart","color":"gray"}]', 0.9),
+         tdisp(round(sx_, 1) + 0.5, 74.5, round(sz_, 1) + 0.5, '[{"text":"🏁 CIRCUIT DU SPAWN","color":"gold","bold":true}]', 2.4),
+         tdisp(round(sx_, 1) + 0.5, 73.8, round(sz_, 1) + 0.5, '[{"text":"🏆 Record du tour : aucun","color":"gold"}]', 1.4).replace('Tags:["mg.lby"', 'Tags:["mg.lby","mg.lkboard"')]
+with open(os.path.join(F, 'lobby', 'deco_common.mcfunction'), 'a', encoding='utf-8', newline='\n') as f:
+    f.write('\n'.join(['# Circuit du spawn : panneaux'] + KDECO + ['execute if score $klrec mg.st matches 1.. run function mg:lobkart/board_refresh']) + '\n')
+
 # ------------------------------------------------------------------ aperçu (vue de dessus)
 if len(sys.argv) > 2:
     import struct, zlib
@@ -981,8 +1196,8 @@ if len(sys.argv) > 2:
             if k in n and v: return v
         h = sum(ord(c) * (i + 1) for i, c in enumerate(n))
         return (90 + h % 120, 90 + (h // 7) % 120, 90 + (h // 49) % 120)
-    X0, X1_, Z0, Z1_ = -80, 140, -80, 80
-    S = 4
+    X0, X1_, Z0, Z1_ = -115, 140, -80, 225
+    S = 3
     hm = {}
     for (x, y, z), b in W.items():
         if b.startswith('light') or b == 'air': continue

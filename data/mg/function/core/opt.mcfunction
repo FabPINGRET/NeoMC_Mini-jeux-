@@ -7,6 +7,7 @@ execute if score @s mg.opt matches 1 run function mg:core/opt_spec
 execute if score @s mg.opt matches 2 run function mg:core/opt_sidebar
 execute if score @s mg.opt matches 11 run function mg:parkour/quit
 execute if score @s mg.opt matches 25 run function mg:core/stats
+execute if score @s mg.opt matches 27 run function mg:lobkart/exit
 execute if score @s mg.opt matches 26 if entity @s[tag=mg.play] if score $game mg.st matches 61 run tag @s add mg.kstuck
 execute if score @s mg.opt matches 7 if entity @s[tag=mg.admin] run function mg:core/menu_mob
 execute if score @s mg.opt matches 8 if entity @s[tag=mg.admin] run function mg:core/menu_sheep
