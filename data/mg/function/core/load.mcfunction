@@ -184,3 +184,8 @@ tellraw @a [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Datapack chargé. ",
 # restait en paisible. Réappliqué à chaque chargement du datapack.
 execute in mg:survie run difficulty normal
 execute in mg:survie run gamerule spawn_mobs true
+
+# Classements par mini-jeu + tableau à droite affiché par défaut (une seule fois ; masquable au menu)
+function mg:hall/objectives
+execute unless data storage mg:hall sbon run scoreboard players set $sb mg.st 1
+data modify storage mg:hall sbon set value 1b

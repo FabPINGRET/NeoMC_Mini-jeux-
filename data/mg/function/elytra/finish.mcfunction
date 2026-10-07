@@ -15,4 +15,5 @@ execute unless score $erec mg.st matches 1.. run scoreboard players set $erec mg
 execute if score @s mg.et < $erec mg.st if score $ecs mg.st matches ..9 run tellraw @a [{"text":"🏆 ","color":"gold"},{"selector":"@s","color":"yellow","bold":true},{"text":" bat le record du parcours d'élytra : ","color":"gray"},{"score":{"name":"$es","objective":"mg.st"},"color":"gold"},{"text":",","color":"gold"},{"text":"0","color":"gold"},{"score":{"name":"$ecs","objective":"mg.st"},"color":"gold"},{"text":" s !","color":"gold"}]
 execute if score @s mg.et < $erec mg.st if score $ecs mg.st matches 10.. run tellraw @a [{"text":"🏆 ","color":"gold"},{"selector":"@s","color":"yellow","bold":true},{"text":" bat le record du parcours d'élytra : ","color":"gray"},{"score":{"name":"$es","objective":"mg.st"},"color":"gold"},{"text":",","color":"gold"},{"score":{"name":"$ecs","objective":"mg.st"},"color":"gold"},{"text":" s !","color":"gold"}]
 execute if score @s mg.et < $erec mg.st run scoreboard players operation $erec mg.st = @s mg.et
+execute if score @s mg.et = $erec mg.st run function mg:hall/ely
 function mg:elytra/stop

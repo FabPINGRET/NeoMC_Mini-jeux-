@@ -1,5 +1,8 @@
 # Retour au lobby de tous les participants + nettoyage du monde
 
+# Classements par jeu et hall des scores : crédit des vainqueurs (avant la remise à zéro des tags)
+execute as @a[tag=mg.win] run function mg:hall/credit
+
 # Mini Party : pièces du mini-jeu (avant la remise à zéro des tags), ou fin de la partie si c'est le plateau qui s'arrête
 execute if score $mp mg.st matches 1 unless score $game mg.st matches 59 run function mg:party/reward
 execute if score $game mg.st matches 59 run function mg:party/end

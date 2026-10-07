@@ -136,6 +136,7 @@ W('finish', ['# Arrivée (@s) : temps, record perso, record du serveur'] + SPLIT
     f'execute if score @s mg.et < $erec mg.st if score $ecs mg.st matches ..9 run tellraw @a [{{"text":"🏆 ","color":"gold"}},{{"selector":"@s","color":"yellow","bold":true}},{{"text":" bat le record du parcours d\'élytra : ","color":"gray"}},{a},{{"text":" s !","color":"gold"}}]',
     f'execute if score @s mg.et < $erec mg.st if score $ecs mg.st matches 10.. run tellraw @a [{{"text":"🏆 ","color":"gold"}},{{"selector":"@s","color":"yellow","bold":true}},{{"text":" bat le record du parcours d\'élytra : ","color":"gray"}},{b2},{{"text":" s !","color":"gold"}}]',
     'execute if score @s mg.et < $erec mg.st run scoreboard players operation $erec mg.st = @s mg.et',
+    'execute if score @s mg.et = $erec mg.st run function mg:hall/ely',
     'function mg:elytra/stop'])
 W('fail', ['# Raté (@s) : retour au socle',
     'title @s actionbar [{"text":"Raté ! Remonte sur le socle pour réessayer.","color":"red"}]',
