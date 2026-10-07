@@ -47,7 +47,7 @@ scoreboard players set @a[tag=mg.play] mg.klp 0
 scoreboard players set @a[tag=mg.play] mg.kvy 0
 scoreboard players set @a[tag=mg.play] mg.kfp 0
 scoreboard players set @a[tag=mg.play] mg.kps 0
-execute as @a[tag=mg.play] unless score @s mg.kvm matches 0..1 run scoreboard players set @s mg.kvm 0
+scoreboard players set @a[tag=mg.play] mg.kvm 1
 scoreboard players reset @a mg.qs
 execute as @a[tag=mg.play] run function mg:kart/place_one
 scoreboard objectives setdisplay sidebar mg.kmap

@@ -99,7 +99,7 @@ scoreboard players set @a[tag=mg.play] mg.klp 0
 scoreboard players set @a[tag=mg.play] mg.kvy 0
 scoreboard players set @a[tag=mg.play] mg.kfp 0
 scoreboard players set @a[tag=mg.play] mg.kps 0
-execute as @a[tag=mg.play] unless score @s mg.kvm matches 0..1 run scoreboard players set @s mg.kvm 0
+scoreboard players set @a[tag=mg.play] mg.kvm 1
 scoreboard players reset @a mg.qs
 execute as @a[tag=mg.play] run function mg:kart/place_one
 scoreboard objectives setdisplay sidebar mg.kmap
@@ -118,7 +118,7 @@ function mg:kart/boxes
 execute as @a[tag=mg.play] at @s run function mg:kart/kart_new
 execute as @a[tag=mg.play] run function mg:kart/grid_face
 execute as @a[tag=mg.play] run function mg:kart/place_seat
-tellraw @a[tag=mg.play] [{"text":"🏎 ","color":"gold"},{"text":"Vue : 3e personne (Ctrl = objet). ","color":"gray"},{"text":"[1re personne]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 2"}},{"text":" ","color":"gray"},{"text":"[3e personne]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 1"}}]
+tellraw @a[tag=mg.play] [{"text":"🏎 ","color":"gold"},{"text":"Vue assise : clic droit = objet, F5 = 3e personne. ","color":"gray"},{"text":"[Vue assise]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 2"}},{"text":" ","color":"gray"},{"text":"[Caméra de poursuite]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 1"}}]
 ''')
 fn('grid_face', f'''# Le kart de @s est posé sur sa place de grille, dans l'axe de la piste (et pas dans le sens du regard du joueur)
 function mg:kart/kk
@@ -185,8 +185,8 @@ tag @e[tag=mg.kheadn] remove mg.kheadn
 fn('view_cmd', '''# /trigger mg.kv : 1 = 3e personne, 2 = 1re personne
 execute if score @s mg.kv matches 1 run scoreboard players set @s mg.kvm 0
 execute if score @s mg.kv matches 2 run scoreboard players set @s mg.kvm 1
-execute if score @s mg.kv matches 1 run tellraw @s [{"text":"🎥 Vue 3e personne (Ctrl = objet).","color":"aqua"}]
-execute if score @s mg.kv matches 2 run tellraw @s [{"text":"🎥 Vue 1re personne (clic droit ou Ctrl = objet).","color":"aqua"}]
+execute if score @s mg.kv matches 1 run tellraw @s [{"text":"🎥 Caméra de poursuite (pas de clic en spectateur : Ctrl = objet).","color":"aqua"}]
+execute if score @s mg.kv matches 2 run tellraw @s [{"text":"🎥 Vue assise (clic droit = objet, F5 = 3e personne).","color":"aqua"}]
 scoreboard players reset @s mg.kv
 scoreboard players enable @s mg.kv
 ''')
@@ -194,7 +194,7 @@ fn('go', '''# Départ : portillon ouvert
 function mg:kart/gate_off
 scoreboard players set $ktime mg.st 0
 scoreboard players set @a[tag=mg.play] mg.ksp 0
-tellraw @a[tag=mg.play] [{"text":"🏎 ","color":"gold"},{"text":"KART","color":"gold","bold":true},{"text":" : Z avancer, S freiner / reculer, Q / D tourner, ","color":"gray"},{"text":"ESPACE en tournant = dérapage","color":"yellow"},{"text":" (relâche après les étincelles bleues, orange ou violettes pour un mini-turbo). Boîtes ? = objets, Ctrl pour les utiliser. 3 tours !","color":"gray"}]
+tellraw @a[tag=mg.play] [{"text":"🏎 ","color":"gold"},{"text":"KART","color":"gold","bold":true},{"text":" : Z avancer, S freiner / reculer, Q / D tourner, ","color":"gray"},{"text":"ESPACE en tournant = dérapage","color":"yellow"},{"text":" (relâche après les étincelles bleues, orange ou violettes pour un mini-turbo). Boîtes ? = objets, clic droit pour les utiliser (F5 = vue 3e personne). 3 tours !","color":"gray"}]
 ''')
 fn('cleanup', '''# Fin de course (appelé par core/return_lobby)
 kill @e[tag=mg.kpart]

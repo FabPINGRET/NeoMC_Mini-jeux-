@@ -2,6 +2,8 @@
 
 # --- Objectifs ---
 scoreboard objectives add mg.st dummy
+# Modèles du resource pack activés par défaut (/function mg:rp_off pour les couper)
+execute unless score $rp mg.st matches 0..1 run scoreboard players set $rp mg.st 1
 scoreboard objectives add mg.t dummy
 scoreboard objectives add mg.wins dummy [{"text":"✦ Victoires ✦","color":"gold"}]
 scoreboard objectives add mg.deaths deathCount

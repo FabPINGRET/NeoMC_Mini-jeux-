@@ -14,7 +14,7 @@ scoreboard players set $kj mg.st 0
 scoreboard players set $ks mg.st 0
 execute unless entity @s[tag=mg.kfin] run function mg:kart/inputs
 
-# Objet : clic droit (1re personne) ou Ctrl
+# Objet : clic droit (vue assise) ou Ctrl (caméra de poursuite)
 scoreboard players set $kuse mg.st 0
 execute if score @s mg.qs matches 1.. run scoreboard players set $kuse mg.st 1
 execute if score $ks mg.st matches 1 unless score @s mg.kspr matches 1 run scoreboard players set $kuse mg.st 1

@@ -36,7 +36,7 @@ give = ['# Objet en main (case 1) ; Ctrl (ou clic droit en 1re personne) pour l\
 for k, (name, color) in ITEMS.items():
     give.append(f'execute if score @s mg.kit matches {k} run item replace entity @s hotbar.0 with minecraft:warped_fungus_on_a_stick'
                 f'[item_model="{MODEL[k]}",custom_name=[{{"text":"{name}","color":"{color}","bold":true,"italic":false}}],'
-                f'lore=[[{{"text":"Ctrl (ou clic droit) pour l\'utiliser","color":"gray","italic":false}}]],unbreakable={{}}]')
+                f'lore=[[{{"text":"Clic droit pour l\'utiliser","color":"gray","italic":false}}]],unbreakable={{}}]')
     give.append(f'execute if score @s mg.kit matches {k} run title @s subtitle [{{"text":"{name}","color":"{color}","bold":true}}]')
 give.append('scoreboard players set @s mg.kic 1')
 for k, n in CHARGES.items():
@@ -320,7 +320,7 @@ scoreboard players set $kj mg.st 0
 scoreboard players set $ks mg.st 0
 execute unless entity @s[tag=mg.kfin] run function mg:kart/inputs
 
-# Objet : clic droit (1re personne) ou Ctrl
+# Objet : clic droit (vue assise) ou Ctrl (caméra de poursuite)
 scoreboard players set $kuse mg.st 0
 execute if score @s mg.qs matches 1.. run scoreboard players set $kuse mg.st 1
 execute if score $ks mg.st matches 1 unless score @s mg.kspr matches 1 run scoreboard players set $kuse mg.st 1
@@ -437,7 +437,7 @@ hud = ['# Barre du bas : tour, position, objet (et charges), vitesse',
 hud.append(f'execute unless score @s mg.khi matches 1.. if score @s mg.kit matches 0 run title @s actionbar [{base},{{"text":"(pas d\'objet)","color":"dark_gray"}}{tail}]')
 for k, (name, color) in ITEMS.items():
     extra = ',{"text":" ×","color":"gray"},{"score":{"name":"@s","objective":"mg.kic"},"color":"white","bold":true}' if k in CHARGES else ''
-    hud.append(f'execute unless score @s mg.khi matches 1.. if score @s mg.kit matches {k} run title @s actionbar [{base},{{"text":"{name}","color":"{color}","bold":true}}{extra},{{"text":" (Ctrl)","color":"gray"}}{tail}]')
+    hud.append(f'execute unless score @s mg.khi matches 1.. if score @s mg.kit matches {k} run title @s actionbar [{base},{{"text":"{name}","color":"{color}","bold":true}}{extra},{{"text":" (clic droit)","color":"gray"}}{tail}]')
 fn('hud', '\n'.join(hud) + '\n')
 
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'rp_part.py'), encoding='utf-8').read())
