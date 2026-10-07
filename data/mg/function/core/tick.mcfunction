@@ -42,6 +42,8 @@ execute as @a[scores={mg.opt=1..}] run function mg:core/opt
 
 # Armurerie du lobby
 execute if score $setup mg.st matches 1 run function mg:lobby/armory_tick
+scoreboard players remove @a[scores={mg.fd=1..}] mg.fd 1
+execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,gamemode=adventure,x=24,y=63,z=19,dx=0.99,dy=2.5,dz=0.99] run function mg:lobby/food_give
 
 # Kart libre du spawn
 execute if score $setup mg.st matches 1 run function mg:lobkart/tick

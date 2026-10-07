@@ -42,6 +42,7 @@ scoreboard objectives add mg.vb dummy [{"text":"☑ VOTES — prochain jeu","col
 scoreboard objectives add mg.fw minecraft.used:minecraft.blaze_rod
 scoreboard objectives add mg.wc minecraft.used:minecraft.wind_charge
 scoreboard objectives add mg.wd dummy
+scoreboard objectives add mg.fd dummy
 scoreboard objectives add mg.ok dummy [{"text":"➶ KILLS — 10 pour gagner","color":"gold"}]
 scoreboard objectives add mg.qk dummy [{"text":"⚡ QUAKECRAFT ⚡","color":"aqua"}]
 scoreboard objectives add mg.ppc dummy
@@ -158,6 +159,7 @@ execute if score $setup mg.st matches 1 if data storage mg:kart built2 unless da
 # Reconstructions automatiques après une mise à jour (numéro de version dans le stockage)
 execute if score $setup mg.st matches 1 unless data storage mg:dropadv v2 run schedule function mg:dropadv/build 40s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/build 10s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/food_build 25s
 
 # Zones chargées (après une mise à jour du pack, les nouvelles zones sont prises en compte)
 execute if score $setup mg.st matches 1 run function mg:core/forceloads
