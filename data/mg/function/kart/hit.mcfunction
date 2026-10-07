@@ -1,6 +1,6 @@
 # @s touché (carapace, banane, éclair, étoile) : tête-à-queue, sauf en étoile
 execute if score @s mg.kst matches 1.. run return 0
-scoreboard players set @s mg.khi 24
+scoreboard players set @s mg.khi 20
 scoreboard players set @s mg.kbo 0
 scoreboard players set @s mg.kdr 0
 scoreboard players set @s mg.krc 0
