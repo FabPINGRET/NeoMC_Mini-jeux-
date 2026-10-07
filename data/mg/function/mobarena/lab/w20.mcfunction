@@ -11,8 +11,8 @@ summon minecraft:iron_golem 0.5 65 9506.5 {Tags:["mg.mob","mg.bossn"],Persistenc
 execute as @e[tag=mg.bossn] run attribute @s minecraft:scale base set 2.6
 execute as @e[tag=mg.bossn] run function mg:mobarena/boss_make {hp:800,name:"{\"text\":\"L\'Abomination Toxique\",\"color\":\"green\",\"bold\":true}"}
 function mg:mobarena/lab/boss_init
-title @a title [{"text":"☠ BOSS ☠","color":"dark_red","bold":true}]
-title @a subtitle [{"text":"L'Abomination Toxique","color":"green"}]
-execute as @a at @s run playsound minecraft:entity.ender_dragon.growl master @s ~ ~ ~ 0.8 0.8
+title @a[tag=!mg.surv] title [{"text":"☠ BOSS ☠","color":"dark_red","bold":true}]
+title @a[tag=!mg.surv] subtitle [{"text":"L'Abomination Toxique","color":"green"}]
+execute as @a[tag=!mg.surv] at @s run playsound minecraft:entity.ender_dragon.growl master @s ~ ~ ~ 0.8 0.8
 tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"4× Zombie de laboratoire (Speed II), 2× Sorcière","color":"yellow"},{"text":"  (sbires + boss)","color":"dark_gray"}]
 tellraw @a [{"text":"  ☠ BOSS : ","color":"dark_red","bold":true},{"text":"L'Abomination Toxique","color":"green","bold":true},{"text":" fait son entrée dans l'arène !","color":"gray"}]

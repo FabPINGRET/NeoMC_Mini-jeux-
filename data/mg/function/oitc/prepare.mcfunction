@@ -2,7 +2,7 @@
 execute if score $om mg.st matches 1 run return run function mg:oitc/prepare_1
 execute if score $om mg.st matches 2 run return run function mg:oitc/prepare_2
 function mg:oitc/build
-kill @e[type=minecraft:arrow]
+kill @e[distance=0..,type=minecraft:arrow]
 kill @e[type=minecraft:item,x=-20,y=70,z=5780,dx=40,dy=30,dz=40]
 scoreboard players reset @a mg.pk
 

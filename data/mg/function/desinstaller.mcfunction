@@ -76,6 +76,7 @@ scoreboard objectives remove mg.mpo
 scoreboard objectives remove mg.mpz
 scoreboard objectives remove mg.mpv
 scoreboard objectives remove mg.mid
+scoreboard objectives remove mg.sv
 bossbar remove mg:party
 scoreboard objectives remove mg.mit
 scoreboard objectives remove mg.mip

@@ -12,7 +12,7 @@ execute if score $sr2 mg.st matches 15 run function mg:splegg/floor_l
 execute if score $sr2 mg.st matches 12 run function mg:splegg/floor_m
 execute if score $sr2 mg.st matches 9 run function mg:splegg/floor_s
 
-kill @e[type=minecraft:egg]
+kill @e[distance=0..,type=minecraft:egg]
 kill @e[type=minecraft:chicken,x=-40,y=60,z=4160,dx=80,dy=60,dz=80]
 kill @e[type=minecraft:item,x=-40,y=55,z=4160,dx=80,dy=60,dz=80]
 

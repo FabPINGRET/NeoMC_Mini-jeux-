@@ -403,6 +403,25 @@
         "type": "minecraft:run_command",
         "command": "trigger mg.opt set 9"
       }
+    },
+    {
+      "label": [
+        {
+          "text": "🌲 Survie (monde libre)",
+          "color": "green",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Monde de survie normal, ouvert à tous (retour : menu Échap → ≡ Menu)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.sv set 1"
+      }
     }
   ],
   "exit_action": {

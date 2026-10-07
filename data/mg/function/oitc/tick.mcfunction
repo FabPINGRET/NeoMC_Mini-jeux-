@@ -1,7 +1,7 @@
 # One in the Chamber — tick de jeu
 
 # Nouvelles flèches : dégâts énormes (one-shot) et non ramassables ; les flèches plantées disparaissent
-execute as @e[type=minecraft:arrow,tag=!mg.ar] run function mg:oitc/arrow_new
+execute as @e[distance=0..,type=minecraft:arrow,tag=!mg.ar] run function mg:oitc/arrow_new
 # Flèches enchantées : traînée, explosion
 execute as @e[type=minecraft:arrow,tag=mg.sp] at @s run function mg:oitc/sp_tick
 
@@ -9,7 +9,7 @@ execute as @e[type=minecraft:arrow,tag=mg.sp] at @s run function mg:oitc/sp_tick
 scoreboard players add $os mg.st 1
 execute if score $os mg.st matches 600.. run function mg:oitc/special_timer
 
-execute as @e[type=minecraft:arrow,nbt={inGround:1b}] run kill @s
+execute as @e[distance=0..,type=minecraft:arrow,nbt={inGround:1b}] run kill @s
 
 # Recharge auto : 1 flèche après 5 s sans flèche
 execute as @a[tag=mg.play] run function mg:oitc/ammo

@@ -1,7 +1,6 @@
 # Mob Arena — début : kit + nuit
 execute as @a[tag=mg.play] run function mg:mobarena/kit
 
-time set midnight
 
 # Scoreboard latéral de la partie
 scoreboard objectives setdisplay sidebar mg.mb

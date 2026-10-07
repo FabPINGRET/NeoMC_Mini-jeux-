@@ -42,4 +42,4 @@ summon minecraft:text_display 0.5 70 14948.5 {Tags:["mg.mpdice"],billboard:"cent
 execute as @a[tag=mg.mpp] run function mg:party/rejoin
 execute as @a[tag=mg.mpp] run function mg:party/view_start
 function mg:party/hud
-tellraw @a[tag=mg.mpp] [{"text":"★ ","color":"gold"},{"text":"Règles, carte et caméra : menu ","color":"gray"},{"text":"★ Mini Party","color":"gold"},{"text":" (touche Actions rapides, ou Échap).","color":"gray"}]
+tellraw @a[tag=mg.mpp] [{"text":"★ ","color":"gold"},{"text":"Règles, carte et caméra : menu ","color":"gray"},{"text":"★ Mini Party","color":"gold"},{"text":" (menu Échap → ≡ Menu → ★ Mini Party).","color":"gray"}]

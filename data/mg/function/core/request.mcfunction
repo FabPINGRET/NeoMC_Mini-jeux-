@@ -65,7 +65,7 @@ execute if score $game mg.st matches 8..12 run scoreboard players remove $mt mg.
 execute if score $game mg.st matches 8..12 run scoreboard players set $game mg.st 6
 
 # Participants = tous les joueurs initialisés non-spectateurs
-tag @a[tag=mg.init,tag=!mg.spectate] add mg.play
+tag @a[tag=mg.init,tag=!mg.spectate,tag=!mg.surv] add mg.play
 tag @a remove mg.out
 execute store result score $n0 mg.st if entity @a[tag=mg.play]
 execute if score $n0 mg.st matches 0 run tellraw @s [{"text":"Aucun participant (tout le monde est en mode spectateur).","color":"red"}]
@@ -76,10 +76,10 @@ execute as @a[tag=mg.play,tag=mg.visit] run function mg:plot/leave_game
 # État : compte à rebours de 10 s
 scoreboard players set $state mg.st 1
 function mg:vote/clear
-clear @a minecraft:warped_fungus_on_a_stick
-clear @a minecraft:blaze_rod
-clear @a minecraft:wind_charge
-clear @a minecraft:snowball
+clear @a[tag=!mg.surv] minecraft:warped_fungus_on_a_stick
+clear @a[tag=!mg.surv] minecraft:blaze_rod
+clear @a[tag=!mg.surv] minecraft:wind_charge
+clear @a[tag=!mg.surv] minecraft:snowball
 scoreboard players reset @a mg.qs
 scoreboard players reset @a mg.fw
 scoreboard players reset @a mg.wc
@@ -181,4 +181,4 @@ effect give @a[tag=mg.play] minecraft:slowness 15 255 true
 effect give @a[tag=mg.play] minecraft:resistance 15 255 true
 title @a[tag=mg.play] title [{"text":"Préparez-vous !","color":"gold"}]
 title @a[tag=mg.play] subtitle [{"text":"Début dans 10 secondes...","color":"gray"}]
-execute as @a at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 0.8
+execute as @a[tag=!mg.surv] at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 0.8

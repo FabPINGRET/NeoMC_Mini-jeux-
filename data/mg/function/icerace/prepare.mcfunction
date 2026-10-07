@@ -1,7 +1,7 @@
 # Course de bateaux sur glace — préparation (circuit centré 0 ~ 13200)
 function mg:icerace/build
 kill @e[tag=mg.ib]
-kill @e[type=minecraft:item]
+kill @e[distance=0..,type=minecraft:item]
 scoreboard players set $px mg.st -10
 scoreboard players set $py mg.st 100
 scoreboard players set $pz mg.st 13200

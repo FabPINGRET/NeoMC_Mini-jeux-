@@ -13,7 +13,7 @@ effect give @a[tag=mg.play] minecraft:saturation 5 0 true
 
 title @a[tag=mg.play] title [{"text":"✔ Vague nettoyée !","color":"green"}]
 title @a[tag=mg.play] subtitle [{"text":"Soin complet + repas + 8 flèches — vague suivante dans 15 s","color":"gray"}]
-execute as @a at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1
+execute as @a[tag=!mg.surv] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1
 
 
 # Bonus des parties à 20 vagues

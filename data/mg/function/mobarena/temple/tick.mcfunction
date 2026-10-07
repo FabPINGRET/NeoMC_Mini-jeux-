@@ -1,5 +1,5 @@
 # Le Temple des Profondeurs — tick
-kill @e[type=minecraft:slime,tag=!mg.mob]
+kill @e[distance=0..,type=minecraft:slime,tag=!mg.mob]
 # Gardiens : ralentissement + fatigue de minage chaque seconde
 scoreboard players operation $m1 mg.st = $bt mg.st
 scoreboard players operation $m1 mg.st %= $k20 mg.st

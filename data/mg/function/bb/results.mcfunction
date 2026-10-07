@@ -16,4 +16,4 @@ scoreboard players set $state mg.st 3
 scoreboard players set $timer mg.st 400
 title @a[tag=mg.play] title [{"selector":"@a[tag=mg.win]","color":"gold","bold":true}]
 title @a[tag=mg.play] subtitle [{"text":"signe la plus belle construction !","color":"yellow"}]
-execute as @a at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1
+execute as @a[tag=!mg.surv] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1

@@ -16,8 +16,8 @@ summon minecraft:iron_golem 0.5 66 10300.5 {Tags:["mg.mob","mg.bossn"],Persisten
 execute as @e[tag=mg.bossn] run attribute @s minecraft:scale base set 3
 execute as @e[tag=mg.bossn] run function mg:mobarena/boss_make {hp:1000,name:"{\"text\":\"Le Golem de Basalte\",\"color\":\"gold\",\"bold\":true}"}
 function mg:mobarena/forge/boss_init
-title @a title [{"text":"☠ BOSS ☠","color":"dark_red","bold":true}]
-title @a subtitle [{"text":"Le Golem de Basalte","color":"gold"}]
-execute as @a at @s run playsound minecraft:entity.ender_dragon.growl master @s ~ ~ ~ 0.8 0.8
+title @a[tag=!mg.surv] title [{"text":"☠ BOSS ☠","color":"dark_red","bold":true}]
+title @a[tag=!mg.surv] subtitle [{"text":"Le Golem de Basalte","color":"gold"}]
+execute as @a[tag=!mg.surv] at @s run playsound minecraft:entity.ender_dragon.growl master @s ~ ~ ~ 0.8 0.8
 tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"4× Piglin furieux, 3× Blaze (tourelle)","color":"yellow"},{"text":"  (sbires + boss)","color":"dark_gray"}]
 tellraw @a [{"text":"  ☠ BOSS : ","color":"dark_red","bold":true},{"text":"Le Golem de Basalte","color":"gold","bold":true},{"text":" fait son entrée dans l'arène !","color":"gray"}]

@@ -1,6 +1,6 @@
 # One in the Chamber — préparation Château (centre 0 ~ 11700)
 function mg:oitc/build_1
-kill @e[type=minecraft:arrow]
+kill @e[distance=0..,type=minecraft:arrow]
 kill @e[type=minecraft:item,x=-24,y=70,z=11676,dx=48,dy=40,dz=48]
 scoreboard players reset @a mg.pk
 

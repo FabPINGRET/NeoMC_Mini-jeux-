@@ -3,7 +3,7 @@ function mg:turf/build
 function mg:turf/columns
 scoreboard players set $nr mg.st 15
 scoreboard players set $nb mg.st 15
-kill @e[type=minecraft:arrow]
+kill @e[distance=0..,type=minecraft:arrow]
 kill @e[type=minecraft:item,x=90,y=60,z=6978,dx=60,dy=40,dz=50]
 scoreboard players set $px mg.st 115
 scoreboard players set $py mg.st 100

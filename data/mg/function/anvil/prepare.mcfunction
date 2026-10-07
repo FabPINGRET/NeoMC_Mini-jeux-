@@ -2,7 +2,7 @@
 function mg:anvil/build
 kill @e[tag=mg.sh]
 kill @e[tag=mg.hl]
-kill @e[type=minecraft:falling_block]
+kill @e[distance=0..,type=minecraft:falling_block]
 kill @e[type=minecraft:item,x=-20,y=60,z=6680,dx=40,dy=30,dz=40]
 scoreboard players set $px mg.st 0
 scoreboard players set $py mg.st 100
