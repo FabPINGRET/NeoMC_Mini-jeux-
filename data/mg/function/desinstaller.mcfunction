@@ -258,3 +258,5 @@ clear @a minecraft:elytra[minecraft:custom_data~{mg_elyf:1b}]
 clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_elyf:1b}]
 tag @a remove mg.elyf
 tag @a remove mg.efp
+scoreboard objectives remove mg.ecr
+scoreboard objectives remove mg.erb2

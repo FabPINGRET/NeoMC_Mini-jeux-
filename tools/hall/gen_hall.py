@@ -78,15 +78,15 @@ W('top', ['# Nouveau meneur d\'un classement ? (@s) — fige « libellé / pseud
     '$data modify entity @e[type=minecraft:text_display,tag=mg.h_$(key),limit=1] text set from storage mg:hall e.$(key)'])
 def ely(pad):
     zero = '{text:"0",color:"gold",bold:false},' if pad else ''
-    return ('item modify entity @e[type=minecraft:item_display,tag=mg.hallbuf,limit=1] contents {function:"minecraft:set_name",entity:"this",target:"custom_name",name:['
-            '{text:"🪽 Record du parcours d\'élytra",color:"aqua",bold:true},{text:"\\n",bold:false},{selector:"@s",color:"white",bold:false},{text:" — ",color:"gray",bold:false},'
+    return ('$item modify entity @e[type=minecraft:item_display,tag=mg.hallbuf,limit=1] contents {function:"minecraft:set_name",entity:"this",target:"custom_name",name:['
+            '{text:"$(lbl)",color:"aqua",bold:true},{text:"\\n",bold:false},{selector:"@s",color:"white",bold:false},{text:" — ",color:"gray",bold:false},'
             '{score:{name:"$es",objective:"mg.st"},color:"gold",bold:false},{text:",",color:"gold",bold:false},' + zero +
             '{score:{name:"$ecs",objective:"mg.st"},color:"gold",bold:false},{text:" s",color:"gold",bold:false}]}')
-W('ely', ['# Record du parcours d\'élytra (@s, temps dans $es / $ecs) → hall',
-    'execute if score $ecs mg.st matches ..9 run ' + ely(True),
-    'execute if score $ecs mg.st matches 10.. run ' + ely(False),
-    'data modify storage mg:hall e.ely set from entity @e[type=minecraft:item_display,tag=mg.hallbuf,limit=1] item.components."minecraft:custom_name"',
-    'data modify entity @e[type=minecraft:text_display,tag=mg.h_ely,limit=1] text set from storage mg:hall e.ely'])
+W('ely', ['# Record d\'un parcours d\'élytra (@s, temps dans $es / $ecs) → hall — macro {key, lbl}',
+    ely(True).replace('$item modify', '$execute if score $ecs mg.st matches ..9 run item modify', 1),
+    ely(False).replace('$item modify', '$execute if score $ecs mg.st matches 10.. run item modify', 1),
+    '$data modify storage mg:hall e.$(key) set from entity @e[type=minecraft:item_display,tag=mg.hallbuf,limit=1] item.components."minecraft:custom_name"',
+    '$data modify entity @e[type=minecraft:text_display,tag=mg.h_$(key),limit=1] text set from storage mg:hall e.$(key)'])
 
 # ---------------------------------------------------------------- tableau à droite : rotation
 # Lobby, hors partie : un tableau toutes les 8 s — victoires, parties jouées, kills, puis chaque
@@ -132,8 +132,9 @@ b = ['# Hall des scores (sud-ouest de la place) : construction + restauration de
      '', '# Piédestaux : objet qui tourne + plaque']
 peds = [(-18.5, 'stp', '▶ Le plus assidu', 'green', 'clock'),
         (-15.5, 'wins', '👑 Champion des mini-jeux', 'gold', 'totem_of_undying'),
-        (-12.5, 'ely', "🪽 Record du parcours d'élytra", 'aqua', 'elytra')]
+        (-12.5, 'ely', "🪽 Record petit parcours d'élytra", 'aqua', 'elytra')]
 plaques = [(x, 66.9, 25.5, k, l, c, 0.55) for x, k, l, c, _ in peds]
+plaques.append((-12.5, 67.6, 25.5, 'ely2', "🪽 Record grand parcours d'élytra", 'light_purple', 0.55))
 for x, k, l, c, it in peds:
     b.append(f'summon minecraft:item_display {x} 65.8 25.5 {{Tags:["mg.hall","mg.lspin","mg.lbob"],billboard:"fixed",item:{{id:"minecraft:{it}"}},{TR % (0.9, 0.9, 0.9)}}}')
 xs = [-19.3, -17.4, -15.5, -13.6, -11.7]
