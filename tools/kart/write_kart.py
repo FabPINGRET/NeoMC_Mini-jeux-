@@ -39,7 +39,7 @@ T0 = 'left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f]'
 KS = 0.75   # taille du kart (1 = modèle d'origine)
 def ks(v): return round(v * KS, 3)
 def part(block, tr, sc):
-    return ('{id:"minecraft:block_display",Tags:["mg.kpart","mg.fx"],teleport_duration:1,block_state:{Name:"minecraft:%s"},'
+    return ('{id:"minecraft:block_display",Tags:["mg.kpart","mg.fx"],teleport_duration:2,block_state:{Name:"minecraft:%s"},'
             'transformation:{translation:[%sf,%sf,%sf],%s,scale:[%sf,%sf,%sf]}}' % (block, *map(ks, tr), T0, *map(ks, sc)))
 PASSENGERS = ','.join([
     part('black_concrete', (-0.78, 0.0, 0.45), (1.56, 0.42, 0.42)),
@@ -107,8 +107,16 @@ execute unless function mg:kart/loaded_all run return run schedule function mg:k
 function mg:kart/gate_on
 function mg:kart/boxes
 execute as @a[tag=mg.play] at @s run function mg:kart/kart_new
+execute as @a[tag=mg.play] run function mg:kart/grid_face
 execute as @a[tag=mg.play] run function mg:kart/place_seat
 tellraw @a[tag=mg.play] [{"text":"🏎 ","color":"gold"},{"text":"Vue : 3e personne (Ctrl = objet). ","color":"gray"},{"text":"[1re personne]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 2"}},{"text":" ","color":"gray"},{"text":"[3e personne]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 1"}}]
+''')
+fn('grid_face', f'''# Le kart de @s est posé sur sa place de grille, dans l'axe de la piste (et pas dans le sens du regard du joueur)
+function mg:kart/kk
+scoreboard players operation $gi mg.st = @s mg.ri
+execute as {KK} run function mg:kart/grid_tp
+execute as {KK} at @s on passengers run rotate @s ~ 0
+tag @e[tag=mg.kk] remove mg.kk
 ''')
 fn('place_seat', '''function mg:kart/kk
 function mg:kart/seat
@@ -123,7 +131,7 @@ execute as @e[type=minecraft:item_display,tag=mg.kcam] if score @s mg.ri = $me m
 ''')
 fn('kart_new', '''# Nouveau kart pour @s, à sa position et dans sa direction
 tag @s add mg.kself
-summon minecraft:block_display ~ ~ ~ {Tags:["mg.ib","mg.kart","mg.mine"],teleport_duration:1,block_state:{Name:"minecraft:red_concrete"},transformation:{translation:[%sf,%sf,%sf],%s,scale:[%sf,%sf,%sf]},Passengers:[%s]}
+summon minecraft:block_display ~ ~ ~ {Tags:["mg.ib","mg.kart","mg.mine"],teleport_duration:2,block_state:{Name:"minecraft:red_concrete"},transformation:{translation:[%sf,%sf,%sf],%s,scale:[%sf,%sf,%sf]},Passengers:[%s]}
 execute as @e[type=minecraft:block_display,tag=mg.mine] at @s rotated as @a[tag=mg.kself,limit=1] run tp @s ~ ~ ~ ~ 0
 execute as @e[type=minecraft:block_display,tag=mg.mine] at @s on passengers run rotate @s ~ 0
 scoreboard players operation @e[type=minecraft:block_display,tag=mg.mine] mg.ri = @s mg.ri
@@ -158,7 +166,7 @@ execute at @s unless entity @e[type=minecraft:item_display,tag=mg.kcamc,distance
 fn('cam_new', f'''# Caméra de poursuite de @s + sa tête posée sur le siège du kart
 execute at {KK} run summon minecraft:item_display ~ ~2 ~ {{Tags:["mg.kcam","mg.kcamc","mg.fx"],teleport_duration:2}}
 scoreboard players operation @e[type=minecraft:item_display,tag=mg.kcamc] mg.ri = @s mg.ri
-execute at {KK} run summon minecraft:item_display ~ ~ ~ {{Tags:["mg.khead","mg.kheadn","mg.kpart","mg.fx"],teleport_duration:1,transformation:{{translation:[0f,0.62f,-0.1f],{T0},scale:[0.75f,0.75f,0.75f]}}}}
+execute at {KK} run summon minecraft:item_display ~ ~ ~ {{Tags:["mg.khead","mg.kheadn","mg.kpart","mg.fx"],teleport_duration:2,transformation:{{translation:[0f,0.62f,-0.1f],{T0},scale:[0.75f,0.75f,0.75f]}}}}
 loot replace entity @e[type=minecraft:item_display,tag=mg.kheadn,limit=1] contents loot mg:plot_head
 scoreboard players operation @e[type=minecraft:item_display,tag=mg.kheadn] mg.ri = @s mg.ri
 ride @e[type=minecraft:item_display,tag=mg.kheadn,limit=1] mount {KK}
@@ -387,7 +395,7 @@ CAM = '$execute at @s rotated $(h) 0 positioned ^ ^2.4 ^-5 rotated ~ 16 run tp @
 fn('move', f'''# @s = kart : remis sur la route s'il s'y est enfoncé, nez tourné, avance selon la trajectoire (rebond si mur), caméra
 execute at @s unless block ~ ~ ~ #mg:kart_pass align y run tp @s ~ ~1 ~
 $execute at @s run tp @s ~ ~ ~ ~$(t) 0
-$execute on passengers unless entity @s[type=minecraft:player] run rotate @s ~$(t) ~
+execute at @s on passengers unless entity @s[type=minecraft:player] run rotate @s ~ 0
 $execute at @s rotated $(h) 0 positioned ^ ^0.5 ^$(c) unless block ~ ~ ~ #mg:kart_pass run return run function mg:kart/bump {{v:$(v),h:$(h)}}
 $execute at @s rotated $(h) 0 run tp @s ^ ^$(v) ^$(d)
 {CAM}
@@ -440,7 +448,7 @@ execute as @a[tag=mg.play] if score @s mg.ri = $ko mg.st run function mg:kart/hi
 ''')
 fn('hit', f'''# @s touché (carapace, banane, éclair, étoile) : tête-à-queue, sauf en étoile
 execute if score @s mg.kst matches 1.. run return 0
-scoreboard players set @s mg.khi 24
+scoreboard players set @s mg.khi 20
 scoreboard players set @s mg.kbo 0
 scoreboard players set @s mg.kdr 0
 scoreboard players set @s mg.krc 0
@@ -450,7 +458,7 @@ execute as {KART}] if score @s mg.ri = $kh mg.st at @s run particle minecraft:ex
 execute as {KART}] if score @s mg.ri = $kh mg.st at @s run playsound minecraft:entity.generic.explode master @a[tag=mg.play,distance=..24] ~ ~ ~ 0.4 1.6
 ''')
 fn('hit_big', '''function mg:kart/hit
-execute if score @s mg.khi matches 1.. run scoreboard players set @s mg.khi 44
+execute if score @s mg.khi matches 1.. run scoreboard players set @s mg.khi 40
 ''')
 
 # ------------------------------------------------------------------ course
