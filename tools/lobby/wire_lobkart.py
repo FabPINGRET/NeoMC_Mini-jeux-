@@ -22,6 +22,7 @@ patch('core/tick', 'execute if score $setup mg.st matches 1 run function mg:lobb
       'execute if score $setup mg.st matches 1 run function mg:lobby/armory_tick\n\n# Kart libre du spawn\n'
       'execute if score $setup mg.st matches 1 run function mg:lobkart/tick\n')
 patch('core/tick', 'tag=!mg.pkr,tag=!mg.visit,gamemode=!spectator', 'tag=!mg.pkr,tag=!mg.lk,tag=!mg.visit,gamemode=!spectator')
+patch('core/tick', 'as @a[gamemode=spectator,tag=!mg.visit,tag=!mg.surv] run', 'as @a[gamemode=spectator,tag=!mg.visit,tag=!mg.surv,tag=!mg.lk] run')   # caméra de poursuite = spectateur
 patch('core/opt', 'execute if score @s mg.opt matches 26 ', 'execute if score @s mg.opt matches 27 run function mg:lobkart/exit\nexecute if score @s mg.opt matches 26 ')
 patch('core/load', 'scoreboard objectives add mg.kstk dummy\n', 'scoreboard objectives add mg.kstk dummy\nscoreboard objectives add mg.klt dummy\nscoreboard objectives add mg.klb dummy\n')
 patch('core/reconnect', 'scoreboard players reset @s mg.lg\n', 'scoreboard players reset @s mg.lg\nfunction mg:lobkart/leave\n')
