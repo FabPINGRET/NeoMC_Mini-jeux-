@@ -31,6 +31,44 @@
     {
       "label": [
         {
+          "text": "⬇ Dropper : Aventure",
+          "color": "aqua",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "10 grands niveaux à thème enchaînés (arc-en-ciel, mine, enfer, salon géant, nuages...) : le premier qui les finit gagne",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 64"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⬇ Dropper : Défi",
+          "color": "aqua",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Compétitif : un niveau de l'Aventure tiré au hasard à chaque manche, tout le monde dans le même puits, le premier dans l'eau gagne la manche (premier à 3)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 65"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "⬇ The Dropper",
           "color": "aqua"
         }

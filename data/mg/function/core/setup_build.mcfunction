@@ -6,6 +6,8 @@ function mg:parkour/build
 function mg:plot/build
 function mg:party/build
 data remove storage mg:kart built2
+data remove storage mg:dropadv built
+schedule function mg:dropadv/build 30s
 data remove storage mg:kart built3
 function mg:kart/build
 function mg:dust/build
