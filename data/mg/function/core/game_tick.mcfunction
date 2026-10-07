@@ -20,3 +20,5 @@ execute if score $game mg.st matches 56 run function mg:icerace/tick
 execute if score $game mg.st matches 57..58 run function mg:bb/tick
 execute if score $game mg.st matches 59 run function mg:party/tick
 execute if score $game mg.st matches 61 run function mg:kart/tick
+# Mini Party : filet de sécurité sur la durée du mini-jeu
+execute if score $mp mg.st matches 1 run function mg:party/watch

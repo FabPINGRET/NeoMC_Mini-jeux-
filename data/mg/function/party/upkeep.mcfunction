@@ -9,3 +9,5 @@ particle minecraft:large_smoke 38 98 15040 2 2 2 0.02 25 force
 particle minecraft:lava 38 93 15040 2 0.5 2 0 6 force
 execute as @a[tag=mg.mpp,tag=!mg.mpview] unless entity @s[tag=mg.mpcur] run function mg:party/hud_bar
 execute unless score $mph mg.st matches 3 as @a[tag=mg.mpcur,tag=!mg.mpview] run function mg:party/hud_bar
+# Classement de droite à jour
+execute as @a[tag=mg.mpp] run function mg:party/sb_line
