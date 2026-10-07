@@ -1,5 +1,8 @@
-# @s touché (carapace, banane, éclair, étoile) : tête-à-queue, sauf en étoile
+# @s touché : tête-à-queue (2 tours), sauf en étoile, méga, Bill Balle ou Boo
 execute if score @s mg.kst matches 1.. run return 0
+execute if score @s mg.kmg matches 1.. run return 0
+execute if score @s mg.kbill matches 1.. run return 0
+execute if score @s mg.kboo matches 1.. run return 0
 scoreboard players set @s mg.khi 20
 scoreboard players set @s mg.kbo 0
 scoreboard players set @s mg.kdr 0

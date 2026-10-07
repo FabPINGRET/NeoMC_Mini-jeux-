@@ -12,6 +12,9 @@ scoreboard players set #k20 mg.st 20
 scoreboard players set #k100 mg.st 100
 scoreboard players set #k1000 mg.st 1000
 scoreboard players set #k60 mg.st 60
+scoreboard players set #k12 mg.st 12
+scoreboard players set #k65 mg.st 65
+scoreboard players set #k120 mg.st 120
 scoreboard players set #kkmh mg.st 108
 scoreboard players set $px mg.st 0
 scoreboard players set $py mg.st 110
@@ -34,6 +37,11 @@ scoreboard players set @a[tag=mg.play] mg.kbo 0
 scoreboard players set @a[tag=mg.play] mg.khi 0
 scoreboard players set @a[tag=mg.play] mg.kst 0
 scoreboard players set @a[tag=mg.play] mg.kit 0
+scoreboard players set @a[tag=mg.play] mg.kic 0
+scoreboard players set @a[tag=mg.play] mg.kgd 0
+scoreboard players set @a[tag=mg.play] mg.kbill 0
+scoreboard players set @a[tag=mg.play] mg.kboo 0
+scoreboard players set @a[tag=mg.play] mg.kmg 0
 scoreboard players set @a[tag=mg.play] mg.kcp 0
 scoreboard players set @a[tag=mg.play] mg.klp 0
 scoreboard players set @a[tag=mg.play] mg.kvy 0

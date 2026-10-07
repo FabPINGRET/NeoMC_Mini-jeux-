@@ -1,0 +1,10 @@
+# Méga champignon : le kart grossit (animation de 8 ticks), invincible, écrase les karts touchés
+scoreboard players set @s mg.kmg 160
+data merge entity @e[type=minecraft:block_display,tag=mg.kk,limit=1] {start_interpolation:0,interpolation_duration:8,transformation:{translation:[-0.765f,0.153f,-1.211f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.53f,0.485f,2.422f]}}
+execute as @e[type=minecraft:block_display,tag=mg.kk,limit=1] on passengers if entity @s[tag=mg.kp1] run data merge entity @s {start_interpolation:0,interpolation_duration:8,transformation:{translation:[-0.995f,0.0f,0.574f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.989f,0.535f,0.535f]}}
+execute as @e[type=minecraft:block_display,tag=mg.kk,limit=1] on passengers if entity @s[tag=mg.kp2] run data merge entity @s {start_interpolation:0,interpolation_duration:8,transformation:{translation:[-0.995f,0.0f,-1.084f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.989f,0.535f,0.535f]}}
+execute as @e[type=minecraft:block_display,tag=mg.kk,limit=1] on passengers if entity @s[tag=mg.kp3] run data merge entity @s {start_interpolation:0,interpolation_duration:8,transformation:{translation:[-0.51f,0.637f,-0.956f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.02f,0.637f,0.255f]}}
+execute as @e[type=minecraft:block_display,tag=mg.kk,limit=1] on passengers if entity @s[tag=mg.kp4] run data merge entity @s {start_interpolation:0,interpolation_duration:8,transformation:{translation:[-0.102f,0.637f,0.574f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.204f,0.446f,0.204f]}}
+execute as @e[type=minecraft:block_display,tag=mg.kk,limit=1] on passengers if entity @s[tag=mg.khead] run data merge entity @s {start_interpolation:0,interpolation_duration:8,transformation:{translation:[0f,1.05f,-0.15f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.25f,1.25f,1.25f]}}
+title @s actionbar [{"text":"🍄 MÉGA !","color":"red","bold":true}]
+execute at @s run playsound minecraft:entity.player.levelup master @a[tag=mg.play,distance=..30] ~ ~ ~ 1 0.5
