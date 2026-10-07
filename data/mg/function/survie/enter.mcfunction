@@ -4,6 +4,7 @@ execute if entity @s[tag=mg.surv] run return run tellraw @s [{"text":"Tu es déj
 execute if entity @s[tag=mg.play] run return run tellraw @s [{"text":"⚠ Tu participes à la partie en cours : la survie sera accessible après.","color":"red"}]
 execute if entity @s[tag=mg.out] run return run tellraw @s [{"text":"⚠ Partie en cours : la survie sera accessible après.","color":"red"}]
 execute if entity @s[tag=mg.mpp] run return run tellraw @s [{"text":"⚠ Tu participes à la Mini Party : la survie sera accessible après.","color":"red"}]
+function mg:lobkart/leave
 execute unless score @s mg.svid matches 1.. run function mg:survie/assign
 execute unless score @s mg.svid matches 1.. run return 0
 

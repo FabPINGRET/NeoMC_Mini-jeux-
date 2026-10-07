@@ -9,6 +9,7 @@ execute if score $v mg.t = @s mg.plot run return run function mg:plot/enter
 execute if entity @s[tag=mg.inplot] run function mg:plot/walls_fix
 tag @s remove mg.inplot
 function mg:parkour/quit
+function mg:lobkart/leave
 tag @s add mg.visit
 gamemode spectator @s
 function mg:plot/visit_tp

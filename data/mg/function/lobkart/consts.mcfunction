@@ -1,0 +1,19 @@
+# Constantes du moteur du kart (les mêmes qu'en course)
+scoreboard players set #km1 mg.st -1
+scoreboard players set #k2 mg.st 2
+scoreboard players set #k3 mg.st 3
+scoreboard players set #k4 mg.st 4
+scoreboard players set #k5 mg.st 5
+scoreboard players set #k8 mg.st 8
+scoreboard players set #k10 mg.st 10
+scoreboard players set #k12 mg.st 12
+scoreboard players set #k20 mg.st 20
+scoreboard players set #k60 mg.st 60
+scoreboard players set #k65 mg.st 65
+scoreboard players set #k100 mg.st 100
+scoreboard players set #k120 mg.st 120
+scoreboard players set #k1000 mg.st 1000
+scoreboard players set #kt85 mg.st 85
+scoreboard players set #kt120 mg.st 120
+scoreboard players set #kt90 mg.st 90
+scoreboard players set #kkmh mg.st 108

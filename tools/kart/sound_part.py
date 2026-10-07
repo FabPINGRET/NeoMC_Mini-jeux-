@@ -102,3 +102,6 @@ assert '{"text":"/3   ","color":"gold"}' in s_h
 with open(os.path.join(K, 'hud.mcfunction'), 'w', encoding='utf-8', newline='\n') as f: f.write(s_h.replace('{"text":"/3   ","color":"gold"}', LAPS))
 patch_fn('lap', '{"text":" / 3","color":"gold"}', '{"text":" / ","color":"gold"},{"score":{"name":"$kLaps","objective":"mg.st"},"color":"gold"}')
 patch_fn('go', '3 tours !"', 'Tours : ","color":"gray"},{"score":{"name":"$kLaps","objective":"mg.st"},"color":"yellow","bold":true},{"text":" !"')
+
+# ------------------------------------------------------------------ kart libre du spawn : tours chronométrés à part (voir tools/lobby/gen_lobby.py)
+patch_fn('lap', 'scoreboard players add @s mg.klp 1\n', 'execute if score $klob mg.st matches 1 run return run function mg:lobkart/lap\nscoreboard players add @s mg.klp 1\n')

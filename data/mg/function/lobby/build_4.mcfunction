@@ -1,4 +1,4 @@
-# Spawn, partie 4/9 (généré par tools/lobby/gen_lobby.py)
+# Spawn, partie 4/11 (généré par tools/lobby/gen_lobby.py)
 fill -37 35 36 -37 35 38 minecraft:deepslate strict
 setblock -37 35 39 minecraft:deepslate_redstone_ore strict
 fill -37 35 40 -37 35 44 minecraft:deepslate strict

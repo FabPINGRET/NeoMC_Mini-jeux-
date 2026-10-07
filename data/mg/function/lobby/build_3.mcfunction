@@ -1,4 +1,4 @@
-# Spawn, partie 3/9 (généré par tools/lobby/gen_lobby.py)
+# Spawn, partie 3/11 (généré par tools/lobby/gen_lobby.py)
 setblock -43 30 4 minecraft:deepslate strict
 setblock -43 30 5 minecraft:glow_lichen[up=true] strict
 fill -42 30 -28 -41 30 -25 minecraft:stone strict

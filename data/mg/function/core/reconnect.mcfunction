@@ -1,5 +1,6 @@
 # Joueur qui revient après une déconnexion (@s = joueur)
 scoreboard players reset @s mg.lg
+function mg:lobkart/leave
 
 # En survie : il reprend là où il était (rien à faire)
 execute if entity @s[tag=mg.surv] run return 0
