@@ -37,6 +37,7 @@ execute if score @s mg.kit matches 18 run item replace entity @s hotbar.0 with m
 execute if score @s mg.kit matches 18 run title @s subtitle [{"text":"❓ Fausse boîte","color":"yellow","bold":true}]
 execute if score @s mg.kit matches 19 run item replace entity @s hotbar.0 with minecraft:warped_fungus_on_a_stick[item_model="minecraft:red_mushroom_block",custom_name=[{"text":"🍄 Méga champignon","color":"red","bold":true,"italic":false}],lore=[[{"text":"Ctrl (ou clic droit) pour l'utiliser","color":"gray","italic":false}]],unbreakable={}]
 execute if score @s mg.kit matches 19 run title @s subtitle [{"text":"🍄 Méga champignon","color":"red","bold":true}]
+execute if score $rp mg.st matches 1 run function mg:kart/rp_icon
 scoreboard players set @s mg.kic 1
 execute if score @s mg.kit matches 8 run scoreboard players set @s mg.kic 3
 execute if score @s mg.kit matches 9 run scoreboard players set @s mg.kic 3

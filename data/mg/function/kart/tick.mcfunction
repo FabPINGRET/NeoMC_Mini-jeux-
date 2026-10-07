@@ -1,5 +1,7 @@
 # Kart (état 2, jeu 61)
 scoreboard players add $ktime mg.st 1
+execute if score $rp mg.st matches 1 as @e[tag=mg.kart,tag=!mg.rps] at @s run function mg:kart/rp_skin
+execute if score $rp mg.st matches 1 as @e[tag=mg.fx,tag=!mg.rps] at @s run function mg:kart/rp_skin
 scoreboard players enable @a[tag=mg.play] mg.kv
 execute as @a[tag=mg.play] run function mg:kart/drive
 tag @e[tag=mg.kk] remove mg.kk

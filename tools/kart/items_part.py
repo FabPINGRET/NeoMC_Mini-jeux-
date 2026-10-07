@@ -439,3 +439,5 @@ for k, (name, color) in ITEMS.items():
     extra = ',{"text":" ×","color":"gray"},{"score":{"name":"@s","objective":"mg.kic"},"color":"white","bold":true}' if k in CHARGES else ''
     hud.append(f'execute unless score @s mg.khi matches 1.. if score @s mg.kit matches {k} run title @s actionbar [{base},{{"text":"{name}","color":"{color}","bold":true}}{extra},{{"text":" (Ctrl)","color":"gray"}}{tail}]')
 fn('hud', '\n'.join(hud) + '\n')
+
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'rp_part.py'), encoding='utf-8').read())
