@@ -1,4 +1,488 @@
 # Spawn, partie 10/11 (généré par tools/lobby/gen_lobby.py)
+setblock -42 65 -24 minecraft:light[level=12] strict
+setblock -42 65 -12 minecraft:light[level=12] strict
+setblock -42 65 -11 minecraft:cracked_stone_bricks strict
+setblock -42 65 -6 minecraft:light[level=12] strict
+setblock -42 65 6 minecraft:light[level=12] strict
+fill -42 65 11 -41 65 11 minecraft:stone_bricks strict
+setblock -42 65 12 minecraft:light[level=12] strict
+fill -42 65 200 -41 65 200 minecraft:barrier strict
+setblock -41 65 -25 minecraft:hay_block strict
+fill -41 65 -11 -41 68 -11 minecraft:stone_bricks strict
+fill -41 65 211 -40 65 211 minecraft:barrier strict
+fill -40 65 -11 -40 70 -11 minecraft:dark_oak_log strict
+fill -40 65 11 -40 70 11 minecraft:dark_oak_log strict
+setblock -40 65 199 minecraft:barrier strict
+fill -39 65 -34 -37 69 -34 minecraft:stone_bricks strict
+fill -39 65 -11 -38 65 -11 minecraft:stone_bricks strict
+fill -39 65 11 -38 66 11 minecraft:stone_bricks strict
+setblock -39 65 198 minecraft:barrier strict
+fill -39 65 210 -38 65 210 minecraft:barrier strict
+setblock -38 65 -10 minecraft:lantern strict
+setblock -38 65 10 minecraft:lantern strict
+fill -38 65 197 -38 65 198 minecraft:barrier strict
+fill -37 65 -12 -37 68 -10 minecraft:stone_bricks strict
+setblock -37 65 197 minecraft:barrier strict
+setblock -37 65 209 minecraft:barrier strict
+setblock -36 65 -48 minecraft:light[level=12] strict
+fill -36 65 -13 -35 65 -13 minecraft:stone_bricks strict
+setblock -36 65 -12 minecraft:light[level=12] strict
+fill -36 65 -11 -36 70 -11 minecraft:dark_oak_log strict
+fill -36 65 -9 -36 68 -9 minecraft:stone_bricks strict
+setblock -36 65 -6 minecraft:light[level=12] strict
+setblock -36 65 6 minecraft:light[level=12] strict
+fill -36 65 9 -36 67 9 minecraft:stone_bricks strict
+fill -36 65 11 -36 70 11 minecraft:dark_oak_log strict
+setblock -36 65 12 minecraft:light[level=12] strict
+fill -36 65 13 -34 68 13 minecraft:stone_bricks strict
+setblock -36 65 48 minecraft:light[level=12] strict
+setblock -36 65 196 minecraft:barrier strict
+setblock -36 65 203 minecraft:light[level=13] strict
+fill -36 65 208 -35 65 208 minecraft:barrier strict
+fill -35 65 -11 -35 65 -9 minecraft:stone_bricks strict
+fill -35 65 -8 -35 70 -8 minecraft:dark_oak_log strict
+fill -35 65 -7 -35 65 -5 minecraft:stone_bricks strict
+fill -35 65 -4 -35 70 -4 minecraft:dark_oak_log strict
+fill -35 65 -3 -35 66 -3 minecraft:stone_bricks strict
+setblock -35 65 3 minecraft:stone_bricks strict
+fill -35 65 4 -35 70 4 minecraft:dark_oak_log strict
+fill -35 65 5 -35 65 6 minecraft:stone_bricks strict
+setblock -35 65 7 minecraft:cracked_stone_bricks strict
+fill -35 65 8 -35 70 8 minecraft:dark_oak_log strict
+fill -35 65 9 -35 66 11 minecraft:stone_bricks strict
+fill -35 65 22 -33 65 22 minecraft:azalea_leaves[persistent=true] strict
+setblock -35 65 195 minecraft:barrier strict
+setblock -34 65 -13 minecraft:mossy_stone_bricks strict
+fill -34 65 -9 -34 67 -9 minecraft:stone_bricks strict
+setblock -34 65 9 minecraft:mossy_stone_bricks strict
+setblock -34 65 21 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -34 65 23 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -34 65 194 minecraft:barrier strict
+setblock -34 65 207 minecraft:barrier strict
+setblock -33 65 -12 minecraft:stone_bricks strict
+setblock -33 65 -11 minecraft:mossy_stone_bricks strict
+setblock -33 65 -10 minecraft:stone_bricks strict
+fill -33 65 193 -33 65 194 minecraft:barrier strict
+setblock -33 65 206 minecraft:barrier strict
+setblock -32 65 -71 minecraft:lantern strict
+setblock -32 65 71 minecraft:lantern strict
+fill -32 65 192 -32 65 193 minecraft:barrier strict
+fill -32 65 205 -32 65 206 minecraft:barrier strict
+fill -31 65 191 -31 65 192 minecraft:barrier strict
+setblock -31 65 205 minecraft:barrier strict
+setblock -30 65 -67 minecraft:lantern strict
+setblock -30 65 -54 minecraft:light[level=12] strict
+setblock -30 65 0 minecraft:light[level=12] strict
+setblock -30 65 54 minecraft:light[level=12] strict
+setblock -30 65 67 minecraft:lantern strict
+fill -30 65 119 -29 65 119 minecraft:barrier strict
+setblock -30 65 191 minecraft:barrier strict
+setblock -30 65 204 minecraft:barrier strict
+setblock -29 65 17 minecraft:azalea_leaves[persistent=true] strict
+fill -29 65 129 -26 65 129 minecraft:barrier strict
+setblock -29 65 190 minecraft:barrier strict
+setblock -29 65 203 minecraft:barrier strict
+setblock -28 65 -73 minecraft:lantern strict
+setblock -28 65 16 minecraft:azalea_leaves[persistent=true] strict
+fill -28 65 17 -27 65 17 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -28 65 18 minecraft:azalea_leaves[persistent=true] strict
+setblock -28 65 118 minecraft:barrier strict
+setblock -28 65 189 minecraft:barrier strict
+setblock -28 65 202 minecraft:barrier strict
+setblock -27 65 73 minecraft:lantern strict
+fill -27 65 117 -27 65 118 minecraft:barrier strict
+setblock -27 65 188 minecraft:barrier strict
+fill -27 65 201 -27 65 202 minecraft:barrier strict
+setblock -26 65 -68 minecraft:lantern strict
+fill -26 65 116 -26 65 117 minecraft:barrier strict
+setblock -26 65 187 minecraft:barrier strict
+fill -26 65 200 -26 65 201 minecraft:barrier strict
+setblock -25 65 50 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -25 65 68 minecraft:lantern strict
+fill -25 65 115 -25 65 116 minecraft:barrier strict
+fill -25 65 128 -24 65 128 minecraft:barrier strict
+setblock -25 65 186 minecraft:barrier strict
+fill -25 65 199 -25 65 200 minecraft:barrier strict
+setblock -24 65 -60 minecraft:light[level=12] strict
+setblock -24 65 -24 minecraft:light[level=12] strict
+setblock -24 65 0 minecraft:light[level=12] strict
+fill -24 65 24 -24 65 26 minecraft:azalea_leaves[persistent=true] strict
+fill -24 65 49 -24 65 51 minecraft:azalea_leaves[persistent=true] strict
+setblock -24 65 60 minecraft:light[level=12] strict
+fill -24 65 76 -24 65 83 minecraft:barrier strict
+fill -24 65 113 -24 65 114 minecraft:barrier strict
+setblock -24 65 122 minecraft:light[level=13] strict
+setblock -24 65 185 minecraft:barrier strict
+setblock -24 65 192 minecraft:light[level=13] strict
+setblock -24 65 199 minecraft:barrier strict
+setblock -23 65 25 minecraft:azalea_leaves[persistent=true] strict
+setblock -23 65 41 minecraft:azalea_leaves[persistent=true] strict
+setblock -23 65 50 minecraft:azalea_leaves[persistent=true] strict
+fill -23 65 72 -23 65 75 minecraft:barrier strict
+fill -23 65 84 -23 65 112 minecraft:barrier strict
+setblock -23 65 127 minecraft:barrier strict
+fill -23 65 183 -23 65 184 minecraft:barrier strict
+setblock -23 65 198 minecraft:barrier strict
+fill -22 65 40 -22 65 42 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill -22 65 70 -22 65 72 minecraft:barrier strict
+setblock -22 65 126 minecraft:barrier strict
+fill -22 65 182 -22 65 183 minecraft:barrier strict
+setblock -22 65 197 minecraft:barrier strict
+setblock -21 65 -15 minecraft:azalea_leaves[persistent=true] strict
+fill -21 65 68 -21 65 69 minecraft:barrier strict
+fill -21 65 125 -21 65 126 minecraft:barrier strict
+setblock -21 65 181 minecraft:barrier strict
+setblock -21 65 196 minecraft:barrier strict
+fill -20 65 -16 -20 65 -14 minecraft:azalea_leaves[persistent=true] strict
+fill -20 65 67 -20 65 68 minecraft:barrier strict
+setblock -20 65 115 minecraft:light[level=13] strict
+fill -20 65 124 -20 65 125 minecraft:barrier strict
+setblock -20 65 180 minecraft:barrier strict
+setblock -20 65 195 minecraft:barrier strict
+setblock -19 65 -15 minecraft:azalea_leaves[persistent=true] strict
+fill -19 65 84 -18 65 84 minecraft:light[level=13] strict
+fill -19 65 92 -18 65 92 minecraft:light[level=13] strict
+fill -19 65 100 -18 65 100 minecraft:light[level=13] strict
+fill -19 65 108 -18 65 108 minecraft:light[level=13] strict
+setblock -19 65 116 minecraft:light[level=13] strict
+fill -19 65 123 -19 65 124 minecraft:barrier strict
+fill -19 65 178 -19 65 179 minecraft:barrier strict
+setblock -19 65 186 minecraft:light[level=13] strict
+setblock -19 65 194 minecraft:barrier strict
+setblock -18 65 -60 minecraft:light[level=12] strict
+setblock -18 65 0 minecraft:light[level=12] strict
+setblock -18 65 60 minecraft:light[level=12] strict
+setblock -18 65 66 minecraft:light[level=12] strict
+setblock -18 65 76 minecraft:light[level=13] strict
+fill -18 65 122 -18 65 123 minecraft:barrier strict
+fill -18 65 177 -18 65 178 minecraft:barrier strict
+setblock -18 65 193 minecraft:barrier strict
+setblock -17 65 -43 minecraft:azalea_leaves[persistent=true] strict
+fill -17 65 -42 -17 65 -41 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill -17 65 121 -17 65 122 minecraft:barrier strict
+setblock -17 65 176 minecraft:barrier strict
+setblock -17 65 192 minecraft:barrier strict
+setblock -16 65 -42 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill -16 65 119 -16 65 120 minecraft:barrier strict
+setblock -16 65 175 minecraft:barrier strict
+setblock -16 65 191 minecraft:barrier strict
+fill -15 65 118 -15 65 119 minecraft:barrier strict
+fill -15 65 173 -15 65 174 minecraft:barrier strict
+fill -15 65 189 -15 65 190 minecraft:barrier strict
+fill -14 65 77 -14 65 97 minecraft:barrier strict
+fill -14 65 115 -14 65 117 minecraft:barrier strict
+fill -14 65 172 -14 65 173 minecraft:barrier strict
+fill -14 65 188 -14 65 189 minecraft:barrier strict
+setblock -13 65 48 minecraft:black_wool strict
+fill -13 65 74 -13 65 76 minecraft:barrier strict
+fill -13 65 98 -13 65 114 minecraft:barrier strict
+setblock -13 65 172 minecraft:barrier strict
+setblock -13 65 187 minecraft:barrier strict
+setblock -12 65 -60 minecraft:light[level=12] strict
+setblock -12 65 -6 minecraft:light[level=12] strict
+setblock -12 65 0 minecraft:light[level=12] strict
+setblock -12 65 6 minecraft:light[level=12] strict
+setblock -12 65 60 minecraft:light[level=12] strict
+setblock -12 65 66 minecraft:light[level=12] strict
+fill -12 65 73 -12 65 74 minecraft:barrier strict
+setblock -12 65 171 minecraft:barrier strict
+setblock -12 65 186 minecraft:barrier strict
+setblock -11 65 72 minecraft:barrier strict
+setblock -11 65 170 minecraft:barrier strict
+fill -11 65 184 -11 65 185 minecraft:barrier strict
+setblock -10 65 169 minecraft:barrier strict
+fill -10 65 183 -10 65 184 minecraft:barrier strict
+setblock -9 65 60 minecraft:black_wool strict
+fill -9 65 168 -9 65 169 minecraft:barrier strict
+setblock -9 65 182 minecraft:barrier strict
+setblock -8 65 168 minecraft:barrier strict
+setblock -8 65 174 minecraft:light[level=13] strict
+setblock -8 65 181 minecraft:barrier strict
+setblock -7 65 167 minecraft:barrier strict
+setblock -7 65 180 minecraft:barrier strict
+setblock -6 65 -60 minecraft:light[level=12] strict
+setblock -6 65 -42 minecraft:light[level=12] strict
+setblock -6 65 -12 minecraft:light[level=12] strict
+setblock -6 65 0 minecraft:light[level=12] strict
+setblock -6 65 12 minecraft:light[level=12] strict
+setblock -6 65 36 minecraft:red_concrete strict
+setblock -6 65 37 minecraft:white_concrete strict
+setblock -6 65 42 minecraft:light[level=12] strict
+setblock -6 65 48 minecraft:light[level=12] strict
+setblock -6 65 54 minecraft:light[level=12] strict
+setblock -6 65 60 minecraft:light[level=12] strict
+setblock -6 65 66 minecraft:light[level=12] strict
+fill -6 65 166 -6 65 167 minecraft:barrier strict
+setblock -6 65 179 minecraft:barrier strict
+setblock -5 65 166 minecraft:barrier strict
+setblock -5 65 178 minecraft:barrier strict
+setblock -4 65 -66 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill -4 65 165 -3 65 165 minecraft:barrier strict
+setblock -4 65 177 minecraft:barrier strict
+fill -3 65 -67 -3 65 -65 minecraft:azalea_leaves[persistent=true] strict
+fill -3 65 176 -3 65 177 minecraft:barrier strict
+setblock -2 65 -83 minecraft:lantern strict
+setblock -2 65 -78 minecraft:lantern strict
+setblock -2 65 -73 minecraft:lantern strict
+setblock -2 65 -66 minecraft:azalea_leaves[persistent=true] strict
+setblock -2 65 73 minecraft:lantern strict
+setblock -2 65 78 minecraft:lantern strict
+setblock -2 65 83 minecraft:lantern strict
+fill -2 65 164 -1 65 164 minecraft:barrier strict
+setblock -2 65 169 minecraft:light[level=13] strict
+setblock -2 65 176 minecraft:barrier strict
+fill -1 65 175 0 65 175 minecraft:barrier strict
+setblock 0 65 -66 minecraft:light[level=12] strict
+setblock 0 65 -60 minecraft:light[level=12] strict
+setblock 0 65 -54 minecraft:light[level=12] strict
+setblock 0 65 -48 minecraft:light[level=12] strict
+setblock 0 65 -47 minecraft:light[level=15] strict
+setblock 0 65 -42 minecraft:light[level=12] strict
+setblock 0 65 -36 minecraft:light[level=12] strict
+setblock 0 65 -30 minecraft:light[level=12] strict
+setblock 0 65 -24 minecraft:light[level=12] strict
+setblock 0 65 -18 minecraft:light[level=12] strict
+setblock 0 65 -12 minecraft:light[level=12] strict
+setblock 0 65 -6 minecraft:light[level=12] strict
+setblock 0 65 0 minecraft:light[level=12] strict
+setblock 0 65 6 minecraft:light[level=12] strict
+setblock 0 65 12 minecraft:light[level=12] strict
+setblock 0 65 18 minecraft:light[level=12] strict
+setblock 0 65 24 minecraft:light[level=12] strict
+setblock 0 65 30 minecraft:light[level=12] strict
+setblock 0 65 36 minecraft:light[level=12] strict
+setblock 0 65 42 minecraft:light[level=12] strict
+setblock 0 65 50 minecraft:polished_blackstone_button[face=wall,facing=south] strict
+setblock 0 65 54 minecraft:light[level=12] strict
+setblock 0 65 60 minecraft:black_concrete strict
+setblock 0 65 66 minecraft:light[level=12] strict
+setblock 0 65 72 minecraft:black_concrete strict
+fill 0 65 163 2 65 163 minecraft:barrier strict
+setblock 1 65 174 minecraft:barrier strict
+fill 2 65 173 2 65 174 minecraft:barrier strict
+setblock 3 65 -83 minecraft:lantern strict
+setblock 3 65 -78 minecraft:lantern strict
+setblock 3 65 -73 minecraft:lantern strict
+setblock 3 65 73 minecraft:lantern strict
+setblock 3 65 78 minecraft:lantern strict
+setblock 3 65 83 minecraft:lantern strict
+fill 3 65 162 6 65 162 minecraft:barrier strict
+fill 3 65 173 4 65 173 minecraft:barrier strict
+fill 5 65 172 7 65 172 minecraft:barrier strict
+setblock 6 65 -60 minecraft:light[level=12] strict
+setblock 6 65 -42 minecraft:light[level=12] strict
+setblock 6 65 -12 minecraft:light[level=12] strict
+setblock 6 65 0 minecraft:light[level=12] strict
+setblock 6 65 12 minecraft:light[level=12] strict
+setblock 6 65 36 minecraft:red_concrete strict
+setblock 6 65 37 minecraft:white_concrete strict
+setblock 6 65 42 minecraft:light[level=12] strict
+setblock 6 65 48 minecraft:light[level=12] strict
+setblock 6 65 54 minecraft:light[level=12] strict
+setblock 6 65 60 minecraft:light[level=12] strict
+setblock 6 65 66 minecraft:light[level=12] strict
+setblock 6 65 167 minecraft:light[level=13] strict
+fill 7 65 161 16 65 161 minecraft:barrier strict
+setblock 8 65 -34 minecraft:azalea_leaves[persistent=true] strict
+setblock 8 65 36 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill 8 65 171 15 65 171 minecraft:barrier strict
+fill 9 65 -35 9 65 -33 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock 9 65 35 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill 9 65 36 10 65 36 minecraft:azalea_leaves[persistent=true] strict
+setblock 9 65 37 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock 9 65 60 minecraft:black_wool strict
+fill 9 65 72 11 65 72 minecraft:barrier strict
+setblock 10 65 -34 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock 12 65 -60 minecraft:light[level=12] strict
+setblock 12 65 -6 minecraft:light[level=12] strict
+setblock 12 65 0 minecraft:light[level=12] strict
+setblock 12 65 6 minecraft:light[level=12] strict
+setblock 12 65 60 minecraft:light[level=12] strict
+setblock 12 65 66 minecraft:light[level=12] strict
+fill 12 65 73 12 65 74 minecraft:barrier strict
+setblock 13 65 48 minecraft:black_wool strict
+fill 13 65 74 13 65 76 minecraft:barrier strict
+fill 13 65 97 13 65 114 minecraft:barrier strict
+fill 14 65 77 14 65 96 minecraft:barrier strict
+fill 14 65 115 14 65 117 minecraft:barrier strict
+setblock 14 65 166 minecraft:light[level=13] strict
+setblock 15 65 118 minecraft:barrier strict
+setblock 16 65 -31 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill 16 65 119 16 65 120 minecraft:barrier strict
+fill 16 65 172 18 65 172 minecraft:barrier strict
+setblock 17 65 -32 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill 17 65 -31 17 65 -30 minecraft:azalea_leaves[persistent=true] strict
+fill 17 65 39 17 65 40 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock 17 65 41 minecraft:azalea_leaves[persistent=true] strict
+setblock 17 65 54 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock 17 65 121 minecraft:barrier strict
+fill 17 65 162 20 65 162 minecraft:barrier strict
+setblock 18 65 -60 minecraft:light[level=12] strict
+setblock 18 65 -31 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock 18 65 0 minecraft:light[level=12] strict
+setblock 18 65 40 minecraft:azalea_leaves[persistent=true] strict
+fill 18 65 53 18 65 55 minecraft:azalea_leaves[persistent=true] strict
+setblock 18 65 60 minecraft:light[level=12] strict
+setblock 18 65 66 minecraft:light[level=12] strict
+setblock 18 65 122 minecraft:barrier strict
+setblock 19 65 54 minecraft:azalea_leaves[persistent=true] strict
+fill 19 65 123 19 65 124 minecraft:barrier strict
+fill 19 65 173 20 65 173 minecraft:barrier strict
+setblock 20 65 116 minecraft:light[level=13] strict
+setblock 20 65 124 minecraft:barrier strict
+setblock 21 65 69 minecraft:barrier strict
+setblock 21 65 125 minecraft:barrier strict
+fill 21 65 163 22 65 163 minecraft:barrier strict
+setblock 21 65 169 minecraft:light[level=13] strict
+fill 21 65 174 22 65 174 minecraft:barrier strict
+fill 22 65 70 22 65 72 minecraft:barrier strict
+setblock 22 65 126 minecraft:barrier strict
+fill 23 65 72 23 65 75 minecraft:barrier strict
+fill 23 65 84 23 65 112 minecraft:barrier strict
+setblock 23 65 127 minecraft:barrier strict
+fill 23 65 163 23 65 164 minecraft:barrier strict
+fill 23 65 175 24 65 175 minecraft:barrier strict
+setblock 24 65 -60 minecraft:light[level=12] strict
+setblock 24 65 0 minecraft:light[level=12] strict
+setblock 24 65 60 minecraft:light[level=12] strict
+fill 24 65 76 24 65 83 minecraft:barrier strict
+fill 24 65 113 24 65 114 minecraft:barrier strict
+fill 24 65 127 24 65 128 minecraft:barrier strict
+fill 24 65 164 25 65 164 minecraft:barrier strict
+setblock 25 65 19 minecraft:azalea_leaves[persistent=true] strict
+setblock 25 65 115 minecraft:barrier strict
+setblock 25 65 122 minecraft:light[level=13] strict
+setblock 25 65 128 minecraft:barrier strict
+setblock 25 65 176 minecraft:barrier strict
+fill 26 65 18 26 65 20 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock 26 65 68 minecraft:lantern strict
+setblock 26 65 116 minecraft:barrier strict
+fill 26 65 129 27 65 129 minecraft:barrier strict
+setblock 26 65 165 minecraft:barrier strict
+setblock 26 65 177 minecraft:barrier strict
+setblock 27 65 19 minecraft:azalea_leaves[persistent=true] strict
+setblock 27 65 117 minecraft:barrier strict
+fill 27 65 165 27 65 166 minecraft:barrier strict
+setblock 27 65 178 minecraft:barrier strict
+setblock 28 65 -73 minecraft:lantern strict
+setblock 28 65 73 minecraft:lantern strict
+setblock 28 65 118 minecraft:barrier strict
+fill 28 65 130 29 65 130 minecraft:barrier strict
+setblock 28 65 166 minecraft:barrier strict
+setblock 28 65 173 minecraft:light[level=13] strict
+setblock 28 65 179 minecraft:barrier strict
+fill 29 65 119 30 65 119 minecraft:barrier strict
+fill 29 65 167 30 65 167 minecraft:barrier strict
+fill 29 65 180 29 65 181 minecraft:barrier strict
+setblock 30 65 -66 minecraft:light[level=12] strict
+setblock 30 65 -54 minecraft:light[level=12] strict
+setblock 30 65 0 minecraft:light[level=12] strict
+setblock 30 65 54 minecraft:light[level=12] strict
+fill 30 65 130 30 65 131 minecraft:barrier strict
+fill 30 65 181 30 65 182 minecraft:barrier strict
+setblock 31 65 42 minecraft:azalea_leaves[persistent=true] strict
+fill 31 65 120 32 65 120 minecraft:barrier strict
+fill 31 65 131 32 65 131 minecraft:barrier strict
+setblock 31 65 168 minecraft:barrier strict
+fill 31 65 183 31 65 184 minecraft:barrier strict
+setblock 32 65 30 minecraft:azalea_leaves[persistent=true] strict
+fill 32 65 41 32 65 42 minecraft:azalea_leaves[persistent=true] strict
+setblock 32 65 43 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock 32 65 71 minecraft:lantern strict
+setblock 32 65 126 minecraft:light[level=13] strict
+setblock 32 65 169 minecraft:barrier strict
+fill 32 65 184 32 65 185 minecraft:barrier strict
+setblock 33 65 -71 minecraft:lantern strict
+setblock 33 65 21 minecraft:azalea_leaves[persistent=true] strict
+setblock 33 65 29 minecraft:azalea_leaves[persistent=true] strict
+fill 33 65 30 34 65 30 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock 33 65 31 minecraft:azalea_leaves[persistent=true] strict
+setblock 33 65 42 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill 33 65 121 34 65 121 minecraft:barrier strict
+fill 33 65 132 35 65 132 minecraft:barrier strict
+fill 33 65 169 33 65 170 minecraft:barrier strict
+fill 33 65 186 33 65 187 minecraft:barrier strict
+setblock 34 65 20 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill 34 65 21 34 65 22 minecraft:azalea_leaves[persistent=true] strict
+fill 34 65 170 34 65 171 minecraft:barrier strict
+setblock 34 65 178 minecraft:light[level=13] strict
+setblock 34 65 188 minecraft:barrier strict
+setblock 35 65 -76 minecraft:lantern strict
+setblock 35 65 21 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill 35 65 122 37 65 122 minecraft:barrier strict
+setblock 35 65 172 minecraft:barrier strict
+fill 35 65 189 35 65 190 minecraft:barrier strict
+setblock 36 65 -48 minecraft:light[level=12] strict
+setblock 36 65 0 minecraft:light[level=12] strict
+setblock 36 65 48 minecraft:light[level=12] strict
+fill 36 65 133 38 65 133 minecraft:barrier strict
+setblock 36 65 173 minecraft:barrier strict
+setblock 36 65 191 minecraft:barrier strict
+fill 37 65 174 37 65 175 minecraft:barrier strict
+fill 37 65 192 37 65 193 minecraft:barrier strict
+fill 38 65 123 40 65 123 minecraft:barrier strict
+fill 38 65 175 38 65 176 minecraft:barrier strict
+setblock 38 65 185 minecraft:light[level=13] strict
+fill 38 65 194 38 65 195 minecraft:barrier strict
+fill 39 65 134 41 65 134 minecraft:barrier strict
+fill 39 65 177 39 65 178 minecraft:barrier strict
+fill 39 65 196 39 65 197 minecraft:barrier strict
+fill 40 65 178 40 65 179 minecraft:barrier strict
+fill 40 65 198 40 65 199 minecraft:barrier strict
+setblock 41 65 51 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill 41 65 124 43 65 124 minecraft:barrier strict
+fill 41 65 180 41 65 181 minecraft:barrier strict
+fill 41 65 200 41 65 201 minecraft:barrier strict
+setblock 42 65 0 minecraft:light[level=12] strict
+fill 42 65 50 42 65 51 minecraft:azalea_leaves[persistent=true] strict
+setblock 42 65 52 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill 42 65 134 42 65 135 minecraft:barrier strict
+setblock 42 65 182 minecraft:barrier strict
+setblock 42 65 192 minecraft:light[level=13] strict
+fill 42 65 201 42 65 202 minecraft:barrier strict
+setblock 43 65 51 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill 43 65 135 45 65 135 minecraft:barrier strict
+fill 43 65 183 43 65 184 minecraft:barrier strict
+setblock 43 65 203 minecraft:barrier strict
+fill 44 65 125 46 65 125 minecraft:barrier strict
+setblock 44 65 185 minecraft:barrier strict
+fill 44 65 204 44 65 205 minecraft:barrier strict
+fill 45 65 186 45 65 187 minecraft:barrier strict
+fill 45 65 205 45 65 206 minecraft:barrier strict
+fill 46 65 136 49 65 136 minecraft:barrier strict
+fill 46 65 188 46 65 189 minecraft:barrier strict
+setblock 46 65 199 minecraft:light[level=13] strict
+setblock 46 65 206 minecraft:barrier strict
+fill 47 65 126 50 65 126 minecraft:barrier strict
+setblock 47 65 131 minecraft:light[level=13] strict
+fill 47 65 189 47 65 191 minecraft:barrier strict
+setblock 47 65 207 minecraft:barrier strict
+setblock 48 65 -48 minecraft:light[level=12] strict
+setblock 48 65 -36 minecraft:light[level=12] strict
+setblock 48 65 0 minecraft:light[level=12] strict
+setblock 48 65 36 minecraft:light[level=12] strict
+fill 48 65 191 48 65 193 minecraft:barrier strict
+fill 48 65 208 49 65 208 minecraft:barrier strict
+fill 49 65 193 49 65 195 minecraft:barrier strict
+setblock 50 65 -53 minecraft:lantern strict
+setblock 50 65 53 minecraft:lantern strict
+fill 50 65 137 55 65 137 minecraft:barrier strict
+fill 50 65 195 50 65 196 minecraft:barrier strict
+fill 50 65 209 51 65 209 minecraft:barrier strict
+fill 51 65 127 56 65 127 minecraft:barrier strict
+setblock 51 65 197 minecraft:barrier strict
+setblock 52 65 198 minecraft:barrier strict
+setblock 52 65 204 minecraft:light[level=13] strict
+fill 52 65 210 53 65 210 minecraft:barrier strict
+setblock 53 65 50 minecraft:lantern strict
+setblock 53 65 199 minecraft:barrier strict
+setblock 54 65 -56 minecraft:lantern strict
+setblock 54 65 -50 minecraft:lantern strict
+setblock 54 65 -30 minecraft:light[level=12] strict
+setblock 54 65 0 minecraft:light[level=12] strict
+setblock 54 65 30 minecraft:light[level=12] strict
+setblock 54 65 57 minecraft:lantern strict
+fill 54 65 200 55 65 200 minecraft:barrier strict
 fill 54 65 211 56 65 211 minecraft:barrier strict
 fill 55 65 132 55 65 133 minecraft:light[level=13] strict
 fill 56 65 138 62 65 138 minecraft:barrier strict
@@ -166,8 +650,6 @@ setblock -84 66 211 minecraft:lantern strict
 setblock -79 66 142 minecraft:lantern strict
 setblock -79 66 202 minecraft:lantern strict
 setblock -71 66 215 minecraft:lantern strict
-setblock -64 66 12 minecraft:oak_leaves[persistent=true] strict
-setblock -63 66 10 minecraft:oak_leaves[persistent=true] strict
 fill -59 66 10 -59 68 12 minecraft:stone_bricks strict
 fill -58 66 -13 -57 66 -13 minecraft:stone_bricks strict
 setblock -58 66 133 minecraft:lantern strict
@@ -187,26 +669,40 @@ setblock -51 66 -11 minecraft:mossy_stone_bricks strict
 fill -51 66 11 -50 67 11 minecraft:stone_bricks strict
 fill -50 66 -34 -49 68 -34 minecraft:red_wool strict
 fill -50 66 -11 -50 67 -11 minecraft:stone_bricks strict
-setblock -49 66 25 minecraft:oak_leaves[persistent=true] strict
 fill -48 66 -34 -46 66 -34 minecraft:white_wool strict
 setblock -48 66 -25 minecraft:target strict
 fill -47 66 -11 -45 67 -11 minecraft:stone_bricks strict
 setblock -47 66 11 minecraft:stone_bricks strict
-setblock -47 66 25 minecraft:oak_leaves[persistent=true] strict
 setblock -46 66 11 minecraft:cracked_stone_bricks strict
+fill -45 66 -40 -44 66 -36 minecraft:spruce_leaves[persistent=true] strict
 fill -45 66 -34 -44 68 -34 minecraft:red_wool strict
 setblock -45 66 11 minecraft:stone_bricks strict
 setblock -45 66 213 minecraft:lantern strict
+fill -43 66 -54 -42 66 -50 minecraft:spruce_leaves[persistent=true] strict
+fill -43 66 -40 -43 66 -39 minecraft:spruce_leaves[persistent=true] strict
+fill -43 66 -37 -43 66 -36 minecraft:spruce_leaves[persistent=true] strict
 fill -43 66 -34 -41 66 -34 minecraft:white_wool strict
+fill -43 66 24 -43 66 25 minecraft:oak_leaves[persistent=true] strict
+fill -42 66 -40 -41 66 -36 minecraft:spruce_leaves[persistent=true] strict
+setblock -42 66 25 minecraft:oak_leaves[persistent=true] strict
+fill -41 66 -54 -41 66 -53 minecraft:spruce_leaves[persistent=true] strict
+fill -41 66 -51 -41 66 -50 minecraft:spruce_leaves[persistent=true] strict
 setblock -41 66 -25 minecraft:target strict
 fill -41 66 11 -41 67 11 minecraft:stone_bricks strict
+fill -41 66 23 -41 66 25 minecraft:oak_leaves[persistent=true] strict
+fill -41 66 42 -39 66 42 minecraft:oak_leaves[persistent=true] strict
+fill -40 66 -54 -39 66 -50 minecraft:spruce_leaves[persistent=true] strict
 fill -40 66 -34 -40 68 -34 minecraft:red_wool strict
 setblock -39 66 -11 minecraft:mossy_stone_bricks strict
 setblock -38 66 -11 minecraft:stone_bricks strict
+fill -38 66 32 -37 66 32 minecraft:oak_leaves[persistent=true] strict
+fill -38 66 34 -37 66 34 minecraft:oak_leaves[persistent=true] strict
 setblock -37 66 10 minecraft:stone_bricks strict
 setblock -37 66 11 minecraft:mossy_stone_bricks strict
 setblock -37 66 12 minecraft:stone_bricks strict
+fill -36 66 -25 -36 66 -23 minecraft:spruce_leaves[persistent=true] strict
 fill -36 66 -13 -35 66 -13 minecraft:mossy_stone_bricks strict
+fill -35 66 -26 -35 66 -22 minecraft:spruce_leaves[persistent=true] strict
 setblock -35 66 -11 minecraft:cracked_stone_bricks strict
 fill -35 66 -10 -35 66 -9 minecraft:stone_bricks strict
 setblock -35 66 -7 minecraft:stone_bricks strict
@@ -214,67 +710,72 @@ setblock -35 66 -6 minecraft:cracked_stone_bricks strict
 setblock -35 66 -5 minecraft:stone_bricks strict
 setblock -35 66 3 minecraft:mossy_stone_bricks strict
 fill -35 66 5 -35 66 7 minecraft:stone_bricks strict
+fill -34 66 -26 -34 66 -25 minecraft:spruce_leaves[persistent=true] strict
+fill -34 66 -23 -34 66 -22 minecraft:spruce_leaves[persistent=true] strict
 setblock -34 66 -13 minecraft:stone_bricks strict
 setblock -34 66 -4 minecraft:wall_torch[facing=east] strict
 setblock -34 66 4 minecraft:wall_torch[facing=east] strict
 fill -34 66 9 -34 67 9 minecraft:stone_bricks strict
+fill -33 66 -26 -33 66 -22 minecraft:spruce_leaves[persistent=true] strict
 fill -33 66 -12 -33 67 -12 minecraft:mossy_stone_bricks strict
 fill -33 66 -11 -33 67 -10 minecraft:stone_bricks strict
+fill -33 66 43 -33 66 44 minecraft:oak_leaves[persistent=true] strict
+fill -32 66 -25 -32 66 -23 minecraft:spruce_leaves[persistent=true] strict
+fill -32 66 44 -31 66 44 minecraft:oak_leaves[persistent=true] strict
+setblock -31 66 42 minecraft:oak_leaves[persistent=true] strict
 setblock -30 66 30 minecraft:chiseled_stone_bricks strict
-fill -27 66 8 -27 66 10 minecraft:oak_leaves[persistent=true] strict
-setblock -26 66 8 minecraft:oak_leaves[persistent=true] strict
-fill -25 66 8 -25 66 10 minecraft:oak_leaves[persistent=true] strict
-fill -23 66 -50 -23 66 -48 minecraft:spruce_leaves[persistent=true] strict
+fill -23 66 -24 -23 66 -22 minecraft:spruce_leaves[persistent=true] strict
 setblock -23 66 75 minecraft:lantern strict
 setblock -23 66 88 minecraft:lantern strict
 setblock -23 66 100 minecraft:lantern strict
-fill -22 66 -51 -22 66 -47 minecraft:spruce_leaves[persistent=true] strict
-fill -22 66 15 -22 66 16 minecraft:oak_leaves[persistent=true] strict
-fill -22 66 33 -21 66 33 minecraft:oak_leaves[persistent=true] strict
-fill -22 66 41 -22 66 42 minecraft:oak_leaves[persistent=true] strict
-fill -21 66 -51 -21 66 -50 minecraft:spruce_leaves[persistent=true] strict
-fill -21 66 -48 -21 66 -47 minecraft:spruce_leaves[persistent=true] strict
-setblock -21 66 16 minecraft:oak_leaves[persistent=true] strict
-setblock -21 66 41 minecraft:oak_leaves[persistent=true] strict
-setblock -21 66 43 minecraft:oak_leaves[persistent=true] strict
+fill -22 66 -25 -22 66 -21 minecraft:spruce_leaves[persistent=true] strict
+fill -21 66 -25 -21 66 -24 minecraft:spruce_leaves[persistent=true] strict
+fill -21 66 -22 -21 66 -21 minecraft:spruce_leaves[persistent=true] strict
 setblock -21 66 126 minecraft:lantern strict
-fill -20 66 -51 -20 66 -47 minecraft:spruce_leaves[persistent=true] strict
-setblock -20 66 15 minecraft:oak_leaves[persistent=true] strict
-setblock -20 66 34 minecraft:oak_leaves[persistent=true] strict
-setblock -20 66 42 minecraft:oak_leaves[persistent=true] strict
-fill -20 66 62 -20 67 64 minecraft:spruce_leaves[persistent=true] strict
-fill -19 66 -50 -19 66 -48 minecraft:spruce_leaves[persistent=true] strict
-fill -19 66 -38 -19 66 -36 minecraft:spruce_leaves[persistent=true] strict
-fill -19 66 61 -19 67 65 minecraft:spruce_leaves[persistent=true] strict
-fill -18 66 -39 -18 66 -35 minecraft:spruce_leaves[persistent=true] strict
-fill -18 66 -16 -18 67 -14 minecraft:spruce_leaves[persistent=true] strict
-fill -18 66 61 -18 67 62 minecraft:spruce_leaves[persistent=true] strict
-fill -18 66 64 -18 67 65 minecraft:spruce_leaves[persistent=true] strict
-fill -17 66 -39 -17 66 -38 minecraft:spruce_leaves[persistent=true] strict
-fill -17 66 -36 -17 66 -35 minecraft:spruce_leaves[persistent=true] strict
-fill -17 66 -17 -17 67 -13 minecraft:spruce_leaves[persistent=true] strict
-fill -17 66 61 -17 67 65 minecraft:spruce_leaves[persistent=true] strict
-fill -16 66 -39 -16 66 -35 minecraft:spruce_leaves[persistent=true] strict
-fill -16 66 -17 -16 67 -16 minecraft:spruce_leaves[persistent=true] strict
-fill -16 66 -14 -16 67 -13 minecraft:spruce_leaves[persistent=true] strict
-fill -16 66 62 -16 67 64 minecraft:spruce_leaves[persistent=true] strict
-fill -15 66 -38 -15 66 -36 minecraft:spruce_leaves[persistent=true] strict
-fill -15 66 -17 -15 67 -13 minecraft:spruce_leaves[persistent=true] strict
+fill -20 66 -25 -20 66 -21 minecraft:spruce_leaves[persistent=true] strict
+fill -19 66 -24 -19 66 -22 minecraft:spruce_leaves[persistent=true] strict
+fill -18 66 -55 -18 67 -53 minecraft:spruce_leaves[persistent=true] strict
+setblock -18 66 32 minecraft:oak_leaves[persistent=true] strict
+fill -17 66 -56 -17 67 -52 minecraft:spruce_leaves[persistent=true] strict
+fill -17 66 -31 -16 66 -27 minecraft:spruce_leaves[persistent=true] strict
+fill -17 66 20 -16 66 20 minecraft:oak_leaves[persistent=true] strict
+fill -16 66 -56 -16 67 -55 minecraft:spruce_leaves[persistent=true] strict
+fill -16 66 -53 -16 67 -52 minecraft:spruce_leaves[persistent=true] strict
+setblock -16 66 18 minecraft:oak_leaves[persistent=true] strict
+fill -16 66 31 -16 66 32 minecraft:oak_leaves[persistent=true] strict
+setblock -16 66 53 minecraft:oak_leaves[persistent=true] strict
+setblock -16 66 55 minecraft:oak_leaves[persistent=true] strict
+fill -15 66 -56 -15 67 -52 minecraft:spruce_leaves[persistent=true] strict
+fill -15 66 -31 -15 66 -30 minecraft:spruce_leaves[persistent=true] strict
+fill -15 66 -28 -15 66 -27 minecraft:spruce_leaves[persistent=true] strict
+fill -15 66 -13 -14 66 -9 minecraft:spruce_leaves[persistent=true] strict
+fill -15 66 18 -15 66 19 minecraft:oak_leaves[persistent=true] strict
+fill -15 66 46 -14 66 46 minecraft:oak_leaves[persistent=true] strict
+fill -15 66 53 -15 66 55 minecraft:oak_leaves[persistent=true] strict
 setblock -15 66 173 minecraft:lantern strict
 setblock -15 66 189 minecraft:lantern strict
-fill -14 66 -16 -14 67 -14 minecraft:spruce_leaves[persistent=true] strict
+fill -14 66 -55 -14 67 -53 minecraft:spruce_leaves[persistent=true] strict
+fill -14 66 -31 -13 66 -27 minecraft:spruce_leaves[persistent=true] strict
 setblock -14 66 77 minecraft:lantern strict
 setblock -14 66 88 minecraft:lantern strict
+fill -13 66 -48 -13 67 -46 minecraft:spruce_leaves[persistent=true] strict
+fill -13 66 -13 -13 66 -12 minecraft:spruce_leaves[persistent=true] strict
+fill -13 66 -10 -13 66 -9 minecraft:spruce_leaves[persistent=true] strict
 setblock -13 66 100 minecraft:lantern strict
-fill -11 66 -39 -10 66 -35 minecraft:spruce_leaves[persistent=true] strict
-setblock -10 66 34 minecraft:oak_leaves[persistent=true] strict
-fill -9 66 -39 -9 66 -38 minecraft:spruce_leaves[persistent=true] strict
-fill -9 66 -36 -9 66 -35 minecraft:spruce_leaves[persistent=true] strict
-setblock -9 66 35 minecraft:oak_leaves[persistent=true] strict
+fill -12 66 -49 -12 67 -45 minecraft:spruce_leaves[persistent=true] strict
+fill -12 66 -13 -11 66 -9 minecraft:spruce_leaves[persistent=true] strict
+fill -11 66 -49 -11 67 -48 minecraft:spruce_leaves[persistent=true] strict
+fill -11 66 -46 -11 67 -45 minecraft:spruce_leaves[persistent=true] strict
+fill -10 66 -49 -10 67 -45 minecraft:spruce_leaves[persistent=true] strict
+setblock -10 66 16 minecraft:oak_leaves[persistent=true] strict
+fill -10 66 22 -8 66 22 minecraft:oak_leaves[persistent=true] strict
+setblock -10 66 24 minecraft:oak_leaves[persistent=true] strict
+fill -9 66 -48 -9 67 -46 minecraft:spruce_leaves[persistent=true] strict
+setblock -9 66 14 minecraft:oak_leaves[persistent=true] strict
 setblock -9 66 60 minecraft:coal_block strict
 setblock -8 66 -47 minecraft:end_rod[facing=up] strict
-fill -8 66 -39 -7 66 -35 minecraft:spruce_leaves[persistent=true] strict
-fill -8 66 34 -8 66 35 minecraft:oak_leaves[persistent=true] strict
+setblock -8 66 16 minecraft:oak_leaves[persistent=true] strict
+setblock -8 66 24 minecraft:oak_leaves[persistent=true] strict
 fill -6 66 -48 -6 73 -47 minecraft:purpur_block strict
 setblock -6 66 36 minecraft:white_concrete strict
 setblock -6 66 37 minecraft:red_concrete strict
@@ -290,33 +791,29 @@ fill 6 66 -48 6 73 -47 minecraft:purpur_block strict
 setblock 6 66 36 minecraft:white_concrete strict
 setblock 6 66 37 minecraft:red_concrete strict
 setblock 8 66 -47 minecraft:end_rod[facing=up] strict
-fill 8 66 26 8 66 27 minecraft:oak_leaves[persistent=true] strict
-setblock 9 66 25 minecraft:oak_leaves[persistent=true] strict
 setblock 9 66 60 minecraft:coal_block strict
-setblock 10 66 27 minecraft:oak_leaves[persistent=true] strict
 setblock 10 66 171 minecraft:lantern strict
-fill 11 66 18 12 66 18 minecraft:oak_leaves[persistent=true] strict
-fill 11 66 20 12 66 20 minecraft:oak_leaves[persistent=true] strict
-fill 12 66 10 12 66 11 minecraft:oak_leaves[persistent=true] strict
-setblock 13 66 10 minecraft:oak_leaves[persistent=true] strict
-setblock 13 66 12 minecraft:oak_leaves[persistent=true] strict
-fill 13 66 18 13 66 20 minecraft:oak_leaves[persistent=true] strict
 setblock 13 66 113 minecraft:lantern strict
-fill 14 66 10 14 67 12 minecraft:oak_leaves[persistent=true] strict
-fill 14 66 31 16 66 31 minecraft:oak_leaves[persistent=true] strict
-fill 14 66 33 15 66 33 minecraft:oak_leaves[persistent=true] strict
-fill 15 66 62 15 66 64 minecraft:spruce_leaves[persistent=true] strict
-fill 16 66 61 16 66 65 minecraft:spruce_leaves[persistent=true] strict
-fill 17 66 61 17 66 62 minecraft:spruce_leaves[persistent=true] strict
-fill 17 66 64 17 66 65 minecraft:spruce_leaves[persistent=true] strict
-fill 18 66 61 18 66 65 minecraft:spruce_leaves[persistent=true] strict
-fill 19 66 62 19 66 64 minecraft:spruce_leaves[persistent=true] strict
+fill 20 66 10 20 66 12 minecraft:oak_leaves[persistent=true] strict
+setblock 22 66 10 minecraft:oak_leaves[persistent=true] strict
 setblock 22 66 126 minecraft:lantern strict
+fill 26 66 35 26 66 36 minecraft:oak_leaves[persistent=true] strict
+fill 28 66 34 28 66 35 minecraft:oak_leaves[persistent=true] strict
 setblock 28 66 118 minecraft:lantern strict
 setblock 34 66 132 minecraft:lantern strict
+fill 35 66 56 37 66 56 minecraft:oak_leaves[persistent=true] strict
 setblock 35 66 172 minecraft:lantern strict
-setblock 41 66 28 minecraft:oak_leaves[persistent=true] strict
+fill 36 66 54 37 66 54 minecraft:oak_leaves[persistent=true] strict
+fill 40 66 37 40 66 39 minecraft:oak_leaves[persistent=true] strict
+setblock 41 66 23 minecraft:oak_leaves[persistent=true] strict
+setblock 41 66 25 minecraft:oak_leaves[persistent=true] strict
+setblock 41 66 37 minecraft:oak_leaves[persistent=true] strict
+setblock 43 66 25 minecraft:oak_leaves[persistent=true] strict
+setblock 48 66 30 minecraft:oak_leaves[persistent=true] strict
+fill 48 66 32 50 66 32 minecraft:oak_leaves[persistent=true] strict
 setblock 49 66 193 minecraft:lantern strict
+fill 50 66 19 50 66 20 minecraft:oak_leaves[persistent=true] strict
+fill 52 66 19 52 66 21 minecraft:oak_leaves[persistent=true] strict
 setblock 54 66 200 minecraft:lantern strict
 setblock 58 66 138 minecraft:lantern strict
 fill 64 66 -4 65 66 -4 minecraft:lime_stained_glass strict
@@ -334,59 +831,89 @@ setblock 105 66 170 minecraft:lantern strict
 fill 123 66 -3 123 66 2 minecraft:smooth_quartz strict
 setblock 124 66 -3 minecraft:calcite strict
 fill 124 66 -2 124 66 2 minecraft:smooth_quartz strict
-fill -66 67 10 -66 67 11 minecraft:oak_leaves[persistent=true] strict
-fill -65 67 10 -65 67 12 minecraft:oak_leaves[persistent=true] strict
-fill -64 67 9 -64 68 10 minecraft:oak_leaves[persistent=true] strict
-fill -64 67 12 -64 68 13 minecraft:oak_leaves[persistent=true] strict
-fill -64 67 19 -63 67 19 minecraft:oak_leaves[persistent=true] strict
-fill -63 67 9 -63 67 12 minecraft:oak_leaves[persistent=true] strict
-setblock -62 67 11 minecraft:oak_leaves[persistent=true] strict
-setblock -59 67 30 minecraft:oak_leaves[persistent=true] strict
+setblock -65 67 21 minecraft:oak_leaves[persistent=true] strict
+setblock -64 67 20 minecraft:oak_leaves[persistent=true] strict
+fill -63 67 21 -63 67 22 minecraft:oak_leaves[persistent=true] strict
 setblock -58 67 -13 minecraft:mossy_stone_bricks strict
 setblock -58 67 -9 minecraft:mossy_stone_bricks strict
 setblock -58 67 13 minecraft:mossy_stone_bricks strict
-setblock -58 67 29 minecraft:oak_leaves[persistent=true] strict
 fill -57 67 -13 -56 67 -13 minecraft:stone_bricks strict
 fill -57 67 9 -57 67 10 minecraft:stone_bricks strict
 setblock -57 67 11 minecraft:cracked_stone_bricks strict
 fill -57 67 13 -56 67 13 minecraft:stone_bricks strict
-setblock -57 67 31 minecraft:oak_leaves[persistent=true] strict
+fill -57 67 36 -57 67 38 minecraft:oak_leaves[persistent=true] strict
+setblock -56 67 36 minecraft:oak_leaves[persistent=true] strict
 fill -55 67 -12 -55 69 -10 minecraft:stone_bricks strict
 setblock -55 67 -8 minecraft:light[level=14] strict
 setblock -55 67 8 minecraft:light[level=14] strict
+fill -55 67 37 -55 67 38 minecraft:oak_leaves[persistent=true] strict
 setblock -53 67 -34 minecraft:white_wool strict
+setblock -53 67 16 minecraft:oak_leaves[persistent=true] strict
 setblock -52 67 -34 minecraft:target strict
 setblock -52 67 -17 minecraft:lantern[hanging=true] strict
+fill -51 67 -44 -51 67 -43 minecraft:oak_leaves[persistent=true] strict
 setblock -51 67 -34 minecraft:white_wool strict
 setblock -51 67 -11 minecraft:cracked_stone_bricks strict
-fill -50 67 24 -50 68 25 minecraft:oak_leaves[persistent=true] strict
-fill -49 67 22 -49 68 26 minecraft:oak_leaves[persistent=true] strict
+fill -51 67 16 -51 67 18 minecraft:oak_leaves[persistent=true] strict
+setblock -51 67 41 minecraft:oak_leaves[persistent=true] strict
+setblock -51 67 43 minecraft:oak_leaves[persistent=true] strict
+setblock -50 67 -43 minecraft:oak_leaves[persistent=true] strict
+fill -50 67 41 -50 67 43 minecraft:oak_leaves[persistent=true] strict
+fill -49 67 -45 -49 67 -43 minecraft:oak_leaves[persistent=true] strict
 setblock -48 67 -34 minecraft:white_wool strict
-fill -48 67 22 -48 68 23 minecraft:oak_leaves[persistent=true] strict
-fill -48 67 25 -48 68 26 minecraft:oak_leaves[persistent=true] strict
 setblock -47 67 -34 minecraft:target strict
 fill -47 67 11 -45 67 11 minecraft:stone_bricks strict
-fill -47 67 22 -47 67 25 minecraft:oak_leaves[persistent=true] strict
+fill -46 67 -40 -46 67 -36 minecraft:spruce_leaves[persistent=true] strict
 setblock -46 67 -34 minecraft:white_wool strict
-fill -46 67 24 -46 67 25 minecraft:oak_leaves[persistent=true] strict
-setblock -46 67 33 minecraft:oak_leaves[persistent=true] strict
-fill -46 67 35 -44 67 35 minecraft:oak_leaves[persistent=true] strict
+fill -45 67 -41 -44 67 -35 minecraft:spruce_leaves[persistent=true] strict
 setblock -45 67 -8 minecraft:light[level=14] strict
 setblock -45 67 8 minecraft:light[level=14] strict
+fill -44 67 -54 -44 67 -50 minecraft:spruce_leaves[persistent=true] strict
+setblock -44 67 24 minecraft:oak_leaves[persistent=true] strict
+fill -43 67 -55 -42 67 -49 minecraft:spruce_leaves[persistent=true] strict
+fill -43 67 -41 -43 67 -39 minecraft:spruce_leaves[persistent=true] strict
+fill -43 67 -37 -43 67 -35 minecraft:spruce_leaves[persistent=true] strict
 setblock -43 67 -34 minecraft:white_wool strict
+fill -43 67 22 -43 67 25 minecraft:oak_leaves[persistent=true] strict
+fill -42 67 -41 -41 67 -35 minecraft:spruce_leaves[persistent=true] strict
 setblock -42 67 -34 minecraft:target strict
 setblock -42 67 -17 minecraft:lantern[hanging=true] strict
+fill -42 67 22 -42 68 23 minecraft:oak_leaves[persistent=true] strict
+fill -42 67 25 -42 68 26 minecraft:oak_leaves[persistent=true] strict
+fill -42 67 40 -42 67 42 minecraft:oak_leaves[persistent=true] strict
+fill -41 67 -55 -41 67 -53 minecraft:spruce_leaves[persistent=true] strict
+fill -41 67 -51 -41 67 -49 minecraft:spruce_leaves[persistent=true] strict
 setblock -41 67 -34 minecraft:white_wool strict
-setblock -41 67 19 minecraft:birch_leaves[persistent=true] strict
-fill -40 67 20 -40 69 20 minecraft:birch_leaves[persistent=true] strict
+setblock -41 67 16 minecraft:birch_leaves[persistent=true] strict
+fill -41 67 22 -41 68 25 minecraft:oak_leaves[persistent=true] strict
+fill -41 67 40 -41 67 43 minecraft:oak_leaves[persistent=true] strict
+fill -40 67 -55 -39 67 -49 minecraft:spruce_leaves[persistent=true] strict
+fill -40 67 -40 -40 67 -36 minecraft:spruce_leaves[persistent=true] strict
+fill -40 67 15 -40 68 15 minecraft:birch_leaves[persistent=true] strict
+setblock -40 67 17 minecraft:birch_leaves[persistent=true] strict
+setblock -40 67 24 minecraft:oak_leaves[persistent=true] strict
+fill -40 67 39 -40 68 40 minecraft:oak_leaves[persistent=true] strict
+fill -40 67 42 -40 68 43 minecraft:oak_leaves[persistent=true] strict
 fill -39 67 -11 -38 69 -11 minecraft:stone_bricks strict
 fill -39 67 11 -38 67 11 minecraft:mossy_stone_bricks strict
+fill -39 67 32 -39 67 34 minecraft:oak_leaves[persistent=true] strict
+fill -39 67 39 -39 68 43 minecraft:oak_leaves[persistent=true] strict
+fill -38 67 -54 -38 67 -50 minecraft:spruce_leaves[persistent=true] strict
 setblock -38 67 -8 minecraft:light[level=14] strict
 setblock -38 67 8 minecraft:light[level=14] strict
+fill -38 67 32 -38 67 35 minecraft:oak_leaves[persistent=true] strict
+fill -38 67 40 -38 68 42 minecraft:oak_leaves[persistent=true] strict
+fill -37 67 -25 -37 67 -23 minecraft:spruce_leaves[persistent=true] strict
 fill -37 67 10 -37 67 12 minecraft:stone_bricks strict
-fill -37 67 34 -36 67 34 minecraft:oak_leaves[persistent=true] strict
+fill -37 67 31 -37 68 32 minecraft:oak_leaves[persistent=true] strict
+fill -37 67 34 -37 68 35 minecraft:oak_leaves[persistent=true] strict
+fill -36 67 -26 -36 67 -22 minecraft:spruce_leaves[persistent=true] strict
 fill -36 67 -13 -36 68 -13 minecraft:mossy_stone_bricks strict
-setblock -36 67 32 minecraft:oak_leaves[persistent=true] strict
+fill -36 67 31 -36 67 35 minecraft:oak_leaves[persistent=true] strict
+setblock -35 67 -45 minecraft:bamboo[age=0,leaves=small] strict
+fill -35 67 -44 -35 70 -44 minecraft:bamboo[age=0,leaves=none] strict
+setblock -35 67 -43 minecraft:bamboo[age=0,leaves=small] strict
+fill -35 67 -27 -35 67 -21 minecraft:spruce_leaves[persistent=true] strict
 fill -35 67 -13 -34 68 -13 minecraft:stone_bricks strict
 fill -35 67 -11 -35 67 -9 minecraft:stone_bricks strict
 setblock -35 67 -7 minecraft:mossy_stone_bricks strict
@@ -397,287 +924,342 @@ fill -35 67 5 -35 67 6 minecraft:stone_bricks strict
 setblock -35 67 7 minecraft:mossy_stone_bricks strict
 fill -35 67 9 -35 67 10 minecraft:stone_bricks strict
 setblock -35 67 11 minecraft:cracked_stone_bricks strict
-setblock -34 67 -18 minecraft:lantern strict
+fill -35 67 33 -35 68 34 minecraft:oak_leaves[persistent=true] strict
+fill -34 67 -27 -34 67 -25 minecraft:spruce_leaves[persistent=true] strict
+fill -34 67 -23 -34 67 -21 minecraft:spruce_leaves[persistent=true] strict
+fill -34 67 42 -34 67 44 minecraft:oak_leaves[persistent=true] strict
+fill -33 67 -27 -33 67 -21 minecraft:spruce_leaves[persistent=true] strict
 setblock -33 67 10 minecraft:stone_bricks strict
 setblock -33 67 11 minecraft:mossy_stone_bricks strict
 setblock -33 67 12 minecraft:stone_bricks strict
-setblock -33 67 43 minecraft:birch_leaves[persistent=true] strict
-setblock -32 67 -28 minecraft:bamboo[age=0,leaves=small] strict
-fill -32 67 -27 -32 70 -27 minecraft:bamboo[age=0,leaves=none] strict
-setblock -32 67 42 minecraft:birch_leaves[persistent=true] strict
-setblock -31 67 -35 minecraft:bamboo[age=0,leaves=small] strict
-fill -30 67 -35 -29 68 -35 minecraft:bamboo[age=0,leaves=none] strict
-setblock -30 67 16 minecraft:birch_leaves[persistent=true] strict
-fill -29 67 15 -29 68 15 minecraft:birch_leaves[persistent=true] strict
-fill -29 67 17 -29 68 17 minecraft:birch_leaves[persistent=true] strict
-setblock -28 67 9 minecraft:oak_leaves[persistent=true] strict
-setblock -28 67 16 minecraft:birch_leaves[persistent=true] strict
-fill -27 67 7 -27 67 11 minecraft:oak_leaves[persistent=true] strict
-fill -26 67 7 -26 68 8 minecraft:oak_leaves[persistent=true] strict
-fill -26 67 10 -26 68 11 minecraft:oak_leaves[persistent=true] strict
-fill -25 67 7 -25 68 10 minecraft:oak_leaves[persistent=true] strict
-fill -24 67 -50 -24 67 -48 minecraft:spruce_leaves[persistent=true] strict
-setblock -24 67 -43 minecraft:bamboo[age=0,leaves=small] strict
-fill -24 67 8 -24 68 10 minecraft:oak_leaves[persistent=true] strict
-fill -24 67 25 -24 67 26 minecraft:oak_leaves[persistent=true] strict
-fill -23 67 -51 -23 67 -47 minecraft:spruce_leaves[persistent=true] strict
-fill -23 67 14 -23 67 15 minecraft:oak_leaves[persistent=true] strict
-fill -23 67 25 -22 67 25 minecraft:oak_leaves[persistent=true] strict
-setblock -23 67 27 minecraft:oak_leaves[persistent=true] strict
-fill -23 67 33 -23 67 35 minecraft:oak_leaves[persistent=true] strict
-fill -23 67 41 -23 67 43 minecraft:oak_leaves[persistent=true] strict
-fill -22 67 -52 -22 67 -46 minecraft:spruce_leaves[persistent=true] strict
-fill -22 67 13 -22 67 16 minecraft:oak_leaves[persistent=true] strict
-fill -22 67 32 -22 67 36 minecraft:oak_leaves[persistent=true] strict
-fill -22 67 40 -22 67 43 minecraft:oak_leaves[persistent=true] strict
-fill -22 67 52 -21 67 52 minecraft:oak_leaves[persistent=true] strict
-fill -21 67 -52 -21 67 -50 minecraft:spruce_leaves[persistent=true] strict
-fill -21 67 -48 -21 67 -46 minecraft:spruce_leaves[persistent=true] strict
-fill -21 67 13 -21 68 14 minecraft:oak_leaves[persistent=true] strict
-fill -21 67 16 -21 68 17 minecraft:oak_leaves[persistent=true] strict
-fill -21 67 32 -21 68 33 minecraft:oak_leaves[persistent=true] strict
-fill -21 67 35 -21 68 36 minecraft:oak_leaves[persistent=true] strict
-fill -21 67 40 -21 68 41 minecraft:oak_leaves[persistent=true] strict
-fill -21 67 43 -21 68 44 minecraft:oak_leaves[persistent=true] strict
-setblock -21 67 54 minecraft:oak_leaves[persistent=true] strict
-fill -20 67 -52 -20 67 -46 minecraft:spruce_leaves[persistent=true] strict
-fill -20 67 -38 -20 67 -36 minecraft:spruce_leaves[persistent=true] strict
-fill -20 67 13 -20 68 16 minecraft:oak_leaves[persistent=true] strict
-fill -20 67 33 -19 67 35 minecraft:oak_leaves[persistent=true] strict
-fill -20 67 41 -19 67 43 minecraft:oak_leaves[persistent=true] strict
-fill -19 67 -51 -19 67 -47 minecraft:spruce_leaves[persistent=true] strict
-fill -19 67 -39 -19 67 -35 minecraft:spruce_leaves[persistent=true] strict
-setblock -19 67 15 minecraft:oak_leaves[persistent=true] strict
-fill -18 67 -50 -18 67 -48 minecraft:spruce_leaves[persistent=true] strict
-fill -18 67 -40 -18 67 -34 minecraft:spruce_leaves[persistent=true] strict
-fill -17 67 -40 -17 67 -38 minecraft:spruce_leaves[persistent=true] strict
-fill -17 67 -36 -17 67 -34 minecraft:spruce_leaves[persistent=true] strict
-setblock -17 67 -30 minecraft:bamboo[age=0,leaves=small] strict
-fill -17 67 -29 -17 67 -28 minecraft:bamboo[age=0,leaves=none] strict
-fill -17 67 47 -16 67 47 minecraft:oak_leaves[persistent=true] strict
-fill -17 67 49 -16 67 49 minecraft:oak_leaves[persistent=true] strict
-fill -16 67 -40 -16 67 -34 minecraft:spruce_leaves[persistent=true] strict
-setblock -16 67 29 minecraft:birch_leaves[persistent=true] strict
-fill -15 67 -39 -15 67 -35 minecraft:spruce_leaves[persistent=true] strict
-setblock -15 67 28 minecraft:birch_leaves[persistent=true] strict
-fill -15 67 30 -15 69 30 minecraft:birch_leaves[persistent=true] strict
-fill -15 67 47 -15 67 48 minecraft:oak_leaves[persistent=true] strict
-fill -14 67 -38 -14 67 -36 minecraft:spruce_leaves[persistent=true] strict
+fill -33 67 42 -33 68 45 minecraft:oak_leaves[persistent=true] strict
+fill -32 67 -26 -32 67 -22 minecraft:spruce_leaves[persistent=true] strict
+fill -32 67 41 -32 68 42 minecraft:oak_leaves[persistent=true] strict
+fill -32 67 44 -32 68 45 minecraft:oak_leaves[persistent=true] strict
+fill -31 67 -25 -31 67 -23 minecraft:spruce_leaves[persistent=true] strict
+fill -31 67 41 -31 67 44 minecraft:oak_leaves[persistent=true] strict
+fill -30 67 42 -30 68 43 minecraft:oak_leaves[persistent=true] strict
+setblock -29 67 -38 minecraft:lantern strict
+setblock -29 67 -30 minecraft:lantern strict
+setblock -27 67 8 minecraft:oak_leaves[persistent=true] strict
+setblock -27 67 10 minecraft:oak_leaves[persistent=true] strict
+setblock -26 67 -49 minecraft:bamboo[age=0,leaves=small] strict
+fill -26 67 -48 -26 70 -48 minecraft:bamboo[age=0,leaves=none] strict
+setblock -25 67 -9 minecraft:lantern strict
+fill -24 67 -24 -24 67 -22 minecraft:spruce_leaves[persistent=true] strict
+fill -23 67 -25 -23 67 -21 minecraft:spruce_leaves[persistent=true] strict
+fill -22 67 -35 -21 70 -35 minecraft:bamboo[age=0,leaves=none] strict
+fill -22 67 -26 -22 67 -20 minecraft:spruce_leaves[persistent=true] strict
+setblock -21 67 -34 minecraft:bamboo[age=0,leaves=small] strict
+fill -21 67 -26 -21 67 -24 minecraft:spruce_leaves[persistent=true] strict
+fill -21 67 -22 -21 67 -20 minecraft:spruce_leaves[persistent=true] strict
+setblock -21 67 11 minecraft:birch_leaves[persistent=true] strict
+fill -20 67 -26 -20 67 -20 minecraft:spruce_leaves[persistent=true] strict
+setblock -20 67 12 minecraft:birch_leaves[persistent=true] strict
+fill -19 67 -25 -19 67 -21 minecraft:spruce_leaves[persistent=true] strict
+fill -19 67 30 -19 67 32 minecraft:oak_leaves[persistent=true] strict
+fill -18 67 -31 -18 67 -27 minecraft:spruce_leaves[persistent=true] strict
+fill -18 67 -24 -18 67 -22 minecraft:spruce_leaves[persistent=true] strict
+fill -18 67 18 -18 67 20 minecraft:oak_leaves[persistent=true] strict
+fill -18 67 29 -18 67 32 minecraft:oak_leaves[persistent=true] strict
+fill -18 67 54 -18 67 55 minecraft:oak_leaves[persistent=true] strict
+setblock -17 67 -64 minecraft:birch_leaves[persistent=true] strict
+fill -17 67 -62 -17 68 -62 minecraft:birch_leaves[persistent=true] strict
+fill -17 67 -32 -16 67 -26 minecraft:spruce_leaves[persistent=true] strict
+fill -17 67 17 -17 67 20 minecraft:oak_leaves[persistent=true] strict
+fill -17 67 29 -17 68 30 minecraft:oak_leaves[persistent=true] strict
+fill -17 67 32 -17 68 33 minecraft:oak_leaves[persistent=true] strict
+fill -17 67 53 -17 68 55 minecraft:oak_leaves[persistent=true] strict
+setblock -16 67 -63 minecraft:birch_leaves[persistent=true] strict
+fill -16 67 -13 -16 67 -9 minecraft:spruce_leaves[persistent=true] strict
+fill -16 67 17 -16 68 18 minecraft:oak_leaves[persistent=true] strict
+fill -16 67 20 -16 68 21 minecraft:oak_leaves[persistent=true] strict
+fill -16 67 30 -16 68 33 minecraft:oak_leaves[persistent=true] strict
+fill -16 67 45 -16 68 45 minecraft:oak_leaves[persistent=true] strict
+fill -16 67 52 -16 68 53 minecraft:oak_leaves[persistent=true] strict
+fill -16 67 55 -16 68 56 minecraft:oak_leaves[persistent=true] strict
+fill -15 67 -32 -15 67 -30 minecraft:spruce_leaves[persistent=true] strict
+fill -15 67 -28 -15 67 -26 minecraft:spruce_leaves[persistent=true] strict
+fill -15 67 -14 -14 67 -8 minecraft:spruce_leaves[persistent=true] strict
+fill -15 67 18 -14 67 20 minecraft:oak_leaves[persistent=true] strict
+fill -15 67 30 -15 67 31 minecraft:oak_leaves[persistent=true] strict
+fill -15 67 43 -15 68 47 minecraft:oak_leaves[persistent=true] strict
+fill -15 67 53 -14 67 55 minecraft:oak_leaves[persistent=true] strict
+fill -14 67 -32 -13 67 -26 minecraft:spruce_leaves[persistent=true] strict
 fill -14 67 38 -14 67 40 minecraft:lime_concrete strict
+fill -14 67 43 -14 68 44 minecraft:oak_leaves[persistent=true] strict
+fill -14 67 46 -14 68 47 minecraft:oak_leaves[persistent=true] strict
 fill -14 67 56 -14 67 58 minecraft:lime_concrete strict
+fill -13 67 -21 -12 67 -21 minecraft:bamboo[age=0,leaves=none] strict
+fill -13 67 -19 -12 67 -19 minecraft:bamboo[age=0,leaves=none] strict
+fill -13 67 -14 -13 67 -12 minecraft:spruce_leaves[persistent=true] strict
+fill -13 67 -10 -13 67 -8 minecraft:spruce_leaves[persistent=true] strict
 fill -13 67 37 -13 67 41 minecraft:lime_concrete strict
+fill -13 67 44 -13 67 47 minecraft:oak_leaves[persistent=true] strict
 fill -13 67 55 -13 67 59 minecraft:lime_concrete strict
-fill -12 67 -39 -12 67 -35 minecraft:spruce_leaves[persistent=true] strict
-fill -12 67 20 -12 67 22 minecraft:oak_leaves[persistent=true] strict
+fill -12 67 -31 -12 67 -27 minecraft:spruce_leaves[persistent=true] strict
+setblock -12 67 -20 minecraft:bamboo[age=0,leaves=small] strict
+fill -12 67 -14 -11 67 -8 minecraft:spruce_leaves[persistent=true] strict
 fill -12 67 37 -12 67 38 minecraft:lime_concrete strict
 setblock -12 67 39 minecraft:black_concrete strict
 fill -12 67 40 -12 67 41 minecraft:lime_concrete strict
+setblock -12 67 45 minecraft:oak_leaves[persistent=true] strict
 fill -12 67 55 -12 67 56 minecraft:lime_concrete strict
 setblock -12 67 57 minecraft:black_concrete strict
 fill -12 67 58 -12 67 59 minecraft:lime_concrete strict
-fill -11 67 -40 -10 67 -34 minecraft:spruce_leaves[persistent=true] strict
-setblock -11 67 -25 minecraft:lantern strict
-fill -11 67 33 -11 67 35 minecraft:oak_leaves[persistent=true] strict
+fill -11 67 14 -11 67 16 minecraft:oak_leaves[persistent=true] strict
+fill -11 67 22 -11 67 23 minecraft:oak_leaves[persistent=true] strict
 fill -11 67 37 -11 67 41 minecraft:lime_concrete strict
 fill -11 67 55 -11 67 59 minecraft:lime_concrete strict
-fill -10 67 33 -10 67 36 minecraft:oak_leaves[persistent=true] strict
+fill -10 67 -13 -10 67 -9 minecraft:spruce_leaves[persistent=true] strict
+fill -10 67 14 -10 67 17 minecraft:oak_leaves[persistent=true] strict
+fill -10 67 21 -10 67 24 minecraft:oak_leaves[persistent=true] strict
+setblock -10 67 32 minecraft:birch_leaves[persistent=true] strict
 fill -10 67 38 -10 67 40 minecraft:lime_concrete strict
 fill -10 67 56 -10 67 58 minecraft:lime_concrete strict
-fill -9 67 -40 -9 67 -38 minecraft:spruce_leaves[persistent=true] strict
-fill -9 67 -36 -9 67 -34 minecraft:spruce_leaves[persistent=true] strict
-fill -9 67 32 -9 68 33 minecraft:oak_leaves[persistent=true] strict
-fill -9 67 35 -9 68 36 minecraft:oak_leaves[persistent=true] strict
-fill -8 67 -40 -7 67 -34 minecraft:spruce_leaves[persistent=true] strict
-fill -8 67 33 -8 67 36 minecraft:oak_leaves[persistent=true] strict
-fill -7 67 34 -7 67 35 minecraft:oak_leaves[persistent=true] strict
-fill -6 67 -39 -6 67 -35 minecraft:spruce_leaves[persistent=true] strict
+fill -9 67 13 -9 68 14 minecraft:oak_leaves[persistent=true] strict
+fill -9 67 16 -9 68 17 minecraft:oak_leaves[persistent=true] strict
+fill -9 67 21 -9 68 22 minecraft:oak_leaves[persistent=true] strict
+fill -9 67 24 -9 68 25 minecraft:oak_leaves[persistent=true] strict
+setblock -9 67 31 minecraft:birch_leaves[persistent=true] strict
+setblock -9 67 33 minecraft:birch_leaves[persistent=true] strict
+setblock -8 67 -55 minecraft:bamboo[age=0,leaves=small] strict
+setblock -8 67 -38 minecraft:bamboo[age=0,leaves=small] strict
+fill -8 67 13 -8 68 16 minecraft:oak_leaves[persistent=true] strict
+fill -8 67 22 -8 67 25 minecraft:oak_leaves[persistent=true] strict
+setblock -8 67 32 minecraft:birch_leaves[persistent=true] strict
+fill -7 67 15 -7 67 16 minecraft:oak_leaves[persistent=true] strict
+fill -7 67 22 -7 68 23 minecraft:oak_leaves[persistent=true] strict
 setblock -6 67 36 minecraft:red_concrete strict
 setblock -6 67 37 minecraft:white_concrete strict
 setblock 0 67 60 minecraft:black_concrete strict
 setblock 0 67 72 minecraft:black_concrete strict
-setblock 3 67 -57 minecraft:cherry_log[axis=x] strict
-fill 3 67 -56 5 67 -56 minecraft:cherry_leaves[persistent=true] strict
-fill 5 67 -66 5 67 -65 minecraft:cherry_leaves[persistent=true] strict
-fill 6 67 -67 7 67 -67 minecraft:cherry_leaves[persistent=true] strict
-fill 6 67 -65 7 67 -65 minecraft:cherry_leaves[persistent=true] strict
 setblock 6 67 36 minecraft:red_concrete strict
 setblock 6 67 37 minecraft:white_concrete strict
-setblock 7 67 -66 minecraft:cherry_log[axis=x] strict
-fill 7 67 25 7 67 26 minecraft:oak_leaves[persistent=true] strict
-fill 8 67 25 8 67 28 minecraft:oak_leaves[persistent=true] strict
-setblock 9 67 -32 minecraft:cherry_leaves[persistent=true] strict
-setblock 9 67 -24 minecraft:cherry_leaves[persistent=true] strict
-fill 9 67 -22 11 67 -22 minecraft:cherry_leaves[persistent=true] strict
-fill 9 67 24 9 68 25 minecraft:oak_leaves[persistent=true] strict
-fill 9 67 27 9 68 28 minecraft:oak_leaves[persistent=true] strict
-setblock 10 67 -24 minecraft:cherry_log[axis=z] strict
-fill 10 67 18 10 68 20 minecraft:oak_leaves[persistent=true] strict
-fill 10 67 24 10 67 27 minecraft:oak_leaves[persistent=true] strict
+setblock 8 67 -22 minecraft:cherry_leaves[persistent=true] strict
+setblock 10 67 -24 minecraft:cherry_leaves[persistent=true] strict
+setblock 10 67 -23 minecraft:cherry_log[axis=x] strict
+setblock 10 67 -22 minecraft:cherry_leaves[persistent=true] strict
 fill 10 67 38 10 67 40 minecraft:lime_concrete strict
 fill 10 67 56 10 67 58 minecraft:lime_concrete strict
-fill 11 67 -45 13 67 -45 minecraft:cherry_leaves[persistent=true] strict
-setblock 11 67 -31 minecraft:cherry_log[axis=x] strict
-setblock 11 67 -30 minecraft:cherry_leaves[persistent=true] strict
-setblock 11 67 -24 minecraft:cherry_leaves[persistent=true] strict
-fill 11 67 10 11 67 11 minecraft:oak_leaves[persistent=true] strict
-fill 11 67 17 11 68 21 minecraft:oak_leaves[persistent=true] strict
-fill 11 67 26 11 67 27 minecraft:oak_leaves[persistent=true] strict
 fill 11 67 37 11 67 41 minecraft:lime_concrete strict
 fill 11 67 55 11 67 59 minecraft:lime_concrete strict
-setblock 12 67 -43 minecraft:cherry_log[axis=z] strict
-fill 12 67 10 12 67 12 minecraft:oak_leaves[persistent=true] strict
-fill 12 67 17 12 68 18 minecraft:oak_leaves[persistent=true] strict
-fill 12 67 20 12 68 21 minecraft:oak_leaves[persistent=true] strict
+setblock 12 67 -41 minecraft:birch_leaves[persistent=true] strict
 fill 12 67 37 12 67 38 minecraft:lime_concrete strict
 setblock 12 67 39 minecraft:black_concrete strict
 fill 12 67 40 12 67 41 minecraft:lime_concrete strict
 fill 12 67 55 12 67 56 minecraft:lime_concrete strict
 setblock 12 67 57 minecraft:black_concrete strict
 fill 12 67 58 12 67 59 minecraft:lime_concrete strict
-fill 13 67 9 13 68 10 minecraft:oak_leaves[persistent=true] strict
-fill 13 67 12 13 68 13 minecraft:oak_leaves[persistent=true] strict
-fill 13 67 17 13 68 20 minecraft:oak_leaves[persistent=true] strict
-fill 13 67 31 13 68 32 minecraft:oak_leaves[persistent=true] strict
+setblock 13 67 -42 minecraft:birch_leaves[persistent=true] strict
 fill 13 67 37 13 67 41 minecraft:lime_concrete strict
 fill 13 67 55 13 67 59 minecraft:lime_concrete strict
-fill 14 67 18 14 67 20 minecraft:oak_leaves[persistent=true] strict
-fill 14 67 31 14 67 33 minecraft:oak_leaves[persistent=true] strict
 fill 14 67 38 14 67 40 minecraft:lime_concrete strict
 fill 14 67 56 14 67 58 minecraft:lime_concrete strict
-fill 14 67 62 14 67 64 minecraft:spruce_leaves[persistent=true] strict
-fill 15 67 11 15 68 12 minecraft:oak_leaves[persistent=true] strict
-fill 15 67 30 15 68 31 minecraft:oak_leaves[persistent=true] strict
-fill 15 67 33 15 68 34 minecraft:oak_leaves[persistent=true] strict
-fill 15 67 61 15 67 65 minecraft:spruce_leaves[persistent=true] strict
-fill 16 67 30 16 68 33 minecraft:oak_leaves[persistent=true] strict
-fill 16 67 60 16 67 66 minecraft:spruce_leaves[persistent=true] strict
-fill 17 67 31 17 68 33 minecraft:oak_leaves[persistent=true] strict
-fill 17 67 60 17 67 62 minecraft:spruce_leaves[persistent=true] strict
-fill 17 67 64 17 67 66 minecraft:spruce_leaves[persistent=true] strict
-fill 18 67 60 18 67 66 minecraft:spruce_leaves[persistent=true] strict
-fill 19 67 10 19 68 12 minecraft:red_mushroom_block strict
-fill 19 67 61 19 67 65 minecraft:spruce_leaves[persistent=true] strict
-fill 20 67 9 20 68 9 minecraft:red_mushroom_block strict
-fill 20 67 13 20 68 13 minecraft:red_mushroom_block strict
-fill 20 67 62 20 67 64 minecraft:spruce_leaves[persistent=true] strict
-setblock 21 67 -55 minecraft:birch_leaves[persistent=true] strict
-fill 21 67 8 23 68 8 minecraft:red_mushroom_block strict
-fill 21 67 14 23 68 14 minecraft:red_mushroom_block strict
-fill 24 67 9 24 68 9 minecraft:red_mushroom_block strict
-fill 24 67 13 24 68 13 minecraft:red_mushroom_block strict
-fill 25 67 10 25 68 12 minecraft:red_mushroom_block strict
-fill 30 67 21 31 67 21 minecraft:oak_leaves[persistent=true] strict
-fill 32 67 -58 32 67 -57 minecraft:cherry_leaves[persistent=true] strict
-fill 32 67 21 32 67 23 minecraft:oak_leaves[persistent=true] strict
-setblock 33 67 -59 minecraft:cherry_log[axis=z] strict
-setblock 34 67 -58 minecraft:cherry_leaves[persistent=true] strict
-setblock 35 67 -38 minecraft:birch_leaves[persistent=true] strict
-setblock 36 67 -39 minecraft:birch_leaves[persistent=true] strict
-setblock 36 67 -37 minecraft:birch_leaves[persistent=true] strict
-setblock 37 67 -38 minecraft:birch_leaves[persistent=true] strict
-fill 38 67 26 38 67 27 minecraft:oak_leaves[persistent=true] strict
-fill 39 67 25 39 67 29 minecraft:oak_leaves[persistent=true] strict
-fill 40 67 25 40 68 26 minecraft:oak_leaves[persistent=true] strict
-fill 40 67 28 40 68 29 minecraft:oak_leaves[persistent=true] strict
-fill 41 67 25 41 67 29 minecraft:oak_leaves[persistent=true] strict
-setblock 42 67 -32 minecraft:cherry_leaves[persistent=true] strict
-fill 42 67 26 42 68 28 minecraft:oak_leaves[persistent=true] strict
-setblock 43 67 -30 minecraft:cherry_log[axis=z] strict
-setblock 44 67 -31 minecraft:cherry_leaves[persistent=true] strict
-fill 44 67 11 46 67 11 minecraft:oak_leaves[persistent=true] strict
-setblock 52 67 -12 minecraft:birch_leaves[persistent=true] strict
-setblock 53 67 -22 minecraft:cherry_leaves[persistent=true] strict
-setblock 53 67 -20 minecraft:cherry_log[axis=z] strict
-setblock 54 67 -20 minecraft:cherry_leaves[persistent=true] strict
-setblock 63 67 -12 minecraft:cherry_log[axis=x] strict
-setblock 64 67 -13 minecraft:cherry_leaves[persistent=true] strict
+setblock 16 67 -14 minecraft:cherry_leaves[persistent=true] strict
+fill 17 67 -55 17 68 -55 minecraft:birch_leaves[persistent=true] strict
+setblock 17 67 -14 minecraft:cherry_log[axis=z] strict
+setblock 18 67 -54 minecraft:birch_leaves[persistent=true] strict
+fill 18 67 -15 18 67 -14 minecraft:cherry_leaves[persistent=true] strict
+fill 19 67 10 19 67 12 minecraft:oak_leaves[persistent=true] strict
+fill 20 67 10 20 67 13 minecraft:oak_leaves[persistent=true] strict
+fill 21 67 9 21 68 10 minecraft:oak_leaves[persistent=true] strict
+fill 21 67 12 21 68 13 minecraft:oak_leaves[persistent=true] strict
+fill 22 67 -19 23 67 -19 minecraft:cherry_leaves[persistent=true] strict
+fill 22 67 9 22 67 12 minecraft:oak_leaves[persistent=true] strict
+setblock 23 67 11 minecraft:oak_leaves[persistent=true] strict
+setblock 24 67 -21 minecraft:cherry_leaves[persistent=true] strict
+setblock 24 67 -20 minecraft:cherry_log[axis=x] strict
+fill 24 67 45 24 67 46 minecraft:oak_leaves[persistent=true] strict
+fill 25 67 -13 25 67 -12 minecraft:cherry_leaves[persistent=true] strict
+fill 25 67 27 25 67 28 minecraft:oak_leaves[persistent=true] strict
+fill 25 67 34 25 67 36 minecraft:oak_leaves[persistent=true] strict
+setblock 25 67 44 minecraft:oak_leaves[persistent=true] strict
+setblock 25 67 46 minecraft:oak_leaves[persistent=true] strict
+setblock 26 67 -12 minecraft:cherry_log[axis=z] strict
+setblock 26 67 28 minecraft:oak_leaves[persistent=true] strict
+fill 26 67 33 26 67 37 minecraft:oak_leaves[persistent=true] strict
+setblock 26 67 45 minecraft:oak_leaves[persistent=true] strict
+fill 27 67 -41 27 67 -40 minecraft:cherry_leaves[persistent=true] strict
+setblock 27 67 -13 minecraft:cherry_leaves[persistent=true] strict
+fill 27 67 33 27 68 34 minecraft:oak_leaves[persistent=true] strict
+fill 27 67 36 27 68 37 minecraft:oak_leaves[persistent=true] strict
+fill 28 67 -42 29 67 -42 minecraft:cherry_leaves[persistent=true] strict
+setblock 28 67 -40 minecraft:cherry_log[axis=z] strict
+fill 28 67 33 28 67 37 minecraft:oak_leaves[persistent=true] strict
+setblock 29 67 -40 minecraft:cherry_leaves[persistent=true] strict
+fill 29 67 35 29 67 36 minecraft:oak_leaves[persistent=true] strict
+fill 34 67 54 34 67 55 minecraft:oak_leaves[persistent=true] strict
+fill 35 67 -23 35 67 -21 minecraft:cherry_leaves[persistent=true] strict
+fill 35 67 53 35 67 57 minecraft:oak_leaves[persistent=true] strict
+setblock 36 67 -21 minecraft:cherry_leaves[persistent=true] strict
+fill 36 67 53 36 68 54 minecraft:oak_leaves[persistent=true] strict
+fill 36 67 56 36 68 57 minecraft:oak_leaves[persistent=true] strict
+setblock 37 67 -23 minecraft:cherry_leaves[persistent=true] strict
+setblock 37 67 -22 minecraft:cherry_log[axis=x] strict
+fill 37 67 54 37 67 57 minecraft:oak_leaves[persistent=true] strict
+fill 38 67 54 38 67 56 minecraft:oak_leaves[persistent=true] strict
+setblock 39 67 38 minecraft:oak_leaves[persistent=true] strict
+setblock 40 67 -8 minecraft:cherry_leaves[persistent=true] strict
+fill 40 67 24 40 67 25 minecraft:oak_leaves[persistent=true] strict
+fill 40 67 36 40 68 39 minecraft:oak_leaves[persistent=true] strict
+setblock 41 67 -10 minecraft:cherry_leaves[persistent=true] strict
+fill 41 67 23 41 68 26 minecraft:oak_leaves[persistent=true] strict
+fill 41 67 36 41 68 37 minecraft:oak_leaves[persistent=true] strict
+fill 41 67 39 41 68 40 minecraft:oak_leaves[persistent=true] strict
+setblock 42 67 -30 minecraft:birch_leaves[persistent=true] strict
+setblock 42 67 -18 minecraft:cherry_leaves[persistent=true] strict
+setblock 42 67 -9 minecraft:cherry_log[axis=x] strict
+setblock 42 67 -8 minecraft:cherry_leaves[persistent=true] strict
+fill 42 67 11 42 67 12 minecraft:oak_leaves[persistent=true] strict
+fill 42 67 22 42 68 23 minecraft:oak_leaves[persistent=true] strict
+fill 42 67 25 42 68 26 minecraft:oak_leaves[persistent=true] strict
+fill 42 67 36 42 67 39 minecraft:oak_leaves[persistent=true] strict
+fill 43 67 -52 43 67 -50 minecraft:cherry_leaves[persistent=true] strict
+setblock 43 67 -31 minecraft:birch_leaves[persistent=true] strict
+fill 43 67 -19 44 67 -19 minecraft:cherry_leaves[persistent=true] strict
+fill 43 67 -17 44 67 -17 minecraft:cherry_leaves[persistent=true] strict
+setblock 43 67 11 minecraft:oak_leaves[persistent=true] strict
+setblock 43 67 13 minecraft:oak_leaves[persistent=true] strict
+fill 43 67 23 43 67 26 minecraft:oak_leaves[persistent=true] strict
+fill 43 67 38 43 68 39 minecraft:oak_leaves[persistent=true] strict
+setblock 44 67 -52 minecraft:cherry_log[axis=z] strict
+setblock 44 67 -18 minecraft:cherry_log[axis=x] strict
+setblock 44 67 12 minecraft:oak_leaves[persistent=true] strict
+fill 44 67 23 44 68 25 minecraft:oak_leaves[persistent=true] strict
+fill 47 67 -25 47 67 -23 minecraft:cherry_leaves[persistent=true] strict
+fill 47 67 30 47 67 32 minecraft:oak_leaves[persistent=true] strict
+setblock 48 67 -25 minecraft:cherry_log[axis=z] strict
+setblock 48 67 -23 minecraft:cherry_leaves[persistent=true] strict
+fill 48 67 10 48 68 12 minecraft:red_mushroom_block strict
+fill 48 67 30 48 67 33 minecraft:oak_leaves[persistent=true] strict
+fill 49 67 -25 49 67 -23 minecraft:cherry_leaves[persistent=true] strict
+fill 49 67 -13 51 67 -13 minecraft:cherry_leaves[persistent=true] strict
+setblock 49 67 -12 minecraft:cherry_log[axis=x] strict
+fill 49 67 9 49 68 9 minecraft:red_mushroom_block strict
+fill 49 67 13 49 68 13 minecraft:red_mushroom_block strict
+setblock 49 67 20 minecraft:oak_leaves[persistent=true] strict
+fill 49 67 29 49 68 30 minecraft:oak_leaves[persistent=true] strict
+fill 49 67 32 49 68 33 minecraft:oak_leaves[persistent=true] strict
+fill 50 67 8 52 68 8 minecraft:red_mushroom_block strict
+fill 50 67 14 52 68 14 minecraft:red_mushroom_block strict
+fill 50 67 19 50 67 21 minecraft:oak_leaves[persistent=true] strict
+fill 50 67 30 50 67 33 minecraft:oak_leaves[persistent=true] strict
+setblock 51 67 -11 minecraft:cherry_leaves[persistent=true] strict
+fill 51 67 18 51 68 19 minecraft:oak_leaves[persistent=true] strict
+fill 51 67 21 51 68 22 minecraft:oak_leaves[persistent=true] strict
+fill 51 67 30 51 67 31 minecraft:oak_leaves[persistent=true] strict
+fill 52 67 19 52 67 22 minecraft:oak_leaves[persistent=true] strict
+fill 53 67 9 53 68 9 minecraft:red_mushroom_block strict
+fill 53 67 13 53 68 13 minecraft:red_mushroom_block strict
+setblock 53 67 20 minecraft:oak_leaves[persistent=true] strict
+setblock 54 67 -18 minecraft:cherry_leaves[persistent=true] strict
+fill 54 67 10 54 68 12 minecraft:red_mushroom_block strict
+fill 55 67 -19 56 67 -19 minecraft:cherry_leaves[persistent=true] strict
+fill 55 67 -17 56 67 -17 minecraft:cherry_leaves[persistent=true] strict
+setblock 56 67 -18 minecraft:cherry_log[axis=x] strict
 fill 64 67 -4 65 67 -4 minecraft:sea_lantern strict
 fill 64 67 4 65 67 4 minecraft:sea_lantern strict
-setblock 65 67 10 minecraft:birch_leaves[persistent=true] strict
-fill 66 67 9 66 68 9 minecraft:birch_leaves[persistent=true] strict
-fill 66 67 11 66 68 11 minecraft:birch_leaves[persistent=true] strict
+setblock 66 67 13 minecraft:oak_leaves[persistent=true] strict
+setblock 67 67 11 minecraft:oak_leaves[persistent=true] strict
 setblock 98 67 0 minecraft:moss_block strict
 fill 101 67 -1 103 67 1 minecraft:lapis_block strict
 setblock 106 67 1 minecraft:snow_block strict
 fill 121 67 -1 121 67 1 minecraft:smooth_quartz strict
 fill 122 67 -1 122 67 2 minecraft:smooth_quartz strict
 fill 123 67 -3 124 67 2 minecraft:smooth_quartz strict
-fill -66 68 10 -65 68 12 minecraft:oak_leaves[persistent=true] strict
-fill -65 68 17 -65 69 19 minecraft:oak_leaves[persistent=true] strict
+fill -66 68 21 -66 68 22 minecraft:oak_leaves[persistent=true] strict
+fill -65 68 20 -65 69 23 minecraft:oak_leaves[persistent=true] strict
 setblock -64 68 -7 minecraft:lantern strict
 setblock -64 68 7 minecraft:lantern strict
-fill -64 68 16 -64 69 19 minecraft:oak_leaves[persistent=true] strict
-fill -63 68 10 -63 68 13 minecraft:oak_leaves[persistent=true] strict
-fill -63 68 16 -63 69 17 minecraft:oak_leaves[persistent=true] strict
-fill -63 68 19 -63 69 20 minecraft:oak_leaves[persistent=true] strict
-fill -62 68 11 -62 68 12 minecraft:oak_leaves[persistent=true] strict
-fill -62 68 17 -62 69 20 minecraft:oak_leaves[persistent=true] strict
+fill -64 68 19 -64 69 20 minecraft:oak_leaves[persistent=true] strict
+fill -64 68 22 -64 69 23 minecraft:oak_leaves[persistent=true] strict
+fill -63 68 20 -63 68 22 minecraft:oak_leaves[persistent=true] strict
+fill -62 68 20 -62 68 21 minecraft:oak_leaves[persistent=true] strict
 setblock -61 68 -20 minecraft:lantern strict
-fill -61 68 17 -61 69 19 minecraft:oak_leaves[persistent=true] strict
 setblock -61 68 20 minecraft:lantern strict
-fill -60 68 30 -60 68 31 minecraft:oak_leaves[persistent=true] strict
 setblock -59 68 -12 minecraft:mossy_stone_bricks strict
 fill -59 68 -11 -59 68 -10 minecraft:stone_bricks strict
-fill -59 68 28 -59 68 31 minecraft:oak_leaves[persistent=true] strict
 fill -58 68 -13 -56 69 -13 minecraft:stone_bricks strict
 fill -58 68 -9 -58 69 -9 minecraft:stone_bricks strict
 fill -58 68 13 -56 71 13 minecraft:stone_bricks strict
-fill -58 68 28 -58 69 29 minecraft:oak_leaves[persistent=true] strict
-fill -58 68 31 -58 69 32 minecraft:oak_leaves[persistent=true] strict
+fill -58 68 36 -57 68 38 minecraft:oak_leaves[persistent=true] strict
 fill -57 68 -11 -57 69 -10 minecraft:stone_bricks strict
 fill -57 68 -9 -57 69 -9 minecraft:mossy_stone_bricks strict
 fill -57 68 9 -57 68 11 minecraft:stone_bricks strict
-fill -57 68 28 -57 68 31 minecraft:oak_leaves[persistent=true] strict
-setblock -57 68 37 minecraft:birch_leaves[persistent=true] strict
 fill -56 68 -18 -38 68 -16 minecraft:spruce_slab strict
-setblock -56 68 30 minecraft:oak_leaves[persistent=true] strict
 setblock -56 68 32 minecraft:lantern strict
-fill -56 68 36 -56 70 36 minecraft:birch_leaves[persistent=true] strict
-setblock -55 68 37 minecraft:birch_leaves[persistent=true] strict
+fill -56 68 35 -56 69 36 minecraft:oak_leaves[persistent=true] strict
+fill -56 68 38 -56 69 39 minecraft:oak_leaves[persistent=true] strict
+fill -55 68 36 -55 68 39 minecraft:oak_leaves[persistent=true] strict
+fill -54 68 17 -54 68 18 minecraft:oak_leaves[persistent=true] strict
+setblock -54 68 37 minecraft:oak_leaves[persistent=true] strict
 fill -53 68 -34 -51 68 -34 minecraft:white_wool strict
+fill -53 68 16 -53 68 19 minecraft:oak_leaves[persistent=true] strict
+fill -53 68 42 -53 69 42 minecraft:oak_leaves[persistent=true] strict
+fill -52 68 -44 -52 68 -43 minecraft:oak_leaves[persistent=true] strict
+fill -52 68 15 -52 69 16 minecraft:oak_leaves[persistent=true] strict
+fill -52 68 18 -52 69 19 minecraft:oak_leaves[persistent=true] strict
+fill -52 68 40 -52 68 44 minecraft:oak_leaves[persistent=true] strict
+fill -51 68 -45 -51 68 -43 minecraft:oak_leaves[persistent=true] strict
 setblock -51 68 -11 minecraft:stone_bricks strict
 setblock -51 68 11 minecraft:mossy_stone_bricks strict
+fill -51 68 15 -51 68 19 minecraft:oak_leaves[persistent=true] strict
+fill -51 68 40 -51 69 41 minecraft:oak_leaves[persistent=true] strict
+fill -51 68 43 -51 69 44 minecraft:oak_leaves[persistent=true] strict
+fill -50 68 -46 -50 69 -45 minecraft:oak_leaves[persistent=true] strict
+fill -50 68 -43 -50 69 -42 minecraft:oak_leaves[persistent=true] strict
 setblock -50 68 -11 minecraft:cracked_stone_bricks strict
 setblock -50 68 11 minecraft:cracked_stone_bricks strict
+fill -50 68 16 -50 68 18 minecraft:oak_leaves[persistent=true] strict
+fill -50 68 41 -49 68 43 minecraft:oak_leaves[persistent=true] strict
+fill -49 68 -46 -49 68 -42 minecraft:oak_leaves[persistent=true] strict
+setblock -48 68 -44 minecraft:oak_leaves[persistent=true] strict
 setblock -48 68 -43 minecraft:lantern strict
 fill -48 68 -34 -46 68 -34 minecraft:white_wool strict
 setblock -48 68 43 minecraft:lantern strict
 setblock -47 68 -11 minecraft:stone_bricks strict
 setblock -47 68 11 minecraft:mossy_stone_bricks strict
-fill -47 68 23 -47 69 25 minecraft:oak_leaves[persistent=true] strict
-fill -47 68 34 -47 68 35 minecraft:oak_leaves[persistent=true] strict
 setblock -46 68 -11 minecraft:cracked_stone_bricks strict
 setblock -46 68 11 minecraft:stone_bricks strict
-setblock -46 68 24 minecraft:oak_leaves[persistent=true] strict
-fill -46 68 33 -46 69 35 minecraft:oak_leaves[persistent=true] strict
+fill -45 68 -39 -45 69 -37 minecraft:spruce_leaves[persistent=true] strict
 setblock -45 68 -11 minecraft:stone_bricks strict
 setblock -45 68 11 minecraft:cracked_stone_bricks strict
-fill -45 68 32 -45 69 33 minecraft:oak_leaves[persistent=true] strict
-fill -45 68 35 -45 69 36 minecraft:oak_leaves[persistent=true] strict
-fill -44 68 32 -44 69 36 minecraft:oak_leaves[persistent=true] strict
-setblock -43 68 -37 minecraft:bamboo[age=0,leaves=small] strict
+fill -44 68 -40 -44 69 -36 minecraft:spruce_leaves[persistent=true] strict
+fill -44 68 23 -44 68 24 minecraft:oak_leaves[persistent=true] strict
+fill -43 68 -53 -43 69 -51 minecraft:spruce_leaves[persistent=true] strict
+fill -43 68 -40 -43 69 -39 minecraft:spruce_leaves[persistent=true] strict
+fill -43 68 -37 -43 69 -36 minecraft:spruce_leaves[persistent=true] strict
 fill -43 68 -34 -41 68 -34 minecraft:white_wool strict
-fill -43 68 33 -43 68 35 minecraft:oak_leaves[persistent=true] strict
-setblock -42 68 41 minecraft:birch_leaves[persistent=true] strict
+fill -43 68 23 -43 68 25 minecraft:oak_leaves[persistent=true] strict
+fill -42 68 -54 -42 69 -50 minecraft:spruce_leaves[persistent=true] strict
+fill -42 68 -40 -42 69 -36 minecraft:spruce_leaves[persistent=true] strict
+fill -42 68 16 -42 69 16 minecraft:birch_leaves[persistent=true] strict
+fill -42 68 40 -41 68 42 minecraft:oak_leaves[persistent=true] strict
+fill -41 68 -54 -41 69 -53 minecraft:spruce_leaves[persistent=true] strict
+fill -41 68 -51 -41 69 -50 minecraft:spruce_leaves[persistent=true] strict
+fill -41 68 -39 -41 69 -37 minecraft:spruce_leaves[persistent=true] strict
 fill -41 68 11 -41 69 11 minecraft:mossy_stone_bricks strict
-fill -41 68 18 -41 69 20 minecraft:birch_leaves[persistent=true] strict
-setblock -41 68 40 minecraft:birch_leaves[persistent=true] strict
-setblock -40 68 18 minecraft:birch_leaves[persistent=true] strict
+fill -41 68 15 -41 69 17 minecraft:birch_leaves[persistent=true] strict
+fill -40 68 -54 -40 69 -50 minecraft:spruce_leaves[persistent=true] strict
+fill -40 68 17 -40 69 18 minecraft:birch_leaves[persistent=true] strict
+fill -40 68 24 -40 68 25 minecraft:oak_leaves[persistent=true] strict
+fill -39 68 -53 -39 69 -51 minecraft:spruce_leaves[persistent=true] strict
 fill -39 68 11 -38 70 11 minecraft:stone_bricks strict
-fill -39 68 18 -39 69 20 minecraft:birch_leaves[persistent=true] strict
-fill -39 68 33 -39 69 34 minecraft:oak_leaves[persistent=true] strict
-setblock -38 68 -52 minecraft:lantern strict
-setblock -38 68 19 minecraft:birch_leaves[persistent=true] strict
-fill -38 68 31 -38 69 35 minecraft:oak_leaves[persistent=true] strict
+fill -39 68 15 -39 69 17 minecraft:birch_leaves[persistent=true] strict
+fill -39 68 32 -39 68 33 minecraft:oak_leaves[persistent=true] strict
+fill -38 68 16 -38 69 16 minecraft:birch_leaves[persistent=true] strict
+fill -38 68 31 -38 68 35 minecraft:oak_leaves[persistent=true] strict
 setblock -38 68 52 minecraft:lantern strict
 setblock -37 68 10 minecraft:stone_bricks strict
 setblock -37 68 11 minecraft:mossy_stone_bricks strict
 setblock -37 68 12 minecraft:stone_bricks strict
-fill -37 68 31 -37 69 32 minecraft:oak_leaves[persistent=true] strict
-fill -37 68 34 -37 69 35 minecraft:oak_leaves[persistent=true] strict
+setblock -36 68 -24 minecraft:spruce_leaves[persistent=true] strict
 setblock -36 68 9 minecraft:mossy_stone_bricks strict
-fill -36 68 32 -36 68 34 minecraft:oak_leaves[persistent=true] strict
-setblock -35 68 -43 minecraft:bamboo[age=0,leaves=small] strict
+fill -36 68 32 -36 68 35 minecraft:oak_leaves[persistent=true] strict
+fill -35 68 -45 -35 69 -45 minecraft:bamboo[age=0,leaves=large] strict
+fill -35 68 -43 -35 69 -43 minecraft:bamboo[age=0,leaves=large] strict
+fill -35 68 -25 -35 68 -23 minecraft:spruce_leaves[persistent=true] strict
 fill -35 68 -11 -35 68 -10 minecraft:stone_bricks strict
 fill -35 68 -9 -34 68 -9 minecraft:mossy_stone_bricks strict
 fill -35 68 -7 -35 68 -6 minecraft:mossy_stone_bricks strict
@@ -693,109 +1275,103 @@ fill -35 68 6 -35 69 7 minecraft:stone_bricks strict
 setblock -35 68 9 minecraft:stone_bricks strict
 setblock -35 68 10 minecraft:mossy_stone_bricks strict
 setblock -35 68 11 minecraft:stone_bricks strict
-fill -35 68 32 -35 69 33 minecraft:oak_leaves[persistent=true] strict
-fill -35 68 42 -35 69 42 minecraft:birch_leaves[persistent=true] strict
+fill -34 68 -26 -34 69 -25 minecraft:spruce_leaves[persistent=true] strict
+fill -34 68 -23 -34 69 -22 minecraft:spruce_leaves[persistent=true] strict
 setblock -34 68 -4 minecraft:red_wall_banner[facing=east] strict
 setblock -34 68 4 minecraft:red_wall_banner[facing=east] strict
 setblock -34 68 9 minecraft:mossy_stone_bricks strict
-fill -34 68 41 -34 69 43 minecraft:birch_leaves[persistent=true] strict
+fill -34 68 43 -34 68 44 minecraft:oak_leaves[persistent=true] strict
+fill -33 68 -25 -33 68 -23 minecraft:spruce_leaves[persistent=true] strict
 fill -33 68 -12 -33 74 -10 minecraft:stone_bricks strict
 fill -33 68 10 -33 68 12 minecraft:stone_bricks strict
-setblock -33 68 22 minecraft:birch_leaves[persistent=true] strict
-fill -33 68 24 -33 69 24 minecraft:birch_leaves[persistent=true] strict
-fill -33 68 41 -33 69 41 minecraft:birch_leaves[persistent=true] strict
-fill -33 68 43 -33 69 44 minecraft:birch_leaves[persistent=true] strict
-fill -32 68 -28 -32 69 -28 minecraft:bamboo[age=0,leaves=large] strict
-setblock -32 68 23 minecraft:birch_leaves[persistent=true] strict
-fill -32 68 41 -32 69 43 minecraft:birch_leaves[persistent=true] strict
-fill -31 68 -37 -30 68 -37 minecraft:bamboo[age=0,leaves=none] strict
-fill -31 68 -35 -31 69 -35 minecraft:bamboo[age=0,leaves=large] strict
-setblock -31 68 42 minecraft:birch_leaves[persistent=true] strict
-fill -30 68 15 -30 69 17 minecraft:birch_leaves[persistent=true] strict
-setblock -29 68 -37 minecraft:bamboo[age=0,leaves=small] strict
-fill -28 68 8 -28 68 10 minecraft:oak_leaves[persistent=true] strict
-fill -28 68 15 -28 69 17 minecraft:birch_leaves[persistent=true] strict
+setblock -32 68 -24 minecraft:spruce_leaves[persistent=true] strict
+fill -31 68 41 -31 68 45 minecraft:oak_leaves[persistent=true] strict
+fill -30 68 8 -30 69 9 minecraft:oak_leaves[persistent=true] strict
+fill -29 68 7 -29 68 10 minecraft:oak_leaves[persistent=true] strict
+fill -28 68 7 -28 69 8 minecraft:oak_leaves[persistent=true] strict
+fill -28 68 10 -28 69 11 minecraft:oak_leaves[persistent=true] strict
 fill -27 68 8 -27 68 11 minecraft:oak_leaves[persistent=true] strict
-fill -27 68 48 -27 69 48 minecraft:birch_leaves[persistent=true] strict
-setblock -25 68 -41 minecraft:bamboo[age=0,leaves=small] strict
-fill -25 68 26 -25 68 27 minecraft:oak_leaves[persistent=true] strict
-fill -24 68 -43 -24 69 -43 minecraft:bamboo[age=0,leaves=large] strict
-fill -24 68 24 -24 69 27 minecraft:oak_leaves[persistent=true] strict
-fill -24 68 52 -24 68 54 minecraft:oak_leaves[persistent=true] strict
-setblock -23 68 -49 minecraft:spruce_leaves[persistent=true] strict
-setblock -23 68 15 minecraft:oak_leaves[persistent=true] strict
-fill -23 68 24 -23 69 25 minecraft:oak_leaves[persistent=true] strict
-fill -23 68 27 -23 69 28 minecraft:oak_leaves[persistent=true] strict
-setblock -23 68 34 minecraft:oak_leaves[persistent=true] strict
-fill -23 68 41 -23 68 42 minecraft:oak_leaves[persistent=true] strict
-fill -23 68 52 -23 69 55 minecraft:oak_leaves[persistent=true] strict
-fill -22 68 -50 -22 68 -48 minecraft:spruce_leaves[persistent=true] strict
-fill -22 68 13 -22 68 17 minecraft:oak_leaves[persistent=true] strict
-fill -22 68 25 -22 69 28 minecraft:oak_leaves[persistent=true] strict
-fill -22 68 32 -22 68 35 minecraft:oak_leaves[persistent=true] strict
-fill -22 68 40 -22 68 44 minecraft:oak_leaves[persistent=true] strict
-fill -22 68 51 -22 69 52 minecraft:oak_leaves[persistent=true] strict
-fill -22 68 54 -22 69 55 minecraft:oak_leaves[persistent=true] strict
-fill -21 68 -51 -21 69 -50 minecraft:spruce_leaves[persistent=true] strict
-fill -21 68 -48 -21 69 -47 minecraft:spruce_leaves[persistent=true] strict
-fill -21 68 26 -21 68 27 minecraft:oak_leaves[persistent=true] strict
-fill -21 68 51 -21 68 55 minecraft:oak_leaves[persistent=true] strict
-fill -20 68 -50 -20 68 -48 minecraft:spruce_leaves[persistent=true] strict
-fill -20 68 32 -20 68 35 minecraft:oak_leaves[persistent=true] strict
-fill -20 68 41 -20 68 44 minecraft:oak_leaves[persistent=true] strict
-fill -20 68 52 -20 68 54 minecraft:oak_leaves[persistent=true] strict
-setblock -19 68 -49 minecraft:spruce_leaves[persistent=true] strict
-setblock -19 68 -37 minecraft:spruce_leaves[persistent=true] strict
-fill -19 68 15 -19 68 16 minecraft:oak_leaves[persistent=true] strict
-setblock -19 68 34 minecraft:oak_leaves[persistent=true] strict
-setblock -19 68 42 minecraft:oak_leaves[persistent=true] strict
-fill -19 68 62 -19 69 64 minecraft:spruce_leaves[persistent=true] strict
-fill -18 68 -38 -18 68 -36 minecraft:spruce_leaves[persistent=true] strict
-setblock -18 68 48 minecraft:oak_leaves[persistent=true] strict
-fill -18 68 62 -18 71 62 minecraft:spruce_leaves[persistent=true] strict
-fill -18 68 64 -18 71 64 minecraft:spruce_leaves[persistent=true] strict
-fill -17 68 -39 -17 69 -38 minecraft:spruce_leaves[persistent=true] strict
-fill -17 68 -36 -17 69 -35 minecraft:spruce_leaves[persistent=true] strict
-setblock -17 68 -30 minecraft:bamboo[age=0,leaves=large] strict
-setblock -17 68 -29 minecraft:bamboo[age=0,leaves=small] strict
-fill -17 68 -28 -17 69 -28 minecraft:bamboo[age=0,leaves=none] strict
-fill -17 68 -16 -17 69 -14 minecraft:spruce_leaves[persistent=true] strict
+setblock -26 68 -49 minecraft:bamboo[age=0,leaves=large] strict
+fill -26 68 8 -26 68 10 minecraft:oak_leaves[persistent=true] strict
+fill -25 68 -50 -25 71 -50 minecraft:bamboo[age=0,leaves=none] strict
+setblock -25 68 -49 minecraft:bamboo[age=0,leaves=small] strict
+setblock -23 68 -34 minecraft:bamboo[age=0,leaves=small] strict
+fill -23 68 -33 -22 68 -33 minecraft:bamboo[age=0,leaves=none] strict
+setblock -23 68 -23 minecraft:spruce_leaves[persistent=true] strict
+fill -22 68 -24 -22 68 -22 minecraft:spruce_leaves[persistent=true] strict
+setblock -22 68 11 minecraft:birch_leaves[persistent=true] strict
+fill -21 68 -34 -21 69 -34 minecraft:bamboo[age=0,leaves=large] strict
+fill -21 68 -25 -21 69 -24 minecraft:spruce_leaves[persistent=true] strict
+fill -21 68 -22 -21 69 -21 minecraft:spruce_leaves[persistent=true] strict
+fill -21 68 10 -21 69 12 minecraft:birch_leaves[persistent=true] strict
+fill -20 68 -24 -20 68 -22 minecraft:spruce_leaves[persistent=true] strict
+fill -20 68 9 -20 69 10 minecraft:birch_leaves[persistent=true] strict
+fill -20 68 12 -20 69 13 minecraft:birch_leaves[persistent=true] strict
+setblock -19 68 -63 minecraft:birch_leaves[persistent=true] strict
+setblock -19 68 -23 minecraft:spruce_leaves[persistent=true] strict
+fill -19 68 10 -19 69 12 minecraft:birch_leaves[persistent=true] strict
+fill -19 68 30 -19 68 31 minecraft:oak_leaves[persistent=true] strict
+fill -18 68 -64 -18 69 -62 minecraft:birch_leaves[persistent=true] strict
+fill -18 68 11 -18 69 11 minecraft:birch_leaves[persistent=true] strict
+fill -18 68 19 -18 68 20 minecraft:oak_leaves[persistent=true] strict
+fill -18 68 30 -18 68 32 minecraft:oak_leaves[persistent=true] strict
+fill -18 68 53 -18 68 54 minecraft:oak_leaves[persistent=true] strict
+fill -17 68 -65 -17 69 -64 minecraft:birch_leaves[persistent=true] strict
+fill -17 68 -55 -17 69 -53 minecraft:spruce_leaves[persistent=true] strict
+fill -17 68 -30 -17 69 -28 minecraft:spruce_leaves[persistent=true] strict
 setblock -17 68 -4 minecraft:lantern strict
 setblock -17 68 4 minecraft:lantern strict
-fill -17 68 29 -17 69 29 minecraft:birch_leaves[persistent=true] strict
-fill -17 68 46 -17 68 50 minecraft:oak_leaves[persistent=true] strict
-fill -17 68 62 -17 69 64 minecraft:spruce_leaves[persistent=true] strict
-fill -16 68 -38 -16 68 -36 minecraft:spruce_leaves[persistent=true] strict
-fill -16 68 -16 -16 71 -16 minecraft:spruce_leaves[persistent=true] strict
-fill -16 68 -14 -16 71 -14 minecraft:spruce_leaves[persistent=true] strict
-fill -16 68 28 -16 69 30 minecraft:birch_leaves[persistent=true] strict
-fill -16 68 46 -16 69 47 minecraft:oak_leaves[persistent=true] strict
-fill -16 68 49 -16 69 50 minecraft:oak_leaves[persistent=true] strict
-setblock -15 68 -37 minecraft:spruce_leaves[persistent=true] strict
-fill -15 68 -16 -15 69 -14 minecraft:spruce_leaves[persistent=true] strict
-fill -15 68 27 -15 68 28 minecraft:birch_leaves[persistent=true] strict
-fill -15 68 46 -15 68 49 minecraft:oak_leaves[persistent=true] strict
-fill -14 68 28 -14 69 30 minecraft:birch_leaves[persistent=true] strict
-fill -14 68 47 -14 68 48 minecraft:oak_leaves[persistent=true] strict
+fill -17 68 17 -17 68 21 minecraft:oak_leaves[persistent=true] strict
+fill -16 68 -64 -16 69 -62 minecraft:birch_leaves[persistent=true] strict
+fill -16 68 -55 -16 71 -55 minecraft:spruce_leaves[persistent=true] strict
+fill -16 68 -53 -16 71 -53 minecraft:spruce_leaves[persistent=true] strict
+fill -16 68 -31 -16 69 -27 minecraft:spruce_leaves[persistent=true] strict
+fill -15 68 -55 -15 69 -53 minecraft:spruce_leaves[persistent=true] strict
+fill -15 68 -31 -15 69 -30 minecraft:spruce_leaves[persistent=true] strict
+fill -15 68 -28 -15 69 -27 minecraft:spruce_leaves[persistent=true] strict
+fill -15 68 -12 -15 69 -10 minecraft:spruce_leaves[persistent=true] strict
+fill -15 68 18 -15 68 21 minecraft:oak_leaves[persistent=true] strict
+fill -15 68 30 -15 68 32 minecraft:oak_leaves[persistent=true] strict
+fill -15 68 53 -15 68 56 minecraft:oak_leaves[persistent=true] strict
+fill -14 68 -31 -14 69 -27 minecraft:spruce_leaves[persistent=true] strict
+fill -14 68 -21 -13 68 -21 minecraft:bamboo[age=0,leaves=small] strict
+fill -14 68 -20 -14 68 -19 minecraft:bamboo[age=0,leaves=none] strict
+fill -14 68 -13 -14 69 -9 minecraft:spruce_leaves[persistent=true] strict
+setblock -14 68 19 minecraft:oak_leaves[persistent=true] strict
+setblock -14 68 54 minecraft:oak_leaves[persistent=true] strict
 setblock -13 68 -63 minecraft:lantern strict
+fill -13 68 -30 -13 69 -28 minecraft:spruce_leaves[persistent=true] strict
+fill -13 68 -19 -13 71 -19 minecraft:bamboo[age=0,leaves=none] strict
+fill -13 68 -13 -13 69 -12 minecraft:spruce_leaves[persistent=true] strict
+fill -13 68 -10 -13 69 -9 minecraft:spruce_leaves[persistent=true] strict
 setblock -13 68 -5 minecraft:lantern strict
 setblock -13 68 5 minecraft:lantern strict
-fill -13 68 20 -13 68 22 minecraft:oak_leaves[persistent=true] strict
-fill -13 68 29 -13 69 29 minecraft:birch_leaves[persistent=true] strict
-fill -12 68 19 -12 68 23 minecraft:oak_leaves[persistent=true] strict
-fill -11 68 -38 -11 69 -36 minecraft:spruce_leaves[persistent=true] strict
-fill -11 68 19 -11 69 20 minecraft:oak_leaves[persistent=true] strict
-fill -11 68 22 -11 69 23 minecraft:oak_leaves[persistent=true] strict
-fill -11 68 33 -10 68 35 minecraft:oak_leaves[persistent=true] strict
-fill -10 68 -39 -10 69 -35 minecraft:spruce_leaves[persistent=true] strict
-fill -10 68 20 -10 68 23 minecraft:oak_leaves[persistent=true] strict
-fill -9 68 -39 -9 69 -38 minecraft:spruce_leaves[persistent=true] strict
-fill -9 68 -36 -9 69 -35 minecraft:spruce_leaves[persistent=true] strict
-fill -9 68 21 -9 68 22 minecraft:oak_leaves[persistent=true] strict
-fill -8 68 -39 -8 69 -35 minecraft:spruce_leaves[persistent=true] strict
-fill -8 68 32 -8 68 35 minecraft:oak_leaves[persistent=true] strict
-fill -7 68 -38 -7 69 -36 minecraft:spruce_leaves[persistent=true] strict
-fill -7 68 33 -7 68 34 minecraft:oak_leaves[persistent=true] strict
+fill -13 68 44 -13 68 46 minecraft:oak_leaves[persistent=true] strict
+fill -12 68 -48 -12 69 -46 minecraft:spruce_leaves[persistent=true] strict
+setblock -12 68 -21 minecraft:bamboo[age=0,leaves=none] strict
+setblock -12 68 -20 minecraft:bamboo[age=0,leaves=large] strict
+setblock -12 68 -19 minecraft:bamboo[age=0,leaves=small] strict
+fill -12 68 -13 -12 69 -9 minecraft:spruce_leaves[persistent=true] strict
+fill -12 68 44 -12 68 45 minecraft:oak_leaves[persistent=true] strict
+fill -11 68 -48 -11 71 -48 minecraft:spruce_leaves[persistent=true] strict
+fill -11 68 -46 -11 71 -46 minecraft:spruce_leaves[persistent=true] strict
+fill -11 68 -12 -11 69 -10 minecraft:spruce_leaves[persistent=true] strict
+fill -11 68 15 -11 68 16 minecraft:oak_leaves[persistent=true] strict
+fill -11 68 23 -11 68 24 minecraft:oak_leaves[persistent=true] strict
+fill -10 68 -48 -10 69 -46 minecraft:spruce_leaves[persistent=true] strict
+fill -10 68 -38 -9 68 -38 minecraft:bamboo[age=0,leaves=none] strict
+fill -10 68 13 -10 68 17 minecraft:oak_leaves[persistent=true] strict
+fill -10 68 22 -10 68 24 minecraft:oak_leaves[persistent=true] strict
+fill -10 68 31 -10 69 33 minecraft:birch_leaves[persistent=true] strict
+fill -9 68 -40 -8 70 -40 minecraft:bamboo[age=0,leaves=none] strict
+setblock -9 68 -39 minecraft:bamboo[age=0,leaves=small] strict
+fill -9 68 30 -9 69 31 minecraft:birch_leaves[persistent=true] strict
+fill -9 68 33 -9 69 34 minecraft:birch_leaves[persistent=true] strict
+fill -8 68 -55 -8 69 -55 minecraft:bamboo[age=0,leaves=large] strict
+fill -8 68 -38 -8 69 -38 minecraft:bamboo[age=0,leaves=large] strict
+fill -8 68 22 -8 68 24 minecraft:oak_leaves[persistent=true] strict
+fill -8 68 31 -8 69 33 minecraft:birch_leaves[persistent=true] strict
+fill -7 68 14 -7 68 15 minecraft:oak_leaves[persistent=true] strict
 setblock -6 68 36 minecraft:white_concrete strict
 setblock -6 68 37 minecraft:red_concrete strict
 setblock -5 68 -13 minecraft:lantern strict
@@ -805,209 +1381,220 @@ setblock -4 68 -17 minecraft:lantern strict
 setblock -4 68 17 minecraft:lantern strict
 setblock 0 68 60 minecraft:white_concrete strict
 setblock 0 68 72 minecraft:white_concrete strict
-setblock 1 68 -59 minecraft:cherry_leaves[persistent=true] strict
-fill 1 68 -57 1 68 -55 minecraft:cherry_leaves[persistent=true] strict
-fill 2 68 -59 2 68 -54 minecraft:cherry_leaves[persistent=true] strict
-setblock 3 68 -68 minecraft:cherry_leaves[persistent=true] strict
-fill 3 68 -66 3 68 -65 minecraft:cherry_leaves[persistent=true] strict
-fill 3 68 -60 3 68 -54 minecraft:cherry_leaves[persistent=true] strict
-fill 4 68 -68 4 68 -64 minecraft:cherry_leaves[persistent=true] strict
-fill 4 68 -60 5 68 -55 minecraft:cherry_leaves[persistent=true] strict
 setblock 4 68 -37 minecraft:lantern strict
 setblock 4 68 -17 minecraft:lantern strict
 setblock 4 68 17 minecraft:lantern strict
-fill 5 68 -69 5 68 -64 minecraft:cherry_leaves[persistent=true] strict
 setblock 5 68 -13 minecraft:lantern strict
 setblock 5 68 13 minecraft:lantern strict
-fill 6 68 -68 6 68 -64 minecraft:cherry_leaves[persistent=true] strict
-fill 6 68 -59 6 68 -54 minecraft:cherry_leaves[persistent=true] strict
+fill 6 68 -25 6 68 -21 minecraft:cherry_leaves[persistent=true] strict
 setblock 6 68 36 minecraft:white_concrete strict
 setblock 6 68 37 minecraft:red_concrete strict
-fill 7 68 -68 8 68 -63 minecraft:cherry_leaves[persistent=true] strict
-fill 7 68 -59 7 68 -57 minecraft:cherry_leaves[persistent=true] strict
-fill 7 68 -33 7 69 -33 minecraft:cherry_leaves[persistent=true] strict
-setblock 7 68 -25 minecraft:cherry_leaves[persistent=true] strict
-setblock 7 68 -22 minecraft:cherry_leaves[persistent=true] strict
-setblock 7 68 26 minecraft:oak_leaves[persistent=true] strict
-fill 8 68 -33 9 68 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 8 68 -25 9 68 -20 minecraft:cherry_leaves[persistent=true] strict
-fill 8 68 24 8 68 28 minecraft:oak_leaves[persistent=true] strict
-fill 9 68 -68 9 68 -65 minecraft:cherry_leaves[persistent=true] strict
-fill 9 68 -44 9 68 -42 minecraft:cherry_leaves[persistent=true] strict
-fill 10 68 -47 10 68 -42 minecraft:cherry_leaves[persistent=true] strict
-fill 10 68 -34 10 68 -28 minecraft:cherry_leaves[persistent=true] strict
-fill 10 68 -26 11 69 -20 minecraft:cherry_leaves[persistent=true] strict
-fill 10 68 25 10 68 28 minecraft:oak_leaves[persistent=true] strict
-fill 11 68 -46 13 68 -42 minecraft:cherry_leaves[persistent=true] strict
-fill 11 68 -34 11 68 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 11 68 11 11 68 12 minecraft:oak_leaves[persistent=true] strict
-fill 11 68 25 11 68 26 minecraft:oak_leaves[persistent=true] strict
-fill 12 68 -55 12 68 -54 minecraft:cherry_leaves[persistent=true] strict
-fill 12 68 -34 12 68 -28 minecraft:cherry_leaves[persistent=true] strict
-fill 12 68 -25 12 68 -21 minecraft:cherry_leaves[persistent=true] strict
-fill 12 68 9 12 68 12 minecraft:oak_leaves[persistent=true] strict
+fill 7 68 -26 7 68 -20 minecraft:cherry_leaves[persistent=true] strict
+fill 8 68 -56 8 68 -55 minecraft:cherry_leaves[persistent=true] strict
+fill 8 68 -26 8 68 -21 minecraft:cherry_leaves[persistent=true] strict
+fill 8 68 -15 8 68 -14 minecraft:cherry_leaves[persistent=true] strict
+setblock 9 68 -56 minecraft:cherry_log[axis=z] strict
+fill 9 68 -25 9 68 -20 minecraft:cherry_leaves[persistent=true] strict
+setblock 9 68 -14 minecraft:cherry_leaves[persistent=true] strict
+setblock 10 68 -56 minecraft:cherry_leaves[persistent=true] strict
+fill 10 68 -42 10 69 -42 minecraft:birch_leaves[persistent=true] strict
+fill 10 68 -26 10 68 -20 minecraft:cherry_leaves[persistent=true] strict
+setblock 10 68 -15 minecraft:cherry_log[axis=x] strict
+fill 10 68 17 10 69 19 minecraft:red_mushroom_block strict
+fill 11 68 -43 11 69 -41 minecraft:birch_leaves[persistent=true] strict
+fill 11 68 -25 11 68 -21 minecraft:cherry_leaves[persistent=true] strict
+fill 11 68 16 11 69 16 minecraft:red_mushroom_block strict
+fill 11 68 20 11 69 20 minecraft:red_mushroom_block strict
+fill 12 68 -43 12 69 -43 minecraft:birch_leaves[persistent=true] strict
+fill 12 68 -41 12 69 -40 minecraft:birch_leaves[persistent=true] strict
+setblock 12 68 -25 minecraft:cherry_leaves[persistent=true] strict
+fill 12 68 -22 12 68 -21 minecraft:cherry_leaves[persistent=true] strict
+fill 12 68 15 14 69 15 minecraft:red_mushroom_block strict
+fill 12 68 21 14 69 21 minecraft:red_mushroom_block strict
 setblock 13 68 -63 minecraft:lantern strict
-setblock 13 68 -55 minecraft:cherry_leaves[persistent=true] strict
-setblock 13 68 -53 minecraft:cherry_leaves[persistent=true] strict
-fill 13 68 -32 13 68 -31 minecraft:cherry_leaves[persistent=true] strict
-fill 13 68 -29 13 69 -29 minecraft:cherry_leaves[persistent=true] strict
-setblock 13 68 -24 minecraft:cherry_leaves[persistent=true] strict
+fill 13 68 -43 13 69 -41 minecraft:birch_leaves[persistent=true] strict
 setblock 13 68 -5 minecraft:lantern strict
 setblock 13 68 5 minecraft:lantern strict
-setblock 14 68 -54 minecraft:cherry_log[axis=x] strict
-fill 14 68 -47 14 68 -42 minecraft:cherry_leaves[persistent=true] strict
-fill 14 68 -18 16 68 -18 minecraft:cherry_leaves[persistent=true] strict
-fill 14 68 9 14 68 13 minecraft:oak_leaves[persistent=true] strict
-setblock 14 68 19 minecraft:oak_leaves[persistent=true] strict
-fill 14 68 30 14 68 33 minecraft:oak_leaves[persistent=true] strict
-setblock 15 68 -45 minecraft:cherry_leaves[persistent=true] strict
-fill 15 68 -43 15 68 -42 minecraft:cherry_leaves[persistent=true] strict
-fill 15 68 -16 16 68 -16 minecraft:cherry_leaves[persistent=true] strict
-setblock 15 68 63 minecraft:spruce_leaves[persistent=true] strict
-setblock 16 68 -37 minecraft:cherry_leaves[persistent=true] strict
-setblock 16 68 -27 minecraft:birch_leaves[persistent=true] strict
-setblock 16 68 -17 minecraft:cherry_log[axis=x] strict
-fill 16 68 62 16 68 64 minecraft:spruce_leaves[persistent=true] strict
-setblock 17 68 -37 minecraft:cherry_log[axis=z] strict
-setblock 17 68 -35 minecraft:cherry_leaves[persistent=true] strict
-fill 17 68 -28 17 70 -28 minecraft:birch_leaves[persistent=true] strict
-setblock 17 68 -26 minecraft:birch_leaves[persistent=true] strict
+setblock 14 68 -42 minecraft:birch_leaves[persistent=true] strict
+fill 14 68 -16 14 69 -16 minecraft:cherry_leaves[persistent=true] strict
+setblock 15 68 -54 minecraft:birch_leaves[persistent=true] strict
+fill 15 68 -17 15 68 -12 minecraft:cherry_leaves[persistent=true] strict
+fill 15 68 16 15 69 16 minecraft:red_mushroom_block strict
+fill 15 68 20 15 69 20 minecraft:red_mushroom_block strict
+fill 16 68 -55 16 69 -53 minecraft:birch_leaves[persistent=true] strict
+fill 16 68 -17 18 68 -13 minecraft:cherry_leaves[persistent=true] strict
+fill 16 68 17 16 69 19 minecraft:red_mushroom_block strict
+fill 17 68 -53 17 68 -52 minecraft:birch_leaves[persistent=true] strict
 setblock 17 68 -4 minecraft:lantern strict
 setblock 17 68 4 minecraft:lantern strict
-fill 17 68 61 17 69 62 minecraft:spruce_leaves[persistent=true] strict
-fill 17 68 64 17 69 65 minecraft:spruce_leaves[persistent=true] strict
-setblock 18 68 -36 minecraft:cherry_leaves[persistent=true] strict
-fill 18 68 62 18 68 64 minecraft:spruce_leaves[persistent=true] strict
-setblock 19 68 63 minecraft:spruce_leaves[persistent=true] strict
-fill 20 68 -55 20 69 -53 minecraft:birch_leaves[persistent=true] strict
-fill 21 68 -56 21 68 -55 minecraft:birch_leaves[persistent=true] strict
-fill 21 68 -53 21 69 -53 minecraft:birch_leaves[persistent=true] strict
-setblock 21 68 -45 minecraft:cherry_leaves[persistent=true] strict
-fill 22 68 -55 22 69 -53 minecraft:birch_leaves[persistent=true] strict
-setblock 22 68 -47 minecraft:cherry_log[axis=z] strict
+fill 18 68 -55 18 69 -53 minecraft:birch_leaves[persistent=true] strict
+fill 19 68 -54 19 69 -54 minecraft:birch_leaves[persistent=true] strict
+fill 19 68 -18 19 68 -13 minecraft:cherry_leaves[persistent=true] strict
+fill 19 68 10 19 68 11 minecraft:oak_leaves[persistent=true] strict
+setblock 20 68 -38 minecraft:cherry_log[axis=x] strict
+setblock 20 68 -37 minecraft:cherry_leaves[persistent=true] strict
+fill 20 68 -18 20 69 -17 minecraft:cherry_leaves[persistent=true] strict
+fill 20 68 -14 20 68 -13 minecraft:cherry_leaves[persistent=true] strict
+fill 20 68 9 20 68 13 minecraft:oak_leaves[persistent=true] strict
+setblock 21 68 -39 minecraft:cherry_leaves[persistent=true] strict
+fill 21 68 -23 21 68 -18 minecraft:cherry_leaves[persistent=true] strict
+fill 22 68 -23 22 68 -17 minecraft:cherry_leaves[persistent=true] strict
+fill 22 68 9 22 68 13 minecraft:oak_leaves[persistent=true] strict
+fill 23 68 -49 24 68 -49 minecraft:cherry_leaves[persistent=true] strict
 setblock 23 68 -47 minecraft:cherry_leaves[persistent=true] strict
-setblock 23 68 -45 minecraft:cherry_leaves[persistent=true] strict
-setblock 25 68 -11 minecraft:birch_leaves[persistent=true] strict
-fill 25 68 48 25 69 50 minecraft:red_mushroom_block strict
-fill 26 68 -38 27 68 -38 minecraft:cherry_leaves[persistent=true] strict
-fill 26 68 -12 26 69 -12 minecraft:birch_leaves[persistent=true] strict
-setblock 26 68 -10 minecraft:birch_leaves[persistent=true] strict
-fill 26 68 47 26 69 47 minecraft:red_mushroom_block strict
-fill 26 68 51 26 69 51 minecraft:red_mushroom_block strict
-setblock 27 68 -39 minecraft:cherry_log[axis=x] strict
-fill 27 68 46 29 69 46 minecraft:red_mushroom_block strict
-fill 27 68 52 29 69 52 minecraft:red_mushroom_block strict
-setblock 29 68 -49 minecraft:cherry_leaves[persistent=true] strict
-fill 29 68 22 29 68 23 minecraft:oak_leaves[persistent=true] strict
-setblock 30 68 -60 minecraft:cherry_leaves[persistent=true] strict
-fill 30 68 -56 30 69 -56 minecraft:cherry_leaves[persistent=true] strict
-setblock 30 68 -50 minecraft:cherry_leaves[persistent=true] strict
-fill 30 68 20 30 68 23 minecraft:oak_leaves[persistent=true] strict
-fill 30 68 47 30 69 47 minecraft:red_mushroom_block strict
-fill 30 68 51 30 69 51 minecraft:red_mushroom_block strict
-fill 31 68 -61 31 68 -56 minecraft:cherry_leaves[persistent=true] strict
-setblock 31 68 -49 minecraft:cherry_log[axis=x] strict
-fill 31 68 20 31 69 21 minecraft:oak_leaves[persistent=true] strict
-fill 31 68 23 31 69 24 minecraft:oak_leaves[persistent=true] strict
-fill 31 68 48 31 69 50 minecraft:red_mushroom_block strict
-fill 32 68 -60 33 68 -56 minecraft:cherry_leaves[persistent=true] strict
-fill 32 68 20 32 68 24 minecraft:oak_leaves[persistent=true] strict
-fill 33 68 22 33 69 22 minecraft:oak_leaves[persistent=true] strict
-fill 34 68 -61 34 68 -56 minecraft:cherry_leaves[persistent=true] strict
-fill 34 68 -38 34 69 -38 minecraft:birch_leaves[persistent=true] strict
-fill 35 68 -60 35 68 -56 minecraft:cherry_leaves[persistent=true] strict
-fill 35 68 -39 35 69 -37 minecraft:birch_leaves[persistent=true] strict
-setblock 36 68 -60 minecraft:cherry_leaves[persistent=true] strict
-setblock 36 68 -58 minecraft:cherry_leaves[persistent=true] strict
-fill 36 68 -40 36 68 -39 minecraft:birch_leaves[persistent=true] strict
-fill 36 68 -37 36 69 -36 minecraft:birch_leaves[persistent=true] strict
-setblock 36 68 -11 minecraft:cherry_leaves[persistent=true] strict
-fill 37 68 -39 37 69 -37 minecraft:birch_leaves[persistent=true] strict
-setblock 37 68 -11 minecraft:cherry_log[axis=z] strict
-fill 37 68 -9 38 68 -9 minecraft:cherry_leaves[persistent=true] strict
+fill 23 68 -22 23 68 -18 minecraft:cherry_leaves[persistent=true] strict
+fill 23 68 -15 23 68 -14 minecraft:cherry_leaves[persistent=true] strict
+fill 23 68 10 23 68 12 minecraft:oak_leaves[persistent=true] strict
+fill 23 68 45 23 68 46 minecraft:oak_leaves[persistent=true] strict
+setblock 24 68 -47 minecraft:cherry_log[axis=z] strict
+fill 24 68 -22 24 68 -17 minecraft:cherry_leaves[persistent=true] strict
+fill 24 68 -15 24 68 -10 minecraft:cherry_leaves[persistent=true] strict
+fill 24 68 26 25 68 28 minecraft:oak_leaves[persistent=true] strict
+fill 24 68 44 24 69 47 minecraft:oak_leaves[persistent=true] strict
+fill 25 68 -41 25 68 -39 minecraft:cherry_leaves[persistent=true] strict
+fill 25 68 -22 25 68 -18 minecraft:cherry_leaves[persistent=true] strict
+fill 25 68 -16 25 68 -11 minecraft:cherry_leaves[persistent=true] strict
+fill 25 68 34 26 68 36 minecraft:oak_leaves[persistent=true] strict
+fill 25 68 43 25 69 44 minecraft:oak_leaves[persistent=true] strict
+fill 25 68 46 25 69 47 minecraft:oak_leaves[persistent=true] strict
+fill 26 68 -43 26 69 -39 minecraft:cherry_leaves[persistent=true] strict
+fill 26 68 -20 26 68 -18 minecraft:cherry_leaves[persistent=true] strict
+fill 26 68 -16 26 68 -10 minecraft:cherry_leaves[persistent=true] strict
+fill 26 68 25 26 69 26 minecraft:oak_leaves[persistent=true] strict
+fill 26 68 28 26 69 29 minecraft:oak_leaves[persistent=true] strict
+fill 26 68 43 26 68 47 minecraft:oak_leaves[persistent=true] strict
+fill 27 68 -44 27 68 -39 minecraft:cherry_leaves[persistent=true] strict
+fill 27 68 -15 28 68 -11 minecraft:cherry_leaves[persistent=true] strict
+fill 27 68 26 27 68 29 minecraft:oak_leaves[persistent=true] strict
+fill 27 68 44 27 68 45 minecraft:oak_leaves[persistent=true] strict
+fill 28 68 -43 29 68 -39 minecraft:cherry_leaves[persistent=true] strict
+fill 28 68 26 28 68 27 minecraft:oak_leaves[persistent=true] strict
+fill 28 68 34 28 68 37 minecraft:oak_leaves[persistent=true] strict
+fill 29 68 -15 29 68 -14 minecraft:cherry_leaves[persistent=true] strict
+setblock 29 68 -11 minecraft:cherry_leaves[persistent=true] strict
+setblock 29 68 35 minecraft:oak_leaves[persistent=true] strict
+fill 30 68 -44 30 68 -38 minecraft:cherry_leaves[persistent=true] strict
+fill 31 68 -40 31 68 -39 minecraft:cherry_leaves[persistent=true] strict
+setblock 32 68 -48 minecraft:cherry_leaves[persistent=true] strict
+setblock 32 68 -46 minecraft:cherry_leaves[persistent=true] strict
+setblock 32 68 -8 minecraft:cherry_leaves[persistent=true] strict
+setblock 33 68 -48 minecraft:cherry_log[axis=z] strict
+setblock 33 68 -24 minecraft:cherry_leaves[persistent=true] strict
+setblock 33 68 -21 minecraft:cherry_leaves[persistent=true] strict
+setblock 33 68 -10 minecraft:cherry_log[axis=z] strict
+setblock 34 68 -47 minecraft:cherry_leaves[persistent=true] strict
+fill 34 68 -25 34 68 -20 minecraft:cherry_leaves[persistent=true] strict
+setblock 34 68 -10 minecraft:cherry_leaves[persistent=true] strict
+setblock 34 68 -8 minecraft:cherry_leaves[persistent=true] strict
+fill 34 68 55 34 68 56 minecraft:oak_leaves[persistent=true] strict
+fill 35 68 -25 35 68 -19 minecraft:cherry_leaves[persistent=true] strict
+fill 35 68 53 35 68 56 minecraft:oak_leaves[persistent=true] strict
+fill 36 68 -24 36 68 -20 minecraft:cherry_leaves[persistent=true] strict
+fill 37 68 -25 37 68 -20 minecraft:cherry_leaves[persistent=true] strict
 setblock 37 68 -4 minecraft:lantern strict
 setblock 37 68 4 minecraft:lantern strict
+fill 37 68 53 37 68 57 minecraft:oak_leaves[persistent=true] strict
 setblock 38 68 -52 minecraft:lantern strict
-fill 38 68 26 38 68 28 minecraft:oak_leaves[persistent=true] strict
-setblock 39 68 -52 minecraft:cherry_leaves[persistent=true] strict
+fill 38 68 -24 38 69 -20 minecraft:cherry_leaves[persistent=true] strict
+setblock 38 68 -11 minecraft:cherry_leaves[persistent=true] strict
+setblock 38 68 52 minecraft:lantern strict
+fill 38 68 54 38 68 55 minecraft:oak_leaves[persistent=true] strict
+setblock 39 68 -24 minecraft:cherry_leaves[persistent=true] strict
 setblock 39 68 -22 minecraft:cherry_leaves[persistent=true] strict
-fill 39 68 25 39 68 28 minecraft:oak_leaves[persistent=true] strict
-setblock 40 68 -54 minecraft:cherry_log[axis=z] strict
-setblock 40 68 -33 minecraft:cherry_leaves[persistent=true] strict
-setblock 40 68 -31 minecraft:cherry_leaves[persistent=true] strict
-fill 40 68 -23 41 68 -23 minecraft:cherry_leaves[persistent=true] strict
-setblock 40 68 -21 minecraft:cherry_leaves[persistent=true] strict
-setblock 41 68 -53 minecraft:cherry_leaves[persistent=true] strict
-fill 41 68 -34 41 68 -29 minecraft:cherry_leaves[persistent=true] strict
-setblock 41 68 -22 minecraft:cherry_log[axis=x] strict
-fill 41 68 26 41 68 29 minecraft:oak_leaves[persistent=true] strict
-fill 42 68 -34 42 68 -28 minecraft:cherry_leaves[persistent=true] strict
-fill 43 68 -33 43 68 -28 minecraft:cherry_leaves[persistent=true] strict
-setblock 43 68 -14 minecraft:birch_leaves[persistent=true] strict
-fill 43 68 11 43 68 12 minecraft:oak_leaves[persistent=true] strict
-fill 44 68 -33 44 68 -29 minecraft:cherry_leaves[persistent=true] strict
-setblock 44 68 -15 minecraft:birch_leaves[persistent=true] strict
-fill 44 68 10 44 68 14 minecraft:oak_leaves[persistent=true] strict
-fill 45 68 -34 45 68 -28 minecraft:cherry_leaves[persistent=true] strict
-setblock 45 68 -14 minecraft:birch_leaves[persistent=true] strict
-fill 45 68 10 45 69 11 minecraft:oak_leaves[persistent=true] strict
-fill 45 68 13 45 69 14 minecraft:oak_leaves[persistent=true] strict
-fill 46 68 -33 46 69 -33 minecraft:cherry_leaves[persistent=true] strict
-setblock 46 68 -31 minecraft:cherry_leaves[persistent=true] strict
-fill 46 68 10 46 68 13 minecraft:oak_leaves[persistent=true] strict
-fill 47 68 11 47 68 12 minecraft:oak_leaves[persistent=true] strict
+fill 39 68 -12 39 68 -7 minecraft:cherry_leaves[persistent=true] strict
+fill 39 68 37 39 68 38 minecraft:oak_leaves[persistent=true] strict
+setblock 40 68 -39 minecraft:cherry_log[axis=z] strict
+setblock 40 68 -19 minecraft:cherry_leaves[persistent=true] strict
+setblock 40 68 -16 minecraft:cherry_leaves[persistent=true] strict
+fill 40 68 -11 40 68 -6 minecraft:cherry_leaves[persistent=true] strict
+fill 40 68 23 40 68 24 minecraft:oak_leaves[persistent=true] strict
+fill 41 68 -53 41 68 -51 minecraft:cherry_leaves[persistent=true] strict
+fill 41 68 -39 41 68 -38 minecraft:cherry_leaves[persistent=true] strict
+fill 41 68 -30 41 69 -30 minecraft:birch_leaves[persistent=true] strict
+fill 41 68 -20 41 68 -16 minecraft:cherry_leaves[persistent=true] strict
+fill 41 68 -12 41 68 -7 minecraft:cherry_leaves[persistent=true] strict
+fill 41 68 12 41 68 13 minecraft:oak_leaves[persistent=true] strict
+fill 42 68 -54 42 69 -48 minecraft:cherry_leaves[persistent=true] strict
+fill 42 68 -31 42 69 -29 minecraft:birch_leaves[persistent=true] strict
+fill 42 68 -21 43 69 -15 minecraft:cherry_leaves[persistent=true] strict
+fill 42 68 -11 42 68 -6 minecraft:cherry_leaves[persistent=true] strict
+fill 42 68 10 42 68 14 minecraft:oak_leaves[persistent=true] strict
+fill 42 68 37 42 69 39 minecraft:oak_leaves[persistent=true] strict
+fill 43 68 -53 43 69 -48 minecraft:cherry_leaves[persistent=true] strict
+fill 43 68 -32 43 69 -31 minecraft:birch_leaves[persistent=true] strict
+fill 43 68 -29 43 69 -28 minecraft:birch_leaves[persistent=true] strict
+fill 43 68 -12 43 68 -6 minecraft:cherry_leaves[persistent=true] strict
+fill 43 68 10 43 69 11 minecraft:oak_leaves[persistent=true] strict
+fill 43 68 13 43 69 14 minecraft:oak_leaves[persistent=true] strict
+fill 43 68 22 43 68 26 minecraft:oak_leaves[persistent=true] strict
+fill 44 68 -53 44 68 -49 minecraft:cherry_leaves[persistent=true] strict
+fill 44 68 -31 44 69 -29 minecraft:birch_leaves[persistent=true] strict
+fill 44 68 -21 44 68 -16 minecraft:cherry_leaves[persistent=true] strict
+fill 44 68 -11 44 69 -11 minecraft:cherry_leaves[persistent=true] strict
+setblock 44 68 -9 minecraft:cherry_leaves[persistent=true] strict
+fill 44 68 11 44 68 14 minecraft:oak_leaves[persistent=true] strict
+fill 45 68 -53 45 68 -48 minecraft:cherry_leaves[persistent=true] strict
+fill 45 68 -30 45 69 -30 minecraft:birch_leaves[persistent=true] strict
+fill 45 68 -26 45 68 -24 minecraft:cherry_leaves[persistent=true] strict
+setblock 45 68 -22 minecraft:cherry_leaves[persistent=true] strict
+fill 45 68 -20 45 68 -16 minecraft:cherry_leaves[persistent=true] strict
+fill 45 68 11 45 69 12 minecraft:oak_leaves[persistent=true] strict
+fill 46 68 -54 46 68 -48 minecraft:cherry_leaves[persistent=true] strict
+fill 46 68 -27 46 69 -22 minecraft:cherry_leaves[persistent=true] strict
+setblock 46 68 -20 minecraft:cherry_leaves[persistent=true] strict
+setblock 46 68 -16 minecraft:cherry_leaves[persistent=true] strict
+fill 47 68 -53 47 68 -50 minecraft:cherry_leaves[persistent=true] strict
+fill 47 68 -27 48 68 -21 minecraft:cherry_leaves[persistent=true] strict
+setblock 47 68 -14 minecraft:cherry_leaves[persistent=true] strict
+setblock 47 68 -10 minecraft:cherry_leaves[persistent=true] strict
+fill 47 68 30 47 68 31 minecraft:oak_leaves[persistent=true] strict
 setblock 48 68 -43 minecraft:lantern strict
+fill 48 68 -14 48 68 -9 minecraft:cherry_leaves[persistent=true] strict
+fill 48 68 29 48 68 32 minecraft:oak_leaves[persistent=true] strict
 setblock 48 68 43 minecraft:lantern strict
-fill 49 68 -29 49 69 -27 minecraft:birch_leaves[persistent=true] strict
-fill 50 68 -30 50 69 -29 minecraft:birch_leaves[persistent=true] strict
-fill 50 68 -27 50 69 -26 minecraft:birch_leaves[persistent=true] strict
-fill 50 68 -22 50 68 -21 minecraft:cherry_leaves[persistent=true] strict
-fill 50 68 -19 50 69 -19 minecraft:cherry_leaves[persistent=true] strict
-fill 51 68 -29 51 69 -27 minecraft:birch_leaves[persistent=true] strict
-fill 51 68 -24 51 68 -18 minecraft:cherry_leaves[persistent=true] strict
-fill 51 68 -12 51 69 -12 minecraft:birch_leaves[persistent=true] strict
-fill 51 68 14 51 69 16 minecraft:red_mushroom_block strict
-fill 52 68 -24 52 68 -19 minecraft:cherry_leaves[persistent=true] strict
-fill 52 68 -13 52 69 -11 minecraft:birch_leaves[persistent=true] strict
-fill 52 68 13 52 69 13 minecraft:red_mushroom_block strict
-fill 52 68 17 52 69 17 minecraft:red_mushroom_block strict
-fill 53 68 -24 53 68 -18 minecraft:cherry_leaves[persistent=true] strict
-fill 53 68 -14 53 68 -13 minecraft:birch_leaves[persistent=true] strict
-fill 53 68 -11 53 68 -10 minecraft:birch_leaves[persistent=true] strict
-fill 53 68 12 55 69 12 minecraft:red_mushroom_block strict
-fill 53 68 18 55 69 18 minecraft:red_mushroom_block strict
-fill 54 68 -23 55 68 -18 minecraft:cherry_leaves[persistent=true] strict
-fill 54 68 -13 54 69 -11 minecraft:birch_leaves[persistent=true] strict
-fill 55 68 -12 55 69 -12 minecraft:birch_leaves[persistent=true] strict
+fill 49 68 -27 49 68 -22 minecraft:cherry_leaves[persistent=true] strict
+fill 49 68 -14 49 68 -10 minecraft:cherry_leaves[persistent=true] strict
+fill 49 68 20 49 68 21 minecraft:oak_leaves[persistent=true] strict
+fill 50 68 -27 50 69 -21 minecraft:cherry_leaves[persistent=true] strict
+fill 50 68 -15 50 68 -9 minecraft:cherry_leaves[persistent=true] strict
+fill 50 68 18 50 68 22 minecraft:oak_leaves[persistent=true] strict
+fill 50 68 29 50 68 33 minecraft:oak_leaves[persistent=true] strict
+fill 51 68 -25 51 68 -24 minecraft:cherry_leaves[persistent=true] strict
+fill 51 68 -14 51 69 -9 minecraft:cherry_leaves[persistent=true] strict
+fill 51 68 30 51 68 32 minecraft:oak_leaves[persistent=true] strict
+setblock 52 68 -19 minecraft:cherry_leaves[persistent=true] strict
+setblock 52 68 -17 minecraft:cherry_leaves[persistent=true] strict
+fill 52 68 -14 52 68 -10 minecraft:cherry_leaves[persistent=true] strict
+fill 52 68 19 52 68 21 minecraft:oak_leaves[persistent=true] strict
+fill 53 68 -21 53 68 -15 minecraft:cherry_leaves[persistent=true] strict
+setblock 53 68 -13 minecraft:cherry_leaves[persistent=true] strict
+fill 53 68 -10 53 69 -10 minecraft:cherry_leaves[persistent=true] strict
+fill 53 68 19 53 68 20 minecraft:oak_leaves[persistent=true] strict
+fill 54 68 -21 55 68 -16 minecraft:cherry_leaves[persistent=true] strict
 setblock 56 68 -32 minecraft:lantern strict
-fill 56 68 -23 56 69 -23 minecraft:cherry_leaves[persistent=true] strict
-fill 56 68 -21 56 68 -20 minecraft:cherry_leaves[persistent=true] strict
-fill 56 68 13 56 69 13 minecraft:red_mushroom_block strict
-fill 56 68 17 56 69 17 minecraft:red_mushroom_block strict
+fill 56 68 -20 57 68 -16 minecraft:cherry_leaves[persistent=true] strict
+setblock 56 68 -9 minecraft:cherry_log[axis=x] strict
 setblock 56 68 32 minecraft:lantern strict
+setblock 57 68 -8 minecraft:cherry_leaves[persistent=true] strict
 setblock 57 68 -4 minecraft:lantern strict
 setblock 57 68 4 minecraft:lantern strict
-fill 57 68 14 57 69 16 minecraft:red_mushroom_block strict
-setblock 59 68 -33 minecraft:cherry_leaves[persistent=true] strict
-fill 59 68 -31 60 68 -31 minecraft:cherry_leaves[persistent=true] strict
-setblock 60 68 -32 minecraft:cherry_log[axis=x] strict
+fill 58 68 -20 58 68 -17 minecraft:cherry_leaves[persistent=true] strict
+fill 58 68 -10 58 68 -8 minecraft:cherry_leaves[persistent=true] strict
 setblock 61 68 -20 minecraft:lantern strict
-setblock 61 68 -14 minecraft:cherry_leaves[persistent=true] strict
-fill 61 68 -12 61 68 -11 minecraft:cherry_leaves[persistent=true] strict
 setblock 61 68 20 minecraft:lantern strict
-fill 62 68 -15 63 68 -10 minecraft:cherry_leaves[persistent=true] strict
-fill 64 68 -14 64 69 -10 minecraft:cherry_leaves[persistent=true] strict
 setblock 64 68 -7 minecraft:lantern strict
 fill 64 68 -4 65 68 -4 minecraft:lime_stained_glass strict
 fill 64 68 4 65 68 4 minecraft:lime_stained_glass strict
 setblock 64 68 7 minecraft:lantern strict
-fill 64 68 10 64 69 10 minecraft:birch_leaves[persistent=true] strict
-fill 65 68 -15 65 68 -10 minecraft:cherry_leaves[persistent=true] strict
-fill 65 68 9 65 69 11 minecraft:birch_leaves[persistent=true] strict
-fill 66 68 -15 66 68 -9 minecraft:cherry_leaves[persistent=true] strict
-setblock 67 68 -14 minecraft:cherry_leaves[persistent=true] strict
-fill 67 68 -12 67 68 -10 minecraft:cherry_leaves[persistent=true] strict
-fill 67 68 9 67 69 11 minecraft:birch_leaves[persistent=true] strict
+fill 64 68 11 64 68 12 minecraft:oak_leaves[persistent=true] strict
+setblock 65 68 -13 minecraft:cherry_leaves[persistent=true] strict
+fill 65 68 11 65 69 14 minecraft:oak_leaves[persistent=true] strict
+setblock 66 68 -12 minecraft:cherry_log[axis=z] strict
+fill 66 68 10 66 69 11 minecraft:oak_leaves[persistent=true] strict
+fill 66 68 13 66 69 14 minecraft:oak_leaves[persistent=true] strict
+setblock 67 68 -13 minecraft:cherry_leaves[persistent=true] strict
+fill 67 68 10 67 68 14 minecraft:oak_leaves[persistent=true] strict
+fill 68 68 12 68 68 13 minecraft:oak_leaves[persistent=true] strict
 setblock 109 68 -1 minecraft:packed_ice strict
 setblock 112 68 0 minecraft:packed_ice strict
 setblock 113 68 3 minecraft:lantern[hanging=true] strict
@@ -1022,64 +1609,65 @@ setblock 126 68 -2 minecraft:amethyst_block strict
 fill 126 68 -1 126 70 1 minecraft:smooth_quartz strict
 setblock 126 68 2 minecraft:amethyst_block strict
 fill 127 68 -1 127 68 1 minecraft:amethyst_block strict
-setblock -65 69 10 minecraft:oak_leaves[persistent=true] strict
-fill -64 69 10 -64 69 12 minecraft:oak_leaves[persistent=true] strict
-setblock -63 69 10 minecraft:oak_leaves[persistent=true] strict
-setblock -63 69 12 minecraft:oak_leaves[persistent=true] strict
-fill -60 69 29 -60 69 31 minecraft:oak_leaves[persistent=true] strict
+fill -66 69 20 -66 69 21 minecraft:oak_leaves[persistent=true] strict
+fill -63 69 19 -63 69 22 minecraft:oak_leaves[persistent=true] strict
+setblock -62 69 21 minecraft:oak_leaves[persistent=true] strict
 setblock -59 69 -12 minecraft:stone_bricks strict
 setblock -59 69 -11 minecraft:mossy_stone_bricks strict
 setblock -59 69 -10 minecraft:stone_bricks strict
 fill -59 69 10 -59 69 11 minecraft:stone_bricks strict
 setblock -59 69 12 minecraft:mossy_stone_bricks strict
-fill -59 69 29 -59 69 32 minecraft:oak_leaves[persistent=true] strict
 fill -58 69 9 -56 69 9 minecraft:stone_bricks strict
+fill -58 69 36 -58 69 38 minecraft:oak_leaves[persistent=true] strict
 fill -57 69 -7 -57 69 7 minecraft:stripped_dark_oak_log[axis=z] strict
 setblock -57 69 10 minecraft:mossy_stone_bricks strict
 setblock -57 69 11 minecraft:stone_bricks strict
-fill -57 69 29 -57 69 32 minecraft:oak_leaves[persistent=true] strict
-fill -57 69 36 -57 70 38 minecraft:birch_leaves[persistent=true] strict
-fill -56 69 29 -56 69 30 minecraft:oak_leaves[persistent=true] strict
-fill -56 69 38 -56 70 39 minecraft:birch_leaves[persistent=true] strict
+fill -57 69 36 -57 69 39 minecraft:oak_leaves[persistent=true] strict
 setblock -55 69 10 minecraft:stone_bricks strict
 setblock -55 69 11 minecraft:mossy_stone_bricks strict
 setblock -55 69 12 minecraft:stone_bricks strict
-fill -55 69 36 -55 70 38 minecraft:birch_leaves[persistent=true] strict
+fill -55 69 35 -55 69 38 minecraft:oak_leaves[persistent=true] strict
 fill -54 69 -34 -40 69 -34 minecraft:red_wool strict
 fill -54 69 -11 -53 69 -11 minecraft:stone_bricks strict
 fill -54 69 11 -53 69 11 minecraft:stone_bricks strict
-setblock -54 69 37 minecraft:birch_leaves[persistent=true] strict
+fill -54 69 16 -53 69 18 minecraft:oak_leaves[persistent=true] strict
+fill -54 69 36 -54 69 37 minecraft:oak_leaves[persistent=true] strict
+setblock -52 69 -44 minecraft:oak_leaves[persistent=true] strict
+fill -52 69 41 -52 69 43 minecraft:oak_leaves[persistent=true] strict
+fill -51 69 -46 -51 69 -42 minecraft:oak_leaves[persistent=true] strict
 fill -51 69 -11 -49 70 -11 minecraft:stone_bricks strict
 fill -51 69 11 -49 70 11 minecraft:stone_bricks strict
-setblock -49 69 23 minecraft:oak_leaves[persistent=true] strict
+fill -51 69 16 -50 69 18 minecraft:oak_leaves[persistent=true] strict
+fill -50 69 40 -50 69 44 minecraft:oak_leaves[persistent=true] strict
+fill -49 69 -45 -48 69 -43 minecraft:oak_leaves[persistent=true] strict
+fill -49 69 41 -49 69 43 minecraft:oak_leaves[persistent=true] strict
 fill -48 69 -11 -48 70 -11 minecraft:dark_oak_log strict
 fill -48 69 11 -48 70 11 minecraft:dark_oak_log strict
-fill -48 69 24 -48 69 25 minecraft:oak_leaves[persistent=true] strict
 fill -47 69 -11 -45 70 -11 minecraft:stone_bricks strict
 fill -47 69 11 -45 70 11 minecraft:stone_bricks strict
-fill -47 69 33 -47 69 34 minecraft:oak_leaves[persistent=true] strict
-fill -44 69 -39 -42 69 -39 minecraft:bamboo[age=0,leaves=small] strict
-fill -43 69 -37 -43 70 -37 minecraft:bamboo[age=0,leaves=large] strict
 fill -43 69 -11 -41 70 -11 minecraft:stone_bricks strict
 fill -43 69 11 -42 69 11 minecraft:stone_bricks strict
-fill -43 69 33 -43 69 34 minecraft:oak_leaves[persistent=true] strict
-setblock -42 69 19 minecraft:birch_leaves[persistent=true] strict
-fill -42 69 40 -42 70 42 minecraft:birch_leaves[persistent=true] strict
-fill -41 69 39 -41 69 40 minecraft:birch_leaves[persistent=true] strict
-fill -41 69 42 -41 70 43 minecraft:birch_leaves[persistent=true] strict
-fill -40 69 17 -40 69 18 minecraft:birch_leaves[persistent=true] strict
-fill -40 69 40 -40 70 42 minecraft:birch_leaves[persistent=true] strict
+setblock -43 69 23 minecraft:oak_leaves[persistent=true] strict
+setblock -43 69 25 minecraft:oak_leaves[persistent=true] strict
+fill -42 69 23 -42 69 25 minecraft:oak_leaves[persistent=true] strict
+setblock -41 69 25 minecraft:oak_leaves[persistent=true] strict
+setblock -41 69 42 minecraft:oak_leaves[persistent=true] strict
+fill -40 69 14 -40 69 15 minecraft:birch_leaves[persistent=true] strict
+fill -40 69 40 -40 69 42 minecraft:oak_leaves[persistent=true] strict
+fill -39 69 40 -39 69 41 minecraft:oak_leaves[persistent=true] strict
+fill -38 69 32 -37 69 34 minecraft:oak_leaves[persistent=true] strict
 fill -37 69 -12 -37 70 -12 minecraft:stone_bricks strict
 fill -37 69 -11 -37 70 -11 minecraft:mossy_stone_bricks strict
 fill -37 69 -10 -37 70 -10 minecraft:stone_bricks strict
 setblock -37 69 10 minecraft:mossy_stone_bricks strict
 fill -37 69 11 -37 69 12 minecraft:stone_bricks strict
+fill -36 69 -25 -36 69 -23 minecraft:spruce_leaves[persistent=true] strict
 fill -36 69 -13 -34 71 -13 minecraft:stone_bricks strict
 fill -36 69 -9 -34 69 -9 minecraft:stone_bricks strict
 fill -36 69 9 -36 70 9 minecraft:stone_bricks strict
 setblock -36 69 13 minecraft:mossy_stone_bricks strict
-fill -36 69 31 -36 69 35 minecraft:oak_leaves[persistent=true] strict
-fill -35 69 -43 -35 70 -43 minecraft:bamboo[age=0,leaves=large] strict
+setblock -36 69 32 minecraft:oak_leaves[persistent=true] strict
+fill -35 69 -26 -35 69 -22 minecraft:spruce_leaves[persistent=true] strict
 fill -35 69 -11 -35 69 -10 minecraft:cracked_stone_bricks strict
 fill -35 69 -7 -35 69 -6 minecraft:stone_bricks strict
 setblock -35 69 -5 minecraft:mossy_stone_bricks strict
@@ -1090,289 +1678,262 @@ setblock -35 69 5 minecraft:cracked_stone_bricks strict
 fill -35 69 9 -35 70 11 minecraft:stone_bricks strict
 fill -35 69 13 -34 69 13 minecraft:stone_bricks strict
 fill -34 69 9 -34 70 9 minecraft:stone_bricks strict
-fill -34 69 22 -34 70 24 minecraft:birch_leaves[persistent=true] strict
+fill -33 69 -26 -33 69 -22 minecraft:spruce_leaves[persistent=true] strict
 fill -33 69 10 -33 69 11 minecraft:mossy_stone_bricks strict
 setblock -33 69 12 minecraft:stone_bricks strict
-fill -33 69 21 -33 69 22 minecraft:birch_leaves[persistent=true] strict
-fill -32 69 22 -32 70 24 minecraft:birch_leaves[persistent=true] strict
-setblock -31 69 -37 minecraft:bamboo[age=0,leaves=small] strict
-setblock -30 69 -37 minecraft:bamboo[age=0,leaves=none] strict
-setblock -30 69 -35 minecraft:bamboo[age=0,leaves=small] strict
-fill -29 69 -37 -29 70 -37 minecraft:bamboo[age=0,leaves=large] strict
-fill -29 69 -35 -29 71 -35 minecraft:bamboo[age=0,leaves=none] strict
-fill -29 69 14 -29 69 15 minecraft:birch_leaves[persistent=true] strict
-fill -29 69 17 -29 69 18 minecraft:birch_leaves[persistent=true] strict
-fill -28 69 46 -28 70 48 minecraft:birch_leaves[persistent=true] strict
+setblock -33 69 42 minecraft:oak_leaves[persistent=true] strict
+fill -32 69 -25 -32 69 -23 minecraft:spruce_leaves[persistent=true] strict
+fill -32 69 43 -32 69 44 minecraft:oak_leaves[persistent=true] strict
+setblock -31 69 -15 minecraft:bamboo[age=0,leaves=small] strict
+setblock -31 69 -14 minecraft:bamboo[age=0,leaves=none] strict
+fill -31 69 42 -31 69 43 minecraft:oak_leaves[persistent=true] strict
+fill -29 69 -16 -29 70 -16 minecraft:bamboo[age=0,leaves=none] strict
+setblock -29 69 -15 minecraft:bamboo[age=0,leaves=small] strict
+fill -29 69 7 -29 69 11 minecraft:oak_leaves[persistent=true] strict
 fill -27 69 8 -27 69 10 minecraft:oak_leaves[persistent=true] strict
-setblock -27 69 16 minecraft:birch_leaves[persistent=true] strict
-fill -27 69 45 -27 70 46 minecraft:birch_leaves[persistent=true] strict
-fill -26 69 9 -26 69 10 minecraft:oak_leaves[persistent=true] strict
-fill -26 69 46 -26 70 48 minecraft:birch_leaves[persistent=true] strict
-fill -25 69 -41 -25 70 -41 minecraft:bamboo[age=0,leaves=large] strict
-fill -25 69 25 -25 69 27 minecraft:oak_leaves[persistent=true] strict
-fill -24 69 52 -24 69 53 minecraft:oak_leaves[persistent=true] strict
-fill -23 69 -50 -23 69 -48 minecraft:spruce_leaves[persistent=true] strict
-fill -22 69 -51 -22 69 -47 minecraft:spruce_leaves[persistent=true] strict
-setblock -22 69 14 minecraft:oak_leaves[persistent=true] strict
-setblock -22 69 16 minecraft:oak_leaves[persistent=true] strict
-setblock -22 69 35 minecraft:oak_leaves[persistent=true] strict
-setblock -22 69 41 minecraft:oak_leaves[persistent=true] strict
-setblock -22 69 43 minecraft:oak_leaves[persistent=true] strict
-setblock -21 69 15 minecraft:oak_leaves[persistent=true] strict
-fill -21 69 25 -21 69 27 minecraft:oak_leaves[persistent=true] strict
-fill -21 69 34 -21 69 35 minecraft:oak_leaves[persistent=true] strict
-setblock -21 69 42 minecraft:oak_leaves[persistent=true] strict
-fill -21 69 52 -21 69 54 minecraft:oak_leaves[persistent=true] strict
-fill -20 69 -51 -20 69 -47 minecraft:spruce_leaves[persistent=true] strict
-setblock -20 69 16 minecraft:oak_leaves[persistent=true] strict
-setblock -20 69 33 minecraft:oak_leaves[persistent=true] strict
-setblock -20 69 53 minecraft:oak_leaves[persistent=true] strict
-fill -19 69 -50 -19 69 -48 minecraft:spruce_leaves[persistent=true] strict
-fill -19 69 -38 -19 69 -36 minecraft:spruce_leaves[persistent=true] strict
-setblock -19 69 -30 minecraft:bamboo[age=0,leaves=none] strict
-fill -19 69 -29 -19 69 -28 minecraft:bamboo[age=0,leaves=small] strict
-fill -18 69 -39 -18 69 -35 minecraft:spruce_leaves[persistent=true] strict
-setblock -18 69 -30 minecraft:bamboo[age=0,leaves=small] strict
-setblock -18 69 -29 minecraft:bamboo[age=0,leaves=none] strict
-fill -18 69 48 -18 69 49 minecraft:oak_leaves[persistent=true] strict
-fill -17 69 -30 -17 69 -29 minecraft:bamboo[age=0,leaves=large] strict
-fill -17 69 46 -17 69 49 minecraft:oak_leaves[persistent=true] strict
-fill -16 69 -39 -16 69 -35 minecraft:spruce_leaves[persistent=true] strict
-fill -15 69 -38 -15 69 -36 minecraft:spruce_leaves[persistent=true] strict
-setblock -15 69 28 minecraft:birch_leaves[persistent=true] strict
-fill -15 69 47 -15 69 50 minecraft:oak_leaves[persistent=true] strict
-fill -14 69 47 -14 69 49 minecraft:oak_leaves[persistent=true] strict
-fill -13 69 21 -13 69 22 minecraft:oak_leaves[persistent=true] strict
-fill -12 69 19 -12 69 22 minecraft:oak_leaves[persistent=true] strict
-fill -10 69 19 -10 69 23 minecraft:oak_leaves[persistent=true] strict
-fill -10 69 33 -10 69 35 minecraft:oak_leaves[persistent=true] strict
-fill -9 69 -54 -9 71 -54 minecraft:bamboo[age=0,leaves=none] strict
-setblock -9 69 -53 minecraft:bamboo[age=0,leaves=small] strict
-fill -9 69 -52 -9 70 -52 minecraft:bamboo[age=0,leaves=none] strict
-fill -9 69 20 -9 69 21 minecraft:oak_leaves[persistent=true] strict
-fill -9 69 33 -9 69 34 minecraft:oak_leaves[persistent=true] strict
-setblock -8 69 33 minecraft:oak_leaves[persistent=true] strict
-setblock -8 69 35 minecraft:oak_leaves[persistent=true] strict
+fill -26 69 -49 -25 69 -49 minecraft:bamboo[age=0,leaves=large] strict
+fill -26 69 8 -26 69 9 minecraft:oak_leaves[persistent=true] strict
+setblock -24 69 -48 minecraft:bamboo[age=0,leaves=small] strict
+setblock -23 69 -34 minecraft:bamboo[age=0,leaves=large] strict
+setblock -23 69 -33 minecraft:bamboo[age=0,leaves=small] strict
+fill -23 69 -24 -23 69 -22 minecraft:spruce_leaves[persistent=true] strict
+fill -22 69 -33 -22 71 -33 minecraft:bamboo[age=0,leaves=none] strict
+fill -22 69 -25 -22 69 -21 minecraft:spruce_leaves[persistent=true] strict
+fill -20 69 -25 -20 69 -21 minecraft:spruce_leaves[persistent=true] strict
+fill -19 69 -24 -19 69 -22 minecraft:spruce_leaves[persistent=true] strict
+setblock -18 69 30 minecraft:oak_leaves[persistent=true] strict
+fill -17 69 -62 -17 69 -61 minecraft:birch_leaves[persistent=true] strict
+setblock -17 69 19 minecraft:oak_leaves[persistent=true] strict
+fill -17 69 30 -17 69 31 minecraft:oak_leaves[persistent=true] strict
+fill -17 69 53 -17 69 54 minecraft:oak_leaves[persistent=true] strict
+fill -16 69 19 -16 69 20 minecraft:oak_leaves[persistent=true] strict
+setblock -16 69 30 minecraft:oak_leaves[persistent=true] strict
+setblock -16 69 54 minecraft:oak_leaves[persistent=true] strict
+setblock -15 69 -63 minecraft:birch_leaves[persistent=true] strict
+setblock -15 69 18 minecraft:oak_leaves[persistent=true] strict
+setblock -15 69 20 minecraft:oak_leaves[persistent=true] strict
+setblock -15 69 44 minecraft:oak_leaves[persistent=true] strict
+fill -15 69 53 -15 69 55 minecraft:oak_leaves[persistent=true] strict
+fill -14 69 -21 -13 69 -21 minecraft:bamboo[age=0,leaves=large] strict
+fill -14 69 -20 -14 71 -20 minecraft:bamboo[age=0,leaves=none] strict
+setblock -14 69 -19 minecraft:bamboo[age=0,leaves=small] strict
+fill -14 69 44 -14 69 46 minecraft:oak_leaves[persistent=true] strict
+setblock -12 69 -21 minecraft:bamboo[age=0,leaves=small] strict
+fill -12 69 -20 -12 69 -19 minecraft:bamboo[age=0,leaves=large] strict
+setblock -10 69 -38 minecraft:bamboo[age=0,leaves=small] strict
+setblock -10 69 14 minecraft:oak_leaves[persistent=true] strict
+setblock -10 69 16 minecraft:oak_leaves[persistent=true] strict
+fill -10 69 23 -10 69 24 minecraft:oak_leaves[persistent=true] strict
+fill -9 69 -39 -9 70 -39 minecraft:bamboo[age=0,leaves=large] strict
+setblock -9 69 -38 minecraft:bamboo[age=0,leaves=none] strict
+fill -9 69 15 -9 69 16 minecraft:oak_leaves[persistent=true] strict
+fill -9 69 22 -9 69 24 minecraft:oak_leaves[persistent=true] strict
+setblock -8 69 16 minecraft:oak_leaves[persistent=true] strict
+setblock -8 69 23 minecraft:oak_leaves[persistent=true] strict
 setblock -6 69 36 minecraft:red_concrete strict
 setblock -6 69 37 minecraft:white_concrete strict
 setblock 0 69 -47 minecraft:light[level=15] strict
 setblock 0 69 60 minecraft:black_concrete strict
 setblock 0 69 72 minecraft:black_concrete strict
-setblock 1 69 -55 minecraft:cherry_leaves[persistent=true] strict
-fill 2 69 -59 2 69 -55 minecraft:cherry_leaves[persistent=true] strict
-fill 3 69 -68 3 69 -67 minecraft:cherry_leaves[persistent=true] strict
-fill 3 69 -60 4 69 -54 minecraft:cherry_leaves[persistent=true] strict
-fill 4 69 -69 5 69 -64 minecraft:cherry_leaves[persistent=true] strict
-fill 5 69 -60 6 69 -55 minecraft:cherry_leaves[persistent=true] strict
-fill 6 69 -68 8 69 -63 minecraft:cherry_leaves[persistent=true] strict
+fill 6 69 -56 6 70 -55 minecraft:cherry_leaves[persistent=true] strict
+fill 6 69 -25 6 69 -24 minecraft:cherry_leaves[persistent=true] strict
+setblock 6 69 -17 minecraft:cherry_leaves[persistent=true] strict
+fill 6 69 -14 6 69 -13 minecraft:cherry_leaves[persistent=true] strict
 setblock 6 69 36 minecraft:red_concrete strict
 setblock 6 69 37 minecraft:white_concrete strict
-fill 7 69 -59 7 69 -58 minecraft:cherry_leaves[persistent=true] strict
-fill 7 69 -31 7 69 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 7 69 -22 7 69 -21 minecraft:cherry_leaves[persistent=true] strict
-fill 8 69 -33 9 69 -28 minecraft:cherry_leaves[persistent=true] strict
-fill 8 69 -26 8 69 -21 minecraft:cherry_leaves[persistent=true] strict
-setblock 8 69 25 minecraft:oak_leaves[persistent=true] strict
-setblock 8 69 27 minecraft:oak_leaves[persistent=true] strict
-setblock 9 69 -67 minecraft:cherry_leaves[persistent=true] strict
-setblock 9 69 -65 minecraft:cherry_leaves[persistent=true] strict
-setblock 9 69 -43 minecraft:cherry_leaves[persistent=true] strict
-fill 9 69 -25 9 69 -20 minecraft:cherry_leaves[persistent=true] strict
-fill 9 69 25 9 69 26 minecraft:oak_leaves[persistent=true] strict
-fill 10 69 -56 10 69 -55 minecraft:cherry_leaves[persistent=true] strict
-fill 10 69 -53 10 69 -52 minecraft:cherry_leaves[persistent=true] strict
-fill 10 69 -46 10 69 -42 minecraft:cherry_leaves[persistent=true] strict
-fill 10 69 -34 10 69 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 10 69 25 10 69 27 minecraft:oak_leaves[persistent=true] strict
-fill 11 69 -56 11 69 -52 minecraft:cherry_leaves[persistent=true] strict
-fill 11 69 -47 11 69 -41 minecraft:cherry_leaves[persistent=true] strict
-fill 11 69 -33 11 69 -29 minecraft:cherry_leaves[persistent=true] strict
-setblock 11 69 18 minecraft:oak_leaves[persistent=true] strict
-setblock 11 69 20 minecraft:oak_leaves[persistent=true] strict
-fill 12 69 -57 12 69 -52 minecraft:cherry_leaves[persistent=true] strict
-fill 12 69 -46 12 69 -41 minecraft:cherry_leaves[persistent=true] strict
-fill 12 69 -34 12 69 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 12 69 -26 12 69 -21 minecraft:cherry_leaves[persistent=true] strict
-fill 12 69 -19 12 69 -18 minecraft:cherry_leaves[persistent=true] strict
-setblock 12 69 -16 minecraft:cherry_leaves[persistent=true] strict
-fill 12 69 10 13 69 11 minecraft:oak_leaves[persistent=true] strict
-fill 12 69 18 12 69 20 minecraft:oak_leaves[persistent=true] strict
-fill 12 69 44 12 70 46 minecraft:red_mushroom_block strict
-fill 13 69 -56 13 69 -51 minecraft:cherry_leaves[persistent=true] strict
-fill 13 69 -46 13 69 -42 minecraft:cherry_leaves[persistent=true] strict
-fill 13 69 -25 13 69 -23 minecraft:cherry_leaves[persistent=true] strict
-fill 13 69 -21 13 69 -14 minecraft:cherry_leaves[persistent=true] strict
-fill 13 69 18 13 69 19 minecraft:oak_leaves[persistent=true] strict
-fill 13 69 43 13 70 43 minecraft:red_mushroom_block strict
-fill 13 69 47 13 70 47 minecraft:red_mushroom_block strict
-fill 14 69 -57 15 69 -51 minecraft:cherry_leaves[persistent=true] strict
-fill 14 69 -47 14 69 -41 minecraft:cherry_leaves[persistent=true] strict
-fill 14 69 -34 14 70 -34 minecraft:cherry_leaves[persistent=true] strict
-fill 14 69 -19 15 69 -14 minecraft:cherry_leaves[persistent=true] strict
-setblock 14 69 12 minecraft:oak_leaves[persistent=true] strict
-fill 14 69 42 16 70 42 minecraft:red_mushroom_block strict
-fill 14 69 48 16 70 48 minecraft:red_mushroom_block strict
-setblock 15 69 -46 minecraft:cherry_leaves[persistent=true] strict
-setblock 15 69 -42 minecraft:cherry_leaves[persistent=true] strict
-fill 15 69 -39 15 69 -33 minecraft:cherry_leaves[persistent=true] strict
-fill 15 69 31 16 69 33 minecraft:oak_leaves[persistent=true] strict
-fill 15 69 62 15 69 64 minecraft:spruce_leaves[persistent=true] strict
-setblock 16 69 -56 minecraft:cherry_leaves[persistent=true] strict
-fill 16 69 -54 16 69 -52 minecraft:cherry_leaves[persistent=true] strict
-fill 16 69 -38 16 69 -34 minecraft:cherry_leaves[persistent=true] strict
-fill 16 69 -28 16 70 -26 minecraft:birch_leaves[persistent=true] strict
-fill 16 69 -20 17 69 -14 minecraft:cherry_leaves[persistent=true] strict
-fill 16 69 61 16 69 65 minecraft:spruce_leaves[persistent=true] strict
-fill 17 69 -39 18 69 -34 minecraft:cherry_leaves[persistent=true] strict
-fill 17 69 -26 17 69 -25 minecraft:birch_leaves[persistent=true] strict
-fill 17 69 43 17 70 43 minecraft:red_mushroom_block strict
-fill 17 69 47 17 70 47 minecraft:red_mushroom_block strict
-fill 18 69 -28 18 70 -26 minecraft:birch_leaves[persistent=true] strict
-fill 18 69 -18 18 69 -17 minecraft:cherry_leaves[persistent=true] strict
-fill 18 69 44 18 70 46 minecraft:red_mushroom_block strict
-fill 18 69 61 18 69 65 minecraft:spruce_leaves[persistent=true] strict
-setblock 19 69 -54 minecraft:birch_leaves[persistent=true] strict
-fill 19 69 -48 19 69 -44 minecraft:cherry_leaves[persistent=true] strict
-fill 19 69 -38 19 69 -33 minecraft:cherry_leaves[persistent=true] strict
-setblock 19 69 -27 minecraft:birch_leaves[persistent=true] strict
-fill 19 69 62 19 69 64 minecraft:spruce_leaves[persistent=true] strict
-fill 20 69 -49 20 69 -43 minecraft:cherry_leaves[persistent=true] strict
-fill 20 69 -38 20 69 -37 minecraft:cherry_leaves[persistent=true] strict
-fill 20 69 -34 20 70 -34 minecraft:cherry_leaves[persistent=true] strict
-fill 20 69 10 20 69 12 minecraft:red_mushroom_block strict
-fill 20 69 42 20 69 44 minecraft:brown_mushroom_block strict
-setblock 21 69 -55 minecraft:birch_leaves[persistent=true] strict
-fill 21 69 -48 21 69 -43 minecraft:cherry_leaves[persistent=true] strict
-fill 21 69 9 21 69 10 minecraft:red_mushroom_block strict
-fill 21 69 12 21 69 13 minecraft:red_mushroom_block strict
-fill 21 69 32 21 70 34 minecraft:red_mushroom_block strict
-fill 21 69 41 21 69 45 minecraft:brown_mushroom_block strict
-fill 22 69 -49 23 69 -43 minecraft:cherry_leaves[persistent=true] strict
-setblock 22 69 9 minecraft:red_mushroom_block strict
-setblock 22 69 13 minecraft:red_mushroom_block strict
-fill 22 69 31 22 70 31 minecraft:red_mushroom_block strict
-fill 22 69 35 22 70 35 minecraft:red_mushroom_block strict
-fill 22 69 40 24 69 46 minecraft:brown_mushroom_block strict
-setblock 23 69 -54 minecraft:birch_leaves[persistent=true] strict
-fill 23 69 -40 23 69 -37 minecraft:cherry_leaves[persistent=true] strict
-fill 23 69 9 23 69 10 minecraft:red_mushroom_block strict
-fill 23 69 12 23 69 13 minecraft:red_mushroom_block strict
-fill 23 69 30 25 70 30 minecraft:red_mushroom_block strict
-fill 23 69 36 25 70 36 minecraft:red_mushroom_block strict
-fill 24 69 -49 24 69 -44 minecraft:cherry_leaves[persistent=true] strict
-fill 24 69 -41 24 70 -37 minecraft:cherry_leaves[persistent=true] strict
-fill 24 69 10 24 69 12 minecraft:red_mushroom_block strict
-setblock 25 69 -48 minecraft:cherry_leaves[persistent=true] strict
-fill 25 69 -45 25 69 -44 minecraft:cherry_leaves[persistent=true] strict
-fill 25 69 -42 25 69 -37 minecraft:cherry_leaves[persistent=true] strict
-fill 25 69 -12 25 70 -10 minecraft:birch_leaves[persistent=true] strict
-fill 25 69 41 25 69 45 minecraft:brown_mushroom_block strict
-fill 26 69 -42 27 69 -36 minecraft:cherry_leaves[persistent=true] strict
-fill 26 69 -10 26 70 -9 minecraft:birch_leaves[persistent=true] strict
-fill 26 69 31 26 70 31 minecraft:red_mushroom_block strict
-fill 26 69 35 26 70 35 minecraft:red_mushroom_block strict
-fill 26 69 42 26 69 44 minecraft:brown_mushroom_block strict
-fill 27 69 -51 27 69 -47 minecraft:cherry_leaves[persistent=true] strict
-fill 27 69 -12 27 70 -10 minecraft:birch_leaves[persistent=true] strict
-fill 27 69 32 27 70 34 minecraft:red_mushroom_block strict
-fill 28 69 -52 28 69 -46 minecraft:cherry_leaves[persistent=true] strict
-fill 28 69 -41 28 70 -37 minecraft:cherry_leaves[persistent=true] strict
-fill 29 69 -51 30 69 -47 minecraft:cherry_leaves[persistent=true] strict
-fill 29 69 -41 29 69 -40 minecraft:cherry_leaves[persistent=true] strict
-setblock 29 69 -37 minecraft:cherry_leaves[persistent=true] strict
-fill 29 69 21 29 69 23 minecraft:oak_leaves[persistent=true] strict
-fill 30 69 -59 30 69 -58 minecraft:cherry_leaves[persistent=true] strict
-fill 30 69 20 30 69 24 minecraft:oak_leaves[persistent=true] strict
-fill 31 69 -60 31 69 -55 minecraft:cherry_leaves[persistent=true] strict
-fill 31 69 -52 31 69 -47 minecraft:cherry_leaves[persistent=true] strict
-fill 32 69 -61 32 69 -56 minecraft:cherry_leaves[persistent=true] strict
-fill 32 69 -51 32 69 -47 minecraft:cherry_leaves[persistent=true] strict
-fill 32 69 21 32 69 23 minecraft:oak_leaves[persistent=true] strict
-fill 33 69 -60 34 69 -56 minecraft:cherry_leaves[persistent=true] strict
-fill 33 69 -51 33 70 -50 minecraft:cherry_leaves[persistent=true] strict
-setblock 33 69 -48 minecraft:cherry_leaves[persistent=true] strict
-fill 34 69 -12 34 70 -12 minecraft:cherry_leaves[persistent=true] strict
-fill 34 69 -10 34 70 -10 minecraft:cherry_leaves[persistent=true] strict
-fill 35 69 -61 35 69 -55 minecraft:cherry_leaves[persistent=true] strict
+fill 7 69 -57 7 69 -53 minecraft:cherry_leaves[persistent=true] strict
+fill 7 69 -25 7 69 -20 minecraft:cherry_leaves[persistent=true] strict
+fill 7 69 -17 9 69 -12 minecraft:cherry_leaves[persistent=true] strict
+fill 8 69 -58 8 69 -52 minecraft:cherry_leaves[persistent=true] strict
+fill 8 69 -26 8 69 -20 minecraft:cherry_leaves[persistent=true] strict
+fill 9 69 -57 9 69 -53 minecraft:cherry_leaves[persistent=true] strict
+fill 9 69 -26 9 69 -21 minecraft:cherry_leaves[persistent=true] strict
+fill 10 69 -58 10 69 -52 minecraft:cherry_leaves[persistent=true] strict
+fill 10 69 -25 10 69 -21 minecraft:cherry_leaves[persistent=true] strict
+fill 10 69 -18 10 69 -13 minecraft:cherry_leaves[persistent=true] strict
+fill 10 69 28 10 70 30 minecraft:red_mushroom_block strict
+fill 11 69 -58 11 70 -53 minecraft:cherry_leaves[persistent=true] strict
+fill 11 69 -26 11 69 -20 minecraft:cherry_leaves[persistent=true] strict
+fill 11 69 -17 11 70 -13 minecraft:cherry_leaves[persistent=true] strict
+fill 11 69 27 11 70 27 minecraft:red_mushroom_block strict
+fill 11 69 31 11 70 31 minecraft:red_mushroom_block strict
+setblock 12 69 -57 minecraft:cherry_leaves[persistent=true] strict
+fill 12 69 -55 12 69 -54 minecraft:cherry_leaves[persistent=true] strict
+fill 12 69 -17 12 69 -16 minecraft:cherry_leaves[persistent=true] strict
+fill 12 69 -13 12 70 -13 minecraft:cherry_leaves[persistent=true] strict
+fill 12 69 26 14 70 26 minecraft:red_mushroom_block strict
+fill 12 69 32 14 70 32 minecraft:red_mushroom_block strict
+setblock 14 69 -13 minecraft:cherry_leaves[persistent=true] strict
+fill 15 69 -17 15 69 -13 minecraft:cherry_leaves[persistent=true] strict
+fill 15 69 27 15 70 27 minecraft:red_mushroom_block strict
+fill 15 69 31 15 70 31 minecraft:red_mushroom_block strict
+fill 16 69 -18 16 69 -13 minecraft:cherry_leaves[persistent=true] strict
+fill 16 69 28 16 70 30 minecraft:red_mushroom_block strict
+fill 17 69 -56 17 69 -55 minecraft:birch_leaves[persistent=true] strict
+setblock 17 69 -53 minecraft:birch_leaves[persistent=true] strict
+fill 17 69 -17 17 69 -12 minecraft:cherry_leaves[persistent=true] strict
+fill 17 69 31 17 70 33 minecraft:red_mushroom_block strict
+fill 18 69 -40 18 69 -38 minecraft:cherry_leaves[persistent=true] strict
+fill 18 69 -18 18 69 -13 minecraft:cherry_leaves[persistent=true] strict
+fill 18 69 30 18 70 30 minecraft:red_mushroom_block strict
+fill 18 69 34 18 70 34 minecraft:red_mushroom_block strict
+fill 19 69 -41 19 69 -35 minecraft:cherry_leaves[persistent=true] strict
+fill 19 69 -17 19 69 -12 minecraft:cherry_leaves[persistent=true] strict
+fill 19 69 29 21 70 29 minecraft:red_mushroom_block strict
+fill 19 69 35 21 70 35 minecraft:red_mushroom_block strict
+fill 20 69 -40 21 69 -36 minecraft:cherry_leaves[persistent=true] strict
+setblock 20 69 -22 minecraft:cherry_leaves[persistent=true] strict
+fill 20 69 -15 20 69 -13 minecraft:cherry_leaves[persistent=true] strict
+setblock 20 69 10 minecraft:oak_leaves[persistent=true] strict
+setblock 20 69 12 minecraft:oak_leaves[persistent=true] strict
+fill 21 69 -48 21 69 -47 minecraft:cherry_leaves[persistent=true] strict
+fill 21 69 -22 22 69 -18 minecraft:cherry_leaves[persistent=true] strict
+fill 21 69 11 21 69 12 minecraft:oak_leaves[persistent=true] strict
+fill 22 69 -51 22 69 -45 minecraft:cherry_leaves[persistent=true] strict
+fill 22 69 -40 22 69 -35 minecraft:cherry_leaves[persistent=true] strict
+setblock 22 69 10 minecraft:oak_leaves[persistent=true] strict
+fill 22 69 30 22 70 30 minecraft:red_mushroom_block strict
+fill 22 69 34 22 70 34 minecraft:red_mushroom_block strict
+fill 23 69 -51 23 69 -46 minecraft:cherry_leaves[persistent=true] strict
+fill 23 69 -40 24 69 -36 minecraft:cherry_leaves[persistent=true] strict
+fill 23 69 -23 23 69 -18 minecraft:cherry_leaves[persistent=true] strict
+fill 23 69 -13 23 69 -11 minecraft:cherry_leaves[persistent=true] strict
+fill 23 69 31 23 70 33 minecraft:red_mushroom_block strict
+fill 23 69 44 23 69 45 minecraft:oak_leaves[persistent=true] strict
+fill 24 69 -50 24 69 -46 minecraft:cherry_leaves[persistent=true] strict
+fill 24 69 -22 24 69 -10 minecraft:cherry_leaves[persistent=true] strict
+fill 24 69 26 24 69 27 minecraft:oak_leaves[persistent=true] strict
+fill 25 69 -50 26 69 -45 minecraft:cherry_leaves[persistent=true] strict
+fill 25 69 -40 25 69 -39 minecraft:cherry_leaves[persistent=true] strict
+fill 25 69 -23 25 69 -10 minecraft:cherry_leaves[persistent=true] strict
+fill 25 69 25 25 69 29 minecraft:oak_leaves[persistent=true] strict
+fill 26 69 -22 26 69 -21 minecraft:cherry_leaves[persistent=true] strict
+setblock 26 69 -18 minecraft:cherry_leaves[persistent=true] strict
+fill 26 69 -16 28 69 -10 minecraft:cherry_leaves[persistent=true] strict
+setblock 26 69 36 minecraft:oak_leaves[persistent=true] strict
+fill 26 69 44 26 69 46 minecraft:oak_leaves[persistent=true] strict
+fill 27 69 -50 27 69 -48 minecraft:cherry_leaves[persistent=true] strict
+fill 27 69 -44 27 69 -38 minecraft:cherry_leaves[persistent=true] strict
+fill 27 69 25 27 69 28 minecraft:oak_leaves[persistent=true] strict
+fill 27 69 34 27 69 36 minecraft:oak_leaves[persistent=true] strict
+setblock 27 69 45 minecraft:oak_leaves[persistent=true] strict
+fill 28 69 -43 29 69 -38 minecraft:cherry_leaves[persistent=true] strict
+fill 28 69 11 28 70 13 minecraft:red_mushroom_block strict
+fill 28 69 27 28 69 28 minecraft:oak_leaves[persistent=true] strict
+setblock 28 69 36 minecraft:oak_leaves[persistent=true] strict
+setblock 29 69 -14 minecraft:cherry_leaves[persistent=true] strict
+fill 29 69 10 29 70 10 minecraft:red_mushroom_block strict
+fill 29 69 14 29 70 14 minecraft:red_mushroom_block strict
+fill 30 69 -49 30 69 -48 minecraft:cherry_leaves[persistent=true] strict
+fill 30 69 -44 30 69 -39 minecraft:cherry_leaves[persistent=true] strict
+fill 30 69 -11 30 69 -7 minecraft:cherry_leaves[persistent=true] strict
+fill 30 69 9 32 70 9 minecraft:red_mushroom_block strict
+fill 30 69 15 32 70 15 minecraft:red_mushroom_block strict
+fill 31 69 -49 31 69 -43 minecraft:cherry_leaves[persistent=true] strict
+fill 31 69 -12 31 69 -6 minecraft:cherry_leaves[persistent=true] strict
+fill 32 69 -49 33 69 -44 minecraft:cherry_leaves[persistent=true] strict
+fill 32 69 -11 32 69 -6 minecraft:cherry_leaves[persistent=true] strict
+setblock 33 69 -22 minecraft:cherry_leaves[persistent=true] strict
+setblock 33 69 -20 minecraft:cherry_leaves[persistent=true] strict
+fill 33 69 -12 34 69 -6 minecraft:cherry_leaves[persistent=true] strict
+fill 33 69 10 33 70 10 minecraft:red_mushroom_block strict
+fill 33 69 14 33 70 14 minecraft:red_mushroom_block strict
+fill 34 69 -49 34 69 -45 minecraft:cherry_leaves[persistent=true] strict
+fill 34 69 -25 34 69 -19 minecraft:cherry_leaves[persistent=true] strict
+fill 34 69 11 34 70 13 minecraft:red_mushroom_block strict
+fill 35 69 -49 35 69 -44 minecraft:cherry_leaves[persistent=true] strict
+fill 35 69 -24 35 69 -20 minecraft:cherry_leaves[persistent=true] strict
 fill 35 69 -12 35 69 -7 minecraft:cherry_leaves[persistent=true] strict
-fill 36 69 -59 36 69 -56 minecraft:cherry_leaves[persistent=true] strict
-setblock 36 69 -39 minecraft:birch_leaves[persistent=true] strict
-fill 36 69 -12 36 69 -8 minecraft:cherry_leaves[persistent=true] strict
-fill 37 69 -55 37 69 -52 minecraft:cherry_leaves[persistent=true] strict
-setblock 37 69 -23 minecraft:cherry_leaves[persistent=true] strict
-fill 37 69 -12 37 69 -7 minecraft:cherry_leaves[persistent=true] strict
-fill 38 69 -55 38 69 -51 minecraft:cherry_leaves[persistent=true] strict
-fill 38 69 -24 38 69 -19 minecraft:cherry_leaves[persistent=true] strict
-fill 38 69 -13 38 69 -7 minecraft:cherry_leaves[persistent=true] strict
-fill 39 69 -55 39 69 -50 minecraft:cherry_leaves[persistent=true] strict
-fill 39 69 -24 39 69 -20 minecraft:cherry_leaves[persistent=true] strict
-fill 39 69 -12 39 69 -7 minecraft:cherry_leaves[persistent=true] strict
-setblock 39 69 26 minecraft:oak_leaves[persistent=true] strict
-setblock 39 69 28 minecraft:oak_leaves[persistent=true] strict
-fill 40 69 -56 40 70 -50 minecraft:cherry_leaves[persistent=true] strict
-setblock 40 69 -32 minecraft:cherry_leaves[persistent=true] strict
-fill 40 69 -24 40 69 -19 minecraft:cherry_leaves[persistent=true] strict
-setblock 40 69 -10 minecraft:cherry_leaves[persistent=true] strict
-fill 40 69 -8 40 70 -8 minecraft:cherry_leaves[persistent=true] strict
-fill 40 69 27 40 69 28 minecraft:oak_leaves[persistent=true] strict
-fill 41 69 -55 41 69 -50 minecraft:cherry_leaves[persistent=true] strict
-fill 41 69 -33 41 69 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 41 69 -25 41 69 -19 minecraft:cherry_leaves[persistent=true] strict
-fill 42 69 -56 42 69 -50 minecraft:cherry_leaves[persistent=true] strict
-fill 42 69 -34 42 69 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 42 69 -24 42 69 -20 minecraft:cherry_leaves[persistent=true] strict
-setblock 42 69 -14 minecraft:birch_leaves[persistent=true] strict
-setblock 43 69 -53 minecraft:cherry_leaves[persistent=true] strict
-fill 43 69 -51 43 70 -51 minecraft:cherry_leaves[persistent=true] strict
-fill 43 69 -33 43 69 -29 minecraft:cherry_leaves[persistent=true] strict
-setblock 43 69 -24 minecraft:cherry_leaves[persistent=true] strict
-fill 43 69 -22 43 69 -21 minecraft:cherry_leaves[persistent=true] strict
-fill 43 69 -15 43 70 -13 minecraft:birch_leaves[persistent=true] strict
-fill 43 69 11 43 69 13 minecraft:oak_leaves[persistent=true] strict
-fill 44 69 -34 44 69 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 44 69 -16 44 70 -15 minecraft:birch_leaves[persistent=true] strict
-setblock 44 69 -13 minecraft:birch_leaves[persistent=true] strict
-fill 44 69 11 44 69 14 minecraft:oak_leaves[persistent=true] strict
-fill 45 69 -33 45 69 -28 minecraft:cherry_leaves[persistent=true] strict
-fill 45 69 -15 45 70 -13 minecraft:birch_leaves[persistent=true] strict
-fill 46 69 -31 46 69 -29 minecraft:cherry_leaves[persistent=true] strict
-setblock 46 69 -14 minecraft:birch_leaves[persistent=true] strict
-fill 46 69 10 46 69 14 minecraft:oak_leaves[persistent=true] strict
-fill 47 69 11 47 69 13 minecraft:oak_leaves[persistent=true] strict
-fill 47 69 24 47 70 26 minecraft:red_mushroom_block strict
-fill 48 69 23 48 70 23 minecraft:red_mushroom_block strict
-fill 48 69 27 48 70 27 minecraft:red_mushroom_block strict
-fill 49 69 22 51 70 22 minecraft:red_mushroom_block strict
-fill 49 69 28 51 70 28 minecraft:red_mushroom_block strict
-setblock 50 69 -21 minecraft:cherry_leaves[persistent=true] strict
-fill 51 69 -23 51 69 -19 minecraft:cherry_leaves[persistent=true] strict
-setblock 52 69 -28 minecraft:birch_leaves[persistent=true] strict
-fill 52 69 -24 52 69 -18 minecraft:cherry_leaves[persistent=true] strict
-fill 52 69 23 52 70 23 minecraft:red_mushroom_block strict
-fill 52 69 27 52 70 27 minecraft:red_mushroom_block strict
-fill 53 69 -23 53 69 -19 minecraft:cherry_leaves[persistent=true] strict
-setblock 53 69 -13 minecraft:birch_leaves[persistent=true] strict
-setblock 53 69 -11 minecraft:birch_leaves[persistent=true] strict
-fill 53 69 24 53 70 26 minecraft:red_mushroom_block strict
-fill 54 69 -24 54 69 -18 minecraft:cherry_leaves[persistent=true] strict
-fill 55 69 -23 55 69 -18 minecraft:cherry_leaves[persistent=true] strict
-fill 56 69 -34 56 69 -33 minecraft:cherry_leaves[persistent=true] strict
-fill 56 69 -31 56 69 -30 minecraft:cherry_leaves[persistent=true] strict
-setblock 56 69 -21 minecraft:cherry_leaves[persistent=true] strict
-setblock 56 69 -19 minecraft:cherry_leaves[persistent=true] strict
-fill 57 69 -35 58 69 -30 minecraft:cherry_leaves[persistent=true] strict
-fill 59 69 -34 59 69 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 60 69 -34 61 69 -30 minecraft:cherry_leaves[persistent=true] strict
-fill 61 69 -14 61 69 -13 minecraft:cherry_leaves[persistent=true] strict
-fill 62 69 -31 62 69 -30 minecraft:cherry_leaves[persistent=true] strict
-fill 62 69 -15 62 69 -9 minecraft:cherry_leaves[persistent=true] strict
-fill 63 69 -14 63 69 -9 minecraft:cherry_leaves[persistent=true] strict
+setblock 35 69 56 minecraft:oak_leaves[persistent=true] strict
+setblock 36 69 -49 minecraft:cherry_leaves[persistent=true] strict
+fill 36 69 -46 36 69 -45 minecraft:cherry_leaves[persistent=true] strict
+fill 36 69 -25 36 69 -20 minecraft:cherry_leaves[persistent=true] strict
+setblock 36 69 -11 minecraft:cherry_leaves[persistent=true] strict
+fill 36 69 -8 36 69 -7 minecraft:cherry_leaves[persistent=true] strict
+setblock 36 69 55 minecraft:oak_leaves[persistent=true] strict
+fill 37 69 -40 37 69 -39 minecraft:cherry_leaves[persistent=true] strict
+setblock 37 69 -36 minecraft:cherry_leaves[persistent=true] strict
+fill 37 69 -25 37 69 -19 minecraft:cherry_leaves[persistent=true] strict
+fill 38 69 -41 39 70 -35 minecraft:cherry_leaves[persistent=true] strict
+setblock 38 69 -9 minecraft:cherry_leaves[persistent=true] strict
+fill 39 69 -22 39 69 -20 minecraft:cherry_leaves[persistent=true] strict
+fill 39 69 -11 41 69 -6 minecraft:cherry_leaves[persistent=true] strict
+fill 40 69 -40 40 69 -35 minecraft:cherry_leaves[persistent=true] strict
+fill 40 69 37 40 69 39 minecraft:oak_leaves[persistent=true] strict
+fill 41 69 -53 41 69 -52 minecraft:cherry_leaves[persistent=true] strict
+setblock 41 69 -49 minecraft:cherry_leaves[persistent=true] strict
+fill 41 69 -41 41 69 -35 minecraft:cherry_leaves[persistent=true] strict
+fill 41 69 -20 41 69 -15 minecraft:cherry_leaves[persistent=true] strict
+fill 41 69 11 42 69 13 minecraft:oak_leaves[persistent=true] strict
+setblock 41 69 23 minecraft:oak_leaves[persistent=true] strict
+setblock 41 69 25 minecraft:oak_leaves[persistent=true] strict
+fill 41 69 37 41 69 38 minecraft:oak_leaves[persistent=true] strict
+fill 42 69 -40 42 70 -35 minecraft:cherry_leaves[persistent=true] strict
+fill 42 69 -12 42 69 -7 minecraft:cherry_leaves[persistent=true] strict
+fill 42 69 23 42 69 25 minecraft:oak_leaves[persistent=true] strict
+fill 43 69 -38 43 69 -37 minecraft:cherry_leaves[persistent=true] strict
+fill 43 69 -11 43 69 -7 minecraft:cherry_leaves[persistent=true] strict
+fill 43 69 23 43 69 24 minecraft:oak_leaves[persistent=true] strict
+fill 44 69 -54 44 69 -49 minecraft:cherry_leaves[persistent=true] strict
+fill 44 69 -20 45 69 -16 minecraft:cherry_leaves[persistent=true] strict
+fill 44 69 -8 44 69 -7 minecraft:cherry_leaves[persistent=true] strict
+fill 44 69 10 44 69 13 minecraft:oak_leaves[persistent=true] strict
+fill 45 69 -53 45 69 -49 minecraft:cherry_leaves[persistent=true] strict
+fill 45 69 -26 45 69 -22 minecraft:cherry_leaves[persistent=true] strict
+fill 46 69 -54 46 69 -49 minecraft:cherry_leaves[persistent=true] strict
+fill 46 69 -20 46 69 -18 minecraft:cherry_leaves[persistent=true] strict
+setblock 47 69 -53 minecraft:cherry_leaves[persistent=true] strict
+fill 47 69 -51 47 69 -49 minecraft:cherry_leaves[persistent=true] strict
+fill 47 69 -26 49 69 -21 minecraft:cherry_leaves[persistent=true] strict
+setblock 47 69 -13 minecraft:cherry_leaves[persistent=true] strict
+setblock 47 69 -11 minecraft:cherry_leaves[persistent=true] strict
+fill 48 69 -15 48 69 -9 minecraft:cherry_leaves[persistent=true] strict
+setblock 48 69 30 minecraft:oak_leaves[persistent=true] strict
+setblock 48 69 32 minecraft:oak_leaves[persistent=true] strict
+fill 49 69 -15 50 69 -10 minecraft:cherry_leaves[persistent=true] strict
+fill 49 69 10 49 69 12 minecraft:red_mushroom_block strict
+fill 49 69 31 49 69 32 minecraft:oak_leaves[persistent=true] strict
+fill 50 69 9 50 69 10 minecraft:red_mushroom_block strict
+fill 50 69 12 50 69 13 minecraft:red_mushroom_block strict
+setblock 50 69 19 minecraft:oak_leaves[persistent=true] strict
+setblock 50 69 32 minecraft:oak_leaves[persistent=true] strict
+fill 51 69 -26 51 69 -24 minecraft:cherry_leaves[persistent=true] strict
+setblock 51 69 9 minecraft:red_mushroom_block strict
+setblock 51 69 13 minecraft:red_mushroom_block strict
+setblock 51 69 20 minecraft:oak_leaves[persistent=true] strict
+setblock 52 69 -20 minecraft:cherry_leaves[persistent=true] strict
+fill 52 69 -15 52 69 -9 minecraft:cherry_leaves[persistent=true] strict
+fill 52 69 9 52 69 10 minecraft:red_mushroom_block strict
+fill 52 69 12 52 69 13 minecraft:red_mushroom_block strict
+fill 52 69 19 52 69 20 minecraft:oak_leaves[persistent=true] strict
+fill 53 69 -21 54 69 -16 minecraft:cherry_leaves[persistent=true] strict
+setblock 53 69 -14 minecraft:cherry_leaves[persistent=true] strict
+setblock 53 69 -12 minecraft:cherry_leaves[persistent=true] strict
+fill 53 69 10 53 69 12 minecraft:red_mushroom_block strict
+setblock 54 69 -11 minecraft:cherry_leaves[persistent=true] strict
+setblock 54 69 -9 minecraft:cherry_leaves[persistent=true] strict
+setblock 54 69 -7 minecraft:cherry_leaves[persistent=true] strict
+fill 55 69 -21 56 69 -15 minecraft:cherry_leaves[persistent=true] strict
+fill 55 69 -12 55 69 -7 minecraft:cherry_leaves[persistent=true] strict
+fill 56 69 -11 57 69 -7 minecraft:cherry_leaves[persistent=true] strict
+fill 57 69 -20 57 69 -15 minecraft:cherry_leaves[persistent=true] strict
+fill 58 69 -20 58 69 -19 minecraft:cherry_leaves[persistent=true] strict
+setblock 58 69 -16 minecraft:cherry_leaves[persistent=true] strict
+fill 58 69 -12 59 69 -6 minecraft:cherry_leaves[persistent=true] strict
+fill 60 69 -9 60 69 -7 minecraft:cherry_leaves[persistent=true] strict
+fill 63 69 -13 63 69 -12 minecraft:cherry_leaves[persistent=true] strict
+fill 64 69 -16 64 69 -10 minecraft:cherry_leaves[persistent=true] strict
 fill 64 69 -4 65 71 -4 minecraft:quartz_pillar strict
 fill 64 69 4 65 71 4 minecraft:quartz_pillar strict
-fill 65 69 -15 66 69 -10 minecraft:cherry_leaves[persistent=true] strict
-fill 66 69 8 66 69 9 minecraft:birch_leaves[persistent=true] strict
-fill 66 69 11 66 69 12 minecraft:birch_leaves[persistent=true] strict
-fill 67 69 -14 67 69 -10 minecraft:cherry_leaves[persistent=true] strict
+fill 64 69 11 64 69 13 minecraft:oak_leaves[persistent=true] strict
+fill 65 69 -16 65 69 -11 minecraft:cherry_leaves[persistent=true] strict
+fill 66 69 -15 66 69 -11 minecraft:cherry_leaves[persistent=true] strict
+fill 67 69 -15 67 69 -10 minecraft:cherry_leaves[persistent=true] strict
+fill 67 69 11 67 69 13 minecraft:oak_leaves[persistent=true] strict
+fill 68 69 -15 68 69 -11 minecraft:cherry_leaves[persistent=true] strict
+fill 68 69 11 68 69 12 minecraft:oak_leaves[persistent=true] strict
+fill 69 69 -15 69 69 -14 minecraft:cherry_leaves[persistent=true] strict
+setblock 69 69 -11 minecraft:cherry_leaves[persistent=true] strict
 setblock 113 69 3 minecraft:snow_block strict
 setblock 114 69 6 minecraft:blue_ice strict
 fill 121 69 -1 121 71 1 minecraft:smooth_quartz strict
@@ -1389,18 +1950,15 @@ fill 126 69 2 126 71 2 minecraft:calcite strict
 fill 127 69 -1 127 71 -1 minecraft:smooth_quartz strict
 fill 127 69 0 127 71 0 minecraft:calcite strict
 fill 127 69 1 127 71 1 minecraft:smooth_quartz strict
-fill -64 70 18 -62 70 18 minecraft:oak_leaves[persistent=true] strict
+setblock -65 70 20 minecraft:oak_leaves[persistent=true] strict
+fill -64 70 20 -64 70 22 minecraft:oak_leaves[persistent=true] strict
 fill -59 70 -12 -59 70 -11 minecraft:stone_bricks strict
 setblock -59 70 -10 minecraft:mossy_stone_bricks strict
 setblock -59 70 10 minecraft:mossy_stone_bricks strict
 fill -59 70 11 -59 70 12 minecraft:stone_bricks strict
-setblock -59 70 29 minecraft:oak_leaves[persistent=true] strict
-setblock -59 70 31 minecraft:oak_leaves[persistent=true] strict
 fill -58 70 -13 -57 71 -13 minecraft:stone_bricks strict
 fill -58 70 -9 -56 70 -9 minecraft:stone_bricks strict
 setblock -58 70 9 minecraft:stone_bricks strict
-fill -58 70 30 -58 70 31 minecraft:oak_leaves[persistent=true] strict
-setblock -58 70 37 minecraft:birch_leaves[persistent=true] strict
 fill -57 70 -34 -37 70 -34 minecraft:stone_bricks strict
 setblock -57 70 -11 minecraft:stone_bricks strict
 setblock -57 70 -10 minecraft:cracked_stone_bricks strict
@@ -1415,38 +1973,47 @@ setblock -57 70 5 minecraft:stone_bricks strict
 setblock -57 70 6 minecraft:cracked_stone_bricks strict
 setblock -57 70 7 minecraft:stone_bricks strict
 fill -57 70 9 -57 70 11 minecraft:stone_bricks strict
-fill -57 70 29 -57 70 30 minecraft:oak_leaves[persistent=true] strict
+setblock -57 70 38 minecraft:oak_leaves[persistent=true] strict
 fill -56 70 -13 -56 71 -13 minecraft:mossy_stone_bricks strict
 setblock -56 70 9 minecraft:stone_bricks strict
+setblock -56 70 37 minecraft:oak_leaves[persistent=true] strict
 setblock -55 70 -12 minecraft:mossy_stone_bricks strict
 fill -55 70 -11 -55 70 -10 minecraft:stone_bricks strict
 fill -55 70 10 -55 71 12 minecraft:stone_bricks strict
+setblock -55 70 36 minecraft:oak_leaves[persistent=true] strict
+setblock -55 70 38 minecraft:oak_leaves[persistent=true] strict
 fill -54 70 -11 -53 70 -11 minecraft:mossy_stone_bricks strict
 setblock -54 70 11 minecraft:stone_bricks strict
 setblock -53 70 11 minecraft:mossy_stone_bricks strict
-setblock -46 70 33 minecraft:oak_leaves[persistent=true] strict
-setblock -46 70 35 minecraft:oak_leaves[persistent=true] strict
-setblock -45 70 34 minecraft:oak_leaves[persistent=true] strict
-fill -44 70 -39 -42 71 -39 minecraft:bamboo[age=0,leaves=large] strict
-setblock -44 70 33 minecraft:oak_leaves[persistent=true] strict
-setblock -44 70 35 minecraft:oak_leaves[persistent=true] strict
+fill -53 70 16 -53 70 17 minecraft:oak_leaves[persistent=true] strict
+fill -52 70 17 -52 70 18 minecraft:oak_leaves[persistent=true] strict
+fill -52 70 41 -52 70 42 minecraft:oak_leaves[persistent=true] strict
+setblock -51 70 18 minecraft:oak_leaves[persistent=true] strict
+fill -51 70 42 -51 70 43 minecraft:oak_leaves[persistent=true] strict
+fill -50 70 -45 -50 70 -44 minecraft:oak_leaves[persistent=true] strict
+setblock -50 70 42 minecraft:oak_leaves[persistent=true] strict
+fill -49 70 -45 -49 70 -43 minecraft:oak_leaves[persistent=true] strict
+fill -44 70 -39 -44 71 -37 minecraft:spruce_leaves[persistent=true] strict
+fill -43 70 -39 -43 73 -39 minecraft:spruce_leaves[persistent=true] strict
+fill -43 70 -37 -43 73 -37 minecraft:spruce_leaves[persistent=true] strict
 setblock -43 70 11 minecraft:stone_bricks strict
-setblock -43 70 41 minecraft:birch_leaves[persistent=true] strict
+fill -42 70 -53 -42 71 -51 minecraft:spruce_leaves[persistent=true] strict
+fill -42 70 -39 -42 71 -37 minecraft:spruce_leaves[persistent=true] strict
 setblock -42 70 11 minecraft:cracked_stone_bricks strict
+fill -41 70 -53 -41 73 -53 minecraft:spruce_leaves[persistent=true] strict
+fill -41 70 -51 -41 73 -51 minecraft:spruce_leaves[persistent=true] strict
 setblock -41 70 11 minecraft:stone_bricks strict
-setblock -41 70 19 minecraft:birch_leaves[persistent=true] strict
-setblock -41 70 40 minecraft:birch_leaves[persistent=true] strict
-fill -40 70 18 -40 70 20 minecraft:birch_leaves[persistent=true] strict
+fill -40 70 -53 -40 71 -51 minecraft:spruce_leaves[persistent=true] strict
+setblock -40 70 16 minecraft:birch_leaves[persistent=true] strict
 setblock -39 70 -11 minecraft:cracked_stone_bricks strict
-setblock -39 70 19 minecraft:birch_leaves[persistent=true] strict
-setblock -39 70 41 minecraft:birch_leaves[persistent=true] strict
 setblock -38 70 -11 minecraft:stone_bricks strict
+setblock -37 70 -45 minecraft:bamboo[age=0,leaves=none] strict
 setblock -37 70 10 minecraft:stone_bricks strict
 fill -37 70 11 -37 70 12 minecraft:mossy_stone_bricks strict
-fill -37 70 33 -37 70 34 minecraft:oak_leaves[persistent=true] strict
+setblock -36 70 -45 minecraft:bamboo[age=0,leaves=small] strict
 fill -36 70 -9 -36 71 -9 minecraft:stone_bricks strict
 fill -36 70 13 -34 70 13 minecraft:stone_bricks strict
-fill -36 70 32 -36 70 34 minecraft:oak_leaves[persistent=true] strict
+fill -35 70 -25 -35 71 -23 minecraft:spruce_leaves[persistent=true] strict
 fill -35 70 -11 -35 70 -9 minecraft:stone_bricks strict
 setblock -35 70 -7 minecraft:stone_bricks strict
 setblock -35 70 -6 minecraft:cracked_stone_bricks strict
@@ -1456,160 +2023,143 @@ fill -35 70 -2 -35 70 -1 minecraft:cracked_stone_bricks strict
 setblock -35 70 1 minecraft:stone_bricks strict
 fill -35 70 2 -35 70 3 minecraft:mossy_stone_bricks strict
 fill -35 70 5 -35 70 7 minecraft:stone_bricks strict
-setblock -35 70 23 minecraft:birch_leaves[persistent=true] strict
+fill -34 70 -25 -34 71 -25 minecraft:spruce_leaves[persistent=true] strict
+fill -34 70 -23 -34 71 -23 minecraft:spruce_leaves[persistent=true] strict
 fill -34 70 -9 -34 71 -9 minecraft:stone_bricks strict
-setblock -34 70 42 minecraft:birch_leaves[persistent=true] strict
+fill -33 70 -25 -33 71 -23 minecraft:spruce_leaves[persistent=true] strict
 fill -33 70 10 -33 71 12 minecraft:stone_bricks strict
-setblock -33 70 22 minecraft:birch_leaves[persistent=true] strict
-fill -33 70 24 -33 70 25 minecraft:birch_leaves[persistent=true] strict
-fill -33 70 41 -33 70 43 minecraft:birch_leaves[persistent=true] strict
-setblock -31 70 -37 minecraft:bamboo[age=0,leaves=large] strict
-setblock -30 70 -37 minecraft:bamboo[age=0,leaves=small] strict
-fill -30 70 -35 -30 71 -35 minecraft:bamboo[age=0,leaves=large] strict
-setblock -29 70 16 minecraft:birch_leaves[persistent=true] strict
-setblock -29 70 47 minecraft:birch_leaves[persistent=true] strict
-fill -27 70 48 -27 70 49 minecraft:birch_leaves[persistent=true] strict
-setblock -25 70 47 minecraft:birch_leaves[persistent=true] strict
-setblock -23 70 -24 minecraft:bamboo[age=0,leaves=small] strict
-fill -23 70 25 -23 70 27 minecraft:oak_leaves[persistent=true] strict
-fill -23 70 52 -22 70 54 minecraft:oak_leaves[persistent=true] strict
-fill -22 70 -50 -22 71 -48 minecraft:spruce_leaves[persistent=true] strict
-setblock -22 70 25 minecraft:oak_leaves[persistent=true] strict
-fill -21 70 -50 -21 71 -50 minecraft:spruce_leaves[persistent=true] strict
-fill -21 70 -48 -21 71 -48 minecraft:spruce_leaves[persistent=true] strict
-fill -20 70 -50 -20 71 -48 minecraft:spruce_leaves[persistent=true] strict
-setblock -19 70 -30 minecraft:bamboo[age=0,leaves=small] strict
-fill -19 70 -29 -19 70 -28 minecraft:bamboo[age=0,leaves=large] strict
-fill -19 70 63 -19 71 63 minecraft:spruce_leaves[persistent=true] strict
-fill -18 70 -38 -18 71 -36 minecraft:spruce_leaves[persistent=true] strict
-setblock -18 70 -30 minecraft:bamboo[age=0,leaves=large] strict
-setblock -18 70 -29 minecraft:bamboo[age=0,leaves=small] strict
-fill -17 70 -38 -17 71 -38 minecraft:spruce_leaves[persistent=true] strict
-fill -17 70 -36 -17 71 -36 minecraft:spruce_leaves[persistent=true] strict
-setblock -17 70 -29 minecraft:bamboo[age=0,leaves=large] strict
-setblock -17 70 -28 minecraft:bamboo[age=0,leaves=small] strict
-fill -17 70 -15 -17 71 -15 minecraft:spruce_leaves[persistent=true] strict
-fill -17 70 63 -17 71 63 minecraft:spruce_leaves[persistent=true] strict
-fill -16 70 -38 -16 71 -36 minecraft:spruce_leaves[persistent=true] strict
-fill -16 70 29 -15 70 29 minecraft:birch_leaves[persistent=true] strict
-fill -16 70 48 -15 70 49 minecraft:oak_leaves[persistent=true] strict
-fill -15 70 -15 -15 71 -15 minecraft:spruce_leaves[persistent=true] strict
-setblock -12 70 22 minecraft:oak_leaves[persistent=true] strict
-setblock -11 70 -53 minecraft:bamboo[age=0,leaves=small] strict
-fill -11 70 20 -11 70 22 minecraft:oak_leaves[persistent=true] strict
-setblock -10 70 -53 minecraft:bamboo[age=0,leaves=none] strict
-fill -10 70 -38 -10 71 -36 minecraft:spruce_leaves[persistent=true] strict
-setblock -10 70 22 minecraft:oak_leaves[persistent=true] strict
-fill -9 70 -53 -9 71 -53 minecraft:bamboo[age=0,leaves=large] strict
-fill -9 70 -38 -9 73 -38 minecraft:spruce_leaves[persistent=true] strict
-fill -9 70 -36 -9 73 -36 minecraft:spruce_leaves[persistent=true] strict
-fill -8 70 -38 -8 71 -36 minecraft:spruce_leaves[persistent=true] strict
+setblock -31 70 -15 minecraft:bamboo[age=0,leaves=large] strict
+setblock -31 70 -14 minecraft:bamboo[age=0,leaves=small] strict
+fill -29 70 -15 -29 71 -15 minecraft:bamboo[age=0,leaves=large] strict
+fill -29 70 9 -29 70 10 minecraft:oak_leaves[persistent=true] strict
+fill -28 70 8 -28 70 9 minecraft:oak_leaves[persistent=true] strict
+setblock -27 70 8 minecraft:oak_leaves[persistent=true] strict
+setblock -27 70 10 minecraft:oak_leaves[persistent=true] strict
+setblock -25 70 -49 minecraft:bamboo[age=0,leaves=large] strict
+fill -24 70 -48 -24 71 -48 minecraft:bamboo[age=0,leaves=large] strict
+fill -23 70 -34 -23 70 -33 minecraft:bamboo[age=0,leaves=large] strict
+fill -22 70 -24 -22 71 -22 minecraft:spruce_leaves[persistent=true] strict
+fill -21 70 -24 -21 71 -24 minecraft:spruce_leaves[persistent=true] strict
+fill -21 70 -22 -21 71 -22 minecraft:spruce_leaves[persistent=true] strict
+setblock -21 70 11 minecraft:birch_leaves[persistent=true] strict
+fill -20 70 -24 -20 71 -22 minecraft:spruce_leaves[persistent=true] strict
+fill -20 70 10 -20 70 12 minecraft:birch_leaves[persistent=true] strict
+setblock -18 70 -63 minecraft:birch_leaves[persistent=true] strict
+fill -17 70 -64 -17 70 -62 minecraft:birch_leaves[persistent=true] strict
+fill -17 70 -54 -17 71 -54 minecraft:spruce_leaves[persistent=true] strict
+fill -16 70 -30 -16 71 -28 minecraft:spruce_leaves[persistent=true] strict
+fill -15 70 -54 -15 71 -54 minecraft:spruce_leaves[persistent=true] strict
+fill -15 70 -30 -15 73 -30 minecraft:spruce_leaves[persistent=true] strict
+fill -15 70 -28 -15 73 -28 minecraft:spruce_leaves[persistent=true] strict
+fill -14 70 -30 -14 71 -28 minecraft:spruce_leaves[persistent=true] strict
+fill -14 70 -21 -12 70 -21 minecraft:bamboo[age=0,leaves=large] strict
+fill -14 70 -19 -14 71 -19 minecraft:bamboo[age=0,leaves=large] strict
+fill -14 70 -12 -14 71 -10 minecraft:spruce_leaves[persistent=true] strict
+fill -13 70 -12 -13 73 -12 minecraft:spruce_leaves[persistent=true] strict
+fill -13 70 -10 -13 73 -10 minecraft:spruce_leaves[persistent=true] strict
+fill -12 70 -47 -12 71 -47 minecraft:spruce_leaves[persistent=true] strict
+setblock -12 70 -19 minecraft:bamboo[age=0,leaves=large] strict
+fill -12 70 -12 -12 71 -10 minecraft:spruce_leaves[persistent=true] strict
+fill -10 70 -47 -10 71 -47 minecraft:spruce_leaves[persistent=true] strict
+setblock -10 70 -38 minecraft:bamboo[age=0,leaves=large] strict
+setblock -9 70 -38 minecraft:bamboo[age=0,leaves=small] strict
+fill -9 70 32 -8 70 32 minecraft:birch_leaves[persistent=true] strict
 setblock -6 70 36 minecraft:white_concrete strict
 setblock -6 70 37 minecraft:red_concrete strict
 setblock 0 70 60 minecraft:white_concrete strict
 setblock 0 70 72 minecraft:white_concrete strict
+setblock 6 70 -16 minecraft:cherry_leaves[persistent=true] strict
+setblock 6 70 -13 minecraft:cherry_leaves[persistent=true] strict
 setblock 6 70 36 minecraft:white_concrete strict
 setblock 6 70 37 minecraft:red_concrete strict
-setblock 10 70 -56 minecraft:cherry_leaves[persistent=true] strict
-setblock 10 70 -52 minecraft:cherry_leaves[persistent=true] strict
-fill 11 70 -57 12 70 -51 minecraft:cherry_leaves[persistent=true] strict
-setblock 12 70 -19 minecraft:cherry_leaves[persistent=true] strict
+fill 7 70 -58 7 70 -52 minecraft:cherry_leaves[persistent=true] strict
+fill 7 70 -17 7 70 -12 minecraft:cherry_leaves[persistent=true] strict
+fill 8 70 -58 8 70 -53 minecraft:cherry_leaves[persistent=true] strict
+fill 8 70 -18 8 70 -12 minecraft:cherry_leaves[persistent=true] strict
+fill 9 70 -57 10 70 -53 minecraft:cherry_leaves[persistent=true] strict
+fill 9 70 -18 10 70 -13 minecraft:cherry_leaves[persistent=true] strict
+setblock 11 70 -42 minecraft:birch_leaves[persistent=true] strict
+fill 11 70 17 11 70 19 minecraft:red_mushroom_block strict
+fill 12 70 -57 12 70 -53 minecraft:cherry_leaves[persistent=true] strict
+fill 12 70 -43 12 70 -41 minecraft:birch_leaves[persistent=true] strict
 setblock 12 70 -17 minecraft:cherry_leaves[persistent=true] strict
-fill 13 70 -57 13 70 -52 minecraft:cherry_leaves[persistent=true] strict
-fill 13 70 -19 15 70 -14 minecraft:cherry_leaves[persistent=true] strict
-fill 14 70 -56 15 70 -51 minecraft:cherry_leaves[persistent=true] strict
-fill 14 70 -38 14 70 -36 minecraft:cherry_leaves[persistent=true] strict
-fill 15 70 -38 15 70 -34 minecraft:cherry_leaves[persistent=true] strict
-setblock 16 70 -54 minecraft:cherry_leaves[persistent=true] strict
-fill 16 70 -38 17 70 -33 minecraft:cherry_leaves[persistent=true] strict
-fill 16 70 -20 16 70 -15 minecraft:cherry_leaves[persistent=true] strict
-fill 16 70 62 16 71 64 minecraft:spruce_leaves[persistent=true] strict
-setblock 17 70 -26 minecraft:birch_leaves[persistent=true] strict
-fill 17 70 -19 17 70 -14 minecraft:cherry_leaves[persistent=true] strict
-fill 17 70 62 17 71 62 minecraft:spruce_leaves[persistent=true] strict
-fill 17 70 64 17 71 64 minecraft:spruce_leaves[persistent=true] strict
-fill 18 70 -39 19 70 -33 minecraft:cherry_leaves[persistent=true] strict
-setblock 18 70 -19 minecraft:cherry_leaves[persistent=true] strict
-setblock 18 70 -16 minecraft:cherry_leaves[persistent=true] strict
-fill 18 70 62 18 71 64 minecraft:spruce_leaves[persistent=true] strict
-setblock 19 70 -46 minecraft:cherry_leaves[persistent=true] strict
-setblock 20 70 -54 minecraft:birch_leaves[persistent=true] strict
-fill 20 70 -48 20 70 -44 minecraft:cherry_leaves[persistent=true] strict
-fill 20 70 -38 20 70 -36 minecraft:cherry_leaves[persistent=true] strict
-fill 21 70 -55 21 70 -54 minecraft:birch_leaves[persistent=true] strict
-fill 21 70 -49 21 70 -43 minecraft:cherry_leaves[persistent=true] strict
-setblock 22 70 -54 minecraft:birch_leaves[persistent=true] strict
-fill 22 70 -49 22 70 -44 minecraft:cherry_leaves[persistent=true] strict
-fill 23 70 -48 24 70 -43 minecraft:cherry_leaves[persistent=true] strict
-fill 23 70 -40 23 70 -39 minecraft:cherry_leaves[persistent=true] strict
-setblock 24 70 -11 minecraft:birch_leaves[persistent=true] strict
-setblock 25 70 -46 minecraft:cherry_leaves[persistent=true] strict
-setblock 25 70 -44 minecraft:cherry_leaves[persistent=true] strict
-fill 25 70 -42 25 70 -36 minecraft:cherry_leaves[persistent=true] strict
-fill 26 70 -41 26 70 -37 minecraft:cherry_leaves[persistent=true] strict
-fill 26 70 -13 26 70 -12 minecraft:birch_leaves[persistent=true] strict
-fill 26 70 48 26 70 50 minecraft:red_mushroom_block strict
-setblock 27 70 -47 minecraft:cherry_leaves[persistent=true] strict
-fill 27 70 -42 27 70 -36 minecraft:cherry_leaves[persistent=true] strict
-fill 27 70 47 27 70 48 minecraft:red_mushroom_block strict
-fill 27 70 50 27 70 51 minecraft:red_mushroom_block strict
-fill 28 70 -51 28 70 -46 minecraft:cherry_leaves[persistent=true] strict
-setblock 28 70 47 minecraft:red_mushroom_block strict
-setblock 28 70 51 minecraft:red_mushroom_block strict
-fill 29 70 -52 30 70 -46 minecraft:cherry_leaves[persistent=true] strict
-fill 29 70 -39 29 70 -38 minecraft:cherry_leaves[persistent=true] strict
-fill 29 70 47 29 70 48 minecraft:red_mushroom_block strict
-fill 29 70 50 29 70 51 minecraft:red_mushroom_block strict
-setblock 30 70 21 minecraft:oak_leaves[persistent=true] strict
-setblock 30 70 23 minecraft:oak_leaves[persistent=true] strict
-fill 30 70 48 30 70 50 minecraft:red_mushroom_block strict
-fill 31 70 -51 32 70 -47 minecraft:cherry_leaves[persistent=true] strict
-fill 31 70 21 31 70 23 minecraft:oak_leaves[persistent=true] strict
-fill 32 70 21 32 70 22 minecraft:oak_leaves[persistent=true] strict
-fill 35 70 -13 36 70 -7 minecraft:cherry_leaves[persistent=true] strict
-fill 36 70 -38 37 70 -38 minecraft:birch_leaves[persistent=true] strict
-setblock 37 70 -53 minecraft:cherry_leaves[persistent=true] strict
-setblock 37 70 -51 minecraft:cherry_leaves[persistent=true] strict
-fill 37 70 -24 37 70 -22 minecraft:cherry_leaves[persistent=true] strict
-setblock 37 70 -20 minecraft:cherry_leaves[persistent=true] strict
-fill 37 70 -12 37 70 -8 minecraft:cherry_leaves[persistent=true] strict
-fill 38 70 -55 39 70 -50 minecraft:cherry_leaves[persistent=true] strict
-fill 38 70 -25 38 70 -19 minecraft:cherry_leaves[persistent=true] strict
-fill 38 70 -13 38 70 -8 minecraft:cherry_leaves[persistent=true] strict
-fill 39 70 -24 39 70 -19 minecraft:cherry_leaves[persistent=true] strict
-fill 39 70 -13 39 70 -7 minecraft:cherry_leaves[persistent=true] strict
-fill 40 70 -25 40 70 -19 minecraft:cherry_leaves[persistent=true] strict
-setblock 40 70 -11 minecraft:cherry_leaves[persistent=true] strict
-fill 41 70 -55 41 70 -51 minecraft:cherry_leaves[persistent=true] strict
-fill 41 70 -24 41 70 -19 minecraft:cherry_leaves[persistent=true] strict
-fill 42 70 -56 42 70 -51 minecraft:cherry_leaves[persistent=true] strict
-fill 42 70 -25 42 70 -20 minecraft:cherry_leaves[persistent=true] strict
-fill 43 70 -55 43 70 -53 minecraft:cherry_leaves[persistent=true] strict
-fill 44 70 -13 44 70 -12 minecraft:birch_leaves[persistent=true] strict
-setblock 44 70 13 minecraft:oak_leaves[persistent=true] strict
-fill 45 70 11 45 70 12 minecraft:oak_leaves[persistent=true] strict
-setblock 46 70 11 minecraft:oak_leaves[persistent=true] strict
-setblock 46 70 13 minecraft:oak_leaves[persistent=true] strict
-setblock 49 70 -28 minecraft:birch_leaves[persistent=true] strict
-fill 50 70 -28 50 70 -27 minecraft:birch_leaves[persistent=true] strict
-setblock 51 70 -28 minecraft:birch_leaves[persistent=true] strict
-fill 52 70 14 52 70 16 minecraft:red_mushroom_block strict
-fill 53 70 -12 54 70 -12 minecraft:birch_leaves[persistent=true] strict
-fill 53 70 13 53 70 14 minecraft:red_mushroom_block strict
-fill 53 70 16 53 70 17 minecraft:red_mushroom_block strict
-setblock 54 70 13 minecraft:red_mushroom_block strict
-setblock 54 70 17 minecraft:red_mushroom_block strict
-fill 55 70 13 55 70 14 minecraft:red_mushroom_block strict
-fill 55 70 16 55 70 17 minecraft:red_mushroom_block strict
-fill 56 70 -34 56 70 -32 minecraft:cherry_leaves[persistent=true] strict
-fill 56 70 14 56 70 16 minecraft:red_mushroom_block strict
-fill 57 70 -35 58 70 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 59 70 -34 60 70 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 61 70 -35 61 70 -30 minecraft:cherry_leaves[persistent=true] strict
-setblock 62 70 -32 minecraft:cherry_leaves[persistent=true] strict
-setblock 62 70 -30 minecraft:cherry_leaves[persistent=true] strict
-setblock 65 70 10 minecraft:birch_leaves[persistent=true] strict
-fill 66 70 9 66 70 11 minecraft:birch_leaves[persistent=true] strict
+fill 12 70 16 12 70 17 minecraft:red_mushroom_block strict
+fill 12 70 19 12 70 20 minecraft:red_mushroom_block strict
+setblock 13 70 16 minecraft:red_mushroom_block strict
+setblock 13 70 20 minecraft:red_mushroom_block strict
+fill 14 70 16 14 70 17 minecraft:red_mushroom_block strict
+fill 14 70 19 14 70 20 minecraft:red_mushroom_block strict
+fill 15 70 17 15 70 19 minecraft:red_mushroom_block strict
+setblock 16 70 -54 minecraft:birch_leaves[persistent=true] strict
+fill 16 70 22 16 70 24 minecraft:brown_mushroom_block strict
+fill 17 70 -55 17 70 -53 minecraft:birch_leaves[persistent=true] strict
+fill 17 70 21 17 70 25 minecraft:brown_mushroom_block strict
+setblock 18 70 -37 minecraft:cherry_leaves[persistent=true] strict
+fill 18 70 20 20 70 26 minecraft:brown_mushroom_block strict
+fill 19 70 -40 19 70 -35 minecraft:cherry_leaves[persistent=true] strict
+fill 20 70 -40 20 70 -36 minecraft:cherry_leaves[persistent=true] strict
+setblock 21 70 -50 minecraft:cherry_leaves[persistent=true] strict
+fill 21 70 -48 21 70 -46 minecraft:cherry_leaves[persistent=true] strict
+fill 21 70 -41 21 70 -35 minecraft:cherry_leaves[persistent=true] strict
+fill 21 70 21 21 70 25 minecraft:brown_mushroom_block strict
+fill 22 70 -51 22 70 -46 minecraft:cherry_leaves[persistent=true] strict
+fill 22 70 -41 22 70 -36 minecraft:cherry_leaves[persistent=true] strict
+fill 22 70 22 22 70 24 minecraft:brown_mushroom_block strict
+fill 23 70 -50 23 70 -45 minecraft:cherry_leaves[persistent=true] strict
+fill 23 70 -40 23 70 -36 minecraft:cherry_leaves[persistent=true] strict
+fill 24 70 -51 24 70 -46 minecraft:cherry_leaves[persistent=true] strict
+fill 24 70 -39 24 70 -37 minecraft:cherry_leaves[persistent=true] strict
+fill 24 70 45 24 70 46 minecraft:oak_leaves[persistent=true] strict
+fill 25 70 -50 25 70 -46 minecraft:cherry_leaves[persistent=true] strict
+fill 25 70 26 25 70 27 minecraft:oak_leaves[persistent=true] strict
+setblock 25 70 45 minecraft:oak_leaves[persistent=true] strict
+fill 26 70 -50 26 70 -45 minecraft:cherry_leaves[persistent=true] strict
+setblock 26 70 27 minecraft:oak_leaves[persistent=true] strict
+fill 26 70 44 26 70 45 minecraft:oak_leaves[persistent=true] strict
+setblock 27 70 -50 minecraft:cherry_leaves[persistent=true] strict
+fill 27 70 26 27 70 28 minecraft:oak_leaves[persistent=true] strict
+fill 30 70 -49 30 70 -45 minecraft:cherry_leaves[persistent=true] strict
+setblock 30 70 -9 minecraft:cherry_leaves[persistent=true] strict
+fill 31 70 -49 31 70 -44 minecraft:cherry_leaves[persistent=true] strict
+fill 31 70 -11 31 70 -7 minecraft:cherry_leaves[persistent=true] strict
+fill 32 70 -49 32 70 -45 minecraft:cherry_leaves[persistent=true] strict
+fill 32 70 -12 32 70 -6 minecraft:cherry_leaves[persistent=true] strict
+fill 33 70 -50 33 70 -45 minecraft:cherry_leaves[persistent=true] strict
+fill 33 70 -12 33 70 -7 minecraft:cherry_leaves[persistent=true] strict
+fill 34 70 -49 35 70 -44 minecraft:cherry_leaves[persistent=true] strict
+fill 34 70 -11 35 70 -6 minecraft:cherry_leaves[persistent=true] strict
+fill 36 70 -49 36 70 -47 minecraft:cherry_leaves[persistent=true] strict
+setblock 36 70 -45 minecraft:cherry_leaves[persistent=true] strict
+setblock 36 70 -9 minecraft:cherry_leaves[persistent=true] strict
+setblock 36 70 -7 minecraft:cherry_leaves[persistent=true] strict
+setblock 37 70 -37 minecraft:cherry_leaves[persistent=true] strict
+fill 40 70 -41 41 70 -36 minecraft:cherry_leaves[persistent=true] strict
+setblock 42 70 -30 minecraft:birch_leaves[persistent=true] strict
+setblock 43 70 -37 minecraft:cherry_leaves[persistent=true] strict
+fill 43 70 -31 43 70 -29 minecraft:birch_leaves[persistent=true] strict
+fill 43 70 11 43 70 13 minecraft:oak_leaves[persistent=true] strict
+setblock 44 70 -30 minecraft:birch_leaves[persistent=true] strict
+setblock 44 70 12 minecraft:oak_leaves[persistent=true] strict
+setblock 54 70 -10 minecraft:cherry_leaves[persistent=true] strict
+fill 55 70 -11 55 70 -7 minecraft:cherry_leaves[persistent=true] strict
+fill 56 70 -12 56 70 -6 minecraft:cherry_leaves[persistent=true] strict
+fill 57 70 -12 57 70 -7 minecraft:cherry_leaves[persistent=true] strict
+fill 58 70 -11 58 70 -6 minecraft:cherry_leaves[persistent=true] strict
+fill 59 70 -12 59 70 -6 minecraft:cherry_leaves[persistent=true] strict
+fill 60 70 -11 60 70 -10 minecraft:cherry_leaves[persistent=true] strict
+setblock 60 70 -8 minecraft:cherry_leaves[persistent=true] strict
+setblock 63 70 -14 minecraft:cherry_leaves[persistent=true] strict
+setblock 63 70 -12 minecraft:cherry_leaves[persistent=true] strict
+fill 64 70 -16 64 70 -11 minecraft:cherry_leaves[persistent=true] strict
+fill 65 70 -15 65 70 -10 minecraft:cherry_leaves[persistent=true] strict
+setblock 65 70 11 minecraft:oak_leaves[persistent=true] strict
+setblock 65 70 13 minecraft:oak_leaves[persistent=true] strict
+fill 66 70 -16 66 70 -11 minecraft:cherry_leaves[persistent=true] strict
+fill 66 70 12 66 70 13 minecraft:oak_leaves[persistent=true] strict
+fill 67 70 -16 67 70 -10 minecraft:cherry_leaves[persistent=true] strict
+setblock 67 70 11 minecraft:oak_leaves[persistent=true] strict
+setblock 67 70 13 minecraft:oak_leaves[persistent=true] strict
+fill 68 70 -16 68 70 -11 minecraft:cherry_leaves[persistent=true] strict
 setblock 115 70 8 minecraft:packed_ice strict
 setblock 120 70 11 minecraft:lantern[hanging=true] strict
 fill 122 70 -2 122 70 2 minecraft:smooth_quartz strict
@@ -1628,46 +2178,35 @@ setblock -57 71 -10 minecraft:stripped_dark_oak_log[axis=z] strict
 fill -57 71 -8 -57 71 8 minecraft:stripped_dark_oak_log[axis=z] strict
 setblock -57 71 10 minecraft:stripped_dark_oak_log[axis=z] strict
 fill -57 71 11 -56 71 11 minecraft:stripped_dark_oak_log[axis=x] strict
-setblock -57 71 37 minecraft:birch_leaves[persistent=true] strict
 setblock -56 71 -9 minecraft:mossy_stone_bricks strict
-fill -56 71 37 -56 71 38 minecraft:birch_leaves[persistent=true] strict
 fill -55 71 -12 -55 73 -10 minecraft:stone_bricks strict
-setblock -55 71 37 minecraft:birch_leaves[persistent=true] strict
 fill -54 71 -11 -38 71 -11 minecraft:stripped_dark_oak_log[axis=x] strict
 fill -54 71 11 -38 71 11 minecraft:stripped_dark_oak_log[axis=x] strict
-setblock -42 71 41 minecraft:birch_leaves[persistent=true] strict
-fill -41 71 40 -41 71 41 minecraft:birch_leaves[persistent=true] strict
-setblock -40 71 41 minecraft:birch_leaves[persistent=true] strict
+setblock -37 71 -45 minecraft:bamboo[age=0,leaves=small] strict
 fill -37 71 -12 -37 72 -10 minecraft:stone_bricks strict
 fill -37 71 10 -37 71 12 minecraft:stone_bricks strict
+setblock -36 71 -45 minecraft:bamboo[age=0,leaves=large] strict
 fill -36 71 -11 -35 71 -11 minecraft:stripped_dark_oak_log[axis=x] strict
 fill -36 71 9 -34 71 9 minecraft:stone_bricks strict
 fill -36 71 11 -35 71 11 minecraft:stripped_dark_oak_log[axis=x] strict
 setblock -36 71 13 minecraft:stone_bricks strict
+setblock -35 71 -44 minecraft:bamboo[age=0,leaves=small] strict
 setblock -35 71 -10 minecraft:stripped_dark_oak_log[axis=z] strict
 setblock -35 71 -9 minecraft:mossy_stone_bricks strict
 fill -35 71 -8 -35 71 8 minecraft:stripped_dark_oak_log[axis=z] strict
 setblock -35 71 10 minecraft:stripped_dark_oak_log[axis=z] strict
 setblock -35 71 13 minecraft:mossy_stone_bricks strict
 setblock -34 71 13 minecraft:stone_bricks strict
-setblock -34 71 23 minecraft:birch_leaves[persistent=true] strict
-fill -33 71 23 -33 71 24 minecraft:birch_leaves[persistent=true] strict
-setblock -32 71 -27 minecraft:bamboo[age=0,leaves=small] strict
-setblock -32 71 23 minecraft:birch_leaves[persistent=true] strict
-fill -31 71 -37 -30 71 -37 minecraft:bamboo[age=0,leaves=large] strict
-fill -27 71 46 -27 71 47 minecraft:birch_leaves[persistent=true] strict
-setblock -26 71 47 minecraft:birch_leaves[persistent=true] strict
-setblock -25 71 -24 minecraft:bamboo[age=0,leaves=small] strict
-fill -24 71 -25 -24 71 -24 minecraft:bamboo[age=0,leaves=small] strict
-setblock -23 71 -43 minecraft:bamboo[age=0,leaves=small] strict
-setblock -23 71 -42 minecraft:bamboo[age=0,leaves=none] strict
-fill -23 71 -24 -23 72 -24 minecraft:bamboo[age=0,leaves=large] strict
-fill -19 71 -30 -19 71 -28 minecraft:bamboo[age=0,leaves=large] strict
-fill -18 71 -30 -18 71 -29 minecraft:bamboo[age=0,leaves=large] strict
-fill -17 71 -28 -17 72 -28 minecraft:bamboo[age=0,leaves=large] strict
-setblock -11 71 -53 minecraft:bamboo[age=0,leaves=large] strict
-setblock -10 71 -53 minecraft:bamboo[age=0,leaves=small] strict
-setblock -9 71 -52 minecraft:bamboo[age=0,leaves=small] strict
+fill -31 71 -15 -31 71 -14 minecraft:bamboo[age=0,leaves=large] strict
+setblock -29 71 -16 minecraft:bamboo[age=0,leaves=small] strict
+setblock -26 71 -48 minecraft:bamboo[age=0,leaves=small] strict
+setblock -23 71 -33 minecraft:bamboo[age=0,leaves=large] strict
+fill -22 71 -35 -21 71 -35 minecraft:bamboo[age=0,leaves=small] strict
+setblock -12 71 -21 minecraft:bamboo[age=0,leaves=large] strict
+fill -10 71 -38 -9 71 -38 minecraft:bamboo[age=0,leaves=large] strict
+setblock -9 71 -54 minecraft:bamboo[age=0,leaves=small] strict
+fill -9 71 -40 -8 71 -40 minecraft:bamboo[age=0,leaves=small] strict
+setblock -7 71 -54 minecraft:bamboo[age=0,leaves=small] strict
 setblock -6 71 36 minecraft:black_concrete strict
 setblock -6 71 37 minecraft:white_concrete strict
 setblock -5 71 36 minecraft:white_concrete strict
@@ -1707,42 +2246,30 @@ setblock 5 71 36 minecraft:white_concrete strict
 setblock 5 71 37 minecraft:black_concrete strict
 setblock 6 71 36 minecraft:black_concrete strict
 setblock 6 71 37 minecraft:white_concrete strict
-fill 13 71 44 13 71 46 minecraft:red_mushroom_block strict
-fill 14 71 43 14 71 44 minecraft:red_mushroom_block strict
-fill 14 71 46 14 71 47 minecraft:red_mushroom_block strict
-setblock 15 71 43 minecraft:red_mushroom_block strict
-setblock 15 71 47 minecraft:red_mushroom_block strict
-setblock 16 71 -27 minecraft:birch_leaves[persistent=true] strict
-fill 16 71 43 16 71 44 minecraft:red_mushroom_block strict
-fill 16 71 46 16 71 47 minecraft:red_mushroom_block strict
-fill 17 71 -28 17 71 -26 minecraft:birch_leaves[persistent=true] strict
-fill 17 71 44 17 71 46 minecraft:red_mushroom_block strict
-fill 20 71 20 20 71 22 minecraft:brown_mushroom_block strict
-fill 21 71 19 21 71 23 minecraft:brown_mushroom_block strict
-fill 22 71 18 24 71 24 minecraft:brown_mushroom_block strict
-fill 22 71 32 22 71 34 minecraft:red_mushroom_block strict
-fill 23 71 31 23 71 32 minecraft:red_mushroom_block strict
-fill 23 71 34 23 71 35 minecraft:red_mushroom_block strict
-setblock 24 71 31 minecraft:red_mushroom_block strict
-setblock 24 71 35 minecraft:red_mushroom_block strict
-setblock 25 71 -11 minecraft:birch_leaves[persistent=true] strict
-fill 25 71 19 25 71 23 minecraft:brown_mushroom_block strict
-fill 25 71 31 25 71 32 minecraft:red_mushroom_block strict
-fill 25 71 34 25 71 35 minecraft:red_mushroom_block strict
-fill 26 71 -12 26 71 -10 minecraft:birch_leaves[persistent=true] strict
-fill 26 71 20 26 71 22 minecraft:brown_mushroom_block strict
-fill 26 71 32 26 71 34 minecraft:red_mushroom_block strict
-setblock 27 71 -11 minecraft:birch_leaves[persistent=true] strict
-setblock 43 71 -14 minecraft:birch_leaves[persistent=true] strict
-fill 44 71 -14 44 71 -13 minecraft:birch_leaves[persistent=true] strict
-fill 48 71 24 48 71 26 minecraft:red_mushroom_block strict
-fill 49 71 23 49 71 24 minecraft:red_mushroom_block strict
-fill 49 71 26 49 71 27 minecraft:red_mushroom_block strict
-setblock 50 71 23 minecraft:red_mushroom_block strict
-setblock 50 71 27 minecraft:red_mushroom_block strict
-fill 51 71 23 51 71 24 minecraft:red_mushroom_block strict
-fill 51 71 26 51 71 27 minecraft:red_mushroom_block strict
-fill 52 71 24 52 71 26 minecraft:red_mushroom_block strict
+fill 11 71 28 11 71 30 minecraft:red_mushroom_block strict
+fill 12 71 27 12 71 28 minecraft:red_mushroom_block strict
+fill 12 71 30 12 71 31 minecraft:red_mushroom_block strict
+setblock 13 71 27 minecraft:red_mushroom_block strict
+setblock 13 71 31 minecraft:red_mushroom_block strict
+fill 14 71 27 14 71 28 minecraft:red_mushroom_block strict
+fill 14 71 30 14 71 31 minecraft:red_mushroom_block strict
+fill 15 71 28 15 71 30 minecraft:red_mushroom_block strict
+fill 18 71 31 18 71 33 minecraft:red_mushroom_block strict
+fill 19 71 30 19 71 31 minecraft:red_mushroom_block strict
+fill 19 71 33 19 71 34 minecraft:red_mushroom_block strict
+setblock 20 71 30 minecraft:red_mushroom_block strict
+setblock 20 71 34 minecraft:red_mushroom_block strict
+fill 21 71 30 21 71 31 minecraft:red_mushroom_block strict
+fill 21 71 33 21 71 34 minecraft:red_mushroom_block strict
+fill 22 71 31 22 71 33 minecraft:red_mushroom_block strict
+fill 29 71 11 29 71 13 minecraft:red_mushroom_block strict
+fill 30 71 10 30 71 11 minecraft:red_mushroom_block strict
+fill 30 71 13 30 71 14 minecraft:red_mushroom_block strict
+setblock 31 71 10 minecraft:red_mushroom_block strict
+setblock 31 71 14 minecraft:red_mushroom_block strict
+fill 32 71 10 32 71 11 minecraft:red_mushroom_block strict
+fill 32 71 13 32 71 14 minecraft:red_mushroom_block strict
+fill 33 71 11 33 71 13 minecraft:red_mushroom_block strict
 setblock 117 71 10 minecraft:ice strict
 setblock 120 71 11 minecraft:snow_block strict
 fill 122 71 -2 122 71 1 minecraft:smooth_quartz strict
@@ -1774,6 +2301,11 @@ setblock -55 72 10 minecraft:mossy_stone_bricks strict
 fill -55 72 11 -55 72 12 minecraft:stone_bricks strict
 fill -54 72 -12 -38 72 -12 minecraft:dark_oak_stairs[facing=south] strict
 fill -54 72 12 -38 72 12 minecraft:dark_oak_stairs[facing=north] strict
+fill -44 72 -38 -44 73 -38 minecraft:spruce_leaves[persistent=true] strict
+fill -42 72 -52 -42 73 -52 minecraft:spruce_leaves[persistent=true] strict
+fill -42 72 -38 -42 73 -38 minecraft:spruce_leaves[persistent=true] strict
+fill -40 72 -52 -40 73 -52 minecraft:spruce_leaves[persistent=true] strict
+fill -37 72 -45 -36 72 -45 minecraft:bamboo[age=0,leaves=large] strict
 fill -37 72 10 -37 72 12 minecraft:mossy_stone_bricks strict
 fill -36 72 -13 -35 72 -13 minecraft:mossy_stone_bricks strict
 fill -36 72 -12 -34 72 -12 minecraft:dark_oak_stairs[facing=south] strict
@@ -1781,6 +2313,7 @@ fill -36 72 -9 -34 73 -9 minecraft:stone_bricks strict
 setblock -36 72 9 minecraft:stone_bricks strict
 fill -36 72 12 -34 72 12 minecraft:dark_oak_stairs[facing=north] strict
 fill -36 72 13 -35 72 13 minecraft:stone_bricks strict
+fill -35 72 -44 -35 73 -44 minecraft:bamboo[age=0,leaves=large] strict
 fill -35 72 -11 -35 72 -10 minecraft:dark_oak_planks strict
 fill -35 72 -8 -35 74 -1 minecraft:dark_oak_planks strict
 fill -35 72 0 -35 74 0 minecraft:stripped_dark_oak_log[axis=y] strict
@@ -1790,25 +2323,26 @@ fill -35 72 10 -35 72 11 minecraft:dark_oak_planks strict
 setblock -34 72 -13 minecraft:stone_bricks strict
 setblock -34 72 9 minecraft:stone_bricks strict
 setblock -34 72 13 minecraft:mossy_stone_bricks strict
-fill -33 72 -27 -33 72 -26 minecraft:bamboo[age=0,leaves=small] strict
 setblock -33 72 10 minecraft:mossy_stone_bricks strict
 fill -33 72 11 -33 72 12 minecraft:stone_bricks strict
-fill -32 72 -27 -32 73 -27 minecraft:bamboo[age=0,leaves=large] strict
-setblock -30 72 -37 minecraft:bamboo[age=0,leaves=large] strict
-setblock -29 72 -35 minecraft:bamboo[age=0,leaves=small] strict
-fill -25 72 -24 -25 73 -24 minecraft:bamboo[age=0,leaves=large] strict
-fill -24 72 -25 -24 73 -24 minecraft:bamboo[age=0,leaves=large] strict
-setblock -23 72 -43 minecraft:bamboo[age=0,leaves=large] strict
-setblock -23 72 -42 minecraft:bamboo[age=0,leaves=small] strict
-setblock -19 72 -30 minecraft:bamboo[age=0,leaves=large] strict
-setblock -18 72 -29 minecraft:bamboo[age=0,leaves=large] strict
-fill -18 72 63 -18 73 63 minecraft:spruce_leaves[persistent=true] strict
-fill -16 72 -15 -16 73 -15 minecraft:spruce_leaves[persistent=true] strict
-fill -11 72 -53 -10 72 -53 minecraft:bamboo[age=0,leaves=large] strict
-fill -10 72 -37 -10 73 -37 minecraft:spruce_leaves[persistent=true] strict
-setblock -9 72 -54 minecraft:bamboo[age=0,leaves=small] strict
-fill -9 72 -52 -9 73 -52 minecraft:bamboo[age=0,leaves=large] strict
-fill -8 72 -37 -8 73 -37 minecraft:spruce_leaves[persistent=true] strict
+setblock -31 72 -14 minecraft:bamboo[age=0,leaves=large] strict
+fill -29 72 -16 -29 73 -16 minecraft:bamboo[age=0,leaves=large] strict
+fill -26 72 -48 -26 73 -48 minecraft:bamboo[age=0,leaves=large] strict
+setblock -25 72 -50 minecraft:bamboo[age=0,leaves=small] strict
+fill -22 72 -35 -21 73 -35 minecraft:bamboo[age=0,leaves=large] strict
+setblock -22 72 -33 minecraft:bamboo[age=0,leaves=small] strict
+fill -16 72 -54 -16 73 -54 minecraft:spruce_leaves[persistent=true] strict
+fill -16 72 -29 -16 73 -29 minecraft:spruce_leaves[persistent=true] strict
+fill -14 72 -29 -14 73 -29 minecraft:spruce_leaves[persistent=true] strict
+setblock -14 72 -20 minecraft:bamboo[age=0,leaves=small] strict
+fill -14 72 -11 -14 73 -11 minecraft:spruce_leaves[persistent=true] strict
+setblock -13 72 -19 minecraft:bamboo[age=0,leaves=small] strict
+fill -12 72 -11 -12 73 -11 minecraft:spruce_leaves[persistent=true] strict
+fill -11 72 -47 -11 73 -47 minecraft:spruce_leaves[persistent=true] strict
+fill -9 72 -54 -9 73 -54 minecraft:bamboo[age=0,leaves=large] strict
+fill -9 72 -40 -8 73 -40 minecraft:bamboo[age=0,leaves=large] strict
+setblock -9 72 -38 minecraft:bamboo[age=0,leaves=large] strict
+fill -7 72 -54 -7 73 -54 minecraft:bamboo[age=0,leaves=large] strict
 setblock -6 72 36 minecraft:white_concrete strict
 setblock -6 72 37 minecraft:black_concrete strict
 setblock -5 72 36 minecraft:black_concrete strict
@@ -1881,6 +2415,7 @@ setblock -49 73 0 minecraft:lantern[hanging=true] strict
 setblock -43 73 0 minecraft:lantern[hanging=true] strict
 fill -42 73 -1 -42 73 1 minecraft:lantern[hanging=true] strict
 setblock -41 73 0 minecraft:lantern[hanging=true] strict
+setblock -37 73 -45 minecraft:bamboo[age=0,leaves=large] strict
 setblock -37 73 -12 minecraft:mossy_stone_bricks strict
 fill -37 73 -11 -37 73 -10 minecraft:stone_bricks strict
 fill -37 73 10 -37 74 12 minecraft:stone_bricks strict
@@ -1891,16 +2426,14 @@ fill -36 73 11 -34 73 11 minecraft:dark_oak_stairs[facing=north] strict
 fill -36 73 13 -34 73 13 minecraft:stone_bricks strict
 setblock -35 73 -10 minecraft:dark_oak_planks strict
 setblock -35 73 10 minecraft:dark_oak_planks strict
-fill -33 73 -27 -33 74 -26 minecraft:bamboo[age=0,leaves=large] strict
+fill -34 73 -24 -34 74 -24 minecraft:spruce_leaves[persistent=true] strict
 fill -33 73 10 -33 74 12 minecraft:stone_bricks strict
-fill -29 73 -35 -29 74 -35 minecraft:bamboo[age=0,leaves=large] strict
-fill -23 73 -43 -23 73 -42 minecraft:bamboo[age=0,leaves=large] strict
-fill -21 73 -49 -21 74 -49 minecraft:spruce_leaves[persistent=true] strict
-fill -17 73 -37 -17 74 -37 minecraft:spruce_leaves[persistent=true] strict
-setblock -10 73 -53 minecraft:bamboo[age=0,leaves=large] strict
-fill -9 73 -54 -9 74 -54 minecraft:bamboo[age=0,leaves=large] strict
+fill -25 73 -50 -25 74 -50 minecraft:bamboo[age=0,leaves=large] strict
+fill -22 73 -33 -22 74 -33 minecraft:bamboo[age=0,leaves=large] strict
+fill -21 73 -23 -21 74 -23 minecraft:spruce_leaves[persistent=true] strict
+fill -14 73 -20 -14 74 -20 minecraft:bamboo[age=0,leaves=large] strict
+fill -13 73 -19 -13 74 -19 minecraft:bamboo[age=0,leaves=large] strict
 setblock 0 73 -47 minecraft:light[level=15] strict
-fill 17 73 63 17 74 63 minecraft:spruce_leaves[persistent=true] strict
 fill 64 73 -4 65 73 -4 minecraft:quartz_bricks strict
 fill 64 73 -3 65 73 3 minecraft:quartz_slab strict
 fill 64 73 4 65 73 4 minecraft:quartz_bricks strict
@@ -1935,8 +2468,10 @@ fill -54 74 10 -38 74 10 minecraft:dark_oak_stairs[facing=north] strict
 setblock -51 74 0 minecraft:iron_chain strict
 fill -50 74 -1 -50 74 1 minecraft:iron_chain strict
 setblock -49 74 0 minecraft:iron_chain strict
+fill -43 74 -38 -43 75 -38 minecraft:spruce_leaves[persistent=true] strict
 setblock -43 74 0 minecraft:iron_chain strict
 fill -42 74 -1 -42 74 1 minecraft:iron_chain strict
+fill -41 74 -52 -41 75 -52 minecraft:spruce_leaves[persistent=true] strict
 setblock -41 74 0 minecraft:iron_chain strict
 fill -37 74 -12 -37 74 -10 minecraft:stone_bricks strict
 fill -36 74 -10 -34 74 -10 minecraft:dark_oak_stairs[facing=south] strict
@@ -1945,8 +2480,8 @@ fill -36 74 10 -34 74 10 minecraft:dark_oak_stairs[facing=north] strict
 fill -36 74 13 -36 76 13 minecraft:stone_bricks strict
 fill -35 74 13 -34 74 13 minecraft:mossy_stone_bricks strict
 setblock -34 74 -9 minecraft:mossy_stone_bricks strict
-setblock -23 74 -42 minecraft:bamboo[age=0,leaves=large] strict
-fill -9 74 -37 -9 75 -37 minecraft:spruce_leaves[persistent=true] strict
+fill -15 74 -29 -15 75 -29 minecraft:spruce_leaves[persistent=true] strict
+fill -13 74 -11 -13 75 -11 minecraft:spruce_leaves[persistent=true] strict
 fill -5 74 -48 -5 74 -47 minecraft:purpur_block strict
 fill -4 74 -48 -4 74 -47 minecraft:amethyst_block strict
 fill 4 74 -48 4 74 -47 minecraft:amethyst_block strict
@@ -2175,8 +2710,8 @@ setblock -33 80 -12 minecraft:mossy_stone_bricks strict
 fill -33 80 -11 -33 80 -10 minecraft:stone_bricks strict
 setblock -33 80 10 minecraft:mossy_stone_bricks strict
 fill -33 80 11 -33 80 12 minecraft:stone_bricks strict
+setblock 30 80 -31 minecraft:hanging_roots strict
 fill 30 80 -30 31 80 -30 minecraft:rooted_dirt strict
-fill 32 80 -31 32 80 -30 minecraft:hanging_roots strict
 fill 121 80 -1 121 80 1 minecraft:sea_lantern strict
 setblock 122 80 -2 minecraft:sea_lantern strict
 fill 122 80 -1 122 82 1 minecraft:smooth_quartz strict
@@ -2231,9 +2766,8 @@ setblock 29 81 -31 minecraft:dirt strict
 setblock 29 81 -30 minecraft:coarse_dirt strict
 fill 30 81 -31 30 81 -29 minecraft:dirt strict
 fill 31 81 -31 32 81 -30 minecraft:dirt strict
-setblock 32 81 -33 minecraft:hanging_roots strict
-setblock 33 81 -30 minecraft:hanging_roots strict
-setblock 34 81 -32 minecraft:hanging_roots strict
+setblock 32 81 -32 minecraft:hanging_roots strict
+fill 33 81 -31 34 81 -31 minecraft:hanging_roots strict
 setblock 117 81 -9 minecraft:soul_lantern[hanging=true] strict
 fill 121 81 -1 121 82 -1 minecraft:smooth_quartz strict
 fill 121 81 0 121 82 0 minecraft:calcite strict
@@ -2266,7 +2800,7 @@ fill 32 82 -33 32 82 -31 minecraft:coarse_dirt strict
 setblock 32 82 -30 minecraft:dirt strict
 setblock 33 82 -32 minecraft:coarse_dirt strict
 fill 33 82 -31 33 82 -30 minecraft:dirt strict
-setblock 34 82 -33 minecraft:hanging_roots strict
+setblock 33 82 -29 minecraft:hanging_roots strict
 fill 34 82 -32 34 82 -31 minecraft:dirt strict
 setblock 117 82 -9 minecraft:blackstone strict
 fill 123 82 -3 124 82 3 minecraft:smooth_quartz strict
@@ -2281,16 +2815,19 @@ fill -56 83 0 -36 83 0 minecraft:dark_oak_planks strict
 setblock -35 83 -11 minecraft:deepslate_tiles strict
 setblock -35 83 11 minecraft:deepslate_tiles strict
 setblock -35 83 32 minecraft:coarse_dirt strict
+setblock -35 83 33 minecraft:hanging_roots strict
 setblock -34 83 0 minecraft:dark_oak_planks strict
 fill 28 83 -31 28 83 -29 minecraft:coarse_dirt strict
 fill 29 83 -32 29 83 -29 minecraft:coarse_dirt strict
+fill 30 83 -34 32 83 -34 minecraft:hanging_roots strict
 fill 30 83 -32 30 83 -31 minecraft:dirt strict
 setblock 30 83 -30 minecraft:coarse_dirt strict
 fill 30 83 -29 30 83 -28 minecraft:dirt strict
 fill 31 83 -33 31 83 -28 minecraft:dirt strict
 fill 32 83 -33 33 83 -29 minecraft:dirt strict
+setblock 32 83 -28 minecraft:hanging_roots strict
 fill 34 83 -33 34 83 -30 minecraft:dirt strict
-fill 35 83 -32 35 83 -31 minecraft:hanging_roots strict
+setblock 35 83 -31 minecraft:hanging_roots strict
 setblock 113 83 -4 minecraft:glowstone strict
 setblock 115 83 -7 minecraft:crying_obsidian strict
 fill 121 83 -1 121 83 0 minecraft:calcite strict
@@ -2301,12 +2838,17 @@ fill 124 83 -2 125 83 3 minecraft:smooth_quartz strict
 fill 126 83 -2 126 83 1 minecraft:smooth_quartz strict
 setblock 126 83 2 minecraft:calcite strict
 fill -58 84 0 -34 84 0 minecraft:dark_oak_slab strict
+setblock -36 84 30 minecraft:hanging_roots strict
 setblock -36 84 32 minecraft:rooted_dirt strict
 fill -35 84 31 -35 84 32 minecraft:rooted_dirt strict
 setblock -35 84 33 minecraft:coarse_dirt strict
+setblock -34 84 29 minecraft:hanging_roots strict
 fill -34 84 31 -34 84 32 minecraft:coarse_dirt strict
 fill 27 84 -31 27 84 -30 minecraft:dirt strict
+setblock 28 84 -33 minecraft:hanging_roots strict
 fill 28 84 -32 28 84 -29 minecraft:dirt strict
+setblock 28 84 -28 minecraft:hanging_roots strict
+setblock 29 84 -34 minecraft:hanging_roots strict
 fill 29 84 -33 29 84 -28 minecraft:dirt strict
 fill 30 84 -34 32 84 -28 minecraft:dirt strict
 fill 33 84 -33 33 84 -31 minecraft:dirt strict
@@ -2314,7 +2856,6 @@ fill 33 84 -30 33 84 -29 minecraft:coarse_dirt strict
 setblock 34 84 -33 minecraft:dirt strict
 fill 34 84 -32 34 84 -29 minecraft:coarse_dirt strict
 fill 35 84 -32 35 84 -31 minecraft:coarse_dirt strict
-setblock 35 84 -30 minecraft:hanging_roots strict
 setblock 112 84 -1 minecraft:crimson_nylium strict
 setblock 112 84 2 minecraft:soul_lantern[hanging=true] strict
 fill 121 84 -1 121 84 1 minecraft:amethyst_block strict
@@ -2328,18 +2869,13 @@ setblock 126 84 -2 minecraft:amethyst_block strict
 fill 126 84 -1 126 84 1 minecraft:smooth_quartz strict
 setblock 126 84 2 minecraft:amethyst_block strict
 fill 127 84 -1 127 84 1 minecraft:amethyst_block strict
-setblock -37 85 31 minecraft:hanging_roots strict
-setblock -36 85 29 minecraft:hanging_roots strict
 setblock -36 85 30 minecraft:rooted_dirt strict
 fill -36 85 31 -36 85 33 minecraft:coarse_dirt strict
-setblock -35 85 28 minecraft:hanging_roots strict
 fill -35 85 29 -34 85 29 minecraft:rooted_dirt strict
 fill -35 85 30 -34 85 33 minecraft:coarse_dirt strict
-setblock 27 85 -33 minecraft:hanging_roots strict
 fill 27 85 -32 27 85 -29 minecraft:dirt strict
 fill 28 85 -33 28 85 -28 minecraft:dirt strict
 fill 29 85 -34 29 85 -28 minecraft:dirt strict
-setblock 29 85 -27 minecraft:hanging_roots strict
 fill 30 85 -35 30 85 -29 minecraft:dirt strict
 fill 30 85 -28 30 85 -27 minecraft:coarse_dirt strict
 fill 31 85 -35 31 85 -31 minecraft:dirt strict
@@ -2349,6 +2885,7 @@ fill 32 85 -30 32 85 -29 minecraft:coarse_dirt strict
 fill 32 85 -28 34 85 -28 minecraft:rooted_dirt strict
 fill 33 85 -34 33 85 -32 minecraft:dirt strict
 fill 33 85 -31 33 85 -29 minecraft:coarse_dirt strict
+setblock 33 85 -27 minecraft:hanging_roots strict
 fill 34 85 -34 34 85 -31 minecraft:dirt strict
 fill 34 85 -30 34 85 -29 minecraft:coarse_dirt strict
 fill 35 85 -33 35 85 -30 minecraft:dirt strict
@@ -2365,16 +2902,19 @@ fill 124 85 -3 125 85 -3 minecraft:calcite strict
 fill 124 85 -2 125 85 3 minecraft:smooth_quartz strict
 fill 126 85 -2 126 86 2 minecraft:smooth_quartz strict
 fill 127 85 -1 127 85 1 minecraft:calcite strict
+setblock -37 86 29 minecraft:hanging_roots strict
 fill -37 86 30 -37 86 31 minecraft:rooted_dirt strict
 setblock -37 86 32 minecraft:coarse_dirt strict
 fill -36 86 29 -36 86 31 minecraft:rooted_dirt strict
 fill -36 86 32 -36 86 33 minecraft:coarse_dirt strict
 fill -35 86 28 -34 86 33 minecraft:coarse_dirt strict
-setblock -33 86 28 minecraft:hanging_roots strict
+setblock -34 86 34 minecraft:hanging_roots strict
 fill -33 86 29 -33 86 31 minecraft:coarse_dirt strict
 setblock -33 86 32 minecraft:dirt strict
-setblock -33 86 33 minecraft:hanging_roots strict
 fill -32 86 30 -32 86 31 minecraft:dirt strict
+setblock -32 86 32 minecraft:hanging_roots strict
+setblock -31 86 30 minecraft:hanging_roots strict
+setblock 27 86 -34 minecraft:hanging_roots strict
 fill 27 86 -33 27 86 -29 minecraft:dirt strict
 fill 28 86 -34 28 86 -29 minecraft:dirt strict
 setblock 28 86 -28 minecraft:coarse_dirt strict
@@ -2408,9 +2948,8 @@ fill -36 87 28 -36 87 33 minecraft:coarse_dirt strict
 setblock -36 87 34 minecraft:hanging_roots strict
 setblock -35 87 -11 minecraft:red_banner[rotation=4] strict
 setblock -35 87 11 minecraft:red_banner[rotation=4] strict
+setblock -35 87 27 minecraft:hanging_roots strict
 fill -35 87 28 -33 87 34 minecraft:dirt strict
-setblock -34 87 27 minecraft:hanging_roots strict
-setblock -32 87 28 minecraft:hanging_roots strict
 fill -32 87 29 -32 87 32 minecraft:dirt strict
 setblock -32 87 33 minecraft:hanging_roots strict
 fill -31 87 30 -31 87 32 minecraft:dirt strict
@@ -2438,17 +2977,16 @@ fill -36 88 28 -36 88 34 minecraft:dirt strict
 fill -35 88 27 -34 88 34 minecraft:dirt strict
 fill -33 88 28 -33 88 34 minecraft:dirt strict
 fill -32 88 28 -32 89 34 minecraft:coarse_dirt strict
+setblock -31 88 28 minecraft:hanging_roots strict
 fill -31 88 29 -31 88 33 minecraft:coarse_dirt strict
+setblock -30 88 29 minecraft:hanging_roots strict
 fill -30 88 31 -30 88 32 minecraft:coarse_dirt strict
-setblock -30 88 33 minecraft:hanging_roots strict
 fill 29 88 -35 31 89 -27 minecraft:dirt strict
 fill 32 88 -36 32 89 -27 minecraft:dirt strict
 fill 33 88 -35 33 89 -27 minecraft:dirt strict
 fill 34 88 -34 34 89 -28 minecraft:dirt strict
 fill 35 88 -33 35 89 -29 minecraft:dirt strict
-setblock 35 88 31 minecraft:hanging_roots strict
 fill 36 88 31 36 88 32 minecraft:coarse_dirt strict
-setblock 37 88 31 minecraft:hanging_roots strict
 fill 37 88 32 38 88 32 minecraft:coarse_dirt strict
 fill 121 88 -1 121 88 1 minecraft:sea_lantern strict
 setblock 122 88 -2 minecraft:sea_lantern strict
@@ -2461,542 +2999,4 @@ setblock 126 88 -2 minecraft:sea_lantern strict
 fill 126 88 -1 126 88 1 minecraft:smooth_quartz strict
 setblock 126 88 2 minecraft:sea_lantern strict
 setblock 126 88 11 minecraft:amethyst_block strict
-fill 127 88 -1 127 88 1 minecraft:sea_lantern strict
-setblock 129 88 10 minecraft:end_stone_bricks strict
-setblock 131 88 8 minecraft:lantern[hanging=true] strict
-fill -38 89 29 -38 89 33 minecraft:dirt strict
-fill -37 89 28 -37 89 34 minecraft:dirt strict
-fill -36 89 27 -36 89 34 minecraft:dirt strict
-setblock -36 89 35 minecraft:hanging_roots strict
-fill -35 89 27 -35 89 28 minecraft:dirt strict
-fill -35 89 29 -35 89 35 minecraft:coarse_dirt strict
-fill -34 89 27 -33 89 27 minecraft:dirt strict
-fill -34 89 28 -33 89 35 minecraft:coarse_dirt strict
-setblock -32 89 -35 minecraft:rooted_dirt strict
-setblock -31 89 28 minecraft:dirt strict
-fill -31 89 29 -31 89 34 minecraft:coarse_dirt strict
-fill -30 89 29 -30 90 33 minecraft:dirt strict
-fill 35 89 30 35 89 32 minecraft:coarse_dirt strict
-fill 36 89 30 36 89 33 minecraft:coarse_dirt strict
-setblock 37 89 31 minecraft:rooted_dirt strict
-fill 37 89 32 37 89 33 minecraft:coarse_dirt strict
-fill 38 89 31 38 89 32 minecraft:rooted_dirt strict
-setblock 38 89 33 minecraft:coarse_dirt strict
-setblock 39 89 32 minecraft:rooted_dirt strict
-setblock 39 89 33 minecraft:hanging_roots strict
-fill 121 89 -1 121 91 -1 minecraft:smooth_quartz strict
-fill 121 89 0 121 91 0 minecraft:calcite strict
-fill 121 89 1 121 91 1 minecraft:smooth_quartz strict
-fill 122 89 -2 122 91 -2 minecraft:calcite strict
-fill 122 89 -1 122 91 2 minecraft:smooth_quartz strict
-fill 123 89 -3 123 91 -3 minecraft:calcite strict
-fill 123 89 -2 123 91 3 minecraft:smooth_quartz strict
-fill 124 89 -3 125 91 3 minecraft:smooth_quartz strict
-fill 126 89 -2 126 90 -2 minecraft:calcite strict
-fill 126 89 -1 126 90 2 minecraft:smooth_quartz strict
-fill 127 89 -1 127 91 0 minecraft:smooth_quartz strict
-fill 127 89 1 127 91 1 minecraft:calcite strict
-setblock 131 89 8 minecraft:purpur_block strict
-fill -38 90 29 -38 90 30 minecraft:dirt strict
-fill -38 90 31 -38 90 33 minecraft:coarse_dirt strict
-fill -37 90 28 -37 90 29 minecraft:dirt strict
-fill -37 90 30 -37 90 34 minecraft:coarse_dirt strict
-fill -36 90 27 -35 90 29 minecraft:dirt strict
-fill -36 90 30 -35 90 35 minecraft:coarse_dirt strict
-fill -34 90 27 -34 90 30 minecraft:dirt strict
-fill -34 90 31 -34 90 35 minecraft:coarse_dirt strict
-setblock -33 90 -35 minecraft:rooted_dirt strict
-setblock -33 90 -34 minecraft:hanging_roots strict
-fill -33 90 27 -32 90 35 minecraft:dirt strict
-setblock -32 90 -36 minecraft:coarse_dirt strict
-fill -32 90 -35 -32 90 -34 minecraft:rooted_dirt strict
-fill -31 90 -35 -31 90 -34 minecraft:hanging_roots strict
-fill -31 90 28 -31 90 34 minecraft:dirt strict
-setblock 26 90 -31 minecraft:grass_block strict
-fill 27 90 -34 27 90 -28 minecraft:grass_block strict
-fill 28 90 -34 28 90 -27 minecraft:grass_block strict
-fill 29 90 -35 31 90 -27 minecraft:grass_block strict
-fill 32 90 -36 32 90 -27 minecraft:grass_block strict
-fill 33 90 -35 33 90 -27 minecraft:grass_block strict
-fill 34 90 -34 34 90 -28 minecraft:grass_block strict
-fill 35 90 -33 35 90 -29 minecraft:grass_block strict
-fill 35 90 29 37 90 33 minecraft:rooted_dirt strict
-fill 36 90 -31 36 90 -30 minecraft:grass_block strict
-fill 38 90 30 38 90 33 minecraft:coarse_dirt strict
-fill 39 90 31 39 90 33 minecraft:dirt strict
-setblock 40 90 31 minecraft:hanging_roots strict
-setblock 133 90 6 minecraft:white_stained_glass strict
-setblock 134 90 3 minecraft:quartz_block strict
-fill -38 91 28 -38 91 31 minecraft:dirt strict
-fill -38 91 32 -38 91 34 minecraft:coarse_dirt strict
-fill -37 91 27 -37 91 32 minecraft:dirt strict
-fill -37 91 33 -37 91 35 minecraft:coarse_dirt strict
-fill -36 91 27 -32 91 35 minecraft:dirt strict
-fill -33 91 -36 -33 91 -35 minecraft:dirt strict
-fill -33 91 -34 -31 91 -34 minecraft:coarse_dirt strict
-fill -32 91 -37 -31 91 -35 minecraft:dirt strict
-fill -32 91 -33 -31 91 -33 minecraft:hanging_roots strict
-fill -31 91 28 -31 93 35 minecraft:dirt strict
-fill -30 91 29 -30 93 34 minecraft:dirt strict
-setblock 27 91 -34 minecraft:lily_of_the_valley strict
-setblock 27 91 -31 minecraft:white_tulip strict
-setblock 28 91 -31 minecraft:short_grass strict
-setblock 29 91 -32 minecraft:cornflower strict
-setblock 29 91 -27 minecraft:red_tulip strict
-setblock 30 91 -28 minecraft:blue_orchid strict
-setblock 30 91 -27 minecraft:lily_of_the_valley strict
-setblock 31 91 -33 minecraft:poppy strict
-fill 31 91 -31 31 95 -31 minecraft:cherry_log strict
-setblock 31 91 -29 minecraft:lily_of_the_valley strict
-setblock 31 91 -27 minecraft:azure_bluet strict
-setblock 32 91 -33 minecraft:orange_tulip strict
-setblock 32 91 -28 minecraft:poppy strict
-setblock 32 91 -27 minecraft:orange_tulip strict
-setblock 33 91 -34 minecraft:short_grass strict
-setblock 33 91 -32 minecraft:poppy strict
-setblock 33 91 -29 minecraft:poppy strict
-setblock 34 91 -32 minecraft:dandelion strict
-setblock 34 91 -30 minecraft:lily_of_the_valley strict
-setblock 34 91 30 minecraft:coarse_dirt strict
-fill 34 91 31 34 91 32 minecraft:rooted_dirt strict
-setblock 34 91 33 minecraft:hanging_roots strict
-setblock 35 91 -32 minecraft:white_tulip strict
-setblock 35 91 -31 minecraft:azure_bluet strict
-fill 35 91 29 35 91 33 minecraft:coarse_dirt strict
-setblock 36 91 -30 minecraft:pink_tulip strict
-fill 36 91 28 38 91 34 minecraft:dirt strict
-fill 39 91 29 39 91 33 minecraft:dirt strict
-setblock 39 91 34 minecraft:hanging_roots strict
-setblock 40 91 30 minecraft:hanging_roots strict
-fill 40 91 31 40 91 33 minecraft:dirt strict
-fill 126 91 -2 126 91 2 minecraft:smooth_quartz strict
-setblock 133 91 -3 minecraft:lantern[hanging=true] strict
-setblock 134 91 0 minecraft:purpur_pillar strict
-fill -38 92 28 -38 93 34 minecraft:dirt strict
-fill -37 92 27 -32 93 35 minecraft:dirt strict
-setblock -34 92 -35 minecraft:dirt strict
-setblock -34 92 -34 minecraft:hanging_roots strict
-fill -33 92 -37 -33 92 -34 minecraft:dirt strict
-setblock -33 92 -33 minecraft:hanging_roots strict
-fill -32 92 -38 -32 93 -33 minecraft:dirt strict
-setblock -31 92 -38 minecraft:hanging_roots strict
-fill -31 92 -37 -31 92 -33 minecraft:dirt strict
-fill -30 92 -37 -30 92 -34 minecraft:dirt strict
-setblock -29 92 -37 minecraft:hanging_roots strict
-fill -29 92 -36 -29 92 -35 minecraft:dirt strict
-setblock -28 92 -35 minecraft:hanging_roots strict
-fill 33 92 31 33 92 32 minecraft:hanging_roots strict
-fill 34 92 29 34 92 33 minecraft:dirt strict
-fill 35 92 28 39 92 34 minecraft:dirt strict
-fill 40 92 30 40 92 33 minecraft:dirt strict
-setblock 41 92 32 minecraft:hanging_roots strict
-fill 121 92 -1 121 92 1 minecraft:amethyst_block strict
-setblock 122 92 -2 minecraft:amethyst_block strict
-fill 122 92 -1 122 92 1 minecraft:smooth_quartz strict
-setblock 122 92 2 minecraft:amethyst_block strict
-fill 123 92 -3 125 92 -3 minecraft:amethyst_block strict
-fill 123 92 -2 125 92 2 minecraft:smooth_quartz strict
-fill 123 92 3 125 92 3 minecraft:amethyst_block strict
-setblock 126 92 -2 minecraft:amethyst_block strict
-fill 126 92 -1 126 92 1 minecraft:smooth_quartz strict
-setblock 126 92 2 minecraft:amethyst_block strict
-fill 127 92 -1 127 92 1 minecraft:amethyst_block strict
-setblock 131 92 -6 minecraft:end_stone strict
-setblock 133 92 -3 minecraft:light_blue_stained_glass strict
-fill -34 93 -36 -34 93 -34 minecraft:dirt strict
-fill -33 93 -37 -33 93 -33 minecraft:dirt strict
-fill -31 93 -38 -31 93 -32 minecraft:dirt strict
-fill -30 93 -38 -30 93 -33 minecraft:dirt strict
-setblock -29 93 -38 minecraft:hanging_roots strict
-fill -29 93 -37 -29 93 -33 minecraft:dirt strict
-fill -28 93 -36 -28 93 -35 minecraft:dirt strict
-fill 33 93 31 33 95 32 minecraft:dirt strict
-fill 34 93 28 34 93 33 minecraft:dirt strict
-fill 35 93 28 37 93 34 minecraft:dirt strict
-setblock 37 93 27 minecraft:coarse_dirt strict
-fill 38 93 28 39 93 28 minecraft:coarse_dirt strict
-fill 38 93 29 39 93 34 minecraft:dirt strict
-fill 40 93 29 40 93 33 minecraft:dirt strict
-fill 41 93 31 41 95 32 minecraft:dirt strict
-setblock 121 93 -1 minecraft:smooth_quartz strict
-setblock 121 93 0 minecraft:calcite strict
-setblock 121 93 1 minecraft:smooth_quartz strict
-fill 122 93 -2 122 93 2 minecraft:smooth_quartz strict
-setblock 123 93 -8 minecraft:lantern[hanging=true] strict
-fill 123 93 -3 124 93 -2 minecraft:smooth_quartz strict
-fill 123 93 -1 125 93 1 minecraft:iron_block strict
-fill 123 93 2 124 93 3 minecraft:smooth_quartz strict
-setblock 125 93 -3 minecraft:calcite strict
-setblock 125 93 -2 minecraft:smooth_quartz strict
-setblock 125 93 2 minecraft:smooth_quartz strict
-setblock 125 93 3 minecraft:calcite strict
-fill 126 93 -2 126 93 1 minecraft:smooth_quartz strict
-setblock 126 93 2 minecraft:calcite strict
-setblock 127 93 -1 minecraft:calcite strict
-setblock 127 93 0 minecraft:smooth_quartz strict
-setblock 127 93 1 minecraft:calcite strict
-setblock 129 93 -8 minecraft:amethyst_block strict
-fill -38 94 28 -38 94 34 minecraft:grass_block strict
-fill -37 94 27 -32 94 35 minecraft:grass_block strict
-fill -34 94 -37 -34 94 -33 minecraft:dirt strict
-fill -33 94 -38 -32 94 -32 minecraft:dirt strict
-setblock -32 94 -39 minecraft:hanging_roots strict
-fill -31 94 -38 -29 94 -35 minecraft:coarse_dirt strict
-fill -31 94 -34 -29 94 -32 minecraft:dirt strict
-fill -31 94 28 -31 94 35 minecraft:grass_block strict
-fill -30 94 29 -30 94 34 minecraft:grass_block strict
-fill -28 94 -37 -28 94 -34 minecraft:dirt strict
-setblock -27 94 -34 minecraft:hanging_roots strict
-fill 34 94 28 36 95 34 minecraft:dirt strict
-fill 37 94 27 37 95 34 minecraft:dirt strict
-fill 38 94 28 39 95 34 minecraft:dirt strict
-fill 40 94 28 40 95 33 minecraft:dirt strict
-fill 120 94 -2 120 94 2 minecraft:quartz_bricks strict
-fill 121 94 -3 121 95 3 minecraft:quartz_bricks strict
-fill 122 94 -4 123 94 4 minecraft:quartz_bricks strict
-setblock 123 94 -8 minecraft:purpur_block strict
-fill 124 94 -4 124 94 -1 minecraft:quartz_bricks strict
-setblock 124 94 0 minecraft:beacon strict
-fill 124 94 1 124 94 4 minecraft:quartz_bricks strict
-fill 125 94 -4 126 94 4 minecraft:quartz_bricks strict
-setblock 126 94 -9 minecraft:end_stone_bricks strict
-fill 127 94 -3 127 95 3 minecraft:quartz_bricks strict
-fill 128 94 -2 128 94 2 minecraft:quartz_bricks strict
-setblock -36 95 27 minecraft:allium strict
-fill -36 95 30 -35 95 30 minecraft:blue_orchid strict
-setblock -36 95 32 minecraft:short_grass strict
-setblock -36 95 34 minecraft:red_tulip strict
-fill -35 95 -36 -35 97 -35 minecraft:dirt strict
-setblock -35 95 34 minecraft:allium strict
-fill -34 95 -37 -32 95 -33 minecraft:coarse_dirt strict
-setblock -34 95 29 minecraft:poppy strict
-fill -34 95 31 -34 99 31 minecraft:oak_log strict
-fill -34 95 33 -34 95 34 minecraft:short_grass strict
-setblock -34 95 35 minecraft:allium strict
-setblock -33 95 -38 minecraft:dirt strict
-setblock -33 95 -32 minecraft:dirt strict
-setblock -33 95 28 minecraft:pink_tulip strict
-setblock -33 95 29 minecraft:cornflower strict
-fill -32 95 -39 -32 95 -38 minecraft:dirt strict
-fill -32 95 -32 -32 95 -31 minecraft:dirt strict
-setblock -32 95 28 minecraft:lily_of_the_valley strict
-setblock -32 95 33 minecraft:white_tulip strict
-setblock -32 95 34 minecraft:allium strict
-fill -31 95 -38 -30 97 -31 minecraft:dirt strict
-setblock -31 95 30 minecraft:short_grass strict
-setblock -31 95 32 minecraft:azure_bluet strict
-setblock -31 95 34 minecraft:oxeye_daisy strict
-setblock -31 95 35 minecraft:allium strict
-setblock -30 95 34 minecraft:orange_tulip strict
-fill -29 95 -38 -29 95 -32 minecraft:dirt strict
-fill -28 95 -37 -28 95 -33 minecraft:dirt strict
-fill -27 95 -36 -27 97 -34 minecraft:dirt strict
-setblock 30 95 -31 minecraft:cherry_leaves[persistent=true] strict
-setblock 31 95 -32 minecraft:cherry_log[axis=z] strict
-setblock 32 95 -32 minecraft:cherry_leaves[persistent=true] strict
-setblock 32 95 -30 minecraft:cherry_leaves[persistent=true] strict
-fill 119 95 -2 119 95 2 minecraft:gold_block strict
-fill 120 95 -3 120 95 -2 minecraft:gold_block strict
-fill 120 95 -1 120 95 1 minecraft:quartz_bricks strict
-fill 120 95 2 120 95 3 minecraft:gold_block strict
-setblock 121 95 -4 minecraft:gold_block strict
-setblock 121 95 4 minecraft:gold_block strict
-fill 122 95 -5 122 95 -4 minecraft:gold_block strict
-fill 122 95 -3 122 95 -1 minecraft:quartz_bricks strict
-setblock 122 95 0 minecraft:diamond_block strict
-fill 122 95 1 122 95 3 minecraft:quartz_bricks strict
-fill 122 95 4 122 95 5 minecraft:gold_block strict
-fill 123 95 -5 125 95 -5 minecraft:gold_block strict
-fill 123 95 -4 123 95 -2 minecraft:quartz_bricks strict
-fill 123 95 -1 123 95 1 minecraft:diamond_block strict
-fill 123 95 2 123 95 4 minecraft:quartz_bricks strict
-fill 123 95 5 125 95 5 minecraft:gold_block strict
-fill 124 95 -4 124 95 -3 minecraft:quartz_bricks strict
-fill 124 95 -2 124 95 -1 minecraft:diamond_block strict
-setblock 124 95 0 minecraft:lime_stained_glass strict
-fill 124 95 1 124 95 2 minecraft:diamond_block strict
-fill 124 95 3 124 95 4 minecraft:quartz_bricks strict
-fill 125 95 -4 125 95 -2 minecraft:quartz_bricks strict
-fill 125 95 -1 125 95 1 minecraft:diamond_block strict
-fill 125 95 2 125 95 4 minecraft:quartz_bricks strict
-fill 126 95 -5 126 95 -4 minecraft:gold_block strict
-fill 126 95 -3 126 95 -1 minecraft:quartz_bricks strict
-setblock 126 95 0 minecraft:diamond_block strict
-fill 126 95 1 126 95 3 minecraft:quartz_bricks strict
-fill 126 95 4 126 95 5 minecraft:gold_block strict
-setblock 127 95 -4 minecraft:gold_block strict
-setblock 127 95 4 minecraft:gold_block strict
-fill 128 95 -3 128 95 -2 minecraft:gold_block strict
-fill 128 95 -1 128 95 1 minecraft:quartz_bricks strict
-fill 128 95 2 128 95 3 minecraft:gold_block strict
-fill 129 95 -2 129 95 2 minecraft:gold_block strict
-fill -34 96 -37 -34 97 -33 minecraft:dirt strict
-fill -33 96 -38 -33 97 -32 minecraft:dirt strict
-fill -32 96 -39 -32 97 -31 minecraft:dirt strict
-fill -29 96 -38 -28 97 -32 minecraft:dirt strict
-fill 28 96 -33 28 96 -30 minecraft:cherry_leaves[persistent=true] strict
-fill 29 96 -33 29 96 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 30 96 -33 32 96 -28 minecraft:cherry_leaves[persistent=true] strict
-fill 33 96 -33 33 96 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 33 96 31 33 96 32 minecraft:grass_block strict
-setblock 34 96 -32 minecraft:cherry_leaves[persistent=true] strict
-setblock 34 96 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 34 96 28 36 96 34 minecraft:grass_block strict
-fill 37 96 27 37 96 34 minecraft:grass_block strict
-fill 38 96 28 39 96 34 minecraft:grass_block strict
-fill 40 96 28 40 96 33 minecraft:grass_block strict
-fill 41 96 31 41 96 32 minecraft:grass_block strict
-fill -35 97 32 -33 97 32 minecraft:oak_leaves[persistent=true] strict
-fill -34 97 30 -33 97 30 minecraft:oak_leaves[persistent=true] strict
-fill 28 97 -32 28 97 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 29 97 -34 29 97 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 30 97 -34 30 97 -28 minecraft:cherry_leaves[persistent=true] strict
-fill 31 97 -33 31 97 -29 minecraft:cherry_leaves[persistent=true] strict
-fill 32 97 -34 33 97 -29 minecraft:cherry_leaves[persistent=true] strict
-setblock 33 97 32 minecraft:orange_tulip strict
-fill 34 97 -31 34 97 -29 minecraft:cherry_leaves[persistent=true] strict
-setblock 35 97 29 minecraft:pink_tulip strict
-setblock 35 97 34 minecraft:lily_of_the_valley strict
-setblock 36 97 29 minecraft:dandelion strict
-setblock 37 97 29 minecraft:lily_of_the_valley strict
-fill 37 97 31 37 101 31 minecraft:mushroom_stem strict
-setblock 37 97 33 minecraft:blue_orchid strict
-setblock 38 97 30 minecraft:white_tulip strict
-setblock 39 97 30 minecraft:pink_tulip strict
-setblock 39 97 33 minecraft:dandelion strict
-fill -36 98 30 -36 98 32 minecraft:oak_leaves[persistent=true] strict
-fill -35 98 -36 -35 98 -35 minecraft:grass_block strict
-fill -35 98 29 -35 99 33 minecraft:oak_leaves[persistent=true] strict
-fill -34 98 -37 -34 98 -33 minecraft:grass_block strict
-fill -34 98 29 -34 99 30 minecraft:oak_leaves[persistent=true] strict
-fill -34 98 32 -34 99 33 minecraft:oak_leaves[persistent=true] strict
-fill -33 98 -38 -33 98 -32 minecraft:grass_block strict
-fill -33 98 29 -33 98 33 minecraft:oak_leaves[persistent=true] strict
-fill -32 98 -39 -32 98 -31 minecraft:grass_block strict
-fill -32 98 30 -32 98 32 minecraft:oak_leaves[persistent=true] strict
-fill -31 98 -38 -30 98 -31 minecraft:grass_block strict
-fill -29 98 -38 -28 98 -32 minecraft:grass_block strict
-fill -27 98 -36 -27 98 -34 minecraft:grass_block strict
-setblock -7 98 30 minecraft:hanging_roots strict
-fill -6 98 29 -5 98 31 minecraft:dirt strict
-setblock -5 98 32 minecraft:hanging_roots strict
-setblock -4 98 30 minecraft:hanging_roots strict
-setblock -36 99 31 minecraft:oak_leaves[persistent=true] strict
-setblock -34 99 -33 minecraft:red_tulip strict
-setblock -33 99 -38 minecraft:allium strict
-setblock -33 99 -35 minecraft:orange_tulip strict
-fill -33 99 -32 -32 99 -32 minecraft:dandelion strict
-fill -33 99 30 -33 100 32 minecraft:oak_leaves[persistent=true] strict
-setblock -32 99 -39 minecraft:pink_tulip strict
-setblock -32 99 -34 minecraft:allium strict
-fill -32 99 30 -32 99 31 minecraft:oak_leaves[persistent=true] strict
-setblock -31 99 -36 minecraft:short_grass strict
-fill -31 99 -35 -31 108 -35 minecraft:spruce_log strict
-setblock -31 99 -31 minecraft:azure_bluet strict
-setblock -30 99 -37 minecraft:short_grass strict
-setblock -30 99 -36 minecraft:poppy strict
-setblock -30 99 -35 minecraft:short_grass strict
-setblock -30 99 -32 minecraft:allium strict
-setblock -29 99 -34 minecraft:dandelion strict
-setblock -29 99 -33 minecraft:cornflower strict
-setblock -28 99 -36 minecraft:azure_bluet strict
-setblock -28 99 -35 minecraft:pink_tulip strict
-setblock -28 99 -34 minecraft:azure_bluet strict
-setblock -28 99 -32 minecraft:azure_bluet strict
-setblock -27 99 -35 minecraft:poppy strict
-setblock -27 99 -34 minecraft:short_grass strict
-fill -7 99 28 -7 99 30 minecraft:dirt strict
-setblock -7 99 31 minecraft:coarse_dirt strict
-fill -6 99 28 -6 99 29 minecraft:dirt strict
-fill -6 99 30 -5 99 32 minecraft:coarse_dirt strict
-fill -5 99 29 -4 99 29 minecraft:dirt strict
-fill -4 99 30 -4 99 31 minecraft:coarse_dirt strict
-setblock -4 99 32 minecraft:hanging_roots strict
-fill -35 100 30 -35 100 32 minecraft:oak_leaves[persistent=true] strict
-setblock -34 100 31 minecraft:oak_leaves[persistent=true] strict
-fill -8 100 29 -8 100 31 minecraft:dirt strict
-fill -7 100 28 -5 100 31 minecraft:dirt strict
-fill -7 100 32 -5 100 32 minecraft:coarse_dirt strict
-setblock -6 100 27 minecraft:hanging_roots strict
-fill -4 100 29 -4 100 30 minecraft:dirt strict
-fill -4 100 31 -4 100 32 minecraft:coarse_dirt strict
-fill -33 101 -37 -32 101 -33 minecraft:spruce_leaves[persistent=true] strict
-fill -31 101 -37 -31 101 -36 minecraft:spruce_leaves[persistent=true] strict
-fill -31 101 -34 -31 101 -33 minecraft:spruce_leaves[persistent=true] strict
-fill -30 101 -37 -29 101 -33 minecraft:spruce_leaves[persistent=true] strict
-fill -9 101 30 -9 103 31 minecraft:dirt strict
-fill -8 101 29 -8 103 32 minecraft:dirt strict
-fill -7 101 27 -7 103 32 minecraft:dirt strict
-fill -6 101 27 -6 101 28 minecraft:dirt strict
-fill -6 101 29 -6 101 33 minecraft:coarse_dirt strict
-fill -5 101 28 -5 101 32 minecraft:coarse_dirt strict
-fill -4 101 29 -4 101 31 minecraft:rooted_dirt strict
-setblock -4 101 32 minecraft:coarse_dirt strict
-setblock -3 101 30 minecraft:rooted_dirt strict
-fill -34 102 -37 -34 102 -33 minecraft:spruce_leaves[persistent=true] strict
-fill -33 102 -38 -32 102 -32 minecraft:spruce_leaves[persistent=true] strict
-fill -31 102 -38 -31 102 -36 minecraft:spruce_leaves[persistent=true] strict
-fill -31 102 -34 -31 102 -32 minecraft:spruce_leaves[persistent=true] strict
-fill -30 102 -38 -29 102 -32 minecraft:spruce_leaves[persistent=true] strict
-fill -28 102 -37 -28 102 -33 minecraft:spruce_leaves[persistent=true] strict
-fill -6 102 27 -6 103 33 minecraft:dirt strict
-fill -5 102 28 -5 103 32 minecraft:dirt strict
-fill -4 102 29 -4 103 32 minecraft:dirt strict
-fill -3 102 30 -3 103 30 minecraft:dirt strict
-fill 34 102 30 34 102 32 minecraft:brown_mushroom_block strict
-fill 35 102 29 35 102 33 minecraft:brown_mushroom_block strict
-fill 36 102 28 38 102 34 minecraft:brown_mushroom_block strict
-fill 39 102 29 39 102 33 minecraft:brown_mushroom_block strict
-fill 40 102 30 40 102 32 minecraft:brown_mushroom_block strict
-fill -33 103 -36 -33 104 -34 minecraft:spruce_leaves[persistent=true] strict
-fill -32 103 -37 -32 104 -33 minecraft:spruce_leaves[persistent=true] strict
-fill -31 103 -37 -31 104 -36 minecraft:spruce_leaves[persistent=true] strict
-fill -31 103 -34 -31 104 -33 minecraft:spruce_leaves[persistent=true] strict
-fill -30 103 -37 -30 104 -33 minecraft:spruce_leaves[persistent=true] strict
-fill -29 103 -36 -29 104 -34 minecraft:spruce_leaves[persistent=true] strict
-fill -9 104 30 -9 104 31 minecraft:grass_block strict
-fill -8 104 29 -8 104 32 minecraft:grass_block strict
-fill -7 104 27 -7 104 32 minecraft:grass_block strict
-fill -6 104 27 -6 104 33 minecraft:grass_block strict
-fill -5 104 28 -5 104 32 minecraft:grass_block strict
-fill -4 104 29 -4 104 32 minecraft:grass_block strict
-setblock -3 104 30 minecraft:grass_block strict
-fill -32 105 -36 -32 106 -34 minecraft:spruce_leaves[persistent=true] strict
-fill -31 105 -36 -31 108 -36 minecraft:spruce_leaves[persistent=true] strict
-fill -31 105 -34 -31 108 -34 minecraft:spruce_leaves[persistent=true] strict
-fill -30 105 -36 -30 106 -34 minecraft:spruce_leaves[persistent=true] strict
-setblock -8 105 29 minecraft:dandelion strict
-setblock -8 105 30 minecraft:allium strict
-setblock -7 105 27 minecraft:pink_tulip strict
-fill -7 105 29 -7 105 30 minecraft:azalea_leaves[persistent=true] strict
-setblock -7 105 31 minecraft:pink_tulip strict
-setblock -6 105 27 minecraft:orange_tulip strict
-setblock -6 105 29 minecraft:azalea_leaves[persistent=true] strict
-setblock -6 105 30 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -6 105 31 minecraft:white_tulip strict
-setblock -6 105 32 minecraft:oxeye_daisy strict
-setblock -5 105 29 minecraft:dandelion strict
-setblock -5 105 30 minecraft:azalea_leaves[persistent=true] strict
-setblock -5 105 31 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -3 105 30 minecraft:allium strict
-setblock -7 106 30 minecraft:flowering_azalea_leaves[persistent=true] strict
-fill -6 106 29 -6 106 31 minecraft:azalea_leaves[persistent=true] strict
-setblock -5 106 30 minecraft:flowering_azalea_leaves[persistent=true] strict
-fill -32 107 -35 -32 108 -35 minecraft:spruce_leaves[persistent=true] strict
-fill -30 107 -35 -30 108 -35 minecraft:spruce_leaves[persistent=true] strict
-fill -31 109 -35 -31 110 -35 minecraft:spruce_leaves[persistent=true] strict
-fill -83 64 -2 -69 64 -2 minecraft:spruce_fence
-fill -83 64 3 -70 64 3 minecraft:spruce_fence
-setblock -76 64 -29 minecraft:spruce_fence
-setblock -76 64 30 minecraft:spruce_fence
-setblock -76 64 35 minecraft:spruce_fence
-fill -75 64 -34 -75 64 -33 minecraft:spruce_fence
-fill -75 64 -29 -75 64 -28 minecraft:spruce_fence
-fill -75 64 29 -74 64 29 minecraft:spruce_fence
-fill -75 64 34 -74 64 34 minecraft:spruce_fence
-setblock -74 64 -33 minecraft:spruce_fence
-setblock -74 64 -28 minecraft:spruce_fence
-fill -73 64 -33 -73 64 -32 minecraft:spruce_fence
-fill -73 64 -28 -73 64 -27 minecraft:spruce_fence
-fill -73 64 28 -73 64 29 minecraft:spruce_fence
-fill -73 64 33 -73 64 34 minecraft:spruce_fence
-fill -72 64 -32 -71 64 -32 minecraft:spruce_fence
-fill -72 64 -27 -71 64 -27 minecraft:spruce_fence
-fill -72 64 28 -71 64 28 minecraft:spruce_fence
-fill -72 64 33 -71 64 33 minecraft:spruce_fence
-fill -70 64 -31 -69 64 -31 minecraft:spruce_fence
-fill -70 64 -26 -68 64 -26 minecraft:spruce_fence
-fill -70 64 27 -69 64 27 minecraft:spruce_fence
-fill -70 64 32 -69 64 32 minecraft:spruce_fence
-fill -68 64 -31 -68 64 -30 minecraft:spruce_fence
-fill -68 64 31 -66 64 31 minecraft:spruce_fence
-fill -67 64 -30 -66 64 -30 minecraft:spruce_fence
-fill -67 64 -25 -66 64 -25 minecraft:spruce_fence
-fill -65 64 -29 -64 64 -29 minecraft:spruce_fence
-setblock -57 64 -54 minecraft:spruce_fence
-fill -57 64 54 -57 64 55 minecraft:spruce_fence
-fill -56 64 -53 -56 64 -52 minecraft:spruce_fence
-fill -56 64 53 -56 64 54 minecraft:spruce_fence
-fill -55 64 -52 -55 64 -51 minecraft:spruce_fence
-fill -55 64 52 -55 64 53 minecraft:spruce_fence
-setblock -54 64 -57 minecraft:spruce_fence
-setblock -54 64 -51 minecraft:spruce_fence
-setblock -54 64 -25 minecraft:oak_fence
-fill -54 64 51 -54 64 52 minecraft:spruce_fence
-setblock -54 64 58 minecraft:spruce_fence
-setblock -53 64 -56 minecraft:spruce_fence
-fill -53 64 50 -53 64 51 minecraft:spruce_fence
-fill -53 64 57 -53 64 58 minecraft:spruce_fence
-fill -52 64 -56 -52 64 -55 minecraft:spruce_fence
-fill -52 64 49 -52 64 50 minecraft:spruce_fence
-setblock -52 64 56 minecraft:spruce_fence
-fill -51 64 -55 -51 64 -54 minecraft:spruce_fence
-setblock -51 64 49 minecraft:spruce_fence
-setblock -51 64 55 minecraft:spruce_fence
-setblock -50 64 54 minecraft:spruce_fence
-setblock -49 64 53 minecraft:spruce_fence
-setblock -48 64 -25 minecraft:oak_fence
-setblock -41 64 -25 minecraft:oak_fence
-setblock -34 64 -75 minecraft:spruce_fence
-fill -33 64 -75 -33 64 -73 minecraft:spruce_fence
-fill -33 64 74 -33 64 76 minecraft:spruce_fence
-fill -32 64 -73 -32 64 -71 minecraft:spruce_fence
-fill -32 64 71 -32 64 73 minecraft:spruce_fence
-fill -31 64 -70 -31 64 -68 minecraft:spruce_fence
-fill -31 64 69 -31 64 71 minecraft:spruce_fence
-fill -30 64 -68 -30 64 -66 minecraft:spruce_fence
-fill -30 64 30 -30 65 30 minecraft:stone_brick_wall
-fill -30 64 66 -30 64 69 minecraft:spruce_fence
-fill -29 64 -76 -29 64 -75 minecraft:spruce_fence
-fill -29 64 -65 -29 64 -63 minecraft:spruce_fence
-fill -29 64 64 -29 64 66 minecraft:spruce_fence
-setblock -29 64 76 minecraft:spruce_fence
-fill -28 64 -75 -28 64 -73 minecraft:spruce_fence
-fill -28 64 74 -28 64 76 minecraft:spruce_fence
-fill -27 64 -73 -27 64 -71 minecraft:spruce_fence
-fill -27 64 71 -27 64 73 minecraft:spruce_fence
-fill -26 64 -70 -26 64 -68 minecraft:spruce_fence
-fill -26 64 69 -26 64 71 minecraft:spruce_fence
-fill -25 64 -67 -25 64 -66 minecraft:spruce_fence
-fill -25 64 67 -25 64 68 minecraft:spruce_fence
-fill -24 64 65 -24 64 66 minecraft:spruce_fence
-fill -2 64 -83 -2 64 -70 minecraft:spruce_fence
-fill -2 64 73 -2 64 83 minecraft:spruce_fence
-fill 3 64 -83 3 64 -70 minecraft:spruce_fence
-fill 3 64 73 3 64 83 minecraft:spruce_fence
-fill 26 64 68 26 64 69 minecraft:spruce_fence
-fill 27 64 -70 27 64 -69 minecraft:spruce_fence
-fill 27 64 70 27 64 71 minecraft:spruce_fence
-fill 28 64 -73 28 64 -71 minecraft:spruce_fence
-fill 28 64 72 28 64 74 minecraft:spruce_fence
-fill 29 64 -75 29 64 -73 minecraft:spruce_fence
-fill 29 64 74 29 64 76 minecraft:spruce_fence
-setblock 30 64 -76 minecraft:spruce_fence
-fill 31 64 -68 31 64 -67 minecraft:spruce_fence
-fill 31 64 67 31 64 69 minecraft:spruce_fence
-fill 32 64 -70 32 64 -69 minecraft:spruce_fence
-fill 32 64 70 32 64 72 minecraft:spruce_fence
-fill 33 64 -73 33 64 -71 minecraft:spruce_fence
-fill 33 64 72 33 64 74 minecraft:spruce_fence
-fill 34 64 -75 34 64 -73 minecraft:spruce_fence
-fill 34 64 74 34 64 75 minecraft:spruce_fence
-setblock 35 64 -76 minecraft:spruce_fence
-setblock 47 64 50 minecraft:spruce_fence
-setblock 48 64 51 minecraft:spruce_fence
-setblock 49 64 -52 minecraft:spruce_fence
-fill 49 64 52 49 64 53 minecraft:spruce_fence
-fill 50 64 -53 50 64 -52 minecraft:spruce_fence
-setblock 50 64 47 minecraft:spruce_fence
-fill 50 64 53 50 64 54 minecraft:spruce_fence
-fill 51 64 -54 51 64 -53 minecraft:spruce_fence
-setblock 51 64 48 minecraft:spruce_fence
-fill 51 64 54 51 64 55 minecraft:spruce_fence
-fill 52 64 -55 52 64 -54 minecraft:spruce_fence
-setblock 52 64 49 minecraft:spruce_fence
-fill 52 64 55 52 64 56 minecraft:spruce_fence
-fill 53 64 -56 53 64 -55 minecraft:spruce_fence
-setblock 53 64 -49 minecraft:spruce_fence
-fill 53 64 49 53 64 50 minecraft:spruce_fence
-setblock 53 64 56 minecraft:spruce_fence
-fill 54 64 -57 54 64 -56 minecraft:spruce_fence
 schedule function mg:lobby/build_11 1t

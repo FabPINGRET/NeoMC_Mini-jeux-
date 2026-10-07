@@ -1,4 +1,400 @@
 # Spawn, partie 8/11 (généré par tools/lobby/gen_lobby.py)
+setblock -3 63 43 minecraft:black_concrete strict
+setblock -3 63 54 minecraft:red_concrete strict
+setblock -3 63 55 minecraft:gray_concrete strict
+setblock -3 63 56 minecraft:light_gray_concrete strict
+setblock -3 63 57 minecraft:gray_concrete strict
+fill -3 63 58 -2 63 58 minecraft:white_concrete strict
+fill -3 63 60 -2 63 60 minecraft:coarse_dirt strict
+fill -3 63 61 -2 63 61 minecraft:dirt_path strict
+fill -3 63 166 -2 63 166 minecraft:white_concrete strict
+fill -3 63 167 -2 63 174 minecraft:gray_concrete strict
+setblock -3 63 175 minecraft:white_concrete strict
+fill -3 63 176 -3 63 177 minecraft:stone_bricks strict
+fill -2 63 -83 3 63 -70 minecraft:spruce_planks strict
+fill -2 63 -59 2 63 -56 minecraft:grass_block strict
+fill -2 63 -55 -2 63 -54 minecraft:purpur_block strict
+fill -2 63 -51 -2 63 -50 minecraft:obsidian strict
+setblock -2 63 -49 minecraft:crying_obsidian strict
+fill -2 63 -48 -2 63 -46 minecraft:obsidian strict
+setblock -2 63 -45 minecraft:crying_obsidian strict
+fill -2 63 -44 -2 63 -41 minecraft:obsidian strict
+fill -2 63 -40 -2 63 -39 minecraft:purpur_block strict
+fill -2 63 -38 -2 63 -36 minecraft:stone_bricks strict
+setblock -2 63 -35 minecraft:cracked_stone_bricks strict
+setblock -2 63 -34 minecraft:stone_bricks strict
+fill -2 63 -33 -2 63 -31 minecraft:cracked_stone_bricks strict
+fill -2 63 -30 -2 63 -28 minecraft:stone_bricks strict
+setblock -2 63 -27 minecraft:cracked_stone_bricks strict
+fill -2 63 -26 -2 63 -21 minecraft:stone_bricks strict
+setblock -2 63 -20 minecraft:cracked_stone_bricks strict
+fill -2 63 -19 -2 63 -15 minecraft:stone_bricks strict
+fill -2 63 -14 -1 63 -14 minecraft:polished_diorite strict
+fill -2 63 -13 -1 63 -13 minecraft:polished_andesite strict
+fill -2 63 -12 -1 63 -12 minecraft:polished_diorite strict
+fill -2 63 -11 -2 63 -10 minecraft:polished_andesite strict
+fill -2 63 -8 -2 63 -6 minecraft:water strict
+fill -2 63 -5 2 63 -5 minecraft:polished_blackstone_bricks strict
+fill -2 63 -4 -2 63 -3 minecraft:smooth_quartz strict
+setblock -2 63 -2 minecraft:waxed_cut_copper strict
+setblock -2 63 -1 minecraft:smooth_quartz strict
+setblock -2 63 1 minecraft:smooth_quartz strict
+setblock -2 63 2 minecraft:waxed_cut_copper strict
+fill -2 63 3 -2 63 4 minecraft:smooth_quartz strict
+fill -2 63 5 2 63 5 minecraft:polished_blackstone_bricks strict
+fill -2 63 6 -2 63 8 minecraft:water strict
+fill -2 63 10 -2 63 11 minecraft:polished_diorite strict
+fill -2 63 12 0 63 12 minecraft:polished_andesite strict
+fill -2 63 13 0 63 13 minecraft:polished_diorite strict
+fill -2 63 14 0 63 14 minecraft:polished_andesite strict
+fill -2 63 15 -2 63 17 minecraft:stone_bricks strict
+setblock -2 63 18 minecraft:mossy_stone_bricks strict
+fill -2 63 19 -2 63 24 minecraft:stone_bricks strict
+setblock -2 63 25 minecraft:cracked_stone_bricks strict
+setblock -2 63 26 minecraft:stone_bricks strict
+setblock -2 63 27 minecraft:mossy_stone_bricks strict
+fill -2 63 28 -2 63 35 minecraft:stone_bricks strict
+setblock -2 63 36 minecraft:mossy_stone_bricks strict
+fill -2 63 39 3 63 41 minecraft:gray_concrete strict
+setblock -2 63 42 minecraft:red_concrete strict
+setblock -2 63 43 minecraft:white_concrete strict
+fill -2 63 44 -1 63 45 minecraft:black_concrete strict
+fill -2 63 46 -1 63 47 minecraft:white_concrete strict
+fill -2 63 48 -1 63 49 minecraft:black_concrete strict
+fill -2 63 50 -1 63 51 minecraft:white_concrete strict
+fill -2 63 52 -1 63 53 minecraft:black_concrete strict
+setblock -2 63 54 minecraft:white_concrete strict
+fill -2 63 55 -2 63 57 minecraft:gray_concrete strict
+setblock -2 63 62 minecraft:red_concrete strict
+fill -2 63 73 3 63 83 minecraft:spruce_planks strict
+fill -2 63 164 -1 63 164 minecraft:stone_bricks strict
+setblock -2 63 165 minecraft:red_concrete strict
+setblock -2 63 175 minecraft:red_concrete strict
+setblock -2 63 176 minecraft:stone_bricks strict
+fill -1 63 -69 1 63 -60 minecraft:dirt_path strict
+fill -1 63 -55 1 63 -55 minecraft:purpur_block strict
+fill -1 63 -54 -1 63 -53 minecraft:obsidian strict
+fill -1 63 -51 -1 63 -44 minecraft:obsidian strict
+setblock -1 63 -43 minecraft:crying_obsidian strict
+fill -1 63 -42 -1 63 -40 minecraft:obsidian strict
+fill -1 63 -39 1 63 -39 minecraft:purpur_block strict
+fill -1 63 -38 -1 63 -31 minecraft:stone_bricks strict
+setblock -1 63 -30 minecraft:cracked_stone_bricks strict
+fill -1 63 -29 -1 63 -18 minecraft:stone_bricks strict
+setblock -1 63 -17 minecraft:mossy_stone_bricks strict
+fill -1 63 -16 -1 63 -15 minecraft:stone_bricks strict
+setblock -1 63 -11 minecraft:polished_andesite strict
+setblock -1 63 -10 minecraft:polished_diorite strict
+fill -1 63 -8 1 63 -6 minecraft:smooth_quartz strict
+fill -1 63 -4 -1 63 -2 minecraft:smooth_quartz strict
+fill -1 63 -1 -1 63 1 minecraft:gold_block strict
+fill -1 63 2 -1 63 4 minecraft:smooth_quartz strict
+fill -1 63 6 1 63 8 minecraft:smooth_quartz strict
+fill -1 63 10 0 63 10 minecraft:polished_andesite strict
+fill -1 63 11 0 63 11 minecraft:polished_diorite strict
+fill -1 63 15 -1 63 22 minecraft:stone_bricks strict
+setblock -1 63 23 minecraft:mossy_stone_bricks strict
+fill -1 63 24 -1 63 27 minecraft:stone_bricks strict
+setblock -1 63 28 minecraft:cracked_stone_bricks strict
+fill -1 63 29 -1 63 30 minecraft:stone_bricks strict
+setblock -1 63 31 minecraft:cracked_stone_bricks strict
+fill -1 63 32 -1 63 36 minecraft:stone_bricks strict
+setblock -1 63 38 minecraft:white_concrete strict
+fill -1 63 42 -1 63 43 minecraft:white_concrete strict
+fill -1 63 54 -1 63 56 minecraft:yellow_glazed_terracotta strict
+fill -1 63 57 1 63 57 minecraft:gray_concrete strict
+fill -1 63 58 0 63 58 minecraft:red_concrete strict
+fill -1 63 60 4 63 61 minecraft:dirt_path strict
+fill -1 63 62 -1 63 65 minecraft:black_concrete strict
+fill -1 63 66 -1 63 70 minecraft:white_concrete strict
+fill -1 63 71 2 63 72 minecraft:dirt_path strict
+setblock -1 63 165 minecraft:white_concrete strict
+fill -1 63 166 -1 63 173 minecraft:gray_concrete strict
+setblock -1 63 174 minecraft:white_concrete strict
+fill -1 63 175 0 63 175 minecraft:stone_bricks strict
+fill 0 63 -54 0 63 -48 minecraft:obsidian strict
+setblock 0 63 -47 minecraft:crying_obsidian strict
+fill 0 63 -46 0 63 -40 minecraft:obsidian strict
+fill 0 63 -38 0 63 -26 minecraft:stone_bricks strict
+setblock 0 63 -25 minecraft:mossy_stone_bricks strict
+fill 0 63 -24 0 63 -15 minecraft:stone_bricks strict
+fill 0 63 -14 2 63 -14 minecraft:polished_andesite strict
+fill 0 63 -13 2 63 -13 minecraft:polished_diorite strict
+fill 0 63 -12 2 63 -12 minecraft:polished_andesite strict
+fill 0 63 -11 1 63 -11 minecraft:polished_diorite strict
+fill 0 63 -10 1 63 -10 minecraft:polished_andesite strict
+setblock 0 63 -9 minecraft:chiseled_stone_bricks strict
+fill 0 63 -4 0 63 4 minecraft:gold_block strict
+setblock 0 63 9 minecraft:chiseled_stone_bricks strict
+fill 0 63 15 0 63 23 minecraft:stone_bricks strict
+setblock 0 63 24 minecraft:cracked_stone_bricks strict
+fill 0 63 25 0 63 36 minecraft:stone_bricks strict
+fill 0 63 38 1 63 38 minecraft:red_concrete strict
+fill 0 63 42 1 63 42 minecraft:red_concrete strict
+fill 0 63 43 1 63 43 minecraft:black_concrete strict
+fill 0 63 44 1 63 45 minecraft:white_concrete strict
+fill 0 63 46 1 63 47 minecraft:black_concrete strict
+fill 0 63 48 1 63 49 minecraft:white_concrete strict
+fill 0 63 50 1 63 51 minecraft:black_concrete strict
+fill 0 63 52 1 63 53 minecraft:white_concrete strict
+setblock 0 63 54 minecraft:yellow_glazed_terracotta strict
+setblock 0 63 55 minecraft:gold_block strict
+setblock 0 63 56 minecraft:yellow_glazed_terracotta strict
+setblock 0 63 62 minecraft:white_concrete strict
+setblock 0 63 63 minecraft:black_concrete strict
+setblock 0 63 64 minecraft:white_concrete strict
+setblock 0 63 65 minecraft:black_concrete strict
+setblock 0 63 66 minecraft:white_concrete strict
+setblock 0 63 67 minecraft:black_concrete strict
+setblock 0 63 68 minecraft:white_concrete strict
+setblock 0 63 69 minecraft:black_concrete strict
+setblock 0 63 70 minecraft:white_concrete strict
+fill 0 63 163 2 63 163 minecraft:stone_bricks strict
+fill 0 63 164 0 63 165 minecraft:white_concrete strict
+fill 0 63 166 0 63 172 minecraft:gray_concrete strict
+fill 0 63 173 0 63 174 minecraft:white_concrete strict
+fill 1 63 -54 1 63 -52 minecraft:obsidian strict
+setblock 1 63 -51 minecraft:crying_obsidian strict
+fill 1 63 -50 1 63 -43 minecraft:obsidian strict
+fill 1 63 -42 4 63 -42 minecraft:crying_obsidian strict
+fill 1 63 -41 1 63 -40 minecraft:obsidian strict
+setblock 1 63 -38 minecraft:stone_bricks strict
+setblock 1 63 -37 minecraft:mossy_stone_bricks strict
+fill 1 63 -36 1 63 -21 minecraft:stone_bricks strict
+setblock 1 63 -20 minecraft:mossy_stone_bricks strict
+fill 1 63 -19 1 63 -17 minecraft:stone_bricks strict
+setblock 1 63 -16 minecraft:mossy_stone_bricks strict
+setblock 1 63 -15 minecraft:stone_bricks strict
+fill 1 63 -9 4 63 -9 minecraft:stone_bricks strict
+fill 1 63 -4 1 63 -2 minecraft:smooth_quartz strict
+fill 1 63 -1 1 63 1 minecraft:gold_block strict
+fill 1 63 2 1 63 4 minecraft:smooth_quartz strict
+fill 1 63 9 4 63 9 minecraft:stone_bricks strict
+setblock 1 63 10 minecraft:polished_diorite strict
+setblock 1 63 11 minecraft:polished_andesite strict
+fill 1 63 12 2 63 12 minecraft:polished_diorite strict
+fill 1 63 13 2 63 13 minecraft:polished_andesite strict
+fill 1 63 14 2 63 14 minecraft:polished_diorite strict
+fill 1 63 15 1 63 36 minecraft:stone_bricks strict
+fill 1 63 54 1 63 56 minecraft:yellow_glazed_terracotta strict
+setblock 1 63 58 minecraft:white_concrete strict
+setblock 1 63 62 minecraft:black_concrete strict
+setblock 1 63 63 minecraft:white_concrete strict
+setblock 1 63 64 minecraft:black_concrete strict
+setblock 1 63 65 minecraft:white_concrete strict
+setblock 1 63 66 minecraft:black_concrete strict
+setblock 1 63 67 minecraft:white_concrete strict
+setblock 1 63 68 minecraft:black_concrete strict
+setblock 1 63 69 minecraft:white_concrete strict
+setblock 1 63 70 minecraft:black_concrete strict
+fill 1 63 164 2 63 164 minecraft:white_concrete strict
+fill 1 63 165 1 63 172 minecraft:gray_concrete strict
+setblock 1 63 173 minecraft:red_concrete strict
+setblock 1 63 174 minecraft:stone_bricks strict
+fill 2 63 -69 2 63 -64 minecraft:dirt_path strict
+fill 2 63 -63 2 63 -61 minecraft:coarse_dirt strict
+setblock 2 63 -60 minecraft:dirt_path strict
+fill 2 63 -55 2 63 -54 minecraft:purpur_block strict
+fill 2 63 -53 2 63 -50 minecraft:obsidian strict
+setblock 2 63 -49 minecraft:crying_obsidian strict
+fill 2 63 -48 2 63 -46 minecraft:obsidian strict
+setblock 2 63 -45 minecraft:crying_obsidian strict
+fill 2 63 -44 2 63 -43 minecraft:obsidian strict
+fill 2 63 -41 3 63 -41 minecraft:obsidian strict
+fill 2 63 -40 2 63 -39 minecraft:purpur_block strict
+fill 2 63 -38 2 63 -32 minecraft:stone_bricks strict
+setblock 2 63 -31 minecraft:mossy_stone_bricks strict
+fill 2 63 -30 2 63 -22 minecraft:stone_bricks strict
+setblock 2 63 -21 minecraft:cracked_stone_bricks strict
+fill 2 63 -20 2 63 -15 minecraft:stone_bricks strict
+fill 2 63 -11 2 63 -10 minecraft:polished_diorite strict
+fill 2 63 -8 2 63 -6 minecraft:water strict
+fill 2 63 -4 2 63 -3 minecraft:smooth_quartz strict
+setblock 2 63 -2 minecraft:waxed_cut_copper strict
+setblock 2 63 -1 minecraft:smooth_quartz strict
+fill 2 63 0 4 63 0 minecraft:gold_block strict
+setblock 2 63 1 minecraft:smooth_quartz strict
+setblock 2 63 2 minecraft:waxed_cut_copper strict
+fill 2 63 3 2 63 4 minecraft:smooth_quartz strict
+fill 2 63 6 2 63 8 minecraft:water strict
+fill 2 63 10 2 63 11 minecraft:polished_andesite strict
+fill 2 63 15 2 63 26 minecraft:stone_bricks strict
+setblock 2 63 27 minecraft:cracked_stone_bricks strict
+fill 2 63 28 2 63 36 minecraft:stone_bricks strict
+fill 2 63 38 3 63 38 minecraft:white_concrete strict
+fill 2 63 42 2 63 43 minecraft:white_concrete strict
+fill 2 63 44 3 63 45 minecraft:black_concrete strict
+fill 2 63 46 3 63 47 minecraft:white_concrete strict
+fill 2 63 48 3 63 49 minecraft:black_concrete strict
+fill 2 63 50 3 63 51 minecraft:white_concrete strict
+fill 2 63 52 3 63 53 minecraft:black_concrete strict
+setblock 2 63 54 minecraft:red_concrete strict
+fill 2 63 55 3 63 57 minecraft:gray_concrete strict
+fill 2 63 58 3 63 58 minecraft:red_concrete strict
+setblock 2 63 62 minecraft:white_concrete strict
+fill 2 63 63 8 63 69 minecraft:gray_concrete strict
+fill 2 63 70 8 63 70 minecraft:white_concrete strict
+fill 2 63 165 2 63 171 minecraft:gray_concrete strict
+setblock 2 63 172 minecraft:white_concrete strict
+fill 2 63 173 2 63 174 minecraft:stone_bricks strict
+fill 3 63 -69 4 63 -64 minecraft:grass_block strict
+fill 3 63 -63 3 63 -62 minecraft:packed_mud strict
+fill 3 63 -61 3 63 -60 minecraft:coarse_dirt strict
+fill 3 63 -59 4 63 -55 minecraft:grass_block strict
+setblock 3 63 -54 minecraft:purpur_block strict
+fill 3 63 -53 3 63 -43 minecraft:obsidian strict
+setblock 3 63 -40 minecraft:purpur_block strict
+fill 3 63 -39 3 63 -15 minecraft:polished_andesite strict
+setblock 3 63 -14 minecraft:polished_diorite strict
+fill 3 63 -13 6 63 -13 minecraft:polished_andesite strict
+fill 3 63 -12 6 63 -12 minecraft:polished_diorite strict
+fill 3 63 -11 6 63 -11 minecraft:polished_andesite strict
+fill 3 63 -10 6 63 -10 minecraft:polished_diorite strict
+fill 3 63 -8 3 63 -5 minecraft:water strict
+setblock 3 63 -4 minecraft:polished_blackstone_bricks strict
+setblock 3 63 -3 minecraft:waxed_cut_copper strict
+fill 3 63 -2 4 63 -1 minecraft:smooth_quartz strict
+fill 3 63 1 4 63 2 minecraft:smooth_quartz strict
+setblock 3 63 3 minecraft:waxed_cut_copper strict
+setblock 3 63 4 minecraft:polished_blackstone_bricks strict
+fill 3 63 5 3 63 8 minecraft:water strict
+fill 3 63 10 6 63 10 minecraft:polished_andesite strict
+fill 3 63 11 6 63 11 minecraft:polished_diorite strict
+fill 3 63 12 6 63 12 minecraft:polished_andesite strict
+fill 3 63 13 6 63 13 minecraft:polished_diorite strict
+fill 3 63 14 3 63 36 minecraft:polished_andesite strict
+setblock 3 63 42 minecraft:red_concrete strict
+setblock 3 63 43 minecraft:white_concrete strict
+setblock 3 63 54 minecraft:white_concrete strict
+fill 3 63 62 6 63 62 minecraft:red_concrete strict
+fill 3 63 71 6 63 72 minecraft:grass_block strict
+fill 3 63 162 6 63 162 minecraft:stone_bricks strict
+fill 3 63 163 4 63 163 minecraft:red_concrete strict
+fill 3 63 164 3 63 171 minecraft:gray_concrete strict
+setblock 3 63 172 minecraft:red_concrete strict
+fill 3 63 173 4 63 173 minecraft:stone_bricks strict
+setblock 4 63 -63 minecraft:dirt_path strict
+fill 4 63 -62 4 63 -60 minecraft:coarse_dirt strict
+fill 4 63 -54 4 63 -53 minecraft:purpur_block strict
+fill 4 63 -52 4 63 -47 minecraft:obsidian strict
+setblock 4 63 -46 minecraft:crying_obsidian strict
+fill 4 63 -45 4 63 -43 minecraft:obsidian strict
+fill 4 63 -41 4 63 -40 minecraft:purpur_block strict
+fill 4 63 -39 4 63 -15 minecraft:grass_block strict
+fill 4 63 -14 6 63 -14 minecraft:polished_blackstone_bricks strict
+fill 4 63 -8 4 63 -4 minecraft:water strict
+setblock 4 63 -3 minecraft:polished_blackstone_bricks strict
+setblock 4 63 3 minecraft:polished_blackstone_bricks strict
+fill 4 63 4 4 63 8 minecraft:water strict
+fill 4 63 14 6 63 14 minecraft:polished_blackstone_bricks strict
+fill 4 63 15 4 63 37 minecraft:grass_block strict
+setblock 4 63 38 minecraft:red_concrete strict
+fill 4 63 39 4 63 42 minecraft:gray_concrete strict
+fill 4 63 43 4 63 45 minecraft:white_concrete strict
+fill 4 63 46 5 63 47 minecraft:black_concrete strict
+fill 4 63 48 6 63 49 minecraft:white_concrete strict
+fill 4 63 50 5 63 51 minecraft:black_concrete strict
+setblock 4 63 52 minecraft:white_concrete strict
+setblock 4 63 53 minecraft:red_concrete strict
+fill 4 63 54 4 63 57 minecraft:gray_concrete strict
+setblock 4 63 58 minecraft:white_concrete strict
+fill 4 63 164 6 63 170 minecraft:gray_concrete strict
+fill 4 63 171 4 63 172 minecraft:white_concrete strict
+fill 5 63 -68 7 63 -64 minecraft:grass_block strict
+fill 5 63 -63 5 63 -61 minecraft:dirt_path strict
+setblock 5 63 -60 minecraft:coarse_dirt strict
+fill 5 63 -59 5 63 -54 minecraft:grass_block strict
+setblock 5 63 -53 minecraft:purpur_block strict
+setblock 5 63 -52 minecraft:obsidian strict
+fill 5 63 -51 5 63 -48 minecraft:crying_obsidian strict
+fill 5 63 -47 5 63 -42 minecraft:obsidian strict
+setblock 5 63 -41 minecraft:purpur_block strict
+fill 5 63 -40 5 63 -15 minecraft:grass_block strict
+fill 5 63 -9 6 63 -9 minecraft:polished_andesite strict
+setblock 5 63 -8 minecraft:chiseled_stone_bricks strict
+fill 5 63 -7 5 63 -6 minecraft:water strict
+fill 5 63 -5 5 65 -5 minecraft:prismarine_bricks strict
+fill 5 63 -4 5 63 -3 minecraft:water strict
+fill 5 63 -2 5 63 2 minecraft:polished_blackstone_bricks strict
+fill 5 63 3 5 63 4 minecraft:water strict
+fill 5 63 5 5 65 5 minecraft:prismarine_bricks strict
+fill 5 63 6 5 63 7 minecraft:water strict
+setblock 5 63 8 minecraft:stone_bricks strict
+fill 5 63 9 6 63 9 minecraft:polished_diorite strict
+fill 5 63 15 6 63 38 minecraft:grass_block strict
+setblock 5 63 39 minecraft:red_concrete strict
+fill 5 63 40 5 63 43 minecraft:gray_concrete strict
+fill 5 63 44 5 63 45 minecraft:white_concrete strict
+setblock 5 63 52 minecraft:red_concrete strict
+fill 5 63 53 5 63 56 minecraft:gray_concrete strict
+setblock 5 63 57 minecraft:white_concrete strict
+fill 5 63 58 6 63 59 minecraft:grass_block strict
+setblock 5 63 60 minecraft:packed_mud strict
+fill 5 63 61 8 63 61 minecraft:dirt_path strict
+fill 5 63 163 6 63 163 minecraft:white_concrete strict
+setblock 5 63 171 minecraft:white_concrete strict
+fill 5 63 172 7 63 172 minecraft:stone_bricks strict
+fill 6 63 -63 7 63 -60 minecraft:dirt_path strict
+fill 6 63 -59 6 63 -53 minecraft:grass_block strict
+fill 6 63 -52 6 63 -51 minecraft:purpur_block strict
+fill 6 63 -50 6 63 -44 minecraft:obsidian strict
+fill 6 63 -43 6 63 -42 minecraft:purpur_block strict
+fill 6 63 -41 6 63 -15 minecraft:grass_block strict
+setblock 6 63 -8 minecraft:polished_diorite strict
+setblock 6 63 -7 minecraft:stone_bricks strict
+fill 6 63 -6 6 63 -2 minecraft:water strict
+fill 6 63 -1 8 63 1 minecraft:smooth_quartz strict
+fill 6 63 2 6 63 6 minecraft:water strict
+setblock 6 63 7 minecraft:stone_bricks strict
+setblock 6 63 8 minecraft:polished_andesite strict
+fill 6 63 39 6 63 40 minecraft:white_concrete strict
+setblock 6 63 41 minecraft:gray_concrete strict
+setblock 6 63 42 minecraft:light_gray_concrete strict
+fill 6 63 43 6 63 44 minecraft:gray_concrete strict
+setblock 6 63 45 minecraft:red_concrete strict
+setblock 6 63 46 minecraft:white_concrete strict
+setblock 6 63 47 minecraft:red_concrete strict
+setblock 6 63 50 minecraft:red_concrete strict
+setblock 6 63 51 minecraft:white_concrete strict
+fill 6 63 52 6 63 53 minecraft:gray_concrete strict
+setblock 6 63 54 minecraft:light_gray_concrete strict
+setblock 6 63 55 minecraft:gray_concrete strict
+fill 6 63 56 6 63 57 minecraft:red_concrete strict
+fill 6 63 60 8 63 60 minecraft:coarse_dirt strict
+fill 6 63 171 7 63 171 minecraft:red_concrete strict
+fill 7 63 -59 7 63 -52 minecraft:grass_block strict
+fill 7 63 -51 7 63 -49 minecraft:purpur_block strict
+fill 7 63 -48 7 63 -46 minecraft:obsidian strict
+fill 7 63 -45 7 63 -43 minecraft:purpur_block strict
+fill 7 63 -42 7 63 -14 minecraft:grass_block strict
+fill 7 63 -13 8 63 -13 minecraft:polished_blackstone_bricks strict
+fill 7 63 -12 7 63 -10 minecraft:polished_diorite strict
+fill 7 63 -9 7 63 -7 minecraft:grass_block strict
+setblock 7 63 -6 minecraft:stone_bricks strict
+fill 7 63 -5 7 63 -2 minecraft:water strict
+fill 7 63 2 7 63 5 minecraft:water strict
+setblock 7 63 6 minecraft:stone_bricks strict
+fill 7 63 7 7 63 9 minecraft:grass_block strict
+fill 7 63 10 7 63 12 minecraft:polished_andesite strict
+fill 7 63 13 8 63 13 minecraft:polished_blackstone_bricks strict
+fill 7 63 14 7 63 39 minecraft:grass_block strict
+setblock 7 63 40 minecraft:red_concrete strict
+fill 7 63 41 7 63 55 minecraft:gray_concrete strict
+setblock 7 63 56 minecraft:white_concrete strict
+fill 7 63 57 7 63 59 minecraft:grass_block strict
+fill 7 63 62 9 63 62 minecraft:white_concrete strict
+fill 7 63 71 8 63 71 minecraft:grass_block strict
+fill 7 63 161 16 63 161 minecraft:stone_bricks strict
+fill 7 63 162 12 63 162 minecraft:white_concrete strict
+fill 7 63 163 15 63 169 minecraft:gray_concrete strict
+fill 7 63 170 10 63 170 minecraft:white_concrete strict
+fill 8 63 -68 13 63 -63 minecraft:grass_block strict
+fill 8 63 -62 10 63 -60 minecraft:dirt_path strict
+fill 8 63 -59 8 63 -50 minecraft:grass_block strict
+fill 8 63 -49 8 63 -45 minecraft:purpur_block strict
+fill 8 63 -44 8 63 -14 minecraft:grass_block strict
+fill 8 63 -12 8 63 -11 minecraft:polished_andesite strict
+fill 8 63 -10 8 63 -7 minecraft:grass_block strict
 setblock 8 63 -6 minecraft:polished_andesite strict
 setblock 8 63 -5 minecraft:stone_bricks strict
 fill 8 63 -4 8 63 -2 minecraft:water strict
@@ -1508,129 +1904,140 @@ fill -73 64 204 -73 64 205 minecraft:white_concrete strict
 fill -72 64 127 -70 64 127 minecraft:white_concrete strict
 fill -72 64 138 -71 64 138 minecraft:red_concrete strict
 fill -72 64 205 -70 64 205 minecraft:red_concrete strict
-fill -70 64 19 -70 64 20 minecraft:short_grass strict
-fill -70 64 22 -70 64 24 minecraft:short_grass strict
 fill -70 64 137 -70 64 138 minecraft:red_concrete strict
 fill -70 64 215 -70 64 216 minecraft:white_concrete strict
 setblock -69 64 -14 minecraft:short_grass strict
-setblock -69 64 -9 minecraft:short_grass strict
-setblock -69 64 7 minecraft:short_grass strict
-setblock -69 64 8 minecraft:blue_orchid strict
-setblock -69 64 12 minecraft:white_tulip strict
-setblock -69 64 13 minecraft:short_grass strict
-setblock -69 64 19 minecraft:fern strict
-setblock -69 64 21 minecraft:short_grass strict
+setblock -69 64 -12 minecraft:short_grass strict
+setblock -69 64 3 minecraft:short_grass strict
+setblock -69 64 4 minecraft:red_tulip strict
+fill -69 64 8 -69 64 9 minecraft:short_grass strict
+fill -69 64 14 -68 64 14 minecraft:short_grass strict
+setblock -69 64 19 minecraft:short_grass strict
+setblock -69 64 22 minecraft:fern strict
+setblock -69 64 23 minecraft:dandelion strict
+fill -69 64 24 -69 64 25 minecraft:short_grass strict
 setblock -69 64 126 minecraft:white_concrete strict
 setblock -69 64 137 minecraft:red_concrete strict
 fill -69 64 206 -66 64 206 minecraft:white_concrete strict
 fill -69 64 216 -67 64 216 minecraft:white_concrete strict
-setblock -68 64 -14 minecraft:cornflower strict
-fill -68 64 -12 -68 64 -11 minecraft:short_grass strict
-setblock -68 64 -8 minecraft:allium strict
-fill -68 64 -3 -68 64 -2 minecraft:short_grass strict
+setblock -68 64 -16 minecraft:allium strict
+setblock -68 64 -13 minecraft:short_grass strict
+setblock -68 64 -8 minecraft:short_grass strict
+setblock -68 64 -5 minecraft:short_grass strict
+setblock -68 64 -3 minecraft:dandelion strict
+setblock -68 64 -2 minecraft:azure_bluet strict
 setblock -68 64 5 minecraft:short_grass strict
-setblock -68 64 7 minecraft:fern strict
-fill -68 64 9 -68 64 11 minecraft:short_grass strict
-setblock -68 64 14 minecraft:dandelion strict
-setblock -68 64 15 minecraft:short_grass strict
-setblock -68 64 24 minecraft:short_grass strict
+setblock -68 64 6 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill -68 64 7 -68 64 8 minecraft:azalea_leaves[persistent=true] strict
+setblock -68 64 9 minecraft:short_grass strict
+setblock -68 64 12 minecraft:short_grass strict
+setblock -68 64 21 minecraft:short_grass strict
+setblock -68 64 26 minecraft:fern strict
 setblock -68 64 126 minecraft:red_concrete strict
 setblock -68 64 137 minecraft:white_concrete strict
 setblock -67 64 -21 minecraft:short_grass strict
-fill -67 64 -18 -66 64 -18 minecraft:short_grass strict
-setblock -67 64 -13 minecraft:short_grass strict
-setblock -67 64 -11 minecraft:fern strict
-setblock -67 64 -10 minecraft:short_grass strict
-setblock -67 64 -7 minecraft:short_grass strict
-setblock -67 64 3 minecraft:short_grass strict
-setblock -67 64 10 minecraft:fern strict
-setblock -67 64 11 minecraft:cornflower strict
-setblock -67 64 18 minecraft:dandelion strict
-setblock -67 64 20 minecraft:pink_tulip strict
-setblock -67 64 23 minecraft:short_grass strict
-setblock -67 64 25 minecraft:short_grass strict
-setblock -67 64 26 minecraft:fern strict
+setblock -67 64 -20 minecraft:fern strict
+setblock -67 64 -18 minecraft:orange_tulip strict
+fill -67 64 -16 -67 64 -14 minecraft:short_grass strict
+setblock -67 64 -13 minecraft:fern strict
+setblock -67 64 -11 minecraft:pink_tulip strict
+fill -67 64 -9 -66 64 -9 minecraft:short_grass strict
+setblock -67 64 -6 minecraft:short_grass strict
+setblock -67 64 -2 minecraft:fern strict
+setblock -67 64 6 minecraft:azalea_leaves[persistent=true] strict
+fill -67 64 7 -67 64 8 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -67 64 16 minecraft:short_grass strict
 fill -67 64 125 -65 64 125 minecraft:red_concrete strict
 fill -67 64 136 -66 64 136 minecraft:white_concrete strict
-fill -66 64 -22 -66 64 -21 minecraft:fern strict
-setblock -66 64 -17 minecraft:fern strict
-setblock -66 64 -13 minecraft:pink_tulip strict
+setblock -66 64 -22 minecraft:short_grass strict
+fill -66 64 -19 -66 64 -18 minecraft:short_grass strict
+setblock -66 64 -14 minecraft:azure_bluet strict
 setblock -66 64 -11 minecraft:short_grass strict
-fill -66 64 -9 -66 64 -8 minecraft:short_grass strict
-setblock -66 64 -4 minecraft:fern strict
-setblock -66 64 -2 minecraft:short_grass strict
-setblock -66 64 5 minecraft:allium strict
-setblock -66 64 7 minecraft:pink_tulip strict
+setblock -66 64 -10 minecraft:poppy strict
+setblock -66 64 -7 minecraft:fern strict
+fill -66 64 -5 -65 64 -5 minecraft:short_grass strict
+setblock -66 64 3 minecraft:short_grass strict
+setblock -66 64 5 minecraft:fern strict
+fill -66 64 6 -66 64 8 minecraft:azalea_leaves[persistent=true] strict
 setblock -66 64 10 minecraft:short_grass strict
-setblock -66 64 18 minecraft:short_grass strict
+fill -66 64 13 -66 64 15 minecraft:short_grass strict
+setblock -66 64 18 minecraft:fern strict
+setblock -66 64 19 minecraft:short_grass strict
 fill -66 64 216 -63 64 216 minecraft:red_concrete strict
-setblock -65 64 -20 minecraft:flowering_azalea_leaves[persistent=true] strict
-fill -65 64 -19 -65 65 -19 minecraft:azalea_leaves[persistent=true] strict
-setblock -65 64 -18 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -65 64 -15 minecraft:short_grass strict
-setblock -65 64 -9 minecraft:short_grass strict
-setblock -65 64 3 minecraft:short_grass strict
-setblock -65 64 5 minecraft:fern strict
-setblock -65 64 13 minecraft:short_grass strict
-fill -65 64 15 -65 64 17 minecraft:short_grass strict
-setblock -65 64 18 minecraft:pink_tulip strict
+setblock -65 64 -13 minecraft:short_grass strict
+fill -65 64 7 -65 64 8 minecraft:short_grass strict
+setblock -65 64 11 minecraft:short_grass strict
+setblock -65 64 15 minecraft:fern strict
+setblock -65 64 18 minecraft:short_grass strict
+setblock -65 64 20 minecraft:short_grass strict
+setblock -65 64 22 minecraft:fern strict
+fill -65 64 23 -65 64 24 minecraft:short_grass strict
+setblock -65 64 31 minecraft:short_grass strict
 fill -65 64 135 -63 64 135 minecraft:red_concrete strict
 fill -65 64 206 -63 64 206 minecraft:red_concrete strict
-fill -64 64 -22 -64 64 -21 minecraft:short_grass strict
-setblock -64 64 -20 minecraft:azalea_leaves[persistent=true] strict
-fill -64 64 -19 -64 64 -18 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -64 64 -12 minecraft:short_grass strict
-setblock -64 64 -8 minecraft:short_grass strict
+fill -64 64 -23 -64 64 -22 minecraft:short_grass strict
+setblock -64 64 -21 minecraft:pink_tulip strict
+fill -64 64 -18 -64 64 -16 minecraft:azalea_leaves[persistent=true] strict
+setblock -64 64 -11 minecraft:short_grass strict
+setblock -64 64 -9 minecraft:short_grass strict
 setblock -64 64 -7 minecraft:chiseled_stone_bricks strict
-setblock -64 64 6 minecraft:azure_bluet strict
+setblock -64 64 -4 minecraft:cornflower strict
+setblock -64 64 -3 minecraft:short_grass strict
 setblock -64 64 7 minecraft:chiseled_stone_bricks strict
-fill -64 64 11 -64 68 11 minecraft:oak_log strict
-setblock -64 64 12 minecraft:lily_of_the_valley strict
-setblock -64 64 16 minecraft:dandelion strict
-fill -64 64 19 -64 64 20 minecraft:short_grass strict
+setblock -64 64 9 minecraft:short_grass strict
+setblock -64 64 11 minecraft:dandelion strict
+fill -64 64 16 -63 64 16 minecraft:short_grass strict
+setblock -64 64 19 minecraft:short_grass strict
+fill -64 64 21 -64 69 21 minecraft:oak_log strict
+setblock -64 64 23 minecraft:fern strict
+setblock -64 64 32 minecraft:fern strict
 fill -64 64 124 -61 64 124 minecraft:white_concrete strict
-setblock -63 64 -22 minecraft:azure_bluet strict
-setblock -63 64 -20 minecraft:flowering_azalea_leaves[persistent=true] strict
-fill -63 64 -19 -63 64 -18 minecraft:azalea_leaves[persistent=true] strict
-fill -63 64 -16 -62 64 -16 minecraft:short_grass strict
-fill -63 64 -11 -63 64 -10 minecraft:short_grass strict
-fill -63 64 9 -63 64 11 minecraft:short_grass strict
-setblock -63 64 14 minecraft:short_grass strict
-setblock -63 64 16 minecraft:orange_tulip strict
-fill -63 64 18 -63 69 18 minecraft:oak_log strict
-setblock -63 64 23 minecraft:oxeye_daisy strict
-setblock -63 64 24 minecraft:short_grass strict
-setblock -63 64 31 minecraft:allium strict
-setblock -62 64 -33 minecraft:short_grass strict
-setblock -62 64 -31 minecraft:orange_tulip strict
-setblock -62 64 -18 minecraft:short_grass strict
-setblock -62 64 15 minecraft:short_grass strict
+setblock -63 64 -29 minecraft:blue_orchid strict
+setblock -63 64 -23 minecraft:short_grass strict
+setblock -63 64 -18 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -63 64 -17 minecraft:azalea_leaves[persistent=true] strict
+fill -63 64 -16 -63 65 -16 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill -63 64 -15 -63 64 -14 minecraft:short_grass strict
+fill -63 64 -10 -63 64 -9 minecraft:short_grass strict
+setblock -63 64 8 minecraft:fern strict
+fill -63 64 11 -63 64 14 minecraft:short_grass strict
+fill -63 64 32 -63 64 33 minecraft:short_grass strict
+setblock -62 64 -32 minecraft:short_grass strict
+setblock -62 64 -31 minecraft:azure_bluet strict
+fill -62 64 -23 -62 64 -22 minecraft:short_grass strict
+setblock -62 64 -20 minecraft:short_grass strict
+fill -62 64 -18 -62 64 -16 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -62 64 -15 minecraft:short_grass strict
+setblock -62 64 17 minecraft:short_grass strict
 setblock -62 64 20 minecraft:short_grass strict
-setblock -62 64 22 minecraft:dandelion strict
+setblock -62 64 21 minecraft:orange_tulip strict
+setblock -62 64 22 minecraft:cornflower strict
+setblock -62 64 23 minecraft:short_grass strict
 setblock -62 64 134 minecraft:red_concrete strict
 setblock -62 64 206 minecraft:white_concrete strict
 fill -62 64 216 -61 64 216 minecraft:white_concrete strict
-setblock -61 64 -29 minecraft:white_tulip strict
-setblock -61 64 -28 minecraft:short_grass strict
+setblock -61 64 -32 minecraft:dandelion strict
 setblock -61 64 -20 minecraft:chiseled_stone_bricks strict
-setblock -61 64 -18 minecraft:oxeye_daisy strict
-setblock -61 64 18 minecraft:short_grass strict
 setblock -61 64 20 minecraft:chiseled_stone_bricks strict
-setblock -61 64 22 minecraft:short_grass strict
-fill -61 64 33 -60 64 33 minecraft:short_grass strict
-setblock -61 64 36 minecraft:short_grass strict
+fill -61 64 22 -61 64 23 minecraft:short_grass strict
+fill -61 64 29 -61 64 31 minecraft:azalea_leaves[persistent=true] strict
+setblock -61 64 32 minecraft:short_grass strict
+setblock -61 64 33 minecraft:lily_of_the_valley strict
 fill -61 64 134 -60 64 134 minecraft:white_concrete strict
-setblock -60 64 -35 minecraft:fern strict
-setblock -60 64 -33 minecraft:dandelion strict
-fill -60 64 -30 -59 64 -30 minecraft:short_grass strict
-setblock -60 64 -22 minecraft:short_grass strict
-setblock -60 64 28 minecraft:short_grass strict
-setblock -60 64 29 minecraft:allium strict
-setblock -60 64 31 minecraft:short_grass strict
-setblock -60 64 37 minecraft:short_grass strict
-setblock -60 64 38 minecraft:red_tulip strict
+setblock -60 64 -35 minecraft:short_grass strict
+setblock -60 64 -33 minecraft:short_grass strict
+fill -60 64 -29 -60 64 -28 minecraft:short_grass strict
+setblock -60 64 22 minecraft:short_grass strict
+setblock -60 64 23 minecraft:orange_tulip strict
+fill -60 64 29 -60 64 30 minecraft:azalea_leaves[persistent=true] strict
+fill -60 64 31 -59 64 31 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -60 64 39 minecraft:fern strict
 fill -60 64 123 -57 64 123 minecraft:red_concrete strict
-fill -59 64 -36 -59 64 -35 minecraft:short_grass strict
+setblock -59 64 -38 minecraft:short_grass strict
+setblock -59 64 -35 minecraft:white_tulip strict
+setblock -59 64 -34 minecraft:short_grass strict
+setblock -59 64 -29 minecraft:fern strict
+setblock -59 64 -27 minecraft:oxeye_daisy strict
 fill -59 64 -13 -59 80 -13 minecraft:polished_deepslate strict
 fill -59 64 -12 -59 64 -11 minecraft:stone_bricks strict
 setblock -59 64 -10 minecraft:mossy_stone_bricks strict
@@ -1638,68 +2045,54 @@ fill -59 64 -9 -59 80 -9 minecraft:polished_deepslate strict
 fill -59 64 9 -59 80 9 minecraft:polished_deepslate strict
 fill -59 64 10 -59 64 12 minecraft:stone_bricks strict
 fill -59 64 13 -59 80 13 minecraft:polished_deepslate strict
-setblock -59 64 29 minecraft:short_grass strict
-setblock -59 64 32 minecraft:fern strict
-setblock -59 64 33 minecraft:dandelion strict
-fill -59 64 34 -59 64 35 minecraft:short_grass strict
-setblock -59 64 40 minecraft:allium strict
+setblock -59 64 29 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -59 64 30 minecraft:azalea_leaves[persistent=true] strict
+setblock -59 64 32 minecraft:short_grass strict
+setblock -59 64 35 minecraft:short_grass strict
+setblock -59 64 37 minecraft:short_grass strict
+setblock -59 64 39 minecraft:short_grass strict
+setblock -59 64 40 minecraft:fern strict
 setblock -59 64 133 minecraft:white_concrete strict
-setblock -58 64 -37 minecraft:short_grass strict
-setblock -58 64 -32 minecraft:short_grass strict
-setblock -58 64 -29 minecraft:short_grass strict
-setblock -58 64 -27 minecraft:dandelion strict
-setblock -58 64 -15 minecraft:azure_bluet strict
+setblock -58 64 -36 minecraft:cornflower strict
+setblock -58 64 -14 minecraft:azure_bluet strict
 fill -58 64 -13 -56 65 -13 minecraft:stone_bricks strict
 fill -58 64 -9 -57 64 -9 minecraft:stone_bricks strict
 fill -58 64 9 -56 64 9 minecraft:stone_bricks strict
 fill -58 64 13 -56 66 13 minecraft:stone_bricks strict
-setblock -58 64 15 minecraft:short_grass strict
-setblock -58 64 27 minecraft:short_grass strict
-fill -58 64 30 -58 69 30 minecraft:oak_log strict
 setblock -58 64 31 minecraft:short_grass strict
-setblock -58 64 33 minecraft:short_grass strict
-setblock -58 64 40 minecraft:short_grass strict
+setblock -58 64 39 minecraft:poppy strict
 fill -58 64 133 -56 64 133 minecraft:red_concrete strict
-setblock -57 64 -40 minecraft:fern strict
-setblock -57 64 -39 minecraft:short_grass strict
-setblock -57 64 -37 minecraft:fern strict
-setblock -57 64 -35 minecraft:orange_tulip strict
+fill -57 64 -41 -56 64 -41 minecraft:short_grass strict
+setblock -57 64 -40 minecraft:red_tulip strict
 fill -57 64 -34 -37 64 -34 minecraft:stone_bricks strict
 fill -57 64 -33 -57 64 -16 minecraft:mossy_stone_bricks strict
-setblock -57 64 -14 minecraft:short_grass strict
 fill -57 64 -11 -57 64 -10 minecraft:deepslate_bricks strict
 fill -57 64 -8 -57 64 8 minecraft:deepslate_bricks strict
 fill -57 64 10 -57 64 11 minecraft:deepslate_bricks strict
-fill -57 64 14 -57 64 15 minecraft:short_grass strict
-setblock -57 64 16 minecraft:fern strict
-setblock -57 64 18 minecraft:pink_tulip strict
-setblock -57 64 29 minecraft:short_grass strict
-setblock -57 64 32 minecraft:short_grass strict
-setblock -57 64 36 minecraft:fern strict
-setblock -56 64 -42 minecraft:short_grass strict
+setblock -57 64 14 minecraft:short_grass strict
+fill -57 64 28 -57 64 30 minecraft:short_grass strict
+setblock -57 64 33 minecraft:fern strict
+setblock -57 64 34 minecraft:short_grass strict
+setblock -57 64 36 minecraft:short_grass strict
+setblock -57 64 38 minecraft:short_grass strict
+setblock -56 64 -46 minecraft:short_grass strict
+setblock -56 64 -44 minecraft:short_grass strict
 fill -56 64 -16 -56 67 -16 minecraft:dark_oak_log strict
+setblock -56 64 -15 minecraft:red_tulip strict
 setblock -56 64 -11 minecraft:deepslate_bricks strict
 fill -56 64 -9 -56 65 -9 minecraft:mossy_stone_bricks strict
 setblock -56 64 11 minecraft:deepslate_bricks strict
-setblock -56 64 17 minecraft:short_grass strict
-fill -56 64 20 -56 64 21 minecraft:short_grass strict
 setblock -56 64 32 minecraft:chiseled_stone_bricks strict
-setblock -56 64 34 minecraft:azure_bluet strict
-fill -56 64 37 -56 70 37 minecraft:birch_log strict
-setblock -56 64 38 minecraft:short_grass strict
-setblock -56 64 39 minecraft:poppy strict
-setblock -56 64 40 minecraft:short_grass strict
-setblock -56 64 42 minecraft:fern strict
+fill -56 64 37 -56 69 37 minecraft:oak_log strict
+setblock -56 64 41 minecraft:short_grass strict
+setblock -56 64 43 minecraft:short_grass strict
 fill -56 64 122 -53 64 122 minecraft:white_concrete strict
 setblock -56 64 205 minecraft:red_concrete strict
-setblock -55 64 -49 minecraft:short_grass strict
-fill -55 64 -45 -54 64 -45 minecraft:short_grass strict
-setblock -55 64 -43 minecraft:fern strict
-setblock -55 64 -41 minecraft:short_grass strict
+setblock -55 64 -47 minecraft:short_grass strict
+fill -55 64 -44 -55 64 -42 minecraft:short_grass strict
 setblock -55 64 -38 minecraft:short_grass strict
-fill -55 64 -35 -54 64 -35 minecraft:short_grass strict
 fill -55 64 -18 -39 64 -18 minecraft:spruce_slab[type=top] strict
-setblock -55 64 -15 minecraft:short_grass strict
+setblock -55 64 -14 minecraft:short_grass strict
 fill -55 64 -13 -55 80 -13 minecraft:polished_deepslate strict
 fill -55 64 -12 -55 64 -11 minecraft:stone_bricks strict
 setblock -55 64 -10 minecraft:mossy_stone_bricks strict
@@ -1708,284 +2101,293 @@ fill -55 64 9 -55 80 9 minecraft:polished_deepslate strict
 setblock -55 64 10 minecraft:mossy_stone_bricks strict
 fill -55 64 11 -55 64 12 minecraft:stone_bricks strict
 fill -55 64 13 -55 80 13 minecraft:polished_deepslate strict
-setblock -55 64 15 minecraft:fern strict
-setblock -55 64 16 minecraft:short_grass strict
-setblock -55 64 42 minecraft:short_grass strict
+setblock -55 64 15 minecraft:short_grass strict
+setblock -55 64 18 minecraft:short_grass strict
+setblock -55 64 20 minecraft:fern strict
+setblock -55 64 22 minecraft:short_grass strict
+setblock -55 64 36 minecraft:fern strict
+setblock -55 64 39 minecraft:short_grass strict
 setblock -55 64 132 minecraft:red_concrete strict
 fill -55 64 205 -52 64 205 minecraft:white_concrete strict
 fill -55 64 215 -54 64 215 minecraft:red_concrete strict
-setblock -54 64 -37 minecraft:short_grass strict
+setblock -54 64 -49 minecraft:short_grass strict
+setblock -54 64 -42 minecraft:short_grass strict
+setblock -54 64 -37 minecraft:dandelion strict
+setblock -54 64 -35 minecraft:short_grass strict
 setblock -54 64 -33 minecraft:hay_block[axis=x] strict
 fill -54 64 -11 -38 64 -11 minecraft:deepslate_bricks strict
 fill -54 64 11 -38 64 11 minecraft:deepslate_bricks strict
-fill -54 64 14 -53 64 14 minecraft:short_grass strict
-setblock -54 64 18 minecraft:fern strict
-setblock -54 64 21 minecraft:short_grass strict
-setblock -54 64 23 minecraft:short_grass strict
-setblock -54 64 25 minecraft:fern strict
+setblock -54 64 21 minecraft:cornflower strict
+setblock -54 64 24 minecraft:short_grass strict
 setblock -54 64 26 minecraft:short_grass strict
-setblock -54 64 34 minecraft:short_grass strict
 setblock -54 64 37 minecraft:short_grass strict
-fill -54 64 39 -54 64 40 minecraft:short_grass strict
-setblock -54 64 41 minecraft:pink_tulip strict
+setblock -54 64 41 minecraft:poppy strict
+setblock -54 64 42 minecraft:fern strict
+setblock -54 64 43 minecraft:pink_tulip strict
+setblock -54 64 45 minecraft:white_tulip strict
 fill -54 64 132 -51 64 132 minecraft:white_concrete strict
-setblock -53 64 -48 minecraft:short_grass strict
-setblock -53 64 -46 minecraft:short_grass strict
-setblock -53 64 -42 minecraft:cornflower strict
-setblock -53 64 -41 minecraft:short_grass strict
-fill -53 64 16 -53 64 17 minecraft:azalea_leaves[persistent=true] strict
-fill -53 64 18 -52 64 18 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -53 64 19 minecraft:dandelion strict
-setblock -53 64 24 minecraft:short_grass strict
-setblock -53 64 27 minecraft:short_grass strict
-setblock -53 64 36 minecraft:fern strict
-setblock -53 64 40 minecraft:fern strict
-setblock -53 64 43 minecraft:blue_orchid strict
-fill -53 64 44 -52 64 44 minecraft:short_grass strict
+setblock -53 64 -50 minecraft:short_grass strict
+setblock -53 64 -45 minecraft:short_grass strict
+setblock -53 64 -42 minecraft:red_tulip strict
+setblock -53 64 -40 minecraft:fern strict
+setblock -53 64 -39 minecraft:short_grass strict
+setblock -53 64 -38 minecraft:fern strict
+setblock -53 64 -15 minecraft:short_grass strict
+setblock -53 64 14 minecraft:short_grass strict
+fill -53 64 15 -53 64 16 minecraft:fern strict
+fill -53 64 22 -52 64 22 minecraft:short_grass strict
+setblock -53 64 39 minecraft:lily_of_the_valley strict
+fill -53 64 41 -53 64 43 minecraft:short_grass strict
 fill -53 64 215 -51 64 215 minecraft:white_concrete strict
-fill -52 64 -46 -51 64 -45 minecraft:short_grass strict
-fill -52 64 -41 -52 64 -40 minecraft:short_grass strict
-setblock -52 64 -38 minecraft:fern strict
+setblock -52 64 -40 minecraft:short_grass strict
+setblock -52 64 -38 minecraft:short_grass strict
 setblock -52 64 -33 minecraft:hay_block strict
-fill -52 64 -14 -51 64 -14 minecraft:short_grass strict
-fill -52 64 14 -52 64 15 minecraft:short_grass strict
-setblock -52 64 16 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -52 64 17 minecraft:azalea_leaves[persistent=true] strict
-fill -52 64 19 -51 64 19 minecraft:short_grass strict
-setblock -52 64 21 minecraft:short_grass strict
-fill -52 64 40 -52 64 41 minecraft:short_grass strict
-setblock -52 64 45 minecraft:azure_bluet strict
+setblock -52 64 -14 minecraft:short_grass strict
+setblock -52 64 14 minecraft:lily_of_the_valley strict
+fill -52 64 17 -52 69 17 minecraft:oak_log strict
+setblock -52 64 18 minecraft:short_grass strict
+setblock -52 64 20 minecraft:fern strict
+setblock -52 64 23 minecraft:white_tulip strict
+setblock -52 64 40 minecraft:short_grass strict
+setblock -52 64 44 minecraft:fern strict
 setblock -52 64 122 minecraft:red_concrete strict
-setblock -51 64 -43 minecraft:short_grass strict
-setblock -51 64 -41 minecraft:short_grass strict
-fill -51 64 16 -51 64 17 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -51 64 18 minecraft:azalea_leaves[persistent=true] strict
-setblock -51 64 20 minecraft:orange_tulip strict
-setblock -51 64 21 minecraft:cornflower strict
-setblock -51 64 22 minecraft:short_grass strict
-setblock -51 64 40 minecraft:dandelion strict
+setblock -51 64 -41 minecraft:fern strict
+setblock -51 64 -38 minecraft:white_tulip strict
+setblock -51 64 -15 minecraft:short_grass strict
+setblock -51 64 18 minecraft:poppy strict
+setblock -51 64 21 minecraft:short_grass strict
+setblock -51 64 22 minecraft:fern strict
+setblock -51 64 23 minecraft:short_grass strict
+setblock -51 64 24 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill -51 64 25 -51 64 26 minecraft:azalea_leaves[persistent=true] strict
+fill -51 64 38 -51 64 39 minecraft:short_grass strict
+fill -51 64 42 -51 69 42 minecraft:oak_log strict
+fill -51 64 45 -50 64 45 minecraft:short_grass strict
 fill -51 64 121 -49 64 121 minecraft:red_concrete strict
 fill -51 64 204 -49 64 204 minecraft:red_concrete strict
-fill -50 64 -46 -50 64 -44 minecraft:short_grass strict
-setblock -50 64 -43 minecraft:lily_of_the_valley strict
+setblock -50 64 -54 minecraft:fern strict
+fill -50 64 -44 -50 69 -44 minecraft:oak_log strict
 fill -50 64 -33 -49 64 -33 minecraft:hay_block[axis=x] strict
-fill -50 64 14 -49 64 14 minecraft:short_grass strict
-fill -50 64 16 -49 64 16 minecraft:short_grass strict
-fill -50 64 20 -50 64 21 minecraft:short_grass strict
-setblock -50 64 25 minecraft:short_grass strict
-setblock -50 64 26 minecraft:orange_tulip strict
-setblock -50 64 41 minecraft:fern strict
-setblock -50 64 42 minecraft:short_grass strict
-setblock -50 64 45 minecraft:white_tulip strict
-setblock -50 64 46 minecraft:short_grass strict
+fill -50 64 15 -49 64 15 minecraft:short_grass strict
+setblock -50 64 22 minecraft:red_tulip strict
+fill -50 64 24 -50 64 26 minecraft:azalea_leaves[persistent=true] strict
+setblock -50 64 27 minecraft:short_grass strict
+setblock -50 64 29 minecraft:short_grass strict
+setblock -50 64 32 minecraft:short_grass strict
+fill -50 64 42 -50 64 43 minecraft:short_grass strict
+setblock -50 64 46 minecraft:fern strict
 fill -50 64 131 -47 64 131 minecraft:red_concrete strict
 setblock -50 64 214 minecraft:white_concrete strict
-setblock -49 64 -45 minecraft:fern strict
-setblock -49 64 -43 minecraft:oxeye_daisy strict
-setblock -49 64 -41 minecraft:short_grass strict
+setblock -49 64 -44 minecraft:poppy strict
 setblock -49 64 18 minecraft:short_grass strict
-setblock -49 64 19 minecraft:fern strict
-setblock -49 64 23 minecraft:cornflower strict
-setblock -49 64 34 minecraft:azure_bluet strict
+setblock -49 64 24 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -49 64 25 minecraft:azalea_leaves[persistent=true] strict
+setblock -49 64 26 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -49 64 28 minecraft:poppy strict
+setblock -49 64 32 minecraft:fern strict
 fill -49 64 214 -47 64 214 minecraft:red_concrete strict
-fill -48 64 -55 -47 64 -55 minecraft:short_grass strict
+setblock -48 64 -45 minecraft:fern strict
 setblock -48 64 -43 minecraft:chiseled_stone_bricks strict
-setblock -48 64 -15 minecraft:poppy strict
+setblock -48 64 -42 minecraft:short_grass strict
 fill -48 64 -1 -36 64 1 minecraft:red_carpet strict
-setblock -48 64 17 minecraft:short_grass strict
-setblock -48 64 18 minecraft:red_tulip strict
-fill -48 64 24 -48 68 24 minecraft:oak_log strict
-setblock -48 64 26 minecraft:short_grass strict
-fill -48 64 31 -48 64 33 minecraft:short_grass strict
-setblock -48 64 42 minecraft:fern strict
+setblock -48 64 15 minecraft:fern strict
+setblock -48 64 18 minecraft:pink_tulip strict
+setblock -48 64 23 minecraft:white_tulip strict
+setblock -48 64 28 minecraft:cornflower strict
+fill -48 64 31 -48 64 32 minecraft:short_grass strict
 setblock -48 64 43 minecraft:chiseled_stone_bricks strict
-setblock -48 64 44 minecraft:short_grass strict
-setblock -48 64 52 minecraft:short_grass strict
 fill -48 64 121 -45 64 121 minecraft:white_concrete strict
 fill -48 64 203 -46 64 203 minecraft:white_concrete strict
-setblock -47 64 -50 minecraft:short_grass strict
-setblock -47 64 -43 minecraft:short_grass strict
-setblock -47 64 -35 minecraft:short_grass strict
+setblock -47 64 -53 minecraft:short_grass strict
+setblock -47 64 -43 minecraft:pink_tulip strict
+setblock -47 64 -37 minecraft:short_grass strict
 setblock -47 64 -33 minecraft:hay_block strict
 fill -47 64 -16 -47 67 -16 minecraft:dark_oak_log strict
 fill -47 64 -10 -47 65 -10 minecraft:barrel[facing=up] strict
 setblock -47 64 10 minecraft:hay_block strict
-setblock -47 64 16 minecraft:red_tulip strict
-setblock -47 64 35 minecraft:short_grass strict
-setblock -47 64 37 minecraft:short_grass strict
-fill -47 64 51 -45 64 51 minecraft:short_grass strict
-setblock -47 64 54 minecraft:short_grass strict
-fill -46 64 -56 -46 64 -55 minecraft:short_grass strict
-setblock -46 64 -51 minecraft:short_grass strict
-setblock -46 64 -38 minecraft:short_grass strict
-setblock -46 64 -36 minecraft:short_grass strict
-setblock -46 64 -14 minecraft:short_grass strict
+setblock -47 64 26 minecraft:poppy strict
+setblock -47 64 33 minecraft:poppy strict
+setblock -47 64 52 minecraft:oxeye_daisy strict
+setblock -46 64 -56 minecraft:short_grass strict
+fill -46 64 -54 -45 64 -54 minecraft:short_grass strict
+setblock -46 64 -35 minecraft:short_grass strict
 setblock -46 64 -10 minecraft:smithing_table strict
 setblock -46 64 10 minecraft:barrel[facing=up] strict
-setblock -46 64 15 minecraft:fern strict
-setblock -46 64 17 minecraft:short_grass strict
-fill -46 64 23 -45 64 23 minecraft:fern strict
-setblock -46 64 26 minecraft:short_grass strict
-setblock -46 64 33 minecraft:short_grass strict
+setblock -46 64 17 minecraft:fern strict
+setblock -46 64 22 minecraft:short_grass strict
+setblock -46 64 27 minecraft:short_grass strict
+setblock -46 64 32 minecraft:short_grass strict
+setblock -46 64 33 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill -46 64 34 -46 64 35 minecraft:azalea_leaves[persistent=true] strict
+setblock -46 64 36 minecraft:short_grass strict
+setblock -46 64 38 minecraft:short_grass strict
+setblock -46 64 50 minecraft:short_grass strict
+setblock -46 64 53 minecraft:azure_bluet strict
 fill -46 64 131 -45 64 131 minecraft:white_concrete strict
 fill -46 64 213 -45 64 213 minecraft:red_concrete strict
-setblock -45 64 -56 minecraft:dandelion strict
-setblock -45 64 -55 minecraft:short_grass strict
-setblock -45 64 -37 minecraft:cornflower strict
+setblock -45 64 -53 minecraft:cornflower strict
+setblock -45 64 -51 minecraft:short_grass strict
 fill -45 64 -33 -44 64 -33 minecraft:hay_block[axis=x] strict
-setblock -45 64 -15 minecraft:short_grass strict
+fill -45 64 -15 -44 64 -15 minecraft:short_grass strict
 setblock -45 64 -10 minecraft:anvil[facing=east] strict
 setblock -45 64 10 minecraft:target strict
-setblock -45 64 14 minecraft:short_grass strict
-setblock -45 64 18 minecraft:short_grass strict
-setblock -45 64 22 minecraft:poppy strict
-setblock -45 64 24 minecraft:pink_tulip strict
-setblock -45 64 26 minecraft:white_tulip strict
-fill -45 64 27 -44 64 27 minecraft:short_grass strict
-fill -45 64 32 -44 64 32 minecraft:short_grass strict
-fill -45 64 34 -45 69 34 minecraft:oak_log strict
-setblock -45 64 36 minecraft:red_tulip strict
-fill -45 64 38 -44 64 38 minecraft:fern strict
-setblock -45 64 39 minecraft:short_grass strict
-setblock -45 64 49 minecraft:fern strict
+setblock -45 64 17 minecraft:short_grass strict
+setblock -45 64 23 minecraft:azure_bluet strict
+setblock -45 64 25 minecraft:short_grass strict
+setblock -45 64 28 minecraft:short_grass strict
+setblock -45 64 29 minecraft:lily_of_the_valley strict
+fill -45 64 33 -45 64 35 minecraft:azalea_leaves[persistent=true] strict
+setblock -45 64 36 minecraft:white_tulip strict
 setblock -45 64 53 minecraft:short_grass strict
-fill -45 64 54 -45 64 55 minecraft:fern strict
+fill -45 64 56 -43 64 56 minecraft:short_grass strict
 setblock -45 64 202 minecraft:red_concrete strict
-setblock -44 64 -53 minecraft:short_grass strict
-fill -44 64 -39 -42 68 -39 minecraft:bamboo[age=0,leaves=none] strict
-setblock -44 64 -35 minecraft:lily_of_the_valley strict
-setblock -44 64 -14 minecraft:short_grass strict
+setblock -44 64 -56 minecraft:short_grass strict
+fill -44 64 -53 -43 64 -53 minecraft:short_grass strict
+setblock -44 64 -49 minecraft:short_grass strict
+setblock -44 64 -37 minecraft:short_grass strict
+setblock -44 64 -35 minecraft:fern strict
 setblock -44 64 -10 minecraft:blast_furnace[facing=south,lit=true] strict
 setblock -44 64 10 minecraft:barrel[facing=up] strict
-fill -44 64 14 -44 64 15 minecraft:short_grass strict
+setblock -44 64 14 minecraft:poppy strict
+setblock -44 64 15 minecraft:short_grass strict
+setblock -44 64 19 minecraft:fern strict
+setblock -44 64 22 minecraft:oxeye_daisy strict
+setblock -44 64 23 minecraft:lily_of_the_valley strict
+setblock -44 64 24 minecraft:short_grass strict
+setblock -44 64 26 minecraft:short_grass strict
+setblock -44 64 27 minecraft:poppy strict
 setblock -44 64 29 minecraft:short_grass strict
-setblock -44 64 33 minecraft:lily_of_the_valley strict
-setblock -44 64 36 minecraft:short_grass strict
-setblock -44 64 40 minecraft:short_grass strict
-setblock -44 64 48 minecraft:white_tulip strict
+setblock -44 64 30 minecraft:pink_tulip strict
+setblock -44 64 33 minecraft:azalea_leaves[persistent=true] strict
+fill -44 64 34 -44 64 35 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -44 64 37 minecraft:short_grass strict
+setblock -44 64 49 minecraft:lily_of_the_valley strict
+setblock -44 64 50 minecraft:fern strict
+setblock -44 64 51 minecraft:short_grass strict
 fill -44 64 120 -40 64 120 minecraft:red_concrete strict
 fill -44 64 130 -44 64 131 minecraft:white_concrete strict
 fill -44 64 201 -44 64 202 minecraft:red_concrete strict
 setblock -44 64 213 minecraft:white_concrete strict
-setblock -43 64 -57 minecraft:short_grass strict
-setblock -43 64 -53 minecraft:fern strict
-fill -43 64 -37 -43 67 -37 minecraft:bamboo[age=0,leaves=none] strict
-setblock -43 64 -36 minecraft:fern strict
-setblock -43 64 -14 minecraft:white_tulip strict
+setblock -43 64 -58 minecraft:short_grass strict
+setblock -43 64 -55 minecraft:short_grass strict
+setblock -43 64 -51 minecraft:lily_of_the_valley strict
+setblock -43 64 -50 minecraft:azure_bluet strict
+fill -43 64 -38 -43 73 -38 minecraft:spruce_log strict
 setblock -43 64 -10 minecraft:grindstone[face=floor,facing=east] strict
 setblock -43 64 10 minecraft:hay_block strict
-setblock -43 64 14 minecraft:short_grass strict
-setblock -43 64 20 minecraft:poppy strict
+setblock -43 64 15 minecraft:lily_of_the_valley strict
 setblock -43 64 23 minecraft:short_grass strict
-setblock -43 64 24 minecraft:fern strict
-setblock -43 64 25 minecraft:short_grass strict
-fill -43 64 31 -43 64 32 minecraft:short_grass strict
-setblock -43 64 37 minecraft:short_grass strict
-setblock -43 64 41 minecraft:fern strict
+setblock -43 64 28 minecraft:blue_orchid strict
+setblock -43 64 29 minecraft:cornflower strict
+setblock -43 64 32 minecraft:short_grass strict
+setblock -43 64 35 minecraft:short_grass strict
+fill -43 64 38 -43 64 40 minecraft:short_grass strict
+fill -43 64 49 -43 64 50 minecraft:short_grass strict
+setblock -43 64 54 minecraft:poppy strict
 fill -43 64 130 -40 64 130 minecraft:red_concrete strict
 setblock -43 64 201 minecraft:red_concrete strict
 fill -43 64 212 -42 64 212 minecraft:white_concrete strict
-setblock -42 64 -58 minecraft:short_grass strict
-setblock -42 64 -51 minecraft:red_tulip strict
-setblock -42 64 -49 minecraft:short_grass strict
+setblock -42 64 -56 minecraft:short_grass strict
+fill -42 64 -54 -42 64 -53 minecraft:short_grass strict
 setblock -42 64 -42 minecraft:short_grass strict
-setblock -42 64 -38 minecraft:short_grass strict
+setblock -42 64 -38 minecraft:fern strict
 setblock -42 64 -33 minecraft:hay_block strict
-fill -42 64 -15 -42 64 -14 minecraft:short_grass strict
 setblock -42 64 -10 minecraft:lava_cauldron strict
 setblock -42 64 10 minecraft:chiseled_bookshelf[facing=north] strict
-setblock -42 64 15 minecraft:short_grass strict
-setblock -42 64 16 minecraft:fern strict
-setblock -42 64 22 minecraft:poppy strict
-setblock -42 64 29 minecraft:short_grass strict
-setblock -42 64 32 minecraft:short_grass strict
-setblock -42 64 39 minecraft:poppy strict
-setblock -42 64 48 minecraft:fern strict
+setblock -42 64 14 minecraft:white_tulip strict
+setblock -42 64 17 minecraft:short_grass strict
+setblock -42 64 18 minecraft:lily_of_the_valley strict
+setblock -42 64 19 minecraft:short_grass strict
+setblock -42 64 20 minecraft:fern strict
+fill -42 64 24 -42 68 24 minecraft:oak_log strict
+setblock -42 64 25 minecraft:short_grass strict
+fill -42 64 31 -41 64 31 minecraft:short_grass strict
+fill -42 64 40 -42 64 41 minecraft:short_grass strict
+fill -42 64 48 -42 64 49 minecraft:short_grass strict
+setblock -42 64 52 minecraft:short_grass strict
+setblock -42 64 54 minecraft:dandelion strict
+setblock -42 64 55 minecraft:short_grass strict
 fill -42 64 200 -41 64 200 minecraft:white_concrete strict
-setblock -41 64 -56 minecraft:fern strict
-setblock -41 64 -54 minecraft:short_grass strict
-setblock -41 64 -49 minecraft:fern strict
-setblock -41 64 -41 minecraft:pink_tulip strict
-setblock -41 64 -36 minecraft:white_tulip strict
+fill -41 64 -52 -41 73 -52 minecraft:spruce_log strict
+setblock -41 64 -51 minecraft:short_grass strict
+fill -41 64 -41 -40 64 -41 minecraft:short_grass strict
+setblock -41 64 -37 minecraft:red_tulip strict
+setblock -41 64 -35 minecraft:short_grass strict
+setblock -41 64 -14 minecraft:short_grass strict
 setblock -41 64 -10 minecraft:crafting_table strict
 setblock -41 64 10 minecraft:loom[facing=north] strict
-setblock -41 64 15 minecraft:cornflower strict
-fill -41 64 18 -41 64 19 minecraft:short_grass strict
-setblock -41 64 30 minecraft:short_grass strict
-setblock -41 64 35 minecraft:pink_tulip strict
+setblock -41 64 20 minecraft:short_grass strict
+setblock -41 64 23 minecraft:short_grass strict
+setblock -41 64 27 minecraft:fern strict
+setblock -41 64 34 minecraft:short_grass strict
 setblock -41 64 36 minecraft:short_grass strict
-fill -41 64 41 -41 70 41 minecraft:birch_log strict
+setblock -41 64 41 minecraft:fern strict
+fill -41 64 42 -39 64 42 minecraft:short_grass strict
+setblock -41 64 50 minecraft:short_grass strict
+setblock -41 64 52 minecraft:orange_tulip strict
+fill -41 64 54 -41 64 56 minecraft:short_grass strict
 setblock -41 64 211 minecraft:white_concrete strict
-setblock -40 64 -58 minecraft:poppy strict
-setblock -40 64 -51 minecraft:poppy strict
-setblock -40 64 -38 minecraft:oxeye_daisy strict
-fill -40 64 -35 -38 64 -35 minecraft:short_grass strict
+setblock -40 64 -56 minecraft:short_grass strict
+setblock -40 64 -54 minecraft:short_grass strict
+fill -40 64 -52 -39 64 -52 minecraft:short_grass strict
+setblock -40 64 -50 minecraft:fern strict
+fill -40 64 -44 -39 64 -44 minecraft:short_grass strict
 setblock -40 64 -33 minecraft:hay_block[axis=x] strict
-setblock -40 64 -14 minecraft:short_grass strict
+fill -40 64 -15 -40 64 -14 minecraft:short_grass strict
 setblock -40 64 -10 minecraft:barrel[facing=up] strict
 setblock -40 64 10 minecraft:cartography_table strict
-fill -40 64 19 -40 69 19 minecraft:birch_log strict
-setblock -40 64 23 minecraft:short_grass strict
-setblock -40 64 29 minecraft:fern strict
-setblock -40 64 34 minecraft:short_grass strict
-setblock -40 64 39 minecraft:short_grass strict
-setblock -40 64 44 minecraft:short_grass strict
-setblock -40 64 50 minecraft:short_grass strict
-fill -40 64 52 -40 64 53 minecraft:short_grass strict
-setblock -40 64 56 minecraft:azure_bluet strict
+fill -40 64 16 -40 69 16 minecraft:birch_log strict
+fill -40 64 17 -40 64 18 minecraft:short_grass strict
+setblock -40 64 26 minecraft:fern strict
+setblock -40 64 33 minecraft:fern strict
+fill -40 64 37 -39 64 37 minecraft:short_grass strict
+fill -40 64 41 -40 68 41 minecraft:oak_log strict
+setblock -40 64 44 minecraft:fern strict
+fill -40 64 50 -40 64 51 minecraft:fern strict
 setblock -40 64 199 minecraft:white_concrete strict
 setblock -40 64 211 minecraft:red_concrete strict
-fill -39 64 -57 -38 64 -57 minecraft:short_grass strict
-setblock -39 64 -56 minecraft:cornflower strict
-fill -39 64 -54 -38 64 -54 minecraft:short_grass strict
-fill -39 64 -40 -38 64 -40 minecraft:short_grass strict
+fill -39 64 -58 -38 64 -58 minecraft:short_grass strict
+setblock -39 64 -42 minecraft:short_grass strict
+setblock -39 64 -41 minecraft:white_tulip strict
+fill -39 64 -40 -39 64 -39 minecraft:short_grass strict
 setblock -39 64 -10 minecraft:fletching_table strict
 setblock -39 64 10 minecraft:barrel[facing=up] strict
-setblock -39 64 17 minecraft:azure_bluet strict
-setblock -39 64 19 minecraft:short_grass strict
-setblock -39 64 22 minecraft:short_grass strict
-setblock -39 64 23 minecraft:lily_of_the_valley strict
-setblock -39 64 27 minecraft:white_tulip strict
-setblock -39 64 35 minecraft:short_grass strict
-setblock -39 64 38 minecraft:short_grass strict
-setblock -39 64 40 minecraft:short_grass strict
-setblock -39 64 43 minecraft:short_grass strict
-setblock -39 64 52 minecraft:short_grass strict
+fill -39 64 15 -39 64 17 minecraft:short_grass strict
+setblock -39 64 20 minecraft:short_grass strict
+setblock -39 64 30 minecraft:short_grass strict
+setblock -39 64 32 minecraft:short_grass strict
+setblock -39 64 33 minecraft:azure_bluet strict
+setblock -39 64 34 minecraft:short_grass strict
+setblock -39 64 51 minecraft:short_grass strict
+setblock -39 64 54 minecraft:short_grass strict
+setblock -39 64 57 minecraft:short_grass strict
 fill -39 64 120 -36 64 120 minecraft:white_concrete strict
 fill -39 64 130 -36 64 130 minecraft:white_concrete strict
 setblock -39 64 198 minecraft:red_concrete strict
 fill -39 64 210 -38 64 210 minecraft:red_concrete strict
 setblock -38 64 -60 minecraft:short_grass strict
-setblock -38 64 -58 minecraft:fern strict
-setblock -38 64 -55 minecraft:poppy strict
-setblock -38 64 -52 minecraft:chiseled_stone_bricks strict
-setblock -38 64 -45 minecraft:fern strict
-setblock -38 64 -42 minecraft:oxeye_daisy strict
-setblock -38 64 -41 minecraft:lily_of_the_valley strict
-setblock -38 64 -38 minecraft:short_grass strict
-setblock -38 64 -37 minecraft:poppy strict
+setblock -38 64 -54 minecraft:short_grass strict
+fill -38 64 -44 -38 64 -42 minecraft:fern strict
+setblock -38 64 -36 minecraft:short_grass strict
 fill -38 64 -16 -38 67 -16 minecraft:dark_oak_log strict
-setblock -38 64 -15 minecraft:pink_tulip strict
+setblock -38 64 -14 minecraft:short_grass strict
 setblock -38 64 -10 minecraft:barrel[facing=up] strict
 setblock -38 64 10 minecraft:hay_block strict
-setblock -38 64 16 minecraft:short_grass strict
-setblock -38 64 21 minecraft:lily_of_the_valley strict
-setblock -38 64 22 minecraft:fern strict
-fill -38 64 23 -36 64 23 minecraft:short_grass strict
-fill -38 64 28 -38 64 29 minecraft:short_grass strict
-setblock -38 64 32 minecraft:short_grass strict
-setblock -38 64 34 minecraft:short_grass strict
-setblock -38 64 36 minecraft:lily_of_the_valley strict
-setblock -38 64 37 minecraft:azure_bluet strict
+setblock -38 64 17 minecraft:fern strict
+fill -38 64 20 -38 64 21 minecraft:short_grass strict
+setblock -38 64 27 minecraft:fern strict
+setblock -38 64 28 minecraft:short_grass strict
+fill -38 64 37 -38 64 38 minecraft:short_grass strict
+setblock -38 64 41 minecraft:short_grass strict
 setblock -38 64 52 minecraft:chiseled_stone_bricks strict
-setblock -38 64 55 minecraft:lily_of_the_valley strict
 fill -38 64 197 -38 64 198 minecraft:red_concrete strict
-setblock -37 64 -55 minecraft:short_grass strict
-setblock -37 64 -46 minecraft:blue_orchid strict
-setblock -37 64 -45 minecraft:cornflower strict
-setblock -37 64 -42 minecraft:short_grass strict
-setblock -37 64 -39 minecraft:short_grass strict
-fill -37 64 -36 -37 64 -35 minecraft:short_grass strict
+setblock -37 64 -57 minecraft:short_grass strict
+setblock -37 64 -53 minecraft:poppy strict
+fill -37 64 -45 -36 69 -45 minecraft:bamboo[age=0,leaves=none] strict
+fill -37 64 -44 -37 64 -43 minecraft:short_grass strict
+setblock -37 64 -41 minecraft:short_grass strict
+setblock -37 64 -40 minecraft:fern strict
+setblock -37 64 -36 minecraft:fern strict
 setblock -37 64 -15 minecraft:short_grass strict
 fill -37 64 -13 -37 80 -13 minecraft:polished_deepslate strict
 setblock -37 64 -12 minecraft:stone_bricks strict
@@ -1995,461 +2397,464 @@ fill -37 64 -9 -37 80 -9 minecraft:polished_deepslate strict
 fill -37 64 9 -37 80 9 minecraft:polished_deepslate strict
 fill -37 64 10 -37 65 12 minecraft:stone_bricks strict
 fill -37 64 13 -37 80 13 minecraft:polished_deepslate strict
-fill -37 64 16 -37 64 17 minecraft:short_grass strict
-setblock -37 64 21 minecraft:poppy strict
-setblock -37 64 27 minecraft:short_grass strict
-fill -37 64 29 -37 64 30 minecraft:short_grass strict
-fill -37 64 33 -37 69 33 minecraft:oak_log strict
-setblock -37 64 37 minecraft:short_grass strict
-setblock -37 64 41 minecraft:fern strict
-setblock -37 64 47 minecraft:white_tulip strict
+setblock -37 64 14 minecraft:short_grass strict
+setblock -37 64 18 minecraft:short_grass strict
+setblock -37 64 20 minecraft:short_grass strict
+setblock -37 64 22 minecraft:short_grass strict
+setblock -37 64 24 minecraft:lily_of_the_valley strict
+fill -37 64 27 -35 64 27 minecraft:short_grass strict
+setblock -37 64 32 minecraft:short_grass strict
+fill -37 64 33 -37 68 33 minecraft:oak_log strict
+setblock -37 64 34 minecraft:lily_of_the_valley strict
+setblock -37 64 39 minecraft:short_grass strict
+fill -37 64 42 -37 64 43 minecraft:short_grass strict
+setblock -37 64 46 minecraft:short_grass strict
 setblock -37 64 54 minecraft:short_grass strict
-setblock -37 64 57 minecraft:lily_of_the_valley strict
-setblock -37 64 58 minecraft:short_grass strict
+setblock -37 64 57 minecraft:short_grass strict
 setblock -37 64 197 minecraft:red_concrete strict
 setblock -37 64 209 minecraft:red_concrete strict
-setblock -36 64 -61 minecraft:fern strict
-setblock -36 64 -57 minecraft:short_grass strict
-setblock -36 64 -46 minecraft:short_grass strict
-fill -36 64 -37 -36 64 -36 minecraft:short_grass strict
-fill -36 64 -34 -36 64 -33 minecraft:short_grass strict
+setblock -36 64 -55 minecraft:short_grass strict
+setblock -36 64 -53 minecraft:fern strict
+setblock -36 64 -47 minecraft:short_grass strict
+setblock -36 64 -41 minecraft:fern strict
+setblock -36 64 -37 minecraft:short_grass strict
+setblock -36 64 -33 minecraft:short_grass strict
+setblock -36 64 -32 minecraft:oxeye_daisy strict
 setblock -36 64 -30 minecraft:short_grass strict
-setblock -36 64 -28 minecraft:dandelion strict
-setblock -36 64 -27 minecraft:short_grass strict
-setblock -36 64 -17 minecraft:short_grass strict
+setblock -36 64 -29 minecraft:oxeye_daisy strict
+fill -36 64 -27 -36 64 -25 minecraft:short_grass strict
+setblock -36 64 -24 minecraft:lily_of_the_valley strict
+setblock -36 64 -18 minecraft:fern strict
+setblock -36 64 -16 minecraft:white_tulip strict
 fill -36 64 -13 -34 64 -13 minecraft:stone_bricks strict
 setblock -36 64 -11 minecraft:deepslate_bricks strict
 fill -36 64 -9 -34 64 -9 minecraft:stone_bricks strict
 fill -36 64 9 -34 64 9 minecraft:stone_bricks strict
 setblock -36 64 11 minecraft:deepslate_bricks strict
 setblock -36 64 13 minecraft:mossy_stone_bricks strict
-setblock -36 64 15 minecraft:short_grass strict
-setblock -36 64 19 minecraft:red_tulip strict
 setblock -36 64 21 minecraft:short_grass strict
-setblock -36 64 30 minecraft:short_grass strict
 setblock -36 64 33 minecraft:short_grass strict
-setblock -36 64 37 minecraft:fern strict
-setblock -36 64 41 minecraft:short_grass strict
+setblock -36 64 35 minecraft:short_grass strict
+setblock -36 64 37 minecraft:short_grass strict
+setblock -36 64 42 minecraft:short_grass strict
 setblock -36 64 44 minecraft:short_grass strict
-setblock -36 64 46 minecraft:short_grass strict
-setblock -36 64 59 minecraft:fern strict
+fill -36 64 46 -35 64 46 minecraft:fern strict
+setblock -36 64 56 minecraft:oxeye_daisy strict
 setblock -36 64 196 minecraft:red_concrete strict
 fill -36 64 208 -35 64 208 minecraft:white_concrete strict
-setblock -35 64 -61 minecraft:short_grass strict
-fill -35 64 -58 -35 64 -56 minecraft:azalea_leaves[persistent=true] strict
-setblock -35 64 -55 minecraft:short_grass strict
-setblock -35 64 -53 minecraft:orange_tulip strict
-fill -35 64 -47 -35 64 -45 minecraft:short_grass strict
-fill -35 64 -43 -35 67 -43 minecraft:bamboo[age=0,leaves=none] strict
-setblock -35 64 -39 minecraft:short_grass strict
-setblock -35 64 -37 minecraft:short_grass strict
-setblock -35 64 -35 minecraft:short_grass strict
-setblock -35 64 -33 minecraft:fern strict
-setblock -35 64 -32 minecraft:short_grass strict
-setblock -35 64 -29 minecraft:short_grass strict
-fill -35 64 -22 -35 64 -21 minecraft:short_grass strict
-fill -35 64 -18 -35 64 -17 minecraft:short_grass strict
+setblock -35 64 -60 minecraft:fern strict
+setblock -35 64 -59 minecraft:short_grass strict
+fill -35 64 -56 -34 64 -56 minecraft:short_grass strict
+fill -35 64 -45 -35 66 -43 minecraft:bamboo[age=0,leaves=none] strict
+fill -35 64 -40 -34 64 -40 minecraft:short_grass strict
+setblock -35 64 -31 minecraft:orange_tulip strict
+setblock -35 64 -24 minecraft:fern strict
 fill -35 64 -11 -35 64 -10 minecraft:deepslate_bricks strict
 fill -35 64 -8 -35 64 -3 minecraft:deepslate_bricks strict
 fill -35 64 3 -35 64 8 minecraft:deepslate_bricks strict
 fill -35 64 10 -35 64 11 minecraft:deepslate_bricks strict
 fill -35 64 13 -34 64 13 minecraft:stone_bricks strict
-setblock -35 64 18 minecraft:fern strict
-setblock -35 64 25 minecraft:fern strict
+setblock -35 64 14 minecraft:fern strict
+setblock -35 64 16 minecraft:allium strict
+setblock -35 64 18 minecraft:poppy strict
+setblock -35 64 19 minecraft:short_grass strict
+fill -35 64 21 -34 64 22 minecraft:azalea_leaves[persistent=true] strict
+fill -35 64 23 -34 64 23 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -35 64 25 minecraft:short_grass strict
+setblock -35 64 26 minecraft:dandelion strict
+setblock -35 64 33 minecraft:blue_orchid strict
 setblock -35 64 34 minecraft:short_grass strict
-setblock -35 64 38 minecraft:short_grass strict
-fill -35 64 40 -35 64 42 minecraft:fern strict
-setblock -35 64 56 minecraft:short_grass strict
+fill -35 64 38 -35 64 39 minecraft:short_grass strict
+setblock -35 64 41 minecraft:short_grass strict
+fill -35 64 43 -34 64 43 minecraft:short_grass strict
+setblock -35 64 44 minecraft:orange_tulip strict
+setblock -35 64 45 minecraft:short_grass strict
+setblock -35 64 48 minecraft:short_grass strict
 fill -35 64 120 -33 64 120 minecraft:red_concrete strict
 fill -35 64 130 -32 64 130 minecraft:red_concrete strict
 setblock -35 64 195 minecraft:white_concrete strict
-setblock -34 64 -59 minecraft:short_grass strict
-fill -34 64 -58 -33 64 -58 minecraft:azalea_leaves[persistent=true] strict
-fill -34 64 -57 -33 64 -57 minecraft:flowering_azalea_leaves[persistent=true] strict
-fill -34 64 -56 -33 64 -56 minecraft:azalea_leaves[persistent=true] strict
-setblock -34 64 -49 minecraft:short_grass strict
+setblock -34 64 -60 minecraft:short_grass strict
+setblock -34 64 -57 minecraft:blue_orchid strict
+setblock -34 64 -54 minecraft:fern strict
 setblock -34 64 -47 minecraft:short_grass strict
-setblock -34 64 -46 minecraft:white_tulip strict
-fill -34 64 -45 -34 64 -44 minecraft:short_grass strict
-fill -34 64 -36 -34 64 -34 minecraft:short_grass strict
-setblock -34 64 -31 minecraft:short_grass strict
-fill -34 64 -21 -33 64 -21 minecraft:short_grass strict
-setblock -34 64 -19 minecraft:short_grass strict
-setblock -34 64 -18 minecraft:polished_andesite strict
-setblock -34 64 -17 minecraft:azure_bluet strict
-setblock -34 64 -16 minecraft:short_grass strict
-setblock -34 64 14 minecraft:short_grass strict
-setblock -34 64 19 minecraft:short_grass strict
-setblock -34 64 23 minecraft:short_grass strict
-setblock -34 64 26 minecraft:short_grass strict
+setblock -34 64 -32 minecraft:blue_orchid strict
+setblock -34 64 -29 minecraft:cornflower strict
+fill -34 64 -24 -34 72 -24 minecraft:spruce_log strict
+fill -34 64 -21 -34 64 -18 minecraft:short_grass strict
+fill -34 64 -16 -33 64 -16 minecraft:short_grass strict
+setblock -34 64 15 minecraft:short_grass strict
+setblock -34 64 18 minecraft:short_grass strict
+setblock -34 64 26 minecraft:poppy strict
 fill -34 64 28 -34 64 32 minecraft:stone_brick_slab strict
-fill -34 64 36 -34 64 37 minecraft:short_grass strict
-setblock -34 64 39 minecraft:short_grass strict
-fill -34 64 43 -33 64 43 minecraft:short_grass strict
-setblock -34 64 49 minecraft:fern strict
-fill -34 64 54 -34 64 55 minecraft:fern strict
+setblock -34 64 36 minecraft:short_grass strict
+setblock -34 64 39 minecraft:lily_of_the_valley strict
+fill -34 64 40 -33 64 40 minecraft:short_grass strict
+fill -34 64 47 -33 64 47 minecraft:fern strict
+setblock -34 64 58 minecraft:short_grass strict
+setblock -34 64 59 minecraft:white_tulip strict
 fill -34 64 194 -33 64 194 minecraft:white_concrete strict
 setblock -34 64 207 minecraft:white_concrete strict
-fill -33 64 -61 -32 64 -61 minecraft:short_grass strict
-setblock -33 64 -55 minecraft:short_grass strict
-setblock -33 64 -47 minecraft:fern strict
-fill -33 64 -44 -33 64 -43 minecraft:short_grass strict
-setblock -33 64 -37 minecraft:fern strict
-setblock -33 64 -36 minecraft:short_grass strict
-fill -33 64 -27 -33 71 -26 minecraft:bamboo[age=0,leaves=none] strict
-fill -33 64 -25 -33 64 -24 minecraft:short_grass strict
+setblock -33 64 -61 minecraft:short_grass strict
+setblock -33 64 -59 minecraft:short_grass strict
+setblock -33 64 -48 minecraft:pink_tulip strict
+fill -33 64 -44 -32 64 -44 minecraft:fern strict
+setblock -33 64 -43 minecraft:short_grass strict
+setblock -33 64 -31 minecraft:fern strict
+fill -33 64 -30 -32 64 -30 minecraft:short_grass strict
+setblock -33 64 -28 minecraft:short_grass strict
+setblock -33 64 -22 minecraft:short_grass strict
 fill -33 64 -13 -33 80 -13 minecraft:polished_deepslate strict
 setblock -33 64 -12 minecraft:mossy_stone_bricks strict
 fill -33 64 -11 -33 64 -10 minecraft:stone_bricks strict
 fill -33 64 -9 -33 80 -9 minecraft:polished_deepslate strict
-fill -33 64 -4 -29 64 -4 minecraft:azalea_leaves[persistent=true] strict
-fill -33 64 4 -25 64 4 minecraft:azalea_leaves[persistent=true] strict
+fill -33 64 -4 -32 64 -4 minecraft:azalea_leaves[persistent=true] strict
+fill -33 64 4 -32 64 4 minecraft:azalea_leaves[persistent=true] strict
 fill -33 64 9 -33 80 9 minecraft:polished_deepslate strict
 fill -33 64 10 -33 66 12 minecraft:stone_bricks strict
 fill -33 64 13 -33 80 13 minecraft:polished_deepslate strict
-setblock -33 64 21 minecraft:short_grass strict
-fill -33 64 23 -33 70 23 minecraft:birch_log strict
+setblock -33 64 14 minecraft:white_tulip strict
+fill -33 64 17 -32 64 17 minecraft:short_grass strict
+fill -33 64 19 -33 64 20 minecraft:short_grass strict
+setblock -33 64 21 minecraft:azalea_leaves[persistent=true] strict
+fill -33 64 22 -33 64 23 minecraft:flowering_azalea_leaves[persistent=true] strict
 fill -33 64 27 -33 64 28 minecraft:stone_brick_slab strict
 fill -33 64 29 -33 64 31 minecraft:water strict
 fill -33 64 32 -33 64 33 minecraft:stone_brick_slab strict
-setblock -33 64 35 minecraft:poppy strict
-fill -33 64 39 -33 64 40 minecraft:short_grass strict
-fill -33 64 42 -33 69 42 minecraft:birch_log strict
-setblock -33 64 44 minecraft:fern strict
-setblock -33 64 48 minecraft:fern strict
-setblock -33 64 50 minecraft:short_grass strict
-setblock -33 64 56 minecraft:short_grass strict
-setblock -33 64 60 minecraft:short_grass strict
+setblock -33 64 38 minecraft:short_grass strict
+setblock -33 64 43 minecraft:red_tulip strict
+setblock -33 64 45 minecraft:fern strict
+setblock -33 64 49 minecraft:short_grass strict
+setblock -33 64 55 minecraft:dandelion strict
+setblock -33 64 56 minecraft:fern strict
+fill -33 64 60 -32 64 60 minecraft:short_grass strict
 setblock -33 64 193 minecraft:red_concrete strict
 setblock -33 64 206 minecraft:red_concrete strict
-setblock -32 64 -59 minecraft:short_grass strict
-setblock -32 64 -57 minecraft:lily_of_the_valley strict
-setblock -32 64 -50 minecraft:short_grass strict
-setblock -32 64 -45 minecraft:short_grass strict
-setblock -32 64 -44 minecraft:lily_of_the_valley strict
-setblock -32 64 -39 minecraft:short_grass strict
-fill -32 64 -36 -32 64 -35 minecraft:short_grass strict
-fill -32 64 -32 -31 64 -32 minecraft:short_grass strict
-fill -32 64 -28 -32 66 -27 minecraft:bamboo[age=0,leaves=none] strict
-fill -32 64 -26 -32 64 -25 minecraft:short_grass strict
-setblock -32 64 -17 minecraft:short_grass strict
-setblock -32 64 -15 minecraft:fern strict
-setblock -32 64 -14 minecraft:short_grass strict
-setblock -32 64 -9 minecraft:fern strict
-setblock -32 64 -6 minecraft:short_grass strict
-setblock -32 64 -5 minecraft:blue_orchid strict
-fill -32 64 5 -31 64 5 minecraft:blue_orchid strict
-fill -32 64 6 -32 64 7 minecraft:short_grass strict
-setblock -32 64 8 minecraft:oxeye_daisy strict
-setblock -32 64 10 minecraft:short_grass strict
-setblock -32 64 11 minecraft:oxeye_daisy strict
-fill -32 64 13 -32 64 15 minecraft:short_grass strict
-setblock -32 64 16 minecraft:lily_of_the_valley strict
-setblock -32 64 22 minecraft:fern strict
-setblock -32 64 24 minecraft:white_tulip strict
+setblock -32 64 -48 minecraft:fern strict
+fill -32 64 -39 -32 64 -38 minecraft:short_grass strict
+setblock -32 64 -32 minecraft:fern strict
+setblock -32 64 -27 minecraft:short_grass strict
+fill -32 64 -25 -32 64 -24 minecraft:short_grass strict
+setblock -32 64 -15 minecraft:short_grass strict
+setblock -32 64 -13 minecraft:short_grass strict
+setblock -32 64 -6 minecraft:azure_bluet strict
+setblock -32 64 -5 minecraft:cornflower strict
+setblock -32 64 5 minecraft:lily_of_the_valley strict
+setblock -32 64 6 minecraft:cornflower strict
+setblock -32 64 11 minecraft:short_grass strict
 fill -32 64 26 -32 64 27 minecraft:stone_brick_slab strict
 fill -32 64 28 -32 64 32 minecraft:water strict
 fill -32 64 33 -32 64 34 minecraft:stone_brick_slab strict
-fill -32 64 45 -31 64 45 minecraft:short_grass strict
-setblock -32 64 55 minecraft:short_grass strict
+setblock -32 64 40 minecraft:fern strict
+setblock -32 64 41 minecraft:short_grass strict
+setblock -32 64 42 minecraft:azure_bluet strict
+fill -32 64 43 -32 68 43 minecraft:oak_log strict
+setblock -32 64 47 minecraft:short_grass strict
+setblock -32 64 58 minecraft:short_grass strict
 fill -32 64 120 -31 64 120 minecraft:white_concrete strict
 fill -32 64 192 -32 64 193 minecraft:red_concrete strict
 fill -32 64 205 -32 64 206 minecraft:red_concrete strict
-setblock -31 64 -62 minecraft:short_grass strict
-fill -31 64 -60 -30 64 -60 minecraft:short_grass strict
-setblock -31 64 -58 minecraft:short_grass strict
-fill -31 64 -50 -29 64 -48 minecraft:azalea_leaves[persistent=true] strict
-setblock -31 64 -46 minecraft:short_grass strict
-setblock -31 64 -44 minecraft:short_grass strict
-setblock -31 64 -42 minecraft:fern strict
-setblock -31 64 -40 minecraft:oxeye_daisy strict
-fill -31 64 -37 -29 67 -37 minecraft:bamboo[age=0,leaves=none] strict
-fill -31 64 -35 -29 66 -35 minecraft:bamboo[age=0,leaves=none] strict
-setblock -31 64 -33 minecraft:fern strict
-setblock -31 64 -29 minecraft:short_grass strict
-setblock -31 64 -20 minecraft:short_grass strict
-setblock -31 64 -11 minecraft:orange_tulip strict
-setblock -31 64 -5 minecraft:allium strict
-setblock -31 64 6 minecraft:red_tulip strict
-setblock -31 64 15 minecraft:poppy strict
-setblock -31 64 16 minecraft:short_grass strict
-setblock -31 64 19 minecraft:short_grass strict
-setblock -31 64 20 minecraft:dandelion strict
-setblock -31 64 21 minecraft:short_grass strict
-setblock -31 64 22 minecraft:blue_orchid strict
-setblock -31 64 23 minecraft:short_grass strict
+fill -31 64 -62 -31 64 -59 minecraft:short_grass strict
+setblock -31 64 -56 minecraft:short_grass strict
+setblock -31 64 -50 minecraft:dandelion strict
+setblock -31 64 -43 minecraft:blue_orchid strict
+setblock -31 64 -42 minecraft:poppy strict
+setblock -31 64 -41 minecraft:short_grass strict
+setblock -31 64 -40 minecraft:fern strict
+setblock -31 64 -39 minecraft:orange_tulip strict
+setblock -31 64 -38 minecraft:short_grass strict
+fill -31 64 -36 -31 64 -34 minecraft:short_grass strict
+setblock -31 64 -31 minecraft:short_grass strict
+setblock -31 64 -25 minecraft:short_grass strict
+fill -31 64 -20 -31 64 -19 minecraft:short_grass strict
+fill -31 64 -15 -31 68 -14 minecraft:bamboo[age=0,leaves=none] strict
+setblock -31 64 -13 minecraft:fern strict
+fill -31 64 -12 -31 64 -11 minecraft:short_grass strict
+setblock -31 64 -7 minecraft:fern strict
+setblock -31 64 -6 minecraft:dandelion strict
+fill -31 64 -5 -30 64 -5 minecraft:poppy strict
+setblock -31 64 -4 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -31 64 4 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill -31 64 5 -31 64 8 minecraft:short_grass strict
+setblock -31 64 13 minecraft:pink_tulip strict
+setblock -31 64 14 minecraft:fern strict
+setblock -31 64 18 minecraft:short_grass strict
+fill -31 64 23 -31 64 24 minecraft:short_grass strict
 fill -31 64 26 -29 64 26 minecraft:stone_brick_slab strict
 fill -31 64 27 -31 64 33 minecraft:water strict
 fill -31 64 34 -29 64 34 minecraft:stone_brick_slab strict
-fill -31 64 38 -31 64 39 minecraft:short_grass strict
-fill -31 64 41 -30 64 41 minecraft:short_grass strict
-setblock -31 64 43 minecraft:short_grass strict
-setblock -31 64 44 minecraft:orange_tulip strict
-setblock -31 64 46 minecraft:fern strict
-setblock -31 64 48 minecraft:short_grass strict
-setblock -31 64 60 minecraft:short_grass strict
+setblock -31 64 37 minecraft:short_grass strict
+setblock -31 64 40 minecraft:short_grass strict
+setblock -31 64 51 minecraft:short_grass strict
+setblock -31 64 56 minecraft:short_grass strict
+setblock -31 64 59 minecraft:short_grass strict
 fill -31 64 130 -30 64 130 minecraft:white_concrete strict
 fill -31 64 191 -31 64 192 minecraft:red_concrete strict
 setblock -31 64 205 minecraft:red_concrete strict
-setblock -30 64 -61 minecraft:blue_orchid strict
-setblock -30 64 -58 minecraft:fern strict
-fill -30 64 -51 -29 64 -51 minecraft:short_grass strict
-setblock -30 64 -41 minecraft:short_grass strict
-setblock -30 64 -31 minecraft:blue_orchid strict
-setblock -30 64 -28 minecraft:cornflower strict
-fill -30 64 -21 -30 64 -18 minecraft:short_grass strict
-setblock -30 64 -16 minecraft:short_grass strict
-setblock -30 64 -12 minecraft:short_grass strict
+setblock -30 64 -59 minecraft:short_grass strict
+setblock -30 64 -51 minecraft:short_grass strict
+fill -30 64 -45 -30 64 -44 minecraft:short_grass strict
+fill -30 64 -39 -29 64 -39 minecraft:short_grass strict
+setblock -30 64 -34 minecraft:fern strict
+setblock -30 64 -28 minecraft:short_grass strict
+setblock -30 64 -26 minecraft:short_grass strict
+setblock -30 64 -24 minecraft:pink_tulip strict
+setblock -30 64 -22 minecraft:fern strict
+setblock -30 64 -20 minecraft:short_grass strict
+fill -30 64 -14 -30 64 -13 minecraft:short_grass strict
 setblock -30 64 -9 minecraft:short_grass strict
-setblock -30 64 -6 minecraft:cornflower strict
-setblock -30 64 -5 minecraft:poppy strict
-fill -30 64 6 -30 64 7 minecraft:short_grass strict
-setblock -30 64 10 minecraft:lily_of_the_valley strict
-setblock -30 64 11 minecraft:short_grass strict
-setblock -30 64 14 minecraft:short_grass strict
-setblock -30 64 18 minecraft:fern strict
+setblock -30 64 -6 minecraft:pink_tulip strict
+fill -30 64 -4 -29 64 -4 minecraft:azalea_leaves[persistent=true] strict
+fill -30 64 4 -25 64 4 minecraft:azalea_leaves[persistent=true] strict
+setblock -30 64 5 minecraft:white_tulip strict
+setblock -30 64 7 minecraft:fern strict
+setblock -30 64 8 minecraft:dandelion strict
+fill -30 64 10 -29 64 10 minecraft:short_grass strict
+fill -30 64 12 -30 64 13 minecraft:short_grass strict
+fill -30 64 15 -30 64 16 minecraft:short_grass strict
+setblock -30 64 22 minecraft:oxeye_daisy strict
 fill -30 64 27 -30 64 29 minecraft:water strict
 fill -30 64 31 -30 64 33 minecraft:water strict
-setblock -30 64 36 minecraft:short_grass strict
-setblock -30 64 37 minecraft:white_tulip strict
-setblock -30 64 39 minecraft:short_grass strict
-setblock -30 64 48 minecraft:pink_tulip strict
-setblock -30 64 56 minecraft:fern strict
-setblock -30 64 57 minecraft:short_grass strict
+fill -30 64 40 -30 64 41 minecraft:short_grass strict
+setblock -30 64 43 minecraft:short_grass strict
+setblock -30 64 48 minecraft:short_grass strict
+setblock -30 64 61 minecraft:short_grass strict
 setblock -30 64 119 minecraft:white_concrete strict
 setblock -30 64 191 minecraft:white_concrete strict
 setblock -30 64 204 minecraft:red_concrete strict
-setblock -29 64 -52 minecraft:fern strict
-setblock -29 64 -46 minecraft:short_grass strict
-setblock -29 64 -40 minecraft:short_grass strict
-setblock -29 64 -32 minecraft:short_grass strict
-setblock -29 64 -29 minecraft:white_tulip strict
-fill -29 64 -26 -28 64 -26 minecraft:short_grass strict
-fill -29 64 -24 -29 64 -23 minecraft:short_grass strict
-setblock -29 64 -17 minecraft:short_grass strict
-setblock -29 64 -15 minecraft:short_grass strict
-setblock -29 64 -12 minecraft:red_tulip strict
-setblock -29 64 -10 minecraft:fern strict
-setblock -29 64 -8 minecraft:fern strict
-fill -29 64 -6 -29 64 -5 minecraft:dandelion strict
-setblock -29 64 5 minecraft:allium strict
+fill -29 64 -60 -29 64 -59 minecraft:short_grass strict
+setblock -29 64 -49 minecraft:short_grass strict
+fill -29 64 -47 -28 64 -47 minecraft:fern strict
+setblock -29 64 -44 minecraft:short_grass strict
+setblock -29 64 -38 minecraft:polished_andesite strict
+setblock -29 64 -36 minecraft:short_grass strict
+setblock -29 64 -33 minecraft:short_grass strict
+setblock -29 64 -30 minecraft:polished_andesite strict
+fill -29 64 -26 -29 64 -24 minecraft:short_grass strict
+fill -29 64 -22 -29 64 -21 minecraft:short_grass strict
+setblock -29 64 -18 minecraft:short_grass strict
+fill -29 64 -16 -29 68 -15 minecraft:bamboo[age=0,leaves=none] strict
+setblock -29 64 -14 minecraft:short_grass strict
+setblock -29 64 -12 minecraft:short_grass strict
+fill -29 64 -9 -29 64 -8 minecraft:short_grass strict
+setblock -29 64 -6 minecraft:blue_orchid strict
+setblock -29 64 5 minecraft:lily_of_the_valley strict
 setblock -29 64 6 minecraft:dandelion strict
-setblock -29 64 12 minecraft:short_grass strict
-fill -29 64 16 -29 69 16 minecraft:birch_log strict
-setblock -29 64 19 minecraft:short_grass strict
+setblock -29 64 7 minecraft:short_grass strict
+setblock -29 64 9 minecraft:fern strict
+setblock -29 64 11 minecraft:azure_bluet strict
+fill -29 64 12 -29 64 13 minecraft:fern strict
+setblock -29 64 15 minecraft:short_grass strict
+fill -29 64 16 -29 64 17 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -29 64 18 minecraft:azalea_leaves[persistent=true] strict
+setblock -29 64 23 minecraft:short_grass strict
 fill -29 64 27 -29 64 33 minecraft:water strict
-fill -29 64 36 -29 64 38 minecraft:short_grass strict
-setblock -29 64 40 minecraft:azure_bluet strict
+setblock -29 64 36 minecraft:allium strict
+setblock -29 64 37 minecraft:short_grass strict
+setblock -29 64 41 minecraft:fern strict
 fill -29 64 42 -29 64 43 minecraft:short_grass strict
-setblock -29 64 47 minecraft:short_grass strict
-setblock -29 64 51 minecraft:short_grass strict
-fill -29 64 60 -29 64 61 minecraft:fern strict
+fill -29 64 49 -29 64 50 minecraft:short_grass strict
+setblock -29 64 60 minecraft:oxeye_daisy strict
 setblock -29 64 119 minecraft:red_concrete strict
 fill -29 64 129 -26 64 129 minecraft:white_concrete strict
 setblock -29 64 190 minecraft:white_concrete strict
 setblock -29 64 203 minecraft:white_concrete strict
-setblock -28 64 -61 minecraft:short_grass strict
-setblock -28 64 -58 minecraft:pink_tulip strict
-setblock -28 64 -53 minecraft:short_grass strict
-setblock -28 64 -52 minecraft:poppy strict
-fill -28 64 -45 -28 64 -44 minecraft:short_grass strict
-setblock -28 64 -42 minecraft:short_grass strict
-setblock -28 64 -39 minecraft:fern strict
-fill -28 64 -34 -28 64 -33 minecraft:short_grass strict
+setblock -28 64 -42 minecraft:azure_bluet strict
+setblock -28 64 -37 minecraft:fern strict
+setblock -28 64 -34 minecraft:cornflower strict
+setblock -28 64 -29 minecraft:cornflower strict
 setblock -28 64 -24 minecraft:short_grass strict
-setblock -28 64 -23 minecraft:azure_bluet strict
-setblock -28 64 -20 minecraft:fern strict
-fill -28 64 -19 -27 64 -19 minecraft:short_grass strict
-setblock -28 64 -18 minecraft:azure_bluet strict
-setblock -28 64 -14 minecraft:short_grass strict
-setblock -28 64 -7 minecraft:short_grass strict
+setblock -28 64 -20 minecraft:short_grass strict
+setblock -28 64 -12 minecraft:poppy strict
 setblock -28 64 -6 minecraft:dandelion strict
-fill -28 64 -5 -27 64 -5 minecraft:cornflower strict
+setblock -28 64 -5 minecraft:cornflower strict
 setblock -28 64 -4 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -28 64 5 minecraft:cornflower strict
+setblock -28 64 5 minecraft:oxeye_daisy strict
 setblock -28 64 6 minecraft:short_grass strict
-setblock -28 64 9 minecraft:short_grass strict
-setblock -28 64 12 minecraft:fern strict
-setblock -28 64 19 minecraft:blue_orchid strict
-setblock -28 64 20 minecraft:poppy strict
-setblock -28 64 21 minecraft:short_grass strict
-setblock -28 64 22 minecraft:fern strict
-setblock -28 64 23 minecraft:orange_tulip strict
-setblock -28 64 24 minecraft:short_grass strict
+setblock -28 64 8 minecraft:short_grass strict
+fill -28 64 9 -28 69 9 minecraft:oak_log strict
+fill -28 64 11 -28 64 12 minecraft:short_grass strict
+fill -28 64 16 -27 64 16 minecraft:azalea_leaves[persistent=true] strict
+fill -28 64 17 -27 64 18 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -28 64 19 minecraft:short_grass strict
+setblock -28 64 24 minecraft:fern strict
 fill -28 64 26 -28 64 27 minecraft:stone_brick_slab strict
 fill -28 64 28 -28 64 32 minecraft:water strict
 fill -28 64 33 -28 64 34 minecraft:stone_brick_slab strict
-fill -28 64 37 -28 64 39 minecraft:short_grass strict
-setblock -28 64 42 minecraft:short_grass strict
+fill -28 64 36 -27 64 36 minecraft:short_grass strict
+setblock -28 64 43 minecraft:short_grass strict
+setblock -28 64 46 minecraft:short_grass strict
 setblock -28 64 48 minecraft:short_grass strict
+setblock -28 64 50 minecraft:cornflower strict
 setblock -28 64 53 minecraft:short_grass strict
-setblock -28 64 57 minecraft:short_grass strict
-setblock -28 64 61 minecraft:fern strict
-fill -28 64 62 -28 64 63 minecraft:short_grass strict
+setblock -28 64 58 minecraft:lily_of_the_valley strict
+fill -28 64 60 -28 64 61 minecraft:short_grass strict
+setblock -28 64 62 minecraft:fern strict
+setblock -28 64 63 minecraft:short_grass strict
 setblock -28 64 118 minecraft:red_concrete strict
 setblock -28 64 189 minecraft:white_concrete strict
 setblock -28 64 202 minecraft:white_concrete strict
-setblock -27 64 -52 minecraft:fern strict
-setblock -27 64 -48 minecraft:short_grass strict
-setblock -27 64 -46 minecraft:short_grass strict
-setblock -27 64 -40 minecraft:short_grass strict
-setblock -27 64 -34 minecraft:fern strict
-setblock -27 64 -30 minecraft:short_grass strict
-fill -27 64 -25 -27 64 -24 minecraft:short_grass strict
-setblock -27 64 -22 minecraft:short_grass strict
-setblock -27 64 -15 minecraft:azalea_leaves[persistent=true] strict
-fill -27 64 -14 -27 64 -13 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -27 64 -6 minecraft:short_grass strict
+setblock -27 64 -53 minecraft:red_tulip strict
+fill -27 64 -52 -27 64 -50 minecraft:short_grass strict
+setblock -27 64 -47 minecraft:short_grass strict
+setblock -27 64 -42 minecraft:fern strict
+setblock -27 64 -40 minecraft:lily_of_the_valley strict
+setblock -27 64 -37 minecraft:short_grass strict
+setblock -27 64 -33 minecraft:fern strict
+setblock -27 64 -30 minecraft:dandelion strict
+setblock -27 64 -28 minecraft:oxeye_daisy strict
+setblock -27 64 -25 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -27 64 -22 minecraft:poppy strict
+setblock -27 64 -15 minecraft:pink_tulip strict
+setblock -27 64 -14 minecraft:short_grass strict
+setblock -27 64 -8 minecraft:short_grass strict
+setblock -27 64 -6 minecraft:white_tulip strict
+setblock -27 64 -5 minecraft:short_grass strict
 fill -27 64 -4 -25 64 -4 minecraft:azalea_leaves[persistent=true] strict
-setblock -27 64 5 minecraft:short_grass strict
-fill -27 64 6 -26 64 6 minecraft:white_tulip strict
-fill -27 64 7 -26 64 7 minecraft:short_grass strict
-setblock -27 64 13 minecraft:short_grass strict
-fill -27 64 17 -26 64 17 minecraft:short_grass strict
-fill -27 64 23 -27 64 24 minecraft:short_grass strict
+setblock -27 64 5 minecraft:dandelion strict
+setblock -27 64 6 minecraft:allium strict
+setblock -27 64 9 minecraft:fern strict
+setblock -27 64 10 minecraft:short_grass strict
+setblock -27 64 11 minecraft:fern strict
+setblock -27 64 14 minecraft:short_grass strict
+setblock -27 64 19 minecraft:fern strict
+fill -27 64 24 -27 64 25 minecraft:short_grass strict
 fill -27 64 27 -27 64 28 minecraft:stone_brick_slab strict
 fill -27 64 29 -27 64 31 minecraft:water strict
 fill -27 64 32 -27 64 33 minecraft:stone_brick_slab strict
 setblock -27 64 38 minecraft:short_grass strict
-setblock -27 64 43 minecraft:fern strict
-fill -27 64 47 -27 70 47 minecraft:birch_log strict
-fill -27 64 50 -26 64 50 minecraft:short_grass strict
-setblock -27 64 52 minecraft:short_grass strict
-setblock -27 64 58 minecraft:pink_tulip strict
-setblock -27 64 60 minecraft:fern strict
+fill -27 64 40 -27 64 41 minecraft:short_grass strict
+setblock -27 64 49 minecraft:short_grass strict
+setblock -27 64 59 minecraft:short_grass strict
 fill -27 64 117 -27 64 118 minecraft:white_concrete strict
 setblock -27 64 188 minecraft:red_concrete strict
 fill -27 64 201 -27 64 202 minecraft:white_concrete strict
-setblock -26 64 -53 minecraft:short_grass strict
-fill -26 64 -47 -26 64 -46 minecraft:short_grass strict
-fill -26 64 -42 -25 64 -42 minecraft:short_grass strict
-setblock -26 64 -37 minecraft:short_grass strict
-setblock -26 64 -32 minecraft:fern strict
-setblock -26 64 -31 minecraft:dandelion strict
-fill -26 64 -29 -25 64 -29 minecraft:short_grass strict
-fill -26 64 -27 -26 64 -26 minecraft:short_grass strict
-fill -26 64 -24 -26 64 -23 minecraft:short_grass strict
-setblock -26 64 -17 minecraft:oxeye_daisy strict
-fill -26 64 -15 -26 64 -14 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -26 64 -13 minecraft:azalea_leaves[persistent=true] strict
-setblock -26 64 -7 minecraft:short_grass strict
-setblock -26 64 -6 minecraft:white_tulip strict
-setblock -26 64 -5 minecraft:pink_tulip strict
-setblock -26 64 5 minecraft:oxeye_daisy strict
-fill -26 64 9 -26 68 9 minecraft:oak_log strict
-fill -26 64 21 -26 64 22 minecraft:short_grass strict
+fill -26 64 -49 -26 66 -48 minecraft:bamboo[age=0,leaves=none] strict
+setblock -26 64 -45 minecraft:short_grass strict
+setblock -26 64 -42 minecraft:short_grass strict
+setblock -26 64 -39 minecraft:fern strict
+setblock -26 64 -33 minecraft:short_grass strict
+setblock -26 64 -28 minecraft:fern strict
+setblock -26 64 -27 minecraft:azalea_leaves[persistent=true] strict
+setblock -26 64 -21 minecraft:short_grass strict
+setblock -26 64 -19 minecraft:short_grass strict
+setblock -26 64 -16 minecraft:short_grass strict
+fill -26 64 -13 -26 64 -12 minecraft:short_grass strict
+setblock -26 64 -6 minecraft:short_grass strict
+setblock -26 64 5 minecraft:short_grass strict
+setblock -26 64 6 minecraft:red_tulip strict
+setblock -26 64 11 minecraft:short_grass strict
+setblock -26 64 18 minecraft:fern strict
+setblock -26 64 26 minecraft:pink_tulip strict
 fill -26 64 28 -26 64 32 minecraft:stone_brick_slab strict
-setblock -26 64 35 minecraft:short_grass strict
-setblock -26 64 37 minecraft:fern strict
-setblock -26 64 40 minecraft:short_grass strict
-setblock -26 64 45 minecraft:short_grass strict
-setblock -26 64 47 minecraft:short_grass strict
+fill -26 64 48 -26 64 49 minecraft:short_grass strict
 fill -26 64 116 -26 64 117 minecraft:white_concrete strict
 setblock -26 64 187 minecraft:red_concrete strict
 fill -26 64 200 -26 64 201 minecraft:red_concrete strict
-fill -25 64 -54 -25 64 -52 minecraft:short_grass strict
-fill -25 64 -50 -25 64 -49 minecraft:short_grass strict
-setblock -25 64 -46 minecraft:short_grass strict
+setblock -25 64 -53 minecraft:short_grass strict
+setblock -25 64 -51 minecraft:short_grass strict
+fill -25 64 -50 -25 67 -49 minecraft:bamboo[age=0,leaves=none] strict
+fill -25 64 -46 -24 64 -46 minecraft:short_grass strict
 setblock -25 64 -44 minecraft:short_grass strict
-fill -25 64 -41 -25 67 -41 minecraft:bamboo[age=0,leaves=none] strict
-fill -25 64 -38 -25 64 -37 minecraft:short_grass strict
-setblock -25 64 -32 minecraft:short_grass strict
-setblock -25 64 -27 minecraft:lily_of_the_valley strict
-setblock -25 64 -26 minecraft:short_grass strict
-setblock -25 64 -25 minecraft:azure_bluet strict
-fill -25 64 -24 -25 70 -24 minecraft:bamboo[age=0,leaves=none] strict
-fill -25 64 -23 -25 64 -22 minecraft:fern strict
-setblock -25 64 -20 minecraft:short_grass strict
-setblock -25 64 -15 minecraft:azalea_leaves[persistent=true] strict
-fill -25 64 -14 -25 64 -13 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -25 64 -12 minecraft:short_grass strict
-setblock -25 64 -10 minecraft:allium strict
-setblock -25 64 -9 minecraft:short_grass strict
-fill -25 64 -6 -25 64 -5 minecraft:allium strict
-setblock -25 64 5 minecraft:dandelion strict
+setblock -25 64 -43 minecraft:oxeye_daisy strict
+setblock -25 64 -40 minecraft:short_grass strict
+fill -25 64 -34 -25 64 -31 minecraft:short_grass strict
+setblock -25 64 -30 minecraft:fern strict
+setblock -25 64 -23 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill -25 64 -19 -25 64 -18 minecraft:short_grass strict
+setblock -25 64 -14 minecraft:short_grass strict
+setblock -25 64 -9 minecraft:polished_andesite strict
+setblock -25 64 -6 minecraft:lily_of_the_valley strict
+setblock -25 64 -5 minecraft:pink_tulip strict
+setblock -25 64 5 minecraft:lily_of_the_valley strict
 setblock -25 64 6 minecraft:allium strict
-setblock -25 64 12 minecraft:oxeye_daisy strict
-setblock -25 64 27 minecraft:fern strict
-setblock -25 64 37 minecraft:azure_bluet strict
-setblock -25 64 42 minecraft:fern strict
-setblock -25 64 45 minecraft:cornflower strict
-setblock -25 64 50 minecraft:cornflower strict
+setblock -25 64 22 minecraft:blue_orchid strict
+setblock -25 64 23 minecraft:fern strict
+setblock -25 64 24 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill -25 64 25 -25 65 25 minecraft:azalea_leaves[persistent=true] strict
+fill -25 64 26 -24 64 26 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -25 64 34 minecraft:cornflower strict
+setblock -25 64 45 minecraft:poppy strict
+setblock -25 64 47 minecraft:short_grass strict
+fill -25 64 49 -25 64 51 minecraft:flowering_azalea_leaves[persistent=true] strict
 fill -25 64 115 -25 64 116 minecraft:red_concrete strict
 fill -25 64 128 -24 64 128 minecraft:red_concrete strict
 setblock -25 64 186 minecraft:red_concrete strict
 fill -25 64 199 -25 64 200 minecraft:red_concrete strict
-setblock -24 64 -65 minecraft:short_grass strict
-setblock -24 64 -52 minecraft:short_grass strict
-setblock -24 64 -44 minecraft:poppy strict
-fill -24 64 -43 -24 66 -43 minecraft:bamboo[age=0,leaves=none] strict
-fill -24 64 -35 -24 64 -33 minecraft:short_grass strict
-fill -24 64 -27 -24 64 -26 minecraft:short_grass strict
-fill -24 64 -25 -24 70 -24 minecraft:bamboo[age=0,leaves=none] strict
-fill -24 64 -23 -22 64 -23 minecraft:short_grass strict
-setblock -24 64 -18 minecraft:fern strict
-setblock -24 64 -17 minecraft:poppy strict
-setblock -24 64 -16 minecraft:fern strict
-setblock -24 64 -15 minecraft:short_grass strict
-setblock -24 64 -8 minecraft:short_grass strict
-setblock -24 64 -6 minecraft:short_grass strict
-setblock -24 64 -5 minecraft:oxeye_daisy strict
+setblock -24 64 -64 minecraft:red_tulip strict
+setblock -24 64 -54 minecraft:short_grass strict
+setblock -24 64 -51 minecraft:dandelion strict
+setblock -24 64 -50 minecraft:oxeye_daisy strict
+fill -24 64 -48 -24 68 -48 minecraft:bamboo[age=0,leaves=none] strict
+setblock -24 64 -45 minecraft:fern strict
+fill -24 64 -43 -24 64 -42 minecraft:short_grass strict
+setblock -24 64 -38 minecraft:azure_bluet strict
+setblock -24 64 -35 minecraft:fern strict
+setblock -24 64 -28 minecraft:fern strict
+setblock -24 64 -19 minecraft:short_grass strict
+setblock -24 64 -18 minecraft:orange_tulip strict
+setblock -24 64 -17 minecraft:short_grass strict
+fill -24 64 -12 -23 64 -12 minecraft:fern strict
+setblock -24 64 -6 minecraft:oxeye_daisy strict
+setblock -24 64 -5 minecraft:orange_tulip strict
 fill -24 64 -4 -22 64 -4 minecraft:spruce_stairs[facing=north] strict
 fill -24 64 4 -22 64 4 minecraft:spruce_stairs[facing=south] strict
-setblock -24 64 5 minecraft:red_tulip strict
-fill -24 64 6 -22 64 6 minecraft:dandelion strict
-fill -24 64 10 -23 64 10 minecraft:short_grass strict
-setblock -24 64 12 minecraft:lily_of_the_valley strict
-fill -24 64 14 -24 64 15 minecraft:short_grass strict
-fill -24 64 16 -23 64 16 minecraft:fern strict
-setblock -24 64 17 minecraft:short_grass strict
-setblock -24 64 20 minecraft:red_tulip strict
-fill -24 64 21 -24 64 23 minecraft:short_grass strict
-setblock -24 64 26 minecraft:short_grass strict
-setblock -24 64 31 minecraft:fern strict
-setblock -24 64 33 minecraft:lily_of_the_valley strict
-fill -24 64 36 -23 64 36 minecraft:short_grass strict
-setblock -24 64 40 minecraft:fern strict
-setblock -24 64 43 minecraft:dandelion strict
-setblock -24 64 45 minecraft:oxeye_daisy strict
-setblock -24 64 47 minecraft:short_grass strict
-setblock -24 64 50 minecraft:poppy strict
+setblock -24 64 5 minecraft:pink_tulip strict
+setblock -24 64 6 minecraft:poppy strict
+setblock -24 64 9 minecraft:white_tulip strict
+setblock -24 64 10 minecraft:short_grass strict
+fill -24 64 15 -23 64 15 minecraft:short_grass strict
+fill -24 64 24 -24 64 25 minecraft:azalea_leaves[persistent=true] strict
+setblock -24 64 28 minecraft:short_grass strict
+setblock -24 64 32 minecraft:short_grass strict
+setblock -24 64 33 minecraft:azure_bluet strict
+setblock -24 64 35 minecraft:fern strict
+fill -24 64 36 -24 64 37 minecraft:short_grass strict
+setblock -24 64 38 minecraft:fern strict
+setblock -24 64 39 minecraft:short_grass strict
+setblock -24 64 43 minecraft:short_grass strict
+setblock -24 64 48 minecraft:fern strict
+setblock -24 64 49 minecraft:azalea_leaves[persistent=true] strict
+fill -24 64 50 -24 64 51 minecraft:flowering_azalea_leaves[persistent=true] strict
 fill -24 64 76 -24 64 80 minecraft:red_concrete strict
 fill -24 64 81 -24 64 83 minecraft:white_concrete strict
 setblock -24 64 113 minecraft:white_concrete strict
 setblock -24 64 114 minecraft:red_concrete strict
 setblock -24 64 185 minecraft:white_concrete strict
 setblock -24 64 199 minecraft:red_concrete strict
-setblock -23 64 -64 minecraft:pink_tulip strict
-setblock -23 64 -63 minecraft:short_grass strict
-setblock -23 64 -51 minecraft:short_grass strict
-setblock -23 64 -49 minecraft:white_tulip strict
-setblock -23 64 -47 minecraft:dandelion strict
-setblock -23 64 -46 minecraft:allium strict
-fill -23 64 -43 -23 70 -42 minecraft:bamboo[age=0,leaves=none] strict
-setblock -23 64 -41 minecraft:fern strict
+fill -23 64 -66 -22 64 -66 minecraft:short_grass strict
+setblock -23 64 -64 minecraft:short_grass strict
+setblock -23 64 -63 minecraft:fern strict
+setblock -23 64 -55 minecraft:short_grass strict
+setblock -23 64 -53 minecraft:short_grass strict
+fill -23 64 -49 -23 64 -48 minecraft:short_grass strict
+fill -23 64 -46 -23 64 -45 minecraft:short_grass strict
 setblock -23 64 -40 minecraft:short_grass strict
-setblock -23 64 -39 minecraft:fern strict
+setblock -23 64 -38 minecraft:short_grass strict
 setblock -23 64 -36 minecraft:short_grass strict
-setblock -23 64 -34 minecraft:fern strict
-fill -23 64 -29 -23 64 -28 minecraft:short_grass strict
-setblock -23 64 -26 minecraft:short_grass strict
-fill -23 64 -24 -23 69 -24 minecraft:bamboo[age=0,leaves=none] strict
-fill -23 64 -21 -23 64 -20 minecraft:short_grass strict
-setblock -23 64 -12 minecraft:short_grass strict
-setblock -23 64 -6 minecraft:pink_tulip strict
-setblock -23 64 -5 minecraft:cornflower strict
-setblock -23 64 5 minecraft:lily_of_the_valley strict
-setblock -23 64 13 minecraft:short_grass strict
-fill -23 64 22 -22 64 22 minecraft:short_grass strict
-fill -23 64 26 -23 69 26 minecraft:oak_log strict
-setblock -23 64 28 minecraft:fern strict
+fill -23 64 -34 -23 67 -33 minecraft:bamboo[age=0,leaves=none] strict
+setblock -23 64 -27 minecraft:short_grass strict
+setblock -23 64 -26 minecraft:azalea_leaves[persistent=true] strict
+setblock -23 64 -24 minecraft:azalea_leaves[persistent=true] strict
+setblock -23 64 -23 minecraft:short_grass strict
+setblock -23 64 -21 minecraft:fern strict
+setblock -23 64 -15 minecraft:poppy strict
+setblock -23 64 -10 minecraft:short_grass strict
+setblock -23 64 -9 minecraft:dandelion strict
+setblock -23 64 -7 minecraft:short_grass strict
+fill -23 64 -6 -22 64 -6 minecraft:orange_tulip strict
+setblock -23 64 -5 minecraft:red_tulip strict
+setblock -23 64 5 minecraft:azure_bluet strict
+setblock -23 64 8 minecraft:short_grass strict
+setblock -23 64 23 minecraft:short_grass strict
+fill -23 64 24 -23 64 25 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -23 64 26 minecraft:azalea_leaves[persistent=true] strict
 setblock -23 64 31 minecraft:short_grass strict
+setblock -23 64 32 minecraft:fern strict
 setblock -23 64 34 minecraft:short_grass strict
-setblock -23 64 39 minecraft:short_grass strict
-fill -23 64 42 -23 64 43 minecraft:short_grass strict
-setblock -23 64 55 minecraft:short_grass strict
-setblock -23 64 62 minecraft:short_grass strict
-setblock -23 64 64 minecraft:azure_bluet strict
+fill -23 64 40 -23 64 42 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill -23 64 47 -23 64 48 minecraft:short_grass strict
+fill -23 64 49 -23 64 51 minecraft:azalea_leaves[persistent=true] strict
+setblock -23 64 52 minecraft:oxeye_daisy strict
 fill -23 64 72 -23 64 75 minecraft:white_concrete strict
 setblock -23 64 84 minecraft:white_concrete strict
 fill -23 64 85 -23 64 88 minecraft:red_concrete strict
@@ -2462,541 +2867,136 @@ fill -23 64 109 -23 64 112 minecraft:red_concrete strict
 setblock -23 64 127 minecraft:red_concrete strict
 fill -23 64 183 -23 64 184 minecraft:white_concrete strict
 setblock -23 64 198 minecraft:white_concrete strict
-setblock -22 64 -61 minecraft:fern strict
-setblock -22 64 -49 minecraft:pink_tulip strict
-fill -22 64 -34 -22 64 -33 minecraft:short_grass strict
+setblock -22 64 -67 minecraft:oxeye_daisy strict
+setblock -22 64 -64 minecraft:fern strict
+fill -22 64 -53 -22 64 -52 minecraft:short_grass strict
+setblock -22 64 -51 minecraft:fern strict
+setblock -22 64 -49 minecraft:short_grass strict
+fill -22 64 -47 -22 64 -46 minecraft:short_grass strict
+fill -22 64 -43 -22 64 -42 minecraft:short_grass strict
+fill -22 64 -35 -22 66 -35 minecraft:bamboo[age=0,leaves=none] strict
+fill -22 64 -33 -22 67 -33 minecraft:bamboo[age=0,leaves=none] strict
+setblock -22 64 -32 minecraft:short_grass strict
+fill -22 64 -30 -22 64 -27 minecraft:short_grass strict
 setblock -22 64 -25 minecraft:short_grass strict
-fill -22 64 -20 -21 64 -20 minecraft:short_grass strict
-fill -22 64 -18 -21 64 -18 minecraft:short_grass strict
-setblock -22 64 -17 minecraft:oxeye_daisy strict
-setblock -22 64 -14 minecraft:short_grass strict
 fill -22 64 -8 -22 64 -7 minecraft:short_grass strict
-setblock -22 64 -6 minecraft:cornflower strict
-setblock -22 64 -5 minecraft:red_tulip strict
-setblock -22 64 5 minecraft:pink_tulip strict
-fill -22 64 10 -22 64 11 minecraft:short_grass strict
-setblock -22 64 15 minecraft:short_grass strict
-setblock -22 64 32 minecraft:fern strict
-setblock -22 64 34 minecraft:lily_of_the_valley strict
-fill -22 64 35 -21 64 35 minecraft:short_grass strict
-setblock -22 64 41 minecraft:short_grass strict
-setblock -22 64 45 minecraft:azure_bluet strict
-setblock -22 64 46 minecraft:blue_orchid strict
-setblock -22 64 47 minecraft:fern strict
-setblock -22 64 50 minecraft:cornflower strict
-fill -22 64 53 -22 69 53 minecraft:oak_log strict
+setblock -22 64 -5 minecraft:poppy strict
+setblock -22 64 5 minecraft:lily_of_the_valley strict
+setblock -22 64 6 minecraft:poppy strict
+setblock -22 64 12 minecraft:short_grass strict
+setblock -22 64 15 minecraft:blue_orchid strict
+setblock -22 64 16 minecraft:short_grass strict
+setblock -22 64 20 minecraft:fern strict
+setblock -22 64 22 minecraft:fern strict
+fill -22 64 24 -22 64 25 minecraft:short_grass strict
+setblock -22 64 30 minecraft:fern strict
+setblock -22 64 33 minecraft:short_grass strict
+setblock -22 64 38 minecraft:dandelion strict
+fill -22 64 40 -22 64 41 minecraft:azalea_leaves[persistent=true] strict
+setblock -22 64 42 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -22 64 43 minecraft:short_grass strict
+setblock -22 64 46 minecraft:white_tulip strict
+setblock -22 64 53 minecraft:short_grass strict
+setblock -22 64 65 minecraft:short_grass strict
 setblock -22 64 70 minecraft:red_concrete strict
 fill -22 64 71 -22 64 72 minecraft:white_concrete strict
 setblock -22 64 126 minecraft:red_concrete strict
 fill -22 64 182 -22 64 183 minecraft:red_concrete strict
 setblock -22 64 197 minecraft:white_concrete strict
-setblock -21 64 -67 minecraft:poppy strict
+setblock -21 64 -67 minecraft:orange_tulip strict
 setblock -21 64 -65 minecraft:short_grass strict
-setblock -21 64 -56 minecraft:red_tulip strict
-setblock -21 64 -55 minecraft:short_grass strict
-setblock -21 64 -52 minecraft:dandelion strict
-setblock -21 64 -51 minecraft:oxeye_daisy strict
-fill -21 64 -49 -21 72 -49 minecraft:spruce_log strict
-fill -21 64 -47 -20 64 -47 minecraft:short_grass strict
-setblock -21 64 -46 minecraft:fern strict
-fill -21 64 -44 -21 64 -43 minecraft:short_grass strict
-setblock -21 64 -39 minecraft:azure_bluet strict
-setblock -21 64 -36 minecraft:fern strict
-setblock -21 64 -29 minecraft:fern strict
-setblock -21 64 -19 minecraft:orange_tulip strict
-setblock -21 64 -13 minecraft:fern strict
-setblock -21 64 -5 minecraft:allium strict
+setblock -21 64 -62 minecraft:fern strict
+setblock -21 64 -54 minecraft:short_grass strict
+fill -21 64 -48 -21 64 -47 minecraft:short_grass strict
+setblock -21 64 -44 minecraft:short_grass strict
+setblock -21 64 -40 minecraft:poppy strict
+setblock -21 64 -38 minecraft:pink_tulip strict
+fill -21 64 -35 -21 66 -34 minecraft:bamboo[age=0,leaves=none] strict
+setblock -21 64 -29 minecraft:short_grass strict
+fill -21 64 -23 -21 72 -23 minecraft:spruce_log strict
+fill -21 64 -17 -20 64 -17 minecraft:short_grass strict
+setblock -21 64 -16 minecraft:azalea_leaves[persistent=true] strict
+fill -21 64 -15 -21 64 -14 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill -21 64 -13 -21 64 -12 minecraft:short_grass strict
+setblock -21 64 -8 minecraft:short_grass strict
+setblock -21 64 -6 minecraft:short_grass strict
+setblock -21 64 -5 minecraft:lily_of_the_valley strict
 setblock -21 64 -4 minecraft:azalea_leaves[persistent=true] strict
 fill -21 64 4 -18 64 4 minecraft:azalea_leaves[persistent=true] strict
-setblock -21 64 5 minecraft:oxeye_daisy strict
-setblock -21 64 6 minecraft:white_tulip strict
-setblock -21 64 7 minecraft:short_grass strict
-setblock -21 64 12 minecraft:short_grass strict
-fill -21 64 15 -21 68 15 minecraft:oak_log strict
+setblock -21 64 5 minecraft:orange_tulip strict
+setblock -21 64 6 minecraft:azure_bluet strict
+setblock -21 64 9 minecraft:pink_tulip strict
+setblock -21 64 15 minecraft:short_grass strict
+setblock -21 64 16 minecraft:fern strict
+setblock -21 64 17 minecraft:short_grass strict
 setblock -21 64 23 minecraft:short_grass strict
-setblock -21 64 27 minecraft:short_grass strict
-setblock -21 64 28 minecraft:azure_bluet strict
-setblock -21 64 30 minecraft:fern strict
-fill -21 64 31 -21 64 32 minecraft:short_grass strict
-setblock -21 64 33 minecraft:fern strict
-fill -21 64 34 -21 68 34 minecraft:oak_log strict
-setblock -21 64 39 minecraft:short_grass strict
-fill -21 64 42 -21 68 42 minecraft:oak_log strict
-setblock -21 64 45 minecraft:fern strict
+setblock -21 64 26 minecraft:short_grass strict
+setblock -21 64 27 minecraft:fern strict
+setblock -21 64 37 minecraft:short_grass strict
+setblock -21 64 40 minecraft:azalea_leaves[persistent=true] strict
+fill -21 64 41 -21 65 41 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -21 64 42 minecraft:azalea_leaves[persistent=true] strict
+setblock -21 64 46 minecraft:allium strict
+setblock -21 64 47 minecraft:fern strict
 setblock -21 64 49 minecraft:short_grass strict
-setblock -21 64 51 minecraft:short_grass strict
-setblock -21 64 52 minecraft:fern strict
-setblock -21 64 54 minecraft:short_grass strict
-setblock -21 64 56 minecraft:short_grass strict
-fill -21 64 63 -21 64 64 minecraft:short_grass strict
+setblock -21 64 50 minecraft:fern strict
+fill -21 64 60 -21 64 61 minecraft:short_grass strict
 fill -21 64 68 -21 64 69 minecraft:red_concrete strict
 fill -21 64 125 -21 64 126 minecraft:white_concrete strict
 setblock -21 64 181 minecraft:red_concrete strict
 setblock -21 64 196 minecraft:white_concrete strict
-fill -20 64 -68 -19 64 -67 minecraft:short_grass strict
-setblock -20 64 -62 minecraft:short_grass strict
-setblock -20 64 -56 minecraft:short_grass strict
-setblock -20 64 -54 minecraft:short_grass strict
-setblock -20 64 -45 minecraft:short_grass strict
-setblock -20 64 -43 minecraft:fern strict
-setblock -20 64 -37 minecraft:poppy strict
-setblock -20 64 -34 minecraft:fern strict
-setblock -20 64 -32 minecraft:short_grass strict
-setblock -20 64 -31 minecraft:dandelion strict
-setblock -20 64 -29 minecraft:short_grass strict
-setblock -20 64 -24 minecraft:orange_tulip strict
-setblock -20 64 -22 minecraft:short_grass strict
-setblock -20 64 -15 minecraft:short_grass strict
-fill -20 64 -7 -20 64 -5 minecraft:short_grass strict
+setblock -20 64 -68 minecraft:short_grass strict
+setblock -20 64 -64 minecraft:short_grass strict
+setblock -20 64 -51 minecraft:short_grass strict
+setblock -20 64 -49 minecraft:short_grass strict
+setblock -20 64 -42 minecraft:cornflower strict
+fill -20 64 -40 -19 64 -40 minecraft:short_grass strict
+setblock -20 64 -37 minecraft:short_grass strict
+setblock -20 64 -36 minecraft:oxeye_daisy strict
+fill -20 64 -29 -20 64 -28 minecraft:short_grass strict
+fill -20 64 -26 -20 64 -25 minecraft:short_grass strict
+setblock -20 64 -16 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -20 64 -15 minecraft:azalea_leaves[persistent=true] strict
+setblock -20 64 -14 minecraft:flowering_azalea_leaves[persistent=true] strict
+fill -20 64 -12 -20 64 -11 minecraft:short_grass strict
+setblock -20 64 -8 minecraft:poppy strict
+setblock -20 64 -6 minecraft:pink_tulip strict
+setblock -20 64 -5 minecraft:orange_tulip strict
 setblock -20 64 -4 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -20 64 6 minecraft:cornflower strict
-fill -20 64 13 -20 64 14 minecraft:short_grass strict
-setblock -20 64 18 minecraft:short_grass strict
-fill -20 64 20 -20 64 21 minecraft:short_grass strict
-setblock -20 64 29 minecraft:oxeye_daisy strict
-fill -20 64 30 -19 64 30 minecraft:short_grass strict
-setblock -20 64 32 minecraft:fern strict
-fill -20 64 39 -20 64 40 minecraft:short_grass strict
-setblock -20 64 41 minecraft:fern strict
-setblock -20 64 43 minecraft:short_grass strict
-fill -20 64 45 -20 64 46 minecraft:short_grass strict
-fill -20 64 49 -20 64 50 minecraft:short_grass strict
+setblock -20 64 6 minecraft:red_tulip strict
+setblock -20 64 8 minecraft:short_grass strict
+fill -20 64 11 -20 69 11 minecraft:birch_log strict
+fill -20 64 12 -20 64 13 minecraft:short_grass strict
+setblock -20 64 14 minecraft:fern strict
+setblock -20 64 18 minecraft:blue_orchid strict
+fill -20 64 23 -20 64 25 minecraft:short_grass strict
+fill -20 64 32 -20 64 33 minecraft:short_grass strict
+fill -20 64 35 -19 64 35 minecraft:short_grass strict
+setblock -20 64 45 minecraft:fern strict
+setblock -20 64 55 minecraft:short_grass strict
 setblock -20 64 62 minecraft:short_grass strict
-fill -20 64 64 -20 64 65 minecraft:short_grass strict
+setblock -20 64 65 minecraft:short_grass strict
 fill -20 64 67 -20 64 68 minecraft:red_concrete strict
 fill -20 64 124 -20 64 125 minecraft:white_concrete strict
 setblock -20 64 180 minecraft:red_concrete strict
 setblock -20 64 195 minecraft:red_concrete strict
-setblock -19 64 -65 minecraft:short_grass strict
-fill -19 64 -44 -19 64 -43 minecraft:short_grass strict
-setblock -19 64 -39 minecraft:short_grass strict
-fill -19 64 -37 -19 64 -36 minecraft:short_grass strict
-fill -19 64 -30 -19 68 -28 minecraft:bamboo[age=0,leaves=none] strict
-setblock -19 64 -23 minecraft:short_grass strict
-setblock -19 64 -19 minecraft:fern strict
-fill -19 64 -17 -18 64 -17 minecraft:fern strict
-fill -19 64 -15 -19 64 -14 minecraft:short_grass strict
-setblock -19 64 -9 minecraft:fern strict
-setblock -19 64 -6 minecraft:blue_orchid strict
-setblock -19 64 -5 minecraft:poppy strict
+setblock -19 64 -61 minecraft:fern strict
+fill -19 64 -49 -19 64 -48 minecraft:lily_of_the_valley strict
+fill -19 64 -43 -19 64 -42 minecraft:short_grass strict
+setblock -19 64 -41 minecraft:pink_tulip strict
+setblock -19 64 -39 minecraft:azure_bluet strict
+fill -19 64 -29 -19 64 -27 minecraft:short_grass strict
+setblock -19 64 -24 minecraft:short_grass strict
+setblock -19 64 -22 minecraft:short_grass strict
+setblock -19 64 -19 minecraft:short_grass strict
+setblock -19 64 -16 minecraft:azalea_leaves[persistent=true] strict
+fill -19 64 -15 -19 64 -14 minecraft:flowering_azalea_leaves[persistent=true] strict
+setblock -19 64 -13 minecraft:short_grass strict
+fill -19 64 -6 -18 64 -6 minecraft:poppy strict
+setblock -19 64 -5 minecraft:oxeye_daisy strict
 setblock -19 64 -4 minecraft:azalea_leaves[persistent=true] strict
-setblock -19 64 5 minecraft:pink_tulip strict
-fill -19 64 6 -18 64 6 minecraft:allium strict
+setblock -19 64 5 minecraft:orange_tulip strict
 setblock -19 64 7 minecraft:short_grass strict
-setblock -19 64 11 minecraft:short_grass strict
+setblock -19 64 15 minecraft:short_grass strict
 setblock -19 64 19 minecraft:short_grass strict
-fill -19 64 27 -18 64 27 minecraft:short_grass strict
-setblock -19 64 28 minecraft:orange_tulip strict
-setblock -19 64 33 minecraft:fern strict
-fill -19 64 38 -18 64 38 minecraft:short_grass strict
-fill -19 64 44 -19 64 45 minecraft:short_grass strict
-setblock -19 64 48 minecraft:short_grass strict
-setblock -19 64 52 minecraft:poppy strict
-setblock -19 64 54 minecraft:pink_tulip strict
-fill -19 64 65 -18 64 65 minecraft:short_grass strict
-fill -19 64 123 -19 64 124 minecraft:white_concrete strict
-fill -19 64 178 -19 64 179 minecraft:white_concrete strict
-setblock -19 64 194 minecraft:red_concrete strict
-fill -18 64 -56 -18 64 -54 minecraft:short_grass strict
-setblock -18 64 -50 minecraft:short_grass strict
-setblock -18 64 -41 minecraft:short_grass strict
-setblock -18 64 -38 minecraft:azure_bluet strict
-setblock -18 64 -31 minecraft:short_grass strict
-fill -18 64 -30 -18 68 -29 minecraft:bamboo[age=0,leaves=none] strict
-setblock -18 64 -28 minecraft:fern strict
-fill -18 64 -27 -17 64 -27 minecraft:short_grass strict
-setblock -18 64 -21 minecraft:short_grass strict
-setblock -18 64 -18 minecraft:short_grass strict
-setblock -18 64 -7 minecraft:short_grass strict
-setblock -18 64 -6 minecraft:red_tulip strict
-setblock -18 64 -5 minecraft:oxeye_daisy strict
-setblock -18 64 -4 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -18 64 5 minecraft:azure_bluet strict
-fill -18 64 7 -17 64 7 minecraft:fern strict
-setblock -18 64 9 minecraft:short_grass strict
-setblock -18 64 10 minecraft:fern strict
-fill -18 64 17 -18 64 18 minecraft:short_grass strict
-fill -18 64 23 -17 64 23 minecraft:short_grass strict
-setblock -18 64 36 minecraft:short_grass strict
-setblock -18 64 45 minecraft:cornflower strict
-setblock -18 64 47 minecraft:short_grass strict
-setblock -18 64 50 minecraft:short_grass strict
-setblock -18 64 51 minecraft:oxeye_daisy strict
-fill -18 64 61 -18 64 62 minecraft:short_grass strict
-fill -18 64 63 -18 71 63 minecraft:spruce_log strict
-fill -18 64 122 -18 64 123 minecraft:white_concrete strict
-fill -18 64 177 -18 64 178 minecraft:white_concrete strict
-setblock -18 64 193 minecraft:red_concrete strict
-fill -17 64 -69 -16 64 -69 minecraft:short_grass strict
-fill -17 64 -65 -17 64 -64 minecraft:azalea_leaves[persistent=true] strict
-setblock -17 64 -63 minecraft:flowering_azalea_leaves[persistent=true] strict
-fill -17 64 -54 -16 64 -54 minecraft:short_grass strict
-fill -17 64 -52 -17 64 -51 minecraft:short_grass strict
-setblock -17 64 -48 minecraft:poppy strict
-setblock -17 64 -46 minecraft:pink_tulip strict
-fill -17 64 -40 -17 64 -39 minecraft:short_grass strict
-fill -17 64 -37 -17 72 -37 minecraft:spruce_log strict
-setblock -17 64 -36 minecraft:short_grass strict
-setblock -17 64 -33 minecraft:short_grass strict
-fill -17 64 -30 -17 66 -28 minecraft:bamboo[age=0,leaves=none] strict
-fill -17 64 -21 -17 64 -19 minecraft:short_grass strict
-fill -17 64 -12 -17 64 -11 minecraft:short_grass strict
-fill -17 64 -9 -16 64 -9 minecraft:short_grass strict
-setblock -17 64 -6 minecraft:allium strict
-setblock -17 64 -5 minecraft:red_tulip strict
-setblock -17 64 -4 minecraft:chiseled_polished_blackstone strict
-setblock -17 64 4 minecraft:chiseled_polished_blackstone strict
-setblock -17 64 5 minecraft:cornflower strict
-setblock -17 64 6 minecraft:short_grass strict
-setblock -17 64 17 minecraft:short_grass strict
-setblock -17 64 20 minecraft:short_grass strict
-setblock -17 64 31 minecraft:fern strict
-fill -17 64 39 -17 64 40 minecraft:lily_of_the_valley strict
-fill -17 64 45 -17 64 46 minecraft:short_grass strict
-setblock -17 64 47 minecraft:pink_tulip strict
-setblock -17 64 48 minecraft:short_grass strict
-setblock -17 64 49 minecraft:azure_bluet strict
-fill -17 64 63 -17 64 64 minecraft:short_grass strict
-fill -17 64 121 -17 64 122 minecraft:red_concrete strict
-setblock -17 64 176 minecraft:red_concrete strict
-setblock -17 64 192 minecraft:white_concrete strict
-setblock -16 64 -66 minecraft:short_grass strict
-fill -16 64 -65 -15 64 -65 minecraft:azalea_leaves[persistent=true] strict
-setblock -16 64 -64 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -16 64 -63 minecraft:azalea_leaves[persistent=true] strict
-setblock -16 64 -57 minecraft:short_grass strict
-setblock -16 64 -51 minecraft:short_grass strict
-fill -16 64 -44 -16 64 -43 minecraft:short_grass strict
-setblock -16 64 -42 minecraft:fern strict
-fill -16 64 -38 -15 64 -38 minecraft:short_grass strict
-setblock -16 64 -30 minecraft:short_grass strict
-setblock -16 64 -26 minecraft:short_grass strict
-setblock -16 64 -24 minecraft:cornflower strict
-setblock -16 64 -23 minecraft:short_grass strict
-setblock -16 64 -21 minecraft:blue_orchid strict
-setblock -16 64 -18 minecraft:pink_tulip strict
-setblock -16 64 -17 minecraft:short_grass strict
-fill -16 64 -15 -16 71 -15 minecraft:spruce_log strict
-fill -16 64 -14 -15 64 -14 minecraft:short_grass strict
-setblock -16 64 -13 minecraft:fern strict
-setblock -16 64 -6 minecraft:orange_tulip strict
-setblock -16 64 -5 minecraft:short_grass strict
-setblock -16 64 -4 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -16 64 4 minecraft:azalea_leaves[persistent=true] strict
-setblock -16 64 5 minecraft:pink_tulip strict
-setblock -16 64 9 minecraft:short_grass strict
-setblock -16 64 10 minecraft:white_tulip strict
-setblock -16 64 11 minecraft:short_grass strict
-fill -16 64 15 -16 64 16 minecraft:short_grass strict
-setblock -16 64 18 minecraft:short_grass strict
-setblock -16 64 20 minecraft:fern strict
-setblock -16 64 21 minecraft:short_grass strict
-setblock -16 64 23 minecraft:blue_orchid strict
-setblock -16 64 26 minecraft:fern strict
-setblock -16 64 28 minecraft:short_grass strict
-fill -16 64 30 -16 64 31 minecraft:short_grass strict
-setblock -16 64 32 minecraft:fern strict
-setblock -16 64 35 minecraft:blue_orchid strict
-fill -16 64 40 -14 64 40 minecraft:short_grass strict
-fill -16 64 48 -16 69 48 minecraft:oak_log strict
-fill -16 64 50 -15 64 50 minecraft:short_grass strict
-setblock -16 64 52 minecraft:short_grass strict
-setblock -16 64 56 minecraft:fern strict
-fill -16 64 119 -16 64 120 minecraft:red_concrete strict
-setblock -16 64 175 minecraft:red_concrete strict
-setblock -16 64 191 minecraft:white_concrete strict
-fill -15 64 -68 -15 64 -67 minecraft:fern strict
-fill -15 64 -64 -15 64 -63 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -15 64 -62 minecraft:cornflower strict
-setblock -15 64 -58 minecraft:dandelion strict
-setblock -15 64 -49 minecraft:short_grass strict
-setblock -15 64 -47 minecraft:allium strict
-setblock -15 64 -45 minecraft:poppy strict
-setblock -15 64 -44 minecraft:fern strict
-setblock -15 64 -36 minecraft:lily_of_the_valley strict
-fill -15 64 -33 -15 64 -32 minecraft:short_grass strict
-setblock -15 64 -24 minecraft:short_grass strict
-setblock -15 64 -22 minecraft:short_grass strict
-fill -15 64 -8 -15 64 -7 minecraft:short_grass strict
-setblock -15 64 -6 minecraft:oxeye_daisy strict
-setblock -15 64 -5 minecraft:dandelion strict
-setblock -15 64 -4 minecraft:azalea_leaves[persistent=true] strict
-setblock -15 64 4 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -15 64 5 minecraft:lily_of_the_valley strict
-setblock -15 64 6 minecraft:oxeye_daisy strict
-setblock -15 64 15 minecraft:dandelion strict
-fill -15 64 22 -15 64 24 minecraft:short_grass strict
-setblock -15 64 26 minecraft:short_grass strict
-fill -15 64 29 -15 69 29 minecraft:birch_log strict
-setblock -15 64 30 minecraft:short_grass strict
-fill -15 64 32 -13 64 32 minecraft:short_grass strict
-fill -15 64 34 -15 64 35 minecraft:short_grass strict
-setblock -15 64 47 minecraft:short_grass strict
-fill -15 64 48 -14 64 48 minecraft:fern strict
-setblock -15 64 53 minecraft:fern strict
-setblock -15 64 63 minecraft:orange_tulip strict
-setblock -15 64 118 minecraft:white_concrete strict
-setblock -15 64 119 minecraft:red_concrete strict
-fill -15 64 173 -15 64 174 minecraft:red_concrete strict
-fill -15 64 189 -15 64 190 minecraft:white_concrete strict
-setblock -14 64 -62 minecraft:azure_bluet strict
-fill -14 64 -58 -14 64 -57 minecraft:fern strict
-fill -14 64 -45 -14 64 -43 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -14 64 -42 minecraft:short_grass strict
-setblock -14 64 -39 minecraft:short_grass strict
-fill -14 64 -37 -14 64 -36 minecraft:short_grass strict
-fill -14 64 -33 -14 64 -30 minecraft:short_grass strict
-setblock -14 64 -26 minecraft:cornflower strict
-setblock -14 64 -11 minecraft:white_tulip strict
-setblock -14 64 -9 minecraft:short_grass strict
-setblock -14 64 -7 minecraft:short_grass strict
-setblock -14 64 7 minecraft:short_grass strict
-setblock -14 64 8 minecraft:fern strict
-setblock -14 64 10 minecraft:blue_orchid strict
-fill -14 64 11 -14 64 12 minecraft:flowering_azalea_leaves[persistent=true] strict
-fill -14 64 13 -12 64 13 minecraft:azalea_leaves[persistent=true] strict
-setblock -14 64 15 minecraft:short_grass strict
-setblock -14 64 22 minecraft:short_grass strict
-fill -14 64 25 -14 64 26 minecraft:short_grass strict
-setblock -14 64 29 minecraft:fern strict
-setblock -14 64 34 minecraft:short_grass strict
-setblock -14 64 36 minecraft:short_grass strict
-setblock -14 64 42 minecraft:cornflower strict
-setblock -14 64 49 minecraft:allium strict
-setblock -14 64 51 minecraft:short_grass strict
-setblock -14 64 52 minecraft:fern strict
-setblock -14 64 53 minecraft:short_grass strict
-setblock -14 64 55 minecraft:fern strict
-setblock -14 64 57 minecraft:short_grass strict
-setblock -14 64 62 minecraft:short_grass strict
-setblock -14 64 77 minecraft:white_concrete strict
-fill -14 64 78 -14 64 79 minecraft:red_concrete strict
-fill -14 64 80 -14 64 84 minecraft:white_concrete strict
-fill -14 64 85 -14 64 88 minecraft:red_concrete strict
-fill -14 64 89 -14 64 92 minecraft:white_concrete strict
-fill -14 64 93 -14 64 96 minecraft:red_concrete strict
-setblock -14 64 97 minecraft:white_concrete strict
-fill -14 64 115 -14 64 117 minecraft:white_concrete strict
-fill -14 64 172 -14 64 173 minecraft:white_concrete strict
-fill -14 64 188 -14 64 189 minecraft:red_concrete strict
-setblock -13 64 -67 minecraft:short_grass strict
-setblock -13 64 -63 minecraft:chiseled_stone_bricks strict
-setblock -13 64 -57 minecraft:short_grass strict
-setblock -13 64 -56 minecraft:orange_tulip strict
-setblock -13 64 -50 minecraft:short_grass strict
-fill -13 64 -49 -12 64 -49 minecraft:fern strict
-setblock -13 64 -46 minecraft:pink_tulip strict
-fill -13 64 -45 -13 64 -44 minecraft:flowering_azalea_leaves[persistent=true] strict
-fill -13 64 -43 -12 64 -43 minecraft:azalea_leaves[persistent=true] strict
-setblock -13 64 -41 minecraft:blue_orchid strict
-fill -13 64 -40 -13 64 -39 minecraft:short_grass strict
-setblock -13 64 -25 minecraft:short_grass strict
-setblock -13 64 -20 minecraft:allium strict
-setblock -13 64 -17 minecraft:fern strict
-setblock -13 64 -10 minecraft:short_grass strict
-setblock -13 64 -5 minecraft:chiseled_polished_blackstone strict
-setblock -13 64 5 minecraft:chiseled_polished_blackstone strict
-fill -13 64 11 -13 65 11 minecraft:azalea_leaves[persistent=true] strict
-fill -13 64 12 -13 65 12 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -13 64 14 minecraft:fern strict
-setblock -13 64 23 minecraft:short_grass strict
-setblock -13 64 27 minecraft:short_grass strict
-setblock -13 64 35 minecraft:short_grass strict
-setblock -13 64 37 minecraft:short_grass strict
-fill -13 64 38 -11 66 40 minecraft:green_concrete strict
-setblock -13 64 43 minecraft:short_grass strict
-setblock -13 64 45 minecraft:short_grass strict
-setblock -13 64 48 minecraft:coal_block strict
-fill -13 64 56 -11 66 58 minecraft:green_concrete strict
-setblock -13 64 74 minecraft:red_concrete strict
-fill -13 64 75 -13 64 76 minecraft:white_concrete strict
-fill -13 64 98 -13 64 100 minecraft:white_concrete strict
-fill -13 64 101 -13 64 104 minecraft:red_concrete strict
-fill -13 64 105 -13 64 108 minecraft:white_concrete strict
-fill -13 64 109 -13 64 111 minecraft:red_concrete strict
-fill -13 64 112 -13 64 114 minecraft:white_concrete strict
-setblock -13 64 172 minecraft:white_concrete strict
-setblock -13 64 187 minecraft:red_concrete strict
-fill -12 64 -69 -11 64 -69 minecraft:short_grass strict
-setblock -12 64 -56 minecraft:short_grass strict
-setblock -12 64 -47 minecraft:short_grass strict
-setblock -12 64 -45 minecraft:azalea_leaves[persistent=true] strict
-setblock -12 64 -44 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -12 64 -42 minecraft:short_grass strict
-fill -12 64 -34 -12 64 -31 minecraft:short_grass strict
-setblock -12 64 -27 minecraft:short_grass strict
-fill -12 64 -23 -11 64 -23 minecraft:short_grass strict
-setblock -12 64 -19 minecraft:fern strict
-setblock -12 64 -16 minecraft:red_tulip strict
-fill -12 64 -13 -12 64 -12 minecraft:short_grass strict
-fill -12 64 11 -12 64 12 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -12 64 15 minecraft:short_grass strict
-setblock -12 64 17 minecraft:pink_tulip strict
-setblock -12 64 18 minecraft:short_grass strict
-setblock -12 64 20 minecraft:short_grass strict
-setblock -12 64 23 minecraft:white_tulip strict
-setblock -12 64 28 minecraft:fern strict
-setblock -12 64 31 minecraft:blue_orchid strict
-setblock -12 64 34 minecraft:fern strict
-setblock -12 64 42 minecraft:pink_tulip strict
-setblock -12 64 46 minecraft:short_grass strict
-fill -12 64 48 -12 64 49 minecraft:short_grass strict
-setblock -12 64 55 minecraft:short_grass strict
-fill -12 64 73 -12 64 74 minecraft:red_concrete strict
-setblock -12 64 171 minecraft:white_concrete strict
-setblock -12 64 186 minecraft:red_concrete strict
-setblock -11 64 -68 minecraft:fern strict
-fill -11 64 -66 -11 64 -65 minecraft:short_grass strict
-setblock -11 64 -63 minecraft:lily_of_the_valley strict
-fill -11 64 -53 -10 69 -53 minecraft:bamboo[age=0,leaves=none] strict
-setblock -11 64 -51 minecraft:short_grass strict
-setblock -11 64 -48 minecraft:short_grass strict
-setblock -11 64 -47 minecraft:fern strict
-setblock -11 64 -34 minecraft:pink_tulip strict
-setblock -11 64 -33 minecraft:oxeye_daisy strict
-setblock -11 64 -27 minecraft:fern strict
-setblock -11 64 -25 minecraft:polished_andesite strict
-fill -11 64 -21 -10 64 -21 minecraft:short_grass strict
-fill -11 64 -19 -11 64 -18 minecraft:short_grass strict
-setblock -11 64 -16 minecraft:short_grass strict
-setblock -11 64 -11 minecraft:short_grass strict
-setblock -11 64 13 minecraft:fern strict
-fill -11 64 21 -11 69 21 minecraft:oak_log strict
-setblock -11 64 25 minecraft:oxeye_daisy strict
-setblock -11 64 27 minecraft:fern strict
-setblock -11 64 37 minecraft:short_grass strict
-setblock -11 64 41 minecraft:short_grass strict
-setblock -11 64 47 minecraft:short_grass strict
-setblock -11 64 48 minecraft:blue_orchid strict
-setblock -11 64 53 minecraft:short_grass strict
-setblock -11 64 55 minecraft:fern strict
-setblock -11 64 72 minecraft:white_concrete strict
-setblock -11 64 170 minecraft:red_concrete strict
-fill -11 64 184 -11 64 185 minecraft:white_concrete strict
-fill -10 64 -67 -9 64 -67 minecraft:short_grass strict
-setblock -10 64 -65 minecraft:allium strict
-setblock -10 64 -63 minecraft:short_grass strict
-fill -10 64 -58 -8 64 -58 minecraft:short_grass strict
-setblock -10 64 -56 minecraft:short_grass strict
-setblock -10 64 -54 minecraft:short_grass strict
-setblock -10 64 -49 minecraft:short_grass strict
-fill -10 64 -46 -10 64 -44 minecraft:short_grass strict
-setblock -10 64 -42 minecraft:short_grass strict
-setblock -10 64 -36 minecraft:fern strict
-fill -10 64 -33 -10 64 -31 minecraft:short_grass strict
-setblock -10 64 -28 minecraft:fern strict
-setblock -10 64 -24 minecraft:pink_tulip strict
-setblock -10 64 -19 minecraft:short_grass strict
-setblock -10 64 -14 minecraft:short_grass strict
-setblock -10 64 -13 minecraft:fern strict
-setblock -10 64 -12 minecraft:short_grass strict
-setblock -10 64 -8 minecraft:white_tulip strict
-setblock -10 64 8 minecraft:poppy strict
-setblock -10 64 12 minecraft:short_grass strict
-fill -10 64 15 -10 64 16 minecraft:short_grass strict
-setblock -10 64 18 minecraft:short_grass strict
-setblock -10 64 25 minecraft:short_grass strict
-setblock -10 64 32 minecraft:blue_orchid strict
-setblock -10 64 34 minecraft:fern strict
-setblock -10 64 36 minecraft:blue_orchid strict
-setblock -10 64 55 minecraft:short_grass strict
-setblock -10 64 169 minecraft:red_concrete strict
-fill -10 64 183 -10 64 184 minecraft:white_concrete strict
-fill -9 64 -64 -8 64 -64 minecraft:short_grass strict
-setblock -9 64 -56 minecraft:fern strict
-fill -9 64 -54 -9 68 -52 minecraft:bamboo[age=0,leaves=none] strict
-setblock -9 64 -45 minecraft:dandelion strict
-setblock -9 64 -41 minecraft:short_grass strict
-fill -9 64 -37 -9 73 -37 minecraft:spruce_log strict
-setblock -9 64 -30 minecraft:fern strict
-setblock -9 64 -28 minecraft:short_grass strict
-setblock -9 64 -25 minecraft:short_grass strict
-fill -9 64 -22 -9 64 -21 minecraft:short_grass strict
-setblock -9 64 -18 minecraft:white_tulip strict
-setblock -9 64 -9 minecraft:poppy strict
-setblock -9 64 -8 minecraft:oxeye_daisy strict
-setblock -9 64 -7 minecraft:cornflower strict
-setblock -9 64 7 minecraft:oxeye_daisy strict
-setblock -9 64 8 minecraft:red_tulip strict
-setblock -9 64 9 minecraft:short_grass strict
-setblock -9 64 17 minecraft:fern strict
-setblock -9 64 20 minecraft:orange_tulip strict
-setblock -9 64 21 minecraft:blue_orchid strict
-setblock -9 64 28 minecraft:short_grass strict
-setblock -9 64 32 minecraft:short_grass strict
-fill -9 64 34 -9 68 34 minecraft:oak_log strict
-setblock -9 64 37 minecraft:short_grass strict
-setblock -9 64 58 minecraft:short_grass strict
-setblock -9 64 60 minecraft:coal_block strict
-fill -9 64 168 -9 64 169 minecraft:red_concrete strict
-setblock -9 64 182 minecraft:red_concrete strict
-fill -8 64 -68 -7 64 -68 minecraft:short_grass strict
-fill -8 64 -66 -7 64 -66 minecraft:fern strict
-fill -8 64 -54 -8 64 -53 minecraft:short_grass strict
-fill -8 64 -47 -8 65 -47 minecraft:purpur_pillar strict
-setblock -8 64 -44 minecraft:short_grass strict
-setblock -8 64 -23 minecraft:short_grass strict
-setblock -8 64 -16 minecraft:allium strict
-setblock -8 64 -9 minecraft:cornflower strict
-setblock -8 64 -8 minecraft:flowering_azalea strict
-setblock -8 64 -7 minecraft:red_tulip strict
-setblock -8 64 7 minecraft:short_grass strict
-setblock -8 64 8 minecraft:flowering_azalea strict
-setblock -8 64 9 minecraft:red_tulip strict
-setblock -8 64 10 minecraft:short_grass strict
-setblock -8 64 14 minecraft:fern strict
-fill -8 64 21 -7 64 21 minecraft:short_grass strict
-setblock -8 64 27 minecraft:lily_of_the_valley strict
-setblock -8 64 31 minecraft:short_grass strict
-setblock -8 64 32 minecraft:fern strict
-fill -8 64 38 -8 64 39 minecraft:short_grass strict
-setblock -8 64 58 minecraft:fern strict
-setblock -8 64 168 minecraft:red_concrete strict
-setblock -8 64 181 minecraft:red_concrete strict
-setblock -7 64 -59 minecraft:blue_orchid strict
-setblock -7 64 -56 minecraft:fern strict
-setblock -7 64 -54 minecraft:short_grass strict
-setblock -7 64 -41 minecraft:short_grass strict
-setblock -7 64 -39 minecraft:short_grass strict
-setblock -7 64 -35 minecraft:cornflower strict
-fill -7 64 -25 -5 64 -25 minecraft:short_grass strict
-setblock -7 64 -21 minecraft:short_grass strict
-fill -7 64 -20 -6 64 -20 minecraft:lily_of_the_valley strict
-setblock -7 64 -18 minecraft:red_tulip strict
-setblock -7 64 -17 minecraft:short_grass strict
-setblock -7 64 -9 minecraft:azure_bluet strict
-setblock -7 64 -8 minecraft:pink_tulip strict
-setblock -7 64 -7 minecraft:orange_tulip strict
-setblock -7 64 7 minecraft:orange_tulip strict
-setblock -7 64 8 minecraft:lily_of_the_valley strict
-setblock -7 64 14 minecraft:short_grass strict
-setblock -7 64 20 minecraft:fern strict
-setblock -7 64 22 minecraft:fern strict
-fill -7 64 23 -6 64 23 minecraft:short_grass strict
-setblock -7 64 27 minecraft:short_grass strict
-setblock -7 64 28 minecraft:white_tulip strict
-fill -7 64 31 -6 64 32 minecraft:short_grass strict
-setblock -7 64 34 minecraft:fern strict
-setblock -7 64 36 minecraft:short_grass strict
-setblock -7 64 38 minecraft:short_grass strict
-setblock -7 64 57 minecraft:fern strict
-fill -7 64 58 -7 64 59 minecraft:short_grass strict
-setblock -7 64 72 minecraft:short_grass strict
-setblock -7 64 167 minecraft:white_concrete strict
-setblock -7 64 180 minecraft:white_concrete strict
-setblock -6 64 -64 minecraft:short_grass strict
-setblock -6 64 -59 minecraft:azure_bluet strict
-setblock -6 64 -55 minecraft:short_grass strict
-setblock -6 64 -54 minecraft:white_tulip strict
-fill -6 64 -48 -6 65 -47 minecraft:crying_obsidian strict
-fill -6 64 -41 -6 64 -40 minecraft:white_tulip strict
-setblock -6 64 -39 minecraft:blue_orchid strict
-setblock -6 64 -38 minecraft:orange_tulip strict
-fill -6 64 -37 -6 64 -36 minecraft:lily_of_the_valley strict
-setblock -6 64 -34 minecraft:cornflower strict
-setblock -6 64 -33 minecraft:white_tulip strict
-setblock -6 64 -32 minecraft:blue_orchid strict
-setblock -6 64 -31 minecraft:dandelion strict
-setblock -6 64 -30 minecraft:lily_of_the_valley strict
-fill -6 64 -29 -6 64 -28 minecraft:short_grass strict
 schedule function mg:lobby/build_9 1t

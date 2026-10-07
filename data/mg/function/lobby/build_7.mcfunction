@@ -1,4 +1,396 @@
 # Spawn, partie 7/11 (généré par tools/lobby/gen_lobby.py)
+setblock -17 62 -69 minecraft:coarse_dirt strict
+fill -17 62 -68 -17 62 67 minecraft:dirt strict
+fill -17 62 68 -17 62 120 minecraft:stone_bricks strict
+fill -17 62 121 -17 62 122 minecraft:stone_brick_slab[type=top] strict
+setblock -17 62 176 minecraft:stone_brick_slab[type=top] strict
+fill -17 62 177 -17 62 191 minecraft:stone_bricks strict
+setblock -17 62 192 minecraft:stone_brick_slab[type=top] strict
+fill -16 62 -69 -16 62 67 minecraft:dirt strict
+setblock -16 62 68 minecraft:coarse_dirt strict
+fill -16 62 69 -16 62 118 minecraft:stone_bricks strict
+fill -16 62 119 -16 62 120 minecraft:stone_brick_slab[type=top] strict
+setblock -16 62 175 minecraft:stone_brick_slab[type=top] strict
+fill -16 62 176 -16 62 190 minecraft:stone_bricks strict
+setblock -16 62 191 minecraft:stone_brick_slab[type=top] strict
+fill -15 62 -69 -15 62 68 minecraft:dirt strict
+fill -15 62 70 -15 62 117 minecraft:stone_bricks strict
+fill -15 62 118 -15 62 119 minecraft:stone_brick_slab[type=top] strict
+fill -15 62 173 -15 62 174 minecraft:stone_brick_slab[type=top] strict
+fill -15 62 175 -15 62 188 minecraft:stone_bricks strict
+fill -15 62 189 -15 62 190 minecraft:stone_brick_slab[type=top] strict
+fill -14 62 -69 -14 62 69 minecraft:dirt strict
+setblock -14 62 70 minecraft:coarse_dirt strict
+fill -14 62 71 -14 62 76 minecraft:stone_bricks strict
+fill -14 62 77 -14 62 97 minecraft:stone_brick_slab[type=top] strict
+fill -14 62 98 -14 62 114 minecraft:stone_bricks strict
+fill -14 62 115 -14 62 117 minecraft:stone_brick_slab[type=top] strict
+fill -14 62 172 -14 62 173 minecraft:stone_brick_slab[type=top] strict
+fill -14 62 174 -14 62 187 minecraft:stone_bricks strict
+fill -14 62 188 -14 62 189 minecraft:stone_brick_slab[type=top] strict
+fill -13 62 -69 -13 62 70 minecraft:dirt strict
+fill -13 62 71 -13 62 73 minecraft:stone_bricks strict
+fill -13 62 74 -13 62 76 minecraft:stone_brick_slab[type=top] strict
+fill -13 62 98 -13 62 114 minecraft:stone_brick_slab[type=top] strict
+setblock -13 62 172 minecraft:stone_brick_slab[type=top] strict
+fill -13 62 173 -13 62 186 minecraft:stone_bricks strict
+setblock -13 62 187 minecraft:stone_brick_slab[type=top] strict
+fill -12 62 -69 -11 62 71 minecraft:dirt strict
+setblock -12 62 72 minecraft:stone_bricks strict
+fill -12 62 73 -12 62 74 minecraft:stone_brick_slab[type=top] strict
+setblock -12 62 171 minecraft:stone_brick_slab[type=top] strict
+fill -12 62 172 -12 62 185 minecraft:stone_bricks strict
+setblock -12 62 186 minecraft:stone_brick_slab[type=top] strict
+setblock -11 62 72 minecraft:stone_brick_slab[type=top] strict
+setblock -11 62 170 minecraft:stone_brick_slab[type=top] strict
+fill -11 62 171 -11 62 183 minecraft:stone_bricks strict
+fill -11 62 184 -11 62 185 minecraft:stone_brick_slab[type=top] strict
+fill -10 62 -69 -9 62 72 minecraft:dirt strict
+setblock -10 62 169 minecraft:stone_brick_slab[type=top] strict
+fill -10 62 170 -10 62 182 minecraft:stone_bricks strict
+fill -10 62 183 -10 62 184 minecraft:stone_brick_slab[type=top] strict
+fill -9 62 168 -9 62 169 minecraft:stone_brick_slab[type=top] strict
+fill -9 62 170 -9 62 181 minecraft:stone_bricks strict
+setblock -9 62 182 minecraft:stone_brick_slab[type=top] strict
+fill -8 62 -69 -8 62 -5 minecraft:dirt strict
+setblock -8 62 -4 minecraft:dark_prismarine strict
+fill -8 62 -3 -8 62 -2 minecraft:prismarine strict
+fill -8 62 -1 -6 62 1 minecraft:dirt strict
+setblock -8 62 2 minecraft:dark_prismarine strict
+fill -8 62 3 -8 62 4 minecraft:prismarine strict
+fill -8 62 5 -8 62 72 minecraft:dirt strict
+setblock -8 62 168 minecraft:stone_brick_slab[type=top] strict
+fill -8 62 169 -8 62 180 minecraft:stone_bricks strict
+setblock -8 62 181 minecraft:stone_brick_slab[type=top] strict
+fill -7 62 -69 -7 62 -6 minecraft:dirt strict
+setblock -7 62 -5 minecraft:dark_prismarine strict
+fill -7 62 -4 -7 62 -3 minecraft:prismarine strict
+setblock -7 62 -2 minecraft:dark_prismarine strict
+fill -7 62 2 -7 62 3 minecraft:prismarine strict
+setblock -7 62 4 minecraft:dark_prismarine strict
+setblock -7 62 5 minecraft:prismarine strict
+fill -7 62 6 -7 62 72 minecraft:dirt strict
+setblock -7 62 167 minecraft:stone_brick_slab[type=top] strict
+fill -7 62 168 -7 62 179 minecraft:stone_bricks strict
+setblock -7 62 180 minecraft:stone_brick_slab[type=top] strict
+fill -6 62 -69 -6 62 -7 minecraft:dirt strict
+setblock -6 62 -6 minecraft:dark_prismarine strict
+setblock -6 62 -5 minecraft:prismarine strict
+setblock -6 62 -4 minecraft:sea_lantern strict
+setblock -6 62 -3 minecraft:dark_prismarine strict
+setblock -6 62 -2 minecraft:prismarine strict
+setblock -6 62 2 minecraft:prismarine strict
+setblock -6 62 3 minecraft:dark_prismarine strict
+fill -6 62 4 -6 62 5 minecraft:prismarine strict
+setblock -6 62 6 minecraft:dark_prismarine strict
+fill -6 62 7 -6 62 72 minecraft:dirt strict
+fill -6 62 166 -6 62 167 minecraft:stone_brick_slab[type=top] strict
+fill -6 62 168 -6 62 178 minecraft:stone_bricks strict
+setblock -6 62 179 minecraft:stone_brick_slab[type=top] strict
+fill -5 62 -69 -5 62 -8 minecraft:dirt strict
+setblock -5 62 -7 minecraft:dark_prismarine strict
+fill -5 62 -6 -5 62 -5 minecraft:prismarine strict
+setblock -5 62 -4 minecraft:dark_prismarine strict
+setblock -5 62 -3 minecraft:prismarine strict
+fill -5 62 -2 -5 62 2 minecraft:dirt strict
+fill -5 62 3 -5 62 4 minecraft:prismarine strict
+setblock -5 62 5 minecraft:dark_prismarine strict
+fill -5 62 6 -5 62 7 minecraft:prismarine strict
+fill -5 62 8 -5 62 72 minecraft:dirt strict
+setblock -5 62 166 minecraft:stone_brick_slab[type=top] strict
+fill -5 62 167 -5 62 177 minecraft:stone_bricks strict
+setblock -5 62 178 minecraft:stone_brick_slab[type=top] strict
+fill -4 62 -69 -3 62 -9 minecraft:dirt strict
+setblock -4 62 -8 minecraft:dark_prismarine strict
+fill -4 62 -7 -4 62 -6 minecraft:prismarine strict
+setblock -4 62 -5 minecraft:dark_prismarine strict
+setblock -4 62 -4 minecraft:prismarine strict
+fill -4 62 -3 -4 62 3 minecraft:dirt strict
+setblock -4 62 4 minecraft:dark_prismarine strict
+fill -4 62 5 -3 62 5 minecraft:prismarine strict
+setblock -4 62 6 minecraft:sea_lantern strict
+setblock -4 62 7 minecraft:dark_prismarine strict
+setblock -4 62 8 minecraft:prismarine strict
+fill -4 62 9 -2 62 72 minecraft:dirt strict
+fill -4 62 165 -3 62 165 minecraft:stone_brick_slab[type=top] strict
+fill -4 62 166 -4 62 176 minecraft:stone_bricks strict
+setblock -4 62 177 minecraft:stone_brick_slab[type=top] strict
+fill -3 62 -8 -3 62 -7 minecraft:prismarine strict
+setblock -3 62 -6 minecraft:dark_prismarine strict
+setblock -3 62 -5 minecraft:prismarine strict
+fill -3 62 -4 -3 62 4 minecraft:dirt strict
+setblock -3 62 6 minecraft:dark_prismarine strict
+fill -3 62 7 -3 62 8 minecraft:prismarine strict
+fill -3 62 166 -3 62 175 minecraft:stone_bricks strict
+fill -3 62 176 -3 62 177 minecraft:stone_brick_slab[type=top] strict
+fill -2 62 -69 2 62 -69 minecraft:coarse_dirt strict
+fill -2 62 -68 -2 62 -9 minecraft:dirt strict
+setblock -2 62 -8 minecraft:prismarine strict
+setblock -2 62 -7 minecraft:dark_prismarine strict
+setblock -2 62 -6 minecraft:prismarine strict
+fill -2 62 -5 -2 62 5 minecraft:dirt strict
+fill -2 62 6 -2 62 7 minecraft:prismarine strict
+setblock -2 62 8 minecraft:dark_prismarine strict
+fill -2 62 164 -1 62 164 minecraft:stone_brick_slab[type=top] strict
+fill -2 62 165 -2 62 175 minecraft:stone_bricks strict
+setblock -2 62 176 minecraft:stone_brick_slab[type=top] strict
+fill -1 62 -83 -1 62 -70 minecraft:spruce_slab[type=top] strict
+fill -1 62 -68 1 62 72 minecraft:dirt strict
+fill -1 62 74 -1 62 83 minecraft:spruce_slab[type=top] strict
+fill -1 62 165 -1 62 174 minecraft:stone_bricks strict
+fill -1 62 175 0 62 175 minecraft:stone_brick_slab[type=top] strict
+fill 0 62 -83 2 62 -71 minecraft:spruce_slab[type=top] strict
+fill 0 62 73 2 62 83 minecraft:spruce_slab[type=top] strict
+fill 0 62 163 2 62 163 minecraft:stone_brick_slab[type=top] strict
+fill 0 62 164 0 62 174 minecraft:stone_bricks strict
+fill 1 62 164 1 62 173 minecraft:stone_bricks strict
+setblock 1 62 174 minecraft:stone_brick_slab[type=top] strict
+fill 2 62 -68 2 62 -9 minecraft:dirt strict
+setblock 2 62 -8 minecraft:dark_prismarine strict
+fill 2 62 -7 2 62 -6 minecraft:prismarine strict
+fill 2 62 -5 2 62 5 minecraft:dirt strict
+setblock 2 62 6 minecraft:prismarine strict
+setblock 2 62 7 minecraft:dark_prismarine strict
+setblock 2 62 8 minecraft:prismarine strict
+fill 2 62 9 4 62 72 minecraft:dirt strict
+fill 2 62 164 2 62 172 minecraft:stone_bricks strict
+fill 2 62 173 2 62 174 minecraft:stone_brick_slab[type=top] strict
+fill 3 62 -69 4 62 -9 minecraft:dirt strict
+fill 3 62 -8 3 62 -7 minecraft:prismarine strict
+setblock 3 62 -6 minecraft:dark_prismarine strict
+fill 3 62 -5 4 62 -5 minecraft:prismarine strict
+fill 3 62 -4 3 62 4 minecraft:dirt strict
+setblock 3 62 5 minecraft:prismarine strict
+setblock 3 62 6 minecraft:dark_prismarine strict
+fill 3 62 7 3 62 8 minecraft:prismarine strict
+fill 3 62 162 6 62 162 minecraft:stone_brick_slab[type=top] strict
+fill 3 62 163 4 62 172 minecraft:stone_bricks strict
+fill 3 62 173 4 62 173 minecraft:stone_brick_slab[type=top] strict
+setblock 4 62 -8 minecraft:prismarine strict
+setblock 4 62 -7 minecraft:dark_prismarine strict
+setblock 4 62 -6 minecraft:sea_lantern strict
+setblock 4 62 -4 minecraft:dark_prismarine strict
+fill 4 62 -3 4 62 3 minecraft:dirt strict
+setblock 4 62 4 minecraft:prismarine strict
+setblock 4 62 5 minecraft:dark_prismarine strict
+fill 4 62 6 4 62 7 minecraft:prismarine strict
+setblock 4 62 8 minecraft:dark_prismarine strict
+fill 5 62 -68 5 62 -8 minecraft:dirt strict
+fill 5 62 -7 5 62 -6 minecraft:prismarine strict
+setblock 5 62 -5 minecraft:dark_prismarine strict
+fill 5 62 -4 5 62 -3 minecraft:prismarine strict
+fill 5 62 -2 5 62 2 minecraft:dirt strict
+setblock 5 62 3 minecraft:prismarine strict
+setblock 5 62 4 minecraft:dark_prismarine strict
+fill 5 62 5 5 62 6 minecraft:prismarine strict
+setblock 5 62 7 minecraft:dark_prismarine strict
+fill 5 62 8 5 62 72 minecraft:dirt strict
+fill 5 62 163 6 62 171 minecraft:stone_bricks strict
+fill 5 62 172 7 62 172 minecraft:stone_brick_slab[type=top] strict
+fill 6 62 -68 6 62 -7 minecraft:dirt strict
+setblock 6 62 -6 minecraft:dark_prismarine strict
+fill 6 62 -5 6 62 -4 minecraft:prismarine strict
+setblock 6 62 -3 minecraft:dark_prismarine strict
+setblock 6 62 -2 minecraft:prismarine strict
+fill 6 62 -1 8 62 1 minecraft:dirt strict
+setblock 6 62 2 minecraft:prismarine strict
+setblock 6 62 3 minecraft:dark_prismarine strict
+setblock 6 62 4 minecraft:sea_lantern strict
+setblock 6 62 5 minecraft:prismarine strict
+setblock 6 62 6 minecraft:dark_prismarine strict
+fill 6 62 7 6 62 72 minecraft:dirt strict
+fill 7 62 -68 7 62 -6 minecraft:dirt strict
+setblock 7 62 -5 minecraft:prismarine strict
+setblock 7 62 -4 minecraft:dark_prismarine strict
+fill 7 62 -3 7 62 -2 minecraft:prismarine strict
+setblock 7 62 2 minecraft:dark_prismarine strict
+fill 7 62 3 7 62 4 minecraft:prismarine strict
+setblock 7 62 5 minecraft:dark_prismarine strict
+fill 7 62 6 7 62 71 minecraft:dirt strict
+fill 7 62 161 16 62 161 minecraft:stone_brick_slab[type=top] strict
+fill 7 62 162 7 62 171 minecraft:stone_bricks strict
+fill 8 62 -68 8 62 -5 minecraft:dirt strict
+fill 8 62 -4 8 62 -3 minecraft:prismarine strict
+setblock 8 62 -2 minecraft:dark_prismarine strict
+fill 8 62 2 8 62 3 minecraft:prismarine strict
+setblock 8 62 4 minecraft:dark_prismarine strict
+fill 8 62 5 8 62 71 minecraft:dirt strict
+fill 8 62 162 15 62 170 minecraft:stone_bricks strict
+fill 8 62 171 15 62 171 minecraft:stone_brick_slab[type=top] strict
+fill 9 62 -68 10 62 71 minecraft:dirt strict
+fill 9 62 72 11 62 72 minecraft:stone_brick_slab[type=top] strict
+fill 11 62 -68 13 62 -68 minecraft:coarse_dirt strict
+fill 11 62 -67 11 62 71 minecraft:dirt strict
+fill 12 62 -67 13 62 70 minecraft:dirt strict
+fill 12 62 71 12 62 72 minecraft:stone_bricks strict
+fill 12 62 73 12 62 74 minecraft:stone_brick_slab[type=top] strict
+fill 13 62 71 13 62 73 minecraft:stone_bricks strict
+fill 13 62 74 13 62 76 minecraft:stone_brick_slab[type=top] strict
+fill 13 62 97 13 62 114 minecraft:stone_brick_slab[type=top] strict
+fill 14 62 -69 17 62 -69 minecraft:coarse_dirt strict
+fill 14 62 -68 14 62 70 minecraft:dirt strict
+fill 14 62 71 14 62 76 minecraft:stone_bricks strict
+fill 14 62 77 14 62 96 minecraft:stone_brick_slab[type=top] strict
+fill 14 62 97 14 62 114 minecraft:stone_bricks strict
+fill 14 62 115 14 62 117 minecraft:stone_brick_slab[type=top] strict
+fill 15 62 70 15 62 117 minecraft:stone_bricks strict
+setblock 15 62 118 minecraft:stone_brick_slab[type=top] strict
+fill 16 62 70 16 62 118 minecraft:stone_bricks strict
+fill 16 62 119 16 62 120 minecraft:stone_brick_slab[type=top] strict
+fill 16 62 162 16 62 171 minecraft:stone_bricks strict
+fill 16 62 172 18 62 172 minecraft:stone_brick_slab[type=top] strict
+fill 17 62 69 17 62 120 minecraft:stone_bricks strict
+setblock 17 62 121 minecraft:stone_brick_slab[type=top] strict
+fill 17 62 162 20 62 162 minecraft:stone_brick_slab[type=top] strict
+fill 17 62 163 18 62 171 minecraft:stone_bricks strict
+fill 18 62 -70 19 62 68 minecraft:dirt strict
+fill 18 62 69 18 62 121 minecraft:stone_bricks strict
+setblock 18 62 122 minecraft:stone_brick_slab[type=top] strict
+fill 19 62 69 19 62 122 minecraft:stone_bricks strict
+fill 19 62 123 19 62 124 minecraft:stone_brick_slab[type=top] strict
+fill 19 62 163 20 62 172 minecraft:stone_bricks strict
+fill 19 62 173 20 62 173 minecraft:stone_brick_slab[type=top] strict
+fill 20 62 -70 21 62 -70 minecraft:coarse_dirt strict
+fill 20 62 -69 21 62 68 minecraft:dirt strict
+fill 20 62 69 20 62 123 minecraft:stone_bricks strict
+setblock 20 62 124 minecraft:stone_brick_slab[type=top] strict
+setblock 21 62 69 minecraft:stone_brick_slab[type=top] strict
+fill 21 62 70 21 62 124 minecraft:stone_bricks strict
+setblock 21 62 125 minecraft:stone_brick_slab[type=top] strict
+fill 21 62 163 22 62 163 minecraft:stone_brick_slab[type=top] strict
+fill 21 62 164 22 62 173 minecraft:stone_bricks strict
+fill 21 62 174 22 62 174 minecraft:stone_brick_slab[type=top] strict
+fill 22 62 -69 24 62 -69 minecraft:rooted_dirt strict
+fill 22 62 -68 23 62 67 minecraft:dirt strict
+fill 22 62 70 22 62 72 minecraft:stone_brick_slab[type=top] strict
+fill 22 62 73 22 62 125 minecraft:stone_bricks strict
+setblock 22 62 126 minecraft:stone_brick_slab[type=top] strict
+fill 23 62 72 23 62 75 minecraft:stone_brick_slab[type=top] strict
+fill 23 62 76 23 62 83 minecraft:stone_bricks strict
+fill 23 62 84 23 62 112 minecraft:stone_brick_slab[type=top] strict
+fill 23 62 113 23 62 126 minecraft:stone_bricks strict
+setblock 23 62 127 minecraft:stone_brick_slab[type=top] strict
+fill 23 62 163 23 62 164 minecraft:stone_brick_slab[type=top] strict
+fill 23 62 165 24 62 174 minecraft:stone_bricks strict
+fill 23 62 175 24 62 175 minecraft:stone_brick_slab[type=top] strict
+fill 24 62 -68 24 62 -33 minecraft:dirt strict
+setblock 24 62 -32 minecraft:clay strict
+setblock 24 62 -31 minecraft:sand strict
+setblock 24 62 -30 minecraft:clay strict
+fill 24 62 -29 24 62 -28 minecraft:sand strict
+fill 24 62 -27 24 62 67 minecraft:dirt strict
+fill 24 62 76 24 62 83 minecraft:stone_brick_slab[type=top] strict
+fill 24 62 113 24 62 114 minecraft:stone_brick_slab[type=top] strict
+fill 24 62 115 24 62 126 minecraft:stone_bricks strict
+fill 24 62 127 24 62 128 minecraft:stone_brick_slab[type=top] strict
+fill 24 62 164 25 62 164 minecraft:stone_brick_slab[type=top] strict
+fill 25 62 -67 25 62 -35 minecraft:dirt strict
+fill 25 62 -34 26 62 -34 minecraft:clay strict
+fill 25 62 -33 25 62 -31 minecraft:sand strict
+fill 25 62 -30 25 62 -29 minecraft:clay strict
+fill 25 62 -28 25 62 -27 minecraft:sand strict
+setblock 25 62 -26 minecraft:clay strict
+fill 25 62 -25 25 62 67 minecraft:dirt strict
+setblock 25 62 115 minecraft:stone_brick_slab[type=top] strict
+fill 25 62 116 25 62 127 minecraft:stone_bricks strict
+setblock 25 62 128 minecraft:stone_brick_slab[type=top] strict
+fill 25 62 165 25 62 175 minecraft:stone_bricks strict
+setblock 25 62 176 minecraft:stone_brick_slab[type=top] strict
+fill 26 62 -67 26 62 -36 minecraft:dirt strict
+setblock 26 62 -35 minecraft:sand strict
+setblock 26 62 -33 minecraft:sand strict
+fill 26 62 -32 26 62 -28 minecraft:clay strict
+fill 26 62 -27 26 62 -25 minecraft:sand strict
+fill 26 62 -24 27 62 67 minecraft:dirt strict
+setblock 26 62 116 minecraft:stone_brick_slab[type=top] strict
+fill 26 62 117 26 62 128 minecraft:stone_bricks strict
+fill 26 62 129 27 62 129 minecraft:stone_brick_slab[type=top] strict
+setblock 26 62 165 minecraft:stone_brick_slab[type=top] strict
+fill 26 62 166 26 62 176 minecraft:stone_bricks strict
+setblock 26 62 177 minecraft:stone_brick_slab[type=top] strict
+fill 27 62 -69 27 62 -68 minecraft:spruce_slab[type=top] strict
+fill 27 62 -67 29 62 -67 minecraft:coarse_dirt strict
+fill 27 62 -66 27 62 -36 minecraft:dirt strict
+fill 27 62 -35 28 62 -33 minecraft:sand strict
+setblock 27 62 -32 minecraft:clay strict
+fill 27 62 -31 27 62 -29 minecraft:water strict
+setblock 27 62 -28 minecraft:clay strict
+fill 27 62 -27 28 62 -27 minecraft:sand strict
+setblock 27 62 -26 minecraft:clay strict
+setblock 27 62 -25 minecraft:sand strict
+fill 27 62 68 27 62 69 minecraft:spruce_slab[type=top] strict
+setblock 27 62 117 minecraft:stone_brick_slab[type=top] strict
+fill 27 62 118 27 62 128 minecraft:stone_bricks strict
+fill 27 62 165 27 62 166 minecraft:stone_brick_slab[type=top] strict
+fill 27 62 167 27 62 177 minecraft:stone_bricks strict
+setblock 27 62 178 minecraft:stone_brick_slab[type=top] strict
+fill 28 62 -71 28 62 -69 minecraft:spruce_slab[type=top] strict
+fill 28 62 -66 31 62 -37 minecraft:dirt strict
+setblock 28 62 -36 minecraft:clay strict
+fill 28 62 -32 28 62 -28 minecraft:water strict
+fill 28 62 -26 28 62 -25 minecraft:clay strict
+fill 28 62 -24 30 62 -24 minecraft:sand strict
+fill 28 62 -23 30 62 66 minecraft:dirt strict
+setblock 28 62 67 minecraft:coarse_dirt strict
+fill 28 62 69 28 62 72 minecraft:spruce_slab[type=top] strict
+setblock 28 62 118 minecraft:stone_brick_slab[type=top] strict
+fill 28 62 119 28 62 129 minecraft:stone_bricks strict
+fill 28 62 130 29 62 130 minecraft:stone_brick_slab[type=top] strict
+setblock 28 62 166 minecraft:stone_brick_slab[type=top] strict
+fill 28 62 167 28 62 178 minecraft:stone_bricks strict
+setblock 28 62 179 minecraft:stone_brick_slab[type=top] strict
+fill 29 62 -73 29 62 -68 minecraft:spruce_slab[type=top] strict
+fill 29 62 -36 29 62 -34 minecraft:sand strict
+fill 29 62 -33 31 62 -27 minecraft:water strict
+fill 29 62 -26 30 62 -26 minecraft:sand strict
+fill 29 62 -25 30 62 -25 minecraft:clay strict
+fill 29 62 68 29 62 74 minecraft:spruce_slab[type=top] strict
+fill 29 62 119 30 62 119 minecraft:stone_brick_slab[type=top] strict
+fill 29 62 120 30 62 129 minecraft:stone_bricks strict
+fill 29 62 167 30 62 167 minecraft:stone_brick_slab[type=top] strict
+fill 29 62 168 29 62 179 minecraft:stone_bricks strict
+fill 29 62 180 29 62 181 minecraft:stone_brick_slab[type=top] strict
+fill 30 62 -76 31 62 -68 minecraft:spruce_slab[type=top] strict
+fill 30 62 -36 30 62 -35 minecraft:clay strict
+setblock 30 62 -34 minecraft:sand strict
+fill 30 62 67 30 62 76 minecraft:spruce_slab[type=top] strict
+fill 30 62 130 30 62 131 minecraft:stone_brick_slab[type=top] strict
+fill 30 62 168 30 62 180 minecraft:stone_bricks strict
+fill 30 62 181 30 62 182 minecraft:stone_brick_slab[type=top] strict
+setblock 31 62 -36 minecraft:clay strict
+fill 31 62 -35 31 62 -34 minecraft:sand strict
+fill 31 62 -26 31 62 -25 minecraft:sand strict
+setblock 31 62 -24 minecraft:clay strict
+fill 31 62 -23 31 62 65 minecraft:dirt strict
+fill 31 62 69 31 62 76 minecraft:spruce_slab[type=top] strict
+fill 31 62 120 32 62 120 minecraft:stone_brick_slab[type=top] strict
+fill 31 62 121 32 62 130 minecraft:stone_bricks strict
+fill 31 62 131 32 62 131 minecraft:stone_brick_slab[type=top] strict
+setblock 31 62 168 minecraft:stone_brick_slab[type=top] strict
+fill 31 62 169 31 62 182 minecraft:stone_bricks strict
+fill 31 62 183 31 62 184 minecraft:stone_brick_slab[type=top] strict
+fill 32 62 -76 32 62 -71 minecraft:spruce_slab[type=top] strict
+fill 32 62 -65 32 62 -37 minecraft:dirt strict
+fill 32 62 -36 32 62 -35 minecraft:sand strict
+setblock 32 62 -34 minecraft:clay strict
+setblock 32 62 -33 minecraft:sand strict
+fill 32 62 -32 32 62 -28 minecraft:water strict
+fill 32 62 -27 32 62 -26 minecraft:sand strict
+fill 32 62 -25 33 62 -25 minecraft:clay strict
+setblock 32 62 -24 minecraft:sand strict
+fill 32 62 -23 32 62 64 minecraft:dirt strict
+fill 32 62 71 32 62 76 minecraft:spruce_slab[type=top] strict
+setblock 32 62 169 minecraft:stone_brick_slab[type=top] strict
+fill 32 62 170 32 62 183 minecraft:stone_bricks strict
+fill 32 62 184 32 62 185 minecraft:stone_brick_slab[type=top] strict
+fill 33 62 -76 33 62 -73 minecraft:spruce_slab[type=top] strict
+fill 33 62 -65 33 62 -36 minecraft:dirt strict
+setblock 33 62 -35 minecraft:clay strict
+fill 33 62 -34 33 62 -32 minecraft:sand strict
+fill 33 62 -31 33 62 -29 minecraft:water strict
+fill 33 62 -28 33 62 -26 minecraft:sand strict
+fill 33 62 -24 33 62 64 minecraft:dirt strict
+fill 33 62 74 33 62 76 minecraft:spruce_slab[type=top] strict
 fill 33 62 121 34 62 121 minecraft:stone_brick_slab[type=top] strict
 fill 33 62 122 34 62 131 minecraft:stone_bricks strict
 fill 33 62 132 35 62 132 minecraft:stone_brick_slab[type=top] strict
@@ -2046,7 +2438,7 @@ setblock -27 63 200 minecraft:white_concrete strict
 fill -27 63 201 -27 63 202 minecraft:stone_bricks strict
 fill -26 63 -70 -26 63 -65 minecraft:spruce_planks strict
 fill -26 63 -64 -25 63 -55 minecraft:dirt_path strict
-fill -26 63 -54 -24 63 -4 minecraft:grass_block strict
+fill -26 63 -54 -26 63 -4 minecraft:grass_block strict
 fill -26 63 4 -26 63 26 minecraft:grass_block strict
 setblock -26 63 27 minecraft:polished_andesite strict
 fill -26 63 28 -26 63 32 minecraft:stone_bricks strict
@@ -2067,6 +2459,9 @@ fill -26 63 190 -26 63 198 minecraft:gray_concrete strict
 setblock -26 63 199 minecraft:white_concrete strict
 fill -26 63 200 -26 63 201 minecraft:stone_bricks strict
 fill -25 63 -67 -25 63 -65 minecraft:spruce_planks strict
+fill -25 63 -54 -25 63 -26 minecraft:grass_block strict
+setblock -25 63 -25 minecraft:spruce_trapdoor[facing=north,half=top,open=false] strict
+fill -25 63 -24 -25 63 -4 minecraft:grass_block strict
 fill -25 63 -2 -25 63 -1 minecraft:stone_bricks strict
 setblock -25 63 0 minecraft:cracked_stone_bricks strict
 fill -25 63 1 -25 63 2 minecraft:stone_bricks strict
@@ -2091,6 +2486,7 @@ setblock -25 63 198 minecraft:white_concrete strict
 fill -25 63 199 -25 63 200 minecraft:stone_bricks strict
 fill -24 63 -65 -24 63 -64 minecraft:grass_block strict
 fill -24 63 -63 -24 63 -55 minecraft:dirt_path strict
+fill -24 63 -54 -24 63 -4 minecraft:grass_block strict
 fill -24 63 -2 -24 63 2 minecraft:stone_bricks strict
 fill -24 63 4 -24 63 54 minecraft:grass_block strict
 fill -24 63 55 -24 63 56 minecraft:dirt_path strict
@@ -2603,400 +2999,4 @@ setblock -3 63 39 minecraft:gray_concrete strict
 setblock -3 63 40 minecraft:light_gray_concrete strict
 setblock -3 63 41 minecraft:gray_concrete strict
 setblock -3 63 42 minecraft:white_concrete strict
-setblock -3 63 43 minecraft:black_concrete strict
-setblock -3 63 54 minecraft:red_concrete strict
-setblock -3 63 55 minecraft:gray_concrete strict
-setblock -3 63 56 minecraft:light_gray_concrete strict
-setblock -3 63 57 minecraft:gray_concrete strict
-fill -3 63 58 -2 63 58 minecraft:white_concrete strict
-fill -3 63 60 -2 63 60 minecraft:coarse_dirt strict
-fill -3 63 61 -2 63 61 minecraft:dirt_path strict
-fill -3 63 166 -2 63 166 minecraft:white_concrete strict
-fill -3 63 167 -2 63 174 minecraft:gray_concrete strict
-setblock -3 63 175 minecraft:white_concrete strict
-fill -3 63 176 -3 63 177 minecraft:stone_bricks strict
-fill -2 63 -83 3 63 -70 minecraft:spruce_planks strict
-fill -2 63 -59 2 63 -56 minecraft:grass_block strict
-fill -2 63 -55 -2 63 -54 minecraft:purpur_block strict
-fill -2 63 -51 -2 63 -50 minecraft:obsidian strict
-setblock -2 63 -49 minecraft:crying_obsidian strict
-fill -2 63 -48 -2 63 -46 minecraft:obsidian strict
-setblock -2 63 -45 minecraft:crying_obsidian strict
-fill -2 63 -44 -2 63 -41 minecraft:obsidian strict
-fill -2 63 -40 -2 63 -39 minecraft:purpur_block strict
-fill -2 63 -38 -2 63 -36 minecraft:stone_bricks strict
-setblock -2 63 -35 minecraft:cracked_stone_bricks strict
-setblock -2 63 -34 minecraft:stone_bricks strict
-fill -2 63 -33 -2 63 -31 minecraft:cracked_stone_bricks strict
-fill -2 63 -30 -2 63 -28 minecraft:stone_bricks strict
-setblock -2 63 -27 minecraft:cracked_stone_bricks strict
-fill -2 63 -26 -2 63 -21 minecraft:stone_bricks strict
-setblock -2 63 -20 minecraft:cracked_stone_bricks strict
-fill -2 63 -19 -2 63 -15 minecraft:stone_bricks strict
-fill -2 63 -14 -1 63 -14 minecraft:polished_diorite strict
-fill -2 63 -13 -1 63 -13 minecraft:polished_andesite strict
-fill -2 63 -12 -1 63 -12 minecraft:polished_diorite strict
-fill -2 63 -11 -2 63 -10 minecraft:polished_andesite strict
-fill -2 63 -8 -2 63 -6 minecraft:water strict
-fill -2 63 -5 2 63 -5 minecraft:polished_blackstone_bricks strict
-fill -2 63 -4 -2 63 -3 minecraft:smooth_quartz strict
-setblock -2 63 -2 minecraft:waxed_cut_copper strict
-setblock -2 63 -1 minecraft:smooth_quartz strict
-setblock -2 63 1 minecraft:smooth_quartz strict
-setblock -2 63 2 minecraft:waxed_cut_copper strict
-fill -2 63 3 -2 63 4 minecraft:smooth_quartz strict
-fill -2 63 5 2 63 5 minecraft:polished_blackstone_bricks strict
-fill -2 63 6 -2 63 8 minecraft:water strict
-fill -2 63 10 -2 63 11 minecraft:polished_diorite strict
-fill -2 63 12 0 63 12 minecraft:polished_andesite strict
-fill -2 63 13 0 63 13 minecraft:polished_diorite strict
-fill -2 63 14 0 63 14 minecraft:polished_andesite strict
-fill -2 63 15 -2 63 17 minecraft:stone_bricks strict
-setblock -2 63 18 minecraft:mossy_stone_bricks strict
-fill -2 63 19 -2 63 24 minecraft:stone_bricks strict
-setblock -2 63 25 minecraft:cracked_stone_bricks strict
-setblock -2 63 26 minecraft:stone_bricks strict
-setblock -2 63 27 minecraft:mossy_stone_bricks strict
-fill -2 63 28 -2 63 35 minecraft:stone_bricks strict
-setblock -2 63 36 minecraft:mossy_stone_bricks strict
-fill -2 63 39 3 63 41 minecraft:gray_concrete strict
-setblock -2 63 42 minecraft:red_concrete strict
-setblock -2 63 43 minecraft:white_concrete strict
-fill -2 63 44 -1 63 45 minecraft:black_concrete strict
-fill -2 63 46 -1 63 47 minecraft:white_concrete strict
-fill -2 63 48 -1 63 49 minecraft:black_concrete strict
-fill -2 63 50 -1 63 51 minecraft:white_concrete strict
-fill -2 63 52 -1 63 53 minecraft:black_concrete strict
-setblock -2 63 54 minecraft:white_concrete strict
-fill -2 63 55 -2 63 57 minecraft:gray_concrete strict
-setblock -2 63 62 minecraft:red_concrete strict
-fill -2 63 73 3 63 83 minecraft:spruce_planks strict
-fill -2 63 164 -1 63 164 minecraft:stone_bricks strict
-setblock -2 63 165 minecraft:red_concrete strict
-setblock -2 63 175 minecraft:red_concrete strict
-setblock -2 63 176 minecraft:stone_bricks strict
-fill -1 63 -69 1 63 -60 minecraft:dirt_path strict
-fill -1 63 -55 1 63 -55 minecraft:purpur_block strict
-fill -1 63 -54 -1 63 -53 minecraft:obsidian strict
-fill -1 63 -51 -1 63 -44 minecraft:obsidian strict
-setblock -1 63 -43 minecraft:crying_obsidian strict
-fill -1 63 -42 -1 63 -40 minecraft:obsidian strict
-fill -1 63 -39 1 63 -39 minecraft:purpur_block strict
-fill -1 63 -38 -1 63 -31 minecraft:stone_bricks strict
-setblock -1 63 -30 minecraft:cracked_stone_bricks strict
-fill -1 63 -29 -1 63 -18 minecraft:stone_bricks strict
-setblock -1 63 -17 minecraft:mossy_stone_bricks strict
-fill -1 63 -16 -1 63 -15 minecraft:stone_bricks strict
-setblock -1 63 -11 minecraft:polished_andesite strict
-setblock -1 63 -10 minecraft:polished_diorite strict
-fill -1 63 -8 1 63 -6 minecraft:smooth_quartz strict
-fill -1 63 -4 -1 63 -2 minecraft:smooth_quartz strict
-fill -1 63 -1 -1 63 1 minecraft:gold_block strict
-fill -1 63 2 -1 63 4 minecraft:smooth_quartz strict
-fill -1 63 6 1 63 8 minecraft:smooth_quartz strict
-fill -1 63 10 0 63 10 minecraft:polished_andesite strict
-fill -1 63 11 0 63 11 minecraft:polished_diorite strict
-fill -1 63 15 -1 63 22 minecraft:stone_bricks strict
-setblock -1 63 23 minecraft:mossy_stone_bricks strict
-fill -1 63 24 -1 63 27 minecraft:stone_bricks strict
-setblock -1 63 28 minecraft:cracked_stone_bricks strict
-fill -1 63 29 -1 63 30 minecraft:stone_bricks strict
-setblock -1 63 31 minecraft:cracked_stone_bricks strict
-fill -1 63 32 -1 63 36 minecraft:stone_bricks strict
-setblock -1 63 38 minecraft:white_concrete strict
-fill -1 63 42 -1 63 43 minecraft:white_concrete strict
-fill -1 63 54 -1 63 56 minecraft:yellow_glazed_terracotta strict
-fill -1 63 57 1 63 57 minecraft:gray_concrete strict
-fill -1 63 58 0 63 58 minecraft:red_concrete strict
-fill -1 63 60 4 63 61 minecraft:dirt_path strict
-fill -1 63 62 -1 63 65 minecraft:black_concrete strict
-fill -1 63 66 -1 63 70 minecraft:white_concrete strict
-fill -1 63 71 2 63 72 minecraft:dirt_path strict
-setblock -1 63 165 minecraft:white_concrete strict
-fill -1 63 166 -1 63 173 minecraft:gray_concrete strict
-setblock -1 63 174 minecraft:white_concrete strict
-fill -1 63 175 0 63 175 minecraft:stone_bricks strict
-fill 0 63 -54 0 63 -48 minecraft:obsidian strict
-setblock 0 63 -47 minecraft:crying_obsidian strict
-fill 0 63 -46 0 63 -40 minecraft:obsidian strict
-fill 0 63 -38 0 63 -26 minecraft:stone_bricks strict
-setblock 0 63 -25 minecraft:mossy_stone_bricks strict
-fill 0 63 -24 0 63 -15 minecraft:stone_bricks strict
-fill 0 63 -14 2 63 -14 minecraft:polished_andesite strict
-fill 0 63 -13 2 63 -13 minecraft:polished_diorite strict
-fill 0 63 -12 2 63 -12 minecraft:polished_andesite strict
-fill 0 63 -11 1 63 -11 minecraft:polished_diorite strict
-fill 0 63 -10 1 63 -10 minecraft:polished_andesite strict
-setblock 0 63 -9 minecraft:chiseled_stone_bricks strict
-fill 0 63 -4 0 63 4 minecraft:gold_block strict
-setblock 0 63 9 minecraft:chiseled_stone_bricks strict
-fill 0 63 15 0 63 23 minecraft:stone_bricks strict
-setblock 0 63 24 minecraft:cracked_stone_bricks strict
-fill 0 63 25 0 63 36 minecraft:stone_bricks strict
-fill 0 63 38 1 63 38 minecraft:red_concrete strict
-fill 0 63 42 1 63 42 minecraft:red_concrete strict
-fill 0 63 43 1 63 43 minecraft:black_concrete strict
-fill 0 63 44 1 63 45 minecraft:white_concrete strict
-fill 0 63 46 1 63 47 minecraft:black_concrete strict
-fill 0 63 48 1 63 49 minecraft:white_concrete strict
-fill 0 63 50 1 63 51 minecraft:black_concrete strict
-fill 0 63 52 1 63 53 minecraft:white_concrete strict
-setblock 0 63 54 minecraft:yellow_glazed_terracotta strict
-setblock 0 63 55 minecraft:gold_block strict
-setblock 0 63 56 minecraft:yellow_glazed_terracotta strict
-setblock 0 63 62 minecraft:white_concrete strict
-setblock 0 63 63 minecraft:black_concrete strict
-setblock 0 63 64 minecraft:white_concrete strict
-setblock 0 63 65 minecraft:black_concrete strict
-setblock 0 63 66 minecraft:white_concrete strict
-setblock 0 63 67 minecraft:black_concrete strict
-setblock 0 63 68 minecraft:white_concrete strict
-setblock 0 63 69 minecraft:black_concrete strict
-setblock 0 63 70 minecraft:white_concrete strict
-fill 0 63 163 2 63 163 minecraft:stone_bricks strict
-fill 0 63 164 0 63 165 minecraft:white_concrete strict
-fill 0 63 166 0 63 172 minecraft:gray_concrete strict
-fill 0 63 173 0 63 174 minecraft:white_concrete strict
-fill 1 63 -54 1 63 -52 minecraft:obsidian strict
-setblock 1 63 -51 minecraft:crying_obsidian strict
-fill 1 63 -50 1 63 -43 minecraft:obsidian strict
-fill 1 63 -42 4 63 -42 minecraft:crying_obsidian strict
-fill 1 63 -41 1 63 -40 minecraft:obsidian strict
-setblock 1 63 -38 minecraft:stone_bricks strict
-setblock 1 63 -37 minecraft:mossy_stone_bricks strict
-fill 1 63 -36 1 63 -21 minecraft:stone_bricks strict
-setblock 1 63 -20 minecraft:mossy_stone_bricks strict
-fill 1 63 -19 1 63 -17 minecraft:stone_bricks strict
-setblock 1 63 -16 minecraft:mossy_stone_bricks strict
-setblock 1 63 -15 minecraft:stone_bricks strict
-fill 1 63 -9 4 63 -9 minecraft:stone_bricks strict
-fill 1 63 -4 1 63 -2 minecraft:smooth_quartz strict
-fill 1 63 -1 1 63 1 minecraft:gold_block strict
-fill 1 63 2 1 63 4 minecraft:smooth_quartz strict
-fill 1 63 9 4 63 9 minecraft:stone_bricks strict
-setblock 1 63 10 minecraft:polished_diorite strict
-setblock 1 63 11 minecraft:polished_andesite strict
-fill 1 63 12 2 63 12 minecraft:polished_diorite strict
-fill 1 63 13 2 63 13 minecraft:polished_andesite strict
-fill 1 63 14 2 63 14 minecraft:polished_diorite strict
-fill 1 63 15 1 63 36 minecraft:stone_bricks strict
-fill 1 63 54 1 63 56 minecraft:yellow_glazed_terracotta strict
-setblock 1 63 58 minecraft:white_concrete strict
-setblock 1 63 62 minecraft:black_concrete strict
-setblock 1 63 63 minecraft:white_concrete strict
-setblock 1 63 64 minecraft:black_concrete strict
-setblock 1 63 65 minecraft:white_concrete strict
-setblock 1 63 66 minecraft:black_concrete strict
-setblock 1 63 67 minecraft:white_concrete strict
-setblock 1 63 68 minecraft:black_concrete strict
-setblock 1 63 69 minecraft:white_concrete strict
-setblock 1 63 70 minecraft:black_concrete strict
-fill 1 63 164 2 63 164 minecraft:white_concrete strict
-fill 1 63 165 1 63 172 minecraft:gray_concrete strict
-setblock 1 63 173 minecraft:red_concrete strict
-setblock 1 63 174 minecraft:stone_bricks strict
-fill 2 63 -69 2 63 -64 minecraft:dirt_path strict
-fill 2 63 -63 2 63 -61 minecraft:coarse_dirt strict
-setblock 2 63 -60 minecraft:dirt_path strict
-fill 2 63 -55 2 63 -54 minecraft:purpur_block strict
-fill 2 63 -53 2 63 -50 minecraft:obsidian strict
-setblock 2 63 -49 minecraft:crying_obsidian strict
-fill 2 63 -48 2 63 -46 minecraft:obsidian strict
-setblock 2 63 -45 minecraft:crying_obsidian strict
-fill 2 63 -44 2 63 -43 minecraft:obsidian strict
-fill 2 63 -41 3 63 -41 minecraft:obsidian strict
-fill 2 63 -40 2 63 -39 minecraft:purpur_block strict
-fill 2 63 -38 2 63 -32 minecraft:stone_bricks strict
-setblock 2 63 -31 minecraft:mossy_stone_bricks strict
-fill 2 63 -30 2 63 -22 minecraft:stone_bricks strict
-setblock 2 63 -21 minecraft:cracked_stone_bricks strict
-fill 2 63 -20 2 63 -15 minecraft:stone_bricks strict
-fill 2 63 -11 2 63 -10 minecraft:polished_diorite strict
-fill 2 63 -8 2 63 -6 minecraft:water strict
-fill 2 63 -4 2 63 -3 minecraft:smooth_quartz strict
-setblock 2 63 -2 minecraft:waxed_cut_copper strict
-setblock 2 63 -1 minecraft:smooth_quartz strict
-fill 2 63 0 4 63 0 minecraft:gold_block strict
-setblock 2 63 1 minecraft:smooth_quartz strict
-setblock 2 63 2 minecraft:waxed_cut_copper strict
-fill 2 63 3 2 63 4 minecraft:smooth_quartz strict
-fill 2 63 6 2 63 8 minecraft:water strict
-fill 2 63 10 2 63 11 minecraft:polished_andesite strict
-fill 2 63 15 2 63 26 minecraft:stone_bricks strict
-setblock 2 63 27 minecraft:cracked_stone_bricks strict
-fill 2 63 28 2 63 36 minecraft:stone_bricks strict
-fill 2 63 38 3 63 38 minecraft:white_concrete strict
-fill 2 63 42 2 63 43 minecraft:white_concrete strict
-fill 2 63 44 3 63 45 minecraft:black_concrete strict
-fill 2 63 46 3 63 47 minecraft:white_concrete strict
-fill 2 63 48 3 63 49 minecraft:black_concrete strict
-fill 2 63 50 3 63 51 minecraft:white_concrete strict
-fill 2 63 52 3 63 53 minecraft:black_concrete strict
-setblock 2 63 54 minecraft:red_concrete strict
-fill 2 63 55 3 63 57 minecraft:gray_concrete strict
-fill 2 63 58 3 63 58 minecraft:red_concrete strict
-setblock 2 63 62 minecraft:white_concrete strict
-fill 2 63 63 8 63 69 minecraft:gray_concrete strict
-fill 2 63 70 8 63 70 minecraft:white_concrete strict
-fill 2 63 165 2 63 171 minecraft:gray_concrete strict
-setblock 2 63 172 minecraft:white_concrete strict
-fill 2 63 173 2 63 174 minecraft:stone_bricks strict
-fill 3 63 -69 4 63 -64 minecraft:grass_block strict
-fill 3 63 -63 3 63 -62 minecraft:packed_mud strict
-fill 3 63 -61 3 63 -60 minecraft:coarse_dirt strict
-fill 3 63 -59 4 63 -55 minecraft:grass_block strict
-setblock 3 63 -54 minecraft:purpur_block strict
-fill 3 63 -53 3 63 -43 minecraft:obsidian strict
-setblock 3 63 -40 minecraft:purpur_block strict
-fill 3 63 -39 3 63 -15 minecraft:polished_andesite strict
-setblock 3 63 -14 minecraft:polished_diorite strict
-fill 3 63 -13 6 63 -13 minecraft:polished_andesite strict
-fill 3 63 -12 6 63 -12 minecraft:polished_diorite strict
-fill 3 63 -11 6 63 -11 minecraft:polished_andesite strict
-fill 3 63 -10 6 63 -10 minecraft:polished_diorite strict
-fill 3 63 -8 3 63 -5 minecraft:water strict
-setblock 3 63 -4 minecraft:polished_blackstone_bricks strict
-setblock 3 63 -3 minecraft:waxed_cut_copper strict
-fill 3 63 -2 4 63 -1 minecraft:smooth_quartz strict
-fill 3 63 1 4 63 2 minecraft:smooth_quartz strict
-setblock 3 63 3 minecraft:waxed_cut_copper strict
-setblock 3 63 4 minecraft:polished_blackstone_bricks strict
-fill 3 63 5 3 63 8 minecraft:water strict
-fill 3 63 10 6 63 10 minecraft:polished_andesite strict
-fill 3 63 11 6 63 11 minecraft:polished_diorite strict
-fill 3 63 12 6 63 12 minecraft:polished_andesite strict
-fill 3 63 13 6 63 13 minecraft:polished_diorite strict
-fill 3 63 14 3 63 36 minecraft:polished_andesite strict
-setblock 3 63 42 minecraft:red_concrete strict
-setblock 3 63 43 minecraft:white_concrete strict
-setblock 3 63 54 minecraft:white_concrete strict
-fill 3 63 62 6 63 62 minecraft:red_concrete strict
-fill 3 63 71 6 63 72 minecraft:grass_block strict
-fill 3 63 162 6 63 162 minecraft:stone_bricks strict
-fill 3 63 163 4 63 163 minecraft:red_concrete strict
-fill 3 63 164 3 63 171 minecraft:gray_concrete strict
-setblock 3 63 172 minecraft:red_concrete strict
-fill 3 63 173 4 63 173 minecraft:stone_bricks strict
-setblock 4 63 -63 minecraft:dirt_path strict
-fill 4 63 -62 4 63 -60 minecraft:coarse_dirt strict
-fill 4 63 -54 4 63 -53 minecraft:purpur_block strict
-fill 4 63 -52 4 63 -47 minecraft:obsidian strict
-setblock 4 63 -46 minecraft:crying_obsidian strict
-fill 4 63 -45 4 63 -43 minecraft:obsidian strict
-fill 4 63 -41 4 63 -40 minecraft:purpur_block strict
-fill 4 63 -39 4 63 -15 minecraft:grass_block strict
-fill 4 63 -14 6 63 -14 minecraft:polished_blackstone_bricks strict
-fill 4 63 -8 4 63 -4 minecraft:water strict
-setblock 4 63 -3 minecraft:polished_blackstone_bricks strict
-setblock 4 63 3 minecraft:polished_blackstone_bricks strict
-fill 4 63 4 4 63 8 minecraft:water strict
-fill 4 63 14 6 63 14 minecraft:polished_blackstone_bricks strict
-fill 4 63 15 4 63 37 minecraft:grass_block strict
-setblock 4 63 38 minecraft:red_concrete strict
-fill 4 63 39 4 63 42 minecraft:gray_concrete strict
-fill 4 63 43 4 63 45 minecraft:white_concrete strict
-fill 4 63 46 5 63 47 minecraft:black_concrete strict
-fill 4 63 48 6 63 49 minecraft:white_concrete strict
-fill 4 63 50 5 63 51 minecraft:black_concrete strict
-setblock 4 63 52 minecraft:white_concrete strict
-setblock 4 63 53 minecraft:red_concrete strict
-fill 4 63 54 4 63 57 minecraft:gray_concrete strict
-setblock 4 63 58 minecraft:white_concrete strict
-fill 4 63 164 6 63 170 minecraft:gray_concrete strict
-fill 4 63 171 4 63 172 minecraft:white_concrete strict
-fill 5 63 -68 7 63 -64 minecraft:grass_block strict
-fill 5 63 -63 5 63 -61 minecraft:dirt_path strict
-setblock 5 63 -60 minecraft:coarse_dirt strict
-fill 5 63 -59 5 63 -54 minecraft:grass_block strict
-setblock 5 63 -53 minecraft:purpur_block strict
-setblock 5 63 -52 minecraft:obsidian strict
-fill 5 63 -51 5 63 -48 minecraft:crying_obsidian strict
-fill 5 63 -47 5 63 -42 minecraft:obsidian strict
-setblock 5 63 -41 minecraft:purpur_block strict
-fill 5 63 -40 5 63 -15 minecraft:grass_block strict
-fill 5 63 -9 6 63 -9 minecraft:polished_andesite strict
-setblock 5 63 -8 minecraft:chiseled_stone_bricks strict
-fill 5 63 -7 5 63 -6 minecraft:water strict
-fill 5 63 -5 5 65 -5 minecraft:prismarine_bricks strict
-fill 5 63 -4 5 63 -3 minecraft:water strict
-fill 5 63 -2 5 63 2 minecraft:polished_blackstone_bricks strict
-fill 5 63 3 5 63 4 minecraft:water strict
-fill 5 63 5 5 65 5 minecraft:prismarine_bricks strict
-fill 5 63 6 5 63 7 minecraft:water strict
-setblock 5 63 8 minecraft:stone_bricks strict
-fill 5 63 9 6 63 9 minecraft:polished_diorite strict
-fill 5 63 15 6 63 38 minecraft:grass_block strict
-setblock 5 63 39 minecraft:red_concrete strict
-fill 5 63 40 5 63 43 minecraft:gray_concrete strict
-fill 5 63 44 5 63 45 minecraft:white_concrete strict
-setblock 5 63 52 minecraft:red_concrete strict
-fill 5 63 53 5 63 56 minecraft:gray_concrete strict
-setblock 5 63 57 minecraft:white_concrete strict
-fill 5 63 58 6 63 59 minecraft:grass_block strict
-setblock 5 63 60 minecraft:packed_mud strict
-fill 5 63 61 8 63 61 minecraft:dirt_path strict
-fill 5 63 163 6 63 163 minecraft:white_concrete strict
-setblock 5 63 171 minecraft:white_concrete strict
-fill 5 63 172 7 63 172 minecraft:stone_bricks strict
-fill 6 63 -63 7 63 -60 minecraft:dirt_path strict
-fill 6 63 -59 6 63 -53 minecraft:grass_block strict
-fill 6 63 -52 6 63 -51 minecraft:purpur_block strict
-fill 6 63 -50 6 63 -44 minecraft:obsidian strict
-fill 6 63 -43 6 63 -42 minecraft:purpur_block strict
-fill 6 63 -41 6 63 -15 minecraft:grass_block strict
-setblock 6 63 -8 minecraft:polished_diorite strict
-setblock 6 63 -7 minecraft:stone_bricks strict
-fill 6 63 -6 6 63 -2 minecraft:water strict
-fill 6 63 -1 8 63 1 minecraft:smooth_quartz strict
-fill 6 63 2 6 63 6 minecraft:water strict
-setblock 6 63 7 minecraft:stone_bricks strict
-setblock 6 63 8 minecraft:polished_andesite strict
-fill 6 63 39 6 63 40 minecraft:white_concrete strict
-setblock 6 63 41 minecraft:gray_concrete strict
-setblock 6 63 42 minecraft:light_gray_concrete strict
-fill 6 63 43 6 63 44 minecraft:gray_concrete strict
-setblock 6 63 45 minecraft:red_concrete strict
-setblock 6 63 46 minecraft:white_concrete strict
-setblock 6 63 47 minecraft:red_concrete strict
-setblock 6 63 50 minecraft:red_concrete strict
-setblock 6 63 51 minecraft:white_concrete strict
-fill 6 63 52 6 63 53 minecraft:gray_concrete strict
-setblock 6 63 54 minecraft:light_gray_concrete strict
-setblock 6 63 55 minecraft:gray_concrete strict
-fill 6 63 56 6 63 57 minecraft:red_concrete strict
-fill 6 63 60 8 63 60 minecraft:coarse_dirt strict
-fill 6 63 171 7 63 171 minecraft:red_concrete strict
-fill 7 63 -59 7 63 -52 minecraft:grass_block strict
-fill 7 63 -51 7 63 -49 minecraft:purpur_block strict
-fill 7 63 -48 7 63 -46 minecraft:obsidian strict
-fill 7 63 -45 7 63 -43 minecraft:purpur_block strict
-fill 7 63 -42 7 63 -14 minecraft:grass_block strict
-fill 7 63 -13 8 63 -13 minecraft:polished_blackstone_bricks strict
-fill 7 63 -12 7 63 -10 minecraft:polished_diorite strict
-fill 7 63 -9 7 63 -7 minecraft:grass_block strict
-setblock 7 63 -6 minecraft:stone_bricks strict
-fill 7 63 -5 7 63 -2 minecraft:water strict
-fill 7 63 2 7 63 5 minecraft:water strict
-setblock 7 63 6 minecraft:stone_bricks strict
-fill 7 63 7 7 63 9 minecraft:grass_block strict
-fill 7 63 10 7 63 12 minecraft:polished_andesite strict
-fill 7 63 13 8 63 13 minecraft:polished_blackstone_bricks strict
-fill 7 63 14 7 63 39 minecraft:grass_block strict
-setblock 7 63 40 minecraft:red_concrete strict
-fill 7 63 41 7 63 55 minecraft:gray_concrete strict
-setblock 7 63 56 minecraft:white_concrete strict
-fill 7 63 57 7 63 59 minecraft:grass_block strict
-fill 7 63 62 9 63 62 minecraft:white_concrete strict
-fill 7 63 71 8 63 71 minecraft:grass_block strict
-fill 7 63 161 16 63 161 minecraft:stone_bricks strict
-fill 7 63 162 12 63 162 minecraft:white_concrete strict
-fill 7 63 163 15 63 169 minecraft:gray_concrete strict
-fill 7 63 170 10 63 170 minecraft:white_concrete strict
-fill 8 63 -68 13 63 -63 minecraft:grass_block strict
-fill 8 63 -62 10 63 -60 minecraft:dirt_path strict
-fill 8 63 -59 8 63 -50 minecraft:grass_block strict
-fill 8 63 -49 8 63 -45 minecraft:purpur_block strict
-fill 8 63 -44 8 63 -14 minecraft:grass_block strict
-fill 8 63 -12 8 63 -11 minecraft:polished_andesite strict
-fill 8 63 -10 8 63 -7 minecraft:grass_block strict
 schedule function mg:lobby/build_8 1t

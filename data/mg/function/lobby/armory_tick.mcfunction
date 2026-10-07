@@ -28,3 +28,7 @@ scoreboard players operation $lfx mg.t = $lan mg.t
 scoreboard players set $l10 mg.t 10
 scoreboard players operation $lfx mg.t %= $l10 mg.t
 execute if score $lfx mg.t matches 0 if entity @a[x=0,y=64,z=0,distance=..160] run function mg:lobby/fx
+
+# Secrets du spawn
+execute if score $lfx mg.t matches 0 run function mg:secrets/tick
+execute as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.lk,x=0,y=64,z=0,distance=..15] run function mg:secrets/dance
