@@ -330,7 +330,7 @@ parts = []
 for L in LV:
     for i in range(0, len(L.cmd), 2500):
         parts.append([f'# Dropper Aventure : niveau {L.k + 1} ({L.name})'] + L.cmd[i:i + 2500])
-parts.append(['function mg:dropadv/fl_remove', 'data modify storage mg:dropadv built set value 1b',
+parts.append(['function mg:dropadv/fl_remove', 'data modify storage mg:dropadv v2 set value 1b',
               'tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"The Dropper : Aventure construit (10 niveaux).","color":"green"}]'])
 for k, p in enumerate(parts, 1):
     if k < len(parts): p = p + [f'schedule function mg:dropadv/build_{k + 1} 3t']
