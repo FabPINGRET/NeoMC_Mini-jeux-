@@ -91,6 +91,12 @@ scoreboard objectives remove mg.kfp
 scoreboard objectives remove mg.kpg
 scoreboard objectives remove mg.krk
 scoreboard objectives remove mg.kps
+scoreboard objectives remove mg.krc
+scoreboard objectives remove mg.khd
+scoreboard objectives remove mg.kspr
+scoreboard objectives remove mg.kvm
+scoreboard objectives remove mg.kv
+scoreboard objectives remove mg.kmap
 bossbar remove mg:party
 scoreboard objectives remove mg.mit
 scoreboard objectives remove mg.mip

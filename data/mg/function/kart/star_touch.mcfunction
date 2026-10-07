@@ -1,4 +1,2 @@
 # En étoile : les karts touchés partent en tête-à-queue
-tag @s add mg.kme
-execute at @s as @a[tag=mg.play,tag=!mg.kme,distance=..1.8] run function mg:kart/hit
-tag @s remove mg.kme
+execute as @e[type=minecraft:block_display,tag=mg.kk,limit=1] at @s as @e[type=minecraft:block_display,tag=mg.kart,tag=!mg.kk,distance=..1.8] run function mg:kart/owner_hit

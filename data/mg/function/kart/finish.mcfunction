@@ -1,4 +1,3 @@
-# Ligne d'arrivée franchie au dernier tour (@s)
 tag @s add mg.kfin
 scoreboard players add $kfo mg.st 1
 scoreboard players operation @s mg.kfp = $kfo mg.st

@@ -382,7 +382,7 @@ def write(name, lines):
 
 # passage d'un point (le joueur doit être à moins de 9 blocs du point attendu)
 write('cp_check', [f'# Point de passage attendu (mg.kcp) atteint ? ({K} points par tour)'] +
-      [f'execute if score @s mg.kcp matches {k} positioned {x} {ROAD + 1} {W(0) + z} if entity @s[distance=..9] run return run function mg:kart/cp_pass'
+      [f'execute if score @s mg.kcp matches {k} positioned {x} {ROAD + 1} {W(0) + z} if entity @e[type=minecraft:block_display,tag=mg.kk,distance=..9] run return run function mg:kart/cp_pass'
        for k, (x, z, yw) in enumerate(CPS)])
 write('cp_tp', ['# Remise en piste (@s = kart) au point de passage $ki, tourné vers la suite'] +
       [f'execute if score $ki mg.st matches {k} run return run tp @s {x} {ROAD + 1} {W(0) + z} {yw} 0' for k, (x, z, yw) in enumerate(CPS)])
@@ -454,8 +454,39 @@ write('loaded_all', lo)
 for k, p in enumerate(parts, 1):
     if k < len(parts): p = p + [f'schedule function mg:kart/build_{k + 1} 2t']
     write(f'build_{k}', p)
+# ------------------------------------------------------------------ minimap (tableau de droite) : 15 lignes x 24 cases
+MMC, MMR = 24, 15
+cells = []
+for r in range(MMR):
+    row = []
+    for c in range(MMC):
+        x1 = -HX + c * (2 * HX + 1) // MMC; x2 = -HX + (c + 1) * (2 * HX + 1) // MMC
+        z1 = -HZ + r * (2 * HZ + 1) // MMR; z2 = -HZ + (r + 1) * (2 * HZ + 1) // MMR
+        kinds = set()
+        for x in range(x1, x2):
+            for z in range(z1, z2):
+                cc = col.get((x, z))
+                if cc is None: continue
+                if (x, z) in ROADSET: kinds.add('road')
+                elif cc['water']: kinds.add('water')
+                else: kinds.add('grass')
+        sx, sz = pts[START]
+        if x1 <= sx < x2 and z1 <= sz < z2: color = 'white'
+        elif 'road' in kinds: color = 'gray'
+        elif 'water' in kinds: color = 'dark_aqua'
+        elif 'grass' in kinds: color = 'dark_green'
+        else: color = 'black'
+        row.append('{text:"█",color:"%s"}' % color)
+    cells.append('l%d:[%s]' % (r, ','.join(row)))
+write('mm_base', ['# Minimap : carte de base (générée)', 'data modify storage mg:kart base set value {' + ','.join(cells) + '}'])
+write('mm_show', ['# Minimap : affiche les 15 lignes dans le tableau de droite (macro, storage mg:kart mm)'] +
+      [f'$scoreboard players display name m{r:02d} mg.kmap $(l{r})' for r in range(MMR)])
+write('mm_init', ['# Minimap : lignes du tableau (ordre de haut en bas)'] + [f'scoreboard players set m{r:02d} mg.kmap {MMR - r}' for r in range(MMR)])
+
 with open(os.path.join(OUT, 'const.mcfunction'), 'w', encoding='utf-8', newline='\n') as f:
-    f.write(f'# Constantes du circuit (générées)\nscoreboard players set $kK mg.st {K}\nscoreboard players set $kLaps mg.st 3\n')
+    f.write(f'# Constantes du circuit (générées)\nscoreboard players set $kK mg.st {K}\nscoreboard players set $kLaps mg.st 3\n'
+            f'scoreboard players set #kmx0 mg.st {HX}\nscoreboard players set #kmz0 mg.st {ZC - HZ}\nscoreboard players set #kmc mg.st {MMC}\n'
+            f'scoreboard players set #kmw mg.st {2 * HX + 1}\nscoreboard players set #kmr mg.st {MMR}\nscoreboard players set #kmh mg.st {2 * HZ + 1}\n')
 print('points de passage', K, '| commandes terrain', len(terrain), 'décor', len(deco), '| étapes', len(parts))
 
 # ------------------------------------------------------------------ aperçu PNG

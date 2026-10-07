@@ -1,4 +1,3 @@
-# Position de @s = 1 + nombre de pilotes plus avancés
 scoreboard players set @s mg.krk 1
 scoreboard players operation $me mg.st = @s mg.kpg
 tag @s add mg.kme
