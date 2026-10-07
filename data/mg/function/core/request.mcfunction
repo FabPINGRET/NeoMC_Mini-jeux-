@@ -65,7 +65,7 @@ execute if score $game mg.st matches 8..12 run scoreboard players remove $mt mg.
 execute if score $game mg.st matches 8..12 run scoreboard players set $game mg.st 6
 
 # Participants = tous les joueurs initialisés non-spectateurs
-tag @a[tag=mg.init,tag=!mg.spectate] add mg.play
+tag @a[tag=mg.init,tag=!mg.spectate,tag=!mg.surv] add mg.play
 tag @a remove mg.out
 execute store result score $n0 mg.st if entity @a[tag=mg.play]
 execute if score $n0 mg.st matches 0 run tellraw @s [{"text":"Aucun participant (tout le monde est en mode spectateur).","color":"red"}]
@@ -76,10 +76,10 @@ execute as @a[tag=mg.play,tag=mg.visit] run function mg:plot/leave_game
 # État : compte à rebours de 10 s
 scoreboard players set $state mg.st 1
 function mg:vote/clear
-clear @a minecraft:warped_fungus_on_a_stick
-clear @a minecraft:blaze_rod
-clear @a minecraft:wind_charge
-clear @a minecraft:snowball
+clear @a[tag=!mg.surv] minecraft:warped_fungus_on_a_stick
+clear @a[tag=!mg.surv] minecraft:blaze_rod
+clear @a[tag=!mg.surv] minecraft:wind_charge
+clear @a[tag=!mg.surv] minecraft:snowball
 scoreboard players reset @a mg.qs
 scoreboard players reset @a mg.fw
 scoreboard players reset @a mg.wc
@@ -133,6 +133,7 @@ execute if score $game mg.st matches 36 if score $pbm mg.st matches 2 run tellra
 execute if score $game mg.st matches 56 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une ","color":"gray"},{"text":"COURSE DE BATEAUX SUR GLACE","color":"aqua","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
+execute if score $game mg.st matches 61 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une course de ","color":"gray"},{"text":"🏎 KART","color":"gold","bold":true},{"text":" sur le Circuit Champignon (3 tours, objets) !","color":"gray"}]
 execute if score $game mg.st matches 59 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une ","color":"gray"},{"text":"MINI PARTY","color":"gold","bold":true},{"text":" : plateau, dé, étoiles et mini-jeux (","color":"gray"},{"score":{"name":"$mpmax","objective":"mg.st"},"color":"yellow"},{"text":" tours) !","color":"gray"}]
 execute if score $game mg.st matches 6 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"MOB ARENA","color":"dark_green","bold":true},{"text":" !","color":"gray"}]
 execute if score $pc mg.st matches 1 run tellraw @a [{"text":"Mode ","color":"gray"},{"text":"CLASSES","color":"gold","bold":true},{"text":" : choisis ta classe d'équipement pendant le compte à rebours !","color":"gray"}]
@@ -168,6 +169,7 @@ execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
 execute if score $game mg.st matches 59 run function mg:party/prepare
+execute if score $game mg.st matches 61 run function mg:kart/prepare
 execute if score $game mg.st matches 7 unless score $sm mg.st matches 1..6 run function mg:sheepwar2/prepare
 execute if score $game mg.st matches 7 if score $sm mg.st matches 1 run function mg:sheepwar3/prepare
 execute if score $game mg.st matches 7 if score $sm mg.st matches 2 run function mg:sheepwar4/prepare
@@ -181,4 +183,4 @@ effect give @a[tag=mg.play] minecraft:slowness 15 255 true
 effect give @a[tag=mg.play] minecraft:resistance 15 255 true
 title @a[tag=mg.play] title [{"text":"Préparez-vous !","color":"gold"}]
 title @a[tag=mg.play] subtitle [{"text":"Début dans 10 secondes...","color":"gray"}]
-execute as @a at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 0.8
+execute as @a[tag=!mg.surv] at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 0.8

@@ -31,7 +31,7 @@ execute if score $qm mg.st matches 7 run function mg:nuketown/build
 execute if score $qm mg.st matches 7 run scoreboard players set $qg mg.st 20
 execute if score $qm mg.st matches 7 run scoreboard players set $qt mg.st 7200
 execute if score $qm mg.st matches 7 run scoreboard players set $pz mg.st 11500
-kill @e[type=minecraft:item]
+kill @e[distance=0..,type=minecraft:item]
 scoreboard players reset @a mg.qs
 tag @a remove mg.prot
 tag @a remove mg.qdd

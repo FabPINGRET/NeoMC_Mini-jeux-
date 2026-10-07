@@ -23,6 +23,25 @@
     {
       "label": [
         {
+          "text": "🏎 KART : Circuit Champignon",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Course de karts maniables : 3 tours, dérapages, boîtes à objets",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 61"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "★ Mini Party ▸",
           "color": "gold"
         }
@@ -402,6 +421,25 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.opt set 9"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🌲 Survie (monde libre)",
+          "color": "green",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Monde de survie normal, ouvert à tous (retour : menu Échap → ≡ Menu)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.sv set 1"
       }
     }
   ],

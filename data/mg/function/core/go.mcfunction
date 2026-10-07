@@ -1,7 +1,7 @@
 # Demande de lancement d'un jeu (@s = demandeur, mg.go = id du jeu)
 
 # Valeur invalide ?
-execute unless score @s mg.go matches 1..60 run return run scoreboard players reset @s mg.go
+execute unless score @s mg.go matches 1..61 run return run scoreboard players reset @s mg.go
 
 # Réservé aux admins
 execute unless entity @s[tag=mg.admin] run tellraw @s [{"text":"⚠ Seul un admin peut lancer un jeu.","color":"red"}]

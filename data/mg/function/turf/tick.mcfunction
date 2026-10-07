@@ -1,7 +1,7 @@
 # Turf Wars — tick de jeu
 
 # Nouvelles flèches : équipe du tireur, non ramassables
-execute as @e[type=minecraft:arrow,tag=!mg.ar] at @s run function mg:turf/arrow_new
+execute as @e[distance=0..,type=minecraft:arrow,tag=!mg.ar] at @s run function mg:turf/arrow_new
 # Flèches plantées → conversion de la colonne
 execute as @e[type=minecraft:arrow,tag=mg.ar,nbt={inGround:1b}] at @s run function mg:turf/landed
 

@@ -11,4 +11,4 @@ execute if score $ss mg.st matches 7 run function mg:spleef/shrink_7
 execute if score $ss mg.st matches 8 run function mg:spleef/shrink_8
 execute if score $ss mg.st matches 9 run function mg:spleef/shrink_9
 execute if score $ss mg.st matches 10 run function mg:spleef/shrink_10
-execute as @a at @s run playsound minecraft:block.snow.break master @s ~ ~ ~ 1 0.6
+execute as @a[tag=!mg.surv] at @s run playsound minecraft:block.snow.break master @s ~ ~ ~ 1 0.6

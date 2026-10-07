@@ -1,0 +1,104 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "≡ MENU",
+    "color": "gold",
+    "bold": true
+  },
+  "external_title": {
+    "text": "≡ Menu",
+    "color": "gold"
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Survie, Mini Party et aide.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🌲 Aller en survie",
+          "color": "green",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Monde de survie normal, ton inventaire y est gardé",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.sv set 1"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⌂ Retour au lobby",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Revenir aux mini-jeux (inventaire de survie mis de côté)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.sv set 2"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "★ Mini Party",
+          "color": "yellow",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte, caméra, objets, classement et règles de la partie en cours",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.dice set 10"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "📜 Aide",
+          "color": "white",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Toutes les commandes utiles",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.sv set 3"
+      }
+    }
+  ]
+}

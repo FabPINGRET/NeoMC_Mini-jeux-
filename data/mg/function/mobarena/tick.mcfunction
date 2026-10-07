@@ -42,3 +42,5 @@ execute if score $mt mg.st matches 7 run function mg:mobarena/lab/tick
 execute if score $mt mg.st matches 8 run function mg:mobarena/temple/tick
 execute if score $mt mg.st matches 9 run function mg:mobarena/forge/tick
 execute if score $mt mg.st matches 10 run function mg:mobarena/ship/tick
+# Le temps n'est plus figé à minuit (survie) : les monstres ne brûlent pas au soleil
+execute as @e[tag=mg.mob,tag=!mg.fr] run function mg:mobarena/fire_res

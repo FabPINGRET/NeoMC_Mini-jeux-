@@ -1,0 +1,66 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "🌲 SURVIE",
+    "color": "green",
+    "bold": true
+  },
+  "external_title": {
+    "text": "🌲 Survie",
+    "color": "green"
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Un monde de survie normal, ouvert à tous. Ton inventaire, ton XP et ta position y sont gardés quand tu reviens aux mini-jeux.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 1,
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🌲 Aller en survie",
+          "color": "green",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Rejoindre le monde de survie (là où tu l'avais quitté)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.sv set 1"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⌂ Retour au lobby des mini-jeux",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Ton inventaire de survie est mis de côté",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.sv set 2"
+      }
+    }
+  ]
+}

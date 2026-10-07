@@ -4,7 +4,7 @@ effect clear @a[tag=mg.play] minecraft:slowness
 effect clear @a[tag=mg.play] minecraft:resistance
 
 title @a[tag=mg.play] title [{"text":"GO !","color":"green","bold":true}]
-execute as @a at @s run playsound minecraft:event.raid.horn master @s ~ ~ ~ 0.7 1.4
+execute as @a[tag=!mg.surv] at @s run playsound minecraft:event.raid.horn master @s ~ ~ ~ 0.7 1.4
 
 execute if score $game mg.st matches 1 run function mg:spleef/go
 execute if score $game mg.st matches 2 run function mg:tntrun/go
@@ -26,3 +26,4 @@ execute if score $game mg.st matches 36 run function mg:paintball/go
 execute if score $game mg.st matches 56 run function mg:icerace/go
 execute if score $game mg.st matches 57..58 run function mg:bb/go
 execute if score $game mg.st matches 59 run function mg:party/go
+execute if score $game mg.st matches 61 run function mg:kart/go

@@ -30,7 +30,7 @@ execute if score $mt mg.st matches 9 run data modify storage mg:mw p set value "
 execute if score $mt mg.st matches 9 run scoreboard players set $pz mg.st 10300
 execute if score $mt mg.st matches 10 run data modify storage mg:mw p set value "ship"
 execute if score $mt mg.st matches 10 run scoreboard players set $pz mg.st 10700
-kill @e[type=minecraft:item]
+kill @e[distance=0..,type=minecraft:item]
 scoreboard players set $px mg.st 0
 scoreboard players set $py mg.st 82
 scoreboard players set $wv mg.st 0

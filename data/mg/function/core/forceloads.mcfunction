@@ -60,3 +60,4 @@ forceload add -32 9868 32 9932
 forceload add -40 10260 40 10340
 forceload add -32 10668 32 10732
 forceload add -96 14904 96 15096
+forceload add 30000 -30000 30255 -30000

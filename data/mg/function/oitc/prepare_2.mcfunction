@@ -1,6 +1,6 @@
 # One in the Chamber — préparation Grande forêt (centre 0 ~ 12000)
 function mg:oitc/build_2
-kill @e[type=minecraft:arrow]
+kill @e[distance=0..,type=minecraft:arrow]
 kill @e[type=minecraft:item,x=-40,y=70,z=11960,dx=80,dy=45,dz=80]
 scoreboard players reset @a mg.pk
 

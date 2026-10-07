@@ -4,6 +4,7 @@
 execute if score $mp mg.st matches 1 unless score $game mg.st matches 59 run function mg:party/reward
 execute if score $game mg.st matches 59 run function mg:party/end
 
+execute if score $game mg.st matches 61 run function mg:kart/cleanup
 kill @e[tag=mg.ib]
 execute if score $game mg.st matches 57..58 run function mg:bb/cleanup
 execute as @a[tag=mg.play] run function mg:core/reset_player
@@ -22,22 +23,21 @@ kill @e[tag=mg.sheep]
 kill @e[tag=mg.npc]
 kill @e[tag=mg.proj]
 kill @e[tag=mg.fx]
-kill @e[type=minecraft:item]
-kill @e[type=minecraft:arrow]
-kill @e[type=minecraft:snowball]
-kill @e[type=minecraft:tnt]
-kill @e[type=minecraft:experience_orb]
-kill @e[type=minecraft:ender_pearl]
-kill @e[type=minecraft:egg]
+kill @e[distance=0..,type=minecraft:item]
+kill @e[distance=0..,type=minecraft:arrow]
+kill @e[distance=0..,type=minecraft:snowball]
+kill @e[distance=0..,type=minecraft:tnt]
+kill @e[distance=0..,type=minecraft:experience_orb]
+kill @e[distance=0..,type=minecraft:ender_pearl]
+kill @e[distance=0..,type=minecraft:egg]
 kill @e[tag=mg.sh]
 kill @e[tag=mg.anv]
 kill @e[tag=mg.hl]
 kill @e[tag=mg.alembic]
 kill @e[tag=mg.cloud]
 kill @e[tag=mg.meteor]
-kill @e[type=minecraft:chicken]
+kill @e[distance=0..,type=minecraft:chicken]
 
-time set noon
 
 # Règles remises à la normale (régénération / grief modifiés par PvP et Mob Arena)
 function mg:core/regen_on

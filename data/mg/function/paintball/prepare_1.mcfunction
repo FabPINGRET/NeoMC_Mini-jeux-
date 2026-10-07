@@ -1,7 +1,7 @@
 # Paintball (carte 1) — préparation (centre 0 ~ 12300)
 function mg:paintball/build_1
 function mg:paintball/count_1
-kill @e[type=minecraft:item]
+kill @e[distance=0..,type=minecraft:item]
 scoreboard players reset @a mg.qs
 tag @a remove mg.prot
 tag @a remove mg.qsh

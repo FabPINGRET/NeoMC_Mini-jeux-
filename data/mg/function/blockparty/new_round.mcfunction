@@ -38,4 +38,4 @@ scoreboard players operation $tmp mg.st *= $c5 mg.st
 scoreboard players operation $bt mg.st -= $tmp mg.st
 scoreboard players operation $bt mg.st > $bmin mg.st
 scoreboard players set $bp mg.st 1
-execute as @a at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.5
+execute as @a[tag=!mg.surv] at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.5

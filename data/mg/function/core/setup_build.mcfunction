@@ -5,6 +5,7 @@ function mg:lobby/armory_build
 function mg:parkour/build
 function mg:plot/build
 function mg:party/build
+function mg:kart/build
 function mg:dust/build
 function mg:mirage/build
 function mg:nuketown/build
@@ -58,4 +59,4 @@ tag @a remove mg.init
 
 tellraw @a [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Installation terminée !","color":"green"}]
 tellraw @a[tag=mg.admin] [{"text":"Admin : clic droit sur ","color":"gray"},{"text":"≡ MENU","color":"gold"},{"text":" (ou ","color":"gray"},{"text":"/trigger mg.menu","color":"yellow"},{"text":") pour lancer un jeu.","color":"gray"}]
-execute as @a at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1
+execute as @a[tag=!mg.surv] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1

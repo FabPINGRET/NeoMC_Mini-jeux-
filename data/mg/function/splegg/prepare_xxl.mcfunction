@@ -1,7 +1,7 @@
 # Splegg XXL — préparation (centre 0 ~ 4600) : 3 étages, œufs qui cassent 3x3
 function mg:splegg/build_xxl
-kill @e[type=minecraft:egg]
-kill @e[type=minecraft:chicken]
+kill @e[distance=0..,type=minecraft:egg]
+kill @e[distance=0..,type=minecraft:chicken]
 kill @e[type=minecraft:item,x=-50,y=50,z=4550,dx=100,dy=60,dz=100]
 
 # Élimination sous le dernier étage (66)

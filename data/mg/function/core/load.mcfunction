@@ -69,6 +69,23 @@ scoreboard objectives add mg.mpv dummy
 scoreboard objectives add mg.mid dummy
 scoreboard objectives add mg.mit dummy
 scoreboard objectives add mg.mip dummy
+scoreboard objectives add mg.sv trigger
+scoreboard objectives add mg.ksp dummy
+scoreboard objectives add mg.kdr dummy
+scoreboard objectives add mg.kdd dummy
+scoreboard objectives add mg.kbo dummy
+scoreboard objectives add mg.khi dummy
+scoreboard objectives add mg.kst dummy
+scoreboard objectives add mg.kit dummy
+scoreboard objectives add mg.kcp dummy
+scoreboard objectives add mg.klp dummy
+scoreboard objectives add mg.kvy dummy
+scoreboard objectives add mg.kfp dummy
+scoreboard objectives add mg.kpg dummy
+scoreboard objectives add mg.krk dummy
+scoreboard objectives add mg.kps dummy [{"text":"🏎 KART : progression %","color":"gold"}]
+scoreboard objectives add mg.svid dummy
+scoreboard objectives add mg.svvx dummy
 
 # --- Équipes ---
 team add mg_red
@@ -100,6 +117,10 @@ execute unless score $setup mg.st = $setup mg.st run scoreboard players set $set
 execute unless score $tc mg.st = $tc mg.st run scoreboard players set $tc mg.st 0
 execute unless score $pn mg.st = $pn mg.st run scoreboard players set $pn mg.st 0
 execute unless score $mp mg.st = $mp mg.st run scoreboard players set $mp mg.st 0
+execute unless score $svc mg.st = $svc mg.st run scoreboard players set $svc mg.st 0
+# Règles du serveur (survie + mini-jeux) réappliquées à chaque chargement
+execute if score $setup mg.st matches 1 run function mg:core/rules
+execute if score $setup mg.st matches 1 unless data storage mg:kart built run schedule function mg:kart/build 5s
 
 # Zones chargées (après une mise à jour du pack, les nouvelles zones sont prises en compte)
 execute if score $setup mg.st matches 1 run function mg:core/forceloads

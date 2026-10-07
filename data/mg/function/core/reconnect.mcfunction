@@ -1,6 +1,9 @@
 # Joueur qui revient après une déconnexion (@s = joueur)
 scoreboard players reset @s mg.lg
 
+# En survie : il reprend là où il était (rien à faire)
+execute if entity @s[tag=mg.surv] run return 0
+
 # Partie en cours (compte à rebours, jeu ou fin) → il rejoint l'arène en SPECTATEUR
 execute if score $state mg.st matches 1..3 run return run function mg:core/reconnect_spec
 

@@ -1,10 +1,10 @@
 # Splegg — tick de jeu
 
 # Nouveaux œufs : on recharge la main du tireur (munitions infinies)
-execute as @e[type=minecraft:egg,tag=!mg.eg] at @s run function mg:splegg/egg_new
+execute as @e[distance=0..,type=minecraft:egg,tag=!mg.eg] at @s run function mg:splegg/egg_new
 
 # Pas de poussins quand un œuf éclate
-kill @e[type=minecraft:chicken]
+kill @e[distance=0..,type=minecraft:chicken]
 
 # Chute dans le vide → éliminé
 execute as @a[tag=mg.play] store result score @s mg.t run data get entity @s Pos[1]

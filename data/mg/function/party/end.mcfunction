@@ -12,5 +12,5 @@ bossbar remove mg:party
 kill @e[type=minecraft:armor_stand,tag=mg.mppawn]
 tag @a remove mg.mpfree
 kill @e[type=minecraft:text_display,tag=mg.mpstar]
-clear @a minecraft:echo_shard
+clear @a[tag=!mg.surv] minecraft:echo_shard
 team empty mg_party
