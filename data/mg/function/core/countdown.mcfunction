@@ -1,4 +1,6 @@
 # Compte à rebours (chaque tick, état 1)
+# Kart : retenu tant que les pilotes choisissent leur kart
+execute if score $game mg.st matches 61 if function mg:kart/hold run return 0
 scoreboard players remove $timer mg.st 1
 
 execute if score $timer mg.st matches 100 run title @a[tag=!mg.surv] title [{"text":"5","color":"yellow","bold":true}]

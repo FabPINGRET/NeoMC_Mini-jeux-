@@ -3,7 +3,9 @@ execute if score @s mg.kst matches 1.. run return 0
 execute if score @s mg.kmg matches 1.. run return 0
 execute if score @s mg.kbill matches 1.. run return 0
 execute if score @s mg.kboo matches 1.. run return 0
+execute if score $kbat mg.st matches 1 unless score @s mg.khi matches 1.. run function mg:kart/bat_pop
 scoreboard players set @s mg.khi 20
+execute if score @s mg.kty matches 4 run scoreboard players set @s mg.khi 12
 scoreboard players set @s mg.kbo 0
 scoreboard players set @s mg.kdr 0
 scoreboard players set @s mg.krc 0

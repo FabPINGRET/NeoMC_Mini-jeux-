@@ -19,14 +19,13 @@ execute if score $mz mg.st >= #kmr mg.st run scoreboard players operation $mz mg
 execute if score $mz mg.st >= #kmr mg.st run scoreboard players remove $mz mg.st 1
 execute store result storage mg:kart dot.c int 1 run scoreboard players get $mx mg.st
 execute store result storage mg:kart dot.r int 1 run scoreboard players get $mz mg.st
-scoreboard players operation $kc mg.st = @s mg.ri
-scoreboard players operation $kc mg.st %= #k8 mg.st
-execute if score $kc mg.st matches 0 run data modify storage mg:kart dot.col set value "red"
-execute if score $kc mg.st matches 1 run data modify storage mg:kart dot.col set value "blue"
-execute if score $kc mg.st matches 2 run data modify storage mg:kart dot.col set value "green"
-execute if score $kc mg.st matches 3 run data modify storage mg:kart dot.col set value "yellow"
-execute if score $kc mg.st matches 4 run data modify storage mg:kart dot.col set value "dark_purple"
-execute if score $kc mg.st matches 5 run data modify storage mg:kart dot.col set value "gold"
-execute if score $kc mg.st matches 6 run data modify storage mg:kart dot.col set value "aqua"
-execute if score $kc mg.st matches 7 run data modify storage mg:kart dot.col set value "light_purple"
+scoreboard players operation $kc mg.st = @e[tag=mg.kdot,limit=1] mg.kcol
+execute if score $kc mg.st matches 1 run data modify storage mg:kart dot.col set value "red"
+execute if score $kc mg.st matches 2 run data modify storage mg:kart dot.col set value "blue"
+execute if score $kc mg.st matches 3 run data modify storage mg:kart dot.col set value "green"
+execute if score $kc mg.st matches 4 run data modify storage mg:kart dot.col set value "yellow"
+execute if score $kc mg.st matches 5 run data modify storage mg:kart dot.col set value "dark_purple"
+execute if score $kc mg.st matches 6 run data modify storage mg:kart dot.col set value "gold"
+execute if score $kc mg.st matches 7 run data modify storage mg:kart dot.col set value "aqua"
+execute if score $kc mg.st matches 8 run data modify storage mg:kart dot.col set value "light_purple"
 function mg:kart/mm_dot_m with storage mg:kart dot

@@ -11,3 +11,7 @@ title @s subtitle [{"text":"🏁 Arrivée en ","color":"yellow"},{"score":{"name
 tellraw @a[tag=!mg.surv] [{"text":"🏁 ","color":"gold"},{"selector":"@s","color":"yellow","bold":true},{"text":" franchit la ligne en position ","color":"gray"},{"score":{"name":"@s","objective":"mg.kfp"},"color":"gold","bold":true},{"text":" (","color":"gray"},{"score":{"name":"$ksec","objective":"mg.st"},"color":"white"},{"text":" s)","color":"gray"}]
 execute if score $kfo mg.st matches 1 run tellraw @a[tag=mg.play] [{"text":"⏱ 30 secondes pour finir la course !","color":"gold"}]
 execute at @s run playsound minecraft:entity.firework_rocket.twinkle master @a[tag=mg.play] ~ ~ ~ 1 1
+execute at @s run playsound minecraft:ui.toast.challenge_complete record @s ~ ~ ~ 1 1
+execute if score @s mg.kfp matches 1 at @s run playsound minecraft:block.note_block.bell record @s ~ ~ ~ 1 2
+execute if score @s mg.kfp matches 1 at @s run playsound minecraft:block.note_block.bell record @s ~ ~ ~ 1 1.5
+execute if score @s mg.kfp matches 1 at @s run playsound minecraft:block.note_block.bell record @s ~ ~ ~ 1 1.26

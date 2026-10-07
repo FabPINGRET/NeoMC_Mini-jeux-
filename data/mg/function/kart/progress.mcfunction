@@ -1,3 +1,4 @@
+execute if score $kbat mg.st matches 1 run return run function mg:kart/bat_progress
 scoreboard players operation @s mg.kpg = @s mg.klp
 scoreboard players operation @s mg.kpg *= #k1000 mg.st
 scoreboard players operation @s mg.kpg += @s mg.kcp

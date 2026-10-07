@@ -77,6 +77,11 @@ scoreboard objectives remove mg.mpz
 scoreboard objectives remove mg.mpv
 scoreboard objectives remove mg.mid
 scoreboard objectives remove mg.sv
+scoreboard objectives remove mg.kty
+scoreboard objectives remove mg.kcol
+scoreboard objectives remove mg.kbl
+scoreboard objectives remove mg.kch
+scoreboard objectives remove mg.krl
 scoreboard objectives remove mg.ksp
 scoreboard objectives remove mg.kdr
 scoreboard objectives remove mg.kdd

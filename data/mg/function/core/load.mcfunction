@@ -72,6 +72,11 @@ scoreboard objectives add mg.mid dummy
 scoreboard objectives add mg.mit dummy
 scoreboard objectives add mg.mip dummy
 scoreboard objectives add mg.sv trigger
+scoreboard objectives add mg.kty dummy
+scoreboard objectives add mg.kcol dummy
+scoreboard objectives add mg.kbl dummy
+scoreboard objectives add mg.kch trigger
+scoreboard objectives add mg.krl dummy
 scoreboard objectives add mg.ksp dummy
 scoreboard objectives add mg.kdr dummy
 scoreboard objectives add mg.kdd dummy
@@ -137,6 +142,7 @@ execute unless score $svc mg.st = $svc mg.st run scoreboard players set $svc mg.
 execute if score $setup mg.st matches 1 run function mg:core/rules
 execute if score $setup mg.st matches 1 unless data storage mg:kart built run schedule function mg:kart/build 5s
 execute if score $setup mg.st matches 1 if data storage mg:kart built unless data storage mg:kart built2 run schedule function mg:kart/t2/build 8s
+execute if score $setup mg.st matches 1 if data storage mg:kart built2 unless data storage mg:kart built3 run schedule function mg:kart/t3/build 10s
 
 # Zones chargées (après une mise à jour du pack, les nouvelles zones sont prises en compte)
 execute if score $setup mg.st matches 1 run function mg:core/forceloads

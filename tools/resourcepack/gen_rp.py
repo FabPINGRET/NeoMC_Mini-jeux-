@@ -3,7 +3,7 @@
 Tout est dans l'espace de noms « mg » : aucune texture vanilla n'est remplacée (la survie n'est pas touchée).
 Sortie : resourcepack/ (dossier) et releases/neomc_resourcepack.zip (+ empreinte SHA-1 affichée).
 """
-import hashlib, json, os, struct, sys, zipfile, zlib
+import hashlib, json, math, os, struct, sys, zipfile, zlib
 
 R = sys.argv[1]
 OUT = os.path.join(R, 'resourcepack')
@@ -98,10 +98,12 @@ tire = [''.join('h' if 5 <= x <= 10 and 5 <= y <= 10 else ('g' if (x + y) % 4 ==
 png(os.path.join(A, 'textures', 'item', 'kart_wheel.png'), tire, {'h': (180, 180, 190, 255), 'g': (50, 50, 55, 255), 'k': (20, 20, 22, 255)})
 
 # ------------------------------------------------------------------ modèles
-def item_def(name, model, tint=None):
+def item_def(name, model, tint=None, oversized=False):
     m = {"type": "minecraft:model", "model": model}
     if tint is not None: m["tints"] = [{"type": "minecraft:dye", "default": tint}]
-    wjson(os.path.join(A, 'items', name + '.json'), {"model": m})
+    d = {"model": m}
+    if oversized: d["oversized_in_gui"] = True       # aperçu en grand dans les fenêtres de choix du kart
+    wjson(os.path.join(A, 'items', name + '.json'), d)
 
 FLAT = {'banana': 'banana', 'shell_green': 'shell', 'shell_red': 'shell_red', 'shell_blue': 'shell_blue', 'mushroom': 'mushroom',
         'mushroom_gold': 'mushroom_gold', 'mushroom_mega': 'mushroom_mega', 'star': 'star', 'lightning': 'lightning', 'bobomb': 'bobomb',
@@ -136,8 +138,113 @@ wjson(os.path.join(A, 'models', 'item', 'kart.json'), {
     "textures": {"body": "mg:item/kart_body", "seat": "mg:item/kart_seat", "metal": "mg:item/kart_metal", "wheel": "mg:item/kart_wheel",
                  "particle": "mg:item/kart_body"},
     "elements": elements,
-    "display": {"gui": {"rotation": [30, 225, 0], "translation": [0, 0, 0], "scale": [0.45, 0.45, 0.45]}}})
-item_def('kart', 'mg:item/kart', tint=-1)
+    "display": {"gui": {"rotation": [25, 210, 0], "translation": [0, -1, 0], "scale": [1.6, 1.6, 1.6]}}})
+item_def('kart', 'mg:item/kart', tint=-1, oversized=True)
+KTEX = {"body": "mg:item/kart_body", "seat": "mg:item/kart_seat", "metal": "mg:item/kart_metal", "wheel": "mg:item/kart_wheel", "particle": "mg:item/kart_body"}
+KDISP = {"gui": {"rotation": [25, 210, 0], "translation": [0, -1, 0], "scale": [1.6, 1.6, 1.6]}}
+VARIANTS = {
+    # Bolide : long et bas, nez pointu, grand aileron, gros pots
+    'kart_bolide': [
+        box([3, 2, -3], [13, 5, 19], 'body', True), box([5, 2, 19], [11, 4, 23], 'body', True), box([6, 2, 23], [10, 3, 25], 'metal'),
+        box([4, 5, 13], [12, 6, 19], 'body', True), box([5, 4, 2], [11, 6, 7], 'seat'), box([5, 6, 1], [11, 11, 3], 'seat'),
+        box([7, 5, 12], [9, 9, 14], 'metal'), box([5, 9, 12], [11, 10.5, 14], 'seat'),
+        box([0, 0, 14], [3, 4, 19], 'wheel'), box([13, 0, 14], [16, 4, 19], 'wheel'),
+        box([-1, 0, -3], [3, 5, 3], 'wheel'), box([13, 0, -3], [17, 5, 3], 'wheel'),
+        box([1, 10, -6], [15, 11, -2], 'body', True), box([1, 7, -6], [2, 11, -2], 'body', True), box([14, 7, -6], [15, 11, -2], 'body', True),
+        box([4, 6, -4], [5, 10, -3], 'metal'), box([11, 6, -4], [12, 10, -3], 'metal'),
+        box([3, 2, -6], [6, 5, -3], 'metal'), box([10, 2, -6], [13, 5, -3], 'metal')],
+    # Mini : court, haut et rond, grosses roues
+    'kart_mini': [
+        box([3, 2, 0], [13, 8, 15], 'body', True), box([4, 8, 9], [12, 9, 15], 'body', True), box([4, 2, 15], [12, 6, 17], 'metal'),
+        box([5, 7, 2], [11, 9, 7], 'seat'), box([5, 9, 1], [11, 14, 3], 'seat'),
+        box([7, 8, 10], [9, 12, 12], 'metal'), box([5, 12, 10], [11, 13.5, 12], 'seat'),
+        box([-1, 0, 10], [3, 6, 16], 'wheel'), box([13, 0, 10], [17, 6, 16], 'wheel'),
+        box([-1, 0, -1], [3, 6, 5], 'wheel'), box([13, 0, -1], [17, 6, 5], 'wheel'),
+        box([7, 4, -2], [9, 6, 0], 'metal')],
+    # Costaud : large et massif, pare-buffle, roues de tracteur
+    'kart_costaud': [
+        box([0, 3, -3], [16, 8, 19], 'body', True), box([1, 3, 19], [15, 7, 22], 'body', True), box([-1, 2, 22], [17, 6, 24], 'metal'),
+        box([1, 8, 12], [15, 9, 19], 'body', True), box([4, 7, 1], [12, 10, 7], 'seat'), box([4, 10, 0], [12, 16, 3], 'seat'),
+        box([7, 8, 11], [9, 12, 13], 'metal'), box([4, 12, 11], [12, 13.5, 13], 'seat'),
+        box([-4, 0, 12], [0, 7, 19], 'wheel'), box([16, 0, 12], [20, 7, 19], 'wheel'),
+        box([-4, 0, -3], [0, 7, 5], 'wheel'), box([16, 0, -3], [20, 7, 5], 'wheel'),
+        box([1, 8, -4], [3, 18, -2], 'metal'), box([13, 8, -4], [15, 18, -2], 'metal'),
+        box([0, 9, 17], [2, 11, 19], 'metal'), box([14, 9, 17], [16, 11, 19], 'metal')],
+}
+for name, els in VARIANTS.items():
+    wjson(os.path.join(A, 'models', 'item', name + '.json'), {"textures": KTEX, "elements": els, "display": KDISP})
+    item_def(name, f'mg:item/{name}', tint=-1, oversized=True)
+
+# ------------------------------------------------------------------ portraits des karts (police mg:kart) pour les fenêtres de choix
+# Rendu maison en vue 3/4 avant (faces +x, +y, +z visibles), algorithme du peintre, contours foncés.
+# Caractère  + 16 * type + couleur (type 0..3, couleur 0..7) ; police mg:kart (72 px) et mg:kartxl (128 px).
+KCOLS = [(229, 57, 53), (41, 98, 255), (100, 221, 23), (255, 214, 0), (142, 36, 170), (255, 109, 0), (0, 184, 212), (255, 64, 129)]
+FLATC = {'seat': (48, 48, 56), 'metal': (196, 196, 206), 'wheel': (30, 30, 34)}
+PORTRAITS = [('kart', elements)] + list(VARIANTS.items())
+PS = 3.0
+def proj(x, y, z):
+    return ((x - z) * 0.866 * PS, ((x + z) * 0.5 - y) * PS)
+def faces_of(el):
+    (x1, y1, z1), (x2, y2, z2) = el['from'], el['to']
+    return [((x1, y2, z1), (x2, y2, z1), (x2, y2, z2), (x1, y2, z2), 1.0),     # dessus
+            ((x2, y1, z1), (x2, y2, z1), (x2, y2, z2), (x2, y1, z2), 0.72),    # côté +x
+            ((x1, y1, z2), (x2, y1, z2), (x2, y2, z2), (x1, y2, z2), 0.86)]    # avant +z
+allp = [proj(*p) for _, els in PORTRAITS for el in els for f in faces_of(el) for p in f[:4]]
+PX0, PY0 = min(p[0] for p in allp) - 3, min(p[1] for p in allp) - 3
+PW, PH = int(max(p[0] for p in allp) - PX0) + 4, int(max(p[1] for p in allp) - PY0) + 4
+def render(els, tint):
+    img = [[(0, 0, 0, 0)] * PW for _ in range(PH)]
+    order = sorted(els, key=lambda e: sum(e['from']) + sum(e['to']))
+    for el in order:
+        tex = el['faces']['north']['texture'][1:]
+        base = tint if tex == 'body' else FLATC.get(tex, (200, 200, 200))
+        for *quad, shade in faces_of(el):
+            pts = [(proj(*p)[0] - PX0, proj(*p)[1] - PY0) for p in quad]
+            col = tuple(min(255, int(c * shade)) for c in base) + (255,)
+            edge = tuple(int(c * shade * 0.45) for c in base) + (255,)
+            xs, ys = [p[0] for p in pts], [p[1] for p in pts]
+            for py in range(max(0, int(min(ys))), min(PH, int(max(ys)) + 1)):
+                for px in range(max(0, int(min(xs))), min(PW, int(max(xs)) + 1)):
+                    cx, cy = px + 0.5, py + 0.5
+                    sgn, inside, near = 0, True, False
+                    for k in range(4):
+                        ax, ay = pts[k]; bx, by = pts[(k + 1) % 4]
+                        cr = (bx - ax) * (cy - ay) - (by - ay) * (cx - ax)
+                        if abs(cr) > 1e-9:
+                            if sgn == 0: sgn = 1 if cr > 0 else -1
+                            elif (cr > 0) != (sgn > 0): inside = False; break
+                        ln = math.hypot(bx - ax, by - ay) or 1
+                        if abs(cr) / ln < 0.9: near = True
+                    if inside: img[py][px] = edge if near else col
+    return img
+def png_rgba(path, img):
+    h, w = len(img), len(img[0])
+    raw = b''.join(bytes([0]) + b''.join(bytes(p) for p in row) for row in img)
+    def chunk(t, d): return struct.pack('>I', len(d)) + t + d + struct.pack('>I', zlib.crc32(t + d) & 0xffffffff)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, 'wb') as f:
+        f.write(bytes([137, 80, 78, 71, 13, 10, 26, 10]) + chunk(b'IHDR', struct.pack('>IIBBBBB', w, h, 8, 6, 0, 0, 0))
+                + chunk(b'IDAT', zlib.compress(raw, 9)) + chunk(b'IEND', b''))
+prov_s, prov_l = [], []
+for t, (name, els) in enumerate(PORTRAITS):
+    for k, rgb in enumerate(KCOLS):
+        png_rgba(os.path.join(A, 'textures', 'font', f'kart_{t}_{k}.png'), render(els, rgb))
+        ch = chr(0xE000 + 16 * t + k)
+        prov_s.append({"type": "bitmap", "file": f"mg:font/kart_{t}_{k}.png", "ascent": 60, "height": 72, "chars": [ch]})
+        prov_l.append({"type": "bitmap", "file": f"mg:font/kart_{t}_{k}.png", "ascent": 110, "height": 128, "chars": [ch]})
+wjson(os.path.join(A, 'font', 'kart.json'), {"providers": prov_s + [{"type": "space", "advances": {" ": 14}}]})
+wjson(os.path.join(A, 'font', 'kartxl.json'), {"providers": prov_l + [{"type": "space", "advances": {" ": 14}}]})
+print('portraits', PW, 'x', PH)
+# ballon de bataille (teinté à la couleur du kart)
+bal_rows = [''.join('w' if (x - 6) ** 2 + (y - 5) ** 2 <= 3 else 'b' for x in range(16)) for y in range(16)]
+png(os.path.join(A, 'textures', 'item', 'balloon.png'), bal_rows, {'w': (255, 255, 255, 255), 'b': (225, 225, 225, 255)})
+png(os.path.join(A, 'textures', 'item', 'balloon_string.png'), ['w' * 16] * 16, {'w': (240, 240, 240, 255)})
+wjson(os.path.join(A, 'models', 'item', 'balloon.json'), {
+    "textures": {"b": "mg:item/balloon", "s": "mg:item/balloon_string", "particle": "mg:item/balloon"},
+    "elements": [box([4, 8, 4], [12, 18, 12], 'b', True), box([5, 7, 5], [11, 19, 11], 'b', True), box([3, 9, 5], [13, 17, 11], 'b', True),
+                 box([5, 9, 3], [11, 17, 13], 'b', True), box([7, 6, 7], [9, 7, 9], 'b', True), box([7.5, -6, 7.5], [8.5, 6, 8.5], 's')],
+    "display": {"gui": {"rotation": [0, 0, 0], "scale": [0.6, 0.6, 0.6]}}})
+item_def('balloon', 'mg:item/balloon', tint=-6265536)
 
 # ------------------------------------------------------------------ dangers du Royaume Koopa (modèles 3D, devant vers +z)
 HZ_TEX = {

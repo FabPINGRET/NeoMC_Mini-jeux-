@@ -8,6 +8,12 @@ scoreboard players set $kT mg.st 0
 execute if score $ka mg.st matches 4..24 run scoreboard players set $kT mg.st 65
 execute if score $ka mg.st matches 25..69 run scoreboard players set $kT mg.st 55
 execute if score $ka mg.st matches 70.. run scoreboard players set $kT mg.st 45
+execute if score @s mg.kty matches 2 run scoreboard players operation $kT mg.st *= #kt85 mg.st
+execute if score @s mg.kty matches 2 run scoreboard players operation $kT mg.st /= #k100 mg.st
+execute if score @s mg.kty matches 3 run scoreboard players operation $kT mg.st *= #kt120 mg.st
+execute if score @s mg.kty matches 3 run scoreboard players operation $kT mg.st /= #k100 mg.st
+execute if score @s mg.kty matches 4 run scoreboard players operation $kT mg.st *= #kt90 mg.st
+execute if score @s mg.kty matches 4 run scoreboard players operation $kT mg.st /= #k100 mg.st
 execute if score $kl mg.st matches 1 run scoreboard players operation $kt mg.st -= $kT mg.st
 execute if score $kr mg.st matches 1 run scoreboard players operation $kt mg.st += $kT mg.st
 execute if score @s mg.ksp matches ..-1 run scoreboard players operation $kt mg.st *= #km1 mg.st

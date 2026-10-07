@@ -1,4 +1,6 @@
 # Barre du bas : tour, position, objet (et charges), vitesse
+execute if score @s mg.krl matches 1.. run return run title @s actionbar [{"text":"🎲 ","color":"gold"},{"text":"🍌 🟢 🔴 🍄 ⭐ ⚡ 💣 👻","color":"white"},{"text":"  ...","color":"gray"}]
+execute if score $kbat mg.st matches 1 run return run function mg:kart/bat_hud
 scoreboard players operation $kmh mg.st = @s mg.ksp
 scoreboard players operation $kmh mg.st *= #kkmh mg.st
 scoreboard players operation $kmh mg.st /= #k100 mg.st

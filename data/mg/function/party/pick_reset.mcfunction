@@ -39,4 +39,5 @@ scoreboard players set $mgp37 mg.st 0
 scoreboard players set $mgp38 mg.st 0
 scoreboard players set $mgp39 mg.st 0
 scoreboard players set $mgp40 mg.st 0
-scoreboard players set $mgr mg.st 40
+scoreboard players set $mgp41 mg.st 0
+scoreboard players set $mgr mg.st 41

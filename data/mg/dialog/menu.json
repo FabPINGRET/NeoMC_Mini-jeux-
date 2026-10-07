@@ -61,6 +61,25 @@
     {
       "label": [
         {
+          "text": "🎈 KART : Bataille",
+          "color": "light_purple",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Bataille de ballons dans la Forteresse Bob-omb : 3 ballons chacun, chaque coup en crève un, dernier en lice gagne",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 63"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "★ Mini Party ▸",
           "color": "gold"
         }

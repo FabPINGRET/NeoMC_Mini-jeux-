@@ -36,5 +36,6 @@ execute if score $kf1 mg.st matches 67.. if score $kr1 mg.st matches 81..87 run 
 execute if score $kf1 mg.st matches 67.. if score $kr1 mg.st matches 88..92 run scoreboard players set $kgv mg.st 7
 execute if score $kf1 mg.st matches 67.. if score $kr1 mg.st matches 93..96 run scoreboard players set $kgv mg.st 17
 execute if score $kf1 mg.st matches 67.. if score $kr1 mg.st matches 97..100 run scoreboard players set $kgv mg.st 15
+execute if score $kbat mg.st matches 1 if score $kgv mg.st matches 14 run scoreboard players set $kgv mg.st 12
 scoreboard players operation @s mg.kit = $kgv mg.st
 function mg:kart/item_give

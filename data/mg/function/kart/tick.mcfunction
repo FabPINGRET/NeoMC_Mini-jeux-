@@ -3,7 +3,9 @@ scoreboard players add $ktime mg.st 1
 execute if score $rp mg.st matches 1 as @e[tag=mg.kart,tag=!mg.rps] at @s run function mg:kart/rp_skin
 execute if score $rp mg.st matches 1 as @e[tag=mg.fx,tag=!mg.rps] at @s run function mg:kart/rp_skin
 function mg:kart/track_tick
+function mg:kart/music
 scoreboard players enable @a[tag=mg.play] mg.kv
+scoreboard players enable @a[tag=mg.play] mg.kch
 execute as @a[tag=mg.play] run function mg:kart/drive
 tag @e[tag=mg.kk] remove mg.kk
 tag @e[tag=mg.kcamc] remove mg.kcamc
@@ -24,4 +26,7 @@ execute store result score $kfn mg.st if entity @a[tag=mg.play,tag=mg.kfin]
 execute if score $kn mg.st matches 1.. if score $kfn mg.st = $kn mg.st run return run function mg:kart/end
 execute if score $kend mg.st matches 1.. if score $ktime mg.st >= $kend mg.st run return run function mg:kart/end
 execute if score $ktime mg.st matches 8400.. run return run function mg:kart/end
+execute store result score $kal mg.st if entity @a[tag=mg.play,tag=!mg.kout]
+execute if score $kbat mg.st matches 1 if score $kn mg.st matches 2.. if score $kal mg.st matches ..1 run return run function mg:kart/end
+execute if score $kbat mg.st matches 1 if score $ktime mg.st matches 3600.. run return run function mg:kart/end
 execute unless entity @a[tag=mg.play] run function mg:core/draw

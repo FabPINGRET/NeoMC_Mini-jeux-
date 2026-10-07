@@ -1041,6 +1041,7 @@ allb = struct_ + TUNNEL + walls + castle + deco
 for i in range(0, len(allb), CH):
     parts.append(['# Royaume Koopa : décor'] + allb[i:i + CH])
 parts.append(['# Royaume Koopa : fin', f'function {PF}fl_remove', 'data modify storage mg:kart built2 set value 1b',
+              'execute unless data storage mg:kart built3 run schedule function mg:kart/t3/build 3s',
               'tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Circuit Royaume Koopa construit.","color":"green"}]'])
 write('build', ['# (OP) Construit le Royaume Koopa : zone chargée, puis construction dès que tous ses chunks sont prêts',
                 f'function {PF}fl_add', 'scoreboard players set $kbw2 mg.st 0', f'schedule function {PF}build_wait 20t'])

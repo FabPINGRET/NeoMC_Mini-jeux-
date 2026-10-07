@@ -1,0 +1,1 @@
+$summon minecraft:item_display ~ ~ ~ {Tags:["mg.kbal","mg.kbal$(s)","mg.kbaln","mg.kpart"],teleport_duration:2,item:{id:"minecraft:leather_horse_armor",components:{"minecraft:item_model":"$(m)","minecraft:dyed_color":$(c)}},transformation:{translation:[$(x),$(y),$(z)],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.7f,0.7f,0.7f]}}

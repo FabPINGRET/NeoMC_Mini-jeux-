@@ -1,5 +1,6 @@
 # Menu de secours en CHAT cliquable (@s = joueur) — indépendant des dialogs et des objets
 tellraw @s [{"text":"\n✦ MINI-JEUX ✦ ","color":"gold","bold":true},{"text":"(menu texte — clique sur un jeu)","color":"gray"}]
+tellraw @s ["",{"text":" [🎈 KART : Bataille]","color":"light_purple","click_event":{"action":"run_command","command":"trigger mg.go set 63"},"hover_event":{"action":"show_text","value":"3 ballons chacun dans la Forteresse Bob-omb, dernier en lice gagne"}}]
 tellraw @s ["",{"text":" [🏎 KART : Royaume Koopa]","color":"red","click_event":{"action":"run_command","command":"trigger mg.go set 62"},"hover_event":{"action":"show_text","value":"Grand circuit : montées, château de Bowser, pièges, 3 tours"}}]
 tellraw @s ["",{"text":" [🏎 KART : Circuit Champignon]","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 61"},"hover_event":{"action":"show_text","value":"Course de karts, 3 tours, objets"}}]
 tellraw @s ["",{"text":" [❄ Spleef]","color":"aqua","click_event":{"action":"run_command","command":"trigger mg.go set 1"},"hover_event":{"action":"show_text","value":"Lancer le Spleef"}},{"text":" [✷ TNT Run]","color":"red","click_event":{"action":"run_command","command":"trigger mg.go set 2"},"hover_event":{"action":"show_text","value":"Lancer le TNT Run"}}]
