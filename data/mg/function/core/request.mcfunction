@@ -133,6 +133,7 @@ execute if score $game mg.st matches 36 if score $pbm mg.st matches 2 run tellra
 execute if score $game mg.st matches 56 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une ","color":"gray"},{"text":"COURSE DE BATEAUX SUR GLACE","color":"aqua","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
+execute if score $game mg.st matches 61 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une course de ","color":"gray"},{"text":"🏎 KART","color":"gold","bold":true},{"text":" sur le Circuit Champignon (3 tours, objets) !","color":"gray"}]
 execute if score $game mg.st matches 59 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une ","color":"gray"},{"text":"MINI PARTY","color":"gold","bold":true},{"text":" : plateau, dé, étoiles et mini-jeux (","color":"gray"},{"score":{"name":"$mpmax","objective":"mg.st"},"color":"yellow"},{"text":" tours) !","color":"gray"}]
 execute if score $game mg.st matches 6 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"MOB ARENA","color":"dark_green","bold":true},{"text":" !","color":"gray"}]
 execute if score $pc mg.st matches 1 run tellraw @a [{"text":"Mode ","color":"gray"},{"text":"CLASSES","color":"gold","bold":true},{"text":" : choisis ta classe d'équipement pendant le compte à rebours !","color":"gray"}]
@@ -168,6 +169,7 @@ execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
 execute if score $game mg.st matches 59 run function mg:party/prepare
+execute if score $game mg.st matches 61 run function mg:kart/prepare
 execute if score $game mg.st matches 7 unless score $sm mg.st matches 1..6 run function mg:sheepwar2/prepare
 execute if score $game mg.st matches 7 if score $sm mg.st matches 1 run function mg:sheepwar3/prepare
 execute if score $game mg.st matches 7 if score $sm mg.st matches 2 run function mg:sheepwar4/prepare

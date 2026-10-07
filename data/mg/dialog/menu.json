@@ -23,6 +23,25 @@
     {
       "label": [
         {
+          "text": "🏎 KART : Circuit Champignon",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Course de karts maniables : 3 tours, dérapages, boîtes à objets",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 61"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "★ Mini Party ▸",
           "color": "gold"
         }

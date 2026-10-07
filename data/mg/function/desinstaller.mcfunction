@@ -77,6 +77,20 @@ scoreboard objectives remove mg.mpz
 scoreboard objectives remove mg.mpv
 scoreboard objectives remove mg.mid
 scoreboard objectives remove mg.sv
+scoreboard objectives remove mg.ksp
+scoreboard objectives remove mg.kdr
+scoreboard objectives remove mg.kdd
+scoreboard objectives remove mg.kbo
+scoreboard objectives remove mg.khi
+scoreboard objectives remove mg.kst
+scoreboard objectives remove mg.kit
+scoreboard objectives remove mg.kcp
+scoreboard objectives remove mg.klp
+scoreboard objectives remove mg.kvy
+scoreboard objectives remove mg.kfp
+scoreboard objectives remove mg.kpg
+scoreboard objectives remove mg.krk
+scoreboard objectives remove mg.kps
 bossbar remove mg:party
 scoreboard objectives remove mg.mit
 scoreboard objectives remove mg.mip

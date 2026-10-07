@@ -4,6 +4,7 @@
 execute if score $mp mg.st matches 1 unless score $game mg.st matches 59 run function mg:party/reward
 execute if score $game mg.st matches 59 run function mg:party/end
 
+execute if score $game mg.st matches 61 run function mg:kart/cleanup
 kill @e[tag=mg.ib]
 execute if score $game mg.st matches 57..58 run function mg:bb/cleanup
 execute as @a[tag=mg.play] run function mg:core/reset_player
