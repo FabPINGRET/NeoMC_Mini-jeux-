@@ -321,9 +321,11 @@ for name, (texs, els) in HZ_MODELS.items():
            "display": {"gui": {"rotation": [30, 225, 0], "scale": [0.5, 0.5, 0.5]}}})
     item_def(name, f'mg:item/{name}')
 
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lobby_rp.py'), encoding='utf-8').read())
+
 # ------------------------------------------------------------------ pack.mcmeta, zip
 wjson(os.path.join(OUT, 'pack.mcmeta'), {"pack": {"description": [{"text": "NeoMC Mini-Jeux", "color": "gold"},
-                                                                     {"text": "\nKart 3D, objets Mario Kart, boîtes ?", "color": "gray"}],
+                                                                     {"text": "\nKart 3D, objets Mario Kart, spawn", "color": "gray"}],
                                                   "min_format": [88, 0], "max_format": [88, 99]}})
 z = os.path.join(R, 'releases', 'neomc_resourcepack.zip')
 os.makedirs(os.path.dirname(z), exist_ok=True)

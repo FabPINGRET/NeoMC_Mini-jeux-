@@ -110,4 +110,6 @@ fill 270 95 23990 290 95 24010 minecraft:dark_oak_planks
 fill 282 96 24002 286 98 24006 minecraft:black_concrete
 fill 283 96 24003 285 98 24005 minecraft:water
 fill 284 99 24004 284 104 24004 minecraft:white_wool
+fill 277 95 24000 279 95 24002 minecraft:water
+fill 277 96 24000 279 98 24002 minecraft:air
 schedule function mg:dropadv/build_10 3t

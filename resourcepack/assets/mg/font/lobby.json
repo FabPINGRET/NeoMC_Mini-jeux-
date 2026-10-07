@@ -1,0 +1,67 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "mg:font/lobby_logo.png",
+      "ascent": 79,
+      "height": 87,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/lobby_sign_0.png",
+      "ascent": 25,
+      "height": 31,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/lobby_sign_1.png",
+      "ascent": 25,
+      "height": 31,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/lobby_sign_2.png",
+      "ascent": 25,
+      "height": 31,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/lobby_sign_3.png",
+      "ascent": 25,
+      "height": 31,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/lobby_sign_4.png",
+      "ascent": 25,
+      "height": 31,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/lobby_sign_5.png",
+      "ascent": 25,
+      "height": 31,
+      "chars": [
+        ""
+      ]
+    }
+  ]
+}

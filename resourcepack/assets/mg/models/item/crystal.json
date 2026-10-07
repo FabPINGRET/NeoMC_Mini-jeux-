@@ -1,0 +1,250 @@
+{
+  "textures": {
+    "c": "mg:item/crystal",
+    "particle": "mg:item/crystal"
+  },
+  "elements": [
+    {
+      "from": [
+        6,
+        0,
+        6
+      ],
+      "to": [
+        10,
+        2,
+        10
+      ],
+      "faces": {
+        "north": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "down": {
+          "texture": "#c",
+          "tintindex": 0
+        }
+      }
+    },
+    {
+      "from": [
+        5,
+        2,
+        5
+      ],
+      "to": [
+        11,
+        5,
+        11
+      ],
+      "faces": {
+        "north": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "down": {
+          "texture": "#c",
+          "tintindex": 0
+        }
+      }
+    },
+    {
+      "from": [
+        4,
+        5,
+        4
+      ],
+      "to": [
+        12,
+        10,
+        12
+      ],
+      "faces": {
+        "north": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "down": {
+          "texture": "#c",
+          "tintindex": 0
+        }
+      }
+    },
+    {
+      "from": [
+        5,
+        10,
+        5
+      ],
+      "to": [
+        11,
+        13,
+        11
+      ],
+      "faces": {
+        "north": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "down": {
+          "texture": "#c",
+          "tintindex": 0
+        }
+      }
+    },
+    {
+      "from": [
+        6,
+        13,
+        6
+      ],
+      "to": [
+        10,
+        15,
+        10
+      ],
+      "faces": {
+        "north": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "down": {
+          "texture": "#c",
+          "tintindex": 0
+        }
+      }
+    },
+    {
+      "from": [
+        7,
+        15,
+        7
+      ],
+      "to": [
+        9,
+        16.5,
+        9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#c",
+          "tintindex": 0
+        },
+        "down": {
+          "texture": "#c",
+          "tintindex": 0
+        }
+      }
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [
+        30,
+        225,
+        0
+      ],
+      "scale": [
+        0.6,
+        0.6,
+        0.6
+      ]
+    }
+  }
+}
