@@ -101,6 +101,12 @@ scoreboard objectives add mg.kstk dummy
 scoreboard objectives add mg.klt dummy
 scoreboard objectives add mg.klb dummy
 scoreboard objectives add mg.lcd dummy
+scoreboard objectives add mg.esn dummy
+scoreboard objectives add mg.esc dummy
+scoreboard objectives add mg.est dummy
+scoreboard objectives add mg.eup dummy
+scoreboard objectives add mg.ebl dummy
+scoreboard objectives add mg.ept dummy
 scoreboard objectives add mg.kic dummy
 scoreboard objectives add mg.kgd dummy
 scoreboard objectives add mg.kbill dummy
@@ -151,7 +157,7 @@ execute if score $setup mg.st matches 1 if data storage mg:kart built unless dat
 execute if score $setup mg.st matches 1 if data storage mg:kart built2 unless data storage mg:kart built3 run schedule function mg:kart/t3/build 10s
 # Reconstructions automatiques après une mise à jour (numéro de version dans le stockage)
 execute if score $setup mg.st matches 1 unless data storage mg:dropadv v2 run schedule function mg:dropadv/build 40s
-execute if score $setup mg.st matches 1 unless data storage mg:lobby v5 run schedule function mg:lobby/build 10s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/build 10s
 
 # Zones chargées (après une mise à jour du pack, les nouvelles zones sont prises en compte)
 execute if score $setup mg.st matches 1 run function mg:core/forceloads

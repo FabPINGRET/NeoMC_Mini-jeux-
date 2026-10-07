@@ -15,6 +15,8 @@ execute if score @s mg.ppt < @s mg.ppb run scoreboard players operation @s mg.pp
 # Record du lobby
 execute unless score $pkrec mg.st matches 1.. run function mg:parkour/record
 execute if score $pkrec mg.st matches 1.. if score @s mg.ppt < $pkrec mg.st run function mg:parkour/record
+advancement grant @s only mg:secrets/sommet
+execute if score @s mg.ppt matches ..1199 run advancement grant @s only mg:secrets/ecureuil
 # Fin de course
 tag @s remove mg.pkr
 execute at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1

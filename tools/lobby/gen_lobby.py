@@ -512,6 +512,39 @@ for k in range(KK):
     KCPS.append((round(x, 1), round(z, 1), kyaw(tx, tz)))
 print('circuit du spawn : longueur', round(KN * 0.5), '| points de passage', KK, '| écart mini', round(kworst, 1))
 
+# ------------------------------------------------------------------ SECRETS : éléments cachés dans le décor (voir la section « secrets » plus bas)
+SEC_ROOM = (-29, 55, -32, -21, 59, -26)          # x1 y1 z1 x2 y2 z2 (y1 = sol)
+SEC_SHAFT = (-25, -25)
+for x in range(SEC_ROOM[0] - 1, SEC_ROOM[3] + 2):
+    for z in range(SEC_ROOM[2] - 1, SEC_ROOM[5] + 2):
+        for y in range(SEC_ROOM[1] - 1, SEC_ROOM[4] + 2):
+            edge_ = x in (SEC_ROOM[0] - 1, SEC_ROOM[3] + 1) or z in (SEC_ROOM[2] - 1, SEC_ROOM[5] + 1) or y in (SEC_ROOM[1] - 1, SEC_ROOM[4] + 1)
+            if edge_: put(x, y, z, 'mossy_stone_bricks' if (x + y + z) % 3 else 'cracked_stone_bricks')
+            elif y == SEC_ROOM[1]: put(x, y, z, 'polished_deepslate' if (x + z) % 2 else 'deepslate_tiles')
+            else: put(x, y, z, 'air')
+sx0, sz0 = SEC_SHAFT
+for y in range(SEC_ROOM[1] + 1, G):
+    put(sx0, y, sz0, 'ladder[facing=north]'); put(sx0, y, sz0 + 1, 'stone')
+    for dx in (-1, 1): put(sx0 + dx, y, sz0, 'stone')
+    put(sx0, y, sz0 - 1, 'air' if y <= SEC_ROOM[4] else 'stone')
+TOP[SEC_SHAFT] = 'spruce_trapdoor[facing=north,half=top,open=false]'
+for (x, z) in disc(sx0, sz0, 2.5):
+    if (x, z) in MASK: MASK[(x, z)] = 'b'
+for (dx, dz) in ((-2, 0), (2, 1), (0, 2), (-1, -2), (2, -1)):
+    put(sx0 + dx, 64, sz0 + dz, 'azalea_leaves[persistent=true]' if (dx + dz) % 2 else 'flowering_azalea_leaves[persistent=true]')
+rx1, ry1, rz1, rx2, ry2, rz2 = SEC_ROOM
+for x in range(rx1, rx2 + 1): put(x, ry1 + 1, rz1, 'bookshelf'); put(x, ry1 + 2, rz1, 'bookshelf')
+put(rx1 + 1, ry1 + 1, rz1 + 1, 'chest[facing=south]'); put(rx2 - 1, ry1 + 1, rz1 + 1, 'chest[facing=south]')
+put((rx1 + rx2) // 2, ry1 + 1, rz1 + 2, 'enchanting_table')
+put(rx1, ry1 + 1, rz2, 'amethyst_block'); put(rx1, ry1 + 2, rz2, 'amethyst_cluster[facing=up]')
+put(rx2, ry1 + 1, rz2, 'gold_block'); put(rx2, ry1 + 2, rz2, 'emerald_block'); put(rx2, ry1 + 3, rz2, 'diamond_block')
+for x in (rx1 + 2, rx2 - 2): put(x, ry2, (rz1 + rz2) // 2, 'lantern[hanging=true]')
+put(rx1, ry1 + 1, (rz1 + rz2) // 2, 'glow_lichen[west=true]'); put(rx2, ry1 + 2, (rz1 + rz2) // 2, 'glow_lichen[east=true]')
+for x in range(rx1 + 1, rx2):
+    for z in range(rz1 + 3, rz2 + 1): put(x, ry1 + 1, z, 'red_carpet' if (x + z) % 4 else 'orange_carpet') if (x, z) != (sx0, rz2) else None
+SEC_BTN = (0, 65, 50)
+put(*SEC_BTN, 'polished_blackstone_button[face=wall,facing=south]')
+
 # ------------------------------------------------------------------ dessus de l'île
 for (x, z), b in TOP.items():
     put(x, G, z, b)
@@ -809,7 +842,7 @@ wr('lobby/build', ['# Spawn : grande île flottante (générée par tools/lobby/
 wr('lobby/build_end', ['# Fin de la construction du spawn : eau qui coule, décor, chargement des zones'] +
    [f'setblock {x} {y} {z} minecraft:water' for (x, y, z) in JETS] +
    ['function mg:lobby/deco', 'function mg:lobby/armory_build', 'function mg:parkour/build',
-    'forceload remove -80 -80 80 80', 'forceload remove 81 -32 144 32', 'forceload remove -115 81 115 225', 'function mg:core/forceloads', 'data modify storage mg:lobby v5 set value 1b',
+    'forceload remove -80 -80 80 80', 'forceload remove 81 -32 144 32', 'forceload remove -115 81 115 225', 'function mg:core/forceloads', 'data modify storage mg:lobby v6 set value 1b',
     'tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Spawn construit.","color":"green"}]'])
 
 # ------------------------------------------------------------------ entités de décor
@@ -1180,6 +1213,115 @@ KDECO = [tdisp(KPAD[0] + 1.5, 66.6, KPAD[1] + 1.5, '[{"text":"🏎 KART LIBRE","
          tdisp(round(sx_, 1) + 0.5, 73.8, round(sz_, 1) + 0.5, '[{"text":"🏆 Record du tour : aucun","color":"gold"}]', 1.4).replace('Tags:["mg.lby"', 'Tags:["mg.lby","mg.lkboard"')]
 with open(os.path.join(F, 'lobby', 'deco_common.mcfunction'), 'a', encoding='utf-8', newline='\n') as f:
     f.write('\n'.join(['# Circuit du spawn : panneaux'] + KDECO + ['execute if score $klrec mg.st matches 1.. run function mg:lobkart/board_refresh']) + '\n')
+
+# ------------------------------------------------------------------ SECRETS : succès cachés (onglet « Secrets du spawn ») et leur détection
+import json
+ADV = os.path.join(R, 'data', 'mg', 'advancement', 'secrets')
+os.makedirs(ADV, exist_ok=True)
+for f in os.listdir(ADV): os.remove(os.path.join(ADV, f))
+SECRETS = [  # id, titre, indice, icône, cadre
+    ('terrier', 'Le terrier', 'Certaines trappes mènent plus loin qu\'on ne croit', 'spruce_trapdoor', 'task'),
+    ('tuyau', 'Tuyau de distorsion', 'Accroupi, on voyage plus vite', 'green_concrete', 'task'),
+    ('couronne', 'Roi du château', 'Personne ne regarde jamais les toits', 'golden_helmet', 'task'),
+    ('etoiles', 'La tête dans les étoiles', 'Au cœur doré, lève les yeux', 'nether_star', 'task'),
+    ('ile', 'Île céleste', 'Le ciel n\'est pas réservé aux oiseaux', 'grass_block', 'challenge'),
+    ('plongeon', 'Petit plongeon', 'Les poissons aussi aiment la visite', 'tropical_fish_bucket', 'task'),
+    ('vide', 'Ouf !', 'Le vide ne veut pas de toi', 'feather', 'task'),
+    ('arsenal', 'Arsenal complet', 'Un de chaque, pas moins', 'blaze_rod', 'task'),
+    ('mille', 'Dans le mille', 'Vise le cœur', 'target', 'task'),
+    ('lynx', 'Œil de lynx', 'Vingt fois en plein cœur', 'spyglass', 'challenge'),
+    ('sommet', 'Au sommet', 'Tout en haut, la lumière verte', 'diamond', 'task'),
+    ('ecureuil', 'Écureuil volant', 'Tout en haut en moins d\'une minute', 'elytra', 'challenge'),
+    ('pilote', 'Pilote du dimanche', 'Un tour, rien qu\'un', 'minecart', 'task'),
+    ('volant', 'Fou du volant', 'Un tour en moins de 40 secondes', 'blaze_powder', 'challenge'),
+    ('danse', 'Danse de la victoire', 'Sur la place, montre tes plus beaux pas', 'jukebox', 'task'),
+    ('bouton', 'Appuie, pour voir', 'Un bouton discret, près des champions', 'polished_blackstone_button', 'task'),
+    ('visite', 'Visite guidée', 'Cinq lieux à voir absolument', 'filled_map', 'task'),
+]
+def adv(name, d):
+    with open(os.path.join(ADV, name + '.json'), 'w', encoding='utf-8', newline='\n') as f: json.dump(d, f, indent=2, ensure_ascii=False); f.write('\n')
+adv('root', {'criteria': {'tick': {'trigger': 'minecraft:tick'}},
+             'display': {'icon': {'id': 'minecraft:ender_eye'}, 'title': {'text': 'Secrets du spawn', 'color': 'gold'},
+                         'description': {'text': f'Le spawn cache {len(SECRETS)} secrets... ouvre l\'œil !', 'color': 'gray'},
+                         'background': 'minecraft:block/amethyst_block', 'show_toast': False, 'announce_to_chat': False}})
+for sid, title, hint, icon, frame in SECRETS:
+    adv(sid, {'parent': 'mg:secrets/root', 'criteria': {'found': {'trigger': 'minecraft:impossible'}},
+              'display': {'icon': {'id': f'minecraft:{icon}'}, 'title': {'text': title}, 'description': {'text': hint, 'color': 'gray'}, 'frame': frame,
+                          'show_toast': True, 'announce_to_chat': True, 'hidden': True},
+              'rewards': {'function': 'mg:secrets/reward'}})
+adv('maitre', {'parent': 'mg:secrets/visite', 'criteria': {'found': {'trigger': 'minecraft:impossible'}},
+               'display': {'icon': {'id': 'minecraft:dragon_egg'}, 'title': {'text': 'Maître des secrets', 'color': 'light_purple'},
+                           'description': {'text': 'Tous les secrets du spawn', 'color': 'gray'}, 'frame': 'challenge',
+                           'show_toast': True, 'announce_to_chat': True, 'hidden': True},
+               'rewards': {'function': 'mg:secrets/reward'}})
+def G_(sid): return f'advancement grant @s only mg:secrets/{sid}'
+def NOT(sid): return f'unless entity @s[advancements={{mg:secrets/{sid}=true}}]'
+ALL = ','.join(f'mg:secrets/{s[0]}=true' for s in SECRETS)
+wr('secrets/reward', ['# Un secret trouvé (@s) : petite fête, et le grand final quand tout est trouvé',
+                      'execute at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 0.8 1.3',
+                      'execute at @s run particle minecraft:totem_of_undying ~ ~1 ~ 0.5 0.8 0.5 0.4 40',
+                      f'execute if entity @s[advancements={{{ALL}}}] unless entity @s[advancements={{mg:secrets/maitre=true}}] run advancement grant @s only mg:secrets/maitre'])
+ISL_SPOTS = [(31, 90, -31, 5), (-34, 94, 31, 5), (-31, 98, -35, 4), (37, 96, 31, 4), (-6, 104, 30, 3)]
+chk = ['# Secrets du spawn : vérifications (toutes les 0,5 s, @s = joueur du spawn, à sa position)',
+       f'execute {NOT("terrier")} if entity @s[x={rx1},y={ry1},z={rz1},dx={rx2 - rx1},dy={ry2 - ry1},dz={rz2 - rz1}] run {G_("terrier")}',
+       f'execute {NOT("couronne")} if entity @s[x={X1 - 1},y=84,z=-0.3,dx={X2 - X1 + 2},dy=2,dz=0.6] run {G_("couronne")}',
+       f'execute {NOT("plongeon")} if entity @s[x={POND[0] - 3},y=61.5,z={POND[1] - 3},dx=6,dy=1,dz=6] if block ~ ~ ~ minecraft:water run {G_("plongeon")}',
+       f'execute {NOT("arsenal")} if items entity @s container.* minecraft:warped_fungus_on_a_stick if items entity @s container.* minecraft:blaze_rod '
+       f'if items entity @s container.* minecraft:wind_charge if items entity @s container.* minecraft:snowball run {G_("arsenal")}']
+for (cx, cy, cz, r) in ISL_SPOTS:
+    chk.append(f'execute {NOT("ile")} if entity @s[x={cx - r},y={cy + 0.5},z={cz - r},dx={2 * r},dy=3,dz={2 * r}] run {G_("ile")}')
+chk += [f'execute if entity @s[x=-1,y=64,z=-1,dx=2,dy=1,dz=2,x_rotation=-90..-75] run scoreboard players add @s mg.eup 10',
+        f'execute unless entity @s[x=-1,y=64,z=-1,dx=2,dy=1,dz=2,x_rotation=-90..-75] run scoreboard players set @s mg.eup 0',
+        f'execute {NOT("etoiles")} if score @s mg.eup matches 60.. run {G_("etoiles")}',
+        'tag @s[x=-56,y=64,z=-10,dx=20,dy=6,dz=20] add mg.ev1', 'tag @s[x=64,y=63,z=-4,dx=6,dy=4,dz=8] add mg.ev2', 'tag @s[x=-6,y=63,z=-53,dx=12,dy=6,dz=12] add mg.ev3',
+        'tag @s[x=-5,y=63,z=43,dx=10,dy=4,dz=10] add mg.ev4', f'tag @s[x=-4,y=63,z={round(sz_) - 4},dx=8,dy=5,dz=8] add mg.ev5',
+        f'execute {NOT("visite")} if entity @s[tag=mg.ev1,tag=mg.ev2,tag=mg.ev3,tag=mg.ev4,tag=mg.ev5] run {G_("visite")}',
+        'scoreboard players remove @s[scores={mg.ept=1..}] mg.ept 10']
+for (a, b) in ((PIPES[0], PIPES[3]), (PIPES[1], PIPES[2])):
+    for (p, q) in ((a, b), (b, a)):
+        chk.append(f'execute unless score @s mg.ept matches 1.. if predicate mg:sneak positioned {p[0] + 0.5} 68 {p[1] + 0.5} if entity @s[distance=..0.9] run function mg:secrets/pipe {{x:{q[0] + 0.5},z:{q[1] + 0.5}}}')
+wr('secrets/check', chk)
+wr('secrets/pipe', ['# Tuyau de distorsion : @s file vers l\'autre tuyau (macro x, z)',
+                    'execute at @s run particle minecraft:portal ~ ~0.5 ~ 0.3 0.6 0.3 0.6 40',
+                    '$tp @s $(x) 68.2 $(z)', 'scoreboard players set @s mg.ept 40',
+                    'execute at @s run playsound minecraft:entity.enderman.teleport master @a ~ ~ ~ 0.8 1.6',
+                    'execute at @s run playsound minecraft:block.note_block.bit master @s ~ ~ ~ 1 0.6',
+                    'execute at @s run particle minecraft:happy_villager ~ ~1 ~ 0.4 0.6 0.4 0 20', G_('tuyau')])
+bx, by, bz = SEC_BTN
+wr('secrets/tick', ['# Secrets du spawn (toutes les 0,5 s depuis lobby/armory_tick)',
+                    'execute as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.lk,gamemode=!spectator,x=0,y=64,z=0,distance=..140] at @s run function mg:secrets/check',
+                    'scoreboard players remove $ebt mg.st 10',
+                    f'execute unless score $ebt mg.st matches 1.. if block {bx} {by} {bz} minecraft:polished_blackstone_button[powered=true] run function mg:secrets/button'])
+wr('secrets/button', ['# Le bouton secret du garage : feu d\'artifice au-dessus du podium',
+                      'scoreboard players set $ebt mg.st 100',
+                      f'execute as @a[x={bx + 0.5},y={by},z={bz + 0.5},distance=..5] run {G_("bouton")}',
+                      'execute positioned 0.5 80 48.5 run function mg:lobby/boom',
+                      'execute positioned -6.5 76 48.5 run function mg:lobby/boom',
+                      'execute positioned 7.5 77 48.5 run function mg:lobby/boom'])
+wr('secrets/dance', ['# Danse de la victoire (@s sur la place) : 10 accroupissements en 3 s',
+                     'execute store result score $sn mg.t if predicate mg:sneak',
+                     'execute if score $sn mg.t matches 1 unless score @s mg.esn matches 1 run scoreboard players add @s mg.esc 1',
+                     'scoreboard players operation @s mg.esn = $sn mg.t',
+                     'scoreboard players add @s mg.est 1',
+                     'execute if score @s mg.est matches 60.. run scoreboard players set @s mg.esc 0',
+                     'execute if score @s mg.est matches 60.. run scoreboard players set @s mg.est 0',
+                     f'execute if score @s mg.esc matches 10.. {NOT("danse")} run {G_("danse")}'])
+# crochets dans les fonctions générées ici
+for rel, anchor, add in (('lobby/laser_bull', 'title @s actionbar [{"text":"★ DANS LE MILLE ! ★"',
+                          ['scoreboard players add @s mg.ebl 1', G_('mille'), 'execute if score @s mg.ebl matches 20.. run ' + G_('lynx')]),
+                         ('lobkart/lap', 'execute unless score $klrec mg.st matches 1.. run function mg:lobkart/record',
+                          [G_('pilote'), 'execute if score @s mg.klt matches ..799 run ' + G_('volant')])):
+    p = os.path.join(F, rel + '.mcfunction')
+    s = open(p, encoding='utf-8').read().rstrip('\n').split('\n')
+    i = next(k for k, l in enumerate(s) if l.startswith(anchor))
+    wr(rel, s[:i] + add + s[i:])
+with open(os.path.join(F, 'lobby', 'armory_tick.mcfunction'), 'a', encoding='utf-8', newline='\n') as f:
+    f.write('\n# Secrets du spawn\n'
+            'execute if score $lfx mg.t matches 0 run function mg:secrets/tick\n'
+            'execute as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.lk,x=0,y=64,z=0,distance=..15] run function mg:secrets/dance\n')
+with open(os.path.join(F, 'lobby', 'deco_common.mcfunction'), 'a', encoding='utf-8', newline='\n') as f:
+    f.write(tdisp((rx1 + rx2) / 2 + 0.5, ry1 + 3.2, rz1 + 1.5, '[{"text":"🕳 Le terrier secret","color":"light_purple","bold":true},{"text":"\\nBravo, peu de gens trouvent cet endroit...","color":"gray"}]', 1.0) + '\n')
+print('secrets :', len(SECRETS) + 1)
 
 # ------------------------------------------------------------------ aperçu (vue de dessus)
 if len(sys.argv) > 2:

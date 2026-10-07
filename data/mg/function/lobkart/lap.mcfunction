@@ -12,6 +12,8 @@ execute at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~
 execute if score @s mg.klb matches 1.. if score @s mg.klt < @s mg.klb run tellraw @s [{"text":"★ Nouveau record perso !","color":"aqua","bold":true}]
 execute unless score @s mg.klb matches 1.. run scoreboard players operation @s mg.klb = @s mg.klt
 execute if score @s mg.klt < @s mg.klb run scoreboard players operation @s mg.klb = @s mg.klt
+advancement grant @s only mg:secrets/pilote
+execute if score @s mg.klt matches ..799 run advancement grant @s only mg:secrets/volant
 execute unless score $klrec mg.st matches 1.. run function mg:lobkart/record
 execute if score $klrec mg.st matches 1.. if score @s mg.klt < $klrec mg.st run function mg:lobkart/record
 scoreboard players set @s mg.klt 0
