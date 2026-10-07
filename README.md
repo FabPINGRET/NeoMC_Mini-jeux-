@@ -162,6 +162,15 @@ Chaque île a son **VILLAGEOIS BOUTIQUE** : fais un clic droit dessus pour écha
 | `/function mg:bb/clear_old` | Supprime les anciennes parcelles/studio Build Battle (ancien emplacement, x -120..120 / z 13700-13748) sans toucher aux parcelles actuelles | OP |
 | `/function mg:plot/build` | Reconstruit murs et panneaux des plots (constructions conservées) | OP |
 
+## 🎨 Resource pack (optionnel)
+
+Le dossier `resourcepack/` (zip prêt : `releases/neomc_resourcepack.zip`) ajoute un kart 3D à la couleur du pilote, des icônes pixel art pour les 19 objets du Kart et des boîtes ? arc-en-ciel. Tout est dans l'espace de noms `mg` : aucune texture vanilla n'est remplacée, la survie n'est pas touchée.
+
+- **Solo / test** : copier le zip dans `.minecraft/resourcepacks` et l'activer.
+- **Serveur** : héberger le zip (lien direct) puis dans `server.properties` : `resource-pack=<lien>`, `resource-pack-sha1=<empreinte affichée par le générateur>`, et éventuellement `require-resource-pack=true`.
+- **Activer les modèles** : `/function mg:rp_on` (et `/function mg:rp_off` pour revenir aux visuels vanilla). Sans pack côté joueur, laisser désactivé (sinon les objets apparaissent en cubes violets).
+- **Régénérer** : `python tools/resourcepack/gen_rp.py .`
+
 ## 📝 Bon à savoir
 
 - **Déconnexion / reconnexion** : si aucune partie n'est en cours, le joueur est renvoyé au lobby, inventaire vidé. Si une partie est en cours, il est téléporté dans le jeu en **spectateur** (sans inventaire) et retourne au lobby à la fin. Il n'est jamais réintégré comme joueur.

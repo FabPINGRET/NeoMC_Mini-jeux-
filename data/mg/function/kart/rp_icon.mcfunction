@@ -1,0 +1,20 @@
+# Icône du resource pack pour l'objet en main (appelé par item_give si $rp = 1)
+execute if score @s mg.kit matches 1 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:banana"}}
+execute if score @s mg.kit matches 2 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:shell_green"}}
+execute if score @s mg.kit matches 3 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:shell_red"}}
+execute if score @s mg.kit matches 4 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:mushroom"}}
+execute if score @s mg.kit matches 5 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:star"}}
+execute if score @s mg.kit matches 6 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:lightning"}}
+execute if score @s mg.kit matches 7 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:shell_blue"}}
+execute if score @s mg.kit matches 8 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:banana"}}
+execute if score @s mg.kit matches 9 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:shell_green"}}
+execute if score @s mg.kit matches 10 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:shell_red"}}
+execute if score @s mg.kit matches 11 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:mushroom"}}
+execute if score @s mg.kit matches 12 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:mushroom_gold"}}
+execute if score @s mg.kit matches 13 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:bobomb"}}
+execute if score @s mg.kit matches 14 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:bullet"}}
+execute if score @s mg.kit matches 15 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:blooper"}}
+execute if score @s mg.kit matches 16 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:horn"}}
+execute if score @s mg.kit matches 17 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:boo"}}
+execute if score @s mg.kit matches 18 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:item_box"}}
+execute if score @s mg.kit matches 19 run item modify entity @s hotbar.0 {"function":"minecraft:set_components","components":{"minecraft:item_model":"mg:mushroom_mega"}}
