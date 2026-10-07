@@ -159,6 +159,7 @@ Chaque île a son **VILLAGEOIS BOUTIQUE** : fais un clic droit dessus pour écha
 | `/trigger mg.dice` / `set 3` / `set 4` / `set 11`, `12` / `21`..`23` / `31`..`33`, `39` | Mini Party : lancer le dé / carte du ciel / vue libre ou caméra / route 1 ou 2 / utiliser dé double, dé triple, tuyau / acheter en boutique, partir (secours des fenêtres) | joueurs |
 | `/trigger mg.pl set 1` / `2` | Aller sur son plot de construction (attribué au premier passage) / revenir au spawn | tous |
 | `/trigger mg.pl set 3` / `101`..`115` | Liste des plots / visiter le plot n°1..15 en spectateur | tous |
+| `/function mg:bb/clear_old` | Supprime les anciennes parcelles/studio Build Battle (ancien emplacement, x -120..120 / z 13700-13748) sans toucher aux parcelles actuelles | OP |
 | `/function mg:plot/build` | Reconstruit murs et panneaux des plots (constructions conservées) | OP |
 
 ## 📝 Bon à savoir
