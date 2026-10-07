@@ -28,7 +28,7 @@ POOL = [
     (5, 'SHEEP WAR', 'white', 6 * M), (7, 'SHEEP WAR : FORTERESSES', 'white', 6 * M), (15, 'SHEEP WAR : CUBES VOXEL', 'white', 6 * M),
     (17, 'SHEEP WAR : ARCHIPEL', 'white', 6 * M),
     (4, 'BEDWARS', 'light_purple', 8 * M),
-    (56, 'COURSE DE BATEAUX', 'aqua', 5 * M), (61, 'KART', 'gold', 8 * M), (62, 'KART : ROYAUME KOOPA', 'red', 9 * M),
+    (56, 'COURSE DE BATEAUX', 'aqua', 5 * M), (61, 'KART', 'gold', 8 * M), (62, 'KART : ROYAUME KOOPA', 'red', 9 * M), (63, 'KART : BATAILLE', 'light_purple', 4 * M),
     (57, 'BUILD BATTLE', 'green', 10 * M),
 ]
 N = len(POOL)

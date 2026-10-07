@@ -12,3 +12,4 @@ scoreboard players set @s mg.krc 0
 scoreboard players set @s mg.khi 0
 title @s actionbar [{"text":"☁ Remis en piste !","color":"aqua"}]
 execute at @s run playsound minecraft:entity.chicken.egg master @s ~ ~ ~ 1 1
+execute if score $kbat mg.st matches 1 run function mg:kart/bat_pop

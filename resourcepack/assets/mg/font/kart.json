@@ -1,0 +1,298 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_0_0.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_0_1.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_0_2.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_0_3.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_0_4.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_0_5.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_0_6.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_0_7.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_1_0.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_1_1.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_1_2.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_1_3.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_1_4.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_1_5.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_1_6.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_1_7.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_2_0.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_2_1.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_2_2.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_2_3.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_2_4.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_2_5.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_2_6.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_2_7.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_3_0.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_3_1.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_3_2.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_3_3.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_3_4.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_3_5.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_3_6.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/kart_3_7.png",
+      "ascent": 60,
+      "height": 72,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "space",
+      "advances": {
+        " ": 14
+      }
+    }
+  ]
+}

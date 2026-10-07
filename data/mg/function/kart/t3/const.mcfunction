@@ -1,0 +1,13 @@
+# Constantes de la Forteresse Bob-omb
+scoreboard players set $kK mg.st 1
+scoreboard players set $kLaps mg.st 1
+scoreboard players set #kmx0 mg.st 100
+scoreboard players set #kmz0 mg.st 21900
+scoreboard players set #kmc mg.st 24
+scoreboard players set #kmw mg.st 201
+scoreboard players set #kmr mg.st 15
+scoreboard players set #kmh mg.st 201
+scoreboard players set $px mg.st 0
+scoreboard players set $py mg.st 100
+scoreboard players set $pz mg.st 22060
+scoreboard players set #h90 mg.st 90

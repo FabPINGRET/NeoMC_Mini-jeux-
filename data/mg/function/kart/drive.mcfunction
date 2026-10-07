@@ -1,4 +1,8 @@
 # Pilotage du kart de @s (chaque tick)
+execute if entity @s[tag=mg.kout] run return 0
+execute if score @s mg.kch matches 1.. run function mg:kart/choose
+execute if score @s mg.krl matches 1.. run function mg:kart/roulette
+execute if score $kph mg.st matches 0 run function mg:kart/engine
 function mg:kart/kk
 execute unless entity @e[tag=mg.kk] at @s run function mg:kart/kart_new
 execute unless entity @e[tag=mg.kk] run function mg:kart/kk

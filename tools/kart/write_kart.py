@@ -55,7 +55,19 @@ PASSENGERS = ','.join(part(*p) for p in PARTS)
 
 # ------------------------------------------------------------------ préparation, départ, fin
 fn('prepare', '''# Kart : préparation pendant le compte à rebours (zone chargée, pilotes sur la grille, karts dès que la zone est prête)
-execute unless score $ktr mg.st matches 1..2 run scoreboard players set $ktr mg.st 1
+execute unless score $ktr mg.st matches 1..3 run scoreboard players set $ktr mg.st 1
+execute unless score $kbat mg.st matches 0..1 run scoreboard players set $kbat mg.st 0
+execute if score $ktr mg.st matches 3 unless data storage mg:kart built3 run tellraw @a [{"text":"⚠ L'arène de bataille est encore en construction : course sur le Circuit Champignon.","color":"gold"}]
+execute if score $ktr mg.st matches 3 unless data storage mg:kart built3 run scoreboard players set $kbat mg.st 0
+execute if score $ktr mg.st matches 3 unless data storage mg:kart built3 run scoreboard players set $ktr mg.st 1
+tag @a remove mg.kout
+tag @a remove mg.kok
+scoreboard players set $kwait mg.st 0
+scoreboard players set #k10 mg.st 10
+scoreboard players set $kouto mg.st 0
+scoreboard players set @a[tag=mg.play] mg.kbl 0
+scoreboard players enable @a[tag=mg.play] mg.kch
+execute as @a[tag=mg.play] run function mg:kart/show_models
 execute if score $ktr mg.st matches 2 unless data storage mg:kart built2 run tellraw @a [{"text":"⚠ Le Royaume Koopa est encore en construction : course sur le Circuit Champignon.","color":"gold"}]
 execute if score $ktr mg.st matches 2 unless data storage mg:kart built2 run scoreboard players set $ktr mg.st 1
 function mg:kart/const
@@ -144,22 +156,28 @@ tag @e[tag=mg.kcamc] remove mg.kcamc
 execute as {KART}] if score @s mg.ri = $me mg.st run tag @s add mg.kk
 execute as @e[type=minecraft:item_display,tag=mg.kcam] if score @s mg.ri = $me mg.st run tag @s add mg.kcamc
 ''')
-fn('kart_new', '''# Nouveau kart pour @s, à sa position et dans sa direction
+fn('kart_new', '''# Nouveau kart pour @s, à sa position et dans sa direction (type mg.kty et couleur mg.kcol choisis par le pilote)
 tag @s add mg.kself
 summon minecraft:block_display ~ ~ ~ {Tags:["mg.ib","mg.kart","mg.mine"],teleport_duration:2,block_state:{Name:"minecraft:red_concrete"},transformation:{translation:[%sf,%sf,%sf],%s,scale:[%sf,%sf,%sf]},Passengers:[%s]}
 execute as @e[type=minecraft:block_display,tag=mg.mine] at @s rotated as @a[tag=mg.kself,limit=1] run tp @s ~ ~ ~ ~ 0
 execute as @e[type=minecraft:block_display,tag=mg.mine] at @s on passengers run rotate @s ~ 0
 scoreboard players operation @e[type=minecraft:block_display,tag=mg.mine] mg.ri = @s mg.ri
+execute unless score @s mg.kty matches 1..4 run scoreboard players set @s mg.kty 1
 scoreboard players operation $kc mg.st = @s mg.ri
 scoreboard players operation $kc mg.st %%= #k8 mg.st
+scoreboard players add $kc mg.st 1
+execute if score @s mg.kcol matches 1..8 run scoreboard players operation $kc mg.st = @s mg.kcol
+scoreboard players operation @e[type=minecraft:block_display,tag=mg.mine] mg.kcol = $kc mg.st
+scoreboard players operation @e[type=minecraft:block_display,tag=mg.mine] mg.kty = @s mg.kty
 %s
 tag @e[tag=mg.mine] remove mg.mine
 tag @s remove mg.kself
 scoreboard players set @s mg.kdr 0
 scoreboard players set @s mg.krc 0
+execute if score $kbat mg.st matches 1 run function mg:kart/bat_balloons
 ''' % (ks(-0.6), ks(0.12), ks(-0.95), T0, ks(1.2), ks(0.38), ks(1.9), PASSENGERS, '\n'.join(
     f'execute if score $kc mg.st matches {k} run data modify entity @e[type=minecraft:block_display,tag=mg.mine,limit=1] block_state.Name set value "minecraft:{c}_concrete"'
-    for k, c in enumerate(COLORS))))
+    for k, c in enumerate(COLORS, 1))))
 fn('seat', f'''# Installe le pilote selon sa vue : 1re personne assis dans le kart, 3e personne spectateur de sa caméra
 execute if score @s mg.kvm matches 1 run return run function mg:kart/seat_ride
 function mg:kart/seat_cam
@@ -200,7 +218,7 @@ fn('go', '''# Départ : portillon ouvert
 function mg:kart/gate_off
 scoreboard players set $ktime mg.st 0
 scoreboard players set @a[tag=mg.play] mg.ksp 0
-tellraw @a[tag=mg.play] [{"text":"🏎 ","color":"gold"},{"text":"KART","color":"gold","bold":true},{"text":" : Z avancer, S freiner / reculer, Q / D tourner, ","color":"gray"},{"text":"ESPACE en tournant = dérapage","color":"yellow"},{"text":" (relâche après les étincelles bleues, orange ou violettes pour un mini-turbo). Boîtes ? = objets, clic droit pour les utiliser (F5 = vue 3e personne). 3 tours !","color":"gray"}]
+tellraw @a[tag=mg.play] [{"text":"🏎 ","color":"gold"},{"text":"KART","color":"gold","bold":true},{"text":" : Z avancer, S freiner / reculer, Q / D tourner, ","color":"gray"},{"text":"ESPACE en tournant = dérapage","color":"yellow"},{"text":" (relâche après les étincelles bleues, orange ou violettes pour un mini-turbo). Boîtes ? = objets (dans toute la barre), clic droit pour les utiliser (F5 = vue 3e personne). 3 tours !","color":"gray"}]
 ''')
 fn('cleanup', '''# Fin de course (appelé par core/return_lobby)
 kill @e[tag=mg.kpart]
@@ -564,9 +582,8 @@ execute if score $mz mg.st >= #kmr mg.st run scoreboard players operation $mz mg
 execute if score $mz mg.st >= #kmr mg.st run scoreboard players remove $mz mg.st 1
 execute store result storage mg:kart dot.c int 1 run scoreboard players get $mx mg.st
 execute store result storage mg:kart dot.r int 1 run scoreboard players get $mz mg.st
-scoreboard players operation $kc mg.st = @s mg.ri
-scoreboard players operation $kc mg.st %= #k8 mg.st
-''' + '\n'.join(f'execute if score $kc mg.st matches {k} run data modify storage mg:kart dot.col set value "{c}"' for k, c in enumerate(TEXTC)) + '''
+scoreboard players operation $kc mg.st = @e[tag=mg.kdot,limit=1] mg.kcol
+''' + '\n'.join(f'execute if score $kc mg.st matches {k} run data modify storage mg:kart dot.col set value "{c}"' for k, c in enumerate(TEXTC, 1)) + '''
 function mg:kart/mm_dot_m with storage mg:kart dot
 ''')
 fn('mm_dot_m', '$data modify storage mg:kart mm.l$(r)[$(c)] set value {text:"█",color:"$(col)"}\n')
@@ -619,7 +636,7 @@ function mg:kart/item_give
 ''')
 give = ['# Objet en main (case 1) ; clic droit en 1re personne, Ctrl dans les deux vues']
 for k, (name, color) in ITEMS.items():
-    give.append(f'execute if score @s mg.kit matches {k} run item replace entity @s hotbar.0 with minecraft:warped_fungus_on_a_stick'
+    give.append(f'execute if score @s mg.kit matches {k} run item replace entity @s hotbar.4 with minecraft:warped_fungus_on_a_stick'
                 f'[item_model="{MODEL[k]}",custom_name=[{{"text":"{name}","color":"{color}","bold":true,"italic":false}}],'
                 f'lore=[[{{"text":"Ctrl (ou clic droit) pour l\'utiliser","color":"gray","italic":false}}]],unbreakable={{}}]')
     give.append(f'execute if score @s mg.kit matches {k} run title @s subtitle [{{"text":"{name}","color":"{color}","bold":true}}]')
@@ -749,12 +766,17 @@ function mg:kart/end_line
 # ------------------------------------------------------------------ aiguillage vers le circuit ($ktr : 1 = Champignon, 2 = Royaume Koopa)
 for name in ('cp_check', 'cp_tp', 'bill_step', 'grid_tp', 'gate_on', 'gate_off', 'boxes', 'fl_add', 'fl_remove', 'mm_base', 'mm_show',
              'mm_init', 'const', 'hazards', 'track_tick'):
-    fn(name, f"""# Aiguillage : table du circuit en cours (générée dans t1/ ou t2/)
+    fn(name, f"""# Aiguillage : table du circuit en cours (générée dans t1/, t2/ ou t3/ pour l'arène de bataille)
 execute if score $ktr mg.st matches 2 run function mg:kart/t2/{name}
-execute unless score $ktr mg.st matches 2 run function mg:kart/t1/{name}
+execute if score $ktr mg.st matches 3 run function mg:kart/t3/{name}
+execute unless score $ktr mg.st matches 2..3 run function mg:kart/t1/{name}
 """)
 fn('loaded_all', """execute if score $ktr mg.st matches 2 run return run function mg:kart/t2/loaded_all
+execute if score $ktr mg.st matches 3 run return run function mg:kart/t3/loaded_all
 return run function mg:kart/t1/loaded_all
+""")
+fn('build_arena', """# (OP) Reconstruit l'arène de bataille (Forteresse Bob-omb) seule
+function mg:kart/t3/build
 """)
 fn('build', """# (OP) Construit le Circuit Champignon puis, s'il n'existe pas encore, le Royaume Koopa
 function mg:kart/t1/build

@@ -32,9 +32,9 @@ for tier, rng in (('tete', '..33'), ('milieu', '34..66'), ('queue', '67..')):
 roll += ['scoreboard players operation @s mg.kit = $kgv mg.st', 'function mg:kart/item_give']
 fn('item_roll', '\n'.join(roll) + '\n')
 
-give = ['# Objet en main (case 1) ; Ctrl (ou clic droit en 1re personne) pour l\'utiliser ; charges et animations de départ']
+give = ['# Objet en main (case 5, au milieu de la barre) ; Ctrl (ou clic droit en 1re personne) pour l\'utiliser ; charges et animations de départ']
 for k, (name, color) in ITEMS.items():
-    give.append(f'execute if score @s mg.kit matches {k} run item replace entity @s hotbar.0 with minecraft:warped_fungus_on_a_stick'
+    give.append(f'execute if score @s mg.kit matches {k} run item replace entity @s hotbar.4 with minecraft:warped_fungus_on_a_stick'
                 f'[item_model="{MODEL[k]}",custom_name=[{{"text":"{name}","color":"{color}","bold":true,"italic":false}}],'
                 f'lore=[[{{"text":"Clic droit pour l\'utiliser","color":"gray","italic":false}}]],unbreakable={{}}]')
     give.append(f'execute if score @s mg.kit matches {k} run title @s subtitle [{{"text":"{name}","color":"{color}","bold":true}}]')

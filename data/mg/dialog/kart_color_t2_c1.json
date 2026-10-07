@@ -1,0 +1,320 @@
+{
+  "type": "minecraft:multi_action",
+  "title": [
+    {
+      "text": "🎨 Couleur du kart (2/2)",
+      "color": "gold",
+      "bold": true
+    }
+  ],
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Clique une couleur pour la voir sur ton kart, puis ",
+          "color": "gray"
+        },
+        {
+          "text": "✔ Valider",
+          "color": "green",
+          "bold": true
+        },
+        {
+          "text": ".",
+          "color": "gray"
+        }
+      ],
+      "width": 300
+    },
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        },
+        {
+          "text": "",
+          "font": "mg:kartxl",
+          "color": "white"
+        },
+        {
+          "text": "\n\n\n"
+        },
+        {
+          "text": "Bolide  ",
+          "color": "red",
+          "bold": true
+        },
+        {
+          "text": "Rouge",
+          "color": "red",
+          "bold": true
+        },
+        {
+          "text": "\nVitesse  ",
+          "color": "gray"
+        },
+        {
+          "text": "▮▮▮▮▮▮▮▮▮",
+          "color": "gold"
+        },
+        {
+          "text": "▮",
+          "color": "dark_gray"
+        },
+        {
+          "text": "\nAccélération  ",
+          "color": "gray"
+        },
+        {
+          "text": "▮▮▮▮",
+          "color": "gold"
+        },
+        {
+          "text": "▮▮▮▮▮▮",
+          "color": "dark_gray"
+        },
+        {
+          "text": "\nManiabilité  ",
+          "color": "gray"
+        },
+        {
+          "text": "▮▮▮▮",
+          "color": "gold"
+        },
+        {
+          "text": "▮▮▮▮▮▮",
+          "color": "dark_gray"
+        },
+        {
+          "text": "\nTout-terrain  ",
+          "color": "gray"
+        },
+        {
+          "text": "▮▮▮",
+          "color": "gold"
+        },
+        {
+          "text": "▮▮▮▮▮▮▮",
+          "color": "dark_gray"
+        },
+        {
+          "text": "\nPoids  ",
+          "color": "gray"
+        },
+        {
+          "text": "▮▮▮▮▮▮",
+          "color": "gold"
+        },
+        {
+          "text": "▮▮▮▮",
+          "color": "dark_gray"
+        }
+      ],
+      "width": 400
+    }
+  ],
+  "columns": 3,
+  "can_close_with_escape": true,
+  "pause": false,
+  "after_action": "close",
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "█ ",
+          "color": "red"
+        },
+        {
+          "text": "Rouge",
+          "color": "red",
+          "bold": true
+        }
+      ],
+      "width": 100,
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.kch set 11"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "█ ",
+          "color": "blue"
+        },
+        {
+          "text": "Bleu",
+          "color": "blue",
+          "bold": true
+        }
+      ],
+      "width": 100,
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.kch set 12"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "█ ",
+          "color": "green"
+        },
+        {
+          "text": "Vert",
+          "color": "green",
+          "bold": true
+        }
+      ],
+      "width": 100,
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.kch set 13"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "█ ",
+          "color": "yellow"
+        },
+        {
+          "text": "Jaune",
+          "color": "yellow",
+          "bold": true
+        }
+      ],
+      "width": 100,
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.kch set 14"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "█ ",
+          "color": "dark_purple"
+        },
+        {
+          "text": "Violet",
+          "color": "dark_purple",
+          "bold": true
+        }
+      ],
+      "width": 100,
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.kch set 15"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "█ ",
+          "color": "gold"
+        },
+        {
+          "text": "Orange",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "width": 100,
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.kch set 16"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "█ ",
+          "color": "aqua"
+        },
+        {
+          "text": "Cyan",
+          "color": "aqua",
+          "bold": true
+        }
+      ],
+      "width": 100,
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.kch set 17"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "█ ",
+          "color": "light_purple"
+        },
+        {
+          "text": "Rose",
+          "color": "light_purple",
+          "bold": true
+        }
+      ],
+      "width": 100,
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.kch set 18"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🎲 Auto",
+          "color": "white"
+        }
+      ],
+      "width": 100,
+      "tooltip": [
+        {
+          "text": "Une couleur différente pour chaque pilote (et tu es prêt)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.kch set 19"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "◀ Modèle",
+          "color": "gray"
+        }
+      ],
+      "width": 100,
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.kch set 30"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✔ Valider",
+          "color": "green",
+          "bold": true
+        }
+      ],
+      "width": 100,
+      "tooltip": [
+        {
+          "text": "Je suis prêt pour le départ",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.kch set 20"
+      }
+    }
+  ]
+}

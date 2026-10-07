@@ -5,6 +5,10 @@ scoreboard players reset @s mg.go
 # Kart : 61 = Circuit Champignon, 62 = Royaume Koopa → jeu 61 + circuit $ktr
 scoreboard players set $ktr mg.st 1
 execute if score $game mg.st matches 62 run scoreboard players set $ktr mg.st 2
+scoreboard players set $kbat mg.st 0
+execute if score $game mg.st matches 63 run scoreboard players set $kbat mg.st 1
+execute if score $game mg.st matches 63 run scoreboard players set $ktr mg.st 3
+execute if score $game mg.st matches 63 run scoreboard players set $game mg.st 61
 execute if score $game mg.st matches 62 run scoreboard players set $game mg.st 61
 
 # Mini Party : 59 = 8 tours, 60 = 15 tours. Un jeu lancé hors Mini Party ($mpl) met fin à la partie en cours
@@ -139,6 +143,7 @@ execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color"
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
 execute if score $game mg.st matches 61 if score $ktr mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une course de ","color":"gray"},{"text":"🏎 KART","color":"gold","bold":true},{"text":" sur le Circuit Champignon (3 tours, objets) !","color":"gray"}]
 execute if score $game mg.st matches 61 if score $ktr mg.st matches 2 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une course de ","color":"gray"},{"text":"🏎 KART","color":"gold","bold":true},{"text":" dans le Royaume Koopa (3 tours, pièges, objets) !","color":"gray"}]
+execute if score $game mg.st matches 61 if score $ktr mg.st matches 3 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une ","color":"gray"},{"text":"🎈 BATAILLE DE KARTS","color":"red","bold":true},{"text":" dans la Forteresse Bob-omb (3 ballons chacun, dernier en lice gagne) !","color":"gray"}]
 execute if score $game mg.st matches 59 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une ","color":"gray"},{"text":"MINI PARTY","color":"gold","bold":true},{"text":" : plateau, dé, étoiles et mini-jeux (","color":"gray"},{"score":{"name":"$mpmax","objective":"mg.st"},"color":"yellow"},{"text":" tours) !","color":"gray"}]
 execute if score $game mg.st matches 6 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"MOB ARENA","color":"dark_green","bold":true},{"text":" !","color":"gray"}]
 execute if score $pc mg.st matches 1 run tellraw @a [{"text":"Mode ","color":"gray"},{"text":"CLASSES","color":"gold","bold":true},{"text":" : choisis ta classe d'équipement pendant le compte à rebours !","color":"gray"}]
