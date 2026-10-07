@@ -38,15 +38,16 @@ TEXTC = ['red', 'blue', 'green', 'yellow', 'dark_purple', 'gold', 'aqua', 'light
 T0 = 'left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f]'
 KS = 0.75   # taille du kart (1 = modèle d'origine)
 def ks(v): return round(v * KS, 3)
-def part(block, tr, sc):
-    return ('{id:"minecraft:block_display",Tags:["mg.kpart","mg.fx"],teleport_duration:2,block_state:{Name:"minecraft:%s"},'
-            'transformation:{translation:[%sf,%sf,%sf],%s,scale:[%sf,%sf,%sf]}}' % (block, *map(ks, tr), T0, *map(ks, sc)))
-PASSENGERS = ','.join([
-    part('black_concrete', (-0.78, 0.0, 0.45), (1.56, 0.42, 0.42)),
-    part('black_concrete', (-0.78, 0.0, -0.85), (1.56, 0.42, 0.42)),
-    part('gray_concrete', (-0.4, 0.5, -0.75), (0.8, 0.5, 0.2)),
-    part('light_gray_concrete', (-0.08, 0.5, 0.45), (0.16, 0.35, 0.16)),
-])
+def part(block, tr, sc, tag):
+    return ('{id:"minecraft:block_display",Tags:["mg.kpart","mg.fx","%s"],teleport_duration:2,block_state:{Name:"minecraft:%s"},'
+            'transformation:{translation:[%sf,%sf,%sf],%s,scale:[%sf,%sf,%sf]}}' % (tag, block, *map(ks, tr), T0, *map(ks, sc)))
+# pièces du kart (bloc, translation, échelle, marqueur) ; le corps est le kart lui-même (ROOT)
+ROOT = ((-0.6, 0.12, -0.95), (1.2, 0.38, 1.9))
+PARTS = [('black_concrete', (-0.78, 0.0, 0.45), (1.56, 0.42, 0.42), 'mg.kp1'),
+         ('black_concrete', (-0.78, 0.0, -0.85), (1.56, 0.42, 0.42), 'mg.kp2'),
+         ('gray_concrete', (-0.4, 0.5, -0.75), (0.8, 0.5, 0.2), 'mg.kp3'),
+         ('light_gray_concrete', (-0.08, 0.5, 0.45), (0.16, 0.35, 0.16), 'mg.kp4')]
+PASSENGERS = ','.join(part(*p) for p in PARTS)
 
 # ------------------------------------------------------------------ préparation, départ, fin
 fn('prepare', '''# Kart : préparation pendant le compte à rebours (zone chargée, pilotes sur la grille, karts dès que la zone est prête)
@@ -63,6 +64,9 @@ scoreboard players set #k20 mg.st 20
 scoreboard players set #k100 mg.st 100
 scoreboard players set #k1000 mg.st 1000
 scoreboard players set #k60 mg.st 60
+scoreboard players set #k12 mg.st 12
+scoreboard players set #k65 mg.st 65
+scoreboard players set #k120 mg.st 120
 scoreboard players set #kkmh mg.st 108
 scoreboard players set $px mg.st 0
 scoreboard players set $py mg.st 110
@@ -85,6 +89,11 @@ scoreboard players set @a[tag=mg.play] mg.kbo 0
 scoreboard players set @a[tag=mg.play] mg.khi 0
 scoreboard players set @a[tag=mg.play] mg.kst 0
 scoreboard players set @a[tag=mg.play] mg.kit 0
+scoreboard players set @a[tag=mg.play] mg.kic 0
+scoreboard players set @a[tag=mg.play] mg.kgd 0
+scoreboard players set @a[tag=mg.play] mg.kbill 0
+scoreboard players set @a[tag=mg.play] mg.kboo 0
+scoreboard players set @a[tag=mg.play] mg.kmg 0
 scoreboard players set @a[tag=mg.play] mg.kcp 0
 scoreboard players set @a[tag=mg.play] mg.klp 0
 scoreboard players set @a[tag=mg.play] mg.kvy 0
@@ -728,6 +737,9 @@ execute as @a[tag=mg.play] if score @s mg.krk = $kr0 mg.st run tellraw @a[tag=!m
 scoreboard players add $kr0 mg.st 1
 function mg:kart/end_line
 ''')
+# objets Mario Kart (v3) : redéfinit item_roll, item_give, use_item, hit, speed, drive, tick, every4, shell_tick, hud
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'items_part.py'), encoding='utf-8').read())
+
 # anciennes fonctions qui n'existent plus dans cette version
 for old in ('remount', 'star_touch_old', 'grid_player'):
     p = os.path.join(K, old + '.mcfunction')

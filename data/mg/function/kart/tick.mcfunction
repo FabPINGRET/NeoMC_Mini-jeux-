@@ -1,5 +1,7 @@
 # Kart (état 2, jeu 61)
 scoreboard players add $ktime mg.st 1
+execute if score $rp mg.st matches 1 as @e[tag=mg.kart,tag=!mg.rps] at @s run function mg:kart/rp_skin
+execute if score $rp mg.st matches 1 as @e[tag=mg.fx,tag=!mg.rps] at @s run function mg:kart/rp_skin
 scoreboard players enable @a[tag=mg.play] mg.kv
 execute as @a[tag=mg.play] run function mg:kart/drive
 tag @e[tag=mg.kk] remove mg.kk
@@ -10,6 +12,8 @@ execute as @e[type=minecraft:item_display,tag=mg.kboff] run function mg:kart/box
 execute as @e[type=minecraft:item_display,tag=mg.kshell] at @s run function mg:kart/shell_tick
 execute as @e[type=minecraft:item_display,tag=mg.kban] at @s run function mg:kart/banana_tick
 execute as @e[type=minecraft:item_display,tag=mg.kblue] at @s run function mg:kart/blue_tick
+execute as @e[type=minecraft:item_display,tag=mg.kbomb] at @s run function mg:kart/bomb_tick
+execute as @e[type=minecraft:item_display,tag=mg.kfake] at @s run function mg:kart/fake_tick
 
 scoreboard players add $kph mg.st 1
 execute if score $kph mg.st matches 4.. run function mg:kart/every4
