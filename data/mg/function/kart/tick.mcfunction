@@ -1,6 +1,6 @@
 # Kart (état 2, jeu 61)
 scoreboard players add $ktime mg.st 1
-execute if score $rp mg.st matches 1 as @e[tag=mg.kart,tag=!mg.rps] at @s run function mg:kart/rp_skin
+execute if score $rp mg.st matches 1 as @e[type=minecraft:block_display,tag=mg.kart,tag=!mg.rps] at @s run function mg:kart/rp_skin
 execute if score $rp mg.st matches 1 as @e[tag=mg.fx,tag=!mg.rps] at @s run function mg:kart/rp_skin
 function mg:kart/track_tick
 function mg:kart/music

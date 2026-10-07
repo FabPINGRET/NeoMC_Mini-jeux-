@@ -1,3 +1,4 @@
 # Fichiers de travail / monde serveur
 *.log
 cache/
+releases/minijeux_void*.zip

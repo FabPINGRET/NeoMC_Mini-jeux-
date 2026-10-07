@@ -1,5 +1,5 @@
 # Le Laboratoire Alchimique — tick
-execute as @e[tag=mg.cloud] at @s run function mg:mobarena/lab/cloud_tick
+execute as @e[type=minecraft:marker,tag=mg.cloud] at @s run function mg:mobarena/lab/cloud_tick
 # Petits slimes issus des alambics brisés : supprimés
 kill @e[distance=0..,type=minecraft:slime,tag=!mg.alembic]
 # Sorcières : toutes les 4 s, un nuage de potion de zone sous le joueur le plus proche d'elles

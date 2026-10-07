@@ -9,6 +9,6 @@ scoreboard players operation $m1 mg.st %= $k100 mg.st
 execute if score $m1 mg.st matches 0 at @r[tag=mg.play] run function mg:mobarena/lab/cloud_big
 # Phase 2 à 50 % des PV : bouclier + quatre alambics à briser
 execute if entity @e[tag=mg.boss,tag=!mg.ph2] if score $bh2 mg.st <= $bmax mg.st run function mg:mobarena/lab/phase2
-execute at @e[tag=mg.alembic] run particle minecraft:sneeze ~ ~1.8 ~ 0.6 0.8 0.6 0 3
-execute store result score $al mg.st if entity @e[tag=mg.alembic]
+execute at @e[type=minecraft:slime,tag=mg.alembic] run particle minecraft:sneeze ~ ~1.8 ~ 0.6 0.8 0.6 0 3
+execute store result score $al mg.st if entity @e[type=minecraft:slime,tag=mg.alembic]
 execute if entity @e[tag=mg.boss,tag=mg.shield] if score $al mg.st matches 0 run function mg:mobarena/lab/unshield

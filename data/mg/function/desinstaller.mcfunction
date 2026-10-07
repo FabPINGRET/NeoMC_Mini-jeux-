@@ -134,3 +134,106 @@ tag @a remove mg.win
 tag @a remove mg.spectate
 tag @a remove mg.admin
 tellraw @a [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Désinstallé. Les constructions restent (les arènes ne sont pas effacées). Retire ensuite le datapack du dossier datapacks.","color":"gray"}]
+
+# Objectifs restants
+scoreboard objectives remove mg.stp
+scoreboard objectives remove mg.stk
+scoreboard objectives remove mg.dfl
+scoreboard objectives remove mg.dlv
+scoreboard objectives remove mg.dpw
+scoreboard objectives remove mg.ok
+scoreboard objectives remove mg.svid
+scoreboard objectives remove mg.svvx
+
+# Annule les constructions planifiées en cours (chaînes schedule)
+schedule clear mg:bb/clear_old_run
+schedule clear mg:core/diag_late
+schedule clear mg:core/setup_build
+schedule clear mg:dropadv/build
+schedule clear mg:dropadv/build_10
+schedule clear mg:dropadv/build_11
+schedule clear mg:dropadv/build_12
+schedule clear mg:dropadv/build_2
+schedule clear mg:dropadv/build_3
+schedule clear mg:dropadv/build_4
+schedule clear mg:dropadv/build_5
+schedule clear mg:dropadv/build_6
+schedule clear mg:dropadv/build_7
+schedule clear mg:dropadv/build_8
+schedule clear mg:dropadv/build_9
+schedule clear mg:dropadv/build_wait
+schedule clear mg:kart/build
+schedule clear mg:kart/place_all
+schedule clear mg:kart/pre_tick
+schedule clear mg:kart/t1/build_2
+schedule clear mg:kart/t1/build_3
+schedule clear mg:kart/t1/build_4
+schedule clear mg:kart/t1/build_5
+schedule clear mg:kart/t1/build_6
+schedule clear mg:kart/t1/build_7
+schedule clear mg:kart/t1/build_8
+schedule clear mg:kart/t1/build_wait
+schedule clear mg:kart/t2/build
+schedule clear mg:kart/t2/build_10
+schedule clear mg:kart/t2/build_11
+schedule clear mg:kart/t2/build_12
+schedule clear mg:kart/t2/build_13
+schedule clear mg:kart/t2/build_14
+schedule clear mg:kart/t2/build_15
+schedule clear mg:kart/t2/build_16
+schedule clear mg:kart/t2/build_17
+schedule clear mg:kart/t2/build_18
+schedule clear mg:kart/t2/build_19
+schedule clear mg:kart/t2/build_2
+schedule clear mg:kart/t2/build_20
+schedule clear mg:kart/t2/build_21
+schedule clear mg:kart/t2/build_22
+schedule clear mg:kart/t2/build_23
+schedule clear mg:kart/t2/build_24
+schedule clear mg:kart/t2/build_25
+schedule clear mg:kart/t2/build_26
+schedule clear mg:kart/t2/build_27
+schedule clear mg:kart/t2/build_28
+schedule clear mg:kart/t2/build_29
+schedule clear mg:kart/t2/build_3
+schedule clear mg:kart/t2/build_30
+schedule clear mg:kart/t2/build_31
+schedule clear mg:kart/t2/build_32
+schedule clear mg:kart/t2/build_33
+schedule clear mg:kart/t2/build_34
+schedule clear mg:kart/t2/build_35
+schedule clear mg:kart/t2/build_36
+schedule clear mg:kart/t2/build_37
+schedule clear mg:kart/t2/build_38
+schedule clear mg:kart/t2/build_39
+schedule clear mg:kart/t2/build_4
+schedule clear mg:kart/t2/build_5
+schedule clear mg:kart/t2/build_6
+schedule clear mg:kart/t2/build_7
+schedule clear mg:kart/t2/build_8
+schedule clear mg:kart/t2/build_9
+schedule clear mg:kart/t2/build_wait
+schedule clear mg:kart/t3/build
+schedule clear mg:kart/t3/build_10
+schedule clear mg:kart/t3/build_11
+schedule clear mg:kart/t3/build_12
+schedule clear mg:kart/t3/build_2
+schedule clear mg:kart/t3/build_3
+schedule clear mg:kart/t3/build_4
+schedule clear mg:kart/t3/build_5
+schedule clear mg:kart/t3/build_6
+schedule clear mg:kart/t3/build_7
+schedule clear mg:kart/t3/build_8
+schedule clear mg:kart/t3/build_9
+schedule clear mg:kart/t3/build_wait
+schedule clear mg:mobarena/xbuild
+schedule clear mg:mobarena/xbuild2
+schedule clear mg:party/build
+schedule clear mg:party/build_2
+schedule clear mg:party/build_3
+schedule clear mg:party/build_4
+schedule clear mg:party/build_5
+schedule clear mg:party/build_6
+schedule clear mg:party/build_7
+schedule clear mg:party/build_8
+schedule clear mg:plot/build_all

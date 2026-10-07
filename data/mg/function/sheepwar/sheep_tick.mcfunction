@@ -23,8 +23,7 @@ execute if score @s mg.t matches 1..29 run function mg:sheepwar/fuse_fx
 execute if score @s mg.t matches 15 if entity @s[tag=mg.k_space] run effect give @a[tag=mg.play,distance=..7] minecraft:levitation 1 1 true
 
 # Tombé dans le vide → disparaît sans effet
-execute store result score $sy mg.st run data get entity @s Pos[1]
-execute if score $sy mg.st matches ..55 run return run kill @s
+execute at @s if entity @s[y=-1993,dy=2048] run return run kill @s
 
 # Fin de mèche
 execute if score @s mg.t matches ..0 run function mg:sheepwar/boom

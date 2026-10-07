@@ -949,10 +949,9 @@ allpts = [(63, 0)] + [(y, 0) for (x, z, y, b) in S1] + [(67, 1), (67, 1), (68, 1
 for (x, y, z, i) in spiral: allpts.append((y, 1 if i < 14 else (2 if i < 28 else 3)))
 allpts.append((FINY, 3))
 for (y, sgm) in allpts: segmin[sgm] = min(segmin.get(sgm, 999), y)
-fc = ['# Chute : en dessous du point le plus bas du tronçon → retour au dernier checkpoint (@s = coureur) (généré)',
-      'execute store result score $y mg.st run data get entity @s Pos[1]']
+fc = ['# Chute : en dessous du point le plus bas du tronçon → retour au dernier checkpoint (@s = coureur) (généré)']
 for sgm in range(4):
-    fc.append(f'execute if score @s mg.ppc matches {sgm} if score $y mg.st matches ..{segmin[sgm] - 3} run return run function mg:parkour/fall')
+    fc.append(f'execute if score @s mg.ppc matches {sgm} at @s if entity @s[y={segmin[sgm] - 3 - 2048},dy=2048] run return run function mg:parkour/fall')
 wr('parkour/fall_check', fc)
 wr('parkour/fall', ['# Chute (@s = coureur) : retour au dernier checkpoint, tourné vers le saut suivant',
                     'scoreboard players add @s mg.ppf 1', 'scoreboard players operation $ck mg.st = @s mg.ppc', 'tag @s add mg.pkx',

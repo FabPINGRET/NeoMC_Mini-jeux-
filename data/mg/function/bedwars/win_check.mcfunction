@@ -1,5 +1,5 @@
-# Bedwars — une seule équipe restante : laquelle ?
-execute if entity @a[team=mg_red,tag=mg.play] run function mg:core/win_red
-execute if entity @a[team=mg_blue,tag=mg.play] run function mg:core/win_blue
-execute if entity @a[team=mg_green,tag=mg.play] run function mg:core/win_green
-execute if entity @a[team=mg_yellow,tag=mg.play] run function mg:core/win_yellow
+# Bedwars — une seule équipe restante : laquelle ? (grâce comprise : équipe hors ligne, lit intact)
+execute if score $gr_red mg.st matches 1.. run function mg:core/win_red
+execute if score $gr_blue mg.st matches 1.. run function mg:core/win_blue
+execute if score $gr_green mg.st matches 1.. run function mg:core/win_green
+execute if score $gr_yellow mg.st matches 1.. run function mg:core/win_yellow
