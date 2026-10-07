@@ -137,6 +137,11 @@ tag @a remove mg.admin
 tellraw @a [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Désinstallé. Les constructions restent (les arènes ne sont pas effacées). Retire ensuite le datapack du dossier datapacks.","color":"gray"}]
 
 # Objectifs restants
+scoreboard objectives remove mg.ec
+scoreboard objectives remove mg.et
+scoreboard objectives remove mg.eg
+scoreboard objectives remove mg.est
+scoreboard objectives remove mg.erb
 scoreboard objectives remove mg.fd
 scoreboard objectives remove mg.stp
 scoreboard objectives remove mg.stk
@@ -241,3 +246,9 @@ schedule clear mg:party/build_8
 schedule clear mg:plot/build_all
 schedule clear mg:lobby/food_build
 kill @e[tag=mg.foodd]
+schedule clear mg:elytra/build
+kill @e[tag=mg.elyd]
+clear @a minecraft:elytra[minecraft:custom_data~{mg_ely:1b}]
+clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_ely:1b}]
+data remove storage mg:lobby ely1
+data remove storage mg:lobby food1

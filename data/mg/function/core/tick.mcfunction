@@ -43,6 +43,11 @@ execute as @a[scores={mg.opt=1..}] run function mg:core/opt
 # Armurerie du lobby
 execute if score $setup mg.st matches 1 run function mg:lobby/armory_tick
 scoreboard players remove @a[scores={mg.fd=1..}] mg.fd 1
+# Parcours d'élytra : socle de départ, joueurs en vol, objets du parcours jamais conservés
+execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.ely,gamemode=adventure,x=16,y=63,z=-9,dx=0.99,dy=2.5,dz=0.99] run function mg:elytra/start
+execute as @a[tag=mg.ely] at @s run function mg:elytra/player
+execute if score $lan mg.t matches 20 run clear @a[tag=!mg.ely] minecraft:elytra[minecraft:custom_data~{mg_ely:1b}]
+execute if score $lan mg.t matches 20 run clear @a[tag=!mg.ely] minecraft:firework_rocket[minecraft:custom_data~{mg_ely:1b}]
 execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,gamemode=adventure,x=24,y=63,z=19,dx=0.99,dy=2.5,dz=0.99] run function mg:lobby/food_give
 
 # Kart libre du spawn

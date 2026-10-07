@@ -1,5 +1,6 @@
 # Buffet gratuit du spawn (sud-est, pelouse libre) : construction + présentoirs
 kill @e[tag=mg.foodd]
+data modify storage mg:lobby food1 set value 1b
 
 # Terrasse et comptoir
 fill 24 63 17 29 63 21 minecraft:spruce_planks

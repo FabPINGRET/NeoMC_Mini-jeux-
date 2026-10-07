@@ -22,3 +22,4 @@ tellraw @s [{"text":"• (OP) Tout désinstaller : ","color":"gray"},{"text":"/f
 tellraw @s [{"text":"• Déco/reco : ","color":"gray"},{"text":"spectateur dans la partie en cours, sinon lobby (inventaire vidé)","color":"yellow"}]
 tellraw @s [{"text":"• PvP classes : ","color":"gray"},{"text":"/trigger mg.cls set 1..6","color":"yellow"},{"text":" pendant le compte à rebours","color":"gray"}]
 tellraw @s [{"text":"• Mes statistiques (tous) : ","color":"gray"},{"text":"/trigger mg.opt set 25","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.opt set 25"}}]
+tellraw @s [{"text":"• Parcours d'élytra (tous) : socle bleu à l'est de la place du spawn, 8 anneaux chronométrés","color":"gray"}]
