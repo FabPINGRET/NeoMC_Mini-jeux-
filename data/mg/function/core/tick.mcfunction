@@ -66,7 +66,7 @@ execute if score $state mg.st matches 3 run function mg:core/ending
 # Hors partie : nettoyage de sécurité + rattrapage du vide
 execute if score $state mg.st matches 0 run tag @a remove mg.play
 execute if score $state mg.st matches 0 run tag @a remove mg.out
-execute if score $state mg.st matches 0 as @a[gamemode=spectator,tag=!mg.visit,tag=!mg.surv] run function mg:core/back_to_lobby
+execute if score $state mg.st matches 0 as @a[gamemode=spectator,tag=!mg.visit,tag=!mg.surv,tag=!mg.lk] run function mg:core/back_to_lobby
 execute as @a[tag=mg.init,tag=!mg.play,tag=!mg.out,tag=!mg.surv] at @s run function mg:core/void_catch
 
 # Visiteurs de plots : confinés à la zone des plots
