@@ -10,16 +10,16 @@ scoreboard players operation $tm mg.st > $nb mg.st
 
 # Plus il y a de monde, moins il y a de moutons : (stock de départ, période de recharge, moutons par recharge)
 scoreboard players set $sa mg.st 12
-scoreboard players set $srp mg.st 100
+scoreboard players set $srp mg.st 70
 scoreboard players set $srn mg.st 2
 execute if score $tm mg.st matches 2 run scoreboard players set $sa mg.st 8
-execute if score $tm mg.st matches 2 run scoreboard players set $srp mg.st 120
+execute if score $tm mg.st matches 2 run scoreboard players set $srp mg.st 85
 execute if score $tm mg.st matches 2 run scoreboard players set $srn mg.st 1
 execute if score $tm mg.st matches 3..4 run scoreboard players set $sa mg.st 6
-execute if score $tm mg.st matches 3..4 run scoreboard players set $srp mg.st 160
+execute if score $tm mg.st matches 3..4 run scoreboard players set $srp mg.st 115
 execute if score $tm mg.st matches 3..4 run scoreboard players set $srn mg.st 1
 execute if score $tm mg.st matches 5.. run scoreboard players set $sa mg.st 4
-execute if score $tm mg.st matches 5.. run scoreboard players set $srp mg.st 200
+execute if score $tm mg.st matches 5.. run scoreboard players set $srp mg.st 145
 execute if score $tm mg.st matches 5.. run scoreboard players set $srn mg.st 1
 scoreboard players operation $sr mg.st = $srp mg.st
 

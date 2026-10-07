@@ -9,5 +9,5 @@ execute unless entity @s[tag=mg.play] run return 0
 # Micro-délai d'1 s entre deux lancers : le mouton « consommé » trop tôt est rendu
 execute if score @s mg.cd matches 1.. run return run function mg:sheepwar/refund
 
-scoreboard players set @s mg.cd 20
+scoreboard players set @s mg.cd 10
 execute at @s anchored eyes run function mg:sheepwar/launch
