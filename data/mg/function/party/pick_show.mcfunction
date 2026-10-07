@@ -113,7 +113,10 @@ execute if score $mgk mg.st matches 37 run title @a[tag=mg.mpp] title [{"text":"
 execute if score $mgk mg.st matches 38 run scoreboard players set $mgid mg.st 61
 execute if score $mgk mg.st matches 38 run scoreboard players set $mplim mg.st 9600
 execute if score $mgk mg.st matches 38 run title @a[tag=mg.mpp] title [{"text":"KART","color":"gold","bold":true}]
-execute if score $mgk mg.st matches 39 run scoreboard players set $mgid mg.st 57
-execute if score $mgk mg.st matches 39 run scoreboard players set $mplim mg.st 12000
-execute if score $mgk mg.st matches 39 run title @a[tag=mg.mpp] title [{"text":"BUILD BATTLE","color":"green","bold":true}]
+execute if score $mgk mg.st matches 39 run scoreboard players set $mgid mg.st 62
+execute if score $mgk mg.st matches 39 run scoreboard players set $mplim mg.st 10800
+execute if score $mgk mg.st matches 39 run title @a[tag=mg.mpp] title [{"text":"KART : ROYAUME KOOPA","color":"red","bold":true}]
+execute if score $mgk mg.st matches 40 run scoreboard players set $mgid mg.st 57
+execute if score $mgk mg.st matches 40 run scoreboard players set $mplim mg.st 12000
+execute if score $mgk mg.st matches 40 run title @a[tag=mg.mpp] title [{"text":"BUILD BATTLE","color":"green","bold":true}]
 execute as @a[tag=mg.mpp] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 1.5

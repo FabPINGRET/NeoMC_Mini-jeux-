@@ -4,6 +4,7 @@ execute unless score $state mg.st matches 1..2 run return 0
 execute unless function mg:kart/loaded_all run return run schedule function mg:kart/place_all 10t
 function mg:kart/gate_on
 function mg:kart/boxes
+function mg:kart/hazards
 execute as @a[tag=mg.play] at @s run function mg:kart/kart_new
 execute as @a[tag=mg.play] run function mg:kart/grid_face
 execute as @a[tag=mg.play] run function mg:kart/place_seat

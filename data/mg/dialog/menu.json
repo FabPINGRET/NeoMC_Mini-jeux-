@@ -42,6 +42,25 @@
     {
       "label": [
         {
+          "text": "🏎 KART : Royaume Koopa",
+          "color": "red",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Grand circuit de 1,6 km : plage, jungle, désert, château de Bowser ; montées, sauts, Thwomps, plantes Piranha, Chomp...",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 62"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "★ Mini Party ▸",
           "color": "gold"
         }

@@ -311,6 +311,7 @@ execute unless entity @e[tag=mg.kk] run function mg:kart/kk
 execute if score @s mg.kv matches 1.. run function mg:kart/view_cmd
 function mg:kart/seat
 execute as {KK} at @s run function mg:kart/probe
+execute if score $kg mg.st matches 0 if score @s mg.kvy matches ..0 as {KK} at @s unless block ~ ~-1.2 ~ #mg:kart_pass run function mg:kart/step_down
 
 scoreboard players set $kf mg.st 0
 scoreboard players set $kb mg.st 0
@@ -375,6 +376,7 @@ execute if score @s mg.kit matches 12 run scoreboard players set @s mg.kit 0
 # --- tick : nouveaux objets au sol / en l'air
 fn('tick', f'''# Kart (état 2, jeu 61)
 scoreboard players add $ktime mg.st 1
+function mg:kart/track_tick
 scoreboard players enable @a[tag=mg.play] mg.kv
 execute as @a[tag=mg.play] run function mg:kart/drive
 tag @e[tag=mg.kk] remove mg.kk

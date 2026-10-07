@@ -1,4 +1,7 @@
 # Kart : préparation pendant le compte à rebours (zone chargée, pilotes sur la grille, karts dès que la zone est prête)
+execute unless score $ktr mg.st matches 1..2 run scoreboard players set $ktr mg.st 1
+execute if score $ktr mg.st matches 2 unless data storage mg:kart built2 run tellraw @a [{"text":"⚠ Le Royaume Koopa est encore en construction : course sur le Circuit Champignon.","color":"gold"}]
+execute if score $ktr mg.st matches 2 unless data storage mg:kart built2 run scoreboard players set $ktr mg.st 1
 function mg:kart/const
 function mg:kart/fl_add
 function mg:kart/mm_base
@@ -16,9 +19,6 @@ scoreboard players set #k12 mg.st 12
 scoreboard players set #k65 mg.st 65
 scoreboard players set #k120 mg.st 120
 scoreboard players set #kkmh mg.st 108
-scoreboard players set $px mg.st 0
-scoreboard players set $py mg.st 110
-scoreboard players set $pz mg.st 16500
 scoreboard players set $ktime mg.st 0
 scoreboard players set $kfo mg.st 0
 scoreboard players set $kend mg.st 0
@@ -27,6 +27,7 @@ scoreboard players set $gi mg.st 0
 kill @e[tag=mg.ib]
 kill @e[tag=mg.kpart]
 kill @e[tag=mg.kcam]
+kill @e[tag=mg.khz]
 gamemode adventure @a[tag=mg.play]
 clear @a[tag=mg.play]
 tag @a remove mg.kfin

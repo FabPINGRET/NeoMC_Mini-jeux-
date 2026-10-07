@@ -1,3 +1,3 @@
-# Zone du circuit chargée (construction, course)
-forceload add -140 16390 -1 16610
-forceload add 0 16390 140 16610
+# Aiguillage : table du circuit en cours (générée dans t1/ ou t2/)
+execute if score $ktr mg.st matches 2 run function mg:kart/t2/fl_add
+execute unless score $ktr mg.st matches 2 run function mg:kart/t1/fl_add

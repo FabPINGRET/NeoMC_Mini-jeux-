@@ -9,5 +9,6 @@ scoreboard players set $kbp mg.st 0
 execute if block ~ ~-0.5 ~ minecraft:orange_glazed_terracotta run scoreboard players set $kbp mg.st 1
 scoreboard players set $kwa mg.st 0
 execute if block ~ ~0.3 ~ minecraft:water run scoreboard players set $kwa mg.st 1
+execute if block ~ ~-0.5 ~ minecraft:lava run scoreboard players set $kwa mg.st 1
 execute store result score $kyy mg.st run data get entity @s Pos[1] 100
 execute store result score $kyaw mg.st run data get entity @s Rotation[0] 10
