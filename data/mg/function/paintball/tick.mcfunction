@@ -3,6 +3,9 @@
 # Cadence de tir
 execute as @a[tag=mg.play,scores={mg.cd=1..}] run scoreboard players remove @s mg.cd 1
 
+# Attente au respawn (3 s immobilisé)
+execute as @a[tag=mg.play,scores={mg.cd=21..}] run function mg:paintball/respawn_wait
+
 # Tirs
 execute as @a[tag=mg.play,scores={mg.qs=1..}] run function mg:paintball/shoot
 

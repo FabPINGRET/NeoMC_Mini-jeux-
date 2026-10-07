@@ -1,7 +1,7 @@
 # Paintball — début de partie
-scoreboard players set $tl mg.st 4800
-execute if score $pbm mg.st matches 1 run scoreboard players set $tl mg.st 3600
-execute if score $pbm mg.st matches 2 run scoreboard players set $tl mg.st 7200
+scoreboard players set $tl mg.st 2400
+execute if score $pbm mg.st matches 1 run scoreboard players set $tl mg.st 1800
+execute if score $pbm mg.st matches 2 run scoreboard players set $tl mg.st 3600
 scoreboard players set $c100 mg.st 100
 scoreboard players set $c20 mg.st 20
 scoreboard players set $pa mg.st 0
@@ -19,10 +19,10 @@ execute as @a[tag=mg.play] run function mg:paintball/kit
 execute as @a[tag=mg.play] run function mg:paintball/fx
 scoreboard players set Orange mg.pb 0
 scoreboard players set Bleu mg.pb 0
-scoreboard players set Temps mg.pb 240
-execute if score $pbm mg.st matches 1 run scoreboard players set Temps mg.pb 180
-execute if score $pbm mg.st matches 2 run scoreboard players set Temps mg.pb 360
+scoreboard players set Temps mg.pb 120
+execute if score $pbm mg.st matches 1 run scoreboard players set Temps mg.pb 90
+execute if score $pbm mg.st matches 2 run scoreboard players set Temps mg.pb 180
 scoreboard objectives setdisplay sidebar mg.pb
-tellraw @a[tag=mg.play] [{"text":"▓ PAINTBALL : ","color":"gold","bold":true},{"text":"peins le terrain à ta couleur (clic droit maintenu) ! Ton encre se recharge vite sur ta propre peinture, où tu cours plus vite ; sur la peinture ennemie tu es ralenti. Touche un adversaire 3 fois pour l'éclabousser. Le plus de terrain peint après 4 min gagne !","color":"gray"}]
+tellraw @a[tag=mg.play] [{"text":"▓ PAINTBALL : ","color":"gold","bold":true},{"text":"peins le terrain à ta couleur (clic droit maintenu) ! Ton encre se recharge vite sur ta propre peinture, où tu cours plus vite ; sur la peinture ennemie tu es ralenti. Touche un adversaire 3 fois pour l'éclabousser. Le plus de terrain peint à la fin du temps gagne ! Après une éclaboussure, 3 s d'attente à la base avant de repartir.","color":"gray"}]
 tellraw @a[team=mg_red,tag=mg.play] [{"text":"Tu es dans l'équipe ","color":"gray"},{"text":"ORANGE","color":"gold","bold":true}]
 tellraw @a[team=mg_blue,tag=mg.play] [{"text":"Tu es dans l'équipe ","color":"gray"},{"text":"BLEUE","color":"blue","bold":true}]
