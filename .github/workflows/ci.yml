@@ -38,6 +38,8 @@ jobs:
                   s = line.strip()
                   if not s or s.startswith('#'):
                       continue
+                  if '$(' in s:
+                      continue  # appels macro, résolus à l'exécution
                   if '<<<<<<<' in s or '>>>>>>>' in s:
                       bad.append(f'{f}:{i}: marqueur de conflit')
                   for m in re.finditer(r'\bfunction mg:([a-z_0-9/]+)', s):
