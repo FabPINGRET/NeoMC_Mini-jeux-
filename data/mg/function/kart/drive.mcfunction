@@ -5,8 +5,6 @@ execute unless entity @e[tag=mg.kk] run function mg:kart/kk
 execute if score @s mg.kv matches 1.. run function mg:kart/view_cmd
 function mg:kart/seat
 execute as @e[type=minecraft:block_display,tag=mg.kk,limit=1] at @s run function mg:kart/probe
-execute if score $kwa mg.st matches 1 run return run function mg:kart/rescue
-execute if score $kyy mg.st matches ..6000 run return run function mg:kart/rescue
 
 scoreboard players set $kf mg.st 0
 scoreboard players set $kb mg.st 0
@@ -24,14 +22,33 @@ scoreboard players operation @s mg.kspr = $ks mg.st
 scoreboard players reset @s mg.qs
 execute if score $kuse mg.st matches 1 run function mg:kart/use_item
 
+# Chronos des objets
 scoreboard players remove @s[scores={mg.kbo=1..}] mg.kbo 1
 scoreboard players remove @s[scores={mg.kst=1..}] mg.kst 1
+scoreboard players remove @s[scores={mg.kboo=1..}] mg.kboo 1
+execute if score @s mg.kmg matches 1 run function mg:kart/mega_end
+scoreboard players remove @s[scores={mg.kmg=1..}] mg.kmg 1
+execute if score @s mg.kgd matches 1 run function mg:kart/golden_end
+scoreboard players remove @s[scores={mg.kgd=1..}] mg.kgd 1
+execute if score @s mg.kit matches 8..10 run function mg:kart/orbs
+execute if score @s mg.kboo matches 1.. as @e[type=minecraft:block_display,tag=mg.kk,limit=1] at @s run particle minecraft:white_ash ~ ~0.8 ~ 0.6 0.5 0.6 0 6
+
+# Bill Balle : pilote automatique
+execute if score @s mg.kbill matches 1 run function mg:kart/bill_end
+execute if score @s mg.kbill matches 1.. run scoreboard players remove @s mg.kbill 1
+execute if score @s mg.kbill matches 1.. run function mg:kart/bill_move
+execute if score @s mg.kbill matches 1.. unless entity @s[tag=mg.kfin] run return run function mg:kart/cp_check
+
+execute if score $kwa mg.st matches 1 run return run function mg:kart/rescue
+execute if score $kyy mg.st matches ..6000 run return run function mg:kart/rescue
+
 function mg:kart/speed
 function mg:kart/steer
 function mg:kart/heading
 function mg:kart/vertical
 execute if score $kbp mg.st matches 1 if score $kg mg.st matches 1 run function mg:kart/boost_pad
 execute if score @s mg.kst matches 1.. run function mg:kart/star_touch
+execute if score @s mg.kmg matches 1.. run function mg:kart/mega_touch
 
 execute store result storage mg:kart m.d double 0.01 run scoreboard players get @s mg.ksp
 scoreboard players operation $kc mg.st = @s mg.ksp

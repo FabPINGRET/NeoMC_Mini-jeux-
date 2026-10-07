@@ -10,6 +10,8 @@ execute as @e[type=minecraft:item_display,tag=mg.kboff] run function mg:kart/box
 execute as @e[type=minecraft:item_display,tag=mg.kshell] at @s run function mg:kart/shell_tick
 execute as @e[type=minecraft:item_display,tag=mg.kban] at @s run function mg:kart/banana_tick
 execute as @e[type=minecraft:item_display,tag=mg.kblue] at @s run function mg:kart/blue_tick
+execute as @e[type=minecraft:item_display,tag=mg.kbomb] at @s run function mg:kart/bomb_tick
+execute as @e[type=minecraft:item_display,tag=mg.kfake] at @s run function mg:kart/fake_tick
 
 scoreboard players add $kph mg.st 1
 execute if score $kph mg.st matches 4.. run function mg:kart/every4

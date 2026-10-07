@@ -386,6 +386,8 @@ write('cp_check', [f'# Point de passage attendu (mg.kcp) atteint ? ({K} points p
        for k, (x, z, yw) in enumerate(CPS)])
 write('cp_tp', ['# Remise en piste (@s = kart) au point de passage $ki, tourné vers la suite'] +
       [f'execute if score $ki mg.st matches {k} run return run tp @s {x} {ROAD + 1} {W(0) + z} {yw} 0' for k, (x, z, yw) in enumerate(CPS)])
+write('bill_step', ['# Bill Balle (@s = kart) : file vers le point de passage $ki, à 1,6 bloc par tick'] +
+      [f'execute if score $ki mg.st matches {k} facing {x} {ROAD + 1} {W(0) + z} rotated ~ 0 run return run tp @s ^ ^ ^1.6 ~ ~' for k, (x, z, yw) in enumerate(CPS)])
 # grille de départ : 2 colonnes, rangées de 4 blocs derrière la ligne
 tx, tz = tangent(START); nx, nz = -tz, tx
 yaw0 = yaw_of(tx, tz)
@@ -410,7 +412,7 @@ for r, i in enumerate(ITEMROWS):
     tx, tz = tangent(i); nx, nz = -tz, tx
     for b in (-3, -1, 1, 3):
         x, z = pts[i][0] + nx * b, pts[i][1] + nz * b
-        boxes.append(f'summon minecraft:item_display {round(x, 1)} {ROAD + 2} {round(W(0) + z, 1)} {{Tags:["mg.kbox","mg.fx"],item:{{id:"minecraft:yellow_stained_glass"}},'
+        boxes.append(f'summon minecraft:item_display {round(x, 1)} {ROAD + 2} {round(W(0) + z, 1)} {{Tags:["mg.kbox","mg.kspin","mg.fx"],item:{{id:"minecraft:yellow_stained_glass"}},'
                      f'transformation:{{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.1f,1.1f,1.1f]}},interpolation_duration:10}}')
         boxes.append(f'summon minecraft:text_display {round(x, 1)} {ROAD + 1.7} {round(W(0) + z, 1)} {{Tags:["mg.kboxq","mg.fx"],billboard:"center",text:[{{"text":"?","color":"gold","bold":true}}],background:0,'
                      f'transformation:{{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.5f,1.5f,1.5f]}}}}')
