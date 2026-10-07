@@ -28,11 +28,14 @@ execute as @a[team=mg_yellow,tag=mg.play,scores={mg.deaths=1..}] run function mg
 # --- Placement après réapparition (île d'équipe garantie, jamais le centre) ---
 execute as @e[type=minecraft:player,tag=mg.rsp] run function mg:bedwars/respawn
 
+# --- Fenêtre de retour des déconnectés ---
+function mg:bedwars/grace
+
 # --- Victoire ---
 scoreboard players set $ta mg.st 0
-execute if entity @a[team=mg_red,tag=mg.play] run scoreboard players add $ta mg.st 1
-execute if entity @a[team=mg_blue,tag=mg.play] run scoreboard players add $ta mg.st 1
-execute if entity @a[team=mg_green,tag=mg.play] run scoreboard players add $ta mg.st 1
-execute if entity @a[team=mg_yellow,tag=mg.play] run scoreboard players add $ta mg.st 1
+execute if score $gr_red mg.st matches 1.. run scoreboard players add $ta mg.st 1
+execute if score $gr_blue mg.st matches 1.. run scoreboard players add $ta mg.st 1
+execute if score $gr_green mg.st matches 1.. run scoreboard players add $ta mg.st 1
+execute if score $gr_yellow mg.st matches 1.. run scoreboard players add $ta mg.st 1
 execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $ta mg.st matches 1 run function mg:bedwars/win_check
 execute if score $state mg.st matches 2 if score $ta mg.st matches 0 run function mg:core/draw

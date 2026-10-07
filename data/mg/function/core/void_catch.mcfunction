@@ -1,5 +1,5 @@
 # Rattrapage : joueur hors-jeu tombé dans le vide (@s = joueur, position exécutée)
-execute store result score @s mg.t run data get entity @s Pos[1]
-execute if score @s mg.t matches ..-10 run tp @s 0.5 64 0.5
-execute if score @s mg.t matches ..-10 run tellraw @s [{"text":"Ouf ! Rattrapé de justesse.","color":"aqua","italic":true}]
-execute if score @s mg.t matches ..-10 run function mg:core/fall_heal
+execute at @s unless entity @s[y=-2058,dy=2048] run return 0
+tp @s 0.5 64 0.5
+tellraw @s [{"text":"Ouf ! Rattrapé de justesse.","color":"aqua","italic":true}]
+function mg:core/fall_heal

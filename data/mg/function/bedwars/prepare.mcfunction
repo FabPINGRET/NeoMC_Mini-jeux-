@@ -22,6 +22,10 @@ execute if score $n0 mg.st matches 4.. run scoreboard players set $nt mg.st 4
 function mg:core/assign_teams
 
 # Lits « vivants » uniquement pour les équipes occupées
+scoreboard players set $gr_red mg.st 0
+scoreboard players set $gr_blue mg.st 0
+scoreboard players set $gr_green mg.st 0
+scoreboard players set $gr_yellow mg.st 0
 execute store result score $bed_red mg.st if entity @a[team=mg_red,tag=mg.play]
 execute store result score $bed_blue mg.st if entity @a[team=mg_blue,tag=mg.play]
 execute store result score $bed_green mg.st if entity @a[team=mg_green,tag=mg.play]

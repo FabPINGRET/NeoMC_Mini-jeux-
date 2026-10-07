@@ -6,6 +6,8 @@ scoreboard objectives add mg.st dummy
 execute unless score $rp mg.st matches 0..1 run scoreboard players set $rp mg.st 1
 scoreboard objectives add mg.t dummy
 scoreboard objectives add mg.wins dummy [{"text":"✦ Victoires ✦","color":"gold"}]
+scoreboard objectives add mg.stp dummy
+scoreboard objectives add mg.stk playerKillCount
 scoreboard objectives add mg.deaths deathCount
 scoreboard objectives add mg.cs minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add mg.us minecraft.used:minecraft.snowball

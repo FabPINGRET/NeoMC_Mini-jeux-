@@ -45,7 +45,7 @@ Environ vingt-cinq mini-jeux (et de nombreuses cartes / thèmes) prêts à jouer
 | **TNT Run** | Le sol s'efface (rouge → orange → vide, ~1 à 1,5 s) là où tu marches. 3 étages avant le vide, murs invisibles sur les côtés. | 2+ |
 | **Arène PvP** | Chacun pour soi, kit fer + arc + pommes d'or. Dernier survivant gagne. | 2+ |
 | **Arène PvP : classes** | Même arène et mêmes règles que le PvP (pas de régénération, soin sur KILL), mais chacun choisit sa classe d'équipement pendant le compte à rebours : Guerrier, Archer, Tank, Assassin, Mage, Pyromane. | 2+ |
-| **Bedwars** | 2 à 4 équipes, générateurs fer/or/diamant, boutique, détruis les lits ennemis ! | 2 à 8+ |
+| **Bedwars** | 2 à 4 équipes, générateurs fer/or/diamant, boutique, détruis les lits ennemis ! Une équipe entièrement déconnectée garde 2 minutes pour revenir tant que son lit est intact. | 2 à 8+ |
 | **Sheep War** | Catapulte des moutons explosifs sur l'équipe adverse, le sol part en morceaux. Grandes plateformes ; moins de moutons quand il y a du monde ; joueurs plus résistants aux explosions ; le mouton explose 1,5 s après avoir atterri. | 2+ |
 | **Sheep War 2 : Forteresses** | Mêmes règles que Sheep War, mais chaque camp est une forteresse : mur de façade avec porte et meurtrières, couverts, mezzanine sur piliers, deux escaliers, tour creuse à étage avec créneaux. Dur de viser, facile de se cacher ! | 2+ |
 | **Sheep War 3 : Bastions** | Version compacte de Forteresses (plateformes 20×31, une mezzanine, une petite tour, deux escaliers) : pour peu de joueurs ou pour varier. | 2+ |
@@ -108,6 +108,10 @@ Chaque île a son **VILLAGEOIS BOUTIQUE** : fais un clic droit dessus pour écha
 ---
 
 ## 🔧 Commandes utiles
+
+- **Mes statistiques** (tous) : `/trigger mg.opt set 25` — victoires, parties jouées, kills cumulés.
+- **Performance** (admins/OP) : `/function mg:perf` — compte les entités et chunks forceload, et rappelle `/tick query` (vanilla) et `/mspt` (Paper) pour mesurer avant/après une modification.
+- Les **menus de lancement** (sous-menus des jeux) sont réservés aux admins ; les autres joueurs passent par la fenêtre ☑ VOTES.
 
 | Commande | Effet | Qui |
 |---|---|---|

@@ -1,5 +1,8 @@
 # GO ! (état 1 → 2)
 scoreboard players set $state mg.st 2
+
+# Stats : une partie jouée de plus
+scoreboard players add @a[tag=mg.play] mg.stp 1
 effect clear @a[tag=mg.play] minecraft:slowness
 effect clear @a[tag=mg.play] minecraft:resistance
 
