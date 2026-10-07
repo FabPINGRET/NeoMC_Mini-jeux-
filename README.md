@@ -1,6 +1,6 @@
 # ✦ Mini-Jeux Void — Datapack Minecraft 26.2 ✦
 
-Neuf mini-jeux (et de nombreuses cartes / thèmes) prêts à jouer dans une **map vide**, avec lobby, menus cliquables, arènes construites automatiquement, équipes, scores et compteur de victoires.
+Environ vingt-cinq mini-jeux (et de nombreuses cartes / thèmes) prêts à jouer dans une **map vide**, avec lobby, menus cliquables, arènes construites automatiquement, équipes, scores et compteur de victoires.
 
 **Version requise : Minecraft Java 26.2** (pack format 107). Pour une autre version, il suffira d'ajuster `min_format` / `max_format` dans `pack.mcmeta`.
 
@@ -81,7 +81,7 @@ Une fois dans le monde, un joueur **OP** tape :
 /function mg:setup
 ```
 
-Le datapack construit alors **tout** : lobby, les 9 arènes, règles de jeu, spawn. C'est prêt en ~5 secondes. Celui qui lance la commande devient **admin** et reçoit l'objet **≡ MENU** ; les autres joueurs sont simplement téléportés au lobby.
+Le datapack construit alors **tout** : lobby, toutes les arènes, règles de jeu, spawn. C'est prêt en ~5 secondes. Celui qui lance la commande devient **admin** et reçoit l'objet **≡ MENU** ; les autres joueurs sont simplement téléportés au lobby.
 
 Pour nommer d'autres admins : `/function mg:admin` (en étant OP) ou `/tag <joueur> add mg.admin`.
 
