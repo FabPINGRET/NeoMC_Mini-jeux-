@@ -3,6 +3,7 @@ scoreboard players set $kg mg.st 0
 execute unless block ~ ~-0.2 ~ #mg:kart_pass run scoreboard players set $kg mg.st 1
 scoreboard players set $kro mg.st 0
 execute if block ~ ~-0.5 ~ #mg:kart_road run scoreboard players set $kro mg.st 1
+execute if score $klob mg.st matches 1 run scoreboard players set $kro mg.st 1
 scoreboard players set $kju mg.st 0
 execute if block ~ ~-0.5 ~ minecraft:lime_concrete run scoreboard players set $kju mg.st 1
 scoreboard players set $kbp mg.st 0

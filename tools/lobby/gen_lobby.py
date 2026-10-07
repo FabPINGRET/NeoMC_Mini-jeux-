@@ -809,7 +809,7 @@ wr('lobby/build', ['# Spawn : grande île flottante (générée par tools/lobby/
 wr('lobby/build_end', ['# Fin de la construction du spawn : eau qui coule, décor, chargement des zones'] +
    [f'setblock {x} {y} {z} minecraft:water' for (x, y, z) in JETS] +
    ['function mg:lobby/deco', 'function mg:lobby/armory_build', 'function mg:parkour/build',
-    'forceload remove -80 -80 80 80', 'forceload remove 81 -32 144 32', 'forceload remove -115 81 115 225', 'function mg:core/forceloads', 'data modify storage mg:lobby v4 set value 1b',
+    'forceload remove -80 -80 80 80', 'forceload remove 81 -32 144 32', 'forceload remove -115 81 115 225', 'function mg:core/forceloads', 'data modify storage mg:lobby v5 set value 1b',
     'tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Spawn construit.","color":"green"}]'])
 
 # ------------------------------------------------------------------ entités de décor
@@ -837,7 +837,7 @@ SIGNS = [  # glyphe, texte vanilla, position, échelle rp, échelle vanilla
 ]
 HINTS = [
     ('[{"text":"Marche sur un socle pour t\'équiper !","color":"gray"}]', (-33.3, 69.4, 0.5), 1.3),
-    ('[{"text":"Le laser marque les points : vise le cœur des cibles !","color":"gray"}]', (-46.5, 71.6, -33.2), 1.1),
+    ('[{"text":"Le railgun marque les points : vise le cœur des cibles !","color":"gray"}]', (-46.5, 71.6, -33.2), 1.1),
     ('[{"text":"Traverse le portail pour aller sur ","color":"gray"},{"text":"ton plot","color":"light_purple","bold":true}]', (0.5, 79.4, -47), 1.3),
     ('[{"text":"Bienvenue ! ","color":"yellow","bold":true},{"text":"⚔ Armurerie à l\'ouest, ⚑ Parkour à l\'est, ⌂ Plots au nord, 🏁 Kart au sud","color":"gray"}]', (0.5, 70.2, 17.5), 1.2),
 ]
@@ -927,7 +927,7 @@ for (x, y, z) in JETS[:4]: fx.append(f'particle minecraft:splash {x + 0.5} 64 {z
 wr('lobby/fx', fx)
 
 # ------------------------------------------------------------------ armurerie : socles, tick, armes avec le resource pack
-PADM = [('warped_fungus_on_a_stick', 'laser_gun', '⚡ Pistolet laser', 'red'), ('blaze_rod', 'magic_wand', '✦ Baguette feu d\'artifice', 'gold'),
+PADM = [('warped_fungus_on_a_stick', 'laser_gun', '⚡ Railgun', 'red'), ('blaze_rod', 'magic_wand', '✦ Baguette feu d\'artifice', 'gold'),
         ('wind_charge', 'wind_orb', '☁ Lance-vent', 'aqua'), ('snowball', 'snow_orb', '❄ Lance-neige', 'white')]
 ab = ['# Armurerie du spawn : armes au-dessus des socles (généré par tools/lobby/gen_lobby.py)', 'kill @e[tag=mg.arm]']
 for (px, pz, c), (it, mdl, name, col) in zip(PADS, PADM):
@@ -942,7 +942,7 @@ wr('lobby/armory_build', ab)
 at = ['# Spawn (chaque tick après le setup) : socles de l\'armurerie, armes, portail des plots, animation du décor']
 for i, (px, pz, c) in enumerate(PADS, 1):
     at.append(f'execute as @a[tag=!mg.play,x={px},y=63,z={pz},dx=2.99,dy=2.5,dz=2.99] run function mg:lobby/pad_{i}')
-at += ['', '# Recharge de la baguette', 'scoreboard players remove @a[scores={mg.wd=1..}] mg.wd 1', '',
+at += ['', '# Recharge de la baguette et du railgun', 'scoreboard players remove @a[scores={mg.wd=1..}] mg.wd 1', 'scoreboard players remove @a[scores={mg.lcd=1..}] mg.lcd 1', '',
        '# Utilisation (seulement dans le lobby, hors partie)',
        'execute if score $state mg.st matches 0 as @a[scores={mg.qs=1..},tag=!mg.surv] at @s run function mg:lobby/laser',
        'execute if score $state mg.st matches 0 as @a[scores={mg.fw=1..},tag=!mg.surv] at @s run function mg:lobby/wand',
@@ -979,8 +979,10 @@ wr('lobby/give_wand', s)
 wr('lobby/laser_hit', ['# Impact du laser sur un bloc (@s = tireur) : cibles du stand de tir',
                        'execute if block ~ ~ ~ minecraft:target run return run function mg:lobby/laser_bull',
                        'execute if block ~ ~ ~ #minecraft:wool run function mg:lobby/laser_ring',
-                       'particle minecraft:end_rod ~ ~ ~ 0.15 0.15 0.15 0.05 10',
-                       'particle minecraft:firework ~ ~ ~ 0.1 0.1 0.1 0.05 6',
+                       'particle minecraft:electric_spark ~ ~ ~ 0.2 0.2 0.2 0.4 18',
+                       'particle minecraft:end_rod ~ ~ ~ 0.15 0.15 0.15 0.08 10',
+                       'particle minecraft:dust{color:[1.0,0.2,0.2],scale:1.5} ~ ~ ~ 0.15 0.15 0.15 0 10',
+                       'particle minecraft:smoke ~ ~ ~ 0.1 0.1 0.1 0.02 6',
                        'playsound minecraft:block.amethyst_block.chime master @a ~ ~ ~ 0.8 1.6'])
 wr('lobby/laser_bull', ['# Laser dans le mille (cœur d\'une cible)',
                         'particle minecraft:firework ~ ~ ~ 0.2 0.2 0.2 0.15 30',
@@ -1076,13 +1078,14 @@ BTN = ('tellraw @s [{"text":"🏎 ","color":"gold"},{"text":"Circuit du spawn : 
        '{"text":"[Descendre]","color":"red","bold":true,"click_event":{"action":"run_command","command":"trigger mg.opt set 27"},"hover_event":{"action":"show_text","value":"Ranger le kart et revenir au garage (/trigger mg.opt set 27)"}},'
        '{"text":" ","color":"gray"},{"text":"[Vue assise]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 2"}},'
        '{"text":" ","color":"gray"},{"text":"[Caméra de poursuite]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 1"}},'
-       '{"text":"  (T pour ouvrir le chat)","color":"dark_gray"}]')
+       '{"text":"  (Shift = descendre ; on peut rouler sur tout le spawn)","color":"dark_gray"}]')
 wr('lobkart/enter', ['# @s marche sur le tapis du garage : il monte dans un kart sur la ligne de départ du circuit du spawn',
                      'tag @s add mg.lkz',
                      'execute unless score $state mg.st matches 0 run return run tellraw @s [{"text":"⚠ Le kart libre n\'est pas disponible pendant une partie.","color":"red"}]',
                      'execute store result score $lkn mg.st if entity @a[tag=mg.lk]',
                      'execute if score $lkn mg.st matches 12.. run return run tellraw @s [{"text":"⚠ Trop de karts sur le circuit, réessaie dans un instant.","color":"red"}]',
                      'function mg:parkour/quit', 'clear @s', 'effect clear @s', 'function mg:lobkart/consts',
+                     'tag @s remove mg.kfin', 'tag @s remove mg.kout', 'tag @s remove mg.kok',
                      'scoreboard players add $lri mg.st 1', 'execute unless score $lri mg.st matches 100..999 run scoreboard players set $lri mg.st 100',
                      'scoreboard players operation @s mg.ri = $lri mg.st'] +
    [f'scoreboard players set @s mg.{k} 0' for k in RESET] +
@@ -1092,14 +1095,14 @@ wr('lobkart/enter', ['# @s marche sur le tapis du garage : il monte dans un kart
     'execute at @s run function mg:kart/kart_new', 'function mg:kart/kk', 'tag @e[tag=mg.kk] add mg.lkart', 'function mg:kart/seat',
     'tag @e[tag=mg.kk] remove mg.kk', 'tag @e[tag=mg.kcamc] remove mg.kcamc',
     'title @s title [{"text":"🏁 CIRCUIT DU SPAWN","color":"gold","bold":true}]',
-    'title @s subtitle [{"text":"Z avancer, Q / D tourner, Espace en tournant = dérapage","color":"yellow"}]',
+    'title @s subtitle [{"text":"Z avancer, Q / D tourner, Espace = dérapage, Shift = descendre","color":"yellow"}]',
     'execute at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.4', BTN])
 wr('lobkart/remove', ['# Range le kart de @s (et sa caméra, sa tête) sans le déplacer',
                       'function mg:kart/kk',
                       'execute as @e[type=minecraft:block_display,tag=mg.kk] on passengers run kill @s',
                       'kill @e[tag=mg.kk]', 'kill @e[tag=mg.kcamc]',
                       'execute as @e[type=minecraft:item_display,tag=mg.khead] if score @s mg.ri = $me mg.st run kill @s',
-                      'tag @s remove mg.lk', 'scoreboard players set @s mg.ri 0',
+                      'tag @s remove mg.lk', 'tag @s remove mg.kfin', 'tag @s remove mg.kout', 'scoreboard players set @s mg.ri 0', 'ride @s dismount',
                       'execute if entity @s[gamemode=spectator] run gamemode adventure @s'])
 wr('lobkart/leave', ['# @s quitte le circuit du spawn sans être ramené au garage (plot, survie, reconnexion)', 'execute if entity @s[tag=mg.lk] run function mg:lobkart/remove'])
 wr('lobkart/exit', ['# @s descend du kart : retour au garage',
@@ -1125,6 +1128,7 @@ wr('lobkart/tick', ['# Kart libre au spawn (chaque tick) : moteur du kart pour l
                     'execute unless entity @a[tag=mg.lk] run return 0',
                     'execute unless score $state mg.st matches 0 run return run function mg:lobkart/stop_all',
                     'execute as @a[tag=mg.lk,gamemode=creative] run function mg:lobkart/leave',
+                    'execute as @a[tag=mg.lk] if predicate mg:sneak run function mg:lobkart/exit',
                     'execute as @a[tag=mg.lk,tag=mg.surv] run function mg:lobkart/leave',
                     'scoreboard players operation $lkb mg.st = $kbat mg.st', 'scoreboard players set $kbat mg.st 0',
                     'scoreboard players set $klob mg.st 1', 'function mg:kart/t4/const',

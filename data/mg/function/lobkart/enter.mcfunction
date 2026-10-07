@@ -7,6 +7,9 @@ function mg:parkour/quit
 clear @s
 effect clear @s
 function mg:lobkart/consts
+tag @s remove mg.kfin
+tag @s remove mg.kout
+tag @s remove mg.kok
 scoreboard players add $lri mg.st 1
 execute unless score $lri mg.st matches 100..999 run scoreboard players set $lri mg.st 100
 scoreboard players operation @s mg.ri = $lri mg.st
@@ -44,6 +47,6 @@ function mg:kart/seat
 tag @e[tag=mg.kk] remove mg.kk
 tag @e[tag=mg.kcamc] remove mg.kcamc
 title @s title [{"text":"🏁 CIRCUIT DU SPAWN","color":"gold","bold":true}]
-title @s subtitle [{"text":"Z avancer, Q / D tourner, Espace en tournant = dérapage","color":"yellow"}]
+title @s subtitle [{"text":"Z avancer, Q / D tourner, Espace = dérapage, Shift = descendre","color":"yellow"}]
 execute at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.4
-tellraw @s [{"text":"🏎 ","color":"gold"},{"text":"Circuit du spawn : ","color":"gray"},{"text":"[Descendre]","color":"red","bold":true,"click_event":{"action":"run_command","command":"trigger mg.opt set 27"},"hover_event":{"action":"show_text","value":"Ranger le kart et revenir au garage (/trigger mg.opt set 27)"}},{"text":" ","color":"gray"},{"text":"[Vue assise]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 2"}},{"text":" ","color":"gray"},{"text":"[Caméra de poursuite]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 1"}},{"text":"  (T pour ouvrir le chat)","color":"dark_gray"}]
+tellraw @s [{"text":"🏎 ","color":"gold"},{"text":"Circuit du spawn : ","color":"gray"},{"text":"[Descendre]","color":"red","bold":true,"click_event":{"action":"run_command","command":"trigger mg.opt set 27"},"hover_event":{"action":"show_text","value":"Ranger le kart et revenir au garage (/trigger mg.opt set 27)"}},{"text":" ","color":"gray"},{"text":"[Vue assise]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 2"}},{"text":" ","color":"gray"},{"text":"[Caméra de poursuite]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 1"}},{"text":"  (Shift = descendre ; on peut rouler sur tout le spawn)","color":"dark_gray"}]
