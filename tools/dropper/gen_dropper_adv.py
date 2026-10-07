@@ -264,6 +264,63 @@ x, z = L.rnd.randint(-5, 5), L.rnd.randint(-5, 5)
 L.fill(x - 1, FLOOR + 1, z - 1, x + 1, FLOOR + 3, z + 1, 'air'); L.set(x, FLOOR, z, 'water')
 LV.append(L)
 
+# ------------------------------------------------------------------ vérification : chaque niveau doit être faisable
+# Chute simulée tick par tick (gravité de Minecraft : v = (v + 0,08) x 0,98) avec un déplacement horizontal limité à HS bloc/tick
+# (75 % de la vitesse maximale en l'air, pour laisser de la marge). Si aucun passage n'existe, on perce un trou de 3 x 3 dans
+# l'obstacle, à l'endroit où le joueur peut encore être, puis on recommence.
+HS = 0.15
+PASS = {'air', 'light', 'water', 'cobweb', 'rail'}
+def voxels(L):
+    g = {}
+    for c in L.cmd:
+        p = c.split()
+        if p[0] == 'fill':
+            x1, y1, z1, x2, y2, z2 = map(int, p[1:7]); b = p[7].split('[')[0][10:]
+            if x2 - L.cx < -WALL - 1 or x1 - L.cx > WALL + 1: continue
+            for x in range(max(x1, L.cx - IN - 1), min(x2, L.cx + IN + 1) + 1):
+                for z in range(max(z1, CZ - IN - 1), min(z2, CZ + IN + 1) + 1):
+                    for y in range(max(y1, FLOOR - 2), min(y2, TOP + 2) + 1): g[(x - L.cx, y, z - CZ)] = b
+        else:
+            x, y, z = map(int, p[1:4]); g[(x - L.cx, y, z - CZ)] = p[4].split('[')[0][10:]
+    return g
+def simulate(L):
+    g = voxels(L)
+    def free(x, y, z): return g.get((x, y, z), 'air') in PASS
+    reach = {(x, z) for x in range(-7, 8) for z in range(-7, 8)}
+    feet, v, budget = TOP + 1.0, 0.0, 0.0
+    while reach:
+        budget += HS
+        while budget >= 1:
+            budget -= 1
+            reach |= {(x + dx, z + dz) for (x, z) in reach for dx, dz in ((1, 0), (-1, 0), (0, 1), (0, -1))
+                      if abs(x + dx) <= IN and abs(z + dz) <= IN and all(free(x + dx, y, z + dz) for y in range(math.floor(feet), math.floor(feet + 1.79) + 1))}
+        v = (v + 0.08) * 0.98
+        nf = feet - v
+        ys = range(math.floor(nf), math.floor(feet + 1.79) + 1)
+        for (x, z) in reach:
+            if any(g.get((x, y, z)) == 'water' for y in ys): return None
+        nxt = {(x, z) for (x, z) in reach if all(free(x, y, z) for y in ys)}
+        if not nxt: return (reach, list(ys))
+        reach, feet = nxt, nf
+        if feet < FLOOR - 3: return (reach, [FLOOR])
+    return (set(), [])
+for L in LV:
+    fixes = 0
+    while True:
+        res = simulate(L)
+        if res is None: break
+        reach, ys = res
+        g = voxels(L)
+        x, z = sorted(reach)[L.rnd.randrange(len(reach))]
+        bad = [y for y in ys if any(g.get((xx, y, zz), 'air') not in PASS for xx in range(x - 1, x + 2) for zz in range(z - 1, z + 2))]
+        if not bad or min(bad) <= FLOOR:          # on touche le fond sans eau : on met l'eau sous le joueur
+            L.fill(x - 1, FLOOR, z - 1, x + 1, FLOOR, z + 1, 'water'); L.fill(x - 1, FLOOR + 1, z - 1, x + 1, FLOOR + 3, z + 1, 'air')
+        else:
+            L.fill(max(-IN, x - 1), min(bad), max(-IN, z - 1), min(IN, x + 1), max(bad), min(IN, z + 1), 'air')
+        fixes += 1
+        assert fixes < 80, L.name
+    print(f'niveau {L.k + 1} ({L.name}) : faisable' + (f' après {fixes} passage(s) percé(s)' if fixes else ''))
+
 N = len(LV)
 # ------------------------------------------------------------------ fonctions de jeu
 X1, X2 = -WALL - 6, (N - 1) * SPACING + WALL + 6

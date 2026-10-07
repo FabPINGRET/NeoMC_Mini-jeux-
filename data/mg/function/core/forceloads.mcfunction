@@ -1,6 +1,6 @@
 # Zones toujours chargées (lobby + arènes) — idempotent, relancé à chaque /reload
 forceload add -16 -16 16 16
-forceload add 16 -16 128 16
+forceload add 16 -24 144 24
 forceload add -24 11076 24 11124
 forceload add -24 11276 24 11324
 forceload add -32 11468 32 11532

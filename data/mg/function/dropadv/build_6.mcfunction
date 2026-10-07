@@ -186,4 +186,11 @@ setblock 150 112 24000 minecraft:soul_lantern
 setblock 170 112 24000 minecraft:soul_lantern
 fill 150 95 23990 170 95 24010 minecraft:obsidian
 fill 165 95 24005 167 95 24007 minecraft:water
+fill 167 170 23994 169 170 23996 minecraft:air
+fill 165 150 23994 167 150 23996 minecraft:air
+fill 166 140 23993 168 140 23995 minecraft:air
+fill 167 130 23993 169 130 23995 minecraft:air
+fill 167 120 23994 169 120 23996 minecraft:air
+fill 166 95 23992 168 95 23994 minecraft:water
+fill 166 96 23992 168 98 23994 minecraft:air
 schedule function mg:dropadv/build_7 3t

@@ -8,6 +8,8 @@ execute unless entity @e[tag=mg.kk] at @s run function mg:kart/kart_new
 execute unless entity @e[tag=mg.kk] run function mg:kart/kk
 execute if score @s mg.kv matches 1.. run function mg:kart/view_cmd
 function mg:kart/seat
+scoreboard players remove @s[scores={mg.kstk=1..}] mg.kstk 1
+execute if entity @s[tag=mg.kstuck] run function mg:kart/stuck
 execute as @e[type=minecraft:block_display,tag=mg.kk,limit=1] at @s run function mg:kart/probe
 execute if score $kg mg.st matches 0 if score @s mg.kvy matches ..0 as @e[type=minecraft:block_display,tag=mg.kk,limit=1] at @s unless block ~ ~-1.2 ~ #mg:kart_pass run function mg:kart/step_down
 

@@ -119,4 +119,16 @@ fill 119 103 23994 121 103 23996 minecraft:air
 fill 120 103 24002 122 103 24004 minecraft:air
 fill 110 95 23990 130 95 24010 minecraft:quartz_block
 fill 117 95 23994 118 95 23995 minecraft:water
+fill 127 183 23995 129 183 23997 minecraft:air
+fill 127 175 23997 129 175 23999 minecraft:air
+fill 127 167 23996 129 167 23998 minecraft:air
+fill 126 159 23995 128 159 23997 minecraft:air
+fill 128 151 23996 130 151 23998 minecraft:air
+fill 127 135 23996 129 135 23998 minecraft:air
+fill 127 127 23996 129 127 23998 minecraft:air
+fill 126 119 23996 128 119 23998 minecraft:air
+fill 127 111 23996 129 111 23998 minecraft:air
+fill 126 103 23995 128 103 23997 minecraft:air
+fill 127 95 23996 129 95 23998 minecraft:water
+fill 127 96 23996 129 98 23998 minecraft:air
 schedule function mg:dropadv/build_6 3t

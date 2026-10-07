@@ -76,3 +76,18 @@ patch_fn('finish', 'execute at @s run playsound minecraft:entity.firework_rocket
          'execute if score @s mg.kfp matches 1 at @s run playsound minecraft:block.note_block.bell record @s ~ ~ ~ 1 1.5\n'
          'execute if score @s mg.kfp matches 1 at @s run playsound minecraft:block.note_block.bell record @s ~ ~ ~ 1 1.26\n')
 patch_fn('bat_tick', 'execute if score $ktime mg.st matches 3000 run tellraw', 'execute if score $ktime mg.st matches 3000 run function mg:kart/final_lap\nexecute if score $ktime mg.st matches 3000 run tellraw')
+
+# ------------------------------------------------------------------ bouton « Je suis coincé » (/trigger mg.opt set 25, branché dans core/opt)
+patch_fn('drive', 'function mg:kart/seat\n', 'function mg:kart/seat\nscoreboard players remove @s[scores={mg.kstk=1..}] mg.kstk 1\n'
+         'execute if entity @s[tag=mg.kstuck] run function mg:kart/stuck\n')
+fn('stuck', '''# Bouton « Je suis coincé » (@s = pilote, son kart est tagué mg.kk) : remis sur la route au point de passage précédent, recharge 5 s
+tag @s remove mg.kstuck
+execute if entity @s[tag=mg.kfin] run return 0
+execute if score @s mg.kstk matches 1.. run return run tellraw @s [{"text":"⛑ Patiente encore un peu avant de redemander (5 s).","color":"red"}]
+scoreboard players set @s mg.kstk 100
+function mg:kart/rescue''')
+s_go = open(os.path.join(K, 'go.mcfunction'), encoding='utf-8').read()
+with open(os.path.join(K, 'go.mcfunction'), 'w', encoding='utf-8', newline='\n') as f:
+    f.write(s_go.rstrip('\n') + '\ntellraw @a[tag=mg.play] [{"text":"Coincé dans le décor ? ","color":"gray"},{"text":"[⛑ Je suis coincé]","color":"yellow","bold":true,'
+            '"click_event":{"action":"run_command","command":"trigger mg.opt set 25"},"hover_event":{"action":"show_text","value":"Te remet sur la route au dernier point de passage '
+            '(ou /trigger mg.opt set 25)"}},{"text":" (T pour ouvrir le chat, puis clique)","color":"dark_gray"}]\n')
