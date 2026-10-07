@@ -7,6 +7,7 @@ execute if score $lko mg.st matches 100.. run scoreboard players set $lko mg.st 
 execute unless entity @a[tag=mg.lk] run return 0
 execute unless score $state mg.st matches 0 run return run function mg:lobkart/stop_all
 execute as @a[tag=mg.lk,gamemode=creative] run function mg:lobkart/leave
+execute as @a[tag=mg.lk] if predicate mg:sneak run function mg:lobkart/exit
 execute as @a[tag=mg.lk,tag=mg.surv] run function mg:lobkart/leave
 scoreboard players operation $lkb mg.st = $kbat mg.st
 scoreboard players set $kbat mg.st 0

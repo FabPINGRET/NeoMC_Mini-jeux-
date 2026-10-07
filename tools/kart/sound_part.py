@@ -105,3 +105,6 @@ patch_fn('go', '3 tours !"', 'Tours : ","color":"gray"},{"score":{"name":"$kLaps
 
 # ------------------------------------------------------------------ kart libre du spawn : tours chronométrés à part (voir tools/lobby/gen_lobby.py)
 patch_fn('lap', 'scoreboard players add @s mg.klp 1\n', 'execute if score $klob mg.st matches 1 run return run function mg:lobkart/lap\nscoreboard players add @s mg.klp 1\n')
+# kart libre du spawn : toute l'île compte comme de la route (on roule partout à pleine vitesse)
+patch_fn('probe', 'execute if block ~ ~-0.5 ~ #mg:kart_road run scoreboard players set $kro mg.st 1\n',
+         'execute if block ~ ~-0.5 ~ #mg:kart_road run scoreboard players set $kro mg.st 1\nexecute if score $klob mg.st matches 1 run scoreboard players set $kro mg.st 1\n')

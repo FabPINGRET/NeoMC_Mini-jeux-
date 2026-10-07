@@ -4,8 +4,9 @@ execute as @a[tag=!mg.play,x=-53,y=63,z=-5,dx=2.99,dy=2.5,dz=2.99] run function 
 execute as @a[tag=!mg.play,x=-53,y=63,z=3,dx=2.99,dy=2.5,dz=2.99] run function mg:lobby/pad_3
 execute as @a[tag=!mg.play,x=-53,y=63,z=7,dx=2.99,dy=2.5,dz=2.99] run function mg:lobby/pad_4
 
-# Recharge de la baguette
+# Recharge de la baguette et du railgun
 scoreboard players remove @a[scores={mg.wd=1..}] mg.wd 1
+scoreboard players remove @a[scores={mg.lcd=1..}] mg.lcd 1
 
 # Utilisation (seulement dans le lobby, hors partie)
 execute if score $state mg.st matches 0 as @a[scores={mg.qs=1..},tag=!mg.surv] at @s run function mg:lobby/laser
