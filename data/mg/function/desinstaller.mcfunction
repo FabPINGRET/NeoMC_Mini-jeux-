@@ -1,6 +1,7 @@
 # Désinstallation (OP) — retire scoreboards, équipes, décor et zones chargées
 kill @e[type=minecraft:text_display,tag=mg.deco]
 kill @e[tag=mg.lby]
+kill @e[tag=mg.lkart]
 kill @e[tag=mg.arm]
 kill @e[tag=mg.mob]
 kill @e[tag=mg.sheep]

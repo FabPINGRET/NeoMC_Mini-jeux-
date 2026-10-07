@@ -43,6 +43,9 @@ execute as @a[scores={mg.opt=1..}] run function mg:core/opt
 # Armurerie du lobby
 execute if score $setup mg.st matches 1 run function mg:lobby/armory_tick
 
+# Kart libre du spawn
+execute if score $setup mg.st matches 1 run function mg:lobkart/tick
+
 # Parkour du lobby
 execute if score $setup mg.st matches 1 run function mg:parkour/tick
 
@@ -52,7 +55,7 @@ execute if score $setup mg.st matches 1 run function mg:plot/tick
 
 # Canne ≡ MENU : refilée aux admins dès que leur inventaire est libre (toutes les 2 s ; hors partie, plot créatif, parkour, spectateur, créatif)
 scoreboard players add $gmt mg.t 1
-execute if score $gmt mg.t matches 40.. as @a[tag=mg.admin,tag=mg.init,tag=!mg.surv,tag=!mg.play,tag=!mg.out,tag=!mg.inplot,tag=!mg.pkr,tag=!mg.visit,gamemode=!spectator,gamemode=!creative] run function mg:core/give_menu_safe
+execute if score $gmt mg.t matches 40.. as @a[tag=mg.admin,tag=mg.init,tag=!mg.surv,tag=!mg.play,tag=!mg.out,tag=!mg.inplot,tag=!mg.pkr,tag=!mg.lk,tag=!mg.visit,gamemode=!spectator,gamemode=!creative] run function mg:core/give_menu_safe
 execute if score $gmt mg.t matches 40.. run scoreboard players set $gmt mg.t 0
 
 # Machine à états

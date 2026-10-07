@@ -1,4 +1,4 @@
-# Spawn, partie 5/9 (généré par tools/lobby/gen_lobby.py)
+# Spawn, partie 5/11 (généré par tools/lobby/gen_lobby.py)
 fill -18 42 -51 -18 42 54 minecraft:stone strict
 fill -17 42 -61 -17 42 -55 minecraft:stone strict
 fill -17 42 -54 -17 42 -52 minecraft:tuff strict

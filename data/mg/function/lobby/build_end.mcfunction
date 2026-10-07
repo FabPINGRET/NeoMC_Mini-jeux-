@@ -14,6 +14,7 @@ function mg:lobby/armory_build
 function mg:parkour/build
 forceload remove -80 -80 80 80
 forceload remove 81 -32 144 32
+forceload remove -115 81 115 225
 function mg:core/forceloads
-data modify storage mg:lobby v2 set value 1b
+data modify storage mg:lobby v4 set value 1b
 tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Spawn construit.","color":"green"}]

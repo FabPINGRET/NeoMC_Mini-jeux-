@@ -8,6 +8,7 @@ execute unless score @s mg.plot matches 1.. run function mg:plot/claim
 execute unless score @s mg.plot matches 1.. run return 0
 
 function mg:parkour/quit
+function mg:lobkart/leave
 function mg:plot/coords
 clear @s
 effect clear @s
