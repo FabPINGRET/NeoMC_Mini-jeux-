@@ -1,5 +1,5 @@
 tellraw @s [{"text":"\n📜 MINI PARTY : RÈGLES","color":"gold","bold":true}]
-tellraw @s [{"text":"• Chacun lance le dé (1 à 6) à son tour et avance. Après chaque tour : un mini-jeu (vainqueur +10 pièces, les autres +3).","color":"gray"}]
+tellraw @s [{"text":"• Chacun lance le dé (1 à 10) à son tour et avance. Après chaque tour : un mini-jeu (vainqueur +10 pièces, les autres +3).","color":"gray"}]
 tellraw @s [{"text":"• Cases : ","color":"gray"},{"text":"bleue +3","color":"aqua"},{"text":" · ","color":"gray"},{"text":"rouge -3","color":"red"},{"text":" · ","color":"gray"},{"text":"verte ? surprise","color":"green"},{"text":" · ","color":"gray"},{"text":"noire ☠ piège","color":"dark_gray"},{"text":" · ","color":"gray"},{"text":"blanche ⇆ embranchement","color":"white"},{"text":" · ","color":"gray"},{"text":"violette 🛒 boutique","color":"light_purple"}]
 tellraw @s [{"text":"• Étoile ★ : passe dessus avec 20 pièces pour l'acheter, elle change ensuite de place. Le plus d'étoiles gagne, puis le plus de pièces.","color":"gray"}]
 tellraw @s [{"text":"• Boutique : ","color":"gray"},{"text":"🎲🎲 dé double 10","color":"aqua"},{"text":" · ","color":"gray"},{"text":"🎲🎲🎲 dé triple 18","color":"light_purple"},{"text":" · ","color":"gray"},{"text":"🔀 tuyau 15","color":"yellow"},{"text":" (3 objets max, à utiliser dans la fenêtre du dé)","color":"gray"}]

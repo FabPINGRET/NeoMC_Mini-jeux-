@@ -1,4 +1,4 @@
-# Le dé (1 à 6, ou 2 / 3 dés avec un objet) roule au-dessus du joueur : vite, puis de plus en plus lentement, et s'arrête sur la dernière face
+# Le dé (1 à 10, ou 2 / 3 dés avec un objet) roule au-dessus du joueur : vite, puis de plus en plus lentement, et s'arrête sur la dernière face
 scoreboard players remove $mpw mg.st 1
 scoreboard players operation $q mg.st = $mpw mg.st
 scoreboard players operation $q mg.st %= #2 mg.st

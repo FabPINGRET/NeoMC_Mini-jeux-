@@ -1,4 +1,3 @@
-# Fin de course : arrivés dans l'ordre, puis les autres selon leur avancement ; victoire au premier
 execute as @a[tag=mg.play] run function mg:kart/progress
 execute as @a[tag=mg.play] run function mg:kart/rank_one
 tellraw @a[tag=!mg.surv] [{"text":"\n🏁 CLASSEMENT DE LA COURSE","color":"gold","bold":true}]

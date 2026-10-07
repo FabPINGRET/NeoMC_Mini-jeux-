@@ -83,6 +83,14 @@ scoreboard objectives add mg.kvy dummy
 scoreboard objectives add mg.kfp dummy
 scoreboard objectives add mg.kpg dummy
 scoreboard objectives add mg.krk dummy
+scoreboard objectives add mg.krc dummy
+scoreboard objectives add mg.khd dummy
+scoreboard objectives add mg.kspr dummy
+scoreboard objectives add mg.kvm dummy
+scoreboard objectives add mg.kv trigger
+scoreboard objectives add mg.kmap dummy [{"text":"🗺 Circuit Champignon","color":"gold","bold":true}]
+scoreboard objectives modify mg.kmap numberformat blank
+scoreboard objectives modify mg.kmap displayname [{"text":"🗺 Circuit Champignon","color":"gold","bold":true}]
 scoreboard objectives add mg.kps dummy [{"text":"🏎 KART : progression %","color":"gold"}]
 scoreboard objectives add mg.svid dummy
 scoreboard objectives add mg.svvx dummy
