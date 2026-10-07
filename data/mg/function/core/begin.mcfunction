@@ -6,6 +6,10 @@ scoreboard players add @a[tag=mg.play] mg.stp 1
 effect clear @a[tag=mg.play] minecraft:slowness
 effect clear @a[tag=mg.play] minecraft:resistance
 
+# Soin complet au départ de chaque jeu (vie + faim), Sheep War compris
+effect give @a[tag=mg.play] minecraft:instant_health 1 10 true
+effect give @a[tag=mg.play] minecraft:saturation 1 9 true
+
 title @a[tag=mg.play] title [{"text":"GO !","color":"green","bold":true}]
 execute as @a[tag=!mg.surv] at @s run playsound minecraft:event.raid.horn master @s ~ ~ ~ 0.7 1.4
 
