@@ -1247,16 +1247,29 @@ adv('root', {'criteria': {'tick': {'trigger': 'minecraft:tick'}},
 for sid, title, hint, icon, frame in SECRETS:
     adv(sid, {'parent': 'mg:secrets/root', 'criteria': {'found': {'trigger': 'minecraft:impossible'}},
               'display': {'icon': {'id': f'minecraft:{icon}'}, 'title': {'text': title}, 'description': {'text': hint, 'color': 'gray'}, 'frame': frame,
-                          'show_toast': True, 'announce_to_chat': True, 'hidden': True},
-              'rewards': {'function': 'mg:secrets/reward'}})
+                          'show_toast': True, 'announce_to_chat': False, 'hidden': True},
+              'rewards': {'function': f'mg:secrets/found/{sid}'}})
 adv('maitre', {'parent': 'mg:secrets/visite', 'criteria': {'found': {'trigger': 'minecraft:impossible'}},
                'display': {'icon': {'id': 'minecraft:dragon_egg'}, 'title': {'text': 'Maître des secrets', 'color': 'light_purple'},
                            'description': {'text': 'Tous les secrets du spawn', 'color': 'gray'}, 'frame': 'challenge',
-                           'show_toast': True, 'announce_to_chat': True, 'hidden': True},
-               'rewards': {'function': 'mg:secrets/reward'}})
+                           'show_toast': True, 'announce_to_chat': False, 'hidden': True},
+               'rewards': {'function': 'mg:secrets/found/maitre'}})
 def G_(sid): return f'advancement grant @s only mg:secrets/{sid}'
 def NOT(sid): return f'unless entity @s[advancements={{mg:secrets/{sid}=true}}]'
 ALL = ','.join(f'mg:secrets/{s[0]}=true' for s in SECRETS)
+import shutil
+shutil.rmtree(os.path.join(F, 'secrets', 'found'), ignore_errors=True)
+for sid, title, hint, icon, frame in SECRETS + [('maitre', 'Maître des secrets', '', '', 'challenge')]:
+    col = 'light_purple' if frame == 'challenge' else 'green'
+    wr(f'secrets/found/{sid}', [f'# Secret « {title} » trouvé par @s : annonce à tout le monde',
+                               'function mg:secrets/count',
+                               'tellraw @a [{"text":"🕵 ","color":"gold"},{"selector":"@s","color":"yellow","bold":true},{"text":" a trouvé un secret du spawn : ","color":"gray"},'
+                               f'{{"text":"[{title}]","color":"{col}","bold":true}},{{"text":" (","color":"gray"}},{{"score":{{"name":"$secn","objective":"mg.st"}},"color":"gold"}},'
+                               f'{{"text":"/{len(SECRETS) + 1})","color":"gray"}}]',
+                               'execute as @a[tag=!mg.surv] at @s run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.6 1.6',
+                               'function mg:secrets/reward'])
+wr('secrets/count', ['# Nombre de secrets trouvés par @s → $secn'] + ['scoreboard players set $secn mg.st 0'] +
+   [f'execute if entity @s[advancements={{mg:secrets/{x[0]}=true}}] run scoreboard players add $secn mg.st 1' for x in SECRETS + [('maitre',)]])
 wr('secrets/reward', ['# Un secret trouvé (@s) : petite fête, et le grand final quand tout est trouvé',
                       'execute at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 0.8 1.3',
                       'execute at @s run particle minecraft:totem_of_undying ~ ~1 ~ 0.5 0.8 0.5 0.4 40',
