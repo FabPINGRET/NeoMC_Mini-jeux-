@@ -3,7 +3,7 @@
     python tools/party_pool.py .        (depuis la racine du dépôt)
 
 Chaque jeu : (id de lancement, nom affiché, couleur, limite de temps en ticks pour la Mini Party).
-La limite est un filet de sécurité : à expiration, One in the Chamber donne la victoire au meilleur tueur,
+Format court (3 à 6 min) ; la limite est un filet de sécurité : à expiration, One in the Chamber donne la victoire au meilleur tueur,
 les autres jeux s'arrêtent sans vainqueur (+3 pièces pour tous).
 """
 import os, sys
@@ -12,24 +12,23 @@ R = sys.argv[1]
 P = os.path.join(R, 'data/mg/function/party/')
 M = 60 * 20   # une minute
 
-POOL = [
-    (1, 'SPLEEF', 'aqua', 6 * M), (2, 'TNT RUN', 'red', 6 * M), (20, 'SPLEGG', 'yellow', 6 * M), (21, 'SPLEGG XXL', 'gold', 7 * M),
-    (22, 'SUMO', 'gold', 6 * M), (24, 'SUMO COMPLEXE', 'gold', 6 * M), (23, 'THE DROPPER', 'aqua', 6 * M),
-    (25, 'DROPPER : TUBE COMMUN', 'aqua', 6 * M), (64, 'DROPPER : AVENTURE', 'aqua', 8 * M), (65, 'DROPPER : DÉFI', 'aqua', 6 * M), (27, 'TNT TAG', 'red', 6 * M), (28, 'BLOCK PARTY', 'light_purple', 6 * M),
-    (29, "PLUIE D'ENCLUMES", 'dark_gray', 6 * M), (42, 'ENCLUMES + SOL TROUÉ', 'red', 6 * M),
-    (3, 'ARÈNE PVP', 'yellow', 5 * M), (13, 'PVP : CLASSES', 'gold', 5 * M), (44, 'PVP : POUSSIÈRE', 'gold', 5 * M),
-    (45, 'PVP : POUSSIÈRE (CLASSES)', 'gold', 5 * M), (47, 'PVP : MIRAGE', 'aqua', 5 * M), (48, 'PVP : MIRAGE (CLASSES)', 'aqua', 5 * M),
-    (50, 'PVP : NUKETOWN', 'green', 5 * M), (51, 'PVP : NUKETOWN (CLASSES)', 'green', 5 * M),
-    (26, 'ONE IN THE CHAMBER', 'gold', 5 * M), (52, 'ONE IN THE CHAMBER : CHÂTEAU', 'gold', 5 * M), (53, 'ONE IN THE CHAMBER : FORÊT', 'dark_green', 5 * M),
-    (35, 'QUAKECRAFT : GLACIER', 'aqua', 7 * M), (43, 'QUAKECRAFT : POUSSIÈRE', 'gold', 7 * M), (46, 'QUAKECRAFT : MIRAGE', 'aqua', 7 * M),
-    (49, 'QUAKECRAFT : NUKETOWN', 'green', 7 * M),
-    (36, 'PAINTBALL', 'gold', 5 * M), (54, 'PAINTBALL : MINI-TERRAIN', 'gold', 4 * M), (55, 'PAINTBALL : GRAND TERRAIN', 'gold', 7 * M),
-    (30, 'TURF WARS', 'gold', 7 * M),
-    (5, 'SHEEP WAR', 'white', 6 * M), (7, 'SHEEP WAR : FORTERESSES', 'white', 6 * M), (15, 'SHEEP WAR : CUBES VOXEL', 'white', 6 * M),
-    (17, 'SHEEP WAR : ARCHIPEL', 'white', 6 * M),
-    (4, 'BEDWARS', 'light_purple', 8 * M),
-    (56, 'COURSE DE BATEAUX', 'aqua', 5 * M), (61, 'KART', 'gold', 8 * M), (62, 'KART : ROYAUME KOOPA', 'red', 9 * M), (63, 'KART : BATAILLE', 'light_purple', 4 * M),
-    (57, 'BUILD BATTLE', 'green', 10 * M),
+POOL = [   # format court : 3 à 6 minutes par mini-jeu (Build Battle et Dropper Aventure, trop longs, ne sont pas dans la roulette)
+    (1, 'SPLEEF', 'aqua', 3 * M), (2, 'TNT RUN', 'red', 3 * M), (20, 'SPLEGG', 'yellow', 3 * M), (21, 'SPLEGG XXL', 'gold', 4 * M),
+    (22, 'SUMO', 'gold', 3 * M), (24, 'SUMO COMPLEXE', 'gold', 3 * M), (23, 'THE DROPPER', 'aqua', 4 * M),
+    (25, 'DROPPER : TUBE COMMUN', 'aqua', 4 * M), (65, 'DROPPER : DÉFI', 'aqua', 4 * M), (27, 'TNT TAG', 'red', 4 * M), (28, 'BLOCK PARTY', 'light_purple', 4 * M),
+    (29, "PLUIE D'ENCLUMES", 'dark_gray', 3 * M), (42, 'ENCLUMES + SOL TROUÉ', 'red', 3 * M),
+    (3, 'ARÈNE PVP', 'yellow', 3 * M), (13, 'PVP : CLASSES', 'gold', 3 * M), (44, 'PVP : POUSSIÈRE', 'gold', 3 * M),
+    (45, 'PVP : POUSSIÈRE (CLASSES)', 'gold', 3 * M), (47, 'PVP : MIRAGE', 'aqua', 3 * M), (48, 'PVP : MIRAGE (CLASSES)', 'aqua', 3 * M),
+    (50, 'PVP : NUKETOWN', 'green', 3 * M), (51, 'PVP : NUKETOWN (CLASSES)', 'green', 3 * M),
+    (26, 'ONE IN THE CHAMBER', 'gold', 3 * M), (52, 'ONE IN THE CHAMBER : CHÂTEAU', 'gold', 3 * M), (53, 'ONE IN THE CHAMBER : FORÊT', 'dark_green', 3 * M),
+    (35, 'QUAKECRAFT : GLACIER', 'aqua', 4 * M), (43, 'QUAKECRAFT : POUSSIÈRE', 'gold', 4 * M), (46, 'QUAKECRAFT : MIRAGE', 'aqua', 4 * M),
+    (49, 'QUAKECRAFT : NUKETOWN', 'green', 4 * M),
+    (36, 'PAINTBALL', 'gold', 3 * M), (54, 'PAINTBALL : MINI-TERRAIN', 'gold', 3 * M), (55, 'PAINTBALL : GRAND TERRAIN', 'gold', 4 * M),
+    (30, 'TURF WARS', 'gold', 4 * M),
+    (5, 'SHEEP WAR', 'white', 4 * M), (7, 'SHEEP WAR : FORTERESSES', 'white', 4 * M), (15, 'SHEEP WAR : CUBES VOXEL', 'white', 4 * M),
+    (17, 'SHEEP WAR : ARCHIPEL', 'white', 4 * M),
+    (4, 'BEDWARS', 'light_purple', 5 * M),
+    (56, 'COURSE DE BATEAUX', 'aqua', 4 * M), (61, 'KART', 'gold', 5 * M), (62, 'KART : ROYAUME KOOPA', 'red', 6 * M), (63, 'KART : BATAILLE', 'light_purple', 3 * M),
 ]
 N = len(POOL)
 
@@ -61,10 +60,18 @@ f += ['function mg:party/pick_show', 'scoreboard players set $mpgt mg.st 0']
 w('pick_final', f)
 w('pick_reset', ['# Tous les mini-jeux sont passés : on repart pour un cycle'] +
   [f'scoreboard players set $mgp{k} mg.st 0' for k in range(1, N + 1)] + [f'scoreboard players set $mgr mg.st {N}'])
-w('watch', ['# Mini-jeu de la Mini Party en cours (core/game_tick) : filet de sécurité sur la durée',
+w('watch', ['# Mini-jeu de la Mini Party en cours (core/game_tick) : format court (limite de temps, mort subite au Bedwars)',
             'execute if score $game mg.st matches 59 run return 0',
             'scoreboard players add $mpgt mg.st 1',
+            f'execute if score $game mg.st matches 4 if score $mpgt mg.st matches {2 * M} run tellraw @a[tag=!mg.surv] [{{"text":"⚠ MORT SUBITE dans 30 s : ","color":"red","bold":true}},{{"text":"tous les lits vont être détruits !","color":"gray"}}]',
+            f'execute if score $game mg.st matches 4 if score $mpgt mg.st matches {2 * M + 600} run function mg:party/bw_sudden',
+            'scoreboard players operation $mprest mg.st = $mplim mg.st', 'scoreboard players operation $mprest mg.st -= $mpgt mg.st',
+            f'execute if score $mprest mg.st matches {M} run tellraw @a[tag=!mg.surv] [{{"text":"⏱ ","color":"gold"}},{{"text":"Plus qu’une minute pour ce mini-jeu !","color":"yellow"}}]',
             'execute if score $mplim mg.st matches 1.. if score $mpgt mg.st = $mplim mg.st run function mg:party/watch_end'])
+w('bw_sudden', ['# Bedwars en Mini Party : mort subite, tous les lits sont détruits (le tick du Bedwars annonce chaque lit)',
+                'fill -36 64 1199 -34 64 1201 minecraft:air replace #minecraft:beds', 'fill 34 64 1199 36 64 1201 minecraft:air replace #minecraft:beds',
+                'fill -1 64 1163 1 64 1165 minecraft:air replace #minecraft:beds', 'fill -1 64 1235 1 64 1237 minecraft:air replace #minecraft:beds',
+                'title @a[tag=!mg.surv] actionbar [{"text":"☠ MORT SUBITE : plus aucune réapparition !","color":"red","bold":true}]'])
 w('watch_end', ['# Temps écoulé : One in the Chamber → le meilleur tueur gagne ; sinon fin sans vainqueur',
                 'tellraw @a[tag=!mg.surv] [{"text":"★ ","color":"gold"},{"text":"Temps écoulé pour ce mini-jeu !","color":"gray"}]',
                 'execute if score $game mg.st matches 26 run return run function mg:party/watch_oitc',

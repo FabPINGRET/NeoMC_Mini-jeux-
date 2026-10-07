@@ -91,3 +91,14 @@ with open(os.path.join(K, 'go.mcfunction'), 'w', encoding='utf-8', newline='\n')
     f.write(s_go.rstrip('\n') + '\ntellraw @a[tag=mg.play] [{"text":"Coincé dans le décor ? ","color":"gray"},{"text":"[⛑ Je suis coincé]","color":"yellow","bold":true,'
             '"click_event":{"action":"run_command","command":"trigger mg.opt set 26"},"hover_event":{"action":"show_text","value":"Te remet sur la route au dernier point de passage '
             '(ou /trigger mg.opt set 26)"}},{"text":" (T pour ouvrir le chat, puis clique)","color":"dark_gray"}]\n')
+
+# ------------------------------------------------------------------ Mini Party : courses en 2 tours (format court), nombre de tours affiché depuis $kLaps
+patch_fn('const', 'execute unless score $ktr mg.st matches 2..3 run function mg:kart/t1/const\n',
+         'execute unless score $ktr mg.st matches 2..3 run function mg:kart/t1/const\n'
+         'execute if score $mp mg.st matches 1 unless score $ktr mg.st matches 3 run scoreboard players set $kLaps mg.st 2\n')
+LAPS = '{"text":"/","color":"gold"},{"score":{"name":"$kLaps","objective":"mg.st"},"color":"gold"},{"text":"   ","color":"gold"}'
+s_h = open(os.path.join(K, 'hud.mcfunction'), encoding='utf-8').read()
+assert '{"text":"/3   ","color":"gold"}' in s_h
+with open(os.path.join(K, 'hud.mcfunction'), 'w', encoding='utf-8', newline='\n') as f: f.write(s_h.replace('{"text":"/3   ","color":"gold"}', LAPS))
+patch_fn('lap', '{"text":" / 3","color":"gold"}', '{"text":" / ","color":"gold"},{"score":{"name":"$kLaps","objective":"mg.st"},"color":"gold"}')
+patch_fn('go', '3 tours !"', 'Tours : ","color":"gray"},{"score":{"name":"$kLaps","objective":"mg.st"},"color":"yellow","bold":true},{"text":" !"')
