@@ -177,3 +177,10 @@ execute if score $setup mg.st matches 1 unless data storage mg:plot built run fu
 execute if score $setup mg.st matches 1 unless data storage mg:party {built:3b} run schedule function mg:party/build 3s
 
 tellraw @a [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Datapack chargé. ","color":"gray"},{"text":"Première fois ? Un OP lance ","color":"gray"},{"text":"/function mg:setup","color":"yellow"},{"text":" pour tout construire.","color":"gray"}]
+
+# Monde de survie : difficulté normale et apparition des monstres.
+# Sur Paper, difficulté et règles de jeu sont propres à chaque monde : le
+# « difficulty normal » du setup ne touche que le monde principal, mg:survie
+# restait en paisible. Réappliqué à chaque chargement du datapack.
+execute in mg:survie run difficulty normal
+execute in mg:survie run gamerule spawn_mobs true
