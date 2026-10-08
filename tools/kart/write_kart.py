@@ -72,8 +72,6 @@ execute if score $ktr mg.st matches 2 unless data storage mg:kart built2 run tel
 execute if score $ktr mg.st matches 2 unless data storage mg:kart built2 run scoreboard players set $ktr mg.st 1
 function mg:kart/const
 function mg:kart/fl_add
-function mg:kart/mm_base
-function mg:kart/mm_init
 scoreboard players set #km1 mg.st -1
 scoreboard players set #k3 mg.st 3
 scoreboard players set #k4 mg.st 4
@@ -119,7 +117,7 @@ scoreboard players set @a[tag=mg.play] mg.kps 0
 scoreboard players set @a[tag=mg.play] mg.kvm 1
 scoreboard players reset @a mg.qs
 execute as @a[tag=mg.play] run function mg:kart/place_one
-scoreboard objectives setdisplay sidebar mg.kmap
+function mg:kart/standings_init
 schedule function mg:kart/place_all 40t
 ''')
 fn('place_one', '''scoreboard players add $gi mg.st 1
@@ -262,7 +260,7 @@ execute if score $kbr mg.st matches 3 as @e[type=minecraft:item_display,tag=mg.k
 execute as @a[tag=mg.play] run function mg:kart/progress
 execute as @a[tag=mg.play] run function mg:kart/rank_one
 execute as @a[tag=mg.play] run function mg:kart/hud
-function mg:kart/minimap
+function mg:kart/standings
 ''')
 
 # ------------------------------------------------------------------ pilotage

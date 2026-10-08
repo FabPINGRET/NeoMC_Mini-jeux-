@@ -29,6 +29,8 @@ POOL = [   # format court : 3 à 6 minutes par mini-jeu (Build Battle et Dropper
     (17, 'SHEEP WAR : ARCHIPEL', 'white', 4 * M),
     (4, 'BEDWARS', 'light_purple', 5 * M),
     (56, 'COURSE DE BATEAUX', 'aqua', 4 * M), (61, 'KART', 'gold', 5 * M), (62, 'KART : ROYAUME KOOPA', 'red', 6 * M), (63, 'KART : BATAILLE', 'light_purple', 3 * M),
+    (70, 'TNT TAG : VILLAGE PERCHÉ', 'aqua', 4 * M), (69, 'TNT TAG : CANYON', 'gold', 4 * M),
+    (75, 'ÉLYTRA : COURSE D\'ANNEAUX', 'aqua', 5 * M), (76, 'ÉLYTRA : COURSE + COMBAT', 'red', 5 * M), (77, 'ÉLYTRA : SURVIE EN VOL', 'light_purple', 6 * M),
 ]
 N = len(POOL)
 

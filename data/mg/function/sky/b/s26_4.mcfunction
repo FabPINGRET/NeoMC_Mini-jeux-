@@ -1,0 +1,192 @@
+# Section 26, morceau 5/5 (généré)
+setblock -84 171 29004 minecraft:snow_block
+setblock -27 171 28989 minecraft:cherry_leaves[persistent=true]
+fill -78 172 29025 -74 176 29027 minecraft:blue_ice
+fill -77 172 29024 -75 176 29024 minecraft:blue_ice
+fill -77 172 29028 -75 176 29028 minecraft:blue_ice
+fill -84 172 29003 -84 179 29003 minecraft:snow_block
+fill -9 176 29084 -7 178 29084 minecraft:blue_ice
+fill -8 176 29083 -8 178 29083 minecraft:blue_ice
+fill -8 176 29085 -8 178 29085 minecraft:blue_ice
+fill -25 177 29077 -23 179 29077 minecraft:blue_ice
+fill -24 177 29076 -24 179 29076 minecraft:blue_ice
+fill -24 177 29078 -24 179 29078 minecraft:blue_ice
+fill -78 177 29024 -74 177 29028 minecraft:blue_ice
+fill -79 178 29026 -73 179 29026 minecraft:blue_ice
+fill -78 178 29024 -74 179 29025 minecraft:blue_ice
+fill -78 178 29027 -74 179 29028 minecraft:blue_ice
+fill -76 178 29023 -76 179 29023 minecraft:blue_ice
+fill -76 178 29029 -76 179 29029 minecraft:blue_ice
+fill -8 179 29084 -8 185 29084 minecraft:snow_block
+fill -25 180 29076 -23 182 29078 minecraft:blue_ice
+fill -79 180 29025 -73 180 29027 minecraft:blue_ice
+fill -78 180 29024 -74 180 29024 minecraft:blue_ice
+fill -78 180 29028 -74 180 29028 minecraft:blue_ice
+fill -77 180 29023 -75 180 29023 minecraft:blue_ice
+fill -77 180 29029 -75 180 29029 minecraft:blue_ice
+fill -79 181 29025 -73 182 29027 minecraft:packed_ice
+fill -78 181 29024 -74 182 29024 minecraft:packed_ice
+fill -78 181 29028 -74 182 29028 minecraft:packed_ice
+fill -77 181 29023 -75 182 29023 minecraft:packed_ice
+fill -77 181 29029 -75 182 29029 minecraft:packed_ice
+fill -26 183 29077 -22 184 29077 minecraft:blue_ice
+fill -25 183 29076 -23 184 29076 minecraft:blue_ice
+fill -25 183 29078 -23 184 29078 minecraft:blue_ice
+fill -24 183 29075 -24 184 29075 minecraft:blue_ice
+fill -24 183 29079 -24 184 29079 minecraft:blue_ice
+fill -78 183 29023 -74 187 29023 minecraft:packed_ice
+fill -78 183 29029 -74 187 29029 minecraft:packed_ice
+fill -79 183 29024 -73 185 29028 minecraft:packed_ice
+fill -26 185 29076 -22 187 29078 minecraft:blue_ice
+fill -25 185 29075 -23 187 29075 minecraft:blue_ice
+fill -25 185 29079 -23 187 29079 minecraft:blue_ice
+fill -80 186 29026 -72 186 29026 minecraft:packed_ice
+fill -79 186 29024 -73 186 29025 minecraft:packed_ice
+fill -79 186 29027 -73 186 29028 minecraft:packed_ice
+setblock -76 186 29022 minecraft:packed_ice
+setblock -76 186 29030 minecraft:packed_ice
+fill -80 187 29025 -72 189 29027 minecraft:packed_ice
+fill -77 187 29022 -75 189 29022 minecraft:packed_ice
+fill -77 187 29030 -75 189 29030 minecraft:packed_ice
+fill -79 187 29024 -73 187 29024 minecraft:packed_ice
+fill -79 187 29028 -73 187 29028 minecraft:packed_ice
+fill -26 188 29075 -22 188 29079 minecraft:blue_ice
+fill -79 188 29023 -73 189 29024 minecraft:packed_ice
+fill -79 188 29028 -73 189 29029 minecraft:packed_ice
+fill -27 189 29077 -21 189 29077 minecraft:blue_ice
+fill -26 189 29075 -22 189 29076 minecraft:blue_ice
+fill -26 189 29078 -22 189 29079 minecraft:blue_ice
+setblock -24 189 29074 minecraft:blue_ice
+setblock -24 189 29080 minecraft:blue_ice
+fill -80 190 29024 -72 193 29028 minecraft:packed_ice
+fill -79 190 29023 -73 193 29023 minecraft:packed_ice
+fill -79 190 29029 -73 193 29029 minecraft:packed_ice
+fill -78 190 29022 -74 193 29022 minecraft:packed_ice
+fill -78 190 29030 -74 193 29030 minecraft:packed_ice
+fill -27 190 29076 -21 191 29078 minecraft:blue_ice
+fill -26 190 29075 -22 191 29075 minecraft:blue_ice
+fill -26 190 29079 -22 191 29079 minecraft:blue_ice
+fill -25 190 29074 -23 191 29074 minecraft:blue_ice
+fill -25 190 29080 -23 191 29080 minecraft:blue_ice
+fill -27 192 29076 -21 192 29078 minecraft:packed_ice
+fill -26 192 29075 -22 192 29075 minecraft:packed_ice
+fill -26 192 29079 -22 192 29079 minecraft:packed_ice
+fill -25 192 29074 -23 192 29074 minecraft:packed_ice
+fill -25 192 29080 -23 192 29080 minecraft:packed_ice
+fill -26 193 29074 -22 196 29074 minecraft:packed_ice
+fill -26 193 29080 -22 196 29080 minecraft:packed_ice
+fill -27 193 29075 -21 194 29079 minecraft:packed_ice
+fill -79 194 29022 -73 198 29022 minecraft:packed_ice
+fill -79 194 29030 -73 198 29030 minecraft:packed_ice
+fill -81 194 29025 -71 196 29027 minecraft:packed_ice
+fill -80 194 29023 -72 196 29024 minecraft:packed_ice
+fill -80 194 29028 -72 196 29029 minecraft:packed_ice
+fill -77 194 29021 -75 196 29021 minecraft:packed_ice
+fill -77 194 29031 -75 196 29031 minecraft:packed_ice
+fill -28 195 29077 -20 195 29077 minecraft:packed_ice
+fill -27 195 29075 -21 195 29076 minecraft:packed_ice
+fill -27 195 29078 -21 195 29079 minecraft:packed_ice
+setblock -24 195 29073 minecraft:packed_ice
+setblock -24 195 29081 minecraft:packed_ice
+fill -28 196 29076 -20 197 29078 minecraft:packed_ice
+fill -25 196 29073 -23 197 29073 minecraft:packed_ice
+fill -25 196 29081 -23 197 29081 minecraft:packed_ice
+fill -27 196 29075 -21 196 29075 minecraft:packed_ice
+fill -27 196 29079 -21 196 29079 minecraft:packed_ice
+fill -81 197 29024 -71 199 29028 minecraft:packed_ice
+fill -78 197 29021 -74 199 29021 minecraft:packed_ice
+fill -78 197 29031 -74 199 29031 minecraft:packed_ice
+fill -80 197 29023 -72 198 29023 minecraft:packed_ice
+fill -80 197 29029 -72 198 29029 minecraft:packed_ice
+fill -27 197 29074 -21 197 29075 minecraft:packed_ice
+fill -27 197 29079 -21 197 29080 minecraft:packed_ice
+fill -28 198 29075 -20 200 29079 minecraft:packed_ice
+fill -27 198 29074 -21 200 29074 minecraft:packed_ice
+fill -27 198 29080 -21 200 29080 minecraft:packed_ice
+fill -26 198 29073 -22 200 29073 minecraft:packed_ice
+fill -26 198 29081 -22 200 29081 minecraft:packed_ice
+fill -80 199 29022 -72 199 29023 minecraft:packed_ice
+fill -80 199 29029 -72 199 29030 minecraft:packed_ice
+fill -49 200 29014 -49 204 29014 minecraft:iron_chain
+fill -39 200 29014 -39 204 29014 minecraft:iron_chain
+fill -44 200 29009 -44 204 29009 minecraft:iron_chain
+fill -44 200 29019 -44 204 29019 minecraft:iron_chain
+fill -80 200 29022 -72 203 29022 minecraft:packed_ice
+fill -80 200 29030 -72 203 29030 minecraft:packed_ice
+fill -79 200 29021 -73 203 29021 minecraft:packed_ice
+fill -79 200 29031 -73 203 29031 minecraft:packed_ice
+fill -81 200 29023 -71 200 29029 minecraft:packed_ice
+fill -27 201 29073 -21 204 29073 minecraft:packed_ice
+fill -27 201 29081 -21 204 29081 minecraft:packed_ice
+fill -29 201 29077 -19 201 29077 minecraft:packed_ice
+fill -28 201 29074 -20 201 29076 minecraft:packed_ice
+fill -28 201 29078 -20 201 29080 minecraft:packed_ice
+setblock -24 201 29072 minecraft:packed_ice
+setblock -24 201 29082 minecraft:packed_ice
+fill -82 201 29026 -70 201 29026 minecraft:packed_ice
+fill -81 201 29023 -71 201 29025 minecraft:packed_ice
+fill -81 201 29027 -71 201 29029 minecraft:packed_ice
+setblock -76 201 29020 minecraft:packed_ice
+setblock -76 201 29032 minecraft:packed_ice
+fill -82 202 29025 -70 203 29027 minecraft:packed_ice
+fill -81 202 29023 -71 203 29024 minecraft:packed_ice
+fill -81 202 29028 -71 203 29029 minecraft:packed_ice
+fill -77 202 29020 -75 203 29020 minecraft:packed_ice
+fill -77 202 29032 -75 203 29032 minecraft:packed_ice
+fill -29 202 29076 -19 202 29078 minecraft:packed_ice
+fill -28 202 29074 -20 202 29075 minecraft:packed_ice
+fill -28 202 29079 -20 202 29080 minecraft:packed_ice
+fill -25 202 29072 -23 202 29072 minecraft:packed_ice
+fill -25 202 29082 -23 202 29082 minecraft:packed_ice
+fill -29 203 29075 -19 205 29079 minecraft:packed_ice
+fill -26 203 29072 -22 205 29072 minecraft:packed_ice
+fill -26 203 29082 -22 205 29082 minecraft:packed_ice
+fill -28 203 29074 -20 204 29074 minecraft:packed_ice
+fill -28 203 29080 -20 204 29080 minecraft:packed_ice
+fill -83 204 29025 -69 204 29027 minecraft:snow_block
+fill -82 204 29023 -70 204 29024 minecraft:snow_block
+fill -82 204 29028 -70 204 29029 minecraft:snow_block
+fill -81 204 29021 -71 204 29022 minecraft:snow_block
+fill -81 204 29030 -71 204 29031 minecraft:snow_block
+fill -79 204 29020 -73 204 29020 minecraft:snow_block
+fill -79 204 29032 -73 204 29032 minecraft:snow_block
+fill -77 204 29019 -75 204 29019 minecraft:snow_block
+fill -77 204 29033 -75 204 29033 minecraft:snow_block
+fill -49 205 29012 -48 205 29012 minecraft:white_stained_glass
+fill -49 205 29016 -48 205 29016 minecraft:white_stained_glass
+fill -40 205 29012 -39 205 29012 minecraft:white_stained_glass
+fill -40 205 29016 -39 205 29016 minecraft:white_stained_glass
+fill -49 205 29013 -49 205 29015 minecraft:white_stained_glass
+fill -39 205 29013 -39 205 29015 minecraft:white_stained_glass
+setblock -48 205 29011 minecraft:white_stained_glass
+setblock -48 205 29017 minecraft:white_stained_glass
+setblock -40 205 29011 minecraft:white_stained_glass
+setblock -40 205 29017 minecraft:white_stained_glass
+fill -47 205 29010 -46 205 29010 minecraft:white_stained_glass
+fill -47 205 29018 -46 205 29018 minecraft:white_stained_glass
+fill -42 205 29010 -41 205 29010 minecraft:white_stained_glass
+fill -42 205 29018 -41 205 29018 minecraft:white_stained_glass
+fill -46 205 29009 -42 205 29009 minecraft:white_stained_glass
+fill -46 205 29019 -42 205 29019 minecraft:white_stained_glass
+fill -28 205 29073 -20 205 29074 minecraft:packed_ice
+fill -28 205 29080 -20 205 29081 minecraft:packed_ice
+fill -28 206 29073 -20 208 29073 minecraft:packed_ice
+fill -28 206 29081 -20 208 29081 minecraft:packed_ice
+fill -27 206 29072 -21 208 29072 minecraft:packed_ice
+fill -27 206 29082 -21 208 29082 minecraft:packed_ice
+fill -29 206 29074 -19 206 29080 minecraft:packed_ice
+fill -30 207 29076 -18 208 29078 minecraft:packed_ice
+fill -29 207 29074 -19 208 29075 minecraft:packed_ice
+fill -29 207 29079 -19 208 29080 minecraft:packed_ice
+fill -25 207 29071 -23 208 29071 minecraft:packed_ice
+fill -25 207 29083 -23 208 29083 minecraft:packed_ice
+fill -31 209 29076 -17 209 29078 minecraft:snow_block
+fill -30 209 29074 -18 209 29075 minecraft:snow_block
+fill -30 209 29079 -18 209 29080 minecraft:snow_block
+fill -29 209 29072 -19 209 29073 minecraft:snow_block
+fill -29 209 29081 -19 209 29082 minecraft:snow_block
+fill -27 209 29071 -21 209 29071 minecraft:snow_block
+fill -27 209 29083 -21 209 29083 minecraft:snow_block
+fill -25 209 29070 -23 209 29070 minecraft:snow_block
+fill -25 209 29084 -23 209 29084 minecraft:snow_block
+return 1

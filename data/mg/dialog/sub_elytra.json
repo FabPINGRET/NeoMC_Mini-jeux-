@@ -1,0 +1,116 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "🪽 Élytra",
+    "color": "aqua",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Mini-jeu en vol : choisis le mode.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🎲 Mode au hasard",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 78"
+      },
+      "tooltip": [
+        {
+          "text": "Un des 3 modes, tiré au sort",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "◎ Course d'anneaux",
+          "color": "aqua"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 75"
+      },
+      "tooltip": [
+        {
+          "text": "20 anneaux dans l'ordre, premier arrivé gagne",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "➶ Course + combat",
+          "color": "red"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 76"
+      },
+      "tooltip": [
+        {
+          "text": "Arc et charges de vent : un adversaire touché chute",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "☁ Survie en vol",
+          "color": "light_purple"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 77"
+      },
+      "tooltip": [
+        {
+          "text": "Reste en l'air dans la zone qui rétrécit",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au menu",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.menu"
+      }
+    }
+  ]
+}

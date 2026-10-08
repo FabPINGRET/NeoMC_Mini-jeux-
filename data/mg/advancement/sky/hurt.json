@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "hit": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "type": {
+            "source_entity": {
+              "minecraft:entity_type": "minecraft:player"
+            },
+            "direct_entity": {
+              "minecraft:entity_type": [
+                "minecraft:arrow",
+                "minecraft:wind_charge"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "mg:sky/hurt_adv"
+  }
+}

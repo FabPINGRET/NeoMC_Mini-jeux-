@@ -1,6 +1,6 @@
 # Sous-menu PvP en chat cliquable (plan B)
 tellraw @s [{"text":"\n⚔ PvP — choisis un mode","color":"gold","bold":true}]
-tellraw @s ["",{"text":" [⚑ Bedwars]","color":"light_purple","click_event":{"action":"run_command","command":"trigger mg.go set 4"},"hover_event":{"action":"show_text","value":"Lancer le Bedwars"}}]
+tellraw @s ["",{"text":" [⚑ Bedwars ▸]","color":"light_purple","click_event":{"action":"run_command","command":"trigger mg.opt set 30"},"hover_event":{"action":"show_text","value":"Choisir la carte du Bedwars"}}]
 tellraw @s ["",{"text":" [☁ Sheep War]","color":"white","click_event":{"action":"run_command","command":"trigger mg.go set 5"},"hover_event":{"action":"show_text","value":"Lancer le Sheep War"}}]
 tellraw @s ["",{"text":" [☁ Sheep War : cartes]","color":"white","click_event":{"action":"run_command","command":"trigger mg.opt set 8"},"hover_event":{"action":"show_text","value":"Classique, Forteresses, Bastions, Cubes, Pyramides, Archipel, Canyon, Nuages"}}]
 tellraw @s ["",{"text":" [⚡ Quakecraft : cartes]","color":"aqua","click_event":{"action":"run_command","command":"trigger mg.opt set 10"},"hover_event":{"action":"show_text","value":"Néon, Volcan XL, Jungle XL, Désert, Glacier mini"}}]

@@ -11,6 +11,22 @@ execute if score $game mg.st matches 63 run scoreboard players set $ktr mg.st 3
 execute if score $game mg.st matches 63 run scoreboard players set $game mg.st 61
 execute if score $game mg.st matches 62 run scoreboard players set $game mg.st 61
 
+# TNT Tag : 27 = carte au hasard, 67 = classique, 68 Collines, 69 Canyon, 70 Village perché → jeu 27 + carte $ttm (0..3)
+execute if score $game mg.st matches 27 store result score $ttm mg.st run random value 0..3
+execute if score $game mg.st matches 67..70 run scoreboard players operation $ttm mg.st = $game mg.st
+execute if score $game mg.st matches 67..70 run scoreboard players remove $ttm mg.st 67
+execute if score $game mg.st matches 67..70 run scoreboard players set $game mg.st 27
+# Bedwars : 4 = carte au hasard, 71 = classique, 72 Caldeira, 73 Hanami, 74 Banquise → jeu 4 + carte $bwm (0..3)
+execute if score $game mg.st matches 4 store result score $bwm mg.st run random value 0..3
+execute if score $game mg.st matches 71..74 run scoreboard players operation $bwm mg.st = $game mg.st
+execute if score $game mg.st matches 71..74 run scoreboard players remove $bwm mg.st 71
+execute if score $game mg.st matches 71..74 run scoreboard players set $game mg.st 4
+# Élytra : 75 course d'anneaux, 76 course + combat, 77 survie en vol, 78 mode au hasard → jeu 75 + mode $elm (1..3)
+execute if score $game mg.st matches 78 store result score $elm mg.st run random value 1..3
+execute if score $game mg.st matches 75..77 run scoreboard players operation $elm mg.st = $game mg.st
+execute if score $game mg.st matches 75..77 run scoreboard players remove $elm mg.st 74
+execute if score $game mg.st matches 75..78 run scoreboard players set $game mg.st 75
+
 # Mini Party : 59 = 8 tours, 60 = 15 tours. Un jeu lancé hors Mini Party ($mpl) met fin à la partie en cours
 execute unless score $mpl mg.st matches 1 run scoreboard players set $mp mg.st 0
 execute if score $game mg.st matches 59 run scoreboard players set $mpmax mg.st 8
@@ -105,6 +121,13 @@ execute if score $game mg.st matches 3 if score $pm mg.st matches 2 run tellraw 
 execute if score $game mg.st matches 3 if score $pm mg.st matches 3 run tellraw @a [{"text":"Carte : ","color":"gray"},{"text":"NUKETOWN","color":"green","bold":true},{"text":" (style Nuketown : deux maisons face à face, bus au milieu)","color":"gray"}]
 execute if score $game mg.st matches 3 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie d'","color":"gray"},{"text":"ARÈNE PVP","color":"yellow","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 4 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"BEDWARS","color":"light_purple","bold":true},{"text":" !","color":"gray"}]
+execute if score $game mg.st matches 4 if score $bwm mg.st matches 1 run function mg:bedwars/map/info_1
+execute if score $game mg.st matches 4 if score $bwm mg.st matches 2 run function mg:bedwars/map/info_2
+execute if score $game mg.st matches 4 if score $bwm mg.st matches 3 run function mg:bedwars/map/info_3
+execute if score $game mg.st matches 4 if score $bwm mg.st matches 0 run tellraw @a [{"text":"Carte : ","color":"gray"},{"text":"CLASSIQUE","color":"light_purple","bold":true},{"text":" (4 îles de pierre autour du diamant)","color":"gray"}]
+execute if score $game mg.st matches 75 if score $elm mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🪽 ÉLYTRA : COURSE D'ANNEAUX","color":"aqua","bold":true},{"text":" (20 anneaux dans l'ordre, premier arrivé gagne) !","color":"gray"}]
+execute if score $game mg.st matches 75 if score $elm mg.st matches 2 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🪽 ÉLYTRA : COURSE + COMBAT","color":"red","bold":true},{"text":" (arc et charges de vent : un adversaire touché chute) !","color":"gray"}]
+execute if score $game mg.st matches 75 if score $elm mg.st matches 3 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🪽 ÉLYTRA : SURVIE EN VOL","color":"light_purple","bold":true},{"text":" (reste en l'air dans la zone qui rétrécit, dernier en vol gagne) !","color":"gray"}]
 execute if score $game mg.st matches 5 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"SHEEP WAR","color":"white","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 7 if score $sm mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"SHEEP WAR 3 — BASTIONS","color":"white","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 7 if score $sm mg.st matches 2 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"SHEEP WAR 4 — CUBES VOXEL","color":"white","bold":true},{"text":" !","color":"gray"}]
@@ -126,6 +149,10 @@ execute if score $game mg.st matches 26 run tellraw @a [{"selector":"@s","color"
 execute if score $game mg.st matches 26 if score $om mg.st matches 1 run tellraw @a [{"text":"Carte : ","color":"gray"},{"text":"CHÂTEAU","color":"gold","bold":true},{"text":" (41×41 : donjon à étage, quatre tours à échelles)","color":"gray"}]
 execute if score $game mg.st matches 26 if score $om mg.st matches 2 run tellraw @a [{"text":"Carte : ","color":"gray"},{"text":"GRANDE FORÊT","color":"dark_green","bold":true},{"text":" (71×71 : collines, arbres, ruines, tours de guet)","color":"gray"}]
 execute if score $game mg.st matches 27 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"TNT TAG","color":"red","bold":true},{"text":" !","color":"gray"}]
+execute if score $game mg.st matches 27 if score $ttm mg.st matches 1 run function mg:tnttag/map/info_1
+execute if score $game mg.st matches 27 if score $ttm mg.st matches 2 run function mg:tnttag/map/info_2
+execute if score $game mg.st matches 27 if score $ttm mg.st matches 3 run function mg:tnttag/map/info_3
+execute if score $game mg.st matches 27 if score $ttm mg.st matches 0 run tellraw @a [{"text":"Carte : ","color":"gray"},{"text":"CLASSIQUE","color":"red","bold":true},{"text":" (arène plate 31×31, piliers et murets)","color":"gray"}]
 execute if score $game mg.st matches 28 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"BLOCK PARTY","color":"light_purple","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 29 if score $sg mg.st matches 2 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"PLUIE D'ENCLUMES — SOL TROUÉ","color":"red","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 29 unless score $sg mg.st matches 2 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"PLUIE D'ENCLUMES","color":"dark_gray","bold":true},{"text":" !","color":"gray"}]
@@ -187,6 +214,7 @@ execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
 execute if score $game mg.st matches 59 run function mg:party/prepare
 execute if score $game mg.st matches 61 run function mg:kart/prepare
+execute if score $game mg.st matches 75 run function mg:sky/prepare
 execute if score $game mg.st matches 7 unless score $sm mg.st matches 1..6 run function mg:sheepwar2/prepare
 execute if score $game mg.st matches 7 if score $sm mg.st matches 1 run function mg:sheepwar3/prepare
 execute if score $game mg.st matches 7 if score $sm mg.st matches 2 run function mg:sheepwar4/prepare

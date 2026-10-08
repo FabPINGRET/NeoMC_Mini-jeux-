@@ -39,4 +39,6 @@ execute store result score Build-mots mg.vb if entity @a[scores={mg.vc=19}]
 execute if score Build-mots mg.vb matches 0 run scoreboard players reset Build-mots mg.vb
 execute store result score Build-maitre mg.vb if entity @a[scores={mg.vc=20}]
 execute if score Build-maitre mg.vb matches 0 run scoreboard players reset Build-maitre mg.vb
+execute store result score Elytra mg.vb if entity @a[scores={mg.vc=21}]
+execute if score Elytra mg.vb matches 0 run scoreboard players reset Elytra mg.vb
 function mg:vote/sidebar

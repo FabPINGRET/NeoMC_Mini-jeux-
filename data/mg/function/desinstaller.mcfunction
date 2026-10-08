@@ -167,6 +167,7 @@ scoreboard objectives remove mg.ept
 schedule clear mg:bb/clear_old_run
 schedule clear mg:core/diag_late
 schedule clear mg:core/setup_build
+schedule clear mg:sky/build
 schedule clear mg:dropadv/build
 schedule clear mg:dropadv/build_10
 schedule clear mg:dropadv/build_11
@@ -282,6 +283,9 @@ clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_ely:1b}]
 data remove storage mg:lobby ely1
 data remove storage mg:lobby food1
 function mg:hall/remove
+function mg:sky/remove
+scoreboard objectives remove mg.seen
+scoreboard objectives remove mg.sbg
 scoreboard objectives remove mg.ehw
 clear @a minecraft:elytra[minecraft:custom_data~{mg_elyf:1b}]
 clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_elyf:1b}]

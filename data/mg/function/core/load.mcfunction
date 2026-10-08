@@ -169,7 +169,7 @@ execute if score $setup mg.st matches 1 if data storage mg:kart built2 unless da
 # Reconstructions automatiques après une mise à jour (numéro de version dans le stockage)
 execute if score $setup mg.st matches 1 unless data storage mg:dropadv v3 run schedule function mg:dropadv/build 40s
 execute if score $setup mg.st matches 1 unless data storage mg:elyrace v1 run schedule function mg:elyrace/build 60s
-execute if score $setup mg.st matches 1 unless data storage mg:hall v2 run schedule function mg:hall/build 20s
+execute if score $setup mg.st matches 1 unless data storage mg:hall v3 run schedule function mg:hall/build 20s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/build 10s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/food_build 25s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:elytra/build 30s
@@ -194,5 +194,9 @@ execute in mg:survie run gamerule spawn_mobs true
 
 # Classements par mini-jeu + tableau à droite affiché par défaut (une seule fois ; masquable au menu)
 function mg:hall/objectives
+# Mini-jeu Élytra + suivi des reconnexions + tableaux de partie
+function mg:sky/load
+scoreboard objectives add mg.seen dummy
+scoreboard objectives add mg.sbg dummy
 execute unless data storage mg:hall sbon run scoreboard players set $sb mg.st 1
 data modify storage mg:hall sbon set value 1b

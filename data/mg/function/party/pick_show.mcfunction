@@ -122,4 +122,19 @@ execute if score $mgk mg.st matches 40 run title @a[tag=mg.mpp] title [{"text":"
 execute if score $mgk mg.st matches 41 run scoreboard players set $mgid mg.st 63
 execute if score $mgk mg.st matches 41 run scoreboard players set $mplim mg.st 3600
 execute if score $mgk mg.st matches 41 run title @a[tag=mg.mpp] title [{"text":"KART : BATAILLE","color":"light_purple","bold":true}]
+execute if score $mgk mg.st matches 42 run scoreboard players set $mgid mg.st 70
+execute if score $mgk mg.st matches 42 run scoreboard players set $mplim mg.st 4800
+execute if score $mgk mg.st matches 42 run title @a[tag=mg.mpp] title [{"text":"TNT TAG : VILLAGE PERCHÉ","color":"aqua","bold":true}]
+execute if score $mgk mg.st matches 43 run scoreboard players set $mgid mg.st 69
+execute if score $mgk mg.st matches 43 run scoreboard players set $mplim mg.st 4800
+execute if score $mgk mg.st matches 43 run title @a[tag=mg.mpp] title [{"text":"TNT TAG : CANYON","color":"gold","bold":true}]
+execute if score $mgk mg.st matches 44 run scoreboard players set $mgid mg.st 75
+execute if score $mgk mg.st matches 44 run scoreboard players set $mplim mg.st 6000
+execute if score $mgk mg.st matches 44 run title @a[tag=mg.mpp] title [{"text":"ÉLYTRA : COURSE D'ANNEAUX","color":"aqua","bold":true}]
+execute if score $mgk mg.st matches 45 run scoreboard players set $mgid mg.st 76
+execute if score $mgk mg.st matches 45 run scoreboard players set $mplim mg.st 6000
+execute if score $mgk mg.st matches 45 run title @a[tag=mg.mpp] title [{"text":"ÉLYTRA : COURSE + COMBAT","color":"red","bold":true}]
+execute if score $mgk mg.st matches 46 run scoreboard players set $mgid mg.st 77
+execute if score $mgk mg.st matches 46 run scoreboard players set $mplim mg.st 7200
+execute if score $mgk mg.st matches 46 run title @a[tag=mg.mpp] title [{"text":"ÉLYTRA : SURVIE EN VOL","color":"light_purple","bold":true}]
 execute as @a[tag=mg.mpp] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 1.5
