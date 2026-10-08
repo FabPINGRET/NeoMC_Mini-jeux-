@@ -37,6 +37,10 @@ execute as @a[scores={mg.cls=1..}] run function mg:pvp2/choose
 
 # Votes des joueurs
 execute as @a[scores={mg.vote=1..}] run function mg:vote/cast
+# Votes à la majorité : lancement automatique (une fois par seconde)
+scoreboard players add $vtk mg.st 1
+execute if score $vtk mg.st matches 20.. run function mg:vote/auto_tick
+execute if score $vtk mg.st matches 20.. run scoreboard players set $vtk mg.st 0
 
 # Build Battle : notes et choix du thème
 execute as @a[scores={mg.bb=1..}] run function mg:bb/rate_cast

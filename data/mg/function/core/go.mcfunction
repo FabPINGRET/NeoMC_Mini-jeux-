@@ -4,8 +4,8 @@
 execute unless score @s mg.go matches 1..78 unless score @s mg.go matches 100..196 run return run scoreboard players reset @s mg.go
 
 # Réservé aux admins
-execute unless entity @s[tag=mg.admin] run tellraw @s [{"text":"⚠ Seul un admin peut lancer un jeu.","color":"red"}]
-execute unless entity @s[tag=mg.admin] run return run scoreboard players reset @s mg.go
+execute unless entity @s[tag=mg.admin] unless entity @s[tag=mg.vauto] run tellraw @s [{"text":"⚠ Seul un admin peut lancer un jeu.","color":"red"}]
+execute unless entity @s[tag=mg.admin] unless entity @s[tag=mg.vauto] run return run scoreboard players reset @s mg.go
 
 # Setup pas fait ?
 execute if score $setup mg.st matches 0 run tellraw @s [{"text":"⚠ Installation manquante : un OP doit d'abord lancer ","color":"red"},{"text":"/function mg:setup","color":"yellow"}]
