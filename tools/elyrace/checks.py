@@ -181,6 +181,8 @@ def course_problems(c):
         print('  parcours %d, tranche %2d : %5d commandes' % (s.NUM, k, n))
         if n > B.SLICE_BUDGET:
             bad.append('parcours %d, tranche %d : %d commandes (budget %d)' % (s.NUM, k, n, B.SLICE_BUDGET))
+    if hasattr(s, 'extra_checks'):                # controles propres au parcours (blocs interdits, lumiere de la grotte...)
+        bad += ['parcours %d : %s' % (s.NUM, b) for b in s.extra_checks(c)]
     return bad
 
 

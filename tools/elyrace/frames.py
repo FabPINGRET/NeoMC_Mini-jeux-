@@ -19,6 +19,12 @@ def gold_frame(w, x, cy, cz):
         w.box(x, cy - r, cz - r, x + 1, cy + r, cz + r, blk)
 
 
+def wind_frame(w, x, cy, cz):
+    """Anneau de vent : cadre bleu clair et blanc de 11 x 11, trou de 7 x 7."""
+    for r, blk in ((5, 'light_blue_concrete'), (4, 'white_concrete'), (3, 'air')):
+        w.box(x, cy - r, cz - r, x + 1, cy + r, cz + r, blk)
+
+
 def cp_gate(w, x, cy, cz):
     """Portique de point de reprise : deux colonnes lumineuses de part et d'autre de la trajectoire, linteau tres haut."""
     for dz in (-12, 11):

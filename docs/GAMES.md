@@ -31,7 +31,7 @@ Référence centrale générée depuis `core/game_tick.mcfunction`.
 | 66 | `mg:elyrace/tick` (ids 81..82 → $xc) |
 | 75 | `mg:sky/tick` (ids 75..78 → $elm) |
 
-Cartes : TNT Tag 27/67..70 → 27 + `$ttm` ; Bedwars 4/71..74 → 4 + `$bwm` ; Élytra 75..78 → 75 + `$elm` ; Course d'élytres 81..82 → 66 + `$xc` (remappage dans `core/request`).
+Cartes : TNT Tag 27/67..70 → 27 + `$ttm` ; Bedwars 4/71..74 → 4 + `$bwm` ; Élytra 75..78 → 75 + `$elm` ; Course d'élytres 81..82 (Canyon du Couchant, Pic Blanc) → 66 + `$xc` (remappage dans `core/request`).
 
 Variantes : ids 100..167 (190..196 = au hasard par mode) → `var/remap` fixe `$vmode` (jeu), `$ar` (arène 1..18 ou sol 21..26) et `$dif` (1..4) ; `var/start` remet `$game` = jeu réel avant la préparation. `$ar = 0` = carte native. Liste : `docs/VARIANTES.md`.
 

@@ -74,7 +74,9 @@ def build_wait_lines(spec):
     me = CC.fn(spec, 'build_wait')
     out = ['# Attend le chargement de la tranche $xbk puis la construit (parcours %d)' % spec.NUM,
            '# $xbk à 0 = aucune construction en cours (arrêtée par build_abort, build_fail ou core/load) : un schedule resté en attente s\'éteint ici',
-           'execute if score $xbk mg.st matches 0 run return 0']
+           'execute if score $xbk mg.st matches 0 run return 0',
+           '# une partie démarre pendant la construction : on ne construit pas (les remplissages sont lourds) et $xbw n\'avance pas (pas de faux build_fail)',
+           IN_GAME + 'return run schedule function %s 20t' % me]
     for k in range(1, n_slices(spec) + 1):
         out.append('execute if score $xbk mg.st matches %d if function %s run return run function %s'
                    % (k, CC.fn(spec, 'loaded_%d' % k), CC.fn(spec, 'build_%d' % k)))

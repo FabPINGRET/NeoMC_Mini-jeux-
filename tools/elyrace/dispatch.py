@@ -8,6 +8,7 @@ Python stdlib uniquement (compatible 3.8).
 """
 import course_common as CC
 import game as G
+import wind as W
 
 N_ROUTES = 2             # nombre de parcours prevus (NUM 1..N_ROUTES) ; un parcours pas encore ecrit est « pas construit »
 RED = '{"text":"%s","color":"red"}'
@@ -123,18 +124,21 @@ def uninstall_lines(specs):
     out += ['function mg:elyrace/forget',
             'clear @a minecraft:elytra[minecraft:custom_data~{mg_elyr:1b}]',
             'clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_elyr:1b}]']
-    out += ['tag @a remove ' + t for t in G.TAGS]
+    out += ['tag @a remove ' + t for t in G.TAGS] + W.cleanup_lines()
     out.append('advancement revoke @a only mg:elyrace_wall')
     out += ['scoreboard objectives remove mg.%s' % n for n, _, _ in G.OBJECTIVES]
     return out
 
 
 def functions(specs):
-    return {'prepare': prepare_lines(specs), 'pick': pick_lines(specs), 'announce': announce_lines(specs),
-            'forget': forget_lines(specs), 'not_built': not_built_lines(specs), 'not_available': not_available_lines(),
-            'uninstall': uninstall_lines(specs),
-            'respawn': dispatcher(specs, '# @s = joueur à replacer au dernier point de reprise de son parcours', 'respawn'),
-            'hud': dispatcher(specs, '# @s = joueur : barre d\'action de son parcours', 'hud'),
-            'place_tp': dispatcher(specs, '# @s = joueur : le met à sa place de départ (mg.ri) sur son parcours', 'place_tp'),
-            'fl_remove': dispatcher(specs, '# Libère le chargement forcé de la zone de départ du parcours $xc', 'fl_remove'),
-            'gate_off': dispatcher(specs, '# GO : ouvre le portillon du parcours $xc', 'gate_off')}
+    out = {'prepare': prepare_lines(specs), 'pick': pick_lines(specs), 'announce': announce_lines(specs),
+           'forget': forget_lines(specs), 'not_built': not_built_lines(specs),
+           'uninstall': uninstall_lines(specs),
+           'respawn': dispatcher(specs, '# @s = joueur à replacer au dernier point de reprise de son parcours', 'respawn'),
+           'hud': dispatcher(specs, '# @s = joueur : barre d\'action de son parcours', 'hud'),
+           'place_tp': dispatcher(specs, '# @s = joueur : le met à sa place de départ (mg.ri) sur son parcours', 'place_tp'),
+           'fl_remove': dispatcher(specs, '# Libère le chargement forcé de la zone de départ du parcours $xc', 'fl_remove'),
+           'gate_off': dispatcher(specs, '# GO : ouvre le portillon du parcours $xc', 'gate_off')}
+    if len(specs) < N_ROUTES:                   # tous les emplacements sont ecrits : plus rien n'appelle not_available
+        out['not_available'] = not_available_lines()
+    return out

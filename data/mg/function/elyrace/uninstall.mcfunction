@@ -3,6 +3,7 @@
 schedule clear mg:elyrace/build
 schedule clear mg:elyrace/build_next
 schedule clear mg:elyrace/c1/build_wait
+schedule clear mg:elyrace/c2/build_wait
 # ancien chemin (avant 2a : construction en un seul module, sans c<N>/) : un schedule d'une version précédente peut survivre
 schedule clear mg:elyrace/build_wait
 function mg:elyrace/forget
