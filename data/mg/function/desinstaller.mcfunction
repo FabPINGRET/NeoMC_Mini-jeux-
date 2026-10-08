@@ -111,6 +111,7 @@ scoreboard objectives remove mg.kboo
 scoreboard objectives remove mg.kmg
 scoreboard objectives remove mg.kmap
 bossbar remove mg:party
+bossbar remove mg:boss
 scoreboard objectives remove mg.mit
 scoreboard objectives remove mg.mip
 kill @e[type=minecraft:armor_stand,tag=mg.mppawn]
@@ -151,6 +152,15 @@ scoreboard objectives remove mg.dpw
 scoreboard objectives remove mg.ok
 scoreboard objectives remove mg.svid
 scoreboard objectives remove mg.svvx
+scoreboard objectives remove mg.kstk
+scoreboard objectives remove mg.klt
+scoreboard objectives remove mg.klb
+scoreboard objectives remove mg.lcd
+scoreboard objectives remove mg.esn
+scoreboard objectives remove mg.esc
+scoreboard objectives remove mg.eup
+scoreboard objectives remove mg.ebl
+scoreboard objectives remove mg.ept
 
 # Annule les constructions planifiées en cours (chaînes schedule)
 schedule clear mg:bb/clear_old_run
@@ -160,6 +170,11 @@ schedule clear mg:dropadv/build
 schedule clear mg:dropadv/build_10
 schedule clear mg:dropadv/build_11
 schedule clear mg:dropadv/build_12
+schedule clear mg:dropadv/build_13
+schedule clear mg:dropadv/build_14
+schedule clear mg:dropadv/build_15
+schedule clear mg:dropadv/build_16
+schedule clear mg:dropadv/build_17
 schedule clear mg:dropadv/build_2
 schedule clear mg:dropadv/build_3
 schedule clear mg:dropadv/build_4
@@ -233,6 +248,19 @@ schedule clear mg:kart/t3/build_7
 schedule clear mg:kart/t3/build_8
 schedule clear mg:kart/t3/build_9
 schedule clear mg:kart/t3/build_wait
+schedule clear mg:lobby/build
+schedule clear mg:lobby/build_1
+schedule clear mg:lobby/build_2
+schedule clear mg:lobby/build_3
+schedule clear mg:lobby/build_4
+schedule clear mg:lobby/build_5
+schedule clear mg:lobby/build_6
+schedule clear mg:lobby/build_7
+schedule clear mg:lobby/build_8
+schedule clear mg:lobby/build_9
+schedule clear mg:lobby/build_10
+schedule clear mg:lobby/build_11
+schedule clear mg:lobby/build_end
 schedule clear mg:mobarena/xbuild
 schedule clear mg:mobarena/xbuild2
 schedule clear mg:party/build
