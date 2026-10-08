@@ -20,6 +20,8 @@ scoreboard players set $kr mg.st 0
 scoreboard players set $kj mg.st 0
 scoreboard players set $ks mg.st 0
 execute unless entity @s[tag=mg.kfin] run function mg:kart/inputs
+execute if score $klob mg.st matches 0 if score $kbat mg.st matches 0 if score $kf mg.st matches 1 run scoreboard players add @s mg.kof 1
+execute if score $klob mg.st matches 0 if score $kbat mg.st matches 0 if score $kb mg.st matches 1 if score $kf mg.st matches 0 run scoreboard players add @s mg.kof 1
 
 # Objet : clic droit (vue assise) ou Ctrl (caméra de poursuite)
 scoreboard players set $kuse mg.st 0
@@ -48,6 +50,8 @@ execute if score @s mg.kbill matches 1.. unless entity @s[tag=mg.kfin] run retur
 
 execute if score $kwa mg.st matches 1 run return run function mg:kart/rescue
 execute if score $kyy mg.st matches ..6000 run return run function mg:kart/rescue
+execute if score $kbat mg.st matches 0 if score $klob mg.st matches 0 at @e[type=minecraft:block_display,tag=mg.kk,limit=1] unless block ~ ~ ~ #mg:kart_pass unless block ~ ~1 ~ #mg:kart_pass run return run function mg:kart/rescue
+execute if score @s mg.kof matches 200.. run return run function mg:kart/rescue
 
 function mg:kart/speed
 function mg:kart/steer

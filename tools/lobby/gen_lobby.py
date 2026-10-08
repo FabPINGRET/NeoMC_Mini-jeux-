@@ -1111,6 +1111,7 @@ BTN = ('tellraw @s [{"text":"🏎 ","color":"gold"},{"text":"Circuit du spawn : 
        '{"text":"[Descendre]","color":"red","bold":true,"click_event":{"action":"run_command","command":"trigger mg.opt set 27"},"hover_event":{"action":"show_text","value":"Ranger le kart et revenir au garage (/trigger mg.opt set 27)"}},'
        '{"text":" ","color":"gray"},{"text":"[Vue assise]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 2"}},'
        '{"text":" ","color":"gray"},{"text":"[Caméra de poursuite]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.kv set 1"}},'
+       '{"text":" ","color":"gray"},{"text":"[⛑ Je suis coincé]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.opt set 26"},"hover_event":{"action":"show_text","value":"Te remet sur la piste au dernier point de passage (ou /trigger mg.opt set 26)"}},'
        '{"text":"  (Shift = descendre ; on peut rouler sur tout le spawn)","color":"dark_gray"}]')
 wr('lobkart/enter', ['# @s marche sur le tapis du garage : il monte dans un kart sur la ligne de départ du circuit du spawn',
                      'tag @s add mg.lkz',

@@ -17,12 +17,18 @@ scoreboard players set $kac mg.st 5
 execute if score @s mg.kty matches 2 run scoreboard players set $kac mg.st 4
 execute if score @s mg.kty matches 3 run scoreboard players set $kac mg.st 7
 execute if score @s mg.kty matches 4 run scoreboard players set $kac mg.st 3
-execute if score $kf mg.st matches 1 if score $kb mg.st matches 0 run scoreboard players operation @s mg.ksp += $kac mg.st
+scoreboard players set $kup mg.st 0
+execute if score $kf mg.st matches 1 if score $kb mg.st matches 0 if score @s mg.ksp < $kmx mg.st store success score $kup mg.st run scoreboard players operation @s mg.ksp += $kac mg.st
+execute if score $kup mg.st matches 1 run scoreboard players operation @s mg.ksp < $kmx mg.st
 execute if score $kb mg.st matches 1 if score $kf mg.st matches 0 if score @s mg.ksp matches 1.. run scoreboard players remove @s mg.ksp 10
 execute if score $kb mg.st matches 1 if score $kf mg.st matches 0 if score @s mg.ksp matches ..0 run scoreboard players remove @s mg.ksp 3
 execute if score $kf mg.st matches 0 if score $kb mg.st matches 0 if score @s mg.ksp matches 3.. run scoreboard players remove @s mg.ksp 2
 execute if score $kf mg.st matches 0 if score $kb mg.st matches 0 if score @s mg.ksp matches ..-3 run scoreboard players add @s mg.ksp 2
 execute if score $kf mg.st matches 0 if score $kb mg.st matches 0 if score @s mg.ksp matches -2..2 run scoreboard players set @s mg.ksp 0
 execute if score @s mg.kbo matches 1.. if score @s mg.ksp < $kmx mg.st run scoreboard players operation @s mg.ksp = $kmx mg.st
-execute if score @s mg.ksp > $kmx mg.st run scoreboard players remove @s mg.ksp 6
+scoreboard players set $kdc mg.st 6
+execute if score $kf mg.st matches 1 if score $kb mg.st matches 0 run scoreboard players operation $kdc mg.st -= $kac mg.st
+execute if score $kdc mg.st matches ..0 run scoreboard players set $kdc mg.st 1
+execute if score @s mg.ksp > $kmx mg.st run scoreboard players operation @s mg.ksp -= $kdc mg.st
+execute if score @s mg.ksp matches 151.. run scoreboard players set @s mg.ksp 150
 execute if score @s mg.ksp matches ..-36 run scoreboard players set @s mg.ksp -35

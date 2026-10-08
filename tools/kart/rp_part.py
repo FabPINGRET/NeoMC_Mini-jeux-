@@ -47,12 +47,13 @@ fn('rp_kart', '\n'.join(kart3d) + '\n')
 def patch_fn(name, old, new):
     p = os.path.join(K, name + '.mcfunction')
     s = open(p, encoding='utf-8').read()
-    assert old in s, (name, old)
+    if s.count(old) != 1:
+        raise SystemExit(f"patch_fn : l'ancre doit apparaître exactement une fois dans kart/{name}.mcfunction ({s.count(old)} trouvée(s)) : {old!r}")
     with open(p, 'w', encoding='utf-8', newline='\n') as f: f.write(s.replace(old, new, 1))
 
 patch_fn('tick', 'scoreboard players add $ktime mg.st 1\n',
          'scoreboard players add $ktime mg.st 1\n'
-         'execute if score $rp mg.st matches 1 as @e[tag=mg.kart,tag=!mg.rps] at @s run function mg:kart/rp_skin\n'
+         'execute if score $rp mg.st matches 1 as @e[type=minecraft:block_display,tag=mg.kart,tag=!mg.rps] at @s run function mg:kart/rp_skin\n'
          'execute if score $rp mg.st matches 1 as @e[tag=mg.fx,tag=!mg.rps] at @s run function mg:kart/rp_skin\n')
 # boîte qui réapparaît : on la rhabille au tick suivant
 patch_fn('box_wait', 'tag @s remove mg.kboff\n', 'tag @s remove mg.kboff\ntag @s remove mg.rps\n')

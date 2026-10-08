@@ -85,7 +85,8 @@ tag @s remove mg.kstuck
 execute if entity @s[tag=mg.kfin] run return 0
 execute if score @s mg.kstk matches 1.. run return run tellraw @s [{"text":"⛑ Patiente encore un peu avant de redemander (5 s).","color":"red"}]
 scoreboard players set @s mg.kstk 100
-function mg:kart/rescue''')
+function mg:kart/rescue
+''')
 s_go = open(os.path.join(K, 'go.mcfunction'), encoding='utf-8').read()
 with open(os.path.join(K, 'go.mcfunction'), 'w', encoding='utf-8', newline='\n') as f:
     f.write(s_go.rstrip('\n') + '\ntellraw @a[tag=mg.play] [{"text":"Coincé dans le décor ? ","color":"gray"},{"text":"[⛑ Je suis coincé]","color":"yellow","bold":true,'
@@ -108,3 +109,5 @@ patch_fn('lap', 'scoreboard players add @s mg.klp 1\n', 'execute if score $klob 
 # kart libre du spawn : toute l'île compte comme de la route (on roule partout à pleine vitesse)
 patch_fn('probe', 'execute if block ~ ~-0.5 ~ #mg:kart_road run scoreboard players set $kro mg.st 1\n',
          'execute if block ~ ~-0.5 ~ #mg:kart_road run scoreboard players set $kro mg.st 1\nexecute if score $klob mg.st matches 1 run scoreboard players set $kro mg.st 1\n')
+
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'collide_part.py'), encoding='utf-8').read())
