@@ -187,6 +187,84 @@
     {
       "label": [
         {
+          "text": "🧟 🧟 Zombies ",
+          "color": "dark_green"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Coop, armes réelles, 10 manches, portes et boîte mystère",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 97"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🧪 🧪 Infection ",
+          "color": "green"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Survivants armés contre zombies contagieux, 3 min",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 98"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🎭 🎭 Prop Hunt ",
+          "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Cache-toi en objet, ou trouve les objets qui bougent",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 96"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour au menu",
           "color": "yellow"
         }

@@ -21,6 +21,8 @@ execute if score $game mg.st matches 31 run function mg:quake/tick
 execute if score $game mg.st matches 36 run function mg:paintball/tick
 execute if score $game mg.st matches 56 run function mg:icerace/tick
 execute if score $game mg.st matches 57..58 run function mg:bb/tick
+execute if score $game mg.st matches 96 run function mg:ph/tick
+execute if score $game mg.st matches 97..98 run function mg:zmode/tick
 execute if score $game mg.st matches 94..95 run function mg:survival/tick
 execute if score $game mg.st matches 93 run function mg:ctf/tick
 execute if score $game mg.st matches 89..90 run function mg:convoy/tick

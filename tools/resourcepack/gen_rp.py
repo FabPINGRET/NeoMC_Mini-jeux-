@@ -322,6 +322,7 @@ for name, (texs, els) in HZ_MODELS.items():
     item_def(name, f'mg:item/{name}')
 
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lobby_rp.py'), encoding='utf-8').read())
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'guns_rp.py'), encoding='utf-8').read())
 
 # ------------------------------------------------------------------ pack.mcmeta, zip
 wjson(os.path.join(OUT, 'pack.mcmeta'), {"pack": {"description": [{"text": "NeoMC Mini-Jeux", "color": "gold"},

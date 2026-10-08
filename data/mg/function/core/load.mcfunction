@@ -37,6 +37,33 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+team add mg_ph
+team modify mg_ph nametagVisibility never
+team modify mg_ph friendlyFire false
+team modify mg_ph collisionRule never
+scoreboard players set #4 mg.st 4
+scoreboard objectives add mg.pid dummy
+scoreboard objectives add mg.php dummy
+scoreboard objectives add mg.phx dummy
+scoreboard objectives add mg.phz dummy
+scoreboard objectives add mg.phs dummy
+scoreboard players set #2 mg.st 2
+scoreboard players set #3 mg.st 3
+scoreboard players set #5 mg.st 5
+scoreboard players set #8 mg.st 8
+scoreboard players set #60 mg.st 60
+scoreboard objectives add mg.zpt dummy {"text":"🧟 Points","color":"dark_green"}
+scoreboard objectives add mg.zk minecraft.killed:minecraft.zombie
+scoreboard objectives add mg.gcd dummy
+scoreboard objectives add mg.grl dummy
+scoreboard objectives add mg.grt dummy
+scoreboard objectives add mg.gsn minecraft.custom:minecraft.sneak_time
+scoreboard objectives add mg.g1 dummy
+scoreboard objectives add mg.g2 dummy
+scoreboard objectives add mg.g3 dummy
+scoreboard objectives add mg.g4 dummy
+scoreboard objectives add mg.g5 dummy
+scoreboard objectives add mg.g6 dummy
 scoreboard players set #7 mg.st 7
 scoreboard players set #11 mg.st 11
 scoreboard players set #30 mg.st 30

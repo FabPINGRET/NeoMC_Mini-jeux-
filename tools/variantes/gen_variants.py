@@ -718,7 +718,10 @@ CATS = {
         act('👑 King of the Hill', 'gold', 'trigger mg.go set 86', 'Reste seul au sommet : 60 s pour gagner'),
         act('👑 KotH — équipes', 'red', 'trigger mg.go set 87', 'Rouge contre Bleu, tenez la colline 90 s'),
         act('⛏ Mini UHC Run', 'gold', 'trigger mg.go set 94', '5 min : farm, PvP, zone qui rétrécit'),
-        act('🏹 Mini Hunger Games', 'gold', 'trigger mg.go set 95', '5 min : coffres, corne d\'abondance, dernier en vie')], 'menu'),
+        act('🏹 Mini Hunger Games', 'gold', 'trigger mg.go set 95', '5 min : coffres, corne d\'abondance, dernier en vie'),
+        act('🧟 Zombies', 'dark_green', 'trigger mg.go set 97', 'Coop, armes réelles, 10 manches, portes et boîte mystère'),
+        act('🧪 Infection', 'green', 'trigger mg.go set 98', 'Survivants armés contre zombies contagieux, 3 min'),
+        act('🎭 Prop Hunt', 'gold', 'trigger mg.go set 96', 'Cache-toi en objet, ou trouve les objets qui bougent')], 'menu'),
     'kart': ('🏎 Kart', 'gold', 'Choisis le circuit.', [
         known('trigger mg.go set 61', '🏎 KART : Circuit Champignon', 'gold'), known('trigger mg.go set 62', '🏎 KART : Royaume Koopa', 'red'),
         known('trigger mg.go set 63', '🎈 KART : Bataille', 'light_purple')], 'courses'),
@@ -827,7 +830,7 @@ NATIVE = {
     75: ('Course d\'anneaux', 2), 76: ('Course + combat', 3), 77: ('Survie en vol', 4),
     61: ('Circuit Champignon', 2), 62: ('Royaume Koopa', 3), 63: ('Bataille', 2), 56: ('Bateaux sur glace', 2),
     81: ('Canyon du Couchant', 3), 30: ('Turf Wars', 2),
-    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2), 88: ('🏰 The Towers', 3), 89: ('🚚 Convoi', 3), 90: ('🚚 Convoi — coop', 3), 91: ('▦ Block Party — bandes', 3), 92: ('▦ Block Party — mixte', 3), 93: ('🚩 Capture the Flag', 3), 94: ('⛏ Mini UHC Run', 3), 95: ('🏹 Mini Hunger Games', 3),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
+    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2), 88: ('🏰 The Towers', 3), 89: ('🚚 Convoi', 3), 90: ('🚚 Convoi — coop', 3), 91: ('▦ Block Party — bandes', 3), 92: ('▦ Block Party — mixte', 3), 93: ('🚩 Capture the Flag', 3), 94: ('⛏ Mini UHC Run', 3), 95: ('🏹 Mini Hunger Games', 3), 96: ('🎭 Prop Hunt', 2), 97: ('🧟 Zombies', 3), 98: ('🧪 Infection', 2),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
 }
 SHORT_OPT = {   # boutons de navigation (mg.opt) : noms courts
     24: '➶ OITC ▸', 10: '⚡ Quake ▸', 20: '⚓ Enclumes ▸', 19: '⬇ Dropper ▸', 28: '🪽 Course élytres ▸', 23: '⚔ Arène PvP ▸',
