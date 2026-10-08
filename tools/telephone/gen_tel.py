@@ -342,7 +342,7 @@ patch('core/load', 'scoreboard objectives add mg.bw trigger', ['scoreboard objec
                                                                 'scoreboard objectives add mg.tc dummy', 'scoreboard objectives add mg.tx dummy',
                                                                 'scoreboard objectives add mg.tz dummy',
                                                                 'scoreboard objectives add mg.tpt dummy {"text":"📞 Points","color":"gold"}'])
-patch('desinstaller', 'scoreboard objectives remove mg.bw', ['scoreboard objectives remove mg.tel', 'scoreboard objectives remove mg.ti',
+patch('desinstaller', 'scoreboard objectives remove mg.bw', ['schedule clear mg:tel/plots', 'scoreboard objectives remove mg.tel', 'scoreboard objectives remove mg.ti',
                                                              'scoreboard objectives remove mg.tc', 'scoreboard objectives remove mg.tx',
                                                              'scoreboard objectives remove mg.tz', 'scoreboard objectives remove mg.tpt'])
 # menu : catégorie Fête et création (généré par gen_variants : on ajoute au tableau CATS via le dialog directement)

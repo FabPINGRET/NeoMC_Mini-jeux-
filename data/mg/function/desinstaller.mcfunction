@@ -21,6 +21,13 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+schedule clear mg:tel/plots
+scoreboard objectives remove mg.tel
+scoreboard objectives remove mg.ti
+scoreboard objectives remove mg.tc
+scoreboard objectives remove mg.tx
+scoreboard objectives remove mg.tz
+scoreboard objectives remove mg.tpt
 scoreboard objectives remove mg.tel
 scoreboard objectives remove mg.ti
 scoreboard objectives remove mg.tc
