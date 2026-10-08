@@ -1,5 +1,5 @@
 # Mob Arena — « skip » : on garde la classe actuelle (@s = joueur)
-execute unless score @s mg.cl matches 2..8 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Guerrier","color":"white","bold":true}]
+execute unless score @s mg.cl matches 2..8 unless score @s mg.cl matches 11..14 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Guerrier","color":"white","bold":true}]
 execute if score @s mg.cl matches 2 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Archer","color":"green","bold":true}]
 execute if score @s mg.cl matches 3 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Tank","color":"aqua","bold":true}]
 execute if score @s mg.cl matches 4 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Assassin","color":"dark_gray","bold":true}]
@@ -7,3 +7,7 @@ execute if score @s mg.cl matches 5 run tellraw @s [{"text":"⏭ Classe conserv�
 execute if score @s mg.cl matches 6 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Pyromane","color":"gold","bold":true}]
 execute if score @s mg.cl matches 7 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Berserker","color":"dark_red","bold":true}]
 execute if score @s mg.cl matches 8 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Poséidon","color":"dark_aqua","bold":true}]
+execute if score @s mg.cl matches 11 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Lancier","color":"dark_aqua","bold":true}]
+execute if score @s mg.cl matches 12 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Ninja","color":"blue","bold":true}]
+execute if score @s mg.cl matches 13 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Médecin","color":"red","bold":true}]
+execute if score @s mg.cl matches 14 run tellraw @s [{"text":"⏭ Classe conservée : ","color":"gray"},{"text":"Ingénieur","color":"gray","bold":true}]

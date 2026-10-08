@@ -8,7 +8,7 @@ item replace entity @s armor.legs with minecraft:iron_leggings[unbreakable={}]
 item replace entity @s armor.feet with minecraft:iron_boots[unbreakable={}]
 execute if score $mt mg.st matches 3 run function mg:mobarena/kit_ultra
 # Classe choisie (sauf Ultra Hard, kit imposé)
-execute unless score $mt mg.st matches 3 if score @s mg.cl matches 2..8 run function mg:mobarena/class_kit
+execute unless score $mt mg.st matches 3 if score @s mg.cl matches 2..14 run function mg:mobarena/class_kit
 # Bouclier en main secondaire (tous les thèmes PvE)
 item replace entity @s weapon.offhand with minecraft:shield[unbreakable={},enchantments={unbreaking:3}]
 # Luminosité : vision nocturne permanente (arènes de nuit trop sombres)

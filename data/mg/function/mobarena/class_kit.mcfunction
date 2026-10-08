@@ -9,3 +9,7 @@ execute if score @s mg.cl matches 5 run function mg:mobarena/class/mage
 execute if score @s mg.cl matches 6 run function mg:mobarena/class/pyro
 execute if score @s mg.cl matches 7 run function mg:mobarena/class/berserker
 execute if score @s mg.cl matches 8 run function mg:mobarena/class/poseidon
+execute if score @s mg.cl matches 11 run function mg:mobarena/class/lancer
+execute if score @s mg.cl matches 12 run function mg:mobarena/class/ninja
+execute if score @s mg.cl matches 13 run function mg:mobarena/class/medic
+execute if score @s mg.cl matches 14 run function mg:mobarena/class/engineer

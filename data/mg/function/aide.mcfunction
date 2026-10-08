@@ -21,7 +21,7 @@ tellraw @s [{"text":"• Boutique Bedwars : ","color":"gray"},{"text":"parle au 
 tellraw @s [{"text":"• (OP) Installer / reconstruire : ","color":"gray"},{"text":"/function mg:setup","color":"yellow"}]
 tellraw @s [{"text":"• (OP) Tout désinstaller : ","color":"gray"},{"text":"/function mg:desinstaller","color":"yellow"}]
 tellraw @s [{"text":"• Déco/reco : ","color":"gray"},{"text":"spectateur dans la partie en cours, sinon lobby (inventaire vidé)","color":"yellow"}]
-tellraw @s [{"text":"• PvP classes : ","color":"gray"},{"text":"/trigger mg.cls set 1..6","color":"yellow"},{"text":" pendant le compte à rebours","color":"gray"}]
+tellraw @s [{"text":"• PvP classes : ","color":"gray"},{"text":"/trigger mg.cls set 1..6 ou 11..14","color":"yellow"},{"text":" pendant le compte à rebours","color":"gray"}]
 tellraw @s [{"text":"• Mes statistiques (tous) : ","color":"gray"},{"text":"/trigger mg.opt set 25","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.opt set 25"}}]
 tellraw @s [{"text":"• Parcours d'élytra (tous) : à l'est de la place — petit (socle bleu, 8 anneaux) et grand (socle violet, 15 anneaux)","color":"gray"}]
 tellraw @s [{"text":"• Hall des scores (tous) : au sud-ouest de la place ; le tableau à droite alterne classement général et classement par jeu","color":"gray"}]

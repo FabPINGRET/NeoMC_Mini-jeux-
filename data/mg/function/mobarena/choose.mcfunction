@@ -2,7 +2,7 @@
 execute unless entity @s[tag=mg.play] run return 0
 execute if score $c mg.st matches 9 run return run function mg:mobarena/class_menu
 execute if score $c mg.st matches 10 run return run function mg:mobarena/class_keep
-execute unless score $c mg.st matches 1..8 run return 0
+execute unless score $c mg.st matches 1..8 unless score $c mg.st matches 11..14 run return 0
 execute unless score $state mg.st matches 1..2 run return 0
 execute if score $mt mg.st matches 3 run return run tellraw @s [{"text":"Ultra Hard : le kit est imposé.","color":"red"}]
 execute if score $state mg.st matches 2 unless score $wt mg.st matches 1.. run return run tellraw @s [{"text":"Pas en plein combat : change de classe pendant la pause entre deux vagues.","color":"red"}]
@@ -15,4 +15,8 @@ execute if score $c mg.st matches 5 run tellraw @s [{"text":"✔ Classe : ","col
 execute if score $c mg.st matches 6 run tellraw @s [{"text":"✔ Classe : ","color":"green"},{"text":"Pyromane","color":"gold","bold":true}]
 execute if score $c mg.st matches 7 run tellraw @s [{"text":"✔ Classe : ","color":"green"},{"text":"Berserker","color":"dark_red","bold":true}]
 execute if score $c mg.st matches 8 run tellraw @s [{"text":"✔ Classe : ","color":"green"},{"text":"Poséidon","color":"dark_aqua","bold":true}]
+execute if score $c mg.st matches 11 run tellraw @s [{"text":"✔ Classe : ","color":"green"},{"text":"Lancier","color":"dark_aqua","bold":true}]
+execute if score $c mg.st matches 12 run tellraw @s [{"text":"✔ Classe : ","color":"green"},{"text":"Ninja","color":"blue","bold":true}]
+execute if score $c mg.st matches 13 run tellraw @s [{"text":"✔ Classe : ","color":"green"},{"text":"Médecin","color":"red","bold":true}]
+execute if score $c mg.st matches 14 run tellraw @s [{"text":"✔ Classe : ","color":"green"},{"text":"Ingénieur","color":"gray","bold":true}]
 execute if score $state mg.st matches 2 run function mg:mobarena/class_apply
