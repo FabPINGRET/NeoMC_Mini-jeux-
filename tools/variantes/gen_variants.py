@@ -115,17 +115,17 @@ COMBAT = [
 FX, FZ = 0, 24300
 # étages : (y, demi-côté, demi-côté du trou ou 0)
 LAYOUTS = [
-    dict(k=21, name='Tour de Spleef', col='aqua', floors=[(80, 14, 0), (73, 12, 0), (66, 10, 0), (59, 8, 0)], src='Spleef',
+    dict(k=21, name='Tour de Spleef', col='aqua', floors=[(80, 14, 0), (76, 12, 0), (72, 10, 0), (68, 8, 0)], src='Spleef',
          desc='4 étages qui rétrécissent (29 → 17)'),
-    dict(k=22, name='Tour de TNT Run', col='red', floors=[(84, 14, 0), (74, 12, 0), (64, 10, 0)], src='TNT Run',
-         desc='3 étages espacés de 10 blocs'),
-    dict(k=23, name='Cube de Splegg', col='yellow', floors=[(80, 18, 0), (74, 18, 0), (68, 18, 0)], src='Splegg',
+    dict(k=22, name='Tour de TNT Run', col='red', floors=[(84, 14, 0), (80, 12, 0), (76, 10, 0)], src='TNT Run',
+         desc='3 étages de laine qui rétrécissent'),
+    dict(k=23, name='Cube de Splegg', col='yellow', floors=[(80, 18, 0), (76, 18, 0), (72, 18, 0)], src='Splegg',
          desc='3 grands étages identiques (37×37)'),
-    dict(k=24, name='Splegg XXL', col='gold', floors=[(80, 30, 0), (73, 26, 0), (66, 22, 0)], src='Splegg',
+    dict(k=24, name='Splegg XXL', col='gold', floors=[(80, 30, 0), (76, 26, 0), (72, 22, 0)], src='Splegg',
          desc='3 étages géants (61 → 45)'),
-    dict(k=25, name='Pyramide', col='light_purple', floors=[(84, 16, 0), (79, 13, 0), (74, 10, 0), (69, 7, 0), (64, 4, 0)], src='nouveau',
+    dict(k=25, name='Pyramide', col='light_purple', floors=[(84, 16, 0), (80, 13, 0), (76, 10, 0), (72, 7, 0), (68, 4, 0)], src='nouveau',
          desc='5 étages en pyramide, de plus en plus petits'),
-    dict(k=26, name='Anneaux', col='dark_aqua', floors=[(80, 18, 7), (73, 11, 0), (66, 20, 12)], src='nouveau',
+    dict(k=26, name='Anneaux', col='dark_aqua', floors=[(80, 18, 7), (76, 11, 0), (72, 20, 12)], src='nouveau',
          desc='anneau troué, plateau central, anneau large', ring_spawn=True),
 ]
 LY = {l['k']: l for l in LAYOUTS}
@@ -371,7 +371,7 @@ for l in LAYOUTS:
 
     # étage du haut (Spleef / Splegg) : même logique que spleef/top_check, sur les 3 étages du haut
     fl = l['floors'][:3]
-    L = [f'# Sol {k} : un seul joueur reste sur l’étage occupé le plus haut → il disparaît après 5 s. Généré.',
+    L = [f'# Sol {k} : un seul joueur reste sur l’étage occupé le plus haut → il disparaît après 15 s. Généré.',
          'scoreboard players set $tfn mg.st 0', 'scoreboard players set #tf20 mg.st 20']
     for i, (y, h, hole) in enumerate(fl, 1):
         L.append(f'execute store result score $tf{i} mg.st if entity @a[tag=mg.play,scores={{mg.t={y + 1}..}}]')
@@ -381,8 +381,8 @@ for l in LAYOUTS:
     if len(fl) > 2:
         L.append('execute if score $tf1 mg.st matches 0 if score $tf2 mg.st matches 0 if score $tf3 mg.st matches 1 if score $alive mg.st matches 2.. run scoreboard players set $tfn mg.st 3')
     L += ['execute if score $tfn mg.st matches 0 run return run scoreboard players set $tff mg.st 0',
-          'execute unless score $tfn mg.st = $tff mg.st run tellraw @a[tag=!mg.surv] [{"text":"⚠ ","color":"gold"},{"text":"Un joueur est seul en haut : l\'étage disparaît dans 5 secondes !","color":"gold"}]',
-          'execute unless score $tfn mg.st = $tff mg.st run scoreboard players set $tfc mg.st 100',
+          'execute unless score $tfn mg.st = $tff mg.st run tellraw @a[tag=!mg.surv] [{"text":"⚠ ","color":"gold"},{"text":"Un joueur est seul en haut : l\'étage disparaît dans 15 secondes !","color":"gold"}]',
+          'execute unless score $tfn mg.st = $tff mg.st run scoreboard players set $tfc mg.st 300',
           'scoreboard players operation $tff mg.st = $tfn mg.st',
           'scoreboard players remove $tfc mg.st 1',
           'scoreboard players operation $tfs mg.st = $tfc mg.st',

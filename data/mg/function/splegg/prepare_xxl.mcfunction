@@ -4,8 +4,8 @@ kill @e[distance=0..,type=minecraft:egg]
 kill @e[distance=0..,type=minecraft:chicken]
 kill @e[type=minecraft:item,x=-50,y=50,z=4550,dx=100,dy=60,dz=100]
 
-# Élimination sous le dernier étage (66)
-scoreboard players set $yd mg.st 62
+# Élimination sous le dernier étage (72)
+scoreboard players set $yd mg.st 68
 
 scoreboard players set $px mg.st 0
 scoreboard players set $py mg.st 92

@@ -9,10 +9,10 @@ execute if score $n0 mg.st matches ..3 run scoreboard players set $nf mg.st 2
 execute if score $n0 mg.st matches ..1 run scoreboard players set $nf mg.st 1
 function mg:spleef/trim
 
-# Hauteur d'élimination = 4 blocs sous le dernier étage (80, 73, 66, 59)
-scoreboard players set $yd mg.st 55
-execute if score $nf mg.st matches 3 run scoreboard players set $yd mg.st 62
-execute if score $nf mg.st matches 2 run scoreboard players set $yd mg.st 69
+# Hauteur d'élimination = 4 blocs sous le dernier étage (80, 76, 72, 68)
+scoreboard players set $yd mg.st 64
+execute if score $nf mg.st matches 3 run scoreboard players set $yd mg.st 68
+execute if score $nf mg.st matches 2 run scoreboard players set $yd mg.st 72
 execute if score $nf mg.st matches 1 run scoreboard players set $yd mg.st 76
 
 # Perchoir spectateur

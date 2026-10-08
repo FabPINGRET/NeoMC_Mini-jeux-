@@ -1,14 +1,5 @@
 # Sol 22 « Tour de TNT Run » en snow_block (centre 0 ~ 24300). Généré.
 # Nettoyage couche par couche (limite de volume de /fill)
-fill -32 53 24268 32 53 24332 minecraft:air
-fill -32 54 24268 32 54 24332 minecraft:air
-fill -32 55 24268 32 55 24332 minecraft:air
-fill -32 56 24268 32 56 24332 minecraft:air
-fill -32 57 24268 32 57 24332 minecraft:air
-fill -32 58 24268 32 58 24332 minecraft:air
-fill -32 59 24268 32 59 24332 minecraft:air
-fill -32 60 24268 32 60 24332 minecraft:air
-fill -32 61 24268 32 61 24332 minecraft:air
 fill -32 62 24268 32 62 24332 minecraft:air
 fill -32 63 24268 32 63 24332 minecraft:air
 fill -32 64 24268 32 64 24332 minecraft:air
@@ -40,9 +31,9 @@ fill -32 89 24268 32 89 24332 minecraft:air
 fill -32 90 24268 32 90 24332 minecraft:air
 fill -32 91 24268 32 91 24332 minecraft:air
 fill -14 84 24286 14 84 24314 minecraft:snow_block
-fill -12 74 24288 12 74 24312 minecraft:snow_block
-fill -10 64 24290 10 64 24310 minecraft:snow_block
-fill -16 58 24284 16 91 24284 minecraft:barrier
-fill -16 58 24316 16 91 24316 minecraft:barrier
-fill -16 58 24285 -16 91 24315 minecraft:barrier
-fill 16 58 24285 16 91 24315 minecraft:barrier
+fill -12 80 24288 12 80 24312 minecraft:snow_block
+fill -10 76 24290 10 76 24310 minecraft:snow_block
+fill -16 70 24284 16 91 24284 minecraft:barrier
+fill -16 70 24316 16 91 24316 minecraft:barrier
+fill -16 70 24285 -16 91 24315 minecraft:barrier
+fill 16 70 24285 16 91 24315 minecraft:barrier

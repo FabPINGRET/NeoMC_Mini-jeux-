@@ -1,14 +1,5 @@
 # Sol 25 « Pyramide » en snow_block (centre 0 ~ 24300). Généré.
 # Nettoyage couche par couche (limite de volume de /fill)
-fill -32 53 24268 32 53 24332 minecraft:air
-fill -32 54 24268 32 54 24332 minecraft:air
-fill -32 55 24268 32 55 24332 minecraft:air
-fill -32 56 24268 32 56 24332 minecraft:air
-fill -32 57 24268 32 57 24332 minecraft:air
-fill -32 58 24268 32 58 24332 minecraft:air
-fill -32 59 24268 32 59 24332 minecraft:air
-fill -32 60 24268 32 60 24332 minecraft:air
-fill -32 61 24268 32 61 24332 minecraft:air
 fill -32 62 24268 32 62 24332 minecraft:air
 fill -32 63 24268 32 63 24332 minecraft:air
 fill -32 64 24268 32 64 24332 minecraft:air
@@ -40,11 +31,11 @@ fill -32 89 24268 32 89 24332 minecraft:air
 fill -32 90 24268 32 90 24332 minecraft:air
 fill -32 91 24268 32 91 24332 minecraft:air
 fill -16 84 24284 16 84 24316 minecraft:snow_block
-fill -13 79 24287 13 79 24313 minecraft:snow_block
-fill -10 74 24290 10 74 24310 minecraft:snow_block
-fill -7 69 24293 7 69 24307 minecraft:snow_block
-fill -4 64 24296 4 64 24304 minecraft:snow_block
-fill -18 58 24282 18 91 24282 minecraft:barrier
-fill -18 58 24318 18 91 24318 minecraft:barrier
-fill -18 58 24283 -18 91 24317 minecraft:barrier
-fill 18 58 24283 18 91 24317 minecraft:barrier
+fill -13 80 24287 13 80 24313 minecraft:snow_block
+fill -10 76 24290 10 76 24310 minecraft:snow_block
+fill -7 72 24293 7 72 24307 minecraft:snow_block
+fill -4 68 24296 4 68 24304 minecraft:snow_block
+fill -18 62 24282 18 91 24282 minecraft:barrier
+fill -18 62 24318 18 91 24318 minecraft:barrier
+fill -18 62 24283 -18 91 24317 minecraft:barrier
+fill 18 62 24283 18 91 24317 minecraft:barrier

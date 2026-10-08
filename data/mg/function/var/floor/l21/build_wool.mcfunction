@@ -1,14 +1,5 @@
 # Sol 21 « Tour de Spleef » en white_wool (centre 0 ~ 24300). Généré.
 # Nettoyage couche par couche (limite de volume de /fill)
-fill -32 53 24268 32 53 24332 minecraft:air
-fill -32 54 24268 32 54 24332 minecraft:air
-fill -32 55 24268 32 55 24332 minecraft:air
-fill -32 56 24268 32 56 24332 minecraft:air
-fill -32 57 24268 32 57 24332 minecraft:air
-fill -32 58 24268 32 58 24332 minecraft:air
-fill -32 59 24268 32 59 24332 minecraft:air
-fill -32 60 24268 32 60 24332 minecraft:air
-fill -32 61 24268 32 61 24332 minecraft:air
 fill -32 62 24268 32 62 24332 minecraft:air
 fill -32 63 24268 32 63 24332 minecraft:air
 fill -32 64 24268 32 64 24332 minecraft:air
@@ -40,10 +31,10 @@ fill -32 89 24268 32 89 24332 minecraft:air
 fill -32 90 24268 32 90 24332 minecraft:air
 fill -32 91 24268 32 91 24332 minecraft:air
 fill -14 80 24286 14 80 24314 minecraft:white_wool
-fill -12 73 24288 12 73 24312 minecraft:white_wool
-fill -10 66 24290 10 66 24310 minecraft:white_wool
-fill -8 59 24292 8 59 24308 minecraft:white_wool
-fill -16 53 24284 16 87 24284 minecraft:barrier
-fill -16 53 24316 16 87 24316 minecraft:barrier
-fill -16 53 24285 -16 87 24315 minecraft:barrier
-fill 16 53 24285 16 87 24315 minecraft:barrier
+fill -12 76 24288 12 76 24312 minecraft:white_wool
+fill -10 72 24290 10 72 24310 minecraft:white_wool
+fill -8 68 24292 8 68 24308 minecraft:white_wool
+fill -16 62 24284 16 87 24284 minecraft:barrier
+fill -16 62 24316 16 87 24316 minecraft:barrier
+fill -16 62 24285 -16 87 24315 minecraft:barrier
+fill 16 62 24285 16 87 24315 minecraft:barrier

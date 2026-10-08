@@ -3,7 +3,7 @@ fill -10 84 24290 10 84 24290 minecraft:air replace minecraft:snow_block
 fill -10 84 24310 10 84 24310 minecraft:air replace minecraft:snow_block
 fill -10 84 24291 -10 84 24309 minecraft:air replace minecraft:snow_block
 fill 10 84 24291 10 84 24309 minecraft:air replace minecraft:snow_block
-fill -7 79 24293 7 79 24293 minecraft:air replace minecraft:snow_block
-fill -7 79 24307 7 79 24307 minecraft:air replace minecraft:snow_block
-fill -7 79 24294 -7 79 24306 minecraft:air replace minecraft:snow_block
-fill 7 79 24294 7 79 24306 minecraft:air replace minecraft:snow_block
+fill -7 80 24293 7 80 24293 minecraft:air replace minecraft:snow_block
+fill -7 80 24307 7 80 24307 minecraft:air replace minecraft:snow_block
+fill -7 80 24294 -7 80 24306 minecraft:air replace minecraft:snow_block
+fill 7 80 24294 7 80 24306 minecraft:air replace minecraft:snow_block

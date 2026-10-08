@@ -1,14 +1,5 @@
 # Sol 26 « Anneaux » en snow_block (centre 0 ~ 24300). Généré.
 # Nettoyage couche par couche (limite de volume de /fill)
-fill -32 53 24268 32 53 24332 minecraft:air
-fill -32 54 24268 32 54 24332 minecraft:air
-fill -32 55 24268 32 55 24332 minecraft:air
-fill -32 56 24268 32 56 24332 minecraft:air
-fill -32 57 24268 32 57 24332 minecraft:air
-fill -32 58 24268 32 58 24332 minecraft:air
-fill -32 59 24268 32 59 24332 minecraft:air
-fill -32 60 24268 32 60 24332 minecraft:air
-fill -32 61 24268 32 61 24332 minecraft:air
 fill -32 62 24268 32 62 24332 minecraft:air
 fill -32 63 24268 32 63 24332 minecraft:air
 fill -32 64 24268 32 64 24332 minecraft:air
@@ -41,10 +32,10 @@ fill -32 90 24268 32 90 24332 minecraft:air
 fill -32 91 24268 32 91 24332 minecraft:air
 fill -18 80 24282 18 80 24318 minecraft:snow_block
 fill -7 80 24293 7 80 24307 minecraft:air
-fill -11 73 24289 11 73 24311 minecraft:snow_block
-fill -20 66 24280 20 66 24320 minecraft:snow_block
-fill -12 66 24288 12 66 24312 minecraft:air
-fill -22 60 24278 22 87 24278 minecraft:barrier
-fill -22 60 24322 22 87 24322 minecraft:barrier
-fill -22 60 24279 -22 87 24321 minecraft:barrier
-fill 22 60 24279 22 87 24321 minecraft:barrier
+fill -11 76 24289 11 76 24311 minecraft:snow_block
+fill -20 72 24280 20 72 24320 minecraft:snow_block
+fill -12 72 24288 12 72 24312 minecraft:air
+fill -22 66 24278 22 87 24278 minecraft:barrier
+fill -22 66 24322 22 87 24322 minecraft:barrier
+fill -22 66 24279 -22 87 24321 minecraft:barrier
+fill 22 66 24279 22 87 24321 minecraft:barrier

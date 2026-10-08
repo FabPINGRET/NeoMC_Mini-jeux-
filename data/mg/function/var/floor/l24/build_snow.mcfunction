@@ -1,14 +1,5 @@
 # Sol 24 « Splegg XXL » en snow_block (centre 0 ~ 24300). Généré.
 # Nettoyage couche par couche (limite de volume de /fill)
-fill -32 53 24268 32 53 24332 minecraft:air
-fill -32 54 24268 32 54 24332 minecraft:air
-fill -32 55 24268 32 55 24332 minecraft:air
-fill -32 56 24268 32 56 24332 minecraft:air
-fill -32 57 24268 32 57 24332 minecraft:air
-fill -32 58 24268 32 58 24332 minecraft:air
-fill -32 59 24268 32 59 24332 minecraft:air
-fill -32 60 24268 32 60 24332 minecraft:air
-fill -32 61 24268 32 61 24332 minecraft:air
 fill -32 62 24268 32 62 24332 minecraft:air
 fill -32 63 24268 32 63 24332 minecraft:air
 fill -32 64 24268 32 64 24332 minecraft:air
@@ -40,9 +31,9 @@ fill -32 89 24268 32 89 24332 minecraft:air
 fill -32 90 24268 32 90 24332 minecraft:air
 fill -32 91 24268 32 91 24332 minecraft:air
 fill -30 80 24270 30 80 24330 minecraft:snow_block
-fill -26 73 24274 26 73 24326 minecraft:snow_block
-fill -22 66 24278 22 66 24322 minecraft:snow_block
-fill -32 60 24268 32 87 24268 minecraft:barrier
-fill -32 60 24332 32 87 24332 minecraft:barrier
-fill -32 60 24269 -32 87 24331 minecraft:barrier
-fill 32 60 24269 32 87 24331 minecraft:barrier
+fill -26 76 24274 26 76 24326 minecraft:snow_block
+fill -22 72 24278 22 72 24322 minecraft:snow_block
+fill -32 66 24268 32 87 24268 minecraft:barrier
+fill -32 66 24332 32 87 24332 minecraft:barrier
+fill -32 66 24269 -32 87 24331 minecraft:barrier
+fill 32 66 24269 32 87 24331 minecraft:barrier
