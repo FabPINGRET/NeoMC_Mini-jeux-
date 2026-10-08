@@ -37,6 +37,9 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard players set #7 mg.st 7
+scoreboard players set #11 mg.st 11
+scoreboard players set #30 mg.st 30
 scoreboard objectives add mg.cf dummy {"text":"🚩 Drapeaux","color":"gold"}
 scoreboard objectives add mg.tw dummy {"text":"🏰 The Towers","color":"gold"}
 scoreboard objectives add mg.kh dummy {"text":"👑 Colline","color":"gold"}

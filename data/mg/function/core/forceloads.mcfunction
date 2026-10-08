@@ -77,6 +77,9 @@ forceload add -48 20784 48 20816
 forceload add -72 21186 72 21214
 # Capture the Flag (z 21600)
 forceload add -44 21576 44 21624
+# Mini UHC Run (z 22400) et Mini Hunger Games (z 22800)
+forceload add -42 22358 42 22442
+forceload add -52 22748 52 22852
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl

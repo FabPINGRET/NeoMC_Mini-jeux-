@@ -1,0 +1,25 @@
+# Socles de départ (24, en cercle autour de la corne)
+setblock 7 82 22800 minecraft:emerald_block
+setblock 7 82 22802 minecraft:emerald_block
+setblock 6 82 22803 minecraft:emerald_block
+setblock 5 82 22805 minecraft:emerald_block
+setblock 4 82 22806 minecraft:emerald_block
+setblock 2 82 22807 minecraft:emerald_block
+setblock 0 82 22807 minecraft:emerald_block
+setblock -2 82 22807 minecraft:emerald_block
+setblock -3 82 22806 minecraft:emerald_block
+setblock -5 82 22805 minecraft:emerald_block
+setblock -6 82 22803 minecraft:emerald_block
+setblock -7 82 22802 minecraft:emerald_block
+setblock -7 82 22800 minecraft:emerald_block
+setblock -7 82 22798 minecraft:emerald_block
+setblock -6 82 22797 minecraft:emerald_block
+setblock -5 82 22795 minecraft:emerald_block
+setblock -4 82 22794 minecraft:emerald_block
+setblock -2 82 22793 minecraft:emerald_block
+setblock 0 82 22793 minecraft:emerald_block
+setblock 2 82 22793 minecraft:emerald_block
+setblock 4 82 22794 minecraft:emerald_block
+setblock 5 82 22795 minecraft:emerald_block
+setblock 6 82 22796 minecraft:emerald_block
+setblock 7 82 22798 minecraft:emerald_block

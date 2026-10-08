@@ -135,6 +135,58 @@
     {
       "label": [
         {
+          "text": "⛏ ⛏ Mini UHC Run ",
+          "color": "gold"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "5 min : farm, PvP, zone qui rétrécit",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 94"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🏹 🏹 Mini Hunger Games ",
+          "color": "gold"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "5 min : coffres, corne d'abondance, dernier en vie",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 95"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour au menu",
           "color": "yellow"
         }

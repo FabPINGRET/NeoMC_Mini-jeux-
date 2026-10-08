@@ -13,6 +13,7 @@ execute if score $game mg.st matches 66 run function mg:elyrace/cleanup
 execute if score $game mg.st matches 75 run function mg:sky/cleanup
 kill @e[tag=mg.ib]
 execute if score $game mg.st matches 57..58 run function mg:bb/cleanup
+execute if score $game mg.st matches 94..95 run function mg:survival/cleanup
 execute if score $game mg.st matches 93 run function mg:ctf/cleanup
 execute if score $game mg.st matches 89..90 run function mg:convoy/cleanup
 execute if score $game mg.st matches 88 run function mg:tower/cleanup

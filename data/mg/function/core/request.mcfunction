@@ -203,6 +203,8 @@ execute if score $game mg.st matches 88 run tellraw @a [{"selector":"@s","color"
 execute if score $game mg.st matches 89 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🚚 CONVOI","color":"gold","bold":true},{"text":" : rouges contre bleus, escortez ou bloquez le convoi (2 manches) !","color":"gray"}]
 execute if score $game mg.st matches 90 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🚚 CONVOI — COOP","color":"gold","bold":true},{"text":" : escortez le convoi à travers les monstres !","color":"gray"}]
 execute if score $game mg.st matches 93 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🚩 CAPTURE THE FLAG","color":"gold","bold":true},{"text":" : rouges contre bleus, 3 captures pour gagner !","color":"gray"}]
+execute if score $game mg.st matches 94 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⛏ MINI UHC RUN","color":"gold","bold":true},{"text":" : farm, PvP, zone qui rétrécit — 5 min !","color":"gray"}]
+execute if score $game mg.st matches 95 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🏹 MINI HUNGER GAMES","color":"gold","bold":true},{"text":" : coffres, corne d'abondance, dernier en vie — 5 min !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 83 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"📞 TÉLÉPHONE","color":"gold","bold":true},{"text":" : mot → construction → devinette → construction → devinette !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
@@ -249,6 +251,7 @@ execute if score $game mg.st matches 31 run function mg:quake/prepare
 execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
+execute if score $game mg.st matches 94..95 run function mg:survival/prepare
 execute if score $game mg.st matches 93 run function mg:ctf/prepare
 execute if score $game mg.st matches 89..90 run function mg:convoy/prepare
 execute if score $game mg.st matches 88 run function mg:tower/prepare

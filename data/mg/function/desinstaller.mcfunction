@@ -22,6 +22,7 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+data remove storage mg:zone r
 scoreboard objectives remove mg.cf
 stopsound @a record
 bossbar remove mg:convoy
