@@ -194,6 +194,8 @@ execute if score $game mg.st matches 85 run tellraw @a [{"selector":"@s","color"
 execute if score $game mg.st matches 86 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"👑 KING OF THE HILL","color":"gold","bold":true},{"text":" : tiens le sommet seul, 60 points pour gagner !","color":"gray"}]
 execute if score $game mg.st matches 87 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"👑 KING OF THE HILL — ÉQUIPES","color":"gold","bold":true},{"text":" : rouges contre bleus, 90 points sur le sommet !","color":"gray"}]
 execute if score $game mg.st matches 88 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🏰 THE TOWERS","color":"gold","bold":true},{"text":" : rouges contre bleus, saute dans le puits adverse (5 points) !","color":"gray"}]
+execute if score $game mg.st matches 89 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🚚 CONVOI","color":"gold","bold":true},{"text":" : rouges contre bleus, escortez ou bloquez le convoi (2 manches) !","color":"gray"}]
+execute if score $game mg.st matches 90 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🚚 CONVOI — COOP","color":"gold","bold":true},{"text":" : escortez le convoi à travers les monstres !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 83 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"📞 TÉLÉPHONE","color":"gold","bold":true},{"text":" : mot → construction → devinette → construction → devinette !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
@@ -240,6 +242,7 @@ execute if score $game mg.st matches 31 run function mg:quake/prepare
 execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
+execute if score $game mg.st matches 89..90 run function mg:convoy/prepare
 execute if score $game mg.st matches 88 run function mg:tower/prepare
 execute if score $game mg.st matches 86..87 run function mg:koth/prepare
 execute if score $game mg.st matches 84..85 run function mg:tron/prepare

@@ -1,0 +1,5 @@
+kill @e[tag=mg.cvc]
+kill @e[tag=mg.cvl]
+kill @e[tag=mg.cvm]
+kill @e[type=minecraft:item,x=-75,y=60,z=21185,dx=150,dy=50,dz=30]
+kill @e[type=minecraft:arrow,x=-75,y=60,z=21185,dx=150,dy=50,dz=30]

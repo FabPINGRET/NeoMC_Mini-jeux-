@@ -131,6 +131,58 @@
     {
       "label": [
         {
+          "text": "🚚 🚚 Convoi ",
+          "color": "gold"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Escorte ou bloque le convoi, 2 manches",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 89"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🚚 🚚 Convoi — coop ",
+          "color": "green"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Tous ensemble contre les monstres",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 90"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour au menu",
           "color": "yellow"
         }

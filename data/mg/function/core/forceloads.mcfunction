@@ -73,6 +73,8 @@ forceload add -32 19968 32 20032
 forceload add -27 20373 27 20427
 # The Towers (z 20800)
 forceload add -48 20784 48 20816
+# Convoi (z 21200)
+forceload add -72 21186 72 21214
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl
