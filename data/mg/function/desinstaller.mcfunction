@@ -153,6 +153,7 @@ scoreboard objectives remove mg.ok
 scoreboard objectives remove mg.svid
 scoreboard objectives remove mg.svvx
 scoreboard objectives remove mg.kstk
+scoreboard objectives remove mg.kof
 scoreboard objectives remove mg.klt
 scoreboard objectives remove mg.klb
 scoreboard objectives remove mg.lcd

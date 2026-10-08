@@ -107,6 +107,7 @@ scoreboard objectives add mg.kspr dummy
 scoreboard objectives add mg.kvm dummy
 scoreboard objectives add mg.kv trigger
 scoreboard objectives add mg.kstk dummy
+scoreboard objectives add mg.kof dummy
 scoreboard objectives add mg.klt dummy
 scoreboard objectives add mg.klb dummy
 scoreboard objectives add mg.lcd dummy

@@ -426,20 +426,7 @@ scoreboard players operation $kv mg.st = @s mg.kvy
 fn('boost_pad', '''execute if score @s mg.kbo matches ..15 at @s run playsound minecraft:entity.firework_rocket.launch master @a[tag=mg.play,distance=..24] ~ ~ ~ 1 1.2
 execute if score @s mg.kbo matches ..21 run scoreboard players set @s mg.kbo 22
 ''')
-CAM = '$execute at @s rotated $(h) 0 positioned ^ ^2.4 ^-5 rotated ~ 16 run tp @e[type=minecraft:item_display,tag=mg.kcamc,limit=1] ~ ~ ~ ~ ~'
-fn('move', f'''# @s = kart : remis sur la route s'il s'y est enfoncé, nez tourné, avance selon la trajectoire (rebond si mur), caméra
-execute at @s unless block ~ ~ ~ #mg:kart_pass align y run tp @s ~ ~1 ~
-$execute at @s run tp @s ~ ~ ~ ~$(t) 0
-execute at @s on passengers unless entity @s[type=minecraft:player] run rotate @s ~ 0
-$execute if score $kg mg.st matches 1 at @s rotated $(h) 0 positioned ^ ^0.5 ^$(c) unless block ~ ~ ~ #mg:kart_pass if block ~ ~1 ~ #mg:kart_pass at @s if block ~ ~1.5 ~ #mg:kart_pass run tp @s ~ ~1 ~
-$execute at @s rotated $(h) 0 positioned ^ ^0.5 ^$(c) unless block ~ ~ ~ #mg:kart_pass run return run function mg:kart/bump {{v:$(v),h:$(h)}}
-$execute at @s rotated $(h) 0 run tp @s ^ ^$(v) ^$(d)
-{CAM}
-''')
-fn('bump', f'''$execute at @s run tp @s ~ ~$(v) ~
-{CAM}
-function mg:kart/bumped_owner
-''')
+# move et bump (déplacement, collisions) : voir collide_part.py
 fn('bumped_owner', '''scoreboard players operation $ko mg.st = @s mg.ri
 execute as @a[tag=mg.play] if score @s mg.ri = $ko mg.st run function mg:kart/bumped
 ''')
@@ -766,8 +753,10 @@ function mg:kart/end_line
 # ------------------------------------------------------------------ aiguillage vers le circuit ($ktr : 1 = Champignon, 2 = Royaume Koopa)
 for name in ('cp_check', 'cp_tp', 'bill_step', 'grid_tp', 'gate_on', 'gate_off', 'boxes', 'fl_add', 'fl_remove', 'mm_base', 'mm_show',
              'mm_init', 'const', 'hazards', 'track_tick'):
+    # kart libre du spawn ($klob = 1) : table t4 (ex-patch de tools/lobby/wire_lobkart.py)
+    klob = f'execute if score $klob mg.st matches 1 run return run function mg:kart/t4/{name}\n' if name in ('cp_check', 'cp_tp', 'bill_step') else ''
     fn(name, f"""# Aiguillage : table du circuit en cours (générée dans t1/, t2/ ou t3/ pour l'arène de bataille)
-execute if score $ktr mg.st matches 2 run function mg:kart/t2/{name}
+{klob}execute if score $ktr mg.st matches 2 run function mg:kart/t2/{name}
 execute if score $ktr mg.st matches 3 run function mg:kart/t3/{name}
 execute unless score $ktr mg.st matches 2..3 run function mg:kart/t1/{name}
 """)
