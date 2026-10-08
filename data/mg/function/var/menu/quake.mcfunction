@@ -1,6 +1,6 @@
-# Variantes Quakecraft (@s = admin) — fenêtre, sinon menu texte. Généré.
+# Quakecraft : cartes + variantes (@s = admin) — fenêtre, sinon menu texte. Généré.
 scoreboard players set $dlg mg.st 0
-execute store success score $dlg mg.st run dialog show @s mg:var_quake
+execute store success score $dlg mg.st run dialog show @s mg:quakemaps
 execute if score $dlg mg.st matches 1 run return 0
 tellraw @s [{"text":"\n⚡ Quakecraft — variantes ","color":"aqua","bold":true},{"text":"(★ facile → ★★★★ difficile)","color":"gray"}]
 tellraw @s ["",{"text":" [🎲 Au hasard]","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 192"}}]
@@ -14,4 +14,3 @@ tellraw @s ["",{"text":" [Collines ","color":"green","click_event":{"action":"ru
 tellraw @s ["",{"text":" [Canyon ","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 135"},"hover_event":{"action":"show_text","value":[{"text":"Carte TNT Tag : 51×51, mesa à plateaux, arche, pont suspendu\n","color":"gray"},{"text":"Réglages : rechargement 1,4 s","color":"gold"}]}},{"text":"★★★","color":"gold"},{"text":"☆]","color":"dark_gray"}]
 tellraw @s ["",{"text":" [Village perché ","color":"aqua","click_event":{"action":"run_command","command":"trigger mg.go set 136"},"hover_event":{"action":"show_text","value":[{"text":"Carte TNT Tag : 51×51, toits, passerelles, clocher\n","color":"gray"},{"text":"Réglages : rechargement 1,4 s","color":"gold"}]}},{"text":"★★★","color":"gold"},{"text":"☆]","color":"dark_gray"}]
 tellraw @s ["",{"text":" [Grand terrain ","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 139"},"hover_event":{"action":"show_text","value":[{"text":"Carte Paintball : 79×99, immense\n","color":"gray"},{"text":"Réglages : rechargement 1,7 s","color":"gold"}]}},{"text":"★★★★","color":"gold"},{"text":"]","color":"dark_gray"}]
-tellraw @s ["",{"text":" [« Toutes les variantes]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.opt set 32"}}]

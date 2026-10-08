@@ -1,6 +1,6 @@
-# Variantes TNT Tag (@s = admin) — fenêtre, sinon menu texte. Généré.
+# TNT Tag : cartes + variantes (@s = admin) — fenêtre, sinon menu texte. Généré.
 scoreboard players set $dlg mg.st 0
-execute store success score $dlg mg.st run dialog show @s mg:var_tnttag
+execute store success score $dlg mg.st run dialog show @s mg:sub_tnttag
 execute if score $dlg mg.st matches 1 run return 0
 tellraw @s [{"text":"\n✹ TNT Tag — variantes ","color":"red","bold":true},{"text":"(★ facile → ★★★★ difficile)","color":"gray"}]
 tellraw @s ["",{"text":" [🎲 Au hasard]","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 193"}}]
@@ -18,4 +18,3 @@ tellraw @s ["",{"text":" [Néon ","color":"aqua","click_event":{"action":"run_co
 tellraw @s ["",{"text":" [Désert ","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 149"},"hover_event":{"action":"show_text","value":[{"text":"Carte Quakecraft : 33×33, ruines de grès\n","color":"gray"},{"text":"Réglages : bombe rapide (8 à 22 s)","color":"gold"}]}},{"text":"★★★","color":"gold"},{"text":"☆]","color":"dark_gray"}]
 tellraw @s ["",{"text":" [Mini-terrain ","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 152"},"hover_event":{"action":"show_text","value":[{"text":"Carte Paintball : 29×39, rapide\n","color":"gray"},{"text":"Réglages : bombe rapide (8 à 22 s)","color":"gold"}]}},{"text":"★★★","color":"gold"},{"text":"☆]","color":"dark_gray"}]
 tellraw @s ["",{"text":" [Glacier ","color":"aqua","click_event":{"action":"run_command","command":"trigger mg.go set 150"},"hover_event":{"action":"show_text","value":[{"text":"Carte Quakecraft : 21×21, minuscule\n","color":"gray"},{"text":"Réglages : bombe éclair (6 à 15 s)","color":"gold"}]}},{"text":"★★★★","color":"gold"},{"text":"]","color":"dark_gray"}]
-tellraw @s ["",{"text":" [« Toutes les variantes]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.opt set 32"}}]

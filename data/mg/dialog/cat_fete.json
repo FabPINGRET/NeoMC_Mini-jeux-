@@ -1,8 +1,8 @@
 {
   "type": "minecraft:multi_action",
   "title": {
-    "text": "⚓ Pluie d'Enclumes",
-    "color": "gray",
+    "text": "🎉 Fête et création",
+    "color": "green",
     "bold": true
   },
   "pause": false,
@@ -12,7 +12,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Esquive les enclumes : choisis la version.",
+          "text": "Les grands formats.",
           "color": "gray"
         }
       ]
@@ -31,37 +31,49 @@
     {
       "label": [
         {
-          "text": "⚓ Pluie d'Enclumes",
+          "text": "★ Mini Party ▸",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Plateau, dé, étoiles : choisis la durée.",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 29"
+        "command": "trigger mg.opt set 16"
       }
     },
     {
       "label": [
         {
-          "text": "⚓ Enclumes + sol troué",
-          "color": "red"
+          "text": "✎ Build Battle ▸",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Construis, les autres notent : choisis qui donne le thème.",
+          "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 42"
+        "command": "trigger mg.opt set 22"
       }
     },
     {
       "label": [
         {
-          "text": "« Retour",
+          "text": "« Retour au menu",
           "color": "yellow"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 40"
+        "command": "trigger mg.menu"
       }
     }
   ]

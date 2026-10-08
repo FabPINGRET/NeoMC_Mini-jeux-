@@ -1,0 +1,146 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "❄ Jeux de sol",
+    "color": "aqua",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Casse, cours, pousse : le dernier debout gagne.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "❄ Spleef ▸",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Casse la neige sous les autres",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 37"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✷ TNT Run ▸",
+          "color": "red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Le sol disparaît sous tes pas",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 38"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "❍ Splegg ▸",
+          "color": "yellow"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Spleef aux œufs : choisis la version.",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 17"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✊ Sumo ▸",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Éjecte les autres de la plateforme : choisis l'arène.",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 18"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▦ Block Party",
+          "color": "light_purple"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 28"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚓ Pluie d'Enclumes ▸",
+          "color": "gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Esquive les enclumes : choisis la version.",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 20"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au menu",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.menu"
+      }
+    }
+  ]
+}

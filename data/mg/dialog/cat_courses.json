@@ -1,0 +1,134 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "🏁 Courses et vol",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Le premier arrivé gagne.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🏎 Kart ▸",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Circuit Champignon, Royaume Koopa, Bataille",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 46"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⛵ Course de bateaux (glace)",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Circuit de glace de 300 blocs, 3 tours, 10 points de passage : le premier qui finit gagne",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 56"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🪽 Course d'élytres ▸",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Plane à travers des anneaux : choisis le parcours.",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 28"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🪽 Élytra ▸",
+          "color": "aqua"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 31"
+      },
+      "tooltip": [
+        {
+          "text": "Course d'anneaux, course + combat ou survie en vol.",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "⬇ The Dropper ▸",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Chute libre jusqu'à l'eau : choisis la version.",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 19"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au menu",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.menu"
+      }
+    }
+  ]
+}

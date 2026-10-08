@@ -1,6 +1,6 @@
-# Variantes One in the Chamber (@s = admin) — fenêtre, sinon menu texte. Généré.
+# One in the Chamber : cartes + variantes (@s = admin) — fenêtre, sinon menu texte. Généré.
 scoreboard players set $dlg mg.st 0
-execute store success score $dlg mg.st run dialog show @s mg:var_oitc
+execute store success score $dlg mg.st run dialog show @s mg:sub_oitc
 execute if score $dlg mg.st matches 1 run return 0
 tellraw @s [{"text":"\n➶ One in the Chamber — variantes ","color":"gold","bold":true},{"text":"(★ facile → ★★★★ difficile)","color":"gray"}]
 tellraw @s ["",{"text":" [🎲 Au hasard]","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 191"}}]
@@ -19,4 +19,3 @@ tellraw @s ["",{"text":" [Volcan ","color":"red","click_event":{"action":"run_co
 tellraw @s ["",{"text":" [Jungle ","color":"dark_green","click_event":{"action":"run_command","command":"trigger mg.go set 120"},"hover_event":{"action":"show_text","value":[{"text":"Carte Quakecraft : 63×63, végétation dense\n","color":"gray"},{"text":"Réglages : flèche enchantée toutes les 45 s, 10 kills","color":"gold"}]}},{"text":"★★★","color":"gold"},{"text":"☆]","color":"dark_gray"}]
 tellraw @s ["",{"text":" [Glacier ","color":"aqua","click_event":{"action":"run_command","command":"trigger mg.go set 122"},"hover_event":{"action":"show_text","value":[{"text":"Carte Quakecraft : 21×21, minuscule\n","color":"gray"},{"text":"Réglages : flèche enchantée toutes les 45 s, 10 kills","color":"gold"}]}},{"text":"★★★","color":"gold"},{"text":"☆]","color":"dark_gray"}]
 tellraw @s ["",{"text":" [Grand terrain ","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 129"},"hover_event":{"action":"show_text","value":[{"text":"Carte Paintball : 79×99, immense\n","color":"gray"},{"text":"Réglages : aucune flèche enchantée, 12 kills","color":"gold"}]}},{"text":"★★★★","color":"gold"},{"text":"]","color":"dark_gray"}]
-tellraw @s ["",{"text":" [« Toutes les variantes]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.opt set 32"}}]

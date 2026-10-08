@@ -14,6 +14,26 @@
         {
           "text": "3 vies, une flèche : choisis la carte.",
           "color": "gray"
+        },
+        {
+          "text": "\n★ = variante : ce jeu sur la carte d’un autre jeu, ",
+          "color": "gray"
+        },
+        {
+          "text": "★",
+          "color": "gold"
+        },
+        {
+          "text": " facile → ",
+          "color": "gray"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": " difficile (réglages adaptés).",
+          "color": "gray"
         }
       ]
     }
@@ -79,25 +99,475 @@
     {
       "label": [
         {
-          "text": "★ Variantes ▸",
+          "text": "🎲 Variante au hasard",
           "color": "gold"
         }
       ],
       "tooltip": [
         {
-          "text": "Ce mode sur les cartes des autres jeux, de ★ à ★★★★",
+          "text": "Une des 15 variantes ★, tirée au sort",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 34"
+        "command": "trigger mg.go set 191"
       }
     },
     {
       "label": [
         {
-          "text": "« Retour au PvP",
+          "text": "Poussière ",
+          "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte PvP : style Dust, 43×43, couloirs et tunnels\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 115"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Mirage ",
+          "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte PvP : style Mirage, 43×43, appartements et fenêtre\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 116"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Nuketown ",
+          "color": "green"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte PvP : deux maisons face à face, bus au milieu\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 117"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Néon ",
+          "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte Quakecraft : 33×33, couloirs lumineux\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 118"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Désert ",
+          "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte Quakecraft : 33×33, ruines de grès\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 121"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Arène TNT Tag ",
+          "color": "red"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte TNT Tag : 31×31, piliers et murets\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 123"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Collines ",
+          "color": "green"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte TNT Tag : 51×51, prairie vallonnée, rivière, moulin\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 124"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Canyon ",
+          "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte TNT Tag : 51×51, mesa à plateaux, arche, pont suspendu\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 125"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Village perché ",
+          "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte TNT Tag : 51×51, toits, passerelles, clocher\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 126"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Terrain de paintball ",
+          "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte Paintball : 49×61, murets blancs\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 127"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Mini-terrain ",
+          "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte Paintball : 29×39, rapide\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 128"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Volcan ",
+          "color": "red"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte Quakecraft : 63×63, coulées de magma (ça brûle !)\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : flèche enchantée toutes les 45 s, 10 kills",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 119"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Jungle ",
+          "color": "dark_green"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte Quakecraft : 63×63, végétation dense\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : flèche enchantée toutes les 45 s, 10 kills",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 120"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Glacier ",
+          "color": "aqua"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte Quakecraft : 21×21, minuscule\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : flèche enchantée toutes les 45 s, 10 kills",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 122"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Grand terrain ",
+          "color": "gold"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": "",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte Paintball : 79×99, immense\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : aucune flèche enchantée, 12 kills",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 129"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour",
           "color": "yellow"
         }
       ],

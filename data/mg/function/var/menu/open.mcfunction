@@ -1,4 +1,4 @@
-# mg.opt 32..39 (@s = admin) → menus des variantes. Généré.
+# mg.opt 32..46 → menus (catégories, jeux + variantes). Généré.
 execute if score @s mg.opt matches 32 run function mg:var/menu/main
 execute if score @s mg.opt matches 33 run function mg:var/menu/pvp
 execute if score @s mg.opt matches 34 run function mg:var/menu/oitc
@@ -7,3 +7,10 @@ execute if score @s mg.opt matches 36 run function mg:var/menu/tnttag
 execute if score @s mg.opt matches 37 run function mg:var/menu/spleef
 execute if score @s mg.opt matches 38 run function mg:var/menu/tntrun
 execute if score @s mg.opt matches 39 run function mg:var/menu/splegg
+execute if score @s mg.opt matches 40 run function mg:var/menu/cat_sols
+execute if score @s mg.opt matches 41 run function mg:var/menu/cat_equipes
+execute if score @s mg.opt matches 42 run function mg:var/menu/cat_courses
+execute if score @s mg.opt matches 43 run function mg:var/menu/cat_fete
+execute if score @s mg.opt matches 44 run function mg:var/menu/cat_votes
+execute if score @s mg.opt matches 45 run function mg:var/menu/cat_joueur
+execute if score @s mg.opt matches 46 run function mg:var/menu/cat_kart

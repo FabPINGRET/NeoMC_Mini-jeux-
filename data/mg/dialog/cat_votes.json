@@ -1,8 +1,8 @@
 {
   "type": "minecraft:multi_action",
   "title": {
-    "text": "★ Mini Party",
-    "color": "gold",
+    "text": "☑ Votes",
+    "color": "green",
     "bold": true
   },
   "pause": false,
@@ -12,7 +12,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Plateau, dé, étoiles : choisis la durée.",
+          "text": "Vote pour le prochain jeu.",
           "color": "gray"
         }
       ]
@@ -31,51 +31,67 @@
     {
       "label": [
         {
-          "text": "★ MINI PARTY (8 tours)",
-          "color": "gold",
-          "bold": true
+          "text": "☑ Votes : voir",
+          "color": "green"
         }
       ],
       "tooltip": [
         {
-          "text": "Plateau de 32 cases, dé, étoiles à 20 pièces, un mini-jeu après chaque tour",
+          "text": "Affiche le détail des votes",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 59"
+        "command": "trigger mg.vote set 98"
       }
     },
     {
       "label": [
         {
-          "text": "★ MINI PARTY (15 tours)",
-          "color": "gold",
-          "bold": true
+          "text": "☑ Votes : lancer le plus voté",
+          "color": "green"
         }
       ],
       "tooltip": [
         {
-          "text": "Version longue de la Mini Party",
+          "text": "Lance le jeu qui a reçu le plus de votes des joueurs",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 60"
+        "command": "trigger mg.opt set 12"
       }
     },
     {
       "label": [
         {
-          "text": "« Retour",
+          "text": "☑ Votes : réinitialiser",
+          "color": "red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Efface tous les votes",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 13"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au menu",
           "color": "yellow"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 43"
+        "command": "trigger mg.menu"
       }
     }
   ]

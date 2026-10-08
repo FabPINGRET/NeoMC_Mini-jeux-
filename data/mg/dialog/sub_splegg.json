@@ -14,6 +14,26 @@
         {
           "text": "Spleef aux œufs : choisis la version.",
           "color": "gray"
+        },
+        {
+          "text": "\n★ = variante : ce jeu sur la carte d’un autre jeu, ",
+          "color": "gray"
+        },
+        {
+          "text": "★",
+          "color": "gold"
+        },
+        {
+          "text": " facile → ",
+          "color": "gray"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": " difficile (réglages adaptés).",
+          "color": "gray"
         }
       ]
     }
@@ -55,31 +75,151 @@
     {
       "label": [
         {
-          "text": "★ Variantes ▸",
+          "text": "🎲 Variante au hasard",
           "color": "gold"
         }
       ],
       "tooltip": [
         {
-          "text": "Ce mode sur les cartes des autres jeux, de ★ à ★★★★",
+          "text": "Une des 4 variantes ★, tirée au sort",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 39"
+        "command": "trigger mg.go set 196"
       }
     },
     {
       "label": [
         {
-          "text": "« Retour au menu",
+          "text": "Tour de Spleef ",
+          "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte Spleef : 4 étages qui rétrécissent (29 → 17)\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : portée 80 blocs",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 164"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Tour de TNT Run ",
+          "color": "red"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte TNT Run : 3 étages espacés de 10 blocs\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : portée 80 blocs, cratères 3×3",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 165"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Pyramide ",
+          "color": "light_purple"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte nouveau : 5 étages en pyramide, de plus en plus petits\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : portée 80 blocs, cratères 3×3",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 166"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Anneaux ",
+          "color": "dark_aqua"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": "",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte nouveau : anneau troué, plateau central, anneau large\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : portée 120 blocs, cratères 3×3",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 167"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour",
           "color": "yellow"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.menu"
+        "command": "trigger mg.opt set 40"
       }
     }
   ]

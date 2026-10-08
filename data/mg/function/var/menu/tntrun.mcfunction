@@ -1,6 +1,6 @@
-# Variantes TNT Run (@s = admin) — fenêtre, sinon menu texte. Généré.
+# TNT Run : cartes + variantes (@s = admin) — fenêtre, sinon menu texte. Généré.
 scoreboard players set $dlg mg.st 0
-execute store success score $dlg mg.st run dialog show @s mg:var_tntrun
+execute store success score $dlg mg.st run dialog show @s mg:sub_tntrun
 execute if score $dlg mg.st matches 1 run return 0
 tellraw @s [{"text":"\n✷ TNT Run — variantes ","color":"red","bold":true},{"text":"(★ facile → ★★★★ difficile)","color":"gray"}]
 tellraw @s ["",{"text":" [🎲 Au hasard]","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 195"}}]
@@ -9,4 +9,3 @@ tellraw @s ["",{"text":" [Splegg XXL ","color":"gold","click_event":{"action":"r
 tellraw @s ["",{"text":" [Cube de Splegg ","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.go set 160"},"hover_event":{"action":"show_text","value":[{"text":"Carte Splegg : 3 grands étages identiques (37×37)\n","color":"gray"},{"text":"Réglages : les blocs tiennent 0,45 s","color":"gold"}]}},{"text":"★★","color":"gold"},{"text":"☆☆]","color":"dark_gray"}]
 tellraw @s ["",{"text":" [Pyramide ","color":"light_purple","click_event":{"action":"run_command","command":"trigger mg.go set 162"},"hover_event":{"action":"show_text","value":[{"text":"Carte nouveau : 5 étages en pyramide, de plus en plus petits\n","color":"gray"},{"text":"Réglages : les blocs tiennent 0,35 s","color":"gold"}]}},{"text":"★★★","color":"gold"},{"text":"☆]","color":"dark_gray"}]
 tellraw @s ["",{"text":" [Anneaux ","color":"dark_aqua","click_event":{"action":"run_command","command":"trigger mg.go set 163"},"hover_event":{"action":"show_text","value":[{"text":"Carte nouveau : anneau troué, plateau central, anneau large\n","color":"gray"},{"text":"Réglages : les blocs tiennent 0,25 s","color":"gold"}]}},{"text":"★★★★","color":"gold"},{"text":"]","color":"dark_gray"}]
-tellraw @s ["",{"text":" [« Toutes les variantes]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.opt set 32"}}]

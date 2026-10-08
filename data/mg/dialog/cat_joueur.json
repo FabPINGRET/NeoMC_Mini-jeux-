@@ -1,7 +1,7 @@
 {
   "type": "minecraft:multi_action",
   "title": {
-    "text": "⬇ The Dropper",
+    "text": "👤 Joueur et plots",
     "color": "aqua",
     "bold": true
   },
@@ -12,7 +12,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Chute libre jusqu'à l'eau : choisis la version.",
+          "text": "Tes options et ton plot.",
           "color": "gray"
         }
       ]
@@ -31,75 +31,91 @@
     {
       "label": [
         {
-          "text": "⬇ Dropper : Aventure",
-          "color": "aqua",
-          "bold": true
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "10 grands niveaux à thème enchaînés (arc-en-ciel, mine, enfer, salon géant, nuages...) : le premier qui les finit gagne",
+          "text": "Mode spectateur ON/OFF",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 64"
+        "command": "trigger mg.opt set 1"
       }
     },
     {
       "label": [
         {
-          "text": "⬇ Dropper : Défi",
-          "color": "aqua",
-          "bold": true
+          "text": "Classement des victoires",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 2"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⌂ Aller sur mon plot",
+          "color": "green"
         }
       ],
       "tooltip": [
         {
-          "text": "Compétitif : un niveau de l'Aventure tiré au hasard à chaque manche, tout le monde dans le même puits, le premier dans l'eau gagne la manche (premier à 3)",
+          "text": "Ton plot de construction (créatif, protégé par des murs invisibles)",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 65"
+        "command": "trigger mg.pl set 1"
       }
     },
     {
       "label": [
         {
-          "text": "⬇ The Dropper",
-          "color": "aqua"
+          "text": "↩ Quitter mon plot",
+          "color": "yellow"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Retour au spawn",
+          "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 23"
+        "command": "trigger mg.pl set 2"
       }
     },
     {
       "label": [
         {
-          "text": "⬇ Dropper : tube commun",
+          "text": "◎ Visiter les plots",
           "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Liste des plots des autres joueurs : visite en spectateur",
+          "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 25"
+        "command": "trigger mg.pl set 3"
       }
     },
     {
       "label": [
         {
-          "text": "« Retour",
+          "text": "« Retour au menu",
           "color": "yellow"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 42"
+        "command": "trigger mg.menu"
       }
     }
   ]

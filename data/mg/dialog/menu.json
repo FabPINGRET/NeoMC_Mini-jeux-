@@ -12,7 +12,15 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Choisis un jeu : tous les joueurs (sauf spectateurs) sont téléportés !",
+          "text": "Choisis une catégorie, puis un jeu, puis sa carte. ",
+          "color": "gray"
+        },
+        {
+          "text": "★",
+          "color": "gold"
+        },
+        {
+          "text": " = variantes sur les cartes des autres jeux.",
           "color": "gray"
         }
       ]
@@ -23,269 +31,77 @@
     {
       "label": [
         {
-          "text": "🏎 KART : Circuit Champignon",
-          "color": "gold",
+          "text": "❄ Jeux de sol ▸",
+          "color": "aqua",
           "bold": true
         }
       ],
       "tooltip": [
         {
-          "text": "Course de karts maniables : 3 tours, dérapages, boîtes à objets",
+          "text": "Spleef, TNT Run, Splegg, Sumo, Block Party, Enclumes",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 61"
+        "command": "trigger mg.opt set 40"
       }
     },
     {
       "label": [
         {
-          "text": "🏎 KART : Royaume Koopa",
+          "text": "⚔ Combat ▸",
           "color": "red",
           "bold": true
         }
       ],
       "tooltip": [
         {
-          "text": "Grand circuit de 1,6 km : plage, jungle, désert, château de Bowser ; montées, sauts, Thwomps, plantes Piranha, Chomp...",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.go set 62"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "🎈 KART : Bataille",
-          "color": "light_purple",
-          "bold": true
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Bataille de ballons dans la Forteresse Bob-omb : 3 ballons chacun, chaque coup en crève un, dernier en lice gagne",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.go set 63"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "★ Mini Party ▸",
-          "color": "gold"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Plateau, dé, étoiles : choisis la durée.",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 16"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "❄ Spleef",
-          "color": "aqua"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.go set 1"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "❍ Splegg ▸",
-          "color": "yellow"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Spleef aux œufs : choisis la version.",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 17"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "✊ Sumo ▸",
-          "color": "gold"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Éjecte les autres de la plateforme : choisis l'arène.",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 18"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "⬇ The Dropper ▸",
-          "color": "aqua"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Chute libre jusqu'à l'eau : choisis la version.",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 19"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "🪽 Course d'élytres ▸",
-          "color": "aqua"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Plane à travers des anneaux : choisis le parcours.",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 28"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "✷ TNT Run",
-          "color": "red"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.go set 2"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "✹ TNT Tag ▸",
-          "color": "red"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 29"
-      },
-      "tooltip": [
-        {
-          "text": "La patate chaude : choisis la carte (4 cartes, dont 3 avec relief).",
-          "color": "gray"
-        }
-      ]
-    },
-    {
-      "label": [
-        {
-          "text": "★ Variantes (68) ▸",
-          "color": "gold",
-          "bold": true
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Chaque mode sur les cartes des autres jeux, avec une difficulté de ★ à ★★★★",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 32"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "▦ Block Party",
-          "color": "light_purple"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.go set 28"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "⚓ Pluie d'Enclumes ▸",
-          "color": "gray"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Esquive les enclumes : choisis la version.",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 20"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "▮ Turf Wars",
-          "color": "gold"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.go set 30"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "⚔ PvP ▸",
-          "color": "gold"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Arènes PvP, One in the Chamber, Bedwars, Sheep War, Quakecraft",
+          "text": "Arène PvP, One in the Chamber, Quakecraft, TNT Tag",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.opt set 14"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚑ Équipes ▸",
+          "color": "light_purple",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Bedwars, Sheep War, Paintball, Turf Wars",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 41"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🏁 Courses et vol ▸",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Kart, bateaux, élytres, Dropper",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 42"
       }
     },
     {
@@ -309,217 +125,56 @@
     {
       "label": [
         {
-          "text": "▓ Paintball ▸",
-          "color": "gold"
+          "text": "🎉 Fête et création ▸",
+          "color": "green",
+          "bold": true
         }
       ],
       "tooltip": [
         {
-          "text": "Peins le terrain : choisis la taille.",
+          "text": "Mini Party, Build Battle",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 21"
+        "command": "trigger mg.opt set 43"
       }
     },
     {
       "label": [
         {
-          "text": "⛵ Course de bateaux (glace)",
+          "text": "☑ Votes ▸",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Voter pour le prochain jeu",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 44"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "👤 Joueur et plots ▸",
           "color": "aqua"
         }
       ],
       "tooltip": [
         {
-          "text": "Circuit de glace de 300 blocs, 3 tours, 10 points de passage : le premier qui finit gagne",
+          "text": "Spectateur, classement, plots",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 56"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "🪽 Élytra ▸",
-          "color": "aqua"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 31"
-      },
-      "tooltip": [
-        {
-          "text": "Course d'anneaux, course + combat ou survie en vol.",
-          "color": "gray"
-        }
-      ]
-    },
-    {
-      "label": [
-        {
-          "text": "✎ Build Battle ▸",
-          "color": "green"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Construis, les autres notent : choisis qui donne le thème.",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 22"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "☑ Votes : lancer le plus voté",
-          "color": "green"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Lance le jeu qui a reçu le plus de votes des joueurs",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 12"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "☑ Votes : voir",
-          "color": "green"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Affiche le détail des votes",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.vote set 98"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "☑ Votes : réinitialiser",
-          "color": "red"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Efface tous les votes",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 13"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "Mode spectateur ON/OFF",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 1"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "Classement des victoires",
-          "color": "gold"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 2"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "⌂ Aller sur mon plot",
-          "color": "green"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Ton plot de construction (créatif, protégé par des murs invisibles)",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.pl set 1"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "↩ Quitter mon plot",
-          "color": "yellow"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Retour au spawn",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.pl set 2"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "◎ Visiter les plots",
-          "color": "aqua"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Liste des plots des autres joueurs : visite en spectateur",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.pl set 3"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "⛔ Arrêter la partie en cours",
-          "color": "dark_red"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 9"
+        "command": "trigger mg.opt set 45"
       }
     },
     {
@@ -539,6 +194,18 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.sv set 1"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⛔ Arrêter la partie en cours",
+          "color": "dark_red"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 9"
       }
     }
   ],

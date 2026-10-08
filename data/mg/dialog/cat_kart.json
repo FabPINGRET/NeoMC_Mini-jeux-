@@ -1,7 +1,7 @@
 {
   "type": "minecraft:multi_action",
   "title": {
-    "text": "★ Mini Party",
+    "text": "🏎 Kart",
     "color": "gold",
     "bold": true
   },
@@ -12,7 +12,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Plateau, dé, étoiles : choisis la durée.",
+          "text": "Choisis le circuit.",
           "color": "gray"
         }
       ]
@@ -31,39 +31,58 @@
     {
       "label": [
         {
-          "text": "★ MINI PARTY (8 tours)",
+          "text": "🏎 KART : Circuit Champignon",
           "color": "gold",
           "bold": true
         }
       ],
       "tooltip": [
         {
-          "text": "Plateau de 32 cases, dé, étoiles à 20 pièces, un mini-jeu après chaque tour",
+          "text": "Course de karts maniables : 3 tours, dérapages, boîtes à objets",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 59"
+        "command": "trigger mg.go set 61"
       }
     },
     {
       "label": [
         {
-          "text": "★ MINI PARTY (15 tours)",
-          "color": "gold",
+          "text": "🏎 KART : Royaume Koopa",
+          "color": "red",
           "bold": true
         }
       ],
       "tooltip": [
         {
-          "text": "Version longue de la Mini Party",
+          "text": "Grand circuit de 1,6 km : plage, jungle, désert, château de Bowser ; montées, sauts, Thwomps, plantes Piranha, Chomp...",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 60"
+        "command": "trigger mg.go set 62"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🎈 KART : Bataille",
+          "color": "light_purple",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Bataille de ballons dans la Forteresse Bob-omb : 3 ballons chacun, chaque coup en crève un, dernier en lice gagne",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 63"
       }
     },
     {
@@ -75,7 +94,7 @@
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 43"
+        "command": "trigger mg.opt set 42"
       }
     }
   ]

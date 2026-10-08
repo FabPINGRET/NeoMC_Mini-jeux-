@@ -1,7 +1,7 @@
 {
   "type": "minecraft:multi_action",
   "title": {
-    "text": "❄ Spleef — variantes",
+    "text": "❄ Spleef",
     "color": "aqua",
     "bold": true
   },
@@ -12,7 +12,11 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Le mode sur les cartes des autres jeux. ",
+          "text": "Choisis la carte.",
+          "color": "gray"
+        },
+        {
+          "text": "\n★ = variante : ce jeu sur la carte d’un autre jeu, ",
           "color": "gray"
         },
         {
@@ -28,7 +32,7 @@
           "color": "gold"
         },
         {
-          "text": " difficile (la difficulté change aussi les réglages).",
+          "text": " difficile (réglages adaptés).",
           "color": "gray"
         }
       ]
@@ -47,13 +51,31 @@
     {
       "label": [
         {
+          "text": "❄ Spleef (tour de neige)",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte d’origine : 4 étages de neige",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 1"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🎲 Variante au hasard",
           "color": "gold"
         }
       ],
       "tooltip": [
         {
-          "text": "Une des 5 variantes, tirée au sort",
+          "text": "Une des 5 variantes ★, tirée au sort",
           "color": "gray"
         }
       ],
@@ -215,13 +237,13 @@
     {
       "label": [
         {
-          "text": "« Toutes les variantes",
+          "text": "« Retour",
           "color": "yellow"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 32"
+        "command": "trigger mg.opt set 40"
       }
     }
   ]

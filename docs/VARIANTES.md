@@ -1,7 +1,7 @@
 # Variantes (générées par `tools/variantes/gen_variants.py`)
 
 Chaque mode sur les cartes des autres jeux. La difficulté (★ à ★★★★) dépend de la carte et change les réglages.
-Menu : ≡ → **★ Variantes ▸** (ou bouton ★ Variantes dans les sous-menus PvP, OITC, Quake, TNT Tag, Splegg).
+Menu : ≡ → catégorie (❄ Jeux de sol / ⚔ Combat) → jeu → cartes d’origine puis variantes ★.
 
 | Réglages | ★ | ★★ | ★★★ | ★★★★ |
 |---|---|---|---|---|

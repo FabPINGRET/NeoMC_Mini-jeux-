@@ -1,8 +1,8 @@
 {
   "type": "minecraft:multi_action",
   "title": {
-    "text": "⬇ The Dropper",
-    "color": "aqua",
+    "text": "⚑ Équipes",
+    "color": "light_purple",
     "bold": true
   },
   "pause": false,
@@ -12,7 +12,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Chute libre jusqu'à l'eau : choisis la version.",
+          "text": "Jeux en équipes.",
           "color": "gray"
         }
       ]
@@ -31,75 +31,79 @@
     {
       "label": [
         {
-          "text": "⬇ Dropper : Aventure",
-          "color": "aqua",
-          "bold": true
+          "text": "⚑ Bedwars ▸",
+          "color": "light_purple"
         }
       ],
       "tooltip": [
         {
-          "text": "10 grands niveaux à thème enchaînés (arc-en-ciel, mine, enfer, salon géant, nuages...) : le premier qui les finit gagne",
+          "text": "Protège ton lit, détruis les autres",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 64"
+        "command": "trigger mg.opt set 30"
       }
     },
     {
       "label": [
         {
-          "text": "⬇ Dropper : Défi",
-          "color": "aqua",
-          "bold": true
+          "text": "☁ Sheep War ▸",
+          "color": "white"
         }
       ],
       "tooltip": [
         {
-          "text": "Compétitif : un niveau de l'Aventure tiré au hasard à chaque manche, tout le monde dans le même puits, le premier dans l'eau gagne la manche (premier à 3)",
+          "text": "Moutons explosifs, 8 cartes",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 65"
+        "command": "trigger mg.opt set 8"
       }
     },
     {
       "label": [
         {
-          "text": "⬇ The Dropper",
-          "color": "aqua"
+          "text": "▓ Paintball ▸",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Peins le terrain : choisis la taille.",
+          "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 23"
+        "command": "trigger mg.opt set 21"
       }
     },
     {
       "label": [
         {
-          "text": "⬇ Dropper : tube commun",
-          "color": "aqua"
+          "text": "▮ Turf Wars",
+          "color": "gold"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 25"
+        "command": "trigger mg.go set 30"
       }
     },
     {
       "label": [
         {
-          "text": "« Retour",
+          "text": "« Retour au menu",
           "color": "yellow"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 42"
+        "command": "trigger mg.menu"
       }
     }
   ]

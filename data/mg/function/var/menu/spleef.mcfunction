@@ -1,6 +1,6 @@
-# Variantes Spleef (@s = admin) — fenêtre, sinon menu texte. Généré.
+# Spleef : cartes + variantes (@s = admin) — fenêtre, sinon menu texte. Généré.
 scoreboard players set $dlg mg.st 0
-execute store success score $dlg mg.st run dialog show @s mg:var_spleef
+execute store success score $dlg mg.st run dialog show @s mg:sub_spleef
 execute if score $dlg mg.st matches 1 run return 0
 tellraw @s [{"text":"\n❄ Spleef — variantes ","color":"aqua","bold":true},{"text":"(★ facile → ★★★★ difficile)","color":"gray"}]
 tellraw @s ["",{"text":" [🎲 Au hasard]","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 194"}}]
@@ -9,4 +9,3 @@ tellraw @s ["",{"text":" [Splegg XXL ","color":"gold","click_event":{"action":"r
 tellraw @s ["",{"text":" [Tour de TNT Run ","color":"red","click_event":{"action":"run_command","command":"trigger mg.go set 154"},"hover_event":{"action":"show_text","value":[{"text":"Carte TNT Run : 3 étages espacés de 10 blocs\n","color":"gray"},{"text":"Réglages : rétrécit après 40 s puis toutes les 12 s","color":"gold"}]}},{"text":"★★","color":"gold"},{"text":"☆☆]","color":"dark_gray"}]
 tellraw @s ["",{"text":" [Pyramide ","color":"light_purple","click_event":{"action":"run_command","command":"trigger mg.go set 157"},"hover_event":{"action":"show_text","value":[{"text":"Carte nouveau : 5 étages en pyramide, de plus en plus petits\n","color":"gray"},{"text":"Réglages : rétrécit après 30 s puis toutes les 9 s","color":"gold"}]}},{"text":"★★★","color":"gold"},{"text":"☆]","color":"dark_gray"}]
 tellraw @s ["",{"text":" [Anneaux ","color":"dark_aqua","click_event":{"action":"run_command","command":"trigger mg.go set 158"},"hover_event":{"action":"show_text","value":[{"text":"Carte nouveau : anneau troué, plateau central, anneau large\n","color":"gray"},{"text":"Réglages : rétrécit après 20 s puis toutes les 6 s","color":"gold"}]}},{"text":"★★★★","color":"gold"},{"text":"]","color":"dark_gray"}]
-tellraw @s ["",{"text":" [« Toutes les variantes]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.opt set 32"}}]

@@ -1,8 +1,8 @@
 {
   "type": "minecraft:multi_action",
   "title": {
-    "text": "⚔ PvP : JOUEURS CONTRE JOUEURS",
-    "color": "gold",
+    "text": "⚔ Combat",
+    "color": "red",
     "bold": true
   },
   "pause": false,
@@ -59,36 +59,6 @@
     {
       "label": [
         {
-          "text": "⚑ Bedwars ▸",
-          "color": "light_purple"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 30"
-      },
-      "tooltip": [
-        {
-          "text": "Choisis la carte (4 cartes).",
-          "color": "gray"
-        }
-      ]
-    },
-    {
-      "label": [
-        {
-          "text": "☁ Sheep War : cartes ▸",
-          "color": "white"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 8"
-      }
-    },
-    {
-      "label": [
-        {
           "text": "⚡ Quakecraft : cartes ▸",
           "color": "aqua"
         }
@@ -96,6 +66,24 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.opt set 10"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✹ TNT Tag ▸",
+          "color": "red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "La patate chaude",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 29"
       }
     },
     {

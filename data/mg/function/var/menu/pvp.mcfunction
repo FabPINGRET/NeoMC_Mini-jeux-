@@ -1,6 +1,6 @@
-# Variantes Arène PvP (@s = admin) — fenêtre, sinon menu texte. Généré.
+# Arène PvP : cartes + variantes (@s = admin) — fenêtre, sinon menu texte. Généré.
 scoreboard players set $dlg mg.st 0
-execute store success score $dlg mg.st run dialog show @s mg:var_pvp
+execute store success score $dlg mg.st run dialog show @s mg:sub_pvparena
 execute if score $dlg mg.st matches 1 run return 0
 tellraw @s [{"text":"\n⚔ Arène PvP — variantes ","color":"yellow","bold":true},{"text":"(★ facile → ★★★★ difficile)","color":"gray"}]
 tellraw @s ["",{"text":" [🎲 Au hasard]","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 190"}}]
@@ -19,4 +19,3 @@ tellraw @s ["",{"text":" [Désert ","color":"gold","click_event":{"action":"run_
 tellraw @s ["",{"text":" [Arène TNT Tag ","color":"red","click_event":{"action":"run_command","command":"trigger mg.go set 108"},"hover_event":{"action":"show_text","value":[{"text":"Carte TNT Tag : 31×31, piliers et murets\n","color":"gray"},{"text":"Réglages : sans bouclier, 1 pomme d’or","color":"gold"}]}},{"text":"★★★","color":"gold"},{"text":"☆]","color":"dark_gray"}]
 tellraw @s ["",{"text":" [Mini-terrain ","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 113"},"hover_event":{"action":"show_text","value":[{"text":"Carte Paintball : 29×39, rapide\n","color":"gray"},{"text":"Réglages : sans bouclier, 1 pomme d’or","color":"gold"}]}},{"text":"★★★","color":"gold"},{"text":"☆]","color":"dark_gray"}]
 tellraw @s ["",{"text":" [Glacier ","color":"aqua","click_event":{"action":"run_command","command":"trigger mg.go set 107"},"hover_event":{"action":"show_text","value":[{"text":"Carte Quakecraft : 21×21, minuscule\n","color":"gray"},{"text":"Réglages : sans bouclier ni pomme, plastron en cuir","color":"gold"}]}},{"text":"★★★★","color":"gold"},{"text":"]","color":"dark_gray"}]
-tellraw @s ["",{"text":" [« Toutes les variantes]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.opt set 32"}}]
