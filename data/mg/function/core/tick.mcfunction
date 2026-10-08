@@ -9,6 +9,7 @@ scoreboard players enable @a mg.cls
 scoreboard players enable @a mg.vote
 scoreboard players enable @a mg.bb
 scoreboard players enable @a mg.bw
+scoreboard players enable @a mg.tel
 scoreboard players enable @a mg.pl
 scoreboard players enable @a mg.dice
 function mg:survie/tick
@@ -45,6 +46,7 @@ execute if score $vtk mg.st matches 20.. run scoreboard players set $vtk mg.st 0
 # Build Battle : notes et choix du thème
 execute as @a[scores={mg.bb=1..}] run function mg:bb/rate_cast
 execute as @a[scores={mg.bw=1..}] run function mg:bb/word_cast
+execute as @a[scores={mg.tel=1..}] run function mg:tel/cast
 
 # Actions demandées
 execute as @a[scores={mg.go=1..}] run function mg:core/go

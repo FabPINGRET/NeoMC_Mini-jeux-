@@ -710,7 +710,8 @@ CATS = {
         known('trigger mg.go set 61', '🏎 KART : Circuit Champignon', 'gold'), known('trigger mg.go set 62', '🏎 KART : Royaume Koopa', 'red'),
         known('trigger mg.go set 63', '🎈 KART : Bataille', 'light_purple')], 'courses'),
     'fete': ('🎉 Fête et création', 'green', 'Les grands formats.', [
-        known(OPEN(16), '★ Mini Party ▸', 'gold'), known(OPEN(22), '✎ Build Battle ▸', 'green')], 'menu'),
+        known(OPEN(16), '★ Mini Party ▸', 'gold'), known(OPEN(22), '✎ Build Battle ▸', 'green'),
+        act('📞 Téléphone (5+)', 'gold', 'trigger mg.go set 83', 'Mot → construction → devinette → construction → devinette. 5 à 12 joueurs.')], 'menu'),
     'votes': ('☑ Votes', 'green', 'Vote pour le prochain jeu.', [
         known('trigger mg.vote set 98', '☑ Votes : voir', 'green'), known(OPEN(12), '☑ Votes : lancer le plus voté', 'green'),
         known(OPEN(13), '☑ Votes : réinitialiser', 'green')], 'menu'),

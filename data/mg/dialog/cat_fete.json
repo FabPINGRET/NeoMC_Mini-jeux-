@@ -67,6 +67,24 @@
     {
       "label": [
         {
+          "text": "📞 Téléphone (5+)",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Mot → construction → devinette → construction → devinette. 5 à 12 joueurs.",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 83"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour au menu",
           "color": "yellow"
         }

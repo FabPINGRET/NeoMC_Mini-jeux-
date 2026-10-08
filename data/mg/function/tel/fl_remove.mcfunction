@@ -1,0 +1,25 @@
+# Fin de partie : zones libérées
+forceload remove -370 19482 -334 19518
+forceload remove -370 19546 -334 19582
+forceload remove -306 19482 -270 19518
+forceload remove -306 19546 -270 19582
+forceload remove -242 19482 -206 19518
+forceload remove -242 19546 -206 19582
+forceload remove -178 19482 -142 19518
+forceload remove -178 19546 -142 19582
+forceload remove -114 19482 -78 19518
+forceload remove -114 19546 -78 19582
+forceload remove -50 19482 -14 19518
+forceload remove -50 19546 -14 19582
+forceload remove 14 19482 50 19518
+forceload remove 14 19546 50 19582
+forceload remove 78 19482 114 19518
+forceload remove 78 19546 114 19582
+forceload remove 142 19482 178 19518
+forceload remove 142 19546 178 19582
+forceload remove 206 19482 242 19518
+forceload remove 206 19546 242 19582
+forceload remove 270 19482 306 19518
+forceload remove 270 19546 306 19582
+forceload remove 334 19482 370 19518
+forceload remove 334 19546 370 19582

@@ -65,6 +65,8 @@ forceload add 30000 -30000 30255 -30000
 # Quake sniper (Ravin z 15450, Tours z 15800)
 forceload add -24 15386 24 15514
 forceload add -54 15746 54 15854
+# Téléphone : salle d'attente (les parcelles sont chargées pendant la partie)
+forceload add -8 19412 8 19428
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl

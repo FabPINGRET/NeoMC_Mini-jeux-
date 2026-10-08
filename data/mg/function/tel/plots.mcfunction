@@ -1,0 +1,25 @@
+# Toutes les parcelles du Téléphone (remise à neuf)
+execute positioned -352 64 19500 run function mg:tel/plot
+execute positioned -352 64 19564 run function mg:tel/plot
+execute positioned -288 64 19500 run function mg:tel/plot
+execute positioned -288 64 19564 run function mg:tel/plot
+execute positioned -224 64 19500 run function mg:tel/plot
+execute positioned -224 64 19564 run function mg:tel/plot
+execute positioned -160 64 19500 run function mg:tel/plot
+execute positioned -160 64 19564 run function mg:tel/plot
+execute positioned -96 64 19500 run function mg:tel/plot
+execute positioned -96 64 19564 run function mg:tel/plot
+execute positioned -32 64 19500 run function mg:tel/plot
+execute positioned -32 64 19564 run function mg:tel/plot
+execute positioned 32 64 19500 run function mg:tel/plot
+execute positioned 32 64 19564 run function mg:tel/plot
+execute positioned 96 64 19500 run function mg:tel/plot
+execute positioned 96 64 19564 run function mg:tel/plot
+execute positioned 160 64 19500 run function mg:tel/plot
+execute positioned 160 64 19564 run function mg:tel/plot
+execute positioned 224 64 19500 run function mg:tel/plot
+execute positioned 224 64 19564 run function mg:tel/plot
+execute positioned 288 64 19500 run function mg:tel/plot
+execute positioned 288 64 19564 run function mg:tel/plot
+execute positioned 352 64 19500 run function mg:tel/plot
+execute positioned 352 64 19564 run function mg:tel/plot
