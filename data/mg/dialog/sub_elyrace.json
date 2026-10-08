@@ -75,6 +75,32 @@
     {
       "label": [
         {
+          "text": "Pic Blanc ",
+          "color": "aqua"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": "",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Parcours 2 (haute montagne, ~1100 blocs) : pylônes de téléphérique, col, glacier, crevasse de glace, grotte éclairée, village d'arrivée. 20 anneaux, 3 anneaux d'or, 4 points de reprise, 3 cœurs.",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 82"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour",
           "color": "yellow"
         }

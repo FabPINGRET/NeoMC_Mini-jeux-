@@ -6,6 +6,7 @@ Python stdlib uniquement (compatible 3.8).
 import course_common as CC
 import game as G
 import verify as V
+import wind as W
 
 MISS_MARGIN = 6          # un anneau est rate quand le joueur depasse son plan de plus de 5 blocs sans l'avoir franchi
 BOX_X = 3                # volume de franchissement : de x-1 a x+4 (> deplacement maximal par tick, fusee comprise)
@@ -29,7 +30,7 @@ def ring_lines(c):
         cond = 'execute if score @s mg.xo matches ..%d positioned %d %d %d if entity @s[dx=%d,dy=6,dz=6]' % (k - 1, x - 1, cy - 3, cz - 3, BOX_X)
         out.append(cond + ' run function mg:elyrace/gold_hit')
         out.append(cond + ' run scoreboard players set @s mg.xo %d' % k)
-    return out
+    return out + W.detect_lines(c, BOX_X)
 
 
 def pass_lines(c):

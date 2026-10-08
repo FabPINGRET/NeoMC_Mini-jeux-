@@ -28,6 +28,7 @@ class Course:
         self.spec = spec         # le module du parcours
         self.rings = []          # [(x, cy, cz, zone)]
         self.golds = []          # [(x, cy, cz)]
+        self.winds = []          # [(x, cy, cz)] anneaux de vent (vide si wind.WIND est faux)
         self.cps = []            # [numero d'anneau] ; positions de reprise ajoutees par verify
         self.world = None
         self.path = None

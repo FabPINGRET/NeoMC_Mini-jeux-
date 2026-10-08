@@ -5,6 +5,7 @@ build_chain.py) ; la preparation et les repartiteurs par parcours sont dans disp
 Python stdlib uniquement (compatible 3.8).
 """
 import course_common as CC
+import wind as W
 
 GAME_ID = 66
 HEARTS = 3
@@ -35,8 +36,8 @@ OBJECTIVES = [
     ('xb1', 'x precedent (centiemes)', None),
     ('xb2', 'z precedent (centiemes)', None),
     ('xb3', 'carre de la vitesse horizontale precedente', None),
-]
-TAGS = ['mg.xw1', 'mg.xtp']         # etiquettes temporaires de la fin de course (pas des objectifs)
+] + W.objectives()                  # + mg.xv (anneaux de vent pris) si WIND
+TAGS = ['mg.xw1', 'mg.xtp'] + W.tags()    # etiquettes temporaires de la fin de course (pas des objectifs) + charges de vent si WIND
 ELYTRA = ('minecraft:elytra[minecraft:custom_data={mg_elyr:1b},minecraft:unbreakable={},'
           'minecraft:enchantments={"minecraft:binding_curse":1},'
           'minecraft:custom_name={"text":"Élytres de course","color":"aqua","italic":false}]')
@@ -65,7 +66,7 @@ def tick_lines(specs):
     """Un seul repartiteur par tick : le parcours est $xc. @e[type=player] (et non @a) ignore un joueur mort pendant les
     1 a 3 ticks de la reapparition immediate (@a le voit) : sinon respawn le replacerait, puis la reapparition vanilla le renverrait au depart."""
     sel = '@e[type=player,tag=mg.play,scores={mg.xf=0}]'
-    out = ['# Course d\'élytres : tick de jeu', 'scoreboard players add $xt mg.st 1']
+    out = ['# Course d\'élytres : tick de jeu', 'scoreboard players add $xt mg.st 1'] + W.cleanup_lines()
     for s in specs:
         cond = 'if score $xc mg.st matches %d' % s.NUM if s.NUM > 1 else 'unless score $xc mg.st matches 2..'
         out.append('execute %s as %s run function %s' % (cond, sel, CC.fn(s, 'player')))
@@ -190,7 +191,7 @@ def small_lines():
                     'execute as @a[tag=mg.xtp,limit=1] run function mg:core/win_player',
                     'tag @a remove mg.xtp'],
         'cleanup': ['# Nettoyage de la Course d\'élytres (appelé au retour au lobby)',
-                    'tag @a remove mg.xw1', 'tag @a remove mg.xtp',
+                    'tag @a remove mg.xw1', 'tag @a remove mg.xtp'] + W.cleanup_lines() + [
                     'function mg:elyrace/fl_remove', 'scoreboard objectives setdisplay sidebar'],
         'place_one': ['# @s = joueur : prend la place suivante sur la plateforme de départ',
                       'scoreboard players add $ri mg.st 1', 'scoreboard players operation @s mg.ri = $ri mg.st',
@@ -202,4 +203,5 @@ def functions(specs):
     out = {'go': go_lines(specs), 'tick': tick_lines(specs), 'speed': speed_lines(), 'wall': wall_lines(),
            'wall_adv': wall_adv_lines(), 'finish': finish_lines(), 'objectives': objectives_lines()}
     out.update(small_lines())
+    out.update(W.functions())
     return out

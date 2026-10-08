@@ -16,6 +16,7 @@ sys.path.insert(0, HERE)
 
 import build_chain as B            # noqa: E402
 import checks as K                 # noqa: E402
+import course_blanc                # noqa: E402
 import course_canyon               # noqa: E402
 import course_common as CC         # noqa: E402
 import course_fns as F             # noqa: E402
@@ -24,7 +25,7 @@ import game as G                   # noqa: E402
 import menus as M                  # noqa: E402
 import rings as R                  # noqa: E402
 
-SPECS = [course_canyon]            # un module par parcours, dans l'ordre des NUM
+SPECS = [course_canyon, course_blanc]          # un module par parcours, dans l'ordre des NUM
 
 
 def all_files(courses):
