@@ -3,6 +3,8 @@ gamemode adventure @a[tag=mg.play]
 scoreboard players set @a[tag=mg.play] mg.lv 3
 scoreboard players set @a[tag=mg.play] mg.ok 0
 scoreboard players set $og mg.st 10
+scoreboard players set $osi mg.st 600
+execute if score $ar mg.st matches 1.. run function mg:var/mode/oitc_go
 scoreboard players set $os mg.st 0
 scoreboard players reset @a mg.pk
 execute as @a[tag=mg.play] run function mg:oitc/kit

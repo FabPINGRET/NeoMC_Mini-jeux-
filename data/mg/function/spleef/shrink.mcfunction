@@ -1,4 +1,5 @@
 # Spleef — l'arène rétrécit (appelé toutes les 12 s après les 40 premières secondes)
+execute if score $ar mg.st matches 1.. run return run function mg:var/floor/shrink
 scoreboard players add $ss mg.st 1
 scoreboard players set $sk mg.st 240
 execute if score $ss mg.st matches 1 run function mg:spleef/shrink_1

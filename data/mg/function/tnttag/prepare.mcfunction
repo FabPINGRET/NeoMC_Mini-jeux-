@@ -1,5 +1,6 @@
 # TNT Tag — préparation : carte $ttm (0 classique centre 0 ~ 6100, 1 Collines, 2 Canyon, 3 Village perché)
 tag @a remove mg.bomb
+execute if score $ar mg.st matches 1.. run return run function mg:var/mode/tnttag_prepare
 execute unless score $ttm mg.st matches 0..3 run scoreboard players set $ttm mg.st 0
 execute if score $ttm mg.st matches 1 run return run function mg:tnttag/map/setup_1
 execute if score $ttm mg.st matches 2 run return run function mg:tnttag/map/setup_2

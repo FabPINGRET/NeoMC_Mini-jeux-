@@ -31,6 +31,10 @@ POOL = [   # format court : 3 à 6 minutes par mini-jeu (Build Battle et Dropper
     (56, 'COURSE DE BATEAUX', 'aqua', 4 * M), (61, 'KART', 'gold', 5 * M), (62, 'KART : ROYAUME KOOPA', 'red', 6 * M), (63, 'KART : BATAILLE', 'light_purple', 3 * M),
     (70, 'TNT TAG : VILLAGE PERCHÉ', 'aqua', 4 * M), (69, 'TNT TAG : CANYON', 'gold', 4 * M),
     (75, 'ÉLYTRA : COURSE D\'ANNEAUX', 'aqua', 5 * M), (76, 'ÉLYTRA : COURSE + COMBAT', 'red', 5 * M), (77, 'ÉLYTRA : SURVIE EN VOL', 'light_purple', 6 * M),
+    # Variantes (tools/variantes/gen_variants.py) : le mode sur une carte d'un autre jeu, tirée au sort au lancement
+    (190, 'PVP : VARIANTE ★', 'yellow', 3 * M), (191, 'OITC : VARIANTE ★', 'gold', 3 * M), (192, 'QUAKE : VARIANTE ★', 'aqua', 4 * M),
+    (193, 'TNT TAG : VARIANTE ★', 'red', 4 * M), (194, 'SPLEEF : VARIANTE ★', 'aqua', 3 * M), (195, 'TNT RUN : VARIANTE ★', 'red', 3 * M),
+    (196, 'SPLEGG : VARIANTE ★', 'yellow', 3 * M),
 ]
 N = len(POOL)
 

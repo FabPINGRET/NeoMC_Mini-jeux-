@@ -8,7 +8,8 @@ execute as @a[tag=mg.play,scores={mg.deaths=1..}] run function mg:core/eliminate
 
 # Sécurité : projeté hors de l'arène
 execute as @a[tag=mg.play] store result score @s mg.t run data get entity @s Pos[1]
-execute as @a[tag=mg.play,scores={mg.t=..55}] run function mg:core/eliminate
+execute if score $ar mg.st matches 0 as @a[tag=mg.play,scores={mg.t=..55}] run function mg:core/eliminate
+execute if score $ar mg.st matches 1.. as @a[tag=mg.play] if score @s mg.t <= $ky mg.st run function mg:core/eliminate
 
 # Victoire
 execute store result score $alive mg.st if entity @a[tag=mg.play]

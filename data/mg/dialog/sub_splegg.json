@@ -55,6 +55,24 @@
     {
       "label": [
         {
+          "text": "★ Variantes ▸",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Ce mode sur les cartes des autres jeux, de ★ à ★★★★",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 39"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour au menu",
           "color": "yellow"
         }

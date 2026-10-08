@@ -13,3 +13,4 @@ item replace entity @a[tag=mg.play] armor.chest with minecraft:iron_chestplate
 item replace entity @a[tag=mg.play] armor.legs with minecraft:leather_leggings
 item replace entity @a[tag=mg.play] armor.feet with minecraft:iron_boots
 tellraw @a[tag=mg.play] [{"text":"⚔ Chacun pour soi : dernier survivant = gagnant !","color":"yellow"}]
+execute if score $ar mg.st matches 1.. run function mg:var/mode/pvp_go

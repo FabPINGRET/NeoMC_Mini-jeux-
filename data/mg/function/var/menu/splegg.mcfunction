@@ -1,0 +1,11 @@
+# Variantes Splegg (@s = admin) — fenêtre, sinon menu texte. Généré.
+scoreboard players set $dlg mg.st 0
+execute store success score $dlg mg.st run dialog show @s mg:var_splegg
+execute if score $dlg mg.st matches 1 run return 0
+tellraw @s [{"text":"\n❍ Splegg — variantes ","color":"yellow","bold":true},{"text":"(★ facile → ★★★★ difficile)","color":"gray"}]
+tellraw @s ["",{"text":" [🎲 Au hasard]","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 196"}}]
+tellraw @s ["",{"text":" [Tour de Spleef ","color":"aqua","click_event":{"action":"run_command","command":"trigger mg.go set 164"},"hover_event":{"action":"show_text","value":[{"text":"Carte Spleef : 4 étages qui rétrécissent (29 → 17)\n","color":"gray"},{"text":"Réglages : portée 80 blocs","color":"gold"}]}},{"text":"★★","color":"gold"},{"text":"☆☆]","color":"dark_gray"}]
+tellraw @s ["",{"text":" [Tour de TNT Run ","color":"red","click_event":{"action":"run_command","command":"trigger mg.go set 165"},"hover_event":{"action":"show_text","value":[{"text":"Carte TNT Run : 3 étages espacés de 10 blocs\n","color":"gray"},{"text":"Réglages : portée 80 blocs, cratères 3×3","color":"gold"}]}},{"text":"★★★","color":"gold"},{"text":"☆]","color":"dark_gray"}]
+tellraw @s ["",{"text":" [Pyramide ","color":"light_purple","click_event":{"action":"run_command","command":"trigger mg.go set 166"},"hover_event":{"action":"show_text","value":[{"text":"Carte nouveau : 5 étages en pyramide, de plus en plus petits\n","color":"gray"},{"text":"Réglages : portée 80 blocs, cratères 3×3","color":"gold"}]}},{"text":"★★★","color":"gold"},{"text":"☆]","color":"dark_gray"}]
+tellraw @s ["",{"text":" [Anneaux ","color":"dark_aqua","click_event":{"action":"run_command","command":"trigger mg.go set 167"},"hover_event":{"action":"show_text","value":[{"text":"Carte nouveau : anneau troué, plateau central, anneau large\n","color":"gray"},{"text":"Réglages : portée 120 blocs, cratères 3×3","color":"gold"}]}},{"text":"★★★★","color":"gold"},{"text":"]","color":"dark_gray"}]
+tellraw @s ["",{"text":" [« Toutes les variantes]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.opt set 32"}}]

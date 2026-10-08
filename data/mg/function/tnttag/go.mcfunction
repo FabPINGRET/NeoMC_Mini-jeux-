@@ -2,6 +2,8 @@
 scoreboard players set $c20 mg.st 20
 scoreboard players set $c100 mg.st 100
 scoreboard players set $mx mg.st 600
+scoreboard players set $ttb mg.st 200
+execute if score $ar mg.st matches 1.. run function mg:var/mode/tnttag_go
 scoreboard players set @a[tag=mg.play] mg.cd 0
 effect give @a[tag=mg.play] minecraft:resistance infinite 4 true
 effect give @a[tag=mg.play] minecraft:saturation infinite 0 true

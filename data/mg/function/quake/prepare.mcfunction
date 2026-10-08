@@ -1,4 +1,6 @@
 # Quakecraft — préparation (carte $qm : 0 néon, 1 volcan XL, 2 jungle XL, 3 désert, 4 glacier mini)
+scoreboard players set $qcd mg.st 22
+execute if score $ar mg.st matches 1.. run return run function mg:var/mode/quake_prepare
 execute if score $qm mg.st matches 0 run function mg:quake/build
 execute if score $qm mg.st matches 0 run scoreboard players set $qg mg.st 25
 execute if score $qm mg.st matches 0 run scoreboard players set $qt mg.st 9600
