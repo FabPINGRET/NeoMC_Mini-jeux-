@@ -20,4 +20,4 @@ summon minecraft:shulker 20.5 67 10706.5 {Tags:["mg.mob"],AttachFace:5b,Persiste
 summon minecraft:shulker 20.5 67 10712.5 {Tags:["mg.mob"],AttachFace:5b,PersistenceRequired:1b}
 effect give @e[tag=mg.fz] minecraft:speed infinite 2 true
 tag @e[tag=mg.fz] remove mg.fz
-tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"14× Endermite rapide, 5× Shulker","color":"yellow"},{"text":"  (19 monstres)","color":"dark_gray"}]
+execute unless score $wdup mg.st matches 1 run tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"14× Endermite rapide, 5× Shulker","color":"yellow"},{"text":"  (19 monstres)","color":"dark_gray"}]

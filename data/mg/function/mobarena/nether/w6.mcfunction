@@ -6,4 +6,4 @@ summon minecraft:piglin_brute -11.5 64 1789.5 {Tags:["mg.mob"],PersistenceRequir
 summon minecraft:hoglin 0.5 64 1811.5 {Tags:["mg.mob"],PersistenceRequired:1b,IsImmuneToZombification:1b}
 summon minecraft:hoglin 0.5 64 1789.5 {Tags:["mg.mob"],PersistenceRequired:1b,IsImmuneToZombification:1b}
 summon minecraft:hoglin 11.5 64 1800.5 {Tags:["mg.mob"],PersistenceRequired:1b,IsImmuneToZombification:1b}
-tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"4× Piglin brute, 3× Hoglin","color":"yellow"},{"text":"  (7 monstres)","color":"dark_gray"}]
+execute unless score $wdup mg.st matches 1 run tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"4× Piglin brute, 3× Hoglin","color":"yellow"},{"text":"  (7 monstres)","color":"dark_gray"}]

@@ -9,4 +9,4 @@ summon minecraft:zombie 11.5 64 1800.5 {Tags:["mg.mob"],PersistenceRequired:1b,e
 summon minecraft:zombie -11.5 64 1800.5 {Tags:["mg.mob"],PersistenceRequired:1b,equipment:{head:{id:"minecraft:iron_helmet",count:1},chest:{id:"minecraft:iron_chestplate",count:1},mainhand:{id:"minecraft:iron_sword",count:1}}}
 summon minecraft:zombie 11.5 64 1811.5 {Tags:["mg.mob"],PersistenceRequired:1b,equipment:{head:{id:"minecraft:iron_helmet",count:1},chest:{id:"minecraft:iron_chestplate",count:1},mainhand:{id:"minecraft:iron_sword",count:1}}}
 summon minecraft:zombie -11.5 64 1811.5 {Tags:["mg.mob"],PersistenceRequired:1b,equipment:{head:{id:"minecraft:iron_helmet",count:1},chest:{id:"minecraft:iron_chestplate",count:1},mainhand:{id:"minecraft:iron_sword",count:1}}}
-tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"6× Squelette archer, 4× Zombie en fer","color":"yellow"},{"text":"  (10 monstres)","color":"dark_gray"}]
+execute unless score $wdup mg.st matches 1 run tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"6× Squelette archer, 4× Zombie en fer","color":"yellow"},{"text":"  (10 monstres)","color":"dark_gray"}]

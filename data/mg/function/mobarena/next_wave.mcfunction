@@ -18,6 +18,7 @@ tellraw @a [{"text":"\n[Mob Arena] ","color":"dark_green","bold":true},{"text":"
 scoreboard players set $ml mg.st 99
 execute store result storage mg:mw w int 1 run scoreboard players get $wv mg.st
 function mg:mobarena/wave with storage mg:mw
+function mg:mobarena/scale
 
 # ULTRA HARD : tous les monstres de la vague sont plus rapides, plus forts et plus résistants
 execute if score $mt mg.st matches 3 run effect give @e[tag=mg.mob] minecraft:speed infinite 1 true

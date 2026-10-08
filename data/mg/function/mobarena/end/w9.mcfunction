@@ -17,4 +17,4 @@ summon minecraft:phantom 11.5 68 1800.5 {Tags:["mg.mob"],PersistenceRequired:1b}
 summon minecraft:phantom -11.5 68 1800.5 {Tags:["mg.mob"],PersistenceRequired:1b}
 summon minecraft:phantom 11.5 68 1811.5 {Tags:["mg.mob"],PersistenceRequired:1b}
 summon minecraft:phantom -11.5 68 1811.5 {Tags:["mg.mob"],PersistenceRequired:1b}
-tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"8× Enderman, 6× Endermite, 4× Phantom","color":"yellow"},{"text":"  (18 monstres)","color":"dark_gray"}]
+execute unless score $wdup mg.st matches 1 run tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"8× Enderman, 6× Endermite, 4× Phantom","color":"yellow"},{"text":"  (18 monstres)","color":"dark_gray"}]

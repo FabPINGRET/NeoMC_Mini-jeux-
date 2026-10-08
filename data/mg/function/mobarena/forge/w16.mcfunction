@@ -28,4 +28,4 @@ effect give @e[tag=mg.fz1] minecraft:speed infinite 0 true
 tag @e[tag=mg.fz] remove mg.fz
 tag @e[tag=mg.fs] remove mg.fs
 tag @e[tag=mg.fz1] remove mg.fz1
-tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"16× Piglin furieux, 7× Blaze (tourelle)","color":"yellow"},{"text":"  (23 monstres)","color":"dark_gray"}]
+execute unless score $wdup mg.st matches 1 run tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"16× Piglin furieux, 7× Blaze (tourelle)","color":"yellow"},{"text":"  (23 monstres)","color":"dark_gray"}]

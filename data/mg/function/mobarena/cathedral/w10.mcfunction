@@ -19,4 +19,4 @@ summon minecraft:zombie 4.5 65 9119.5 {Tags:["mg.mob","mg.fz"],PersistenceRequir
 summon minecraft:zombie 8.5 65 9119.5 {Tags:["mg.mob","mg.fz"],PersistenceRequired:1b,equipment:{head:{id:"minecraft:iron_helmet",count:1},chest:{id:"minecraft:iron_chestplate",count:1},legs:{id:"minecraft:iron_leggings",count:1},feet:{id:"minecraft:iron_boots",count:1},mainhand:{id:"minecraft:iron_sword",count:1}}}
 effect give @e[tag=mg.fz] minecraft:speed infinite 1 true
 tag @e[tag=mg.fz] remove mg.fz
-tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"8× Squelette archer, 10× Zombie en armure de fer rapide","color":"yellow"},{"text":"  (18 monstres)","color":"dark_gray"}]
+execute unless score $wdup mg.st matches 1 run tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"8× Squelette archer, 10× Zombie en armure de fer rapide","color":"yellow"},{"text":"  (18 monstres)","color":"dark_gray"}]

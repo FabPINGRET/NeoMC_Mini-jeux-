@@ -39,4 +39,4 @@ summon minecraft:phantom -7.5 76 10708.5 {Tags:["mg.mob"],PersistenceRequired:1b
 summon minecraft:phantom 8.5 76 10692.5 {Tags:["mg.mob"],PersistenceRequired:1b}
 effect give @e[tag=mg.fz] minecraft:speed infinite 2 true
 tag @e[tag=mg.fz] remove mg.fz
-tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"20× Endermite rapide, 8× Shulker, 10× Phantom","color":"yellow"},{"text":"  (38 monstres)","color":"dark_gray"}]
+execute unless score $wdup mg.st matches 1 run tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"20× Endermite rapide, 8× Shulker, 10× Phantom","color":"yellow"},{"text":"  (38 monstres)","color":"dark_gray"}]

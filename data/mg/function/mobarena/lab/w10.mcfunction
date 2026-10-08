@@ -19,4 +19,4 @@ summon minecraft:creeper 14.5 65 9500.5 {Tags:["mg.mob"],PersistenceRequired:1b,
 summon minecraft:creeper -13.5 65 9500.5 {Tags:["mg.mob"],PersistenceRequired:1b,powered:1b}
 effect give @e[tag=mg.fz] minecraft:speed infinite 1 true
 tag @e[tag=mg.fz] remove mg.fz
-tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"10× Zombie de laboratoire (Speed II), 4× Sorcière, 4× Creeper chargé","color":"yellow"},{"text":"  (18 monstres)","color":"dark_gray"}]
+execute unless score $wdup mg.st matches 1 run tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"10× Zombie de laboratoire (Speed II), 4× Sorcière, 4× Creeper chargé","color":"yellow"},{"text":"  (18 monstres)","color":"dark_gray"}]

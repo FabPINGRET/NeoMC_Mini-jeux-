@@ -39,4 +39,4 @@ summon minecraft:bat -7.5 74 9100.5 {Tags:["mg.mob","mg.swarm"],PersistenceRequi
 summon minecraft:bat -3.5 74 9100.5 {Tags:["mg.mob","mg.swarm"],PersistenceRequired:1b}
 effect give @e[tag=mg.fz] minecraft:speed infinite 1 true
 tag @e[tag=mg.fz] remove mg.fz
-tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"16× Zombie en armure de fer rapide, 10× Squelette archer, 12× Chauve-souris maudite","color":"yellow"},{"text":"  (38 monstres)","color":"dark_gray"}]
+execute unless score $wdup mg.st matches 1 run tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"16× Zombie en armure de fer rapide, 10× Squelette archer, 12× Chauve-souris maudite","color":"yellow"},{"text":"  (38 monstres)","color":"dark_gray"}]

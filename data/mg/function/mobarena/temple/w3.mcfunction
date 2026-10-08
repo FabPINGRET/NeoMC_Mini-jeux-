@@ -7,4 +7,4 @@ summon minecraft:guardian -8.5 64 9912.5 {Tags:["mg.mob"],PersistenceRequired:1b
 summon minecraft:guardian 12.5 64 9908.5 {Tags:["mg.mob"],PersistenceRequired:1b}
 item replace entity @e[tag=mg.dr] weapon.mainhand with minecraft:trident[enchantments={impaling:3}]
 tag @e[tag=mg.dr] remove mg.dr
-tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"4× Noyé au trident (Impaling), 2× Gardien","color":"yellow"},{"text":"  (6 monstres)","color":"dark_gray"}]
+execute unless score $wdup mg.st matches 1 run tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"4× Noyé au trident (Impaling), 2× Gardien","color":"yellow"},{"text":"  (6 monstres)","color":"dark_gray"}]

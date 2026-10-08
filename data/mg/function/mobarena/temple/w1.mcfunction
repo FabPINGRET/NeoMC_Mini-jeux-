@@ -5,4 +5,4 @@ summon minecraft:drowned 0.5 64 9912.5 {Tags:["mg.mob","mg.dr"],PersistenceRequi
 summon minecraft:drowned 8.5 64 9912.5 {Tags:["mg.mob","mg.dr"],PersistenceRequired:1b}
 item replace entity @e[tag=mg.dr] weapon.mainhand with minecraft:trident[enchantments={impaling:3}]
 tag @e[tag=mg.dr] remove mg.dr
-tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"4× Noyé au trident (Impaling)","color":"yellow"},{"text":"  (4 monstres)","color":"dark_gray"}]
+execute unless score $wdup mg.st matches 1 run tellraw @a [{"text":"  ➜ ","color":"gray"},{"text":"4× Noyé au trident (Impaling)","color":"yellow"},{"text":"  (4 monstres)","color":"dark_gray"}]
