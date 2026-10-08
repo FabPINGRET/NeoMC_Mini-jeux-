@@ -3,6 +3,10 @@
 # le mouton se pose → mèche de 1,5 s → effet (BOUM, ou effet spécial selon son type).
 scoreboard players remove @s mg.t 1
 particle minecraft:smoke ~ ~0.5 ~ 0.2 0.2 0.2 0.01 3
+# En vol : déplacé par le serveur (OnGround est faux-positif pendant le vol : pas de mèche tant qu'il vole)
+execute if entity @s[tag=mg.fly] run function mg:sheepwar/fly
+execute if entity @s[tag=mg.fly] at @s if entity @s[y=-1993,dy=2048] run return run kill @s
+execute if entity @s[tag=mg.fly] if score @s mg.t matches 1.. run return 0
 
 # Au sol (après l'impact) → mèche de 1,5 s (le temps de fuir !), grésillement + étincelles
 execute if score @s mg.t matches 31.. unless entity @s[tag=mg.k_super] unless entity @s[tag=mg.k_ultra] unless entity @s[tag=mg.k_mitra] if data entity @s {OnGround:1b} run scoreboard players set @s mg.t 30

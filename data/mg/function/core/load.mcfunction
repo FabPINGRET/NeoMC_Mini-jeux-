@@ -16,6 +16,9 @@ scoreboard objectives add mg.go trigger
 scoreboard objectives add mg.cd dummy
 scoreboard objectives add mg.cls trigger
 scoreboard objectives add mg.cl dummy
+scoreboard objectives add mg.svx dummy
+scoreboard objectives add mg.svy dummy
+scoreboard objectives add mg.svz dummy
 scoreboard objectives add mg.opt trigger
 scoreboard objectives add mg.buy trigger
 scoreboard objectives add mg.mb dummy [{"text":"☠ MOB ARENA ☠","color":"red"}]
