@@ -12,7 +12,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Vote pour une carte (★ = variante, ★ facile → ★★★★ difficile).",
+          "text": "Vote pour une carte : cartes d’origine puis ✦ variantes ; ★ facile → ★★★★ difficile.",
           "color": "gray"
         }
       ]
@@ -49,7 +49,7 @@
     {
       "label": [
         {
-          "text": "⬇ The Dropper",
+          "text": "Dropper ★★☆☆",
           "color": "white"
         }
       ],
@@ -61,7 +61,7 @@
     {
       "label": [
         {
-          "text": "⬇ Dropper : tube commun",
+          "text": "Tube commun ★★☆☆",
           "color": "white"
         }
       ],
@@ -73,7 +73,7 @@
     {
       "label": [
         {
-          "text": "⬇ Dropper : Aventure",
+          "text": "Aventure ★★★☆",
           "color": "white"
         }
       ],
@@ -85,7 +85,7 @@
     {
       "label": [
         {
-          "text": "⬇ Dropper : Défi",
+          "text": "Défi ★★★☆",
           "color": "white"
         }
       ],

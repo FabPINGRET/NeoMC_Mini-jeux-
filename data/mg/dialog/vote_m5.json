@@ -12,7 +12,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Vote pour une carte (★ = variante, ★ facile → ★★★★ difficile).",
+          "text": "Vote pour une carte : cartes d’origine puis ✦ variantes ; ★ facile → ★★★★ difficile.",
           "color": "gray"
         }
       ]
@@ -49,7 +49,7 @@
     {
       "label": [
         {
-          "text": "⚑ Classique",
+          "text": "Classique ★★☆☆",
           "color": "white"
         }
       ],
@@ -61,7 +61,7 @@
     {
       "label": [
         {
-          "text": "🌋 Caldeira",
+          "text": "Caldeira ★★☆☆",
           "color": "white"
         }
       ],
@@ -73,7 +73,7 @@
     {
       "label": [
         {
-          "text": "🌸 Hanami",
+          "text": "Hanami ★★☆☆",
           "color": "white"
         }
       ],
@@ -85,7 +85,7 @@
     {
       "label": [
         {
-          "text": "❄ Banquise",
+          "text": "Banquise ★★★☆",
           "color": "white"
         }
       ],

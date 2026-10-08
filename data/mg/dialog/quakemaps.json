@@ -1,7 +1,7 @@
 {
   "type": "minecraft:multi_action",
   "title": {
-    "text": "⚡ QUAKECRAFT — CHOISIS LA CARTE",
+    "text": "⚡ Quake",
     "color": "aqua",
     "bold": true
   },
@@ -16,7 +16,7 @@
           "color": "gray"
         },
         {
-          "text": "\n★ = variante : ce jeu sur la carte d’un autre jeu, ",
+          "text": "\nCartes d’origine, puis ✦ variantes (ce jeu sur la carte d’un autre jeu, réglages adaptés). ",
           "color": "gray"
         },
         {
@@ -32,7 +32,7 @@
           "color": "gold"
         },
         {
-          "text": " difficile (réglages adaptés).",
+          "text": " difficile.",
           "color": "gray"
         }
       ]
@@ -43,8 +43,16 @@
     {
       "label": [
         {
-          "text": "⚡ Néon (classique)",
+          "text": "Néon ",
           "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -61,8 +69,16 @@
     {
       "label": [
         {
-          "text": "Volcan XL",
+          "text": "Volcan XL ",
           "color": "red"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -79,8 +95,16 @@
     {
       "label": [
         {
-          "text": "Jungle XL",
+          "text": "Jungle XL ",
           "color": "dark_green"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -97,8 +121,16 @@
     {
       "label": [
         {
-          "text": "☀ Désert",
+          "text": "Désert ",
           "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -115,8 +147,16 @@
     {
       "label": [
         {
-          "text": "❄ Glacier (mini)",
+          "text": "Glacier ",
           "color": "aqua"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -133,8 +173,16 @@
     {
       "label": [
         {
-          "text": "☀ Poussière (style Dust)",
+          "text": "Poussière ",
           "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -151,8 +199,16 @@
     {
       "label": [
         {
-          "text": "☀ Mirage (style Mirage)",
+          "text": "Mirage ",
           "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -169,8 +225,16 @@
     {
       "label": [
         {
-          "text": "☢ Nuketown (style Nuketown)",
+          "text": "Nuketown ",
           "color": "green"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -205,7 +269,7 @@
     {
       "label": [
         {
-          "text": "Arène OITC ",
+          "text": "✦ Arène OITC ",
           "color": "gold"
         },
         {
@@ -235,7 +299,7 @@
     {
       "label": [
         {
-          "text": "Château ",
+          "text": "✦ Château ",
           "color": "gold"
         },
         {
@@ -265,7 +329,7 @@
     {
       "label": [
         {
-          "text": "Arène TNT Tag ",
+          "text": "✦ Arène TNT Tag ",
           "color": "red"
         },
         {
@@ -295,7 +359,7 @@
     {
       "label": [
         {
-          "text": "Terrain de paintball ",
+          "text": "✦ Paintball ",
           "color": "gold"
         },
         {
@@ -325,7 +389,7 @@
     {
       "label": [
         {
-          "text": "Mini-terrain ",
+          "text": "✦ Mini-paintball ",
           "color": "gold"
         },
         {
@@ -355,7 +419,7 @@
     {
       "label": [
         {
-          "text": "Grande forêt ",
+          "text": "✦ Grande forêt ",
           "color": "dark_green"
         },
         {
@@ -385,7 +449,7 @@
     {
       "label": [
         {
-          "text": "Collines ",
+          "text": "✦ Collines ",
           "color": "green"
         },
         {
@@ -415,7 +479,7 @@
     {
       "label": [
         {
-          "text": "Canyon ",
+          "text": "✦ Canyon ",
           "color": "gold"
         },
         {
@@ -445,7 +509,7 @@
     {
       "label": [
         {
-          "text": "Village perché ",
+          "text": "✦ Village perché ",
           "color": "aqua"
         },
         {
@@ -475,7 +539,7 @@
     {
       "label": [
         {
-          "text": "Grand terrain ",
+          "text": "✦ Grand paintball ",
           "color": "gold"
         },
         {

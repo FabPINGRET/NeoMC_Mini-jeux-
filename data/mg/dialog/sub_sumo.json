@@ -31,8 +31,16 @@
     {
       "label": [
         {
-          "text": "✊ Sumo",
+          "text": "Disque ",
           "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -43,8 +51,16 @@
     {
       "label": [
         {
-          "text": "✊ Sumo : arène complexe",
+          "text": "Arène complexe ",
           "color": "gold"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "action": {

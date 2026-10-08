@@ -1,4 +1,4 @@
-# Arène 16 « Terrain de paintball » (carte Paintball, centre 0 ~ 8800) : construction, perchoir, élimination, placement. Généré.
+# Arène 16 « Paintball » (carte Paintball, centre 0 ~ 8800) : construction, perchoir, élimination, placement. Généré.
 function mg:paintball/build
 kill @e[type=minecraft:item,x=-28,y=70,z=8766,dx=56,dy=30,dz=68]
 scoreboard players set $px mg.st 0

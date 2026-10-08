@@ -31,9 +31,16 @@
     {
       "label": [
         {
-          "text": "🏎 KART : Circuit Champignon",
-          "color": "gold",
-          "bold": true
+          "text": "🏎 Circuit Champignon ",
+          "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -50,9 +57,16 @@
     {
       "label": [
         {
-          "text": "🏎 KART : Royaume Koopa",
-          "color": "red",
-          "bold": true
+          "text": "🏎 Royaume Koopa ",
+          "color": "red"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -69,9 +83,16 @@
     {
       "label": [
         {
-          "text": "🎈 KART : Bataille",
-          "color": "light_purple",
-          "bold": true
+          "text": "🎈 Bataille ",
+          "color": "light_purple"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [

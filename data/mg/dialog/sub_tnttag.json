@@ -16,7 +16,7 @@
           "color": "gray"
         },
         {
-          "text": "\n★ = variante : ce jeu sur la carte d’un autre jeu, ",
+          "text": "\nCartes d’origine, puis ✦ variantes (ce jeu sur la carte d’un autre jeu, réglages adaptés). ",
           "color": "gray"
         },
         {
@@ -32,7 +32,7 @@
           "color": "gold"
         },
         {
-          "text": " difficile (réglages adaptés).",
+          "text": " difficile.",
           "color": "gray"
         }
       ]
@@ -69,8 +69,16 @@
     {
       "label": [
         {
-          "text": "✹ Classique",
+          "text": "Classique ",
           "color": "red"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -87,8 +95,16 @@
     {
       "label": [
         {
-          "text": "⛰ Collines",
+          "text": "Collines ",
           "color": "green"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -105,8 +121,16 @@
     {
       "label": [
         {
-          "text": "🏜 Canyon",
+          "text": "Canyon ",
           "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -123,8 +147,16 @@
     {
       "label": [
         {
-          "text": "🏘 Village perché",
+          "text": "Village perché ",
           "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -159,7 +191,7 @@
     {
       "label": [
         {
-          "text": "Grande forêt ",
+          "text": "✦ Grande forêt ",
           "color": "dark_green"
         },
         {
@@ -189,7 +221,7 @@
     {
       "label": [
         {
-          "text": "Volcan ",
+          "text": "✦ Volcan ",
           "color": "red"
         },
         {
@@ -219,7 +251,7 @@
     {
       "label": [
         {
-          "text": "Jungle ",
+          "text": "✦ Jungle ",
           "color": "dark_green"
         },
         {
@@ -249,7 +281,7 @@
     {
       "label": [
         {
-          "text": "Grand terrain ",
+          "text": "✦ Grand paintball ",
           "color": "gold"
         },
         {
@@ -279,7 +311,7 @@
     {
       "label": [
         {
-          "text": "Poussière ",
+          "text": "✦ Poussière ",
           "color": "gold"
         },
         {
@@ -309,7 +341,7 @@
     {
       "label": [
         {
-          "text": "Mirage ",
+          "text": "✦ Mirage ",
           "color": "aqua"
         },
         {
@@ -339,7 +371,7 @@
     {
       "label": [
         {
-          "text": "Nuketown ",
+          "text": "✦ Nuketown ",
           "color": "green"
         },
         {
@@ -369,7 +401,7 @@
     {
       "label": [
         {
-          "text": "Château ",
+          "text": "✦ Château ",
           "color": "gold"
         },
         {
@@ -399,7 +431,7 @@
     {
       "label": [
         {
-          "text": "Terrain de paintball ",
+          "text": "✦ Paintball ",
           "color": "gold"
         },
         {
@@ -429,7 +461,7 @@
     {
       "label": [
         {
-          "text": "Arène OITC ",
+          "text": "✦ Arène OITC ",
           "color": "gold"
         },
         {
@@ -459,7 +491,7 @@
     {
       "label": [
         {
-          "text": "Néon ",
+          "text": "✦ Néon ",
           "color": "aqua"
         },
         {
@@ -489,7 +521,7 @@
     {
       "label": [
         {
-          "text": "Désert ",
+          "text": "✦ Désert ",
           "color": "gold"
         },
         {
@@ -519,7 +551,7 @@
     {
       "label": [
         {
-          "text": "Mini-terrain ",
+          "text": "✦ Mini-paintball ",
           "color": "gold"
         },
         {
@@ -549,7 +581,7 @@
     {
       "label": [
         {
-          "text": "Glacier ",
+          "text": "✦ Glacier ",
           "color": "aqua"
         },
         {

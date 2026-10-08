@@ -31,8 +31,16 @@
     {
       "label": [
         {
-          "text": "▓ Paintball (Splatoon)",
+          "text": "Terrain ",
           "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -43,8 +51,16 @@
     {
       "label": [
         {
-          "text": "▓ Paintball : Mini-terrain",
+          "text": "Mini-terrain ",
           "color": "gold"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -61,8 +77,16 @@
     {
       "label": [
         {
-          "text": "▓ Paintball : Grand terrain",
+          "text": "Grand terrain ",
           "color": "gold"
+        },
+        {
+          "text": "★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [

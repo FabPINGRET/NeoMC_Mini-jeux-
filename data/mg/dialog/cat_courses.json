@@ -49,8 +49,16 @@
     {
       "label": [
         {
-          "text": "⛵ Course de bateaux (glace)",
+          "text": "⛵ Bateaux sur glace ",
           "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -67,7 +75,7 @@
     {
       "label": [
         {
-          "text": "🪽 Course d'élytres ▸",
+          "text": "🪽 Course élytres ▸",
           "color": "aqua"
         }
       ],
@@ -103,7 +111,7 @@
     {
       "label": [
         {
-          "text": "⬇ The Dropper ▸",
+          "text": "⬇ Dropper ▸",
           "color": "aqua"
         }
       ],

@@ -90,11 +90,11 @@ ARENAS = [
          ceil=(-24, 108, 26776, 24, 26824), src='TNT Tag', desc='51×51, mesa à plateaux, arche, pont suspendu', relief=True),
     dict(k=15, name='Village perché', col='aqua', size='M', setup='tnttag/map/setup_3', z=27400, sp=(3, 22, 100), py=117,
          ceil=(-24, 114, 27376, 24, 27424), src='TNT Tag', desc='51×51, toits, passerelles, clocher', relief=True),
-    dict(k=16, name='Terrain de paintball', col='gold', size='M', build='paintball/build', z=8800, sp=(6, 22, 90), spawn='0 81 8800', py=100, ky=70,
+    dict(k=16, name='Paintball', col='gold', size='M', build='paintball/build', z=8800, sp=(6, 22, 90), spawn='0 81 8800', py=100, ky=70,
          items='-28 70 8766 56 30 68', ceil=None, src='Paintball', desc='49×61, murets blancs'),
-    dict(k=17, name='Mini-terrain', col='gold', size='S', build='paintball/build_1', z=12300, sp=(4, 13, 90), spawn='0 81 12300', py=100, ky=70,
+    dict(k=17, name='Mini-paintball', col='gold', size='S', build='paintball/build_1', z=12300, sp=(4, 13, 90), spawn='0 81 12300', py=100, ky=70,
          items='-16 70 12279 32 30 42', ceil=None, src='Paintball', desc='29×39, rapide'),
-    dict(k=18, name='Grand terrain', col='gold', size='XL', build='paintball/build_2', z=12700, sp=(8, 37, 90), spawn='0 81 12700', py=105, ky=70,
+    dict(k=18, name='Grand paintball', col='gold', size='XL', build='paintball/build_2', z=12700, sp=(8, 37, 90), spawn='0 81 12700', py=105, ky=70,
          items='-42 70 12648 84 30 104', ceil=None, src='Paintball', desc='79×99, immense'),
 ]
 AR = {a['k']: a for a in ARENAS}
@@ -450,7 +450,7 @@ w('var/fl', ['# Zones chargées des variantes (sols, centre 0 ~ 24300). Génér�
 # ============================================================ menus
 def label_for(v):
     st = v['dif']
-    return [{'text': f'{v["map"]["name"]} ', 'color': v['map']['col']},
+    return [{'text': f'✦ {v["map"]["name"]} ', 'color': v['map']['col']},
             {'text': '★' * st, 'color': 'gold'}, {'text': '☆' * (4 - st), 'color': 'dark_gray'}]
 
 
@@ -633,9 +633,9 @@ def known(cmd, label, col, tip=None):
     return KNOWN.get(cmd) or act(label, col, cmd, tip)
 
 
-BODY_NOTE = [{'text': '\n★ = variante : ce jeu sur la carte d’un autre jeu, ', 'color': 'gray'},
+BODY_NOTE = [{'text': '\nCartes d’origine, puis ✦ variantes (ce jeu sur la carte d’un autre jeu, réglages adaptés). ', 'color': 'gray'},
              {'text': '★', 'color': 'gold'}, {'text': ' facile → ', 'color': 'gray'}, {'text': '★★★★', 'color': 'gold'},
-             {'text': ' difficile (réglages adaptés).', 'color': 'gray'}]
+             {'text': ' difficile.', 'color': 'gray'}]
 OPT_CAT = {'sols': 40, 'equipes': 41, 'courses': 42, 'fete': 43, 'votes': 44, 'joueur': 45, 'kart': 46, 'combat': 14}
 SUB = {'pvp': ('sub_pvparena', 'combat'), 'oitc': ('sub_oitc', 'combat'), 'quake': ('quakemaps', 'combat'),
        'tnttag': ('sub_tnttag', 'combat'), 'spleef': ('sub_spleef', 'sols'), 'tntrun': ('sub_tntrun', 'sols'),
@@ -665,8 +665,10 @@ for m in MODES:
                       'action': {'type': 'minecraft:run_command', 'command': f'trigger mg.go set {v["id"]}'}})
     d['actions'] = natives + vacts + [back(parent)]
     body = d['body'][0]['contents']
-    if not any('★ = variante' in (c.get('text', '') if isinstance(c, dict) else '') for c in body):
-        body += BODY_NOTE
+    cut = next((i for i, c in enumerate(body) if isinstance(c, dict) and c.get('text', '').startswith('\n') and ('variante' in c.get('text', ''))), None)
+    if cut is not None:
+        del body[cut:]
+    body += BODY_NOTE
     save_dialog(name, d)
     L = [f'# {m["name"]} : cartes + variantes (@s = admin) — fenêtre, sinon menu texte. Généré.',
          'scoreboard players set $dlg mg.st 0',
@@ -785,6 +787,72 @@ patch('core/opt', 'execute if score @s mg.opt matches 1 run function mg:core/opt
     'execute if score @s mg.opt matches 44..45 unless entity @s[tag=mg.admin] run function mg:var/menu/open'], where='before')
 
 
+# ============================================================ noms courts + étoiles sur les cartes d'origine
+# Étoiles des cartes d'origine = difficulté de la carte (indicatif : leurs réglages restent ceux d'origine).
+NATIVE = {
+    1: ('Tour de neige', 2), 2: ('Tour de laine', 2), 20: ('Splegg', 2), 21: ('Splegg XXL', 1),
+    22: ('Disque', 2), 24: ('Arène complexe', 3), 28: ('Block Party', 2), 29: ('Classique', 2), 42: ('Sol troué', 3),
+    3: ('Arène classique', 3), 13: ('Classes : classique', 3), 44: ('Poussière', 2), 45: ('Classes : Poussière', 2),
+    47: ('Mirage', 2), 48: ('Classes : Mirage', 2), 50: ('Nuketown', 2), 51: ('Classes : Nuketown', 2),
+    26: ('Arène', 2), 52: ('Château', 2), 53: ('Grande forêt', 3),
+    31: ('Néon', 2), 32: ('Volcan XL', 3), 33: ('Jungle XL', 3), 34: ('Désert', 2), 35: ('Glacier', 3),
+    43: ('Poussière', 2), 46: ('Mirage', 2), 49: ('Nuketown', 2),
+    67: ('Classique', 3), 68: ('Collines', 2), 69: ('Canyon', 2), 70: ('Village perché', 2),
+    71: ('Classique', 2), 72: ('Caldeira', 2), 73: ('Hanami', 2), 74: ('Banquise', 3),
+    5: ('Classique', 2), 7: ('Forteresses', 2), 14: ('Bastions', 2), 15: ('Cubes voxel', 2), 16: ('Pyramides inversées', 3),
+    17: ('Archipel', 2), 18: ('Double canyon', 3), 19: ('Nuages voxel', 3),
+    36: ('Terrain', 2), 54: ('Mini-terrain', 3), 55: ('Grand terrain', 1),
+    6: ('Classique', 2), 8: ('Nether', 3), 9: ('End', 3), 10: ('Ultra hard', 4), 11: ('Volant', 3), 12: ('Araignée', 3),
+    37: ('Cathédrale (20 vagues)', 4), 38: ('Laboratoire (20 vagues)', 4), 39: ('Temple (20 vagues)', 4),
+    40: ('Forge (20 vagues)', 4), 41: ('Vaisseau (20 vagues)', 4),
+    23: ('Dropper', 2), 25: ('Tube commun', 2), 64: ('Aventure', 3), 65: ('Défi', 3),
+    75: ('Course d\'anneaux', 2), 76: ('Course + combat', 3), 77: ('Survie en vol', 4),
+    61: ('Circuit Champignon', 2), 62: ('Royaume Koopa', 3), 63: ('Bataille', 2), 56: ('Bateaux sur glace', 2),
+    66: ('Canyon du Couchant', 3), 30: ('Turf Wars', 2),
+}
+SHORT_OPT = {   # boutons de navigation (mg.opt) : noms courts
+    24: '➶ OITC ▸', 10: '⚡ Quake ▸', 20: '⚓ Enclumes ▸', 19: '⬇ Dropper ▸', 28: '🪽 Course élytres ▸', 23: '⚔ Arène PvP ▸',
+    8: '☁ Sheep War ▸', 21: '▓ Paintball ▸', 29: '✹ TNT Tag ▸', 17: '❍ Splegg ▸', 18: '✊ Sumo ▸',
+}
+SHORT_TITLE = {'sub_oitc': '➶ OITC', 'quakemaps': '⚡ Quake', 'sub_anvil': '⚓ Enclumes', 'sub_dropper': '⬇ Dropper', 'sub_elyrace': '🪽 Course élytres'}
+
+
+def star_label(name, n, col):
+    return [{'text': name + ' ', 'color': col}, {'text': '★' * n, 'color': 'gold'}, {'text': '☆' * (4 - n), 'color': 'dark_gray'}]
+
+
+for f in sorted(os.listdir(os.path.join(D, 'dialog'))):
+    if not f.endswith('.json') or f.startswith('vote'):
+        continue
+    name = f[:-5]
+    d = load_dialog(name)
+    changed = False
+    for a in d.get('actions', []) or []:
+        cmd = a.get('action', {}).get('command', '')
+        mg_ = re.match(r'trigger mg\.(go|opt) set (\d+)$', cmd)
+        if not mg_ or not isinstance(a.get('label'), list):
+            continue
+        kind, n = mg_.group(1), int(mg_.group(2))
+        col = a['label'][0].get('color', 'white')
+        if kind == 'go' and n in NATIVE:
+            nm, st = NATIVE[n]
+            icon = a['label'][0].get('text', '').split(' ')[0]
+            if name.startswith('cat_') and len(icon) <= 2 and not icon[:1].isalnum():   # dans une catégorie, garder l'icône du jeu
+                nm = f'{icon} {nm}'
+            new = star_label(nm, st, col)
+            if a['label'] != new:
+                a['label'] = new
+                changed = True
+        elif kind == 'opt' and n in SHORT_OPT and a['label'][0].get('text') != SHORT_OPT[n]:
+            a['label'] = [{**a['label'][0], 'text': SHORT_OPT[n]}]
+            changed = True
+    if name in SHORT_TITLE and d.get('title', {}).get('text') != SHORT_TITLE[name]:
+        d['title']['text'] = SHORT_TITLE[name]
+        changed = True
+    if changed:
+        save_dialog(name, d)
+
+
 # ============================================================ votes par carte (au choix : le jeu, ou une carte précise)
 # mg.vote = 1000 + id de lancement → vote pour cette carte (compte aussi pour son jeu) ; 91 = menu des cartes ;
 # 900 + n = cartes du jeu n. Au lancement, le jeu le plus voté (votes jeu + cartes) gagne, puis sa carte la plus votée.
@@ -826,7 +894,7 @@ VG = [
 def map_name(i):
     if i in VBYID:
         v = VBYID[i]
-        return f'{v["map"]["name"]} ' + '★' * v['dif'] + '☆' * (4 - v['dif'])
+        return f'✦ {v["map"]["name"]} ' + '★' * v['dif'] + '☆' * (4 - v['dif'])
     return LAB.get(i, str(i))
 
 
@@ -903,7 +971,7 @@ for n, fake, name, col, ids in VG:
     acts.append(act('« Autres jeux', 'yellow', 'trigger mg.vote set 91'))
     save_dialog(f'vote_m{n}', {'type': 'minecraft:multi_action', 'title': {'text': f'🗺 VOTE : {name}', 'color': col, 'bold': True},
                                'pause': False, 'can_close_with_escape': True,
-                               'body': [{'type': 'minecraft:plain_message', 'contents': [{'text': 'Vote pour une carte (★ = variante, ★ facile → ★★★★ difficile).', 'color': 'gray'}]}],
+                               'body': [{'type': 'minecraft:plain_message', 'contents': [{'text': 'Vote pour une carte : cartes d’origine puis ✦ variantes ; ★ facile → ★★★★ difficile.', 'color': 'gray'}]}],
                                'columns': 2, 'exit_action': {'label': [{'text': 'Fermer', 'color': 'gray'}]}, 'actions': acts})
     OPENL.append(f'execute if score @s mg.vote matches {900 + n} run function mg:vote/map_menu {{d:"vote_m{n}",n:{n}}}')
     C = [f'# Repli chat : cartes de {name} (@s). Généré.',

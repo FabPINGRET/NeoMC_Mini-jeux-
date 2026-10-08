@@ -49,8 +49,16 @@
     {
       "label": [
         {
-          "text": "◎ Course d'anneaux",
+          "text": "Course d'anneaux ",
           "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -67,8 +75,16 @@
     {
       "label": [
         {
-          "text": "➶ Course + combat",
+          "text": "Course + combat ",
           "color": "red"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -85,8 +101,16 @@
     {
       "label": [
         {
-          "text": "☁ Survie en vol",
+          "text": "Survie en vol ",
           "color": "light_purple"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": "",
+          "color": "dark_gray"
         }
       ],
       "action": {

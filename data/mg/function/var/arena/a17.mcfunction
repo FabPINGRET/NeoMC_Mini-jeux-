@@ -1,4 +1,4 @@
-# Arène 17 « Mini-terrain » (carte Paintball, centre 0 ~ 12300) : construction, perchoir, élimination, placement. Généré.
+# Arène 17 « Mini-paintball » (carte Paintball, centre 0 ~ 12300) : construction, perchoir, élimination, placement. Généré.
 function mg:paintball/build_1
 kill @e[type=minecraft:item,x=-16,y=70,z=12279,dx=32,dy=30,dz=42]
 scoreboard players set $px mg.st 0

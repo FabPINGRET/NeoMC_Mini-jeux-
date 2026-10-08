@@ -16,7 +16,7 @@
           "color": "gray"
         },
         {
-          "text": "\n★ = variante : ce jeu sur la carte d’un autre jeu, ",
+          "text": "\nCartes d’origine, puis ✦ variantes (ce jeu sur la carte d’un autre jeu, réglages adaptés). ",
           "color": "gray"
         },
         {
@@ -32,7 +32,7 @@
           "color": "gold"
         },
         {
-          "text": " difficile (réglages adaptés).",
+          "text": " difficile.",
           "color": "gray"
         }
       ]
@@ -51,8 +51,16 @@
     {
       "label": [
         {
-          "text": "❍ Splegg",
+          "text": "Splegg ",
           "color": "yellow"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -63,8 +71,16 @@
     {
       "label": [
         {
-          "text": "❍ Splegg XXL",
+          "text": "Splegg XXL ",
           "color": "gold"
+        },
+        {
+          "text": "★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -93,7 +109,7 @@
     {
       "label": [
         {
-          "text": "Tour de Spleef ",
+          "text": "✦ Tour de Spleef ",
           "color": "aqua"
         },
         {
@@ -123,7 +139,7 @@
     {
       "label": [
         {
-          "text": "Tour de TNT Run ",
+          "text": "✦ Tour de TNT Run ",
           "color": "red"
         },
         {
@@ -153,7 +169,7 @@
     {
       "label": [
         {
-          "text": "Pyramide ",
+          "text": "✦ Pyramide ",
           "color": "light_purple"
         },
         {
@@ -183,7 +199,7 @@
     {
       "label": [
         {
-          "text": "Anneaux ",
+          "text": "✦ Anneaux ",
           "color": "dark_aqua"
         },
         {

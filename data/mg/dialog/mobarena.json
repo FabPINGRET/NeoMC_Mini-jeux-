@@ -23,8 +23,16 @@
     {
       "label": [
         {
-          "text": "☠ Classique",
+          "text": "Classique ",
           "color": "gray"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -35,8 +43,16 @@
     {
       "label": [
         {
-          "text": "♨ Nether",
+          "text": "Nether ",
           "color": "red"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -47,8 +63,16 @@
     {
       "label": [
         {
-          "text": "✦ End",
+          "text": "End ",
           "color": "dark_purple"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -59,8 +83,16 @@
     {
       "label": [
         {
-          "text": "☠ ULTRA HARD",
+          "text": "Ultra hard ",
           "color": "dark_red"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": "",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -71,8 +103,16 @@
     {
       "label": [
         {
-          "text": "☁ Volant",
+          "text": "Volant ",
           "color": "aqua"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -83,8 +123,16 @@
     {
       "label": [
         {
-          "text": "✷ Araignée",
+          "text": "Araignée ",
           "color": "dark_green"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -95,8 +143,16 @@
     {
       "label": [
         {
-          "text": "☠ Cathédrale maudite (20 vagues)",
+          "text": "Cathédrale (20 vagues) ",
           "color": "dark_red"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": "",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -113,8 +169,16 @@
     {
       "label": [
         {
-          "text": "⚗ Laboratoire alchimique (20 vagues)",
+          "text": "Laboratoire (20 vagues) ",
           "color": "green"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": "",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -131,8 +195,16 @@
     {
       "label": [
         {
-          "text": "Ψ Temple des profondeurs (20 vagues)",
+          "text": "Temple (20 vagues) ",
           "color": "aqua"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": "",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -149,8 +221,16 @@
     {
       "label": [
         {
-          "text": "♨ Forge du Titan (20 vagues)",
+          "text": "Forge (20 vagues) ",
           "color": "gold"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": "",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -167,8 +247,16 @@
     {
       "label": [
         {
-          "text": "✦ Vaisseau cybernétique (20 vagues)",
+          "text": "Vaisseau (20 vagues) ",
           "color": "light_purple"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": "",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [

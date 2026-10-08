@@ -23,8 +23,16 @@
     {
       "label": [
         {
-          "text": "☁ Sheep War : classique",
+          "text": "Classique ",
           "color": "white"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -41,8 +49,16 @@
     {
       "label": [
         {
-          "text": "☁ Forteresses",
+          "text": "Forteresses ",
           "color": "white"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -59,8 +75,16 @@
     {
       "label": [
         {
-          "text": "☁ Bastions (petite carte)",
+          "text": "Bastions ",
           "color": "white"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -77,8 +101,16 @@
     {
       "label": [
         {
-          "text": "▣ Cubes Voxel",
+          "text": "Cubes voxel ",
           "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -95,8 +127,16 @@
     {
       "label": [
         {
-          "text": "▼ Pyramides inversées",
+          "text": "Pyramides inversées ",
           "color": "aqua"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -113,8 +153,16 @@
     {
       "label": [
         {
-          "text": "♨❄ Archipel bicolore",
+          "text": "Archipel ",
           "color": "red"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -131,8 +179,16 @@
     {
       "label": [
         {
-          "text": "≋ Double canyon",
+          "text": "Double canyon ",
           "color": "dark_red"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -149,8 +205,16 @@
     {
       "label": [
         {
-          "text": "☁ Nuages voxel",
+          "text": "Nuages voxel ",
           "color": "light_purple"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [

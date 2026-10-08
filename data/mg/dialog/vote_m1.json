@@ -12,7 +12,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Vote pour une carte (★ = variante, ★ facile → ★★★★ difficile).",
+          "text": "Vote pour une carte : cartes d’origine puis ✦ variantes ; ★ facile → ★★★★ difficile.",
           "color": "gray"
         }
       ]
@@ -49,7 +49,7 @@
     {
       "label": [
         {
-          "text": "❄ Spleef (tour de neige)",
+          "text": "Tour de neige ★★☆☆",
           "color": "white"
         }
       ],
@@ -61,7 +61,7 @@
     {
       "label": [
         {
-          "text": "Tour de TNT Run ★★☆☆",
+          "text": "✦ Tour de TNT Run ★★☆☆",
           "color": "gold"
         }
       ],
@@ -79,7 +79,7 @@
     {
       "label": [
         {
-          "text": "Cube de Splegg ★☆☆☆",
+          "text": "✦ Cube de Splegg ★☆☆☆",
           "color": "gold"
         }
       ],
@@ -97,7 +97,7 @@
     {
       "label": [
         {
-          "text": "Splegg XXL ★☆☆☆",
+          "text": "✦ Splegg XXL ★☆☆☆",
           "color": "gold"
         }
       ],
@@ -115,7 +115,7 @@
     {
       "label": [
         {
-          "text": "Pyramide ★★★☆",
+          "text": "✦ Pyramide ★★★☆",
           "color": "gold"
         }
       ],
@@ -133,7 +133,7 @@
     {
       "label": [
         {
-          "text": "Anneaux ★★★★",
+          "text": "✦ Anneaux ★★★★",
           "color": "gold"
         }
       ],

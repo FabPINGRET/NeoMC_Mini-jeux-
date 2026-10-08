@@ -103,8 +103,16 @@
     {
       "label": [
         {
-          "text": "▦ Block Party",
+          "text": "▦ Block Party ",
           "color": "light_purple"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -115,7 +123,7 @@
     {
       "label": [
         {
-          "text": "⚓ Pluie d'Enclumes ▸",
+          "text": "⚓ Enclumes ▸",
           "color": "gray"
         }
       ],

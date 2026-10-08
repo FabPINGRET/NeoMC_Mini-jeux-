@@ -12,7 +12,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Vote pour une carte (★ = variante, ★ facile → ★★★★ difficile).",
+          "text": "Vote pour une carte : cartes d’origine puis ✦ variantes ; ★ facile → ★★★★ difficile.",
           "color": "gray"
         }
       ]
@@ -49,7 +49,7 @@
     {
       "label": [
         {
-          "text": "⚔ PvP : classes",
+          "text": "Classes : classique ★★★☆",
           "color": "white"
         }
       ],
@@ -61,7 +61,7 @@
     {
       "label": [
         {
-          "text": "⚔ PvP classes : Poussière",
+          "text": "Classes : Poussière ★★☆☆",
           "color": "white"
         }
       ],
@@ -73,7 +73,7 @@
     {
       "label": [
         {
-          "text": "⚔ PvP classes : Mirage",
+          "text": "Classes : Mirage ★★☆☆",
           "color": "white"
         }
       ],
@@ -85,7 +85,7 @@
     {
       "label": [
         {
-          "text": "⚔ PvP classes : Nuketown",
+          "text": "Classes : Nuketown ★★☆☆",
           "color": "white"
         }
       ],

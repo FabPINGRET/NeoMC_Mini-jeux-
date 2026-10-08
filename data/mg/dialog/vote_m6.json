@@ -12,7 +12,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Vote pour une carte (★ = variante, ★ facile → ★★★★ difficile).",
+          "text": "Vote pour une carte : cartes d’origine puis ✦ variantes ; ★ facile → ★★★★ difficile.",
           "color": "gray"
         }
       ]
@@ -49,7 +49,7 @@
     {
       "label": [
         {
-          "text": "☁ Sheep War : classique",
+          "text": "Classique ★★☆☆",
           "color": "white"
         }
       ],
@@ -61,7 +61,7 @@
     {
       "label": [
         {
-          "text": "☁ Forteresses",
+          "text": "Forteresses ★★☆☆",
           "color": "white"
         }
       ],
@@ -73,7 +73,7 @@
     {
       "label": [
         {
-          "text": "☁ Bastions (petite carte)",
+          "text": "Bastions ★★☆☆",
           "color": "white"
         }
       ],
@@ -85,7 +85,7 @@
     {
       "label": [
         {
-          "text": "▣ Cubes Voxel",
+          "text": "Cubes voxel ★★☆☆",
           "color": "white"
         }
       ],
@@ -97,7 +97,7 @@
     {
       "label": [
         {
-          "text": "▼ Pyramides inversées",
+          "text": "Pyramides inversées ★★★☆",
           "color": "white"
         }
       ],
@@ -109,7 +109,7 @@
     {
       "label": [
         {
-          "text": "♨❄ Archipel bicolore",
+          "text": "Archipel ★★☆☆",
           "color": "white"
         }
       ],
@@ -121,7 +121,7 @@
     {
       "label": [
         {
-          "text": "≋ Double canyon",
+          "text": "Double canyon ★★★☆",
           "color": "white"
         }
       ],
@@ -133,7 +133,7 @@
     {
       "label": [
         {
-          "text": "☁ Nuages voxel",
+          "text": "Nuages voxel ★★★☆",
           "color": "white"
         }
       ],

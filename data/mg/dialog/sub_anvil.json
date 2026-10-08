@@ -1,7 +1,7 @@
 {
   "type": "minecraft:multi_action",
   "title": {
-    "text": "⚓ Pluie d'Enclumes",
+    "text": "⚓ Enclumes",
     "color": "gray",
     "bold": true
   },
@@ -31,8 +31,16 @@
     {
       "label": [
         {
-          "text": "⚓ Pluie d'Enclumes",
+          "text": "Classique ",
           "color": "gray"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -43,8 +51,16 @@
     {
       "label": [
         {
-          "text": "⚓ Enclumes + sol troué",
+          "text": "Sol troué ",
           "color": "red"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "action": {

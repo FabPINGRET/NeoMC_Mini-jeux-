@@ -16,7 +16,7 @@
           "color": "gray"
         },
         {
-          "text": "\n★ = variante : ce jeu sur la carte d’un autre jeu, ",
+          "text": "\nCartes d’origine, puis ✦ variantes (ce jeu sur la carte d’un autre jeu, réglages adaptés). ",
           "color": "gray"
         },
         {
@@ -32,7 +32,7 @@
           "color": "gold"
         },
         {
-          "text": " difficile (réglages adaptés).",
+          "text": " difficile.",
           "color": "gray"
         }
       ]
@@ -51,8 +51,16 @@
     {
       "label": [
         {
-          "text": "❄ Spleef (tour de neige)",
+          "text": "Tour de neige ",
           "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -87,7 +95,7 @@
     {
       "label": [
         {
-          "text": "Cube de Splegg ",
+          "text": "✦ Cube de Splegg ",
           "color": "yellow"
         },
         {
@@ -117,7 +125,7 @@
     {
       "label": [
         {
-          "text": "Splegg XXL ",
+          "text": "✦ Splegg XXL ",
           "color": "gold"
         },
         {
@@ -147,7 +155,7 @@
     {
       "label": [
         {
-          "text": "Tour de TNT Run ",
+          "text": "✦ Tour de TNT Run ",
           "color": "red"
         },
         {
@@ -177,7 +185,7 @@
     {
       "label": [
         {
-          "text": "Pyramide ",
+          "text": "✦ Pyramide ",
           "color": "light_purple"
         },
         {
@@ -207,7 +215,7 @@
     {
       "label": [
         {
-          "text": "Anneaux ",
+          "text": "✦ Anneaux ",
           "color": "dark_aqua"
         },
         {

@@ -49,8 +49,16 @@
     {
       "label": [
         {
-          "text": "⚑ Classique",
+          "text": "Classique ",
           "color": "light_purple"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -67,8 +75,16 @@
     {
       "label": [
         {
-          "text": "🌋 Caldeira",
+          "text": "Caldeira ",
           "color": "red"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -85,8 +101,16 @@
     {
       "label": [
         {
-          "text": "🌸 Hanami",
+          "text": "Hanami ",
           "color": "light_purple"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -103,8 +127,16 @@
     {
       "label": [
         {
-          "text": "❄ Banquise",
+          "text": "Banquise ",
           "color": "aqua"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "action": {

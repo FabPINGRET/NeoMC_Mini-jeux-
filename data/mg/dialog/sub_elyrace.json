@@ -1,7 +1,7 @@
 {
   "type": "minecraft:multi_action",
   "title": {
-    "text": "🪽 Course d'élytres",
+    "text": "🪽 Course élytres",
     "color": "aqua",
     "bold": true
   },
@@ -31,9 +31,16 @@
     {
       "label": [
         {
-          "text": "🏜 Canyon du Couchant",
-          "color": "gold",
-          "bold": true
+          "text": "Canyon du Couchant ",
+          "color": "gold"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [

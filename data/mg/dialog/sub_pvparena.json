@@ -16,7 +16,7 @@
           "color": "gray"
         },
         {
-          "text": "\n★ = variante : ce jeu sur la carte d’un autre jeu, ",
+          "text": "\nCartes d’origine, puis ✦ variantes (ce jeu sur la carte d’un autre jeu, réglages adaptés). ",
           "color": "gray"
         },
         {
@@ -32,7 +32,7 @@
           "color": "gold"
         },
         {
-          "text": " difficile (réglages adaptés).",
+          "text": " difficile.",
           "color": "gray"
         }
       ]
@@ -51,8 +51,16 @@
     {
       "label": [
         {
-          "text": "⚔ Arène PvP",
+          "text": "Arène classique ",
           "color": "yellow"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -63,8 +71,16 @@
     {
       "label": [
         {
-          "text": "⚔ PvP : classes",
+          "text": "Classes : classique ",
           "color": "gold"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -75,8 +91,16 @@
     {
       "label": [
         {
-          "text": "⚔ PvP : Poussière",
+          "text": "Poussière ",
           "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -93,8 +117,16 @@
     {
       "label": [
         {
-          "text": "⚔ PvP classes : Poussière",
+          "text": "Classes : Poussière ",
           "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -111,8 +143,16 @@
     {
       "label": [
         {
-          "text": "⚔ PvP : Mirage",
+          "text": "Mirage ",
           "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -129,8 +169,16 @@
     {
       "label": [
         {
-          "text": "⚔ PvP classes : Mirage",
+          "text": "Classes : Mirage ",
           "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -147,8 +195,16 @@
     {
       "label": [
         {
-          "text": "⚔ PvP : Nuketown",
+          "text": "Nuketown ",
           "color": "green"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -165,8 +221,16 @@
     {
       "label": [
         {
-          "text": "⚔ PvP classes : Nuketown",
+          "text": "Classes : Nuketown ",
           "color": "green"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -201,7 +265,7 @@
     {
       "label": [
         {
-          "text": "Grand terrain ",
+          "text": "✦ Grand paintball ",
           "color": "gold"
         },
         {
@@ -231,7 +295,7 @@
     {
       "label": [
         {
-          "text": "Château ",
+          "text": "✦ Château ",
           "color": "gold"
         },
         {
@@ -261,7 +325,7 @@
     {
       "label": [
         {
-          "text": "Grande forêt ",
+          "text": "✦ Grande forêt ",
           "color": "dark_green"
         },
         {
@@ -291,7 +355,7 @@
     {
       "label": [
         {
-          "text": "Jungle ",
+          "text": "✦ Jungle ",
           "color": "dark_green"
         },
         {
@@ -321,7 +385,7 @@
     {
       "label": [
         {
-          "text": "Collines ",
+          "text": "✦ Collines ",
           "color": "green"
         },
         {
@@ -351,7 +415,7 @@
     {
       "label": [
         {
-          "text": "Canyon ",
+          "text": "✦ Canyon ",
           "color": "gold"
         },
         {
@@ -381,7 +445,7 @@
     {
       "label": [
         {
-          "text": "Village perché ",
+          "text": "✦ Village perché ",
           "color": "aqua"
         },
         {
@@ -411,7 +475,7 @@
     {
       "label": [
         {
-          "text": "Terrain de paintball ",
+          "text": "✦ Paintball ",
           "color": "gold"
         },
         {
@@ -441,7 +505,7 @@
     {
       "label": [
         {
-          "text": "Arène OITC ",
+          "text": "✦ Arène OITC ",
           "color": "gold"
         },
         {
@@ -471,7 +535,7 @@
     {
       "label": [
         {
-          "text": "Néon ",
+          "text": "✦ Néon ",
           "color": "aqua"
         },
         {
@@ -501,7 +565,7 @@
     {
       "label": [
         {
-          "text": "Volcan ",
+          "text": "✦ Volcan ",
           "color": "red"
         },
         {
@@ -531,7 +595,7 @@
     {
       "label": [
         {
-          "text": "Désert ",
+          "text": "✦ Désert ",
           "color": "gold"
         },
         {
@@ -561,7 +625,7 @@
     {
       "label": [
         {
-          "text": "Arène TNT Tag ",
+          "text": "✦ Arène TNT Tag ",
           "color": "red"
         },
         {
@@ -591,7 +655,7 @@
     {
       "label": [
         {
-          "text": "Mini-terrain ",
+          "text": "✦ Mini-paintball ",
           "color": "gold"
         },
         {
@@ -621,7 +685,7 @@
     {
       "label": [
         {
-          "text": "Glacier ",
+          "text": "✦ Glacier ",
           "color": "aqua"
         },
         {

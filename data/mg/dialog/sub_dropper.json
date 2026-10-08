@@ -1,7 +1,7 @@
 {
   "type": "minecraft:multi_action",
   "title": {
-    "text": "⬇ The Dropper",
+    "text": "⬇ Dropper",
     "color": "aqua",
     "bold": true
   },
@@ -31,9 +31,16 @@
     {
       "label": [
         {
-          "text": "⬇ Dropper : Aventure",
-          "color": "aqua",
-          "bold": true
+          "text": "Aventure ",
+          "color": "aqua"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -50,9 +57,16 @@
     {
       "label": [
         {
-          "text": "⬇ Dropper : Défi",
-          "color": "aqua",
-          "bold": true
+          "text": "Défi ",
+          "color": "aqua"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -69,8 +83,16 @@
     {
       "label": [
         {
-          "text": "⬇ The Dropper",
+          "text": "Dropper ",
           "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {
@@ -81,8 +103,16 @@
     {
       "label": [
         {
-          "text": "⬇ Dropper : tube commun",
+          "text": "Tube commun ",
           "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {

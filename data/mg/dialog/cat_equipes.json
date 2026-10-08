@@ -85,8 +85,16 @@
     {
       "label": [
         {
-          "text": "▮ Turf Wars",
+          "text": "▮ Turf Wars ",
           "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
         }
       ],
       "action": {

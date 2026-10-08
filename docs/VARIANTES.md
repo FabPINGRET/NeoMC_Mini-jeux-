@@ -28,9 +28,9 @@ Menu : ≡ → catégorie (❄ Jeux de sol / ⚔ Combat) → jeu → cartes d’
 | 109 | Arène PvP | Collines (TNT Tag) | ★★☆☆ |
 | 110 | Arène PvP | Canyon (TNT Tag) | ★★☆☆ |
 | 111 | Arène PvP | Village perché (TNT Tag) | ★★☆☆ |
-| 112 | Arène PvP | Terrain de paintball (Paintball) | ★★☆☆ |
-| 113 | Arène PvP | Mini-terrain (Paintball) | ★★★☆ |
-| 114 | Arène PvP | Grand terrain (Paintball) | ★☆☆☆ |
+| 112 | Arène PvP | Paintball (Paintball) | ★★☆☆ |
+| 113 | Arène PvP | Mini-paintball (Paintball) | ★★★☆ |
+| 114 | Arène PvP | Grand paintball (Paintball) | ★☆☆☆ |
 | 191 | One in the Chamber | variante au hasard | |
 | 115 | One in the Chamber | Poussière (PvP) | ★★☆☆ |
 | 116 | One in the Chamber | Mirage (PvP) | ★★☆☆ |
@@ -44,9 +44,9 @@ Menu : ≡ → catégorie (❄ Jeux de sol / ⚔ Combat) → jeu → cartes d’
 | 124 | One in the Chamber | Collines (TNT Tag) | ★★☆☆ |
 | 125 | One in the Chamber | Canyon (TNT Tag) | ★★☆☆ |
 | 126 | One in the Chamber | Village perché (TNT Tag) | ★★☆☆ |
-| 127 | One in the Chamber | Terrain de paintball (Paintball) | ★★☆☆ |
-| 128 | One in the Chamber | Mini-terrain (Paintball) | ★★☆☆ |
-| 129 | One in the Chamber | Grand terrain (Paintball) | ★★★★ |
+| 127 | One in the Chamber | Paintball (Paintball) | ★★☆☆ |
+| 128 | One in the Chamber | Mini-paintball (Paintball) | ★★☆☆ |
+| 129 | One in the Chamber | Grand paintball (Paintball) | ★★★★ |
 | 192 | Quakecraft | variante au hasard | |
 | 130 | Quakecraft | Arène OITC (One in the Chamber) | ★★☆☆ |
 | 131 | Quakecraft | Château (One in the Chamber) | ★★☆☆ |
@@ -55,9 +55,9 @@ Menu : ≡ → catégorie (❄ Jeux de sol / ⚔ Combat) → jeu → cartes d’
 | 134 | Quakecraft | Collines (TNT Tag) | ★★★☆ |
 | 135 | Quakecraft | Canyon (TNT Tag) | ★★★☆ |
 | 136 | Quakecraft | Village perché (TNT Tag) | ★★★☆ |
-| 137 | Quakecraft | Terrain de paintball (Paintball) | ★★☆☆ |
-| 138 | Quakecraft | Mini-terrain (Paintball) | ★★☆☆ |
-| 139 | Quakecraft | Grand terrain (Paintball) | ★★★★ |
+| 137 | Quakecraft | Paintball (Paintball) | ★★☆☆ |
+| 138 | Quakecraft | Mini-paintball (Paintball) | ★★☆☆ |
+| 139 | Quakecraft | Grand paintball (Paintball) | ★★★★ |
 | 193 | TNT Tag | variante au hasard | |
 | 140 | TNT Tag | Poussière (PvP) | ★★☆☆ |
 | 141 | TNT Tag | Mirage (PvP) | ★★☆☆ |
@@ -70,9 +70,9 @@ Menu : ≡ → catégorie (❄ Jeux de sol / ⚔ Combat) → jeu → cartes d’
 | 148 | TNT Tag | Jungle (Quakecraft) | ★☆☆☆ |
 | 149 | TNT Tag | Désert (Quakecraft) | ★★★☆ |
 | 150 | TNT Tag | Glacier (Quakecraft) | ★★★★ |
-| 151 | TNT Tag | Terrain de paintball (Paintball) | ★★☆☆ |
-| 152 | TNT Tag | Mini-terrain (Paintball) | ★★★☆ |
-| 153 | TNT Tag | Grand terrain (Paintball) | ★☆☆☆ |
+| 151 | TNT Tag | Paintball (Paintball) | ★★☆☆ |
+| 152 | TNT Tag | Mini-paintball (Paintball) | ★★★☆ |
+| 153 | TNT Tag | Grand paintball (Paintball) | ★☆☆☆ |
 | 194 | Spleef | variante au hasard | |
 | 154 | Spleef | Tour de TNT Run (TNT Run) | ★★☆☆ |
 | 155 | Spleef | Cube de Splegg (Splegg) | ★☆☆☆ |

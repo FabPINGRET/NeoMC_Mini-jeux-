@@ -12,7 +12,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Vote pour une carte (★ = variante, ★ facile → ★★★★ difficile).",
+          "text": "Vote pour une carte : cartes d’origine puis ✦ variantes ; ★ facile → ★★★★ difficile.",
           "color": "gray"
         }
       ]
@@ -49,7 +49,7 @@
     {
       "label": [
         {
-          "text": "⚡ Néon (classique)",
+          "text": "Néon ★★☆☆",
           "color": "white"
         }
       ],
@@ -61,7 +61,7 @@
     {
       "label": [
         {
-          "text": "Volcan XL",
+          "text": "Volcan XL ★★★☆",
           "color": "white"
         }
       ],
@@ -73,7 +73,7 @@
     {
       "label": [
         {
-          "text": "Jungle XL",
+          "text": "Jungle XL ★★★☆",
           "color": "white"
         }
       ],
@@ -85,7 +85,7 @@
     {
       "label": [
         {
-          "text": "☀ Désert",
+          "text": "Désert ★★☆☆",
           "color": "white"
         }
       ],
@@ -97,7 +97,7 @@
     {
       "label": [
         {
-          "text": "❄ Glacier (mini)",
+          "text": "Glacier ★★★☆",
           "color": "white"
         }
       ],
@@ -109,7 +109,7 @@
     {
       "label": [
         {
-          "text": "☀ Poussière (style Dust)",
+          "text": "Poussière ★★☆☆",
           "color": "white"
         }
       ],
@@ -121,7 +121,7 @@
     {
       "label": [
         {
-          "text": "☀ Mirage (style Mirage)",
+          "text": "Mirage ★★☆☆",
           "color": "white"
         }
       ],
@@ -133,7 +133,7 @@
     {
       "label": [
         {
-          "text": "☢ Nuketown (style Nuketown)",
+          "text": "Nuketown ★★☆☆",
           "color": "white"
         }
       ],
@@ -145,7 +145,7 @@
     {
       "label": [
         {
-          "text": "Arène OITC ★★☆☆",
+          "text": "✦ Arène OITC ★★☆☆",
           "color": "gold"
         }
       ],
@@ -163,7 +163,7 @@
     {
       "label": [
         {
-          "text": "Château ★★☆☆",
+          "text": "✦ Château ★★☆☆",
           "color": "gold"
         }
       ],
@@ -181,7 +181,7 @@
     {
       "label": [
         {
-          "text": "Grande forêt ★★★☆",
+          "text": "✦ Grande forêt ★★★☆",
           "color": "gold"
         }
       ],
@@ -199,7 +199,7 @@
     {
       "label": [
         {
-          "text": "Arène TNT Tag ★★☆☆",
+          "text": "✦ Arène TNT Tag ★★☆☆",
           "color": "gold"
         }
       ],
@@ -217,7 +217,7 @@
     {
       "label": [
         {
-          "text": "Collines ★★★☆",
+          "text": "✦ Collines ★★★☆",
           "color": "gold"
         }
       ],
@@ -235,7 +235,7 @@
     {
       "label": [
         {
-          "text": "Canyon ★★★☆",
+          "text": "✦ Canyon ★★★☆",
           "color": "gold"
         }
       ],
@@ -253,7 +253,7 @@
     {
       "label": [
         {
-          "text": "Village perché ★★★☆",
+          "text": "✦ Village perché ★★★☆",
           "color": "gold"
         }
       ],
@@ -271,7 +271,7 @@
     {
       "label": [
         {
-          "text": "Terrain de paintball ★★☆☆",
+          "text": "✦ Paintball ★★☆☆",
           "color": "gold"
         }
       ],
@@ -289,7 +289,7 @@
     {
       "label": [
         {
-          "text": "Mini-terrain ★★☆☆",
+          "text": "✦ Mini-paintball ★★☆☆",
           "color": "gold"
         }
       ],
@@ -307,7 +307,7 @@
     {
       "label": [
         {
-          "text": "Grand terrain ★★★★",
+          "text": "✦ Grand paintball ★★★★",
           "color": "gold"
         }
       ],

@@ -12,7 +12,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Vote pour une carte (★ = variante, ★ facile → ★★★★ difficile).",
+          "text": "Vote pour une carte : cartes d’origine puis ✦ variantes ; ★ facile → ★★★★ difficile.",
           "color": "gray"
         }
       ]
@@ -49,7 +49,7 @@
     {
       "label": [
         {
-          "text": "☠ Classique",
+          "text": "Classique ★★☆☆",
           "color": "white"
         }
       ],
@@ -61,7 +61,7 @@
     {
       "label": [
         {
-          "text": "♨ Nether",
+          "text": "Nether ★★★☆",
           "color": "white"
         }
       ],
@@ -73,7 +73,7 @@
     {
       "label": [
         {
-          "text": "✦ End",
+          "text": "End ★★★☆",
           "color": "white"
         }
       ],
@@ -85,7 +85,7 @@
     {
       "label": [
         {
-          "text": "☠ ULTRA HARD",
+          "text": "Ultra hard ★★★★",
           "color": "white"
         }
       ],
@@ -97,7 +97,7 @@
     {
       "label": [
         {
-          "text": "☁ Volant",
+          "text": "Volant ★★★☆",
           "color": "white"
         }
       ],
@@ -109,7 +109,7 @@
     {
       "label": [
         {
-          "text": "✷ Araignée",
+          "text": "Araignée ★★★☆",
           "color": "white"
         }
       ],
@@ -121,7 +121,7 @@
     {
       "label": [
         {
-          "text": "☠ Cathédrale maudite (20 vagues)",
+          "text": "Cathédrale (20 vagues) ★★★★",
           "color": "white"
         }
       ],
@@ -133,7 +133,7 @@
     {
       "label": [
         {
-          "text": "⚗ Laboratoire alchimique (20 vagues)",
+          "text": "Laboratoire (20 vagues) ★★★★",
           "color": "white"
         }
       ],
@@ -145,7 +145,7 @@
     {
       "label": [
         {
-          "text": "Ψ Temple des profondeurs (20 vagues)",
+          "text": "Temple (20 vagues) ★★★★",
           "color": "white"
         }
       ],
@@ -157,7 +157,7 @@
     {
       "label": [
         {
-          "text": "♨ Forge du Titan (20 vagues)",
+          "text": "Forge (20 vagues) ★★★★",
           "color": "white"
         }
       ],
@@ -169,7 +169,7 @@
     {
       "label": [
         {
-          "text": "✦ Vaisseau cybernétique (20 vagues)",
+          "text": "Vaisseau (20 vagues) ★★★★",
           "color": "white"
         }
       ],
