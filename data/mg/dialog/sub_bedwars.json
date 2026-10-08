@@ -1,0 +1,134 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "⚑ Bedwars",
+    "color": "light_purple",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Détruis les lits ennemis : choisis la carte.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🎲 Carte au hasard",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 4"
+      },
+      "tooltip": [
+        {
+          "text": "Une des 4 cartes, tirée au sort",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "⚑ Classique",
+          "color": "light_purple"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 71"
+      },
+      "tooltip": [
+        {
+          "text": "4 îles de pierre autour du diamant",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "🌋 Caldeira",
+          "color": "red"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 72"
+      },
+      "tooltip": [
+        {
+          "text": "Volcan de basalte, 4 îlots avec or bonus",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "🌸 Hanami",
+          "color": "light_purple"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 73"
+      },
+      "tooltip": [
+        {
+          "text": "Jardin des cerisiers, pagode, terrasses",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "❄ Banquise",
+          "color": "aqua"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 74"
+      },
+      "tooltip": [
+        {
+          "text": "Glacier, igloos, plaques de glace",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au menu",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.menu"
+      }
+    }
+  ]
+}

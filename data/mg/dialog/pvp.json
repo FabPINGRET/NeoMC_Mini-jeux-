@@ -59,14 +59,20 @@
     {
       "label": [
         {
-          "text": "⚑ Bedwars",
+          "text": "⚑ Bedwars ▸",
           "color": "light_purple"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 4"
-      }
+        "command": "trigger mg.opt set 30"
+      },
+      "tooltip": [
+        {
+          "text": "Choisis la carte (4 cartes).",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [

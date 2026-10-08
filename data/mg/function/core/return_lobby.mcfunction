@@ -10,6 +10,7 @@ execute if score $game mg.st matches 59 run function mg:party/end
 execute if score $game mg.st matches 61 run function mg:kart/cleanup
 execute if score $game mg.st matches 64..65 run function mg:dropadv/cleanup
 execute if score $game mg.st matches 66 run function mg:elyrace/cleanup
+execute if score $game mg.st matches 75 run function mg:sky/cleanup
 kill @e[tag=mg.ib]
 execute if score $game mg.st matches 57..58 run function mg:bb/cleanup
 execute as @a[tag=mg.play] run function mg:core/reset_player
@@ -48,6 +49,8 @@ kill @e[distance=0..,type=minecraft:chicken]
 function mg:core/regen_on
 function mg:core/grief_on
 
+scoreboard players set $sbon mg.st 0
+scoreboard players reset * mg.sbg
 function mg:core/hp_display
 bossbar remove mg:boss
 execute if score $sb mg.st matches 1 run scoreboard objectives setdisplay sidebar mg.wins

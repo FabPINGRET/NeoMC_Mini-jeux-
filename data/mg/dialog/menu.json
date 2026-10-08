@@ -194,14 +194,20 @@
     {
       "label": [
         {
-          "text": "✹ TNT Tag",
+          "text": "✹ TNT Tag ▸",
           "color": "red"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 27"
-      }
+        "command": "trigger mg.opt set 29"
+      },
+      "tooltip": [
+        {
+          "text": "La patate chaude : choisis la carte (4 cartes, dont 3 avec relief).",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -316,6 +322,24 @@
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 56"
       }
+    },
+    {
+      "label": [
+        {
+          "text": "🪽 Élytra ▸",
+          "color": "aqua"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 31"
+      },
+      "tooltip": [
+        {
+          "text": "Course d'anneaux, course + combat ou survie en vol.",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [

@@ -1,0 +1,134 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "✹ TNT Tag",
+    "color": "red",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "La patate chaude : choisis la carte.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🎲 Carte au hasard",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 27"
+      },
+      "tooltip": [
+        {
+          "text": "Une des 4 cartes, tirée au sort",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "✹ Classique",
+          "color": "red"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 67"
+      },
+      "tooltip": [
+        {
+          "text": "Arène plate 31×31, piliers et murets",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "⛰ Collines",
+          "color": "green"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 68"
+      },
+      "tooltip": [
+        {
+          "text": "Prairie vallonnée, rivière, moulin, kiosque",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "🏜 Canyon",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 69"
+      },
+      "tooltip": [
+        {
+          "text": "Mesa à plateaux, arche, tunnel, pont suspendu",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "🏘 Village perché",
+          "color": "aqua"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 70"
+      },
+      "tooltip": [
+        {
+          "text": "Toits accessibles, passerelles, clocher",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au menu",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.menu"
+      }
+    }
+  ]
+}

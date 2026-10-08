@@ -8,4 +8,4 @@ execute if score $kbr mg.st matches 3 as @e[type=minecraft:item_display,tag=mg.k
 execute as @a[tag=mg.play] run function mg:kart/progress
 execute as @a[tag=mg.play] run function mg:kart/rank_one
 execute as @a[tag=mg.play] run function mg:kart/hud
-function mg:kart/minimap
+function mg:kart/standings

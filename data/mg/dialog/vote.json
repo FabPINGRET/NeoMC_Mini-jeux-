@@ -293,6 +293,24 @@
     {
       "label": [
         {
+          "text": "🪽 Élytra (mode au hasard)",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Course d'anneaux, course + combat ou survie en vol",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 21"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "☑ Voir les votes",
           "color": "green"
         }

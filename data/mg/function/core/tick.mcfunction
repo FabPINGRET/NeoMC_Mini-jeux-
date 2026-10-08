@@ -19,6 +19,12 @@ execute as @a[scores={mg.dice=3}] unless score $game mg.st matches 59 run functi
 execute if score $setup mg.st matches 1 as @a[tag=!mg.init,tag=!mg.surv] run function mg:core/join
 
 # Joueur reconnecté → lobby (jamais dans l'arène)
+# Détection fiable : un joueur initialisé qui n'était pas là au tick précédent (mg.seen ≠ $tc - 1) vient de se reconnecter
+# (le compteur leave_game seul ne suffisait pas : un joueur parti pendant un jeu terminé restait dans l'arène avec son équipement)
+scoreboard players operation #prev mg.st = $tc mg.st
+scoreboard players remove #prev mg.st 1
+execute if score $setup mg.st matches 1 as @a[tag=mg.init] if score @s mg.seen matches ..2147483647 unless score @s mg.seen = #prev mg.st run scoreboard players set @s mg.lg 1
+scoreboard players operation @a mg.seen = $tc mg.st
 execute if score $setup mg.st matches 1 as @a[scores={mg.lg=1..}] run function mg:core/reconnect
 
 # Ouverture du menu (objet ou /trigger mg.menu)
@@ -86,6 +92,8 @@ execute if score $state mg.st matches 2 run function mg:core/game_tick
 execute if score $state mg.st matches 3 run function mg:core/ending
 
 # Hors partie : nettoyage de sécurité + rattrapage du vide
+execute if score $state mg.st matches 0 as @a[tag=mg.play,tag=!mg.surv] run function mg:core/reset_player
+execute if score $state mg.st matches 0 as @a[tag=mg.out,tag=!mg.surv] run function mg:core/reset_player
 execute if score $state mg.st matches 0 run tag @a remove mg.play
 execute if score $state mg.st matches 0 run tag @a remove mg.out
 execute if score $state mg.st matches 0 as @a[gamemode=spectator,tag=!mg.visit,tag=!mg.surv,tag=!mg.lk] run function mg:core/back_to_lobby

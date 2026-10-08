@@ -1,0 +1,34 @@
+# Section 21, morceau 1/1 (généré)
+setblock -10 104 28346 minecraft:sea_lantern
+setblock -10 104 28348 minecraft:sea_lantern
+setblock -10 104 28350 minecraft:sea_lantern
+setblock -10 104 28352 minecraft:sea_lantern
+setblock -10 104 28354 minecraft:sea_lantern
+setblock -10 104 28347 minecraft:black_concrete
+setblock -10 104 28349 minecraft:black_concrete
+setblock -10 104 28351 minecraft:black_concrete
+setblock -10 104 28353 minecraft:black_concrete
+setblock -10 105 28346 minecraft:black_concrete
+setblock -10 105 28354 minecraft:black_concrete
+setblock -10 106 28346 minecraft:sea_lantern
+setblock -10 106 28354 minecraft:sea_lantern
+setblock -10 107 28346 minecraft:black_concrete
+setblock -10 107 28354 minecraft:black_concrete
+setblock -10 108 28346 minecraft:sea_lantern
+setblock -10 108 28354 minecraft:sea_lantern
+setblock -10 109 28346 minecraft:black_concrete
+setblock -10 109 28354 minecraft:black_concrete
+setblock -10 110 28346 minecraft:sea_lantern
+setblock -10 110 28354 minecraft:sea_lantern
+setblock -10 111 28346 minecraft:black_concrete
+setblock -10 111 28354 minecraft:black_concrete
+setblock -10 112 28346 minecraft:sea_lantern
+setblock -10 112 28348 minecraft:sea_lantern
+setblock -10 112 28350 minecraft:sea_lantern
+setblock -10 112 28352 minecraft:sea_lantern
+setblock -10 112 28354 minecraft:sea_lantern
+setblock -10 112 28347 minecraft:black_concrete
+setblock -10 112 28349 minecraft:black_concrete
+setblock -10 112 28351 minecraft:black_concrete
+setblock -10 112 28353 minecraft:black_concrete
+return 1

@@ -6,3 +6,4 @@ tellraw @a[tag=mg.play] [{"text":"(munitions infinies — tu peux tirer à volon
 execute if score $sg mg.st matches 1 run tellraw @a[tag=mg.play] [{"text":"XXL : 3 étages géants, chaque œuf détruit 3x3 blocs !","color":"gold"}]
 
 execute unless score $sg mg.st matches 1 run tellraw @a[tag=mg.play] [{"text":"3 étages : troue la neige pour faire tomber les autres… ou descends-les toi-même !","color":"gold"}]
+scoreboard players set $tff mg.st 0

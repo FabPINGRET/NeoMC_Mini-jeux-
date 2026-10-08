@@ -35,6 +35,7 @@ GAMES = [  # clé, libellé, couleur, plages de $game
     ('party', '★ Mini Party', 'gold', [(59, 60)]),
     ('kart', '🏎 Kart', 'red', [(61, 63)]),
     ('elyrace', "🪽 Course d'élytres", 'aqua', [(66, 66)]),
+    ('elytra', '🪽 Élytra (3 modes)', 'aqua', [(75, 75)]),
 ]
 X0, X1, Z0, Z1 = -20, -12, 22, 28          # emprise du hall (sol y 63), ouvert au nord
 MARK = (-16, 64, 25)                       # piédestal central (bloc d'or) : témoin de présence
@@ -56,7 +57,7 @@ W('objectives', ['# Objectifs des classements par jeu (généré par tools/hall/
     'scoreboard objectives modify mg.wins displayname [{"text":"✦ Victoires","color":"gold","bold":true},{"text":" (tous les jeux)","color":"gray","bold":false}]'])
 W('remove', ['# Désinstallation des classements et du hall'] +
   [f'scoreboard objectives remove mg.wg_{k}' for k, *_ in GAMES] +
-  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2'])
+  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3'])
 
 # ---------------------------------------------------------------- crédit des vainqueurs
 cr = ['# Vainqueur (@s, tag mg.win) au retour au lobby : classement du jeu + hall des scores',
@@ -145,6 +146,7 @@ peds = [(-18.5, 'stp', '▶ Le plus assidu', 'green', 'clock'),
         (-12.5, 'ely', "🪽 Record petit parcours d'élytra", 'aqua', 'elytra')]
 plaques = [(x, 66.9, 25.5, k, l, c, 0.55) for x, k, l, c, _ in peds]
 plaques.append((-12.5, 67.6, 25.5, 'ely2', "🪽 Record grand parcours d'élytra", 'light_purple', 0.55))
+plaques.append((-12.5, 68.3, 25.5, 'elyg', '🪽 Record Élytra : course', 'aqua', 0.55))
 for x, k, l, c, it in peds:
     b.append(f'summon minecraft:item_display {x} 65.8 25.5 {{Tags:["mg.hall","mg.lspin","mg.lbob"],billboard:"fixed",item:{{id:"minecraft:{it}"}},{TR % (0.9, 0.9, 0.9)}}}')
 xs = [-19.3, -17.4, -15.5, -13.6, -11.7]
@@ -158,6 +160,7 @@ for x, y, z, k, l, c, s in plaques:
     b.append(f'execute if data storage mg:hall e.{k} run data modify entity @e[type=minecraft:text_display,tag=mg.h_{k},limit=1] text set from storage mg:hall e.{k}')
 # Version du hall : core/load reconstruit le hall (une fois) sur les mondes dont les plaques sont plus anciennes (nouveau jeu ajouté)
 b.append('data modify storage mg:hall v2 set value 1b')
+b.append('data modify storage mg:hall v3 set value 1b')
 W('build', b)
 W('board_tick', ['# Tableau à droite dans le lobby (classement affiché, pas de vote en cours)',
     'scoreboard players remove $hrt mg.st 1',

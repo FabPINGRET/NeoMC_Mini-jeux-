@@ -29,3 +29,6 @@ Référence centrale générée depuis `core/game_tick.mcfunction`.
 | 64 | `mg:dropadv/tick` |
 | 65 | `mg:dropadv/c_tick` |
 | 66 | `mg:elyrace/tick` |
+| 75 | `mg:sky/tick` (ids 75..78 → $elm) |
+
+Cartes : TNT Tag 27/67..70 → 27 + `$ttm` ; Bedwars 4/71..74 → 4 + `$bwm` ; Élytra 75..78 → 75 + `$elm` (remappage dans `core/request`).

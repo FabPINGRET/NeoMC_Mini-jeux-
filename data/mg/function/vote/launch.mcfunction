@@ -23,6 +23,7 @@ scoreboard players operation $vmax mg.st > One-in-Chamber mg.vb
 scoreboard players operation $vmax mg.st > Course-glace mg.vb
 scoreboard players operation $vmax mg.st > Build-mots mg.vb
 scoreboard players operation $vmax mg.st > Build-maitre mg.vb
+scoreboard players operation $vmax mg.st > Elytra mg.vb
 scoreboard players set $vc mg.st 0
 execute if score Spleef mg.vb = $vmax mg.st run scoreboard players add $vc mg.st 1
 execute if score TNT-Run mg.vb = $vmax mg.st run scoreboard players add $vc mg.st 1
@@ -44,6 +45,7 @@ execute if score One-in-Chamber mg.vb = $vmax mg.st run scoreboard players add $
 execute if score Course-glace mg.vb = $vmax mg.st run scoreboard players add $vc mg.st 1
 execute if score Build-mots mg.vb = $vmax mg.st run scoreboard players add $vc mg.st 1
 execute if score Build-maitre mg.vb = $vmax mg.st run scoreboard players add $vc mg.st 1
+execute if score Elytra mg.vb = $vmax mg.st run scoreboard players add $vc mg.st 1
 execute store result score $vk mg.st run random value 0..9999
 scoreboard players operation $vk mg.st %= $vc mg.st
 scoreboard players add $vk mg.st 1
@@ -88,6 +90,8 @@ execute if score Build-mots mg.vb = $vmax mg.st run scoreboard players remove $v
 execute if score Build-mots mg.vb = $vmax mg.st if score $vk mg.st matches 0 run scoreboard players set $vwin mg.st 19
 execute if score Build-maitre mg.vb = $vmax mg.st run scoreboard players remove $vk mg.st 1
 execute if score Build-maitre mg.vb = $vmax mg.st if score $vk mg.st matches 0 run scoreboard players set $vwin mg.st 20
+execute if score Elytra mg.vb = $vmax mg.st run scoreboard players remove $vk mg.st 1
+execute if score Elytra mg.vb = $vmax mg.st if score $vk mg.st matches 0 run scoreboard players set $vwin mg.st 21
 execute if score $vwin mg.st matches 1 run tellraw @a [{"text":"☑ Le vote désigne ","color":"gray"},{"text":"❄ Spleef","color":"aqua","bold":true},{"text":" ("},{"score":{"name":"Spleef","objective":"mg.vb"},"color":"gold"},{"text":" vote(s)) !","color":"gray"}]
 execute if score $vwin mg.st matches 1 run scoreboard players set @s mg.go 1
 execute if score $vwin mg.st matches 2 run tellraw @a [{"text":"☑ Le vote désigne ","color":"gray"},{"text":"✷ TNT Run","color":"red","bold":true},{"text":" ("},{"score":{"name":"TNT-Run","objective":"mg.vb"},"color":"gold"},{"text":" vote(s)) !","color":"gray"}]
@@ -128,4 +132,6 @@ execute if score $vwin mg.st matches 19 run tellraw @a [{"text":"☑ Le vote dé
 execute if score $vwin mg.st matches 19 run scoreboard players set @s mg.go 57
 execute if score $vwin mg.st matches 20 run tellraw @a [{"text":"☑ Le vote désigne ","color":"gray"},{"text":"✎ Build Battle (Maître du mot)","color":"dark_aqua","bold":true},{"text":" ("},{"score":{"name":"Build-maitre","objective":"mg.vb"},"color":"gold"},{"text":" vote(s)) !","color":"gray"}]
 execute if score $vwin mg.st matches 20 run scoreboard players set @s mg.go 58
+execute if score $vwin mg.st matches 21 run tellraw @a [{"text":"☑ Le vote désigne ","color":"gray"},{"text":"🪽 Élytra (mode au hasard)","color":"aqua","bold":true},{"text":" ("},{"score":{"name":"Elytra","objective":"mg.vb"},"color":"gold"},{"text":" vote(s)) !","color":"gray"}]
+execute if score $vwin mg.st matches 21 run scoreboard players set @s mg.go 78
 function mg:core/go
