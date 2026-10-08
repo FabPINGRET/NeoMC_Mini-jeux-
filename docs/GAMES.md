@@ -39,6 +39,7 @@ Téléphone : id 83 → `mg:tel/tick` (`tools/telephone/gen_tel.py`).
 
 Arcade (générateurs `tools/arcade/*.py`, câblage commun `tools/arcade/common.py`) :
 Tron 84..85 → `mg:tron/tick` (z 20000) ; King of the Hill 86..87 → `mg:koth/tick` (z 20400) ;
-The Towers 88 → `mg:tower/tick` (z 20800) ; Convoi 89..90 → `mg:convoy/tick` (z 21200, bossbar `mg:convoy`).
+The Towers 88 → `mg:tower/tick` (z 20800) ; Convoi 89..90 → `mg:convoy/tick` (z 21200, bossbar `mg:convoy`) ; Capture the Flag 93 → `mg:ctf/tick` (z 21600).
+Block Party bandes/mixte 91..92 → jeu 28 + `$bpm` (`tools/blockparty/gen_bp.py`).
 Montagne russe (hors jeux) : `mg:coaster/tick` appelé par `core/tick` quand un joueur est dans x −200..−100 ; voie générée `mg:coaster/track`.
 Monstres/animaux invoqués par un jeu : leur mettre le tag `mg.mob` (ou `mg.npc`), sinon `survie/sweep_mobs` les envoie en y −300.

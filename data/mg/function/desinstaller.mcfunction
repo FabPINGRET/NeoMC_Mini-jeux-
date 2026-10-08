@@ -22,6 +22,7 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.cf
 stopsound @a record
 bossbar remove mg:convoy
 scoreboard objectives remove mg.kh

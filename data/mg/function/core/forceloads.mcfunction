@@ -75,6 +75,8 @@ forceload add -27 20373 27 20427
 forceload add -48 20784 48 20816
 # Convoi (z 21200)
 forceload add -72 21186 72 21214
+# Capture the Flag (z 21600)
+forceload add -44 21576 44 21624
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl
