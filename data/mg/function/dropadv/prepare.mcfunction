@@ -13,6 +13,6 @@ clear @a[tag=mg.play]
 execute as @a[tag=mg.play] run function mg:dropadv/spawn
 scoreboard objectives setdisplay sidebar mg.dlv
 scoreboard players set $px mg.st 0
-scoreboard players set $py mg.st 203
+scoreboard players set $py mg.st 303
 scoreboard players set $pz mg.st 23989
 function mg:dropadv/titles

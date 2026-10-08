@@ -1,114 +1,1886 @@
 # Dropper Aventure : niveau 1 (Arc-en-ciel)
-fill -13 92 23987 13 131 24013 minecraft:white_concrete
-fill -13 132 23987 13 171 24013 minecraft:white_concrete
-fill -13 172 23987 13 199 24013 minecraft:white_concrete
-fill -10 96 23990 10 155 24010 minecraft:air
-fill -10 156 23990 10 200 24010 minecraft:air
-fill -17 201 23983 17 206 24017 minecraft:air
-fill -17 200 23983 17 200 24017 minecraft:polished_andesite
-fill -7 200 23993 7 200 24007 minecraft:air
-fill -8 200 23992 8 200 23992 minecraft:yellow_concrete
-fill -8 200 24008 8 200 24008 minecraft:yellow_concrete
-fill -8 200 23992 -8 200 24008 minecraft:yellow_concrete
-fill 8 200 23992 8 200 24008 minecraft:yellow_concrete
-fill -17 201 23983 17 204 23983 minecraft:glass
-fill -17 201 24017 17 204 24017 minecraft:glass
-fill -17 201 23983 -17 204 24017 minecraft:glass
-fill 17 201 23983 17 204 24017 minecraft:glass
-fill -17 206 23983 17 206 24017 minecraft:barrier
-setblock -6 99 23994 minecraft:light[level=15]
-setblock 6 99 23994 minecraft:light[level=15]
-setblock -6 99 24006 minecraft:light[level=15]
-setblock 6 99 24006 minecraft:light[level=15]
-setblock 0 99 24000 minecraft:light[level=15]
-setblock -6 108 23994 minecraft:light[level=15]
-setblock 6 108 23994 minecraft:light[level=15]
-setblock -6 108 24006 minecraft:light[level=15]
-setblock 6 108 24006 minecraft:light[level=15]
-setblock 0 108 24000 minecraft:light[level=15]
-setblock -6 117 23994 minecraft:light[level=15]
-setblock 6 117 23994 minecraft:light[level=15]
-setblock -6 117 24006 minecraft:light[level=15]
-setblock 6 117 24006 minecraft:light[level=15]
-setblock 0 117 24000 minecraft:light[level=15]
-setblock -6 126 23994 minecraft:light[level=15]
-setblock 6 126 23994 minecraft:light[level=15]
-setblock -6 126 24006 minecraft:light[level=15]
-setblock 6 126 24006 minecraft:light[level=15]
-setblock 0 126 24000 minecraft:light[level=15]
-setblock -6 135 23994 minecraft:light[level=15]
-setblock 6 135 23994 minecraft:light[level=15]
-setblock -6 135 24006 minecraft:light[level=15]
-setblock 6 135 24006 minecraft:light[level=15]
-setblock 0 135 24000 minecraft:light[level=15]
-setblock -6 144 23994 minecraft:light[level=15]
-setblock 6 144 23994 minecraft:light[level=15]
-setblock -6 144 24006 minecraft:light[level=15]
-setblock 6 144 24006 minecraft:light[level=15]
-setblock 0 144 24000 minecraft:light[level=15]
-setblock -6 153 23994 minecraft:light[level=15]
-setblock 6 153 23994 minecraft:light[level=15]
-setblock -6 153 24006 minecraft:light[level=15]
-setblock 6 153 24006 minecraft:light[level=15]
-setblock 0 153 24000 minecraft:light[level=15]
-setblock -6 162 23994 minecraft:light[level=15]
-setblock 6 162 23994 minecraft:light[level=15]
-setblock -6 162 24006 minecraft:light[level=15]
-setblock 6 162 24006 minecraft:light[level=15]
-setblock 0 162 24000 minecraft:light[level=15]
-setblock -6 171 23994 minecraft:light[level=15]
-setblock 6 171 23994 minecraft:light[level=15]
-setblock -6 171 24006 minecraft:light[level=15]
-setblock 6 171 24006 minecraft:light[level=15]
-setblock 0 171 24000 minecraft:light[level=15]
-setblock -6 180 23994 minecraft:light[level=15]
-setblock 6 180 23994 minecraft:light[level=15]
-setblock -6 180 24006 minecraft:light[level=15]
-setblock 6 180 24006 minecraft:light[level=15]
-setblock 0 180 24000 minecraft:light[level=15]
-setblock -6 189 23994 minecraft:light[level=15]
-setblock 6 189 23994 minecraft:light[level=15]
-setblock -6 189 24006 minecraft:light[level=15]
-setblock 6 189 24006 minecraft:light[level=15]
-setblock 0 189 24000 minecraft:light[level=15]
-setblock -6 198 23994 minecraft:light[level=15]
-setblock 6 198 23994 minecraft:light[level=15]
-setblock -6 198 24006 minecraft:light[level=15]
-setblock 6 198 24006 minecraft:light[level=15]
-setblock 0 198 24000 minecraft:light[level=15]
-fill -10 192 23990 10 192 24010 minecraft:red_concrete
-fill -8 192 23992 8 192 24008 minecraft:air
-fill -10 186 23990 10 186 24010 minecraft:orange_concrete
-fill -8 186 23992 8 186 24008 minecraft:air
-fill -10 180 23990 10 180 24010 minecraft:yellow_concrete
-fill -7 180 23993 7 180 24007 minecraft:air
-fill -10 174 23990 10 174 24010 minecraft:lime_concrete
-fill -7 174 23993 7 174 24007 minecraft:air
-fill -10 168 23990 10 168 24010 minecraft:light_blue_concrete
-fill -7 168 23995 5 168 24007 minecraft:air
-fill -10 162 23990 10 162 24010 minecraft:blue_concrete
-fill -6 162 23993 6 162 24005 minecraft:air
-fill -10 156 23990 10 156 24010 minecraft:purple_concrete
-fill -6 156 23995 4 156 24005 minecraft:air
-fill -10 150 23990 10 150 24010 minecraft:magenta_concrete
-fill -6 150 23996 4 150 24006 minecraft:air
-fill -10 144 23990 10 144 24010 minecraft:red_concrete
-fill -5 144 23996 3 144 24004 minecraft:air
-fill -10 138 23990 10 138 24010 minecraft:orange_concrete
-fill -4 138 23996 4 138 24004 minecraft:air
-fill -10 132 23990 10 132 24010 minecraft:yellow_concrete
-fill -2 132 23997 4 132 24003 minecraft:air
-fill -10 126 23990 10 126 24010 minecraft:lime_concrete
-fill -3 126 23997 3 126 24003 minecraft:air
-fill -10 120 23990 10 120 24010 minecraft:light_blue_concrete
-fill -3 120 23999 1 120 24003 minecraft:air
-fill -10 114 23990 10 114 24010 minecraft:blue_concrete
-fill -2 114 23998 2 114 24002 minecraft:air
-fill -10 108 23990 10 108 24010 minecraft:purple_concrete
-fill -2 108 23997 2 108 24001 minecraft:air
-fill -10 102 23990 10 102 24010 minecraft:magenta_concrete
-fill -2 102 24000 0 102 24002 minecraft:air
-fill -10 95 23990 10 95 24010 minecraft:white_concrete
-fill -2 95 23998 2 95 24002 minecraft:light_blue_concrete
-fill -1 95 23999 1 95 24001 minecraft:water
+fill -18 32 23982 18 54 24018 minecraft:air
+fill -18 55 23982 18 77 24018 minecraft:air
+fill -18 78 23982 18 100 24018 minecraft:air
+fill -18 101 23982 18 123 24018 minecraft:air
+fill -18 124 23982 18 146 24018 minecraft:air
+fill -18 147 23982 18 169 24018 minecraft:air
+fill -18 170 23982 18 192 24018 minecraft:air
+fill -18 193 23982 18 215 24018 minecraft:air
+fill -18 216 23982 18 238 24018 minecraft:air
+fill -18 239 23982 18 261 24018 minecraft:air
+fill -18 262 23982 18 284 24018 minecraft:air
+fill -18 285 23982 18 307 24018 minecraft:air
+fill -14 37 23986 14 71 24014 minecraft:white_concrete
+fill -14 72 23986 14 106 24014 minecraft:white_concrete
+fill -14 107 23986 14 141 24014 minecraft:white_concrete
+fill -14 142 23986 14 176 24014 minecraft:white_concrete
+fill -14 177 23986 14 211 24014 minecraft:white_concrete
+fill -14 212 23986 14 246 24014 minecraft:white_concrete
+fill -14 247 23986 14 281 24014 minecraft:white_concrete
+fill -14 282 23986 14 299 24014 minecraft:white_concrete
+fill -11 41 23989 11 95 24011 minecraft:air
+fill -11 96 23989 11 150 24011 minecraft:air
+fill -11 151 23989 11 205 24011 minecraft:air
+fill -11 206 23989 11 260 24011 minecraft:air
+fill -11 261 23989 11 300 24011 minecraft:air
+fill -12 222 23988 12 222 23988 minecraft:magenta_stained_glass
+fill -12 222 24012 12 222 24012 minecraft:magenta_stained_glass
+fill -12 222 23988 -12 222 24012 minecraft:magenta_stained_glass
+fill 12 222 23988 12 222 24012 minecraft:magenta_stained_glass
+fill -12 142 23988 12 142 23988 minecraft:light_blue_stained_glass
+fill -12 142 24012 12 142 24012 minecraft:light_blue_stained_glass
+fill -12 142 23988 -12 142 24012 minecraft:light_blue_stained_glass
+fill 12 142 23988 12 142 24012 minecraft:light_blue_stained_glass
+fill -18 301 23982 18 306 24018 minecraft:air
+fill -18 300 23982 18 300 24018 minecraft:polished_andesite
+fill -8 300 23992 8 300 24008 minecraft:air
+fill -9 300 23991 9 300 23991 minecraft:yellow_concrete
+fill -9 300 24009 9 300 24009 minecraft:yellow_concrete
+fill -9 300 23991 -9 300 24009 minecraft:yellow_concrete
+fill 9 300 23991 9 300 24009 minecraft:yellow_concrete
+fill -18 301 23982 18 304 23982 minecraft:glass
+fill -18 301 24018 18 304 24018 minecraft:glass
+fill -18 301 23982 -18 304 24018 minecraft:glass
+fill 18 301 23982 18 304 24018 minecraft:glass
+fill -18 306 23982 18 306 24018 minecraft:barrier
+setblock -7 44 23993 minecraft:light[level=15]
+setblock 7 44 23993 minecraft:light[level=15]
+setblock -7 44 24007 minecraft:light[level=15]
+setblock 7 44 24007 minecraft:light[level=15]
+setblock 0 44 24000 minecraft:light[level=15]
+setblock -7 53 23993 minecraft:light[level=15]
+setblock 7 53 23993 minecraft:light[level=15]
+setblock -7 53 24007 minecraft:light[level=15]
+setblock 7 53 24007 minecraft:light[level=15]
+setblock 0 53 24000 minecraft:light[level=15]
+setblock -7 62 23993 minecraft:light[level=15]
+setblock 7 62 23993 minecraft:light[level=15]
+setblock -7 62 24007 minecraft:light[level=15]
+setblock 7 62 24007 minecraft:light[level=15]
+setblock 0 62 24000 minecraft:light[level=15]
+setblock -7 71 23993 minecraft:light[level=15]
+setblock 7 71 23993 minecraft:light[level=15]
+setblock -7 71 24007 minecraft:light[level=15]
+setblock 7 71 24007 minecraft:light[level=15]
+setblock 0 71 24000 minecraft:light[level=15]
+setblock -7 80 23993 minecraft:light[level=15]
+setblock 7 80 23993 minecraft:light[level=15]
+setblock -7 80 24007 minecraft:light[level=15]
+setblock 7 80 24007 minecraft:light[level=15]
+setblock 0 80 24000 minecraft:light[level=15]
+setblock -7 89 23993 minecraft:light[level=15]
+setblock 7 89 23993 minecraft:light[level=15]
+setblock -7 89 24007 minecraft:light[level=15]
+setblock 7 89 24007 minecraft:light[level=15]
+setblock 0 89 24000 minecraft:light[level=15]
+setblock -7 98 23993 minecraft:light[level=15]
+setblock 7 98 23993 minecraft:light[level=15]
+setblock -7 98 24007 minecraft:light[level=15]
+setblock 7 98 24007 minecraft:light[level=15]
+setblock 0 98 24000 minecraft:light[level=15]
+setblock -7 107 23993 minecraft:light[level=15]
+setblock 7 107 23993 minecraft:light[level=15]
+setblock -7 107 24007 minecraft:light[level=15]
+setblock 7 107 24007 minecraft:light[level=15]
+setblock 0 107 24000 minecraft:light[level=15]
+setblock -7 116 23993 minecraft:light[level=15]
+setblock 7 116 23993 minecraft:light[level=15]
+setblock -7 116 24007 minecraft:light[level=15]
+setblock 7 116 24007 minecraft:light[level=15]
+setblock 0 116 24000 minecraft:light[level=15]
+setblock -7 125 23993 minecraft:light[level=15]
+setblock 7 125 23993 minecraft:light[level=15]
+setblock -7 125 24007 minecraft:light[level=15]
+setblock 7 125 24007 minecraft:light[level=15]
+setblock 0 125 24000 minecraft:light[level=15]
+setblock -7 134 23993 minecraft:light[level=15]
+setblock 7 134 23993 minecraft:light[level=15]
+setblock -7 134 24007 minecraft:light[level=15]
+setblock 7 134 24007 minecraft:light[level=15]
+setblock 0 134 24000 minecraft:light[level=15]
+setblock -7 143 23993 minecraft:light[level=15]
+setblock 7 143 23993 minecraft:light[level=15]
+setblock -7 143 24007 minecraft:light[level=15]
+setblock 7 143 24007 minecraft:light[level=15]
+setblock 0 143 24000 minecraft:light[level=15]
+setblock -7 152 23993 minecraft:light[level=15]
+setblock 7 152 23993 minecraft:light[level=15]
+setblock -7 152 24007 minecraft:light[level=15]
+setblock 7 152 24007 minecraft:light[level=15]
+setblock 0 152 24000 minecraft:light[level=15]
+setblock -7 161 23993 minecraft:light[level=15]
+setblock 7 161 23993 minecraft:light[level=15]
+setblock -7 161 24007 minecraft:light[level=15]
+setblock 7 161 24007 minecraft:light[level=15]
+setblock 0 161 24000 minecraft:light[level=15]
+setblock -7 170 23993 minecraft:light[level=15]
+setblock 7 170 23993 minecraft:light[level=15]
+setblock -7 170 24007 minecraft:light[level=15]
+setblock 7 170 24007 minecraft:light[level=15]
+setblock 0 170 24000 minecraft:light[level=15]
+setblock -7 179 23993 minecraft:light[level=15]
+setblock 7 179 23993 minecraft:light[level=15]
+setblock -7 179 24007 minecraft:light[level=15]
+setblock 7 179 24007 minecraft:light[level=15]
+setblock 0 179 24000 minecraft:light[level=15]
+setblock -7 188 23993 minecraft:light[level=15]
+setblock 7 188 23993 minecraft:light[level=15]
+setblock -7 188 24007 minecraft:light[level=15]
+setblock 7 188 24007 minecraft:light[level=15]
+setblock 0 188 24000 minecraft:light[level=15]
+setblock -7 197 23993 minecraft:light[level=15]
+setblock 7 197 23993 minecraft:light[level=15]
+setblock -7 197 24007 minecraft:light[level=15]
+setblock 7 197 24007 minecraft:light[level=15]
+setblock 0 197 24000 minecraft:light[level=15]
+setblock -7 206 23993 minecraft:light[level=15]
+setblock 7 206 23993 minecraft:light[level=15]
+setblock -7 206 24007 minecraft:light[level=15]
+setblock 7 206 24007 minecraft:light[level=15]
+setblock 0 206 24000 minecraft:light[level=15]
+setblock -7 215 23993 minecraft:light[level=15]
+setblock 7 215 23993 minecraft:light[level=15]
+setblock -7 215 24007 minecraft:light[level=15]
+setblock 7 215 24007 minecraft:light[level=15]
+setblock 0 215 24000 minecraft:light[level=15]
+setblock -7 224 23993 minecraft:light[level=15]
+setblock 7 224 23993 minecraft:light[level=15]
+setblock -7 224 24007 minecraft:light[level=15]
+setblock 7 224 24007 minecraft:light[level=15]
+setblock 0 224 24000 minecraft:light[level=15]
+setblock -7 233 23993 minecraft:light[level=15]
+setblock 7 233 23993 minecraft:light[level=15]
+setblock -7 233 24007 minecraft:light[level=15]
+setblock 7 233 24007 minecraft:light[level=15]
+setblock 0 233 24000 minecraft:light[level=15]
+setblock -7 242 23993 minecraft:light[level=15]
+setblock 7 242 23993 minecraft:light[level=15]
+setblock -7 242 24007 minecraft:light[level=15]
+setblock 7 242 24007 minecraft:light[level=15]
+setblock 0 242 24000 minecraft:light[level=15]
+setblock -7 251 23993 minecraft:light[level=15]
+setblock 7 251 23993 minecraft:light[level=15]
+setblock -7 251 24007 minecraft:light[level=15]
+setblock 7 251 24007 minecraft:light[level=15]
+setblock 0 251 24000 minecraft:light[level=15]
+setblock -7 260 23993 minecraft:light[level=15]
+setblock 7 260 23993 minecraft:light[level=15]
+setblock -7 260 24007 minecraft:light[level=15]
+setblock 7 260 24007 minecraft:light[level=15]
+setblock 0 260 24000 minecraft:light[level=15]
+setblock -7 269 23993 minecraft:light[level=15]
+setblock 7 269 23993 minecraft:light[level=15]
+setblock -7 269 24007 minecraft:light[level=15]
+setblock 7 269 24007 minecraft:light[level=15]
+setblock 0 269 24000 minecraft:light[level=15]
+setblock -7 278 23993 minecraft:light[level=15]
+setblock 7 278 23993 minecraft:light[level=15]
+setblock -7 278 24007 minecraft:light[level=15]
+setblock 7 278 24007 minecraft:light[level=15]
+setblock 0 278 24000 minecraft:light[level=15]
+setblock -7 287 23993 minecraft:light[level=15]
+setblock 7 287 23993 minecraft:light[level=15]
+setblock -7 287 24007 minecraft:light[level=15]
+setblock 7 287 24007 minecraft:light[level=15]
+setblock 0 287 24000 minecraft:light[level=15]
+setblock -7 296 23993 minecraft:light[level=15]
+setblock 7 296 23993 minecraft:light[level=15]
+setblock -7 296 24007 minecraft:light[level=15]
+setblock 7 296 24007 minecraft:light[level=15]
+setblock 0 296 24000 minecraft:light[level=15]
+fill -12 299 23988 12 299 23988 minecraft:red_concrete
+fill -12 299 24012 12 299 24012 minecraft:red_concrete
+fill -12 299 23988 -12 299 24012 minecraft:red_concrete
+fill 12 299 23988 12 299 24012 minecraft:red_concrete
+fill -12 291 23988 12 291 23988 minecraft:orange_concrete
+fill -12 291 24012 12 291 24012 minecraft:orange_concrete
+fill -12 291 23988 -12 291 24012 minecraft:orange_concrete
+fill 12 291 23988 12 291 24012 minecraft:orange_concrete
+fill -12 283 23988 12 283 23988 minecraft:yellow_concrete
+fill -12 283 24012 12 283 24012 minecraft:yellow_concrete
+fill -12 283 23988 -12 283 24012 minecraft:yellow_concrete
+fill 12 283 23988 12 283 24012 minecraft:yellow_concrete
+fill -12 275 23988 12 275 23988 minecraft:lime_concrete
+fill -12 275 24012 12 275 24012 minecraft:lime_concrete
+fill -12 275 23988 -12 275 24012 minecraft:lime_concrete
+fill 12 275 23988 12 275 24012 minecraft:lime_concrete
+fill -12 267 23988 12 267 23988 minecraft:light_blue_concrete
+fill -12 267 24012 12 267 24012 minecraft:light_blue_concrete
+fill -12 267 23988 -12 267 24012 minecraft:light_blue_concrete
+fill 12 267 23988 12 267 24012 minecraft:light_blue_concrete
+fill -12 259 23988 12 259 23988 minecraft:blue_concrete
+fill -12 259 24012 12 259 24012 minecraft:blue_concrete
+fill -12 259 23988 -12 259 24012 minecraft:blue_concrete
+fill 12 259 23988 12 259 24012 minecraft:blue_concrete
+fill -12 251 23988 12 251 23988 minecraft:purple_concrete
+fill -12 251 24012 12 251 24012 minecraft:purple_concrete
+fill -12 251 23988 -12 251 24012 minecraft:purple_concrete
+fill 12 251 23988 12 251 24012 minecraft:purple_concrete
+fill -12 243 23988 12 243 23988 minecraft:magenta_concrete
+fill -12 243 24012 12 243 24012 minecraft:magenta_concrete
+fill -12 243 23988 -12 243 24012 minecraft:magenta_concrete
+fill 12 243 23988 12 243 24012 minecraft:magenta_concrete
+fill -11 292 23989 -11 292 24011 minecraft:red_concrete
+fill -10 292 23989 -10 292 24011 minecraft:red_concrete
+fill -9 292 23989 -9 292 24011 minecraft:red_concrete
+fill -8 292 23989 -8 292 23991 minecraft:red_concrete
+fill -8 292 24009 -8 292 24011 minecraft:red_concrete
+fill -7 292 23989 -7 292 23991 minecraft:red_concrete
+fill -7 292 24009 -7 292 24011 minecraft:red_concrete
+fill -6 292 23989 -6 292 23991 minecraft:red_concrete
+fill -6 292 24009 -6 292 24011 minecraft:red_concrete
+fill -5 292 23989 -5 292 23991 minecraft:red_concrete
+fill -5 292 24009 -5 292 24011 minecraft:red_concrete
+fill -4 292 23989 -4 292 23991 minecraft:red_concrete
+fill -4 292 24009 -4 292 24011 minecraft:red_concrete
+fill -3 292 23989 -3 292 23991 minecraft:red_concrete
+fill -3 292 24009 -3 292 24011 minecraft:red_concrete
+fill -2 292 23989 -2 292 23991 minecraft:red_concrete
+fill -2 292 24009 -2 292 24011 minecraft:red_concrete
+fill -1 292 23989 -1 292 23991 minecraft:red_concrete
+fill -1 292 24009 -1 292 24011 minecraft:red_concrete
+fill 0 292 23989 0 292 23991 minecraft:red_concrete
+fill 0 292 24009 0 292 24011 minecraft:red_concrete
+fill 1 292 23989 1 292 23991 minecraft:red_concrete
+fill 1 292 24009 1 292 24011 minecraft:red_concrete
+fill 2 292 23989 2 292 23991 minecraft:red_concrete
+fill 2 292 24009 2 292 24011 minecraft:red_concrete
+fill 3 292 23989 3 292 23991 minecraft:red_concrete
+fill 3 292 24009 3 292 24011 minecraft:red_concrete
+fill 4 292 23989 4 292 23991 minecraft:red_concrete
+fill 4 292 24009 4 292 24011 minecraft:red_concrete
+fill 5 292 23989 5 292 23991 minecraft:red_concrete
+fill 5 292 24009 5 292 24011 minecraft:red_concrete
+fill 6 292 23989 6 292 23991 minecraft:red_concrete
+fill 6 292 24009 6 292 24011 minecraft:red_concrete
+fill 7 292 23989 7 292 23991 minecraft:red_concrete
+fill 7 292 24009 7 292 24011 minecraft:red_concrete
+fill 8 292 23989 8 292 23991 minecraft:red_concrete
+fill 8 292 24009 8 292 24011 minecraft:red_concrete
+fill 9 292 23989 9 292 24011 minecraft:red_concrete
+fill 10 292 23989 10 292 24011 minecraft:red_concrete
+fill 11 292 23989 11 292 24011 minecraft:red_concrete
+fill -11 286 23989 -11 286 24011 minecraft:orange_concrete
+fill -10 286 23989 -10 286 24011 minecraft:orange_concrete
+fill -9 286 23989 -9 286 24011 minecraft:orange_concrete
+fill -8 286 23989 -8 286 24011 minecraft:orange_concrete
+fill -7 286 23989 -7 286 23992 minecraft:orange_concrete
+fill -7 286 24008 -7 286 24011 minecraft:orange_concrete
+fill -6 286 23989 -6 286 23992 minecraft:orange_concrete
+fill -6 286 24008 -6 286 24011 minecraft:orange_concrete
+fill -5 286 23989 -5 286 23992 minecraft:orange_concrete
+fill -5 286 24008 -5 286 24011 minecraft:orange_concrete
+fill -4 286 23989 -4 286 23992 minecraft:orange_concrete
+fill -4 286 24008 -4 286 24011 minecraft:orange_concrete
+fill -3 286 23989 -3 286 23992 minecraft:orange_concrete
+fill -3 286 24008 -3 286 24011 minecraft:orange_concrete
+fill -2 286 23989 -2 286 23992 minecraft:orange_concrete
+fill -2 286 24008 -2 286 24011 minecraft:orange_concrete
+fill -1 286 23989 -1 286 23992 minecraft:orange_concrete
+fill -1 286 24008 -1 286 24011 minecraft:orange_concrete
+fill 0 286 23989 0 286 23992 minecraft:orange_concrete
+fill 0 286 24008 0 286 24011 minecraft:orange_concrete
+fill 1 286 23989 1 286 23992 minecraft:orange_concrete
+fill 1 286 24008 1 286 24011 minecraft:orange_concrete
+fill 2 286 23989 2 286 23992 minecraft:orange_concrete
+fill 2 286 24008 2 286 24011 minecraft:orange_concrete
+fill 3 286 23989 3 286 23992 minecraft:orange_concrete
+fill 3 286 24008 3 286 24011 minecraft:orange_concrete
+fill 4 286 23989 4 286 23992 minecraft:orange_concrete
+fill 4 286 24008 4 286 24011 minecraft:orange_concrete
+fill 5 286 23989 5 286 23992 minecraft:orange_concrete
+fill 5 286 24008 5 286 24011 minecraft:orange_concrete
+fill 6 286 23989 6 286 23992 minecraft:orange_concrete
+fill 6 286 24008 6 286 24011 minecraft:orange_concrete
+fill 7 286 23989 7 286 23992 minecraft:orange_concrete
+fill 7 286 24008 7 286 24011 minecraft:orange_concrete
+fill 8 286 23989 8 286 24011 minecraft:orange_concrete
+fill 9 286 23989 9 286 24011 minecraft:orange_concrete
+fill 10 286 23989 10 286 24011 minecraft:orange_concrete
+fill 11 286 23989 11 286 24011 minecraft:orange_concrete
+fill -11 280 23989 -11 280 24011 minecraft:yellow_concrete
+fill -10 280 23989 -10 280 24011 minecraft:yellow_concrete
+fill -9 280 23989 -9 280 24011 minecraft:yellow_concrete
+fill -8 280 23989 -8 280 23994 minecraft:yellow_concrete
+fill -8 280 24008 -8 280 24011 minecraft:yellow_concrete
+fill -7 280 23989 -7 280 23994 minecraft:yellow_concrete
+fill -7 280 24008 -7 280 24011 minecraft:yellow_concrete
+fill -6 280 23989 -6 280 23994 minecraft:yellow_concrete
+fill -6 280 24008 -6 280 24011 minecraft:yellow_concrete
+fill -5 280 23989 -5 280 23994 minecraft:yellow_concrete
+fill -5 280 24008 -5 280 24011 minecraft:yellow_concrete
+fill -4 280 23989 -4 280 23994 minecraft:yellow_concrete
+fill -4 280 24008 -4 280 24011 minecraft:yellow_concrete
+fill -3 280 23989 -3 280 23994 minecraft:yellow_concrete
+fill -3 280 24008 -3 280 24011 minecraft:yellow_concrete
+fill -2 280 23989 -2 280 23994 minecraft:yellow_concrete
+fill -2 280 24008 -2 280 24011 minecraft:yellow_concrete
+fill -1 280 23989 -1 280 23994 minecraft:yellow_concrete
+fill -1 280 24008 -1 280 24011 minecraft:yellow_concrete
+fill 0 280 23989 0 280 23994 minecraft:yellow_concrete
+fill 0 280 24008 0 280 24011 minecraft:yellow_concrete
+fill 1 280 23989 1 280 23994 minecraft:yellow_concrete
+fill 1 280 24008 1 280 24011 minecraft:yellow_concrete
+fill 2 280 23989 2 280 23994 minecraft:yellow_concrete
+fill 2 280 24008 2 280 24011 minecraft:yellow_concrete
+fill 3 280 23989 3 280 23994 minecraft:yellow_concrete
+fill 3 280 24008 3 280 24011 minecraft:yellow_concrete
+fill 4 280 23989 4 280 23994 minecraft:yellow_concrete
+fill 4 280 24008 4 280 24011 minecraft:yellow_concrete
+fill 5 280 23989 5 280 24011 minecraft:yellow_concrete
+fill 6 280 23989 6 280 24011 minecraft:yellow_concrete
+fill 7 280 23989 7 280 24011 minecraft:yellow_concrete
+fill 8 280 23989 8 280 24011 minecraft:yellow_concrete
+fill 9 280 23989 9 280 24011 minecraft:yellow_concrete
+fill 10 280 23989 10 280 24011 minecraft:yellow_concrete
+fill 11 280 23989 11 280 24011 minecraft:yellow_concrete
+fill -11 274 23989 -11 274 24011 minecraft:lime_concrete
+fill -10 274 23989 -10 274 24011 minecraft:lime_concrete
+fill -9 274 23989 -9 274 24011 minecraft:lime_concrete
+fill -8 274 23989 -8 274 24011 minecraft:lime_concrete
+fill -7 274 23989 -7 274 24011 minecraft:lime_concrete
+fill -6 274 23989 -6 274 23992 minecraft:lime_concrete
+fill -6 274 24004 -6 274 24011 minecraft:lime_concrete
+fill -5 274 23989 -5 274 23992 minecraft:lime_concrete
+fill -5 274 24004 -5 274 24011 minecraft:lime_concrete
+fill -4 274 23989 -4 274 23992 minecraft:lime_concrete
+fill -4 274 24004 -4 274 24011 minecraft:lime_concrete
+fill -3 274 23989 -3 274 23992 minecraft:lime_concrete
+fill -3 274 24004 -3 274 24011 minecraft:lime_concrete
+fill -2 274 23989 -2 274 23992 minecraft:lime_concrete
+fill -2 274 24004 -2 274 24011 minecraft:lime_concrete
+fill -1 274 23989 -1 274 23992 minecraft:lime_concrete
+fill -1 274 24004 -1 274 24011 minecraft:lime_concrete
+fill 0 274 23989 0 274 23992 minecraft:lime_concrete
+fill 0 274 24004 0 274 24011 minecraft:lime_concrete
+fill 1 274 23989 1 274 23992 minecraft:lime_concrete
+fill 1 274 24004 1 274 24011 minecraft:lime_concrete
+fill 2 274 23989 2 274 23992 minecraft:lime_concrete
+fill 2 274 24004 2 274 24011 minecraft:lime_concrete
+fill 3 274 23989 3 274 23992 minecraft:lime_concrete
+fill 3 274 24004 3 274 24011 minecraft:lime_concrete
+fill 4 274 23989 4 274 23992 minecraft:lime_concrete
+fill 4 274 24004 4 274 24011 minecraft:lime_concrete
+fill 5 274 23989 5 274 24011 minecraft:lime_concrete
+fill 6 274 23989 6 274 24011 minecraft:lime_concrete
+fill 7 274 23989 7 274 24011 minecraft:lime_concrete
+fill 8 274 23989 8 274 24011 minecraft:lime_concrete
+fill 9 274 23989 9 274 24011 minecraft:lime_concrete
+fill 10 274 23989 10 274 24011 minecraft:lime_concrete
+fill 11 274 23989 11 274 24011 minecraft:lime_concrete
+fill -11 268 23989 -11 268 24011 minecraft:light_blue_concrete
+fill -10 268 23989 -10 268 24011 minecraft:light_blue_concrete
+fill -9 268 23989 -9 268 24011 minecraft:light_blue_concrete
+fill -8 268 23989 -8 268 24011 minecraft:light_blue_concrete
+fill -7 268 23989 -7 268 24011 minecraft:light_blue_concrete
+fill -6 268 23989 -6 268 24011 minecraft:light_blue_concrete
+fill -5 268 23989 -5 268 24011 minecraft:light_blue_concrete
+fill -4 268 23989 -4 268 23994 minecraft:light_blue_concrete
+fill -4 268 24004 -4 268 24011 minecraft:light_blue_concrete
+fill -3 268 23989 -3 268 23994 minecraft:light_blue_concrete
+fill -3 268 24004 -3 268 24011 minecraft:light_blue_concrete
+fill -2 268 23989 -2 268 23994 minecraft:light_blue_concrete
+fill -2 268 24004 -2 268 24011 minecraft:light_blue_concrete
+fill -1 268 23989 -1 268 23994 minecraft:light_blue_concrete
+fill -1 268 24004 -1 268 24011 minecraft:light_blue_concrete
+fill 0 268 23989 0 268 23994 minecraft:light_blue_concrete
+fill 0 268 24004 0 268 24011 minecraft:light_blue_concrete
+fill 1 268 23989 1 268 23994 minecraft:light_blue_concrete
+fill 1 268 24004 1 268 24011 minecraft:light_blue_concrete
+fill 2 268 23989 2 268 23994 minecraft:light_blue_concrete
+fill 2 268 24004 2 268 24011 minecraft:light_blue_concrete
+fill 3 268 23989 3 268 23994 minecraft:light_blue_concrete
+fill 3 268 24004 3 268 24011 minecraft:light_blue_concrete
+fill 4 268 23989 4 268 23994 minecraft:light_blue_concrete
+fill 4 268 24004 4 268 24011 minecraft:light_blue_concrete
+fill 5 268 23989 5 268 24011 minecraft:light_blue_concrete
+fill 6 268 23989 6 268 24011 minecraft:light_blue_concrete
+fill 7 268 23989 7 268 24011 minecraft:light_blue_concrete
+fill 8 268 23989 8 268 24011 minecraft:light_blue_concrete
+fill 9 268 23989 9 268 24011 minecraft:light_blue_concrete
+fill 10 268 23989 10 268 24011 minecraft:light_blue_concrete
+fill 11 268 23989 11 268 24011 minecraft:light_blue_concrete
+fill -11 262 23989 -11 262 24011 minecraft:blue_concrete
+fill -10 262 23989 -10 262 24011 minecraft:blue_concrete
+fill -9 262 23989 -9 262 24011 minecraft:blue_concrete
+fill -8 262 23989 -8 262 24011 minecraft:blue_concrete
+fill -7 262 23989 -7 262 24011 minecraft:blue_concrete
+fill -6 262 23989 -6 262 23994 minecraft:blue_concrete
+fill -6 262 24006 -6 262 24011 minecraft:blue_concrete
+fill -5 262 23989 -5 262 23994 minecraft:blue_concrete
+fill -5 262 24006 -5 262 24011 minecraft:blue_concrete
+fill -4 262 23989 -4 262 23994 minecraft:blue_concrete
+fill -4 262 24006 -4 262 24011 minecraft:blue_concrete
+fill -3 262 23989 -3 262 23994 minecraft:blue_concrete
+fill -3 262 24006 -3 262 24011 minecraft:blue_concrete
+fill -2 262 23989 -2 262 23994 minecraft:blue_concrete
+fill -2 262 24006 -2 262 24011 minecraft:blue_concrete
+fill -1 262 23989 -1 262 23994 minecraft:blue_concrete
+fill -1 262 24006 -1 262 24011 minecraft:blue_concrete
+fill 0 262 23989 0 262 23994 minecraft:blue_concrete
+fill 0 262 24006 0 262 24011 minecraft:blue_concrete
+fill 1 262 23989 1 262 23994 minecraft:blue_concrete
+fill 1 262 24006 1 262 24011 minecraft:blue_concrete
+fill 2 262 23989 2 262 23994 minecraft:blue_concrete
+fill 2 262 24006 2 262 24011 minecraft:blue_concrete
+fill 3 262 23989 3 262 23994 minecraft:blue_concrete
+fill 3 262 24006 3 262 24011 minecraft:blue_concrete
+fill 4 262 23989 4 262 23994 minecraft:blue_concrete
+fill 4 262 24006 4 262 24011 minecraft:blue_concrete
+fill 5 262 23989 5 262 24011 minecraft:blue_concrete
+fill 6 262 23989 6 262 24011 minecraft:blue_concrete
+fill 7 262 23989 7 262 24011 minecraft:blue_concrete
+fill 8 262 23989 8 262 24011 minecraft:blue_concrete
+fill 9 262 23989 9 262 24011 minecraft:blue_concrete
+fill 10 262 23989 10 262 24011 minecraft:blue_concrete
+fill 11 262 23989 11 262 24011 minecraft:blue_concrete
+fill -11 256 23989 -11 256 24011 minecraft:purple_concrete
+fill -10 256 23989 -10 256 24011 minecraft:purple_concrete
+fill -9 256 23989 -9 256 24011 minecraft:purple_concrete
+fill -8 256 23989 -8 256 24011 minecraft:purple_concrete
+fill -7 256 23989 -7 256 24011 minecraft:purple_concrete
+fill -6 256 23989 -6 256 24011 minecraft:purple_concrete
+fill -5 256 23989 -5 256 23994 minecraft:purple_concrete
+fill -5 256 24008 -5 256 24011 minecraft:purple_concrete
+fill -4 256 23989 -4 256 23994 minecraft:purple_concrete
+fill -4 256 24008 -4 256 24011 minecraft:purple_concrete
+fill -3 256 23989 -3 256 23994 minecraft:purple_concrete
+fill -3 256 24008 -3 256 24011 minecraft:purple_concrete
+fill -2 256 23989 -2 256 23994 minecraft:purple_concrete
+fill -2 256 24008 -2 256 24011 minecraft:purple_concrete
+fill -1 256 23989 -1 256 23994 minecraft:purple_concrete
+fill -1 256 24008 -1 256 24011 minecraft:purple_concrete
+fill 0 256 23989 0 256 23994 minecraft:purple_concrete
+fill 0 256 24008 0 256 24011 minecraft:purple_concrete
+fill 1 256 23989 1 256 23994 minecraft:purple_concrete
+fill 1 256 24008 1 256 24011 minecraft:purple_concrete
+fill 2 256 23989 2 256 23994 minecraft:purple_concrete
+fill 2 256 24008 2 256 24011 minecraft:purple_concrete
+fill 3 256 23989 3 256 23994 minecraft:purple_concrete
+fill 3 256 24008 3 256 24011 minecraft:purple_concrete
+fill 4 256 23989 4 256 23994 minecraft:purple_concrete
+fill 4 256 24008 4 256 24011 minecraft:purple_concrete
+fill 5 256 23989 5 256 23994 minecraft:purple_concrete
+fill 5 256 24008 5 256 24011 minecraft:purple_concrete
+fill 6 256 23989 6 256 23994 minecraft:purple_concrete
+fill 6 256 24008 6 256 24011 minecraft:purple_concrete
+fill 7 256 23989 7 256 23994 minecraft:purple_concrete
+fill 7 256 24008 7 256 24011 minecraft:purple_concrete
+fill 8 256 23989 8 256 24011 minecraft:purple_concrete
+fill 9 256 23989 9 256 24011 minecraft:purple_concrete
+fill 10 256 23989 10 256 24011 minecraft:purple_concrete
+fill 11 256 23989 11 256 24011 minecraft:purple_concrete
+fill -11 250 23989 -11 250 24011 minecraft:magenta_concrete
+fill -10 250 23989 -10 250 24011 minecraft:magenta_concrete
+fill -9 250 23989 -9 250 24011 minecraft:magenta_concrete
+fill -8 250 23989 -8 250 24011 minecraft:magenta_concrete
+fill -7 250 23989 -7 250 23992 minecraft:magenta_concrete
+fill -7 250 24008 -7 250 24011 minecraft:magenta_concrete
+fill -6 250 23989 -6 250 23992 minecraft:magenta_concrete
+fill -6 250 24008 -6 250 24011 minecraft:magenta_concrete
+fill -5 250 23989 -5 250 23992 minecraft:magenta_concrete
+fill -5 250 24008 -5 250 24011 minecraft:magenta_concrete
+fill -4 250 23989 -4 250 23992 minecraft:magenta_concrete
+fill -4 250 24008 -4 250 24011 minecraft:magenta_concrete
+fill -3 250 23989 -3 250 23992 minecraft:magenta_concrete
+fill -3 250 24008 -3 250 24011 minecraft:magenta_concrete
+fill -2 250 23989 -2 250 23992 minecraft:magenta_concrete
+fill -2 250 24008 -2 250 24011 minecraft:magenta_concrete
+fill -1 250 23989 -1 250 23992 minecraft:magenta_concrete
+fill -1 250 24008 -1 250 24011 minecraft:magenta_concrete
+fill 0 250 23989 0 250 23992 minecraft:magenta_concrete
+fill 0 250 24008 0 250 24011 minecraft:magenta_concrete
+fill 1 250 23989 1 250 23992 minecraft:magenta_concrete
+fill 1 250 24008 1 250 24011 minecraft:magenta_concrete
+fill 2 250 23989 2 250 23992 minecraft:magenta_concrete
+fill 2 250 24008 2 250 24011 minecraft:magenta_concrete
+fill 3 250 23989 3 250 23992 minecraft:magenta_concrete
+fill 3 250 24008 3 250 24011 minecraft:magenta_concrete
+fill 4 250 23989 4 250 23992 minecraft:magenta_concrete
+fill 4 250 24008 4 250 24011 minecraft:magenta_concrete
+fill 5 250 23989 5 250 23992 minecraft:magenta_concrete
+fill 5 250 24008 5 250 24011 minecraft:magenta_concrete
+fill 6 250 23989 6 250 23992 minecraft:magenta_concrete
+fill 6 250 24008 6 250 24011 minecraft:magenta_concrete
+fill 7 250 23989 7 250 23992 minecraft:magenta_concrete
+fill 7 250 24008 7 250 24011 minecraft:magenta_concrete
+fill 8 250 23989 8 250 24011 minecraft:magenta_concrete
+fill 9 250 23989 9 250 24011 minecraft:magenta_concrete
+fill 10 250 23989 10 250 24011 minecraft:magenta_concrete
+fill 11 250 23989 11 250 24011 minecraft:magenta_concrete
+fill -11 244 23989 -11 244 24011 minecraft:red_concrete
+fill -10 244 23989 -10 244 24011 minecraft:red_concrete
+fill -9 244 23989 -9 244 24011 minecraft:red_concrete
+fill -8 244 23989 -8 244 23991 minecraft:red_concrete
+fill -8 244 24009 -8 244 24011 minecraft:red_concrete
+fill -7 244 23989 -7 244 23991 minecraft:red_concrete
+fill -7 244 24009 -7 244 24011 minecraft:red_concrete
+fill -6 244 23989 -6 244 23991 minecraft:red_concrete
+fill -6 244 24009 -6 244 24011 minecraft:red_concrete
+fill -5 244 23989 -5 244 23991 minecraft:red_concrete
+fill -5 244 24009 -5 244 24011 minecraft:red_concrete
+fill -4 244 23989 -4 244 23991 minecraft:red_concrete
+fill -4 244 24009 -4 244 24011 minecraft:red_concrete
+fill -3 244 23989 -3 244 23991 minecraft:red_concrete
+fill -3 244 24009 -3 244 24011 minecraft:red_concrete
+fill -2 244 23989 -2 244 23991 minecraft:red_concrete
+fill -2 244 24009 -2 244 24011 minecraft:red_concrete
+fill -1 244 23989 -1 244 23991 minecraft:red_concrete
+fill -1 244 24009 -1 244 24011 minecraft:red_concrete
+fill 0 244 23989 0 244 23991 minecraft:red_concrete
+fill 0 244 24009 0 244 24011 minecraft:red_concrete
+fill 1 244 23989 1 244 23991 minecraft:red_concrete
+fill 1 244 24009 1 244 24011 minecraft:red_concrete
+fill 2 244 23989 2 244 23991 minecraft:red_concrete
+fill 2 244 24009 2 244 24011 minecraft:red_concrete
+fill 3 244 23989 3 244 23991 minecraft:red_concrete
+fill 3 244 24009 3 244 24011 minecraft:red_concrete
+fill 4 244 23989 4 244 23991 minecraft:red_concrete
+fill 4 244 24009 4 244 24011 minecraft:red_concrete
+fill 5 244 23989 5 244 23991 minecraft:red_concrete
+fill 5 244 24009 5 244 24011 minecraft:red_concrete
+fill 6 244 23989 6 244 23991 minecraft:red_concrete
+fill 6 244 24009 6 244 24011 minecraft:red_concrete
+fill 7 244 23989 7 244 23991 minecraft:red_concrete
+fill 7 244 24009 7 244 24011 minecraft:red_concrete
+fill 8 244 23989 8 244 23991 minecraft:red_concrete
+fill 8 244 24009 8 244 24011 minecraft:red_concrete
+fill 9 244 23989 9 244 24011 minecraft:red_concrete
+fill 10 244 23989 10 244 24011 minecraft:red_concrete
+fill 11 244 23989 11 244 24011 minecraft:red_concrete
+fill -11 238 23989 -11 238 24011 minecraft:orange_concrete
+fill -10 238 23989 -10 238 24011 minecraft:orange_concrete
+fill -9 238 23989 -9 238 24011 minecraft:orange_concrete
+fill -8 238 23989 -8 238 24011 minecraft:orange_concrete
+fill -7 238 23989 -7 238 23992 minecraft:orange_concrete
+fill -7 238 24008 -7 238 24011 minecraft:orange_concrete
+fill -6 238 23989 -6 238 23992 minecraft:orange_concrete
+fill -6 238 24008 -6 238 24011 minecraft:orange_concrete
+fill -5 238 23989 -5 238 23992 minecraft:orange_concrete
+fill -5 238 24008 -5 238 24011 minecraft:orange_concrete
+fill -4 238 23989 -4 238 23992 minecraft:orange_concrete
+fill -4 238 24008 -4 238 24011 minecraft:orange_concrete
+fill -3 238 23989 -3 238 23992 minecraft:orange_concrete
+fill -3 238 24008 -3 238 24011 minecraft:orange_concrete
+fill -2 238 23989 -2 238 23992 minecraft:orange_concrete
+fill -2 238 24008 -2 238 24011 minecraft:orange_concrete
+fill -1 238 23989 -1 238 23992 minecraft:orange_concrete
+fill -1 238 24008 -1 238 24011 minecraft:orange_concrete
+fill 0 238 23989 0 238 23992 minecraft:orange_concrete
+fill 0 238 24008 0 238 24011 minecraft:orange_concrete
+fill 1 238 23989 1 238 23992 minecraft:orange_concrete
+fill 1 238 24008 1 238 24011 minecraft:orange_concrete
+fill 2 238 23989 2 238 23992 minecraft:orange_concrete
+fill 2 238 24008 2 238 24011 minecraft:orange_concrete
+fill 3 238 23989 3 238 23992 minecraft:orange_concrete
+fill 3 238 24008 3 238 24011 minecraft:orange_concrete
+fill 4 238 23989 4 238 23992 minecraft:orange_concrete
+fill 4 238 24008 4 238 24011 minecraft:orange_concrete
+fill 5 238 23989 5 238 23992 minecraft:orange_concrete
+fill 5 238 24008 5 238 24011 minecraft:orange_concrete
+fill 6 238 23989 6 238 23992 minecraft:orange_concrete
+fill 6 238 24008 6 238 24011 minecraft:orange_concrete
+fill 7 238 23989 7 238 23992 minecraft:orange_concrete
+fill 7 238 24008 7 238 24011 minecraft:orange_concrete
+fill 8 238 23989 8 238 24011 minecraft:orange_concrete
+fill 9 238 23989 9 238 24011 minecraft:orange_concrete
+fill 10 238 23989 10 238 24011 minecraft:orange_concrete
+fill 11 238 23989 11 238 24011 minecraft:orange_concrete
+fill -11 232 23989 -11 232 24011 minecraft:yellow_concrete
+fill -10 232 23989 -10 232 24011 minecraft:yellow_concrete
+fill -9 232 23989 -9 232 24011 minecraft:yellow_concrete
+fill -8 232 23989 -8 232 24011 minecraft:yellow_concrete
+fill -7 232 23989 -7 232 24011 minecraft:yellow_concrete
+fill -6 232 23989 -6 232 24011 minecraft:yellow_concrete
+fill -5 232 23989 -5 232 23993 minecraft:yellow_concrete
+fill -5 232 24007 -5 232 24011 minecraft:yellow_concrete
+fill -4 232 23989 -4 232 23993 minecraft:yellow_concrete
+fill -4 232 24007 -4 232 24011 minecraft:yellow_concrete
+fill -3 232 23989 -3 232 23993 minecraft:yellow_concrete
+fill -3 232 24007 -3 232 24011 minecraft:yellow_concrete
+fill -2 232 23989 -2 232 23993 minecraft:yellow_concrete
+fill -2 232 24007 -2 232 24011 minecraft:yellow_concrete
+fill -1 232 23989 -1 232 23993 minecraft:yellow_concrete
+fill -1 232 24007 -1 232 24011 minecraft:yellow_concrete
+fill 0 232 23989 0 232 23993 minecraft:yellow_concrete
+fill 0 232 24007 0 232 24011 minecraft:yellow_concrete
+fill 1 232 23989 1 232 23993 minecraft:yellow_concrete
+fill 1 232 24007 1 232 24011 minecraft:yellow_concrete
+fill 2 232 23989 2 232 23993 minecraft:yellow_concrete
+fill 2 232 24007 2 232 24011 minecraft:yellow_concrete
+fill 3 232 23989 3 232 23993 minecraft:yellow_concrete
+fill 3 232 24007 3 232 24011 minecraft:yellow_concrete
+fill 4 232 23989 4 232 23993 minecraft:yellow_concrete
+fill 4 232 24007 4 232 24011 minecraft:yellow_concrete
+fill 5 232 23989 5 232 23993 minecraft:yellow_concrete
+fill 5 232 24007 5 232 24011 minecraft:yellow_concrete
+fill 6 232 23989 6 232 23993 minecraft:yellow_concrete
+fill 6 232 24007 6 232 24011 minecraft:yellow_concrete
+fill 7 232 23989 7 232 23993 minecraft:yellow_concrete
+fill 7 232 24007 7 232 24011 minecraft:yellow_concrete
+fill 8 232 23989 8 232 24011 minecraft:yellow_concrete
+fill 9 232 23989 9 232 24011 minecraft:yellow_concrete
+fill 10 232 23989 10 232 24011 minecraft:yellow_concrete
+fill 11 232 23989 11 232 24011 minecraft:yellow_concrete
+fill -11 226 23989 -11 226 24011 minecraft:lime_concrete
+fill -10 226 23989 -10 226 24011 minecraft:lime_concrete
+fill -9 226 23989 -9 226 24011 minecraft:lime_concrete
+fill -8 226 23989 -8 226 24011 minecraft:lime_concrete
+fill -7 226 23989 -7 226 24011 minecraft:lime_concrete
+fill -6 226 23989 -6 226 24011 minecraft:lime_concrete
+fill -5 226 23989 -5 226 24011 minecraft:lime_concrete
+fill -4 226 23989 -4 226 23993 minecraft:lime_concrete
+fill -4 226 24005 -4 226 24011 minecraft:lime_concrete
+fill -3 226 23989 -3 226 23993 minecraft:lime_concrete
+fill -3 226 24005 -3 226 24011 minecraft:lime_concrete
+fill -2 226 23989 -2 226 23993 minecraft:lime_concrete
+fill -2 226 24005 -2 226 24011 minecraft:lime_concrete
+fill -1 226 23989 -1 226 23993 minecraft:lime_concrete
+fill -1 226 24005 -1 226 24011 minecraft:lime_concrete
+fill 0 226 23989 0 226 23993 minecraft:lime_concrete
+fill 0 226 24005 0 226 24011 minecraft:lime_concrete
+fill 1 226 23989 1 226 23993 minecraft:lime_concrete
+fill 1 226 24005 1 226 24011 minecraft:lime_concrete
+fill 2 226 23989 2 226 23993 minecraft:lime_concrete
+fill 2 226 24005 2 226 24011 minecraft:lime_concrete
+fill 3 226 23989 3 226 23993 minecraft:lime_concrete
+fill 3 226 24005 3 226 24011 minecraft:lime_concrete
+fill 4 226 23989 4 226 23993 minecraft:lime_concrete
+fill 4 226 24005 4 226 24011 minecraft:lime_concrete
+fill 5 226 23989 5 226 23993 minecraft:lime_concrete
+fill 5 226 24005 5 226 24011 minecraft:lime_concrete
+fill 6 226 23989 6 226 23993 minecraft:lime_concrete
+fill 6 226 24005 6 226 24011 minecraft:lime_concrete
+fill 7 226 23989 7 226 24011 minecraft:lime_concrete
+fill 8 226 23989 8 226 24011 minecraft:lime_concrete
+fill 9 226 23989 9 226 24011 minecraft:lime_concrete
+fill 10 226 23989 10 226 24011 minecraft:lime_concrete
+fill 11 226 23989 11 226 24011 minecraft:lime_concrete
+fill -11 216 23989 -11 216 23989 minecraft:blue_terracotta
+fill -11 216 23999 -11 216 24000 minecraft:light_blue_terracotta
+fill -11 216 24008 -11 216 24011 minecraft:lime_terracotta
+fill -10 216 23989 -10 216 23990 minecraft:blue_terracotta
+fill -10 216 23999 -10 216 24000 minecraft:light_blue_terracotta
+fill -10 216 24008 -10 216 24010 minecraft:lime_terracotta
+fill -9 216 23989 -9 216 23991 minecraft:blue_terracotta
+fill -9 216 23999 -9 216 24000 minecraft:light_blue_terracotta
+fill -9 216 24007 -9 216 24009 minecraft:lime_terracotta
+fill -8 216 23989 -8 216 23992 minecraft:blue_terracotta
+fill -8 216 23999 -8 216 24000 minecraft:light_blue_terracotta
+fill -8 216 24006 -8 216 24008 minecraft:lime_terracotta
+fill -7 216 23991 -7 216 23993 minecraft:blue_terracotta
+fill -7 216 23999 -7 216 24000 minecraft:light_blue_terracotta
+fill -7 216 24006 -7 216 24007 minecraft:lime_terracotta
+fill -6 216 23992 -6 216 23994 minecraft:blue_terracotta
+fill -6 216 24000 -6 216 24000 minecraft:light_blue_terracotta
+fill -6 216 24005 -6 216 24006 minecraft:lime_terracotta
+fill -5 216 23994 -5 216 23995 minecraft:blue_terracotta
+fill -5 216 24000 -5 216 24000 minecraft:light_blue_terracotta
+fill -5 216 24004 -5 216 24005 minecraft:lime_terracotta
+fill -4 216 23995 -4 216 23996 minecraft:blue_terracotta
+fill -4 216 24000 -4 216 24000 minecraft:light_blue_terracotta
+fill -4 216 24003 -4 216 24004 minecraft:lime_terracotta
+fill -3 216 23996 -3 216 23997 minecraft:blue_terracotta
+fill -3 216 24000 -3 216 24000 minecraft:light_blue_terracotta
+fill -3 216 24003 -3 216 24003 minecraft:lime_terracotta
+fill -2 216 23998 -2 216 23998 minecraft:blue_terracotta
+fill -2 216 24002 -2 216 24002 minecraft:lime_terracotta
+fill -1 216 24007 -1 216 24011 minecraft:yellow_terracotta
+fill 0 216 23989 0 216 23997 minecraft:purple_terracotta
+fill 0 216 24003 0 216 24011 minecraft:yellow_terracotta
+fill 1 216 23989 1 216 23993 minecraft:purple_terracotta
+fill 2 216 23998 2 216 23998 minecraft:magenta_terracotta
+fill 2 216 24002 2 216 24002 minecraft:orange_terracotta
+fill 3 216 23997 3 216 23997 minecraft:magenta_terracotta
+fill 3 216 24000 3 216 24000 minecraft:red_terracotta
+fill 3 216 24003 3 216 24004 minecraft:orange_terracotta
+fill 4 216 23996 4 216 23997 minecraft:magenta_terracotta
+fill 4 216 24000 4 216 24000 minecraft:red_terracotta
+fill 4 216 24004 4 216 24005 minecraft:orange_terracotta
+fill 5 216 23995 5 216 23996 minecraft:magenta_terracotta
+fill 5 216 24000 5 216 24000 minecraft:red_terracotta
+fill 5 216 24005 5 216 24006 minecraft:orange_terracotta
+fill 6 216 23994 6 216 23995 minecraft:magenta_terracotta
+fill 6 216 24000 6 216 24000 minecraft:red_terracotta
+fill 6 216 24006 6 216 24008 minecraft:orange_terracotta
+fill 7 216 23993 7 216 23994 minecraft:magenta_terracotta
+fill 7 216 24000 7 216 24001 minecraft:red_terracotta
+fill 7 216 24007 7 216 24009 minecraft:orange_terracotta
+fill 8 216 23992 8 216 23994 minecraft:magenta_terracotta
+fill 8 216 24000 8 216 24001 minecraft:red_terracotta
+fill 8 216 24008 8 216 24011 minecraft:orange_terracotta
+fill 9 216 23991 9 216 23993 minecraft:magenta_terracotta
+fill 9 216 24000 9 216 24001 minecraft:red_terracotta
+fill 9 216 24009 9 216 24011 minecraft:orange_terracotta
+fill 10 216 23990 10 216 23992 minecraft:magenta_terracotta
+fill 10 216 24000 10 216 24001 minecraft:red_terracotta
+fill 10 216 24010 10 216 24011 minecraft:orange_terracotta
+fill 11 216 23989 11 216 23992 minecraft:magenta_terracotta
+fill 11 216 24000 11 216 24001 minecraft:red_terracotta
+fill 11 216 24011 11 216 24011 minecraft:orange_terracotta
+fill -11 208 23995 -11 208 23996 minecraft:blue_terracotta
+fill -11 208 24004 -11 208 24005 minecraft:light_blue_terracotta
+fill -10 208 23996 -10 208 23996 minecraft:blue_terracotta
+fill -10 208 24004 -10 208 24005 minecraft:light_blue_terracotta
+fill -9 208 23996 -9 208 23997 minecraft:blue_terracotta
+fill -9 208 24004 -9 208 24004 minecraft:light_blue_terracotta
+fill -8 208 23997 -8 208 23997 minecraft:blue_terracotta
+fill -8 208 24003 -8 208 24004 minecraft:light_blue_terracotta
+fill -7 208 23997 -7 208 23997 minecraft:blue_terracotta
+fill -7 208 24003 -7 208 24003 minecraft:light_blue_terracotta
+fill -6 208 23998 -6 208 23998 minecraft:blue_terracotta
+fill -6 208 24003 -6 208 24003 minecraft:light_blue_terracotta
+fill -5 208 23989 -5 208 23990 minecraft:purple_terracotta
+fill -5 208 23998 -5 208 23998 minecraft:blue_terracotta
+fill -5 208 24002 -5 208 24002 minecraft:light_blue_terracotta
+fill -5 208 24011 -5 208 24011 minecraft:lime_terracotta
+fill -4 208 23989 -4 208 23992 minecraft:purple_terracotta
+fill -4 208 24002 -4 208 24002 minecraft:light_blue_terracotta
+fill -4 208 24009 -4 208 24011 minecraft:lime_terracotta
+fill -3 208 23992 -3 208 23994 minecraft:purple_terracotta
+fill -3 208 23999 -3 208 23999 minecraft:blue_terracotta
+fill -3 208 24007 -3 208 24009 minecraft:lime_terracotta
+fill -2 208 23995 -2 208 23996 minecraft:purple_terracotta
+fill -2 208 24005 -2 208 24006 minecraft:lime_terracotta
+fill -1 208 24003 -1 208 24003 minecraft:lime_terracotta
+fill 1 208 23997 1 208 23997 minecraft:magenta_terracotta
+fill 2 208 23994 2 208 23995 minecraft:magenta_terracotta
+fill 2 208 24004 2 208 24005 minecraft:yellow_terracotta
+fill 3 208 23991 3 208 23993 minecraft:magenta_terracotta
+fill 3 208 24001 3 208 24001 minecraft:orange_terracotta
+fill 3 208 24006 3 208 24008 minecraft:yellow_terracotta
+fill 4 208 23989 4 208 23991 minecraft:magenta_terracotta
+fill 4 208 23998 4 208 23998 minecraft:red_terracotta
+fill 4 208 24008 4 208 24011 minecraft:yellow_terracotta
+fill 5 208 23989 5 208 23989 minecraft:magenta_terracotta
+fill 5 208 23998 5 208 23998 minecraft:red_terracotta
+fill 5 208 24002 5 208 24002 minecraft:orange_terracotta
+fill 5 208 24010 5 208 24011 minecraft:yellow_terracotta
+fill 6 208 23997 6 208 23997 minecraft:red_terracotta
+fill 6 208 24002 6 208 24002 minecraft:orange_terracotta
+fill 7 208 23997 7 208 23997 minecraft:red_terracotta
+fill 7 208 24003 7 208 24003 minecraft:orange_terracotta
+fill 8 208 23996 8 208 23997 minecraft:red_terracotta
+fill 8 208 24003 8 208 24003 minecraft:orange_terracotta
+fill 9 208 23996 9 208 23996 minecraft:red_terracotta
+fill 9 208 24003 9 208 24004 minecraft:orange_terracotta
+fill 10 208 23995 10 208 23996 minecraft:red_terracotta
+fill 10 208 24004 10 208 24004 minecraft:orange_terracotta
+fill 11 208 23995 11 208 23996 minecraft:red_terracotta
+fill 11 208 24004 11 208 24005 minecraft:orange_terracotta
+fill -11 200 23990 -11 200 23992 minecraft:purple_terracotta
+fill -11 200 24001 -11 200 24002 minecraft:blue_terracotta
+fill -10 200 23991 -10 200 23993 minecraft:purple_terracotta
+fill -10 200 24001 -10 200 24001 minecraft:blue_terracotta
+fill -10 200 24011 -10 200 24011 minecraft:light_blue_terracotta
+fill -9 200 23992 -9 200 23993 minecraft:purple_terracotta
+fill -9 200 24001 -9 200 24001 minecraft:blue_terracotta
+fill -9 200 24010 -9 200 24011 minecraft:light_blue_terracotta
+fill -8 200 23993 -8 200 23994 minecraft:purple_terracotta
+fill -8 200 24001 -8 200 24001 minecraft:blue_terracotta
+fill -8 200 24009 -8 200 24011 minecraft:light_blue_terracotta
+fill -7 200 23994 -7 200 23995 minecraft:purple_terracotta
+fill -7 200 24001 -7 200 24001 minecraft:blue_terracotta
+fill -7 200 24008 -7 200 24010 minecraft:light_blue_terracotta
+fill -6 200 23995 -6 200 23995 minecraft:purple_terracotta
+fill -6 200 24001 -6 200 24001 minecraft:blue_terracotta
+fill -6 200 24007 -6 200 24008 minecraft:light_blue_terracotta
+fill -5 200 23996 -5 200 23996 minecraft:purple_terracotta
+fill -5 200 24006 -5 200 24007 minecraft:light_blue_terracotta
+fill -4 200 23997 -4 200 23997 minecraft:purple_terracotta
+fill -4 200 24005 -4 200 24005 minecraft:light_blue_terracotta
+fill -3 200 24004 -3 200 24004 minecraft:light_blue_terracotta
+fill -2 200 23989 -2 200 23989 minecraft:magenta_terracotta
+fill -1 200 23989 -1 200 23994 minecraft:magenta_terracotta
+fill 1 200 24006 1 200 24011 minecraft:lime_terracotta
+fill 2 200 24011 2 200 24011 minecraft:lime_terracotta
+fill 3 200 23996 3 200 23996 minecraft:red_terracotta
+fill 4 200 23995 4 200 23995 minecraft:red_terracotta
+fill 4 200 24003 4 200 24003 minecraft:yellow_terracotta
+fill 5 200 23993 5 200 23994 minecraft:red_terracotta
+fill 5 200 24004 5 200 24004 minecraft:yellow_terracotta
+fill 6 200 23992 6 200 23993 minecraft:red_terracotta
+fill 6 200 23999 6 200 23999 minecraft:orange_terracotta
+fill 6 200 24005 6 200 24005 minecraft:yellow_terracotta
+fill 7 200 23990 7 200 23992 minecraft:red_terracotta
+fill 7 200 23999 7 200 23999 minecraft:orange_terracotta
+fill 7 200 24005 7 200 24006 minecraft:yellow_terracotta
+fill 8 200 23989 8 200 23991 minecraft:red_terracotta
+fill 8 200 23999 8 200 23999 minecraft:orange_terracotta
+fill 8 200 24006 8 200 24007 minecraft:yellow_terracotta
+fill 9 200 23989 9 200 23990 minecraft:red_terracotta
+fill 9 200 23999 9 200 23999 minecraft:orange_terracotta
+fill 9 200 24007 9 200 24008 minecraft:yellow_terracotta
+fill 10 200 23989 10 200 23989 minecraft:red_terracotta
+fill 10 200 23999 10 200 23999 minecraft:orange_terracotta
+fill 10 200 24007 10 200 24009 minecraft:yellow_terracotta
+fill 11 200 23998 11 200 23999 minecraft:orange_terracotta
+fill 11 200 24008 11 200 24010 minecraft:yellow_terracotta
+fill -11 192 23998 -11 192 23998 minecraft:purple_terracotta
+fill -11 192 24007 -11 192 24008 minecraft:blue_terracotta
+fill -10 192 23998 -10 192 23998 minecraft:purple_terracotta
+fill -10 192 24006 -10 192 24008 minecraft:blue_terracotta
+fill -9 192 23998 -9 192 23999 minecraft:purple_terracotta
+fill -9 192 24006 -9 192 24007 minecraft:blue_terracotta
+fill -8 192 23989 -8 192 23990 minecraft:magenta_terracotta
+fill -8 192 23998 -8 192 23999 minecraft:purple_terracotta
+fill -8 192 24005 -8 192 24006 minecraft:blue_terracotta
+fill -7 192 23989 -7 192 23991 minecraft:magenta_terracotta
+fill -7 192 23999 -7 192 23999 minecraft:purple_terracotta
+fill -7 192 24005 -7 192 24005 minecraft:blue_terracotta
+fill -6 192 23990 -6 192 23992 minecraft:magenta_terracotta
+fill -6 192 23999 -6 192 23999 minecraft:purple_terracotta
+fill -6 192 24004 -6 192 24004 minecraft:blue_terracotta
+fill -5 192 23992 -5 192 23993 minecraft:magenta_terracotta
+fill -5 192 23999 -5 192 23999 minecraft:purple_terracotta
+fill -5 192 24003 -5 192 24004 minecraft:blue_terracotta
+fill -4 192 23994 -4 192 23995 minecraft:magenta_terracotta
+fill -4 192 23999 -4 192 23999 minecraft:purple_terracotta
+fill -4 192 24003 -4 192 24003 minecraft:blue_terracotta
+fill -3 192 23995 -3 192 23996 minecraft:magenta_terracotta
+fill -3 192 24002 -3 192 24002 minecraft:blue_terracotta
+fill -2 192 23997 -2 192 23997 minecraft:magenta_terracotta
+fill -2 192 24008 -2 192 24011 minecraft:light_blue_terracotta
+fill -1 192 24004 -1 192 24009 minecraft:light_blue_terracotta
+fill 1 192 23991 1 192 23996 minecraft:red_terracotta
+fill 2 192 23989 2 192 23992 minecraft:red_terracotta
+fill 2 192 24003 2 192 24003 minecraft:lime_terracotta
+fill 3 192 23998 3 192 23998 minecraft:orange_terracotta
+fill 3 192 24004 3 192 24005 minecraft:lime_terracotta
+fill 4 192 23997 4 192 23997 minecraft:orange_terracotta
+fill 4 192 24001 4 192 24001 minecraft:yellow_terracotta
+fill 4 192 24005 4 192 24006 minecraft:lime_terracotta
+fill 5 192 23996 5 192 23997 minecraft:orange_terracotta
+fill 5 192 24001 5 192 24001 minecraft:yellow_terracotta
+fill 5 192 24007 5 192 24008 minecraft:lime_terracotta
+fill 6 192 23996 6 192 23996 minecraft:orange_terracotta
+fill 6 192 24001 6 192 24001 minecraft:yellow_terracotta
+fill 6 192 24008 6 192 24010 minecraft:lime_terracotta
+fill 7 192 23995 7 192 23995 minecraft:orange_terracotta
+fill 7 192 24001 7 192 24001 minecraft:yellow_terracotta
+fill 7 192 24009 7 192 24011 minecraft:lime_terracotta
+fill 8 192 23994 8 192 23995 minecraft:orange_terracotta
+fill 8 192 24001 8 192 24002 minecraft:yellow_terracotta
+fill 8 192 24010 8 192 24011 minecraft:lime_terracotta
+fill 9 192 23993 9 192 23994 minecraft:orange_terracotta
+fill 9 192 24001 9 192 24002 minecraft:yellow_terracotta
+fill 10 192 23992 10 192 23994 minecraft:orange_terracotta
+fill 10 192 24002 10 192 24002 minecraft:yellow_terracotta
+fill 11 192 23992 11 192 23993 minecraft:orange_terracotta
+fill 11 192 24002 11 192 24002 minecraft:yellow_terracotta
+fill -11 184 23994 -11 184 23995 minecraft:magenta_terracotta
+fill -11 184 24003 -11 184 24004 minecraft:purple_terracotta
+fill -10 184 23994 -10 184 23995 minecraft:magenta_terracotta
+fill -10 184 24003 -10 184 24004 minecraft:purple_terracotta
+fill -9 184 23995 -9 184 23996 minecraft:magenta_terracotta
+fill -9 184 24003 -9 184 24003 minecraft:purple_terracotta
+fill -8 184 23996 -8 184 23996 minecraft:magenta_terracotta
+fill -8 184 24002 -8 184 24003 minecraft:purple_terracotta
+fill -7 184 23996 -7 184 23997 minecraft:magenta_terracotta
+fill -7 184 24002 -7 184 24002 minecraft:purple_terracotta
+fill -6 184 23997 -6 184 23997 minecraft:magenta_terracotta
+fill -6 184 24002 -6 184 24002 minecraft:purple_terracotta
+fill -6 184 24010 -6 184 24011 minecraft:blue_terracotta
+fill -5 184 23997 -5 184 23997 minecraft:magenta_terracotta
+fill -5 184 24002 -5 184 24002 minecraft:purple_terracotta
+fill -5 184 24009 -5 184 24011 minecraft:blue_terracotta
+fill -4 184 23989 -4 184 23990 minecraft:red_terracotta
+fill -4 184 23998 -4 184 23998 minecraft:magenta_terracotta
+fill -4 184 24001 -4 184 24001 minecraft:purple_terracotta
+fill -4 184 24007 -4 184 24009 minecraft:blue_terracotta
+fill -3 184 23989 -3 184 23992 minecraft:red_terracotta
+fill -3 184 24001 -3 184 24001 minecraft:purple_terracotta
+fill -3 184 24005 -3 184 24007 minecraft:blue_terracotta
+fill -2 184 23992 -2 184 23995 minecraft:red_terracotta
+fill -2 184 24004 -2 184 24004 minecraft:blue_terracotta
+fill -1 184 23996 -1 184 23997 minecraft:red_terracotta
+fill 1 184 24003 1 184 24004 minecraft:light_blue_terracotta
+fill 2 184 23996 2 184 23996 minecraft:orange_terracotta
+fill 2 184 24005 2 184 24008 minecraft:light_blue_terracotta
+fill 3 184 23993 3 184 23995 minecraft:orange_terracotta
+fill 3 184 23999 3 184 23999 minecraft:yellow_terracotta
+fill 3 184 24008 3 184 24011 minecraft:light_blue_terracotta
+fill 4 184 23991 4 184 23993 minecraft:orange_terracotta
+fill 4 184 23999 4 184 23999 minecraft:yellow_terracotta
+fill 4 184 24002 4 184 24002 minecraft:lime_terracotta
+fill 4 184 24010 4 184 24011 minecraft:light_blue_terracotta
+fill 5 184 23989 5 184 23991 minecraft:orange_terracotta
+fill 5 184 23998 5 184 23998 minecraft:yellow_terracotta
+fill 5 184 24003 5 184 24003 minecraft:lime_terracotta
+fill 6 184 23989 6 184 23990 minecraft:orange_terracotta
+fill 6 184 23998 6 184 23998 minecraft:yellow_terracotta
+fill 6 184 24003 6 184 24003 minecraft:lime_terracotta
+fill 7 184 23998 7 184 23998 minecraft:yellow_terracotta
+fill 7 184 24003 7 184 24004 minecraft:lime_terracotta
+fill 8 184 23997 8 184 23998 minecraft:yellow_terracotta
+fill 8 184 24004 8 184 24004 minecraft:lime_terracotta
+fill 9 184 23997 9 184 23997 minecraft:yellow_terracotta
+fill 9 184 24004 9 184 24005 minecraft:lime_terracotta
+fill 10 184 23996 10 184 23997 minecraft:yellow_terracotta
+fill 10 184 24005 10 184 24006 minecraft:lime_terracotta
+fill 11 184 23996 11 184 23997 minecraft:yellow_terracotta
+fill 11 184 24005 11 184 24006 minecraft:lime_terracotta
+fill -11 176 23989 -11 176 23990 minecraft:red_terracotta
+fill -11 176 24000 -11 176 24000 minecraft:magenta_terracotta
+fill -11 176 24010 -11 176 24011 minecraft:purple_terracotta
+fill -10 176 23989 -10 176 23991 minecraft:red_terracotta
+fill -10 176 24000 -10 176 24000 minecraft:magenta_terracotta
+fill -10 176 24009 -10 176 24011 minecraft:purple_terracotta
+fill -9 176 23990 -9 176 23992 minecraft:red_terracotta
+fill -9 176 24000 -9 176 24000 minecraft:magenta_terracotta
+fill -9 176 24008 -9 176 24010 minecraft:purple_terracotta
+fill -8 176 23991 -8 176 23993 minecraft:red_terracotta
+fill -8 176 24000 -8 176 24000 minecraft:magenta_terracotta
+fill -8 176 24007 -8 176 24009 minecraft:purple_terracotta
+fill -7 176 23992 -7 176 23994 minecraft:red_terracotta
+fill -7 176 24000 -7 176 24000 minecraft:magenta_terracotta
+fill -7 176 24007 -7 176 24008 minecraft:purple_terracotta
+fill -6 176 23994 -6 176 23994 minecraft:red_terracotta
+fill -6 176 24000 -6 176 24000 minecraft:magenta_terracotta
+fill -6 176 24006 -6 176 24007 minecraft:purple_terracotta
+fill -5 176 23995 -5 176 23995 minecraft:red_terracotta
+fill -5 176 24000 -5 176 24000 minecraft:magenta_terracotta
+fill -5 176 24005 -5 176 24005 minecraft:purple_terracotta
+fill -4 176 23996 -4 176 23996 minecraft:red_terracotta
+fill -4 176 24000 -4 176 24000 minecraft:magenta_terracotta
+fill -4 176 24004 -4 176 24004 minecraft:purple_terracotta
+fill -3 176 23997 -3 176 23997 minecraft:red_terracotta
+fill -3 176 24000 -3 176 24000 minecraft:magenta_terracotta
+fill -3 176 24003 -3 176 24003 minecraft:purple_terracotta
+fill -2 176 23998 -2 176 23998 minecraft:red_terracotta
+fill -2 176 24002 -2 176 24002 minecraft:purple_terracotta
+fill 0 176 23989 0 176 23997 minecraft:orange_terracotta
+fill 0 176 24003 0 176 24011 minecraft:blue_terracotta
+fill 2 176 23998 2 176 23998 minecraft:yellow_terracotta
+fill 2 176 24002 2 176 24002 minecraft:light_blue_terracotta
+fill 3 176 23997 3 176 23997 minecraft:yellow_terracotta
+fill 3 176 24000 3 176 24000 minecraft:lime_terracotta
+fill 3 176 24003 3 176 24003 minecraft:light_blue_terracotta
+fill 4 176 23996 4 176 23996 minecraft:yellow_terracotta
+fill 4 176 24000 4 176 24000 minecraft:lime_terracotta
+fill 4 176 24004 4 176 24004 minecraft:light_blue_terracotta
+fill 5 176 23995 5 176 23995 minecraft:yellow_terracotta
+fill 5 176 24000 5 176 24000 minecraft:lime_terracotta
+fill 5 176 24005 5 176 24005 minecraft:light_blue_terracotta
+fill 6 176 23993 6 176 23994 minecraft:yellow_terracotta
+fill 6 176 24000 6 176 24000 minecraft:lime_terracotta
+fill 6 176 24006 6 176 24006 minecraft:light_blue_terracotta
+fill 7 176 23992 7 176 23993 minecraft:yellow_terracotta
+fill 7 176 24000 7 176 24000 minecraft:lime_terracotta
+fill 7 176 24006 7 176 24008 minecraft:light_blue_terracotta
+fill 8 176 23991 8 176 23993 minecraft:yellow_terracotta
+fill 8 176 24000 8 176 24000 minecraft:lime_terracotta
+fill 8 176 24007 8 176 24009 minecraft:light_blue_terracotta
+fill 9 176 23990 9 176 23992 minecraft:yellow_terracotta
+fill 9 176 24000 9 176 24000 minecraft:lime_terracotta
+fill 9 176 24008 9 176 24010 minecraft:light_blue_terracotta
+fill 10 176 23989 10 176 23991 minecraft:yellow_terracotta
+fill 10 176 24000 10 176 24000 minecraft:lime_terracotta
+fill 10 176 24009 10 176 24011 minecraft:light_blue_terracotta
+fill 11 176 23989 11 176 23990 minecraft:yellow_terracotta
+fill 11 176 24000 11 176 24000 minecraft:lime_terracotta
+fill 11 176 24010 11 176 24011 minecraft:light_blue_terracotta
+fill -11 168 23996 -11 168 23997 minecraft:red_terracotta
+fill -11 168 24005 -11 168 24007 minecraft:magenta_terracotta
+fill -10 168 23997 -10 168 23997 minecraft:red_terracotta
+fill -10 168 24005 -10 168 24006 minecraft:magenta_terracotta
+fill -9 168 23997 -9 168 23998 minecraft:red_terracotta
+fill -9 168 24005 -9 168 24005 minecraft:magenta_terracotta
+fill -8 168 23997 -8 168 23998 minecraft:red_terracotta
+fill -8 168 24004 -8 168 24005 minecraft:magenta_terracotta
+fill -7 168 23989 -7 168 23989 minecraft:orange_terracotta
+fill -7 168 23998 -7 168 23998 minecraft:red_terracotta
+fill -7 168 24004 -7 168 24004 minecraft:magenta_terracotta
+fill -6 168 23989 -6 168 23990 minecraft:orange_terracotta
+fill -6 168 23998 -6 168 23998 minecraft:red_terracotta
+fill -6 168 24003 -6 168 24003 minecraft:magenta_terracotta
+fill -5 168 23989 -5 168 23992 minecraft:orange_terracotta
+fill -5 168 24003 -5 168 24003 minecraft:magenta_terracotta
+fill -4 168 23992 -4 168 23993 minecraft:orange_terracotta
+fill -4 168 23999 -4 168 23999 minecraft:red_terracotta
+fill -4 168 24002 -4 168 24002 minecraft:magenta_terracotta
+fill -4 168 24011 -4 168 24011 minecraft:purple_terracotta
+fill -3 168 23994 -3 168 23995 minecraft:orange_terracotta
+fill -3 168 23999 -3 168 23999 minecraft:red_terracotta
+fill -3 168 24008 -3 168 24011 minecraft:purple_terracotta
+fill -2 168 23996 -2 168 23996 minecraft:orange_terracotta
+fill -2 168 24006 -2 168 24009 minecraft:purple_terracotta
+fill -1 168 24003 -1 168 24004 minecraft:purple_terracotta
+fill 1 168 23996 1 168 23997 minecraft:yellow_terracotta
+fill 2 168 23991 2 168 23994 minecraft:yellow_terracotta
+fill 2 168 24004 2 168 24004 minecraft:blue_terracotta
+fill 3 168 23989 3 168 23992 minecraft:yellow_terracotta
+fill 3 168 24001 3 168 24001 minecraft:light_blue_terracotta
+fill 3 168 24005 3 168 24006 minecraft:blue_terracotta
+fill 4 168 23989 4 168 23989 minecraft:yellow_terracotta
+fill 4 168 23998 4 168 23998 minecraft:lime_terracotta
+fill 4 168 24001 4 168 24001 minecraft:light_blue_terracotta
+fill 4 168 24007 4 168 24008 minecraft:blue_terracotta
+fill 5 168 23997 5 168 23997 minecraft:lime_terracotta
+fill 5 168 24008 5 168 24011 minecraft:blue_terracotta
+fill 6 168 23997 6 168 23997 minecraft:lime_terracotta
+fill 6 168 24002 6 168 24002 minecraft:light_blue_terracotta
+fill 6 168 24010 6 168 24011 minecraft:blue_terracotta
+fill 7 168 23996 7 168 23996 minecraft:lime_terracotta
+fill 7 168 24002 7 168 24002 minecraft:light_blue_terracotta
+fill 7 168 24011 7 168 24011 minecraft:blue_terracotta
+fill 8 168 23995 8 168 23996 minecraft:lime_terracotta
+fill 8 168 24002 8 168 24003 minecraft:light_blue_terracotta
+fill 9 168 23995 9 168 23995 minecraft:lime_terracotta
+fill 9 168 24002 9 168 24003 minecraft:light_blue_terracotta
+fill 10 168 23994 10 168 23995 minecraft:lime_terracotta
+fill 10 168 24003 10 168 24003 minecraft:light_blue_terracotta
+fill 11 168 23993 11 168 23995 minecraft:lime_terracotta
+fill 11 168 24003 11 168 24004 minecraft:light_blue_terracotta
+fill -11 160 23992 -11 160 23993 minecraft:orange_terracotta
+fill -11 160 24002 -11 160 24003 minecraft:red_terracotta
+fill -10 160 23993 -10 160 23994 minecraft:orange_terracotta
+fill -10 160 24002 -10 160 24002 minecraft:red_terracotta
+fill -9 160 23993 -9 160 23995 minecraft:orange_terracotta
+fill -9 160 24002 -9 160 24002 minecraft:red_terracotta
+fill -8 160 23994 -8 160 23995 minecraft:orange_terracotta
+fill -8 160 24001 -8 160 24002 minecraft:red_terracotta
+fill -8 160 24011 -8 160 24011 minecraft:magenta_terracotta
+fill -7 160 23995 -7 160 23996 minecraft:orange_terracotta
+fill -7 160 24001 -7 160 24002 minecraft:red_terracotta
+fill -7 160 24009 -7 160 24011 minecraft:magenta_terracotta
+fill -6 160 23996 -6 160 23996 minecraft:orange_terracotta
+fill -6 160 24001 -6 160 24001 minecraft:red_terracotta
+fill -6 160 24008 -6 160 24010 minecraft:magenta_terracotta
+fill -5 160 23997 -5 160 23997 minecraft:orange_terracotta
+fill -5 160 24001 -5 160 24001 minecraft:red_terracotta
+fill -5 160 24007 -5 160 24009 minecraft:magenta_terracotta
+fill -4 160 23997 -4 160 23997 minecraft:orange_terracotta
+fill -4 160 24001 -4 160 24001 minecraft:red_terracotta
+fill -4 160 24006 -4 160 24007 minecraft:magenta_terracotta
+fill -3 160 23989 -3 160 23989 minecraft:yellow_terracotta
+fill -3 160 23998 -3 160 23998 minecraft:orange_terracotta
+fill -3 160 24004 -3 160 24005 minecraft:magenta_terracotta
+fill -2 160 23989 -2 160 23993 minecraft:yellow_terracotta
+fill -2 160 24003 -2 160 24003 minecraft:magenta_terracotta
+fill -1 160 23992 -1 160 23996 minecraft:yellow_terracotta
+fill 1 160 24004 1 160 24008 minecraft:purple_terracotta
+fill 2 160 23997 2 160 23997 minecraft:lime_terracotta
+fill 2 160 24007 2 160 24011 minecraft:purple_terracotta
+fill 3 160 23995 3 160 23996 minecraft:lime_terracotta
+fill 3 160 24002 3 160 24002 minecraft:blue_terracotta
+fill 3 160 24011 3 160 24011 minecraft:purple_terracotta
+fill 4 160 23993 4 160 23994 minecraft:lime_terracotta
+fill 4 160 23999 4 160 23999 minecraft:light_blue_terracotta
+fill 4 160 24003 4 160 24003 minecraft:blue_terracotta
+fill 5 160 23991 5 160 23993 minecraft:lime_terracotta
+fill 5 160 23999 5 160 23999 minecraft:light_blue_terracotta
+fill 5 160 24003 5 160 24003 minecraft:blue_terracotta
+fill 6 160 23990 6 160 23992 minecraft:lime_terracotta
+fill 6 160 23999 6 160 23999 minecraft:light_blue_terracotta
+fill 6 160 24004 6 160 24004 minecraft:blue_terracotta
+fill 7 160 23989 7 160 23991 minecraft:lime_terracotta
+fill 7 160 23998 7 160 23999 minecraft:light_blue_terracotta
+fill 7 160 24004 7 160 24005 minecraft:blue_terracotta
+fill 8 160 23989 8 160 23989 minecraft:lime_terracotta
+fill 8 160 23998 8 160 23999 minecraft:light_blue_terracotta
+fill 8 160 24005 8 160 24006 minecraft:blue_terracotta
+fill 9 160 23998 9 160 23998 minecraft:light_blue_terracotta
+fill 9 160 24005 9 160 24007 minecraft:blue_terracotta
+fill 10 160 23998 10 160 23998 minecraft:light_blue_terracotta
+fill 10 160 24006 10 160 24007 minecraft:blue_terracotta
+fill 11 160 23997 11 160 23998 minecraft:light_blue_terracotta
+fill 11 160 24007 11 160 24008 minecraft:blue_terracotta
+fill -11 152 23999 -11 152 23999 minecraft:orange_terracotta
+fill -11 152 24008 -11 152 24010 minecraft:red_terracotta
+fill -10 152 23989 -10 152 23989 minecraft:yellow_terracotta
+fill -10 152 23999 -10 152 23999 minecraft:orange_terracotta
+fill -10 152 24008 -10 152 24009 minecraft:red_terracotta
+fill -9 152 23989 -9 152 23990 minecraft:yellow_terracotta
+fill -9 152 23999 -9 152 23999 minecraft:orange_terracotta
+fill -9 152 24007 -9 152 24008 minecraft:red_terracotta
+fill -8 152 23989 -8 152 23991 minecraft:yellow_terracotta
+fill -8 152 23999 -8 152 23999 minecraft:orange_terracotta
+fill -8 152 24006 -8 152 24007 minecraft:red_terracotta
+fill -7 152 23991 -7 152 23992 minecraft:yellow_terracotta
+fill -7 152 23999 -7 152 23999 minecraft:orange_terracotta
+fill -7 152 24005 -7 152 24006 minecraft:red_terracotta
+fill -6 152 23992 -6 152 23993 minecraft:yellow_terracotta
+fill -6 152 23999 -6 152 23999 minecraft:orange_terracotta
+fill -6 152 24005 -6 152 24005 minecraft:red_terracotta
+fill -5 152 23993 -5 152 23994 minecraft:yellow_terracotta
+fill -5 152 24004 -5 152 24004 minecraft:red_terracotta
+fill -4 152 23995 -4 152 23995 minecraft:yellow_terracotta
+fill -4 152 24003 -4 152 24003 minecraft:red_terracotta
+fill -3 152 23996 -3 152 23996 minecraft:yellow_terracotta
+fill -1 152 24006 -1 152 24011 minecraft:magenta_terracotta
+fill 1 152 23989 1 152 23994 minecraft:lime_terracotta
+fill 3 152 24004 3 152 24004 minecraft:purple_terracotta
+fill 4 152 23997 4 152 23997 minecraft:light_blue_terracotta
+fill 4 152 24005 4 152 24005 minecraft:purple_terracotta
+fill 5 152 23996 5 152 23996 minecraft:light_blue_terracotta
+fill 5 152 24006 5 152 24007 minecraft:purple_terracotta
+fill 6 152 23995 6 152 23995 minecraft:light_blue_terracotta
+fill 6 152 24001 6 152 24001 minecraft:blue_terracotta
+fill 6 152 24007 6 152 24008 minecraft:purple_terracotta
+fill 7 152 23994 7 152 23995 minecraft:light_blue_terracotta
+fill 7 152 24001 7 152 24001 minecraft:blue_terracotta
+fill 7 152 24008 7 152 24009 minecraft:purple_terracotta
+fill 8 152 23993 8 152 23994 minecraft:light_blue_terracotta
+fill 8 152 24001 8 152 24001 minecraft:blue_terracotta
+fill 8 152 24009 8 152 24011 minecraft:purple_terracotta
+fill 9 152 23992 9 152 23993 minecraft:light_blue_terracotta
+fill 9 152 24001 9 152 24001 minecraft:blue_terracotta
+fill 9 152 24010 9 152 24011 minecraft:purple_terracotta
+fill 10 152 23991 10 152 23992 minecraft:light_blue_terracotta
+fill 10 152 24001 10 152 24001 minecraft:blue_terracotta
+fill 10 152 24011 10 152 24011 minecraft:purple_terracotta
+fill 11 152 23990 11 152 23992 minecraft:light_blue_terracotta
+fill 11 152 24001 11 152 24001 minecraft:blue_terracotta
+fill 2 133 23997 2 133 23997 minecraft:light_blue_wool
+fill 0 134 23996 0 134 23998 minecraft:light_blue_wool
+fill 1 134 23995 1 134 23999 minecraft:light_blue_wool
+fill 2 134 23995 2 134 23999 minecraft:light_blue_wool
+fill 3 134 23995 3 134 23999 minecraft:light_blue_wool
+fill 4 134 23996 4 134 23998 minecraft:light_blue_wool
+fill 0 135 23996 0 135 23998 minecraft:light_blue_wool
+fill 1 135 23995 1 135 23999 minecraft:light_blue_wool
+fill 2 135 23995 2 135 23999 minecraft:light_blue_wool
+fill 3 135 23995 3 135 23999 minecraft:light_blue_wool
+fill 4 135 23996 4 135 23998 minecraft:light_blue_wool
+fill -1 136 23996 -1 136 23998 minecraft:light_blue_wool
+fill 0 136 23995 0 136 23999 minecraft:light_blue_wool
+fill 1 136 23994 1 136 24000 minecraft:light_blue_wool
+fill 2 136 23994 2 136 24000 minecraft:light_blue_wool
+fill 3 136 23994 3 136 24000 minecraft:light_blue_wool
+fill 4 136 23995 4 136 23999 minecraft:light_blue_wool
+fill 5 136 23996 5 136 23998 minecraft:light_blue_wool
+fill 0 137 23996 0 137 23998 minecraft:light_blue_wool
+fill 1 137 23995 1 137 23999 minecraft:light_blue_wool
+fill 2 137 23995 2 137 23999 minecraft:light_blue_wool
+fill 3 137 23995 3 137 23999 minecraft:light_blue_wool
+fill 4 137 23996 4 137 23998 minecraft:light_blue_wool
+fill 0 138 23996 0 138 23998 minecraft:light_blue_wool
+fill 1 138 23995 1 138 23999 minecraft:light_blue_wool
+fill 2 138 23995 2 138 23999 minecraft:light_blue_wool
+fill 3 138 23995 3 138 23999 minecraft:light_blue_wool
+fill 4 138 23996 4 138 23998 minecraft:light_blue_wool
+fill 2 139 23997 2 139 23997 minecraft:light_blue_wool
+fill -4 133 23994 -4 133 23994 minecraft:pink_wool
+fill -6 134 23993 -6 134 23995 minecraft:pink_wool
+fill -5 134 23992 -5 134 23996 minecraft:pink_wool
+fill -4 134 23992 -4 134 23996 minecraft:pink_wool
+fill -3 134 23992 -3 134 23996 minecraft:pink_wool
+fill -2 134 23993 -2 134 23995 minecraft:pink_wool
+fill -6 135 23993 -6 135 23995 minecraft:pink_wool
+fill -5 135 23992 -5 135 23996 minecraft:pink_wool
+fill -4 135 23992 -4 135 23996 minecraft:pink_wool
+fill -3 135 23992 -3 135 23996 minecraft:pink_wool
+fill -2 135 23993 -2 135 23995 minecraft:pink_wool
+fill -7 136 23993 -7 136 23995 minecraft:pink_wool
+fill -6 136 23992 -6 136 23996 minecraft:pink_wool
+fill -5 136 23991 -5 136 23997 minecraft:pink_wool
+fill -4 136 23991 -4 136 23997 minecraft:pink_wool
+fill -3 136 23991 -3 136 23997 minecraft:pink_wool
+fill -2 136 23992 -2 136 23996 minecraft:pink_wool
+fill -1 136 23993 -1 136 23995 minecraft:pink_wool
+fill -6 137 23993 -6 137 23995 minecraft:pink_wool
+fill -5 137 23992 -5 137 23996 minecraft:pink_wool
+fill -4 137 23992 -4 137 23996 minecraft:pink_wool
+fill -3 137 23992 -3 137 23996 minecraft:pink_wool
+fill -2 137 23993 -2 137 23995 minecraft:pink_wool
+fill -6 138 23993 -6 138 23995 minecraft:pink_wool
+fill -5 138 23992 -5 138 23996 minecraft:pink_wool
+fill -4 138 23992 -4 138 23996 minecraft:pink_wool
+fill -3 138 23992 -3 138 23996 minecraft:pink_wool
+fill -2 138 23993 -2 138 23995 minecraft:pink_wool
+fill -4 139 23994 -4 139 23994 minecraft:pink_wool
+fill -7 127 24000 -7 127 24000 minecraft:white_wool
+fill -8 128 23999 -8 128 24001 minecraft:white_wool
+fill -7 128 23999 -7 128 24001 minecraft:white_wool
+fill -6 128 23999 -6 128 24001 minecraft:white_wool
+fill -9 129 23999 -9 129 24001 minecraft:white_wool
+fill -8 129 23998 -8 129 24002 minecraft:white_wool
+fill -7 129 23998 -7 129 24002 minecraft:white_wool
+fill -6 129 23998 -6 129 24002 minecraft:white_wool
+fill -5 129 23999 -5 129 24001 minecraft:white_wool
+fill -8 130 23999 -8 130 24001 minecraft:white_wool
+fill -7 130 23999 -7 130 24001 minecraft:white_wool
+fill -6 130 23999 -6 130 24001 minecraft:white_wool
+fill -7 131 24000 -7 131 24000 minecraft:white_wool
+fill -6 126 24002 -6 126 24002 minecraft:white_wool
+fill -8 127 24001 -8 127 24003 minecraft:white_wool
+fill -7 127 24000 -7 127 24004 minecraft:white_wool
+fill -6 127 24000 -6 127 24004 minecraft:white_wool
+fill -5 127 24000 -5 127 24004 minecraft:white_wool
+fill -4 127 24001 -4 127 24003 minecraft:white_wool
+fill -8 128 24001 -8 128 24003 minecraft:white_wool
+fill -7 128 24000 -7 128 24004 minecraft:white_wool
+fill -6 128 24000 -6 128 24004 minecraft:white_wool
+fill -5 128 24000 -5 128 24004 minecraft:white_wool
+fill -4 128 24001 -4 128 24003 minecraft:white_wool
+fill -9 129 24001 -9 129 24003 minecraft:white_wool
+fill -8 129 24000 -8 129 24004 minecraft:white_wool
+fill -7 129 23999 -7 129 24005 minecraft:white_wool
+fill -6 129 23999 -6 129 24005 minecraft:white_wool
+fill -5 129 23999 -5 129 24005 minecraft:white_wool
+fill -4 129 24000 -4 129 24004 minecraft:white_wool
+fill -3 129 24001 -3 129 24003 minecraft:white_wool
+fill -8 130 24001 -8 130 24003 minecraft:white_wool
+fill -7 130 24000 -7 130 24004 minecraft:white_wool
+fill -6 130 24000 -6 130 24004 minecraft:white_wool
+fill -5 130 24000 -5 130 24004 minecraft:white_wool
+fill -4 130 24001 -4 130 24003 minecraft:white_wool
+fill -8 131 24001 -8 131 24003 minecraft:white_wool
+fill -7 131 24000 -7 131 24004 minecraft:white_wool
+fill -6 131 24000 -6 131 24004 minecraft:white_wool
+fill -5 131 24000 -5 131 24004 minecraft:white_wool
+fill -4 131 24001 -4 131 24003 minecraft:white_wool
+fill -6 132 24002 -6 132 24002 minecraft:white_wool
+fill 5 120 23999 5 120 23999 minecraft:white_wool
+fill 4 121 23998 4 121 24000 minecraft:white_wool
+fill 5 121 23998 5 121 24000 minecraft:white_wool
+fill 6 121 23998 6 121 24000 minecraft:white_wool
+fill 3 122 23998 3 122 24000 minecraft:white_wool
+fill 4 122 23997 4 122 24001 minecraft:white_wool
+fill 5 122 23997 5 122 24001 minecraft:white_wool
+fill 6 122 23997 6 122 24001 minecraft:white_wool
+fill 7 122 23998 7 122 24000 minecraft:white_wool
+fill 4 123 23998 4 123 24000 minecraft:white_wool
+fill 5 123 23998 5 123 24000 minecraft:white_wool
+fill 6 123 23998 6 123 24000 minecraft:white_wool
+fill 5 124 23999 5 124 23999 minecraft:white_wool
+fill -5 120 24004 -5 120 24004 minecraft:pink_wool
+fill -6 121 24003 -6 121 24005 minecraft:pink_wool
+fill -5 121 24003 -5 121 24005 minecraft:pink_wool
+fill -4 121 24003 -4 121 24005 minecraft:pink_wool
+fill -7 122 24003 -7 122 24005 minecraft:pink_wool
+fill -6 122 24002 -6 122 24006 minecraft:pink_wool
+fill -5 122 24002 -5 122 24006 minecraft:pink_wool
+fill -4 122 24002 -4 122 24006 minecraft:pink_wool
+fill -3 122 24003 -3 122 24005 minecraft:pink_wool
+fill -6 123 24003 -6 123 24005 minecraft:pink_wool
+fill -5 123 24003 -5 123 24005 minecraft:pink_wool
+fill -4 123 24003 -4 123 24005 minecraft:pink_wool
+fill -5 124 24004 -5 124 24004 minecraft:pink_wool
+fill 0 112 23999 0 112 23999 minecraft:pink_wool
+fill -2 113 23998 -2 113 24000 minecraft:pink_wool
+fill -1 113 23997 -1 113 24001 minecraft:pink_wool
+fill 0 113 23997 0 113 24001 minecraft:pink_wool
+fill 1 113 23997 1 113 24001 minecraft:pink_wool
+fill 2 113 23998 2 113 24000 minecraft:pink_wool
+fill -2 114 23998 -2 114 24000 minecraft:pink_wool
+fill -1 114 23997 -1 114 24001 minecraft:pink_wool
+fill 0 114 23997 0 114 24001 minecraft:pink_wool
+fill 1 114 23997 1 114 24001 minecraft:pink_wool
+fill 2 114 23998 2 114 24000 minecraft:pink_wool
+fill -3 115 23998 -3 115 24000 minecraft:pink_wool
+fill -2 115 23997 -2 115 24001 minecraft:pink_wool
+fill -1 115 23996 -1 115 24002 minecraft:pink_wool
+fill 0 115 23996 0 115 24002 minecraft:pink_wool
+fill 1 115 23996 1 115 24002 minecraft:pink_wool
+fill 2 115 23997 2 115 24001 minecraft:pink_wool
+fill 3 115 23998 3 115 24000 minecraft:pink_wool
+fill -2 116 23998 -2 116 24000 minecraft:pink_wool
+fill -1 116 23997 -1 116 24001 minecraft:pink_wool
+fill 0 116 23997 0 116 24001 minecraft:pink_wool
+fill 1 116 23997 1 116 24001 minecraft:pink_wool
+fill 2 116 23998 2 116 24000 minecraft:pink_wool
+fill -2 117 23998 -2 117 24000 minecraft:pink_wool
+fill -1 117 23997 -1 117 24001 minecraft:pink_wool
+fill 0 117 23997 0 117 24001 minecraft:pink_wool
+fill 1 117 23997 1 117 24001 minecraft:pink_wool
+fill 2 117 23998 2 117 24000 minecraft:pink_wool
+fill 0 118 23999 0 118 23999 minecraft:pink_wool
+fill -5 113 23995 -5 113 23995 minecraft:light_blue_wool
+fill -6 114 23994 -6 114 23996 minecraft:light_blue_wool
+fill -5 114 23994 -5 114 23996 minecraft:light_blue_wool
+fill -4 114 23994 -4 114 23996 minecraft:light_blue_wool
+fill -7 115 23994 -7 115 23996 minecraft:light_blue_wool
+fill -6 115 23993 -6 115 23997 minecraft:light_blue_wool
+fill -5 115 23993 -5 115 23997 minecraft:light_blue_wool
+fill -4 115 23993 -4 115 23997 minecraft:light_blue_wool
+fill -3 115 23994 -3 115 23996 minecraft:light_blue_wool
+fill -6 116 23994 -6 116 23996 minecraft:light_blue_wool
+fill -5 116 23994 -5 116 23996 minecraft:light_blue_wool
+fill -4 116 23994 -4 116 23996 minecraft:light_blue_wool
+fill -5 117 23995 -5 117 23995 minecraft:light_blue_wool
+fill 0 105 24006 0 105 24006 minecraft:yellow_wool
+fill -2 106 24005 -2 106 24007 minecraft:yellow_wool
+fill -1 106 24004 -1 106 24008 minecraft:yellow_wool
+fill 0 106 24004 0 106 24008 minecraft:yellow_wool
+fill 1 106 24004 1 106 24008 minecraft:yellow_wool
+fill 2 106 24005 2 106 24007 minecraft:yellow_wool
+fill -2 107 24005 -2 107 24007 minecraft:yellow_wool
+fill -1 107 24004 -1 107 24008 minecraft:yellow_wool
+fill 0 107 24004 0 107 24008 minecraft:yellow_wool
+fill 1 107 24004 1 107 24008 minecraft:yellow_wool
+fill 2 107 24005 2 107 24007 minecraft:yellow_wool
+fill -3 108 24005 -3 108 24007 minecraft:yellow_wool
+fill -2 108 24004 -2 108 24008 minecraft:yellow_wool
+fill -1 108 24003 -1 108 24009 minecraft:yellow_wool
+fill 0 108 24003 0 108 24009 minecraft:yellow_wool
+fill 1 108 24003 1 108 24009 minecraft:yellow_wool
+fill 2 108 24004 2 108 24008 minecraft:yellow_wool
+fill 3 108 24005 3 108 24007 minecraft:yellow_wool
+fill -2 109 24005 -2 109 24007 minecraft:yellow_wool
+fill -1 109 24004 -1 109 24008 minecraft:yellow_wool
+fill 0 109 24004 0 109 24008 minecraft:yellow_wool
+fill 1 109 24004 1 109 24008 minecraft:yellow_wool
+fill 2 109 24005 2 109 24007 minecraft:yellow_wool
+fill -2 110 24005 -2 110 24007 minecraft:yellow_wool
+fill -1 110 24004 -1 110 24008 minecraft:yellow_wool
+fill 0 110 24004 0 110 24008 minecraft:yellow_wool
+fill 1 110 24004 1 110 24008 minecraft:yellow_wool
+fill 2 110 24005 2 110 24007 minecraft:yellow_wool
+fill 0 111 24006 0 111 24006 minecraft:yellow_wool
+fill 0 106 23993 0 106 23993 minecraft:pink_wool
+fill -1 107 23992 -1 107 23994 minecraft:pink_wool
+fill 0 107 23992 0 107 23994 minecraft:pink_wool
+fill 1 107 23992 1 107 23994 minecraft:pink_wool
+fill -2 108 23992 -2 108 23994 minecraft:pink_wool
+fill -1 108 23991 -1 108 23995 minecraft:pink_wool
+fill 0 108 23991 0 108 23995 minecraft:pink_wool
+fill 1 108 23991 1 108 23995 minecraft:pink_wool
+fill 2 108 23992 2 108 23994 minecraft:pink_wool
+fill -1 109 23992 -1 109 23994 minecraft:pink_wool
+fill 0 109 23992 0 109 23994 minecraft:pink_wool
+fill 1 109 23992 1 109 23994 minecraft:pink_wool
+fill 0 110 23993 0 110 23993 minecraft:pink_wool
+fill 3 99 23996 3 99 23996 minecraft:white_wool
+fill 2 100 23995 2 100 23997 minecraft:white_wool
+fill 3 100 23995 3 100 23997 minecraft:white_wool
+fill 4 100 23995 4 100 23997 minecraft:white_wool
+fill 1 101 23995 1 101 23997 minecraft:white_wool
+fill 2 101 23994 2 101 23998 minecraft:white_wool
+fill 3 101 23994 3 101 23998 minecraft:white_wool
+fill 4 101 23994 4 101 23998 minecraft:white_wool
+fill 5 101 23995 5 101 23997 minecraft:white_wool
+fill 2 102 23995 2 102 23997 minecraft:white_wool
+fill 3 102 23995 3 102 23997 minecraft:white_wool
+fill 4 102 23995 4 102 23997 minecraft:white_wool
+fill 3 103 23996 3 103 23996 minecraft:white_wool
+fill -5 99 23996 -5 99 23996 minecraft:light_blue_wool
+fill -6 100 23995 -6 100 23997 minecraft:light_blue_wool
+fill -5 100 23995 -5 100 23997 minecraft:light_blue_wool
+fill -4 100 23995 -4 100 23997 minecraft:light_blue_wool
+fill -7 101 23995 -7 101 23997 minecraft:light_blue_wool
+fill -6 101 23994 -6 101 23998 minecraft:light_blue_wool
+fill -5 101 23994 -5 101 23998 minecraft:light_blue_wool
+fill -4 101 23994 -4 101 23998 minecraft:light_blue_wool
+fill -3 101 23995 -3 101 23997 minecraft:light_blue_wool
+fill -6 102 23995 -6 102 23997 minecraft:light_blue_wool
+fill -5 102 23995 -5 102 23997 minecraft:light_blue_wool
+fill -4 102 23995 -4 102 23997 minecraft:light_blue_wool
+fill -5 103 23996 -5 103 23996 minecraft:light_blue_wool
+fill 3 91 24005 3 91 24005 minecraft:yellow_wool
+fill 1 92 24004 1 92 24006 minecraft:yellow_wool
+fill 2 92 24003 2 92 24007 minecraft:yellow_wool
+fill 3 92 24003 3 92 24007 minecraft:yellow_wool
+fill 4 92 24003 4 92 24007 minecraft:yellow_wool
+fill 5 92 24004 5 92 24006 minecraft:yellow_wool
+fill 1 93 24004 1 93 24006 minecraft:yellow_wool
+fill 2 93 24003 2 93 24007 minecraft:yellow_wool
+fill 3 93 24003 3 93 24007 minecraft:yellow_wool
+fill 4 93 24003 4 93 24007 minecraft:yellow_wool
+fill 5 93 24004 5 93 24006 minecraft:yellow_wool
+fill 0 94 24004 0 94 24006 minecraft:yellow_wool
+fill 1 94 24003 1 94 24007 minecraft:yellow_wool
+fill 2 94 24002 2 94 24008 minecraft:yellow_wool
+fill 3 94 24002 3 94 24008 minecraft:yellow_wool
+fill 4 94 24002 4 94 24008 minecraft:yellow_wool
+fill 5 94 24003 5 94 24007 minecraft:yellow_wool
+fill 6 94 24004 6 94 24006 minecraft:yellow_wool
+fill 1 95 24004 1 95 24006 minecraft:yellow_wool
+fill 2 95 24003 2 95 24007 minecraft:yellow_wool
+fill 3 95 24003 3 95 24007 minecraft:yellow_wool
+fill 4 95 24003 4 95 24007 minecraft:yellow_wool
+fill 5 95 24004 5 95 24006 minecraft:yellow_wool
+fill 1 96 24004 1 96 24006 minecraft:yellow_wool
+fill 2 96 24003 2 96 24007 minecraft:yellow_wool
+fill 3 96 24003 3 96 24007 minecraft:yellow_wool
+fill 4 96 24003 4 96 24007 minecraft:yellow_wool
+fill 5 96 24004 5 96 24006 minecraft:yellow_wool
+fill 3 97 24005 3 97 24005 minecraft:yellow_wool
+fill -7 91 23994 -7 91 23994 minecraft:white_wool
+fill -9 92 23993 -9 92 23995 minecraft:white_wool
+fill -8 92 23992 -8 92 23996 minecraft:white_wool
+fill -7 92 23992 -7 92 23996 minecraft:white_wool
+fill -6 92 23992 -6 92 23996 minecraft:white_wool
+fill -5 92 23993 -5 92 23995 minecraft:white_wool
+fill -9 93 23993 -9 93 23995 minecraft:white_wool
+fill -8 93 23992 -8 93 23996 minecraft:white_wool
+fill -7 93 23992 -7 93 23996 minecraft:white_wool
+fill -6 93 23992 -6 93 23996 minecraft:white_wool
+fill -5 93 23993 -5 93 23995 minecraft:white_wool
+fill -10 94 23993 -10 94 23995 minecraft:white_wool
+fill -9 94 23992 -9 94 23996 minecraft:white_wool
+fill -8 94 23991 -8 94 23997 minecraft:white_wool
+fill -7 94 23991 -7 94 23997 minecraft:white_wool
+fill -6 94 23991 -6 94 23997 minecraft:white_wool
+fill -5 94 23992 -5 94 23996 minecraft:white_wool
+fill -4 94 23993 -4 94 23995 minecraft:white_wool
+fill -9 95 23993 -9 95 23995 minecraft:white_wool
+fill -8 95 23992 -8 95 23996 minecraft:white_wool
+fill -7 95 23992 -7 95 23996 minecraft:white_wool
+fill -6 95 23992 -6 95 23996 minecraft:white_wool
+fill -5 95 23993 -5 95 23995 minecraft:white_wool
+fill -9 96 23993 -9 96 23995 minecraft:white_wool
+fill -8 96 23992 -8 96 23996 minecraft:white_wool
+fill -7 96 23992 -7 96 23996 minecraft:white_wool
+fill -6 96 23992 -6 96 23996 minecraft:white_wool
+fill -5 96 23993 -5 96 23995 minecraft:white_wool
+fill -7 97 23994 -7 97 23994 minecraft:white_wool
+fill 2 85 24002 2 85 24002 minecraft:pink_wool
+fill 1 86 24001 1 86 24003 minecraft:pink_wool
+fill 2 86 24001 2 86 24003 minecraft:pink_wool
+fill 3 86 24001 3 86 24003 minecraft:pink_wool
+fill 0 87 24001 0 87 24003 minecraft:pink_wool
+fill 1 87 24000 1 87 24004 minecraft:pink_wool
+fill 2 87 24000 2 87 24004 minecraft:pink_wool
+fill 3 87 24000 3 87 24004 minecraft:pink_wool
+fill 4 87 24001 4 87 24003 minecraft:pink_wool
+fill 1 88 24001 1 88 24003 minecraft:pink_wool
+fill 2 88 24001 2 88 24003 minecraft:pink_wool
+fill 3 88 24001 3 88 24003 minecraft:pink_wool
+fill 2 89 24002 2 89 24002 minecraft:pink_wool
+fill -7 84 23996 -7 84 23996 minecraft:yellow_wool
+fill -9 85 23995 -9 85 23997 minecraft:yellow_wool
+fill -8 85 23994 -8 85 23998 minecraft:yellow_wool
+fill -7 85 23994 -7 85 23998 minecraft:yellow_wool
+fill -6 85 23994 -6 85 23998 minecraft:yellow_wool
+fill -5 85 23995 -5 85 23997 minecraft:yellow_wool
+fill -9 86 23995 -9 86 23997 minecraft:yellow_wool
+fill -8 86 23994 -8 86 23998 minecraft:yellow_wool
+fill -7 86 23994 -7 86 23998 minecraft:yellow_wool
+fill -6 86 23994 -6 86 23998 minecraft:yellow_wool
+fill -5 86 23995 -5 86 23997 minecraft:yellow_wool
+fill -10 87 23995 -10 87 23997 minecraft:yellow_wool
+fill -9 87 23994 -9 87 23998 minecraft:yellow_wool
+fill -8 87 23993 -8 87 23999 minecraft:yellow_wool
+fill -7 87 23993 -7 87 23999 minecraft:yellow_wool
+fill -6 87 23993 -6 87 23999 minecraft:yellow_wool
+fill -5 87 23994 -5 87 23998 minecraft:yellow_wool
+fill -4 87 23995 -4 87 23997 minecraft:yellow_wool
+fill -9 88 23995 -9 88 23997 minecraft:yellow_wool
+fill -8 88 23994 -8 88 23998 minecraft:yellow_wool
+fill -7 88 23994 -7 88 23998 minecraft:yellow_wool
+fill -6 88 23994 -6 88 23998 minecraft:yellow_wool
+fill -5 88 23995 -5 88 23997 minecraft:yellow_wool
+fill -9 89 23995 -9 89 23997 minecraft:yellow_wool
+fill -8 89 23994 -8 89 23998 minecraft:yellow_wool
+fill -7 89 23994 -7 89 23998 minecraft:yellow_wool
+fill -6 89 23994 -6 89 23998 minecraft:yellow_wool
+fill -5 89 23995 -5 89 23997 minecraft:yellow_wool
+fill -7 90 23996 -7 90 23996 minecraft:yellow_wool
+fill 7 77 23997 7 77 23997 minecraft:white_wool
+fill 5 78 23996 5 78 23998 minecraft:white_wool
+fill 6 78 23995 6 78 23999 minecraft:white_wool
+fill 7 78 23995 7 78 23999 minecraft:white_wool
+fill 8 78 23995 8 78 23999 minecraft:white_wool
+fill 9 78 23996 9 78 23998 minecraft:white_wool
+fill 5 79 23996 5 79 23998 minecraft:white_wool
+fill 6 79 23995 6 79 23999 minecraft:white_wool
+fill 7 79 23995 7 79 23999 minecraft:white_wool
+fill 8 79 23995 8 79 23999 minecraft:white_wool
+fill 9 79 23996 9 79 23998 minecraft:white_wool
+fill 4 80 23996 4 80 23998 minecraft:white_wool
+fill 5 80 23995 5 80 23999 minecraft:white_wool
+fill 6 80 23994 6 80 24000 minecraft:white_wool
+fill 7 80 23994 7 80 24000 minecraft:white_wool
+fill 8 80 23994 8 80 24000 minecraft:white_wool
+fill 9 80 23995 9 80 23999 minecraft:white_wool
+fill 10 80 23996 10 80 23998 minecraft:white_wool
+fill 5 81 23996 5 81 23998 minecraft:white_wool
+fill 6 81 23995 6 81 23999 minecraft:white_wool
+fill 7 81 23995 7 81 23999 minecraft:white_wool
+fill 8 81 23995 8 81 23999 minecraft:white_wool
+fill 9 81 23996 9 81 23998 minecraft:white_wool
+fill 5 82 23996 5 82 23998 minecraft:white_wool
+fill 6 82 23995 6 82 23999 minecraft:white_wool
+fill 7 82 23995 7 82 23999 minecraft:white_wool
+fill 8 82 23995 8 82 23999 minecraft:white_wool
+fill 9 82 23996 9 82 23998 minecraft:white_wool
+fill 7 83 23997 7 83 23997 minecraft:white_wool
+fill 7 77 23998 7 77 23998 minecraft:pink_wool
+fill 5 78 23997 5 78 23999 minecraft:pink_wool
+fill 6 78 23996 6 78 24000 minecraft:pink_wool
+fill 7 78 23996 7 78 24000 minecraft:pink_wool
+fill 8 78 23996 8 78 24000 minecraft:pink_wool
+fill 9 78 23997 9 78 23999 minecraft:pink_wool
+fill 5 79 23997 5 79 23999 minecraft:pink_wool
+fill 6 79 23996 6 79 24000 minecraft:pink_wool
+fill 7 79 23996 7 79 24000 minecraft:pink_wool
+fill 8 79 23996 8 79 24000 minecraft:pink_wool
+fill 9 79 23997 9 79 23999 minecraft:pink_wool
+fill 4 80 23997 4 80 23999 minecraft:pink_wool
+fill 5 80 23996 5 80 24000 minecraft:pink_wool
+fill 6 80 23995 6 80 24001 minecraft:pink_wool
+fill 7 80 23995 7 80 24001 minecraft:pink_wool
+fill 8 80 23995 8 80 24001 minecraft:pink_wool
+fill 9 80 23996 9 80 24000 minecraft:pink_wool
+fill 10 80 23997 10 80 23999 minecraft:pink_wool
+fill 5 81 23997 5 81 23999 minecraft:pink_wool
+fill 6 81 23996 6 81 24000 minecraft:pink_wool
+fill 7 81 23996 7 81 24000 minecraft:pink_wool
+fill 8 81 23996 8 81 24000 minecraft:pink_wool
+fill 9 81 23997 9 81 23999 minecraft:pink_wool
+fill 5 82 23997 5 82 23999 minecraft:pink_wool
+fill 6 82 23996 6 82 24000 minecraft:pink_wool
+fill 7 82 23996 7 82 24000 minecraft:pink_wool
+fill 8 82 23996 8 82 24000 minecraft:pink_wool
+fill 9 82 23997 9 82 23999 minecraft:pink_wool
+fill 7 83 23998 7 83 23998 minecraft:pink_wool
+fill -2 71 23994 -2 71 23994 minecraft:light_blue_wool
+fill -3 72 23993 -3 72 23995 minecraft:light_blue_wool
+fill -2 72 23993 -2 72 23995 minecraft:light_blue_wool
+fill -1 72 23993 -1 72 23995 minecraft:light_blue_wool
+fill -4 73 23993 -4 73 23995 minecraft:light_blue_wool
+fill -3 73 23992 -3 73 23996 minecraft:light_blue_wool
+fill -2 73 23992 -2 73 23996 minecraft:light_blue_wool
+fill -1 73 23992 -1 73 23996 minecraft:light_blue_wool
+fill 0 73 23993 0 73 23995 minecraft:light_blue_wool
+fill -3 74 23993 -3 74 23995 minecraft:light_blue_wool
+fill -2 74 23993 -2 74 23995 minecraft:light_blue_wool
+fill -1 74 23993 -1 74 23995 minecraft:light_blue_wool
+fill -2 75 23994 -2 75 23994 minecraft:light_blue_wool
+fill -5 70 24002 -5 70 24002 minecraft:white_wool
+fill -7 71 24001 -7 71 24003 minecraft:white_wool
+fill -6 71 24000 -6 71 24004 minecraft:white_wool
+fill -5 71 24000 -5 71 24004 minecraft:white_wool
+fill -4 71 24000 -4 71 24004 minecraft:white_wool
+fill -3 71 24001 -3 71 24003 minecraft:white_wool
+fill -7 72 24001 -7 72 24003 minecraft:white_wool
+fill -6 72 24000 -6 72 24004 minecraft:white_wool
+fill -5 72 24000 -5 72 24004 minecraft:white_wool
+fill -4 72 24000 -4 72 24004 minecraft:white_wool
+fill -3 72 24001 -3 72 24003 minecraft:white_wool
+fill -8 73 24001 -8 73 24003 minecraft:white_wool
+fill -7 73 24000 -7 73 24004 minecraft:white_wool
+fill -6 73 23999 -6 73 24005 minecraft:white_wool
+fill -5 73 23999 -5 73 24005 minecraft:white_wool
+fill -4 73 23999 -4 73 24005 minecraft:white_wool
+fill -3 73 24000 -3 73 24004 minecraft:white_wool
+fill -2 73 24001 -2 73 24003 minecraft:white_wool
+fill -7 74 24001 -7 74 24003 minecraft:white_wool
+fill -6 74 24000 -6 74 24004 minecraft:white_wool
+fill -5 74 24000 -5 74 24004 minecraft:white_wool
+fill -4 74 24000 -4 74 24004 minecraft:white_wool
+fill -3 74 24001 -3 74 24003 minecraft:white_wool
+fill -7 75 24001 -7 75 24003 minecraft:white_wool
+fill -6 75 24000 -6 75 24004 minecraft:white_wool
+fill -5 75 24000 -5 75 24004 minecraft:white_wool
+fill -4 75 24000 -4 75 24004 minecraft:white_wool
+fill -3 75 24001 -3 75 24003 minecraft:white_wool
+fill -5 76 24002 -5 76 24002 minecraft:white_wool
+fill 1 63 24002 1 63 24002 minecraft:white_wool
+fill -1 64 24001 -1 64 24003 minecraft:white_wool
+fill 0 64 24000 0 64 24004 minecraft:white_wool
+fill 1 64 24000 1 64 24004 minecraft:white_wool
+fill 2 64 24000 2 64 24004 minecraft:white_wool
+fill 3 64 24001 3 64 24003 minecraft:white_wool
+fill -1 65 24001 -1 65 24003 minecraft:white_wool
+fill 0 65 24000 0 65 24004 minecraft:white_wool
+fill 1 65 24000 1 65 24004 minecraft:white_wool
+fill 2 65 24000 2 65 24004 minecraft:white_wool
+fill 3 65 24001 3 65 24003 minecraft:white_wool
+fill -2 66 24001 -2 66 24003 minecraft:white_wool
+fill -1 66 24000 -1 66 24004 minecraft:white_wool
+fill 0 66 23999 0 66 24005 minecraft:white_wool
+fill 1 66 23999 1 66 24005 minecraft:white_wool
+fill 2 66 23999 2 66 24005 minecraft:white_wool
+fill 3 66 24000 3 66 24004 minecraft:white_wool
+fill 4 66 24001 4 66 24003 minecraft:white_wool
+fill -1 67 24001 -1 67 24003 minecraft:white_wool
+fill 0 67 24000 0 67 24004 minecraft:white_wool
+fill 1 67 24000 1 67 24004 minecraft:white_wool
+fill 2 67 24000 2 67 24004 minecraft:white_wool
+fill 3 67 24001 3 67 24003 minecraft:white_wool
+fill -1 68 24001 -1 68 24003 minecraft:white_wool
+fill 0 68 24000 0 68 24004 minecraft:white_wool
+fill 1 68 24000 1 68 24004 minecraft:white_wool
+fill 2 68 24000 2 68 24004 minecraft:white_wool
+fill 3 68 24001 3 68 24003 minecraft:white_wool
+fill 1 69 24002 1 69 24002 minecraft:white_wool
+fill -1 63 23997 -1 63 23997 minecraft:pink_wool
+fill -3 64 23996 -3 64 23998 minecraft:pink_wool
+fill -2 64 23995 -2 64 23999 minecraft:pink_wool
+fill -1 64 23995 -1 64 23999 minecraft:pink_wool
+fill 0 64 23995 0 64 23999 minecraft:pink_wool
+fill 1 64 23996 1 64 23998 minecraft:pink_wool
+fill -3 65 23996 -3 65 23998 minecraft:pink_wool
+fill -2 65 23995 -2 65 23999 minecraft:pink_wool
+fill -1 65 23995 -1 65 23999 minecraft:pink_wool
+fill 0 65 23995 0 65 23999 minecraft:pink_wool
+fill 1 65 23996 1 65 23998 minecraft:pink_wool
+fill -4 66 23996 -4 66 23998 minecraft:pink_wool
+fill -3 66 23995 -3 66 23999 minecraft:pink_wool
+fill -2 66 23994 -2 66 24000 minecraft:pink_wool
+fill -1 66 23994 -1 66 24000 minecraft:pink_wool
+fill 0 66 23994 0 66 24000 minecraft:pink_wool
+fill 1 66 23995 1 66 23999 minecraft:pink_wool
+fill 2 66 23996 2 66 23998 minecraft:pink_wool
+fill -3 67 23996 -3 67 23998 minecraft:pink_wool
+fill -2 67 23995 -2 67 23999 minecraft:pink_wool
+fill -1 67 23995 -1 67 23999 minecraft:pink_wool
+fill 0 67 23995 0 67 23999 minecraft:pink_wool
+fill 1 67 23996 1 67 23998 minecraft:pink_wool
+fill -3 68 23996 -3 68 23998 minecraft:pink_wool
+fill -2 68 23995 -2 68 23999 minecraft:pink_wool
+fill -1 68 23995 -1 68 23999 minecraft:pink_wool
+fill 0 68 23995 0 68 23999 minecraft:pink_wool
+fill 1 68 23996 1 68 23998 minecraft:pink_wool
+fill -1 69 23997 -1 69 23997 minecraft:pink_wool
+fill 7 56 23995 7 56 23995 minecraft:pink_wool
+fill 5 57 23994 5 57 23996 minecraft:pink_wool
+fill 6 57 23993 6 57 23997 minecraft:pink_wool
+fill 7 57 23993 7 57 23997 minecraft:pink_wool
+fill 8 57 23993 8 57 23997 minecraft:pink_wool
+fill 9 57 23994 9 57 23996 minecraft:pink_wool
+fill 5 58 23994 5 58 23996 minecraft:pink_wool
+fill 6 58 23993 6 58 23997 minecraft:pink_wool
+fill 7 58 23993 7 58 23997 minecraft:pink_wool
+fill 8 58 23993 8 58 23997 minecraft:pink_wool
+fill 9 58 23994 9 58 23996 minecraft:pink_wool
+fill 4 59 23994 4 59 23996 minecraft:pink_wool
+fill 5 59 23993 5 59 23997 minecraft:pink_wool
+fill 6 59 23992 6 59 23998 minecraft:pink_wool
+fill 7 59 23992 7 59 23998 minecraft:pink_wool
+fill 8 59 23992 8 59 23998 minecraft:pink_wool
+fill 9 59 23993 9 59 23997 minecraft:pink_wool
+fill 10 59 23994 10 59 23996 minecraft:pink_wool
+fill 5 60 23994 5 60 23996 minecraft:pink_wool
+fill 6 60 23993 6 60 23997 minecraft:pink_wool
+fill 7 60 23993 7 60 23997 minecraft:pink_wool
+fill 8 60 23993 8 60 23997 minecraft:pink_wool
+fill 9 60 23994 9 60 23996 minecraft:pink_wool
+fill 5 61 23994 5 61 23996 minecraft:pink_wool
+fill 6 61 23993 6 61 23997 minecraft:pink_wool
+fill 7 61 23993 7 61 23997 minecraft:pink_wool
+fill 8 61 23993 8 61 23997 minecraft:pink_wool
+fill 9 61 23994 9 61 23996 minecraft:pink_wool
+fill 7 62 23995 7 62 23995 minecraft:pink_wool
+fill 2 56 24005 2 56 24005 minecraft:yellow_wool
+fill 0 57 24004 0 57 24006 minecraft:yellow_wool
+fill 1 57 24003 1 57 24007 minecraft:yellow_wool
+fill 2 57 24003 2 57 24007 minecraft:yellow_wool
+fill 3 57 24003 3 57 24007 minecraft:yellow_wool
+fill 4 57 24004 4 57 24006 minecraft:yellow_wool
+fill 0 58 24004 0 58 24006 minecraft:yellow_wool
+fill 1 58 24003 1 58 24007 minecraft:yellow_wool
+fill 2 58 24003 2 58 24007 minecraft:yellow_wool
+fill 3 58 24003 3 58 24007 minecraft:yellow_wool
+fill 4 58 24004 4 58 24006 minecraft:yellow_wool
+fill -1 59 24004 -1 59 24006 minecraft:yellow_wool
+fill 0 59 24003 0 59 24007 minecraft:yellow_wool
+fill 1 59 24002 1 59 24008 minecraft:yellow_wool
+fill 2 59 24002 2 59 24008 minecraft:yellow_wool
+fill 3 59 24002 3 59 24008 minecraft:yellow_wool
+fill 4 59 24003 4 59 24007 minecraft:yellow_wool
+fill 5 59 24004 5 59 24006 minecraft:yellow_wool
+fill 0 60 24004 0 60 24006 minecraft:yellow_wool
+fill 1 60 24003 1 60 24007 minecraft:yellow_wool
+fill 2 60 24003 2 60 24007 minecraft:yellow_wool
+fill 3 60 24003 3 60 24007 minecraft:yellow_wool
+fill 4 60 24004 4 60 24006 minecraft:yellow_wool
+fill 0 61 24004 0 61 24006 minecraft:yellow_wool
+fill 1 61 24003 1 61 24007 minecraft:yellow_wool
+fill 2 61 24003 2 61 24007 minecraft:yellow_wool
+fill 3 61 24003 3 61 24007 minecraft:yellow_wool
+fill 4 61 24004 4 61 24006 minecraft:yellow_wool
+fill 2 62 24005 2 62 24005 minecraft:yellow_wool
+fill 4 49 24000 4 49 24000 minecraft:yellow_wool
+fill 2 50 23999 2 50 24001 minecraft:yellow_wool
+fill 3 50 23998 3 50 24002 minecraft:yellow_wool
+fill 4 50 23998 4 50 24002 minecraft:yellow_wool
+fill 5 50 23998 5 50 24002 minecraft:yellow_wool
+fill 6 50 23999 6 50 24001 minecraft:yellow_wool
+fill 2 51 23999 2 51 24001 minecraft:yellow_wool
+fill 3 51 23998 3 51 24002 minecraft:yellow_wool
+fill 4 51 23998 4 51 24002 minecraft:yellow_wool
+fill 5 51 23998 5 51 24002 minecraft:yellow_wool
+fill 6 51 23999 6 51 24001 minecraft:yellow_wool
+fill 1 52 23999 1 52 24001 minecraft:yellow_wool
+fill 2 52 23998 2 52 24002 minecraft:yellow_wool
+fill 3 52 23997 3 52 24003 minecraft:yellow_wool
+fill 4 52 23997 4 52 24003 minecraft:yellow_wool
+fill 5 52 23997 5 52 24003 minecraft:yellow_wool
+fill 6 52 23998 6 52 24002 minecraft:yellow_wool
+fill 7 52 23999 7 52 24001 minecraft:yellow_wool
+fill 2 53 23999 2 53 24001 minecraft:yellow_wool
+fill 3 53 23998 3 53 24002 minecraft:yellow_wool
+fill 4 53 23998 4 53 24002 minecraft:yellow_wool
+fill 5 53 23998 5 53 24002 minecraft:yellow_wool
+fill 6 53 23999 6 53 24001 minecraft:yellow_wool
+fill 2 54 23999 2 54 24001 minecraft:yellow_wool
+fill 3 54 23998 3 54 24002 minecraft:yellow_wool
+fill 4 54 23998 4 54 24002 minecraft:yellow_wool
+fill 5 54 23998 5 54 24002 minecraft:yellow_wool
+fill 6 54 23999 6 54 24001 minecraft:yellow_wool
+fill 4 55 24000 4 55 24000 minecraft:yellow_wool
+fill -6 49 24002 -6 49 24002 minecraft:pink_wool
+fill -8 50 24001 -8 50 24003 minecraft:pink_wool
+fill -7 50 24000 -7 50 24004 minecraft:pink_wool
+fill -6 50 24000 -6 50 24004 minecraft:pink_wool
+fill -5 50 24000 -5 50 24004 minecraft:pink_wool
+fill -4 50 24001 -4 50 24003 minecraft:pink_wool
+fill -8 51 24001 -8 51 24003 minecraft:pink_wool
+fill -7 51 24000 -7 51 24004 minecraft:pink_wool
+fill -6 51 24000 -6 51 24004 minecraft:pink_wool
+fill -5 51 24000 -5 51 24004 minecraft:pink_wool
+fill -4 51 24001 -4 51 24003 minecraft:pink_wool
+fill -9 52 24001 -9 52 24003 minecraft:pink_wool
+fill -8 52 24000 -8 52 24004 minecraft:pink_wool
+fill -7 52 23999 -7 52 24005 minecraft:pink_wool
+fill -6 52 23999 -6 52 24005 minecraft:pink_wool
+fill -5 52 23999 -5 52 24005 minecraft:pink_wool
+fill -4 52 24000 -4 52 24004 minecraft:pink_wool
+fill -3 52 24001 -3 52 24003 minecraft:pink_wool
+fill -8 53 24001 -8 53 24003 minecraft:pink_wool
+fill -7 53 24000 -7 53 24004 minecraft:pink_wool
+fill -6 53 24000 -6 53 24004 minecraft:pink_wool
+fill -5 53 24000 -5 53 24004 minecraft:pink_wool
+fill -4 53 24001 -4 53 24003 minecraft:pink_wool
+fill -8 54 24001 -8 54 24003 minecraft:pink_wool
+fill -7 54 24000 -7 54 24004 minecraft:pink_wool
+fill -6 54 24000 -6 54 24004 minecraft:pink_wool
+fill -5 54 24000 -5 54 24004 minecraft:pink_wool
+fill -4 54 24001 -4 54 24003 minecraft:pink_wool
+fill -6 55 24002 -6 55 24002 minecraft:pink_wool
+fill 1 222 24000 3 222 24002 minecraft:air
+fill 1 223 24000 3 223 24002 minecraft:air
+fill 1 224 24000 3 224 24002 minecraft:air
+fill 1 225 24000 3 225 24002 minecraft:air
+fill 1 226 24000 3 226 24002 minecraft:air
+fill 1 227 24000 3 227 24002 minecraft:air
+fill 1 228 24000 3 228 24002 minecraft:air
+fill 1 229 24000 3 229 24002 minecraft:air
+fill 1 230 24000 3 230 24002 minecraft:air
+fill 1 231 24000 3 231 24002 minecraft:air
+fill 1 232 24000 3 232 24002 minecraft:air
+fill 1 233 24000 3 233 24002 minecraft:air
+fill 1 234 24000 3 234 24002 minecraft:air
+fill 1 235 24000 3 235 24002 minecraft:air
+fill 1 236 24000 3 236 24002 minecraft:air
+fill 1 237 24000 3 237 24002 minecraft:air
+fill 1 238 24000 3 238 24002 minecraft:air
+fill 1 239 24000 3 239 24002 minecraft:air
+fill 1 240 24000 3 240 24002 minecraft:air
+fill 1 241 24000 3 241 24002 minecraft:air
+fill 1 242 24000 3 242 24002 minecraft:air
+fill 1 243 24000 3 243 24002 minecraft:air
+fill 1 244 24000 3 244 24002 minecraft:air
+fill 1 245 24000 3 245 24002 minecraft:air
+fill 1 246 24000 3 246 24002 minecraft:air
+fill 1 247 24000 3 247 24002 minecraft:air
+fill 1 248 24000 3 248 24002 minecraft:air
+fill 1 249 24000 3 249 24002 minecraft:air
+fill 1 250 24000 3 250 24002 minecraft:air
+fill 1 251 24000 3 251 24002 minecraft:air
+fill 1 252 24000 3 252 24002 minecraft:air
+fill 1 253 24000 3 253 24002 minecraft:air
+fill 1 254 24000 3 254 24002 minecraft:air
+fill 1 255 24000 3 255 24002 minecraft:air
+fill 1 256 24000 3 256 24002 minecraft:air
+fill 1 257 24000 3 257 24002 minecraft:air
+fill 1 258 24000 3 258 24002 minecraft:air
+fill 1 259 24000 3 259 24002 minecraft:air
+fill 1 260 24000 3 260 24002 minecraft:air
+fill 1 261 24000 3 261 24002 minecraft:air
+fill 1 262 24000 3 262 24002 minecraft:air
+fill 1 263 24000 3 263 24002 minecraft:air
+fill 1 264 24000 3 264 24002 minecraft:air
+fill 1 265 24000 3 265 24002 minecraft:air
+fill 1 266 24000 3 266 24002 minecraft:air
+fill 1 267 24000 3 267 24002 minecraft:air
+fill 1 268 24000 3 268 24002 minecraft:air
+fill 1 269 24000 3 269 24002 minecraft:air
+fill 1 270 24000 3 270 24002 minecraft:air
+fill 1 271 24000 3 271 24002 minecraft:air
+fill 1 272 24000 3 272 24002 minecraft:air
+fill 1 273 24000 3 273 24002 minecraft:air
+fill 1 274 24000 3 274 24002 minecraft:air
+fill 1 275 24000 3 275 24002 minecraft:air
+fill 1 276 23999 3 276 24001 minecraft:air
+fill 1 277 23999 3 277 24001 minecraft:air
+fill 1 278 23999 3 278 24001 minecraft:air
+fill 1 279 23999 3 279 24001 minecraft:air
+fill 1 280 23999 3 280 24001 minecraft:air
+fill 1 281 23999 3 281 24001 minecraft:air
+fill 1 282 23999 3 282 24001 minecraft:air
+fill 1 283 23999 3 283 24001 minecraft:air
+fill 1 284 23999 3 284 24001 minecraft:air
+fill 0 285 23999 2 285 24001 minecraft:air
+fill 0 286 23999 2 286 24001 minecraft:air
+fill 0 287 23999 2 287 24001 minecraft:air
+fill 0 288 23999 2 288 24001 minecraft:air
+fill 0 289 23999 2 289 24001 minecraft:air
+fill 0 290 23999 2 290 24001 minecraft:air
+fill 0 291 23999 2 291 24001 minecraft:air
+fill 0 292 23999 2 292 24001 minecraft:air
+fill 0 293 23999 2 293 24001 minecraft:air
+fill 0 294 23999 2 294 24001 minecraft:air
+fill 0 295 23999 2 295 24001 minecraft:air
+fill 0 296 23999 2 296 24001 minecraft:air
+fill 0 297 23999 2 297 24001 minecraft:air
+fill -1 298 23999 1 298 24001 minecraft:air
+fill -11 40 23989 11 40 24011 minecraft:white_concrete
+fill -7 40 23998 -7 40 24002 minecraft:red_concrete
+fill -6 40 23996 -6 40 24004 minecraft:red_concrete
+fill -5 40 23995 -5 40 24005 minecraft:red_concrete
+fill -4 40 23994 -4 40 24006 minecraft:red_concrete
+fill -3 40 23994 -3 40 24006 minecraft:red_concrete
+fill -2 40 23993 -2 40 24007 minecraft:red_concrete
+fill -1 40 23993 -1 40 24007 minecraft:red_concrete
+fill 0 40 23993 0 40 24007 minecraft:red_concrete
+fill 1 40 23993 1 40 24007 minecraft:red_concrete
+fill 2 40 23993 2 40 24007 minecraft:red_concrete
+fill 3 40 23994 3 40 24006 minecraft:red_concrete
+fill 4 40 23994 4 40 24006 minecraft:red_concrete
+fill 5 40 23995 5 40 24005 minecraft:red_concrete
+fill 6 40 23996 6 40 24004 minecraft:red_concrete
+fill 7 40 23998 7 40 24002 minecraft:red_concrete
+fill -6 40 23998 -6 40 24002 minecraft:orange_concrete
+fill -5 40 23996 -5 40 24004 minecraft:orange_concrete
+fill -4 40 23995 -4 40 24005 minecraft:orange_concrete
+fill -3 40 23995 -3 40 24005 minecraft:orange_concrete
+fill -2 40 23994 -2 40 24006 minecraft:orange_concrete
+fill -1 40 23994 -1 40 24006 minecraft:orange_concrete
+fill 0 40 23994 0 40 24006 minecraft:orange_concrete
+fill 1 40 23994 1 40 24006 minecraft:orange_concrete
+fill 2 40 23994 2 40 24006 minecraft:orange_concrete
+fill 3 40 23995 3 40 24005 minecraft:orange_concrete
+fill 4 40 23995 4 40 24005 minecraft:orange_concrete
+fill 5 40 23996 5 40 24004 minecraft:orange_concrete
+fill 6 40 23998 6 40 24002 minecraft:orange_concrete
+fill -5 40 23998 -5 40 24002 minecraft:yellow_concrete
+fill -4 40 23997 -4 40 24003 minecraft:yellow_concrete
+fill -3 40 23996 -3 40 24004 minecraft:yellow_concrete
+fill -2 40 23995 -2 40 24005 minecraft:yellow_concrete
+fill -1 40 23995 -1 40 24005 minecraft:yellow_concrete
+fill 0 40 23995 0 40 24005 minecraft:yellow_concrete
+fill 1 40 23995 1 40 24005 minecraft:yellow_concrete
+fill 2 40 23995 2 40 24005 minecraft:yellow_concrete
+fill 3 40 23996 3 40 24004 minecraft:yellow_concrete
+fill 4 40 23997 4 40 24003 minecraft:yellow_concrete
+fill 5 40 23998 5 40 24002 minecraft:yellow_concrete
+fill -4 40 23998 -4 40 24002 minecraft:lime_concrete
+fill -3 40 23997 -3 40 24003 minecraft:lime_concrete
+fill -2 40 23996 -2 40 24004 minecraft:lime_concrete
+fill -1 40 23996 -1 40 24004 minecraft:lime_concrete
+fill 0 40 23996 0 40 24004 minecraft:lime_concrete
+fill 1 40 23996 1 40 24004 minecraft:lime_concrete
+fill 2 40 23996 2 40 24004 minecraft:lime_concrete
+fill 3 40 23997 3 40 24003 minecraft:lime_concrete
+fill 4 40 23998 4 40 24002 minecraft:lime_concrete
+fill -3 40 23999 -3 40 24001 minecraft:light_blue_concrete
+fill -2 40 23998 -2 40 24002 minecraft:light_blue_concrete
+fill -1 40 23997 -1 40 24003 minecraft:light_blue_concrete
+fill 0 40 23997 0 40 24003 minecraft:light_blue_concrete
+fill 1 40 23997 1 40 24003 minecraft:light_blue_concrete
+fill 2 40 23998 2 40 24002 minecraft:light_blue_concrete
+fill 3 40 23999 3 40 24001 minecraft:light_blue_concrete
+fill -2 40 23999 -2 40 24001 minecraft:water
+fill -1 40 23998 -1 40 24002 minecraft:water
+fill 0 40 23998 0 40 24002 minecraft:water
+fill 1 40 23998 1 40 24002 minecraft:water
+fill 2 40 23999 2 40 24001 minecraft:water
+fill -8 40 23989 -6 40 23991 minecraft:water
+fill -8 41 23989 -6 43 23991 minecraft:air
 schedule function mg:dropadv/build_2 3t

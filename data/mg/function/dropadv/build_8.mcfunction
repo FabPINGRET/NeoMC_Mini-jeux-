@@ -1,979 +1,1584 @@
-# Dropper Aventure : niveau 7 (Le salon géant)
-fill 227 92 23987 253 131 24013 minecraft:yellow_terracotta
-fill 227 132 23987 253 171 24013 minecraft:yellow_terracotta
-fill 227 172 23987 253 199 24013 minecraft:yellow_terracotta
-fill 230 96 23990 250 155 24010 minecraft:air
-fill 230 156 23990 250 200 24010 minecraft:air
-fill 223 201 23983 257 206 24017 minecraft:air
-fill 223 200 23983 257 200 24017 minecraft:polished_andesite
-fill 233 200 23993 247 200 24007 minecraft:air
-fill 232 200 23992 248 200 23992 minecraft:yellow_concrete
-fill 232 200 24008 248 200 24008 minecraft:yellow_concrete
-fill 232 200 23992 232 200 24008 minecraft:yellow_concrete
-fill 248 200 23992 248 200 24008 minecraft:yellow_concrete
-fill 223 201 23983 257 204 23983 minecraft:glass
-fill 223 201 24017 257 204 24017 minecraft:glass
-fill 223 201 23983 223 204 24017 minecraft:glass
-fill 257 201 23983 257 204 24017 minecraft:glass
-fill 223 206 23983 257 206 24017 minecraft:barrier
-setblock 234 99 23994 minecraft:light[level=15]
-setblock 246 99 23994 minecraft:light[level=15]
-setblock 234 99 24006 minecraft:light[level=15]
-setblock 246 99 24006 minecraft:light[level=15]
-setblock 240 99 24000 minecraft:light[level=15]
-setblock 234 108 23994 minecraft:light[level=15]
-setblock 246 108 23994 minecraft:light[level=15]
-setblock 234 108 24006 minecraft:light[level=15]
-setblock 246 108 24006 minecraft:light[level=15]
-setblock 240 108 24000 minecraft:light[level=15]
-setblock 234 117 23994 minecraft:light[level=15]
-setblock 246 117 23994 minecraft:light[level=15]
-setblock 234 117 24006 minecraft:light[level=15]
-setblock 246 117 24006 minecraft:light[level=15]
-setblock 240 117 24000 minecraft:light[level=15]
-setblock 234 126 23994 minecraft:light[level=15]
-setblock 246 126 23994 minecraft:light[level=15]
-setblock 234 126 24006 minecraft:light[level=15]
-setblock 246 126 24006 minecraft:light[level=15]
-setblock 240 126 24000 minecraft:light[level=15]
-setblock 234 135 23994 minecraft:light[level=15]
-setblock 246 135 23994 minecraft:light[level=15]
-setblock 234 135 24006 minecraft:light[level=15]
-setblock 246 135 24006 minecraft:light[level=15]
-setblock 240 135 24000 minecraft:light[level=15]
-setblock 234 144 23994 minecraft:light[level=15]
-setblock 246 144 23994 minecraft:light[level=15]
-setblock 234 144 24006 minecraft:light[level=15]
-setblock 246 144 24006 minecraft:light[level=15]
-setblock 240 144 24000 minecraft:light[level=15]
-setblock 234 153 23994 minecraft:light[level=15]
-setblock 246 153 23994 minecraft:light[level=15]
-setblock 234 153 24006 minecraft:light[level=15]
-setblock 246 153 24006 minecraft:light[level=15]
-setblock 240 153 24000 minecraft:light[level=15]
-setblock 234 162 23994 minecraft:light[level=15]
-setblock 246 162 23994 minecraft:light[level=15]
-setblock 234 162 24006 minecraft:light[level=15]
-setblock 246 162 24006 minecraft:light[level=15]
-setblock 240 162 24000 minecraft:light[level=15]
-setblock 234 171 23994 minecraft:light[level=15]
-setblock 246 171 23994 minecraft:light[level=15]
-setblock 234 171 24006 minecraft:light[level=15]
-setblock 246 171 24006 minecraft:light[level=15]
-setblock 240 171 24000 minecraft:light[level=15]
-setblock 234 180 23994 minecraft:light[level=15]
-setblock 246 180 23994 minecraft:light[level=15]
-setblock 234 180 24006 minecraft:light[level=15]
-setblock 246 180 24006 minecraft:light[level=15]
-setblock 240 180 24000 minecraft:light[level=15]
-setblock 234 189 23994 minecraft:light[level=15]
-setblock 246 189 23994 minecraft:light[level=15]
-setblock 234 189 24006 minecraft:light[level=15]
-setblock 246 189 24006 minecraft:light[level=15]
-setblock 240 189 24000 minecraft:light[level=15]
-setblock 234 198 23994 minecraft:light[level=15]
-setblock 246 198 23994 minecraft:light[level=15]
-setblock 234 198 24006 minecraft:light[level=15]
-setblock 246 198 24006 minecraft:light[level=15]
-setblock 240 198 24000 minecraft:light[level=15]
-setblock 229 96 23989 minecraft:white_terracotta
-setblock 229 96 24011 minecraft:white_terracotta
-setblock 229 96 23989 minecraft:white_terracotta
-setblock 251 96 23989 minecraft:white_terracotta
-setblock 232 96 23989 minecraft:white_terracotta
-setblock 232 96 24011 minecraft:white_terracotta
-setblock 229 96 23992 minecraft:white_terracotta
-setblock 251 96 23992 minecraft:white_terracotta
-setblock 235 96 23989 minecraft:white_terracotta
-setblock 235 96 24011 minecraft:white_terracotta
-setblock 229 96 23995 minecraft:white_terracotta
-setblock 251 96 23995 minecraft:white_terracotta
-setblock 238 96 23989 minecraft:white_terracotta
-setblock 238 96 24011 minecraft:white_terracotta
-setblock 229 96 23998 minecraft:white_terracotta
-setblock 251 96 23998 minecraft:white_terracotta
-setblock 241 96 23989 minecraft:white_terracotta
-setblock 241 96 24011 minecraft:white_terracotta
-setblock 229 96 24001 minecraft:white_terracotta
-setblock 251 96 24001 minecraft:white_terracotta
-setblock 244 96 23989 minecraft:white_terracotta
-setblock 244 96 24011 minecraft:white_terracotta
-setblock 229 96 24004 minecraft:white_terracotta
-setblock 251 96 24004 minecraft:white_terracotta
-setblock 247 96 23989 minecraft:white_terracotta
-setblock 247 96 24011 minecraft:white_terracotta
-setblock 229 96 24007 minecraft:white_terracotta
-setblock 251 96 24007 minecraft:white_terracotta
-setblock 250 96 23989 minecraft:white_terracotta
-setblock 250 96 24011 minecraft:white_terracotta
-setblock 229 96 24010 minecraft:white_terracotta
-setblock 251 96 24010 minecraft:white_terracotta
-setblock 229 100 23989 minecraft:white_terracotta
-setblock 229 100 24011 minecraft:white_terracotta
-setblock 229 100 23989 minecraft:white_terracotta
-setblock 251 100 23989 minecraft:white_terracotta
-setblock 232 100 23989 minecraft:white_terracotta
-setblock 232 100 24011 minecraft:white_terracotta
-setblock 229 100 23992 minecraft:white_terracotta
-setblock 251 100 23992 minecraft:white_terracotta
-setblock 235 100 23989 minecraft:white_terracotta
-setblock 235 100 24011 minecraft:white_terracotta
-setblock 229 100 23995 minecraft:white_terracotta
-setblock 251 100 23995 minecraft:white_terracotta
-setblock 238 100 23989 minecraft:white_terracotta
-setblock 238 100 24011 minecraft:white_terracotta
-setblock 229 100 23998 minecraft:white_terracotta
-setblock 251 100 23998 minecraft:white_terracotta
-setblock 241 100 23989 minecraft:white_terracotta
-setblock 241 100 24011 minecraft:white_terracotta
-setblock 229 100 24001 minecraft:white_terracotta
-setblock 251 100 24001 minecraft:white_terracotta
-setblock 244 100 23989 minecraft:white_terracotta
-setblock 244 100 24011 minecraft:white_terracotta
-setblock 229 100 24004 minecraft:white_terracotta
-setblock 251 100 24004 minecraft:white_terracotta
-setblock 247 100 23989 minecraft:white_terracotta
-setblock 247 100 24011 minecraft:white_terracotta
-setblock 229 100 24007 minecraft:white_terracotta
-setblock 251 100 24007 minecraft:white_terracotta
-setblock 250 100 23989 minecraft:white_terracotta
-setblock 250 100 24011 minecraft:white_terracotta
-setblock 229 100 24010 minecraft:white_terracotta
-setblock 251 100 24010 minecraft:white_terracotta
-setblock 229 104 23989 minecraft:white_terracotta
-setblock 229 104 24011 minecraft:white_terracotta
-setblock 229 104 23989 minecraft:white_terracotta
-setblock 251 104 23989 minecraft:white_terracotta
-setblock 232 104 23989 minecraft:white_terracotta
-setblock 232 104 24011 minecraft:white_terracotta
-setblock 229 104 23992 minecraft:white_terracotta
-setblock 251 104 23992 minecraft:white_terracotta
-setblock 235 104 23989 minecraft:white_terracotta
-setblock 235 104 24011 minecraft:white_terracotta
-setblock 229 104 23995 minecraft:white_terracotta
-setblock 251 104 23995 minecraft:white_terracotta
-setblock 238 104 23989 minecraft:white_terracotta
-setblock 238 104 24011 minecraft:white_terracotta
-setblock 229 104 23998 minecraft:white_terracotta
-setblock 251 104 23998 minecraft:white_terracotta
-setblock 241 104 23989 minecraft:white_terracotta
-setblock 241 104 24011 minecraft:white_terracotta
-setblock 229 104 24001 minecraft:white_terracotta
-setblock 251 104 24001 minecraft:white_terracotta
-setblock 244 104 23989 minecraft:white_terracotta
-setblock 244 104 24011 minecraft:white_terracotta
-setblock 229 104 24004 minecraft:white_terracotta
-setblock 251 104 24004 minecraft:white_terracotta
-setblock 247 104 23989 minecraft:white_terracotta
-setblock 247 104 24011 minecraft:white_terracotta
-setblock 229 104 24007 minecraft:white_terracotta
-setblock 251 104 24007 minecraft:white_terracotta
-setblock 250 104 23989 minecraft:white_terracotta
-setblock 250 104 24011 minecraft:white_terracotta
-setblock 229 104 24010 minecraft:white_terracotta
-setblock 251 104 24010 minecraft:white_terracotta
-setblock 229 108 23989 minecraft:white_terracotta
-setblock 229 108 24011 minecraft:white_terracotta
-setblock 229 108 23989 minecraft:white_terracotta
-setblock 251 108 23989 minecraft:white_terracotta
-setblock 232 108 23989 minecraft:white_terracotta
-setblock 232 108 24011 minecraft:white_terracotta
-setblock 229 108 23992 minecraft:white_terracotta
-setblock 251 108 23992 minecraft:white_terracotta
-setblock 235 108 23989 minecraft:white_terracotta
-setblock 235 108 24011 minecraft:white_terracotta
-setblock 229 108 23995 minecraft:white_terracotta
-setblock 251 108 23995 minecraft:white_terracotta
-setblock 238 108 23989 minecraft:white_terracotta
-setblock 238 108 24011 minecraft:white_terracotta
-setblock 229 108 23998 minecraft:white_terracotta
-setblock 251 108 23998 minecraft:white_terracotta
-setblock 241 108 23989 minecraft:white_terracotta
-setblock 241 108 24011 minecraft:white_terracotta
-setblock 229 108 24001 minecraft:white_terracotta
-setblock 251 108 24001 minecraft:white_terracotta
-setblock 244 108 23989 minecraft:white_terracotta
-setblock 244 108 24011 minecraft:white_terracotta
-setblock 229 108 24004 minecraft:white_terracotta
-setblock 251 108 24004 minecraft:white_terracotta
-setblock 247 108 23989 minecraft:white_terracotta
-setblock 247 108 24011 minecraft:white_terracotta
-setblock 229 108 24007 minecraft:white_terracotta
-setblock 251 108 24007 minecraft:white_terracotta
-setblock 250 108 23989 minecraft:white_terracotta
-setblock 250 108 24011 minecraft:white_terracotta
-setblock 229 108 24010 minecraft:white_terracotta
-setblock 251 108 24010 minecraft:white_terracotta
-setblock 229 112 23989 minecraft:white_terracotta
-setblock 229 112 24011 minecraft:white_terracotta
-setblock 229 112 23989 minecraft:white_terracotta
-setblock 251 112 23989 minecraft:white_terracotta
-setblock 232 112 23989 minecraft:white_terracotta
-setblock 232 112 24011 minecraft:white_terracotta
-setblock 229 112 23992 minecraft:white_terracotta
-setblock 251 112 23992 minecraft:white_terracotta
-setblock 235 112 23989 minecraft:white_terracotta
-setblock 235 112 24011 minecraft:white_terracotta
-setblock 229 112 23995 minecraft:white_terracotta
-setblock 251 112 23995 minecraft:white_terracotta
-setblock 238 112 23989 minecraft:white_terracotta
-setblock 238 112 24011 minecraft:white_terracotta
-setblock 229 112 23998 minecraft:white_terracotta
-setblock 251 112 23998 minecraft:white_terracotta
-setblock 241 112 23989 minecraft:white_terracotta
-setblock 241 112 24011 minecraft:white_terracotta
-setblock 229 112 24001 minecraft:white_terracotta
-setblock 251 112 24001 minecraft:white_terracotta
-setblock 244 112 23989 minecraft:white_terracotta
-setblock 244 112 24011 minecraft:white_terracotta
-setblock 229 112 24004 minecraft:white_terracotta
-setblock 251 112 24004 minecraft:white_terracotta
-setblock 247 112 23989 minecraft:white_terracotta
-setblock 247 112 24011 minecraft:white_terracotta
-setblock 229 112 24007 minecraft:white_terracotta
-setblock 251 112 24007 minecraft:white_terracotta
-setblock 250 112 23989 minecraft:white_terracotta
-setblock 250 112 24011 minecraft:white_terracotta
-setblock 229 112 24010 minecraft:white_terracotta
-setblock 251 112 24010 minecraft:white_terracotta
-setblock 229 116 23989 minecraft:white_terracotta
-setblock 229 116 24011 minecraft:white_terracotta
-setblock 229 116 23989 minecraft:white_terracotta
-setblock 251 116 23989 minecraft:white_terracotta
-setblock 232 116 23989 minecraft:white_terracotta
-setblock 232 116 24011 minecraft:white_terracotta
-setblock 229 116 23992 minecraft:white_terracotta
-setblock 251 116 23992 minecraft:white_terracotta
-setblock 235 116 23989 minecraft:white_terracotta
-setblock 235 116 24011 minecraft:white_terracotta
-setblock 229 116 23995 minecraft:white_terracotta
-setblock 251 116 23995 minecraft:white_terracotta
-setblock 238 116 23989 minecraft:white_terracotta
-setblock 238 116 24011 minecraft:white_terracotta
-setblock 229 116 23998 minecraft:white_terracotta
-setblock 251 116 23998 minecraft:white_terracotta
-setblock 241 116 23989 minecraft:white_terracotta
-setblock 241 116 24011 minecraft:white_terracotta
-setblock 229 116 24001 minecraft:white_terracotta
-setblock 251 116 24001 minecraft:white_terracotta
-setblock 244 116 23989 minecraft:white_terracotta
-setblock 244 116 24011 minecraft:white_terracotta
-setblock 229 116 24004 minecraft:white_terracotta
-setblock 251 116 24004 minecraft:white_terracotta
-setblock 247 116 23989 minecraft:white_terracotta
-setblock 247 116 24011 minecraft:white_terracotta
-setblock 229 116 24007 minecraft:white_terracotta
-setblock 251 116 24007 minecraft:white_terracotta
-setblock 250 116 23989 minecraft:white_terracotta
-setblock 250 116 24011 minecraft:white_terracotta
-setblock 229 116 24010 minecraft:white_terracotta
-setblock 251 116 24010 minecraft:white_terracotta
-setblock 229 120 23989 minecraft:white_terracotta
-setblock 229 120 24011 minecraft:white_terracotta
-setblock 229 120 23989 minecraft:white_terracotta
-setblock 251 120 23989 minecraft:white_terracotta
-setblock 232 120 23989 minecraft:white_terracotta
-setblock 232 120 24011 minecraft:white_terracotta
-setblock 229 120 23992 minecraft:white_terracotta
-setblock 251 120 23992 minecraft:white_terracotta
-setblock 235 120 23989 minecraft:white_terracotta
-setblock 235 120 24011 minecraft:white_terracotta
-setblock 229 120 23995 minecraft:white_terracotta
-setblock 251 120 23995 minecraft:white_terracotta
-setblock 238 120 23989 minecraft:white_terracotta
-setblock 238 120 24011 minecraft:white_terracotta
-setblock 229 120 23998 minecraft:white_terracotta
-setblock 251 120 23998 minecraft:white_terracotta
-setblock 241 120 23989 minecraft:white_terracotta
-setblock 241 120 24011 minecraft:white_terracotta
-setblock 229 120 24001 minecraft:white_terracotta
-setblock 251 120 24001 minecraft:white_terracotta
-setblock 244 120 23989 minecraft:white_terracotta
-setblock 244 120 24011 minecraft:white_terracotta
-setblock 229 120 24004 minecraft:white_terracotta
-setblock 251 120 24004 minecraft:white_terracotta
-setblock 247 120 23989 minecraft:white_terracotta
-setblock 247 120 24011 minecraft:white_terracotta
-setblock 229 120 24007 minecraft:white_terracotta
-setblock 251 120 24007 minecraft:white_terracotta
-setblock 250 120 23989 minecraft:white_terracotta
-setblock 250 120 24011 minecraft:white_terracotta
-setblock 229 120 24010 minecraft:white_terracotta
-setblock 251 120 24010 minecraft:white_terracotta
-setblock 229 124 23989 minecraft:white_terracotta
-setblock 229 124 24011 minecraft:white_terracotta
-setblock 229 124 23989 minecraft:white_terracotta
-setblock 251 124 23989 minecraft:white_terracotta
-setblock 232 124 23989 minecraft:white_terracotta
-setblock 232 124 24011 minecraft:white_terracotta
-setblock 229 124 23992 minecraft:white_terracotta
-setblock 251 124 23992 minecraft:white_terracotta
-setblock 235 124 23989 minecraft:white_terracotta
-setblock 235 124 24011 minecraft:white_terracotta
-setblock 229 124 23995 minecraft:white_terracotta
-setblock 251 124 23995 minecraft:white_terracotta
-setblock 238 124 23989 minecraft:white_terracotta
-setblock 238 124 24011 minecraft:white_terracotta
-setblock 229 124 23998 minecraft:white_terracotta
-setblock 251 124 23998 minecraft:white_terracotta
-setblock 241 124 23989 minecraft:white_terracotta
-setblock 241 124 24011 minecraft:white_terracotta
-setblock 229 124 24001 minecraft:white_terracotta
-setblock 251 124 24001 minecraft:white_terracotta
-setblock 244 124 23989 minecraft:white_terracotta
-setblock 244 124 24011 minecraft:white_terracotta
-setblock 229 124 24004 minecraft:white_terracotta
-setblock 251 124 24004 minecraft:white_terracotta
-setblock 247 124 23989 minecraft:white_terracotta
-setblock 247 124 24011 minecraft:white_terracotta
-setblock 229 124 24007 minecraft:white_terracotta
-setblock 251 124 24007 minecraft:white_terracotta
-setblock 250 124 23989 minecraft:white_terracotta
-setblock 250 124 24011 minecraft:white_terracotta
-setblock 229 124 24010 minecraft:white_terracotta
-setblock 251 124 24010 minecraft:white_terracotta
-setblock 229 128 23989 minecraft:white_terracotta
-setblock 229 128 24011 minecraft:white_terracotta
-setblock 229 128 23989 minecraft:white_terracotta
-setblock 251 128 23989 minecraft:white_terracotta
-setblock 232 128 23989 minecraft:white_terracotta
-setblock 232 128 24011 minecraft:white_terracotta
-setblock 229 128 23992 minecraft:white_terracotta
-setblock 251 128 23992 minecraft:white_terracotta
-setblock 235 128 23989 minecraft:white_terracotta
-setblock 235 128 24011 minecraft:white_terracotta
-setblock 229 128 23995 minecraft:white_terracotta
-setblock 251 128 23995 minecraft:white_terracotta
-setblock 238 128 23989 minecraft:white_terracotta
-setblock 238 128 24011 minecraft:white_terracotta
-setblock 229 128 23998 minecraft:white_terracotta
-setblock 251 128 23998 minecraft:white_terracotta
-setblock 241 128 23989 minecraft:white_terracotta
-setblock 241 128 24011 minecraft:white_terracotta
-setblock 229 128 24001 minecraft:white_terracotta
-setblock 251 128 24001 minecraft:white_terracotta
-setblock 244 128 23989 minecraft:white_terracotta
-setblock 244 128 24011 minecraft:white_terracotta
-setblock 229 128 24004 minecraft:white_terracotta
-setblock 251 128 24004 minecraft:white_terracotta
-setblock 247 128 23989 minecraft:white_terracotta
-setblock 247 128 24011 minecraft:white_terracotta
-setblock 229 128 24007 minecraft:white_terracotta
-setblock 251 128 24007 minecraft:white_terracotta
-setblock 250 128 23989 minecraft:white_terracotta
-setblock 250 128 24011 minecraft:white_terracotta
-setblock 229 128 24010 minecraft:white_terracotta
-setblock 251 128 24010 minecraft:white_terracotta
-setblock 229 132 23989 minecraft:white_terracotta
-setblock 229 132 24011 minecraft:white_terracotta
-setblock 229 132 23989 minecraft:white_terracotta
-setblock 251 132 23989 minecraft:white_terracotta
-setblock 232 132 23989 minecraft:white_terracotta
-setblock 232 132 24011 minecraft:white_terracotta
-setblock 229 132 23992 minecraft:white_terracotta
-setblock 251 132 23992 minecraft:white_terracotta
-setblock 235 132 23989 minecraft:white_terracotta
-setblock 235 132 24011 minecraft:white_terracotta
-setblock 229 132 23995 minecraft:white_terracotta
-setblock 251 132 23995 minecraft:white_terracotta
-setblock 238 132 23989 minecraft:white_terracotta
-setblock 238 132 24011 minecraft:white_terracotta
-setblock 229 132 23998 minecraft:white_terracotta
-setblock 251 132 23998 minecraft:white_terracotta
-setblock 241 132 23989 minecraft:white_terracotta
-setblock 241 132 24011 minecraft:white_terracotta
-setblock 229 132 24001 minecraft:white_terracotta
-setblock 251 132 24001 minecraft:white_terracotta
-setblock 244 132 23989 minecraft:white_terracotta
-setblock 244 132 24011 minecraft:white_terracotta
-setblock 229 132 24004 minecraft:white_terracotta
-setblock 251 132 24004 minecraft:white_terracotta
-setblock 247 132 23989 minecraft:white_terracotta
-setblock 247 132 24011 minecraft:white_terracotta
-setblock 229 132 24007 minecraft:white_terracotta
-setblock 251 132 24007 minecraft:white_terracotta
-setblock 250 132 23989 minecraft:white_terracotta
-setblock 250 132 24011 minecraft:white_terracotta
-setblock 229 132 24010 minecraft:white_terracotta
-setblock 251 132 24010 minecraft:white_terracotta
-setblock 229 136 23989 minecraft:white_terracotta
-setblock 229 136 24011 minecraft:white_terracotta
-setblock 229 136 23989 minecraft:white_terracotta
-setblock 251 136 23989 minecraft:white_terracotta
-setblock 232 136 23989 minecraft:white_terracotta
-setblock 232 136 24011 minecraft:white_terracotta
-setblock 229 136 23992 minecraft:white_terracotta
-setblock 251 136 23992 minecraft:white_terracotta
-setblock 235 136 23989 minecraft:white_terracotta
-setblock 235 136 24011 minecraft:white_terracotta
-setblock 229 136 23995 minecraft:white_terracotta
-setblock 251 136 23995 minecraft:white_terracotta
-setblock 238 136 23989 minecraft:white_terracotta
-setblock 238 136 24011 minecraft:white_terracotta
-setblock 229 136 23998 minecraft:white_terracotta
-setblock 251 136 23998 minecraft:white_terracotta
-setblock 241 136 23989 minecraft:white_terracotta
-setblock 241 136 24011 minecraft:white_terracotta
-setblock 229 136 24001 minecraft:white_terracotta
-setblock 251 136 24001 minecraft:white_terracotta
-setblock 244 136 23989 minecraft:white_terracotta
-setblock 244 136 24011 minecraft:white_terracotta
-setblock 229 136 24004 minecraft:white_terracotta
-setblock 251 136 24004 minecraft:white_terracotta
-setblock 247 136 23989 minecraft:white_terracotta
-setblock 247 136 24011 minecraft:white_terracotta
-setblock 229 136 24007 minecraft:white_terracotta
-setblock 251 136 24007 minecraft:white_terracotta
-setblock 250 136 23989 minecraft:white_terracotta
-setblock 250 136 24011 minecraft:white_terracotta
-setblock 229 136 24010 minecraft:white_terracotta
-setblock 251 136 24010 minecraft:white_terracotta
-setblock 229 140 23989 minecraft:white_terracotta
-setblock 229 140 24011 minecraft:white_terracotta
-setblock 229 140 23989 minecraft:white_terracotta
-setblock 251 140 23989 minecraft:white_terracotta
-setblock 232 140 23989 minecraft:white_terracotta
-setblock 232 140 24011 minecraft:white_terracotta
-setblock 229 140 23992 minecraft:white_terracotta
-setblock 251 140 23992 minecraft:white_terracotta
-setblock 235 140 23989 minecraft:white_terracotta
-setblock 235 140 24011 minecraft:white_terracotta
-setblock 229 140 23995 minecraft:white_terracotta
-setblock 251 140 23995 minecraft:white_terracotta
-setblock 238 140 23989 minecraft:white_terracotta
-setblock 238 140 24011 minecraft:white_terracotta
-setblock 229 140 23998 minecraft:white_terracotta
-setblock 251 140 23998 minecraft:white_terracotta
-setblock 241 140 23989 minecraft:white_terracotta
-setblock 241 140 24011 minecraft:white_terracotta
-setblock 229 140 24001 minecraft:white_terracotta
-setblock 251 140 24001 minecraft:white_terracotta
-setblock 244 140 23989 minecraft:white_terracotta
-setblock 244 140 24011 minecraft:white_terracotta
-setblock 229 140 24004 minecraft:white_terracotta
-setblock 251 140 24004 minecraft:white_terracotta
-setblock 247 140 23989 minecraft:white_terracotta
-setblock 247 140 24011 minecraft:white_terracotta
-setblock 229 140 24007 minecraft:white_terracotta
-setblock 251 140 24007 minecraft:white_terracotta
-setblock 250 140 23989 minecraft:white_terracotta
-setblock 250 140 24011 minecraft:white_terracotta
-setblock 229 140 24010 minecraft:white_terracotta
-setblock 251 140 24010 minecraft:white_terracotta
-setblock 229 144 23989 minecraft:white_terracotta
-setblock 229 144 24011 minecraft:white_terracotta
-setblock 229 144 23989 minecraft:white_terracotta
-setblock 251 144 23989 minecraft:white_terracotta
-setblock 232 144 23989 minecraft:white_terracotta
-setblock 232 144 24011 minecraft:white_terracotta
-setblock 229 144 23992 minecraft:white_terracotta
-setblock 251 144 23992 minecraft:white_terracotta
-setblock 235 144 23989 minecraft:white_terracotta
-setblock 235 144 24011 minecraft:white_terracotta
-setblock 229 144 23995 minecraft:white_terracotta
-setblock 251 144 23995 minecraft:white_terracotta
-setblock 238 144 23989 minecraft:white_terracotta
-setblock 238 144 24011 minecraft:white_terracotta
-setblock 229 144 23998 minecraft:white_terracotta
-setblock 251 144 23998 minecraft:white_terracotta
-setblock 241 144 23989 minecraft:white_terracotta
-setblock 241 144 24011 minecraft:white_terracotta
-setblock 229 144 24001 minecraft:white_terracotta
-setblock 251 144 24001 minecraft:white_terracotta
-setblock 244 144 23989 minecraft:white_terracotta
-setblock 244 144 24011 minecraft:white_terracotta
-setblock 229 144 24004 minecraft:white_terracotta
-setblock 251 144 24004 minecraft:white_terracotta
-setblock 247 144 23989 minecraft:white_terracotta
-setblock 247 144 24011 minecraft:white_terracotta
-setblock 229 144 24007 minecraft:white_terracotta
-setblock 251 144 24007 minecraft:white_terracotta
-setblock 250 144 23989 minecraft:white_terracotta
-setblock 250 144 24011 minecraft:white_terracotta
-setblock 229 144 24010 minecraft:white_terracotta
-setblock 251 144 24010 minecraft:white_terracotta
-setblock 229 148 23989 minecraft:white_terracotta
-setblock 229 148 24011 minecraft:white_terracotta
-setblock 229 148 23989 minecraft:white_terracotta
-setblock 251 148 23989 minecraft:white_terracotta
-setblock 232 148 23989 minecraft:white_terracotta
-setblock 232 148 24011 minecraft:white_terracotta
-setblock 229 148 23992 minecraft:white_terracotta
-setblock 251 148 23992 minecraft:white_terracotta
-setblock 235 148 23989 minecraft:white_terracotta
-setblock 235 148 24011 minecraft:white_terracotta
-setblock 229 148 23995 minecraft:white_terracotta
-setblock 251 148 23995 minecraft:white_terracotta
-setblock 238 148 23989 minecraft:white_terracotta
-setblock 238 148 24011 minecraft:white_terracotta
-setblock 229 148 23998 minecraft:white_terracotta
-setblock 251 148 23998 minecraft:white_terracotta
-setblock 241 148 23989 minecraft:white_terracotta
-setblock 241 148 24011 minecraft:white_terracotta
-setblock 229 148 24001 minecraft:white_terracotta
-setblock 251 148 24001 minecraft:white_terracotta
-setblock 244 148 23989 minecraft:white_terracotta
-setblock 244 148 24011 minecraft:white_terracotta
-setblock 229 148 24004 minecraft:white_terracotta
-setblock 251 148 24004 minecraft:white_terracotta
-setblock 247 148 23989 minecraft:white_terracotta
-setblock 247 148 24011 minecraft:white_terracotta
-setblock 229 148 24007 minecraft:white_terracotta
-setblock 251 148 24007 minecraft:white_terracotta
-setblock 250 148 23989 minecraft:white_terracotta
-setblock 250 148 24011 minecraft:white_terracotta
-setblock 229 148 24010 minecraft:white_terracotta
-setblock 251 148 24010 minecraft:white_terracotta
-setblock 229 152 23989 minecraft:white_terracotta
-setblock 229 152 24011 minecraft:white_terracotta
-setblock 229 152 23989 minecraft:white_terracotta
-setblock 251 152 23989 minecraft:white_terracotta
-setblock 232 152 23989 minecraft:white_terracotta
-setblock 232 152 24011 minecraft:white_terracotta
-setblock 229 152 23992 minecraft:white_terracotta
-setblock 251 152 23992 minecraft:white_terracotta
-setblock 235 152 23989 minecraft:white_terracotta
-setblock 235 152 24011 minecraft:white_terracotta
-setblock 229 152 23995 minecraft:white_terracotta
-setblock 251 152 23995 minecraft:white_terracotta
-setblock 238 152 23989 minecraft:white_terracotta
-setblock 238 152 24011 minecraft:white_terracotta
-setblock 229 152 23998 minecraft:white_terracotta
-setblock 251 152 23998 minecraft:white_terracotta
-setblock 241 152 23989 minecraft:white_terracotta
-setblock 241 152 24011 minecraft:white_terracotta
-setblock 229 152 24001 minecraft:white_terracotta
-setblock 251 152 24001 minecraft:white_terracotta
-setblock 244 152 23989 minecraft:white_terracotta
-setblock 244 152 24011 minecraft:white_terracotta
-setblock 229 152 24004 minecraft:white_terracotta
-setblock 251 152 24004 minecraft:white_terracotta
-setblock 247 152 23989 minecraft:white_terracotta
-setblock 247 152 24011 minecraft:white_terracotta
-setblock 229 152 24007 minecraft:white_terracotta
-setblock 251 152 24007 minecraft:white_terracotta
-setblock 250 152 23989 minecraft:white_terracotta
-setblock 250 152 24011 minecraft:white_terracotta
-setblock 229 152 24010 minecraft:white_terracotta
-setblock 251 152 24010 minecraft:white_terracotta
-setblock 229 156 23989 minecraft:white_terracotta
-setblock 229 156 24011 minecraft:white_terracotta
-setblock 229 156 23989 minecraft:white_terracotta
-setblock 251 156 23989 minecraft:white_terracotta
-setblock 232 156 23989 minecraft:white_terracotta
-setblock 232 156 24011 minecraft:white_terracotta
-setblock 229 156 23992 minecraft:white_terracotta
-setblock 251 156 23992 minecraft:white_terracotta
-setblock 235 156 23989 minecraft:white_terracotta
-setblock 235 156 24011 minecraft:white_terracotta
-setblock 229 156 23995 minecraft:white_terracotta
-setblock 251 156 23995 minecraft:white_terracotta
-setblock 238 156 23989 minecraft:white_terracotta
-setblock 238 156 24011 minecraft:white_terracotta
-setblock 229 156 23998 minecraft:white_terracotta
-setblock 251 156 23998 minecraft:white_terracotta
-setblock 241 156 23989 minecraft:white_terracotta
-setblock 241 156 24011 minecraft:white_terracotta
-setblock 229 156 24001 minecraft:white_terracotta
-setblock 251 156 24001 minecraft:white_terracotta
-setblock 244 156 23989 minecraft:white_terracotta
-setblock 244 156 24011 minecraft:white_terracotta
-setblock 229 156 24004 minecraft:white_terracotta
-setblock 251 156 24004 minecraft:white_terracotta
-setblock 247 156 23989 minecraft:white_terracotta
-setblock 247 156 24011 minecraft:white_terracotta
-setblock 229 156 24007 minecraft:white_terracotta
-setblock 251 156 24007 minecraft:white_terracotta
-setblock 250 156 23989 minecraft:white_terracotta
-setblock 250 156 24011 minecraft:white_terracotta
-setblock 229 156 24010 minecraft:white_terracotta
-setblock 251 156 24010 minecraft:white_terracotta
-setblock 229 160 23989 minecraft:white_terracotta
-setblock 229 160 24011 minecraft:white_terracotta
-setblock 229 160 23989 minecraft:white_terracotta
-setblock 251 160 23989 minecraft:white_terracotta
-setblock 232 160 23989 minecraft:white_terracotta
-setblock 232 160 24011 minecraft:white_terracotta
-setblock 229 160 23992 minecraft:white_terracotta
-setblock 251 160 23992 minecraft:white_terracotta
-setblock 235 160 23989 minecraft:white_terracotta
-setblock 235 160 24011 minecraft:white_terracotta
-setblock 229 160 23995 minecraft:white_terracotta
-setblock 251 160 23995 minecraft:white_terracotta
-setblock 238 160 23989 minecraft:white_terracotta
-setblock 238 160 24011 minecraft:white_terracotta
-setblock 229 160 23998 minecraft:white_terracotta
-setblock 251 160 23998 minecraft:white_terracotta
-setblock 241 160 23989 minecraft:white_terracotta
-setblock 241 160 24011 minecraft:white_terracotta
-setblock 229 160 24001 minecraft:white_terracotta
-setblock 251 160 24001 minecraft:white_terracotta
-setblock 244 160 23989 minecraft:white_terracotta
-setblock 244 160 24011 minecraft:white_terracotta
-setblock 229 160 24004 minecraft:white_terracotta
-setblock 251 160 24004 minecraft:white_terracotta
-setblock 247 160 23989 minecraft:white_terracotta
-setblock 247 160 24011 minecraft:white_terracotta
-setblock 229 160 24007 minecraft:white_terracotta
-setblock 251 160 24007 minecraft:white_terracotta
-setblock 250 160 23989 minecraft:white_terracotta
-setblock 250 160 24011 minecraft:white_terracotta
-setblock 229 160 24010 minecraft:white_terracotta
-setblock 251 160 24010 minecraft:white_terracotta
-setblock 229 164 23989 minecraft:white_terracotta
-setblock 229 164 24011 minecraft:white_terracotta
-setblock 229 164 23989 minecraft:white_terracotta
-setblock 251 164 23989 minecraft:white_terracotta
-setblock 232 164 23989 minecraft:white_terracotta
-setblock 232 164 24011 minecraft:white_terracotta
-setblock 229 164 23992 minecraft:white_terracotta
-setblock 251 164 23992 minecraft:white_terracotta
-setblock 235 164 23989 minecraft:white_terracotta
-setblock 235 164 24011 minecraft:white_terracotta
-setblock 229 164 23995 minecraft:white_terracotta
-setblock 251 164 23995 minecraft:white_terracotta
-setblock 238 164 23989 minecraft:white_terracotta
-setblock 238 164 24011 minecraft:white_terracotta
-setblock 229 164 23998 minecraft:white_terracotta
-setblock 251 164 23998 minecraft:white_terracotta
-setblock 241 164 23989 minecraft:white_terracotta
-setblock 241 164 24011 minecraft:white_terracotta
-setblock 229 164 24001 minecraft:white_terracotta
-setblock 251 164 24001 minecraft:white_terracotta
-setblock 244 164 23989 minecraft:white_terracotta
-setblock 244 164 24011 minecraft:white_terracotta
-setblock 229 164 24004 minecraft:white_terracotta
-setblock 251 164 24004 minecraft:white_terracotta
-setblock 247 164 23989 minecraft:white_terracotta
-setblock 247 164 24011 minecraft:white_terracotta
-setblock 229 164 24007 minecraft:white_terracotta
-setblock 251 164 24007 minecraft:white_terracotta
-setblock 250 164 23989 minecraft:white_terracotta
-setblock 250 164 24011 minecraft:white_terracotta
-setblock 229 164 24010 minecraft:white_terracotta
-setblock 251 164 24010 minecraft:white_terracotta
-setblock 229 168 23989 minecraft:white_terracotta
-setblock 229 168 24011 minecraft:white_terracotta
-setblock 229 168 23989 minecraft:white_terracotta
-setblock 251 168 23989 minecraft:white_terracotta
-setblock 232 168 23989 minecraft:white_terracotta
-setblock 232 168 24011 minecraft:white_terracotta
-setblock 229 168 23992 minecraft:white_terracotta
-setblock 251 168 23992 minecraft:white_terracotta
-setblock 235 168 23989 minecraft:white_terracotta
-setblock 235 168 24011 minecraft:white_terracotta
-setblock 229 168 23995 minecraft:white_terracotta
-setblock 251 168 23995 minecraft:white_terracotta
-setblock 238 168 23989 minecraft:white_terracotta
-setblock 238 168 24011 minecraft:white_terracotta
-setblock 229 168 23998 minecraft:white_terracotta
-setblock 251 168 23998 minecraft:white_terracotta
-setblock 241 168 23989 minecraft:white_terracotta
-setblock 241 168 24011 minecraft:white_terracotta
-setblock 229 168 24001 minecraft:white_terracotta
-setblock 251 168 24001 minecraft:white_terracotta
-setblock 244 168 23989 minecraft:white_terracotta
-setblock 244 168 24011 minecraft:white_terracotta
-setblock 229 168 24004 minecraft:white_terracotta
-setblock 251 168 24004 minecraft:white_terracotta
-setblock 247 168 23989 minecraft:white_terracotta
-setblock 247 168 24011 minecraft:white_terracotta
-setblock 229 168 24007 minecraft:white_terracotta
-setblock 251 168 24007 minecraft:white_terracotta
-setblock 250 168 23989 minecraft:white_terracotta
-setblock 250 168 24011 minecraft:white_terracotta
-setblock 229 168 24010 minecraft:white_terracotta
-setblock 251 168 24010 minecraft:white_terracotta
-setblock 229 172 23989 minecraft:white_terracotta
-setblock 229 172 24011 minecraft:white_terracotta
-setblock 229 172 23989 minecraft:white_terracotta
-setblock 251 172 23989 minecraft:white_terracotta
-setblock 232 172 23989 minecraft:white_terracotta
-setblock 232 172 24011 minecraft:white_terracotta
-setblock 229 172 23992 minecraft:white_terracotta
-setblock 251 172 23992 minecraft:white_terracotta
-setblock 235 172 23989 minecraft:white_terracotta
-setblock 235 172 24011 minecraft:white_terracotta
-setblock 229 172 23995 minecraft:white_terracotta
-setblock 251 172 23995 minecraft:white_terracotta
-setblock 238 172 23989 minecraft:white_terracotta
-setblock 238 172 24011 minecraft:white_terracotta
-setblock 229 172 23998 minecraft:white_terracotta
-setblock 251 172 23998 minecraft:white_terracotta
-setblock 241 172 23989 minecraft:white_terracotta
-setblock 241 172 24011 minecraft:white_terracotta
-setblock 229 172 24001 minecraft:white_terracotta
-setblock 251 172 24001 minecraft:white_terracotta
-setblock 244 172 23989 minecraft:white_terracotta
-setblock 244 172 24011 minecraft:white_terracotta
-setblock 229 172 24004 minecraft:white_terracotta
-setblock 251 172 24004 minecraft:white_terracotta
-setblock 247 172 23989 minecraft:white_terracotta
-setblock 247 172 24011 minecraft:white_terracotta
-setblock 229 172 24007 minecraft:white_terracotta
-setblock 251 172 24007 minecraft:white_terracotta
-setblock 250 172 23989 minecraft:white_terracotta
-setblock 250 172 24011 minecraft:white_terracotta
-setblock 229 172 24010 minecraft:white_terracotta
-setblock 251 172 24010 minecraft:white_terracotta
-setblock 229 176 23989 minecraft:white_terracotta
-setblock 229 176 24011 minecraft:white_terracotta
-setblock 229 176 23989 minecraft:white_terracotta
-setblock 251 176 23989 minecraft:white_terracotta
-setblock 232 176 23989 minecraft:white_terracotta
-setblock 232 176 24011 minecraft:white_terracotta
-setblock 229 176 23992 minecraft:white_terracotta
-setblock 251 176 23992 minecraft:white_terracotta
-setblock 235 176 23989 minecraft:white_terracotta
-setblock 235 176 24011 minecraft:white_terracotta
-setblock 229 176 23995 minecraft:white_terracotta
-setblock 251 176 23995 minecraft:white_terracotta
-setblock 238 176 23989 minecraft:white_terracotta
-setblock 238 176 24011 minecraft:white_terracotta
-setblock 229 176 23998 minecraft:white_terracotta
-setblock 251 176 23998 minecraft:white_terracotta
-setblock 241 176 23989 minecraft:white_terracotta
-setblock 241 176 24011 minecraft:white_terracotta
-setblock 229 176 24001 minecraft:white_terracotta
-setblock 251 176 24001 minecraft:white_terracotta
-setblock 244 176 23989 minecraft:white_terracotta
-setblock 244 176 24011 minecraft:white_terracotta
-setblock 229 176 24004 minecraft:white_terracotta
-setblock 251 176 24004 minecraft:white_terracotta
-setblock 247 176 23989 minecraft:white_terracotta
-setblock 247 176 24011 minecraft:white_terracotta
-setblock 229 176 24007 minecraft:white_terracotta
-setblock 251 176 24007 minecraft:white_terracotta
-setblock 250 176 23989 minecraft:white_terracotta
-setblock 250 176 24011 minecraft:white_terracotta
-setblock 229 176 24010 minecraft:white_terracotta
-setblock 251 176 24010 minecraft:white_terracotta
-setblock 229 180 23989 minecraft:white_terracotta
-setblock 229 180 24011 minecraft:white_terracotta
-setblock 229 180 23989 minecraft:white_terracotta
-setblock 251 180 23989 minecraft:white_terracotta
-setblock 232 180 23989 minecraft:white_terracotta
-setblock 232 180 24011 minecraft:white_terracotta
-setblock 229 180 23992 minecraft:white_terracotta
-setblock 251 180 23992 minecraft:white_terracotta
-setblock 235 180 23989 minecraft:white_terracotta
-setblock 235 180 24011 minecraft:white_terracotta
-setblock 229 180 23995 minecraft:white_terracotta
-setblock 251 180 23995 minecraft:white_terracotta
-setblock 238 180 23989 minecraft:white_terracotta
-setblock 238 180 24011 minecraft:white_terracotta
-setblock 229 180 23998 minecraft:white_terracotta
-setblock 251 180 23998 minecraft:white_terracotta
-setblock 241 180 23989 minecraft:white_terracotta
-setblock 241 180 24011 minecraft:white_terracotta
-setblock 229 180 24001 minecraft:white_terracotta
-setblock 251 180 24001 minecraft:white_terracotta
-setblock 244 180 23989 minecraft:white_terracotta
-setblock 244 180 24011 minecraft:white_terracotta
-setblock 229 180 24004 minecraft:white_terracotta
-setblock 251 180 24004 minecraft:white_terracotta
-setblock 247 180 23989 minecraft:white_terracotta
-setblock 247 180 24011 minecraft:white_terracotta
-setblock 229 180 24007 minecraft:white_terracotta
-setblock 251 180 24007 minecraft:white_terracotta
-setblock 250 180 23989 minecraft:white_terracotta
-setblock 250 180 24011 minecraft:white_terracotta
-setblock 229 180 24010 minecraft:white_terracotta
-setblock 251 180 24010 minecraft:white_terracotta
-setblock 229 184 23989 minecraft:white_terracotta
-setblock 229 184 24011 minecraft:white_terracotta
-setblock 229 184 23989 minecraft:white_terracotta
-setblock 251 184 23989 minecraft:white_terracotta
-setblock 232 184 23989 minecraft:white_terracotta
-setblock 232 184 24011 minecraft:white_terracotta
-setblock 229 184 23992 minecraft:white_terracotta
-setblock 251 184 23992 minecraft:white_terracotta
-setblock 235 184 23989 minecraft:white_terracotta
-setblock 235 184 24011 minecraft:white_terracotta
-setblock 229 184 23995 minecraft:white_terracotta
-setblock 251 184 23995 minecraft:white_terracotta
-setblock 238 184 23989 minecraft:white_terracotta
-setblock 238 184 24011 minecraft:white_terracotta
-setblock 229 184 23998 minecraft:white_terracotta
-setblock 251 184 23998 minecraft:white_terracotta
-setblock 241 184 23989 minecraft:white_terracotta
-setblock 241 184 24011 minecraft:white_terracotta
-setblock 229 184 24001 minecraft:white_terracotta
-setblock 251 184 24001 minecraft:white_terracotta
-setblock 244 184 23989 minecraft:white_terracotta
-setblock 244 184 24011 minecraft:white_terracotta
-setblock 229 184 24004 minecraft:white_terracotta
-setblock 251 184 24004 minecraft:white_terracotta
-setblock 247 184 23989 minecraft:white_terracotta
-setblock 247 184 24011 minecraft:white_terracotta
-setblock 229 184 24007 minecraft:white_terracotta
-setblock 251 184 24007 minecraft:white_terracotta
-setblock 250 184 23989 minecraft:white_terracotta
-setblock 250 184 24011 minecraft:white_terracotta
-setblock 229 184 24010 minecraft:white_terracotta
-setblock 251 184 24010 minecraft:white_terracotta
-setblock 229 188 23989 minecraft:white_terracotta
-setblock 229 188 24011 minecraft:white_terracotta
-setblock 229 188 23989 minecraft:white_terracotta
-setblock 251 188 23989 minecraft:white_terracotta
-setblock 232 188 23989 minecraft:white_terracotta
-setblock 232 188 24011 minecraft:white_terracotta
-setblock 229 188 23992 minecraft:white_terracotta
-setblock 251 188 23992 minecraft:white_terracotta
-setblock 235 188 23989 minecraft:white_terracotta
-setblock 235 188 24011 minecraft:white_terracotta
-setblock 229 188 23995 minecraft:white_terracotta
-setblock 251 188 23995 minecraft:white_terracotta
-setblock 238 188 23989 minecraft:white_terracotta
-setblock 238 188 24011 minecraft:white_terracotta
-setblock 229 188 23998 minecraft:white_terracotta
-setblock 251 188 23998 minecraft:white_terracotta
-setblock 241 188 23989 minecraft:white_terracotta
-setblock 241 188 24011 minecraft:white_terracotta
-setblock 229 188 24001 minecraft:white_terracotta
-setblock 251 188 24001 minecraft:white_terracotta
-setblock 244 188 23989 minecraft:white_terracotta
-setblock 244 188 24011 minecraft:white_terracotta
-setblock 229 188 24004 minecraft:white_terracotta
-setblock 251 188 24004 minecraft:white_terracotta
-setblock 247 188 23989 minecraft:white_terracotta
-setblock 247 188 24011 minecraft:white_terracotta
-setblock 229 188 24007 minecraft:white_terracotta
-setblock 251 188 24007 minecraft:white_terracotta
-setblock 250 188 23989 minecraft:white_terracotta
-setblock 250 188 24011 minecraft:white_terracotta
-setblock 229 188 24010 minecraft:white_terracotta
-setblock 251 188 24010 minecraft:white_terracotta
-setblock 229 192 23989 minecraft:white_terracotta
-setblock 229 192 24011 minecraft:white_terracotta
-setblock 229 192 23989 minecraft:white_terracotta
-setblock 251 192 23989 minecraft:white_terracotta
-setblock 232 192 23989 minecraft:white_terracotta
-setblock 232 192 24011 minecraft:white_terracotta
-setblock 229 192 23992 minecraft:white_terracotta
-setblock 251 192 23992 minecraft:white_terracotta
-setblock 235 192 23989 minecraft:white_terracotta
-setblock 235 192 24011 minecraft:white_terracotta
-setblock 229 192 23995 minecraft:white_terracotta
-setblock 251 192 23995 minecraft:white_terracotta
-setblock 238 192 23989 minecraft:white_terracotta
-setblock 238 192 24011 minecraft:white_terracotta
-setblock 229 192 23998 minecraft:white_terracotta
-setblock 251 192 23998 minecraft:white_terracotta
-setblock 241 192 23989 minecraft:white_terracotta
-setblock 241 192 24011 minecraft:white_terracotta
-setblock 229 192 24001 minecraft:white_terracotta
-setblock 251 192 24001 minecraft:white_terracotta
-setblock 244 192 23989 minecraft:white_terracotta
-setblock 244 192 24011 minecraft:white_terracotta
-setblock 229 192 24004 minecraft:white_terracotta
-setblock 251 192 24004 minecraft:white_terracotta
-setblock 247 192 23989 minecraft:white_terracotta
-setblock 247 192 24011 minecraft:white_terracotta
-setblock 229 192 24007 minecraft:white_terracotta
-setblock 251 192 24007 minecraft:white_terracotta
-setblock 250 192 23989 minecraft:white_terracotta
-setblock 250 192 24011 minecraft:white_terracotta
-setblock 229 192 24010 minecraft:white_terracotta
-setblock 251 192 24010 minecraft:white_terracotta
-setblock 229 196 23989 minecraft:white_terracotta
-setblock 229 196 24011 minecraft:white_terracotta
-setblock 229 196 23989 minecraft:white_terracotta
-setblock 251 196 23989 minecraft:white_terracotta
-setblock 232 196 23989 minecraft:white_terracotta
-setblock 232 196 24011 minecraft:white_terracotta
-setblock 229 196 23992 minecraft:white_terracotta
-setblock 251 196 23992 minecraft:white_terracotta
-setblock 235 196 23989 minecraft:white_terracotta
-setblock 235 196 24011 minecraft:white_terracotta
-setblock 229 196 23995 minecraft:white_terracotta
-setblock 251 196 23995 minecraft:white_terracotta
-setblock 238 196 23989 minecraft:white_terracotta
-setblock 238 196 24011 minecraft:white_terracotta
-setblock 229 196 23998 minecraft:white_terracotta
-setblock 251 196 23998 minecraft:white_terracotta
-setblock 241 196 23989 minecraft:white_terracotta
-setblock 241 196 24011 minecraft:white_terracotta
-setblock 229 196 24001 minecraft:white_terracotta
-setblock 251 196 24001 minecraft:white_terracotta
-setblock 244 196 23989 minecraft:white_terracotta
-setblock 244 196 24011 minecraft:white_terracotta
-setblock 229 196 24004 minecraft:white_terracotta
-setblock 251 196 24004 minecraft:white_terracotta
-setblock 247 196 23989 minecraft:white_terracotta
-setblock 247 196 24011 minecraft:white_terracotta
-setblock 229 196 24007 minecraft:white_terracotta
-setblock 251 196 24007 minecraft:white_terracotta
-setblock 250 196 23989 minecraft:white_terracotta
-setblock 250 196 24011 minecraft:white_terracotta
-setblock 229 196 24010 minecraft:white_terracotta
-setblock 251 196 24010 minecraft:white_terracotta
-fill 230 95 23990 250 95 24010 minecraft:spruce_planks
-fill 234 96 23994 246 96 24006 minecraft:red_carpet
-fill 237 192 23999 237 192 24001 minecraft:gold_block
-fill 238 192 23998 238 192 24002 minecraft:gold_block
-fill 239 192 23997 239 192 24003 minecraft:gold_block
-fill 240 192 23997 240 192 24003 minecraft:gold_block
-fill 241 192 23997 241 192 24003 minecraft:gold_block
-fill 242 192 23998 242 192 24002 minecraft:gold_block
-fill 243 192 23999 243 192 24001 minecraft:gold_block
-fill 240 193 24000 240 199 24000 minecraft:iron_bars
-setblock 237 191 24000 minecraft:end_rod
-setblock 243 191 24000 minecraft:end_rod
-setblock 240 191 23997 minecraft:end_rod
-setblock 240 191 24003 minecraft:end_rod
-fill 230 172 23990 250 173 23996 minecraft:dark_oak_planks
-fill 231 174 23990 232 179 23994 minecraft:green_wool
-fill 234 174 23990 235 179 23994 minecraft:blue_wool
-fill 237 174 23990 238 179 23994 minecraft:brown_wool
-fill 240 174 23990 241 179 23994 minecraft:green_wool
-fill 243 174 23990 244 179 23994 minecraft:brown_wool
-fill 246 174 23990 247 179 23994 minecraft:blue_wool
-fill 249 174 23990 250 179 23994 minecraft:green_wool
-fill 232 155 24002 232 155 24006 minecraft:white_wool
-fill 233 155 24001 233 155 24007 minecraft:white_wool
-fill 234 155 24000 234 155 24008 minecraft:white_wool
-fill 235 155 23999 235 155 24009 minecraft:white_wool
-fill 236 155 23999 236 155 24009 minecraft:white_wool
-fill 237 155 23999 237 155 24009 minecraft:white_wool
-fill 238 155 23999 238 155 24009 minecraft:white_wool
-fill 239 155 23999 239 155 24009 minecraft:white_wool
-fill 240 155 24000 240 155 24008 minecraft:white_wool
-fill 241 155 24001 241 155 24007 minecraft:white_wool
-fill 242 155 24002 242 155 24006 minecraft:white_wool
-fill 231 154 24002 231 154 24006 minecraft:white_wool
-fill 232 154 24000 232 154 24008 minecraft:white_wool
-fill 233 154 23999 233 154 24009 minecraft:white_wool
-fill 234 154 23999 234 154 24009 minecraft:white_wool
-fill 235 154 23998 235 154 24010 minecraft:white_wool
-fill 236 154 23998 236 154 24010 minecraft:white_wool
-fill 237 154 23998 237 154 24010 minecraft:white_wool
-fill 238 154 23998 238 154 24010 minecraft:white_wool
-fill 239 154 23998 239 154 24010 minecraft:white_wool
-fill 240 154 23999 240 154 24009 minecraft:white_wool
-fill 241 154 23999 241 154 24009 minecraft:white_wool
-fill 242 154 24000 242 154 24008 minecraft:white_wool
-fill 243 154 24002 243 154 24006 minecraft:white_wool
-fill 233 154 24002 233 154 24006 minecraft:air
-fill 234 154 24001 234 154 24007 minecraft:air
-fill 235 154 24000 235 154 24008 minecraft:air
-fill 236 154 24000 236 154 24008 minecraft:air
-fill 237 154 24000 237 154 24008 minecraft:air
-fill 238 154 24000 238 154 24008 minecraft:air
-fill 239 154 24000 239 154 24008 minecraft:air
-fill 240 154 24001 240 154 24007 minecraft:air
-fill 241 154 24002 241 154 24006 minecraft:air
-fill 237 96 24004 237 153 24004 minecraft:gray_concrete
-fill 230 130 23998 250 131 24010 minecraft:oak_planks
-fill 238 130 24002 242 131 24006 minecraft:air
-fill 231 96 23999 231 129 23999 minecraft:oak_log
-fill 249 96 23999 249 129 23999 minecraft:oak_log
-fill 231 96 24009 231 129 24009 minecraft:oak_log
-fill 249 96 24009 249 129 24009 minecraft:oak_log
-setblock 244 132 24006 minecraft:flower_pot
-fill 244 112 23991 250 113 23997 minecraft:birch_planks
-fill 250 114 23991 250 124 23997 minecraft:birch_planks
-fill 237 96 23997 243 99 24003 minecraft:glass
-fill 238 96 23998 242 98 24002 minecraft:water
-fill 239 99 23999 241 99 24001 minecraft:water
+# Dropper Aventure : niveau 4 (Rideaux)
+fill 112 96 24000 112 96 24001 minecraft:black_wool
+fill 112 96 24002 112 96 24003 minecraft:white_wool
+fill 112 96 24004 112 96 24005 minecraft:black_wool
+fill 112 96 24006 112 96 24007 minecraft:white_wool
+fill 112 96 24008 112 96 24009 minecraft:black_wool
+fill 112 96 24010 112 96 24011 minecraft:white_wool
+fill 113 96 23989 113 96 23989 minecraft:black_wool
+fill 113 96 23990 113 96 23991 minecraft:white_wool
+fill 113 96 23992 113 96 23993 minecraft:black_wool
+fill 113 96 23994 113 96 23995 minecraft:white_wool
+fill 113 96 23996 113 96 23997 minecraft:black_wool
+fill 113 96 23998 113 96 23999 minecraft:white_wool
+fill 113 96 24000 113 96 24001 minecraft:black_wool
+fill 113 96 24002 113 96 24003 minecraft:white_wool
+fill 113 96 24004 113 96 24005 minecraft:black_wool
+fill 113 96 24006 113 96 24007 minecraft:white_wool
+fill 113 96 24008 113 96 24009 minecraft:black_wool
+fill 113 96 24010 113 96 24011 minecraft:white_wool
+fill 114 96 23989 114 96 23989 minecraft:white_wool
+fill 114 96 23990 114 96 23991 minecraft:black_wool
+fill 114 96 23992 114 96 23993 minecraft:white_wool
+fill 114 96 23994 114 96 23995 minecraft:black_wool
+fill 114 96 23996 114 96 23997 minecraft:white_wool
+fill 114 96 23998 114 96 23999 minecraft:black_wool
+fill 114 96 24000 114 96 24001 minecraft:white_wool
+fill 114 96 24002 114 96 24003 minecraft:black_wool
+fill 114 96 24004 114 96 24005 minecraft:white_wool
+fill 114 96 24006 114 96 24007 minecraft:black_wool
+fill 114 96 24008 114 96 24009 minecraft:white_wool
+fill 114 96 24010 114 96 24011 minecraft:black_wool
+fill 115 96 23989 115 96 23989 minecraft:white_wool
+fill 115 96 23990 115 96 23991 minecraft:black_wool
+fill 115 96 23992 115 96 23993 minecraft:white_wool
+fill 115 96 23994 115 96 23995 minecraft:black_wool
+fill 115 96 23996 115 96 23997 minecraft:white_wool
+fill 115 96 23998 115 96 23999 minecraft:black_wool
+fill 115 96 24000 115 96 24001 minecraft:white_wool
+fill 115 96 24002 115 96 24003 minecraft:black_wool
+fill 115 96 24004 115 96 24005 minecraft:white_wool
+fill 115 96 24006 115 96 24007 minecraft:black_wool
+fill 115 96 24008 115 96 24009 minecraft:white_wool
+fill 115 96 24010 115 96 24011 minecraft:black_wool
+fill 116 96 23989 116 96 23989 minecraft:black_wool
+fill 116 96 23990 116 96 23991 minecraft:white_wool
+fill 116 96 23992 116 96 23993 minecraft:black_wool
+fill 116 96 23994 116 96 23995 minecraft:white_wool
+fill 116 96 23996 116 96 23997 minecraft:black_wool
+fill 116 96 23998 116 96 23999 minecraft:white_wool
+fill 116 96 24000 116 96 24001 minecraft:black_wool
+fill 116 96 24002 116 96 24003 minecraft:white_wool
+fill 116 96 24004 116 96 24005 minecraft:black_wool
+fill 116 96 24006 116 96 24007 minecraft:white_wool
+fill 116 96 24008 116 96 24009 minecraft:black_wool
+fill 116 96 24010 116 96 24011 minecraft:white_wool
+fill 117 96 23989 117 96 23989 minecraft:black_wool
+fill 117 96 23990 117 96 23991 minecraft:white_wool
+fill 117 96 23992 117 96 23993 minecraft:black_wool
+fill 117 96 23994 117 96 23995 minecraft:white_wool
+fill 117 96 23996 117 96 23997 minecraft:black_wool
+fill 117 96 23998 117 96 23999 minecraft:white_wool
+fill 117 96 24000 117 96 24001 minecraft:black_wool
+fill 117 96 24002 117 96 24003 minecraft:white_wool
+fill 117 96 24004 117 96 24005 minecraft:black_wool
+fill 117 96 24006 117 96 24007 minecraft:white_wool
+fill 117 96 24008 117 96 24009 minecraft:black_wool
+fill 117 96 24010 117 96 24011 minecraft:white_wool
+fill 118 96 23989 118 96 23989 minecraft:white_wool
+fill 118 96 23990 118 96 23991 minecraft:black_wool
+fill 118 96 23992 118 96 23993 minecraft:white_wool
+fill 118 96 23994 118 96 23995 minecraft:black_wool
+fill 118 96 23996 118 96 23997 minecraft:white_wool
+fill 118 96 23998 118 96 23999 minecraft:black_wool
+fill 118 96 24000 118 96 24001 minecraft:white_wool
+fill 118 96 24002 118 96 24003 minecraft:black_wool
+fill 118 96 24004 118 96 24005 minecraft:white_wool
+fill 118 96 24006 118 96 24007 minecraft:black_wool
+fill 118 96 24008 118 96 24009 minecraft:white_wool
+fill 118 96 24010 118 96 24011 minecraft:black_wool
+fill 119 96 23989 119 96 23989 minecraft:white_wool
+fill 119 96 23990 119 96 23991 minecraft:black_wool
+fill 119 96 23992 119 96 23993 minecraft:white_wool
+fill 119 96 23994 119 96 23995 minecraft:black_wool
+fill 119 96 23996 119 96 23997 minecraft:white_wool
+fill 119 96 23998 119 96 23999 minecraft:black_wool
+fill 119 96 24000 119 96 24001 minecraft:white_wool
+fill 119 96 24002 119 96 24003 minecraft:black_wool
+fill 119 96 24004 119 96 24005 minecraft:white_wool
+fill 119 96 24006 119 96 24007 minecraft:black_wool
+fill 119 96 24008 119 96 24009 minecraft:white_wool
+fill 119 96 24010 119 96 24011 minecraft:black_wool
+fill 120 96 23989 120 96 23989 minecraft:black_wool
+fill 120 96 23990 120 96 23991 minecraft:white_wool
+fill 120 96 23992 120 96 23993 minecraft:black_wool
+fill 120 96 23997 120 96 23997 minecraft:black_wool
+fill 120 96 23998 120 96 23999 minecraft:white_wool
+fill 120 96 24000 120 96 24001 minecraft:black_wool
+fill 120 96 24002 120 96 24003 minecraft:white_wool
+fill 120 96 24004 120 96 24005 minecraft:black_wool
+fill 120 96 24006 120 96 24007 minecraft:white_wool
+fill 120 96 24008 120 96 24009 minecraft:black_wool
+fill 120 96 24010 120 96 24011 minecraft:white_wool
+fill 121 96 23989 121 96 23989 minecraft:black_wool
+fill 121 96 23990 121 96 23991 minecraft:white_wool
+fill 121 96 23992 121 96 23993 minecraft:black_wool
+fill 121 96 23997 121 96 23997 minecraft:black_wool
+fill 121 96 23998 121 96 23999 minecraft:white_wool
+fill 121 96 24000 121 96 24001 minecraft:black_wool
+fill 121 96 24002 121 96 24003 minecraft:white_wool
+fill 121 96 24004 121 96 24005 minecraft:black_wool
+fill 121 96 24006 121 96 24007 minecraft:white_wool
+fill 121 96 24008 121 96 24009 minecraft:black_wool
+fill 121 96 24010 121 96 24011 minecraft:white_wool
+fill 122 96 23989 122 96 23989 minecraft:white_wool
+fill 122 96 23990 122 96 23991 minecraft:black_wool
+fill 122 96 23992 122 96 23993 minecraft:white_wool
+fill 122 96 23997 122 96 23997 minecraft:white_wool
+fill 122 96 23998 122 96 23999 minecraft:black_wool
+fill 122 96 24000 122 96 24001 minecraft:white_wool
+fill 122 96 24002 122 96 24003 minecraft:black_wool
+fill 122 96 24004 122 96 24005 minecraft:white_wool
+fill 122 96 24006 122 96 24007 minecraft:black_wool
+fill 122 96 24008 122 96 24009 minecraft:white_wool
+fill 122 96 24010 122 96 24011 minecraft:black_wool
+fill 123 96 23989 123 96 23989 minecraft:white_wool
+fill 123 96 23990 123 96 23991 minecraft:black_wool
+fill 123 96 23992 123 96 23993 minecraft:white_wool
+fill 123 96 23994 123 96 23995 minecraft:black_wool
+fill 123 96 23996 123 96 23997 minecraft:white_wool
+fill 123 96 23998 123 96 23999 minecraft:black_wool
+fill 123 96 24000 123 96 24001 minecraft:white_wool
+fill 123 96 24002 123 96 24003 minecraft:black_wool
+fill 123 96 24004 123 96 24005 minecraft:white_wool
+fill 123 96 24006 123 96 24007 minecraft:black_wool
+fill 123 96 24008 123 96 24009 minecraft:white_wool
+fill 123 96 24010 123 96 24011 minecraft:black_wool
+fill 124 96 23989 124 96 23989 minecraft:black_wool
+fill 124 96 23990 124 96 23991 minecraft:white_wool
+fill 124 96 23992 124 96 23993 minecraft:black_wool
+fill 124 96 23994 124 96 23995 minecraft:white_wool
+fill 124 96 23996 124 96 23997 minecraft:black_wool
+fill 124 96 23998 124 96 23999 minecraft:white_wool
+fill 124 96 24000 124 96 24001 minecraft:black_wool
+fill 124 96 24002 124 96 24003 minecraft:white_wool
+fill 124 96 24004 124 96 24005 minecraft:black_wool
+fill 124 96 24006 124 96 24007 minecraft:white_wool
+fill 124 96 24008 124 96 24009 minecraft:black_wool
+fill 124 96 24010 124 96 24011 minecraft:white_wool
+fill 125 96 23989 125 96 23989 minecraft:black_wool
+fill 125 96 23990 125 96 23991 minecraft:white_wool
+fill 125 96 23992 125 96 23993 minecraft:black_wool
+fill 125 96 23994 125 96 23995 minecraft:white_wool
+fill 125 96 23996 125 96 23997 minecraft:black_wool
+fill 125 96 23998 125 96 23999 minecraft:white_wool
+fill 125 96 24000 125 96 24001 minecraft:black_wool
+fill 125 96 24002 125 96 24003 minecraft:white_wool
+fill 125 96 24004 125 96 24005 minecraft:black_wool
+fill 125 96 24006 125 96 24007 minecraft:white_wool
+fill 125 96 24008 125 96 24009 minecraft:black_wool
+fill 125 96 24010 125 96 24011 minecraft:white_wool
+fill 126 96 23989 126 96 23989 minecraft:white_wool
+fill 126 96 23990 126 96 23991 minecraft:black_wool
+fill 126 96 23992 126 96 23993 minecraft:white_wool
+fill 126 96 23994 126 96 23995 minecraft:black_wool
+fill 126 96 23996 126 96 23997 minecraft:white_wool
+fill 126 96 23998 126 96 23999 minecraft:black_wool
+fill 126 96 24000 126 96 24001 minecraft:white_wool
+fill 126 96 24002 126 96 24003 minecraft:black_wool
+fill 126 96 24004 126 96 24005 minecraft:white_wool
+fill 126 96 24006 126 96 24007 minecraft:black_wool
+fill 126 96 24008 126 96 24009 minecraft:white_wool
+fill 126 96 24010 126 96 24011 minecraft:black_wool
+fill 127 96 23989 127 96 23989 minecraft:white_wool
+fill 127 96 23990 127 96 23991 minecraft:black_wool
+fill 127 96 23992 127 96 23993 minecraft:white_wool
+fill 127 96 23994 127 96 23995 minecraft:black_wool
+fill 127 96 23996 127 96 23997 minecraft:white_wool
+fill 127 96 23998 127 96 23999 minecraft:black_wool
+fill 127 96 24000 127 96 24001 minecraft:white_wool
+fill 127 96 24002 127 96 24003 minecraft:black_wool
+fill 127 96 24004 127 96 24005 minecraft:white_wool
+fill 127 96 24006 127 96 24007 minecraft:black_wool
+fill 127 96 24008 127 96 24009 minecraft:white_wool
+fill 127 96 24010 127 96 24011 minecraft:black_wool
+fill 128 96 23989 128 96 23989 minecraft:black_wool
+fill 128 96 23990 128 96 23991 minecraft:white_wool
+fill 128 96 23992 128 96 23993 minecraft:black_wool
+fill 128 96 23994 128 96 23995 minecraft:white_wool
+fill 128 96 23996 128 96 23997 minecraft:black_wool
+fill 128 96 23998 128 96 23999 minecraft:white_wool
+fill 128 96 24000 128 96 24001 minecraft:black_wool
+fill 128 96 24002 128 96 24003 minecraft:white_wool
+fill 128 96 24004 128 96 24005 minecraft:black_wool
+fill 128 96 24006 128 96 24007 minecraft:white_wool
+fill 128 96 24008 128 96 24009 minecraft:black_wool
+fill 128 96 24010 128 96 24011 minecraft:white_wool
+fill 129 96 23989 129 96 23989 minecraft:black_wool
+fill 129 96 23990 129 96 23991 minecraft:white_wool
+fill 129 96 23992 129 96 23993 minecraft:black_wool
+fill 129 96 23994 129 96 23995 minecraft:white_wool
+fill 129 96 23996 129 96 23997 minecraft:black_wool
+fill 129 96 23998 129 96 23999 minecraft:white_wool
+fill 129 96 24000 129 96 24001 minecraft:black_wool
+fill 129 96 24002 129 96 24003 minecraft:white_wool
+fill 129 96 24004 129 96 24005 minecraft:black_wool
+fill 129 96 24006 129 96 24007 minecraft:white_wool
+fill 129 96 24008 129 96 24009 minecraft:black_wool
+fill 129 96 24010 129 96 24011 minecraft:white_wool
+fill 130 96 23989 130 96 23989 minecraft:white_wool
+fill 130 96 23990 130 96 23991 minecraft:black_wool
+fill 130 96 23992 130 96 23993 minecraft:white_wool
+fill 130 96 23994 130 96 23995 minecraft:black_wool
+fill 130 96 23996 130 96 23997 minecraft:white_wool
+fill 130 96 23998 130 96 23999 minecraft:black_wool
+fill 130 96 24000 130 96 24001 minecraft:white_wool
+fill 130 96 24002 130 96 24003 minecraft:black_wool
+fill 130 96 24004 130 96 24005 minecraft:white_wool
+fill 130 96 24006 130 96 24007 minecraft:black_wool
+fill 130 96 24008 130 96 24009 minecraft:white_wool
+fill 130 96 24010 130 96 24011 minecraft:black_wool
+fill 131 96 23989 131 96 23989 minecraft:white_wool
+fill 131 96 23990 131 96 23991 minecraft:black_wool
+fill 131 96 23992 131 96 23993 minecraft:white_wool
+fill 131 96 23994 131 96 23995 minecraft:black_wool
+fill 131 96 23996 131 96 23997 minecraft:white_wool
+fill 131 96 23998 131 96 23999 minecraft:black_wool
+fill 131 96 24000 131 96 24001 minecraft:white_wool
+fill 131 96 24002 131 96 24003 minecraft:black_wool
+fill 131 96 24004 131 96 24005 minecraft:white_wool
+fill 131 96 24006 131 96 24007 minecraft:black_wool
+fill 131 96 24008 131 96 24009 minecraft:white_wool
+fill 131 96 24010 131 96 24011 minecraft:black_wool
+fill 109 86 23989 109 86 23989 minecraft:black_wool
+fill 109 86 23990 109 86 23991 minecraft:white_wool
+fill 109 86 23992 109 86 23993 minecraft:black_wool
+fill 109 86 23994 109 86 23995 minecraft:white_wool
+fill 109 86 23996 109 86 23997 minecraft:black_wool
+fill 109 86 23998 109 86 23999 minecraft:white_wool
+fill 109 86 24000 109 86 24001 minecraft:black_wool
+fill 109 86 24002 109 86 24003 minecraft:white_wool
+fill 109 86 24004 109 86 24005 minecraft:black_wool
+fill 109 86 24006 109 86 24007 minecraft:white_wool
+fill 109 86 24008 109 86 24009 minecraft:black_wool
+fill 109 86 24010 109 86 24011 minecraft:white_wool
+fill 110 86 23989 110 86 23989 minecraft:white_wool
+fill 110 86 23990 110 86 23991 minecraft:black_wool
+fill 110 86 23992 110 86 23993 minecraft:white_wool
+fill 110 86 23994 110 86 23995 minecraft:black_wool
+fill 110 86 23996 110 86 23997 minecraft:white_wool
+fill 110 86 23998 110 86 23999 minecraft:black_wool
+fill 110 86 24000 110 86 24001 minecraft:white_wool
+fill 110 86 24002 110 86 24003 minecraft:black_wool
+fill 110 86 24004 110 86 24005 minecraft:white_wool
+fill 110 86 24006 110 86 24007 minecraft:black_wool
+fill 110 86 24008 110 86 24009 minecraft:white_wool
+fill 110 86 24010 110 86 24011 minecraft:black_wool
+fill 111 86 23989 111 86 23989 minecraft:white_wool
+fill 111 86 23990 111 86 23991 minecraft:black_wool
+fill 111 86 23992 111 86 23993 minecraft:white_wool
+fill 111 86 23994 111 86 23995 minecraft:black_wool
+fill 111 86 23996 111 86 23997 minecraft:white_wool
+fill 111 86 23998 111 86 23999 minecraft:black_wool
+fill 111 86 24000 111 86 24001 minecraft:white_wool
+fill 111 86 24002 111 86 24003 minecraft:black_wool
+fill 111 86 24004 111 86 24005 minecraft:white_wool
+fill 111 86 24006 111 86 24007 minecraft:black_wool
+fill 111 86 24008 111 86 24009 minecraft:white_wool
+fill 111 86 24010 111 86 24011 minecraft:black_wool
+fill 112 86 23989 112 86 23989 minecraft:black_wool
+fill 112 86 23990 112 86 23991 minecraft:white_wool
+fill 112 86 23992 112 86 23993 minecraft:black_wool
+fill 112 86 23994 112 86 23995 minecraft:white_wool
+fill 112 86 23996 112 86 23997 minecraft:black_wool
+fill 112 86 23998 112 86 23999 minecraft:white_wool
+fill 112 86 24000 112 86 24001 minecraft:black_wool
+fill 112 86 24002 112 86 24003 minecraft:white_wool
+fill 112 86 24004 112 86 24005 minecraft:black_wool
+fill 112 86 24006 112 86 24007 minecraft:white_wool
+fill 112 86 24008 112 86 24009 minecraft:black_wool
+fill 112 86 24010 112 86 24011 minecraft:white_wool
+fill 113 86 23989 113 86 23989 minecraft:black_wool
+fill 113 86 23990 113 86 23991 minecraft:white_wool
+fill 113 86 23992 113 86 23993 minecraft:black_wool
+fill 113 86 23994 113 86 23995 minecraft:white_wool
+fill 113 86 23996 113 86 23997 minecraft:black_wool
+fill 113 86 23998 113 86 23999 minecraft:white_wool
+fill 113 86 24000 113 86 24001 minecraft:black_wool
+fill 113 86 24002 113 86 24003 minecraft:white_wool
+fill 113 86 24004 113 86 24005 minecraft:black_wool
+fill 113 86 24006 113 86 24007 minecraft:white_wool
+fill 113 86 24008 113 86 24009 minecraft:black_wool
+fill 113 86 24010 113 86 24011 minecraft:white_wool
+fill 114 86 23989 114 86 23989 minecraft:white_wool
+fill 114 86 23990 114 86 23991 minecraft:black_wool
+fill 114 86 23992 114 86 23993 minecraft:white_wool
+fill 114 86 23994 114 86 23995 minecraft:black_wool
+fill 114 86 23996 114 86 23997 minecraft:white_wool
+fill 114 86 23998 114 86 23999 minecraft:black_wool
+fill 114 86 24000 114 86 24001 minecraft:white_wool
+fill 114 86 24002 114 86 24003 minecraft:black_wool
+fill 114 86 24004 114 86 24005 minecraft:white_wool
+fill 114 86 24006 114 86 24007 minecraft:black_wool
+fill 114 86 24008 114 86 24009 minecraft:white_wool
+fill 114 86 24010 114 86 24011 minecraft:black_wool
+fill 115 86 23989 115 86 23989 minecraft:white_wool
+fill 115 86 23990 115 86 23991 minecraft:black_wool
+fill 115 86 23992 115 86 23993 minecraft:white_wool
+fill 115 86 23994 115 86 23995 minecraft:black_wool
+fill 115 86 23996 115 86 23997 minecraft:white_wool
+fill 115 86 23998 115 86 23999 minecraft:black_wool
+fill 115 86 24000 115 86 24001 minecraft:white_wool
+fill 115 86 24002 115 86 24003 minecraft:black_wool
+fill 115 86 24004 115 86 24005 minecraft:white_wool
+fill 115 86 24006 115 86 24007 minecraft:black_wool
+fill 115 86 24008 115 86 24009 minecraft:white_wool
+fill 115 86 24010 115 86 24011 minecraft:black_wool
+fill 116 86 23989 116 86 23989 minecraft:black_wool
+fill 116 86 23990 116 86 23991 minecraft:white_wool
+fill 116 86 23992 116 86 23993 minecraft:black_wool
+fill 116 86 23994 116 86 23995 minecraft:white_wool
+fill 116 86 23996 116 86 23997 minecraft:black_wool
+fill 116 86 23998 116 86 23999 minecraft:white_wool
+fill 116 86 24000 116 86 24001 minecraft:black_wool
+fill 116 86 24002 116 86 24003 minecraft:white_wool
+fill 116 86 24004 116 86 24005 minecraft:black_wool
+fill 116 86 24006 116 86 24007 minecraft:white_wool
+fill 116 86 24008 116 86 24009 minecraft:black_wool
+fill 116 86 24010 116 86 24011 minecraft:white_wool
+fill 117 86 23989 117 86 23989 minecraft:black_wool
+fill 117 86 23990 117 86 23991 minecraft:white_wool
+fill 117 86 23992 117 86 23993 minecraft:black_wool
+fill 117 86 23994 117 86 23995 minecraft:white_wool
+fill 117 86 23996 117 86 23997 minecraft:black_wool
+fill 117 86 23998 117 86 23999 minecraft:white_wool
+fill 117 86 24000 117 86 24001 minecraft:black_wool
+fill 117 86 24002 117 86 24003 minecraft:white_wool
+fill 117 86 24004 117 86 24005 minecraft:black_wool
+fill 117 86 24006 117 86 24007 minecraft:white_wool
+fill 117 86 24008 117 86 24009 minecraft:black_wool
+fill 117 86 24010 117 86 24011 minecraft:white_wool
+fill 118 86 23989 118 86 23989 minecraft:white_wool
+fill 118 86 23990 118 86 23991 minecraft:black_wool
+fill 118 86 23992 118 86 23993 minecraft:white_wool
+fill 118 86 23994 118 86 23995 minecraft:black_wool
+fill 118 86 23996 118 86 23997 minecraft:white_wool
+fill 118 86 23998 118 86 23999 minecraft:black_wool
+fill 118 86 24000 118 86 24001 minecraft:white_wool
+fill 118 86 24002 118 86 24003 minecraft:black_wool
+fill 118 86 24004 118 86 24005 minecraft:white_wool
+fill 118 86 24006 118 86 24007 minecraft:black_wool
+fill 118 86 24008 118 86 24009 minecraft:white_wool
+fill 118 86 24010 118 86 24011 minecraft:black_wool
+fill 119 86 23989 119 86 23989 minecraft:white_wool
+fill 119 86 23990 119 86 23991 minecraft:black_wool
+fill 119 86 23992 119 86 23993 minecraft:white_wool
+fill 119 86 23994 119 86 23995 minecraft:black_wool
+fill 119 86 23996 119 86 23997 minecraft:white_wool
+fill 119 86 23998 119 86 23999 minecraft:black_wool
+fill 119 86 24000 119 86 24001 minecraft:white_wool
+fill 119 86 24002 119 86 24003 minecraft:black_wool
+fill 119 86 24004 119 86 24005 minecraft:white_wool
+fill 119 86 24006 119 86 24007 minecraft:black_wool
+fill 119 86 24008 119 86 24009 minecraft:white_wool
+fill 119 86 24010 119 86 24011 minecraft:black_wool
+fill 120 86 23989 120 86 23989 minecraft:black_wool
+fill 120 86 23990 120 86 23991 minecraft:white_wool
+fill 120 86 23992 120 86 23993 minecraft:black_wool
+fill 120 86 23994 120 86 23995 minecraft:white_wool
+fill 120 86 23996 120 86 23997 minecraft:black_wool
+fill 120 86 23998 120 86 23999 minecraft:white_wool
+fill 120 86 24000 120 86 24001 minecraft:black_wool
+fill 120 86 24002 120 86 24003 minecraft:white_wool
+fill 120 86 24004 120 86 24005 minecraft:black_wool
+fill 120 86 24006 120 86 24007 minecraft:white_wool
+fill 120 86 24008 120 86 24009 minecraft:black_wool
+fill 120 86 24010 120 86 24011 minecraft:white_wool
+fill 121 86 23989 121 86 23989 minecraft:black_wool
+fill 121 86 23990 121 86 23991 minecraft:white_wool
+fill 121 86 23992 121 86 23993 minecraft:black_wool
+fill 121 86 23997 121 86 23997 minecraft:black_wool
+fill 121 86 23998 121 86 23999 minecraft:white_wool
+fill 121 86 24000 121 86 24001 minecraft:black_wool
+fill 121 86 24002 121 86 24003 minecraft:white_wool
+fill 121 86 24004 121 86 24005 minecraft:black_wool
+fill 121 86 24006 121 86 24007 minecraft:white_wool
+fill 121 86 24008 121 86 24009 minecraft:black_wool
+fill 121 86 24010 121 86 24011 minecraft:white_wool
+fill 122 86 23989 122 86 23989 minecraft:white_wool
+fill 122 86 23990 122 86 23991 minecraft:black_wool
+fill 122 86 23992 122 86 23993 minecraft:white_wool
+fill 122 86 23997 122 86 23997 minecraft:white_wool
+fill 122 86 23998 122 86 23999 minecraft:black_wool
+fill 122 86 24000 122 86 24001 minecraft:white_wool
+fill 122 86 24002 122 86 24003 minecraft:black_wool
+fill 122 86 24004 122 86 24005 minecraft:white_wool
+fill 122 86 24006 122 86 24007 minecraft:black_wool
+fill 122 86 24008 122 86 24009 minecraft:white_wool
+fill 122 86 24010 122 86 24011 minecraft:black_wool
+fill 123 86 23989 123 86 23989 minecraft:white_wool
+fill 123 86 23990 123 86 23991 minecraft:black_wool
+fill 123 86 23992 123 86 23993 minecraft:white_wool
+fill 123 86 23997 123 86 23997 minecraft:white_wool
+fill 123 86 23998 123 86 23999 minecraft:black_wool
+fill 123 86 24000 123 86 24001 minecraft:white_wool
+fill 123 86 24002 123 86 24003 minecraft:black_wool
+fill 123 86 24004 123 86 24005 minecraft:white_wool
+fill 123 86 24006 123 86 24007 minecraft:black_wool
+fill 123 86 24008 123 86 24009 minecraft:white_wool
+fill 123 86 24010 123 86 24011 minecraft:black_wool
+fill 124 86 23989 124 86 23989 minecraft:black_wool
+fill 124 86 23990 124 86 23991 minecraft:white_wool
+fill 124 86 23992 124 86 23993 minecraft:black_wool
+fill 124 86 23994 124 86 23995 minecraft:white_wool
+fill 124 86 23996 124 86 23997 minecraft:black_wool
+fill 124 86 23998 124 86 23999 minecraft:white_wool
+fill 124 86 24000 124 86 24001 minecraft:black_wool
+fill 124 86 24002 124 86 24003 minecraft:white_wool
+fill 124 86 24004 124 86 24005 minecraft:black_wool
+fill 124 86 24006 124 86 24007 minecraft:white_wool
+fill 124 86 24008 124 86 24009 minecraft:black_wool
+fill 124 86 24010 124 86 24011 minecraft:white_wool
+fill 125 86 23989 125 86 23989 minecraft:black_wool
+fill 125 86 23990 125 86 23991 minecraft:white_wool
+fill 125 86 23992 125 86 23993 minecraft:black_wool
+fill 125 86 23994 125 86 23995 minecraft:white_wool
+fill 125 86 23996 125 86 23997 minecraft:black_wool
+fill 125 86 23998 125 86 23999 minecraft:white_wool
+fill 125 86 24000 125 86 24001 minecraft:black_wool
+fill 125 86 24002 125 86 24003 minecraft:white_wool
+fill 125 86 24004 125 86 24005 minecraft:black_wool
+fill 125 86 24006 125 86 24007 minecraft:white_wool
+fill 125 86 24008 125 86 24009 minecraft:black_wool
+fill 125 86 24010 125 86 24011 minecraft:white_wool
+fill 126 86 23989 126 86 23989 minecraft:white_wool
+fill 126 86 23990 126 86 23991 minecraft:black_wool
+fill 126 86 23992 126 86 23993 minecraft:white_wool
+fill 126 86 23994 126 86 23995 minecraft:black_wool
+fill 126 86 23996 126 86 23997 minecraft:white_wool
+fill 126 86 23998 126 86 23999 minecraft:black_wool
+fill 126 86 24000 126 86 24001 minecraft:white_wool
+fill 126 86 24002 126 86 24003 minecraft:black_wool
+fill 126 86 24004 126 86 24005 minecraft:white_wool
+fill 126 86 24006 126 86 24007 minecraft:black_wool
+fill 126 86 24008 126 86 24009 minecraft:white_wool
+fill 126 86 24010 126 86 24011 minecraft:black_wool
+fill 127 86 23989 127 86 23989 minecraft:white_wool
+fill 127 86 23990 127 86 23991 minecraft:black_wool
+fill 127 86 23992 127 86 23993 minecraft:white_wool
+fill 127 86 23994 127 86 23995 minecraft:black_wool
+fill 127 86 23996 127 86 23997 minecraft:white_wool
+fill 127 86 23998 127 86 23999 minecraft:black_wool
+fill 127 86 24000 127 86 24001 minecraft:white_wool
+fill 127 86 24002 127 86 24003 minecraft:black_wool
+fill 127 86 24004 127 86 24005 minecraft:white_wool
+fill 127 86 24006 127 86 24007 minecraft:black_wool
+fill 127 86 24008 127 86 24009 minecraft:white_wool
+fill 127 86 24010 127 86 24011 minecraft:black_wool
+fill 128 86 23989 128 86 23989 minecraft:black_wool
+fill 128 86 23990 128 86 23991 minecraft:white_wool
+fill 128 86 23992 128 86 23993 minecraft:black_wool
+fill 128 86 23994 128 86 23995 minecraft:white_wool
+fill 128 86 23996 128 86 23997 minecraft:black_wool
+fill 128 86 23998 128 86 23999 minecraft:white_wool
+fill 128 86 24000 128 86 24001 minecraft:black_wool
+fill 128 86 24002 128 86 24003 minecraft:white_wool
+fill 128 86 24004 128 86 24005 minecraft:black_wool
+fill 128 86 24006 128 86 24007 minecraft:white_wool
+fill 128 86 24008 128 86 24009 minecraft:black_wool
+fill 128 86 24010 128 86 24011 minecraft:white_wool
+fill 129 86 23989 129 86 23989 minecraft:black_wool
+fill 129 86 23990 129 86 23991 minecraft:white_wool
+fill 129 86 23992 129 86 23993 minecraft:black_wool
+fill 129 86 23994 129 86 23995 minecraft:white_wool
+fill 129 86 23996 129 86 23997 minecraft:black_wool
+fill 129 86 23998 129 86 23999 minecraft:white_wool
+fill 129 86 24000 129 86 24001 minecraft:black_wool
+fill 129 86 24002 129 86 24003 minecraft:white_wool
+fill 129 86 24004 129 86 24005 minecraft:black_wool
+fill 129 86 24006 129 86 24007 minecraft:white_wool
+fill 129 86 24008 129 86 24009 minecraft:black_wool
+fill 129 86 24010 129 86 24011 minecraft:white_wool
+fill 130 86 23989 130 86 23989 minecraft:white_wool
+fill 130 86 23990 130 86 23991 minecraft:black_wool
+fill 130 86 23992 130 86 23993 minecraft:white_wool
+fill 130 86 23994 130 86 23995 minecraft:black_wool
+fill 130 86 23996 130 86 23997 minecraft:white_wool
+fill 130 86 23998 130 86 23999 minecraft:black_wool
+fill 130 86 24000 130 86 24001 minecraft:white_wool
+fill 130 86 24002 130 86 24003 minecraft:black_wool
+fill 130 86 24004 130 86 24005 minecraft:white_wool
+fill 130 86 24006 130 86 24007 minecraft:black_wool
+fill 130 86 24008 130 86 24009 minecraft:white_wool
+fill 130 86 24010 130 86 24011 minecraft:black_wool
+fill 131 86 23989 131 86 23989 minecraft:white_wool
+fill 131 86 23990 131 86 23991 minecraft:black_wool
+fill 131 86 23992 131 86 23993 minecraft:white_wool
+fill 131 86 23994 131 86 23995 minecraft:black_wool
+fill 131 86 23996 131 86 23997 minecraft:white_wool
+fill 131 86 23998 131 86 23999 minecraft:black_wool
+fill 131 86 24000 131 86 24001 minecraft:white_wool
+fill 131 86 24002 131 86 24003 minecraft:black_wool
+fill 131 86 24004 131 86 24005 minecraft:white_wool
+fill 131 86 24006 131 86 24007 minecraft:black_wool
+fill 131 86 24008 131 86 24009 minecraft:white_wool
+fill 131 86 24010 131 86 24011 minecraft:black_wool
+fill 109 76 23989 109 76 23989 minecraft:black_wool
+fill 109 76 23990 109 76 23991 minecraft:white_wool
+fill 109 76 23992 109 76 23993 minecraft:black_wool
+fill 109 76 23994 109 76 23995 minecraft:white_wool
+fill 109 76 23996 109 76 23997 minecraft:black_wool
+fill 109 76 23998 109 76 23999 minecraft:white_wool
+fill 109 76 24000 109 76 24001 minecraft:black_wool
+fill 109 76 24002 109 76 24003 minecraft:white_wool
+fill 109 76 24004 109 76 24005 minecraft:black_wool
+fill 109 76 24006 109 76 24007 minecraft:white_wool
+fill 109 76 24008 109 76 24009 minecraft:black_wool
+fill 109 76 24010 109 76 24011 minecraft:white_wool
+fill 110 76 23989 110 76 23989 minecraft:white_wool
+fill 110 76 23990 110 76 23991 minecraft:black_wool
+fill 110 76 23992 110 76 23993 minecraft:white_wool
+fill 110 76 23994 110 76 23995 minecraft:black_wool
+fill 110 76 23996 110 76 23997 minecraft:white_wool
+fill 110 76 23998 110 76 23999 minecraft:black_wool
+fill 110 76 24000 110 76 24001 minecraft:white_wool
+fill 110 76 24002 110 76 24003 minecraft:black_wool
+fill 110 76 24004 110 76 24005 minecraft:white_wool
+fill 110 76 24006 110 76 24007 minecraft:black_wool
+fill 110 76 24008 110 76 24009 minecraft:white_wool
+fill 110 76 24010 110 76 24011 minecraft:black_wool
+fill 111 76 23989 111 76 23989 minecraft:white_wool
+fill 111 76 23990 111 76 23991 minecraft:black_wool
+fill 111 76 23992 111 76 23993 minecraft:white_wool
+fill 111 76 23994 111 76 23995 minecraft:black_wool
+fill 111 76 23996 111 76 23997 minecraft:white_wool
+fill 111 76 23998 111 76 23999 minecraft:black_wool
+fill 111 76 24000 111 76 24001 minecraft:white_wool
+fill 111 76 24002 111 76 24003 minecraft:black_wool
+fill 111 76 24004 111 76 24005 minecraft:white_wool
+fill 111 76 24006 111 76 24007 minecraft:black_wool
+fill 111 76 24008 111 76 24009 minecraft:white_wool
+fill 111 76 24010 111 76 24011 minecraft:black_wool
+fill 112 76 23989 112 76 23989 minecraft:black_wool
+fill 112 76 23990 112 76 23991 minecraft:white_wool
+fill 112 76 23992 112 76 23993 minecraft:black_wool
+fill 112 76 23994 112 76 23995 minecraft:white_wool
+fill 112 76 23996 112 76 23997 minecraft:black_wool
+fill 112 76 23998 112 76 23999 minecraft:white_wool
+fill 112 76 24000 112 76 24001 minecraft:black_wool
+fill 112 76 24002 112 76 24003 minecraft:white_wool
+fill 112 76 24004 112 76 24005 minecraft:black_wool
+fill 112 76 24006 112 76 24007 minecraft:white_wool
+fill 112 76 24008 112 76 24009 minecraft:black_wool
+fill 112 76 24010 112 76 24011 minecraft:white_wool
+fill 113 76 23989 113 76 23989 minecraft:black_wool
+fill 113 76 23990 113 76 23991 minecraft:white_wool
+fill 113 76 23992 113 76 23993 minecraft:black_wool
+fill 113 76 23994 113 76 23995 minecraft:white_wool
+fill 113 76 23996 113 76 23997 minecraft:black_wool
+fill 113 76 23998 113 76 23999 minecraft:white_wool
+fill 113 76 24000 113 76 24001 minecraft:black_wool
+fill 113 76 24002 113 76 24003 minecraft:white_wool
+fill 113 76 24004 113 76 24005 minecraft:black_wool
+fill 113 76 24006 113 76 24007 minecraft:white_wool
+fill 113 76 24008 113 76 24009 minecraft:black_wool
+fill 113 76 24010 113 76 24011 minecraft:white_wool
+fill 114 76 23989 114 76 23989 minecraft:white_wool
+fill 114 76 23990 114 76 23991 minecraft:black_wool
+fill 114 76 23992 114 76 23993 minecraft:white_wool
+fill 114 76 23994 114 76 23995 minecraft:black_wool
+fill 114 76 23996 114 76 23997 minecraft:white_wool
+fill 114 76 23998 114 76 23999 minecraft:black_wool
+fill 114 76 24000 114 76 24001 minecraft:white_wool
+fill 114 76 24002 114 76 24003 minecraft:black_wool
+fill 114 76 24004 114 76 24005 minecraft:white_wool
+fill 114 76 24006 114 76 24007 minecraft:black_wool
+fill 114 76 24008 114 76 24009 minecraft:white_wool
+fill 114 76 24010 114 76 24011 minecraft:black_wool
+fill 115 76 23989 115 76 23989 minecraft:white_wool
+fill 115 76 23990 115 76 23991 minecraft:black_wool
+fill 115 76 23992 115 76 23993 minecraft:white_wool
+fill 115 76 23994 115 76 23995 minecraft:black_wool
+fill 115 76 23996 115 76 23997 minecraft:white_wool
+fill 115 76 23998 115 76 23999 minecraft:black_wool
+fill 115 76 24000 115 76 24001 minecraft:white_wool
+fill 115 76 24002 115 76 24003 minecraft:black_wool
+fill 115 76 24004 115 76 24005 minecraft:white_wool
+fill 115 76 24006 115 76 24007 minecraft:black_wool
+fill 115 76 24008 115 76 24009 minecraft:white_wool
+fill 115 76 24010 115 76 24011 minecraft:black_wool
+fill 116 76 23989 116 76 23989 minecraft:black_wool
+fill 116 76 23990 116 76 23991 minecraft:white_wool
+fill 116 76 23992 116 76 23993 minecraft:black_wool
+fill 116 76 23994 116 76 23995 minecraft:white_wool
+fill 116 76 23996 116 76 23997 minecraft:black_wool
+fill 116 76 23998 116 76 23999 minecraft:white_wool
+fill 116 76 24000 116 76 24001 minecraft:black_wool
+fill 116 76 24002 116 76 24003 minecraft:white_wool
+fill 116 76 24004 116 76 24005 minecraft:black_wool
+fill 116 76 24006 116 76 24007 minecraft:white_wool
+fill 116 76 24008 116 76 24009 minecraft:black_wool
+fill 116 76 24010 116 76 24011 minecraft:white_wool
+fill 117 76 23989 117 76 23989 minecraft:black_wool
+fill 117 76 23990 117 76 23991 minecraft:white_wool
+fill 117 76 23992 117 76 23993 minecraft:black_wool
+fill 117 76 23994 117 76 23995 minecraft:white_wool
+fill 117 76 23996 117 76 23997 minecraft:black_wool
+fill 117 76 23998 117 76 23999 minecraft:white_wool
+fill 117 76 24000 117 76 24001 minecraft:black_wool
+fill 117 76 24002 117 76 24003 minecraft:white_wool
+fill 117 76 24004 117 76 24005 minecraft:black_wool
+fill 117 76 24006 117 76 24007 minecraft:white_wool
+fill 117 76 24008 117 76 24009 minecraft:black_wool
+fill 117 76 24010 117 76 24011 minecraft:white_wool
+fill 118 76 23989 118 76 23989 minecraft:white_wool
+fill 118 76 23990 118 76 23991 minecraft:black_wool
+fill 118 76 23992 118 76 23993 minecraft:white_wool
+fill 118 76 23994 118 76 23995 minecraft:black_wool
+fill 118 76 23996 118 76 23997 minecraft:white_wool
+fill 118 76 23998 118 76 23999 minecraft:black_wool
+fill 118 76 24000 118 76 24001 minecraft:white_wool
+fill 118 76 24002 118 76 24003 minecraft:black_wool
+fill 118 76 24004 118 76 24005 minecraft:white_wool
+fill 118 76 24006 118 76 24007 minecraft:black_wool
+fill 118 76 24008 118 76 24009 minecraft:white_wool
+fill 118 76 24010 118 76 24011 minecraft:black_wool
+fill 119 76 23989 119 76 23989 minecraft:white_wool
+fill 119 76 23990 119 76 23991 minecraft:black_wool
+fill 119 76 23992 119 76 23993 minecraft:white_wool
+fill 119 76 23997 119 76 23997 minecraft:white_wool
+fill 119 76 23998 119 76 23999 minecraft:black_wool
+fill 119 76 24000 119 76 24001 minecraft:white_wool
+fill 119 76 24002 119 76 24003 minecraft:black_wool
+fill 119 76 24004 119 76 24005 minecraft:white_wool
+fill 119 76 24006 119 76 24007 minecraft:black_wool
+fill 119 76 24008 119 76 24009 minecraft:white_wool
+fill 119 76 24010 119 76 24011 minecraft:black_wool
+fill 120 76 23989 120 76 23989 minecraft:black_wool
+fill 120 76 23990 120 76 23991 minecraft:white_wool
+fill 120 76 23992 120 76 23993 minecraft:black_wool
+fill 120 76 23997 120 76 23997 minecraft:black_wool
+fill 120 76 23998 120 76 23999 minecraft:white_wool
+fill 120 76 24000 120 76 24001 minecraft:black_wool
+fill 120 76 24002 120 76 24003 minecraft:white_wool
+fill 120 76 24004 120 76 24005 minecraft:black_wool
+fill 120 76 24006 120 76 24007 minecraft:white_wool
+fill 120 76 24008 120 76 24009 minecraft:black_wool
+fill 120 76 24010 120 76 24011 minecraft:white_wool
+fill 121 76 23989 121 76 23989 minecraft:black_wool
+fill 121 76 23990 121 76 23991 minecraft:white_wool
+fill 121 76 23992 121 76 23993 minecraft:black_wool
+fill 121 76 23997 121 76 23997 minecraft:black_wool
+fill 121 76 23998 121 76 23999 minecraft:white_wool
+fill 121 76 24000 121 76 24001 minecraft:black_wool
+fill 121 76 24002 121 76 24003 minecraft:white_wool
+fill 121 76 24004 121 76 24005 minecraft:black_wool
+fill 121 76 24006 121 76 24007 minecraft:white_wool
+fill 121 76 24008 121 76 24009 minecraft:black_wool
+fill 121 76 24010 121 76 24011 minecraft:white_wool
+fill 122 76 23989 122 76 23989 minecraft:white_wool
+fill 122 76 23990 122 76 23991 minecraft:black_wool
+fill 122 76 23992 122 76 23993 minecraft:white_wool
+fill 122 76 23994 122 76 23995 minecraft:black_wool
+fill 122 76 23996 122 76 23997 minecraft:white_wool
+fill 122 76 23998 122 76 23999 minecraft:black_wool
+fill 122 76 24000 122 76 24001 minecraft:white_wool
+fill 122 76 24002 122 76 24003 minecraft:black_wool
+fill 122 76 24004 122 76 24005 minecraft:white_wool
+fill 122 76 24006 122 76 24007 minecraft:black_wool
+fill 122 76 24008 122 76 24009 minecraft:white_wool
+fill 122 76 24010 122 76 24011 minecraft:black_wool
+fill 123 76 23989 123 76 23989 minecraft:white_wool
+fill 123 76 23990 123 76 23991 minecraft:black_wool
+fill 123 76 23992 123 76 23993 minecraft:white_wool
+fill 123 76 23994 123 76 23995 minecraft:black_wool
+fill 123 76 23996 123 76 23997 minecraft:white_wool
+fill 123 76 23998 123 76 23999 minecraft:black_wool
+fill 123 76 24000 123 76 24001 minecraft:white_wool
+fill 123 76 24002 123 76 24003 minecraft:black_wool
+fill 123 76 24004 123 76 24005 minecraft:white_wool
+fill 123 76 24006 123 76 24007 minecraft:black_wool
+fill 123 76 24008 123 76 24009 minecraft:white_wool
+fill 123 76 24010 123 76 24011 minecraft:black_wool
+fill 124 76 23989 124 76 23989 minecraft:black_wool
+fill 124 76 23990 124 76 23991 minecraft:white_wool
+fill 124 76 23992 124 76 23993 minecraft:black_wool
+fill 124 76 23994 124 76 23995 minecraft:white_wool
+fill 124 76 23996 124 76 23997 minecraft:black_wool
+fill 124 76 23998 124 76 23999 minecraft:white_wool
+fill 124 76 24000 124 76 24001 minecraft:black_wool
+fill 124 76 24002 124 76 24003 minecraft:white_wool
+fill 124 76 24004 124 76 24005 minecraft:black_wool
+fill 124 76 24006 124 76 24007 minecraft:white_wool
+fill 124 76 24008 124 76 24009 minecraft:black_wool
+fill 124 76 24010 124 76 24011 minecraft:white_wool
+fill 125 76 23989 125 76 23989 minecraft:black_wool
+fill 125 76 23990 125 76 23991 minecraft:white_wool
+fill 125 76 23992 125 76 23993 minecraft:black_wool
+fill 125 76 23994 125 76 23995 minecraft:white_wool
+fill 125 76 23996 125 76 23997 minecraft:black_wool
+fill 125 76 23998 125 76 23999 minecraft:white_wool
+fill 125 76 24000 125 76 24001 minecraft:black_wool
+fill 125 76 24002 125 76 24003 minecraft:white_wool
+fill 125 76 24004 125 76 24005 minecraft:black_wool
+fill 125 76 24006 125 76 24007 minecraft:white_wool
+fill 125 76 24008 125 76 24009 minecraft:black_wool
+fill 125 76 24010 125 76 24011 minecraft:white_wool
+fill 126 76 23989 126 76 23989 minecraft:white_wool
+fill 126 76 23990 126 76 23991 minecraft:black_wool
+fill 126 76 23992 126 76 23993 minecraft:white_wool
+fill 126 76 23994 126 76 23995 minecraft:black_wool
+fill 126 76 23996 126 76 23997 minecraft:white_wool
+fill 126 76 23998 126 76 23999 minecraft:black_wool
+fill 126 76 24000 126 76 24001 minecraft:white_wool
+fill 126 76 24002 126 76 24003 minecraft:black_wool
+fill 126 76 24004 126 76 24005 minecraft:white_wool
+fill 126 76 24006 126 76 24007 minecraft:black_wool
+fill 126 76 24008 126 76 24009 minecraft:white_wool
+fill 126 76 24010 126 76 24011 minecraft:black_wool
+fill 127 76 23989 127 76 23989 minecraft:white_wool
+fill 127 76 23990 127 76 23991 minecraft:black_wool
+fill 127 76 23992 127 76 23993 minecraft:white_wool
+fill 127 76 23994 127 76 23995 minecraft:black_wool
+fill 127 76 23996 127 76 23997 minecraft:white_wool
+fill 127 76 23998 127 76 23999 minecraft:black_wool
+fill 127 76 24000 127 76 24001 minecraft:white_wool
+fill 127 76 24002 127 76 24003 minecraft:black_wool
+fill 127 76 24004 127 76 24005 minecraft:white_wool
+fill 127 76 24006 127 76 24007 minecraft:black_wool
+fill 127 76 24008 127 76 24009 minecraft:white_wool
+fill 127 76 24010 127 76 24011 minecraft:black_wool
+fill 128 76 23989 128 76 23989 minecraft:black_wool
+fill 128 76 23990 128 76 23991 minecraft:white_wool
+fill 128 76 23992 128 76 23993 minecraft:black_wool
+fill 128 76 23994 128 76 23995 minecraft:white_wool
+fill 128 76 23996 128 76 23997 minecraft:black_wool
+fill 128 76 23998 128 76 23999 minecraft:white_wool
+fill 128 76 24000 128 76 24001 minecraft:black_wool
+fill 128 76 24002 128 76 24003 minecraft:white_wool
+fill 128 76 24004 128 76 24005 minecraft:black_wool
+fill 128 76 24006 128 76 24007 minecraft:white_wool
+fill 128 76 24008 128 76 24009 minecraft:black_wool
+fill 128 76 24010 128 76 24011 minecraft:white_wool
+fill 129 76 23989 129 76 23989 minecraft:black_wool
+fill 129 76 23990 129 76 23991 minecraft:white_wool
+fill 129 76 23992 129 76 23993 minecraft:black_wool
+fill 129 76 23994 129 76 23995 minecraft:white_wool
+fill 129 76 23996 129 76 23997 minecraft:black_wool
+fill 129 76 23998 129 76 23999 minecraft:white_wool
+fill 129 76 24000 129 76 24001 minecraft:black_wool
+fill 129 76 24002 129 76 24003 minecraft:white_wool
+fill 129 76 24004 129 76 24005 minecraft:black_wool
+fill 129 76 24006 129 76 24007 minecraft:white_wool
+fill 129 76 24008 129 76 24009 minecraft:black_wool
+fill 129 76 24010 129 76 24011 minecraft:white_wool
+fill 130 76 23989 130 76 23989 minecraft:white_wool
+fill 130 76 23990 130 76 23991 minecraft:black_wool
+fill 130 76 23992 130 76 23993 minecraft:white_wool
+fill 130 76 23994 130 76 23995 minecraft:black_wool
+fill 130 76 23996 130 76 23997 minecraft:white_wool
+fill 130 76 23998 130 76 23999 minecraft:black_wool
+fill 130 76 24000 130 76 24001 minecraft:white_wool
+fill 130 76 24002 130 76 24003 minecraft:black_wool
+fill 130 76 24004 130 76 24005 minecraft:white_wool
+fill 130 76 24006 130 76 24007 minecraft:black_wool
+fill 130 76 24008 130 76 24009 minecraft:white_wool
+fill 130 76 24010 130 76 24011 minecraft:black_wool
+fill 131 76 23989 131 76 23989 minecraft:white_wool
+fill 131 76 23990 131 76 23991 minecraft:black_wool
+fill 131 76 23992 131 76 23993 minecraft:white_wool
+fill 131 76 23994 131 76 23995 minecraft:black_wool
+fill 131 76 23996 131 76 23997 minecraft:white_wool
+fill 131 76 23998 131 76 23999 minecraft:black_wool
+fill 131 76 24000 131 76 24001 minecraft:white_wool
+fill 131 76 24002 131 76 24003 minecraft:black_wool
+fill 131 76 24004 131 76 24005 minecraft:white_wool
+fill 131 76 24006 131 76 24007 minecraft:black_wool
+fill 131 76 24008 131 76 24009 minecraft:white_wool
+fill 131 76 24010 131 76 24011 minecraft:black_wool
+fill 109 66 23989 109 66 23989 minecraft:black_wool
+fill 109 66 23990 109 66 23991 minecraft:white_wool
+fill 109 66 23992 109 66 23993 minecraft:black_wool
+fill 109 66 23994 109 66 23995 minecraft:white_wool
+fill 109 66 23996 109 66 23997 minecraft:black_wool
+fill 109 66 23998 109 66 23999 minecraft:white_wool
+fill 109 66 24000 109 66 24001 minecraft:black_wool
+fill 109 66 24002 109 66 24003 minecraft:white_wool
+fill 109 66 24004 109 66 24005 minecraft:black_wool
+fill 109 66 24006 109 66 24007 minecraft:white_wool
+fill 109 66 24008 109 66 24009 minecraft:black_wool
+fill 109 66 24010 109 66 24011 minecraft:white_wool
+fill 110 66 23989 110 66 23989 minecraft:white_wool
+fill 110 66 23990 110 66 23991 minecraft:black_wool
+fill 110 66 23992 110 66 23993 minecraft:white_wool
+fill 110 66 23994 110 66 23995 minecraft:black_wool
+fill 110 66 23996 110 66 23997 minecraft:white_wool
+fill 110 66 23998 110 66 23999 minecraft:black_wool
+fill 110 66 24000 110 66 24001 minecraft:white_wool
+fill 110 66 24002 110 66 24003 minecraft:black_wool
+fill 110 66 24004 110 66 24005 minecraft:white_wool
+fill 110 66 24006 110 66 24007 minecraft:black_wool
+fill 110 66 24008 110 66 24009 minecraft:white_wool
+fill 110 66 24010 110 66 24011 minecraft:black_wool
+fill 111 66 23989 111 66 23989 minecraft:white_wool
+fill 111 66 23990 111 66 23991 minecraft:black_wool
+fill 111 66 23992 111 66 23993 minecraft:white_wool
+fill 111 66 23994 111 66 23995 minecraft:black_wool
+fill 111 66 23996 111 66 23997 minecraft:white_wool
+fill 111 66 23998 111 66 23999 minecraft:black_wool
+fill 111 66 24000 111 66 24001 minecraft:white_wool
+fill 111 66 24002 111 66 24003 minecraft:black_wool
+fill 111 66 24004 111 66 24005 minecraft:white_wool
+fill 111 66 24006 111 66 24007 minecraft:black_wool
+fill 111 66 24008 111 66 24009 minecraft:white_wool
+fill 111 66 24010 111 66 24011 minecraft:black_wool
+fill 112 66 23989 112 66 23989 minecraft:black_wool
+fill 112 66 23990 112 66 23991 minecraft:white_wool
+fill 112 66 23992 112 66 23993 minecraft:black_wool
+fill 112 66 23994 112 66 23995 minecraft:white_wool
+fill 112 66 23996 112 66 23997 minecraft:black_wool
+fill 112 66 23998 112 66 23999 minecraft:white_wool
+fill 112 66 24000 112 66 24001 minecraft:black_wool
+fill 112 66 24002 112 66 24003 minecraft:white_wool
+fill 112 66 24004 112 66 24005 minecraft:black_wool
+fill 112 66 24006 112 66 24007 minecraft:white_wool
+fill 112 66 24008 112 66 24009 minecraft:black_wool
+fill 112 66 24010 112 66 24011 minecraft:white_wool
+fill 113 66 23989 113 66 23989 minecraft:black_wool
+fill 113 66 23990 113 66 23991 minecraft:white_wool
+fill 113 66 23992 113 66 23993 minecraft:black_wool
+fill 113 66 23994 113 66 23995 minecraft:white_wool
+fill 113 66 23996 113 66 23997 minecraft:black_wool
+fill 113 66 23998 113 66 23999 minecraft:white_wool
+fill 113 66 24000 113 66 24001 minecraft:black_wool
+fill 113 66 24002 113 66 24003 minecraft:white_wool
+fill 113 66 24004 113 66 24005 minecraft:black_wool
+fill 113 66 24006 113 66 24007 minecraft:white_wool
+fill 113 66 24008 113 66 24009 minecraft:black_wool
+fill 113 66 24010 113 66 24011 minecraft:white_wool
+fill 114 66 23989 114 66 23989 minecraft:white_wool
+fill 114 66 23990 114 66 23991 minecraft:black_wool
+fill 114 66 23992 114 66 23993 minecraft:white_wool
+fill 114 66 23994 114 66 23995 minecraft:black_wool
+fill 114 66 23996 114 66 23997 minecraft:white_wool
+fill 114 66 23998 114 66 23999 minecraft:black_wool
+fill 114 66 24000 114 66 24001 minecraft:white_wool
+fill 114 66 24002 114 66 24003 minecraft:black_wool
+fill 114 66 24004 114 66 24005 minecraft:white_wool
+fill 114 66 24006 114 66 24007 minecraft:black_wool
+fill 114 66 24008 114 66 24009 minecraft:white_wool
+fill 114 66 24010 114 66 24011 minecraft:black_wool
+fill 115 66 23989 115 66 23989 minecraft:white_wool
+fill 115 66 23990 115 66 23991 minecraft:black_wool
+fill 115 66 23992 115 66 23993 minecraft:white_wool
+fill 115 66 23994 115 66 23995 minecraft:black_wool
+fill 115 66 23996 115 66 23997 minecraft:white_wool
+fill 115 66 23998 115 66 23999 minecraft:black_wool
+fill 115 66 24000 115 66 24001 minecraft:white_wool
+fill 115 66 24002 115 66 24003 minecraft:black_wool
+fill 115 66 24004 115 66 24005 minecraft:white_wool
+fill 115 66 24006 115 66 24007 minecraft:black_wool
+fill 115 66 24008 115 66 24009 minecraft:white_wool
+fill 115 66 24010 115 66 24011 minecraft:black_wool
+fill 116 66 23989 116 66 23989 minecraft:black_wool
+fill 116 66 23990 116 66 23991 minecraft:white_wool
+fill 116 66 23992 116 66 23993 minecraft:black_wool
+fill 116 66 23994 116 66 23995 minecraft:white_wool
+fill 116 66 23996 116 66 23997 minecraft:black_wool
+fill 116 66 23998 116 66 23999 minecraft:white_wool
+fill 116 66 24000 116 66 24001 minecraft:black_wool
+fill 116 66 24002 116 66 24003 minecraft:white_wool
+fill 116 66 24004 116 66 24005 minecraft:black_wool
+fill 116 66 24006 116 66 24007 minecraft:white_wool
+fill 116 66 24008 116 66 24009 minecraft:black_wool
+fill 116 66 24010 116 66 24011 minecraft:white_wool
+fill 117 66 23989 117 66 23989 minecraft:black_wool
+fill 117 66 23990 117 66 23991 minecraft:white_wool
+fill 117 66 23992 117 66 23993 minecraft:black_wool
+fill 117 66 23994 117 66 23995 minecraft:white_wool
+fill 117 66 23996 117 66 23997 minecraft:black_wool
+fill 117 66 23998 117 66 23999 minecraft:white_wool
+fill 117 66 24000 117 66 24001 minecraft:black_wool
+fill 117 66 24002 117 66 24003 minecraft:white_wool
+fill 117 66 24004 117 66 24005 minecraft:black_wool
+fill 117 66 24006 117 66 24007 minecraft:white_wool
+fill 117 66 24008 117 66 24009 minecraft:black_wool
+fill 117 66 24010 117 66 24011 minecraft:white_wool
+fill 118 66 23989 118 66 23989 minecraft:white_wool
+fill 118 66 23990 118 66 23991 minecraft:black_wool
+fill 118 66 23992 118 66 23993 minecraft:white_wool
+fill 118 66 23994 118 66 23995 minecraft:black_wool
+fill 118 66 23996 118 66 23997 minecraft:white_wool
+fill 118 66 23998 118 66 23999 minecraft:black_wool
+fill 118 66 24000 118 66 24001 minecraft:white_wool
+fill 118 66 24002 118 66 24003 minecraft:black_wool
+fill 118 66 24004 118 66 24005 minecraft:white_wool
+fill 118 66 24006 118 66 24007 minecraft:black_wool
+fill 118 66 24008 118 66 24009 minecraft:white_wool
+fill 118 66 24010 118 66 24011 minecraft:black_wool
+fill 119 66 23989 119 66 23989 minecraft:white_wool
+fill 119 66 23990 119 66 23991 minecraft:black_wool
+fill 119 66 23992 119 66 23993 minecraft:white_wool
+fill 119 66 23994 119 66 23995 minecraft:black_wool
+fill 119 66 23996 119 66 23997 minecraft:white_wool
+fill 119 66 23998 119 66 23999 minecraft:black_wool
+fill 119 66 24000 119 66 24001 minecraft:white_wool
+fill 119 66 24002 119 66 24003 minecraft:black_wool
+fill 119 66 24004 119 66 24005 minecraft:white_wool
+fill 119 66 24006 119 66 24007 minecraft:black_wool
+fill 119 66 24008 119 66 24009 minecraft:white_wool
+fill 119 66 24010 119 66 24011 minecraft:black_wool
+fill 120 66 23989 120 66 23989 minecraft:black_wool
+fill 120 66 23990 120 66 23991 minecraft:white_wool
+fill 120 66 23992 120 66 23992 minecraft:black_wool
+fill 120 66 23996 120 66 23997 minecraft:black_wool
+fill 120 66 23998 120 66 23999 minecraft:white_wool
+fill 120 66 24000 120 66 24001 minecraft:black_wool
+fill 120 66 24002 120 66 24003 minecraft:white_wool
+fill 120 66 24004 120 66 24005 minecraft:black_wool
+fill 120 66 24006 120 66 24007 minecraft:white_wool
+fill 120 66 24008 120 66 24009 minecraft:black_wool
+fill 120 66 24010 120 66 24011 minecraft:white_wool
+fill 121 66 23989 121 66 23989 minecraft:black_wool
+fill 121 66 23990 121 66 23991 minecraft:white_wool
+fill 121 66 23992 121 66 23992 minecraft:black_wool
+fill 121 66 23996 121 66 23997 minecraft:black_wool
+fill 121 66 23998 121 66 23999 minecraft:white_wool
+fill 121 66 24000 121 66 24001 minecraft:black_wool
+fill 121 66 24002 121 66 24003 minecraft:white_wool
+fill 121 66 24004 121 66 24005 minecraft:black_wool
+fill 121 66 24006 121 66 24007 minecraft:white_wool
+fill 121 66 24008 121 66 24009 minecraft:black_wool
+fill 121 66 24010 121 66 24011 minecraft:white_wool
+fill 122 66 23989 122 66 23989 minecraft:white_wool
+fill 122 66 23990 122 66 23991 minecraft:black_wool
+fill 122 66 23992 122 66 23992 minecraft:white_wool
+fill 122 66 23996 122 66 23997 minecraft:white_wool
+fill 122 66 23998 122 66 23999 minecraft:black_wool
+fill 122 66 24000 122 66 24001 minecraft:white_wool
+fill 122 66 24002 122 66 24003 minecraft:black_wool
+fill 122 66 24004 122 66 24005 minecraft:white_wool
+fill 122 66 24006 122 66 24007 minecraft:black_wool
+fill 122 66 24008 122 66 24009 minecraft:white_wool
+fill 122 66 24010 122 66 24011 minecraft:black_wool
+fill 123 66 23989 123 66 23989 minecraft:white_wool
+fill 123 66 23990 123 66 23991 minecraft:black_wool
+fill 123 66 23992 123 66 23993 minecraft:white_wool
+fill 123 66 23994 123 66 23995 minecraft:black_wool
+fill 123 66 23996 123 66 23997 minecraft:white_wool
+fill 123 66 23998 123 66 23999 minecraft:black_wool
+fill 123 66 24000 123 66 24001 minecraft:white_wool
+fill 123 66 24002 123 66 24003 minecraft:black_wool
+fill 123 66 24004 123 66 24005 minecraft:white_wool
+fill 123 66 24006 123 66 24007 minecraft:black_wool
+fill 123 66 24008 123 66 24009 minecraft:white_wool
+fill 123 66 24010 123 66 24011 minecraft:black_wool
+fill 124 66 23989 124 66 23989 minecraft:black_wool
+fill 124 66 23990 124 66 23991 minecraft:white_wool
+fill 124 66 23992 124 66 23993 minecraft:black_wool
+fill 124 66 23994 124 66 23995 minecraft:white_wool
+fill 124 66 23996 124 66 23997 minecraft:black_wool
+fill 124 66 23998 124 66 23999 minecraft:white_wool
+fill 124 66 24000 124 66 24001 minecraft:black_wool
+fill 124 66 24002 124 66 24003 minecraft:white_wool
+fill 124 66 24004 124 66 24005 minecraft:black_wool
+fill 124 66 24006 124 66 24007 minecraft:white_wool
+fill 124 66 24008 124 66 24009 minecraft:black_wool
+fill 124 66 24010 124 66 24011 minecraft:white_wool
+fill 125 66 23989 125 66 23989 minecraft:black_wool
+fill 125 66 23990 125 66 23991 minecraft:white_wool
+fill 125 66 23992 125 66 23993 minecraft:black_wool
+fill 125 66 23994 125 66 23995 minecraft:white_wool
+fill 125 66 23996 125 66 23997 minecraft:black_wool
+fill 125 66 23998 125 66 23999 minecraft:white_wool
+fill 125 66 24000 125 66 24001 minecraft:black_wool
+fill 125 66 24002 125 66 24003 minecraft:white_wool
+fill 125 66 24004 125 66 24005 minecraft:black_wool
+fill 125 66 24006 125 66 24007 minecraft:white_wool
+fill 125 66 24008 125 66 24009 minecraft:black_wool
+fill 125 66 24010 125 66 24011 minecraft:white_wool
+fill 126 66 23989 126 66 23989 minecraft:white_wool
+fill 126 66 23990 126 66 23991 minecraft:black_wool
+fill 126 66 23992 126 66 23993 minecraft:white_wool
+fill 126 66 23994 126 66 23995 minecraft:black_wool
+fill 126 66 23996 126 66 23997 minecraft:white_wool
+fill 126 66 23998 126 66 23999 minecraft:black_wool
+fill 126 66 24000 126 66 24001 minecraft:white_wool
+fill 126 66 24002 126 66 24003 minecraft:black_wool
+fill 126 66 24004 126 66 24005 minecraft:white_wool
+fill 126 66 24006 126 66 24007 minecraft:black_wool
+fill 126 66 24008 126 66 24009 minecraft:white_wool
+fill 126 66 24010 126 66 24011 minecraft:black_wool
+fill 127 66 23989 127 66 23989 minecraft:white_wool
+fill 127 66 23990 127 66 23991 minecraft:black_wool
+fill 127 66 23992 127 66 23993 minecraft:white_wool
+fill 127 66 23994 127 66 23995 minecraft:black_wool
+fill 127 66 23996 127 66 23997 minecraft:white_wool
+fill 127 66 23998 127 66 23999 minecraft:black_wool
+fill 127 66 24000 127 66 24001 minecraft:white_wool
+fill 127 66 24002 127 66 24003 minecraft:black_wool
+fill 127 66 24004 127 66 24005 minecraft:white_wool
+fill 127 66 24006 127 66 24007 minecraft:black_wool
+fill 127 66 24008 127 66 24009 minecraft:white_wool
+fill 127 66 24010 127 66 24011 minecraft:black_wool
+fill 128 66 23989 128 66 23989 minecraft:black_wool
+fill 128 66 23990 128 66 23991 minecraft:white_wool
+fill 128 66 23992 128 66 23993 minecraft:black_wool
+fill 128 66 23994 128 66 23995 minecraft:white_wool
+fill 128 66 23996 128 66 23997 minecraft:black_wool
+fill 128 66 23998 128 66 23999 minecraft:white_wool
+fill 128 66 24000 128 66 24001 minecraft:black_wool
+fill 128 66 24002 128 66 24003 minecraft:white_wool
+fill 128 66 24004 128 66 24005 minecraft:black_wool
+fill 128 66 24006 128 66 24007 minecraft:white_wool
+fill 128 66 24008 128 66 24009 minecraft:black_wool
+fill 128 66 24010 128 66 24011 minecraft:white_wool
+fill 129 66 23989 129 66 23989 minecraft:black_wool
+fill 129 66 23990 129 66 23991 minecraft:white_wool
+fill 129 66 23992 129 66 23993 minecraft:black_wool
+fill 129 66 23994 129 66 23995 minecraft:white_wool
+fill 129 66 23996 129 66 23997 minecraft:black_wool
+fill 129 66 23998 129 66 23999 minecraft:white_wool
+fill 129 66 24000 129 66 24001 minecraft:black_wool
+fill 129 66 24002 129 66 24003 minecraft:white_wool
+fill 129 66 24004 129 66 24005 minecraft:black_wool
+fill 129 66 24006 129 66 24007 minecraft:white_wool
+fill 129 66 24008 129 66 24009 minecraft:black_wool
+fill 129 66 24010 129 66 24011 minecraft:white_wool
+fill 130 66 23989 130 66 23989 minecraft:white_wool
+fill 130 66 23990 130 66 23991 minecraft:black_wool
+fill 130 66 23992 130 66 23993 minecraft:white_wool
+fill 130 66 23994 130 66 23995 minecraft:black_wool
+fill 130 66 23996 130 66 23997 minecraft:white_wool
+fill 130 66 23998 130 66 23999 minecraft:black_wool
+fill 130 66 24000 130 66 24001 minecraft:white_wool
+fill 130 66 24002 130 66 24003 minecraft:black_wool
+fill 130 66 24004 130 66 24005 minecraft:white_wool
+fill 130 66 24006 130 66 24007 minecraft:black_wool
+fill 130 66 24008 130 66 24009 minecraft:white_wool
+fill 130 66 24010 130 66 24011 minecraft:black_wool
+fill 131 66 23989 131 66 23989 minecraft:white_wool
+fill 131 66 23990 131 66 23991 minecraft:black_wool
+fill 131 66 23992 131 66 23993 minecraft:white_wool
+fill 131 66 23994 131 66 23995 minecraft:black_wool
+fill 131 66 23996 131 66 23997 minecraft:white_wool
+fill 131 66 23998 131 66 23999 minecraft:black_wool
+fill 131 66 24000 131 66 24001 minecraft:white_wool
+fill 131 66 24002 131 66 24003 minecraft:black_wool
+fill 131 66 24004 131 66 24005 minecraft:white_wool
+fill 131 66 24006 131 66 24007 minecraft:black_wool
+fill 131 66 24008 131 66 24009 minecraft:white_wool
+fill 131 66 24010 131 66 24011 minecraft:black_wool
+fill 109 56 23989 109 56 23989 minecraft:black_wool
+fill 109 56 23990 109 56 23991 minecraft:white_wool
+fill 109 56 23992 109 56 23993 minecraft:black_wool
+fill 109 56 23994 109 56 23995 minecraft:white_wool
+fill 109 56 23996 109 56 23997 minecraft:black_wool
+fill 109 56 23998 109 56 23999 minecraft:white_wool
+fill 109 56 24000 109 56 24001 minecraft:black_wool
+fill 109 56 24002 109 56 24003 minecraft:white_wool
+fill 109 56 24004 109 56 24005 minecraft:black_wool
+fill 109 56 24006 109 56 24007 minecraft:white_wool
+fill 109 56 24008 109 56 24009 minecraft:black_wool
+fill 109 56 24010 109 56 24011 minecraft:white_wool
+fill 110 56 23989 110 56 23989 minecraft:white_wool
+fill 110 56 23990 110 56 23991 minecraft:black_wool
+fill 110 56 23992 110 56 23993 minecraft:white_wool
+fill 110 56 23994 110 56 23995 minecraft:black_wool
+fill 110 56 23996 110 56 23997 minecraft:white_wool
+fill 110 56 23998 110 56 23999 minecraft:black_wool
+fill 110 56 24000 110 56 24001 minecraft:white_wool
+fill 110 56 24002 110 56 24003 minecraft:black_wool
+fill 110 56 24004 110 56 24005 minecraft:white_wool
+fill 110 56 24006 110 56 24007 minecraft:black_wool
+fill 110 56 24008 110 56 24009 minecraft:white_wool
+fill 110 56 24010 110 56 24011 minecraft:black_wool
+fill 111 56 23989 111 56 23989 minecraft:white_wool
+fill 111 56 23990 111 56 23991 minecraft:black_wool
+fill 111 56 23992 111 56 23993 minecraft:white_wool
+fill 111 56 23994 111 56 23995 minecraft:black_wool
+fill 111 56 23996 111 56 23997 minecraft:white_wool
+fill 111 56 23998 111 56 23999 minecraft:black_wool
+fill 111 56 24000 111 56 24001 minecraft:white_wool
+fill 111 56 24002 111 56 24003 minecraft:black_wool
+fill 111 56 24004 111 56 24005 minecraft:white_wool
+fill 111 56 24006 111 56 24007 minecraft:black_wool
+fill 111 56 24008 111 56 24009 minecraft:white_wool
+fill 111 56 24010 111 56 24011 minecraft:black_wool
+fill 112 56 23989 112 56 23989 minecraft:black_wool
+fill 112 56 23990 112 56 23991 minecraft:white_wool
+fill 112 56 23992 112 56 23993 minecraft:black_wool
+fill 112 56 23994 112 56 23995 minecraft:white_wool
+fill 112 56 23996 112 56 23997 minecraft:black_wool
+fill 112 56 23998 112 56 23999 minecraft:white_wool
+fill 112 56 24000 112 56 24001 minecraft:black_wool
+fill 112 56 24002 112 56 24003 minecraft:white_wool
+fill 112 56 24004 112 56 24005 minecraft:black_wool
+fill 112 56 24006 112 56 24007 minecraft:white_wool
+fill 112 56 24008 112 56 24009 minecraft:black_wool
+fill 112 56 24010 112 56 24011 minecraft:white_wool
+fill 113 56 23989 113 56 23989 minecraft:black_wool
+fill 113 56 23990 113 56 23991 minecraft:white_wool
+fill 113 56 23992 113 56 23993 minecraft:black_wool
+fill 113 56 23994 113 56 23995 minecraft:white_wool
+fill 113 56 23996 113 56 23997 minecraft:black_wool
+fill 113 56 23998 113 56 23999 minecraft:white_wool
+fill 113 56 24000 113 56 24001 minecraft:black_wool
+fill 113 56 24002 113 56 24003 minecraft:white_wool
+fill 113 56 24004 113 56 24005 minecraft:black_wool
+fill 113 56 24006 113 56 24007 minecraft:white_wool
+fill 113 56 24008 113 56 24009 minecraft:black_wool
+fill 113 56 24010 113 56 24011 minecraft:white_wool
+fill 114 56 23989 114 56 23989 minecraft:white_wool
+fill 114 56 23990 114 56 23991 minecraft:black_wool
+fill 114 56 23992 114 56 23993 minecraft:white_wool
+fill 114 56 23994 114 56 23995 minecraft:black_wool
+fill 114 56 23996 114 56 23997 minecraft:white_wool
+fill 114 56 23998 114 56 23999 minecraft:black_wool
+fill 114 56 24000 114 56 24001 minecraft:white_wool
+fill 114 56 24002 114 56 24003 minecraft:black_wool
+fill 114 56 24004 114 56 24005 minecraft:white_wool
+fill 114 56 24006 114 56 24007 minecraft:black_wool
+fill 114 56 24008 114 56 24009 minecraft:white_wool
+fill 114 56 24010 114 56 24011 minecraft:black_wool
+fill 115 56 23989 115 56 23989 minecraft:white_wool
+fill 115 56 23990 115 56 23991 minecraft:black_wool
+fill 115 56 23992 115 56 23993 minecraft:white_wool
+fill 115 56 23994 115 56 23995 minecraft:black_wool
+fill 115 56 23996 115 56 23997 minecraft:white_wool
+fill 115 56 23998 115 56 23999 minecraft:black_wool
+fill 115 56 24000 115 56 24001 minecraft:white_wool
+fill 115 56 24002 115 56 24003 minecraft:black_wool
+fill 115 56 24004 115 56 24005 minecraft:white_wool
+fill 115 56 24006 115 56 24007 minecraft:black_wool
+fill 115 56 24008 115 56 24009 minecraft:white_wool
+fill 115 56 24010 115 56 24011 minecraft:black_wool
+fill 116 56 23989 116 56 23989 minecraft:black_wool
+fill 116 56 23990 116 56 23991 minecraft:white_wool
+fill 116 56 23992 116 56 23993 minecraft:black_wool
+fill 116 56 23994 116 56 23995 minecraft:white_wool
+fill 116 56 23996 116 56 23997 minecraft:black_wool
+fill 116 56 23998 116 56 23999 minecraft:white_wool
+fill 116 56 24000 116 56 24001 minecraft:black_wool
+fill 116 56 24002 116 56 24003 minecraft:white_wool
+fill 116 56 24004 116 56 24005 minecraft:black_wool
+fill 116 56 24006 116 56 24007 minecraft:white_wool
+fill 116 56 24008 116 56 24009 minecraft:black_wool
+fill 116 56 24010 116 56 24011 minecraft:white_wool
+fill 117 56 23989 117 56 23989 minecraft:black_wool
+fill 117 56 23990 117 56 23991 minecraft:white_wool
+fill 117 56 23992 117 56 23993 minecraft:black_wool
+fill 117 56 23994 117 56 23995 minecraft:white_wool
+fill 117 56 23996 117 56 23997 minecraft:black_wool
+fill 117 56 23998 117 56 23999 minecraft:white_wool
+fill 117 56 24000 117 56 24001 minecraft:black_wool
+fill 117 56 24002 117 56 24003 minecraft:white_wool
+fill 117 56 24004 117 56 24005 minecraft:black_wool
+fill 117 56 24006 117 56 24007 minecraft:white_wool
+fill 117 56 24008 117 56 24009 minecraft:black_wool
+fill 117 56 24010 117 56 24011 minecraft:white_wool
+fill 118 56 23989 118 56 23989 minecraft:white_wool
+fill 118 56 23990 118 56 23991 minecraft:black_wool
+fill 118 56 23992 118 56 23993 minecraft:white_wool
+fill 118 56 23994 118 56 23995 minecraft:black_wool
+fill 118 56 23996 118 56 23997 minecraft:white_wool
+fill 118 56 23998 118 56 23999 minecraft:black_wool
+fill 118 56 24000 118 56 24001 minecraft:white_wool
+fill 118 56 24002 118 56 24003 minecraft:black_wool
+fill 118 56 24004 118 56 24005 minecraft:white_wool
+fill 118 56 24006 118 56 24007 minecraft:black_wool
+fill 118 56 24008 118 56 24009 minecraft:white_wool
+fill 118 56 24010 118 56 24011 minecraft:black_wool
+fill 119 56 23989 119 56 23989 minecraft:white_wool
+fill 119 56 23990 119 56 23991 minecraft:black_wool
+fill 119 56 23992 119 56 23993 minecraft:white_wool
+fill 119 56 23994 119 56 23995 minecraft:black_wool
+fill 119 56 23996 119 56 23997 minecraft:white_wool
+fill 119 56 23998 119 56 23999 minecraft:black_wool
+fill 119 56 24000 119 56 24001 minecraft:white_wool
+fill 119 56 24002 119 56 24003 minecraft:black_wool
+fill 119 56 24004 119 56 24005 minecraft:white_wool
+fill 119 56 24006 119 56 24007 minecraft:black_wool
+fill 119 56 24008 119 56 24009 minecraft:white_wool
+fill 119 56 24010 119 56 24011 minecraft:black_wool
+fill 120 56 23989 120 56 23989 minecraft:black_wool
+fill 120 56 23990 120 56 23991 minecraft:white_wool
+fill 120 56 23992 120 56 23993 minecraft:black_wool
+fill 120 56 23994 120 56 23995 minecraft:white_wool
+fill 120 56 23996 120 56 23997 minecraft:black_wool
+fill 120 56 23998 120 56 23999 minecraft:white_wool
+fill 120 56 24000 120 56 24001 minecraft:black_wool
+fill 120 56 24002 120 56 24003 minecraft:white_wool
+fill 120 56 24004 120 56 24005 minecraft:black_wool
+fill 120 56 24006 120 56 24007 minecraft:white_wool
+fill 120 56 24008 120 56 24009 minecraft:black_wool
+fill 120 56 24010 120 56 24011 minecraft:white_wool
+fill 121 56 23989 121 56 23989 minecraft:black_wool
+fill 121 56 23990 121 56 23990 minecraft:white_wool
+fill 121 56 23994 121 56 23995 minecraft:white_wool
+fill 121 56 23996 121 56 23997 minecraft:black_wool
+fill 121 56 23998 121 56 23999 minecraft:white_wool
+fill 121 56 24000 121 56 24001 minecraft:black_wool
+fill 121 56 24002 121 56 24003 minecraft:white_wool
+fill 121 56 24004 121 56 24005 minecraft:black_wool
+fill 121 56 24006 121 56 24007 minecraft:white_wool
+fill 121 56 24008 121 56 24009 minecraft:black_wool
+fill 121 56 24010 121 56 24011 minecraft:white_wool
+fill 122 56 23989 122 56 23989 minecraft:white_wool
+fill 122 56 23990 122 56 23990 minecraft:black_wool
+fill 122 56 23994 122 56 23995 minecraft:black_wool
+fill 122 56 23996 122 56 23997 minecraft:white_wool
+fill 122 56 23998 122 56 23999 minecraft:black_wool
+fill 122 56 24000 122 56 24001 minecraft:white_wool
+fill 122 56 24002 122 56 24003 minecraft:black_wool
+fill 122 56 24004 122 56 24005 minecraft:white_wool
+fill 122 56 24006 122 56 24007 minecraft:black_wool
+fill 122 56 24008 122 56 24009 minecraft:white_wool
+fill 122 56 24010 122 56 24011 minecraft:black_wool
+fill 123 56 23989 123 56 23989 minecraft:white_wool
+fill 123 56 23990 123 56 23990 minecraft:black_wool
+fill 123 56 23994 123 56 23995 minecraft:black_wool
+fill 123 56 23996 123 56 23997 minecraft:white_wool
+fill 123 56 23998 123 56 23999 minecraft:black_wool
+fill 123 56 24000 123 56 24001 minecraft:white_wool
+fill 123 56 24002 123 56 24003 minecraft:black_wool
+fill 123 56 24004 123 56 24005 minecraft:white_wool
+fill 123 56 24006 123 56 24007 minecraft:black_wool
+fill 123 56 24008 123 56 24009 minecraft:white_wool
+fill 123 56 24010 123 56 24011 minecraft:black_wool
+fill 124 56 23989 124 56 23989 minecraft:black_wool
+fill 124 56 23990 124 56 23991 minecraft:white_wool
+fill 124 56 23992 124 56 23993 minecraft:black_wool
+fill 124 56 23994 124 56 23995 minecraft:white_wool
+fill 124 56 23996 124 56 23997 minecraft:black_wool
+fill 124 56 23998 124 56 23999 minecraft:white_wool
+fill 124 56 24000 124 56 24001 minecraft:black_wool
+fill 124 56 24002 124 56 24003 minecraft:white_wool
+fill 124 56 24004 124 56 24005 minecraft:black_wool
+fill 124 56 24006 124 56 24007 minecraft:white_wool
+fill 124 56 24008 124 56 24009 minecraft:black_wool
+fill 124 56 24010 124 56 24011 minecraft:white_wool
+fill 125 56 23989 125 56 23989 minecraft:black_wool
+fill 125 56 23990 125 56 23991 minecraft:white_wool
+fill 125 56 23992 125 56 23993 minecraft:black_wool
+fill 125 56 23994 125 56 23995 minecraft:white_wool
+fill 125 56 23996 125 56 23997 minecraft:black_wool
+fill 125 56 23998 125 56 23999 minecraft:white_wool
+fill 125 56 24000 125 56 24001 minecraft:black_wool
+fill 125 56 24002 125 56 24003 minecraft:white_wool
+fill 125 56 24004 125 56 24005 minecraft:black_wool
+fill 125 56 24006 125 56 24007 minecraft:white_wool
+fill 125 56 24008 125 56 24009 minecraft:black_wool
+fill 125 56 24010 125 56 24011 minecraft:white_wool
+fill 126 56 23989 126 56 23989 minecraft:white_wool
+fill 126 56 23990 126 56 23991 minecraft:black_wool
+fill 126 56 23992 126 56 23993 minecraft:white_wool
+fill 126 56 23994 126 56 23995 minecraft:black_wool
+fill 126 56 23996 126 56 23997 minecraft:white_wool
+fill 126 56 23998 126 56 23999 minecraft:black_wool
+fill 126 56 24000 126 56 24001 minecraft:white_wool
+fill 126 56 24002 126 56 24003 minecraft:black_wool
+fill 126 56 24004 126 56 24005 minecraft:white_wool
+fill 126 56 24006 126 56 24007 minecraft:black_wool
+fill 126 56 24008 126 56 24009 minecraft:white_wool
+fill 126 56 24010 126 56 24011 minecraft:black_wool
+fill 127 56 23989 127 56 23989 minecraft:white_wool
+fill 127 56 23990 127 56 23991 minecraft:black_wool
+fill 127 56 23992 127 56 23993 minecraft:white_wool
+fill 127 56 23994 127 56 23995 minecraft:black_wool
+fill 127 56 23996 127 56 23997 minecraft:white_wool
+fill 127 56 23998 127 56 23999 minecraft:black_wool
+fill 127 56 24000 127 56 24001 minecraft:white_wool
+fill 127 56 24002 127 56 24003 minecraft:black_wool
+fill 127 56 24004 127 56 24005 minecraft:white_wool
+fill 127 56 24006 127 56 24007 minecraft:black_wool
+fill 127 56 24008 127 56 24009 minecraft:white_wool
+fill 127 56 24010 127 56 24011 minecraft:black_wool
+fill 128 56 23989 128 56 23989 minecraft:black_wool
+fill 128 56 23990 128 56 23991 minecraft:white_wool
+fill 128 56 23992 128 56 23993 minecraft:black_wool
+fill 128 56 23994 128 56 23995 minecraft:white_wool
+fill 128 56 23996 128 56 23997 minecraft:black_wool
+fill 128 56 23998 128 56 23999 minecraft:white_wool
+fill 128 56 24000 128 56 24001 minecraft:black_wool
+fill 128 56 24002 128 56 24003 minecraft:white_wool
+fill 128 56 24004 128 56 24005 minecraft:black_wool
+fill 128 56 24006 128 56 24007 minecraft:white_wool
+fill 128 56 24008 128 56 24009 minecraft:black_wool
+fill 128 56 24010 128 56 24011 minecraft:white_wool
+fill 129 56 23989 129 56 23989 minecraft:black_wool
+fill 129 56 23990 129 56 23991 minecraft:white_wool
+fill 129 56 23992 129 56 23993 minecraft:black_wool
+fill 129 56 23994 129 56 23995 minecraft:white_wool
+fill 129 56 23996 129 56 23997 minecraft:black_wool
+fill 129 56 23998 129 56 23999 minecraft:white_wool
+fill 129 56 24000 129 56 24001 minecraft:black_wool
+fill 129 56 24002 129 56 24003 minecraft:white_wool
+fill 129 56 24004 129 56 24005 minecraft:black_wool
+fill 129 56 24006 129 56 24007 minecraft:white_wool
+fill 129 56 24008 129 56 24009 minecraft:black_wool
+fill 129 56 24010 129 56 24011 minecraft:white_wool
+fill 130 56 23989 130 56 23989 minecraft:white_wool
+fill 130 56 23990 130 56 23991 minecraft:black_wool
+fill 130 56 23992 130 56 23993 minecraft:white_wool
+fill 130 56 23994 130 56 23995 minecraft:black_wool
+fill 130 56 23996 130 56 23997 minecraft:white_wool
+fill 130 56 23998 130 56 23999 minecraft:black_wool
+fill 130 56 24000 130 56 24001 minecraft:white_wool
+fill 130 56 24002 130 56 24003 minecraft:black_wool
+fill 130 56 24004 130 56 24005 minecraft:white_wool
+fill 130 56 24006 130 56 24007 minecraft:black_wool
+fill 130 56 24008 130 56 24009 minecraft:white_wool
+fill 130 56 24010 130 56 24011 minecraft:black_wool
+fill 131 56 23989 131 56 23989 minecraft:white_wool
+fill 131 56 23990 131 56 23991 minecraft:black_wool
+fill 131 56 23992 131 56 23993 minecraft:white_wool
+fill 131 56 23994 131 56 23995 minecraft:black_wool
+fill 131 56 23996 131 56 23997 minecraft:white_wool
+fill 131 56 23998 131 56 23999 minecraft:black_wool
+fill 131 56 24000 131 56 24001 minecraft:white_wool
+fill 131 56 24002 131 56 24003 minecraft:black_wool
+fill 131 56 24004 131 56 24005 minecraft:white_wool
+fill 131 56 24006 131 56 24007 minecraft:black_wool
+fill 131 56 24008 131 56 24009 minecraft:white_wool
+fill 131 56 24010 131 56 24011 minecraft:black_wool
+fill 118 42 24000 120 42 24002 minecraft:air
+fill 118 43 24000 120 43 24002 minecraft:air
+fill 118 44 24000 120 44 24002 minecraft:air
+fill 118 45 24000 120 45 24002 minecraft:air
+fill 118 46 24000 120 46 24002 minecraft:air
+fill 118 47 24000 120 47 24002 minecraft:air
+fill 118 48 24000 120 48 24002 minecraft:air
+fill 118 49 24000 120 49 24002 minecraft:air
+fill 118 50 24000 120 50 24002 minecraft:air
+fill 118 51 24000 120 51 24002 minecraft:air
+fill 118 52 24000 120 52 24002 minecraft:air
+fill 118 53 24000 120 53 24002 minecraft:air
+fill 118 54 24000 120 54 24002 minecraft:air
+fill 118 55 24000 120 55 24002 minecraft:air
+fill 118 56 24000 120 56 24002 minecraft:air
+fill 118 57 24000 120 57 24002 minecraft:air
+fill 118 58 24000 120 58 24002 minecraft:air
+fill 118 59 24000 120 59 24002 minecraft:air
+fill 118 60 24000 120 60 24002 minecraft:air
+fill 118 61 24000 120 61 24002 minecraft:air
+fill 118 62 24000 120 62 24002 minecraft:air
+fill 118 63 24000 120 63 24002 minecraft:air
+fill 118 64 24000 120 64 24002 minecraft:air
+fill 118 65 24000 120 65 24002 minecraft:air
+fill 118 66 24000 120 66 24002 minecraft:air
+fill 118 67 24000 120 67 24002 minecraft:air
+fill 118 68 24000 120 68 24002 minecraft:air
+fill 118 69 24000 120 69 24002 minecraft:air
+fill 118 70 24000 120 70 24002 minecraft:air
+fill 118 71 24000 120 71 24002 minecraft:air
+fill 118 72 24000 120 72 24002 minecraft:air
+fill 118 73 24000 120 73 24002 minecraft:air
+fill 118 74 24000 120 74 24002 minecraft:air
+fill 118 75 24000 120 75 24002 minecraft:air
+fill 118 76 24001 120 76 24003 minecraft:air
+fill 118 77 24001 120 77 24003 minecraft:air
+fill 118 78 24001 120 78 24003 minecraft:air
+fill 118 79 24001 120 79 24003 minecraft:air
+fill 118 80 24001 120 80 24003 minecraft:air
+fill 118 81 24001 120 81 24003 minecraft:air
+fill 118 82 24001 120 82 24003 minecraft:air
+fill 118 83 24001 120 83 24003 minecraft:air
+fill 118 84 24001 120 84 24003 minecraft:air
+fill 118 85 24001 120 85 24003 minecraft:air
+fill 118 86 24001 120 86 24003 minecraft:air
+fill 118 87 24001 120 87 24003 minecraft:air
+fill 118 88 24001 120 88 24003 minecraft:air
+fill 118 89 24001 120 89 24003 minecraft:air
+fill 118 90 24001 120 90 24003 minecraft:air
+fill 118 91 24001 120 91 24003 minecraft:air
+fill 118 92 24001 120 92 24003 minecraft:air
+fill 118 93 24001 120 93 24003 minecraft:air
+fill 118 94 24001 120 94 24003 minecraft:air
+fill 119 95 24001 121 95 24003 minecraft:air
+fill 119 96 24001 121 96 24003 minecraft:air
+fill 119 97 24001 121 97 24003 minecraft:air
+fill 119 98 24001 121 98 24003 minecraft:air
+fill 119 99 24001 121 99 24003 minecraft:air
+fill 119 100 24001 121 100 24003 minecraft:air
+fill 119 101 24001 121 101 24003 minecraft:air
+fill 119 102 24001 121 102 24003 minecraft:air
+fill 119 103 24001 121 103 24003 minecraft:air
+fill 119 104 24001 121 104 24003 minecraft:air
+fill 119 105 24001 121 105 24003 minecraft:air
+fill 119 106 24001 121 106 24003 minecraft:air
+fill 119 107 24001 121 107 24003 minecraft:air
+fill 119 108 24001 121 108 24003 minecraft:air
+fill 119 109 24001 121 109 24003 minecraft:air
+fill 119 110 24001 121 110 24003 minecraft:air
+fill 119 111 24001 121 111 24003 minecraft:air
+fill 119 112 24001 121 112 24003 minecraft:air
+fill 119 113 24001 121 113 24003 minecraft:air
+fill 119 114 24001 121 114 24003 minecraft:air
+fill 119 115 24001 121 115 24003 minecraft:air
+fill 119 116 24001 121 116 24003 minecraft:air
+fill 119 117 24001 121 117 24003 minecraft:air
+fill 119 118 24001 121 118 24003 minecraft:air
+fill 119 119 24001 121 119 24003 minecraft:air
+fill 119 120 24001 121 120 24003 minecraft:air
+fill 119 121 24001 121 121 24003 minecraft:air
+fill 119 122 24001 121 122 24003 minecraft:air
+fill 119 123 24001 121 123 24003 minecraft:air
+fill 119 124 24001 121 124 24003 minecraft:air
+fill 119 125 24001 121 125 24003 minecraft:air
+fill 119 126 24001 121 126 24003 minecraft:air
+fill 119 127 24001 121 127 24003 minecraft:air
+fill 119 128 24001 121 128 24003 minecraft:air
+fill 119 129 24001 121 129 24003 minecraft:air
+fill 119 130 24001 121 130 24003 minecraft:air
+fill 119 131 24001 121 131 24003 minecraft:air
+fill 119 132 24001 121 132 24003 minecraft:air
+fill 119 133 24001 121 133 24003 minecraft:air
+fill 119 134 24001 121 134 24003 minecraft:air
+fill 119 135 24001 121 135 24003 minecraft:air
+fill 119 136 24001 121 136 24003 minecraft:air
+fill 120 137 24001 122 137 24003 minecraft:air
+fill 120 138 24001 122 138 24003 minecraft:air
+fill 120 139 24001 122 139 24003 minecraft:air
+fill 120 140 24001 122 140 24003 minecraft:air
+fill 120 141 24001 122 141 24003 minecraft:air
+fill 120 142 24001 122 142 24003 minecraft:air
+fill 120 143 24001 122 143 24003 minecraft:air
+fill 120 144 24001 122 144 24003 minecraft:air
+fill 120 145 24001 122 145 24003 minecraft:air
+fill 120 146 24001 122 146 24003 minecraft:air
+fill 120 147 24001 122 147 24003 minecraft:air
+fill 120 148 24001 122 148 24003 minecraft:air
+fill 120 149 24001 122 149 24003 minecraft:air
+fill 120 150 24001 122 150 24003 minecraft:air
+fill 120 151 24001 122 151 24003 minecraft:air
+fill 120 152 24001 122 152 24003 minecraft:air
+fill 120 153 24001 122 153 24003 minecraft:air
+fill 120 154 24001 122 154 24003 minecraft:air
+fill 120 155 24001 122 155 24003 minecraft:air
+fill 120 156 24001 122 156 24003 minecraft:air
+fill 120 157 24001 122 157 24003 minecraft:air
+fill 120 158 24001 122 158 24003 minecraft:air
+fill 120 159 24001 122 159 24003 minecraft:air
+fill 120 160 24001 122 160 24003 minecraft:air
+fill 120 161 24001 122 161 24003 minecraft:air
+fill 120 162 24001 122 162 24003 minecraft:air
+fill 120 163 24001 122 163 24003 minecraft:air
+fill 120 164 24001 122 164 24003 minecraft:air
+fill 120 165 24001 122 165 24003 minecraft:air
+fill 120 166 24001 122 166 24003 minecraft:air
+fill 120 167 24001 122 167 24003 minecraft:air
+fill 120 168 24001 122 168 24003 minecraft:air
+fill 120 169 24001 122 169 24003 minecraft:air
+fill 120 170 24001 122 170 24003 minecraft:air
+fill 120 171 24001 122 171 24003 minecraft:air
+fill 120 172 24001 122 172 24003 minecraft:air
+fill 120 173 24001 122 173 24003 minecraft:air
+fill 120 174 24001 122 174 24003 minecraft:air
+fill 120 175 24001 122 175 24003 minecraft:air
+fill 121 176 24001 123 176 24003 minecraft:air
+fill 121 177 24001 123 177 24003 minecraft:air
+fill 121 178 24001 123 178 24003 minecraft:air
+fill 121 179 24001 123 179 24003 minecraft:air
+fill 121 180 24001 123 180 24003 minecraft:air
+fill 121 181 24001 123 181 24003 minecraft:air
+fill 121 182 24001 123 182 24003 minecraft:air
+fill 121 183 24001 123 183 24003 minecraft:air
+fill 121 184 24001 123 184 24003 minecraft:air
+fill 121 185 24001 123 185 24003 minecraft:air
+fill 121 186 24001 123 186 24003 minecraft:air
+fill 121 187 24001 123 187 24003 minecraft:air
+fill 121 188 24001 123 188 24003 minecraft:air
+fill 121 189 24001 123 189 24003 minecraft:air
+fill 121 190 24001 123 190 24003 minecraft:air
+fill 121 191 24001 123 191 24003 minecraft:air
+fill 121 192 24001 123 192 24003 minecraft:air
+fill 121 193 24001 123 193 24003 minecraft:air
+fill 121 194 24001 123 194 24003 minecraft:air
+fill 121 195 24001 123 195 24003 minecraft:air
+fill 121 196 24001 123 196 24003 minecraft:air
+fill 121 197 24001 123 197 24003 minecraft:air
+fill 121 198 24001 123 198 24003 minecraft:air
+fill 121 199 24001 123 199 24003 minecraft:air
+fill 121 200 24001 123 200 24003 minecraft:air
+fill 121 201 24001 123 201 24003 minecraft:air
+fill 121 202 24001 123 202 24003 minecraft:air
+fill 121 203 24001 123 203 24003 minecraft:air
+fill 121 204 24001 123 204 24003 minecraft:air
+fill 120 205 24001 122 205 24003 minecraft:air
+fill 120 206 24001 122 206 24003 minecraft:air
+fill 120 207 24001 122 207 24003 minecraft:air
+fill 120 208 24001 122 208 24003 minecraft:air
+fill 120 209 24001 122 209 24003 minecraft:air
+fill 120 210 24001 122 210 24003 minecraft:air
+fill 120 211 24001 122 211 24003 minecraft:air
+fill 120 212 24001 122 212 24003 minecraft:air
+fill 120 213 24001 122 213 24003 minecraft:air
+fill 120 214 24001 122 214 24003 minecraft:air
+fill 120 215 24001 122 215 24003 minecraft:air
+fill 120 216 24001 122 216 24003 minecraft:air
+fill 120 217 24000 122 217 24002 minecraft:air
+fill 120 218 24000 122 218 24002 minecraft:air
+fill 120 219 24000 122 219 24002 minecraft:air
+fill 120 220 24000 122 220 24002 minecraft:air
+fill 120 221 24000 122 221 24002 minecraft:air
+fill 120 222 24000 122 222 24002 minecraft:air
+fill 120 223 24000 122 223 24002 minecraft:air
+fill 120 224 24000 122 224 24002 minecraft:air
+fill 120 225 24000 122 225 24002 minecraft:air
+fill 120 226 24000 122 226 24002 minecraft:air
+fill 120 227 24000 122 227 24002 minecraft:air
+fill 120 228 24000 122 228 24002 minecraft:air
+fill 120 229 24000 122 229 24002 minecraft:air
+fill 120 230 24001 122 230 24003 minecraft:air
+fill 120 231 24001 122 231 24003 minecraft:air
+fill 120 232 24001 122 232 24003 minecraft:air
+fill 120 233 24001 122 233 24003 minecraft:air
+fill 120 234 24001 122 234 24003 minecraft:air
+fill 120 235 24001 122 235 24003 minecraft:air
+fill 120 236 24001 122 236 24003 minecraft:air
+fill 120 237 24001 122 237 24003 minecraft:air
+fill 120 238 24001 122 238 24003 minecraft:air
+fill 120 239 24001 122 239 24003 minecraft:air
+fill 120 240 24001 122 240 24003 minecraft:air
+fill 120 241 24001 122 241 24003 minecraft:air
+fill 120 242 24001 122 242 24003 minecraft:air
+fill 120 243 24001 122 243 24003 minecraft:air
+fill 120 244 24001 122 244 24003 minecraft:air
+fill 120 245 24001 122 245 24003 minecraft:air
+fill 120 246 24001 122 246 24003 minecraft:air
+fill 120 247 24001 122 247 24003 minecraft:air
+fill 120 248 24001 122 248 24003 minecraft:air
+fill 120 249 24001 122 249 24003 minecraft:air
+fill 120 250 24001 122 250 24003 minecraft:air
+fill 120 251 24001 122 251 24003 minecraft:air
+fill 120 252 24001 122 252 24003 minecraft:air
+fill 120 253 24001 122 253 24003 minecraft:air
+fill 120 254 24001 122 254 24003 minecraft:air
+fill 120 255 24001 122 255 24003 minecraft:air
+fill 120 256 24001 122 256 24003 minecraft:air
+fill 120 257 24001 122 257 24003 minecraft:air
+fill 120 258 24001 122 258 24003 minecraft:air
+fill 120 259 24001 122 259 24003 minecraft:air
+fill 120 260 24001 122 260 24003 minecraft:air
+fill 120 261 24001 122 261 24003 minecraft:air
+fill 119 262 24001 121 262 24003 minecraft:air
+fill 119 263 24001 121 263 24003 minecraft:air
+fill 119 264 24001 121 264 24003 minecraft:air
+fill 119 265 24001 121 265 24003 minecraft:air
+fill 119 266 24001 121 266 24003 minecraft:air
+fill 119 267 24001 121 267 24003 minecraft:air
+fill 119 268 24001 121 268 24003 minecraft:air
+fill 119 269 24001 121 269 24003 minecraft:air
+fill 119 270 24001 121 270 24003 minecraft:air
+fill 119 271 24001 121 271 24003 minecraft:air
+fill 119 272 24001 121 272 24003 minecraft:air
+fill 119 273 24001 121 273 24003 minecraft:air
+fill 119 274 24001 121 274 24003 minecraft:air
+fill 119 275 24001 121 275 24003 minecraft:air
+fill 119 276 24001 121 276 24003 minecraft:air
+fill 119 277 24001 121 277 24003 minecraft:air
+fill 119 278 24001 121 278 24003 minecraft:air
+fill 119 279 24001 121 279 24003 minecraft:air
+fill 119 280 24001 121 280 24003 minecraft:air
+fill 119 281 24001 121 281 24003 minecraft:air
+fill 119 282 24001 121 282 24003 minecraft:air
+fill 119 283 24001 121 283 24003 minecraft:air
+fill 119 284 24001 121 284 24003 minecraft:air
+fill 119 285 24001 121 285 24003 minecraft:air
+fill 119 286 24000 121 286 24002 minecraft:air
+fill 119 287 24000 121 287 24002 minecraft:air
+fill 119 288 24000 121 288 24002 minecraft:air
+fill 119 289 24000 121 289 24002 minecraft:air
+fill 119 290 24000 121 290 24002 minecraft:air
+fill 119 291 24000 121 291 24002 minecraft:air
+fill 119 292 24000 121 292 24002 minecraft:air
+fill 119 293 24000 121 293 24002 minecraft:air
+fill 119 294 24000 121 294 24002 minecraft:air
+fill 119 295 24000 121 295 24002 minecraft:air
+fill 119 296 24000 121 296 24002 minecraft:air
+fill 119 297 24000 121 297 24002 minecraft:air
+fill 119 298 24000 121 298 24002 minecraft:air
+fill 109 40 23989 131 40 24011 minecraft:quartz_block
+fill 118 40 24000 120 40 24002 minecraft:water
 schedule function mg:dropadv/build_9 3t
