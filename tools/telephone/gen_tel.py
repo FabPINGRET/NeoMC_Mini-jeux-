@@ -325,7 +325,11 @@ def replace(rel, old, new):
         f.write(t.replace(old, new))
 
 
-replace('core/go', 'matches 1..82 unless', 'matches 1..83 unless')
+import re as _re
+_p = os.path.join(F, 'core/go.mcfunction'); _t = open(_p, encoding='utf-8').read()
+_m = _re.search(r'unless score @s mg\.go matches 1\.\.(\d+) unless', _t)
+if _m and int(_m.group(1)) < GID:
+    open(_p, 'w', encoding='utf-8', newline='\n').write(_t.replace(_m.group(0), f'unless score @s mg.go matches 1..{GID} unless'))
 patch('core/request', 'execute if score $game mg.st matches 57..58 run function mg:bb/prepare', [f'execute if score $game mg.st matches {GID} run function mg:tel/prepare'])
 first_bb = next(l for l in open(os.path.join(F, 'core/request.mcfunction'), encoding='utf-8').read().split('\n')
                 if l.startswith('execute if score $game mg.st matches 57 run tellraw'))

@@ -2,3 +2,4 @@
 *.log
 cache/
 releases/minijeux_void*.zip
+__pycache__/
