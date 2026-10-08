@@ -61,6 +61,8 @@ execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless blo
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 32 63 -15 minecraft:sea_lantern run function mg:elytra/build
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.ely] minecraft:elytra[minecraft:custom_data~{mg_ely:1b}]
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.ely] minecraft:firework_rocket[minecraft:custom_data~{mg_ely:1b}]
+execute if score $lan mg.t matches 20 run clear @a[tag=!mg.play] minecraft:elytra[minecraft:custom_data~{mg_elyr:1b}]
+execute if score $lan mg.t matches 20 run clear @a[tag=!mg.play] minecraft:firework_rocket[minecraft:custom_data~{mg_elyr:1b}]
 execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,gamemode=adventure,x=24,y=63,z=19,dx=0.99,dy=2.5,dz=0.99] run function mg:lobby/food_give
 
 # Kart libre du spawn

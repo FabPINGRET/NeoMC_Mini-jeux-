@@ -119,6 +119,7 @@ execute if score $game mg.st matches 22 if score $sg mg.st matches 1 run tellraw
 execute if score $game mg.st matches 22 unless score $sg mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"SUMO","color":"gold","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 23 if score $sg mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"THE DROPPER — TUBE COMMUN","color":"aqua","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 65 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⬇ DROPPER : DÉFI","color":"aqua","bold":true},{"text":" (même puits pour tous, niveau au hasard, premier à 3 manches) !","color":"gray"}]
+execute if score $game mg.st matches 66 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance la ","color":"gray"},{"text":"🪽 COURSE D'ÉLYTRES","color":"aqua","bold":true},{"text":" : Canyon du Couchant (18 anneaux, le premier arrivé gagne) !","color":"gray"}]
 execute if score $game mg.st matches 64 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⬇ THE DROPPER : AVENTURE","color":"aqua","bold":true},{"text":" (10 niveaux à thème, le premier qui les finit gagne) !","color":"gray"}]
 execute if score $game mg.st matches 23 unless score $sg mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"THE DROPPER","color":"aqua","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 26 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"ONE IN THE CHAMBER","color":"gold","bold":true},{"text":" !","color":"gray"}]
@@ -173,6 +174,8 @@ execute if score $game mg.st matches 22 run function mg:sumo/prepare
 execute if score $game mg.st matches 23 run function mg:dropper/prepare
 execute if score $game mg.st matches 64 run function mg:dropadv/prepare
 execute if score $game mg.st matches 65 run function mg:dropadv/c_prepare
+execute if score $game mg.st matches 66 run function mg:elyrace/prepare
+execute if score $state mg.st matches 3 run return 0
 execute if score $game mg.st matches 26 run function mg:oitc/prepare
 execute if score $game mg.st matches 27 run function mg:tnttag/prepare
 execute if score $game mg.st matches 28 run function mg:blockparty/prepare

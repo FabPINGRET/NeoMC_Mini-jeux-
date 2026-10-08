@@ -1,4 +1,13 @@
 # Hall des scores (sud-ouest de la place) : construction + restauration des meneurs
+# Chunks du hall pas encore chargés (démarrage du serveur) : on réessaie dans 1 s, 60 fois au plus (motif de mg:dropadv/loaded_all :
+# « unless block … bedrock » ne réussit que si le chunk est chargé, il n'y a jamais de bedrock à y 300). #hl = 1 : les 2 chunks sont chargés
+execute store success score #hl mg.st unless block -18 300 25 minecraft:bedrock
+execute if score #hl mg.st matches 1 store success score #hl mg.st unless block -14 300 25 minecraft:bedrock
+execute if score #hl mg.st matches 0 run scoreboard players add #hlr mg.st 1
+execute if score #hl mg.st matches 0 if score #hlr mg.st matches 60.. run tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] Hall des scores : chunks pas chargés, construction abandonnée (relance /function mg:hall/build).","color":"red"}]
+execute if score #hl mg.st matches 0 if score #hlr mg.st matches 60.. run return run scoreboard players set #hlr mg.st 0
+execute if score #hl mg.st matches 0 run return run schedule function mg:hall/build 20t
+scoreboard players set #hlr mg.st 0
 kill @e[tag=mg.hall]
 
 fill -20 63 22 -12 63 28 minecraft:smooth_quartz
@@ -74,3 +83,6 @@ summon minecraft:text_display -13.6 64.7 27.2 {Tags:["mg.hall","mg.h_party"],bil
 execute if data storage mg:hall e.party run data modify entity @e[type=minecraft:text_display,tag=mg.h_party,limit=1] text set from storage mg:hall e.party
 summon minecraft:text_display -11.7 64.7 27.2 {Tags:["mg.hall","mg.h_kart"],billboard:"vertical",text:[{"text":"🏎 Kart","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.42f,0.42f,0.42f]}}
 execute if data storage mg:hall e.kart run data modify entity @e[type=minecraft:text_display,tag=mg.h_kart,limit=1] text set from storage mg:hall e.kart
+summon minecraft:text_display -19.3 69.5 27.2 {Tags:["mg.hall","mg.h_elyrace"],billboard:"vertical",text:[{"text":"🪽 Course d'élytres","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.42f,0.42f,0.42f]}}
+execute if data storage mg:hall e.elyrace run data modify entity @e[type=minecraft:text_display,tag=mg.h_elyrace,limit=1] text set from storage mg:hall e.elyrace
+data modify storage mg:hall v2 set value 1b

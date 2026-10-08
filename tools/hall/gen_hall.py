@@ -8,11 +8,11 @@
   le joueur le plus assidu et le record du parcours d'élytra. Le nom et le score sont
   « figés » au moment du record (composant résolu via un set_name sur un item_display
   tampon), gardés dans storage mg:hall et restaurés à chaque reconstruction.
-Lancer depuis la racine du dépôt : python3 tools/hall/gen_hall.py
+Lancer de n'importe où : python3 tools/hall/gen_hall.py (la sortie est dérivée de l'emplacement du script).
 """
 import os
 
-OUT = os.path.join('data', 'mg', 'function', 'hall')
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'data', 'mg', 'function', 'hall')
 GAMES = [  # clé, libellé, couleur, plages de $game
     ('spleef', '❄ Spleef', 'aqua', [(1, 1)]),
     ('tntrun', '✷ TNT Run', 'red', [(2, 2)]),
@@ -34,6 +34,7 @@ GAMES = [  # clé, libellé, couleur, plages de $game
     ('bb', '✎ Build Battle', 'green', [(57, 58)]),
     ('party', '★ Mini Party', 'gold', [(59, 60)]),
     ('kart', '🏎 Kart', 'red', [(61, 63)]),
+    ('elyrace', "🪽 Course d'élytres", 'aqua', [(66, 66)]),
 ]
 X0, X1, Z0, Z1 = -20, -12, 22, 28          # emprise du hall (sol y 63), ouvert au nord
 MARK = (-16, 64, 25)                       # piédestal central (bloc d'or) : témoin de présence
@@ -55,7 +56,7 @@ W('objectives', ['# Objectifs des classements par jeu (généré par tools/hall/
     'scoreboard objectives modify mg.wins displayname [{"text":"✦ Victoires","color":"gold","bold":true},{"text":" (tous les jeux)","color":"gray","bold":false}]'])
 W('remove', ['# Désinstallation des classements et du hall'] +
   [f'scoreboard objectives remove mg.wg_{k}' for k, *_ in GAMES] +
-  ['kill @e[tag=mg.hall]', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon'])
+  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2'])
 
 # ---------------------------------------------------------------- crédit des vainqueurs
 cr = ['# Vainqueur (@s, tag mg.win) au retour au lobby : classement du jeu + hall des scores',
@@ -116,6 +117,15 @@ W('rot_next', rn)
 
 # ---------------------------------------------------------------- construction du hall
 b = ['# Hall des scores (sud-ouest de la place) : construction + restauration des meneurs',
+     '# Chunks du hall pas encore chargés (démarrage du serveur) : on réessaie dans 1 s, 60 fois au plus (motif de mg:dropadv/loaded_all :',
+     '# « unless block … bedrock » ne réussit que si le chunk est chargé, il n\'y a jamais de bedrock à y 300). #hl = 1 : les 2 chunks sont chargés',
+     f'execute store success score #hl mg.st unless block {X0 + 2} 300 {Z0 + 3} minecraft:bedrock',
+     f'execute if score #hl mg.st matches 1 store success score #hl mg.st unless block {X1 - 2} 300 {Z0 + 3} minecraft:bedrock',
+     'execute if score #hl mg.st matches 0 run scoreboard players add #hlr mg.st 1',
+     'execute if score #hl mg.st matches 0 if score #hlr mg.st matches 60.. run tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] Hall des scores : chunks pas chargés, construction abandonnée (relance /function mg:hall/build).","color":"red"}]',
+     'execute if score #hl mg.st matches 0 if score #hlr mg.st matches 60.. run return run scoreboard players set #hlr mg.st 0',
+     'execute if score #hl mg.st matches 0 run return run schedule function mg:hall/build 20t',
+     'scoreboard players set #hlr mg.st 0',
      'kill @e[tag=mg.hall]', '',
      f'fill {X0} 63 {Z0} {X1} 63 {Z1} minecraft:smooth_quartz',
      f'fill {X0} 64 {Z0} {X1} 70 {Z1-1} minecraft:air',
@@ -138,7 +148,7 @@ plaques.append((-12.5, 67.6, 25.5, 'ely2', "🪽 Record grand parcours d'élytra
 for x, k, l, c, it in peds:
     b.append(f'summon minecraft:item_display {x} 65.8 25.5 {{Tags:["mg.hall","mg.lspin","mg.lbob"],billboard:"fixed",item:{{id:"minecraft:{it}"}},{TR % (0.9, 0.9, 0.9)}}}')
 xs = [-19.3, -17.4, -15.5, -13.6, -11.7]
-ys = [68.3, 67.1, 65.9, 64.7]
+ys = [68.3, 67.1, 65.9, 64.7, 69.5]      # 5e rangée (21e jeu et suivants) : au-dessus de la première, le sol est juste sous la 4e
 for i, (k, l, c, _) in enumerate(GAMES):
     plaques.append((xs[i % 5], ys[i // 5], 27.2, k, l, c, 0.42))
 b.append('')
@@ -146,6 +156,8 @@ b.append('# Plaques : texte par défaut, puis meneur enregistré s\'il existe')
 for x, y, z, k, l, c, s in plaques:
     b.append(f'summon minecraft:text_display {x} {y} {z} {{Tags:["mg.hall","mg.h_{k}"],billboard:"vertical",text:[{{"text":"{q(l)}","color":"{c}","bold":true}},{{"text":"\\n— personne —","color":"dark_gray","bold":false}}],{TR % (s, s, s)}}}')
     b.append(f'execute if data storage mg:hall e.{k} run data modify entity @e[type=minecraft:text_display,tag=mg.h_{k},limit=1] text set from storage mg:hall e.{k}')
+# Version du hall : core/load reconstruit le hall (une fois) sur les mondes dont les plaques sont plus anciennes (nouveau jeu ajouté)
+b.append('data modify storage mg:hall v2 set value 1b')
 W('build', b)
 W('board_tick', ['# Tableau à droite dans le lobby (classement affiché, pas de vote en cours)',
     'scoreboard players remove $hrt mg.st 1',

@@ -289,3 +289,4 @@ tag @a remove mg.elyf
 tag @a remove mg.efp
 scoreboard objectives remove mg.ecr
 scoreboard objectives remove mg.erb2
+function mg:elyrace/uninstall

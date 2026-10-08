@@ -22,3 +22,4 @@ execute if score $game mg.st matches 56 run function mg:hall/game {obj:"mg.wg_ic
 execute if score $game mg.st matches 57..58 run function mg:hall/game {obj:"mg.wg_bb",key:"bb",lbl:"✎ Build Battle",col:"green"}
 execute if score $game mg.st matches 59..60 run function mg:hall/game {obj:"mg.wg_party",key:"party",lbl:"★ Mini Party",col:"gold"}
 execute if score $game mg.st matches 61..63 run function mg:hall/game {obj:"mg.wg_kart",key:"kart",lbl:"🏎 Kart",col:"red"}
+execute if score $game mg.st matches 66 run function mg:hall/game {obj:"mg.wg_elyrace",key:"elyrace",lbl:"🪽 Course d'élytres",col:"aqua"}
