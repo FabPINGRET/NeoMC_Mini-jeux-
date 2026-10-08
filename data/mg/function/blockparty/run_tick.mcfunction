@@ -1,4 +1,5 @@
 # Compte à rebours de la manche
+function mg:blockparty/music_tick
 scoreboard players remove $bt mg.st 1
 scoreboard players operation $sec mg.st = $bt mg.st
 scoreboard players add $sec mg.st 19

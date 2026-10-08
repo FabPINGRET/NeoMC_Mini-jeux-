@@ -696,7 +696,9 @@ CATS = {
         act('❄ Spleef ▸', 'aqua', OPEN(37), 'Casse la neige sous les autres'),
         act('✷ TNT Run ▸', 'red', OPEN(38), 'Le sol disparaît sous tes pas'),
         known(OPEN(17), '❍ Splegg ▸', 'yellow'), known(OPEN(18), '✊ Sumo ▸', 'gold'),
-        known('trigger mg.go set 28', '▦ Block Party', 'light_purple'), known(OPEN(20), '⚓ Pluie d\'Enclumes ▸', 'dark_gray')], 'menu'),
+        known('trigger mg.go set 28', '▦ Block Party', 'light_purple'),
+        act('▦ Block Party — bandes', 'light_purple', 'trigger mg.go set 91', 'Le sol est fait de bandes de couleur'),
+        act('▦ Block Party — mixte', 'light_purple', 'trigger mg.go set 92', 'Carrés ou bandes, ça change à chaque manche'), known(OPEN(20), '⚓ Pluie d\'Enclumes ▸', 'dark_gray')], 'menu'),
     'equipes': ('⚑ Équipes', 'light_purple', 'Jeux en équipes.', [
         act('⚑ Bedwars ▸', 'light_purple', OPEN(30), 'Protège ton lit, détruis les autres'),
         act('☁ Sheep War ▸', 'white', OPEN(8), 'Moutons explosifs, 8 cartes'),
@@ -822,7 +824,7 @@ NATIVE = {
     75: ('Course d\'anneaux', 2), 76: ('Course + combat', 3), 77: ('Survie en vol', 4),
     61: ('Circuit Champignon', 2), 62: ('Royaume Koopa', 3), 63: ('Bataille', 2), 56: ('Bateaux sur glace', 2),
     81: ('Canyon du Couchant', 3), 30: ('Turf Wars', 2),
-    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2), 88: ('🏰 The Towers', 3), 89: ('🚚 Convoi', 3), 90: ('🚚 Convoi — coop', 3),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
+    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2), 88: ('🏰 The Towers', 3), 89: ('🚚 Convoi', 3), 90: ('🚚 Convoi — coop', 3), 91: ('▦ Block Party — bandes', 3), 92: ('▦ Block Party — mixte', 3),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
 }
 SHORT_OPT = {   # boutons de navigation (mg.opt) : noms courts
     24: '➶ OITC ▸', 10: '⚡ Quake ▸', 20: '⚓ Enclumes ▸', 19: '⬇ Dropper ▸', 28: '🪽 Course élytres ▸', 23: '⚔ Arène PvP ▸',

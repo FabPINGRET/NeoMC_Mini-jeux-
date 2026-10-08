@@ -123,6 +123,58 @@
     {
       "label": [
         {
+          "text": "▦ ▦ Block Party — bandes ",
+          "color": "light_purple"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Le sol est fait de bandes de couleur",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 91"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▦ ▦ Block Party — mixte ",
+          "color": "light_purple"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carrés ou bandes, ça change à chaque manche",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 92"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "⚓ Enclumes ▸",
           "color": "gray"
         }

@@ -31,6 +31,12 @@ execute if score $game mg.st matches 75..77 run scoreboard players operation $el
 execute if score $game mg.st matches 75..77 run scoreboard players remove $elm mg.st 74
 execute if score $game mg.st matches 75..78 run scoreboard players set $game mg.st 75
 
+# Block Party : 28 = carrés, 91 = bandes, 92 = mixte → jeu 28 + sol $bpm (0..2)
+execute if score $game mg.st matches 28 run scoreboard players set $bpm mg.st 0
+execute if score $game mg.st matches 91 run scoreboard players set $bpm mg.st 1
+execute if score $game mg.st matches 92 run scoreboard players set $bpm mg.st 2
+execute if score $game mg.st matches 91..92 run scoreboard players set $game mg.st 28
+
 # Mini Party : 59 = 8 tours, 60 = 15 tours. Un jeu lancé hors Mini Party ($mpl) met fin à la partie en cours
 execute unless score $mpl mg.st matches 1 run scoreboard players set $mp mg.st 0
 execute if score $game mg.st matches 59 run scoreboard players set $mpmax mg.st 8
