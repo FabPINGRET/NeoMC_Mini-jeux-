@@ -5,5 +5,5 @@ execute if score $dcl mg.st = $dcp mg.st run scoreboard players add $dcl mg.st 1
 execute if score $dcl mg.st matches 11.. run scoreboard players set $dcl mg.st 1
 scoreboard players add $dcr mg.st 1
 scoreboard players set $px mg.st 0
-scoreboard players set $py mg.st 203
+scoreboard players set $py mg.st 303
 scoreboard players set $pz mg.st 23989

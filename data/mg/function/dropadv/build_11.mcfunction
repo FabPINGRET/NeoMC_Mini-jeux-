@@ -1,984 +1,2502 @@
-# Dropper Aventure : niveau 10 (Les nuages)
-fill 347 92 23987 373 131 24013 minecraft:light_blue_concrete
-fill 347 132 23987 373 171 24013 minecraft:light_blue_concrete
-fill 347 172 23987 373 199 24013 minecraft:light_blue_concrete
-fill 350 96 23990 370 155 24010 minecraft:air
-fill 350 156 23990 370 200 24010 minecraft:air
-fill 343 201 23983 377 206 24017 minecraft:air
-fill 343 200 23983 377 200 24017 minecraft:polished_andesite
-fill 353 200 23993 367 200 24007 minecraft:air
-fill 352 200 23992 368 200 23992 minecraft:yellow_concrete
-fill 352 200 24008 368 200 24008 minecraft:yellow_concrete
-fill 352 200 23992 352 200 24008 minecraft:yellow_concrete
-fill 368 200 23992 368 200 24008 minecraft:yellow_concrete
-fill 343 201 23983 377 204 23983 minecraft:glass
-fill 343 201 24017 377 204 24017 minecraft:glass
-fill 343 201 23983 343 204 24017 minecraft:glass
-fill 377 201 23983 377 204 24017 minecraft:glass
-fill 343 206 23983 377 206 24017 minecraft:barrier
-setblock 354 99 23994 minecraft:light[level=15]
-setblock 366 99 23994 minecraft:light[level=15]
-setblock 354 99 24006 minecraft:light[level=15]
-setblock 366 99 24006 minecraft:light[level=15]
-setblock 360 99 24000 minecraft:light[level=15]
-setblock 354 108 23994 minecraft:light[level=15]
-setblock 366 108 23994 minecraft:light[level=15]
-setblock 354 108 24006 minecraft:light[level=15]
-setblock 366 108 24006 minecraft:light[level=15]
-setblock 360 108 24000 minecraft:light[level=15]
-setblock 354 117 23994 minecraft:light[level=15]
-setblock 366 117 23994 minecraft:light[level=15]
-setblock 354 117 24006 minecraft:light[level=15]
-setblock 366 117 24006 minecraft:light[level=15]
-setblock 360 117 24000 minecraft:light[level=15]
-setblock 354 126 23994 minecraft:light[level=15]
-setblock 366 126 23994 minecraft:light[level=15]
-setblock 354 126 24006 minecraft:light[level=15]
-setblock 366 126 24006 minecraft:light[level=15]
-setblock 360 126 24000 minecraft:light[level=15]
-setblock 354 135 23994 minecraft:light[level=15]
-setblock 366 135 23994 minecraft:light[level=15]
-setblock 354 135 24006 minecraft:light[level=15]
-setblock 366 135 24006 minecraft:light[level=15]
-setblock 360 135 24000 minecraft:light[level=15]
-setblock 354 144 23994 minecraft:light[level=15]
-setblock 366 144 23994 minecraft:light[level=15]
-setblock 354 144 24006 minecraft:light[level=15]
-setblock 366 144 24006 minecraft:light[level=15]
-setblock 360 144 24000 minecraft:light[level=15]
-setblock 354 153 23994 minecraft:light[level=15]
-setblock 366 153 23994 minecraft:light[level=15]
-setblock 354 153 24006 minecraft:light[level=15]
-setblock 366 153 24006 minecraft:light[level=15]
-setblock 360 153 24000 minecraft:light[level=15]
-setblock 354 162 23994 minecraft:light[level=15]
-setblock 366 162 23994 minecraft:light[level=15]
-setblock 354 162 24006 minecraft:light[level=15]
-setblock 366 162 24006 minecraft:light[level=15]
-setblock 360 162 24000 minecraft:light[level=15]
-setblock 354 171 23994 minecraft:light[level=15]
-setblock 366 171 23994 minecraft:light[level=15]
-setblock 354 171 24006 minecraft:light[level=15]
-setblock 366 171 24006 minecraft:light[level=15]
-setblock 360 171 24000 minecraft:light[level=15]
-setblock 354 180 23994 minecraft:light[level=15]
-setblock 366 180 23994 minecraft:light[level=15]
-setblock 354 180 24006 minecraft:light[level=15]
-setblock 366 180 24006 minecraft:light[level=15]
-setblock 360 180 24000 minecraft:light[level=15]
-setblock 354 189 23994 minecraft:light[level=15]
-setblock 366 189 23994 minecraft:light[level=15]
-setblock 354 189 24006 minecraft:light[level=15]
-setblock 366 189 24006 minecraft:light[level=15]
-setblock 360 189 24000 minecraft:light[level=15]
-setblock 354 198 23994 minecraft:light[level=15]
-setblock 366 198 23994 minecraft:light[level=15]
-setblock 354 198 24006 minecraft:light[level=15]
-setblock 366 198 24006 minecraft:light[level=15]
-setblock 360 198 24000 minecraft:light[level=15]
-fill 358 190 23996 358 190 23996 minecraft:white_wool
-fill 357 191 23995 357 191 23997 minecraft:white_wool
-fill 358 191 23995 358 191 23997 minecraft:white_wool
-fill 359 191 23995 359 191 23997 minecraft:white_wool
-fill 356 192 23995 356 192 23997 minecraft:white_wool
-fill 357 192 23994 357 192 23998 minecraft:white_wool
-fill 358 192 23994 358 192 23998 minecraft:white_wool
-fill 359 192 23994 359 192 23998 minecraft:white_wool
-fill 360 192 23995 360 192 23997 minecraft:white_wool
-fill 357 193 23995 357 193 23997 minecraft:white_wool
-fill 358 193 23995 358 193 23997 minecraft:white_wool
-fill 359 193 23995 359 193 23997 minecraft:white_wool
-fill 358 194 23996 358 194 23996 minecraft:white_wool
-fill 360 189 24002 360 189 24002 minecraft:white_wool
-fill 358 190 24001 358 190 24003 minecraft:white_wool
-fill 359 190 24000 359 190 24004 minecraft:white_wool
-fill 360 190 24000 360 190 24004 minecraft:white_wool
-fill 361 190 24000 361 190 24004 minecraft:white_wool
-fill 362 190 24001 362 190 24003 minecraft:white_wool
-fill 358 191 24001 358 191 24003 minecraft:white_wool
-fill 359 191 24000 359 191 24004 minecraft:white_wool
-fill 360 191 24000 360 191 24004 minecraft:white_wool
-fill 361 191 24000 361 191 24004 minecraft:white_wool
-fill 362 191 24001 362 191 24003 minecraft:white_wool
-fill 357 192 24001 357 192 24003 minecraft:white_wool
-fill 358 192 24000 358 192 24004 minecraft:white_wool
-fill 359 192 23999 359 192 24005 minecraft:white_wool
-fill 360 192 23999 360 192 24005 minecraft:white_wool
-fill 361 192 23999 361 192 24005 minecraft:white_wool
-fill 362 192 24000 362 192 24004 minecraft:white_wool
-fill 363 192 24001 363 192 24003 minecraft:white_wool
-fill 358 193 24001 358 193 24003 minecraft:white_wool
-fill 359 193 24000 359 193 24004 minecraft:white_wool
-fill 360 193 24000 360 193 24004 minecraft:white_wool
-fill 361 193 24000 361 193 24004 minecraft:white_wool
-fill 362 193 24001 362 193 24003 minecraft:white_wool
-fill 358 194 24001 358 194 24003 minecraft:white_wool
-fill 359 194 24000 359 194 24004 minecraft:white_wool
-fill 360 194 24000 360 194 24004 minecraft:white_wool
-fill 361 194 24000 361 194 24004 minecraft:white_wool
-fill 362 194 24001 362 194 24003 minecraft:white_wool
-fill 360 195 24002 360 195 24002 minecraft:white_wool
-fill 354 185 24003 354 185 24003 minecraft:white_wool
-fill 353 186 24002 353 186 24004 minecraft:white_wool
-fill 354 186 24002 354 186 24004 minecraft:white_wool
-fill 355 186 24002 355 186 24004 minecraft:white_wool
-fill 352 187 24002 352 187 24004 minecraft:white_wool
-fill 353 187 24001 353 187 24005 minecraft:white_wool
-fill 354 187 24001 354 187 24005 minecraft:white_wool
-fill 355 187 24001 355 187 24005 minecraft:white_wool
-fill 356 187 24002 356 187 24004 minecraft:white_wool
-fill 353 188 24002 353 188 24004 minecraft:white_wool
-fill 354 188 24002 354 188 24004 minecraft:white_wool
-fill 355 188 24002 355 188 24004 minecraft:white_wool
-fill 354 189 24003 354 189 24003 minecraft:white_wool
-fill 353 185 23998 353 185 23998 minecraft:white_wool
-fill 352 186 23997 352 186 23999 minecraft:white_wool
-fill 353 186 23997 353 186 23999 minecraft:white_wool
-fill 354 186 23997 354 186 23999 minecraft:white_wool
-fill 351 187 23997 351 187 23999 minecraft:white_wool
-fill 352 187 23996 352 187 24000 minecraft:white_wool
-fill 353 187 23996 353 187 24000 minecraft:white_wool
-fill 354 187 23996 354 187 24000 minecraft:white_wool
-fill 355 187 23997 355 187 23999 minecraft:white_wool
-fill 352 188 23997 352 188 23999 minecraft:white_wool
-fill 353 188 23997 353 188 23999 minecraft:white_wool
-fill 354 188 23997 354 188 23999 minecraft:white_wool
-fill 353 189 23998 353 189 23998 minecraft:white_wool
-fill 367 181 23999 367 181 23999 minecraft:white_wool
-fill 366 182 23998 366 182 24000 minecraft:white_wool
-fill 367 182 23998 367 182 24000 minecraft:white_wool
-fill 368 182 23998 368 182 24000 minecraft:white_wool
-fill 367 183 23999 367 183 23999 minecraft:white_wool
-fill 367 180 23997 367 180 23997 minecraft:white_wool
-fill 366 181 23996 366 181 23998 minecraft:white_wool
-fill 367 181 23996 367 181 23998 minecraft:white_wool
-fill 368 181 23996 368 181 23998 minecraft:white_wool
-fill 365 182 23996 365 182 23998 minecraft:white_wool
-fill 366 182 23995 366 182 23999 minecraft:white_wool
-fill 367 182 23995 367 182 23999 minecraft:white_wool
-fill 368 182 23995 368 182 23999 minecraft:white_wool
-fill 369 182 23996 369 182 23998 minecraft:white_wool
-fill 366 183 23996 366 183 23998 minecraft:white_wool
-fill 367 183 23996 367 183 23998 minecraft:white_wool
-fill 368 183 23996 368 183 23998 minecraft:white_wool
-fill 367 184 23997 367 184 23997 minecraft:white_wool
-fill 362 176 24004 362 176 24004 minecraft:white_wool
-fill 361 177 24003 361 177 24005 minecraft:white_wool
-fill 362 177 24003 362 177 24005 minecraft:white_wool
-fill 363 177 24003 363 177 24005 minecraft:white_wool
-fill 362 178 24004 362 178 24004 minecraft:white_wool
-fill 358 175 23997 358 175 23997 minecraft:white_wool
-fill 357 176 23996 357 176 23998 minecraft:white_wool
-fill 358 176 23996 358 176 23998 minecraft:white_wool
-fill 359 176 23996 359 176 23998 minecraft:white_wool
-fill 356 177 23996 356 177 23998 minecraft:white_wool
-fill 357 177 23995 357 177 23999 minecraft:white_wool
-fill 358 177 23995 358 177 23999 minecraft:white_wool
-fill 359 177 23995 359 177 23999 minecraft:white_wool
-fill 360 177 23996 360 177 23998 minecraft:white_wool
-fill 357 178 23996 357 178 23998 minecraft:white_wool
-fill 358 178 23996 358 178 23998 minecraft:white_wool
-fill 359 178 23996 359 178 23998 minecraft:white_wool
-fill 358 179 23997 358 179 23997 minecraft:white_wool
-fill 362 169 24002 362 169 24002 minecraft:white_wool
-fill 360 170 24001 360 170 24003 minecraft:white_wool
-fill 361 170 24000 361 170 24004 minecraft:white_wool
-fill 362 170 24000 362 170 24004 minecraft:white_wool
-fill 363 170 24000 363 170 24004 minecraft:white_wool
-fill 364 170 24001 364 170 24003 minecraft:white_wool
-fill 360 171 24001 360 171 24003 minecraft:white_wool
-fill 361 171 24000 361 171 24004 minecraft:white_wool
-fill 362 171 24000 362 171 24004 minecraft:white_wool
-fill 363 171 24000 363 171 24004 minecraft:white_wool
-fill 364 171 24001 364 171 24003 minecraft:white_wool
-fill 359 172 24001 359 172 24003 minecraft:white_wool
-fill 360 172 24000 360 172 24004 minecraft:white_wool
-fill 361 172 23999 361 172 24005 minecraft:white_wool
-fill 362 172 23999 362 172 24005 minecraft:white_wool
-fill 363 172 23999 363 172 24005 minecraft:white_wool
-fill 364 172 24000 364 172 24004 minecraft:white_wool
-fill 365 172 24001 365 172 24003 minecraft:white_wool
-fill 360 173 24001 360 173 24003 minecraft:white_wool
-fill 361 173 24000 361 173 24004 minecraft:white_wool
-fill 362 173 24000 362 173 24004 minecraft:white_wool
-fill 363 173 24000 363 173 24004 minecraft:white_wool
-fill 364 173 24001 364 173 24003 minecraft:white_wool
-fill 360 174 24001 360 174 24003 minecraft:white_wool
-fill 361 174 24000 361 174 24004 minecraft:white_wool
-fill 362 174 24000 362 174 24004 minecraft:white_wool
-fill 363 174 24000 363 174 24004 minecraft:white_wool
-fill 364 174 24001 364 174 24003 minecraft:white_wool
-fill 362 175 24002 362 175 24002 minecraft:white_wool
-fill 366 169 23998 366 169 23998 minecraft:white_wool
-fill 364 170 23997 364 170 23999 minecraft:white_wool
-fill 365 170 23996 365 170 24000 minecraft:white_wool
-fill 366 170 23996 366 170 24000 minecraft:white_wool
-fill 367 170 23996 367 170 24000 minecraft:white_wool
-fill 368 170 23997 368 170 23999 minecraft:white_wool
-fill 364 171 23997 364 171 23999 minecraft:white_wool
-fill 365 171 23996 365 171 24000 minecraft:white_wool
-fill 366 171 23996 366 171 24000 minecraft:white_wool
-fill 367 171 23996 367 171 24000 minecraft:white_wool
-fill 368 171 23997 368 171 23999 minecraft:white_wool
-fill 363 172 23997 363 172 23999 minecraft:white_wool
-fill 364 172 23996 364 172 24000 minecraft:white_wool
-fill 365 172 23995 365 172 24001 minecraft:white_wool
-fill 366 172 23995 366 172 24001 minecraft:white_wool
-fill 367 172 23995 367 172 24001 minecraft:white_wool
-fill 368 172 23996 368 172 24000 minecraft:white_wool
-fill 369 172 23997 369 172 23999 minecraft:white_wool
-fill 364 173 23997 364 173 23999 minecraft:white_wool
-fill 365 173 23996 365 173 24000 minecraft:white_wool
-fill 366 173 23996 366 173 24000 minecraft:white_wool
-fill 367 173 23996 367 173 24000 minecraft:white_wool
-fill 368 173 23997 368 173 23999 minecraft:white_wool
-fill 364 174 23997 364 174 23999 minecraft:white_wool
-fill 365 174 23996 365 174 24000 minecraft:white_wool
-fill 366 174 23996 366 174 24000 minecraft:white_wool
-fill 367 174 23996 367 174 24000 minecraft:white_wool
-fill 368 174 23997 368 174 23999 minecraft:white_wool
-fill 366 175 23998 366 175 23998 minecraft:white_wool
-fill 357 166 23995 357 166 23995 minecraft:white_wool
-fill 356 167 23994 356 167 23996 minecraft:white_wool
-fill 357 167 23994 357 167 23996 minecraft:white_wool
-fill 358 167 23994 358 167 23996 minecraft:white_wool
-fill 357 168 23995 357 168 23995 minecraft:white_wool
-fill 365 166 23998 365 166 23998 minecraft:white_wool
-fill 364 167 23997 364 167 23999 minecraft:white_wool
-fill 365 167 23997 365 167 23999 minecraft:white_wool
-fill 366 167 23997 366 167 23999 minecraft:white_wool
-fill 365 168 23998 365 168 23998 minecraft:white_wool
-fill 365 160 24005 365 160 24005 minecraft:white_wool
-fill 364 161 24004 364 161 24006 minecraft:white_wool
-fill 365 161 24004 365 161 24006 minecraft:white_wool
-fill 366 161 24004 366 161 24006 minecraft:white_wool
-fill 363 162 24004 363 162 24006 minecraft:white_wool
-fill 364 162 24003 364 162 24007 minecraft:white_wool
-fill 365 162 24003 365 162 24007 minecraft:white_wool
-fill 366 162 24003 366 162 24007 minecraft:white_wool
-fill 367 162 24004 367 162 24006 minecraft:white_wool
-fill 364 163 24004 364 163 24006 minecraft:white_wool
-fill 365 163 24004 365 163 24006 minecraft:white_wool
-fill 366 163 24004 366 163 24006 minecraft:white_wool
-fill 365 164 24005 365 164 24005 minecraft:white_wool
-fill 364 161 24007 364 161 24007 minecraft:white_wool
-fill 363 162 24006 363 162 24008 minecraft:white_wool
-fill 364 162 24006 364 162 24008 minecraft:white_wool
-fill 365 162 24006 365 162 24008 minecraft:white_wool
-fill 364 163 24007 364 163 24007 minecraft:white_wool
-fill 362 154 24006 362 154 24006 minecraft:white_wool
-fill 360 155 24005 360 155 24007 minecraft:white_wool
-fill 361 155 24004 361 155 24008 minecraft:white_wool
-fill 362 155 24004 362 155 24008 minecraft:white_wool
-fill 363 155 24004 363 155 24008 minecraft:white_wool
-fill 364 155 24005 364 155 24007 minecraft:white_wool
-fill 360 156 24005 360 156 24007 minecraft:white_wool
-fill 361 156 24004 361 156 24008 minecraft:white_wool
-fill 362 156 24004 362 156 24008 minecraft:white_wool
-fill 363 156 24004 363 156 24008 minecraft:white_wool
-fill 364 156 24005 364 156 24007 minecraft:white_wool
-fill 359 157 24005 359 157 24007 minecraft:white_wool
-fill 360 157 24004 360 157 24008 minecraft:white_wool
-fill 361 157 24003 361 157 24009 minecraft:white_wool
-fill 362 157 24003 362 157 24009 minecraft:white_wool
-fill 363 157 24003 363 157 24009 minecraft:white_wool
-fill 364 157 24004 364 157 24008 minecraft:white_wool
-fill 365 157 24005 365 157 24007 minecraft:white_wool
-fill 360 158 24005 360 158 24007 minecraft:white_wool
-fill 361 158 24004 361 158 24008 minecraft:white_wool
-fill 362 158 24004 362 158 24008 minecraft:white_wool
-fill 363 158 24004 363 158 24008 minecraft:white_wool
-fill 364 158 24005 364 158 24007 minecraft:white_wool
-fill 360 159 24005 360 159 24007 minecraft:white_wool
-fill 361 159 24004 361 159 24008 minecraft:white_wool
-fill 362 159 24004 362 159 24008 minecraft:white_wool
-fill 363 159 24004 363 159 24008 minecraft:white_wool
-fill 364 159 24005 364 159 24007 minecraft:white_wool
-fill 362 160 24006 362 160 24006 minecraft:white_wool
-fill 361 156 23994 361 156 23994 minecraft:white_wool
-fill 360 157 23993 360 157 23995 minecraft:white_wool
-fill 361 157 23993 361 157 23995 minecraft:white_wool
-fill 362 157 23993 362 157 23995 minecraft:white_wool
-fill 361 158 23994 361 158 23994 minecraft:white_wool
-fill 363 151 24002 363 151 24002 minecraft:white_wool
-fill 362 152 24001 362 152 24003 minecraft:white_wool
-fill 363 152 24001 363 152 24003 minecraft:white_wool
-fill 364 152 24001 364 152 24003 minecraft:white_wool
-fill 363 153 24002 363 153 24002 minecraft:white_wool
-fill 358 150 23997 358 150 23997 minecraft:white_wool
-fill 357 151 23996 357 151 23998 minecraft:white_wool
-fill 358 151 23996 358 151 23998 minecraft:white_wool
-fill 359 151 23996 359 151 23998 minecraft:white_wool
-fill 356 152 23996 356 152 23998 minecraft:white_wool
-fill 357 152 23995 357 152 23999 minecraft:white_wool
-fill 358 152 23995 358 152 23999 minecraft:white_wool
-fill 359 152 23995 359 152 23999 minecraft:white_wool
-fill 360 152 23996 360 152 23998 minecraft:white_wool
-fill 357 153 23996 357 153 23998 minecraft:white_wool
-fill 358 153 23996 358 153 23998 minecraft:white_wool
-fill 359 153 23996 359 153 23998 minecraft:white_wool
-fill 358 154 23997 358 154 23997 minecraft:white_wool
-fill 353 146 24006 353 146 24006 minecraft:white_wool
-fill 352 147 24005 352 147 24007 minecraft:white_wool
-fill 353 147 24005 353 147 24007 minecraft:white_wool
-fill 354 147 24005 354 147 24007 minecraft:white_wool
-fill 353 148 24006 353 148 24006 minecraft:white_wool
-fill 363 144 24001 363 144 24001 minecraft:white_wool
-fill 361 145 24000 361 145 24002 minecraft:white_wool
-fill 362 145 23999 362 145 24003 minecraft:white_wool
-fill 363 145 23999 363 145 24003 minecraft:white_wool
-fill 364 145 23999 364 145 24003 minecraft:white_wool
-fill 365 145 24000 365 145 24002 minecraft:white_wool
-fill 361 146 24000 361 146 24002 minecraft:white_wool
-fill 362 146 23999 362 146 24003 minecraft:white_wool
-fill 363 146 23999 363 146 24003 minecraft:white_wool
-fill 364 146 23999 364 146 24003 minecraft:white_wool
-fill 365 146 24000 365 146 24002 minecraft:white_wool
-fill 360 147 24000 360 147 24002 minecraft:white_wool
-fill 361 147 23999 361 147 24003 minecraft:white_wool
-fill 362 147 23998 362 147 24004 minecraft:white_wool
-fill 363 147 23998 363 147 24004 minecraft:white_wool
-fill 364 147 23998 364 147 24004 minecraft:white_wool
-fill 365 147 23999 365 147 24003 minecraft:white_wool
-fill 366 147 24000 366 147 24002 minecraft:white_wool
-fill 361 148 24000 361 148 24002 minecraft:white_wool
-fill 362 148 23999 362 148 24003 minecraft:white_wool
-fill 363 148 23999 363 148 24003 minecraft:white_wool
-fill 364 148 23999 364 148 24003 minecraft:white_wool
-fill 365 148 24000 365 148 24002 minecraft:white_wool
-fill 361 149 24000 361 149 24002 minecraft:white_wool
-fill 362 149 23999 362 149 24003 minecraft:white_wool
-fill 363 149 23999 363 149 24003 minecraft:white_wool
-fill 364 149 23999 364 149 24003 minecraft:white_wool
-fill 365 149 24000 365 149 24002 minecraft:white_wool
-fill 363 150 24001 363 150 24001 minecraft:white_wool
-fill 356 140 23998 356 140 23998 minecraft:white_wool
-fill 355 141 23997 355 141 23999 minecraft:white_wool
-fill 356 141 23997 356 141 23999 minecraft:white_wool
-fill 357 141 23997 357 141 23999 minecraft:white_wool
-fill 354 142 23997 354 142 23999 minecraft:white_wool
-fill 355 142 23996 355 142 24000 minecraft:white_wool
-fill 356 142 23996 356 142 24000 minecraft:white_wool
-fill 357 142 23996 357 142 24000 minecraft:white_wool
-fill 358 142 23997 358 142 23999 minecraft:white_wool
-fill 355 143 23997 355 143 23999 minecraft:white_wool
-fill 356 143 23997 356 143 23999 minecraft:white_wool
-fill 357 143 23997 357 143 23999 minecraft:white_wool
-fill 356 144 23998 356 144 23998 minecraft:white_wool
-fill 366 139 24007 366 139 24007 minecraft:white_wool
-fill 364 140 24006 364 140 24008 minecraft:white_wool
-fill 365 140 24005 365 140 24009 minecraft:white_wool
-fill 366 140 24005 366 140 24009 minecraft:white_wool
-fill 367 140 24005 367 140 24009 minecraft:white_wool
-fill 368 140 24006 368 140 24008 minecraft:white_wool
-fill 364 141 24006 364 141 24008 minecraft:white_wool
-fill 365 141 24005 365 141 24009 minecraft:white_wool
-fill 366 141 24005 366 141 24009 minecraft:white_wool
-fill 367 141 24005 367 141 24009 minecraft:white_wool
-fill 368 141 24006 368 141 24008 minecraft:white_wool
-fill 363 142 24006 363 142 24008 minecraft:white_wool
-fill 364 142 24005 364 142 24009 minecraft:white_wool
-fill 365 142 24004 365 142 24010 minecraft:white_wool
-fill 366 142 24004 366 142 24010 minecraft:white_wool
-fill 367 142 24004 367 142 24010 minecraft:white_wool
-fill 368 142 24005 368 142 24009 minecraft:white_wool
-fill 369 142 24006 369 142 24008 minecraft:white_wool
-fill 364 143 24006 364 143 24008 minecraft:white_wool
-fill 365 143 24005 365 143 24009 minecraft:white_wool
-fill 366 143 24005 366 143 24009 minecraft:white_wool
-fill 367 143 24005 367 143 24009 minecraft:white_wool
-fill 368 143 24006 368 143 24008 minecraft:white_wool
-fill 364 144 24006 364 144 24008 minecraft:white_wool
-fill 365 144 24005 365 144 24009 minecraft:white_wool
-fill 366 144 24005 366 144 24009 minecraft:white_wool
-fill 367 144 24005 367 144 24009 minecraft:white_wool
-fill 368 144 24006 368 144 24008 minecraft:white_wool
-fill 366 145 24007 366 145 24007 minecraft:white_wool
-fill 362 134 24003 362 134 24003 minecraft:white_wool
-fill 360 135 24002 360 135 24004 minecraft:white_wool
-fill 361 135 24001 361 135 24005 minecraft:white_wool
-fill 362 135 24001 362 135 24005 minecraft:white_wool
-fill 363 135 24001 363 135 24005 minecraft:white_wool
-fill 364 135 24002 364 135 24004 minecraft:white_wool
-fill 360 136 24002 360 136 24004 minecraft:white_wool
-fill 361 136 24001 361 136 24005 minecraft:white_wool
-fill 362 136 24001 362 136 24005 minecraft:white_wool
-fill 363 136 24001 363 136 24005 minecraft:white_wool
-fill 364 136 24002 364 136 24004 minecraft:white_wool
-fill 359 137 24002 359 137 24004 minecraft:white_wool
-fill 360 137 24001 360 137 24005 minecraft:white_wool
-fill 361 137 24000 361 137 24006 minecraft:white_wool
-fill 362 137 24000 362 137 24006 minecraft:white_wool
-fill 363 137 24000 363 137 24006 minecraft:white_wool
-fill 364 137 24001 364 137 24005 minecraft:white_wool
-fill 365 137 24002 365 137 24004 minecraft:white_wool
-fill 360 138 24002 360 138 24004 minecraft:white_wool
-fill 361 138 24001 361 138 24005 minecraft:white_wool
-fill 362 138 24001 362 138 24005 minecraft:white_wool
-fill 363 138 24001 363 138 24005 minecraft:white_wool
-fill 364 138 24002 364 138 24004 minecraft:white_wool
-fill 360 139 24002 360 139 24004 minecraft:white_wool
-fill 361 139 24001 361 139 24005 minecraft:white_wool
-fill 362 139 24001 362 139 24005 minecraft:white_wool
-fill 363 139 24001 363 139 24005 minecraft:white_wool
-fill 364 139 24002 364 139 24004 minecraft:white_wool
-fill 362 140 24003 362 140 24003 minecraft:white_wool
-fill 357 136 24003 357 136 24003 minecraft:white_wool
-fill 356 137 24002 356 137 24004 minecraft:white_wool
-fill 357 137 24002 357 137 24004 minecraft:white_wool
-fill 358 137 24002 358 137 24004 minecraft:white_wool
-fill 357 138 24003 357 138 24003 minecraft:white_wool
-fill 367 130 24005 367 130 24005 minecraft:white_wool
-fill 366 131 24004 366 131 24006 minecraft:white_wool
-fill 367 131 24004 367 131 24006 minecraft:white_wool
-fill 368 131 24004 368 131 24006 minecraft:white_wool
-fill 365 132 24004 365 132 24006 minecraft:white_wool
-fill 366 132 24003 366 132 24007 minecraft:white_wool
-fill 367 132 24003 367 132 24007 minecraft:white_wool
-fill 368 132 24003 368 132 24007 minecraft:white_wool
-fill 369 132 24004 369 132 24006 minecraft:white_wool
-fill 366 133 24004 366 133 24006 minecraft:white_wool
-fill 367 133 24004 367 133 24006 minecraft:white_wool
-fill 368 133 24004 368 133 24006 minecraft:white_wool
-fill 367 134 24005 367 134 24005 minecraft:white_wool
-fill 354 131 23998 354 131 23998 minecraft:white_wool
-fill 353 132 23997 353 132 23999 minecraft:white_wool
-fill 354 132 23997 354 132 23999 minecraft:white_wool
-fill 355 132 23997 355 132 23999 minecraft:white_wool
-fill 354 133 23998 354 133 23998 minecraft:white_wool
-fill 353 125 24001 353 125 24001 minecraft:white_wool
-fill 352 126 24000 352 126 24002 minecraft:white_wool
-fill 353 126 24000 353 126 24002 minecraft:white_wool
-fill 354 126 24000 354 126 24002 minecraft:white_wool
-fill 351 127 24000 351 127 24002 minecraft:white_wool
-fill 352 127 23999 352 127 24003 minecraft:white_wool
-fill 353 127 23999 353 127 24003 minecraft:white_wool
-fill 354 127 23999 354 127 24003 minecraft:white_wool
-fill 355 127 24000 355 127 24002 minecraft:white_wool
-fill 352 128 24000 352 128 24002 minecraft:white_wool
-fill 353 128 24000 353 128 24002 minecraft:white_wool
-fill 354 128 24000 354 128 24002 minecraft:white_wool
-fill 353 129 24001 353 129 24001 minecraft:white_wool
-fill 358 124 24006 358 124 24006 minecraft:white_wool
-fill 356 125 24005 356 125 24007 minecraft:white_wool
-fill 357 125 24004 357 125 24008 minecraft:white_wool
-fill 358 125 24004 358 125 24008 minecraft:white_wool
-fill 359 125 24004 359 125 24008 minecraft:white_wool
-fill 360 125 24005 360 125 24007 minecraft:white_wool
-fill 356 126 24005 356 126 24007 minecraft:white_wool
-fill 357 126 24004 357 126 24008 minecraft:white_wool
-fill 358 126 24004 358 126 24008 minecraft:white_wool
-fill 359 126 24004 359 126 24008 minecraft:white_wool
-fill 360 126 24005 360 126 24007 minecraft:white_wool
-fill 355 127 24005 355 127 24007 minecraft:white_wool
-fill 356 127 24004 356 127 24008 minecraft:white_wool
-fill 357 127 24003 357 127 24009 minecraft:white_wool
-fill 358 127 24003 358 127 24009 minecraft:white_wool
-fill 359 127 24003 359 127 24009 minecraft:white_wool
-fill 360 127 24004 360 127 24008 minecraft:white_wool
-fill 361 127 24005 361 127 24007 minecraft:white_wool
-fill 356 128 24005 356 128 24007 minecraft:white_wool
-fill 357 128 24004 357 128 24008 minecraft:white_wool
-fill 358 128 24004 358 128 24008 minecraft:white_wool
-fill 359 128 24004 359 128 24008 minecraft:white_wool
-fill 360 128 24005 360 128 24007 minecraft:white_wool
-fill 356 129 24005 356 129 24007 minecraft:white_wool
-fill 357 129 24004 357 129 24008 minecraft:white_wool
-fill 358 129 24004 358 129 24008 minecraft:white_wool
-fill 359 129 24004 359 129 24008 minecraft:white_wool
-fill 360 129 24005 360 129 24007 minecraft:white_wool
-fill 358 130 24006 358 130 24006 minecraft:white_wool
-fill 355 121 24000 355 121 24000 minecraft:white_wool
-fill 354 122 23999 354 122 24001 minecraft:white_wool
-fill 355 122 23999 355 122 24001 minecraft:white_wool
-fill 356 122 23999 356 122 24001 minecraft:white_wool
-fill 355 123 24000 355 123 24000 minecraft:white_wool
-fill 365 120 24000 365 120 24000 minecraft:white_wool
-fill 364 121 23999 364 121 24001 minecraft:white_wool
-fill 365 121 23999 365 121 24001 minecraft:white_wool
-fill 366 121 23999 366 121 24001 minecraft:white_wool
-fill 363 122 23999 363 122 24001 minecraft:white_wool
-fill 364 122 23998 364 122 24002 minecraft:white_wool
-fill 365 122 23998 365 122 24002 minecraft:white_wool
-fill 366 122 23998 366 122 24002 minecraft:white_wool
-fill 367 122 23999 367 122 24001 minecraft:white_wool
-fill 364 123 23999 364 123 24001 minecraft:white_wool
-fill 365 123 23999 365 123 24001 minecraft:white_wool
-fill 366 123 23999 366 123 24001 minecraft:white_wool
-fill 365 124 24000 365 124 24000 minecraft:white_wool
-fill 362 114 23993 362 114 23993 minecraft:white_wool
-fill 360 115 23992 360 115 23994 minecraft:white_wool
-fill 361 115 23991 361 115 23995 minecraft:white_wool
-fill 362 115 23991 362 115 23995 minecraft:white_wool
-fill 363 115 23991 363 115 23995 minecraft:white_wool
-fill 364 115 23992 364 115 23994 minecraft:white_wool
-fill 360 116 23992 360 116 23994 minecraft:white_wool
-fill 361 116 23991 361 116 23995 minecraft:white_wool
-fill 362 116 23991 362 116 23995 minecraft:white_wool
-fill 363 116 23991 363 116 23995 minecraft:white_wool
-fill 364 116 23992 364 116 23994 minecraft:white_wool
-fill 359 117 23992 359 117 23994 minecraft:white_wool
-fill 360 117 23991 360 117 23995 minecraft:white_wool
-fill 361 117 23990 361 117 23996 minecraft:white_wool
-fill 362 117 23990 362 117 23996 minecraft:white_wool
-fill 363 117 23990 363 117 23996 minecraft:white_wool
-fill 364 117 23991 364 117 23995 minecraft:white_wool
-fill 365 117 23992 365 117 23994 minecraft:white_wool
-fill 360 118 23992 360 118 23994 minecraft:white_wool
-fill 361 118 23991 361 118 23995 minecraft:white_wool
-fill 362 118 23991 362 118 23995 minecraft:white_wool
-fill 363 118 23991 363 118 23995 minecraft:white_wool
-fill 364 118 23992 364 118 23994 minecraft:white_wool
-fill 360 119 23992 360 119 23994 minecraft:white_wool
-fill 361 119 23991 361 119 23995 minecraft:white_wool
-fill 362 119 23991 362 119 23995 minecraft:white_wool
-fill 363 119 23991 363 119 23995 minecraft:white_wool
-fill 364 119 23992 364 119 23994 minecraft:white_wool
-fill 362 120 23993 362 120 23993 minecraft:white_wool
-fill 358 114 24006 358 114 24006 minecraft:white_wool
-fill 356 115 24005 356 115 24007 minecraft:white_wool
-fill 357 115 24004 357 115 24008 minecraft:white_wool
-fill 358 115 24004 358 115 24008 minecraft:white_wool
-fill 359 115 24004 359 115 24008 minecraft:white_wool
-fill 360 115 24005 360 115 24007 minecraft:white_wool
-fill 356 116 24005 356 116 24007 minecraft:white_wool
-fill 357 116 24004 357 116 24008 minecraft:white_wool
-fill 358 116 24004 358 116 24008 minecraft:white_wool
-fill 359 116 24004 359 116 24008 minecraft:white_wool
-fill 360 116 24005 360 116 24007 minecraft:white_wool
-fill 355 117 24005 355 117 24007 minecraft:white_wool
-fill 356 117 24004 356 117 24008 minecraft:white_wool
-fill 357 117 24003 357 117 24009 minecraft:white_wool
-fill 358 117 24003 358 117 24009 minecraft:white_wool
-fill 359 117 24003 359 117 24009 minecraft:white_wool
-fill 360 117 24004 360 117 24008 minecraft:white_wool
-fill 361 117 24005 361 117 24007 minecraft:white_wool
-fill 356 118 24005 356 118 24007 minecraft:white_wool
-fill 357 118 24004 357 118 24008 minecraft:white_wool
-fill 358 118 24004 358 118 24008 minecraft:white_wool
-fill 359 118 24004 359 118 24008 minecraft:white_wool
-fill 360 118 24005 360 118 24007 minecraft:white_wool
-fill 356 119 24005 356 119 24007 minecraft:white_wool
-fill 357 119 24004 357 119 24008 minecraft:white_wool
-fill 358 119 24004 358 119 24008 minecraft:white_wool
-fill 359 119 24004 359 119 24008 minecraft:white_wool
-fill 360 119 24005 360 119 24007 minecraft:white_wool
-fill 358 120 24006 358 120 24006 minecraft:white_wool
-fill 363 111 23998 363 111 23998 minecraft:white_wool
-fill 362 112 23997 362 112 23999 minecraft:white_wool
-fill 363 112 23997 363 112 23999 minecraft:white_wool
-fill 364 112 23997 364 112 23999 minecraft:white_wool
-fill 363 113 23998 363 113 23998 minecraft:white_wool
-fill 354 109 23996 354 109 23996 minecraft:white_wool
-fill 352 110 23995 352 110 23997 minecraft:white_wool
-fill 353 110 23994 353 110 23998 minecraft:white_wool
-fill 354 110 23994 354 110 23998 minecraft:white_wool
-fill 355 110 23994 355 110 23998 minecraft:white_wool
-fill 356 110 23995 356 110 23997 minecraft:white_wool
-fill 352 111 23995 352 111 23997 minecraft:white_wool
-fill 353 111 23994 353 111 23998 minecraft:white_wool
-fill 354 111 23994 354 111 23998 minecraft:white_wool
-fill 355 111 23994 355 111 23998 minecraft:white_wool
-fill 356 111 23995 356 111 23997 minecraft:white_wool
-fill 351 112 23995 351 112 23997 minecraft:white_wool
-fill 352 112 23994 352 112 23998 minecraft:white_wool
-fill 353 112 23993 353 112 23999 minecraft:white_wool
-fill 354 112 23993 354 112 23999 minecraft:white_wool
-fill 355 112 23993 355 112 23999 minecraft:white_wool
-fill 356 112 23994 356 112 23998 minecraft:white_wool
-fill 357 112 23995 357 112 23997 minecraft:white_wool
-fill 352 113 23995 352 113 23997 minecraft:white_wool
-fill 353 113 23994 353 113 23998 minecraft:white_wool
-fill 354 113 23994 354 113 23998 minecraft:white_wool
-fill 355 113 23994 355 113 23998 minecraft:white_wool
-fill 356 113 23995 356 113 23997 minecraft:white_wool
-fill 352 114 23995 352 114 23997 minecraft:white_wool
-fill 353 114 23994 353 114 23998 minecraft:white_wool
-fill 354 114 23994 354 114 23998 minecraft:white_wool
-fill 355 114 23994 355 114 23998 minecraft:white_wool
-fill 356 114 23995 356 114 23997 minecraft:white_wool
-fill 354 115 23996 354 115 23996 minecraft:white_wool
-fill 359 105 24005 359 105 24005 minecraft:white_wool
-fill 358 106 24004 358 106 24006 minecraft:white_wool
-fill 359 106 24004 359 106 24006 minecraft:white_wool
-fill 360 106 24004 360 106 24006 minecraft:white_wool
-fill 357 107 24004 357 107 24006 minecraft:white_wool
-fill 358 107 24003 358 107 24007 minecraft:white_wool
-fill 359 107 24003 359 107 24007 minecraft:white_wool
-fill 360 107 24003 360 107 24007 minecraft:white_wool
-fill 361 107 24004 361 107 24006 minecraft:white_wool
-fill 358 108 24004 358 108 24006 minecraft:white_wool
-fill 359 108 24004 359 108 24006 minecraft:white_wool
-fill 360 108 24004 360 108 24006 minecraft:white_wool
-fill 359 109 24005 359 109 24005 minecraft:white_wool
-fill 363 105 23994 363 105 23994 minecraft:white_wool
-fill 362 106 23993 362 106 23995 minecraft:white_wool
-fill 363 106 23993 363 106 23995 minecraft:white_wool
-fill 364 106 23993 364 106 23995 minecraft:white_wool
-fill 361 107 23993 361 107 23995 minecraft:white_wool
-fill 362 107 23992 362 107 23996 minecraft:white_wool
-fill 363 107 23992 363 107 23996 minecraft:white_wool
-fill 364 107 23992 364 107 23996 minecraft:white_wool
-fill 365 107 23993 365 107 23995 minecraft:white_wool
-fill 362 108 23993 362 108 23995 minecraft:white_wool
-fill 363 108 23993 363 108 23995 minecraft:white_wool
-fill 364 108 23993 364 108 23995 minecraft:white_wool
-fill 363 109 23994 363 109 23994 minecraft:white_wool
-setblock 368 150 24000 minecraft:red_concrete
-setblock 368 151 24000 minecraft:red_concrete
-setblock 368 151 24000 minecraft:red_concrete
-setblock 368 152 24000 minecraft:red_concrete
-setblock 368 152 24000 minecraft:red_concrete
-setblock 368 153 24000 minecraft:red_concrete
-setblock 367 153 24000 minecraft:red_concrete
-setblock 367 154 24000 minecraft:red_concrete
-setblock 367 154 24000 minecraft:red_concrete
-setblock 366 155 24000 minecraft:red_concrete
-setblock 366 155 24000 minecraft:red_concrete
-setblock 366 156 24000 minecraft:red_concrete
-setblock 365 156 24000 minecraft:red_concrete
-setblock 365 156 24000 minecraft:red_concrete
-setblock 364 157 24000 minecraft:red_concrete
-setblock 364 157 24000 minecraft:red_concrete
-setblock 364 157 24000 minecraft:red_concrete
-setblock 363 157 24000 minecraft:red_concrete
-setblock 362 158 24000 minecraft:red_concrete
-setblock 362 158 24000 minecraft:red_concrete
-setblock 361 158 24000 minecraft:red_concrete
-setblock 361 158 24000 minecraft:red_concrete
-setblock 360 158 24000 minecraft:red_concrete
-setblock 360 158 24000 minecraft:red_concrete
-setblock 359 158 24000 minecraft:red_concrete
-setblock 359 158 24000 minecraft:red_concrete
-setblock 358 158 24000 minecraft:red_concrete
-setblock 358 158 24000 minecraft:red_concrete
-setblock 357 157 24000 minecraft:red_concrete
-setblock 356 157 24000 minecraft:red_concrete
-setblock 356 157 24000 minecraft:red_concrete
-setblock 356 157 24000 minecraft:red_concrete
-setblock 355 156 24000 minecraft:red_concrete
-setblock 355 156 24000 minecraft:red_concrete
-setblock 354 156 24000 minecraft:red_concrete
-setblock 354 155 24000 minecraft:red_concrete
-setblock 354 155 24000 minecraft:red_concrete
-setblock 353 154 24000 minecraft:red_concrete
-setblock 353 154 24000 minecraft:red_concrete
-setblock 353 153 24000 minecraft:red_concrete
-setblock 352 153 24000 minecraft:red_concrete
-setblock 352 152 24000 minecraft:red_concrete
-setblock 352 152 24000 minecraft:red_concrete
-setblock 352 151 24000 minecraft:red_concrete
-setblock 352 151 24000 minecraft:red_concrete
-setblock 352 150 24000 minecraft:red_concrete
-setblock 367 150 24000 minecraft:orange_concrete
-setblock 367 150 24000 minecraft:orange_concrete
-setblock 367 151 24000 minecraft:orange_concrete
-setblock 367 151 24000 minecraft:orange_concrete
-setblock 367 152 24000 minecraft:orange_concrete
-setblock 367 152 24000 minecraft:orange_concrete
-setblock 366 153 24000 minecraft:orange_concrete
-setblock 366 153 24000 minecraft:orange_concrete
-setblock 366 154 24000 minecraft:orange_concrete
-setblock 366 154 24000 minecraft:orange_concrete
-setblock 365 154 24000 minecraft:orange_concrete
-setblock 365 155 24000 minecraft:orange_concrete
-setblock 365 155 24000 minecraft:orange_concrete
-setblock 364 156 24000 minecraft:orange_concrete
-setblock 364 156 24000 minecraft:orange_concrete
-setblock 364 156 24000 minecraft:orange_concrete
-setblock 363 156 24000 minecraft:orange_concrete
-setblock 363 156 24000 minecraft:orange_concrete
-setblock 362 157 24000 minecraft:orange_concrete
-setblock 362 157 24000 minecraft:orange_concrete
-setblock 361 157 24000 minecraft:orange_concrete
-setblock 361 157 24000 minecraft:orange_concrete
-setblock 360 157 24000 minecraft:orange_concrete
-setblock 360 157 24000 minecraft:orange_concrete
-setblock 359 157 24000 minecraft:orange_concrete
-setblock 359 157 24000 minecraft:orange_concrete
-setblock 358 157 24000 minecraft:orange_concrete
-setblock 358 157 24000 minecraft:orange_concrete
-setblock 357 156 24000 minecraft:orange_concrete
-setblock 357 156 24000 minecraft:orange_concrete
-setblock 357 156 24000 minecraft:orange_concrete
-setblock 356 156 24000 minecraft:orange_concrete
-setblock 356 156 24000 minecraft:orange_concrete
-setblock 355 155 24000 minecraft:orange_concrete
-setblock 355 155 24000 minecraft:orange_concrete
-setblock 355 154 24000 minecraft:orange_concrete
-setblock 354 154 24000 minecraft:orange_concrete
-setblock 354 154 24000 minecraft:orange_concrete
-setblock 354 153 24000 minecraft:orange_concrete
-setblock 354 153 24000 minecraft:orange_concrete
-setblock 353 152 24000 minecraft:orange_concrete
-setblock 353 152 24000 minecraft:orange_concrete
-setblock 353 151 24000 minecraft:orange_concrete
-setblock 353 151 24000 minecraft:orange_concrete
-setblock 353 150 24000 minecraft:orange_concrete
-setblock 353 150 24000 minecraft:orange_concrete
-setblock 366 150 24000 minecraft:yellow_concrete
-setblock 366 150 24000 minecraft:yellow_concrete
-setblock 366 151 24000 minecraft:yellow_concrete
-setblock 366 151 24000 minecraft:yellow_concrete
-setblock 366 152 24000 minecraft:yellow_concrete
-setblock 366 152 24000 minecraft:yellow_concrete
-setblock 365 152 24000 minecraft:yellow_concrete
-setblock 365 153 24000 minecraft:yellow_concrete
-setblock 365 153 24000 minecraft:yellow_concrete
-setblock 365 154 24000 minecraft:yellow_concrete
-setblock 365 154 24000 minecraft:yellow_concrete
-setblock 364 154 24000 minecraft:yellow_concrete
-setblock 364 154 24000 minecraft:yellow_concrete
-setblock 364 155 24000 minecraft:yellow_concrete
-setblock 363 155 24000 minecraft:yellow_concrete
-setblock 363 155 24000 minecraft:yellow_concrete
-setblock 363 155 24000 minecraft:yellow_concrete
-setblock 362 156 24000 minecraft:yellow_concrete
-setblock 362 156 24000 minecraft:yellow_concrete
-setblock 361 156 24000 minecraft:yellow_concrete
-setblock 361 156 24000 minecraft:yellow_concrete
-setblock 361 156 24000 minecraft:yellow_concrete
-setblock 360 156 24000 minecraft:yellow_concrete
-setblock 360 156 24000 minecraft:yellow_concrete
-setblock 359 156 24000 minecraft:yellow_concrete
-setblock 359 156 24000 minecraft:yellow_concrete
-setblock 359 156 24000 minecraft:yellow_concrete
-setblock 358 156 24000 minecraft:yellow_concrete
-setblock 358 156 24000 minecraft:yellow_concrete
-setblock 357 155 24000 minecraft:yellow_concrete
-setblock 357 155 24000 minecraft:yellow_concrete
-setblock 357 155 24000 minecraft:yellow_concrete
-setblock 356 155 24000 minecraft:yellow_concrete
-setblock 356 154 24000 minecraft:yellow_concrete
-setblock 356 154 24000 minecraft:yellow_concrete
-setblock 355 154 24000 minecraft:yellow_concrete
-setblock 355 154 24000 minecraft:yellow_concrete
-setblock 355 153 24000 minecraft:yellow_concrete
-setblock 355 153 24000 minecraft:yellow_concrete
-setblock 355 152 24000 minecraft:yellow_concrete
-setblock 354 152 24000 minecraft:yellow_concrete
-setblock 354 152 24000 minecraft:yellow_concrete
-setblock 354 151 24000 minecraft:yellow_concrete
-setblock 354 151 24000 minecraft:yellow_concrete
-setblock 354 150 24000 minecraft:yellow_concrete
-setblock 354 150 24000 minecraft:yellow_concrete
-setblock 365 150 24000 minecraft:lime_concrete
-setblock 365 150 24000 minecraft:lime_concrete
-setblock 365 151 24000 minecraft:lime_concrete
-setblock 365 151 24000 minecraft:lime_concrete
-setblock 365 151 24000 minecraft:lime_concrete
-setblock 365 152 24000 minecraft:lime_concrete
-setblock 365 152 24000 minecraft:lime_concrete
-setblock 364 152 24000 minecraft:lime_concrete
-setblock 364 153 24000 minecraft:lime_concrete
-setblock 364 153 24000 minecraft:lime_concrete
-setblock 364 153 24000 minecraft:lime_concrete
-setblock 364 153 24000 minecraft:lime_concrete
-setblock 363 154 24000 minecraft:lime_concrete
-setblock 363 154 24000 minecraft:lime_concrete
-setblock 363 154 24000 minecraft:lime_concrete
-setblock 363 154 24000 minecraft:lime_concrete
-setblock 362 154 24000 minecraft:lime_concrete
-setblock 362 155 24000 minecraft:lime_concrete
-setblock 362 155 24000 minecraft:lime_concrete
-setblock 361 155 24000 minecraft:lime_concrete
-setblock 361 155 24000 minecraft:lime_concrete
-setblock 361 155 24000 minecraft:lime_concrete
-setblock 360 155 24000 minecraft:lime_concrete
-setblock 360 155 24000 minecraft:lime_concrete
-setblock 359 155 24000 minecraft:lime_concrete
-setblock 359 155 24000 minecraft:lime_concrete
-setblock 359 155 24000 minecraft:lime_concrete
-setblock 358 155 24000 minecraft:lime_concrete
-setblock 358 155 24000 minecraft:lime_concrete
-setblock 358 154 24000 minecraft:lime_concrete
-setblock 358 154 24000 minecraft:lime_concrete
-setblock 357 154 24000 minecraft:lime_concrete
-setblock 357 154 24000 minecraft:lime_concrete
-setblock 357 154 24000 minecraft:lime_concrete
-setblock 356 153 24000 minecraft:lime_concrete
-setblock 356 153 24000 minecraft:lime_concrete
-setblock 356 153 24000 minecraft:lime_concrete
-setblock 356 153 24000 minecraft:lime_concrete
-setblock 356 152 24000 minecraft:lime_concrete
-setblock 355 152 24000 minecraft:lime_concrete
-setblock 355 152 24000 minecraft:lime_concrete
-setblock 355 151 24000 minecraft:lime_concrete
-setblock 355 151 24000 minecraft:lime_concrete
-setblock 355 151 24000 minecraft:lime_concrete
-setblock 355 150 24000 minecraft:lime_concrete
-setblock 355 150 24000 minecraft:lime_concrete
-setblock 364 150 24000 minecraft:light_blue_concrete
-setblock 364 150 24000 minecraft:light_blue_concrete
-setblock 364 151 24000 minecraft:light_blue_concrete
-setblock 364 151 24000 minecraft:light_blue_concrete
-setblock 364 151 24000 minecraft:light_blue_concrete
-setblock 364 151 24000 minecraft:light_blue_concrete
-setblock 364 152 24000 minecraft:light_blue_concrete
-setblock 364 152 24000 minecraft:light_blue_concrete
-setblock 363 152 24000 minecraft:light_blue_concrete
-setblock 363 152 24000 minecraft:light_blue_concrete
-setblock 363 153 24000 minecraft:light_blue_concrete
-setblock 363 153 24000 minecraft:light_blue_concrete
-setblock 363 153 24000 minecraft:light_blue_concrete
-setblock 362 153 24000 minecraft:light_blue_concrete
-setblock 362 153 24000 minecraft:light_blue_concrete
-setblock 362 153 24000 minecraft:light_blue_concrete
-setblock 362 154 24000 minecraft:light_blue_concrete
-setblock 361 154 24000 minecraft:light_blue_concrete
-setblock 361 154 24000 minecraft:light_blue_concrete
-setblock 361 154 24000 minecraft:light_blue_concrete
-setblock 361 154 24000 minecraft:light_blue_concrete
-setblock 360 154 24000 minecraft:light_blue_concrete
-setblock 360 154 24000 minecraft:light_blue_concrete
-setblock 360 154 24000 minecraft:light_blue_concrete
-setblock 360 154 24000 minecraft:light_blue_concrete
-setblock 359 154 24000 minecraft:light_blue_concrete
-setblock 359 154 24000 minecraft:light_blue_concrete
-setblock 359 154 24000 minecraft:light_blue_concrete
-setblock 359 154 24000 minecraft:light_blue_concrete
-setblock 358 154 24000 minecraft:light_blue_concrete
-setblock 358 153 24000 minecraft:light_blue_concrete
-setblock 358 153 24000 minecraft:light_blue_concrete
-setblock 358 153 24000 minecraft:light_blue_concrete
-setblock 357 153 24000 minecraft:light_blue_concrete
-setblock 357 153 24000 minecraft:light_blue_concrete
-setblock 357 153 24000 minecraft:light_blue_concrete
-setblock 357 152 24000 minecraft:light_blue_concrete
-setblock 357 152 24000 minecraft:light_blue_concrete
-setblock 356 152 24000 minecraft:light_blue_concrete
-setblock 356 152 24000 minecraft:light_blue_concrete
-setblock 356 151 24000 minecraft:light_blue_concrete
-setblock 356 151 24000 minecraft:light_blue_concrete
-setblock 356 151 24000 minecraft:light_blue_concrete
-setblock 356 151 24000 minecraft:light_blue_concrete
-setblock 356 150 24000 minecraft:light_blue_concrete
-setblock 356 150 24000 minecraft:light_blue_concrete
-setblock 363 150 24000 minecraft:purple_concrete
-setblock 363 150 24000 minecraft:purple_concrete
-setblock 363 150 24000 minecraft:purple_concrete
-setblock 363 151 24000 minecraft:purple_concrete
-setblock 363 151 24000 minecraft:purple_concrete
-setblock 363 151 24000 minecraft:purple_concrete
-setblock 363 151 24000 minecraft:purple_concrete
-setblock 363 151 24000 minecraft:purple_concrete
-setblock 363 152 24000 minecraft:purple_concrete
-setblock 362 152 24000 minecraft:purple_concrete
-setblock 362 152 24000 minecraft:purple_concrete
-setblock 362 152 24000 minecraft:purple_concrete
-setblock 362 152 24000 minecraft:purple_concrete
-setblock 362 152 24000 minecraft:purple_concrete
-setblock 362 152 24000 minecraft:purple_concrete
-setblock 362 153 24000 minecraft:purple_concrete
-setblock 361 153 24000 minecraft:purple_concrete
-setblock 361 153 24000 minecraft:purple_concrete
-setblock 361 153 24000 minecraft:purple_concrete
-setblock 361 153 24000 minecraft:purple_concrete
-setblock 361 153 24000 minecraft:purple_concrete
-setblock 360 153 24000 minecraft:purple_concrete
-setblock 360 153 24000 minecraft:purple_concrete
-setblock 360 153 24000 minecraft:purple_concrete
-setblock 360 153 24000 minecraft:purple_concrete
-setblock 359 153 24000 minecraft:purple_concrete
-setblock 359 153 24000 minecraft:purple_concrete
-setblock 359 153 24000 minecraft:purple_concrete
-setblock 359 153 24000 minecraft:purple_concrete
-setblock 359 153 24000 minecraft:purple_concrete
-setblock 359 153 24000 minecraft:purple_concrete
-setblock 358 152 24000 minecraft:purple_concrete
-setblock 358 152 24000 minecraft:purple_concrete
-setblock 358 152 24000 minecraft:purple_concrete
-setblock 358 152 24000 minecraft:purple_concrete
-setblock 358 152 24000 minecraft:purple_concrete
-setblock 358 152 24000 minecraft:purple_concrete
-setblock 357 152 24000 minecraft:purple_concrete
-setblock 357 151 24000 minecraft:purple_concrete
-setblock 357 151 24000 minecraft:purple_concrete
-setblock 357 151 24000 minecraft:purple_concrete
-setblock 357 151 24000 minecraft:purple_concrete
-setblock 357 151 24000 minecraft:purple_concrete
-setblock 357 150 24000 minecraft:purple_concrete
-setblock 357 150 24000 minecraft:purple_concrete
-setblock 357 150 24000 minecraft:purple_concrete
-fill 350 95 23990 370 95 24010 minecraft:white_wool
-fill 360 94 24007 360 94 24007 minecraft:white_wool
-fill 359 95 24006 359 95 24008 minecraft:white_wool
-fill 360 95 24006 360 95 24008 minecraft:white_wool
-fill 361 95 24006 361 95 24008 minecraft:white_wool
-fill 358 96 24006 358 96 24008 minecraft:white_wool
-fill 359 96 24005 359 96 24009 minecraft:white_wool
-fill 360 96 24005 360 96 24009 minecraft:white_wool
-fill 361 96 24005 361 96 24009 minecraft:white_wool
-fill 362 96 24006 362 96 24008 minecraft:white_wool
-fill 359 97 24006 359 97 24008 minecraft:white_wool
-fill 360 97 24006 360 97 24008 minecraft:white_wool
-fill 361 97 24006 361 97 24008 minecraft:white_wool
-fill 360 98 24007 360 98 24007 minecraft:white_wool
-fill 363 94 23993 363 94 23993 minecraft:white_wool
-fill 362 95 23992 362 95 23994 minecraft:white_wool
-fill 363 95 23992 363 95 23994 minecraft:white_wool
-fill 364 95 23992 364 95 23994 minecraft:white_wool
-fill 361 96 23992 361 96 23994 minecraft:white_wool
-fill 362 96 23991 362 96 23995 minecraft:white_wool
-fill 363 96 23991 363 96 23995 minecraft:white_wool
-fill 364 96 23991 364 96 23995 minecraft:white_wool
-fill 365 96 23992 365 96 23994 minecraft:white_wool
-fill 362 97 23992 362 97 23994 minecraft:white_wool
-fill 363 97 23992 363 97 23994 minecraft:white_wool
-fill 364 97 23992 364 97 23994 minecraft:white_wool
-fill 363 98 23993 363 98 23993 minecraft:white_wool
-fill 361 94 23996 361 94 23996 minecraft:white_wool
-fill 360 95 23995 360 95 23997 minecraft:white_wool
-fill 361 95 23995 361 95 23997 minecraft:white_wool
-fill 362 95 23995 362 95 23997 minecraft:white_wool
-fill 359 96 23995 359 96 23997 minecraft:white_wool
-fill 360 96 23994 360 96 23998 minecraft:white_wool
-fill 361 96 23994 361 96 23998 minecraft:white_wool
-fill 362 96 23994 362 96 23998 minecraft:white_wool
-fill 363 96 23995 363 96 23997 minecraft:white_wool
-fill 360 97 23995 360 97 23997 minecraft:white_wool
-fill 361 97 23995 361 97 23997 minecraft:white_wool
-fill 362 97 23995 362 97 23997 minecraft:white_wool
-fill 361 98 23996 361 98 23996 minecraft:white_wool
-fill 361 94 24003 361 94 24003 minecraft:white_wool
-fill 360 95 24002 360 95 24004 minecraft:white_wool
-fill 361 95 24002 361 95 24004 minecraft:white_wool
-fill 362 95 24002 362 95 24004 minecraft:white_wool
-fill 359 96 24002 359 96 24004 minecraft:white_wool
-fill 360 96 24001 360 96 24005 minecraft:white_wool
-fill 361 96 24001 361 96 24005 minecraft:white_wool
-fill 362 96 24001 362 96 24005 minecraft:white_wool
-fill 363 96 24002 363 96 24004 minecraft:white_wool
-fill 360 97 24002 360 97 24004 minecraft:white_wool
-fill 361 97 24002 361 97 24004 minecraft:white_wool
-fill 362 97 24002 362 97 24004 minecraft:white_wool
-fill 361 98 24003 361 98 24003 minecraft:white_wool
-fill 355 94 23992 355 94 23992 minecraft:white_wool
-fill 354 95 23991 354 95 23993 minecraft:white_wool
-fill 355 95 23991 355 95 23993 minecraft:white_wool
-fill 356 95 23991 356 95 23993 minecraft:white_wool
-fill 353 96 23991 353 96 23993 minecraft:white_wool
-fill 354 96 23990 354 96 23994 minecraft:white_wool
-fill 355 96 23990 355 96 23994 minecraft:white_wool
-fill 356 96 23990 356 96 23994 minecraft:white_wool
-fill 357 96 23991 357 96 23993 minecraft:white_wool
-fill 354 97 23991 354 97 23993 minecraft:white_wool
-fill 355 97 23991 355 97 23993 minecraft:white_wool
-fill 356 97 23991 356 97 23993 minecraft:white_wool
-fill 355 98 23992 355 98 23992 minecraft:white_wool
-fill 352 94 24000 352 94 24000 minecraft:white_wool
-fill 351 95 23999 351 95 24001 minecraft:white_wool
-fill 352 95 23999 352 95 24001 minecraft:white_wool
-fill 353 95 23999 353 95 24001 minecraft:white_wool
-fill 350 96 23999 350 96 24001 minecraft:white_wool
-fill 351 96 23998 351 96 24002 minecraft:white_wool
-fill 352 96 23998 352 96 24002 minecraft:white_wool
-fill 353 96 23998 353 96 24002 minecraft:white_wool
-fill 354 96 23999 354 96 24001 minecraft:white_wool
-fill 351 97 23999 351 97 24001 minecraft:white_wool
-fill 352 97 23999 352 97 24001 minecraft:white_wool
-fill 353 97 23999 353 97 24001 minecraft:white_wool
-fill 352 98 24000 352 98 24000 minecraft:white_wool
-fill 357 96 23994 359 98 23996 minecraft:air
-setblock 358 95 23995 minecraft:water
+# Dropper Aventure : niveau 7 (Le salon géant)
+fill 222 32 23982 258 54 24018 minecraft:air
+fill 222 55 23982 258 77 24018 minecraft:air
+fill 222 78 23982 258 100 24018 minecraft:air
+fill 222 101 23982 258 123 24018 minecraft:air
+fill 222 124 23982 258 146 24018 minecraft:air
+fill 222 147 23982 258 169 24018 minecraft:air
+fill 222 170 23982 258 192 24018 minecraft:air
+fill 222 193 23982 258 215 24018 minecraft:air
+fill 222 216 23982 258 238 24018 minecraft:air
+fill 222 239 23982 258 261 24018 minecraft:air
+fill 222 262 23982 258 284 24018 minecraft:air
+fill 222 285 23982 258 307 24018 minecraft:air
+fill 226 37 23986 254 71 24014 minecraft:yellow_terracotta
+fill 226 72 23986 254 106 24014 minecraft:yellow_terracotta
+fill 226 107 23986 254 141 24014 minecraft:yellow_terracotta
+fill 226 142 23986 254 176 24014 minecraft:yellow_terracotta
+fill 226 177 23986 254 211 24014 minecraft:yellow_terracotta
+fill 226 212 23986 254 246 24014 minecraft:yellow_terracotta
+fill 226 247 23986 254 281 24014 minecraft:yellow_terracotta
+fill 226 282 23986 254 299 24014 minecraft:yellow_terracotta
+fill 229 41 23989 251 95 24011 minecraft:air
+fill 229 96 23989 251 150 24011 minecraft:air
+fill 229 151 23989 251 205 24011 minecraft:air
+fill 229 206 23989 251 260 24011 minecraft:air
+fill 229 261 23989 251 300 24011 minecraft:air
+fill 228 222 23988 252 222 23988 minecraft:white_terracotta
+fill 228 222 24012 252 222 24012 minecraft:white_terracotta
+fill 228 222 23988 228 222 24012 minecraft:white_terracotta
+fill 252 222 23988 252 222 24012 minecraft:white_terracotta
+fill 228 142 23988 252 142 23988 minecraft:white_terracotta
+fill 228 142 24012 252 142 24012 minecraft:white_terracotta
+fill 228 142 23988 228 142 24012 minecraft:white_terracotta
+fill 252 142 23988 252 142 24012 minecraft:white_terracotta
+fill 222 301 23982 258 306 24018 minecraft:air
+fill 222 300 23982 258 300 24018 minecraft:polished_andesite
+fill 232 300 23992 248 300 24008 minecraft:air
+fill 231 300 23991 249 300 23991 minecraft:yellow_concrete
+fill 231 300 24009 249 300 24009 minecraft:yellow_concrete
+fill 231 300 23991 231 300 24009 minecraft:yellow_concrete
+fill 249 300 23991 249 300 24009 minecraft:yellow_concrete
+fill 222 301 23982 258 304 23982 minecraft:glass
+fill 222 301 24018 258 304 24018 minecraft:glass
+fill 222 301 23982 222 304 24018 minecraft:glass
+fill 258 301 23982 258 304 24018 minecraft:glass
+fill 222 306 23982 258 306 24018 minecraft:barrier
+setblock 233 44 23993 minecraft:light[level=15]
+setblock 247 44 23993 minecraft:light[level=15]
+setblock 233 44 24007 minecraft:light[level=15]
+setblock 247 44 24007 minecraft:light[level=15]
+setblock 240 44 24000 minecraft:light[level=15]
+setblock 233 53 23993 minecraft:light[level=15]
+setblock 247 53 23993 minecraft:light[level=15]
+setblock 233 53 24007 minecraft:light[level=15]
+setblock 247 53 24007 minecraft:light[level=15]
+setblock 240 53 24000 minecraft:light[level=15]
+setblock 233 62 23993 minecraft:light[level=15]
+setblock 247 62 23993 minecraft:light[level=15]
+setblock 233 62 24007 minecraft:light[level=15]
+setblock 247 62 24007 minecraft:light[level=15]
+setblock 240 62 24000 minecraft:light[level=15]
+setblock 233 71 23993 minecraft:light[level=15]
+setblock 247 71 23993 minecraft:light[level=15]
+setblock 233 71 24007 minecraft:light[level=15]
+setblock 247 71 24007 minecraft:light[level=15]
+setblock 240 71 24000 minecraft:light[level=15]
+setblock 233 80 23993 minecraft:light[level=15]
+setblock 247 80 23993 minecraft:light[level=15]
+setblock 233 80 24007 minecraft:light[level=15]
+setblock 247 80 24007 minecraft:light[level=15]
+setblock 240 80 24000 minecraft:light[level=15]
+setblock 233 89 23993 minecraft:light[level=15]
+setblock 247 89 23993 minecraft:light[level=15]
+setblock 233 89 24007 minecraft:light[level=15]
+setblock 247 89 24007 minecraft:light[level=15]
+setblock 240 89 24000 minecraft:light[level=15]
+setblock 233 98 23993 minecraft:light[level=15]
+setblock 247 98 23993 minecraft:light[level=15]
+setblock 233 98 24007 minecraft:light[level=15]
+setblock 247 98 24007 minecraft:light[level=15]
+setblock 240 98 24000 minecraft:light[level=15]
+setblock 233 107 23993 minecraft:light[level=15]
+setblock 247 107 23993 minecraft:light[level=15]
+setblock 233 107 24007 minecraft:light[level=15]
+setblock 247 107 24007 minecraft:light[level=15]
+setblock 240 107 24000 minecraft:light[level=15]
+setblock 233 116 23993 minecraft:light[level=15]
+setblock 247 116 23993 minecraft:light[level=15]
+setblock 233 116 24007 minecraft:light[level=15]
+setblock 247 116 24007 minecraft:light[level=15]
+setblock 240 116 24000 minecraft:light[level=15]
+setblock 233 125 23993 minecraft:light[level=15]
+setblock 247 125 23993 minecraft:light[level=15]
+setblock 233 125 24007 minecraft:light[level=15]
+setblock 247 125 24007 minecraft:light[level=15]
+setblock 240 125 24000 minecraft:light[level=15]
+setblock 233 134 23993 minecraft:light[level=15]
+setblock 247 134 23993 minecraft:light[level=15]
+setblock 233 134 24007 minecraft:light[level=15]
+setblock 247 134 24007 minecraft:light[level=15]
+setblock 240 134 24000 minecraft:light[level=15]
+setblock 233 143 23993 minecraft:light[level=15]
+setblock 247 143 23993 minecraft:light[level=15]
+setblock 233 143 24007 minecraft:light[level=15]
+setblock 247 143 24007 minecraft:light[level=15]
+setblock 240 143 24000 minecraft:light[level=15]
+setblock 233 152 23993 minecraft:light[level=15]
+setblock 247 152 23993 minecraft:light[level=15]
+setblock 233 152 24007 minecraft:light[level=15]
+setblock 247 152 24007 minecraft:light[level=15]
+setblock 240 152 24000 minecraft:light[level=15]
+setblock 233 161 23993 minecraft:light[level=15]
+setblock 247 161 23993 minecraft:light[level=15]
+setblock 233 161 24007 minecraft:light[level=15]
+setblock 247 161 24007 minecraft:light[level=15]
+setblock 240 161 24000 minecraft:light[level=15]
+setblock 233 170 23993 minecraft:light[level=15]
+setblock 247 170 23993 minecraft:light[level=15]
+setblock 233 170 24007 minecraft:light[level=15]
+setblock 247 170 24007 minecraft:light[level=15]
+setblock 240 170 24000 minecraft:light[level=15]
+setblock 233 179 23993 minecraft:light[level=15]
+setblock 247 179 23993 minecraft:light[level=15]
+setblock 233 179 24007 minecraft:light[level=15]
+setblock 247 179 24007 minecraft:light[level=15]
+setblock 240 179 24000 minecraft:light[level=15]
+setblock 233 188 23993 minecraft:light[level=15]
+setblock 247 188 23993 minecraft:light[level=15]
+setblock 233 188 24007 minecraft:light[level=15]
+setblock 247 188 24007 minecraft:light[level=15]
+setblock 240 188 24000 minecraft:light[level=15]
+setblock 233 197 23993 minecraft:light[level=15]
+setblock 247 197 23993 minecraft:light[level=15]
+setblock 233 197 24007 minecraft:light[level=15]
+setblock 247 197 24007 minecraft:light[level=15]
+setblock 240 197 24000 minecraft:light[level=15]
+setblock 233 206 23993 minecraft:light[level=15]
+setblock 247 206 23993 minecraft:light[level=15]
+setblock 233 206 24007 minecraft:light[level=15]
+setblock 247 206 24007 minecraft:light[level=15]
+setblock 240 206 24000 minecraft:light[level=15]
+setblock 233 215 23993 minecraft:light[level=15]
+setblock 247 215 23993 minecraft:light[level=15]
+setblock 233 215 24007 minecraft:light[level=15]
+setblock 247 215 24007 minecraft:light[level=15]
+setblock 240 215 24000 minecraft:light[level=15]
+setblock 233 224 23993 minecraft:light[level=15]
+setblock 247 224 23993 minecraft:light[level=15]
+setblock 233 224 24007 minecraft:light[level=15]
+setblock 247 224 24007 minecraft:light[level=15]
+setblock 240 224 24000 minecraft:light[level=15]
+setblock 233 233 23993 minecraft:light[level=15]
+setblock 247 233 23993 minecraft:light[level=15]
+setblock 233 233 24007 minecraft:light[level=15]
+setblock 247 233 24007 minecraft:light[level=15]
+setblock 240 233 24000 minecraft:light[level=15]
+setblock 233 242 23993 minecraft:light[level=15]
+setblock 247 242 23993 minecraft:light[level=15]
+setblock 233 242 24007 minecraft:light[level=15]
+setblock 247 242 24007 minecraft:light[level=15]
+setblock 240 242 24000 minecraft:light[level=15]
+setblock 233 251 23993 minecraft:light[level=15]
+setblock 247 251 23993 minecraft:light[level=15]
+setblock 233 251 24007 minecraft:light[level=15]
+setblock 247 251 24007 minecraft:light[level=15]
+setblock 240 251 24000 minecraft:light[level=15]
+setblock 233 260 23993 minecraft:light[level=15]
+setblock 247 260 23993 minecraft:light[level=15]
+setblock 233 260 24007 minecraft:light[level=15]
+setblock 247 260 24007 minecraft:light[level=15]
+setblock 240 260 24000 minecraft:light[level=15]
+setblock 233 269 23993 minecraft:light[level=15]
+setblock 247 269 23993 minecraft:light[level=15]
+setblock 233 269 24007 minecraft:light[level=15]
+setblock 247 269 24007 minecraft:light[level=15]
+setblock 240 269 24000 minecraft:light[level=15]
+setblock 233 278 23993 minecraft:light[level=15]
+setblock 247 278 23993 minecraft:light[level=15]
+setblock 233 278 24007 minecraft:light[level=15]
+setblock 247 278 24007 minecraft:light[level=15]
+setblock 240 278 24000 minecraft:light[level=15]
+setblock 233 287 23993 minecraft:light[level=15]
+setblock 247 287 23993 minecraft:light[level=15]
+setblock 233 287 24007 minecraft:light[level=15]
+setblock 247 287 24007 minecraft:light[level=15]
+setblock 240 287 24000 minecraft:light[level=15]
+setblock 233 296 23993 minecraft:light[level=15]
+setblock 247 296 23993 minecraft:light[level=15]
+setblock 233 296 24007 minecraft:light[level=15]
+setblock 247 296 24007 minecraft:light[level=15]
+setblock 240 296 24000 minecraft:light[level=15]
+setblock 228 41 23988 minecraft:white_terracotta
+setblock 228 41 24012 minecraft:white_terracotta
+setblock 228 41 23988 minecraft:white_terracotta
+setblock 252 41 23988 minecraft:white_terracotta
+setblock 231 41 23988 minecraft:white_terracotta
+setblock 231 41 24012 minecraft:white_terracotta
+setblock 228 41 23991 minecraft:white_terracotta
+setblock 252 41 23991 minecraft:white_terracotta
+setblock 234 41 23988 minecraft:white_terracotta
+setblock 234 41 24012 minecraft:white_terracotta
+setblock 228 41 23994 minecraft:white_terracotta
+setblock 252 41 23994 minecraft:white_terracotta
+setblock 237 41 23988 minecraft:white_terracotta
+setblock 237 41 24012 minecraft:white_terracotta
+setblock 228 41 23997 minecraft:white_terracotta
+setblock 252 41 23997 minecraft:white_terracotta
+setblock 240 41 23988 minecraft:white_terracotta
+setblock 240 41 24012 minecraft:white_terracotta
+setblock 228 41 24000 minecraft:white_terracotta
+setblock 252 41 24000 minecraft:white_terracotta
+setblock 243 41 23988 minecraft:white_terracotta
+setblock 243 41 24012 minecraft:white_terracotta
+setblock 228 41 24003 minecraft:white_terracotta
+setblock 252 41 24003 minecraft:white_terracotta
+setblock 246 41 23988 minecraft:white_terracotta
+setblock 246 41 24012 minecraft:white_terracotta
+setblock 228 41 24006 minecraft:white_terracotta
+setblock 252 41 24006 minecraft:white_terracotta
+setblock 249 41 23988 minecraft:white_terracotta
+setblock 249 41 24012 minecraft:white_terracotta
+setblock 228 41 24009 minecraft:white_terracotta
+setblock 252 41 24009 minecraft:white_terracotta
+setblock 252 41 23988 minecraft:white_terracotta
+setblock 252 41 24012 minecraft:white_terracotta
+setblock 228 41 24012 minecraft:white_terracotta
+setblock 252 41 24012 minecraft:white_terracotta
+setblock 228 45 23988 minecraft:white_terracotta
+setblock 228 45 24012 minecraft:white_terracotta
+setblock 228 45 23988 minecraft:white_terracotta
+setblock 252 45 23988 minecraft:white_terracotta
+setblock 231 45 23988 minecraft:white_terracotta
+setblock 231 45 24012 minecraft:white_terracotta
+setblock 228 45 23991 minecraft:white_terracotta
+setblock 252 45 23991 minecraft:white_terracotta
+setblock 234 45 23988 minecraft:white_terracotta
+setblock 234 45 24012 minecraft:white_terracotta
+setblock 228 45 23994 minecraft:white_terracotta
+setblock 252 45 23994 minecraft:white_terracotta
+setblock 237 45 23988 minecraft:white_terracotta
+setblock 237 45 24012 minecraft:white_terracotta
+setblock 228 45 23997 minecraft:white_terracotta
+setblock 252 45 23997 minecraft:white_terracotta
+setblock 240 45 23988 minecraft:white_terracotta
+setblock 240 45 24012 minecraft:white_terracotta
+setblock 228 45 24000 minecraft:white_terracotta
+setblock 252 45 24000 minecraft:white_terracotta
+setblock 243 45 23988 minecraft:white_terracotta
+setblock 243 45 24012 minecraft:white_terracotta
+setblock 228 45 24003 minecraft:white_terracotta
+setblock 252 45 24003 minecraft:white_terracotta
+setblock 246 45 23988 minecraft:white_terracotta
+setblock 246 45 24012 minecraft:white_terracotta
+setblock 228 45 24006 minecraft:white_terracotta
+setblock 252 45 24006 minecraft:white_terracotta
+setblock 249 45 23988 minecraft:white_terracotta
+setblock 249 45 24012 minecraft:white_terracotta
+setblock 228 45 24009 minecraft:white_terracotta
+setblock 252 45 24009 minecraft:white_terracotta
+setblock 252 45 23988 minecraft:white_terracotta
+setblock 252 45 24012 minecraft:white_terracotta
+setblock 228 45 24012 minecraft:white_terracotta
+setblock 252 45 24012 minecraft:white_terracotta
+setblock 228 49 23988 minecraft:white_terracotta
+setblock 228 49 24012 minecraft:white_terracotta
+setblock 228 49 23988 minecraft:white_terracotta
+setblock 252 49 23988 minecraft:white_terracotta
+setblock 231 49 23988 minecraft:white_terracotta
+setblock 231 49 24012 minecraft:white_terracotta
+setblock 228 49 23991 minecraft:white_terracotta
+setblock 252 49 23991 minecraft:white_terracotta
+setblock 234 49 23988 minecraft:white_terracotta
+setblock 234 49 24012 minecraft:white_terracotta
+setblock 228 49 23994 minecraft:white_terracotta
+setblock 252 49 23994 minecraft:white_terracotta
+setblock 237 49 23988 minecraft:white_terracotta
+setblock 237 49 24012 minecraft:white_terracotta
+setblock 228 49 23997 minecraft:white_terracotta
+setblock 252 49 23997 minecraft:white_terracotta
+setblock 240 49 23988 minecraft:white_terracotta
+setblock 240 49 24012 minecraft:white_terracotta
+setblock 228 49 24000 minecraft:white_terracotta
+setblock 252 49 24000 minecraft:white_terracotta
+setblock 243 49 23988 minecraft:white_terracotta
+setblock 243 49 24012 minecraft:white_terracotta
+setblock 228 49 24003 minecraft:white_terracotta
+setblock 252 49 24003 minecraft:white_terracotta
+setblock 246 49 23988 minecraft:white_terracotta
+setblock 246 49 24012 minecraft:white_terracotta
+setblock 228 49 24006 minecraft:white_terracotta
+setblock 252 49 24006 minecraft:white_terracotta
+setblock 249 49 23988 minecraft:white_terracotta
+setblock 249 49 24012 minecraft:white_terracotta
+setblock 228 49 24009 minecraft:white_terracotta
+setblock 252 49 24009 minecraft:white_terracotta
+setblock 252 49 23988 minecraft:white_terracotta
+setblock 252 49 24012 minecraft:white_terracotta
+setblock 228 49 24012 minecraft:white_terracotta
+setblock 252 49 24012 minecraft:white_terracotta
+setblock 228 53 23988 minecraft:white_terracotta
+setblock 228 53 24012 minecraft:white_terracotta
+setblock 228 53 23988 minecraft:white_terracotta
+setblock 252 53 23988 minecraft:white_terracotta
+setblock 231 53 23988 minecraft:white_terracotta
+setblock 231 53 24012 minecraft:white_terracotta
+setblock 228 53 23991 minecraft:white_terracotta
+setblock 252 53 23991 minecraft:white_terracotta
+setblock 234 53 23988 minecraft:white_terracotta
+setblock 234 53 24012 minecraft:white_terracotta
+setblock 228 53 23994 minecraft:white_terracotta
+setblock 252 53 23994 minecraft:white_terracotta
+setblock 237 53 23988 minecraft:white_terracotta
+setblock 237 53 24012 minecraft:white_terracotta
+setblock 228 53 23997 minecraft:white_terracotta
+setblock 252 53 23997 minecraft:white_terracotta
+setblock 240 53 23988 minecraft:white_terracotta
+setblock 240 53 24012 minecraft:white_terracotta
+setblock 228 53 24000 minecraft:white_terracotta
+setblock 252 53 24000 minecraft:white_terracotta
+setblock 243 53 23988 minecraft:white_terracotta
+setblock 243 53 24012 minecraft:white_terracotta
+setblock 228 53 24003 minecraft:white_terracotta
+setblock 252 53 24003 minecraft:white_terracotta
+setblock 246 53 23988 minecraft:white_terracotta
+setblock 246 53 24012 minecraft:white_terracotta
+setblock 228 53 24006 minecraft:white_terracotta
+setblock 252 53 24006 minecraft:white_terracotta
+setblock 249 53 23988 minecraft:white_terracotta
+setblock 249 53 24012 minecraft:white_terracotta
+setblock 228 53 24009 minecraft:white_terracotta
+setblock 252 53 24009 minecraft:white_terracotta
+setblock 252 53 23988 minecraft:white_terracotta
+setblock 252 53 24012 minecraft:white_terracotta
+setblock 228 53 24012 minecraft:white_terracotta
+setblock 252 53 24012 minecraft:white_terracotta
+setblock 228 57 23988 minecraft:white_terracotta
+setblock 228 57 24012 minecraft:white_terracotta
+setblock 228 57 23988 minecraft:white_terracotta
+setblock 252 57 23988 minecraft:white_terracotta
+setblock 231 57 23988 minecraft:white_terracotta
+setblock 231 57 24012 minecraft:white_terracotta
+setblock 228 57 23991 minecraft:white_terracotta
+setblock 252 57 23991 minecraft:white_terracotta
+setblock 234 57 23988 minecraft:white_terracotta
+setblock 234 57 24012 minecraft:white_terracotta
+setblock 228 57 23994 minecraft:white_terracotta
+setblock 252 57 23994 minecraft:white_terracotta
+setblock 237 57 23988 minecraft:white_terracotta
+setblock 237 57 24012 minecraft:white_terracotta
+setblock 228 57 23997 minecraft:white_terracotta
+setblock 252 57 23997 minecraft:white_terracotta
+setblock 240 57 23988 minecraft:white_terracotta
+setblock 240 57 24012 minecraft:white_terracotta
+setblock 228 57 24000 minecraft:white_terracotta
+setblock 252 57 24000 minecraft:white_terracotta
+setblock 243 57 23988 minecraft:white_terracotta
+setblock 243 57 24012 minecraft:white_terracotta
+setblock 228 57 24003 minecraft:white_terracotta
+setblock 252 57 24003 minecraft:white_terracotta
+setblock 246 57 23988 minecraft:white_terracotta
+setblock 246 57 24012 minecraft:white_terracotta
+setblock 228 57 24006 minecraft:white_terracotta
+setblock 252 57 24006 minecraft:white_terracotta
+setblock 249 57 23988 minecraft:white_terracotta
+setblock 249 57 24012 minecraft:white_terracotta
+setblock 228 57 24009 minecraft:white_terracotta
+setblock 252 57 24009 minecraft:white_terracotta
+setblock 252 57 23988 minecraft:white_terracotta
+setblock 252 57 24012 minecraft:white_terracotta
+setblock 228 57 24012 minecraft:white_terracotta
+setblock 252 57 24012 minecraft:white_terracotta
+setblock 228 61 23988 minecraft:white_terracotta
+setblock 228 61 24012 minecraft:white_terracotta
+setblock 228 61 23988 minecraft:white_terracotta
+setblock 252 61 23988 minecraft:white_terracotta
+setblock 231 61 23988 minecraft:white_terracotta
+setblock 231 61 24012 minecraft:white_terracotta
+setblock 228 61 23991 minecraft:white_terracotta
+setblock 252 61 23991 minecraft:white_terracotta
+setblock 234 61 23988 minecraft:white_terracotta
+setblock 234 61 24012 minecraft:white_terracotta
+setblock 228 61 23994 minecraft:white_terracotta
+setblock 252 61 23994 minecraft:white_terracotta
+setblock 237 61 23988 minecraft:white_terracotta
+setblock 237 61 24012 minecraft:white_terracotta
+setblock 228 61 23997 minecraft:white_terracotta
+setblock 252 61 23997 minecraft:white_terracotta
+setblock 240 61 23988 minecraft:white_terracotta
+setblock 240 61 24012 minecraft:white_terracotta
+setblock 228 61 24000 minecraft:white_terracotta
+setblock 252 61 24000 minecraft:white_terracotta
+setblock 243 61 23988 minecraft:white_terracotta
+setblock 243 61 24012 minecraft:white_terracotta
+setblock 228 61 24003 minecraft:white_terracotta
+setblock 252 61 24003 minecraft:white_terracotta
+setblock 246 61 23988 minecraft:white_terracotta
+setblock 246 61 24012 minecraft:white_terracotta
+setblock 228 61 24006 minecraft:white_terracotta
+setblock 252 61 24006 minecraft:white_terracotta
+setblock 249 61 23988 minecraft:white_terracotta
+setblock 249 61 24012 minecraft:white_terracotta
+setblock 228 61 24009 minecraft:white_terracotta
+setblock 252 61 24009 minecraft:white_terracotta
+setblock 252 61 23988 minecraft:white_terracotta
+setblock 252 61 24012 minecraft:white_terracotta
+setblock 228 61 24012 minecraft:white_terracotta
+setblock 252 61 24012 minecraft:white_terracotta
+setblock 228 65 23988 minecraft:white_terracotta
+setblock 228 65 24012 minecraft:white_terracotta
+setblock 228 65 23988 minecraft:white_terracotta
+setblock 252 65 23988 minecraft:white_terracotta
+setblock 231 65 23988 minecraft:white_terracotta
+setblock 231 65 24012 minecraft:white_terracotta
+setblock 228 65 23991 minecraft:white_terracotta
+setblock 252 65 23991 minecraft:white_terracotta
+setblock 234 65 23988 minecraft:white_terracotta
+setblock 234 65 24012 minecraft:white_terracotta
+setblock 228 65 23994 minecraft:white_terracotta
+setblock 252 65 23994 minecraft:white_terracotta
+setblock 237 65 23988 minecraft:white_terracotta
+setblock 237 65 24012 minecraft:white_terracotta
+setblock 228 65 23997 minecraft:white_terracotta
+setblock 252 65 23997 minecraft:white_terracotta
+setblock 240 65 23988 minecraft:white_terracotta
+setblock 240 65 24012 minecraft:white_terracotta
+setblock 228 65 24000 minecraft:white_terracotta
+setblock 252 65 24000 minecraft:white_terracotta
+setblock 243 65 23988 minecraft:white_terracotta
+setblock 243 65 24012 minecraft:white_terracotta
+setblock 228 65 24003 minecraft:white_terracotta
+setblock 252 65 24003 minecraft:white_terracotta
+setblock 246 65 23988 minecraft:white_terracotta
+setblock 246 65 24012 minecraft:white_terracotta
+setblock 228 65 24006 minecraft:white_terracotta
+setblock 252 65 24006 minecraft:white_terracotta
+setblock 249 65 23988 minecraft:white_terracotta
+setblock 249 65 24012 minecraft:white_terracotta
+setblock 228 65 24009 minecraft:white_terracotta
+setblock 252 65 24009 minecraft:white_terracotta
+setblock 252 65 23988 minecraft:white_terracotta
+setblock 252 65 24012 minecraft:white_terracotta
+setblock 228 65 24012 minecraft:white_terracotta
+setblock 252 65 24012 minecraft:white_terracotta
+setblock 228 69 23988 minecraft:white_terracotta
+setblock 228 69 24012 minecraft:white_terracotta
+setblock 228 69 23988 minecraft:white_terracotta
+setblock 252 69 23988 minecraft:white_terracotta
+setblock 231 69 23988 minecraft:white_terracotta
+setblock 231 69 24012 minecraft:white_terracotta
+setblock 228 69 23991 minecraft:white_terracotta
+setblock 252 69 23991 minecraft:white_terracotta
+setblock 234 69 23988 minecraft:white_terracotta
+setblock 234 69 24012 minecraft:white_terracotta
+setblock 228 69 23994 minecraft:white_terracotta
+setblock 252 69 23994 minecraft:white_terracotta
+setblock 237 69 23988 minecraft:white_terracotta
+setblock 237 69 24012 minecraft:white_terracotta
+setblock 228 69 23997 minecraft:white_terracotta
+setblock 252 69 23997 minecraft:white_terracotta
+setblock 240 69 23988 minecraft:white_terracotta
+setblock 240 69 24012 minecraft:white_terracotta
+setblock 228 69 24000 minecraft:white_terracotta
+setblock 252 69 24000 minecraft:white_terracotta
+setblock 243 69 23988 minecraft:white_terracotta
+setblock 243 69 24012 minecraft:white_terracotta
+setblock 228 69 24003 minecraft:white_terracotta
+setblock 252 69 24003 minecraft:white_terracotta
+setblock 246 69 23988 minecraft:white_terracotta
+setblock 246 69 24012 minecraft:white_terracotta
+setblock 228 69 24006 minecraft:white_terracotta
+setblock 252 69 24006 minecraft:white_terracotta
+setblock 249 69 23988 minecraft:white_terracotta
+setblock 249 69 24012 minecraft:white_terracotta
+setblock 228 69 24009 minecraft:white_terracotta
+setblock 252 69 24009 minecraft:white_terracotta
+setblock 252 69 23988 minecraft:white_terracotta
+setblock 252 69 24012 minecraft:white_terracotta
+setblock 228 69 24012 minecraft:white_terracotta
+setblock 252 69 24012 minecraft:white_terracotta
+setblock 228 73 23988 minecraft:white_terracotta
+setblock 228 73 24012 minecraft:white_terracotta
+setblock 228 73 23988 minecraft:white_terracotta
+setblock 252 73 23988 minecraft:white_terracotta
+setblock 231 73 23988 minecraft:white_terracotta
+setblock 231 73 24012 minecraft:white_terracotta
+setblock 228 73 23991 minecraft:white_terracotta
+setblock 252 73 23991 minecraft:white_terracotta
+setblock 234 73 23988 minecraft:white_terracotta
+setblock 234 73 24012 minecraft:white_terracotta
+setblock 228 73 23994 minecraft:white_terracotta
+setblock 252 73 23994 minecraft:white_terracotta
+setblock 237 73 23988 minecraft:white_terracotta
+setblock 237 73 24012 minecraft:white_terracotta
+setblock 228 73 23997 minecraft:white_terracotta
+setblock 252 73 23997 minecraft:white_terracotta
+setblock 240 73 23988 minecraft:white_terracotta
+setblock 240 73 24012 minecraft:white_terracotta
+setblock 228 73 24000 minecraft:white_terracotta
+setblock 252 73 24000 minecraft:white_terracotta
+setblock 243 73 23988 minecraft:white_terracotta
+setblock 243 73 24012 minecraft:white_terracotta
+setblock 228 73 24003 minecraft:white_terracotta
+setblock 252 73 24003 minecraft:white_terracotta
+setblock 246 73 23988 minecraft:white_terracotta
+setblock 246 73 24012 minecraft:white_terracotta
+setblock 228 73 24006 minecraft:white_terracotta
+setblock 252 73 24006 minecraft:white_terracotta
+setblock 249 73 23988 minecraft:white_terracotta
+setblock 249 73 24012 minecraft:white_terracotta
+setblock 228 73 24009 minecraft:white_terracotta
+setblock 252 73 24009 minecraft:white_terracotta
+setblock 252 73 23988 minecraft:white_terracotta
+setblock 252 73 24012 minecraft:white_terracotta
+setblock 228 73 24012 minecraft:white_terracotta
+setblock 252 73 24012 minecraft:white_terracotta
+setblock 228 77 23988 minecraft:white_terracotta
+setblock 228 77 24012 minecraft:white_terracotta
+setblock 228 77 23988 minecraft:white_terracotta
+setblock 252 77 23988 minecraft:white_terracotta
+setblock 231 77 23988 minecraft:white_terracotta
+setblock 231 77 24012 minecraft:white_terracotta
+setblock 228 77 23991 minecraft:white_terracotta
+setblock 252 77 23991 minecraft:white_terracotta
+setblock 234 77 23988 minecraft:white_terracotta
+setblock 234 77 24012 minecraft:white_terracotta
+setblock 228 77 23994 minecraft:white_terracotta
+setblock 252 77 23994 minecraft:white_terracotta
+setblock 237 77 23988 minecraft:white_terracotta
+setblock 237 77 24012 minecraft:white_terracotta
+setblock 228 77 23997 minecraft:white_terracotta
+setblock 252 77 23997 minecraft:white_terracotta
+setblock 240 77 23988 minecraft:white_terracotta
+setblock 240 77 24012 minecraft:white_terracotta
+setblock 228 77 24000 minecraft:white_terracotta
+setblock 252 77 24000 minecraft:white_terracotta
+setblock 243 77 23988 minecraft:white_terracotta
+setblock 243 77 24012 minecraft:white_terracotta
+setblock 228 77 24003 minecraft:white_terracotta
+setblock 252 77 24003 minecraft:white_terracotta
+setblock 246 77 23988 minecraft:white_terracotta
+setblock 246 77 24012 minecraft:white_terracotta
+setblock 228 77 24006 minecraft:white_terracotta
+setblock 252 77 24006 minecraft:white_terracotta
+setblock 249 77 23988 minecraft:white_terracotta
+setblock 249 77 24012 minecraft:white_terracotta
+setblock 228 77 24009 minecraft:white_terracotta
+setblock 252 77 24009 minecraft:white_terracotta
+setblock 252 77 23988 minecraft:white_terracotta
+setblock 252 77 24012 minecraft:white_terracotta
+setblock 228 77 24012 minecraft:white_terracotta
+setblock 252 77 24012 minecraft:white_terracotta
+setblock 228 81 23988 minecraft:white_terracotta
+setblock 228 81 24012 minecraft:white_terracotta
+setblock 228 81 23988 minecraft:white_terracotta
+setblock 252 81 23988 minecraft:white_terracotta
+setblock 231 81 23988 minecraft:white_terracotta
+setblock 231 81 24012 minecraft:white_terracotta
+setblock 228 81 23991 minecraft:white_terracotta
+setblock 252 81 23991 minecraft:white_terracotta
+setblock 234 81 23988 minecraft:white_terracotta
+setblock 234 81 24012 minecraft:white_terracotta
+setblock 228 81 23994 minecraft:white_terracotta
+setblock 252 81 23994 minecraft:white_terracotta
+setblock 237 81 23988 minecraft:white_terracotta
+setblock 237 81 24012 minecraft:white_terracotta
+setblock 228 81 23997 minecraft:white_terracotta
+setblock 252 81 23997 minecraft:white_terracotta
+setblock 240 81 23988 minecraft:white_terracotta
+setblock 240 81 24012 minecraft:white_terracotta
+setblock 228 81 24000 minecraft:white_terracotta
+setblock 252 81 24000 minecraft:white_terracotta
+setblock 243 81 23988 minecraft:white_terracotta
+setblock 243 81 24012 minecraft:white_terracotta
+setblock 228 81 24003 minecraft:white_terracotta
+setblock 252 81 24003 minecraft:white_terracotta
+setblock 246 81 23988 minecraft:white_terracotta
+setblock 246 81 24012 minecraft:white_terracotta
+setblock 228 81 24006 minecraft:white_terracotta
+setblock 252 81 24006 minecraft:white_terracotta
+setblock 249 81 23988 minecraft:white_terracotta
+setblock 249 81 24012 minecraft:white_terracotta
+setblock 228 81 24009 minecraft:white_terracotta
+setblock 252 81 24009 minecraft:white_terracotta
+setblock 252 81 23988 minecraft:white_terracotta
+setblock 252 81 24012 minecraft:white_terracotta
+setblock 228 81 24012 minecraft:white_terracotta
+setblock 252 81 24012 minecraft:white_terracotta
+setblock 228 85 23988 minecraft:white_terracotta
+setblock 228 85 24012 minecraft:white_terracotta
+setblock 228 85 23988 minecraft:white_terracotta
+setblock 252 85 23988 minecraft:white_terracotta
+setblock 231 85 23988 minecraft:white_terracotta
+setblock 231 85 24012 minecraft:white_terracotta
+setblock 228 85 23991 minecraft:white_terracotta
+setblock 252 85 23991 minecraft:white_terracotta
+setblock 234 85 23988 minecraft:white_terracotta
+setblock 234 85 24012 minecraft:white_terracotta
+setblock 228 85 23994 minecraft:white_terracotta
+setblock 252 85 23994 minecraft:white_terracotta
+setblock 237 85 23988 minecraft:white_terracotta
+setblock 237 85 24012 minecraft:white_terracotta
+setblock 228 85 23997 minecraft:white_terracotta
+setblock 252 85 23997 minecraft:white_terracotta
+setblock 240 85 23988 minecraft:white_terracotta
+setblock 240 85 24012 minecraft:white_terracotta
+setblock 228 85 24000 minecraft:white_terracotta
+setblock 252 85 24000 minecraft:white_terracotta
+setblock 243 85 23988 minecraft:white_terracotta
+setblock 243 85 24012 minecraft:white_terracotta
+setblock 228 85 24003 minecraft:white_terracotta
+setblock 252 85 24003 minecraft:white_terracotta
+setblock 246 85 23988 minecraft:white_terracotta
+setblock 246 85 24012 minecraft:white_terracotta
+setblock 228 85 24006 minecraft:white_terracotta
+setblock 252 85 24006 minecraft:white_terracotta
+setblock 249 85 23988 minecraft:white_terracotta
+setblock 249 85 24012 minecraft:white_terracotta
+setblock 228 85 24009 minecraft:white_terracotta
+setblock 252 85 24009 minecraft:white_terracotta
+setblock 252 85 23988 minecraft:white_terracotta
+setblock 252 85 24012 minecraft:white_terracotta
+setblock 228 85 24012 minecraft:white_terracotta
+setblock 252 85 24012 minecraft:white_terracotta
+setblock 228 89 23988 minecraft:white_terracotta
+setblock 228 89 24012 minecraft:white_terracotta
+setblock 228 89 23988 minecraft:white_terracotta
+setblock 252 89 23988 minecraft:white_terracotta
+setblock 231 89 23988 minecraft:white_terracotta
+setblock 231 89 24012 minecraft:white_terracotta
+setblock 228 89 23991 minecraft:white_terracotta
+setblock 252 89 23991 minecraft:white_terracotta
+setblock 234 89 23988 minecraft:white_terracotta
+setblock 234 89 24012 minecraft:white_terracotta
+setblock 228 89 23994 minecraft:white_terracotta
+setblock 252 89 23994 minecraft:white_terracotta
+setblock 237 89 23988 minecraft:white_terracotta
+setblock 237 89 24012 minecraft:white_terracotta
+setblock 228 89 23997 minecraft:white_terracotta
+setblock 252 89 23997 minecraft:white_terracotta
+setblock 240 89 23988 minecraft:white_terracotta
+setblock 240 89 24012 minecraft:white_terracotta
+setblock 228 89 24000 minecraft:white_terracotta
+setblock 252 89 24000 minecraft:white_terracotta
+setblock 243 89 23988 minecraft:white_terracotta
+setblock 243 89 24012 minecraft:white_terracotta
+setblock 228 89 24003 minecraft:white_terracotta
+setblock 252 89 24003 minecraft:white_terracotta
+setblock 246 89 23988 minecraft:white_terracotta
+setblock 246 89 24012 minecraft:white_terracotta
+setblock 228 89 24006 minecraft:white_terracotta
+setblock 252 89 24006 minecraft:white_terracotta
+setblock 249 89 23988 minecraft:white_terracotta
+setblock 249 89 24012 minecraft:white_terracotta
+setblock 228 89 24009 minecraft:white_terracotta
+setblock 252 89 24009 minecraft:white_terracotta
+setblock 252 89 23988 minecraft:white_terracotta
+setblock 252 89 24012 minecraft:white_terracotta
+setblock 228 89 24012 minecraft:white_terracotta
+setblock 252 89 24012 minecraft:white_terracotta
+setblock 228 93 23988 minecraft:white_terracotta
+setblock 228 93 24012 minecraft:white_terracotta
+setblock 228 93 23988 minecraft:white_terracotta
+setblock 252 93 23988 minecraft:white_terracotta
+setblock 231 93 23988 minecraft:white_terracotta
+setblock 231 93 24012 minecraft:white_terracotta
+setblock 228 93 23991 minecraft:white_terracotta
+setblock 252 93 23991 minecraft:white_terracotta
+setblock 234 93 23988 minecraft:white_terracotta
+setblock 234 93 24012 minecraft:white_terracotta
+setblock 228 93 23994 minecraft:white_terracotta
+setblock 252 93 23994 minecraft:white_terracotta
+setblock 237 93 23988 minecraft:white_terracotta
+setblock 237 93 24012 minecraft:white_terracotta
+setblock 228 93 23997 minecraft:white_terracotta
+setblock 252 93 23997 minecraft:white_terracotta
+setblock 240 93 23988 minecraft:white_terracotta
+setblock 240 93 24012 minecraft:white_terracotta
+setblock 228 93 24000 minecraft:white_terracotta
+setblock 252 93 24000 minecraft:white_terracotta
+setblock 243 93 23988 minecraft:white_terracotta
+setblock 243 93 24012 minecraft:white_terracotta
+setblock 228 93 24003 minecraft:white_terracotta
+setblock 252 93 24003 minecraft:white_terracotta
+setblock 246 93 23988 minecraft:white_terracotta
+setblock 246 93 24012 minecraft:white_terracotta
+setblock 228 93 24006 minecraft:white_terracotta
+setblock 252 93 24006 minecraft:white_terracotta
+setblock 249 93 23988 minecraft:white_terracotta
+setblock 249 93 24012 minecraft:white_terracotta
+setblock 228 93 24009 minecraft:white_terracotta
+setblock 252 93 24009 minecraft:white_terracotta
+setblock 252 93 23988 minecraft:white_terracotta
+setblock 252 93 24012 minecraft:white_terracotta
+setblock 228 93 24012 minecraft:white_terracotta
+setblock 252 93 24012 minecraft:white_terracotta
+setblock 228 97 23988 minecraft:white_terracotta
+setblock 228 97 24012 minecraft:white_terracotta
+setblock 228 97 23988 minecraft:white_terracotta
+setblock 252 97 23988 minecraft:white_terracotta
+setblock 231 97 23988 minecraft:white_terracotta
+setblock 231 97 24012 minecraft:white_terracotta
+setblock 228 97 23991 minecraft:white_terracotta
+setblock 252 97 23991 minecraft:white_terracotta
+setblock 234 97 23988 minecraft:white_terracotta
+setblock 234 97 24012 minecraft:white_terracotta
+setblock 228 97 23994 minecraft:white_terracotta
+setblock 252 97 23994 minecraft:white_terracotta
+setblock 237 97 23988 minecraft:white_terracotta
+setblock 237 97 24012 minecraft:white_terracotta
+setblock 228 97 23997 minecraft:white_terracotta
+setblock 252 97 23997 minecraft:white_terracotta
+setblock 240 97 23988 minecraft:white_terracotta
+setblock 240 97 24012 minecraft:white_terracotta
+setblock 228 97 24000 minecraft:white_terracotta
+setblock 252 97 24000 minecraft:white_terracotta
+setblock 243 97 23988 minecraft:white_terracotta
+setblock 243 97 24012 minecraft:white_terracotta
+setblock 228 97 24003 minecraft:white_terracotta
+setblock 252 97 24003 minecraft:white_terracotta
+setblock 246 97 23988 minecraft:white_terracotta
+setblock 246 97 24012 minecraft:white_terracotta
+setblock 228 97 24006 minecraft:white_terracotta
+setblock 252 97 24006 minecraft:white_terracotta
+setblock 249 97 23988 minecraft:white_terracotta
+setblock 249 97 24012 minecraft:white_terracotta
+setblock 228 97 24009 minecraft:white_terracotta
+setblock 252 97 24009 minecraft:white_terracotta
+setblock 252 97 23988 minecraft:white_terracotta
+setblock 252 97 24012 minecraft:white_terracotta
+setblock 228 97 24012 minecraft:white_terracotta
+setblock 252 97 24012 minecraft:white_terracotta
+setblock 228 101 23988 minecraft:white_terracotta
+setblock 228 101 24012 minecraft:white_terracotta
+setblock 228 101 23988 minecraft:white_terracotta
+setblock 252 101 23988 minecraft:white_terracotta
+setblock 231 101 23988 minecraft:white_terracotta
+setblock 231 101 24012 minecraft:white_terracotta
+setblock 228 101 23991 minecraft:white_terracotta
+setblock 252 101 23991 minecraft:white_terracotta
+setblock 234 101 23988 minecraft:white_terracotta
+setblock 234 101 24012 minecraft:white_terracotta
+setblock 228 101 23994 minecraft:white_terracotta
+setblock 252 101 23994 minecraft:white_terracotta
+setblock 237 101 23988 minecraft:white_terracotta
+setblock 237 101 24012 minecraft:white_terracotta
+setblock 228 101 23997 minecraft:white_terracotta
+setblock 252 101 23997 minecraft:white_terracotta
+setblock 240 101 23988 minecraft:white_terracotta
+setblock 240 101 24012 minecraft:white_terracotta
+setblock 228 101 24000 minecraft:white_terracotta
+setblock 252 101 24000 minecraft:white_terracotta
+setblock 243 101 23988 minecraft:white_terracotta
+setblock 243 101 24012 minecraft:white_terracotta
+setblock 228 101 24003 minecraft:white_terracotta
+setblock 252 101 24003 minecraft:white_terracotta
+setblock 246 101 23988 minecraft:white_terracotta
+setblock 246 101 24012 minecraft:white_terracotta
+setblock 228 101 24006 minecraft:white_terracotta
+setblock 252 101 24006 minecraft:white_terracotta
+setblock 249 101 23988 minecraft:white_terracotta
+setblock 249 101 24012 minecraft:white_terracotta
+setblock 228 101 24009 minecraft:white_terracotta
+setblock 252 101 24009 minecraft:white_terracotta
+setblock 252 101 23988 minecraft:white_terracotta
+setblock 252 101 24012 minecraft:white_terracotta
+setblock 228 101 24012 minecraft:white_terracotta
+setblock 252 101 24012 minecraft:white_terracotta
+setblock 228 105 23988 minecraft:white_terracotta
+setblock 228 105 24012 minecraft:white_terracotta
+setblock 228 105 23988 minecraft:white_terracotta
+setblock 252 105 23988 minecraft:white_terracotta
+setblock 231 105 23988 minecraft:white_terracotta
+setblock 231 105 24012 minecraft:white_terracotta
+setblock 228 105 23991 minecraft:white_terracotta
+setblock 252 105 23991 minecraft:white_terracotta
+setblock 234 105 23988 minecraft:white_terracotta
+setblock 234 105 24012 minecraft:white_terracotta
+setblock 228 105 23994 minecraft:white_terracotta
+setblock 252 105 23994 minecraft:white_terracotta
+setblock 237 105 23988 minecraft:white_terracotta
+setblock 237 105 24012 minecraft:white_terracotta
+setblock 228 105 23997 minecraft:white_terracotta
+setblock 252 105 23997 minecraft:white_terracotta
+setblock 240 105 23988 minecraft:white_terracotta
+setblock 240 105 24012 minecraft:white_terracotta
+setblock 228 105 24000 minecraft:white_terracotta
+setblock 252 105 24000 minecraft:white_terracotta
+setblock 243 105 23988 minecraft:white_terracotta
+setblock 243 105 24012 minecraft:white_terracotta
+setblock 228 105 24003 minecraft:white_terracotta
+setblock 252 105 24003 minecraft:white_terracotta
+setblock 246 105 23988 minecraft:white_terracotta
+setblock 246 105 24012 minecraft:white_terracotta
+setblock 228 105 24006 minecraft:white_terracotta
+setblock 252 105 24006 minecraft:white_terracotta
+setblock 249 105 23988 minecraft:white_terracotta
+setblock 249 105 24012 minecraft:white_terracotta
+setblock 228 105 24009 minecraft:white_terracotta
+setblock 252 105 24009 minecraft:white_terracotta
+setblock 252 105 23988 minecraft:white_terracotta
+setblock 252 105 24012 minecraft:white_terracotta
+setblock 228 105 24012 minecraft:white_terracotta
+setblock 252 105 24012 minecraft:white_terracotta
+setblock 228 109 23988 minecraft:white_terracotta
+setblock 228 109 24012 minecraft:white_terracotta
+setblock 228 109 23988 minecraft:white_terracotta
+setblock 252 109 23988 minecraft:white_terracotta
+setblock 231 109 23988 minecraft:white_terracotta
+setblock 231 109 24012 minecraft:white_terracotta
+setblock 228 109 23991 minecraft:white_terracotta
+setblock 252 109 23991 minecraft:white_terracotta
+setblock 234 109 23988 minecraft:white_terracotta
+setblock 234 109 24012 minecraft:white_terracotta
+setblock 228 109 23994 minecraft:white_terracotta
+setblock 252 109 23994 minecraft:white_terracotta
+setblock 237 109 23988 minecraft:white_terracotta
+setblock 237 109 24012 minecraft:white_terracotta
+setblock 228 109 23997 minecraft:white_terracotta
+setblock 252 109 23997 minecraft:white_terracotta
+setblock 240 109 23988 minecraft:white_terracotta
+setblock 240 109 24012 minecraft:white_terracotta
+setblock 228 109 24000 minecraft:white_terracotta
+setblock 252 109 24000 minecraft:white_terracotta
+setblock 243 109 23988 minecraft:white_terracotta
+setblock 243 109 24012 minecraft:white_terracotta
+setblock 228 109 24003 minecraft:white_terracotta
+setblock 252 109 24003 minecraft:white_terracotta
+setblock 246 109 23988 minecraft:white_terracotta
+setblock 246 109 24012 minecraft:white_terracotta
+setblock 228 109 24006 minecraft:white_terracotta
+setblock 252 109 24006 minecraft:white_terracotta
+setblock 249 109 23988 minecraft:white_terracotta
+setblock 249 109 24012 minecraft:white_terracotta
+setblock 228 109 24009 minecraft:white_terracotta
+setblock 252 109 24009 minecraft:white_terracotta
+setblock 252 109 23988 minecraft:white_terracotta
+setblock 252 109 24012 minecraft:white_terracotta
+setblock 228 109 24012 minecraft:white_terracotta
+setblock 252 109 24012 minecraft:white_terracotta
+setblock 228 113 23988 minecraft:white_terracotta
+setblock 228 113 24012 minecraft:white_terracotta
+setblock 228 113 23988 minecraft:white_terracotta
+setblock 252 113 23988 minecraft:white_terracotta
+setblock 231 113 23988 minecraft:white_terracotta
+setblock 231 113 24012 minecraft:white_terracotta
+setblock 228 113 23991 minecraft:white_terracotta
+setblock 252 113 23991 minecraft:white_terracotta
+setblock 234 113 23988 minecraft:white_terracotta
+setblock 234 113 24012 minecraft:white_terracotta
+setblock 228 113 23994 minecraft:white_terracotta
+setblock 252 113 23994 minecraft:white_terracotta
+setblock 237 113 23988 minecraft:white_terracotta
+setblock 237 113 24012 minecraft:white_terracotta
+setblock 228 113 23997 minecraft:white_terracotta
+setblock 252 113 23997 minecraft:white_terracotta
+setblock 240 113 23988 minecraft:white_terracotta
+setblock 240 113 24012 minecraft:white_terracotta
+setblock 228 113 24000 minecraft:white_terracotta
+setblock 252 113 24000 minecraft:white_terracotta
+setblock 243 113 23988 minecraft:white_terracotta
+setblock 243 113 24012 minecraft:white_terracotta
+setblock 228 113 24003 minecraft:white_terracotta
+setblock 252 113 24003 minecraft:white_terracotta
+setblock 246 113 23988 minecraft:white_terracotta
+setblock 246 113 24012 minecraft:white_terracotta
+setblock 228 113 24006 minecraft:white_terracotta
+setblock 252 113 24006 minecraft:white_terracotta
+setblock 249 113 23988 minecraft:white_terracotta
+setblock 249 113 24012 minecraft:white_terracotta
+setblock 228 113 24009 minecraft:white_terracotta
+setblock 252 113 24009 minecraft:white_terracotta
+setblock 252 113 23988 minecraft:white_terracotta
+setblock 252 113 24012 minecraft:white_terracotta
+setblock 228 113 24012 minecraft:white_terracotta
+setblock 252 113 24012 minecraft:white_terracotta
+setblock 228 117 23988 minecraft:white_terracotta
+setblock 228 117 24012 minecraft:white_terracotta
+setblock 228 117 23988 minecraft:white_terracotta
+setblock 252 117 23988 minecraft:white_terracotta
+setblock 231 117 23988 minecraft:white_terracotta
+setblock 231 117 24012 minecraft:white_terracotta
+setblock 228 117 23991 minecraft:white_terracotta
+setblock 252 117 23991 minecraft:white_terracotta
+setblock 234 117 23988 minecraft:white_terracotta
+setblock 234 117 24012 minecraft:white_terracotta
+setblock 228 117 23994 minecraft:white_terracotta
+setblock 252 117 23994 minecraft:white_terracotta
+setblock 237 117 23988 minecraft:white_terracotta
+setblock 237 117 24012 minecraft:white_terracotta
+setblock 228 117 23997 minecraft:white_terracotta
+setblock 252 117 23997 minecraft:white_terracotta
+setblock 240 117 23988 minecraft:white_terracotta
+setblock 240 117 24012 minecraft:white_terracotta
+setblock 228 117 24000 minecraft:white_terracotta
+setblock 252 117 24000 minecraft:white_terracotta
+setblock 243 117 23988 minecraft:white_terracotta
+setblock 243 117 24012 minecraft:white_terracotta
+setblock 228 117 24003 minecraft:white_terracotta
+setblock 252 117 24003 minecraft:white_terracotta
+setblock 246 117 23988 minecraft:white_terracotta
+setblock 246 117 24012 minecraft:white_terracotta
+setblock 228 117 24006 minecraft:white_terracotta
+setblock 252 117 24006 minecraft:white_terracotta
+setblock 249 117 23988 minecraft:white_terracotta
+setblock 249 117 24012 minecraft:white_terracotta
+setblock 228 117 24009 minecraft:white_terracotta
+setblock 252 117 24009 minecraft:white_terracotta
+setblock 252 117 23988 minecraft:white_terracotta
+setblock 252 117 24012 minecraft:white_terracotta
+setblock 228 117 24012 minecraft:white_terracotta
+setblock 252 117 24012 minecraft:white_terracotta
+setblock 228 121 23988 minecraft:white_terracotta
+setblock 228 121 24012 minecraft:white_terracotta
+setblock 228 121 23988 minecraft:white_terracotta
+setblock 252 121 23988 minecraft:white_terracotta
+setblock 231 121 23988 minecraft:white_terracotta
+setblock 231 121 24012 minecraft:white_terracotta
+setblock 228 121 23991 minecraft:white_terracotta
+setblock 252 121 23991 minecraft:white_terracotta
+setblock 234 121 23988 minecraft:white_terracotta
+setblock 234 121 24012 minecraft:white_terracotta
+setblock 228 121 23994 minecraft:white_terracotta
+setblock 252 121 23994 minecraft:white_terracotta
+setblock 237 121 23988 minecraft:white_terracotta
+setblock 237 121 24012 minecraft:white_terracotta
+setblock 228 121 23997 minecraft:white_terracotta
+setblock 252 121 23997 minecraft:white_terracotta
+setblock 240 121 23988 minecraft:white_terracotta
+setblock 240 121 24012 minecraft:white_terracotta
+setblock 228 121 24000 minecraft:white_terracotta
+setblock 252 121 24000 minecraft:white_terracotta
+setblock 243 121 23988 minecraft:white_terracotta
+setblock 243 121 24012 minecraft:white_terracotta
+setblock 228 121 24003 minecraft:white_terracotta
+setblock 252 121 24003 minecraft:white_terracotta
+setblock 246 121 23988 minecraft:white_terracotta
+setblock 246 121 24012 minecraft:white_terracotta
+setblock 228 121 24006 minecraft:white_terracotta
+setblock 252 121 24006 minecraft:white_terracotta
+setblock 249 121 23988 minecraft:white_terracotta
+setblock 249 121 24012 minecraft:white_terracotta
+setblock 228 121 24009 minecraft:white_terracotta
+setblock 252 121 24009 minecraft:white_terracotta
+setblock 252 121 23988 minecraft:white_terracotta
+setblock 252 121 24012 minecraft:white_terracotta
+setblock 228 121 24012 minecraft:white_terracotta
+setblock 252 121 24012 minecraft:white_terracotta
+setblock 228 125 23988 minecraft:white_terracotta
+setblock 228 125 24012 minecraft:white_terracotta
+setblock 228 125 23988 minecraft:white_terracotta
+setblock 252 125 23988 minecraft:white_terracotta
+setblock 231 125 23988 minecraft:white_terracotta
+setblock 231 125 24012 minecraft:white_terracotta
+setblock 228 125 23991 minecraft:white_terracotta
+setblock 252 125 23991 minecraft:white_terracotta
+setblock 234 125 23988 minecraft:white_terracotta
+setblock 234 125 24012 minecraft:white_terracotta
+setblock 228 125 23994 minecraft:white_terracotta
+setblock 252 125 23994 minecraft:white_terracotta
+setblock 237 125 23988 minecraft:white_terracotta
+setblock 237 125 24012 minecraft:white_terracotta
+setblock 228 125 23997 minecraft:white_terracotta
+setblock 252 125 23997 minecraft:white_terracotta
+setblock 240 125 23988 minecraft:white_terracotta
+setblock 240 125 24012 minecraft:white_terracotta
+setblock 228 125 24000 minecraft:white_terracotta
+setblock 252 125 24000 minecraft:white_terracotta
+setblock 243 125 23988 minecraft:white_terracotta
+setblock 243 125 24012 minecraft:white_terracotta
+setblock 228 125 24003 minecraft:white_terracotta
+setblock 252 125 24003 minecraft:white_terracotta
+setblock 246 125 23988 minecraft:white_terracotta
+setblock 246 125 24012 minecraft:white_terracotta
+setblock 228 125 24006 minecraft:white_terracotta
+setblock 252 125 24006 minecraft:white_terracotta
+setblock 249 125 23988 minecraft:white_terracotta
+setblock 249 125 24012 minecraft:white_terracotta
+setblock 228 125 24009 minecraft:white_terracotta
+setblock 252 125 24009 minecraft:white_terracotta
+setblock 252 125 23988 minecraft:white_terracotta
+setblock 252 125 24012 minecraft:white_terracotta
+setblock 228 125 24012 minecraft:white_terracotta
+setblock 252 125 24012 minecraft:white_terracotta
+setblock 228 129 23988 minecraft:white_terracotta
+setblock 228 129 24012 minecraft:white_terracotta
+setblock 228 129 23988 minecraft:white_terracotta
+setblock 252 129 23988 minecraft:white_terracotta
+setblock 231 129 23988 minecraft:white_terracotta
+setblock 231 129 24012 minecraft:white_terracotta
+setblock 228 129 23991 minecraft:white_terracotta
+setblock 252 129 23991 minecraft:white_terracotta
+setblock 234 129 23988 minecraft:white_terracotta
+setblock 234 129 24012 minecraft:white_terracotta
+setblock 228 129 23994 minecraft:white_terracotta
+setblock 252 129 23994 minecraft:white_terracotta
+setblock 237 129 23988 minecraft:white_terracotta
+setblock 237 129 24012 minecraft:white_terracotta
+setblock 228 129 23997 minecraft:white_terracotta
+setblock 252 129 23997 minecraft:white_terracotta
+setblock 240 129 23988 minecraft:white_terracotta
+setblock 240 129 24012 minecraft:white_terracotta
+setblock 228 129 24000 minecraft:white_terracotta
+setblock 252 129 24000 minecraft:white_terracotta
+setblock 243 129 23988 minecraft:white_terracotta
+setblock 243 129 24012 minecraft:white_terracotta
+setblock 228 129 24003 minecraft:white_terracotta
+setblock 252 129 24003 minecraft:white_terracotta
+setblock 246 129 23988 minecraft:white_terracotta
+setblock 246 129 24012 minecraft:white_terracotta
+setblock 228 129 24006 minecraft:white_terracotta
+setblock 252 129 24006 minecraft:white_terracotta
+setblock 249 129 23988 minecraft:white_terracotta
+setblock 249 129 24012 minecraft:white_terracotta
+setblock 228 129 24009 minecraft:white_terracotta
+setblock 252 129 24009 minecraft:white_terracotta
+setblock 252 129 23988 minecraft:white_terracotta
+setblock 252 129 24012 minecraft:white_terracotta
+setblock 228 129 24012 minecraft:white_terracotta
+setblock 252 129 24012 minecraft:white_terracotta
+setblock 228 133 23988 minecraft:white_terracotta
+setblock 228 133 24012 minecraft:white_terracotta
+setblock 228 133 23988 minecraft:white_terracotta
+setblock 252 133 23988 minecraft:white_terracotta
+setblock 231 133 23988 minecraft:white_terracotta
+setblock 231 133 24012 minecraft:white_terracotta
+setblock 228 133 23991 minecraft:white_terracotta
+setblock 252 133 23991 minecraft:white_terracotta
+setblock 234 133 23988 minecraft:white_terracotta
+setblock 234 133 24012 minecraft:white_terracotta
+setblock 228 133 23994 minecraft:white_terracotta
+setblock 252 133 23994 minecraft:white_terracotta
+setblock 237 133 23988 minecraft:white_terracotta
+setblock 237 133 24012 minecraft:white_terracotta
+setblock 228 133 23997 minecraft:white_terracotta
+setblock 252 133 23997 minecraft:white_terracotta
+setblock 240 133 23988 minecraft:white_terracotta
+setblock 240 133 24012 minecraft:white_terracotta
+setblock 228 133 24000 minecraft:white_terracotta
+setblock 252 133 24000 minecraft:white_terracotta
+setblock 243 133 23988 minecraft:white_terracotta
+setblock 243 133 24012 minecraft:white_terracotta
+setblock 228 133 24003 minecraft:white_terracotta
+setblock 252 133 24003 minecraft:white_terracotta
+setblock 246 133 23988 minecraft:white_terracotta
+setblock 246 133 24012 minecraft:white_terracotta
+setblock 228 133 24006 minecraft:white_terracotta
+setblock 252 133 24006 minecraft:white_terracotta
+setblock 249 133 23988 minecraft:white_terracotta
+setblock 249 133 24012 minecraft:white_terracotta
+setblock 228 133 24009 minecraft:white_terracotta
+setblock 252 133 24009 minecraft:white_terracotta
+setblock 252 133 23988 minecraft:white_terracotta
+setblock 252 133 24012 minecraft:white_terracotta
+setblock 228 133 24012 minecraft:white_terracotta
+setblock 252 133 24012 minecraft:white_terracotta
+setblock 228 137 23988 minecraft:white_terracotta
+setblock 228 137 24012 minecraft:white_terracotta
+setblock 228 137 23988 minecraft:white_terracotta
+setblock 252 137 23988 minecraft:white_terracotta
+setblock 231 137 23988 minecraft:white_terracotta
+setblock 231 137 24012 minecraft:white_terracotta
+setblock 228 137 23991 minecraft:white_terracotta
+setblock 252 137 23991 minecraft:white_terracotta
+setblock 234 137 23988 minecraft:white_terracotta
+setblock 234 137 24012 minecraft:white_terracotta
+setblock 228 137 23994 minecraft:white_terracotta
+setblock 252 137 23994 minecraft:white_terracotta
+setblock 237 137 23988 minecraft:white_terracotta
+setblock 237 137 24012 minecraft:white_terracotta
+setblock 228 137 23997 minecraft:white_terracotta
+setblock 252 137 23997 minecraft:white_terracotta
+setblock 240 137 23988 minecraft:white_terracotta
+setblock 240 137 24012 minecraft:white_terracotta
+setblock 228 137 24000 minecraft:white_terracotta
+setblock 252 137 24000 minecraft:white_terracotta
+setblock 243 137 23988 minecraft:white_terracotta
+setblock 243 137 24012 minecraft:white_terracotta
+setblock 228 137 24003 minecraft:white_terracotta
+setblock 252 137 24003 minecraft:white_terracotta
+setblock 246 137 23988 minecraft:white_terracotta
+setblock 246 137 24012 minecraft:white_terracotta
+setblock 228 137 24006 minecraft:white_terracotta
+setblock 252 137 24006 minecraft:white_terracotta
+setblock 249 137 23988 minecraft:white_terracotta
+setblock 249 137 24012 minecraft:white_terracotta
+setblock 228 137 24009 minecraft:white_terracotta
+setblock 252 137 24009 minecraft:white_terracotta
+setblock 252 137 23988 minecraft:white_terracotta
+setblock 252 137 24012 minecraft:white_terracotta
+setblock 228 137 24012 minecraft:white_terracotta
+setblock 252 137 24012 minecraft:white_terracotta
+setblock 228 141 23988 minecraft:white_terracotta
+setblock 228 141 24012 minecraft:white_terracotta
+setblock 228 141 23988 minecraft:white_terracotta
+setblock 252 141 23988 minecraft:white_terracotta
+setblock 231 141 23988 minecraft:white_terracotta
+setblock 231 141 24012 minecraft:white_terracotta
+setblock 228 141 23991 minecraft:white_terracotta
+setblock 252 141 23991 minecraft:white_terracotta
+setblock 234 141 23988 minecraft:white_terracotta
+setblock 234 141 24012 minecraft:white_terracotta
+setblock 228 141 23994 minecraft:white_terracotta
+setblock 252 141 23994 minecraft:white_terracotta
+setblock 237 141 23988 minecraft:white_terracotta
+setblock 237 141 24012 minecraft:white_terracotta
+setblock 228 141 23997 minecraft:white_terracotta
+setblock 252 141 23997 minecraft:white_terracotta
+setblock 240 141 23988 minecraft:white_terracotta
+setblock 240 141 24012 minecraft:white_terracotta
+setblock 228 141 24000 minecraft:white_terracotta
+setblock 252 141 24000 minecraft:white_terracotta
+setblock 243 141 23988 minecraft:white_terracotta
+setblock 243 141 24012 minecraft:white_terracotta
+setblock 228 141 24003 minecraft:white_terracotta
+setblock 252 141 24003 minecraft:white_terracotta
+setblock 246 141 23988 minecraft:white_terracotta
+setblock 246 141 24012 minecraft:white_terracotta
+setblock 228 141 24006 minecraft:white_terracotta
+setblock 252 141 24006 minecraft:white_terracotta
+setblock 249 141 23988 minecraft:white_terracotta
+setblock 249 141 24012 minecraft:white_terracotta
+setblock 228 141 24009 minecraft:white_terracotta
+setblock 252 141 24009 minecraft:white_terracotta
+setblock 252 141 23988 minecraft:white_terracotta
+setblock 252 141 24012 minecraft:white_terracotta
+setblock 228 141 24012 minecraft:white_terracotta
+setblock 252 141 24012 minecraft:white_terracotta
+setblock 228 145 23988 minecraft:white_terracotta
+setblock 228 145 24012 minecraft:white_terracotta
+setblock 228 145 23988 minecraft:white_terracotta
+setblock 252 145 23988 minecraft:white_terracotta
+setblock 231 145 23988 minecraft:white_terracotta
+setblock 231 145 24012 minecraft:white_terracotta
+setblock 228 145 23991 minecraft:white_terracotta
+setblock 252 145 23991 minecraft:white_terracotta
+setblock 234 145 23988 minecraft:white_terracotta
+setblock 234 145 24012 minecraft:white_terracotta
+setblock 228 145 23994 minecraft:white_terracotta
+setblock 252 145 23994 minecraft:white_terracotta
+setblock 237 145 23988 minecraft:white_terracotta
+setblock 237 145 24012 minecraft:white_terracotta
+setblock 228 145 23997 minecraft:white_terracotta
+setblock 252 145 23997 minecraft:white_terracotta
+setblock 240 145 23988 minecraft:white_terracotta
+setblock 240 145 24012 minecraft:white_terracotta
+setblock 228 145 24000 minecraft:white_terracotta
+setblock 252 145 24000 minecraft:white_terracotta
+setblock 243 145 23988 minecraft:white_terracotta
+setblock 243 145 24012 minecraft:white_terracotta
+setblock 228 145 24003 minecraft:white_terracotta
+setblock 252 145 24003 minecraft:white_terracotta
+setblock 246 145 23988 minecraft:white_terracotta
+setblock 246 145 24012 minecraft:white_terracotta
+setblock 228 145 24006 minecraft:white_terracotta
+setblock 252 145 24006 minecraft:white_terracotta
+setblock 249 145 23988 minecraft:white_terracotta
+setblock 249 145 24012 minecraft:white_terracotta
+setblock 228 145 24009 minecraft:white_terracotta
+setblock 252 145 24009 minecraft:white_terracotta
+setblock 252 145 23988 minecraft:white_terracotta
+setblock 252 145 24012 minecraft:white_terracotta
+setblock 228 145 24012 minecraft:white_terracotta
+setblock 252 145 24012 minecraft:white_terracotta
+setblock 228 149 23988 minecraft:white_terracotta
+setblock 228 149 24012 minecraft:white_terracotta
+setblock 228 149 23988 minecraft:white_terracotta
+setblock 252 149 23988 minecraft:white_terracotta
+setblock 231 149 23988 minecraft:white_terracotta
+setblock 231 149 24012 minecraft:white_terracotta
+setblock 228 149 23991 minecraft:white_terracotta
+setblock 252 149 23991 minecraft:white_terracotta
+setblock 234 149 23988 minecraft:white_terracotta
+setblock 234 149 24012 minecraft:white_terracotta
+setblock 228 149 23994 minecraft:white_terracotta
+setblock 252 149 23994 minecraft:white_terracotta
+setblock 237 149 23988 minecraft:white_terracotta
+setblock 237 149 24012 minecraft:white_terracotta
+setblock 228 149 23997 minecraft:white_terracotta
+setblock 252 149 23997 minecraft:white_terracotta
+setblock 240 149 23988 minecraft:white_terracotta
+setblock 240 149 24012 minecraft:white_terracotta
+setblock 228 149 24000 minecraft:white_terracotta
+setblock 252 149 24000 minecraft:white_terracotta
+setblock 243 149 23988 minecraft:white_terracotta
+setblock 243 149 24012 minecraft:white_terracotta
+setblock 228 149 24003 minecraft:white_terracotta
+setblock 252 149 24003 minecraft:white_terracotta
+setblock 246 149 23988 minecraft:white_terracotta
+setblock 246 149 24012 minecraft:white_terracotta
+setblock 228 149 24006 minecraft:white_terracotta
+setblock 252 149 24006 minecraft:white_terracotta
+setblock 249 149 23988 minecraft:white_terracotta
+setblock 249 149 24012 minecraft:white_terracotta
+setblock 228 149 24009 minecraft:white_terracotta
+setblock 252 149 24009 minecraft:white_terracotta
+setblock 252 149 23988 minecraft:white_terracotta
+setblock 252 149 24012 minecraft:white_terracotta
+setblock 228 149 24012 minecraft:white_terracotta
+setblock 252 149 24012 minecraft:white_terracotta
+setblock 228 153 23988 minecraft:white_terracotta
+setblock 228 153 24012 minecraft:white_terracotta
+setblock 228 153 23988 minecraft:white_terracotta
+setblock 252 153 23988 minecraft:white_terracotta
+setblock 231 153 23988 minecraft:white_terracotta
+setblock 231 153 24012 minecraft:white_terracotta
+setblock 228 153 23991 minecraft:white_terracotta
+setblock 252 153 23991 minecraft:white_terracotta
+setblock 234 153 23988 minecraft:white_terracotta
+setblock 234 153 24012 minecraft:white_terracotta
+setblock 228 153 23994 minecraft:white_terracotta
+setblock 252 153 23994 minecraft:white_terracotta
+setblock 237 153 23988 minecraft:white_terracotta
+setblock 237 153 24012 minecraft:white_terracotta
+setblock 228 153 23997 minecraft:white_terracotta
+setblock 252 153 23997 minecraft:white_terracotta
+setblock 240 153 23988 minecraft:white_terracotta
+setblock 240 153 24012 minecraft:white_terracotta
+setblock 228 153 24000 minecraft:white_terracotta
+setblock 252 153 24000 minecraft:white_terracotta
+setblock 243 153 23988 minecraft:white_terracotta
+setblock 243 153 24012 minecraft:white_terracotta
+setblock 228 153 24003 minecraft:white_terracotta
+setblock 252 153 24003 minecraft:white_terracotta
+setblock 246 153 23988 minecraft:white_terracotta
+setblock 246 153 24012 minecraft:white_terracotta
+setblock 228 153 24006 minecraft:white_terracotta
+setblock 252 153 24006 minecraft:white_terracotta
+setblock 249 153 23988 minecraft:white_terracotta
+setblock 249 153 24012 minecraft:white_terracotta
+setblock 228 153 24009 minecraft:white_terracotta
+setblock 252 153 24009 minecraft:white_terracotta
+setblock 252 153 23988 minecraft:white_terracotta
+setblock 252 153 24012 minecraft:white_terracotta
+setblock 228 153 24012 minecraft:white_terracotta
+setblock 252 153 24012 minecraft:white_terracotta
+setblock 228 157 23988 minecraft:white_terracotta
+setblock 228 157 24012 minecraft:white_terracotta
+setblock 228 157 23988 minecraft:white_terracotta
+setblock 252 157 23988 minecraft:white_terracotta
+setblock 231 157 23988 minecraft:white_terracotta
+setblock 231 157 24012 minecraft:white_terracotta
+setblock 228 157 23991 minecraft:white_terracotta
+setblock 252 157 23991 minecraft:white_terracotta
+setblock 234 157 23988 minecraft:white_terracotta
+setblock 234 157 24012 minecraft:white_terracotta
+setblock 228 157 23994 minecraft:white_terracotta
+setblock 252 157 23994 minecraft:white_terracotta
+setblock 237 157 23988 minecraft:white_terracotta
+setblock 237 157 24012 minecraft:white_terracotta
+setblock 228 157 23997 minecraft:white_terracotta
+setblock 252 157 23997 minecraft:white_terracotta
+setblock 240 157 23988 minecraft:white_terracotta
+setblock 240 157 24012 minecraft:white_terracotta
+setblock 228 157 24000 minecraft:white_terracotta
+setblock 252 157 24000 minecraft:white_terracotta
+setblock 243 157 23988 minecraft:white_terracotta
+setblock 243 157 24012 minecraft:white_terracotta
+setblock 228 157 24003 minecraft:white_terracotta
+setblock 252 157 24003 minecraft:white_terracotta
+setblock 246 157 23988 minecraft:white_terracotta
+setblock 246 157 24012 minecraft:white_terracotta
+setblock 228 157 24006 minecraft:white_terracotta
+setblock 252 157 24006 minecraft:white_terracotta
+setblock 249 157 23988 minecraft:white_terracotta
+setblock 249 157 24012 minecraft:white_terracotta
+setblock 228 157 24009 minecraft:white_terracotta
+setblock 252 157 24009 minecraft:white_terracotta
+setblock 252 157 23988 minecraft:white_terracotta
+setblock 252 157 24012 minecraft:white_terracotta
+setblock 228 157 24012 minecraft:white_terracotta
+setblock 252 157 24012 minecraft:white_terracotta
+setblock 228 161 23988 minecraft:white_terracotta
+setblock 228 161 24012 minecraft:white_terracotta
+setblock 228 161 23988 minecraft:white_terracotta
+setblock 252 161 23988 minecraft:white_terracotta
+setblock 231 161 23988 minecraft:white_terracotta
+setblock 231 161 24012 minecraft:white_terracotta
+setblock 228 161 23991 minecraft:white_terracotta
+setblock 252 161 23991 minecraft:white_terracotta
+setblock 234 161 23988 minecraft:white_terracotta
+setblock 234 161 24012 minecraft:white_terracotta
+setblock 228 161 23994 minecraft:white_terracotta
+setblock 252 161 23994 minecraft:white_terracotta
+setblock 237 161 23988 minecraft:white_terracotta
+setblock 237 161 24012 minecraft:white_terracotta
+setblock 228 161 23997 minecraft:white_terracotta
+setblock 252 161 23997 minecraft:white_terracotta
+setblock 240 161 23988 minecraft:white_terracotta
+setblock 240 161 24012 minecraft:white_terracotta
+setblock 228 161 24000 minecraft:white_terracotta
+setblock 252 161 24000 minecraft:white_terracotta
+setblock 243 161 23988 minecraft:white_terracotta
+setblock 243 161 24012 minecraft:white_terracotta
+setblock 228 161 24003 minecraft:white_terracotta
+setblock 252 161 24003 minecraft:white_terracotta
+setblock 246 161 23988 minecraft:white_terracotta
+setblock 246 161 24012 minecraft:white_terracotta
+setblock 228 161 24006 minecraft:white_terracotta
+setblock 252 161 24006 minecraft:white_terracotta
+setblock 249 161 23988 minecraft:white_terracotta
+setblock 249 161 24012 minecraft:white_terracotta
+setblock 228 161 24009 minecraft:white_terracotta
+setblock 252 161 24009 minecraft:white_terracotta
+setblock 252 161 23988 minecraft:white_terracotta
+setblock 252 161 24012 minecraft:white_terracotta
+setblock 228 161 24012 minecraft:white_terracotta
+setblock 252 161 24012 minecraft:white_terracotta
+setblock 228 165 23988 minecraft:white_terracotta
+setblock 228 165 24012 minecraft:white_terracotta
+setblock 228 165 23988 minecraft:white_terracotta
+setblock 252 165 23988 minecraft:white_terracotta
+setblock 231 165 23988 minecraft:white_terracotta
+setblock 231 165 24012 minecraft:white_terracotta
+setblock 228 165 23991 minecraft:white_terracotta
+setblock 252 165 23991 minecraft:white_terracotta
+setblock 234 165 23988 minecraft:white_terracotta
+setblock 234 165 24012 minecraft:white_terracotta
+setblock 228 165 23994 minecraft:white_terracotta
+setblock 252 165 23994 minecraft:white_terracotta
+setblock 237 165 23988 minecraft:white_terracotta
+setblock 237 165 24012 minecraft:white_terracotta
+setblock 228 165 23997 minecraft:white_terracotta
+setblock 252 165 23997 minecraft:white_terracotta
+setblock 240 165 23988 minecraft:white_terracotta
+setblock 240 165 24012 minecraft:white_terracotta
+setblock 228 165 24000 minecraft:white_terracotta
+setblock 252 165 24000 minecraft:white_terracotta
+setblock 243 165 23988 minecraft:white_terracotta
+setblock 243 165 24012 minecraft:white_terracotta
+setblock 228 165 24003 minecraft:white_terracotta
+setblock 252 165 24003 minecraft:white_terracotta
+setblock 246 165 23988 minecraft:white_terracotta
+setblock 246 165 24012 minecraft:white_terracotta
+setblock 228 165 24006 minecraft:white_terracotta
+setblock 252 165 24006 minecraft:white_terracotta
+setblock 249 165 23988 minecraft:white_terracotta
+setblock 249 165 24012 minecraft:white_terracotta
+setblock 228 165 24009 minecraft:white_terracotta
+setblock 252 165 24009 minecraft:white_terracotta
+setblock 252 165 23988 minecraft:white_terracotta
+setblock 252 165 24012 minecraft:white_terracotta
+setblock 228 165 24012 minecraft:white_terracotta
+setblock 252 165 24012 minecraft:white_terracotta
+setblock 228 169 23988 minecraft:white_terracotta
+setblock 228 169 24012 minecraft:white_terracotta
+setblock 228 169 23988 minecraft:white_terracotta
+setblock 252 169 23988 minecraft:white_terracotta
+setblock 231 169 23988 minecraft:white_terracotta
+setblock 231 169 24012 minecraft:white_terracotta
+setblock 228 169 23991 minecraft:white_terracotta
+setblock 252 169 23991 minecraft:white_terracotta
+setblock 234 169 23988 minecraft:white_terracotta
+setblock 234 169 24012 minecraft:white_terracotta
+setblock 228 169 23994 minecraft:white_terracotta
+setblock 252 169 23994 minecraft:white_terracotta
+setblock 237 169 23988 minecraft:white_terracotta
+setblock 237 169 24012 minecraft:white_terracotta
+setblock 228 169 23997 minecraft:white_terracotta
+setblock 252 169 23997 minecraft:white_terracotta
+setblock 240 169 23988 minecraft:white_terracotta
+setblock 240 169 24012 minecraft:white_terracotta
+setblock 228 169 24000 minecraft:white_terracotta
+setblock 252 169 24000 minecraft:white_terracotta
+setblock 243 169 23988 minecraft:white_terracotta
+setblock 243 169 24012 minecraft:white_terracotta
+setblock 228 169 24003 minecraft:white_terracotta
+setblock 252 169 24003 minecraft:white_terracotta
+setblock 246 169 23988 minecraft:white_terracotta
+setblock 246 169 24012 minecraft:white_terracotta
+setblock 228 169 24006 minecraft:white_terracotta
+setblock 252 169 24006 minecraft:white_terracotta
+setblock 249 169 23988 minecraft:white_terracotta
+setblock 249 169 24012 minecraft:white_terracotta
+setblock 228 169 24009 minecraft:white_terracotta
+setblock 252 169 24009 minecraft:white_terracotta
+setblock 252 169 23988 minecraft:white_terracotta
+setblock 252 169 24012 minecraft:white_terracotta
+setblock 228 169 24012 minecraft:white_terracotta
+setblock 252 169 24012 minecraft:white_terracotta
+setblock 228 173 23988 minecraft:white_terracotta
+setblock 228 173 24012 minecraft:white_terracotta
+setblock 228 173 23988 minecraft:white_terracotta
+setblock 252 173 23988 minecraft:white_terracotta
+setblock 231 173 23988 minecraft:white_terracotta
+setblock 231 173 24012 minecraft:white_terracotta
+setblock 228 173 23991 minecraft:white_terracotta
+setblock 252 173 23991 minecraft:white_terracotta
+setblock 234 173 23988 minecraft:white_terracotta
+setblock 234 173 24012 minecraft:white_terracotta
+setblock 228 173 23994 minecraft:white_terracotta
+setblock 252 173 23994 minecraft:white_terracotta
+setblock 237 173 23988 minecraft:white_terracotta
+setblock 237 173 24012 minecraft:white_terracotta
+setblock 228 173 23997 minecraft:white_terracotta
+setblock 252 173 23997 minecraft:white_terracotta
+setblock 240 173 23988 minecraft:white_terracotta
+setblock 240 173 24012 minecraft:white_terracotta
+setblock 228 173 24000 minecraft:white_terracotta
+setblock 252 173 24000 minecraft:white_terracotta
+setblock 243 173 23988 minecraft:white_terracotta
+setblock 243 173 24012 minecraft:white_terracotta
+setblock 228 173 24003 minecraft:white_terracotta
+setblock 252 173 24003 minecraft:white_terracotta
+setblock 246 173 23988 minecraft:white_terracotta
+setblock 246 173 24012 minecraft:white_terracotta
+setblock 228 173 24006 minecraft:white_terracotta
+setblock 252 173 24006 minecraft:white_terracotta
+setblock 249 173 23988 minecraft:white_terracotta
+setblock 249 173 24012 minecraft:white_terracotta
+setblock 228 173 24009 minecraft:white_terracotta
+setblock 252 173 24009 minecraft:white_terracotta
+setblock 252 173 23988 minecraft:white_terracotta
+setblock 252 173 24012 minecraft:white_terracotta
+setblock 228 173 24012 minecraft:white_terracotta
+setblock 252 173 24012 minecraft:white_terracotta
+setblock 228 177 23988 minecraft:white_terracotta
+setblock 228 177 24012 minecraft:white_terracotta
+setblock 228 177 23988 minecraft:white_terracotta
+setblock 252 177 23988 minecraft:white_terracotta
+setblock 231 177 23988 minecraft:white_terracotta
+setblock 231 177 24012 minecraft:white_terracotta
+setblock 228 177 23991 minecraft:white_terracotta
+setblock 252 177 23991 minecraft:white_terracotta
+setblock 234 177 23988 minecraft:white_terracotta
+setblock 234 177 24012 minecraft:white_terracotta
+setblock 228 177 23994 minecraft:white_terracotta
+setblock 252 177 23994 minecraft:white_terracotta
+setblock 237 177 23988 minecraft:white_terracotta
+setblock 237 177 24012 minecraft:white_terracotta
+setblock 228 177 23997 minecraft:white_terracotta
+setblock 252 177 23997 minecraft:white_terracotta
+setblock 240 177 23988 minecraft:white_terracotta
+setblock 240 177 24012 minecraft:white_terracotta
+setblock 228 177 24000 minecraft:white_terracotta
+setblock 252 177 24000 minecraft:white_terracotta
+setblock 243 177 23988 minecraft:white_terracotta
+setblock 243 177 24012 minecraft:white_terracotta
+setblock 228 177 24003 minecraft:white_terracotta
+setblock 252 177 24003 minecraft:white_terracotta
+setblock 246 177 23988 minecraft:white_terracotta
+setblock 246 177 24012 minecraft:white_terracotta
+setblock 228 177 24006 minecraft:white_terracotta
+setblock 252 177 24006 minecraft:white_terracotta
+setblock 249 177 23988 minecraft:white_terracotta
+setblock 249 177 24012 minecraft:white_terracotta
+setblock 228 177 24009 minecraft:white_terracotta
+setblock 252 177 24009 minecraft:white_terracotta
+setblock 252 177 23988 minecraft:white_terracotta
+setblock 252 177 24012 minecraft:white_terracotta
+setblock 228 177 24012 minecraft:white_terracotta
+setblock 252 177 24012 minecraft:white_terracotta
+setblock 228 181 23988 minecraft:white_terracotta
+setblock 228 181 24012 minecraft:white_terracotta
+setblock 228 181 23988 minecraft:white_terracotta
+setblock 252 181 23988 minecraft:white_terracotta
+setblock 231 181 23988 minecraft:white_terracotta
+setblock 231 181 24012 minecraft:white_terracotta
+setblock 228 181 23991 minecraft:white_terracotta
+setblock 252 181 23991 minecraft:white_terracotta
+setblock 234 181 23988 minecraft:white_terracotta
+setblock 234 181 24012 minecraft:white_terracotta
+setblock 228 181 23994 minecraft:white_terracotta
+setblock 252 181 23994 minecraft:white_terracotta
+setblock 237 181 23988 minecraft:white_terracotta
+setblock 237 181 24012 minecraft:white_terracotta
+setblock 228 181 23997 minecraft:white_terracotta
+setblock 252 181 23997 minecraft:white_terracotta
+setblock 240 181 23988 minecraft:white_terracotta
+setblock 240 181 24012 minecraft:white_terracotta
+setblock 228 181 24000 minecraft:white_terracotta
+setblock 252 181 24000 minecraft:white_terracotta
+setblock 243 181 23988 minecraft:white_terracotta
+setblock 243 181 24012 minecraft:white_terracotta
+setblock 228 181 24003 minecraft:white_terracotta
+setblock 252 181 24003 minecraft:white_terracotta
+setblock 246 181 23988 minecraft:white_terracotta
+setblock 246 181 24012 minecraft:white_terracotta
+setblock 228 181 24006 minecraft:white_terracotta
+setblock 252 181 24006 minecraft:white_terracotta
+setblock 249 181 23988 minecraft:white_terracotta
+setblock 249 181 24012 minecraft:white_terracotta
+setblock 228 181 24009 minecraft:white_terracotta
+setblock 252 181 24009 minecraft:white_terracotta
+setblock 252 181 23988 minecraft:white_terracotta
+setblock 252 181 24012 minecraft:white_terracotta
+setblock 228 181 24012 minecraft:white_terracotta
+setblock 252 181 24012 minecraft:white_terracotta
+setblock 228 185 23988 minecraft:white_terracotta
+setblock 228 185 24012 minecraft:white_terracotta
+setblock 228 185 23988 minecraft:white_terracotta
+setblock 252 185 23988 minecraft:white_terracotta
+setblock 231 185 23988 minecraft:white_terracotta
+setblock 231 185 24012 minecraft:white_terracotta
+setblock 228 185 23991 minecraft:white_terracotta
+setblock 252 185 23991 minecraft:white_terracotta
+setblock 234 185 23988 minecraft:white_terracotta
+setblock 234 185 24012 minecraft:white_terracotta
+setblock 228 185 23994 minecraft:white_terracotta
+setblock 252 185 23994 minecraft:white_terracotta
+setblock 237 185 23988 minecraft:white_terracotta
+setblock 237 185 24012 minecraft:white_terracotta
+setblock 228 185 23997 minecraft:white_terracotta
+setblock 252 185 23997 minecraft:white_terracotta
+setblock 240 185 23988 minecraft:white_terracotta
+setblock 240 185 24012 minecraft:white_terracotta
+setblock 228 185 24000 minecraft:white_terracotta
+setblock 252 185 24000 minecraft:white_terracotta
+setblock 243 185 23988 minecraft:white_terracotta
+setblock 243 185 24012 minecraft:white_terracotta
+setblock 228 185 24003 minecraft:white_terracotta
+setblock 252 185 24003 minecraft:white_terracotta
+setblock 246 185 23988 minecraft:white_terracotta
+setblock 246 185 24012 minecraft:white_terracotta
+setblock 228 185 24006 minecraft:white_terracotta
+setblock 252 185 24006 minecraft:white_terracotta
+setblock 249 185 23988 minecraft:white_terracotta
+setblock 249 185 24012 minecraft:white_terracotta
+setblock 228 185 24009 minecraft:white_terracotta
+setblock 252 185 24009 minecraft:white_terracotta
+setblock 252 185 23988 minecraft:white_terracotta
+setblock 252 185 24012 minecraft:white_terracotta
+setblock 228 185 24012 minecraft:white_terracotta
+setblock 252 185 24012 minecraft:white_terracotta
+setblock 228 189 23988 minecraft:white_terracotta
+setblock 228 189 24012 minecraft:white_terracotta
+setblock 228 189 23988 minecraft:white_terracotta
+setblock 252 189 23988 minecraft:white_terracotta
+setblock 231 189 23988 minecraft:white_terracotta
+setblock 231 189 24012 minecraft:white_terracotta
+setblock 228 189 23991 minecraft:white_terracotta
+setblock 252 189 23991 minecraft:white_terracotta
+setblock 234 189 23988 minecraft:white_terracotta
+setblock 234 189 24012 minecraft:white_terracotta
+setblock 228 189 23994 minecraft:white_terracotta
+setblock 252 189 23994 minecraft:white_terracotta
+setblock 237 189 23988 minecraft:white_terracotta
+setblock 237 189 24012 minecraft:white_terracotta
+setblock 228 189 23997 minecraft:white_terracotta
+setblock 252 189 23997 minecraft:white_terracotta
+setblock 240 189 23988 minecraft:white_terracotta
+setblock 240 189 24012 minecraft:white_terracotta
+setblock 228 189 24000 minecraft:white_terracotta
+setblock 252 189 24000 minecraft:white_terracotta
+setblock 243 189 23988 minecraft:white_terracotta
+setblock 243 189 24012 minecraft:white_terracotta
+setblock 228 189 24003 minecraft:white_terracotta
+setblock 252 189 24003 minecraft:white_terracotta
+setblock 246 189 23988 minecraft:white_terracotta
+setblock 246 189 24012 minecraft:white_terracotta
+setblock 228 189 24006 minecraft:white_terracotta
+setblock 252 189 24006 minecraft:white_terracotta
+setblock 249 189 23988 minecraft:white_terracotta
+setblock 249 189 24012 minecraft:white_terracotta
+setblock 228 189 24009 minecraft:white_terracotta
+setblock 252 189 24009 minecraft:white_terracotta
+setblock 252 189 23988 minecraft:white_terracotta
+setblock 252 189 24012 minecraft:white_terracotta
+setblock 228 189 24012 minecraft:white_terracotta
+setblock 252 189 24012 minecraft:white_terracotta
+setblock 228 193 23988 minecraft:white_terracotta
+setblock 228 193 24012 minecraft:white_terracotta
+setblock 228 193 23988 minecraft:white_terracotta
+setblock 252 193 23988 minecraft:white_terracotta
+setblock 231 193 23988 minecraft:white_terracotta
+setblock 231 193 24012 minecraft:white_terracotta
+setblock 228 193 23991 minecraft:white_terracotta
+setblock 252 193 23991 minecraft:white_terracotta
+setblock 234 193 23988 minecraft:white_terracotta
+setblock 234 193 24012 minecraft:white_terracotta
+setblock 228 193 23994 minecraft:white_terracotta
+setblock 252 193 23994 minecraft:white_terracotta
+setblock 237 193 23988 minecraft:white_terracotta
+setblock 237 193 24012 minecraft:white_terracotta
+setblock 228 193 23997 minecraft:white_terracotta
+setblock 252 193 23997 minecraft:white_terracotta
+setblock 240 193 23988 minecraft:white_terracotta
+setblock 240 193 24012 minecraft:white_terracotta
+setblock 228 193 24000 minecraft:white_terracotta
+setblock 252 193 24000 minecraft:white_terracotta
+setblock 243 193 23988 minecraft:white_terracotta
+setblock 243 193 24012 minecraft:white_terracotta
+setblock 228 193 24003 minecraft:white_terracotta
+setblock 252 193 24003 minecraft:white_terracotta
+setblock 246 193 23988 minecraft:white_terracotta
+setblock 246 193 24012 minecraft:white_terracotta
+setblock 228 193 24006 minecraft:white_terracotta
+setblock 252 193 24006 minecraft:white_terracotta
+setblock 249 193 23988 minecraft:white_terracotta
+setblock 249 193 24012 minecraft:white_terracotta
+setblock 228 193 24009 minecraft:white_terracotta
+setblock 252 193 24009 minecraft:white_terracotta
+setblock 252 193 23988 minecraft:white_terracotta
+setblock 252 193 24012 minecraft:white_terracotta
+setblock 228 193 24012 minecraft:white_terracotta
+setblock 252 193 24012 minecraft:white_terracotta
+setblock 228 197 23988 minecraft:white_terracotta
+setblock 228 197 24012 minecraft:white_terracotta
+setblock 228 197 23988 minecraft:white_terracotta
+setblock 252 197 23988 minecraft:white_terracotta
+setblock 231 197 23988 minecraft:white_terracotta
+setblock 231 197 24012 minecraft:white_terracotta
+setblock 228 197 23991 minecraft:white_terracotta
+setblock 252 197 23991 minecraft:white_terracotta
+setblock 234 197 23988 minecraft:white_terracotta
+setblock 234 197 24012 minecraft:white_terracotta
+setblock 228 197 23994 minecraft:white_terracotta
+setblock 252 197 23994 minecraft:white_terracotta
+setblock 237 197 23988 minecraft:white_terracotta
+setblock 237 197 24012 minecraft:white_terracotta
+setblock 228 197 23997 minecraft:white_terracotta
+setblock 252 197 23997 minecraft:white_terracotta
+setblock 240 197 23988 minecraft:white_terracotta
+setblock 240 197 24012 minecraft:white_terracotta
+setblock 228 197 24000 minecraft:white_terracotta
+setblock 252 197 24000 minecraft:white_terracotta
+setblock 243 197 23988 minecraft:white_terracotta
+setblock 243 197 24012 minecraft:white_terracotta
+setblock 228 197 24003 minecraft:white_terracotta
+setblock 252 197 24003 minecraft:white_terracotta
+setblock 246 197 23988 minecraft:white_terracotta
+setblock 246 197 24012 minecraft:white_terracotta
+setblock 228 197 24006 minecraft:white_terracotta
+setblock 252 197 24006 minecraft:white_terracotta
+setblock 249 197 23988 minecraft:white_terracotta
+setblock 249 197 24012 minecraft:white_terracotta
+setblock 228 197 24009 minecraft:white_terracotta
+setblock 252 197 24009 minecraft:white_terracotta
+setblock 252 197 23988 minecraft:white_terracotta
+setblock 252 197 24012 minecraft:white_terracotta
+setblock 228 197 24012 minecraft:white_terracotta
+setblock 252 197 24012 minecraft:white_terracotta
+setblock 228 201 23988 minecraft:white_terracotta
+setblock 228 201 24012 minecraft:white_terracotta
+setblock 228 201 23988 minecraft:white_terracotta
+setblock 252 201 23988 minecraft:white_terracotta
+setblock 231 201 23988 minecraft:white_terracotta
+setblock 231 201 24012 minecraft:white_terracotta
+setblock 228 201 23991 minecraft:white_terracotta
+setblock 252 201 23991 minecraft:white_terracotta
+setblock 234 201 23988 minecraft:white_terracotta
+setblock 234 201 24012 minecraft:white_terracotta
+setblock 228 201 23994 minecraft:white_terracotta
+setblock 252 201 23994 minecraft:white_terracotta
+setblock 237 201 23988 minecraft:white_terracotta
+setblock 237 201 24012 minecraft:white_terracotta
+setblock 228 201 23997 minecraft:white_terracotta
+setblock 252 201 23997 minecraft:white_terracotta
+setblock 240 201 23988 minecraft:white_terracotta
+setblock 240 201 24012 minecraft:white_terracotta
+setblock 228 201 24000 minecraft:white_terracotta
+setblock 252 201 24000 minecraft:white_terracotta
+setblock 243 201 23988 minecraft:white_terracotta
+setblock 243 201 24012 minecraft:white_terracotta
+setblock 228 201 24003 minecraft:white_terracotta
+setblock 252 201 24003 minecraft:white_terracotta
+setblock 246 201 23988 minecraft:white_terracotta
+setblock 246 201 24012 minecraft:white_terracotta
+setblock 228 201 24006 minecraft:white_terracotta
+setblock 252 201 24006 minecraft:white_terracotta
+setblock 249 201 23988 minecraft:white_terracotta
+setblock 249 201 24012 minecraft:white_terracotta
+setblock 228 201 24009 minecraft:white_terracotta
+setblock 252 201 24009 minecraft:white_terracotta
+setblock 252 201 23988 minecraft:white_terracotta
+setblock 252 201 24012 minecraft:white_terracotta
+setblock 228 201 24012 minecraft:white_terracotta
+setblock 252 201 24012 minecraft:white_terracotta
+setblock 228 205 23988 minecraft:white_terracotta
+setblock 228 205 24012 minecraft:white_terracotta
+setblock 228 205 23988 minecraft:white_terracotta
+setblock 252 205 23988 minecraft:white_terracotta
+setblock 231 205 23988 minecraft:white_terracotta
+setblock 231 205 24012 minecraft:white_terracotta
+setblock 228 205 23991 minecraft:white_terracotta
+setblock 252 205 23991 minecraft:white_terracotta
+setblock 234 205 23988 minecraft:white_terracotta
+setblock 234 205 24012 minecraft:white_terracotta
+setblock 228 205 23994 minecraft:white_terracotta
+setblock 252 205 23994 minecraft:white_terracotta
+setblock 237 205 23988 minecraft:white_terracotta
+setblock 237 205 24012 minecraft:white_terracotta
+setblock 228 205 23997 minecraft:white_terracotta
+setblock 252 205 23997 minecraft:white_terracotta
+setblock 240 205 23988 minecraft:white_terracotta
+setblock 240 205 24012 minecraft:white_terracotta
+setblock 228 205 24000 minecraft:white_terracotta
+setblock 252 205 24000 minecraft:white_terracotta
+setblock 243 205 23988 minecraft:white_terracotta
+setblock 243 205 24012 minecraft:white_terracotta
+setblock 228 205 24003 minecraft:white_terracotta
+setblock 252 205 24003 minecraft:white_terracotta
+setblock 246 205 23988 minecraft:white_terracotta
+setblock 246 205 24012 minecraft:white_terracotta
+setblock 228 205 24006 minecraft:white_terracotta
+setblock 252 205 24006 minecraft:white_terracotta
+setblock 249 205 23988 minecraft:white_terracotta
+setblock 249 205 24012 minecraft:white_terracotta
+setblock 228 205 24009 minecraft:white_terracotta
+setblock 252 205 24009 minecraft:white_terracotta
+setblock 252 205 23988 minecraft:white_terracotta
+setblock 252 205 24012 minecraft:white_terracotta
+setblock 228 205 24012 minecraft:white_terracotta
+setblock 252 205 24012 minecraft:white_terracotta
+setblock 228 209 23988 minecraft:white_terracotta
+setblock 228 209 24012 minecraft:white_terracotta
+setblock 228 209 23988 minecraft:white_terracotta
+setblock 252 209 23988 minecraft:white_terracotta
+setblock 231 209 23988 minecraft:white_terracotta
+setblock 231 209 24012 minecraft:white_terracotta
+setblock 228 209 23991 minecraft:white_terracotta
+setblock 252 209 23991 minecraft:white_terracotta
+setblock 234 209 23988 minecraft:white_terracotta
+setblock 234 209 24012 minecraft:white_terracotta
+setblock 228 209 23994 minecraft:white_terracotta
+setblock 252 209 23994 minecraft:white_terracotta
+setblock 237 209 23988 minecraft:white_terracotta
+setblock 237 209 24012 minecraft:white_terracotta
+setblock 228 209 23997 minecraft:white_terracotta
+setblock 252 209 23997 minecraft:white_terracotta
+setblock 240 209 23988 minecraft:white_terracotta
+setblock 240 209 24012 minecraft:white_terracotta
+setblock 228 209 24000 minecraft:white_terracotta
+setblock 252 209 24000 minecraft:white_terracotta
+setblock 243 209 23988 minecraft:white_terracotta
+setblock 243 209 24012 minecraft:white_terracotta
+setblock 228 209 24003 minecraft:white_terracotta
+setblock 252 209 24003 minecraft:white_terracotta
+setblock 246 209 23988 minecraft:white_terracotta
+setblock 246 209 24012 minecraft:white_terracotta
+setblock 228 209 24006 minecraft:white_terracotta
+setblock 252 209 24006 minecraft:white_terracotta
+setblock 249 209 23988 minecraft:white_terracotta
+setblock 249 209 24012 minecraft:white_terracotta
+setblock 228 209 24009 minecraft:white_terracotta
+setblock 252 209 24009 minecraft:white_terracotta
+setblock 252 209 23988 minecraft:white_terracotta
+setblock 252 209 24012 minecraft:white_terracotta
+setblock 228 209 24012 minecraft:white_terracotta
+setblock 252 209 24012 minecraft:white_terracotta
+setblock 228 213 23988 minecraft:white_terracotta
+setblock 228 213 24012 minecraft:white_terracotta
+setblock 228 213 23988 minecraft:white_terracotta
+setblock 252 213 23988 minecraft:white_terracotta
+setblock 231 213 23988 minecraft:white_terracotta
+setblock 231 213 24012 minecraft:white_terracotta
+setblock 228 213 23991 minecraft:white_terracotta
+setblock 252 213 23991 minecraft:white_terracotta
+setblock 234 213 23988 minecraft:white_terracotta
+setblock 234 213 24012 minecraft:white_terracotta
+setblock 228 213 23994 minecraft:white_terracotta
+setblock 252 213 23994 minecraft:white_terracotta
+setblock 237 213 23988 minecraft:white_terracotta
+setblock 237 213 24012 minecraft:white_terracotta
+setblock 228 213 23997 minecraft:white_terracotta
+setblock 252 213 23997 minecraft:white_terracotta
+setblock 240 213 23988 minecraft:white_terracotta
+setblock 240 213 24012 minecraft:white_terracotta
+setblock 228 213 24000 minecraft:white_terracotta
+setblock 252 213 24000 minecraft:white_terracotta
+setblock 243 213 23988 minecraft:white_terracotta
+setblock 243 213 24012 minecraft:white_terracotta
+setblock 228 213 24003 minecraft:white_terracotta
+setblock 252 213 24003 minecraft:white_terracotta
+setblock 246 213 23988 minecraft:white_terracotta
+setblock 246 213 24012 minecraft:white_terracotta
+setblock 228 213 24006 minecraft:white_terracotta
+setblock 252 213 24006 minecraft:white_terracotta
+setblock 249 213 23988 minecraft:white_terracotta
+setblock 249 213 24012 minecraft:white_terracotta
+setblock 228 213 24009 minecraft:white_terracotta
+setblock 252 213 24009 minecraft:white_terracotta
+setblock 252 213 23988 minecraft:white_terracotta
+setblock 252 213 24012 minecraft:white_terracotta
+setblock 228 213 24012 minecraft:white_terracotta
+setblock 252 213 24012 minecraft:white_terracotta
+setblock 228 217 23988 minecraft:white_terracotta
+setblock 228 217 24012 minecraft:white_terracotta
+setblock 228 217 23988 minecraft:white_terracotta
+setblock 252 217 23988 minecraft:white_terracotta
+setblock 231 217 23988 minecraft:white_terracotta
+setblock 231 217 24012 minecraft:white_terracotta
+setblock 228 217 23991 minecraft:white_terracotta
+setblock 252 217 23991 minecraft:white_terracotta
+setblock 234 217 23988 minecraft:white_terracotta
+setblock 234 217 24012 minecraft:white_terracotta
+setblock 228 217 23994 minecraft:white_terracotta
+setblock 252 217 23994 minecraft:white_terracotta
+setblock 237 217 23988 minecraft:white_terracotta
+setblock 237 217 24012 minecraft:white_terracotta
+setblock 228 217 23997 minecraft:white_terracotta
+setblock 252 217 23997 minecraft:white_terracotta
+setblock 240 217 23988 minecraft:white_terracotta
+setblock 240 217 24012 minecraft:white_terracotta
+setblock 228 217 24000 minecraft:white_terracotta
+setblock 252 217 24000 minecraft:white_terracotta
+setblock 243 217 23988 minecraft:white_terracotta
+setblock 243 217 24012 minecraft:white_terracotta
+setblock 228 217 24003 minecraft:white_terracotta
+setblock 252 217 24003 minecraft:white_terracotta
+setblock 246 217 23988 minecraft:white_terracotta
+setblock 246 217 24012 minecraft:white_terracotta
+setblock 228 217 24006 minecraft:white_terracotta
+setblock 252 217 24006 minecraft:white_terracotta
+setblock 249 217 23988 minecraft:white_terracotta
+setblock 249 217 24012 minecraft:white_terracotta
+setblock 228 217 24009 minecraft:white_terracotta
+setblock 252 217 24009 minecraft:white_terracotta
+setblock 252 217 23988 minecraft:white_terracotta
+setblock 252 217 24012 minecraft:white_terracotta
+setblock 228 217 24012 minecraft:white_terracotta
+setblock 252 217 24012 minecraft:white_terracotta
+setblock 228 221 23988 minecraft:white_terracotta
+setblock 228 221 24012 minecraft:white_terracotta
+setblock 228 221 23988 minecraft:white_terracotta
+setblock 252 221 23988 minecraft:white_terracotta
+setblock 231 221 23988 minecraft:white_terracotta
+setblock 231 221 24012 minecraft:white_terracotta
+setblock 228 221 23991 minecraft:white_terracotta
+setblock 252 221 23991 minecraft:white_terracotta
+setblock 234 221 23988 minecraft:white_terracotta
+setblock 234 221 24012 minecraft:white_terracotta
+setblock 228 221 23994 minecraft:white_terracotta
+setblock 252 221 23994 minecraft:white_terracotta
+setblock 237 221 23988 minecraft:white_terracotta
+setblock 237 221 24012 minecraft:white_terracotta
+setblock 228 221 23997 minecraft:white_terracotta
+setblock 252 221 23997 minecraft:white_terracotta
+setblock 240 221 23988 minecraft:white_terracotta
+setblock 240 221 24012 minecraft:white_terracotta
+setblock 228 221 24000 minecraft:white_terracotta
+setblock 252 221 24000 minecraft:white_terracotta
+setblock 243 221 23988 minecraft:white_terracotta
+setblock 243 221 24012 minecraft:white_terracotta
+setblock 228 221 24003 minecraft:white_terracotta
+setblock 252 221 24003 minecraft:white_terracotta
+setblock 246 221 23988 minecraft:white_terracotta
+setblock 246 221 24012 minecraft:white_terracotta
+setblock 228 221 24006 minecraft:white_terracotta
+setblock 252 221 24006 minecraft:white_terracotta
+setblock 249 221 23988 minecraft:white_terracotta
+setblock 249 221 24012 minecraft:white_terracotta
+setblock 228 221 24009 minecraft:white_terracotta
+setblock 252 221 24009 minecraft:white_terracotta
+setblock 252 221 23988 minecraft:white_terracotta
+setblock 252 221 24012 minecraft:white_terracotta
+setblock 228 221 24012 minecraft:white_terracotta
+setblock 252 221 24012 minecraft:white_terracotta
+setblock 228 225 23988 minecraft:white_terracotta
+setblock 228 225 24012 minecraft:white_terracotta
+setblock 228 225 23988 minecraft:white_terracotta
+setblock 252 225 23988 minecraft:white_terracotta
+setblock 231 225 23988 minecraft:white_terracotta
+setblock 231 225 24012 minecraft:white_terracotta
+setblock 228 225 23991 minecraft:white_terracotta
+setblock 252 225 23991 minecraft:white_terracotta
+setblock 234 225 23988 minecraft:white_terracotta
+setblock 234 225 24012 minecraft:white_terracotta
+setblock 228 225 23994 minecraft:white_terracotta
+setblock 252 225 23994 minecraft:white_terracotta
+setblock 237 225 23988 minecraft:white_terracotta
+setblock 237 225 24012 minecraft:white_terracotta
+setblock 228 225 23997 minecraft:white_terracotta
+setblock 252 225 23997 minecraft:white_terracotta
+setblock 240 225 23988 minecraft:white_terracotta
+setblock 240 225 24012 minecraft:white_terracotta
+setblock 228 225 24000 minecraft:white_terracotta
+setblock 252 225 24000 minecraft:white_terracotta
+setblock 243 225 23988 minecraft:white_terracotta
+setblock 243 225 24012 minecraft:white_terracotta
+setblock 228 225 24003 minecraft:white_terracotta
+setblock 252 225 24003 minecraft:white_terracotta
+setblock 246 225 23988 minecraft:white_terracotta
+setblock 246 225 24012 minecraft:white_terracotta
+setblock 228 225 24006 minecraft:white_terracotta
+setblock 252 225 24006 minecraft:white_terracotta
+setblock 249 225 23988 minecraft:white_terracotta
+setblock 249 225 24012 minecraft:white_terracotta
+setblock 228 225 24009 minecraft:white_terracotta
+setblock 252 225 24009 minecraft:white_terracotta
+setblock 252 225 23988 minecraft:white_terracotta
+setblock 252 225 24012 minecraft:white_terracotta
+setblock 228 225 24012 minecraft:white_terracotta
+setblock 252 225 24012 minecraft:white_terracotta
+setblock 228 229 23988 minecraft:white_terracotta
+setblock 228 229 24012 minecraft:white_terracotta
+setblock 228 229 23988 minecraft:white_terracotta
+setblock 252 229 23988 minecraft:white_terracotta
+setblock 231 229 23988 minecraft:white_terracotta
+setblock 231 229 24012 minecraft:white_terracotta
+setblock 228 229 23991 minecraft:white_terracotta
+setblock 252 229 23991 minecraft:white_terracotta
+setblock 234 229 23988 minecraft:white_terracotta
+setblock 234 229 24012 minecraft:white_terracotta
+setblock 228 229 23994 minecraft:white_terracotta
+setblock 252 229 23994 minecraft:white_terracotta
+setblock 237 229 23988 minecraft:white_terracotta
+setblock 237 229 24012 minecraft:white_terracotta
+setblock 228 229 23997 minecraft:white_terracotta
+setblock 252 229 23997 minecraft:white_terracotta
+setblock 240 229 23988 minecraft:white_terracotta
+setblock 240 229 24012 minecraft:white_terracotta
+setblock 228 229 24000 minecraft:white_terracotta
+setblock 252 229 24000 minecraft:white_terracotta
+setblock 243 229 23988 minecraft:white_terracotta
+setblock 243 229 24012 minecraft:white_terracotta
+setblock 228 229 24003 minecraft:white_terracotta
+setblock 252 229 24003 minecraft:white_terracotta
+setblock 246 229 23988 minecraft:white_terracotta
+setblock 246 229 24012 minecraft:white_terracotta
+setblock 228 229 24006 minecraft:white_terracotta
+setblock 252 229 24006 minecraft:white_terracotta
+setblock 249 229 23988 minecraft:white_terracotta
+setblock 249 229 24012 minecraft:white_terracotta
+setblock 228 229 24009 minecraft:white_terracotta
+setblock 252 229 24009 minecraft:white_terracotta
+setblock 252 229 23988 minecraft:white_terracotta
+setblock 252 229 24012 minecraft:white_terracotta
+setblock 228 229 24012 minecraft:white_terracotta
+setblock 252 229 24012 minecraft:white_terracotta
+setblock 228 233 23988 minecraft:white_terracotta
+setblock 228 233 24012 minecraft:white_terracotta
+setblock 228 233 23988 minecraft:white_terracotta
+setblock 252 233 23988 minecraft:white_terracotta
+setblock 231 233 23988 minecraft:white_terracotta
+setblock 231 233 24012 minecraft:white_terracotta
+setblock 228 233 23991 minecraft:white_terracotta
+setblock 252 233 23991 minecraft:white_terracotta
+setblock 234 233 23988 minecraft:white_terracotta
+setblock 234 233 24012 minecraft:white_terracotta
+setblock 228 233 23994 minecraft:white_terracotta
+setblock 252 233 23994 minecraft:white_terracotta
+setblock 237 233 23988 minecraft:white_terracotta
+setblock 237 233 24012 minecraft:white_terracotta
+setblock 228 233 23997 minecraft:white_terracotta
+setblock 252 233 23997 minecraft:white_terracotta
+setblock 240 233 23988 minecraft:white_terracotta
+setblock 240 233 24012 minecraft:white_terracotta
+setblock 228 233 24000 minecraft:white_terracotta
+setblock 252 233 24000 minecraft:white_terracotta
+setblock 243 233 23988 minecraft:white_terracotta
+setblock 243 233 24012 minecraft:white_terracotta
+setblock 228 233 24003 minecraft:white_terracotta
+setblock 252 233 24003 minecraft:white_terracotta
+setblock 246 233 23988 minecraft:white_terracotta
+setblock 246 233 24012 minecraft:white_terracotta
+setblock 228 233 24006 minecraft:white_terracotta
+setblock 252 233 24006 minecraft:white_terracotta
+setblock 249 233 23988 minecraft:white_terracotta
+setblock 249 233 24012 minecraft:white_terracotta
+setblock 228 233 24009 minecraft:white_terracotta
+setblock 252 233 24009 minecraft:white_terracotta
+setblock 252 233 23988 minecraft:white_terracotta
+setblock 252 233 24012 minecraft:white_terracotta
+setblock 228 233 24012 minecraft:white_terracotta
+setblock 252 233 24012 minecraft:white_terracotta
+setblock 228 237 23988 minecraft:white_terracotta
+setblock 228 237 24012 minecraft:white_terracotta
+setblock 228 237 23988 minecraft:white_terracotta
+setblock 252 237 23988 minecraft:white_terracotta
+setblock 231 237 23988 minecraft:white_terracotta
+setblock 231 237 24012 minecraft:white_terracotta
+setblock 228 237 23991 minecraft:white_terracotta
+setblock 252 237 23991 minecraft:white_terracotta
+setblock 234 237 23988 minecraft:white_terracotta
+setblock 234 237 24012 minecraft:white_terracotta
+setblock 228 237 23994 minecraft:white_terracotta
+setblock 252 237 23994 minecraft:white_terracotta
+setblock 237 237 23988 minecraft:white_terracotta
+setblock 237 237 24012 minecraft:white_terracotta
+setblock 228 237 23997 minecraft:white_terracotta
+setblock 252 237 23997 minecraft:white_terracotta
+setblock 240 237 23988 minecraft:white_terracotta
+setblock 240 237 24012 minecraft:white_terracotta
+setblock 228 237 24000 minecraft:white_terracotta
+setblock 252 237 24000 minecraft:white_terracotta
+setblock 243 237 23988 minecraft:white_terracotta
+setblock 243 237 24012 minecraft:white_terracotta
+setblock 228 237 24003 minecraft:white_terracotta
+setblock 252 237 24003 minecraft:white_terracotta
+setblock 246 237 23988 minecraft:white_terracotta
+setblock 246 237 24012 minecraft:white_terracotta
+setblock 228 237 24006 minecraft:white_terracotta
+setblock 252 237 24006 minecraft:white_terracotta
+setblock 249 237 23988 minecraft:white_terracotta
+setblock 249 237 24012 minecraft:white_terracotta
+setblock 228 237 24009 minecraft:white_terracotta
+setblock 252 237 24009 minecraft:white_terracotta
+setblock 252 237 23988 minecraft:white_terracotta
+setblock 252 237 24012 minecraft:white_terracotta
+setblock 228 237 24012 minecraft:white_terracotta
+setblock 252 237 24012 minecraft:white_terracotta
+setblock 228 241 23988 minecraft:white_terracotta
+setblock 228 241 24012 minecraft:white_terracotta
+setblock 228 241 23988 minecraft:white_terracotta
+setblock 252 241 23988 minecraft:white_terracotta
+setblock 231 241 23988 minecraft:white_terracotta
+setblock 231 241 24012 minecraft:white_terracotta
+setblock 228 241 23991 minecraft:white_terracotta
+setblock 252 241 23991 minecraft:white_terracotta
+setblock 234 241 23988 minecraft:white_terracotta
+setblock 234 241 24012 minecraft:white_terracotta
+setblock 228 241 23994 minecraft:white_terracotta
+setblock 252 241 23994 minecraft:white_terracotta
+setblock 237 241 23988 minecraft:white_terracotta
+setblock 237 241 24012 minecraft:white_terracotta
+setblock 228 241 23997 minecraft:white_terracotta
+setblock 252 241 23997 minecraft:white_terracotta
+setblock 240 241 23988 minecraft:white_terracotta
+setblock 240 241 24012 minecraft:white_terracotta
+setblock 228 241 24000 minecraft:white_terracotta
+setblock 252 241 24000 minecraft:white_terracotta
+setblock 243 241 23988 minecraft:white_terracotta
+setblock 243 241 24012 minecraft:white_terracotta
+setblock 228 241 24003 minecraft:white_terracotta
+setblock 252 241 24003 minecraft:white_terracotta
+setblock 246 241 23988 minecraft:white_terracotta
+setblock 246 241 24012 minecraft:white_terracotta
+setblock 228 241 24006 minecraft:white_terracotta
+setblock 252 241 24006 minecraft:white_terracotta
+setblock 249 241 23988 minecraft:white_terracotta
+setblock 249 241 24012 minecraft:white_terracotta
+setblock 228 241 24009 minecraft:white_terracotta
+setblock 252 241 24009 minecraft:white_terracotta
+setblock 252 241 23988 minecraft:white_terracotta
+setblock 252 241 24012 minecraft:white_terracotta
+setblock 228 241 24012 minecraft:white_terracotta
+setblock 252 241 24012 minecraft:white_terracotta
+setblock 228 245 23988 minecraft:white_terracotta
+setblock 228 245 24012 minecraft:white_terracotta
+setblock 228 245 23988 minecraft:white_terracotta
+setblock 252 245 23988 minecraft:white_terracotta
+setblock 231 245 23988 minecraft:white_terracotta
+setblock 231 245 24012 minecraft:white_terracotta
+setblock 228 245 23991 minecraft:white_terracotta
+setblock 252 245 23991 minecraft:white_terracotta
+setblock 234 245 23988 minecraft:white_terracotta
+setblock 234 245 24012 minecraft:white_terracotta
+setblock 228 245 23994 minecraft:white_terracotta
+setblock 252 245 23994 minecraft:white_terracotta
+setblock 237 245 23988 minecraft:white_terracotta
+setblock 237 245 24012 minecraft:white_terracotta
+setblock 228 245 23997 minecraft:white_terracotta
+setblock 252 245 23997 minecraft:white_terracotta
+setblock 240 245 23988 minecraft:white_terracotta
+setblock 240 245 24012 minecraft:white_terracotta
+setblock 228 245 24000 minecraft:white_terracotta
+setblock 252 245 24000 minecraft:white_terracotta
+setblock 243 245 23988 minecraft:white_terracotta
+setblock 243 245 24012 minecraft:white_terracotta
+setblock 228 245 24003 minecraft:white_terracotta
+setblock 252 245 24003 minecraft:white_terracotta
+setblock 246 245 23988 minecraft:white_terracotta
+setblock 246 245 24012 minecraft:white_terracotta
+setblock 228 245 24006 minecraft:white_terracotta
+setblock 252 245 24006 minecraft:white_terracotta
+setblock 249 245 23988 minecraft:white_terracotta
+setblock 249 245 24012 minecraft:white_terracotta
+setblock 228 245 24009 minecraft:white_terracotta
+setblock 252 245 24009 minecraft:white_terracotta
+setblock 252 245 23988 minecraft:white_terracotta
+setblock 252 245 24012 minecraft:white_terracotta
+setblock 228 245 24012 minecraft:white_terracotta
+setblock 252 245 24012 minecraft:white_terracotta
+setblock 228 249 23988 minecraft:white_terracotta
+setblock 228 249 24012 minecraft:white_terracotta
+setblock 228 249 23988 minecraft:white_terracotta
+setblock 252 249 23988 minecraft:white_terracotta
+setblock 231 249 23988 minecraft:white_terracotta
+setblock 231 249 24012 minecraft:white_terracotta
+setblock 228 249 23991 minecraft:white_terracotta
+setblock 252 249 23991 minecraft:white_terracotta
+setblock 234 249 23988 minecraft:white_terracotta
+setblock 234 249 24012 minecraft:white_terracotta
+setblock 228 249 23994 minecraft:white_terracotta
+setblock 252 249 23994 minecraft:white_terracotta
+setblock 237 249 23988 minecraft:white_terracotta
+setblock 237 249 24012 minecraft:white_terracotta
+setblock 228 249 23997 minecraft:white_terracotta
+setblock 252 249 23997 minecraft:white_terracotta
+setblock 240 249 23988 minecraft:white_terracotta
+setblock 240 249 24012 minecraft:white_terracotta
+setblock 228 249 24000 minecraft:white_terracotta
+setblock 252 249 24000 minecraft:white_terracotta
+setblock 243 249 23988 minecraft:white_terracotta
+setblock 243 249 24012 minecraft:white_terracotta
+setblock 228 249 24003 minecraft:white_terracotta
+setblock 252 249 24003 minecraft:white_terracotta
+setblock 246 249 23988 minecraft:white_terracotta
+setblock 246 249 24012 minecraft:white_terracotta
+setblock 228 249 24006 minecraft:white_terracotta
+setblock 252 249 24006 minecraft:white_terracotta
+setblock 249 249 23988 minecraft:white_terracotta
+setblock 249 249 24012 minecraft:white_terracotta
+setblock 228 249 24009 minecraft:white_terracotta
+setblock 252 249 24009 minecraft:white_terracotta
+setblock 252 249 23988 minecraft:white_terracotta
+setblock 252 249 24012 minecraft:white_terracotta
+setblock 228 249 24012 minecraft:white_terracotta
+setblock 252 249 24012 minecraft:white_terracotta
+setblock 228 253 23988 minecraft:white_terracotta
+setblock 228 253 24012 minecraft:white_terracotta
+setblock 228 253 23988 minecraft:white_terracotta
+setblock 252 253 23988 minecraft:white_terracotta
+setblock 231 253 23988 minecraft:white_terracotta
+setblock 231 253 24012 minecraft:white_terracotta
+setblock 228 253 23991 minecraft:white_terracotta
+setblock 252 253 23991 minecraft:white_terracotta
+setblock 234 253 23988 minecraft:white_terracotta
+setblock 234 253 24012 minecraft:white_terracotta
+setblock 228 253 23994 minecraft:white_terracotta
+setblock 252 253 23994 minecraft:white_terracotta
+setblock 237 253 23988 minecraft:white_terracotta
+setblock 237 253 24012 minecraft:white_terracotta
+setblock 228 253 23997 minecraft:white_terracotta
+setblock 252 253 23997 minecraft:white_terracotta
+setblock 240 253 23988 minecraft:white_terracotta
+setblock 240 253 24012 minecraft:white_terracotta
+setblock 228 253 24000 minecraft:white_terracotta
+setblock 252 253 24000 minecraft:white_terracotta
+setblock 243 253 23988 minecraft:white_terracotta
+setblock 243 253 24012 minecraft:white_terracotta
+setblock 228 253 24003 minecraft:white_terracotta
+setblock 252 253 24003 minecraft:white_terracotta
+setblock 246 253 23988 minecraft:white_terracotta
+setblock 246 253 24012 minecraft:white_terracotta
+setblock 228 253 24006 minecraft:white_terracotta
+setblock 252 253 24006 minecraft:white_terracotta
+setblock 249 253 23988 minecraft:white_terracotta
+setblock 249 253 24012 minecraft:white_terracotta
+setblock 228 253 24009 minecraft:white_terracotta
+setblock 252 253 24009 minecraft:white_terracotta
+setblock 252 253 23988 minecraft:white_terracotta
+setblock 252 253 24012 minecraft:white_terracotta
+setblock 228 253 24012 minecraft:white_terracotta
+setblock 252 253 24012 minecraft:white_terracotta
+setblock 228 257 23988 minecraft:white_terracotta
+setblock 228 257 24012 minecraft:white_terracotta
+setblock 228 257 23988 minecraft:white_terracotta
+setblock 252 257 23988 minecraft:white_terracotta
+setblock 231 257 23988 minecraft:white_terracotta
+setblock 231 257 24012 minecraft:white_terracotta
+setblock 228 257 23991 minecraft:white_terracotta
+setblock 252 257 23991 minecraft:white_terracotta
+setblock 234 257 23988 minecraft:white_terracotta
+setblock 234 257 24012 minecraft:white_terracotta
+setblock 228 257 23994 minecraft:white_terracotta
+setblock 252 257 23994 minecraft:white_terracotta
+setblock 237 257 23988 minecraft:white_terracotta
+setblock 237 257 24012 minecraft:white_terracotta
+setblock 228 257 23997 minecraft:white_terracotta
+setblock 252 257 23997 minecraft:white_terracotta
+setblock 240 257 23988 minecraft:white_terracotta
+setblock 240 257 24012 minecraft:white_terracotta
+setblock 228 257 24000 minecraft:white_terracotta
+setblock 252 257 24000 minecraft:white_terracotta
+setblock 243 257 23988 minecraft:white_terracotta
+setblock 243 257 24012 minecraft:white_terracotta
+setblock 228 257 24003 minecraft:white_terracotta
+setblock 252 257 24003 minecraft:white_terracotta
+setblock 246 257 23988 minecraft:white_terracotta
+setblock 246 257 24012 minecraft:white_terracotta
+setblock 228 257 24006 minecraft:white_terracotta
+setblock 252 257 24006 minecraft:white_terracotta
+setblock 249 257 23988 minecraft:white_terracotta
+setblock 249 257 24012 minecraft:white_terracotta
+setblock 228 257 24009 minecraft:white_terracotta
+setblock 252 257 24009 minecraft:white_terracotta
+setblock 252 257 23988 minecraft:white_terracotta
+setblock 252 257 24012 minecraft:white_terracotta
+setblock 228 257 24012 minecraft:white_terracotta
+setblock 252 257 24012 minecraft:white_terracotta
+setblock 228 261 23988 minecraft:white_terracotta
+setblock 228 261 24012 minecraft:white_terracotta
+setblock 228 261 23988 minecraft:white_terracotta
+setblock 252 261 23988 minecraft:white_terracotta
+setblock 231 261 23988 minecraft:white_terracotta
+setblock 231 261 24012 minecraft:white_terracotta
+setblock 228 261 23991 minecraft:white_terracotta
+setblock 252 261 23991 minecraft:white_terracotta
+setblock 234 261 23988 minecraft:white_terracotta
+setblock 234 261 24012 minecraft:white_terracotta
+setblock 228 261 23994 minecraft:white_terracotta
+setblock 252 261 23994 minecraft:white_terracotta
+setblock 237 261 23988 minecraft:white_terracotta
+setblock 237 261 24012 minecraft:white_terracotta
+setblock 228 261 23997 minecraft:white_terracotta
+setblock 252 261 23997 minecraft:white_terracotta
+setblock 240 261 23988 minecraft:white_terracotta
+setblock 240 261 24012 minecraft:white_terracotta
+setblock 228 261 24000 minecraft:white_terracotta
+setblock 252 261 24000 minecraft:white_terracotta
+setblock 243 261 23988 minecraft:white_terracotta
+setblock 243 261 24012 minecraft:white_terracotta
+setblock 228 261 24003 minecraft:white_terracotta
+setblock 252 261 24003 minecraft:white_terracotta
+setblock 246 261 23988 minecraft:white_terracotta
+setblock 246 261 24012 minecraft:white_terracotta
+setblock 228 261 24006 minecraft:white_terracotta
+setblock 252 261 24006 minecraft:white_terracotta
+setblock 249 261 23988 minecraft:white_terracotta
+setblock 249 261 24012 minecraft:white_terracotta
+setblock 228 261 24009 minecraft:white_terracotta
+setblock 252 261 24009 minecraft:white_terracotta
+setblock 252 261 23988 minecraft:white_terracotta
+setblock 252 261 24012 minecraft:white_terracotta
+setblock 228 261 24012 minecraft:white_terracotta
+setblock 252 261 24012 minecraft:white_terracotta
+setblock 228 265 23988 minecraft:white_terracotta
+setblock 228 265 24012 minecraft:white_terracotta
+setblock 228 265 23988 minecraft:white_terracotta
+setblock 252 265 23988 minecraft:white_terracotta
+setblock 231 265 23988 minecraft:white_terracotta
+setblock 231 265 24012 minecraft:white_terracotta
+setblock 228 265 23991 minecraft:white_terracotta
+setblock 252 265 23991 minecraft:white_terracotta
+setblock 234 265 23988 minecraft:white_terracotta
+setblock 234 265 24012 minecraft:white_terracotta
+setblock 228 265 23994 minecraft:white_terracotta
+setblock 252 265 23994 minecraft:white_terracotta
+setblock 237 265 23988 minecraft:white_terracotta
+setblock 237 265 24012 minecraft:white_terracotta
+setblock 228 265 23997 minecraft:white_terracotta
+setblock 252 265 23997 minecraft:white_terracotta
+setblock 240 265 23988 minecraft:white_terracotta
+setblock 240 265 24012 minecraft:white_terracotta
+setblock 228 265 24000 minecraft:white_terracotta
+setblock 252 265 24000 minecraft:white_terracotta
+setblock 243 265 23988 minecraft:white_terracotta
+setblock 243 265 24012 minecraft:white_terracotta
+setblock 228 265 24003 minecraft:white_terracotta
+setblock 252 265 24003 minecraft:white_terracotta
+setblock 246 265 23988 minecraft:white_terracotta
+setblock 246 265 24012 minecraft:white_terracotta
+setblock 228 265 24006 minecraft:white_terracotta
+setblock 252 265 24006 minecraft:white_terracotta
+setblock 249 265 23988 minecraft:white_terracotta
+setblock 249 265 24012 minecraft:white_terracotta
+setblock 228 265 24009 minecraft:white_terracotta
+setblock 252 265 24009 minecraft:white_terracotta
+setblock 252 265 23988 minecraft:white_terracotta
+setblock 252 265 24012 minecraft:white_terracotta
+setblock 228 265 24012 minecraft:white_terracotta
+setblock 252 265 24012 minecraft:white_terracotta
+setblock 228 269 23988 minecraft:white_terracotta
+setblock 228 269 24012 minecraft:white_terracotta
+setblock 228 269 23988 minecraft:white_terracotta
+setblock 252 269 23988 minecraft:white_terracotta
+setblock 231 269 23988 minecraft:white_terracotta
+setblock 231 269 24012 minecraft:white_terracotta
+setblock 228 269 23991 minecraft:white_terracotta
+setblock 252 269 23991 minecraft:white_terracotta
+setblock 234 269 23988 minecraft:white_terracotta
+setblock 234 269 24012 minecraft:white_terracotta
+setblock 228 269 23994 minecraft:white_terracotta
+setblock 252 269 23994 minecraft:white_terracotta
+setblock 237 269 23988 minecraft:white_terracotta
+setblock 237 269 24012 minecraft:white_terracotta
+setblock 228 269 23997 minecraft:white_terracotta
+setblock 252 269 23997 minecraft:white_terracotta
+setblock 240 269 23988 minecraft:white_terracotta
+setblock 240 269 24012 minecraft:white_terracotta
+setblock 228 269 24000 minecraft:white_terracotta
+setblock 252 269 24000 minecraft:white_terracotta
+setblock 243 269 23988 minecraft:white_terracotta
+setblock 243 269 24012 minecraft:white_terracotta
+setblock 228 269 24003 minecraft:white_terracotta
+setblock 252 269 24003 minecraft:white_terracotta
+setblock 246 269 23988 minecraft:white_terracotta
+setblock 246 269 24012 minecraft:white_terracotta
+setblock 228 269 24006 minecraft:white_terracotta
+setblock 252 269 24006 minecraft:white_terracotta
+setblock 249 269 23988 minecraft:white_terracotta
+setblock 249 269 24012 minecraft:white_terracotta
+setblock 228 269 24009 minecraft:white_terracotta
+setblock 252 269 24009 minecraft:white_terracotta
+setblock 252 269 23988 minecraft:white_terracotta
+setblock 252 269 24012 minecraft:white_terracotta
+setblock 228 269 24012 minecraft:white_terracotta
+setblock 252 269 24012 minecraft:white_terracotta
+setblock 228 273 23988 minecraft:white_terracotta
+setblock 228 273 24012 minecraft:white_terracotta
+setblock 228 273 23988 minecraft:white_terracotta
+setblock 252 273 23988 minecraft:white_terracotta
+setblock 231 273 23988 minecraft:white_terracotta
+setblock 231 273 24012 minecraft:white_terracotta
+setblock 228 273 23991 minecraft:white_terracotta
+setblock 252 273 23991 minecraft:white_terracotta
+setblock 234 273 23988 minecraft:white_terracotta
+setblock 234 273 24012 minecraft:white_terracotta
+setblock 228 273 23994 minecraft:white_terracotta
+setblock 252 273 23994 minecraft:white_terracotta
+setblock 237 273 23988 minecraft:white_terracotta
+setblock 237 273 24012 minecraft:white_terracotta
+setblock 228 273 23997 minecraft:white_terracotta
+setblock 252 273 23997 minecraft:white_terracotta
+setblock 240 273 23988 minecraft:white_terracotta
+setblock 240 273 24012 minecraft:white_terracotta
+setblock 228 273 24000 minecraft:white_terracotta
+setblock 252 273 24000 minecraft:white_terracotta
+setblock 243 273 23988 minecraft:white_terracotta
+setblock 243 273 24012 minecraft:white_terracotta
+setblock 228 273 24003 minecraft:white_terracotta
+setblock 252 273 24003 minecraft:white_terracotta
+setblock 246 273 23988 minecraft:white_terracotta
+setblock 246 273 24012 minecraft:white_terracotta
+setblock 228 273 24006 minecraft:white_terracotta
+setblock 252 273 24006 minecraft:white_terracotta
+setblock 249 273 23988 minecraft:white_terracotta
+setblock 249 273 24012 minecraft:white_terracotta
+setblock 228 273 24009 minecraft:white_terracotta
+setblock 252 273 24009 minecraft:white_terracotta
+setblock 252 273 23988 minecraft:white_terracotta
+setblock 252 273 24012 minecraft:white_terracotta
+setblock 228 273 24012 minecraft:white_terracotta
+setblock 252 273 24012 minecraft:white_terracotta
+setblock 228 277 23988 minecraft:white_terracotta
+setblock 228 277 24012 minecraft:white_terracotta
+setblock 228 277 23988 minecraft:white_terracotta
+setblock 252 277 23988 minecraft:white_terracotta
+setblock 231 277 23988 minecraft:white_terracotta
+setblock 231 277 24012 minecraft:white_terracotta
+setblock 228 277 23991 minecraft:white_terracotta
+setblock 252 277 23991 minecraft:white_terracotta
+setblock 234 277 23988 minecraft:white_terracotta
+setblock 234 277 24012 minecraft:white_terracotta
+setblock 228 277 23994 minecraft:white_terracotta
+setblock 252 277 23994 minecraft:white_terracotta
+setblock 237 277 23988 minecraft:white_terracotta
+setblock 237 277 24012 minecraft:white_terracotta
+setblock 228 277 23997 minecraft:white_terracotta
+setblock 252 277 23997 minecraft:white_terracotta
+setblock 240 277 23988 minecraft:white_terracotta
+setblock 240 277 24012 minecraft:white_terracotta
+setblock 228 277 24000 minecraft:white_terracotta
+setblock 252 277 24000 minecraft:white_terracotta
+setblock 243 277 23988 minecraft:white_terracotta
+setblock 243 277 24012 minecraft:white_terracotta
+setblock 228 277 24003 minecraft:white_terracotta
+setblock 252 277 24003 minecraft:white_terracotta
+setblock 246 277 23988 minecraft:white_terracotta
+setblock 246 277 24012 minecraft:white_terracotta
+setblock 228 277 24006 minecraft:white_terracotta
+setblock 252 277 24006 minecraft:white_terracotta
+setblock 249 277 23988 minecraft:white_terracotta
+setblock 249 277 24012 minecraft:white_terracotta
+setblock 228 277 24009 minecraft:white_terracotta
+setblock 252 277 24009 minecraft:white_terracotta
+setblock 252 277 23988 minecraft:white_terracotta
+setblock 252 277 24012 minecraft:white_terracotta
+setblock 228 277 24012 minecraft:white_terracotta
+setblock 252 277 24012 minecraft:white_terracotta
+setblock 228 281 23988 minecraft:white_terracotta
+setblock 228 281 24012 minecraft:white_terracotta
+setblock 228 281 23988 minecraft:white_terracotta
+setblock 252 281 23988 minecraft:white_terracotta
+setblock 231 281 23988 minecraft:white_terracotta
+setblock 231 281 24012 minecraft:white_terracotta
+setblock 228 281 23991 minecraft:white_terracotta
+setblock 252 281 23991 minecraft:white_terracotta
+setblock 234 281 23988 minecraft:white_terracotta
+setblock 234 281 24012 minecraft:white_terracotta
+setblock 228 281 23994 minecraft:white_terracotta
+setblock 252 281 23994 minecraft:white_terracotta
+setblock 237 281 23988 minecraft:white_terracotta
+setblock 237 281 24012 minecraft:white_terracotta
+setblock 228 281 23997 minecraft:white_terracotta
+setblock 252 281 23997 minecraft:white_terracotta
+setblock 240 281 23988 minecraft:white_terracotta
+setblock 240 281 24012 minecraft:white_terracotta
+setblock 228 281 24000 minecraft:white_terracotta
+setblock 252 281 24000 minecraft:white_terracotta
+setblock 243 281 23988 minecraft:white_terracotta
+setblock 243 281 24012 minecraft:white_terracotta
+setblock 228 281 24003 minecraft:white_terracotta
+setblock 252 281 24003 minecraft:white_terracotta
+setblock 246 281 23988 minecraft:white_terracotta
+setblock 246 281 24012 minecraft:white_terracotta
+setblock 228 281 24006 minecraft:white_terracotta
+setblock 252 281 24006 minecraft:white_terracotta
+setblock 249 281 23988 minecraft:white_terracotta
+setblock 249 281 24012 minecraft:white_terracotta
+setblock 228 281 24009 minecraft:white_terracotta
+setblock 252 281 24009 minecraft:white_terracotta
+setblock 252 281 23988 minecraft:white_terracotta
+setblock 252 281 24012 minecraft:white_terracotta
+setblock 228 281 24012 minecraft:white_terracotta
+setblock 252 281 24012 minecraft:white_terracotta
+setblock 228 285 23988 minecraft:white_terracotta
+setblock 228 285 24012 minecraft:white_terracotta
+setblock 228 285 23988 minecraft:white_terracotta
+setblock 252 285 23988 minecraft:white_terracotta
+setblock 231 285 23988 minecraft:white_terracotta
+setblock 231 285 24012 minecraft:white_terracotta
+setblock 228 285 23991 minecraft:white_terracotta
+setblock 252 285 23991 minecraft:white_terracotta
+setblock 234 285 23988 minecraft:white_terracotta
+setblock 234 285 24012 minecraft:white_terracotta
+setblock 228 285 23994 minecraft:white_terracotta
+setblock 252 285 23994 minecraft:white_terracotta
+setblock 237 285 23988 minecraft:white_terracotta
+setblock 237 285 24012 minecraft:white_terracotta
+setblock 228 285 23997 minecraft:white_terracotta
+setblock 252 285 23997 minecraft:white_terracotta
+setblock 240 285 23988 minecraft:white_terracotta
+setblock 240 285 24012 minecraft:white_terracotta
+setblock 228 285 24000 minecraft:white_terracotta
+setblock 252 285 24000 minecraft:white_terracotta
+setblock 243 285 23988 minecraft:white_terracotta
+setblock 243 285 24012 minecraft:white_terracotta
+setblock 228 285 24003 minecraft:white_terracotta
+setblock 252 285 24003 minecraft:white_terracotta
+setblock 246 285 23988 minecraft:white_terracotta
+setblock 246 285 24012 minecraft:white_terracotta
+setblock 228 285 24006 minecraft:white_terracotta
+setblock 252 285 24006 minecraft:white_terracotta
+setblock 249 285 23988 minecraft:white_terracotta
+setblock 249 285 24012 minecraft:white_terracotta
+setblock 228 285 24009 minecraft:white_terracotta
+setblock 252 285 24009 minecraft:white_terracotta
+setblock 252 285 23988 minecraft:white_terracotta
+setblock 252 285 24012 minecraft:white_terracotta
+setblock 228 285 24012 minecraft:white_terracotta
+setblock 252 285 24012 minecraft:white_terracotta
+setblock 228 289 23988 minecraft:white_terracotta
+setblock 228 289 24012 minecraft:white_terracotta
+setblock 228 289 23988 minecraft:white_terracotta
+setblock 252 289 23988 minecraft:white_terracotta
+setblock 231 289 23988 minecraft:white_terracotta
+setblock 231 289 24012 minecraft:white_terracotta
+setblock 228 289 23991 minecraft:white_terracotta
+setblock 252 289 23991 minecraft:white_terracotta
+setblock 234 289 23988 minecraft:white_terracotta
+setblock 234 289 24012 minecraft:white_terracotta
+setblock 228 289 23994 minecraft:white_terracotta
+setblock 252 289 23994 minecraft:white_terracotta
+setblock 237 289 23988 minecraft:white_terracotta
+setblock 237 289 24012 minecraft:white_terracotta
+setblock 228 289 23997 minecraft:white_terracotta
+setblock 252 289 23997 minecraft:white_terracotta
+setblock 240 289 23988 minecraft:white_terracotta
+setblock 240 289 24012 minecraft:white_terracotta
+setblock 228 289 24000 minecraft:white_terracotta
+setblock 252 289 24000 minecraft:white_terracotta
+setblock 243 289 23988 minecraft:white_terracotta
+setblock 243 289 24012 minecraft:white_terracotta
+setblock 228 289 24003 minecraft:white_terracotta
+setblock 252 289 24003 minecraft:white_terracotta
+setblock 246 289 23988 minecraft:white_terracotta
+setblock 246 289 24012 minecraft:white_terracotta
+setblock 228 289 24006 minecraft:white_terracotta
+setblock 252 289 24006 minecraft:white_terracotta
+setblock 249 289 23988 minecraft:white_terracotta
+setblock 249 289 24012 minecraft:white_terracotta
+setblock 228 289 24009 minecraft:white_terracotta
+setblock 252 289 24009 minecraft:white_terracotta
+setblock 252 289 23988 minecraft:white_terracotta
+setblock 252 289 24012 minecraft:white_terracotta
+setblock 228 289 24012 minecraft:white_terracotta
+setblock 252 289 24012 minecraft:white_terracotta
+setblock 228 293 23988 minecraft:white_terracotta
+setblock 228 293 24012 minecraft:white_terracotta
+setblock 228 293 23988 minecraft:white_terracotta
+setblock 252 293 23988 minecraft:white_terracotta
+setblock 231 293 23988 minecraft:white_terracotta
+setblock 231 293 24012 minecraft:white_terracotta
+setblock 228 293 23991 minecraft:white_terracotta
+setblock 252 293 23991 minecraft:white_terracotta
+setblock 234 293 23988 minecraft:white_terracotta
+setblock 234 293 24012 minecraft:white_terracotta
+setblock 228 293 23994 minecraft:white_terracotta
+setblock 252 293 23994 minecraft:white_terracotta
+setblock 237 293 23988 minecraft:white_terracotta
+setblock 237 293 24012 minecraft:white_terracotta
+setblock 228 293 23997 minecraft:white_terracotta
+setblock 252 293 23997 minecraft:white_terracotta
+setblock 240 293 23988 minecraft:white_terracotta
+setblock 240 293 24012 minecraft:white_terracotta
+setblock 228 293 24000 minecraft:white_terracotta
+setblock 252 293 24000 minecraft:white_terracotta
+setblock 243 293 23988 minecraft:white_terracotta
+setblock 243 293 24012 minecraft:white_terracotta
+setblock 228 293 24003 minecraft:white_terracotta
+setblock 252 293 24003 minecraft:white_terracotta
+setblock 246 293 23988 minecraft:white_terracotta
+setblock 246 293 24012 minecraft:white_terracotta
+setblock 228 293 24006 minecraft:white_terracotta
+setblock 252 293 24006 minecraft:white_terracotta
+setblock 249 293 23988 minecraft:white_terracotta
+setblock 249 293 24012 minecraft:white_terracotta
+setblock 228 293 24009 minecraft:white_terracotta
+setblock 252 293 24009 minecraft:white_terracotta
+setblock 252 293 23988 minecraft:white_terracotta
+setblock 252 293 24012 minecraft:white_terracotta
+setblock 228 293 24012 minecraft:white_terracotta
+setblock 252 293 24012 minecraft:white_terracotta
+setblock 228 297 23988 minecraft:white_terracotta
+setblock 228 297 24012 minecraft:white_terracotta
+setblock 228 297 23988 minecraft:white_terracotta
+setblock 252 297 23988 minecraft:white_terracotta
+setblock 231 297 23988 minecraft:white_terracotta
+setblock 231 297 24012 minecraft:white_terracotta
 schedule function mg:dropadv/build_12 3t
