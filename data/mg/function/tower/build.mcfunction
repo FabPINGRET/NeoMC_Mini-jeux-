@@ -1,0 +1,89 @@
+# 🏰 The Towers — vide, îles rouge (x −40..−26) et bleue (x 26..40), centre (x −5..5), puits aux extrémités
+fill -48 66 20784 48 66 20816 minecraft:air
+fill -48 67 20784 48 67 20816 minecraft:air
+fill -48 68 20784 48 68 20816 minecraft:air
+fill -48 69 20784 48 69 20816 minecraft:air
+fill -48 70 20784 48 70 20816 minecraft:air
+fill -48 71 20784 48 71 20816 minecraft:air
+fill -48 72 20784 48 72 20816 minecraft:air
+fill -48 73 20784 48 73 20816 minecraft:air
+fill -48 74 20784 48 74 20816 minecraft:air
+fill -48 75 20784 48 75 20816 minecraft:air
+fill -48 76 20784 48 76 20816 minecraft:air
+fill -48 77 20784 48 77 20816 minecraft:air
+fill -48 78 20784 48 78 20816 minecraft:air
+fill -48 79 20784 48 79 20816 minecraft:air
+fill -48 80 20784 48 80 20816 minecraft:air
+fill -48 81 20784 48 81 20816 minecraft:air
+fill -48 82 20784 48 82 20816 minecraft:air
+fill -48 83 20784 48 83 20816 minecraft:air
+fill -48 84 20784 48 84 20816 minecraft:air
+fill -48 85 20784 48 85 20816 minecraft:air
+fill -48 86 20784 48 86 20816 minecraft:air
+fill -48 87 20784 48 87 20816 minecraft:air
+fill -48 88 20784 48 88 20816 minecraft:air
+fill -48 89 20784 48 89 20816 minecraft:air
+fill -48 90 20784 48 90 20816 minecraft:air
+fill -48 91 20784 48 91 20816 minecraft:air
+fill -48 92 20784 48 92 20816 minecraft:air
+fill -48 93 20784 48 93 20816 minecraft:air
+fill -48 94 20784 48 94 20816 minecraft:air
+fill -48 95 20784 48 95 20816 minecraft:air
+fill -48 96 20784 48 96 20816 minecraft:air
+fill -48 97 20784 48 97 20816 minecraft:air
+fill -48 98 20784 48 98 20816 minecraft:air
+fill -48 99 20784 48 99 20816 minecraft:air
+fill -48 100 20784 48 100 20816 minecraft:air
+fill -48 101 20784 48 101 20816 minecraft:air
+fill -48 102 20784 48 102 20816 minecraft:air
+fill -48 103 20784 48 103 20816 minecraft:air
+fill -48 104 20784 48 104 20816 minecraft:air
+fill -48 105 20784 48 105 20816 minecraft:air
+fill -40 76 20793 -26 79 20807 minecraft:stone
+fill -40 80 20793 -26 80 20807 minecraft:red_terracotta
+fill -38 75 20795 -28 75 20805 minecraft:stone
+fill -36 74 20797 -30 74 20803 minecraft:stone
+fill 26 76 20793 40 79 20807 minecraft:stone
+fill 26 80 20793 40 80 20807 minecraft:blue_terracotta
+fill 28 75 20795 38 75 20805 minecraft:stone
+fill 30 74 20797 36 74 20803 minecraft:stone
+fill -5 77 20795 5 79 20805 minecraft:stone
+fill -5 80 20795 5 80 20805 minecraft:smooth_stone
+fill -3 76 20797 3 76 20803 minecraft:stone
+setblock 0 80 20800 minecraft:gold_block
+fill -1 81 20799 1 81 20801 minecraft:iron_bars hollow
+setblock 0 81 20800 minecraft:air
+fill -32 81 20798 -28 88 20802 minecraft:stone_bricks hollow
+fill -32 81 20800 -32 83 20800 minecraft:air
+fill -28 81 20800 -28 83 20800 minecraft:air
+fill -32 85 20798 -28 85 20802 minecraft:red_stained_glass
+fill -31 81 20799 -29 81 20801 minecraft:red_wool
+fill -32 89 20798 -28 89 20802 minecraft:stone_brick_slab
+setblock -30 89 20800 minecraft:sea_lantern
+fill 28 81 20798 32 88 20802 minecraft:stone_bricks hollow
+fill 28 81 20800 28 83 20800 minecraft:air
+fill 32 81 20800 32 83 20800 minecraft:air
+fill 28 85 20798 32 85 20802 minecraft:blue_stained_glass
+fill 29 81 20799 31 81 20801 minecraft:blue_wool
+fill 28 89 20798 32 89 20802 minecraft:stone_brick_slab
+setblock 30 89 20800 minecraft:sea_lantern
+fill -39 77 20798 -35 80 20802 minecraft:red_wool
+fill -38 76 20799 -36 76 20801 minecraft:bedrock
+fill -38 77 20799 -36 80 20801 minecraft:air
+fill -39 81 20798 -35 81 20802 minecraft:red_stained_glass
+fill -38 81 20799 -36 81 20801 minecraft:air
+fill 35 77 20798 39 80 20802 minecraft:blue_wool
+fill 36 76 20799 38 76 20801 minecraft:bedrock
+fill 36 77 20799 38 80 20801 minecraft:air
+fill 35 81 20798 39 81 20802 minecraft:blue_stained_glass
+fill 36 81 20799 38 81 20801 minecraft:air
+fill -25 80 20800 -6 80 20800 minecraft:oak_planks
+fill 6 80 20800 25 80 20800 minecraft:oak_planks
+fill -25 80 20794 -6 80 20794 minecraft:air
+fill -20 80 20809 -10 80 20809 minecraft:cobblestone
+fill 10 80 20791 20 80 20791 minecraft:cobblestone
+fill -48 66 20784 48 105 20784 minecraft:barrier
+fill -48 66 20816 48 105 20816 minecraft:barrier
+fill -48 66 20785 -48 105 20815 minecraft:barrier
+fill 48 66 20785 48 105 20815 minecraft:barrier
+fill -47 105 20785 47 105 20815 minecraft:barrier

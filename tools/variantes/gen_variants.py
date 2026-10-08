@@ -700,7 +700,8 @@ CATS = {
     'equipes': ('⚑ Équipes', 'light_purple', 'Jeux en équipes.', [
         act('⚑ Bedwars ▸', 'light_purple', OPEN(30), 'Protège ton lit, détruis les autres'),
         act('☁ Sheep War ▸', 'white', OPEN(8), 'Moutons explosifs, 8 cartes'),
-        known(OPEN(21), '▓ Paintball ▸', 'gold'), known('trigger mg.go set 30', '▮ Turf Wars', 'gold')], 'menu'),
+        known(OPEN(21), '▓ Paintball ▸', 'gold'), known('trigger mg.go set 30', '▮ Turf Wars', 'gold'),
+        act('🏰 The Towers', 'gold', 'trigger mg.go set 88', 'Saute dans le puits adverse, 5 points pour gagner')], 'menu'),
     'courses': ('🏁 Courses et vol', 'gold', 'Le premier arrivé gagne.', [
         act('🏎 Kart ▸', 'gold', OPEN(46), 'Circuit Champignon, Royaume Koopa, Bataille'),
         known('trigger mg.go set 56', '⛵ Course de bateaux (glace)', 'aqua'),
@@ -819,7 +820,7 @@ NATIVE = {
     75: ('Course d\'anneaux', 2), 76: ('Course + combat', 3), 77: ('Survie en vol', 4),
     61: ('Circuit Champignon', 2), 62: ('Royaume Koopa', 3), 63: ('Bataille', 2), 56: ('Bateaux sur glace', 2),
     81: ('Canyon du Couchant', 3), 30: ('Turf Wars', 2),
-    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
+    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2), 88: ('🏰 The Towers', 3),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
 }
 SHORT_OPT = {   # boutons de navigation (mg.opt) : noms courts
     24: '➶ OITC ▸', 10: '⚡ Quake ▸', 20: '⚓ Enclumes ▸', 19: '⬇ Dropper ▸', 28: '🪽 Course élytres ▸', 23: '⚔ Arène PvP ▸',

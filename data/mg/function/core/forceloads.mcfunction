@@ -71,6 +71,8 @@ forceload add -8 19412 8 19428
 forceload add -32 19968 32 20032
 # King of the Hill (z 20400)
 forceload add -27 20373 27 20427
+# The Towers (z 20800)
+forceload add -48 20784 48 20816
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl

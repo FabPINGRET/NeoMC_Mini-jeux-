@@ -105,6 +105,32 @@
     {
       "label": [
         {
+          "text": "🏰 🏰 The Towers ",
+          "color": "gold"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Saute dans le puits adverse, 5 points pour gagner",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 88"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour au menu",
           "color": "yellow"
         }
