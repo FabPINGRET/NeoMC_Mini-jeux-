@@ -31,6 +31,24 @@
     {
       "label": [
         {
+          "text": "🎲 Au hasard",
+          "color": "light_purple"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Un parcours tiré au hasard parmi ceux qui sont construits.",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 66"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "Canyon du Couchant ",
           "color": "gold"
         },
@@ -51,7 +69,7 @@
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 66"
+        "command": "trigger mg.go set 81"
       }
     },
     {

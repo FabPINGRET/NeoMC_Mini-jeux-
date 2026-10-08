@@ -1,8 +1,11 @@
 # Désinstallation de la Course d'élytres (appelé par mg:desinstaller)
 # pas de build_abort ici : il appelle core/forceloads, qui réactiverait tous les chargements forcés que desinstaller vient de retirer
 schedule clear mg:elyrace/build
+schedule clear mg:elyrace/build_next
+schedule clear mg:elyrace/c1/build_wait
+# ancien chemin (avant 2a : construction en un seul module, sans c<N>/) : un schedule d'une version précédente peut survivre
 schedule clear mg:elyrace/build_wait
-data remove storage mg:elyrace v1
+function mg:elyrace/forget
 clear @a minecraft:elytra[minecraft:custom_data~{mg_elyr:1b}]
 clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_elyr:1b}]
 tag @a remove mg.xw1

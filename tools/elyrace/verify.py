@@ -12,8 +12,6 @@ GOLD_LOOK = 3.0                                            # anticipation reduit
 GOLD_TOL = 2.7                                             # ecart maximal au centre d'un anneau d'or (trou 7 x 7 moins le demi-joueur)
 RESPAWN_X = 3                                              # la reapparition est 3 blocs apres le plan de l'anneau
 RESPAWN_DELAY = 12                                         # ticks de chute avant l'ouverture des elytres
-R_UP = 28                                                  # hauteur de reapparition au-dessus du centre de l'anneau : sert pour toute reprise
-                                                           # (valide pour 12 a 20 ticks de chute avant l'ouverture, mesure sur les 4 reprises)
 
 
 def _ramp(d):
@@ -28,11 +26,10 @@ def _ramp(d):
 
 
 def polyline(c, x_from=0, dy=0, dz=0, bumps=()):
-    """Ligne suivie : celle du vol de reference (course_canyon.reference_waypoints), decalee de (dy, dz).
+    """Ligne suivie : celle du vol de reference (spec.reference_waypoints), decalee de (dy, dz).
     `bumps` = [(x, ecart lateral)] : detours lisses vers les anneaux d'or."""
-    import course_canyon as K
     pts = []
-    for x, y, z in K.reference_waypoints():
+    for x, y, z in c.spec.reference_waypoints():
         if x >= x_from:
             for bx, off in bumps:
                 z += off * _ramp(x - bx)
@@ -72,9 +69,9 @@ def check_flight(c, s, wps, first_ring=1, rockets=()):
 
 def check_golds(c):
     """Un vol avec detour par chaque anneau d'or (un a la fois) : la trace doit traverser son trou de 7 x 7 sans choc avant."""
-    import course_canyon as K
+    spec = c.spec
     for gx, gy, gz in c.golds:
-        wps = polyline(c, bumps=[(gx, gz - (K.CZ + 0.5 + K.lat(gx)))])
+        wps = polyline(c, bumps=[(gx, gz - (spec.CZ + 0.5 + spec.lat(gx)))])
         tr = []
         G.fly(c.world.solid, start(c), G.Pilot(wps, look=GOLD_LOOK), trace=tr)
         for a, b in zip(tr, tr[1:]):
@@ -91,8 +88,7 @@ def check_golds(c):
 
 
 def start(c):
-    import course_canyon as K
-    s = K.start_state()
+    s = c.spec.start_state()
     G.freefall(c.world.solid, s, G.OPEN_DELAY)
     return s
 
@@ -157,7 +153,7 @@ def speed_margins(c, drop_sq, rel_pct):
     (marge x2 sur la chute relative : seul le seuil relatif protege a grande vitesse)."""
     flights = [(start(c), polyline(c, dy=dy, dz=dz)) for dy, dz in OFFSETS]
     for n in c.cps:
-        flights.append((respawn_state(c, n, R_UP), polyline(c, x_from=c.rings[n - 1][0] + RESPAWN_X + 4)))
+        flights.append((respawn_state(c, n, c.spec.R_UP[n]), polyline(c, x_from=c.rings[n - 1][0] + RESPAWN_X + 4)))
     bad, worst_drop, worst_rel, fastest = [], 0.0, 0.0, None
     for s, wps in flights:
         prev = (s.hspeed() * 100.0) ** 2
@@ -192,10 +188,23 @@ def _scaled(s, speed):
     return s
 
 
+def check_respawn_columns(c, r_ups):
+    """La colonne de reapparition de chaque point de reprise (du centre de l'anneau a r_up + 1 : le joueur fait 2 blocs)
+    ne doit contenir aucun bloc solide : sinon le joueur reapparait dans la pierre."""
+    bad = []
+    for n, r in r_ups.items():
+        x, cy, cz, zone = c.rings[n - 1]
+        for y in range(cy, cy + r + 2):
+            if c.world.solid(x + RESPAWN_X, y, cz):
+                bad.append('colonne de reapparition apres l\'anneau %d : bloc solide en (%d, %d, %d)' % (n, x + RESPAWN_X, y, cz))
+                break
+    return bad
+
+
 def verify_all(c, r_ups=None):
     """Execute toutes les verifications ; renvoie la liste des echecs (vide si tout passe)."""
-    r_ups = r_ups or {n: R_UP for n in c.cps}
-    bad = []
+    r_ups = r_ups or {n: c.spec.R_UP[n] for n in c.cps}
+    bad = check_respawn_columns(c, r_ups)
     for dy, dz in OFFSETS:
         ok, why = check_flight(c, start(c), polyline(c, dy=dy, dz=dz))
         if not ok:

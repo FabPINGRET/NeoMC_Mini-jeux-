@@ -171,7 +171,8 @@ execute if score $setup mg.st matches 1 if data storage mg:kart built unless dat
 execute if score $setup mg.st matches 1 if data storage mg:kart built2 unless data storage mg:kart built3 run schedule function mg:kart/t3/build 10s
 # Reconstructions automatiques après une mise à jour (numéro de version dans le stockage)
 execute if score $setup mg.st matches 1 unless data storage mg:dropadv v3 run schedule function mg:dropadv/build 40s
-execute if score $setup mg.st matches 1 unless data storage mg:elyrace v1 run schedule function mg:elyrace/build 60s
+execute if score $setup mg.st matches 1 run scoreboard players set $xbk mg.st 0
+execute if score $setup mg.st matches 1 run schedule function mg:elyrace/build_next 60s
 execute if score $setup mg.st matches 1 unless data storage mg:hall v3 run schedule function mg:hall/build 20s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/build 10s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/food_build 25s

@@ -1,0 +1,4 @@
+# Annonce du lancement (appelée par mg:core/request, avant prepare : en mode « au hasard » le parcours n'est pas encore tiré)
+execute if score $xc mg.st matches 0 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance la ","color":"gray"},{"text":"🪽 COURSE D'ÉLYTRES","color":"aqua","bold":true},{"text":" : un parcours au hasard parmi ceux qui sont construits (le premier arrivé gagne) !","color":"gray"}]
+execute if score $xc mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance la ","color":"gray"},{"text":"🪽 COURSE D'ÉLYTRES","color":"aqua","bold":true},{"text":" : Canyon du Couchant (18 anneaux, le premier arrivé gagne) !","color":"gray"}]
+execute if score $xc mg.st matches 2 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance la ","color":"gray"},{"text":"🪽 COURSE D'ÉLYTRES","color":"aqua","bold":true},{"text":" : le parcours 2, qui n'est pas encore construit !","color":"gray"}]

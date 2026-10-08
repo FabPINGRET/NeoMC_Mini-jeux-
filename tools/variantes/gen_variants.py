@@ -809,7 +809,7 @@ NATIVE = {
     23: ('Dropper', 2), 25: ('Tube commun', 2), 64: ('Aventure', 3), 65: ('Défi', 3),
     75: ('Course d\'anneaux', 2), 76: ('Course + combat', 3), 77: ('Survie en vol', 4),
     61: ('Circuit Champignon', 2), 62: ('Royaume Koopa', 3), 63: ('Bataille', 2), 56: ('Bateaux sur glace', 2),
-    66: ('Canyon du Couchant', 3), 30: ('Turf Wars', 2),
+    81: ('Canyon du Couchant', 3), 30: ('Turf Wars', 2),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
 }
 SHORT_OPT = {   # boutons de navigation (mg.opt) : noms courts
     24: '➶ OITC ▸', 10: '⚡ Quake ▸', 20: '⚓ Enclumes ▸', 19: '⬇ Dropper ▸', 28: '🪽 Course élytres ▸', 23: '⚔ Arène PvP ▸',
