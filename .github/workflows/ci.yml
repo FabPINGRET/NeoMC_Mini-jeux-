@@ -49,6 +49,46 @@ jobs:
               print('\n'.join(bad[:50])); sys.exit(1)
           print('mcfunction OK')
           PY
+      - name: Désinstallation complète (objectifs, schedule, bossbars, équipes)
+        run: |
+          python3 - <<'PY'
+          import glob, os, re, sys
+          # Tout ce que le pack crée doit être retiré par mg:desinstaller (ou une fonction qu'il appelle)
+          rules = [  # (genre, création, suppression)
+              ('objectif', r'scoreboard objectives add ([^ ]+)', r'scoreboard objectives remove ([^ ]+)'),
+              ('schedule', r'schedule function (mg:[a-z_0-9/]+)', r'schedule clear (mg:[a-z_0-9/]+)'),
+              ('bossbar', r'bossbar add ([^ ]+)', r'bossbar remove ([^ ]+)'),
+              ('équipe', r'team add ([^ ]+)', r'team remove ([^ ]+)'),
+          ]
+          code = {}
+          for f in glob.glob('data/mg/function/**/*.mcfunction', recursive=True):
+              name = 'mg:' + f.replace(os.sep, '/')[len('data/mg/function/'):-len('.mcfunction')]
+              code[name] = [(i, l.strip()) for i, l in enumerate(open(f, encoding='utf-8'), 1)
+                            if l.strip() and not l.strip().startswith('#') and '$(' not in l]
+          # Fonctions atteintes depuis mg:desinstaller
+          todo, seen = ['mg:desinstaller'], set()
+          while todo:
+              fn = todo.pop()
+              if fn in seen or fn not in code:
+                  continue
+              seen.add(fn)
+              for _, s in code[fn]:
+                  todo += re.findall(r'\bfunction (mg:[a-z_0-9/]+)', s)
+          made = {r[0]: {} for r in rules}
+          gone = {r[0]: set() for r in rules}
+          for fn in sorted(code):
+              for i, s in code[fn]:
+                  for kind, add, rm in rules:
+                      for m in re.finditer(add, s):
+                          made[kind].setdefault(m.group(1), f'{fn}:{i}')
+                      if fn in seen:
+                          gone[kind].update(re.findall(rm, s))
+          bad = [f'{made[k][x]}: {k} {x} jamais retiré par mg:desinstaller'
+                 for k in made for x in sorted(made[k]) if x not in gone[k]]
+          if bad:
+              print('\n'.join(bad)); sys.exit(1)
+          print('desinstaller OK')
+          PY
       - name: Lint Spyglass (indicatif)
         continue-on-error: true
         run: |
