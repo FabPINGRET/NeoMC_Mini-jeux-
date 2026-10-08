@@ -184,6 +184,8 @@ execute if score $game mg.st matches 36 run tellraw @a [{"selector":"@s","color"
 execute if score $game mg.st matches 36 if score $pbm mg.st matches 1 run tellraw @a [{"text":"Carte : ","color":"gray"},{"text":"MINI-TERRAIN","color":"gold","bold":true},{"text":" (31×41, 1 min 30 : parties rapides)","color":"gray"}]
 execute if score $game mg.st matches 36 if score $pbm mg.st matches 2 run tellraw @a [{"text":"Carte : ","color":"gray"},{"text":"GRAND TERRAIN","color":"gold","bold":true},{"text":" (81×101, 3 min : grosse bataille)","color":"gray"}]
 execute if score $game mg.st matches 56 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une ","color":"gray"},{"text":"COURSE DE BATEAUX SUR GLACE","color":"aqua","bold":true},{"text":" !","color":"gray"}]
+execute if score $game mg.st matches 84 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⚡ TRON","color":"aqua","bold":true},{"text":" : laisse un mur derrière toi, ne touche aucun mur !","color":"gray"}]
+execute if score $game mg.st matches 85 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🏍 TRON MOTO","color":"gold","bold":true},{"text":" : à cheval, laisse un mur derrière toi, ne touche aucun mur !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 83 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"📞 TÉLÉPHONE","color":"gold","bold":true},{"text":" : mot → construction → devinette → construction → devinette !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
@@ -230,6 +232,7 @@ execute if score $game mg.st matches 31 run function mg:quake/prepare
 execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
+execute if score $game mg.st matches 84..85 run function mg:tron/prepare
 execute if score $game mg.st matches 83 run function mg:tel/prepare
 execute if score $game mg.st matches 59 run function mg:party/prepare
 execute if score $game mg.st matches 61 run function mg:kart/prepare

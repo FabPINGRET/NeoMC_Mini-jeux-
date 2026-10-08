@@ -125,6 +125,25 @@
     {
       "label": [
         {
+          "text": "🕹 Arcade ▸",
+          "color": "light_purple",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Tron…",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 47"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🎉 Fête et création ▸",
           "color": "green",
           "bold": true
@@ -132,7 +151,7 @@
       ],
       "tooltip": [
         {
-          "text": "Mini Party, Build Battle",
+          "text": "Mini Party, Build Battle, Téléphone",
           "color": "gray"
         }
       ],

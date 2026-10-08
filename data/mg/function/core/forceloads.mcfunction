@@ -67,6 +67,8 @@ forceload add -24 15386 24 15514
 forceload add -54 15746 54 15854
 # Téléphone : salle d'attente (les parcelles sont chargées pendant la partie)
 forceload add -8 19412 8 19428
+# Tron (z 20000)
+forceload add -32 19968 32 20032
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl

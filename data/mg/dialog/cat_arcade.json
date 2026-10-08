@@ -1,0 +1,80 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "🕹 Arcade",
+    "color": "light_purple",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Jeux d’adresse et de stratégie.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "⚡ Tron (à pied)",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Laisse un mur derrière toi, ne touche aucun mur",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 84"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🏍 Tron moto",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Pareil, à cheval et beaucoup plus vite",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 85"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au menu",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.menu"
+      }
+    }
+  ]
+}

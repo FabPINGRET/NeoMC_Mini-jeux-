@@ -637,7 +637,7 @@ def known(cmd, label, col, tip=None):
 BODY_NOTE = [{'text': '\nCartes d’origine, puis ✦ variantes (ce jeu sur la carte d’un autre jeu, réglages adaptés). ', 'color': 'gray'},
              {'text': '★', 'color': 'gold'}, {'text': ' facile → ', 'color': 'gray'}, {'text': '★★★★', 'color': 'gold'},
              {'text': ' difficile.', 'color': 'gray'}]
-OPT_CAT = {'sols': 40, 'equipes': 41, 'courses': 42, 'fete': 43, 'votes': 44, 'joueur': 45, 'kart': 46, 'combat': 14}
+OPT_CAT = {'sols': 40, 'equipes': 41, 'courses': 42, 'fete': 43, 'votes': 44, 'joueur': 45, 'kart': 46, 'arcade': 47, 'combat': 14}
 SUB = {'pvp': ('sub_pvparena', 'combat'), 'oitc': ('sub_oitc', 'combat'), 'quake': ('quakemaps', 'combat'),
        'tnttag': ('sub_tnttag', 'combat'), 'spleef': ('sub_spleef', 'sols'), 'tntrun': ('sub_tntrun', 'sols'),
        'splegg': ('sub_splegg', 'sols')}
@@ -706,6 +706,9 @@ CATS = {
         known('trigger mg.go set 56', '⛵ Course de bateaux (glace)', 'aqua'),
         known(OPEN(28), '🪽 Course d\'élytres ▸', 'aqua'), known(OPEN(31), '🪽 Élytra ▸', 'aqua'),
         known(OPEN(19), '⬇ The Dropper ▸', 'aqua')], 'menu'),
+    'arcade': ('🕹 Arcade', 'light_purple', 'Jeux d’adresse et de stratégie.', [
+        act('⚡ Tron (à pied)', 'aqua', 'trigger mg.go set 84', 'Laisse un mur derrière toi, ne touche aucun mur'),
+        act('🏍 Tron moto', 'gold', 'trigger mg.go set 85', 'Pareil, à cheval et beaucoup plus vite')], 'menu'),
     'kart': ('🏎 Kart', 'gold', 'Choisis le circuit.', [
         known('trigger mg.go set 61', '🏎 KART : Circuit Champignon', 'gold'), known('trigger mg.go set 62', '🏎 KART : Royaume Koopa', 'red'),
         known('trigger mg.go set 63', '🎈 KART : Bataille', 'light_purple')], 'courses'),
@@ -750,7 +753,8 @@ d['actions'] = [
     act('⚑ Équipes ▸', 'light_purple', OPEN(41), 'Bedwars, Sheep War, Paintball, Turf Wars', True),
     act('🏁 Courses et vol ▸', 'gold', OPEN(42), 'Kart, bateaux, élytres, Dropper', True),
     known(OPEN(7), '☠ PvE ▸', 'dark_green'),
-    act('🎉 Fête et création ▸', 'green', OPEN(43), 'Mini Party, Build Battle', True),
+    act('🕹 Arcade ▸', 'light_purple', OPEN(47), 'Tron…', True),
+    act('🎉 Fête et création ▸', 'green', OPEN(43), 'Mini Party, Build Battle, Téléphone', True),
     act('☑ Votes ▸', 'green', OPEN(44), 'Voter pour le prochain jeu'),
     act('👤 Joueur et plots ▸', 'aqua', OPEN(45), 'Spectateur, classement, plots'),
     keep.get('trigger mg.sv set 1') or act('🌲 Survie (monde libre)', 'green', 'trigger mg.sv set 1'),
@@ -780,12 +784,14 @@ def drop_lines(rel, lines):
 
 
 drop_lines('core/opt', ['execute if score @s mg.opt matches 32..39 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Menus de lancement réservés aux admins.","color":"red"}',
-                        'execute if score @s mg.opt matches 32..39 if entity @s[tag=mg.admin] run function mg:var/menu/open'])
+                        'execute if score @s mg.opt matches 32..39 if entity @s[tag=mg.admin] run function mg:var/menu/open',
+                        'execute if score @s mg.opt matches 46 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Menus de lancement réservés aux admins : vote plutôt (≡ → ☑ Votes).","color":"red"}',
+                        'execute if score @s mg.opt matches 44..46 if entity @s[tag=mg.admin] run function mg:var/menu/open'])
 patch('core/opt', 'execute if score @s mg.opt matches 1 run function mg:core/opt_spec', [
     'execute if score @s mg.opt matches 32..43 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Menus de lancement réservés aux admins : vote plutôt (≡ → ☑ Votes).","color":"red"}',
-    'execute if score @s mg.opt matches 46 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Menus de lancement réservés aux admins : vote plutôt (≡ → ☑ Votes).","color":"red"}',
+    'execute if score @s mg.opt matches 46..47 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Menus de lancement réservés aux admins : vote plutôt (≡ → ☑ Votes).","color":"red"}',
     'execute if score @s mg.opt matches 32..43 if entity @s[tag=mg.admin] run function mg:var/menu/open',
-    'execute if score @s mg.opt matches 44..46 if entity @s[tag=mg.admin] run function mg:var/menu/open',
+    'execute if score @s mg.opt matches 44..47 if entity @s[tag=mg.admin] run function mg:var/menu/open',
     'execute if score @s mg.opt matches 44..45 unless entity @s[tag=mg.admin] run function mg:var/menu/open'], where='before')
 
 

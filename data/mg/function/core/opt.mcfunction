@@ -6,10 +6,10 @@ execute if score @s mg.opt matches 29..31 unless entity @s[tag=mg.admin] run tel
 execute if score @s mg.opt matches 16..24 unless entity @s[tag=mg.admin] run tellraw @s [{"text":"⚠ Menus de lancement réservés aux admins. ","color":"red"},{"text":"Vote plutôt pour un jeu : fenêtre ☑ VOTES ou /trigger mg.vote","color":"gray"}]
 execute if score @s mg.opt matches 28 unless entity @s[tag=mg.admin] run tellraw @s [{"text":"⚠ Menus de lancement réservés aux admins. ","color":"red"},{"text":"Vote plutôt pour un jeu : fenêtre ☑ VOTES ou /trigger mg.vote","color":"gray"}]
 execute if score @s mg.opt matches 32..43 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Menus de lancement réservés aux admins : vote plutôt (≡ → ☑ Votes).","color":"red"}
-execute if score @s mg.opt matches 46 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Menus de lancement réservés aux admins : vote plutôt (≡ → ☑ Votes).","color":"red"}
 execute if score @s mg.opt matches 32..43 if entity @s[tag=mg.admin] run function mg:var/menu/open
-execute if score @s mg.opt matches 44..46 if entity @s[tag=mg.admin] run function mg:var/menu/open
 execute if score @s mg.opt matches 44..45 unless entity @s[tag=mg.admin] run function mg:var/menu/open
+execute if score @s mg.opt matches 46..47 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Menus de lancement réservés aux admins : vote plutôt (≡ → ☑ Votes).","color":"red"}
+execute if score @s mg.opt matches 44..47 if entity @s[tag=mg.admin] run function mg:var/menu/open
 execute if score @s mg.opt matches 1 run function mg:core/opt_spec
 execute if score @s mg.opt matches 2 run function mg:core/opt_sidebar
 execute if score @s mg.opt matches 11 run function mg:parkour/quit

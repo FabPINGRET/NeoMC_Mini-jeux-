@@ -14,3 +14,4 @@ execute if score @s mg.opt matches 43 run function mg:var/menu/cat_fete
 execute if score @s mg.opt matches 44 run function mg:var/menu/cat_votes
 execute if score @s mg.opt matches 45 run function mg:var/menu/cat_joueur
 execute if score @s mg.opt matches 46 run function mg:var/menu/cat_kart
+execute if score @s mg.opt matches 47 run function mg:var/menu/cat_arcade
