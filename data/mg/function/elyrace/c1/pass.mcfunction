@@ -7,4 +7,4 @@ execute if score @s mg.xa matches 8 run function mg:elyrace/cp_reached
 execute if score @s mg.xa matches 12 run function mg:elyrace/cp_reached
 execute if score @s mg.xa matches 15 run function mg:elyrace/cp_reached
 execute if score @s mg.xa matches 18.. run function mg:elyrace/finish
-function mg:elyrace/hud
+function mg:elyrace/c1/hud

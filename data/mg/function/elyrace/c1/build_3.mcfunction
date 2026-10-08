@@ -1,4 +1,4 @@
-# Course d'élytres : tranche 3 / 11 (x 176 à 271)
+# Course d'élytres : parcours 1, tranche 3 / 11 (x 176 à 271)
 fill 176 252 26868 183 255 26871 minecraft:red_sandstone
 fill 176 252 26872 179 255 26887 minecraft:red_sandstone
 fill 176 252 26860 191 255 26863 minecraft:red_sandstone
@@ -2104,4 +2104,4 @@ forceload remove 176 26848 271 27151
 scoreboard players set $xbk mg.st 4
 scoreboard players set $xbw mg.st 0
 forceload add 272 26848 367 27151
-schedule function mg:elyrace/build_wait 20t
+schedule function mg:elyrace/c1/build_wait 20t

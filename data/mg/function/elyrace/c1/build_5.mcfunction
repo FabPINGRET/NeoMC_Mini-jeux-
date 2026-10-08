@@ -1,4 +1,4 @@
-# Course d'élytres : tranche 5 / 11 (x 368 à 463)
+# Course d'élytres : parcours 1, tranche 5 / 11 (x 368 à 463)
 fill 368 226 27108 371 228 27111 minecraft:red_sandstone
 fill 368 203 26896 383 206 26899 minecraft:orange_terracotta
 fill 368 115 26936 375 118 26939 minecraft:white_terracotta
@@ -1543,4 +1543,4 @@ forceload remove 368 26848 463 27151
 scoreboard players set $xbk mg.st 6
 scoreboard players set $xbw mg.st 0
 forceload add 464 26848 559 27151
-schedule function mg:elyrace/build_wait 20t
+schedule function mg:elyrace/c1/build_wait 20t

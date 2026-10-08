@@ -1,6 +1,6 @@
 # Course d'élytres : tick de jeu
 scoreboard players add $xt mg.st 1
-execute as @a[tag=mg.play,scores={mg.xf=0}] run function mg:elyrace/player
+execute unless score $xc mg.st matches 2.. as @e[type=player,tag=mg.play,scores={mg.xf=0}] run function mg:elyrace/c1/player
 scoreboard players operation $xm mg.st = $xt mg.st
 scoreboard players operation $xm mg.st %= #k10 mg.st
 execute if score $xm mg.st matches 0 as @a[tag=mg.play,scores={mg.xf=0}] run function mg:elyrace/hud

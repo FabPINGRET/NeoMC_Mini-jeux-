@@ -1,4 +1,4 @@
-# Course d'élytres : tranche 1 / 11 (x -16 à 79)
+# Course d'élytres : parcours 1, tranche 1 / 11 (x -16 à 79)
 fill -16 244 26848 39 244 26891 minecraft:white_terracotta
 fill -16 245 26848 39 247 26899 minecraft:yellow_terracotta
 fill -16 248 26848 31 249 27151 minecraft:light_gray_terracotta
@@ -477,4 +477,4 @@ forceload remove -16 26848 79 27151
 scoreboard players set $xbk mg.st 2
 scoreboard players set $xbw mg.st 0
 forceload add 80 26848 175 27151
-schedule function mg:elyrace/build_wait 20t
+schedule function mg:elyrace/c1/build_wait 20t

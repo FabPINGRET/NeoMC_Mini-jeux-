@@ -5,5 +5,6 @@ scoreboard players set $dlg mg.st 0
 execute store success score $dlg mg.st run dialog show @s mg:sub_elyrace
 execute if score $dlg mg.st matches 1 run return 0
 tellraw @s [{"text":"\n🪽 Course d'élytres — choisis un parcours","color":"aqua","bold":true}]
-tellraw @s ["",{"text":" [🏜 Canyon du Couchant]","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 66"},"hover_event":{"action":"show_text","value":"Parcours 1 (Far West, ~1000 blocs) : slalom entre cheminées de fée, arches, viaduc ferroviaire, gorge en S, crête, ville fantôme. 18 anneaux, 3 anneaux d'or, 4 points de reprise, 3 cœurs."}}]
-tellraw @s ["",{"text":" [« Retour au menu]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.menu"}}]
+tellraw @s ["",{"text":" [🎲 Au hasard]","color":"light_purple","click_event":{"action":"run_command","command":"trigger mg.go set 66"},"hover_event":{"action":"show_text","value":"Un parcours tiré au hasard parmi ceux qui sont construits."}}]
+tellraw @s ["",{"text":" [🏜 Canyon du Couchant ","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 81"},"hover_event":{"action":"show_text","value":"Parcours 1 (Far West, ~1000 blocs) : slalom entre cheminées de fée, arches, viaduc ferroviaire, gorge en S, crête, ville fantôme. 18 anneaux, 3 anneaux d'or, 4 points de reprise, 3 cœurs."}},{"text":"★★★","color":"gold"},{"text":"☆]","color":"dark_gray"}]
+tellraw @s ["",{"text":" [« Retour]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.opt set 42"}}]

@@ -8,19 +8,26 @@ Methode : le profil d'altitude est derive d'un vol de reference simule (glide.Pi
 place sur une trajectoire physiquement realisable ; le relief est ensuite construit autour de cette trajectoire.
 Python stdlib uniquement (compatible 3.8).
 """
-import math
+import sys
 
+import course_common as CC
+import frames as F
 import glide as G
 import terrain as T
 
-KEY = 'canyon'
+NUM = 1                                      # numero de parcours : dossier elyrace/c1/, drapeau de construction, bouton du menu
+NAME = 'Canyon du Couchant'
+ICON, COLOR, STARS = '🏜', 'gold', 3                      # bouton du menu : icone (menu texte), couleur, difficulte (etoiles sur 4)
+TIP = ('Parcours 1 (Far West, ~1000 blocs) : slalom entre cheminées de fée, arches, viaduc ferroviaire, gorge en S, crête, '
+       'ville fantôme.')
+FLAG = 'v1'                                  # drapeau de construction (stockage mg:elyrace) : pose par la derniere tranche
 CZ = 27000                                   # axe du parcours (z)
 X0, X1 = -16, 1040                           # emprise en x (66 chunks)
 Z0, Z1 = 26848, 27152                        # emprise en z (19 chunks)
 MESA = 250                                   # surface de la mesa de depart (bloc) : les pieds sont a y 251
+START_Y = MESA + 1                           # altitude des pieds sur la plateforme de depart
 EDGE_X = 32                                  # bord de la falaise
 GATE_X = 27                                  # portillon de depart (x), devant les joueurs
-HOLE = 9                                     # trou des anneaux : 9 x 9
 FRAME = 8                                    # demi-cote exterieur du cadre (17 x 17)
 TV, TH = 6, 2                                # epaisseur de la coque : verticale (blocs), horizontale (cellules)
 ROWS = 4                                     # lignes de joueurs sur la plateforme de depart
@@ -38,6 +45,9 @@ RINGS = [
 ]
 CPS = [4, 8, 12, 15]                         # un point de reprise apres ces anneaux (numeros d'anneau)
 GOLDS = [(481, 9), (638, -9), (842, 9)]   # anneaux d'or : (x, decalage lateral) ; altitude = trajectoire
+WINDS = []                                   # anneaux de vent : aucun sur ce parcours
+R_UP = {n: 28 for n in CPS}                  # hauteur de reapparition au-dessus du centre de l'anneau de chaque point de reprise
+                                             # (valide pour 12 a 20 ticks de chute avant l'ouverture, mesure sur les 4 reprises)
 
 
 def ydes(x):
@@ -58,34 +68,7 @@ def reference_waypoints(step=12):
 
 def start_state():
     """Etat du joueur qui saute de la mesa : il a couru jusqu'au bord, chute 8 ticks avant d'ouvrir ses elytres."""
-    return G.State(EDGE_X + 0.3, MESA + 1, CZ + 0.5, 0.28, 0.0, 0.0)
-
-
-def reference():
-    """Vol de reference en l'air libre : renvoie la liste des anneaux [(x, cy, cz, zone)] (cy, cz = centre du trou)."""
-    air = lambda x, y, z: y < 0
-    s = start_state()
-    G.freefall(air, s, G.OPEN_DELAY)
-    tr = []
-    ok, why, _, _ = G.fly(air, s, G.Pilot(reference_waypoints()), trace=tr)
-    if not ok:
-        raise SystemExit('vol de reference impossible : ' + why)
-    out = []
-    for x, d, zone in RINGS:
-        y, z = interp_yz(tr, x)
-        out.append((x, y, z, zone))
-    return out, tr
-
-
-def interp_yz(tr, x):
-    """(cy, cz) : bloc central du trou pour une trajectoire qui franchit le plan x (centre du joueur = centre du trou)."""
-    for a, b in zip(tr, tr[1:]):
-        if a[0] < x <= b[0]:
-            t = (x - a[0]) / (b[0] - a[0])
-            y = a[1] + (b[1] - a[1]) * t + G.BOX_H / 2
-            z = a[2] + (b[2] - a[2]) * t
-            return int(math.floor(y)), int(math.floor(z))
-    raise SystemExit('trajectoire de reference trop courte pour x=%d' % x)
+    return G.State(EDGE_X + 0.3, START_Y, CZ + 0.5, 0.28, 0.0, 0.0)
 
 
 # ---------------------------------------------------------------- relief
@@ -96,21 +79,6 @@ HALFW = [(0, 60), (300, 55), (450, 50), (520, 56), (640, 52), (665, 30), (715, 2
          (915, 52), (950, 80), (1040, 95)]
 Q = 3                                        # quantification des hauteurs : terrasses de 3 blocs
 SLOPE = 2.2                                  # pente des parois : blocs de hauteur par bloc horizontal
-
-
-class Path:
-    """Altitude de la trajectoire de reference a chaque abscisse entiere."""
-
-    def __init__(self, tr):
-        self.ys = {}
-        for a, b in zip(tr, tr[1:]):
-            for x in range(int(math.ceil(a[0])), int(math.floor(b[0])) + 1):
-                if a[0] <= x <= b[0] and b[0] > a[0]:
-                    self.ys[x] = a[1] + (b[1] - a[1]) * (x - a[0]) / (b[0] - a[0])
-        self.lo, self.hi = min(self.ys), max(self.ys)
-
-    def y(self, x):
-        return self.ys[max(self.lo, min(self.hi, int(round(x))))]
 
 
 def floor_y(path, x):
@@ -143,28 +111,13 @@ def relief(path):
     return w
 
 
-class Course:
-    """Resultat de build() : tout ce qu'il faut pour generer les fonctions et verifier le parcours."""
-
-    def __init__(self):
-        self.rings = []          # [(x, cy, cz, zone)]
-        self.golds = []          # [(x, cy, cz)]
-        self.cps = []            # [numero d'anneau] ; positions de reprise ajoutees par verify
-        self.world = None
-        self.path = None
-        self.trace = None
-        self.strata = None
-        self.rects = []          # relief : [(x1, y1, z1, x2, y2, z2, bloc)]
-        self.places = []         # [(x, z)] places de depart sur la plateforme
-
-
 def build():
     """Construit le parcours complet (relief, decors, anneaux). Retourne un Course."""
     import props_canyon as P
     import town_canyon as TW
-    c = Course()
-    c.rings, c.trace = reference()
-    c.path = Path(c.trace)
+    c = CC.Course(sys.modules[__name__])
+    c.rings, c.trace = CC.reference(c.spec)
+    c.path = CC.Path(c.trace)
     c.strata = T.make_strata(7, PALETTE)
     w = c.world = relief(c.path)
     for x, cy, cz, zone in c.rings:
@@ -182,13 +135,13 @@ def build():
             break
     TW.town(w)
     for n, (x, cy, cz, zone) in enumerate(c.rings, 1):
-        P.ring_frame(w, x, cy, cz, 'finish' if n == len(c.rings) else 'ring')
+        F.ring_frame(w, x, cy, cz, 'finish' if n == len(c.rings) else 'ring')
     c.cps = list(CPS)
     for gx, gy, gz in c.golds:
-        P.gold_frame(w, gx, gy, gz)
+        F.gold_frame(w, gx, gy, gz)
     for n in CPS:
         x, cy, cz, zone = c.rings[n - 1]
-        P.cp_gate(w, x, cy, cz)
+        F.cp_gate(w, x, cy, cz)
     for r in range(ROWS * 4):                              # places de depart : deux rangees de 8 (16 places)
         c.places.append((GATE_X - 2 - 4 * (r // 8), CZ - 10 + 3 * (r % 8)))
     return c

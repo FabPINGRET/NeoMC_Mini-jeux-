@@ -1,4 +1,4 @@
-# Course d'élytres : tranche 10 / 11 (x 848 à 943)
+# Course d'élytres : parcours 1, tranche 10 / 11 (x 848 à 943)
 fill 848 160 26904 879 162 26907 minecraft:red_sandstone
 fill 848 160 26900 879 162 26903 minecraft:red_sandstone
 fill 848 152 26904 915 159 26907 minecraft:brown_terracotta
@@ -1471,4 +1471,4 @@ forceload remove 848 26848 943 27151
 scoreboard players set $xbk mg.st 11
 scoreboard players set $xbw mg.st 0
 forceload add 944 26848 1039 27151
-schedule function mg:elyrace/build_wait 20t
+schedule function mg:elyrace/c1/build_wait 20t

@@ -1,2 +1,2 @@
-forceload remove -16 26968 80 27032
-function mg:core/forceloads
+# Libère le chargement forcé de la zone de départ du parcours $xc
+execute if score $xc mg.st matches 1 run function mg:elyrace/c1/fl_remove

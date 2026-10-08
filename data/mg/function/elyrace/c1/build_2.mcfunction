@@ -1,4 +1,4 @@
-# Course d'élytres : tranche 2 / 11 (x 80 à 175)
+# Course d'élytres : parcours 1, tranche 2 / 11 (x 80 à 175)
 fill 80 238 26896 155 241 26899 minecraft:red_terracotta
 fill 80 242 26896 155 244 26899 minecraft:white_terracotta
 fill 80 226 26900 151 228 26907 minecraft:red_sandstone
@@ -1126,4 +1126,4 @@ forceload remove 80 26848 175 27151
 scoreboard players set $xbk mg.st 3
 scoreboard players set $xbw mg.st 0
 forceload add 176 26848 271 27151
-schedule function mg:elyrace/build_wait 20t
+schedule function mg:elyrace/c1/build_wait 20t

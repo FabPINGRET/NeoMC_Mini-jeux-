@@ -1,4 +1,4 @@
-# Course d'élytres : tranche 11 / 11 (x 944 à 1039)
+# Course d'élytres : parcours 1, tranche 11 / 11 (x 944 à 1039)
 fill 944 57 26948 1039 59 26955 minecraft:yellow_terracotta
 fill 944 57 27068 1039 59 27071 minecraft:yellow_terracotta
 fill 944 145 27108 947 147 27111 minecraft:granite
@@ -963,3 +963,6 @@ forceload remove 944 26848 1039 27151
 function mg:core/forceloads
 data modify storage mg:elyrace v1 set value 1b
 tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Course d'élytres : Canyon du Couchant construit.","color":"green"}]
+# construction terminée : $xbk à 0 (sinon build_next se croirait encore en construction), puis parcours suivant s'il en reste un
+scoreboard players set $xbk mg.st 0
+function mg:elyrace/build_next

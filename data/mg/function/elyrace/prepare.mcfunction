@@ -1,17 +1,13 @@
-# Course d'élytres : préparation (parcours 1 : Canyon du Couchant)
-# parcours pas (entièrement) construit : on n'envoie personne dedans, partie annulée
-execute unless data storage mg:elyrace v1 run tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] Course d'élytres : le parcours n'est pas (entièrement) construit, lance /function mg:elyrace/build","color":"red"}]
-execute unless data storage mg:elyrace v1 run tellraw @a[tag=mg.play] [{"text":"🪽 Le parcours n'est pas encore construit : partie annulée.","color":"red"}]
-execute unless data storage mg:elyrace v1 run return run function mg:core/draw
+# Course d'élytres : préparation (parcours $xc : 0 = au hasard parmi les parcours construits)
+execute if score $xc mg.st matches 0 run function mg:elyrace/pick
+# parcours pas construit (ou pas encore écrit) : on n'envoie personne dedans, partie annulée
+execute if score $xc mg.st matches 0 run return run function mg:elyrace/not_built
+execute if score $xc mg.st matches 1 unless data storage mg:elyrace v1 run return run function mg:elyrace/not_built
+execute if score $xc mg.st matches 2 run return run function mg:elyrace/not_available
 # restes d'une partie précédente
 tag @a remove mg.xw1
 tag @a remove mg.xtp
-function mg:elyrace/fl_add
-function mg:elyrace/gate_on
-# perchoir des spectateurs (éliminés / reconnectés)
-scoreboard players set $px mg.st 24
-scoreboard players set $py mg.st 270
-scoreboard players set $pz mg.st 27000
+execute if score $xc mg.st matches 1 run function mg:elyrace/c1/setup
 gamemode adventure @a[tag=mg.play]
 clear @a[tag=mg.play]
 scoreboard players set @a[tag=mg.play] mg.deaths 0
@@ -40,5 +36,4 @@ scoreboard players set #krel mg.st 30
 scoreboard players set $ri mg.st 0
 execute as @a[tag=mg.play] run function mg:elyrace/equip
 execute as @a[tag=mg.play] run function mg:elyrace/place_one
-execute as @a[tag=mg.play] run spawnpoint @s 24 251 27000
 scoreboard objectives setdisplay sidebar mg.xa

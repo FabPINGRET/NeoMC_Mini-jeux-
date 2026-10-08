@@ -75,6 +75,11 @@ execute if score $game mg.st matches 32..35 run scoreboard players set $game mg.
 execute if score $game mg.st matches 79 run scoreboard players set $qm mg.st 8
 execute if score $game mg.st matches 80 run scoreboard players set $qm mg.st 9
 execute if score $game mg.st matches 79..80 run scoreboard players set $game mg.st 31
+# Course d'élytres : 66 = parcours au hasard, 81..82 = parcours 1..2 (81 Canyon du Couchant, 82 Pic Blanc) → jeu 66 + parcours $xc (0 = au hasard)
+scoreboard players set $xc mg.st 0
+execute if score $game mg.st matches 81..82 run scoreboard players operation $xc mg.st = $game mg.st
+execute if score $game mg.st matches 81..82 run scoreboard players remove $xc mg.st 80
+execute if score $game mg.st matches 81..82 run scoreboard players set $game mg.st 66
 scoreboard players set $pm mg.st 0
 execute if score $game mg.st matches 44..45 run scoreboard players set $pm mg.st 1
 execute if score $game mg.st matches 47..48 run scoreboard players set $pm mg.st 2
@@ -150,7 +155,7 @@ execute if score $game mg.st matches 22 if score $sg mg.st matches 1 run tellraw
 execute if score $game mg.st matches 22 unless score $sg mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"SUMO","color":"gold","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 23 if score $sg mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"THE DROPPER — TUBE COMMUN","color":"aqua","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 65 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⬇ DROPPER : DÉFI","color":"aqua","bold":true},{"text":" (même puits pour tous, niveau au hasard, premier à 3 manches) !","color":"gray"}]
-execute if score $game mg.st matches 66 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance la ","color":"gray"},{"text":"🪽 COURSE D'ÉLYTRES","color":"aqua","bold":true},{"text":" : Canyon du Couchant (18 anneaux, le premier arrivé gagne) !","color":"gray"}]
+execute if score $game mg.st matches 66 run function mg:elyrace/announce
 execute if score $game mg.st matches 64 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⬇ THE DROPPER : AVENTURE","color":"aqua","bold":true},{"text":" (10 niveaux à thème, le premier qui les finit gagne) !","color":"gray"}]
 execute if score $game mg.st matches 23 unless score $sg mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"THE DROPPER","color":"aqua","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 26 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"ONE IN THE CHAMBER","color":"gold","bold":true},{"text":" !","color":"gray"}]
