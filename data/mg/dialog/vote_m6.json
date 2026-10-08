@@ -1,0 +1,158 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "🗺 VOTE : ☁ Sheep War",
+    "color": "white",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Vote pour une carte (★ = variante, ★ facile → ★★★★ difficile).",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🎲 ☁ Sheep War (carte au hasard)",
+          "color": "white"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Vote pour le jeu, sans choisir la carte",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 6"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☁ Sheep War : classique",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1005"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☁ Forteresses",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1007"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☁ Bastions (petite carte)",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1014"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▣ Cubes Voxel",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1015"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▼ Pyramides inversées",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1016"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "♨❄ Archipel bicolore",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1017"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "≋ Double canyon",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1018"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "☁ Nuages voxel",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1019"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Autres jeux",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 91"
+      }
+    }
+  ]
+}

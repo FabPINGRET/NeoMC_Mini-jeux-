@@ -1,0 +1,110 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "🗺 VOTE : ⬇ The Dropper",
+    "color": "aqua",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Vote pour une carte (★ = variante, ★ facile → ★★★★ difficile).",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🎲 ⬇ The Dropper (carte au hasard)",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Vote pour le jeu, sans choisir la carte",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 10"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⬇ The Dropper",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1023"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⬇ Dropper : tube commun",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1025"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⬇ Dropper : Aventure",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1064"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⬇ Dropper : Défi",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1065"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Autres jeux",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 91"
+      }
+    }
+  ]
+}

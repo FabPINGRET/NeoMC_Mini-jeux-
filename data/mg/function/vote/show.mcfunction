@@ -23,3 +23,5 @@ execute if score Course-glace mg.vb matches 1.. run tellraw @s [{"text":" ▸ ",
 execute if score Build-mots mg.vb matches 1.. run tellraw @s [{"text":" ▸ ","color":"gray"},{"text":"✎ Build Battle (thème aléatoire)","color":"green"},{"text":" : ","color":"gray"},{"score":{"name":"Build-mots","objective":"mg.vb"},"color":"gold","bold":true}]
 execute if score Build-maitre mg.vb matches 1.. run tellraw @s [{"text":" ▸ ","color":"gray"},{"text":"✎ Build Battle (Maître du mot)","color":"dark_aqua"},{"text":" : ","color":"gray"},{"score":{"name":"Build-maitre","objective":"mg.vb"},"color":"gold","bold":true}]
 execute if score Elytra mg.vb matches 1.. run tellraw @s [{"text":" ▸ ","color":"gray"},{"text":"🪽 Élytra (mode au hasard)","color":"aqua"},{"text":" : ","color":"gray"},{"score":{"name":"Elytra","objective":"mg.vb"},"color":"gold","bold":true}]
+
+function mg:vote/map_show

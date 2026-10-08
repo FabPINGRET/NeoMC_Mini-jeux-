@@ -1,0 +1,368 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "🗺 VOTE : ➶ One in the Chamber",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Vote pour une carte (★ = variante, ★ facile → ★★★★ difficile).",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🎲 ➶ One in the Chamber (carte au hasard)",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Vote pour le jeu, sans choisir la carte",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 17"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "➶ One in the Chamber",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1026"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "➶ OITC : Château",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1052"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "➶ OITC : Grande forêt",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1053"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Poussière ★★☆☆",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Variante : carte PvP (style Dust, 43×43, couloirs et tunnels) · réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1115"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Mirage ★★☆☆",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Variante : carte PvP (style Mirage, 43×43, appartements et fenêtre) · réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1116"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Nuketown ★★☆☆",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Variante : carte PvP (deux maisons face à face, bus au milieu) · réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1117"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Néon ★★☆☆",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Variante : carte Quakecraft (33×33, couloirs lumineux) · réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1118"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Volcan ★★★☆",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Variante : carte Quakecraft (63×63, coulées de magma (ça brûle !)) · réglages : flèche enchantée toutes les 45 s, 10 kills",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1119"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Jungle ★★★☆",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Variante : carte Quakecraft (63×63, végétation dense) · réglages : flèche enchantée toutes les 45 s, 10 kills",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1120"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Désert ★★☆☆",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Variante : carte Quakecraft (33×33, ruines de grès) · réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1121"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Glacier ★★★☆",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Variante : carte Quakecraft (21×21, minuscule) · réglages : flèche enchantée toutes les 45 s, 10 kills",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1122"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Arène TNT Tag ★★☆☆",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Variante : carte TNT Tag (31×31, piliers et murets) · réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1123"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Collines ★★☆☆",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Variante : carte TNT Tag (51×51, prairie vallonnée, rivière, moulin) · réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1124"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Canyon ★★☆☆",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Variante : carte TNT Tag (51×51, mesa à plateaux, arche, pont suspendu) · réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1125"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Village perché ★★☆☆",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Variante : carte TNT Tag (51×51, toits, passerelles, clocher) · réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1126"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Terrain de paintball ★★☆☆",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Variante : carte Paintball (49×61, murets blancs) · réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1127"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Mini-terrain ★★☆☆",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Variante : carte Paintball (29×39, rapide) · réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1128"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Grand terrain ★★★★",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Variante : carte Paintball (79×99, immense) · réglages : aucune flèche enchantée, 12 kills",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1129"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Autres jeux",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 91"
+      }
+    }
+  ]
+}

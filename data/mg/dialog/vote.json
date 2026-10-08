@@ -23,6 +23,25 @@
     {
       "label": [
         {
+          "text": "🗺 Voter pour une carte ▸",
+          "color": "green",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Choisis la carte précise (cartes d’origine et variantes ★)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 91"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "⚔ PvP ▸",
           "color": "gold"
         }

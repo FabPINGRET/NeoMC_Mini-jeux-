@@ -1,0 +1,98 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "🗺 VOTE : ▓ Paintball",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Vote pour une carte (★ = variante, ★ facile → ★★★★ difficile).",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🎲 ▓ Paintball (carte au hasard)",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Vote pour le jeu, sans choisir la carte",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 16"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▓ Paintball (Splatoon)",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1036"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▓ Paintball : Mini-terrain",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1054"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "▓ Paintball : Grand terrain",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1055"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Autres jeux",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 91"
+      }
+    }
+  ]
+}

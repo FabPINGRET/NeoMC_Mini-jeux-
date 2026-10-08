@@ -1,5 +1,6 @@
 # Menu de vote en chat cliquable (@s = joueur)
 tellraw @s [{"text":"\n☑ VOTE : quel jeu veux-tu jouer ? ","color":"green","bold":true},{"text":"(clique)","color":"gray"}]
+tellraw @s ["",{"text":" [🗺 Voter pour une carte précise ▸]","color":"green","bold":true,"click_event":{"action":"run_command","command":"trigger mg.vote set 91"}}]
 tellraw @s ["",{"text":" [❄ Spleef]","color":"aqua","click_event":{"action":"run_command","command":"trigger mg.vote set 1"},"hover_event":{"action":"show_text","value":"Voter pour ce jeu"}}]
 tellraw @s ["",{"text":" [✷ TNT Run]","color":"red","click_event":{"action":"run_command","command":"trigger mg.vote set 2"},"hover_event":{"action":"show_text","value":"Voter pour ce jeu"}}]
 tellraw @s ["",{"text":" [⚔ Arène PvP]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.vote set 3"},"hover_event":{"action":"show_text","value":"Voter pour ce jeu"}}]

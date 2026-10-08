@@ -1,0 +1,13 @@
+# Repli chat : cartes de ☠ Mob Arena (@s). Généré.
+tellraw @s [{"text":"\n🗺 VOTE : ☠ Mob Arena ","color":"dark_green","bold":true},{"text":"(clique une carte)","color":"gray"}]
+tellraw @s ["",{"text":" [☠ Classique]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1006"}}]
+tellraw @s ["",{"text":" [♨ Nether]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1008"}}]
+tellraw @s ["",{"text":" [✦ End]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1009"}}]
+tellraw @s ["",{"text":" [☠ ULTRA HARD]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1010"}}]
+tellraw @s ["",{"text":" [☁ Volant]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1011"}}]
+tellraw @s ["",{"text":" [✷ Araignée]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1012"}}]
+tellraw @s ["",{"text":" [☠ Cathédrale maudite (20 vagues)]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1037"}}]
+tellraw @s ["",{"text":" [⚗ Laboratoire alchimique (20 vagues)]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1038"}}]
+tellraw @s ["",{"text":" [Ψ Temple des profondeurs (20 vagues)]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1039"}}]
+tellraw @s ["",{"text":" [♨ Forge du Titan (20 vagues)]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1040"}}]
+tellraw @s ["",{"text":" [✦ Vaisseau cybernétique (20 vagues)]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1041"}}]

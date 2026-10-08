@@ -134,4 +134,5 @@ execute if score $vwin mg.st matches 20 run tellraw @a [{"text":"☑ Le vote dé
 execute if score $vwin mg.st matches 20 run scoreboard players set @s mg.go 58
 execute if score $vwin mg.st matches 21 run tellraw @a [{"text":"☑ Le vote désigne ","color":"gray"},{"text":"🪽 Élytra (mode au hasard)","color":"aqua","bold":true},{"text":" ("},{"score":{"name":"Elytra","objective":"mg.vb"},"color":"gold"},{"text":" vote(s)) !","color":"gray"}]
 execute if score $vwin mg.st matches 21 run scoreboard players set @s mg.go 78
+function mg:vote/map_pick
 function mg:core/go

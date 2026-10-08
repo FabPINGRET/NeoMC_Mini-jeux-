@@ -1,0 +1,110 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "🗺 VOTE : ⚔ PvP classes",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Vote pour une carte (★ = variante, ★ facile → ★★★★ difficile).",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🎲 ⚔ PvP classes (carte au hasard)",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Vote pour le jeu, sans choisir la carte",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 4"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP : classes",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1013"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP classes : Poussière",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1045"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP classes : Mirage",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1048"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚔ PvP classes : Nuketown",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1051"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Autres jeux",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 91"
+      }
+    }
+  ]
+}
