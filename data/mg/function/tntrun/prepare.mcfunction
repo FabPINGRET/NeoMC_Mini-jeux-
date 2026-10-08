@@ -1,4 +1,5 @@
 # TNT Run — préparation
+execute if score $ar mg.st matches 1.. run return run function mg:var/mode/tntrun_prepare
 function mg:tntrun/build
 
 scoreboard players set $px mg.st 0

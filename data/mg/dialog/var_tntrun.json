@@ -1,0 +1,228 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "✷ TNT Run — variantes",
+    "color": "red",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Le mode sur les cartes des autres jeux. ",
+          "color": "gray"
+        },
+        {
+          "text": "★",
+          "color": "gold"
+        },
+        {
+          "text": " facile → ",
+          "color": "gray"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": " difficile (la difficulté change aussi les réglages).",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🎲 Variante au hasard",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Une des 5 variantes, tirée au sort",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 195"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Tour de Spleef ",
+          "color": "aqua"
+        },
+        {
+          "text": "★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte Spleef : 4 étages qui rétrécissent (29 → 17)\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : les blocs tiennent 0,6 s",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 159"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Splegg XXL ",
+          "color": "gold"
+        },
+        {
+          "text": "★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte Splegg : 3 étages géants (61 → 45)\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : les blocs tiennent 0,6 s",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 161"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Cube de Splegg ",
+          "color": "yellow"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte Splegg : 3 grands étages identiques (37×37)\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : les blocs tiennent 0,45 s",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 160"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Pyramide ",
+          "color": "light_purple"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte nouveau : 5 étages en pyramide, de plus en plus petits\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : les blocs tiennent 0,35 s",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 162"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Anneaux ",
+          "color": "dark_aqua"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": "",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Carte nouveau : anneau troué, plateau central, anneau large\n",
+          "color": "gray"
+        },
+        {
+          "text": "Réglages : les blocs tiennent 0,25 s",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 163"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Toutes les variantes",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 32"
+      }
+    }
+  ]
+}

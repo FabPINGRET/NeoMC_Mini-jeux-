@@ -7,6 +7,7 @@ kill @e[tag=mg.mob]
 kill @e[tag=mg.sheep]
 kill @e[tag=mg.npc]
 forceload remove all
+data remove storage mg:var a
 scoreboard objectives setdisplay sidebar
 scoreboard objectives setdisplay list
 scoreboard objectives setdisplay below_name

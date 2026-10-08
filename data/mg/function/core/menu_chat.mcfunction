@@ -15,6 +15,7 @@ tellraw @s ["",{"text":" [✎ Build Battle ▸]","color":"green","click_event":{
 
 tellraw @s ["",{"text":" [✹ TNT Tag ▸]","color":"red","click_event":{"action":"run_command","command":"trigger mg.opt set 29"},"hover_event":{"action":"show_text","value":"La patate chaude : choisis la carte"}}]
 tellraw @s ["",{"text":" [🪽 Élytra ▸]","color":"aqua","click_event":{"action":"run_command","command":"trigger mg.opt set 31"},"hover_event":{"action":"show_text","value":"Course d'anneaux, course + combat, survie en vol"}}]
+tellraw @s ["",{"text":" [★ Variantes (68) ▸]","color":"gold","click_event":{"action":"run_command","command":"trigger mg.opt set 32"},"hover_event":{"action":"show_text","value":"Chaque mode sur les cartes des autres jeux, de ★ à ★★★★"}}]
 tellraw @s ["",{"text":" [▦ Block Party]","color":"light_purple","click_event":{"action":"run_command","command":"trigger mg.go set 28"},"hover_event":{"action":"show_text","value":"Cours sur la bonne couleur avant que le sol disparaisse"}}]
 tellraw @s ["",{"text":" [▮ Turf Wars]","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 30"},"hover_event":{"action":"show_text","value":"Deux équipes : convertis les colonnes ennemies à coups de flèches"}}]
 tellraw @s ["",{"text":" [⛵ Course de bateaux (glace)]","color":"aqua","click_event":{"action":"run_command","command":"trigger mg.go set 56"},"hover_event":{"action":"show_text","value":"Circuit de glace de 300 blocs, 3 tours : le premier qui finit gagne"}}]

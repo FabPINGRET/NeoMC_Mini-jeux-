@@ -9,7 +9,8 @@ execute if score $dk mg.st matches ..0 run function mg:tntrun/decay
 
 # Chute finale → éliminé
 execute as @a[tag=mg.play] store result score @s mg.t run data get entity @s Pos[1]
-execute as @a[tag=mg.play,scores={mg.t=..58}] run function mg:core/eliminate
+execute if score $ar mg.st matches 0 as @a[tag=mg.play,scores={mg.t=..58}] run function mg:core/eliminate
+execute if score $ar mg.st matches 1.. as @a[tag=mg.play] if score @s mg.t <= $ky mg.st run function mg:core/eliminate
 
 # Mort accidentelle → éliminé
 execute as @a[tag=mg.play,scores={mg.deaths=1..}] run function mg:core/eliminate

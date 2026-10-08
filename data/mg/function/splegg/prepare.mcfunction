@@ -1,4 +1,5 @@
 # Splegg — préparation (centre 0 ~ 4200) ; $sg = 1 → version XXL
+execute if score $ar mg.st matches 1.. run return run function mg:var/mode/splegg_prepare
 execute if score $sg mg.st matches 1 run return run function mg:splegg/prepare_xxl
 # 3 étages (y 80 / 74 / 68) : élimination sous le dernier
 scoreboard players set $yd mg.st 62

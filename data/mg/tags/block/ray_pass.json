@@ -1,0 +1,34 @@
+{
+  "values": [
+    "#minecraft:air",
+    "minecraft:short_grass",
+    "minecraft:tall_grass",
+    "minecraft:fern",
+    "minecraft:large_fern",
+    "#minecraft:small_flowers",
+    "minecraft:dead_bush",
+    "#minecraft:wool_carpets",
+    "minecraft:moss_carpet",
+    "minecraft:water",
+    "minecraft:snow",
+    "minecraft:vine",
+    "minecraft:light",
+    "minecraft:sugar_cane",
+    {
+      "id": "minecraft:short_dry_grass",
+      "required": false
+    },
+    {
+      "id": "minecraft:tall_dry_grass",
+      "required": false
+    },
+    {
+      "id": "minecraft:bush",
+      "required": false
+    },
+    {
+      "id": "minecraft:leaf_litter",
+      "required": false
+    }
+  ]
+}

@@ -45,4 +45,11 @@ scoreboard players set $mgp43 mg.st 0
 scoreboard players set $mgp44 mg.st 0
 scoreboard players set $mgp45 mg.st 0
 scoreboard players set $mgp46 mg.st 0
-scoreboard players set $mgr mg.st 46
+scoreboard players set $mgp47 mg.st 0
+scoreboard players set $mgp48 mg.st 0
+scoreboard players set $mgp49 mg.st 0
+scoreboard players set $mgp50 mg.st 0
+scoreboard players set $mgp51 mg.st 0
+scoreboard players set $mgp52 mg.st 0
+scoreboard players set $mgp53 mg.st 0
+scoreboard players set $mgr mg.st 53

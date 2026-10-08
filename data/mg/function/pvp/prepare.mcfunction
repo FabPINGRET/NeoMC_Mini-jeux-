@@ -1,4 +1,5 @@
 # Arène PvP — préparation
+execute if score $ar mg.st matches 1.. run return run function mg:var/mode/pvp_prepare
 execute if score $pm mg.st matches 1 run return run function mg:pvp/prepare_dust
 execute if score $pm mg.st matches 2 run return run function mg:pvp/prepare_mirage
 execute if score $pm mg.st matches 3 run return run function mg:pvp/prepare_nuketown

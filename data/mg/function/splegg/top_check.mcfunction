@@ -1,5 +1,6 @@
 # Splegg : un seul joueur reste sur l'étage occupé le plus haut (les autres sont en dessous) → cet étage disparaît après 5 s
 # (évite les parties bloquées). Appelé chaque tick après le calcul de mg.t (hauteur des joueurs). $tff = étage visé (0 = aucun), $tfc = ticks restants
+execute if score $ar mg.st matches 1.. run return run function mg:var/floor/top_check
 scoreboard players set $tfn mg.st 0
 scoreboard players set #tf20 mg.st 20
 execute unless score $sg mg.st matches 1 store result score $tf1 mg.st if entity @a[tag=mg.play,scores={mg.t=81..}]

@@ -1,4 +1,5 @@
 # Spleef — préparation (appelé au lancement)
+execute if score $ar mg.st matches 1.. run return run function mg:var/mode/spleef_prepare
 function mg:spleef/build
 
 # Nombre d'étages selon les joueurs : solo 1, 2-3 → 2, 4-5 → 3, 6+ → 4

@@ -1,4 +1,5 @@
 # One in the Chamber — préparation (centre 0 ~ 5800)
+execute if score $ar mg.st matches 1.. run return run function mg:var/mode/oitc_prepare
 execute if score $om mg.st matches 1 run return run function mg:oitc/prepare_1
 execute if score $om mg.st matches 2 run return run function mg:oitc/prepare_2
 function mg:oitc/build

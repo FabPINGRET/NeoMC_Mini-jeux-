@@ -212,6 +212,25 @@
     {
       "label": [
         {
+          "text": "★ Variantes (68) ▸",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Chaque mode sur les cartes des autres jeux, avec une difficulté de ★ à ★★★★",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 32"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "▦ Block Party",
           "color": "light_purple"
         }

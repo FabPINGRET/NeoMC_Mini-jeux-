@@ -2,6 +2,10 @@
 
 scoreboard players operation $game mg.st = @s mg.go
 scoreboard players reset @s mg.go
+# [variantes] ids 100..196 : carte d'un autre jeu + difficulté ($ar, $dif) ; $ar = 0 → carte native
+scoreboard players set $ar mg.st 0
+scoreboard players set $dif mg.st 2
+execute if score $game mg.st matches 100..196 run function mg:var/remap
 # Kart : 61 = Circuit Champignon, 62 = Royaume Koopa → jeu 61 + circuit $ktr
 scoreboard players set $ktr mg.st 1
 execute if score $game mg.st matches 62 run scoreboard players set $ktr mg.st 2
@@ -189,6 +193,8 @@ execute if score $mt mg.st matches 10 run tellraw @a [{"text":"Thème : ","color
 execute if score $mt mg.st matches 5 run tellraw @a [{"text":"Thème : ","color":"gray"},{"text":"ARAIGNÉE","color":"dark_green","bold":true},{"text":" — araignées, jockeys, Reine Araignée, Arachnarque","color":"gray"}]
 execute if score $n0 mg.st matches 1 run tellraw @a [{"text":"(Mode test solo : pas de victoire automatique — menu → Arrêter pour finir)","color":"dark_gray","italic":true}]
 
+# [variantes] annonce de la variante puis $game = jeu réel
+execute if score $ar mg.st matches 1.. run function mg:var/start
 # Préparation de l'arène + téléportation
 execute if score $game mg.st matches 1 run function mg:spleef/prepare
 execute if score $game mg.st matches 2 run function mg:tntrun/prepare
