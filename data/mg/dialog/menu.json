@@ -164,6 +164,24 @@
     {
       "label": [
         {
+          "text": "🪽 Course d'élytres ▸",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Plane à travers des anneaux : choisis le parcours.",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 28"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "✷ TNT Run",
           "color": "red"
         }

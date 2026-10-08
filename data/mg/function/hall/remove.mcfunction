@@ -19,6 +19,9 @@ scoreboard objectives remove mg.wg_icerace
 scoreboard objectives remove mg.wg_bb
 scoreboard objectives remove mg.wg_party
 scoreboard objectives remove mg.wg_kart
+scoreboard objectives remove mg.wg_elyrace
 kill @e[tag=mg.hall]
+schedule clear mg:hall/build
 data remove storage mg:hall e
 data remove storage mg:hall sbon
+data remove storage mg:hall v2

@@ -11,6 +11,7 @@ execute if score $game mg.st matches 22 run function mg:sumo/tick
 execute if score $game mg.st matches 23 run function mg:dropper/tick
 execute if score $game mg.st matches 64 run function mg:dropadv/tick
 execute if score $game mg.st matches 65 run function mg:dropadv/c_tick
+execute if score $game mg.st matches 66 run function mg:elyrace/tick
 execute if score $game mg.st matches 26 run function mg:oitc/tick
 execute if score $game mg.st matches 27 run function mg:tnttag/tick
 execute if score $game mg.st matches 28 run function mg:blockparty/tick

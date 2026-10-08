@@ -28,3 +28,4 @@ Référence centrale générée depuis `core/game_tick.mcfunction`.
 | 61 | `mg:kart/tick` |
 | 64 | `mg:dropadv/tick` |
 | 65 | `mg:dropadv/c_tick` |
+| 66 | `mg:elyrace/tick` |

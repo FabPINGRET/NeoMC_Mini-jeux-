@@ -3,6 +3,7 @@ execute if score @s mg.opt matches 7..8 unless entity @s[tag=mg.admin] run tellr
 execute if score @s mg.opt matches 10 unless entity @s[tag=mg.admin] run tellraw @s [{"text":"⚠ Menus de lancement réservés aux admins. ","color":"red"},{"text":"Vote plutôt pour un jeu : fenêtre ☑ VOTES ou /trigger mg.vote","color":"gray"}]
 execute if score @s mg.opt matches 14 unless entity @s[tag=mg.admin] run tellraw @s [{"text":"⚠ Menus de lancement réservés aux admins. ","color":"red"},{"text":"Vote plutôt pour un jeu : fenêtre ☑ VOTES ou /trigger mg.vote","color":"gray"}]
 execute if score @s mg.opt matches 16..24 unless entity @s[tag=mg.admin] run tellraw @s [{"text":"⚠ Menus de lancement réservés aux admins. ","color":"red"},{"text":"Vote plutôt pour un jeu : fenêtre ☑ VOTES ou /trigger mg.vote","color":"gray"}]
+execute if score @s mg.opt matches 28 unless entity @s[tag=mg.admin] run tellraw @s [{"text":"⚠ Menus de lancement réservés aux admins. ","color":"red"},{"text":"Vote plutôt pour un jeu : fenêtre ☑ VOTES ou /trigger mg.vote","color":"gray"}]
 execute if score @s mg.opt matches 1 run function mg:core/opt_spec
 execute if score @s mg.opt matches 2 run function mg:core/opt_sidebar
 execute if score @s mg.opt matches 11 run function mg:parkour/quit
@@ -21,6 +22,7 @@ execute if score @s mg.opt matches 21 if entity @s[tag=mg.admin] run function mg
 execute if score @s mg.opt matches 22 if entity @s[tag=mg.admin] run function mg:core/sub/bb
 execute if score @s mg.opt matches 23 if entity @s[tag=mg.admin] run function mg:core/sub/pvparena
 execute if score @s mg.opt matches 24 if entity @s[tag=mg.admin] run function mg:core/sub/oitc
+execute if score @s mg.opt matches 28 if entity @s[tag=mg.admin] run function mg:core/sub/elyrace
 execute if score @s mg.opt matches 14 if entity @s[tag=mg.admin] run function mg:core/menu_pvp
 execute if score @s mg.opt matches 10 if entity @s[tag=mg.admin] run function mg:core/menu_quake
 execute if score @s mg.opt matches 9 unless entity @s[tag=mg.admin] run tellraw @s [{"text":"⚠ Seul un admin peut arrêter la partie.","color":"red"}]

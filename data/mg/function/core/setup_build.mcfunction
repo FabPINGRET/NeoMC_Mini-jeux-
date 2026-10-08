@@ -10,6 +10,8 @@ function mg:party/build
 data remove storage mg:kart built2
 data remove storage mg:dropadv v3
 schedule function mg:dropadv/build 30s
+data remove storage mg:elyrace v1
+schedule function mg:elyrace/build 45s
 data remove storage mg:kart built3
 function mg:kart/build
 function mg:dust/build

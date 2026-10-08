@@ -19,6 +19,7 @@ scoreboard objectives add mg.wg_icerace dummy [{"text":"⛵ Course de bateaux","
 scoreboard objectives add mg.wg_bb dummy [{"text":"✎ Build Battle","color":"green","bold":true},{"text":" — victoires","color":"gray","bold":false}]
 scoreboard objectives add mg.wg_party dummy [{"text":"★ Mini Party","color":"gold","bold":true},{"text":" — victoires","color":"gray","bold":false}]
 scoreboard objectives add mg.wg_kart dummy [{"text":"🏎 Kart","color":"red","bold":true},{"text":" — victoires","color":"gray","bold":false}]
+scoreboard objectives add mg.wg_elyrace dummy [{"text":"🪽 Course d'élytres","color":"aqua","bold":true},{"text":" — victoires","color":"gray","bold":false}]
 scoreboard objectives modify mg.stp displayname [{"text":"▶ Parties jouées","color":"green","bold":true}]
 scoreboard objectives modify mg.stk displayname [{"text":"⚔ Kills","color":"red","bold":true},{"text":" (toutes parties)","color":"gray","bold":false}]
 scoreboard objectives modify mg.wins displayname [{"text":"✦ Victoires","color":"gold","bold":true},{"text":" (tous les jeux)","color":"gray","bold":false}]
