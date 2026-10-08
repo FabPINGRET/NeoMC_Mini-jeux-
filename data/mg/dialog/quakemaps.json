@@ -251,6 +251,58 @@
     {
       "label": [
         {
+          "text": "🎯 Ravin (sniper) ",
+          "color": "gold"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Sniper : 41×121, deux plateaux face à face, portée 120 blocs",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 79"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🎯 Tours (sniper) ",
+          "color": "green"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Sniper : plaine 101×101, 9 tours à échelles, portée 120 blocs",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 80"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🎲 Variante au hasard",
           "color": "gold"
         }

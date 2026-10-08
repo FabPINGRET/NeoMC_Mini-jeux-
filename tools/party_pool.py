@@ -22,7 +22,7 @@ POOL = [   # format court : 3 à 6 minutes par mini-jeu (Build Battle et Dropper
     (50, 'PVP : NUKETOWN', 'green', 3 * M), (51, 'PVP : NUKETOWN (CLASSES)', 'green', 3 * M),
     (26, 'ONE IN THE CHAMBER', 'gold', 3 * M), (52, 'ONE IN THE CHAMBER : CHÂTEAU', 'gold', 3 * M), (53, 'ONE IN THE CHAMBER : FORÊT', 'dark_green', 3 * M),
     (35, 'QUAKECRAFT : GLACIER', 'aqua', 4 * M), (43, 'QUAKECRAFT : POUSSIÈRE', 'gold', 4 * M), (46, 'QUAKECRAFT : MIRAGE', 'aqua', 4 * M),
-    (49, 'QUAKECRAFT : NUKETOWN', 'green', 4 * M),
+    (49, 'QUAKECRAFT : NUKETOWN', 'green', 4 * M), (80, 'QUAKECRAFT : TOURS (SNIPER)', 'green', 4 * M),
     (36, 'PAINTBALL', 'gold', 3 * M), (54, 'PAINTBALL : MINI-TERRAIN', 'gold', 3 * M), (55, 'PAINTBALL : GRAND TERRAIN', 'gold', 4 * M),
     (30, 'TURF WARS', 'gold', 4 * M),
     (5, 'SHEEP WAR', 'white', 4 * M), (7, 'SHEEP WAR : FORTERESSES', 'white', 4 * M), (15, 'SHEEP WAR : CUBES VOXEL', 'white', 4 * M),

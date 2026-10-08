@@ -71,6 +71,10 @@ execute if score $game mg.st matches 49 run scoreboard players set $game mg.st 3
 execute if score $game mg.st matches 32..35 run scoreboard players operation $qm mg.st = $game mg.st
 execute if score $game mg.st matches 32..35 run scoreboard players remove $qm mg.st 31
 execute if score $game mg.st matches 32..35 run scoreboard players set $game mg.st 31
+# Quake sniper : 79 = Ravin, 80 = Tours → $qm 8 / 9
+execute if score $game mg.st matches 79 run scoreboard players set $qm mg.st 8
+execute if score $game mg.st matches 80 run scoreboard players set $qm mg.st 9
+execute if score $game mg.st matches 79..80 run scoreboard players set $game mg.st 31
 scoreboard players set $pm mg.st 0
 execute if score $game mg.st matches 44..45 run scoreboard players set $pm mg.st 1
 execute if score $game mg.st matches 47..48 run scoreboard players set $pm mg.st 2
@@ -169,6 +173,8 @@ execute if score $game mg.st matches 31 if score $qm mg.st matches 5 run tellraw
 execute if score $game mg.st matches 31 if score $qm mg.st matches 6 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"QUAKECRAFT — MIRAGE (style Mirage)","color":"aqua","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 31 if score $qm mg.st matches 7 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"QUAKECRAFT — NUKETOWN (style Nuketown)","color":"green","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 31 if score $qm mg.st matches 4 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"QUAKECRAFT — GLACIER (MINI)","color":"aqua","bold":true},{"text":" !","color":"gray"}]
+execute if score $game mg.st matches 31 if score $qm mg.st matches 8 run tellraw @a [{"selector": "@s", "color": "yellow"}, {"text": " lance une partie de ", "color": "gray"}, {"text": "QUAKECRAFT — RAVIN (SNIPER)", "color": "gold", "bold": true}, {"text": " : deux plateaux face à face, railgun longue portée !", "color": "gray"}]
+execute if score $game mg.st matches 31 if score $qm mg.st matches 9 run tellraw @a [{"selector": "@s", "color": "yellow"}, {"text": " lance une partie de ", "color": "gray"}, {"text": "QUAKECRAFT — TOURS (SNIPER)", "color": "green", "bold": true}, {"text": " : 9 tours dans une grande plaine, railgun longue portée !", "color": "gray"}]
 execute if score $game mg.st matches 36 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"PAINTBALL","color":"gold","bold":true},{"text":" — Orange contre Bleu !","color":"gray"}]
 execute if score $game mg.st matches 36 if score $pbm mg.st matches 1 run tellraw @a [{"text":"Carte : ","color":"gray"},{"text":"MINI-TERRAIN","color":"gold","bold":true},{"text":" (31×41, 1 min 30 : parties rapides)","color":"gray"}]
 execute if score $game mg.st matches 36 if score $pbm mg.st matches 2 run tellraw @a [{"text":"Carte : ","color":"gray"},{"text":"GRAND TERRAIN","color":"gold","bold":true},{"text":" (81×101, 3 min : grosse bataille)","color":"gray"}]

@@ -1,4 +1,8 @@
 # Quakecraft — placement aléatoire selon la carte (@s)
+execute if score $qm mg.st matches 8 store result score $qsr mg.st run random value 0..1
+execute if score $qm mg.st matches 8 if score $qsr mg.st matches 0 run spreadplayers 0 15401 2 9 under 90 false @s
+execute if score $qm mg.st matches 8 if score $qsr mg.st matches 1 run spreadplayers 0 15499 2 9 under 90 false @s
+execute if score $qm mg.st matches 9 run spreadplayers 0 15800 4 46 under 90 false @s
 execute if score $ar mg.st matches 1.. run return run function mg:var/spread_one
 execute if score $qm mg.st matches 0 run spreadplayers 0 7300 5 13 under 90 false @s
 execute if score $qm mg.st matches 1 run spreadplayers 0 7600 8 28 under 90 false @s

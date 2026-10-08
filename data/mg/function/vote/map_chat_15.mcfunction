@@ -8,6 +8,8 @@ tellraw @s ["",{"text":" [Glacier ★★★☆]","color":"white","click_event":{
 tellraw @s ["",{"text":" [Poussière ★★☆☆]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1043"}}]
 tellraw @s ["",{"text":" [Mirage ★★☆☆]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1046"}}]
 tellraw @s ["",{"text":" [Nuketown ★★☆☆]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1049"}}]
+tellraw @s ["",{"text":" [🎯 Ravin (sniper) ★★★☆]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1079"}}]
+tellraw @s ["",{"text":" [🎯 Tours (sniper) ★★★☆]","color":"white","click_event":{"action":"run_command","command":"trigger mg.vote set 1080"}}]
 tellraw @s ["",{"text":" [✦ Arène OITC ★★☆☆]","color":"gold","click_event":{"action":"run_command","command":"trigger mg.vote set 1130"}}]
 tellraw @s ["",{"text":" [✦ Château ★★☆☆]","color":"gold","click_event":{"action":"run_command","command":"trigger mg.vote set 1131"}}]
 tellraw @s ["",{"text":" [✦ Grande forêt ★★★☆]","color":"gold","click_event":{"action":"run_command","command":"trigger mg.vote set 1132"}}]

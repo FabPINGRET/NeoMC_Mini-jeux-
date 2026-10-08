@@ -83,79 +83,82 @@ execute if score $mgk mg.st matches 27 run title @a[tag=mg.mpp] title [{"text":"
 execute if score $mgk mg.st matches 28 run scoreboard players set $mgid mg.st 49
 execute if score $mgk mg.st matches 28 run scoreboard players set $mplim mg.st 4800
 execute if score $mgk mg.st matches 28 run title @a[tag=mg.mpp] title [{"text":"QUAKECRAFT : NUKETOWN","color":"green","bold":true}]
-execute if score $mgk mg.st matches 29 run scoreboard players set $mgid mg.st 36
-execute if score $mgk mg.st matches 29 run scoreboard players set $mplim mg.st 3600
-execute if score $mgk mg.st matches 29 run title @a[tag=mg.mpp] title [{"text":"PAINTBALL","color":"gold","bold":true}]
-execute if score $mgk mg.st matches 30 run scoreboard players set $mgid mg.st 54
+execute if score $mgk mg.st matches 29 run scoreboard players set $mgid mg.st 80
+execute if score $mgk mg.st matches 29 run scoreboard players set $mplim mg.st 4800
+execute if score $mgk mg.st matches 29 run title @a[tag=mg.mpp] title [{"text":"QUAKECRAFT : TOURS (SNIPER)","color":"green","bold":true}]
+execute if score $mgk mg.st matches 30 run scoreboard players set $mgid mg.st 36
 execute if score $mgk mg.st matches 30 run scoreboard players set $mplim mg.st 3600
-execute if score $mgk mg.st matches 30 run title @a[tag=mg.mpp] title [{"text":"PAINTBALL : MINI-TERRAIN","color":"gold","bold":true}]
-execute if score $mgk mg.st matches 31 run scoreboard players set $mgid mg.st 55
-execute if score $mgk mg.st matches 31 run scoreboard players set $mplim mg.st 4800
-execute if score $mgk mg.st matches 31 run title @a[tag=mg.mpp] title [{"text":"PAINTBALL : GRAND TERRAIN","color":"gold","bold":true}]
-execute if score $mgk mg.st matches 32 run scoreboard players set $mgid mg.st 30
+execute if score $mgk mg.st matches 30 run title @a[tag=mg.mpp] title [{"text":"PAINTBALL","color":"gold","bold":true}]
+execute if score $mgk mg.st matches 31 run scoreboard players set $mgid mg.st 54
+execute if score $mgk mg.st matches 31 run scoreboard players set $mplim mg.st 3600
+execute if score $mgk mg.st matches 31 run title @a[tag=mg.mpp] title [{"text":"PAINTBALL : MINI-TERRAIN","color":"gold","bold":true}]
+execute if score $mgk mg.st matches 32 run scoreboard players set $mgid mg.st 55
 execute if score $mgk mg.st matches 32 run scoreboard players set $mplim mg.st 4800
-execute if score $mgk mg.st matches 32 run title @a[tag=mg.mpp] title [{"text":"TURF WARS","color":"gold","bold":true}]
-execute if score $mgk mg.st matches 33 run scoreboard players set $mgid mg.st 5
+execute if score $mgk mg.st matches 32 run title @a[tag=mg.mpp] title [{"text":"PAINTBALL : GRAND TERRAIN","color":"gold","bold":true}]
+execute if score $mgk mg.st matches 33 run scoreboard players set $mgid mg.st 30
 execute if score $mgk mg.st matches 33 run scoreboard players set $mplim mg.st 4800
-execute if score $mgk mg.st matches 33 run title @a[tag=mg.mpp] title [{"text":"SHEEP WAR","color":"white","bold":true}]
-execute if score $mgk mg.st matches 34 run scoreboard players set $mgid mg.st 7
+execute if score $mgk mg.st matches 33 run title @a[tag=mg.mpp] title [{"text":"TURF WARS","color":"gold","bold":true}]
+execute if score $mgk mg.st matches 34 run scoreboard players set $mgid mg.st 5
 execute if score $mgk mg.st matches 34 run scoreboard players set $mplim mg.st 4800
-execute if score $mgk mg.st matches 34 run title @a[tag=mg.mpp] title [{"text":"SHEEP WAR : FORTERESSES","color":"white","bold":true}]
-execute if score $mgk mg.st matches 35 run scoreboard players set $mgid mg.st 15
+execute if score $mgk mg.st matches 34 run title @a[tag=mg.mpp] title [{"text":"SHEEP WAR","color":"white","bold":true}]
+execute if score $mgk mg.st matches 35 run scoreboard players set $mgid mg.st 7
 execute if score $mgk mg.st matches 35 run scoreboard players set $mplim mg.st 4800
-execute if score $mgk mg.st matches 35 run title @a[tag=mg.mpp] title [{"text":"SHEEP WAR : CUBES VOXEL","color":"white","bold":true}]
-execute if score $mgk mg.st matches 36 run scoreboard players set $mgid mg.st 17
+execute if score $mgk mg.st matches 35 run title @a[tag=mg.mpp] title [{"text":"SHEEP WAR : FORTERESSES","color":"white","bold":true}]
+execute if score $mgk mg.st matches 36 run scoreboard players set $mgid mg.st 15
 execute if score $mgk mg.st matches 36 run scoreboard players set $mplim mg.st 4800
-execute if score $mgk mg.st matches 36 run title @a[tag=mg.mpp] title [{"text":"SHEEP WAR : ARCHIPEL","color":"white","bold":true}]
-execute if score $mgk mg.st matches 37 run scoreboard players set $mgid mg.st 4
-execute if score $mgk mg.st matches 37 run scoreboard players set $mplim mg.st 6000
-execute if score $mgk mg.st matches 37 run title @a[tag=mg.mpp] title [{"text":"BEDWARS","color":"light_purple","bold":true}]
-execute if score $mgk mg.st matches 38 run scoreboard players set $mgid mg.st 56
-execute if score $mgk mg.st matches 38 run scoreboard players set $mplim mg.st 4800
-execute if score $mgk mg.st matches 38 run title @a[tag=mg.mpp] title [{"text":"COURSE DE BATEAUX","color":"aqua","bold":true}]
-execute if score $mgk mg.st matches 39 run scoreboard players set $mgid mg.st 61
-execute if score $mgk mg.st matches 39 run scoreboard players set $mplim mg.st 6000
-execute if score $mgk mg.st matches 39 run title @a[tag=mg.mpp] title [{"text":"KART","color":"gold","bold":true}]
-execute if score $mgk mg.st matches 40 run scoreboard players set $mgid mg.st 62
-execute if score $mgk mg.st matches 40 run scoreboard players set $mplim mg.st 7200
-execute if score $mgk mg.st matches 40 run title @a[tag=mg.mpp] title [{"text":"KART : ROYAUME KOOPA","color":"red","bold":true}]
-execute if score $mgk mg.st matches 41 run scoreboard players set $mgid mg.st 63
-execute if score $mgk mg.st matches 41 run scoreboard players set $mplim mg.st 3600
-execute if score $mgk mg.st matches 41 run title @a[tag=mg.mpp] title [{"text":"KART : BATAILLE","color":"light_purple","bold":true}]
-execute if score $mgk mg.st matches 42 run scoreboard players set $mgid mg.st 70
-execute if score $mgk mg.st matches 42 run scoreboard players set $mplim mg.st 4800
-execute if score $mgk mg.st matches 42 run title @a[tag=mg.mpp] title [{"text":"TNT TAG : VILLAGE PERCHÉ","color":"aqua","bold":true}]
-execute if score $mgk mg.st matches 43 run scoreboard players set $mgid mg.st 69
+execute if score $mgk mg.st matches 36 run title @a[tag=mg.mpp] title [{"text":"SHEEP WAR : CUBES VOXEL","color":"white","bold":true}]
+execute if score $mgk mg.st matches 37 run scoreboard players set $mgid mg.st 17
+execute if score $mgk mg.st matches 37 run scoreboard players set $mplim mg.st 4800
+execute if score $mgk mg.st matches 37 run title @a[tag=mg.mpp] title [{"text":"SHEEP WAR : ARCHIPEL","color":"white","bold":true}]
+execute if score $mgk mg.st matches 38 run scoreboard players set $mgid mg.st 4
+execute if score $mgk mg.st matches 38 run scoreboard players set $mplim mg.st 6000
+execute if score $mgk mg.st matches 38 run title @a[tag=mg.mpp] title [{"text":"BEDWARS","color":"light_purple","bold":true}]
+execute if score $mgk mg.st matches 39 run scoreboard players set $mgid mg.st 56
+execute if score $mgk mg.st matches 39 run scoreboard players set $mplim mg.st 4800
+execute if score $mgk mg.st matches 39 run title @a[tag=mg.mpp] title [{"text":"COURSE DE BATEAUX","color":"aqua","bold":true}]
+execute if score $mgk mg.st matches 40 run scoreboard players set $mgid mg.st 61
+execute if score $mgk mg.st matches 40 run scoreboard players set $mplim mg.st 6000
+execute if score $mgk mg.st matches 40 run title @a[tag=mg.mpp] title [{"text":"KART","color":"gold","bold":true}]
+execute if score $mgk mg.st matches 41 run scoreboard players set $mgid mg.st 62
+execute if score $mgk mg.st matches 41 run scoreboard players set $mplim mg.st 7200
+execute if score $mgk mg.st matches 41 run title @a[tag=mg.mpp] title [{"text":"KART : ROYAUME KOOPA","color":"red","bold":true}]
+execute if score $mgk mg.st matches 42 run scoreboard players set $mgid mg.st 63
+execute if score $mgk mg.st matches 42 run scoreboard players set $mplim mg.st 3600
+execute if score $mgk mg.st matches 42 run title @a[tag=mg.mpp] title [{"text":"KART : BATAILLE","color":"light_purple","bold":true}]
+execute if score $mgk mg.st matches 43 run scoreboard players set $mgid mg.st 70
 execute if score $mgk mg.st matches 43 run scoreboard players set $mplim mg.st 4800
-execute if score $mgk mg.st matches 43 run title @a[tag=mg.mpp] title [{"text":"TNT TAG : CANYON","color":"gold","bold":true}]
-execute if score $mgk mg.st matches 44 run scoreboard players set $mgid mg.st 75
-execute if score $mgk mg.st matches 44 run scoreboard players set $mplim mg.st 6000
-execute if score $mgk mg.st matches 44 run title @a[tag=mg.mpp] title [{"text":"ÉLYTRA : COURSE D'ANNEAUX","color":"aqua","bold":true}]
-execute if score $mgk mg.st matches 45 run scoreboard players set $mgid mg.st 76
+execute if score $mgk mg.st matches 43 run title @a[tag=mg.mpp] title [{"text":"TNT TAG : VILLAGE PERCHÉ","color":"aqua","bold":true}]
+execute if score $mgk mg.st matches 44 run scoreboard players set $mgid mg.st 69
+execute if score $mgk mg.st matches 44 run scoreboard players set $mplim mg.st 4800
+execute if score $mgk mg.st matches 44 run title @a[tag=mg.mpp] title [{"text":"TNT TAG : CANYON","color":"gold","bold":true}]
+execute if score $mgk mg.st matches 45 run scoreboard players set $mgid mg.st 75
 execute if score $mgk mg.st matches 45 run scoreboard players set $mplim mg.st 6000
-execute if score $mgk mg.st matches 45 run title @a[tag=mg.mpp] title [{"text":"ÉLYTRA : COURSE + COMBAT","color":"red","bold":true}]
-execute if score $mgk mg.st matches 46 run scoreboard players set $mgid mg.st 77
-execute if score $mgk mg.st matches 46 run scoreboard players set $mplim mg.st 7200
-execute if score $mgk mg.st matches 46 run title @a[tag=mg.mpp] title [{"text":"ÉLYTRA : SURVIE EN VOL","color":"light_purple","bold":true}]
-execute if score $mgk mg.st matches 47 run scoreboard players set $mgid mg.st 190
-execute if score $mgk mg.st matches 47 run scoreboard players set $mplim mg.st 3600
-execute if score $mgk mg.st matches 47 run title @a[tag=mg.mpp] title [{"text":"PVP : VARIANTE ★","color":"yellow","bold":true}]
-execute if score $mgk mg.st matches 48 run scoreboard players set $mgid mg.st 191
+execute if score $mgk mg.st matches 45 run title @a[tag=mg.mpp] title [{"text":"ÉLYTRA : COURSE D'ANNEAUX","color":"aqua","bold":true}]
+execute if score $mgk mg.st matches 46 run scoreboard players set $mgid mg.st 76
+execute if score $mgk mg.st matches 46 run scoreboard players set $mplim mg.st 6000
+execute if score $mgk mg.st matches 46 run title @a[tag=mg.mpp] title [{"text":"ÉLYTRA : COURSE + COMBAT","color":"red","bold":true}]
+execute if score $mgk mg.st matches 47 run scoreboard players set $mgid mg.st 77
+execute if score $mgk mg.st matches 47 run scoreboard players set $mplim mg.st 7200
+execute if score $mgk mg.st matches 47 run title @a[tag=mg.mpp] title [{"text":"ÉLYTRA : SURVIE EN VOL","color":"light_purple","bold":true}]
+execute if score $mgk mg.st matches 48 run scoreboard players set $mgid mg.st 190
 execute if score $mgk mg.st matches 48 run scoreboard players set $mplim mg.st 3600
-execute if score $mgk mg.st matches 48 run title @a[tag=mg.mpp] title [{"text":"OITC : VARIANTE ★","color":"gold","bold":true}]
-execute if score $mgk mg.st matches 49 run scoreboard players set $mgid mg.st 192
-execute if score $mgk mg.st matches 49 run scoreboard players set $mplim mg.st 4800
-execute if score $mgk mg.st matches 49 run title @a[tag=mg.mpp] title [{"text":"QUAKE : VARIANTE ★","color":"aqua","bold":true}]
-execute if score $mgk mg.st matches 50 run scoreboard players set $mgid mg.st 193
+execute if score $mgk mg.st matches 48 run title @a[tag=mg.mpp] title [{"text":"PVP : VARIANTE ★","color":"yellow","bold":true}]
+execute if score $mgk mg.st matches 49 run scoreboard players set $mgid mg.st 191
+execute if score $mgk mg.st matches 49 run scoreboard players set $mplim mg.st 3600
+execute if score $mgk mg.st matches 49 run title @a[tag=mg.mpp] title [{"text":"OITC : VARIANTE ★","color":"gold","bold":true}]
+execute if score $mgk mg.st matches 50 run scoreboard players set $mgid mg.st 192
 execute if score $mgk mg.st matches 50 run scoreboard players set $mplim mg.st 4800
-execute if score $mgk mg.st matches 50 run title @a[tag=mg.mpp] title [{"text":"TNT TAG : VARIANTE ★","color":"red","bold":true}]
-execute if score $mgk mg.st matches 51 run scoreboard players set $mgid mg.st 194
-execute if score $mgk mg.st matches 51 run scoreboard players set $mplim mg.st 3600
-execute if score $mgk mg.st matches 51 run title @a[tag=mg.mpp] title [{"text":"SPLEEF : VARIANTE ★","color":"aqua","bold":true}]
-execute if score $mgk mg.st matches 52 run scoreboard players set $mgid mg.st 195
+execute if score $mgk mg.st matches 50 run title @a[tag=mg.mpp] title [{"text":"QUAKE : VARIANTE ★","color":"aqua","bold":true}]
+execute if score $mgk mg.st matches 51 run scoreboard players set $mgid mg.st 193
+execute if score $mgk mg.st matches 51 run scoreboard players set $mplim mg.st 4800
+execute if score $mgk mg.st matches 51 run title @a[tag=mg.mpp] title [{"text":"TNT TAG : VARIANTE ★","color":"red","bold":true}]
+execute if score $mgk mg.st matches 52 run scoreboard players set $mgid mg.st 194
 execute if score $mgk mg.st matches 52 run scoreboard players set $mplim mg.st 3600
-execute if score $mgk mg.st matches 52 run title @a[tag=mg.mpp] title [{"text":"TNT RUN : VARIANTE ★","color":"red","bold":true}]
-execute if score $mgk mg.st matches 53 run scoreboard players set $mgid mg.st 196
+execute if score $mgk mg.st matches 52 run title @a[tag=mg.mpp] title [{"text":"SPLEEF : VARIANTE ★","color":"aqua","bold":true}]
+execute if score $mgk mg.st matches 53 run scoreboard players set $mgid mg.st 195
 execute if score $mgk mg.st matches 53 run scoreboard players set $mplim mg.st 3600
-execute if score $mgk mg.st matches 53 run title @a[tag=mg.mpp] title [{"text":"SPLEGG : VARIANTE ★","color":"yellow","bold":true}]
+execute if score $mgk mg.st matches 53 run title @a[tag=mg.mpp] title [{"text":"TNT RUN : VARIANTE ★","color":"red","bold":true}]
+execute if score $mgk mg.st matches 54 run scoreboard players set $mgid mg.st 196
+execute if score $mgk mg.st matches 54 run scoreboard players set $mplim mg.st 3600
+execute if score $mgk mg.st matches 54 run title @a[tag=mg.mpp] title [{"text":"SPLEGG : VARIANTE ★","color":"yellow","bold":true}]
 execute as @a[tag=mg.mpp] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 1.5

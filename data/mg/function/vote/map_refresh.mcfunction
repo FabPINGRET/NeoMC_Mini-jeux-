@@ -141,6 +141,10 @@ execute store result score #vm46 mg.st if entity @a[scores={mg.vc=1046}]
 execute if score #vm46 mg.st matches 1.. run scoreboard players operation Quakecraft mg.vb += #vm46 mg.st
 execute store result score #vm49 mg.st if entity @a[scores={mg.vc=1049}]
 execute if score #vm49 mg.st matches 1.. run scoreboard players operation Quakecraft mg.vb += #vm49 mg.st
+execute store result score #vm79 mg.st if entity @a[scores={mg.vc=1079}]
+execute if score #vm79 mg.st matches 1.. run scoreboard players operation Quakecraft mg.vb += #vm79 mg.st
+execute store result score #vm80 mg.st if entity @a[scores={mg.vc=1080}]
+execute if score #vm80 mg.st matches 1.. run scoreboard players operation Quakecraft mg.vb += #vm80 mg.st
 execute store result score #vm130 mg.st if entity @a[scores={mg.vc=1130}]
 execute if score #vm130 mg.st matches 1.. run scoreboard players operation Quakecraft mg.vb += #vm130 mg.st
 execute store result score #vm131 mg.st if entity @a[scores={mg.vc=1131}]

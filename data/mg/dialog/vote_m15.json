@@ -145,6 +145,30 @@
     {
       "label": [
         {
+          "text": "🎯 Ravin (sniper) ★★★☆",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1079"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🎯 Tours (sniper) ★★★☆",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1080"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "✦ Arène OITC ★★☆☆",
           "color": "gold"
         }

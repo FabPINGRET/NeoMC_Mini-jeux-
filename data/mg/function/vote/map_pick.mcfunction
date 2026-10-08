@@ -71,6 +71,8 @@ execute if score $vwin mg.st matches 15 run scoreboard players operation $vmm mg
 execute if score $vwin mg.st matches 15 run scoreboard players operation $vmm mg.st > #vm43 mg.st
 execute if score $vwin mg.st matches 15 run scoreboard players operation $vmm mg.st > #vm46 mg.st
 execute if score $vwin mg.st matches 15 run scoreboard players operation $vmm mg.st > #vm49 mg.st
+execute if score $vwin mg.st matches 15 run scoreboard players operation $vmm mg.st > #vm79 mg.st
+execute if score $vwin mg.st matches 15 run scoreboard players operation $vmm mg.st > #vm80 mg.st
 execute if score $vwin mg.st matches 15 run scoreboard players operation $vmm mg.st > #vm130 mg.st
 execute if score $vwin mg.st matches 15 run scoreboard players operation $vmm mg.st > #vm131 mg.st
 execute if score $vwin mg.st matches 15 run scoreboard players operation $vmm mg.st > #vm132 mg.st
@@ -205,6 +207,8 @@ execute if score $vwin mg.st matches 15 if score #vm35 mg.st = $vmm mg.st run sc
 execute if score $vwin mg.st matches 15 if score #vm43 mg.st = $vmm mg.st run scoreboard players add $vmc mg.st 1
 execute if score $vwin mg.st matches 15 if score #vm46 mg.st = $vmm mg.st run scoreboard players add $vmc mg.st 1
 execute if score $vwin mg.st matches 15 if score #vm49 mg.st = $vmm mg.st run scoreboard players add $vmc mg.st 1
+execute if score $vwin mg.st matches 15 if score #vm79 mg.st = $vmm mg.st run scoreboard players add $vmc mg.st 1
+execute if score $vwin mg.st matches 15 if score #vm80 mg.st = $vmm mg.st run scoreboard players add $vmc mg.st 1
 execute if score $vwin mg.st matches 15 if score #vm130 mg.st = $vmm mg.st run scoreboard players add $vmc mg.st 1
 execute if score $vwin mg.st matches 15 if score #vm131 mg.st = $vmm mg.st run scoreboard players add $vmc mg.st 1
 execute if score $vwin mg.st matches 15 if score #vm132 mg.st = $vmm mg.st run scoreboard players add $vmc mg.st 1
@@ -482,6 +486,12 @@ execute if score $vwin mg.st matches 15 if score #vm46 mg.st = $vmm mg.st if sco
 execute if score $vwin mg.st matches 15 if score #vm49 mg.st = $vmm mg.st run scoreboard players remove $vmk mg.st 1
 execute if score $vwin mg.st matches 15 if score #vm49 mg.st = $vmm mg.st if score $vmk mg.st matches 0 run scoreboard players set @s mg.go 49
 execute if score $vwin mg.st matches 15 if score #vm49 mg.st = $vmm mg.st if score $vmk mg.st matches 0 run tellraw @a [{"text":"☑ Carte la plus votée : ","color":"gray"},{"text":"Nuketown ★★☆☆","color":"aqua","bold":true},{"text":" (","color":"gray"},{"score":{"name":"#vm49","objective":"mg.st"},"color":"gold"},{"text":" vote(s))","color":"gray"}]
+execute if score $vwin mg.st matches 15 if score #vm79 mg.st = $vmm mg.st run scoreboard players remove $vmk mg.st 1
+execute if score $vwin mg.st matches 15 if score #vm79 mg.st = $vmm mg.st if score $vmk mg.st matches 0 run scoreboard players set @s mg.go 79
+execute if score $vwin mg.st matches 15 if score #vm79 mg.st = $vmm mg.st if score $vmk mg.st matches 0 run tellraw @a [{"text":"☑ Carte la plus votée : ","color":"gray"},{"text":"🎯 Ravin (sniper) ★★★☆","color":"aqua","bold":true},{"text":" (","color":"gray"},{"score":{"name":"#vm79","objective":"mg.st"},"color":"gold"},{"text":" vote(s))","color":"gray"}]
+execute if score $vwin mg.st matches 15 if score #vm80 mg.st = $vmm mg.st run scoreboard players remove $vmk mg.st 1
+execute if score $vwin mg.st matches 15 if score #vm80 mg.st = $vmm mg.st if score $vmk mg.st matches 0 run scoreboard players set @s mg.go 80
+execute if score $vwin mg.st matches 15 if score #vm80 mg.st = $vmm mg.st if score $vmk mg.st matches 0 run tellraw @a [{"text":"☑ Carte la plus votée : ","color":"gray"},{"text":"🎯 Tours (sniper) ★★★☆","color":"aqua","bold":true},{"text":" (","color":"gray"},{"score":{"name":"#vm80","objective":"mg.st"},"color":"gold"},{"text":" vote(s))","color":"gray"}]
 execute if score $vwin mg.st matches 15 if score #vm130 mg.st = $vmm mg.st run scoreboard players remove $vmk mg.st 1
 execute if score $vwin mg.st matches 15 if score #vm130 mg.st = $vmm mg.st if score $vmk mg.st matches 0 run scoreboard players set @s mg.go 130
 execute if score $vwin mg.st matches 15 if score #vm130 mg.st = $vmm mg.st if score $vmk mg.st matches 0 run tellraw @a [{"text":"☑ Carte la plus votée : ","color":"gray"},{"text":"✦ Arène OITC ★★☆☆","color":"aqua","bold":true},{"text":" (","color":"gray"},{"score":{"name":"#vm130","objective":"mg.st"},"color":"gold"},{"text":" vote(s))","color":"gray"}]

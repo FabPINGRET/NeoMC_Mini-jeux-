@@ -62,6 +62,9 @@ forceload add -32 10668 32 10732
 forceload add -96 14904 96 15096
 forceload add 30000 -30000 30255 -30000
 # TNT Tag : cartes à relief (z 26500 / 26800 / 27400)
+# Quake sniper (Ravin z 15450, Tours z 15800)
+forceload add -24 15386 24 15514
+forceload add -54 15746 54 15854
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl

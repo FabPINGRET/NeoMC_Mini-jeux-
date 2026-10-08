@@ -510,8 +510,9 @@ patch('core/request', 'scoreboard players reset @s mg.go', [
 patch('core/request', '# Préparation de l\'arène + téléportation', [
     f'# {MARK} annonce de la variante puis $game = jeu réel',
     'execute if score $ar mg.st matches 1.. run function mg:var/start'], where='before')
-replace('core/go', 'execute unless score @s mg.go matches 1..78 run return run scoreboard players reset @s mg.go',
-        'execute unless score @s mg.go matches 1..78 unless score @s mg.go matches 100..196 run return run scoreboard players reset @s mg.go')
+if 'matches 100..196' not in open(os.path.join(F, 'core/go.mcfunction'), encoding='utf-8').read():
+    replace('core/go', 'execute unless score @s mg.go matches 1..78 run return run scoreboard players reset @s mg.go',
+            'execute unless score @s mg.go matches 1..78 unless score @s mg.go matches 100..196 run return run scoreboard players reset @s mg.go')
 patch('core/forceloads', 'function mg:tnttag/map/fl', [f'# {MARK} sols des variantes (z 24300)', 'function mg:var/fl'])
 patch('core/opt', 'execute if score @s mg.opt matches 1 run function mg:core/opt_spec', [
     'execute if score @s mg.opt matches 32..39 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Menus de lancement réservés aux admins.","color":"red"}',
@@ -796,7 +797,7 @@ NATIVE = {
     47: ('Mirage', 2), 48: ('Classes : Mirage', 2), 50: ('Nuketown', 2), 51: ('Classes : Nuketown', 2),
     26: ('Arène', 2), 52: ('Château', 2), 53: ('Grande forêt', 3),
     31: ('Néon', 2), 32: ('Volcan XL', 3), 33: ('Jungle XL', 3), 34: ('Désert', 2), 35: ('Glacier', 3),
-    43: ('Poussière', 2), 46: ('Mirage', 2), 49: ('Nuketown', 2),
+    43: ('Poussière', 2), 46: ('Mirage', 2), 49: ('Nuketown', 2), 79: ('🎯 Ravin (sniper)', 3), 80: ('🎯 Tours (sniper)', 3),
     67: ('Classique', 3), 68: ('Collines', 2), 69: ('Canyon', 2), 70: ('Village perché', 2),
     71: ('Classique', 2), 72: ('Caldeira', 2), 73: ('Hanami', 2), 74: ('Banquise', 3),
     5: ('Classique', 2), 7: ('Forteresses', 2), 14: ('Bastions', 2), 15: ('Cubes voxel', 2), 16: ('Pyramides inversées', 3),
@@ -880,7 +881,7 @@ VG = [
     (3, 'PvP', '⚔ Arène PvP', 'yellow', [3, 44, 47, 50] + [v['id'] for v in COMBAT[0]['vars']]),
     (4, 'PvP-classes', '⚔ PvP classes', 'gold', [13, 45, 48, 51]),
     (17, 'One-in-Chamber', '➶ One in the Chamber', 'gold', [26, 52, 53] + [v['id'] for v in COMBAT[1]['vars']]),
-    (15, 'Quakecraft', '⚡ Quakecraft', 'aqua', [31, 32, 33, 34, 35, 43, 46, 49] + [v['id'] for v in COMBAT[2]['vars']]),
+    (15, 'Quakecraft', '⚡ Quakecraft', 'aqua', [31, 32, 33, 34, 35, 43, 46, 49, 79, 80] + [v['id'] for v in COMBAT[2]['vars']]),
     (11, 'TNT-Tag', '✹ TNT Tag', 'red', [67, 68, 69, 70] + [v['id'] for v in COMBAT[3]['vars']]),
     (5, 'Bedwars', '⚑ Bedwars', 'light_purple', [71, 72, 73, 74]),
     (6, 'Sheep-War', '☁ Sheep War', 'white', [5, 7, 14, 15, 16, 17, 18, 19]),
