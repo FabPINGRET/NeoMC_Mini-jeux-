@@ -708,7 +708,9 @@ CATS = {
         known(OPEN(19), '⬇ The Dropper ▸', 'aqua')], 'menu'),
     'arcade': ('🕹 Arcade', 'light_purple', 'Jeux d’adresse et de stratégie.', [
         act('⚡ Tron (à pied)', 'aqua', 'trigger mg.go set 84', 'Laisse un mur derrière toi, ne touche aucun mur'),
-        act('🏍 Tron moto', 'gold', 'trigger mg.go set 85', 'Pareil, à cheval et beaucoup plus vite')], 'menu'),
+        act('🏍 Tron moto', 'gold', 'trigger mg.go set 85', 'Pareil, à cheval et beaucoup plus vite'),
+        act('👑 King of the Hill', 'gold', 'trigger mg.go set 86', 'Reste seul au sommet : 60 s pour gagner'),
+        act('👑 KotH — équipes', 'red', 'trigger mg.go set 87', 'Rouge contre Bleu, tenez la colline 90 s')], 'menu'),
     'kart': ('🏎 Kart', 'gold', 'Choisis le circuit.', [
         known('trigger mg.go set 61', '🏎 KART : Circuit Champignon', 'gold'), known('trigger mg.go set 62', '🏎 KART : Royaume Koopa', 'red'),
         known('trigger mg.go set 63', '🎈 KART : Bataille', 'light_purple')], 'courses'),
@@ -753,7 +755,7 @@ d['actions'] = [
     act('⚑ Équipes ▸', 'light_purple', OPEN(41), 'Bedwars, Sheep War, Paintball, Turf Wars', True),
     act('🏁 Courses et vol ▸', 'gold', OPEN(42), 'Kart, bateaux, élytres, Dropper', True),
     known(OPEN(7), '☠ PvE ▸', 'dark_green'),
-    act('🕹 Arcade ▸', 'light_purple', OPEN(47), 'Tron…', True),
+    act('🕹 Arcade ▸', 'light_purple', OPEN(47), 'Tron, King of the Hill…', True),
     act('🎉 Fête et création ▸', 'green', OPEN(43), 'Mini Party, Build Battle, Téléphone', True),
     act('☑ Votes ▸', 'green', OPEN(44), 'Voter pour le prochain jeu'),
     act('👤 Joueur et plots ▸', 'aqua', OPEN(45), 'Spectateur, classement, plots'),
@@ -816,7 +818,8 @@ NATIVE = {
     23: ('Dropper', 2), 25: ('Tube commun', 2), 64: ('Aventure', 3), 65: ('Défi', 3),
     75: ('Course d\'anneaux', 2), 76: ('Course + combat', 3), 77: ('Survie en vol', 4),
     61: ('Circuit Champignon', 2), 62: ('Royaume Koopa', 3), 63: ('Bataille', 2), 56: ('Bateaux sur glace', 2),
-    81: ('Canyon du Couchant', 3), 30: ('Turf Wars', 2),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
+    81: ('Canyon du Couchant', 3), 30: ('Turf Wars', 2),
+    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
 }
 SHORT_OPT = {   # boutons de navigation (mg.opt) : noms courts
     24: '➶ OITC ▸', 10: '⚡ Quake ▸', 20: '⚓ Enclumes ▸', 19: '⬇ Dropper ▸', 28: '🪽 Course élytres ▸', 23: '⚔ Arène PvP ▸',

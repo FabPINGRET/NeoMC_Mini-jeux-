@@ -31,8 +31,16 @@
     {
       "label": [
         {
-          "text": "⚡ Tron (à pied)",
+          "text": "⚡ ⚡ Tron (à pied) ",
           "color": "aqua"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -49,8 +57,16 @@
     {
       "label": [
         {
-          "text": "🏍 Tron moto",
+          "text": "🏍 🏍 Tron moto ",
           "color": "gold"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": "",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -62,6 +78,58 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 85"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "👑 👑 King of the Hill ",
+          "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Reste seul au sommet : 60 s pour gagner",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 86"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "👑 👑 KotH — équipes ",
+          "color": "red"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Rouge contre Bleu, tenez la colline 90 s",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 87"
       }
     },
     {

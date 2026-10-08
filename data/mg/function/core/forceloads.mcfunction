@@ -69,6 +69,8 @@ forceload add -54 15746 54 15854
 forceload add -8 19412 8 19428
 # Tron (z 20000)
 forceload add -32 19968 32 20032
+# King of the Hill (z 20400)
+forceload add -27 20373 27 20427
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl
