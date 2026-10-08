@@ -42,6 +42,15 @@ scoreboard objectives add mg.vb dummy [{"text":"☑ VOTES — prochain jeu","col
 scoreboard objectives add mg.fw minecraft.used:minecraft.blaze_rod
 scoreboard objectives add mg.wc minecraft.used:minecraft.wind_charge
 scoreboard objectives add mg.wd dummy
+scoreboard objectives add mg.fd dummy
+scoreboard objectives add mg.ec dummy
+scoreboard objectives add mg.et dummy
+scoreboard objectives add mg.eg dummy
+scoreboard objectives add mg.est dummy
+scoreboard objectives add mg.erb dummy
+scoreboard objectives add mg.ehw dummy
+scoreboard objectives add mg.ecr dummy
+scoreboard objectives add mg.erb2 dummy
 scoreboard objectives add mg.ok dummy [{"text":"➶ KILLS — 10 pour gagner","color":"gold"}]
 scoreboard objectives add mg.qk dummy [{"text":"⚡ QUAKECRAFT ⚡","color":"aqua"}]
 scoreboard objectives add mg.ppc dummy
@@ -158,6 +167,10 @@ execute if score $setup mg.st matches 1 if data storage mg:kart built2 unless da
 # Reconstructions automatiques après une mise à jour (numéro de version dans le stockage)
 execute if score $setup mg.st matches 1 unless data storage mg:dropadv v3 run schedule function mg:dropadv/build 40s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/build 10s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/food_build 25s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:elytra/build 30s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby food1 run schedule function mg:lobby/food_build 12s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby ely1 run schedule function mg:elytra/build 14s
 
 # Zones chargées (après une mise à jour du pack, les nouvelles zones sont prises en compte)
 execute if score $setup mg.st matches 1 run function mg:core/forceloads
@@ -167,3 +180,15 @@ execute if score $setup mg.st matches 1 unless data storage mg:plot built run fu
 execute if score $setup mg.st matches 1 unless data storage mg:party {built:3b} run schedule function mg:party/build 3s
 
 tellraw @a [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Datapack chargé. ","color":"gray"},{"text":"Première fois ? Un OP lance ","color":"gray"},{"text":"/function mg:setup","color":"yellow"},{"text":" pour tout construire.","color":"gray"}]
+
+# Monde de survie : difficulté normale et apparition des monstres.
+# Sur Paper, difficulté et règles de jeu sont propres à chaque monde : le
+# « difficulty normal » du setup ne touche que le monde principal, mg:survie
+# restait en paisible. Réappliqué à chaque chargement du datapack.
+execute in mg:survie run difficulty normal
+execute in mg:survie run gamerule spawn_mobs true
+
+# Classements par mini-jeu + tableau à droite affiché par défaut (une seule fois ; masquable au menu)
+function mg:hall/objectives
+execute unless data storage mg:hall sbon run scoreboard players set $sb mg.st 1
+data modify storage mg:hall sbon set value 1b

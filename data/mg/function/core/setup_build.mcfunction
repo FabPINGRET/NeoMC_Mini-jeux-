@@ -1,6 +1,8 @@
 # Construction du lobby et de toutes les arènes (chunks déjà forceloadés)
 
 function mg:lobby/build
+schedule function mg:lobby/food_build 20s
+schedule function mg:elytra/build 22s
 function mg:lobby/armory_build
 function mg:parkour/build
 function mg:plot/build
