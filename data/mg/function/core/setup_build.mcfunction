@@ -10,8 +10,8 @@ data remove storage mg:setup plot
 data remove storage mg:party built
 data remove storage mg:kart built
 data remove storage mg:sky built
-data remove storage mg:elyrace v2
-data remove storage mg:elyrace c2v2
+data remove storage mg:elyrace v3
+data remove storage mg:elyrace c2v3
 function mg:lobby/build
 schedule function mg:lobby/food_build 20s
 schedule function mg:elytra/build 22s

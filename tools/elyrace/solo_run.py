@@ -5,8 +5,8 @@ il etait en ligne. Le solo n'ecrit jamais $state, $game, $timer, ni ne lit $xc o
 Deux passes par tick : `seen` sur @a (voit aussi un joueur sur l'ecran de mort : sa presence ne doit pas disparaitre) puis `step` sur
 @e[type=player] (ignore le joueur mort pendant la reapparition : respawn le replacerait deux fois).
 SEULE ENTREE en course : solo/go (phase 2). SEULE SORTIE : solo/stop (tag retire, pause d'avant retablie, retour au lobby) ; aucune
-teleportation vers l'avant ailleurs que place_tp, respawn et le lobby. Le lot suivant (anneaux fins, vitesse selon la gravite) se branche
-sur ces deux fonctions.
+teleportation vers l'avant ailleurs que place_tp, respawn et le lobby. La gravite de course est posee par solo/go (grav_on) et remise a la
+normale par solo/stop (core/attr_reset_g).
 Fonctions generees : elyrace/solo/{tick, seen, step, countdown, go, finish, stop}. Python stdlib uniquement (compatible 3.8).
 """
 import course_common as CC
@@ -93,7 +93,8 @@ def go_lines(specs):
            '# portillon de son parcours (ouvert pour tous les solos du parcours : ils sont gelés tant que le décompte dure)']
     out += CC.per_course(specs, 'gate_off')
     out += CC.per_course(specs, 'go_text')
-    return out + ['scoreboard players set @s mg.xst 0', 'scoreboard players set @s mg.xph 2']
+    out += ['# gravité de course de son parcours (comme go pour le groupe) ; solo/stop la remet à la normale', G.GRAV_ON]
+    return out +['scoreboard players set @s mg.xst 0', 'scoreboard players set @s mg.xph 2']
 
 
 def finish_lines(specs):
@@ -121,6 +122,8 @@ def stop_lines():
             'scoreboard players reset @s mg.xsl',
             '# (mg.xcr appartient à la partie de groupe si une partie l\'a pris comme participant)',
             'execute unless entity @s[tag=mg.play] run scoreboard players reset @s mg.xcr',
+            '# gravité normale (0,08), sans condition : celle de course (elyrace/grav_on, turbo compris) ne doit pas suivre le joueur au lobby',
+            G.GRAV_RESET,
             '# 2) la pause d\'avant le solo : rétablie (mg.xsp0 = il était déjà en pause ; sinon la pause est retirée, même si une partie tourne)',
             'execute unless entity @s[tag=mg.xsp0] run tag @s remove mg.spectate',
             'tag @s remove mg.xsp0',

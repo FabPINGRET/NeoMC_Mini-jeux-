@@ -34,10 +34,10 @@ execute if score #xv mg.st matches 11.. run scoreboard players operation $xc mg.
 execute if score #xv mg.st matches 11.. run scoreboard players remove $xc mg.st 10
 execute if score $xc mg.st matches 0 run function mg:elyrace/pick
 execute if score $xc mg.st matches 0 run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Aucun parcours n'est construit pour le moment : réessaie plus tard.","color":"red"}]
-execute if score $xc mg.st matches 1 unless data storage mg:elyrace v2 run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Le parcours 1 (Canyon du Couchant) n'est pas encore construit : réessaie plus tard.","color":"red"}]
-execute if score $xc mg.st matches 1 unless data storage mg:elyrace v2 run return run scoreboard players set $xc mg.st 0
-execute if score $xc mg.st matches 2 unless data storage mg:elyrace c2v2 run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Le parcours 2 (Pic Blanc) n'est pas encore construit : réessaie plus tard.","color":"red"}]
-execute if score $xc mg.st matches 2 unless data storage mg:elyrace c2v2 run return run scoreboard players set $xc mg.st 0
+execute if score $xc mg.st matches 1 unless data storage mg:elyrace v3 run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Le parcours 1 (Canyon du Couchant) n'est pas encore construit : réessaie plus tard.","color":"red"}]
+execute if score $xc mg.st matches 1 unless data storage mg:elyrace v3 run return run scoreboard players set $xc mg.st 0
+execute if score $xc mg.st matches 2 unless data storage mg:elyrace c2v3 run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Le parcours 2 (Pic Blanc) n'est pas encore construit : réessaie plus tard.","color":"red"}]
+execute if score $xc mg.st matches 2 unless data storage mg:elyrace c2v3 run return run scoreboard players set $xc mg.st 0
 # lancement (plus aucun refus après ce point). La pause d'avant est mémorisée, puis le joueur passe en pause SANS opt_spec (il bascule,
 # affiche des messages trompeurs et élimine un participant) ; son vote éventuel ne compte plus
 execute if entity @s[tag=mg.spectate] run tag @s add mg.xsp0
@@ -67,6 +67,10 @@ scoreboard players set @s mg.xf 0
 scoreboard players set @s mg.xb1 0
 scoreboard players set @s mg.xb2 0
 scoreboard players set @s mg.xb3 0
+scoreboard players set @s mg.xq1 0
+scoreboard players set @s mg.xq2 0
+scoreboard players set @s mg.xq3 0
+scoreboard players set @s mg.xu 0
 scoreboard players reset @s mg.qs
 scoreboard players reset @s mg.fw
 scoreboard players reset @s mg.wc

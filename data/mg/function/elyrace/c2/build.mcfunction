@@ -4,5 +4,5 @@ execute if score $game mg.st matches 66 unless score $state mg.st matches 0 run 
 # ni pendant un contre-la-montre solo (il se joue sur ce parcours et ne passe pas par $state)
 execute if entity @a[tag=mg.xso] run return run tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] Course d'élytres : construction impossible pendant un contre-la-montre solo.","color":"red"}]
 function mg:elyrace/build_abort
-data remove storage mg:elyrace c2v2
+data remove storage mg:elyrace c2v3
 function mg:elyrace/c2/build_start

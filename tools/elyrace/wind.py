@@ -7,6 +7,8 @@ Exige explosion_knockback_resistance a 0 : core/attr_reset (reset_player) le rem
 Pour essayer : WIND = True, regenerer, tester en jeu (9 essais sur 10 doivent pousser le joueur).
 Python stdlib uniquement (compatible 3.8).
 """
+import sweep as SW
+
 WIND = False
 TAG = 'mg.xwc'
 KILL = 'kill @e[type=minecraft:wind_charge,tag=%s]' % TAG
@@ -31,15 +33,14 @@ def cleanup_lines():
     return [KILL] if WIND else []
 
 
-def detect_lines(c, box_x):
-    """Lignes de la fonction `rings` : franchissement d'un anneau de vent (trou de 7 x 7), une fois chacun (mg.xv)."""
+def detect_lines(c):
+    """Lignes de la fonction `rings` : franchissement balaye (sweep.py) d'un anneau de vent (trou de 7 x 7), une fois chacun (mg.xv)."""
     out = []
     if c.winds:
         out.append('# Anneaux de vent (trou de 7 x 7) : une poussee chacun, mg.xv ne fait qu\'augmenter')
     for k, (x, cy, cz) in enumerate(c.winds, 1):
-        cond = 'execute if score @s mg.xv matches ..%d positioned %d %d %d if entity @s[dx=%d,dy=6,dz=6]' % (k - 1, x - 1, cy - 3, cz - 3, box_x)
-        out.append(cond + ' run function mg:elyrace/wind')
-        out.append(cond + ' run scoreboard players set @s mg.xv %d' % k)
+        out += SW.ring_lines(x, cy, cz, SW.GOLD_R, 'if score @s mg.xv matches ..%d' % (k - 1),
+                             ['function mg:elyrace/wind', 'scoreboard players set @s mg.xv %d' % k])
     return out
 
 

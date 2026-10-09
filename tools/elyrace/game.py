@@ -8,6 +8,7 @@ d'une arrivee est #xrt ($xt en groupe, mg.xst en solo).
 Python stdlib uniquement (compatible 3.8).
 """
 import course_common as CC
+import glide as GL
 import records as RC
 import wind as W
 
@@ -16,7 +17,9 @@ HEARTS = 3
 GRACE = 40               # ticks sans regles apres une reapparition
 COOLDOWN = 12            # ticks entre deux murs comptes (avancement et chute de vitesse partagent ce delai)
 STALL = 10               # ticks sans planer (apres avoir plane) avant renvoi au point de reprise
-DROP_SQ = 4000           # verification de secours du choc : chute du carre de la vitesse horizontale (centiemes de bloc/tick, au carre) d'au moins ceci
+DROP_SQ = 8000           # verification de secours du choc : chute du carre de la vitesse horizontale (centiemes de bloc/tick, au carre) d'au moins ceci ;
+                         # 8000 (4000 avant la gravite 0,104) : les vols de reference vont a ~3 b/tick, leur chute max par tick atteint 2574 (Canyon) et la marge x3 de
+                         # verify_speed l'exige sous le seuil (7722), ce qui rend ~8000 la plus petite valeur ronde
 DROP_REL = 30            # ET d'au moins ce pourcentage du carre precedent (a grande vitesse, seul ce seuil relatif protege d'un cabre brutal)
 TIME_LIMIT = 3600        # 3 minutes
 END_WAIT = 400           # 20 s entre le premier arrive et la fin
@@ -40,7 +43,11 @@ OBJECTIVES = [
     ('xb1', 'x precedent (centiemes)', None),
     ('xb2', 'z precedent (centiemes)', None),
     ('xb3', 'carre de la vitesse horizontale precedente', None),
-] + W.objectives()                  # + mg.xv (anneaux de vent pris) si WIND
+    ('xq1', 'origine du balayage des anneaux : x (centiemes, position du tick precedent)', None),
+    ('xq2', 'origine du balayage des anneaux : y (centiemes)', None),
+    ('xq3', 'origine du balayage des anneaux : z (centiemes)', None),
+    ('xu', 'ticks de turbo restants (anneau d\'or)', None),
+] + W.objectives()                 # + mg.xv (anneaux de vent pris) si WIND
 # objectifs HORS de OBJECTIVES (prepare remet ceux-la a zero a chaque depart de groupe) : (nom, role). xcr est pose par prepare (groupe) ou
 # par solo/start ; xse, xsl et xph/xst ne servent qu'au solo (voir solo_run.py)
 EXTRA_OBJECTIVES = [
@@ -55,9 +62,22 @@ SOLO_TAGS = ['mg.xso', 'mg.xsp0']         # solo en cours ; pause d'avant le sol
 ELYTRA = ('minecraft:elytra[minecraft:custom_data={mg_elyr:1b},minecraft:unbreakable={},'
           'minecraft:enchantments={"minecraft:binding_curse":1},'
           'minecraft:custom_name={"text":"Élytres de course","color":"aqua","italic":false}]')
-ROCKET = ('minecraft:firework_rocket[minecraft:custom_data={mg_elyr:1b},minecraft:fireworks={flight_duration:1},'
-          'minecraft:custom_name={"text":"Fusée d\'or","color":"gold","italic":false}]')
 SB = '"score":{"name":"@s","objective":"%s"}'
+
+
+def grav_line(g):
+    return 'attribute @s minecraft:gravity base set %s' % g
+
+
+# gravite : la gravite de base du parcours (GRAVITY de la spec, c<N>/grav) est posee au GO, a chaque reapparition ; le turbo d'un anneau d'or la
+# renforce TURBO_TICKS ticks (mg.xu) ; core/attr_reset_g la remet a la normale (fin de solo, desinstallation ; le lobby : core/attr_reset)
+GRAV_ON = 'function mg:elyrace/grav_on'
+GRAV_ON_ALL = 'execute as @a[tag=mg.play] run ' + GRAV_ON
+GRAV_RESET = 'function mg:core/attr_reset_g'
+GRAV_RESET_ALL = 'execute as @a[tag=mg.play,scores={mg.xcr=1..}] run ' + GRAV_RESET
+GRAV_TURBO = grav_line(GL.TURBO_G)
+XU_SET = 'scoreboard players set @s mg.xu %d' % GL.TURBO_TICKS
+XU_ZERO = 'scoreboard players set @s mg.xu 0'
 
 
 def objectives_lines(specs):
@@ -83,6 +103,7 @@ def go_lines(specs):
            'effect give @a[tag=mg.play] minecraft:saturation infinite 0 true']
     out += ['# texte du départ : go_text parle à @s (le solo l\'appelle pour son seul joueur)']
     out += ['execute if score $xc mg.st matches %d as @a[tag=mg.play] run function %s' % (s.NUM, CC.fn(s, 'go_text')) for s in specs]
+    out += ['# gravité de course de chaque participant (selon son parcours, mg.xcr) ; le solo l\'appelle pour son seul joueur', GRAV_ON_ALL]
     return out
 
 
@@ -190,15 +211,16 @@ def small_lines():
                        'scoreboard players operation @s mg.xc = @s mg.xa',
                        'title @s actionbar [{"text":"⚑ Point de reprise enregistré","color":"green","bold":true}]',
                        'execute at @s run playsound minecraft:block.beacon.activate master @s ~ ~ ~ 1 1.5'],
-        'gold_hit': ['# @s = joueur qui traverse un anneau d\'or : une fusée',
-                     'give @s %s 1' % ROCKET,
+        'gold_hit': ['# @s = joueur qui traverse un anneau d\'or : turbo de 3 s (gravité renforcée pendant %d ticks ; un 2e or le relance à pleine durée ;' % GL.TURBO_TICKS,
+                     '# c<N>/player le termine, c<N>/respawn le coupe)',
+                     XU_SET, GRAV_TURBO,
                      'execute at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.4',
                      'execute at @s run particle minecraft:totem_of_undying ~ ~1 ~ 0.4 0.4 0.4 0.3 25',
-                     'tellraw @s [{"text":"★ Anneau d\'or ! ","color":"gold","bold":true},{"text":"+1 fusée (clic droit en vol pour accélérer).","color":"gray"}]'],
+                     'tellraw @s [{"text":"★ Anneau d\'or ! ","color":"gold","bold":true},{"text":"Turbo de 3 s : tu piques plus vite.","color":"gray"}]'],
         'miss': ['# @s = joueur qui a raté un anneau : retour au dernier point de reprise',
                  'tellraw @s [{"text":"✖ Anneau raté ! ","color":"red","bold":true},{"text":"Retour au dernier point de reprise.","color":"gray"}]',
                  'function mg:elyrace/respawn'],
-        'equip': ['# @s = joueur : élytres verrouillées (pas de fusée au départ : elles viennent des anneaux d\'or)',
+        'equip': ['# @s = joueur : élytres verrouillées (pas de fusée : les anneaux d\'or donnent un turbo)',
                   'item replace entity @s armor.chest with ' + ELYTRA],
         'end': ['# Fin de la course : gagne le premier arrivé encore en ligne (plus petite place mg.xf) ; les autres sont classés dans le chat',
                 'execute unless entity @a[tag=mg.play,scores={mg.xf=1..}] run return run function mg:core/draw',

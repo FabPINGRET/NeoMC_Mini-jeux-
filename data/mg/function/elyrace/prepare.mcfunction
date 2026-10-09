@@ -2,8 +2,8 @@
 execute if score $xc mg.st matches 0 run function mg:elyrace/pick
 # parcours pas construit (ou pas encore écrit) : on n'envoie personne dedans, partie annulée
 execute if score $xc mg.st matches 0 run return run function mg:elyrace/not_built
-execute if score $xc mg.st matches 1 unless data storage mg:elyrace v2 run return run function mg:elyrace/not_built
-execute if score $xc mg.st matches 2 unless data storage mg:elyrace c2v2 run return run function mg:elyrace/not_built
+execute if score $xc mg.st matches 1 unless data storage mg:elyrace v3 run return run function mg:elyrace/not_built
+execute if score $xc mg.st matches 2 unless data storage mg:elyrace c2v3 run return run function mg:elyrace/not_built
 # restes d'une partie précédente
 tag @a remove mg.xw1
 tag @a remove mg.xtp
@@ -29,6 +29,10 @@ scoreboard players set @a[tag=mg.play] mg.xf 0
 scoreboard players set @a[tag=mg.play] mg.xb1 0
 scoreboard players set @a[tag=mg.play] mg.xb2 0
 scoreboard players set @a[tag=mg.play] mg.xb3 0
+scoreboard players set @a[tag=mg.play] mg.xq1 0
+scoreboard players set @a[tag=mg.play] mg.xq2 0
+scoreboard players set @a[tag=mg.play] mg.xq3 0
+scoreboard players set @a[tag=mg.play] mg.xu 0
 scoreboard players set $xt mg.st 0
 scoreboard players set $xf mg.st 0
 scoreboard players set $xw mg.st 0

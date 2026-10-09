@@ -11,7 +11,7 @@ execute if data storage mg:party built run scoreboard players add $swn mg.st 1
 execute if data storage mg:kart built if data storage mg:kart built2 if data storage mg:kart built3 run scoreboard players add $swn mg.st 1
 execute if data storage mg:dropadv v3 run scoreboard players add $swn mg.st 1
 execute if data storage mg:sky built run scoreboard players add $swn mg.st 1
-execute if data storage mg:elyrace v2 if data storage mg:elyrace c2v2 run scoreboard players add $swn mg.st 1
+execute if data storage mg:elyrace v3 if data storage mg:elyrace c2v3 run scoreboard players add $swn mg.st 1
 execute if score $swn mg.st matches 11.. run return run function mg:core/setup_done
 # toutes les 20 s : avancement
 scoreboard players operation $swq mg.st = $swt mg.st

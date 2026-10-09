@@ -2,4 +2,4 @@
 execute unless entity @s[tag=mg.xso] run tellraw @s [{"text":"🪽 COURSE D'ÉLYTRES — PIC BLANC : ","color":"aqua","bold":true},{"text":"saute de la falaise, ouvre tes élytres (espace en l'air) et franchis les 20 anneaux dans l'ordre, par le trou. Le premier arrivé gagne (3 minutes au plus).","color":"gray"}]
 execute if entity @s[tag=mg.xso] run tellraw @s [{"text":"🪽 COURSE D'ÉLYTRES — PIC BLANC : ","color":"aqua","bold":true},{"text":"saute de la falaise, ouvre tes élytres (espace en l'air) et franchis les 20 anneaux dans l'ordre, par le trou. Ton temps est enregistré (3 minutes au plus).","color":"gray"}]
 tellraw @s [{"text":"♥ 3 cœurs : chaque choc contre un mur en retire un. Plus de cœur, anneau raté, sol, eau ou trop longtemps sans planer : retour en l'air au dernier point de reprise (colonnes lumineuses).","color":"gray"}]
-tellraw @s [{"text":"★ 3 anneaux d'or en détour : chacun donne une fusée (clic droit en vol pour accélérer).","color":"gold"}]
+tellraw @s [{"text":"★ 1 anneau d'or en détour : il donne un turbo de 3 s (tu piques plus vite).","color":"gold"}]

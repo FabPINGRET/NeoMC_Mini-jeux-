@@ -2,7 +2,7 @@
 
 Plongeon depuis la mesa de depart, slalom entre cheminees de fee, 3 arches etroites, viaduc ferroviaire et chevalet de
 mine, passe basse, faille etroite, galerie de mine, descente dans la rue de la ville fantome. Parcours rapide : seule la
-pente donne de la vitesse (les fusees freinent au-dessus de 1,7 b/tick). Ce module decrit le PARCOURS (profil, anneaux,
+pente donne de la vitesse (gravite de course 0,104 ; un anneau d'or donne un turbo de 3 s). Ce module decrit le PARCOURS (profil, anneaux,
 points de reprise, anneaux d'or) et le RELIEF ; les decors (cheminees, arches, viaduc, chevalet, ville) sont dans
 props_canyon.py, la galerie de mine dans tunnel_canyon.py.
 
@@ -22,8 +22,8 @@ NAME = 'Canyon du Couchant'
 ICON, COLOR, STARS = '🏜', 'gold', 3                      # bouton du menu : icone (menu texte), couleur, difficulte (etoiles sur 4)
 TIP = ('Parcours 1 (Far West, ~1000 blocs) : plongeon, slalom entre cheminées de fée, arches étroites, viaduc, passe basse, '
        'faille, galerie de mine, rue de la ville fantôme.')
-FLAG = 'v2'                                  # drapeau de construction (stockage mg:elyrace) : pose par la derniere tranche
-OLD_FLAGS = ('v1',)                          # drapeaux des versions precedentes : effaces par elyrace/forget (mondes deja installes)
+FLAG = 'v3'                                  # drapeau de construction (stockage mg:elyrace) : pose par la derniere tranche
+OLD_FLAGS = ('v1', 'v2')                     # drapeaux des versions precedentes : effaces par elyrace/forget (mondes deja installes)
 CZ = 27000                                   # axe du parcours (z)
 X0, X1 = -16, 1040                           # emprise en x (66 chunks)
 Z0, Z1 = 26848, 27152                        # emprise en z (19 chunks)
@@ -31,7 +31,8 @@ MESA = 280                                   # surface de la mesa de depart (blo
 START_Y = MESA + 1                           # altitude des pieds sur la plateforme de depart
 EDGE_X = 32                                  # bord de la falaise
 GATE_X = 27                                  # portillon de depart (x), devant les joueurs
-FRAME = 8                                    # demi-cote exterieur du cadre (17 x 17)
+FRAME = 5                                    # demi-cote exterieur du cadre (11 x 11, voir frames.ring_frame)
+GRAVITY = 0.104                              # gravite de course (attribut minecraft:gravity, blocs/tick^2) : posee au GO, vanilla = 0,08
 TV, TH = 6, 2                                # epaisseur de la coque : verticale (blocs), horizontale (cellules)
 ROWS = 4                                     # lignes de joueurs sur la plateforme de depart
 CLEAR_Y = (-10, 300)                         # hauteurs nettoyees (fill air, par passes) avant chaque tranche : un parcours reconstruit
@@ -45,18 +46,19 @@ YPTS = [(24, 281), (110, 238), (154, 225), (250, 207), (320, 196), (345, 187), (
 
 # anneaux obligatoires : (x, decalage lateral, zone). L'altitude vient du vol de reference.
 RINGS = [
-    (130, 0, 'dive'), (165, 8, 'slalom'), (185, -8, 'slalom'), (220, 8, 'slalom'), (255, -8, 'slalom'), (290, 8, 'slalom'),
-    (335, -6, 'arch'), (395, 8, 'arch'), (455, -8, 'arch'), (505, 0, 'gate'),
-    (560, 0, 'viaduct'), (612, 8, 'trestle'), (650, 0, 'low'), (690, -6, 'low'),
-    (735, -8, 'slot'), (770, 8, 'slot'), (805, -6, 'slot'), (855, 0, 'mine'),
+    (130, 0, 'dive'), (165, 6, 'slalom'), (185, -6, 'slalom'), (220, 6, 'slalom'), (255, -6, 'slalom'), (290, 6, 'slalom'),
+    (335, -5, 'arch'), (395, 6, 'arch'), (455, -6, 'arch'), (505, 0, 'gate'),
+    (560, 0, 'viaduct'), (612, 6, 'trestle'), (650, 0, 'low'), (690, -5, 'low'),
+    (735, -6, 'slot'), (770, 6, 'slot'), (805, -5, 'slot'), (855, 0, 'mine'),
     (915, 2, 'town'), (945, -2, 'town'), (970, 2, 'town'), (990, 0, 'town'),
 ]
 CPS = [6, 10, 14, 19]                        # un point de reprise apres ces anneaux (numeros d'anneau)
-GOLDS = [(355, -14), (576, -10), (888, 10)]   # anneaux d'or : (x, decalage lateral) ; altitude = trajectoire - GOLD_DY
+GOLDS = [(530, 9), (885, 9)]   # anneaux d'or : (x, decalage lateral) ; altitude = trajectoire - GOLD_DY
 GOLD_STRICT = True                           # verify.check_golds : detour >= 8 blocs hors de la ligne anneau a anneau, rampes limitees a la distance
 # des anneaux voisins, vol qui finit le parcours et franchit tous les anneaux proches. Il faut ~26 blocs avant l'anneau suivant pour
-# revenir et un decalage >= 9 pour ne pas frotter l'enveloppe des vols a +-3 : (355, -14) arches, (576, -10) viaduc, (888, +10) sortie de la
-# galerie ; la ville (anneaux a 25-30 blocs) et le reste de la faille ne laissent aucune place a un or
+# revenir et un decalage >= 9 pour ne pas frotter l'enveloppe des vols a +-3 : (530, +9) porte de la galerie, (885, +9) sortie de la
+# galerie. Gravite 0,104 et turbo : les vols sont plus rapides (3 b/tick), un detour demande ~40 blocs libres de chaque cote ; balayage de
+# verify.check_golds (x de 300 a 1000 par 5, decalages +-8 a +-12) : aucun or ne passe en x 355 a 480, ni dans la ville ou la faille ; deux ors seulement
 GOLD_DY = 2                                  # les anneaux d'or sont GOLD_DY blocs sous la trajectoire (le detour vole plus bas, voir course_blanc)
 RING_LOW = 0.5                               # les trous sont RING_LOW bloc sous la trajectoire : sur une pente forte le pilote a anticipation courte
                                              # (detour vers un anneau d'or) vole plus bas et touchait le bas du cadre
@@ -83,7 +85,7 @@ def reference_waypoints(step=12):
 
 def start_state():
     """Etat du joueur qui saute de la mesa : il a couru jusqu'au bord, chute 8 ticks avant d'ouvrir ses elytres."""
-    return G.State(EDGE_X + 0.3, START_Y, CZ + 0.5, 0.28, 0.0, 0.0)
+    return G.State(EDGE_X + 0.3, START_Y, CZ + 0.5, 0.28, 0.0, 0.0, g=GRAVITY)
 
 
 # ---------------------------------------------------------------- relief

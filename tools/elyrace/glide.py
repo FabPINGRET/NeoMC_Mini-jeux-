@@ -11,23 +11,26 @@ GRAV = 0.08                    # gravite vanilla (blocs/tick^2)
 HALF_W, BOX_H = 0.3, 0.6       # hitbox du joueur en vol plane : 0,6 x 0,6
 ROCKET_TICKS = 16              # duree moyenne d'une fusee (flight_duration 1 : 10 + 0..5 + 0..6 ticks)
 OPEN_DELAY = 8                 # ticks de chute avant l'ouverture des elytres apres une reapparition
+TURBO_G = 0.13                 # gravite pendant le turbo d'un anneau d'or (game.gold_hit pose le meme attribut)
+TURBO_TICKS = 60               # duree du turbo : 3 s (mg.xu, game.gold_hit)
 EPS = 1e-7
 
 
 class State:
-    """Position (pieds), vitesse, fusee en cours."""
-    __slots__ = ('x', 'y', 'z', 'vx', 'vy', 'vz', 'rocket', 'rockets', 'gliding')
+    """Position (pieds), vitesse, fusee en cours, gravite de base du parcours (g), ticks de turbo restants."""
+    __slots__ = ('x', 'y', 'z', 'vx', 'vy', 'vz', 'rocket', 'rockets', 'gliding', 'g', 'turbo')
 
-    def __init__(self, x, y, z, vx=0.0, vy=0.0, vz=0.0, rockets=0):
+    def __init__(self, x, y, z, vx=0.0, vy=0.0, vz=0.0, rockets=0, g=GRAV):
         self.x, self.y, self.z, self.vx, self.vy, self.vz = x, y, z, vx, vy, vz
         self.rocket, self.rockets, self.gliding = 0, rockets, True
+        self.g, self.turbo = g, 0
 
     def hspeed(self):
         return math.hypot(self.vx, self.vz)
 
     def copy(self):
-        s = State(self.x, self.y, self.z, self.vx, self.vy, self.vz, self.rockets)
-        s.rocket, s.gliding = self.rocket, self.gliding
+        s = State(self.x, self.y, self.z, self.vx, self.vy, self.vz, self.rockets, self.g)
+        s.rocket, s.gliding, s.turbo = self.rocket, self.gliding, self.turbo
         return s
 
 
@@ -94,7 +97,10 @@ def step(solid, s, ldx, ldz, pitch, rocket=False):
         s.vy += ly * 0.1 + (ly * 1.5 - s.vy) * 0.5
         s.vz += lz * 0.1 + (lz * 1.5 - s.vz) * 0.5
         s.rocket -= 1
-    vx, vy, vz = s.vx, s.vy + GRAV * (-1.0 + d3 * 0.75), s.vz
+    g = TURBO_G if s.turbo > 0 else s.g          # turbo d'un anneau d'or : gravite renforcee pendant TURBO_TICKS ticks
+    if s.turbo > 0:
+        s.turbo -= 1
+    vx, vy, vz = s.vx, s.vy + g * (-1.0 + d3 * 0.75), s.vz
     if vy < 0.0 and d0 > 0.0:
         d4 = vy * -0.1 * d3
         vx += lx * d4 / d0
@@ -129,7 +135,7 @@ def _ground(solid, s):
 def freefall(solid, s, ticks):
     """Chute libre (elytres pas encore ouvertes), pour la reapparition. Renvoie True si on touche le sol."""
     for _ in range(ticks):
-        s.vy = (s.vy - GRAV) * 0.98
+        s.vy = (s.vy - s.g) * 0.98
         s.vx *= 0.91
         s.vz *= 0.91
         hit = move(solid, s, s.vx, s.vy, s.vz)
@@ -191,14 +197,19 @@ class Pilot:
         return self.wps[self.k][0] <= s.x
 
 
-def fly(solid, s, pilot, max_ticks=3000, trace=None):
-    """Vole jusqu'au dernier point. Retourne (ok, raison, tick, liste (indice, ecart_y, ecart_z, vitesse))."""
+def fly(solid, s, pilot, max_ticks=3000, trace=None, hook=None):
+    """Vole jusqu'au dernier point. Retourne (ok, raison, tick, liste (indice, ecart_y, ecart_z, vitesse)).
+    `hook(s, avant, apres)` (facultatif) est appele apres chaque tick avec les positions (x, y, z) avant et apres : il peut modifier
+    l'etat (turbo d'un anneau d'or, voir verify.turbo_hook) ; il agit des le tick suivant, comme une commande de fonction."""
     log = []
     for t in range(max_ticks):
         if pilot.done():
             return True, 'fini', t, log
         ldx, ldz, p, r = pilot.command(s)
+        before = (s.x, s.y, s.z)
         dmg, gnd = step(solid, s, ldx, ldz, p, r)
+        if hook is not None:
+            hook(s, before, (s.x, s.y, s.z))
         if trace is not None:
             trace.append((s.x, s.y, s.z, s.hspeed(), s.vy))
         if dmg:

@@ -2,27 +2,31 @@
 Tout ce qui est solide est enregistre dans le World pour que le pilote automatique le voie.
 Python stdlib uniquement (compatible 3.8).
 """
-RING_COLORS = {'ring': ('sea_lantern', 'light_blue_concrete', 'blue_concrete'),
-               'finish': ('sea_lantern', 'lime_concrete', 'white_concrete')}
+RING_COLORS = {'ring': ('sea_lantern', 'light_blue_concrete'),         # (blocs des 4 coins, bande)
+               'finish': ('sea_lantern', 'lime_concrete')}
+# Tous les anneaux sont un plan d'un bloc d'epaisseur (x..x) : leur plan de franchissement est x + 0,5 (sweep.plane).
 
 
 def ring_frame(w, x, cy, cz, kind='ring'):
-    """Cadre carre de 17 x 17 (trou de 9 x 9) dans le plan x..x+1, centre (cy, cz) : couches colorees, rebord lumineux."""
-    a, b, c = RING_COLORS[kind]
-    for r, blk in ((8, c), (7, b), (5, a), (4, 'air')):
-        w.box(x, cy - r, cz - r, x + 1, cy + r, cz + r, blk)
+    """Cadre carre de 11 x 11 (trou de 9 x 9, bande d'un bloc) dans le plan x, centre (cy, cz) : bande coloree, coins lumineux."""
+    corner, band = RING_COLORS[kind]
+    w.box(x, cy - 5, cz - 5, x, cy + 5, cz + 5, band)
+    w.box(x, cy - 4, cz - 4, x, cy + 4, cz + 4, 'air')
+    for dy in (-5, 5):
+        for dz in (-5, 5):
+            w.box(x, cy + dy, cz + dz, x, cy + dy, cz + dz, corner)
 
 
 def gold_frame(w, x, cy, cz):
-    """Anneau d'or : cadre d'or de 9 x 9 (1 bloc d'epaisseur), trou de 7 x 7."""
+    """Anneau d'or : cadre d'or de 9 x 9 (1 bloc d'epaisseur et de profondeur), trou de 7 x 7."""
     for r, blk in ((4, 'gold_block'), (3, 'air')):
-        w.box(x, cy - r, cz - r, x + 1, cy + r, cz + r, blk)
+        w.box(x, cy - r, cz - r, x, cy + r, cz + r, blk)
 
 
 def wind_frame(w, x, cy, cz):
-    """Anneau de vent : cadre bleu clair et blanc de 11 x 11, trou de 7 x 7."""
-    for r, blk in ((5, 'light_blue_concrete'), (4, 'white_concrete'), (3, 'air')):
-        w.box(x, cy - r, cz - r, x + 1, cy + r, cz + r, blk)
+    """Anneau de vent : cadre blanc de 9 x 9 (1 bloc d'epaisseur et de profondeur), trou de 7 x 7."""
+    for r, blk in ((4, 'white_concrete'), (3, 'air')):
+        w.box(x, cy - r, cz - r, x, cy + r, cz + r, blk)
 
 
 def cp_gate(w, x, cy, cz):
