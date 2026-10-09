@@ -22,6 +22,12 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.phn
+scoreboard objectives remove mg.pid
+scoreboard objectives remove mg.php
+scoreboard objectives remove mg.phx
+scoreboard objectives remove mg.phz
+scoreboard objectives remove mg.phs
 team remove mg_cm
 bossbar remove mg:cham
 data remove storage mg:cham mats

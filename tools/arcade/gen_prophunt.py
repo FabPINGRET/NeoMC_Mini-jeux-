@@ -4,7 +4,7 @@
 
 Cacheurs : invisibles et rapetissés, ils prennent l'apparence d'un objet (block_display qui les suit). Regarder un objet
 du manoir et s'accroupir = se transformer en cet objet. Immobile 2 s = l'objet se cale sur la grille (verrouillé).
-Toutes les 20 s, chaque cacheur fait un bruit. Chercheurs : enfermés et aveugles pendant 30 s, puis 3 min 30 de chasse.
+Toutes les 20 s, chaque cacheur fait un bruit ; il peut aussi en faire quand il veut avec sa corne (clic droit). Cacheurs : 5 cœurs (2 coups d'épée). Chercheurs : enfermés et aveugles pendant 30 s, puis 3 min 30 de chasse.
 Frapper un objet suspect touche le cacheur (interaction autour de l'objet). Cacheur tué = devient chercheur.
 Il reste un cacheur à la fin → les cacheurs gagnent ; plus aucun → les chercheurs gagnent.
 """
@@ -93,13 +93,16 @@ w('ph/go', ['# Départ : 30 s pour se cacher', 'scoreboard players set $pht mg.s
             'execute as @a[tag=mg.phh] run function mg:ph/become_prop', 'execute as @a[tag=mg.phs] run function mg:ph/seeker_kit',
             'effect give @a[tag=mg.phs] minecraft:blindness 31 0 true',
             'tellraw @a[tag=mg.phh] ' + js([{'text': '🎭 PROP HUNT — tu te caches ! ', 'color': 'gold', 'bold': True},
-                                            {'text': 'Regarde un objet du manoir et ACCROUPIS-TOI pour en prendre l\'apparence. Reste immobile 2 s pour te caler sur la grille. Les chercheurs arrivent dans 30 s ; toutes les 20 s tu fais un petit bruit…', 'color': 'gray'}]),
+                                            {'text': 'Regarde un objet du manoir et ACCROUPIS-TOI pour en prendre l\'apparence. Reste immobile 2 s pour te caler sur la grille. Les chercheurs arrivent dans 30 s ; toutes les 20 s tu fais un petit bruit, et ta corne (clic droit) en fait un quand tu veux. Attention : 5 cœurs seulement !', 'color': 'gray'}]),
             'tellraw @a[tag=mg.phs] ' + js([{'text': '🎭 PROP HUNT — tu cherches ! ', 'color': 'red', 'bold': True},
                                             {'text': 'Les cacheurs se transforment en objets du manoir. Tu es libéré dans 30 s : frappe les objets suspects, écoute les bruits !', 'color': 'gray'}])])
 w('ph/become_prop', ['# @s devient cacheur : invisible, petit, un objet au hasard',
                      'clear @s', 'scoreboard players add $phc mg.st 1', 'scoreboard players operation @s mg.pid = $phc mg.st',
                      'effect give @s minecraft:invisibility infinite 0 true', 'effect give @s minecraft:saturation infinite 0 true',
                      'attribute @s minecraft:scale base set 0.5',
+                     '# Cacheur fragile : 5 cœurs (2 coups d\'épée de chercheur)',
+                     'attribute @s minecraft:max_health base set 10', 'effect give @s minecraft:instant_health 1 0 true',
+                     'item replace entity @s hotbar.0 with minecraft:goat_horn[instrument="minecraft:ponder_goat_horn",custom_name={"text":"📯 Faire du bruit","color":"gold","italic":false},lore=[{"text":"Clic droit : un bruit pour narguer les chercheurs","color":"gray","italic":false}]]',
                      'execute store result score @s mg.php run random value 1..' + str(len(PROPS)),
                      'execute at @s run summon minecraft:block_display ~ ~ ~ {Tags:["mg.phd","mg.phnew"],teleport_duration:1,block_state:{Name:"minecraft:barrel"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.5f,0f,-0.5f],scale:[1f,1f,1f]}}',
                      'execute at @s run summon minecraft:interaction ~ ~ ~ {Tags:["mg.phi","mg.phnew"],width:1.02f,height:1.02f}',
@@ -144,6 +147,7 @@ w('ph/hit_prop', ['# @s = interaction frappée : le cacheur lié prend un coup (
                   'execute if entity @a[tag=mg.phatk] as @a[tag=mg.phh] if score @s mg.pid = $pid mg.st run damage @s 5 minecraft:player_attack by @a[tag=mg.phatk,limit=1]',
                   'tag @a remove mg.phatk'])
 w('ph/seeker_kit', ['# @s : chercheur', 'clear @s', 'effect clear @s minecraft:invisibility', 'attribute @s minecraft:scale base set 1',
+                    'attribute @s minecraft:max_health base set 20', 'effect give @s minecraft:instant_health 1 4 true',
                     'item replace entity @s hotbar.0 with minecraft:iron_sword[unbreakable={}]',
                     'item replace entity @s armor.chest with minecraft:leather_chestplate[dyed_color=16711680,unbreakable={}]',
                     'item replace entity @s armor.head with minecraft:leather_helmet[dyed_color=16711680,unbreakable={}]',
@@ -177,6 +181,8 @@ w('ph/tick', ['# 🎭 Prop Hunt — tick', 'scoreboard players add $pht mg.st 1'
               'tag @a[tag=mg.phsn] remove mg.phsn' if False else 'execute as @a[tag=mg.phsn] unless score @s mg.gsn matches 1.. run tag @s remove mg.phsn',
               'scoreboard players set @a[tag=mg.phx] mg.gsn 0',
               'execute as @a[tag=mg.phh] at @s run function mg:ph/follow',
+              'execute as @a[tag=mg.phh,scores={mg.phn=1..}] at @s run function mg:ph/taunt_one',
+              'scoreboard players reset @a[scores={mg.phn=1..}] mg.phn',
               'execute as @e[type=minecraft:interaction,tag=mg.phi] if data entity @s attack run function mg:ph/hit_prop',
               'execute as @a[tag=mg.phh,scores={mg.deaths=1..}] run function mg:ph/found',
               'execute as @a[tag=mg.phs,scores={mg.deaths=1..}] run scoreboard players set @s mg.deaths 0',
@@ -200,12 +206,13 @@ w('ph/hiders_win', ['# Les cacheurs gagnent', 'tag @a[tag=mg.play,tag=mg.phh] ad
                     'execute as @a[tag=!mg.surv] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1'])
 w('ph/seekers_win', ['# Plus aucun cacheur', 'tellraw @a {"text":"🎭 Tous les cacheurs ont été trouvés !","color":"red","bold":true}', 'function mg:core/win_red'])
 w('ph/cleanup', ['function mg:ph/kill_all', 'execute as @a[tag=mg.phx] run attribute @s minecraft:scale base set 1',
+                 'execute as @a[tag=mg.phx] run attribute @s minecraft:max_health base set 20',
                  'effect clear @a[tag=mg.phx] minecraft:invisibility', 'effect clear @a[tag=mg.phx] minecraft:speed',
                  'effect clear @a[tag=mg.phx] minecraft:blindness', 'team leave @a[team=mg_ph]',
                  'tag @a remove mg.phh', 'tag @a remove mg.phs', 'tag @a remove mg.phsn', 'tag @a remove mg.phx'])
 
 C.register([96], 'ph', [C.announce(96, '', '🎭 PROP HUNT', 'gold', 'cachez-vous en objets, les chercheurs arrivent dans 30 s !')])
-C.objectives([('mg.pid', 'dummy'), ('mg.php', 'dummy'), ('mg.phx', 'dummy'), ('mg.phz', 'dummy'), ('mg.phs', 'dummy')])
+C.objectives([('mg.phn', 'minecraft.used:minecraft.goat_horn'), ('mg.pid', 'dummy'), ('mg.php', 'dummy'), ('mg.phx', 'dummy'), ('mg.phz', 'dummy'), ('mg.phs', 'dummy')])
 C.patch('core/load', 'scoreboard objectives add mg.bw trigger', ['team add mg_ph', 'team modify mg_ph nametagVisibility never',
                                                                  'team modify mg_ph friendlyFire false', 'team modify mg_ph collisionRule never',
                                                                  'scoreboard players set #4 mg.st 4'])
