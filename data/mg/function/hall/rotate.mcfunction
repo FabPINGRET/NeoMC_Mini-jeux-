@@ -1,5 +1,6 @@
 # Tableau à droite : affichage suivant
 execute if entity @a[scores={mg.wins=1..}] run scoreboard players set #any mg.wins 1
+execute if entity @a[scores={mg.lvl=1..}] run scoreboard players set #any mg.lvl 1
 execute if entity @a[scores={mg.stp=1..}] run scoreboard players set #any mg.stp 1
 execute if entity @a[scores={mg.stk=1..}] run scoreboard players set #any mg.stk 1
 execute if score $vn mg.st matches 1.. unless score $rph mg.st matches 1 run return run function mg:hall/rot_votes

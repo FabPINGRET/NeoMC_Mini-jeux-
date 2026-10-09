@@ -36,7 +36,7 @@ def patch(rel, anchor, new, where='after'):
 
 # (libellé, [(storage, chemin)])
 JOBS = [('Spawn', [('mg:lobby', 'v6')]), ('Buffet', [('mg:lobby', 'food1')]), ('Élytres du spawn', [('mg:lobby', 'ely1')]),
-        ('Hall des scores', [('mg:hall', 'v5')]), ('Montagne russe', [('mg:lobby', 'coaster1')]), ('Plots', [('mg:setup', 'plot')]),
+        ('Hall des scores', [('mg:hall', 'v6')]), ('Montagne russe', [('mg:lobby', 'coaster1')]), ('Plots', [('mg:setup', 'plot')]),
         ('Mini Party', [('mg:party', 'built')]), ('Kart', [('mg:kart', 'built'), ('mg:kart', 'built2'), ('mg:kart', 'built3')]),
         ('Dropper aventure', [('mg:dropadv', 'v3')]), ('Élytra', [('mg:sky', 'built')]),
         ('Course d\'élytres', [('mg:elyrace', 'v1'), ('mg:elyrace', 'c2v1')])]
@@ -79,6 +79,11 @@ w('core/setup_timeout', ['# 15 min : la génération n\'a pas tout terminé',
 
 # câblage dans setup_build : effacer les drapeaux, construire aussi hall et montagne russe, surveiller
 CLEAR = [f'data remove storage {s} {k}' for lab, flags in JOBS for s, k in flags if (s, k) not in (('mg:dropadv', 'v3'),)]
+_p = os.path.join(F, 'core/setup_build.mcfunction')
+_L = open(_p, encoding='utf-8').read().split('\n')
+_cut = _L.index('function mg:lobby/build')
+_head = [l for l in _L[:_cut] if not (l.startswith('# Drapeaux de fin') or (l.startswith('data remove storage ') and l != 'data remove storage mg:kart built2'))]
+open(_p, 'w', encoding='utf-8', newline='\n').write('\n'.join(_head + _L[_cut:]))
 patch('core/setup_build', 'function mg:lobby/build', ['# Drapeaux de fin de chaque construction : effacés ici, reposés à la fin de chacune (suivi : core/setup_watch)'] +
       [c for c in CLEAR if c not in ('data remove storage mg:kart built2', 'data remove storage mg:kart built3')], where='before')
 patch('core/setup_build', 'schedule function mg:sky/build 40s', ['schedule function mg:hall/build 25s', 'schedule function mg:coaster/build_start 50s'])

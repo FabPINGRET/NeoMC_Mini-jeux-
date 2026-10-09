@@ -65,10 +65,14 @@ W('objectives', ['# Objectifs des classements par jeu (généré par tools/hall/
     for k, l, c, _ in GAMES] + [
     'scoreboard objectives modify mg.stp displayname [{"text":"▶ Parties jouées","color":"green","bold":true}]',
     'scoreboard objectives modify mg.stk displayname [{"text":"⚔ Kills","color":"red","bold":true},{"text":" (toutes parties)","color":"gray","bold":false}]',
-    'scoreboard objectives modify mg.wins displayname [{"text":"✦ Victoires","color":"gold","bold":true},{"text":" (tous les jeux)","color":"gray","bold":false}]'])
+    'scoreboard objectives modify mg.wins displayname [{"text":"✦ Victoires","color":"gold","bold":true},{"text":" (tous les jeux)","color":"gray","bold":false}]',
+    'scoreboard objectives add mg.gen dummy [{"text":"🏅 Score général","color":"aqua","bold":true}]',
+    'scoreboard objectives add mg.lvl dummy [{"text":"🏅 Classement général","color":"aqua","bold":true},{"text":" (niveau)","color":"gray","bold":false}]',
+    'scoreboard objectives add mg.genc dummy'])
 W('remove', ['# Désinstallation des classements et du hall'] +
   [f'scoreboard objectives remove mg.wg_{k}' for k, *_ in GAMES] +
-  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5'])
+  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6',
+   'scoreboard objectives remove mg.gen', 'scoreboard objectives remove mg.lvl', 'scoreboard objectives remove mg.genc'])
 
 # ---------------------------------------------------------------- crédit des vainqueurs
 cr = ['# Vainqueur (@s, tag mg.win) au retour au lobby : classement du jeu + hall des scores',
@@ -104,9 +108,10 @@ W('ely', ['# Record d\'un parcours d\'élytra (@s, temps dans $es / $ecs) → ha
 # ---------------------------------------------------------------- tableau à droite : rotation
 # Lobby, hors partie : un tableau toutes les 8 s — victoires, parties jouées, kills, puis chaque
 # jeu déjà gagné. Pendant des votes, le tableau des votes revient un affichage sur deux.
-BOARDS = [('mg.wins', None), ('mg.stp', None), ('mg.stk', None)] + [(f'mg.wg_{k}', None) for k, *_ in GAMES]
+BOARDS = [('mg.lvl', None), ('mg.wins', None), ('mg.stp', None), ('mg.stk', None)] + [(f'mg.wg_{k}', None) for k, *_ in GAMES]
 W('rotate', ['# Tableau à droite : affichage suivant',
     'execute if entity @a[scores={mg.wins=1..}] run scoreboard players set #any mg.wins 1',
+    'execute if entity @a[scores={mg.lvl=1..}] run scoreboard players set #any mg.lvl 1',
     'execute if entity @a[scores={mg.stp=1..}] run scoreboard players set #any mg.stp 1',
     'execute if entity @a[scores={mg.stk=1..}] run scoreboard players set #any mg.stk 1',
     'execute if score $vn mg.st matches 1.. unless score $rph mg.st matches 1 run return run function mg:hall/rot_votes',
@@ -166,6 +171,7 @@ peds = [(-18.5, 'stp', '▶ Le plus assidu', 'green', 'clock'),
 plaques = [(x, 66.9, 25.5, k, l, c, 0.55) for x, k, l, c, _ in peds]
 plaques.append((-12.5, 67.6, 25.5, 'ely2', "🪽 Record grand parcours d'élytra", 'light_purple', 0.55))
 plaques.append((-12.5, 68.3, 25.5, 'elyg', '🪽 Record Élytra : course', 'aqua', 0.55))
+plaques.append((-15.5, 70.15, Z1 - 0.7, 'gen', '🏅 Meilleur niveau général', 'aqua', 0.62))   # sous le titre, au-dessus du tableau
 for x, k, l, c, it in peds:
     b.append(f'summon minecraft:item_display {x} 65.8 25.5 {{Tags:["mg.hall","mg.lspin","mg.lbob"],billboard:"fixed",item:{{id:"minecraft:{it}"}},{TR % (0.9, 0.9, 0.9)}}}')
 xs = [-23.0 + 2.0 * i for i in range(9)]   # 9 colonnes × 4 rangées sur le mur du fond (36 plaques)
@@ -183,6 +189,7 @@ b.append('data modify storage mg:hall v2 set value 1b')
 b.append('data modify storage mg:hall v3 set value 1b')
 b.append('data modify storage mg:hall v4 set value 1b')
 b.append('data modify storage mg:hall v5 set value 1b')
+b.append('data modify storage mg:hall v6 set value 1b')
 W('build', b)
 W('board_tick', ['# Tableau à droite dans le lobby (classement affiché, pas de vote en cours)',
     'scoreboard players remove $hrt mg.st 1',

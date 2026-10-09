@@ -71,6 +71,7 @@ execute if score $lan mg.t matches 20 run clear @a[tag=!mg.elyf] minecraft:firew
 execute if score $setup mg.st matches 1 if score $state mg.st matches 0 if score $sb mg.st matches 1 run function mg:hall/board_tick
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block -16 64 25 minecraft:gold_block run function mg:hall/build
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 24 63 19 minecraft:gold_block run function mg:lobby/food_build
+execute if score $lan mg.t matches 15 run function mg:rank/tick
 execute as @a[scores={mg.rt=1..}] run function mg:rate/submit
 execute if score $setup mg.st matches 1 if entity @a[x=-200,y=40,z=-60,dx=100,dy=80,dz=70] run function mg:coaster/tick
 execute if score $setup mg.st matches 1 if entity @a[x=-200,y=40,z=-60,dx=125,dy=80,dz=70] run function mg:coaster/tick

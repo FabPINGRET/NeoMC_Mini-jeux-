@@ -2,6 +2,7 @@
 
 # Classements par jeu et hall des scores : crédit des vainqueurs (avant la remise à zéro des tags)
 execute as @a[tag=mg.win] run function mg:hall/credit
+tag @a remove mg.xpok
 function mg:rate/collect
 
 # Mini Party : pièces du mini-jeu (avant la remise à zéro des tags), ou fin de la partie si c'est le plateau qui s'arrête

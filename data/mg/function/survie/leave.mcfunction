@@ -10,3 +10,5 @@ tag @s remove mg.surv
 tag @s add mg.init
 function mg:core/reset_player
 tellraw @s [{"text":"⌂ Retour au lobby. Ton inventaire de survie est mis de côté.","color":"gold"}]
+
+tag @s remove mg.xpok

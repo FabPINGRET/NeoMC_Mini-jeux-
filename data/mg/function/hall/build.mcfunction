@@ -53,6 +53,8 @@ summon minecraft:text_display -12.5 67.6 25.5 {Tags:["mg.hall","mg.h_ely2"],bill
 execute if data storage mg:hall e.ely2 run data modify entity @e[type=minecraft:text_display,tag=mg.h_ely2,limit=1] text set from storage mg:hall e.ely2
 summon minecraft:text_display -12.5 68.3 25.5 {Tags:["mg.hall","mg.h_elyg"],billboard:"vertical",text:[{"text":"🪽 Record Élytra : course","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall e.elyg run data modify entity @e[type=minecraft:text_display,tag=mg.h_elyg,limit=1] text set from storage mg:hall e.elyg
+summon minecraft:text_display -15.5 70.15 34.3 {Tags:["mg.hall","mg.h_gen"],billboard:"vertical",text:[{"text":"🏅 Meilleur niveau général","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.62f,0.62f,0.62f]}}
+execute if data storage mg:hall e.gen run data modify entity @e[type=minecraft:text_display,tag=mg.h_gen,limit=1] text set from storage mg:hall e.gen
 summon minecraft:text_display -23.0 68.6 34.2 {Tags:["mg.hall","mg.h_spleef"],billboard:"vertical",text:[{"text":"❄ Spleef","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.42f,0.42f,0.42f]}}
 execute if data storage mg:hall e.spleef run data modify entity @e[type=minecraft:text_display,tag=mg.h_spleef,limit=1] text set from storage mg:hall e.spleef
 summon minecraft:text_display -21.0 68.6 34.2 {Tags:["mg.hall","mg.h_tntrun"],billboard:"vertical",text:[{"text":"✷ TNT Run","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.42f,0.42f,0.42f]}}
@@ -123,3 +125,4 @@ data modify storage mg:hall v2 set value 1b
 data modify storage mg:hall v3 set value 1b
 data modify storage mg:hall v4 set value 1b
 data modify storage mg:hall v5 set value 1b
+data modify storage mg:hall v6 set value 1b

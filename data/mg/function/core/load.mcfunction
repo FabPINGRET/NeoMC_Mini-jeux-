@@ -37,6 +37,7 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard players set #1 mg.st 1
 scoreboard objectives add mg.rt trigger
 scoreboard objectives add mg.rts dummy
 scoreboard objectives add mg.rtn dummy
@@ -222,7 +223,7 @@ execute if score $setup mg.st matches 1 if data storage mg:kart built2 unless da
 execute if score $setup mg.st matches 1 unless data storage mg:dropadv v3 run schedule function mg:dropadv/build 40s
 execute if score $setup mg.st matches 1 run scoreboard players set $xbk mg.st 0
 execute if score $setup mg.st matches 1 run schedule function mg:elyrace/build_next 60s
-execute if score $setup mg.st matches 1 unless data storage mg:hall v5 run schedule function mg:hall/build 20s
+execute if score $setup mg.st matches 1 unless data storage mg:hall v6 run schedule function mg:hall/build 20s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/build 10s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/food_build 25s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:elytra/build 30s

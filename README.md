@@ -80,6 +80,13 @@ Tout se lance depuis un menu cliquable — aucun bloc de commande, aucune constr
 
 ---
 
+## 🏅 Classement général
+
+Chaque joueur a un **score général** (`mg.gen`) = 10 × parties jouées + 50 × victoires + 2 × kills, et un **niveau** (`mg.lvl`) :
+il faut 25 × N × (N + 1) points pour le niveau N (50, 150, 300, 500…). Le niveau est affiché dans la **barre d'XP** au lobby,
+dans la rotation du **tableau à droite** et au **hall des scores** (plaque « 🏅 Meilleur niveau général », sous le titre).
+Généré par `tools/rank/gen_rank.py`.
+
 ## ⭐ Notes des joueurs
 
 À la fin de chaque partie, les participants reçoivent une fenêtre **facultative** : note sur 5 du **mode de jeu**, de la **carte** et du **fun** (« — » = pas d'avis, « Passer » ou Échap pour ignorer).

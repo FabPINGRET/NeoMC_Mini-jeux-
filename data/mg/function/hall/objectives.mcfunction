@@ -35,3 +35,6 @@ scoreboard objectives add mg.wg_infection dummy [{"text":"🧪 Infection","color
 scoreboard objectives modify mg.stp displayname [{"text":"▶ Parties jouées","color":"green","bold":true}]
 scoreboard objectives modify mg.stk displayname [{"text":"⚔ Kills","color":"red","bold":true},{"text":" (toutes parties)","color":"gray","bold":false}]
 scoreboard objectives modify mg.wins displayname [{"text":"✦ Victoires","color":"gold","bold":true},{"text":" (tous les jeux)","color":"gray","bold":false}]
+scoreboard objectives add mg.gen dummy [{"text":"🏅 Score général","color":"aqua","bold":true}]
+scoreboard objectives add mg.lvl dummy [{"text":"🏅 Classement général","color":"aqua","bold":true},{"text":" (niveau)","color":"gray","bold":false}]
+scoreboard objectives add mg.genc dummy
