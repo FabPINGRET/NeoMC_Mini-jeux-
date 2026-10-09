@@ -6,6 +6,9 @@ execute if score $gdn mg.st matches 3 run scoreboard players set $gdm mg.st 50
 execute if score $gdn mg.st matches 4 run scoreboard players set $gdm mg.st 100
 execute if score $gdn mg.st matches 5 run scoreboard players set $gdm mg.st 350
 execute if score $gdn mg.st matches 6 run scoreboard players set $gdm mg.st 200
+# Modes zombies (Zombies, Infection) : dégâts doublés ; Neo GTA (tireur mg.gtw) : dégâts normaux
+scoreboard players set #2 mg.st 2
+execute unless entity @a[tag=mg.gsh,tag=mg.gtw] run scoreboard players operation $gdm mg.st *= #2 mg.st
 execute if entity @a[tag=mg.gsh,tag=mg.zdbl] run scoreboard players operation $gdm mg.st *= #2 mg.st
 execute if entity @s[type=minecraft:player] run function mg:gun/hit_player
 execute unless entity @s[type=minecraft:player] run function mg:gun/hit_mob

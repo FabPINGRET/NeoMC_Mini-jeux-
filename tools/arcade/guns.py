@@ -83,7 +83,10 @@ def build():
                      'execute as @e[tag=mg.gtg,tag=!mg.ghd,distance=..2.5] run function mg:gun/hit'])
     w('gun/hit', ['# @s = cible touchée (le tireur porte mg.gsh)', 'tag @s add mg.ghd'] +
       [f'execute if score $gdn mg.st matches {n} run scoreboard players set $gdm mg.st {g[2] * 10}' for n, g in GUNS.items()] +
-      ['execute if entity @a[tag=mg.gsh,tag=mg.zdbl] run scoreboard players operation $gdm mg.st *= #2 mg.st',
+      ['# Modes zombies (Zombies, Infection) : dégâts doublés ; Neo GTA (tireur mg.gtw) : dégâts normaux',
+       'scoreboard players set #2 mg.st 2',
+       'execute unless entity @a[tag=mg.gsh,tag=mg.gtw] run scoreboard players operation $gdm mg.st *= #2 mg.st',
+       'execute if entity @a[tag=mg.gsh,tag=mg.zdbl] run scoreboard players operation $gdm mg.st *= #2 mg.st',
        'execute if entity @s[type=minecraft:player] run function mg:gun/hit_player',
        'execute unless entity @s[type=minecraft:player] run function mg:gun/hit_mob',
        'execute if score $zpts mg.st matches 1 run scoreboard players add @a[tag=mg.gsh,limit=1] mg.zpt 10',   # Zombies (toutes les cartes) : $zpts = 1
@@ -95,8 +98,9 @@ def build():
                       'execute if score $gh mg.st matches 1.. store result entity @s Health float 0.1 run scoreboard players get $gh mg.st',
                       'execute if score $gh mg.st matches 1.. at @s run playsound minecraft:entity.zombie.hurt hostile @a ~ ~ ~ 0.5 1',
                       'execute if score $gh mg.st matches ..0 run damage @s 1000 minecraft:player_attack by @a[tag=mg.gsh,limit=1]'])
-    w('gun/hit_player', ['# Joueur (Infection)'] +
-      [f'execute if score $gdn mg.st matches {n} run return run damage @s {g[2]} minecraft:player_attack by @a[tag=mg.gsh,limit=1]' for n, g in GUNS.items()])
+    w('gun/hit_player', ['# Joueur : Infection (zombie touché) = dégâts doublés ; Neo GTA (tireur mg.gtw) = dégâts normaux'] +
+      [f'execute if entity @a[tag=mg.gsh,tag=mg.gtw] if score $gdn mg.st matches {n} run return run damage @s {g[2]} minecraft:player_attack by @a[tag=mg.gsh,limit=1]' for n, g in GUNS.items()] +
+      [f'execute if score $gdn mg.st matches {n} run return run damage @s {2 * g[2]} minecraft:player_attack by @a[tag=mg.gsh,limit=1]' for n, g in GUNS.items()])
     w('gun/reload_tick', ['# @s recharge', 'scoreboard players remove @s mg.grl 1',
                           'execute if score @s mg.grl matches 1.. run return 0'] +
       [l for n, g in GUNS.items() for l in (f'execute if score @s mg.grt matches {n} run scoreboard players set @s mg.g{n} {g[4]}',

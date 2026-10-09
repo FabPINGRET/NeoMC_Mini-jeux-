@@ -135,7 +135,7 @@ for blk in ('spruce_planks', 'stripped_spruce_log', 'spruce_fence', 'lantern'): 
     O += [f'fill -115 62 15 -71 65 18 minecraft:air replace minecraft:{blk}', f'fill -116 62 4 -113 65 14 minecraft:air replace minecraft:{blk}']
 w('coaster/clear_old', O)
 
-sx, sy, sz = START
+sx, sy, sz = START   # centre de bloc = coordonnée + 0.5 (attention : « {-64}.5 » donnerait -64.5, le bloc voisin)
 kx, ky, kz = KIOSK
 w('coaster/build_start', ['# 🎢 Montagne russe : charge la zone puis construit (3 s plus tard)',
                           f'forceload add {BB[0]} {BB[2]} {BB[3]} {BB[5]}', 'forceload add -130 -12 -71 20',
@@ -154,7 +154,7 @@ w('coaster/build', ['# 🎢 Montagne russe : guichet + voie autour du spawn',
                     f'setblock {kx} 63 {kz} minecraft:gold_block', f'setblock {kx} 64 {kz} minecraft:light_weighted_pressure_plate',
                     'function mg:coaster/track',
                     'kill @e[tag=mg.cst]', 'kill @e[tag=mg.csd]',
-                    f'summon minecraft:text_display {kx}.5 66.2 {kz}.5 {{Tags:["mg.csd"],billboard:"center",text:[{{"text":"🎢 Montagne russe","color":"gold","bold":true}},{{"text":"\\nle tour du spawn — marche sur la plaque dorée","color":"gray"}}]}}',
+                    f'summon minecraft:text_display {kx + 0.5} 66.2 {kz + 0.5} {{Tags:["mg.csd"],billboard:"center",text:[{{"text":"🎢 Montagne russe","color":"gold","bold":true}},{{"text":"\\nle tour du spawn — marche sur la plaque dorée","color":"gray"}}]}}',
                     f'forceload remove {BB[0]} {BB[2]} {BB[3]} {BB[5]}', 'forceload remove -130 -12 -71 20',
                     # la zone du spawn est aussi gardée chargée par core/forceloads : on la remet
                     'function mg:core/forceloads',
@@ -169,14 +169,14 @@ w('coaster/tick', ['# 🎢 Montagne russe — tick (seulement si quelqu\'un est 
                    'execute as @e[type=minecraft:minecart,tag=mg.cst] unless predicate mg:coaster_has_rider run kill @s',
                    f'execute as @e[type=minecraft:minecart,tag=mg.cst] at @s if entity @s[y=-64,dy={min(ys) - 6 + 64}] run kill @s'])
 w('coaster/board', ['# @s monte dans un wagonnet, en haut de la voie (départ immédiat vers le nord)',
-                    f'tp @s {sx}.5 {sy} {sz}.5 180 10',
-                    f'summon minecraft:minecart {sx}.5 {sy} {sz}.5 {{Tags:["mg.cst","mg.csn"],Motion:[0d,0d,-0.4d]}}',
+                    f'tp @s {sx + 0.5} {sy} {sz + 0.5} 180 10',
+                    f'summon minecraft:minecart {sx + 0.5} {sy} {sz + 0.5} {{Tags:["mg.cst","mg.csn"],Motion:[0d,0d,-0.4d]}}',
                     'ride @s mount @e[type=minecraft:minecart,tag=mg.csn,limit=1]', 'tag @e[tag=mg.csn] remove mg.csn',
                     'playsound minecraft:entity.minecart.riding master @s ~ ~ ~ 0.6 1.2',
                     'title @s actionbar {"text":"🎢 Accroche-toi !","color":"gold"}'])
 w('coaster/arrive', ['# Wagonnet arrivé : le passager redescend au guichet',
                      'execute on passengers run tag @s add mg.csx', 'ride @a[tag=mg.csx,limit=1] dismount',
-                     f'tp @a[tag=mg.csx] {kx}.5 64 {kz + 3}.5 0 0', 'tag @a[tag=mg.csx] remove mg.csx', 'kill @s'])
+                     f'tp @a[tag=mg.csx] {kx + 0.5} 64 {kz + 3.5} 0 0', 'tag @a[tag=mg.csx] remove mg.csx', 'kill @s'])
 import os, json
 os.makedirs(os.path.join(C.D, 'predicate'), exist_ok=True)
 json.dump({'condition': 'minecraft:entity_properties', 'entity': 'this', 'predicate': {'vehicle': {}}},
