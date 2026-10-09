@@ -74,7 +74,7 @@ def grav_line(g):
 GRAV_ON = 'function mg:elyrace/grav_on'
 GRAV_ON_ALL = 'execute as @a[tag=mg.play] run ' + GRAV_ON
 GRAV_RESET = 'function mg:core/attr_reset_g'
-GRAV_RESET_ALL = 'execute as @a[tag=mg.play,scores={mg.xcr=1..}] run ' + GRAV_RESET
+GRAV_RESET_ALL = 'execute as @a[scores={mg.xcr=1..}] run ' + GRAV_RESET       # pas de tag=mg.play : desinstaller l'a deja retire
 GRAV_TURBO = grav_line(GL.TURBO_G)
 XU_SET = 'scoreboard players set @s mg.xu %d' % GL.TURBO_TICKS
 XU_ZERO = 'scoreboard players set @s mg.xu 0'

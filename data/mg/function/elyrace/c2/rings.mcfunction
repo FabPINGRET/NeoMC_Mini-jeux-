@@ -42,27 +42,28 @@ execute if score @s mg.xa matches 18 if score #xox mg.st matches ..108249 if sco
 execute if score @s mg.xa matches 18 if score #xox mg.st matches ..108249 if score #xqx mg.st matches 108250.. if score #xhit mg.st matches 1 run function mg:elyrace/c2/pass
 execute if score @s mg.xa matches 19 if score #xox mg.st matches ..111249 if score #xqx mg.st matches 111250.. run function mg:elyrace/cross {p:111250,yl:6770,yh:7669,zl:2959800,zh:2960699}
 execute if score @s mg.xa matches 19 if score #xox mg.st matches ..111249 if score #xqx mg.st matches 111250.. if score #xhit mg.st matches 1 run function mg:elyrace/c2/pass
-# Anneau rate : le joueur est passe plus de 5 blocs derriere le plan du prochain anneau sans le franchir
-execute if score @s mg.xa matches 0 positioned 96 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 1 positioned 141 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 2 positioned 186 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 3 positioned 231 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 4 positioned 276 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 5 positioned 331 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 6 positioned 381 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 7 positioned 431 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 8 positioned 491 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 9 positioned 551 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 10 positioned 601 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 11 positioned 651 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 12 positioned 701 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 13 positioned 771 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 14 positioned 861 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 15 positioned 916 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 16 positioned 1016 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 17 positioned 1056 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 18 positioned 1088 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
-execute if score @s mg.xa matches 19 positioned 1118 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
+# Anneau rate : le joueur est passe plus de 5 blocs derriere le plan du prochain anneau sans le franchir ; return : apres la reprise,
+# les anneaux d'or et de vent ci-dessous liraient encore l'origine du balayage d'avant la teleportation
+execute if score @s mg.xa matches 0 positioned 96 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 1 positioned 141 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 2 positioned 186 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 3 positioned 231 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 4 positioned 276 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 5 positioned 331 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 6 positioned 381 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 7 positioned 431 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 8 positioned 491 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 9 positioned 551 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 10 positioned 601 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 11 positioned 651 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 12 positioned 701 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 13 positioned 771 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 14 positioned 861 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 15 positioned 916 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 16 positioned 1016 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 17 positioned 1056 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 18 positioned 1088 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
+execute if score @s mg.xa matches 19 positioned 1118 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run return run function mg:elyrace/miss
 # Anneaux d'or (trou de 7 x 7) : un turbo de 3 s chacun, mg.xo ne fait qu'augmenter (pas de recuperation apres une reprise)
 execute if score @s mg.xo matches ..0 if score #xox mg.st matches ..80549 if score #xqx mg.st matches 80550.. run function mg:elyrace/cross {p:80550,yl:12070,yh:12769,zl:2958800,zh:2959499}
 execute if score @s mg.xo matches ..0 if score #xox mg.st matches ..80549 if score #xqx mg.st matches 80550.. if score #xhit mg.st matches 1 run function mg:elyrace/gold_hit

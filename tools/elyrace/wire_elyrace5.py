@@ -1,7 +1,8 @@
 """Met a jour le README pour les anneaux fins et le turbo de la Course d'elytres : python wire_elyrace5.py <racine du depot>. A lancer
 APRES gen_elyrace.py et wire_elyrace.py (qui ecrit la ligne du README modifiee ici). Idempotent : le marqueur (le texte du turbo) est
-cherche dans le README, s'il y est le script ne fait rien. Chaque ancre doit exister EXACTEMENT une fois (wirelib.Patcher : tout se fait
-en memoire, rien n'est ecrit si une ancre manque) ; les fins de ligne du fichier sont conservees.
+cherche dans le README, s'il y est l'etape correspondante est sautee (deux etapes, chacune avec son marqueur : le turbo, puis la phrase
+"desinstaller pendant une course"). Chaque ancre doit exister EXACTEMENT une fois (wirelib.Patcher : tout se fait en memoire, rien n'est
+ecrit si une ancre manque) ; les fins de ligne du fichier sont conservees.
 Branchement : README, ligne de la Course d'elytres : anneaux a cadre fin (trou de 9 x 9), ors = turbo de 3 s (gravite de course 0,104,
 0,13 pendant le turbo) a la place de la fusee, nombre d'ors par parcours (Canyon 2, Pic Blanc 1 : voir GOLDS de course_*.py).
 Aucun fichier du moteur (core/*) n'est touche. Python stdlib uniquement (compatible 3.8).
@@ -12,6 +13,11 @@ import sys
 from wirelib import Patcher
 
 MARKER = 'turbo de 3 s'
+UNINSTALL_MARKER = "Désinstaller pendant une course"
+UNINSTALL_OLD = 'au bout de 3 minutes le plus avancé gagne. **Contre-la-montre solo**'
+UNINSTALL_NEW = ("au bout de 3 minutes le plus avancé gagne. **Désinstaller pendant une course** : la désinstallation remet la gravité normale "
+                 "aux coureurs en ligne, pas aux participants déconnectés : ils garderaient la gravité de course (après la désinstallation, rien ne la leur rendra à la reconnexion). "
+                 "**Contre-la-montre solo**")
 RINGS_OLD = 'par leur trou de 9 × 9 (un anneau raté'
 RINGS_NEW = "par leur trou de 9 × 9 (cadre fin de 11 × 11, un bloc d'épaisseur ; un anneau raté"
 GOLD_OLD = "**3 anneaux d'or** en détour qui donnent chacun une fusée (aucune au départ)"
@@ -24,12 +30,14 @@ COUNTS = (("**22 anneaux**, 3 anneaux d'or,", "**22 anneaux**, 2 anneaux d'or,")
 
 def wire_all(p):
     readme = p.path('README.md')
-    if MARKER in p.text(readme)[0]:
-        return
-    p.patch(readme, RINGS_OLD, RINGS_NEW)
-    p.patch(readme, GOLD_OLD, GOLD_NEW)
-    for old, new in COUNTS:
-        p.patch(readme, old, new)
+    text = p.text(readme)[0]
+    if MARKER not in text:
+        p.patch(readme, RINGS_OLD, RINGS_NEW)
+        p.patch(readme, GOLD_OLD, GOLD_NEW)
+        for old, new in COUNTS:
+            p.patch(readme, old, new)
+    if UNINSTALL_MARKER not in text:
+        p.patch(readme, UNINSTALL_OLD, UNINSTALL_NEW)
 
 
 def main():

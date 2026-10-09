@@ -117,7 +117,9 @@ def course_problems(c):
     # hauteurs des teleportations (pas des commandes de construction) : perchoir de depart (START_Y + 19, spawnpoint compris : +20)
     # et reprises (centre de l'anneau + R_UP, + 1 pour le corps du joueur)
     planes = sorted([r[0] for r in c.rings] + [g[0] for g in c.golds] + [w[0] for w in c.winds])
-    for a, b in zip(planes, planes[1:]):               # un tick (moins de STEP_MAX) ne franchit jamais deux plans : #xhit sert a un seul anneau a la fois
+    # marge prudente : un tick (moins de STEP_MAX) ne franchit pas deux plans (cross remet #xhit a zero a chaque appel, et la ligne de chaque
+    # anneau porte la meme garde que son cross : le partage de #xhit ne l'exige pas)
+    for a, b in zip(planes, planes[1:]):
         if (b - a) * 100 <= SW.STEP_MAX:
             bad.append('parcours %d : anneaux en x=%d et x=%d a %d blocs ou moins (il en faut plus de %d : un tick ne doit pas franchir deux plans)' % (s.NUM, a, b, SW.STEP_MAX // 100, SW.STEP_MAX // 100))
     top = max([s.START_Y + 20] + [c.rings[n - 1][1] + s.R_UP[n] + 1 for n in c.cps])
@@ -213,8 +215,32 @@ def gravity_problems(root, files, specs):
     if reset != ['attribute @s minecraft:gravity base set %s' % GL.GRAV]:
         bad.append('core/attr_reset_g : doit remettre la gravite normale (%s) : %s' % (GL.GRAV, reset))
     uninstall = code_lines(files, 'uninstall')
-    if G.GRAV_RESET_ALL in uninstall and not uninstall.index(G.GRAV_RESET_ALL) < min(i for i, l in enumerate(uninstall) if l.startswith('scoreboard objectives remove')):
-        bad.append('uninstall : la remise de la gravite lit mg.xcr, elle doit preceder le retrait des objectifs')
+    bad.extend(uninstall_gravity_problems(root, uninstall))
+    return bad
+
+
+def uninstall_gravity_problems(root, uninstall):
+    """Remise a la normale de la gravite des participants d'une course de groupe, a la desinstallation : desinstaller retire le tag mg.play AVANT
+    d'appeler elyrace/uninstall, et retire les objectifs de l'elytre dans uninstall : la selection ne peut donc ni lire mg.play, ni venir apres
+    le retrait de mg.xcr (sinon les coureurs gardent la gravite de course pour toujours)."""
+    bad = []
+    resets = [l for l in uninstall if 'core/attr_reset_g' in l]
+    if any('mg.play' in l for l in resets):
+        bad.append('uninstall : la remise de la gravite ne doit pas lire le tag mg.play (desinstaller le retire avant son appel a elyrace/uninstall) : %s' % resets)
+    if G.GRAV_RESET_ALL in uninstall:
+        at = uninstall.index(G.GRAV_RESET_ALL)
+        if at >= min((i for i, l in enumerate(uninstall) if l.startswith('scoreboard objectives remove')), default=len(uninstall)):
+            bad.append('uninstall : la remise de la gravite lit mg.xcr, elle doit preceder le retrait des objectifs')
+        early = [l for l in uninstall[:at] if 'mg.xcr' in l]
+        if early:
+            bad.append('uninstall : mg.xcr est touche avant la remise de la gravite qui le lit (la selection serait vide) : %s' % early)
+    xcr = 'scoreboard objectives remove mg.xcr'
+    des = CS.repo_code(root, 'desinstaller')
+    call = 'function mg:elyrace/uninstall'
+    if call not in des:
+        bad.append('desinstaller : appel %s absent' % call)
+    elif xcr in des and des.index(xcr) < des.index(call):
+        bad.append('desinstaller : mg.xcr est retire avant %s (qui le lit pour remettre la gravite)' % call)
     return bad
 
 

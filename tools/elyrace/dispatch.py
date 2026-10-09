@@ -143,7 +143,7 @@ def uninstall_lines(specs):
             'clear @a minecraft:elytra[minecraft:custom_data~{mg_elyr:1b}]',
             'clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_elyr:1b}]']
     out += ['tag @a remove ' + t for t in G.TAGS] + W.cleanup_lines()
-    out += ['# course de groupe en cours : gravité normale pour ses participants (mg.xcr : lu avant le retrait des objectifs ; le solo la remet dans solo/stop)',
+    out += ['# course de groupe en cours : gravité normale pour ses participants (mg.xcr : lu avant le retrait des objectifs, sans tag mg.play : desinstaller l\'a déjà retiré ; le solo la remet dans solo/stop)',
             G.GRAV_RESET_ALL]
     out += ['# contre-la-montre solo en cours : solo/stop (tags, scores de course, gel, pause d\'avant, retour au lobby ; il tourne ici, avant le retrait des',
             '# objectifs de l\'élytre ; mg.st / mg.t / mg.deaths sont déjà retirés par desinstaller : les écritures de score dessus (délai mg.xse d\'après $tc, vote rendu,',
