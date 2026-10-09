@@ -26,6 +26,8 @@ scoreboard objectives remove mg.trc
 scoreboard objectives remove mg.trs
 scoreboard objectives remove mg.trj
 schedule clear mg:core/setup_watch
+schedule clear mg:lobby/deco
+schedule clear mg:lobby/armory_build
 data remove storage mg:setup plot
 scoreboard objectives remove mg.rt
 scoreboard objectives remove mg.rts
