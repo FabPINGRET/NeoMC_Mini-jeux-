@@ -1,4 +1,4 @@
-# Neo Hills, étape 9/33 (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta)
+# Neo Hills, étape 9/34 (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta)
 fill -44 67 32224 54 69 32299 minecraft:dirt
 fill -44 70 32224 54 70 32299 minecraft:grass_block
 fill -44 56 32300 54 68 32300 minecraft:stone
@@ -19,6 +19,10 @@ fill -44 56 32307 54 64 32307 minecraft:stone
 fill -44 65 32307 54 65 32307 minecraft:grass_block
 fill -44 56 32308 54 63 32308 minecraft:stone
 fill -44 64 32308 54 64 32308 minecraft:grass_block
+fill -44 56 32309 15 63 32311 minecraft:stone
+fill -44 64 32309 15 64 32311 minecraft:grass_block
+fill 25 56 32309 54 63 32311 minecraft:stone
+fill 25 64 32309 54 64 32311 minecraft:grass_block
 fill 16 56 32311 24 64 32311 minecraft:stone
 fill 17 65 32311 23 65 32311 minecraft:polished_andesite_slab
 setblock 16 66 32311 minecraft:stone_brick_wall
@@ -65,7 +69,3 @@ setblock 16 70 32303 minecraft:stone_brick_wall
 setblock 24 70 32303 minecraft:stone_brick_wall
 fill 17 70 32303 23 80 32303 minecraft:air
 fill 16 56 32302 24 69 32302 minecraft:stone
-fill 17 69 32302 23 69 32302 minecraft:polished_andesite
-setblock 16 70 32302 minecraft:stone_brick_wall
-setblock 24 70 32302 minecraft:stone_brick_wall
-fill 17 70 32302 23 80 32302 minecraft:air

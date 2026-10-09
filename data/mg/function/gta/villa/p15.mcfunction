@@ -1,34 +1,4 @@
-# Neo Hills, étape 15/33 (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta)
-fill 24 71 32276 24 82 32276 minecraft:black_concrete
-fill 24 71 32252 24 82 32252 minecraft:black_concrete
-fill 30 71 32276 30 82 32276 minecraft:black_concrete
-fill 30 71 32252 30 82 32252 minecraft:black_concrete
-fill 36 71 32276 36 82 32276 minecraft:black_concrete
-fill 36 71 32252 36 82 32252 minecraft:black_concrete
-fill 0 76 32276 40 76 32276 minecraft:black_concrete
-fill 0 83 32276 40 83 32276 minecraft:black_concrete
-fill 1 77 32276 11 82 32276 minecraft:stripped_dark_oak_wood
-fill 3 78 32276 9 81 32276 minecraft:gray_stained_glass
-fill 12 76 32277 28 76 32279 minecraft:smooth_quartz
-fill 12 77 32279 28 77 32279 minecraft:glass
-fill 12 71 32279 12 75 32279 minecraft:quartz_pillar
-fill 28 71 32279 28 75 32279 minecraft:quartz_pillar
-fill 17 71 32276 23 74 32276 minecraft:air
-fill 16 71 32276 16 75 32276 minecraft:black_concrete
-fill 24 71 32276 24 75 32276 minecraft:black_concrete
-fill 15 76 32267 25 76 32275 minecraft:air
-fill 20 78 32271 20 82 32271 minecraft:iron_chain
-fill 19 77 32270 21 77 32272 minecraft:glass
-setblock 20 76 32271 minecraft:sea_lantern
-setblock 22 77 32271 minecraft:end_rod[facing=down]
-setblock 18 77 32271 minecraft:end_rod[facing=down]
-setblock 20 77 32273 minecraft:end_rod[facing=down]
-setblock 20 77 32269 minecraft:end_rod[facing=down]
-fill 15 70 32267 25 70 32275 minecraft:polished_diorite
-fill 17 71 32269 23 71 32274 minecraft:red_carpet
-fill 18 71 32266 22 71 32266 minecraft:quartz_stairs[facing=north]
-fill 18 72 32265 22 72 32265 minecraft:quartz_stairs[facing=north]
-fill 18 71 32265 22 71 32265 minecraft:smooth_quartz
+# Neo Hills, étape 15/34 (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta)
 fill 18 73 32264 22 73 32264 minecraft:quartz_stairs[facing=north]
 fill 18 71 32264 22 72 32264 minecraft:smooth_quartz
 fill 18 74 32263 22 74 32263 minecraft:quartz_stairs[facing=north]
@@ -69,3 +39,33 @@ setblock 30 75 32268 minecraft:sea_lantern
 setblock 34 75 32268 minecraft:sea_lantern
 fill 1 71 32253 13 71 32253 minecraft:white_concrete
 fill 1 72 32253 13 72 32253 minecraft:smooth_quartz_slab
+setblock 3 71 32253 minecraft:smoker
+setblock 4 71 32253 minecraft:furnace
+setblock 6 72 32253 minecraft:water_cauldron[level=3]
+fill 12 71 32253 13 73 32253 minecraft:iron_block
+fill 4 71 32257 10 71 32258 minecraft:white_concrete
+fill 4 72 32257 10 72 32258 minecraft:smooth_quartz_slab
+setblock 4 71 32259 minecraft:dark_oak_stairs[facing=north]
+setblock 6 71 32259 minecraft:dark_oak_stairs[facing=north]
+setblock 8 71 32259 minecraft:dark_oak_stairs[facing=north]
+setblock 10 71 32259 minecraft:dark_oak_stairs[facing=north]
+fill 4 71 32266 10 71 32266 minecraft:dark_oak_fence
+fill 4 72 32266 10 72 32266 minecraft:dark_oak_slab
+fill 4 72 32265 10 72 32267 minecraft:air
+fill 4 71 32265 10 71 32265 minecraft:dark_oak_stairs[facing=south]
+fill 4 71 32267 10 71 32267 minecraft:dark_oak_stairs[facing=north]
+fill 4 71 32266 10 71 32266 minecraft:dark_oak_fence
+fill 4 72 32266 10 72 32266 minecraft:dark_oak_slab
+setblock 7 73 32266 minecraft:candle[lit=true,candles=3]
+setblock 4 75 32266 minecraft:sea_lantern
+setblock 7 75 32266 minecraft:sea_lantern
+setblock 10 75 32266 minecraft:sea_lantern
+fill 15 71 32267 15 71 32269 minecraft:dark_oak_planks
+fill 15 72 32267 15 72 32269 minecraft:polished_blackstone_slab
+setblock 15 73 32267 minecraft:brewing_stand
+setblock 15 73 32269 minecraft:brewing_stand
+setblock 17 72 32266 minecraft:glass
+setblock 23 72 32266 minecraft:glass
+setblock 17 73 32265 minecraft:glass
+setblock 23 73 32265 minecraft:glass
+setblock 17 74 32264 minecraft:glass

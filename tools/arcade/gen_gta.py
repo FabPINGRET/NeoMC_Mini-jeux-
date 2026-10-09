@@ -88,7 +88,8 @@ VWEAP = list(zip([p[0] for p in NH['weapon_pads']], [p[1] for p in NH['weapon_pa
 VFRONT = tuple(NH['front'])                                     # arrivée à Neo GTA : derrière le portail du domaine
 LIFT = tuple(NH['lift_up'])                                     # ascenseur hall ↔ toit-terrasse (y : NH['lift_y'])
 NA = NH['area']
-FL2 = f'{NA[0]} {Z + NA[1]} {NA[2]} {Z + NA[3] + 4}'            # chargement forcé du domaine
+NZ = NH['runway'][1]                                            # bord nord : la piste d'aviation derrière le domaine
+FL2 = f'{NA[0]} {Z + NZ} {NA[2]} {Z + NA[3] + 4}'            # chargement forcé du domaine
 PAD.update({'slot': (70, '🎰 Machine à sous', 'gold', 'minecraft:gold_ingot'), 'roulette': (71, '🎡 Roulette', 'red', 'minecraft:clock'),
             'dice': (72, '🎲 Dés', 'aqua', 'minecraft:white_concrete'),
             'paint': (60, '🎨 Peinture', 'light_purple', 'minecraft:magenta_dye'), 'g_moto': (31, '🏍 Moto', 'gold', 'minecraft:saddle'), 'g_muscle': (32, '🚗 Muscle car', 'red', 'minecraft:minecart'),
@@ -161,15 +162,15 @@ w('gta/walls', ['# Bord de la carte et plafond des hélicos (barrières)',
                 f'fill -{HX} {YT} {Z - HX} {HX} {YT} {Z + HX} minecraft:barrier',
                 f'fill {-HX - 1} 57 {Z - HX - 1} {-HX - 1} {YT - 1} {Z + HX + 1} minecraft:barrier',
                 f'fill {HX + 1} 65 {Z - HX - 1} {HX + 1} {YT - 1} {Z + HX + 1} minecraft:barrier',
-                f'fill {-HX} 57 {Z - HX - 1} {HX} {YT - 1} {Z - HX - 1} minecraft:barrier',
+                f'fill {-HX} 57 {Z - HX - 1} {NA[0] - 1} {YT - 1} {Z - HX - 1} minecraft:barrier',   # nord : ouvert sur Neo Hills
+                f'fill {NA[2] + 1} 57 {Z - HX - 1} {HX} {YT - 1} {Z - HX - 1} minecraft:barrier',
                 f'fill {-HX} 57 {Z + HX + 1} {HX} {YT - 1} {Z + HX + 1} minecraft:barrier',
                 # Neo Hills : trouée dans le mur nord (avenue 20), enceinte et plafond du domaine
-                f'fill 17 66 {Z - HX - 1} 23 80 {Z - HX - 1} minecraft:air',
                 f'fill 17 65 {Z - HX - 1} 23 65 {Z - HX - 1} minecraft:polished_andesite_slab',
-                f'fill {NA[0] - 1} 57 {Z + NA[1] - 1} {NA[0] - 1} {YT - 1} {Z - HX - 2} minecraft:barrier',
-                f'fill {NA[2] + 1} 57 {Z + NA[1] - 1} {NA[2] + 1} {YT - 1} {Z - HX - 2} minecraft:barrier',
-                f'fill {NA[0] - 1} 57 {Z + NA[1] - 1} {NA[2] + 1} {YT - 1} {Z + NA[1] - 1} minecraft:barrier',
-                f'fill {NA[0] - 1} {YT} {Z + NA[1] - 1} {NA[2] + 1} {YT} {Z - HX - 2} minecraft:barrier'])
+                f'fill {NA[0] - 1} 57 {Z + NZ} {NA[0] - 1} {YT - 1} {Z - HX - 2} minecraft:barrier',
+                f'fill {NA[2] + 1} 57 {Z + NZ} {NA[2] + 1} {YT - 1} {Z - HX - 2} minecraft:barrier',
+                f'fill {NA[0] - 1} 57 {Z + NZ} {NA[2] + 1} {YT - 1} {Z + NZ} minecraft:barrier',
+                f'fill {NA[0] - 1} {YT} {Z + NZ} {NA[2] + 1} {YT} {Z - HX - 2} minecraft:barrier'])
 
 # ---------------------------------------------------------------- portail du lobby (monde des mini-jeux)
 PB = ['# Portail de Neo GTA au lobby (avenue nord, côté est), reconstruit par mg:gta/lobby_tick s\'il disparaît',
@@ -329,7 +330,7 @@ for (x, z, y, ts) in [(x, z, VY, t) for x, z, t in VPADS] + [(x, z, VY, t) for x
           'execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show',
           f'summon minecraft:block_display {x - 0.5} {y} {Z + z - 0.5} {{Tags:["mg.gta","mg.gpdb"],block_state:{{Name:"minecraft:light_weighted_pressure_plate"}}}}',
           'tag @e[tag=mg.gpn] remove mg.gpn']
-S += ['function mg:gta/planque',
+S += ['function mg:gta/planque', 'execute unless data storage mg:gta {piste:1} run function mg:gta/piste', 'data modify storage mg:gta piste set value 1',
       f'summon minecraft:block_display {NH["trap"][0]} {VY - 1} {Z + NH["trap"][1]} {{Tags:["mg.gta"],block_state:{{Name:"minecraft:dark_oak_planks"}}}}',
       f'summon minecraft:marker {LIFT[0]} {NH["lift_y"][0]} {Z + LIFT[1]} {{Tags:["mg.gta","mg.glup"]}}',
       f'summon minecraft:marker {LIFT[0]} {NH["lift_y"][1]} {Z + LIFT[1]} {{Tags:["mg.gta","mg.gldn"]}}',

@@ -152,5 +152,6 @@ execute if score $gwfull mg.st matches 1 if score $gwb mg.st matches 149 in mg:g
 execute if score $gwfull mg.st matches 1 if score $gwb mg.st matches 150 in mg:gta run function mg:gta/villa/p31
 execute if score $gwfull mg.st matches 1 if score $gwb mg.st matches 151 in mg:gta run function mg:gta/villa/p32
 execute if score $gwfull mg.st matches 1 if score $gwb mg.st matches 152 in mg:gta run function mg:gta/villa/p33
-execute if score $gwb mg.st matches 153 run function mg:gta/wb_done
-execute if score $gwb mg.st matches ..152 run schedule function mg:gta/wb_step 1t
+execute if score $gwfull mg.st matches 1 if score $gwb mg.st matches 153 in mg:gta run function mg:gta/villa/p34
+execute if score $gwb mg.st matches 154 run function mg:gta/wb_done
+execute if score $gwb mg.st matches ..153 run schedule function mg:gta/wb_step 1t

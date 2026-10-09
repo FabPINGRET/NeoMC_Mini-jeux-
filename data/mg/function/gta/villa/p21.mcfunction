@@ -1,34 +1,4 @@
-# Neo Hills, étape 21/33 (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta)
-setblock -36 71 32286 minecraft:redstone_lamp[lit=true]
-setblock -30 71 32292 minecraft:redstone_lamp[lit=true]
-setblock -30 71 32280 minecraft:redstone_lamp[lit=true]
-fill -43 71 32264 -24 77 32276 minecraft:gray_concrete
-fill -42 71 32265 -25 76 32275 minecraft:air
-fill -43 70 32264 -24 70 32276 minecraft:polished_andesite
-setblock -6 71 32290 minecraft:jungle_log
-setblock -6 72 32290 minecraft:jungle_log
-setblock -6 73 32290 minecraft:jungle_log
-setblock -6 74 32290 minecraft:jungle_log
-setblock -6 75 32290 minecraft:jungle_log
-setblock -6 76 32291 minecraft:jungle_log
-setblock -6 77 32291 minecraft:jungle_log
-setblock -6 78 32291 minecraft:jungle_log
-setblock -6 79 32291 minecraft:jungle_leaves[persistent=true]
-setblock -5 79 32291 minecraft:jungle_leaves[persistent=true]
-setblock -4 78 32291 minecraft:jungle_leaves[persistent=true]
-setblock -3 77 32291 minecraft:jungle_leaves[persistent=true]
-setblock -7 79 32291 minecraft:jungle_leaves[persistent=true]
-setblock -8 78 32291 minecraft:jungle_leaves[persistent=true]
-setblock -9 77 32291 minecraft:jungle_leaves[persistent=true]
-setblock -6 79 32292 minecraft:jungle_leaves[persistent=true]
-setblock -6 78 32293 minecraft:jungle_leaves[persistent=true]
-setblock -6 77 32294 minecraft:jungle_leaves[persistent=true]
-setblock -6 79 32290 minecraft:jungle_leaves[persistent=true]
-setblock -6 78 32289 minecraft:jungle_leaves[persistent=true]
-setblock -6 77 32288 minecraft:jungle_leaves[persistent=true]
-setblock -5 78 32292 minecraft:jungle_leaves[persistent=true]
-setblock -4 77 32293 minecraft:jungle_leaves[persistent=true]
-setblock -7 78 32292 minecraft:jungle_leaves[persistent=true]
+# Neo Hills, étape 21/34 (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta)
 setblock -8 77 32293 minecraft:jungle_leaves[persistent=true]
 setblock -5 78 32290 minecraft:jungle_leaves[persistent=true]
 setblock -4 77 32289 minecraft:jungle_leaves[persistent=true]
@@ -69,3 +39,33 @@ setblock 34 74 32294 minecraft:jungle_log
 setblock 34 75 32294 minecraft:jungle_log
 setblock 35 76 32294 minecraft:jungle_log
 setblock 35 77 32294 minecraft:jungle_log
+setblock 35 78 32294 minecraft:jungle_leaves[persistent=true]
+setblock 36 78 32294 minecraft:jungle_leaves[persistent=true]
+setblock 37 77 32294 minecraft:jungle_leaves[persistent=true]
+setblock 38 76 32294 minecraft:jungle_leaves[persistent=true]
+setblock 34 78 32294 minecraft:jungle_leaves[persistent=true]
+setblock 33 77 32294 minecraft:jungle_leaves[persistent=true]
+setblock 32 76 32294 minecraft:jungle_leaves[persistent=true]
+setblock 35 78 32295 minecraft:jungle_leaves[persistent=true]
+setblock 35 77 32296 minecraft:jungle_leaves[persistent=true]
+setblock 35 76 32297 minecraft:jungle_leaves[persistent=true]
+setblock 35 78 32293 minecraft:jungle_leaves[persistent=true]
+setblock 35 77 32292 minecraft:jungle_leaves[persistent=true]
+setblock 35 76 32291 minecraft:jungle_leaves[persistent=true]
+setblock 36 77 32295 minecraft:jungle_leaves[persistent=true]
+setblock 37 76 32296 minecraft:jungle_leaves[persistent=true]
+setblock 34 77 32295 minecraft:jungle_leaves[persistent=true]
+setblock 33 76 32296 minecraft:jungle_leaves[persistent=true]
+setblock 36 77 32293 minecraft:jungle_leaves[persistent=true]
+setblock 37 76 32292 minecraft:jungle_leaves[persistent=true]
+setblock 34 77 32293 minecraft:jungle_leaves[persistent=true]
+setblock 33 76 32292 minecraft:jungle_leaves[persistent=true]
+setblock 46 71 32288 minecraft:jungle_log
+setblock 46 72 32288 minecraft:jungle_log
+setblock 46 73 32288 minecraft:jungle_log
+setblock 46 74 32288 minecraft:jungle_log
+setblock 46 75 32288 minecraft:jungle_log
+setblock 46 76 32287 minecraft:jungle_log
+setblock 46 77 32287 minecraft:jungle_log
+setblock 46 78 32287 minecraft:jungle_log
+setblock 46 79 32287 minecraft:jungle_leaves[persistent=true]

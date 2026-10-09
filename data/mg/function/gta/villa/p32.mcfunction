@@ -1,34 +1,4 @@
-# Neo Hills, étape 32/33 (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta)
-setblock 30 77 32255 minecraft:smooth_quartz
-setblock 32 77 32255 minecraft:smooth_quartz
-setblock 30 78 32255 minecraft:water_cauldron[level=3]
-setblock 32 78 32255 minecraft:water_cauldron[level=3]
-fill 36 77 32259 39 80 32259 minecraft:glass
-fill 36 80 32256 39 80 32258 minecraft:white_stained_glass
-setblock 39 77 32261 minecraft:potted_fern
-setblock 28 77 32274 minecraft:potted_fern
-fill 7 77 32259 7 79 32273 minecraft:air
-setblock 7 76 32259 minecraft:sea_lantern
-setblock 7 76 32261 minecraft:sea_lantern
-setblock 7 76 32263 minecraft:sea_lantern
-setblock 7 76 32265 minecraft:sea_lantern
-setblock 7 76 32267 minecraft:sea_lantern
-setblock 7 76 32269 minecraft:sea_lantern
-setblock 7 76 32271 minecraft:sea_lantern
-setblock 7 76 32273 minecraft:sea_lantern
-setblock 12 77 32272 minecraft:red_concrete
-setblock 12 78 32272 minecraft:glass
-setblock 12 79 32272 minecraft:red_concrete
-setblock 12 78 32271 minecraft:yellow_concrete
-setblock 16 77 32261 minecraft:black_concrete
-setblock 16 78 32261 minecraft:lime_stained_glass
-setblock 16 79 32261 minecraft:black_concrete
-setblock 24 77 32261 minecraft:black_concrete
-setblock 24 78 32261 minecraft:magenta_stained_glass
-setblock 24 79 32261 minecraft:black_concrete
-setblock 14 78 32256 minecraft:target
-fill 16 77 32270 17 77 32273 minecraft:blue_carpet
-setblock 24 77 32272 minecraft:anvil
+# Neo Hills, étape 32/34 (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta)
 setblock 24 77 32270 minecraft:anvil
 fill 14 84 32263 16 84 32265 minecraft:polished_blackstone_bricks
 setblock 15 84 32264 minecraft:campfire[lit=true]
@@ -69,3 +39,33 @@ setblock 38 85 32276 minecraft:end_rod[facing=up]
 setblock 40 69 32253 minecraft:water
 setblock 40 70 32253 minecraft:water
 setblock 40 69 32254 minecraft:water
+setblock 40 70 32254 minecraft:water
+setblock 40 69 32255 minecraft:water
+setblock 40 70 32255 minecraft:water
+setblock 40 69 32256 minecraft:water
+setblock 40 70 32256 minecraft:water
+setblock 41 69 32253 minecraft:water
+setblock 41 70 32253 minecraft:water
+setblock 41 69 32254 minecraft:water
+setblock 41 70 32254 minecraft:water
+setblock 41 69 32255 minecraft:water
+setblock 41 70 32255 minecraft:water
+setblock 41 69 32256 minecraft:water
+setblock 41 70 32256 minecraft:water
+setblock 42 69 32252 minecraft:water
+setblock 42 70 32252 minecraft:water
+setblock 42 69 32253 minecraft:water
+setblock 42 70 32253 minecraft:water
+setblock 42 69 32254 minecraft:water
+setblock 42 70 32254 minecraft:water
+setblock 42 69 32255 minecraft:water
+setblock 42 70 32255 minecraft:water
+setblock 42 69 32256 minecraft:water
+setblock 42 70 32256 minecraft:water
+setblock 43 69 32252 minecraft:water
+setblock 43 70 32252 minecraft:water
+setblock 43 69 32253 minecraft:water
+setblock 43 70 32253 minecraft:water
+setblock 43 69 32254 minecraft:water
+setblock 43 70 32254 minecraft:water
+setblock 43 69 32255 minecraft:water

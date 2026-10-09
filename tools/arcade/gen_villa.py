@@ -80,6 +80,12 @@ for k in range(9):                                 # coteau vers la ville (z -10
     top = G - round((k + 1) * 6 / 9)
     fill(X1, 56, z, X2, top - 1, z, 'stone')
     fill(X1, top, z, X2, top, z, 'grass_block' if k % 3 else 'mossy_stone_bricks')
+def gap():                                        # bande entre le coteau et la ville (z -91..-89) : herbe au niveau de la rue (sauf la rampe)
+    for (xa, xb) in ((X1, 15), (25, X2)):
+        fill(xa, 56, Z2 + 1, xb, 63, Z2 + 3, 'stone'); fill(xa, 64, Z2 + 1, xb, 64, Z2 + 3, 'grass_block')
+
+
+gap()
 for k in range(12):                                # rampe depuis l'avenue 20 : une demi-marche par bloc (on marche de 65,5 à 71)
     z = -89 - k
     if k % 2 == 0:
@@ -93,10 +99,9 @@ for k in range(12):                                # rampe depuis l'avenue 20 : 
 fill(17, 66, -89, 23, 75, -89, 'air')
 # muret d'enceinte et réverbères
 fill(X1, G + 1, Z2 - 9, X2, G + 1, Z2 - 9, 'stone_brick_wall')
-fill(X1, G + 1, Z1, X2, G + 1, Z1, 'stone_brick_wall')
 fill(X1, G + 1, Z1, X1, G + 1, Z2 - 9, 'stone_brick_wall'); fill(X2, G + 1, Z1, X2, G + 1, Z2 - 9, 'stone_brick_wall')
 for x in range(X1 + 4, X2, 9):
-    lamp(x, Z2 - 9); lamp(x, Z1)
+    lamp(x, Z2 - 9)
 for z in range(Z1 + 6, Z2 - 9, 9):
     lamp(X1, z); lamp(X2, z)
 
@@ -402,6 +407,43 @@ fill(PX1 + 1, G - 2, PZ1 + 5, PX1 + 1, G, PZ1 + 5, 'ladder[facing=east,waterlogg
 for z in range(MZ2 + 1, -150, -3):
     put(43, G, z, 'smooth_stone_slab')
 
+# ---------------------------------------------------------------- piste d'aviation derrière le domaine (au nord, hors de l'emprise)
+RZ1, RZ2 = Z1 - 11, Z1 - 1                         # piste z -187..-177, sur toute la largeur du domaine
+YT_ = 170                                          # plafond des barrières (gen_gta.py : YT)
+
+
+def runway():
+    fill(X1, 58, RZ1 - 1, X2, G - 1, RZ2, 'stone')
+    fill(X1, G, RZ1 - 1, X2, G, RZ2, 'gray_concrete')
+    fill(X1, G, RZ1, X2, G, RZ1, 'white_concrete'); fill(X1, G, RZ2, X2, G, RZ2, 'white_concrete')
+    for x in range(X1 + 10, X2 - 9, 6):
+        fill(x, G, (RZ1 + RZ2) // 2, x + 2, G, (RZ1 + RZ2) // 2, 'white_concrete')
+    for z in range(RZ1 + 2, RZ2 - 1, 2):
+        fill(X1 + 1, G, z, X1 + 6, G, z, 'white_concrete'); fill(X2 - 6, G, z, X2 - 1, G, z, 'white_concrete')
+    for x in range(X1 + 3, X2, 6):
+        put(x, G, RZ1, 'sea_lantern'); put(x, G, RZ2, 'sea_lantern')
+    fill(X1, G + 1, RZ1 - 1, X2, G + 1, RZ1 - 1, 'stone_brick_wall')
+    for x in range(X1 + 4, X2, 9):
+        lamp(x, RZ1 - 1, G + 2)
+    fill(X2 - 3, G + 2, RZ1 - 1, X2 - 3, G + 5, RZ1 - 1, 'spruce_fence'); put(X2 - 4, G + 5, RZ1 - 1, 'orange_wool')   # manche à air
+    fill(X1 - 1, 57, RZ1 - 2, X2 + 1, YT_ - 1, RZ1 - 2, 'barrier')
+    fill(X1 - 1, 57, RZ1 - 2, X1 - 1, YT_ - 1, Z1 - 1, 'barrier'); fill(X2 + 1, 57, RZ1 - 2, X2 + 1, YT_ - 1, Z1 - 1, 'barrier')
+    fill(X1 - 1, YT_, RZ1 - 2, X2 + 1, YT_, Z1 - 1, 'barrier')
+
+
+runway()
+_n0 = len(CMDS)                                    # même chose pour un monde déjà construit : ancienne enceinte nord retirée
+fill(X1 - 1, 57, Z1 - 1, X2 + 1, YT_ - 1, Z1 - 1, 'air')
+fill(X1 + 1, G + 1, Z1, X2 - 1, G + 3, Z1, 'air')
+runway()
+fill(X1, 57, Z2 + 3, X2, YT_ - 1, Z2 + 3, 'air')  # mur invisible entre le domaine et la ville
+gap()
+fill(16, 56, Z2 + 3, 24, 64, Z2 + 3, 'stone'); fill(17, 65, Z2 + 3, 23, 65, Z2 + 3, 'polished_andesite_slab')   # pied de la rampe
+put(16, 66, Z2 + 3, 'stone_brick_wall'); put(24, 66, Z2 + 3, 'stone_brick_wall')
+PISTE = CMDS[_n0:]
+del CMDS[_n0:]
+with open(os.path.join(F, 'gta/piste.mcfunction'), 'w', encoding='utf-8', newline='\n') as f:
+    f.write('\n'.join(['# Piste d\'aviation de Neo Hills, pour un monde déjà construit (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta, piste chargée)'] + PISTE) + '\n')
 # ---------------------------------------------------------------- planque secrète sous le salon (fonction à part, posée à chaque session)
 # Entrée : une latte du parquet du salon n'est qu'un décor (block_display posé par Neo GTA) ; dessous, une échelle.
 _n0 = len(CMDS)
@@ -464,7 +506,7 @@ DATA = {
     'heal_pad': [17, MZ2 - 3], 'armor_pad': [23, MZ2 - 3],
     'lift_up': [25, MZ2 - 11], 'lift_y': [Y0, Y2 + 1],
     'car_drop': [[-16, -121], [-10, -121], [-4, -121]],
-    'heli': [HX_, HZ_], 'plane': [-33, -130],
+    'heli': [HX_, HZ_], 'plane': [X1 + 8, (RZ1 + RZ2) // 2], 'runway': [X1, RZ1 - 2, X2, RZ2],
     'sign': [20, GZ], 'mansion': [MX1, MZ1, MX2, MZ2],
     'trap': list(TRAP), 'atm': [35, PQ[2] + 1],
 }

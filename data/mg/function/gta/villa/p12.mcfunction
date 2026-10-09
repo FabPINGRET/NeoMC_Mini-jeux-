@@ -1,34 +1,4 @@
-# Neo Hills, étape 12/33 (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta)
-fill 27 72 32296 27 72 32298 minecraft:glass
-fill 26 74 32296 28 74 32298 minecraft:dark_oak_slab
-fill 17 70 32294 23 70 32298 minecraft:polished_andesite
-setblock 13 70 32286 minecraft:polished_andesite
-setblock 13 70 32287 minecraft:polished_andesite
-setblock 13 70 32288 minecraft:polished_andesite
-setblock 13 70 32289 minecraft:polished_andesite
-setblock 13 70 32290 minecraft:polished_andesite
-setblock 14 70 32284 minecraft:polished_andesite
-setblock 14 70 32285 minecraft:polished_andesite
-setblock 14 70 32286 minecraft:polished_andesite
-setblock 14 70 32287 minecraft:polished_andesite
-setblock 14 70 32288 minecraft:polished_andesite
-setblock 14 70 32289 minecraft:polished_andesite
-setblock 14 70 32290 minecraft:polished_andesite
-setblock 14 70 32291 minecraft:polished_andesite
-setblock 14 70 32292 minecraft:polished_andesite
-setblock 15 70 32283 minecraft:polished_andesite
-setblock 15 70 32284 minecraft:polished_andesite
-setblock 15 70 32285 minecraft:polished_andesite
-setblock 15 70 32286 minecraft:polished_andesite
-setblock 15 70 32287 minecraft:polished_andesite
-setblock 15 70 32288 minecraft:polished_andesite
-setblock 15 70 32289 minecraft:polished_andesite
-setblock 15 70 32290 minecraft:polished_andesite
-setblock 15 70 32291 minecraft:polished_andesite
-setblock 15 70 32292 minecraft:polished_andesite
-setblock 15 70 32293 minecraft:polished_andesite
-setblock 16 70 32282 minecraft:polished_andesite
-setblock 16 70 32283 minecraft:polished_andesite
+# Neo Hills, étape 12/34 (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta)
 setblock 16 70 32284 minecraft:polished_andesite
 setblock 16 70 32285 minecraft:polished_andesite
 setblock 16 70 32286 minecraft:polished_andesite
@@ -69,3 +39,33 @@ setblock 18 70 32293 minecraft:polished_andesite
 setblock 18 70 32294 minecraft:polished_andesite
 setblock 18 70 32295 minecraft:polished_andesite
 setblock 19 70 32281 minecraft:polished_andesite
+setblock 19 70 32282 minecraft:polished_andesite
+setblock 19 70 32283 minecraft:polished_andesite
+setblock 19 70 32284 minecraft:polished_andesite
+setblock 19 70 32285 minecraft:smooth_quartz
+setblock 19 70 32286 minecraft:grass_block
+setblock 19 70 32287 minecraft:grass_block
+setblock 19 70 32288 minecraft:grass_block
+setblock 19 70 32289 minecraft:grass_block
+setblock 19 70 32290 minecraft:grass_block
+setblock 19 70 32291 minecraft:smooth_quartz
+setblock 19 70 32292 minecraft:polished_andesite
+setblock 19 70 32293 minecraft:polished_andesite
+setblock 19 70 32294 minecraft:polished_andesite
+setblock 19 70 32295 minecraft:polished_andesite
+setblock 20 70 32281 minecraft:polished_andesite
+setblock 20 70 32282 minecraft:polished_andesite
+setblock 20 70 32283 minecraft:polished_andesite
+setblock 20 70 32284 minecraft:polished_andesite
+setblock 20 70 32285 minecraft:smooth_quartz
+setblock 20 70 32286 minecraft:grass_block
+setblock 20 70 32287 minecraft:grass_block
+setblock 20 70 32288 minecraft:grass_block
+setblock 20 70 32289 minecraft:grass_block
+setblock 20 70 32290 minecraft:grass_block
+setblock 20 70 32291 minecraft:smooth_quartz
+setblock 20 70 32292 minecraft:polished_andesite
+setblock 20 70 32293 minecraft:polished_andesite
+setblock 20 70 32294 minecraft:polished_andesite
+setblock 20 70 32295 minecraft:polished_andesite
+setblock 21 70 32281 minecraft:polished_andesite

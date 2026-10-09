@@ -412,6 +412,8 @@ execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_sh
 summon minecraft:block_display 34.5 64 32253.5 {Tags:["mg.gta","mg.gpdb"],block_state:{Name:"minecraft:light_weighted_pressure_plate"}}
 tag @e[tag=mg.gpn] remove mg.gpn
 function mg:gta/planque
+execute unless data storage mg:gta {piste:1} run function mg:gta/piste
+data modify storage mg:gta piste set value 1
 summon minecraft:block_display 37 70 32259 {Tags:["mg.gta"],block_state:{Name:"minecraft:dark_oak_planks"}}
 summon minecraft:marker 25 71 32265 {Tags:["mg.gta","mg.glup"]}
 summon minecraft:marker 25 84 32265 {Tags:["mg.gta","mg.gldn"]}

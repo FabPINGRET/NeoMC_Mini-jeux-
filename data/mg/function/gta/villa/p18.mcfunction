@@ -1,34 +1,4 @@
-# Neo Hills, étape 18/33 (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta)
-setblock -11 75 32268 minecraft:sea_lantern
-fill -8 70 32262 -8 70 32274 minecraft:yellow_concrete
-setblock -8 75 32268 minecraft:sea_lantern
-fill -5 70 32262 -5 70 32274 minecraft:yellow_concrete
-setblock -5 75 32268 minecraft:sea_lantern
-fill -1 71 32268 0 73 32270 minecraft:air
-fill -1 74 32267 0 74 32271 minecraft:smooth_quartz
-fill -1 71 32267 0 73 32267 minecraft:smooth_quartz
-fill -1 71 32271 0 73 32271 minecraft:smooth_quartz
-fill 2 70 32231 38 70 32250 minecraft:smooth_quartz
-fill 4 67 32234 36 70 32244 minecraft:smooth_quartz
-fill 5 68 32235 35 70 32243 minecraft:water
-fill 5 67 32235 35 67 32243 minecraft:light_blue_concrete
-setblock 7 68 32234 minecraft:sea_lantern
-setblock 7 68 32244 minecraft:sea_lantern
-setblock 13 68 32234 minecraft:sea_lantern
-setblock 13 68 32244 minecraft:sea_lantern
-setblock 19 68 32234 minecraft:sea_lantern
-setblock 19 68 32244 minecraft:sea_lantern
-setblock 25 68 32234 minecraft:sea_lantern
-setblock 25 68 32244 minecraft:sea_lantern
-setblock 31 68 32234 minecraft:sea_lantern
-setblock 31 68 32244 minecraft:sea_lantern
-fill 32 71 32245 32 71 32246 minecraft:birch_slab
-setblock 4 71 32247 minecraft:white_wool
-setblock 4 71 32248 minecraft:quartz_stairs[facing=south]
-fill 6 71 32249 6 72 32249 minecraft:oak_fence
-fill 5 73 32248 7 73 32250 minecraft:red_carpet
-setblock 6 73 32249 minecraft:red_wool
-setblock 8 71 32247 minecraft:white_wool
+# Neo Hills, étape 18/34 (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta)
 setblock 8 71 32248 minecraft:quartz_stairs[facing=south]
 setblock 12 71 32247 minecraft:white_wool
 setblock 12 71 32248 minecraft:quartz_stairs[facing=south]
@@ -69,3 +39,33 @@ fill -40 70 32254 -24 70 32254 minecraft:white_concrete
 fill -40 70 32230 -40 70 32254 minecraft:white_concrete
 fill -24 70 32230 -24 70 32254 minecraft:white_concrete
 fill -40 70 32242 -24 70 32242 minecraft:white_concrete
+fill -32 70 32236 -32 70 32248 minecraft:white_concrete
+fill -40 71 32242 -24 71 32242 minecraft:iron_bars
+fill -41 71 32229 -23 73 32229 minecraft:iron_bars
+fill -41 71 32255 -23 73 32255 minecraft:iron_bars
+fill -41 71 32229 -41 73 32255 minecraft:iron_bars
+fill -23 71 32229 -23 73 32255 minecraft:iron_bars
+fill -23 71 32248 -23 72 32250 minecraft:air
+setblock -36 70 32284 minecraft:gray_concrete
+setblock -36 70 32285 minecraft:gray_concrete
+setblock -36 70 32286 minecraft:gray_concrete
+setblock -36 70 32287 minecraft:gray_concrete
+setblock -36 70 32288 minecraft:gray_concrete
+setblock -35 70 32283 minecraft:gray_concrete
+setblock -35 70 32284 minecraft:gray_concrete
+setblock -35 70 32285 minecraft:gray_concrete
+setblock -35 70 32286 minecraft:gray_concrete
+setblock -35 70 32287 minecraft:gray_concrete
+setblock -35 70 32288 minecraft:gray_concrete
+setblock -35 70 32289 minecraft:gray_concrete
+setblock -34 70 32282 minecraft:gray_concrete
+setblock -34 70 32283 minecraft:gray_concrete
+setblock -34 70 32284 minecraft:gray_concrete
+setblock -34 70 32285 minecraft:gray_concrete
+setblock -34 70 32286 minecraft:gray_concrete
+setblock -34 70 32287 minecraft:gray_concrete
+setblock -34 70 32288 minecraft:gray_concrete
+setblock -34 70 32289 minecraft:gray_concrete
+setblock -34 70 32290 minecraft:gray_concrete
+setblock -33 70 32281 minecraft:gray_concrete
+setblock -33 70 32282 minecraft:gray_concrete

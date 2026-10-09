@@ -1,34 +1,4 @@
-# Neo Hills, étape 29/33 (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta)
-setblock -6 73 32278 minecraft:lantern
-setblock 46 71 32278 minecraft:polished_blackstone_wall
-setblock 46 72 32278 minecraft:polished_blackstone_wall
-setblock 46 73 32278 minecraft:lantern
-setblock 4 71 32248 minecraft:polished_blackstone_wall
-setblock 4 72 32248 minecraft:polished_blackstone_wall
-setblock 4 73 32248 minecraft:lantern
-setblock 36 71 32248 minecraft:polished_blackstone_wall
-setblock 36 72 32248 minecraft:polished_blackstone_wall
-setblock 36 73 32248 minecraft:lantern
-setblock -22 71 32255 minecraft:polished_blackstone_wall
-setblock -22 72 32255 minecraft:polished_blackstone_wall
-setblock -22 73 32255 minecraft:lantern
-setblock -36 71 32290 minecraft:polished_blackstone_wall
-setblock -36 72 32290 minecraft:polished_blackstone_wall
-setblock -36 73 32290 minecraft:lantern
-setblock -24 71 32290 minecraft:polished_blackstone_wall
-setblock -24 72 32290 minecraft:polished_blackstone_wall
-setblock -24 73 32290 minecraft:lantern
-setblock 1 71 32277 minecraft:moss_block
-setblock 1 72 32277 minecraft:azure_bluet
-setblock 2 71 32277 minecraft:moss_block
-setblock 2 72 32277 minecraft:red_tulip
-setblock 3 71 32277 minecraft:moss_block
-setblock 3 72 32277 minecraft:red_tulip
-setblock 4 71 32277 minecraft:moss_block
-setblock 4 72 32277 minecraft:red_tulip
-setblock 5 71 32277 minecraft:moss_block
-setblock 5 72 32277 minecraft:lily_of_the_valley
-setblock 6 71 32277 minecraft:moss_block
+# Neo Hills, étape 29/34 (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta)
 setblock 6 72 32277 minecraft:red_tulip
 setblock 7 71 32277 minecraft:moss_block
 setblock 7 72 32277 minecraft:cornflower
@@ -69,3 +39,33 @@ setblock 33 81 32277 minecraft:end_rod[facing=south]
 setblock 39 75 32277 minecraft:end_rod[facing=south]
 setblock 39 81 32277 minecraft:end_rod[facing=south]
 setblock 14 76 32278 minecraft:sea_lantern
+setblock 18 76 32278 minecraft:sea_lantern
+setblock 22 76 32278 minecraft:sea_lantern
+setblock 26 76 32278 minecraft:sea_lantern
+fill 41 78 32254 41 82 32254 minecraft:stripped_dark_oak_log
+fill -1 78 32254 -1 82 32254 minecraft:stripped_dark_oak_log
+fill 41 78 32257 41 82 32257 minecraft:stripped_dark_oak_log
+fill -1 78 32257 -1 82 32257 minecraft:stripped_dark_oak_log
+fill 41 78 32260 41 82 32260 minecraft:stripped_dark_oak_log
+fill -1 78 32260 -1 82 32260 minecraft:stripped_dark_oak_log
+fill 41 78 32263 41 82 32263 minecraft:stripped_dark_oak_log
+fill -1 78 32263 -1 82 32263 minecraft:stripped_dark_oak_log
+fill 41 78 32266 41 82 32266 minecraft:stripped_dark_oak_log
+fill -1 78 32266 -1 82 32266 minecraft:stripped_dark_oak_log
+fill 41 78 32269 41 82 32269 minecraft:stripped_dark_oak_log
+fill -1 78 32269 -1 82 32269 minecraft:stripped_dark_oak_log
+fill 41 78 32272 41 82 32272 minecraft:stripped_dark_oak_log
+fill -1 78 32272 -1 82 32272 minecraft:stripped_dark_oak_log
+setblock 15 70 32267 minecraft:smooth_quartz
+setblock 15 70 32268 minecraft:polished_diorite
+setblock 15 70 32269 minecraft:smooth_quartz
+setblock 15 70 32270 minecraft:polished_diorite
+setblock 15 70 32271 minecraft:smooth_quartz
+setblock 15 70 32272 minecraft:polished_diorite
+setblock 15 70 32273 minecraft:smooth_quartz
+setblock 15 70 32274 minecraft:polished_diorite
+setblock 15 70 32275 minecraft:smooth_quartz
+setblock 16 70 32267 minecraft:polished_diorite
+setblock 16 70 32268 minecraft:smooth_quartz
+setblock 16 70 32269 minecraft:polished_diorite
+setblock 16 70 32270 minecraft:smooth_quartz
