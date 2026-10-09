@@ -1,0 +1,132 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "⚡ Tron",
+    "color": "aqua",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Choisis le mode et l'arène.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "⚡ ⚡ Tron (à pied) ",
+          "color": "aqua"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Arène 101×101 dans la pénombre",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 84"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🏍 🏍 Tron moto ",
+          "color": "gold"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": "",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "À cheval, saut toutes les 20 s",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 85"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚡ Tron à pied — XXL",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Arène géante 201×201",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 200"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🏍 Tron moto — XXL",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Arène géante 201×201, à cheval",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 201"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 47"
+      }
+    }
+  ]
+}

@@ -26,13 +26,23 @@ execute if score $game mg.st matches 66 run function mg:hall/game {obj:"mg.wg_el
 execute if score $game mg.st matches 75 run function mg:hall/game {obj:"mg.wg_elytra",key:"elytra",lbl:"🪽 Élytra (3 modes)",col:"aqua"}
 execute if score $game mg.st matches 83 run function mg:hall/game {obj:"mg.wg_telephone",key:"telephone",lbl:"📞 Téléphone",col:"gold"}
 execute if score $game mg.st matches 84..85 run function mg:hall/game {obj:"mg.wg_tron",key:"tron",lbl:"⚡ Tron",col:"aqua"}
+execute if score $game mg.st matches 200..201 run function mg:hall/game {obj:"mg.wg_tron",key:"tron",lbl:"⚡ Tron",col:"aqua"}
 execute if score $game mg.st matches 86..87 run function mg:hall/game {obj:"mg.wg_koth",key:"koth",lbl:"👑 King of the Hill",col:"gold"}
+execute if score $game mg.st matches 206..209 run function mg:hall/game {obj:"mg.wg_koth",key:"koth",lbl:"👑 King of the Hill",col:"gold"}
 execute if score $game mg.st matches 88 run function mg:hall/game {obj:"mg.wg_tower",key:"tower",lbl:"🏰 The Towers",col:"gold"}
 execute if score $game mg.st matches 89..90 run function mg:hall/game {obj:"mg.wg_convoy",key:"convoy",lbl:"🚚 Convoi",col:"gold"}
 execute if score $game mg.st matches 93 run function mg:hall/game {obj:"mg.wg_ctf",key:"ctf",lbl:"🚩 Capture the Flag",col:"red"}
 execute if score $game mg.st matches 94 run function mg:hall/game {obj:"mg.wg_uhc",key:"uhc",lbl:"⛏ Mini UHC Run",col:"gold"}
+execute if score $game mg.st matches 202 run function mg:hall/game {obj:"mg.wg_uhc",key:"uhc",lbl:"⛏ Mini UHC Run",col:"gold"}
+execute if score $game mg.st matches 204 run function mg:hall/game {obj:"mg.wg_uhc",key:"uhc",lbl:"⛏ Mini UHC Run",col:"gold"}
 execute if score $game mg.st matches 95 run function mg:hall/game {obj:"mg.wg_hg",key:"hg",lbl:"🏹 Mini Hunger Games",col:"gold"}
+execute if score $game mg.st matches 203 run function mg:hall/game {obj:"mg.wg_hg",key:"hg",lbl:"🏹 Mini Hunger Games",col:"gold"}
+execute if score $game mg.st matches 205 run function mg:hall/game {obj:"mg.wg_hg",key:"hg",lbl:"🏹 Mini Hunger Games",col:"gold"}
 execute if score $game mg.st matches 96 run function mg:hall/game {obj:"mg.wg_prophunt",key:"prophunt",lbl:"🎭 Prop Hunt",col:"gold"}
 execute if score $game mg.st matches 97 run function mg:hall/game {obj:"mg.wg_zombies",key:"zombies",lbl:"🧟 Zombies",col:"dark_green"}
+execute if score $game mg.st matches 210 run function mg:hall/game {obj:"mg.wg_zombies",key:"zombies",lbl:"🧟 Zombies",col:"dark_green"}
+execute if score $game mg.st matches 212 run function mg:hall/game {obj:"mg.wg_zombies",key:"zombies",lbl:"🧟 Zombies",col:"dark_green"}
 execute if score $game mg.st matches 98 run function mg:hall/game {obj:"mg.wg_infection",key:"infection",lbl:"🧪 Infection",col:"green"}
+execute if score $game mg.st matches 211 run function mg:hall/game {obj:"mg.wg_infection",key:"infection",lbl:"🧪 Infection",col:"green"}
+execute if score $game mg.st matches 213 run function mg:hall/game {obj:"mg.wg_infection",key:"infection",lbl:"🧪 Infection",col:"green"}
 execute if score $game mg.st matches 99 run function mg:hall/game {obj:"mg.wg_bomber",key:"bomber",lbl:"💣 Bombardier",col:"red"}

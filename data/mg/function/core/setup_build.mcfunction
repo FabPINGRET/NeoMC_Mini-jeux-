@@ -5,7 +5,7 @@ data remove storage mg:lobby v6
 data remove storage mg:lobby food1
 data remove storage mg:lobby ely1
 data remove storage mg:hall v9
-data remove storage mg:lobby coaster2
+data remove storage mg:lobby coaster3
 data remove storage mg:setup plot
 data remove storage mg:party built
 data remove storage mg:kart built
@@ -25,6 +25,7 @@ schedule function mg:dropadv/build 30s
 function mg:elyrace/forget
 schedule function mg:elyrace/build_next 45s
 schedule function mg:sky/build 40s
+schedule function mg:lobby/beacons 55s
 schedule function mg:hall/build 25s
 schedule function mg:coaster/build_start 50s
 data remove storage mg:kart built3

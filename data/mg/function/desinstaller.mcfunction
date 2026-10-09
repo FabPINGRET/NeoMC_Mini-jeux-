@@ -22,6 +22,22 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+schedule clear mg:zmode3/prepare_b
+forceload remove -17 36061 39 36117
+schedule clear mg:zmode2/prepare_b
+forceload remove -17 35761 39 35817
+schedule clear mg:koth3/prepare_b
+forceload remove -27 35473 27 35527
+schedule clear mg:koth2/prepare_b
+forceload remove -27 35273 27 35327
+schedule clear mg:survival3/prepare_b
+forceload remove -42 34758 42 34842
+forceload remove -52 34948 52 35052
+schedule clear mg:survival2/prepare_b
+forceload remove -42 34358 42 34442
+forceload remove -52 34548 52 34652
+schedule clear mg:tronxl/prepare_b
+forceload remove -102 33898 102 34102
 scoreboard objectives remove mg.cvrt
 bossbar remove mg:bomber
 schedule clear mg:bomber/build_step
@@ -349,6 +365,15 @@ schedule clear mg:party/build_7
 schedule clear mg:party/build_8
 schedule clear mg:plot/build_all
 schedule clear mg:lobby/food_build
+schedule clear mg:lobby/beacons
+data remove storage mg:lobby beacon1
+schedule clear mg:coaster/build_start
+schedule clear mg:coaster/build
+kill @e[tag=mg.cst]
+kill @e[tag=mg.csd]
+data remove storage mg:lobby coaster1
+data remove storage mg:lobby coaster2
+data remove storage mg:lobby coaster3
 schedule clear mg:coaster/build_start
 schedule clear mg:coaster/build
 kill @e[tag=mg.cst]

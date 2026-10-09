@@ -55,7 +55,7 @@ FLAB = {k: (l, c) for k, l, c, _ in GAMES}
 # boutons de navigation vers un jeu (mg.opt) et votes pour un jeu (mg.vote n) → famille
 OPT_FAM = {37: 'spleef', 38: 'tntrun', 39: 'splegg', 17: 'splegg', 18: 'sumo', 20: 'anvil', 23: 'pvp', 24: 'oitc', 10: 'quake',
            29: 'tnttag', 30: 'bedwars', 8: 'sheepwar', 21: 'paintball', 7: 'mobarena', 19: 'dropper', 28: 'elyrace', 31: 'elytra',
-           46: 'kart', 16: 'party', 22: 'bb'}
+           46: 'kart', 16: 'party', 22: 'bb', 50: 'tron', 51: 'koth', 52: 'uhc', 53: 'hg', 54: 'zombies', 55: 'infection'}
 VOTE_FAM = {1: 'spleef', 2: 'tntrun', 3: 'pvp', 4: 'pvp', 5: 'bedwars', 6: 'sheepwar', 7: 'mobarena', 8: 'splegg', 9: 'sumo',
             10: 'dropper', 11: 'tnttag', 12: 'blockparty', 13: 'anvil', 14: 'turf', 15: 'quake', 16: 'paintball', 17: 'oitc',
             18: 'icerace', 19: 'bb', 20: 'bb', 21: 'elytra'}
@@ -132,7 +132,7 @@ for f in sorted(os.listdir(os.path.join(D, 'dialog'))):
         if not m:
             continue
         kind, n = m.group(1), int(m.group(2))
-        if kind == 'go' and n <= 196:
+        if kind == 'go' and (n <= 196 or 200 <= n <= 219):     # 200..219 : cartes supplémentaires (tools/arcade/gen_maps.py)
             comps = split_label(a['label'], n)
             extra = [f'@@r{n}@@']
             holes.add(f'r{n}')

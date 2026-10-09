@@ -5,7 +5,7 @@ execute if data storage mg:lobby v6 run scoreboard players add $swn mg.st 1
 execute if data storage mg:lobby food1 run scoreboard players add $swn mg.st 1
 execute if data storage mg:lobby ely1 run scoreboard players add $swn mg.st 1
 execute if data storage mg:hall v9 run scoreboard players add $swn mg.st 1
-execute if data storage mg:lobby coaster2 run scoreboard players add $swn mg.st 1
+execute if data storage mg:lobby coaster3 run scoreboard players add $swn mg.st 1
 execute if data storage mg:setup plot run scoreboard players add $swn mg.st 1
 execute if data storage mg:party built run scoreboard players add $swn mg.st 1
 execute if data storage mg:kart built if data storage mg:kart built2 if data storage mg:kart built3 run scoreboard players add $swn mg.st 1

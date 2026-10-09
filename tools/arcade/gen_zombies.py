@@ -15,7 +15,9 @@ C.init(sys.argv[1] if len(sys.argv) > 1 else '.')
 import guns as G
 
 w, js = C.w, C.js
-Z = 23200
+Z = C.param('Z', 23200)
+THEME = C.param('blocks', {})     # carte supplémentaire : remplacement des blocs du décor (tools/arcade/gen_maps.py)
+NAME = C.param('name', 'Bunker')
 ROUNDS = 10
 G.build()
 
@@ -71,6 +73,9 @@ L += [f'setblock 32 81 {Z + 6} minecraft:red_glazed_terracotta', f'setblock 32 8
       f'setblock 32 83 {Z - 15} minecraft:redstone_lamp[lit=true]',
       f'setblock 22 81 {Z - 27} minecraft:chest[facing=south]', f'setblock 21 81 {Z - 27} minecraft:spruce_planks',
       f'setblock 23 81 {Z - 27} minecraft:spruce_planks', f'setblock 22 85 {Z - 27} minecraft:soul_lantern[hanging=true]']
+import re
+L = [re.sub(r'minecraft:([a-z_]+)', lambda m: 'minecraft:' + THEME.get(m.group(1), m.group(1)), l) for l in L]
+L[0] = L[0].replace('Bunker', NAME)
 w('zm/build', L)
 
 # entités : portes, achats, apparitions
@@ -105,7 +110,7 @@ w('zm/kill_all', ['kill @e[tag=mg.zz]', 'kill @e[tag=mg.zent]',
 w('zmode/prepare', ['execute if score $game mg.st matches 97 run function mg:zm/prepare', 'execute if score $game mg.st matches 98 run function mg:inf/prepare'])
 w('zmode/go', ['execute if score $game mg.st matches 97 run function mg:zm/go', 'execute if score $game mg.st matches 98 run function mg:inf/go'])
 w('zmode/tick', ['function mg:gun/tick', 'execute if score $game mg.st matches 97 run function mg:zm/tick', 'execute if score $game mg.st matches 98 run function mg:inf/tick'])
-w('zmode/cleanup', ['function mg:zm/kill_all', 'execute as @a[tag=mg.zjug] run attribute @s minecraft:max_health base set 20',
+w('zmode/cleanup', ['scoreboard players set $zpts mg.st 0', 'function mg:zm/kill_all', 'execute as @a[tag=mg.zjug] run attribute @s minecraft:max_health base set 20',
                     'tag @a remove mg.zjug', 'tag @a remove mg.zsc', 'tag @a remove mg.zdead', 'tag @a remove mg.inf', 'tag @a remove mg.gtg',
                     'execute as @a run function mg:gun/reset', 'team leave @a[team=mg_green]',
                     'effect clear @a[tag=mg.play] minecraft:speed', 'effect clear @a[tag=mg.play] minecraft:strength',
@@ -120,7 +125,7 @@ w('zm/kit', ['# @s : couteau + pistolet', 'clear @s', 'function mg:gun/reset',
              'item replace entity @s hotbar.0 with minecraft:iron_sword[unbreakable={},custom_name=[{"text":"🔪 Couteau","color":"gray","italic":false}]]',
              G.give(1, 'hotbar.1'), 'item replace entity @s hotbar.8 with minecraft:cooked_beef 8',
              'effect give @s minecraft:saturation infinite 0 true'])
-w('zm/go', ['# Départ', 'scoreboard players set $zr mg.st 0', 'scoreboard players set $zph mg.st 0', 'scoreboard players set $zb mg.st 100',
+w('zm/go', ['# Départ', 'scoreboard players set $zpts mg.st 1', 'scoreboard players set $zr mg.st 0', 'scoreboard players set $zph mg.st 0', 'scoreboard players set $zb mg.st 100',
             'scoreboard players set #2 mg.st 2', 'scoreboard players set @a[tag=mg.play] mg.zpt 500', 'scoreboard players reset @a mg.zk',
             'scoreboard objectives setdisplay sidebar mg.zpt', 'scoreboard players set @a mg.deaths 0',
             'execute as @a[tag=mg.play] run function mg:zm/kit',

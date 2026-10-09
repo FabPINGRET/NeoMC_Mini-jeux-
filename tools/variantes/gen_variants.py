@@ -637,7 +637,9 @@ def known(cmd, label, col, tip=None):
 BODY_NOTE = [{'text': '\nCartes d’origine, puis ✦ variantes (ce jeu sur la carte d’un autre jeu, réglages adaptés). ', 'color': 'gray'},
              {'text': '★', 'color': 'gold'}, {'text': ' facile → ', 'color': 'gray'}, {'text': '★★★★', 'color': 'gold'},
              {'text': ' difficile.', 'color': 'gray'}]
-OPT_CAT = {'sols': 40, 'equipes': 41, 'courses': 42, 'fete': 43, 'votes': 44, 'joueur': 45, 'kart': 46, 'arcade': 47, 'combat': 14}
+OPT_CAT = {'sols': 40, 'equipes': 41, 'courses': 42, 'fete': 43, 'votes': 44, 'joueur': 45, 'kart': 46, 'arcade': 47, 'combat': 14,
+           # choix de la carte des jeux d'arcade (cartes supplémentaires : tools/arcade/gen_maps.py)
+           'tron': 50, 'koth': 51, 'uhc': 52, 'hg': 53, 'zombies': 54, 'infection': 55}
 SUB = {'pvp': ('sub_pvparena', 'combat'), 'oitc': ('sub_oitc', 'combat'), 'quake': ('quakemaps', 'combat'),
        'tnttag': ('sub_tnttag', 'combat'), 'spleef': ('sub_spleef', 'sols'), 'tntrun': ('sub_tntrun', 'sols'),
        'splegg': ('sub_splegg', 'sols')}
@@ -713,16 +715,42 @@ CATS = {
         known(OPEN(28), '🪽 Course d\'élytres ▸', 'aqua'), known(OPEN(31), '🪽 Élytra ▸', 'aqua'),
         known(OPEN(19), '⬇ The Dropper ▸', 'aqua')], 'menu'),
     'arcade': ('🕹 Arcade', 'light_purple', 'Jeux d’adresse et de stratégie.', [
-        act('⚡ Tron (à pied)', 'aqua', 'trigger mg.go set 84', 'Laisse un mur derrière toi, ne touche aucun mur'),
-        act('🏍 Tron moto', 'gold', 'trigger mg.go set 85', 'Pareil, à cheval et beaucoup plus vite'),
-        act('👑 King of the Hill', 'gold', 'trigger mg.go set 86', 'Reste seul au sommet : 60 s pour gagner'),
-        act('👑 KotH — équipes', 'red', 'trigger mg.go set 87', 'Rouge contre Bleu, tenez la colline 90 s'),
-        act('⛏ Mini UHC Run', 'gold', 'trigger mg.go set 94', '5 min : farm, PvP, zone qui rétrécit'),
-        act('🏹 Mini Hunger Games', 'gold', 'trigger mg.go set 95', '5 min : coffres, corne d\'abondance, dernier en vie'),
-        act('🧟 Zombies', 'dark_green', 'trigger mg.go set 97', 'Coop, armes réelles, 10 manches, portes et boîte mystère'),
-        act('🧪 Infection', 'green', 'trigger mg.go set 98', 'Survivants armés contre zombies contagieux, 3 min'),
+        act('⚡ Tron ▸', 'aqua', OPEN(50), 'À pied ou à moto, arène normale ou XXL'),
+        act('👑 King of the Hill ▸', 'gold', OPEN(51), 'Solo ou équipes, 3 cartes'),
+        act('⛏ Mini UHC Run ▸', 'gold', OPEN(52), '5 min : farm, PvP, zone qui rétrécit — 3 cartes'),
+        act('🏹 Mini Hunger Games ▸', 'gold', OPEN(53), 'Coffres, corne d\'abondance — 3 cartes'),
+        act('🧟 Zombies ▸', 'dark_green', OPEN(54), 'Coop, armes réelles, 10 manches — 3 cartes'),
+        act('🧪 Infection ▸', 'green', OPEN(55), 'Survivants contre zombies contagieux — 3 cartes'),
         act('🎭 Prop Hunt', 'gold', 'trigger mg.go set 96', 'Cache-toi en objet, ou trouve les objets qui bougent'),
         act('💣 Bombardier', 'red', 'trigger mg.go set 99', 'Bombarde la ville du ciel, le plus de dégâts gagne, 2 min 30')], 'menu'),
+    'tron': ('⚡ Tron', 'aqua', 'Choisis le mode et l\'arène.', [
+        act('⚡ Tron à pied', 'aqua', 'trigger mg.go set 84', 'Arène 101×101 dans la pénombre'),
+        act('🏍 Tron moto', 'gold', 'trigger mg.go set 85', 'À cheval, saut toutes les 20 s'),
+        act('⚡ Tron à pied — XXL', 'aqua', 'trigger mg.go set 200', 'Arène géante 201×201'),
+        act('🏍 Tron moto — XXL', 'gold', 'trigger mg.go set 201', 'Arène géante 201×201, à cheval')], 'arcade'),
+    'koth': ('👑 King of the Hill', 'gold', 'Solo ou équipes, choisis la carte.', [
+        act('👑 Solo — Colline', 'gold', 'trigger mg.go set 86', 'Colline en gradins, 60 points'),
+        act('👑 Équipes — Colline', 'red', 'trigger mg.go set 87', 'Rouge contre Bleu, 90 points'),
+        act('👑 Solo — Pyramide', 'gold', 'trigger mg.go set 206', 'Pyramide de grès dans le sable'),
+        act('👑 Équipes — Pyramide', 'red', 'trigger mg.go set 207', 'Pyramide de grès, Rouge contre Bleu'),
+        act('👑 Solo — Glacier', 'gold', 'trigger mg.go set 208', 'Colline de glace : ça glisse !'),
+        act('👑 Équipes — Glacier', 'red', 'trigger mg.go set 209', 'Glacier, Rouge contre Bleu')], 'arcade'),
+    'uhc': ('⛏ Mini UHC Run', 'gold', 'Choisis la carte.', [
+        act('⛏ UHC — Plaines', 'green', 'trigger mg.go set 94', 'Plaines et forêts'),
+        act('⛏ UHC — Désert', 'yellow', 'trigger mg.go set 202', 'Dunes, cactus, acacias'),
+        act('⛏ UHC — Taïga enneigée', 'aqua', 'trigger mg.go set 204', 'Neige, sapins, lacs gelés')], 'arcade'),
+    'hg': ('🏹 Mini Hunger Games', 'gold', 'Choisis la carte.', [
+        act('🏹 HG — Plaines', 'green', 'trigger mg.go set 95', 'Plaines et forêts'),
+        act('🏹 HG — Jungle', 'dark_green', 'trigger mg.go set 203', 'Jungle dense, roche moussue'),
+        act('🏹 HG — Canyon', 'gold', 'trigger mg.go set 205', 'Terres cuites et sable rouge')], 'arcade'),
+    'zombies': ('🧟 Zombies', 'dark_green', 'Choisis la carte.', [
+        act('🧟 Zombies — Bunker', 'gray', 'trigger mg.go set 97', 'Le bunker d\'origine'),
+        act('🧟 Zombies — Laboratoire', 'white', 'trigger mg.go set 210', 'Labo tout blanc'),
+        act('🧟 Zombies — Manoir', 'dark_red', 'trigger mg.go set 212', 'Manoir sombre')], 'arcade'),
+    'infection': ('🧪 Infection', 'green', 'Choisis la carte.', [
+        act('🧪 Infection — Bunker', 'gray', 'trigger mg.go set 98', 'Le bunker d\'origine'),
+        act('🧪 Infection — Laboratoire', 'white', 'trigger mg.go set 211', 'Labo tout blanc'),
+        act('🧪 Infection — Manoir', 'dark_red', 'trigger mg.go set 213', 'Manoir sombre')], 'arcade'),
     'kart': ('🏎 Kart', 'gold', 'Choisis le circuit.', [
         known('trigger mg.go set 61', '🏎 KART : Circuit Champignon', 'gold'), known('trigger mg.go set 62', '🏎 KART : Royaume Koopa', 'red'),
         known('trigger mg.go set 63', '🎈 KART : Bataille', 'light_purple')], 'courses'),
@@ -773,7 +801,8 @@ d['actions'] = [
     act('👤 Joueur et plots ▸', 'aqua', OPEN(45), 'Spectateur, classement, plots'),
     keep.get('trigger mg.sv set 1') or act('🌲 Survie (monde libre)', 'green', 'trigger mg.sv set 1'),
     keep.get(OPEN(9)) or act('⛔ Arrêter la partie en cours', 'dark_red', OPEN(9)),
-    act('ℹ Version du datapack', 'gray', OPEN(48), 'Version en place / reçue de GitHub : savoir si une mise à jour a planté')]
+    act('ℹ Version du datapack', 'gray', OPEN(48), 'Version en place / reçue de GitHub : savoir si une mise à jour a planté'),
+    act('🚫 Exclure Zinedine', 'red', OPEN(49), 'Exclut Zinedine du serveur (définitivement, cette fois)')]
 save_dialog('menu', d)
 
 # Boutons retour des sous-menus : vers leur catégorie

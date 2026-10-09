@@ -1,0 +1,10 @@
+# @s = porteur : touche-t-il un mur ? (4 sondes à mi-hauteur, hors bloc courant et dernier mur posé)
+execute if score $trm mg.st matches 0 run scoreboard players set $trr mg.st 0
+execute if score $trm mg.st matches 0 positioned ~0.36 ~0.5 ~ align xyz unless entity @e[tag=mg.tpm,dx=0,dy=0,dz=0] unless entity @e[tag=mg.tcm,dx=0,dy=0,dz=0] if block ~ ~ ~ #mg:tron_wall run scoreboard players set $tdead mg.st 1
+execute if score $trm mg.st matches 0 positioned ~-0.36 ~0.5 ~ align xyz unless entity @e[tag=mg.tpm,dx=0,dy=0,dz=0] unless entity @e[tag=mg.tcm,dx=0,dy=0,dz=0] if block ~ ~ ~ #mg:tron_wall run scoreboard players set $tdead mg.st 1
+execute if score $trm mg.st matches 0 positioned ~ ~0.5 ~0.36 align xyz unless entity @e[tag=mg.tpm,dx=0,dy=0,dz=0] unless entity @e[tag=mg.tcm,dx=0,dy=0,dz=0] if block ~ ~ ~ #mg:tron_wall run scoreboard players set $tdead mg.st 1
+execute if score $trm mg.st matches 0 positioned ~ ~0.5 ~-0.36 align xyz unless entity @e[tag=mg.tpm,dx=0,dy=0,dz=0] unless entity @e[tag=mg.tcm,dx=0,dy=0,dz=0] if block ~ ~ ~ #mg:tron_wall run scoreboard players set $tdead mg.st 1
+execute if score $trm mg.st matches 1 positioned ~0.78 ~0.5 ~ align xyz unless entity @e[tag=mg.tpm,dx=0,dy=0,dz=0] unless entity @e[tag=mg.tcm,dx=0,dy=0,dz=0] if block ~ ~ ~ #mg:tron_wall run scoreboard players set $tdead mg.st 1
+execute if score $trm mg.st matches 1 positioned ~-0.78 ~0.5 ~ align xyz unless entity @e[tag=mg.tpm,dx=0,dy=0,dz=0] unless entity @e[tag=mg.tcm,dx=0,dy=0,dz=0] if block ~ ~ ~ #mg:tron_wall run scoreboard players set $tdead mg.st 1
+execute if score $trm mg.st matches 1 positioned ~ ~0.5 ~0.78 align xyz unless entity @e[tag=mg.tpm,dx=0,dy=0,dz=0] unless entity @e[tag=mg.tcm,dx=0,dy=0,dz=0] if block ~ ~ ~ #mg:tron_wall run scoreboard players set $tdead mg.st 1
+execute if score $trm mg.st matches 1 positioned ~ ~0.5 ~-0.78 align xyz unless entity @e[tag=mg.tpm,dx=0,dy=0,dz=0] unless entity @e[tag=mg.tcm,dx=0,dy=0,dz=0] if block ~ ~ ~ #mg:tron_wall run scoreboard players set $tdead mg.st 1

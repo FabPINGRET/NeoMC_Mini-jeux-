@@ -31,209 +31,109 @@
     {
       "label": [
         {
-          "text": "⚡ ⚡ Tron (à pied) ",
+          "text": "⚡ Tron ▸",
           "color": "aqua"
-        },
-        {
-          "text": "★★★",
-          "color": "gold"
-        },
-        {
-          "text": "☆",
-          "color": "dark_gray"
         }
       ],
       "tooltip": [
         {
-          "text": "Laisse un mur derrière toi, ne touche aucun mur",
+          "text": "À pied ou à moto, arène normale ou XXL",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 84"
+        "command": "trigger mg.opt set 50"
       }
     },
     {
       "label": [
         {
-          "text": "🏍 🏍 Tron moto ",
+          "text": "👑 King of the Hill ▸",
           "color": "gold"
-        },
-        {
-          "text": "★★★★",
-          "color": "gold"
-        },
-        {
-          "text": "",
-          "color": "dark_gray"
         }
       ],
       "tooltip": [
         {
-          "text": "Pareil, à cheval et beaucoup plus vite",
+          "text": "Solo ou équipes, 3 cartes",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 85"
+        "command": "trigger mg.opt set 51"
       }
     },
     {
       "label": [
         {
-          "text": "👑 👑 King of the Hill ",
+          "text": "⛏ Mini UHC Run ▸",
           "color": "gold"
-        },
-        {
-          "text": "★★",
-          "color": "gold"
-        },
-        {
-          "text": "☆☆",
-          "color": "dark_gray"
         }
       ],
       "tooltip": [
         {
-          "text": "Reste seul au sommet : 60 s pour gagner",
+          "text": "5 min : farm, PvP, zone qui rétrécit — 3 cartes",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 86"
+        "command": "trigger mg.opt set 52"
       }
     },
     {
       "label": [
         {
-          "text": "👑 👑 KotH — équipes ",
-          "color": "red"
-        },
-        {
-          "text": "★★",
+          "text": "🏹 Mini Hunger Games ▸",
           "color": "gold"
-        },
-        {
-          "text": "☆☆",
-          "color": "dark_gray"
         }
       ],
       "tooltip": [
         {
-          "text": "Rouge contre Bleu, tenez la colline 90 s",
+          "text": "Coffres, corne d'abondance — 3 cartes",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 87"
+        "command": "trigger mg.opt set 53"
       }
     },
     {
       "label": [
         {
-          "text": "⛏ ⛏ Mini UHC Run ",
-          "color": "gold"
-        },
-        {
-          "text": "★★★",
-          "color": "gold"
-        },
-        {
-          "text": "☆",
-          "color": "dark_gray"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "5 min : farm, PvP, zone qui rétrécit",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.go set 94"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "🏹 🏹 Mini Hunger Games ",
-          "color": "gold"
-        },
-        {
-          "text": "★★★",
-          "color": "gold"
-        },
-        {
-          "text": "☆",
-          "color": "dark_gray"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "5 min : coffres, corne d'abondance, dernier en vie",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.go set 95"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "🧟 🧟 Zombies ",
+          "text": "🧟 Zombies ▸",
           "color": "dark_green"
-        },
-        {
-          "text": "★★★",
-          "color": "gold"
-        },
-        {
-          "text": "☆",
-          "color": "dark_gray"
         }
       ],
       "tooltip": [
         {
-          "text": "Coop, armes réelles, 10 manches, portes et boîte mystère",
+          "text": "Coop, armes réelles, 10 manches — 3 cartes",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 97"
+        "command": "trigger mg.opt set 54"
       }
     },
     {
       "label": [
         {
-          "text": "🧪 🧪 Infection ",
+          "text": "🧪 Infection ▸",
           "color": "green"
-        },
-        {
-          "text": "★★",
-          "color": "gold"
-        },
-        {
-          "text": "☆☆",
-          "color": "dark_gray"
         }
       ],
       "tooltip": [
         {
-          "text": "Survivants armés contre zombies contagieux, 3 min",
+          "text": "Survivants contre zombies contagieux — 3 cartes",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 98"
+        "command": "trigger mg.opt set 55"
       }
     },
     {

@@ -11,16 +11,24 @@ import common as C
 
 C.init(sys.argv[1] if len(sys.argv) > 1 else '.')
 w, js = C.w, C.js
-Z = 20000
+Z = C.param('Z', 20000)
 COLORS = ['red', 'blue', 'lime', 'yellow', 'orange', 'magenta', 'cyan', 'white', 'purple', 'pink', 'light_blue', 'green',
           'brown', 'light_gray', 'gray', 'black']
 TXT = ['red', 'blue', 'green', 'yellow', 'gold', 'light_purple', 'dark_aqua', 'white', 'dark_purple', 'light_purple', 'aqua',
        'dark_green', 'gold', 'gray', 'dark_gray', 'black']
 
-H = 50   # demi-côté de l'arène (101×101)
+H = C.param('H', 50)   # demi-côté de l'arène (101×101 ; XXL : 201×201)
+
+
+def fill(x1, y1, z1, x2, y2, z2, blk):
+    """fill découpé en tranches (≤ 32768 blocs par commande)."""
+    per = max(1, 32768 // ((x2 - x1 + 1) * (y2 - y1 + 1)))
+    return [f'fill {x1} {y1} {z} {x2} {y2} {min(z + per - 1, z2)} {blk}' for z in range(z1, z2 + 1, per)]
+
+
 L = [f'# ⚡ Tron — arène {2 * H + 1}×{2 * H + 1} (centre 0 80 {Z}) dans la pénombre : toit opaque, quelques lumières faibles, bordure cyan']
-L += [f'fill {-H - 2} {y} {Z - H - 2} {H + 2} {y} {Z + H + 2} minecraft:air' for y in range(79, 93)]
-L += [f'fill {-H - 1} 79 {Z - H - 1} {H + 1} 79 {Z + H + 1} minecraft:barrier', f'fill {-H} 80 {Z - H} {H} 80 {Z + H} minecraft:black_concrete']
+L += [c for y in range(79, 93) for c in fill(-H - 2, y, Z - H - 2, H + 2, y, Z + H + 2, 'minecraft:air')]
+L += fill(-H - 1, 79, Z - H - 1, H + 1, 79, Z + H + 1, 'minecraft:barrier') + fill(-H, 80, Z - H, H, 80, Z + H, 'minecraft:black_concrete')
 for k in range(-H, H + 1, 10):
     L += [f'fill {k} 80 {Z - H} {k} 80 {Z + H} minecraft:gray_concrete', f'fill {-H} 80 {Z + k} {H} 80 {Z + k} minecraft:gray_concrete']
 L += [f'fill {-H - 1} 80 {Z - H - 1} {H + 1} 82 {Z - H - 1} minecraft:cyan_stained_glass', f'fill {-H - 1} 80 {Z + H + 1} {H + 1} 82 {Z + H + 1} minecraft:cyan_stained_glass',
@@ -28,11 +36,11 @@ L += [f'fill {-H - 1} 80 {Z - H - 1} {H + 1} 82 {Z - H - 1} minecraft:cyan_stain
       # murs et toit opaques au-dessus de la bordure : la lumière du ciel n'entre pas
       f'fill {-H - 1} 83 {Z - H - 1} {H + 1} 91 {Z - H - 1} minecraft:black_concrete', f'fill {-H - 1} 83 {Z + H + 1} {H + 1} 91 {Z + H + 1} minecraft:black_concrete',
       f'fill {-H - 1} 83 {Z - H} {-H - 1} 91 {Z + H} minecraft:black_concrete', f'fill {H + 1} 83 {Z - H} {H + 1} 91 {Z + H} minecraft:black_concrete',
-      f'fill {-H - 1} 92 {Z - H - 1} {H + 1} 92 {Z + H + 1} minecraft:black_concrete',
       # bordure lumineuse (lumière invisible derrière la vitre)
       f'fill {-H - 2} 81 {Z - H - 2} {H + 2} 81 {Z - H - 2} minecraft:light[level=9]', f'fill {-H - 2} 81 {Z + H + 2} {H + 2} 81 {Z + H + 2} minecraft:light[level=9]',
       f'fill {-H - 2} 81 {Z - H - 1} {-H - 2} 81 {Z + H + 1} minecraft:light[level=9]', f'fill {H + 2} 81 {Z - H - 1} {H + 2} 81 {Z + H + 1} minecraft:light[level=9]']
 # pénombre : lumières faibles en hauteur (au-dessus des murs, invisibles), juste assez pour voir le sol et empêcher les monstres
+L += fill(-H - 1, 92, Z - H - 1, H + 1, 92, Z + H + 1, 'minecraft:black_concrete')
 L += [f'setblock {x} 86 {Z + z} minecraft:light[level=7]' for x in range(-H + 5, H, 10) for z in range(-H + 5, H, 10)]
 w('tron/build', L)
 import json, os
