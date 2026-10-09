@@ -87,7 +87,7 @@ Les votes de tout le monde sont **cumulés depuis le début** (scores `mg.rts/mg
 - chaque bouton de carte des menus (lancement et votes) affiche la **moyenne des joueurs** (`★★★★☆ 4,2`) à la place des étoiles de difficulté (qui restent tant qu'il n'y a pas de vote) ;
 - chaque jeu affiche son **score global** `♥4,1` (moyenne des notes « mode » et « fun »).
 
-Les menus sont générés à la volée (`mg:rate/d/<menu>`, macro sur `storage mg:rate lab`) par `tools/rating/gen_rating.py`, relancé automatiquement par `tools/variantes/gen_variants.py`.
+Toutes les fenêtres du datapack (menus, votes, kart, classes, Mini Party…) sont affichées « inline » par des fonctions (`mg:rate/d/<nom>`, générées depuis `data/mg/dialog/*.json` par `tools/rating/gen_rating.py`, relancé automatiquement par `tools/variantes/gen_variants.py`) : un simple `/minecraft:reload` suffit à appliquer une modification de menu (les fichiers `dialog/*.json` ne sont relus qu'au redémarrage du serveur). Seul `mg:main_menu` (bouton du menu Échap) reste lié au redémarrage.
 
 ## 🗺️ 1. Créer la map vide (solo / LAN)
 

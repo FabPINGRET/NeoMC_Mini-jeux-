@@ -118,6 +118,7 @@ def to_snbt(o, holes):
 
 
 CONVERTED = []
+STATIC = set()
 for f in sorted(os.listdir(os.path.join(D, 'dialog'))):
     if not f.endswith('.json'):
         continue
@@ -150,9 +151,12 @@ for f in sorted(os.listdir(os.path.join(D, 'dialog'))):
             comps = [c if isinstance(c, dict) else {'text': c} for c in comps]
             a['label'] = comps + [f'@@f{fam}@@']
             holes.add(f'f{fam}')
-    if not holes:
-        continue
     CONVERTED.append(name)
+    if not holes:    # pas de note à afficher : fenêtre inline quand même, pour qu'un /minecraft:reload suffise
+        w(f'rate/d/{name}', [f'# Fenêtre « {name} » (inline : rechargée par /minecraft:reload). Générée depuis dialog/{name}.json.',
+                             f'return run dialog show @s {js(d)}'])
+        STATIC.add(name)
+        continue
     body = d.get('body') or []
     if body and body[0].get('type') == 'minecraft:plain_message':
         c = body[0]['contents']
@@ -170,7 +174,7 @@ for root, _, files in os.walk(F):
     for fn in files:
         p = os.path.join(root, fn)
         t = open(p, encoding='utf-8').read()
-        t2 = re.sub(r'dialog show @s mg:([a-z0-9_]+)', lambda m: f'function mg:rate/d/{m.group(1)} with storage mg:rate lab' if m.group(1) in conv else m.group(0), t)
+        t2 = re.sub(r'dialog show @s mg:([a-z0-9_]+)', lambda m: (f'function mg:rate/d/{m.group(1)}' if m.group(1) in STATIC else f'function mg:rate/d/{m.group(1)} with storage mg:rate lab') if m.group(1) in conv else m.group(0), t)
         t2 = t2.replace('dialog show @s mg:$(d)', 'function mg:rate/d/$(d) with storage mg:rate lab')
         if t2 != t:
             open(p, 'w', encoding='utf-8', newline='\n').write(t2)
