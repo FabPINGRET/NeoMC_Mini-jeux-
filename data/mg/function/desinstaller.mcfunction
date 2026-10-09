@@ -349,6 +349,8 @@ schedule clear mg:party/build_7
 schedule clear mg:party/build_8
 schedule clear mg:plot/build_all
 schedule clear mg:lobby/food_build
+schedule clear mg:lobby/beacons
+data remove storage mg:lobby beacon1
 schedule clear mg:coaster/build_start
 schedule clear mg:coaster/build
 kill @e[tag=mg.cst]

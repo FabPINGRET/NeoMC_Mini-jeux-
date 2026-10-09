@@ -25,6 +25,7 @@ schedule function mg:dropadv/build 30s
 function mg:elyrace/forget
 schedule function mg:elyrace/build_next 45s
 schedule function mg:sky/build 40s
+schedule function mg:lobby/beacons 55s
 schedule function mg:hall/build 25s
 schedule function mg:coaster/build_start 50s
 data remove storage mg:kart built3
