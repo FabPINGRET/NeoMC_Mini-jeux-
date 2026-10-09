@@ -2,6 +2,8 @@
 tag @s add mg.gbuy
 scoreboard players set $gpr mg.st 0
 execute if score $gpt mg.st matches 31..49 run return run function mg:gta/villa_take
+execute if score $gpt mg.st matches 70 run scoreboard players set $gpr mg.st 50
+execute if score $gpt mg.st matches 71 run scoreboard players set $gpr mg.st 100
 execute if score $gpt mg.st matches 2 run scoreboard players set $gpr mg.st 250
 execute if score $gpt mg.st matches 3 run scoreboard players set $gpr mg.st 350
 execute if score $gpt mg.st matches 4 run scoreboard players set $gpr mg.st 500

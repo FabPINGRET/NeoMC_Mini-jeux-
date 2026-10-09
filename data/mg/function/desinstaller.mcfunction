@@ -22,6 +22,18 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.gmis
+scoreboard objectives remove mg.gmt
+scoreboard objectives remove mg.gms
+scoreboard objectives remove mg.gmtime
+scoreboard objectives remove mg.gmsec
+scoreboard objectives remove mg.gnit
+scoreboard objectives remove mg.gth
+scoreboard objectives remove mg.gtn
+scoreboard objectives remove mg.gttx
+scoreboard objectives remove mg.gttz
+scoreboard objectives remove mg.gtmod
+scoreboard objectives remove mg.gtw8
 schedule clear mg:gta/wb_step
 schedule clear mg:gta/world_build
 schedule clear mg:gta/session_setup

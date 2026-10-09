@@ -1,64 +1,59 @@
 # Ville du Bombardier, étape 51/79 (généré par tools/arcade/gen_bomber.py)
-fill 41 66 32389 41 84 32389 minecraft:light_gray_stained_glass
-fill 43 66 32375 43 84 32375 minecraft:light_gray_stained_glass
-fill 43 66 32389 43 84 32389 minecraft:light_gray_stained_glass
-fill 44 66 32375 44 84 32375 minecraft:light_gray_stained_glass
-fill 44 66 32389 44 84 32389 minecraft:light_gray_stained_glass
-fill 36 66 32376 36 84 32376 minecraft:light_gray_stained_glass
-fill 46 66 32376 46 84 32376 minecraft:light_gray_stained_glass
-fill 36 66 32377 36 84 32377 minecraft:light_gray_stained_glass
-fill 46 66 32377 46 84 32377 minecraft:light_gray_stained_glass
-fill 36 66 32379 36 84 32379 minecraft:light_gray_stained_glass
-fill 46 66 32379 46 84 32379 minecraft:light_gray_stained_glass
-fill 36 66 32380 36 84 32380 minecraft:light_gray_stained_glass
-fill 46 66 32380 46 84 32380 minecraft:light_gray_stained_glass
-fill 36 66 32382 36 84 32382 minecraft:light_gray_stained_glass
-fill 46 66 32382 46 84 32382 minecraft:light_gray_stained_glass
-fill 36 66 32383 36 84 32383 minecraft:light_gray_stained_glass
-fill 46 66 32383 46 84 32383 minecraft:light_gray_stained_glass
-fill 36 66 32385 36 84 32385 minecraft:light_gray_stained_glass
-fill 46 66 32385 46 84 32385 minecraft:light_gray_stained_glass
-fill 36 66 32386 36 84 32386 minecraft:light_gray_stained_glass
-fill 46 66 32386 46 84 32386 minecraft:light_gray_stained_glass
-fill 36 66 32388 36 84 32388 minecraft:light_gray_stained_glass
-fill 46 66 32388 46 84 32388 minecraft:light_gray_stained_glass
-fill 36 69 32375 46 69 32389 minecraft:polished_diorite
-fill 36 73 32375 46 73 32389 minecraft:polished_diorite
-fill 36 77 32375 46 77 32389 minecraft:polished_diorite
-fill 36 81 32375 46 81 32389 minecraft:polished_diorite
-fill 36 65 32375 46 65 32389 minecraft:polished_diorite
-fill 36 85 32375 46 85 32389 minecraft:polished_diorite
-fill 38 66 32375 39 67 32375 minecraft:glass
-fill 38 66 32389 39 67 32389 minecraft:glass
-fill 41 66 32375 42 67 32375 minecraft:glass
-fill 41 66 32389 42 67 32389 minecraft:glass
-fill 44 66 32375 45 67 32375 minecraft:glass
-fill 44 66 32389 45 67 32389 minecraft:glass
-fill 38 85 32377 44 93 32377 minecraft:polished_diorite
-fill 38 85 32387 44 93 32387 minecraft:polished_diorite
-fill 38 85 32377 38 93 32387 minecraft:polished_diorite
-fill 44 85 32377 44 93 32387 minecraft:polished_diorite
-fill 39 85 32378 43 93 32386 minecraft:air
-fill 39 86 32377 39 92 32377 minecraft:light_gray_stained_glass
-fill 39 86 32387 39 92 32387 minecraft:light_gray_stained_glass
-fill 40 86 32377 40 92 32377 minecraft:light_gray_stained_glass
-fill 40 86 32387 40 92 32387 minecraft:light_gray_stained_glass
-fill 42 86 32377 42 92 32377 minecraft:light_gray_stained_glass
-fill 42 86 32387 42 92 32387 minecraft:light_gray_stained_glass
-fill 43 86 32377 43 92 32377 minecraft:light_gray_stained_glass
-fill 43 86 32387 43 92 32387 minecraft:light_gray_stained_glass
-fill 38 86 32378 38 92 32378 minecraft:light_gray_stained_glass
-fill 44 86 32378 44 92 32378 minecraft:light_gray_stained_glass
-fill 38 86 32379 38 92 32379 minecraft:light_gray_stained_glass
-fill 44 86 32379 44 92 32379 minecraft:light_gray_stained_glass
-fill 38 86 32381 38 92 32381 minecraft:light_gray_stained_glass
-fill 44 86 32381 44 92 32381 minecraft:light_gray_stained_glass
-fill 38 86 32382 38 92 32382 minecraft:light_gray_stained_glass
-fill 44 86 32382 44 92 32382 minecraft:light_gray_stained_glass
-fill 38 86 32384 38 92 32384 minecraft:light_gray_stained_glass
-fill 44 86 32384 44 92 32384 minecraft:light_gray_stained_glass
-fill 38 86 32385 38 92 32385 minecraft:light_gray_stained_glass
-fill 44 86 32385 44 92 32385 minecraft:light_gray_stained_glass
-fill 38 89 32377 44 89 32387 minecraft:polished_diorite
-fill 38 85 32377 44 85 32387 minecraft:polished_diorite
-fill 38 93 32377 44 93 32387 minecraft:polished_diorite
+fill 34 66 32358 35 67 32358 minecraft:glass
+fill 34 66 32365 35 67 32365 minecraft:glass
+fill 37 66 32358 38 67 32358 minecraft:glass
+fill 37 66 32365 38 67 32365 minecraft:glass
+fill 40 66 32358 41 67 32358 minecraft:glass
+fill 40 66 32365 41 67 32365 minecraft:glass
+fill 43 66 32358 44 67 32358 minecraft:glass
+fill 43 66 32365 44 67 32365 minecraft:glass
+fill 26 65 32375 46 168 32389 minecraft:air
+fill 26 169 32375 46 169 32389 minecraft:air
+fill 26 65 32375 46 65 32389 minecraft:polished_andesite
+fill 26 66 32375 46 73 32375 minecraft:light_gray_concrete
+fill 26 66 32389 46 73 32389 minecraft:light_gray_concrete
+fill 26 66 32375 26 73 32389 minecraft:light_gray_concrete
+fill 46 66 32375 46 73 32389 minecraft:light_gray_concrete
+fill 27 66 32376 45 72 32388 minecraft:air
+fill 26 69 32375 46 69 32389 minecraft:polished_andesite
+fill 26 73 32375 46 73 32389 minecraft:blue_concrete
+fill 27 67 32375 45 68 32375 minecraft:gray_stained_glass
+fill 27 67 32389 45 68 32389 minecraft:gray_stained_glass
+fill 26 67 32376 26 68 32388 minecraft:gray_stained_glass
+fill 46 67 32376 46 68 32388 minecraft:gray_stained_glass
+fill 27 71 32375 45 72 32375 minecraft:gray_stained_glass
+fill 27 71 32389 45 72 32389 minecraft:gray_stained_glass
+fill 26 71 32376 26 72 32388 minecraft:gray_stained_glass
+fill 46 71 32376 46 72 32388 minecraft:gray_stained_glass
+fill 35 66 32375 37 68 32375 minecraft:air
+fill 26 66 32375 46 66 32375 minecraft:blue_concrete
+fill 35 66 32375 37 68 32375 minecraft:air
+fill 26 69 32375 46 69 32375 minecraft:blue_concrete
+setblock 34 70 32375 minecraft:redstone_lamp[lit=true]
+setblock 38 70 32375 minecraft:sea_lantern
+fill 28 66 32378 34 66 32378 minecraft:dark_oak_planks
+fill 28 67 32378 34 67 32378 minecraft:polished_blackstone_slab
+fill 38 66 32378 44 66 32378 minecraft:dark_oak_planks
+fill 38 67 32378 44 67 32378 minecraft:polished_blackstone_slab
+fill 28 66 32385 30 68 32385 minecraft:iron_bars
+fill 31 66 32385 31 68 32388 minecraft:iron_block
+setblock 29 66 32387 minecraft:white_wool
+fill 32 66 32385 34 68 32385 minecraft:iron_bars
+fill 35 66 32385 35 68 32388 minecraft:iron_block
+setblock 33 66 32387 minecraft:white_wool
+fill 36 66 32385 38 68 32385 minecraft:iron_bars
+fill 39 66 32385 39 68 32388 minecraft:iron_block
+setblock 37 66 32387 minecraft:white_wool
+fill 40 66 32385 42 68 32385 minecraft:iron_bars
+fill 43 66 32385 43 68 32388 minecraft:iron_block
+setblock 41 66 32387 minecraft:white_wool
+fill 27 66 32381 27 68 32385 minecraft:iron_bars
+setblock 29 68 32382 minecraft:sea_lantern
+setblock 33 68 32382 minecraft:sea_lantern
+setblock 37 68 32382 minecraft:sea_lantern
+setblock 41 68 32382 minecraft:sea_lantern
+fill 26 65 32399 46 168 32413 minecraft:air
+fill 26 169 32399 46 169 32413 minecraft:air
+fill 26 65 32399 46 65 32413 minecraft:red_carpet
+fill 26 66 32399 46 73 32399 minecraft:black_concrete
+fill 26 66 32413 46 73 32413 minecraft:black_concrete

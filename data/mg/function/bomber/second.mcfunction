@@ -2,7 +2,7 @@
 scoreboard players operation $bpct mg.st = $bdes mg.st
 scoreboard players set #100 mg.st 100
 scoreboard players operation $bpct mg.st *= #100 mg.st
-scoreboard players set #btot mg.st 161321
+scoreboard players set #btot mg.st 151022
 scoreboard players operation $bpct mg.st /= #btot mg.st
 execute store result bossbar mg:bomber value run scoreboard players get $bdes mg.st
 bossbar set mg:bomber name [{"text":"🏙 Ville détruite : ","color":"red"},{"score":{"name":"$bpct","objective":"mg.st"},"color":"yellow","bold":true},{"text":" %","color":"red"}]

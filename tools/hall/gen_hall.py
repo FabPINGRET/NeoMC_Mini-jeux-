@@ -113,12 +113,13 @@ W('ely', ['# Record d\'un parcours d\'élytra (@s, temps dans $es / $ecs) → ha
 # ---------------------------------------------------------------- tableau à droite : rotation
 # Lobby, hors partie : un tableau toutes les 8 s — victoires, parties jouées, kills, puis chaque
 # jeu déjà gagné. Pendant des votes, le tableau des votes revient un affichage sur deux.
-BOARDS = [('mg.lvl', None), ('mg.wins', None), ('mg.stp', None), ('mg.stk', None)] + [(f'mg.wg_{k}', None) for k, *_ in GAMES]
+BOARDS = [('mg.lvl', None), ('mg.wins', None), ('mg.stp', None), ('mg.stk', None), ('mg.gta', None)] + [(f'mg.wg_{k}', None) for k, *_ in GAMES]   # mg.gta : les plus riches de Neo GTA
 W('rotate', ['# Tableau à droite : affichage suivant',
     'execute if entity @a[scores={mg.wins=1..}] run scoreboard players set #any mg.wins 1',
     'execute if entity @a[scores={mg.lvl=1..}] run scoreboard players set #any mg.lvl 1',
     'execute if entity @a[scores={mg.stp=1..}] run scoreboard players set #any mg.stp 1',
     'execute if entity @a[scores={mg.stk=1..}] run scoreboard players set #any mg.stk 1',
+    'execute if entity @a[scores={mg.gta=1..}] run scoreboard players set #any mg.gta 1',
     'execute if score $vn mg.st matches 1.. unless score $rph mg.st matches 1 run return run function mg:hall/rot_votes',
     'scoreboard players set $rph mg.st 0',
     'scoreboard players set $hrt mg.st 160',

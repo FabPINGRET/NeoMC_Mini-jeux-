@@ -1,20 +1,4 @@
 # Ville du Bombardier, étape 77/79 (généré par tools/arcade/gen_bomber.py)
-fill 48 65 32439 48 67 32439 minecraft:iron_bars
-setblock 48 68 32439 minecraft:lantern
-fill 24 65 32445 24 67 32445 minecraft:iron_bars
-setblock 24 68 32445 minecraft:lantern
-fill 48 65 32445 48 67 32445 minecraft:iron_bars
-setblock 48 68 32445 minecraft:lantern
-fill 24 65 32463 24 67 32463 minecraft:iron_bars
-setblock 24 68 32463 minecraft:lantern
-fill 48 65 32463 48 67 32463 minecraft:iron_bars
-setblock 48 68 32463 minecraft:lantern
-fill 24 65 32469 24 67 32469 minecraft:iron_bars
-setblock 24 68 32469 minecraft:lantern
-fill 48 65 32469 48 67 32469 minecraft:iron_bars
-setblock 48 68 32469 minecraft:lantern
-fill 24 65 32488 24 67 32488 minecraft:iron_bars
-setblock 24 68 32488 minecraft:lantern
 fill 48 65 32488 48 67 32488 minecraft:iron_bars
 setblock 48 68 32488 minecraft:lantern
 fill 56 65 32312 56 67 32312 minecraft:iron_bars
@@ -62,3 +46,14 @@ setblock 56 68 32421 minecraft:lantern
 fill 64 65 32421 64 67 32421 minecraft:iron_bars
 setblock 64 68 32421 minecraft:lantern
 fill 56 65 32439 56 67 32439 minecraft:iron_bars
+setblock 56 68 32439 minecraft:lantern
+fill 64 65 32439 64 67 32439 minecraft:iron_bars
+setblock 64 68 32439 minecraft:lantern
+fill 56 65 32445 56 67 32445 minecraft:iron_bars
+setblock 56 68 32445 minecraft:lantern
+fill 64 65 32445 64 67 32445 minecraft:iron_bars
+setblock 64 68 32445 minecraft:lantern
+fill 56 65 32463 56 67 32463 minecraft:iron_bars
+setblock 56 68 32463 minecraft:lantern
+fill 64 65 32463 64 67 32463 minecraft:iron_bars
+setblock 64 68 32463 minecraft:lantern

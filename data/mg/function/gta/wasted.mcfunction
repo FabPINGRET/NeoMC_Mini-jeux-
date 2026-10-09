@@ -1,6 +1,7 @@
 # @s est mort (contexte : dimension mg:gta) : WASTED, ou BUSTED s'il était recherché ; -25 % lâchés en liasse
 scoreboard players set @s mg.deaths 0
 scoreboard players set @s mg.gtl 60
+execute if score @s mg.gwl matches 1.. run tag @s add mg.gbust
 scoreboard players operation $gl mg.st = @s mg.gta
 scoreboard players set #4 mg.st 4
 scoreboard players operation $gl mg.st /= #4 mg.st
@@ -14,9 +15,10 @@ scoreboard players set @s mg.gwl 0
 scoreboard players set @s mg.gwt 0
 team join mg_gciv @s
 execute if score $gl mg.st matches 1.. run function mg:gta/drop_cash
+function mg:gta/mis_fail
 function mg:gta/radio_off
 function mg:gta/unscope
-function mg:gta/place
+function mg:gta/respawn_at
 function mg:gta/kit
 execute at @s run playsound minecraft:entity.wither.death player @s ~ ~ ~ 0.4 1.6
 execute at @s run playsound minecraft:block.bell.resonate player @s ~ ~ ~ 0.8 0.5

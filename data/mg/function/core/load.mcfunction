@@ -43,6 +43,19 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives modify mg.gta displayname [{"text":"💵 Neo GTA","color":"green","bold":true},{"text":" : les plus riches","color":"gray","bold":false}]
+scoreboard objectives add mg.gmis trigger
+scoreboard objectives add mg.gmt dummy
+scoreboard objectives add mg.gms dummy
+scoreboard objectives add mg.gmtime dummy
+scoreboard objectives add mg.gmsec dummy
+scoreboard objectives add mg.gnit dummy
+scoreboard objectives add mg.gth dummy
+scoreboard objectives add mg.gtn dummy
+scoreboard objectives add mg.gttx dummy
+scoreboard objectives add mg.gttz dummy
+scoreboard objectives add mg.gtmod dummy
+scoreboard objectives add mg.gtw8 dummy
 scoreboard objectives add mg.grob dummy
 scoreboard objectives add mg.gsid dummy
 scoreboard objectives add mg.gveh dummy

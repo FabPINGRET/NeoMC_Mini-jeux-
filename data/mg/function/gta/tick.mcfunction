@@ -1,9 +1,19 @@
 # 🚓 Neo City : chaque tick tant qu'un joueur y est
 scoreboard players add $gtt mg.st 1
+execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] if items entity @s weapon.mainhand *[custom_data~{gtaphone:1b}] run function mg:gta/phone
+execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] if items entity @s weapon.mainhand *[custom_data~{gtanitro:1b}] run function mg:gta/nitro
+execute as @a[tag=mg.gtw,scores={mg.gmis=1..}] run function mg:gta/mis_cmd
+scoreboard players remove @a[tag=mg.gtw,scores={mg.gnit=1..}] mg.gnit 1
+execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] if items entity @s weapon.mainhand *[custom_data~{rpg:1b}] at @s run function mg:gta/panic
 execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] at @s if items entity @s weapon.mainhand *[custom_data~{rpg:1b}] run function mg:gta/rpg_fire
 execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] if items entity @s weapon.mainhand *[custom_data~{gtahome:1b}] run function mg:gta/home
 execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] at @s run function mg:gun/use
+execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] if items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] at @s run function mg:gta/panic
+execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] if items entity @s weapon.mainhand *[custom_data~{rpg:1b}] at @s run function mg:gta/panic
 scoreboard players reset @a[scores={mg.gqs=1..}] mg.gqs
+execute as @e[type=minecraft:marker,tag=mg.gtraf] at @s run function mg:gta/traffic/tick
+execute as @e[type=minecraft:marker,tag=mg.gphel] at @s run function mg:gta/pheli_tick
+function mg:gta/panic_tick
 scoreboard players remove @a[tag=mg.gtw,scores={mg.gcd=1..}] mg.gcd 1
 execute as @a[tag=mg.gtw,scores={mg.grl=1..}] at @s run function mg:gun/reload_tick
 execute as @a[tag=mg.gtw,scores={mg.gsn=1..}] if items entity @s weapon.mainhand *[custom_data~{gun:5}] run scoreboard players reset @s mg.gsn
@@ -43,6 +53,8 @@ scoreboard players operation $gq5t mg.st %= #5 mg.st
 execute if score $gq5t mg.st matches 0 as @a[tag=mg.gtw,gamemode=!spectator] if predicate mg:sneak if items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] at @s run function mg:gta/rob
 execute if score $gq5t mg.st matches 0 as @a[tag=mg.gtw,gamemode=!spectator] if predicate mg:sneak if items entity @s weapon.mainhand *[custom_data~{rpg:1b}] at @s run function mg:gta/rob
 execute if score $gq5t mg.st matches 0 as @a[tag=mg.gtw,scores={mg.grob=1..}] unless predicate mg:sneak run function mg:gta/rob_stop
+execute if score $gq5t mg.st matches 0 as @a[tag=mg.gtw,scores={mg.gmt=1..}] at @s run function mg:gta/mis_tick
+execute if score $gq5t mg.st matches 0 as @a[tag=mg.gtw,gamemode=!spectator] if predicate mg:sneak at @s as @e[type=minecraft:marker,tag=mg.gtraf,distance=..2.6,limit=1,sort=nearest] at @s run function mg:gta/traffic/steal
 scoreboard players operation $gq4 mg.st = $gtt mg.st
 scoreboard players set #4 mg.st 4
 scoreboard players operation $gq4 mg.st %= #4 mg.st
@@ -52,6 +64,8 @@ execute as @a[tag=mg.gtw] at @s if entity @e[type=minecraft:marker,tag=mg.gldn,d
 execute if score $gq mg.st matches 0 run function mg:gta/second
 execute if score $gq mg.st matches 0 run function mg:gta/pads
 execute if score $gq mg.st matches 10 run function mg:gta/pads
+execute if score $gq mg.st matches 0 run function mg:gta/club_tick
+execute if score $gq mg.st matches 10 run function mg:gta/club_tick
 execute if score $gq mg.st matches 5 run function mg:gta/hud
 execute if score $gq mg.st matches 5 run function mg:gta/radio_check
 execute if score $gq mg.st matches 15 run function mg:gta/hud
