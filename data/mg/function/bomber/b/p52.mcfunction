@@ -2,7 +2,7 @@
 fill 26 66 32399 26 73 32413 minecraft:black_concrete
 fill 46 66 32399 46 73 32413 minecraft:black_concrete
 fill 27 66 32400 45 72 32412 minecraft:air
-fill 26 69 32399 46 69 32413 minecraft:red_carpet
+fill 26 69 32399 46 69 32413 minecraft:red_wool
 fill 26 73 32399 46 73 32413 minecraft:black_concrete
 fill 27 67 32399 45 68 32399 minecraft:yellow_stained_glass
 fill 27 67 32413 45 68 32413 minecraft:yellow_stained_glass

@@ -18,6 +18,11 @@ execute if score $gq3 mg.st matches 0 as @e[tag=mg.gcop,tag=!mg.gphel] at @s unl
 execute if score $gq3 mg.st matches 0 as @a[tag=mg.gtw,scores={mg.gwl=1..}] at @s run function mg:gta/police_plus
 function mg:gta/police_clean
 function mg:gta/traffic/second
+scoreboard players operation $gq10 mg.st = $gtt mg.st
+scoreboard players set #200 mg.st 200
+scoreboard players operation $gq10 mg.st %= #200 mg.st
+execute if score $gq10 mg.st matches 0 in mg:gta run kill @e[type=minecraft:item,x=-90,y=40,z=32310,dx=180,dy=140,dz=180]
+execute if score $gq10 mg.st matches 0 in mg:gta run kill @e[type=minecraft:item,x=-46,y=50,z=32222,dx=102,dy=60,dz=96]
 execute as @a[tag=mg.gtw,scores={mg.gwl=1..}] at @s if entity @e[tag=mg.gcop,distance=..22] run scoreboard players set @s mg.gwt 400
 execute as @a[tag=mg.gtw,scores={mg.gwl=1..}] at @s run function mg:gta/siren
 function mg:gta/bars_tick

@@ -407,7 +407,7 @@ def police(x1, z1, x2, z2):
 
 
 def casino(x1, z1, x2, z2):
-    mx, yt = shell(x1, z1, x2, z2, 2, 'black_concrete', 'red_carpet', 'yellow_stained_glass', 'black_concrete')
+    mx, yt = shell(x1, z1, x2, z2, 2, 'black_concrete', 'red_wool', 'yellow_stained_glass', 'black_concrete')
     fill(x1, 65, z1, x2, 65, z2, 'black_concrete'); fill(x1 + 1, 65, z1 + 1, x2 - 1, 65, z2 - 1, 'red_wool')
     fill(x1, 70, z1, x2, 72, z1, 'gold_block')                                   # marquise dorée
     for x in range(x1, x2 + 1, 2):

@@ -54,6 +54,6 @@ setblock 37 68 32382 minecraft:sea_lantern
 setblock 41 68 32382 minecraft:sea_lantern
 fill 26 65 32399 46 168 32413 minecraft:air
 fill 26 169 32399 46 169 32413 minecraft:air
-fill 26 65 32399 46 65 32413 minecraft:red_carpet
+fill 26 65 32399 46 65 32413 minecraft:red_wool
 fill 26 66 32399 46 73 32399 minecraft:black_concrete
 fill 26 66 32413 46 73 32413 minecraft:black_concrete
