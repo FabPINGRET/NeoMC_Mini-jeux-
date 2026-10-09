@@ -73,7 +73,7 @@ PAD.update({'s_smg': (52, '🔫 Mitraillette (gratuite)', 'aqua', 'minecraft:cro
             'moto': (21, '🏍 Moto', 'gold', 'minecraft:saddle'), 'muscle': (22, '🚗 Muscle car', 'red', 'minecraft:minecart'),
             'supercar': (23, '🏎 Supercar', 'light_purple', 'minecraft:golden_horse_armor'), 'heli': (24, '🚁 Hélico privé', 'yellow', 'minecraft:feather'),
             'plane': (25, '✈ Avion', 'aqua', 'minecraft:elytra')})
-PRICE = {2: 250, 3: 350, 4: 500, 5: 800, 6: 1500, 7: 1200, 8: 75, 9: 200, 11: 0, 21: 800, 22: 1800, 23: 3500, 24: 6000, 25: 9000}
+PRICE = {2: 150, 3: 200, 4: 300, 5: 450, 6: 800, 7: 650, 8: 50, 9: 120, 11: 0, 21: 400, 22: 900, 23: 1800, 24: 3000, 25: 4500}
 CITY = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'neo_city.json'), encoding='utf-8'))
 SHOW = CITY['showroom']
 SHOW_PADS = list(zip(range(SHOW[0] + 2, SHOW[2] - 1, 3), ['moto', 'muscle', 'supercar', 'heli', 'plane']))
@@ -96,7 +96,8 @@ PAD.update({'slot': (70, '🎰 Machine à sous', 'gold', 'minecraft:gold_ingot')
             'g_plane': (35, '✈ Avion', 'aqua', 'minecraft:elytra'), 'g_smg': (42, '🔫 Mitraillette', 'aqua', 'minecraft:crossbow'),
             'g_shotgun': (43, '🔫 Fusil à pompe', 'gold', 'minecraft:crossbow'), 'g_rifle': (44, '🔫 Fusil M14', 'yellow', 'minecraft:crossbow'),
             'g_sniper': (45, '🎯 Sniper', 'light_purple', 'minecraft:spyglass'), 'g_raygun': (46, '✦ Ray Gun', 'green', 'minecraft:heart_of_the_sea'),
-            'g_rpg': (47, '🚀 Lance-roquettes', 'red', 'minecraft:firework_rocket'), 'g_armor': (49, '🛡 Gilet pare-balles', 'gray', 'minecraft:iron_chestplate')})
+            'g_rpg': (47, '🚀 Lance-roquettes', 'red', 'minecraft:firework_rocket'), 'g_armor': (49, '🛡 Gilet pare-balles', 'gray', 'minecraft:iron_chestplate'),
+            'atm': (80, '💵 Distributeur (gratuit)', 'green', 'minecraft:paper')})
 BASE = {31: 21, 32: 22, 33: 23, 34: 24, 35: 25, 42: 2, 43: 3, 44: 4, 45: 5, 46: 6, 47: 7, 49: 9}   # objet de la villa → achat qui le débloque
 SHOP_CLERK = ['farmer', 'librarian', 'mason', 'butcher', 'cleric', 'cartographer']                       # voitures achetées : livrées dans la rue devant la concession
 GUNM = {1: 'pistol', 2: 'smg', 3: 'shotgun', 4: 'rifle', 5: 'sniper', 6: 'raygun', 7: 'rpg'}
@@ -109,7 +110,7 @@ CARS = [  # (n°, carrosserie, toit, nom, vitesse)
     (9, 'orange_concrete', 'black_stained_glass', '🚗 Berline', 0.34), (10, 'yellow_concrete', 'black_concrete', '🚕 Taxi', 0.34),
 ]
 CAR_AT = random.sample([i for i in INTER if i not in PADS_AT and i != SPAWN], 16)   # 16 vraies voitures en ville
-HELI_AT = [(-30, 30, 'red_concrete'), (0, 32, 'blue_concrete'), (52, -78, 'black_concrete'), (-76, 66, 'white_concrete')]
+HELI_AT = [(4, 48, 'red_concrete'), (-3, 60, 'blue_concrete'), (52, -78, 'black_concrete'), (-76, 66, 'white_concrete')]
 NAMES = ['Tony', 'Carla', 'Vinnie', 'Rosa', 'Eddie', 'Lola', 'Frankie', 'Mia', 'Sal', 'Nina', 'Joey', 'Gina', 'Marco', 'Lucy', 'Rico', 'Ava']
 VTYPES = ['plains', 'desert', 'savanna', 'snow', 'taiga', 'jungle', 'swamp']
 STATIONS = [('Neo FM', 'pigstep'), ('Radio Pixel', 'chirp'), ('Bass City', 'otherside'), ('Lo-fi Avenue', 'mall'),
@@ -239,11 +240,12 @@ w('gta/enter', ['# @s entre dans le portail de Neo City',
                 f'execute in {DIM} run tp @s {VFRONT[0] + 0.5} {VY} {Z + VFRONT[1] + 0.5} 180 0',
                 'function mg:gta/kit',
                 'title @s times 10 50 20', 'title @s title {"text":"NEO GTA","color":"gold","bold":true}',
-                'title @s subtitle {"text":"Bienvenue en ville. Fais-toi un nom.","color":"gray"}',
-                'tellraw @s ' + js([{'text': '🚓 NEO GTA ', 'color': 'gold', 'bold': True},
-                                    {'text': 'Armes sur les trottoirs, voitures et hélicos (clic droit pour monter), lunette du sniper en s\'accroupissant. '
-                                             'Passants et flics tués = ★ : la police débarque, de plus en plus nombreuse. Tes dollars sont gardés. ', 'color': 'gray'},
-                                    {'text': 'Retour au lobby : panneau 🚪 près du carrefour de départ, ou menu (Échap → ≡ Menu).', 'color': 'yellow'}]),
+                'title @s subtitle {"text":"Deviens le plus riche de Neo City","color":"gray"}',
+                'tellraw @s ' + js([{'text': '🚓 NEO GTA', 'color': 'gold', 'bold': True}, {'text': ' : deviens le plus riche de la ville', 'color': 'yellow'}]),
+                'tellraw @s ' + js([{'text': ' 💵 Gagner : ', 'color': 'green'}, {'text': 'accroupi + arme en main pour braquer passants, commerces, banque ; missions au 📱', 'color': 'gray'}]),
+                'tellraw @s ' + js([{'text': ' 🔫 Dépenser : ', 'color': 'aqua'}, {'text': 'armurerie et concession au parc, tout ce qui est acheté est gratuit à la villa', 'color': 'gray'}]),
+                'tellraw @s ' + js([{'text': ' ★ Police : ', 'color': 'red'}, {'text': 'chaque crime = étoile, une de moins toutes les 15 s', 'color': 'gray'}]),
+                'tellraw @s ' + js([{'text': ' 🚪 Sortir : ', 'color': 'yellow'}, {'text': 'Échap → ≡ Menu', 'color': 'gray'}]),
                 'execute at @s run playsound minecraft:block.portal.travel master @s ~ ~ ~ 0.3 1.6'])
 w('gta/not_ready', ['# Neo City pas encore construite : on recule le joueur', f'tp @s {PX - 3}.5 64 {PZ + 0.5} -90 0',
                     'tellraw @s {"text":"🚧 Neo GTA est en construction (environ 2 minutes après le démarrage du serveur). Réessaie bientôt !","color":"yellow"}'])
@@ -321,13 +323,15 @@ S += [f'summon minecraft:text_display {(SHOW[0] + SHOW[2]) / 2 + 0.5} 71.5 {Z + 
       f'summon minecraft:marker {AIRF[0]} 66 {Z + AIRF[1]} {{Tags:["mg.gta","mg.gair"]}}']
 for (x, z, y, ts) in [(x, z, VY, t) for x, z, t in VPADS] + [(x, z, VY, t) for x, z, t in VWEAP] + \
                      [(NH['heal_pad'][0], NH['heal_pad'][1], VY, 'heal_free'), (NH['armor_pad'][0], NH['armor_pad'][1], VY, 'g_armor'),
-                      (NH['garage_pads'][-1][0] + 3, NH['garage_pads'][-1][1], VY, 'paint')]:
+                      (NH['garage_pads'][-1][0] + 3, NH['garage_pads'][-1][1], VY, 'paint'), (NH['atm'][0], NH['atm'][1], 64, 'atm')]:
     S += [f'summon minecraft:marker {x} {y} {Z + z} {{Tags:["mg.gta","mg.gpad","mg.garm","mg.gpn"]}}',
           f'scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpt {PAD[ts][0]}', 'scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0',
           'execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show',
           f'summon minecraft:block_display {x - 0.5} {y} {Z + z - 0.5} {{Tags:["mg.gta","mg.gpdb"],block_state:{{Name:"minecraft:light_weighted_pressure_plate"}}}}',
           'tag @e[tag=mg.gpn] remove mg.gpn']
-S += [f'summon minecraft:marker {LIFT[0]} {NH["lift_y"][0]} {Z + LIFT[1]} {{Tags:["mg.gta","mg.glup"]}}',
+S += ['function mg:gta/planque',
+      f'summon minecraft:block_display {NH["trap"][0]} {VY - 1} {Z + NH["trap"][1]} {{Tags:["mg.gta"],block_state:{{Name:"minecraft:dark_oak_planks"}}}}',
+      f'summon minecraft:marker {LIFT[0]} {NH["lift_y"][0]} {Z + LIFT[1]} {{Tags:["mg.gta","mg.glup"]}}',
       f'summon minecraft:marker {LIFT[0]} {NH["lift_y"][1]} {Z + LIFT[1]} {{Tags:["mg.gta","mg.gldn"]}}',
       f'summon minecraft:text_display {LIFT[0] + 0.5} {NH["lift_y"][0] + 1.8} {Z + LIFT[1] + 0.5} {{Tags:["mg.gta"],billboard:"center",text:{js({"text": "⬆ Toit-terrasse : jacuzzi et bar", "color": "aqua"})},background:1073741824,{TR % (0, 0, 0, 0.6, 0.6, 0.6)}}}',
       f'summon minecraft:text_display {LIFT[0] + 0.5} {NH["lift_y"][1] + 1.8} {Z + LIFT[1] + 0.5} {{Tags:["mg.gta"],billboard:"center",text:{js({"text": "⬇ Descendre", "color": "aqua"})},background:1073741824,{TR % (0, 0, 0, 0.6, 0.6, 0.6)}}}',
@@ -697,7 +701,7 @@ w('gta/pad_take', ['# @s (présentoir) : le joueur le plus proche achète (ou pr
                    'scoreboard players operation $gpt mg.st = @s mg.gpt', 'scoreboard players set $gok mg.st 0', 'tag @s add mg.gbz',
                    'execute as @a[tag=mg.gtw,tag=!mg.gbuy,gamemode=!spectator,distance=..1.6,sort=nearest,limit=1] at @s run function mg:gta/pad_buy',
                    'execute unless score $gok mg.st matches 1 run return 0',
-                   'scoreboard players set @s mg.gpc 600', 'execute if entity @s[tag=mg.garm] run scoreboard players set @s mg.gpc 40',
+                   'scoreboard players set @s mg.gpc 600', 'execute if entity @s[tag=mg.garm] run scoreboard players set @s mg.gpc 40', 'execute if score $gpt mg.st matches 80 run scoreboard players set @s mg.gpc 400',
                    'kill @e[type=minecraft:item_display,tag=mg.gpdi,distance=..1.5]', 'kill @e[type=minecraft:text_display,tag=mg.gpdt,distance=..2.5]',
                    'playsound minecraft:entity.villager.yes player @a ~ ~ ~ 0.6 1.2'])
 PB_ = ['# @s : achat du contenu du présentoir ($gpt) si assez de dollars (villa : gratuit si déjà acheté)', 'tag @s add mg.gbuy', 'scoreboard players set $gpr mg.st 0',
@@ -742,10 +746,16 @@ for t, (n, lab, col, it) in PAD.items():
 GV += ['execute if score $gpt mg.st matches 70 run function mg:gta/cas_ui_slot', 'execute if score $gpt mg.st matches 71 run function mg:gta/cas_ui_roulette',
        'execute if score $gpt mg.st matches 72 run function mg:gta/cas_ui_dice',
        'execute if score $gpt mg.st matches 60 run function mg:gta/paint',
+       'execute if score $gpt mg.st matches 80 run function mg:gta/atm',
        'execute if score $gpt mg.st matches 11 run effect give @s minecraft:instant_health 1 1 true',
        'execute if score $gpt mg.st matches 11 run title @s actionbar {"text":"✚ Soigné","color":"red","bold":true}']
 GV += [f'execute if score $gpt mg.st matches {PAD[t][0]} run function mg:gta/veh_buy {{t:"{t}"}}' for t in ('moto', 'muscle', 'supercar', 'heli', 'plane')]
 w('gta/pad_give', GV)
+w('gta/atm', ['# @s : distributeur de la planque secrète, 300 à 600 $ gratuits (toutes les 20 s)',
+              'execute store result score $gcv mg.st run random value 300..600', 'function mg:gta/cash_gain',
+              'title @s actionbar [{"text":"💵 +","color":"green","bold":true},{"score":{"name":"$gcv","objective":"mg.st"},"color":"green","bold":true},{"text":" $ ","color":"green","bold":true},{"text":"retirés au distributeur secret","color":"gray"}]',
+              'playsound minecraft:block.chain.place player @s ~ ~ ~ 1 0.6', 'playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 1 1.2',
+              'particle minecraft:happy_villager ~ ~1.2 ~ 0.4 0.4 0.4 0 12'])
 
 # ---------------------------------------------------------------- lance-roquettes
 RPG_BASE = ('minecraft:warped_fungus_on_a_stick[custom_data={rpg:1b},unbreakable={},'

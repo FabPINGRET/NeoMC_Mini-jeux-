@@ -22,6 +22,10 @@ execute in mg:gta run tp @s 20.5 71 32297.5 180 0
 function mg:gta/kit
 title @s times 10 50 20
 title @s title {"text":"NEO GTA","color":"gold","bold":true}
-title @s subtitle {"text":"Bienvenue en ville. Fais-toi un nom.","color":"gray"}
-tellraw @s [{"text":"🚓 NEO GTA ","color":"gold","bold":true},{"text":"Armes sur les trottoirs, voitures et hélicos (clic droit pour monter), lunette du sniper en s'accroupissant. Passants et flics tués = ★ : la police débarque, de plus en plus nombreuse. Tes dollars sont gardés. ","color":"gray"},{"text":"Retour au lobby : panneau 🚪 près du carrefour de départ, ou menu (Échap → ≡ Menu).","color":"yellow"}]
+title @s subtitle {"text":"Deviens le plus riche de Neo City","color":"gray"}
+tellraw @s [{"text":"🚓 NEO GTA","color":"gold","bold":true},{"text":" : deviens le plus riche de la ville","color":"yellow"}]
+tellraw @s [{"text":" 💵 Gagner : ","color":"green"},{"text":"accroupi + arme en main pour braquer passants, commerces, banque ; missions au 📱","color":"gray"}]
+tellraw @s [{"text":" 🔫 Dépenser : ","color":"aqua"},{"text":"armurerie et concession au parc, tout ce qui est acheté est gratuit à la villa","color":"gray"}]
+tellraw @s [{"text":" ★ Police : ","color":"red"},{"text":"chaque crime = étoile, une de moins toutes les 15 s","color":"gray"}]
+tellraw @s [{"text":" 🚪 Sortir : ","color":"yellow"},{"text":"Échap → ≡ Menu","color":"gray"}]
 execute at @s run playsound minecraft:block.portal.travel master @s ~ ~ ~ 0.3 1.6

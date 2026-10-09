@@ -402,6 +402,33 @@ fill(PX1 + 1, G - 2, PZ1 + 5, PX1 + 1, G, PZ1 + 5, 'ladder[facing=east,waterlogg
 for z in range(MZ2 + 1, -150, -3):
     put(43, G, z, 'smooth_stone_slab')
 
+# ---------------------------------------------------------------- planque secrète sous le salon (fonction à part, posée à chaque session)
+# Entrée : une latte du parquet du salon n'est qu'un décor (block_display posé par Neo GTA) ; dessous, une échelle.
+_n0 = len(CMDS)
+PQ = (31, 38, -147, -141)                          # intérieur x, z ; sol y 63, salle 64..67, plafond 68
+TRAP = (37, -141)
+fill(PQ[0] - 1, 63, PQ[2] - 1, PQ[1] + 1, 68, PQ[3] + 1, 'polished_deepslate')
+fill(PQ[0], 64, PQ[2], PQ[1], 67, PQ[3], 'air')
+fill(PQ[0], 63, PQ[2], PQ[1], 63, PQ[3], 'black_concrete'); fill(PQ[0] + 2, 63, PQ[2] + 2, PQ[1] - 2, 63, PQ[3] - 1, 'red_wool')
+fill(PQ[0] + 1, 63, PQ[2] + 1, PQ[1] - 1, 63, PQ[2] + 1, 'gold_block')
+for x in (PQ[0] + 1, PQ[1] - 2):
+    put(x, 68, -144, 'sea_lantern')
+fill(PQ[0] - 1, 65, -145, PQ[0] - 1, 66, -143, 'gilded_blackstone')
+fill(34, 64, PQ[2], 35, 66, PQ[2], 'iron_block')                                # distributeur de billets
+put(34, 66, PQ[2], 'light_blue_stained_glass'); put(35, 65, PQ[2], 'dispenser[facing=south]'); put(34, 65, PQ[2], 'stone_button[face=wall,facing=south]')
+fill(34, 67, PQ[2], 35, 67, PQ[2], 'lime_concrete')
+fill(PQ[0], 64, PQ[2], PQ[0] + 1, 64, PQ[2], 'gold_block'); put(PQ[0], 65, PQ[2], 'gold_block')   # magot
+fill(PQ[1] - 1, 64, PQ[2], PQ[1], 64, PQ[2], 'emerald_block'); put(PQ[1], 65, PQ[2], 'emerald_block')
+put(PQ[1], 64, PQ[2] + 1, 'raw_gold_block')
+put(PQ[0], 64, -144, 'chest[facing=east]'); put(PQ[0], 64, -143, 'chest[facing=east]'); put(PQ[0], 64, PQ[3], 'barrel[facing=up]')
+fill(33, 64, -144, 35, 64, -143, 'dark_oak_planks'); put(34, 65, -144, 'gold_block'); put(33, 65, -143, 'emerald_block')
+put(PQ[1], 66, -144, 'lantern[hanging=false]'); put(PQ[1], 64, -144, 'iron_block'); put(PQ[1], 65, -144, 'iron_block')
+for y in range(64, G + 1):                                                      # échelle jusqu'à la fausse latte
+    put(TRAP[0], y, TRAP[1], 'ladder[facing=north]')
+PLANQUE = CMDS[_n0:]
+del CMDS[_n0:]
+with open(os.path.join(F, 'gta/planque.mcfunction'), 'w', encoding='utf-8', newline='\n') as f:
+    f.write('\n'.join(['# Planque secrète de Neo Hills (généré par tools/arcade/gen_villa.py ; contexte : dimension mg:gta, domaine chargé)'] + PLANQUE) + '\n')
 # ---------------------------------------------------------------- étapes de construction
 import re as _re
 
@@ -439,6 +466,7 @@ DATA = {
     'car_drop': [[-16, -121], [-10, -121], [-4, -121]],
     'heli': [HX_, HZ_], 'plane': [-33, -130],
     'sign': [20, GZ], 'mansion': [MX1, MZ1, MX2, MZ2],
+    'trap': list(TRAP), 'atm': [35, PQ[2] + 1],
 }
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'neo_villa.json'), 'w', encoding='utf-8', newline='\n') as f:
     json.dump(DATA, f, indent=1)

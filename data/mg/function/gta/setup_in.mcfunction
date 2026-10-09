@@ -405,6 +405,14 @@ scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0
 execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show
 summon minecraft:block_display -2.5 71 32272.5 {Tags:["mg.gta","mg.gpdb"],block_state:{Name:"minecraft:light_weighted_pressure_plate"}}
 tag @e[tag=mg.gpn] remove mg.gpn
+summon minecraft:marker 35 64 32254 {Tags:["mg.gta","mg.gpad","mg.garm","mg.gpn"]}
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpt 80
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0
+execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show
+summon minecraft:block_display 34.5 64 32253.5 {Tags:["mg.gta","mg.gpdb"],block_state:{Name:"minecraft:light_weighted_pressure_plate"}}
+tag @e[tag=mg.gpn] remove mg.gpn
+function mg:gta/planque
+summon minecraft:block_display 37 70 32259 {Tags:["mg.gta"],block_state:{Name:"minecraft:dark_oak_planks"}}
 summon minecraft:marker 25 71 32265 {Tags:["mg.gta","mg.glup"]}
 summon minecraft:marker 25 84 32265 {Tags:["mg.gta","mg.gldn"]}
 summon minecraft:text_display 25.5 72.8 32265.5 {Tags:["mg.gta"],billboard:"center",text:{"text":"⬆ Toit-terrasse : jacuzzi et bar","color":"aqua"},background:1073741824,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.6f,0.6f,0.6f]}}
@@ -513,8 +521,8 @@ execute positioned -10 65 32370 run function mg:gta/car/spawn_3
 execute positioned -42 65 32394 run function mg:gta/car/spawn_4
 execute positioned 54 65 32370 run function mg:gta/car/spawn_5
 execute positioned 54 65 32442 run function mg:gta/car/spawn_6
-execute positioned -30 66 32430 run function mg:gta/heli_spawn {c:"red_concrete"}
-execute positioned 0 66 32432 run function mg:gta/heli_spawn {c:"blue_concrete"}
+execute positioned 4 66 32448 run function mg:gta/heli_spawn {c:"red_concrete"}
+execute positioned -3 66 32460 run function mg:gta/heli_spawn {c:"blue_concrete"}
 execute positioned 52 66 32322 run function mg:gta/heli_spawn {c:"black_concrete"}
 execute positioned -76 66 32466 run function mg:gta/heli_spawn {c:"white_concrete"}
 summon minecraft:marker -17 65 32390 {Tags:["mg.gta","mg.gexit"]}

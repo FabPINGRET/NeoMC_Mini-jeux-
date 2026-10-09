@@ -6,6 +6,7 @@ execute as @a[tag=mg.gtw,tag=!mg.gbuy,gamemode=!spectator,distance=..1.6,sort=ne
 execute unless score $gok mg.st matches 1 run return 0
 scoreboard players set @s mg.gpc 600
 execute if entity @s[tag=mg.garm] run scoreboard players set @s mg.gpc 40
+execute if score $gpt mg.st matches 80 run scoreboard players set @s mg.gpc 400
 kill @e[type=minecraft:item_display,tag=mg.gpdi,distance=..1.5]
 kill @e[type=minecraft:text_display,tag=mg.gpdt,distance=..2.5]
 playsound minecraft:entity.villager.yes player @a ~ ~ ~ 0.6 1.2
