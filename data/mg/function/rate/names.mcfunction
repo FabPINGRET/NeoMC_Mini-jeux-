@@ -33,6 +33,7 @@ execute if data storage mg:rate key{f:"hg"} run data modify storage mg:rate cur.
 execute if data storage mg:rate key{f:"prophunt"} run data modify storage mg:rate cur.g set value '🎭 Prop Hunt'
 execute if data storage mg:rate key{f:"zombies"} run data modify storage mg:rate cur.g set value '🧟 Zombies'
 execute if data storage mg:rate key{f:"infection"} run data modify storage mg:rate cur.g set value '🧪 Infection'
+execute if data storage mg:rate key{f:"bomber"} run data modify storage mg:rate cur.g set value '💣 Bombardier'
 execute if data storage mg:rate key{m:1} run data modify storage mg:rate cur.m set value 'Tour de neige'
 execute if data storage mg:rate key{m:2} run data modify storage mg:rate cur.m set value 'Tour de laine'
 execute if data storage mg:rate key{m:3} run data modify storage mg:rate cur.m set value 'Arène classique'

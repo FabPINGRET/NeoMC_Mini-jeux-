@@ -84,6 +84,8 @@ forceload add -17 23161 39 23217
 forceload add -23 23582 23 23618
 # Tron (z 20000)
 forceload add -52 19948 52 20052
+# Bombardier (z 32400)
+forceload add -88 32312 88 32488
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl

@@ -47,6 +47,7 @@ GAMES = [  # clé, libellé, couleur, plages de $game
     ('prophunt', '🎭 Prop Hunt', 'gold', [(96, 96)]),
     ('zombies', '🧟 Zombies', 'dark_green', [(97, 97)]),
     ('infection', '🧪 Infection', 'green', [(98, 98)]),
+    ('bomber', '💣 Bombardier', 'red', [(99, 99)]),
 ]
 X0, X1, Z0, Z1 = -24, -6, 21, 35           # emprise du hall agrandi (sol y 63), ouvert au nord
 MARK = (-16, 64, 25)                       # piédestal central (bloc d'or) : témoin de présence
@@ -71,7 +72,7 @@ W('objectives', ['# Objectifs des classements par jeu (généré par tools/hall/
     'scoreboard objectives add mg.genc dummy'])
 W('remove', ['# Désinstallation des classements et du hall'] +
   [f'scoreboard objectives remove mg.wg_{k}' for k, *_ in GAMES] +
-  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7',
+  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8',
    'scoreboard objectives remove mg.gen', 'scoreboard objectives remove mg.lvl', 'scoreboard objectives remove mg.genc'])
 
 # ---------------------------------------------------------------- crédit des vainqueurs
@@ -191,6 +192,7 @@ b.append('data modify storage mg:hall v4 set value 1b')
 b.append('data modify storage mg:hall v5 set value 1b')
 b.append('data modify storage mg:hall v6 set value 1b')
 b.append('data modify storage mg:hall v7 set value 1b')
+b.append('data modify storage mg:hall v8 set value 1b')
 W('build', b)
 W('board_tick', ['# Tableau à droite dans le lobby (classement affiché, pas de vote en cours)',
     'scoreboard players remove $hrt mg.st 1',

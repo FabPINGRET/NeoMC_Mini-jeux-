@@ -721,7 +721,8 @@ CATS = {
         act('🏹 Mini Hunger Games', 'gold', 'trigger mg.go set 95', '5 min : coffres, corne d\'abondance, dernier en vie'),
         act('🧟 Zombies', 'dark_green', 'trigger mg.go set 97', 'Coop, armes réelles, 10 manches, portes et boîte mystère'),
         act('🧪 Infection', 'green', 'trigger mg.go set 98', 'Survivants armés contre zombies contagieux, 3 min'),
-        act('🎭 Prop Hunt', 'gold', 'trigger mg.go set 96', 'Cache-toi en objet, ou trouve les objets qui bougent')], 'menu'),
+        act('🎭 Prop Hunt', 'gold', 'trigger mg.go set 96', 'Cache-toi en objet, ou trouve les objets qui bougent'),
+        act('💣 Bombardier', 'red', 'trigger mg.go set 99', 'Bombarde la ville du ciel, le plus de dégâts gagne, 2 min 30')], 'menu'),
     'kart': ('🏎 Kart', 'gold', 'Choisis le circuit.', [
         known('trigger mg.go set 61', '🏎 KART : Circuit Champignon', 'gold'), known('trigger mg.go set 62', '🏎 KART : Royaume Koopa', 'red'),
         known('trigger mg.go set 63', '🎈 KART : Bataille', 'light_purple')], 'courses'),

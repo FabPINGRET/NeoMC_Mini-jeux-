@@ -39,6 +39,7 @@ execute if score $game mg.st matches 36 run function mg:paintball/go
 execute if score $game mg.st matches 56 run function mg:icerace/go
 function mg:rate/begin
 execute if score $game mg.st matches 57..58 run function mg:bb/go
+execute if score $game mg.st matches 99 run function mg:bomber/go
 execute if score $game mg.st matches 96 run function mg:ph/go
 execute if score $game mg.st matches 97..98 run function mg:zmode/go
 execute if score $game mg.st matches 94..95 run function mg:survival/go
