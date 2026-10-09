@@ -102,6 +102,7 @@ team modify mg_ph collisionRule never
 scoreboard players set #4 mg.st 4
 scoreboard objectives add mg.pid dummy
 scoreboard objectives add mg.fx dummy
+scoreboard objectives add mg.fy dummy
 scoreboard objectives add mg.fz dummy
 scoreboard objectives add mg.php dummy
 scoreboard objectives add mg.phx dummy

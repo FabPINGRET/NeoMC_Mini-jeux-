@@ -1,2 +1,2 @@
-# @s : retour au point de gel (hauteur et orientation conservées)
-$tp @s $(x) ~ $(z)
+# @s : retour au point de gel (orientation conservée), sans élan
+$tp @s $(x) $(y) $(z)
