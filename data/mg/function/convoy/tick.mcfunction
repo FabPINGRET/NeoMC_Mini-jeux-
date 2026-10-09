@@ -1,8 +1,9 @@
 # 🚚 Convoi — tick
 scoreboard players add $cvt mg.st 1
-execute as @a[tag=mg.play,scores={mg.deaths=1..}] run function mg:convoy/respawn
-execute as @a[tag=mg.play] store result score @s mg.t run data get entity @s Pos[1]
-execute as @a[tag=mg.play,scores={mg.t=..74}] run function mg:convoy/respawn
+execute as @a[tag=mg.play,scores={mg.deaths=1..}] run function mg:convoy/dead
+execute as @a[tag=mg.play,tag=!mg.cvw] store result score @s mg.t run data get entity @s Pos[1]
+execute as @a[tag=mg.play,tag=!mg.cvw,scores={mg.t=..74}] run function mg:convoy/dead
+execute as @a[tag=mg.cvw] run function mg:convoy/wait
 scoreboard players set $cve mg.st 0
 scoreboard players set $cvb mg.st 0
 execute if score $cvm mg.st matches 1 at @e[type=minecraft:block_display,tag=mg.cvc,limit=1] store result score $cve mg.st if entity @a[tag=mg.play,gamemode=!spectator,distance=..4]

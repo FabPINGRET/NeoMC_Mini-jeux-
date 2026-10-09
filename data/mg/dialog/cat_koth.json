@@ -1,0 +1,168 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "👑 King of the Hill",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Solo ou équipes, choisis la carte.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "👑 👑 King of the Hill ",
+          "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Colline en gradins, 60 points",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 86"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "👑 👑 KotH — équipes ",
+          "color": "red"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Rouge contre Bleu, 90 points",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 87"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "👑 Solo — Pyramide",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Pyramide de grès dans le sable",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 206"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "👑 Équipes — Pyramide",
+          "color": "red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Pyramide de grès, Rouge contre Bleu",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 207"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "👑 Solo — Glacier",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Colline de glace : ça glisse !",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 208"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "👑 Équipes — Glacier",
+          "color": "red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Glacier, Rouge contre Bleu",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 209"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 47"
+      }
+    }
+  ]
+}

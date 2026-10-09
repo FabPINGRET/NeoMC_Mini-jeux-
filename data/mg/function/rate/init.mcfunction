@@ -397,6 +397,34 @@ data modify storage mg:rate lab.r195 set value '""'
 execute if score #m195 mg.rtn matches 1.. run function mg:rate/lab_map {m:195}
 data modify storage mg:rate lab.r196 set value '""'
 execute if score #m196 mg.rtn matches 1.. run function mg:rate/lab_map {m:196}
+data modify storage mg:rate lab.r200 set value '""'
+execute if score #m200 mg.rtn matches 1.. run function mg:rate/lab_map {m:200}
+data modify storage mg:rate lab.r201 set value '""'
+execute if score #m201 mg.rtn matches 1.. run function mg:rate/lab_map {m:201}
+data modify storage mg:rate lab.r202 set value '""'
+execute if score #m202 mg.rtn matches 1.. run function mg:rate/lab_map {m:202}
+data modify storage mg:rate lab.r203 set value '""'
+execute if score #m203 mg.rtn matches 1.. run function mg:rate/lab_map {m:203}
+data modify storage mg:rate lab.r204 set value '""'
+execute if score #m204 mg.rtn matches 1.. run function mg:rate/lab_map {m:204}
+data modify storage mg:rate lab.r205 set value '""'
+execute if score #m205 mg.rtn matches 1.. run function mg:rate/lab_map {m:205}
+data modify storage mg:rate lab.r206 set value '""'
+execute if score #m206 mg.rtn matches 1.. run function mg:rate/lab_map {m:206}
+data modify storage mg:rate lab.r207 set value '""'
+execute if score #m207 mg.rtn matches 1.. run function mg:rate/lab_map {m:207}
+data modify storage mg:rate lab.r208 set value '""'
+execute if score #m208 mg.rtn matches 1.. run function mg:rate/lab_map {m:208}
+data modify storage mg:rate lab.r209 set value '""'
+execute if score #m209 mg.rtn matches 1.. run function mg:rate/lab_map {m:209}
+data modify storage mg:rate lab.r210 set value '""'
+execute if score #m210 mg.rtn matches 1.. run function mg:rate/lab_map {m:210}
+data modify storage mg:rate lab.r211 set value '""'
+execute if score #m211 mg.rtn matches 1.. run function mg:rate/lab_map {m:211}
+data modify storage mg:rate lab.r212 set value '""'
+execute if score #m212 mg.rtn matches 1.. run function mg:rate/lab_map {m:212}
+data modify storage mg:rate lab.r213 set value '""'
+execute if score #m213 mg.rtn matches 1.. run function mg:rate/lab_map {m:213}
 data modify storage mg:rate lab.fspleef set value '""'
 function mg:rate/lab_fam {f:"spleef",g:1}
 data modify storage mg:rate lab.ftntrun set value '""'

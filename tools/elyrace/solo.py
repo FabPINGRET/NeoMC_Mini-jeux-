@@ -1,17 +1,22 @@
-"""Contre-la-montre solo de la Course d'elytres : tout joueur (admin ou non) peut lancer seul un parcours quand aucune partie ne
-tourne. Acces par le trigger mg.xs (menus.SOLO_*), jamais par mg.go (reserve aux admins). Le solo occupe $game 66 et $state comme
-une course de groupe, avec le drapeau $xs = 1 : build_wait se met donc en pause, et end / timeout / draw / finish / cleanup lisent
-$xs. Fin sans victoire ni match nul ; le temps vient du chrono $xt (records.py). $xse = tick de la fin du dernier solo (delai de 30 s).
-Fonctions generees : elyrace/solo/{cmd, start, announce, countdown, quit, end, menu} et elyrace/draw.
-Branchements dans le moteur (core/tick, countdown, begin, reconnect) : wire_elyrace3.py.
-Python stdlib uniquement (compatible 3.8).
+"""Contre-la-montre solo de la Course d'elytres, partie LANCEMENT : tout joueur (admin ou non) peut courir seul, pendant n'importe quelle
+partie sauf une course d'elytres de groupe (4 solos au plus en meme temps, sur le meme parcours ou non). Acces par le trigger mg.xs
+(menus.SOLO_*), jamais par mg.go (reserve aux admins). Le solo ne touche jamais la machine a etats ($state, $game, $timer, mg.play) :
+tout son etat est PAR JOUEUR (tag mg.xso, scores mg.xph / xst / xcr / xse / xsl, voir game.EXTRA_OBJECTIVES). Lancer un solo met le joueur
+en PAUSE (tag mg.spectate : votes et lancements l'ignorent d'eux-memes) ; la pause d'avant est memorisee dans le tag mg.xsp0.
+Fonctions generees ici : elyrace/solo/{cmd, start, announce, quit, stop_all, menu}. Le tick, le decompte, le depart, l'arrivee et la sortie
+sont dans solo_run.py (solo/go est la seule entree en course, solo/stop la seule sortie).
+Branchements dans le moteur : wire_elyrace4.py (core/tick). Python stdlib uniquement (compatible 3.8).
 """
+import game as G
 import menus as M
+import solo_run as SR
 
-COOLDOWN = 600           # ticks (30 s) apres la fin du dernier solo, quel que soit le joueur (delai global, $xse) ; admins exemptes
-COUNT = 100              # compte a rebours : 5 s
-END_TIMER = 30           # ticks entre la fin et le retour au lobby : moins de 40, donc aucun son de fin de partie (core/ending joue a 100, 80, 60, 40)
+COOLDOWN = 600           # ticks (30 s) apres la fin du dernier solo DU JOUEUR (mg.xse) ; admins exemptes
+MAX_SOLO = 4             # solos simultanes (une place de depart chacun : mg.ri 1..MAX_SOLO)
 ACTIVITY_TAGS = ('mg.ely', 'mg.elyf', 'mg.lk', 'mg.pkr')    # parcours d'elytra, elytres libres, kart libre, parkour du lobby
+REFUSE_LEFT = {'mg.surv': 'Impossible depuis la survie : reviens d\'abord au lobby (/trigger mg.sv set 2).',      # un refus par tag de SR.LEFT (sinon KeyError)
+               'mg.inplot': 'Impossible depuis un plot : reviens d\'abord au lobby.',
+               'mg.visit': 'Impossible depuis un plot : reviens d\'abord au lobby.'}
 QUIT_LINK = ('{"text":"[✖ Abandonner]","color":"red","click_event":{"action":"run_command","command":"trigger mg.xs set %d"},'
              '"hover_event":{"action":"show_text","value":"Quitter le contre-la-montre"}}' % M.SOLO_QUIT)
 
@@ -22,31 +27,36 @@ def refuse(cond, text):
 
 
 def cmd_lines():
-    return ['# @s = joueur qui a utilise /trigger mg.xs : %d = fenêtre, %d = abandon, %d = ses records, %d = solo au hasard, %d + NUM = solo sur le parcours NUM'
-            % (M.SOLO_MENU, M.SOLO_QUIT, M.SOLO_RECORDS, M.SOLO_RANDOM, M.SOLO_RANDOM),
+    return ['# @s = joueur qui a utilise /trigger mg.xs : %d = fenêtre, %d = abandon, %d = ses records, %d = (admin) arrêter tous les solos, %d = solo au hasard, %d + NUM = solo sur le parcours NUM'
+            % (M.SOLO_MENU, M.SOLO_QUIT, M.SOLO_RECORDS, M.SOLO_STOP, M.SOLO_RANDOM, M.SOLO_RANDOM),
             '# la valeur est lue dans #xv, puis le trigger est remis à zéro d\'abord (core/tick le réactive à chaque tick)',
             'scoreboard players operation #xv mg.st = @s mg.xs',
             'scoreboard players reset @s mg.xs',
             'execute if score #xv mg.st matches %d run function mg:elyrace/solo/menu' % M.SOLO_MENU,
             'execute if score #xv mg.st matches %d run function mg:elyrace/solo/quit' % M.SOLO_QUIT,
             'execute if score #xv mg.st matches %d run function mg:elyrace/records' % M.SOLO_RECORDS,
+            'execute if score #xv mg.st matches %d run function mg:elyrace/solo/stop_all' % M.SOLO_STOP,
             'execute if score #xv mg.st matches %d.. run function mg:elyrace/solo/start' % M.SOLO_RANDOM]
 
 
 def checks_lines(specs):
-    """Refus dans l'ordre : installation, joueur, partie en cours, delai, puis parcours construit (le seul qui touche a $xc)."""
+    """Refus dans l'ordre : installation, joueur, partie en cours, solos, delai, puis parcours construit (le seul qui touche a $xc)."""
     out = [refuse('unless score $setup mg.st matches 1', 'Installation manquante : un OP doit d\'abord lancer /function mg:setup.'),
            refuse('unless entity @s[tag=mg.init]', 'Pas encore prêt : réessaie dans un instant.'),
-           refuse('if entity @s[tag=mg.surv]', 'Impossible depuis la survie : reviens d\'abord au lobby (/trigger mg.sv set 2).'),
-           refuse('if entity @s[tag=mg.spectate]', 'Impossible en pause : désactive la pause (/trigger mg.opt set 1).')]
+           refuse('if entity @s[tag=mg.play]', 'Impossible pendant que tu participes à une partie.'),
+           refuse('if entity @s[tag=mg.out]', 'Impossible : tu regardes la partie en cours en spectateur.'),
+           refuse('if entity @s[tag=mg.xso]', 'Tu es déjà en contre-la-montre solo.'),
+           refuse('if entity @s[gamemode=spectator]', 'Impossible en mode spectateur.')]
     out += [refuse('if entity @s[tag=%s]' % t, 'Termine d\'abord ton activité en cours (parcours d\'élytra, élytres libres, kart libre ou parkour).') for t in ACTIVITY_TAGS]
-    out += [refuse('unless score $state mg.st matches 0', 'Une partie est déjà en cours : attends sa fin.'),
-            refuse('if score $mp mg.st matches 1', 'La Mini Party est en cours.'),
-            refuse('if score $vat mg.st matches 1..', 'Un vote est sur le point de lancer un jeu : attends-le.'),
-            '# délai depuis la fin du dernier solo ($xse, en ticks de $tc) : #xd = ticks écoulés (600 = pas d\'attente) ; les admins en sont exemptés',
+    out += [refuse('if entity @s[tag=%s]' % t, REFUSE_LEFT[t]) for t, _ in SR.LEFT]     # surtout mg.surv : sans ce refus, start ferait `clear @s` sur un inventaire de survie
+    out += [refuse('if score $mp mg.st matches 1 if entity @s[tag=mg.mpp]', 'Tu participes à la Mini Party : attends sa fin.'),
+            refuse('if score $game mg.st matches %d if score $state mg.st matches 1..3' % G.GAME_ID, 'Une course d\'élytres de groupe est en cours : attends sa fin.'),
+            'execute store result score #xn mg.st if entity @a[tag=mg.xso]',
+            refuse('if score #xn mg.st matches %d..' % MAX_SOLO, 'Déjà %d contre-la-montre solo en cours : attends qu\'un se termine.' % MAX_SOLO),
+            '# délai depuis la fin du dernier solo du joueur (@s mg.xse, en ticks de $tc) : #xd = ticks écoulés (600 = pas d\'attente) ; les admins en sont exemptés',
             'scoreboard players set #xd mg.st %d' % COOLDOWN,
-            'execute if score $xse mg.st matches 1.. run scoreboard players operation #xd mg.st = $tc mg.st',
-            'execute if score $xse mg.st matches 1.. run scoreboard players operation #xd mg.st -= $xse mg.st',
+            'execute if score @s mg.xse matches 1.. run scoreboard players operation #xd mg.st = $tc mg.st',
+            'execute if score @s mg.xse matches 1.. run scoreboard players operation #xd mg.st -= @s mg.xse',
             'scoreboard players set #xr mg.st %d' % COOLDOWN,
             'scoreboard players operation #xr mg.st -= #xd mg.st',
             'scoreboard players operation #xr mg.st /= #k20 mg.st',
@@ -54,43 +64,55 @@ def checks_lines(specs):
             'execute unless entity @s[tag=mg.admin] if score #xd mg.st matches 0..%d run return run tellraw @s '
             '[{"text":"⚠ Attends encore ","color":"red"},{"score":{"name":"#xr","objective":"mg.st"},"color":"red"},{"text":" s avant un nouveau solo.","color":"red"}]' % (COOLDOWN - 1),
             '# parcours : #xv = 10 (au hasard, tiré parmi les construits par pick) ou 10 + NUM ; refusé s\'il n\'est pas construit',
+            '# ($xc sert de brouillon à pick : jamais lu pendant un solo ; remis à 0 par le refus « pas construit » ci-dessous, ou au lancement ; un lancement de groupe le repose lui-même)',
             'scoreboard players set $xc mg.st 0',
             'execute if score #xv mg.st matches %d.. run scoreboard players operation $xc mg.st = #xv mg.st' % (M.SOLO_RANDOM + 1),
             'execute if score #xv mg.st matches %d.. run scoreboard players remove $xc mg.st %d' % (M.SOLO_RANDOM + 1, M.SOLO_RANDOM),
             'execute if score $xc mg.st matches 0 run function mg:elyrace/pick',
             refuse('if score $xc mg.st matches 0', 'Aucun parcours n\'est construit pour le moment : réessaie plus tard.')]
-    out += [refuse('if score $xc mg.st matches %d unless data storage mg:elyrace %s' % (s.NUM, s.FLAG),
-                   'Le parcours %d (%s) n\'est pas encore construit : réessaie plus tard.' % (s.NUM, s.NAME)) for s in specs]
+    for s in specs:        # refus en deux lignes (message, puis $xc remis à 0 : il garderait sinon le numéro du parcours refusé)
+        cond = 'if score $xc mg.st matches %d unless data storage mg:elyrace %s' % (s.NUM, s.FLAG)
+        out += ['execute %s run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Le parcours %d (%s) n\'est pas encore construit : réessaie plus tard.","color":"red"}]'
+                % (cond, s.NUM, s.NAME),
+                'execute %s run return run scoreboard players set $xc mg.st 0' % cond]
     return out
 
 
 def start_lines(specs):
     top = M.SOLO_RANDOM + len(specs)
-    out = ['# @s = joueur qui lance un contre-la-montre solo (#xv = %d : parcours au hasard, %d + NUM : parcours NUM). Le lancement minimal de core/request :' % (M.SOLO_RANDOM, M.SOLO_RANDOM),
-           '# ni vote effacé, ni objets retirés aux autres, ni annonce de jeu ; seul @s est participant',
+    out = ['# @s = joueur qui lance un contre-la-montre solo (#xv = %d : parcours au hasard, %d + NUM : parcours NUM). Rien de global : ni $state, ni vote effacé,' % (M.SOLO_RANDOM, M.SOLO_RANDOM),
+           '# ni objets retirés aux autres, ni annonce de jeu ; le joueur est mis en pause (mg.spectate), seul son état change',
            'execute unless score #xv mg.st matches %d..%d run return 0' % (M.SOLO_RANDOM, top)]
     out += checks_lines(specs)
-    out += ['# lancement : $xs avant $state (les gardes de end, timeout, draw, finish et cleanup lisent $xs)',
-            'scoreboard players set $xs mg.st 1',
-            'scoreboard players set $game mg.st 66',
-            'scoreboard players set $ar mg.st 0',
-            'tag @s add mg.play',
-            'tag @a remove mg.out',
-            'tag @a remove mg.win',
-            'scoreboard players set $n0 mg.st 1',
-            'execute if entity @s[tag=mg.inplot] run function mg:plot/leave_game',
-            'execute if entity @s[tag=mg.visit] run function mg:plot/leave_game',
-            'scoreboard players set $state mg.st 1',
-            'scoreboard players set $timer mg.st %d' % COUNT,
-            'scoreboard players set @s mg.deaths 0',
-            'scoreboard players reset @s mg.qs', 'scoreboard players reset @s mg.fw', 'scoreboard players reset @s mg.wc',
+    out += ['# lancement (plus aucun refus après ce point). La pause d\'avant est mémorisée, puis le joueur passe en pause SANS opt_spec (il bascule,',
+            '# affiche des messages trompeurs et élimine un participant) ; son vote éventuel ne compte plus',
+            'execute if entity @s[tag=mg.spectate] run tag @s add mg.xsp0',
+            'tag @s add mg.spectate',
+            'scoreboard players reset @s mg.vc',
+            'execute if score $state mg.st matches 0 run function mg:vote/refresh',
+            'tag @s add mg.xso',
+            'scoreboard players operation @s mg.xcr = $xc mg.st',
+            'scoreboard players set $xc mg.st 0',
+            '# état du solo : phase 1 (décompte), chrono à 0 ; mg.xsl = tick précédent (le tick de ce lancement compte comme « vu »)',
+            'scoreboard players set @s mg.xph 1',
+            'scoreboard players set @s mg.xst 0',
+            'scoreboard players operation @s mg.xsl = $tc mg.st',
+            'scoreboard players remove @s mg.xsl 1',
+            'scoreboard players set @s mg.deaths 0']
+    out += ['scoreboard players set @s mg.%s %d' % (n, G.HEARTS if n == 'xh' else 0) for n, _, _ in G.OBJECTIVES]
+    out += ['scoreboard players reset @s mg.qs', 'scoreboard players reset @s mg.fw', 'scoreboard players reset @s mg.wc',
             'scoreboard players reset @s mg.wd', 'scoreboard players reset @s mg.us',
-            'function mg:elyrace/solo/announce',
-            'function mg:elyrace/prepare',
-            '# prepare a annulé (parcours pas construit : CANCEL → elyrace/draw → solo/end) : pas de gel ni de titre',
-            'execute if score $state mg.st matches 3 run return 0',
+            '# place de départ libre : la plus petite que les autres solos n\'occupent pas (au plus %d solos : il y en a toujours une)' % MAX_SOLO,
+            'scoreboard players set @s mg.ri 0']
+    out += ['execute if score @s mg.ri matches 0 unless entity @a[tag=mg.xso,scores={mg.ri=%d}] run scoreboard players set @s mg.ri %d' % (k, k)
+            for k in range(1, MAX_SOLO + 1)]
+    out += ['gamemode adventure @s', 'effect clear @s', 'clear @s',
+            'function mg:elyrace/equip']
+    out += ['execute if score @s mg.xcr matches %d run spawnpoint @s 24 %d %d' % (s.NUM, s.START_Y, s.CZ) for s in specs]
+    out += ['function mg:elyrace/place_tp',
             'function mg:core/freeze',
             'effect give @s minecraft:resistance 7 255 true',
+            'function mg:elyrace/solo/announce',
             'title @s title [{"text":"Prépare-toi !","color":"gold"}]',
             'title @s subtitle [{"text":"Début dans 5 secondes...","color":"gray"}]',
             'execute at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 0.8']
@@ -100,44 +122,25 @@ def start_lines(specs):
 def announce_lines(specs):
     head = ('tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"⏱ CONTRE-LA-MONTRE","color":"aqua","bold":true},'
             '{"text":" solo : %s","color":"gray"}]')
-    out = ['# Annonce du solo (@s = joueur ; le parcours $xc est déjà tiré) et lien d\'abandon pour lui seul']
-    out += ['execute if score $xc mg.st matches %d run %s' % (s.NUM, head % ('%s (%d anneaux) !' % (s.NAME, len(s.RINGS)))) for s in specs]
-    out.append('tellraw @s [{"text":"⏱ Seul en piste : ton meilleur temps est enregistré. ","color":"gray"},%s]' % QUIT_LINK)
+    out = ['# Annonce du solo (@s = joueur, son parcours est mg.xcr) et lien d\'abandon pour lui seul']
+    out += ['execute if score @s mg.xcr matches %d run %s' % (s.NUM, head % ('%s (%d anneaux) !' % (s.NAME, len(s.RINGS)))) for s in specs]
+    out.append('tellraw @s [{"text":"⏱ Seul en piste : ton meilleur temps est enregistré. Tu es en pause pendant le solo : désactiver la pause l\'arrête.","color":"gray"},%s]' % QUIT_LINK)
     return out
-
-
-def countdown_lines():
-    out = ['# Compte à rebours du solo (état 1, appelé par core/countdown) : titres et sons pour le joueur seulement',
-           '# déconnexion pendant le compte à rebours : fin immédiate',
-           'execute unless entity @a[tag=mg.play] run return run function mg:elyrace/solo/end',
-           'scoreboard players remove $timer mg.st 1']
-    for t, n, col, pitch in ((80, 4, 'yellow', '1'), (60, 3, 'gold', '1.2'), (40, 2, 'red', '1.4'), (20, 1, 'dark_red', '1.6')):
-        out.append('execute if score $timer mg.st matches %d run title @a[tag=mg.play] title [{"text":"%d","color":"%s","bold":true}]' % (t, n, col))
-        out.append('execute if score $timer mg.st matches %d as @a[tag=mg.play] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 %s' % (t, pitch))
-    return out + ['execute if score $timer mg.st matches ..0 run function mg:core/begin']
 
 
 def quit_lines():
     return ['# @s = joueur qui abandonne (mg.xs %d, lien du message de lancement)' % M.SOLO_QUIT,
-            'execute unless score $xs mg.st matches 1 run return run tellraw @s [{"text":"⚠ Aucun contre-la-montre en cours.","color":"red"}]',
-            'execute unless entity @s[tag=mg.play] run return run tellraw @s [{"text":"⚠ Ce n\'est pas ton contre-la-montre.","color":"red"}]',
-            'execute unless score $state mg.st matches 1..2 run return 0',
+            'execute unless entity @s[tag=mg.xso] run return run tellraw @s [{"text":"⚠ Tu n\'as pas de contre-la-montre en cours.","color":"red"}]',
             'tellraw @a [{"selector":"@s","color":"yellow"},{"text":" abandonne le contre-la-montre.","color":"gray"}]',
-            'function mg:elyrace/solo/end']
+            'function mg:elyrace/solo/stop']
 
 
-def end_lines():
-    return ['# Fin du contre-la-montre (appelé par end, timeout et draw quand $xs vaut 1) : ni victoire ni match nul ; retour au lobby par core/ending',
-            '# (return_lobby appelle elyrace/cleanup, qui note $xse et remet $xs à 0). L\'arrivée a déjà été annoncée par finish.',
-            'execute unless entity @a[tag=mg.play,scores={mg.xf=1..}] run tellraw @a [{"text":"⏱ Contre-la-montre terminé sans arrivée.","color":"gray"}]',
-            'scoreboard players set $state mg.st 3',
-            'scoreboard players set $timer mg.st %d' % END_TIMER]
-
-
-def draw_lines():
-    return ['# Fin sans vainqueur de la Course d\'élytres (plus de participant, partie annulée) : en solo, fin du contre-la-montre ; sinon le match nul habituel',
-            'execute if score $xs mg.st matches 1 run return run function mg:elyrace/solo/end',
-            'function mg:core/draw']
+def stop_all_lines():
+    return ['# @s = admin (mg.xs %d) : arrête tous les contre-la-montre solo (sans toucher à core/abort : le solo n\'est pas une partie)' % M.SOLO_STOP,
+            'execute unless entity @s[tag=mg.admin] run return run tellraw @s [{"text":"⚠ Réservé aux admins.","color":"red"}]',
+            'execute unless entity @a[tag=mg.xso] run return run tellraw @s [{"text":"Aucun contre-la-montre solo en cours.","color":"gray"}]',
+            'tellraw @a[tag=mg.xso] [{"selector":"@s","color":"yellow"},{"text":" a arrêté les contre-la-montre solo.","color":"red"}]',
+            'execute as @a[tag=mg.xso] run function mg:elyrace/solo/stop']
 
 
 def menu_lines(specs):
@@ -150,5 +153,5 @@ def menu_lines(specs):
 
 
 def functions(specs):
-    return {'draw': draw_lines(), 'solo/cmd': cmd_lines(), 'solo/start': start_lines(specs), 'solo/announce': announce_lines(specs),
-            'solo/countdown': countdown_lines(), 'solo/quit': quit_lines(), 'solo/end': end_lines(), 'solo/menu': menu_lines(specs)}
+    return {'solo/cmd': cmd_lines(), 'solo/start': start_lines(specs), 'solo/announce': announce_lines(specs),
+            'solo/quit': quit_lines(), 'solo/stop_all': stop_all_lines(), 'solo/menu': menu_lines(specs)}

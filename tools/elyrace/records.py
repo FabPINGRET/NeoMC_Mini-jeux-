@@ -1,6 +1,6 @@
 """Records de la Course d'elytres : meilleur temps de chaque joueur sur chaque parcours (objectif mg.xr<NUM>, en ticks), record du
 serveur (faux joueur #srv du meme objectif) et son detenteur, fige dans le stockage mg:hall e.xr<NUM> par mg:hall/ely (comme les
-records des parcours d'elytra). Le temps est le chrono $xt de la course (ticks depuis le GO) : le meme en course de groupe et en solo.
+records des parcours d'elytra). Le temps est lu dans #xrt (ticks depuis le GO) : $xt en course de groupe, mg.xst du joueur en solo.
 Les objectifs mg.xr* ne sont PAS dans game.OBJECTIVES : prepare remet ceux-la a zero a chaque depart (verifie par checks_solo.py).
 Fonctions generees : elyrace/time, elyrace/records, c<N>/record (a l'arrivee), c<N>/records_show (affichage).
 Python stdlib uniquement (compatible 3.8).
@@ -50,25 +50,25 @@ def time_lines():
 
 
 def record_lines(spec):
-    """c<N>/record : @s franchit l'arrivee, temps $xt. Record personnel, puis (s'il en est un) record du serveur."""
+    """c<N>/record : @s franchit l'arrivee, temps #xrt. Record personnel, puis (s'il en est un) record du serveur."""
     o = 'mg.' + obj(spec)
     who = '{"selector":"@s","color":"yellow","bold":true}'
-    out = ['# @s = joueur qui franchit l\'arrivée du parcours %d (%s), temps $xt (ticks) : record personnel, puis record du serveur' % (spec.NUM, spec.NAME),
-           'scoreboard players operation #xq mg.st = $xt mg.st',
+    out = ['# @s = joueur qui franchit l\'arrivée du parcours %d (%s), temps #xrt (ticks, posé par finish) : record personnel, puis record du serveur' % (spec.NUM, spec.NAME),
+           'scoreboard players operation #xq mg.st = #xrt mg.st',
            'function mg:elyrace/time',
            '# #rp = 1 : meilleur temps personnel (ou premier temps)',
            'scoreboard players set #rp mg.st 0',
            'execute unless score @s %s matches 1.. run scoreboard players set #rp mg.st 1' % o,
-           'execute if score @s %s matches 1.. if score $xt mg.st < @s %s run scoreboard players set #rp mg.st 1' % (o, o),
+           'execute if score @s %s matches 1.. if score #xrt mg.st < @s %s run scoreboard players set #rp mg.st 1' % (o, o),
            'execute if score #rp mg.st matches 0 run return 0',
-           'scoreboard players operation @s %s = $xt mg.st' % o]
+           'scoreboard players operation @s %s = #xrt mg.st' % o]
     out += tell_time('', '@s', '{"text":"★ Nouveau record personnel : ","color":"yellow","bold":true}')
     out += ['# #rs = 1 : nouveau record du serveur (un record du serveur est toujours un record personnel)',
             'scoreboard players set #rs mg.st 0',
             'execute unless score %s %s matches 1.. run scoreboard players set #rs mg.st 1' % (SRV, o),
-            'execute if score %s %s matches 1.. if score $xt mg.st < %s %s run scoreboard players set #rs mg.st 1' % (SRV, o, SRV, o),
+            'execute if score %s %s matches 1.. if score #xrt mg.st < %s %s run scoreboard players set #rs mg.st 1' % (SRV, o, SRV, o),
             'execute if score #rs mg.st matches 0 run return 0',
-            'scoreboard players operation %s %s = $xt mg.st' % (SRV, o)]
+            'scoreboard players operation %s %s = #xrt mg.st' % (SRV, o)]
     out += tell_time('', '@a', '{"text":"🏆 ","color":"gold"},%s,{"text":" bat le record du serveur sur %s : ","color":"gray"}' % (who, spec.NAME))
     out.append('function mg:hall/ely {key:"%s",lbl:"🪽 Record %s"}' % (obj(spec), spec.NAME))
     return out

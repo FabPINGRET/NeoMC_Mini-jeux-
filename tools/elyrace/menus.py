@@ -12,8 +12,8 @@ BACK_OPT = 42                     # mg.opt de la categorie « Courses et vol » 
 
 # Valeurs de /trigger mg.xs (contre-la-montre solo, ouvert a tous) : 10 + NUM = solo sur le parcours NUM. Aucune etiquette de ces boutons
 # ne commence par « : gen_variants.py (is_back) retire de sub_elyrace tout bouton dont le libelle commence ainsi.
-SOLO_MENU, SOLO_QUIT, SOLO_RECORDS, SOLO_RANDOM = 1, 2, 3, 10
-SOLO_TIP = "Contre-la-montre : seul en piste, ton meilleur temps est enregistré (30 s d'attente entre deux solos)."
+SOLO_MENU, SOLO_QUIT, SOLO_RECORDS, SOLO_STOP, SOLO_RANDOM = 1, 2, 3, 4, 10     # SOLO_STOP : un admin arrete tous les solos (pas de bouton)
+SOLO_TIP = "Contre-la-montre : seul en piste, ton meilleur temps est enregistré. Te met en pause pendant le solo ; 30 s d'attente entre deux solos."
 SOLO_BACK_MENU = 'trigger mg.menu set 1'      # retour de la fenetre solo : menu principal (admin) ou fenetre de vote (non-admin)
 
 
@@ -124,7 +124,7 @@ def solo_dialog_json(specs):
         "pause": False,
         "can_close_with_escape": True,
         "body": [{"type": "minecraft:plain_message", "contents": [
-            {"text": "Seul en piste, avec ton meilleur temps et un record du serveur par parcours. 30 s d'attente entre deux solos.", "color": "gray"}]}],
+            {"text": "Seul en piste, avec ton meilleur temps et un record du serveur par parcours. Le solo te met en pause (désactiver la pause l'arrête) et se joue même pendant une partie, sauf une course d'élytres de groupe. 30 s d'attente entre deux solos.", "color": "gray"}]}],
         "columns": 2,
         "exit_action": {"label": [{"text": "Fermer", "color": "gray"}]},
         "actions": solo_buttons(specs) + [act([{"text": "« Retour", "color": "yellow"}], None, SOLO_BACK_MENU)],

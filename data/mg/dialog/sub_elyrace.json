@@ -63,7 +63,7 @@
       ],
       "tooltip": [
         {
-          "text": "Parcours 1 (Far West, ~1000 blocs) : plongeon, slalom entre cheminées de fée, arches étroites, viaduc, passe basse, faille, galerie de mine, rue de la ville fantôme. 22 anneaux, 3 anneaux d'or, 4 points de reprise, 3 cœurs.",
+          "text": "Parcours 1 (Far West, ~1000 blocs) : plongeon, slalom entre cheminées de fée, arches étroites, viaduc, passe basse, faille, galerie de mine, rue de la ville fantôme. 22 anneaux, 2 anneaux d'or, 4 points de reprise, 3 cœurs.",
           "color": "gray"
         }
       ],
@@ -89,7 +89,7 @@
       ],
       "tooltip": [
         {
-          "text": "Parcours 2 (haute montagne, ~1100 blocs) : pylônes de téléphérique, col, glacier, crevasse de glace, grotte éclairée, village d'arrivée. 20 anneaux, 3 anneaux d'or, 4 points de reprise, 3 cœurs.",
+          "text": "Parcours 2 (haute montagne, ~1100 blocs) : pylônes de téléphérique, col, glacier, crevasse de glace, grotte éclairée, village d'arrivée. 20 anneaux, 1 anneaux d'or, 4 points de reprise, 3 cœurs.",
           "color": "gray"
         }
       ],
@@ -107,7 +107,7 @@
       ],
       "tooltip": [
         {
-          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré (30 s d'attente entre deux solos).",
+          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré. Te met en pause pendant le solo ; 30 s d'attente entre deux solos.",
           "color": "gray"
         }
       ],
@@ -133,7 +133,7 @@
       ],
       "tooltip": [
         {
-          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré (30 s d'attente entre deux solos).",
+          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré. Te met en pause pendant le solo ; 30 s d'attente entre deux solos.",
           "color": "gray"
         }
       ],
@@ -159,7 +159,7 @@
       ],
       "tooltip": [
         {
-          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré (30 s d'attente entre deux solos).",
+          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré. Te met en pause pendant le solo ; 30 s d'attente entre deux solos.",
           "color": "gray"
         }
       ],

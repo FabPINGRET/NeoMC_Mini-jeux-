@@ -54,6 +54,7 @@ execute as @a[scores={mg.tel=1..}] run function mg:tel/cast
 execute as @a[scores={mg.go=1..}] run function mg:core/go
 execute as @a[scores={mg.opt=1..}] run function mg:core/opt
 execute as @a[scores={mg.xs=1..}] run function mg:elyrace/solo/cmd
+execute if entity @a[tag=mg.xso] run function mg:elyrace/solo/tick
 
 # Armurerie du lobby
 execute if score $setup mg.st matches 1 run function mg:lobby/armory_tick
@@ -70,17 +71,17 @@ execute if score $lan mg.t matches 20 run clear @a[tag=!mg.elyf] minecraft:elytr
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.elyf] minecraft:firework_rocket[minecraft:custom_data~{mg_elyf:1b}]
 # Tableau à droite tournant (lobby) + reconstruction des ajouts du spawn s'ils ont été effacés
 execute if score $setup mg.st matches 1 if score $state mg.st matches 0 if score $sb mg.st matches 1 run function mg:hall/board_tick
-execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block -16 64 25 minecraft:gold_block run function mg:hall/build
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block -16 64 15 minecraft:gold_block run function mg:hall/build
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 24 63 19 minecraft:gold_block run function mg:lobby/food_build
-execute if score $setup mg.st matches 1 if entity @a[x=-200,y=40,z=-60,dx=130,dy=80,dz=80] run function mg:coaster/tick
+execute if score $setup mg.st matches 1 if entity @a[x=-75,y=55,z=-75,dx=150,dy=60,dz=150] run function mg:coaster/tick
 execute if score $lan mg.t matches 15 run function mg:rank/tick
 execute as @a[scores={mg.rt=1..}] run function mg:rate/submit
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 16 63 -9 minecraft:sea_lantern run function mg:elytra/build
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 32 63 -15 minecraft:sea_lantern run function mg:elytra/build
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.ely] minecraft:elytra[minecraft:custom_data~{mg_ely:1b}]
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.ely] minecraft:firework_rocket[minecraft:custom_data~{mg_ely:1b}]
-execute if score $lan mg.t matches 20 run clear @a[tag=!mg.play] minecraft:elytra[minecraft:custom_data~{mg_elyr:1b}]
-execute if score $lan mg.t matches 20 run clear @a[tag=!mg.play] minecraft:firework_rocket[minecraft:custom_data~{mg_elyr:1b}]
+execute if score $lan mg.t matches 20 run clear @a[tag=!mg.play,tag=!mg.xso] minecraft:elytra[minecraft:custom_data~{mg_elyr:1b}]
+execute if score $lan mg.t matches 20 run clear @a[tag=!mg.play,tag=!mg.xso] minecraft:firework_rocket[minecraft:custom_data~{mg_elyr:1b}]
 execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,gamemode=adventure,x=24,y=63,z=19,dx=0.99,dy=2.5,dz=0.99] run function mg:lobby/food_give
 
 # Kart libre du spawn
@@ -105,6 +106,7 @@ execute if score $gmt mg.t matches 40.. run scoreboard players set $gmt mg.t 0
 execute if score $state mg.st matches 1 as @a[tag=mg.play] at @s run kill @e[type=#mg:shot,distance=..8]
 # Machine à états
 execute if score $state mg.st matches 1 run function mg:core/countdown
+execute as @a[tag=mg.frz] run function mg:core/freeze_hold
 execute if score $state mg.st matches 2 run function mg:core/game_tick
 execute if score $state mg.st matches 3 run function mg:core/ending
 

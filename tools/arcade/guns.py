@@ -86,7 +86,7 @@ def build():
       ['execute if entity @a[tag=mg.gsh,tag=mg.zdbl] run scoreboard players operation $gdm mg.st *= #2 mg.st',
        'execute if entity @s[type=minecraft:player] run function mg:gun/hit_player',
        'execute unless entity @s[type=minecraft:player] run function mg:gun/hit_mob',
-       'execute if score $game mg.st matches 97 run scoreboard players add @a[tag=mg.gsh,limit=1] mg.zpt 10',
+       'execute if score $zpts mg.st matches 1 run scoreboard players add @a[tag=mg.gsh,limit=1] mg.zpt 10',   # Zombies (toutes les cartes) : $zpts = 1
        'particle minecraft:damage_indicator ~ ~1.2 ~ 0.2 0.3 0.2 0 2',
        'execute as @a[tag=mg.gsh,limit=1] at @s run playsound minecraft:entity.arrow.hit_player player @s ~ ~ ~ 0.5 1.6'])
     w('gun/hit_mob', ['# Mob : on retire la vie directement (pas d\'invulnérabilité), coup fatal crédité au tireur',

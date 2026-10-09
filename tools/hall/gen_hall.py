@@ -37,20 +37,24 @@ GAMES = [  # clé, libellé, couleur, plages de $game
     ('elyrace', "🪽 Course d'élytres", 'aqua', [(66, 66)]),
     ('elytra', '🪽 Élytra (3 modes)', 'aqua', [(75, 75)]),
     ('telephone', '📞 Téléphone', 'gold', [(83, 83)]),
-    ('tron', '⚡ Tron', 'aqua', [(84, 85)]),
-    ('koth', '👑 King of the Hill', 'gold', [(86, 87)]),
+    ('tron', '⚡ Tron', 'aqua', [(84, 85), (200, 201)]),
+    ('koth', '👑 King of the Hill', 'gold', [(86, 87), (206, 209)]),
     ('tower', '🏰 The Towers', 'gold', [(88, 88)]),
     ('convoy', '🚚 Convoi', 'gold', [(89, 90)]),
     ('ctf', '🚩 Capture the Flag', 'red', [(93, 93)]),
-    ('uhc', '⛏ Mini UHC Run', 'gold', [(94, 94)]),
-    ('hg', '🏹 Mini Hunger Games', 'gold', [(95, 95)]),
+    ('uhc', '⛏ Mini UHC Run', 'gold', [(94, 94), (202, 202), (204, 204)]),
+    ('hg', '🏹 Mini Hunger Games', 'gold', [(95, 95), (203, 203), (205, 205)]),
     ('prophunt', '🎭 Prop Hunt', 'gold', [(96, 96)]),
-    ('zombies', '🧟 Zombies', 'dark_green', [(97, 97)]),
-    ('infection', '🧪 Infection', 'green', [(98, 98)]),
+    ('zombies', '🧟 Zombies', 'dark_green', [(97, 97), (210, 210), (212, 212)]),
+    ('infection', '🧪 Infection', 'green', [(98, 98), (211, 211), (213, 213)]),
     ('bomber', '💣 Bombardier', 'red', [(99, 99)]),
 ]
-X0, X1, Z0, Z1 = -24, -6, 21, 35           # emprise du hall agrandi (sol y 63), ouvert au nord
-MARK = (-16, 64, 25)                       # piédestal central (bloc d'or) : témoin de présence
+X0, X1, Z0, Z1 = -24, -6, 11, 25           # emprise du hall (sol y 63), ouvert au nord, juste au sud-ouest de la place
+OLD_Z0, OLD_Z1 = 21, 35                    # ancien emplacement (v8 et avant), nettoyé une fois
+PZ = Z0 + 4                                # rangée des piédestaux
+MARK = (-16, 64, PZ)                       # piédestal central (bloc d'or) : témoin de présence
+WALL_TOP = 74                              # haut du mur des plaques (6 rangées)
+VERSION = 9
 TR = 'transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[%sf,%sf,%sf]}'
 
 def W(name, lines):
@@ -72,7 +76,7 @@ W('objectives', ['# Objectifs des classements par jeu (généré par tools/hall/
     'scoreboard objectives add mg.genc dummy'])
 W('remove', ['# Désinstallation des classements et du hall'] +
   [f'scoreboard objectives remove mg.wg_{k}' for k, *_ in GAMES] +
-  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8',
+  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8', 'data remove storage mg:hall v9',
    'scoreboard objectives remove mg.gen', 'scoreboard objectives remove mg.lvl', 'scoreboard objectives remove mg.genc'])
 
 # ---------------------------------------------------------------- crédit des vainqueurs
@@ -144,16 +148,17 @@ b = ['# Hall des scores (sud-ouest de la place) : construction + restauration de
      'execute if score #hl mg.st matches 0 if score #hlr mg.st matches 60.. run return run scoreboard players set #hlr mg.st 0',
      'execute if score #hl mg.st matches 0 run return run schedule function mg:hall/build 20t',
      'scoreboard players set #hlr mg.st 0',
-     'kill @e[tag=mg.hall]', '',
+     'kill @e[tag=mg.hall]',
+     'execute unless data storage mg:hall v9 run function mg:hall/clear_old', '',
      f'fill {X0} 63 {Z0} {X1} 63 {Z1} minecraft:smooth_quartz',
-     f'fill {X0} 64 {Z0} {X1} 74 {Z1} minecraft:air',
+     f'fill {X0} 64 {Z0} {X1} 79 {Z1} minecraft:air',
      # mur du fond (plaques des jeux) : pierre taillée comme les murets du spawn, un peu de mousse et de fissures,
      # soubassement et corniche en dalles ; les plaques ont leur fond sombre, lisibles sur ce gris moyen
-     f'fill {X0} 64 {Z1} {X1} 69 {Z1} minecraft:stone_bricks',
+     f'fill {X0} 64 {Z1} {X1} {WALL_TOP} {Z1} minecraft:stone_bricks',
      ] + [f'setblock {x} {y} {Z1} minecraft:{"mossy_stone_bricks" if (x * 7 + y * 3) % 5 == 0 else "cracked_stone_bricks"}'
-          for x in range(X0, X1 + 1) for y in range(64, 70) if (x * 7 + y * 3) % 5 in (0, 3) and (x + y) % 2 == 0] + [
+          for x in range(X0, X1 + 1) for y in range(64, WALL_TOP + 1) if (x * 7 + y * 3) % 5 in (0, 3) and (x + y) % 2 == 0] + [
      f'fill {X0} 64 {Z1} {X1} 64 {Z1} minecraft:mossy_stone_bricks',
-     f'fill {X0} 70 {Z1} {X1} 70 {Z1} minecraft:stone_brick_slab[type=bottom]',
+     f'fill {X0} {WALL_TOP + 1} {Z1} {X1} {WALL_TOP + 1} {Z1} minecraft:stone_brick_slab[type=bottom]',
      # tapis rouge de l'entrée au fond, bancs, lustres
      f'fill -16 63 {Z0} -15 63 {Z1 - 1} minecraft:red_wool',
      # l'arbre planté juste devant l'entrée masquait le hall
@@ -161,25 +166,25 @@ b = ['# Hall des scores (sud-ouest de la place) : construction + restauration de
      f'fill {X0 + 2} 64 {Z1 - 7} {X0 + 4} 64 {Z1 - 7} minecraft:dark_oak_stairs[facing=south]', f'fill {X1 - 4} 64 {Z1 - 7} {X1 - 2} 64 {Z1 - 7} minecraft:dark_oak_stairs[facing=south]',
      f'fill {X0 + 2} 64 {Z1 - 10} {X0 + 4} 64 {Z1 - 10} minecraft:dark_oak_stairs[facing=south]', f'fill {X1 - 4} 64 {Z1 - 10} {X1 - 2} 64 {Z1 - 10} minecraft:dark_oak_stairs[facing=south]',
      f'fill {X0 + 1} 63 {Z0 + 1} {X0 + 1} 63 {Z1 - 1} minecraft:gold_block', f'fill {X1 - 1} 63 {Z0 + 1} {X1 - 1} 63 {Z1 - 1} minecraft:gold_block',
-     'setblock -19 64 25 minecraft:emerald_block', f'setblock {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block', 'setblock -13 64 25 minecraft:lapis_block', '',
+     f'setblock -19 64 {PZ} minecraft:emerald_block', f'setblock {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block', f'setblock -13 64 {PZ} minecraft:lapis_block', '',
      '# Tampon de résolution des noms (invisible)',
-     f'summon minecraft:item_display -15.5 64.5 25.5 {{Tags:["mg.hall","mg.hallbuf"],item:{{id:"minecraft:paper"}},{TR % (0.001, 0.001, 0.001)}}}',
-     f'summon minecraft:text_display -15.5 71.4 {Z1 - 0.4} {{Tags:["mg.hall"],billboard:"center",background:0,text:[{{"text":"🏆 Hall des scores","color":"gold","bold":true}}],{TR % (2.2, 2.2, 2.2)}}}',
+     f'summon minecraft:item_display -15.5 64.5 {PZ}.5 {{Tags:["mg.hall","mg.hallbuf"],item:{{id:"minecraft:paper"}},{TR % (0.001, 0.001, 0.001)}}}',
+     f'summon minecraft:text_display -15.5 {WALL_TOP + 2.9} {Z1 - 0.4} {{Tags:["mg.hall"],billboard:"center",background:0,text:[{{"text":"🏆 Hall des scores","color":"gold","bold":true}}],{TR % (3, 3, 3)}}}',
      '', '# Piédestaux : objet qui tourne + plaque']
 peds = [(-18.5, 'stp', '▶ Le plus assidu', 'green', 'clock'),
         (-15.5, 'wins', '👑 Champion des mini-jeux', 'gold', 'totem_of_undying'),
         (-12.5, 'ely', "🪽 Record petit parcours d'élytra", 'aqua', 'elytra')]
-plaques = [(x, 66.9, 25.5, k, l, c, 0.55) for x, k, l, c, _ in peds]
-plaques.append((-12.5, 67.6, 25.5, 'ely2', "🪽 Record grand parcours d'élytra", 'light_purple', 0.55))
-plaques.append((-12.5, 68.3, 25.5, 'elyg', '🪽 Record Élytra : course', 'aqua', 0.55))
-plaques.append((-15.5, 70.15, Z1 - 0.7, 'gen', '🏅 Meilleur niveau général', 'aqua', 0.62))   # sous le titre, au-dessus du tableau
+plaques = [(x, 66.9, PZ + 0.5, k, l, c, 0.75) for x, k, l, c, _ in peds]
+plaques.append((-12.5, 67.85, PZ + 0.5, 'ely2', "🪽 Record grand parcours d'élytra", 'light_purple', 0.75))
+plaques.append((-12.5, 68.8, PZ + 0.5, 'elyg', '🪽 Record Élytra : course', 'aqua', 0.75))
+plaques.append((-15.5, WALL_TOP + 1.25, Z1 - 0.7, 'gen', '🏅 Meilleur niveau général', 'aqua', 0.85))   # sous le titre, au-dessus du tableau
 for x, k, l, c, it in peds:
-    b.append(f'summon minecraft:item_display {x} 65.8 25.5 {{Tags:["mg.hall","mg.lspin","mg.lbob"],billboard:"fixed",item:{{id:"minecraft:{it}"}},{TR % (0.9, 0.9, 0.9)}}}')
-xs = [-23.0 + 2.0 * i for i in range(9)]   # 9 colonnes × 4 rangées sur le mur du fond (36 plaques)
-ys = [68.6, 67.4, 66.2, 65.0]
+    b.append(f'summon minecraft:item_display {x} 65.8 {PZ}.5 {{Tags:["mg.hall","mg.lspin","mg.lbob"],billboard:"fixed",item:{{id:"minecraft:{it}"}},{TR % (0.9, 0.9, 0.9)}}}')
+xs = [-22.5 + 3.0 * i for i in range(6)]   # 6 colonnes × 6 rangées sur le mur du fond (36 plaques), texte plus grand
+ys = [73.0, 71.4, 69.8, 68.2, 66.6, 65.0]
 assert len(GAMES) <= len(xs) * len(ys), 'agrandir la grille de plaques'
 for i, (k, l, c, _) in enumerate(GAMES):
-    plaques.append((xs[i % 9], ys[i // 9], Z1 - 0.8, k, l, c, 0.42))
+    plaques.append((xs[i % 6], ys[i // 6], Z1 - 0.8, k, l, c, 0.6))
 b.append('')
 b.append('# Plaques : texte par défaut, puis meneur enregistré s\'il existe')
 for x, y, z, k, l, c, s in plaques:
@@ -193,7 +198,18 @@ b.append('data modify storage mg:hall v5 set value 1b')
 b.append('data modify storage mg:hall v6 set value 1b')
 b.append('data modify storage mg:hall v7 set value 1b')
 b.append('data modify storage mg:hall v8 set value 1b')
+b.append('data modify storage mg:hall v9 set value 1b')
 W('build', b)
+W('clear_old', ['# Ancien emplacement du hall (z %d..%d) : mur et sol retirés, pelouse (une fois, avant la v9)' % (OLD_Z0, OLD_Z1),
+                f'fill {X0} 64 {Z1 + 1} {X1} 74 {OLD_Z1} minecraft:air',
+                f'fill {X0} 63 {Z1 + 1} {X1} 63 {OLD_Z1} minecraft:grass_block'])
+# câblage hors du hall : témoin de présence (core/tick), version (core/load), suivi de mg:setup
+_F = os.path.join(OUT, '..')
+def _sub(rel, a, c):
+    p = os.path.join(_F, rel + '.mcfunction'); s = open(p, encoding='utf-8').read()
+    if a in s: open(p, 'w', encoding='utf-8', newline='\n').write(s.replace(a, c))
+_sub('core/tick', 'unless block -16 64 25 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')
+_sub('core/load', 'unless data storage mg:hall v8 run schedule function mg:hall/build', 'unless data storage mg:hall v9 run schedule function mg:hall/build')
 W('board_tick', ['# Tableau à droite dans le lobby (classement affiché, pas de vote en cours)',
     'scoreboard players remove $hrt mg.st 1',
     'execute unless score $hrt mg.st matches 1.. run function mg:hall/rotate'])

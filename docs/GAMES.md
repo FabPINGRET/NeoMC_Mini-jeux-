@@ -31,7 +31,7 @@ Référence centrale générée depuis `core/game_tick.mcfunction`.
 | 66 | `mg:elyrace/tick` (ids 81..82 → $xc) |
 | 75 | `mg:sky/tick` (ids 75..78 → $elm) |
 
-Cartes : TNT Tag 27/67..70 → 27 + `$ttm` ; Bedwars 4/71..74 → 4 + `$bwm` ; Élytra 75..78 → 75 + `$elm` ; Course d'élytres 81..82 (Canyon du Couchant, Pic Blanc) → 66 + `$xc` (remappage dans `core/request`) ; contre-la-montre solo (`/trigger mg.xs`, ouvert à tous) : même jeu 66 avec `$xs` = 1, lancé par `mg:elyrace/solo/start` sans passer par `core/request`.
+Cartes : TNT Tag 27/67..70 → 27 + `$ttm` ; Bedwars 4/71..74 → 4 + `$bwm` ; Élytra 75..78 → 75 + `$elm` ; Course d'élytres 81..82 (Canyon du Couchant, Pic Blanc) → 66 + `$xc` (remappage dans `core/request`) ; contre-la-montre solo (`/trigger mg.xs`, ouvert à tous) : hors machine à états (ni `$state` ni `$game` : tag `mg.xso`, scores par joueur `mg.xph` / `xst` / `xcr` / `xse` / `xsl`, 4 solos au plus, joueur mis en pause `mg.spectate`), lancé par `mg:elyrace/solo/start`, tick `mg:elyrace/solo/tick` (appelé par `core/tick`).
 
 Variantes : ids 100..167 (190..196 = au hasard par mode) → `var/remap` fixe `$vmode` (jeu), `$ar` (arène 1..18 ou sol 21..26) et `$dif` (1..4) ; `var/start` remet `$game` = jeu réel avant la préparation. `$ar = 0` = carte native. Liste : `docs/VARIANTES.md`.
 

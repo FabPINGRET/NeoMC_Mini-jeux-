@@ -1,6 +1,6 @@
 """Controles statiques de la Course d'elytres (gen_elyrace.py --check) : coherence des fonctions generees, desinstallation,
 zones de construction, budget des tranches, fichiers du depot a jour, pilote automatique. Boucle sur tous les parcours.
-Le contre-la-montre solo et les branchements du moteur sont controles par checks_solo.py ; ce qui se lit dans le depot (ids de
+Le contre-la-montre solo (par joueur) et les branchements du moteur sont controles par checks_solo.py ; ce qui se lit dans le depot (ids de
 lancement, ouvertures de fenetre sous la forme de gen_rating, drapeaux du suivi de mg:setup) par checks_repo.py.
 Python stdlib uniquement (compatible 3.8).
 """
@@ -14,9 +14,11 @@ import course_common as CC
 import course_fns as CF
 import dispatch as D
 import game as G
+import glide as GL
 import records as RC
-import rings as RG
+import sweep as SW
 import verify as V
+import verify_speed as VS
 
 LOADED_LINE = re.compile(r'execute store success score \$xbl mg\.st unless block -?\d+ %d -?\d+ minecraft:bedrock$' % B.PROBE_Y)
 CHUNK = 16
@@ -114,6 +116,12 @@ def course_problems(c):
         bad.append('parcours %d : fl_add (x %d..%d, z %d..%d) sort des tranches 1 a %d' % (s.NUM, fx1, fx2, fz1, fz2, last))
     # hauteurs des teleportations (pas des commandes de construction) : perchoir de depart (START_Y + 19, spawnpoint compris : +20)
     # et reprises (centre de l'anneau + R_UP, + 1 pour le corps du joueur)
+    planes = sorted([r[0] for r in c.rings] + [g[0] for g in c.golds] + [w[0] for w in c.winds])
+    # marge prudente : un tick (moins de STEP_MAX) ne franchit pas deux plans (cross remet #xhit a zero a chaque appel, et la ligne de chaque
+    # anneau porte la meme garde que son cross : le partage de #xhit ne l'exige pas)
+    for a, b in zip(planes, planes[1:]):
+        if (b - a) * 100 <= SW.STEP_MAX:
+            bad.append('parcours %d : anneaux en x=%d et x=%d a %d blocs ou moins (il en faut plus de %d : un tick ne doit pas franchir deux plans)' % (s.NUM, a, b, SW.STEP_MAX // 100, SW.STEP_MAX // 100))
     top = max([s.START_Y + 20] + [c.rings[n - 1][1] + s.R_UP[n] + 1 for n in c.cps])
     if top > Y_MAX:
         bad.append('parcours %d : une teleportation (perchoir, reprise) monte a y %d, au-dessus de la hauteur max %d' % (s.NUM, top, Y_MAX))
@@ -165,7 +173,8 @@ def logic_problems(files, specs):
     adders = sorted(rel for rel, text in files.items() if re.search(r'players add @\S+ mg\.xa ', text))
     if adders != sorted(passes):
         bad.append('mg.xa doit etre incremente par les pass des parcours seulement : %s' % adders)
-    known = {'mg.' + o[0] for o in G.OBJECTIVES} | set(G.TAGS) | {'mg.xs'} | {'mg.' + RC.obj(s) for s in specs}
+    known = ({'mg.' + o[0] for o in G.OBJECTIVES} | {'mg.' + o[0] for o in G.EXTRA_OBJECTIVES} | set(G.TAGS) | set(G.SOLO_TAGS)
+             | {'mg.xs'} | {'mg.' + RC.obj(s) for s in specs})
     for rel, text in files.items():
         if rel.endswith('.mcfunction'):
             for m in sorted(set(re.findall(r'\bmg\.x[a-z0-9]+', text)) - known):
@@ -175,11 +184,73 @@ def logic_problems(files, specs):
     return bad
 
 
+def gravity_problems(root, files, specs):
+    """Gravite de course (attribut minecraft:gravity) : posee au GO (groupe et solo), a chaque reapparition, par le turbo d'un anneau d'or ;
+    remise a la normale par core/attr_reset_g (fin du turbo, fin de solo, desinstallation ; le lobby par core/attr_reset). L'attribut n'est ecrit
+    qu'a trois endroits (c<N>/grav, gold_hit, core/attr_reset_g) ; les points qui le posent ou le remettent, et l'origine du balayage
+    remise a zero a chaque teleportation (respawn, place_tp : sinon le saut jusqu'au point de reprise serait pris pour un deplacement)."""
+    bad = []
+
+    def need(name, *lines):
+        have = code_lines(files, name)
+        bad.extend('elyrace/%s : ligne absente : %s' % (name, l) for l in lines if l not in have)
+    need('go', G.GRAV_ON_ALL)
+    need('solo/go', G.GRAV_ON)
+    need('solo/stop', G.GRAV_RESET)
+    need('uninstall', G.GRAV_RESET_ALL)
+    need('grav_on', G.XU_ZERO, *CC.per_course(specs, 'grav'))
+    need('gold_hit', G.XU_SET, G.GRAV_TURBO)
+    for s in specs:
+        need('c%d/grav' % s.NUM, G.grav_line(s.GRAVITY))
+        need('c%d/respawn' % s.NUM, 'function ' + CC.fn(s, 'grav'), G.XU_ZERO, SW.RESET_LINE)
+        need('c%d/place_tp' % s.NUM, SW.RESET_LINE)
+        need('c%d/player' % s.NUM, *CF.turbo_end_lines(s))
+        if not GL.GRAV < s.GRAVITY < GL.TURBO_G:
+            bad.append('parcours %d : GRAVITY %s doit etre entre la gravite normale %s et celle du turbo %s' % (s.NUM, s.GRAVITY, GL.GRAV, GL.TURBO_G))
+    allowed = {CC.FN + 'c%d/grav.mcfunction' % s.NUM for s in specs} | {CC.FN + 'gold_hit.mcfunction'}
+    for rel, text in sorted(files.items()):
+        if rel.endswith('.mcfunction') and rel not in allowed and re.search(r'^attribute \S+ minecraft:gravity\b', text, re.M):
+            bad.append('%s : ecrit l\'attribut gravity (seuls c<N>/grav et gold_hit le font ; le reste passe par core/attr_reset_g)' % rel)
+    reset = CS.repo_code(root, 'core/attr_reset_g')
+    if reset != ['attribute @s minecraft:gravity base set %s' % GL.GRAV]:
+        bad.append('core/attr_reset_g : doit remettre la gravite normale (%s) : %s' % (GL.GRAV, reset))
+    uninstall = code_lines(files, 'uninstall')
+    bad.extend(uninstall_gravity_problems(root, uninstall))
+    return bad
+
+
+def uninstall_gravity_problems(root, uninstall):
+    """Remise a la normale de la gravite des participants d'une course de groupe, a la desinstallation : desinstaller retire le tag mg.play AVANT
+    d'appeler elyrace/uninstall, et retire les objectifs de l'elytre dans uninstall : la selection ne peut donc ni lire mg.play, ni venir apres
+    le retrait de mg.xcr (sinon les coureurs gardent la gravite de course pour toujours)."""
+    bad = []
+    resets = [l for l in uninstall if 'core/attr_reset_g' in l]
+    if any('mg.play' in l for l in resets):
+        bad.append('uninstall : la remise de la gravite ne doit pas lire le tag mg.play (desinstaller le retire avant son appel a elyrace/uninstall) : %s' % resets)
+    if G.GRAV_RESET_ALL in uninstall:
+        at = uninstall.index(G.GRAV_RESET_ALL)
+        if at >= min((i for i, l in enumerate(uninstall) if l.startswith('scoreboard objectives remove')), default=len(uninstall)):
+            bad.append('uninstall : la remise de la gravite lit mg.xcr, elle doit preceder le retrait des objectifs')
+        early = [l for l in uninstall[:at] if 'mg.xcr' in l]
+        if early:
+            bad.append('uninstall : mg.xcr est touche avant la remise de la gravite qui le lit (la selection serait vide) : %s' % early)
+    xcr = 'scoreboard objectives remove mg.xcr'
+    des = CS.repo_code(root, 'desinstaller')
+    call = 'function mg:elyrace/uninstall'
+    if call not in des:
+        bad.append('desinstaller : appel %s absent' % call)
+    elif xcr in des and des.index(xcr) < des.index(call):
+        bad.append('desinstaller : mg.xcr est retire avant %s (qui le lit pour remettre la gravite)' % call)
+    return bad
+
+
 def check(root, courses, files):
     """Renvoie la liste des problemes (vide = tout est bon)."""
     specs = [c.spec for c in courses]
     bad = (spec_problems(specs) + CR.id_problems(root, specs) + logic_problems(files, specs) + CR.rate_problems(root, files)
-           + CR.setup_problems(root, specs) + CS.problems(root, files, specs))
+           + CR.setup_problems(root, specs) + CS.problems(root, files, specs) + gravity_problems(root, files, specs))
+    if V.VMAX_CAP * 100 >= SW.STEP_MAX:
+        bad.append('verify.VMAX_CAP %.1f b/tick = %d centiemes par tick >= sweep.STEP_MAX %d : un vol verifie serait pris pour une teleportation' % (V.VMAX_CAP, V.VMAX_CAP * 100, SW.STEP_MAX))
     names = {rel[len('data/mg/function/'):-len('.mcfunction')] for rel in files if rel.endswith('.mcfunction')}
     for rel, text in files.items():
         if rel.endswith('.mcfunction'):
@@ -187,15 +258,15 @@ def check(root, courses, files):
                 if m.group(1) not in names and not os.path.exists(os.path.join(root, 'data/mg/function', m.group(1) + '.mcfunction')):
                     bad.append('%s : fonction inconnue mg:%s' % (rel, m.group(1)))
     for c in courses:
-        print('parcours %d (%s) : %d anneaux, %d anneaux d\'or, reprises apres %s' % (c.spec.NUM, c.spec.NAME, len(c.rings), len(c.golds), c.cps))
-        margin_bad, info = V.speed_margins(c, G.DROP_SQ, G.DROP_REL)
+        print('parcours %d (%s) : %d anneaux, %d ors, reprises apres %s' % (c.spec.NUM, c.spec.NAME, len(c.rings), len(c.golds), c.cps))
+        margin_bad, info = VS.speed_margins(c, G.DROP_SQ, G.DROP_REL)
         print('\n'.join('  ' + i for i in info))
         bad += ['parcours %d, repli de choc : %s' % (c.spec.NUM, b) for b in margin_bad]
         vref = max(t[3] for t in c.trace)
-        vmax = max(vref, V.max_speed(c))             # tous les vols de verify (ecarts, reprises, detours d'or), pas seulement la reference
+        vmax = max(vref, V.max_speed(c))             # tous les vols de verify (ecarts, reprises, detours d'or avec turbo), pas seulement la reference
         print('  vol de reference : %.1f s (%d ticks), vitesse max %.2f b/tick (tous les vols verifies : %.2f)' % (len(c.trace) / 20.0, len(c.trace), vref, vmax))
-        if vmax >= RG.BOX_X + 1:                 # au-dela, le joueur pourrait sauter par-dessus le volume de franchissement d'un anneau
-            bad.append('parcours %d : vitesse max des vols verifies %.2f >= %d (volume de franchissement rings.BOX_X = %d)' % (c.spec.NUM, vmax, RG.BOX_X + 1, RG.BOX_X))
+        if vmax >= V.VMAX_CAP:                   # le plafond garde le deplacement par tick sous sweep.STEP_MAX et dans la plage eprouvee du repli de choc
+            bad.append('parcours %d : vitesse max des vols verifies %.2f >= %.1f (verify.VMAX_CAP)' % (c.spec.NUM, vmax, V.VMAX_CAP))
         bad += course_problems(c)
         bad += ['parcours %d, pilote automatique : %s' % (c.spec.NUM, b) for b in V.verify_all(c)]
     for rel, text in files.items():

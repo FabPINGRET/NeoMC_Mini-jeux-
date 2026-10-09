@@ -48,9 +48,19 @@ def noise2(seed, size, scale, octaves=3):
     return val
 
 
-def terrain(seed, R, Z, base, lo, hi, water, ores, flat_center=0, tree_div=90):
+THEMES = {   # sol, sous-sol, rivage, roche, eau, arbres (« cactus » = cactus sur le sable)
+    'plaines': dict(top='grass_block', sub='dirt', shore='sand', stone='stone', water='water', woods=['oak', 'oak', 'birch', 'spruce']),
+    'desert': dict(top='sand', sub='sandstone', shore='sand', stone='stone', water='water', woods=['acacia', 'cactus', 'cactus', 'oak']),
+    'taiga': dict(top='snow_block', sub='dirt', shore='gravel', stone='stone', water='ice', woods=['spruce', 'spruce', 'spruce', 'birch']),
+    'jungle': dict(top='grass_block', sub='dirt', shore='sand', stone='mossy_cobblestone', water='water', woods=['jungle', 'jungle', 'oak', 'jungle']),
+    'mesa': dict(top='red_sand', sub='orange_terracotta', shore='red_sand', stone='terracotta', water='water', woods=['dark_oak', 'cactus', 'cactus', 'acacia']),
+}
+
+
+def terrain(seed, R, Z, base, lo, hi, water, ores, flat_center=0, tree_div=90, theme='plaines'):
     """Mini-monde carré de demi-côté R centré (0, Z). Renvoie (lignes de construction, hauteurs)."""
     rnd = random.Random(seed)
+    T = THEMES[theme]
     nz = noise2(seed, 2 * R + 1, 18)
     H = {}
     for x in range(-R, R + 1):
@@ -79,13 +89,16 @@ def terrain(seed, R, Z, base, lo, hi, water, ores, flat_center=0, tree_div=90):
             while k + 1 <= R and H[(k + 1, z)] == h:
                 k += 1
             if h >= base:
-                top = 'sand' if h <= water + 1 else 'grass_block'
+                shore = h <= water + 1
+                top = T['shore'] if shore else T['top']
                 if h - 4 >= base:
-                    L.append(f'fill {x} {base} {Z + z} {k} {h - 4} {Z + z} minecraft:stone')
-                L.append(f'fill {x} {max(base, h - 3)} {Z + z} {k} {h - 1} {Z + z} minecraft:{"sand" if top == "sand" else "dirt"}')
+                    L.append(f'fill {x} {base} {Z + z} {k} {h - 4} {Z + z} minecraft:{T["stone"]}')
+                L.append(f'fill {x} {max(base, h - 3)} {Z + z} {k} {h - 1} {Z + z} minecraft:{T["shore"] if shore else T["sub"]}')
                 L.append(f'fill {x} {h} {Z + z} {k} {h} {Z + z} minecraft:{top}')
                 if h < water:
                     L.append(f'fill {x} {h + 1} {Z + z} {k} {water} {Z + z} minecraft:water')
+                    if T['water'] != 'water':
+                        L.append(f'fill {x} {water} {Z + z} {k} {water} {Z + z} minecraft:{T["water"]}')
             x = k + 1
     # minerais (amas)
     for ore, count, ymax_off, size in ores:
@@ -111,7 +124,10 @@ def terrain(seed, R, Z, base, lo, hi, water, ores, flat_center=0, tree_div=90):
             continue
         trees.append((x, z))
         t = rnd.randint(4, 6)
-        wood = rnd.choice(['oak', 'oak', 'birch', 'spruce'])
+        wood = rnd.choice(T['woods'])
+        if wood == 'cactus':
+            L.append(f'fill {x} {h + 1} {Z + z} {x} {h + rnd.randint(2, 3)} {Z + z} minecraft:cactus')
+            continue
         L += [f'fill {x - 2} {h + t - 2} {Z + z - 2} {x + 2} {h + t - 1} {Z + z + 2} minecraft:{wood}_leaves[persistent=true]',
               f'fill {x - 1} {h + t} {Z + z - 1} {x + 1} {h + t + 1} {Z + z + 1} minecraft:{wood}_leaves[persistent=true]',
               f'fill {x} {h + 1} {Z + z} {x} {h + t} {Z + z} minecraft:{wood}_log']
@@ -160,10 +176,10 @@ def lastman(prefix):
 
 
 # =====================================================================  UHC RUN
-ZU, RU = 22400, 40
-L, HU = terrain(9401, RU, ZU, 60, 70, 84, 69,
+ZU, RU = C.param('ZU', 22400), 40
+L, HU = terrain(C.param('seed_uhc', 9401), RU, ZU, 60, 70, 84, 69,
                 [('coal_ore', 420, 20, 5), ('iron_ore', 480, 18, 5), ('gold_ore', 220, 12, 4), ('diamond_ore', 75, 6, 3),
-                 ('redstone_ore', 50, 8, 3), ('lapis_ore', 40, 8, 3)], tree_div=40)
+                 ('redstone_ore', 50, 8, 3), ('lapis_ore', 40, 8, 3)], tree_div=40, theme=C.param('uhc_theme', 'plaines'))
 # ressources en surface (UHC) : affleurements de minerais, graviers (silex), canne à sucre, coffres
 _r = random.Random(9402)
 _used = set()
@@ -287,8 +303,8 @@ w('uhc/cleanup', ['function mg:uhc/kill_all', 'function mg:core/rules', 'gamerul
                   'effect clear @a[tag=mg.play] minecraft:haste', 'team leave @a[team=mg_green]'])
 
 # =====================================================================  HUNGER GAMES
-ZH, RH = 22800, 50
-L, HH = terrain(9502, RH, ZH, 70, 76, 88, 75, [], flat_center=9)
+ZH, RH = C.param('ZH', 22800), 50
+L, HH = terrain(C.param('seed_hg', 9502), RH, ZH, 70, 76, 88, 75, [], flat_center=9, theme=C.param('hg_theme', 'plaines'))
 CH = (76 + 88) // 2   # hauteur de la corne d'abondance
 L += [f'fill -8 {CH} {ZH - 8} 8 {CH} {ZH + 8} minecraft:smooth_stone', f'fill -8 {CH - 3} {ZH - 8} 8 {CH - 1} {ZH + 8} minecraft:stone',
       f'fill -8 {CH + 1} {ZH - 8} 8 {CH + 6} {ZH + 8} minecraft:air',

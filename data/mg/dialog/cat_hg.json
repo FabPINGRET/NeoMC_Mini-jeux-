@@ -1,0 +1,106 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "🏹 Mini Hunger Games",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Choisis la carte.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🏹 🏹 Mini Hunger Games ",
+          "color": "green"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Plaines et forêts",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 95"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🏹 HG — Jungle",
+          "color": "dark_green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Jungle dense, roche moussue",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 203"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🏹 HG — Canyon",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Terres cuites et sable rouge",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 205"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 47"
+      }
+    }
+  ]
+}

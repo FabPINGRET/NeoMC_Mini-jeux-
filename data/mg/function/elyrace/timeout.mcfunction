@@ -1,5 +1,4 @@
 # Temps écoulé : un arrivé en ligne gagne, sinon le plus avancé (anneaux validés, puis x maximal) ; rien parcouru : égalité
-execute if score $xs mg.st matches 1 run return run function mg:elyrace/solo/end
 execute if entity @a[tag=mg.play,scores={mg.xf=1..}] run return run function mg:elyrace/end
 tellraw @a[tag=mg.play] [{"text":"🪽 Temps écoulé : le plus avancé l'emporte !","color":"gold"}]
 # clé de classement par joueur (dans mg.xx, libre à ce stade) : anneaux * 2000 + x maximal

@@ -244,6 +244,24 @@
         "type": "minecraft:run_command",
         "command": "trigger mg.opt set 48"
       }
+    },
+    {
+      "label": [
+        {
+          "text": "🚫 Exclure Zinedine",
+          "color": "red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Exclut Zinedine du serveur (définitivement, cette fois)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 49"
+      }
     }
   ],
   "exit_action": {

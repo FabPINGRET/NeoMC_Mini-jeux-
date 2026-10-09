@@ -25,4 +25,4 @@ scoreboard players operation @s mg.xb2 = #cz mg.st
 scoreboard players operation @s mg.xb3 = #vv mg.st
 execute unless predicate mg:gliding run return 0
 execute if score @s mg.xg matches 1.. run return 0
-execute if score #wv mg.st matches 4000.. if score #wq mg.st matches 0.. run function mg:elyrace/wall
+execute if score #wv mg.st matches 8000.. if score #wq mg.st matches 0.. run function mg:elyrace/wall

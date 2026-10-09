@@ -62,19 +62,7 @@ scoreboard objectives add mg.gkp playerKillCount
 scoreboard objectives add mg.gkv minecraft.killed:minecraft.villager
 scoreboard objectives add mg.gks minecraft.killed:minecraft.skeleton
 scoreboard objectives add mg.gkw minecraft.killed:minecraft.wither_skeleton
-scoreboard objectives add mg.gta dummy {"text":"💵 Dollars","color":"green","bold":true}
-scoreboard objectives add mg.gwl dummy {"text":"★ recherché","color":"gold"}
-scoreboard objectives add mg.gwt dummy
-scoreboard objectives add mg.grk dummy
-scoreboard objectives add mg.gpt dummy
-scoreboard objectives add mg.gpc dummy
-scoreboard objectives add mg.gvid dummy
-scoreboard objectives add mg.gpx dummy
-scoreboard objectives add mg.gpz dummy
-scoreboard objectives add mg.gkp playerKillCount
-scoreboard objectives add mg.gkv minecraft.killed:minecraft.villager
-scoreboard objectives add mg.gks minecraft.killed:minecraft.skeleton
-scoreboard objectives add mg.gkw minecraft.killed:minecraft.wither_skeleton
+scoreboard objectives add mg.cvrt dummy
 scoreboard objectives add mg.bmb dummy {"text":"💣 Dégâts","color":"red","bold":true}
 scoreboard objectives add mg.bid dummy
 scoreboard objectives add mg.bty dummy
@@ -100,6 +88,8 @@ team modify mg_ph friendlyFire false
 team modify mg_ph collisionRule never
 scoreboard players set #4 mg.st 4
 scoreboard objectives add mg.pid dummy
+scoreboard objectives add mg.fx dummy
+scoreboard objectives add mg.fz dummy
 scoreboard objectives add mg.php dummy
 scoreboard objectives add mg.phx dummy
 scoreboard objectives add mg.phz dummy
@@ -271,12 +261,13 @@ execute if score $setup mg.st matches 1 if data storage mg:kart built2 unless da
 execute if score $setup mg.st matches 1 unless data storage mg:dropadv v3 run schedule function mg:dropadv/build 40s
 execute if score $setup mg.st matches 1 run scoreboard players set $xbk mg.st 0
 execute if score $setup mg.st matches 1 run schedule function mg:elyrace/build_next 60s
-execute if score $setup mg.st matches 1 unless data storage mg:hall v8 run schedule function mg:hall/build 20s
+execute if score $setup mg.st matches 1 unless data storage mg:hall v9 run schedule function mg:hall/build 20s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/build 10s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/food_build 25s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:elytra/build 30s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby food1 run schedule function mg:lobby/food_build 12s
-execute if score $setup mg.st matches 1 unless data storage mg:lobby coaster2 run schedule function mg:coaster/build_start 16s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby beacon1 run schedule function mg:lobby/beacons 18s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby coaster3 run schedule function mg:coaster/build_start 16s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby ely1 run schedule function mg:elytra/build 14s
 
 # Zones chargées (après une mise à jour du pack, les nouvelles zones sont prises en compte)

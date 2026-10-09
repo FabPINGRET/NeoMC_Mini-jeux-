@@ -1,10 +1,10 @@
 """Fonctions de la Course d'elytres qui choisissent ou relient les parcours : preparation (controle du parcours $xc),
-tirage au hasard, annonce, drapeaux de construction, desinstallation et petits repartiteurs (respawn, hud, place_tp,
-fl_remove, gate_off) qui renvoient vers mg:elyrace/c<N>/<nom> selon $xc.
+tirage au hasard, annonce, drapeaux de construction, desinstallation et petits repartiteurs : respawn, hud, place_tp
+(selon le parcours du joueur, @s mg.xcr) ; fl_remove, gate_off (selon $xc) ; ils renvoient vers mg:elyrace/c<N>/<nom>.
 $xc (faux joueur de mg.st, distinct de l'objectif mg.xc) : 0 = au hasard parmi les parcours construits (pick, appele par
 prepare), N = parcours NUM = N. mg:core/request le pose (id de lancement 81.. -> $xc = id - menus.ID_BASE, puis $game = 66) ;
-pour tout autre lancement (66, Mini Party) request le remet a 0 : la course tire un parcours au hasard. Le solo (solo.py) pose
-$xc lui-meme et ne passe pas par request : announce, appelee par request seulement, remet donc $xs (drapeau solo) a 0.
+pour tout autre lancement (66, Mini Party) request le remet a 0 : la course tire un parcours au hasard. prepare copie le parcours
+final dans mg.xcr de chaque participant (le solo, qui ne passe pas par request, pose le mg.xcr de son joueur lui-meme) et arrete les solos.
 Python stdlib uniquement (compatible 3.8).
 """
 import build_chain as B
@@ -15,13 +15,17 @@ import wind as W
 
 N_ROUTES = 2             # nombre de parcours prevus (NUM 1..N_ROUTES) ; un parcours pas encore ecrit est « pas construit »
 RED = '{"text":"%s","color":"red"}'
-NOT_SOLO = 'unless score $xs mg.st matches 1'     # garde des lignes qu'un contre-la-montre solo ne doit pas executer
-XC = '{"score":{"name":"$xc","objective":"mg.st"},"color":"red"}'     # numero du parcours demande, lu dans un message
+XC ='{"score":{"name":"$xc","objective":"mg.st"},"color":"red"}'     # numero du parcours demande, lu dans un message
 
 
 def dispatcher(specs, comment, name):
     """Repartiteur : appelle c<N>/<name> pour le parcours $xc (@s conserve)."""
     return [comment] + ['execute if score $xc mg.st matches %d run function %s' % (s.NUM, CC.fn(s, name)) for s in specs]
+
+
+def player_dispatcher(specs, comment, name):
+    """Repartiteur par joueur : appelle c<N>/<name> pour le parcours de @s (mg.xcr), groupe et solo confondus."""
+    return [comment] + CC.per_course(specs, name)
 
 
 def lcm_upto(n):
@@ -55,8 +59,6 @@ def announce_lines(specs):
     head = ('tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance la ","color":"gray"},'
             '{"text":"🪽 COURSE D\'ÉLYTRES","color":"aqua","bold":true},{"text":" : %s","color":"gray"}]')
     out = ['# Annonce du lancement (appelée par mg:core/request, avant prepare : en mode « au hasard » le parcours n\'est pas encore tiré)',
-           '# un lancement de groupe n\'est jamais un solo : le drapeau $xs est remis à 0 (le solo ne passe pas par request)',
-           'scoreboard players set $xs mg.st 0',
            'execute if score $xc mg.st matches 0 run ' + head % 'un parcours au hasard parmi ceux qui sont construits (le premier arrivé gagne) !']
     by_num = {s.NUM: s for s in specs}
     for k in range(1, N_ROUTES + 1):
@@ -75,8 +77,7 @@ def forget_lines(specs):
 
 
 CANCEL = ['# partie annulée ; $xc remis à 0 d\'abord : cleanup (fl_remove) ne doit rien libérer, la zone d\'un parcours en construction reste chargée',
-          '# (elyrace/draw : en solo, fin du contre-la-montre ; sinon core/draw)',
-          'scoreboard players set $xc mg.st 0', 'function mg:elyrace/draw']
+          'scoreboard players set $xc mg.st 0', 'function mg:core/draw']
 
 
 def not_built_lines(specs):
@@ -110,6 +111,9 @@ def prepare_lines(specs):
         else:
             out.append('execute if score $xc mg.st matches %d run return run function mg:elyrace/not_available' % k)
     out += ['# restes d\'une partie précédente'] + ['tag @a remove ' + t for t in G.TAGS]
+    out += ['# les contre-la-montre solo en cours s\'arrêtent : le groupe prend la plateforme, le portillon et le chrono $xt',
+            'tellraw @a[tag=mg.xso] [' + RED % '🪽 Une course de groupe démarre (tu n\'es pas dans cette course) : ton contre-la-montre solo est arrêté.' + ']',
+            'execute as @a[tag=mg.xso] run function mg:elyrace/solo/stop']
     out += ['execute if score $xc mg.st matches %d run function %s' % (s.NUM, CC.fn(s, 'setup')) for s in specs]
     out += ['gamemode adventure @a[tag=mg.play]', 'clear @a[tag=mg.play]',
             'scoreboard players set @a[tag=mg.play] mg.deaths 0']
@@ -117,13 +121,13 @@ def prepare_lines(specs):
         out.append('scoreboard players set @a[tag=mg.play] mg.%s %d' % (n, G.HEARTS if n == 'xh' else 0))
     out += ['scoreboard players set $xt mg.st 0', 'scoreboard players set $xf mg.st 0',
             'scoreboard players set $xw mg.st 0', 'scoreboard players set $xe mg.st 0',
-            'scoreboard players set #k10 mg.st 10', 'scoreboard players set #k20 mg.st 20',
-            'scoreboard players set #k100 mg.st 100', 'scoreboard players set #krel mg.st %d' % G.DROP_REL,
+            '# parcours de chaque participant (le répartiteur par joueur respawn / hud / place_tp le lit, comme le solo) : avant place_one',
+            'scoreboard players operation @a[tag=mg.play] mg.xcr = $xc mg.st',
             'scoreboard players set $ri mg.st 0',
             'execute as @a[tag=mg.play] run function mg:elyrace/equip',
             'execute as @a[tag=mg.play] run function mg:elyrace/place_one',
-            '# tableau des anneaux de la course de groupe (en solo : le HUD du joueur suffit, et le tableau serait lu par tout le lobby)',
-            'execute %s run scoreboard objectives setdisplay sidebar mg.xa' % NOT_SOLO]
+            '# tableau des anneaux de la course de groupe',
+            'scoreboard objectives setdisplay sidebar mg.xa']
     return out
 
 
@@ -139,11 +143,17 @@ def uninstall_lines(specs):
             'clear @a minecraft:elytra[minecraft:custom_data~{mg_elyr:1b}]',
             'clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_elyr:1b}]']
     out += ['tag @a remove ' + t for t in G.TAGS] + W.cleanup_lines()
+    out += ['# course de groupe en cours : gravité normale pour ses participants (mg.xcr : lu avant le retrait des objectifs, sans tag mg.play : desinstaller l\'a déjà retiré ; le solo la remet dans solo/stop)',
+            G.GRAV_RESET_ALL]
+    out += ['# contre-la-montre solo en cours : solo/stop (tags, scores de course, gel, pause d\'avant, retour au lobby ; il tourne ici, avant le retrait des',
+            '# objectifs de l\'élytre ; mg.st / mg.t / mg.deaths sont déjà retirés par desinstaller : les écritures de score dessus (délai mg.xse d\'après $tc, vote rendu,',
+            '# morts remises à 0) échouent sans bruit) ; dans l\'overworld, où est le lobby (tp et spawnpoint de reset_player) ; puis filet sur les tags',
+            'execute in minecraft:overworld as @a[tag=mg.xso] run function mg:elyrace/solo/stop'] + ['tag @a remove ' + t for t in G.SOLO_TAGS]
     out.append('advancement revoke @a only mg:elyrace_wall')
     out += ['scoreboard objectives remove mg.%s' % n for n, _, _ in G.OBJECTIVES]
-    out += ['# contre-la-montre solo : trigger, records par parcours (objectifs et détenteur figé dans le hall), drapeau et délai',
-            'scoreboard objectives remove mg.xs'] + RC.uninstall_lines(specs)
-    out += ['scoreboard players reset $xs mg.st', 'scoreboard players reset $xse mg.st']
+    out += ['# parcours et état du solo par joueur, trigger du solo, records par parcours (objectifs et détenteur figé dans le hall)']
+    out += ['scoreboard objectives remove mg.%s' % n for n, _ in G.EXTRA_OBJECTIVES] + ['scoreboard objectives remove mg.xs']
+    out += RC.uninstall_lines(specs)
     return out
 
 
@@ -151,9 +161,11 @@ def functions(specs):
     out = {'prepare': prepare_lines(specs), 'pick': pick_lines(specs), 'announce': announce_lines(specs),
            'forget': forget_lines(specs), 'not_built': not_built_lines(specs),
            'uninstall': uninstall_lines(specs),
-           'respawn': dispatcher(specs, '# @s = joueur à replacer au dernier point de reprise de son parcours', 'respawn'),
-           'hud': dispatcher(specs, '# @s = joueur : barre d\'action de son parcours', 'hud'),
-           'place_tp': dispatcher(specs, '# @s = joueur : le met à sa place de départ (mg.ri) sur son parcours', 'place_tp'),
+           'respawn': player_dispatcher(specs, '# @s = joueur à replacer au dernier point de reprise de son parcours (mg.xcr)', 'respawn'),
+           'hud': player_dispatcher(specs, '# @s = joueur : barre d\'action de son parcours (mg.xcr)', 'hud'),
+           'place_tp': player_dispatcher(specs, '# @s = joueur : le met à sa place de départ (mg.ri) sur son parcours (mg.xcr)', 'place_tp'),
+           'grav_on': player_dispatcher(specs, '# @s = joueur : GO, gravité de course de son parcours (mg.xcr), sans turbo (groupe : go ; solo : solo/go)', 'grav')
+           + [G.XU_ZERO],
            'fl_remove': dispatcher(specs, '# Libère le chargement forcé de la zone de départ du parcours $xc', 'fl_remove'),
            'gate_off': dispatcher(specs, '# GO : ouvre le portillon du parcours $xc', 'gate_off')}
     if len(specs) < N_ROUTES:                   # tous les emplacements sont ecrits : plus rien n'appelle not_available
