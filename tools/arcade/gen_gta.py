@@ -686,13 +686,14 @@ for t, (n, lab, col, it) in PAD.items():
     PS.append(f'execute if score @s mg.gpt matches {n} run summon minecraft:text_display ~ ~2 ~ {{Tags:["mg.gta","mg.gpdt"],billboard:"center",'
               f'text:{js(LBL)},background:1073741824,{TR % (0, 0, 0, 0.7, 0.7, 0.7)}}}')
 w('gta/pad_show', PS)
-w('gta/pads', ['# Présentoirs : réassort, achat par le joueur le plus proche (une fois par passage : tag mg.gbuy)',
+w('gta/pads', ['# Présentoirs : réassort, achat par le joueur le plus proche (une fois par passage : tag mg.gbz sur le présentoir, retiré quand plus personne n\'est devant)',
                'scoreboard players remove @e[type=minecraft:marker,tag=mg.gpad,scores={mg.gpc=1..}] mg.gpc 10',
                'execute as @e[type=minecraft:marker,tag=mg.gpad,scores={mg.gpc=0}] at @s unless entity @e[type=minecraft:item_display,tag=mg.gpdi,distance=..1.5] run function mg:gta/pad_show',
-               'execute as @a[tag=mg.gbuy] at @s unless entity @e[type=minecraft:marker,tag=mg.gpad,distance=..2.2] run tag @s remove mg.gbuy',
-               'execute as @e[type=minecraft:marker,tag=mg.gpad,scores={mg.gpc=..0}] at @s if entity @a[tag=mg.gtw,tag=!mg.gbuy,gamemode=!spectator,distance=..1.6] run function mg:gta/pad_take'])
+               'execute as @e[type=minecraft:marker,tag=mg.gpad,tag=mg.gbz] at @s unless entity @a[tag=mg.gtw,gamemode=!spectator,distance=..2] run tag @s remove mg.gbz',
+               'execute as @e[type=minecraft:marker,tag=mg.gpad,tag=!mg.gbz,scores={mg.gpc=..0}] at @s if entity @a[tag=mg.gtw,gamemode=!spectator,distance=..1.6] run function mg:gta/pad_take',
+               'tag @a remove mg.gbuy'])
 w('gta/pad_take', ['# @s (présentoir) : le joueur le plus proche achète (ou prend, si c\'est gratuit)',
-                   'scoreboard players operation $gpt mg.st = @s mg.gpt', 'scoreboard players set $gok mg.st 0',
+                   'scoreboard players operation $gpt mg.st = @s mg.gpt', 'scoreboard players set $gok mg.st 0', 'tag @s add mg.gbz',
                    'execute as @a[tag=mg.gtw,tag=!mg.gbuy,gamemode=!spectator,distance=..1.6,sort=nearest,limit=1] at @s run function mg:gta/pad_buy',
                    'execute unless score $gok mg.st matches 1 run return 0',
                    'scoreboard players set @s mg.gpc 600', 'execute if entity @s[tag=mg.garm] run scoreboard players set @s mg.gpc 40',
