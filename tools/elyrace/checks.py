@@ -1,6 +1,6 @@
 """Controles statiques de la Course d'elytres (gen_elyrace.py --check) : coherence des fonctions generees, desinstallation,
 zones de construction, budget des tranches, fichiers du depot a jour, pilote automatique. Boucle sur tous les parcours.
-Le contre-la-montre solo et les branchements du moteur sont controles par checks_solo.py ; ce qui se lit dans le depot (ids de
+Le contre-la-montre solo (par joueur) et les branchements du moteur sont controles par checks_solo.py ; ce qui se lit dans le depot (ids de
 lancement, ouvertures de fenetre sous la forme de gen_rating, drapeaux du suivi de mg:setup) par checks_repo.py.
 Python stdlib uniquement (compatible 3.8).
 """
@@ -165,7 +165,8 @@ def logic_problems(files, specs):
     adders = sorted(rel for rel, text in files.items() if re.search(r'players add @\S+ mg\.xa ', text))
     if adders != sorted(passes):
         bad.append('mg.xa doit etre incremente par les pass des parcours seulement : %s' % adders)
-    known = {'mg.' + o[0] for o in G.OBJECTIVES} | set(G.TAGS) | {'mg.xs'} | {'mg.' + RC.obj(s) for s in specs}
+    known = ({'mg.' + o[0] for o in G.OBJECTIVES} | {'mg.' + o[0] for o in G.EXTRA_OBJECTIVES} | set(G.TAGS) | set(G.SOLO_TAGS)
+             | {'mg.xs'} | {'mg.' + RC.obj(s) for s in specs})
     for rel, text in files.items():
         if rel.endswith('.mcfunction'):
             for m in sorted(set(re.findall(r'\bmg\.x[a-z0-9]+', text)) - known):

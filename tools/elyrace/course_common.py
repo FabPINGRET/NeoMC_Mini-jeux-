@@ -22,6 +22,11 @@ def fn(spec, name):
     return 'mg:elyrace/c%d/%s' % (spec.NUM, name)
 
 
+def per_course(specs, name):
+    """Lignes qui appellent c<N>/<name> selon le parcours du joueur (@s mg.xcr : posé par prepare en groupe, par solo/start en solo)."""
+    return ['execute if score @s mg.xcr matches %d run function %s' % (s.NUM, fn(s, name)) for s in specs]
+
+
 class Course:
     """Resultat de build() : tout ce qu'il faut pour generer les fonctions et verifier le parcours."""
 

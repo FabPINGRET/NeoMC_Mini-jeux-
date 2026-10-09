@@ -10,6 +10,8 @@ Les crochets du moteur (verifies par checks_solo.py) :
                   joue qu'au joueur du solo (et non a tout le lobby)
   core/reconnect  un solo n'a rien a regarder : le joueur qui revient retourne au lobby au lieu de devenir spectateur
 Plus l'aide, le README et docs/GAMES.md. Les fonctions solo/* et les records sont generes par gen_elyrace.py.
+OBSOLETE depuis wire_elyrace4.py (le solo est devenu par joueur, hors machine a etats) : wire4 retire ces crochets de la 2c, et ce script ne
+fait plus rien une fois que wire4 est passe (son crochet solo/tick est dans core/tick). Il reste dans la chaine pour un amont non cable.
 """
 import os
 import sys
@@ -25,6 +27,12 @@ HORN_SOLO = 'execute if score $xs mg.st matches 1 as @a[tag=mg.play] at @s run '
 def pending(p, path, marker):
     """Vrai si le branchement n'est pas encore dans le fichier (son marqueur est absent du texte courant)."""
     return marker not in p.text(path)[0]
+
+
+def wired_by_4(p):
+    """Vrai si wire_elyrace4.py est deja passe (son crochet solo/tick est dans core/tick) : le solo n'est plus dans la machine a etats,
+    les crochets ci-dessous (countdown, begin, reconnect) ont ete retires exprès et ne doivent pas revenir."""
+    return 'mg:elyrace/solo/tick' in p.text(p.fn_path('core/tick'))[0]
 
 
 def core_hooks(p):
@@ -82,6 +90,8 @@ def docs(p):
 
 
 def wire_all(p):
+    if wired_by_4(p):
+        return
     core_hooks(p)
     docs(p)
 

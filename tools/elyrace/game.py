@@ -1,8 +1,10 @@
 """Logique de jeu de la Course d'elytres (mg:elyrace/*), independante du parcours : objectifs, depart, tick, regles
 communes (choc contre un mur, arrivee, fin, temps ecoule, nettoyage). Le tick de chaque joueur, les tables qui dependent
 des coordonnees (anneaux, reprises, places) et la construction sont propres a chaque parcours (course_fns.py, rings.py,
-build_chain.py) ; la preparation et les repartiteurs par parcours sont dans dispatch.py ; le contre-la-montre solo ($xs = 1) est dans
-solo.py, les records dans records.py (end, timeout, finish, tick, cleanup y renvoient quand le drapeau $xs est leve).
+build_chain.py) ; la preparation et les repartiteurs par parcours sont dans dispatch.py ; le contre-la-montre solo est a part, par
+joueur (tag mg.xso : lancement dans solo.py, tick et fin dans solo_run.py) ; les records sont dans records.py. Seules finish et wall_adv
+connaissent le solo (premiere ligne : renvoi vers solo/finish, ou garde de wall_adv) ; le parcours d'un joueur est mg.xcr, le temps
+d'une arrivee est #xrt ($xt en groupe, mg.xst en solo).
 Python stdlib uniquement (compatible 3.8).
 """
 import course_common as CC
@@ -39,26 +41,38 @@ OBJECTIVES = [
     ('xb2', 'z precedent (centiemes)', None),
     ('xb3', 'carre de la vitesse horizontale precedente', None),
 ] + W.objectives()                  # + mg.xv (anneaux de vent pris) si WIND
+# objectifs HORS de OBJECTIVES (prepare remet ceux-la a zero a chaque depart de groupe) : (nom, role). xcr est pose par prepare (groupe) ou
+# par solo/start ; xse, xsl et xph/xst ne servent qu'au solo (voir solo_run.py)
+EXTRA_OBJECTIVES = [
+    ('xcr', 'parcours du joueur (NUM : groupe et solo)'),
+    ('xph', 'solo : phase (1 decompte, 2 course, 3 arrivee)'),
+    ('xst', 'solo : chrono du joueur (ticks) : decompte, course ou arrivee selon la phase'),
+    ('xse', 'solo : tick de la fin du dernier solo du joueur (delai de 30 s)'),
+    ('xsl', 'solo : dernier tick ou le joueur etait en ligne (detecte la reconnexion)'),
+]
 TAGS = ['mg.xw1', 'mg.xtp'] + W.tags()    # etiquettes temporaires de la fin de course (pas des objectifs) + charges de vent si WIND
+SOLO_TAGS = ['mg.xso', 'mg.xsp0']         # solo en cours ; pause d'avant le solo (hors TAGS : prepare ne doit pas les effacer)
 ELYTRA = ('minecraft:elytra[minecraft:custom_data={mg_elyr:1b},minecraft:unbreakable={},'
           'minecraft:enchantments={"minecraft:binding_curse":1},'
           'minecraft:custom_name={"text":"Élytres de course","color":"aqua","italic":false}]')
 ROCKET = ('minecraft:firework_rocket[minecraft:custom_data={mg_elyr:1b},minecraft:fireworks={flight_duration:1},'
           'minecraft:custom_name={"text":"Fusée d\'or","color":"gold","italic":false}]')
 SB = '"score":{"name":"@s","objective":"%s"}'
-SOLO_GUARD = 'execute if score $xs mg.st matches 1 run return run function mg:elyrace/solo/end'    # 1re commande de end et timeout (verifie par checks_solo.py)
 
 
 def objectives_lines(specs):
     out = ['# Objectifs de la Course d\'élytres (généré par tools/elyrace/gen_elyrace.py ; appelé par mg:core/load)']
     for n, _, disp in OBJECTIVES:
         out.append('scoreboard objectives add mg.%s dummy%s' % (n, ' ' + disp if disp else ''))
-    out += ['# hors de OBJECTIVES (prepare les remet à zéro à chaque départ) : trigger du contre-la-montre solo, records par parcours',
-            'scoreboard objectives add mg.xs trigger']
+    out += ['# hors de OBJECTIVES (prepare les remet à zéro à chaque départ) : parcours du joueur et état du solo (par joueur), trigger du solo, records par parcours']
+    out += ['scoreboard objectives add mg.%s dummy' % n for n, _ in EXTRA_OBJECTIVES]
+    out += ['scoreboard objectives add mg.xs trigger']
     out += RC.objective_lines(specs)
-    out += ['# constantes de elyrace/time ; $xs (solo en cours) ne survit pas à un rechargement hors partie',
-            'scoreboard players set #k5 mg.st 5', 'scoreboard players set #k20 mg.st 20',
-            'execute unless score $state mg.st matches 1.. run scoreboard players set $xs mg.st 0']
+    out += ['# constantes de elyrace/time, de speed et du HUD du solo (plus posées par prepare : le solo n\'y passe pas)',
+            'scoreboard players set #k5 mg.st 5', 'scoreboard players set #k10 mg.st 10', 'scoreboard players set #k20 mg.st 20',
+            'scoreboard players set #k100 mg.st 100', 'scoreboard players set #krel mg.st %d' % DROP_REL,
+            '# purge des anciens drapeaux du solo de la 2c (le solo ne passe plus par $state : $xs et $xse n\'existent plus)',
+            'scoreboard players reset $xs mg.st', 'scoreboard players reset $xse mg.st']
     return out
 
 
@@ -67,7 +81,8 @@ def go_lines(specs):
            'function mg:elyrace/gate_off',
            'effect give @a[tag=mg.play] minecraft:resistance infinite 4 true',
            'effect give @a[tag=mg.play] minecraft:saturation infinite 0 true']
-    out += ['execute if score $xc mg.st matches %d run function %s' % (s.NUM, CC.fn(s, 'go_text')) for s in specs]
+    out += ['# texte du départ : go_text parle à @s (le solo l\'appelle pour son seul joueur)']
+    out += ['execute if score $xc mg.st matches %d as @a[tag=mg.play] run function %s' % (s.NUM, CC.fn(s, 'go_text')) for s in specs]
     return out
 
 
@@ -88,8 +103,8 @@ def tick_lines(specs):
             'execute if score $xw mg.st matches 1 unless entity @a[tag=mg.play,scores={mg.xf=0}] run return run function mg:elyrace/end',
             'execute if score $xt mg.st matches %d run tellraw @a[tag=mg.play] [{"text":"🪽 Plus que 30 secondes !","color":"gold"}]' % (TIME_LIMIT - 600),
             'execute if score $xt mg.st matches %d.. run return run function mg:elyrace/timeout' % TIME_LIMIT,
-            '# plus aucun participant (déconnexion) : fin sans vainqueur (en solo, fin du contre-la-montre : elyrace/draw)',
-            'execute unless entity @a[tag=mg.play] run function mg:elyrace/draw']
+            '# plus aucun participant (déconnexion) : fin sans vainqueur',
+            'execute unless entity @a[tag=mg.play] run function mg:core/draw']
     return out
 
 
@@ -132,6 +147,9 @@ def wall_lines():
 def wall_adv_lines():
     return ['# Avancement mg:elyrace_wall : le joueur (@s) vient de subir des dégâts de collision en vol',
             'advancement revoke @s only mg:elyrace_wall',
+            '# solo : le joueur est dans sa phase de course (le solo ne passe pas par $game ni $state)',
+            'execute if entity @s[tag=mg.xso,scores={mg.xph=2}] run return run function mg:elyrace/wall',
+            'execute if entity @s[tag=mg.xso] run return 0',
             'execute unless score $game mg.st matches %d run return 0' % GAME_ID,
             'execute unless score $state mg.st matches 2 run return 0',
             'execute unless entity @s[tag=mg.play,scores={mg.xf=0}] run return 0',
@@ -140,22 +158,22 @@ def wall_adv_lines():
 
 def finish_lines(specs):
     jf = '{"selector":"@s","color":"yellow"}'
-    out = ['# @s = joueur qui franchit l\'anneau d\'arrivée',
+    out = ['# @s = joueur qui franchit l\'anneau d\'arrivée (course de groupe ; le solo a sa propre arrivée, qui fixe sa phase 3)',
+            'execute if entity @s[tag=mg.xso] run return run function mg:elyrace/solo/finish',
             'scoreboard players add $xf mg.st 1',
             'scoreboard players operation @s mg.xf = $xf mg.st',
             'scoreboard players operation #s mg.st = $xt mg.st', 'scoreboard players operation #s mg.st /= #k20 mg.st',
-            '# en solo : pas de position (il n\'y a personne à devancer), le temps exact vient de c<N>/record',
-            'execute unless score $xs mg.st matches 1 run tellraw @a[tag=mg.play] [{"text":"🏁 ","color":"gold"},%s,{"text":" passe la ligne d\'arrivée en position ","color":"gray"},{%s,"color":"gold","bold":true},{"text":" (","color":"gray"},{"score":{"name":"#s","objective":"mg.st"},"color":"white"},{"text":" s)","color":"gray"}]' % (jf, SB % 'mg.xf'),
-            'execute if score $xs mg.st matches 1 run tellraw @a[tag=mg.play] [{"text":"🏁 ","color":"gold"},%s,{"text":" passe la ligne d\'arrivée (","color":"gray"},{"score":{"name":"#s","objective":"mg.st"},"color":"white"},{"text":" s)","color":"gray"}]' % jf,
+            'tellraw @a[tag=mg.play] [{"text":"🏁 ","color":"gold"},%s,{"text":" passe la ligne d\'arrivée en position ","color":"gray"},{%s,"color":"gold","bold":true},{"text":" (","color":"gray"},{"score":{"name":"#s","objective":"mg.st"},"color":"white"},{"text":" s)","color":"gray"}]' % (jf, SB % 'mg.xf'),
             'title @s title [{"text":"🏁 Arrivée !","color":"gold","bold":true}]',
             'execute at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1',
             'execute at @s run particle minecraft:firework ~ ~1 ~ 1 1 1 0.2 60',
-            '# records (chrono $xt, comme en solo) : personnel puis serveur, selon le parcours $xc']
-    out += ['execute if score $xc mg.st matches %d run function %s' % (s.NUM, CC.fn(s, 'record')) for s in specs]
-    out += ['# premier arrivé : la course s\'arrête dans 20 s au plus, le temps que les autres terminent (en solo : fin immédiate, tick le voit)',
+            '# records : le temps est lu dans #xrt (chrono $xt ici), personnel puis serveur, selon le parcours du joueur (mg.xcr)',
+            'scoreboard players operation #xrt mg.st = $xt mg.st']
+    out += CC.per_course(specs, 'record')
+    out += ['# premier arrivé : la course s\'arrête dans 20 s au plus, le temps que les autres terminent',
             'execute if score $xf mg.st matches 1 run scoreboard players set $xw mg.st 1',
             'execute if score $xf mg.st matches 1 run scoreboard players set $xe mg.st %d' % END_WAIT,
-            'execute if score $xf mg.st matches 1 unless score $xs mg.st matches 1 run tellraw @a[tag=mg.play] [{"text":"🪽 Les autres ont 20 secondes pour terminer et se classer.","color":"gold"}]',
+            'execute if score $xf mg.st matches 1 run tellraw @a[tag=mg.play] [{"text":"🪽 Les autres ont 20 secondes pour terminer et se classer.","color":"gold"}]',
             '# arrivé : mis en sécurité au perchoir de départ (la zone construite s\'arrête après l\'arrivée), en spectateur',
             'execute store result storage mg:c x int 1 run scoreboard players get $px mg.st',
             'execute store result storage mg:c y int 1 run scoreboard players get $py mg.st',
@@ -183,7 +201,6 @@ def small_lines():
         'equip': ['# @s = joueur : élytres verrouillées (pas de fusée au départ : elles viennent des anneaux d\'or)',
                   'item replace entity @s armor.chest with ' + ELYTRA],
         'end': ['# Fin de la course : gagne le premier arrivé encore en ligne (plus petite place mg.xf) ; les autres sont classés dans le chat',
-                SOLO_GUARD,
                 'execute unless entity @a[tag=mg.play,scores={mg.xf=1..}] run return run function mg:core/draw',
                 'scoreboard players set #mn mg.st 9999',
                 'execute as @a[tag=mg.play,scores={mg.xf=1..}] run scoreboard players operation #mn mg.st < @s mg.xf',
@@ -192,7 +209,6 @@ def small_lines():
                 'execute as @a[tag=mg.xw1,limit=1] run function mg:core/win_player',
                 'tag @a remove mg.xw1'],
         'timeout': ['# Temps écoulé : un arrivé en ligne gagne, sinon le plus avancé (anneaux validés, puis x maximal) ; rien parcouru : égalité',
-                    SOLO_GUARD,
                     'execute if entity @a[tag=mg.play,scores={mg.xf=1..}] run return run function mg:elyrace/end',
                     'tellraw @a[tag=mg.play] [{"text":"🪽 Temps écoulé : le plus avancé l\'emporte !","color":"gold"}]',
                     '# clé de classement par joueur (dans mg.xx, libre à ce stade) : anneaux * 2000 + x maximal',
@@ -207,9 +223,7 @@ def small_lines():
                     'execute as @a[tag=mg.play] if score @s mg.xx = #mx mg.st run tag @s add mg.xtp',
                     'execute as @a[tag=mg.xtp,limit=1] run function mg:core/win_player',
                     'tag @a remove mg.xtp'],
-        'cleanup': ['# Nettoyage de la Course d\'élytres (appelé au retour au lobby) ; fin d\'un solo : tick de la fin ($xse, délai de 30 s) puis drapeau $xs à 0',
-                    'execute if score $xs mg.st matches 1 run scoreboard players operation $xse mg.st = $tc mg.st',
-                    'scoreboard players set $xs mg.st 0',
+        'cleanup': ['# Nettoyage de la Course d\'élytres (appelé au retour au lobby)',
                     'tag @a remove mg.xw1', 'tag @a remove mg.xtp'] + W.cleanup_lines() + [
                     'function mg:elyrace/fl_remove', 'scoreboard objectives setdisplay sidebar'],
         'place_one': ['# @s = joueur : prend la place suivante sur la plateforme de départ',

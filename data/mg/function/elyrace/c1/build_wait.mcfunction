@@ -4,7 +4,9 @@ execute if score $xbk mg.st matches 0 run return 0
 # une partie démarre pendant la construction (course, solo ou autre jeu) : on ne construit pas (les remplissages sont lourds) et $xbw
 # n'avance pas (pas de faux build_fail). Choix assumé : la tranche en cours reste chargée de force pendant la pause (la relâcher puis
 # la recharger ferait ré-attendre le chargement) ; la pause dure autant que la partie, jusqu'à ce que $state revienne à 0
+# et que les solos soient finis (un solo ne passe pas par $state : garde propre, SOLO_BUSY)
 execute unless score $state mg.st matches 0 run return run schedule function mg:elyrace/c1/build_wait 20t
+execute if entity @a[tag=mg.xso] run return run schedule function mg:elyrace/c1/build_wait 20t
 execute if score $xbk mg.st matches 1 if function mg:elyrace/c1/loaded_1 run return run function mg:elyrace/c1/clear_1
 execute if score $xbk mg.st matches 2 if function mg:elyrace/c1/loaded_2 run return run function mg:elyrace/c1/clear_2
 execute if score $xbk mg.st matches 3 if function mg:elyrace/c1/loaded_3 run return run function mg:elyrace/c1/clear_3

@@ -1,6 +1,6 @@
-"""Controles statiques du contre-la-montre solo et des records (appeles par checks.py) : le solo partage $game 66 et $state avec la
-course de groupe, il ne tient donc que par des gardes sur $xs ; chacune est verifiee ici, ainsi que les 4 branchements dans le moteur
-(core/tick, countdown, begin, reconnect), poses par wire_elyrace3.py. Aucun import de checks.py (il importe ce module).
+"""Controles statiques du contre-la-montre solo PAR JOUEUR et des records (appeles par checks.py). Le solo ne touche jamais la machine a
+etats : il ne tient que par ses gardes, toutes verifiees ici, avec le branchement dans le moteur (core/tick, pose par wire_elyrace4.py)
+et les crochets de la 2c qui doivent avoir disparu. Aucun import de checks.py (il importe ce module).
 Python stdlib uniquement (compatible 3.8).
 """
 import os
@@ -10,9 +10,14 @@ import course_common as CC
 import game as G
 import menus as M
 
-NOT_SOLO = 'unless score $xs mg.st matches 1'
-DRAW_TARGETS = {'draw': {'draw'}, 'end': {'draw', 'win_player'}, 'timeout': {'draw', 'win_player'}}    # fonction elyrace -> appels core/ permis
 REFUSAL = re.compile(r'^execute .* run return run tellraw @s ')
+SOLO_RETURN = re.compile(r'^execute if entity @s\[tag=mg\.xso\] run return run function (mg:[a-z_0-9/]+)$')    # 1re ligne d'une fonction commune qui renvoie le solo vers la sienne
+STATE_WRITE = re.compile(r'scoreboard players (set|add|remove|operation|reset) \$(state|game|timer)\b')
+FORBIDDEN_CALL = re.compile(r'\bfunction mg:core/(countdown|begin|draw|ending|return_lobby|opt_spec|abort|win_player)\b')
+PLAY_SELECTOR = re.compile(r'@[ae]\[[^\]]*tag=mg\.play')       # @a[tag=mg.play...] : un solo ne cible jamais les participants d'une partie
+BUSY_WAIT = 'execute if entity @a[tag=mg.xso] run return run schedule function '
+PURGE = re.compile(r'^scoreboard players reset \$xse? mg\.st$')   # seul emploi permis de $xs / $xse : la purge des anciens drapeaux (elyrace/objectives)
+SOLO_ONLY = {'solo/go': 'scoreboard players set @s mg.xph 2', 'solo/start': 'scoreboard players set @s mg.xph 1', 'solo/finish': 'scoreboard players set @s mg.xph 3'}
 
 
 def code(text):
@@ -28,30 +33,108 @@ def repo_code(root, rel):
         return code(fh.read().replace('\r\n', '\n'))
 
 
-def draw_problems(files):
-    """core/draw et core/win_player ne sont appeles que par elyrace/draw, end et timeout, dont la 1re commande renvoie vers solo/end en solo."""
+def names(files):
+    """Noms des fonctions generees (relatifs a elyrace/)."""
+    return {rel[len(CC.FN):-len('.mcfunction')]: rel for rel in files if rel.startswith(CC.FN) and rel.endswith('.mcfunction')}
+
+
+def reach_lines(files, start):
+    """Lignes de code atteignables depuis la fonction elyrace `start` : {nom: [lignes]}. Une fonction qui renvoie le solo vers la sienne
+    (SOLO_RETURN) n'est lue que jusqu'a cette ligne : la suite n'est jamais executee pour un joueur en solo."""
+    base, seen, todo = names(files), {}, [start]
+    while todo:
+        name = todo.pop()
+        if name in seen or name not in base:
+            continue
+        lines = []
+        for line in code(files[base[name]]):
+            lines.append(line)
+            if SOLO_RETURN.match(line):
+                break
+        seen[name] = lines
+        for line in lines:
+            todo += [t[len('elyrace/'):] for t in re.findall(r'\bfunction mg:(elyrace/[a-z_0-9/]+)', line)]
+    return seen
+
+
+def solo_problems(files):
+    """Le solo n'ecrit pas la machine a etats, ne cible pas les participants, n'appelle aucune fin de partie."""
     bad = []
+    for name in sorted(n for n in names(files) if n.startswith('solo/')):
+        for line in fn_code(files, name):
+            if STATE_WRITE.search(line):
+                bad.append('elyrace/%s : ecrit $state, $game ou $timer : %s' % (name, line))
+            if FORBIDDEN_CALL.search(line):
+                bad.append('elyrace/%s : appelle la machine a etats ou une fin de partie : %s' % (name, line))
+            if PLAY_SELECTOR.search(line) or re.search(r'tag @\S+ (add|remove) mg\.play\b', line):
+                bad.append('elyrace/%s : cible ou tague les participants (mg.play) : %s' % (name, line))
     for rel, text in sorted(files.items()):
         if rel.endswith('.mcfunction'):
-            name = rel[len(CC.FN):-len('.mcfunction')]
             for line in code(text):
-                for target in re.findall(r'\bfunction mg:core/(draw|win_player)\b', line):
-                    if target not in DRAW_TARGETS.get(name, ()):
-                        bad.append('%s : appelle core/%s sans passer par la garde du solo : %s' % (rel, target, line))
-    for name in ('end', 'timeout'):
-        if fn_code(files, name)[:1] != [G.SOLO_GUARD]:
-            bad.append('elyrace/%s : la premiere commande doit etre la garde du solo (%s)' % (name, G.SOLO_GUARD))
-    if not fn_code(files, 'draw')[:1] or not fn_code(files, 'draw')[0].startswith('execute if score $xs mg.st matches 1 run return run function mg:elyrace/solo/end'):
-        bad.append('elyrace/draw : la premiere commande doit renvoyer vers solo/end quand $xs vaut 1')
+                if re.search(r'\$xse?\b', line) and not (rel == CC.FN + 'objectives.mcfunction' and PURGE.match(line)):
+                    bad.append('%s : $xs / $xse n\'existent plus (le solo est par joueur) : %s' % (rel, line))
+    reach = reach_lines(files, 'solo/step')
+    if 'solo/step' not in reach:
+        return bad + ['solo/step introuvable']
+    for name, lines in sorted(reach.items()):
+        for line in lines:
+            if re.search(r'\$(xc|xt)\b', line):
+                bad.append('elyrace/%s (atteint depuis solo/step) : lit $xc ou $xt, qui sont ceux de la course de groupe : %s' % (name, line))
+    return bad
+
+
+def entry_exit_problems(files):
+    """solo/go est la seule entree en course (phase 2), solo/stop la seule sortie (mg.xso), solo/start le seul lancement ; la pause est rendue par stop."""
+    bad = []
+    for rel, text in sorted(files.items()):
+        if not rel.endswith('.mcfunction'):
+            continue
+        name = rel[len(CC.FN):-len('.mcfunction')]
+        for line in code(text):
+            if re.search(r'mg\.xph (\d)\b', line) and re.search(r'players set \S+ mg\.xph [123]\b', line):
+                value = re.search(r'mg\.xph ([123])\b', line).group(1)
+                want = [n for n, l in SOLO_ONLY.items() if l.endswith('mg.xph ' + value)][0]
+                if name != want or line != SOLO_ONLY[want]:
+                    bad.append('%s : pose la phase %s ailleurs que dans elyrace/%s : %s' % (rel, value, want, line))
+            if re.search(r'tag \S+ add mg\.xso\b', line) and name != 'solo/start':
+                bad.append('%s : pose mg.xso ailleurs que dans solo/start : %s' % (rel, line))
+            if re.search(r'tag \S+ remove mg\.xso\b', line) and name not in ('solo/stop', 'uninstall'):
+                bad.append('%s : retire mg.xso ailleurs que dans solo/stop : %s' % (rel, line))
+    for want, line in SOLO_ONLY.items():
+        if line not in fn_code(files, want):
+            bad.append('elyrace/%s : doit poser la phase (%s)' % (want, line))
+    stop = fn_code(files, 'solo/stop')
+    keep = 'execute unless entity @s[tag=mg.xsp0] run tag @s remove mg.spectate'
+    if keep not in stop or 'tag @s remove mg.xsp0' not in stop:
+        bad.append('solo/stop : doit rendre la pause d\'avant (%s) puis oublier mg.xsp0' % keep)
+    resets = [i for i, l in enumerate(stop) if l.endswith('run function mg:core/reset_player')]
+    if len(resets) != 1 or 'unless entity @s[tag=mg.play]' not in stop[resets[0]] or 'unless entity @s[tag=mg.out]' not in stop[resets[0]]:
+        bad.append('solo/stop : reset_player doit etre appele une fois, sauf pour un participant (mg.play) ou un spectateur (mg.out)')
+    elif 'tag @s remove mg.xso' not in stop or keep not in stop or not stop.index('tag @s remove mg.xso') < stop.index(keep) < resets[0]:
+        bad.append('solo/stop : le tag mg.xso doit partir AVANT le retour de la pause et le retour au lobby (plus aucune detection)')
+    start = fn_code(files, 'solo/start')
+    first = [i for i, l in enumerate(start) if re.match(r'^tag @s add ', l)]
+    refusals = [i for i, l in enumerate(start) if REFUSAL.match(l)]
+    if not first or not refusals:
+        bad.append('solo/start : refus ou lancement absents')
+    elif max(refusals) > min(first):
+        bad.append('solo/start : un refus suit la premiere ecriture d\'etat (il laisserait le solo a moitie lance)')
+    spectate, memo = 'tag @s add mg.spectate', 'execute if entity @s[tag=mg.spectate] run tag @s add mg.xsp0'
+    if spectate not in start or memo not in start or start.index(memo) > start.index(spectate):
+        bad.append('solo/start : la pause d\'avant (mg.xsp0) doit etre memorisee AVANT la pose de mg.spectate')
     return bad
 
 
 def records_problems(files):
-    """Records et drapeau du solo : jamais remis a zero par une preparation de partie (prepare remet G.OBJECTIVES a zero a chaque depart)."""
-    bad = ['G.OBJECTIVES contient mg.%s : prepare le remettrait a zero a chaque depart' % n for n, _, _ in G.OBJECTIVES if n == 'xs' or re.match(r'xr\d+$', n)]
+    """Records et etat du solo : jamais remis a zero par une preparation de partie (prepare remet G.OBJECTIVES a zero a chaque depart)."""
+    extra = {n for n, _ in G.EXTRA_OBJECTIVES}
+    bad = ['G.OBJECTIVES contient mg.%s : prepare le remettrait a zero a chaque depart' % n for n, _, _ in G.OBJECTIVES if n == 'xs' or n in extra or re.match(r'xr\d+$', n)]
+    allowed = ('scoreboard players operation @a[tag=mg.play] mg.xcr = $xc mg.st',       # le parcours de chaque participant
+               'execute as @a[tag=mg.xso] run function mg:elyrace/solo/stop')            # un depart de groupe arrete les solos
     for line in fn_code(files, 'prepare'):
-        if re.search(r'\bmg\.(xs|xr\d+)\b', line):
-            bad.append('elyrace/prepare : touche un record ou le trigger du solo : %s' % line)
+        for m in re.findall(r'\bmg\.(xs\w*|xr\d+|xph|xst|xcr)\b', line):
+            if line not in allowed and not (m == 'xso' and line.startswith('tellraw @a[tag=mg.xso] ')):
+                bad.append('elyrace/prepare : touche un record, le trigger ou l\'etat du solo : %s' % line)
     for rel, text in sorted(files.items()):
         if rel.endswith('.mcfunction'):
             for line in code(text):
@@ -81,47 +164,63 @@ def trigger_problems(files, specs):
                 bad.append('%s : trigger mg.xs set %d : au-dela du dernier parcours (%d)' % (rel, v, top))
     if not seen:
         bad.append('aucun trigger mg.xs set <v> dans les fichiers generes (menus absents ?)')
+    if not any(lo == M.SOLO_STOP and not opened for lo, opened in handled):
+        bad.append('solo/cmd : la valeur %d (arreter tous les solos) n\'est pas traitee' % M.SOLO_STOP)
+    return bad
+
+
+def common_problems(files, specs):
+    """Les fonctions communes (finish, wall_adv, prepare, construction) savent qu'un solo existe."""
+    bad = []
+    if fn_code(files, 'finish')[:1] != ['execute if entity @s[tag=mg.xso] run return run function mg:elyrace/solo/finish']:
+        bad.append('elyrace/finish : la premiere commande doit renvoyer le solo vers solo/finish')
+    adv = fn_code(files, 'wall_adv')
+    solo = [i for i, l in enumerate(adv) if 'tag=mg.xso' in l]
+    other = [i for i, l in enumerate(adv) if '$game' in l]
+    if len(solo) != 2 or not other or max(solo) > min(other):
+        bad.append('elyrace/wall_adv : le solo (phase 2 : wall, sinon rien) doit etre traite avant les tests de $game et $state')
+    prep = fn_code(files, 'prepare')
+    stop = 'execute as @a[tag=mg.xso] run function mg:elyrace/solo/stop'
+    setup = [i for i, l in enumerate(prep) if '/setup' in l]
+    if stop not in prep or not setup or prep.index(stop) > min(setup):
+        bad.append('elyrace/prepare : doit arreter les solos (%s) avant d\'installer le depart du groupe' % stop)
+    xcr = 'scoreboard players operation @a[tag=mg.play] mg.xcr = $xc mg.st'
+    place = [i for i, l in enumerate(prep) if 'elyrace/place_one' in l]
+    if xcr not in prep or not place or prep.index(xcr) > min(place):
+        bad.append('elyrace/prepare : doit poser mg.xcr (parcours de chaque participant) avant place_one (%s)' % xcr)
+    waits = (['c%d/build_wait' % s.NUM for s in specs] + ['build_next']
+             + sorted(n for n in names(files) if re.match(r'c\d+/clear_\d+$', n)))       # chaque passe de nettoyage suspendue pendant un solo
+    for w in waits:
+        if not any(l.startswith(BUSY_WAIT) for l in fn_code(files, w)):
+            bad.append('elyrace/%s : la construction doit attendre aussi les solos (%s...)' % (w, BUSY_WAIT))
+    for w in ['build'] + ['c%d/build' % s.NUM for s in specs]:
+        if not any(l.startswith('execute if entity @a[tag=mg.xso] run return run tellraw @a[tag=mg.admin]') for l in fn_code(files, w)):
+            bad.append('elyrace/%s : un build d\'admin doit etre refuse pendant un solo' % w)
     return bad
 
 
 def hooks_problems(root):
-    """Les 4 branchements du moteur (wire_elyrace3.py) sont presents dans le depot."""
-    bad, hint = [], ' (lancer wire_elyrace3.py)'
+    """Branchement du moteur (wire_elyrace4.py) present, crochets de la 2c disparus, core/request et le reste du moteur sans $xs."""
+    bad, hint = [], ' (lancer wire_elyrace4.py)'
     tick = repo_code(root, 'core/tick')
-    for want in ('scoreboard players enable @a mg.xs', 'execute as @a[scores={mg.xs=1..}] run function mg:elyrace/solo/cmd'):
-        if want not in tick:
-            bad.append('core/tick : ligne absente : %s%s' % (want, hint))
-    cd = repo_code(root, 'core/countdown')
-    hook = 'execute if score $xs mg.st matches 1 if score $game mg.st matches 66 run return run function mg:elyrace/solo/countdown'
-    dec = 'scoreboard players remove $timer mg.st 1'
-    if hook not in cd or dec not in cd or cd.index(hook) > cd.index(dec):
-        bad.append('core/countdown : l\'aiguillage vers solo/countdown doit preceder « %s » (sinon le chrono baisse deux fois)%s' % (dec, hint))
-    stats = [l for l in repo_code(root, 'core/begin') if 'mg.stp' in l]
-    if len(stats) != 2 or any(NOT_SOLO not in l for l in stats):
-        bad.append('core/begin : les 2 lignes de statistique mg.stp doivent porter « %s » : %s%s' % (NOT_SOLO, stats, hint))
-    horn = [l for l in repo_code(root, 'core/begin') if 'event.raid.horn' in l]
-    own = 'execute if score $xs mg.st matches 1 as @a[tag=mg.play] at @s run playsound'
-    if len(horn) != 2 or sum(l.startswith('execute ' + NOT_SOLO + ' ') for l in horn) != 1 or sum(l.startswith(own) for l in horn) != 1:
-        bad.append('core/begin : le cor de raid doit etre joue a tout le lobby hors solo, et au joueur du solo seulement sinon : %s%s' % (horn, hint))
-    spec = [l for l in repo_code(root, 'core/reconnect') if 'core/reconnect_spec' in l]
-    if len(spec) != 1 or NOT_SOLO not in spec[0]:
-        bad.append('core/reconnect : l\'appel de reconnect_spec doit porter « %s » : %s%s' % (NOT_SOLO, spec, hint))
-    return bad
-
-
-def order_problems(files):
-    """Ordre de solo/start : refus, puis $xs, puis $state, puis prepare ; $xs remis a 0 par cleanup et announce."""
-    bad = []
-    lines = fn_code(files, 'solo/start')
-    find = lambda s: lines.index(s) if s in lines else None
-    xs, state, prep = find('scoreboard players set $xs mg.st 1'), find('scoreboard players set $state mg.st 1'), find('function mg:elyrace/prepare')
-    if None in (xs, state, prep) or not xs < state < prep:
-        bad.append('solo/start : l\'ordre doit etre $xs 1, $state 1, prepare (les gardes de end, timeout et cleanup lisent $xs)')
-    elif any(REFUSAL.match(l) for l in lines[xs:]):
-        bad.append('solo/start : un refus suit la pose de $xs (il laisserait le solo a moitie lance)')
-    for name in ('cleanup', 'announce'):
-        if 'scoreboard players set $xs mg.st 0' not in fn_code(files, name):
-            bad.append('elyrace/%s : doit remettre $xs a 0' % name)
+    find = lambda s: [i for i, l in enumerate(tick) if s in l]
+    hook, opt, rec, void = find('function mg:elyrace/solo/tick'), find('run function mg:core/opt'), find('run function mg:core/reconnect'), find('run function mg:core/void_catch')
+    if len(hook) != 1 or tick[hook[0]] != 'execute if entity @a[tag=mg.xso] run function mg:elyrace/solo/tick':
+        bad.append('core/tick : la ligne solo/tick est absente ou modifiee%s' % hint)
+    elif not (opt and rec and void) or not (max(opt + rec) < hook[0] < min(void)):
+        bad.append('core/tick : solo/tick doit venir apres core/opt et core/reconnect (le solo lit la pause) et avant void_catch%s' % hint)
+    for l in tick:
+        if re.search(r'^execute .* run clear @a\[[^\]]*\] minecraft:(elytra|firework_rocket)\[minecraft:custom_data~\{mg_elyr:1b\}\]$', l) and 'tag=!mg.xso' not in l:
+            bad.append('core/tick : le nettoyage des objets mg_elyr doit epargner les joueurs en solo (tag=!mg.xso)%s : %s' % (hint, l))
+    if 'scoreboard players enable @a mg.xs' not in tick or 'execute as @a[scores={mg.xs=1..}] run function mg:elyrace/solo/cmd' not in tick:
+        bad.append('core/tick : activation ou appel de solo/cmd absent (wire_elyrace3.py)')
+    base = os.path.join(root, 'data', 'mg', 'function', 'core')
+    for fname in sorted(os.listdir(base)):
+        if fname.endswith('.mcfunction'):
+            rel = 'core/' + fname[:-len('.mcfunction')]
+            for l in repo_code(root, rel):
+                if re.search(r'\$xse?\b', l) or (rel == 'core/request' and 'xso' in l):
+                    bad.append('%s : crochet de la 2c ($xs) a retirer, ou request touche au solo%s : %s' % (rel, hint, l))
     return bad
 
 
@@ -132,9 +231,11 @@ def objective_problems(files):
     for rel, text in files.items():
         if rel.endswith('.mcfunction'):
             added.update(re.findall(r'scoreboard objectives add (mg\.\w+)', text))
-    return ['uninstall : objectif %s cree mais jamais retire' % o for o in sorted(added - removed)]
+    bad = ['uninstall : objectif %s cree mais jamais retire' % o for o in sorted(added - removed)]
+    gone = '\n'.join(fn_code(files, 'uninstall'))
+    return bad + ['uninstall : le tag %s n\'est pas retire' % t for t in G.SOLO_TAGS if 'tag @a remove ' + t not in gone]
 
 
 def problems(root, files, specs):
-    return (draw_problems(files) + records_problems(files) + trigger_problems(files, specs) + hooks_problems(root)
-            + order_problems(files) + objective_problems(files))
+    return (solo_problems(files) + entry_exit_problems(files) + records_problems(files) + trigger_problems(files, specs)
+            + common_problems(files, specs) + hooks_problems(root) + objective_problems(files))

@@ -1,9 +1,9 @@
 # GO ! (état 1 → 2)
 scoreboard players set $state mg.st 2
 
-# Stats : une partie jouée de plus (pas en contre-la-montre solo)
-execute unless score $xs mg.st matches 1 run scoreboard players add @a[tag=mg.play] mg.stp 1
-execute unless score $xs mg.st matches 1 as @a[tag=mg.play] run function mg:hall/top {obj:"mg.stp",key:"stp",lbl:"▶ Le plus assidu",col:"green",unit:" partie(s)"}
+# Stats : une partie jouée de plus
+scoreboard players add @a[tag=mg.play] mg.stp 1
+execute as @a[tag=mg.play] run function mg:hall/top {obj:"mg.stp",key:"stp",lbl:"▶ Le plus assidu",col:"green",unit:" partie(s)"}
 effect clear @a[tag=mg.play] minecraft:slowness
 effect clear @a[tag=mg.play] minecraft:resistance
 execute as @a[tag=mg.play] run function mg:core/unfreeze
@@ -13,8 +13,7 @@ effect give @a[tag=mg.play] minecraft:instant_health 1 10 true
 effect give @a[tag=mg.play] minecraft:saturation 1 9 true
 
 title @a[tag=mg.play] title [{"text":"GO !","color":"green","bold":true}]
-execute unless score $xs mg.st matches 1 as @a[tag=!mg.surv] at @s run playsound minecraft:event.raid.horn master @s ~ ~ ~ 0.7 1.4
-execute if score $xs mg.st matches 1 as @a[tag=mg.play] at @s run playsound minecraft:event.raid.horn master @s ~ ~ ~ 0.7 1.4
+execute as @a[tag=!mg.surv] at @s run playsound minecraft:event.raid.horn master @s ~ ~ ~ 0.7 1.4
 
 function mg:sb/start
 execute if score $game mg.st matches 1 run function mg:spleef/go
