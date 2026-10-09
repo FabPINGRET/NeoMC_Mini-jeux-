@@ -6,6 +6,7 @@ Prends le drapeau adverse dans sa base et ramène-le sur ton socle pendant que T
 3 captures pour gagner (ou le plus de captures au bout de 10 min). Le porteur brille et a le drapeau sur la tête ;
 s'il meurt, le drapeau tombe : un adversaire peut le reprendre, un défenseur le renvoie chez lui en le touchant,
 sinon il rentre seul au bout de 30 s. Réapparition illimitée dans sa base.
+Seul : mode entraînement (pas de victoire, fin au chrono ou menu → Arrêter).
 """
 import sys
 import common as C
@@ -87,8 +88,13 @@ w('ctf/kit', ['# @s : kit', 'clear @s', 'give @s minecraft:stone_sword[unbreakab
 w('ctf/go', ['# Départ', 'scoreboard players set $cft mg.st 0', 'execute as @a[tag=mg.play] run function mg:ctf/kit',
              'scoreboard players set @a mg.deaths 0', 'scoreboard players set Rouge mg.cf 0', 'scoreboard players set Bleu mg.cf 0',
              'scoreboard objectives setdisplay sidebar mg.cf',
-             'tellraw @a[tag=mg.play] ' + js([{'text': '🚩 CAPTURE THE FLAG : ', 'color': 'gold', 'bold': True},
-                                              {'text': f'va chercher le drapeau adverse (au fond de sa base) et ramène-le sur ton socle doré, pendant que TON drapeau y est. {WIN} captures pour gagner, 10 min max.', 'color': 'gray'}])])
+             'execute if score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] ' + js([{'text': '🚩 CAPTURE THE FLAG : ', 'color': 'gold', 'bold': True},
+                                              {'text': f'va chercher le drapeau adverse (au fond de sa base) et ramène-le sur ton socle doré, pendant que TON drapeau y est. {WIN} captures pour gagner, 10 min max.', 'color': 'gray'}]),
+             # seul : mêmes consignes sans la condition de victoire
+             'execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] ' + js([{'text': '🚩 CAPTURE THE FLAG : ', 'color': 'gold', 'bold': True},
+                                              {'text': 'va chercher le drapeau adverse (au fond de sa base) et ramène-le sur ton socle doré, pendant que TON drapeau y est. 10 min max.', 'color': 'gray'}]),
+             # seul : entraînement, pas de victoire
+             'execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] ' + js([{'text': "🚩 Mode entraînement (seul) : le drapeau bleu n'est pas défendu, entraîne-toi aux captures. Pas de victoire ; il faut au moins 2 joueurs pour une vraie partie.", 'color': 'yellow'}])])
 
 # ---------- tick
 TK = ['# 🚩 Capture the Flag — tick', 'scoreboard players add $cft mg.st 1',
@@ -115,8 +121,8 @@ TK += [f'execute if score $cft mg.st matches {LIMIT - 1200} run tellraw @a[tag=m
        f'execute if score $state mg.st matches 2 if score $cft mg.st matches {LIMIT}.. run function mg:ctf/timeout',
        'execute store result score $cfn mg.st if entity @a[tag=mg.play,team=mg_red]',
        'execute store result score $cfm mg.st if entity @a[tag=mg.play,team=mg_blue]',
-       'execute if score $state mg.st matches 2 if score $cfn mg.st matches 0 if score $cfm mg.st matches 1.. run return run function mg:core/win_blue',
-       'execute if score $state mg.st matches 2 if score $cfm mg.st matches 0 if score $cfn mg.st matches 1.. run return run function mg:core/win_red',
+       'execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $cfn mg.st matches 0 if score $cfm mg.st matches 1.. run return run function mg:core/win_blue',
+       'execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $cfm mg.st matches 0 if score $cfn mg.st matches 1.. run return run function mg:core/win_red',
        'execute if score $state mg.st matches 2 if score $cfm mg.st matches 0 if score $cfn mg.st matches 0 run function mg:core/draw']
 w('ctf/tick', TK)
 
@@ -157,7 +163,7 @@ for t, (nm, col, blk, x, s, rgb, oth) in T.items():
                                                             {'text': ' Bleu', 'color': 'blue'}]),
                            f'title @a[tag=mg.play] title {{"text":"🚩 Capture {nm} !","color":"{col}","bold":true}}',
                            'execute as @a[tag=mg.play] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 0.8 1.2',
-                           f'execute if score $state mg.st matches 2 if score {"Rouge" if t == "red" else "Bleu"} mg.cf matches {WIN}.. run function mg:core/win_{t}'])
+                           f'execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score {"Rouge" if t == "red" else "Bleu"} mg.cf matches {WIN}.. run function mg:core/win_{t}'])
 
 w('ctf/respawn', ['# @s : mort ou chute → lâche le drapeau, réapparaît dans sa base', 'scoreboard players set @s mg.deaths 0',
                   'execute if entity @s[tag=mg.cfcr] run function mg:ctf/drop_red',
@@ -165,6 +171,8 @@ w('ctf/respawn', ['# @s : mort ou chute → lâche le drapeau, réapparaît dans
                   'effect clear @s minecraft:glowing', 'function mg:ctf/spawn', 'function mg:ctf/kit',
                   'effect give @s minecraft:resistance 3 4 true', 'effect give @s minecraft:instant_health 1 4 true'])
 w('ctf/timeout', ['# 10 min : le plus de captures gagne',
+                  'execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] ' + js([{'text': "🚩 Fin de l'entraînement.", 'color': 'yellow'}]),
+                  'execute unless score $n0 mg.st matches 2.. run return run function mg:core/draw',
                   'execute if score Rouge mg.cf > Bleu mg.cf run return run function mg:core/win_red',
                   'execute if score Bleu mg.cf > Rouge mg.cf run return run function mg:core/win_blue',
                   'function mg:core/draw'])

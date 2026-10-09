@@ -11,7 +11,8 @@ execute as @a[tag=mg.phh] at @s run function mg:ph/follow
 execute as @a[tag=mg.phh,scores={mg.phn=1..}] at @s run function mg:ph/taunt_one
 scoreboard players reset @a[scores={mg.phn=1..}] mg.phn
 execute as @e[type=minecraft:interaction,tag=mg.phi] if data entity @s attack run function mg:ph/hit_prop
-execute as @a[tag=mg.phh,scores={mg.deaths=1..}] run function mg:ph/found
+execute if score $n0 mg.st matches 2.. as @a[tag=mg.phh,scores={mg.deaths=1..}] run function mg:ph/found
+execute unless score $n0 mg.st matches 2.. as @e[type=minecraft:player,tag=mg.phh,scores={mg.deaths=1..}] run function mg:ph/srevive
 execute as @a[tag=mg.phs,scores={mg.deaths=1..}] run scoreboard players set @s mg.deaths 0
 scoreboard players operation $phq mg.st = $pht mg.st
 scoreboard players set #400 mg.st 400
@@ -23,6 +24,6 @@ scoreboard players operation $phq mg.st %= #20 mg.st
 execute if score $phq mg.st matches 0 run function mg:ph/second
 execute store result score $phh mg.st if entity @a[tag=mg.play,tag=mg.phh]
 execute store result score $phk mg.st if entity @a[tag=mg.play,tag=mg.phs]
-execute if score $state mg.st matches 2 if score $phh mg.st matches 0 run return run function mg:ph/seekers_win
-execute if score $state mg.st matches 2 if score $phk mg.st matches 0 run return run function mg:ph/hiders_win
+execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $phh mg.st matches 0 run return run function mg:ph/seekers_win
+execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $phk mg.st matches 0 run return run function mg:ph/hiders_win
 execute if score $state mg.st matches 2 if score $pht mg.st matches 4800.. run function mg:ph/hiders_win

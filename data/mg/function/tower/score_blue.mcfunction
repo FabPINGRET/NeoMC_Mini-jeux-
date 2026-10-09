@@ -5,4 +5,4 @@ tellraw @a[tag=mg.play] [{"text":"🏰 ","color":"blue"},{"selector":"@s","color
 execute as @a[tag=mg.play] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.4
 function mg:tower/spawn
 effect give @s minecraft:instant_health 1 4 true
-execute if score $state mg.st matches 2 if score Bleu mg.tw matches 5.. run function mg:core/win_blue
+execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score Bleu mg.tw matches 5.. run function mg:core/win_blue

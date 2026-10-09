@@ -7,6 +7,7 @@ du manoir et s'accroupir = se transformer en cet objet. Immobile 2 s = l'objet s
 Toutes les 20 s, chaque cacheur fait un bruit ; il peut aussi en faire quand il veut avec sa corne (clic droit). Cacheurs : 5 cœurs (2 coups d'épée). Chercheurs : enfermés et aveugles pendant 30 s, puis 3 min 30 de chasse.
 Frapper un objet suspect touche le cacheur (interaction autour de l'objet). Cacheur tué = devient chercheur.
 Il reste un cacheur à la fin → les cacheurs gagnent ; plus aucun → les chercheurs gagnent.
+Seul : mode entraînement (pas de victoire, fin au chrono ou menu → Arrêter).
 """
 import random
 import sys
@@ -82,7 +83,7 @@ w('ph/prepare', ['# 🎭 Prop Hunt — préparation', 'function mg:ph/build', 'f
                  # rôles : 1 chercheur pour 4 joueurs (au moins 1)
                  'execute store result score $phn mg.st if entity @a[tag=mg.play]', 'scoreboard players set #4 mg.st 4',
                  'scoreboard players operation $phn mg.st /= #4 mg.st', 'execute if score $phn mg.st matches ..0 run scoreboard players set $phn mg.st 1',
-                 'function mg:ph/pick', 'execute as @a[tag=mg.play,tag=!mg.phs] run tag @s add mg.phh',
+                 'execute if score $n0 mg.st matches 2.. run function mg:ph/pick', 'execute as @a[tag=mg.play,tag=!mg.phs] run tag @s add mg.phh',
                  'team join mg_red @a[tag=mg.phs]', 'team join mg_ph @a[tag=mg.phh]',
                  f'tp @a[tag=mg.phs] 0.5 89 {Z}.5', 'execute as @a[tag=mg.phs] at @s run spawnpoint @s ~ ~ ~',
                  f'spreadplayers 0 {Z} 2 13 under 85 false @a[tag=mg.phh]', 'execute as @a[tag=mg.phh] at @s run spawnpoint @s ~ ~ ~'])
@@ -94,6 +95,8 @@ w('ph/go', ['# Départ : 30 s pour se cacher', 'scoreboard players set $pht mg.s
             'effect give @a[tag=mg.phs] minecraft:blindness 31 0 true',
             'tellraw @a[tag=mg.phh] ' + js([{'text': '🎭 PROP HUNT — tu te caches ! ', 'color': 'gold', 'bold': True},
                                             {'text': 'Regarde un objet du manoir et ACCROUPIS-TOI pour en prendre l\'apparence. Reste immobile 2 s pour te caler sur la grille. Les chercheurs arrivent dans 30 s ; toutes les 20 s tu fais un petit bruit, et ta corne (clic droit) en fait un quand tu veux. Attention : 5 cœurs seulement !', 'color': 'gray'}]),
+            # seul : entraînement, pas de victoire
+            'execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] ' + js([{'text': "🎭 Mode entraînement (seul) : tu es cacheur, essaie les déguisements (accroupi devant un objet) et le calage sur la grille. Pas de victoire ; il faut au moins 2 joueurs pour une vraie partie.", 'color': 'yellow'}]),
             'tellraw @a[tag=mg.phs] ' + js([{'text': '🎭 PROP HUNT — tu cherches ! ', 'color': 'red', 'bold': True},
                                             {'text': 'Les cacheurs se transforment en objets du manoir. Tu es libéré dans 30 s : frappe les objets suspects, écoute les bruits !', 'color': 'gray'}])])
 w('ph/become_prop', ['# @s devient cacheur : invisible, petit, un objet au hasard',
@@ -116,6 +119,9 @@ for p, i in PID.items():
 for p, i in PID.items():
     A.append(f'execute if score $pp mg.st matches {i} run title @s actionbar [{{"text":"🎭 Tu es : ","color":"gold"}},{{"translate":"block.minecraft.{p}","color":"yellow","bold":true}}]')
 w('ph/apply', A)
+w('ph/srevive', ['# @s (entraînement, seul) : cacheur réapparu après sa mort → retrouve son déguisement', 'scoreboard players set @s mg.deaths 0',
+                 'effect give @s minecraft:invisibility infinite 0 true', 'effect give @s minecraft:saturation infinite 0 true',
+                 'attribute @s minecraft:scale base set 0.5', 'attribute @s minecraft:max_health base set 10', 'function mg:ph/apply'])
 w('ph/copy', ['# @s (cacheur) s\'accroupit : copie l\'objet qu\'il regarde (5 blocs max)', 'scoreboard players set $phf mg.st 0',
               'scoreboard players set $phr mg.st 25', 'execute at @s anchored eyes positioned ^ ^ ^0.2 run function mg:ph/copy_ray',
               'execute if score $phf mg.st matches 0 run title @s actionbar {"text":"Regarde un objet du manoir (tonneau, citrouille, enclume…)","color":"gray"}',
@@ -184,7 +190,9 @@ w('ph/tick', ['# 🎭 Prop Hunt — tick', 'scoreboard players add $pht mg.st 1'
               'execute as @a[tag=mg.phh,scores={mg.phn=1..}] at @s run function mg:ph/taunt_one',
               'scoreboard players reset @a[scores={mg.phn=1..}] mg.phn',
               'execute as @e[type=minecraft:interaction,tag=mg.phi] if data entity @s attack run function mg:ph/hit_prop',
-              'execute as @a[tag=mg.phh,scores={mg.deaths=1..}] run function mg:ph/found',
+              'execute if score $n0 mg.st matches 2.. as @a[tag=mg.phh,scores={mg.deaths=1..}] run function mg:ph/found',
+              # seul : le cacheur reste cacheur
+              'execute unless score $n0 mg.st matches 2.. as @e[type=minecraft:player,tag=mg.phh,scores={mg.deaths=1..}] run function mg:ph/srevive',
               'execute as @a[tag=mg.phs,scores={mg.deaths=1..}] run scoreboard players set @s mg.deaths 0',
               'scoreboard players operation $phq mg.st = $pht mg.st', 'scoreboard players set #400 mg.st 400', 'scoreboard players operation $phq mg.st %= #400 mg.st',
               f'execute if score $pht mg.st matches {HIDE + 1}.. if score $phq mg.st matches 0 run function mg:ph/taunt',
@@ -192,14 +200,19 @@ w('ph/tick', ['# 🎭 Prop Hunt — tick', 'scoreboard players add $pht mg.st 1'
               'execute if score $phq mg.st matches 0 run function mg:ph/second',
               'execute store result score $phh mg.st if entity @a[tag=mg.play,tag=mg.phh]',
               'execute store result score $phk mg.st if entity @a[tag=mg.play,tag=mg.phs]',
-              'execute if score $state mg.st matches 2 if score $phh mg.st matches 0 run return run function mg:ph/seekers_win',
-              'execute if score $state mg.st matches 2 if score $phk mg.st matches 0 run return run function mg:ph/hiders_win',
+              'execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $phh mg.st matches 0 run return run function mg:ph/seekers_win',
+              'execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $phk mg.st matches 0 run return run function mg:ph/hiders_win',
               f'execute if score $state mg.st matches 2 if score $pht mg.st matches {HIDE + HUNT}.. run function mg:ph/hiders_win'])
 w('ph/second', [f'scoreboard players set $phl mg.st {(HIDE + HUNT) // 20}', 'scoreboard players operation $phs2 mg.st = $pht mg.st',
                 'scoreboard players operation $phs2 mg.st /= #20 mg.st', 'scoreboard players operation $phl mg.st -= $phs2 mg.st',
+                # seul : chrono restant
+                'execute unless score $n0 mg.st matches 2.. run title @a[tag=mg.play] actionbar [{"text":"🎭 Entraînement : ","color":"yellow"},{"score":{"name":"$phl","objective":"mg.st"},"color":"yellow","bold":true},{"text":" s","color":"gray"}]',
                 f'execute if score $pht mg.st matches ..{HIDE} run title @a[tag=mg.phs] actionbar [{{"text":"🎭 Les cacheurs se cachent… ","color":"gray"}},{{"score":{{"name":"$phl","objective":"mg.st"}},"color":"yellow"}}]',
                 f'execute if score $pht mg.st matches {HIDE + 1}.. run title @a[tag=mg.phs] actionbar [{{"text":"🎭 Cacheurs restants : ","color":"red"}},{{"score":{{"name":"$phh","objective":"mg.st"}},"color":"yellow","bold":true}},{{"text":" — ","color":"gray"}},{{"score":{{"name":"$phl","objective":"mg.st"}},"color":"yellow"}},{{"text":" s","color":"gray"}}]'])
-w('ph/hiders_win', ['# Les cacheurs gagnent', 'tag @a[tag=mg.play,tag=mg.phh] add mg.win', 'scoreboard players add @a[tag=mg.play,tag=mg.phh] mg.wins 1',
+w('ph/hiders_win', ['# Les cacheurs gagnent',
+                    'execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] ' + js([{'text': "🎭 Fin de l'entraînement.", 'color': 'yellow'}]),
+                    'execute unless score $n0 mg.st matches 2.. run return run function mg:core/draw',
+                    'tag @a[tag=mg.play,tag=mg.phh] add mg.win', 'scoreboard players add @a[tag=mg.play,tag=mg.phh] mg.wins 1',
                     'scoreboard players set $state mg.st 3', 'scoreboard players set $timer mg.st 120',
                     'title @a[tag=!mg.surv] title {"text":"Les CACHEURS gagnent !","color":"gold","bold":true}',
                     'tellraw @a [{"text":"★ Victoire des cacheurs : ","color":"gold"},{"selector":"@a[tag=mg.play,tag=mg.phh]","color":"yellow"}]',

@@ -5,6 +5,7 @@
 Le classique : chaque équipe a une île avec sa tour et son PUITS. Saute dans le puits adverse = +1 point.
 5 points pour gagner (ou le plus de points au bout de 10 min). Construction et destruction libres (laine/terracotta
 fournie, arène reconstruite à chaque partie), réapparition illimitée, ravitaillement au centre.
+Seul : mode entraînement (pas de victoire, fin au chrono ou menu → Arrêter).
 """
 import sys
 import common as C
@@ -84,8 +85,13 @@ w('tower/go', ['# Départ : survie (construction libre)', 'scoreboard players se
                'scoreboard players set @a mg.deaths 0', 'scoreboard players reset @a mg.tw',
                'scoreboard players set Rouge mg.tw 0', 'scoreboard players set Bleu mg.tw 0',
                'scoreboard objectives setdisplay sidebar mg.tw',
-               'tellraw @a[tag=mg.play] ' + js([{'text': '🏰 THE TOWERS : ', 'color': 'gold', 'bold': True},
-                                                {'text': f'saute dans le PUITS de l\'équipe adverse (au bout de son île) = +1 point. {WIN} points pour gagner, 10 min max. Construis tes ponts, défends ton puits !', 'color': 'gray'}])])
+               'execute if score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] ' + js([{'text': '🏰 THE TOWERS : ', 'color': 'gold', 'bold': True},
+                                                {'text': f'saute dans le PUITS de l\'équipe adverse (au bout de son île) = +1 point. {WIN} points pour gagner, 10 min max. Construis tes ponts, défends ton puits !', 'color': 'gray'}]),
+               # seul : mêmes consignes sans la condition de victoire
+               'execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] ' + js([{'text': '🏰 THE TOWERS : ', 'color': 'gold', 'bold': True},
+                                                {'text': "saute dans le PUITS de l'équipe adverse (au bout de son île) = +1 point. 10 min max. Construis tes ponts, défends ton puits !", 'color': 'gray'}]),
+               # seul : entraînement, pas de victoire
+               'execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] ' + js([{'text': "🏰 Mode entraînement (seul) : saute dans le puits bleu pour marquer, construis tes ponts. Pas de victoire ; il faut au moins 2 joueurs pour une vraie partie.", 'color': 'yellow'}])])
 rp, bp = PIT['red'], PIT['blue']
 w('tower/tick', ['# 🏰 The Towers — tick', 'scoreboard players add $twt mg.st 1',
                  'execute as @a[tag=mg.play,scores={mg.deaths=1..}] run function mg:tower/respawn',
@@ -106,8 +112,8 @@ w('tower/tick', ['# 🏰 The Towers — tick', 'scoreboard players add $twt mg.s
                  f'execute if score $state mg.st matches 2 if score $twt mg.st matches {LIMIT}.. run function mg:tower/timeout',
                  'execute store result score $twr mg.st if entity @a[tag=mg.play,team=mg_red]',
                  'execute store result score $twb mg.st if entity @a[tag=mg.play,team=mg_blue]',
-                 'execute if score $state mg.st matches 2 if score $twr mg.st matches 0 if score $twb mg.st matches 1.. run return run function mg:core/win_blue',
-                 'execute if score $state mg.st matches 2 if score $twb mg.st matches 0 if score $twr mg.st matches 1.. run return run function mg:core/win_red',
+                 'execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $twr mg.st matches 0 if score $twb mg.st matches 1.. run return run function mg:core/win_blue',
+                 'execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $twb mg.st matches 0 if score $twr mg.st matches 1.. run return run function mg:core/win_red',
                  'execute if score $state mg.st matches 2 if score $twb mg.st matches 0 if score $twr mg.st matches 0 run function mg:core/draw'])
 for team, other, nm, col in [('red', 'blue', 'Rouge', 'red'), ('blue', 'red', 'Bleu', 'blue')]:
     w(f'tower/score_{team}', [f'# @s ({nm}) est tombé dans le puits adverse', f'scoreboard players add {nm} mg.tw 1',
@@ -119,11 +125,13 @@ for team, other, nm, col in [('red', 'blue', 'Rouge', 'red'), ('blue', 'red', 'B
                                                                {'text': ' Bleu', 'color': 'blue'}]),
                               'execute as @a[tag=mg.play] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.4',
                               'function mg:tower/spawn', 'effect give @s minecraft:instant_health 1 4 true',
-                              f'execute if score $state mg.st matches 2 if score {nm} mg.tw matches {WIN}.. run function mg:core/win_{team}'])
+                              f'execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score {nm} mg.tw matches {WIN}.. run function mg:core/win_{team}'])
 w('tower/respawn', ['# @s : réapparition dans sa tour (kit rendu)', 'scoreboard players set @s mg.deaths 0',
                     'function mg:tower/spawn', 'function mg:tower/kit', 'effect give @s minecraft:resistance 3 4 true',
                     'effect give @s minecraft:instant_health 1 4 true'])
 w('tower/timeout', ['# 10 min : le plus de points gagne',
+                    'execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] ' + js([{'text': "🏰 Fin de l'entraînement.", 'color': 'yellow'}]),
+                    'execute unless score $n0 mg.st matches 2.. run return run function mg:core/draw',
                     'execute if score Rouge mg.tw > Bleu mg.tw run return run function mg:core/win_red',
                     'execute if score Bleu mg.tw > Rouge mg.tw run return run function mg:core/win_blue',
                     'function mg:core/draw'])

@@ -7,6 +7,7 @@ points (+10 par balle qui touche, +60 par kill), portes à acheter, armes au mur
 Mort → spectateur jusqu'à la fin de la manche (réanimé avec pistolet). 10 manches = victoire, tout le monde mort = défaite.
 Infection (98) : un ou plusieurs joueurs commencent zombies ; un survivant tué devient zombie. Survivants armés,
 zombies au corps à corps (plus rapides et plus forts), réapparition infinie. 3 min : les survivants restants gagnent.
+Seul : mode entraînement (pas de victoire, fin au chrono ou menu → Arrêter).
 """
 import sys
 import common as C
@@ -285,9 +286,11 @@ w('inf/go', ['# Départ : 1 zombie pour 5 joueurs (au moins 1)', f'scoreboard pl
              'execute as @a[tag=mg.play] run function mg:inf/kit',
              'execute store result score $inn mg.st if entity @a[tag=mg.play]', 'scoreboard players set #5 mg.st 5',
              'scoreboard players operation $inn mg.st /= #5 mg.st', 'execute if score $inn mg.st matches ..0 run scoreboard players set $inn mg.st 1',
-             'function mg:inf/pick',
+             'execute if score $n0 mg.st matches 2.. run function mg:inf/pick',
              'tellraw @a[tag=mg.play] ' + js([{'text': '🧪 INFECTION : ', 'color': 'dark_green', 'bold': True},
-                                              {'text': 'les zombies infectent les survivants qu\'ils tuent. Survivants : tenez 3 minutes (clic droit = tirer, accroupi = recharger) ! Zombies : contaminez tout le monde.', 'color': 'gray'}])])
+                                              {'text': 'les zombies infectent les survivants qu\'ils tuent. Survivants : tenez 3 minutes (clic droit = tirer, accroupi = recharger) ! Zombies : contaminez tout le monde.', 'color': 'gray'}]),
+             # seul : entraînement, pas de zombie ni de victoire
+             'execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] ' + js([{'text': "🧪 Mode entraînement (seul) : pas de zombie, essaie les armes (clic droit = tirer, accroupi = recharger). Pas de victoire ; il faut au moins 2 joueurs pour une vraie partie.", 'color': 'yellow'}])])
 w('inf/pick', ['execute as @a[tag=mg.play,tag=!mg.inf,sort=random,limit=1] run function mg:inf/make_zombie',
                'scoreboard players remove $inn mg.st 1', 'execute if score $inn mg.st matches 1.. run function mg:inf/pick'])
 w('inf/make_zombie', ['# @s devient zombie', 'tag @s add mg.inf', 'tag @s add mg.gtg', 'team join mg_green @s', 'clear @s', 'function mg:gun/reset',
@@ -308,23 +311,34 @@ w('inf/zspawn', ['# @s (zombie) : dans un enclos au hasard, 2 s de protection',
 w('inf/tick', ['# 🧪 Infection — tick', 'scoreboard players add $ift mg.st 1',
                'execute as @a[tag=mg.play] store result score @s mg.t run data get entity @s Pos[1]',
                'execute as @a[tag=mg.play,tag=!mg.inf,scores={mg.t=..74}] run scoreboard players set @s mg.deaths 1',
-               'execute as @a[tag=mg.play,tag=!mg.inf,scores={mg.deaths=1..}] run function mg:inf/make_zombie',
+               'execute if score $n0 mg.st matches 2.. as @a[tag=mg.play,tag=!mg.inf,scores={mg.deaths=1..}] run function mg:inf/make_zombie',
+               # seul : pas de zombie, un survivant tombé ou tué revient au bunker
+               'execute unless score $n0 mg.st matches 2.. as @e[type=minecraft:player,tag=mg.play,tag=!mg.inf,scores={mg.deaths=1..}] run function mg:inf/srespawn',
                'execute as @a[tag=mg.play,tag=mg.inf,scores={mg.t=..74}] run scoreboard players set @s mg.deaths 1',
                'execute as @a[tag=mg.play,tag=mg.inf,scores={mg.deaths=1..}] run function mg:inf/zdie',
                'execute store result score $ins mg.st if entity @a[tag=mg.play,tag=!mg.inf]',
                'scoreboard players operation $inq mg.st = $ift mg.st', 'scoreboard players set #20 mg.st 20', 'scoreboard players operation $inq mg.st %= #20 mg.st',
                'execute if score $inq mg.st matches 0 run function mg:inf/second',
-               'execute if score $state mg.st matches 2 if score $ins mg.st matches 0 run return run function mg:inf/zombies_win',
+               'execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $ins mg.st matches 0 run return run function mg:inf/zombies_win',
                f'execute if score $state mg.st matches 2 if score $ift mg.st matches {LIMIT}.. run function mg:inf/survivors_win'])
+w('inf/srespawn', ['# @s (entraînement, seul) : mort ou chute → retour au bunker, kit rendu', 'scoreboard players set @s mg.deaths 0',
+                   f'spreadplayers 11 {Z - 11} 4 18 under 84 false @s', 'execute at @s run spawnpoint @s ~ ~ ~', 'function mg:inf/kit',
+                   'effect give @s minecraft:resistance 2 4 true', 'effect give @s minecraft:instant_health 1 4 true',
+                   'tellraw @s {"text":"🧪 Entraînement : retour au bunker.","color":"yellow"}'])
 w('inf/zdie', ['# @s (zombie) tué : réapparaît', 'scoreboard players set @s mg.deaths 0', 'function mg:inf/zspawn',
                'effect give @s minecraft:speed infinite 0 true', 'effect give @s minecraft:strength infinite 1 true',
                'effect give @s minecraft:saturation infinite 0 true'])
 w('inf/second', ['scoreboard players set $inl mg.st ' + str(LIMIT // 20), 'scoreboard players operation $ins2 mg.st = $ift mg.st',
                  'scoreboard players operation $ins2 mg.st /= #20 mg.st', 'scoreboard players operation $inl mg.st -= $ins2 mg.st',
                  'title @a[tag=mg.play,tag=mg.inf] actionbar [{"text":"🧟 Survivants : ","color":"dark_green"},{"score":{"name":"$ins","objective":"mg.st"},"color":"yellow","bold":true},{"text":" — ","color":"gray"},{"score":{"name":"$inl","objective":"mg.st"},"color":"yellow"},{"text":" s","color":"gray"}]',
+                 # seul : chrono restant
+                 'execute unless score $n0 mg.st matches 2.. run title @a[tag=mg.play] actionbar [{"text":"🧪 Entraînement : ","color":"yellow"},{"score":{"name":"$inl","objective":"mg.st"},"color":"yellow","bold":true},{"text":" s","color":"gray"}]',
                  'execute if score $inl mg.st matches 60 run tellraw @a[tag=mg.play] {"text":"🧪 Plus qu\'une minute !","color":"gold"}',
                  'execute if score $inl mg.st matches 60 as @a[tag=mg.play] at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 0.8'])
-w('inf/survivors_win', ['# Temps écoulé : les survivants gagnent', 'tellraw @a {"text":"🧪 Les survivants ont tenu 3 minutes !","color":"aqua","bold":true}',
+w('inf/survivors_win', ['# Temps écoulé : les survivants gagnent',
+                        'execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] ' + js([{'text': "🧪 Fin de l'entraînement.", 'color': 'yellow'}]),
+                        'execute unless score $n0 mg.st matches 2.. run return run function mg:core/draw',
+                        'tellraw @a {"text":"🧪 Les survivants ont tenu 3 minutes !","color":"aqua","bold":true}',
                         'function mg:core/win_blue'])
 w('inf/zombies_win', ['# Plus de survivants', 'tellraw @a {"text":"🧟 Tout le monde est infecté !","color":"dark_green","bold":true}',
                       'function mg:core/win_green'])
