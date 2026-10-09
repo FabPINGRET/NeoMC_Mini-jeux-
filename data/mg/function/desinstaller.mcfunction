@@ -6,6 +6,7 @@ kill @e[tag=mg.arm]
 kill @e[tag=mg.mob]
 kill @e[tag=mg.sheep]
 kill @e[tag=mg.npc]
+execute as @a run function mg:core/unfreeze
 forceload remove all
 data remove storage mg:var a
 scoreboard objectives setdisplay sidebar

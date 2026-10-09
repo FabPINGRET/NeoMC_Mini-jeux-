@@ -246,7 +246,7 @@ execute if score $game mg.st matches 7 if score $sm mg.st matches 5 run function
 execute if score $game mg.st matches 7 if score $sm mg.st matches 6 run function mg:sheepwar8/prepare
 
 # Gel pendant le compte à rebours
-effect give @a[tag=mg.play] minecraft:slowness 15 255 true
+execute as @a[tag=mg.play] run function mg:core/freeze
 effect give @a[tag=mg.play] minecraft:resistance 15 255 true
 title @a[tag=mg.play] title [{"text":"Préparez-vous !","color":"gold"}]
 title @a[tag=mg.play] subtitle [{"text":"Début dans 10 secondes...","color":"gray"}]
