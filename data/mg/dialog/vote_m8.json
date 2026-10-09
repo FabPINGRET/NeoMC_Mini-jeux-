@@ -79,7 +79,7 @@
       ],
       "tooltip": [
         {
-          "text": "Variante : carte Spleef (4 étages qui rétrécissent (29 → 17)) · réglages : portée 80 blocs",
+          "text": "Variante : carte Spleef (4 étages qui rétrécissent (29 → 17)) · réglages : les œufs volent 2 s",
           "color": "gray"
         }
       ],
@@ -97,7 +97,7 @@
       ],
       "tooltip": [
         {
-          "text": "Variante : carte TNT Run (3 étages de laine qui rétrécissent) · réglages : portée 80 blocs, cratères 3×3",
+          "text": "Variante : carte TNT Run (3 étages de laine qui rétrécissent) · réglages : les œufs volent 2 s, cratères 3×3",
           "color": "gray"
         }
       ],
@@ -115,7 +115,7 @@
       ],
       "tooltip": [
         {
-          "text": "Variante : carte nouveau (5 étages en pyramide, de plus en plus petits) · réglages : portée 80 blocs, cratères 3×3",
+          "text": "Variante : carte nouveau (5 étages en pyramide, de plus en plus petits) · réglages : les œufs volent 2 s, cratères 3×3",
           "color": "gray"
         }
       ],
@@ -133,7 +133,7 @@
       ],
       "tooltip": [
         {
-          "text": "Variante : carte nouveau (anneau troué, plateau central, anneau large) · réglages : portée 120 blocs, cratères 3×3",
+          "text": "Variante : carte nouveau (anneau troué, plateau central, anneau large) · réglages : les œufs volent 3 s, cratères 3×3",
           "color": "gray"
         }
       ],

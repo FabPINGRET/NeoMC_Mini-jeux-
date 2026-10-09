@@ -11,7 +11,7 @@ Menu : ≡ → catégorie (❄ Jeux de sol / ⚔ Combat) → jeu → cartes d’
 | TNT Tag | bombe lente (15 à 40 s) | bombe normale (10 à 30 s) | bombe rapide (8 à 22 s) | bombe éclair (6 à 15 s) |
 | Spleef | rétrécit après 50 s puis toutes les 15 s | rétrécit après 40 s puis toutes les 12 s | rétrécit après 30 s puis toutes les 9 s | rétrécit après 20 s puis toutes les 6 s |
 | TNT Run | les blocs tiennent 0,6 s | les blocs tiennent 0,45 s | les blocs tiennent 0,35 s | les blocs tiennent 0,25 s |
-| Splegg | portée des œufs 30 blocs | portée 80 blocs | portée 80 blocs, cratères 3×3 | portée 120 blocs, cratères 3×3 |
+| Splegg | les œufs volent 0,75 s | les œufs volent 2 s | les œufs volent 2 s, cratères 3×3 | les œufs volent 3 s, cratères 3×3 |
 
 | Id | Mode | Carte (origine) | Difficulté |
 |---|---|---|---|

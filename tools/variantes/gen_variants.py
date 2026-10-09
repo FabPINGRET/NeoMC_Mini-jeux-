@@ -148,7 +148,7 @@ SET = {
     'spleef': ['rétrécit après 50 s puis toutes les 15 s', 'rétrécit après 40 s puis toutes les 12 s',
                'rétrécit après 30 s puis toutes les 9 s', 'rétrécit après 20 s puis toutes les 6 s'],
     'tntrun': ['les blocs tiennent 0,6 s', 'les blocs tiennent 0,45 s', 'les blocs tiennent 0,35 s', 'les blocs tiennent 0,25 s'],
-    'splegg': ['portée des œufs 30 blocs', 'portée 80 blocs', 'portée 80 blocs, cratères 3×3', 'portée 120 blocs, cratères 3×3'],
+    'splegg': ['les œufs volent 0,75 s', 'les œufs volent 2 s', 'les œufs volent 2 s, cratères 3×3', 'les œufs volent 3 s, cratères 3×3'],
 }
 
 # ============================================================ liste des variantes (ids 100..)
