@@ -1,8 +1,8 @@
 # Votes à la majorité (core/tick, toutes les secondes, lobby uniquement). Généré.
-# Joueurs comptés : tous les joueurs connectés hors monde de survie. Il en faut 3 au moins.
+# Joueurs comptés : tous les joueurs connectés hors monde de survie et hors pause. Il en faut 3 au moins.
 execute unless score $state mg.st matches 0 run return run scoreboard players set $vat mg.st -1
 execute if score $setup mg.st matches 0 run return 0
-execute store result score $vnp mg.st if entity @a[tag=mg.init,tag=!mg.surv]
+execute store result score $vnp mg.st if entity @a[tag=mg.init,tag=!mg.spectate,tag=!mg.surv]
 # recompte seulement si le nombre de joueurs a changé (un votant a pu partir) ; sinon les votes sont déjà à jour
 execute unless score $vnp mg.st = $vnpo mg.st run function mg:vote/refresh
 scoreboard players operation $vnpo mg.st = $vnp mg.st
