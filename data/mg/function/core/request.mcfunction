@@ -101,11 +101,12 @@ execute if score $game mg.st matches 8..12 run scoreboard players operation $mt 
 execute if score $game mg.st matches 8..12 run scoreboard players remove $mt mg.st 7
 execute if score $game mg.st matches 8..12 run scoreboard players set $game mg.st 6
 
-# Participants = tous les joueurs initialisés non-spectateurs
-tag @a[tag=mg.init,tag=!mg.spectate,tag=!mg.surv] add mg.play
+# Participants = tous les joueurs initialisés hors pause et hors survie (Mini Party en cours : seulement ses participants)
+execute unless score $mpl mg.st matches 1 run tag @a[tag=mg.init,tag=!mg.spectate,tag=!mg.surv] add mg.play
+execute if score $mpl mg.st matches 1 run tag @a[tag=mg.init,tag=mg.mpp,tag=!mg.spectate,tag=!mg.surv] add mg.play
 tag @a remove mg.out
 execute store result score $n0 mg.st if entity @a[tag=mg.play]
-execute if score $n0 mg.st matches 0 run tellraw @s [{"text":"Aucun participant (tout le monde est en mode spectateur).","color":"red"}]
+execute if score $n0 mg.st matches 0 run tellraw @s [{"text":"Aucun participant (tout le monde est en pause ou en survie).","color":"red"}]
 execute if score $n0 mg.st matches 0 run return run scoreboard players set $game mg.st 0
 execute as @a[tag=mg.play,tag=mg.inplot] run function mg:plot/leave_game
 execute as @a[tag=mg.play,tag=mg.visit] run function mg:plot/leave_game
@@ -255,3 +256,6 @@ effect give @a[tag=mg.play] minecraft:resistance 15 255 true
 title @a[tag=mg.play] title [{"text":"Préparez-vous !","color":"gold"}]
 title @a[tag=mg.play] subtitle [{"text":"Début dans 10 secondes...","color":"gray"}]
 execute as @a[tag=!mg.surv] at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 0.8
+# Rappel aux joueurs en pause (après prepare : une partie annulée, $state 3, n'en envoie pas ; pas en Mini Party, $mpl)
+execute unless score $mpl mg.st matches 1 unless score $mp mg.st matches 1 unless score $state mg.st matches 3 run tellraw @a[tag=mg.init,tag=mg.spectate,tag=!mg.surv] [{"text":"⏸ Partie lancée sans toi (pause). ","color":"gray"},{"text":"[▶ Reprendre les parties]","color":"green","click_event":{"action":"run_command","command":"trigger mg.opt set 1"},"hover_event":{"action":"show_text","value":"Désactiver la pause : tu seras téléporté aux prochaines parties"}}]
+execute unless score $mpl mg.st matches 1 if score $mp mg.st matches 1 unless score $state mg.st matches 3 run tellraw @a[tag=mg.init,tag=mg.spectate,tag=!mg.surv] [{"text":"⏸ Partie lancée sans toi (pause). ","color":"gray"},{"text":"[▶ Reprendre les parties]","color":"green","click_event":{"action":"run_command","command":"trigger mg.opt set 1"},"hover_event":{"action":"show_text","value":"La Mini Party se joue sans toi ; tu seras téléporté aux parties suivantes"}}]

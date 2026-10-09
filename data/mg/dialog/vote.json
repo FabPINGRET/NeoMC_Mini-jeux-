@@ -420,6 +420,24 @@
     {
       "label": [
         {
+          "text": "⏸ Pause : ne pas me téléporter",
+          "color": "gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "ON/OFF : tu restes où tu es quand une partie est lancée",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 1"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🌲 Aller en survie",
           "color": "green",
           "bold": true

@@ -1,8 +1,8 @@
 # Lance le mini-jeu tiré ($mgid, fixé par roulette_stop) comme si l'admin l'avait choisi ; core/return_lobby reviendra au plateau
 title @a[tag=!mg.surv] reset
 clear @a[tag=!mg.surv] minecraft:echo_shard
-execute as @a[tag=mg.mpp] run function mg:core/attr_reset
-execute as @a[tag=mg.mpp,gamemode=spectator] run gamemode adventure @s
+execute as @a[tag=mg.mpp,tag=!mg.spectate] run function mg:core/attr_reset
+execute as @a[tag=mg.mpp,tag=!mg.spectate,gamemode=spectator] run gamemode adventure @s
 execute as @e[type=minecraft:armor_stand,tag=mg.mpfocus] run data merge entity @s {Glowing:0b}
 tag @e[type=minecraft:armor_stand] remove mg.mpfocus
 team leave @a[tag=mg.mpp]

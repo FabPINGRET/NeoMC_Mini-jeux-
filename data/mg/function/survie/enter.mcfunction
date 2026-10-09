@@ -14,6 +14,9 @@ tag @s remove mg.inplot
 tag @s remove mg.plabel
 tag @s remove mg.visit
 tag @s add mg.surv
+# Son vote éventuel ne compte plus (exclu du décompte en survie)
+execute if score $state mg.st matches 0 run scoreboard players reset @s mg.vc
+execute if score $state mg.st matches 0 run function mg:vote/refresh
 team leave @s
 effect clear @s
 clear @s

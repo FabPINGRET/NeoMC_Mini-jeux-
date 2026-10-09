@@ -4,7 +4,7 @@ execute unless score #xv mg.st matches 10..12 run return 0
 execute unless score $setup mg.st matches 1 run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Installation manquante : un OP doit d'abord lancer /function mg:setup.","color":"red"}]
 execute unless entity @s[tag=mg.init] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Pas encore prêt : réessaie dans un instant.","color":"red"}]
 execute if entity @s[tag=mg.surv] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Impossible depuis la survie : reviens d'abord au lobby (/trigger mg.sv set 2).","color":"red"}]
-execute if entity @s[tag=mg.spectate] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Impossible en mode spectateur : repasse en joueur (/trigger mg.opt set 1).","color":"red"}]
+execute if entity @s[tag=mg.spectate] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Impossible en pause : désactive la pause (/trigger mg.opt set 1).","color":"red"}]
 execute if entity @s[tag=mg.ely] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Termine d'abord ton activité en cours (parcours d'élytra, élytres libres, kart libre ou parkour).","color":"red"}]
 execute if entity @s[tag=mg.elyf] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Termine d'abord ton activité en cours (parcours d'élytra, élytres libres, kart libre ou parkour).","color":"red"}]
 execute if entity @s[tag=mg.lk] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Termine d'abord ton activité en cours (parcours d'élytra, élytres libres, kart libre ou parkour).","color":"red"}]

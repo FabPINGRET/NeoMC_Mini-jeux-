@@ -101,7 +101,7 @@ Optionnel : `/function mg:nettoyer_plateforme` efface la petite plateforme de d�
 - Objet perdu ? `/trigger mg.menu` rouvre le menu (admins).
 - Fin de partie automatique : célébration, +1 victoire au gagnant, retour au lobby.
 - **Vote des joueurs** : les non-admins ont à la place un objet **☑ VOTE** (vert, hotbar) ou `/trigger mg.menu` : une fenêtre propose 20 jeux (un vote par joueur, modifiable ou retirable). Les votes s'affichent dans le tableau latéral du lobby et les admins sont prévenus à chaque vote. L'admin peut ensuite choisir lui-même, ou utiliser **☑ Votes : lancer le plus voté** dans son menu (égalité : tirage au sort entre ex æquo). Les votes sont effacés au lancement d'une partie.
-- Les non-admins peuvent toujours se mettre en spectateur (`/trigger mg.opt set 1`) et afficher le classement (`/trigger mg.opt set 2`).
+- Les non-admins peuvent toujours se mettre en pause, c'est-à-dire ne pas être téléportés (`/trigger mg.opt set 1`) et afficher le classement (`/trigger mg.opt set 2`).
 
 ### Reconnexion, tableaux et hall des scores
 
@@ -111,7 +111,7 @@ Optionnel : `/function mg:nettoyer_plateforme` efface la petite plateforme de d�
 
 ### Dans le menu
 
-- **Mode spectateur ON/OFF** : ne plus participer aux parties (ou abandonner celle en cours).
+- **Pause ON/OFF** (ne pas être téléporté) : le joueur reste où il est quand une partie est lancée (ou abandonne celle en cours) ; un rappel cliquable `[▶ Reprendre les parties]` s'affiche à chaque lancement (sauf pour les manches d'une Mini Party).
 - **Classement des victoires** : affiche/masque le tableau des scores à droite.
 - **⛔ Arrêter la partie** : stoppe la partie en cours (admins) — marche aussi en plein Bedwars ou en mode test.
 
@@ -185,7 +185,7 @@ Chaque île a son **VILLAGEOIS BOUTIQUE** : fais un clic droit dessus pour écha
 | `/trigger mg.vote set 90` / `97` | Vote : ouvrir le sous-menu PvP / revenir à la liste des jeux | tous |
 | `/trigger mg.go set 8..12` | Mob Arena thème : 8 Nether, 9 End, 10 Ultra Hard, 11 Volant, 12 Araignée | admins |
 | `/trigger mg.opt set 9` | Arrête la partie en cours | admins |
-| `/trigger mg.opt set 1` | Mode spectateur ON/OFF | tous |
+| `/trigger mg.opt set 1` | Pause ON/OFF (ne pas être téléporté) | tous |
 | `/trigger mg.go set 59` / `60` | Mini Party : 8 tours / 15 tours | admins |
 | `/trigger mg.dice` / `set 3` / `set 4` / `set 11`, `12` / `21`..`23` / `31`..`33`, `39` | Mini Party : lancer le dé / carte du ciel / vue libre ou caméra / route 1 ou 2 / utiliser dé double, dé triple, tuyau / acheter en boutique, partir (secours des fenêtres) | joueurs |
 | `/trigger mg.pl set 1` / `2` | Aller sur son plot de construction (attribué au premier passage) / revenir au spawn | tous |
