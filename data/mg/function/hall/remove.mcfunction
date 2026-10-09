@@ -21,9 +21,21 @@ scoreboard objectives remove mg.wg_party
 scoreboard objectives remove mg.wg_kart
 scoreboard objectives remove mg.wg_elyrace
 scoreboard objectives remove mg.wg_elytra
+scoreboard objectives remove mg.wg_telephone
+scoreboard objectives remove mg.wg_tron
+scoreboard objectives remove mg.wg_koth
+scoreboard objectives remove mg.wg_tower
+scoreboard objectives remove mg.wg_convoy
+scoreboard objectives remove mg.wg_ctf
+scoreboard objectives remove mg.wg_uhc
+scoreboard objectives remove mg.wg_hg
+scoreboard objectives remove mg.wg_prophunt
+scoreboard objectives remove mg.wg_zombies
+scoreboard objectives remove mg.wg_infection
 kill @e[tag=mg.hall]
 schedule clear mg:hall/build
 data remove storage mg:hall e
 data remove storage mg:hall sbon
 data remove storage mg:hall v2
 data remove storage mg:hall v3
+data remove storage mg:hall v4
