@@ -8,7 +8,7 @@ execute if score $xc mg.st matches 2 unless data storage mg:elyrace c2v2 run ret
 tag @a remove mg.xw1
 tag @a remove mg.xtp
 # les contre-la-montre solo en cours s'arrêtent : le groupe prend la plateforme, le portillon et le chrono $xt
-tellraw @a[tag=mg.xso] [{"text":"🪽 Une course de groupe démarre : ton contre-la-montre solo est arrêté.","color":"red"}]
+tellraw @a[tag=mg.xso] [{"text":"🪽 Une course de groupe démarre (tu n'es pas dans cette course) : ton contre-la-montre solo est arrêté.","color":"red"}]
 execute as @a[tag=mg.xso] run function mg:elyrace/solo/stop
 execute if score $xc mg.st matches 1 run function mg:elyrace/c1/setup
 execute if score $xc mg.st matches 2 run function mg:elyrace/c2/setup

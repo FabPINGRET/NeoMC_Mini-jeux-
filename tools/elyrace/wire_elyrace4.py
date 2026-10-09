@@ -27,6 +27,8 @@ HORN_SOLO = 'execute if score $xs mg.st matches 1 as @a[tag=mg.play] at @s run '
 RECONNECT_OLD = ("SPECTATEUR (sauf contre-la-montre solo : rien à regarder, il retourne au lobby)\n"
                  "execute if score $state mg.st matches 1..3 %s run return run function mg:core/reconnect_spec" % NOT_SOLO)
 RECONNECT_NEW = "SPECTATEUR\nexecute if score $state mg.st matches 1..3 run return run function mg:core/reconnect_spec"
+PAUSE_OLD = 'reprendre la pause l\'arrête'
+PAUSE_NEW = 'désactiver la pause l\'arrête'
 CLEARS = ('clear @a[tag=!mg.play] minecraft:elytra[minecraft:custom_data~{mg_elyr:1b}]',
           'clear @a[tag=!mg.play] minecraft:firework_rocket[minecraft:custom_data~{mg_elyr:1b}]')
 
@@ -72,7 +74,7 @@ def docs(p):
     if not has(p, readme, 'mis **en pause** pendant le solo'):
         p.patch(readme, 'seul en piste quand aucune partie ne tourne, compte à rebours de 5 s, 30 s d\'attente entre deux solos (sauf admins)',
                 'seul en piste, **pendant n\'importe quelle partie sauf une course d\'élytres de groupe** (4 solos au plus ; le joueur est mis **en pause** pendant le solo, '
-                'reprendre la pause l\'arrête), compte à rebours de 5 s, 30 s d\'attente entre deux solos (sauf admins)')
+                + PAUSE_NEW + '), compte à rebours de 5 s, 30 s d\'attente entre deux solos (sauf admins)')
         p.patch(readme, '(aucune partie en cours, 30 s entre deux solos)', '(même pendant une partie sauf une course de groupe, 4 solos au plus, 30 s entre deux solos)')
         p.after(readme, "| `/trigger mg.xs set 2` / `set 3` | Contre-la-montre solo : abandonner / afficher ses meilleurs temps et les records du serveur | tous |",
                 "| `/trigger mg.xs set 4` | Contre-la-montre solo : arrêter tous les solos en cours | admins |\n")
@@ -81,6 +83,8 @@ def docs(p):
         p.patch(games, 'même jeu 66 avec `$xs` = 1, lancé par `mg:elyrace/solo/start` sans passer par `core/request`.',
                 'hors machine à états (ni `$state` ni `$game` : tag `mg.xso`, scores par joueur `mg.xph` / `xst` / `xcr` / `xse` / `xsl`, 4 solos au plus, '
                 'joueur mis en pause `mg.spectate`), lancé par `mg:elyrace/solo/start`, tick `mg:elyrace/solo/tick` (appelé par `core/tick`).')
+    if has(p, readme, PAUSE_OLD):       # arbre déjà câblé avec l'ancienne formulation (ambiguë) : corrigée sur place
+        p.patch(readme, PAUSE_OLD, PAUSE_NEW)
 
 
 def wire_all(p):

@@ -9,8 +9,9 @@ import re
 import course_common as CC
 import game as G
 import menus as M
+import solo_run as SR
 
-REFUSAL = re.compile(r'^execute .* run return run tellraw @s ')
+REFUSAL = re.compile(r'^execute .* run return run (tellraw @s |scoreboard players set \$xc mg\.st 0$)')   # 2e forme : refus « pas construit » (remet $xc a 0)
 SOLO_RETURN = re.compile(r'^execute if entity @s\[tag=mg\.xso\] run return run function (mg:[a-z_0-9/]+)$')    # 1re ligne d'une fonction commune qui renvoie le solo vers la sienne
 STATE_WRITE = re.compile(r'scoreboard players (set|add|remove|operation|reset) \$(state|game|timer)\b')
 FORBIDDEN_CALL = re.compile(r'\bfunction mg:core/(countdown|begin|draw|ending|return_lobby|opt_spec|abort|win_player)\b')
@@ -108,8 +109,10 @@ def entry_exit_problems(files):
     if keep not in stop or 'tag @s remove mg.xsp0' not in stop:
         bad.append('solo/stop : doit rendre la pause d\'avant (%s) puis oublier mg.xsp0' % keep)
     resets = [i for i, l in enumerate(stop) if l.endswith('run function mg:core/reset_player')]
-    if len(resets) != 1 or 'unless entity @s[tag=mg.play]' not in stop[resets[0]] or 'unless entity @s[tag=mg.out]' not in stop[resets[0]]:
-        bad.append('solo/stop : reset_player doit etre appele une fois, sauf pour un participant (mg.play) ou un spectateur (mg.out)')
+    skip = ['mg.play', 'mg.out'] + [t for t, _ in SR.LEFT]
+    if len(resets) != 1 or any('unless entity @s[tag=%s]' % t not in stop[resets[0]] for t in skip):
+        bad.append('solo/stop : reset_player doit etre appele une fois, sauf pour un participant (mg.play), un spectateur (mg.out) '
+                   'ou un joueur parti en survie, en plot ou en visite (%s)' % ', '.join(skip))
     elif 'tag @s remove mg.xso' not in stop or keep not in stop or not stop.index('tag @s remove mg.xso') < stop.index(keep) < resets[0]:
         bad.append('solo/stop : le tag mg.xso doit partir AVANT le retour de la pause et le retour au lobby (plus aucune detection)')
     start = fn_code(files, 'solo/start')
@@ -119,9 +122,39 @@ def entry_exit_problems(files):
         bad.append('solo/start : refus ou lancement absents')
     elif max(refusals) > min(first):
         bad.append('solo/start : un refus suit la premiere ecriture d\'etat (il laisserait le solo a moitie lance)')
+    for t, _ in SR.LEFT:        # chaque activite dont stop ne ramene pas au lobby est refusee au lancement (surtout mg.surv : start fait `clear @s`)
+        ref = [i for i, l in enumerate(start) if l.startswith('execute if entity @s[tag=%s] run return run tellraw @s ' % t)]
+        if not ref or (first and min(ref) > min(first)):
+            bad.append('solo/start : pas de refus `execute if entity @s[tag=%s] run return run tellraw @s ...` avant la premiere ecriture d\'etat '
+                       '(tag de SR.LEFT : start viderait l\'inventaire d\'un joueur parti dans cette activite)' % t)
     spectate, memo = 'tag @s add mg.spectate', 'execute if entity @s[tag=mg.spectate] run tag @s add mg.xsp0'
     if spectate not in start or memo not in start or start.index(memo) > start.index(spectate):
         bad.append('solo/start : la pause d\'avant (mg.xsp0) doit etre memorisee AVANT la pose de mg.spectate')
+    return bad
+
+
+def order_problems(files):
+    """Ordre dans le tick du solo : seen (@a) avant step (@e[type=player]) ; dans seen, les sorties (survie / plot / visite, puis
+    reconnexion, puis pause desactivee) toutes AVANT la mise a jour de mg.xsl et du chrono (la reconnexion lit l'ancien mg.xsl)."""
+    bad, tick, seen = [], fn_code(files, 'solo/tick'), fn_code(files, 'solo/seen')
+    passes = ['execute as @a[tag=mg.xso] run function mg:elyrace/solo/seen', 'execute as @e[type=player,tag=mg.xso] run function mg:elyrace/solo/step']
+    if any(l not in tick for l in passes) or tick.index(passes[0]) > tick.index(passes[1]):
+        bad.append('solo/tick : la passe seen (@a, voit les morts) doit preceder la passe step (@e[type=player]) : %s' % passes)
+    stop = 'run return run function mg:elyrace/solo/stop'
+    left = ['execute if entity @s[tag=%s] %s' % (t, stop) for t, _ in SR.LEFT]
+    reco = 'execute unless score @s mg.xsl = #xsl mg.st ' + stop
+    pause = 'execute unless entity @s[tag=mg.spectate] ' + stop
+    upd = 'scoreboard players operation @s mg.xsl = $tc mg.st'
+    chain = left + [reco, pause, upd]
+    for l in chain:
+        if l not in seen:
+            bad.append('solo/seen : ligne absente : %s' % l)
+    if not bad:
+        idx = [seen.index(l) for l in chain]
+        if not (max(idx[:len(left)]) < idx[-3] < idx[-2] < idx[-1]):
+            bad.append('solo/seen : ordre attendu : sorties survie / plot / visite, reconnexion (mg.xsl = $tc - 1), pause desactivee, puis mise a jour de mg.xsl')
+        if 'scoreboard players add @s mg.xst 1' not in seen or seen.index('scoreboard players add @s mg.xst 1') < idx[-1]:
+            bad.append('solo/seen : le chrono (mg.xst) ne doit avancer qu\'apres toutes les sorties')
     return bad
 
 
@@ -237,5 +270,5 @@ def objective_problems(files):
 
 
 def problems(root, files, specs):
-    return (solo_problems(files) + entry_exit_problems(files) + records_problems(files) + trigger_problems(files, specs)
+    return (solo_problems(files) + entry_exit_problems(files) + order_problems(files) + records_problems(files) + trigger_problems(files, specs)
             + common_problems(files, specs) + hooks_problems(root) + objective_problems(files))

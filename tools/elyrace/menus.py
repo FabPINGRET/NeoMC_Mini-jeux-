@@ -124,7 +124,7 @@ def solo_dialog_json(specs):
         "pause": False,
         "can_close_with_escape": True,
         "body": [{"type": "minecraft:plain_message", "contents": [
-            {"text": "Seul en piste, avec ton meilleur temps et un record du serveur par parcours. Le solo te met en pause (reprendre = arrêter) et se joue même pendant une partie, sauf une course d'élytres de groupe. 30 s d'attente entre deux solos.", "color": "gray"}]}],
+            {"text": "Seul en piste, avec ton meilleur temps et un record du serveur par parcours. Le solo te met en pause (désactiver la pause l'arrête) et se joue même pendant une partie, sauf une course d'élytres de groupe. 30 s d'attente entre deux solos.", "color": "gray"}]}],
         "columns": 2,
         "exit_action": {"label": [{"text": "Fermer", "color": "gray"}]},
         "actions": solo_buttons(specs) + [act([{"text": "« Retour", "color": "yellow"}], None, SOLO_BACK_MENU)],

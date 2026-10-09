@@ -34,8 +34,10 @@ clear @a minecraft:elytra[minecraft:custom_data~{mg_elyr:1b}]
 clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_elyr:1b}]
 tag @a remove mg.xw1
 tag @a remove mg.xtp
-# contre-la-montre solo en cours : tags (solo, pause d'avant ; le tag mg.spectate lui-même est retiré par desinstaller) et gel
-execute as @a[tag=mg.xso] run function mg:core/unfreeze
+# contre-la-montre solo en cours : solo/stop (tags, scores de course, gel, pause d'avant, retour au lobby ; il tourne ici, avant le retrait des
+# objectifs de l'élytre ; mg.st / mg.t / mg.deaths sont déjà retirés par desinstaller : les écritures de score dessus (délai mg.xse d'après $tc, vote rendu,
+# morts remises à 0) échouent sans bruit) ; dans l'overworld, où est le lobby (tp et spawnpoint de reset_player) ; puis filet sur les tags
+execute in minecraft:overworld as @a[tag=mg.xso] run function mg:elyrace/solo/stop
 tag @a remove mg.xso
 tag @a remove mg.xsp0
 advancement revoke @a only mg:elyrace_wall

@@ -112,7 +112,7 @@ def prepare_lines(specs):
             out.append('execute if score $xc mg.st matches %d run return run function mg:elyrace/not_available' % k)
     out += ['# restes d\'une partie précédente'] + ['tag @a remove ' + t for t in G.TAGS]
     out += ['# les contre-la-montre solo en cours s\'arrêtent : le groupe prend la plateforme, le portillon et le chrono $xt',
-            'tellraw @a[tag=mg.xso] [' + RED % '🪽 Une course de groupe démarre : ton contre-la-montre solo est arrêté.' + ']',
+            'tellraw @a[tag=mg.xso] [' + RED % '🪽 Une course de groupe démarre (tu n\'es pas dans cette course) : ton contre-la-montre solo est arrêté.' + ']',
             'execute as @a[tag=mg.xso] run function mg:elyrace/solo/stop']
     out += ['execute if score $xc mg.st matches %d run function %s' % (s.NUM, CC.fn(s, 'setup')) for s in specs]
     out += ['gamemode adventure @a[tag=mg.play]', 'clear @a[tag=mg.play]',
@@ -143,8 +143,10 @@ def uninstall_lines(specs):
             'clear @a minecraft:elytra[minecraft:custom_data~{mg_elyr:1b}]',
             'clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_elyr:1b}]']
     out += ['tag @a remove ' + t for t in G.TAGS] + W.cleanup_lines()
-    out += ['# contre-la-montre solo en cours : tags (solo, pause d\'avant ; le tag mg.spectate lui-même est retiré par desinstaller) et gel',
-            'execute as @a[tag=mg.xso] run function mg:core/unfreeze'] + ['tag @a remove ' + t for t in G.SOLO_TAGS]
+    out += ['# contre-la-montre solo en cours : solo/stop (tags, scores de course, gel, pause d\'avant, retour au lobby ; il tourne ici, avant le retrait des',
+            '# objectifs de l\'élytre ; mg.st / mg.t / mg.deaths sont déjà retirés par desinstaller : les écritures de score dessus (délai mg.xse d\'après $tc, vote rendu,',
+            '# morts remises à 0) échouent sans bruit) ; dans l\'overworld, où est le lobby (tp et spawnpoint de reset_player) ; puis filet sur les tags',
+            'execute in minecraft:overworld as @a[tag=mg.xso] run function mg:elyrace/solo/stop'] + ['tag @a remove ' + t for t in G.SOLO_TAGS]
     out.append('advancement revoke @a only mg:elyrace_wall')
     out += ['scoreboard objectives remove mg.%s' % n for n, _, _ in G.OBJECTIVES]
     out += ['# parcours et état du solo par joueur, trigger du solo, records par parcours (objectifs et détenteur figé dans le hall)']

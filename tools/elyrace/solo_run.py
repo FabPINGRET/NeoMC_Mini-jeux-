@@ -15,6 +15,8 @@ import game as G
 COUNT = 100              # decompte : 5 s (mg.xst de 0 a 100)
 END_TIMER = 30           # ticks de phase 3 (arrivee) avant le retour au lobby
 PLUS_30 = G.TIME_LIMIT - 600     # « plus que 30 secondes » (mg.xst)
+LEFT = (('mg.surv', 'Tu es parti en survie'), ('mg.inplot', 'Tu es parti sur ton plot'), ('mg.visit', 'Tu es parti en visite de plot'))
+# activités du lobby ouvertes pendant un solo (tag, début du message) : fin du solo, sans retour au lobby ; solo.py doit refuser chacune au lancement
 
 
 def msg(text, color='gray'):
@@ -28,16 +30,22 @@ def tick_lines():
 
 
 def seen_lines():
-    return ['# @s = joueur en solo, mort ou vivant (@a) : présence, pause, chrono',
-            '# reconnexion : mg.xsl doit valoir le tick précédent ($tc - 1), sinon le joueur n\'était pas en ligne (core/reconnect l\'a déjà remis au lobby)',
-            'scoreboard players operation #xsl mg.st = $tc mg.st',
-            'scoreboard players remove #xsl mg.st 1',
-            'execute unless score @s mg.xsl = #xsl mg.st run return run function mg:elyrace/solo/stop',
-            '# reprise manuelle de la pause (mg.spectate retiré) : fin du solo',
-            'execute unless entity @s[tag=mg.spectate] run tellraw @s [%s]' % msg('▶ Pause désactivée : contre-la-montre terminé.'),
-            'execute unless entity @s[tag=mg.spectate] run return run function mg:elyrace/solo/stop',
-            'scoreboard players operation @s mg.xsl = $tc mg.st',
-            'scoreboard players add @s mg.xst 1']
+    out = ['# @s = joueur en solo, mort ou vivant (@a) : activité quittée, présence, pause, chrono',
+           '# le joueur est parti en survie, dans un plot ou en visite (ces activités étaient fermées par mg.play avant le solo par joueur) :',
+           '# fin du solo AVANT toute règle de course (c<N>/player le verrait hors zone et c<N>/respawn le ramènerait sur le parcours) ;',
+           '# stop ne le ramène pas au lobby. survie/tick passe avant solo/tick (survie vue au même tick), plot/cmd après (vu au tick suivant)']
+    for tag, why in LEFT:
+        out.append('execute if entity @s[tag=%s] run tellraw @s [%s]' % (tag, msg('%s : contre-la-montre terminé.' % why)))
+        out.append('execute if entity @s[tag=%s] run return run function mg:elyrace/solo/stop' % tag)
+    return out + ['# reconnexion : mg.xsl doit valoir le tick précédent ($tc - 1), sinon le joueur n\'était pas en ligne (core/reconnect l\'a déjà remis au lobby)',
+                  'scoreboard players operation #xsl mg.st = $tc mg.st',
+                  'scoreboard players remove #xsl mg.st 1',
+                  'execute unless score @s mg.xsl = #xsl mg.st run return run function mg:elyrace/solo/stop',
+                  '# pause désactivée à la main (mg.spectate retiré) : fin du solo',
+                  'execute unless entity @s[tag=mg.spectate] run tellraw @s [%s]' % msg('▶ Pause désactivée : contre-la-montre terminé.'),
+                  'execute unless entity @s[tag=mg.spectate] run return run function mg:elyrace/solo/stop',
+                  'scoreboard players operation @s mg.xsl = $tc mg.st',
+                  'scoreboard players add @s mg.xst 1']
 
 
 def step_lines(specs):
@@ -104,8 +112,8 @@ def finish_lines(specs):
 
 
 def stop_lines():
-    return ['# @s = joueur : SEULE SORTIE d\'un contre-la-montre solo (arrivée + %d ticks, abandon, reprise de la pause, 3 min, reconnexion,' % END_TIMER,
-            '# arrêt admin, départ d\'une course de groupe). Rien d\'autre ne retire mg.xso.',
+    return ['# @s = joueur : SEULE SORTIE d\'un contre-la-montre solo (arrivée + %d ticks, abandon, pause désactivée, survie / plot / visite, 3 min,' % END_TIMER,
+            '# reconnexion, arrêt admin, départ d\'une course de groupe, désinstallation). Rien d\'autre ne retire mg.xso.',
             '# 1) plus aucune détection : le tag et les scores de course d\'abord (mg.xse, délai de 30 s, est posé plus bas)',
             'tag @s remove mg.xso',
             'scoreboard players reset @s mg.xph',
@@ -118,8 +126,12 @@ def stop_lines():
             'tag @s remove mg.xsp0',
             'scoreboard players operation @s mg.xse = $tc mg.st',
             '# 3) retour au lobby, sauf si une partie l\'a pris (participant, ou spectateur placé par core/reconnect_spec)',
+            '# ou s\'il est parti en survie, dans un plot ou en visite (reset_player l\'y arracherait : position de survie corrompue, boucle avec le plot)',
             'function mg:core/unfreeze',
-            'execute unless entity @s[tag=mg.play] unless entity @s[tag=mg.out] run function mg:core/reset_player']
+            'execute %s run function mg:core/reset_player' % ' '.join('unless entity @s[tag=%s]' % t for t in ('mg.play', 'mg.out') + tuple(t for t, _ in LEFT)),
+            '# plot ou visite : le point de réapparition du parcours ne doit pas rester (même point que reset_player ; survie : survie/restore l\'a déjà posé)',
+            'execute if entity @s[tag=mg.inplot] in minecraft:overworld run spawnpoint @s 0 64 0',
+            'execute if entity @s[tag=mg.visit] in minecraft:overworld run spawnpoint @s 0 64 0']
 
 
 def functions(specs):

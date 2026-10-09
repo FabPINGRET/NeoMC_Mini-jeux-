@@ -9,11 +9,14 @@ Branchements dans le moteur : wire_elyrace4.py (core/tick). Python stdlib unique
 """
 import game as G
 import menus as M
+import solo_run as SR
 
 COOLDOWN = 600           # ticks (30 s) apres la fin du dernier solo DU JOUEUR (mg.xse) ; admins exemptes
 MAX_SOLO = 4             # solos simultanes (une place de depart chacun : mg.ri 1..MAX_SOLO)
 ACTIVITY_TAGS = ('mg.ely', 'mg.elyf', 'mg.lk', 'mg.pkr')    # parcours d'elytra, elytres libres, kart libre, parkour du lobby
-PLOT_TAGS = ('mg.inplot', 'mg.visit')                       # plot (le sien ou en visite)
+REFUSE_LEFT = {'mg.surv': 'Impossible depuis la survie : reviens d\'abord au lobby (/trigger mg.sv set 2).',      # un refus par tag de SR.LEFT (sinon KeyError)
+               'mg.inplot': 'Impossible depuis un plot : reviens d\'abord au lobby.',
+               'mg.visit': 'Impossible depuis un plot : reviens d\'abord au lobby.'}
 QUIT_LINK = ('{"text":"[✖ Abandonner]","color":"red","click_event":{"action":"run_command","command":"trigger mg.xs set %d"},'
              '"hover_event":{"action":"show_text","value":"Quitter le contre-la-montre"}}' % M.SOLO_QUIT)
 
@@ -40,13 +43,12 @@ def checks_lines(specs):
     """Refus dans l'ordre : installation, joueur, partie en cours, solos, delai, puis parcours construit (le seul qui touche a $xc)."""
     out = [refuse('unless score $setup mg.st matches 1', 'Installation manquante : un OP doit d\'abord lancer /function mg:setup.'),
            refuse('unless entity @s[tag=mg.init]', 'Pas encore prêt : réessaie dans un instant.'),
-           refuse('if entity @s[tag=mg.surv]', 'Impossible depuis la survie : reviens d\'abord au lobby (/trigger mg.sv set 2).'),
            refuse('if entity @s[tag=mg.play]', 'Impossible pendant que tu participes à une partie.'),
            refuse('if entity @s[tag=mg.out]', 'Impossible : tu regardes la partie en cours en spectateur.'),
            refuse('if entity @s[tag=mg.xso]', 'Tu es déjà en contre-la-montre solo.'),
            refuse('if entity @s[gamemode=spectator]', 'Impossible en mode spectateur.')]
     out += [refuse('if entity @s[tag=%s]' % t, 'Termine d\'abord ton activité en cours (parcours d\'élytra, élytres libres, kart libre ou parkour).') for t in ACTIVITY_TAGS]
-    out += [refuse('if entity @s[tag=%s]' % t, 'Impossible depuis un plot : reviens d\'abord au lobby.') for t in PLOT_TAGS]
+    out += [refuse('if entity @s[tag=%s]' % t, REFUSE_LEFT[t]) for t, _ in SR.LEFT]     # surtout mg.surv : sans ce refus, start ferait `clear @s` sur un inventaire de survie
     out += [refuse('if score $mp mg.st matches 1 if entity @s[tag=mg.mpp]', 'Tu participes à la Mini Party : attends sa fin.'),
             refuse('if score $game mg.st matches %d if score $state mg.st matches 1..3' % G.GAME_ID, 'Une course d\'élytres de groupe est en cours : attends sa fin.'),
             'execute store result score #xn mg.st if entity @a[tag=mg.xso]',
@@ -62,14 +64,17 @@ def checks_lines(specs):
             'execute unless entity @s[tag=mg.admin] if score #xd mg.st matches 0..%d run return run tellraw @s '
             '[{"text":"⚠ Attends encore ","color":"red"},{"score":{"name":"#xr","objective":"mg.st"},"color":"red"},{"text":" s avant un nouveau solo.","color":"red"}]' % (COOLDOWN - 1),
             '# parcours : #xv = 10 (au hasard, tiré parmi les construits par pick) ou 10 + NUM ; refusé s\'il n\'est pas construit',
-            '# ($xc sert de brouillon à pick : jamais lu pendant un solo, remis à 0 plus bas ; un lancement de groupe le repose lui-même)',
+            '# ($xc sert de brouillon à pick : jamais lu pendant un solo ; remis à 0 par le refus « pas construit » ci-dessous, ou au lancement ; un lancement de groupe le repose lui-même)',
             'scoreboard players set $xc mg.st 0',
             'execute if score #xv mg.st matches %d.. run scoreboard players operation $xc mg.st = #xv mg.st' % (M.SOLO_RANDOM + 1),
             'execute if score #xv mg.st matches %d.. run scoreboard players remove $xc mg.st %d' % (M.SOLO_RANDOM + 1, M.SOLO_RANDOM),
             'execute if score $xc mg.st matches 0 run function mg:elyrace/pick',
             refuse('if score $xc mg.st matches 0', 'Aucun parcours n\'est construit pour le moment : réessaie plus tard.')]
-    out += [refuse('if score $xc mg.st matches %d unless data storage mg:elyrace %s' % (s.NUM, s.FLAG),
-                   'Le parcours %d (%s) n\'est pas encore construit : réessaie plus tard.' % (s.NUM, s.NAME)) for s in specs]
+    for s in specs:        # refus en deux lignes (message, puis $xc remis à 0 : il garderait sinon le numéro du parcours refusé)
+        cond = 'if score $xc mg.st matches %d unless data storage mg:elyrace %s' % (s.NUM, s.FLAG)
+        out += ['execute %s run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Le parcours %d (%s) n\'est pas encore construit : réessaie plus tard.","color":"red"}]'
+                % (cond, s.NUM, s.NAME),
+                'execute %s run return run scoreboard players set $xc mg.st 0' % cond]
     return out
 
 
@@ -119,7 +124,7 @@ def announce_lines(specs):
             '{"text":" solo : %s","color":"gray"}]')
     out = ['# Annonce du solo (@s = joueur, son parcours est mg.xcr) et lien d\'abandon pour lui seul']
     out += ['execute if score @s mg.xcr matches %d run %s' % (s.NUM, head % ('%s (%d anneaux) !' % (s.NAME, len(s.RINGS)))) for s in specs]
-    out.append('tellraw @s [{"text":"⏱ Seul en piste : ton meilleur temps est enregistré. Tu es en pause pendant le solo : reprendre la pause l\'arrête. ","color":"gray"},%s]' % QUIT_LINK)
+    out.append('tellraw @s [{"text":"⏱ Seul en piste : ton meilleur temps est enregistré. Tu es en pause pendant le solo : désactiver la pause l\'arrête.","color":"gray"},%s]' % QUIT_LINK)
     return out
 
 

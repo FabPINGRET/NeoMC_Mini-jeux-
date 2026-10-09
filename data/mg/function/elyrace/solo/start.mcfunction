@@ -3,7 +3,6 @@
 execute unless score #xv mg.st matches 10..12 run return 0
 execute unless score $setup mg.st matches 1 run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Installation manquante : un OP doit d'abord lancer /function mg:setup.","color":"red"}]
 execute unless entity @s[tag=mg.init] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Pas encore prêt : réessaie dans un instant.","color":"red"}]
-execute if entity @s[tag=mg.surv] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Impossible depuis la survie : reviens d'abord au lobby (/trigger mg.sv set 2).","color":"red"}]
 execute if entity @s[tag=mg.play] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Impossible pendant que tu participes à une partie.","color":"red"}]
 execute if entity @s[tag=mg.out] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Impossible : tu regardes la partie en cours en spectateur.","color":"red"}]
 execute if entity @s[tag=mg.xso] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Tu es déjà en contre-la-montre solo.","color":"red"}]
@@ -12,6 +11,7 @@ execute if entity @s[tag=mg.ely] run return run tellraw @s [{"text":"⚠ ","colo
 execute if entity @s[tag=mg.elyf] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Termine d'abord ton activité en cours (parcours d'élytra, élytres libres, kart libre ou parkour).","color":"red"}]
 execute if entity @s[tag=mg.lk] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Termine d'abord ton activité en cours (parcours d'élytra, élytres libres, kart libre ou parkour).","color":"red"}]
 execute if entity @s[tag=mg.pkr] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Termine d'abord ton activité en cours (parcours d'élytra, élytres libres, kart libre ou parkour).","color":"red"}]
+execute if entity @s[tag=mg.surv] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Impossible depuis la survie : reviens d'abord au lobby (/trigger mg.sv set 2).","color":"red"}]
 execute if entity @s[tag=mg.inplot] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Impossible depuis un plot : reviens d'abord au lobby.","color":"red"}]
 execute if entity @s[tag=mg.visit] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Impossible depuis un plot : reviens d'abord au lobby.","color":"red"}]
 execute if score $mp mg.st matches 1 if entity @s[tag=mg.mpp] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Tu participes à la Mini Party : attends sa fin.","color":"red"}]
@@ -28,14 +28,16 @@ scoreboard players operation #xr mg.st /= #k20 mg.st
 scoreboard players add #xr mg.st 1
 execute unless entity @s[tag=mg.admin] if score #xd mg.st matches 0..599 run return run tellraw @s [{"text":"⚠ Attends encore ","color":"red"},{"score":{"name":"#xr","objective":"mg.st"},"color":"red"},{"text":" s avant un nouveau solo.","color":"red"}]
 # parcours : #xv = 10 (au hasard, tiré parmi les construits par pick) ou 10 + NUM ; refusé s'il n'est pas construit
-# ($xc sert de brouillon à pick : jamais lu pendant un solo, remis à 0 plus bas ; un lancement de groupe le repose lui-même)
+# ($xc sert de brouillon à pick : jamais lu pendant un solo ; remis à 0 par le refus « pas construit » ci-dessous, ou au lancement ; un lancement de groupe le repose lui-même)
 scoreboard players set $xc mg.st 0
 execute if score #xv mg.st matches 11.. run scoreboard players operation $xc mg.st = #xv mg.st
 execute if score #xv mg.st matches 11.. run scoreboard players remove $xc mg.st 10
 execute if score $xc mg.st matches 0 run function mg:elyrace/pick
 execute if score $xc mg.st matches 0 run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Aucun parcours n'est construit pour le moment : réessaie plus tard.","color":"red"}]
-execute if score $xc mg.st matches 1 unless data storage mg:elyrace v2 run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Le parcours 1 (Canyon du Couchant) n'est pas encore construit : réessaie plus tard.","color":"red"}]
-execute if score $xc mg.st matches 2 unless data storage mg:elyrace c2v2 run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Le parcours 2 (Pic Blanc) n'est pas encore construit : réessaie plus tard.","color":"red"}]
+execute if score $xc mg.st matches 1 unless data storage mg:elyrace v2 run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Le parcours 1 (Canyon du Couchant) n'est pas encore construit : réessaie plus tard.","color":"red"}]
+execute if score $xc mg.st matches 1 unless data storage mg:elyrace v2 run return run scoreboard players set $xc mg.st 0
+execute if score $xc mg.st matches 2 unless data storage mg:elyrace c2v2 run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Le parcours 2 (Pic Blanc) n'est pas encore construit : réessaie plus tard.","color":"red"}]
+execute if score $xc mg.st matches 2 unless data storage mg:elyrace c2v2 run return run scoreboard players set $xc mg.st 0
 # lancement (plus aucun refus après ce point). La pause d'avant est mémorisée, puis le joueur passe en pause SANS opt_spec (il bascule,
 # affiche des messages trompeurs et élimine un participant) ; son vote éventuel ne compte plus
 execute if entity @s[tag=mg.spectate] run tag @s add mg.xsp0
