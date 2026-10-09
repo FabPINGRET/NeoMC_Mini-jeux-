@@ -696,11 +696,17 @@ CATS = {
         act('❄ Spleef ▸', 'aqua', OPEN(37), 'Casse la neige sous les autres'),
         act('✷ TNT Run ▸', 'red', OPEN(38), 'Le sol disparaît sous tes pas'),
         known(OPEN(17), '❍ Splegg ▸', 'yellow'), known(OPEN(18), '✊ Sumo ▸', 'gold'),
-        known('trigger mg.go set 28', '▦ Block Party', 'light_purple'), known(OPEN(20), '⚓ Pluie d\'Enclumes ▸', 'dark_gray')], 'menu'),
+        known('trigger mg.go set 28', '▦ Block Party', 'light_purple'),
+        act('▦ Block Party — bandes', 'light_purple', 'trigger mg.go set 91', 'Le sol est fait de bandes de couleur'),
+        act('▦ Block Party — mixte', 'light_purple', 'trigger mg.go set 92', 'Carrés ou bandes, ça change à chaque manche'), known(OPEN(20), '⚓ Pluie d\'Enclumes ▸', 'dark_gray')], 'menu'),
     'equipes': ('⚑ Équipes', 'light_purple', 'Jeux en équipes.', [
         act('⚑ Bedwars ▸', 'light_purple', OPEN(30), 'Protège ton lit, détruis les autres'),
         act('☁ Sheep War ▸', 'white', OPEN(8), 'Moutons explosifs, 8 cartes'),
-        known(OPEN(21), '▓ Paintball ▸', 'gold'), known('trigger mg.go set 30', '▮ Turf Wars', 'gold')], 'menu'),
+        known(OPEN(21), '▓ Paintball ▸', 'gold'), known('trigger mg.go set 30', '▮ Turf Wars', 'gold'),
+        act('🏰 The Towers', 'gold', 'trigger mg.go set 88', 'Saute dans le puits adverse, 5 points pour gagner'),
+        act('🚚 Convoi', 'gold', 'trigger mg.go set 89', 'Escorte ou bloque le convoi, 2 manches'),
+        act('🚚 Convoi — coop', 'green', 'trigger mg.go set 90', 'Tous ensemble contre les monstres'),
+        act('🚩 Capture the Flag', 'gold', 'trigger mg.go set 93', 'Ramène le drapeau adverse sur ton socle, 3 captures')], 'menu'),
     'courses': ('🏁 Courses et vol', 'gold', 'Le premier arrivé gagne.', [
         act('🏎 Kart ▸', 'gold', OPEN(46), 'Circuit Champignon, Royaume Koopa, Bataille'),
         known('trigger mg.go set 56', '⛵ Course de bateaux (glace)', 'aqua'),
@@ -708,7 +714,14 @@ CATS = {
         known(OPEN(19), '⬇ The Dropper ▸', 'aqua')], 'menu'),
     'arcade': ('🕹 Arcade', 'light_purple', 'Jeux d’adresse et de stratégie.', [
         act('⚡ Tron (à pied)', 'aqua', 'trigger mg.go set 84', 'Laisse un mur derrière toi, ne touche aucun mur'),
-        act('🏍 Tron moto', 'gold', 'trigger mg.go set 85', 'Pareil, à cheval et beaucoup plus vite')], 'menu'),
+        act('🏍 Tron moto', 'gold', 'trigger mg.go set 85', 'Pareil, à cheval et beaucoup plus vite'),
+        act('👑 King of the Hill', 'gold', 'trigger mg.go set 86', 'Reste seul au sommet : 60 s pour gagner'),
+        act('👑 KotH — équipes', 'red', 'trigger mg.go set 87', 'Rouge contre Bleu, tenez la colline 90 s'),
+        act('⛏ Mini UHC Run', 'gold', 'trigger mg.go set 94', '5 min : farm, PvP, zone qui rétrécit'),
+        act('🏹 Mini Hunger Games', 'gold', 'trigger mg.go set 95', '5 min : coffres, corne d\'abondance, dernier en vie'),
+        act('🧟 Zombies', 'dark_green', 'trigger mg.go set 97', 'Coop, armes réelles, 10 manches, portes et boîte mystère'),
+        act('🧪 Infection', 'green', 'trigger mg.go set 98', 'Survivants armés contre zombies contagieux, 3 min'),
+        act('🎭 Prop Hunt', 'gold', 'trigger mg.go set 96', 'Cache-toi en objet, ou trouve les objets qui bougent')], 'menu'),
     'kart': ('🏎 Kart', 'gold', 'Choisis le circuit.', [
         known('trigger mg.go set 61', '🏎 KART : Circuit Champignon', 'gold'), known('trigger mg.go set 62', '🏎 KART : Royaume Koopa', 'red'),
         known('trigger mg.go set 63', '🎈 KART : Bataille', 'light_purple')], 'courses'),
@@ -753,7 +766,7 @@ d['actions'] = [
     act('⚑ Équipes ▸', 'light_purple', OPEN(41), 'Bedwars, Sheep War, Paintball, Turf Wars', True),
     act('🏁 Courses et vol ▸', 'gold', OPEN(42), 'Kart, bateaux, élytres, Dropper', True),
     known(OPEN(7), '☠ PvE ▸', 'dark_green'),
-    act('🕹 Arcade ▸', 'light_purple', OPEN(47), 'Tron…', True),
+    act('🕹 Arcade ▸', 'light_purple', OPEN(47), 'Tron, King of the Hill, UHC, Hunger Games…', True),
     act('🎉 Fête et création ▸', 'green', OPEN(43), 'Mini Party, Build Battle, Téléphone', True),
     act('☑ Votes ▸', 'green', OPEN(44), 'Voter pour le prochain jeu'),
     act('👤 Joueur et plots ▸', 'aqua', OPEN(45), 'Spectateur, classement, plots'),
@@ -816,7 +829,8 @@ NATIVE = {
     23: ('Dropper', 2), 25: ('Tube commun', 2), 64: ('Aventure', 3), 65: ('Défi', 3),
     75: ('Course d\'anneaux', 2), 76: ('Course + combat', 3), 77: ('Survie en vol', 4),
     61: ('Circuit Champignon', 2), 62: ('Royaume Koopa', 3), 63: ('Bataille', 2), 56: ('Bateaux sur glace', 2),
-    81: ('Canyon du Couchant', 3), 30: ('Turf Wars', 2),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
+    81: ('Canyon du Couchant', 3), 30: ('Turf Wars', 2),
+    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2), 88: ('🏰 The Towers', 3), 89: ('🚚 Convoi', 3), 90: ('🚚 Convoi — coop', 3), 91: ('▦ Block Party — bandes', 3), 92: ('▦ Block Party — mixte', 3), 93: ('🚩 Capture the Flag', 3), 94: ('⛏ Mini UHC Run', 3), 95: ('🏹 Mini Hunger Games', 3), 96: ('🎭 Prop Hunt', 2), 97: ('🧟 Zombies', 3), 98: ('🧪 Infection', 2),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
 }
 SHORT_OPT = {   # boutons de navigation (mg.opt) : noms courts
     24: '➶ OITC ▸', 10: '⚡ Quake ▸', 20: '⚓ Enclumes ▸', 19: '⬇ Dropper ▸', 28: '🪽 Course élytres ▸', 23: '⚔ Arène PvP ▸',
@@ -1095,3 +1109,7 @@ with open(os.path.join(R, 'docs/VARIANTES.md'), 'w', encoding='utf-8', newline='
 print(f'{len(VARIANTS)} variantes (ids 100..{vid - 1}, hasard 190..196), {len(written)} fichiers générés')
 for m in MODES:
     print(f'  {m["name"]:<20} {len(m["vars"]):>2}  opt {m["opt"]}  ' + ' '.join(f'{v["id"]}{stars(v["dif"])}' for v in m['vars']))
+
+# Les notes des joueurs remplacent les étoiles dans les menus : à refaire après chaque régénération des menus
+import runpy
+runpy.run_path(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'rating', 'gen_rating.py'), run_name='__main__')

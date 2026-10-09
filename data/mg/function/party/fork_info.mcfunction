@@ -1,5 +1,5 @@
 # Propose le choix de route à @s (embranchement de sa case)
-execute if score @s mg.mpi matches 13 run dialog show @s mg:party_fork_1
+execute if score @s mg.mpi matches 13 run function mg:rate/d/party_fork_1
 execute if score @s mg.mpi matches 13 run tellraw @s [{"text":"⇆ Fenêtre fermée ? ","color":"gray"},{"text":"[☀ Route de la plage]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.dice set 11"},"hover_event":{"action":"show_text","value":"longue, tranquille"}},{"text":"  "},{"text":"[♨ Raccourci du volcan]","color":"red","click_event":{"action":"run_command","command":"trigger mg.dice set 12"},"hover_event":{"action":"show_text","value":"courte, dangereuse"}},{"text":"  (au hasard dans 15 s)","color":"dark_gray"}]
-execute if score @s mg.mpi matches 48 run dialog show @s mg:party_fork_2
+execute if score @s mg.mpi matches 48 run function mg:rate/d/party_fork_2
 execute if score @s mg.mpi matches 48 run tellraw @s [{"text":"⇆ Fenêtre fermée ? ","color":"gray"},{"text":"[❄ Tour du lac gelé]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.dice set 11"},"hover_event":{"action":"show_text","value":"longue, tranquille"}},{"text":"  "},{"text":"[❄ Grotte de glace]","color":"red","click_event":{"action":"run_command","command":"trigger mg.dice set 12"},"hover_event":{"action":"show_text","value":"courte, piégeuse"}},{"text":"  (au hasard dans 15 s)","color":"dark_gray"}]

@@ -37,6 +37,47 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.rt trigger
+scoreboard objectives add mg.rts dummy
+scoreboard objectives add mg.rtn dummy
+scoreboard objectives add mg.rgs dummy
+scoreboard objectives add mg.rgn dummy
+scoreboard objectives add mg.rfs dummy
+scoreboard objectives add mg.rfn dummy
+function mg:rate/init
+team add mg_ph
+team modify mg_ph nametagVisibility never
+team modify mg_ph friendlyFire false
+team modify mg_ph collisionRule never
+scoreboard players set #4 mg.st 4
+scoreboard objectives add mg.pid dummy
+scoreboard objectives add mg.php dummy
+scoreboard objectives add mg.phx dummy
+scoreboard objectives add mg.phz dummy
+scoreboard objectives add mg.phs dummy
+scoreboard players set #2 mg.st 2
+scoreboard players set #3 mg.st 3
+scoreboard players set #5 mg.st 5
+scoreboard players set #8 mg.st 8
+scoreboard players set #60 mg.st 60
+scoreboard objectives add mg.zpt dummy {"text":"🧟 Points","color":"dark_green"}
+scoreboard objectives add mg.zk minecraft.killed:minecraft.zombie
+scoreboard objectives add mg.gcd dummy
+scoreboard objectives add mg.grl dummy
+scoreboard objectives add mg.grt dummy
+scoreboard objectives add mg.gsn minecraft.custom:minecraft.sneak_time
+scoreboard objectives add mg.g1 dummy
+scoreboard objectives add mg.g2 dummy
+scoreboard objectives add mg.g3 dummy
+scoreboard objectives add mg.g4 dummy
+scoreboard objectives add mg.g5 dummy
+scoreboard objectives add mg.g6 dummy
+scoreboard players set #7 mg.st 7
+scoreboard players set #11 mg.st 11
+scoreboard players set #30 mg.st 30
+scoreboard objectives add mg.cf dummy {"text":"🚩 Drapeaux","color":"gold"}
+scoreboard objectives add mg.tw dummy {"text":"🏰 The Towers","color":"gold"}
+scoreboard objectives add mg.kh dummy {"text":"👑 Colline","color":"gold"}
 scoreboard objectives add mg.trc dummy
 scoreboard objectives add mg.trs dummy
 scoreboard objectives add mg.tel trigger
@@ -181,11 +222,12 @@ execute if score $setup mg.st matches 1 if data storage mg:kart built2 unless da
 execute if score $setup mg.st matches 1 unless data storage mg:dropadv v3 run schedule function mg:dropadv/build 40s
 execute if score $setup mg.st matches 1 run scoreboard players set $xbk mg.st 0
 execute if score $setup mg.st matches 1 run schedule function mg:elyrace/build_next 60s
-execute if score $setup mg.st matches 1 unless data storage mg:hall v3 run schedule function mg:hall/build 20s
+execute if score $setup mg.st matches 1 unless data storage mg:hall v5 run schedule function mg:hall/build 20s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/build 10s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/food_build 25s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:elytra/build 30s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby food1 run schedule function mg:lobby/food_build 12s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby coaster1 run schedule function mg:coaster/build_start 16s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby ely1 run schedule function mg:elytra/build 14s
 
 # Zones chargées (après une mise à jour du pack, les nouvelles zones sont prises en compte)

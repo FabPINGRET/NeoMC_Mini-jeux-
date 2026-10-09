@@ -22,6 +22,39 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.rt
+scoreboard objectives remove mg.rts
+scoreboard objectives remove mg.rtn
+scoreboard objectives remove mg.rgs
+scoreboard objectives remove mg.rgn
+scoreboard objectives remove mg.rfs
+scoreboard objectives remove mg.rfn
+schedule clear mg:rate/ask
+data remove storage mg:rate lab
+team remove mg_ph
+scoreboard objectives remove mg.pid
+scoreboard objectives remove mg.php
+scoreboard objectives remove mg.phx
+scoreboard objectives remove mg.phz
+scoreboard objectives remove mg.phs
+data remove storage mg:zm hp
+scoreboard objectives remove mg.zpt
+scoreboard objectives remove mg.zk
+scoreboard objectives remove mg.gcd
+scoreboard objectives remove mg.grl
+scoreboard objectives remove mg.grt
+scoreboard objectives remove mg.gsn
+scoreboard objectives remove mg.g1
+scoreboard objectives remove mg.g2
+scoreboard objectives remove mg.g3
+scoreboard objectives remove mg.g4
+scoreboard objectives remove mg.g5
+scoreboard objectives remove mg.g6
+data remove storage mg:zone r
+scoreboard objectives remove mg.cf
+stopsound @a record
+bossbar remove mg:convoy
+scoreboard objectives remove mg.kh
 scoreboard objectives remove mg.trc
 scoreboard objectives remove mg.trs
 schedule clear mg:tel/plots
@@ -295,6 +328,11 @@ schedule clear mg:party/build_7
 schedule clear mg:party/build_8
 schedule clear mg:plot/build_all
 schedule clear mg:lobby/food_build
+schedule clear mg:coaster/build_start
+schedule clear mg:coaster/build
+kill @e[tag=mg.cst]
+kill @e[tag=mg.csd]
+data remove storage mg:lobby coaster1
 kill @e[tag=mg.foodd]
 schedule clear mg:elytra/build
 kill @e[tag=mg.elyd]

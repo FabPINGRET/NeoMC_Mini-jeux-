@@ -31,8 +31,16 @@
     {
       "label": [
         {
-          "text": "⚡ Tron (à pied)",
+          "text": "⚡ ⚡ Tron (à pied) ",
           "color": "aqua"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -49,8 +57,16 @@
     {
       "label": [
         {
-          "text": "🏍 Tron moto",
+          "text": "🏍 🏍 Tron moto ",
           "color": "gold"
+        },
+        {
+          "text": "★★★★",
+          "color": "gold"
+        },
+        {
+          "text": "",
+          "color": "dark_gray"
         }
       ],
       "tooltip": [
@@ -62,6 +78,188 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 85"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "👑 👑 King of the Hill ",
+          "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Reste seul au sommet : 60 s pour gagner",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 86"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "👑 👑 KotH — équipes ",
+          "color": "red"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Rouge contre Bleu, tenez la colline 90 s",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 87"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⛏ ⛏ Mini UHC Run ",
+          "color": "gold"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "5 min : farm, PvP, zone qui rétrécit",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 94"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🏹 🏹 Mini Hunger Games ",
+          "color": "gold"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "5 min : coffres, corne d'abondance, dernier en vie",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 95"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🧟 🧟 Zombies ",
+          "color": "dark_green"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Coop, armes réelles, 10 manches, portes et boîte mystère",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 97"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🧪 🧪 Infection ",
+          "color": "green"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Survivants armés contre zombies contagieux, 3 min",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 98"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🎭 🎭 Prop Hunt ",
+          "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Cache-toi en objet, ou trouve les objets qui bougent",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 96"
       }
     },
     {

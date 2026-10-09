@@ -6,6 +6,7 @@ scoreboard players reset @s mg.go
 scoreboard players set $ar mg.st 0
 scoreboard players set $dif mg.st 2
 execute if score $game mg.st matches 100..196 run function mg:var/remap
+scoreboard players operation $rgid mg.st = $game mg.st
 # Kart : 61 = Circuit Champignon, 62 = Royaume Koopa → jeu 61 + circuit $ktr
 scoreboard players set $ktr mg.st 1
 execute if score $game mg.st matches 62 run scoreboard players set $ktr mg.st 2
@@ -30,6 +31,12 @@ execute if score $game mg.st matches 78 store result score $elm mg.st run random
 execute if score $game mg.st matches 75..77 run scoreboard players operation $elm mg.st = $game mg.st
 execute if score $game mg.st matches 75..77 run scoreboard players remove $elm mg.st 74
 execute if score $game mg.st matches 75..78 run scoreboard players set $game mg.st 75
+
+# Block Party : 28 = carrés, 91 = bandes, 92 = mixte → jeu 28 + sol $bpm (0..2)
+execute if score $game mg.st matches 28 run scoreboard players set $bpm mg.st 0
+execute if score $game mg.st matches 91 run scoreboard players set $bpm mg.st 1
+execute if score $game mg.st matches 92 run scoreboard players set $bpm mg.st 2
+execute if score $game mg.st matches 91..92 run scoreboard players set $game mg.st 28
 
 # Mini Party : 59 = 8 tours, 60 = 15 tours. Un jeu lancé hors Mini Party ($mpl) met fin à la partie en cours
 execute unless score $mpl mg.st matches 1 run scoreboard players set $mp mg.st 0
@@ -191,6 +198,17 @@ execute if score $game mg.st matches 36 if score $pbm mg.st matches 2 run tellra
 execute if score $game mg.st matches 56 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une ","color":"gray"},{"text":"COURSE DE BATEAUX SUR GLACE","color":"aqua","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 84 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⚡ TRON","color":"aqua","bold":true},{"text":" : laisse un mur derrière toi, ne touche aucun mur !","color":"gray"}]
 execute if score $game mg.st matches 85 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🏍 TRON MOTO","color":"gold","bold":true},{"text":" : à cheval, laisse un mur derrière toi, ne touche aucun mur !","color":"gray"}]
+execute if score $game mg.st matches 86 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"👑 KING OF THE HILL","color":"gold","bold":true},{"text":" : tiens le sommet seul, 60 points pour gagner !","color":"gray"}]
+execute if score $game mg.st matches 87 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"👑 KING OF THE HILL — ÉQUIPES","color":"gold","bold":true},{"text":" : rouges contre bleus, 90 points sur le sommet !","color":"gray"}]
+execute if score $game mg.st matches 88 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🏰 THE TOWERS","color":"gold","bold":true},{"text":" : rouges contre bleus, saute dans le puits adverse (5 points) !","color":"gray"}]
+execute if score $game mg.st matches 89 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🚚 CONVOI","color":"gold","bold":true},{"text":" : rouges contre bleus, escortez ou bloquez le convoi (2 manches) !","color":"gray"}]
+execute if score $game mg.st matches 90 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🚚 CONVOI — COOP","color":"gold","bold":true},{"text":" : escortez le convoi à travers les monstres !","color":"gray"}]
+execute if score $game mg.st matches 93 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🚩 CAPTURE THE FLAG","color":"gold","bold":true},{"text":" : rouges contre bleus, 3 captures pour gagner !","color":"gray"}]
+execute if score $game mg.st matches 94 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⛏ MINI UHC RUN","color":"gold","bold":true},{"text":" : farm, PvP, zone qui rétrécit — 5 min !","color":"gray"}]
+execute if score $game mg.st matches 95 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🏹 MINI HUNGER GAMES","color":"gold","bold":true},{"text":" : coffres, corne d'abondance, dernier en vie — 5 min !","color":"gray"}]
+execute if score $game mg.st matches 97 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧟 ZOMBIES","color":"dark_green","bold":true},{"text":" : survivez à 10 manches dans le bunker !","color":"gray"}]
+execute if score $game mg.st matches 98 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧪 INFECTION","color":"dark_green","bold":true},{"text":" : survivants armés contre zombies contagieux, 3 min !","color":"gray"}]
+execute if score $game mg.st matches 96 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🎭 PROP HUNT","color":"gold","bold":true},{"text":" : cachez-vous en objets, les chercheurs arrivent dans 30 s !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 83 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"📞 TÉLÉPHONE","color":"gold","bold":true},{"text":" : mot → construction → devinette → construction → devinette !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
@@ -237,6 +255,13 @@ execute if score $game mg.st matches 31 run function mg:quake/prepare
 execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
+execute if score $game mg.st matches 96 run function mg:ph/prepare
+execute if score $game mg.st matches 97..98 run function mg:zmode/prepare
+execute if score $game mg.st matches 94..95 run function mg:survival/prepare
+execute if score $game mg.st matches 93 run function mg:ctf/prepare
+execute if score $game mg.st matches 89..90 run function mg:convoy/prepare
+execute if score $game mg.st matches 88 run function mg:tower/prepare
+execute if score $game mg.st matches 86..87 run function mg:koth/prepare
 execute if score $game mg.st matches 84..85 run function mg:tron/prepare
 execute if score $game mg.st matches 83 run function mg:tel/prepare
 execute if score $game mg.st matches 59 run function mg:party/prepare

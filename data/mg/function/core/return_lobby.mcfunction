@@ -2,6 +2,7 @@
 
 # Classements par jeu et hall des scores : crédit des vainqueurs (avant la remise à zéro des tags)
 execute as @a[tag=mg.win] run function mg:hall/credit
+function mg:rate/collect
 
 # Mini Party : pièces du mini-jeu (avant la remise à zéro des tags), ou fin de la partie si c'est le plateau qui s'arrête
 execute if score $mp mg.st matches 1 unless score $game mg.st matches 59 run function mg:party/reward
@@ -13,6 +14,13 @@ execute if score $game mg.st matches 66 run function mg:elyrace/cleanup
 execute if score $game mg.st matches 75 run function mg:sky/cleanup
 kill @e[tag=mg.ib]
 execute if score $game mg.st matches 57..58 run function mg:bb/cleanup
+execute if score $game mg.st matches 96 run function mg:ph/cleanup
+execute if score $game mg.st matches 97..98 run function mg:zmode/cleanup
+execute if score $game mg.st matches 94..95 run function mg:survival/cleanup
+execute if score $game mg.st matches 93 run function mg:ctf/cleanup
+execute if score $game mg.st matches 89..90 run function mg:convoy/cleanup
+execute if score $game mg.st matches 88 run function mg:tower/cleanup
+execute if score $game mg.st matches 86..87 run function mg:koth/cleanup
 execute if score $game mg.st matches 84..85 run function mg:tron/cleanup
 execute if score $game mg.st matches 83 run function mg:tel/cleanup
 execute as @a[tag=mg.play] run function mg:core/reset_player

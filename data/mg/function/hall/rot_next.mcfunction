@@ -1,8 +1,8 @@
 # Tableau suivant ayant au moins un score (sinon victoires)
 scoreboard players add $rot mg.st 1
-execute unless score $rot mg.st matches 1..25 run scoreboard players set $rot mg.st 1
+execute unless score $rot mg.st matches 1..36 run scoreboard players set $rot mg.st 1
 scoreboard players add $rtry mg.st 1
-execute if score $rtry mg.st matches 26.. run return run scoreboard objectives setdisplay sidebar mg.wins
+execute if score $rtry mg.st matches 37.. run return run scoreboard objectives setdisplay sidebar mg.wins
 execute if score $rot mg.st matches 1 if score #any mg.wins matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wins
 execute if score $rot mg.st matches 2 if score #any mg.stp matches 1.. run return run scoreboard objectives setdisplay sidebar mg.stp
 execute if score $rot mg.st matches 3 if score #any mg.stk matches 1.. run return run scoreboard objectives setdisplay sidebar mg.stk
@@ -28,4 +28,15 @@ execute if score $rot mg.st matches 22 if score #any mg.wg_party matches 1.. run
 execute if score $rot mg.st matches 23 if score #any mg.wg_kart matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_kart
 execute if score $rot mg.st matches 24 if score #any mg.wg_elyrace matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_elyrace
 execute if score $rot mg.st matches 25 if score #any mg.wg_elytra matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_elytra
+execute if score $rot mg.st matches 26 if score #any mg.wg_telephone matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_telephone
+execute if score $rot mg.st matches 27 if score #any mg.wg_tron matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_tron
+execute if score $rot mg.st matches 28 if score #any mg.wg_koth matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_koth
+execute if score $rot mg.st matches 29 if score #any mg.wg_tower matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_tower
+execute if score $rot mg.st matches 30 if score #any mg.wg_convoy matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_convoy
+execute if score $rot mg.st matches 31 if score #any mg.wg_ctf matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_ctf
+execute if score $rot mg.st matches 32 if score #any mg.wg_uhc matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_uhc
+execute if score $rot mg.st matches 33 if score #any mg.wg_hg matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_hg
+execute if score $rot mg.st matches 34 if score #any mg.wg_prophunt matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_prophunt
+execute if score $rot mg.st matches 35 if score #any mg.wg_zombies matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_zombies
+execute if score $rot mg.st matches 36 if score #any mg.wg_infection matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_infection
 function mg:hall/rot_next

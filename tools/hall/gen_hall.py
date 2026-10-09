@@ -36,8 +36,19 @@ GAMES = [  # clé, libellé, couleur, plages de $game
     ('kart', '🏎 Kart', 'red', [(61, 63)]),
     ('elyrace', "🪽 Course d'élytres", 'aqua', [(66, 66)]),
     ('elytra', '🪽 Élytra (3 modes)', 'aqua', [(75, 75)]),
+    ('telephone', '📞 Téléphone', 'gold', [(83, 83)]),
+    ('tron', '⚡ Tron', 'aqua', [(84, 85)]),
+    ('koth', '👑 King of the Hill', 'gold', [(86, 87)]),
+    ('tower', '🏰 The Towers', 'gold', [(88, 88)]),
+    ('convoy', '🚚 Convoi', 'gold', [(89, 90)]),
+    ('ctf', '🚩 Capture the Flag', 'red', [(93, 93)]),
+    ('uhc', '⛏ Mini UHC Run', 'gold', [(94, 94)]),
+    ('hg', '🏹 Mini Hunger Games', 'gold', [(95, 95)]),
+    ('prophunt', '🎭 Prop Hunt', 'gold', [(96, 96)]),
+    ('zombies', '🧟 Zombies', 'dark_green', [(97, 97)]),
+    ('infection', '🧪 Infection', 'green', [(98, 98)]),
 ]
-X0, X1, Z0, Z1 = -20, -12, 22, 28          # emprise du hall (sol y 63), ouvert au nord
+X0, X1, Z0, Z1 = -24, -6, 21, 35           # emprise du hall agrandi (sol y 63), ouvert au nord
 MARK = (-16, 64, 25)                       # piédestal central (bloc d'or) : témoin de présence
 TR = 'transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[%sf,%sf,%sf]}'
 
@@ -57,7 +68,7 @@ W('objectives', ['# Objectifs des classements par jeu (généré par tools/hall/
     'scoreboard objectives modify mg.wins displayname [{"text":"✦ Victoires","color":"gold","bold":true},{"text":" (tous les jeux)","color":"gray","bold":false}]'])
 W('remove', ['# Désinstallation des classements et du hall'] +
   [f'scoreboard objectives remove mg.wg_{k}' for k, *_ in GAMES] +
-  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3'])
+  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5'])
 
 # ---------------------------------------------------------------- crédit des vainqueurs
 cr = ['# Vainqueur (@s, tag mg.win) au retour au lobby : classement du jeu + hall des scores',
@@ -129,17 +140,25 @@ b = ['# Hall des scores (sud-ouest de la place) : construction + restauration de
      'scoreboard players set #hlr mg.st 0',
      'kill @e[tag=mg.hall]', '',
      f'fill {X0} 63 {Z0} {X1} 63 {Z1} minecraft:smooth_quartz',
-     f'fill {X0} 64 {Z0} {X1} 70 {Z1-1} minecraft:air',
+     f'fill {X0} 64 {Z0} {X1} 74 {Z1} minecraft:air',
+     # mur du fond (plaques des jeux) et murs latéraux, corniche dorée
      f'fill {X0} 64 {Z1} {X1} 69 {Z1} minecraft:polished_blackstone_bricks',
      f'fill {X0} 70 {Z1} {X1} 70 {Z1} minecraft:gold_block',
-     f'fill {X0} 64 {Z0} {X0} 68 {Z0} minecraft:quartz_pillar', f'fill {X1} 64 {Z0} {X1} 68 {Z0} minecraft:quartz_pillar',
-     f'setblock {X0} 69 {Z0} minecraft:lantern', f'setblock {X1} 69 {Z0} minecraft:lantern',
-     f'fill {X0} 64 {Z1-1} {X0} 66 {Z1-1} minecraft:quartz_pillar', f'fill {X1} 64 {Z1-1} {X1} 66 {Z1-1} minecraft:quartz_pillar',
-     f'fill -16 63 {Z0} -16 63 24 minecraft:red_wool',
+     # colonnes : entrée, côtés, fond
+     f'fill {X0} 64 {Z0} {X0} 70 {Z0} minecraft:quartz_pillar', f'fill {X1} 64 {Z0} {X1} 70 {Z0} minecraft:quartz_pillar',
+     f'setblock {X0} 71 {Z0} minecraft:lantern', f'setblock {X1} 71 {Z0} minecraft:lantern',
+     f'fill {X0 + 1} 64 {Z1 - 1} {X0 + 1} 70 {Z1 - 1} minecraft:quartz_pillar', f'fill {X1 - 1} 64 {Z1 - 1} {X1 - 1} 70 {Z1 - 1} minecraft:quartz_pillar',
+     # tapis rouge de l'entrée au fond, bancs, lustres
+     f'fill -16 63 {Z0} -15 63 {Z1 - 1} minecraft:red_wool',
+     # l'arbre planté juste devant l'entrée masquait le hall
+     f'fill -20 64 {Z0 - 6} -11 74 {Z0 - 1} minecraft:air replace #minecraft:logs', f'fill -20 64 {Z0 - 6} -11 74 {Z0 - 1} minecraft:air replace #minecraft:leaves',
+     f'fill {X0 + 2} 64 {Z1 - 7} {X0 + 4} 64 {Z1 - 7} minecraft:dark_oak_stairs[facing=south]', f'fill {X1 - 4} 64 {Z1 - 7} {X1 - 2} 64 {Z1 - 7} minecraft:dark_oak_stairs[facing=south]',
+     f'fill {X0 + 2} 64 {Z1 - 10} {X0 + 4} 64 {Z1 - 10} minecraft:dark_oak_stairs[facing=south]', f'fill {X1 - 4} 64 {Z1 - 10} {X1 - 2} 64 {Z1 - 10} minecraft:dark_oak_stairs[facing=south]',
+     f'fill {X0 + 1} 63 {Z0 + 1} {X0 + 1} 63 {Z1 - 1} minecraft:gold_block', f'fill {X1 - 1} 63 {Z0 + 1} {X1 - 1} 63 {Z1 - 1} minecraft:gold_block',
      'setblock -19 64 25 minecraft:emerald_block', f'setblock {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block', 'setblock -13 64 25 minecraft:lapis_block', '',
      '# Tampon de résolution des noms (invisible)',
      f'summon minecraft:item_display -15.5 64.5 25.5 {{Tags:["mg.hall","mg.hallbuf"],item:{{id:"minecraft:paper"}},{TR % (0.001, 0.001, 0.001)}}}',
-     f'summon minecraft:text_display -15.5 71.0 27.5 {{Tags:["mg.hall"],billboard:"center",background:0,text:[{{"text":"🏆 Hall des scores","color":"gold","bold":true}}],{TR % (1.4, 1.4, 1.4)}}}',
+     f'summon minecraft:text_display -15.5 71.4 {Z1 - 0.4} {{Tags:["mg.hall"],billboard:"center",background:0,text:[{{"text":"🏆 Hall des scores","color":"gold","bold":true}}],{TR % (2.2, 2.2, 2.2)}}}',
      '', '# Piédestaux : objet qui tourne + plaque']
 peds = [(-18.5, 'stp', '▶ Le plus assidu', 'green', 'clock'),
         (-15.5, 'wins', '👑 Champion des mini-jeux', 'gold', 'totem_of_undying'),
@@ -149,10 +168,11 @@ plaques.append((-12.5, 67.6, 25.5, 'ely2', "🪽 Record grand parcours d'élytra
 plaques.append((-12.5, 68.3, 25.5, 'elyg', '🪽 Record Élytra : course', 'aqua', 0.55))
 for x, k, l, c, it in peds:
     b.append(f'summon minecraft:item_display {x} 65.8 25.5 {{Tags:["mg.hall","mg.lspin","mg.lbob"],billboard:"fixed",item:{{id:"minecraft:{it}"}},{TR % (0.9, 0.9, 0.9)}}}')
-xs = [-19.3, -17.4, -15.5, -13.6, -11.7]
-ys = [68.3, 67.1, 65.9, 64.7, 69.5]      # 5e rangée (21e jeu et suivants) : au-dessus de la première, le sol est juste sous la 4e
+xs = [-23.0 + 2.0 * i for i in range(9)]   # 9 colonnes × 4 rangées sur le mur du fond (36 plaques)
+ys = [68.6, 67.4, 66.2, 65.0]
+assert len(GAMES) <= len(xs) * len(ys), 'agrandir la grille de plaques'
 for i, (k, l, c, _) in enumerate(GAMES):
-    plaques.append((xs[i % 5], ys[i // 5], 27.2, k, l, c, 0.42))
+    plaques.append((xs[i % 9], ys[i // 9], Z1 - 0.8, k, l, c, 0.42))
 b.append('')
 b.append('# Plaques : texte par défaut, puis meneur enregistré s\'il existe')
 for x, y, z, k, l, c, s in plaques:
@@ -161,6 +181,8 @@ for x, y, z, k, l, c, s in plaques:
 # Version du hall : core/load reconstruit le hall (une fois) sur les mondes dont les plaques sont plus anciennes (nouveau jeu ajouté)
 b.append('data modify storage mg:hall v2 set value 1b')
 b.append('data modify storage mg:hall v3 set value 1b')
+b.append('data modify storage mg:hall v4 set value 1b')
+b.append('data modify storage mg:hall v5 set value 1b')
 W('build', b)
 W('board_tick', ['# Tableau à droite dans le lobby (classement affiché, pas de vote en cours)',
     'scoreboard players remove $hrt mg.st 1',

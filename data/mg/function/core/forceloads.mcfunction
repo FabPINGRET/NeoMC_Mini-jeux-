@@ -69,6 +69,21 @@ forceload add -54 15746 54 15854
 forceload add -8 19412 8 19428
 # Tron (z 20000)
 forceload add -32 19968 32 20032
+# King of the Hill (z 20400)
+forceload add -27 20373 27 20427
+# The Towers (z 20800)
+forceload add -48 20784 48 20816
+# Convoi (z 21200)
+forceload add -72 21186 72 21214
+# Capture the Flag (z 21600)
+forceload add -44 21576 44 21624
+# Mini UHC Run (z 22400) et Mini Hunger Games (z 22800)
+forceload add -42 22358 42 22442
+forceload add -52 22748 52 22852
+# Bunker Zombies / Infection (z 23200)
+forceload add -17 23161 39 23217
+# Prop Hunt (z 23600)
+forceload add -23 23582 23 23618
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl
