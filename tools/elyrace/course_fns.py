@@ -5,6 +5,7 @@ Python stdlib uniquement (compatible 3.8).
 """
 import course_common as CC
 import game as G
+import reasons as RS
 
 SB = G.SB
 
@@ -17,7 +18,6 @@ def turbo_end_lines(spec):
 
 def player_lines(c):
     spec = c.spec
-    respawn = 'function ' + CC.fn(spec, 'respawn')
     return ['# @s = joueur en course (pas encore arrivé) : turbo, position, délais, règles',
             '# turbo d\'un anneau d\'or : décompte (gold_hit pose mg.xu), la gravité de base du parcours revient au dernier tick'] + turbo_end_lines(spec) + [
             'execute store result score @s mg.xx run data get entity @s Pos[0]',
@@ -29,14 +29,14 @@ def player_lines(c):
             'execute unless predicate mg:gliding if score @s mg.xl matches 1 run scoreboard players add @s mg.xn 1',
             'function mg:elyrace/speed',
             '# Mort (filet) ou sorti de la zone construite (monde vide) : retour au dernier point de reprise',
-            'execute if score @s mg.deaths matches 1.. run return run ' + respawn,
+            'execute if score @s mg.deaths matches 1.. run return run ' + RS.call('dead'),
             'execute unless entity @s[x=%d,y=0,z=%d,dx=%d,dy=330,dz=%d] run return run %s'
-            % (spec.X0, spec.Z0, spec.X1 - spec.X0, spec.Z1 - spec.Z0, respawn),
+            % (spec.X0, spec.Z0, spec.X1 - spec.X0, spec.Z1 - spec.Z0, RS.call('out')),
             '# Encore sur la plateforme de départ : aucune règle',
             'execute if score @s mg.xx matches ..%d run return 0' % (G.LEFT_X - 1),
-            'execute if score @s mg.xg matches 0 if score @s mg.xn matches %d.. run return run %s' % (G.STALL + 1, respawn),
-            'execute if score @s mg.xg matches 0 at @s if block ~ ~ ~ minecraft:water run return run ' + respawn,
-            'execute if score @s mg.xg matches 0 at @s if data entity @s {OnGround:1b} run return run ' + respawn,
+            'execute if score @s mg.xg matches 0 if score @s mg.xn matches %d.. run return run %s' % (G.STALL + 1, RS.call('stall')),
+            'execute if score @s mg.xg matches 0 at @s if block ~ ~ ~ minecraft:water run return run ' + RS.call('water'),
+            'execute if score @s mg.xg matches 0 at @s if data entity @s {OnGround:1b} run return run ' + RS.call('ground'),
             'function ' + CC.fn(spec, 'rings')]
 
 

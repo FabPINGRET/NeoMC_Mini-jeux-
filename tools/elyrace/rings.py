@@ -25,7 +25,7 @@ def ring_lines(c):
     out.append('# Anneau rate : le joueur est passe plus de 5 blocs derriere le plan du prochain anneau sans le franchir ; return : apres la reprise,')
     out.append('# les anneaux d\'or et de vent ci-dessous liraient encore l\'origine du balayage d\'avant la teleportation')
     for n, (x, cy, cz, zone) in enumerate(c.rings, 1):
-        out.append('execute if score @s mg.xa matches %d positioned %d %d %d if entity @s[dx=2000,dy=%d,dz=%d] run return run function mg:elyrace/miss'
+        out.append('execute if score @s mg.xa matches %d positioned %d %d %d if entity @s[dx=2000,dy=%d,dz=%d] run return run function mg:elyrace/why/miss'
                    % (n - 1, x + MISS_MARGIN, Y_LO, spec.Z0, Y_SPAN, spec.Z1 - spec.Z0))
     out.append('# Anneaux d\'or (trou de 7 x 7) : un turbo de 3 s chacun, mg.xo ne fait qu\'augmenter (pas de recuperation apres une reprise)')
     for k, (x, cy, cz) in enumerate(c.golds, 1):

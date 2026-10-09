@@ -9,6 +9,7 @@ Python stdlib uniquement (compatible 3.8).
 """
 import course_common as CC
 import glide as GL
+import reasons as RS
 import records as RC
 import wind as W
 
@@ -153,7 +154,7 @@ def speed_lines():
 
 
 def wall_lines():
-    return ['# @s = joueur qui vient de heurter un mur (avancement mg:elyrace_wall ou chute de vitesse) : -1 coeur',
+    return ['# @s = joueur qui vient de heurter un mur (avancement mg:elyrace_wall ou chute de vitesse) : -1 coeur ; plus de coeur : reprise (why/ko)',
             'execute if score @s mg.xk matches 1.. run return 0',
             'execute if score @s mg.xg matches 1.. run return 0',
             'execute if score @s mg.xf matches 1.. run return 0',
@@ -161,8 +162,8 @@ def wall_lines():
             'scoreboard players set @s mg.xk %d' % COOLDOWN,
             'scoreboard players remove @s mg.xh 1',
             'execute at @s run playsound minecraft:entity.player.hurt master @s ~ ~ ~ 1 0.8',
-            'execute if score @s mg.xh matches ..0 run return run function mg:elyrace/respawn',
-            'function mg:elyrace/hud']
+            'execute if score @s mg.xh matches ..0 run return run ' + RS.call('ko'),
+            '# encore en vie : sous-titre du choc, puis le HUD'] + RS.subtitle(*RS.HIT) + ['function mg:elyrace/hud']
 
 
 def wall_adv_lines():
@@ -205,7 +206,7 @@ def finish_lines(specs):
 
 
 def small_lines():
-    """Petites fonctions : points de reprise, anneau d'or, anneau rate, equipement, fin, temps ecoule, nettoyage, place."""
+    """Petites fonctions : points de reprise, anneau d'or, equipement, fin, temps ecoule, nettoyage, place."""
     return {
         'cp_reached': ['# @s = joueur qui valide un anneau qui est aussi un point de reprise',
                        'scoreboard players operation @s mg.xc = @s mg.xa',
@@ -217,9 +218,6 @@ def small_lines():
                      'execute at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.4',
                      'execute at @s run particle minecraft:totem_of_undying ~ ~1 ~ 0.4 0.4 0.4 0.3 25',
                      'tellraw @s [{"text":"★ Anneau d\'or ! ","color":"gold","bold":true},{"text":"Turbo de 3 s : tu piques plus vite.","color":"gray"}]'],
-        'miss': ['# @s = joueur qui a raté un anneau : retour au dernier point de reprise',
-                 'tellraw @s [{"text":"✖ Anneau raté ! ","color":"red","bold":true},{"text":"Retour au dernier point de reprise.","color":"gray"}]',
-                 'function mg:elyrace/respawn'],
         'equip': ['# @s = joueur : élytres verrouillées (pas de fusée : les anneaux d\'or donnent un turbo)',
                   'item replace entity @s armor.chest with ' + ELYTRA],
         'end': ['# Fin de la course : gagne le premier arrivé encore en ligne (plus petite place mg.xf) ; les autres sont classés dans le chat',
@@ -259,4 +257,5 @@ def functions(specs):
            'wall_adv': wall_adv_lines(), 'finish': finish_lines(specs), 'objectives': objectives_lines(specs)}
     out.update(small_lines())
     out.update(W.functions())
+    out.update(RS.functions())
     return out

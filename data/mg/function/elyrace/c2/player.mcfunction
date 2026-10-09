@@ -11,11 +11,11 @@ execute if predicate mg:gliding run scoreboard players set @s mg.xn 0
 execute unless predicate mg:gliding if score @s mg.xl matches 1 run scoreboard players add @s mg.xn 1
 function mg:elyrace/speed
 # Mort (filet) ou sorti de la zone construite (monde vide) : retour au dernier point de reprise
-execute if score @s mg.deaths matches 1.. run return run function mg:elyrace/c2/respawn
-execute unless entity @s[x=-16,y=0,z=29440,dx=1152,dy=330,dz=320] run return run function mg:elyrace/c2/respawn
+execute if score @s mg.deaths matches 1.. run return run function mg:elyrace/why/dead
+execute unless entity @s[x=-16,y=0,z=29440,dx=1152,dy=330,dz=320] run return run function mg:elyrace/why/out
 # Encore sur la plateforme de départ : aucune règle
 execute if score @s mg.xx matches ..32 run return 0
-execute if score @s mg.xg matches 0 if score @s mg.xn matches 11.. run return run function mg:elyrace/c2/respawn
-execute if score @s mg.xg matches 0 at @s if block ~ ~ ~ minecraft:water run return run function mg:elyrace/c2/respawn
-execute if score @s mg.xg matches 0 at @s if data entity @s {OnGround:1b} run return run function mg:elyrace/c2/respawn
+execute if score @s mg.xg matches 0 if score @s mg.xn matches 11.. run return run function mg:elyrace/why/stall
+execute if score @s mg.xg matches 0 at @s if block ~ ~ ~ minecraft:water run return run function mg:elyrace/why/water
+execute if score @s mg.xg matches 0 at @s if data entity @s {OnGround:1b} run return run function mg:elyrace/why/ground
 function mg:elyrace/c2/rings

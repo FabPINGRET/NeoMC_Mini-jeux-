@@ -21,6 +21,7 @@ import verify as V
 import verify_speed as VS
 
 LOADED_LINE = re.compile(r'execute store success score \$xbl mg\.st unless block -?\d+ %d -?\d+ minecraft:bedrock$' % B.PROBE_Y)
+RESPAWN_CALL = r'function mg:elyrace/(c\d+/)?respawn'      # appel direct de la reprise : interdit hors why/* (voir logic_problems)
 CHUNK = 16
 Y_MIN, Y_MAX = -64, 319             # hauteur du monde : toute commande generee doit y tenir
 GAP = 2 * CHUNK                     # ecart minimal entre les bandes de deux parcours
@@ -181,6 +182,11 @@ def logic_problems(files, specs):
                 bad.append('%s : objectif ou etiquette inconnu %s' % (rel, m))
     for s in specs:
         bad += loaded_problems(files, s)
+    # la reprise passe toujours par une raison (why/<nom>, sous-titre) : seuls elyrace/respawn (repartiteur) et why/* l'appellent
+    okay = {CC.FN + 'respawn.mcfunction'} | {rel for rel in files if rel.startswith(CC.FN + 'why/')}
+    for rel, text in sorted(files.items()):
+        if rel.endswith('.mcfunction') and rel not in okay and re.search(RESPAWN_CALL, text):
+            bad.append('%s : appelle respawn directement (passer par mg:elyrace/why/<raison>, voir reasons.py)' % rel)
     return bad
 
 
