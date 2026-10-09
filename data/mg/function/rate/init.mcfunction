@@ -201,6 +201,8 @@ data modify storage mg:rate lab.r97 set value '{"text":"★★★","color":"gold
 execute if score #m97 mg.rtn matches 1.. run function mg:rate/lab_map {m:97}
 data modify storage mg:rate lab.r98 set value '{"text":"★★","color":"gold","extra":[{"text":"☆☆","color":"dark_gray"}]}'
 execute if score #m98 mg.rtn matches 1.. run function mg:rate/lab_map {m:98}
+data modify storage mg:rate lab.r99 set value '""'
+execute if score #m99 mg.rtn matches 1.. run function mg:rate/lab_map {m:99}
 data modify storage mg:rate lab.r100 set value '{"text":"★★★","color":"gold","extra":[{"text":"☆","color":"dark_gray"}]}'
 execute if score #m100 mg.rtn matches 1.. run function mg:rate/lab_map {m:100}
 data modify storage mg:rate lab.r101 set value '{"text":"★★","color":"gold","extra":[{"text":"☆☆","color":"dark_gray"}]}'
@@ -461,3 +463,5 @@ data modify storage mg:rate lab.fzombies set value '""'
 function mg:rate/lab_fam {f:"zombies",g:32}
 data modify storage mg:rate lab.finfection set value '""'
 function mg:rate/lab_fam {f:"infection",g:33}
+data modify storage mg:rate lab.fbomber set value '""'
+function mg:rate/lab_fam {f:"bomber",g:34}

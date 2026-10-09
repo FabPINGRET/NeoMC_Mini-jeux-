@@ -139,9 +139,12 @@ summon minecraft:text_display -15.0 65.0 34.2 {Tags:["mg.hall","mg.h_zombies"],b
 execute if data storage mg:hall e.zombies run data modify entity @e[type=minecraft:text_display,tag=mg.h_zombies,limit=1] text set from storage mg:hall e.zombies
 summon minecraft:text_display -13.0 65.0 34.2 {Tags:["mg.hall","mg.h_infection"],billboard:"vertical",text:[{"text":"🧪 Infection","color":"green","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.42f,0.42f,0.42f]}}
 execute if data storage mg:hall e.infection run data modify entity @e[type=minecraft:text_display,tag=mg.h_infection,limit=1] text set from storage mg:hall e.infection
+summon minecraft:text_display -11.0 65.0 34.2 {Tags:["mg.hall","mg.h_bomber"],billboard:"vertical",text:[{"text":"💣 Bombardier","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.42f,0.42f,0.42f]}}
+execute if data storage mg:hall e.bomber run data modify entity @e[type=minecraft:text_display,tag=mg.h_bomber,limit=1] text set from storage mg:hall e.bomber
 data modify storage mg:hall v2 set value 1b
 data modify storage mg:hall v3 set value 1b
 data modify storage mg:hall v4 set value 1b
 data modify storage mg:hall v5 set value 1b
 data modify storage mg:hall v6 set value 1b
 data modify storage mg:hall v7 set value 1b
+data modify storage mg:hall v8 set value 1b
