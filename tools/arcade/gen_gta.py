@@ -1069,7 +1069,15 @@ w('gta/veh_buy', ['# @s achète un véhicule de type $(t) : l\'ancien disparaît
                   'execute if score @s mg.gveh matches 1.. as @e[tag=mg.gta] if score @s mg.gvid = $gv mg.st run kill @s',
                   '$function mg:gta/veh_$(t)',
                   'scoreboard players operation @s mg.gveh = $gvid mg.st',
-                  'title @s title {"text":"🔑","color":"gold"}', 'title @s subtitle {"text":"Ton véhicule t\'attend dehors !","color":"yellow"}'])
+                  'execute as @e[tag=mg.gta,type=!minecraft:block_display,type=!minecraft:interaction] if score @s mg.gvid = $gvid mg.st run effect give @s minecraft:glowing 60 0 true',
+                  'title @s title {"text":"🔑","color":"gold"}',
+                  '$function mg:gta/veh_where_$(t)'])
+for _t in ('moto', 'muscle', 'supercar', 'heli', 'plane'):
+    _air = _t in ('heli', 'plane')
+    _v = "à l'hélistation de la villa" if _air else 'devant le garage de la villa'
+    _c = "à l'aérodrome, au nord du parc" if _air else 'devant la concession'
+    w(f'gta/veh_where_{_t}', ['execute if score $gvilla mg.st matches 1 run return run title @s subtitle ' + js({'text': f"Il t'attend {_v} (il brille) !", 'color': 'yellow'}),
+                               'title @s subtitle ' + js({'text': f"Il t'attend {_c} (il brille) !", 'color': 'yellow'})])
 for (t, n, k) in (('moto', 11, 0), ('muscle', 12, 1), ('supercar', 13, 2)):
     cx, cz = NH['car_drop'][k]
     w(f'gta/veh_{t}', [f'execute if score $gvilla mg.st matches 1 in {DIM} positioned {cx} {VY} {Z + cz} run return run function mg:gta/car/spawn_{n}',
@@ -1157,18 +1165,25 @@ w('gta/map_show', ['# @s tient la carte : plan de la ville, sa position (rouge),
    'scoreboard players operation $gb mg.st = @s mg.bid', 'tag @e remove mg.gmine',
    'execute as @e[tag=mg.gmo] if score @s mg.bid = $gb mg.st run tag @s add mg.gmine',
    'execute if entity @e[tag=mg.gmine] run function mg:gta/map_target',
+   'data modify storage mg:gta mp.o set value [{"text":""}]', 'tag @s add mg.gme',
+   'execute as @a[tag=mg.gtw,tag=!mg.gme,gamemode=!spectator] run function mg:gta/map_other', 'tag @s remove mg.gme',
    'title @s times 0 6 2', 'scoreboard players set @s mg.gal 6',
-   'title @s actionbar [{"text":"● ","color":"red"},{"text":"toi  ","color":"gray"},{"text":"● ","color":"gold"},{"text":"mission  ","color":"gray"},'
+   'title @s actionbar [{"text":"● ","color":"red"},{"text":"toi  ","color":"gray"},{"text":"● ","color":"#3FA9FF"},{"text":"potes  ","color":"gray"},{"text":"● ","color":"gold"},{"text":"mission  ","color":"gray"},'
    '{"text":"■ ","color":"#9646C8"},{"text":"concession ","color":"gray"},{"text":"■ ","color":"#C82828"},{"text":"armurerie ","color":"gray"},'
    '{"text":"■ ","color":"#E8BA24"},{"text":"banque ","color":"gray"},{"text":"■ ","color":"#F58C1E"},{"text":"commerces","color":"gray"}]',
    'function mg:gta/map_title with storage mg:gta mp'])
 w('gta/map_target', ['# Case de l\'objectif de la mission (@e[tag=mg.gmine])'] + cell('@e[tag=mg.gmine,limit=1]', '$gti', '$gtj') +
   ['execute store result storage mg:gta mi.t int 1 run scoreboard players get $gtj mg.st', 'function mg:gta/map_pick_t with storage mg:gta mi'])
+w('gta/map_other', ['# @s : un autre joueur de Neo GTA, ajouté (point bleu) à la carte de celui qui la regarde'] + cell('@s', '$goi', '$goj') +
+  ['execute store result storage mg:gta mi.o int 1 run scoreboard players get $goj mg.st', 'function mg:gta/map_pick_o with storage mg:gta mi',
+   'function mg:gta/map_add_o with storage mg:gta mi'])
+w('gta/map_pick_o', ['$data modify storage mg:gta mi.d set from storage mg:gta dots[$(o)]'])
+w('gta/map_add_o', ['$data modify storage mg:gta mp.o append value {"text":"\ue401$(d)"}'])
 w('gta/map_pick_p', ['$data modify storage mg:gta mp.p set from storage mg:gta dots[$(p)]'])
 w('gta/map_pick_t', ['$data modify storage mg:gta mp.t set from storage mg:gta dots[$(t)]'])
 w('gta/map_title', ['# Titre : plan, puis (retour au bord gauche) le point rouge, puis l\'objectif doré (ou un espace de même largeur)',
                     '$title @s title [{"text":"\ue400\ue401","font":"mg:gta_map","color":"white","shadow_color":0},{"text":"$(p)","font":"mg:gta_map","color":"#FF2A2A","shadow_color":0},'
-                    '{"text":"\ue401$(t)","font":"mg:gta_map","color":"#FFC020","shadow_color":0}]'])
+                    '{"text":"\ue401$(t)","font":"mg:gta_map","color":"#FFC020","shadow_color":0},{"text":"","font":"mg:gta_map","color":"#3FA9FF","shadow_color":0,"extra":$(o)}]'])
 
 w('gta/home', ['# @s : retour à la villa (Neo Hills), refusé si la police le recherche', 'scoreboard players reset @s mg.gqs',
                 'execute if score @s mg.gwl matches 1.. run return run title @s actionbar {"text":"🚔 Impossible : la police te recherche !","color":"red"}',

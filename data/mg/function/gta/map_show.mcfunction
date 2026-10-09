@@ -24,7 +24,11 @@ scoreboard players operation $gb mg.st = @s mg.bid
 tag @e remove mg.gmine
 execute as @e[tag=mg.gmo] if score @s mg.bid = $gb mg.st run tag @s add mg.gmine
 execute if entity @e[tag=mg.gmine] run function mg:gta/map_target
+data modify storage mg:gta mp.o set value [{"text":""}]
+tag @s add mg.gme
+execute as @a[tag=mg.gtw,tag=!mg.gme,gamemode=!spectator] run function mg:gta/map_other
+tag @s remove mg.gme
 title @s times 0 6 2
 scoreboard players set @s mg.gal 6
-title @s actionbar [{"text":"● ","color":"red"},{"text":"toi  ","color":"gray"},{"text":"● ","color":"gold"},{"text":"mission  ","color":"gray"},{"text":"■ ","color":"#9646C8"},{"text":"concession ","color":"gray"},{"text":"■ ","color":"#C82828"},{"text":"armurerie ","color":"gray"},{"text":"■ ","color":"#E8BA24"},{"text":"banque ","color":"gray"},{"text":"■ ","color":"#F58C1E"},{"text":"commerces","color":"gray"}]
+title @s actionbar [{"text":"● ","color":"red"},{"text":"toi  ","color":"gray"},{"text":"● ","color":"#3FA9FF"},{"text":"potes  ","color":"gray"},{"text":"● ","color":"gold"},{"text":"mission  ","color":"gray"},{"text":"■ ","color":"#9646C8"},{"text":"concession ","color":"gray"},{"text":"■ ","color":"#C82828"},{"text":"armurerie ","color":"gray"},{"text":"■ ","color":"#E8BA24"},{"text":"banque ","color":"gray"},{"text":"■ ","color":"#F58C1E"},{"text":"commerces","color":"gray"}]
 function mg:gta/map_title with storage mg:gta mp
