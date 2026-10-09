@@ -43,6 +43,51 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+function mg:golf/load
+scoreboard objectives add mg.blu minecraft.used:minecraft.warped_fungus_on_a_stick
+scoreboard objectives add mg.bln dummy
+scoreboard objectives add mg.bcx dummy
+scoreboard objectives add mg.bx dummy
+scoreboard objectives add mg.bz dummy
+scoreboard objectives add mg.bvx dummy
+scoreboard objectives add mg.bvz dummy
+scoreboard objectives add mg.bsp dummy
+scoreboard objectives add mg.bph dummy
+scoreboard objectives add mg.btm dummy
+scoreboard objectives add mg.bfr dummy
+scoreboard objectives add mg.brl dummy
+scoreboard objectives add mg.bpw dummy
+scoreboard objectives add mg.bpd dummy
+scoreboard objectives add mg.bk dummy
+scoreboard objectives add mg.br1 dummy
+scoreboard objectives add mg.br2 dummy
+scoreboard objectives add mg.bfs dummy
+scoreboard objectives add mg.bcu dummy
+scoreboard objectives add mg.bp1f dummy
+scoreboard objectives add mg.bp1s dummy
+scoreboard objectives add mg.bp1n dummy
+scoreboard objectives add mg.bp2f dummy
+scoreboard objectives add mg.bp2s dummy
+scoreboard objectives add mg.bp2n dummy
+scoreboard objectives add mg.bxs dummy
+scoreboard objectives add mg.bsc dummy {"text":"🎳 Bowling","color":"light_purple"}
+scoreboard objectives add mg.tnc dummy
+scoreboard objectives add mg.tns dummy
+scoreboard objectives add mg.tnx dummy
+scoreboard objectives add mg.tny dummy
+scoreboard objectives add mg.tnz dummy
+scoreboard objectives add mg.tnvx dummy
+scoreboard objectives add mg.tnvy dummy
+scoreboard objectives add mg.tnvz dummy
+scoreboard objectives add mg.tnb dummy
+scoreboard objectives add mg.tnl dummy
+scoreboard objectives add mg.tnph dummy
+scoreboard objectives add mg.tnt dummy
+scoreboard objectives add mg.tnp1 dummy
+scoreboard objectives add mg.tnp2 dummy
+scoreboard objectives add mg.tng1 dummy
+scoreboard objectives add mg.tng2 dummy
+scoreboard objectives add mg.tngw dummy {"text":"🎾 Jeux gagnés","color":"yellow"}
 scoreboard objectives add mg.phn minecraft.used:minecraft.goat_horn
 scoreboard objectives add mg.pid dummy
 scoreboard objectives add mg.php dummy
@@ -312,7 +357,7 @@ execute if score $setup mg.st matches 1 if data storage mg:kart built2 unless da
 execute if score $setup mg.st matches 1 unless data storage mg:dropadv v3 run schedule function mg:dropadv/build 40s
 execute if score $setup mg.st matches 1 run scoreboard players set $xbk mg.st 0
 execute if score $setup mg.st matches 1 run schedule function mg:elyrace/build_next 60s
-execute if score $setup mg.st matches 1 unless data storage mg:hall v10 run schedule function mg:hall/build 20s
+execute if score $setup mg.st matches 1 unless data storage mg:hall v11 run schedule function mg:hall/build 20s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/build 10s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/food_build 25s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:elytra/build 30s

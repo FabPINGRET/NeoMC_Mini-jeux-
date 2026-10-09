@@ -88,6 +88,10 @@ forceload add -52 19948 52 20052
 forceload add -88 32312 88 32488
 # Meccha Chameleon (z 26600)
 forceload add -31 26577 31 26623
+# Tennis (z 35400)
+forceload add -80 35375 79 35425
+# 🎳 Bowling (z 35170)
+forceload add -35 35129 34 35185
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl

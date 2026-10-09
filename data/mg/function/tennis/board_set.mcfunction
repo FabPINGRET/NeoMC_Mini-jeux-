@@ -1,0 +1,2 @@
+# @s : tableau du court (macro : k, a, b, ga, gb)
+$data modify entity @s text set value [{"text":"🎾 COURT $(k)\n","color":"gold","bold":true},{"text":"BLEU  ","color":"aqua","bold":true},{"text":"$(a)","color":"white","bold":true},{"text":"  —  ","color":"gray"},{"text":"$(b)","color":"white","bold":true},{"text":"  ROUGE","color":"red","bold":true},{"text":"\nJeux  ","color":"yellow","bold":false},{"text":"$(ga)","color":"aqua","bold":true},{"text":" - ","color":"gray","bold":false},{"text":"$(gb)","color":"red","bold":true}]

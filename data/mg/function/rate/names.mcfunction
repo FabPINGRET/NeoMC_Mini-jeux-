@@ -211,4 +211,7 @@ execute if data storage mg:rate key{m:210} run data modify storage mg:rate cur.m
 execute if data storage mg:rate key{m:211} run data modify storage mg:rate cur.m set value '🧪 Infection — Laboratoire'
 execute if data storage mg:rate key{m:212} run data modify storage mg:rate cur.m set value '🧟 Zombies — Manoir'
 execute if data storage mg:rate key{m:213} run data modify storage mg:rate cur.m set value '🧪 Infection — Manoir'
+execute if data storage mg:rate key{m:214} run data modify storage mg:rate cur.m set value '🎳 Bowling'
+execute if data storage mg:rate key{m:215} run data modify storage mg:rate cur.m set value '⛳ Golf'
+execute if data storage mg:rate key{m:216} run data modify storage mg:rate cur.m set value '🎾 Tennis'
 data modify storage mg:rate cur.t set value "trigger mg.rt set 1$(a)$(b)$(c)"

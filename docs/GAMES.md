@@ -47,3 +47,6 @@ Les objets au sol y sont tagués `mg.keep` dans `survie/tick`, sinon le nettoyag
 Block Party bandes/mixte 91..92 → jeu 28 + `$bpm` (`tools/blockparty/gen_bp.py`).
 Montagne russe (hors jeux) : `mg:coaster/tick` appelé par `core/tick` quand un joueur est dans x −200..−100 ; voie générée `mg:coaster/track`.
 Monstres/animaux invoqués par un jeu : leur mettre le tag `mg.mob` (ou `mg.npc`), sinon `survie/sweep_mobs` les envoie en y −300.
+| 214 | `mg:bowl/tick` (Wii Sports : bowling) |
+| 215 | `mg:golf/tick` (Wii Sports : golf) |
+| 216 | `mg:tennis/tick` (Wii Sports : tennis) |

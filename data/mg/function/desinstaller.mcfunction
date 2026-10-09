@@ -22,6 +22,55 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+function mg:golf/remove
+schedule clear mg:bowl/build_2
+schedule clear mg:bowl/build_3
+schedule clear mg:bowl/build_4
+schedule clear mg:bowl/build_5
+scoreboard objectives remove mg.blu
+scoreboard objectives remove mg.bln
+scoreboard objectives remove mg.bcx
+scoreboard objectives remove mg.bx
+scoreboard objectives remove mg.bz
+scoreboard objectives remove mg.bvx
+scoreboard objectives remove mg.bvz
+scoreboard objectives remove mg.bsp
+scoreboard objectives remove mg.bph
+scoreboard objectives remove mg.btm
+scoreboard objectives remove mg.bfr
+scoreboard objectives remove mg.brl
+scoreboard objectives remove mg.bpw
+scoreboard objectives remove mg.bpd
+scoreboard objectives remove mg.bk
+scoreboard objectives remove mg.br1
+scoreboard objectives remove mg.br2
+scoreboard objectives remove mg.bfs
+scoreboard objectives remove mg.bcu
+scoreboard objectives remove mg.bp1f
+scoreboard objectives remove mg.bp1s
+scoreboard objectives remove mg.bp1n
+scoreboard objectives remove mg.bp2f
+scoreboard objectives remove mg.bp2s
+scoreboard objectives remove mg.bp2n
+scoreboard objectives remove mg.bxs
+scoreboard objectives remove mg.bsc
+scoreboard objectives remove mg.tnc
+scoreboard objectives remove mg.tns
+scoreboard objectives remove mg.tnx
+scoreboard objectives remove mg.tny
+scoreboard objectives remove mg.tnz
+scoreboard objectives remove mg.tnvx
+scoreboard objectives remove mg.tnvy
+scoreboard objectives remove mg.tnvz
+scoreboard objectives remove mg.tnb
+scoreboard objectives remove mg.tnl
+scoreboard objectives remove mg.tnph
+scoreboard objectives remove mg.tnt
+scoreboard objectives remove mg.tnp1
+scoreboard objectives remove mg.tnp2
+scoreboard objectives remove mg.tng1
+scoreboard objectives remove mg.tng2
+scoreboard objectives remove mg.tngw
 scoreboard objectives remove mg.phn
 scoreboard objectives remove mg.pid
 scoreboard objectives remove mg.php

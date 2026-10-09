@@ -163,6 +163,8 @@ summon minecraft:text_display -13.5 65.0 24.2 {Tags:["mg.hall","mg.h_bomber"],bi
 execute if data storage mg:hall e.bomber run data modify entity @e[type=minecraft:text_display,tag=mg.h_bomber,limit=1] text set from storage mg:hall e.bomber
 summon minecraft:text_display -10.5 65.0 24.2 {Tags:["mg.hall","mg.h_chameleon"],billboard:"vertical",text:[{"text":"🦎 Meccha Chameleon","color":"green","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.6f,0.6f,0.6f]}}
 execute if data storage mg:hall e.chameleon run data modify entity @e[type=minecraft:text_display,tag=mg.h_chameleon,limit=1] text set from storage mg:hall e.chameleon
+summon minecraft:text_display -7.5 65.0 24.2 {Tags:["mg.hall","mg.h_wii"],billboard:"vertical",text:[{"text":"🎾 Wii Sports","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.6f,0.6f,0.6f]}}
+execute if data storage mg:hall e.wii run data modify entity @e[type=minecraft:text_display,tag=mg.h_wii,limit=1] text set from storage mg:hall e.wii
 data modify storage mg:hall v2 set value 1b
 data modify storage mg:hall v3 set value 1b
 data modify storage mg:hall v4 set value 1b
@@ -172,3 +174,4 @@ data modify storage mg:hall v7 set value 1b
 data modify storage mg:hall v8 set value 1b
 data modify storage mg:hall v9 set value 1b
 data modify storage mg:hall v10 set value 1b
+data modify storage mg:hall v11 set value 1b

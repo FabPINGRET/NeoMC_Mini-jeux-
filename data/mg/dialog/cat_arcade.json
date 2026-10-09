@@ -201,6 +201,24 @@
     {
       "label": [
         {
+          "text": "🎾 Wii Sports ▸",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Bowling, golf, tennis : chacun sa piste",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 56"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour au menu",
           "color": "yellow"
         }
