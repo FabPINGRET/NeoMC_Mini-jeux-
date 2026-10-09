@@ -1,5 +1,7 @@
 # @s : cheval d'une voiture. La carrosserie suit ; lancée (> 0,2 bloc/tick), elle renverse ce qu'elle percute
 scoreboard players operation $gv mg.st = @s mg.gvid
+execute unless predicate mg:has_passenger as @e[type=minecraft:interaction,tag=mg.gcint] if score @s mg.gvid = $gv mg.st run function mg:gta/vd_follow
+execute if predicate mg:has_passenger positioned ~ ~-6 ~ as @e[type=minecraft:interaction,tag=mg.gcint] if score @s mg.gvid = $gv mg.st run function mg:gta/vd_follow
 execute store result score $gx mg.st run data get entity @s Pos[0] 100
 execute store result score $gz mg.st run data get entity @s Pos[2] 100
 scoreboard players operation $gdx mg.st = $gx mg.st

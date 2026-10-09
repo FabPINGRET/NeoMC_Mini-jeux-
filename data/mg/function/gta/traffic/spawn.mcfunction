@@ -13,6 +13,7 @@ execute if score $gr mg.st matches 7 run function mg:gta/traffic/body_7
 execute if score $gr mg.st matches 8 run function mg:gta/traffic/body_8
 execute if score $gr mg.st matches 9 run function mg:gta/traffic/body_9
 execute if score $gr mg.st matches 10 run function mg:gta/traffic/body_10
+summon minecraft:interaction ~ ~ ~ {Tags:["mg.gta","mg.gtint","mg.gvn"],width:2.4f,height:1.7f,response:1b}
 scoreboard players operation @e[tag=mg.gvn] mg.gvid = $gvid mg.st
 tag @e[tag=mg.gvn] remove mg.gvn
 scoreboard players set @e[type=minecraft:marker,tag=mg.gtnew] mg.gtw8 0

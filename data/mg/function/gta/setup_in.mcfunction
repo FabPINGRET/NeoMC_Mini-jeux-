@@ -447,6 +447,11 @@ scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpt 71
 scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0
 execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show
 tag @e[tag=mg.gpn] remove mg.gpn
+summon minecraft:marker 36 66 32409 {Tags:["mg.gta","mg.gpad","mg.garm","mg.gpn"]}
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpt 72
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0
+execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show
+tag @e[tag=mg.gpn] remove mg.gpn
 function mg:gta/places_setup
 summon minecraft:villager -64.5 66 32332.5 {Tags:["mg.gta","mg.npc","mg.gclerk"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[180f,0f],VillagerData:{profession:"minecraft:farmer",type:"minecraft:plains",level:2},CustomName:{"text":"Caissier","color":"gray"},CustomNameVisible:0b}
 summon minecraft:text_display -63.5 67.55 32330.65 {Tags:["mg.gta"],Rotation:[180f,0f],text:[{"text":"🔫 BRAQUAGE","color":"red","bold":true},{"text":"\nAccroupis-toi devant la caisse, arme en main (5 s)","color":"white"},{"text":"\n💰 200 à 450 $  ·  ★★ police","color":"gold"}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
@@ -517,3 +522,4 @@ summon minecraft:block_display -17.5 65 32389.5 {Tags:["mg.gta"],block_state:{Na
 summon minecraft:text_display -16.5 67.2 32390.5 {Tags:["mg.gta"],billboard:"center",text:{"text":"🚪 Retour au lobby","color":"gold","bold":true},background:1073741824,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.9f,0.9f,0.9f]}}
 execute as @e[type=minecraft:marker,tag=mg.gsw,sort=random,limit=40] at @s run function mg:gta/ped_spawn
 scoreboard players set $gsu mg.st 2
+function mg:gta/dots_init

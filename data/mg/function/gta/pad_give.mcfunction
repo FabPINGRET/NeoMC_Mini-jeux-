@@ -37,6 +37,7 @@ execute if score $gpt mg.st matches 24 run scoreboard players set @s mg.gal 40
 execute if score $gpt mg.st matches 25 run scoreboard players set @s mg.gal 40
 execute if score $gpt mg.st matches 70 run scoreboard players set @s mg.gal 40
 execute if score $gpt mg.st matches 71 run scoreboard players set @s mg.gal 40
+execute if score $gpt mg.st matches 72 run scoreboard players set @s mg.gal 40
 execute if score $gpt mg.st matches 60 run scoreboard players set @s mg.gal 40
 execute if score $gpt mg.st matches 31 run scoreboard players set @s mg.gal 40
 execute if score $gpt mg.st matches 32 run scoreboard players set @s mg.gal 40
@@ -50,8 +51,9 @@ execute if score $gpt mg.st matches 45 run scoreboard players set @s mg.gal 40
 execute if score $gpt mg.st matches 46 run scoreboard players set @s mg.gal 40
 execute if score $gpt mg.st matches 47 run scoreboard players set @s mg.gal 40
 execute if score $gpt mg.st matches 49 run scoreboard players set @s mg.gal 40
-execute if score $gpt mg.st matches 70 run function mg:gta/casino_slot
-execute if score $gpt mg.st matches 71 run function mg:gta/casino_roulette
+execute if score $gpt mg.st matches 70 run function mg:gta/cas_ui_slot
+execute if score $gpt mg.st matches 71 run function mg:gta/cas_ui_roulette
+execute if score $gpt mg.st matches 72 run function mg:gta/cas_ui_dice
 execute if score $gpt mg.st matches 60 run function mg:gta/paint
 execute if score $gpt mg.st matches 11 run effect give @s minecraft:instant_health 1 1 true
 execute if score $gpt mg.st matches 11 run title @s actionbar {"text":"✚ Soigné","color":"red","bold":true}

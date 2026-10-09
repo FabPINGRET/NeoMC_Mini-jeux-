@@ -1,0 +1,2 @@
+# Titre : plan, puis (retour au bord gauche) le point rouge, puis l'objectif doré (ou un espace de même largeur)
+$title @s title [{"text":"","font":"mg:gta_map","color":"white","shadow_color":0},{"text":"$(p)","font":"mg:gta_map","color":"#FF2A2A","shadow_color":0},{"text":"$(t)","font":"mg:gta_map","color":"#FFC020","shadow_color":0}]

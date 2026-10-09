@@ -85,7 +85,8 @@ SP = ['# Une voiture PNJ à ce carrefour (contexte : marqueur mg.gix) : modèle 
       f'execute store result score $gr mg.st run random value 1..{len(CARS)}',
       'scoreboard players operation @e[type=minecraft:marker,tag=mg.gtnew] mg.gtmod = $gr mg.st']
 SP += [f'execute if score $gr mg.st matches {n} run function mg:gta/traffic/body_{n}' for (n, *_r) in CARS]
-SP += ['scoreboard players operation @e[tag=mg.gvn] mg.gvid = $gvid mg.st', 'tag @e[tag=mg.gvn] remove mg.gvn',
+SP += ['summon minecraft:interaction ~ ~ ~ {Tags:["mg.gta","mg.gtint","mg.gvn"],width:2.4f,height:1.7f,response:1b}',
+       'scoreboard players operation @e[tag=mg.gvn] mg.gvid = $gvid mg.st', 'tag @e[tag=mg.gvn] remove mg.gvn',
        'scoreboard players set @e[type=minecraft:marker,tag=mg.gtnew] mg.gtw8 0',
        'execute as @e[type=minecraft:marker,tag=mg.gtnew] run function mg:gta/traffic/start', 'tag @e[tag=mg.gtnew] remove mg.gtnew']
 w('gta/traffic/spawn', SP)
@@ -113,17 +114,26 @@ w('gta/traffic/blocked', ['# @s : obstacle devant (joueur, passant, voiture) : a
                           'execute at @s run function mg:gta/traffic/sync'])
 w('gta/traffic/despawn', ['# @s : voiture PNJ bloquée depuis 15 s : elle disparaît (une autre apparaîtra ailleurs)',
                           'scoreboard players operation $gv mg.st = @s mg.gvid',
-                          'execute as @e[type=minecraft:block_display,tag=mg.gtrd] if score @s mg.gvid = $gv mg.st run kill @s', 'kill @s'])
+                          'execute as @e[tag=mg.gta,type=!minecraft:marker] if score @s mg.gvid = $gv mg.st run kill @s', 'kill @s'])
 w('gta/traffic/sync', ['# @s (voiture PNJ, à sa position) : la carrosserie suit', 'scoreboard players operation $gv mg.st = @s mg.gvid',
-                       'execute as @e[type=minecraft:block_display,tag=mg.gtrd] if score @s mg.gvid = $gv mg.st run tp @s ~ ~ ~ ~ 0'])
-STEAL = ['# @s (voiture PNJ) volée par le joueur accroupi le plus proche : devient une vraie voiture pilotable (une chance sur deux d\'être vu : ★)',
-         'scoreboard players operation $gv mg.st = @s mg.gvid', 'execute as @e[type=minecraft:block_display,tag=mg.gtrd] if score @s mg.gvid = $gv mg.st run kill @s']
+                       'execute as @e[type=minecraft:block_display,tag=mg.gtrd] if score @s mg.gvid = $gv mg.st run tp @s ~ ~ ~ ~ 0',
+                       'execute as @e[type=minecraft:interaction,tag=mg.gtint] if score @s mg.gvid = $gv mg.st run tp @s ~ ~ ~'])
+STEAL = ['# @s (voiture PNJ) volée par le joueur tagué mg.gthief : devient une vraie voiture pilotable, il monte au volant (une chance sur deux d\'être vu : ★)',
+         'scoreboard players operation $gv mg.st = @s mg.gvid', 'execute as @e[tag=mg.gta,type=!minecraft:marker] if score @s mg.gvid = $gv mg.st run kill @s']
 STEAL += [f'execute if score @s mg.gtmod matches {n} run function mg:gta/car/spawn_{n}' for (n, *_r) in CARS]
-STEAL += ['execute as @p[tag=mg.gtw] run title @s actionbar {"text":"🔑 Voiture volée ! Monte dedans (clic droit).","color":"gold","bold":true}',
-          'execute as @p[tag=mg.gtw] run scoreboard players set @s mg.gal 40',
-          'execute store result score $gr mg.st run random value 0..1', 'execute if score $gr mg.st matches 0 as @p[tag=mg.gtw] run function mg:gta/wanted_up',
+STEAL += ['scoreboard players operation $gv mg.st = $gvid mg.st', 'execute as @a[tag=mg.gthief,limit=1] run function mg:gta/car_mount',
+          'execute as @a[tag=mg.gthief] run title @s actionbar {"text":"🔑 Voiture volée !","color":"gold","bold":true}',
+          'execute as @a[tag=mg.gthief] run scoreboard players set @s mg.gal 40',
+          'execute store result score $gr mg.st run random value 0..1', 'execute if score $gr mg.st matches 0 as @a[tag=mg.gthief] run function mg:gta/wanted_up',
           'playsound minecraft:block.iron_door.open neutral @a ~ ~ ~ 1 1.2', 'kill @s']
 w('gta/traffic/steal', STEAL)
+w('gta/traffic/int', ['# @s (zone cliquable d\'une voiture PNJ) : le joueur qui a cliqué la vole', 'scoreboard players operation $gv mg.st = @s mg.gvid',
+                      'execute on target run tag @s add mg.gthief',
+                      'execute as @e[type=minecraft:marker,tag=mg.gtraf] if score @s mg.gvid = $gv mg.st at @s run function mg:gta/traffic/steal',
+                      'tag @a remove mg.gthief'])
+w('gta/traffic/steal_near', ['# @s (joueur accroupi) : vole la voiture PNJ la plus proche', 'tag @s add mg.gthief',
+                             'execute as @e[type=minecraft:marker,tag=mg.gtraf,distance=..2.6,limit=1,sort=nearest] at @s run function mg:gta/traffic/steal',
+                             'tag @a remove mg.gthief'])
 w('gta/traffic/second', ['# Chaque seconde : 14 voitures PNJ en ville',
                          'execute store result score $gtc mg.st if entity @e[type=minecraft:marker,tag=mg.gtraf]',
                          'execute if score $gtc mg.st matches ..13 as @e[type=minecraft:marker,tag=mg.gix,sort=random,limit=1] at @s unless entity @a[tag=mg.gtw,distance=..18] unless entity @e[type=minecraft:marker,tag=mg.gtraf,distance=..6] run function mg:gta/traffic/spawn'])
@@ -183,8 +193,9 @@ w('gta/pheli_remove', ['# @s : l\'hélico de police repart', 'scoreboard players
                        'execute as @e[type=minecraft:block_display] if score @s mg.gvid = $gv mg.st run kill @s', 'kill @s'])
 w('gta/pcar_remove', ['# @s : policier d\'une voiture de police qui repart : la voiture aussi',
                       'execute on vehicle run function mg:gta/veh_remove', 'tp @s ~ -300 ~'])
-w('gta/veh_remove', ['# @s : véhicule (cheval ou ghast) retiré sans explosion : sa carrosserie aussi', 'scoreboard players operation $gv mg.st = @s mg.gvid',
-                     'execute as @e[type=minecraft:block_display] if score @s mg.gvid = $gv mg.st run kill @s', 'tp @s ~ -300 ~'])
+w('gta/veh_remove', ['# @s : véhicule (cheval ou ghast) retiré sans explosion : sa carrosserie et sa zone cliquable aussi', 'scoreboard players operation $gv mg.st = @s mg.gvid',
+                     'execute as @e[type=minecraft:block_display] if score @s mg.gvid = $gv mg.st run kill @s',
+                     'execute as @e[type=minecraft:interaction] if score @s mg.gvid = $gv mg.st run kill @s', 'tp @s ~ -300 ~'])
 w('gta/police_plus', ['# Chaque seconde (@s = joueur recherché, à sa position) : voitures de police, barrage, hélico',
                       'execute store result score $gpc mg.st if entity @e[type=minecraft:horse,tag=mg.gpcar,distance=..60]',
                       'scoreboard players operation $gpw mg.st = @s mg.gwl', 'scoreboard players remove $gpw mg.st 1',
@@ -372,3 +383,102 @@ w('gta/club_tick', ['# Toutes les 0,5 s : musique pour ceux qui entrent, coupée
 w('gta/club_in', ['tag @s add mg.gclub', 'stopsound @s record', 'tag @s remove mg.gdrv', 'playsound minecraft:music_disc.pigstep record @s ~ ~ ~ 1 1 0.8',
                   'title @s actionbar {"text":"🪩 NEO CLUB","color":"light_purple","bold":true}', 'scoreboard players set @s mg.gal 40'])
 w('gta/club_out', ['tag @s remove mg.gclub', 'stopsound @s record'])
+
+# ---------------------------------------------------------------- casino : fenêtres de jeu (mise au choix)
+# Trigger mg.gcas : 1m machine à sous, 2pm roulette (p : 1 rouge, 2 noir, 3 vert), 3m dés ; m : 1..5 = 10 / 50 / 100 / 500 / 1000 $.
+BETS = [10, 50, 100, 500, 1000]
+MISE = {'type': 'minecraft:single_option', 'key': 'mise', 'label': {'text': 'Mise', 'color': 'gold'}, 'label_visible': True,
+        'options': [{'id': str(k + 1), 'display': {'text': f'{b} $', 'color': 'green'}, **({'initial': True} if k == 1 else {})} for k, b in enumerate(BETS)]}
+EXIT = {'label': {'text': 'Quitter la table', 'color': 'gray'}}
+D_SLOT = {'type': 'minecraft:multi_action', 'title': {'text': '🎰 Machine à sous', 'color': 'gold', 'bold': True}, 'pause': False, 'can_close_with_escape': True,
+          'body': [{'type': 'minecraft:plain_message', 'contents': [{'text': '🍒🍒 ×2   🔔🔔🔔 ×5   7️⃣7️⃣7️⃣ JACKPOT ×20', 'color': 'yellow'}]}],
+          'inputs': [MISE], 'columns': 1, 'exit_action': EXIT,
+          'actions': [{'label': {'text': '🎰 Tirer le levier', 'color': 'gold', 'bold': True}, 'action': {'type': 'minecraft:dynamic/run_command', 'template': 'trigger mg.gcas set 1$(mise)'}}]}
+D_ROUL = {'type': 'minecraft:multi_action', 'title': {'text': '🎡 Roulette', 'color': 'red', 'bold': True}, 'pause': False, 'can_close_with_escape': True,
+          'body': [{'type': 'minecraft:plain_message', 'contents': [{'text': 'Rouge ou noir : ×2 (18 cases sur 37)   ·   Vert, le zéro : ×36', 'color': 'gray'}]}],
+          'inputs': [{'type': 'minecraft:single_option', 'key': 'pari', 'label': {'text': 'Pari', 'color': 'gold'}, 'label_visible': True,
+                      'options': [{'id': '1', 'display': {'text': '🔴 Rouge', 'color': 'red'}, 'initial': True}, {'id': '2', 'display': {'text': '⚫ Noir', 'color': 'dark_gray'}},
+                                  {'id': '3', 'display': {'text': '🟢 Zéro (vert)', 'color': 'green'}}]}, MISE],
+          'columns': 1, 'exit_action': EXIT,
+          'actions': [{'label': {'text': '🎡 Lancer la bille', 'color': 'red', 'bold': True}, 'action': {'type': 'minecraft:dynamic/run_command', 'template': 'trigger mg.gcas set 2$(pari)$(mise)'}}]}
+D_DICE = {'type': 'minecraft:multi_action', 'title': {'text': '🎲 Dés', 'color': 'aqua', 'bold': True}, 'pause': False, 'can_close_with_escape': True,
+          'body': [{'type': 'minecraft:plain_message', 'contents': [{'text': 'Deux dés contre deux dés du croupier : plus haut = ×2, égalité = mise rendue', 'color': 'gray'}]}],
+          'inputs': [MISE], 'columns': 1, 'exit_action': EXIT,
+          'actions': [{'label': {'text': '🎲 Lancer les dés', 'color': 'aqua', 'bold': True}, 'action': {'type': 'minecraft:dynamic/run_command', 'template': 'trigger mg.gcas set 3$(mise)'}}]}
+for nm, d in (('slot', D_SLOT), ('roulette', D_ROUL), ('dice', D_DICE)):
+    w(f'gta/cas_ui_{nm}', [f'# @s : fenêtre du casino ({nm})', 'scoreboard players enable @s mg.gcas', 'dialog show @s ' + js(d)])
+CM = ['# @s a validé une fenêtre du casino (mg.gcas)', 'scoreboard players operation $gcc mg.st = @s mg.gcas', 'scoreboard players reset @s mg.gcas',
+      'scoreboard players operation $gcm mg.st = $gcc mg.st', 'scoreboard players set #10 mg.st 10', 'scoreboard players operation $gcm mg.st %= #10 mg.st',
+      'scoreboard players set $gbet mg.st 0']
+CM += [f'execute if score $gcm mg.st matches {k + 1} run scoreboard players set $gbet mg.st {b}' for k, b in enumerate(BETS)]
+CM += ['execute if score $gbet mg.st matches 0 run return 0',
+       'execute if score @s mg.gta < $gbet mg.st run scoreboard players set @s mg.gal 40',
+       'execute if score @s mg.gta < $gbet mg.st run return run title @s actionbar [{"text":"💸 Pas assez d\'argent pour miser ","color":"red"},{"score":{"name":"$gbet","objective":"mg.st"},"color":"gold"},{"text":" $","color":"red"}]',
+       'scoreboard players operation @s mg.gta -= $gbet mg.st', 'scoreboard players set @s mg.gal 60', 'title @s times 2 40 10',
+       'execute if score $gcc mg.st matches 11..15 run return run function mg:gta/cas_slot',
+       'execute if score $gcc mg.st matches 211..215 run return run function mg:gta/cas_roul {p:1}',
+       'execute if score $gcc mg.st matches 221..225 run return run function mg:gta/cas_roul {p:2}',
+       'execute if score $gcc mg.st matches 231..235 run return run function mg:gta/cas_roul {p:3}',
+       'execute if score $gcc mg.st matches 31..35 run return run function mg:gta/cas_dice']
+w('gta/cas_cmd', CM)
+
+
+def pay(mult_score):
+    return ['scoreboard players operation $gwin mg.st = $gbet mg.st', f'scoreboard players operation $gwin mg.st *= {mult_score} mg.st',
+            'scoreboard players operation @s mg.gta += $gwin mg.st']
+
+
+WIN_MSG = ('title @s subtitle [{"text":"+","color":"green"},{"score":{"name":"$gwin","objective":"mg.st"},"color":"green","bold":true},{"text":" $","color":"green"}]')
+LOSE_MSG = 'title @s subtitle [{"text":"-","color":"red"},{"score":{"name":"$gbet","objective":"mg.st"},"color":"red"},{"text":" $","color":"red"}]'
+w('gta/cas_slot', ['# Machine à sous : 73 % perdu, 20 % ×2, 6 % ×5, 1 % ×20 (la maison garde ~10 %)',
+                   'execute store result score $gr mg.st run random value 0..99',
+                   'execute if score $gr mg.st matches ..72 run title @s title {"text":"🍋  🍒  🔔","bold":true}',
+                   'execute if score $gr mg.st matches ..72 run ' + LOSE_MSG,
+                   'execute if score $gr mg.st matches ..72 at @s run playsound minecraft:block.note_block.bass player @s ~ ~ ~ 1 0.6',
+                   'scoreboard players set #2 mg.st 2', 'scoreboard players set #5 mg.st 5', 'scoreboard players set #20 mg.st 20',
+                   'execute if score $gr mg.st matches 73..92 run title @s title {"text":"🍒  🍒  🍋","bold":true}'] +
+  ['execute if score $gr mg.st matches 73..92 run ' + l for l in pay('#2')] +
+  ['execute if score $gr mg.st matches 93..98 run title @s title {"text":"🔔  🔔  🔔","color":"gold","bold":true}'] +
+  ['execute if score $gr mg.st matches 93..98 run ' + l for l in pay('#5')] +
+  ['execute if score $gr mg.st matches 99 run title @s title {"text":"7️⃣  7️⃣  7️⃣","color":"red","bold":true}'] +
+  ['execute if score $gr mg.st matches 99 run ' + l for l in pay('#20')] +
+  ['execute if score $gr mg.st matches 99 run tellraw @a[tag=mg.gtw] [{"selector":"@s","color":"yellow"},{"text":" touche le JACKPOT au casino : ","color":"gold"},{"score":{"name":"$gwin","objective":"mg.st"},"color":"green","bold":true},{"text":" $ !","color":"gold"}]',
+   'execute if score $gr mg.st matches 73.. run ' + WIN_MSG,
+   'execute if score $gr mg.st matches 73.. at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.3',
+   'function mg:gta/cas_reopen {d:"slot"}'])
+w('gta/cas_roul', ['# Roulette (macro $(p) : 1 rouge, 2 noir, 3 vert) : 37 cases, 0 vert, 1..18 rouge, 19..36 noir',
+                   'execute store result score $gr mg.st run random value 0..36',
+                   'scoreboard players set $gok mg.st 0',
+                   'scoreboard players set #p1 mg.st 0', 'scoreboard players set #p2 mg.st 0', 'scoreboard players set #p3 mg.st 0',
+                   '$scoreboard players set #p$(p) mg.st 1',
+                   'execute if score $gr mg.st matches 1..18 if score #p1 mg.st matches 1 run scoreboard players set $gok mg.st 2',
+                   'execute if score $gr mg.st matches 19..36 if score #p2 mg.st matches 1 run scoreboard players set $gok mg.st 2',
+                   'execute if score $gr mg.st matches 0 if score #p3 mg.st matches 1 run scoreboard players set $gok mg.st 36',
+                   'execute if score $gr mg.st matches 0 run title @s title [{"text":"🟢 ","color":"green"},{"score":{"name":"$gr","objective":"mg.st"},"color":"green","bold":true}]',
+                   'execute if score $gr mg.st matches 1..18 run title @s title [{"text":"🔴 ","color":"red"},{"score":{"name":"$gr","objective":"mg.st"},"color":"red","bold":true}]',
+                   'execute if score $gr mg.st matches 19..36 run title @s title [{"text":"⚫ ","color":"dark_gray"},{"score":{"name":"$gr","objective":"mg.st"},"color":"white","bold":true}]',
+                   'execute if score $gok mg.st matches 0 run ' + LOSE_MSG,
+                   'execute if score $gok mg.st matches 0 at @s run playsound minecraft:block.note_block.bass player @s ~ ~ ~ 1 0.6',
+                   'execute if score $gok mg.st matches 1.. run scoreboard players operation $gwin mg.st = $gbet mg.st',
+                   'execute if score $gok mg.st matches 1.. run scoreboard players operation $gwin mg.st *= $gok mg.st',
+                   'execute if score $gok mg.st matches 1.. run scoreboard players operation @s mg.gta += $gwin mg.st',
+                   'execute if score $gok mg.st matches 1.. run ' + WIN_MSG,
+                   'execute if score $gok mg.st matches 1.. at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.3',
+                   'execute at @s run playsound minecraft:block.wooden_button.click_on player @s ~ ~ ~ 1 1.8',
+                   'function mg:gta/cas_reopen {d:"roulette"}'])
+w('gta/cas_dice', ['# Dés : 2d6 du joueur contre 2d6 du croupier',
+                   'execute store result score $gd1 mg.st run random value 2..12', 'execute store result score $gd2 mg.st run random value 2..12',
+                   'title @s title [{"text":"🎲 ","color":"white"},{"score":{"name":"$gd1","objective":"mg.st"},"color":"aqua","bold":true},{"text":"  contre  ","color":"gray"},{"score":{"name":"$gd2","objective":"mg.st"},"color":"red","bold":true}]',
+                   'scoreboard players set #2 mg.st 2',
+                   'execute if score $gd1 mg.st > $gd2 mg.st run ' + pay('#2')[0], 'execute if score $gd1 mg.st > $gd2 mg.st run ' + pay('#2')[1],
+                   'execute if score $gd1 mg.st > $gd2 mg.st run ' + pay('#2')[2], 'execute if score $gd1 mg.st > $gd2 mg.st run ' + WIN_MSG,
+                   'execute if score $gd1 mg.st = $gd2 mg.st run scoreboard players operation @s mg.gta += $gbet mg.st',
+                   'execute if score $gd1 mg.st = $gd2 mg.st run title @s subtitle {"text":"Égalité : mise rendue","color":"yellow"}',
+                   'execute if score $gd1 mg.st < $gd2 mg.st run ' + LOSE_MSG,
+                   'execute at @s run playsound minecraft:block.note_block.hat player @s ~ ~ ~ 1 1.4',
+                   'function mg:gta/cas_reopen {d:"dice"}'])
+w('gta/cas_reopen', ['# Rouvre la fenêtre du jeu après 2 s (le joueur rejoue ou ferme)', '$tag @s add mg.gcas_$(d)', 'scoreboard players set @s mg.gcre 40'])
+w('gta/cas_reopen_tick', ['# @s : réouverture de la fenêtre du casino', 'execute if entity @s[tag=mg.gcas_slot] run function mg:gta/cas_ui_slot',
+                          'execute if entity @s[tag=mg.gcas_roulette] run function mg:gta/cas_ui_roulette', 'execute if entity @s[tag=mg.gcas_dice] run function mg:gta/cas_ui_dice',
+                          'tag @s remove mg.gcas_slot', 'tag @s remove mg.gcas_roulette', 'tag @s remove mg.gcas_dice'])
+C.objectives([('mg.gcas', 'trigger'), ('mg.gcre', 'dummy')])

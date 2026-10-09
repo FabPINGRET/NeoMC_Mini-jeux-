@@ -9,5 +9,6 @@ summon minecraft:block_display ~ ~ ~ {Tags:["mg.gta","mg.gvd","mg.gvn","mg.gcard
 summon minecraft:block_display ~ ~ ~ {Tags:["mg.gta","mg.gvd","mg.gvn","mg.gcard"],block_state:{Name:"minecraft:gray_concrete"},teleport_duration:1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.4f,0.95f,0.55f],scale:[0.8f,0.06f,0.06f]}}
 summon minecraft:block_display ~ ~ ~ {Tags:["mg.gta","mg.gvd","mg.gvn","mg.gcard"],block_state:{Name:"minecraft:sea_lantern"},teleport_duration:1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.1f,0.65f,0.75f],scale:[0.2f,0.15f,0.05f]}}
 summon minecraft:block_display ~ ~ ~ {Tags:["mg.gta","mg.gvd","mg.gvn","mg.gcard"],block_state:{Name:"minecraft:redstone_block"},teleport_duration:1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.08f,0.6f,-0.97f],scale:[0.16f,0.1f,0.04f]}}
+summon minecraft:interaction ~ ~ ~ {Tags:["mg.gta","mg.gcint","mg.gvn"],width:2.4f,height:1.7f,response:1b}
 scoreboard players operation @e[tag=mg.gvn] mg.gvid = $gvid mg.st
 tag @e[tag=mg.gvn] remove mg.gvn

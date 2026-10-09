@@ -2,6 +2,7 @@
 execute unless score $gsu mg.st matches 1.. run return 0
 execute if score $gsu mg.st matches 1 as @e[type=minecraft:block_display,tag=mg.gvb,tag=!mg.gok] at @s run function mg:gta/wreck
 execute if score $gsu mg.st matches 1 run kill @e[type=minecraft:block_display,tag=mg.gvd,tag=!mg.gok]
+execute if score $gsu mg.st matches 1 run kill @e[type=minecraft:interaction,tag=mg.gcint,tag=!mg.gok]
 tag @e[tag=mg.gok] remove mg.gok
 scoreboard players set $gsu mg.st 1
 execute store result score $gpn mg.st if entity @e[type=minecraft:villager,tag=mg.gped]

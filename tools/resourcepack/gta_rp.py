@@ -179,7 +179,7 @@ for part in ('white_background', 'white_progress'):
 # (image transparente de la taille du plan : même avance de 65, le point tombe à la bonne case). Titre : ascent = 64 / 2 - 3.
 MAPN, CELLS = 177, 30
 map_prov = [{"type": "bitmap", "file": "mg:font/gta_map.png", "ascent": 29, "height": 64, "chars": [""]},
-            {"type": "space", "advances": {"": -65}}]
+            {"type": "space", "advances": {"": -65, "": 65}}]
 for j in range(CELLS):
     for i in range(CELLS):
         im = blank(MAPN, MAPN)
@@ -189,7 +189,7 @@ for j in range(CELLS):
             for dx in range(-4, 5):
                 d = max(abs(dx), abs(dy))
                 if 0 <= cx + dx < MAPN and 0 <= cy + dy < MAPN and d <= 4:
-                    im[cy + dy][cx + dx] = (255, 255, 255, 255) if d >= 3 else (230, 30, 30, 255)
+                    im[cy + dy][cx + dx] = (25, 25, 25, 255) if d >= 3 else (255, 255, 255, 255)   # blanc : teinté à l'affichage (rouge = toi, or = objectif)
         png_rgba(os.path.join(A, 'textures', 'font', 'gta_dot', f'{j}_{i}.png'), im)
         map_prov.append({"type": "bitmap", "file": f"mg:font/gta_dot/{j}_{i}.png", "ascent": 29, "height": 64, "chars": [chr(0xE500 + CELLS * j + i)]})
 wjson(os.path.join(A, 'font', 'gta_map.json'), {"providers": map_prov})
