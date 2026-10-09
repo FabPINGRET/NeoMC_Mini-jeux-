@@ -1,0 +1,8119 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_map.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "space",
+      "advances": {
+        "": -65
+      }
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/0_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/1_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/2_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/3_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/4_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/5_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/6_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/7_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/8_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/9_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/10_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/11_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/12_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/13_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/14_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/15_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/16_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/17_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/18_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/19_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/20_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/21_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/22_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/23_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/24_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/25_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/26_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/27_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/28_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_0.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_1.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_2.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_3.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_4.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_5.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_6.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_7.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_8.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_9.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_10.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_11.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_12.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_13.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_14.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_15.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_16.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_17.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_18.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_19.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_20.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_21.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_22.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_23.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_24.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_25.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_26.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_27.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_28.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_dot/29_29.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    }
+  ]
+}

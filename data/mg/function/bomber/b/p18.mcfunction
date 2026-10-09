@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 18/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 18/79 (généré par tools/arcade/gen_bomber.py)
 fill -70 92 32455 -64 92 32461 minecraft:polished_diorite
 fill -68 66 32455 -67 67 32455 minecraft:glass
 fill -68 66 32461 -67 67 32461 minecraft:glass

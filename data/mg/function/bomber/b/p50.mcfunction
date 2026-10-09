@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 50/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 50/79 (généré par tools/arcade/gen_bomber.py)
 fill 40 101 32358 46 101 32365 minecraft:gray_concrete
 fill 42 66 32358 43 67 32358 minecraft:glass
 fill 42 66 32365 43 67 32365 minecraft:glass

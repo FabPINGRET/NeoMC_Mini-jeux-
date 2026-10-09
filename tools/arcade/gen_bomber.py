@@ -162,7 +162,6 @@ for z in range(pz1, pz2 + 1):
 fill(-HX, YT, -HX, HX, YT, HX, 'barrier', False, G)
 for (a, b, c, d) in [(-HX, -HX, HX, -HX), (-HX, HX, HX, HX), (-HX, -HX, -HX, HX), (HX, -HX, HX, HX)]:
     fill(a, YT + 1, b, c, YT + 6, d, 'barrier', False, G)
-GROUND.append('data modify storage mg:bomber v1 set value 1b')
 
 # ---------------------------------------------------------------- bâtiments
 STYLES = {
@@ -293,6 +292,65 @@ def needle(x1, z1, x2, z2):
     fill(cx, t + 1, cz, cx, t + 9, cz, 'lightning_rod')
 
 
+SHOP_CAND = []                                   # bâtiments dont la façade nord donne sur une rue : commerces de Neo GTA
+VILLA = (26, 47, 46, 61)                         # villa partagée de Neo GTA (îlot en face du parc, côté est)
+
+
+def villa(x1, z1, x2, z2):
+    """Villa : garage à 5 places (façade nord sur la rue), maison sur deux niveaux, toit avec piscine et hélistation."""
+    fill(x1, 64, z1, x2, 64, z2, 'moss_block')                                   # pelouse
+    # garage (z1 .. z1 + 5) : béton gris, grande porte ouverte sur la rue, sol lisse
+    gz2 = z1 + 5
+    fill(x1, 65, z1, x2, 65, gz2, 'smooth_quartz')
+    fill(x1, 66, z1, x2, 69, z1, 'light_gray_concrete'); fill(x1, 66, gz2, x2, 69, gz2, 'light_gray_concrete')
+    fill(x1, 66, z1, x1, 69, gz2, 'light_gray_concrete'); fill(x2, 66, z1, x2, 69, gz2, 'light_gray_concrete')
+    fill(x1 + 1, 66, z1 + 1, x2 - 1, 68, gz2 - 1, 'air')
+    fill(x1, 69, z1, x2, 69, gz2, 'gray_concrete')
+    fill(x1 + 2, 66, z1, x2 - 2, 68, z1, 'air')                                  # porte du garage
+    fill(x1 + 1, 69, z1, x2 - 1, 69, z1, 'black_concrete')
+    for x in range(x1 + 3, x2 - 1, 3):
+        put(x, 66, gz2 - 1, 'yellow_carpet')                                      # places de parking
+        put(x, 68, gz2 - 1, 'sea_lantern')
+    # maison (gz2 + 1 .. z2) : deux niveaux blancs et vitrés, toit-terrasse
+    hz1 = gz2 + 1
+    fill(x1, 65, hz1, x2, 65, z2, 'polished_diorite')
+    for (ya, yb) in ((66, 69), (70, 74)):
+        fill(x1, ya, hz1, x2, yb, hz1, 'white_concrete'); fill(x1, ya, z2, x2, yb, z2, 'white_concrete')
+        fill(x1, ya, hz1, x1, yb, z2, 'white_concrete'); fill(x2, ya, hz1, x2, yb, z2, 'white_concrete')
+        fill(x1 + 1, ya, hz1 + 1, x2 - 1, yb, z2 - 1, 'air')
+        fill(x1 + 1, ya + 1, z2, x2 - 1, yb - 1, z2, 'light_blue_stained_glass')   # baies vitrées côté sud
+        fill(x1, ya + 1, hz1 + 1, x1, yb - 1, z2 - 1, 'light_blue_stained_glass')
+        fill(x2, ya + 1, hz1 + 1, x2, yb - 1, z2 - 1, 'light_blue_stained_glass')
+    fill(x1, 69, hz1, x2, 69, z2, 'smooth_quartz')                               # plancher de l'étage
+    fill(x1 + 1, 69, hz1 + 1, x1 + 2, 69, hz1 + 2, 'air')                        # trémie de l'escalier
+    for k in range(4):
+        put(x1 + 1, 65 + k, hz1 + 4 - k, 'quartz_stairs[facing=north]')
+    fill(x1, 75, hz1, x2, 75, z2, 'smooth_quartz')                               # toit
+    fill(x1, 76, hz1, x2, 76, hz1, 'white_concrete'); fill(x1, 76, z2, x2, 76, z2, 'white_concrete')
+    fill(x1, 76, hz1, x1, 76, z2, 'white_concrete'); fill(x2, 76, hz1, x2, 76, z2, 'white_concrete')
+    fill(x1 + 1, 75, hz1 + 1, x1 + 8, 75, z2 - 1, 'light_blue_stained_glass')    # piscine (toit)
+    fill(x1 + 1, 74, hz1 + 1, x1 + 8, 74, z2 - 1, 'light_blue_concrete')
+    fill(x1 + 11, 76, hz1 + 1, x2 - 1, 76, z2 - 1, 'gray_carpet')                # hélistation
+    hx, hzc = (x1 + 11 + x2 - 1) // 2, (hz1 + z2) // 2
+    fill(hx - 1, 76, hzc - 1, hx - 1, 76, hzc + 1, 'yellow_carpet'); fill(hx + 1, 76, hzc - 1, hx + 1, 76, hzc + 1, 'yellow_carpet')
+    put(hx, 76, hzc, 'yellow_carpet')
+    # rez-de-chaussée : salon (canapé, télé), râtelier d'armes au fond, porte côté avenue
+    fill(x1, 66, hz1 + 3, x1, 68, hz1 + 4, 'air')
+    fill(x1 + 4, 66, hz1 + 2, x1 + 8, 66, hz1 + 2, 'white_wool')
+    fill(x1 + 4, 67, hz1 + 1, x1 + 8, 67, hz1 + 1, 'white_wool')
+    fill(x1 + 5, 66, hz1 + 5, x1 + 7, 67, hz1 + 5, 'black_concrete'); put(x1 + 6, 67, hz1 + 5, 'sea_lantern')
+    fill(x1 + 1, 66, z2 - 1, x2 - 1, 66, z2 - 1, 'red_carpet')
+    for x in range(x1 + 2, x2 - 1, 3):
+        fill(x, 67, z2 - 1, x, 68, z2 - 1, 'iron_bars')
+    for x in range(x1 + 3, x2 - 1, 5):
+        put(x, 68, hz1 + 3, 'sea_lantern'); put(x, 74, hz1 + 3, 'sea_lantern')
+    # étage : chambre (lit en laine, tapis)
+    fill(x2 - 6, 70, hz1 + 2, x2 - 4, 70, hz1 + 4, 'red_wool'); fill(x2 - 6, 70, hz1 + 2, x2 - 4, 70, hz1 + 2, 'white_wool')
+    fill(x1 + 6, 70, hz1 + 2, x1 + 12, 70, hz1 + 5, 'light_gray_carpet')
+    # ascenseur vers le toit (ses plaques sont posées par Neo GTA) : gaine vitrée
+    fill(x2 - 1, 66, hz1 + 1, x2 - 1, 68, hz1 + 1, 'glass')
+
+
 LANDMARKS = {(-40, -51): empire, (-8, -51): chrysler, (24, -75): needle}
 TIMES = (-12, -6)                                  # carrefour à écrans
 BILLBOARD = ['red_concrete', 'yellow_concrete', 'lime_concrete', 'magenta_concrete', 'cyan_concrete', 'orange_concrete', 'blue_concrete']
@@ -314,6 +372,8 @@ for (lx1, lx2) in LOTX:
                     top = setbacks(ax, az, bx, bz, 65, h, 'deco')
                 else:
                     top = tower(ax, az, bx, bz, 65, h, style)
+                if az == bz1 and bx - ax >= 8 and bz - az >= 7 and h >= 9 and not (PARK[0] - 8 <= ax <= PARK[2] + 8 and PARK[1] - 8 <= az <= PARK[3]):
+                    SHOP_CAND.append((ax, az, bx, bz))
                 # carrefour à écrans : panneaux colorés sur les façades qui donnent sur le carrefour
                 near = abs((ax + bx) / 2 - TIMES[0]) < 30 and abs((az + bz) / 2 - TIMES[1]) < 24
                 if near:
@@ -327,6 +387,58 @@ for (lx1, lx2) in LOTX:
                             fill(fx, y0 - 1, az + 1, fx, y0 - 1, bz - 1, 'sea_lantern')
                             fill(ax + 1, y0, fz, bx - 1, y0 + 5, fz, random.choice(BILLBOARD))
                             fill(ax + 1, y0 + 6, fz, bx - 1, y0 + 6, fz, 'glowstone')
+
+# commerces (Neo GTA) : porte, auvent, comptoir et caisse au rez-de-chaussée de 6 immeubles bien répartis
+SHOP_NAMES = [('🛒 Supérette', 'lime'), ('💎 Bijouterie', 'cyan'), ('⛽ Station', 'orange'), ('🍔 Burger', 'red'), ('💊 Pharmacie', 'white'), ('📱 Téléphones', 'blue')]
+_rs = random.Random(42)
+SHOPS = []
+for c in sorted(SHOP_CAND, key=lambda b: (b[0] + 3 * b[1])):
+    if len(SHOPS) < len(SHOP_NAMES) and all(abs(c[0] - o[0]) + abs(c[1] - o[1]) > 45 for o in SHOPS) and _rs.random() < 0.7:
+        SHOPS.append(c)
+for k, ((sx, sz, ex, ez), (nm, col)) in enumerate(zip(SHOPS, SHOP_NAMES)):
+    mx = (sx + ex) // 2
+    ix1, ix2, iz2 = sx + 1, ex - 1, ez - 1                                       # intérieur ; caisse en sz + 3 (côté clients), comptoir en sz + 4
+    fill(mx - 1, 66, sz, mx + 1, 68, sz, 'air')                                  # porte
+    fill(ix1, 66, sz + 1, ix2, 68, iz2, 'air')
+    fill(ix1, 65, sz + 1, ix2, 65, iz2, ['smooth_quartz', 'polished_andesite', 'smooth_stone_slab', 'black_concrete', 'white_concrete', 'polished_deepslate'][k])
+    fill(mx - 2, 69, sz - 1, mx + 2, 69, sz - 1, f'{col}_wool')                  # auvent
+    fill(ix1, 66, sz + 4, ix2, 66, sz + 4, 'dark_oak_planks'); fill(ix1, 67, sz + 4, ix2, 67, sz + 4, 'smooth_quartz_slab')
+    fill(mx, 66, sz + 4, mx, 67, sz + 4, 'air')                                  # passage derrière le comptoir (le caissier)
+    put(mx + 1, 67, sz + 4, 'lodestone')                                         # caisse enregistreuse
+    for x in range(ix1 + 1, ix2, 3):
+        put(x, 68, sz + 2, 'sea_lantern')
+    back = sz + 5
+    if k == 0:      # supérette : rayons de produits, frigos, fruits et légumes
+        fill(ix1, 66, back + 1, ix2, 67, iz2, 'barrel')
+        fill(ix1, 66, sz + 1, ix1, 67, sz + 3, 'white_concrete'); fill(ix1, 68, sz + 1, ix1, 68, sz + 3, 'glass')
+        fill(ix2, 66, sz + 1, ix2, 66, sz + 3, 'hay_block'); put(ix2, 67, sz + 1, 'melon'); put(ix2, 67, sz + 2, 'carved_pumpkin'); put(ix2, 67, sz + 3, 'melon')
+        put(mx - 1, 68, sz + 4, 'cake')
+    elif k == 1:    # bijouterie : vitrines (verre sur socles noirs), or et pierres précieuses
+        for x in (ix1, ix2):
+            fill(x, 66, sz + 1, x, 66, sz + 3, 'black_concrete'); fill(x, 67, sz + 1, x, 67, sz + 3, 'glass')
+        put(ix1, 66, sz + 2, 'gold_block'); put(ix2, 66, sz + 2, 'diamond_block'); put(ix2, 66, sz + 1, 'emerald_block'); put(ix1, 66, sz + 3, 'amethyst_block')
+        fill(ix1, 66, back + 1, ix2, 68, iz2, 'black_concrete'); fill(ix1 + 1, 67, iz2, ix2 - 1, 67, iz2, 'gold_block')
+    elif k == 2:    # station-service : pompes sur le trottoir, rayons de bidons
+        for x in (mx - 4, mx + 4):
+            if sx <= x <= ex:
+                fill(x, 65, sz - 2, x, 66, sz - 2, 'red_concrete'); put(x, 67, sz - 2, 'iron_block'); put(x, 68, sz - 2, 'redstone_lamp[lit=true]')
+        fill(ix1, 66, sz + 1, ix1, 67, sz + 3, 'barrel'); fill(ix2, 66, sz + 1, ix2, 66, sz + 3, 'cauldron')
+        fill(ix1, 66, back + 1, ix2, 67, iz2, 'barrel')
+    elif k == 3:    # burger : cuisine derrière le comptoir, tables et tabourets
+        fill(ix1, 66, back + 1, ix2, 66, iz2, 'smoker'); fill(ix1, 67, back + 1, ix2, 67, iz2, 'furnace')
+        for x in (ix1 + 1, ix2 - 1):
+            put(x, 66, sz + 2, 'oak_fence'); put(x, 67, sz + 2, 'smooth_quartz_slab')
+            put(x, 66, sz + 1, 'oak_stairs[facing=south]'); put(x, 66, sz + 3, 'oak_stairs[facing=north]')
+        fill(mx - 2, 68, sz + 4, mx - 2, 68, sz + 4, 'red_concrete')
+    elif k == 4:    # pharmacie : tout blanc, étagères, croix verte en façade
+        fill(ix1, 66, sz + 1, ix1, 68, sz + 3, 'white_concrete'); fill(ix2, 66, sz + 1, ix2, 68, sz + 3, 'white_concrete')
+        fill(ix1, 67, sz + 1, ix1, 67, sz + 3, 'flower_pot'); fill(ix1, 66, back + 1, ix2, 68, iz2, 'white_concrete')
+        put(mx - 1, 68, sz + 4, 'brewing_stand')
+        fill(mx, 70, sz, mx, 72, sz, 'lime_concrete'); fill(mx - 1, 71, sz, mx + 1, 71, sz, 'lime_concrete')
+    else:           # téléphones : tables d'exposition noires et lumineuses
+        for x in (ix1, ix2):
+            fill(x, 66, sz + 1, x, 66, sz + 3, 'black_concrete'); fill(x, 67, sz + 1, x, 67, sz + 3, 'black_carpet')
+        fill(ix1, 66, back + 1, ix2, 68, iz2, 'gray_concrete'); fill(ix1 + 1, 67, iz2, ix2 - 1, 67, iz2, 'sea_lantern')
 
 # toits : châteaux d'eau, climatiseurs, antennes
 for (x1, z1, x2, z2, yt, style) in ROOFTOP:
@@ -350,10 +462,20 @@ for (x1, z1, x2, z2, yt, style) in ROOFTOP:
         ax, az = random.randint(x1 + 1, x2 - 2), random.randint(z1 + 1, z2 - 1)
         fill(ax, yt + 1, az, ax + 1, yt + 1, az, 'iron_block')
 
-# ---------------------------------------------------------------- Central Park : arbres, rochers
+# ---------------------------------------------------------------- Central Park : arbres, rochers (pas sur l'armurerie)
+ARMORY = (-22, 24, -6, 34)                       # armurerie de Neo GTA, à l'entrée sud du parc (x1, z1, x2, z2)
+BANK = (-2, 24, 14, 34)                          # banque (à l'est de l'armurerie)
+SHOWROOM = (-40, 24, -24, 34)                    # concession (à l'ouest)
+AIRFIELD = (-6, 46, 14, 62)                      # aérodrome (pelouse nord-est du parc)
+
+
+def near_armory(x, z, m=3):
+    return any(a - m <= x <= c + m and b - m <= z <= d + m for (a, b, c, d) in (ARMORY, BANK, SHOWROOM, AIRFIELD))
+
+
 for _ in range(70):
     x, z = random.randint(px1 + 2, px2 - 2), random.randint(pz1 + 2, pz2 - 2)
-    if math.hypot((x + 26) / 10, (z - 52) / 7) <= 1 or -15 <= x <= -9 or 39 <= z <= 44:
+    if math.hypot((x + 26) / 10, (z - 52) / 7) <= 1 or -15 <= x <= -9 or 39 <= z <= 44 or near_armory(x, z):
         continue
     kind = random.choice(['oak', 'oak', 'birch', 'dark_oak'])
     th = random.randint(4, 6)
@@ -362,26 +484,77 @@ for _ in range(70):
     fill(x, 65, z, x, 65 + th - 1, z, f'{kind}_log')
 for _ in range(8):
     x, z = random.randint(px1 + 3, px2 - 3), random.randint(pz1 + 3, pz2 - 3)
-    if not (-15 <= x <= -9 or 39 <= z <= 44) and math.hypot((x + 26) / 10, (z - 52) / 7) > 1:
+    if not (-15 <= x <= -9 or 39 <= z <= 44) and math.hypot((x + 26) / 10, (z - 52) / 7) > 1 and not near_armory(x, z):
         fill(x, 65, z, x + 1, 65, z + 1, 'mossy_cobblestone'); put(x, 66, z, 'mossy_cobblestone')
 fill(-27, 65, 42, -25, 65, 44, 'chiseled_stone_bricks'); put(-26, 66, 43, 'sea_lantern')
 
+# armurerie (porte au sud, côté rue) : briques sombres, vitrine, bandeau rouge, râteliers au fond
+ax1, az1, ax2, az2 = ARMORY
+fill(ax1, 65, az1, ax2, 65, az2, 'polished_andesite')
+fill(ax1, 66, az1, ax2, 72, az1, 'deepslate_bricks'); fill(ax1, 66, az2, ax2, 72, az2, 'deepslate_bricks')
+fill(ax1, 66, az1, ax1, 72, az2, 'deepslate_bricks'); fill(ax2, 66, az1, ax2, 72, az2, 'deepslate_bricks')
+fill(ax1 + 1, 66, az1 + 1, ax2 - 1, 71, az2 - 1, 'air')
+fill(ax1, 72, az1, ax2, 72, az2, 'polished_deepslate')
+fill(ax1 + 1, 67, az1, ax2 - 1, 69, az1, 'gray_stained_glass')                 # vitrine
+fill(ax1, 70, az1, ax2, 71, az1, 'red_concrete')                               # bandeau de l'enseigne
+fill(-15, 66, az1, -13, 68, az1, 'air')                                        # porte
+fill(-16, 66, az1, -16, 69, az1, 'iron_block'); fill(-12, 66, az1, -12, 69, az1, 'iron_block'); fill(-16, 69, az1, -12, 69, az1, 'iron_block')
+fill(-15, 65, 21, -13, 65, az1 - 1, 'stone_bricks')                            # allée depuis la rue
+for x in range(ax1 + 2, ax2 - 1, 4):
+    put(x, 71, (az1 + az2) // 2, 'sea_lantern'); put(x, 71, az2 - 2, 'sea_lantern')
+for x in range(ax1 + 1, ax2, 2):                                               # râteliers derrière les présentoirs
+    fill(x, 67, az2 - 1, x, 69, az2 - 1, 'iron_bars')
+fill(ax1 + 1, 66, az1 + 3, ax1 + 5, 66, az1 + 3, 'dark_oak_planks'); fill(ax1 + 1, 67, az1 + 3, ax1 + 5, 67, az1 + 3, 'smooth_quartz_slab')   # comptoir
+fill(ax2 - 5, 66, az1 + 3, ax2 - 1, 66, az1 + 3, 'dark_oak_planks'); fill(ax2 - 5, 67, az1 + 3, ax2 - 1, 67, az1 + 3, 'smooth_quartz_slab')
+fill(ax1 + 1, 66, az2 - 1, ax2 - 1, 66, az2 - 1, 'red_carpet')
+
+
+def hall_box(x1, z1, x2, z2, wall, floor, roof, door_x):
+    fill(x1, 65, z1, x2, 65, z2, floor)
+    fill(x1, 66, z1, x2, 72, z1, wall); fill(x1, 66, z2, x2, 72, z2, wall)
+    fill(x1, 66, z1, x1, 72, z2, wall); fill(x2, 66, z1, x2, 72, z2, wall)
+    fill(x1 + 1, 66, z1 + 1, x2 - 1, 71, z2 - 1, 'air')
+    fill(x1, 72, z1, x2, 72, z2, roof)
+    fill(door_x - 1, 66, z1, door_x + 1, 68, z1, 'air')
+    fill(door_x - 1, 65, 21, door_x + 1, 65, z1 - 1, 'stone_bricks')
+    for x in range(x1 + 2, x2 - 1, 4):
+        put(x, 71, (z1 + z2) // 2, 'sea_lantern')
+
+
+# banque : colonnade blanche, bandeau doré, salle des coffres au fond (blocs d'or = bonus au Bombardier)
+bx1, bz1_, bx2, bz2_ = BANK
+hall_box(bx1, bz1_, bx2, bz2_, 'calcite', 'polished_diorite', 'smooth_quartz', 6)
+for x in range(bx1, bx2 + 1, 3):
+    if abs(x - 6) > 2:
+        fill(x, 66, bz1_ - 1, x, 71, bz1_ - 1, 'quartz_pillar')
+fill(bx1, 72, bz1_ - 1, bx2, 72, bz1_ - 1, 'smooth_quartz')
+fill(bx1, 70, bz1_, bx2, 71, bz1_, 'gold_block')
+fill(bx1 + 1, 66, bz1_ + 3, bx1 + 5, 67, bz1_ + 3, 'dark_oak_planks'); fill(bx2 - 5, 66, bz1_ + 3, bx2 - 1, 67, bz1_ + 3, 'dark_oak_planks')
+fill(bx1 + 3, 66, bz2_ - 4, bx2 - 3, 70, bz2_ - 4, 'iron_block')                # mur de la salle des coffres
+fill(5, 66, bz2_ - 4, 7, 68, bz2_ - 4, 'air')                                   # porte blindée ouverte
+fill(bx1 + 4, 66, bz2_ - 1, bx1 + 5, 67, bz2_ - 1, 'gold_block'); fill(bx2 - 5, 66, bz2_ - 1, bx2 - 4, 67, bz2_ - 1, 'gold_block')
+# concession : grande vitrine, sol clair
+sx1, sz1, sx2, sz2 = SHOWROOM
+hall_box(sx1, sz1, sx2, sz2, 'white_concrete', 'smooth_quartz', 'light_gray_concrete', -32)
+fill(sx1 + 1, 66, sz1, sx2 - 1, 70, sz1, 'light_blue_stained_glass')
+fill(-33, 66, sz1, -31, 68, sz1, 'air')
+fill(sx1, 71, sz1, sx2, 71, sz1, 'purple_concrete')
+# aérodrome : piste et hélisurface (tapis sur la pelouse)
+fx1, fz1, fx2, fz2 = AIRFIELD
+fill(fx1, 65, fz1 + 6, fx2, 65, fz1 + 10, 'gray_carpet')
+for x in range(fx1 + 1, fx2, 3):
+    put(x, 65, fz1 + 8, 'white_carpet')
+fill(2, 65, fz1, 6, 65, fz1 + 4, 'yellow_carpet'); fill(3, 65, fz1 + 1, 3, 65, fz1 + 3, 'black_carpet'); fill(5, 65, fz1 + 1, 5, 65, fz1 + 3, 'black_carpet')
+put(4, 65, fz1 + 2, 'black_carpet')
+
 # ---------------------------------------------------------------- rues : taxis, voitures, réverbères
-CARS = ['yellow_concrete'] * 5 + ['red_concrete', 'blue_concrete', 'white_concrete', 'black_concrete']
+# chaussées dégagées (plus de voitures en blocs : à Neo GTA les voitures sont de vraies voitures pilotables)
 for c in AV:
-    for z in range(-HX + 4, HX - 4, 9):
-        if in_park(c, z) or any(abs(z - s) <= 4 for s in ST) or random.random() < 0.45:
-            continue
-        lane = c + random.choice([-2, 2])
-        col = random.choice(CARS)
-        fill(lane, 65, z, lane, 65, z + 2, col); put(lane, 66, z + 1, 'black_stained_glass')
-for s in ST:
-    for x in range(-HX + 4, LAND - 4, 9):
-        if in_park(x, s) or any(abs(x - c) <= 5 for c in AV) or random.random() < 0.45:
-            continue
-        lane = s + random.choice([-1, 1])
-        col = random.choice(CARS)
-        fill(x, 65, lane, x + 2, 65, lane, col); put(x + 1, 66, lane, 'black_stained_glass')
+    for (za, zb) in ([(-HX, PARK[1] - 1), (PARK[3] + 1, HX)] if PARK[0] <= c <= PARK[2] else [(-HX, HX)]):
+        fill(c - 3, 65, za, c + 3, 66, zb, 'air')
+for c in ST:
+    for (xa, xb) in ([(-HX, PARK[0] - 1), (PARK[2] + 1, LAND)] if PARK[1] <= c <= PARK[3] else [(-HX, LAND)]):
+        fill(xa, 65, c - 2, xb, 66, c + 2, 'air')
 for (lx1, lx2) in LOTX:
     for (lz1, lz2) in LOTZ:
         if in_park(lx1, lz1) or lx2 - lx1 < 6 or lz2 - lz1 < 6:
@@ -439,11 +612,69 @@ for name, vals in [('bomb_city', sorted(CITY - BONUS)), ('bomb_bonus', sorted(BO
         json.dump({'values': ['minecraft:' + v for v in vals]}, f, indent=2)
         f.write('\n')
 
+# ---------------------------------------------------------------- Neo GTA : lieux (tools/arcade/neo_city.json) et carte (police mg:gta_map)
+import struct, zlib
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'neo_city.json'), 'w', encoding='utf-8', newline='\n') as f:
+    json.dump({'shops': [[(sx + ex) // 2, sz, nm, col] for (sx, sz, ex, ez), (nm, col) in zip(SHOPS, SHOP_NAMES)],
+               'bank': list(BANK), 'armory': list(ARMORY), 'showroom': list(SHOWROOM), 'airfield': list(AIRFIELD)},
+              f, ensure_ascii=False, indent=1)
+    f.write('\n')
+
+
+def map_color(n, y):
+    if n in ('polished_blackstone', 'white_concrete_powder'): return (52, 52, 58)
+    if n == 'smooth_stone': return (138, 138, 142)
+    if n == 'grass_block': return (86, 146, 64)
+    if n in ('dirt_path', 'gray_carpet', 'white_carpet', 'yellow_carpet', 'black_carpet'): return (120, 120, 110)
+    if n == 'water': return (58, 110, 196)
+    if n == 'sand': return (206, 196, 146)
+    if n.endswith('_leaves') or n.endswith('_log') or n == 'mossy_cobblestone': return (52, 112, 46)
+    if 'glass' in n: base = (104, 150, 186)
+    elif any(k in n for k in ('brick', 'terracotta', 'granite')): base = (162, 92, 72)
+    elif any(k in n for k in ('black', 'deepslate', 'gray_concrete')): base = (74, 74, 84)
+    else: base = (196, 192, 182)
+    f = 0.75 + min(1.0, (y - 65) / 90) * 0.45
+    return tuple(min(255, int(c * f)) for c in base)
+
+
+img = [[(30, 30, 36, 255)] * NX for _ in range(NZ)]
+for zz in range(NZ):
+    for xx in range(NX):
+        for yy in range(NY - 2, -1, -1):
+            v = grid[(yy * NZ + zz) * NX + xx]
+            if v:
+                img[zz][xx] = map_color(PAL[v], yy + Y0) + (255,)
+                break
+
+
+def mark_rect(a, b, c, d, col):
+    for zz in range(b, d + 1):
+        for xx in range(a, c + 1):
+            edge = zz in (b, d) or xx in (a, c)
+            img[zz + HX][xx + HX] = (255, 255, 255, 255) if edge else col + (255,)
+
+
+mark_rect(*ARMORY, (200, 40, 40)); mark_rect(*BANK, (232, 186, 36)); mark_rect(*SHOWROOM, (150, 70, 200))
+for k in range(7):                                  # flèche vers Neo Hills (domaine au nord, en haut de la carte, avenue 20)
+    for xx in range(20 - k, 21 + k):
+        img[k][xx + HX] = (40, 200, 220, 255)
+for (sx, sz, ex, ez) in SHOPS:
+    mark_rect((sx + ex) // 2 - 2, sz, (sx + ex) // 2 + 2, sz + 4, (245, 140, 30))
+raw = b''.join(b'\0' + b''.join(bytes(px) for px in row) for row in img)
+ch = lambda t, d: struct.pack('>I', len(d)) + t + d + struct.pack('>I', zlib.crc32(t + d) & 0xffffffff)
+mp = os.path.join(C.R, 'resourcepack', 'assets', 'mg', 'textures', 'font', 'gta_map.png')
+os.makedirs(os.path.dirname(mp), exist_ok=True)
+open(mp, 'wb').write(b'\x89PNG\r\n\x1a\n' + ch(b'IHDR', struct.pack('>IIBBBBB', NX, NZ, 8, 6, 0, 0, 0)) + ch(b'IDAT', zlib.compress(raw, 9)) + ch(b'IEND', b''))
+
 # ---------------------------------------------------------------- construction par étapes
 NPART = 80
 per = math.ceil(len(CMDS) / NPART)
 parts = [CMDS[i:i + per] for i in range(0, len(CMDS), per)]
 NPART = len(parts)
+_bd = os.path.join(C.F, 'bomber', 'b')
+if os.path.isdir(_bd):                          # étapes périmées (le nombre d'étapes peut changer)
+    for _f in os.listdir(_bd):
+        os.remove(os.path.join(_bd, _f))
 for i, p in enumerate(parts, 1):
     w(f'bomber/b/p{i}', [f'# Ville du Bombardier, étape {i}/{NPART} (généré par tools/arcade/gen_bomber.py)'] + p)
 gper = math.ceil(len(GROUND) / 40)
@@ -454,6 +685,7 @@ NG = len(gparts)
 step = ['# Une étape de construction par tick ($bbs : 1..40 sol si absent, puis la ville). Planifiée par bomber/prepare.',
         'scoreboard players add $bbs mg.st 1']
 step += [f'execute if score $bbs mg.st matches {i} run function mg:bomber/b/g{i}' for i in range(1, NG + 1)]
+step += [f'execute if score $bbs mg.st matches {NG} run data modify storage mg:bomber v1 set value 1b']
 step += [f'execute if score $bbs mg.st matches {NG + i} run function mg:bomber/b/p{i}' for i in range(1, NPART + 1)]
 step += [f'execute if score $bbs mg.st matches ..{NG + NPART - 1} run schedule function mg:bomber/build_step 1t']
 w('bomber/build_step', step)

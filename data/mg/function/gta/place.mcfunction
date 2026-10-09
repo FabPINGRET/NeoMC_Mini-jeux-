@@ -1,0 +1,36 @@
+# @s : à un carrefour au hasard de Neo City (dans la dimension du contexte)
+execute store result score $gr mg.st run random value 0..33
+execute if score $gr mg.st matches 0 run tp @s -75.5 65 32322.5
+execute if score $gr mg.st matches 1 run tp @s -75.5 65 32346.5
+execute if score $gr mg.st matches 2 run tp @s -75.5 65 32370.5
+execute if score $gr mg.st matches 3 run tp @s -75.5 65 32394.5
+execute if score $gr mg.st matches 4 run tp @s -75.5 65 32418.5
+execute if score $gr mg.st matches 5 run tp @s -75.5 65 32442.5
+execute if score $gr mg.st matches 6 run tp @s -75.5 65 32466.5
+execute if score $gr mg.st matches 7 run tp @s -43.5 65 32322.5
+execute if score $gr mg.st matches 8 run tp @s -43.5 65 32346.5
+execute if score $gr mg.st matches 9 run tp @s -43.5 65 32370.5
+execute if score $gr mg.st matches 10 run tp @s -43.5 65 32394.5
+execute if score $gr mg.st matches 11 run tp @s -43.5 65 32418.5
+execute if score $gr mg.st matches 12 run tp @s -43.5 65 32442.5
+execute if score $gr mg.st matches 13 run tp @s -43.5 65 32466.5
+execute if score $gr mg.st matches 14 run tp @s -11.5 65 32322.5
+execute if score $gr mg.st matches 15 run tp @s -11.5 65 32346.5
+execute if score $gr mg.st matches 16 run tp @s -11.5 65 32370.5
+execute if score $gr mg.st matches 17 run tp @s -11.5 65 32394.5
+execute if score $gr mg.st matches 18 run tp @s -11.5 65 32418.5
+execute if score $gr mg.st matches 19 run tp @s -11.5 65 32466.5
+execute if score $gr mg.st matches 20 run tp @s 20.5 65 32322.5
+execute if score $gr mg.st matches 21 run tp @s 20.5 65 32346.5
+execute if score $gr mg.st matches 22 run tp @s 20.5 65 32370.5
+execute if score $gr mg.st matches 23 run tp @s 20.5 65 32394.5
+execute if score $gr mg.st matches 24 run tp @s 20.5 65 32418.5
+execute if score $gr mg.st matches 25 run tp @s 20.5 65 32442.5
+execute if score $gr mg.st matches 26 run tp @s 20.5 65 32466.5
+execute if score $gr mg.st matches 27 run tp @s 52.5 65 32322.5
+execute if score $gr mg.st matches 28 run tp @s 52.5 65 32346.5
+execute if score $gr mg.st matches 29 run tp @s 52.5 65 32370.5
+execute if score $gr mg.st matches 30 run tp @s 52.5 65 32394.5
+execute if score $gr mg.st matches 31 run tp @s 52.5 65 32418.5
+execute if score $gr mg.st matches 32 run tp @s 52.5 65 32442.5
+execute if score $gr mg.st matches 33 run tp @s 52.5 65 32466.5

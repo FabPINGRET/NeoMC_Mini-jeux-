@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 27/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 27/79 (généré par tools/arcade/gen_bomber.py)
 fill -31 126 32362 -30 127 32362 minecraft:glass
 fill -28 126 32354 -27 127 32354 minecraft:glass
 fill -28 126 32362 -27 127 32362 minecraft:glass

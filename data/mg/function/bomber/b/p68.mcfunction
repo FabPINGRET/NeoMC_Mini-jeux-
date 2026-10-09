@@ -1,64 +1,64 @@
-# Ville du Bombardier, étape 68/80 (généré par tools/arcade/gen_bomber.py)
-fill 40 117 32407 43 119 32410 minecraft:light_gray_concrete
-setblock 42 120 32409 minecraft:lightning_rod
-fill 42 121 32409 42 124 32409 minecraft:lightning_rod
-fill 44 117 32409 45 117 32409 minecraft:iron_block
-fill 27 79 32426 27 80 32426 minecraft:stripped_spruce_log
-fill 29 79 32426 29 80 32426 minecraft:stripped_spruce_log
-fill 27 79 32428 27 80 32428 minecraft:stripped_spruce_log
-fill 29 79 32428 29 80 32428 minecraft:stripped_spruce_log
-fill 27 81 32426 29 83 32428 minecraft:spruce_planks
-fill 28 81 32426 28 83 32426 minecraft:stripped_spruce_wood
-setblock 28 84 32427 minecraft:spruce_slab
-fill 27 84 32426 29 84 32426 minecraft:spruce_slab
-fill 27 84 32428 29 84 32428 minecraft:spruce_slab
-fill 27 79 32428 28 79 32428 minecraft:iron_block
-fill 27 88 32435 28 88 32435 minecraft:iron_block
-fill 38 85 32430 39 85 32430 minecraft:iron_block
-fill 28 91 32453 28 92 32453 minecraft:stripped_spruce_log
-fill 30 91 32453 30 92 32453 minecraft:stripped_spruce_log
-fill 28 91 32455 28 92 32455 minecraft:stripped_spruce_log
-fill 30 91 32455 30 92 32455 minecraft:stripped_spruce_log
-fill 28 93 32453 30 95 32455 minecraft:spruce_planks
-fill 29 93 32453 29 95 32453 minecraft:stripped_spruce_wood
-setblock 29 96 32454 minecraft:spruce_slab
-fill 28 96 32453 30 96 32453 minecraft:spruce_slab
-fill 28 96 32455 30 96 32455 minecraft:spruce_slab
-fill 27 91 32460 28 91 32460 minecraft:iron_block
-fill 44 80 32458 45 80 32458 minecraft:iron_block
-fill 28 96 32472 28 97 32472 minecraft:stripped_spruce_log
-fill 30 96 32472 30 97 32472 minecraft:stripped_spruce_log
-fill 28 96 32474 28 97 32474 minecraft:stripped_spruce_log
-fill 30 96 32474 30 97 32474 minecraft:stripped_spruce_log
-fill 28 98 32472 30 100 32474 minecraft:spruce_planks
-fill 29 98 32472 29 100 32472 minecraft:stripped_spruce_wood
-setblock 29 101 32473 minecraft:spruce_slab
-fill 28 101 32472 30 101 32472 minecraft:spruce_slab
-fill 28 101 32474 30 101 32474 minecraft:spruce_slab
-fill 34 87 32482 35 87 32482 minecraft:iron_block
-fill 41 89 32474 41 90 32474 minecraft:stripped_spruce_log
-fill 43 89 32474 43 90 32474 minecraft:stripped_spruce_log
-fill 41 89 32476 41 90 32476 minecraft:stripped_spruce_log
-fill 43 89 32476 43 90 32476 minecraft:stripped_spruce_log
-fill 41 91 32474 43 93 32476 minecraft:spruce_planks
-fill 42 91 32474 42 93 32474 minecraft:stripped_spruce_wood
-setblock 42 94 32475 minecraft:spruce_slab
-fill 41 94 32474 43 94 32474 minecraft:spruce_slab
-fill 41 94 32476 43 94 32476 minecraft:spruce_slab
-fill 40 83 32483 41 83 32483 minecraft:iron_block
-fill 60 82 32331 61 82 32331 minecraft:iron_block
-fill 60 86 32353 61 86 32353 minecraft:iron_block
-fill 59 79 32401 60 79 32401 minecraft:iron_block
-fill 60 89 32425 61 89 32425 minecraft:iron_block
-fill 60 79 32484 61 79 32484 minecraft:iron_block
-fill 11 68 32448 15 69 32452 minecraft:oak_leaves[persistent=true]
-fill 12 70 32449 14 71 32451 minecraft:oak_leaves[persistent=true]
-fill 13 65 32450 13 69 32450 minecraft:oak_log
-fill 0 67 32444 4 68 32448 minecraft:dark_oak_leaves[persistent=true]
-fill 1 69 32445 3 70 32447 minecraft:dark_oak_leaves[persistent=true]
-fill 2 65 32446 2 68 32446 minecraft:dark_oak_log
-fill -2 69 32428 2 70 32432 minecraft:oak_leaves[persistent=true]
-fill -1 71 32429 1 72 32431 minecraft:oak_leaves[persistent=true]
-fill 0 65 32430 0 70 32430 minecraft:oak_log
-fill 2 67 32424 6 68 32428 minecraft:birch_leaves[persistent=true]
-fill 3 69 32425 5 70 32427 minecraft:birch_leaves[persistent=true]
+# Ville du Bombardier, étape 68/79 (généré par tools/arcade/gen_bomber.py)
+setblock -65 91 32476 minecraft:spruce_slab
+fill -66 91 32475 -64 91 32475 minecraft:spruce_slab
+fill -66 91 32477 -64 91 32477 minecraft:spruce_slab
+fill -69 86 32479 -68 86 32479 minecraft:iron_block
+fill -55 95 32474 -55 96 32474 minecraft:stripped_spruce_log
+fill -53 95 32474 -53 96 32474 minecraft:stripped_spruce_log
+fill -55 95 32476 -55 96 32476 minecraft:stripped_spruce_log
+fill -53 95 32476 -53 96 32476 minecraft:stripped_spruce_log
+fill -55 97 32474 -53 99 32476 minecraft:spruce_planks
+fill -54 97 32474 -54 99 32474 minecraft:stripped_spruce_wood
+setblock -54 100 32475 minecraft:spruce_slab
+fill -55 100 32474 -53 100 32474 minecraft:spruce_slab
+fill -55 100 32476 -53 100 32476 minecraft:spruce_slab
+fill -54 95 32478 -53 95 32478 minecraft:iron_block
+fill -54 95 32484 -53 95 32484 minecraft:iron_block
+setblock -21 143 32315 minecraft:lightning_rod
+fill -21 147 32315 -21 150 32315 minecraft:lightning_rod
+fill -35 98 32332 -32 100 32335 minecraft:light_gray_concrete
+setblock -33 101 32334 minecraft:lightning_rod
+fill -24 126 32328 -21 128 32331 minecraft:light_gray_concrete
+setblock -22 129 32330 minecraft:lightning_rod
+fill -22 130 32330 -22 133 32330 minecraft:lightning_rod
+setblock -22 140 32338 minecraft:lightning_rod
+fill -22 144 32338 -22 147 32338 minecraft:lightning_rod
+fill -20 140 32339 -19 140 32339 minecraft:iron_block
+fill -26 106 32384 -25 106 32384 minecraft:iron_block
+fill -30 98 32405 -30 99 32405 minecraft:stripped_spruce_log
+fill -28 98 32405 -28 99 32405 minecraft:stripped_spruce_log
+fill -30 98 32407 -30 99 32407 minecraft:stripped_spruce_log
+fill -28 98 32407 -28 99 32407 minecraft:stripped_spruce_log
+fill -30 100 32405 -28 102 32407 minecraft:spruce_planks
+fill -29 100 32405 -29 102 32405 minecraft:stripped_spruce_wood
+setblock -29 103 32406 minecraft:spruce_slab
+fill -30 103 32405 -28 103 32405 minecraft:spruce_slab
+fill -30 103 32407 -28 103 32407 minecraft:spruce_slab
+fill -33 77 32481 -33 78 32481 minecraft:stripped_spruce_log
+fill -31 77 32481 -31 78 32481 minecraft:stripped_spruce_log
+fill -33 77 32483 -33 78 32483 minecraft:stripped_spruce_log
+fill -31 77 32483 -31 78 32483 minecraft:stripped_spruce_log
+fill -33 79 32481 -31 81 32483 minecraft:spruce_planks
+fill -32 79 32481 -32 81 32481 minecraft:stripped_spruce_wood
+setblock -32 82 32482 minecraft:spruce_slab
+fill -33 82 32481 -31 82 32481 minecraft:spruce_slab
+fill -33 82 32483 -31 82 32483 minecraft:spruce_slab
+fill -35 77 32479 -34 77 32479 minecraft:iron_block
+fill -21 95 32472 -20 95 32472 minecraft:iron_block
+fill -23 80 32481 -23 81 32481 minecraft:stripped_spruce_log
+fill -21 80 32481 -21 81 32481 minecraft:stripped_spruce_log
+fill -23 80 32483 -23 81 32483 minecraft:stripped_spruce_log
+fill -21 80 32483 -21 81 32483 minecraft:stripped_spruce_log
+fill -23 82 32481 -21 84 32483 minecraft:spruce_planks
+fill -22 82 32481 -22 84 32481 minecraft:stripped_spruce_wood
+setblock -22 85 32482 minecraft:spruce_slab
+fill -23 85 32481 -21 85 32481 minecraft:spruce_slab
+fill -23 85 32483 -21 85 32483 minecraft:spruce_slab
+fill -22 80 32481 -21 80 32481 minecraft:iron_block
+setblock 4 95 32315 minecraft:lightning_rod
+fill 2 116 32328 5 118 32331 minecraft:light_gray_concrete
+setblock 4 119 32330 minecraft:lightning_rod
+fill 4 120 32330 4 123 32330 minecraft:lightning_rod
+fill 0 116 32331 1 116 32331 minecraft:iron_block
+fill 2 107 32336 5 109 32339 minecraft:light_gray_concrete
+setblock 4 110 32338 minecraft:lightning_rod

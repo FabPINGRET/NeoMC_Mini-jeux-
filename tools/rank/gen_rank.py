@@ -69,10 +69,10 @@ w('rank/level_up', ['# Monte de niveau tant que le score le permet (récursif ; 
                     'execute if score @s mg.gen >= $rn mg.st if score @s mg.lvl matches ..999 run function mg:rank/level_up'])
 w('rank/xp', ['# @s (au lobby) : barre d\'XP = niveau général, remplie selon la progression vers le suivant',
               # points du niveau L = 25 L (L+1) ; écart jusqu'au suivant = 50 (L+1)
-              'scoreboard players operation $rp mg.st = @s mg.lvl', 'scoreboard players operation $rq mg.st = @s mg.lvl',
-              'scoreboard players add $rq mg.st 1', 'scoreboard players operation $rp mg.st *= $rq mg.st',
-              'scoreboard players operation $rp mg.st *= #25 mg.st',
-              'scoreboard players operation $rd mg.st = @s mg.gen', 'scoreboard players operation $rd mg.st -= $rp mg.st',
+              'scoreboard players operation $rkp mg.st = @s mg.lvl', 'scoreboard players operation $rq mg.st = @s mg.lvl',
+              'scoreboard players add $rq mg.st 1', 'scoreboard players operation $rkp mg.st *= $rq mg.st',
+              'scoreboard players operation $rkp mg.st *= #25 mg.st',
+              'scoreboard players operation $rd mg.st = @s mg.gen', 'scoreboard players operation $rd mg.st -= $rkp mg.st',
               'scoreboard players operation $rq mg.st *= #50 mg.st',
               # capacité de la barre vanilla au niveau L : 2L+7 (L<16), 5L-38 (L<31), 9L-158
               'scoreboard players operation $rc mg.st = @s mg.lvl', 'scoreboard players operation $rc mg.st *= #2 mg.st',

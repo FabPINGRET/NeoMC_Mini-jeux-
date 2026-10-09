@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 61/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 61/79 (généré par tools/arcade/gen_bomber.py)
 fill 58 81 32359 62 81 32365 minecraft:granite
 fill 58 85 32359 62 85 32365 minecraft:granite
 fill 58 65 32359 62 65 32365 minecraft:granite

@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 63/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 63/79 (généré par tools/arcade/gen_bomber.py)
 fill 58 65 32447 62 65 32453 minecraft:terracotta
 fill 58 79 32447 62 79 32453 minecraft:terracotta
 fill 60 66 32447 61 67 32447 minecraft:glass

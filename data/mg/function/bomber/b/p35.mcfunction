@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 35/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 35/79 (généré par tools/arcade/gen_bomber.py)
 fill -6 65 32314 -6 94 32317 minecraft:polished_deepslate
 fill 14 65 32314 14 94 32317 minecraft:polished_deepslate
 fill -5 65 32315 13 94 32316 minecraft:air

@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 36/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 36/79 (généré par tools/arcade/gen_bomber.py)
 fill 3 66 32327 3 114 32327 minecraft:light_blue_stained_glass
 fill 3 66 32333 3 114 32333 minecraft:light_blue_stained_glass
 fill 4 66 32327 4 114 32327 minecraft:light_blue_stained_glass

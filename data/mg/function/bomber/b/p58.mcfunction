@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 58/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 58/79 (généré par tools/arcade/gen_bomber.py)
 fill 35 66 32481 35 85 32481 minecraft:gray_stained_glass
 fill 35 66 32486 35 85 32486 minecraft:gray_stained_glass
 fill 26 66 32482 26 85 32482 minecraft:gray_stained_glass

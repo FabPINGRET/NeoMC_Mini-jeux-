@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 22/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 22/79 (généré par tools/arcade/gen_bomber.py)
 fill -23 65 32317 -18 142 32317 minecraft:white_concrete
 fill -23 65 32314 -23 142 32317 minecraft:white_concrete
 fill -18 65 32314 -18 142 32317 minecraft:white_concrete

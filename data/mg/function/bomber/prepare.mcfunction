@@ -15,7 +15,7 @@ clear @a[tag=mg.play]
 spreadplayers 0 32400 6 50 under 173 false @a[tag=mg.play]
 execute as @a[tag=mg.play] at @s run tp @s ~ 171 ~ ~ 60
 bossbar add mg:bomber {"text":"🏙 Ville détruite : 0 %","color":"red"}
-bossbar set mg:bomber max 160552
+bossbar set mg:bomber max 161321
 bossbar set mg:bomber value 0
 bossbar set mg:bomber color red
 bossbar set mg:bomber style notched_10

@@ -36,7 +36,7 @@ def build():
     for n, (name, model, dmg, cd, mag, rl, rng, pel, col) in GUNS.items():
         # donner (macro : $(slot))
         w(f'gun/put_{n}', [f'# Donne « {name} » dans l\'emplacement $(slot), chargeur plein'] + item(n, '$(slot)') +
-          [f'scoreboard players set @s mg.g{n} {mag}'])
+          [f'scoreboard players set @s mg.g{n} {mag}', f'execute if entity @s[tag=mg.gtw] run scoreboard players set @s mg.g{n} {2 * mag}'])
         # tir
         F = [f'# Tir : {name} (@s = tireur, position/rotation du tireur)',
              f'execute if score @s mg.g{n} matches ..0 run return run function mg:gun/reload_{n}',
@@ -99,7 +99,9 @@ def build():
       [f'execute if score $gdn mg.st matches {n} run return run damage @s {g[2]} minecraft:player_attack by @a[tag=mg.gsh,limit=1]' for n, g in GUNS.items()])
     w('gun/reload_tick', ['# @s recharge', 'scoreboard players remove @s mg.grl 1',
                           'execute if score @s mg.grl matches 1.. run return 0'] +
-      [f'execute if score @s mg.grt matches {n} run scoreboard players set @s mg.g{n} {g[4]}' for n, g in GUNS.items()] +
+      [l for n, g in GUNS.items() for l in (f'execute if score @s mg.grt matches {n} run scoreboard players set @s mg.g{n} {g[4]}',
+                                             f'execute if entity @s[tag=mg.gtw] if score @s mg.grt matches {n} run scoreboard players set @s mg.g{n} {2 * g[4]}')] +   # Neo GTA : chargeurs doublés
+
       ['playsound minecraft:item.crossbow.loading_end player @s ~ ~ ~ 0.8 1.4'])
     w('gun/sneak', ['# Accroupi avec une arme en main : recharge', 'scoreboard players reset @s mg.gsn'] +
       [f'execute if items entity @s weapon.mainhand *[custom_data~{{gun:{n}}}] run return run function mg:gun/reload_{n}' for n in GUNS])

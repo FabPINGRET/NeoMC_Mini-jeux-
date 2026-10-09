@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 4/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 4/79 (généré par tools/arcade/gen_bomber.py)
 fill -86 66 32424 -86 86 32424 minecraft:black_stained_glass
 fill -82 66 32424 -82 86 32424 minecraft:black_stained_glass
 fill -86 66 32426 -86 86 32426 minecraft:black_stained_glass

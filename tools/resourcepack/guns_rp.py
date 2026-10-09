@@ -3,7 +3,7 @@
 GPAL = dict(PAL)
 GPAL.update({'m': (52, 54, 60, 255), 'M': (32, 33, 38, 255), 'a': (128, 132, 140, 255), 'A': (170, 174, 182, 255),
              'u': (122, 80, 44, 255), 'U': (88, 56, 30, 255), 'z': (80, 255, 130, 255), 'Z': (30, 170, 70, 255),
-             'q': (200, 60, 50, 255), 'Q': (130, 30, 25, 255)})
+             'q': (200, 60, 50, 255), 'Q': (130, 30, 25, 255), 'v': (104, 120, 70, 255), 'V': (64, 78, 42, 255)})
 GSPR = {
     'gun_pistol': ['', '', '', '', '',
                    '    MMMMMMMMMMk',
@@ -66,11 +66,39 @@ GSPR = {
                    '   MUuUM',
                    '   MUUM',
                    '   MMMM'],
+    'gun_rpg': ['', '', '', '',
+                '            QQ',
+                'VVVVVVVVVVVVQqqQ',
+                'VvvvvvvvvvvvQqqq',
+                'VvvvvvvvvvvvQqqq',
+                'VVVVVVVVVVVVQqqQ',
+                '   MUM  MUM QQ',
+                '   MUM  MUM',
+                '   MMM  MMM'],
 }
 for name, rows in GSPR.items():
     png(os.path.join(A, 'textures', 'item', name + '.png'), pad(rows), GPAL)
     wjson(os.path.join(A, 'models', 'item', name + '.json'), {
         "parent": "minecraft:item/handheld", "textures": {"layer0": f"mg:item/{name}"},
-        "display": {"firstperson_righthand": {"rotation": [0, -90, 0], "translation": [1.13, 3.2, 1.13], "scale": [0.68, 0.68, 0.68]},
-                    "thirdperson_righthand": {"rotation": [0, -90, 0], "translation": [0, 2, 0.5], "scale": [0.85, 0.85, 0.85]}}})
+        "display": {"firstperson_righthand": {"rotation": [0, 90, 0], "translation": [1.13, 3.2, 1.13], "scale": [0.68, 0.68, 0.68]},
+                    "thirdperson_righthand": {"rotation": [0, 90, 0], "translation": [0, 2, 0.5], "scale": [0.85, 0.85, 0.85]}}})
     item_def(name, f'mg:item/{name}')
+
+# Batte de baseball (GTA) : tenue comme une épée (modèle handheld standard), bois clair, poignée scotchée
+BAT = ['', '', '',
+       '            uuu',
+       '           uuuuu',
+       '          uuuuuU',
+       '         uuuuuU',
+       '        uuuuuU',
+       '       uuuuU',
+       '      uuuU',
+       '     uuuU',
+       '    uuU',
+       '   MMU',
+       '  MaM',
+       ' MaM',
+       ' MM']
+png(os.path.join(A, 'textures', 'item', 'bat.png'), pad(BAT), GPAL)
+wjson(os.path.join(A, 'models', 'item', 'bat.json'), {"parent": "minecraft:item/handheld", "textures": {"layer0": "mg:item/bat"}})
+item_def('bat', 'mg:item/bat')
