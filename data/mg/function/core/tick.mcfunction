@@ -103,6 +103,7 @@ execute if score $gmt mg.t matches 40.. run scoreboard players set $gmt mg.t 0
 execute if score $state mg.st matches 1 as @a[tag=mg.play] at @s run kill @e[type=#mg:shot,distance=..8]
 # Machine à états
 execute if score $state mg.st matches 1 run function mg:core/countdown
+execute as @a[tag=mg.frz] run function mg:core/freeze_hold
 execute if score $state mg.st matches 2 run function mg:core/game_tick
 execute if score $state mg.st matches 3 run function mg:core/ending
 
