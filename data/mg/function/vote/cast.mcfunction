@@ -1,4 +1,9 @@
 # @s = joueur ayant utilisé /trigger mg.vote
+# En pause ou en survie : pas de vote (jeu 1..21, carte 1001..1199)
+execute if entity @s[tag=mg.spectate] if score @s mg.vote matches 1..21 run return run function mg:vote/paused
+execute if entity @s[tag=mg.spectate] if score @s mg.vote matches 1001..1199 run return run function mg:vote/paused
+execute if entity @s[tag=mg.surv] if score @s mg.vote matches 1..21 run return run function mg:vote/paused
+execute if entity @s[tag=mg.surv] if score @s mg.vote matches 1001..1199 run return run function mg:vote/paused
 execute if score @s mg.vote matches 1..21 run function mg:vote/choose
 execute if score @s mg.vote matches 1001..1199 run function mg:vote/map_choose
 execute if score @s mg.vote matches 91 run function mg:vote/map_open

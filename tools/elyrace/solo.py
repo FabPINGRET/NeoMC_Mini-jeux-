@@ -38,7 +38,7 @@ def checks_lines(specs):
     out = [refuse('unless score $setup mg.st matches 1', 'Installation manquante : un OP doit d\'abord lancer /function mg:setup.'),
            refuse('unless entity @s[tag=mg.init]', 'Pas encore prêt : réessaie dans un instant.'),
            refuse('if entity @s[tag=mg.surv]', 'Impossible depuis la survie : reviens d\'abord au lobby (/trigger mg.sv set 2).'),
-           refuse('if entity @s[tag=mg.spectate]', 'Impossible en mode spectateur : repasse en joueur (/trigger mg.opt set 1).')]
+           refuse('if entity @s[tag=mg.spectate]', 'Impossible en pause : désactive la pause (/trigger mg.opt set 1).')]
     out += [refuse('if entity @s[tag=%s]' % t, 'Termine d\'abord ton activité en cours (parcours d\'élytra, élytres libres, kart libre ou parkour).') for t in ACTIVITY_TAGS]
     out += [refuse('unless score $state mg.st matches 0', 'Une partie est déjà en cours : attends sa fin.'),
             refuse('if score $mp mg.st matches 1', 'La Mini Party est en cours.'),

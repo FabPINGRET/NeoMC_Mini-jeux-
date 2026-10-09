@@ -4,7 +4,7 @@ tellraw @s [{"text":"• Lancer un jeu (admins) : ","color":"gray"},{"text":"cli
 tellraw @s [{"text":"• Si l'objet/la fenêtre ne répond pas : ","color":"gray"},{"text":"/function mg:menu","color":"yellow"},{"text":" ou ","color":"gray"},{"text":"/trigger mg.menu set 2","color":"yellow"},{"text":" (menu texte)","color":"gray"}]
 tellraw @s [{"text":"• Diagnostic (admins) : ","color":"gray"},{"text":"/function mg:diag","color":"yellow"}]
 tellraw @s [{"text":"• Devenir admin (OP) : ","color":"gray"},{"text":"/function mg:admin","color":"yellow"},{"text":" — ou ","color":"gray"},{"text":"/tag <joueur> add mg.admin","color":"yellow"}]
-tellraw @s [{"text":"• Spectateur ON/OFF (tous) : ","color":"gray"},{"text":"/trigger mg.opt set 1","color":"yellow"}]
+tellraw @s [{"text":"• Pause, ne pas être téléporté (tous) : ","color":"gray"},{"text":"/trigger mg.opt set 1","color":"yellow"}]
 tellraw @s [{"text":"• Classement ON/OFF (tous) : ","color":"gray"},{"text":"/trigger mg.opt set 2","color":"yellow"}]
 tellraw @s [{"text":"• Mini Party, plateau + mini-jeux (admins) : ","color":"gray"},{"text":"/trigger mg.go set 59","color":"yellow"},{"text":" (8 tours) ou ","color":"gray"},{"text":"60","color":"yellow"},{"text":" (15 tours) ; dé, objets, boutiques et routes : fenêtres pendant la partie (secours : ","color":"gray"},{"text":"/trigger mg.dice","color":"yellow"},{"text":")","color":"gray"}]
 tellraw @s [{"text":"• Dropper : Défi (admins) : ","color":"gray"},{"text":"/trigger mg.go set 65","color":"yellow"},{"text":" ; même puits pour tous, premier dans l'eau, premier à 3 manches","color":"gray"}]

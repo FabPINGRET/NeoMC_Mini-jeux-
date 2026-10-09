@@ -2,6 +2,9 @@
 scoreboard players reset @s mg.lg
 function mg:lobkart/leave
 
+# Tag de Mini Party périmé (la partie s'est terminée pendant son absence)
+execute unless score $mp mg.st matches 1 run tag @s remove mg.mpp
+
 # En survie : il reprend là où il était (rien à faire)
 execute if entity @s[tag=mg.surv] run return 0
 
