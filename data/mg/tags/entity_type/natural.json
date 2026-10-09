@@ -18,7 +18,6 @@
     "minecraft:vindicator",
     "minecraft:ravager",
     "minecraft:evoker",
-    "minecraft:vex",
     "minecraft:wandering_trader",
     "minecraft:trader_llama",
     "minecraft:cow",
@@ -54,6 +53,24 @@
     "minecraft:panda",
     "minecraft:mooshroom",
     "minecraft:zombified_piglin",
-    "minecraft:strider"
+    "minecraft:strider",
+    "minecraft:zombie_horse",
+    "minecraft:skeleton_horse",
+    {
+      "id": "minecraft:parched",
+      "required": false
+    },
+    {
+      "id": "minecraft:camel_husk",
+      "required": false
+    },
+    {
+      "id": "minecraft:nautilus",
+      "required": false
+    },
+    {
+      "id": "minecraft:zombie_nautilus",
+      "required": false
+    }
   ]
 }
