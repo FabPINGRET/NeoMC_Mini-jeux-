@@ -391,7 +391,7 @@ MISE = {'type': 'minecraft:single_option', 'key': 'mise', 'label': {'text': 'Mis
         'options': [{'id': str(k + 1), 'display': {'text': f'{b} $', 'color': 'green'}, **({'initial': True} if k == 1 else {})} for k, b in enumerate(BETS)]}
 EXIT = {'label': {'text': 'Quitter la table', 'color': 'gray'}}
 D_SLOT = {'type': 'minecraft:multi_action', 'title': {'text': '🎰 Machine à sous', 'color': 'gold', 'bold': True}, 'pause': False, 'can_close_with_escape': True,
-          'body': [{'type': 'minecraft:plain_message', 'contents': [{'text': '🍒🍒 ×2   🔔🔔🔔 ×5   7️⃣7️⃣7️⃣ JACKPOT ×20', 'color': 'yellow'}]}],
+          'body': [{'type': 'minecraft:plain_message', 'contents': [{'text': '🍒🍒 ×2   🔔🔔🔔 ×5   ', 'color': 'yellow'}, {'text': '777', 'color': 'red', 'bold': True}, {'text': ' JACKPOT ×20', 'color': 'yellow'}]}],
           'inputs': [MISE], 'columns': 1, 'exit_action': EXIT,
           'actions': [{'label': {'text': '🎰 Tirer le levier', 'color': 'gold', 'bold': True}, 'action': {'type': 'minecraft:dynamic/run_command', 'template': 'trigger mg.gcas set 1$(mise)'}}]}
 D_ROUL = {'type': 'minecraft:multi_action', 'title': {'text': '🎡 Roulette', 'color': 'red', 'bold': True}, 'pause': False, 'can_close_with_escape': True,
@@ -411,7 +411,7 @@ CM = ['# @s a validé une fenêtre du casino (mg.gcas)', 'scoreboard players ope
       'scoreboard players operation $gcm mg.st = $gcc mg.st', 'scoreboard players set #10 mg.st 10', 'scoreboard players operation $gcm mg.st %= #10 mg.st',
       'scoreboard players set $gbet mg.st 0']
 CM += [f'execute if score $gcm mg.st matches {k + 1} run scoreboard players set $gbet mg.st {b}' for k, b in enumerate(BETS)]
-CM += ['execute if score $gbet mg.st matches 0 run return 0',
+CM += ['execute if score $gbet mg.st matches 0 run return 0', 'execute if entity @s[tag=mg.gslot] run return 0',
        'execute if score @s mg.gta < $gbet mg.st run scoreboard players set @s mg.gal 40',
        'execute if score @s mg.gta < $gbet mg.st run return run title @s actionbar [{"text":"💸 Pas assez d\'argent pour miser ","color":"red"},{"score":{"name":"$gbet","objective":"mg.st"},"color":"gold"},{"text":" $","color":"red"}]',
        'scoreboard players operation @s mg.gta -= $gbet mg.st', 'scoreboard players set @s mg.gal 60', 'title @s times 2 40 10',
@@ -430,22 +430,69 @@ def pay(mult_score):
 
 WIN_MSG = ('title @s subtitle [{"text":"+","color":"green"},{"score":{"name":"$gwin","objective":"mg.st"},"color":"green","bold":true},{"text":" $","color":"green"}]')
 LOSE_MSG = 'title @s subtitle [{"text":"-","color":"red"},{"score":{"name":"$gbet","objective":"mg.st"},"color":"red"},{"text":" $","color":"red"}]'
-w('gta/cas_slot', ['# Machine à sous : 73 % perdu, 20 % ×2, 6 % ×5, 1 % ×20 (la maison garde ~10 %)',
-                   'execute store result score $gr mg.st run random value 0..99',
-                   'execute if score $gr mg.st matches ..72 run title @s title {"text":"🍋  🍒  🔔","bold":true}',
-                   'execute if score $gr mg.st matches ..72 run ' + LOSE_MSG,
-                   'execute if score $gr mg.st matches ..72 at @s run playsound minecraft:block.note_block.bass player @s ~ ~ ~ 1 0.6',
-                   'scoreboard players set #2 mg.st 2', 'scoreboard players set #5 mg.st 5', 'scoreboard players set #20 mg.st 20',
-                   'execute if score $gr mg.st matches 73..92 run title @s title {"text":"🍒  🍒  🍋","bold":true}'] +
+SYM = [{'text': '🍒', 'color': 'red'}, {'text': '🍋', 'color': 'yellow'}, {'text': '🔔', 'color': 'gold'},
+       {'text': '💎', 'color': 'aqua'}, {'text': '⭐', 'color': 'yellow'}, {'text': '7', 'color': 'red', 'bold': True}]
+STOP = (20, 30, 42)                                                          # tick d'arrêt de chaque rouleau
+w('gta/cas_slot', ['# Machine à sous : 73 % perdu, 20 % 🍒🍒 ×2, 6 % 🔔🔔🔔 ×5, 1 % 777 ×20 (la maison garde ~10 %). Tirage maintenant, rouleaux animés, paiement à la fin.',
+                   'data modify storage mg:gta sym set value ' + js(SYM),
+                   'execute store result score @s mg.gsr run random value 0..99',
+                   'execute store result score @s mg.gs1 run random value 0..5', 'execute store result score @s mg.gs2 run random value 0..5',
+                   'execute store result score @s mg.gs3 run random value 0..5',
+                   '# perdu : jamais 🍒🍒 en tête ni trois pareils',
+                   'execute if score @s mg.gsr matches ..72 if score @s mg.gs1 matches 0 if score @s mg.gs2 matches 0 run scoreboard players set @s mg.gs2 1',
+                   'execute if score @s mg.gsr matches ..72 if score @s mg.gs1 = @s mg.gs2 if score @s mg.gs2 = @s mg.gs3 run function mg:gta/cas_slot_bump',
+                   'execute if score @s mg.gsr matches 73..92 run scoreboard players set @s mg.gs1 0', 'execute if score @s mg.gsr matches 73..92 run scoreboard players set @s mg.gs2 0',
+                   'execute if score @s mg.gsr matches 73..92 run scoreboard players remove @s mg.gs3 1',
+                   'execute if score @s mg.gsr matches 73..92 if score @s mg.gs3 matches ..0 run scoreboard players set @s mg.gs3 1',
+                   'execute if score @s mg.gsr matches 93..98 run scoreboard players set @s mg.gs1 2', 'execute if score @s mg.gsr matches 93..98 run scoreboard players set @s mg.gs2 2',
+                   'execute if score @s mg.gsr matches 93..98 run scoreboard players set @s mg.gs3 2',
+                   'execute if score @s mg.gsr matches 99 run scoreboard players set @s mg.gs1 5', 'execute if score @s mg.gsr matches 99 run scoreboard players set @s mg.gs2 5',
+                   'execute if score @s mg.gsr matches 99 run scoreboard players set @s mg.gs3 5',
+                   'scoreboard players operation @s mg.gsb = $gbet mg.st', 'scoreboard players set @s mg.gsa 0', 'tag @s add mg.gslot',
+                   'title @s clear', 'title @s times 0 12 4', 'title @s subtitle {"text":"🎰 les rouleaux tournent…","color":"gray"}',
+                   'playsound minecraft:block.piston.extend player @a ~ ~ ~ 0.8 1.6',
+                   'particle minecraft:wax_on ~ ~1.5 ~ 0.4 0.4 0.4 0 12'])
+w('gta/cas_slot_bump', ['# @s : trois symboles pareils sur un tirage perdant → le troisième change', 'scoreboard players add @s mg.gs3 1',
+                        'execute if score @s mg.gs3 matches 6.. run scoreboard players set @s mg.gs3 0',
+                        'execute if score @s mg.gs1 matches 0 if score @s mg.gs3 matches 0 run scoreboard players set @s mg.gs3 1'])
+SA = ['# @s (tag mg.gslot) : une image de l\'animation de la machine à sous', 'scoreboard players add @s mg.gsa 1',
+      'scoreboard players set #6 mg.st 6', 'scoreboard players set #2 mg.st 2',
+      'scoreboard players operation $ga mg.st = @s mg.gsa', 'scoreboard players operation $ga mg.st /= #2 mg.st']
+for k, off in enumerate((0, 2, 4)):
+    n = k + 1
+    SA += [f'scoreboard players operation $gi{n} mg.st = $ga mg.st', f'scoreboard players add $gi{n} mg.st {off}', f'scoreboard players operation $gi{n} mg.st %= #6 mg.st',
+           f'execute if score @s mg.gsa matches {STOP[k]}.. run scoreboard players operation $gi{n} mg.st = @s mg.gs{n}',
+           f'execute store result storage mg:gta sl.i{n} int 1 run scoreboard players get $gi{n} mg.st']
+SA += ['function mg:gta/cas_slot_pick with storage mg:gta sl',
+       f'execute if score @s mg.gsa matches ..{STOP[2] - 1} run function mg:gta/cas_slot_show with storage mg:gta sl',
+       'scoreboard players operation $gp mg.st = @s mg.gsa', 'scoreboard players operation $gp mg.st %= #2 mg.st',
+       f'execute if score @s mg.gsa matches ..{STOP[2] - 1} if score $gp mg.st matches 0 run playsound minecraft:block.note_block.hat player @a ~ ~ ~ 0.35 1.8']
+SA += [f'execute if score @s mg.gsa matches {t} run playsound minecraft:block.note_block.basedrum player @a ~ ~ ~ 0.9 {0.8 + 0.2 * k:.1f}' for k, t in enumerate(STOP)]
+SA += [f'execute if score @s mg.gsa matches {STOP[2]}.. run function mg:gta/cas_slot_final with storage mg:gta sl',
+       f'execute if score @s mg.gsa matches {STOP[2]}.. run function mg:gta/cas_slot_end',
+       f'execute if score @s mg.gsa matches {STOP[2]}.. run function mg:gta/cas_reopen {{d:"slot"}}',
+       f'execute if score @s mg.gsa matches {STOP[2]}.. run tag @s remove mg.gslot']
+w('gta/cas_slot_anim', SA)
+w('gta/cas_slot_pick', ['$data modify storage mg:gta sl.a set from storage mg:gta sym[$(i1)]', '$data modify storage mg:gta sl.b set from storage mg:gta sym[$(i2)]',
+                        '$data modify storage mg:gta sl.c set from storage mg:gta sym[$(i3)]'])
+FR = '{"text":"▌ ","color":"dark_gray"},$(a),{"text":"  │  ","color":"dark_gray"},$(b),{"text":"  │  ","color":"dark_gray"},$(c),{"text":" ▐","color":"dark_gray"}'
+w('gta/cas_slot_show', ['$title @s title [' + FR + ']'])
+w('gta/cas_slot_final', ['title @s times 0 30 10', '$title @s title [' + FR + ']'])
+w('gta/cas_slot_end', ['# @s : les rouleaux sont arrêtés, paiement', 'scoreboard players operation $gbet mg.st = @s mg.gsb',
+                       'scoreboard players operation $gr mg.st = @s mg.gsr',
+                       'scoreboard players set #2 mg.st 2', 'scoreboard players set #5 mg.st 5', 'scoreboard players set #20 mg.st 20',
+                       'execute if score $gr mg.st matches ..72 run ' + LOSE_MSG,
+                       'execute if score $gr mg.st matches ..72 run playsound minecraft:block.note_block.bass player @s ~ ~ ~ 1 0.6'] +
   ['execute if score $gr mg.st matches 73..92 run ' + l for l in pay('#2')] +
-  ['execute if score $gr mg.st matches 93..98 run title @s title {"text":"🔔  🔔  🔔","color":"gold","bold":true}'] +
   ['execute if score $gr mg.st matches 93..98 run ' + l for l in pay('#5')] +
-  ['execute if score $gr mg.st matches 99 run title @s title {"text":"7️⃣  7️⃣  7️⃣","color":"red","bold":true}'] +
   ['execute if score $gr mg.st matches 99 run ' + l for l in pay('#20')] +
-  ['execute if score $gr mg.st matches 99 run tellraw @a[tag=mg.gtw] [{"selector":"@s","color":"yellow"},{"text":" touche le JACKPOT au casino : ","color":"gold"},{"score":{"name":"$gwin","objective":"mg.st"},"color":"green","bold":true},{"text":" $ !","color":"gold"}]',
-   'execute if score $gr mg.st matches 73.. run ' + WIN_MSG,
-   'execute if score $gr mg.st matches 73.. at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.3',
-   'function mg:gta/cas_reopen {d:"slot"}'])
+  ['execute if score $gr mg.st matches 73.. run ' + WIN_MSG,
+   'execute if score $gr mg.st matches 73.. run playsound minecraft:entity.player.levelup player @a ~ ~ ~ 1 1.3',
+   'execute if score $gr mg.st matches 73.. run particle minecraft:happy_villager ~ ~1.5 ~ 0.6 0.6 0.6 0 25',
+   'execute if score $gr mg.st matches 93.. run particle minecraft:wax_off ~ ~2 ~ 0.8 0.8 0.8 0.5 40',
+   'execute if score $gr mg.st matches 99 run particle minecraft:totem_of_undying ~ ~1.5 ~ 0.5 1 0.5 0.6 120',
+   'execute if score $gr mg.st matches 99 run playsound minecraft:ui.toast.challenge_complete player @a ~ ~ ~ 1 1',
+   'execute if score $gr mg.st matches 99 run tellraw @a[tag=mg.gtw] [{"selector":"@s","color":"yellow"},{"text":" touche le JACKPOT au casino : ","color":"gold"},{"score":{"name":"$gwin","objective":"mg.st"},"color":"green","bold":true},{"text":" $ !","color":"gold"}]'])
 w('gta/cas_roul', ['# Roulette (macro $(p) : 1 rouge, 2 noir, 3 vert) : 37 cases, 0 vert, 1..18 rouge, 19..36 noir',
                    'execute store result score $gr mg.st run random value 0..36',
                    'scoreboard players set $gok mg.st 0',
@@ -481,4 +528,5 @@ w('gta/cas_reopen', ['# Rouvre la fenêtre du jeu après 2 s (le joueur rejoue o
 w('gta/cas_reopen_tick', ['# @s : réouverture de la fenêtre du casino', 'execute if entity @s[tag=mg.gcas_slot] run function mg:gta/cas_ui_slot',
                           'execute if entity @s[tag=mg.gcas_roulette] run function mg:gta/cas_ui_roulette', 'execute if entity @s[tag=mg.gcas_dice] run function mg:gta/cas_ui_dice',
                           'tag @s remove mg.gcas_slot', 'tag @s remove mg.gcas_roulette', 'tag @s remove mg.gcas_dice'])
-C.objectives([('mg.gcas', 'trigger'), ('mg.gcre', 'dummy')])
+C.objectives([('mg.gcas', 'trigger'), ('mg.gcre', 'dummy'), ('mg.gsa', 'dummy'), ('mg.gsr', 'dummy'), ('mg.gsb', 'dummy'),
+              ('mg.gs1', 'dummy'), ('mg.gs2', 'dummy'), ('mg.gs3', 'dummy')])

@@ -400,6 +400,7 @@ w('gta/tick', ['# 🚓 Neo City : chaque tick tant qu\'un joueur y est', 'scoreb
                'execute as @a[tag=mg.gtw,scores={mg.gmis=1..}] run function mg:gta/mis_cmd',
                'scoreboard players remove @a[tag=mg.gtw,scores={mg.gnit=1..}] mg.gnit 1',
                'execute as @a[tag=mg.gtw,scores={mg.gcas=1..}] at @s run function mg:gta/cas_cmd',
+               'execute as @a[tag=mg.gslot] at @s run function mg:gta/cas_slot_anim',
                'scoreboard players remove @a[tag=mg.gtw,scores={mg.gcre=1..}] mg.gcre 1',
                'execute as @a[tag=mg.gtw,scores={mg.gcre=1}] run function mg:gta/cas_reopen_tick',
                'execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] if items entity @s weapon.mainhand *[custom_data~{rpg:1b}] at @s run function mg:gta/panic',
@@ -989,7 +990,7 @@ bar('rob_bar_ped', 'Braquage du passant', 'yellow', 40)
 bar('rob_bar_shop', 'Caisse du commerce', 'gold', 100)
 bar('rob_bar_bank', 'Coffres de la banque', 'red', 300)
 w('gta/rob', ['# @s (accroupi, arme en main) : banque, sinon commerce, sinon passant visé (6 blocs)',
-              'execute if entity @e[type=minecraft:marker,tag=mg.gbank,distance=..3.5,scores={mg.gpc=..0}] run return run function mg:gta/rob_bank',
+              f'execute if entity @s[x={BANK[0] + 1},y=66,z={Z + BANK[3] - 4},dx={BANK[2] - BANK[0] - 2},dy=3,dz=3] if entity @e[type=minecraft:marker,tag=mg.gbank,scores={{mg.gpc=..0}}] run return run function mg:gta/rob_bank',
               'execute if entity @e[type=minecraft:marker,tag=mg.gshop,distance=..2.6,scores={mg.gpc=..0}] run return run function mg:gta/rob_shop',
               'tag @e[tag=mg.grt] remove mg.grt', 'scoreboard players set $gar mg.st 7', 'tag @s add mg.gaim',
               'execute anchored eyes positioned ^ ^ ^1 run function mg:gta/rob_ray', 'tag @s remove mg.gaim',

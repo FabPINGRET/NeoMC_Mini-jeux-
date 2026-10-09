@@ -24,6 +24,14 @@ scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
 scoreboard objectives remove mg.gcas
 scoreboard objectives remove mg.gcre
+scoreboard objectives remove mg.gsa
+scoreboard objectives remove mg.gsr
+scoreboard objectives remove mg.gsb
+scoreboard objectives remove mg.gs1
+scoreboard objectives remove mg.gs2
+scoreboard objectives remove mg.gs3
+scoreboard objectives remove mg.gcas
+scoreboard objectives remove mg.gcre
 scoreboard objectives remove mg.gmis
 scoreboard objectives remove mg.gmt
 scoreboard objectives remove mg.gms

@@ -5,6 +5,7 @@ execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] if items entity @s weapon.mainhand
 execute as @a[tag=mg.gtw,scores={mg.gmis=1..}] run function mg:gta/mis_cmd
 scoreboard players remove @a[tag=mg.gtw,scores={mg.gnit=1..}] mg.gnit 1
 execute as @a[tag=mg.gtw,scores={mg.gcas=1..}] at @s run function mg:gta/cas_cmd
+execute as @a[tag=mg.gslot] at @s run function mg:gta/cas_slot_anim
 scoreboard players remove @a[tag=mg.gtw,scores={mg.gcre=1..}] mg.gcre 1
 execute as @a[tag=mg.gtw,scores={mg.gcre=1}] run function mg:gta/cas_reopen_tick
 execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] if items entity @s weapon.mainhand *[custom_data~{rpg:1b}] at @s run function mg:gta/panic

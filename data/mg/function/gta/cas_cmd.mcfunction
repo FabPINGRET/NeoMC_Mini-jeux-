@@ -11,6 +11,7 @@ execute if score $gcm mg.st matches 3 run scoreboard players set $gbet mg.st 100
 execute if score $gcm mg.st matches 4 run scoreboard players set $gbet mg.st 500
 execute if score $gcm mg.st matches 5 run scoreboard players set $gbet mg.st 1000
 execute if score $gbet mg.st matches 0 run return 0
+execute if entity @s[tag=mg.gslot] run return 0
 execute if score @s mg.gta < $gbet mg.st run scoreboard players set @s mg.gal 40
 execute if score @s mg.gta < $gbet mg.st run return run title @s actionbar [{"text":"💸 Pas assez d'argent pour miser ","color":"red"},{"score":{"name":"$gbet","objective":"mg.st"},"color":"gold"},{"text":" $","color":"red"}]
 scoreboard players operation @s mg.gta -= $gbet mg.st
