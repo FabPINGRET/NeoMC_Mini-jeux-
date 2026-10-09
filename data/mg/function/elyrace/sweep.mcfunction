@@ -12,5 +12,5 @@ scoreboard players operation @s mg.xq3 = #xqz mg.st
 scoreboard players set #xhit mg.st 0
 scoreboard players operation #xqd mg.st = #xqx mg.st
 scoreboard players operation #xqd mg.st -= #xox mg.st
-# deplacement hors de 1..1000 centiemes (teleportation, premier tick, retour en arriere) : aucun anneau franchi ce tick
-execute unless score #xqd mg.st matches 1..1000 run scoreboard players set #xox mg.st 2147483647
+# deplacement hors de 1..1900 centiemes (teleportation, premier tick, retour en arriere) : aucun anneau franchi ce tick
+execute unless score #xqd mg.st matches 1..1900 run scoreboard players set #xox mg.st 2147483647

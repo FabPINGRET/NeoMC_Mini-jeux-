@@ -10,7 +10,8 @@ decider si un vol franchit un anneau. Python stdlib uniquement (compatible 3.8).
 """
 import math
 
-STEP_MAX = 1000          # deplacement maximal accepte entre deux ticks (centiemes, 10 blocs) : au-dela c'est une teleportation, sans anneau franchi
+STEP_MAX = 1900          # deplacement maximal accepte entre deux ticks (centiemes, 19 blocs) : au-dela c'est une teleportation, sans anneau franchi ;
+                         # couvre les rafales du serveur (3 a 5 ticks de deplacement d'un coup), et reste sous l'ecart min de 20 blocs entre deux plans
 FAR = 2147483647         # « pas d'origine » : plus grand que tout plan, la condition #xox ..P-1 echoue
 ORIGIN_RESET = -1000000  # valeur de mg.xq1 apres une teleportation (reapparition, place) : le tick suivant n'a pas d'origine valide
 RESET_LINE = 'scoreboard players set @s mg.xq1 %d' % ORIGIN_RESET      # rings.respawn et place_tp ; verifie par checks.gravity_problems
@@ -43,7 +44,9 @@ def hits(a, b, x, cy, cz, r):
     iy = (qy - oy) * ta // qd + oy              # // = floorDiv, comme la division de scores
     iz = (qz - oz) * ta // qd + oz
     bd = bounds(cy, cz, r)
-    return bd['yl'] <= iy <= bd['yh'] and bd['zl'] <= iz <= bd['zh']
+    # Minecraft deplace d'abord en Y, puis sur l'axe horizontal le plus long, puis sur l'autre : le trajet reel passe par (iy, iz) (segment droit)
+    # mais aussi par (qy, oz) et (qy, qz) ; un seul de ces trois points dans le trou suffit
+    return any(bd['yl'] <= y <= bd['yh'] and bd['zl'] <= z <= bd['zh'] for y, z in ((iy, iz), (qy, oz), (qy, qz)))
 
 
 def ring_lines(x, cy, cz, r, cond, runs):
@@ -79,7 +82,10 @@ def cross_lines():
         out += ['scoreboard players operation #xi%s mg.st = #xq%s mg.st' % (a, a), 'scoreboard players operation #xi%s mg.st -= #xo%s mg.st' % (a, a),
                 'scoreboard players operation #xi%s mg.st *= #xta mg.st' % a, 'scoreboard players operation #xi%s mg.st /= #xqd mg.st' % a,
                 'scoreboard players operation #xi%s mg.st += #xo%s mg.st' % (a, a)]
-    return out + ['$execute if score #xiy mg.st matches $(yl)..$(yh) if score #xiz mg.st matches $(zl)..$(zh) run scoreboard players set #xhit mg.st 1']
+    out += ['# ordre de deplacement de Minecraft (Y, puis axe horizontal le plus long, puis autre axe) : trois points du trajet testes, comme sweep.hits',
+            '# (#xiy,#xiz) = point du segment droit ; (#xqy,#xoz) et (#xqy,#xqz) = trajets en equerre']
+    return out + ['$execute if score %s mg.st matches $(yl)..$(yh) if score %s mg.st matches $(zl)..$(zh) run scoreboard players set #xhit mg.st 1' % (y, z)
+                  for y, z in (('#xiy', '#xiz'), ('#xqy', '#xoz'), ('#xqy', '#xqz'))]
 
 
 def functions():
