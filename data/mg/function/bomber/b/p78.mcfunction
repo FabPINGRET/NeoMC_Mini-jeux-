@@ -1,15 +1,4 @@
 # Ville du Bombardier, étape 78/79 (généré par tools/arcade/gen_bomber.py)
-setblock 56 68 32439 minecraft:lantern
-fill 64 65 32439 64 67 32439 minecraft:iron_bars
-setblock 64 68 32439 minecraft:lantern
-fill 56 65 32445 56 67 32445 minecraft:iron_bars
-setblock 56 68 32445 minecraft:lantern
-fill 64 65 32445 64 67 32445 minecraft:iron_bars
-setblock 64 68 32445 minecraft:lantern
-fill 56 65 32463 56 67 32463 minecraft:iron_bars
-setblock 56 68 32463 minecraft:lantern
-fill 64 65 32463 64 67 32463 minecraft:iron_bars
-setblock 64 68 32463 minecraft:lantern
 fill 56 65 32469 56 67 32469 minecraft:iron_bars
 setblock 56 68 32469 minecraft:lantern
 fill 64 65 32469 64 67 32469 minecraft:iron_bars
@@ -62,3 +51,9 @@ setblock 81 80 32367 minecraft:iron_chain
 setblock 85 88 32367 minecraft:iron_chain
 setblock 86 85 32367 minecraft:iron_chain
 fill 86 71 32367 86 84 32367 minecraft:iron_chain
+setblock 87 83 32367 minecraft:iron_chain
+setblock 88 81 32367 minecraft:iron_chain
+fill 88 71 32367 88 80 32367 minecraft:iron_chain
+setblock 61 71 32373 minecraft:iron_chain
+setblock 62 72 32373 minecraft:iron_chain
+setblock 62 71 32373 minecraft:iron_chain

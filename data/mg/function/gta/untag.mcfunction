@@ -1,5 +1,7 @@
-# @s : plus joueur du GTA (tags, sons, titres, étoiles)
+# @s : plus joueur du GTA (tags, sons, titres, étoiles, mission)
+function mg:gta/mis_clean
 tag @s remove mg.gtg
+tag @s remove mg.gclub
 tag @s remove mg.gdrv
 tag @s remove mg.gscope
 tag @s remove mg.grd

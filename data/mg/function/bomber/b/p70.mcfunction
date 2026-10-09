@@ -1,64 +1,59 @@
 # Ville du Bombardier, étape 70/79 (généré par tools/arcade/gen_bomber.py)
-setblock 28 84 32427 minecraft:spruce_slab
-fill 27 84 32426 29 84 32426 minecraft:spruce_slab
-fill 27 84 32428 29 84 32428 minecraft:spruce_slab
-fill 27 79 32428 28 79 32428 minecraft:iron_block
-fill 27 88 32435 28 88 32435 minecraft:iron_block
-fill 38 85 32430 39 85 32430 minecraft:iron_block
-fill 28 91 32453 28 92 32453 minecraft:stripped_spruce_log
-fill 30 91 32453 30 92 32453 minecraft:stripped_spruce_log
-fill 28 91 32455 28 92 32455 minecraft:stripped_spruce_log
-fill 30 91 32455 30 92 32455 minecraft:stripped_spruce_log
-fill 28 93 32453 30 95 32455 minecraft:spruce_planks
-fill 29 93 32453 29 95 32453 minecraft:stripped_spruce_wood
-setblock 29 96 32454 minecraft:spruce_slab
-fill 28 96 32453 30 96 32453 minecraft:spruce_slab
-fill 28 96 32455 30 96 32455 minecraft:spruce_slab
-fill 27 91 32460 28 91 32460 minecraft:iron_block
-fill 44 80 32458 45 80 32458 minecraft:iron_block
-fill 28 96 32472 28 97 32472 minecraft:stripped_spruce_log
-fill 30 96 32472 30 97 32472 minecraft:stripped_spruce_log
-fill 28 96 32474 28 97 32474 minecraft:stripped_spruce_log
-fill 30 96 32474 30 97 32474 minecraft:stripped_spruce_log
-fill 28 98 32472 30 100 32474 minecraft:spruce_planks
-fill 29 98 32472 29 100 32472 minecraft:stripped_spruce_wood
-setblock 29 101 32473 minecraft:spruce_slab
-fill 28 101 32472 30 101 32472 minecraft:spruce_slab
-fill 28 101 32474 30 101 32474 minecraft:spruce_slab
-fill 34 87 32482 35 87 32482 minecraft:iron_block
-fill 41 89 32474 41 90 32474 minecraft:stripped_spruce_log
-fill 43 89 32474 43 90 32474 minecraft:stripped_spruce_log
-fill 41 89 32476 41 90 32476 minecraft:stripped_spruce_log
-fill 43 89 32476 43 90 32476 minecraft:stripped_spruce_log
-fill 41 91 32474 43 93 32476 minecraft:spruce_planks
-fill 42 91 32474 42 93 32474 minecraft:stripped_spruce_wood
-setblock 42 94 32475 minecraft:spruce_slab
-fill 41 94 32474 43 94 32474 minecraft:spruce_slab
-fill 41 94 32476 43 94 32476 minecraft:spruce_slab
-fill 40 83 32483 41 83 32483 minecraft:iron_block
-fill 60 82 32331 61 82 32331 minecraft:iron_block
-fill 60 86 32353 61 86 32353 minecraft:iron_block
-fill 59 79 32401 60 79 32401 minecraft:iron_block
-fill 60 89 32425 61 89 32425 minecraft:iron_block
-fill 60 79 32484 61 79 32484 minecraft:iron_block
-fill -40 69 32443 -36 70 32447 minecraft:birch_leaves[persistent=true]
-fill -39 71 32444 -37 72 32446 minecraft:birch_leaves[persistent=true]
-fill -38 65 32445 -38 70 32445 minecraft:birch_log
-fill -8 68 32436 -4 69 32440 minecraft:dark_oak_leaves[persistent=true]
-fill -7 70 32437 -5 71 32439 minecraft:dark_oak_leaves[persistent=true]
-fill -6 65 32438 -6 69 32438 minecraft:dark_oak_log
-fill -30 67 32457 -26 68 32461 minecraft:oak_leaves[persistent=true]
-fill -29 69 32458 -27 70 32460 minecraft:oak_leaves[persistent=true]
-fill -28 65 32459 -28 68 32459 minecraft:oak_log
-fill -38 68 32453 -34 69 32457 minecraft:oak_leaves[persistent=true]
-fill -37 70 32454 -35 71 32456 minecraft:oak_leaves[persistent=true]
-fill -36 65 32455 -36 69 32455 minecraft:oak_log
-fill -18 68 32451 -14 69 32455 minecraft:dark_oak_leaves[persistent=true]
-fill -17 70 32452 -15 71 32454 minecraft:dark_oak_leaves[persistent=true]
-fill -16 65 32453 -16 69 32453 minecraft:dark_oak_log
-fill -30 68 32459 -26 69 32463 minecraft:oak_leaves[persistent=true]
-fill -29 70 32460 -27 71 32462 minecraft:oak_leaves[persistent=true]
-fill -28 65 32461 -28 69 32461 minecraft:oak_log
-fill -33 68 32457 -29 69 32461 minecraft:dark_oak_leaves[persistent=true]
-fill -32 70 32458 -30 71 32460 minecraft:dark_oak_leaves[persistent=true]
-fill -31 65 32459 -31 69 32459 minecraft:dark_oak_log
+fill 60 83 32448 61 83 32448 minecraft:iron_block
+fill 59 75 32476 60 75 32476 minecraft:iron_block
+fill 11 68 32436 15 69 32440 minecraft:birch_leaves[persistent=true]
+fill 12 70 32437 14 71 32439 minecraft:birch_leaves[persistent=true]
+fill 13 65 32438 13 69 32438 minecraft:birch_log
+fill -22 68 32457 -18 69 32461 minecraft:birch_leaves[persistent=true]
+fill -21 70 32458 -19 71 32460 minecraft:birch_leaves[persistent=true]
+fill -20 65 32459 -20 69 32459 minecraft:birch_log
+fill -38 69 32459 -34 70 32463 minecraft:dark_oak_leaves[persistent=true]
+fill -37 71 32460 -35 72 32462 minecraft:dark_oak_leaves[persistent=true]
+fill -36 65 32461 -36 70 32461 minecraft:dark_oak_log
+fill -25 67 32436 -21 68 32440 minecraft:oak_leaves[persistent=true]
+fill -24 69 32437 -22 70 32439 minecraft:oak_leaves[persistent=true]
+fill -23 65 32438 -23 68 32438 minecraft:oak_log
+fill -37 65 32446 -36 65 32447 minecraft:mossy_cobblestone
+setblock -37 66 32446 minecraft:mossy_cobblestone
+fill -27 65 32442 -25 65 32444 minecraft:chiseled_stone_bricks
+setblock -26 66 32443 minecraft:sea_lantern
+fill -22 65 32424 -6 65 32434 minecraft:polished_andesite
+fill -22 66 32424 -6 72 32424 minecraft:deepslate_bricks
+fill -22 66 32434 -6 72 32434 minecraft:deepslate_bricks
+fill -22 66 32424 -22 72 32434 minecraft:deepslate_bricks
+fill -6 66 32424 -6 72 32434 minecraft:deepslate_bricks
+fill -21 66 32425 -7 71 32433 minecraft:air
+fill -22 72 32424 -6 72 32434 minecraft:polished_deepslate
+fill -21 67 32424 -7 69 32424 minecraft:gray_stained_glass
+fill -22 70 32424 -6 71 32424 minecraft:red_concrete
+fill -15 66 32424 -13 68 32424 minecraft:air
+fill -16 66 32424 -16 69 32424 minecraft:iron_block
+fill -12 66 32424 -12 69 32424 minecraft:iron_block
+fill -16 69 32424 -12 69 32424 minecraft:iron_block
+fill -15 65 32421 -13 65 32423 minecraft:stone_bricks
+setblock -20 71 32429 minecraft:sea_lantern
+setblock -20 71 32432 minecraft:sea_lantern
+setblock -16 71 32429 minecraft:sea_lantern
+setblock -16 71 32432 minecraft:sea_lantern
+setblock -12 71 32429 minecraft:sea_lantern
+setblock -12 71 32432 minecraft:sea_lantern
+setblock -8 71 32429 minecraft:sea_lantern
+setblock -8 71 32432 minecraft:sea_lantern
+fill -21 67 32433 -21 69 32433 minecraft:iron_bars
+fill -19 67 32433 -19 69 32433 minecraft:iron_bars
+fill -17 67 32433 -17 69 32433 minecraft:iron_bars
+fill -15 67 32433 -15 69 32433 minecraft:iron_bars
+fill -13 67 32433 -13 69 32433 minecraft:iron_bars
+fill -11 67 32433 -11 69 32433 minecraft:iron_bars
+fill -9 67 32433 -9 69 32433 minecraft:iron_bars
+fill -7 67 32433 -7 69 32433 minecraft:iron_bars
+fill -21 66 32427 -17 66 32427 minecraft:dark_oak_planks
+fill -21 67 32427 -17 67 32427 minecraft:smooth_quartz_slab
+fill -11 66 32427 -7 66 32427 minecraft:dark_oak_planks
+fill -11 67 32427 -7 67 32427 minecraft:smooth_quartz_slab
+fill -21 66 32433 -7 66 32433 minecraft:red_carpet
+fill -2 65 32424 14 65 32434 minecraft:polished_diorite
+fill -2 66 32424 14 72 32424 minecraft:calcite
+fill -2 66 32434 14 72 32434 minecraft:calcite
+fill -2 66 32424 -2 72 32434 minecraft:calcite
+fill 14 66 32424 14 72 32434 minecraft:calcite

@@ -57,8 +57,3 @@ fill -82 66 32340 -82 78 32340 minecraft:black_stained_glass
 fill -86 69 32335 -82 69 32341 minecraft:granite
 fill -86 73 32335 -82 73 32341 minecraft:granite
 fill -86 77 32335 -82 77 32341 minecraft:granite
-fill -86 65 32335 -82 65 32341 minecraft:granite
-fill -86 79 32335 -82 79 32341 minecraft:granite
-fill -84 66 32335 -83 67 32335 minecraft:glass
-fill -84 66 32341 -83 67 32341 minecraft:glass
-fill -86 65 32351 -82 86 32351 minecraft:terracotta

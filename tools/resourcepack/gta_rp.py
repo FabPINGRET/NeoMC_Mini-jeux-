@@ -193,3 +193,12 @@ for j in range(CELLS):
         png_rgba(os.path.join(A, 'textures', 'font', 'gta_dot', f'{j}_{i}.png'), im)
         map_prov.append({"type": "bitmap", "file": f"mg:font/gta_dot/{j}_{i}.png", "ascent": 29, "height": 64, "chars": [chr(0xE500 + CELLS * j + i)]})
 wjson(os.path.join(A, 'font', 'gta_map.json'), {"providers": map_prov})
+
+# mini-carte (police mg:gta_mini) : mêmes images que la carte, 44 de haut, posée juste au-dessus de la barre d'action
+# (ascent = hauteur : le bas du plan au niveau du bas du texte). \ue600 plan, \ue601 retour de -45, \ue700 + 30 × ligne + colonne : point.
+mini = [{"type": "bitmap", "file": "mg:font/gta_map.png", "ascent": 44, "height": 44, "chars": ["\ue600"]},
+        {"type": "space", "advances": {"\ue601": -45, " ": 4}}]
+for j in range(CELLS):
+    for i in range(CELLS):
+        mini.append({"type": "bitmap", "file": f"mg:font/gta_dot/{j}_{i}.png", "ascent": 44, "height": 44, "chars": [chr(0xE700 + CELLS * j + i)]})
+wjson(os.path.join(A, 'font', 'gta_mini.json'), {"providers": mini})

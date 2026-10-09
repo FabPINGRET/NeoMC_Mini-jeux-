@@ -1,0 +1,3 @@
+# @s : téléphone, nitro
+item replace entity @s hotbar.6 with minecraft:warped_fungus_on_a_stick[custom_data={gtaphone:1b},item_model="minecraft:recovery_compass",unbreakable={},custom_name={"text":"📱 Téléphone","color":"aqua","bold":true,"italic":false},lore=[{"text":"Clic droit : missions (livraison, contrat, contre-la-montre)","color":"gray","italic":false}]]
+item replace entity @s hotbar.5 with minecraft:warped_fungus_on_a_stick[custom_data={gtanitro:1b},item_model="minecraft:blaze_powder",unbreakable={},custom_name={"text":"🔥 Nitro / 📯 Klaxon","color":"gold","bold":true,"italic":false},lore=[{"text":"En voiture : nitro (recharge 15 s), sinon klaxon","color":"gray","italic":false}]]

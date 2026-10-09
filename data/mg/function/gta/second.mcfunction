@@ -14,9 +14,14 @@ scoreboard players set #40 mg.st 40
 scoreboard players operation $gq3 mg.st %= #40 mg.st
 execute store result score $gca mg.st if entity @e[tag=mg.gcop]
 execute if score $gq3 mg.st matches 0 if score $gca mg.st matches ..44 as @a[tag=mg.gtw,scores={mg.gwl=1..}] at @s run function mg:gta/police_call
-execute if score $gq3 mg.st matches 0 as @e[tag=mg.gcop] at @s unless entity @a[tag=mg.gtw,scores={mg.gwl=1..},distance=..60] run function mg:gta/cop_leave
+execute if score $gq3 mg.st matches 0 as @e[tag=mg.gcop,tag=!mg.gphel] at @s unless entity @a[tag=mg.gtw,scores={mg.gwl=1..},distance=..60] run function mg:gta/cop_leave
+execute if score $gq3 mg.st matches 0 as @a[tag=mg.gtw,scores={mg.gwl=1..}] at @s run function mg:gta/police_plus
+function mg:gta/police_clean
+function mg:gta/traffic/second
+execute as @a[tag=mg.gtw,scores={mg.gwl=1..}] at @s if entity @e[tag=mg.gcop,distance=..22] run scoreboard players set @s mg.gwt 400
 execute as @a[tag=mg.gtw,scores={mg.gwl=1..}] at @s run function mg:gta/siren
 function mg:gta/bars_tick
+scoreboard players enable @a[tag=mg.gtw] mg.gmis
 execute as @e[type=minecraft:marker,tag=mg.gshop,scores={mg.gpc=1..20}] run function mg:gta/shop_reopen
 scoreboard players remove @e[type=minecraft:marker,tag=mg.gshop,scores={mg.gpc=1..}] mg.gpc 20
 execute as @e[type=minecraft:marker,tag=mg.gbank,scores={mg.gpc=1..20}] run function mg:gta/bank_reopen

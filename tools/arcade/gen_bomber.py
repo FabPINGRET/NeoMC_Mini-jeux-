@@ -351,7 +351,103 @@ def villa(x1, z1, x2, z2):
     fill(x2 - 1, 66, hz1 + 1, x2 - 1, 68, hz1 + 1, 'glass')
 
 
-LANDMARKS = {(-40, -51): empire, (-8, -51): chrysler, (24, -75): needle}
+PLACES = {}                                      # lieux de Neo GTA bâtis dans la ville (exportés dans neo_city.json)
+
+
+def shell(x1, z1, x2, z2, h, wall, floor, glass, roof=None):
+    """Bâtiment sur h niveaux de 4 blocs, porte de 3 blocs au milieu de la façade nord (z1, côté rue), bandeaux de fenêtres."""
+    yt = 65 + 4 * h
+    fill(x1, 65, z1, x2, 65, z2, floor)
+    fill(x1, 66, z1, x2, yt, z1, wall); fill(x1, 66, z2, x2, yt, z2, wall)
+    fill(x1, 66, z1, x1, yt, z2, wall); fill(x2, 66, z1, x2, yt, z2, wall)
+    fill(x1 + 1, 66, z1 + 1, x2 - 1, yt - 1, z2 - 1, 'air')
+    for k in range(1, h):
+        fill(x1, 65 + 4 * k, z1, x2, 65 + 4 * k, z2, floor)
+    fill(x1, yt, z1, x2, yt, z2, roof or wall)
+    for k in range(h):
+        y = 67 + 4 * k
+        fill(x1 + 1, y, z1, x2 - 1, y + 1, z1, glass); fill(x1 + 1, y, z2, x2 - 1, y + 1, z2, glass)
+        fill(x1, y, z1 + 1, x1, y + 1, z2 - 1, glass); fill(x2, y, z1 + 1, x2, y + 1, z2 - 1, glass)
+    mx = (x1 + x2) // 2
+    fill(mx - 1, 66, z1, mx + 1, 68, z1, 'air')
+    return mx, yt
+
+
+def hospital(x1, z1, x2, z2):
+    mx, yt = shell(x1, z1, x2, z2, 3, 'white_concrete', 'smooth_quartz', 'light_blue_stained_glass')
+    fill(mx - 3, 69, z1 - 1, mx + 3, 69, z1 - 1, 'white_concrete')               # auvent
+    fill(mx - 1, 70, z1, mx + 1, 74, z1, 'red_concrete'); fill(mx - 2, 71, z1, mx + 2, 73, z1, 'red_concrete')
+    fill(mx, 70, z1, mx, 74, z1, 'red_concrete'); fill(mx - 2, 72, z1, mx + 2, 72, z1, 'red_concrete')
+    fill(x1 + 2, 66, z1 + 3, x1 + 6, 66, z1 + 3, 'smooth_quartz'); fill(x1 + 2, 67, z1 + 3, x1 + 6, 67, z1 + 3, 'smooth_quartz_slab')   # accueil
+    for x in range(x1 + 2, x2 - 1, 3):                                            # chambres : lits
+        fill(x, 66, z2 - 3, x, 66, z2 - 2, 'white_wool'); put(x, 66, z2 - 1, 'red_wool')
+        fill(x, 70, z2 - 3, x, 70, z2 - 2, 'white_wool'); put(x, 70, z2 - 1, 'red_wool')
+    for x in range(x1 + 3, x2 - 1, 4):
+        put(x, 68, (z1 + z2) // 2, 'sea_lantern'); put(x, 72, (z1 + z2) // 2, 'sea_lantern')
+    put(x2 - 2, 66, z1 + 2, 'potted_fern'); put(x1 + 8, 66, z1 + 3, 'brewing_stand')
+    fill(mx - 2, yt, z1 + 3, mx + 2, yt, z1 + 9, 'red_concrete'); fill(mx - 1, yt, z1 + 4, mx + 1, yt, z1 + 8, 'white_concrete')
+    fill(mx - 1, yt, z1 + 5, mx - 1, yt, z1 + 7, 'red_concrete'); fill(mx + 1, yt, z1 + 5, mx + 1, yt, z1 + 7, 'red_concrete'); put(mx, yt, z1 + 6, 'red_concrete')
+    PLACES['hospital'] = [mx, z1 + 2]
+
+
+def police(x1, z1, x2, z2):
+    mx, yt = shell(x1, z1, x2, z2, 2, 'light_gray_concrete', 'polished_andesite', 'gray_stained_glass', 'blue_concrete')
+    fill(x1, 66, z1, x2, 66, z1, 'blue_concrete'); fill(mx - 1, 66, z1, mx + 1, 68, z1, 'air')
+    fill(x1, 69, z1, x2, 69, z1, 'blue_concrete')
+    put(mx - 2, 70, z1, 'redstone_lamp[lit=true]'); put(mx + 2, 70, z1, 'sea_lantern')
+    fill(x1 + 2, 66, z1 + 3, x1 + 8, 66, z1 + 3, 'dark_oak_planks'); fill(x1 + 2, 67, z1 + 3, x1 + 8, 67, z1 + 3, 'polished_blackstone_slab')   # bureaux
+    fill(x2 - 8, 66, z1 + 3, x2 - 2, 66, z1 + 3, 'dark_oak_planks'); fill(x2 - 8, 67, z1 + 3, x2 - 2, 67, z1 + 3, 'polished_blackstone_slab')
+    for x in range(x1 + 2, x2 - 3, 4):                                            # cellules
+        fill(x, 66, z2 - 4, x + 2, 68, z2 - 4, 'iron_bars'); fill(x + 3, 66, z2 - 4, x + 3, 68, z2 - 1, 'iron_block')
+        put(x + 1, 66, z2 - 2, 'white_wool')
+    fill(x1 + 1, 66, z1 + 6, x1 + 1, 68, z1 + 10, 'iron_bars')                    # râtelier
+    for x in range(x1 + 3, x2 - 1, 4):
+        put(x, 68, (z1 + z2) // 2, 'sea_lantern')
+    PLACES['police'] = [mx, z1 + 2]
+
+
+def casino(x1, z1, x2, z2):
+    mx, yt = shell(x1, z1, x2, z2, 2, 'black_concrete', 'red_carpet', 'yellow_stained_glass', 'black_concrete')
+    fill(x1, 65, z1, x2, 65, z2, 'black_concrete'); fill(x1 + 1, 65, z1 + 1, x2 - 1, 65, z2 - 1, 'red_wool')
+    fill(x1, 70, z1, x2, 72, z1, 'gold_block')                                   # marquise dorée
+    for x in range(x1, x2 + 1, 2):
+        put(x, 73, z1, 'glowstone'); put(x, 69, z1, 'sea_lantern')
+    fill(mx - 1, 66, z1, mx + 1, 68, z1, 'air')
+    slots = []
+    for x in range(x1 + 2, x2 - 1, 3):                                            # machines à sous contre le mur sud
+        fill(x, 66, z2 - 1, x, 67, z2 - 1, 'gold_block'); put(x, 68, z2 - 1, 'red_stained_glass')
+        slots.append([x, z2 - 2])
+    rx, rz = mx, (z1 + z2) // 2 + 1                                               # roulette
+    fill(rx - 2, 66, rz - 1, rx + 2, 66, rz + 1, 'dark_oak_planks'); fill(rx - 1, 67, rz - 1, rx + 1, 67, rz + 1, 'green_carpet')
+    put(rx, 67, rz, 'red_carpet')
+    fill(x1 + 1, 66, z1 + 2, x1 + 1, 67, z1 + 6, 'dark_oak_planks')               # bar
+    for z in range(z1 + 2, z1 + 7, 2):
+        put(x1 + 1, 68, z, 'brewing_stand')
+    for x in range(x1 + 3, x2 - 1, 4):
+        put(x, 69, (z1 + z2) // 2, 'iron_chain'); put(x, 68, (z1 + z2) // 2, 'lantern[hanging=true]')
+    PLACES['casino'] = {'slots': slots[:6], 'roulette': [rx, rz - 2], 'door': [mx, z1]}
+
+
+def club(x1, z1, x2, z2):
+    mx, yt = shell(x1, z1, x2, z2, 2, 'black_concrete', 'black_concrete', 'purple_stained_glass', 'black_concrete')
+    fill(x1 + 1, 69, z1 + 1, x2 - 1, 69, z2 - 1, 'air')                            # double hauteur
+    fill(x1, 70, z1, x2, 71, z1, 'magenta_concrete')
+    for x in range(x1, x2 + 1, 2):
+        put(x, 72, z1, 'sea_lantern')
+    fx1, fz1, fx2, fz2 = mx - 4, z1 + 4, mx + 4, z1 + 10                          # piste de danse
+    fill(fx1, 65, fz1, fx2, 65, fz2, 'white_concrete')
+    fill(mx - 2, 66, z2 - 2, mx + 2, 66, z2 - 1, 'black_concrete'); put(mx - 1, 67, z2 - 2, 'note_block'); put(mx + 1, 67, z2 - 2, 'jukebox')   # DJ
+    for (x, z) in [(x1 + 1, z2 - 1), (x2 - 1, z2 - 1), (x1 + 1, z1 + 3), (x2 - 1, z1 + 3)]:
+        fill(x, 66, z, x, 68, z, 'black_concrete'); put(x, 67, z, 'note_block')    # enceintes
+    fill(x2 - 1, 66, z1 + 5, x2 - 1, 67, z1 + 9, 'dark_oak_planks')               # bar
+    fill(x1 + 1, 66, z1 + 5, x1 + 1, 66, z1 + 9, 'purple_wool')                   # banquettes VIP
+    for x in range(x1 + 3, x2 - 1, 3):
+        put(x, 72, (z1 + z2) // 2, 'sea_lantern')
+    PLACES['club'] = {'floor': [fx1, fz1, fx2, fz2], 'box': [x1, z1, x2, z2], 'dj': [mx, z2 - 2]}
+
+
+LANDMARKS = {(-40, -51): empire, (-8, -51): chrysler, (24, -75): needle,
+             (-72, -27): hospital, (24, -27): police, (24, -3): casino, (-72, 21): club}
 TIMES = (-12, -6)                                  # carrefour à écrans
 BILLBOARD = ['red_concrete', 'yellow_concrete', 'lime_concrete', 'magenta_concrete', 'cyan_concrete', 'orange_concrete', 'blue_concrete']
 
@@ -363,6 +459,7 @@ for (lx1, lx2) in LOTX:
         if bx2 - bx1 < 3 or bz2 - bz1 < 3:
             continue
         if (lx1, lz1) in LANDMARKS:
+            fill(bx1, 65, bz1, bx2, YT - 1, bz2, 'air')        # îlot vidé (anciens immeubles plus hauts)
             LANDMARKS[(lx1, lz1)](bx1, bz1, bx2, bz2)
             continue
         for (ax, bx) in split(bx1, bx2, 6):
@@ -394,6 +491,9 @@ _rs = random.Random(42)
 SHOPS = []
 for c in sorted(SHOP_CAND, key=lambda b: (b[0] + 3 * b[1])):
     if len(SHOPS) < len(SHOP_NAMES) and all(abs(c[0] - o[0]) + abs(c[1] - o[1]) > 45 for o in SHOPS) and _rs.random() < 0.7:
+        SHOPS.append(c)
+for c in sorted(SHOP_CAND, key=lambda b: (b[0] + 3 * b[1])):          # complément si l'écart de 45 blocs ne suffit pas
+    if len(SHOPS) < len(SHOP_NAMES) and c not in SHOPS and all(abs(c[0] - o[0]) + abs(c[1] - o[1]) > 16 for o in SHOPS):
         SHOPS.append(c)
 for k, ((sx, sz, ex, ez), (nm, col)) in enumerate(zip(SHOPS, SHOP_NAMES)):
     mx = (sx + ex) // 2
@@ -616,7 +716,7 @@ for name, vals in [('bomb_city', sorted(CITY - BONUS)), ('bomb_bonus', sorted(BO
 import struct, zlib
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'neo_city.json'), 'w', encoding='utf-8', newline='\n') as f:
     json.dump({'shops': [[(sx + ex) // 2, sz, nm, col] for (sx, sz, ex, ez), (nm, col) in zip(SHOPS, SHOP_NAMES)],
-               'bank': list(BANK), 'armory': list(ARMORY), 'showroom': list(SHOWROOM), 'airfield': list(AIRFIELD)},
+               'bank': list(BANK), 'armory': list(ARMORY), 'showroom': list(SHOWROOM), 'airfield': list(AIRFIELD), 'places': PLACES},
               f, ensure_ascii=False, indent=1)
     f.write('\n')
 
@@ -654,6 +754,10 @@ def mark_rect(a, b, c, d, col):
             img[zz + HX][xx + HX] = (255, 255, 255, 255) if edge else col + (255,)
 
 
+for _k, _c in (('hospital', (235, 235, 235)), ('police', (40, 70, 200)), ('casino', (250, 215, 40)), ('club', (210, 60, 210))):
+    _p = PLACES[_k]
+    _x, _z = (_p[0], _p[1] - 2) if isinstance(_p, list) else ((_p['door'][0], _p['door'][1]) if 'door' in _p else ((_p['box'][0] + _p['box'][2]) // 2, _p['box'][1]))
+    mark_rect(_x - 4, _z, _x + 4, _z + 6, _c)
 mark_rect(*ARMORY, (200, 40, 40)); mark_rect(*BANK, (232, 186, 36)); mark_rect(*SHOWROOM, (150, 70, 200))
 for k in range(7):                                  # flèche vers Neo Hills (domaine au nord, en haut de la carte, avenue 20)
     for xx in range(20 - k, 21 + k):

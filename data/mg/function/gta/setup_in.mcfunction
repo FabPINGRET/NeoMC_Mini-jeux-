@@ -399,6 +399,12 @@ scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0
 execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show
 summon minecraft:block_display 22.5 71 32272.5 {Tags:["mg.gta","mg.gpdb"],block_state:{Name:"minecraft:light_weighted_pressure_plate"}}
 tag @e[tag=mg.gpn] remove mg.gpn
+summon minecraft:marker -2 71 32273 {Tags:["mg.gta","mg.gpad","mg.garm","mg.gpn"]}
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpt 60
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0
+execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show
+summon minecraft:block_display -2.5 71 32272.5 {Tags:["mg.gta","mg.gpdb"],block_state:{Name:"minecraft:light_weighted_pressure_plate"}}
+tag @e[tag=mg.gpn] remove mg.gpn
 summon minecraft:marker 25 71 32265 {Tags:["mg.gta","mg.glup"]}
 summon minecraft:marker 25 84 32265 {Tags:["mg.gta","mg.gldn"]}
 summon minecraft:text_display 25.5 72.8 32265.5 {Tags:["mg.gta"],billboard:"center",text:{"text":"⬆ Toit-terrasse : jacuzzi et bar","color":"aqua"},background:1073741824,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.6f,0.6f,0.6f]}}
@@ -406,48 +412,84 @@ summon minecraft:text_display 25.5 85.8 32265.5 {Tags:["mg.gta"],billboard:"cent
 summon minecraft:block_display 24.5 71 32264.5 {Tags:["mg.gta"],block_state:{Name:"minecraft:heavy_weighted_pressure_plate"}}
 summon minecraft:block_display 24.5 84 32264.5 {Tags:["mg.gta"],block_state:{Name:"minecraft:heavy_weighted_pressure_plate"}}
 summon minecraft:text_display 20.5 80.6 32299.6 {Tags:["mg.gta"],Rotation:[0f,0f],text:[{"text":"NEO HILLS","color":"gold","bold":true},{"text":"\nla villa des joueurs : tout ce qui a été acheté une fois est ici, gratuit","color":"gray"}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.4f,1.4f,1.4f]}}
+summon minecraft:marker 28 66 32411 {Tags:["mg.gta","mg.gpad","mg.garm","mg.gpn"]}
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpt 70
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0
+execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show
+tag @e[tag=mg.gpn] remove mg.gpn
+summon minecraft:marker 31 66 32411 {Tags:["mg.gta","mg.gpad","mg.garm","mg.gpn"]}
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpt 70
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0
+execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show
+tag @e[tag=mg.gpn] remove mg.gpn
+summon minecraft:marker 34 66 32411 {Tags:["mg.gta","mg.gpad","mg.garm","mg.gpn"]}
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpt 70
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0
+execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show
+tag @e[tag=mg.gpn] remove mg.gpn
+summon minecraft:marker 37 66 32411 {Tags:["mg.gta","mg.gpad","mg.garm","mg.gpn"]}
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpt 70
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0
+execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show
+tag @e[tag=mg.gpn] remove mg.gpn
+summon minecraft:marker 40 66 32411 {Tags:["mg.gta","mg.gpad","mg.garm","mg.gpn"]}
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpt 70
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0
+execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show
+tag @e[tag=mg.gpn] remove mg.gpn
+summon minecraft:marker 43 66 32411 {Tags:["mg.gta","mg.gpad","mg.garm","mg.gpn"]}
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpt 70
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0
+execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show
+tag @e[tag=mg.gpn] remove mg.gpn
+summon minecraft:marker 36 66 32405 {Tags:["mg.gta","mg.gpad","mg.garm","mg.gpn"]}
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpt 71
+scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0
+execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show
+tag @e[tag=mg.gpn] remove mg.gpn
+function mg:gta/places_setup
 summon minecraft:villager -64.5 66 32332.5 {Tags:["mg.gta","mg.npc","mg.gclerk"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[180f,0f],VillagerData:{profession:"minecraft:farmer",type:"minecraft:plains",level:2},CustomName:{"text":"Caissier","color":"gray"},CustomNameVisible:0b}
 summon minecraft:text_display -63.5 67.55 32330.65 {Tags:["mg.gta"],Rotation:[180f,0f],text:[{"text":"🔫 BRAQUAGE","color":"red","bold":true},{"text":"\nAccroupis-toi devant la caisse, arme en main (5 s)","color":"white"},{"text":"\n💰 200 à 450 $  ·  ★★ police","color":"gold"}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
-summon minecraft:villager -55.5 66 32380.5 {Tags:["mg.gta","mg.npc","mg.gclerk"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[180f,0f],VillagerData:{profession:"minecraft:librarian",type:"minecraft:plains",level:2},CustomName:{"text":"Caissier","color":"gray"},CustomNameVisible:0b}
-summon minecraft:text_display -54.5 67.55 32378.65 {Tags:["mg.gta"],Rotation:[180f,0f],text:[{"text":"🔫 BRAQUAGE","color":"red","bold":true},{"text":"\nAccroupis-toi devant la caisse, arme en main (5 s)","color":"white"},{"text":"\n💰 200 à 450 $  ·  ★★ police","color":"gold"}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
-summon minecraft:villager 32.5 66 32356.5 {Tags:["mg.gta","mg.npc","mg.gclerk"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[180f,0f],VillagerData:{profession:"minecraft:mason",type:"minecraft:plains",level:2},CustomName:{"text":"Caissier","color":"gray"},CustomNameVisible:0b}
-summon minecraft:text_display 32.5 67.55 32354.65 {Tags:["mg.gta"],Rotation:[180f,0f],text:[{"text":"🔫 BRAQUAGE","color":"red","bold":true},{"text":"\nAccroupis-toi devant la caisse, arme en main (5 s)","color":"white"},{"text":"\n💰 200 à 450 $  ·  ★★ police","color":"gold"}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
-summon minecraft:villager 9.5 66 32380.5 {Tags:["mg.gta","mg.npc","mg.gclerk"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[180f,0f],VillagerData:{profession:"minecraft:butcher",type:"minecraft:plains",level:2},CustomName:{"text":"Caissier","color":"gray"},CustomNameVisible:0b}
-summon minecraft:text_display 9.5 67.55 32378.65 {Tags:["mg.gta"],Rotation:[180f,0f],text:[{"text":"🔫 BRAQUAGE","color":"red","bold":true},{"text":"\nAccroupis-toi devant la caisse, arme en main (5 s)","color":"white"},{"text":"\n💰 200 à 450 $  ·  ★★ police","color":"gold"}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
-summon minecraft:villager 31.5 66 32404.5 {Tags:["mg.gta","mg.npc","mg.gclerk"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[180f,0f],VillagerData:{profession:"minecraft:cleric",type:"minecraft:plains",level:2},CustomName:{"text":"Caissier","color":"gray"},CustomNameVisible:0b}
-summon minecraft:text_display 31.5 67.55 32402.65 {Tags:["mg.gta"],Rotation:[180f,0f],text:[{"text":"🔫 BRAQUAGE","color":"red","bold":true},{"text":"\nAccroupis-toi devant la caisse, arme en main (5 s)","color":"white"},{"text":"\n💰 200 à 450 $  ·  ★★ police","color":"gold"}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
-summon minecraft:villager 40.5 66 32452.5 {Tags:["mg.gta","mg.npc","mg.gclerk"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[180f,0f],VillagerData:{profession:"minecraft:cartographer",type:"minecraft:plains",level:2},CustomName:{"text":"Caissier","color":"gray"},CustomNameVisible:0b}
-summon minecraft:text_display 40.5 67.55 32450.65 {Tags:["mg.gta"],Rotation:[180f,0f],text:[{"text":"🔫 BRAQUAGE","color":"red","bold":true},{"text":"\nAccroupis-toi devant la caisse, arme en main (5 s)","color":"white"},{"text":"\n💰 200 à 450 $  ·  ★★ police","color":"gold"}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:villager 4.5 66 32380.5 {Tags:["mg.gta","mg.npc","mg.gclerk"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[180f,0f],VillagerData:{profession:"minecraft:librarian",type:"minecraft:plains",level:2},CustomName:{"text":"Caissier","color":"gray"},CustomNameVisible:0b}
+summon minecraft:text_display 4.5 67.55 32378.65 {Tags:["mg.gta"],Rotation:[180f,0f],text:[{"text":"🔫 BRAQUAGE","color":"red","bold":true},{"text":"\nAccroupis-toi devant la caisse, arme en main (5 s)","color":"white"},{"text":"\n💰 200 à 450 $  ·  ★★ police","color":"gold"}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:villager -55.5 66 32404.5 {Tags:["mg.gta","mg.npc","mg.gclerk"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[180f,0f],VillagerData:{profession:"minecraft:mason",type:"minecraft:plains",level:2},CustomName:{"text":"Caissier","color":"gray"},CustomNameVisible:0b}
+summon minecraft:text_display -54.5 67.55 32402.65 {Tags:["mg.gta"],Rotation:[180f,0f],text:[{"text":"🔫 BRAQUAGE","color":"red","bold":true},{"text":"\nAccroupis-toi devant la caisse, arme en main (5 s)","color":"white"},{"text":"\n💰 200 à 450 $  ·  ★★ police","color":"gold"}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:villager -60.5 66 32476.5 {Tags:["mg.gta","mg.npc","mg.gclerk"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[180f,0f],VillagerData:{profession:"minecraft:butcher",type:"minecraft:plains",level:2},CustomName:{"text":"Caissier","color":"gray"},CustomNameVisible:0b}
+summon minecraft:text_display -59.5 67.55 32474.65 {Tags:["mg.gta"],Rotation:[180f,0f],text:[{"text":"🔫 BRAQUAGE","color":"red","bold":true},{"text":"\nAccroupis-toi devant la caisse, arme en main (5 s)","color":"white"},{"text":"\n💰 200 à 450 $  ·  ★★ police","color":"gold"}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:villager -32.5 66 32332.5 {Tags:["mg.gta","mg.npc","mg.gclerk"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[180f,0f],VillagerData:{profession:"minecraft:cleric",type:"minecraft:plains",level:2},CustomName:{"text":"Caissier","color":"gray"},CustomNameVisible:0b}
+summon minecraft:text_display -31.5 67.55 32330.65 {Tags:["mg.gta"],Rotation:[180f,0f],text:[{"text":"🔫 BRAQUAGE","color":"red","bold":true},{"text":"\nAccroupis-toi devant la caisse, arme en main (5 s)","color":"white"},{"text":"\n💰 200 à 450 $  ·  ★★ police","color":"gold"}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:villager -28.5 66 32404.5 {Tags:["mg.gta","mg.npc","mg.gclerk"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[180f,0f],VillagerData:{profession:"minecraft:cartographer",type:"minecraft:plains",level:2},CustomName:{"text":"Caissier","color":"gray"},CustomNameVisible:0b}
+summon minecraft:text_display -27.5 67.55 32402.65 {Tags:["mg.gta"],Rotation:[180f,0f],text:[{"text":"🔫 BRAQUAGE","color":"red","bold":true},{"text":"\nAccroupis-toi devant la caisse, arme en main (5 s)","color":"white"},{"text":"\n💰 200 à 450 $  ·  ★★ police","color":"gold"}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
 summon minecraft:marker -64 66 32330 {Tags:["mg.gta","mg.gshop"]}
 scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=-64,y=66,z=32330] mg.gsid 0
 scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=-64,y=66,z=32330] mg.gpc 0
 summon minecraft:text_display -63.5 70.4 32325.8 {Tags:["mg.gta","mg.gshl"],Rotation:[180f,0f],text:[{"text":"🛒 Supérette","color":"white","bold":true},{"text":"\nbraquable : accroupi + arme devant la caisse","color":"gray","bold":false}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.1f,1.1f,1.1f]}}
 scoreboard players set @e[type=minecraft:text_display,tag=mg.gshl,limit=1,sort=nearest,x=-63.5,y=70.4,z=32325.8] mg.gsid 0
-summon minecraft:marker -55 66 32378 {Tags:["mg.gta","mg.gshop"]}
-scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=-55,y=66,z=32378] mg.gsid 1
-scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=-55,y=66,z=32378] mg.gpc 0
-summon minecraft:text_display -54.5 70.4 32373.8 {Tags:["mg.gta","mg.gshl"],Rotation:[180f,0f],text:[{"text":"💎 Bijouterie","color":"white","bold":true},{"text":"\nbraquable : accroupi + arme devant la caisse","color":"gray","bold":false}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.1f,1.1f,1.1f]}}
-scoreboard players set @e[type=minecraft:text_display,tag=mg.gshl,limit=1,sort=nearest,x=-54.5,y=70.4,z=32373.8] mg.gsid 1
-summon minecraft:marker 32 66 32354 {Tags:["mg.gta","mg.gshop"]}
-scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=32,y=66,z=32354] mg.gsid 2
-scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=32,y=66,z=32354] mg.gpc 0
-summon minecraft:text_display 32.5 70.4 32349.8 {Tags:["mg.gta","mg.gshl"],Rotation:[180f,0f],text:[{"text":"⛽ Station","color":"white","bold":true},{"text":"\nbraquable : accroupi + arme devant la caisse","color":"gray","bold":false}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.1f,1.1f,1.1f]}}
-scoreboard players set @e[type=minecraft:text_display,tag=mg.gshl,limit=1,sort=nearest,x=32.5,y=70.4,z=32349.8] mg.gsid 2
-summon minecraft:marker 9 66 32378 {Tags:["mg.gta","mg.gshop"]}
-scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=9,y=66,z=32378] mg.gsid 3
-scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=9,y=66,z=32378] mg.gpc 0
-summon minecraft:text_display 9.5 70.4 32373.8 {Tags:["mg.gta","mg.gshl"],Rotation:[180f,0f],text:[{"text":"🍔 Burger","color":"white","bold":true},{"text":"\nbraquable : accroupi + arme devant la caisse","color":"gray","bold":false}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.1f,1.1f,1.1f]}}
-scoreboard players set @e[type=minecraft:text_display,tag=mg.gshl,limit=1,sort=nearest,x=9.5,y=70.4,z=32373.8] mg.gsid 3
-summon minecraft:marker 31 66 32402 {Tags:["mg.gta","mg.gshop"]}
-scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=31,y=66,z=32402] mg.gsid 4
-scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=31,y=66,z=32402] mg.gpc 0
-summon minecraft:text_display 31.5 70.4 32397.8 {Tags:["mg.gta","mg.gshl"],Rotation:[180f,0f],text:[{"text":"💊 Pharmacie","color":"white","bold":true},{"text":"\nbraquable : accroupi + arme devant la caisse","color":"gray","bold":false}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.1f,1.1f,1.1f]}}
-scoreboard players set @e[type=minecraft:text_display,tag=mg.gshl,limit=1,sort=nearest,x=31.5,y=70.4,z=32397.8] mg.gsid 4
-summon minecraft:marker 40 66 32450 {Tags:["mg.gta","mg.gshop"]}
-scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=40,y=66,z=32450] mg.gsid 5
-scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=40,y=66,z=32450] mg.gpc 0
-summon minecraft:text_display 40.5 70.4 32445.8 {Tags:["mg.gta","mg.gshl"],Rotation:[180f,0f],text:[{"text":"📱 Téléphones","color":"white","bold":true},{"text":"\nbraquable : accroupi + arme devant la caisse","color":"gray","bold":false}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.1f,1.1f,1.1f]}}
-scoreboard players set @e[type=minecraft:text_display,tag=mg.gshl,limit=1,sort=nearest,x=40.5,y=70.4,z=32445.8] mg.gsid 5
+summon minecraft:marker 4 66 32378 {Tags:["mg.gta","mg.gshop"]}
+scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=4,y=66,z=32378] mg.gsid 1
+scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=4,y=66,z=32378] mg.gpc 0
+summon minecraft:text_display 4.5 70.4 32373.8 {Tags:["mg.gta","mg.gshl"],Rotation:[180f,0f],text:[{"text":"💎 Bijouterie","color":"white","bold":true},{"text":"\nbraquable : accroupi + arme devant la caisse","color":"gray","bold":false}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.1f,1.1f,1.1f]}}
+scoreboard players set @e[type=minecraft:text_display,tag=mg.gshl,limit=1,sort=nearest,x=4.5,y=70.4,z=32373.8] mg.gsid 1
+summon minecraft:marker -55 66 32402 {Tags:["mg.gta","mg.gshop"]}
+scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=-55,y=66,z=32402] mg.gsid 2
+scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=-55,y=66,z=32402] mg.gpc 0
+summon minecraft:text_display -54.5 70.4 32397.8 {Tags:["mg.gta","mg.gshl"],Rotation:[180f,0f],text:[{"text":"⛽ Station","color":"white","bold":true},{"text":"\nbraquable : accroupi + arme devant la caisse","color":"gray","bold":false}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.1f,1.1f,1.1f]}}
+scoreboard players set @e[type=minecraft:text_display,tag=mg.gshl,limit=1,sort=nearest,x=-54.5,y=70.4,z=32397.8] mg.gsid 2
+summon minecraft:marker -60 66 32474 {Tags:["mg.gta","mg.gshop"]}
+scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=-60,y=66,z=32474] mg.gsid 3
+scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=-60,y=66,z=32474] mg.gpc 0
+summon minecraft:text_display -59.5 70.4 32469.8 {Tags:["mg.gta","mg.gshl"],Rotation:[180f,0f],text:[{"text":"🍔 Burger","color":"white","bold":true},{"text":"\nbraquable : accroupi + arme devant la caisse","color":"gray","bold":false}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.1f,1.1f,1.1f]}}
+scoreboard players set @e[type=minecraft:text_display,tag=mg.gshl,limit=1,sort=nearest,x=-59.5,y=70.4,z=32469.8] mg.gsid 3
+summon minecraft:marker -32 66 32330 {Tags:["mg.gta","mg.gshop"]}
+scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=-32,y=66,z=32330] mg.gsid 4
+scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=-32,y=66,z=32330] mg.gpc 0
+summon minecraft:text_display -31.5 70.4 32325.8 {Tags:["mg.gta","mg.gshl"],Rotation:[180f,0f],text:[{"text":"💊 Pharmacie","color":"white","bold":true},{"text":"\nbraquable : accroupi + arme devant la caisse","color":"gray","bold":false}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.1f,1.1f,1.1f]}}
+scoreboard players set @e[type=minecraft:text_display,tag=mg.gshl,limit=1,sort=nearest,x=-31.5,y=70.4,z=32325.8] mg.gsid 4
+summon minecraft:marker -28 66 32402 {Tags:["mg.gta","mg.gshop"]}
+scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=-28,y=66,z=32402] mg.gsid 5
+scoreboard players set @e[type=minecraft:marker,tag=mg.gshop,limit=1,sort=nearest,x=-28,y=66,z=32402] mg.gpc 0
+summon minecraft:text_display -27.5 70.4 32397.8 {Tags:["mg.gta","mg.gshl"],Rotation:[180f,0f],text:[{"text":"📱 Téléphones","color":"white","bold":true},{"text":"\nbraquable : accroupi + arme devant la caisse","color":"gray","bold":false}],background:-1442840576,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.1f,1.1f,1.1f]}}
+scoreboard players set @e[type=minecraft:text_display,tag=mg.gshl,limit=1,sort=nearest,x=-27.5,y=70.4,z=32397.8] mg.gsid 5
 summon minecraft:text_display -13.5 70.5 32423.95 {Tags:["mg.gta"],Rotation:[0f,0f],text:{"text":"🔫 ARMURERIE","color":"white","bold":true},background:0,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[2.2f,2.2f,2.2f]}}
 summon minecraft:text_display -13.5 70.05 32423.95 {Tags:["mg.gta"],Rotation:[0f,0f],text:{"text":"Toutes les armes, en libre-service","color":"yellow"},background:0,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
 execute positioned -42 65 32370 run function mg:gta/car/spawn_1

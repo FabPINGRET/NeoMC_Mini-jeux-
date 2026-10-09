@@ -73,7 +73,7 @@ PAD.update({'s_smg': (52, '🔫 Mitraillette (gratuite)', 'aqua', 'minecraft:cro
             'moto': (21, '🏍 Moto', 'gold', 'minecraft:saddle'), 'muscle': (22, '🚗 Muscle car', 'red', 'minecraft:minecart'),
             'supercar': (23, '🏎 Supercar', 'light_purple', 'minecraft:golden_horse_armor'), 'heli': (24, '🚁 Hélico privé', 'yellow', 'minecraft:feather'),
             'plane': (25, '✈ Avion', 'aqua', 'minecraft:elytra')})
-PRICE = {2: 250, 3: 350, 4: 500, 5: 800, 6: 1500, 7: 1200, 8: 75, 9: 200, 11: 0, 21: 800, 22: 1800, 23: 3500, 24: 6000, 25: 9000}
+PRICE = {70: 50, 71: 100, 2: 250, 3: 350, 4: 500, 5: 800, 6: 1500, 7: 1200, 8: 75, 9: 200, 11: 0, 21: 800, 22: 1800, 23: 3500, 24: 6000, 25: 9000}
 CITY = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'neo_city.json'), encoding='utf-8'))
 SHOW = CITY['showroom']
 SHOW_PADS = list(zip(range(SHOW[0] + 2, SHOW[2] - 1, 3), ['moto', 'muscle', 'supercar', 'heli', 'plane']))
@@ -89,7 +89,8 @@ VFRONT = tuple(NH['front'])                                     # arrivée à Ne
 LIFT = tuple(NH['lift_up'])                                     # ascenseur hall ↔ toit-terrasse (y : NH['lift_y'])
 NA = NH['area']
 FL2 = f'{NA[0]} {Z + NA[1]} {NA[2]} {Z + NA[3] + 4}'            # chargement forcé du domaine
-PAD.update({'g_moto': (31, '🏍 Moto', 'gold', 'minecraft:saddle'), 'g_muscle': (32, '🚗 Muscle car', 'red', 'minecraft:minecart'),
+PAD.update({'slot': (70, '🎰 Machine à sous', 'gold', 'minecraft:gold_ingot'), 'roulette': (71, '🎡 Roulette', 'red', 'minecraft:clock'),
+            'paint': (60, '🎨 Peinture', 'light_purple', 'minecraft:magenta_dye'), 'g_moto': (31, '🏍 Moto', 'gold', 'minecraft:saddle'), 'g_muscle': (32, '🚗 Muscle car', 'red', 'minecraft:minecart'),
             'g_super': (33, '🏎 Supercar', 'light_purple', 'minecraft:golden_horse_armor'), 'g_heli': (34, '🚁 Hélico', 'yellow', 'minecraft:feather'),
             'g_plane': (35, '✈ Avion', 'aqua', 'minecraft:elytra'), 'g_smg': (42, '🔫 Mitraillette', 'aqua', 'minecraft:crossbow'),
             'g_shotgun': (43, '🔫 Fusil à pompe', 'gold', 'minecraft:crossbow'), 'g_rifle': (44, '🔫 Fusil M14', 'yellow', 'minecraft:crossbow'),
@@ -253,7 +254,7 @@ w('gta/join', ['# @s : réglages d\'arrivée (les dollars sont gardés d\'une vi
                'scoreboard players reset @s mg.gkw', 'scoreboard players reset @s mg.gqs', 'scoreboard players set @s mg.deaths 0',
                'function mg:gun/reset', 'scoreboard players set @s mg.gtl 0', 'scoreboard players set @s mg.gal 0', 'tag @s remove mg.gdrv',
                'team join mg_gciv @s'])
-w('gta/untag', ['# @s : plus joueur du GTA (tags, sons, titres, étoiles)', 'tag @s remove mg.gtg', 'tag @s remove mg.gdrv',
+w('gta/untag', ['# @s : plus joueur du GTA (tags, sons, titres, étoiles, mission)', 'function mg:gta/mis_clean', 'tag @s remove mg.gtg', 'tag @s remove mg.gclub', 'tag @s remove mg.gdrv',
                 'tag @s remove mg.gscope', 'tag @s remove mg.grd', 'tag @s remove mg.gro', 'stopsound @s record',
                 'title @s clear', 'title @s reset', 'scoreboard players reset @s mg.gwl', 'scoreboard players reset @s mg.gwt',
                 'function mg:gun/reset', 'team leave @s'])
@@ -318,7 +319,8 @@ S += [f'summon minecraft:text_display {(SHOW[0] + SHOW[2]) / 2 + 0.5} 71.5 {Z + 
       f'background:1073741824,{TR % (0, 0, 0, 0.6, 0.6, 0.6)}}}',
       f'summon minecraft:marker {AIRF[0]} 66 {Z + AIRF[1]} {{Tags:["mg.gta","mg.gair"]}}']
 for (x, z, y, ts) in [(x, z, VY, t) for x, z, t in VPADS] + [(x, z, VY, t) for x, z, t in VWEAP] + \
-                     [(NH['heal_pad'][0], NH['heal_pad'][1], VY, 'heal_free'), (NH['armor_pad'][0], NH['armor_pad'][1], VY, 'g_armor')]:
+                     [(NH['heal_pad'][0], NH['heal_pad'][1], VY, 'heal_free'), (NH['armor_pad'][0], NH['armor_pad'][1], VY, 'g_armor'),
+                      (NH['garage_pads'][-1][0] + 3, NH['garage_pads'][-1][1], VY, 'paint')]:
     S += [f'summon minecraft:marker {x} {y} {Z + z} {{Tags:["mg.gta","mg.gpad","mg.garm","mg.gpn"]}}',
           f'scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpt {PAD[ts][0]}', 'scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0',
           'execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show',
@@ -333,6 +335,11 @@ S += [f'summon minecraft:marker {LIFT[0]} {NH["lift_y"][0]} {Z + LIFT[1]} {{Tags
       f'summon minecraft:text_display {NH["sign"][0] + 0.5} {VY + 9.6} {Z + NH["sign"][1] + 0.6} {{Tags:["mg.gta"],Rotation:[0f,0f],'
       f'text:[{js({"text": "NEO HILLS", "color": "gold", "bold": True})},{js({"text": "\nla villa des joueurs : tout ce qui a été acheté une fois est ici, gratuit", "color": "gray"})}],'
       f'background:-1442840576,{TR % (0, 0, 0, 1.4, 1.4, 1.4)}}}']
+for (x, z, ts) in [(p_[0], p_[1], 'slot') for p_ in CITY['places']['casino']['slots']] + [(CITY['places']['casino']['roulette'][0], CITY['places']['casino']['roulette'][1], 'roulette')]:
+    S += [f'summon minecraft:marker {x} 66 {Z + z} {{Tags:["mg.gta","mg.gpad","mg.garm","mg.gpn"]}}',
+          f'scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpt {PAD[ts][0]}', 'scoreboard players set @e[type=minecraft:marker,tag=mg.gpn] mg.gpc 0',
+          'execute as @e[type=minecraft:marker,tag=mg.gpn] at @s run function mg:gta/pad_show', 'tag @e[tag=mg.gpn] remove mg.gpn']
+S.append('function mg:gta/places_setup')
 for k, (mx, sz, nm, col) in enumerate(CITY['shops']):                    # caissier derrière le comptoir, mode d'emploi du braquage
     S += [f'summon minecraft:villager {mx}.5 66 {Z + sz + 5}.5 {{Tags:["mg.gta","mg.npc","mg.gclerk"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,'
           f'Rotation:[180f,0f],VillagerData:{{profession:"minecraft:{SHOP_CLERK[k % len(SHOP_CLERK)]}",type:"minecraft:plains",level:2}},'
@@ -374,6 +381,7 @@ w('gta/kit', ['# @s : batte, pistolet', 'clear @s', 'function mg:gun/reset',
               'execute if score $rp mg.st matches 1 run function mg:gta/bat {m:"mg:bat"}',
               'execute unless score $rp mg.st matches 1 run function mg:gta/bat {m:"minecraft:stick"}', G.give(1, 'hotbar.1'),
               'scoreboard players set @s mg.grk 0',
+              'function mg:gta/kit_plus',
               'item replace entity @s hotbar.7 with minecraft:warped_fungus_on_a_stick[custom_data={gtahome:1b},item_model="minecraft:oak_door",unbreakable={},'
               f'custom_name={js({"text": "🏠 Retour à la villa", "color": "aqua", "bold": True, "italic": False})},'
               f'lore=[{js({"text": "Clic droit : Neo Hills (pas avec la police aux trousses)", "color": "gray", "italic": False})}]]',
@@ -385,10 +393,20 @@ w('gta/kit', ['# @s : batte, pistolet', 'clear @s', 'function mg:gun/reset',
 # ---------------------------------------------------------------- tick de la session
 w('gta/tick', ['# 🚓 Neo City : chaque tick tant qu\'un joueur y est', 'scoreboard players add $gtt mg.st 1',
                # armes : clic (objectif mg.gqs, la survie remet mg.qs à zéro pour les joueurs taggés mg.surv)
+               'execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] if items entity @s weapon.mainhand *[custom_data~{gtaphone:1b}] run function mg:gta/phone',
+               'execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] if items entity @s weapon.mainhand *[custom_data~{gtanitro:1b}] run function mg:gta/nitro',
+               'execute as @a[tag=mg.gtw,scores={mg.gmis=1..}] run function mg:gta/mis_cmd',
+               'scoreboard players remove @a[tag=mg.gtw,scores={mg.gnit=1..}] mg.gnit 1',
+               'execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] if items entity @s weapon.mainhand *[custom_data~{rpg:1b}] at @s run function mg:gta/panic',
                'execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] at @s if items entity @s weapon.mainhand *[custom_data~{rpg:1b}] run function mg:gta/rpg_fire',
                'execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] if items entity @s weapon.mainhand *[custom_data~{gtahome:1b}] run function mg:gta/home',
                'execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] at @s run function mg:gun/use',
+               'execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] if items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] at @s run function mg:gta/panic',
+               'execute as @a[tag=mg.gtw,scores={mg.gqs=1..}] if items entity @s weapon.mainhand *[custom_data~{rpg:1b}] at @s run function mg:gta/panic',
                'scoreboard players reset @a[scores={mg.gqs=1..}] mg.gqs',
+               'execute as @e[type=minecraft:marker,tag=mg.gtraf] at @s run function mg:gta/traffic/tick',
+               'execute as @e[type=minecraft:marker,tag=mg.gphel] at @s run function mg:gta/pheli_tick',
+               'function mg:gta/panic_tick',
                'scoreboard players remove @a[tag=mg.gtw,scores={mg.gcd=1..}] mg.gcd 1',
                'execute as @a[tag=mg.gtw,scores={mg.grl=1..}] at @s run function mg:gun/reload_tick',
                'execute as @a[tag=mg.gtw,scores={mg.gsn=1..}] if items entity @s weapon.mainhand *[custom_data~{gun:5}] run scoreboard players reset @s mg.gsn',
@@ -426,6 +444,8 @@ w('gta/tick', ['# 🚓 Neo City : chaque tick tant qu\'un joueur y est', 'scoreb
                'execute if score $gq5t mg.st matches 0 as @a[tag=mg.gtw,gamemode=!spectator] if predicate mg:sneak if items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] at @s run function mg:gta/rob',
                'execute if score $gq5t mg.st matches 0 as @a[tag=mg.gtw,gamemode=!spectator] if predicate mg:sneak if items entity @s weapon.mainhand *[custom_data~{rpg:1b}] at @s run function mg:gta/rob',
                'execute if score $gq5t mg.st matches 0 as @a[tag=mg.gtw,scores={mg.grob=1..}] unless predicate mg:sneak run function mg:gta/rob_stop',
+               'execute if score $gq5t mg.st matches 0 as @a[tag=mg.gtw,scores={mg.gmt=1..}] at @s run function mg:gta/mis_tick',
+               'execute if score $gq5t mg.st matches 0 as @a[tag=mg.gtw,gamemode=!spectator] if predicate mg:sneak at @s as @e[type=minecraft:marker,tag=mg.gtraf,distance=..2.6,limit=1,sort=nearest] at @s run function mg:gta/traffic/steal',
                'scoreboard players operation $gq4 mg.st = $gtt mg.st', 'scoreboard players set #4 mg.st 4', 'scoreboard players operation $gq4 mg.st %= #4 mg.st',
                'execute if score $gq4 mg.st matches 0 as @a[tag=mg.gtw] if items entity @s weapon.mainhand *[custom_data~{gtamap:1b}] run function mg:gta/map_show',
                'execute as @a[tag=mg.gtw] at @s if entity @e[type=minecraft:marker,tag=mg.glup,distance=..0.8] in mg:gta run function mg:gta/lift_up',
@@ -433,6 +453,7 @@ w('gta/tick', ['# 🚓 Neo City : chaque tick tant qu\'un joueur y est', 'scoreb
                'execute if score $gq mg.st matches 0 run function mg:gta/second',
                'execute if score $gq mg.st matches 0 run function mg:gta/pads',
                'execute if score $gq mg.st matches 10 run function mg:gta/pads',
+               'execute if score $gq mg.st matches 0 run function mg:gta/club_tick', 'execute if score $gq mg.st matches 10 run function mg:gta/club_tick',
                'execute if score $gq mg.st matches 5 run function mg:gta/hud',
                'execute if score $gq mg.st matches 5 run function mg:gta/radio_check',
                'execute if score $gq mg.st matches 15 run function mg:gta/hud'])
@@ -448,9 +469,12 @@ w('gta/second', ['# Chaque seconde : véhicules détruits, passants, police, sir
                  'scoreboard players operation $gq3 mg.st = $gtt mg.st', 'scoreboard players set #40 mg.st 40', 'scoreboard players operation $gq3 mg.st %= #40 mg.st',
                  'execute store result score $gca mg.st if entity @e[tag=mg.gcop]',
                  'execute if score $gq3 mg.st matches 0 if score $gca mg.st matches ..44 as @a[tag=mg.gtw,scores={mg.gwl=1..}] at @s run function mg:gta/police_call',
-                 'execute if score $gq3 mg.st matches 0 as @e[tag=mg.gcop] at @s unless entity @a[tag=mg.gtw,scores={mg.gwl=1..},distance=..60] run function mg:gta/cop_leave',
+                 'execute if score $gq3 mg.st matches 0 as @e[tag=mg.gcop,tag=!mg.gphel] at @s unless entity @a[tag=mg.gtw,scores={mg.gwl=1..},distance=..60] run function mg:gta/cop_leave',
+                 'execute if score $gq3 mg.st matches 0 as @a[tag=mg.gtw,scores={mg.gwl=1..}] at @s run function mg:gta/police_plus',
+                 'function mg:gta/police_clean', 'function mg:gta/traffic/second',
+                 'execute as @a[tag=mg.gtw,scores={mg.gwl=1..}] at @s if entity @e[tag=mg.gcop,distance=..22] run scoreboard players set @s mg.gwt 400',
                  'execute as @a[tag=mg.gtw,scores={mg.gwl=1..}] at @s run function mg:gta/siren',
-                 'function mg:gta/bars_tick',
+                 'function mg:gta/bars_tick', 'scoreboard players enable @a[tag=mg.gtw] mg.gmis',
                  'execute as @e[type=minecraft:marker,tag=mg.gshop,scores={mg.gpc=1..20}] run function mg:gta/shop_reopen',
                  'scoreboard players remove @e[type=minecraft:marker,tag=mg.gshop,scores={mg.gpc=1..}] mg.gpc 20',
                  'execute as @e[type=minecraft:marker,tag=mg.gbank,scores={mg.gpc=1..20}] run function mg:gta/bank_reopen',
@@ -533,6 +557,7 @@ w('gta/wanted_down', ['# @s : 20 s sans délit, une étoile de moins', 'scoreboa
                       'execute if score @s mg.gwl matches 0 run title @s actionbar {"text":"☆ La police a perdu ta trace","color":"green"}'])
 w('gta/wasted', ['# @s est mort (contexte : dimension mg:gta) : WASTED, ou BUSTED s\'il était recherché ; -25 % lâchés en liasse',
                  'scoreboard players set @s mg.deaths 0', 'scoreboard players set @s mg.gtl 60',
+                 'execute if score @s mg.gwl matches 1.. run tag @s add mg.gbust',
                  'scoreboard players operation $gl mg.st = @s mg.gta', 'scoreboard players set #4 mg.st 4', 'scoreboard players operation $gl mg.st /= #4 mg.st',
                  'scoreboard players operation @s mg.gta -= $gl mg.st',
                  'title @s times 5 45 15',
@@ -542,7 +567,7 @@ w('gta/wasted', ['# @s est mort (contexte : dimension mg:gta) : WASTED, ou BUSTE
                  'execute unless score @s mg.gwl matches 1.. run title @s subtitle [{"text":"-","color":"#C8102E"},{"score":{"name":"$gl","objective":"mg.st"},"color":"#C8102E"},{"text":" $ (frais d\'hôpital)","color":"gray"}]',
                  'scoreboard players set @s mg.gwl 0', 'scoreboard players set @s mg.gwt 0', 'team join mg_gciv @s',
                  'execute if score $gl mg.st matches 1.. run function mg:gta/drop_cash',
-                 'function mg:gta/radio_off', 'function mg:gta/unscope', 'function mg:gta/place', 'function mg:gta/kit',
+                 'function mg:gta/mis_fail', 'function mg:gta/radio_off', 'function mg:gta/unscope', 'function mg:gta/respawn_at', 'function mg:gta/kit',
                  'execute at @s run playsound minecraft:entity.wither.death player @s ~ ~ ~ 0.4 1.6',
                  'execute at @s run playsound minecraft:block.bell.resonate player @s ~ ~ ~ 0.8 0.5'])
 w('gta/drop_cash', ['# @s vient de mourir : les dollars perdus ($gl) tombent en liasse là où il est mort',
@@ -628,7 +653,7 @@ w('gta/cop_hit', ['# @s touché par une balle de la police',
                   'execute if score $gcd2 mg.st matches 2 run damage @s 2 minecraft:mob_attack by @e[tag=mg.gcsh,limit=1]',
                   'execute if score $gcd2 mg.st matches 3 run damage @s 3 minecraft:mob_attack by @e[tag=mg.gcsh,limit=1]',
                   'particle minecraft:damage_indicator ~ ~1.2 ~ 0.2 0.3 0.2 0 2'])
-w('gta/cop_leave', ['# Plus personne de recherché à proximité : le policier s\'en va', 'particle minecraft:poof ~ ~1 ~ 0.3 0.6 0.3 0.02 10', 'tp @s ~ -300 ~'])
+w('gta/cop_leave', ['# Plus personne de recherché à proximité : le policier s\'en va', 'particle minecraft:poof ~ ~1 ~ 0.3 0.6 0.3 0.02 10', 'execute on vehicle run function mg:gta/veh_remove', 'tp @s ~ -300 ~'])
 w('gta/ped_spawn', ['# Un passant sur ce trottoir (habits et prénom au hasard)', 'execute store result score $gr mg.st run random value 0..15'] +
   [f'execute if score $gr mg.st matches {i} run summon minecraft:villager ~ ~ ~ {{Tags:["mg.gta","mg.gtg","mg.gped","mg.npc"],PersistenceRequired:1b,'
    f'VillagerData:{{profession:"minecraft:nitwit",type:"minecraft:{VTYPES[i % len(VTYPES)]}",level:1}},'
@@ -702,7 +727,9 @@ for t, (n, lab, col, it) in PAD.items():
         GV += ['execute if score $gpt mg.st matches 9 run item replace entity @s armor.chest with minecraft:iron_chestplate[unbreakable={},'
                f'custom_name={js({"text": "🛡 Gilet pare-balles", "color": "gray", "italic": False})}]',
                'execute if score $gpt mg.st matches 9 run effect give @s minecraft:absorption 60 1 true', f'execute if score $gpt mg.st matches 9 run {msg}']
-GV += ['execute if score $gpt mg.st matches 11 run effect give @s minecraft:instant_health 1 1 true',
+GV += ['execute if score $gpt mg.st matches 70 run function mg:gta/casino_slot', 'execute if score $gpt mg.st matches 71 run function mg:gta/casino_roulette',
+       'execute if score $gpt mg.st matches 60 run function mg:gta/paint',
+       'execute if score $gpt mg.st matches 11 run effect give @s minecraft:instant_health 1 1 true',
        'execute if score $gpt mg.st matches 11 run title @s actionbar {"text":"✚ Soigné","color":"red","bold":true}']
 GV += [f'execute if score $gpt mg.st matches {PAD[t][0]} run function mg:gta/veh_buy {{t:"{t}"}}' for t in ('moto', 'muscle', 'supercar', 'heli', 'plane')]
 w('gta/pad_give', GV)
@@ -906,9 +933,25 @@ def hud_lines(money):
 
 w('gta/hud', ['# Toutes les 0,5 s : munitions et dollars (sauf pendant un message)',
               'execute as @a[tag=mg.gtw,scores={mg.gal=..0}] run function mg:gta/hud_one'])
-w('gta/hud_one', ['# @s : barre d\'action (police verte du pack si $rp = 1)', 'execute if score $rp mg.st matches 1 run return run function mg:gta/hud_rp',
+w('gta/hud_one', ['# @s : barre d\'action (police verte du pack si $rp = 1) ; mission en cours en priorité',
+                  'execute if score @s mg.gmt matches 1.. run return run function mg:gta/mis_hud',
+                  'execute if score $rp mg.st matches 1 run return run function mg:gta/hud_rp',
                   'function mg:gta/hud_plain'])
-w('gta/hud_rp', ['# @s : munitions + dollars en chiffres GTA'] + hud_lines(MONEY_RP))
+w('gta/hud_rp', ['# @s : munitions + dollars en chiffres GTA ; sans arme : mini-carte + dollars'] + hud_lines(MONEY_RP)[:-1] + ['function mg:gta/mini_show'])
+w('gta/mini_show', ['# @s : mini-carte (case 30 × 30 de sa position) au-dessus des dollars',
+                    'execute store result score $gmi mg.st run data get entity @s Pos[0]', 'execute store result score $gmj mg.st run data get entity @s Pos[2]',
+                    f'scoreboard players add $gmi mg.st {HX}', f'scoreboard players remove $gmj mg.st {Z - HX}',
+                    'scoreboard players set #30 mg.st 30', 'scoreboard players set #177 mg.st 177',
+                    'scoreboard players operation $gmi mg.st *= #30 mg.st', 'scoreboard players operation $gmi mg.st /= #177 mg.st',
+                    'scoreboard players operation $gmj mg.st *= #30 mg.st', 'scoreboard players operation $gmj mg.st /= #177 mg.st',
+                    'execute if score $gmi mg.st matches ..-1 run scoreboard players set $gmi mg.st 0', 'execute if score $gmi mg.st matches 30.. run scoreboard players set $gmi mg.st 29',
+                    'execute if score $gmj mg.st matches ..-1 run scoreboard players set $gmj mg.st 0', 'execute if score $gmj mg.st matches 30.. run scoreboard players set $gmj mg.st 29'] +
+  [f'execute if score $gmj mg.st matches {j} run return run function mg:gta/mini/row_{j}' for j in range(30)])
+for j in range(30):
+    w(f'gta/mini/row_{j}', [f'# Mini-carte, ligne {j}'] +
+      [f'execute if score $gmi mg.st matches {i} run return run title @s actionbar ' +
+       js([{'text': '\ue600\ue601' + chr(0xE700 + 30 * j + i), 'font': 'mg:gta_mini', 'color': 'white', 'shadow_color': 0}, {'text': '   '}] + MONEY_RP)
+       for i in range(30)])
 w('gta/hud_plain', ['# @s : munitions + dollars (sans pack)'] + hud_lines(MONEY_PL))
 
 # ---------------------------------------------------------------- braquages
@@ -1085,6 +1128,8 @@ w('gta/home', ['# @s : retour à la villa (Neo Hills), refusé si la police le r
                 'execute at @s run playsound minecraft:block.portal.travel player @s ~ ~ ~ 0.2 2',
                 'title @s actionbar {"text":"🏠 Neo Hills","color":"aqua","bold":true}'])
 
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'gta_plus.py'), encoding='utf-8').read())
+
 # ---------------------------------------------------------------- câblage
 C.patch('core/tick', 'execute if score $setup mg.st matches 1 run function mg:lobkart/tick',
         ['# Neo City (monde GTA) : portail du lobby et session', 'function mg:gta/lobby_tick'])
@@ -1096,6 +1141,8 @@ C.patch('core/load', 'execute unless score $rp mg.st matches 0..1 run scoreboard
          'execute if score $setup mg.st matches 1 unless data storage mg:gta built run schedule function mg:gta/world_build 45s',
          'scoreboard players set $gtw mg.st 0'])
 C.objectives([('mg.gqs', 'minecraft.used:minecraft.warped_fungus_on_a_stick')])
+C.patch('core/load', 'scoreboard objectives add mg.bw trigger',
+        ['scoreboard objectives modify mg.gta displayname [{"text":"💵 Neo GTA","color":"green","bold":true},{"text":" : les plus riches","color":"gray","bold":false}]'])
 C.objectives([('mg.grob', 'dummy'), ('mg.gsid', 'dummy'), ('mg.gveh', 'dummy')])
 C.patch('desinstaller', 'scoreboard objectives remove mg.bw',
         ['schedule clear mg:gta/wb_step', 'schedule clear mg:gta/world_build', 'schedule clear mg:gta/session_setup',

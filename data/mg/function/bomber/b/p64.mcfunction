@@ -1,14 +1,23 @@
 # Ville du Bombardier, étape 64/79 (généré par tools/arcade/gen_bomber.py)
-fill 58 66 32483 58 77 32483 minecraft:gray_stained_glass
-fill 62 66 32483 62 77 32483 minecraft:gray_stained_glass
-fill 58 66 32485 58 77 32485 minecraft:gray_stained_glass
-fill 62 66 32485 62 77 32485 minecraft:gray_stained_glass
-fill 58 69 32480 62 69 32486 minecraft:terracotta
-fill 58 73 32480 62 73 32486 minecraft:terracotta
-fill 58 77 32480 62 77 32486 minecraft:terracotta
-fill 58 65 32480 62 65 32486 minecraft:terracotta
-fill 58 78 32480 62 78 32486 minecraft:terracotta
-fill 60 66 32480 61 67 32480 minecraft:glass
+fill 58 66 32472 58 73 32472 minecraft:gray_stained_glass
+fill 62 66 32472 62 73 32472 minecraft:gray_stained_glass
+fill 58 66 32474 58 73 32474 minecraft:gray_stained_glass
+fill 62 66 32474 62 73 32474 minecraft:gray_stained_glass
+fill 58 66 32476 58 73 32476 minecraft:gray_stained_glass
+fill 62 66 32476 62 73 32476 minecraft:gray_stained_glass
+fill 58 66 32478 58 73 32478 minecraft:gray_stained_glass
+fill 62 66 32478 62 73 32478 minecraft:gray_stained_glass
+fill 58 66 32480 58 73 32480 minecraft:gray_stained_glass
+fill 62 66 32480 62 73 32480 minecraft:gray_stained_glass
+fill 58 66 32482 58 73 32482 minecraft:gray_stained_glass
+fill 62 66 32482 62 73 32482 minecraft:gray_stained_glass
+fill 58 66 32484 58 73 32484 minecraft:gray_stained_glass
+fill 62 66 32484 62 73 32484 minecraft:gray_stained_glass
+fill 58 69 32471 62 69 32486 minecraft:granite
+fill 58 73 32471 62 73 32486 minecraft:granite
+fill 58 65 32471 62 65 32486 minecraft:granite
+fill 58 74 32471 62 74 32486 minecraft:granite
+fill 60 66 32471 61 67 32471 minecraft:glass
 fill 60 66 32486 61 67 32486 minecraft:glass
 fill -65 66 32327 -63 68 32327 minecraft:air
 fill -69 66 32328 -59 68 32333 minecraft:air
@@ -29,36 +38,22 @@ setblock -59 67 32328 minecraft:melon
 setblock -59 67 32329 minecraft:carved_pumpkin
 setblock -59 67 32330 minecraft:melon
 setblock -65 68 32331 minecraft:cake
-fill -56 66 32375 -54 68 32375 minecraft:air
-fill -58 66 32376 -51 68 32388 minecraft:air
-fill -58 65 32376 -51 65 32388 minecraft:polished_andesite
-fill -57 69 32374 -53 69 32374 minecraft:cyan_wool
-fill -58 66 32379 -51 66 32379 minecraft:dark_oak_planks
-fill -58 67 32379 -51 67 32379 minecraft:smooth_quartz_slab
-fill -55 66 32379 -55 67 32379 minecraft:air
-setblock -54 67 32379 minecraft:lodestone
-setblock -57 68 32377 minecraft:sea_lantern
-setblock -54 68 32377 minecraft:sea_lantern
-fill -58 66 32376 -58 66 32378 minecraft:black_concrete
-fill -58 67 32376 -58 67 32378 minecraft:glass
-fill -51 66 32376 -51 66 32378 minecraft:black_concrete
-fill -51 67 32376 -51 67 32378 minecraft:glass
-setblock -58 66 32377 minecraft:gold_block
-setblock -51 66 32377 minecraft:diamond_block
-setblock -51 66 32376 minecraft:emerald_block
-setblock -58 66 32378 minecraft:amethyst_block
-fill -58 66 32381 -51 68 32388 minecraft:black_concrete
-fill -57 67 32388 -52 67 32388 minecraft:gold_block
-fill 31 66 32351 33 68 32351 minecraft:air
-fill 27 66 32352 37 68 32357 minecraft:air
-fill 27 65 32352 37 65 32357 minecraft:smooth_stone_slab
-fill 30 69 32350 34 69 32350 minecraft:orange_wool
-fill 27 66 32355 37 66 32355 minecraft:dark_oak_planks
-fill 27 67 32355 37 67 32355 minecraft:smooth_quartz_slab
-fill 32 66 32355 32 67 32355 minecraft:air
-setblock 33 67 32355 minecraft:lodestone
-setblock 28 68 32353 minecraft:sea_lantern
-setblock 31 68 32353 minecraft:sea_lantern
-setblock 34 68 32353 minecraft:sea_lantern
-fill 28 65 32349 28 66 32349 minecraft:red_concrete
-setblock 28 67 32349 minecraft:iron_block
+fill 3 66 32375 5 68 32375 minecraft:air
+fill -5 66 32376 13 68 32381 minecraft:air
+fill -5 65 32376 13 65 32381 minecraft:polished_andesite
+fill 2 69 32374 6 69 32374 minecraft:cyan_wool
+fill -5 66 32379 13 66 32379 minecraft:dark_oak_planks
+fill -5 67 32379 13 67 32379 minecraft:smooth_quartz_slab
+fill 4 66 32379 4 67 32379 minecraft:air
+setblock 5 67 32379 minecraft:lodestone
+setblock -4 68 32377 minecraft:sea_lantern
+setblock -1 68 32377 minecraft:sea_lantern
+setblock 2 68 32377 minecraft:sea_lantern
+setblock 5 68 32377 minecraft:sea_lantern
+setblock 8 68 32377 minecraft:sea_lantern
+setblock 11 68 32377 minecraft:sea_lantern
+fill -5 66 32376 -5 66 32378 minecraft:black_concrete
+fill -5 67 32376 -5 67 32378 minecraft:glass
+fill 13 66 32376 13 66 32378 minecraft:black_concrete
+fill 13 67 32376 13 67 32378 minecraft:glass
+setblock -5 66 32377 minecraft:gold_block

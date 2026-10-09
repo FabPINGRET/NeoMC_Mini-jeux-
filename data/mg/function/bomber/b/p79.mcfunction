@@ -1,10 +1,4 @@
 # Ville du Bombardier, étape 79/79 (généré par tools/arcade/gen_bomber.py)
-setblock 87 83 32367 minecraft:iron_chain
-setblock 88 81 32367 minecraft:iron_chain
-fill 88 71 32367 88 80 32367 minecraft:iron_chain
-setblock 61 71 32373 minecraft:iron_chain
-setblock 62 72 32373 minecraft:iron_chain
-setblock 62 71 32373 minecraft:iron_chain
 setblock 63 74 32373 minecraft:iron_chain
 setblock 64 77 32373 minecraft:iron_chain
 fill 64 71 32373 64 76 32373 minecraft:iron_chain

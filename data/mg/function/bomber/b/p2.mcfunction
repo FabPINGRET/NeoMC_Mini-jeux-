@@ -1,4 +1,9 @@
 # Ville du Bombardier, étape 2/79 (généré par tools/arcade/gen_bomber.py)
+fill -86 65 32335 -82 65 32341 minecraft:granite
+fill -86 79 32335 -82 79 32341 minecraft:granite
+fill -84 66 32335 -83 67 32335 minecraft:glass
+fill -84 66 32341 -83 67 32341 minecraft:glass
+fill -86 65 32351 -82 86 32351 minecraft:terracotta
 fill -86 65 32356 -82 86 32356 minecraft:terracotta
 fill -86 65 32351 -86 86 32356 minecraft:terracotta
 fill -82 65 32351 -82 86 32356 minecraft:terracotta
@@ -52,13 +57,3 @@ fill -83 66 32375 -83 78 32375 minecraft:black_stained_glass
 fill -83 66 32389 -83 78 32389 minecraft:black_stained_glass
 fill -86 66 32376 -86 78 32376 minecraft:black_stained_glass
 fill -82 66 32376 -82 78 32376 minecraft:black_stained_glass
-fill -86 66 32378 -86 78 32378 minecraft:black_stained_glass
-fill -82 66 32378 -82 78 32378 minecraft:black_stained_glass
-fill -86 66 32380 -86 78 32380 minecraft:black_stained_glass
-fill -82 66 32380 -82 78 32380 minecraft:black_stained_glass
-fill -86 66 32382 -86 78 32382 minecraft:black_stained_glass
-fill -82 66 32382 -82 78 32382 minecraft:black_stained_glass
-fill -86 66 32384 -86 78 32384 minecraft:black_stained_glass
-fill -82 66 32384 -82 78 32384 minecraft:black_stained_glass
-fill -86 66 32386 -86 78 32386 minecraft:black_stained_glass
-fill -82 66 32386 -82 78 32386 minecraft:black_stained_glass

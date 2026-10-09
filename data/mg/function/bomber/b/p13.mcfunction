@@ -1,64 +1,59 @@
 # Ville du Bombardier, étape 13/79 (généré par tools/arcade/gen_bomber.py)
-fill -59 66 32383 -59 88 32383 minecraft:gray_stained_glass
-fill -50 66 32383 -50 88 32383 minecraft:gray_stained_glass
-fill -59 66 32385 -59 88 32385 minecraft:gray_stained_glass
-fill -50 66 32385 -50 88 32385 minecraft:gray_stained_glass
-fill -59 66 32386 -59 88 32386 minecraft:gray_stained_glass
-fill -50 66 32386 -50 88 32386 minecraft:gray_stained_glass
-fill -59 66 32388 -59 88 32388 minecraft:gray_stained_glass
-fill -50 66 32388 -50 88 32388 minecraft:gray_stained_glass
-fill -59 69 32375 -50 69 32389 minecraft:calcite
-fill -59 73 32375 -50 73 32389 minecraft:calcite
-fill -59 77 32375 -50 77 32389 minecraft:calcite
-fill -59 81 32375 -50 81 32389 minecraft:calcite
-fill -59 85 32375 -50 85 32389 minecraft:calcite
-fill -59 65 32375 -50 65 32389 minecraft:calcite
-fill -59 89 32375 -50 89 32389 minecraft:calcite
-fill -57 66 32375 -56 67 32375 minecraft:glass
-fill -57 66 32389 -56 67 32389 minecraft:glass
-fill -54 66 32375 -53 67 32375 minecraft:glass
-fill -54 66 32389 -53 67 32389 minecraft:glass
-fill -70 65 32399 -50 131 32399 minecraft:iron_block
-fill -70 65 32405 -50 131 32405 minecraft:iron_block
-fill -70 65 32399 -70 131 32405 minecraft:iron_block
-fill -50 65 32399 -50 131 32405 minecraft:iron_block
-fill -69 65 32400 -51 131 32404 minecraft:air
-fill -69 66 32399 -69 130 32399 minecraft:gray_stained_glass
-fill -69 66 32405 -69 130 32405 minecraft:gray_stained_glass
-fill -68 66 32399 -68 130 32399 minecraft:gray_stained_glass
-fill -68 66 32405 -68 130 32405 minecraft:gray_stained_glass
-fill -67 66 32399 -67 130 32399 minecraft:gray_stained_glass
-fill -67 66 32405 -67 130 32405 minecraft:gray_stained_glass
-fill -65 66 32399 -65 130 32399 minecraft:gray_stained_glass
-fill -65 66 32405 -65 130 32405 minecraft:gray_stained_glass
-fill -64 66 32399 -64 130 32399 minecraft:gray_stained_glass
-fill -64 66 32405 -64 130 32405 minecraft:gray_stained_glass
-fill -63 66 32399 -63 130 32399 minecraft:gray_stained_glass
-fill -63 66 32405 -63 130 32405 minecraft:gray_stained_glass
-fill -61 66 32399 -61 130 32399 minecraft:gray_stained_glass
-fill -61 66 32405 -61 130 32405 minecraft:gray_stained_glass
-fill -60 66 32399 -60 130 32399 minecraft:gray_stained_glass
-fill -60 66 32405 -60 130 32405 minecraft:gray_stained_glass
-fill -59 66 32399 -59 130 32399 minecraft:gray_stained_glass
-fill -59 66 32405 -59 130 32405 minecraft:gray_stained_glass
-fill -57 66 32399 -57 130 32399 minecraft:gray_stained_glass
-fill -57 66 32405 -57 130 32405 minecraft:gray_stained_glass
-fill -56 66 32399 -56 130 32399 minecraft:gray_stained_glass
-fill -56 66 32405 -56 130 32405 minecraft:gray_stained_glass
-fill -55 66 32399 -55 130 32399 minecraft:gray_stained_glass
-fill -55 66 32405 -55 130 32405 minecraft:gray_stained_glass
-fill -53 66 32399 -53 130 32399 minecraft:gray_stained_glass
-fill -53 66 32405 -53 130 32405 minecraft:gray_stained_glass
-fill -52 66 32399 -52 130 32399 minecraft:gray_stained_glass
-fill -52 66 32405 -52 130 32405 minecraft:gray_stained_glass
-fill -51 66 32399 -51 130 32399 minecraft:gray_stained_glass
-fill -51 66 32405 -51 130 32405 minecraft:gray_stained_glass
-fill -70 66 32400 -70 130 32400 minecraft:gray_stained_glass
-fill -50 66 32400 -50 130 32400 minecraft:gray_stained_glass
-fill -70 66 32401 -70 130 32401 minecraft:gray_stained_glass
-fill -50 66 32401 -50 130 32401 minecraft:gray_stained_glass
-fill -70 66 32402 -70 130 32402 minecraft:gray_stained_glass
-fill -50 66 32402 -50 130 32402 minecraft:gray_stained_glass
-fill -70 66 32404 -70 130 32404 minecraft:gray_stained_glass
-fill -50 66 32404 -50 130 32404 minecraft:gray_stained_glass
-fill -70 69 32399 -50 69 32405 minecraft:iron_block
+setblock -62 66 32388 minecraft:red_wool
+fill -62 70 32386 -62 70 32387 minecraft:white_wool
+setblock -62 70 32388 minecraft:red_wool
+fill -59 66 32386 -59 66 32387 minecraft:white_wool
+setblock -59 66 32388 minecraft:red_wool
+fill -59 70 32386 -59 70 32387 minecraft:white_wool
+setblock -59 70 32388 minecraft:red_wool
+fill -56 66 32386 -56 66 32387 minecraft:white_wool
+setblock -56 66 32388 minecraft:red_wool
+fill -56 70 32386 -56 70 32387 minecraft:white_wool
+setblock -56 70 32388 minecraft:red_wool
+fill -53 66 32386 -53 66 32387 minecraft:white_wool
+setblock -53 66 32388 minecraft:red_wool
+fill -53 70 32386 -53 70 32387 minecraft:white_wool
+setblock -53 70 32388 minecraft:red_wool
+setblock -67 68 32382 minecraft:sea_lantern
+setblock -67 72 32382 minecraft:sea_lantern
+setblock -63 68 32382 minecraft:sea_lantern
+setblock -63 72 32382 minecraft:sea_lantern
+setblock -59 68 32382 minecraft:sea_lantern
+setblock -59 72 32382 minecraft:sea_lantern
+setblock -55 68 32382 minecraft:sea_lantern
+setblock -55 72 32382 minecraft:sea_lantern
+setblock -52 66 32377 minecraft:potted_fern
+setblock -62 66 32378 minecraft:brewing_stand
+fill -62 77 32378 -58 77 32384 minecraft:red_concrete
+fill -61 77 32379 -59 77 32383 minecraft:white_concrete
+fill -61 77 32380 -61 77 32382 minecraft:red_concrete
+fill -59 77 32380 -59 77 32382 minecraft:red_concrete
+setblock -60 77 32381 minecraft:red_concrete
+fill -70 65 32399 -61 118 32399 minecraft:gray_concrete
+fill -70 65 32405 -61 118 32405 minecraft:gray_concrete
+fill -70 65 32399 -70 118 32405 minecraft:gray_concrete
+fill -61 65 32399 -61 118 32405 minecraft:gray_concrete
+fill -69 65 32400 -62 118 32404 minecraft:air
+fill -69 66 32399 -69 117 32399 minecraft:blue_stained_glass
+fill -69 66 32405 -69 117 32405 minecraft:blue_stained_glass
+fill -68 66 32399 -68 117 32399 minecraft:blue_stained_glass
+fill -68 66 32405 -68 117 32405 minecraft:blue_stained_glass
+fill -67 66 32399 -67 117 32399 minecraft:blue_stained_glass
+fill -67 66 32405 -67 117 32405 minecraft:blue_stained_glass
+fill -65 66 32399 -65 117 32399 minecraft:blue_stained_glass
+fill -65 66 32405 -65 117 32405 minecraft:blue_stained_glass
+fill -64 66 32399 -64 117 32399 minecraft:blue_stained_glass
+fill -64 66 32405 -64 117 32405 minecraft:blue_stained_glass
+fill -63 66 32399 -63 117 32399 minecraft:blue_stained_glass
+fill -63 66 32405 -63 117 32405 minecraft:blue_stained_glass
+fill -70 66 32400 -70 117 32400 minecraft:blue_stained_glass
+fill -61 66 32400 -61 117 32400 minecraft:blue_stained_glass
+fill -70 66 32401 -70 117 32401 minecraft:blue_stained_glass
+fill -61 66 32401 -61 117 32401 minecraft:blue_stained_glass
+fill -70 66 32402 -70 117 32402 minecraft:blue_stained_glass
+fill -61 66 32402 -61 117 32402 minecraft:blue_stained_glass
+fill -70 66 32404 -70 117 32404 minecraft:blue_stained_glass
+fill -61 66 32404 -61 117 32404 minecraft:blue_stained_glass
+fill -70 69 32399 -61 69 32405 minecraft:gray_concrete
+fill -70 73 32399 -61 73 32405 minecraft:gray_concrete
+fill -70 77 32399 -61 77 32405 minecraft:gray_concrete

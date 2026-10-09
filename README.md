@@ -81,6 +81,19 @@ Tout se lance depuis un menu cliquable — aucun bloc de commande, aucune constr
 
 ---
 
+## 🚓 Neo GTA (monde libre)
+
+Un monde à part (dimension `mg:gta`), hors des mini-jeux : on y entre par le **portail jaune et noir le long de l'avenue nord du spawn** et on en sort par la plaque 🚪 près du carrefour de départ, l'objet 🏠 ou le menu (Échap → ≡ Menu). Les joueurs de Neo GTA sont exclus des mini-jeux, comme en survie. **Ajouter la dimension demande un redémarrage du serveur** (pas un simple `/reload`) ; la ville se construit une fois (~2 min), puis se répare toute seule quand le dernier joueur s'en va.
+
+- **La ville** : celle du Bombardier, avec circulation (voitures PNJ qui roulent à droite, s'arrêtent, klaxonnent ; accroupi à côté pour en **voler** une), 40 passants qui fuient les coups de feu, 16 vraies voitures pilotables, 4 hélicos, avion.
+- **Armes** : batte et pistolet au départ, quelques armes gratuites dans la rue, **armurerie** payante (mitraillette, fusil à pompe, fusil, sniper avec lunette accroupi, Ray Gun, lance-roquettes qui détruit les immeubles). Chargeurs doublés.
+- **Argent** (💵, gardé d'une visite à l'autre, classement « les plus riches » sur le tableau du lobby) : braquages accroupi avec une arme (passant 2 s, 6 commerces 5 s, banque 15 s), **missions** au 📱 téléphone (livraison, contrat, contre-la-montre), valises, joueurs, casino (machines à sous, roulette).
+- **Police** : ★ à ★★★★★ (passants, policiers, braquages) ; policiers armés, voitures de police à 2 ★, SWAT à 3 ★, barrages à 4 ★, hélico à 5 ★ ; les étoiles ne baissent que loin des policiers. **WASTED** → hôpital, **BUSTED** → commissariat, 25 % de l'argent tombe en liasse.
+- **Concession** (moto, muscle car, supercar, hélico, avion), 🔥 nitro / 📯 klaxon, 🎨 peinture au garage. **Neo Hills** : la villa des joueurs sur la colline au nord (manoir détaillé, garage, piscine, tennis, hélistation) ; tout ce qui a été acheté une fois y est gratuit pour tout le monde.
+- **Lieux** : armurerie, banque, concession, aérodrome, casino, boîte de nuit (piste animée, musique), hôpital, commissariat, 6 commerces aménagés.
+- **Interface** (resource pack) : étoiles de recherche, viseur, dollars en chiffres verts, carte (case 9) et mini-carte, radio dans les véhicules.
+- Générateurs : `tools/arcade/gen_bomber.py` (ville), `gen_villa.py` (Neo Hills), `gen_gta.py` + `gta_plus.py` (jeu), dans cet ordre.
+
 ## 🏅 Classement général
 
 Chaque joueur a un **score général** (`mg.gen`) = 10 × parties jouées + 50 × victoires + 2 × kills, et un **niveau** (`mg.lvl`) :
@@ -228,7 +241,7 @@ Chaque île a son **VILLAGEOIS BOUTIQUE** : fais un clic droit dessus pour écha
 Le dossier `resourcepack/` (zip prêt : `releases/neomc_resourcepack.zip`) ajoute un kart 3D à la couleur du pilote, des icônes pixel art pour les 19 objets du Kart et des boîtes ? arc-en-ciel. Tout est dans l'espace de noms `mg` : aucune texture vanilla n'est remplacée, la survie n'est pas touchée.
 
 - **Solo / test** : copier le zip dans `.minecraft/resourcepacks` et l'activer.
-- **Serveur** : héberger le zip (lien direct) puis dans `server.properties` : `resource-pack=<lien>`, `resource-pack-sha1=<empreinte affichée par le générateur>`, et éventuellement `require-resource-pack=true`.
+- **Serveur (envoi automatique à la connexion)** : le dépôt est public, le zip se télécharge directement. Dans `server.properties` : `resource-pack=https://raw.githubusercontent.com/FabPINGRET/NeoMC_Mini-jeux-/main/releases/neomc_resourcepack.zip`, `resource-pack-sha1=<empreinte affichée par le générateur>` (à mettre à jour à chaque nouvelle version du pack, puis redémarrer), et éventuellement `require-resource-pack=true`.
 - **Modèles activés par défaut** : prévu pour `require-resource-pack=true` (tout le monde a le pack). Sans pack imposé, `/function mg:rp_off` revient aux visuels vanilla (sinon les joueurs sans pack voient des cubes violets) ; `/function mg:rp_on` pour réactiver.
 - **Régénérer** : `python tools/resourcepack/gen_rp.py .`
 
