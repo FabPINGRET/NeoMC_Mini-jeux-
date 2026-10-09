@@ -1,0 +1,13 @@
+# Avancement de la génération (admins)
+tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Génération en cours : ","color":"gray"},{"score":{"name":"$swn","objective":"mg.st"},"color":"yellow","bold":true},{"text":" / 11 — reste :","color":"gray"}]
+execute unless function mg:core/setup_ok_0 run tellraw @a[tag=mg.admin] [{"text":"   • Spawn","color":"yellow"}]
+execute unless function mg:core/setup_ok_1 run tellraw @a[tag=mg.admin] [{"text":"   • Buffet","color":"yellow"}]
+execute unless function mg:core/setup_ok_2 run tellraw @a[tag=mg.admin] [{"text":"   • Élytres du spawn","color":"yellow"}]
+execute unless function mg:core/setup_ok_3 run tellraw @a[tag=mg.admin] [{"text":"   • Hall des scores","color":"yellow"}]
+execute unless function mg:core/setup_ok_4 run tellraw @a[tag=mg.admin] [{"text":"   • Montagne russe","color":"yellow"}]
+execute unless function mg:core/setup_ok_5 run tellraw @a[tag=mg.admin] [{"text":"   • Plots","color":"yellow"}]
+execute unless function mg:core/setup_ok_6 run tellraw @a[tag=mg.admin] [{"text":"   • Mini Party","color":"yellow"}]
+execute unless function mg:core/setup_ok_7 run tellraw @a[tag=mg.admin] [{"text":"   • Kart","color":"yellow"}]
+execute unless function mg:core/setup_ok_8 run tellraw @a[tag=mg.admin] [{"text":"   • Dropper aventure","color":"yellow"}]
+execute unless function mg:core/setup_ok_9 run tellraw @a[tag=mg.admin] [{"text":"   • Élytra","color":"yellow"}]
+execute unless function mg:core/setup_ok_10 run tellraw @a[tag=mg.admin] [{"text":"   • Course d'élytres","color":"yellow"}]

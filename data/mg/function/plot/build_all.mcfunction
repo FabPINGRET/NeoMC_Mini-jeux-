@@ -17,3 +17,4 @@ function mg:plot/build_one {n:15,lx:89.5,lz:-36.5,wx1:77,wx2:101,wz1:-49,wz2:-25
 function mg:plot/forceload_remove
 function mg:core/forceloads
 tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Plots construits.","color":"green"}]
+data modify storage mg:setup plot set value 1b

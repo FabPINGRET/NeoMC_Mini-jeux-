@@ -22,6 +22,8 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+schedule clear mg:core/setup_watch
+data remove storage mg:setup plot
 scoreboard objectives remove mg.rt
 scoreboard objectives remove mg.rts
 scoreboard objectives remove mg.rtn
