@@ -1,5 +1,5 @@
-"""Decors et objets du Canyon du Couchant : cheminees de fee, arches, viaduc, crete, depart. (Les cadres des anneaux
-et des portiques sont dans frames.py, la ville fantome dans town_canyon.py.) Tout ce qui est solide est enregistre
+"""Decors et objets du Canyon du Couchant : cheminees de fee, arches, viaduc, chevalet de mine, depart. (Les cadres des
+anneaux et des portiques sont dans frames.py, la ville fantome dans town_canyon.py, la galerie de mine dans tunnel_canyon.py.) Tout ce qui est solide est enregistre
 dans le World pour que le pilote automatique le voie.
 Python stdlib uniquement (compatible 3.8).
 """
@@ -33,7 +33,8 @@ def near_path(x, z, r, y_top, path, margin=10):
 
 
 def hoodoos(w, strata, path, rings, golds):
-    """Slalom : une paire de cheminees autour de chacun des anneaux 2 a 4, puis des cheminees decoratives dans le canyon."""
+    """Slalom : une paire de cheminees (a +-15 de l'anneau, juste avant son plan) pour chacun des anneaux 2 a 6, puis des
+    cheminees decoratives dans le canyon (jamais dans la faille ni dans la galerie de mine)."""
     rnd = random.Random(1860)
     placed = [(gx, gz, 5) for gx, gy, gz in golds]       # (x, z, r) : les anneaux d'or comptent comme des obstacles
 
@@ -45,15 +46,15 @@ def hoodoos(w, strata, path, rings, golds):
         hoodoo(w, strata, x, z, base, top, rs, rc)
         placed.append((x, z, rc))
 
-    for rx, ry, rz, zone in rings[1:4]:
+    for rx, ry, rz, zone in rings[1:6]:
         for side in (-1, 1):
-            x, z = rx + 6, rz + side * 19
+            x, z = rx - 8, rz + side * 15
             put(x, z, 2, 4, int(path.y(x)) + rnd.randint(2, 9))
     tries = 0
     while len(placed) < 44 + len(golds) and tries < 4000:
         tries += 1
         x = rnd.randint(90, 640) if rnd.random() < 0.8 else rnd.randint(640, 900)
-        if any(abs(x - r[0]) < 10 for r in rings if r[3] in ('arch', 'viaduct')) or 540 < x < 580 or 880 < x < 904:
+        if any(abs(x - r[0]) < 10 for r in rings if r[3] in ('arch', 'viaduct')) or 540 < x < 580 or 595 < x < 630 or 700 < x < 904:
             continue
         hw = C.T.lerp_pts(C.HALFW, x)
         z = C.CZ + int(C.lat(x)) + rnd.randint(int(-hw + 10), int(hw - 10))
@@ -72,9 +73,9 @@ def hoodoos(w, strata, path, rings, golds):
 
 # ---------------------------------------------------------------- arches (portails de roche au-dessus du canyon)
 def arch(w, path, x, cy, cz):
-    """Aileron de roche en travers du canyon, epais de 12, perce d'un portail elliptique (largeur 34, couronne a cy+15)
+    """Aileron de roche en travers du canyon, epais de 12, perce d'un portail elliptique etroit (largeur 24, couronne a cy+11)
     dans lequel s'inscrit l'anneau : piles de chaque cote, voute au-dessus."""
-    a, b, y_top = 17.0, 14.0, cy + 27
+    a, b, y_top = 12.0, 10.0, cy + 27
     hw = C.T.lerp_pts(C.HALFW, x) + 8
     for i in range(w.nx):
         xc = w.cell_x(i) + 2
@@ -89,17 +90,6 @@ def arch(w, path, x, cy, cz):
                 w.add(i, j, int(cy + 1 + b * math.sqrt(1 - (dz / a) ** 2)) + 2, y_top)
             elif w.top(i, j) < y_top:
                 w.add(i, j, w.top(i, j), y_top)
-
-
-def ridge(w, x, crest):
-    """Crete triangulaire en travers du canyon (sommet plat de 8 blocs, flancs a 2,5 pour 1)."""
-    for i in range(w.nx):
-        xc = w.cell_x(i) + 2
-        d = max(0, abs(xc - x) - 4)
-        h = int(crest - 2.5 * d)
-        for j in range(w.nz):
-            if h > w.top(i, j):
-                w.add(i, j, w.top(i, j), h)
 
 
 # ---------------------------------------------------------------- viaduc ferroviaire
@@ -126,6 +116,31 @@ def viaduct(w, path, x, cy, cz):
     w.box(x - 1, yd + 4, cz + 16, x + 1, yd + 8, cz + 19, 'brown_terracotta')
     w.box(x - 1, yd + 4, cz - 22, x + 1, yd + 7, cz - 12, 'red_terracotta')
     w.box(x - 1, yd + 4, cz - 36, x + 1, yd + 7, cz - 25, 'orange_terracotta')
+
+
+# ---------------------------------------------------------------- chevalet de mine
+def trestle(w, path, x, cy, cz):
+    """Chevalet de mine en bois en travers du canyon (voie le long de z) : l'anneau passe sous le tablier, entre deux files
+    de poteaux ; longerons, entretoises et wagonnet sur la voie."""
+    yd = cy + 12
+    hw = int(C.T.lerp_pts(C.HALFW, x)) + 6
+    z1, z2 = C.CZ + int(C.lat(x)) - hw, C.CZ + int(C.lat(x)) + hw
+    fl = int(C.floor_y(path, x)) - 3
+    w.box(x - 2, yd, z1, x + 2, yd, z2, 'spruce_planks')
+    w.box(x - 2, yd - 1, z1, x - 2, yd - 1, z2, 'dark_oak_log')
+    w.box(x + 2, yd - 1, z1, x + 2, yd - 1, z2, 'dark_oak_log')
+    w.box(x - 2, yd + 1, z1, x - 2, yd + 1, z2, 'oak_fence', solid=False)
+    w.box(x + 2, yd + 1, z1, x + 2, yd + 1, z2, 'oak_fence', solid=False)
+    w.box(x, yd + 1, z1, x, yd + 1, z2, 'rail', solid=False)
+    for n in range(5):
+        for sgn in (-1, 1):
+            pz = cz + sgn * (12 + 12 * n)
+            if z1 <= pz <= z2:
+                for px in (x - 2, x + 2):
+                    w.box(px, fl, pz, px, yd - 2, pz, 'stripped_oak_log')
+                w.box(x - 1, yd - 2, pz, x + 1, yd - 2, pz, 'oak_planks')                 # chapeau entre les deux poteaux
+                w.box(x - 1, (fl + yd) // 2, pz, x + 1, (fl + yd) // 2, pz, 'oak_planks')    # entretoise
+    w.box(x - 1, yd + 1, cz + 22, x + 1, yd + 3, cz + 28, 'brown_terracotta')             # wagonnet de minerai a l'arret
 
 
 # ---------------------------------------------------------------- depart

@@ -7,6 +7,7 @@ pour tout autre lancement (66, Mini Party) request le remet a 0 : la course tire
 $xc lui-meme et ne passe pas par request : announce, appelee par request seulement, remet donc $xs (drapeau solo) a 0.
 Python stdlib uniquement (compatible 3.8).
 """
+import build_chain as B
 import course_common as CC
 import game as G
 import records as RC
@@ -128,6 +129,7 @@ def uninstall_lines(specs):
            '# pas de build_abort ici : il appelle core/forceloads, qui réactiverait tous les chargements forcés que desinstaller vient de retirer',
            'schedule clear mg:elyrace/build', 'schedule clear mg:elyrace/build_next']
     out += ['schedule clear ' + CC.fn(s, 'build_wait') for s in specs]
+    out += ['schedule clear ' + CC.fn(s, 'clear_%d' % k) for s in specs if hasattr(s, 'CLEAR_Y') for k in range(1, B.n_slices(s) + 1)]
     out += ['# ancien chemin (avant 2a : construction en un seul module, sans c<N>/) : un schedule d\'une version précédente peut survivre',
             'schedule clear mg:elyrace/build_wait']
     out += ['function mg:elyrace/forget',

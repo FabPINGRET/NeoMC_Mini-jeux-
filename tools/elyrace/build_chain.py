@@ -1,6 +1,7 @@
 """Construction des parcours en tranches (chargees de force une a une, remplies, puis liberees) : fonctions
-mg:elyrace/c<N>/{build, build_start, build_wait, build_<i>, loaded_<i>} propres a chaque parcours, et
-mg:elyrace/{build, build_next, build_abort} communes. Les parcours se construisent l'un apres l'autre : la derniere
+mg:elyrace/c<N>/{build, build_start, build_wait, build_<i>, loaded_<i>} propres a chaque parcours (plus clear_<i> si le
+parcours declare CLEAR_Y : nettoyage de la tranche par passes avant de la construire), et mg:elyrace/{build, build_next,
+build_abort} communes. Les parcours se construisent l'un apres l'autre : la derniere
 tranche de chacun pose son drapeau (spec.FLAG, stockage mg:elyrace), puis appelle build_next.
 Python stdlib uniquement (compatible 3.8).
 """
@@ -9,6 +10,7 @@ import terrain as T
 
 SLICE = 96                          # largeur d'une tranche de construction (6 chunks)
 SLICE_BUDGET = 20000                # commandes par tranche (limite de la chaine de commandes : 65 536)
+CLEAR_STEP = 16                     # hauteur d'une passe de nettoyage (blocs) : une tranche de 96 x 16 x ~300 = ~0,5 M blocs par tick
 PROBE_Y = 310                       # au-dessus de tout decor : jamais de bedrock a cette altitude
 IN_GAME = 'execute if score $game mg.st matches 66 unless score $state mg.st matches 0 run '    # une course tourne : sa zone de depart est chargee par fl_add
 BUSY = 'execute unless score $state mg.st matches 0 run '      # une partie quelconque tourne (course, solo, autre jeu) : la construction attend
@@ -36,6 +38,12 @@ def slice_commands(c, k):
     return out
 
 
+def clear_passes(spec):
+    """Passes de nettoyage d'un parcours qui declare CLEAR_Y : [(y bas, y haut)] de CLEAR_STEP blocs."""
+    lo, hi = spec.CLEAR_Y
+    return [(y, min(y + CLEAR_STEP - 1, hi)) for y in range(lo, hi + 1, CLEAR_STEP)]
+
+
 def forceload(op, spec, k):
     xa, xb = slice_box(spec, k)
     return 'forceload %s %d %d %d %d' % (op, xa, spec.Z0, xb, spec.Z1 - 1)
@@ -53,6 +61,31 @@ def loaded_lines(spec, k):
     return out
 
 
+def clear_lines(spec, k):
+    """c<N>/clear_<k> : nettoie la tranche k (fill air strict sur toute la bande z) par passes, une par tick ($xcp = numero de la
+    passe, 0 = pas commence) ; la derniere passe appelle build_<k>. Un parcours reconstruit sur une ancienne version n'en garde
+    aucun reste. Une partie qui demarre suspend le nettoyage (comme build_wait) ; la chaine s'arrete avec build_abort / uninstall."""
+    xa, xb = slice_box(spec, k)
+    me, passes = CC.fn(spec, 'clear_%d' % k), clear_passes(spec)
+    out = ['# Tranche %d du parcours %d : nettoyage en %d passes de %d blocs de haut (y %d à %d), une par tick, puis construction (build_%d)'
+           % (k, spec.NUM, len(passes), CLEAR_STEP, spec.CLEAR_Y[0], spec.CLEAR_Y[1], k),
+           '# $xcp = passe en cours (0 = pas commencée) ; build_abort remet $xcp à 0 et arrête la suite (schedule clear), uninstall arrête la suite',
+           '# « strict » : pas de mise à jour des voisins, les rails ne tombent pas en objets ; les objets éventuels sont tués avant la construction',
+           '# une partie démarre : on suspend le nettoyage (et la construction qui suit) jusqu\'à ce que $state revienne à 0',
+           BUSY + 'return run schedule function %s 20t' % me,
+           'execute if score $xcp mg.st matches 0 run scoreboard players set $xcp mg.st 1']
+    for p, (ya, yb) in enumerate(passes, 1):
+        for part in T.split_fill(('fill', xa, ya, spec.Z0, xb, yb, spec.Z1 - 1, 'air strict')):
+            out.append('execute if score $xcp mg.st matches %d run %s' % (p, T.cmd_text(part)))
+    lo, hi = spec.CLEAR_Y
+    out += ['scoreboard players add $xcp mg.st 1',
+            'execute if score $xcp mg.st matches ..%d run return run schedule function %s 1t' % (len(passes), me),
+            'scoreboard players set $xcp mg.st 0',
+            'kill @e[type=item,x=%d,y=%d,z=%d,dx=%d,dy=%d,dz=%d]' % (xa, lo, spec.Z0, xb - xa, hi - lo, spec.Z1 - 1 - spec.Z0),
+            'function ' + CC.fn(spec, 'build_%d' % k)]
+    return out
+
+
 def course_build_lines(spec):
     """c<N>/build (OP) : reconstruit ce parcours seul."""
     return ['# (OP) Reconstruit le parcours %d (%s) seul, en %d tranches de %d blocs (chargées de force une à une)' % (spec.NUM, spec.NAME, n_slices(spec), SLICE),
@@ -64,11 +97,12 @@ def course_build_lines(spec):
 
 
 def build_start_lines(spec):
-    return ['# Démarre la construction du parcours %d : tranche 1 chargée de force, la suite est enchaînée par build_wait' % spec.NUM,
-            'scoreboard players set $xbk mg.st 1',
-            'scoreboard players set $xbw mg.st 0',
-            forceload('add', spec, 1),
-            'schedule function %s 20t' % CC.fn(spec, 'build_wait')]
+    out = ['# Démarre la construction du parcours %d : tranche 1 chargée de force, la suite est enchaînée par build_wait' % spec.NUM,
+           'scoreboard players set $xbk mg.st 1',
+           'scoreboard players set $xbw mg.st 0']
+    if hasattr(spec, 'CLEAR_Y'):
+        out.append('scoreboard players set $xcp mg.st 0')
+    return out + [forceload('add', spec, 1), 'schedule function %s 20t' % CC.fn(spec, 'build_wait')]
 
 
 def build_wait_lines(spec):
@@ -80,9 +114,10 @@ def build_wait_lines(spec):
            '# n\'avance pas (pas de faux build_fail). Choix assumé : la tranche en cours reste chargée de force pendant la pause (la relâcher puis',
            '# la recharger ferait ré-attendre le chargement) ; la pause dure autant que la partie, jusqu\'à ce que $state revienne à 0',
            BUSY + 'return run schedule function %s 20t' % me]
+    first = 'clear_%d' if hasattr(spec, 'CLEAR_Y') else 'build_%d'           # nettoyage d'abord, s'il y en a un
     for k in range(1, n_slices(spec) + 1):
         out.append('execute if score $xbk mg.st matches %d if function %s run return run function %s'
-                   % (k, CC.fn(spec, 'loaded_%d' % k), CC.fn(spec, 'build_%d' % k)))
+                   % (k, CC.fn(spec, 'loaded_%d' % k), CC.fn(spec, first % k)))
     out += ['scoreboard players add $xbw mg.st 1',
             '# 2 minutes sans chargement : message, puis on libère les chargements forcés des tranches et on s\'arrête',
             'execute if score $xbw mg.st matches 120.. run tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] Course d\'élytres : zone pas chargée (parcours %d, tranche ","color":"red"},{"score":{"name":"$xbk","objective":"mg.st"},"color":"red"},{"text":"). Relance /function mg:elyrace/c%d/build.","color":"red"}]'
@@ -130,6 +165,8 @@ def course_files(c):
            'build_fail': build_fail_lines(spec)}
     for k in range(1, n_slices(spec) + 1):
         fns['build_%d' % k] = slice_lines(c, k)
+        if hasattr(spec, 'CLEAR_Y'):
+            fns['clear_%d' % k] = clear_lines(spec, k)
         fns['loaded_%d' % k] = loaded_lines(spec, k)
     return fns
 
@@ -148,6 +185,9 @@ def common_files(specs):
     abort = ['# Arrête la construction : libère les chargements forcés des tranches de tous les parcours puis rétablit ceux du jeu',
              'schedule clear mg:elyrace/build', 'schedule clear mg:elyrace/build_next']
     abort += ['schedule clear ' + CC.fn(s, 'build_wait') for s in specs]
+    abort += ['schedule clear ' + CC.fn(s, 'clear_%d' % k) for s in specs if hasattr(s, 'CLEAR_Y') for k in range(1, n_slices(s) + 1)]
+    if any(hasattr(s, 'CLEAR_Y') for s in specs):
+        abort.append('scoreboard players set $xcp mg.st 0')
     abort += [forceload('remove', s, k) for s in specs for k in range(1, n_slices(s) + 1)]
     abort += ['scoreboard players set $xbk mg.st 0', 'function mg:core/forceloads']
     build = ['# (OP) Reconstruit tous les parcours, l\'un après l\'autre (chacun en tranches chargées de force)',
