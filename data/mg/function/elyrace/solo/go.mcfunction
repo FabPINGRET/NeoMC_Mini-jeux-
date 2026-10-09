@@ -13,5 +13,7 @@ execute if score @s mg.xcr matches 1 run function mg:elyrace/c1/gate_off
 execute if score @s mg.xcr matches 2 run function mg:elyrace/c2/gate_off
 execute if score @s mg.xcr matches 1 run function mg:elyrace/c1/go_text
 execute if score @s mg.xcr matches 2 run function mg:elyrace/c2/go_text
+# gravité de course de son parcours (comme go pour le groupe) ; solo/stop la remet à la normale
+function mg:elyrace/grav_on
 scoreboard players set @s mg.xst 0
 scoreboard players set @s mg.xph 2

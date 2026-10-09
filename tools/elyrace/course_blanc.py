@@ -21,8 +21,9 @@ NAME = 'Pic Blanc'
 ICON, COLOR, STARS = '🏔', 'aqua', 4                      # bouton du menu : icone (menu texte), couleur, difficulte (etoiles sur 4)
 TIP = ('Parcours 2 (haute montagne, ~1100 blocs) : pylônes de téléphérique, col, glacier, crevasse de glace, grotte éclairée, '
        'village d\'arrivée.')
-FLAG = 'c2v2'                                # drapeau de construction (stockage mg:elyrace) : pose par la derniere tranche
-OLD_FLAGS = ('c2v1',)                        # drapeaux des versions precedentes : effaces par elyrace/forget (mondes deja installes)
+FLAG = 'c2v3'                                # drapeau de construction (stockage mg:elyrace) : pose par la derniere tranche
+OLD_FLAGS = ('c2v1', 'c2v2')                 # drapeaux des versions precedentes : effaces par elyrace/forget (mondes deja installes)
+GRAVITY = 0.104                              # gravite de course (attribut minecraft:gravity, blocs/tick^2) : posee au GO, vanilla = 0,08
 CZ = 29600                                   # axe du parcours (z)
 X0, X1 = -16, 1136                           # emprise en x (72 chunks, 12 tranches)
 Z0, Z1 = 29440, 29760                        # emprise en z (20 chunks)
@@ -40,27 +41,29 @@ YPTS = [(24, 282), (100, 258), (330, 208), (520, 172), (760, 128), (960, 96), (1
 
 # anneaux obligatoires : (x, decalage lateral, zone). L'altitude vient du vol de reference.
 RINGS = [
-    (90, 0, 'pylon'), (135, 8, 'pylon'), (180, -8, 'pylon'), (225, 6, 'pylon'), (270, 0, 'pylon'),
-    (325, 0, 'col'), (375, -6, 'col'), (425, 6, 'col'),
+    (90, 0, 'pylon'), (135, 6, 'pylon'), (180, -6, 'pylon'), (225, 5, 'pylon'), (270, 0, 'pylon'),
+    (325, 0, 'col'), (375, -5, 'col'), (425, 5, 'col'),
     (485, 0, 'glacier'),
-    (545, -3, 'crevasse'), (595, 3, 'crevasse'), (645, -3, 'crevasse'), (695, 3, 'crevasse'),
+    (545, -2, 'crevasse'), (595, 2, 'crevasse'), (645, -2, 'crevasse'), (695, 2, 'crevasse'),
     (765, 0, 'glacier'),
     (855, 0, 'cave'), (910, 0, 'cave'),
-    (1010, 0, 'village'), (1050, 0, 'village'), (1082, 4, 'village'), (1112, 0, 'village'),
+    (1010, 0, 'village'), (1050, 0, 'village'), (1082, 3, 'village'), (1112, 0, 'village'),
 ]
 CPS = [4, 8, 13, 17]                         # un point de reprise apres ces anneaux (numeros d'anneau)
-GOLDS = [(346, 9), (450, 11), (792, -11)]   # anneaux d'or : (x, decalage lateral) ; altitude = trajectoire - GOLD_DY
+GOLDS = [(805, -9)]   # anneaux d'or : (x, decalage lateral) ; altitude = trajectoire - GOLD_DY
 GOLD_STRICT = True                           # verify.check_golds : detour >= 8 blocs hors de la ligne anneau a anneau, rampes limitees a la distance
 # des anneaux voisins, vol qui finit le parcours et franchit tous les anneaux proches. Il faut >= 26 blocs avant l'anneau suivant pour
-# revenir et >= 20 apres le precedent, un decalage >= 9 pour ne pas frotter l'enveloppe des vols a +-3 (a 450 : 11, le cadre d'un or a +10
-# touche le vol a +3) et une vallee large d'au moins decalage + 6 : (346, +9) col, (450, +11) fin du col, (792, -11) second glacier.
-# Dans la grotte aucun or ne tient (demi-largeur 12 : un decalage >= 9 en sort) ni a sa sortie (le detour ne rejoint pas l'anneau du
-# village a 1010 : il le manque avec un decalage de 5 a 6).
+# revenir et >= 20 apres le precedent, un decalage >= 9 pour ne pas frotter l'enveloppe des vols a +-3 et une vallee large d'au moins
+# decalage + 6 : (805, -9) second glacier. Gravite 0,104 et turbo : les vols sont plus rapides
+# (3,5 b/tick), le detour demande ~40 blocs libres de chaque cote et le vol a plusieurs ors tombe sous le bas du cadre suivant. Balayage de
+# verify.check_golds (anneaux alignes, x de 300 a 980, decalages +-8 a +-12 ; (805, -9) passe aussi avec le slalom actuel) : seuls ~720, 795-810 et 945-950 passent chacun seul, mais aucune paire ne passe
+# le vol qui les prend tous : un seul or.
 GOLD_DY = 2                                  # les anneaux d'or sont 2 blocs sous la trajectoire : sur une pente douce, le detour
                                              # (pilote a anticipation reduite) vole ~2,2 blocs plus bas que la ligne de reference
-# a revoir avant d'activer WIND (ors en 450 et 792)
+# a revoir avant d'activer WIND (or en 805)
 WINDS = [(205, 10), (450, -10), (790, 12)]   # anneaux de vent (detours bonus) : (x, decalage lateral) ; generes seulement si wind.WIND
 R_UP = {n: 28 for n in CPS}                  # hauteur de reapparition au-dessus du centre de l'anneau de chaque point de reprise
+R_UP[17] = 30                                # apres l'anneau 17 le suivant est a 30 blocs (decalage +3) : 28 rate au delai de chute de verify (RESPAWN_DELAY), 30 passe
 
 
 def ydes(x):
@@ -81,7 +84,7 @@ def reference_waypoints(step=12):
 
 def start_state():
     """Etat du joueur qui saute du sommet : il a couru jusqu'au bord, chute 8 ticks avant d'ouvrir ses elytres."""
-    return G.State(EDGE_X + 0.3, START_Y, CZ + 0.5, 0.28, 0.0, 0.0)
+    return G.State(EDGE_X + 0.3, START_Y, CZ + 0.5, 0.28, 0.0, 0.0, g=GRAVITY)
 
 
 # ---------------------------------------------------------------- relief

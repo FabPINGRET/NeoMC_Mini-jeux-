@@ -1,4 +1,6 @@
 # @s = joueur : le met a sa place de depart (mg.ri), face au portillon ; #tp = 1 si la teleportation a reussi (voir respawn)
+# origine du balayage remise a zero (teleportation : voir respawn)
+scoreboard players set @s mg.xq1 -1000000
 execute if score @s mg.ri matches 1 store success score #tp mg.st run tp @s 25.5 282 29590.5 270 0
 execute if score @s mg.ri matches 2 store success score #tp mg.st run tp @s 25.5 282 29593.5 270 0
 execute if score @s mg.ri matches 3 store success score #tp mg.st run tp @s 25.5 282 29596.5 270 0

@@ -31,6 +31,7 @@ import records as RC               # noqa: E402
 import rings as R                  # noqa: E402
 import solo as S                   # noqa: E402
 import solo_run as SR              # noqa: E402
+import sweep as SW                 # noqa: E402
 
 SPECS = [course_canyon, course_blanc]          # un module par parcours, dans l'ordre des NUM
 
@@ -41,6 +42,7 @@ def all_files(courses):
     files = {}
     fns = G.functions(specs)
     fns.update(D.functions(specs))
+    fns.update(SW.functions())
     fns.update(B.common_files(specs))
     fns.update(S.functions(specs))
     fns.update(SR.functions(specs))

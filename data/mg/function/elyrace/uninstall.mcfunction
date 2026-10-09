@@ -34,6 +34,8 @@ clear @a minecraft:elytra[minecraft:custom_data~{mg_elyr:1b}]
 clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_elyr:1b}]
 tag @a remove mg.xw1
 tag @a remove mg.xtp
+# course de groupe en cours : gravité normale pour ses participants (mg.xcr : lu avant le retrait des objectifs, sans tag mg.play : desinstaller l'a déjà retiré ; le solo la remet dans solo/stop)
+execute as @a[scores={mg.xcr=1..}] run function mg:core/attr_reset_g
 # contre-la-montre solo en cours : solo/stop (tags, scores de course, gel, pause d'avant, retour au lobby ; il tourne ici, avant le retrait des
 # objectifs de l'élytre ; mg.st / mg.t / mg.deaths sont déjà retirés par desinstaller : les écritures de score dessus (délai mg.xse d'après $tc, vote rendu,
 # morts remises à 0) échouent sans bruit) ; dans l'overworld, où est le lobby (tp et spawnpoint de reset_player) ; puis filet sur les tags
@@ -55,6 +57,10 @@ scoreboard objectives remove mg.xf
 scoreboard objectives remove mg.xb1
 scoreboard objectives remove mg.xb2
 scoreboard objectives remove mg.xb3
+scoreboard objectives remove mg.xq1
+scoreboard objectives remove mg.xq2
+scoreboard objectives remove mg.xq3
+scoreboard objectives remove mg.xu
 # parcours et état du solo par joueur, trigger du solo, records par parcours (objectifs et détenteur figé dans le hall)
 scoreboard objectives remove mg.xcr
 scoreboard objectives remove mg.xph

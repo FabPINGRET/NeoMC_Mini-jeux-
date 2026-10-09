@@ -1,82 +1,69 @@
 # Course d'élytres : parcours 1, tranche 10 / 11 (x 848 à 943)
-fill 848 145 26972 859 147 26975 minecraft:granite
-fill 848 145 26968 859 147 26971 minecraft:granite
-fill 848 86 27012 887 88 27015 minecraft:yellow_terracotta
+fill 848 145 26972 867 147 26975 minecraft:granite
+fill 848 86 26980 891 88 26983 minecraft:yellow_terracotta
+fill 848 89 26980 891 92 26983 minecraft:orange_terracotta
+fill 848 103 27016 887 106 27019 minecraft:granite
 fill 848 107 27016 887 110 27019 minecraft:brown_terracotta
-fill 848 111 27016 851 114 27019 minecraft:red_sandstone
-fill 848 145 27020 859 147 27023 minecraft:granite
+fill 848 111 27016 855 114 27019 minecraft:red_sandstone
+fill 848 145 27020 867 147 27023 minecraft:granite
+fill 848 145 26968 867 147 26971 minecraft:granite
+fill 848 86 27012 887 88 27015 minecraft:yellow_terracotta
 fill 848 89 27012 887 92 27015 minecraft:orange_terracotta
 fill 848 93 27012 887 97 27015 minecraft:red_terracotta
 fill 848 98 27012 887 102 27015 minecraft:yellow_terracotta
 fill 848 103 27012 887 106 27015 minecraft:granite
-fill 848 145 26964 859 147 26967 minecraft:granite
 fill 848 107 27012 887 110 27015 minecraft:brown_terracotta
-fill 848 111 27012 851 114 27015 minecraft:red_sandstone
-fill 848 145 27016 859 147 27019 minecraft:granite
-fill 848 86 26980 891 88 26983 minecraft:yellow_terracotta
-fill 848 103 27016 887 106 27019 minecraft:granite
-fill 848 89 26980 891 92 26983 minecraft:orange_terracotta
-fill 848 145 26848 859 147 26963 minecraft:granite
+fill 848 111 27012 855 114 27015 minecraft:red_sandstone
+fill 848 145 27016 867 147 27019 minecraft:granite
+fill 848 98 27016 887 102 27019 minecraft:yellow_terracotta
 fill 848 93 26980 891 97 26983 minecraft:red_terracotta
-fill 848 145 27024 859 147 27151 minecraft:granite
-fill 848 145 26976 859 147 27015 minecraft:granite
 fill 848 98 26980 887 102 26983 minecraft:yellow_terracotta
+fill 848 145 26848 867 147 26967 minecraft:granite
+fill 848 145 26976 867 147 27015 minecraft:granite
 fill 848 103 26980 887 106 26983 minecraft:granite
 fill 848 107 26980 887 110 26983 minecraft:brown_terracotta
-fill 848 111 26980 851 114 26983 minecraft:red_sandstone
-fill 848 111 27008 851 114 27011 minecraft:red_sandstone
-fill 848 111 26984 851 114 27007 minecraft:red_sandstone
+fill 848 111 26980 855 114 26983 minecraft:red_sandstone
+fill 848 86 26984 887 88 26987 minecraft:yellow_terracotta
+fill 848 111 27008 855 114 27011 minecraft:red_sandstone
 fill 848 86 27016 887 88 27019 minecraft:yellow_terracotta
 fill 848 89 27016 887 92 27019 minecraft:orange_terracotta
 fill 848 93 27016 887 97 27019 minecraft:red_terracotta
-fill 848 98 27016 887 102 27019 minecraft:yellow_terracotta
-fill 848 115 27016 851 116 27019 minecraft:white_terracotta
-fill 848 142 26848 851 144 27151 minecraft:orange_terracotta
-fill 848 86 26984 887 88 26987 minecraft:yellow_terracotta
+fill 848 145 27024 867 147 27151 minecraft:granite
 fill 848 89 26984 887 92 26987 minecraft:orange_terracotta
 fill 848 93 26984 887 97 26987 minecraft:red_terracotta
 fill 848 98 26984 887 102 26987 minecraft:yellow_terracotta
 fill 848 103 26984 887 106 26987 minecraft:granite
 fill 848 107 26984 887 110 26987 minecraft:brown_terracotta
-fill 848 79 26980 855 80 27019 minecraft:white_terracotta
+fill 848 111 26984 855 114 27007 minecraft:red_sandstone
+fill 848 86 26988 851 87 27011 minecraft:yellow_terracotta
+fill 848 115 27016 855 116 27019 minecraft:white_terracotta
+fill 848 142 26848 859 144 27151 minecraft:orange_terracotta
+fill 848 115 26980 855 116 27015 minecraft:white_terracotta
+fill 848 79 26980 859 80 27019 minecraft:white_terracotta
 fill 848 81 26980 891 85 26983 minecraft:terracotta
 fill 848 81 26984 887 85 26987 minecraft:terracotta
-fill 848 115 26980 851 116 27015 minecraft:white_terracotta
-fill 848 108 26988 859 110 27011 minecraft:brown_terracotta
-fill 848 81 26988 863 84 27011 minecraft:terracotta
-fill 848 81 27012 887 85 27019 minecraft:terracotta
-fill 852 139 26848 867 139 27151 minecraft:white_terracotta
-fill 852 140 26848 875 144 26999 minecraft:orange_terracotta
-fill 852 140 27000 875 144 27151 minecraft:orange_terracotta
-fill 852 111 26980 867 113 27019 minecraft:red_sandstone
-fill 856 76 26980 871 77 27019 minecraft:granite
-fill 856 78 26980 891 80 26983 minecraft:white_terracotta
-fill 856 78 26984 887 80 26987 minecraft:white_terracotta
-fill 856 78 26988 879 80 27019 minecraft:white_terracotta
-fill 860 105 26988 875 106 27011 minecraft:granite
-fill 860 107 26988 887 110 27011 minecraft:brown_terracotta
-fill 864 81 26988 879 81 27011 minecraft:terracotta
-fill 868 136 26848 919 139 26919 minecraft:white_terracotta
-fill 868 136 26920 915 139 26923 minecraft:white_terracotta
-fill 868 136 26924 911 139 26931 minecraft:white_terracotta
-fill 868 136 26932 907 139 26939 minecraft:white_terracotta
-fill 868 136 26940 903 139 26951 minecraft:white_terracotta
-fill 868 136 26952 899 139 26959 minecraft:white_terracotta
-fill 868 136 26960 895 139 26967 minecraft:white_terracotta
-fill 868 136 26968 891 139 26975 minecraft:white_terracotta
-fill 868 136 26976 887 139 27151 minecraft:white_terracotta
-fill 872 73 26980 887 74 27007 minecraft:light_gray_terracotta
-fill 872 75 26980 895 77 27015 minecraft:granite
-fill 872 73 27008 883 74 27019 minecraft:light_gray_terracotta
-fill 872 75 27016 891 77 27019 minecraft:granite
-fill 876 140 26848 919 141 26855 minecraft:orange_terracotta
-fill 876 140 26856 903 141 26859 minecraft:orange_terracotta
-fill 876 140 26860 899 141 26871 minecraft:orange_terracotta
-fill 876 140 26872 895 141 26967 minecraft:orange_terracotta
-fill 876 140 26968 891 141 26975 minecraft:orange_terracotta
-fill 876 140 26976 887 141 27151 minecraft:orange_terracotta
-fill 876 102 26988 887 102 27011 minecraft:yellow_terracotta
-fill 876 103 26988 887 106 27011 minecraft:granite
+fill 848 81 26988 851 85 27019 minecraft:terracotta
+fill 848 108 26988 863 110 27011 minecraft:brown_terracotta
+fill 852 81 26988 867 84 27011 minecraft:terracotta
+fill 852 81 27012 887 85 27019 minecraft:terracotta
+fill 856 111 26980 871 113 27019 minecraft:red_sandstone
+fill 860 139 26848 875 139 27151 minecraft:white_terracotta
+fill 860 140 26848 883 144 26999 minecraft:orange_terracotta
+fill 860 140 27000 883 144 27151 minecraft:orange_terracotta
+fill 860 76 26980 875 77 27019 minecraft:granite
+fill 860 78 26980 891 80 26983 minecraft:white_terracotta
+fill 860 78 26984 887 80 26987 minecraft:white_terracotta
+fill 860 78 26988 883 80 27019 minecraft:white_terracotta
+fill 864 105 26988 883 106 27011 minecraft:granite
+fill 864 107 26988 887 110 27011 minecraft:brown_terracotta
+fill 868 81 26988 883 81 27011 minecraft:terracotta
+fill 876 136 26848 923 139 26863 minecraft:white_terracotta
+fill 876 136 26864 899 139 26879 minecraft:white_terracotta
+fill 876 136 26880 895 139 26967 minecraft:white_terracotta
+fill 876 136 26968 891 139 26975 minecraft:white_terracotta
+fill 876 136 26976 887 139 27151 minecraft:white_terracotta
+fill 876 73 26980 887 74 27019 minecraft:light_gray_terracotta
+fill 876 75 26980 895 77 27019 minecraft:granite
 fill 880 118 26968 883 118 26971 minecraft:white_terracotta
 fill 880 119 26968 895 121 26971 minecraft:terracotta
 fill 880 122 26968 895 127 26971 minecraft:yellow_terracotta
@@ -104,32 +91,36 @@ fill 880 107 26976 891 110 26979 minecraft:brown_terracotta
 fill 880 111 26976 891 114 26979 minecraft:red_sandstone
 fill 880 122 26976 887 127 27031 minecraft:yellow_terracotta
 fill 880 128 26976 887 130 27031 minecraft:white_terracotta
-fill 880 131 26976 887 135 27035 minecraft:red_sandstone
+fill 880 131 26976 887 135 27031 minecraft:red_sandstone
 fill 880 111 26980 887 114 27031 minecraft:red_sandstone
 fill 880 115 26980 887 118 27031 minecraft:white_terracotta
 fill 880 119 26980 887 121 27031 minecraft:terracotta
-fill 880 78 26988 895 78 27011 minecraft:white_terracotta
-fill 880 78 27012 887 80 27023 minecraft:white_terracotta
-fill 880 73 27020 883 74 27023 minecraft:light_gray_terracotta
+fill 880 73 27020 887 74 27023 minecraft:light_gray_terracotta
 fill 880 75 27020 895 77 27023 minecraft:granite
+fill 880 78 27020 895 80 27023 minecraft:white_terracotta
 fill 880 81 27020 891 85 27027 minecraft:terracotta
 fill 880 86 27020 891 88 27027 minecraft:yellow_terracotta
 fill 880 89 27020 891 92 27027 minecraft:orange_terracotta
 fill 880 93 27020 891 97 27027 minecraft:red_terracotta
 fill 880 98 27020 891 102 27027 minecraft:yellow_terracotta
-fill 880 103 27020 891 106 27031 minecraft:granite
-fill 880 107 27020 887 110 27031 minecraft:brown_terracotta
+fill 880 103 27020 891 106 27027 minecraft:granite
+fill 880 107 27020 891 110 27031 minecraft:brown_terracotta
 fill 880 79 27024 883 80 27027 minecraft:white_terracotta
-fill 880 130 27032 883 130 27035 minecraft:white_terracotta
+fill 880 106 27028 883 106 27031 minecraft:granite
+fill 880 133 27032 883 135 27035 minecraft:red_sandstone
+fill 884 140 26848 895 141 26855 minecraft:orange_terracotta
+fill 884 140 26856 891 141 26871 minecraft:orange_terracotta
+fill 884 140 26872 887 141 27151 minecraft:orange_terracotta
 fill 884 127 26960 887 127 26963 minecraft:yellow_terracotta
 fill 884 128 26960 899 130 26963 minecraft:white_terracotta
-fill 884 131 26960 895 135 26967 minecraft:red_sandstone
+fill 884 131 26960 899 135 26963 minecraft:red_sandstone
 fill 884 109 26964 887 110 26967 minecraft:brown_terracotta
 fill 884 111 26964 899 114 26967 minecraft:red_sandstone
 fill 884 115 26964 899 118 26967 minecraft:white_terracotta
 fill 884 119 26964 895 121 26967 minecraft:terracotta
 fill 884 122 26964 895 127 26967 minecraft:yellow_terracotta
 fill 884 128 26964 895 130 26967 minecraft:white_terracotta
+fill 884 131 26964 895 135 26967 minecraft:red_sandstone
 fill 884 91 26968 887 92 26971 minecraft:orange_terracotta
 fill 884 93 26968 899 97 26971 minecraft:red_terracotta
 fill 884 98 26968 899 102 26971 minecraft:yellow_terracotta
@@ -142,31 +133,34 @@ fill 884 75 26972 899 77 26975 minecraft:granite
 fill 884 78 26972 899 80 26975 minecraft:white_terracotta
 fill 884 81 26972 899 85 26975 minecraft:terracotta
 fill 884 86 26972 899 88 26975 minecraft:yellow_terracotta
-fill 884 89 26972 895 92 26975 minecraft:orange_terracotta
+fill 884 89 26972 899 92 26975 minecraft:orange_terracotta
 fill 884 93 26972 895 97 26975 minecraft:red_terracotta
-fill 884 70 27008 891 70 27027 minecraft:terracotta
-fill 884 71 27008 903 74 27011 minecraft:light_gray_terracotta
-fill 884 71 27012 899 74 27027 minecraft:light_gray_terracotta
+fill 884 78 26988 895 78 27011 minecraft:white_terracotta
+fill 884 102 26988 887 102 27011 minecraft:yellow_terracotta
+fill 884 103 26988 887 106 27011 minecraft:granite
+fill 884 78 27012 887 80 27019 minecraft:white_terracotta
+fill 884 73 27024 887 74 27027 minecraft:light_gray_terracotta
 fill 884 75 27024 899 77 27027 minecraft:granite
-fill 884 78 27024 899 80 27031 minecraft:white_terracotta
-fill 884 76 27028 887 77 27031 minecraft:granite
+fill 884 78 27024 899 80 27027 minecraft:white_terracotta
+fill 884 79 27028 887 80 27031 minecraft:white_terracotta
 fill 884 81 27028 899 85 27031 minecraft:terracotta
 fill 884 86 27028 899 88 27031 minecraft:yellow_terracotta
 fill 884 89 27028 899 92 27031 minecraft:orange_terracotta
-fill 884 93 27028 895 97 27031 minecraft:red_terracotta
+fill 884 93 27028 899 97 27031 minecraft:red_terracotta
 fill 884 98 27028 895 102 27031 minecraft:yellow_terracotta
+fill 884 103 27028 895 106 27035 minecraft:granite
 fill 884 100 27032 887 102 27035 minecraft:yellow_terracotta
-fill 884 103 27032 899 106 27035 minecraft:granite
 fill 884 107 27032 899 110 27035 minecraft:brown_terracotta
 fill 884 111 27032 899 114 27035 minecraft:red_sandstone
 fill 884 115 27032 895 118 27035 minecraft:white_terracotta
 fill 884 119 27032 895 121 27035 minecraft:terracotta
 fill 884 122 27032 895 127 27039 minecraft:yellow_terracotta
 fill 884 128 27032 895 130 27039 minecraft:white_terracotta
+fill 884 131 27032 895 135 27039 minecraft:red_sandstone
 fill 884 121 27036 887 121 27039 minecraft:terracotta
-fill 884 131 27036 895 135 27039 minecraft:red_sandstone
-fill 888 127 26952 891 127 26955 minecraft:yellow_terracotta
-fill 888 128 26952 903 130 26955 minecraft:white_terracotta
+fill 888 140 26872 919 144 26891 minecraft:orange_terracotta
+fill 888 140 26892 891 141 26975 minecraft:orange_terracotta
+fill 888 130 26952 891 130 26955 minecraft:white_terracotta
 fill 888 131 26952 899 135 26959 minecraft:red_sandstone
 fill 888 115 26956 899 118 26963 minecraft:white_terracotta
 fill 888 119 26956 899 121 26963 minecraft:terracotta
@@ -176,46 +170,42 @@ fill 888 100 26960 891 102 26963 minecraft:yellow_terracotta
 fill 888 103 26960 899 106 26967 minecraft:granite
 fill 888 107 26960 899 110 26967 minecraft:brown_terracotta
 fill 888 111 26960 899 114 26963 minecraft:red_sandstone
-fill 888 85 26964 891 85 26967 minecraft:terracotta
-fill 888 86 26964 903 88 26967 minecraft:yellow_terracotta
+fill 888 88 26964 891 88 26967 minecraft:yellow_terracotta
 fill 888 89 26964 903 92 26967 minecraft:orange_terracotta
 fill 888 93 26964 899 97 26967 minecraft:red_terracotta
 fill 888 98 26964 899 102 26967 minecraft:yellow_terracotta
-fill 888 70 26968 891 70 27007 minecraft:terracotta
-fill 888 71 26968 903 74 26971 minecraft:light_gray_terracotta
+fill 888 70 26968 895 70 27031 minecraft:terracotta
+fill 888 71 26968 903 74 27031 minecraft:light_gray_terracotta
 fill 888 75 26968 903 77 26971 minecraft:granite
 fill 888 78 26968 903 80 26971 minecraft:white_terracotta
-fill 888 81 26968 899 85 26971 minecraft:terracotta
+fill 888 81 26968 903 85 26971 minecraft:terracotta
 fill 888 86 26968 899 88 26971 minecraft:yellow_terracotta
 fill 888 89 26968 899 92 26971 minecraft:orange_terracotta
-fill 888 71 26972 899 74 27007 minecraft:light_gray_terracotta
 fill 888 122 26976 891 123 26979 minecraft:yellow_terracotta
 fill 888 98 26980 891 99 26983 minecraft:yellow_terracotta
 fill 888 78 26984 895 78 26987 minecraft:white_terracotta
 fill 888 78 27012 895 78 27015 minecraft:white_terracotta
-fill 888 78 27016 891 80 27023 minecraft:white_terracotta
+fill 888 78 27016 891 80 27019 minecraft:white_terracotta
 fill 888 81 27016 891 84 27019 minecraft:terracotta
-fill 888 107 27020 891 108 27023 minecraft:brown_terracotta
-fill 888 107 27024 891 110 27031 minecraft:brown_terracotta
+fill 888 111 27020 891 111 27023 minecraft:red_sandstone
 fill 888 111 27024 891 114 27031 minecraft:red_sandstone
 fill 888 115 27024 891 118 27031 minecraft:white_terracotta
 fill 888 119 27024 891 121 27031 minecraft:terracotta
 fill 888 122 27024 891 127 27031 minecraft:yellow_terracotta
 fill 888 128 27024 891 130 27031 minecraft:white_terracotta
-fill 888 131 27024 891 135 27035 minecraft:red_sandstone
-fill 888 70 27028 891 70 27031 minecraft:terracotta
-fill 888 71 27028 903 74 27031 minecraft:light_gray_terracotta
+fill 888 131 27024 891 135 27031 minecraft:red_sandstone
+fill 888 136 27024 891 138 27027 minecraft:white_terracotta
 fill 888 75 27028 903 77 27031 minecraft:granite
+fill 888 78 27028 899 80 27035 minecraft:white_terracotta
 fill 888 136 27028 891 139 27151 minecraft:white_terracotta
-fill 888 140 27028 891 141 27151 minecraft:orange_terracotta
+fill 888 140 27028 891 141 27047 minecraft:orange_terracotta
 fill 888 76 27032 891 77 27035 minecraft:granite
-fill 888 78 27032 903 80 27035 minecraft:white_terracotta
 fill 888 81 27032 903 85 27035 minecraft:terracotta
 fill 888 86 27032 903 88 27035 minecraft:yellow_terracotta
 fill 888 89 27032 899 92 27035 minecraft:orange_terracotta
-fill 888 93 27032 899 97 27039 minecraft:red_terracotta
+fill 888 93 27032 899 97 27035 minecraft:red_terracotta
 fill 888 98 27032 899 102 27039 minecraft:yellow_terracotta
-fill 888 91 27036 891 92 27039 minecraft:orange_terracotta
+fill 888 94 27036 891 97 27039 minecraft:red_terracotta
 fill 888 103 27036 899 106 27039 minecraft:granite
 fill 888 107 27036 899 110 27039 minecraft:brown_terracotta
 fill 888 111 27036 899 114 27043 minecraft:red_sandstone
@@ -226,8 +216,16 @@ fill 888 122 27040 899 127 27043 minecraft:yellow_terracotta
 fill 888 128 27040 899 130 27047 minecraft:white_terracotta
 fill 888 131 27040 899 135 27047 minecraft:red_sandstone
 fill 888 124 27044 891 127 27047 minecraft:yellow_terracotta
+fill 888 140 27048 903 144 27131 minecraft:orange_terracotta
+fill 888 140 27132 891 141 27151 minecraft:orange_terracotta
+fill 892 140 26856 911 144 26871 minecraft:orange_terracotta
+fill 892 140 26892 919 144 26895 minecraft:orange_terracotta
+fill 892 140 26896 915 144 26919 minecraft:orange_terracotta
+fill 892 140 26920 911 144 26927 minecraft:orange_terracotta
+fill 892 140 26928 907 144 26931 minecraft:orange_terracotta
+fill 892 140 26932 895 141 26963 minecraft:orange_terracotta
 fill 892 127 26944 895 127 26947 minecraft:yellow_terracotta
-fill 892 128 26944 903 130 26951 minecraft:white_terracotta
+fill 892 128 26944 903 130 26955 minecraft:white_terracotta
 fill 892 131 26944 903 135 26951 minecraft:red_sandstone
 fill 892 112 26948 895 114 26951 minecraft:red_sandstone
 fill 892 115 26948 903 118 26955 minecraft:white_terracotta
@@ -237,50 +235,46 @@ fill 892 100 26952 895 102 26955 minecraft:yellow_terracotta
 fill 892 103 26952 903 106 26959 minecraft:granite
 fill 892 107 26952 903 110 26959 minecraft:brown_terracotta
 fill 892 111 26952 903 114 26959 minecraft:red_sandstone
-fill 892 88 26956 895 88 26959 minecraft:yellow_terracotta
-fill 892 89 26956 907 92 26959 minecraft:orange_terracotta
+fill 892 91 26956 895 92 26959 minecraft:orange_terracotta
 fill 892 93 26956 903 97 26963 minecraft:red_terracotta
 fill 892 98 26956 903 102 26963 minecraft:yellow_terracotta
-fill 892 79 26960 895 80 26963 minecraft:white_terracotta
-fill 892 81 26960 903 85 26967 minecraft:terracotta
-fill 892 86 26960 903 88 26963 minecraft:yellow_terracotta
+fill 892 82 26960 895 85 26963 minecraft:terracotta
+fill 892 86 26960 903 88 26967 minecraft:yellow_terracotta
 fill 892 89 26960 903 92 26963 minecraft:orange_terracotta
-fill 892 67 26964 899 70 26991 minecraft:terracotta
+fill 892 70 26964 895 70 26967 minecraft:terracotta
 fill 892 71 26964 907 74 26967 minecraft:light_gray_terracotta
 fill 892 75 26964 907 77 26967 minecraft:granite
 fill 892 78 26964 903 80 26967 minecraft:white_terracotta
+fill 892 81 26964 903 85 26967 minecraft:terracotta
+fill 892 140 26964 895 144 26967 minecraft:orange_terracotta
 fill 892 131 26968 895 132 26971 minecraft:red_sandstone
 fill 892 93 26976 895 96 26979 minecraft:red_terracotta
 fill 892 78 26980 895 78 26983 minecraft:white_terracotta
-fill 892 70 26992 895 70 27003 minecraft:terracotta
-fill 892 67 27004 899 70 27035 minecraft:terracotta
-fill 892 75 27016 899 75 27019 minecraft:granite
-fill 892 78 27020 895 80 27023 minecraft:white_terracotta
-fill 892 81 27020 895 81 27023 minecraft:terracotta
+fill 892 78 27016 895 78 27019 minecraft:white_terracotta
+fill 892 81 27020 895 84 27023 minecraft:terracotta
 fill 892 81 27024 895 85 27027 minecraft:terracotta
 fill 892 86 27024 895 88 27027 minecraft:yellow_terracotta
 fill 892 89 27024 895 92 27027 minecraft:orange_terracotta
 fill 892 93 27024 895 97 27027 minecraft:red_terracotta
 fill 892 98 27024 895 102 27027 minecraft:yellow_terracotta
 fill 892 103 27024 895 105 27027 minecraft:granite
-fill 892 103 27028 895 106 27031 minecraft:granite
 fill 892 107 27028 895 110 27031 minecraft:brown_terracotta
 fill 892 111 27028 895 114 27031 minecraft:red_sandstone
 fill 892 115 27028 895 118 27031 minecraft:white_terracotta
 fill 892 119 27028 895 121 27031 minecraft:terracotta
 fill 892 122 27028 895 126 27031 minecraft:yellow_terracotta
+fill 892 70 27032 895 70 27035 minecraft:terracotta
 fill 892 71 27032 907 74 27035 minecraft:light_gray_terracotta
 fill 892 75 27032 903 77 27039 minecraft:granite
-fill 892 131 27032 895 135 27035 minecraft:red_sandstone
 fill 892 136 27032 895 139 27151 minecraft:white_terracotta
-fill 892 140 27032 895 141 27151 minecraft:orange_terracotta
+fill 892 140 27032 895 141 27043 minecraft:orange_terracotta
 fill 892 73 27036 895 74 27039 minecraft:light_gray_terracotta
 fill 892 78 27036 907 80 27039 minecraft:white_terracotta
 fill 892 81 27036 903 85 27039 minecraft:terracotta
 fill 892 86 27036 903 88 27043 minecraft:yellow_terracotta
 fill 892 89 27036 903 92 27043 minecraft:orange_terracotta
+fill 892 93 27036 903 97 27043 minecraft:red_terracotta
 fill 892 85 27040 895 85 27043 minecraft:terracotta
-fill 892 93 27040 903 97 27043 minecraft:red_terracotta
 fill 892 98 27040 903 102 27047 minecraft:yellow_terracotta
 fill 892 103 27040 903 106 27047 minecraft:granite
 fill 892 107 27040 903 110 27047 minecraft:brown_terracotta
@@ -289,30 +283,35 @@ fill 892 111 27044 903 114 27051 minecraft:red_sandstone
 fill 892 115 27044 903 118 27051 minecraft:white_terracotta
 fill 892 119 27044 903 121 27051 minecraft:terracotta
 fill 892 122 27044 903 127 27051 minecraft:yellow_terracotta
+fill 892 140 27044 899 144 27047 minecraft:orange_terracotta
 fill 892 109 27048 895 110 27051 minecraft:brown_terracotta
 fill 892 128 27048 903 130 27055 minecraft:white_terracotta
 fill 892 131 27048 903 135 27055 minecraft:red_sandstone
 fill 892 124 27052 895 127 27055 minecraft:yellow_terracotta
-fill 896 140 26872 911 144 26903 minecraft:orange_terracotta
-fill 896 140 26904 899 141 26959 minecraft:orange_terracotta
+fill 892 140 27132 915 144 27147 minecraft:orange_terracotta
+fill 892 140 27148 895 141 27151 minecraft:orange_terracotta
+fill 896 140 26848 907 144 26855 minecraft:orange_terracotta
+fill 896 139 26880 911 139 26883 minecraft:white_terracotta
+fill 896 136 26884 899 139 26959 minecraft:white_terracotta
 fill 896 127 26932 899 127 26935 minecraft:yellow_terracotta
 fill 896 128 26932 911 130 26935 minecraft:white_terracotta
 fill 896 131 26932 911 135 26935 minecraft:red_sandstone
-fill 896 118 26936 899 118 26939 minecraft:white_terracotta
-fill 896 119 26936 911 121 26939 minecraft:terracotta
+fill 896 140 26932 907 144 26935 minecraft:orange_terracotta
+fill 896 121 26936 899 121 26939 minecraft:terracotta
 fill 896 122 26936 911 127 26939 minecraft:yellow_terracotta
 fill 896 128 26936 907 130 26943 minecraft:white_terracotta
 fill 896 131 26936 907 135 26939 minecraft:red_sandstone
-fill 896 109 26940 899 110 26943 minecraft:brown_terracotta
-fill 896 111 26940 911 114 26943 minecraft:red_sandstone
+fill 896 140 26936 903 144 26939 minecraft:orange_terracotta
+fill 896 112 26940 899 114 26943 minecraft:red_sandstone
 fill 896 115 26940 911 118 26943 minecraft:white_terracotta
 fill 896 119 26940 907 121 26947 minecraft:terracotta
 fill 896 122 26940 907 127 26943 minecraft:yellow_terracotta
 fill 896 131 26940 903 135 26943 minecraft:red_sandstone
+fill 896 140 26940 903 141 26951 minecraft:orange_terracotta
 fill 896 100 26944 899 102 26947 minecraft:yellow_terracotta
 fill 896 103 26944 911 106 26947 minecraft:granite
 fill 896 107 26944 911 110 26947 minecraft:brown_terracotta
-fill 896 111 26944 907 114 26951 minecraft:red_sandstone
+fill 896 111 26944 911 114 26947 minecraft:red_sandstone
 fill 896 115 26944 907 118 26947 minecraft:white_terracotta
 fill 896 122 26944 903 127 26947 minecraft:yellow_terracotta
 fill 896 88 26948 899 88 26951 minecraft:yellow_terracotta
@@ -321,31 +320,33 @@ fill 896 93 26948 911 97 26951 minecraft:red_terracotta
 fill 896 98 26948 911 102 26951 minecraft:yellow_terracotta
 fill 896 103 26948 907 106 26951 minecraft:granite
 fill 896 107 26948 907 110 26951 minecraft:brown_terracotta
-fill 896 79 26952 899 80 26955 minecraft:white_terracotta
-fill 896 81 26952 911 85 26955 minecraft:terracotta
+fill 896 111 26948 907 114 26951 minecraft:red_sandstone
+fill 896 82 26952 899 85 26955 minecraft:terracotta
 fill 896 86 26952 911 88 26955 minecraft:yellow_terracotta
 fill 896 89 26952 911 92 26955 minecraft:orange_terracotta
 fill 896 93 26952 907 97 26955 minecraft:red_terracotta
 fill 896 98 26952 907 102 26955 minecraft:yellow_terracotta
+fill 896 140 26952 899 141 26959 minecraft:orange_terracotta
 fill 896 73 26956 899 74 26959 minecraft:light_gray_terracotta
 fill 896 75 26956 911 77 26959 minecraft:granite
 fill 896 78 26956 911 80 26959 minecraft:white_terracotta
-fill 896 81 26956 907 85 26959 minecraft:terracotta
+fill 896 81 26956 907 85 26963 minecraft:terracotta
 fill 896 86 26956 907 88 26959 minecraft:yellow_terracotta
-fill 896 67 26960 899 70 26963 minecraft:terracotta
+fill 896 89 26956 907 92 26959 minecraft:orange_terracotta
+fill 896 67 26960 899 70 27039 minecraft:terracotta
 fill 896 71 26960 911 74 26963 minecraft:light_gray_terracotta
 fill 896 75 26960 907 77 26963 minecraft:granite
 fill 896 78 26960 907 80 26963 minecraft:white_terracotta
-fill 896 131 26960 899 132 26963 minecraft:red_sandstone
 fill 896 119 26964 899 120 26967 minecraft:terracotta
 fill 896 103 26968 899 105 26971 minecraft:granite
-fill 896 89 26972 899 90 26975 minecraft:orange_terracotta
-fill 896 75 26976 899 75 27015 minecraft:granite
-fill 896 67 26992 899 70 27003 minecraft:terracotta
-fill 896 75 27020 899 75 27023 minecraft:granite
+fill 896 93 26972 899 93 26975 minecraft:red_terracotta
+fill 896 75 26976 903 75 26995 minecraft:granite
+fill 896 75 26996 899 77 27003 minecraft:granite
+fill 896 78 26996 899 78 27003 minecraft:white_terracotta
+fill 896 75 27004 903 75 27023 minecraft:granite
 fill 896 81 27024 899 81 27027 minecraft:terracotta
-fill 896 93 27028 899 96 27031 minecraft:red_terracotta
-fill 896 67 27036 899 70 27039 minecraft:terracotta
+fill 896 98 27028 899 99 27031 minecraft:yellow_terracotta
+fill 896 103 27032 899 106 27035 minecraft:granite
 fill 896 71 27036 907 74 27043 minecraft:light_gray_terracotta
 fill 896 122 27036 899 127 27039 minecraft:yellow_terracotta
 fill 896 128 27036 899 129 27039 minecraft:white_terracotta
@@ -353,8 +354,8 @@ fill 896 70 27040 899 70 27043 minecraft:terracotta
 fill 896 75 27040 911 77 27043 minecraft:granite
 fill 896 78 27040 911 80 27043 minecraft:white_terracotta
 fill 896 81 27040 907 85 27047 minecraft:terracotta
-fill 896 136 27040 899 139 27151 minecraft:white_terracotta
-fill 896 140 27040 899 141 27067 minecraft:orange_terracotta
+fill 896 136 27040 899 139 27071 minecraft:white_terracotta
+fill 896 140 27040 899 144 27043 minecraft:orange_terracotta
 fill 896 79 27044 899 80 27047 minecraft:white_terracotta
 fill 896 86 27044 911 88 27047 minecraft:yellow_terracotta
 fill 896 89 27044 911 92 27051 minecraft:orange_terracotta
@@ -369,93 +370,97 @@ fill 896 115 27052 907 118 27059 minecraft:white_terracotta
 fill 896 119 27052 907 121 27063 minecraft:terracotta
 fill 896 122 27052 903 127 27063 minecraft:yellow_terracotta
 fill 896 109 27056 899 110 27059 minecraft:brown_terracotta
-fill 896 128 27056 903 130 27067 minecraft:white_terracotta
+fill 896 128 27056 907 130 27067 minecraft:white_terracotta
 fill 896 131 27056 903 135 27067 minecraft:red_sandstone
 fill 896 118 27060 899 118 27063 minecraft:white_terracotta
-fill 896 124 27064 899 127 27067 minecraft:yellow_terracotta
-fill 896 133 27068 899 135 27071 minecraft:red_sandstone
-fill 896 140 27068 907 144 27131 minecraft:orange_terracotta
-fill 896 140 27132 899 141 27151 minecraft:orange_terracotta
-fill 900 140 26860 907 144 26871 minecraft:orange_terracotta
-fill 900 140 26904 911 144 26915 minecraft:orange_terracotta
-fill 900 140 26916 907 144 26927 minecraft:orange_terracotta
+fill 896 127 27064 899 127 27067 minecraft:yellow_terracotta
+fill 896 139 27072 899 139 27123 minecraft:white_terracotta
+fill 896 136 27124 899 139 27151 minecraft:white_terracotta
+fill 896 140 27148 915 144 27151 minecraft:orange_terracotta
+fill 900 139 26864 903 139 26879 minecraft:white_terracotta
+fill 900 139 26884 911 139 26887 minecraft:white_terracotta
+fill 900 139 26888 907 139 26911 minecraft:white_terracotta
+fill 900 139 26912 903 139 26919 minecraft:white_terracotta
+fill 900 136 26920 915 139 26923 minecraft:white_terracotta
 fill 900 130 26924 903 130 26927 minecraft:white_terracotta
 fill 900 131 26924 915 135 26927 minecraft:red_sandstone
+fill 900 136 26924 911 139 26931 minecraft:white_terracotta
 fill 900 124 26928 903 127 26931 minecraft:yellow_terracotta
 fill 900 128 26928 911 130 26931 minecraft:white_terracotta
 fill 900 131 26928 911 135 26931 minecraft:red_sandstone
-fill 900 140 26928 903 141 26951 minecraft:orange_terracotta
 fill 900 115 26932 915 118 26935 minecraft:white_terracotta
 fill 900 119 26932 915 121 26935 minecraft:terracotta
 fill 900 122 26932 911 127 26935 minecraft:yellow_terracotta
-fill 900 106 26936 903 106 26939 minecraft:granite
-fill 900 107 26936 915 110 26939 minecraft:brown_terracotta
+fill 900 136 26932 907 139 26939 minecraft:white_terracotta
+fill 900 109 26936 903 110 26939 minecraft:brown_terracotta
 fill 900 111 26936 915 114 26939 minecraft:red_sandstone
 fill 900 115 26936 911 118 26939 minecraft:white_terracotta
+fill 900 119 26936 911 121 26939 minecraft:terracotta
 fill 900 100 26940 903 102 26943 minecraft:yellow_terracotta
 fill 900 103 26940 915 106 26943 minecraft:granite
 fill 900 107 26940 911 110 26943 minecraft:brown_terracotta
-fill 900 88 26944 903 88 26947 minecraft:yellow_terracotta
-fill 900 89 26944 915 92 26947 minecraft:orange_terracotta
+fill 900 111 26940 911 114 26943 minecraft:red_sandstone
+fill 900 136 26940 903 139 26951 minecraft:white_terracotta
+fill 900 91 26944 903 92 26947 minecraft:orange_terracotta
 fill 900 93 26944 915 97 26947 minecraft:red_terracotta
 fill 900 98 26944 915 102 26947 minecraft:yellow_terracotta
 fill 900 79 26948 903 80 26951 minecraft:white_terracotta
 fill 900 81 26948 915 85 26951 minecraft:terracotta
 fill 900 86 26948 915 88 26951 minecraft:yellow_terracotta
 fill 900 70 26952 903 70 26955 minecraft:terracotta
-fill 900 71 26952 915 74 26955 minecraft:light_gray_terracotta
+fill 900 71 26952 915 74 26959 minecraft:light_gray_terracotta
 fill 900 75 26952 915 77 26955 minecraft:granite
 fill 900 78 26952 915 80 26955 minecraft:white_terracotta
+fill 900 81 26952 911 85 26955 minecraft:terracotta
 fill 900 131 26952 903 132 26955 minecraft:red_sandstone
 fill 900 64 26956 903 70 27043 minecraft:terracotta
-fill 900 71 26956 911 74 26959 minecraft:light_gray_terracotta
 fill 900 115 26956 903 117 26959 minecraft:white_terracotta
 fill 900 103 26960 903 105 26963 minecraft:granite
-fill 900 93 26964 903 93 26967 minecraft:red_terracotta
-fill 900 81 26968 903 84 26971 minecraft:terracotta
-fill 900 71 26972 907 72 26983 minecraft:light_gray_terracotta
-fill 900 71 26984 903 74 27007 minecraft:light_gray_terracotta
-fill 900 75 26984 903 75 27011 minecraft:granite
-fill 900 71 27012 907 72 27027 minecraft:light_gray_terracotta
+fill 900 93 26964 903 96 26967 minecraft:red_terracotta
+fill 900 86 26968 903 87 26971 minecraft:yellow_terracotta
+fill 900 75 26972 903 75 26975 minecraft:granite
+fill 900 75 26996 903 75 27003 minecraft:granite
+fill 900 75 27024 903 75 27027 minecraft:granite
 fill 900 78 27028 903 78 27031 minecraft:white_terracotta
+fill 900 78 27032 903 80 27035 minecraft:white_terracotta
 fill 900 89 27032 903 90 27035 minecraft:orange_terracotta
-fill 900 93 27036 903 97 27039 minecraft:red_terracotta
 fill 900 98 27036 903 102 27039 minecraft:yellow_terracotta
 fill 900 111 27040 903 114 27043 minecraft:red_sandstone
 fill 900 67 27044 903 70 27047 minecraft:terracotta
 fill 900 71 27044 915 74 27047 minecraft:light_gray_terracotta
 fill 900 75 27044 915 77 27047 minecraft:granite
-fill 900 78 27044 915 80 27051 minecraft:white_terracotta
+fill 900 78 27044 915 80 27047 minecraft:white_terracotta
 fill 900 128 27044 903 129 27047 minecraft:white_terracotta
-fill 900 76 27048 903 77 27051 minecraft:granite
+fill 900 79 27048 903 80 27051 minecraft:white_terracotta
 fill 900 81 27048 915 85 27051 minecraft:terracotta
 fill 900 86 27048 915 88 27051 minecraft:yellow_terracotta
-fill 900 136 27048 903 139 27151 minecraft:white_terracotta
-fill 900 140 27048 903 141 27059 minecraft:orange_terracotta
+fill 900 136 27048 903 139 27075 minecraft:white_terracotta
 fill 900 88 27052 903 88 27055 minecraft:yellow_terracotta
 fill 900 89 27052 915 92 27055 minecraft:orange_terracotta
 fill 900 93 27052 915 97 27055 minecraft:red_terracotta
 fill 900 98 27052 911 102 27059 minecraft:yellow_terracotta
 fill 900 97 27056 903 97 27059 minecraft:red_terracotta
-fill 900 103 27056 911 106 27059 minecraft:granite
+fill 900 103 27056 915 106 27059 minecraft:granite
 fill 900 107 27056 911 110 27063 minecraft:brown_terracotta
 fill 900 106 27060 903 106 27063 minecraft:granite
 fill 900 111 27060 915 114 27063 minecraft:red_sandstone
 fill 900 115 27060 911 118 27067 minecraft:white_terracotta
-fill 900 140 27060 903 144 27067 minecraft:orange_terracotta
-fill 900 112 27064 903 114 27067 minecraft:red_sandstone
 fill 900 119 27064 915 121 27067 minecraft:terracotta
 fill 900 122 27064 911 127 27071 minecraft:yellow_terracotta
 fill 900 121 27068 903 121 27071 minecraft:terracotta
 fill 900 128 27068 915 130 27071 minecraft:white_terracotta
-fill 900 131 27068 915 135 27075 minecraft:red_sandstone
-fill 900 130 27072 903 130 27075 minecraft:white_terracotta
-fill 900 140 27132 911 144 27151 minecraft:orange_terracotta
-fill 904 140 26856 907 144 26859 minecraft:orange_terracotta
+fill 900 131 27068 915 135 27071 minecraft:red_sandstone
+fill 900 133 27072 903 135 27075 minecraft:red_sandstone
+fill 900 139 27076 903 139 27139 minecraft:white_terracotta
+fill 900 136 27140 903 139 27151 minecraft:white_terracotta
+fill 904 136 26864 931 139 26867 minecraft:white_terracotta
+fill 904 139 26868 907 139 26879 minecraft:white_terracotta
+fill 904 136 26912 923 139 26915 minecraft:white_terracotta
 fill 904 133 26916 907 135 26919 minecraft:red_sandstone
+fill 904 136 26916 919 139 26919 minecraft:white_terracotta
 fill 904 124 26920 907 127 26923 minecraft:yellow_terracotta
 fill 904 128 26920 919 130 26923 minecraft:white_terracotta
-fill 904 131 26920 915 135 26923 minecraft:red_sandstone
+fill 904 131 26920 919 135 26923 minecraft:red_sandstone
 fill 904 118 26924 907 118 26927 minecraft:white_terracotta
 fill 904 119 26924 919 121 26927 minecraft:terracotta
 fill 904 122 26924 915 127 26931 minecraft:yellow_terracotta
@@ -463,39 +468,39 @@ fill 904 128 26924 915 130 26927 minecraft:white_terracotta
 fill 904 112 26928 907 114 26931 minecraft:red_sandstone
 fill 904 115 26928 915 118 26931 minecraft:white_terracotta
 fill 904 119 26928 915 121 26931 minecraft:terracotta
-fill 904 140 26928 907 144 26931 minecraft:orange_terracotta
 fill 904 103 26932 919 106 26935 minecraft:granite
 fill 904 107 26932 919 110 26935 minecraft:brown_terracotta
 fill 904 111 26932 915 114 26935 minecraft:red_sandstone
-fill 904 140 26932 907 141 26939 minecraft:orange_terracotta
 fill 904 97 26936 907 97 26939 minecraft:red_terracotta
 fill 904 98 26936 919 102 26939 minecraft:yellow_terracotta
 fill 904 103 26936 915 106 26939 minecraft:granite
+fill 904 107 26936 915 110 26939 minecraft:brown_terracotta
+fill 904 140 26936 907 141 26939 minecraft:orange_terracotta
 fill 904 88 26940 907 88 26943 minecraft:yellow_terracotta
 fill 904 89 26940 919 92 26943 minecraft:orange_terracotta
-fill 904 93 26940 915 97 26943 minecraft:red_terracotta
+fill 904 93 26940 919 97 26943 minecraft:red_terracotta
 fill 904 98 26940 915 102 26943 minecraft:yellow_terracotta
 fill 904 131 26940 907 132 26943 minecraft:red_sandstone
 fill 904 79 26944 907 80 26947 minecraft:white_terracotta
 fill 904 81 26944 919 85 26947 minecraft:terracotta
 fill 904 86 26944 919 88 26947 minecraft:yellow_terracotta
-fill 904 122 26944 907 123 26947 minecraft:yellow_terracotta
-fill 904 67 26948 907 70 26951 minecraft:terracotta
+fill 904 89 26944 915 92 26947 minecraft:orange_terracotta
+fill 904 122 26944 907 126 26947 minecraft:yellow_terracotta
+fill 904 70 26948 907 70 26951 minecraft:terracotta
 fill 904 71 26948 919 74 26951 minecraft:light_gray_terracotta
 fill 904 75 26948 919 77 26951 minecraft:granite
 fill 904 78 26948 919 80 26951 minecraft:white_terracotta
+fill 904 115 26948 907 117 26951 minecraft:white_terracotta
 fill 904 61 26952 907 62 27047 minecraft:granite
 fill 904 63 26952 919 70 26955 minecraft:terracotta
 fill 904 103 26952 907 105 26955 minecraft:granite
 fill 904 63 26956 915 70 26959 minecraft:terracotta
 fill 904 93 26956 907 93 26959 minecraft:red_terracotta
 fill 904 63 26960 911 70 26963 minecraft:terracotta
-fill 904 81 26960 907 84 26963 minecraft:terracotta
+fill 904 86 26960 907 87 26963 minecraft:yellow_terracotta
 fill 904 63 26964 907 70 27047 minecraft:terracotta
 fill 904 78 26964 907 78 26967 minecraft:white_terracotta
-fill 904 71 26968 907 72 26971 minecraft:light_gray_terracotta
-fill 904 71 26984 907 72 27011 minecraft:light_gray_terracotta
-fill 904 71 27028 907 72 27031 minecraft:light_gray_terracotta
+fill 904 71 26968 907 72 27031 minecraft:light_gray_terracotta
 fill 904 75 27032 907 75 27035 minecraft:granite
 fill 904 75 27036 907 77 27039 minecraft:granite
 fill 904 81 27036 907 84 27039 minecraft:terracotta
@@ -504,12 +509,12 @@ fill 904 89 27040 907 92 27043 minecraft:orange_terracotta
 fill 904 93 27040 907 93 27043 minecraft:red_terracotta
 fill 904 98 27044 907 102 27047 minecraft:yellow_terracotta
 fill 904 103 27044 907 105 27047 minecraft:granite
-fill 904 64 27048 907 70 27051 minecraft:terracotta
+fill 904 67 27048 907 70 27051 minecraft:terracotta
 fill 904 71 27048 919 74 27051 minecraft:light_gray_terracotta
 fill 904 75 27048 919 77 27051 minecraft:granite
+fill 904 78 27048 919 80 27055 minecraft:white_terracotta
 fill 904 111 27048 907 114 27051 minecraft:red_sandstone
 fill 904 76 27052 907 77 27055 minecraft:granite
-fill 904 78 27052 919 80 27055 minecraft:white_terracotta
 fill 904 81 27052 919 85 27055 minecraft:terracotta
 fill 904 86 27052 915 88 27059 minecraft:yellow_terracotta
 fill 904 122 27052 907 123 27055 minecraft:yellow_terracotta
@@ -517,55 +522,51 @@ fill 904 85 27056 907 85 27059 minecraft:terracotta
 fill 904 89 27056 919 92 27059 minecraft:orange_terracotta
 fill 904 93 27056 915 97 27059 minecraft:red_terracotta
 fill 904 122 27056 907 127 27063 minecraft:yellow_terracotta
-fill 904 128 27056 907 129 27059 minecraft:white_terracotta
+fill 904 131 27056 907 132 27059 minecraft:red_sandstone
 fill 904 94 27060 907 97 27063 minecraft:red_terracotta
 fill 904 98 27060 919 102 27063 minecraft:yellow_terracotta
 fill 904 103 27060 915 106 27067 minecraft:granite
-fill 904 128 27060 907 130 27067 minecraft:white_terracotta
 fill 904 131 27060 907 135 27067 minecraft:red_sandstone
-fill 904 136 27060 907 138 27063 minecraft:white_terracotta
-fill 904 100 27064 907 102 27067 minecraft:yellow_terracotta
+fill 904 136 27060 907 139 27083 minecraft:white_terracotta
+fill 904 140 27060 907 141 27063 minecraft:orange_terracotta
 fill 904 107 27064 919 110 27067 minecraft:brown_terracotta
 fill 904 111 27064 919 114 27071 minecraft:red_sandstone
-fill 904 136 27064 907 139 27091 minecraft:white_terracotta
-fill 904 140 27064 907 144 27067 minecraft:orange_terracotta
+fill 904 140 27064 907 144 27131 minecraft:orange_terracotta
 fill 904 109 27068 907 110 27071 minecraft:brown_terracotta
 fill 904 115 27068 919 118 27071 minecraft:white_terracotta
-fill 904 119 27068 919 121 27075 minecraft:terracotta
-fill 904 118 27072 907 118 27075 minecraft:white_terracotta
+fill 904 119 27068 919 121 27071 minecraft:terracotta
+fill 904 121 27072 907 121 27075 minecraft:terracotta
 fill 904 122 27072 919 127 27075 minecraft:yellow_terracotta
 fill 904 128 27072 919 130 27075 minecraft:white_terracotta
+fill 904 131 27072 915 135 27079 minecraft:red_sandstone
 fill 904 130 27076 907 130 27079 minecraft:white_terracotta
-fill 904 131 27076 919 135 27079 minecraft:red_sandstone
-fill 904 139 27092 907 139 27103 minecraft:white_terracotta
-fill 904 136 27104 927 139 27131 minecraft:white_terracotta
-fill 904 136 27132 923 139 27151 minecraft:white_terracotta
-fill 908 140 26856 923 141 26863 minecraft:orange_terracotta
-fill 908 140 26864 911 144 26871 minecraft:orange_terracotta
-fill 908 127 26912 911 127 26915 minecraft:yellow_terracotta
-fill 908 128 26912 927 130 26915 minecraft:white_terracotta
+fill 904 139 27084 907 139 27151 minecraft:white_terracotta
+fill 908 140 26848 923 141 26851 minecraft:orange_terracotta
+fill 908 140 26852 911 144 26855 minecraft:orange_terracotta
+fill 908 136 26868 931 139 26879 minecraft:white_terracotta
+fill 908 136 26888 931 139 26891 minecraft:white_terracotta
+fill 908 136 26892 927 139 26907 minecraft:white_terracotta
+fill 908 136 26908 923 139 26911 minecraft:white_terracotta
+fill 908 130 26912 911 130 26915 minecraft:white_terracotta
 fill 908 131 26912 923 135 26915 minecraft:red_sandstone
 fill 908 121 26916 911 121 26919 minecraft:terracotta
 fill 908 122 26916 923 127 26919 minecraft:yellow_terracotta
 fill 908 128 26916 923 130 26919 minecraft:white_terracotta
 fill 908 131 26916 919 135 26919 minecraft:red_sandstone
-fill 908 140 26916 919 141 26919 minecraft:orange_terracotta
 fill 908 112 26920 911 114 26923 minecraft:red_sandstone
 fill 908 115 26920 923 118 26923 minecraft:white_terracotta
 fill 908 119 26920 923 121 26923 minecraft:terracotta
 fill 908 122 26920 919 127 26923 minecraft:yellow_terracotta
-fill 908 140 26920 915 141 26923 minecraft:orange_terracotta
 fill 908 106 26924 911 106 26927 minecraft:granite
 fill 908 107 26924 923 110 26927 minecraft:brown_terracotta
 fill 908 111 26924 923 114 26927 minecraft:red_sandstone
 fill 908 115 26924 919 118 26927 minecraft:white_terracotta
-fill 908 140 26924 911 141 26931 minecraft:orange_terracotta
 fill 908 100 26928 911 102 26931 minecraft:yellow_terracotta
-fill 908 103 26928 919 106 26931 minecraft:granite
+fill 908 103 26928 923 106 26931 minecraft:granite
 fill 908 107 26928 919 110 26931 minecraft:brown_terracotta
 fill 908 111 26928 919 114 26931 minecraft:red_sandstone
-fill 908 91 26932 911 92 26935 minecraft:orange_terracotta
-fill 908 93 26932 923 97 26935 minecraft:red_terracotta
+fill 908 140 26928 911 141 26931 minecraft:orange_terracotta
+fill 908 94 26932 911 97 26935 minecraft:red_terracotta
 fill 908 98 26932 919 102 26935 minecraft:yellow_terracotta
 fill 908 85 26936 911 85 26939 minecraft:terracotta
 fill 908 86 26936 923 88 26939 minecraft:yellow_terracotta
@@ -581,20 +582,19 @@ fill 908 67 26944 911 70 26947 minecraft:terracotta
 fill 908 71 26944 923 74 26947 minecraft:light_gray_terracotta
 fill 908 75 26944 923 77 26947 minecraft:granite
 fill 908 78 26944 919 80 26947 minecraft:white_terracotta
-fill 908 111 26944 911 111 26947 minecraft:red_sandstone
 fill 908 58 26948 911 59 27051 minecraft:yellow_terracotta
 fill 908 60 26948 923 62 26951 minecraft:granite
 fill 908 63 26948 919 70 26951 minecraft:terracotta
 fill 908 103 26948 911 105 26951 minecraft:granite
 fill 908 60 26952 919 62 27051 minecraft:granite
-fill 908 93 26952 911 93 26955 minecraft:red_terracotta
+fill 908 93 26952 911 96 26955 minecraft:red_terracotta
 fill 908 81 26956 911 84 26959 minecraft:terracotta
 fill 908 75 26960 911 75 26963 minecraft:granite
 fill 908 63 26964 911 69 27035 minecraft:terracotta
 fill 908 63 27036 911 70 27051 minecraft:terracotta
 fill 908 71 27036 911 72 27039 minecraft:light_gray_terracotta
 fill 908 71 27040 911 74 27043 minecraft:light_gray_terracotta
-fill 908 81 27040 911 81 27043 minecraft:terracotta
+fill 908 81 27040 911 84 27043 minecraft:terracotta
 fill 908 81 27044 911 85 27047 minecraft:terracotta
 fill 908 93 27044 911 93 27047 minecraft:red_terracotta
 fill 908 93 27048 911 97 27051 minecraft:red_terracotta
@@ -606,9 +606,10 @@ fill 908 107 27052 911 110 27055 minecraft:brown_terracotta
 fill 908 111 27052 911 111 27055 minecraft:red_sandstone
 fill 908 76 27056 911 77 27059 minecraft:granite
 fill 908 78 27056 927 80 27059 minecraft:white_terracotta
-fill 908 81 27056 919 85 27059 minecraft:terracotta
+fill 908 81 27056 923 85 27059 minecraft:terracotta
 fill 908 111 27056 911 114 27059 minecraft:red_sandstone
-fill 908 115 27056 911 117 27059 minecraft:white_terracotta
+fill 908 115 27056 911 118 27059 minecraft:white_terracotta
+fill 908 119 27056 911 120 27059 minecraft:terracotta
 fill 908 82 27060 911 85 27063 minecraft:terracotta
 fill 908 86 27060 923 88 27063 minecraft:yellow_terracotta
 fill 908 89 27060 923 92 27063 minecraft:orange_terracotta
@@ -616,49 +617,52 @@ fill 908 93 27060 919 97 27067 minecraft:red_terracotta
 fill 908 119 27060 911 121 27063 minecraft:terracotta
 fill 908 122 27060 911 126 27063 minecraft:yellow_terracotta
 fill 908 91 27064 911 92 27067 minecraft:orange_terracotta
-fill 908 98 27064 923 102 27071 minecraft:yellow_terracotta
+fill 908 98 27064 923 102 27067 minecraft:yellow_terracotta
 fill 908 128 27064 911 130 27067 minecraft:white_terracotta
 fill 908 131 27064 911 135 27067 minecraft:red_sandstone
-fill 908 97 27068 911 97 27071 minecraft:red_terracotta
+fill 908 136 27064 911 138 27067 minecraft:white_terracotta
+fill 908 100 27068 911 102 27071 minecraft:yellow_terracotta
 fill 908 103 27068 923 106 27071 minecraft:granite
 fill 908 107 27068 923 110 27071 minecraft:brown_terracotta
-fill 908 136 27068 911 139 27103 minecraft:white_terracotta
-fill 908 140 27068 911 141 27075 minecraft:orange_terracotta
+fill 908 136 27068 911 139 27087 minecraft:white_terracotta
+fill 908 140 27068 911 144 27131 minecraft:orange_terracotta
 fill 908 109 27072 911 110 27075 minecraft:brown_terracotta
 fill 908 111 27072 923 114 27075 minecraft:red_sandstone
 fill 908 115 27072 923 118 27075 minecraft:white_terracotta
+fill 908 119 27072 923 121 27079 minecraft:terracotta
 fill 908 118 27076 911 118 27079 minecraft:white_terracotta
-fill 908 119 27076 923 121 27079 minecraft:terracotta
 fill 908 122 27076 923 127 27079 minecraft:yellow_terracotta
-fill 908 128 27076 919 130 27083 minecraft:white_terracotta
-fill 908 140 27076 911 144 27131 minecraft:orange_terracotta
+fill 908 128 27076 923 130 27083 minecraft:white_terracotta
 fill 908 127 27080 911 127 27083 minecraft:yellow_terracotta
 fill 908 131 27080 923 135 27083 minecraft:red_sandstone
-fill 912 133 26848 927 135 26863 minecraft:red_sandstone
-fill 912 140 26864 927 141 26887 minecraft:orange_terracotta
-fill 912 140 26888 915 144 26899 minecraft:orange_terracotta
-fill 912 140 26900 923 141 26915 minecraft:orange_terracotta
+fill 908 139 27088 911 139 27111 minecraft:white_terracotta
+fill 908 136 27112 931 139 27135 minecraft:white_terracotta
+fill 908 136 27136 927 139 27151 minecraft:white_terracotta
+fill 912 140 26852 923 141 26859 minecraft:orange_terracotta
+fill 912 140 26860 915 144 26871 minecraft:orange_terracotta
+fill 912 136 26880 931 139 26887 minecraft:white_terracotta
 fill 912 127 26908 915 127 26911 minecraft:yellow_terracotta
 fill 912 128 26908 931 130 26911 minecraft:white_terracotta
 fill 912 131 26908 927 135 26911 minecraft:red_sandstone
 fill 912 118 26912 915 118 26915 minecraft:white_terracotta
 fill 912 119 26912 931 121 26915 minecraft:terracotta
 fill 912 122 26912 927 127 26915 minecraft:yellow_terracotta
+fill 912 128 26912 927 130 26915 minecraft:white_terracotta
 fill 912 109 26916 915 110 26919 minecraft:brown_terracotta
 fill 912 111 26916 927 114 26919 minecraft:red_sandstone
 fill 912 115 26916 927 118 26919 minecraft:white_terracotta
 fill 912 119 26916 923 121 26919 minecraft:terracotta
-fill 912 100 26920 915 102 26923 minecraft:yellow_terracotta
 fill 912 103 26920 927 106 26923 minecraft:granite
 fill 912 107 26920 927 110 26923 minecraft:brown_terracotta
 fill 912 111 26920 923 114 26923 minecraft:red_sandstone
+fill 912 140 26920 915 141 26923 minecraft:orange_terracotta
 fill 912 94 26924 915 97 26927 minecraft:red_terracotta
 fill 912 98 26924 927 102 26927 minecraft:yellow_terracotta
 fill 912 103 26924 923 106 26927 minecraft:granite
 fill 912 136 26924 915 138 26927 minecraft:white_terracotta
 fill 912 88 26928 915 88 26931 minecraft:yellow_terracotta
 fill 912 89 26928 927 92 26931 minecraft:orange_terracotta
-fill 912 93 26928 923 97 26931 minecraft:red_terracotta
+fill 912 93 26928 923 97 26935 minecraft:red_terracotta
 fill 912 98 26928 923 102 26931 minecraft:yellow_terracotta
 fill 912 128 26928 915 129 26931 minecraft:white_terracotta
 fill 912 82 26932 915 85 26935 minecraft:terracotta
@@ -674,17 +678,17 @@ fill 912 64 26940 915 70 26943 minecraft:terracotta
 fill 912 71 26940 927 74 26943 minecraft:light_gray_terracotta
 fill 912 75 26940 923 77 26943 minecraft:granite
 fill 912 107 26940 915 108 26943 minecraft:brown_terracotta
-fill 912 55 26944 943 56 27027 minecraft:light_gray_terracotta
-fill 912 57 26944 943 59 27027 minecraft:yellow_terracotta
+fill 912 55 26944 943 56 26983 minecraft:light_gray_terracotta
+fill 912 57 26944 943 59 26983 minecraft:yellow_terracotta
 fill 912 60 26944 927 62 26947 minecraft:granite
 fill 912 63 26944 923 70 26947 minecraft:terracotta
 fill 912 93 26948 915 93 26951 minecraft:red_terracotta
 fill 912 81 26952 915 84 26955 minecraft:terracotta
-fill 912 71 26956 915 72 26959 minecraft:light_gray_terracotta
+fill 912 75 26956 915 75 26959 minecraft:granite
 fill 912 63 26960 915 66 27039 minecraft:terracotta
-fill 912 58 27028 915 59 27055 minecraft:yellow_terracotta
-fill 912 63 27040 915 69 27043 minecraft:terracotta
-fill 912 63 27044 915 70 27055 minecraft:terracotta
+fill 912 58 26984 915 59 27055 minecraft:yellow_terracotta
+fill 912 63 27040 915 70 27055 minecraft:terracotta
+fill 912 71 27040 915 72 27043 minecraft:light_gray_terracotta
 fill 912 81 27044 915 81 27047 minecraft:terracotta
 fill 912 89 27048 915 90 27051 minecraft:orange_terracotta
 fill 912 60 27052 931 62 27055 minecraft:granite
@@ -693,43 +697,39 @@ fill 912 67 27056 915 70 27059 minecraft:terracotta
 fill 912 71 27056 931 74 27059 minecraft:light_gray_terracotta
 fill 912 75 27056 927 77 27063 minecraft:granite
 fill 912 98 27056 915 102 27059 minecraft:yellow_terracotta
-fill 912 103 27056 915 105 27059 minecraft:granite
+fill 912 107 27056 915 108 27059 minecraft:brown_terracotta
 fill 912 73 27060 915 74 27063 minecraft:light_gray_terracotta
 fill 912 78 27060 931 80 27063 minecraft:white_terracotta
-fill 912 81 27060 927 85 27067 minecraft:terracotta
+fill 912 81 27060 927 85 27063 minecraft:terracotta
 fill 912 107 27060 915 110 27063 minecraft:brown_terracotta
-fill 912 79 27064 915 80 27067 minecraft:white_terracotta
+fill 912 82 27064 915 85 27067 minecraft:terracotta
 fill 912 86 27064 931 88 27067 minecraft:yellow_terracotta
 fill 912 89 27064 927 92 27071 minecraft:orange_terracotta
 fill 912 115 27064 915 118 27067 minecraft:white_terracotta
-fill 912 122 27064 915 123 27067 minecraft:yellow_terracotta
+fill 912 122 27064 915 126 27067 minecraft:yellow_terracotta
 fill 912 88 27068 915 88 27071 minecraft:yellow_terracotta
 fill 912 93 27068 927 97 27071 minecraft:red_terracotta
+fill 912 98 27068 927 102 27071 minecraft:yellow_terracotta
 fill 912 122 27068 915 127 27071 minecraft:yellow_terracotta
 fill 912 100 27072 915 102 27075 minecraft:yellow_terracotta
 fill 912 103 27072 927 106 27075 minecraft:granite
 fill 912 107 27072 927 110 27075 minecraft:brown_terracotta
-fill 912 136 27072 915 139 27103 minecraft:white_terracotta
-fill 912 140 27072 915 141 27083 minecraft:orange_terracotta
+fill 912 136 27072 915 139 27111 minecraft:white_terracotta
+fill 912 140 27072 915 141 27075 minecraft:orange_terracotta
 fill 912 109 27076 915 110 27079 minecraft:brown_terracotta
 fill 912 111 27076 927 114 27079 minecraft:red_sandstone
 fill 912 115 27076 927 118 27079 minecraft:white_terracotta
+fill 912 140 27076 915 144 27131 minecraft:orange_terracotta
 fill 912 118 27080 915 118 27083 minecraft:white_terracotta
 fill 912 119 27080 927 121 27083 minecraft:terracotta
 fill 912 122 27080 927 127 27083 minecraft:yellow_terracotta
-fill 912 124 27084 915 127 27087 minecraft:yellow_terracotta
+fill 912 127 27084 915 127 27087 minecraft:yellow_terracotta
 fill 912 128 27084 927 130 27087 minecraft:white_terracotta
 fill 912 131 27084 927 135 27087 minecraft:red_sandstone
-fill 912 140 27084 915 144 27111 minecraft:orange_terracotta
 fill 912 133 27088 915 135 27091 minecraft:red_sandstone
-fill 912 140 27112 927 141 27131 minecraft:orange_terracotta
-fill 912 140 27132 923 141 27151 minecraft:orange_terracotta
-fill 916 133 26864 931 135 26871 minecraft:red_sandstone
-fill 916 133 26884 931 135 26887 minecraft:red_sandstone
-fill 916 133 26888 927 135 26895 minecraft:red_sandstone
-fill 916 140 26888 927 141 26891 minecraft:orange_terracotta
-fill 916 140 26892 923 141 26899 minecraft:orange_terracotta
-fill 916 133 26896 923 135 26899 minecraft:red_sandstone
+fill 916 133 26848 931 135 26863 minecraft:red_sandstone
+fill 916 140 26860 931 141 26871 minecraft:orange_terracotta
+fill 916 140 26896 927 141 26907 minecraft:orange_terracotta
 fill 916 133 26900 919 135 26903 minecraft:red_sandstone
 fill 916 127 26904 919 127 26907 minecraft:yellow_terracotta
 fill 916 128 26904 931 130 26907 minecraft:white_terracotta
@@ -737,17 +737,18 @@ fill 916 131 26904 931 135 26907 minecraft:red_sandstone
 fill 916 115 26908 935 118 26911 minecraft:white_terracotta
 fill 916 119 26908 931 121 26911 minecraft:terracotta
 fill 916 122 26908 931 127 26911 minecraft:yellow_terracotta
+fill 916 140 26908 923 141 26915 minecraft:orange_terracotta
 fill 916 106 26912 919 106 26915 minecraft:granite
 fill 916 107 26912 935 110 26915 minecraft:brown_terracotta
 fill 916 111 26912 931 114 26915 minecraft:red_sandstone
 fill 916 115 26912 931 118 26915 minecraft:white_terracotta
-fill 916 97 26916 919 97 26919 minecraft:red_terracotta
-fill 916 98 26916 931 102 26923 minecraft:yellow_terracotta
+fill 916 100 26916 919 102 26919 minecraft:yellow_terracotta
 fill 916 103 26916 931 106 26919 minecraft:granite
 fill 916 107 26916 931 110 26919 minecraft:brown_terracotta
+fill 916 140 26916 919 141 26919 minecraft:orange_terracotta
 fill 916 91 26920 919 92 26923 minecraft:orange_terracotta
 fill 916 93 26920 931 97 26923 minecraft:red_terracotta
-fill 916 131 26920 919 132 26923 minecraft:red_sandstone
+fill 916 98 26920 931 102 26923 minecraft:yellow_terracotta
 fill 916 85 26924 919 85 26927 minecraft:terracotta
 fill 916 86 26924 931 88 26927 minecraft:yellow_terracotta
 fill 916 89 26924 931 92 26927 minecraft:orange_terracotta
@@ -763,24 +764,22 @@ fill 916 75 26932 931 77 26935 minecraft:granite
 fill 916 78 26932 931 80 26935 minecraft:white_terracotta
 fill 916 81 26932 927 85 26935 minecraft:terracotta
 fill 916 111 26932 919 111 26935 minecraft:red_sandstone
-fill 916 61 26936 919 62 26939 minecraft:granite
-fill 916 63 26936 931 70 26939 minecraft:terracotta
+fill 916 64 26936 919 70 26939 minecraft:terracotta
 fill 916 71 26936 927 74 26939 minecraft:light_gray_terracotta
 fill 916 103 26936 919 105 26939 minecraft:granite
 fill 916 55 26940 943 56 26943 minecraft:light_gray_terracotta
 fill 916 57 26940 943 59 26943 minecraft:yellow_terracotta
 fill 916 60 26940 931 62 26943 minecraft:granite
 fill 916 63 26940 927 70 26943 minecraft:terracotta
-fill 916 93 26940 919 96 26943 minecraft:red_terracotta
+fill 916 98 26940 919 99 26943 minecraft:yellow_terracotta
 fill 916 89 26944 919 90 26947 minecraft:orange_terracotta
 fill 916 81 26948 919 81 26951 minecraft:terracotta
 fill 916 71 26952 919 72 26955 minecraft:light_gray_terracotta
 fill 916 63 26956 919 63 27043 minecraft:terracotta
-fill 916 55 27028 943 56 27055 minecraft:light_gray_terracotta
-fill 916 57 27028 943 59 27055 minecraft:yellow_terracotta
+fill 916 55 26984 943 56 27055 minecraft:light_gray_terracotta
+fill 916 57 26984 943 59 27055 minecraft:yellow_terracotta
 fill 916 63 27044 919 69 27047 minecraft:terracotta
 fill 916 63 27048 923 70 27059 minecraft:terracotta
-fill 916 78 27048 919 80 27051 minecraft:white_terracotta
 fill 916 81 27048 919 81 27051 minecraft:terracotta
 fill 916 86 27052 919 87 27055 minecraft:yellow_terracotta
 fill 916 58 27056 919 59 27059 minecraft:yellow_terracotta
@@ -789,8 +788,10 @@ fill 916 86 27056 919 88 27059 minecraft:yellow_terracotta
 fill 916 93 27056 919 96 27059 minecraft:red_terracotta
 fill 916 67 27060 919 70 27063 minecraft:terracotta
 fill 916 71 27060 931 74 27063 minecraft:light_gray_terracotta
+fill 916 103 27060 919 105 27063 minecraft:granite
 fill 916 76 27064 919 77 27067 minecraft:granite
 fill 916 78 27064 931 80 27067 minecraft:white_terracotta
+fill 916 81 27064 931 85 27067 minecraft:terracotta
 fill 916 103 27064 919 106 27067 minecraft:granite
 fill 916 82 27068 919 85 27071 minecraft:terracotta
 fill 916 86 27068 931 88 27071 minecraft:yellow_terracotta
@@ -802,21 +803,27 @@ fill 916 131 27072 919 132 27075 minecraft:red_sandstone
 fill 916 100 27076 919 102 27079 minecraft:yellow_terracotta
 fill 916 103 27076 931 106 27079 minecraft:granite
 fill 916 107 27076 931 110 27083 minecraft:brown_terracotta
-fill 916 136 27076 919 139 27103 minecraft:white_terracotta
-fill 916 140 27076 919 141 27111 minecraft:orange_terracotta
+fill 916 131 27076 919 135 27079 minecraft:red_sandstone
+fill 916 136 27076 919 139 27111 minecraft:white_terracotta
+fill 916 140 27076 919 141 27079 minecraft:orange_terracotta
 fill 916 106 27080 919 106 27083 minecraft:granite
 fill 916 111 27080 931 114 27083 minecraft:red_sandstone
 fill 916 115 27080 931 118 27087 minecraft:white_terracotta
+fill 916 140 27080 919 144 27119 minecraft:orange_terracotta
 fill 916 119 27084 931 121 27087 minecraft:terracotta
 fill 916 122 27084 931 127 27087 minecraft:yellow_terracotta
 fill 916 124 27088 919 127 27091 minecraft:yellow_terracotta
 fill 916 128 27088 931 130 27091 minecraft:white_terracotta
 fill 916 131 27088 931 135 27091 minecraft:red_sandstone
 fill 916 133 27092 919 135 27095 minecraft:red_sandstone
-fill 916 133 27124 931 135 27151 minecraft:red_sandstone
-fill 920 136 26848 935 138 26855 minecraft:white_terracotta
-fill 920 136 26856 923 139 26915 minecraft:white_terracotta
-fill 920 133 26872 931 135 26883 minecraft:red_sandstone
+fill 916 140 27120 931 141 27135 minecraft:orange_terracotta
+fill 916 140 27136 927 141 27151 minecraft:orange_terracotta
+fill 920 133 26864 935 135 26867 minecraft:red_sandstone
+fill 920 140 26872 931 141 26891 minecraft:orange_terracotta
+fill 920 133 26884 931 135 26887 minecraft:red_sandstone
+fill 920 133 26888 927 135 26895 minecraft:red_sandstone
+fill 920 140 26892 927 141 26895 minecraft:orange_terracotta
+fill 920 133 26896 923 135 26899 minecraft:red_sandstone
 fill 920 127 26900 923 127 26903 minecraft:yellow_terracotta
 fill 920 128 26900 935 130 26903 minecraft:white_terracotta
 fill 920 131 26900 935 135 26903 minecraft:red_sandstone
@@ -832,6 +839,7 @@ fill 920 103 26912 935 106 26915 minecraft:granite
 fill 920 88 26916 923 88 26919 minecraft:yellow_terracotta
 fill 920 89 26916 935 92 26919 minecraft:orange_terracotta
 fill 920 93 26916 935 97 26919 minecraft:red_terracotta
+fill 920 98 26916 931 102 26919 minecraft:yellow_terracotta
 fill 920 131 26916 923 132 26919 minecraft:red_sandstone
 fill 920 82 26920 923 85 26923 minecraft:terracotta
 fill 920 86 26920 935 88 26923 minecraft:yellow_terracotta
@@ -844,9 +852,9 @@ fill 920 67 26928 923 70 26931 minecraft:terracotta
 fill 920 71 26928 935 74 26931 minecraft:light_gray_terracotta
 fill 920 75 26928 931 77 26931 minecraft:granite
 fill 920 78 26928 931 80 26931 minecraft:white_terracotta
-fill 920 103 26928 923 105 26931 minecraft:granite
+fill 920 107 26928 923 108 26931 minecraft:brown_terracotta
 fill 920 61 26932 923 62 26935 minecraft:granite
-fill 920 63 26932 931 70 26935 minecraft:terracotta
+fill 920 63 26932 931 70 26939 minecraft:terracotta
 fill 920 98 26932 923 99 26935 minecraft:yellow_terracotta
 fill 920 55 26936 943 56 26939 minecraft:light_gray_terracotta
 fill 920 57 26936 943 59 26939 minecraft:yellow_terracotta
@@ -855,14 +863,14 @@ fill 920 93 26936 923 93 26939 minecraft:red_terracotta
 fill 920 86 26940 923 87 26943 minecraft:yellow_terracotta
 fill 920 78 26944 923 78 26947 minecraft:white_terracotta
 fill 920 63 26948 923 69 26951 minecraft:terracotta
-fill 920 60 26952 943 60 27019 minecraft:granite
-fill 920 60 27020 923 62 27051 minecraft:granite
-fill 920 63 27020 923 63 27047 minecraft:terracotta
+fill 920 60 26952 943 60 26975 minecraft:granite
+fill 920 60 26976 923 62 27051 minecraft:granite
+fill 920 63 26976 923 63 27047 minecraft:terracotta
 fill 920 71 27048 923 72 27051 minecraft:light_gray_terracotta
 fill 920 78 27052 923 78 27055 minecraft:white_terracotta
 fill 920 55 27056 943 56 27059 minecraft:light_gray_terracotta
 fill 920 57 27056 943 59 27059 minecraft:yellow_terracotta
-fill 920 81 27056 923 84 27059 minecraft:terracotta
+fill 920 86 27056 923 87 27059 minecraft:yellow_terracotta
 fill 920 61 27060 923 62 27063 minecraft:granite
 fill 920 63 27060 935 70 27063 minecraft:terracotta
 fill 920 93 27060 923 93 27063 minecraft:red_terracotta
@@ -878,35 +886,33 @@ fill 920 111 27068 923 114 27071 minecraft:red_sandstone
 fill 920 85 27072 923 85 27075 minecraft:terracotta
 fill 920 86 27072 935 88 27075 minecraft:yellow_terracotta
 fill 920 89 27072 935 92 27075 minecraft:orange_terracotta
-fill 920 119 27072 923 121 27075 minecraft:terracotta
 fill 920 122 27072 923 123 27075 minecraft:yellow_terracotta
 fill 920 91 27076 923 92 27079 minecraft:orange_terracotta
 fill 920 93 27076 935 97 27079 minecraft:red_terracotta
 fill 920 98 27076 931 102 27083 minecraft:yellow_terracotta
-fill 920 128 27076 923 129 27079 minecraft:white_terracotta
+fill 920 131 27076 923 132 27079 minecraft:red_sandstone
 fill 920 97 27080 923 97 27083 minecraft:red_terracotta
 fill 920 103 27080 935 106 27083 minecraft:granite
-fill 920 128 27080 923 130 27083 minecraft:white_terracotta
 fill 920 136 27080 923 138 27083 minecraft:white_terracotta
 fill 920 106 27084 923 106 27087 minecraft:granite
 fill 920 107 27084 935 110 27087 minecraft:brown_terracotta
 fill 920 111 27084 935 114 27087 minecraft:red_sandstone
-fill 920 136 27084 923 139 27103 minecraft:white_terracotta
-fill 920 140 27084 923 141 27111 minecraft:orange_terracotta
+fill 920 136 27084 923 139 27111 minecraft:white_terracotta
+fill 920 140 27084 923 141 27119 minecraft:orange_terracotta
 fill 920 115 27088 935 118 27091 minecraft:white_terracotta
 fill 920 119 27088 935 121 27091 minecraft:terracotta
 fill 920 122 27088 935 127 27091 minecraft:yellow_terracotta
 fill 920 124 27092 923 127 27095 minecraft:yellow_terracotta
 fill 920 128 27092 935 130 27095 minecraft:white_terracotta
 fill 920 131 27092 935 135 27095 minecraft:red_sandstone
-fill 920 133 27096 923 135 27123 minecraft:red_sandstone
-fill 924 136 26856 939 138 26863 minecraft:white_terracotta
-fill 924 136 26864 927 139 26891 minecraft:white_terracotta
-fill 924 136 26892 939 138 26895 minecraft:white_terracotta
+fill 920 133 27128 935 135 27151 minecraft:red_sandstone
+fill 924 136 26848 939 138 26855 minecraft:white_terracotta
+fill 924 136 26856 927 139 26863 minecraft:white_terracotta
+fill 924 140 26856 927 141 26859 minecraft:orange_terracotta
+fill 924 133 26868 935 135 26883 minecraft:red_sandstone
 fill 924 124 26896 927 127 26899 minecraft:yellow_terracotta
 fill 924 128 26896 939 130 26899 minecraft:white_terracotta
 fill 924 131 26896 939 135 26899 minecraft:red_sandstone
-fill 924 136 26896 935 138 26903 minecraft:white_terracotta
 fill 924 115 26900 939 118 26903 minecraft:white_terracotta
 fill 924 119 26900 939 121 26903 minecraft:terracotta
 fill 924 122 26900 935 127 26903 minecraft:yellow_terracotta
@@ -914,7 +920,6 @@ fill 924 106 26904 927 106 26907 minecraft:granite
 fill 924 107 26904 939 110 26907 minecraft:brown_terracotta
 fill 924 111 26904 939 114 26907 minecraft:red_sandstone
 fill 924 115 26904 935 118 26907 minecraft:white_terracotta
-fill 924 136 26904 931 138 26907 minecraft:white_terracotta
 fill 924 94 26908 927 97 26911 minecraft:red_terracotta
 fill 924 98 26908 939 102 26911 minecraft:yellow_terracotta
 fill 924 103 26908 939 106 26911 minecraft:granite
@@ -936,6 +941,7 @@ fill 924 81 26920 935 85 26923 minecraft:terracotta
 fill 924 111 26920 927 111 26923 minecraft:red_sandstone
 fill 924 64 26924 927 70 26927 minecraft:terracotta
 fill 924 75 26924 935 77 26927 minecraft:granite
+fill 924 103 26924 927 105 26927 minecraft:granite
 fill 924 58 26928 927 59 26931 minecraft:yellow_terracotta
 fill 924 60 26928 939 62 26931 minecraft:granite
 fill 924 63 26928 935 70 26931 minecraft:terracotta
@@ -946,9 +952,9 @@ fill 924 60 26932 935 62 26935 minecraft:granite
 fill 924 89 26932 927 90 26935 minecraft:orange_terracotta
 fill 924 81 26936 927 84 26939 minecraft:terracotta
 fill 924 75 26940 927 75 26943 minecraft:granite
-fill 924 63 26944 927 66 26947 minecraft:terracotta
+fill 924 63 26944 927 69 26947 minecraft:terracotta
 fill 924 60 26948 943 60 26951 minecraft:granite
-fill 924 60 27020 943 60 27047 minecraft:granite
+fill 924 60 26976 943 60 27047 minecraft:granite
 fill 924 60 27048 927 62 27051 minecraft:granite
 fill 924 63 27048 927 63 27051 minecraft:terracotta
 fill 924 63 27052 927 70 27059 minecraft:terracotta
@@ -964,7 +970,6 @@ fill 924 93 27064 927 96 27067 minecraft:red_terracotta
 fill 924 67 27068 927 70 27071 minecraft:terracotta
 fill 924 71 27068 939 74 27071 minecraft:light_gray_terracotta
 fill 924 75 27068 935 77 27075 minecraft:granite
-fill 924 98 27068 927 102 27071 minecraft:yellow_terracotta
 fill 924 103 27068 927 105 27071 minecraft:granite
 fill 924 73 27072 927 74 27075 minecraft:light_gray_terracotta
 fill 924 78 27072 939 80 27075 minecraft:white_terracotta
@@ -983,8 +988,8 @@ fill 924 103 27084 935 106 27091 minecraft:granite
 fill 924 136 27084 927 138 27087 minecraft:white_terracotta
 fill 924 107 27088 939 110 27091 minecraft:brown_terracotta
 fill 924 111 27088 939 114 27091 minecraft:red_sandstone
-fill 924 136 27088 927 139 27103 minecraft:white_terracotta
-fill 924 140 27088 927 141 27111 minecraft:orange_terracotta
+fill 924 136 27088 931 139 27111 minecraft:white_terracotta
+fill 924 140 27088 931 141 27119 minecraft:orange_terracotta
 fill 924 112 27092 927 114 27095 minecraft:red_sandstone
 fill 924 115 27092 939 118 27095 minecraft:white_terracotta
 fill 924 119 27092 939 121 27095 minecraft:terracotta
@@ -992,11 +997,9 @@ fill 924 122 27092 935 127 27095 minecraft:yellow_terracotta
 fill 924 124 27096 927 127 27099 minecraft:yellow_terracotta
 fill 924 128 27096 939 130 27099 minecraft:white_terracotta
 fill 924 131 27096 939 135 27099 minecraft:red_sandstone
-fill 924 133 27100 927 135 27123 minecraft:red_sandstone
-fill 924 136 27132 939 138 27151 minecraft:white_terracotta
-fill 928 130 26848 943 130 26863 minecraft:white_terracotta
-fill 928 131 26848 943 135 26863 minecraft:red_sandstone
-fill 928 136 26864 939 138 26891 minecraft:white_terracotta
+fill 924 133 27100 927 135 27127 minecraft:red_sandstone
+fill 928 136 26856 943 138 26859 minecraft:white_terracotta
+fill 928 136 26860 931 139 26863 minecraft:white_terracotta
 fill 928 130 26888 931 130 26891 minecraft:white_terracotta
 fill 928 131 26888 943 135 26891 minecraft:red_sandstone
 fill 928 118 26892 931 118 26895 minecraft:white_terracotta
@@ -1004,16 +1007,19 @@ fill 928 119 26892 943 121 26895 minecraft:terracotta
 fill 928 122 26892 943 127 26895 minecraft:yellow_terracotta
 fill 928 128 26892 943 130 26895 minecraft:white_terracotta
 fill 928 131 26892 939 135 26895 minecraft:red_sandstone
+fill 928 136 26892 939 138 26895 minecraft:white_terracotta
 fill 928 112 26896 931 114 26899 minecraft:red_sandstone
 fill 928 115 26896 943 118 26899 minecraft:white_terracotta
 fill 928 119 26896 943 121 26899 minecraft:terracotta
 fill 928 122 26896 939 127 26899 minecraft:yellow_terracotta
+fill 928 136 26896 935 138 26903 minecraft:white_terracotta
 fill 928 103 26900 943 106 26903 minecraft:granite
 fill 928 107 26900 943 110 26903 minecraft:brown_terracotta
 fill 928 111 26900 943 114 26903 minecraft:red_sandstone
 fill 928 94 26904 931 97 26907 minecraft:red_terracotta
 fill 928 98 26904 943 102 26907 minecraft:yellow_terracotta
 fill 928 103 26904 939 106 26907 minecraft:granite
+fill 928 136 26904 931 138 26907 minecraft:white_terracotta
 fill 928 85 26908 931 85 26911 minecraft:terracotta
 fill 928 86 26908 943 88 26911 minecraft:yellow_terracotta
 fill 928 89 26908 943 92 26911 minecraft:orange_terracotta
@@ -1049,7 +1055,6 @@ fill 928 81 27060 931 81 27063 minecraft:terracotta
 fill 928 55 27064 943 56 27067 minecraft:light_gray_terracotta
 fill 928 57 27064 943 59 27067 minecraft:yellow_terracotta
 fill 928 60 27064 939 62 27071 minecraft:granite
-fill 928 81 27064 931 85 27067 minecraft:terracotta
 fill 928 89 27064 931 90 27067 minecraft:orange_terracotta
 fill 928 58 27068 931 59 27071 minecraft:yellow_terracotta
 fill 928 63 27068 939 70 27071 minecraft:terracotta
@@ -1071,7 +1076,6 @@ fill 928 93 27084 939 97 27091 minecraft:red_terracotta
 fill 928 128 27084 931 129 27087 minecraft:white_terracotta
 fill 928 91 27088 931 92 27091 minecraft:orange_terracotta
 fill 928 98 27088 943 102 27091 minecraft:yellow_terracotta
-fill 928 136 27088 931 138 27131 minecraft:white_terracotta
 fill 928 100 27092 931 102 27095 minecraft:yellow_terracotta
 fill 928 103 27092 943 106 27095 minecraft:granite
 fill 928 107 27092 943 110 27095 minecraft:brown_terracotta
@@ -1084,12 +1088,14 @@ fill 928 121 27100 931 121 27103 minecraft:terracotta
 fill 928 128 27100 943 130 27103 minecraft:white_terracotta
 fill 928 131 27100 939 135 27107 minecraft:red_sandstone
 fill 928 130 27104 931 130 27107 minecraft:white_terracotta
-fill 928 133 27108 931 135 27123 minecraft:red_sandstone
-fill 932 130 26864 943 130 26879 minecraft:white_terracotta
-fill 932 131 26864 943 135 26887 minecraft:red_sandstone
-fill 932 130 26880 935 130 26883 minecraft:white_terracotta
+fill 928 133 27108 931 135 27127 minecraft:red_sandstone
+fill 928 136 27136 943 138 27151 minecraft:white_terracotta
+fill 932 130 26848 943 130 26863 minecraft:white_terracotta
+fill 932 131 26848 943 135 26863 minecraft:red_sandstone
+fill 932 136 26860 943 138 26891 minecraft:white_terracotta
 fill 932 127 26884 935 127 26887 minecraft:yellow_terracotta
 fill 932 128 26884 943 130 26887 minecraft:white_terracotta
+fill 932 131 26884 943 135 26887 minecraft:red_sandstone
 fill 932 118 26888 935 118 26891 minecraft:white_terracotta
 fill 932 119 26888 943 121 26891 minecraft:terracotta
 fill 932 122 26888 943 127 26891 minecraft:yellow_terracotta
@@ -1157,7 +1163,7 @@ fill 932 128 27088 935 129 27091 minecraft:white_terracotta
 fill 932 88 27092 935 88 27095 minecraft:yellow_terracotta
 fill 932 93 27092 943 97 27095 minecraft:red_terracotta
 fill 932 98 27092 943 102 27095 minecraft:yellow_terracotta
-fill 932 136 27092 935 138 27131 minecraft:white_terracotta
+fill 932 136 27092 935 138 27135 minecraft:white_terracotta
 fill 932 100 27096 935 102 27099 minecraft:yellow_terracotta
 fill 932 103 27096 943 106 27099 minecraft:granite
 fill 932 107 27096 943 110 27099 minecraft:brown_terracotta
@@ -1169,8 +1175,10 @@ fill 932 118 27104 935 118 27107 minecraft:white_terracotta
 fill 932 122 27104 943 127 27107 minecraft:yellow_terracotta
 fill 932 128 27104 943 130 27111 minecraft:white_terracotta
 fill 932 127 27108 935 127 27111 minecraft:yellow_terracotta
-fill 932 131 27108 943 135 27151 minecraft:red_sandstone
-fill 932 130 27112 935 130 27151 minecraft:white_terracotta
+fill 932 131 27108 943 135 27111 minecraft:red_sandstone
+fill 932 133 27112 935 135 27127 minecraft:red_sandstone
+fill 936 130 26864 943 130 26879 minecraft:white_terracotta
+fill 936 131 26864 943 135 26883 minecraft:red_sandstone
 fill 936 127 26880 939 127 26883 minecraft:yellow_terracotta
 fill 936 128 26880 943 130 26883 minecraft:white_terracotta
 fill 936 118 26884 939 118 26887 minecraft:white_terracotta
@@ -1241,7 +1249,7 @@ fill 936 98 27096 943 102 27103 minecraft:yellow_terracotta
 fill 936 97 27100 939 97 27103 minecraft:red_terracotta
 fill 936 103 27100 943 106 27103 minecraft:granite
 fill 936 107 27100 943 110 27107 minecraft:brown_terracotta
-fill 936 136 27100 939 138 27131 minecraft:white_terracotta
+fill 936 136 27100 939 138 27135 minecraft:white_terracotta
 fill 936 106 27104 939 106 27107 minecraft:granite
 fill 936 111 27104 943 114 27107 minecraft:red_sandstone
 fill 936 115 27104 943 118 27111 minecraft:white_terracotta
@@ -1249,6 +1257,7 @@ fill 936 119 27108 943 121 27111 minecraft:terracotta
 fill 936 122 27108 943 127 27111 minecraft:yellow_terracotta
 fill 936 124 27112 939 127 27115 minecraft:yellow_terracotta
 fill 936 128 27112 943 130 27115 minecraft:white_terracotta
+fill 936 131 27112 943 135 27151 minecraft:red_sandstone
 fill 936 130 27116 939 130 27151 minecraft:white_terracotta
 fill 940 118 26880 943 118 26883 minecraft:white_terracotta
 fill 940 119 26880 943 121 26883 minecraft:terracotta
@@ -1316,6 +1325,7 @@ fill 940 94 27104 943 97 27107 minecraft:red_terracotta
 fill 940 98 27104 943 102 27107 minecraft:yellow_terracotta
 fill 940 103 27104 943 106 27111 minecraft:granite
 fill 940 131 27104 943 135 27107 minecraft:red_sandstone
+fill 940 136 27104 943 138 27135 minecraft:white_terracotta
 fill 940 107 27108 943 110 27111 minecraft:brown_terracotta
 fill 940 111 27108 943 114 27111 minecraft:red_sandstone
 fill 940 115 27112 943 118 27115 minecraft:white_terracotta
@@ -1333,107 +1343,107 @@ fill 942 63 26989 943 64 26989 minecraft:glass
 fill 940 65 26989 943 65 26989 minecraft:dark_oak_slab
 fill 942 61 26992 942 62 26992 minecraft:oak_fence
 fill 942 61 27008 942 62 27008 minecraft:oak_fence
-fill 848 85 26990 848 107 26990 minecraft:stripped_oak_log
-fill 848 85 27010 848 107 27010 minecraft:stripped_oak_log
+fill 848 88 26990 848 107 26990 minecraft:stripped_oak_log
+fill 848 88 27010 848 107 27010 minecraft:stripped_oak_log
 fill 848 107 26990 848 107 27010 minecraft:dark_oak_planks
 setblock 848 106 27000 minecraft:lantern[hanging=true]
-fill 860 85 26990 860 104 26990 minecraft:stripped_oak_log
-fill 860 85 27010 860 104 27010 minecraft:stripped_oak_log
-fill 860 104 26990 860 104 27010 minecraft:dark_oak_planks
-setblock 860 103 27000 minecraft:lantern[hanging=true]
+fill 860 85 26990 860 107 26990 minecraft:stripped_oak_log
+fill 860 85 27010 860 107 27010 minecraft:stripped_oak_log
+fill 860 107 26990 860 107 27010 minecraft:dark_oak_planks
+setblock 860 106 27000 minecraft:lantern[hanging=true]
 fill 872 82 26990 872 104 26990 minecraft:stripped_oak_log
 fill 872 82 27010 872 104 27010 minecraft:stripped_oak_log
 fill 872 104 26990 872 104 27010 minecraft:dark_oak_planks
 setblock 872 103 27000 minecraft:lantern[hanging=true]
-fill 855 88 26990 856 104 27006 minecraft:blue_concrete
-fill 855 89 26991 856 103 27005 minecraft:light_blue_concrete
-fill 855 91 26993 856 101 27003 minecraft:sea_lantern
-fill 855 92 26994 856 100 27002 minecraft:air
-fill 915 77 26994 916 93 27010 minecraft:blue_concrete
-fill 915 78 26995 916 92 27009 minecraft:light_blue_concrete
-fill 915 80 26997 916 90 27007 minecraft:sea_lantern
-fill 915 81 26998 916 89 27006 minecraft:air
-fill 888 85 27007 889 93 27015 minecraft:gold_block
-fill 888 86 27008 889 92 27014 minecraft:air
-fill 919 69 26990 920 119 26991 minecraft:sea_lantern
-fill 919 69 27013 920 119 27014 minecraft:sea_lantern
-fill 919 119 26990 920 120 27014 minecraft:lime_concrete
-setblock 852 91 26992 minecraft:light[level=11]
-setblock 852 103 26992 minecraft:light[level=11]
-setblock 852 91 27000 minecraft:light[level=11]
-setblock 852 103 27000 minecraft:light[level=11]
-setblock 852 91 27008 minecraft:light[level=11]
-setblock 852 103 27008 minecraft:light[level=11]
-setblock 860 90 26992 minecraft:light[level=11]
-setblock 860 102 26992 minecraft:light[level=11]
-setblock 860 90 27000 minecraft:light[level=11]
-setblock 860 102 27000 minecraft:light[level=11]
-setblock 860 90 27008 minecraft:light[level=11]
-setblock 860 102 27008 minecraft:light[level=11]
-setblock 868 88 26992 minecraft:light[level=11]
-setblock 868 100 26992 minecraft:light[level=11]
-setblock 868 88 27000 minecraft:light[level=11]
-setblock 868 100 27000 minecraft:light[level=11]
-setblock 868 88 27008 minecraft:light[level=11]
-setblock 868 100 27008 minecraft:light[level=11]
-setblock 876 87 26993 minecraft:light[level=11]
-setblock 876 99 26993 minecraft:light[level=11]
-setblock 876 87 27001 minecraft:light[level=11]
-setblock 876 99 27001 minecraft:light[level=11]
-setblock 876 87 27009 minecraft:light[level=11]
-setblock 876 99 27009 minecraft:light[level=11]
-setblock 884 85 26993 minecraft:light[level=11]
-setblock 884 97 26993 minecraft:light[level=11]
-setblock 884 85 27001 minecraft:light[level=11]
-setblock 884 97 27001 minecraft:light[level=11]
-setblock 884 85 27009 minecraft:light[level=11]
-setblock 884 97 27009 minecraft:light[level=11]
-setblock 848 85 26988 minecraft:light[level=11]
-setblock 848 85 27001 minecraft:light[level=11]
+fill 855 92 26993 855 102 27003 minecraft:light_blue_concrete
+fill 855 93 26994 855 101 27002 minecraft:air
+fill 855 92 26993 855 92 26993 minecraft:sea_lantern
+fill 855 92 27003 855 92 27003 minecraft:sea_lantern
+fill 855 102 26993 855 102 26993 minecraft:sea_lantern
+fill 855 102 27003 855 102 27003 minecraft:sea_lantern
+fill 915 81 26997 915 91 27007 minecraft:light_blue_concrete
+fill 915 82 26998 915 90 27006 minecraft:air
+fill 915 81 26997 915 81 26997 minecraft:sea_lantern
+fill 915 81 27007 915 81 27007 minecraft:sea_lantern
+fill 915 91 26997 915 91 26997 minecraft:sea_lantern
+fill 915 91 27007 915 91 27007 minecraft:sea_lantern
+fill 885 86 27006 885 94 27014 minecraft:gold_block
+fill 885 87 27007 885 93 27013 minecraft:air
+fill 919 70 26990 920 120 26991 minecraft:sea_lantern
+fill 919 70 27013 920 120 27014 minecraft:sea_lantern
+fill 919 120 26990 920 121 27014 minecraft:lime_concrete
+setblock 852 92 26992 minecraft:light[level=11]
+setblock 852 104 26992 minecraft:light[level=11]
+setblock 852 92 27000 minecraft:light[level=11]
+setblock 852 104 27000 minecraft:light[level=11]
+setblock 852 92 27008 minecraft:light[level=11]
+setblock 852 104 27008 minecraft:light[level=11]
+setblock 860 91 26992 minecraft:light[level=11]
+setblock 860 103 26992 minecraft:light[level=11]
+setblock 860 91 27000 minecraft:light[level=11]
+setblock 860 103 27000 minecraft:light[level=11]
+setblock 860 91 27008 minecraft:light[level=11]
+setblock 860 103 27008 minecraft:light[level=11]
+setblock 868 89 26992 minecraft:light[level=11]
+setblock 868 101 26992 minecraft:light[level=11]
+setblock 868 89 27000 minecraft:light[level=11]
+setblock 868 101 27000 minecraft:light[level=11]
+setblock 868 89 27008 minecraft:light[level=11]
+setblock 868 101 27008 minecraft:light[level=11]
+setblock 876 88 26993 minecraft:light[level=11]
+setblock 876 100 26993 minecraft:light[level=11]
+setblock 876 88 27001 minecraft:light[level=11]
+setblock 876 100 27001 minecraft:light[level=11]
+setblock 876 88 27009 minecraft:light[level=11]
+setblock 876 100 27009 minecraft:light[level=11]
+setblock 884 86 26993 minecraft:light[level=11]
+setblock 884 98 26993 minecraft:light[level=11]
+setblock 884 86 27001 minecraft:light[level=11]
+setblock 884 98 27001 minecraft:light[level=11]
+setblock 884 86 27009 minecraft:light[level=11]
+setblock 884 98 27009 minecraft:light[level=11]
 setblock 848 96 27003 minecraft:light[level=11]
-setblock 848 100 26996 minecraft:light[level=11]
-setblock 854 85 26995 minecraft:light[level=11]
-setblock 854 85 27011 minecraft:light[level=11]
-setblock 854 96 26988 minecraft:light[level=11]
-setblock 854 97 27011 minecraft:light[level=11]
-setblock 855 97 26997 minecraft:light[level=11]
-setblock 855 107 26988 minecraft:light[level=11]
-setblock 855 107 27004 minecraft:light[level=11]
-setblock 856 86 27003 minecraft:light[level=11]
-setblock 857 95 27004 minecraft:light[level=11]
-setblock 857 106 26996 minecraft:light[level=11]
-setblock 860 85 26988 minecraft:light[level=11]
-setblock 863 85 26997 minecraft:light[level=11]
-setblock 863 94 26988 minecraft:light[level=11]
-setblock 863 95 27011 minecraft:light[level=11]
-setblock 864 82 27004 minecraft:light[level=11]
-setblock 864 95 26997 minecraft:light[level=11]
-setblock 865 92 27004 minecraft:light[level=11]
-setblock 865 104 26988 minecraft:light[level=11]
-setblock 865 104 27004 minecraft:light[level=11]
-setblock 869 82 26988 minecraft:light[level=11]
-setblock 870 82 27011 minecraft:light[level=11]
-setblock 871 82 26997 minecraft:light[level=11]
-setblock 871 92 26996 minecraft:light[level=11]
-setblock 871 104 26996 minecraft:light[level=11]
-setblock 872 92 27011 minecraft:light[level=11]
-setblock 872 95 26989 minecraft:light[level=11]
-setblock 872 95 27005 minecraft:light[level=11]
-setblock 872 104 27011 minecraft:light[level=11]
+setblock 849 97 26989 minecraft:light[level=11]
+setblock 852 85 26996 minecraft:light[level=11]
+setblock 854 85 27005 minecraft:light[level=11]
+setblock 854 97 26996 minecraft:light[level=11]
+setblock 855 85 26988 minecraft:light[level=11]
+setblock 855 97 27011 minecraft:light[level=11]
+setblock 856 99 27003 minecraft:light[level=11]
+setblock 856 100 26988 minecraft:light[level=11]
+setblock 856 107 26996 minecraft:light[level=11]
+setblock 860 85 27011 minecraft:light[level=11]
+setblock 862 85 26995 minecraft:light[level=11]
+setblock 863 86 27004 minecraft:light[level=11]
+setblock 863 95 26988 minecraft:light[level=11]
+setblock 863 96 27005 minecraft:light[level=11]
+setblock 863 99 26996 minecraft:light[level=11]
+setblock 863 107 26988 minecraft:light[level=11]
+setblock 863 107 27004 minecraft:light[level=11]
+setblock 868 82 26988 minecraft:light[level=11]
+setblock 869 82 27003 minecraft:light[level=11]
+setblock 870 94 26996 minecraft:light[level=11]
+setblock 870 95 27011 minecraft:light[level=11]
+setblock 871 83 26995 minecraft:light[level=11]
+setblock 871 83 27011 minecraft:light[level=11]
+setblock 872 92 26988 minecraft:light[level=11]
+setblock 872 92 27004 minecraft:light[level=11]
+setblock 872 104 26988 minecraft:light[level=11]
+setblock 873 104 27005 minecraft:light[level=11]
+setblock 878 82 26989 minecraft:light[level=11]
 setblock 878 82 27005 minecraft:light[level=11]
-setblock 878 91 26988 minecraft:light[level=11]
-setblock 879 82 26989 minecraft:light[level=11]
-setblock 879 92 27004 minecraft:light[level=11]
-setblock 880 79 26996 minecraft:light[level=11]
-setblock 880 79 27011 minecraft:light[level=11]
-setblock 880 101 26988 minecraft:light[level=11]
-setblock 881 89 26997 minecraft:light[level=11]
-setblock 881 101 27005 minecraft:light[level=11]
-setblock 886 79 26988 minecraft:light[level=11]
-setblock 886 79 27004 minecraft:light[level=11]
-setblock 887 89 26988 minecraft:light[level=11]
-setblock 887 89 27005 minecraft:light[level=11]
-setblock 887 101 26997 minecraft:light[level=11]
+setblock 879 84 26997 minecraft:light[level=11]
+setblock 879 94 26990 minecraft:light[level=11]
+setblock 879 94 27006 minecraft:light[level=11]
+setblock 879 104 26997 minecraft:light[level=11]
+setblock 881 92 26998 minecraft:light[level=11]
+setblock 881 101 26988 minecraft:light[level=11]
+setblock 881 104 27011 minecraft:light[level=11]
+setblock 885 79 26988 minecraft:light[level=11]
+setblock 885 79 27004 minecraft:light[level=11]
+setblock 885 91 26988 minecraft:light[level=11]
+setblock 886 91 27005 minecraft:light[level=11]
+setblock 887 80 26996 minecraft:light[level=11]
 forceload remove 848 26848 943 27151
 scoreboard players set $xbk mg.st 11
 scoreboard players set $xbw mg.st 0

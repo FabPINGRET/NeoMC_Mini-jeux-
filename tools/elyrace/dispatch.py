@@ -143,6 +143,8 @@ def uninstall_lines(specs):
             'clear @a minecraft:elytra[minecraft:custom_data~{mg_elyr:1b}]',
             'clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_elyr:1b}]']
     out += ['tag @a remove ' + t for t in G.TAGS] + W.cleanup_lines()
+    out += ['# course de groupe en cours : gravité normale pour ses participants (mg.xcr : lu avant le retrait des objectifs, sans tag mg.play : desinstaller l\'a déjà retiré ; le solo la remet dans solo/stop)',
+            G.GRAV_RESET_ALL]
     out += ['# contre-la-montre solo en cours : solo/stop (tags, scores de course, gel, pause d\'avant, retour au lobby ; il tourne ici, avant le retrait des',
             '# objectifs de l\'élytre ; mg.st / mg.t / mg.deaths sont déjà retirés par desinstaller : les écritures de score dessus (délai mg.xse d\'après $tc, vote rendu,',
             '# morts remises à 0) échouent sans bruit) ; dans l\'overworld, où est le lobby (tp et spawnpoint de reset_player) ; puis filet sur les tags',
@@ -162,6 +164,8 @@ def functions(specs):
            'respawn': player_dispatcher(specs, '# @s = joueur à replacer au dernier point de reprise de son parcours (mg.xcr)', 'respawn'),
            'hud': player_dispatcher(specs, '# @s = joueur : barre d\'action de son parcours (mg.xcr)', 'hud'),
            'place_tp': player_dispatcher(specs, '# @s = joueur : le met à sa place de départ (mg.ri) sur son parcours (mg.xcr)', 'place_tp'),
+           'grav_on': player_dispatcher(specs, '# @s = joueur : GO, gravité de course de son parcours (mg.xcr), sans turbo (groupe : go ; solo : solo/go)', 'grav')
+           + [G.XU_ZERO],
            'fl_remove': dispatcher(specs, '# Libère le chargement forcé de la zone de départ du parcours $xc', 'fl_remove'),
            'gate_off': dispatcher(specs, '# GO : ouvre le portillon du parcours $xc', 'gate_off')}
     if len(specs) < N_ROUTES:                   # tous les emplacements sont ecrits : plus rien n'appelle not_available

@@ -1,7 +1,7 @@
 """Ce qui est commun a tous les parcours de la Course d'elytres : le resultat de build() (Course), la trajectoire de
 reference (Path), le vol de reference d'une spec (reference) et le trou des anneaux (HOLE).
 Un parcours est un module « spec » (course_canyon.py, ...) qui expose NUM, NAME, ICON, COLOR, STARS, TIP, FLAG, CZ, X0, X1, Z0, Z1, START_Y,
-EDGE_X, GATE_X, RINGS, CPS, GOLDS, WINDS, R_UP, build(), reference_waypoints(), start_state() et lat() ; OLD_FLAGS (facultatif) liste
+EDGE_X, GATE_X, GRAVITY (gravite de course, posee au GO : voir game.py), RINGS, CPS, GOLDS, WINDS, R_UP, build(), reference_waypoints(), start_state() et lat() ; OLD_FLAGS (facultatif) liste
 les drapeaux des versions precedentes, que elyrace/forget efface. Le suivi de mg:setup teste les FLAG (tools/setup/gen_setup_watch.py).
 Python stdlib uniquement (compatible 3.8).
 """

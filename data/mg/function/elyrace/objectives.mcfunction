@@ -13,6 +13,10 @@ scoreboard objectives add mg.xf dummy
 scoreboard objectives add mg.xb1 dummy
 scoreboard objectives add mg.xb2 dummy
 scoreboard objectives add mg.xb3 dummy
+scoreboard objectives add mg.xq1 dummy
+scoreboard objectives add mg.xq2 dummy
+scoreboard objectives add mg.xq3 dummy
+scoreboard objectives add mg.xu dummy
 # hors de OBJECTIVES (prepare les remet à zéro à chaque départ) : parcours du joueur et état du solo (par joueur), trigger du solo, records par parcours
 scoreboard objectives add mg.xcr dummy
 scoreboard objectives add mg.xph dummy
