@@ -1,4 +1,6 @@
 execute as @a run ride @s dismount
+effect clear @a[tag=mg.play] minecraft:glowing
+scoreboard players reset @a mg.trj
 kill @e[tag=mg.trm]
 kill @e[tag=mg.trp]
 execute as @e[tag=mg.trh] run tp @s ~ -100 ~

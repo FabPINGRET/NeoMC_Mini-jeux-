@@ -67,8 +67,6 @@ forceload add -24 15386 24 15514
 forceload add -54 15746 54 15854
 # Téléphone : salle d'attente (les parcelles sont chargées pendant la partie)
 forceload add -8 19412 8 19428
-# Tron (z 20000)
-forceload add -32 19968 32 20032
 # King of the Hill (z 20400)
 forceload add -27 20373 27 20427
 # The Towers (z 20800)
@@ -84,6 +82,8 @@ forceload add -52 22748 52 22852
 forceload add -17 23161 39 23217
 # Prop Hunt (z 23600)
 forceload add -23 23582 23 23618
+# Tron (z 20000)
+forceload add -52 19948 52 20052
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl

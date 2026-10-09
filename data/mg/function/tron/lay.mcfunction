@@ -15,6 +15,8 @@ execute if score @s mg.trc matches 12 run fill ~ ~ ~ ~ ~1 ~ minecraft:brown_wool
 execute if score @s mg.trc matches 13 run fill ~ ~ ~ ~ ~1 ~ minecraft:light_gray_wool replace #minecraft:air
 execute if score @s mg.trc matches 14 run fill ~ ~ ~ ~ ~1 ~ minecraft:gray_wool replace #minecraft:air
 execute if score @s mg.trc matches 15 run fill ~ ~ ~ ~ ~1 ~ minecraft:black_wool replace #minecraft:air
+execute positioned ~ ~2 ~ if block ~ ~ ~ #minecraft:air run setblock ~ ~ ~ minecraft:light[level=6]
 tp @e[tag=mg.tpm,limit=1] @s
 tp @s @e[tag=mg.tcar,limit=1]
+execute at @s run tp @s ~ 81 ~
 scoreboard players set @a[tag=mg.tme] mg.trs 0

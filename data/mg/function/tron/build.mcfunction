@@ -1,47 +1,152 @@
-# ⚡ Tron — arène 61×61 (centre 0 80 20000), sol sombre quadrillé, bordure lumineuse (touche = éliminé)
-fill -32 79 19968 32 79 20032 minecraft:air
-fill -32 80 19968 32 80 20032 minecraft:air
-fill -32 81 19968 32 81 20032 minecraft:air
-fill -32 82 19968 32 82 20032 minecraft:air
-fill -32 83 19968 32 83 20032 minecraft:air
-fill -32 84 19968 32 84 20032 minecraft:air
-fill -32 85 19968 32 85 20032 minecraft:air
-fill -32 86 19968 32 86 20032 minecraft:air
-fill -32 87 19968 32 87 20032 minecraft:air
-fill -32 88 19968 32 88 20032 minecraft:air
-fill -32 89 19968 32 89 20032 minecraft:air
-fill -32 90 19968 32 90 20032 minecraft:air
-fill -32 91 19968 32 91 20032 minecraft:air
-fill -31 79 19969 31 79 20031 minecraft:barrier
-fill -30 80 19970 30 80 20030 minecraft:black_concrete
-fill -30 80 19970 -30 80 20030 minecraft:gray_concrete
-fill -30 80 19970 30 80 19970 minecraft:gray_concrete
-fill -24 80 19970 -24 80 20030 minecraft:gray_concrete
-fill -30 80 19976 30 80 19976 minecraft:gray_concrete
-fill -18 80 19970 -18 80 20030 minecraft:gray_concrete
-fill -30 80 19982 30 80 19982 minecraft:gray_concrete
-fill -12 80 19970 -12 80 20030 minecraft:gray_concrete
-fill -30 80 19988 30 80 19988 minecraft:gray_concrete
-fill -6 80 19970 -6 80 20030 minecraft:gray_concrete
-fill -30 80 19994 30 80 19994 minecraft:gray_concrete
-fill 0 80 19970 0 80 20030 minecraft:gray_concrete
-fill -30 80 20000 30 80 20000 minecraft:gray_concrete
-fill 6 80 19970 6 80 20030 minecraft:gray_concrete
-fill -30 80 20006 30 80 20006 minecraft:gray_concrete
-fill 12 80 19970 12 80 20030 minecraft:gray_concrete
-fill -30 80 20012 30 80 20012 minecraft:gray_concrete
-fill 18 80 19970 18 80 20030 minecraft:gray_concrete
-fill -30 80 20018 30 80 20018 minecraft:gray_concrete
-fill 24 80 19970 24 80 20030 minecraft:gray_concrete
-fill -30 80 20024 30 80 20024 minecraft:gray_concrete
-fill 30 80 19970 30 80 20030 minecraft:gray_concrete
-fill -30 80 20030 30 80 20030 minecraft:gray_concrete
-fill -31 80 19969 31 82 19969 minecraft:cyan_stained_glass
-fill -31 80 20031 31 82 20031 minecraft:cyan_stained_glass
-fill -31 80 19970 -31 82 20030 minecraft:cyan_stained_glass
-fill 31 80 19970 31 82 20030 minecraft:cyan_stained_glass
-fill -31 83 19969 31 90 19969 minecraft:barrier
-fill -31 83 20031 31 90 20031 minecraft:barrier
-fill -31 83 19970 -31 90 20030 minecraft:barrier
-fill 31 83 19970 31 90 20030 minecraft:barrier
-fill -31 91 19969 31 91 20031 minecraft:barrier
+# ⚡ Tron — arène 101×101 (centre 0 80 20000) dans la pénombre : toit opaque, quelques lumières faibles, bordure cyan
+fill -52 79 19948 52 79 20052 minecraft:air
+fill -52 80 19948 52 80 20052 minecraft:air
+fill -52 81 19948 52 81 20052 minecraft:air
+fill -52 82 19948 52 82 20052 minecraft:air
+fill -52 83 19948 52 83 20052 minecraft:air
+fill -52 84 19948 52 84 20052 minecraft:air
+fill -52 85 19948 52 85 20052 minecraft:air
+fill -52 86 19948 52 86 20052 minecraft:air
+fill -52 87 19948 52 87 20052 minecraft:air
+fill -52 88 19948 52 88 20052 minecraft:air
+fill -52 89 19948 52 89 20052 minecraft:air
+fill -52 90 19948 52 90 20052 minecraft:air
+fill -52 91 19948 52 91 20052 minecraft:air
+fill -52 92 19948 52 92 20052 minecraft:air
+fill -51 79 19949 51 79 20051 minecraft:barrier
+fill -50 80 19950 50 80 20050 minecraft:black_concrete
+fill -50 80 19950 -50 80 20050 minecraft:gray_concrete
+fill -50 80 19950 50 80 19950 minecraft:gray_concrete
+fill -40 80 19950 -40 80 20050 minecraft:gray_concrete
+fill -50 80 19960 50 80 19960 minecraft:gray_concrete
+fill -30 80 19950 -30 80 20050 minecraft:gray_concrete
+fill -50 80 19970 50 80 19970 minecraft:gray_concrete
+fill -20 80 19950 -20 80 20050 minecraft:gray_concrete
+fill -50 80 19980 50 80 19980 minecraft:gray_concrete
+fill -10 80 19950 -10 80 20050 minecraft:gray_concrete
+fill -50 80 19990 50 80 19990 minecraft:gray_concrete
+fill 0 80 19950 0 80 20050 minecraft:gray_concrete
+fill -50 80 20000 50 80 20000 minecraft:gray_concrete
+fill 10 80 19950 10 80 20050 minecraft:gray_concrete
+fill -50 80 20010 50 80 20010 minecraft:gray_concrete
+fill 20 80 19950 20 80 20050 minecraft:gray_concrete
+fill -50 80 20020 50 80 20020 minecraft:gray_concrete
+fill 30 80 19950 30 80 20050 minecraft:gray_concrete
+fill -50 80 20030 50 80 20030 minecraft:gray_concrete
+fill 40 80 19950 40 80 20050 minecraft:gray_concrete
+fill -50 80 20040 50 80 20040 minecraft:gray_concrete
+fill 50 80 19950 50 80 20050 minecraft:gray_concrete
+fill -50 80 20050 50 80 20050 minecraft:gray_concrete
+fill -51 80 19949 51 82 19949 minecraft:cyan_stained_glass
+fill -51 80 20051 51 82 20051 minecraft:cyan_stained_glass
+fill -51 80 19950 -51 82 20050 minecraft:cyan_stained_glass
+fill 51 80 19950 51 82 20050 minecraft:cyan_stained_glass
+fill -51 83 19949 51 91 19949 minecraft:black_concrete
+fill -51 83 20051 51 91 20051 minecraft:black_concrete
+fill -51 83 19950 -51 91 20050 minecraft:black_concrete
+fill 51 83 19950 51 91 20050 minecraft:black_concrete
+fill -51 92 19949 51 92 20051 minecraft:black_concrete
+fill -52 81 19948 52 81 19948 minecraft:light[level=9]
+fill -52 81 20052 52 81 20052 minecraft:light[level=9]
+fill -52 81 19949 -52 81 20051 minecraft:light[level=9]
+fill 52 81 19949 52 81 20051 minecraft:light[level=9]
+setblock -45 86 19955 minecraft:light[level=7]
+setblock -45 86 19965 minecraft:light[level=7]
+setblock -45 86 19975 minecraft:light[level=7]
+setblock -45 86 19985 minecraft:light[level=7]
+setblock -45 86 19995 minecraft:light[level=7]
+setblock -45 86 20005 minecraft:light[level=7]
+setblock -45 86 20015 minecraft:light[level=7]
+setblock -45 86 20025 minecraft:light[level=7]
+setblock -45 86 20035 minecraft:light[level=7]
+setblock -45 86 20045 minecraft:light[level=7]
+setblock -35 86 19955 minecraft:light[level=7]
+setblock -35 86 19965 minecraft:light[level=7]
+setblock -35 86 19975 minecraft:light[level=7]
+setblock -35 86 19985 minecraft:light[level=7]
+setblock -35 86 19995 minecraft:light[level=7]
+setblock -35 86 20005 minecraft:light[level=7]
+setblock -35 86 20015 minecraft:light[level=7]
+setblock -35 86 20025 minecraft:light[level=7]
+setblock -35 86 20035 minecraft:light[level=7]
+setblock -35 86 20045 minecraft:light[level=7]
+setblock -25 86 19955 minecraft:light[level=7]
+setblock -25 86 19965 minecraft:light[level=7]
+setblock -25 86 19975 minecraft:light[level=7]
+setblock -25 86 19985 minecraft:light[level=7]
+setblock -25 86 19995 minecraft:light[level=7]
+setblock -25 86 20005 minecraft:light[level=7]
+setblock -25 86 20015 minecraft:light[level=7]
+setblock -25 86 20025 minecraft:light[level=7]
+setblock -25 86 20035 minecraft:light[level=7]
+setblock -25 86 20045 minecraft:light[level=7]
+setblock -15 86 19955 minecraft:light[level=7]
+setblock -15 86 19965 minecraft:light[level=7]
+setblock -15 86 19975 minecraft:light[level=7]
+setblock -15 86 19985 minecraft:light[level=7]
+setblock -15 86 19995 minecraft:light[level=7]
+setblock -15 86 20005 minecraft:light[level=7]
+setblock -15 86 20015 minecraft:light[level=7]
+setblock -15 86 20025 minecraft:light[level=7]
+setblock -15 86 20035 minecraft:light[level=7]
+setblock -15 86 20045 minecraft:light[level=7]
+setblock -5 86 19955 minecraft:light[level=7]
+setblock -5 86 19965 minecraft:light[level=7]
+setblock -5 86 19975 minecraft:light[level=7]
+setblock -5 86 19985 minecraft:light[level=7]
+setblock -5 86 19995 minecraft:light[level=7]
+setblock -5 86 20005 minecraft:light[level=7]
+setblock -5 86 20015 minecraft:light[level=7]
+setblock -5 86 20025 minecraft:light[level=7]
+setblock -5 86 20035 minecraft:light[level=7]
+setblock -5 86 20045 minecraft:light[level=7]
+setblock 5 86 19955 minecraft:light[level=7]
+setblock 5 86 19965 minecraft:light[level=7]
+setblock 5 86 19975 minecraft:light[level=7]
+setblock 5 86 19985 minecraft:light[level=7]
+setblock 5 86 19995 minecraft:light[level=7]
+setblock 5 86 20005 minecraft:light[level=7]
+setblock 5 86 20015 minecraft:light[level=7]
+setblock 5 86 20025 minecraft:light[level=7]
+setblock 5 86 20035 minecraft:light[level=7]
+setblock 5 86 20045 minecraft:light[level=7]
+setblock 15 86 19955 minecraft:light[level=7]
+setblock 15 86 19965 minecraft:light[level=7]
+setblock 15 86 19975 minecraft:light[level=7]
+setblock 15 86 19985 minecraft:light[level=7]
+setblock 15 86 19995 minecraft:light[level=7]
+setblock 15 86 20005 minecraft:light[level=7]
+setblock 15 86 20015 minecraft:light[level=7]
+setblock 15 86 20025 minecraft:light[level=7]
+setblock 15 86 20035 minecraft:light[level=7]
+setblock 15 86 20045 minecraft:light[level=7]
+setblock 25 86 19955 minecraft:light[level=7]
+setblock 25 86 19965 minecraft:light[level=7]
+setblock 25 86 19975 minecraft:light[level=7]
+setblock 25 86 19985 minecraft:light[level=7]
+setblock 25 86 19995 minecraft:light[level=7]
+setblock 25 86 20005 minecraft:light[level=7]
+setblock 25 86 20015 minecraft:light[level=7]
+setblock 25 86 20025 minecraft:light[level=7]
+setblock 25 86 20035 minecraft:light[level=7]
+setblock 25 86 20045 minecraft:light[level=7]
+setblock 35 86 19955 minecraft:light[level=7]
+setblock 35 86 19965 minecraft:light[level=7]
+setblock 35 86 19975 minecraft:light[level=7]
+setblock 35 86 19985 minecraft:light[level=7]
+setblock 35 86 19995 minecraft:light[level=7]
+setblock 35 86 20005 minecraft:light[level=7]
+setblock 35 86 20015 minecraft:light[level=7]
+setblock 35 86 20025 minecraft:light[level=7]
+setblock 35 86 20035 minecraft:light[level=7]
+setblock 35 86 20045 minecraft:light[level=7]
+setblock 45 86 19955 minecraft:light[level=7]
+setblock 45 86 19965 minecraft:light[level=7]
+setblock 45 86 19975 minecraft:light[level=7]
+setblock 45 86 19985 minecraft:light[level=7]
+setblock 45 86 19995 minecraft:light[level=7]
+setblock 45 86 20005 minecraft:light[level=7]
+setblock 45 86 20015 minecraft:light[level=7]
+setblock 45 86 20025 minecraft:light[level=7]
+setblock 45 86 20035 minecraft:light[level=7]
+setblock 45 86 20045 minecraft:light[level=7]

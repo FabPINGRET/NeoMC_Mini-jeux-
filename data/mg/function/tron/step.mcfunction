@@ -11,7 +11,11 @@ execute as @e[tag=mg.trp] if score @s mg.trc = $tid mg.st run tag @s add mg.tpm
 scoreboard players set $tdead mg.st 0
 execute if score $trt mg.st matches 20.. as @e[tag=mg.tcar,limit=1] at @s run function mg:tron/probe
 scoreboard players add @s mg.trs 1
-execute as @e[tag=mg.tcm,limit=1] at @s align xyz unless entity @e[tag=mg.tcar,dx=0,dy=0,dz=0] run function mg:tron/lay
+execute as @e[tag=mg.tcar] at @s if block ~ ~-0.25 ~ #minecraft:air run tag @s add mg.tair
+execute unless entity @e[tag=mg.tair] as @e[tag=mg.tcm,limit=1] at @s align xyz unless entity @e[tag=mg.tcar,dx=0,dy=0,dz=0] run function mg:tron/lay
+execute if entity @e[tag=mg.tair] as @e[tag=mg.tcm,limit=1] at @e[tag=mg.tcar,limit=1] run tp @s ~ 81 ~
+execute if entity @e[tag=mg.tair] run scoreboard players set @s mg.trs 0
+tag @e remove mg.tair
 tag @e remove mg.tcar
 tag @e remove mg.tcm
 tag @e remove mg.tpm
