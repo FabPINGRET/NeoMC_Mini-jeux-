@@ -62,9 +62,11 @@ w('convoy/spawn', ['# @s : point d\'apparition (près du convoi : escorte derri�
                    'execute if score $cvm mg.st matches 1 run scoreboard players set $cva mg.st 1',
                    'execute if score $cvm mg.st matches 0 if score $cvo mg.st matches 0 if entity @s[team=mg_red] run scoreboard players set $cva mg.st 1',
                    'execute if score $cvm mg.st matches 0 if score $cvo mg.st matches 1 if entity @s[team=mg_blue] run scoreboard players set $cva mg.st 1',
-                   f'execute if score $cva mg.st matches 1 at {CV} run tp @s ~-8 81 {Z}.5 facing ~ 81 {Z}.5',
-                   f'execute if score $cva mg.st matches 0 if score $cvp mg.st matches ..95 at {CV} run tp @s ~25 81 {Z}.5 facing ~ 81 {Z}.5',
-                   f'execute if score $cva mg.st matches 0 if score $cvp mg.st matches 96.. run tp @s 68 81 {Z}.5 facing -70 81 {Z}.5',
+                   # escorte : 25 blocs derrière le convoi (au pire au début de la route) ; défense : 40 blocs devant (au pire au bout)
+                   f'execute if score $cva mg.st matches 1 if score $cvp mg.st matches 17.. at {CV} run tp @s ~-25 81 {Z}.5 facing ~ 81 {Z}.5',
+                   f'execute if score $cva mg.st matches 1 if score $cvp mg.st matches ..16 run tp @s {X0 - 8} 81 {Z}.5 facing 0 81 {Z}.5',
+                   f'execute if score $cva mg.st matches 0 if score $cvp mg.st matches ..87 at {CV} run tp @s ~40 81 {Z}.5 facing ~ 81 {Z}.5',
+                   f'execute if score $cva mg.st matches 0 if score $cvp mg.st matches 88.. run tp @s {X1 + 8} 81 {Z}.5 facing -70 81 {Z}.5',
                    'execute at @s run spawnpoint @s ~ ~ ~'])
 w('convoy/kit', ['# @s : kit', 'clear @s', 'give @s minecraft:iron_sword[unbreakable={}]', 'give @s minecraft:bow[unbreakable={}]',
                  'give @s minecraft:arrow 32', 'give @s minecraft:cooked_beef 16',
@@ -95,9 +97,10 @@ w('convoy/round_msg', ['# Annonce de la manche',
                            {'text': ' points.', 'color': 'gray'}])])
 
 w('convoy/tick', ['# 🚚 Convoi — tick', 'scoreboard players add $cvt mg.st 1',
-                  'execute as @a[tag=mg.play,scores={mg.deaths=1..}] run function mg:convoy/respawn',
-                  'execute as @a[tag=mg.play] store result score @s mg.t run data get entity @s Pos[1]',
-                  'execute as @a[tag=mg.play,scores={mg.t=..74}] run function mg:convoy/respawn',
+                  'execute as @a[tag=mg.play,scores={mg.deaths=1..}] run function mg:convoy/dead',
+                  'execute as @a[tag=mg.play,tag=!mg.cvw] store result score @s mg.t run data get entity @s Pos[1]',
+                  'execute as @a[tag=mg.play,tag=!mg.cvw,scores={mg.t=..74}] run function mg:convoy/dead',
+                  'execute as @a[tag=mg.cvw] run function mg:convoy/wait',
                   # escorteurs / bloqueurs près du convoi
                   'scoreboard players set $cve mg.st 0', 'scoreboard players set $cvb mg.st 0',
                   f'execute if score $cvm mg.st matches 1 at {CV} store result score $cve mg.st if entity @a[tag=mg.play,gamemode=!spectator,distance=..4]',
@@ -184,9 +187,22 @@ w('convoy/coop_lose', ['# Coop : convoi détruit ou trop lent', 'kill @e[tag=mg.
                        'tellraw @a ' + js([{'text': '☠ Le convoi s\'est arrêté à ', 'color': 'gray'}, {'score': {'name': '$cvp', 'objective': 'mg.st'}, 'color': 'red', 'bold': True},
                                            {'text': ' blocs sur 120.', 'color': 'gray'}]),
                        'execute as @a[tag=!mg.surv] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 0.5 0.8'])
-w('convoy/respawn', ['# @s : réapparition près du convoi', 'scoreboard players set @s mg.deaths 0', 'function mg:convoy/spawn',
+RESPAWN = 100      # 5 s
+w('convoy/dead', ['# @s vient de mourir (ou de tomber) : spectateur au-dessus du convoi pendant 5 s',
+                  'scoreboard players set @s mg.deaths 0', 'tag @s add mg.cvw', f'scoreboard players set @s mg.cvrt {RESPAWN}',
+                  'gamemode spectator @s', f'execute at {CV} run tp @s ~ 92 ~6 facing entity {CV}',
+                  'title @s times 0 25 5', 'title @s title {"text":"☠ Éliminé","color":"red","bold":true}'])
+w('convoy/wait', ['# @s attend sa réapparition (compte à rebours dans la barre d\'action)',
+                  'scoreboard players remove @s mg.cvrt 1',
+                  'execute if score @s mg.cvrt matches ..0 run return run function mg:convoy/respawn',
+                  'scoreboard players operation $cvs mg.st = @s mg.cvrt', 'scoreboard players add $cvs mg.st 19',
+                  'scoreboard players set #20 mg.st 20', 'scoreboard players operation $cvs mg.st /= #20 mg.st',
+                  'title @s actionbar [{"text":"Réapparition dans ","color":"gray"},{"score":{"name":"$cvs","objective":"mg.st"},"color":"yellow","bold":true},{"text":" s","color":"gray"}]'])
+w('convoy/respawn', ['# @s : réapparition loin du convoi (escorte derrière, défense devant)', 'scoreboard players set @s mg.deaths 0',
+                     'tag @s remove mg.cvw', 'scoreboard players reset @s mg.cvrt', 'gamemode adventure @s', 'function mg:convoy/spawn',
                      'function mg:convoy/kit', 'effect give @s minecraft:resistance 3 4 true', 'effect give @s minecraft:instant_health 1 4 true'])
-w('convoy/cleanup', ['function mg:convoy/kill_all', 'bossbar remove mg:convoy'])
+w('convoy/cleanup', ['function mg:convoy/kill_all', 'bossbar remove mg:convoy', 'tag @a remove mg.cvw', 'scoreboard players reset @a mg.cvrt'])
+C.objectives([('mg.cvrt', 'dummy')])
 
 C.register([89, 90], 'convoy', [
     C.announce(89, '', '🚚 CONVOI', 'gold', 'rouges contre bleus, escortez ou bloquez le convoi (2 manches) !'),

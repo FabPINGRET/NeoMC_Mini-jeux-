@@ -37,6 +37,7 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.cvrt dummy
 scoreboard objectives add mg.bmb dummy {"text":"💣 Dégâts","color":"red","bold":true}
 scoreboard objectives add mg.bid dummy
 scoreboard objectives add mg.bty dummy
