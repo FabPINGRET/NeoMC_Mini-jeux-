@@ -259,3 +259,4 @@ scoreboard objectives add mg.sbg dummy
 execute unless data storage mg:hall sbon run scoreboard players set $sb mg.st 1
 data modify storage mg:hall sbon set value 1b
 function mg:version/load
+execute unless score $rp mg.st matches 0.. run function mg:core/rp_default
