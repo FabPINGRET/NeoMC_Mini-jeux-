@@ -39,3 +39,4 @@ data remove storage mg:hall sbon
 data remove storage mg:hall v2
 data remove storage mg:hall v3
 data remove storage mg:hall v4
+data remove storage mg:hall v5
