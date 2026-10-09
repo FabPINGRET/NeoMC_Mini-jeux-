@@ -1,0 +1,9 @@
+# Pose Plaqué au mur
+attribute @s minecraft:scale base set 1.0
+execute as @e[type=minecraft:block_display,tag=mg.cmk1] if score @s mg.cmid = $cmid mg.st run data merge entity @s {interpolation_duration:4,start_interpolation:0,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.25f,1.4f,0.18f],scale:[0.5f,0.5f,0.1f]}}
+execute as @e[type=minecraft:block_display,tag=mg.cmk2] if score @s mg.cmid = $cmid mg.st run data merge entity @s {interpolation_duration:4,start_interpolation:0,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.4f,0.5f,0.18f],scale:[0.8f,0.9f,0.1f]}}
+execute as @e[type=minecraft:block_display,tag=mg.cmk3] if score @s mg.cmid = $cmid mg.st run data merge entity @s {interpolation_duration:4,start_interpolation:0,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.62f,0.6f,0.18f],scale:[0.22f,0.8f,0.1f]}}
+execute as @e[type=minecraft:block_display,tag=mg.cmk4] if score @s mg.cmid = $cmid mg.st run data merge entity @s {interpolation_duration:4,start_interpolation:0,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.4f,0.6f,0.18f],scale:[0.22f,0.8f,0.1f]}}
+execute as @e[type=minecraft:block_display,tag=mg.cmk5] if score @s mg.cmid = $cmid mg.st run data merge entity @s {interpolation_duration:4,start_interpolation:0,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.4f,0.0f,0.18f],scale:[0.38f,0.5f,0.1f]}}
+execute as @e[type=minecraft:block_display,tag=mg.cmk6] if score @s mg.cmid = $cmid mg.st run data merge entity @s {interpolation_duration:4,start_interpolation:0,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.02f,0.0f,0.18f],scale:[0.38f,0.5f,0.1f]}}
+execute as @e[type=minecraft:interaction,tag=mg.cmi] if score @s mg.cmid = $cmid mg.st run data merge entity @s {width:1.0f,height:1.9f}

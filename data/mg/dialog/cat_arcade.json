@@ -183,6 +183,24 @@
     {
       "label": [
         {
+          "text": "🦎 Meccha Chameleon",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Peins-toi aux couleurs du décor et cache-toi, ou chasse les caméléons",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 198"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour au menu",
           "color": "yellow"
         }

@@ -224,6 +224,7 @@ execute if score $game mg.st matches 210 run tellraw @a [{"selector":"@s","color
 execute if score $game mg.st matches 211 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧪 INFECTION — Laboratoire","color":"dark_green","bold":true},{"text":" : survivants armés contre zombies contagieux, 3 min !","color":"gray"}]
 execute if score $game mg.st matches 212 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧟 ZOMBIES — Manoir","color":"dark_green","bold":true},{"text":" : survivez à 10 manches dans le bunker !","color":"gray"}]
 execute if score $game mg.st matches 213 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧪 INFECTION — Manoir","color":"dark_green","bold":true},{"text":" : survivants armés contre zombies contagieux, 3 min !","color":"gray"}]
+execute if score $game mg.st matches 198 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🦎 MECCHA CHAMELEON","color":"green","bold":true},{"text":" : peignez-vous aux couleurs du décor, les chasseurs arrivent dans 45 s !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 83 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"📞 TÉLÉPHONE","color":"gold","bold":true},{"text":" : mot → construction → devinette → construction → devinette !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
@@ -270,6 +271,7 @@ execute if score $game mg.st matches 31 run function mg:quake/prepare
 execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
+execute if score $game mg.st matches 198 run function mg:cham/prepare
 execute if score $game mg.st matches 212..213 run function mg:zmode3/prepare
 execute if score $game mg.st matches 210..211 run function mg:zmode2/prepare
 execute if score $game mg.st matches 208..209 run function mg:koth3/prepare

@@ -1,0 +1,9 @@
+# Pose Bloc
+attribute @s minecraft:scale base set 0.5
+execute as @e[type=minecraft:block_display,tag=mg.cmk1] if score @s mg.cmid = $cmid mg.st run data merge entity @s {interpolation_duration:4,start_interpolation:0,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.5f,0.0f,-0.5f],scale:[0.001f,0.001f,0.001f]}}
+execute as @e[type=minecraft:block_display,tag=mg.cmk2] if score @s mg.cmid = $cmid mg.st run data merge entity @s {interpolation_duration:4,start_interpolation:0,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.5f,0.0f,-0.5f],scale:[1.0f,1.0f,1.0f]}}
+execute as @e[type=minecraft:block_display,tag=mg.cmk3] if score @s mg.cmid = $cmid mg.st run data merge entity @s {interpolation_duration:4,start_interpolation:0,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.5f,0.0f,-0.5f],scale:[0.001f,0.001f,0.001f]}}
+execute as @e[type=minecraft:block_display,tag=mg.cmk4] if score @s mg.cmid = $cmid mg.st run data merge entity @s {interpolation_duration:4,start_interpolation:0,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.5f,0.0f,-0.5f],scale:[0.001f,0.001f,0.001f]}}
+execute as @e[type=minecraft:block_display,tag=mg.cmk5] if score @s mg.cmid = $cmid mg.st run data merge entity @s {interpolation_duration:4,start_interpolation:0,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.5f,0.0f,-0.5f],scale:[0.001f,0.001f,0.001f]}}
+execute as @e[type=minecraft:block_display,tag=mg.cmk6] if score @s mg.cmid = $cmid mg.st run data merge entity @s {interpolation_duration:4,start_interpolation:0,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.5f,0.0f,-0.5f],scale:[0.001f,0.001f,0.001f]}}
+execute as @e[type=minecraft:interaction,tag=mg.cmi] if score @s mg.cmid = $cmid mg.st run data merge entity @s {width:1.02f,height:1.02f}

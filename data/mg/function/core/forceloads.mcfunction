@@ -86,6 +86,8 @@ forceload add -23 23582 23 23618
 forceload add -52 19948 52 20052
 # Bombardier (z 32400)
 forceload add -88 32312 88 32488
+# Meccha Chameleon (z 26600)
+forceload add -31 26577 31 26623
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl

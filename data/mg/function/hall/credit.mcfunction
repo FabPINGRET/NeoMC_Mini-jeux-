@@ -46,3 +46,4 @@ execute if score $game mg.st matches 98 run function mg:hall/game {obj:"mg.wg_in
 execute if score $game mg.st matches 211 run function mg:hall/game {obj:"mg.wg_infection",key:"infection",lbl:"🧪 Infection",col:"green"}
 execute if score $game mg.st matches 213 run function mg:hall/game {obj:"mg.wg_infection",key:"infection",lbl:"🧪 Infection",col:"green"}
 execute if score $game mg.st matches 99 run function mg:hall/game {obj:"mg.wg_bomber",key:"bomber",lbl:"💣 Bombardier",col:"red"}
+execute if score $game mg.st matches 198 run function mg:hall/game {obj:"mg.wg_chameleon",key:"chameleon",lbl:"🦎 Meccha Chameleon",col:"green"}

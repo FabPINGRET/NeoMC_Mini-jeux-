@@ -15,6 +15,7 @@ execute if score $game mg.st matches 66 run function mg:elyrace/cleanup
 execute if score $game mg.st matches 75 run function mg:sky/cleanup
 kill @e[tag=mg.ib]
 execute if score $game mg.st matches 57..58 run function mg:bb/cleanup
+execute if score $game mg.st matches 198 run function mg:cham/cleanup
 execute if score $game mg.st matches 212..213 run function mg:zmode3/cleanup
 execute if score $game mg.st matches 210..211 run function mg:zmode2/cleanup
 execute if score $game mg.st matches 208..209 run function mg:koth3/cleanup

@@ -722,7 +722,8 @@ CATS = {
         act('🧟 Zombies ▸', 'dark_green', OPEN(54), 'Coop, armes réelles, 10 manches — 3 cartes'),
         act('🧪 Infection ▸', 'green', OPEN(55), 'Survivants contre zombies contagieux — 3 cartes'),
         act('🎭 Prop Hunt', 'gold', 'trigger mg.go set 96', 'Cache-toi en objet, ou trouve les objets qui bougent'),
-        act('💣 Bombardier', 'red', 'trigger mg.go set 99', 'Bombarde la ville du ciel, le plus de dégâts gagne, 2 min 30')], 'menu'),
+        act('💣 Bombardier', 'red', 'trigger mg.go set 99', 'Bombarde la ville du ciel, le plus de dégâts gagne, 2 min 30'),
+        act('🦎 Meccha Chameleon', 'green', 'trigger mg.go set 198', 'Peins-toi aux couleurs du décor et cache-toi, ou chasse les caméléons')], 'menu'),
     'tron': ('⚡ Tron', 'aqua', 'Choisis le mode et l\'arène.', [
         act('⚡ Tron à pied', 'aqua', 'trigger mg.go set 84', 'Arène 101×101 dans la pénombre'),
         act('🏍 Tron moto', 'gold', 'trigger mg.go set 85', 'À cheval, saut toutes les 20 s'),

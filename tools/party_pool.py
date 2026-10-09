@@ -32,6 +32,7 @@ POOL = [   # format court : 3 à 6 minutes par mini-jeu (Build Battle et Dropper
     (70, 'TNT TAG : VILLAGE PERCHÉ', 'aqua', 4 * M), (69, 'TNT TAG : CANYON', 'gold', 4 * M),
     (75, 'ÉLYTRA : COURSE D\'ANNEAUX', 'aqua', 5 * M), (76, 'ÉLYTRA : COURSE + COMBAT', 'red', 5 * M), (77, 'ÉLYTRA : SURVIE EN VOL', 'light_purple', 6 * M),
     (99, 'BOMBARDIER', 'red', 4 * M),
+    (198, 'MECCHA CHAMELEON', 'green', 5 * M),
     (66, "COURSE D'ÉLYTRES", 'aqua', 5 * M),   # 5 * M : la course dure 3 min (3 * M) au plus ; la limite de la Mini Party ne doit pas tomber dans le même tick que le temps écoulé (victoire écrasée), ni pendant l'annonce « plus qu'une minute »
     # Variantes (tools/variantes/gen_variants.py) : le mode sur une carte d'un autre jeu, tirée au sort au lancement
     (190, 'PVP : VARIANTE ★', 'yellow', 3 * M), (191, 'OITC : VARIANTE ★', 'gold', 3 * M), (192, 'QUAKE : VARIANTE ★', 'aqua', 4 * M),

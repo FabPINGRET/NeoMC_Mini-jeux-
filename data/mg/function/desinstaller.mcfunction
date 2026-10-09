@@ -22,6 +22,25 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+team remove mg_cm
+bossbar remove mg:cham
+data remove storage mg:cham mats
+scoreboard objectives remove mg.cmid
+scoreboard objectives remove mg.cmq
+scoreboard objectives remove mg.cmp
+scoreboard objectives remove mg.cmo
+scoreboard objectives remove mg.cmpo
+scoreboard objectives remove mg.cmpt
+scoreboard objectives remove mg.cmst
+scoreboard objectives remove mg.cmlx
+scoreboard objectives remove mg.cmly
+scoreboard objectives remove mg.cmlz
+scoreboard objectives remove mg.cmdl
+scoreboard objectives remove mg.cmdn
+scoreboard objectives remove mg.cmtc
+scoreboard objectives remove mg.cmgc
+scoreboard objectives remove mg.cmpts
+scoreboard objectives remove mg.cmf
 scoreboard objectives remove mg.gcas
 scoreboard objectives remove mg.gcre
 scoreboard objectives remove mg.gsa

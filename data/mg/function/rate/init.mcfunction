@@ -493,3 +493,5 @@ data modify storage mg:rate lab.finfection set value '""'
 function mg:rate/lab_fam {f:"infection",g:33}
 data modify storage mg:rate lab.fbomber set value '""'
 function mg:rate/lab_fam {f:"bomber",g:34}
+data modify storage mg:rate lab.fchameleon set value '""'
+function mg:rate/lab_fam {f:"chameleon",g:35}

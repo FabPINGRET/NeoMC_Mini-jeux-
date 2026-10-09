@@ -36,7 +36,7 @@ def patch(rel, anchor, new, where='after'):
 
 # (libellé, [(storage, chemin)])
 JOBS = [('Spawn', [('mg:lobby', 'v6')]), ('Buffet', [('mg:lobby', 'food1')]), ('Élytres du spawn', [('mg:lobby', 'ely1')]),
-        ('Hall des scores', [('mg:hall', 'v9')]), ('Montagne russe', [('mg:lobby', 'coaster3')]), ('Plots', [('mg:setup', 'plot')]),
+        ('Hall des scores', [('mg:hall', 'v10')]), ('Montagne russe', [('mg:lobby', 'coaster3')]), ('Plots', [('mg:setup', 'plot')]),
         ('Mini Party', [('mg:party', 'built')]), ('Kart', [('mg:kart', 'built'), ('mg:kart', 'built2'), ('mg:kart', 'built3')]),
         ('Dropper aventure', [('mg:dropadv', 'v3')]), ('Élytra', [('mg:sky', 'built')]),
         # drapeaux = FLAG de chaque tools/elyrace/course_*.py (gen_elyrace.py --check echoue s'ils divergent)
