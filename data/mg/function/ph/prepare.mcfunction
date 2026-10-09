@@ -11,7 +11,7 @@ execute store result score $phn mg.st if entity @a[tag=mg.play]
 scoreboard players set #4 mg.st 4
 scoreboard players operation $phn mg.st /= #4 mg.st
 execute if score $phn mg.st matches ..0 run scoreboard players set $phn mg.st 1
-function mg:ph/pick
+execute if score $n0 mg.st matches 2.. run function mg:ph/pick
 execute as @a[tag=mg.play,tag=!mg.phs] run tag @s add mg.phh
 team join mg_red @a[tag=mg.phs]
 team join mg_ph @a[tag=mg.phh]

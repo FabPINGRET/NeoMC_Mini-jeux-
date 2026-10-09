@@ -1,4 +1,6 @@
 # Les cacheurs gagnent
+execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] [{"text":"🎭 Fin de l'entraînement.","color":"yellow"}]
+execute unless score $n0 mg.st matches 2.. run return run function mg:core/draw
 tag @a[tag=mg.play,tag=mg.phh] add mg.win
 scoreboard players add @a[tag=mg.play,tag=mg.phh] mg.wins 1
 scoreboard players set $state mg.st 3

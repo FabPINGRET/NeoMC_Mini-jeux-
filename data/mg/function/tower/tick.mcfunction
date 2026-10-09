@@ -17,6 +17,6 @@ execute if score $twt mg.st matches 10800 run tellraw @a[tag=mg.play] {"text":"ð
 execute if score $state mg.st matches 2 if score $twt mg.st matches 12000.. run function mg:tower/timeout
 execute store result score $twr mg.st if entity @a[tag=mg.play,team=mg_red]
 execute store result score $twb mg.st if entity @a[tag=mg.play,team=mg_blue]
-execute if score $state mg.st matches 2 if score $twr mg.st matches 0 if score $twb mg.st matches 1.. run return run function mg:core/win_blue
-execute if score $state mg.st matches 2 if score $twb mg.st matches 0 if score $twr mg.st matches 1.. run return run function mg:core/win_red
+execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $twr mg.st matches 0 if score $twb mg.st matches 1.. run return run function mg:core/win_blue
+execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $twb mg.st matches 0 if score $twr mg.st matches 1.. run return run function mg:core/win_red
 execute if score $state mg.st matches 2 if score $twb mg.st matches 0 if score $twr mg.st matches 0 run function mg:core/draw
