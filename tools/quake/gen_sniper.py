@@ -9,6 +9,7 @@ Relancer ensuite tools/variantes/gen_variants.py (étoiles, votes par carte).
 """
 import json
 import os
+import re
 import sys
 
 R = sys.argv[1] if len(sys.argv) > 1 else '.'
@@ -127,18 +128,19 @@ def patch(rel, anchor, new_lines, where='after'):
         f.write('\n'.join(lines))
 
 
-def replace(rel, old, new):
-    p = os.path.join(F, rel + '.mcfunction')
+def go_range(gid):
+    """Élargit la plage d'ids acceptés par core/go (1..N) si elle est plus étroite que gid."""
+    p = os.path.join(F, 'core/go.mcfunction')
     t = open(p, encoding='utf-8').read()
-    if new in t:
-        return
-    assert t.count(old) == 1, (rel, old)
-    with open(p, 'w', encoding='utf-8', newline='\n') as f:
-        f.write(t.replace(old, new))
+    m = re.search(r'unless score @s mg\.go matches 1\.\.(\d+) unless', t)
+    if not m:
+        raise SystemExit('core/go : plage « unless score @s mg.go matches 1..N unless » introuvable')
+    if int(m.group(1)) < gid:
+        with open(p, 'w', encoding='utf-8', newline='\n') as f:
+            f.write(t.replace(m.group(0), f'unless score @s mg.go matches 1..{gid} unless'))
 
 
-replace('core/go', 'execute unless score @s mg.go matches 1..78 unless score @s mg.go matches 100..196',
-        'execute unless score @s mg.go matches 1..80 unless score @s mg.go matches 100..196')
+go_range(80)
 patch('core/request', 'execute if score $game mg.st matches 32..35 run scoreboard players set $game mg.st 31', [
     '# Quake sniper : 79 = Ravin, 80 = Tours → $qm 8 / 9',
     'execute if score $game mg.st matches 79 run scoreboard players set $qm mg.st 8',
