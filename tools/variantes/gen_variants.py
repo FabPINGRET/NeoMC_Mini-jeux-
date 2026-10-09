@@ -773,7 +773,8 @@ d['actions'] = [
     act('👤 Joueur et plots ▸', 'aqua', OPEN(45), 'Spectateur, classement, plots'),
     keep.get('trigger mg.sv set 1') or act('🌲 Survie (monde libre)', 'green', 'trigger mg.sv set 1'),
     keep.get(OPEN(9)) or act('⛔ Arrêter la partie en cours', 'dark_red', OPEN(9)),
-    act('ℹ Version du datapack', 'gray', OPEN(48), 'Version en place / reçue de GitHub : savoir si une mise à jour a planté')]
+    act('ℹ Version du datapack', 'gray', OPEN(48), 'Version en place / reçue de GitHub : savoir si une mise à jour a planté'),
+    act('🚫 Exclure Zinedine', 'red', OPEN(49), 'Exclut Zinedine du serveur (définitivement, cette fois)')]
 save_dialog('menu', d)
 
 # Boutons retour des sous-menus : vers leur catégorie
