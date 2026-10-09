@@ -241,7 +241,7 @@ execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run sche
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/food_build 25s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:elytra/build 30s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby food1 run schedule function mg:lobby/food_build 12s
-execute if score $setup mg.st matches 1 unless data storage mg:lobby coaster2 run schedule function mg:coaster/build_start 16s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby coaster3 run schedule function mg:coaster/build_start 16s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby ely1 run schedule function mg:elytra/build 14s
 
 # Zones chargées (après une mise à jour du pack, les nouvelles zones sont prises en compte)

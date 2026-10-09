@@ -355,6 +355,13 @@ kill @e[tag=mg.cst]
 kill @e[tag=mg.csd]
 data remove storage mg:lobby coaster1
 data remove storage mg:lobby coaster2
+data remove storage mg:lobby coaster3
+schedule clear mg:coaster/build_start
+schedule clear mg:coaster/build
+kill @e[tag=mg.cst]
+kill @e[tag=mg.csd]
+data remove storage mg:lobby coaster1
+data remove storage mg:lobby coaster2
 kill @e[tag=mg.foodd]
 schedule clear mg:elytra/build
 kill @e[tag=mg.elyd]

@@ -5,7 +5,7 @@ data remove storage mg:lobby v6
 data remove storage mg:lobby food1
 data remove storage mg:lobby ely1
 data remove storage mg:hall v9
-data remove storage mg:lobby coaster2
+data remove storage mg:lobby coaster3
 data remove storage mg:setup plot
 data remove storage mg:party built
 data remove storage mg:kart built
