@@ -1,5 +1,6 @@
 # Première arrivée en survie : point de départ commun, point de réapparition posé
 execute in mg:survie run spreadplayers 100000 100000 0 24 false @s
+tag @s add mg.svg2
 execute at @s run spawnpoint @s ~ ~ ~
 $data modify storage mg:survie p.k$(id).home set from entity @s Pos
 $data modify storage mg:survie p.k$(id).pos set from entity @s Pos

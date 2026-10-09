@@ -2,6 +2,8 @@
 scoreboard players enable @a mg.sv
 execute as @a[scores={mg.sv=1..}] run function mg:survie/cmd
 execute as @a[tag=mg.surv] at @s if dimension minecraft:overworld run function mg:survie/from_overworld
+# Monde de survie régénéré : les joueurs qui y étaient repartent du point de départ (inventaire gardé)
+execute as @a[tag=mg.surv,tag=!mg.svg2,scores={mg.svid=1..}] run function mg:survie/regen_now
 scoreboard players reset @a[tag=mg.surv] mg.cs
 scoreboard players reset @a[tag=mg.surv] mg.us
 scoreboard players reset @a[tag=mg.surv] mg.wc
