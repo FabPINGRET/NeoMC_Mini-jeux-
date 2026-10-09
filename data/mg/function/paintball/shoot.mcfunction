@@ -9,6 +9,12 @@ execute if entity @s[team=mg_red] run scoreboard players set $st mg.st 1
 execute if entity @s[team=mg_blue] run scoreboard players set $st mg.st 2
 tag @s add mg.qsh
 scoreboard players set $rs mg.st 80
+execute at @s anchored eyes run summon minecraft:marker ^ ^ ^0.5 {Tags:["mg.rend"]}
 execute at @s anchored eyes positioned ^ ^ ^0.5 run function mg:paintball/ray
+# Traînée : part de l'arme et rejoint le point d'impact ($trp = équipe : 1 flamme, 2 flamme d'âme)
+scoreboard players operation $trp mg.st = $st mg.st
+scoreboard players set $trs mg.st 100
+execute at @s anchored eyes positioned ^-0.3 ^-0.2 ^0.7 facing entity @e[type=minecraft:marker,tag=mg.rend,limit=1] feet run function mg:core/shot_trail
+kill @e[type=minecraft:marker,tag=mg.rend]
 tag @s remove mg.qsh
 execute at @s run playsound minecraft:entity.snowball.throw master @a ~ ~ ~ 0.6 1.6
