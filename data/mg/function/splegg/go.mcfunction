@@ -7,3 +7,5 @@ execute if score $sg mg.st matches 1 run tellraw @a[tag=mg.play] [{"text":"XXL :
 
 execute unless score $sg mg.st matches 1 run tellraw @a[tag=mg.play] [{"text":"3 étages : troue la neige pour faire tomber les autres… ou descends-les toi-même !","color":"gold"}]
 scoreboard players set $tff mg.st 0
+# Durée de vie par défaut des œufs (écrasée à chaque tir par splegg/shoot) : un œuf sans tireur trouvé meurt quand même
+scoreboard players set $sgl mg.st 40

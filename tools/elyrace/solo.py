@@ -89,7 +89,7 @@ def start_lines(specs):
             'function mg:elyrace/prepare',
             '# prepare a annulé (parcours pas construit : CANCEL → elyrace/draw → solo/end) : pas de gel ni de titre',
             'execute if score $state mg.st matches 3 run return 0',
-            'effect give @s minecraft:slowness 7 255 true',
+            'function mg:core/freeze',
             'effect give @s minecraft:resistance 7 255 true',
             'title @s title [{"text":"Prépare-toi !","color":"gold"}]',
             'title @s subtitle [{"text":"Début dans 5 secondes...","color":"gray"}]',

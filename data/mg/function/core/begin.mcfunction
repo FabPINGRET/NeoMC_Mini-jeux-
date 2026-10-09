@@ -6,6 +6,7 @@ execute unless score $xs mg.st matches 1 run scoreboard players add @a[tag=mg.pl
 execute unless score $xs mg.st matches 1 as @a[tag=mg.play] run function mg:hall/top {obj:"mg.stp",key:"stp",lbl:"▶ Le plus assidu",col:"green",unit:" partie(s)"}
 effect clear @a[tag=mg.play] minecraft:slowness
 effect clear @a[tag=mg.play] minecraft:resistance
+execute as @a[tag=mg.play] run function mg:core/unfreeze
 
 # Soin complet au départ de chaque jeu (vie + faim), Sheep War compris
 effect give @a[tag=mg.play] minecraft:instant_health 1 10 true

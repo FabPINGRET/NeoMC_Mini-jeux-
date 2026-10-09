@@ -94,6 +94,9 @@ scoreboard players add $gmt mg.t 1
 execute if score $gmt mg.t matches 40.. as @a[tag=mg.admin,tag=mg.init,tag=!mg.surv,tag=!mg.play,tag=!mg.out,tag=!mg.inplot,tag=!mg.pkr,tag=!mg.lk,tag=!mg.visit,gamemode=!spectator,gamemode=!creative] run function mg:core/give_menu_safe
 execute if score $gmt mg.t matches 40.. run scoreboard players set $gmt mg.t 0
 
+# Compte à rebours : aucun tir (flèche, œuf, boule de neige, trident, perle, liste dans tags/entity_type/shot.json) ne part des joueurs gelés
+# (les kits ne sont donnés qu'au GO : une flèche ou une perle tirée ici est perdue, accepté)
+execute if score $state mg.st matches 1 as @a[tag=mg.play] at @s run kill @e[type=#mg:shot,distance=..8]
 # Machine à états
 execute if score $state mg.st matches 1 run function mg:core/countdown
 execute if score $state mg.st matches 2 run function mg:core/game_tick

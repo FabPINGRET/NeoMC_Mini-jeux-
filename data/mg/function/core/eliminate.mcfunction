@@ -3,6 +3,7 @@ tag @s remove mg.play
 tag @s add mg.out
 scoreboard players set @s mg.deaths 0
 gamemode spectator @s
+function mg:core/unfreeze
 execute at @s run particle minecraft:poof ~ ~1 ~ 0.3 0.5 0.3 0.05 30
 
 execute store result storage mg:c x int 1 run scoreboard players get $px mg.st

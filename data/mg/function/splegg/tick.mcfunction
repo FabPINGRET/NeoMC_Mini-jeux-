@@ -2,6 +2,8 @@
 
 # Nouveaux œufs : on recharge la main du tireur (munitions infinies)
 execute as @e[distance=0..,type=minecraft:egg,tag=!mg.eg] at @s run function mg:splegg/egg_new
+# Œufs en vol : traînée de neige + rayon court devant l'œuf (la neige se casse là où l'œuf passe)
+execute as @e[distance=0..,type=minecraft:egg,tag=mg.eg] at @s run function mg:splegg/egg_tick
 
 # Pas de poussins quand un œuf éclate
 kill @e[distance=0..,type=minecraft:chicken]
