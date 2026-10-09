@@ -226,6 +226,24 @@
         "type": "minecraft:run_command",
         "command": "trigger mg.opt set 9"
       }
+    },
+    {
+      "label": [
+        {
+          "text": "ℹ Version du datapack",
+          "color": "gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Version en place / reçue de GitHub : savoir si une mise à jour a planté",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 48"
+      }
     }
   ],
   "exit_action": {
