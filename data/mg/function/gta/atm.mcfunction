@@ -1,5 +1,5 @@
-# @s : distributeur de la planque secrète, 300 à 600 $ gratuits (toutes les 20 s)
-execute store result score $gcv mg.st run random value 300..600
+# @s : distributeur de la planque secrète, 2 000 $ gratuits (toutes les 5 s)
+scoreboard players set $gcv mg.st 2000
 function mg:gta/cash_gain
 title @s actionbar [{"text":"💵 +","color":"green","bold":true},{"score":{"name":"$gcv","objective":"mg.st"},"color":"green","bold":true},{"text":" $ ","color":"green","bold":true},{"text":"retirés au distributeur secret","color":"gray"}]
 playsound minecraft:block.chain.place player @s ~ ~ ~ 1 0.6

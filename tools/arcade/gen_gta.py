@@ -701,7 +701,7 @@ w('gta/pad_take', ['# @s (présentoir) : le joueur le plus proche achète (ou pr
                    'scoreboard players operation $gpt mg.st = @s mg.gpt', 'scoreboard players set $gok mg.st 0', 'tag @s add mg.gbz',
                    'execute as @a[tag=mg.gtw,tag=!mg.gbuy,gamemode=!spectator,distance=..1.6,sort=nearest,limit=1] at @s run function mg:gta/pad_buy',
                    'execute unless score $gok mg.st matches 1 run return 0',
-                   'scoreboard players set @s mg.gpc 600', 'execute if entity @s[tag=mg.garm] run scoreboard players set @s mg.gpc 40', 'execute if score $gpt mg.st matches 80 run scoreboard players set @s mg.gpc 400',
+                   'scoreboard players set @s mg.gpc 600', 'execute if entity @s[tag=mg.garm] run scoreboard players set @s mg.gpc 40', 'execute if score $gpt mg.st matches 80 run scoreboard players set @s mg.gpc 100',
                    'kill @e[type=minecraft:item_display,tag=mg.gpdi,distance=..1.5]', 'kill @e[type=minecraft:text_display,tag=mg.gpdt,distance=..2.5]',
                    'playsound minecraft:entity.villager.yes player @a ~ ~ ~ 0.6 1.2'])
 PB_ = ['# @s : achat du contenu du présentoir ($gpt) si assez de dollars (villa : gratuit si déjà acheté)', 'tag @s add mg.gbuy', 'scoreboard players set $gpr mg.st 0',
@@ -751,8 +751,8 @@ GV += ['execute if score $gpt mg.st matches 70 run function mg:gta/cas_ui_slot',
        'execute if score $gpt mg.st matches 11 run title @s actionbar {"text":"✚ Soigné","color":"red","bold":true}']
 GV += [f'execute if score $gpt mg.st matches {PAD[t][0]} run function mg:gta/veh_buy {{t:"{t}"}}' for t in ('moto', 'muscle', 'supercar', 'heli', 'plane')]
 w('gta/pad_give', GV)
-w('gta/atm', ['# @s : distributeur de la planque secrète, 300 à 600 $ gratuits (toutes les 20 s)',
-              'execute store result score $gcv mg.st run random value 300..600', 'function mg:gta/cash_gain',
+w('gta/atm', ['# @s : distributeur de la planque secrète, 2 000 $ gratuits (toutes les 5 s)',
+              'scoreboard players set $gcv mg.st 2000', 'function mg:gta/cash_gain',
               'title @s actionbar [{"text":"💵 +","color":"green","bold":true},{"score":{"name":"$gcv","objective":"mg.st"},"color":"green","bold":true},{"text":" $ ","color":"green","bold":true},{"text":"retirés au distributeur secret","color":"gray"}]',
               'playsound minecraft:block.chain.place player @s ~ ~ ~ 1 0.6', 'playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 1 1.2',
               'particle minecraft:happy_villager ~ ~1.2 ~ 0.4 0.4 0.4 0 12'])
