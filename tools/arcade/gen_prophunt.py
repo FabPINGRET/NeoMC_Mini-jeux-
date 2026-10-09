@@ -121,7 +121,7 @@ for p, i in PID.items():
 w('ph/apply', A)
 w('ph/srevive', ['# @s (entraînement, seul) : cacheur réapparu après sa mort → retrouve son déguisement', 'scoreboard players set @s mg.deaths 0',
                  'effect give @s minecraft:invisibility infinite 0 true', 'effect give @s minecraft:saturation infinite 0 true',
-                 'attribute @s minecraft:scale base set 0.5', 'function mg:ph/apply'])
+                 'attribute @s minecraft:scale base set 0.5', 'attribute @s minecraft:max_health base set 10', 'function mg:ph/apply'])
 w('ph/copy', ['# @s (cacheur) s\'accroupit : copie l\'objet qu\'il regarde (5 blocs max)', 'scoreboard players set $phf mg.st 0',
               'scoreboard players set $phr mg.st 25', 'execute at @s anchored eyes positioned ^ ^ ^0.2 run function mg:ph/copy_ray',
               'execute if score $phf mg.st matches 0 run title @s actionbar {"text":"Regarde un objet du manoir (tonneau, citrouille, enclume…)","color":"gray"}',
