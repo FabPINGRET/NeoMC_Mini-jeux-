@@ -12,7 +12,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Choisis la carte.",
+          "text": "Choisis la carte et le mode.",
           "color": "gray"
         }
       ]
@@ -88,6 +88,60 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 213"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🧟 Joueurs vs mobs — Bunker",
+          "color": "red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Tous survivants contre des zombies mobs ; touché = infecté",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 217"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🧟 Joueurs vs mobs — Laboratoire",
+          "color": "red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Tous survivants contre des zombies mobs ; touché = infecté",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 218"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🧟 Joueurs vs mobs — Manoir",
+          "color": "red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Tous survivants contre des zombies mobs ; touché = infecté",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 219"
       }
     },
     {

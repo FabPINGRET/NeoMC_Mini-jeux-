@@ -431,6 +431,12 @@ data modify storage mg:rate lab.r215 set value '""'
 execute if score #m215 mg.rtn matches 1.. run function mg:rate/lab_map {m:215}
 data modify storage mg:rate lab.r216 set value '""'
 execute if score #m216 mg.rtn matches 1.. run function mg:rate/lab_map {m:216}
+data modify storage mg:rate lab.r217 set value '""'
+execute if score #m217 mg.rtn matches 1.. run function mg:rate/lab_map {m:217}
+data modify storage mg:rate lab.r218 set value '""'
+execute if score #m218 mg.rtn matches 1.. run function mg:rate/lab_map {m:218}
+data modify storage mg:rate lab.r219 set value '""'
+execute if score #m219 mg.rtn matches 1.. run function mg:rate/lab_map {m:219}
 data modify storage mg:rate lab.fspleef set value '""'
 function mg:rate/lab_fam {f:"spleef",g:1}
 data modify storage mg:rate lab.ftntrun set value '""'
@@ -501,3 +507,5 @@ data modify storage mg:rate lab.fbomber set value '""'
 function mg:rate/lab_fam {f:"bomber",g:34}
 data modify storage mg:rate lab.fchameleon set value '""'
 function mg:rate/lab_fam {f:"chameleon",g:35}
+data modify storage mg:rate lab.fwii set value '""'
+function mg:rate/lab_fam {f:"wii",g:36}

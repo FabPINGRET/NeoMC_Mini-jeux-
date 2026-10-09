@@ -37,6 +37,12 @@ execute if score $game mg.st matches 28 run scoreboard players set $bpm mg.st 0
 execute if score $game mg.st matches 91 run scoreboard players set $bpm mg.st 1
 execute if score $game mg.st matches 92 run scoreboard players set $bpm mg.st 2
 execute if score $game mg.st matches 91..92 run scoreboard players set $game mg.st 28
+# Infection : 217 Bunker, 218 Laboratoire, 219 Manoir = joueurs contre mobs → jeu 98 / 211 / 213 + $infm 1
+scoreboard players set $infm mg.st 0
+execute if score $game mg.st matches 217..219 run scoreboard players set $infm mg.st 1
+execute if score $game mg.st matches 217 run scoreboard players set $game mg.st 98
+execute if score $game mg.st matches 218 run scoreboard players set $game mg.st 211
+execute if score $game mg.st matches 219 run scoreboard players set $game mg.st 213
 
 # Mini Party : 59 = 8 tours, 60 = 15 tours. Un jeu lancé hors Mini Party ($mpl) met fin à la partie en cours
 execute unless score $mpl mg.st matches 1 run scoreboard players set $mp mg.st 0

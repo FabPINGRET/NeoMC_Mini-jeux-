@@ -1,4 +1,5 @@
 # @s devient zombie
+tag @s remove mg.zhit
 tag @s add mg.inf
 tag @s add mg.gtg
 team join mg_green @s
