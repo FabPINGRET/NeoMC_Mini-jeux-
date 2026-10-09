@@ -42,9 +42,9 @@ execute if score @s mg.xa matches 17 positioned 1056 -64 29440 if entity @s[dx=2
 execute if score @s mg.xa matches 18 positioned 1088 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
 execute if score @s mg.xa matches 19 positioned 1118 -64 29440 if entity @s[dx=2000,dy=600,dz=320] run function mg:elyrace/miss
 # Anneaux d'or (trou de 7 x 7) : une fusee chacun, mg.xo ne fait qu'augmenter (pas de recuperation apres une reprise)
-execute if score @s mg.xo matches ..0 positioned 359 202 29582 if entity @s[dx=3,dy=6,dz=6] run function mg:elyrace/gold_hit
-execute if score @s mg.xo matches ..0 positioned 359 202 29582 if entity @s[dx=3,dy=6,dz=6] run scoreboard players set @s mg.xo 1
-execute if score @s mg.xo matches ..1 positioned 514 173 29586 if entity @s[dx=3,dy=6,dz=6] run function mg:elyrace/gold_hit
-execute if score @s mg.xo matches ..1 positioned 514 173 29586 if entity @s[dx=3,dy=6,dz=6] run scoreboard players set @s mg.xo 2
-execute if score @s mg.xo matches ..2 positioned 879 109 29606 if entity @s[dx=3,dy=6,dz=6] run function mg:elyrace/gold_hit
-execute if score @s mg.xo matches ..2 positioned 879 109 29606 if entity @s[dx=3,dy=6,dz=6] run scoreboard players set @s mg.xo 3
+execute if score @s mg.xo matches ..0 positioned 345 204 29604 if entity @s[dx=3,dy=6,dz=6] run function mg:elyrace/gold_hit
+execute if score @s mg.xo matches ..0 positioned 345 204 29604 if entity @s[dx=3,dy=6,dz=6] run scoreboard players set @s mg.xo 1
+execute if score @s mg.xo matches ..1 positioned 449 185 29612 if entity @s[dx=3,dy=6,dz=6] run function mg:elyrace/gold_hit
+execute if score @s mg.xo matches ..1 positioned 449 185 29612 if entity @s[dx=3,dy=6,dz=6] run scoreboard players set @s mg.xo 2
+execute if score @s mg.xo matches ..2 positioned 791 123 29586 if entity @s[dx=3,dy=6,dz=6] run function mg:elyrace/gold_hit
+execute if score @s mg.xo matches ..2 positioned 791 123 29586 if entity @s[dx=3,dy=6,dz=6] run scoreboard players set @s mg.xo 3

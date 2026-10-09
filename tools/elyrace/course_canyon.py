@@ -23,6 +23,7 @@ ICON, COLOR, STARS = '🏜', 'gold', 3                      # bouton du menu : i
 TIP = ('Parcours 1 (Far West, ~1000 blocs) : plongeon, slalom entre cheminées de fée, arches étroites, viaduc, passe basse, '
        'faille, galerie de mine, rue de la ville fantôme.')
 FLAG = 'v2'                                  # drapeau de construction (stockage mg:elyrace) : pose par la derniere tranche
+OLD_FLAGS = ('v1',)                          # drapeaux des versions precedentes : effaces par elyrace/forget (mondes deja installes)
 CZ = 27000                                   # axe du parcours (z)
 X0, X1 = -16, 1040                           # emprise en x (66 chunks)
 Z0, Z1 = 26848, 27152                        # emprise en z (19 chunks)

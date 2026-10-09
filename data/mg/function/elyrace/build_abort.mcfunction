@@ -14,6 +14,18 @@ schedule clear mg:elyrace/c1/clear_8
 schedule clear mg:elyrace/c1/clear_9
 schedule clear mg:elyrace/c1/clear_10
 schedule clear mg:elyrace/c1/clear_11
+schedule clear mg:elyrace/c2/clear_1
+schedule clear mg:elyrace/c2/clear_2
+schedule clear mg:elyrace/c2/clear_3
+schedule clear mg:elyrace/c2/clear_4
+schedule clear mg:elyrace/c2/clear_5
+schedule clear mg:elyrace/c2/clear_6
+schedule clear mg:elyrace/c2/clear_7
+schedule clear mg:elyrace/c2/clear_8
+schedule clear mg:elyrace/c2/clear_9
+schedule clear mg:elyrace/c2/clear_10
+schedule clear mg:elyrace/c2/clear_11
+schedule clear mg:elyrace/c2/clear_12
 scoreboard players set $xcp mg.st 0
 forceload remove -16 26848 79 27151
 forceload remove 80 26848 175 27151

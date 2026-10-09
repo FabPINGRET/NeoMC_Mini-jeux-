@@ -1620,7 +1620,7 @@ fill 1112 66 29597 1113 76 29607 minecraft:sea_lantern
 fill 1112 67 29598 1113 75 29606 minecraft:air
 forceload remove 1040 29440 1135 29759
 function mg:core/forceloads
-data modify storage mg:elyrace c2v1 set value 1b
+data modify storage mg:elyrace c2v2 set value 1b
 tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Course d'élytres : Pic Blanc construit.","color":"green"}]
 # construction terminée : $xbk à 0 (sinon build_next se croirait encore en construction), puis parcours suivant s'il en reste un
 scoreboard players set $xbk mg.st 0

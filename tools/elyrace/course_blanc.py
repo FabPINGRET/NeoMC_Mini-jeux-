@@ -21,7 +21,8 @@ NAME = 'Pic Blanc'
 ICON, COLOR, STARS = '🏔', 'aqua', 4                      # bouton du menu : icone (menu texte), couleur, difficulte (etoiles sur 4)
 TIP = ('Parcours 2 (haute montagne, ~1100 blocs) : pylônes de téléphérique, col, glacier, crevasse de glace, grotte éclairée, '
        'village d\'arrivée.')
-FLAG = 'c2v1'                                # drapeau de construction (stockage mg:elyrace) : pose par la derniere tranche
+FLAG = 'c2v2'                                # drapeau de construction (stockage mg:elyrace) : pose par la derniere tranche
+OLD_FLAGS = ('c2v1',)                        # drapeaux des versions precedentes : effaces par elyrace/forget (mondes deja installes)
 CZ = 29600                                   # axe du parcours (z)
 X0, X1 = -16, 1136                           # emprise en x (72 chunks, 12 tranches)
 Z0, Z1 = 29440, 29760                        # emprise en z (20 chunks)
@@ -31,6 +32,8 @@ EDGE_X = 32                                  # bord de la falaise
 GATE_X = 27                                  # portillon de depart (x), devant les joueurs
 ROWS = 4                                     # lignes de joueurs sur la plateforme de depart
 TV, TH = 6, 2                                # epaisseur de la coque : verticale (blocs), horizontale (cellules)
+CLEAR_Y = (40, 310)                          # hauteurs nettoyees (fill air, par passes) avant chaque tranche : un parcours reconstruit
+                                             # sur une ancienne version n'en garde aucun reste (la construction tient dans y 49..300)
 
 # profil d'altitude voulu de la trajectoire (x, y) ; le vol de reference le suit a quelques blocs pres
 YPTS = [(24, 282), (100, 258), (330, 208), (520, 172), (760, 128), (960, 96), (1110, 64)]
@@ -46,9 +49,16 @@ RINGS = [
     (1010, 0, 'village'), (1050, 0, 'village'), (1082, 4, 'village'), (1112, 0, 'village'),
 ]
 CPS = [4, 8, 13, 17]                         # un point de reprise apres ces anneaux (numeros d'anneau)
-GOLDS = [(360, -10), (515, -9), (880, 9)]   # anneaux d'or : (x, decalage lateral) ; altitude = trajectoire
+GOLDS = [(346, 9), (450, 11), (792, -11)]   # anneaux d'or : (x, decalage lateral) ; altitude = trajectoire - GOLD_DY
+GOLD_STRICT = True                           # verify.check_golds : detour >= 8 blocs hors de la ligne anneau a anneau, rampes limitees a la distance
+# des anneaux voisins, vol qui finit le parcours et franchit tous les anneaux proches. Il faut >= 26 blocs avant l'anneau suivant pour
+# revenir et >= 20 apres le precedent, un decalage >= 9 pour ne pas frotter l'enveloppe des vols a +-3 (a 450 : 11, le cadre d'un or a +10
+# touche le vol a +3) et une vallee large d'au moins decalage + 6 : (346, +9) col, (450, +11) fin du col, (792, -11) second glacier.
+# Dans la grotte aucun or ne tient (demi-largeur 12 : un decalage >= 9 en sort) ni a sa sortie (le detour ne rejoint pas l'anneau du
+# village a 1010 : il le manque avec un decalage de 5 a 6).
 GOLD_DY = 2                                  # les anneaux d'or sont 2 blocs sous la trajectoire : sur une pente douce, le detour
                                              # (pilote a anticipation reduite) vole ~2,2 blocs plus bas que la ligne de reference
+# a revoir avant d'activer WIND (ors en 450 et 792)
 WINDS = [(205, 10), (450, -10), (790, 12)]   # anneaux de vent (detours bonus) : (x, decalage lateral) ; generes seulement si wind.WIND
 R_UP = {n: 28 for n in CPS}                  # hauteur de reapparition au-dessus du centre de l'anneau de chaque point de reprise
 
@@ -147,7 +157,7 @@ def snow_cells(w):
 
 def extra_checks(c):
     """Controles propres au Pic Blanc : blocs interdits (glace simple, neige poudreuse ou en couche, blocs a gravite, stalactites
-    de dripstone qui tombent, blocs suspects), lumiere de la grotte."""
+    de dripstone qui tombent, blocs suspects), tout ce qui est construit tient dans la zone nettoyee CLEAR_Y, lumiere de la grotte."""
     bad = []
     banned = ('ice', 'powder_snow', 'snow', 'pointed_dripstone', 'sand', 'red_sand', 'gravel', 'concrete_powder', 'anvil')
     seen = set()
@@ -156,6 +166,11 @@ def extra_checks(c):
         if (blk in banned or blk.endswith('_concrete_powder') or blk.startswith('suspicious_')) and blk not in seen:
             seen.add(blk)
             bad.append('bloc interdit sur le Pic Blanc : %s' % blk)
+    ys = [y for r in c.rects for y in (r[1], r[4])]
+    for cmd in c.world.cmds:
+        ys += [cmd[2]] if cmd[0] == 'set' else [cmd[2], cmd[5]]
+    if min(ys) < CLEAR_Y[0] or max(ys) > CLEAR_Y[1]:
+        bad.append('construction hors de la zone nettoyee CLEAR_Y %s : y %d..%d' % (CLEAR_Y, min(ys), max(ys)))
     return bad + CV.light_problems(c.world)
 
 

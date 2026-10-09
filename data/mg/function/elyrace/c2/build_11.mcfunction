@@ -1694,11 +1694,9 @@ fill 1036 131 29740 1039 132 29759 minecraft:snow_block
 fill 947 116 29596 947 116 29596 minecraft:packed_ice
 fill 948 114 29596 948 116 29596 minecraft:packed_ice
 fill 967 112 29592 967 113 29592 minecraft:packed_ice
-fill 951 115 29604 951 116 29604 minecraft:packed_ice
-fill 968 109 29602 968 110 29602 minecraft:packed_ice
-fill 959 112 29600 959 113 29600 minecraft:packed_ice
-fill 946 115 29592 946 116 29592 minecraft:packed_ice
-fill 959 112 29608 959 113 29608 minecraft:packed_ice
+fill 966 112 29610 966 113 29610 minecraft:packed_ice
+fill 946 115 29600 946 116 29600 minecraft:packed_ice
+fill 962 111 29597 962 113 29597 minecraft:packed_ice
 fill 967 112 29591 967 113 29591 minecraft:packed_ice
 fill 954 112 29599 954 113 29599 minecraft:packed_ice
 fill 961 111 29603 961 113 29603 minecraft:packed_ice
@@ -1707,7 +1705,6 @@ fill 959 112 29606 959 113 29606 minecraft:packed_ice
 fill 952 112 29597 952 113 29597 minecraft:packed_ice
 fill 956 112 29609 956 113 29609 minecraft:packed_ice
 fill 960 112 29593 960 113 29593 minecraft:packed_ice
-fill 950 116 29598 950 116 29598 minecraft:packed_ice
 fill 968 108 29590 968 110 29590 minecraft:packed_ice
 fill 947 114 29600 947 116 29600 minecraft:packed_ice
 fill 968 110 29600 968 110 29600 minecraft:packed_ice

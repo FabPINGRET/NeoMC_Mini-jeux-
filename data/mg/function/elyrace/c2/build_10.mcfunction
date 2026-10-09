@@ -696,19 +696,21 @@ fill 868 127 29592 868 128 29592 minecraft:packed_ice
 fill 899 120 29594 899 122 29594 minecraft:packed_ice
 fill 868 127 29591 868 128 29591 minecraft:packed_ice
 fill 941 115 29593 941 116 29593 minecraft:packed_ice
-fill 870 127 29598 870 128 29598 minecraft:packed_ice
-fill 904 121 29589 904 122 29589 minecraft:packed_ice
-fill 934 115 29594 934 116 29594 minecraft:packed_ice
-fill 895 121 29591 895 122 29591 minecraft:packed_ice
-fill 905 122 29608 905 122 29608 minecraft:packed_ice
-fill 914 118 29591 914 119 29591 minecraft:packed_ice
-fill 918 117 29598 918 119 29598 minecraft:packed_ice
-fill 919 119 29601 919 119 29601 minecraft:packed_ice
-fill 924 119 29607 924 119 29607 minecraft:packed_ice
+fill 883 124 29594 883 125 29594 minecraft:packed_ice
+fill 902 121 29599 902 122 29599 minecraft:packed_ice
+fill 874 127 29611 874 128 29611 minecraft:packed_ice
+fill 926 119 29598 926 119 29598 minecraft:packed_ice
+fill 920 118 29602 920 119 29602 minecraft:packed_ice
+fill 865 128 29597 865 128 29597 minecraft:packed_ice
+fill 906 121 29604 906 122 29604 minecraft:packed_ice
+fill 875 126 29604 875 128 29604 minecraft:packed_ice
+fill 873 127 29590 873 128 29590 minecraft:packed_ice
+fill 921 119 29601 921 119 29601 minecraft:packed_ice
 fill 943 115 29590 943 116 29590 minecraft:packed_ice
-fill 890 124 29603 890 125 29603 minecraft:packed_ice
-fill 903 120 29590 903 122 29590 minecraft:packed_ice
-fill 851 130 29595 851 131 29595 minecraft:packed_ice
+fill 878 124 29592 878 125 29592 minecraft:packed_ice
+fill 922 119 29598 922 119 29598 minecraft:packed_ice
+fill 938 115 29591 938 116 29591 minecraft:packed_ice
+fill 915 118 29605 915 119 29605 minecraft:packed_ice
 fill 865 127 29599 865 128 29599 minecraft:packed_ice
 fill 873 127 29591 873 128 29591 minecraft:packed_ice
 fill 907 121 29604 907 122 29604 minecraft:packed_ice
@@ -728,6 +730,8 @@ fill 898 121 29603 898 122 29603 minecraft:packed_ice
 fill 917 118 29597 917 119 29597 minecraft:packed_ice
 fill 932 115 29600 932 116 29600 minecraft:packed_ice
 fill 943 115 29600 943 116 29600 minecraft:packed_ice
+fill 878 123 29600 878 125 29600 minecraft:packed_ice
+fill 900 122 29611 900 122 29611 minecraft:packed_ice
 fill 934 114 29594 934 116 29594 minecraft:packed_ice
 fill 905 121 29608 905 122 29608 minecraft:packed_ice
 fill 940 115 29608 940 116 29608 minecraft:packed_ice
@@ -740,7 +744,8 @@ fill 852 130 29598 852 131 29598 minecraft:packed_ice
 fill 903 121 29600 903 122 29600 minecraft:packed_ice
 fill 935 115 29602 935 116 29602 minecraft:packed_ice
 fill 925 117 29607 925 119 29607 minecraft:packed_ice
-fill 851 131 29600 851 131 29600 minecraft:packed_ice
+fill 878 125 29593 878 125 29593 minecraft:packed_ice
+fill 917 119 29610 917 119 29610 minecraft:packed_ice
 fill 925 118 29592 925 119 29592 minecraft:packed_ice
 fill 938 114 29596 938 116 29596 minecraft:packed_ice
 fill 902 120 29604 902 122 29604 minecraft:packed_ice
@@ -757,6 +762,7 @@ fill 890 124 29604 890 125 29604 minecraft:packed_ice
 fill 867 127 29598 867 128 29598 minecraft:packed_ice
 fill 900 121 29606 900 122 29606 minecraft:packed_ice
 fill 903 122 29605 903 122 29605 minecraft:packed_ice
+fill 861 128 29590 861 128 29590 minecraft:packed_ice
 fill 855 110 29592 856 126 29608 minecraft:blue_concrete
 fill 855 111 29593 856 125 29607 minecraft:light_blue_concrete
 fill 855 113 29595 856 123 29605 minecraft:sea_lantern
@@ -765,8 +771,6 @@ fill 910 101 29592 911 117 29608 minecraft:blue_concrete
 fill 910 102 29593 911 116 29607 minecraft:light_blue_concrete
 fill 910 104 29595 911 114 29605 minecraft:sea_lantern
 fill 910 105 29596 911 113 29604 minecraft:air
-fill 880 108 29605 881 116 29613 minecraft:gold_block
-fill 880 109 29606 881 115 29612 minecraft:air
 setblock 848 113 29592 minecraft:light[level=11]
 setblock 848 125 29592 minecraft:light[level=11]
 setblock 848 113 29600 minecraft:light[level=11]
@@ -789,6 +793,7 @@ setblock 880 108 29592 minecraft:light[level=11]
 setblock 880 120 29592 minecraft:light[level=11]
 setblock 880 108 29600 minecraft:light[level=11]
 setblock 880 120 29600 minecraft:light[level=11]
+setblock 880 108 29608 minecraft:light[level=11]
 setblock 880 120 29608 minecraft:light[level=11]
 setblock 888 107 29592 minecraft:light[level=11]
 setblock 888 119 29592 minecraft:light[level=11]
@@ -854,8 +859,8 @@ setblock 857 112 29588 minecraft:light[level=11]
 setblock 857 112 29603 minecraft:light[level=11]
 setblock 857 118 29608 minecraft:light[level=11]
 setblock 857 127 29611 minecraft:light[level=11]
-setblock 861 128 29590 minecraft:light[level=11]
 setblock 861 128 29602 minecraft:light[level=11]
+setblock 862 128 29589 minecraft:light[level=11]
 setblock 863 116 29604 minecraft:light[level=11]
 setblock 864 103 29588 minecraft:light[level=11]
 setblock 864 103 29604 minecraft:light[level=11]
@@ -866,31 +871,28 @@ setblock 867 104 29611 minecraft:light[level=11]
 setblock 867 114 29596 minecraft:light[level=11]
 setblock 867 115 29611 minecraft:light[level=11]
 setblock 867 128 29610 minecraft:light[level=11]
-setblock 868 125 29588 minecraft:light[level=11]
+setblock 869 125 29588 minecraft:light[level=11]
 setblock 869 125 29604 minecraft:light[level=11]
 setblock 873 115 29604 minecraft:light[level=11]
 setblock 874 103 29589 minecraft:light[level=11]
 setblock 874 103 29603 minecraft:light[level=11]
 setblock 874 114 29588 minecraft:light[level=11]
-setblock 874 128 29590 minecraft:light[level=11]
 setblock 875 117 29596 minecraft:light[level=11]
 setblock 875 126 29611 minecraft:light[level=11]
-setblock 875 128 29601 minecraft:light[level=11]
+setblock 875 127 29594 minecraft:light[level=11]
 setblock 876 105 29596 minecraft:light[level=11]
 setblock 876 113 29611 minecraft:light[level=11]
 setblock 877 103 29611 minecraft:light[level=11]
-setblock 877 125 29595 minecraft:light[level=11]
-setblock 880 111 29606 minecraft:light[level=11]
 setblock 882 113 29596 minecraft:light[level=11]
 setblock 882 125 29588 minecraft:light[level=11]
 setblock 882 125 29604 minecraft:light[level=11]
 setblock 883 103 29605 minecraft:light[level=11]
 setblock 883 104 29588 minecraft:light[level=11]
+setblock 883 114 29605 minecraft:light[level=11]
 setblock 884 100 29594 minecraft:light[level=11]
 setblock 884 115 29588 minecraft:light[level=11]
-setblock 884 115 29603 minecraft:light[level=11]
+setblock 884 123 29596 minecraft:light[level=11]
 setblock 885 100 29611 minecraft:light[level=11]
-setblock 885 123 29596 minecraft:light[level=11]
 setblock 885 124 29611 minecraft:light[level=11]
 setblock 889 100 29603 minecraft:light[level=11]
 setblock 890 100 29588 minecraft:light[level=11]
@@ -901,8 +903,8 @@ setblock 891 113 29598 minecraft:light[level=11]
 setblock 891 123 29588 minecraft:light[level=11]
 setblock 891 123 29604 minecraft:light[level=11]
 setblock 893 109 29604 minecraft:light[level=11]
+setblock 893 121 29596 minecraft:light[level=11]
 setblock 898 110 29596 minecraft:light[level=11]
-setblock 898 122 29596 minecraft:light[level=11]
 setblock 899 100 29595 minecraft:light[level=11]
 setblock 899 100 29611 minecraft:light[level=11]
 setblock 899 111 29610 minecraft:light[level=11]
@@ -911,27 +913,27 @@ setblock 900 108 29588 minecraft:light[level=11]
 setblock 900 120 29588 minecraft:light[level=11]
 setblock 901 120 29604 minecraft:light[level=11]
 setblock 902 110 29603 minecraft:light[level=11]
+setblock 902 122 29595 minecraft:light[level=11]
 setblock 904 97 29588 minecraft:light[level=11]
 setblock 904 97 29604 minecraft:light[level=11]
 setblock 907 97 29596 minecraft:light[level=11]
 setblock 907 108 29596 minecraft:light[level=11]
 setblock 907 109 29611 minecraft:light[level=11]
 setblock 907 112 29588 minecraft:light[level=11]
-setblock 907 120 29596 minecraft:light[level=11]
 setblock 908 97 29611 minecraft:light[level=11]
 setblock 908 120 29611 minecraft:light[level=11]
+setblock 908 121 29590 minecraft:light[level=11]
+setblock 908 122 29601 minecraft:light[level=11]
 setblock 909 107 29604 minecraft:light[level=11]
-setblock 909 122 29588 minecraft:light[level=11]
-setblock 909 122 29603 minecraft:light[level=11]
 setblock 914 97 29589 minecraft:light[level=11]
 setblock 914 97 29603 minecraft:light[level=11]
 setblock 914 108 29588 minecraft:light[level=11]
 setblock 915 109 29598 minecraft:light[level=11]
+setblock 915 119 29588 minecraft:light[level=11]
+setblock 915 119 29604 minecraft:light[level=11]
 setblock 916 99 29596 minecraft:light[level=11]
 setblock 916 107 29611 minecraft:light[level=11]
-setblock 916 118 29588 minecraft:light[level=11]
-setblock 916 118 29604 minecraft:light[level=11]
-setblock 918 119 29596 minecraft:light[level=11]
+setblock 917 118 29596 minecraft:light[level=11]
 setblock 919 108 29604 minecraft:light[level=11]
 setblock 922 107 29596 minecraft:light[level=11]
 setblock 923 97 29605 minecraft:light[level=11]
