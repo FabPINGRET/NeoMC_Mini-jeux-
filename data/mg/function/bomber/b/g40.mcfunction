@@ -14,7 +14,6 @@ fill -24 61 32457 -24 64 32457 minecraft:water
 fill -23 61 32457 -23 64 32457 minecraft:water
 fill -22 61 32457 -22 64 32457 minecraft:water
 fill -26 61 32458 -26 64 32458 minecraft:water
-fill -88 170 32312 88 170 32488 minecraft:barrier
 fill -88 171 32312 88 176 32312 minecraft:barrier
 fill -88 171 32488 88 176 32488 minecraft:barrier
 fill -88 171 32312 -88 176 32488 minecraft:barrier
