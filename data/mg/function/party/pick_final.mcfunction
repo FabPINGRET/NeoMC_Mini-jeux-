@@ -57,7 +57,9 @@ execute unless score $mgp54 mg.st matches 1 run scoreboard players add $mgr mg.s
 execute unless score $mgp55 mg.st matches 1 run scoreboard players add $mgr mg.st 1
 execute if score $mgr mg.st matches 0 run function mg:party/pick_reset
 execute store result storage mg:party pk.r int 1 run scoreboard players get $mgr mg.st
-function mg:party/pick_rand with storage mg:party pk
+# random value refuse 1..1 : avec un seul jeu restant, $mgq reste à 1
+scoreboard players set $mgq mg.st 1
+execute if score $mgr mg.st matches 2.. run function mg:party/pick_rand with storage mg:party pk
 execute unless score $mgp1 mg.st matches 1 run scoreboard players remove $mgq mg.st 1
 execute if score $mgq mg.st matches 0 run scoreboard players set $mgk mg.st 1
 execute if score $mgq mg.st matches 0 run scoreboard players set $mgq mg.st -1
