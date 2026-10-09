@@ -1,4 +1,5 @@
 # Départ
+scoreboard players set $zpts mg.st 1
 scoreboard players set $zr mg.st 0
 scoreboard players set $zph mg.st 0
 scoreboard players set $zb mg.st 100

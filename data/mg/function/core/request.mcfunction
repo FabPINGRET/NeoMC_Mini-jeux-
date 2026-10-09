@@ -210,6 +210,20 @@ execute if score $game mg.st matches 97 run tellraw @a [{"selector":"@s","color"
 execute if score $game mg.st matches 98 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧪 INFECTION","color":"dark_green","bold":true},{"text":" : survivants armés contre zombies contagieux, 3 min !","color":"gray"}]
 execute if score $game mg.st matches 96 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🎭 PROP HUNT","color":"gold","bold":true},{"text":" : cachez-vous en objets, les chercheurs arrivent dans 30 s !","color":"gray"}]
 execute if score $game mg.st matches 99 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"💣 BOMBARDIER","color":"red","bold":true},{"text":" : largue des bombes sur la ville, le plus de dégâts gagne !","color":"gray"}]
+execute if score $game mg.st matches 200 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⚡ TRON — XXL","color":"aqua","bold":true},{"text":" : laisse un mur derrière toi, ne touche aucun mur !","color":"gray"}]
+execute if score $game mg.st matches 201 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🏍 TRON MOTO — XXL","color":"gold","bold":true},{"text":" : à cheval, laisse un mur derrière toi, ne touche aucun mur !","color":"gray"}]
+execute if score $game mg.st matches 202 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⛏ MINI UHC RUN — Désert","color":"gold","bold":true},{"text":" : farm, PvP, zone qui rétrécit — 5 min !","color":"gray"}]
+execute if score $game mg.st matches 203 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🏹 MINI HUNGER GAMES — Jungle","color":"gold","bold":true},{"text":" : coffres, corne d'abondance, dernier en vie — 5 min !","color":"gray"}]
+execute if score $game mg.st matches 204 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⛏ MINI UHC RUN — Taïga enneigée","color":"gold","bold":true},{"text":" : farm, PvP, zone qui rétrécit — 5 min !","color":"gray"}]
+execute if score $game mg.st matches 205 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🏹 MINI HUNGER GAMES — Canyon","color":"gold","bold":true},{"text":" : coffres, corne d'abondance, dernier en vie — 5 min !","color":"gray"}]
+execute if score $game mg.st matches 206 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"👑 KING OF THE HILL — Pyramide","color":"gold","bold":true},{"text":" : tiens le sommet seul, 60 points pour gagner !","color":"gray"}]
+execute if score $game mg.st matches 207 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"👑 KING OF THE HILL — ÉQUIPES — Pyramide","color":"gold","bold":true},{"text":" : rouges contre bleus, 90 points sur le sommet !","color":"gray"}]
+execute if score $game mg.st matches 208 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"👑 KING OF THE HILL — Glacier","color":"gold","bold":true},{"text":" : tiens le sommet seul, 60 points pour gagner !","color":"gray"}]
+execute if score $game mg.st matches 209 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"👑 KING OF THE HILL — ÉQUIPES — Glacier","color":"gold","bold":true},{"text":" : rouges contre bleus, 90 points sur le sommet !","color":"gray"}]
+execute if score $game mg.st matches 210 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧟 ZOMBIES — Laboratoire","color":"dark_green","bold":true},{"text":" : survivez à 10 manches dans le bunker !","color":"gray"}]
+execute if score $game mg.st matches 211 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧪 INFECTION — Laboratoire","color":"dark_green","bold":true},{"text":" : survivants armés contre zombies contagieux, 3 min !","color":"gray"}]
+execute if score $game mg.st matches 212 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧟 ZOMBIES — Manoir","color":"dark_green","bold":true},{"text":" : survivez à 10 manches dans le bunker !","color":"gray"}]
+execute if score $game mg.st matches 213 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧪 INFECTION — Manoir","color":"dark_green","bold":true},{"text":" : survivants armés contre zombies contagieux, 3 min !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 83 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"📞 TÉLÉPHONE","color":"gold","bold":true},{"text":" : mot → construction → devinette → construction → devinette !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
@@ -256,6 +270,13 @@ execute if score $game mg.st matches 31 run function mg:quake/prepare
 execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
+execute if score $game mg.st matches 212..213 run function mg:zmode3/prepare
+execute if score $game mg.st matches 210..211 run function mg:zmode2/prepare
+execute if score $game mg.st matches 208..209 run function mg:koth3/prepare
+execute if score $game mg.st matches 206..207 run function mg:koth2/prepare
+execute if score $game mg.st matches 204..205 run function mg:survival3/prepare
+execute if score $game mg.st matches 202..203 run function mg:survival2/prepare
+execute if score $game mg.st matches 200..201 run function mg:tronxl/prepare
 execute if score $game mg.st matches 99 run function mg:bomber/prepare
 execute if score $game mg.st matches 96 run function mg:ph/prepare
 execute if score $game mg.st matches 97..98 run function mg:zmode/prepare

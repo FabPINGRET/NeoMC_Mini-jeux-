@@ -10,13 +10,20 @@ import common as C
 
 C.init(sys.argv[1] if len(sys.argv) > 1 else '.')
 w, js = C.w, C.js
-Z = 20400
+Z = C.param('Z', 20400)
+# thème de la carte (cartes supplémentaires : tools/arcade/gen_maps.py)
+GROUND = C.param('ground', ['dirt', 'grass_block'])
+TIERS = C.param('tiers', ['stone_bricks', 'mossy_stone_bricks', 'stone_bricks', 'polished_andesite', 'smooth_stone'])
+STAIRS = C.param('stairs', 'stone_brick_stairs')
+COVER = C.param('cover', 'cobblestone')
+LIGHT = C.param('light', 'lantern')
+TITLE = C.param('title', 'colline en gradins, sommet en or')
 WIN_SOLO, WIN_TEAM, LIMIT = 60, 90, 6000
 
-L = ['# 👑 King of the Hill — arène 51×51 (centre 0 80 20400), colline en gradins, sommet en or']
+L = [f'# 👑 King of the Hill — arène 51×51 (centre 0 80 {Z}), {TITLE}']
 L += [f'fill -27 {y} {Z - 27} 27 {y} {Z + 27} minecraft:air' for y in range(79, 101)]
-L += [f'fill -25 79 {Z - 25} 25 79 {Z + 25} minecraft:dirt', f'fill -25 80 {Z - 25} 25 80 {Z + 25} minecraft:grass_block']
-for i, (h, mat) in enumerate([(11, 'stone_bricks'), (9, 'mossy_stone_bricks'), (7, 'stone_bricks'), (5, 'polished_andesite'), (3, 'smooth_stone')]):
+L += [f'fill -25 79 {Z - 25} 25 79 {Z + 25} minecraft:{GROUND[0]}', f'fill -25 80 {Z - 25} 25 80 {Z + 25} minecraft:{GROUND[1]}']
+for i, (h, mat) in enumerate(zip((11, 9, 7, 5, 3), TIERS)):
     y = 81 + i
     L.append(f'fill -{h} {y} {Z - h} {h} {y} {Z + h} minecraft:{mat}')
 L += [f'fill -2 85 {Z - 2} 2 85 {Z + 2} minecraft:gold_block', f'setblock 0 85 {Z} minecraft:beacon',
@@ -25,13 +32,13 @@ L += [f'fill -2 85 {Z - 2} 2 85 {Z + 2} minecraft:gold_block', f'setblock 0 85 {
 for i in range(5):
     y = 81 + i
     d = 12 - 2 * i
-    L += [f'fill -1 {y} {Z - d} 1 {y} {Z - d + 1} minecraft:stone_brick_stairs[facing=south]',
-          f'fill -1 {y} {Z + d - 1} 1 {y} {Z + d} minecraft:stone_brick_stairs[facing=north]',
-          f'fill -{d} {y} {Z - 1} -{d - 1} {y} {Z + 1} minecraft:stone_brick_stairs[facing=east]',
-          f'fill {d - 1} {y} {Z - 1} {d} {y} {Z + 1} minecraft:stone_brick_stairs[facing=west]']
+    L += [f'fill -1 {y} {Z - d} 1 {y} {Z - d + 1} minecraft:{STAIRS}[facing=south]',
+          f'fill -1 {y} {Z + d - 1} 1 {y} {Z + d} minecraft:{STAIRS}[facing=north]',
+          f'fill -{d} {y} {Z - 1} -{d - 1} {y} {Z + 1} minecraft:{STAIRS}[facing=east]',
+          f'fill {d - 1} {y} {Z - 1} {d} {y} {Z + 1} minecraft:{STAIRS}[facing=west]']
 # couvertures autour
 for (x, z) in [(-18, -18), (18, -18), (-18, 18), (18, 18), (-20, 0), (20, 0), (0, -20), (0, 20)]:
-    L += [f'fill {x - 1} 81 {Z + z - 1} {x + 1} 82 {Z + z + 1} minecraft:cobblestone', f'setblock {x} 83 {Z + z} minecraft:lantern']
+    L += [f'fill {x - 1} 81 {Z + z - 1} {x + 1} 82 {Z + z + 1} minecraft:{COVER}', f'setblock {x} 83 {Z + z} minecraft:{LIGHT}']
 L += [f'fill -26 79 {Z - 26} 26 99 {Z - 26} minecraft:barrier', f'fill -26 79 {Z + 26} 26 99 {Z + 26} minecraft:barrier',
       f'fill -26 79 {Z - 25} -26 99 {Z + 25} minecraft:barrier', f'fill 26 79 {Z - 25} 26 99 {Z + 25} minecraft:barrier',
       f'fill -26 100 {Z - 26} 26 100 {Z + 26} minecraft:barrier', f'fill -2 86 {Z - 2} 2 86 {Z + 2} minecraft:air']

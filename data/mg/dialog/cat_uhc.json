@@ -1,0 +1,106 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "⛏ Mini UHC Run",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Choisis la carte.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "⛏ ⛏ Mini UHC Run ",
+          "color": "green"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Plaines et forêts",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 94"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⛏ UHC — Désert",
+          "color": "yellow"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Dunes, cactus, acacias",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 202"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⛏ UHC — Taïga enneigée",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Neige, sapins, lacs gelés",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 204"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 47"
+      }
+    }
+  ]
+}

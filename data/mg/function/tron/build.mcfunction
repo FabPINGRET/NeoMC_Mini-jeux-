@@ -45,11 +45,11 @@ fill -51 83 19949 51 91 19949 minecraft:black_concrete
 fill -51 83 20051 51 91 20051 minecraft:black_concrete
 fill -51 83 19950 -51 91 20050 minecraft:black_concrete
 fill 51 83 19950 51 91 20050 minecraft:black_concrete
-fill -51 92 19949 51 92 20051 minecraft:black_concrete
 fill -52 81 19948 52 81 19948 minecraft:light[level=9]
 fill -52 81 20052 52 81 20052 minecraft:light[level=9]
 fill -52 81 19949 -52 81 20051 minecraft:light[level=9]
 fill 52 81 19949 52 81 20051 minecraft:light[level=9]
+fill -51 92 19949 51 92 20051 minecraft:black_concrete
 setblock -45 86 19955 minecraft:light[level=7]
 setblock -45 86 19965 minecraft:light[level=7]
 setblock -45 86 19975 minecraft:light[level=7]

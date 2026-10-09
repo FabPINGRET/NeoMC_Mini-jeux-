@@ -1,3 +1,4 @@
+scoreboard players set $zpts mg.st 0
 function mg:zm/kill_all
 execute as @a[tag=mg.zjug] run attribute @s minecraft:max_health base set 20
 tag @a remove mg.zjug

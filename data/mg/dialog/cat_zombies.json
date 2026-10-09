@@ -1,0 +1,106 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "🧟 Zombies",
+    "color": "dark_green",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Choisis la carte.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🧟 🧟 Zombies ",
+          "color": "gray"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Le bunker d'origine",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 97"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🧟 Zombies — Laboratoire",
+          "color": "white"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Labo tout blanc",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 210"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🧟 Zombies — Manoir",
+          "color": "dark_red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Manoir sombre",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 212"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 47"
+      }
+    }
+  ]
+}
