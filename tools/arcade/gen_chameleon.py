@@ -339,6 +339,8 @@ w('cham/seeker_kit', ['# @s : chasseur', 'clear @s', 'effect clear @s minecraft:
 # outils (clic droit)
 w('cham/use', ['# @s a fait un clic droit avec un outil', 'scoreboard players set @s mg.cmq 0'] +
   [f'execute if items entity @s weapon.mainhand *[custom_data~{{chm:{n}}}] run return run function mg:cham/tool_{n}' for n in list(TOOLS) + [10]])
+w('cham/int_use', ['# @s : zone touchable cliquée (clic droit). Un caméléon a les yeux dans sa propre zone : son clic droit arrive ici, pas sur l\'objet',
+                    'execute on target if entity @s[tag=mg.cmh,tag=!mg.cmout] at @s run function mg:cham/use', 'data remove entity @s interaction'])
 w('cham/tool_1', ['scoreboard players enable @s mg.cmp', DLG['cham_palette']])
 w('cham/tool_3', ['scoreboard players enable @s mg.cmo', DLG['cham_poses']])
 w('cham/help_hider', [DLG['cham_help_hider']])
@@ -527,8 +529,8 @@ w('cham/tick', ['# 🦎 Meccha Chameleon : tick', 'scoreboard players add $cmt m
                 'scoreboard players remove @a[tag=mg.cmx,scores={mg.cmtc=1..}] mg.cmtc 1', 'scoreboard players remove @a[tag=mg.cmx,scores={mg.cmgc=1..}] mg.cmgc 1',
                 'execute as @e[type=minecraft:interaction,tag=mg.cmi] if data entity @s attack run function mg:cham/hit_int',
                 'execute as @e[type=minecraft:interaction,tag=mg.cmdi] if data entity @s attack run function mg:cham/hit_dec',
-                'execute as @e[type=minecraft:interaction,tag=mg.cmi] if data entity @s interaction run data remove entity @s interaction',
-                'execute as @e[type=minecraft:interaction,tag=mg.cmdi] if data entity @s interaction run data remove entity @s interaction',
+                'execute as @e[type=minecraft:interaction,tag=mg.cmi] if data entity @s interaction run function mg:cham/int_use',
+                'execute as @e[type=minecraft:interaction,tag=mg.cmdi] if data entity @s interaction run function mg:cham/int_use',
                 'scoreboard players operation $cmq mg.st = $cmt mg.st', 'scoreboard players set #20 mg.st 20', 'scoreboard players operation $cmq mg.st %= #20 mg.st',
                 'execute if score $cmq mg.st matches 0 run function mg:cham/second',
                 'execute store result score $cmh mg.st if entity @a[tag=mg.play,tag=mg.cmh,tag=!mg.cmout]',

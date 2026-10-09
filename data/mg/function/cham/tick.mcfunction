@@ -10,8 +10,8 @@ scoreboard players remove @a[tag=mg.cmx,scores={mg.cmtc=1..}] mg.cmtc 1
 scoreboard players remove @a[tag=mg.cmx,scores={mg.cmgc=1..}] mg.cmgc 1
 execute as @e[type=minecraft:interaction,tag=mg.cmi] if data entity @s attack run function mg:cham/hit_int
 execute as @e[type=minecraft:interaction,tag=mg.cmdi] if data entity @s attack run function mg:cham/hit_dec
-execute as @e[type=minecraft:interaction,tag=mg.cmi] if data entity @s interaction run data remove entity @s interaction
-execute as @e[type=minecraft:interaction,tag=mg.cmdi] if data entity @s interaction run data remove entity @s interaction
+execute as @e[type=minecraft:interaction,tag=mg.cmi] if data entity @s interaction run function mg:cham/int_use
+execute as @e[type=minecraft:interaction,tag=mg.cmdi] if data entity @s interaction run function mg:cham/int_use
 scoreboard players operation $cmq mg.st = $cmt mg.st
 scoreboard players set #20 mg.st 20
 scoreboard players operation $cmq mg.st %= #20 mg.st
