@@ -48,7 +48,7 @@ def noise2(seed, size, scale, octaves=3):
     return val
 
 
-def terrain(seed, R, Z, base, lo, hi, water, ores, flat_center=0):
+def terrain(seed, R, Z, base, lo, hi, water, ores, flat_center=0, tree_div=90):
     """Mini-monde carré de demi-côté R centré (0, Z). Renvoie (lignes de construction, hauteurs)."""
     rnd = random.Random(seed)
     nz = noise2(seed, 2 * R + 1, 18)
@@ -102,7 +102,7 @@ def terrain(seed, R, Z, base, lo, hi, water, ores, flat_center=0):
                 y = max(base, min(H.get((x, z), base) - 4, y + rnd.choice((-1, 0, 1))))
     # arbres
     trees = []
-    for _ in range(int((2 * R) ** 2 / 90)):
+    for _ in range(int((2 * R) ** 2 / tree_div)):
         x, z = rnd.randint(-R + 3, R - 3), rnd.randint(-R + 3, R - 3)
         h = H[(x, z)]
         if h <= water + 1 or (flat_center and math.hypot(x, z) < flat_center + 3):
@@ -162,16 +162,75 @@ def lastman(prefix):
 # =====================================================================  UHC RUN
 ZU, RU = 22400, 40
 L, HU = terrain(9401, RU, ZU, 60, 70, 84, 69,
-                [('coal_ore', 160, 20, 4), ('iron_ore', 170, 18, 4), ('gold_ore', 60, 10, 3), ('diamond_ore', 22, 5, 2),
-                 ('redstone_ore', 30, 8, 3)])
+                [('coal_ore', 420, 20, 5), ('iron_ore', 480, 18, 5), ('gold_ore', 220, 12, 4), ('diamond_ore', 75, 6, 3),
+                 ('redstone_ore', 50, 8, 3), ('lapis_ore', 40, 8, 3)], tree_div=40)
+# ressources en surface (UHC) : affleurements de minerais, graviers (silex), canne à sucre, coffres
+_r = random.Random(9402)
+_used = set()
+
+
+def _spot(margin=3, dry=True):
+    for _ in range(200):
+        x, z = _r.randint(-RU + margin, RU - margin), _r.randint(-RU + margin, RU - margin)
+        if (x, z) in _used or (dry and HU[(x, z)] <= 70):
+            continue
+        _used.add((x, z))
+        return x, z, HU[(x, z)]
+    return None
+
+
+for _ in range(30):                       # rochers avec minerais visibles
+    s = _spot()
+    if not s:
+        continue
+    x, z, h = s
+    ore = _r.choice(['iron_ore', 'iron_ore', 'iron_ore', 'coal_ore', 'coal_ore', 'gold_ore', 'gold_ore', 'diamond_ore'])
+    L.append(f'fill {x - 1} {h + 1} {ZU + z - 1} {x + 1} {h + 1} {ZU + z + 1} minecraft:cobblestone')
+    L.append(f'setblock {x} {h + 2} {ZU + z} minecraft:{ore}')
+    L += [f'setblock {x + dx} {h + 1} {ZU + z + dz} minecraft:{ore}' for dx, dz in _r.sample([(-1, 0), (1, 0), (0, -1), (0, 1)], 2)]
+for _ in range(14):                       # tas de gravier (silex pour les flèches)
+    s = _spot()
+    if s:
+        x, z, h = s
+        L.append(f'fill {x - 1} {h} {ZU + z - 1} {x + 1} {h} {ZU + z + 1} minecraft:gravel replace minecraft:grass_block')
+for x in range(-RU + 1, RU):              # canne à sucre au bord de l'eau (livres)
+    for z in range(-RU + 1, RU):
+        h = HU[(x, z)]
+        if h == 69 and any(HU.get((x + a, z + b), 99) < 69 for a, b in ((1, 0), (-1, 0), (0, 1), (0, -1))) and _r.random() < 0.35:
+            L.append(f'fill {x} {h + 1} {ZU + z} {x} {h + _r.randint(2, 3)} {ZU + z} minecraft:sugar_cane replace minecraft:air')
+CHESTS = []
+for _ in range(16):                       # coffres (remplis à chaque partie)
+    s = _spot(5)
+    if s:
+        CHESTS.append(s)
+        x, z, h = s
+        L.append(f'setblock {x} {h + 1} {ZU + z} minecraft:chest[facing={_r.choice(["north", "south", "east", "west"])}]{{LootTable:"mg:uhc/chest"}}')
 w('uhc/build', L)
+os.makedirs(os.path.join(C.D, 'loot_table/uhc'), exist_ok=True)
+_e = lambda n, wgt, a=1, b=1: dict({'type': 'minecraft:item', 'name': 'minecraft:' + n, 'weight': wgt},
+                                   **({'functions': [{'function': 'minecraft:set_count', 'count': {'type': 'minecraft:uniform', 'min': a, 'max': b}}]} if b > 1 else {}))
+with open(os.path.join(C.D, 'loot_table/uhc/chest.json'), 'w', encoding='utf-8', newline='\n') as f:
+    json.dump({'type': 'minecraft:chest', 'pools': [{'rolls': {'type': 'minecraft:uniform', 'min': 4, 'max': 7}, 'entries': [
+        _e('iron_ingot', 10, 2, 6), _e('gold_ingot', 8, 2, 5), _e('diamond', 3, 1, 2), _e('golden_apple', 3), _e('apple', 6, 1, 3),
+        _e('cooked_beef', 8, 2, 5), _e('bread', 6, 2, 4), _e('bow', 4), _e('arrow', 7, 6, 16), _e('string', 4, 2, 4),
+        _e('feather', 4, 2, 6), _e('flint', 3, 1, 3), _e('book', 3, 1, 2), _e('leather', 4, 2, 4), _e('oak_log', 6, 4, 10),
+        _e('iron_helmet', 2), _e('iron_boots', 2), _e('shield', 2), _e('water_bucket', 2), _e('lava_bucket', 1),
+        _e('experience_bottle', 3, 2, 5), _e('enchanting_table', 1), _e('lapis_lazuli', 3, 3, 8), _e('anvil', 1)]}]},
+              f, ensure_ascii=False, indent=2)
+# animaux (nourriture, cuir, plumes) : posés au départ, tués au nettoyage
+ANIMALS = []
+for kind, n in (('cow', 12), ('chicken', 12), ('sheep', 8), ('pig', 6)):
+    for _ in range(n):
+        s = _spot(4)
+        if s:
+            ANIMALS.append(f'summon minecraft:{kind} {s[0]} {s[2] + 1} {ZU + s[1]} {{Tags:["mg.mob","mg.uhcmob"],PersistenceRequired:1b}}')
 zone('uhc', ZU)
 w('uhc/prepare', ['# ⛏ Mini UHC Run — préparation', 'function mg:uhc/build', 'function mg:uhc/kill_all',
                   'scoreboard players set $px mg.st 0', 'scoreboard players set $py mg.st 105', f'scoreboard players set $pz mg.st {ZU}',
                   'clear @a[tag=mg.play]', 'gamemode adventure @a[tag=mg.play]', 'team leave @a[tag=mg.play]',
                   f'spreadplayers 0 {ZU} 8 {RU - 6} under 100 false @a[tag=mg.play]',
                   'execute as @a[tag=mg.play] at @s run spawnpoint @s ~ ~ ~'])
-w('uhc/kill_all', [f'kill @e[type=minecraft:item,x={-RU - 3},y=50,z={ZU - RU - 3},dx={2 * RU + 6},dy=70,dz={2 * RU + 6}]',
+w('uhc/kill_all', ['kill @e[tag=mg.uhcmob]', f'kill @e[type=minecraft:item,x={-RU - 3},y=50,z={ZU - RU - 3},dx={2 * RU + 6},dy=70,dz={2 * RU + 6}]',
                    f'kill @e[type=minecraft:experience_orb,x={-RU - 3},y=50,z={ZU - RU - 3},dx={2 * RU + 6},dy=70,dz={2 * RU + 6}]',
                    f'kill @e[type=minecraft:arrow,x={-RU - 3},y=50,z={ZU - RU - 3},dx={2 * RU + 6},dy=70,dz={2 * RU + 6}]'])
 w('uhc/go', ['# Départ : survie, pas de régénération naturelle, inventaire lâché à la mort',
@@ -183,9 +242,9 @@ w('uhc/go', ['# Départ : survie, pas de régénération naturelle, inventaire l
              'give @a[tag=mg.play] minecraft:stone_shovel[enchantments={efficiency:3},unbreakable={}]',
              'give @a[tag=mg.play] minecraft:crafting_table', 'give @a[tag=mg.play] minecraft:bread 10',
              'effect give @a[tag=mg.play] minecraft:haste infinite 1 true',
-             'effect give @a[tag=mg.play] minecraft:instant_health 1 4 true', 'scoreboard players set @a mg.deaths 0',
+             'effect give @a[tag=mg.play] minecraft:instant_health 1 4 true', 'scoreboard players set @a mg.deaths 0'] + ANIMALS + [
              'tellraw @a[tag=mg.play] ' + js([{'text': '⛏ MINI UHC RUN : ', 'color': 'gold', 'bold': True},
-                                              {'text': '2 min 30 pour miner et t\'équiper (minerais déjà cuits, minage rapide), PVP DÉSACTIVÉ. Ensuite PvP et la zone rétrécit. Pas de régénération : pommes d\'or (8 lingots d\'or + 1 pomme) ! Dernier en vie gagne.', 'color': 'gray'}])])
+                                              {'text': '2 min 30 pour miner et t\'équiper (minerais déjà cuits, minage rapide, coffres, rochers à minerais, animaux), PVP DÉSACTIVÉ. Ensuite PvP et la zone rétrécit. Pas de régénération : pommes d\'or (8 lingots d\'or + 1 pomme) ! Dernier en vie gagne.', 'color': 'gray'}])])
 w('uhc/tick', ['# ⛏ Mini UHC Run — tick', 'scoreboard players add $uht mg.st 1',
                'execute as @a[tag=mg.play,scores={mg.deaths=1..}] run function mg:core/eliminate',
                'execute as @a[tag=mg.play] store result score @s mg.t run data get entity @s Pos[1]',
@@ -201,7 +260,11 @@ w('uhc/tick', ['# ⛏ Mini UHC Run — tick', 'scoreboard players add $uht mg.st
 w('uhc/smelt', ['# @s (objet au sol) : minerais → lingots',
                 'execute if items entity @s contents minecraft:raw_iron run data modify entity @s Item.id set value "minecraft:iron_ingot"',
                 'execute if items entity @s contents minecraft:raw_gold run data modify entity @s Item.id set value "minecraft:gold_ingot"',
-                'execute if items entity @s contents minecraft:raw_copper run data modify entity @s Item.id set value "minecraft:copper_ingot"'])
+                'execute if items entity @s contents minecraft:raw_copper run data modify entity @s Item.id set value "minecraft:copper_ingot"',
+                'execute if items entity @s contents minecraft:beef run data modify entity @s Item.id set value "minecraft:cooked_beef"',
+                'execute if items entity @s contents minecraft:porkchop run data modify entity @s Item.id set value "minecraft:cooked_porkchop"',
+                'execute if items entity @s contents minecraft:chicken run data modify entity @s Item.id set value "minecraft:cooked_chicken"',
+                'execute if items entity @s contents minecraft:mutton run data modify entity @s Item.id set value "minecraft:cooked_mutton"'])
 w('uhc/pvp', ['# PvP activé, la zone commence à rétrécir', 'team leave @a[tag=mg.play]',
               'title @a[tag=mg.play] title {"text":"⚔ PvP !","color":"red","bold":true}',
               'title @a[tag=mg.play] subtitle {"text":"la zone rétrécit vers le centre","color":"gray"}',
