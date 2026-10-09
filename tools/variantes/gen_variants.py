@@ -1063,6 +1063,15 @@ for name in ('vote', 'vote_pvp'):
     if not any(a.get('action', {}).get('command') == 'trigger mg.vote set 91' for a in d['actions']):
         d['actions'].insert(0, VBTN)
         save_dialog(name, d)
+# 🚫 « Exclure Zinedine » (running gag) : aussi dans le menu des joueurs (fenêtre de vote) et son menu texte
+ZBTN = act('🚫 Exclure Zinedine', 'red', 'trigger mg.opt set 49', 'Exclut Zinedine du serveur (définitivement, cette fois)')
+d = load_dialog('vote')
+if not any(a.get('action', {}).get('command') == 'trigger mg.opt set 49' for a in d['actions']):
+    d['actions'].append(ZBTN)
+    save_dialog('vote', d)
+patch('vote/chat', 'tellraw @s [{"text":"\\n☑ VOTE : quel jeu veux-tu jouer ? ","color":"green","bold":true},{"text":"(clique)","color":"gray"}]',
+      ['tellraw @s ' + js(['', {'text': ' [🚫 Exclure Zinedine]', 'color': 'red',
+                                'click_event': {'action': 'run_command', 'command': 'trigger mg.opt set 49'}}])])
 patch('vote/chat', 'tellraw @s [{"text":"\\n☑ VOTE : quel jeu veux-tu jouer ? ","color":"green","bold":true},{"text":"(clique)","color":"gray"}]',
       ['tellraw @s ' + js(['', {'text': ' [🗺 Voter pour une carte précise ▸]', 'color': 'green', 'bold': True,
                                 'click_event': {'action': 'run_command', 'command': 'trigger mg.vote set 91'}}])])
