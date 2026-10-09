@@ -115,6 +115,7 @@ data remove storage mg:rate lab
 team remove mg_ph
 scoreboard objectives remove mg.pid
 scoreboard objectives remove mg.fx
+scoreboard objectives remove mg.fy
 scoreboard objectives remove mg.fz
 data remove storage mg:frz p
 scoreboard objectives remove mg.php
