@@ -11,3 +11,5 @@ gamemode adventure @a[tag=mg.play]
 team join mg_blue @a[tag=mg.play]
 spreadplayers 11 36089 4 18 under 84 false @a[tag=mg.play]
 execute as @a[tag=mg.play] at @s run spawnpoint @s ~ ~ ~
+tag @a remove mg.zhit
+advancement revoke @a only mg:infhit

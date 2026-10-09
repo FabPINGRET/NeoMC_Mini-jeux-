@@ -35,6 +35,7 @@ execute if data storage mg:rate key{f:"zombies"} run data modify storage mg:rate
 execute if data storage mg:rate key{f:"infection"} run data modify storage mg:rate cur.g set value '🧪 Infection'
 execute if data storage mg:rate key{f:"bomber"} run data modify storage mg:rate cur.g set value '💣 Bombardier'
 execute if data storage mg:rate key{f:"chameleon"} run data modify storage mg:rate cur.g set value '🦎 Meccha Chameleon'
+execute if data storage mg:rate key{f:"wii"} run data modify storage mg:rate cur.g set value '🎾 Wii Sports'
 execute if data storage mg:rate key{m:1} run data modify storage mg:rate cur.m set value 'Tour de neige'
 execute if data storage mg:rate key{m:2} run data modify storage mg:rate cur.m set value 'Tour de laine'
 execute if data storage mg:rate key{m:3} run data modify storage mg:rate cur.m set value 'Arène classique'
@@ -214,4 +215,7 @@ execute if data storage mg:rate key{m:213} run data modify storage mg:rate cur.m
 execute if data storage mg:rate key{m:214} run data modify storage mg:rate cur.m set value '🎳 Bowling'
 execute if data storage mg:rate key{m:215} run data modify storage mg:rate cur.m set value '⛳ Golf'
 execute if data storage mg:rate key{m:216} run data modify storage mg:rate cur.m set value '🎾 Tennis'
+execute if data storage mg:rate key{m:217} run data modify storage mg:rate cur.m set value '🧟 Joueurs vs mobs — Bunker'
+execute if data storage mg:rate key{m:218} run data modify storage mg:rate cur.m set value '🧟 Joueurs vs mobs — Laboratoire'
+execute if data storage mg:rate key{m:219} run data modify storage mg:rate cur.m set value '🧟 Joueurs vs mobs — Manoir'
 data modify storage mg:rate cur.t set value "trigger mg.rt set 1$(a)$(b)$(c)"

@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "mob": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "type": {
+            "source_entity": {
+              "minecraft:entity_type": "minecraft:zombie"
+            }
+          }
+        }
+      }
+    },
+    "joueur": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "type": {
+            "source_entity": {
+              "minecraft:entity_type": "minecraft:player",
+              "team": "mg_green"
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "mob",
+      "joueur"
+    ]
+  ],
+  "rewards": {
+    "function": "mg:infhit/hit"
+  }
+}

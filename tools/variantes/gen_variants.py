@@ -753,10 +753,13 @@ CATS = {
         act('🧟 Zombies — Bunker', 'gray', 'trigger mg.go set 97', 'Le bunker d\'origine'),
         act('🧟 Zombies — Laboratoire', 'white', 'trigger mg.go set 210', 'Labo tout blanc'),
         act('🧟 Zombies — Manoir', 'dark_red', 'trigger mg.go set 212', 'Manoir sombre')], 'arcade'),
-    'infection': ('🧪 Infection', 'green', 'Choisis la carte.', [
+    'infection': ('🧪 Infection', 'green', 'Choisis la carte et le mode.', [
         act('🧪 Infection — Bunker', 'gray', 'trigger mg.go set 98', 'Le bunker d\'origine'),
         act('🧪 Infection — Laboratoire', 'white', 'trigger mg.go set 211', 'Labo tout blanc'),
-        act('🧪 Infection — Manoir', 'dark_red', 'trigger mg.go set 213', 'Manoir sombre')], 'arcade'),
+        act('🧪 Infection — Manoir', 'dark_red', 'trigger mg.go set 213', 'Manoir sombre'),
+        act('🧟 Joueurs vs mobs — Bunker', 'red', 'trigger mg.go set 217', 'Tous survivants contre des zombies mobs ; touché = infecté'),
+        act('🧟 Joueurs vs mobs — Laboratoire', 'red', 'trigger mg.go set 218', 'Tous survivants contre des zombies mobs ; touché = infecté'),
+        act('🧟 Joueurs vs mobs — Manoir', 'red', 'trigger mg.go set 219', 'Tous survivants contre des zombies mobs ; touché = infecté')], 'arcade'),
     'kart': ('🏎 Kart', 'gold', 'Choisis le circuit.', [
         known('trigger mg.go set 61', '🏎 KART : Circuit Champignon', 'gold'), known('trigger mg.go set 62', '🏎 KART : Royaume Koopa', 'red'),
         known('trigger mg.go set 63', '🎈 KART : Bataille', 'light_purple')], 'courses'),

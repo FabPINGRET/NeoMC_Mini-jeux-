@@ -46,7 +46,7 @@ GAMES = [  # clé, libellé, couleur, plages de $game
     ('hg', '🏹 Mini Hunger Games', 'gold', [(95, 95), (203, 203), (205, 205)]),
     ('prophunt', '🎭 Prop Hunt', 'gold', [(96, 96)]),
     ('zombies', '🧟 Zombies', 'dark_green', [(97, 97), (210, 210), (212, 212)]),
-    ('infection', '🧪 Infection', 'green', [(98, 98), (211, 211), (213, 213)]),
+    ('infection', '🧪 Infection', 'green', [(98, 98), (211, 211), (213, 213), (217, 219)]),
     ('bomber', '💣 Bombardier', 'red', [(99, 99)]),
     ('chameleon', '🦎 Meccha Chameleon', 'green', [(198, 198)]),
     ('wii', '🎾 Wii Sports', 'aqua', [(214, 216)]),
