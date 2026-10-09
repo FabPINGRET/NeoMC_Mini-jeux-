@@ -12,14 +12,32 @@ kill @e[tag=mg.hall]
 
 fill -24 63 21 -6 63 35 minecraft:smooth_quartz
 fill -24 64 21 -6 74 35 minecraft:air
-fill -24 64 35 -6 69 35 minecraft:polished_blackstone_bricks
-fill -24 70 35 -6 70 35 minecraft:gold_block
-fill -24 64 21 -24 70 21 minecraft:quartz_pillar
-fill -6 64 21 -6 70 21 minecraft:quartz_pillar
-setblock -24 71 21 minecraft:lantern
-setblock -6 71 21 minecraft:lantern
-fill -23 64 34 -23 70 34 minecraft:quartz_pillar
-fill -7 64 34 -7 70 34 minecraft:quartz_pillar
+fill -24 64 35 -6 69 35 minecraft:stone_bricks
+setblock -24 66 35 minecraft:mossy_stone_bricks
+setblock -23 67 35 minecraft:mossy_stone_bricks
+setblock -22 64 35 minecraft:cracked_stone_bricks
+setblock -22 68 35 minecraft:mossy_stone_bricks
+setblock -21 65 35 minecraft:cracked_stone_bricks
+setblock -21 69 35 minecraft:mossy_stone_bricks
+setblock -20 66 35 minecraft:cracked_stone_bricks
+setblock -19 67 35 minecraft:cracked_stone_bricks
+setblock -18 68 35 minecraft:cracked_stone_bricks
+setblock -17 69 35 minecraft:cracked_stone_bricks
+setblock -16 64 35 minecraft:mossy_stone_bricks
+setblock -15 65 35 minecraft:mossy_stone_bricks
+setblock -14 66 35 minecraft:mossy_stone_bricks
+setblock -13 67 35 minecraft:mossy_stone_bricks
+setblock -12 64 35 minecraft:cracked_stone_bricks
+setblock -12 68 35 minecraft:mossy_stone_bricks
+setblock -11 65 35 minecraft:cracked_stone_bricks
+setblock -11 69 35 minecraft:mossy_stone_bricks
+setblock -10 66 35 minecraft:cracked_stone_bricks
+setblock -9 67 35 minecraft:cracked_stone_bricks
+setblock -8 68 35 minecraft:cracked_stone_bricks
+setblock -7 69 35 minecraft:cracked_stone_bricks
+setblock -6 64 35 minecraft:mossy_stone_bricks
+fill -24 64 35 -6 64 35 minecraft:mossy_stone_bricks
+fill -24 70 35 -6 70 35 minecraft:stone_brick_slab[type=bottom]
 fill -16 63 21 -15 63 34 minecraft:red_wool
 fill -20 64 15 -11 74 20 minecraft:air replace #minecraft:logs
 fill -20 64 15 -11 74 20 minecraft:air replace #minecraft:leaves
@@ -126,3 +144,4 @@ data modify storage mg:hall v3 set value 1b
 data modify storage mg:hall v4 set value 1b
 data modify storage mg:hall v5 set value 1b
 data modify storage mg:hall v6 set value 1b
+data modify storage mg:hall v7 set value 1b

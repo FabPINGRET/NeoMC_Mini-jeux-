@@ -36,7 +36,7 @@ def patch(rel, anchor, new, where='after'):
 
 # (libellé, [(storage, chemin)])
 JOBS = [('Spawn', [('mg:lobby', 'v6')]), ('Buffet', [('mg:lobby', 'food1')]), ('Élytres du spawn', [('mg:lobby', 'ely1')]),
-        ('Hall des scores', [('mg:hall', 'v6')]), ('Montagne russe', [('mg:lobby', 'coaster2')]), ('Plots', [('mg:setup', 'plot')]),
+        ('Hall des scores', [('mg:hall', 'v7')]), ('Montagne russe', [('mg:lobby', 'coaster2')]), ('Plots', [('mg:setup', 'plot')]),
         ('Mini Party', [('mg:party', 'built')]), ('Kart', [('mg:kart', 'built'), ('mg:kart', 'built2'), ('mg:kart', 'built3')]),
         ('Dropper aventure', [('mg:dropadv', 'v3')]), ('Élytra', [('mg:sky', 'built')]),
         ('Course d\'élytres', [('mg:elyrace', 'v1'), ('mg:elyrace', 'c2v1')])]

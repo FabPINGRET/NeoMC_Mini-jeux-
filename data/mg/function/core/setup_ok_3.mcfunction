@@ -1,2 +1,2 @@
 # Hall des scores terminé ?
-return run execute if data storage mg:hall v6
+return run execute if data storage mg:hall v7

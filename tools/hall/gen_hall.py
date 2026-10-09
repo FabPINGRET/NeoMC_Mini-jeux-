@@ -71,7 +71,7 @@ W('objectives', ['# Objectifs des classements par jeu (généré par tools/hall/
     'scoreboard objectives add mg.genc dummy'])
 W('remove', ['# Désinstallation des classements et du hall'] +
   [f'scoreboard objectives remove mg.wg_{k}' for k, *_ in GAMES] +
-  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6',
+  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7',
    'scoreboard objectives remove mg.gen', 'scoreboard objectives remove mg.lvl', 'scoreboard objectives remove mg.genc'])
 
 # ---------------------------------------------------------------- crédit des vainqueurs
@@ -146,13 +146,13 @@ b = ['# Hall des scores (sud-ouest de la place) : construction + restauration de
      'kill @e[tag=mg.hall]', '',
      f'fill {X0} 63 {Z0} {X1} 63 {Z1} minecraft:smooth_quartz',
      f'fill {X0} 64 {Z0} {X1} 74 {Z1} minecraft:air',
-     # mur du fond (plaques des jeux) et murs latéraux, corniche dorée
-     f'fill {X0} 64 {Z1} {X1} 69 {Z1} minecraft:polished_blackstone_bricks',
-     f'fill {X0} 70 {Z1} {X1} 70 {Z1} minecraft:gold_block',
-     # colonnes : entrée, côtés, fond
-     f'fill {X0} 64 {Z0} {X0} 70 {Z0} minecraft:quartz_pillar', f'fill {X1} 64 {Z0} {X1} 70 {Z0} minecraft:quartz_pillar',
-     f'setblock {X0} 71 {Z0} minecraft:lantern', f'setblock {X1} 71 {Z0} minecraft:lantern',
-     f'fill {X0 + 1} 64 {Z1 - 1} {X0 + 1} 70 {Z1 - 1} minecraft:quartz_pillar', f'fill {X1 - 1} 64 {Z1 - 1} {X1 - 1} 70 {Z1 - 1} minecraft:quartz_pillar',
+     # mur du fond (plaques des jeux) : pierre taillée comme les murets du spawn, un peu de mousse et de fissures,
+     # soubassement et corniche en dalles ; les plaques ont leur fond sombre, lisibles sur ce gris moyen
+     f'fill {X0} 64 {Z1} {X1} 69 {Z1} minecraft:stone_bricks',
+     ] + [f'setblock {x} {y} {Z1} minecraft:{"mossy_stone_bricks" if (x * 7 + y * 3) % 5 == 0 else "cracked_stone_bricks"}'
+          for x in range(X0, X1 + 1) for y in range(64, 70) if (x * 7 + y * 3) % 5 in (0, 3) and (x + y) % 2 == 0] + [
+     f'fill {X0} 64 {Z1} {X1} 64 {Z1} minecraft:mossy_stone_bricks',
+     f'fill {X0} 70 {Z1} {X1} 70 {Z1} minecraft:stone_brick_slab[type=bottom]',
      # tapis rouge de l'entrée au fond, bancs, lustres
      f'fill -16 63 {Z0} -15 63 {Z1 - 1} minecraft:red_wool',
      # l'arbre planté juste devant l'entrée masquait le hall
@@ -190,6 +190,7 @@ b.append('data modify storage mg:hall v3 set value 1b')
 b.append('data modify storage mg:hall v4 set value 1b')
 b.append('data modify storage mg:hall v5 set value 1b')
 b.append('data modify storage mg:hall v6 set value 1b')
+b.append('data modify storage mg:hall v7 set value 1b')
 W('build', b)
 W('board_tick', ['# Tableau à droite dans le lobby (classement affiché, pas de vote en cours)',
     'scoreboard players remove $hrt mg.st 1',
