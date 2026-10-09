@@ -12,7 +12,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Seul en piste, avec ton meilleur temps et un record du serveur par parcours. 30 s d'attente entre deux solos.",
+          "text": "Seul en piste, avec ton meilleur temps et un record du serveur par parcours. Le solo te met en pause (désactiver la pause l'arrête) et se joue même pendant une partie, sauf une course d'élytres de groupe. 30 s d'attente entre deux solos.",
           "color": "gray"
         }
       ]
@@ -37,7 +37,7 @@
       ],
       "tooltip": [
         {
-          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré (30 s d'attente entre deux solos).",
+          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré. Te met en pause pendant le solo ; 30 s d'attente entre deux solos.",
           "color": "gray"
         }
       ],
@@ -63,7 +63,7 @@
       ],
       "tooltip": [
         {
-          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré (30 s d'attente entre deux solos).",
+          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré. Te met en pause pendant le solo ; 30 s d'attente entre deux solos.",
           "color": "gray"
         }
       ],
@@ -89,7 +89,7 @@
       ],
       "tooltip": [
         {
-          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré (30 s d'attente entre deux solos).",
+          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré. Te met en pause pendant le solo ; 30 s d'attente entre deux solos.",
           "color": "gray"
         }
       ],

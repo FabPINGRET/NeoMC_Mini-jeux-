@@ -13,7 +13,14 @@ SLICE_BUDGET = 20000                # commandes par tranche (limite de la chaine
 CLEAR_STEP = 16                     # hauteur d'une passe de nettoyage (blocs) : une tranche de 96 x 16 x ~300 = ~0,5 M blocs par tick
 PROBE_Y = 310                       # au-dessus de tout decor : jamais de bedrock a cette altitude
 IN_GAME = 'execute if score $game mg.st matches 66 unless score $state mg.st matches 0 run '    # une course tourne : sa zone de depart est chargee par fl_add
-BUSY = 'execute unless score $state mg.st matches 0 run '      # une partie quelconque tourne (course, solo, autre jeu) : la construction attend
+BUSY = 'execute unless score $state mg.st matches 0 run '      # une partie quelconque tourne (course, autre jeu) : la construction attend
+SOLO_BUSY = 'execute if entity @a[tag=mg.xso] run '            # un contre-la-montre solo tourne (il ne passe pas par $state) : la construction attend aussi
+SOLO_REFUSAL = SOLO_BUSY + 'return run tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] Course d\'élytres : construction impossible pendant un contre-la-montre solo.","color":"red"}]'
+
+
+def wait_lines(ret):
+    """Les deux gardes d'attente (partie en cours, solo en cours) : chacune renvoie `ret` (une commande a faire a la place de construire)."""
+    return [BUSY + 'return run ' + ret, SOLO_BUSY + 'return run ' + ret]
 
 
 def n_slices(spec):
@@ -71,9 +78,9 @@ def clear_lines(spec, k):
            % (k, spec.NUM, len(passes), CLEAR_STEP, spec.CLEAR_Y[0], spec.CLEAR_Y[1], k),
            '# $xcp = passe en cours (0 = pas commencée) ; build_abort remet $xcp à 0 et arrête la suite (schedule clear), uninstall arrête la suite',
            '# « strict » : pas de mise à jour des voisins, les rails ne tombent pas en objets ; les objets éventuels sont tués avant la construction',
-           '# une partie démarre : on suspend le nettoyage (et la construction qui suit) jusqu\'à ce que $state revienne à 0',
-           BUSY + 'return run schedule function %s 20t' % me,
-           'execute if score $xcp mg.st matches 0 run scoreboard players set $xcp mg.st 1']
+           '# une partie démarre (ou un solo) : on suspend le nettoyage (et la construction qui suit) jusqu\'à ce que $state revienne à 0 et que les solos finissent']
+    out += wait_lines('schedule function %s 20t' % me)
+    out += ['execute if score $xcp mg.st matches 0 run scoreboard players set $xcp mg.st 1']
     for p, (ya, yb) in enumerate(passes, 1):
         for part in T.split_fill(('fill', xa, ya, spec.Z0, xb, yb, spec.Z1 - 1, 'air strict')):
             out.append('execute if score $xcp mg.st matches %d run %s' % (p, T.cmd_text(part)))
@@ -91,6 +98,8 @@ def course_build_lines(spec):
     return ['# (OP) Reconstruit le parcours %d (%s) seul, en %d tranches de %d blocs (chargées de force une à une)' % (spec.NUM, spec.NAME, n_slices(spec), SLICE),
             '# pas pendant une partie de la course : build_abort libérerait la zone de départ chargée par fl_add',
             IN_GAME + 'return run tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] Course d\'élytres : construction impossible pendant une partie.","color":"red"}]',
+            '# ni pendant un contre-la-montre solo (il se joue sur ce parcours et ne passe pas par $state)',
+            SOLO_REFUSAL,
             'function mg:elyrace/build_abort',
             'data remove storage mg:elyrace ' + spec.FLAG,
             'function ' + CC.fn(spec, 'build_start')]
@@ -113,7 +122,8 @@ def build_wait_lines(spec):
            '# une partie démarre pendant la construction (course, solo ou autre jeu) : on ne construit pas (les remplissages sont lourds) et $xbw',
            '# n\'avance pas (pas de faux build_fail). Choix assumé : la tranche en cours reste chargée de force pendant la pause (la relâcher puis',
            '# la recharger ferait ré-attendre le chargement) ; la pause dure autant que la partie, jusqu\'à ce que $state revienne à 0',
-           BUSY + 'return run schedule function %s 20t' % me]
+           '# et que les solos soient finis (un solo ne passe pas par $state : garde propre, SOLO_BUSY)']
+    out += wait_lines('schedule function %s 20t' % me)
     first = 'clear_%d' if hasattr(spec, 'CLEAR_Y') else 'build_%d'           # nettoyage d'abord, s'il y en a un
     for k in range(1, n_slices(spec) + 1):
         out.append('execute if score $xbk mg.st matches %d if function %s run return run function %s'
@@ -179,9 +189,9 @@ def common_files(specs):
              '# une construction tourne déjà ($xbk = tranche en cours, 0 sinon : posé par build_start, remis à 0 par la dernière tranche,',
              '# build_fail et build_abort ; core/load le remet à 0 au chargement) : la dernière tranche rappellera build_next',
              'execute if score $xbk mg.st matches 1.. run return 0',
-             '# pas pendant une partie : on réessaie dans une minute (build_abort libérerait la zone de départ chargée par fl_add)',
-             BUSY + 'return run schedule function mg:elyrace/build_next 60s']
-    next_ += ['execute unless data storage mg:elyrace %s run return run function %s' % (s.FLAG, CC.fn(s, 'build_start')) for s in specs]
+             '# pas pendant une partie ni un solo : on réessaie dans une minute (build_abort libérerait la zone de départ chargée par fl_add)']
+    next_ += wait_lines('schedule function mg:elyrace/build_next 60s')
+    next_ +=['execute unless data storage mg:elyrace %s run return run function %s' % (s.FLAG, CC.fn(s, 'build_start')) for s in specs]
     abort = ['# Arrête la construction : libère les chargements forcés des tranches de tous les parcours puis rétablit ceux du jeu',
              'schedule clear mg:elyrace/build', 'schedule clear mg:elyrace/build_next']
     abort += ['schedule clear ' + CC.fn(s, 'build_wait') for s in specs]
@@ -193,5 +203,7 @@ def common_files(specs):
     build = ['# (OP) Reconstruit tous les parcours, l\'un après l\'autre (chacun en tranches chargées de force)',
              '# pas pendant une partie de la course : build_abort libérerait la zone de départ chargée par fl_add',
              IN_GAME + 'return run tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] Course d\'élytres : construction impossible pendant une partie.","color":"red"}]',
+             '# ni pendant un contre-la-montre solo (il ne passe pas par $state)',
+             SOLO_REFUSAL,
              'function mg:elyrace/build_abort', 'function mg:elyrace/forget', 'function mg:elyrace/build_next']
     return {'build': build, 'build_next': next_, 'build_abort': abort}

@@ -11,5 +11,5 @@ execute if score $xw mg.st matches 1 if score $xe mg.st matches ..0 run return r
 execute if score $xw mg.st matches 1 unless entity @a[tag=mg.play,scores={mg.xf=0}] run return run function mg:elyrace/end
 execute if score $xt mg.st matches 3000 run tellraw @a[tag=mg.play] [{"text":"🪽 Plus que 30 secondes !","color":"gold"}]
 execute if score $xt mg.st matches 3600.. run return run function mg:elyrace/timeout
-# plus aucun participant (déconnexion) : fin sans vainqueur (en solo, fin du contre-la-montre : elyrace/draw)
-execute unless entity @a[tag=mg.play] run function mg:elyrace/draw
+# plus aucun participant (déconnexion) : fin sans vainqueur
+execute unless entity @a[tag=mg.play] run function mg:core/draw

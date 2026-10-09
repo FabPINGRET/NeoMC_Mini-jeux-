@@ -107,7 +107,7 @@
       ],
       "tooltip": [
         {
-          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré (30 s d'attente entre deux solos).",
+          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré. Te met en pause pendant le solo ; 30 s d'attente entre deux solos.",
           "color": "gray"
         }
       ],
@@ -133,7 +133,7 @@
       ],
       "tooltip": [
         {
-          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré (30 s d'attente entre deux solos).",
+          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré. Te met en pause pendant le solo ; 30 s d'attente entre deux solos.",
           "color": "gray"
         }
       ],
@@ -159,7 +159,7 @@
       ],
       "tooltip": [
         {
-          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré (30 s d'attente entre deux solos).",
+          "text": "Contre-la-montre : seul en piste, ton meilleur temps est enregistré. Te met en pause pendant le solo ; 30 s d'attente entre deux solos.",
           "color": "gray"
         }
       ],

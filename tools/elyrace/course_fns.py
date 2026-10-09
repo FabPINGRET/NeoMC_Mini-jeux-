@@ -67,13 +67,13 @@ def setup_lines(spec):
 
 def go_text_lines(c):
     spec = c.spec
-    intro = ('tellraw @a[tag=mg.play] [{"text":"🪽 COURSE D\'ÉLYTRES — %s : ","color":"aqua","bold":true},{"text":"saute de la falaise, ouvre tes élytres (espace en l\'air) '
+    intro = ('tellraw @s [{"text":"🪽 COURSE D\'ÉLYTRES — %s : ","color":"aqua","bold":true},{"text":"saute de la falaise, ouvre tes élytres (espace en l\'air) '
              'et franchis les %d anneaux dans l\'ordre, par le trou. %%s (3 minutes au plus).","color":"gray"}]' % (spec.NAME.upper(), len(c.rings)))
-    return ['# Texte du départ du parcours %d (@a[tag=mg.play]) ; fin de la 1re phrase selon $xs (contre-la-montre solo : pas de gagnant)' % spec.NUM,
-            'execute unless score $xs mg.st matches 1 run ' + intro % 'Le premier arrivé gagne',
-            'execute if score $xs mg.st matches 1 run ' + intro % 'Ton temps est enregistré',
-            'tellraw @a[tag=mg.play] [{"text":"♥ 3 cœurs : chaque choc contre un mur en retire un. Plus de cœur, anneau raté, sol, eau ou trop longtemps sans planer : retour en l\'air au dernier point de reprise (colonnes lumineuses).","color":"gray"}]',
-            'tellraw @a[tag=mg.play] [{"text":"★ %d anneaux d\'or en détour : chacun donne une fusée (clic droit en vol pour accélérer).","color":"gold"}]' % len(c.golds)]
+    return ['# @s = joueur : texte du départ du parcours %d (appelé pour chaque participant ; solo/go l\'appelle pour son seul joueur) ; fin de la 1re phrase : tag mg.xso = contre-la-montre solo, pas de gagnant' % spec.NUM,
+            'execute unless entity @s[tag=mg.xso] run ' + intro % 'Le premier arrivé gagne',
+            'execute if entity @s[tag=mg.xso] run ' + intro % 'Ton temps est enregistré',
+            'tellraw @s [{"text":"♥ 3 cœurs : chaque choc contre un mur en retire un. Plus de cœur, anneau raté, sol, eau ou trop longtemps sans planer : retour en l\'air au dernier point de reprise (colonnes lumineuses).","color":"gray"}]',
+            'tellraw @s [{"text":"★ %d anneaux d\'or en détour : chacun donne une fusée (clic droit en vol pour accélérer).","color":"gold"}]' % len(c.golds)]
 
 
 def functions(c):

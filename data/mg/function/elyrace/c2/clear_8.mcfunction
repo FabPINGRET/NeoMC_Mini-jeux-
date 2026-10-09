@@ -1,8 +1,9 @@
 # Tranche 8 du parcours 2 : nettoyage en 17 passes de 16 blocs de haut (y 40 à 310), une par tick, puis construction (build_8)
 # $xcp = passe en cours (0 = pas commencée) ; build_abort remet $xcp à 0 et arrête la suite (schedule clear), uninstall arrête la suite
 # « strict » : pas de mise à jour des voisins, les rails ne tombent pas en objets ; les objets éventuels sont tués avant la construction
-# une partie démarre : on suspend le nettoyage (et la construction qui suit) jusqu'à ce que $state revienne à 0
+# une partie démarre (ou un solo) : on suspend le nettoyage (et la construction qui suit) jusqu'à ce que $state revienne à 0 et que les solos finissent
 execute unless score $state mg.st matches 0 run return run schedule function mg:elyrace/c2/clear_8 20t
+execute if entity @a[tag=mg.xso] run return run schedule function mg:elyrace/c2/clear_8 20t
 execute if score $xcp mg.st matches 0 run scoreboard players set $xcp mg.st 1
 execute if score $xcp mg.st matches 1 run fill 656 40 29440 703 55 29479 minecraft:air strict
 execute if score $xcp mg.st matches 1 run fill 656 40 29480 703 55 29519 minecraft:air strict

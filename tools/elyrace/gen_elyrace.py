@@ -4,7 +4,7 @@
                                                                      du pilote automatique, references de fonctions, desinstallation,
                                                                      zones, ouvertures de fenetre (forme gen_rating), drapeaux du suivi
                                                                      de mg:setup, et fichiers du depot identiques a ce que le generateur produirait
-Sortie : data/mg/function/elyrace/** (un sous-dossier c<N>/ par parcours ; solo/ = contre-la-montre solo, records), core/sub/elyrace,
+Sortie : data/mg/function/elyrace/** (un sous-dossier c<N>/ par parcours ; solo/ = contre-la-montre solo par joueur, records), core/sub/elyrace,
 dialog/sub_elyrace.json, dialog/sub_elyrace_solo.json, advancement/elyrace_wall.json, tags/damage_type/elyrace_wall.json.
 Les fichiers generes ne se modifient jamais a la main. Les branchements dans le moteur (wire_elyrace*.py) se font apres la generation.
 Ordre de la chaine : ce generateur, puis tools/variantes/gen_variants.py (PYTHONUTF8=1 ; il relance tools/rating/gen_rating.py, qui reecrit
@@ -30,6 +30,7 @@ import menus as M                  # noqa: E402
 import records as RC               # noqa: E402
 import rings as R                  # noqa: E402
 import solo as S                   # noqa: E402
+import solo_run as SR              # noqa: E402
 
 SPECS = [course_canyon, course_blanc]          # un module par parcours, dans l'ordre des NUM
 
@@ -42,6 +43,7 @@ def all_files(courses):
     fns.update(D.functions(specs))
     fns.update(B.common_files(specs))
     fns.update(S.functions(specs))
+    fns.update(SR.functions(specs))
     fns.update(RC.functions(specs))
     for c in courses:
         sub = {}
