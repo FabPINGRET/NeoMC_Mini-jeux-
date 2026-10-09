@@ -12,7 +12,7 @@ scoreboard players operation $fx mg.st -= $px0 mg.st
 scoreboard players operation $fy mg.st -= $py0 mg.st
 scoreboard players remove $fy mg.st 1620
 scoreboard players operation $fz mg.st -= $pz0 mg.st
-execute positioned ~ 168.7 ~ run summon minecraft:tnt ~ ~ ~ {Tags:["mg.bomb","mg.bnew"],fuse:400s,explosion_power:0.0f}
+execute positioned ~ ~-0.6 ~ run summon minecraft:tnt ~ ~ ~ {Tags:["mg.bomb","mg.bnew"],fuse:400s,explosion_power:0.0f}
 $execute store result entity @e[type=minecraft:tnt,tag=mg.bnew,limit=1] Motion[0] double $(sp) run scoreboard players get $fx mg.st
 $execute store result entity @e[type=minecraft:tnt,tag=mg.bnew,limit=1] Motion[1] double $(sp) run scoreboard players get $fy mg.st
 $execute store result entity @e[type=minecraft:tnt,tag=mg.bnew,limit=1] Motion[2] double $(sp) run scoreboard players get $fz mg.st
