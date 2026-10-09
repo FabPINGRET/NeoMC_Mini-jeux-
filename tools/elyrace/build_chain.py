@@ -10,7 +10,8 @@ import terrain as T
 SLICE = 96                          # largeur d'une tranche de construction (6 chunks)
 SLICE_BUDGET = 20000                # commandes par tranche (limite de la chaine de commandes : 65 536)
 PROBE_Y = 310                       # au-dessus de tout decor : jamais de bedrock a cette altitude
-IN_GAME = 'execute if score $game mg.st matches 66 unless score $state mg.st matches 0 run '
+IN_GAME = 'execute if score $game mg.st matches 66 unless score $state mg.st matches 0 run '    # une course tourne : sa zone de depart est chargee par fl_add
+BUSY = 'execute unless score $state mg.st matches 0 run '      # une partie quelconque tourne (course, solo, autre jeu) : la construction attend
 
 
 def n_slices(spec):
@@ -75,8 +76,10 @@ def build_wait_lines(spec):
     out = ['# Attend le chargement de la tranche $xbk puis la construit (parcours %d)' % spec.NUM,
            '# $xbk à 0 = aucune construction en cours (arrêtée par build_abort, build_fail ou core/load) : un schedule resté en attente s\'éteint ici',
            'execute if score $xbk mg.st matches 0 run return 0',
-           '# une partie démarre pendant la construction : on ne construit pas (les remplissages sont lourds) et $xbw n\'avance pas (pas de faux build_fail)',
-           IN_GAME + 'return run schedule function %s 20t' % me]
+           '# une partie démarre pendant la construction (course, solo ou autre jeu) : on ne construit pas (les remplissages sont lourds) et $xbw',
+           '# n\'avance pas (pas de faux build_fail). Choix assumé : la tranche en cours reste chargée de force pendant la pause (la relâcher puis',
+           '# la recharger ferait ré-attendre le chargement) ; la pause dure autant que la partie, jusqu\'à ce que $state revienne à 0',
+           BUSY + 'return run schedule function %s 20t' % me]
     for k in range(1, n_slices(spec) + 1):
         out.append('execute if score $xbk mg.st matches %d if function %s run return run function %s'
                    % (k, CC.fn(spec, 'loaded_%d' % k), CC.fn(spec, 'build_%d' % k)))
@@ -140,7 +143,7 @@ def common_files(specs):
              '# build_fail et build_abort ; core/load le remet à 0 au chargement) : la dernière tranche rappellera build_next',
              'execute if score $xbk mg.st matches 1.. run return 0',
              '# pas pendant une partie : on réessaie dans une minute (build_abort libérerait la zone de départ chargée par fl_add)',
-             IN_GAME + 'return run schedule function mg:elyrace/build_next 60s']
+             BUSY + 'return run schedule function mg:elyrace/build_next 60s']
     next_ += ['execute unless data storage mg:elyrace %s run return run function %s' % (s.FLAG, CC.fn(s, 'build_start')) for s in specs]
     abort = ['# Arrête la construction : libère les chargements forcés des tranches de tous les parcours puis rétablit ceux du jeu',
              'schedule clear mg:elyrace/build', 'schedule clear mg:elyrace/build_next']

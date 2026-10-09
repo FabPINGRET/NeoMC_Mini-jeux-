@@ -1,7 +1,7 @@
 {
   "type": "minecraft:multi_action",
   "title": {
-    "text": "🪽 Course élytres",
+    "text": "⏱ Contre-la-montre",
     "color": "aqua",
     "bold": true
   },
@@ -12,13 +12,13 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Plane avec tes élytres à travers des anneaux : choisis le parcours.",
+          "text": "Seul en piste, avec ton meilleur temps et un record du serveur par parcours. 30 s d'attente entre deux solos.",
           "color": "gray"
         }
       ]
     }
   ],
-  "columns": 3,
+  "columns": 2,
   "exit_action": {
     "label": [
       {
@@ -28,76 +28,6 @@
     ]
   },
   "actions": [
-    {
-      "label": [
-        {
-          "text": "🎲 Au hasard",
-          "color": "light_purple"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Un parcours tiré au hasard parmi ceux qui sont construits.",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.go set 66"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "Canyon du Couchant ",
-          "color": "gold"
-        },
-        {
-          "text": "★★★",
-          "color": "gold"
-        },
-        {
-          "text": "☆",
-          "color": "dark_gray"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Parcours 1 (Far West, ~1000 blocs) : slalom entre cheminées de fée, arches, viaduc ferroviaire, gorge en S, crête, ville fantôme. 18 anneaux, 3 anneaux d'or, 4 points de reprise, 3 cœurs.",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.go set 81"
-      }
-    },
-    {
-      "label": [
-        {
-          "text": "Pic Blanc ",
-          "color": "aqua"
-        },
-        {
-          "text": "★★★★",
-          "color": "gold"
-        },
-        {
-          "text": "",
-          "color": "dark_gray"
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Parcours 2 (haute montagne, ~1100 blocs) : pylônes de téléphérique, col, glacier, crevasse de glace, grotte éclairée, village d'arrivée. 20 anneaux, 3 anneaux d'or, 4 points de reprise, 3 cœurs.",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.go set 82"
-      }
-    },
     {
       "label": [
         {
@@ -195,7 +125,7 @@
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 42"
+        "command": "trigger mg.menu set 1"
       }
     }
   ]

@@ -1,4 +1,5 @@
 # Fin de la course : gagne le premier arrivé encore en ligne (plus petite place mg.xf) ; les autres sont classés dans le chat
+execute if score $xs mg.st matches 1 run return run function mg:elyrace/solo/end
 execute unless entity @a[tag=mg.play,scores={mg.xf=1..}] run return run function mg:core/draw
 scoreboard players set #mn mg.st 9999
 execute as @a[tag=mg.play,scores={mg.xf=1..}] run scoreboard players operation #mn mg.st < @s mg.xf

@@ -1,0 +1,4 @@
+# Annonce du solo (@s = joueur ; le parcours $xc est déjà tiré) et lien d'abandon pour lui seul
+execute if score $xc mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"⏱ CONTRE-LA-MONTRE","color":"aqua","bold":true},{"text":" solo : Canyon du Couchant (18 anneaux) !","color":"gray"}]
+execute if score $xc mg.st matches 2 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"⏱ CONTRE-LA-MONTRE","color":"aqua","bold":true},{"text":" solo : Pic Blanc (20 anneaux) !","color":"gray"}]
+tellraw @s [{"text":"⏱ Seul en piste : ton meilleur temps est enregistré. ","color":"gray"},{"text":"[✖ Abandonner]","color":"red","click_event":{"action":"run_command","command":"trigger mg.xs set 2"},"hover_event":{"action":"show_text","value":"Quitter le contre-la-montre"}}]

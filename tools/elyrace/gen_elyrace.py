@@ -3,8 +3,9 @@
     python tools/elyrace/gen_elyrace.py <racine du depot> --check    ne ecrit rien : budget de commandes, vol de verification
                                                                      du pilote automatique, references de fonctions, desinstallation,
                                                                      zones, et fichiers du depot identiques a ce que le generateur produirait
-Sortie : data/mg/function/elyrace/** (un sous-dossier c<N>/ par parcours), core/sub/elyrace, dialog/sub_elyrace.json,
-advancement/elyrace_wall.json, tags/damage_type/elyrace_wall.json. Les fichiers generes ne se modifient jamais a la main.
+Sortie : data/mg/function/elyrace/** (un sous-dossier c<N>/ par parcours ; solo/ = contre-la-montre solo, records), core/sub/elyrace,
+dialog/sub_elyrace.json, dialog/sub_elyrace_solo.json, advancement/elyrace_wall.json, tags/damage_type/elyrace_wall.json.
+Les fichiers generes ne se modifient jamais a la main. Les branchements dans le moteur (wire_elyrace*.py) se font apres la generation.
 Pour ajouter un parcours : ecrire son module « spec » (voir course_common.py), l'ajouter a SPECS.
 Python stdlib uniquement (compatible 3.8).
 """
@@ -23,7 +24,9 @@ import course_fns as F             # noqa: E402
 import dispatch as D               # noqa: E402
 import game as G                   # noqa: E402
 import menus as M                  # noqa: E402
+import records as RC               # noqa: E402
 import rings as R                  # noqa: E402
+import solo as S                   # noqa: E402
 
 SPECS = [course_canyon, course_blanc]          # un module par parcours, dans l'ordre des NUM
 
@@ -35,16 +38,20 @@ def all_files(courses):
     fns = G.functions(specs)
     fns.update(D.functions(specs))
     fns.update(B.common_files(specs))
+    fns.update(S.functions(specs))
+    fns.update(RC.functions(specs))
     for c in courses:
         sub = {}
         sub.update(F.functions(c))
         sub.update(R.functions(c))
         sub.update(B.course_files(c))
+        sub.update(RC.course_files(c.spec))
         fns.update(('c%d/%s' % (c.spec.NUM, name), lines) for name, lines in sub.items())
     for name, lines in fns.items():
         files[CC.FN + name + '.mcfunction'] = CC.lines_to_text(lines)
     files['data/mg/function/core/sub/elyrace.mcfunction'] = CC.lines_to_text(M.sub_lines(specs))
     files['data/mg/dialog/sub_elyrace.json'] = M.dumps(M.dialog_json(specs))
+    files['data/mg/dialog/sub_elyrace_solo.json'] = M.dumps(M.solo_dialog_json(specs))
     files['data/mg/advancement/elyrace_wall.json'] = M.dumps(M.advancement_json())
     files['data/mg/tags/damage_type/elyrace_wall.json'] = M.dumps(M.damage_tag_json())
     return files

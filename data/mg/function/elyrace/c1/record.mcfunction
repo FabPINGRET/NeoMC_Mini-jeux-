@@ -1,0 +1,20 @@
+# @s = joueur qui franchit l'arrivée du parcours 1 (Canyon du Couchant), temps $xt (ticks) : record personnel, puis record du serveur
+scoreboard players operation #xq mg.st = $xt mg.st
+function mg:elyrace/time
+# #rp = 1 : meilleur temps personnel (ou premier temps)
+scoreboard players set #rp mg.st 0
+execute unless score @s mg.xr1 matches 1.. run scoreboard players set #rp mg.st 1
+execute if score @s mg.xr1 matches 1.. if score $xt mg.st < @s mg.xr1 run scoreboard players set #rp mg.st 1
+execute if score #rp mg.st matches 0 run return 0
+scoreboard players operation @s mg.xr1 = $xt mg.st
+execute if score $ecs mg.st matches ..9 run tellraw @s [{"text":"★ Nouveau record personnel : ","color":"yellow","bold":true},{"score":{"name":"$es","objective":"mg.st"},"color":"gold"},{"text":",","color":"gold"},{"text":"0","color":"gold"},{"score":{"name":"$ecs","objective":"mg.st"},"color":"gold"},{"text":" s","color":"gold"}]
+execute if score $ecs mg.st matches 10.. run tellraw @s [{"text":"★ Nouveau record personnel : ","color":"yellow","bold":true},{"score":{"name":"$es","objective":"mg.st"},"color":"gold"},{"text":",","color":"gold"},{"score":{"name":"$ecs","objective":"mg.st"},"color":"gold"},{"text":" s","color":"gold"}]
+# #rs = 1 : nouveau record du serveur (un record du serveur est toujours un record personnel)
+scoreboard players set #rs mg.st 0
+execute unless score #srv mg.xr1 matches 1.. run scoreboard players set #rs mg.st 1
+execute if score #srv mg.xr1 matches 1.. if score $xt mg.st < #srv mg.xr1 run scoreboard players set #rs mg.st 1
+execute if score #rs mg.st matches 0 run return 0
+scoreboard players operation #srv mg.xr1 = $xt mg.st
+execute if score $ecs mg.st matches ..9 run tellraw @a [{"text":"🏆 ","color":"gold"},{"selector":"@s","color":"yellow","bold":true},{"text":" bat le record du serveur sur Canyon du Couchant : ","color":"gray"},{"score":{"name":"$es","objective":"mg.st"},"color":"gold"},{"text":",","color":"gold"},{"text":"0","color":"gold"},{"score":{"name":"$ecs","objective":"mg.st"},"color":"gold"},{"text":" s","color":"gold"}]
+execute if score $ecs mg.st matches 10.. run tellraw @a [{"text":"🏆 ","color":"gold"},{"selector":"@s","color":"yellow","bold":true},{"text":" bat le record du serveur sur Canyon du Couchant : ","color":"gray"},{"score":{"name":"$es","objective":"mg.st"},"color":"gold"},{"text":",","color":"gold"},{"score":{"name":"$ecs","objective":"mg.st"},"color":"gold"},{"text":" s","color":"gold"}]
+function mg:hall/ely {key:"xr1",lbl:"🪽 Record Canyon du Couchant"}

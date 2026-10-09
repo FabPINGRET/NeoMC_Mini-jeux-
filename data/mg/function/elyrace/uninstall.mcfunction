@@ -26,3 +26,11 @@ scoreboard objectives remove mg.xf
 scoreboard objectives remove mg.xb1
 scoreboard objectives remove mg.xb2
 scoreboard objectives remove mg.xb3
+# contre-la-montre solo : trigger, records par parcours (objectifs et détenteur figé dans le hall), drapeau et délai
+scoreboard objectives remove mg.xs
+scoreboard objectives remove mg.xr1
+scoreboard objectives remove mg.xr2
+data remove storage mg:hall e.xr1
+data remove storage mg:hall e.xr2
+scoreboard players reset $xs mg.st
+scoreboard players reset $xse mg.st

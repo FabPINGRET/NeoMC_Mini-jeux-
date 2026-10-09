@@ -37,4 +37,5 @@ scoreboard players set #krel mg.st 30
 scoreboard players set $ri mg.st 0
 execute as @a[tag=mg.play] run function mg:elyrace/equip
 execute as @a[tag=mg.play] run function mg:elyrace/place_one
-scoreboard objectives setdisplay sidebar mg.xa
+# tableau des anneaux de la course de groupe (en solo : le HUD du joueur suffit, et le tableau serait lu par tout le lobby)
+execute unless score $xs mg.st matches 1 run scoreboard objectives setdisplay sidebar mg.xa
