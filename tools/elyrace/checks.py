@@ -14,6 +14,7 @@ import dispatch as D
 import game as G
 import menus as M
 import records as RC
+import rings as RG
 import verify as V
 
 LOADED_LINE = re.compile(r'execute store success score \$xbl mg\.st unless block -?\d+ %d -?\d+ minecraft:bedrock$' % B.PROBE_Y)
@@ -240,6 +241,11 @@ def check(root, courses, files):
         margin_bad, info = V.speed_margins(c, G.DROP_SQ, G.DROP_REL)
         print('\n'.join('  ' + i for i in info))
         bad += ['parcours %d, repli de choc : %s' % (c.spec.NUM, b) for b in margin_bad]
+        vref = max(t[3] for t in c.trace)
+        vmax = max(vref, V.max_speed(c))             # tous les vols de verify (ecarts, reprises, detours d'or), pas seulement la reference
+        print('  vol de reference : %.1f s (%d ticks), vitesse max %.2f b/tick (tous les vols verifies : %.2f)' % (len(c.trace) / 20.0, len(c.trace), vref, vmax))
+        if vmax >= RG.BOX_X + 1:                 # au-dela, le joueur pourrait sauter par-dessus le volume de franchissement d'un anneau
+            bad.append('parcours %d : vitesse max des vols verifies %.2f >= %d (volume de franchissement rings.BOX_X = %d)' % (c.spec.NUM, vmax, RG.BOX_X + 1, RG.BOX_X))
         bad += course_problems(c)
         bad += ['parcours %d, pilote automatique : %s' % (c.spec.NUM, b) for b in V.verify_all(c)]
     for rel, text in files.items():
