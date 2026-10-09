@@ -295,8 +295,9 @@ w('cham/prepare', ['# 🦎 Meccha Chameleon : préparation (maison, rôles, cage
                    'data modify storage mg:cham mats set value [' + ','.join(['{Name:"minecraft:air"}'] + [state(b) for b, _ in MATS]) + ']',
                    'clear @a[tag=mg.play]', 'gamemode adventure @a[tag=mg.play]', 'tag @a[tag=mg.play] add mg.cmx',
                    'execute store result score $cmn mg.st if entity @a[tag=mg.play]', 'scoreboard players set #4 mg.st 4',
+                   'scoreboard players set $cmsolo mg.st 0', 'execute if score $cmn mg.st matches ..1 run scoreboard players set $cmsolo mg.st 1',
                    'scoreboard players operation $cmn mg.st /= #4 mg.st', 'execute if score $cmn mg.st matches ..0 run scoreboard players set $cmn mg.st 1',
-                   'function mg:cham/pick', 'execute as @a[tag=mg.play,tag=!mg.cms] run tag @s add mg.cmh',
+                   'execute if score $cmsolo mg.st matches 0 run function mg:cham/pick', 'execute as @a[tag=mg.play,tag=!mg.cms] run tag @s add mg.cmh',
                    'team join mg_red @a[tag=mg.cms]', 'team join mg_cm @a[tag=mg.cmh]',
                    f'tp @a[tag=mg.cms] 0.5 {Y + 9} {Z}.5', 'execute as @a[tag=mg.cms] at @s run spawnpoint @s ~ ~ ~',
                    f'spreadplayers 0 {Z} 2 18 under {Y + 5} false @a[tag=mg.cmh]', 'execute as @a[tag=mg.cmh] at @s run spawnpoint @s ~ ~ ~',
@@ -313,7 +314,8 @@ w('cham/go', ['# Départ : 45 s pour se cacher', 'scoreboard players set $cmt mg
               'title @a[tag=mg.cmh] title {"text":"🦎 Cache-toi !","color":"green","bold":true}',
               'title @a[tag=mg.cmh] subtitle {"text":"Peins-toi aux couleurs du décor","color":"gray"}',
               'title @a[tag=mg.cms] title {"text":"🔍 Chasseur","color":"red","bold":true}',
-              'title @a[tag=mg.cms] subtitle {"text":"Libéré dans 45 s","color":"gray"}'])
+              'title @a[tag=mg.cms] subtitle {"text":"Libéré dans 45 s","color":"gray"}',
+              'execute if score $cmsolo mg.st matches 1 run tellraw @a[tag=mg.cmx] {"text":"🦎 Mode entraînement (seul) : tu es caméléon, essaie la palette, la pipette et les poses. Il faut au moins 2 joueurs pour une vraie partie.","color":"yellow"}'])
 B = ['# @s devient caméléon : invisible, corps en blocs (6 morceaux) et zone touchable',
      'clear @s', 'scoreboard players add $cmc mg.st 1', 'scoreboard players operation @s mg.cmid = $cmc mg.st',
      'effect give @s minecraft:invisibility infinite 0 true', 'effect give @s minecraft:saturation infinite 0 true',
@@ -531,8 +533,8 @@ w('cham/tick', ['# 🦎 Meccha Chameleon : tick', 'scoreboard players add $cmt m
                 'execute if score $cmq mg.st matches 0 run function mg:cham/second',
                 'execute store result score $cmh mg.st if entity @a[tag=mg.play,tag=mg.cmh,tag=!mg.cmout]',
                 'execute store result score $cmk mg.st if entity @a[tag=mg.play,tag=mg.cms]',
-                'execute if score $state mg.st matches 2 if score $cmh mg.st matches 0 run return run function mg:cham/seekers_win',
-                'execute if score $state mg.st matches 2 if score $cmk mg.st matches 0 run return run function mg:cham/hiders_win',
+                'execute if score $cmsolo mg.st matches 0 if score $state mg.st matches 2 if score $cmh mg.st matches 0 run return run function mg:cham/seekers_win',
+                'execute if score $cmsolo mg.st matches 0 if score $state mg.st matches 2 if score $cmk mg.st matches 0 run return run function mg:cham/hiders_win',
                 f'execute if score $state mg.st matches 2 if score $cmt mg.st matches {HIDE + HUNT}.. run function mg:cham/hiders_win'])
 REC = ['# Récapitulatif de fin de manche (points de chacun, meilleur joueur)',
        'tellraw @a[tag=mg.cmx] {"text":"━━━━━━━━ 🦎 MECCHA CHAMELEON ━━━━━━━━","color":"green","bold":true}',

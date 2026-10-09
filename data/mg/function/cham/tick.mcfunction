@@ -18,6 +18,6 @@ scoreboard players operation $cmq mg.st %= #20 mg.st
 execute if score $cmq mg.st matches 0 run function mg:cham/second
 execute store result score $cmh mg.st if entity @a[tag=mg.play,tag=mg.cmh,tag=!mg.cmout]
 execute store result score $cmk mg.st if entity @a[tag=mg.play,tag=mg.cms]
-execute if score $state mg.st matches 2 if score $cmh mg.st matches 0 run return run function mg:cham/seekers_win
-execute if score $state mg.st matches 2 if score $cmk mg.st matches 0 run return run function mg:cham/hiders_win
+execute if score $cmsolo mg.st matches 0 if score $state mg.st matches 2 if score $cmh mg.st matches 0 run return run function mg:cham/seekers_win
+execute if score $cmsolo mg.st matches 0 if score $state mg.st matches 2 if score $cmk mg.st matches 0 run return run function mg:cham/hiders_win
 execute if score $state mg.st matches 2 if score $cmt mg.st matches 4500.. run function mg:cham/hiders_win

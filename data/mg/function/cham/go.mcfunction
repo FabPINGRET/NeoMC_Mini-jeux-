@@ -15,3 +15,4 @@ title @a[tag=mg.cmh] title {"text":"🦎 Cache-toi !","color":"green","bold":tru
 title @a[tag=mg.cmh] subtitle {"text":"Peins-toi aux couleurs du décor","color":"gray"}
 title @a[tag=mg.cms] title {"text":"🔍 Chasseur","color":"red","bold":true}
 title @a[tag=mg.cms] subtitle {"text":"Libéré dans 45 s","color":"gray"}
+execute if score $cmsolo mg.st matches 1 run tellraw @a[tag=mg.cmx] {"text":"🦎 Mode entraînement (seul) : tu es caméléon, essaie la palette, la pipette et les poses. Il faut au moins 2 joueurs pour une vraie partie.","color":"yellow"}

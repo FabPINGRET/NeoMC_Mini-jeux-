@@ -7,9 +7,11 @@ gamemode adventure @a[tag=mg.play]
 tag @a[tag=mg.play] add mg.cmx
 execute store result score $cmn mg.st if entity @a[tag=mg.play]
 scoreboard players set #4 mg.st 4
+scoreboard players set $cmsolo mg.st 0
+execute if score $cmn mg.st matches ..1 run scoreboard players set $cmsolo mg.st 1
 scoreboard players operation $cmn mg.st /= #4 mg.st
 execute if score $cmn mg.st matches ..0 run scoreboard players set $cmn mg.st 1
-function mg:cham/pick
+execute if score $cmsolo mg.st matches 0 run function mg:cham/pick
 execute as @a[tag=mg.play,tag=!mg.cms] run tag @s add mg.cmh
 team join mg_red @a[tag=mg.cms]
 team join mg_cm @a[tag=mg.cmh]
