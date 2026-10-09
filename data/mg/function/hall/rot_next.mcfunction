@@ -1,8 +1,8 @@
 # Tableau suivant ayant au moins un score (sinon victoires)
 scoreboard players add $rot mg.st 1
-execute unless score $rot mg.st matches 1..37 run scoreboard players set $rot mg.st 1
+execute unless score $rot mg.st matches 1..38 run scoreboard players set $rot mg.st 1
 scoreboard players add $rtry mg.st 1
-execute if score $rtry mg.st matches 38.. run return run scoreboard objectives setdisplay sidebar mg.wins
+execute if score $rtry mg.st matches 39.. run return run scoreboard objectives setdisplay sidebar mg.wins
 execute if score $rot mg.st matches 1 if score #any mg.lvl matches 1.. run return run scoreboard objectives setdisplay sidebar mg.lvl
 execute if score $rot mg.st matches 2 if score #any mg.wins matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wins
 execute if score $rot mg.st matches 3 if score #any mg.stp matches 1.. run return run scoreboard objectives setdisplay sidebar mg.stp
@@ -40,4 +40,5 @@ execute if score $rot mg.st matches 34 if score #any mg.wg_hg matches 1.. run re
 execute if score $rot mg.st matches 35 if score #any mg.wg_prophunt matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_prophunt
 execute if score $rot mg.st matches 36 if score #any mg.wg_zombies matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_zombies
 execute if score $rot mg.st matches 37 if score #any mg.wg_infection matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_infection
+execute if score $rot mg.st matches 38 if score #any mg.wg_bomber matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_bomber
 function mg:hall/rot_next

@@ -35,3 +35,4 @@ execute if score $game mg.st matches 95 run function mg:hall/game {obj:"mg.wg_hg
 execute if score $game mg.st matches 96 run function mg:hall/game {obj:"mg.wg_prophunt",key:"prophunt",lbl:"🎭 Prop Hunt",col:"gold"}
 execute if score $game mg.st matches 97 run function mg:hall/game {obj:"mg.wg_zombies",key:"zombies",lbl:"🧟 Zombies",col:"dark_green"}
 execute if score $game mg.st matches 98 run function mg:hall/game {obj:"mg.wg_infection",key:"infection",lbl:"🧪 Infection",col:"green"}
+execute if score $game mg.st matches 99 run function mg:hall/game {obj:"mg.wg_bomber",key:"bomber",lbl:"💣 Bombardier",col:"red"}

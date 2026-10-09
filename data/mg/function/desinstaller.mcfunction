@@ -22,6 +22,16 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+bossbar remove mg:bomber
+schedule clear mg:bomber/build_step
+data remove storage mg:bomber v1
+scoreboard objectives remove mg.bmb
+scoreboard objectives remove mg.bid
+scoreboard objectives remove mg.bty
+scoreboard objectives remove mg.bc1
+scoreboard objectives remove mg.bc2
+scoreboard objectives remove mg.bc3
+scoreboard objectives remove mg.bc4
 scoreboard objectives remove mg.trc
 scoreboard objectives remove mg.trs
 scoreboard objectives remove mg.trj

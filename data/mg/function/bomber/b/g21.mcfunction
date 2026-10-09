@@ -1,0 +1,29 @@
+# Sol, fleuve et plancher du Bombardier, étape 21/40
+fill 49 64 32324 55 64 32324 minecraft:white_concrete_powder
+fill 49 64 32344 55 64 32344 minecraft:white_concrete_powder
+fill 49 64 32346 55 64 32346 minecraft:white_concrete_powder
+fill 49 64 32348 55 64 32348 minecraft:white_concrete_powder
+fill 49 64 32368 55 64 32368 minecraft:white_concrete_powder
+fill 49 64 32370 55 64 32370 minecraft:white_concrete_powder
+fill 49 64 32372 55 64 32372 minecraft:white_concrete_powder
+fill 49 64 32392 55 64 32392 minecraft:white_concrete_powder
+fill 49 64 32394 55 64 32394 minecraft:white_concrete_powder
+fill 49 64 32396 55 64 32396 minecraft:white_concrete_powder
+fill 49 64 32416 55 64 32416 minecraft:white_concrete_powder
+fill 49 64 32418 55 64 32418 minecraft:white_concrete_powder
+fill 49 64 32420 55 64 32420 minecraft:white_concrete_powder
+fill 49 64 32440 55 64 32440 minecraft:white_concrete_powder
+fill 49 64 32442 55 64 32442 minecraft:white_concrete_powder
+fill 49 64 32444 55 64 32444 minecraft:white_concrete_powder
+fill 49 64 32464 55 64 32464 minecraft:white_concrete_powder
+fill 49 64 32466 55 64 32466 minecraft:white_concrete_powder
+fill 49 64 32468 55 64 32468 minecraft:white_concrete_powder
+fill 65 57 32312 88 57 32488 minecraft:sand
+fill 65 58 32312 88 63 32488 minecraft:water
+fill 65 64 32312 88 64 32488 minecraft:air
+fill 64 58 32312 64 63 32488 minecraft:stone
+fill 89 57 32311 89 64 32489 minecraft:stone
+fill 64 57 32311 88 64 32311 minecraft:stone
+fill 64 57 32489 88 64 32489 minecraft:stone
+fill 71 58 32326 71 63 32326 minecraft:sand
+setblock 71 64 32326 minecraft:sand

@@ -1,0 +1,22 @@
+# Sol, fleuve et plancher du Bombardier, étape 40/40
+fill -24 61 32456 -24 64 32456 minecraft:water
+fill -23 61 32456 -23 64 32456 minecraft:water
+fill -22 61 32456 -22 64 32456 minecraft:water
+fill -21 61 32456 -21 64 32456 minecraft:water
+fill -20 61 32456 -20 64 32456 minecraft:water
+fill -30 61 32457 -30 64 32457 minecraft:water
+fill -29 61 32457 -29 64 32457 minecraft:water
+fill -28 61 32457 -28 64 32457 minecraft:water
+fill -27 61 32457 -27 64 32457 minecraft:water
+fill -26 61 32457 -26 64 32457 minecraft:water
+fill -25 61 32457 -25 64 32457 minecraft:water
+fill -24 61 32457 -24 64 32457 minecraft:water
+fill -23 61 32457 -23 64 32457 minecraft:water
+fill -22 61 32457 -22 64 32457 minecraft:water
+fill -26 61 32458 -26 64 32458 minecraft:water
+fill -88 170 32312 88 170 32488 minecraft:barrier
+fill -88 171 32312 88 176 32312 minecraft:barrier
+fill -88 171 32488 88 176 32488 minecraft:barrier
+fill -88 171 32312 -88 176 32488 minecraft:barrier
+fill 88 171 32312 88 176 32488 minecraft:barrier
+data modify storage mg:bomber v1 set value 1b

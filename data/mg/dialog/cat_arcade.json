@@ -265,6 +265,24 @@
     {
       "label": [
         {
+          "text": "💣 Bombardier",
+          "color": "red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Bombarde la ville du ciel, le plus de dégâts gagne, 2 min 30",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 99"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour au menu",
           "color": "yellow"
         }
