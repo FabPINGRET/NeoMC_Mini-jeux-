@@ -912,9 +912,14 @@ w('gta/heli_random', ['# Un hélico de remplacement sur une des hélisurfaces (c
                       f'execute store result score $gr mg.st run random value 0..{len(HELI_AT) - 1}'] +
   [f'execute if score $gr mg.st matches {i} in {DIM} positioned {x} 66 {Z + z} unless entity @e[type=minecraft:happy_ghast,tag=mg.ghel,distance=..6] '
    f'run function mg:gta/heli_spawn {{c:"{col}"}}' for i, (x, z, col) in enumerate(HELI_AT)])
+w('gta/heli_park', ['# @s : hélico ou avion sans pilote, il reste sur place', 'tag @s add mg.gpark',
+                    'attribute @s minecraft:flying_speed modifier add mg:park -1 add_multiplied_total', 'data merge entity @s {Motion:[0d,0d,0d]}'])
+w('gta/heli_unpark', ['# @s : un pilote est monté, il peut voler', 'tag @s remove mg.gpark', 'attribute @s minecraft:flying_speed modifier remove mg:park'])
 w('gta/heli_sync', ['# @s : hélico. La carrosserie suit, les rotors tournent (plus vite avec un pilote)',
                     'scoreboard players operation $gv mg.st = @s mg.gvid',
                     'execute on passengers run tag @s add mg.gpil',
+                    'execute unless entity @a[tag=mg.gpil] unless entity @s[tag=mg.gpark] run function mg:gta/heli_park',
+                    'execute if entity @a[tag=mg.gpil] if entity @s[tag=mg.gpark] run function mg:gta/heli_unpark',
                     'execute as @e[type=minecraft:block_display,tag=mg.ghbody] if score @s mg.gvid = $gv mg.st run function mg:gta/vd_follow',
                     'execute if entity @a[tag=mg.gpil] as @e[type=minecraft:block_display,tag=mg.ghrot] if score @s mg.gvid = $gv mg.st rotated as @s run function mg:gta/rotor_fast',
                     'execute unless entity @a[tag=mg.gpil] as @e[type=minecraft:block_display,tag=mg.ghrot] if score @s mg.gvid = $gv mg.st rotated as @s run function mg:gta/rotor_slow',

@@ -1,6 +1,8 @@
 # @s : hélico. La carrosserie suit, les rotors tournent (plus vite avec un pilote)
 scoreboard players operation $gv mg.st = @s mg.gvid
 execute on passengers run tag @s add mg.gpil
+execute unless entity @a[tag=mg.gpil] unless entity @s[tag=mg.gpark] run function mg:gta/heli_park
+execute if entity @a[tag=mg.gpil] if entity @s[tag=mg.gpark] run function mg:gta/heli_unpark
 execute as @e[type=minecraft:block_display,tag=mg.ghbody] if score @s mg.gvid = $gv mg.st run function mg:gta/vd_follow
 execute if entity @a[tag=mg.gpil] as @e[type=minecraft:block_display,tag=mg.ghrot] if score @s mg.gvid = $gv mg.st rotated as @s run function mg:gta/rotor_fast
 execute unless entity @a[tag=mg.gpil] as @e[type=minecraft:block_display,tag=mg.ghrot] if score @s mg.gvid = $gv mg.st rotated as @s run function mg:gta/rotor_slow
