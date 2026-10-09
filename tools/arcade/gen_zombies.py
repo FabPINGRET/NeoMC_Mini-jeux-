@@ -31,10 +31,10 @@ DOORS = {1: ('A → B', 750, (-1, Z - 11, 1, Z - 11), (0.5, Z - 10.5), 'b'),
 # fenêtres (salle, x, z, normale vers l'extérieur)
 WIN = [('a', -11, Z + 4, -1, 0), ('a', 0, Z + 11, 0, 1), ('b', -11, Z - 22, -1, 0), ('b', 0, Z - 33, 0, -1),
        ('c', 33, Z + 4, 1, 0), ('c', 22, Z + 11, 0, 1), ('d', 33, Z - 22, 1, 0), ('d', 22, Z - 33, 0, -1)]
-# achats au mur : tag, nom, coût, position interaction (x, z), arme (0 = autre), position et orientation de l'affichage
-WALL = [('zb11', 'Fusil M14', 500, (-9.5, Z + 6.5), 4, (-10.45, Z + 6.5), 90),
-        ('zb12', 'Fusil à pompe', 500, (10.5, Z + 6.5), 3, (10.55, Z + 6.5), -90),
-        ('zb13', 'Mitraillette', 1000, (-9.5, Z - 15.5), 2, (-10.45, Z - 15.5), 90)]
+# achats au mur : tag, nom, coût, position interaction (x, z), arme (0 = autre), position (arme collée à la face du mur, côté salle ; suppose un modèle plat handheld/generated) et orientation de l'affichage
+WALL = [('zb11', 'Fusil M14', 500, (-9.5, Z + 6.5), 4, (-9.95, Z + 6.5), 90),
+        ('zb12', 'Fusil à pompe', 500, (10.5, Z + 6.5), 3, (10.95, Z + 6.5), -90),
+        ('zb13', 'Mitraillette', 1000, (-9.5, Z - 15.5), 2, (-9.95, Z - 15.5), 90)]
 
 # ------------------------------------------------------------------ carte
 L = ['# 🧟 Bunker (Zombies / Infection) — 4 salles 21×21, x −11..33, z 23167..23211, sol y 80, toit y 86']
@@ -83,18 +83,20 @@ w('zm/build', L)
 E = ['# Entités du bunker (portes, achats, apparitions) — tag mg.zent', 'kill @e[tag=mg.zent]']
 for (r, x, z, nx, nz) in WIN:
     E.append(f'summon minecraft:marker {x + nx * 2 + .5} 81 {z + nz * 2 + .5} {{Tags:["mg.zent","mg.zsp","mg.zr_{r}"]}}')
-for d, (nm, cost, _, (ix, iz), room) in DOORS.items():
+for d, (nm, cost, (x1, z1, x2, z2), (ix, iz), room) in DOORS.items():
+    ox, oz = (0, 1.5) if z1 == z2 else (1.5, 0)    # une étiquette sur chaque face du mur (décalage perpendiculaire au mur)
+    txt = f'[{{"text":"🚪 Porte {nm}","color":"gold","bold":true}},{{"text":"\\nclic droit — {cost} pts","color":"yellow"}}]'
     E += [f'summon minecraft:interaction {ix} 81 {iz} {{Tags:["mg.zent","mg.zbuy","mg.zb{d}","mg.zd{d}"],width:3.4f,height:3f,response:1b}}',
-          f'summon minecraft:text_display {ix} 84.3 {iz} {{Tags:["mg.zent","mg.zd{d}"],billboard:"center",text:[{{"text":"🚪 Porte {nm}","color":"gold","bold":true}},{{"text":"\\nclic droit — {cost} pts","color":"yellow"}}]}}']
+          *[f'summon minecraft:text_display {ix + s * ox} 84.3 {iz + s * oz} {{Tags:["mg.zent","mg.zd{d}"],billboard:"center",text:{txt}}}' for s in (-1, 1)]]
 for tag, nm, cost, (ix, iz), gn, (dx, dz), rot in WALL:
     E += [f'summon minecraft:interaction {ix} 81 {iz} {{Tags:["mg.zent","mg.zbuy","mg.{tag}"],width:1.3f,height:2.4f,response:1b}}',
-          f'summon minecraft:text_display {dx + (0.6 if rot == 90 else -0.6)} 84 {dz} {{Tags:["mg.zent"],billboard:"center",text:[{{"text":"🔫 {nm}","color":"aqua","bold":true}},{{"text":"\\n{cost} pts","color":"yellow"}}]}}',
+          f'summon minecraft:text_display {round(dx + (0.95 if rot == 90 else -0.95), 2)} 83.3 {dz} {{Tags:["mg.zent"],billboard:"center",text:[{{"text":"🔫 {nm}","color":"aqua","bold":true}},{{"text":"\\n{cost} pts","color":"yellow"}}]}}',
           f'execute if score $rp mg.st matches 1 run summon minecraft:item_display {dx} 82.4 {dz} {{Tags:["mg.zent"],Rotation:[{rot}f,0f],item:{{id:"minecraft:warped_fungus_on_a_stick",count:1,components:{{"minecraft:item_model":"mg:gun_{G.GUNS[gn][1]}"}}}},transformation:{{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]}}}}',
           f'execute unless score $rp mg.st matches 1 run summon minecraft:item_display {dx} 82.4 {dz} {{Tags:["mg.zent"],Rotation:[{rot}f,0f],item:{{id:"minecraft:crossbow",count:1}},transformation:{{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]}}}}']
 E += [f'summon minecraft:interaction 31.5 81 {Z + 6.5} {{Tags:["mg.zent","mg.zbuy","mg.zb21"],width:1.3f,height:2.4f,response:1b}}',
-      f'summon minecraft:text_display 31.5 84.4 {Z + 6.5} {{Tags:["mg.zent"],billboard:"center",text:[{{"text":"❤ Juggernog","color":"red","bold":true}},{{"text":"\\n2× plus de vie — 2500 pts","color":"yellow"}}]}}',
+      f'summon minecraft:text_display 31.0 84.4 {Z + 6.5} {{Tags:["mg.zent"],billboard:"center",text:[{{"text":"❤ Juggernog","color":"red","bold":true}},{{"text":"\\n2× plus de vie — 2500 pts","color":"yellow"}}]}}',
       f'summon minecraft:interaction 31.5 81 {Z - 14.5} {{Tags:["mg.zent","mg.zbuy","mg.zb22"],width:1.3f,height:2.4f,response:1b}}',
-      f'summon minecraft:text_display 31.5 84.4 {Z - 14.5} {{Tags:["mg.zent"],billboard:"center",text:[{{"text":"⚡ Speed Cola","color":"green","bold":true}},{{"text":"\\nrecharge 2× plus vite — 3000 pts","color":"yellow"}}]}}',
+      f'summon minecraft:text_display 31.0 84.4 {Z - 14.5} {{Tags:["mg.zent"],billboard:"center",text:[{{"text":"⚡ Speed Cola","color":"green","bold":true}},{{"text":"\\nrecharge 2× plus vite — 3000 pts","color":"yellow"}}]}}',
       f'summon minecraft:interaction 22.5 81 {Z - 26.5} {{Tags:["mg.zent","mg.zbuy","mg.zb20"],width:1.6f,height:1.6f,response:1b}}',
       f'summon minecraft:text_display 22.5 83.4 {Z - 26.5} {{Tags:["mg.zent"],billboard:"center",text:[{{"text":"❓ Boîte mystère","color":"light_purple","bold":true}},{{"text":"\\narme au hasard — 950 pts","color":"yellow"}}]}}',
       'tag @e[tag=mg.zr_a] add mg.zon']
