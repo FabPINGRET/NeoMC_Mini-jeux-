@@ -483,7 +483,6 @@ w('gta/second', ['# Chaque seconde : véhicules détruits, passants, police, sir
                  'scoreboard players operation $gq10 mg.st = $gtt mg.st', 'scoreboard players set #200 mg.st 200', 'scoreboard players operation $gq10 mg.st %= #200 mg.st',
                  f'execute if score $gq10 mg.st matches 0 in {DIM} run kill @e[type=minecraft:item,{AREA}]',
                  f'execute if score $gq10 mg.st matches 0 in {DIM} run kill @e[type=minecraft:item,x={NA[0] - 2},y=50,z={Z + NA[1] - 2},dx={NA[2] - NA[0] + 4},dy=60,dz={NA[3] - NA[1] + 12}]',
-                 'execute as @a[tag=mg.gtw,scores={mg.gwl=1..}] at @s if entity @e[tag=mg.gcop,distance=..22] run scoreboard players set @s mg.gwt 400',
                  'execute as @a[tag=mg.gtw,scores={mg.gwl=1..}] at @s run function mg:gta/siren',
                  'function mg:gta/bars_tick', 'scoreboard players enable @a[tag=mg.gtw] mg.gmis',
                  'execute as @e[type=minecraft:marker,tag=mg.gshop,scores={mg.gpc=1..20}] run function mg:gta/shop_reopen',
@@ -557,12 +556,12 @@ w('gta/kill_ped', ['# @s a tué un passant : +5 $, une étoile de plus'] + money
   ['scoreboard players remove @s mg.gkv 1', 'function mg:gta/wanted_up', 'execute if score @s mg.gkv matches 1.. run function mg:gta/kill_ped'])
 w('gta/kill_cop', ['# @s a tué un policier : +25 $, une étoile de plus'] + money(25, 'policier abattu', 'aqua') +
   ['scoreboard players reset @s mg.gks', 'scoreboard players reset @s mg.gkw', 'function mg:gta/wanted_up'])
-w('gta/wanted_up', ['# @s : une étoile de plus (5 max), 20 s avant de redescendre',
-                    'execute if score @s mg.gwl matches ..4 run scoreboard players add @s mg.gwl 1', 'scoreboard players set @s mg.gwt 400',
+w('gta/wanted_up', ['# @s : une étoile de plus (5 max), 15 s avant de redescendre',
+                    'execute if score @s mg.gwl matches ..4 run scoreboard players add @s mg.gwl 1', 'scoreboard players set @s mg.gwt 300',
                     'team leave @s',
                     'execute at @s run playsound minecraft:block.note_block.pling player @s ~ ~ ~ 0.8 0.6',
                     'execute at @s run playsound minecraft:block.note_block.bell player @s ~ ~ ~ 0.6 1.8'])
-w('gta/wanted_down', ['# @s : 20 s sans délit, une étoile de moins', 'scoreboard players remove @s mg.gwl 1', 'scoreboard players set @s mg.gwt 400',
+w('gta/wanted_down', ['# @s : toutes les 15 s, une étoile de moins', 'scoreboard players remove @s mg.gwl 1', 'scoreboard players set @s mg.gwt 300',
                       'execute if score @s mg.gwl matches 0 run team join mg_gciv @s',
                       'execute if score @s mg.gwl matches 0 run scoreboard players set @s mg.gal 40',
                       'execute if score @s mg.gwl matches 0 run title @s actionbar {"text":"☆ La police a perdu ta trace","color":"green"}'])
@@ -1034,7 +1033,7 @@ w('gta/shop_reopen', SR)
 w('gta/rob_bank', ['# @s braque la banque : 15 s dans la salle des coffres, alarme, 4 étoiles d\'un coup', 'scoreboard players add @s mg.grob 5', 'function mg:gta/rob_bar_bank',
                    'execute if score @s mg.grob matches 5 run tellraw @a[tag=mg.gtw] [{"text":"🚨 ","color":"red"},{"selector":"@s","color":"yellow"},{"text":" braque la banque de Neo City !","color":"red","bold":true}]',
                    'execute if score @s mg.grob matches 5 if score @s mg.gwl matches ..3 run scoreboard players set @s mg.gwl 4',
-                   'execute if score @s mg.grob matches 5 run scoreboard players set @s mg.gwt 400', 'execute if score @s mg.grob matches 5 run team leave @s',
+                   'execute if score @s mg.grob matches 5 run scoreboard players set @s mg.gwt 300', 'execute if score @s mg.grob matches 5 run team leave @s',
                    'scoreboard players operation $gbk mg.st = @s mg.grob', 'scoreboard players set #20 mg.st 20', 'scoreboard players operation $gbk mg.st %= #20 mg.st',
                    'execute if score $gbk mg.st matches 5 run playsound minecraft:block.bell.use master @a ~ ~ ~ 4 0.8',
                    'execute if score $gbk mg.st matches 15 run playsound minecraft:block.bell.use master @a ~ ~ ~ 4 1.1',

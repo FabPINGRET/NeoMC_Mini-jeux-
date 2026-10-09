@@ -5,7 +5,7 @@
 #   choisissent une direction au hasard à chaque carrefour, s'arrêtent devant un obstacle (klaxon), se volent accroupi.
 # Passants qui fuient les coups de feu (husk invisible et immobile une seconde : les villageois paniquent).
 # Police : voitures de police pilotées par un policier (2 ★), barrages (4 ★), hélico de police (5 ★) ; on ne sème la
-#   police qu'en s'éloignant des policiers (les étoiles ne baissent pas tant qu'un policier est à moins de 22 blocs).
+#   une étoile de moins toutes les 15 s sans nouveau délit.
 
 # ---------------------------------------------------------------- graphe des rues
 NODES = INTER

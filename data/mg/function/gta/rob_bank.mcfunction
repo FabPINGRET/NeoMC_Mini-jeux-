@@ -3,7 +3,7 @@ scoreboard players add @s mg.grob 5
 function mg:gta/rob_bar_bank
 execute if score @s mg.grob matches 5 run tellraw @a[tag=mg.gtw] [{"text":"🚨 ","color":"red"},{"selector":"@s","color":"yellow"},{"text":" braque la banque de Neo City !","color":"red","bold":true}]
 execute if score @s mg.grob matches 5 if score @s mg.gwl matches ..3 run scoreboard players set @s mg.gwl 4
-execute if score @s mg.grob matches 5 run scoreboard players set @s mg.gwt 400
+execute if score @s mg.grob matches 5 run scoreboard players set @s mg.gwt 300
 execute if score @s mg.grob matches 5 run team leave @s
 scoreboard players operation $gbk mg.st = @s mg.grob
 scoreboard players set #20 mg.st 20
