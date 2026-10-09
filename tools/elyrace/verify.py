@@ -12,8 +12,6 @@ GOLD_LOOK = 3.0                                            # anticipation reduit
 GOLD_TOL = 2.7                                             # ecart maximal au centre d'un anneau d'or (trou 7 x 7 moins le demi-joueur)
 RESPAWN_X = 3                                              # la reapparition est 3 blocs apres le plan de l'anneau
 RESPAWN_DELAY = 12                                         # ticks de chute avant l'ouverture des elytres
-
-
 GOLD_MIN_DETOUR = 8                                        # detour minimal (blocs) hors de la ligne anneau a anneau, pour un or strict
 
 

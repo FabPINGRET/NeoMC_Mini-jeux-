@@ -2522,6 +2522,8 @@ fill 425 186 29597 426 202 29613 minecraft:blue_concrete
 fill 425 187 29598 426 201 29612 minecraft:light_blue_concrete
 fill 425 189 29600 426 199 29610 minecraft:sea_lantern
 fill 425 190 29601 426 198 29609 minecraft:air
+fill 450 184 29611 451 192 29619 minecraft:gold_block
+fill 450 185 29612 451 191 29618 minecraft:air
 fill 429 178 29593 430 228 29594 minecraft:sea_lantern
 fill 429 178 29616 430 228 29617 minecraft:sea_lantern
 fill 429 228 29593 430 229 29617 minecraft:lime_concrete

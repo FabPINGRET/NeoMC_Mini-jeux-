@@ -46,12 +46,18 @@ def races(specs):
     return out
 
 
+def rate_call(name, macro):
+    """Ouverture d'une fenetre sous sa forme finale : gen_rating.py (point fixe, comme dialog_json) remplace tout `dialog show @s mg:X`
+    par `function mg:rate/d/X`, avec `with storage mg:rate lab` si la fenetre porte les notes des joueurs (macro, 1re ligne en `$`)."""
+    return 'function mg:rate/d/%s' % name + (' with storage mg:rate lab' if macro else '')
+
+
 def sub_lines(specs):
     out = ['# Sous-menu 🪽 Course d\'élytres (@s = joueur) — fenêtre, sinon menu texte',
            'execute unless entity @s[tag=mg.admin] run tellraw @s [{"text":"⚠ Le menu est réservé aux admins.","color":"red"}]',
            'execute unless entity @s[tag=mg.admin] run return 0',
            'scoreboard players set $dlg mg.st 0',
-           'execute store success score $dlg mg.st run dialog show @s mg:sub_elyrace',
+           'execute store success score $dlg mg.st run ' + rate_call('sub_elyrace', True),
            'execute if score $dlg mg.st matches 1 run return 0',
            'tellraw @s [{"text":"\\n🪽 Course d\'élytres — choisis un parcours","color":"aqua","bold":true}]']
     for name, stars, gid, col, icon, tip in races(specs):

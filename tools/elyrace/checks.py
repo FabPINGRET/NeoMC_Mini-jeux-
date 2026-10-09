@@ -1,18 +1,19 @@
 """Controles statiques de la Course d'elytres (gen_elyrace.py --check) : coherence des fonctions generees, desinstallation,
 zones de construction, budget des tranches, fichiers du depot a jour, pilote automatique. Boucle sur tous les parcours.
-Le contre-la-montre solo et les branchements du moteur sont controles par checks_solo.py.
+Le contre-la-montre solo et les branchements du moteur sont controles par checks_solo.py ; ce qui se lit dans le depot (ids de
+lancement, ouvertures de fenetre sous la forme de gen_rating, drapeaux du suivi de mg:setup) par checks_repo.py.
 Python stdlib uniquement (compatible 3.8).
 """
 import os
 import re
 
 import build_chain as B
+import checks_repo as CR
 import checks_solo as CS
 import course_common as CC
 import course_fns as CF
 import dispatch as D
 import game as G
-import menus as M
 import records as RC
 import rings as RG
 import verify as V
@@ -22,7 +23,6 @@ CHUNK = 16
 Y_MIN, Y_MAX = -64, 319             # hauteur du monde : toute commande generee doit y tenir
 GAP = 2 * CHUNK                     # ecart minimal entre les bandes de deux parcours
 RESERVED_GAP = 16                   # marge minimale avec la zone d'un autre jeu
-VARIANT_IDS = (100, 196)            # ids de lancement des variantes (tools/variantes/gen_variants.py), remappes par mg:var/remap
 RESERVED = [                        # zones des autres jeux voisines : (nom, x1, x2, z1, z2), bornes incluses
     ('TNT Tag 1', -25, 25, 26475, 26525), ('TNT Tag 2', -25, 25, 26775, 26825), ('TNT Tag 3', -25, 25, 27375, 27425),
     ('Elytra (mg:sky)', -205, 205, 27590, 29091),     # sortie de tools/sky/gen_sky.py : courses x -200..200 z 27600..28400, survie centree (0, 29000)
@@ -75,7 +75,13 @@ def spec_problems(specs):
     nums = [s.NUM for s in specs]
     if nums != list(range(1, len(specs) + 1)) or len(specs) > D.N_ROUTES:
         bad.append('NUM des parcours : %s (attendu 1..%d, au plus %d)' % (nums, len(specs), D.N_ROUTES))
+    flags = [s.FLAG for s in specs]
+    if len(set(flags)) != len(flags):
+        bad.append('FLAG des parcours : drapeaux en double %s' % flags)
     for s in specs:
+        for old in getattr(s, 'OLD_FLAGS', ()):
+            if old in flags:
+                bad.append('parcours %d : OLD_FLAGS contient %s, qui est un drapeau actuel (forget l\'effacerait apres l\'avoir pose)' % (s.NUM, old))
         if (s.EDGE_X, s.GATE_X) != (G.EDGE_X, G.GATE_X):
             bad.append('parcours %d : plateforme de depart non standard (EDGE_X %d, GATE_X %d)' % (s.NUM, s.EDGE_X, s.GATE_X))
         if not s.X0 < s.EDGE_X < s.X1 < 2000:
@@ -96,63 +102,6 @@ def spec_problems(specs):
         for t in specs[i + 1:]:
             if s.Z0 - GAP < t.Z1 and t.Z0 - GAP < s.Z1:
                 bad.append('bandes z des parcours %d et %d : moins de %d blocs d\'ecart' % (s.NUM, t.NUM, GAP))
-    return bad
-
-
-def read_text(path):
-    with open(path, encoding='utf-8', newline='') as fh:
-        return fh.read().replace('\r\n', '\n')
-
-
-def id_problems(root, specs):
-    """Ids de lancement des parcours (menus.route_id) : dans la plage de core/go, convertis en jeu 66 par core/request, et
-    absents de ses autres remappages (TNT Tag, Bedwars, Elytra, Quakecraft sniper 79..80...) comme des variantes 100..196
-    (remappees par mg:var/remap). Lit le depot : a lancer apres wire_elyrace2.py."""
-    bad = []
-    ids = {s.NUM: M.route_id(s) for s in specs}
-    ids[0] = G.GAME_ID                    # 0 = au hasard : id 66, pas converti
-    for num, i in sorted(ids.items()):
-        if VARIANT_IDS[0] <= i <= VARIANT_IDS[1]:
-            bad.append('l\'id %d (parcours %d) est dans la plage des variantes %d..%d' % (i, num, VARIANT_IDS[0], VARIANT_IDS[1]))
-    base = os.path.join(root, 'data', 'mg', 'function', 'core')
-    go = read_text(os.path.join(base, 'go.mcfunction'))
-    top = re.search(r'mg\.go matches 1\.\.(\d+)', go)
-    if not top or max(ids.values()) > int(top.group(1)):
-        bad.append('core/go : la plage acceptee (%s) ne couvre pas les ids %s' % (top and top.group(0), sorted(ids.values())))
-    ranges, ours = [], []
-    lines = [l for l in read_text(os.path.join(base, 'request.mcfunction')).split('\n') if l and not l.startswith('#')]
-    for line in lines:
-        m = re.search(r'matches (\d+)(?:\.\.(\d+))? run scoreboard players set \$game mg\.st (\d+)\s*$', line)
-        if m:
-            lo, hi, target = int(m.group(1)), int(m.group(2) or m.group(1)), int(m.group(3))
-            (ours if target == G.GAME_ID else ranges).append((lo, hi))
-    for num, i in sorted(ids.items()):
-        if num and not any(lo <= i <= hi for lo, hi in ours):
-            bad.append('core/request : l\'id %d (parcours %d) n\'est pas converti en jeu %d' % (i, num, G.GAME_ID))
-        for lo, hi in ranges:
-            if lo <= i <= hi:
-                bad.append('core/request : l\'id %d (parcours %d) est deja remappe (%d..%d)' % (i, num, lo, hi))
-    bad += request_order_problems(lines)
-    return bad
-
-
-def request_order_problems(lines):
-    """Bloc de conversion de core/request, dans l'ordre : $xc remis a 0, $xc = id, $xc - ID_BASE, $game = 66 (sinon un id
-    de parcours donnerait un mauvais parcours, ou un lancement ordinaire garderait le $xc de la partie precedente)."""
-    def first(pattern):
-        found = [i for i, l in enumerate(lines) if re.search(pattern, l)]
-        return found[0] if found else None
-    steps = [('remise a 0 de $xc', r'^scoreboard players set \$xc mg\.st 0$'),
-             ('$xc = $game', r'matches \d+\.\.\d+ run scoreboard players operation \$xc mg\.st = \$game mg\.st$'),
-             ('$xc - %d' % M.ID_BASE, r'matches \d+\.\.\d+ run scoreboard players remove \$xc mg\.st %d$' % M.ID_BASE),
-             ('$game = %d' % G.GAME_ID, r'matches \d+\.\.\d+ run scoreboard players set \$game mg\.st %d$' % G.GAME_ID)]
-    pos = [first(p) for _, p in steps]
-    bad = ['core/request : etape de conversion absente : %s' % name for (name, _), i in zip(steps, pos) if i is None]
-    if not bad and pos != sorted(pos):
-        bad.append('core/request : conversion des ids de parcours dans le mauvais ordre (%s)' % ', '.join(n for n, _ in steps))
-    test66 = first(r'\$game mg\.st matches %d\b' % G.GAME_ID)
-    if not bad and test66 is not None and test66 < pos[-1]:
-        bad.append('core/request : une ligne teste le jeu %d avant la fin de la conversion des ids de parcours' % G.GAME_ID)
     return bad
 
 
@@ -229,7 +178,8 @@ def logic_problems(files, specs):
 def check(root, courses, files):
     """Renvoie la liste des problemes (vide = tout est bon)."""
     specs = [c.spec for c in courses]
-    bad = spec_problems(specs) + id_problems(root, specs) + logic_problems(files, specs) + CS.problems(root, files, specs)
+    bad = (spec_problems(specs) + CR.id_problems(root, specs) + logic_problems(files, specs) + CR.rate_problems(root, files)
+           + CR.setup_problems(root, specs) + CS.problems(root, files, specs))
     names = {rel[len('data/mg/function/'):-len('.mcfunction')] for rel in files if rel.endswith('.mcfunction')}
     for rel, text in files.items():
         if rel.endswith('.mcfunction'):
@@ -252,7 +202,7 @@ def check(root, courses, files):
         p = os.path.join(root, rel)
         if not os.path.exists(p):
             bad.append('%s : absent (lancer le generateur)' % rel)
-        elif read_text(p) != text:
+        elif CR.read_text(p) != text:
             bad.append('%s : differe de la sortie du generateur' % rel)
     stale = sorted(stale_files(root, files))
     bad += ['%s : fichier du depot que le generateur ne produit plus (a supprimer)' % rel for rel in stale]

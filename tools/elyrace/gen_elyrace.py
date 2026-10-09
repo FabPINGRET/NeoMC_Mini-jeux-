@@ -2,10 +2,13 @@
     python tools/elyrace/gen_elyrace.py <racine du depot>            ecrit les fichiers generes
     python tools/elyrace/gen_elyrace.py <racine du depot> --check    ne ecrit rien : budget de commandes, vol de verification
                                                                      du pilote automatique, references de fonctions, desinstallation,
-                                                                     zones, et fichiers du depot identiques a ce que le generateur produirait
+                                                                     zones, ouvertures de fenetre (forme gen_rating), drapeaux du suivi
+                                                                     de mg:setup, et fichiers du depot identiques a ce que le generateur produirait
 Sortie : data/mg/function/elyrace/** (un sous-dossier c<N>/ par parcours ; solo/ = contre-la-montre solo, records), core/sub/elyrace,
 dialog/sub_elyrace.json, dialog/sub_elyrace_solo.json, advancement/elyrace_wall.json, tags/damage_type/elyrace_wall.json.
 Les fichiers generes ne se modifient jamais a la main. Les branchements dans le moteur (wire_elyrace*.py) se font apres la generation.
+Ordre de la chaine : ce generateur, puis tools/variantes/gen_variants.py (PYTHONUTF8=1 ; il relance tools/rating/gen_rating.py, qui reecrit
+les fenetres en rate/d/<nom>). Les ouvertures de fenetre sont donc ecrites ici sous leur forme finale (menus.rate_call) et --check le verifie.
 Pour ajouter un parcours : ecrire son module « spec » (voir course_common.py), l'ajouter a SPECS.
 Python stdlib uniquement (compatible 3.8).
 """
@@ -83,7 +86,7 @@ def main():
     print('%d fichiers, %d parcours' % (len(files), len(courses)))
     if '--check' in sys.argv:
         bad = K.check(root, courses, files)
-        print('\n'.join(bad) if bad else 'CHECK OK (budget, pilote automatique, references, desinstallation, zones, fichiers a jour)')
+        print('\n'.join(bad) if bad else 'CHECK OK (budget, pilote automatique, references, desinstallation, zones, ouvertures de fenetre, drapeaux du suivi de mg:setup, fichiers a jour)')
         sys.exit(1 if bad else 0)
     write_all(root, files)
     print('ecrit dans', os.path.join(root, 'data', 'mg'))

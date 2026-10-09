@@ -1692,8 +1692,8 @@ fill 325 205 29592 326 221 29608 minecraft:blue_concrete
 fill 325 206 29593 326 220 29607 minecraft:light_blue_concrete
 fill 325 208 29595 326 218 29605 minecraft:sea_lantern
 fill 325 209 29596 326 217 29604 minecraft:air
-fill 360 201 29581 361 209 29589 minecraft:gold_block
-fill 360 202 29582 361 208 29588 minecraft:air
+fill 346 203 29603 347 211 29611 minecraft:gold_block
+fill 346 204 29604 347 210 29610 minecraft:air
 forceload remove 272 29440 367 29759
 scoreboard players set $xbk mg.st 5
 scoreboard players set $xbw mg.st 0

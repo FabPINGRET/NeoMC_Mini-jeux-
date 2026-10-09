@@ -40,8 +40,10 @@ def roof(w, path, spec):
 
 
 def supports(w, path, spec, avoid_x, gold_xs=()):
-    """Cadres de bois (deux poteaux, une poutre sous le plafond, lanterne accrochee) aux deux portails et tous les SUP_STEP
-    blocs, hors du plan des anneaux (`avoid_x`) et du detour vers un anneau d'or (de gx - 10 a gx + 8, `gold_xs`)."""
+    """Cadres de bois (deux poteaux, une poutre sous le plafond, lanterne accrochee) : au portail d'entree (X_T0), tous les SUP_STEP
+    blocs jusqu'a X_T1 - 7, et au portail de sortie (X_T1 - 1) ; sauf pres d'un anneau (`avoid_x` : de x - 3 a x + 4) et dans la
+    fenetre d'un anneau d'or (de gx - 10 a gx + 8, `gold_xs`) : le detour de l'or passe par la, un cadre l'y bloquerait.
+    Sur le Canyon, l'or en x 888 (fenetre 878..896) retire donc le cadre de x 886 (portail de sortie)."""
     for x in list(range(X_T0, X_T1 - 6, SUP_STEP)) + [X_T1 - 1]:
         if any(a - 3 <= x <= a + 4 for a in avoid_x) or any(g - 10 <= x <= g + 8 for g in gold_xs):
             continue

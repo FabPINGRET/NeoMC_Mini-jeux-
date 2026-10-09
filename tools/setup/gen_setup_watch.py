@@ -39,7 +39,8 @@ JOBS = [('Spawn', [('mg:lobby', 'v6')]), ('Buffet', [('mg:lobby', 'food1')]), ('
         ('Hall des scores', [('mg:hall', 'v7')]), ('Montagne russe', [('mg:lobby', 'coaster2')]), ('Plots', [('mg:setup', 'plot')]),
         ('Mini Party', [('mg:party', 'built')]), ('Kart', [('mg:kart', 'built'), ('mg:kart', 'built2'), ('mg:kart', 'built3')]),
         ('Dropper aventure', [('mg:dropadv', 'v3')]), ('Élytra', [('mg:sky', 'built')]),
-        ('Course d\'élytres', [('mg:elyrace', 'v1'), ('mg:elyrace', 'c2v1')])]
+        # drapeaux = FLAG de chaque tools/elyrace/course_*.py (gen_elyrace.py --check echoue s'ils divergent)
+        ('Course d\'élytres', [('mg:elyrace', 'v2'), ('mg:elyrace', 'c2v2')])]
 N = len(JOBS)
 
 W = ['# Surveille la fin de la génération lancée par mg:setup (toutes les 2 s). Généré par tools/setup/gen_setup_watch.py.',

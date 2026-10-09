@@ -143,7 +143,7 @@ def draw_lines():
 def menu_lines(specs):
     return (['# @s = joueur : fenêtre du contre-la-montre solo (ouverte à tous), sinon menu texte',
              'scoreboard players set $dlg mg.st 0',
-             'execute store success score $dlg mg.st run dialog show @s mg:sub_elyrace_solo',
+             'execute store success score $dlg mg.st run ' + M.rate_call('sub_elyrace_solo', False),
              'execute if score $dlg mg.st matches 1 run return 0']
             + M.solo_text_lines(specs)
             + ['tellraw @s ["",{"text":" [« Retour]","color":"yellow","click_event":{"action":"run_command","command":"%s"}}]' % M.SOLO_BACK_MENU])

@@ -1291,7 +1291,10 @@ fill 844 155 29660 847 156 29663 minecraft:snow_block
 fill 844 152 29676 847 153 29759 minecraft:snow_block
 fill 831 132 29595 831 134 29595 minecraft:packed_ice
 fill 828 133 29589 828 134 29589 minecraft:packed_ice
-fill 842 131 29597 842 131 29597 minecraft:packed_ice
+fill 828 133 29608 828 134 29608 minecraft:packed_ice
+fill 844 130 29598 844 131 29598 minecraft:packed_ice
+fill 833 132 29600 833 134 29600 minecraft:packed_ice
+fill 832 132 29606 832 134 29606 minecraft:packed_ice
 fill 840 129 29591 840 131 29591 minecraft:packed_ice
 fill 836 130 29596 836 131 29596 minecraft:packed_ice
 fill 843 130 29602 843 131 29602 minecraft:packed_ice
@@ -1314,6 +1317,8 @@ fill 765 124 29592 766 140 29608 minecraft:blue_concrete
 fill 765 125 29593 766 139 29607 minecraft:light_blue_concrete
 fill 765 127 29595 766 137 29605 minecraft:sea_lantern
 fill 765 128 29596 766 136 29604 minecraft:air
+fill 792 122 29585 793 130 29593 minecraft:gold_block
+fill 792 123 29586 793 129 29592 minecraft:air
 setblock 808 119 29592 minecraft:light[level=11]
 setblock 808 131 29592 minecraft:light[level=11]
 setblock 808 119 29600 minecraft:light[level=11]

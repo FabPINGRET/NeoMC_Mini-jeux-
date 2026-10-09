@@ -28,7 +28,7 @@ execute if score #xv mg.st matches 11.. run scoreboard players remove $xc mg.st 
 execute if score $xc mg.st matches 0 run function mg:elyrace/pick
 execute if score $xc mg.st matches 0 run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Aucun parcours n'est construit pour le moment : réessaie plus tard.","color":"red"}]
 execute if score $xc mg.st matches 1 unless data storage mg:elyrace v2 run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Le parcours 1 (Canyon du Couchant) n'est pas encore construit : réessaie plus tard.","color":"red"}]
-execute if score $xc mg.st matches 2 unless data storage mg:elyrace c2v1 run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Le parcours 2 (Pic Blanc) n'est pas encore construit : réessaie plus tard.","color":"red"}]
+execute if score $xc mg.st matches 2 unless data storage mg:elyrace c2v2 run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Le parcours 2 (Pic Blanc) n'est pas encore construit : réessaie plus tard.","color":"red"}]
 # lancement : $xs avant $state (les gardes de end, timeout, draw, finish et cleanup lisent $xs)
 scoreboard players set $xs mg.st 1
 scoreboard players set $game mg.st 66

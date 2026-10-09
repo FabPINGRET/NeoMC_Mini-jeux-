@@ -5,18 +5,18 @@ execute if score $xbk mg.st matches 0 run return 0
 # n'avance pas (pas de faux build_fail). Choix assumé : la tranche en cours reste chargée de force pendant la pause (la relâcher puis
 # la recharger ferait ré-attendre le chargement) ; la pause dure autant que la partie, jusqu'à ce que $state revienne à 0
 execute unless score $state mg.st matches 0 run return run schedule function mg:elyrace/c2/build_wait 20t
-execute if score $xbk mg.st matches 1 if function mg:elyrace/c2/loaded_1 run return run function mg:elyrace/c2/build_1
-execute if score $xbk mg.st matches 2 if function mg:elyrace/c2/loaded_2 run return run function mg:elyrace/c2/build_2
-execute if score $xbk mg.st matches 3 if function mg:elyrace/c2/loaded_3 run return run function mg:elyrace/c2/build_3
-execute if score $xbk mg.st matches 4 if function mg:elyrace/c2/loaded_4 run return run function mg:elyrace/c2/build_4
-execute if score $xbk mg.st matches 5 if function mg:elyrace/c2/loaded_5 run return run function mg:elyrace/c2/build_5
-execute if score $xbk mg.st matches 6 if function mg:elyrace/c2/loaded_6 run return run function mg:elyrace/c2/build_6
-execute if score $xbk mg.st matches 7 if function mg:elyrace/c2/loaded_7 run return run function mg:elyrace/c2/build_7
-execute if score $xbk mg.st matches 8 if function mg:elyrace/c2/loaded_8 run return run function mg:elyrace/c2/build_8
-execute if score $xbk mg.st matches 9 if function mg:elyrace/c2/loaded_9 run return run function mg:elyrace/c2/build_9
-execute if score $xbk mg.st matches 10 if function mg:elyrace/c2/loaded_10 run return run function mg:elyrace/c2/build_10
-execute if score $xbk mg.st matches 11 if function mg:elyrace/c2/loaded_11 run return run function mg:elyrace/c2/build_11
-execute if score $xbk mg.st matches 12 if function mg:elyrace/c2/loaded_12 run return run function mg:elyrace/c2/build_12
+execute if score $xbk mg.st matches 1 if function mg:elyrace/c2/loaded_1 run return run function mg:elyrace/c2/clear_1
+execute if score $xbk mg.st matches 2 if function mg:elyrace/c2/loaded_2 run return run function mg:elyrace/c2/clear_2
+execute if score $xbk mg.st matches 3 if function mg:elyrace/c2/loaded_3 run return run function mg:elyrace/c2/clear_3
+execute if score $xbk mg.st matches 4 if function mg:elyrace/c2/loaded_4 run return run function mg:elyrace/c2/clear_4
+execute if score $xbk mg.st matches 5 if function mg:elyrace/c2/loaded_5 run return run function mg:elyrace/c2/clear_5
+execute if score $xbk mg.st matches 6 if function mg:elyrace/c2/loaded_6 run return run function mg:elyrace/c2/clear_6
+execute if score $xbk mg.st matches 7 if function mg:elyrace/c2/loaded_7 run return run function mg:elyrace/c2/clear_7
+execute if score $xbk mg.st matches 8 if function mg:elyrace/c2/loaded_8 run return run function mg:elyrace/c2/clear_8
+execute if score $xbk mg.st matches 9 if function mg:elyrace/c2/loaded_9 run return run function mg:elyrace/c2/clear_9
+execute if score $xbk mg.st matches 10 if function mg:elyrace/c2/loaded_10 run return run function mg:elyrace/c2/clear_10
+execute if score $xbk mg.st matches 11 if function mg:elyrace/c2/loaded_11 run return run function mg:elyrace/c2/clear_11
+execute if score $xbk mg.st matches 12 if function mg:elyrace/c2/loaded_12 run return run function mg:elyrace/c2/clear_12
 scoreboard players add $xbw mg.st 1
 # 2 minutes sans chargement : message, puis on libère les chargements forcés des tranches et on s'arrête
 execute if score $xbw mg.st matches 120.. run tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] Course d'élytres : zone pas chargée (parcours 2, tranche ","color":"red"},{"score":{"name":"$xbk","objective":"mg.st"},"color":"red"},{"text":"). Relance /function mg:elyrace/c2/build.","color":"red"}]

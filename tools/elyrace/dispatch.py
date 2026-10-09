@@ -67,8 +67,11 @@ def announce_lines(specs):
 
 
 def forget_lines(specs):
-    return ['# Oublie les drapeaux de construction : tous les parcours seront reconstruits (appelé par build et core/setup_build)'] + [
-        'data remove storage mg:elyrace ' + s.FLAG for s in specs]
+    old = [f for s in specs for f in getattr(s, 'OLD_FLAGS', ())]
+    return (['# Oublie les drapeaux de construction : tous les parcours seront reconstruits (appelé par build et core/setup_build)'] +
+            ['data remove storage mg:elyrace ' + s.FLAG for s in specs] +
+            ['# drapeaux des versions précédentes des parcours (spec.OLD_FLAGS) : ils ne servent plus, on ne les laisse pas dans le storage'] +
+            ['data remove storage mg:elyrace ' + f for f in old])
 
 
 CANCEL = ['# partie annulée ; $xc remis à 0 d\'abord : cleanup (fl_remove) ne doit rien libérer, la zone d\'un parcours en construction reste chargée',
