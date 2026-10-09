@@ -109,6 +109,10 @@ execute if score $n0 mg.st matches 0 run tellraw @s [{"text":"Aucun participant 
 execute if score $n0 mg.st matches 0 run return run scoreboard players set $game mg.st 0
 execute as @a[tag=mg.play,tag=mg.inplot] run function mg:plot/leave_game
 execute as @a[tag=mg.play,tag=mg.visit] run function mg:plot/leave_game
+# Activités du spawn : un participant en kart libre ou en élytres en sort sur place (avant la téléportation de prepare)
+execute as @a[tag=mg.play,tag=mg.lk] run function mg:lobkart/leave
+execute as @a[tag=mg.play,tag=mg.ely] run function mg:elytra/stop_quiet
+execute as @a[tag=mg.play,tag=mg.elyf] run function mg:elytra/free_stop
 
 # État : compte à rebours de 10 s
 scoreboard players set $state mg.st 1
