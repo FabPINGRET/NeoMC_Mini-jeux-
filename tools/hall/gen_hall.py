@@ -49,6 +49,7 @@ GAMES = [  # clé, libellé, couleur, plages de $game
     ('infection', '🧪 Infection', 'green', [(98, 98), (211, 211), (213, 213)]),
     ('bomber', '💣 Bombardier', 'red', [(99, 99)]),
     ('chameleon', '🦎 Meccha Chameleon', 'green', [(198, 198)]),
+    ('wii', '🎾 Wii Sports', 'aqua', [(214, 216)]),
 ]
 X0, X1, Z0, Z1 = -24, -6, 11, 25           # emprise du hall (sol y 63), ouvert au nord, juste au sud-ouest de la place
 OLD_Z0, OLD_Z1 = 21, 35                    # ancien emplacement (v8 et avant), nettoyé une fois
@@ -77,7 +78,7 @@ W('objectives', ['# Objectifs des classements par jeu (généré par tools/hall/
     'scoreboard objectives add mg.genc dummy'])
 W('remove', ['# Désinstallation des classements et du hall'] +
   [f'scoreboard objectives remove mg.wg_{k}' for k, *_ in GAMES] +
-  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8', 'data remove storage mg:hall v9', 'data remove storage mg:hall v10',
+  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8', 'data remove storage mg:hall v9', 'data remove storage mg:hall v10', 'data remove storage mg:hall v11',
    'scoreboard objectives remove mg.gen', 'scoreboard objectives remove mg.lvl', 'scoreboard objectives remove mg.genc'])
 
 # ---------------------------------------------------------------- crédit des vainqueurs
@@ -202,6 +203,7 @@ b.append('data modify storage mg:hall v7 set value 1b')
 b.append('data modify storage mg:hall v8 set value 1b')
 b.append('data modify storage mg:hall v9 set value 1b')
 b.append('data modify storage mg:hall v10 set value 1b')
+b.append('data modify storage mg:hall v11 set value 1b')
 W('build', b)
 W('clear_old', ['# Ancien emplacement du hall (z %d..%d) : mur et sol retirés, pelouse (une fois, avant la v9)' % (OLD_Z0, OLD_Z1),
                 f'fill {X0} 64 {Z1 + 1} {X1} 74 {OLD_Z1} minecraft:air',
@@ -212,7 +214,8 @@ def _sub(rel, a, c):
     p = os.path.join(_F, rel + '.mcfunction'); s = open(p, encoding='utf-8').read()
     if a in s: open(p, 'w', encoding='utf-8', newline='\n').write(s.replace(a, c))
 _sub('core/tick', 'unless block -16 64 25 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')
-_sub('core/load', 'unless data storage mg:hall v8 run schedule function mg:hall/build', 'unless data storage mg:hall v10 run schedule function mg:hall/build')
+_sub('core/load', 'unless data storage mg:hall v8 run schedule function mg:hall/build', 'unless data storage mg:hall v11 run schedule function mg:hall/build')
+_sub('core/load', 'unless data storage mg:hall v10 run schedule function mg:hall/build', 'unless data storage mg:hall v11 run schedule function mg:hall/build')
 _sub('core/load', 'unless data storage mg:hall v9 run schedule function mg:hall/build', 'unless data storage mg:hall v10 run schedule function mg:hall/build')
 W('board_tick', ['# Tableau à droite dans le lobby (classement affiché, pas de vote en cours)',
     'scoreboard players remove $hrt mg.st 1',

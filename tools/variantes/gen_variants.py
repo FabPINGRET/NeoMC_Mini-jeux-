@@ -639,7 +639,7 @@ BODY_NOTE = [{'text': '\nCartes d’origine, puis ✦ variantes (ce jeu sur la c
              {'text': ' difficile.', 'color': 'gray'}]
 OPT_CAT = {'sols': 40, 'equipes': 41, 'courses': 42, 'fete': 43, 'votes': 44, 'joueur': 45, 'kart': 46, 'arcade': 47, 'combat': 14,
            # choix de la carte des jeux d'arcade (cartes supplémentaires : tools/arcade/gen_maps.py)
-           'tron': 50, 'koth': 51, 'uhc': 52, 'hg': 53, 'zombies': 54, 'infection': 55}
+           'tron': 50, 'koth': 51, 'uhc': 52, 'hg': 53, 'zombies': 54, 'infection': 55, 'wii': 56}
 SUB = {'pvp': ('sub_pvparena', 'combat'), 'oitc': ('sub_oitc', 'combat'), 'quake': ('quakemaps', 'combat'),
        'tnttag': ('sub_tnttag', 'combat'), 'spleef': ('sub_spleef', 'sols'), 'tntrun': ('sub_tntrun', 'sols'),
        'splegg': ('sub_splegg', 'sols')}
@@ -723,7 +723,12 @@ CATS = {
         act('🧪 Infection ▸', 'green', OPEN(55), 'Survivants contre zombies contagieux — 3 cartes'),
         act('🎭 Prop Hunt', 'gold', 'trigger mg.go set 96', 'Cache-toi en objet, ou trouve les objets qui bougent'),
         act('💣 Bombardier', 'red', 'trigger mg.go set 99', 'Bombarde la ville du ciel, le plus de dégâts gagne, 2 min 30'),
-        act('🦎 Meccha Chameleon', 'green', 'trigger mg.go set 198', 'Peins-toi aux couleurs du décor et cache-toi, ou chasse les caméléons')], 'menu'),
+        act('🦎 Meccha Chameleon', 'green', 'trigger mg.go set 198', 'Peins-toi aux couleurs du décor et cache-toi, ou chasse les caméléons'),
+        act('🎾 Wii Sports ▸', 'aqua', OPEN(56), 'Bowling, golf, tennis : chacun sa piste')], 'menu'),
+    'wii': ('🎾 Wii Sports', 'aqua', 'Chacun sa piste, tout le monde joue en même temps.', [
+        act('🎳 Bowling', 'light_purple', 'trigger mg.go set 214', '8 pistes, 5 frames, vraies règles (strike, spare)'),
+        act('⛳ Golf', 'green', 'trigger mg.go set 215', '6 trous (par 23), chacun sa balle, le moins de coups gagne'),
+        act('🎾 Tennis', 'yellow', 'trigger mg.go set 216', '1 contre 1 sur 4 courts (robot si joueur impair), 3 jeux gagnants')], 'arcade'),
     'tron': ('⚡ Tron', 'aqua', 'Choisis le mode et l\'arène.', [
         act('⚡ Tron à pied', 'aqua', 'trigger mg.go set 84', 'Arène 101×101 dans la pénombre'),
         act('🏍 Tron moto', 'gold', 'trigger mg.go set 85', 'À cheval, saut toutes les 20 s'),

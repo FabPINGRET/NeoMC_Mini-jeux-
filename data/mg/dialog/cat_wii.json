@@ -1,0 +1,98 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "🎾 Wii Sports",
+    "color": "aqua",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Chacun sa piste, tout le monde joue en même temps.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🎳 Bowling",
+          "color": "light_purple"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "8 pistes, 5 frames, vraies règles (strike, spare)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 214"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⛳ Golf",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "6 trous (par 23), chacun sa balle, le moins de coups gagne",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 215"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🎾 Tennis",
+          "color": "yellow"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "1 contre 1 sur 4 courts (robot si joueur impair), 3 jeux gagnants",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 216"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 47"
+      }
+    }
+  ]
+}

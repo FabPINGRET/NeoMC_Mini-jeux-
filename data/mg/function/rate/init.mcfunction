@@ -425,6 +425,12 @@ data modify storage mg:rate lab.r212 set value '""'
 execute if score #m212 mg.rtn matches 1.. run function mg:rate/lab_map {m:212}
 data modify storage mg:rate lab.r213 set value '""'
 execute if score #m213 mg.rtn matches 1.. run function mg:rate/lab_map {m:213}
+data modify storage mg:rate lab.r214 set value '""'
+execute if score #m214 mg.rtn matches 1.. run function mg:rate/lab_map {m:214}
+data modify storage mg:rate lab.r215 set value '""'
+execute if score #m215 mg.rtn matches 1.. run function mg:rate/lab_map {m:215}
+data modify storage mg:rate lab.r216 set value '""'
+execute if score #m216 mg.rtn matches 1.. run function mg:rate/lab_map {m:216}
 data modify storage mg:rate lab.fspleef set value '""'
 function mg:rate/lab_fam {f:"spleef",g:1}
 data modify storage mg:rate lab.ftntrun set value '""'

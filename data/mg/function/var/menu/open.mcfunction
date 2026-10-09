@@ -21,3 +21,4 @@ execute if score @s mg.opt matches 52 run function mg:var/menu/cat_uhc
 execute if score @s mg.opt matches 53 run function mg:var/menu/cat_hg
 execute if score @s mg.opt matches 54 run function mg:var/menu/cat_zombies
 execute if score @s mg.opt matches 55 run function mg:var/menu/cat_infection
+execute if score @s mg.opt matches 56 run function mg:var/menu/cat_wii

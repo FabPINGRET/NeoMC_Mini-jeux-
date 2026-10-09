@@ -1,0 +1,25 @@
+# 🎳 construction 2/5 : murs, plafond, néons
+fill -34 64 35130 -34 76 35184 minecraft:black_concrete
+fill 33 64 35130 33 76 35184 minecraft:black_concrete
+fill -34 64 35130 33 76 35130 minecraft:black_concrete
+fill -34 64 35184 33 76 35184 minecraft:black_concrete
+fill -34 76 35130 33 76 35184 minecraft:black_concrete
+fill -34 64 35183 33 75 35183 minecraft:black_concrete
+fill -34 71 35131 -34 71 35182 minecraft:pearlescent_froglight
+fill 33 71 35131 33 71 35182 minecraft:pearlescent_froglight
+fill -34 69 35131 -34 69 35182 minecraft:verdant_froglight
+fill 33 69 35131 33 69 35182 minecraft:verdant_froglight
+fill -33 72 35130 32 72 35130 minecraft:pearlescent_froglight
+fill -33 74 35130 32 74 35130 minecraft:ochre_froglight
+fill -33 76 35136 32 76 35136 minecraft:ochre_froglight
+fill -33 76 35142 32 76 35142 minecraft:ochre_froglight
+fill -33 76 35148 32 76 35148 minecraft:ochre_froglight
+fill -25 76 35154 -25 76 35178 minecraft:sea_lantern
+fill -18 76 35154 -18 76 35178 minecraft:sea_lantern
+fill -11 76 35154 -11 76 35178 minecraft:sea_lantern
+fill -4 76 35154 -4 76 35178 minecraft:sea_lantern
+fill 3 76 35154 3 76 35178 minecraft:sea_lantern
+fill 10 76 35154 10 76 35178 minecraft:sea_lantern
+fill 17 76 35154 17 76 35178 minecraft:sea_lantern
+fill 24 76 35154 24 76 35178 minecraft:sea_lantern
+schedule function mg:bowl/build_3 2t
