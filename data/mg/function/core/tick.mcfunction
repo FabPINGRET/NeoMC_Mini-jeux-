@@ -70,7 +70,7 @@ execute if score $lan mg.t matches 20 run clear @a[tag=!mg.elyf] minecraft:elytr
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.elyf] minecraft:firework_rocket[minecraft:custom_data~{mg_elyf:1b}]
 # Tableau à droite tournant (lobby) + reconstruction des ajouts du spawn s'ils ont été effacés
 execute if score $setup mg.st matches 1 if score $state mg.st matches 0 if score $sb mg.st matches 1 run function mg:hall/board_tick
-execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block -16 64 25 minecraft:gold_block run function mg:hall/build
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block -16 64 15 minecraft:gold_block run function mg:hall/build
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 24 63 19 minecraft:gold_block run function mg:lobby/food_build
 execute if score $setup mg.st matches 1 if entity @a[x=-200,y=40,z=-60,dx=130,dy=80,dz=80] run function mg:coaster/tick
 execute if score $lan mg.t matches 15 run function mg:rank/tick
