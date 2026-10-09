@@ -5,8 +5,8 @@ function mg:lobkart/leave
 # En survie : il reprend là où il était (rien à faire)
 execute if entity @s[tag=mg.surv] run return 0
 
-# Partie en cours (compte à rebours, jeu ou fin) → il rejoint l'arène en SPECTATEUR
-execute if score $state mg.st matches 1..3 run return run function mg:core/reconnect_spec
+# Partie en cours (compte à rebours, jeu ou fin) → il rejoint l'arène en SPECTATEUR (sauf contre-la-montre solo : rien à regarder, il retourne au lobby)
+execute if score $state mg.st matches 1..3 unless score $xs mg.st matches 1 run return run function mg:core/reconnect_spec
 
 # Sinon → lobby, inventaire vidé
 function mg:core/reset_player

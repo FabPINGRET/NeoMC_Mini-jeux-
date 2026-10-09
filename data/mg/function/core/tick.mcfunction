@@ -12,6 +12,7 @@ scoreboard players enable @a mg.bw
 scoreboard players enable @a mg.tel
 scoreboard players enable @a mg.pl
 scoreboard players enable @a mg.dice
+scoreboard players enable @a mg.xs
 function mg:survie/tick
 execute as @a[scores={mg.dice=5..10}] run function mg:party/menu_cmd
 execute as @a[scores={mg.dice=3}] unless score $game mg.st matches 59 run function mg:party/menu_nomap
@@ -51,6 +52,7 @@ execute as @a[scores={mg.tel=1..}] run function mg:tel/cast
 # Actions demandées
 execute as @a[scores={mg.go=1..}] run function mg:core/go
 execute as @a[scores={mg.opt=1..}] run function mg:core/opt
+execute as @a[scores={mg.xs=1..}] run function mg:elyrace/solo/cmd
 
 # Armurerie du lobby
 execute if score $setup mg.st matches 1 run function mg:lobby/armory_tick

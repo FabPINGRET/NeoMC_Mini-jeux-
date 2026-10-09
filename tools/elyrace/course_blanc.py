@@ -146,13 +146,14 @@ def snow_cells(w):
 
 
 def extra_checks(c):
-    """Controles propres au Pic Blanc : blocs interdits (glace simple, neige poudreuse, blocs a gravite), lumiere de la grotte."""
+    """Controles propres au Pic Blanc : blocs interdits (glace simple, neige poudreuse ou en couche, blocs a gravite, stalactites
+    de dripstone qui tombent, blocs suspects), lumiere de la grotte."""
     bad = []
-    banned = ('ice', 'powder_snow', 'sand', 'red_sand', 'gravel', 'concrete_powder', 'anvil')
+    banned = ('ice', 'powder_snow', 'snow', 'pointed_dripstone', 'sand', 'red_sand', 'gravel', 'concrete_powder', 'anvil')
     seen = set()
     for cmd in list(c.rects) + list(c.world.cmds):
         blk = cmd[-1].split('[')[0]
-        if (blk in banned or blk.endswith('_concrete_powder')) and blk not in seen:
+        if (blk in banned or blk.endswith('_concrete_powder') or blk.startswith('suspicious_')) and blk not in seen:
             seen.add(blk)
             bad.append('bloc interdit sur le Pic Blanc : %s' % blk)
     return bad + CV.light_problems(c.world)

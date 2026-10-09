@@ -1,8 +1,10 @@
 # Attend le chargement de la tranche $xbk puis la construit (parcours 1)
 # $xbk à 0 = aucune construction en cours (arrêtée par build_abort, build_fail ou core/load) : un schedule resté en attente s'éteint ici
 execute if score $xbk mg.st matches 0 run return 0
-# une partie démarre pendant la construction : on ne construit pas (les remplissages sont lourds) et $xbw n'avance pas (pas de faux build_fail)
-execute if score $game mg.st matches 66 unless score $state mg.st matches 0 run return run schedule function mg:elyrace/c1/build_wait 20t
+# une partie démarre pendant la construction (course, solo ou autre jeu) : on ne construit pas (les remplissages sont lourds) et $xbw
+# n'avance pas (pas de faux build_fail). Choix assumé : la tranche en cours reste chargée de force pendant la pause (la relâcher puis
+# la recharger ferait ré-attendre le chargement) ; la pause dure autant que la partie, jusqu'à ce que $state revienne à 0
+execute unless score $state mg.st matches 0 run return run schedule function mg:elyrace/c1/build_wait 20t
 execute if score $xbk mg.st matches 1 if function mg:elyrace/c1/loaded_1 run return run function mg:elyrace/c1/build_1
 execute if score $xbk mg.st matches 2 if function mg:elyrace/c1/loaded_2 run return run function mg:elyrace/c1/build_2
 execute if score $xbk mg.st matches 3 if function mg:elyrace/c1/loaded_3 run return run function mg:elyrace/c1/build_3

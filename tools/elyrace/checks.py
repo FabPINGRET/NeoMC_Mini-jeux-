@@ -1,16 +1,19 @@
 """Controles statiques de la Course d'elytres (gen_elyrace.py --check) : coherence des fonctions generees, desinstallation,
 zones de construction, budget des tranches, fichiers du depot a jour, pilote automatique. Boucle sur tous les parcours.
+Le contre-la-montre solo et les branchements du moteur sont controles par checks_solo.py.
 Python stdlib uniquement (compatible 3.8).
 """
 import os
 import re
 
 import build_chain as B
+import checks_solo as CS
 import course_common as CC
 import course_fns as CF
 import dispatch as D
 import game as G
 import menus as M
+import records as RC
 import verify as V
 
 LOADED_LINE = re.compile(r'execute store success score \$xbl mg\.st unless block -?\d+ %d -?\d+ minecraft:bedrock$' % B.PROBE_Y)
@@ -212,7 +215,7 @@ def logic_problems(files, specs):
     adders = sorted(rel for rel, text in files.items() if re.search(r'players add @\S+ mg\.xa ', text))
     if adders != sorted(passes):
         bad.append('mg.xa doit etre incremente par les pass des parcours seulement : %s' % adders)
-    known = {'mg.' + o[0] for o in G.OBJECTIVES} | set(G.TAGS)
+    known = {'mg.' + o[0] for o in G.OBJECTIVES} | set(G.TAGS) | {'mg.xs'} | {'mg.' + RC.obj(s) for s in specs}
     for rel, text in files.items():
         if rel.endswith('.mcfunction'):
             for m in sorted(set(re.findall(r'\bmg\.x[a-z0-9]+', text)) - known):
@@ -225,7 +228,7 @@ def logic_problems(files, specs):
 def check(root, courses, files):
     """Renvoie la liste des problemes (vide = tout est bon)."""
     specs = [c.spec for c in courses]
-    bad = spec_problems(specs) + id_problems(root, specs) + logic_problems(files, specs)
+    bad = spec_problems(specs) + id_problems(root, specs) + logic_problems(files, specs) + CS.problems(root, files, specs)
     names = {rel[len('data/mg/function/'):-len('.mcfunction')] for rel in files if rel.endswith('.mcfunction')}
     for rel, text in files.items():
         if rel.endswith('.mcfunction'):

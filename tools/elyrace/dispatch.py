@@ -3,15 +3,18 @@ tirage au hasard, annonce, drapeaux de construction, desinstallation et petits r
 fl_remove, gate_off) qui renvoient vers mg:elyrace/c<N>/<nom> selon $xc.
 $xc (faux joueur de mg.st, distinct de l'objectif mg.xc) : 0 = au hasard parmi les parcours construits (pick, appele par
 prepare), N = parcours NUM = N. mg:core/request le pose (id de lancement 81.. -> $xc = id - menus.ID_BASE, puis $game = 66) ;
-pour tout autre lancement (66, Mini Party) request le remet a 0 : la course tire un parcours au hasard.
+pour tout autre lancement (66, Mini Party) request le remet a 0 : la course tire un parcours au hasard. Le solo (solo.py) pose
+$xc lui-meme et ne passe pas par request : announce, appelee par request seulement, remet donc $xs (drapeau solo) a 0.
 Python stdlib uniquement (compatible 3.8).
 """
 import course_common as CC
 import game as G
+import records as RC
 import wind as W
 
 N_ROUTES = 2             # nombre de parcours prevus (NUM 1..N_ROUTES) ; un parcours pas encore ecrit est « pas construit »
 RED = '{"text":"%s","color":"red"}'
+NOT_SOLO = 'unless score $xs mg.st matches 1'     # garde des lignes qu'un contre-la-montre solo ne doit pas executer
 XC = '{"score":{"name":"$xc","objective":"mg.st"},"color":"red"}'     # numero du parcours demande, lu dans un message
 
 
@@ -51,6 +54,8 @@ def announce_lines(specs):
     head = ('tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance la ","color":"gray"},'
             '{"text":"🪽 COURSE D\'ÉLYTRES","color":"aqua","bold":true},{"text":" : %s","color":"gray"}]')
     out = ['# Annonce du lancement (appelée par mg:core/request, avant prepare : en mode « au hasard » le parcours n\'est pas encore tiré)',
+           '# un lancement de groupe n\'est jamais un solo : le drapeau $xs est remis à 0 (le solo ne passe pas par request)',
+           'scoreboard players set $xs mg.st 0',
            'execute if score $xc mg.st matches 0 run ' + head % 'un parcours au hasard parmi ceux qui sont construits (le premier arrivé gagne) !']
     by_num = {s.NUM: s for s in specs}
     for k in range(1, N_ROUTES + 1):
@@ -66,7 +71,8 @@ def forget_lines(specs):
 
 
 CANCEL = ['# partie annulée ; $xc remis à 0 d\'abord : cleanup (fl_remove) ne doit rien libérer, la zone d\'un parcours en construction reste chargée',
-          'scoreboard players set $xc mg.st 0', 'function mg:core/draw']
+          '# (elyrace/draw : en solo, fin du contre-la-montre ; sinon core/draw)',
+          'scoreboard players set $xc mg.st 0', 'function mg:elyrace/draw']
 
 
 def not_built_lines(specs):
@@ -81,6 +87,8 @@ def not_built_lines(specs):
 
 
 def not_available_lines():
+    """Garde pour un futur parcours 3 : tant que tous les emplacements 1..N_ROUTES sont ecrits (len(specs) == N_ROUTES), prepare ne
+    l'appelle jamais et functions() ne genere pas ce fichier ; passer N_ROUTES a 3 sans ecrire le module le fait revenir."""
     return ['# Parcours dont le module n\'existe pas encore (emplacement réservé) : partie annulée',
             'tellraw @a[tag=mg.admin] [' + RED % '[Mini-Jeux] Course d\'élytres : le parcours ' + ',' + XC + ',' + RED % ' n\'est pas encore disponible.' + ']',
             'tellraw @a[tag=mg.play] [' + RED % '🪽 Ce parcours n\'est pas encore disponible : partie annulée.' + ']'] + CANCEL
@@ -110,7 +118,8 @@ def prepare_lines(specs):
             'scoreboard players set $ri mg.st 0',
             'execute as @a[tag=mg.play] run function mg:elyrace/equip',
             'execute as @a[tag=mg.play] run function mg:elyrace/place_one',
-            'scoreboard objectives setdisplay sidebar mg.xa']
+            '# tableau des anneaux de la course de groupe (en solo : le HUD du joueur suffit, et le tableau serait lu par tout le lobby)',
+            'execute %s run scoreboard objectives setdisplay sidebar mg.xa' % NOT_SOLO]
     return out
 
 
@@ -127,6 +136,9 @@ def uninstall_lines(specs):
     out += ['tag @a remove ' + t for t in G.TAGS] + W.cleanup_lines()
     out.append('advancement revoke @a only mg:elyrace_wall')
     out += ['scoreboard objectives remove mg.%s' % n for n, _, _ in G.OBJECTIVES]
+    out += ['# contre-la-montre solo : trigger, records par parcours (objectifs et détenteur figé dans le hall), drapeau et délai',
+            'scoreboard objectives remove mg.xs'] + RC.uninstall_lines(specs)
+    out += ['scoreboard players reset $xs mg.st', 'scoreboard players reset $xse mg.st']
     return out
 
 
