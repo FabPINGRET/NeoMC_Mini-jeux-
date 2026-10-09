@@ -17,7 +17,7 @@ setblock -45 64 41 minecraft:light_weighted_pressure_plate
 function mg:coaster/track
 kill @e[tag=mg.cst]
 kill @e[tag=mg.csd]
-summon minecraft:text_display -45.5 66.2 41.5 {Tags:["mg.csd"],billboard:"center",text:[{"text":"🎢 Montagne russe","color":"gold","bold":true},{"text":"\nle tour du spawn — marche sur la plaque dorée","color":"gray"}]}
+summon minecraft:text_display -44.5 66.2 41.5 {Tags:["mg.csd"],billboard:"center",text:[{"text":"🎢 Montagne russe","color":"gold","bold":true},{"text":"\nle tour du spawn — marche sur la plaque dorée","color":"gray"}]}
 forceload remove -66 -66 66 66
 forceload remove -130 -12 -71 20
 function mg:core/forceloads
