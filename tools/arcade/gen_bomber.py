@@ -5,9 +5,10 @@
 - La ville (177 × 177, centre 0 64 32400) : avenues nord-sud, rues est-ouest, gratte-ciel de verre, immeubles de brique
   avec châteaux d'eau, tours art déco à gradins, deux géants (Empire et Chrysler), un carrefour à écrans, Central Park
   avec son lac, l'East River avec un pont suspendu et une statue verte sur son île. Taxis jaunes, réverbères.
-- Les joueurs marchent sur un plancher invisible (barrières) à y 170 et lâchent les bombes sous leurs pieds,
-  lancées dans la direction du regard : bombe (rayon 3), méga-bombe (6), bombe à fragmentation (7 sous-munitions
-  de rayon 2) et, pour la dernière minute, une bombe atomique (rayon 11) par joueur.
+- Les joueurs attendent sur un plancher invisible (barrières) à y 170 pendant le compte à rebours ; au GO il disparaît
+  et ils VOLENT dans la ville en élytres (fusées illimitées ; posé au sol, accroupi = catapulte vers le ciel) et lâchent
+  les bombes devant eux, dans la direction du regard : bombe (rayon 6), méga-bombe (12), bombe à fragmentation
+  (7 sous-munitions de rayon 4) et, pour la dernière minute, une bombe atomique (rayon 22) par joueur.
 - Dégâts = blocs détruits (bloc doré ou statue : 10 points). Une explosion = fills « replace #mg:bomb_city »
   empilés en sphère (le nombre de blocs remplacés est le score), sans vraie explosion ni objets au sol.
 - 2 min 30, le plus gros score gagne. Barre de boss : part de la ville détruite. Reconstruite à chaque partie
@@ -158,8 +159,7 @@ for z in range(pz1, pz2 + 1):
     for x in range(px1, px2 + 1):
         if math.hypot((x + 26) / 9, (z - 52) / 6) <= 1:
             fill(x, 61, z, x, GY, z, 'water', False, G)
-# plancher invisible et murs
-fill(-HX, YT, -HX, HX, YT, HX, 'barrier', False, G)
+# murs invisibles au-dessus de la ville (le plancher de départ est posé par prepare et retiré au GO)
 for (a, b, c, d) in [(-HX, -HX, HX, -HX), (-HX, HX, HX, HX), (-HX, -HX, -HX, HX), (HX, -HX, HX, HX)]:
     fill(a, YT + 1, b, c, YT + 6, d, 'barrier', False, G)
 
@@ -809,13 +809,13 @@ def boom(r):
     return L
 
 
-for r in (2, 3, 6, 11):
+for r in (2, 3, 4, 6, 12, 22):   # 4, 6, 12, 22 = Bombardier (rayons doublés) ; 2 et 3 = Neo GTA (roquette, épave)
     w(f'bomber/boom/r{r}', boom(r))
 
 # ---------------------------------------------------------------- jeu
 BOMBS = [  # type, item_model, nom, couleur, cooldown (ticks), vitesse de lancer (‰), description
-    (1, 'tnt', 'Bombe', 'red', 12, 900, 'Rayon 3, recharge 0,6 s'),
-    (2, 'tnt_minecart', 'Méga-bombe', 'dark_red', 140, 600, 'Rayon 6, recharge 7 s'),
+    (1, 'tnt', 'Bombe', 'red', 12, 900, 'Rayon 6, recharge 0,6 s'),
+    (2, 'tnt_minecart', 'Méga-bombe', 'dark_red', 140, 600, 'Rayon 12, recharge 7 s'),
     (3, 'fire_charge', 'Bombe à fragmentation', 'gold', 100, 900, '7 sous-munitions, recharge 5 s'),
 ]
 
@@ -849,28 +849,36 @@ w('bomber/join', ['# @s : numéro de bombardier (attribution des dégâts)', 'sc
                   'scoreboard players operation @s mg.bid = $bidn mg.st', 'scoreboard players set @s mg.bmb 0',
                   'scoreboard players set @s mg.bc1 0', 'scoreboard players set @s mg.bc2 0', 'scoreboard players set @s mg.bc3 0',
                   'scoreboard players set @s mg.bc4 0'])
-w('bomber/kit', ['# @s : les bombes'] + [item(t, m, n, c, cd, d, i) for i, (t, m, n, c, cd, _, d) in enumerate(BOMBS)] +
-  ['effect give @s minecraft:speed infinite 1 true', 'effect give @s minecraft:saturation infinite 0 true',
+ELY = ('item replace entity @s armor.chest with minecraft:elytra[custom_data={mg_bomb:1b},unbreakable={},'
+       'enchantments={"minecraft:binding_curse":1},custom_name={"text":"Élytres du bombardier","color":"red","italic":false}]')
+ROCKET = ('item replace entity @s hotbar.8 with minecraft:firework_rocket[custom_data={mg_bomb:1b},fireworks={flight_duration:1},'
+          'custom_name={"text":"Fusée (illimitée)","color":"gold","italic":false}] 16')
+w('bomber/kit', ['# @s : les bombes, les élytres et les fusées'] + [item(t, m, n, c, cd, d, i) for i, (t, m, n, c, cd, _, d) in enumerate(BOMBS)] +
+  [ELY, ROCKET, 'effect give @s minecraft:speed infinite 1 true', 'effect give @s minecraft:saturation infinite 0 true',
    'effect give @s minecraft:resistance infinite 4 true', 'effect give @s minecraft:night_vision infinite 0 true'])
-w('bomber/go', ['# Départ', 'scoreboard players set $btt mg.st 0',
+w('bomber/go', ['# Départ : le plancher disparaît, tout le monde s\'envole dans la ville', 'scoreboard players set $btt mg.st 0',
+                f'fill -{HX} {YT} {Z - HX} {HX} {YT} {Z + HX} minecraft:air replace minecraft:barrier',
+                'effect give @a[tag=mg.play] minecraft:slow_falling 3 0 true',
                 f'execute unless score $bbs mg.st matches {NG + NPART}.. run function mg:bomber/build_rest',
                 'execute as @a[tag=mg.play] run function mg:bomber/kit',
                 'scoreboard players reset @a mg.qs',
                 'scoreboard objectives setdisplay sidebar mg.bmb',
                 'tellraw @a[tag=mg.play] ' + js([{'text': '💣 BOMBARDIER : ', 'color': 'red', 'bold': True},
-                                                 {'text': 'vise un immeuble et clic droit pour larguer. Chaque bloc détruit = 1 point, '
+                                                 {'text': 'saute et ouvre tes élytres (Espace) : vole entre les gratte-ciel (fusées illimitées, case 9), vise et clic droit pour larguer. '
+                                                          'Posé au sol : accroupis-toi pour repartir. Chaque bloc détruit = 1 point, '
                                                           'or et statue = 10. Bombe atomique pour la dernière minute. 2 min 30.', 'color': 'gray'}])])
 w('bomber/build_rest', ['# Filet de sécurité : termine la construction d\'un coup si le départ arrive avant la fin',
                         f'execute if score $bbs mg.st matches ..{NG + NPART - 1} run function mg:bomber/build_step',
                         f'execute if score $bbs mg.st matches ..{NG + NPART - 1} run function mg:bomber/build_rest'])
 
-nuke = item(4, 'nether_star', '☢ Bombe atomique', 'green', 0, 'Rayon 11, une seule !', 3)
+nuke = item(4, 'nether_star', '☢ Bombe atomique', 'green', 0, 'Rayon 22, une seule !', 3)
 w('bomber/tick', ['# 💣 Bombardier : tick', 'scoreboard players add $btt mg.st 1',
                   'execute as @a[tag=mg.play,scores={mg.qs=1..}] at @s run function mg:bomber/use',
                   'scoreboard players reset @a[scores={mg.qs=1..}] mg.qs',
                   'scoreboard players remove @a[scores={mg.bc1=1..}] mg.bc1 1', 'scoreboard players remove @a[scores={mg.bc2=1..}] mg.bc2 1',
                   'scoreboard players remove @a[scores={mg.bc3=1..}] mg.bc3 1',
                   'execute as @e[type=minecraft:tnt,tag=mg.bomb] at @s run function mg:bomber/bomb_tick',
+                  'execute as @a[tag=mg.play,predicate=mg:sneak,predicate=!mg:gliding,nbt={OnGround:1b}] at @s run function mg:bomber/launch',
                   'scoreboard players add @e[type=minecraft:marker,tag=mg.bsm] mg.bc4 1',
                   'execute as @e[type=minecraft:marker,tag=mg.bsm,scores={mg.bc4=400..}] run kill @s',
                   'scoreboard players operation $bq mg.st = $btt mg.st', 'scoreboard players set #20 mg.st 20', 'scoreboard players operation $bq mg.st %= #20 mg.st',
@@ -882,13 +890,15 @@ w('bomber/tick', ['# 💣 Bombardier : tick', 'scoreboard players add $btt mg.st
                   f'execute if score $state mg.st matches 2 if score $btt mg.st matches {LIMIT}.. run function mg:bomber/timeout',
                   'execute store result score $alive mg.st if entity @a[tag=mg.play]',
                   'execute if score $state mg.st matches 2 if score $alive mg.st matches 0 run function mg:core/draw'])
-w('bomber/second', ['# Une seconde : barre de destruction, joueurs retenus au-dessus de la ville',
+w('bomber/second', ['# Une seconde : barre de destruction, fusées rechargées, joueurs sous le sol ou sortis de la ville ramenés au-dessus',
                     'scoreboard players operation $bpct mg.st = $bdes mg.st', 'scoreboard players set #100 mg.st 100',
                     'scoreboard players operation $bpct mg.st *= #100 mg.st', f'scoreboard players set #btot mg.st {TOTAL}',
                     'scoreboard players operation $bpct mg.st /= #btot mg.st',
                     'execute store result bossbar mg:bomber value run scoreboard players get $bdes mg.st',
                     'bossbar set mg:bomber name [{"text":"🏙 Ville détruite : ","color":"red"},{"score":{"name":"$bpct","objective":"mg.st"},"color":"yellow","bold":true},{"text":" %","color":"red"}]',
-                    f'execute as @a[tag=mg.play] at @s if entity @s[y=0,dy={YT - 1}] run tp @s 0 {YT + 1} {Z}',
+                    f'execute as @a[tag=mg.play] at @s if entity @s[y=-64,dy={64 + Y0}] run tp @s 0 {YT + 1} {Z}',
+                    f'execute as @a[tag=mg.play] unless entity @s[x=-{HX},y=-64,z={Z - HX},dx={2 * HX},dy=400,dz={2 * HX}] run tp @s 0 {YT + 1} {Z}',
+                    'execute as @a[tag=mg.play] run ' + ROCKET,
                     'execute if score $state mg.st matches 2 if score $bpct mg.st matches 85.. run function mg:bomber/timeout'])
 w('bomber/nuke_give', ['# Dernière minute : une bombe atomique par joueur',
                        'execute as @a[tag=mg.play] run ' + nuke,
@@ -919,7 +929,7 @@ w('bomber/drop', ['# @s : largue une bombe de type $(t) sous ses pieds, lancée 
                   'execute store result score $pz0 mg.st run data get entity @s Pos[2] 1000',
                   'scoreboard players operation $fx mg.st -= $px0 mg.st', 'scoreboard players operation $fy mg.st -= $py0 mg.st',
                   'scoreboard players remove $fy mg.st 1620', 'scoreboard players operation $fz mg.st -= $pz0 mg.st',
-                  f'execute positioned ~ {YT - 1.3} ~ run summon minecraft:tnt ~ ~ ~ {{Tags:["mg.bomb","mg.bnew"],fuse:400s,explosion_power:0.0f}}',
+                  'execute positioned ~ ~-0.6 ~ run summon minecraft:tnt ~ ~ ~ {Tags:["mg.bomb","mg.bnew"],fuse:400s,explosion_power:0.0f}',
                   '$execute store result entity @e[type=minecraft:tnt,tag=mg.bnew,limit=1] Motion[0] double $(sp) run scoreboard players get $fx mg.st',
                   '$execute store result entity @e[type=minecraft:tnt,tag=mg.bnew,limit=1] Motion[1] double $(sp) run scoreboard players get $fy mg.st',
                   '$execute store result entity @e[type=minecraft:tnt,tag=mg.bnew,limit=1] Motion[2] double $(sp) run scoreboard players get $fz mg.st',
@@ -929,6 +939,11 @@ w('bomber/drop', ['# @s : largue une bombe de type $(t) sous ses pieds, lancée 
                   '$function mg:bomber/look_$(t)',
                   'tag @e[tag=mg.bnew] remove mg.bnew',
                   'playsound minecraft:entity.tnt.primed player @a ~ ~ ~ 0.8 1.2'])
+w('bomber/launch', ['# @s : posé au sol et accroupi → catapulté vers le ciel pour rouvrir les élytres',
+                    'effect give @s minecraft:levitation 1 40 true',
+                    'particle minecraft:gust ~ ~0.5 ~ 0.3 0.1 0.3 0 3',
+                    'playsound minecraft:entity.wind_charge.wind_burst player @a ~ ~ ~ 1 0.8',
+                    'title @s actionbar {"text":"🪽 Appuie sur Espace en l\'air pour rouvrir tes élytres","color":"aqua"}'])
 for t, blk in [(1, 'tnt'), (2, 'coal_block'), (3, 'redstone_block'), (4, 'tnt'), (5, 'lodestone')]:
     w(f'bomber/look_{t}', [f'# Aspect de la bombe de type {t}',
                            f'data merge entity @e[type=minecraft:tnt,tag=mg.bnew,limit=1] {{block_state:{{Name:"minecraft:{blk}"}}}}'])
@@ -963,14 +978,16 @@ w('bomber/bomblet', ['# @s : sous-munition (même lanceur, direction écartée a
                      'execute store result entity @s Motion[2] double 0.001 run scoreboard players get $br mg.st'])
 w('bomber/impact', ['# @s : la bombe touche (explosion selon le type, points au lanceur)',
                     'scoreboard players operation $bid mg.st = @s mg.bid',
-                    'execute if score @s mg.bty matches 1 run function mg:bomber/boom/r3',
-                    'execute if score @s mg.bty matches 2 run function mg:bomber/boom/r6',
-                    'execute if score @s mg.bty matches 3 run function mg:bomber/boom/r3',
-                    'execute if score @s mg.bty matches 4 run function mg:bomber/boom/r2',
-                    'execute if score @s mg.bty matches 5 run function mg:bomber/boom/r11',
-                    'execute if score @s mg.bty matches 1 run function mg:bomber/fx_small',
-                    'execute if score @s mg.bty matches 3..4 run function mg:bomber/fx_small',
+                    'execute if score @s mg.bty matches 1 run function mg:bomber/boom/r6',
+                    'execute if score @s mg.bty matches 2 run function mg:bomber/boom/r12',
+                    'execute if score @s mg.bty matches 3 run function mg:bomber/boom/r6',
+                    'execute if score @s mg.bty matches 4 run function mg:bomber/boom/r4',
+                    'execute if score @s mg.bty matches 5 run function mg:bomber/boom/r22',
+                    'execute if score @s mg.bty matches 4 run function mg:bomber/fx_small',
+                    'execute if score @s mg.bty matches 1 run function mg:bomber/fx_big',
+                    'execute if score @s mg.bty matches 3 run function mg:bomber/fx_big',
                     'execute if score @s mg.bty matches 2 run function mg:bomber/fx_big',
+                    'execute if score @s mg.bty matches 2 run function mg:bomber/fx_nuke',
                     'execute if score @s mg.bty matches 5 run function mg:bomber/fx_nuke',
                     'execute if score $bk mg.st matches 1.. run summon minecraft:marker ~ ~ ~ {Tags:["mg.bsm"]}',
                     'scoreboard players operation $bpts mg.st = $bb mg.st', 'scoreboard players set #10 mg.st 10',
@@ -1004,7 +1021,8 @@ w('bomber/timeout', ['# Fin : le plus de dégâts gagne (égalité = match nul)'
                      'execute if score $bx mg.st matches 0 run return run function mg:core/draw',
                      'execute if score $bc mg.st matches 2.. run return run function mg:core/draw',
                      'execute as @a[tag=mg.play] if score @s mg.bmb = $bx mg.st run function mg:core/win_player'])
-w('bomber/cleanup', ['schedule clear mg:bomber/build_step', 'kill @e[tag=mg.bomb]', 'kill @e[tag=mg.bsm]', 'bossbar remove mg:bomber',
+w('bomber/cleanup', ['schedule clear mg:bomber/build_step', 'clear @a minecraft:elytra[custom_data~{mg_bomb:1b}]',
+                     'clear @a minecraft:firework_rocket[custom_data~{mg_bomb:1b}]', 'kill @e[tag=mg.bomb]', 'kill @e[tag=mg.bsm]', 'bossbar remove mg:bomber',
                      'scoreboard players reset * mg.bmb', 'scoreboard players reset * mg.bid', 'effect clear @a[tag=mg.play]'])
 
 C.register([GID], 'bomber', [C.announce(GID, '', '💣 BOMBARDIER', 'red', 'largue des bombes sur la ville, le plus de dégâts gagne !')])

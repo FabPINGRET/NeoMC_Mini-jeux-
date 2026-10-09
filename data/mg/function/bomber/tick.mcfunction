@@ -6,6 +6,7 @@ scoreboard players remove @a[scores={mg.bc1=1..}] mg.bc1 1
 scoreboard players remove @a[scores={mg.bc2=1..}] mg.bc2 1
 scoreboard players remove @a[scores={mg.bc3=1..}] mg.bc3 1
 execute as @e[type=minecraft:tnt,tag=mg.bomb] at @s run function mg:bomber/bomb_tick
+execute as @a[tag=mg.play,predicate=mg:sneak,predicate=!mg:gliding,nbt={OnGround:1b}] at @s run function mg:bomber/launch
 scoreboard players add @e[type=minecraft:marker,tag=mg.bsm] mg.bc4 1
 execute as @e[type=minecraft:marker,tag=mg.bsm,scores={mg.bc4=400..}] run kill @s
 scoreboard players operation $bq mg.st = $btt mg.st

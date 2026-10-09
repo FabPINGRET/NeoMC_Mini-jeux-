@@ -1,5 +1,6 @@
 function mg:ph/kill_all
 execute as @a[tag=mg.phx] run attribute @s minecraft:scale base set 1
+execute as @a[tag=mg.phx] run attribute @s minecraft:max_health base set 20
 effect clear @a[tag=mg.phx] minecraft:invisibility
 effect clear @a[tag=mg.phx] minecraft:speed
 effect clear @a[tag=mg.phx] minecraft:blindness
