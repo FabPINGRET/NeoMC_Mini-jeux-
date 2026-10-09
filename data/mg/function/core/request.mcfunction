@@ -6,6 +6,7 @@ scoreboard players reset @s mg.go
 scoreboard players set $ar mg.st 0
 scoreboard players set $dif mg.st 2
 execute if score $game mg.st matches 100..196 run function mg:var/remap
+scoreboard players operation $rgid mg.st = $game mg.st
 # Kart : 61 = Circuit Champignon, 62 = Royaume Koopa → jeu 61 + circuit $ktr
 scoreboard players set $ktr mg.st 1
 execute if score $game mg.st matches 62 run scoreboard players set $ktr mg.st 2

@@ -80,6 +80,15 @@ Tout se lance depuis un menu cliquable — aucun bloc de commande, aucune constr
 
 ---
 
+## ⭐ Notes des joueurs
+
+À la fin de chaque partie, les participants reçoivent une fenêtre **facultative** : note sur 5 du **mode de jeu**, de la **carte** et du **fun** (« — » = pas d'avis, « Passer » ou Échap pour ignorer).
+Les votes de tout le monde sont **cumulés depuis le début** (scores `mg.rts/mg.rtn` par carte, `mg.rgs/rgn` + `mg.rfs/rfn` par jeu) :
+- chaque bouton de carte des menus (lancement et votes) affiche la **moyenne des joueurs** (`★★★★☆ 4,2`) à la place des étoiles de difficulté (qui restent tant qu'il n'y a pas de vote) ;
+- chaque jeu affiche son **score global** `♥4,1` (moyenne des notes « mode » et « fun »).
+
+Les menus sont générés à la volée (`mg:rate/d/<menu>`, macro sur `storage mg:rate lab`) par `tools/rating/gen_rating.py`, relancé automatiquement par `tools/variantes/gen_variants.py`.
+
 ## 🗺️ 1. Créer la map vide (solo / LAN)
 
 1. **Nouveau monde** → Onglet **Monde** → Type de monde : **Superflat** (Ultra-plat).

@@ -1,6 +1,6 @@
 # Spleef : cartes + variantes (@s = admin) — fenêtre, sinon menu texte. Généré.
 scoreboard players set $dlg mg.st 0
-execute store success score $dlg mg.st run dialog show @s mg:sub_spleef
+execute store success score $dlg mg.st run function mg:rate/d/sub_spleef with storage mg:rate lab
 execute if score $dlg mg.st matches 1 run return 0
 tellraw @s [{"text":"\n❄ Spleef — variantes ","color":"aqua","bold":true},{"text":"(★ facile → ★★★★ difficile)","color":"gray"}]
 tellraw @s ["",{"text":" [🎲 Au hasard]","color":"gold","click_event":{"action":"run_command","command":"trigger mg.go set 194"}}]

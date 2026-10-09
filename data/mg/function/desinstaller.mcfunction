@@ -22,6 +22,15 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.rt
+scoreboard objectives remove mg.rts
+scoreboard objectives remove mg.rtn
+scoreboard objectives remove mg.rgs
+scoreboard objectives remove mg.rgn
+scoreboard objectives remove mg.rfs
+scoreboard objectives remove mg.rfn
+schedule clear mg:rate/ask
+data remove storage mg:rate lab
 team remove mg_ph
 scoreboard objectives remove mg.pid
 scoreboard objectives remove mg.php

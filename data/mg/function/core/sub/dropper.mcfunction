@@ -2,7 +2,7 @@
 execute unless entity @s[tag=mg.admin] run tellraw @s [{"text":"⚠ Le menu est réservé aux admins.","color":"red"}]
 execute unless entity @s[tag=mg.admin] run return 0
 scoreboard players set $dlg mg.st 0
-execute store success score $dlg mg.st run dialog show @s mg:sub_dropper
+execute store success score $dlg mg.st run function mg:rate/d/sub_dropper with storage mg:rate lab
 execute if score $dlg mg.st matches 1 run return 0
 tellraw @s [{"text":"\n⬇ The Dropper — choisis une version","color":"aqua","bold":true}]
 tellraw @s ["",{"text":" [⬇ The Dropper]","color":"aqua","click_event":{"action":"run_command","command":"trigger mg.go set 23"},"hover_event":{"action":"show_text","value":"Chute libre dans un puits d'obstacles : atterris dans l'unique bloc d'eau"}}]
