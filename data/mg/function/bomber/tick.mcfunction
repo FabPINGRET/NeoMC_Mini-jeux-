@@ -17,6 +17,6 @@ execute if score $bq mg.st matches 0 run execute at @e[type=minecraft:marker,tag
 execute if score $bq mg.st matches 10 run execute at @e[type=minecraft:marker,tag=mg.bsm] run particle minecraft:flame ~ ~0.5 ~ 0.8 0.3 0.8 0.01 4
 execute if score $btt mg.st matches 1800 run function mg:bomber/nuke_give
 execute if score $btt mg.st matches 2400 run tellraw @a[tag=mg.play] {"text":"💣 Plus que 30 secondes !","color":"gold"}
-execute if score $state mg.st matches 2 if score $btt mg.st matches 3000.. run function mg:bomber/timeout
+execute if score $state mg.st matches 2 if score $btt mg.st matches 3000.. run function mg:bomber/finish
 execute store result score $alive mg.st if entity @a[tag=mg.play]
 execute if score $state mg.st matches 2 if score $alive mg.st matches 0 run function mg:core/draw
