@@ -887,7 +887,7 @@ w('bomber/tick', ['# 💣 Bombardier : tick', 'scoreboard players add $btt mg.st
                   'execute if score $bq mg.st matches 10 run execute at @e[type=minecraft:marker,tag=mg.bsm] run particle minecraft:flame ~ ~0.5 ~ 0.8 0.3 0.8 0.01 4',
                   f'execute if score $btt mg.st matches {NUKE_AT} run function mg:bomber/nuke_give',
                   f'execute if score $btt mg.st matches {LIMIT - 600} run tellraw @a[tag=mg.play] {{"text":"💣 Plus que 30 secondes !","color":"gold"}}',
-                  f'execute if score $state mg.st matches 2 if score $btt mg.st matches {LIMIT}.. run function mg:bomber/timeout',
+                  f'execute if score $state mg.st matches 2 if score $btt mg.st matches {LIMIT}.. run function mg:bomber/finish',
                   'execute store result score $alive mg.st if entity @a[tag=mg.play]',
                   'execute if score $state mg.st matches 2 if score $alive mg.st matches 0 run function mg:core/draw'])
 w('bomber/second', ['# Une seconde : barre de destruction, fusées rechargées, joueurs sous le sol ou sortis de la ville ramenés au-dessus',
@@ -1021,6 +1021,11 @@ w('bomber/timeout', ['# Fin : le plus de dégâts gagne (égalité = match nul)'
                      'execute if score $bx mg.st matches 0 run return run function mg:core/draw',
                      'execute if score $bc mg.st matches 2.. run return run function mg:core/draw',
                      'execute as @a[tag=mg.play] if score @s mg.bmb = $bx mg.st run function mg:core/win_player'])
+w('bomber/finish', ['# Fin : résultat, puis 20 s en spectateur au-dessus de la ville pour admirer les dégâts', 'function mg:bomber/timeout',
+                    'execute unless score $state mg.st matches 3 run return 0',
+                    'scoreboard players set $timer mg.st 400', 'gamemode spectator @a[tag=mg.play]', 'gamemode spectator @a[tag=mg.out]',
+                    f'tp @a[tag=mg.play] 0 120 {Z - HX - 20} facing 0 64 {Z}', f'tp @a[tag=mg.out] 0 120 {Z - HX - 20} facing 0 64 {Z}',
+                    'tellraw @a[tag=mg.play] {"text":"👁 20 s pour survoler la ville détruite (mode spectateur), puis retour au lobby.","color":"aqua"}'])
 w('bomber/cleanup', ['schedule clear mg:bomber/build_step', 'clear @a minecraft:elytra[custom_data~{mg_bomb:1b}]',
                      'clear @a minecraft:firework_rocket[custom_data~{mg_bomb:1b}]', 'kill @e[tag=mg.bomb]', 'kill @e[tag=mg.bsm]', 'bossbar remove mg:bomber',
                      'scoreboard players reset * mg.bmb', 'scoreboard players reset * mg.bid', 'effect clear @a[tag=mg.play]'])
