@@ -1132,11 +1132,11 @@ wr('lobkart/enter', ['# @s marche sur le tapis du garage : il monte dans un kart
     'title @s subtitle [{"text":"Z avancer, Q / D tourner, Espace = dérapage, Shift = descendre","color":"yellow"}]',
     'execute at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 1.4', BTN])
 wr('lobkart/remove', ['# Range le kart de @s (et sa caméra, sa tête) sans le déplacer',
-                      'function mg:kart/kk',
-                      'execute as @e[type=minecraft:block_display,tag=mg.kk] on passengers run kill @s',
+                      'function mg:kart/kk', 'ride @s dismount',
+                      'execute as @e[type=minecraft:block_display,tag=mg.kk] on passengers unless entity @s[type=minecraft:player] run kill @s',
                       'kill @e[tag=mg.kk]', 'kill @e[tag=mg.kcamc]',
                       'execute as @e[type=minecraft:item_display,tag=mg.khead] if score @s mg.ri = $me mg.st run kill @s',
-                      'tag @s remove mg.lk', 'tag @s remove mg.kfin', 'tag @s remove mg.kout', 'scoreboard players set @s mg.ri 0', 'ride @s dismount',
+                      'tag @s remove mg.lk', 'tag @s remove mg.kfin', 'tag @s remove mg.kout', 'scoreboard players set @s mg.ri 0',
                       'execute if entity @s[gamemode=spectator] run gamemode adventure @s'])
 wr('lobkart/leave', ['# @s quitte le circuit du spawn sans être ramené au garage (plot, survie, reconnexion)', 'execute if entity @s[tag=mg.lk] run function mg:lobkart/remove'])
 wr('lobkart/exit', ['# @s descend du kart : retour au garage',
@@ -1144,7 +1144,8 @@ wr('lobkart/exit', ['# @s descend du kart : retour au garage',
                     'function mg:lobkart/remove', 'tag @s add mg.lkz',
                     f'tp @s 0.5 64 {KPAD[1] - 2.5} 180 0', 'function mg:core/give_menu',
                     'title @s actionbar [{"text":"🏎 Kart rangé. À bientôt sur le circuit !","color":"gold"}]'])
-wr('lobkart/stop_all', ['# Une partie commence : tous les karts du spawn sont rangés', 'execute as @a[tag=mg.lk] run function mg:lobkart/exit'])
+wr('lobkart/stop_all', ['# Une partie commence : karts du spawn rangés (participant déjà sorti par core/request, filet de sécurité : sur place ; les autres : au garage)',
+                        'execute as @a[tag=mg.lk,tag=mg.play] run function mg:lobkart/leave', 'execute as @a[tag=mg.lk] run function mg:lobkart/exit'])
 wr('lobkart/claim', ['# @s (pilote du spawn) garde son kart et sa caméra (pas orphelins)', 'function mg:kart/kk', 'tag @e[tag=mg.kk] remove mg.lko', 'tag @e[tag=mg.kcamc] remove mg.lko',
                      'tag @e[tag=mg.kk] remove mg.kk', 'tag @e[tag=mg.kcamc] remove mg.kcamc'])
 wr('lobkart/orphans', ['# Karts du spawn dont le pilote est parti (déconnexion) : rangés',
