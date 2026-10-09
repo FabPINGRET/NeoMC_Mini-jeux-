@@ -1,11 +1,11 @@
 # @s (au lobby) : barre d'XP = niveau général, remplie selon la progression vers le suivant
-scoreboard players operation $rp mg.st = @s mg.lvl
+scoreboard players operation $rkp mg.st = @s mg.lvl
 scoreboard players operation $rq mg.st = @s mg.lvl
 scoreboard players add $rq mg.st 1
-scoreboard players operation $rp mg.st *= $rq mg.st
-scoreboard players operation $rp mg.st *= #25 mg.st
+scoreboard players operation $rkp mg.st *= $rq mg.st
+scoreboard players operation $rkp mg.st *= #25 mg.st
 scoreboard players operation $rd mg.st = @s mg.gen
-scoreboard players operation $rd mg.st -= $rp mg.st
+scoreboard players operation $rd mg.st -= $rkp mg.st
 scoreboard players operation $rq mg.st *= #50 mg.st
 scoreboard players operation $rc mg.st = @s mg.lvl
 scoreboard players operation $rc mg.st *= #2 mg.st

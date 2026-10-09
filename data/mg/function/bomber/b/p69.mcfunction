@@ -1,64 +1,64 @@
-# Ville du Bombardier, étape 69/80 (généré par tools/arcade/gen_bomber.py)
-fill 4 65 32426 4 68 32426 minecraft:birch_log
-fill -30 67 32457 -26 68 32461 minecraft:oak_leaves[persistent=true]
-fill -29 69 32458 -27 70 32460 minecraft:oak_leaves[persistent=true]
-fill -28 65 32459 -28 68 32459 minecraft:oak_log
-fill -1 67 32459 3 68 32463 minecraft:dark_oak_leaves[persistent=true]
-fill 0 69 32460 2 70 32462 minecraft:dark_oak_leaves[persistent=true]
-fill 1 65 32461 1 68 32461 minecraft:dark_oak_log
-fill 12 67 32421 16 68 32425 minecraft:birch_leaves[persistent=true]
-fill 13 69 32422 15 70 32424 minecraft:birch_leaves[persistent=true]
-fill 14 65 32423 14 68 32423 minecraft:birch_log
-fill 0 69 32424 4 70 32428 minecraft:oak_leaves[persistent=true]
-fill 1 71 32425 3 72 32427 minecraft:oak_leaves[persistent=true]
-fill 2 65 32426 2 70 32426 minecraft:oak_log
-fill 5 68 32432 9 69 32436 minecraft:dark_oak_leaves[persistent=true]
-fill 6 70 32433 8 71 32435 minecraft:dark_oak_leaves[persistent=true]
-fill 7 65 32434 7 69 32434 minecraft:dark_oak_log
-fill -28 69 32426 -24 70 32430 minecraft:oak_leaves[persistent=true]
-fill -27 71 32427 -25 72 32429 minecraft:oak_leaves[persistent=true]
-fill -26 65 32428 -26 70 32428 minecraft:oak_log
-fill -8 68 32455 -4 69 32459 minecraft:oak_leaves[persistent=true]
-fill -7 70 32456 -5 71 32458 minecraft:oak_leaves[persistent=true]
-fill -6 65 32457 -6 69 32457 minecraft:oak_log
-fill 6 68 32430 10 69 32434 minecraft:oak_leaves[persistent=true]
-fill 7 70 32431 9 71 32433 minecraft:oak_leaves[persistent=true]
-fill 8 65 32432 8 69 32432 minecraft:oak_log
-fill -18 68 32451 -14 69 32455 minecraft:dark_oak_leaves[persistent=true]
-fill -17 70 32452 -15 71 32454 minecraft:dark_oak_leaves[persistent=true]
-fill -16 65 32453 -16 69 32453 minecraft:dark_oak_log
-fill -24 67 32422 -20 68 32426 minecraft:oak_leaves[persistent=true]
-fill -23 69 32423 -21 70 32425 minecraft:oak_leaves[persistent=true]
-fill -22 65 32424 -22 68 32424 minecraft:oak_log
-fill -4 67 32454 0 68 32458 minecraft:birch_leaves[persistent=true]
-fill -3 69 32455 -1 70 32457 minecraft:birch_leaves[persistent=true]
-fill -2 65 32456 -2 68 32456 minecraft:birch_log
-fill 0 69 32450 4 70 32454 minecraft:oak_leaves[persistent=true]
-fill 1 71 32451 3 72 32453 minecraft:oak_leaves[persistent=true]
-fill 2 65 32452 2 70 32452 minecraft:oak_log
-fill -1 69 32459 3 70 32463 minecraft:dark_oak_leaves[persistent=true]
-fill 0 71 32460 2 72 32462 minecraft:dark_oak_leaves[persistent=true]
-fill 1 65 32461 1 70 32461 minecraft:dark_oak_log
-fill -4 67 32451 0 68 32455 minecraft:oak_leaves[persistent=true]
-fill -3 69 32452 -1 70 32454 minecraft:oak_leaves[persistent=true]
-fill -2 65 32453 -2 68 32453 minecraft:oak_log
-fill -31 67 32421 -27 68 32425 minecraft:birch_leaves[persistent=true]
-fill -30 69 32422 -28 70 32424 minecraft:birch_leaves[persistent=true]
-fill -29 65 32423 -29 68 32423 minecraft:birch_log
-fill -2 68 32421 2 69 32425 minecraft:dark_oak_leaves[persistent=true]
-fill -1 70 32422 1 71 32424 minecraft:dark_oak_leaves[persistent=true]
-fill 0 65 32423 0 69 32423 minecraft:dark_oak_log
-fill -24 69 32428 -20 70 32432 minecraft:oak_leaves[persistent=true]
-fill -23 71 32429 -21 72 32431 minecraft:oak_leaves[persistent=true]
-fill -22 65 32430 -22 70 32430 minecraft:oak_log
-fill -2 68 32428 2 69 32432 minecraft:dark_oak_leaves[persistent=true]
-fill -1 70 32429 1 71 32431 minecraft:dark_oak_leaves[persistent=true]
-fill 0 65 32430 0 69 32430 minecraft:dark_oak_log
-fill 3 69 32445 7 70 32449 minecraft:dark_oak_leaves[persistent=true]
-fill 4 71 32446 6 72 32448 minecraft:dark_oak_leaves[persistent=true]
-fill 5 65 32447 5 70 32447 minecraft:dark_oak_log
-fill -6 69 32458 -2 70 32462 minecraft:oak_leaves[persistent=true]
-fill -5 71 32459 -3 72 32461 minecraft:oak_leaves[persistent=true]
-fill -4 65 32460 -4 70 32460 minecraft:oak_log
-fill -28 68 32423 -24 69 32427 minecraft:dark_oak_leaves[persistent=true]
-fill -27 70 32424 -25 71 32426 minecraft:dark_oak_leaves[persistent=true]
+# Ville du Bombardier, étape 69/79 (généré par tools/arcade/gen_bomber.py)
+fill -3 107 32338 -2 107 32338 minecraft:iron_block
+setblock -2 122 32377 minecraft:lightning_rod
+fill -2 126 32377 -2 129 32377 minecraft:lightning_rod
+fill -4 101 32385 -4 102 32385 minecraft:stripped_spruce_log
+fill -2 101 32385 -2 102 32385 minecraft:stripped_spruce_log
+fill -4 101 32387 -4 102 32387 minecraft:stripped_spruce_log
+fill -2 101 32387 -2 102 32387 minecraft:stripped_spruce_log
+fill -4 103 32385 -2 105 32387 minecraft:spruce_planks
+fill -3 103 32385 -3 105 32385 minecraft:stripped_spruce_wood
+setblock -3 106 32386 minecraft:spruce_slab
+fill -4 106 32385 -2 106 32385 minecraft:spruce_slab
+fill -4 106 32387 -2 106 32387 minecraft:spruce_slab
+fill 11 92 32377 12 92 32377 minecraft:iron_block
+setblock 9 106 32386 minecraft:lightning_rod
+fill 12 106 32387 13 106 32387 minecraft:iron_block
+fill 2 93 32408 5 95 32411 minecraft:light_gray_concrete
+setblock 4 96 32410 minecraft:lightning_rod
+fill 12 93 32410 13 93 32410 minecraft:iron_block
+fill -2 77 32481 -1 77 32481 minecraft:iron_block
+setblock 36 97 32315 minecraft:lightning_rod
+fill 30 110 32352 33 112 32355 minecraft:light_gray_concrete
+setblock 32 113 32354 minecraft:lightning_rod
+fill 35 110 32355 36 110 32355 minecraft:iron_block
+fill 33 94 32361 34 94 32361 minecraft:iron_block
+setblock 43 107 32353 minecraft:lightning_rod
+fill 41 107 32355 42 107 32355 minecraft:iron_block
+fill 41 102 32359 44 104 32362 minecraft:light_gray_concrete
+setblock 43 105 32361 minecraft:lightning_rod
+fill 30 103 32379 30 104 32379 minecraft:stripped_spruce_log
+fill 32 103 32379 32 104 32379 minecraft:stripped_spruce_log
+fill 30 103 32381 30 104 32381 minecraft:stripped_spruce_log
+fill 32 103 32381 32 104 32381 minecraft:stripped_spruce_log
+fill 30 105 32379 32 107 32381 minecraft:spruce_planks
+fill 31 105 32379 31 107 32379 minecraft:stripped_spruce_wood
+setblock 31 108 32380 minecraft:spruce_slab
+fill 30 108 32379 32 108 32379 minecraft:spruce_slab
+fill 30 108 32381 32 108 32381 minecraft:spruce_slab
+fill 39 94 32382 39 95 32382 minecraft:stripped_spruce_log
+fill 41 94 32382 41 95 32382 minecraft:stripped_spruce_log
+fill 39 94 32384 39 95 32384 minecraft:stripped_spruce_log
+fill 41 94 32384 41 95 32384 minecraft:stripped_spruce_log
+fill 39 96 32382 41 98 32384 minecraft:spruce_planks
+fill 40 96 32382 40 98 32382 minecraft:stripped_spruce_wood
+setblock 40 99 32383 minecraft:spruce_slab
+fill 39 99 32382 41 99 32382 minecraft:spruce_slab
+fill 39 99 32384 41 99 32384 minecraft:spruce_slab
+fill 40 94 32379 41 94 32379 minecraft:iron_block
+fill 29 92 32400 32 94 32403 minecraft:light_gray_concrete
+setblock 31 95 32402 minecraft:lightning_rod
+fill 29 92 32401 30 92 32401 minecraft:iron_block
+fill 28 87 32412 29 87 32412 minecraft:iron_block
+setblock 42 118 32401 minecraft:lightning_rod
+fill 42 122 32401 42 125 32401 minecraft:lightning_rod
+fill 40 117 32407 43 119 32410 minecraft:light_gray_concrete
+setblock 42 120 32409 minecraft:lightning_rod
+fill 42 121 32409 42 124 32409 minecraft:lightning_rod
+fill 44 117 32409 45 117 32409 minecraft:iron_block
+fill 27 79 32426 27 80 32426 minecraft:stripped_spruce_log
+fill 29 79 32426 29 80 32426 minecraft:stripped_spruce_log
+fill 27 79 32428 27 80 32428 minecraft:stripped_spruce_log
+fill 29 79 32428 29 80 32428 minecraft:stripped_spruce_log
+fill 27 81 32426 29 83 32428 minecraft:spruce_planks
+fill 28 81 32426 28 83 32426 minecraft:stripped_spruce_wood

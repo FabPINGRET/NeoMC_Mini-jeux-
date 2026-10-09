@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 2/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 2/79 (généré par tools/arcade/gen_bomber.py)
 fill -86 65 32356 -82 86 32356 minecraft:terracotta
 fill -86 65 32351 -86 86 32356 minecraft:terracotta
 fill -82 65 32351 -82 86 32356 minecraft:terracotta

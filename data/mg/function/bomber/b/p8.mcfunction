@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 8/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 8/79 (généré par tools/arcade/gen_bomber.py)
 fill -70 93 32336 -58 93 32341 minecraft:white_terracotta
 fill -70 65 32336 -58 65 32341 minecraft:white_terracotta
 fill -70 95 32336 -58 95 32341 minecraft:white_terracotta

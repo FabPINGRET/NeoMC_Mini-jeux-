@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 40/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 40/79 (généré par tools/arcade/gen_bomber.py)
 fill 4 142 32358 4 143 32358 minecraft:gold_block
 fill 4 144 32358 4 154 32358 minecraft:lightning_rod
 fill -6 65 32375 2 121 32375 minecraft:iron_block

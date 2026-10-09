@@ -1,6 +1,6 @@
 # Départ
 scoreboard players set $btt mg.st 0
-execute unless score $bbs mg.st matches 120.. run function mg:bomber/build_rest
+execute unless score $bbs mg.st matches 119.. run function mg:bomber/build_rest
 execute as @a[tag=mg.play] run function mg:bomber/kit
 scoreboard players reset @a mg.qs
 scoreboard objectives setdisplay sidebar mg.bmb

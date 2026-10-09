@@ -1,0 +1,56 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_star.png",
+      "ascent": 9,
+      "height": 11,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_star_empty.png",
+      "ascent": 9,
+      "height": 11,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "space",
+      "advances": {
+        "": 1,
+        " ": 4
+      }
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_reticle.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_reticle_red.png",
+      "ascent": 1,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_scope.png",
+      "ascent": 29,
+      "height": 64,
+      "chars": [
+        ""
+      ]
+    }
+  ]
+}

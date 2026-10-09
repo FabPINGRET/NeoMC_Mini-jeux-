@@ -13,6 +13,7 @@ scoreboard players enable @a mg.tel
 scoreboard players enable @a mg.pl
 scoreboard players enable @a mg.dice
 scoreboard players enable @a mg.xs
+function mg:gta/pre_tick
 function mg:survie/tick
 execute as @a[scores={mg.dice=5..10}] run function mg:party/menu_cmd
 execute as @a[scores={mg.dice=3}] unless score $game mg.st matches 59 run function mg:party/menu_nomap
@@ -85,6 +86,8 @@ execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,gamemode
 
 # Kart libre du spawn
 execute if score $setup mg.st matches 1 run function mg:lobkart/tick
+# Neo City (monde GTA) : portail du lobby et session
+function mg:gta/lobby_tick
 
 # Parkour du lobby
 execute if score $setup mg.st matches 1 run function mg:parkour/tick

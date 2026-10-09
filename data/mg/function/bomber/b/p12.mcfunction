@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 12/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 12/79 (généré par tools/arcade/gen_bomber.py)
 fill -70 117 32375 -61 117 32381 minecraft:gray_concrete
 fill -70 65 32375 -61 65 32381 minecraft:gray_concrete
 fill -70 118 32375 -61 118 32381 minecraft:gray_concrete

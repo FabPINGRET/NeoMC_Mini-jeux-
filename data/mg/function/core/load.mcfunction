@@ -4,6 +4,12 @@
 scoreboard objectives add mg.st dummy
 # Modèles du resource pack activés par défaut (/function mg:rp_off pour les couper)
 execute unless score $rp mg.st matches 0..1 run scoreboard players set $rp mg.st 1
+# Neo City (monde GTA) : construite une fois (dimension mg:gta, 2 min)
+execute if score $setup mg.st matches 1 unless data storage mg:gta built run schedule function mg:gta/world_build 45s
+scoreboard players set $gtw mg.st 0
+# $rp a été écrasé par rank/xp (il servait de variable temporaire, corrigé) : remis à 1 une seule fois
+execute unless data storage mg:rank rpfix run scoreboard players set $rp mg.st 1
+data modify storage mg:rank rpfix set value 1b
 scoreboard objectives add mg.t dummy
 scoreboard objectives add mg.wins dummy [{"text":"✦ Victoires ✦","color":"gold"}]
 scoreboard objectives add mg.stp dummy
@@ -37,6 +43,25 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.grob dummy
+scoreboard objectives add mg.gsid dummy
+scoreboard objectives add mg.gveh dummy
+scoreboard objectives add mg.gqs minecraft.used:minecraft.warped_fungus_on_a_stick
+scoreboard objectives add mg.gta dummy {"text":"💵 Dollars","color":"green","bold":true}
+scoreboard objectives add mg.gwl dummy {"text":"★ recherché","color":"gold"}
+scoreboard objectives add mg.gwt dummy
+scoreboard objectives add mg.grk dummy
+scoreboard objectives add mg.gpt dummy
+scoreboard objectives add mg.gtl dummy
+scoreboard objectives add mg.gal dummy
+scoreboard objectives add mg.gpc dummy
+scoreboard objectives add mg.gvid dummy
+scoreboard objectives add mg.gpx dummy
+scoreboard objectives add mg.gpz dummy
+scoreboard objectives add mg.gkp playerKillCount
+scoreboard objectives add mg.gkv minecraft.killed:minecraft.villager
+scoreboard objectives add mg.gks minecraft.killed:minecraft.skeleton
+scoreboard objectives add mg.gkw minecraft.killed:minecraft.wither_skeleton
 scoreboard objectives add mg.cvrt dummy
 scoreboard objectives add mg.bmb dummy {"text":"💣 Dégâts","color":"red","bold":true}
 scoreboard objectives add mg.bid dummy

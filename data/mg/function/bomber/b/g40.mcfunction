@@ -19,4 +19,3 @@ fill -88 171 32312 88 176 32312 minecraft:barrier
 fill -88 171 32488 88 176 32488 minecraft:barrier
 fill -88 171 32312 -88 176 32488 minecraft:barrier
 fill 88 171 32312 88 176 32488 minecraft:barrier
-data modify storage mg:bomber v1 set value 1b

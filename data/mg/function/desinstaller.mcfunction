@@ -22,6 +22,41 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+schedule clear mg:gta/wb_step
+schedule clear mg:gta/world_build
+schedule clear mg:gta/session_setup
+execute in mg:gta run forceload remove all
+kill @e[tag=mg.gtap]
+team remove mg_gciv
+data remove storage mg:gta built
+data remove storage mg:gta s
+data remove storage mg:gta unl
+scoreboard objectives remove mg.grob
+scoreboard objectives remove mg.gsid
+scoreboard objectives remove mg.gveh
+scoreboard objectives remove mg.gqs
+bossbar remove mg:gtaw1
+bossbar remove mg:gtaw2
+bossbar remove mg:gtaw3
+bossbar remove mg:gtaw4
+bossbar remove mg:gtaw5
+data remove storage mg:gta d
+data remove storage mg:rank rpfix
+scoreboard objectives remove mg.gta
+scoreboard objectives remove mg.gwl
+scoreboard objectives remove mg.gwt
+scoreboard objectives remove mg.grk
+scoreboard objectives remove mg.gpt
+scoreboard objectives remove mg.gtl
+scoreboard objectives remove mg.gal
+scoreboard objectives remove mg.gpc
+scoreboard objectives remove mg.gvid
+scoreboard objectives remove mg.gpx
+scoreboard objectives remove mg.gpz
+scoreboard objectives remove mg.gkp
+scoreboard objectives remove mg.gkv
+scoreboard objectives remove mg.gks
+scoreboard objectives remove mg.gkw
 schedule clear mg:zmode3/prepare_b
 forceload remove -17 36061 39 36117
 schedule clear mg:zmode2/prepare_b

@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 55/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 55/79 (généré par tools/arcade/gen_bomber.py)
 fill 26 73 32432 34 73 32437 minecraft:calcite
 fill 26 77 32432 34 77 32437 minecraft:calcite
 fill 26 81 32432 34 81 32437 minecraft:calcite

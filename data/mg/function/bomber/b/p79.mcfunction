@@ -1,25 +1,4 @@
-# Ville du Bombardier, étape 79/80 (généré par tools/arcade/gen_bomber.py)
-fill 66 71 32367 66 80 32367 minecraft:iron_chain
-setblock 67 83 32367 minecraft:iron_chain
-setblock 68 85 32367 minecraft:iron_chain
-fill 68 71 32367 68 84 32367 minecraft:iron_chain
-setblock 69 88 32367 minecraft:iron_chain
-setblock 73 80 32367 minecraft:iron_chain
-setblock 74 76 32367 minecraft:iron_chain
-fill 74 71 32367 74 75 32367 minecraft:iron_chain
-setblock 75 73 32367 minecraft:iron_chain
-setblock 76 72 32367 minecraft:iron_chain
-setblock 76 71 32367 minecraft:iron_chain
-setblock 77 71 32367 minecraft:iron_chain
-setblock 78 72 32367 minecraft:iron_chain
-setblock 78 71 32367 minecraft:iron_chain
-setblock 79 73 32367 minecraft:iron_chain
-setblock 80 76 32367 minecraft:iron_chain
-fill 80 71 32367 80 75 32367 minecraft:iron_chain
-setblock 81 80 32367 minecraft:iron_chain
-setblock 85 88 32367 minecraft:iron_chain
-setblock 86 85 32367 minecraft:iron_chain
-fill 86 71 32367 86 84 32367 minecraft:iron_chain
+# Ville du Bombardier, étape 79/79 (généré par tools/arcade/gen_bomber.py)
 setblock 87 83 32367 minecraft:iron_chain
 setblock 88 81 32367 minecraft:iron_chain
 fill 88 71 32367 88 80 32367 minecraft:iron_chain
@@ -62,3 +41,9 @@ fill 76 73 32327 80 76 32329 minecraft:oxidized_cut_copper
 fill 78 83 32328 78 85 32328 minecraft:oxidized_copper
 fill 77 84 32328 79 84 32328 minecraft:oxidized_copper
 setblock 77 86 32328 minecraft:oxidized_cut_copper
+setblock 79 86 32328 minecraft:oxidized_cut_copper
+setblock 78 86 32327 minecraft:oxidized_cut_copper
+setblock 78 86 32329 minecraft:oxidized_cut_copper
+fill 80 80 32328 80 88 32328 minecraft:oxidized_copper
+fill 80 89 32328 80 90 32328 minecraft:gold_block
+fill 76 79 32328 76 81 32328 minecraft:oxidized_cut_copper

@@ -1,25 +1,4 @@
-# Ville du Bombardier, étape 76/80 (généré par tools/arcade/gen_bomber.py)
-fill 16 65 32325 16 67 32325 minecraft:iron_bars
-setblock 16 68 32325 minecraft:lantern
-fill -8 65 32343 -8 67 32343 minecraft:iron_bars
-setblock -8 68 32343 minecraft:lantern
-fill 16 65 32343 16 67 32343 minecraft:iron_bars
-setblock 16 68 32343 minecraft:lantern
-fill -8 65 32349 -8 67 32349 minecraft:iron_bars
-setblock -8 68 32349 minecraft:lantern
-fill 16 65 32349 16 67 32349 minecraft:iron_bars
-setblock 16 68 32349 minecraft:lantern
-fill -8 65 32367 -8 67 32367 minecraft:iron_bars
-setblock -8 68 32367 minecraft:lantern
-fill 16 65 32367 16 67 32367 minecraft:iron_bars
-setblock 16 68 32367 minecraft:lantern
-fill -8 65 32373 -8 67 32373 minecraft:iron_bars
-setblock -8 68 32373 minecraft:lantern
-fill 16 65 32373 16 67 32373 minecraft:iron_bars
-setblock 16 68 32373 minecraft:lantern
-fill -8 65 32391 -8 67 32391 minecraft:iron_bars
-setblock -8 68 32391 minecraft:lantern
-fill 16 65 32391 16 67 32391 minecraft:iron_bars
+# Ville du Bombardier, étape 76/79 (généré par tools/arcade/gen_bomber.py)
 setblock 16 68 32391 minecraft:lantern
 fill -8 65 32397 -8 67 32397 minecraft:iron_bars
 setblock -8 68 32397 minecraft:lantern
@@ -62,3 +41,24 @@ setblock 24 68 32367 minecraft:lantern
 fill 48 65 32367 48 67 32367 minecraft:iron_bars
 setblock 48 68 32367 minecraft:lantern
 fill 24 65 32373 24 67 32373 minecraft:iron_bars
+setblock 24 68 32373 minecraft:lantern
+fill 48 65 32373 48 67 32373 minecraft:iron_bars
+setblock 48 68 32373 minecraft:lantern
+fill 24 65 32391 24 67 32391 minecraft:iron_bars
+setblock 24 68 32391 minecraft:lantern
+fill 48 65 32391 48 67 32391 minecraft:iron_bars
+setblock 48 68 32391 minecraft:lantern
+fill 24 65 32397 24 67 32397 minecraft:iron_bars
+setblock 24 68 32397 minecraft:lantern
+fill 48 65 32397 48 67 32397 minecraft:iron_bars
+setblock 48 68 32397 minecraft:lantern
+fill 24 65 32415 24 67 32415 minecraft:iron_bars
+setblock 24 68 32415 minecraft:lantern
+fill 48 65 32415 48 67 32415 minecraft:iron_bars
+setblock 48 68 32415 minecraft:lantern
+fill 24 65 32421 24 67 32421 minecraft:iron_bars
+setblock 24 68 32421 minecraft:lantern
+fill 48 65 32421 48 67 32421 minecraft:iron_bars
+setblock 48 68 32421 minecraft:lantern
+fill 24 65 32439 24 67 32439 minecraft:iron_bars
+setblock 24 68 32439 minecraft:lantern

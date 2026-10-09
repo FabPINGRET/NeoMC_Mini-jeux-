@@ -1,0 +1,19 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "mg:font/gta_cash.png",
+      "ascent": 10,
+      "height": 12,
+      "chars": [
+        "0123456789$"
+      ]
+    },
+    {
+      "type": "space",
+      "advances": {
+        " ": 5
+      }
+    }
+  ]
+}

@@ -1,25 +1,4 @@
-# Ville du Bombardier, étape 78/80 (généré par tools/arcade/gen_bomber.py)
-fill 56 65 32373 56 67 32373 minecraft:iron_bars
-setblock 56 68 32373 minecraft:lantern
-fill 64 65 32373 64 67 32373 minecraft:iron_bars
-setblock 64 68 32373 minecraft:lantern
-fill 56 65 32391 56 67 32391 minecraft:iron_bars
-setblock 56 68 32391 minecraft:lantern
-fill 64 65 32391 64 67 32391 minecraft:iron_bars
-setblock 64 68 32391 minecraft:lantern
-fill 56 65 32397 56 67 32397 minecraft:iron_bars
-setblock 56 68 32397 minecraft:lantern
-fill 64 65 32397 64 67 32397 minecraft:iron_bars
-setblock 64 68 32397 minecraft:lantern
-fill 56 65 32415 56 67 32415 minecraft:iron_bars
-setblock 56 68 32415 minecraft:lantern
-fill 64 65 32415 64 67 32415 minecraft:iron_bars
-setblock 64 68 32415 minecraft:lantern
-fill 56 65 32421 56 67 32421 minecraft:iron_bars
-setblock 56 68 32421 minecraft:lantern
-fill 64 65 32421 64 67 32421 minecraft:iron_bars
-setblock 64 68 32421 minecraft:lantern
-fill 56 65 32439 56 67 32439 minecraft:iron_bars
+# Ville du Bombardier, étape 78/79 (généré par tools/arcade/gen_bomber.py)
 setblock 56 68 32439 minecraft:lantern
 fill 64 65 32439 64 67 32439 minecraft:iron_bars
 setblock 64 68 32439 minecraft:lantern
@@ -62,3 +41,24 @@ setblock 64 77 32367 minecraft:iron_chain
 fill 64 71 32367 64 76 32367 minecraft:iron_chain
 setblock 65 79 32367 minecraft:iron_chain
 setblock 66 81 32367 minecraft:iron_chain
+fill 66 71 32367 66 80 32367 minecraft:iron_chain
+setblock 67 83 32367 minecraft:iron_chain
+setblock 68 85 32367 minecraft:iron_chain
+fill 68 71 32367 68 84 32367 minecraft:iron_chain
+setblock 69 88 32367 minecraft:iron_chain
+setblock 73 80 32367 minecraft:iron_chain
+setblock 74 76 32367 minecraft:iron_chain
+fill 74 71 32367 74 75 32367 minecraft:iron_chain
+setblock 75 73 32367 minecraft:iron_chain
+setblock 76 72 32367 minecraft:iron_chain
+setblock 76 71 32367 minecraft:iron_chain
+setblock 77 71 32367 minecraft:iron_chain
+setblock 78 72 32367 minecraft:iron_chain
+setblock 78 71 32367 minecraft:iron_chain
+setblock 79 73 32367 minecraft:iron_chain
+setblock 80 76 32367 minecraft:iron_chain
+fill 80 71 32367 80 75 32367 minecraft:iron_chain
+setblock 81 80 32367 minecraft:iron_chain
+setblock 85 88 32367 minecraft:iron_chain
+setblock 86 85 32367 minecraft:iron_chain
+fill 86 71 32367 86 84 32367 minecraft:iron_chain

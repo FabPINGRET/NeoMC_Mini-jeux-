@@ -1,4 +1,5 @@
 # Retour au lobby des mini-jeux (@s) : tout est sauvegardé, puis remise à zéro façon lobby
+execute if entity @s[tag=mg.gtw] run return run function mg:gta/leave
 execute unless entity @s[tag=mg.surv] run return run tellraw @s [{"text":"Tu n'es pas en survie.","color":"gray"}]
 execute store result storage mg:survie id.id int 1 run scoreboard players get @s mg.svid
 execute store result storage mg:survie id.x int 1 run scoreboard players get @s mg.svvx

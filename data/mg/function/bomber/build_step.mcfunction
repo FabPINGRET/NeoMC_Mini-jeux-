@@ -40,6 +40,7 @@ execute if score $bbs mg.st matches 37 run function mg:bomber/b/g37
 execute if score $bbs mg.st matches 38 run function mg:bomber/b/g38
 execute if score $bbs mg.st matches 39 run function mg:bomber/b/g39
 execute if score $bbs mg.st matches 40 run function mg:bomber/b/g40
+execute if score $bbs mg.st matches 40 run data modify storage mg:bomber v1 set value 1b
 execute if score $bbs mg.st matches 41 run function mg:bomber/b/p1
 execute if score $bbs mg.st matches 42 run function mg:bomber/b/p2
 execute if score $bbs mg.st matches 43 run function mg:bomber/b/p3
@@ -119,5 +120,4 @@ execute if score $bbs mg.st matches 116 run function mg:bomber/b/p76
 execute if score $bbs mg.st matches 117 run function mg:bomber/b/p77
 execute if score $bbs mg.st matches 118 run function mg:bomber/b/p78
 execute if score $bbs mg.st matches 119 run function mg:bomber/b/p79
-execute if score $bbs mg.st matches 120 run function mg:bomber/b/p80
-execute if score $bbs mg.st matches ..119 run schedule function mg:bomber/build_step 1t
+execute if score $bbs mg.st matches ..118 run schedule function mg:bomber/build_step 1t

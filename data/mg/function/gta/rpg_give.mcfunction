@@ -1,0 +1,5 @@
+# @s : lance-roquettes (+5 roquettes, 15 au plus)
+execute if score $rp mg.st matches 1 run item replace entity @s hotbar.4 with minecraft:warped_fungus_on_a_stick[custom_data={rpg:1b},unbreakable={},custom_name={"text":"🚀 Lance-roquettes","color":"red","bold":true,"italic":false},lore=[{"text":"Clic droit : tirer une roquette","color":"gray","italic":false},{"text":"Roquettes : à l'armurerie (+5)","color":"dark_gray","italic":false}],item_model="mg:gun_rpg"]
+execute unless score $rp mg.st matches 1 run item replace entity @s hotbar.4 with minecraft:warped_fungus_on_a_stick[custom_data={rpg:1b},unbreakable={},custom_name={"text":"🚀 Lance-roquettes","color":"red","bold":true,"italic":false},lore=[{"text":"Clic droit : tirer une roquette","color":"gray","italic":false},{"text":"Roquettes : à l'armurerie (+5)","color":"dark_gray","italic":false}],item_model="minecraft:crossbow"]
+scoreboard players add @s mg.grk 5
+execute if score @s mg.grk matches 16.. run scoreboard players set @s mg.grk 15

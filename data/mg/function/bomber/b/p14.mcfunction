@@ -1,4 +1,4 @@
-# Ville du Bombardier, étape 14/80 (généré par tools/arcade/gen_bomber.py)
+# Ville du Bombardier, étape 14/79 (généré par tools/arcade/gen_bomber.py)
 fill -70 73 32399 -50 73 32405 minecraft:iron_block
 fill -70 77 32399 -50 77 32405 minecraft:iron_block
 fill -70 81 32399 -50 81 32405 minecraft:iron_block
