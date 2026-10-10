@@ -1,0 +1,13 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "mg:font/lab_blind.png",
+      "ascent": 77,
+      "height": 160,
+      "chars": [
+        ""
+      ]
+    }
+  ]
+}

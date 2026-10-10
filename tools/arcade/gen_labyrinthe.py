@@ -4,9 +4,9 @@
 
 - Les joueurs sont mis par paires au hasard (nombre impair : le dernier devient 2ᵉ guide d'une paire ; 8 paires max,
   les suivants deviennent guides en plus). Chaque paire a sa copie du même labyrinthe (couloirs de 8 en x, z 38200).
-- Marcheur : aveuglement, pas de saut par-dessus les murs (plafond invisible). Guide : sur une dalle invisible 8 blocs
+- Marcheur : écran noir (petit trou au centre, resource pack) + aveuglement + obscurité, pas de saut par-dessus les murs (plafond invisible). Guide : sur une dalle invisible 8 blocs
   au-dessus, vision nocturne, enfermé au-dessus de son labyrinthe : il parle (vocal) pour guider.
-- 3 labyrinthes 10×10 (couloirs de 2) tirés au hasard à chaque partie ; entrée au nord-ouest, sortie (or) au sud-est.
+- 3 labyrinthes 18×18 (couloirs de 1, beaucoup d'impasses) tirés au hasard ; entrée au nord-ouest, sortie (or) au sud-est.
 - Premier marcheur sur l'or : sa paire gagne (marcheur + guide crédités). 4 min max, sinon match nul.
 - Seul : entraînement (aveugle, sans guide), fin au temps ou à la sortie, match nul.
 """
@@ -18,43 +18,35 @@ C.init(sys.argv[1] if len(sys.argv) > 1 else '.')
 w, js = C.w, C.js
 GID = 225
 Z = C.param('Z', 38200)
-N = 10                     # cellules par côté
-S = 3 * N + 1              # 31 blocs
+N = 18                     # cellules par côté (couloirs de 1)
+S = 2 * N + 1              # 37 blocs
 LANES = 8
-DX = 36                    # écart entre les couloirs
+DX = 42                    # écart entre les couloirs
 LIMIT = 4800
-GY = 8                     # hauteur de la dalle du guide au-dessus du sol (relative)
+GY = 12                    # hauteur de la dalle du guide au-dessus du sol (relative)
 
 
 def maze(seed):
+    """Labyrinthe parfait N×N, couloirs de 1 : arbre croissant (70 % dernier ajouté, 30 % au hasard) → long chemin + impasses."""
     r = random.Random(seed)
     wall = [[True] * S for _ in range(S)]
     for i in range(N):
         for j in range(N):
-            for a in (0, 1):
-                for b in (0, 1):
-                    wall[1 + 3 * i + a][1 + 3 * j + b] = False
+            wall[1 + 2 * i][1 + 2 * j] = False
     seen = {(0, 0)}
-    stack = [(0, 0)]
-    while stack:
-        i, j = stack[-1]
+    live = [(0, 0)]
+    while live:
+        k = len(live) - 1 if r.random() < 0.7 else r.randrange(len(live))
+        i, j = live[k]
         nb = [(i + di, j + dj, di, dj) for di, dj in ((1, 0), (-1, 0), (0, 1), (0, -1))
               if 0 <= i + di < N and 0 <= j + dj < N and (i + di, j + dj) not in seen]
         if not nb:
-            stack.pop()
+            live.pop(k)
             continue
         ni, nj, di, dj = r.choice(nb)
-        # ouvre le mur entre (i, j) et (ni, nj) sur 2 blocs
-        if di:
-            x = 3 * max(i, ni)
-            for b in (0, 1):
-                wall[x][1 + 3 * j + b] = False
-        else:
-            z = 3 * max(j, nj)
-            for a in (0, 1):
-                wall[1 + 3 * i + a][z] = False
+        wall[1 + 2 * i + di][1 + 2 * j + dj] = False
         seen.add((ni, nj))
-        stack.append((ni, nj))
+        live.append((ni, nj))
     return wall
 
 
@@ -78,8 +70,8 @@ MAZES = [maze(s) for s in (2511, 7302, 9148)]
 for k, m in enumerate(MAZES):
     w(f'lab/maze_{k}', [f'# Labyrinthe {k} (relatif : coin nord-ouest au sol)', f'fill ~ ~ ~ ~{S - 1} ~2 ~{S - 1} minecraft:air'] + fills(m) +
       [f'fill ~ ~2 ~ ~{S - 1} ~2 ~{S - 1} minecraft:deepslate_tiles replace minecraft:polished_deepslate',
-       f'fill ~{S - 3} ~-1 ~{S - 3} ~{S - 2} ~-1 ~{S - 2} minecraft:gold_block',
-       'fill ~1 ~-1 ~1 ~2 ~-1 ~2 minecraft:lime_concrete'])
+       f'setblock ~{S - 2} ~-1 ~{S - 2} minecraft:gold_block',
+       'setblock ~1 ~-1 ~1 minecraft:lime_concrete'])
 w('lab/lane', ['# Un couloir (relatif : coin nord-ouest au sol) : sol, plafond invisible, dalle et cage du guide',
                f'fill ~-2 ~-1 ~-2 ~{S + 1} ~{GY + 6} ~{S + 1} minecraft:air',
                f'fill ~ ~-1 ~ ~{S - 1} ~-1 ~{S - 1} minecraft:smooth_sandstone',
@@ -89,6 +81,9 @@ w('lab/lane', ['# Un couloir (relatif : coin nord-ouest au sol) : sol, plafond i
                f'fill ~-1 ~{GY + 1} ~-1 ~-1 ~{GY + 5} ~{S} minecraft:barrier', f'fill ~{S} ~{GY + 1} ~-1 ~{S} ~{GY + 5} ~{S} minecraft:barrier',
                f'fill ~-1 ~{GY + 6} ~-1 ~{S} ~{GY + 6} ~{S} minecraft:barrier'])
 B = ['# 🙈 Labyrinthe aveugle : 8 couloirs, labyrinthe $lbm (0..2)']
+XMAX = (LANES - 1) * DX + S + 3
+for x0 in range(-3, XMAX + 1, 32):          # zone entière vidée (aussi les restes d'anciennes versions)
+    B.append(f'fill {x0} 62 {Z - 3} {min(x0 + 31, XMAX)} 84 {Z + S + 3} minecraft:air')
 for k in range(LANES):
     B += [f'execute positioned {k * DX} 64 {Z} run function mg:lab/lane']
     for m in range(len(MAZES)):
@@ -124,7 +119,7 @@ lines = ['# @s : dans son couloir (marcheur à l\'entrée, guide sur sa dalle), 
 for k in range(LANES):
     ox = k * DX
     col = COLORS[k]
-    lines += [f'execute if score @s mg.lbp matches {k + 1} if entity @s[tag=mg.lbw] run tp @s {ox + 2}.0 64 {Z + 2}.0 -45 10',
+    lines += [f'execute if score @s mg.lbp matches {k + 1} if entity @s[tag=mg.lbw] run tp @s {ox + 1}.5 64 {Z + 1}.5 -45 10',
               f'execute if score @s mg.lbp matches {k + 1} if entity @s[tag=mg.lbg] run tp @s {ox + S // 2}.5 {64 + GY + 1} {Z + S // 2}.5 0 75',
               f'execute if score @s mg.lbp matches {k + 1} run item replace entity @s armor.head with minecraft:leather_helmet[dyed_color={col},unbreakable={{}}]',
               f'execute if score @s mg.lbp matches {k + 1} run item replace entity @s armor.chest with minecraft:leather_chestplate[dyed_color={col},unbreakable={{}}]']
@@ -132,6 +127,7 @@ lines += ['execute at @s run spawnpoint @s ~ ~ ~']
 w('lab/place', lines)
 w('lab/go', ['# Départ', 'scoreboard players set $lbt mg.st 0',
              'effect give @a[tag=mg.lbw] minecraft:blindness infinite 0 true',
+             'effect give @a[tag=mg.lbw] minecraft:darkness infinite 0 true',
              'effect give @a[tag=mg.lbg] minecraft:night_vision infinite 0 true',
              'effect give @a[tag=mg.lbw] minecraft:glowing infinite 0 true',
              f'bossbar add mg:lab {js({"text": "🙈 Labyrinthe aveugle", "color": "light_purple"})}', 'bossbar set mg:lab color purple',
@@ -147,7 +143,13 @@ w('lab/brief_m', ['$title @a[tag=mg.lbw,scores={mg.lbp=$(p)}] title {"text":"�
                   '{"text":"marcheur ","color":"gray"},{"selector":"@a[tag=mg.lbw,scores={mg.lbp=$(p)}]","color":"yellow"},'
                   '{"text":" — guide ","color":"gray"},{"selector":"@a[tag=mg.lbg,scores={mg.lbp=$(p)}]","color":"aqua"},'
                   '{"text":". Le premier marcheur sur le bloc d\'or fait gagner sa paire !","color":"gray"}]'])
+w('lab/blind', ['# Écran noir du marcheur (glyphe du resource pack, renvoyé en titre toutes les secondes ; sans pack : aveuglement seul)',
+                'execute unless score $rp mg.st matches 1 run return 0',
+                'title @a[tag=mg.lbw,tag=mg.play] times 0 30 0',
+                'title @a[tag=mg.lbw,tag=mg.play] title {"text":"\\ue300","font":"mg:lab"}'])
 w('lab/tick', ['# 🙈 Labyrinthe aveugle — tick', 'scoreboard players add $lbt mg.st 1',
+               'scoreboard players operation $q mg.st = $lbt mg.st', 'scoreboard players set #20 mg.st 20', 'scoreboard players operation $q mg.st %= #20 mg.st',
+               'execute if score $q mg.st matches 5 if score $lbt mg.st matches 60.. run function mg:lab/blind',
                'execute store result bossbar mg:lab value run scoreboard players get $lbt mg.st',
                'execute if score $state mg.st matches 2 as @a[tag=mg.lbw,tag=mg.play] at @s if block ~ ~-0.5 ~ minecraft:gold_block run return run function mg:lab/win',
                f'execute if score $state mg.st matches 2 if score $lbt mg.st matches {LIMIT}.. run function mg:lab/timeout'])
@@ -163,11 +165,11 @@ w('lab/timeout', ['tellraw @a[tag=mg.play] {"text":"⏰ Temps écoulé : personn
 w('lab/cleanup', ['bossbar remove mg:lab', 'tag @a remove mg.lbw', 'tag @a remove mg.lbg', 'tag @a remove mg.lbx',
                   'scoreboard players reset * mg.lbp', 'team leave @a[team=mg_sq]',
                   'effect clear @a[tag=mg.play] minecraft:blindness', 'effect clear @a[tag=mg.play] minecraft:night_vision',
-                  'effect clear @a[tag=mg.play] minecraft:glowing'])
+                  'effect clear @a[tag=mg.play] minecraft:glowing', 'effect clear @a[tag=mg.play] minecraft:darkness', 'title @a reset', 'title @a clear'])
 
 C.register([GID], 'lab', [C.announce(GID, '', '🙈 LABYRINTHE AVEUGLE', 'light_purple',
                                      'par paires : le marcheur est aveugle, son guide le dirige d\'en haut !')])
 C.objectives([('mg.lbp', 'dummy')])
 C.patch('desinstaller', 'scoreboard objectives remove mg.bw', ['bossbar remove mg:lab', 'data remove storage mg:lab b'])
-C.forceload([f'# Labyrinthe aveugle (z {Z})', f'forceload add -3 {Z - 3} {(LANES - 1) * DX + S + 2} {Z + S + 2}'])
+C.forceload([f'# Labyrinthe aveugle (z {Z})', f'forceload add -3 {Z - 3} {XMAX} {Z + S + 3}'])
 print('Labyrinthe aveugle OK :', len(MAZES), 'labyrinthes,', LANES, 'couloirs')
