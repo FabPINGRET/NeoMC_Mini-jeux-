@@ -13,3 +13,4 @@ function mg:core/give_menu
 spawnpoint @s 0 64 0
 tp @s 0.5 64 0.5 facing 0.5 64 8.5
 scoreboard players set @s mg.deaths 0
+function mg:core/heal

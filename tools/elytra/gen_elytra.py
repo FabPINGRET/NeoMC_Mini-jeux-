@@ -120,7 +120,7 @@ for c, d in C.items():
         'scoreboard players set #20 mg.st 20', 'scoreboard players set #5 mg.st 5',
         'item replace entity @s armor.chest with minecraft:elytra[minecraft:custom_data={mg_ely:1b},minecraft:unbreakable={},minecraft:enchantments={"minecraft:binding_curse":1},minecraft:custom_name={"text":"Élytres du parcours","color":"aqua","italic":false}]',
         f'give @s minecraft:firework_rocket[minecraft:custom_data={{mg_ely:1b}},minecraft:fireworks={{flight_duration:1}},minecraft:custom_name={{"text":"Fusée du parcours","color":"gold","italic":false}}] {d["rockets"]}',
-        'effect give @s minecraft:resistance 600 4 true',
+        'effect give @s minecraft:resistance 600 4 true', 'function mg:core/heal',
         f'tp @s {d["plat"][0]} {d["plat"][1]} {d["plat"][2]} facing {p0[0]+.5} {p0[1]} {p0[2]+.5}',
         'playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 0.8 1.2',
         f'tellraw @s [{{"text":"🪽 {d["name"]} : ","color":"aqua","bold":true}},{{"text":"saute, plane à travers les {N} anneaux dans l\'ordre (une traînée lumineuse indique le suivant). Le chrono part à l\'ouverture des élytres. {d["rockets"]} fusées.","color":"gray"}}]'])
@@ -203,7 +203,7 @@ st = ['# Fin du parcours (@s) : retour à son socle, protégé à l\'atterrissag
 for c, d in C.items():
     bx, by, bz = d['back']
     st.append(f'execute if score @s mg.ecr matches {c} run tp @s {bx} {by} {bz} facing {d["pad"][0]+.5} {by} {bz-6}')
-st += ['effect give @s minecraft:resistance 3 4 true',
+st += ['effect give @s minecraft:resistance 3 4 true', 'function mg:core/heal',
        'execute if score @s mg.ehw matches 1.. run function mg:lobby/give_wand',
        'scoreboard players set @s mg.ehw 0']
 W('stop', st)

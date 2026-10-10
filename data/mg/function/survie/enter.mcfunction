@@ -29,3 +29,5 @@ attribute @s minecraft:fall_damage_multiplier base set 1
 execute store result storage mg:survie id.id int 1 run scoreboard players get @s mg.svid
 execute store result storage mg:survie id.x int 1 run scoreboard players get @s mg.svvx
 function mg:survie/enter_m with storage mg:survie id
+# Soin complet à l'arrivée en survie
+function mg:core/heal

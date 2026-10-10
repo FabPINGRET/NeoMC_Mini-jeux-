@@ -1125,7 +1125,7 @@ wr('lobkart/enter', ['# @s marche sur le tapis du garage : il monte dans un kart
                      'execute unless score $state mg.st matches 0 run return run tellraw @s [{"text":"⚠ Le kart libre n\'est pas disponible pendant une partie.","color":"red"}]',
                      'execute store result score $lkn mg.st if entity @a[tag=mg.lk]',
                      'execute if score $lkn mg.st matches 12.. run return run tellraw @s [{"text":"⚠ Trop de karts sur le circuit, réessaie dans un instant.","color":"red"}]',
-                     'function mg:parkour/quit', 'clear @s', 'effect clear @s', 'function mg:lobkart/consts',
+                     'function mg:parkour/quit', 'clear @s', 'effect clear @s', 'function mg:core/heal', 'function mg:lobkart/consts',
                      'tag @s remove mg.kfin', 'tag @s remove mg.kout', 'tag @s remove mg.kok',
                      'scoreboard players add $lri mg.st 1', 'execute unless score $lri mg.st matches 100..999 run scoreboard players set $lri mg.st 100',
                      'scoreboard players operation @s mg.ri = $lri mg.st'] +
@@ -1149,7 +1149,7 @@ wr('lobkart/leave', ['# @s quitte le circuit du spawn sans être ramené au gara
 wr('lobkart/exit', ['# @s descend du kart : retour au garage',
                     'execute unless entity @s[tag=mg.lk] run return 0',
                     'function mg:lobkart/remove', 'tag @s add mg.lkz',
-                    f'tp @s 0.5 64 {KPAD[1] - 2.5} 180 0', 'function mg:core/give_menu',
+                    f'tp @s 0.5 64 {KPAD[1] - 2.5} 180 0', 'function mg:core/give_menu', 'function mg:core/heal',
                     'title @s actionbar [{"text":"🏎 Kart rangé. À bientôt sur le circuit !","color":"gold"}]'])
 wr('lobkart/stop_all', ['# Une partie commence : karts du spawn rangés (participant déjà sorti par core/request, filet de sécurité : sur place ; les autres : au garage)',
                         'execute as @a[tag=mg.lk,tag=mg.play] run function mg:lobkart/leave', 'execute as @a[tag=mg.lk] run function mg:lobkart/exit'])

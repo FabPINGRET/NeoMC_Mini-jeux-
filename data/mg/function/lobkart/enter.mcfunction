@@ -6,6 +6,7 @@ execute if score $lkn mg.st matches 12.. run return run tellraw @s [{"text":"⚠
 function mg:parkour/quit
 clear @s
 effect clear @s
+function mg:core/heal
 function mg:lobkart/consts
 tag @s remove mg.kfin
 tag @s remove mg.kout
