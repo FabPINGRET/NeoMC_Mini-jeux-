@@ -83,7 +83,27 @@ for c, d in C.items():
         label = f'{i}' if i < N else '🏁'
         b.append(f'summon minecraft:text_display {x+.5} {y+4.2} {z+.5} {{Tags:["mg.elyd"],billboard:"center",background:0,text:[{{"text":"{label}","color":"white","bold":true}}],{DISP % (2, 2, 2)}}}')
 b += ['', '# ===== Élytres libres'] + pad(FREE, 'white_concrete', '🪽 Élytres libres', 'Vol autour du spawn, fusées illimitées — remonte dessus pour les rendre', 'white')
+b += ['function mg:elytra/spawn_clean']
 W('build', b)
+# Abords des socles au spawn (avenue du parkour) : haie/banc/lampadaire de la bordure retirés, arbres qui masquaient les socles
+# enlevés, allées pavées avenue → petit parcours → élytres libres, et avenue → grand parcours (une fois : témoin mg:lobby elyclean)
+SC = ['# Accès dégagés aux socles d\'élytra depuis l\'avenue du parkour (généré par tools/elytra/gen_elytra.py)']
+for (x1, z1, x2, z2) in ((12, -19, 22, -11), (28, -13, 37, -5)):        # arbres entre l'avenue et les socles
+    SC += [f'fill {x1} 64 {z1} {x2} 78 {z2} minecraft:air replace #minecraft:leaves', f'fill {x1} 64 {z1} {x2} 78 {z2} minecraft:air replace #minecraft:logs']
+for (x1, z1, x2, z2) in ((13, -4, 19, -4), (29, -4, 35, -4)):          # bordure de l'avenue face aux socles
+    SC.append(f'fill {x1} 64 {z1} {x2} 72 {z2} minecraft:air')
+for (x1, z1, x2, z2) in ((14, -6, 18, -4), (15, -18, 17, -12), (30, -12, 34, -4)):   # allées
+    SC += [f'fill {x1} 64 {z1} {x2} 70 {z2} minecraft:air', f'fill {x1} 63 {z1} {x2} 63 {z2} minecraft:stone_bricks']
+SC.append('data modify storage mg:lobby elyclean set value 1b')
+W('spawn_clean', SC)
+def _patch(rel, anchor, line):
+    pth = os.path.join('data', 'mg', 'function', rel + '.mcfunction'); t = open(pth, encoding='utf-8').read()
+    if line in t: return
+    assert anchor in t, (rel, anchor)
+    open(pth, 'w', encoding='utf-8', newline='\n').write(t.replace(anchor, anchor + '\n' + line, 1))
+_patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby ely1 run schedule function mg:elytra/build 14s',
+       'execute if score $setup mg.st matches 1 unless data storage mg:lobby elyclean run schedule function mg:elytra/spawn_clean 9s')
+_patch('desinstaller', 'data remove storage mg:lobby ely1', 'data remove storage mg:lobby elyclean\nschedule clear mg:elytra/spawn_clean')
 
 # ---------------------------------------------------------------- départ (start = petit, start2 = grand)
 for c, d in C.items():
