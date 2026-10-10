@@ -1,5 +1,10 @@
 # ⛏ Mini UHC Run — tick
 scoreboard players add $uht mg.st 1
+execute as @a[tag=mg.play,scores={mg.uoi=1..}] run function mg:uhc/ore_iron_ore
+execute as @a[tag=mg.play,scores={mg.uog=1..}] run function mg:uhc/ore_gold_ore
+execute as @a[tag=mg.play,scores={mg.uod=1..}] run function mg:uhc/ore_diamond_ore
+execute as @a[tag=mg.play,scores={mg.uor=1..}] run function mg:uhc/ore_redstone_ore
+execute as @a[tag=mg.play,scores={mg.uol=1..}] run function mg:uhc/ore_lapis_ore
 execute as @a[tag=mg.play,scores={mg.deaths=1..}] run function mg:core/eliminate
 execute as @a[tag=mg.play] store result score @s mg.t run data get entity @s Pos[1]
 execute as @a[tag=mg.play,scores={mg.t=..50}] run function mg:core/eliminate
