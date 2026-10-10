@@ -22,6 +22,8 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+bossbar remove mg:slimejump
+scoreboard objectives remove mg.sjp
 bossbar remove mg:autotamp
 team remove mg_at
 scoreboard objectives remove mg.atl

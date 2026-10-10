@@ -169,6 +169,8 @@ summon minecraft:text_display -22.5 64.8 24.2 {Tags:["mg.hall","mg.h_soleil"],bi
 execute if data storage mg:hall e.soleil run data modify entity @e[type=minecraft:text_display,tag=mg.h_soleil,limit=1] text set from storage mg:hall e.soleil
 summon minecraft:text_display -19.5 64.8 24.2 {Tags:["mg.hall","mg.h_autotamp"],billboard:"vertical",line_width:99,text:[{"text":"🚗 Autos tamponneuses","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.125f,1.125f,1.125f]}}
 execute if data storage mg:hall e.autotamp run data modify entity @e[type=minecraft:text_display,tag=mg.h_autotamp,limit=1] text set from storage mg:hall e.autotamp
+summon minecraft:text_display -16.5 64.8 24.2 {Tags:["mg.hall","mg.h_slimejump"],billboard:"vertical",line_width:99,text:[{"text":"🟩 Slime Jump","color":"green","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.125f,1.125f,1.125f]}}
+execute if data storage mg:hall e.slimejump run data modify entity @e[type=minecraft:text_display,tag=mg.h_slimejump,limit=1] text set from storage mg:hall e.slimejump
 data modify storage mg:hall v2 set value 1b
 data modify storage mg:hall v3 set value 1b
 data modify storage mg:hall v4 set value 1b
