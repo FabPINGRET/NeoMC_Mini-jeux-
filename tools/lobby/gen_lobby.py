@@ -847,8 +847,13 @@ wr('lobby/build_end', ['# Fin de la construction du spawn : eau qui coule, déco
 
 # ------------------------------------------------------------------ entités de décor
 TF = 'transformation:{{translation:[0f,{ty}f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[{s}f,{s}f,{s}f]}}'
-def tdisp(x, y, z, text, s, tags='', bill='vertical'):
-    return (f'summon minecraft:text_display {x} {y} {z} {{Tags:["mg.lby"{tags}],billboard:"{bill}",background:0,text:{text},'
+def face_spawn(x, z):
+    # orientation fixe du panneau : celle d'un joueur au centre de la place qui le regarde (texte lisible depuis la place)
+    return round(math.degrees(math.atan2(-(x - 0.5), z - 0.5)), 1)
+def tdisp(x, y, z, text, s, tags='', bill='vertical', yaw=None):
+    rot = '' if yaw is None else f'Rotation:[{yaw}f,0f],'
+    if yaw is not None: bill = 'fixed'
+    return (f'summon minecraft:text_display {x} {y} {z} {{Tags:["mg.lby"{tags}],billboard:"{bill}",{rot}background:0,text:{text},'
             + TF.format(ty=0, s=s) + '}')
 def idisp(x, y, z, item, s, tags='', bill='fixed', yaw=0, extra=''):
     return (f'summon minecraft:item_display {x} {y} {z} {{Tags:["mg.lby"{tags}],billboard:"{bill}",Rotation:[{yaw}f,0f],item:{item},'
@@ -875,7 +880,7 @@ HINTS = [
     ('[{"text":"Bienvenue ! ","color":"yellow","bold":true},{"text":"⚔ Armurerie à l\'ouest, ⚑ Parkour à l\'est, ⌂ Plots au nord, 🏁 Kart au sud","color":"gray"}]', (0.5, 70.2, 17.5), 1.2),
 ]
 common = ['# Décor commun (rp ou vanilla)']
-for (t, pos, s) in HINTS: common.append(tdisp(*pos, t, s))
+for (t, pos, s) in HINTS: common.append(tdisp(*pos, t, s, yaw=face_spawn(pos[0], pos[2])))
 for (z, it) in ((-5, 'iron_sword'), (-3, 'bow'), (-1, 'trident'), (1, 'crossbow'), (3, 'mace'), (5, 'diamond_sword')):
     common.append(idisp(-56.4, 67.2, z + 0.5, vi(it), 1.3, yaw=90).replace('left_rotation:[0f,0f,0f,1f]', 'left_rotation:[0f,0f,0.3827f,0.9239f]'))
 for (x, z, yaw, set_) in ((-55.5, -3.5, -90, 'iron'), (-55.5, 4.5, -90, 'diamond'), (-37.5, 9.5, 180, 'golden'), (-37.5, -8.5, 0, 'netherite')):
@@ -884,7 +889,8 @@ for (x, z, yaw, set_) in ((-55.5, -3.5, -90, 'iron'), (-55.5, 4.5, -90, 'diamond
                   f'feet:{{id:"minecraft:{set_}_boots"}},mainhand:{{id:"minecraft:{set_}_sword"}}}}}}')
 rpl, vnl = ['# Décor du resource pack (modèles mg:*)'], ['# Décor vanilla (sans resource pack)']
 for (g, txt, pos, s1, s2) in SIGNS:
-    rpl.append(tdisp(*pos, G_(g), s1)); vnl.append(tdisp(*pos, txt, s2))
+    yaw = None if pos == (FIN[0], FIN[1] + 5, FIN[2]) else face_spawn(pos[0], pos[2])   # ARRIVÉE (haut du parkour) : reste tournante
+    rpl.append(tdisp(*pos, G_(g), s1, yaw=yaw)); vnl.append(tdisp(*pos, txt, s2, yaw=yaw))
 # boîtes ? en couronne au-dessus du point d'apparition + étoile
 for k in range(8):
     a = math.radians(45 * k)
@@ -929,7 +935,8 @@ for (x, y, z) in ((24.5, 72, 22.5), (30.5, 74, 30.5), (20.5, 73, 36.5), (38.5, 7
 wr('lobby/deco', ['# Décor du spawn (entités mg.lby) : modèles du resource pack si $rp = 1, sinon vanilla (généré)',
                   'kill @e[tag=mg.lby]', 'kill @e[type=minecraft:text_display,tag=mg.deco]', 'function mg:lobby/deco_common',
                   'execute if score $rp mg.st matches 1 run function mg:lobby/deco_rp',
-                  'execute unless score $rp mg.st matches 1 run function mg:lobby/deco_vn'])
+                  'execute unless score $rp mg.st matches 1 run function mg:lobby/deco_vn',
+                  'data modify storage mg:lobby deco2 set value 1b'])
 wr('lobby/deco_common', common)
 wr('lobby/deco_rp', rpl)
 wr('lobby/deco_vn', vnl)
@@ -1381,3 +1388,13 @@ if len(sys.argv) > 2:
     def ch(t, dd): return struct.pack('>I', len(dd)) + t + dd + struct.pack('>I', zlib.crc32(t + dd) & 0xffffffff)
     open(sys.argv[2], 'wb').write(b'\x89PNG\r\n\x1a\n' + ch(b'IHDR', struct.pack('>IIBBBBB', w, h, 8, 2, 0, 0, 0)) + ch(b'IDAT', zlib.compress(raw)) + ch(b'IEND', b''))
     print('aperçu :', sys.argv[2])
+
+# panneaux du spawn à orientation fixe : décor recréé une fois sur les mondes existants (témoin mg:lobby deco2)
+def _patch(rel, anchor, line):
+    pth = os.path.join(R, 'data/mg/function', rel + '.mcfunction'); t = open(pth, encoding='utf-8').read()
+    if line in t: return
+    assert anchor in t, (rel, anchor)
+    open(pth, 'w', encoding='utf-8', newline='\n').write(t.replace(anchor, anchor + '\n' + line, 1))
+_patch('core/load', 'execute unless score $rp mg.st matches 0.. run function mg:core/rp_default',
+       'execute if score $setup mg.st matches 1 unless data storage mg:lobby deco2 run schedule function mg:lobby/deco 6s')
+_patch('desinstaller', 'data remove storage mg:lobby beacon1', 'data remove storage mg:lobby deco2')
