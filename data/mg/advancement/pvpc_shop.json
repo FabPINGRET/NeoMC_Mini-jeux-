@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "use": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": "{pvpc_shop:1b}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "mg:pvpc/shop_adv"
+  }
+}

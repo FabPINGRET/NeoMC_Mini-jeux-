@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "use": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": "{pvpc_home:1b}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "mg:pvpc/home_adv"
+  }
+}
