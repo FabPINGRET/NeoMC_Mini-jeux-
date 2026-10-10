@@ -13,6 +13,6 @@ execute at @s run particle minecraft:firework ~ ~1 ~ 1 1 1 0.2 60
 # records : le temps est lu dans #xrt, personnel puis serveur, selon son parcours (mg.xcr)
 execute if score @s mg.xcr matches 1 run function mg:elyrace/c1/record
 execute if score @s mg.xcr matches 2 run function mg:elyrace/c2/record
-# phase 3 : le chrono repart à 0 pour compter 30 ticks, puis solo/stop (le temps de l'arrivée est déjà enregistré)
+# phase 3 : le chrono repart à 0 pour compter 30 ticks, puis solo/choice (le temps de l'arrivée est déjà enregistré)
 scoreboard players set @s mg.xph 3
 scoreboard players set @s mg.xst 0

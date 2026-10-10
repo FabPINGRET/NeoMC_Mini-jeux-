@@ -54,13 +54,13 @@ OBJECTIVES = [
 # par solo/start ; xse, xsl et xph/xst ne servent qu'au solo (voir solo_run.py)
 EXTRA_OBJECTIVES = [
     ('xcr', 'parcours du joueur (NUM : groupe et solo)'),
-    ('xph', 'solo : phase (1 decompte, 2 course, 3 arrivee)'),
-    ('xst', 'solo : chrono du joueur (ticks) : decompte, course ou arrivee selon la phase'),
+    ('xph', 'solo : phase (1 decompte, 2 course, 3 arrivee, 4 choix : Rejouer ou lobby)'),
+    ('xst', 'solo : chrono du joueur (ticks) : decompte, course, arrivee ou choix selon la phase'),
     ('xse', 'solo : tick de la fin du dernier solo du joueur (delai de 30 s)'),
     ('xsl', 'solo : dernier tick ou le joueur etait en ligne (detecte la reconnexion)'),
 ]
 TAGS = ['mg.xw1', 'mg.xtp'] + W.tags()    # etiquettes temporaires de la fin de course (pas des objectifs) + charges de vent si WIND
-SOLO_TAGS = ['mg.xso', 'mg.xsp0']         # solo en cours ; pause d'avant le solo (hors TAGS : prepare ne doit pas les effacer)
+SOLO_TAGS = ['mg.xso', 'mg.xsp0', 'mg.xsi']  # solo en cours ; pause d'avant le solo ; texte d'intro du depart pas encore donne (1re tentative : solo/go) (hors TAGS : prepare ne doit pas les effacer)
 ELYTRA = ('minecraft:elytra[minecraft:custom_data={mg_elyr:1b},minecraft:unbreakable={},'
           'minecraft:enchantments={"minecraft:binding_curse":1},'
           'minecraft:custom_name={"text":"Élytres de course","color":"aqua","italic":false}]')

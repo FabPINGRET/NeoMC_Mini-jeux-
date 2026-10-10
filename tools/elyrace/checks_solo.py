@@ -6,6 +6,7 @@ Python stdlib uniquement (compatible 3.8).
 import os
 import re
 
+import checks_retry as CRT
 import course_common as CC
 import game as G
 import menus as M
@@ -18,7 +19,8 @@ FORBIDDEN_CALL = re.compile(r'\bfunction mg:core/(countdown|begin|draw|ending|re
 PLAY_SELECTOR = re.compile(r'@[ae]\[[^\]]*tag=mg\.play')       # @a[tag=mg.play...] : un solo ne cible jamais les participants d'une partie
 BUSY_WAIT = 'execute if entity @a[tag=mg.xso] run return run schedule function '
 PURGE = re.compile(r'^scoreboard players reset \$xse? mg\.st$')   # seul emploi permis de $xs / $xse : la purge des anciens drapeaux (elyrace/objectives)
-SOLO_ONLY = {'solo/go': 'scoreboard players set @s mg.xph 2', 'solo/start': 'scoreboard players set @s mg.xph 1', 'solo/finish': 'scoreboard players set @s mg.xph 3'}
+SOLO_ONLY = {'solo/go': 'scoreboard players set @s mg.xph 2', 'solo/arm': 'scoreboard players set @s mg.xph 1', 'solo/finish': 'scoreboard players set @s mg.xph 3',
+             'solo/choice': 'scoreboard players set @s mg.xph 4'}      # phase -> seule fonction qui la pose (arm : lancement ET « Rejouer »)
 
 
 def code(text):
@@ -85,15 +87,16 @@ def solo_problems(files):
 
 
 def entry_exit_problems(files):
-    """solo/go est la seule entree en course (phase 2), solo/stop la seule sortie (mg.xso), solo/start le seul lancement ; la pause est rendue par stop."""
+    """solo/go est la seule entree en course (phase 2), solo/stop la seule sortie (mg.xso), solo/start le seul lancement (via arm pour la phase 1) ;
+    la pause est rendue par stop."""
     bad = []
     for rel, text in sorted(files.items()):
         if not rel.endswith('.mcfunction'):
             continue
         name = rel[len(CC.FN):-len('.mcfunction')]
         for line in code(text):
-            if re.search(r'mg\.xph (\d)\b', line) and re.search(r'players set \S+ mg\.xph [123]\b', line):
-                value = re.search(r'mg\.xph ([123])\b', line).group(1)
+            if re.search(r'mg\.xph (\d)\b', line) and re.search(r'players set \S+ mg\.xph [1-4]\b', line):
+                value = re.search(r'mg\.xph ([1-4])\b', line).group(1)
                 want = [n for n, l in SOLO_ONLY.items() if l.endswith('mg.xph ' + value)][0]
                 if name != want or line != SOLO_ONLY[want]:
                     bad.append('%s : pose la phase %s ailleurs que dans elyrace/%s : %s' % (rel, value, want, line))
@@ -270,5 +273,5 @@ def objective_problems(files):
 
 
 def problems(root, files, specs):
-    return (solo_problems(files) + entry_exit_problems(files) + order_problems(files) + records_problems(files) + trigger_problems(files, specs)
+    return (solo_problems(files) + entry_exit_problems(files) + CRT.retry_problems(files, specs, fn_code) + order_problems(files) + records_problems(files) + trigger_problems(files, specs)
             + common_problems(files, specs) + hooks_problems(root) + objective_problems(files))

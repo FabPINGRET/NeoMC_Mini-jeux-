@@ -1,4 +1,4 @@
-# @s = joueur : SEULE SORTIE d'un contre-la-montre solo (arrivée + 30 ticks, abandon, pause désactivée, survie / plot / visite, 3 min,
+# @s = joueur : SEULE SORTIE d'un contre-la-montre solo (arrivée + 30 ticks, puis choix terminé ou quitté, abandon, pause désactivée, survie / plot / visite, 3 min,
 # reconnexion, arrêt admin, départ d'une course de groupe, désinstallation). Rien d'autre ne retire mg.xso.
 # 1) plus aucune détection : le tag et les scores de course d'abord (mg.xse, délai de 30 s, est posé plus bas)
 tag @s remove mg.xso
@@ -12,6 +12,7 @@ function mg:core/attr_reset_g
 # 2) la pause d'avant le solo : rétablie (mg.xsp0 = il était déjà en pause ; sinon la pause est retirée, même si une partie tourne)
 execute unless entity @s[tag=mg.xsp0] run tag @s remove mg.spectate
 tag @s remove mg.xsp0
+tag @s remove mg.xsi
 scoreboard players operation @s mg.xse = $tc mg.st
 # 3) retour au lobby, sauf si une partie l'a pris (participant, ou spectateur placé par core/reconnect_spec)
 # ou s'il est parti en survie, dans un plot ou en visite (reset_player l'y arracherait : position de survie corrompue, boucle avec le plot)
