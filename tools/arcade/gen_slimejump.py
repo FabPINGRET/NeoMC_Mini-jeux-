@@ -2,8 +2,8 @@
 
     python tools/arcade/gen_slimejump.py .
 
-Parcours fixe d'environ 150 blocs au-dessus du vide : pads de slime (on rebondit), corniches en pierre qu'on n'atteint
-qu'en rebondissant, grandes chutes sur slime qui renvoient en l'air, petits pads 1×1, zigzags.
+Parcours fixe d'environ 150 blocs qui descend en dénivelé (départ y 110) : on tombe sur le slime pour prendre de l'élan
+et rebondir vers la corniche suivante, descente en slalom de pad en pad, petits pads 1×1, grands plongeons de 8 à 10 blocs.
 4 points de passage (blocs d'émeraude) : une chute ramène au dernier. Pas de dégâts de chute.
 Premier sur la plateforme d'arrivée (diamant) = victoire. 4 min max : sinon le plus avancé gagne (égalité = nul).
 Seul : entraînement (chrono, match nul à l'arrivée).
@@ -15,27 +15,25 @@ C.init(sys.argv[1] if len(sys.argv) > 1 else '.')
 w, js = C.w, C.js
 GID = 224
 Z = C.param('Z', 37800)
-Y0 = 80
+Y0 = 110
 LIMIT = 4800
 
 # pads : (dx, dy, dz) depuis le centre du pad précédent, taille (1 ou 3), type (s = slime, p = pierre, c = point de passage)
 SEQ = [
-    # 1. échauffement : slime à plat
-    (0, 0, 5, 3, 's'), (0, 0, 5, 3, 's'), (3, 0, 5, 3, 's'), (-3, 0, 5, 3, 's'),
-    # 2. corniches plus hautes : rebondir sur le slime pour monter
-    (0, 0, 5, 3, 's'), (0, 2, 5, 3, 'p'), (0, 0, 5, 3, 's'), (0, 3, 5, 3, 'p'),
+    # 1. chutes et rebonds : on tombe sur le slime pour remonter plus loin sur la corniche
+    (0, -5, 6, 3, 's'), (0, 3, 6, 3, 'p'), (3, -6, 6, 3, 's'), (0, 4, 6, 3, 'p'), (-3, -5, 6, 3, 's'), (0, 3, 6, 3, 'p'),
     (0, 0, 5, 3, 'c'),
-    # 3. grande chute sur slime, rebond vers une corniche plus loin
-    (0, -7, 6, 3, 's'), (0, 4, 6, 3, 'p'), (3, -6, 5, 3, 's'), (0, 3, 6, 3, 'p'),
-    (-3, 0, 5, 3, 'c'),
-    # 4. petits pads 1×1 en zigzag
-    (0, 0, 4, 1, 's'), (2, 0, 3, 1, 's'), (-2, 0, 3, 1, 's'), (2, 0, 3, 1, 's'), (-2, 0, 3, 1, 's'), (0, 1, 4, 3, 'p'),
+    # 2. descente en slalom : pads de slime de plus en plus bas, on garde l'élan de rebond en rebond
+    (3, -3, 5, 3, 's'), (3, -3, 5, 3, 's'), (-4, -3, 5, 3, 's'), (-4, -3, 5, 3, 's'), (0, 2, 6, 3, 'p'),
     (0, 0, 5, 3, 'c'),
-    # 5. escalier de rebonds (monter de pad en pad)
-    (0, 0, 4, 3, 's'), (0, 2, 5, 3, 's'), (0, 2, 5, 3, 's'), (0, 2, 5, 3, 'p'), (4, -8, 5, 3, 's'), (0, 5, 6, 3, 'p'),
-    (-4, 0, 5, 3, 'c'),
-    # 6. final : slime 1×1 au-dessus du vide puis rebond vers l'arrivée
-    (0, 0, 4, 1, 's'), (0, 0, 4, 1, 's'), (0, -5, 5, 3, 's'), (0, 3, 6, 3, 'f'),
+    # 3. petits pads 1×1 qui montent et descendent
+    (0, -4, 5, 1, 's'), (-2, 2, 4, 1, 's'), (2, -3, 4, 1, 's'), (0, 2, 5, 3, 'p'),
+    (0, 0, 5, 3, 'c'),
+    # 4. grands plongeons : 10 et 8 blocs de chute, rebond très haut vers la corniche suivante
+    (0, -10, 7, 3, 's'), (4, 7, 7, 3, 'p'), (-4, -8, 6, 3, 's'), (0, 6, 7, 3, 'p'),
+    (0, 0, 5, 3, 'c'),
+    # 5. final : deux rebonds en chaîne puis saut vers l'arrivée
+    (3, -4, 5, 3, 's'), (-3, -2, 5, 3, 's'), (0, 4, 7, 3, 'f'),
 ]
 pads = [(0, Y0, Z, 7, 'start')]
 cx, cy, cz = 0, Y0, Z - 1
@@ -49,7 +47,7 @@ FIN = pads[-1]
 
 BLK = {'s': 'slime_block', 'p': 'stone_bricks', 'c': 'emerald_block', 'f': 'diamond_block', 'start': 'polished_andesite'}
 B = [f'# 🟩 Slime Jump — parcours de {len(pads)} plateformes, z {Z}..{ZEND}']
-B += [f'fill -14 {y} {Z - 6} 14 {y} {ZEND + 8} minecraft:air' for y in range(YMIN - 4, Y0 + 30)]
+B += [f'fill -14 {y} {Z - 6} 14 {y} {ZEND + 16} minecraft:air' for y in range(min(YMIN - 4, 62), Y0 + 30)]
 for (x, y, z, size, typ) in pads:
     h = size // 2
     if typ == 'start':
@@ -133,5 +131,5 @@ w('slimejump/cleanup', ['bossbar remove mg:slimejump', 'kill @e[tag=mg.sjd]', 't
 C.register([GID], 'slimejump', [C.announce(GID, '', '🟩 SLIME JUMP', 'green', 'parkour de rebonds sur slime, le premier arrivé gagne !')])
 C.objectives([('mg.sjp', 'dummy')])
 C.patch('desinstaller', 'scoreboard objectives remove mg.bw', ['bossbar remove mg:slimejump'])
-C.forceload([f'# Slime Jump (z {Z})', f'forceload add -14 {Z - 6} 14 {ZEND + 8}'])
+C.forceload([f'# Slime Jump (z {Z})', f'forceload add -14 {Z - 6} 14 {ZEND + 16}'])
 print('Slime Jump OK :', len(pads), 'plateformes, arrivée en z', ZEND, 'y', FIN[1], '— points de passage', len(CPS))

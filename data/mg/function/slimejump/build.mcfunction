@@ -1,4 +1,14 @@
-# 🟩 Slime Jump — parcours de 33 plateformes, z 37800..37951
+# 🟩 Slime Jump — parcours de 27 plateformes, z 37800..37943
+fill -14 62 37794 14 62 37959 minecraft:air
+fill -14 63 37794 14 63 37959 minecraft:air
+fill -14 64 37794 14 64 37959 minecraft:air
+fill -14 65 37794 14 65 37959 minecraft:air
+fill -14 66 37794 14 66 37959 minecraft:air
+fill -14 67 37794 14 67 37959 minecraft:air
+fill -14 68 37794 14 68 37959 minecraft:air
+fill -14 69 37794 14 69 37959 minecraft:air
+fill -14 70 37794 14 70 37959 minecraft:air
+fill -14 71 37794 14 71 37959 minecraft:air
 fill -14 72 37794 14 72 37959 minecraft:air
 fill -14 73 37794 14 73 37959 minecraft:air
 fill -14 74 37794 14 74 37959 minecraft:air
@@ -37,57 +47,79 @@ fill -14 106 37794 14 106 37959 minecraft:air
 fill -14 107 37794 14 107 37959 minecraft:air
 fill -14 108 37794 14 108 37959 minecraft:air
 fill -14 109 37794 14 109 37959 minecraft:air
-fill -3 80 37796 3 80 37801 minecraft:polished_andesite
-fill -3 81 37796 3 83 37796 minecraft:barrier
-fill -3 81 37796 -3 83 37801 minecraft:barrier
-fill 3 81 37796 3 83 37801 minecraft:barrier
-fill -3 81 37801 3 81 37801 minecraft:lime_stained_glass
-fill -1 80 37803 1 80 37805 minecraft:slime_block
-setblock 0 79 37804 minecraft:sea_lantern
-fill -1 80 37808 1 80 37810 minecraft:slime_block
-setblock 0 79 37809 minecraft:sea_lantern
-fill 2 80 37813 4 80 37815 minecraft:slime_block
-setblock 3 79 37814 minecraft:sea_lantern
-fill -1 80 37818 1 80 37820 minecraft:slime_block
-setblock 0 79 37819 minecraft:sea_lantern
-fill -1 80 37823 1 80 37825 minecraft:slime_block
-setblock 0 79 37824 minecraft:sea_lantern
-fill -1 82 37828 1 82 37830 minecraft:stone_bricks
-fill -1 82 37833 1 82 37835 minecraft:slime_block
-setblock 0 81 37834 minecraft:sea_lantern
-fill -1 85 37838 1 85 37840 minecraft:stone_bricks
-fill -1 85 37843 1 85 37845 minecraft:emerald_block
-fill -1 78 37849 1 78 37851 minecraft:slime_block
-setblock 0 77 37850 minecraft:sea_lantern
-fill -1 82 37855 1 82 37857 minecraft:stone_bricks
-fill 2 76 37860 4 76 37862 minecraft:slime_block
-setblock 3 75 37861 minecraft:sea_lantern
-fill 2 79 37866 4 79 37868 minecraft:stone_bricks
-fill -1 79 37871 1 79 37873 minecraft:emerald_block
-fill 0 79 37876 0 79 37876 minecraft:slime_block
-fill 2 79 37879 2 79 37879 minecraft:slime_block
-fill 0 79 37882 0 79 37882 minecraft:slime_block
-fill 2 79 37885 2 79 37885 minecraft:slime_block
-fill 0 79 37888 0 79 37888 minecraft:slime_block
-fill -1 80 37891 1 80 37893 minecraft:stone_bricks
-fill -1 80 37896 1 80 37898 minecraft:emerald_block
-fill -1 80 37900 1 80 37902 minecraft:slime_block
-setblock 0 79 37901 minecraft:sea_lantern
-fill -1 82 37905 1 82 37907 minecraft:slime_block
-setblock 0 81 37906 minecraft:sea_lantern
-fill -1 84 37910 1 84 37912 minecraft:slime_block
-setblock 0 83 37911 minecraft:sea_lantern
-fill -1 86 37915 1 86 37917 minecraft:stone_bricks
-fill 3 78 37920 5 78 37922 minecraft:slime_block
-setblock 4 77 37921 minecraft:sea_lantern
-fill 3 83 37926 5 83 37928 minecraft:stone_bricks
-fill -1 83 37931 1 83 37933 minecraft:emerald_block
-fill 0 83 37936 0 83 37936 minecraft:slime_block
-fill 0 83 37940 0 83 37940 minecraft:slime_block
-fill -1 78 37944 1 78 37946 minecraft:slime_block
-setblock 0 77 37945 minecraft:sea_lantern
-fill -1 81 37950 1 81 37952 minecraft:diamond_block
-fill -2 81 37949 2 81 37953 minecraft:gold_block
-fill -1 81 37950 1 81 37952 minecraft:diamond_block
-setblock 0 80 37951 minecraft:beacon
-fill -1 79 37950 1 79 37952 minecraft:iron_block
+fill -14 110 37794 14 110 37959 minecraft:air
+fill -14 111 37794 14 111 37959 minecraft:air
+fill -14 112 37794 14 112 37959 minecraft:air
+fill -14 113 37794 14 113 37959 minecraft:air
+fill -14 114 37794 14 114 37959 minecraft:air
+fill -14 115 37794 14 115 37959 minecraft:air
+fill -14 116 37794 14 116 37959 minecraft:air
+fill -14 117 37794 14 117 37959 minecraft:air
+fill -14 118 37794 14 118 37959 minecraft:air
+fill -14 119 37794 14 119 37959 minecraft:air
+fill -14 120 37794 14 120 37959 minecraft:air
+fill -14 121 37794 14 121 37959 minecraft:air
+fill -14 122 37794 14 122 37959 minecraft:air
+fill -14 123 37794 14 123 37959 minecraft:air
+fill -14 124 37794 14 124 37959 minecraft:air
+fill -14 125 37794 14 125 37959 minecraft:air
+fill -14 126 37794 14 126 37959 minecraft:air
+fill -14 127 37794 14 127 37959 minecraft:air
+fill -14 128 37794 14 128 37959 minecraft:air
+fill -14 129 37794 14 129 37959 minecraft:air
+fill -14 130 37794 14 130 37959 minecraft:air
+fill -14 131 37794 14 131 37959 minecraft:air
+fill -14 132 37794 14 132 37959 minecraft:air
+fill -14 133 37794 14 133 37959 minecraft:air
+fill -14 134 37794 14 134 37959 minecraft:air
+fill -14 135 37794 14 135 37959 minecraft:air
+fill -14 136 37794 14 136 37959 minecraft:air
+fill -14 137 37794 14 137 37959 minecraft:air
+fill -14 138 37794 14 138 37959 minecraft:air
+fill -14 139 37794 14 139 37959 minecraft:air
+fill -3 110 37796 3 110 37801 minecraft:polished_andesite
+fill -3 111 37796 3 113 37796 minecraft:barrier
+fill -3 111 37796 -3 113 37801 minecraft:barrier
+fill 3 111 37796 3 113 37801 minecraft:barrier
+fill -3 111 37801 3 111 37801 minecraft:lime_stained_glass
+fill -1 105 37804 1 105 37806 minecraft:slime_block
+setblock 0 104 37805 minecraft:sea_lantern
+fill -1 108 37810 1 108 37812 minecraft:stone_bricks
+fill 2 102 37816 4 102 37818 minecraft:slime_block
+setblock 3 101 37817 minecraft:sea_lantern
+fill 2 106 37822 4 106 37824 minecraft:stone_bricks
+fill -1 101 37828 1 101 37830 minecraft:slime_block
+setblock 0 100 37829 minecraft:sea_lantern
+fill -1 104 37834 1 104 37836 minecraft:stone_bricks
+fill -1 104 37839 1 104 37841 minecraft:emerald_block
+fill 2 101 37844 4 101 37846 minecraft:slime_block
+setblock 3 100 37845 minecraft:sea_lantern
+fill 5 98 37849 7 98 37851 minecraft:slime_block
+setblock 6 97 37850 minecraft:sea_lantern
+fill 1 95 37854 3 95 37856 minecraft:slime_block
+setblock 2 94 37855 minecraft:sea_lantern
+fill -3 92 37859 -1 92 37861 minecraft:slime_block
+setblock -2 91 37860 minecraft:sea_lantern
+fill -3 94 37865 -1 94 37867 minecraft:stone_bricks
+fill -3 94 37870 -1 94 37872 minecraft:emerald_block
+fill -2 90 37876 -2 90 37876 minecraft:slime_block
+fill -4 92 37880 -4 92 37880 minecraft:slime_block
+fill -2 89 37884 -2 89 37884 minecraft:slime_block
+fill -3 91 37888 -1 91 37890 minecraft:stone_bricks
+fill -3 91 37893 -1 91 37895 minecraft:emerald_block
+fill -3 81 37900 -1 81 37902 minecraft:slime_block
+setblock -2 80 37901 minecraft:sea_lantern
+fill 1 88 37907 3 88 37909 minecraft:stone_bricks
+fill -3 80 37913 -1 80 37915 minecraft:slime_block
+setblock -2 79 37914 minecraft:sea_lantern
+fill -3 86 37920 -1 86 37922 minecraft:stone_bricks
+fill -3 86 37925 -1 86 37927 minecraft:emerald_block
+fill 0 82 37930 2 82 37932 minecraft:slime_block
+setblock 1 81 37931 minecraft:sea_lantern
+fill -3 80 37935 -1 80 37937 minecraft:slime_block
+setblock -2 79 37936 minecraft:sea_lantern
+fill -3 84 37942 -1 84 37944 minecraft:diamond_block
+fill -4 84 37941 0 84 37945 minecraft:gold_block
+fill -3 84 37942 -1 84 37944 minecraft:diamond_block
+setblock -2 83 37943 minecraft:beacon
+fill -3 82 37942 -1 82 37944 minecraft:iron_block

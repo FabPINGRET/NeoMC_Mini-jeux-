@@ -1,6 +1,6 @@
 # Départ
 scoreboard players set $sjt mg.st 0
-fill -2 81 37801 2 81 37801 minecraft:air
+fill -2 111 37801 2 111 37801 minecraft:air
 bossbar add mg:slimejump {"text":"🟩 Slime Jump","color":"green"}
 bossbar set mg:slimejump color green
 bossbar set mg:slimejump max 4800
