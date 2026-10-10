@@ -194,6 +194,7 @@ def finish_lines(specs):
             'scoreboard players operation #s mg.st = #xrt mg.st', 'scoreboard players operation #s mg.st /= #k20 mg.st',
             'tellraw @a[tag=mg.play] [{"text":"🏁 ","color":"gold"},%s,{"text":" passe la ligne d\'arrivée (","color":"gray"},{"score":{"name":"#s","objective":"mg.st"},"color":"white"},{"text":" s)","color":"gray"}]' % jf,
             'execute if score @s mg.xu matches 1.. run tellraw @a[tag=mg.play] ' + BONUS_TELLRAW,
+            'title @s subtitle ""',                # efface un sous-titre resté (« ★ -2 s », choc) : il s'afficherait sous « Arrivée ! »
             'title @s title [{"text":"🏁 Arrivée !","color":"gold","bold":true}]',
             'execute at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1',
             'execute at @s run particle minecraft:firework ~ ~1 ~ 1 1 1 0.2 60',

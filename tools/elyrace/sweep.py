@@ -11,7 +11,7 @@ decider si un vol franchit un anneau. Python stdlib uniquement (compatible 3.8).
 import math
 
 STEP_MAX = 1900          # deplacement maximal accepte entre deux ticks (centiemes, 19 blocs) : au-dela c'est une teleportation, sans anneau franchi ;
-                         # couvre les rafales du serveur (3 a 5 ticks de deplacement d'un coup), et reste sous l'ecart min de 20 blocs entre deux plans
+                         # couvre les rafales du serveur (3 a 4 ticks a vitesse max (4 b/tick) d'un coup), et reste sous l'ecart min de 20 blocs entre deux plans
 FAR = 2147483647         # « pas d'origine » : plus grand que tout plan, la condition #xox ..P-1 echoue
 ORIGIN_RESET = -1000000  # valeur de mg.xq1 apres une teleportation (reapparition, place) : le tick suivant n'a pas d'origine valide
 RESET_LINE = 'scoreboard players set @s mg.xq1 %d' % ORIGIN_RESET      # rings.respawn et place_tp ; verifie par checks.gravity_problems

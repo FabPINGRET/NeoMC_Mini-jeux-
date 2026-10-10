@@ -8,6 +8,7 @@ scoreboard players remove @s mg.xh 1
 execute at @s run playsound minecraft:entity.player.hurt master @s ~ ~ ~ 1 0.8
 execute if score @s mg.xh matches ..0 run return run function mg:elyrace/why/ko
 # encore en vie : sous-titre du choc, puis le HUD
+title @s times 5 50 15
 title @s subtitle [{"text":"💥 Choc ! -1 ♥","color":"red"}]
 title @s title ""
 function mg:elyrace/hud
