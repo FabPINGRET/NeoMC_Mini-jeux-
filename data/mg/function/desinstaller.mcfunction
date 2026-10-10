@@ -22,6 +22,27 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+schedule clear mg:gta/wb_step
+schedule clear mg:gta/world_build
+schedule clear mg:gta/session_setup
+execute in mg:gta run forceload remove all
+kill @e[tag=mg.gtap]
+team remove mg_gciv
+data remove storage mg:gta built
+data remove storage mg:gta s
+data remove storage mg:gta unl
+data remove storage mg:lobby gtaclean
+schedule clear mg:gta/spawn_clean
+schedule clear mg:gta/wb_step
+schedule clear mg:gta/world_build
+schedule clear mg:gta/session_setup
+execute in mg:gta run forceload remove all
+kill @e[tag=mg.gtap]
+team remove mg_gciv
+data remove storage mg:gta built
+data remove storage mg:gta s
+data remove storage mg:gta unl
+data remove storage mg:lobby gtaclean
 function mg:golf/remove
 schedule clear mg:bowl/build_2
 schedule clear mg:bowl/build_3

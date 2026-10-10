@@ -207,7 +207,18 @@ for (blk, tx, ty, tz, sx, sy, sz) in [('yellow_concrete', -0.95, 0.05, -1.7, 1.9
                                        ('black_concrete', 0.75, 0.0, -1.25, 0.25, 0.45, 0.6), ('black_concrete', -1.0, 0.0, 0.85, 0.25, 0.45, 0.6),
                                        ('black_concrete', 0.75, 0.0, 0.85, 0.25, 0.45, 0.6)]:
     PB.append(f'summon minecraft:block_display {PX + 2.5} 64 {PZ + 0.5} {{Tags:["mg.gtap"],block_state:{{Name:"minecraft:{blk}"}},{TR % (tx, ty, tz, sx, sy, sz)}}}')
+PB.append('function mg:gta/spawn_clean')
 w('gta/portal_build', PB)
+# restes de l'arbre écrasé par le portail + bordure de l'avenue nord dégagée devant le portail (on voit qu'on peut passer)
+w('gta/spawn_clean', ['# Abords du portail de Neo City au spawn : feuillage/troncs coupés autour du portail, bordure de l\'avenue (x 4) dégagée',
+                      f'fill {PX - 4} 64 {PZ - 8} {PX + 4} 76 {PZ + 8} minecraft:air replace #minecraft:leaves',
+                      f'fill {PX - 4} 64 {PZ - 8} {PX + 4} 76 {PZ + 8} minecraft:air replace #minecraft:logs',
+                      # haie, banc et lampadaire de la bordure est de l'avenue, de z {PZ - 7} à {PZ + 4} (avant la place)
+                      f'fill 4 64 {PZ - 7} 4 72 {PZ + 4} minecraft:air',
+                      # bordure pavée face au portail, raccord avec le passage existant
+                      f'fill 4 63 {PZ - 4} 4 63 {PZ + 4} minecraft:stone_bricks',
+                      f'fill 4 63 {PZ - 1} {PX - 5} 63 {PZ + 1} minecraft:stone_bricks',
+                      'data modify storage mg:lobby gtaclean set value 1b'])
 w('gta/lobby_tick', ['# Chaque tick (core/tick, monde des mini-jeux) : portail de Neo City, session du monde GTA',
                      f'execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.out,tag=!mg.surv,tag=!mg.inplot,tag=!mg.visit,tag=!mg.lk,tag=!mg.pkr,tag=!mg.ely,tag=!mg.elyf,gamemode=adventure,x={PX},y=64,z={PZ - 1},dx=0,dy=2,dz=2] run function mg:gta/enter',
                      f'particle minecraft:dust{{color:[1.0,0.82,0.1],scale:1.1}} {PX + 0.5} 66.5 {PZ + 0.5} 0.05 1.3 1.1 0 3',
@@ -1210,6 +1221,7 @@ C.patch('survie/leave', '# Retour au lobby des mini-jeux (@s) : tout est sauvega
 C.patch('core/load', 'execute unless score $rp mg.st matches 0..1 run scoreboard players set $rp mg.st 1',
         ['# Neo City (monde GTA) : construite une fois (dimension mg:gta, 2 min)',
          'execute if score $setup mg.st matches 1 unless data storage mg:gta built run schedule function mg:gta/world_build 45s',
+         'execute if score $setup mg.st matches 1 unless data storage mg:lobby gtaclean run schedule function mg:gta/spawn_clean 8s',
          'scoreboard players set $gtw mg.st 0'])
 C.objectives([('mg.gqs', 'minecraft.used:minecraft.warped_fungus_on_a_stick')])
 C.patch('core/load', 'scoreboard objectives add mg.bw trigger',
@@ -1218,5 +1230,5 @@ C.objectives([('mg.grob', 'dummy'), ('mg.gsid', 'dummy'), ('mg.gveh', 'dummy')])
 C.patch('desinstaller', 'scoreboard objectives remove mg.bw',
         ['schedule clear mg:gta/wb_step', 'schedule clear mg:gta/world_build', 'schedule clear mg:gta/session_setup',
          f'execute in {DIM} run forceload remove all', 'kill @e[tag=mg.gtap]', 'team remove mg_gciv', 'data remove storage mg:gta built',
-         'data remove storage mg:gta s', 'data remove storage mg:gta unl'])
+         'data remove storage mg:gta s', 'data remove storage mg:gta unl', 'data remove storage mg:lobby gtaclean', 'schedule clear mg:gta/spawn_clean'])
 print(f'GTA OK : {len(INTER)} carrefours, {len(SIDE)} trottoirs, {len(PADS_AT)} points d\'armes, {len(CARS)} voitures, {len(HELI_AT)} hélicos')

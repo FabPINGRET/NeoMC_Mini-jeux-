@@ -55,3 +55,4 @@ summon minecraft:block_display 11.5 64 -18.5 {Tags:["mg.gtap"],block_state:{Name
 summon minecraft:block_display 11.5 64 -18.5 {Tags:["mg.gtap"],block_state:{Name:"minecraft:black_concrete"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.75f,0.0f,-1.25f],scale:[0.25f,0.45f,0.6f]}}
 summon minecraft:block_display 11.5 64 -18.5 {Tags:["mg.gtap"],block_state:{Name:"minecraft:black_concrete"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-1.0f,0.0f,0.85f],scale:[0.25f,0.45f,0.6f]}}
 summon minecraft:block_display 11.5 64 -18.5 {Tags:["mg.gtap"],block_state:{Name:"minecraft:black_concrete"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.75f,0.0f,0.85f],scale:[0.25f,0.45f,0.6f]}}
+function mg:gta/spawn_clean
