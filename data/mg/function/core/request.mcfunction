@@ -37,6 +37,10 @@ execute if score $game mg.st matches 28 run scoreboard players set $bpm mg.st 0
 execute if score $game mg.st matches 91 run scoreboard players set $bpm mg.st 1
 execute if score $game mg.st matches 92 run scoreboard players set $bpm mg.st 2
 execute if score $game mg.st matches 91..92 run scoreboard players set $game mg.st 28
+# Autos tamponneuses : 221 = 5 coups, 222 = 3 coups, 223 = 8 coups → $atx
+execute if score $game mg.st matches 221 run scoreboard players set $atx mg.st 5
+execute if score $game mg.st matches 222 run scoreboard players set $atx mg.st 3
+execute if score $game mg.st matches 223 run scoreboard players set $atx mg.st 8
 # Infection : 217 Bunker, 218 Laboratoire, 219 Manoir = joueurs contre mobs → jeu 98 / 211 / 213 + $infm 1
 scoreboard players set $infm mg.st 0
 execute if score $game mg.st matches 217..219 run scoreboard players set $infm mg.st 1
@@ -235,6 +239,9 @@ execute if score $game mg.st matches 216 run tellraw @a [{"selector":"@s","color
 execute if score $game mg.st matches 214 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🎳 BOWLING","color":"light_purple","bold":true},{"text":" : chacun sa piste, 5 frames, le meilleur total gagne !","color":"gray"}]
 execute if score $game mg.st matches 215 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⛳ GOLF","color":"green","bold":true},{"text":" : 6 trous façon Wii Sports, le moins de coups gagne !","color":"gray"}]
 execute if score $game mg.st matches 220 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🔴 1, 2, 3 SOLEIL","color":"red","bold":true},{"text":" : avance quand la poupée a le dos tourné, ne bouge plus quand elle te regarde !","color":"gray"}]
+execute if score $game mg.st matches 221 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🚗 AUTOS TAMPONNEUSES","color":"aqua","bold":true},{"text":" : sur la glace, 5 coups encaissés et c'est perdu !","color":"gray"}]
+execute if score $game mg.st matches 222 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🚗 AUTOS TAMPONNEUSES","color":"aqua","bold":true},{"text":" : sur la glace, 3 coups encaissés et c'est perdu !","color":"gray"}]
+execute if score $game mg.st matches 223 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🚗 AUTOS TAMPONNEUSES","color":"aqua","bold":true},{"text":" : sur la glace, 8 coups encaissés et c'est perdu !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 83 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"📞 TÉLÉPHONE","color":"gold","bold":true},{"text":" : mot → construction → devinette → construction → devinette !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
@@ -281,6 +288,7 @@ execute if score $game mg.st matches 31 run function mg:quake/prepare
 execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
+execute if score $game mg.st matches 221..223 run function mg:autotamp/prepare
 execute if score $game mg.st matches 220 run function mg:soleil/prepare
 execute if score $game mg.st matches 215 run function mg:golf/prepare
 execute if score $game mg.st matches 214 run function mg:bowl/prepare
