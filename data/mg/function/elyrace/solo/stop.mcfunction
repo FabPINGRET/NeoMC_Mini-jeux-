@@ -12,6 +12,7 @@ function mg:core/attr_reset_g
 # 2) la pause d'avant le solo : rétablie (mg.xsp0 = il était déjà en pause ; sinon la pause est retirée, même si une partie tourne)
 execute unless entity @s[tag=mg.xsp0] run tag @s remove mg.spectate
 tag @s remove mg.xsp0
+tag @s remove mg.xsi
 scoreboard players operation @s mg.xse = $tc mg.st
 # 3) retour au lobby, sauf si une partie l'a pris (participant, ou spectateur placé par core/reconnect_spec)
 # ou s'il est parti en survie, dans un plot ou en visite (reset_player l'y arracherait : position de survie corrompue, boucle avec le plot)

@@ -97,7 +97,9 @@ def go_lines(specs):
            'effect give @s minecraft:saturation infinite 0 true',
            '# portillon de son parcours (ouvert pour tous les solos du parcours : ils sont gelés tant que le décompte dure)']
     out += CC.per_course(specs, 'gate_off')
-    out += CC.per_course(specs, 'go_text')
+    out += ['# texte du départ (parcours) : à la 1re tentative seulement (tag mg.xsi posé par solo/start, jamais par solo/retry)']
+    out += [l.replace('execute ', 'execute if entity @s[tag=mg.xsi] ', 1) for l in CC.per_course(specs, 'go_text')]
+    out += ['tag @s remove mg.xsi']
     out += ['# gravité de course de son parcours (comme go pour le groupe) ; solo/stop la remet à la normale', G.GRAV_ON]
     return out +['scoreboard players set @s mg.xst 0', 'scoreboard players set @s mg.xph 2']
 
@@ -135,8 +137,10 @@ def choice_lines():
             '"hover_event":{"action":"show_text","value":"Relancer le même parcours tout de suite"}},{"text":" ","color":"gray"},'
             '{"text":"[⌂ Retour au lobby]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.xs set %d"},'
             '"hover_event":{"action":"show_text","value":"Quitter le contre-la-montre"}},'
-            '{"text":" (lobby automatique dans %d s)","color":"gray"}]' % (M.SOLO_RETRY, M.SOLO_QUIT, CHOICE_WAIT // 20),
-            'execute at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 1.2']
+            '{"text":" (lobby automatique dans %d s)","color":"gray"}]' % (M.SOLO_RETRY, M.SOLO_LOBBY, CHOICE_WAIT // 20),
+            'execute at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 1.2',
+            '# compte à rebours affiché tout de suite (wait ne l\'écrit qu\'à chaque seconde pleine, et seen avance xst avant le prochain passage)',
+            'function mg:elyrace/solo/wait']
 
 
 def wait_lines():
@@ -168,6 +172,7 @@ def stop_lines():
             '# 2) la pause d\'avant le solo : rétablie (mg.xsp0 = il était déjà en pause ; sinon la pause est retirée, même si une partie tourne)',
             'execute unless entity @s[tag=mg.xsp0] run tag @s remove mg.spectate',
             'tag @s remove mg.xsp0',
+            'tag @s remove mg.xsi',
             'scoreboard players operation @s mg.xse = $tc mg.st',
             '# 3) retour au lobby, sauf si une partie l\'a pris (participant, ou spectateur placé par core/reconnect_spec)',
             '# ou s\'il est parti en survie, dans un plot ou en visite (reset_player l\'y arracherait : position de survie corrompue, boucle avec le plot)',

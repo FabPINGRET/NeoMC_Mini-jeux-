@@ -11,8 +11,10 @@ effect give @s minecraft:saturation infinite 0 true
 # portillon de son parcours (ouvert pour tous les solos du parcours : ils sont gelés tant que le décompte dure)
 execute if score @s mg.xcr matches 1 run function mg:elyrace/c1/gate_off
 execute if score @s mg.xcr matches 2 run function mg:elyrace/c2/gate_off
-execute if score @s mg.xcr matches 1 run function mg:elyrace/c1/go_text
-execute if score @s mg.xcr matches 2 run function mg:elyrace/c2/go_text
+# texte du départ (parcours) : à la 1re tentative seulement (tag mg.xsi posé par solo/start, jamais par solo/retry)
+execute if entity @s[tag=mg.xsi] if score @s mg.xcr matches 1 run function mg:elyrace/c1/go_text
+execute if entity @s[tag=mg.xsi] if score @s mg.xcr matches 2 run function mg:elyrace/c2/go_text
+tag @s remove mg.xsi
 # gravité de course de son parcours (comme go pour le groupe) ; solo/stop la remet à la normale
 function mg:elyrace/grav_on
 scoreboard players set @s mg.xst 0

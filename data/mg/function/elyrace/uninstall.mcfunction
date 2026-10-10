@@ -42,6 +42,7 @@ execute as @a[scores={mg.xcr=1..}] run function mg:core/attr_reset_g
 execute in minecraft:overworld as @a[tag=mg.xso] run function mg:elyrace/solo/stop
 tag @a remove mg.xso
 tag @a remove mg.xsp0
+tag @a remove mg.xsi
 advancement revoke @a only mg:elyrace_wall
 scoreboard objectives remove mg.xa
 scoreboard objectives remove mg.xo

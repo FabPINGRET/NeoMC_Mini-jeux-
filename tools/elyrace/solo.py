@@ -28,14 +28,16 @@ def refuse(cond, text):
 
 
 def cmd_lines():
-    return ['# @s = joueur qui a utilise /trigger mg.xs : %d = fenêtre, %d = abandon, %d = ses records, %d = (admin) arrêter tous les solos, %d = solo au hasard, %d + NUM = solo sur le parcours NUM, %d = rejouer (phase 4)'
-            % (M.SOLO_MENU, M.SOLO_QUIT, M.SOLO_RECORDS, M.SOLO_STOP, M.SOLO_RANDOM, M.SOLO_RANDOM, M.SOLO_RETRY),
+    return ['# @s = joueur qui a utilise /trigger mg.xs : %d = fenêtre, %d = abandon, %d = ses records, %d = (admin) arrêter tous les solos, %d = solo au hasard, %d + NUM = solo sur le parcours NUM, %d = rejouer, %d = lobby (phase 4)'
+            % (M.SOLO_MENU, M.SOLO_QUIT, M.SOLO_RECORDS, M.SOLO_STOP, M.SOLO_RANDOM, M.SOLO_RANDOM, M.SOLO_RETRY, M.SOLO_LOBBY),
             '# la valeur est lue dans #xv, puis le trigger est remis à zéro d\'abord (core/tick le réactive à chaque tick)',
             'scoreboard players operation #xv mg.st = @s mg.xs',
             'scoreboard players reset @s mg.xs',
             'execute if score #xv mg.st matches %d run function mg:elyrace/solo/menu' % M.SOLO_MENU,
             'execute if score #xv mg.st matches %d run function mg:elyrace/solo/quit' % M.SOLO_QUIT,
             'execute if score #xv mg.st matches %d run function mg:elyrace/solo/retry' % M.SOLO_RETRY,
+            '# [Retour au lobby] du choix : arrêt silencieux en phase 4 seulement (sinon rien : un vieux lien du chat n\'abandonne pas une autre tentative)',
+            'execute if score #xv mg.st matches %d if score @s mg.xph matches 4 run function mg:elyrace/solo/stop' % M.SOLO_LOBBY,
             'execute if score #xv mg.st matches %d run function mg:elyrace/records' % M.SOLO_RECORDS,
             'execute if score #xv mg.st matches %d run function mg:elyrace/solo/stop_all' % M.SOLO_STOP,
             'execute if score #xv mg.st matches %d.. run function mg:elyrace/solo/start' % M.SOLO_RANDOM]
@@ -93,6 +95,8 @@ def start_lines(specs):
             'scoreboard players reset @s mg.vc',
             'execute if score $state mg.st matches 0 run function mg:vote/refresh',
             'tag @s add mg.xso',
+            '# intro du départ (go_text) : donnée une seule fois, à la 1re tentative (solo/go retire ce tag ; solo/retry ne le repose pas)',
+            'tag @s add mg.xsi',
             'scoreboard players operation @s mg.xcr = $xc mg.st',
             'scoreboard players set $xc mg.st 0',
             '# mg.xsl = tick précédent (le tick de ce lancement compte comme « vu ») ; la phase 1 et le chrono sont posés par solo/arm',
@@ -136,7 +140,7 @@ def retry_lines():
             refuse('unless entity @s[tag=mg.xso]', 'Tu n\'as pas de contre-la-montre en cours.'),
             refuse('unless score @s mg.xph matches 4', 'Rejouer n\'est proposé qu\'à l\'arrivée d\'un contre-la-montre.'),
             'tellraw @s [{"text":"⟲ Nouvelle tentative !","color":"aqua"},{"text":" ","color":"gray"},%s]' % QUIT_LINK,
-            '# le gel de la phase 4 est levé, puis re-posé par arm (sinon le modificateur serait ajouté deux fois)',
+            '# repart d\'un gel propre (tag mg.frz et point de gel re-posés par arm)',
             'function mg:core/unfreeze',
             'function mg:elyrace/solo/arm']
 
@@ -153,8 +157,8 @@ def announce_lines(specs):
 def quit_lines():
     return ['# @s = joueur qui abandonne (mg.xs %d, lien du message de lancement)' % M.SOLO_QUIT,
             'execute unless entity @s[tag=mg.xso] run return run tellraw @s [{"text":"⚠ Tu n\'as pas de contre-la-montre en cours.","color":"red"}]',
-            '# phase 4 (après l\'arrivée) : retour au lobby sans message d\'abandon (le temps est déjà enregistré)',
-            'execute if score @s mg.xph matches 4 run return run function mg:elyrace/solo/stop',
+            '# phases 3 et 4 (après l\'arrivée) : retour au lobby sans message d\'abandon (le temps est déjà enregistré)',
+            'execute if score @s mg.xph matches 3..4 run return run function mg:elyrace/solo/stop',
             'tellraw @a [{"selector":"@s","color":"yellow"},{"text":" abandonne le contre-la-montre.","color":"gray"}]',
             'function mg:elyrace/solo/stop']
 

@@ -6,5 +6,7 @@ function mg:elyrace/place_tp
 function mg:core/freeze
 scoreboard players set @s mg.xph 4
 scoreboard players set @s mg.xst 0
-tellraw @s [{"text":"🏁 Et maintenant ? ","color":"gold"},{"text":"[⟲ Rejouer]","color":"green","bold":true,"click_event":{"action":"run_command","command":"trigger mg.xs set 5"},"hover_event":{"action":"show_text","value":"Relancer le même parcours tout de suite"}},{"text":" ","color":"gray"},{"text":"[⌂ Retour au lobby]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.xs set 2"},"hover_event":{"action":"show_text","value":"Quitter le contre-la-montre"}},{"text":" (lobby automatique dans 30 s)","color":"gray"}]
+tellraw @s [{"text":"🏁 Et maintenant ? ","color":"gold"},{"text":"[⟲ Rejouer]","color":"green","bold":true,"click_event":{"action":"run_command","command":"trigger mg.xs set 5"},"hover_event":{"action":"show_text","value":"Relancer le même parcours tout de suite"}},{"text":" ","color":"gray"},{"text":"[⌂ Retour au lobby]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.xs set 6"},"hover_event":{"action":"show_text","value":"Quitter le contre-la-montre"}},{"text":" (lobby automatique dans 30 s)","color":"gray"}]
 execute at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 1.2
+# compte à rebours affiché tout de suite (wait ne l'écrit qu'à chaque seconde pleine, et seen avance xst avant le prochain passage)
+function mg:elyrace/solo/wait

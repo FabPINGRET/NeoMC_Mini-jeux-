@@ -1,4 +1,4 @@
-"""Met a jour le README pour les anneaux fins et les ors de la Course d'elytres : python wire_elyrace5.py <racine du depot>. A lancer
+"""Met a jour le README pour les anneaux fins, les ors et le bouton Rejouer (solo) de la Course d'elytres : python wire_elyrace5.py <racine du depot>. A lancer
 APRES gen_elyrace.py et wire_elyrace.py (qui ecrit la ligne du README modifiee ici). Idempotent : chaque etape est sautee si son marqueur est
 deja dans le README (quatre etapes : anneaux fins + ors en turbo, tant qu'aucun marqueur du turbo ni du bonus n'y est ; la phrase
 "desinstaller pendant une course" ; les ors en bonus de temps ; « Rejouer » en fin de solo, phrase du solo et ligne du tableau des triggers). Chaque ancre doit exister EXACTEMENT une fois (wirelib.Patcher : tout se

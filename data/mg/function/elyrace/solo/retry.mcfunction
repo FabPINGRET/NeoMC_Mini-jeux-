@@ -3,6 +3,6 @@
 execute unless entity @s[tag=mg.xso] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Tu n'as pas de contre-la-montre en cours.","color":"red"}]
 execute unless score @s mg.xph matches 4 run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Rejouer n'est proposé qu'à l'arrivée d'un contre-la-montre.","color":"red"}]
 tellraw @s [{"text":"⟲ Nouvelle tentative !","color":"aqua"},{"text":" ","color":"gray"},{"text":"[✖ Abandonner]","color":"red","click_event":{"action":"run_command","command":"trigger mg.xs set 2"},"hover_event":{"action":"show_text","value":"Quitter le contre-la-montre"}}]
-# le gel de la phase 4 est levé, puis re-posé par arm (sinon le modificateur serait ajouté deux fois)
+# repart d'un gel propre (tag mg.frz et point de gel re-posés par arm)
 function mg:core/unfreeze
 function mg:elyrace/solo/arm

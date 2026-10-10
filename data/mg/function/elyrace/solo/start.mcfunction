@@ -45,6 +45,8 @@ tag @s add mg.spectate
 scoreboard players reset @s mg.vc
 execute if score $state mg.st matches 0 run function mg:vote/refresh
 tag @s add mg.xso
+# intro du départ (go_text) : donnée une seule fois, à la 1re tentative (solo/go retire ce tag ; solo/retry ne le repose pas)
+tag @s add mg.xsi
 scoreboard players operation @s mg.xcr = $xc mg.st
 scoreboard players set $xc mg.st 0
 # mg.xsl = tick précédent (le tick de ce lancement compte comme « vu ») ; la phase 1 et le chrono sont posés par solo/arm

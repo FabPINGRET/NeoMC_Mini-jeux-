@@ -60,7 +60,7 @@ EXTRA_OBJECTIVES = [
     ('xsl', 'solo : dernier tick ou le joueur etait en ligne (detecte la reconnexion)'),
 ]
 TAGS = ['mg.xw1', 'mg.xtp'] + W.tags()    # etiquettes temporaires de la fin de course (pas des objectifs) + charges de vent si WIND
-SOLO_TAGS = ['mg.xso', 'mg.xsp0']         # solo en cours ; pause d'avant le solo (hors TAGS : prepare ne doit pas les effacer)
+SOLO_TAGS = ['mg.xso', 'mg.xsp0', 'mg.xsi']  # solo en cours ; pause d'avant le solo ; texte d'intro du depart pas encore donne (1re tentative : solo/go) (hors TAGS : prepare ne doit pas les effacer)
 ELYTRA = ('minecraft:elytra[minecraft:custom_data={mg_elyr:1b},minecraft:unbreakable={},'
           'minecraft:enchantments={"minecraft:binding_curse":1},'
           'minecraft:custom_name={"text":"Élytres de course","color":"aqua","italic":false}]')
