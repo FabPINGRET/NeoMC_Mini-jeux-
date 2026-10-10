@@ -4,4 +4,4 @@ kill @e[type=minecraft:text_display,tag=mg.deco]
 function mg:lobby/deco_common
 execute if score $rp mg.st matches 1 run function mg:lobby/deco_rp
 execute unless score $rp mg.st matches 1 run function mg:lobby/deco_vn
-data modify storage mg:lobby deco2 set value 1b
+data modify storage mg:lobby deco3 set value 1b
