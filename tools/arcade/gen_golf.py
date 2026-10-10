@@ -509,7 +509,7 @@ for i, h in enumerate(HOLES):
     B = [f'# @s : sa balle au départ du trou {n} (5 emplacements côte à côte)',
          'scoreboard players operation $gfsl mg.st = @s mg.gfi', 'scoreboard players operation $gfsl mg.st %= #gf5 mg.st']
     for k, off in enumerate((0, -1, 1, -2, 2)):
-        bx, bz = round(tx + px_ * off) + 0.5, round(tz + pz_ * off) + 0.5
+        bx, bz = X0 + round(tx + px_ * off) + 0.5, Z0 + round(tz + pz_ * off) + 0.5
         B.append(f'execute if score $gfsl mg.st matches {k} run summon minecraft:item_display {bx} {h["ty"] + 1} {bz} '
                  '{Tags:["mg.fx","mg.gfb","mg.gfnew"],item:{id:"minecraft:snowball",count:1},billboard:"center",view_range:4f,Glowing:1b,'
                  f'teleport_duration:1,transformation:{T_ID},translation:[0f,0.12f,0f],scale:[0.45f,0.45f,0.45f]}}}}')
