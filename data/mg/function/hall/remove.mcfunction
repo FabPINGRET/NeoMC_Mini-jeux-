@@ -50,6 +50,7 @@ data remove storage mg:hall v9
 data remove storage mg:hall v10
 data remove storage mg:hall v11
 data remove storage mg:hall v12
+data remove storage mg:hall v13
 scoreboard objectives remove mg.gen
 scoreboard objectives remove mg.lvl
 scoreboard objectives remove mg.genc
