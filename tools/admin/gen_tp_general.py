@@ -2,7 +2,8 @@
 
     python tools/admin/gen_tp_general.py .      (depuis la racine du dépôt ; idempotent)
 
-Menu principal → « 🌍 TP général (admin) ▸ » (mg.opt 62) → fenêtre mg:tp_general → une destination (mg.opt 63..).
+Menu principal → « 🌍 TP général (admin) ▸ » (mg.opt 62) → fenêtre mg:tp_general → une destination (mg.opt 63..) :
+survie, Neo GTA, ou retour de tous au lobby (sortie des activités secondaires avant de lancer un mini-jeu).
 Joueurs concernés : tous sauf ceux d'une partie en cours (mg.play / mg.out) et de la Mini Party (mg.mpp).
 Pour ajouter une destination : une entrée dans DEST + sa fonction tpg/<clé>.
 """
@@ -29,6 +30,19 @@ DEST = [
         f'execute as @a[{FREE},tag=mg.inplot] run function mg:plot/leave',
         f'execute as @a[{FREE},tag=!mg.gtw] run function mg:gta/enter',
         'tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a envoyé tout le monde à Neo GTA.","color":"gray"}]']),
+    ('lobby', '🏠 Tout le monde → Lobby', 'yellow', 'Sort tout le monde de la survie, de Neo GTA, des plots, du kart, du parkour, des élytra et de la montagne russe : prêt pour lancer un mini-jeu', 65, [
+        '# TP général → lobby (@s = admin) : chacun quitte proprement son activité (sauvegardes comprises), puis remise à zéro au spawn',
+        f'execute as @a[{FREE},tag=mg.gtw] run function mg:gta/leave',
+        f'execute as @a[{FREE},tag=mg.surv,tag=!mg.gtw] run function mg:survie/leave',
+        f'execute as @a[{FREE},tag=mg.inplot] run function mg:plot/leave',
+        f'execute as @a[{FREE},tag=mg.visit] run function mg:plot/leave',
+        f'execute as @a[{FREE},tag=mg.lk] run function mg:lobkart/leave',
+        f'execute as @a[{FREE},tag=mg.pkr] run function mg:parkour/quit',
+        f'execute as @a[{FREE},tag=mg.ely] run function mg:elytra/stop_quiet',
+        f'execute as @a[{FREE},tag=mg.elyf] run function mg:elytra/free_stop',
+        f'execute as @a[{FREE}] if predicate mg:coaster_riding run ride @s dismount',
+        f'execute as @a[{FREE}] run function mg:core/reset_player',
+        'tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a ramené tout le monde au lobby.","color":"gray"}]']),
 ]
 
 

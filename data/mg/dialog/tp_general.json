@@ -67,6 +67,24 @@
     {
       "label": [
         {
+          "text": "🏠 Tout le monde → Lobby",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 65"
+      },
+      "tooltip": [
+        {
+          "text": "Sort tout le monde de la survie, de Neo GTA, des plots, du kart, du parkour, des élytra et de la montagne russe : prêt pour lancer un mini-jeu",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
           "text": "« Retour au menu",
           "color": "yellow"
         }
