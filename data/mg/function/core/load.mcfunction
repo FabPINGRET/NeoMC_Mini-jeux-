@@ -47,6 +47,16 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+team add mg_at
+team modify mg_at friendlyFire false
+team modify mg_at nametagVisibility always
+scoreboard objectives add mg.atl dummy {"text":"🚗 Coups restants","color":"aqua","bold":true}
+scoreboard objectives add mg.atp dummy
+scoreboard objectives add mg.atid dummy
+scoreboard objectives add mg.atx dummy
+scoreboard objectives add mg.atz dummy
+scoreboard objectives add mg.atv dummy
+scoreboard objectives add mg.atc dummy
 scoreboard objectives add mg.pco dummy {"text":"💰 Pièces (arène PvP)","color":"gold"}
 scoreboard objectives add mg.pkc playerKillCount
 scoreboard objectives add mg.pks dummy

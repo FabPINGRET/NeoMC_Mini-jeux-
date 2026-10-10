@@ -37,6 +37,7 @@ execute if data storage mg:rate key{f:"bomber"} run data modify storage mg:rate 
 execute if data storage mg:rate key{f:"chameleon"} run data modify storage mg:rate cur.g set value '🦎 Meccha Chameleon'
 execute if data storage mg:rate key{f:"wii"} run data modify storage mg:rate cur.g set value '🎾 Wii Sports'
 execute if data storage mg:rate key{f:"soleil"} run data modify storage mg:rate cur.g set value '🔴 1, 2, 3 Soleil'
+execute if data storage mg:rate key{f:"autotamp"} run data modify storage mg:rate cur.g set value '🚗 Autos tamponneuses'
 execute if data storage mg:rate key{m:1} run data modify storage mg:rate cur.m set value 'Tour de neige'
 execute if data storage mg:rate key{m:2} run data modify storage mg:rate cur.m set value 'Tour de laine'
 execute if data storage mg:rate key{m:3} run data modify storage mg:rate cur.m set value 'Arène classique'

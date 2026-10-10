@@ -36,6 +36,7 @@ scoreboard objectives remove mg.wg_bomber
 scoreboard objectives remove mg.wg_chameleon
 scoreboard objectives remove mg.wg_wii
 scoreboard objectives remove mg.wg_soleil
+scoreboard objectives remove mg.wg_autotamp
 kill @e[tag=mg.hall]
 schedule clear mg:hall/build
 data remove storage mg:hall e

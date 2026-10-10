@@ -22,6 +22,15 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+bossbar remove mg:autotamp
+team remove mg_at
+scoreboard objectives remove mg.atl
+scoreboard objectives remove mg.atp
+scoreboard objectives remove mg.atid
+scoreboard objectives remove mg.atx
+scoreboard objectives remove mg.atz
+scoreboard objectives remove mg.atv
+scoreboard objectives remove mg.atc
 scoreboard objectives remove mg.pco
 scoreboard objectives remove mg.pkc
 scoreboard objectives remove mg.pks
