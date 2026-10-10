@@ -39,6 +39,7 @@ execute if score $game mg.st matches 36 run function mg:paintball/go
 execute if score $game mg.st matches 56 run function mg:icerace/go
 function mg:rate/begin
 execute if score $game mg.st matches 57..58 run function mg:bb/go
+execute if score $game mg.st matches 226 run function mg:master/go
 execute if score $game mg.st matches 225 run function mg:lab/go
 execute if score $game mg.st matches 224 run function mg:slimejump/go
 execute if score $game mg.st matches 221..223 run function mg:autotamp/go

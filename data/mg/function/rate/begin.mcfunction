@@ -61,4 +61,5 @@ execute if score $game mg.st matches 220 run data modify storage mg:rate key mer
 execute if score $game mg.st matches 221..223 run data modify storage mg:rate key merge value {f:"autotamp",g:38}
 execute if score $game mg.st matches 224 run data modify storage mg:rate key merge value {f:"slimejump",g:39}
 execute if score $game mg.st matches 225 run data modify storage mg:rate key merge value {f:"lab",g:40}
+execute if score $game mg.st matches 226 run data modify storage mg:rate key merge value {f:"master",g:41}
 execute store result score $rgf mg.st run data get storage mg:rate key.g

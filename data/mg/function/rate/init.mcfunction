@@ -517,3 +517,5 @@ data modify storage mg:rate lab.fslimejump set value '""'
 function mg:rate/lab_fam {f:"slimejump",g:39}
 data modify storage mg:rate lab.flab set value '""'
 function mg:rate/lab_fam {f:"lab",g:40}
+data modify storage mg:rate lab.fmaster set value '""'
+function mg:rate/lab_fam {f:"master",g:41}

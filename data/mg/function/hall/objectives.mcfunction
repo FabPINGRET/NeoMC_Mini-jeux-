@@ -39,6 +39,7 @@ scoreboard objectives add mg.wg_soleil dummy [{"text":"🔴 1, 2, 3 Soleil","col
 scoreboard objectives add mg.wg_autotamp dummy [{"text":"🚗 Autos tamponneuses","color":"aqua","bold":true},{"text":" — victoires","color":"gray","bold":false}]
 scoreboard objectives add mg.wg_slimejump dummy [{"text":"🟩 Slime Jump","color":"green","bold":true},{"text":" — victoires","color":"gray","bold":false}]
 scoreboard objectives add mg.wg_lab dummy [{"text":"🙈 Labyrinthe aveugle","color":"light_purple","bold":true},{"text":" — victoires","color":"gray","bold":false}]
+scoreboard objectives add mg.wg_master dummy [{"text":"👑 Master dit","color":"gold","bold":true},{"text":" — victoires","color":"gray","bold":false}]
 scoreboard objectives modify mg.stp displayname [{"text":"▶ Parties jouées","color":"green","bold":true}]
 scoreboard objectives modify mg.stk displayname [{"text":"⚔ Kills","color":"red","bold":true},{"text":" (toutes parties)","color":"gray","bold":false}]
 scoreboard objectives modify mg.wins displayname [{"text":"✦ Victoires","color":"gold","bold":true},{"text":" (tous les jeux)","color":"gray","bold":false}]
