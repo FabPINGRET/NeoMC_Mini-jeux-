@@ -509,3 +509,5 @@ data modify storage mg:rate lab.fchameleon set value '""'
 function mg:rate/lab_fam {f:"chameleon",g:35}
 data modify storage mg:rate lab.fwii set value '""'
 function mg:rate/lab_fam {f:"wii",g:36}
+data modify storage mg:rate lab.fsoleil set value '""'
+function mg:rate/lab_fam {f:"soleil",g:37}

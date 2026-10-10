@@ -35,6 +35,7 @@ scoreboard objectives remove mg.wg_infection
 scoreboard objectives remove mg.wg_bomber
 scoreboard objectives remove mg.wg_chameleon
 scoreboard objectives remove mg.wg_wii
+scoreboard objectives remove mg.wg_soleil
 kill @e[tag=mg.hall]
 schedule clear mg:hall/build
 data remove storage mg:hall e
@@ -51,6 +52,7 @@ data remove storage mg:hall v10
 data remove storage mg:hall v11
 data remove storage mg:hall v12
 data remove storage mg:hall v13
+data remove storage mg:hall v14
 scoreboard objectives remove mg.gen
 scoreboard objectives remove mg.lvl
 scoreboard objectives remove mg.genc

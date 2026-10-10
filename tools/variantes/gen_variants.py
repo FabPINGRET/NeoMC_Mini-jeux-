@@ -724,6 +724,7 @@ CATS = {
         act('🎭 Prop Hunt', 'gold', 'trigger mg.go set 96', 'Cache-toi en objet, ou trouve les objets qui bougent'),
         act('💣 Bombardier', 'red', 'trigger mg.go set 99', 'Bombarde la ville du ciel, le plus de dégâts gagne, 2 min 30'),
         act('🦎 Meccha Chameleon', 'green', 'trigger mg.go set 198', 'Peins-toi aux couleurs du décor et cache-toi, ou chasse les caméléons'),
+        act('🔴 1, 2, 3 Soleil', 'red', 'trigger mg.go set 220', 'Façon Squid Game : avance dos tourné, fige-toi quand la poupée regarde'),
         act('🎾 Wii Sports ▸', 'aqua', OPEN(56), 'Bowling, golf, tennis : chacun sa piste')], 'menu'),
     'wii': ('🎾 Wii Sports', 'aqua', 'Chacun sa piste, tout le monde joue en même temps.', [
         act('🎳 Bowling', 'light_purple', 'trigger mg.go set 214', '8 pistes, 5 frames, vraies règles (strike, spare)'),
@@ -871,7 +872,7 @@ NATIVE = {
     75: ('Course d\'anneaux', 2), 76: ('Course + combat', 3), 77: ('Survie en vol', 4),
     61: ('Circuit Champignon', 2), 62: ('Royaume Koopa', 3), 63: ('Bataille', 2), 56: ('Bateaux sur glace', 2),
     81: ('Canyon du Couchant', 3), 30: ('Turf Wars', 2),
-    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2), 88: ('🏰 The Towers', 3), 89: ('🚚 Convoi', 3), 90: ('🚚 Convoi — coop', 3), 91: ('▦ Block Party — bandes', 3), 92: ('▦ Block Party — mixte', 3), 93: ('🚩 Capture the Flag', 3), 94: ('⛏ Mini UHC Run', 3), 95: ('🏹 Mini Hunger Games', 3), 96: ('🎭 Prop Hunt', 2), 97: ('🧟 Zombies', 3), 98: ('🧪 Infection', 2),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
+    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2), 88: ('🏰 The Towers', 3), 89: ('🚚 Convoi', 3), 90: ('🚚 Convoi — coop', 3), 91: ('▦ Block Party — bandes', 3), 92: ('▦ Block Party — mixte', 3), 93: ('🚩 Capture the Flag', 3), 94: ('⛏ Mini UHC Run', 3), 95: ('🏹 Mini Hunger Games', 3), 96: ('🎭 Prop Hunt', 2), 97: ('🧟 Zombies', 3), 98: ('🧪 Infection', 2), 220: ('🔴 1, 2, 3 Soleil', 2),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
 }
 SHORT_OPT = {   # boutons de navigation (mg.opt) : noms courts
     24: '➶ OITC ▸', 10: '⚡ Quake ▸', 20: '⚓ Enclumes ▸', 19: '⬇ Dropper ▸', 28: '🪽 Course élytres ▸', 23: '⚔ Arène PvP ▸',
