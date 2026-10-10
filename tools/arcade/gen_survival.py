@@ -178,7 +178,7 @@ def lastman(prefix):
 # =====================================================================  UHC RUN
 ZU, RU = C.param('ZU', 22400), 40
 L, HU = terrain(C.param('seed_uhc', 9401), RU, ZU, 60, 70, 84, 69,
-                [('coal_ore', 420, 20, 5), ('iron_ore', 480, 18, 5), ('gold_ore', 220, 12, 4), ('diamond_ore', 75, 6, 3),
+                [('iron_ore', 760, 18, 5), ('gold_ore', 260, 12, 4), ('diamond_ore', 150, 6, 3),
                  ('redstone_ore', 50, 8, 3), ('lapis_ore', 40, 8, 3)], tree_div=40, theme=C.param('uhc_theme', 'plaines'))
 # ressources en surface (UHC) : affleurements de minerais, graviers (silex), canne à sucre, coffres
 _r = random.Random(9402)
@@ -200,7 +200,7 @@ for _ in range(30):                       # rochers avec minerais visibles
     if not s:
         continue
     x, z, h = s
-    ore = _r.choice(['iron_ore', 'iron_ore', 'iron_ore', 'coal_ore', 'coal_ore', 'gold_ore', 'gold_ore', 'diamond_ore'])
+    ore = _r.choice(['iron_ore', 'iron_ore', 'iron_ore', 'iron_ore', 'gold_ore', 'gold_ore', 'diamond_ore', 'diamond_ore'])
     L.append(f'fill {x - 1} {h + 1} {ZU + z - 1} {x + 1} {h + 1} {ZU + z + 1} minecraft:cobblestone')
     L.append(f'setblock {x} {h + 2} {ZU + z} minecraft:{ore}')
     L += [f'setblock {x + dx} {h + 1} {ZU + z + dz} minecraft:{ore}' for dx, dz in _r.sample([(-1, 0), (1, 0), (0, -1), (0, 1)], 2)]
@@ -253,15 +253,35 @@ w('uhc/go', ['# Départ : survie, pas de régénération naturelle, inventaire l
              'scoreboard players set $uht mg.st 0', 'scoreboard players set #-1 mg.st -1', f'scoreboard players set $zr mg.st {RU + 2}',
              'gamerule natural_health_regeneration false', 'gamerule keep_inventory false',
              'gamemode survival @a[tag=mg.play]', 'team join mg_green @a[tag=mg.play]',
-             'give @a[tag=mg.play] minecraft:stone_pickaxe[enchantments={efficiency:3},unbreakable={}]',
-             'give @a[tag=mg.play] minecraft:stone_axe[enchantments={efficiency:3},unbreakable={}]',
-             'give @a[tag=mg.play] minecraft:stone_shovel[enchantments={efficiency:3},unbreakable={}]',
+             # outils en fer (le diamant demande au moins du fer), Efficacité V + Célérité III : la roche casse d'un coup
+             'give @a[tag=mg.play] minecraft:iron_pickaxe[enchantments={efficiency:5},unbreakable={}]',
+             'give @a[tag=mg.play] minecraft:iron_axe[enchantments={efficiency:5},unbreakable={}]',
+             'give @a[tag=mg.play] minecraft:iron_shovel[enchantments={efficiency:5},unbreakable={}]',
              'give @a[tag=mg.play] minecraft:crafting_table', 'give @a[tag=mg.play] minecraft:bread 10',
-             'effect give @a[tag=mg.play] minecraft:haste infinite 1 true',
+             'effect give @a[tag=mg.play] minecraft:haste infinite 2 true',
+             'scoreboard players reset @a mg.uoi', 'scoreboard players reset @a mg.uog', 'scoreboard players reset @a mg.uod',
+             'scoreboard players reset @a mg.uor', 'scoreboard players reset @a mg.uol',
              'effect give @a[tag=mg.play] minecraft:instant_health 1 4 true', 'scoreboard players set @a mg.deaths 0'] + ANIMALS + [
              'tellraw @a[tag=mg.play] ' + js([{'text': '⛏ MINI UHC RUN : ', 'color': 'gold', 'bold': True},
                                               {'text': '2 min 30 pour miner et t\'équiper (minerais déjà cuits, minage rapide, coffres, rochers à minerais, animaux), PVP DÉSACTIVÉ. Ensuite PvP et la zone rétrécit. Pas de régénération : pommes d\'or (8 lingots d\'or + 1 pomme) ! Dernier en vie gagne.', 'color': 'gray'}])])
-w('uhc/tick', ['# ⛏ Mini UHC Run — tick', 'scoreboard players add $uht mg.st 1',
+# minerai cassé (statistique « miné », donc avec le bon outil) → un bloc entier (9 lingots) ; la petite récompense normale
+# (tombée à la fin du tick précédent : délai de ramassage encore à 10) est retirée
+ORES = [('mg.uoi', 'iron_ore', 'raw_iron', 'iron_block'), ('mg.uog', 'gold_ore', 'raw_gold', 'gold_block'),
+        ('mg.uod', 'diamond_ore', 'diamond', 'diamond_block'), ('mg.uor', 'redstone_ore', 'redstone', 'redstone_block'),
+        ('mg.uol', 'lapis_ore', 'lapis_lazuli', 'lapis_block')]
+w('uhc/give_n', ['$give @s minecraft:$(b) $(n)'])
+for obj, ore, drop, blk in ORES:
+    w(f'uhc/ore_{ore}', [f'# @s a cassé {ore} : un bloc de {blk} par minerai',
+                         f'data modify storage mg:uhc o.b set value "{blk}"',
+                         f'execute store result storage mg:uhc o.n int 1 run scoreboard players get @s {obj}',
+                         'function mg:uhc/give_n with storage mg:uhc o',
+                         f'scoreboard players reset @s {obj}',
+                         f'execute at @s run kill @e[type=minecraft:item,distance=..8,nbt={{PickupDelay:10s,Item:{{id:"minecraft:{drop}"}}}}]',
+                         'execute at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 0.6 1.2'])
+C.objectives([(obj, f'minecraft.mined:minecraft.{ore}') for obj, ore, _, _ in ORES])
+C.patch('desinstaller', 'scoreboard objectives remove mg.bw', ['data remove storage mg:uhc o'])
+w('uhc/tick', ['# ⛏ Mini UHC Run — tick', 'scoreboard players add $uht mg.st 1'] +
+  [f'execute as @a[tag=mg.play,scores={{{obj}=1..}}] run function mg:uhc/ore_{ore}' for obj, ore, _, _ in ORES] + [
                'execute as @a[tag=mg.play,scores={mg.deaths=1..}] run function mg:core/eliminate',
                'execute as @a[tag=mg.play] store result score @s mg.t run data get entity @s Pos[1]',
                'execute as @a[tag=mg.play,scores={mg.t=..50}] run function mg:core/eliminate',

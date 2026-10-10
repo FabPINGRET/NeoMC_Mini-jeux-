@@ -6,12 +6,17 @@ gamerule natural_health_regeneration false
 gamerule keep_inventory false
 gamemode survival @a[tag=mg.play]
 team join mg_green @a[tag=mg.play]
-give @a[tag=mg.play] minecraft:stone_pickaxe[enchantments={efficiency:3},unbreakable={}]
-give @a[tag=mg.play] minecraft:stone_axe[enchantments={efficiency:3},unbreakable={}]
-give @a[tag=mg.play] minecraft:stone_shovel[enchantments={efficiency:3},unbreakable={}]
+give @a[tag=mg.play] minecraft:iron_pickaxe[enchantments={efficiency:5},unbreakable={}]
+give @a[tag=mg.play] minecraft:iron_axe[enchantments={efficiency:5},unbreakable={}]
+give @a[tag=mg.play] minecraft:iron_shovel[enchantments={efficiency:5},unbreakable={}]
 give @a[tag=mg.play] minecraft:crafting_table
 give @a[tag=mg.play] minecraft:bread 10
-effect give @a[tag=mg.play] minecraft:haste infinite 1 true
+effect give @a[tag=mg.play] minecraft:haste infinite 2 true
+scoreboard players reset @a mg.uoi
+scoreboard players reset @a mg.uog
+scoreboard players reset @a mg.uod
+scoreboard players reset @a mg.uor
+scoreboard players reset @a mg.uol
 effect give @a[tag=mg.play] minecraft:instant_health 1 4 true
 scoreboard players set @a mg.deaths 0
 summon minecraft:cow 35 82 34365 {Tags:["mg.mob","mg.uhcmob"],PersistenceRequired:1b}
