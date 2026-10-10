@@ -128,8 +128,7 @@ w('zm/prepare', ['# 🧟 Zombies — préparation', 'function mg:zm/build', 'fun
                  f'spreadplayers 0 {Z} 2 6 under 84 false @a[tag=mg.play]', 'execute as @a[tag=mg.play] at @s run spawnpoint @s ~ ~ ~'])
 w('zm/kit', ['# @s : couteau + pistolet', 'clear @s', 'function mg:gun/reset',
              'item replace entity @s hotbar.0 with minecraft:iron_sword[unbreakable={},custom_name=[{"text":"🔪 Couteau","color":"gray","italic":false}]]',
-             G.give(1, 'hotbar.1'), 'item replace entity @s hotbar.8 with minecraft:cooked_beef 8',
-             'effect give @s minecraft:saturation infinite 0 true'])
+             G.give(1, 'hotbar.1'), 'item replace entity @s hotbar.8 with minecraft:cooked_beef 16'])
 w('zm/go', ['# Départ', 'scoreboard players set $zpts mg.st 1', 'scoreboard players set $zr mg.st 0', 'scoreboard players set $zph mg.st 0', 'scoreboard players set $zb mg.st 100',
             'scoreboard players set #2 mg.st 2', 'scoreboard players set @a[tag=mg.play] mg.zpt 500', 'scoreboard players reset @a mg.zk',
             'scoreboard objectives setdisplay sidebar mg.zpt', 'scoreboard players set @a mg.deaths 0',
@@ -151,12 +150,17 @@ w('zm/kill_points', ['scoreboard players operation $zk mg.st = @s mg.zk', 'score
 w('zm/break_tick', ['scoreboard players remove $zb mg.st 1', 'execute if score $zb mg.st matches ..0 run function mg:zm/round_start'])
 w('zm/round_start', ['# Nouvelle manche : nombre, vie et vitesse des zombies', 'scoreboard players add $zr mg.st 1',
                      'scoreboard players set $zph mg.st 1', 'scoreboard players set $zsc mg.st 0',
-                     # nombre = (4 + 3r) × (n + 1) / 2, max 60
-                     'scoreboard players operation $zleft mg.st = $zr mg.st', 'scoreboard players set #3 mg.st 3',
-                     'scoreboard players operation $zleft mg.st *= #3 mg.st', 'scoreboard players add $zleft mg.st 4',
-                     'execute store result score $zn mg.st if entity @a[tag=mg.play]', 'scoreboard players add $zn mg.st 1',
+                     # nombre = (5 + 4r) × (2n − 1) / 2 (seul : ×1), max 160 — +1 « part » complète par joueur au-delà de 2
+                     'scoreboard players operation $zleft mg.st = $zr mg.st', 'scoreboard players set #4 mg.st 4',
+                     'scoreboard players operation $zleft mg.st *= #4 mg.st', 'scoreboard players add $zleft mg.st 5',
+                     'execute store result score $zpn mg.st if entity @a[tag=mg.play]',
+                     'scoreboard players operation $zn mg.st = $zpn mg.st', 'scoreboard players operation $zn mg.st *= #2 mg.st', 'scoreboard players remove $zn mg.st 1',
+                     'execute if score $zn mg.st matches ..1 run scoreboard players set $zn mg.st 2',
                      'scoreboard players operation $zleft mg.st *= $zn mg.st', 'scoreboard players operation $zleft mg.st /= #2 mg.st',
-                     'execute if score $zleft mg.st matches 61.. run scoreboard players set $zleft mg.st 60',
+                     'execute if score $zleft mg.st matches 161.. run scoreboard players set $zleft mg.st 160',
+                     # zombies en vie en même temps : 16 + 4n, max 40
+                     'scoreboard players operation $zmx mg.st = $zpn mg.st', 'scoreboard players operation $zmx mg.st *= #4 mg.st',
+                     'scoreboard players add $zmx mg.st 16', 'execute if score $zmx mg.st matches 41.. run scoreboard players set $zmx mg.st 40',
                      # vie = 16 + 8 (r − 1), max 150 ; vitesse 0,23 / 0,27 / 0,32 ; cadence d'apparition 22 − 2r (min 8)
                      'scoreboard players operation $zhp mg.st = $zr mg.st', 'scoreboard players set #8 mg.st 8',
                      'scoreboard players operation $zhp mg.st *= #8 mg.st', 'scoreboard players add $zhp mg.st 8',
@@ -166,6 +170,9 @@ w('zm/round_start', ['# Nouvelle manche : nombre, vie et vitesse des zombies', '
                      'scoreboard players operation $zsi mg.st = $zr mg.st', 'scoreboard players operation $zsi mg.st *= #2 mg.st',
                      'scoreboard players set $zsj mg.st 22', 'scoreboard players operation $zsj mg.st -= $zsi mg.st',
                      'execute if score $zsj mg.st matches ..7 run scoreboard players set $zsj mg.st 8',
+                     'execute if score $zpn mg.st matches 3.. run scoreboard players operation $zsj mg.st -= $zpn mg.st',
+                     'execute if score $zpn mg.st matches 3.. run scoreboard players add $zsj mg.st 2',
+                     'execute if score $zsj mg.st matches ..3 run scoreboard players set $zsj mg.st 4',
                      'execute store result storage mg:zm hp int 1 run scoreboard players get $zhp mg.st',
                      'execute store result storage mg:zm sp double 0.01 run scoreboard players get $zsp mg.st',
                      'title @a[tag=mg.play] title [{"text":"Manche ","color":"dark_red","bold":true},{"score":{"name":"$zr","objective":"mg.st"},"color":"red","bold":true}]',
@@ -174,7 +181,7 @@ w('zm/round_start', ['# Nouvelle manche : nombre, vie et vitesse des zombies', '
 w('zm/round_tick', ['# Manche en cours : apparitions, fin de manche',
                     'scoreboard players add $zsc mg.st 1',
                     'execute store result score $zal mg.st if entity @e[type=minecraft:zombie,tag=mg.zz]',
-                    'execute if score $zsc mg.st >= $zsj mg.st if score $zleft mg.st matches 1.. if score $zal mg.st matches ..23 run function mg:zm/spawn',
+                    'execute if score $zsc mg.st >= $zsj mg.st if score $zleft mg.st matches 1.. if score $zal mg.st < $zmx mg.st run function mg:zm/spawn',
                     'execute if score $zleft mg.st matches ..0 if score $zal mg.st matches 0 run function mg:zm/round_end'])
 w('zm/spawn', ['scoreboard players set $zsc mg.st 0', 'scoreboard players remove $zleft mg.st 1',
                'execute as @e[type=minecraft:marker,tag=mg.zsp,tag=mg.zon,sort=random,limit=1] at @s run function mg:zm/spawn_one with storage mg:zm'])
@@ -286,7 +293,7 @@ w('inf/kit', ['# @s : survivant (couteau, pistolet, une arme au hasard)', 'clear
               'execute if score $zx mg.st matches 2 run ' + G.give(2, 'hotbar.2'), 'execute if score $zx mg.st matches 3 run ' + G.give(3, 'hotbar.2'),
               'execute if score $zx mg.st matches 4 run ' + G.give(4, 'hotbar.2'),
               'item replace entity @s armor.chest with minecraft:leather_chestplate[dyed_color=3361970,unbreakable={}]',
-              'effect give @s minecraft:saturation infinite 0 true'])
+              'item replace entity @s hotbar.8 with minecraft:cooked_beef 8'])
 w('inf/go', ['# Départ : 1 zombie pour 5 joueurs (au moins 1)', f'scoreboard players set $ift mg.st 0', 'scoreboard players set @a mg.deaths 0',
              'execute as @a[tag=mg.play] run function mg:inf/kit',
              'execute store result score $inn mg.st if entity @a[tag=mg.play]', 'scoreboard players set #5 mg.st 5',
