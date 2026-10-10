@@ -49,3 +49,4 @@ execute if score $game mg.st matches 217..219 run function mg:hall/game {obj:"mg
 execute if score $game mg.st matches 99 run function mg:hall/game {obj:"mg.wg_bomber",key:"bomber",lbl:"💣 Bombardier",col:"red"}
 execute if score $game mg.st matches 198 run function mg:hall/game {obj:"mg.wg_chameleon",key:"chameleon",lbl:"🦎 Meccha Chameleon",col:"green"}
 execute if score $game mg.st matches 214..216 run function mg:hall/game {obj:"mg.wg_wii",key:"wii",lbl:"🎾 Wii Sports",col:"aqua"}
+execute if score $game mg.st matches 220 run function mg:hall/game {obj:"mg.wg_soleil",key:"soleil",lbl:"🔴 1, 2, 3 Soleil",col:"red"}

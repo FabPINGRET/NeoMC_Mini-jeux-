@@ -22,6 +22,12 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+bossbar remove mg:soleil
+team remove mg_sq
+data remove storage mg:sq b
+scoreboard objectives remove mg.sqx
+scoreboard objectives remove mg.sqy
+scoreboard objectives remove mg.sqz
 scoreboard objectives remove mg.pco
 scoreboard objectives remove mg.pkc
 scoreboard objectives remove mg.pks

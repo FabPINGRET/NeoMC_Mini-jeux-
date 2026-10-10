@@ -92,6 +92,8 @@ forceload add -31 26577 31 26623
 forceload add -80 35375 79 35425
 # 🎳 Bowling (z 35170)
 forceload add -35 35129 34 35185
+# 1, 2, 3 Soleil (z 37000)
+forceload add -23 36996 23 37099
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl
