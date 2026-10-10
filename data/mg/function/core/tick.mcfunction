@@ -32,8 +32,8 @@ execute if score $setup mg.st matches 1 as @a[scores={mg.lg=1..}] run function m
 
 # Ouverture du menu (objet ou /trigger mg.menu)
 execute as @a[scores={mg.cs=1..},tag=!mg.surv] run function mg:core/menu_use
-execute if score $setup mg.st matches 1 if entity @a[x=0,y=40,z=0,dx=27,dy=20,dz=25] run function mg:pvpc/tick
-execute if score $setup mg.st matches 1 unless entity @a[x=0,y=40,z=0,dx=27,dy=20,dz=25] if entity @a[tag=mg.pvpc] run function mg:pvpc/tick
+execute if score $setup mg.st matches 1 if entity @a[x=-12,y=40,z=-10,dx=51,dy=20,dz=45] run function mg:pvpc/tick
+execute if score $setup mg.st matches 1 unless entity @a[x=-12,y=40,z=-10,dx=51,dy=20,dz=45] if entity @a[tag=mg.pvpc] run function mg:pvpc/tick
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 if loaded 13 53 5 unless block 13 53 5 minecraft:lodestone run function mg:pvpc/build
 execute as @a[scores={mg.menu=1}] run function mg:core/menu_use
 execute as @a[scores={mg.menu=2..}] run function mg:core/menu_chat_force
