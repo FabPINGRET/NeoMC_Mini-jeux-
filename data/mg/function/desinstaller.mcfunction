@@ -22,12 +22,6 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
-bossbar remove mg:soleil
-team remove mg_sq
-data remove storage mg:sq b
-scoreboard objectives remove mg.sqx
-scoreboard objectives remove mg.sqy
-scoreboard objectives remove mg.sqz
 scoreboard objectives remove mg.pco
 scoreboard objectives remove mg.pkc
 scoreboard objectives remove mg.pks
@@ -42,8 +36,15 @@ kill @e[tag=mg.pvpcd]
 kill @e[type=minecraft:wolf,tag=mg.pdog]
 kill @e[type=minecraft:item,tag=mg.pvpcoin]
 data remove storage mg:lobby pvpc1
+data remove storage mg:lobby pvpc2
 data remove storage mg:pvpc p
 data remove storage mg:pvpc s
+bossbar remove mg:soleil
+team remove mg_sq
+data remove storage mg:sq b
+scoreboard objectives remove mg.sqx
+scoreboard objectives remove mg.sqy
+scoreboard objectives remove mg.sqz
 schedule clear mg:gta/wb_step
 schedule clear mg:gta/world_build
 schedule clear mg:gta/session_setup

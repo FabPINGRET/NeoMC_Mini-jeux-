@@ -6,7 +6,7 @@ dans la roche → arène PvP simple en dessous. Pour se taper dessus en attendan
 - Trou 2×2 en (13..14, 12..13) dans la place → chute (sans dégâts au lobby) dans le mini-lobby (y 55..58).
 - Mini-lobby : 4 socles de classe (Guerrier, Archer, Tank, Assassin) + socle « retour au spawn ».
   Marcher sur un socle = kit de la classe + téléportation dans l'arène (point au hasard), point de réapparition dans l'arène.
-- Arène (x 1..25, y 43..51, z 1..23) : sol plat, piliers, petits murets, 2 tremplins en slime, pièces bonus qui apparaissent.
+- Arène (x −11..37, y 43..51, z −9..33, 49×43) : sol plat, piliers, petits murets, 4 tremplins en slime, pièces bonus qui apparaissent.
 - Monnaie 💰 (mg.pco, gardée d'une fois sur l'autre) : +10 par kill, bonus de série (3, 5, 10 kills), pièces ramassées (+5).
 - Boutique (émeraude de la barre, clic droit) : pomme d'or, pomme d'or enchantée (très chère), potions de soin / dégâts /
   force / vitesse / régénération, chien de garde, flèches, perle de l'Ender, totem, épée en diamant.
@@ -24,10 +24,10 @@ A = os.path.join(R, 'data/mg/advancement')
 
 HOLE = (13, 12)                          # coin nord-ouest du trou 2×2
 ROOM = (7, 55, 6, 19, 58, 18)            # intérieur du mini-lobby (sol en y 54)
-AR = (1, 43, 1, 25, 51, 23)              # intérieur de l'arène (sol en y 42)
+AR = (-11, 43, -9, 37, 51, 33)           # intérieur de l'arène (sol en y 42), agrandie (49×43)
 SENT = (13, 53, 5)                       # bloc témoin (dans la coque, invisible)
-ZONE = 'x=0,y=40,z=0,dx=27,dy=20,dz=25'  # tout le souterrain (y 40..60)
-SPAWNS = [(3, 3), (23, 3), (3, 21), (23, 21), (13, 3), (13, 21), (3, 12), (23, 12)]
+ZONE = 'x=-12,y=40,z=-10,dx=51,dy=20,dz=45'  # tout le souterrain (y 40..60)
+SPAWNS = [(-8, -6), (34, -6), (-8, 30), (34, 30), (13, -6), (13, 30), (-8, 12), (34, 12), (2, 2), (24, 2), (2, 22), (24, 22)]
 PADS = [  # n, nom, couleur, bloc, x, z, description
     (1, 'Guerrier', 'white', 'iron_block', 8, 7, 'Épée en fer, bouclier, armure en fer'),
     (2, 'Archer', 'green', 'emerald_block', 16, 7, 'Arc Puissance II, 48 flèches, armure en mailles'),
@@ -146,20 +146,26 @@ B = ['# ⚔ Arène PvP souterraine : mini-lobby des classes + arène (généré 
      f'fill {ax1} {ay1} {az1} {ax1} {ay1} {az2} minecraft:mossy_stone_bricks', f'fill {ax2} {ay1} {az1} {ax2} {ay1} {az2} minecraft:mossy_stone_bricks',
      f'fill {ax1 + 1} {ay1} {az1 + 1} {ax2 - 1} {ay1} {az2 - 1} minecraft:air']
 # piliers 2×2 sur toute la hauteur
-for (px, pz) in ((6, 6), (19, 6), (6, 17), (19, 17)):
+for (px, pz) in ((6, 6), (19, 6), (6, 17), (19, 17), (-3, -1), (28, -1), (-3, 24), (28, 24), (12, -4), (12, 28)):
     B += [f'fill {px} {ay1} {pz} {px + 1} {ay2} {pz + 1} minecraft:stone_bricks',
           f'fill {px} {ay1} {pz} {px + 1} {ay1} {pz + 1} minecraft:chiseled_stone_bricks',
           f'setblock {px} {ay2} {pz - 1} minecraft:lantern[hanging=true]']
 # petits murets (1 bloc, on saute par-dessus) et bosse centrale
 B += [f'fill 11 {ay1} 5 15 {ay1} 5 minecraft:mossy_stone_bricks', f'fill 11 {ay1} 19 15 {ay1} 19 minecraft:mossy_stone_bricks',
       f'fill 4 {ay1} 10 4 {ay1} 14 minecraft:mossy_stone_bricks', f'fill 22 {ay1} 10 22 {ay1} 14 minecraft:mossy_stone_bricks',
+      f'fill -7 {ay1} 4 -7 {ay1} 8 minecraft:mossy_stone_bricks', f'fill 33 {ay1} 16 33 {ay1} 20 minecraft:mossy_stone_bricks',
+      f'fill 3 {ay1} -5 7 {ay1} -5 minecraft:mossy_stone_bricks', f'fill 19 {ay1} 29 23 {ay1} 29 minecraft:mossy_stone_bricks',
+      f'fill 25 {ay1} -6 25 {ay1} -3 minecraft:cobblestone_wall', f'fill 1 {ay1} 27 1 {ay1} 30 minecraft:cobblestone_wall',
+      # buttes basses (1 bloc) aux quatre coins
+      f'fill -9 {ay1} 25 -5 {ay1} 31 minecraft:smooth_stone_slab[type=bottom]', f'fill 31 {ay1} -7 35 {ay1} -1 minecraft:smooth_stone_slab[type=bottom]',
       f'fill 12 {ay1} 11 14 {ay1} 13 minecraft:smooth_stone_slab[type=bottom]', f'setblock 13 {ay1} 12 minecraft:chiseled_stone_bricks',
       f'fill 9 {ay1} 21 9 {ay1} 22 minecraft:cobblestone_wall', f'fill 17 {ay1} 2 17 {ay1} 3 minecraft:cobblestone_wall',
       # tremplins (slime) dans deux coins
       f'setblock 3 {ay1 - 1} 7 minecraft:slime_block', f'setblock 23 {ay1 - 1} 17 minecraft:slime_block',
+      f'setblock -6 {ay1 - 1} -4 minecraft:slime_block', f'setblock 32 {ay1 - 1} 28 minecraft:slime_block',
       # lumière : lanternes de mer au plafond
-      ] + [f'setblock {x} {ay2 + 1} {z} minecraft:sea_lantern' for x in range(4, 25, 6) for z in range(4, 23, 6)] + [
-      f'setblock {x} {ay1 + 3} {z} minecraft:glowstone' for (x, z) in ((ax1 - 1, 7), (ax1 - 1, 17), (ax2 + 1, 7), (ax2 + 1, 17), (8, az1 - 1), (18, az1 - 1), (8, az2 + 1), (18, az2 + 1))]
+      ] + [f'setblock {x} {ay2 + 1} {z} minecraft:sea_lantern' for x in range(ax1 + 3, ax2, 6) for z in range(az1 + 3, az2, 6)] + [
+      f'setblock {x} {ay1 + 3} {z} minecraft:glowstone' for (x, z) in [(ax1 - 1, k) for k in range(az1 + 4, az2, 8)] + [(ax2 + 1, k) for k in range(az1 + 4, az2, 8)] + [(k, az1 - 1) for k in range(ax1 + 4, ax2, 8)] + [(k, az2 + 1) for k in range(ax1 + 4, ax2, 8)]]
 # mini-lobby : coque, sol, plafond, puits
 B += [f'fill {rx1 - 1} {ry1 - 2} {rz1 - 1} {rx2 + 1} {ry2 + 1} {rz2 + 1} minecraft:deepslate_bricks',
       f'fill {rx1} {ry1} {rz1} {rx2} {ry2} {rz2} minecraft:air',
@@ -198,10 +204,10 @@ B += [f'fill {px_} {ry1 - 1} {pz_} {px_ + 2} {ry1 - 1} {pz_ + 2} minecraft:gold_
       '{"text":"\\nÉmeraude = boutique · Boussole = retour au spawn (5 s sans prendre de coup).","color":"gray"}],' + TF.format(s=0.75) + '}']
 for (x, z) in SPAWNS:
     B.append(f'summon minecraft:marker {x}.5 {ay1} {z}.5 {{Tags:["mg.pvpcd","mg.pvpsp"]}}')
-B.append('data modify storage mg:lobby pvpc1 set value 1b')
+B.append('data modify storage mg:lobby pvpc2 set value 1b')
 w('pvpc/build', B)
-w('pvpc/build_start', ['# Charge la zone puis construit (2 s plus tard)', 'forceload add 0 0 26 24', 'schedule function mg:pvpc/build_go 2s'])
-w('pvpc/build_go', ['function mg:pvpc/build', 'forceload remove 0 0 26 24', 'function mg:core/forceloads',
+w('pvpc/build_start', ['# Charge la zone puis construit (2 s plus tard)', 'forceload add -12 -10 38 34', 'schedule function mg:pvpc/build_go 2s'])
+w('pvpc/build_go', ['function mg:pvpc/build', 'forceload remove -12 -10 38 34', 'function mg:core/forceloads',
                     'tellraw @a[tag=mg.admin] {"text":"⚔ Arène PvP souterraine construite (trou entre le buffet et le centre du spawn).","color":"gold"}'])
 
 # ------------------------------------------------------------------ entrée / sortie
@@ -264,7 +270,7 @@ w('pvpc/second', ['scoreboard players set $pvt mg.st 0',
 w('pvpc/coin_spawn', ['scoreboard players set $pvc mg.st 0',
                       'execute store result score $n mg.st if entity @a[tag=mg.pvpc]', 'execute if score $n mg.st matches ..1 run return 0',
                       'execute store result score $n mg.st if entity @e[type=minecraft:item,tag=mg.pvpcoin]', 'execute if score $n mg.st matches 4.. run return 0',
-                      'execute store result score $cx mg.st run random value 3..23', 'execute store result score $cz mg.st run random value 3..21',
+                      'execute store result score $cx mg.st run random value -9..35', 'execute store result score $cz mg.st run random value -7..31',
                       'execute store result storage mg:pvpc p.x int 1 run scoreboard players get $cx mg.st',
                       'execute store result storage mg:pvpc p.z int 1 run scoreboard players get $cz mg.st',
                       'function mg:pvpc/coin_at with storage mg:pvpc p'])
@@ -365,11 +371,14 @@ w('pvpc/home_tick', ['# @s attend son retour (5 s) : un coup reçu annule',
 OBJ = [('mg.pco', 'dummy {"text":"💰 Pièces (arène PvP)","color":"gold"}'), ('mg.pkc', 'playerKillCount'), ('mg.pks', 'dummy'),
        ('mg.phc', 'dummy'), ('mg.pdt', 'minecraft.custom:minecraft.damage_taken'), ('mg.pshop', 'trigger'), ('mg.pvid', 'dummy'),
        ('mg.pcl', 'dummy')]
-patch('core/load', 'scoreboard objectives add mg.bw trigger', [f'scoreboard objectives add {o} {c}' for o, c in OBJ] + [
-    'execute if score $setup mg.st matches 1 unless data storage mg:lobby pvpc1 run schedule function mg:pvpc/build_start 22s'])
+patch('core/load', 'scoreboard objectives add mg.bw trigger', drop_prefix='execute if score $setup mg.st matches 1 unless data storage mg:lobby pvpc1 ', lines=[f'scoreboard objectives add {o} {c}' for o, c in OBJ] + [
+    'execute if score $setup mg.st matches 1 unless data storage mg:lobby pvpc2 run schedule function mg:pvpc/build_start 22s'])
 patch('desinstaller', 'scoreboard objectives remove mg.bw', [f'scoreboard objectives remove {o}' for o, _ in OBJ] + [
     'schedule clear mg:pvpc/build_start', 'schedule clear mg:pvpc/build_go', 'kill @e[tag=mg.pvpcd]', 'kill @e[type=minecraft:wolf,tag=mg.pdog]',
-    'kill @e[type=minecraft:item,tag=mg.pvpcoin]', 'data remove storage mg:lobby pvpc1', 'data remove storage mg:pvpc p', 'data remove storage mg:pvpc s'])
+    'kill @e[type=minecraft:item,tag=mg.pvpcoin]', 'data remove storage mg:lobby pvpc1', 'data remove storage mg:lobby pvpc2', 'data remove storage mg:pvpc p', 'data remove storage mg:pvpc s'])
+_tp = os.path.join(F, 'core/tick.mcfunction')   # anciennes lignes (zone de la petite arène)
+_tl = open(_tp, encoding='utf-8').read().split('\n')
+open(_tp, 'w', encoding='utf-8', newline='\n').write('\n'.join(l for l in _tl if 'x=0,y=40,z=0,dx=27,dy=20,dz=25' not in l))
 patch('core/tick', 'execute as @a[scores={mg.cs=1..},tag=!mg.surv] run function mg:core/menu_use', [
     f'execute if score $setup mg.st matches 1 if entity @a[{ZONE}] run function mg:pvpc/tick',
     f'execute if score $setup mg.st matches 1 unless entity @a[{ZONE}] if entity @a[tag=mg.pvpc] run function mg:pvpc/tick',

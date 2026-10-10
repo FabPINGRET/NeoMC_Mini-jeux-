@@ -47,13 +47,6 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
-team add mg_sq
-team modify mg_sq friendlyFire false
-team modify mg_sq collisionRule never
-team modify mg_sq nametagVisibility always
-scoreboard objectives add mg.sqx dummy
-scoreboard objectives add mg.sqy dummy
-scoreboard objectives add mg.sqz dummy
 scoreboard objectives add mg.pco dummy {"text":"💰 Pièces (arène PvP)","color":"gold"}
 scoreboard objectives add mg.pkc playerKillCount
 scoreboard objectives add mg.pks dummy
@@ -62,7 +55,14 @@ scoreboard objectives add mg.pdt minecraft.custom:minecraft.damage_taken
 scoreboard objectives add mg.pshop trigger
 scoreboard objectives add mg.pvid dummy
 scoreboard objectives add mg.pcl dummy
-execute if score $setup mg.st matches 1 unless data storage mg:lobby pvpc1 run schedule function mg:pvpc/build_start 22s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby pvpc2 run schedule function mg:pvpc/build_start 22s
+team add mg_sq
+team modify mg_sq friendlyFire false
+team modify mg_sq collisionRule never
+team modify mg_sq nametagVisibility always
+scoreboard objectives add mg.sqx dummy
+scoreboard objectives add mg.sqy dummy
+scoreboard objectives add mg.sqz dummy
 function mg:golf/load
 scoreboard objectives add mg.blu minecraft.used:minecraft.warped_fungus_on_a_stick
 scoreboard objectives add mg.bln dummy
