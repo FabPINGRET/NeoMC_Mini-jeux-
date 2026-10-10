@@ -96,6 +96,8 @@ forceload add -35 35129 34 35185
 forceload add -23 36996 23 37099
 # Autos tamponneuses (z 37400)
 forceload add -24 37376 24 37424
+# Slime Jump (z 37800)
+forceload add -14 37794 14 37959
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl

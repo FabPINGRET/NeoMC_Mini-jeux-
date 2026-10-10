@@ -245,6 +245,32 @@
     {
       "label": [
         {
+          "text": "🟩 🟩 Slime Jump ",
+          "color": "green"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Parkour de rebonds sur slime, le premier arrivé gagne",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 224"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🎾 Wii Sports ▸",
           "color": "aqua"
         }

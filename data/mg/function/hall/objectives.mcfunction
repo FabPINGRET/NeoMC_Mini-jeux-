@@ -37,6 +37,7 @@ scoreboard objectives add mg.wg_chameleon dummy [{"text":"🦎 Meccha Chameleon"
 scoreboard objectives add mg.wg_wii dummy [{"text":"🎾 Wii Sports","color":"aqua","bold":true},{"text":" — victoires","color":"gray","bold":false}]
 scoreboard objectives add mg.wg_soleil dummy [{"text":"🔴 1, 2, 3 Soleil","color":"red","bold":true},{"text":" — victoires","color":"gray","bold":false}]
 scoreboard objectives add mg.wg_autotamp dummy [{"text":"🚗 Autos tamponneuses","color":"aqua","bold":true},{"text":" — victoires","color":"gray","bold":false}]
+scoreboard objectives add mg.wg_slimejump dummy [{"text":"🟩 Slime Jump","color":"green","bold":true},{"text":" — victoires","color":"gray","bold":false}]
 scoreboard objectives modify mg.stp displayname [{"text":"▶ Parties jouées","color":"green","bold":true}]
 scoreboard objectives modify mg.stk displayname [{"text":"⚔ Kills","color":"red","bold":true},{"text":" (toutes parties)","color":"gray","bold":false}]
 scoreboard objectives modify mg.wins displayname [{"text":"✦ Victoires","color":"gold","bold":true},{"text":" (tous les jeux)","color":"gray","bold":false}]

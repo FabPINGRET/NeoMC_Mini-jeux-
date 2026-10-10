@@ -51,3 +51,4 @@ execute if score $game mg.st matches 198 run function mg:hall/game {obj:"mg.wg_c
 execute if score $game mg.st matches 214..216 run function mg:hall/game {obj:"mg.wg_wii",key:"wii",lbl:"🎾 Wii Sports",col:"aqua"}
 execute if score $game mg.st matches 220 run function mg:hall/game {obj:"mg.wg_soleil",key:"soleil",lbl:"🔴 1, 2, 3 Soleil",col:"red"}
 execute if score $game mg.st matches 221..223 run function mg:hall/game {obj:"mg.wg_autotamp",key:"autotamp",lbl:"🚗 Autos tamponneuses",col:"aqua"}
+execute if score $game mg.st matches 224 run function mg:hall/game {obj:"mg.wg_slimejump",key:"slimejump",lbl:"🟩 Slime Jump",col:"green"}

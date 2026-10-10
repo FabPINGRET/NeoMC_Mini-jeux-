@@ -15,6 +15,7 @@ execute if score $game mg.st matches 66 run function mg:elyrace/cleanup
 execute if score $game mg.st matches 75 run function mg:sky/cleanup
 kill @e[tag=mg.ib]
 execute if score $game mg.st matches 57..58 run function mg:bb/cleanup
+execute if score $game mg.st matches 224 run function mg:slimejump/cleanup
 execute if score $game mg.st matches 221..223 run function mg:autotamp/cleanup
 execute if score $game mg.st matches 220 run function mg:soleil/cleanup
 execute if score $game mg.st matches 215 run function mg:golf/cleanup

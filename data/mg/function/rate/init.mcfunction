@@ -513,3 +513,5 @@ data modify storage mg:rate lab.fsoleil set value '""'
 function mg:rate/lab_fam {f:"soleil",g:37}
 data modify storage mg:rate lab.fautotamp set value '""'
 function mg:rate/lab_fam {f:"autotamp",g:38}
+data modify storage mg:rate lab.fslimejump set value '""'
+function mg:rate/lab_fam {f:"slimejump",g:39}
