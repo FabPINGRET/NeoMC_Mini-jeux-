@@ -297,10 +297,10 @@ w('rate/submit', ['# @s a envoyé sa note : mg.rt = 1 abc (a mode, b carte, c fu
                   'execute if score $rb1 mg.st matches 6.. run scoreboard players set $rb1 mg.st 0',
                   'execute if score $rc1 mg.st matches 6.. run scoreboard players set $rc1 mg.st 0',
                   'function mg:rate/add with storage mg:rate key',
-                  'function mg:rate/thanks with storage mg:rate key',
+                  'function mg:rate/thanks',
                   'execute at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 0.6 1.2'])
-w('rate/thanks', ['# Macro {f, m} : remerciement avec les moyennes à jour',
-                  '$tellraw @s [{"text":"⭐ Merci ! ","color":"gold","bold":true},{"storage":"mg:rate","nbt":"cur.g","color":"yellow"},{"text":" ","color":"gray"},{"storage":"mg:rate","nbt":"lab.f$(f)","interpret":true},{"text":"  ·  ","color":"dark_gray"},{"storage":"mg:rate","nbt":"cur.m","color":"white"},{"text":" ","color":"gray"},{"storage":"mg:rate","nbt":"lab.r$(m)","interpret":true}]'])
+w('rate/thanks', ['# Remerciement simple (les moyennes brutes s\'affichaient comme des données dans le chat)',
+                  'tellraw @s [{"text":"⭐ Merci pour ta note ! ","color":"gold","bold":true},{"text":"Elle compte dans la moyenne affichée au vote.","color":"gray"}]'])
 w('rate/add', ['# Macro {m, f, g} : ajoute la note de @s ($ra1 mode, $rb1 carte, $rc1 fun) aux totaux, puis recalcule les libellés',
                '$execute if score $ra1 mg.st matches 1.. run scoreboard players operation #g$(g) mg.rgs += $ra1 mg.st',
                '$execute if score $ra1 mg.st matches 1.. run scoreboard players add #g$(g) mg.rgn 1',
