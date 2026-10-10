@@ -1,0 +1,80 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "🌍 TP général",
+    "color": "gold",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Envoie tous les joueurs (hors partie en cours) vers un monde.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 1,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "🌲 Tout le monde → Survie",
+          "color": "green"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 63"
+      },
+      "tooltip": [
+        {
+          "text": "Les joueurs à Neo GTA en sortent d'abord (tout est sauvegardé)",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "🚓 Tout le monde → Neo GTA",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 64"
+      },
+      "tooltip": [
+        {
+          "text": "Les joueurs en survie ou sur leur plot en sortent d'abord (tout est sauvegardé)",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "« Retour au menu",
+          "color": "yellow"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.menu"
+      }
+    }
+  ]
+}

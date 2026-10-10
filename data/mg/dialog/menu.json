@@ -230,6 +230,24 @@
     {
       "label": [
         {
+          "text": "🌍 TP général (admin) ▸",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Envoie tout le monde en survie, à Neo GTA…",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 62"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "ℹ Version du datapack",
           "color": "gray"
         }
