@@ -78,7 +78,7 @@ W('objectives', ['# Objectifs des classements par jeu (généré par tools/hall/
     'scoreboard objectives add mg.genc dummy'])
 W('remove', ['# Désinstallation des classements et du hall'] +
   [f'scoreboard objectives remove mg.wg_{k}' for k, *_ in GAMES] +
-  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8', 'data remove storage mg:hall v9', 'data remove storage mg:hall v10', 'data remove storage mg:hall v11', 'data remove storage mg:hall v12',
+  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8', 'data remove storage mg:hall v9', 'data remove storage mg:hall v10', 'data remove storage mg:hall v11', 'data remove storage mg:hall v12', 'data remove storage mg:hall v13',
    'scoreboard objectives remove mg.gen', 'scoreboard objectives remove mg.lvl', 'scoreboard objectives remove mg.genc'])
 
 # ---------------------------------------------------------------- crédit des vainqueurs
@@ -172,26 +172,27 @@ b = ['# Hall des scores (sud-ouest de la place) : construction + restauration de
      f'setblock -19 64 {PZ} minecraft:emerald_block', f'setblock {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block', f'setblock -13 64 {PZ} minecraft:lapis_block', '',
      '# Tampon de résolution des noms (invisible)',
      f'summon minecraft:item_display -15.5 64.5 {PZ}.5 {{Tags:["mg.hall","mg.hallbuf"],item:{{id:"minecraft:paper"}},{TR % (0.001, 0.001, 0.001)}}}',
-     f'summon minecraft:text_display -15.5 {WALL_TOP + 1.6} {Z1 - 0.4} {{Tags:["mg.hall"],billboard:"center",background:0,text:[{{"text":"🏆 Hall des scores","color":"gold","bold":true}}],{TR % (3, 3, 3)}}}',
+     f'summon minecraft:text_display -15.5 {WALL_TOP + 1.6} {Z1 - 0.4} {{Tags:["mg.hall"],billboard:"center",background:0,text:[{{"text":"🏆 Hall des scores","color":"gold","bold":true}}],{TR % (4.5, 4.5, 4.5)}}}',
      '', '# Piédestaux : objet qui tourne + plaque']
 peds = [(-18.5, 'stp', '▶ Le plus assidu', 'green', 'clock'),
         (-15.5, 'wins', '👑 Champion des mini-jeux', 'gold', 'totem_of_undying'),
         (-12.5, 'ely', "🪽 Record petit parcours d'élytra", 'aqua', 'elytra')]
-plaques = [(x, 66.9, PZ + 0.5, k, l, c, 0.9) for x, k, l, c, _ in peds]
-plaques.append((-12.5, 68.0, PZ + 0.5, 'ely2', "🪽 Record grand parcours d'élytra", 'light_purple', 0.9))
-plaques.append((-12.5, 69.1, PZ + 0.5, 'elyg', '🪽 Record Élytra : course', 'aqua', 0.9))
-plaques.append((-15.5, 72.5, Z1 - 0.7, 'gen', '🏅 Meilleur niveau général', 'aqua', 1.0))   # juste au-dessus du tableau
+plaques = [(x, 66.9, PZ + 0.5, k, l, c, 1.35) for x, k, l, c, _ in peds]   # textes ×1,5
+plaques.append((-12.5, 68.4, PZ + 0.5, 'ely2', "🪽 Record grand parcours d'élytra", 'light_purple', 1.35))
+plaques.append((-12.5, 69.9, PZ + 0.5, 'elyg', '🪽 Record Élytra : course', 'aqua', 1.35))
+plaques.append((-15.5, 72.5, Z1 - 0.7, 'gen', '🏅 Meilleur niveau général', 'aqua', 1.5))   # juste au-dessus du tableau
 for x, k, l, c, it in peds:
     b.append(f'summon minecraft:item_display {x} 65.8 {PZ}.5 {{Tags:["mg.hall","mg.lspin","mg.lbob"],billboard:"fixed",item:{{id:"minecraft:{it}"}},{TR % (0.9, 0.9, 0.9)}}}')
 xs = [-22.5 + 3.0 * i for i in range(6)]   # 6 colonnes × 6 rangées sur le mur du fond (36 plaques), texte plus grand
 ys = [71.3, 70.0, 68.7, 67.4, 66.1, 64.8]   # plus bas (à hauteur des yeux) et texte plus grand
 assert len(GAMES) <= len(xs) * len(ys), 'agrandir la grille de plaques'
 for i, (k, l, c, _) in enumerate(GAMES):
-    plaques.append((xs[i % 6], ys[i // 6], Z1 - 0.8, k, l, c, 0.75))
+    plaques.append((xs[i % 6], ys[i // 6], Z1 - 0.8, k, l, c, 1.125))
 b.append('')
 b.append('# Plaques : texte par défaut, puis meneur enregistré s\'il existe')
 for x, y, z, k, l, c, s in plaques:
-    b.append(f'summon minecraft:text_display {x} {y} {z} {{Tags:["mg.hall","mg.h_{k}"],billboard:"vertical",text:[{{"text":"{q(l)}","color":"{c}","bold":true}},{{"text":"\\n— personne —","color":"dark_gray","bold":false}}],{TR % (s, s, s)}}}')
+    lw = 200 if k == 'gen' else int(2.8 / (0.025 * s))   # retour à la ligne : pas de chevauchement avec la plaque voisine (3 blocs)
+    b.append(f'summon minecraft:text_display {x} {y} {z} {{Tags:["mg.hall","mg.h_{k}"],billboard:"vertical",line_width:{lw},text:[{{"text":"{q(l)}","color":"{c}","bold":true}},{{"text":"\\n— personne —","color":"dark_gray","bold":false}}],{TR % (s, s, s)}}}')
     b.append(f'execute if data storage mg:hall e.{k} run data modify entity @e[type=minecraft:text_display,tag=mg.h_{k},limit=1] text set from storage mg:hall e.{k}')
 # Version du hall : core/load reconstruit le hall (une fois) sur les mondes dont les plaques sont plus anciennes (nouveau jeu ajouté)
 b.append('data modify storage mg:hall v2 set value 1b')
@@ -205,6 +206,7 @@ b.append('data modify storage mg:hall v9 set value 1b')
 b.append('data modify storage mg:hall v10 set value 1b')
 b.append('data modify storage mg:hall v11 set value 1b')
 b.append('data modify storage mg:hall v12 set value 1b')
+b.append('data modify storage mg:hall v13 set value 1b')
 W('build', b)
 W('clear_old', ['# Ancien emplacement du hall (z %d..%d) : mur et sol retirés, pelouse (une fois, avant la v9)' % (OLD_Z0, OLD_Z1),
                 f'fill {X0} 64 {Z1 + 1} {X1} 74 {OLD_Z1} minecraft:air',
@@ -216,8 +218,9 @@ def _sub(rel, a, c):
     if a in s: open(p, 'w', encoding='utf-8', newline='\n').write(s.replace(a, c))
 _sub('core/tick', 'unless block -16 64 25 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')
 _sub('core/load', 'unless data storage mg:hall v8 run schedule function mg:hall/build', 'unless data storage mg:hall v11 run schedule function mg:hall/build')
-_sub('core/load', 'unless data storage mg:hall v10 run schedule function mg:hall/build', 'unless data storage mg:hall v12 run schedule function mg:hall/build')
-_sub('core/load', 'unless data storage mg:hall v11 run schedule function mg:hall/build', 'unless data storage mg:hall v12 run schedule function mg:hall/build')
+_sub('core/load', 'unless data storage mg:hall v10 run schedule function mg:hall/build', 'unless data storage mg:hall v13 run schedule function mg:hall/build')
+_sub('core/load', 'unless data storage mg:hall v11 run schedule function mg:hall/build', 'unless data storage mg:hall v13 run schedule function mg:hall/build')
+_sub('core/load', 'unless data storage mg:hall v12 run schedule function mg:hall/build', 'unless data storage mg:hall v13 run schedule function mg:hall/build')
 _sub('core/load', 'unless data storage mg:hall v9 run schedule function mg:hall/build', 'unless data storage mg:hall v10 run schedule function mg:hall/build')
 W('board_tick', ['# Tableau à droite dans le lobby (classement affiché, pas de vote en cours)',
     'scoreboard players remove $hrt mg.st 1',
