@@ -848,8 +848,8 @@ wr('lobby/build_end', ['# Fin de la construction du spawn : eau qui coule, déco
 # ------------------------------------------------------------------ entités de décor
 TF = 'transformation:{{translation:[0f,{ty}f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[{s}f,{s}f,{s}f]}}'
 def face_spawn(x, z):
-    # orientation fixe du panneau : celle d'un joueur au centre de la place qui le regarde (texte lisible depuis la place)
-    return round(math.degrees(math.atan2(-(x - 0.5), z - 0.5)), 1)
+    # orientation fixe du panneau, face lisible tournée vers le centre de la place (opposé du regard d'un joueur au centre)
+    return round((math.degrees(math.atan2(-(x - 0.5), z - 0.5)) + 360) % 360 - 180, 1)
 def tdisp(x, y, z, text, s, tags='', bill='vertical', yaw=None):
     rot = '' if yaw is None else f'Rotation:[{yaw}f,0f],'
     if yaw is not None: bill = 'fixed'
@@ -936,7 +936,7 @@ wr('lobby/deco', ['# Décor du spawn (entités mg.lby) : modèles du resource pa
                   'kill @e[tag=mg.lby]', 'kill @e[type=minecraft:text_display,tag=mg.deco]', 'function mg:lobby/deco_common',
                   'execute if score $rp mg.st matches 1 run function mg:lobby/deco_rp',
                   'execute unless score $rp mg.st matches 1 run function mg:lobby/deco_vn',
-                  'data modify storage mg:lobby deco2 set value 1b'])
+                  'data modify storage mg:lobby deco3 set value 1b'])
 wr('lobby/deco_common', common)
 wr('lobby/deco_rp', rpl)
 wr('lobby/deco_vn', vnl)
@@ -1389,12 +1389,12 @@ if len(sys.argv) > 2:
     open(sys.argv[2], 'wb').write(b'\x89PNG\r\n\x1a\n' + ch(b'IHDR', struct.pack('>IIBBBBB', w, h, 8, 2, 0, 0, 0)) + ch(b'IDAT', zlib.compress(raw)) + ch(b'IEND', b''))
     print('aperçu :', sys.argv[2])
 
-# panneaux du spawn à orientation fixe : décor recréé une fois sur les mondes existants (témoin mg:lobby deco2)
+# panneaux du spawn à orientation fixe : décor recréé une fois sur les mondes existants (témoin mg:lobby deco3)
 def _patch(rel, anchor, line):
     pth = os.path.join(R, 'data/mg/function', rel + '.mcfunction'); t = open(pth, encoding='utf-8').read()
     if line in t: return
     assert anchor in t, (rel, anchor)
     open(pth, 'w', encoding='utf-8', newline='\n').write(t.replace(anchor, anchor + '\n' + line, 1))
 _patch('core/load', 'execute unless score $rp mg.st matches 0.. run function mg:core/rp_default',
-       'execute if score $setup mg.st matches 1 unless data storage mg:lobby deco2 run schedule function mg:lobby/deco 6s')
-_patch('desinstaller', 'data remove storage mg:lobby beacon1', 'data remove storage mg:lobby deco2')
+       'execute if score $setup mg.st matches 1 unless data storage mg:lobby deco3 run schedule function mg:lobby/deco 6s')
+_patch('desinstaller', 'data remove storage mg:lobby beacon1', 'data remove storage mg:lobby deco3\ndata remove storage mg:lobby deco2')
