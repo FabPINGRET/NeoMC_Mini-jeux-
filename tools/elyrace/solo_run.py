@@ -99,10 +99,14 @@ def go_lines(specs):
 
 def finish_lines(specs):
     return ['# @s = joueur qui franchit l\'anneau d\'arrivée en solo (appelé en 1re ligne de elyrace/finish) : annonce, records, phase 3',
+            '# temps = chrono du joueur moins le bonus de ses anneaux d\'or (elyrace/bonus : #xgs = secondes retirées)',
             'scoreboard players operation #xrt mg.st = @s mg.xst',
+            'function mg:elyrace/bonus',
             'scoreboard players operation #s mg.st = #xrt mg.st', 'scoreboard players operation #s mg.st /= #k20 mg.st',
             'tellraw @s [{"text":"🏁 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" passe la ligne d\'arrivée (","color":"gray"},'
             '{"score":{"name":"#s","objective":"mg.st"},"color":"white"},{"text":" s)","color":"gray"}]',
+            'execute if score @s mg.xu matches 1.. run tellraw @s ' + G.BONUS_TELLRAW,
+            'title @s subtitle ""',                # efface un sous-titre resté (« ★ -2 s », choc) : il s'afficherait sous « Arrivée ! »
             'title @s title [{"text":"🏁 Arrivée !","color":"gold","bold":true}]',
             'execute at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1',
             'execute at @s run particle minecraft:firework ~ ~1 ~ 1 1 1 0.2 60',
@@ -122,7 +126,7 @@ def stop_lines():
             'scoreboard players reset @s mg.xsl',
             '# (mg.xcr appartient à la partie de groupe si une partie l\'a pris comme participant)',
             'execute unless entity @s[tag=mg.play] run scoreboard players reset @s mg.xcr',
-            '# gravité normale (0,08), sans condition : celle de course (elyrace/grav_on, turbo compris) ne doit pas suivre le joueur au lobby',
+            '# gravité normale (0,08), sans condition : celle de course (elyrace/grav_on) ne doit pas suivre le joueur au lobby',
             G.GRAV_RESET,
             '# 2) la pause d\'avant le solo : rétablie (mg.xsp0 = il était déjà en pause ; sinon la pause est retirée, même si une partie tourne)',
             'execute unless entity @s[tag=mg.xsp0] run tag @s remove mg.spectate',

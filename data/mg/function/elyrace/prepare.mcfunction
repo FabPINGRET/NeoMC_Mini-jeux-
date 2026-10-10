@@ -33,6 +33,7 @@ scoreboard players set @a[tag=mg.play] mg.xq1 0
 scoreboard players set @a[tag=mg.play] mg.xq2 0
 scoreboard players set @a[tag=mg.play] mg.xq3 0
 scoreboard players set @a[tag=mg.play] mg.xu 0
+scoreboard players set @a[tag=mg.play] mg.xft 0
 scoreboard players set $xt mg.st 0
 scoreboard players set $xf mg.st 0
 scoreboard players set $xw mg.st 0

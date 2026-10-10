@@ -71,6 +71,7 @@ scoreboard players set @s mg.xq1 0
 scoreboard players set @s mg.xq2 0
 scoreboard players set @s mg.xq3 0
 scoreboard players set @s mg.xu 0
+scoreboard players set @s mg.xft 0
 scoreboard players reset @s mg.qs
 scoreboard players reset @s mg.fw
 scoreboard players reset @s mg.wc

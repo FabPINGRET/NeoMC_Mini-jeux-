@@ -1,25 +1,18 @@
-"""Fonctions de jeu propres a un parcours (mg:elyrace/c<N>/*) : tick d'un joueur (dont la fin du turbo), gravite de course (grav), barre d'action, installation du depart
+"""Fonctions de jeu propres a un parcours (mg:elyrace/c<N>/*) : tick d'un joueur gravite de course (grav), barre d'action, installation du depart
 (portillon, chargement force, perchoir), texte du depart. Les tables d'anneaux, de reprises et de places sont dans
 rings.py, la construction dans build_chain.py ; la logique commune a tous les parcours est dans game.py.
 Python stdlib uniquement (compatible 3.8).
 """
 import course_common as CC
 import game as G
+import reasons as RS
 
 SB = G.SB
 
 
-def turbo_end_lines(spec):
-    """Fin du turbo d'un anneau d'or (mg.xu = ticks restants, posé à 60 par gold_hit) : au 60e tick la gravité de base du parcours revient."""
-    return ['execute if score @s mg.xu matches 1 run function ' + CC.fn(spec, 'grav'),
-            'scoreboard players remove @s[scores={mg.xu=1..}] mg.xu 1']
-
-
 def player_lines(c):
     spec = c.spec
-    respawn = 'function ' + CC.fn(spec, 'respawn')
-    return ['# @s = joueur en course (pas encore arrivé) : turbo, position, délais, règles',
-            '# turbo d\'un anneau d\'or : décompte (gold_hit pose mg.xu), la gravité de base du parcours revient au dernier tick'] + turbo_end_lines(spec) + [
+    return ['# @s = joueur en course (pas encore arrivé) : position, délais, règles',
             'execute store result score @s mg.xx run data get entity @s Pos[0]',
             'scoreboard players operation @s mg.xp > @s mg.xx',
             'scoreboard players remove @s[scores={mg.xg=1..}] mg.xg 1',
@@ -29,21 +22,21 @@ def player_lines(c):
             'execute unless predicate mg:gliding if score @s mg.xl matches 1 run scoreboard players add @s mg.xn 1',
             'function mg:elyrace/speed',
             '# Mort (filet) ou sorti de la zone construite (monde vide) : retour au dernier point de reprise',
-            'execute if score @s mg.deaths matches 1.. run return run ' + respawn,
+            'execute if score @s mg.deaths matches 1.. run return run ' + RS.call('dead'),
             'execute unless entity @s[x=%d,y=0,z=%d,dx=%d,dy=330,dz=%d] run return run %s'
-            % (spec.X0, spec.Z0, spec.X1 - spec.X0, spec.Z1 - spec.Z0, respawn),
+            % (spec.X0, spec.Z0, spec.X1 - spec.X0, spec.Z1 - spec.Z0, RS.call('out')),
             '# Encore sur la plateforme de départ : aucune règle',
             'execute if score @s mg.xx matches ..%d run return 0' % (G.LEFT_X - 1),
-            'execute if score @s mg.xg matches 0 if score @s mg.xn matches %d.. run return run %s' % (G.STALL + 1, respawn),
-            'execute if score @s mg.xg matches 0 at @s if block ~ ~ ~ minecraft:water run return run ' + respawn,
-            'execute if score @s mg.xg matches 0 at @s if data entity @s {OnGround:1b} run return run ' + respawn,
+            'execute if score @s mg.xg matches 0 if score @s mg.xn matches %d.. run return run %s' % (G.STALL + 1, RS.call('stall')),
+            'execute if score @s mg.xg matches 0 at @s if block ~ ~ ~ minecraft:water run return run ' + RS.call('water'),
+            'execute if score @s mg.xg matches 0 at @s if data entity @s {OnGround:1b} run return run ' + RS.call('ground'),
             'function ' + CC.fn(spec, 'rings')]
 
 
 def hud_lines(c):
     tail = ('{"text":"   ◎ ","color":"aqua"},{%s,"color":"white"},{"text":" / %d","color":"gray"},'
             '{"text":"   ★ ","color":"gold"},{%s,"color":"white"},{"text":" / %d","color":"gray"}]'
-            % (SB % 'mg.xa', len(c.rings), SB % 'mg.xo', len(c.golds)))
+            % (SB % 'mg.xa', len(c.rings), SB % 'mg.xu', len(c.golds)))
     hearts = [('3..', '{"text":"♥♥♥","color":"red"}'),
               ('2', '{"text":"♥♥","color":"red"},{"text":"♡","color":"dark_gray"}'),
               ('1', '{"text":"♥","color":"red"},{"text":"♡♡","color":"dark_gray"}'),
@@ -74,21 +67,21 @@ def setup_lines(spec):
 
 def go_text_lines(c):
     spec = c.spec
-    golds = "1 anneau d'or en détour : il donne" if len(c.golds) == 1 else "%d anneaux d'or en détour : chacun donne" % len(c.golds)
+    golds = "1 anneau d'or en détour : il retire" if len(c.golds) == 1 else "%d anneaux d'or en détour : chacun retire" % len(c.golds)
     intro = ('tellraw @s [{"text":"🪽 COURSE D\'ÉLYTRES — %s : ","color":"aqua","bold":true},{"text":"saute de la falaise, ouvre tes élytres (espace en l\'air) '
              'et franchis les %d anneaux dans l\'ordre, par le trou. %%s (3 minutes au plus).","color":"gray"}]' % (spec.NAME.upper(), len(c.rings)))
     return ['# @s = joueur : texte du départ du parcours %d (appelé pour chaque participant ; solo/go l\'appelle pour son seul joueur) ; fin de la 1re phrase : tag mg.xso = contre-la-montre solo, pas de gagnant' % spec.NUM,
-            'execute unless entity @s[tag=mg.xso] run ' + intro % 'Le premier arrivé gagne',
+            'execute unless entity @s[tag=mg.xso] run ' + intro % 'Le meilleur temps gagne (bonus d\'or compris)',
             'execute if entity @s[tag=mg.xso] run ' + intro % 'Ton temps est enregistré',
             'tellraw @s [{"text":"♥ 3 cœurs : chaque choc contre un mur en retire un. Plus de cœur, anneau raté, sol, eau ou trop longtemps sans planer : retour en l\'air au dernier point de reprise (colonnes lumineuses).","color":"gray"}]',
-            'tellraw @s [{"text":"★ %s un turbo de 3 s (tu piques plus vite).","color":"gold"}]' % golds]
+            'tellraw @s [{"text":"★ %s %d s de ton temps final (bonus de temps).","color":"gold"}]' % (golds, G.GOLD_BONUS // 20)]
 
 
 def functions(c):
     """Fonctions de jeu d'un parcours : {nom relatif a c<N>/: lignes}."""
     spec = c.spec
     return {'player': player_lines(c), 'hud': hud_lines(c), 'setup': setup_lines(spec), 'go_text': go_text_lines(c),
-            'grav': ['# @s = joueur : gravité de base du parcours (spec.GRAVITY) : au GO (grav_on), à chaque réapparition, à la fin du turbo',
+            'grav': ['# @s = joueur : gravité de base du parcours (spec.GRAVITY) : au GO (grav_on), à chaque réapparition',
                      G.grav_line(spec.GRAVITY)],
             'gate_on': ['# Portillon de départ (verre rouge)', gate_lines(spec, 'red_stained_glass')],
             'gate_off': ['# GO : ouvre le portillon', gate_lines(spec, 'air')],

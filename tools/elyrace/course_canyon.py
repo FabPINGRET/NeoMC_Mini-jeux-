@@ -2,7 +2,7 @@
 
 Plongeon depuis la mesa de depart, slalom entre cheminees de fee, 3 arches etroites, viaduc ferroviaire et chevalet de
 mine, passe basse, faille etroite, galerie de mine, descente dans la rue de la ville fantome. Parcours rapide : seule la
-pente donne de la vitesse (gravite de course 0,104 ; un anneau d'or donne un turbo de 3 s). Ce module decrit le PARCOURS (profil, anneaux,
+pente donne de la vitesse (gravite de course 0,104 ; un anneau d'or donne un bonus de temps de 2 s). Ce module decrit le PARCOURS (profil, anneaux,
 points de reprise, anneaux d'or) et le RELIEF ; les decors (cheminees, arches, viaduc, chevalet, ville) sont dans
 props_canyon.py, la galerie de mine dans tunnel_canyon.py.
 
@@ -57,7 +57,7 @@ GOLDS = [(530, 9), (885, 9)]   # anneaux d'or : (x, decalage lateral) ; altitude
 GOLD_STRICT = True                           # verify.check_golds : detour >= 8 blocs hors de la ligne anneau a anneau, rampes limitees a la distance
 # des anneaux voisins, vol qui finit le parcours et franchit tous les anneaux proches. Il faut ~26 blocs avant l'anneau suivant pour
 # revenir et un decalage >= 9 pour ne pas frotter l'enveloppe des vols a +-3 : (530, +9) porte de la galerie, (885, +9) sortie de la
-# galerie. Gravite 0,104 et turbo : les vols sont plus rapides (3 b/tick), un detour demande ~40 blocs libres de chaque cote ; balayage de
+# galerie. Gravite 0,104 : les vols sont plus rapides (3 b/tick), un detour demande ~40 blocs libres de chaque cote ; balayage de
 # verify.check_golds (x de 300 a 1000 par 5, decalages +-8 a +-12) : aucun or ne passe en x 355 a 480, ni dans la ville ou la faille ; deux ors seulement
 GOLD_DY = 2                                  # les anneaux d'or sont GOLD_DY blocs sous la trajectoire (le detour vole plus bas, voir course_blanc)
 RING_LOW = 0.5                               # les trous sont RING_LOW bloc sous la trajectoire : sur une pente forte le pilote a anticipation courte

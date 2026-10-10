@@ -61,6 +61,7 @@ scoreboard objectives remove mg.xq1
 scoreboard objectives remove mg.xq2
 scoreboard objectives remove mg.xq3
 scoreboard objectives remove mg.xu
+scoreboard objectives remove mg.xft
 # parcours et état du solo par joueur, trigger du solo, records par parcours (objectifs et détenteur figé dans le hall)
 scoreboard objectives remove mg.xcr
 scoreboard objectives remove mg.xph

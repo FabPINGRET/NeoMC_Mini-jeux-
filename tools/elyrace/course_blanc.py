@@ -54,7 +54,7 @@ GOLDS = [(805, -9)]   # anneaux d'or : (x, decalage lateral) ; altitude = trajec
 GOLD_STRICT = True                           # verify.check_golds : detour >= 8 blocs hors de la ligne anneau a anneau, rampes limitees a la distance
 # des anneaux voisins, vol qui finit le parcours et franchit tous les anneaux proches. Il faut >= 26 blocs avant l'anneau suivant pour
 # revenir et >= 20 apres le precedent, un decalage >= 9 pour ne pas frotter l'enveloppe des vols a +-3 et une vallee large d'au moins
-# decalage + 6 : (805, -9) second glacier. Gravite 0,104 et turbo : les vols sont plus rapides
+# decalage + 6 : (805, -9) second glacier. Gravite 0,104 : les vols sont plus rapides
 # (3,5 b/tick), le detour demande ~40 blocs libres de chaque cote et le vol a plusieurs ors tombe sous le bas du cadre suivant. Balayage de
 # verify.check_golds (anneaux alignes, x de 300 a 980, decalages +-8 a +-12 ; (805, -9) passe aussi avec le slalom actuel) : seuls ~720, 795-810 et 945-950 passent chacun seul, mais aucune paire ne passe
 # le vol qui les prend tous : un seul or.

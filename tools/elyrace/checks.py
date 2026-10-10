@@ -21,6 +21,7 @@ import verify as V
 import verify_speed as VS
 
 LOADED_LINE = re.compile(r'execute store success score \$xbl mg\.st unless block -?\d+ %d -?\d+ minecraft:bedrock$' % B.PROBE_Y)
+RESPAWN_CALL = r'function mg:elyrace/(c\d+/)?respawn(?![a-z_0-9/])'      # appel direct de la reprise : interdit hors why/* (voir logic_problems)
 CHUNK = 16
 Y_MIN, Y_MAX = -64, 319             # hauteur du monde : toute commande generee doit y tenir
 GAP = 2 * CHUNK                     # ecart minimal entre les bandes de deux parcours
@@ -181,13 +182,18 @@ def logic_problems(files, specs):
                 bad.append('%s : objectif ou etiquette inconnu %s' % (rel, m))
     for s in specs:
         bad += loaded_problems(files, s)
+    # la reprise passe toujours par une raison (why/<nom>, sous-titre) : seuls elyrace/respawn (repartiteur) et why/* l'appellent
+    okay = {CC.FN + 'respawn.mcfunction'} | {rel for rel in files if rel.startswith(CC.FN + 'why/')}
+    for rel, text in sorted(files.items()):
+        if rel.endswith('.mcfunction') and rel not in okay and re.search(RESPAWN_CALL, text):
+            bad.append('%s : appelle respawn directement (passer par mg:elyrace/why/<raison>, voir reasons.py)' % rel)
     return bad
 
 
 def gravity_problems(root, files, specs):
-    """Gravite de course (attribut minecraft:gravity) : posee au GO (groupe et solo), a chaque reapparition, par le turbo d'un anneau d'or ;
-    remise a la normale par core/attr_reset_g (fin du turbo, fin de solo, desinstallation ; le lobby par core/attr_reset). L'attribut n'est ecrit
-    qu'a trois endroits (c<N>/grav, gold_hit, core/attr_reset_g) ; les points qui le posent ou le remettent, et l'origine du balayage
+    """Gravite de course (attribut minecraft:gravity) : posee au GO (groupe et solo) et a chaque reapparition ;
+    remise a la normale par core/attr_reset_g (fin de solo, desinstallation ; le lobby par core/attr_reset). L'attribut n'est ecrit
+    qu'a deux endroits (c<N>/grav, core/attr_reset_g) ; les points qui le posent ou le remettent, et l'origine du balayage
     remise a zero a chaque teleportation (respawn, place_tp : sinon le saut jusqu'au point de reprise serait pris pour un deplacement)."""
     bad = []
 
@@ -198,24 +204,46 @@ def gravity_problems(root, files, specs):
     need('solo/go', G.GRAV_ON)
     need('solo/stop', G.GRAV_RESET)
     need('uninstall', G.GRAV_RESET_ALL)
-    need('grav_on', G.XU_ZERO, *CC.per_course(specs, 'grav'))
-    need('gold_hit', G.XU_SET, G.GRAV_TURBO)
+    need('grav_on', *CC.per_course(specs, 'grav'))
     for s in specs:
         need('c%d/grav' % s.NUM, G.grav_line(s.GRAVITY))
-        need('c%d/respawn' % s.NUM, 'function ' + CC.fn(s, 'grav'), G.XU_ZERO, SW.RESET_LINE)
+        need('c%d/respawn' % s.NUM, 'function ' + CC.fn(s, 'grav'), SW.RESET_LINE)
         need('c%d/place_tp' % s.NUM, SW.RESET_LINE)
-        need('c%d/player' % s.NUM, *CF.turbo_end_lines(s))
-        if not GL.GRAV < s.GRAVITY < GL.TURBO_G:
-            bad.append('parcours %d : GRAVITY %s doit etre entre la gravite normale %s et celle du turbo %s' % (s.NUM, s.GRAVITY, GL.GRAV, GL.TURBO_G))
-    allowed = {CC.FN + 'c%d/grav.mcfunction' % s.NUM for s in specs} | {CC.FN + 'gold_hit.mcfunction'}
+        if not GL.GRAV < s.GRAVITY:
+            bad.append('parcours %d : GRAVITY %s doit depasser la gravite normale %s' % (s.NUM, s.GRAVITY, GL.GRAV))
+    allowed = {CC.FN + 'c%d/grav.mcfunction' % s.NUM for s in specs}
     for rel, text in sorted(files.items()):
         if rel.endswith('.mcfunction') and rel not in allowed and re.search(r'^attribute \S+ minecraft:gravity\b', text, re.M):
-            bad.append('%s : ecrit l\'attribut gravity (seuls c<N>/grav et gold_hit le font ; le reste passe par core/attr_reset_g)' % rel)
+            bad.append('%s : ecrit l\'attribut gravity (seul c<N>/grav le fait ; le reste passe par core/attr_reset_g)' % rel)
     reset = CS.repo_code(root, 'core/attr_reset_g')
     if reset != ['attribute @s minecraft:gravity base set %s' % GL.GRAV]:
         bad.append('core/attr_reset_g : doit remettre la gravite normale (%s) : %s' % (GL.GRAV, reset))
     uninstall = code_lines(files, 'uninstall')
     bad.extend(uninstall_gravity_problems(root, uninstall))
+    return bad
+
+
+def gold_problems(files, specs):
+    """Bonus de temps des anneaux d'or : gold_hit compte l'or (mg.xu), la reprise le garde (aucun mg.xu dans c<N>/respawn), elyrace/bonus
+    est appele entre #xrt = chrono et le premier record (groupe : finish ; solo : solo/finish), le bonus est un nombre entier de secondes
+    et tous les ors d'un parcours tiennent dans le delai de fin de course (END_WAIT : un arrive ne peut pas etre depasse apres coup)."""
+    bad = []
+    if 'scoreboard players add @s mg.xu 1' not in code_lines(files, 'gold_hit'):
+        bad.append('elyrace/gold_hit : « scoreboard players add @s mg.xu 1 » absent (l\'or ne serait pas compte)')
+    for s in specs:
+        if any('mg.xu' in l for l in code_lines(files, 'c%d/respawn' % s.NUM)):
+            bad.append('c%d/respawn : touche mg.xu (les ors pris sont gardes a la reprise)' % s.NUM)
+    for name in ('finish', 'solo/finish'):
+        lines = code_lines(files, name)
+        at = {k: [i for i, l in enumerate(lines) if re.match(p, l)] for k, p in (('rt', r'scoreboard players operation #xrt mg\.st = '),
+              ('bonus', r'function mg:elyrace/bonus$'), ('record', r'(execute .* run )?function mg:elyrace/c\d+/record$'))}
+        if not (at['rt'] and at['bonus'] and at['record'] and at['rt'][0] < at['bonus'][0] < at['record'][0]):
+            bad.append('elyrace/%s : « function mg:elyrace/bonus » doit suivre « #xrt = » et preceder le premier record' % name)
+    if G.GOLD_BONUS % 20:
+        bad.append('GOLD_BONUS %d n\'est pas un multiple de 20 ticks (le bonus s\'affiche en secondes entieres)' % G.GOLD_BONUS)
+    most = max(len(s.GOLDS) for s in specs)
+    if G.END_WAIT <= G.GOLD_BONUS * most:
+        bad.append('END_WAIT %d <= GOLD_BONUS %d x %d ors : un retardataire pourrait passer devant apres la fin de course' % (G.END_WAIT, G.GOLD_BONUS, most))
     return bad
 
 
@@ -248,7 +276,7 @@ def check(root, courses, files):
     """Renvoie la liste des problemes (vide = tout est bon)."""
     specs = [c.spec for c in courses]
     bad = (spec_problems(specs) + CR.id_problems(root, specs) + logic_problems(files, specs) + CR.rate_problems(root, files)
-           + CR.setup_problems(root, specs) + CS.problems(root, files, specs) + gravity_problems(root, files, specs))
+           + CR.setup_problems(root, specs) + CS.problems(root, files, specs) + gravity_problems(root, files, specs) + gold_problems(files, specs))
     if V.VMAX_CAP * 100 >= SW.STEP_MAX:
         bad.append('verify.VMAX_CAP %.1f b/tick = %d centiemes par tick >= sweep.STEP_MAX %d : un vol verifie serait pris pour une teleportation' % (V.VMAX_CAP, V.VMAX_CAP * 100, SW.STEP_MAX))
     names = {rel[len('data/mg/function/'):-len('.mcfunction')] for rel in files if rel.endswith('.mcfunction')}
@@ -263,8 +291,12 @@ def check(root, courses, files):
         print('\n'.join('  ' + i for i in info))
         bad += ['parcours %d, repli de choc : %s' % (c.spec.NUM, b) for b in margin_bad]
         vref = max(t[3] for t in c.trace)
-        vmax = max(vref, V.max_speed(c))             # tous les vols de verify (ecarts, reprises, detours d'or avec turbo), pas seulement la reference
+        vmax = max(vref, V.max_speed(c))             # tous les vols de verify (ecarts, reprises, detours d'or), pas seulement la reference
         print('  vol de reference : %.1f s (%d ticks), vitesse max %.2f b/tick (tous les vols verifies : %.2f)' % (len(c.trace) / 20.0, len(c.trace), vref, vmax))
+        costs = V.gold_costs(c)                      # le detour d'un or doit couter moins que son bonus de temps (sinon il ne vaut pas le coup)
+        print('  cout du detour des ors (ticks de vol en plus, bonus %d) : %s' % (G.GOLD_BONUS, ', '.join('x=%d : %s' % (gx, '?' if t is None else t) for gx, t in costs)))
+        bad += ['parcours %d, anneau d\'or en x=%d : cout du detour %s ticks, pas inferieur au bonus de temps %d' % (c.spec.NUM, gx, 'inconnu' if t is None else t, G.GOLD_BONUS)
+                for gx, t in costs if t is None or t >= G.GOLD_BONUS]
         if vmax >= V.VMAX_CAP:                   # le plafond garde le deplacement par tick sous sweep.STEP_MAX et dans la plage eprouvee du repli de choc
             bad.append('parcours %d : vitesse max des vols verifies %.2f >= %.1f (verify.VMAX_CAP)' % (c.spec.NUM, vmax, V.VMAX_CAP))
         bad += course_problems(c)

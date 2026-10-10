@@ -1,5 +1,5 @@
 """Marges du repli de choc de game.py (speed) sur les vols du pilote automatique : le repli (chute du carre de la vitesse horizontale) ne
-doit jamais se declencher sur un vol normal, y compris avec le turbo d'un anneau d'or, ni sur un cabre brutal a la vitesse maximale.
+doit jamais se declencher sur un vol normal, y compris sur un detour vers un anneau d'or, ni sur un cabre brutal a la vitesse maximale.
 Separe de verify.py : une autre raison de changer (seuils DROP_SQ / DROP_REL de game.py). Python stdlib uniquement (compatible 3.8).
 """
 import math
@@ -55,7 +55,7 @@ def _scaled(s, speed):
 
 def speed_margins(c, drop_sq, rel_pct):
     """Verifie le repli de choc contre un mur (chute de vitesse) : (liste d'echecs, resume). Sur les vols de reference
-    (depart, ecarts, reprises, vols avec turbo des ors) il ne doit jamais se declencher, avec marge x3 sur la chute absolue et sur la
+    (depart, ecarts, reprises, vols avec detour vers les ors) il ne doit jamais se declencher, avec marge x3 sur la chute absolue et sur la
     chute relative ; un cabre brutal (+90 deg sur 2 ticks) a la vitesse maximale du parcours et a SYNTH_SPEED ne doit pas le declencher
     non plus (marge x2 sur la chute relative : seul le seuil relatif protege a grande vitesse)."""
     flights = [(V.start(c), V.polyline(c, dy=dy, dz=dz), 10.0, None) for dy, dz in V.OFFSETS]
