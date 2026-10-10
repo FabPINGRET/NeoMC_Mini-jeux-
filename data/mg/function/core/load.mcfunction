@@ -47,6 +47,7 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.lbp dummy
 scoreboard objectives add mg.uoi minecraft.mined:minecraft.iron_ore
 scoreboard objectives add mg.uog minecraft.mined:minecraft.gold_ore
 scoreboard objectives add mg.uod minecraft.mined:minecraft.diamond_ore

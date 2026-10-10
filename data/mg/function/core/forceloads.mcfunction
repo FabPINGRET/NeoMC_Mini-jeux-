@@ -98,6 +98,8 @@ forceload add -23 36996 23 37099
 forceload add -24 37376 24 37424
 # Slime Jump (z 37800)
 forceload add -14 37794 14 37959
+# Labyrinthe aveugle (z 38200)
+forceload add -3 38197 285 38233
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl

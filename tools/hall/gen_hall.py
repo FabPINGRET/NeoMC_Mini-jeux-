@@ -53,6 +53,7 @@ GAMES = [  # clé, libellé, couleur, plages de $game
     ('soleil', '🔴 1, 2, 3 Soleil', 'red', [(220, 220)]),
     ('autotamp', '🚗 Autos tamponneuses', 'aqua', [(221, 223)]),
     ('slimejump', '🟩 Slime Jump', 'green', [(224, 224)]),
+    ('lab', '🙈 Labyrinthe aveugle', 'light_purple', [(225, 225)]),
 ]
 X0, X1, Z0, Z1 = -24, -6, 11, 25           # emprise du hall (sol y 63), ouvert au nord, juste au sud-ouest de la place
 OLD_Z0, OLD_Z1 = 21, 35                    # ancien emplacement (v8 et avant), nettoyé une fois

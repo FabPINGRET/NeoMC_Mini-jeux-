@@ -22,6 +22,9 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+bossbar remove mg:lab
+data remove storage mg:lab b
+scoreboard objectives remove mg.lbp
 data remove storage mg:uhc o
 scoreboard objectives remove mg.uoi
 scoreboard objectives remove mg.uog

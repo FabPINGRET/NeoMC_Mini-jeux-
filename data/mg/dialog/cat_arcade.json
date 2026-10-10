@@ -271,6 +271,32 @@
     {
       "label": [
         {
+          "text": "🙈 🙈 Labyrinthe aveugle ",
+          "color": "light_purple"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Par paires : le marcheur est aveugle, le guide le dirige d'en haut (au vocal)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 225"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🎾 Wii Sports ▸",
           "color": "aqua"
         }
