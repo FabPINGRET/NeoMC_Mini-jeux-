@@ -325,6 +325,7 @@ exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lobby_rp.py'
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'guns_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'gta_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cham_rp.py'), encoding='utf-8').read())
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lab_rp.py'), encoding='utf-8').read())
 
 # ------------------------------------------------------------------ pack.mcmeta, zip
 wjson(os.path.join(OUT, 'pack.mcmeta'), {"pack": {"description": [{"text": "NeoMC Mini-Jeux", "color": "gold"},
