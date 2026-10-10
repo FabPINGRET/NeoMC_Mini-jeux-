@@ -1,19 +1,22 @@
 """Contre-la-montre solo de la Course d'elytres, partie DEROULEMENT (le lancement est dans solo.py). Chaque joueur en solo (tag mg.xso) a son
 propre tick, appele par core/tick (branchement : wire_elyrace4.py) tant qu'au moins un joueur porte le tag. Phases (mg.xph) : 1 decompte,
-2 course, 3 arrivee ; mg.xst = chrono du joueur (ticks depuis le lancement, le GO, ou l'arrivee selon la phase), mg.xsl = dernier tick ou
+2 course, 3 arrivee, 4 choix (Rejouer ou lobby, 30 s) ; mg.xst = chrono du joueur (ticks depuis le lancement, le GO, l'arrivee ou le choix selon la phase), mg.xsl = dernier tick ou
 il etait en ligne. Le solo n'ecrit jamais $state, $game, $timer, ni ne lit $xc ou $xt : la course d'un joueur ne depend que de ses scores.
 Deux passes par tick : `seen` sur @a (voit aussi un joueur sur l'ecran de mort : sa presence ne doit pas disparaitre) puis `step` sur
 @e[type=player] (ignore le joueur mort pendant la reapparition : respawn le replacerait deux fois).
-SEULE ENTREE en course : solo/go (phase 2). SEULE SORTIE : solo/stop (tag retire, pause d'avant retablie, retour au lobby) ; aucune
+SEULE ENTREE en course : solo/go (phase 2, meme apres « Rejouer » : solo/arm repasse par le decompte). SEULE SORTIE : solo/stop (tag retire, pause d'avant retablie,
+retour au lobby) ; la phase 4 (solo/choice, solo/wait) attend le joueur sans rien quitter ; aucune
 teleportation vers l'avant ailleurs que place_tp, respawn et le lobby. La gravite de course est posee par solo/go (grav_on) et remise a la
 normale par solo/stop (core/attr_reset_g).
-Fonctions generees : elyrace/solo/{tick, seen, step, countdown, go, finish, stop}. Python stdlib uniquement (compatible 3.8).
+Fonctions generees : elyrace/solo/{tick, seen, step, countdown, go, finish, choice, wait, stop}. Python stdlib uniquement (compatible 3.8).
 """
 import course_common as CC
 import game as G
+import menus as M
 
 COUNT = 100              # decompte : 5 s (mg.xst de 0 a 100)
-END_TIMER = 30           # ticks de phase 3 (arrivee) avant le retour au lobby
+END_TIMER = 30           # ticks de phase 3 (arrivee) avant le choix (phase 4)
+CHOICE_WAIT = 600        # ticks de phase 4 (choix : Rejouer ou lobby) avant le retour automatique au lobby (30 s)
 PLUS_30 = G.TIME_LIMIT - 600     # « plus que 30 secondes » (mg.xst)
 LEFT = (('mg.surv', 'Tu es parti en survie'), ('mg.inplot', 'Tu es parti sur ton plot'), ('mg.visit', 'Tu es parti en visite de plot'))
 # activités du lobby ouvertes pendant un solo (tag, début du message) : fin du solo, sans retour au lobby ; solo.py doit refuser chacune au lancement
@@ -55,9 +58,11 @@ def step_lines(specs):
            '# lobby/wind_used (charge de vent) donne slow_falling : retiré, il fausserait la glisse',
            'effect clear @s minecraft:slow_falling',
            'execute if score @s mg.xph matches 1 run return run function mg:elyrace/solo/countdown',
-           '# phase 3 (arrivée) : %d ticks pour lire le temps, puis retour au lobby ; aucune règle de course' % END_TIMER,
-           'execute if score @s mg.xph matches 3 if score @s mg.xst matches %d.. run return run function mg:elyrace/solo/stop' % END_TIMER,
+           '# phase 3 (arrivée) : %d ticks pour lire le temps, puis phase 4 (choix) ; aucune règle de course' % END_TIMER,
+           'execute if score @s mg.xph matches 3 if score @s mg.xst matches %d.. run return run function mg:elyrace/solo/choice' % END_TIMER,
            'execute if score @s mg.xph matches 3 run return 0',
+           '# phase 4 (choix : Rejouer ou lobby) : AVANT c<N>/player, donc ni détection de course, ni HUD, ni anneaux, ni mur, ni arrivée',
+           'execute if score @s mg.xph matches 4 run return run function mg:elyrace/solo/wait',
            '# phase 2 : le tick du parcours (règles, anneaux, reprises), puis HUD et limite de temps',
            '# (l\'arrivée a pu passer le joueur en phase 3 pendant ce tick : plus de HUD ni de limite)']
     out += CC.per_course(specs, 'player')
@@ -111,13 +116,45 @@ def finish_lines(specs):
             'execute at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1',
             'execute at @s run particle minecraft:firework ~ ~1 ~ 1 1 1 0.2 60',
             '# records : le temps est lu dans #xrt, personnel puis serveur, selon son parcours (mg.xcr)'] + CC.per_course(specs, 'record') + [
-            '# phase 3 : le chrono repart à 0 pour compter %d ticks, puis solo/stop (le temps de l\'arrivée est déjà enregistré)' % END_TIMER,
+            '# phase 3 : le chrono repart à 0 pour compter %d ticks, puis solo/choice (le temps de l\'arrivée est déjà enregistré)' % END_TIMER,
             'scoreboard players set @s mg.xph 3',
             'scoreboard players set @s mg.xst 0']
 
 
+def choice_lines():
+    return ['# @s = joueur dont la phase 3 (arrivée) se termine : PHASE 4, choix entre rejouer (solo/retry) et le lobby (solo/quit, ou solo/wait au bout de %d s).' % (CHOICE_WAIT // 20),
+            '# Pas de stop : le tag, la pause et le parcours restent. Seule l\'arrivée y passe (la limite de 3 minutes, elle, arrête le solo : pas de nouvelle tentative)',
+            '# gravité normale (plus de vol), retour sur sa place de départ, gel (le même que le décompte ; solo/retry le lève avant solo/arm)',
+            G.GRAV_RESET,
+            'function mg:elyrace/place_tp',
+            'function mg:core/freeze',
+            'scoreboard players set @s mg.xph 4',
+            'scoreboard players set @s mg.xst 0',
+            'tellraw @s [{"text":"🏁 Et maintenant ? ","color":"gold"},'
+            '{"text":"[⟲ Rejouer]","color":"green","bold":true,"click_event":{"action":"run_command","command":"trigger mg.xs set %d"},'
+            '"hover_event":{"action":"show_text","value":"Relancer le même parcours tout de suite"}},{"text":" ","color":"gray"},'
+            '{"text":"[⌂ Retour au lobby]","color":"yellow","click_event":{"action":"run_command","command":"trigger mg.xs set %d"},'
+            '"hover_event":{"action":"show_text","value":"Quitter le contre-la-montre"}},'
+            '{"text":" (lobby automatique dans %d s)","color":"gray"}]' % (M.SOLO_RETRY, M.SOLO_QUIT, CHOICE_WAIT // 20),
+            'execute at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 1.2']
+
+
+def wait_lines():
+    return ['# @s = joueur en phase 4 (choix ; appelée par step avant toute règle de course) : à %d ticks (%d s) sans clic, retour au lobby ;' % (CHOICE_WAIT, CHOICE_WAIT // 20),
+            '# sinon compte à rebours dans la barre d\'action, une fois par seconde (mg.xst = ticks depuis le début du choix)',
+            'execute if score @s mg.xst matches %d.. run tellraw @s [%s]' % (CHOICE_WAIT, msg('⌂ Pas de réponse : retour au lobby.')),
+            'execute if score @s mg.xst matches %d.. run return run function mg:elyrace/solo/stop' % CHOICE_WAIT,
+            'scoreboard players operation #xm mg.st = @s mg.xst',
+            'scoreboard players operation #xm mg.st %= #k20 mg.st',
+            'execute unless score #xm mg.st matches 0 run return 0',
+            'scoreboard players set #xw mg.st %d' % CHOICE_WAIT,
+            'scoreboard players operation #xw mg.st -= @s mg.xst',
+            'scoreboard players operation #xw mg.st /= #k20 mg.st',
+            'title @s actionbar [{"text":"⟲ Rejouer ou retour au lobby : ","color":"gray"},{"score":{"name":"#xw","objective":"mg.st"},"color":"white"},{"text":" s","color":"gray"}]']
+
+
 def stop_lines():
-    return ['# @s = joueur : SEULE SORTIE d\'un contre-la-montre solo (arrivée + %d ticks, abandon, pause désactivée, survie / plot / visite, 3 min,' % END_TIMER,
+    return ['# @s = joueur : SEULE SORTIE d\'un contre-la-montre solo (arrivée + %d ticks, puis choix terminé ou quitté, abandon, pause désactivée, survie / plot / visite, 3 min,' % END_TIMER,
             '# reconnexion, arrêt admin, départ d\'une course de groupe, désinstallation). Rien d\'autre ne retire mg.xso.',
             '# 1) plus aucune détection : le tag et les scores de course d\'abord (mg.xse, délai de 30 s, est posé plus bas)',
             'tag @s remove mg.xso',
@@ -143,4 +180,5 @@ def stop_lines():
 
 def functions(specs):
     return {'solo/tick': tick_lines(), 'solo/seen': seen_lines(), 'solo/step': step_lines(specs), 'solo/countdown': countdown_lines(),
-            'solo/go': go_lines(specs), 'solo/finish': finish_lines(specs), 'solo/stop': stop_lines()}
+            'solo/go': go_lines(specs), 'solo/finish': finish_lines(specs), 'solo/choice': choice_lines(), 'solo/wait': wait_lines(),
+            'solo/stop': stop_lines()}

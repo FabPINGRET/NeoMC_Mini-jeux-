@@ -54,8 +54,8 @@ OBJECTIVES = [
 # par solo/start ; xse, xsl et xph/xst ne servent qu'au solo (voir solo_run.py)
 EXTRA_OBJECTIVES = [
     ('xcr', 'parcours du joueur (NUM : groupe et solo)'),
-    ('xph', 'solo : phase (1 decompte, 2 course, 3 arrivee)'),
-    ('xst', 'solo : chrono du joueur (ticks) : decompte, course ou arrivee selon la phase'),
+    ('xph', 'solo : phase (1 decompte, 2 course, 3 arrivee, 4 choix : Rejouer ou lobby)'),
+    ('xst', 'solo : chrono du joueur (ticks) : decompte, course, arrivee ou choix selon la phase'),
     ('xse', 'solo : tick de la fin du dernier solo du joueur (delai de 30 s)'),
     ('xsl', 'solo : dernier tick ou le joueur etait en ligne (detecte la reconnexion)'),
 ]

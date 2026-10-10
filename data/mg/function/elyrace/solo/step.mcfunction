@@ -4,9 +4,11 @@ execute if entity @s[tag=mg.play] run return run function mg:elyrace/solo/stop
 # lobby/wind_used (charge de vent) donne slow_falling : retiré, il fausserait la glisse
 effect clear @s minecraft:slow_falling
 execute if score @s mg.xph matches 1 run return run function mg:elyrace/solo/countdown
-# phase 3 (arrivée) : 30 ticks pour lire le temps, puis retour au lobby ; aucune règle de course
-execute if score @s mg.xph matches 3 if score @s mg.xst matches 30.. run return run function mg:elyrace/solo/stop
+# phase 3 (arrivée) : 30 ticks pour lire le temps, puis phase 4 (choix) ; aucune règle de course
+execute if score @s mg.xph matches 3 if score @s mg.xst matches 30.. run return run function mg:elyrace/solo/choice
 execute if score @s mg.xph matches 3 run return 0
+# phase 4 (choix : Rejouer ou lobby) : AVANT c<N>/player, donc ni détection de course, ni HUD, ni anneaux, ni mur, ni arrivée
+execute if score @s mg.xph matches 4 run return run function mg:elyrace/solo/wait
 # phase 2 : le tick du parcours (règles, anneaux, reprises), puis HUD et limite de temps
 # (l'arrivée a pu passer le joueur en phase 3 pendant ce tick : plus de HUD ni de limite)
 execute if score @s mg.xcr matches 1 run function mg:elyrace/c1/player

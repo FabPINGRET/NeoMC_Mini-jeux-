@@ -18,7 +18,9 @@ FORBIDDEN_CALL = re.compile(r'\bfunction mg:core/(countdown|begin|draw|ending|re
 PLAY_SELECTOR = re.compile(r'@[ae]\[[^\]]*tag=mg\.play')       # @a[tag=mg.play...] : un solo ne cible jamais les participants d'une partie
 BUSY_WAIT = 'execute if entity @a[tag=mg.xso] run return run schedule function '
 PURGE = re.compile(r'^scoreboard players reset \$xse? mg\.st$')   # seul emploi permis de $xs / $xse : la purge des anciens drapeaux (elyrace/objectives)
-SOLO_ONLY = {'solo/go': 'scoreboard players set @s mg.xph 2', 'solo/start': 'scoreboard players set @s mg.xph 1', 'solo/finish': 'scoreboard players set @s mg.xph 3'}
+SOLO_ONLY = {'solo/go': 'scoreboard players set @s mg.xph 2', 'solo/arm': 'scoreboard players set @s mg.xph 1', 'solo/finish': 'scoreboard players set @s mg.xph 3',
+             'solo/choice': 'scoreboard players set @s mg.xph 4'}      # phase -> seule fonction qui la pose (arm : lancement ET « Rejouer »)
+RETRY_FORBIDDEN = (r'mg\.xse\b', r'mg\.xsp0\b', r'spectate', r'mg\.ri\b', r'tag @s add mg\.xso\b', r'solo/start', r'solo/stop', r'announce')   # retry ne relance rien d'autre que arm
 
 
 def code(text):
@@ -85,15 +87,16 @@ def solo_problems(files):
 
 
 def entry_exit_problems(files):
-    """solo/go est la seule entree en course (phase 2), solo/stop la seule sortie (mg.xso), solo/start le seul lancement ; la pause est rendue par stop."""
+    """solo/go est la seule entree en course (phase 2), solo/stop la seule sortie (mg.xso), solo/start le seul lancement (via arm pour la phase 1) ;
+    la pause est rendue par stop."""
     bad = []
     for rel, text in sorted(files.items()):
         if not rel.endswith('.mcfunction'):
             continue
         name = rel[len(CC.FN):-len('.mcfunction')]
         for line in code(text):
-            if re.search(r'mg\.xph (\d)\b', line) and re.search(r'players set \S+ mg\.xph [123]\b', line):
-                value = re.search(r'mg\.xph ([123])\b', line).group(1)
+            if re.search(r'mg\.xph (\d)\b', line) and re.search(r'players set \S+ mg\.xph [1-4]\b', line):
+                value = re.search(r'mg\.xph ([1-4])\b', line).group(1)
                 want = [n for n, l in SOLO_ONLY.items() if l.endswith('mg.xph ' + value)][0]
                 if name != want or line != SOLO_ONLY[want]:
                     bad.append('%s : pose la phase %s ailleurs que dans elyrace/%s : %s' % (rel, value, want, line))
@@ -130,6 +133,52 @@ def entry_exit_problems(files):
     spectate, memo = 'tag @s add mg.spectate', 'execute if entity @s[tag=mg.spectate] run tag @s add mg.xsp0'
     if spectate not in start or memo not in start or start.index(memo) > start.index(spectate):
         bad.append('solo/start : la pause d\'avant (mg.xsp0) doit etre memorisee AVANT la pose de mg.spectate')
+    return bad
+
+
+def retry_problems(files, specs):
+    """Phase 4 (choix) et « Rejouer » : retry ne fait que rearmer (solo/arm : tout l'etat de course remis a zero), jamais relancer ni arreter ; la phase 4 n'est
+    atteinte que par l'arrivee (la limite de 3 minutes arrete le solo : pas de nouvelle tentative) et jamais traitee par la logique de course."""
+    bad, retry, step, wait = [], fn_code(files, 'solo/retry'), fn_code(files, 'solo/step'), fn_code(files, 'solo/wait')
+    for line in retry:
+        for pat in RETRY_FORBIDDEN:
+            if re.search(pat, line):
+                bad.append('solo/retry : ne doit pas toucher a %s (rearmer seulement) : %s' % (pat, line))
+    arm = 'function mg:elyrace/solo/arm'
+    gates = ['execute unless entity @s[tag=mg.xso] run return run tellraw @s ', 'execute unless score @s mg.xph matches 4 run return run tellraw @s ']
+    idx = [[i for i, l in enumerate(retry) if l.startswith(g)] for g in gates]
+    if retry.count(arm) != 1 or retry[-1:] != [arm]:
+        bad.append('solo/retry : doit finir par un unique appel a solo/arm (%s)' % arm)
+    if not all(idx) or (arm in retry and max(max(i) for i in idx) > retry.index(arm)):
+        bad.append('solo/retry : refus absents ou apres solo/arm (hors contre-la-montre, hors phase 4 : %s)' % gates)
+    if arm not in fn_code(files, 'solo/start'):
+        bad.append('solo/start : doit armer le joueur par solo/arm (%s)' % arm)
+    cmd = 'execute if score #xv mg.st matches %d run function mg:elyrace/solo/retry' % M.SOLO_RETRY
+    if cmd not in fn_code(files, 'solo/cmd'):
+        bad.append('solo/cmd : ligne absente : %s' % cmd)
+    armed = fn_code(files, 'solo/arm')
+    for n, _, _ in G.OBJECTIVES:        # tout l'etat de course (ors mg.xu / mg.xo, classement mg.xft, arrivee mg.xf, reprise, balayage...) est remis a zero a chaque tentative
+        if not any(l.startswith('scoreboard players set @s mg.%s ' % n) for l in armed):
+            bad.append('solo/arm : ne remet pas mg.%s a zero (Rejouer garderait l\'etat de la tentative precedente)' % n)
+    choice = fn_code(files, 'solo/choice')
+    for need in (G.GRAV_RESET, 'function mg:elyrace/place_tp', 'function mg:core/freeze'):
+        if need not in choice:
+            bad.append('solo/choice : ligne absente : %s' % need)
+    if any('solo/stop' in l or 'mg.xso' in l for l in choice):
+        bad.append('solo/choice : la phase 4 attend le joueur, elle ne retire ni ne pose mg.xso et n\'arrete pas le solo')
+    calls = [l for l in step if 'function mg:elyrace/solo/choice' in l]
+    if len(calls) != 1 or 'mg.xph matches 3 ' not in calls[0]:
+        bad.append('solo/step : doit appeler solo/choice une seule fois, a l\'arrivee (phase 3) : %s' % calls)
+    limit = 'execute if score @s mg.xst matches %d.. run function mg:elyrace/solo/stop' % G.TIME_LIMIT
+    if limit not in step:
+        bad.append('solo/step : la limite de 3 minutes doit rester un solo/stop (pas de nouvelle tentative) : %s' % limit)
+    gate = 'execute if score @s mg.xph matches 4 run return run function mg:elyrace/solo/wait'
+    race = [step.index(l) for l in CC.per_course(specs, 'player') if l in step]
+    if gate not in step or not race or step.index(gate) > min(race):
+        bad.append('solo/step : la phase 4 (solo/wait) doit etre traitee AVANT c<N>/player (aucune detection de course) : %s' % gate)
+    back = 'execute if score @s mg.xst matches %d.. run return run function mg:elyrace/solo/stop' % SR.CHOICE_WAIT
+    if back not in wait:
+        bad.append('solo/wait : le retour au lobby apres %d ticks est absent : %s' % (SR.CHOICE_WAIT, back))
     return bad
 
 
@@ -270,5 +319,5 @@ def objective_problems(files):
 
 
 def problems(root, files, specs):
-    return (solo_problems(files) + entry_exit_problems(files) + order_problems(files) + records_problems(files) + trigger_problems(files, specs)
+    return (solo_problems(files) + entry_exit_problems(files) + retry_problems(files, specs) + order_problems(files) + records_problems(files) + trigger_problems(files, specs)
             + common_problems(files, specs) + hooks_problems(root) + objective_problems(files))

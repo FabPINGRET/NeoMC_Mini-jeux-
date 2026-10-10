@@ -1,4 +1,4 @@
-# @s = joueur : SEULE SORTIE d'un contre-la-montre solo (arrivée + 30 ticks, abandon, pause désactivée, survie / plot / visite, 3 min,
+# @s = joueur : SEULE SORTIE d'un contre-la-montre solo (arrivée + 30 ticks, puis choix terminé ou quitté, abandon, pause désactivée, survie / plot / visite, 3 min,
 # reconnexion, arrêt admin, départ d'une course de groupe, désinstallation). Rien d'autre ne retire mg.xso.
 # 1) plus aucune détection : le tag et les scores de course d'abord (mg.xse, délai de 30 s, est posé plus bas)
 tag @s remove mg.xso

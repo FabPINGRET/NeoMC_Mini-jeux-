@@ -13,6 +13,7 @@ BACK_OPT = 42                     # mg.opt de la categorie « Courses et vol » 
 # Valeurs de /trigger mg.xs (contre-la-montre solo, ouvert a tous) : 10 + NUM = solo sur le parcours NUM. Aucune etiquette de ces boutons
 # ne commence par « : gen_variants.py (is_back) retire de sub_elyrace tout bouton dont le libelle commence ainsi.
 SOLO_MENU, SOLO_QUIT, SOLO_RECORDS, SOLO_STOP, SOLO_RANDOM = 1, 2, 3, 4, 10     # SOLO_STOP : un admin arrete tous les solos (pas de bouton)
+SOLO_RETRY = 5          # [Rejouer] du message d'arrivee (phase 4 du solo) : relance le meme parcours, sans repasser par le lobby
 SOLO_TIP = "Contre-la-montre : seul en piste, ton meilleur temps est enregistré. Te met en pause pendant le solo ; 30 s d'attente entre deux solos."
 SOLO_BACK_MENU = 'trigger mg.menu set 1'      # retour de la fenetre solo : menu principal (admin) ou fenetre de vote (non-admin)
 

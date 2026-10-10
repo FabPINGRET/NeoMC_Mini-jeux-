@@ -3,7 +3,8 @@ partie sauf une course d'elytres de groupe (4 solos au plus en meme temps, sur l
 (menus.SOLO_*), jamais par mg.go (reserve aux admins). Le solo ne touche jamais la machine a etats ($state, $game, $timer, mg.play) :
 tout son etat est PAR JOUEUR (tag mg.xso, scores mg.xph / xst / xcr / xse / xsl, voir game.EXTRA_OBJECTIVES). Lancer un solo met le joueur
 en PAUSE (tag mg.spectate : votes et lancements l'ignorent d'eux-memes) ; la pause d'avant est memorisee dans le tag mg.xsp0.
-Fonctions generees ici : elyrace/solo/{cmd, start, announce, quit, stop_all, menu}. Le tick, le decompte, le depart, l'arrivee et la sortie
+Fonctions generees ici : elyrace/solo/{cmd, start, arm, retry, announce, quit, stop_all, menu}. arm (etat de course remis a zero, equipement, depart gele,
+decompte) est commun au lancement (start) et a « Rejouer » (retry, phase 4 : voir solo_run.py), sans repasser par stop. Le tick, le decompte, le depart, l'arrivee et la sortie
 sont dans solo_run.py (solo/go est la seule entree en course, solo/stop la seule sortie).
 Branchements dans le moteur : wire_elyrace4.py (core/tick). Python stdlib uniquement (compatible 3.8).
 """
@@ -27,13 +28,14 @@ def refuse(cond, text):
 
 
 def cmd_lines():
-    return ['# @s = joueur qui a utilise /trigger mg.xs : %d = fenêtre, %d = abandon, %d = ses records, %d = (admin) arrêter tous les solos, %d = solo au hasard, %d + NUM = solo sur le parcours NUM'
-            % (M.SOLO_MENU, M.SOLO_QUIT, M.SOLO_RECORDS, M.SOLO_STOP, M.SOLO_RANDOM, M.SOLO_RANDOM),
+    return ['# @s = joueur qui a utilise /trigger mg.xs : %d = fenêtre, %d = abandon, %d = ses records, %d = (admin) arrêter tous les solos, %d = solo au hasard, %d + NUM = solo sur le parcours NUM, %d = rejouer (phase 4)'
+            % (M.SOLO_MENU, M.SOLO_QUIT, M.SOLO_RECORDS, M.SOLO_STOP, M.SOLO_RANDOM, M.SOLO_RANDOM, M.SOLO_RETRY),
             '# la valeur est lue dans #xv, puis le trigger est remis à zéro d\'abord (core/tick le réactive à chaque tick)',
             'scoreboard players operation #xv mg.st = @s mg.xs',
             'scoreboard players reset @s mg.xs',
             'execute if score #xv mg.st matches %d run function mg:elyrace/solo/menu' % M.SOLO_MENU,
             'execute if score #xv mg.st matches %d run function mg:elyrace/solo/quit' % M.SOLO_QUIT,
+            'execute if score #xv mg.st matches %d run function mg:elyrace/solo/retry' % M.SOLO_RETRY,
             'execute if score #xv mg.st matches %d run function mg:elyrace/records' % M.SOLO_RECORDS,
             'execute if score #xv mg.st matches %d run function mg:elyrace/solo/stop_all' % M.SOLO_STOP,
             'execute if score #xv mg.st matches %d.. run function mg:elyrace/solo/start' % M.SOLO_RANDOM]
@@ -93,30 +95,50 @@ def start_lines(specs):
             'tag @s add mg.xso',
             'scoreboard players operation @s mg.xcr = $xc mg.st',
             'scoreboard players set $xc mg.st 0',
-            '# état du solo : phase 1 (décompte), chrono à 0 ; mg.xsl = tick précédent (le tick de ce lancement compte comme « vu »)',
-            'scoreboard players set @s mg.xph 1',
-            'scoreboard players set @s mg.xst 0',
+            '# mg.xsl = tick précédent (le tick de ce lancement compte comme « vu ») ; la phase 1 et le chrono sont posés par solo/arm',
             'scoreboard players operation @s mg.xsl = $tc mg.st',
             'scoreboard players remove @s mg.xsl 1',
-            'scoreboard players set @s mg.deaths 0']
-    out += ['scoreboard players set @s mg.%s %d' % (n, G.HEARTS if n == 'xh' else 0) for n, _, _ in G.OBJECTIVES]
-    out += ['scoreboard players reset @s mg.qs', 'scoreboard players reset @s mg.fw', 'scoreboard players reset @s mg.wc',
-            'scoreboard players reset @s mg.wd', 'scoreboard players reset @s mg.us',
             '# place de départ libre : la plus petite que les autres solos n\'occupent pas (au plus %d solos : il y en a toujours une)' % MAX_SOLO,
             'scoreboard players set @s mg.ri 0']
     out += ['execute if score @s mg.ri matches 0 unless entity @a[tag=mg.xso,scores={mg.ri=%d}] run scoreboard players set @s mg.ri %d' % (k, k)
             for k in range(1, MAX_SOLO + 1)]
+    return out + ['# phase 1, état de course à zéro, équipement, départ gelé et décompte : solo/arm (le même que « Rejouer »), puis l\'annonce',
+                  'function mg:elyrace/solo/arm',
+                  'function mg:elyrace/solo/announce']
+
+
+def arm_lines(specs):
+    """Tout ce qui (re)met un joueur de solo sur sa ligne de depart, apres que mg.xso, mg.xcr et mg.ri sont poses (par start, ou deja la pour retry)."""
+    out = ['# @s = joueur en solo (mg.xso, parcours mg.xcr et place de départ mg.ri déjà posés) : phase 1 (décompte), chrono à 0, TOUT l\'état de course',
+           '# remis à zéro (G.OBJECTIVES : ors mg.xu / mg.xo, classement mg.xft, arrivée mg.xf, reprise, origine du balayage, cœurs...), équipement,',
+           '# départ gelé, titres. Appelé par solo/start et par solo/retry (« Rejouer », phase 4) : ni tag, ni pause, ni annonce ici',
+           'scoreboard players set @s mg.xph 1',
+           'scoreboard players set @s mg.xst 0',
+           'scoreboard players set @s mg.deaths 0']
+    out += ['scoreboard players set @s mg.%s %d' % (n, G.HEARTS if n == 'xh' else 0) for n, _, _ in G.OBJECTIVES]
+    out += ['scoreboard players reset @s mg.qs', 'scoreboard players reset @s mg.fw', 'scoreboard players reset @s mg.wc',
+            'scoreboard players reset @s mg.wd', 'scoreboard players reset @s mg.us']
     out += ['gamemode adventure @s', 'effect clear @s', 'clear @s',
             'function mg:elyrace/equip']
     out += ['execute if score @s mg.xcr matches %d run spawnpoint @s 24 %d %d' % (s.NUM, s.START_Y, s.CZ) for s in specs]
     out += ['function mg:elyrace/place_tp',
             'function mg:core/freeze',
             'effect give @s minecraft:resistance 7 255 true',
-            'function mg:elyrace/solo/announce',
             'title @s title [{"text":"Prépare-toi !","color":"gold"}]',
             'title @s subtitle [{"text":"Début dans 5 secondes...","color":"gray"}]',
             'execute at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 0.8']
     return out
+
+
+def retry_lines():
+    return ['# @s = joueur qui clique [⟲ Rejouer] (mg.xs %d) : nouvelle tentative sur le même parcours et la même place de départ, sans passer par stop' % M.SOLO_RETRY,
+            '# (tag mg.xso, pause, mg.xsp0, mg.ri, mg.xcr, mg.xsl restent : seule solo/arm remet la course à zéro). Offert à l\'arrivée seulement (phase 4)',
+            refuse('unless entity @s[tag=mg.xso]', 'Tu n\'as pas de contre-la-montre en cours.'),
+            refuse('unless score @s mg.xph matches 4', 'Rejouer n\'est proposé qu\'à l\'arrivée d\'un contre-la-montre.'),
+            'tellraw @s [{"text":"⟲ Nouvelle tentative !","color":"aqua"},{"text":" ","color":"gray"},%s]' % QUIT_LINK,
+            '# le gel de la phase 4 est levé, puis re-posé par arm (sinon le modificateur serait ajouté deux fois)',
+            'function mg:core/unfreeze',
+            'function mg:elyrace/solo/arm']
 
 
 def announce_lines(specs):
@@ -131,6 +153,8 @@ def announce_lines(specs):
 def quit_lines():
     return ['# @s = joueur qui abandonne (mg.xs %d, lien du message de lancement)' % M.SOLO_QUIT,
             'execute unless entity @s[tag=mg.xso] run return run tellraw @s [{"text":"⚠ Tu n\'as pas de contre-la-montre en cours.","color":"red"}]',
+            '# phase 4 (après l\'arrivée) : retour au lobby sans message d\'abandon (le temps est déjà enregistré)',
+            'execute if score @s mg.xph matches 4 run return run function mg:elyrace/solo/stop',
             'tellraw @a [{"selector":"@s","color":"yellow"},{"text":" abandonne le contre-la-montre.","color":"gray"}]',
             'function mg:elyrace/solo/stop']
 
@@ -153,5 +177,5 @@ def menu_lines(specs):
 
 
 def functions(specs):
-    return {'solo/cmd': cmd_lines(), 'solo/start': start_lines(specs), 'solo/announce': announce_lines(specs),
+    return {'solo/cmd': cmd_lines(), 'solo/start': start_lines(specs), 'solo/arm': arm_lines(specs), 'solo/retry': retry_lines(), 'solo/announce': announce_lines(specs),
             'solo/quit': quit_lines(), 'solo/stop_all': stop_all_lines(), 'solo/menu': menu_lines(specs)}

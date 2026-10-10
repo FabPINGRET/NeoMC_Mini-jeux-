@@ -1,11 +1,11 @@
 """Met a jour le README pour les anneaux fins et les ors de la Course d'elytres : python wire_elyrace5.py <racine du depot>. A lancer
 APRES gen_elyrace.py et wire_elyrace.py (qui ecrit la ligne du README modifiee ici). Idempotent : chaque etape est sautee si son marqueur est
-deja dans le README (trois etapes : anneaux fins + ors en turbo, tant qu'aucun marqueur du turbo ni du bonus n'y est ; la phrase
-"desinstaller pendant une course" ; les ors en bonus de temps). Chaque ancre doit exister EXACTEMENT une fois (wirelib.Patcher : tout se
+deja dans le README (quatre etapes : anneaux fins + ors en turbo, tant qu'aucun marqueur du turbo ni du bonus n'y est ; la phrase
+"desinstaller pendant une course" ; les ors en bonus de temps ; « Rejouer » en fin de solo, phrase du solo et ligne du tableau des triggers). Chaque ancre doit exister EXACTEMENT une fois (wirelib.Patcher : tout se
 fait en memoire, rien n'est ecrit si une ancre manque) ; les fins de ligne du fichier sont conservees.
 Branchement : README, ligne de la Course d'elytres : anneaux a cadre fin (trou de 9 x 9), ors = bonus de temps de 2 s (retire du temps final,
 une fois par course) a la place de la fusee, le meilleur temps gagne, nombre d'ors par parcours (Canyon 2, Pic Blanc 1 : voir GOLDS de course_*.py).
-Aucun fichier du moteur (core/*) n'est touche. Python stdlib uniquement (compatible 3.8).
+Le solo propose [Rejouer] (trigger mg.xs set 5) a l'arrivee, retour au lobby automatique au bout de 30 s. Aucun fichier du moteur (core/*) n'est touche. Python stdlib uniquement (compatible 3.8).
 """
 import os
 import sys
@@ -14,6 +14,7 @@ from wirelib import Patcher
 
 MARKER = 'turbo de 3 s'
 BONUS_MARKER = 'bonus de temps'
+RETRY_MARKER = '[⟲ Rejouer]'
 UNINSTALL_MARKER = "Désinstaller pendant une course"
 UNINSTALL_OLD = 'au bout de 3 minutes le plus avancé gagne. **Contre-la-montre solo**'
 UNINSTALL_NEW = ("au bout de 3 minutes le plus avancé gagne. **Désinstaller pendant une course** : la désinstallation remet la gravité normale "
@@ -30,6 +31,11 @@ BONUS_NEW = ("**anneaux d'or** en détour (trou de 7 × 7 ; 2 sur le Canyon, 1 s
              "et rendue à l'arrivée)")
 FIRST_OLD = "Le premier arrivé gagne, les autres sont classés pendant 20 s"
 FIRST_NEW = "Le meilleur temps gagne (bonus d'or compris) ; après le premier arrivé, les autres ont 20 s"
+RETRY_OLD = "30 s d'attente entre deux solos (sauf admins) ;"
+RETRY_NEW = ("30 s d'attente entre deux solos (sauf admins) ; à l'arrivée, **[⟲ Rejouer]** (`/trigger mg.xs set 5`) relance tout de suite le même parcours "
+             "(autant de fois que tu veux), sinon retour automatique au lobby au bout de 30 s (**[⌂ Retour au lobby]** pour y aller plus vite) ;")
+RETRY_ROW_OLD = "| `/trigger mg.xs set 2` / `set 3` | Contre-la-montre solo : abandonner / afficher ses meilleurs temps et les records du serveur | tous |\n"
+RETRY_ROW_NEW = RETRY_ROW_OLD + "| `/trigger mg.xs set 5` | Contre-la-montre solo : rejouer le même parcours (bouton affiché à l'arrivée, 30 s avant le retour automatique au lobby) | tous |\n"
 COUNTS = (("**22 anneaux**, 3 anneaux d'or,", "**22 anneaux**, 2 anneaux d'or,"),
           ("**20 anneaux**, 3 anneaux d'or,", "**20 anneaux**, 1 anneau d'or,"))
 
@@ -47,6 +53,9 @@ def wire_all(p):
     if BONUS_MARKER not in text:
         p.patch(readme, GOLD_NEW, BONUS_NEW)
         p.patch(readme, FIRST_OLD, FIRST_NEW)
+    if RETRY_MARKER not in text:
+        p.patch(readme, RETRY_OLD, RETRY_NEW)
+        p.patch(readme, RETRY_ROW_OLD, RETRY_ROW_NEW)
 
 
 def main():
