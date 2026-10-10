@@ -8,7 +8,6 @@ d'une arrivee est #xrt ($xt en groupe, mg.xst en solo).
 Python stdlib uniquement (compatible 3.8).
 """
 import course_common as CC
-import glide as GL
 import reasons as RS
 import records as RC
 import wind as W
@@ -24,6 +23,7 @@ DROP_SQ = 8000           # verification de secours du choc : chute du carre de l
 DROP_REL = 30            # ET d'au moins ce pourcentage du carre precedent (a grande vitesse, seul ce seuil relatif protege d'un cabre brutal)
 TIME_LIMIT = 3600        # 3 minutes
 END_WAIT = 400           # 20 s entre le premier arrive et la fin
+GOLD_BONUS = 40          # bonus de temps d'un anneau d'or : ticks retires du temps final (2 s, multiple de 20 : le temps s'affiche en secondes entieres)
 EDGE_X = 32              # bord de la plateforme de depart : commun a tous les parcours (verifie par checks.py)
 GATE_X = 27              # portillon de depart : commun aussi
 LEFT_X = EDGE_X + 1      # au-dela, le joueur n'est plus sur la plateforme de depart : les regles s'appliquent
@@ -31,7 +31,7 @@ LEFT_X = EDGE_X + 1      # au-dela, le joueur n'est plus sur la plateforme de de
 # objectifs par joueur : (nom, role). Le premier sert au tableau de droite.
 OBJECTIVES = [
     ('xa', 'anneaux valides', '[{"text":"🪽 COURSE D\'ÉLYTRES — anneaux","color":"aqua"}]'),
-    ('xo', 'anneaux d\'or pris (ne fait qu\'augmenter)', None),
+    ('xo', 'index du dernier anneau d\'or pris (ne fait qu\'augmenter : un or ne se prend qu\'une fois par course)', None),
     ('xc', 'dernier point de reprise (numero d\'anneau, 0 = depart)', None),
     ('xh', 'coeurs restants', None),
     ('xp', 'progression maximale (x), departage la fin du temps', None),
@@ -47,7 +47,8 @@ OBJECTIVES = [
     ('xq1', 'origine du balayage des anneaux : x (centiemes, position du tick precedent)', None),
     ('xq2', 'origine du balayage des anneaux : y (centiemes)', None),
     ('xq3', 'origine du balayage des anneaux : z (centiemes)', None),
-    ('xu', 'ticks de turbo restants (anneau d\'or)', None),
+    ('xu', 'anneaux d\'or pris (nombre : GOLD_BONUS ticks de bonus chacun)', None),
+    ('xft', 'cle de classement a l\'arrivee : temps bonus deduit x 100 + place', None),
 ] + W.objectives()                 # + mg.xv (anneaux de vent pris) si WIND
 # objectifs HORS de OBJECTIVES (prepare remet ceux-la a zero a chaque depart de groupe) : (nom, role). xcr est pose par prepare (groupe) ou
 # par solo/start ; xse, xsl et xph/xst ne servent qu'au solo (voir solo_run.py)
@@ -64,21 +65,20 @@ ELYTRA = ('minecraft:elytra[minecraft:custom_data={mg_elyr:1b},minecraft:unbreak
           'minecraft:enchantments={"minecraft:binding_curse":1},'
           'minecraft:custom_name={"text":"Élytres de course","color":"aqua","italic":false}]')
 SB = '"score":{"name":"@s","objective":"%s"}'
+BONUS_TELLRAW = ('[{"text":"   ★ dont ","color":"gold"},{"score":{"name":"#xgs","objective":"mg.st"},"color":"white"},'
+                 '{"text":" s de bonus d\'or","color":"gray"}]')       # #xgs : secondes retirées par elyrace/bonus (voir solo_run.finish_lines)
 
 
 def grav_line(g):
     return 'attribute @s minecraft:gravity base set %s' % g
 
 
-# gravite : la gravite de base du parcours (GRAVITY de la spec, c<N>/grav) est posee au GO, a chaque reapparition ; le turbo d'un anneau d'or la
-# renforce TURBO_TICKS ticks (mg.xu) ; core/attr_reset_g la remet a la normale (fin de solo, desinstallation ; le lobby : core/attr_reset)
+# gravite : la gravite de base du parcours (GRAVITY de la spec, c<N>/grav) est posee au GO, a chaque reapparition ;
+# core/attr_reset_g la remet a la normale (fin de solo, desinstallation ; le lobby : core/attr_reset)
 GRAV_ON = 'function mg:elyrace/grav_on'
 GRAV_ON_ALL = 'execute as @a[tag=mg.play] run ' + GRAV_ON
 GRAV_RESET = 'function mg:core/attr_reset_g'
 GRAV_RESET_ALL = 'execute as @a[scores={mg.xcr=1..}] run ' + GRAV_RESET       # pas de tag=mg.play : desinstaller l'a deja retire
-GRAV_TURBO = grav_line(GL.TURBO_G)
-XU_SET = 'scoreboard players set @s mg.xu %d' % GL.TURBO_TICKS
-XU_ZERO = 'scoreboard players set @s mg.xu 0'
 
 
 def objectives_lines(specs):
@@ -89,9 +89,10 @@ def objectives_lines(specs):
     out += ['scoreboard objectives add mg.%s dummy' % n for n, _ in EXTRA_OBJECTIVES]
     out += ['scoreboard objectives add mg.xs trigger']
     out += RC.objective_lines(specs)
-    out += ['# constantes de elyrace/time, de speed et du HUD du solo (plus posées par prepare : le solo n\'y passe pas)',
+    out += ['# constantes de elyrace/time, de speed, du bonus d\'or (#kgb) et du HUD du solo (plus posées par prepare : le solo n\'y passe pas)',
             'scoreboard players set #k5 mg.st 5', 'scoreboard players set #k10 mg.st 10', 'scoreboard players set #k20 mg.st 20',
             'scoreboard players set #k100 mg.st 100', 'scoreboard players set #krel mg.st %d' % DROP_REL,
+            'scoreboard players set #kgb mg.st %d' % GOLD_BONUS,
             '# purge des anciens drapeaux du solo de la 2c (le solo ne passe plus par $state : $xs et $xse n\'existent plus)',
             'scoreboard players reset $xs mg.st', 'scoreboard players reset $xse mg.st']
     return out
@@ -184,13 +185,19 @@ def finish_lines(specs):
             'execute if entity @s[tag=mg.xso] run return run function mg:elyrace/solo/finish',
             'scoreboard players add $xf mg.st 1',
             'scoreboard players operation @s mg.xf = $xf mg.st',
-            'scoreboard players operation #s mg.st = $xt mg.st', 'scoreboard players operation #s mg.st /= #k20 mg.st',
-            'tellraw @a[tag=mg.play] [{"text":"🏁 ","color":"gold"},%s,{"text":" passe la ligne d\'arrivée en position ","color":"gray"},{%s,"color":"gold","bold":true},{"text":" (","color":"gray"},{"score":{"name":"#s","objective":"mg.st"},"color":"white"},{"text":" s)","color":"gray"}]' % (jf, SB % 'mg.xf'),
+            '# temps de l\'arrivée : le chrono du groupe moins le bonus des anneaux d\'or (bonus : #xgs = secondes retirées)',
+            'scoreboard players operation #xrt mg.st = $xt mg.st',
+            'function mg:elyrace/bonus',
+            '# clé de classement de end : temps bonus déduit x 100 + place (la place départage deux temps égaux : le premier arrivé gagne)',
+            'scoreboard players operation @s mg.xft = #xrt mg.st', 'scoreboard players operation @s mg.xft *= #k100 mg.st',
+            'scoreboard players operation @s mg.xft += @s mg.xf',
+            'scoreboard players operation #s mg.st = #xrt mg.st', 'scoreboard players operation #s mg.st /= #k20 mg.st',
+            'tellraw @a[tag=mg.play] [{"text":"🏁 ","color":"gold"},%s,{"text":" passe la ligne d\'arrivée (","color":"gray"},{"score":{"name":"#s","objective":"mg.st"},"color":"white"},{"text":" s)","color":"gray"}]' % jf,
+            'execute if score @s mg.xu matches 1.. run tellraw @a[tag=mg.play] ' + BONUS_TELLRAW,
             'title @s title [{"text":"🏁 Arrivée !","color":"gold","bold":true}]',
             'execute at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1',
             'execute at @s run particle minecraft:firework ~ ~1 ~ 1 1 1 0.2 60',
-            '# records : le temps est lu dans #xrt (chrono $xt ici), personnel puis serveur, selon le parcours du joueur (mg.xcr)',
-            'scoreboard players operation #xrt mg.st = $xt mg.st']
+            '# records : le temps est lu dans #xrt (chrono du groupe moins le bonus d\'or), personnel puis serveur, selon le parcours du joueur (mg.xcr)']
     out += CC.per_course(specs, 'record')
     out += ['# premier arrivé : la course s\'arrête dans 20 s au plus, le temps que les autres terminent',
             'execute if score $xf mg.st matches 1 run scoreboard players set $xw mg.st 1',
@@ -212,20 +219,26 @@ def small_lines():
                        'scoreboard players operation @s mg.xc = @s mg.xa',
                        'title @s actionbar [{"text":"⚑ Point de reprise enregistré","color":"green","bold":true}]',
                        'execute at @s run playsound minecraft:block.beacon.activate master @s ~ ~ ~ 1 1.5'],
-        'gold_hit': ['# @s = joueur qui traverse un anneau d\'or : turbo de 3 s (gravité renforcée pendant %d ticks ; un 2e or le relance à pleine durée ;' % GL.TURBO_TICKS,
-                     '# c<N>/player le termine, c<N>/respawn le coupe)',
-                     XU_SET, GRAV_TURBO,
+        'gold_hit': ['# @s = joueur qui traverse un anneau d\'or : un or de plus (mg.xu), soit -%d s sur son temps final (elyrace/bonus) ;' % (GOLD_BONUS // 20),
+                     '# c<N>/rings ne l\'appelle qu\'une fois par or et par course : le bonus est gardé à la réapparition',
+                     'scoreboard players add @s mg.xu 1',
                      'execute at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.4',
-                     'execute at @s run particle minecraft:totem_of_undying ~ ~1 ~ 0.4 0.4 0.4 0.3 25',
-                     'tellraw @s [{"text":"★ Anneau d\'or ! ","color":"gold","bold":true},{"text":"Turbo de 3 s : tu piques plus vite.","color":"gray"}]'],
-        'equip': ['# @s = joueur : élytres verrouillées (pas de fusée : les anneaux d\'or donnent un turbo)',
+                     'execute at @s run particle minecraft:totem_of_undying ~ ~1 ~ 0.4 0.4 0.4 0.3 25'] + RS.subtitle('★ -%d s' % (GOLD_BONUS // 20), 'gold') + [
+                     'tellraw @s [{"text":"★ Anneau d\'or ! ","color":"gold","bold":true},{"text":"Bonus de temps : -%d s sur ton temps final.","color":"gray"}]' % (GOLD_BONUS // 20)],
+        'bonus': ['# @s = joueur qui arrive : #xrt (temps en ticks) diminue du bonus de ses anneaux d\'or (mg.xu x %d ticks), sans descendre sous 1 tick ;' % GOLD_BONUS,
+                  '# #xgs = bonus en secondes (affichage). Appelé par finish et solo/finish, entre #xrt = chrono et les records',
+                  'scoreboard players operation #xgb mg.st = @s mg.xu', 'scoreboard players operation #xgb mg.st *= #kgb mg.st',
+                  'scoreboard players operation #xrt mg.st -= #xgb mg.st',
+                  'execute if score #xrt mg.st matches ..0 run scoreboard players set #xrt mg.st 1',
+                  'scoreboard players operation #xgs mg.st = #xgb mg.st', 'scoreboard players operation #xgs mg.st /= #k20 mg.st'],
+        'equip': ['# @s = joueur : élytres verrouillées (pas de fusée : les anneaux d\'or donnent un bonus de temps)',
                   'item replace entity @s armor.chest with ' + ELYTRA],
-        'end': ['# Fin de la course : gagne le premier arrivé encore en ligne (plus petite place mg.xf) ; les autres sont classés dans le chat',
+        'end': ['# Fin de la course : gagne le meilleur temps parmi les arrivés encore en ligne (clé mg.xft : temps bonus d\'or déduit, puis place d\'arrivée)',
                 'execute unless entity @a[tag=mg.play,scores={mg.xf=1..}] run return run function mg:core/draw',
-                'scoreboard players set #mn mg.st 9999',
-                'execute as @a[tag=mg.play,scores={mg.xf=1..}] run scoreboard players operation #mn mg.st < @s mg.xf',
+                'scoreboard players set #mn mg.st 2147483647',
+                'execute as @a[tag=mg.play,scores={mg.xf=1..}] run scoreboard players operation #mn mg.st < @s mg.xft',
                 'tag @a remove mg.xw1',
-                'execute as @a[tag=mg.play,scores={mg.xf=1..}] if score @s mg.xf = #mn mg.st run tag @s add mg.xw1',
+                'execute as @a[tag=mg.play,scores={mg.xf=1..}] if score @s mg.xft = #mn mg.st run tag @s add mg.xw1',
                 'execute as @a[tag=mg.xw1,limit=1] run function mg:core/win_player',
                 'tag @a remove mg.xw1'],
         'timeout': ['# Temps écoulé : un arrivé en ligne gagne, sinon le plus avancé (anneaux validés, puis x maximal) ; rien parcouru : égalité',

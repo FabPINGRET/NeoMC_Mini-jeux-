@@ -1,7 +1,4 @@
-# @s = joueur en course (pas encore arrivé) : turbo, position, délais, règles
-# turbo d'un anneau d'or : décompte (gold_hit pose mg.xu), la gravité de base du parcours revient au dernier tick
-execute if score @s mg.xu matches 1 run function mg:elyrace/c2/grav
-scoreboard players remove @s[scores={mg.xu=1..}] mg.xu 1
+# @s = joueur en course (pas encore arrivé) : position, délais, règles
 execute store result score @s mg.xx run data get entity @s Pos[0]
 scoreboard players operation @s mg.xp > @s mg.xx
 scoreboard players remove @s[scores={mg.xg=1..}] mg.xg 1

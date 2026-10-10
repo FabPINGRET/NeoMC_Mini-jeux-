@@ -5,9 +5,8 @@ scoreboard players set @s mg.xk 12
 scoreboard players set @s mg.xl 0
 scoreboard players set @s mg.xn 0
 scoreboard players operation @s mg.xa = @s mg.xc
-# gravite de base du parcours reposee et turbo coupe (un attribut ne survit pas forcement a la mort ; le turbo est perdu a la reprise)
+# gravite de base du parcours reposee (un attribut ne survit pas forcement a la mort) ; les ors pris (mg.xu) sont gardes
 function mg:elyrace/c2/grav
-scoreboard players set @s mg.xu 0
 # origine du balayage remise a zero : le saut jusqu'au point de reprise n'est pas un deplacement (le tick suivant ne franchit aucun anneau)
 scoreboard players set @s mg.xq1 -1000000
 # #tp = 1 si la teleportation a reussi : mg.deaths n'est remis a 0 qu'alors (un joueur mort sera replace au tick suivant)

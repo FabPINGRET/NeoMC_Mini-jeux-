@@ -27,7 +27,7 @@ def ring_lines(c):
     for n, (x, cy, cz, zone) in enumerate(c.rings, 1):
         out.append('execute if score @s mg.xa matches %d positioned %d %d %d if entity @s[dx=2000,dy=%d,dz=%d] run return run function mg:elyrace/why/miss'
                    % (n - 1, x + MISS_MARGIN, Y_LO, spec.Z0, Y_SPAN, spec.Z1 - spec.Z0))
-    out.append('# Anneaux d\'or (trou de 7 x 7) : un turbo de 3 s chacun, mg.xo ne fait qu\'augmenter (pas de recuperation apres une reprise)')
+    out.append('# Anneaux d\'or (trou de 7 x 7) : -2 s sur le temps final chacun (gold_hit), mg.xo ne fait qu\'augmenter (un or une seule fois par course, bonus garde apres une reprise)')
     for k, (x, cy, cz) in enumerate(c.golds, 1):
         out += SW.ring_lines(x, cy, cz, SW.GOLD_R, 'if score @s mg.xo matches ..%d' % (k - 1),
                              ['function mg:elyrace/gold_hit', 'scoreboard players set @s mg.xo %d' % k])
@@ -56,9 +56,8 @@ def respawn_lines(c):
            'scoreboard players set @s mg.xl 0',
            'scoreboard players set @s mg.xn 0',
            'scoreboard players operation @s mg.xa = @s mg.xc',
-           '# gravite de base du parcours reposee et turbo coupe (un attribut ne survit pas forcement a la mort ; le turbo est perdu a la reprise)',
+           '# gravite de base du parcours reposee (un attribut ne survit pas forcement a la mort) ; les ors pris (mg.xu) sont gardes',
            'function ' + CC.fn(c.spec, 'grav'),
-           G.XU_ZERO,
            '# origine du balayage remise a zero : le saut jusqu\'au point de reprise n\'est pas un deplacement (le tick suivant ne franchit aucun anneau)',
            SW.RESET_LINE,
            '# #tp = 1 si la teleportation a reussi : mg.deaths n\'est remis a 0 qu\'alors (un joueur mort sera replace au tick suivant)',

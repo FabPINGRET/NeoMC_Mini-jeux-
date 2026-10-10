@@ -7,7 +7,7 @@ scoreboard players reset @s mg.xst
 scoreboard players reset @s mg.xsl
 # (mg.xcr appartient à la partie de groupe si une partie l'a pris comme participant)
 execute unless entity @s[tag=mg.play] run scoreboard players reset @s mg.xcr
-# gravité normale (0,08), sans condition : celle de course (elyrace/grav_on, turbo compris) ne doit pas suivre le joueur au lobby
+# gravité normale (0,08), sans condition : celle de course (elyrace/grav_on) ne doit pas suivre le joueur au lobby
 function mg:core/attr_reset_g
 # 2) la pause d'avant le solo : rétablie (mg.xsp0 = il était déjà en pause ; sinon la pause est retirée, même si une partie tourne)
 execute unless entity @s[tag=mg.xsp0] run tag @s remove mg.spectate

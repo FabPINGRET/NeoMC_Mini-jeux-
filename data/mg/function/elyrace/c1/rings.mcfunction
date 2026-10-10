@@ -70,7 +70,7 @@ execute if score @s mg.xa matches 18 positioned 921 -64 26848 if entity @s[dx=20
 execute if score @s mg.xa matches 19 positioned 951 -64 26848 if entity @s[dx=2000,dy=600,dz=304] run return run function mg:elyrace/why/miss
 execute if score @s mg.xa matches 20 positioned 976 -64 26848 if entity @s[dx=2000,dy=600,dz=304] run return run function mg:elyrace/why/miss
 execute if score @s mg.xa matches 21 positioned 996 -64 26848 if entity @s[dx=2000,dy=600,dz=304] run return run function mg:elyrace/why/miss
-# Anneaux d'or (trou de 7 x 7) : un turbo de 3 s chacun, mg.xo ne fait qu'augmenter (pas de recuperation apres une reprise)
+# Anneaux d'or (trou de 7 x 7) : -2 s sur le temps final chacun (gold_hit), mg.xo ne fait qu'augmenter (un or une seule fois par course, bonus garde apres une reprise)
 execute if score @s mg.xo matches ..0 if score #xox mg.st matches ..53049 if score #xqx mg.st matches 53050.. run function mg:elyrace/cross {p:53050,yl:14870,yh:15569,zl:2700600,zh:2701299}
 execute if score @s mg.xo matches ..0 if score #xox mg.st matches ..53049 if score #xqx mg.st matches 53050.. if score #xhit mg.st matches 1 run function mg:elyrace/gold_hit
 execute if score @s mg.xo matches ..0 if score #xox mg.st matches ..53049 if score #xqx mg.st matches 53050.. if score #xhit mg.st matches 1 run scoreboard players set @s mg.xo 1

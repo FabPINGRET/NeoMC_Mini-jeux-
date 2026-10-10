@@ -59,10 +59,10 @@ def announce_lines(specs):
     head = ('tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance la ","color":"gray"},'
             '{"text":"🪽 COURSE D\'ÉLYTRES","color":"aqua","bold":true},{"text":" : %s","color":"gray"}]')
     out = ['# Annonce du lancement (appelée par mg:core/request, avant prepare : en mode « au hasard » le parcours n\'est pas encore tiré)',
-           'execute if score $xc mg.st matches 0 run ' + head % 'un parcours au hasard parmi ceux qui sont construits (le premier arrivé gagne) !']
+           'execute if score $xc mg.st matches 0 run ' + head % 'un parcours au hasard parmi ceux qui sont construits (le meilleur temps gagne) !']
     by_num = {s.NUM: s for s in specs}
     for k in range(1, N_ROUTES + 1):
-        what = ('%s (%d anneaux, le premier arrivé gagne) !' % (by_num[k].NAME, len(by_num[k].RINGS)) if k in by_num
+        what = ('%s (%d anneaux, le meilleur temps gagne) !' % (by_num[k].NAME, len(by_num[k].RINGS)) if k in by_num
                 else 'le parcours %d, qui n\'est pas encore construit !' % k)
         out.append('execute if score $xc mg.st matches %d run %s' % (k, head % what))
     return out
@@ -164,8 +164,7 @@ def functions(specs):
            'respawn': player_dispatcher(specs, '# @s = joueur à replacer au dernier point de reprise de son parcours (mg.xcr)', 'respawn'),
            'hud': player_dispatcher(specs, '# @s = joueur : barre d\'action de son parcours (mg.xcr)', 'hud'),
            'place_tp': player_dispatcher(specs, '# @s = joueur : le met à sa place de départ (mg.ri) sur son parcours (mg.xcr)', 'place_tp'),
-           'grav_on': player_dispatcher(specs, '# @s = joueur : GO, gravité de course de son parcours (mg.xcr), sans turbo (groupe : go ; solo : solo/go)', 'grav')
-           + [G.XU_ZERO],
+           'grav_on': player_dispatcher(specs, '# @s = joueur : GO, gravité de course de son parcours (mg.xcr) (groupe : go ; solo : solo/go)', 'grav'),
            'fl_remove': dispatcher(specs, '# Libère le chargement forcé de la zone de départ du parcours $xc', 'fl_remove'),
            'gate_off': dispatcher(specs, '# GO : ouvre le portillon du parcours $xc', 'gate_off')}
     if len(specs) < N_ROUTES:                   # tous les emplacements sont ecrits : plus rien n'appelle not_available
