@@ -14,6 +14,7 @@ scoreboard players set #5 mg.st 5
 item replace entity @s armor.chest with minecraft:elytra[minecraft:custom_data={mg_ely:1b},minecraft:unbreakable={},minecraft:enchantments={"minecraft:binding_curse":1},minecraft:custom_name={"text":"Élytres du parcours","color":"aqua","italic":false}]
 give @s minecraft:firework_rocket[minecraft:custom_data={mg_ely:1b},minecraft:fireworks={flight_duration:1},minecraft:custom_name={"text":"Fusée du parcours","color":"gold","italic":false}] 4
 effect give @s minecraft:resistance 600 4 true
+function mg:core/heal
 tp @s -48.5 175 -44.5 facing -14.5 169 -44.5
 playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 0.8 1.2
 tellraw @s [{"text":"🪽 Petit parcours d'élytra : ","color":"aqua","bold":true},{"text":"saute, plane à travers les 8 anneaux dans l'ordre (une traînée lumineuse indique le suivant). Le chrono part à l'ouverture des élytres. 4 fusées.","color":"gray"}]

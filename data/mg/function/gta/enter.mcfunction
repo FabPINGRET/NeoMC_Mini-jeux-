@@ -17,6 +17,7 @@ gamemode adventure @s
 function mg:core/attr_reset
 attribute @s minecraft:fall_damage_multiplier base set 1
 function mg:gta/join
+function mg:core/heal
 execute in mg:gta run spawnpoint @s 20 71 32297
 execute in mg:gta run tp @s 20.5 71 32297.5 180 0
 function mg:gta/kit
