@@ -1,4 +1,5 @@
 # Remise à zéro d'un joueur → lobby (@s = joueur)
+function mg:pvpc/cleanup
 tag @s remove mg.play
 tag @s remove mg.out
 tag @s remove mg.win
