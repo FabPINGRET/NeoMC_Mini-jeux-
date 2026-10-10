@@ -392,12 +392,12 @@ for i, h in enumerate(HOLES):
               f'transformation:{T_ID},translation:[-0.04f,-0.6f,-0.04f],scale:[0.08f,4.1f,0.08f]}}}}',
               f'summon minecraft:block_display {x} {y} {z} {{Tags:["mg.fx","mg.gff"],view_range:3f,block_state:{{Name:"minecraft:red_wool"}},'
               f'transformation:{T_ID},translation:[0.04f,2.85f,-0.02f],scale:[1.0f,0.6f,0.04f]}}}}',
-              f'summon minecraft:text_display {x} {y + 3.5} {z} {{Tags:["mg.fx","mg.gff"],billboard:"center",view_range:3f,'
-              f'text:{{"text":"{i + 1}","color":"yellow","bold":true}},background:0,transformation:{T_ID},translation:[0f,0f,0f],scale:[3f,3f,3f]}}}}']
+              f'summon minecraft:text_display {x} {y + 4.0} {z} {{Tags:["mg.fx","mg.gff"],billboard:"center",view_range:3f,'
+              f'text:{{"text":"{i + 1}","color":"yellow","bold":true}},background:0,transformation:{T_ID},translation:[0f,0f,0f],scale:[2f,2f,2f]}}}}']
     tx, tz = h['tee']
     ux, uz = h['dir']
-    FLAGS.append(f'summon minecraft:text_display {X0 + tx + 0.5 - ux * 3.5} {h["ty"] + 1.5} {Z0 + tz + 0.5 - uz * 3.5} '
-                 f'{{Tags:["mg.fx","mg.gff"],billboard:"center",view_range:2f,background:1342177280,transformation:{T_ID},translation:[0f,0f,0f],scale:[2.2f,2.2f,2.2f]}},'
+    FLAGS.append(f'summon minecraft:text_display {X0 + tx + 0.5 - ux * 3.5} {h["ty"] + 3.2} {Z0 + tz + 0.5 - uz * 3.5} '
+                 f'{{Tags:["mg.fx","mg.gff"],billboard:"center",view_range:2f,background:1342177280,transformation:{T_ID},translation:[0f,0f,0f],scale:[1.4f,1.4f,1.4f]}},'
                  f'text:[{{"text":"⛳ TROU {i + 1}","color":"yellow","bold":true}},{{"text":"\\nPar {h["par"]} · {h["len"]} m","color":"white"}},'
                  f'{{"text":"\\n{h["name"]}","color":"aqua","italic":true}}]}}')
 
