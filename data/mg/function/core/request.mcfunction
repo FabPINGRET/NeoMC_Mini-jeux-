@@ -244,6 +244,7 @@ execute if score $game mg.st matches 222 run tellraw @a [{"selector":"@s","color
 execute if score $game mg.st matches 223 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🚗 AUTOS TAMPONNEUSES","color":"aqua","bold":true},{"text":" : sur la glace, 8 coups encaissés et c'est perdu !","color":"gray"}]
 execute if score $game mg.st matches 224 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🟩 SLIME JUMP","color":"green","bold":true},{"text":" : parkour de rebonds sur slime, le premier arrivé gagne !","color":"gray"}]
 execute if score $game mg.st matches 225 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🙈 LABYRINTHE AVEUGLE","color":"light_purple","bold":true},{"text":" : par paires : le marcheur est aveugle, son guide le dirige d'en haut !","color":"gray"}]
+execute if score $game mg.st matches 226 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"👑 MASTER DIT","color":"gold","bold":true},{"text":" : obéis vite aux ordres du Master… mais seulement quand il dit « Master dit » !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 83 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"📞 TÉLÉPHONE","color":"gold","bold":true},{"text":" : mot → construction → devinette → construction → devinette !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
@@ -290,6 +291,7 @@ execute if score $game mg.st matches 31 run function mg:quake/prepare
 execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
+execute if score $game mg.st matches 226 run function mg:master/prepare
 execute if score $game mg.st matches 225 run function mg:lab/prepare
 execute if score $game mg.st matches 224 run function mg:slimejump/prepare
 execute if score $game mg.st matches 221..223 run function mg:autotamp/prepare

@@ -297,6 +297,32 @@
     {
       "label": [
         {
+          "text": "👑 👑 Master dit ",
+          "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Ordres ultra rapides ; sans « Master dit », c'est un piège !",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 226"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🎾 Wii Sports ▸",
           "color": "aqua"
         }
