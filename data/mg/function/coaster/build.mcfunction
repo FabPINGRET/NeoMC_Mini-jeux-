@@ -24,4 +24,5 @@ function mg:core/forceloads
 data modify storage mg:lobby coaster1 set value 1b
 data modify storage mg:lobby coaster2 set value 1b
 data modify storage mg:lobby coaster3 set value 1b
+data modify storage mg:lobby coaster4 set value 1b
 tellraw @a[tag=mg.admin] {"text":"🎢 Montagne russe construite : tour du spawn, guichet au sud-ouest.","color":"gold"}

@@ -108,9 +108,23 @@ assert END[0] == START[0] and END[1] == START[1] and END[2] - START[2] == 4, (EN
 BB = (min(xs) - 2, min(ys) - 3, min(zs) - 2, max(xs) + 2, max(ys) + 3, max(zs) + 2)
 
 L = ['# 🎢 Montagne russe — voie (générée, ne pas éditer à la main : tools/arcade/gen_coaster.py)']
+SUP = {(x, y - 1, z) for (x, y, z) in P}          # blocs porteurs (redstone sous les propulseurs)
+RAIL = {(x, y, z) for (x, y, z) in P}
+BEAM = 'white_concrete'                            # poutre blanche façon grand huit : cache la redstone (côtés + dessous)
 for i, (x, y, z) in enumerate(P):
     sh, powered = shape(i)
-    L.append(f'setblock {x} {y - 1} {z} minecraft:{"redstone_block" if powered else "polished_blackstone"} strict')
+    L.append(f'setblock {x} {y - 1} {z} minecraft:{"redstone_block" if powered else BEAM} strict')
+deco = set()
+for i, (x, y, z) in enumerate(P):
+    j = i + 1 if i + 1 < len(P) else i - 1
+    dx, dz = P[j][0] - x, P[j][2] - z
+    for sx_, sz_ in ((dz, dx), (-dz, -dx)):                                      # côtés de la poutre
+        q = (x + sx_, y - 1, z + sz_)
+        if q not in SUP and q not in RAIL and (q[0], q[1] + 1, q[2]) not in RAIL: deco.add(q)
+    q = (x, y - 2, z)                                                            # dessous
+    if q not in SUP and q not in RAIL: deco.add(q)
+for (x, y, z) in sorted(deco):
+    L.append(f'setblock {x} {y} {z} minecraft:{BEAM} strict')
 for i, (x, y, z) in enumerate(P):
     sh, powered = shape(i)
     L += [f'setblock {x} {y + 1} {z} minecraft:air strict', f'setblock {x} {y + 2} {z} minecraft:air strict']   # feuillage éventuel
@@ -119,7 +133,7 @@ for i, (x, y, z) in enumerate(P):
     else:
         L.append(f'setblock {x} {y} {z} minecraft:rail[shape={sh}] strict')
     if i % 12 == 6 and not sh.startswith('asc'):
-        L.append(f'setblock {x} {y - 2} {z} minecraft:sea_lantern strict')
+        L.append(f'setblock {x} {y - 2} {z} minecraft:sea_lantern strict')    # sous la poutre : éclairage
 # butée en bout de voie (l'arrivée remonte vers le nord, le départ est 3 blocs plus loin)
 L.append(f'setblock {END[0]} {END[1]} {END[2] - 1} minecraft:polished_blackstone_wall strict')
 w('coaster/track', L)
@@ -159,7 +173,7 @@ w('coaster/build', ['# 🎢 Montagne russe : guichet + voie autour du spawn',
                     # la zone du spawn est aussi gardée chargée par core/forceloads : on la remet
                     'function mg:core/forceloads',
                     'data modify storage mg:lobby coaster1 set value 1b', 'data modify storage mg:lobby coaster2 set value 1b',
-                    'data modify storage mg:lobby coaster3 set value 1b',
+                    'data modify storage mg:lobby coaster3 set value 1b', 'data modify storage mg:lobby coaster4 set value 1b',
                     'tellraw @a[tag=mg.admin] {"text":"🎢 Montagne russe construite : tour du spawn, guichet au sud-ouest.","color":"gold"}'])
 w('coaster/tick', ['# 🎢 Montagne russe — tick (seulement si quelqu\'un est au guichet ou en wagon)',
                    f'execute as @a[x={kx},y=64,z={kz},dx=0,dy=1,dz=0,tag=!mg.play,tag=!mg.csr] unless predicate mg:coaster_riding run function mg:coaster/board',
@@ -188,13 +202,14 @@ TICK_OLD = 'execute if score $setup mg.st matches 1 if entity @a[x=-200,y=40,z=-
 TICK = 'execute if score $setup mg.st matches 1 if entity @a[x=-75,y=55,z=-75,dx=150,dy=60,dz=150] run function mg:coaster/tick'
 C.patch('core/tick', 'execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 24 63 19 minecraft:gold_block run function mg:lobby/food_build', [TICK])
 C.patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby food1 run schedule function mg:lobby/food_build 12s',
-        ['execute if score $setup mg.st matches 1 unless data storage mg:lobby coaster3 run schedule function mg:coaster/build_start 16s'])
+        ['execute if score $setup mg.st matches 1 unless data storage mg:lobby coaster4 run schedule function mg:coaster/build_start 16s'])
 C.patch('desinstaller', 'schedule clear mg:lobby/food_build',
         ['schedule clear mg:coaster/build_start', 'schedule clear mg:coaster/build', 'kill @e[tag=mg.cst]', 'kill @e[tag=mg.csd]',
-         'data remove storage mg:lobby coaster1', 'data remove storage mg:lobby coaster2', 'data remove storage mg:lobby coaster3'])
+         'data remove storage mg:lobby coaster1', 'data remove storage mg:lobby coaster2', 'data remove storage mg:lobby coaster3', 'data remove storage mg:lobby coaster4'])
 # anciennes versions de ces lignes : retirées
 for rel, gone in (('core/tick', TICK_OLD),
-                  ('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby coaster2 run schedule function mg:coaster/build_start 16s')):
+                  ('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby coaster2 run schedule function mg:coaster/build_start 16s'),
+                  ('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby coaster3 run schedule function mg:coaster/build_start 16s')):
     fp = os.path.join(C.D, 'function', rel + '.mcfunction')
     s = open(fp, encoding='utf-8').read().split('\n')
     open(fp, 'w', encoding='utf-8', newline='\n').write('\n'.join(l for l in s if l != gone))
