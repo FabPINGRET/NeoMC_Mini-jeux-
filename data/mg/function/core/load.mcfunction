@@ -6,6 +6,10 @@ scoreboard objectives add mg.st dummy
 execute unless score $rp mg.st matches 0..1 run scoreboard players set $rp mg.st 1
 # Neo City (monde GTA) : construite une fois (dimension mg:gta, 2 min)
 execute if score $setup mg.st matches 1 unless data storage mg:gta built run schedule function mg:gta/world_build 45s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby gtaclean run schedule function mg:gta/spawn_clean 8s
+scoreboard players set $gtw mg.st 0
+# Neo City (monde GTA) : construite une fois (dimension mg:gta, 2 min)
+execute if score $setup mg.st matches 1 unless data storage mg:gta built run schedule function mg:gta/world_build 45s
 scoreboard players set $gtw mg.st 0
 # $rp a été écrasé par rank/xp (il servait de variable temporaire, corrigé) : remis à 1 une seule fois
 execute unless data storage mg:rank rpfix run scoreboard players set $rp mg.st 1
