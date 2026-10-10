@@ -1,2 +1,2 @@
-# Macro {f, m} : remerciement avec les moyennes à jour
-$tellraw @s [{"text":"⭐ Merci ! ","color":"gold","bold":true},{"storage":"mg:rate","nbt":"cur.g","color":"yellow"},{"text":" ","color":"gray"},{"storage":"mg:rate","nbt":"lab.f$(f)","interpret":true},{"text":"  ·  ","color":"dark_gray"},{"storage":"mg:rate","nbt":"cur.m","color":"white"},{"text":" ","color":"gray"},{"storage":"mg:rate","nbt":"lab.r$(m)","interpret":true}]
+# Remerciement simple (les moyennes brutes s'affichaient comme des données dans le chat)
+tellraw @s [{"text":"⭐ Merci pour ta note ! ","color":"gold","bold":true},{"text":"Elle compte dans la moyenne affichée au vote.","color":"gray"}]

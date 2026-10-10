@@ -16,5 +16,5 @@ execute if score $ra1 mg.st matches 6.. run scoreboard players set $ra1 mg.st 0
 execute if score $rb1 mg.st matches 6.. run scoreboard players set $rb1 mg.st 0
 execute if score $rc1 mg.st matches 6.. run scoreboard players set $rc1 mg.st 0
 function mg:rate/add with storage mg:rate key
-function mg:rate/thanks with storage mg:rate key
+function mg:rate/thanks
 execute at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 0.6 1.2
