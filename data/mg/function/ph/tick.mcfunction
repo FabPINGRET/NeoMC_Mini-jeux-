@@ -1,6 +1,9 @@
 # 🎭 Prop Hunt — tick
 scoreboard players add $pht mg.st 1
-execute if score $pht mg.st matches ..599 run tp @a[tag=mg.phs] 0.5 89 23600.5
+execute if score $pht mg.st matches ..599 if score $phm mg.st matches 1 run tp @a[tag=mg.phs] 0.5 89 23600.5
+execute if score $pht mg.st matches ..599 if score $phm mg.st matches 2 run tp @a[tag=mg.phs] 0.5 94 23700.5
+execute if score $pht mg.st matches ..599 if score $phm mg.st matches 3 run tp @a[tag=mg.phs] 0.5 88 23800.5
+execute if score $pht mg.st matches ..599 if score $phm mg.st matches 4 run tp @a[tag=mg.phs] 0.5 90 23900.5
 execute if score $pht mg.st matches 600 run function mg:ph/release
 execute as @a[tag=mg.phh,scores={mg.gsn=1..},tag=!mg.phsn] run function mg:ph/copy
 tag @a[tag=mg.phh,scores={mg.gsn=1..}] add mg.phsn

@@ -31,6 +31,22 @@ execute if score $pp mg.st matches 27 as @e[type=minecraft:block_display,tag=mg.
 execute if score $pp mg.st matches 28 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:target"}
 execute if score $pp mg.st matches 29 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:lectern"}
 execute if score $pp mg.st matches 30 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:blast_furnace"}
+execute if score $pp mg.st matches 31 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:dried_kelp_block"}
+execute if score $pp mg.st matches 32 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:sponge"}
+execute if score $pp mg.st matches 33 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:iron_block"}
+execute if score $pp mg.st matches 34 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:oxidized_copper"}
+execute if score $pp mg.st matches 35 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:blue_wool"}
+execute if score $pp mg.st matches 36 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:tnt"}
+execute if score $pp mg.st matches 37 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:honey_block"}
+execute if score $pp mg.st matches 38 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:red_wool"}
+execute if score $pp mg.st matches 39 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:yellow_wool"}
+execute if score $pp mg.st matches 40 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:white_wool"}
+execute if score $pp mg.st matches 41 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:packed_ice"}
+execute if score $pp mg.st matches 42 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:blue_ice"}
+execute if score $pp mg.st matches 43 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:moss_block"}
+execute if score $pp mg.st matches 44 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:azalea"}
+execute if score $pp mg.st matches 45 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:flowering_azalea"}
+execute if score $pp mg.st matches 46 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:potted_fern"}
 execute if score $pp mg.st matches 1 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.barrel","color":"yellow","bold":true}]
 execute if score $pp mg.st matches 2 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.crafting_table","color":"yellow","bold":true}]
 execute if score $pp mg.st matches 3 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.bookshelf","color":"yellow","bold":true}]
@@ -61,3 +77,19 @@ execute if score $pp mg.st matches 27 run title @s actionbar [{"text":"🎭 Tu e
 execute if score $pp mg.st matches 28 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.target","color":"yellow","bold":true}]
 execute if score $pp mg.st matches 29 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.lectern","color":"yellow","bold":true}]
 execute if score $pp mg.st matches 30 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.blast_furnace","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 31 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.dried_kelp_block","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 32 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.sponge","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 33 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.iron_block","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 34 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.oxidized_copper","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 35 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.blue_wool","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 36 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.tnt","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 37 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.honey_block","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 38 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.red_wool","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 39 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.yellow_wool","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 40 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.white_wool","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 41 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.packed_ice","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 42 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.blue_ice","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 43 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.moss_block","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 44 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.azalea","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 45 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.flowering_azalea","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 46 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.potted_fern","color":"yellow","bold":true}]

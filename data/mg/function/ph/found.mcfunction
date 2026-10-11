@@ -7,6 +7,9 @@ tag @s remove mg.phh
 tag @s add mg.phs
 team join mg_red @s
 function mg:ph/seeker_kit
-spreadplayers 0 23600 1 4 under 85 false @s
+execute if score $phm mg.st matches 1 run spreadplayers 0 23600 1 4 under 85 false @s
+execute if score $phm mg.st matches 2 run spreadplayers 0 23700 1 4 under 90 false @s
+execute if score $phm mg.st matches 3 run spreadplayers 0 23800 1 4 under 84 false @s
+execute if score $phm mg.st matches 4 run spreadplayers 0 23900 1 4 under 87 false @s
 tellraw @a[tag=mg.play] [{"text":"🎭 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a été trouvé et rejoint les chercheurs !","color":"gray"}]
 execute as @a[tag=mg.play] at @s run playsound minecraft:entity.item.break master @s ~ ~ ~ 0.8 0.7

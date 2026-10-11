@@ -10,7 +10,7 @@ execute as @e[type=minecraft:item_display,tag=mg.lrkt] at @s run function mg:lob
 execute unless score $state mg.st matches 0 run return 0
 scoreboard players remove @a[tag=!mg.play,tag=!mg.surv,tag=!mg.gtw,scores={mg.lrc=1..}] mg.lrc 1
 execute as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.gtw,scores={mg.qs=1..}] if items entity @s weapon.mainhand *[custom_data~{lrpg:1b}] at @s run function mg:lobby/rpg_fire
-execute as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.gtw,scores={mg.qs=1..}] if items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] at @s run function mg:gun/use
+execute as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.gtw,scores={mg.qs=1..}] if items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] at @s run function mg:lobby/gun_shot
 scoreboard players reset @a[tag=!mg.play,tag=!mg.surv,tag=!mg.gtw,scores={mg.gqs=1..}] mg.gqs
 scoreboard players remove @a[tag=!mg.play,tag=!mg.surv,tag=!mg.gtw,scores={mg.gcd=1..}] mg.gcd 1
 execute as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.gtw,scores={mg.grl=1..}] at @s run function mg:gun/reload_tick

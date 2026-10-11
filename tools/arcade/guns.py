@@ -98,7 +98,8 @@ def build():
                       'execute if score $gh mg.st matches 1.. store result entity @s Health float 0.1 run scoreboard players get $gh mg.st',
                       'execute if score $gh mg.st matches 1.. at @s run playsound minecraft:entity.zombie.hurt hostile @a ~ ~ ~ 0.5 1',
                       'execute if score $gh mg.st matches ..0 run damage @s 1000 minecraft:player_attack by @a[tag=mg.gsh,limit=1]'])
-    w('gun/hit_player', ['# Joueur : Infection (zombie touché) = dégâts doublés ; Neo GTA (tireur mg.gtw) = dégâts normaux'] +
+    w('gun/hit_player', ['# Joueur : Infection (zombie touché) = dégâts doublés ; Neo GTA (tireur mg.gtw) = dégâts normaux ; lobby (tireur mg.lsh) = un demi-cœur',
+                         'execute if entity @a[tag=mg.gsh,tag=mg.lsh] run return run damage @s 1 minecraft:player_attack by @a[tag=mg.gsh,limit=1]'] +
       [f'execute if entity @a[tag=mg.gsh,tag=mg.gtw] if score $gdn mg.st matches {n} run return run damage @s {g[2]} minecraft:player_attack by @a[tag=mg.gsh,limit=1]' for n, g in GUNS.items()] +
       [f'execute if score $gdn mg.st matches {n} run return run damage @s {2 * g[2]} minecraft:player_attack by @a[tag=mg.gsh,limit=1]' for n, g in GUNS.items()])
     w('gun/reload_tick', ['# @s recharge', 'scoreboard players remove @s mg.grl 1',
