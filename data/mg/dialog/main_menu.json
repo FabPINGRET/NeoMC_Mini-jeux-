@@ -46,6 +46,25 @@
     {
       "label": [
         {
+          "text": "🚗 Aller dans Neo GTA",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Monde libre de Neo City : braquages, voitures, casino (ton argent y est gardé)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.sv set 4"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "⌂ Retour au lobby",
           "color": "gold",
           "bold": true

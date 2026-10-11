@@ -1,0 +1,12 @@
+# @s refuse la partie lancée par un admin (seulement pendant le compte à rebours) : renvoyé là où il était
+execute unless score $state mg.st matches 1 run return run tellraw @s {"text":"Trop tard : la partie a commencé.","color":"gray"}
+execute unless entity @s[tag=mg.play] run return 0
+tag @s remove mg.play
+execute in minecraft:overworld run function mg:core/reset_player
+execute if entity @s[tag=mg.pulls] in minecraft:overworld run function mg:survie/enter
+execute if entity @s[tag=mg.pullg] in minecraft:overworld run function mg:gta/enter
+execute if entity @s[tag=mg.pullp] run tag @s add mg.spectate
+tag @s remove mg.pulls
+tag @s remove mg.pullg
+tag @s remove mg.pullp
+tellraw @s {"text":"✖ Tu ne participes pas à cette partie.","color":"gray"}

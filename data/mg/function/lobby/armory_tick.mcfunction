@@ -9,7 +9,7 @@ scoreboard players remove @a[scores={mg.wd=1..}] mg.wd 1
 scoreboard players remove @a[scores={mg.lcd=1..}] mg.lcd 1
 
 # Utilisation (seulement dans le lobby, hors partie)
-execute if score $state mg.st matches 0 as @a[scores={mg.qs=1..},tag=!mg.surv] at @s run function mg:lobby/laser
+execute if score $state mg.st matches 0 as @a[scores={mg.qs=1..},tag=!mg.surv] unless items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] at @s run function mg:lobby/laser
 execute if score $state mg.st matches 0 as @a[scores={mg.fw=1..},tag=!mg.surv] at @s run function mg:lobby/wand
 execute as @a[scores={mg.wc=1..},tag=!mg.surv] run function mg:lobby/wind_used
 execute if score $state mg.st matches 0 as @e[type=minecraft:snowball,tag=mg.sn] at @s run function mg:lobby/snow_tick

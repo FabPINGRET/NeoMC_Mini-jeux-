@@ -1,5 +1,5 @@
-# @s tient une arme : viseur au centre, rouge si une cible est dans la ligne de mire (48 blocs) ; sniper accroupi : lunette
-execute if items entity @s weapon.mainhand *[custom_data~{gun:5}] if predicate mg:sneak run return run function mg:gta/scope
+# @s tient une arme : viseur au centre, rouge si une cible est dans la ligne de mire (48 blocs) ; sniper en visée (clic droit) : lunette
+execute if items entity @s weapon.mainhand *[custom_data~{gun:5}] if entity @s[tag=mg.gads] run return run function mg:gta/scope
 scoreboard players set $ga mg.st 0
 scoreboard players set $gar mg.st 48
 tag @s add mg.gaim

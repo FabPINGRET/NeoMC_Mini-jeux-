@@ -22,11 +22,10 @@ execute as @e[type=minecraft:marker,tag=mg.gphel] at @s run function mg:gta/phel
 function mg:gta/panic_tick
 scoreboard players remove @a[tag=mg.gtw,scores={mg.gcd=1..}] mg.gcd 1
 execute as @a[tag=mg.gtw,scores={mg.grl=1..}] at @s run function mg:gun/reload_tick
-execute as @a[tag=mg.gtw,scores={mg.gsn=1..}] if items entity @s weapon.mainhand *[custom_data~{gun:5}] run scoreboard players reset @s mg.gsn
 execute as @a[tag=mg.gtw,scores={mg.gsn=1..}] at @s run function mg:gun/sneak
 scoreboard players reset @a[tag=mg.gtw,scores={mg.gsn=1..}] mg.gsn
 execute as @a[tag=mg.gscope] unless items entity @s weapon.mainhand *[custom_data~{gun:5}] run function mg:gta/unscope
-execute as @a[tag=mg.gscope] unless predicate mg:sneak run function mg:gta/unscope
+execute as @a[tag=mg.gscope,tag=!mg.gads] run function mg:gta/unscope
 execute as @e[type=minecraft:item_display,tag=mg.grkt] at @s run function mg:gta/rocket_tick
 scoreboard players remove @a[tag=mg.gtw,scores={mg.gtl=1..}] mg.gtl 1
 scoreboard players remove @a[tag=mg.gtw,scores={mg.gal=1..}] mg.gal 1

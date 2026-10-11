@@ -255,12 +255,20 @@ w('gta/enter', ['# @s entre dans le portail de Neo City',
                 'title @s subtitle {"text":"Deviens le plus riche de Neo City","color":"gray"}',
                 'tellraw @s ' + js([{'text': '🚓 NEO GTA', 'color': 'gold', 'bold': True}, {'text': ' : deviens le plus riche de la ville', 'color': 'yellow'}]),
                 'tellraw @s ' + js([{'text': ' 💵 Gagner : ', 'color': 'green'}, {'text': 'accroupi + arme en main pour braquer passants, commerces, banque ; missions au 📱', 'color': 'gray'}]),
+                'tellraw @s ' + js([{'text': ' 🔫 Armes : ', 'color': 'gold'}, {'text': 'clic gauche tirer, clic droit viser, accroupi recharger', 'color': 'gray'}]),
                 'tellraw @s ' + js([{'text': ' 🔫 Dépenser : ', 'color': 'aqua'}, {'text': 'armurerie et concession au parc, tout ce qui est acheté est gratuit à la villa', 'color': 'gray'}]),
                 'tellraw @s ' + js([{'text': ' ★ Police : ', 'color': 'red'}, {'text': 'chaque crime = étoile, une de moins toutes les 15 s', 'color': 'gray'}]),
                 'tellraw @s ' + js([{'text': ' 🚪 Sortir : ', 'color': 'yellow'}, {'text': 'Échap → ≡ Menu', 'color': 'gray'}]),
                 'execute at @s run playsound minecraft:block.portal.travel master @s ~ ~ ~ 0.3 1.6'])
 w('gta/not_ready', ['# Neo City pas encore construite : on recule le joueur', f'tp @s {PX - 3}.5 64 {PZ + 0.5} -90 0',
                     'tellraw @s {"text":"🚧 Neo GTA est en construction (environ 2 minutes après le démarrage du serveur). Réessaie bientôt !","color":"yellow"}'])
+w('gta/menu_go', ['# @s : « Aller dans Neo GTA » du menu Échap (trigger mg.sv 4), d\'où qu\'on soit hors partie',
+                  'execute unless score $setup mg.st matches 1 run return run tellraw @s {"text":"⚠ Installation manquante : un OP doit d\'abord lancer /function mg:setup","color":"red"}',
+                  'execute if entity @s[tag=mg.gtw] run return run tellraw @s {"text":"Tu es déjà dans Neo GTA.","color":"gray"}',
+                  'execute if entity @s[tag=mg.play] run return run tellraw @s {"text":"⚠ Tu participes à la partie en cours : Neo GTA sera accessible après.","color":"red"}',
+                  'execute if entity @s[tag=mg.out] run return run tellraw @s {"text":"⚠ Partie en cours : Neo GTA sera accessible après.","color":"red"}',
+                  'execute if entity @s[tag=mg.surv] run function mg:survie/leave',
+                  'execute in minecraft:overworld run function mg:gta/enter'])
 w('gta/join', ['# @s : réglages d\'arrivée (les dollars sont gardés d\'une visite à l\'autre)',
                'tag @s add mg.gtg', 'execute unless score @s mg.gta matches -2147483648.. run scoreboard players set @s mg.gta 0',
                'scoreboard players set @s mg.gwl 0', 'scoreboard players set @s mg.gwt 0', 'scoreboard players set @s mg.grk 0',
@@ -433,11 +441,10 @@ w('gta/tick', ['# 🚓 Neo City : chaque tick tant qu\'un joueur y est', 'scoreb
                'function mg:gta/panic_tick',
                'scoreboard players remove @a[tag=mg.gtw,scores={mg.gcd=1..}] mg.gcd 1',
                'execute as @a[tag=mg.gtw,scores={mg.grl=1..}] at @s run function mg:gun/reload_tick',
-               'execute as @a[tag=mg.gtw,scores={mg.gsn=1..}] if items entity @s weapon.mainhand *[custom_data~{gun:5}] run scoreboard players reset @s mg.gsn',
                'execute as @a[tag=mg.gtw,scores={mg.gsn=1..}] at @s run function mg:gun/sneak',
                'scoreboard players reset @a[tag=mg.gtw,scores={mg.gsn=1..}] mg.gsn',
                'execute as @a[tag=mg.gscope] unless items entity @s weapon.mainhand *[custom_data~{gun:5}] run function mg:gta/unscope',
-               'execute as @a[tag=mg.gscope] unless predicate mg:sneak run function mg:gta/unscope',
+               'execute as @a[tag=mg.gscope,tag=!mg.gads] run function mg:gta/unscope',
                'execute as @e[type=minecraft:item_display,tag=mg.grkt] at @s run function mg:gta/rocket_tick',
                # interface
                'scoreboard players remove @a[tag=mg.gtw,scores={mg.gtl=1..}] mg.gtl 1',
@@ -518,8 +525,8 @@ w('gta/second', ['# Chaque seconde : véhicules détruits, passants, police, sir
                  f'execute in {DIM} run kill @e[type=#minecraft:arrows,{AREA},nbt={{inGround:1b}}]'])
 
 # ---------------------------------------------------------------- viseur, lunette, radio, étoiles
-w('gta/aim', ['# @s tient une arme : viseur au centre, rouge si une cible est dans la ligne de mire (48 blocs) ; sniper accroupi : lunette',
-              'execute if items entity @s weapon.mainhand *[custom_data~{gun:5}] if predicate mg:sneak run return run function mg:gta/scope',
+w('gta/aim', ['# @s tient une arme : viseur au centre, rouge si une cible est dans la ligne de mire (48 blocs) ; sniper en visée (clic droit) : lunette',
+              'execute if items entity @s weapon.mainhand *[custom_data~{gun:5}] if entity @s[tag=mg.gads] run return run function mg:gta/scope',
               'scoreboard players set $ga mg.st 0', 'scoreboard players set $gar mg.st 48', 'tag @s add mg.gaim',
               'execute anchored eyes positioned ^ ^ ^1 run function mg:gta/aim_ray', 'tag @s remove mg.gaim',
               'title @s times 0 5 2',
@@ -530,7 +537,7 @@ w('gta/aim_ray', ['# Un pas (1 bloc) de la ligne de mire',
                   'execute positioned ~-0.5 ~-0.5 ~-0.5 if entity @e[tag=mg.gtg,tag=!mg.gaim,dx=0,dy=0,dz=0] run return run scoreboard players set $ga mg.st 1',
                   'scoreboard players remove $gar mg.st 1',
                   'execute if score $gar mg.st matches 1.. positioned ^ ^ ^1 run function mg:gta/aim_ray'])
-w('gta/scope', ['# @s vise à la lunette (sniper, accroupi) : cache noir, zoom (lenteur = champ de vision réduit)',
+w('gta/scope', ['# @s vise à la lunette (sniper, clic droit) : cache noir, zoom (lenteur = champ de vision réduit)',
                 'tag @s add mg.gscope', 'title @s times 0 5 2', 'title @s title ' + js({'text': SCOPE, 'font': 'mg:gta', 'color': 'white', 'shadow_color': 0}),
                 'effect give @s minecraft:slowness 1 6 true'])
 w('gta/unscope', ['# @s quitte la lunette', 'tag @s remove mg.gscope', 'effect clear @s minecraft:slowness', 'title @s clear'])

@@ -118,10 +118,16 @@ execute if score $game mg.st matches 8..12 run scoreboard players operation $mt 
 execute if score $game mg.st matches 8..12 run scoreboard players remove $mt mg.st 7
 execute if score $game mg.st matches 8..12 run scoreboard players set $game mg.st 6
 
+tag @a remove mg.pulls
+tag @a remove mg.pullg
+tag @a remove mg.pullp
+scoreboard players set $pull mg.st 0
+execute if entity @s[tag=mg.admin,tag=!mg.vauto] unless score $mpl mg.st matches 1 run function mg:core/pull_all
 # Participants = tous les joueurs initialisés hors pause et hors survie (Mini Party en cours : seulement ses participants)
 execute unless score $mpl mg.st matches 1 run tag @a[tag=mg.init,tag=!mg.spectate,tag=!mg.surv] add mg.play
 execute if score $mpl mg.st matches 1 run tag @a[tag=mg.init,tag=mg.mpp,tag=!mg.spectate,tag=!mg.surv] add mg.play
 tag @a remove mg.out
+execute if score $pull mg.st matches 1 as @a[tag=mg.play] run function mg:core/pull_msg
 execute store result score $n0 mg.st if entity @a[tag=mg.play]
 execute if score $n0 mg.st matches 0 run tellraw @s [{"text":"Aucun participant (tout le monde est en pause ou en survie).","color":"red"}]
 execute if score $n0 mg.st matches 0 run return run scoreboard players set $game mg.st 0

@@ -47,6 +47,14 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.evd minecraft.custom:minecraft.damage_dealt
+scoreboard objectives add mg.evc dummy
+scoreboard objectives add mg.evw dummy
+scoreboard players set #ev5 mg.st 5
+scoreboard players set #ev10 mg.st 10
+scoreboard objectives add mg.lrc dummy
+scoreboard objectives add mg.gcid dummy
+scoreboard objectives add mg.gbu dummy
 scoreboard objectives add mg.msx dummy
 scoreboard objectives add mg.msz dummy
 scoreboard objectives add mg.msm dummy
