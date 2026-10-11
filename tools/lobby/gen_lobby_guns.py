@@ -1,7 +1,7 @@
 """🔫 Armes de Neo GTA à l'Armurerie du spawn : python tools/lobby/gen_lobby_guns.py .
 
 Six armes (mg:gun, tools/arcade/guns.py) exposées côté nord de l'Armurerie ; clic droit sur l'une = elle va dans la case 2.
-Au lobby, une balle ne touche que les entités mg.gtg (le Roi Zombie des événements) : aucun bloc cassé, aucun joueur blessé.
+Au lobby, une balle touche le Roi Zombie des événements (mg.gtg) et les autres joueurs du lobby (un demi-cœur) : aucun bloc cassé.
 Le railgun du socle 1 ne part plus quand on tire avec une arme (même clic droit sur warped_fungus_on_a_stick).
 """
 import os
@@ -46,13 +46,17 @@ w('lobby/guns_tick', ['# Armes de Neo GTA au lobby (chaque tick, avant lobby/arm
                       'execute unless score $state mg.st matches 0 run return 0',
                       f'scoreboard players remove {lob('scores={mg.lrc=1..}')} mg.lrc 1',
                       f'execute as {lob('scores={mg.qs=1..}')} if items entity @s weapon.mainhand *[custom_data~{{lrpg:1b}}] at @s run function mg:lobby/rpg_fire',
-                      f'execute as {lob('scores={mg.qs=1..}')} if items entity @s weapon.mainhand *[custom_data~{{mg_gun:1b}}] at @s run function mg:gun/use',
+                      f'execute as {lob('scores={mg.qs=1..}')} if items entity @s weapon.mainhand *[custom_data~{{mg_gun:1b}}] at @s run function mg:lobby/gun_shot',
                       f'scoreboard players reset {lob('scores={mg.gqs=1..}')} mg.gqs',
                       f'scoreboard players remove {lob('scores={mg.gcd=1..}')} mg.gcd 1',
                       f'execute as {lob('scores={mg.grl=1..}')} at @s run function mg:gun/reload_tick',
                       f'execute as {lob('scores={mg.gsn=1..}')} if items entity @s weapon.mainhand *[custom_data~{{mg_gun:1b}}] at @s run function mg:gun/sneak',
                       f'scoreboard players reset {lob('scores={mg.gsn=1..}')} mg.gsn',
                       f'execute as {LOB} if items entity @s weapon.mainhand *[custom_data~{{mg_gun:1b}}] unless items entity @s weapon.mainhand *[custom_data~{{lrpg:1b}}] run function mg:gun/hud'])
+w('lobby/gun_shot', ['# @s tire au lobby : les autres joueurs du lobby deviennent des cibles le temps du tir (un demi-cœur, voir gun/hit_player)',
+                      f'tag {lob("gamemode=!spectator,gamemode=!creative,tag=!mg.gtg")} add mg.lgt', 'tag @a[tag=mg.lgt] add mg.gtg',
+                      'tag @s add mg.lsh', 'tag @s add mg.ghd', 'function mg:gun/use',
+                      'tag @s remove mg.lsh', 'tag @s remove mg.ghd', 'tag @a[tag=mg.lgt] remove mg.gtg', 'tag @a remove mg.lgt'])
 w('lobby/guns_take', ['# @s : présentoir cliqué', 'scoreboard players operation $lgn mg.st = @s mg.st',
                       f'execute on target if entity @s{LOB[2:]} run function mg:lobby/guns_give',
                       f'execute if data entity @s attack on attacker if entity @s{LOB[2:]} run function mg:lobby/guns_give',

@@ -1,4 +1,5 @@
-# Joueur : Infection (zombie touché) = dégâts doublés ; Neo GTA (tireur mg.gtw) = dégâts normaux
+# Joueur : Infection (zombie touché) = dégâts doublés ; Neo GTA (tireur mg.gtw) = dégâts normaux ; lobby (tireur mg.lsh) = un demi-cœur
+execute if entity @a[tag=mg.gsh,tag=mg.lsh] run return run damage @s 1 minecraft:player_attack by @a[tag=mg.gsh,limit=1]
 execute if entity @a[tag=mg.gsh,tag=mg.gtw] if score $gdn mg.st matches 1 run return run damage @s 6 minecraft:player_attack by @a[tag=mg.gsh,limit=1]
 execute if entity @a[tag=mg.gsh,tag=mg.gtw] if score $gdn mg.st matches 2 run return run damage @s 4 minecraft:player_attack by @a[tag=mg.gsh,limit=1]
 execute if entity @a[tag=mg.gsh,tag=mg.gtw] if score $gdn mg.st matches 3 run return run damage @s 5 minecraft:player_attack by @a[tag=mg.gsh,limit=1]
