@@ -22,6 +22,12 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.phn
+scoreboard objectives remove mg.php
+scoreboard objectives remove mg.phx
+scoreboard objectives remove mg.phz
+scoreboard objectives remove mg.phs
+scoreboard objectives remove mg.phpt
 scoreboard objectives remove mg.evd
 scoreboard objectives remove mg.evc
 scoreboard objectives remove mg.evw
@@ -147,12 +153,7 @@ scoreboard objectives remove mg.tnp2
 scoreboard objectives remove mg.tng1
 scoreboard objectives remove mg.tng2
 scoreboard objectives remove mg.tngw
-scoreboard objectives remove mg.phn
 scoreboard objectives remove mg.pid
-scoreboard objectives remove mg.php
-scoreboard objectives remove mg.phx
-scoreboard objectives remove mg.phz
-scoreboard objectives remove mg.phs
 team remove mg_cm
 bossbar remove mg:cham
 data remove storage mg:cham mats
@@ -278,10 +279,6 @@ scoreboard objectives remove mg.fx
 scoreboard objectives remove mg.fy
 scoreboard objectives remove mg.fz
 data remove storage mg:frz p
-scoreboard objectives remove mg.php
-scoreboard objectives remove mg.phx
-scoreboard objectives remove mg.phz
-scoreboard objectives remove mg.phs
 data remove storage mg:zm hp
 scoreboard objectives remove mg.zpt
 scoreboard objectives remove mg.zk

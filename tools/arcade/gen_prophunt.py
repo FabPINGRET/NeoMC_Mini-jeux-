@@ -8,6 +8,8 @@ du manoir et s'accroupir = se transformer en cet objet. Immobile 2 s = l'objet s
 Toutes les 20 s, chaque cacheur fait un bruit ; il peut aussi en faire quand il veut avec sa corne (clic droit). Cacheurs : 5 cœurs (2 coups d'épée). Chercheurs : enfermés et aveugles pendant 30 s, puis 3 min 30 de chasse.
 Frapper un objet suspect touche le cacheur (interaction autour de l'objet). Cacheur tué = devient chercheur.
 Il reste un cacheur à la fin → les cacheurs gagnent ; plus aucun → les chercheurs gagnent.
+Points des cacheurs (mg.phpt), pendant la chasse : +2 tous les quarts de seconde où un chercheur le regarde (24 blocs, sans mur entre),
++1 tous les quarts de seconde où il bouge. Classement et meilleur cacheur annoncés à la fin.
 Seul : mode entraînement (pas de victoire, fin au chrono ou menu → Arrêter).
 """
 import random
@@ -268,12 +270,13 @@ w('ph/pick', ['execute as @a[tag=mg.play,tag=!mg.phs,sort=random,limit=1] run ta
               'scoreboard players remove $phn mg.st 1', 'execute if score $phn mg.st matches 1.. run function mg:ph/pick'])
 w('ph/kill_all', ['kill @e[tag=mg.phd]', 'kill @e[tag=mg.phi]'])
 w('ph/go', ['# Départ : 30 s pour se cacher', 'scoreboard players set $pht mg.st 0', 'scoreboard players set $phc mg.st 0', 'scoreboard players set @a mg.deaths 0',
+            'scoreboard players set @a[tag=mg.play] mg.phpt 0',
             'execute as @a[tag=mg.phh] run function mg:ph/become_prop', 'execute as @a[tag=mg.phs] run function mg:ph/seeker_kit',
             'effect give @a[tag=mg.phs] minecraft:blindness 31 0 true'] +
   [f'execute if score $phm mg.st matches {n} run tellraw @a[tag=mg.play] ' + js([{'text': '🗺 Carte : ', 'color': 'gray'}, {'text': nm, 'color': 'aqua', 'bold': True}])
    for (n, nm, *_) in MAPS] + [
-            'tellraw @a[tag=mg.phh] ' + js([{'text': '🎭 PROP HUNT — tu te caches ! ', 'color': 'gold', 'bold': True},
-                                            {'text': 'Regarde un objet du manoir et ACCROUPIS-TOI pour en prendre l\'apparence. Reste immobile 2 s pour te caler sur la grille. Les chercheurs arrivent dans 30 s ; toutes les 20 s tu fais un petit bruit, et ta corne (clic droit) en fait un quand tu veux. Attention : 5 cœurs seulement !', 'color': 'gray'}]),
+            'tellraw @a[tag=mg.phh] ' + js([{'text': '🎭 PROP HUNT : tu te caches ! ', 'color': 'gold', 'bold': True},
+                                            {'text': 'Regarde un objet de la carte et ACCROUPIS-TOI pour en prendre l\'apparence. Reste immobile 2 s pour te caler sur la grille. Les chercheurs arrivent dans 30 s ; toutes les 20 s tu fais un petit bruit, et ta corne (clic droit) en fait un quand tu veux. Attention : 5 cœurs seulement ! Points : plus un chercheur te regarde, plus tu en gagnes, et bouger en rapporte aussi.', 'color': 'gray'}]),
             # seul : entraînement, pas de victoire
             'execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] ' + js([{'text': "🎭 Mode entraînement (seul) : tu es cacheur, essaie les déguisements (accroupi devant un objet) et le calage sur la grille. Pas de victoire ; il faut au moins 2 joueurs pour une vraie partie.", 'color': 'yellow'}]),
             'tellraw @a[tag=mg.phs] ' + js([{'text': '🎭 PROP HUNT — tu cherches ! ', 'color': 'red', 'bold': True},
@@ -377,18 +380,41 @@ w('ph/tick', ['# 🎭 Prop Hunt — tick', 'scoreboard players add $pht mg.st 1'
               f'execute if score $pht mg.st matches {HIDE + 1}.. if score $phq mg.st matches 0 run function mg:ph/taunt',
               'scoreboard players operation $phq mg.st = $pht mg.st', 'scoreboard players set #20 mg.st 20', 'scoreboard players operation $phq mg.st %= #20 mg.st',
               'execute if score $phq mg.st matches 0 run function mg:ph/second',
+              '# points des cacheurs, 4 fois par seconde pendant la chasse',
+              'scoreboard players operation $phq mg.st = $pht mg.st', 'scoreboard players set #5 mg.st 5', 'scoreboard players operation $phq mg.st %= #5 mg.st',
+              f'execute if score $pht mg.st matches {HIDE + 1}.. if score $phq mg.st matches 0 run function mg:ph/pts',
               'execute store result score $phh mg.st if entity @a[tag=mg.play,tag=mg.phh]',
               'execute store result score $phk mg.st if entity @a[tag=mg.play,tag=mg.phs]',
               'execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $phh mg.st matches 0 run return run function mg:ph/seekers_win',
               'execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $phk mg.st matches 0 run return run function mg:ph/hiders_win',
               f'execute if score $state mg.st matches 2 if score $pht mg.st matches {HIDE + HUNT}.. run function mg:ph/hiders_win'])
-w('ph/second', [f'scoreboard players set $phl mg.st {(HIDE + HUNT) // 20}', 'scoreboard players operation $phs2 mg.st = $pht mg.st',
+w('ph/second', [f'execute if score $pht mg.st matches {HIDE + 1}.. run function mg:ph/hpts', f'scoreboard players set $phl mg.st {(HIDE + HUNT) // 20}', 'scoreboard players operation $phs2 mg.st = $pht mg.st',
                 'scoreboard players operation $phs2 mg.st /= #20 mg.st', 'scoreboard players operation $phl mg.st -= $phs2 mg.st',
                 # seul : chrono restant
                 'execute unless score $n0 mg.st matches 2.. run title @a[tag=mg.play] actionbar [{"text":"🎭 Entraînement : ","color":"yellow"},{"score":{"name":"$phl","objective":"mg.st"},"color":"yellow","bold":true},{"text":" s","color":"gray"}]',
                 f'execute if score $pht mg.st matches ..{HIDE} run title @a[tag=mg.phs] actionbar [{{"text":"🎭 Les cacheurs se cachent… ","color":"gray"}},{{"score":{{"name":"$phl","objective":"mg.st"}},"color":"yellow"}}]',
                 f'execute if score $pht mg.st matches {HIDE + 1}.. run title @a[tag=mg.phs] actionbar [{{"text":"🎭 Cacheurs restants : ","color":"red"}},{{"score":{{"name":"$phh","objective":"mg.st"}},"color":"yellow","bold":true}},{{"text":" — ","color":"gray"}},{{"score":{{"name":"$phl","objective":"mg.st"}},"color":"yellow"}},{{"text":" s","color":"gray"}}]'])
-w('ph/hiders_win', ['# Les cacheurs gagnent',
+w('ph/pts', ['# Points des cacheurs : regardé par un chercheur (+2), en mouvement (+1)',
+             'execute as @a[tag=mg.phs,gamemode=!spectator] at @s anchored eyes positioned ^ ^ ^0.5 run function mg:ph/look',
+             'execute as @e[type=minecraft:interaction,tag=mg.phlk] run function mg:ph/looked',
+             'scoreboard players add @a[tag=mg.phh,scores={mg.phs=..4}] mg.phpt 1'])
+w('ph/look', ['# @s (chercheur) : regard de 24 blocs', 'scoreboard players set $phr mg.st 48', 'function mg:ph/look_ray'])
+w('ph/look_ray', ['# Un pas (0,5 bloc) du regard du chercheur ; un mur l\'arrête, le premier objet-cacheur touché est marqué',
+                  'execute unless block ~ ~ ~ #mg:ray_pass run return 0',
+                  'execute positioned ~-0.5 ~-0.5 ~-0.5 as @e[type=minecraft:interaction,tag=mg.phi,dx=0,dy=0,dz=0] run tag @s add mg.phlk',
+                  'execute positioned ~-0.5 ~-0.5 ~-0.5 if entity @e[type=minecraft:interaction,tag=mg.phi,dx=0,dy=0,dz=0] run return 0',
+                  'scoreboard players remove $phr mg.st 1',
+                  'execute if score $phr mg.st matches 1.. positioned ^ ^ ^0.5 run function mg:ph/look_ray'])
+w('ph/looked', ['# @s : objet d\'un cacheur regardé par un chercheur', 'tag @s remove mg.phlk', 'scoreboard players operation $pid mg.st = @s mg.pid',
+                'execute as @a[tag=mg.phh] if score @s mg.pid = $pid mg.st run scoreboard players add @s mg.phpt 2'])
+w('ph/rank', ['# Fin : points de chaque cacheur et meilleur cacheur', 'scoreboard players set $phb mg.st 0',
+              'execute as @a[tag=mg.phx] run scoreboard players operation $phb mg.st > @s mg.phpt',
+              'execute if score $phb mg.st matches ..0 run return 0',
+              'tellraw @a[tag=mg.phx] {"text":"🎭 Points des cacheurs (regardés par les chercheurs, en mouvement) :","color":"gold"}',
+              'execute as @a[tag=mg.phx,scores={mg.phpt=1..}] run tellraw @a[tag=mg.phx] [{"text":" • ","color":"gray"},{"selector":"@s","color":"yellow"},{"text":" : ","color":"gray"},{"score":{"name":"@s","objective":"mg.phpt"},"color":"aqua","bold":true}]',
+              'execute as @a[tag=mg.phx] if score @s mg.phpt = $phb mg.st run tellraw @a [{"text":"🏆 Meilleur cacheur : ","color":"gold","bold":true},{"selector":"@s","color":"yellow"},{"text":" (","color":"gray"},{"score":{"name":"$phb","objective":"mg.st"},"color":"aqua"},{"text":" points)","color":"gray"}]'])
+w('ph/hpts', ['execute as @a[tag=mg.phh] run title @s actionbar [{"text":"🎭 Tes points : ","color":"gold"},{"score":{"name":"@s","objective":"mg.phpt"},"color":"aqua","bold":true},{"text":"  (regardé +2, en mouvement +1)","color":"gray"}]'])
+w('ph/hiders_win', ['# Les cacheurs gagnent', 'function mg:ph/rank',
                     'execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] ' + js([{'text': "🎭 Fin de l'entraînement.", 'color': 'yellow'}]),
                     'execute unless score $n0 mg.st matches 2.. run return run function mg:core/draw',
                     'tag @a[tag=mg.play,tag=mg.phh] add mg.win', 'scoreboard players add @a[tag=mg.play,tag=mg.phh] mg.wins 1',
@@ -396,7 +422,7 @@ w('ph/hiders_win', ['# Les cacheurs gagnent',
                     'title @a[tag=!mg.surv] title {"text":"Les CACHEURS gagnent !","color":"gold","bold":true}',
                     'tellraw @a [{"text":"★ Victoire des cacheurs : ","color":"gold"},{"selector":"@a[tag=mg.play,tag=mg.phh]","color":"yellow"}]',
                     'execute as @a[tag=!mg.surv] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1'])
-w('ph/seekers_win', ['# Plus aucun cacheur', 'tellraw @a {"text":"🎭 Tous les cacheurs ont été trouvés !","color":"red","bold":true}', 'function mg:core/win_red'])
+w('ph/seekers_win', ['# Plus aucun cacheur', 'function mg:ph/rank', 'tellraw @a {"text":"🎭 Tous les cacheurs ont été trouvés !","color":"red","bold":true}', 'function mg:core/win_red'])
 w('ph/cleanup', ['function mg:ph/kill_all', 'execute as @a[tag=mg.phx] run attribute @s minecraft:scale base set 1',
                  'execute as @a[tag=mg.phx] run attribute @s minecraft:max_health base set 20',
                  'effect clear @a[tag=mg.phx] minecraft:invisibility', 'effect clear @a[tag=mg.phx] minecraft:speed',
@@ -405,6 +431,7 @@ w('ph/cleanup', ['function mg:ph/kill_all', 'execute as @a[tag=mg.phx] run attri
 
 C.register([96], 'ph', [C.announce(96, '', '🎭 PROP HUNT', 'gold', 'cachez-vous en objets, les chercheurs arrivent dans 30 s !')])
 C.objectives([('mg.phn', 'minecraft.used:minecraft.goat_horn'), ('mg.pid', 'dummy'), ('mg.php', 'dummy'), ('mg.phx', 'dummy'), ('mg.phz', 'dummy'), ('mg.phs', 'dummy')])
+C.objectives([('mg.phpt', 'dummy')])
 C.patch('core/load', 'scoreboard objectives add mg.bw trigger', ['team add mg_ph', 'team modify mg_ph nametagVisibility never',
                                                                  'team modify mg_ph friendlyFire false', 'team modify mg_ph collisionRule never',
                                                                  'scoreboard players set #4 mg.st 4'])
