@@ -1,0 +1,1 @@
+execute as @a[tag=mg.phh] run title @s actionbar [{"text":"🎭 Tes points : ","color":"gold"},{"score":{"name":"@s","objective":"mg.phpt"},"color":"aqua","bold":true},{"text":"  (regardé +2, en mouvement +1)","color":"gray"}]

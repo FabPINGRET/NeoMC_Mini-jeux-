@@ -1,3 +1,4 @@
+execute if score $pht mg.st matches 601.. run function mg:ph/hpts
 scoreboard players set $phl mg.st 240
 scoreboard players operation $phs2 mg.st = $pht mg.st
 scoreboard players operation $phs2 mg.st /= #20 mg.st

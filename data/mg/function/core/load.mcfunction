@@ -47,6 +47,12 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.phn minecraft.used:minecraft.goat_horn
+scoreboard objectives add mg.php dummy
+scoreboard objectives add mg.phx dummy
+scoreboard objectives add mg.phz dummy
+scoreboard objectives add mg.phs dummy
+scoreboard objectives add mg.phpt dummy
 scoreboard objectives add mg.evd minecraft.custom:minecraft.damage_dealt
 scoreboard objectives add mg.evc dummy
 scoreboard objectives add mg.evw dummy
@@ -136,12 +142,7 @@ scoreboard objectives add mg.tnp2 dummy
 scoreboard objectives add mg.tng1 dummy
 scoreboard objectives add mg.tng2 dummy
 scoreboard objectives add mg.tngw dummy {"text":"🎾 Jeux gagnés","color":"yellow"}
-scoreboard objectives add mg.phn minecraft.used:minecraft.goat_horn
 scoreboard objectives add mg.pid dummy
-scoreboard objectives add mg.php dummy
-scoreboard objectives add mg.phx dummy
-scoreboard objectives add mg.phz dummy
-scoreboard objectives add mg.phs dummy
 team add mg_cm
 team modify mg_cm nametagVisibility never
 team modify mg_cm friendlyFire false
@@ -234,10 +235,6 @@ scoreboard objectives add mg.pid dummy
 scoreboard objectives add mg.fx dummy
 scoreboard objectives add mg.fy dummy
 scoreboard objectives add mg.fz dummy
-scoreboard objectives add mg.php dummy
-scoreboard objectives add mg.phx dummy
-scoreboard objectives add mg.phz dummy
-scoreboard objectives add mg.phs dummy
 scoreboard players set #2 mg.st 2
 scoreboard players set #3 mg.st 3
 scoreboard players set #5 mg.st 5

@@ -25,6 +25,11 @@ scoreboard players operation $phq mg.st = $pht mg.st
 scoreboard players set #20 mg.st 20
 scoreboard players operation $phq mg.st %= #20 mg.st
 execute if score $phq mg.st matches 0 run function mg:ph/second
+# points des cacheurs, 4 fois par seconde pendant la chasse
+scoreboard players operation $phq mg.st = $pht mg.st
+scoreboard players set #5 mg.st 5
+scoreboard players operation $phq mg.st %= #5 mg.st
+execute if score $pht mg.st matches 601.. if score $phq mg.st matches 0 run function mg:ph/pts
 execute store result score $phh mg.st if entity @a[tag=mg.play,tag=mg.phh]
 execute store result score $phk mg.st if entity @a[tag=mg.play,tag=mg.phs]
 execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $phh mg.st matches 0 run return run function mg:ph/seekers_win
