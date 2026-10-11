@@ -102,6 +102,10 @@ forceload add -14 37794 14 37959
 forceload add -3 38197 334 38240
 # Master dit (z 38600)
 forceload add -12 38588 12 38612
+# Prop Hunt, autres cartes (z 23700, 23800, 23900)
+forceload add -27 23681 27 23719
+forceload add -25 23783 25 23817
+forceload add -23 23882 23 23918
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl

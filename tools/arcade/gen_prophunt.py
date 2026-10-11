@@ -1,4 +1,5 @@
-"""🎭 Prop Hunt (id 96). Manoir de 6 pièces meublées en z 23600.
+"""🎭 Prop Hunt (id 96). Quatre cartes tirées au sort à chaque partie : Manoir (z 23600), Entrepôt du port (z 23700),
+Supermarché (z 23800), Serre (z 23900).
 
     python tools/arcade/gen_prophunt.py .
 
@@ -19,7 +20,9 @@ Z = 23600
 HIDE, HUNT = 600, 4200
 PROPS = ['barrel', 'crafting_table', 'bookshelf', 'hay_block', 'pumpkin', 'carved_pumpkin', 'melon', 'composter', 'cauldron', 'lantern',
          'anvil', 'furnace', 'smoker', 'loom', 'fletching_table', 'smithing_table', 'cartography_table', 'beehive', 'jukebox', 'note_block',
-         'cake', 'brewing_stand', 'grindstone', 'stonecutter', 'potted_red_tulip', 'oak_leaves', 'cobweb', 'target', 'lectern', 'blast_furnace']
+         'cake', 'brewing_stand', 'grindstone', 'stonecutter', 'potted_red_tulip', 'oak_leaves', 'cobweb', 'target', 'lectern', 'blast_furnace',
+         'dried_kelp_block', 'sponge', 'iron_block', 'oxidized_copper', 'blue_wool', 'tnt', 'honey_block', 'red_wool', 'yellow_wool', 'white_wool',
+         'packed_ice', 'blue_ice', 'moss_block', 'azalea', 'flowering_azalea', 'potted_fern']
 PID = {p: i + 1 for i, p in enumerate(PROPS)}
 ROOMS = [  # (x1, x2, z1, z2, sol, objets)
     (-19, -8, Z - 14, Z - 1, 'spruce_planks', ['furnace', 'smoker', 'cauldron', 'barrel', 'crafting_table', 'cake', 'blast_furnace', 'potted_red_tulip']),
@@ -76,23 +79,199 @@ L += [f'fill -3 88 {Z - 3} 3 92 {Z + 3} minecraft:black_stained_glass', f'fill -
       f'fill -2 88 {Z - 2} 2 88 {Z + 2} minecraft:black_concrete']
 w('ph/build', L)
 
+
+def blk(p):
+    return 'oak_leaves[persistent=true]' if p == 'oak_leaves' else p
+
+
+def scatter(out, rnd, cells, n, pal, stack=False):
+    """n objets de pal sur des cases (x, y, z) au hasard, rarement collés ; empilés parfois"""
+    cells = list(cells)
+    rnd.shuffle(cells)
+    used = set()
+    for (x, y, z) in cells:
+        if n <= 0:
+            break
+        if (x, y, z) in used or any((x + dx, y, z + dz) in used for dx, dz in ((1, 0), (-1, 0), (0, 1), (0, -1))) and rnd.random() < 0.7:
+            continue
+        used.add((x, y, z))
+        p = rnd.choice(pal)
+        out.append(f'setblock {x} {y} {z} minecraft:{blk(p)}')
+        if stack and p in ('barrel', 'hay_block', 'dried_kelp_block', 'blue_wool', 'tnt', 'white_wool', 'red_wool', 'yellow_wool', 'melon') and rnd.random() < 0.35:
+            out.append(f'setblock {x} {y + 1} {z} minecraft:{blk(p)}')
+        n -= 1
+
+
+def clear(out, x, z1, z2, y1, y2):
+    out += [f'fill {-x} {y} {z1} {x} {y} {z2} minecraft:air' for y in range(y1, y2 + 1)]
+
+
+def cage(out, Z, y):
+    out += [f'fill -3 {y} {Z - 3} 3 {y + 4} {Z + 3} minecraft:black_stained_glass', f'fill -2 {y + 1} {Z - 2} 2 {y + 3} {Z + 2} minecraft:air',
+            f'fill -2 {y} {Z - 2} 2 {y} {Z + 2} minecraft:black_concrete']
+
+
+# ------------------------------------------------------------------ carte 2 : entrepôt du port (mezzanines, conteneurs, étagères)
+Z2 = 23700
+r2 = random.Random(9602)
+P2 = ['barrel', 'hay_block', 'composter', 'cauldron', 'lantern', 'target', 'note_block', 'grindstone', 'crafting_table',
+      'dried_kelp_block', 'sponge', 'iron_block', 'oxidized_copper', 'blue_wool', 'tnt']
+L2 = [f'# 🎭 Prop Hunt, entrepôt du port : x -24..24, z {Z2 - 16}..{Z2 + 16}, sol y 80, mezzanines y 85, toit y 92']
+clear(L2, 27, Z2 - 19, Z2 + 19, 78, 99)
+L2 += [f'fill -24 79 {Z2 - 16} 24 79 {Z2 + 16} minecraft:stone', f'fill -24 80 {Z2 - 16} 24 80 {Z2 + 16} minecraft:smooth_stone',
+       f'fill -24 80 {Z2 - 16} 24 91 {Z2 - 16} minecraft:gray_concrete', f'fill -24 80 {Z2 + 16} 24 91 {Z2 + 16} minecraft:gray_concrete',
+       f'fill -24 80 {Z2 - 16} -24 91 {Z2 + 16} minecraft:gray_concrete', f'fill 24 80 {Z2 - 16} 24 91 {Z2 + 16} minecraft:gray_concrete',
+       f'fill -24 92 {Z2 - 16} 24 92 {Z2 + 16} minecraft:spruce_planks']
+L2 += [f'fill -23 80 {Z2 + d} 23 80 {Z2 + d} minecraft:yellow_concrete' for d in (-8, -3, 3, 8)]
+L2 += [f'fill {x} 80 {Z2 + sg * 16} {x} 91 {Z2 + sg * 16} minecraft:stripped_spruce_log' for x in range(-24, 25, 6) for sg in (-1, 1)]
+L2 += [f'fill {x} 80 {z} {x} 91 {z} minecraft:stripped_spruce_log' for x in (-24, 24) for z in range(Z2 - 16, Z2 + 17, 8)]
+L2 += [f'fill {x} 88 {Z2 + sg * 16} {x + 1} 89 {Z2 + sg * 16} minecraft:glass_pane' for x in range(-21, 21, 6) for sg in (-1, 1)]
+L2 += [f'fill -4 81 {Z2 + 16} 4 85 {Z2 + 16} minecraft:iron_bars']
+L2 += [f'setblock {x} 92 {z} minecraft:sea_lantern' for x in range(-20, 21, 5) for z in range(Z2 - 14, Z2 + 15, 5)]
+# mezzanines et escaliers
+L2 += [f'fill -23 85 {Z2 - 15} 23 85 {Z2 - 11} minecraft:spruce_planks', f'fill -23 85 {Z2 + 11} 23 85 {Z2 + 15} minecraft:spruce_planks',
+       f'fill -23 86 {Z2 - 10} 15 86 {Z2 - 10} minecraft:spruce_fence', f'fill 21 86 {Z2 - 10} 23 86 {Z2 - 10} minecraft:spruce_fence',
+       f'fill -15 86 {Z2 + 10} 23 86 {Z2 + 10} minecraft:spruce_fence', f'fill -23 86 {Z2 + 10} -21 86 {Z2 + 10} minecraft:spruce_fence']
+L2 += [f'setblock {x} 85 {Z2 + sg * 13} minecraft:sea_lantern' for x in range(-21, 22, 6) for sg in (-1, 1)]
+for i in range(5):
+    if i:
+        L2 += [f'fill {16 + i} 81 {Z2 - 10} {16 + i} {80 + i} {Z2 - 10} minecraft:spruce_planks',
+               f'fill {-16 - i} 81 {Z2 + 10} {-16 - i} {80 + i} {Z2 + 10} minecraft:spruce_planks']
+    L2 += [f'setblock {16 + i} {81 + i} {Z2 - 10} minecraft:spruce_stairs[facing=east]', f'setblock {-16 - i} {81 + i} {Z2 + 10} minecraft:spruce_stairs[facing=west]']
+# conteneurs (creux, ouverts aux deux bouts) et étagères
+CONT = [(-12, -6, 'red_concrete'), (6, 12, 'blue_concrete')]
+for (x1, x2, c) in CONT:
+    L2 += [f'fill {x1} 81 {Z2 - 1} {x2} 83 {Z2 + 1} minecraft:{c}', f'fill {x1} 81 {Z2} {x2} 82 {Z2} minecraft:air']
+RACK = [(-19, -13), (-9, -3), (3, 9), (13, 19)]
+RZ = (-6, -5, 5, 6)
+for (x1, x2) in RACK:
+    for (z0, z1_) in ((Z2 - 6, Z2 - 5), (Z2 + 5, Z2 + 6)):
+        L2 += [f'fill {x1} 83 {z0} {x2} 83 {z1_} minecraft:spruce_planks',
+               f'fill {x1} 81 {z0} {x1} 82 {z1_} minecraft:spruce_fence', f'fill {x2} 81 {z0} {x2} 82 {z1_} minecraft:spruce_fence']
+blocked = {(x, Z2 + d) for (x1, x2, _) in CONT for x in range(x1, x2 + 1) for d in (-1, 1)}
+blocked |= {(x, Z2 + d) for (x1, x2) in RACK for x in (x1, x2) for d in RZ}
+blocked |= {(16 + i, Z2 - 10) for i in range(-1, 5)} | {(-16 - i, Z2 + 10) for i in range(-1, 5)}
+floor2 = [(x, 81, z) for x in range(-23, 24) for z in range(Z2 - 15, Z2 + 16) if (x, z) not in blocked]
+scatter(L2, r2, floor2, 80, P2, stack=True)
+scatter(L2, r2, [(x, 84, Z2 + d) for (x1, x2) in RACK for x in range(x1, x2 + 1) for d in RZ], 22, P2)
+scatter(L2, r2, [(x, 84, z) for (x1, x2, _) in CONT for x in range(x1, x2 + 1) for z in range(Z2 - 1, Z2 + 2)], 8, P2)
+mezz = [(x, 86, z) for x in range(-23, 24) for z in list(range(Z2 - 15, Z2 - 10)) + list(range(Z2 + 11, Z2 + 16))
+        if not (z == Z2 - 11 and 15 <= x <= 21) and not (z == Z2 + 11 and -21 <= x <= -15)]
+scatter(L2, r2, mezz, 26, P2, stack=True)
+cage(L2, Z2, 93)
+w('ph/build2', L2)
+
+# ------------------------------------------------------------------ carte 3 : supermarché (rayons sur 3 niveaux, caisses, rayon frais)
+Z3 = 23800
+r3 = random.Random(9603)
+P3 = ['melon', 'pumpkin', 'hay_block', 'cake', 'barrel', 'honey_block', 'red_wool', 'yellow_wool', 'white_wool', 'dried_kelp_block',
+      'composter', 'lantern', 'jukebox', 'note_block', 'carved_pumpkin']
+L3 = [f'# 🎭 Prop Hunt, supermarché : x -22..22, z {Z3 - 14}..{Z3 + 14}, sol y 80, plafond y 86']
+clear(L3, 25, Z3 - 17, Z3 + 17, 78, 94)
+L3 += [f'fill -22 79 {Z3 - 14} 22 79 {Z3 + 14} minecraft:stone']
+L3 += [f'fill -22 80 {z} 22 80 {z} minecraft:{"white_concrete" if z % 2 else "light_gray_concrete"}' for z in range(Z3 - 14, Z3 + 15)]
+L3 += [f'fill -22 80 {Z3 - 14} 22 85 {Z3 - 14} minecraft:white_terracotta', f'fill -22 80 {Z3 + 14} 22 85 {Z3 + 14} minecraft:white_terracotta',
+       f'fill -22 80 {Z3 - 14} -22 85 {Z3 + 14} minecraft:white_terracotta', f'fill 22 80 {Z3 - 14} 22 85 {Z3 + 14} minecraft:white_terracotta',
+       f'fill -22 83 {Z3 - 14} 22 83 {Z3 - 14} minecraft:red_terracotta', f'fill -22 83 {Z3 + 14} 22 83 {Z3 + 14} minecraft:red_terracotta',
+       f'fill -22 83 {Z3 - 14} -22 83 {Z3 + 14} minecraft:red_terracotta', f'fill 22 83 {Z3 - 14} 22 83 {Z3 + 14} minecraft:red_terracotta',
+       f'fill -22 86 {Z3 - 14} 22 86 {Z3 + 14} minecraft:white_concrete', f'fill -5 81 {Z3 + 14} 5 84 {Z3 + 14} minecraft:glass_pane']
+L3 += [f'setblock {x} 86 {z} minecraft:sea_lantern' for x in range(-20, 21, 5) for z in range(Z3 - 12, Z3 + 13, 4)]
+SH = [-16, -10, -4, 2, 8, 14]
+for x in SH:
+    L3 += [f'fill {x} 82 {Z3 - 8} {x + 1} 82 {Z3 + 3} minecraft:birch_slab[type=top]', f'fill {x} 84 {Z3 - 8} {x + 1} 84 {Z3 + 3} minecraft:birch_slab[type=top]',
+           f'fill {x} 81 {Z3 - 9} {x + 1} 84 {Z3 - 9} minecraft:birch_fence', f'fill {x} 81 {Z3 + 4} {x + 1} 84 {Z3 + 4} minecraft:birch_fence']
+CK = [-17, -11, -5, 1, 7, 13]
+L3 += [f'fill {x} 81 {Z3 + 8} {x} 81 {Z3 + 10} minecraft:smooth_quartz' for x in CK]
+L3 += [f'fill -20 81 {Z3 - 13} 20 81 {Z3 - 13} minecraft:light_blue_stained_glass']
+blocked = {(x + d, z) for x in SH for d in (0, 1) for z in range(Z3 - 9, Z3 + 5)} | {(x, z) for x in CK for z in range(Z3 + 8, Z3 + 11)}
+blocked |= {(x, Z3 - 13) for x in range(-20, 21)}
+floor3 = [(x, 81, z) for x in range(-21, 22) for z in range(Z3 - 13, Z3 + 14) if (x, z) not in blocked]
+scatter(L3, r3, floor3, 55, P3, stack=True)
+shelf = [(x + d, y, z) for x in SH for d in (0, 1) for z in range(Z3 - 8, Z3 + 4) for y in (81, 83, 85)]
+scatter(L3, r3, shelf, 60, P3)
+scatter(L3, r3, [(x, 82, Z3 - 13) for x in range(-20, 21)], 14, ['packed_ice', 'blue_ice', 'melon', 'cake', 'honey_block'])
+cage(L3, Z3, 87)
+w('ph/build3', L3)
+
+# ------------------------------------------------------------------ carte 4 : serre (arbres, bassin, cabane de jardin, massifs)
+Z4 = 23900
+r4 = random.Random(9604)
+P4 = ['oak_leaves', 'moss_block', 'azalea', 'flowering_azalea', 'potted_red_tulip', 'potted_fern', 'hay_block', 'composter', 'pumpkin',
+      'melon', 'beehive', 'barrel', 'target', 'carved_pumpkin', 'lantern']
+L4 = [f'# 🎭 Prop Hunt, serre : x -20..20, z {Z4 - 15}..{Z4 + 15}, sol y 80, verrière y 88']
+clear(L4, 23, Z4 - 18, Z4 + 18, 78, 96)
+L4 += [f'fill -20 79 {Z4 - 15} 20 79 {Z4 + 15} minecraft:dirt', f'fill -20 80 {Z4 - 15} 20 88 {Z4 + 15} minecraft:glass',
+       f'fill -19 81 {Z4 - 14} 19 87 {Z4 + 14} minecraft:air', f'fill -19 80 {Z4 - 14} 19 80 {Z4 + 14} minecraft:grass_block',
+       f'fill -1 80 {Z4 - 14} 1 80 {Z4 + 14} minecraft:dirt_path', f'fill -19 80 {Z4 - 1} 19 80 {Z4 + 1} minecraft:dirt_path']
+L4 += [f'fill {x} 81 {Z4 + sg * 15} {x} 87 {Z4 + sg * 15} minecraft:birch_log' for x in range(-20, 21, 5) for sg in (-1, 1)]
+L4 += [f'fill {x} 81 {z} {x} 87 {z} minecraft:birch_log' for x in (-20, 20) for z in range(Z4 - 15, Z4 + 16, 5)]
+L4 += [f'fill {x} 88 {Z4 - 15} {x} 88 {Z4 + 15} minecraft:white_concrete' for x in range(-20, 21, 5)]
+L4 += [f'setblock {x} 88 {z} minecraft:sea_lantern' for x in range(-15, 16, 5) for z in range(Z4 - 12, Z4 + 13, 4)]
+# bassin
+L4 += [f'fill 6 79 {Z4 + 5} 12 79 {Z4 + 11} minecraft:sand', f'fill 6 80 {Z4 + 5} 12 80 {Z4 + 11} minecraft:water',
+       f'fill 5 80 {Z4 + 4} 13 80 {Z4 + 4} minecraft:mossy_cobblestone', f'fill 5 80 {Z4 + 12} 13 80 {Z4 + 12} minecraft:mossy_cobblestone',
+       f'fill 5 80 {Z4 + 4} 5 80 {Z4 + 12} minecraft:mossy_cobblestone', f'fill 13 80 {Z4 + 4} 13 80 {Z4 + 12} minecraft:mossy_cobblestone']
+L4 += [f'setblock {x} 81 {z} minecraft:lily_pad' for x in range(6, 13) for z in range(Z4 + 5, Z4 + 12) if r4.random() < 0.2]
+# arbres
+TREES = [(-12, Z4 - 10), (-6, Z4 + 9), (12, Z4 - 9), (15, Z4 - 4), (4, Z4 - 11), (-15, Z4 + 10)]
+for (tx, tz) in TREES:
+    L4 += [f'fill {tx} 81 {tz} {tx} 84 {tz} minecraft:oak_log',
+           f'fill {tx - 2} 84 {tz - 2} {tx + 2} 85 {tz + 2} minecraft:oak_leaves[persistent=true] replace minecraft:air',
+           f'fill {tx - 1} 86 {tz - 1} {tx + 1} 86 {tz + 1} minecraft:oak_leaves[persistent=true]']
+# massifs de fougères
+BEDS = [(-11, -5, Z4 + 3, Z4 + 5), (3, 9, Z4 - 6, Z4 - 4), (15, 18, Z4 + 5, Z4 + 12)]
+for (x1, x2, z1, z2) in BEDS:
+    L4.append(f'fill {x1} 80 {z1} {x2} 80 {z2} minecraft:podzol')
+    L4 += [f'setblock {x} 81 {z} minecraft:fern' for x in range(x1, x2 + 1) for z in range(z1, z2 + 1) if r4.random() < 0.5]
+# cabane de jardin (porte côté allée)
+L4 += [f'fill -19 81 {Z4 - 3} -14 84 {Z4 + 3} minecraft:spruce_planks', f'fill -18 81 {Z4 - 2} -15 84 {Z4 + 2} minecraft:air',
+       f'fill -19 85 {Z4 - 3} -14 85 {Z4 + 3} minecraft:spruce_slab', f'fill -14 81 {Z4 - 1} -14 82 {Z4 + 1} minecraft:air',
+       f'setblock -14 83 {Z4 - 2} minecraft:glass_pane', f'setblock -14 83 {Z4 + 2} minecraft:glass_pane']
+blocked = {(x, z) for x in range(5, 14) for z in range(Z4 + 4, Z4 + 13)} | {(tx, tz) for tx, tz in TREES}
+blocked |= {(x, z) for (x1, x2, z1, z2) in BEDS for x in range(x1, x2 + 1) for z in range(z1, z2 + 1)}
+blocked |= {(x, z) for x in range(-19, -13) for z in range(Z4 - 3, Z4 + 4)} | {(-13, z) for z in range(Z4 - 1, Z4 + 2)}
+floor4 = [(x, 81, z) for x in range(-19, 20) for z in range(Z4 - 14, Z4 + 15) if (x, z) not in blocked]
+scatter(L4, r4, floor4, 75, P4)
+scatter(L4, r4, [(x, 81, z) for x in range(-18, -14) for z in range(Z4 - 2, Z4 + 3)], 7, ['barrel', 'composter', 'hay_block', 'cobweb', 'lantern'])
+cage(L4, Z4, 89)
+w('ph/build4', L4)
+
+# (n°, nom, z, y de la cage, hauteur max d'apparition, rayon d'apparition, objets)
+MAPS = [(1, '🏚 Manoir', Z, 89, 85, 13, sorted({p for r in ROOMS for p in r[5]})), (2, '⚓ Entrepôt du port', Z2, 94, 90, 14, P2),
+        (3, '🛒 Supermarché', Z3, 88, 84, 12, P3), (4, '🌿 Serre', Z4, 90, 87, 13, P4)]
+
+
+def per_map(fmt):
+    return [f'execute if score $phm mg.st matches {n} run ' + fmt.format(z=z, cy=cy, u=u, r=r, py=cy + 6) for (n, _, z, cy, u, r, _) in MAPS]
+
+
+w('ph/rnd', ['# @s (cacheur) : un objet au hasard parmi ceux de la carte'] +
+  [f'execute if score $phm mg.st matches {n} run function mg:ph/rnd_{n}' for (n, *_) in MAPS])
+for (n, _, _, _, _, _, pal) in MAPS:
+    w(f'ph/rnd_{n}', [f'execute store result score $phq mg.st run random value 0..{len(pal) - 1}'] +
+      [f'execute if score $phq mg.st matches {i} run scoreboard players set @s mg.php {PID[p]}' for i, p in enumerate(pal)])
+
 # ------------------------------------------------------------------ fonctions
-w('ph/prepare', ['# 🎭 Prop Hunt — préparation', 'function mg:ph/build', 'function mg:ph/kill_all',
-                 'scoreboard players set $px mg.st 0', 'scoreboard players set $py mg.st 95', f'scoreboard players set $pz mg.st {Z}',
+w('ph/prepare', ['# 🎭 Prop Hunt, préparation : une carte au hasard', 'execute store result score $phm mg.st run random value 1..4',
+                 'execute if score $phm mg.st matches 1 run function mg:ph/build'] +
+  [f'execute if score $phm mg.st matches {n} run function mg:ph/build{n}' for (n, *_) in MAPS[1:]] +
+  ['function mg:ph/kill_all', 'scoreboard players set $px mg.st 0'] + per_map('scoreboard players set $py mg.st {py}') + per_map('scoreboard players set $pz mg.st {z}') + [
                  'clear @a[tag=mg.play]', 'gamemode adventure @a[tag=mg.play]', 'tag @a[tag=mg.play] add mg.phx',
                  # rôles : 1 chercheur pour 4 joueurs (au moins 1)
                  'execute store result score $phn mg.st if entity @a[tag=mg.play]', 'scoreboard players set #4 mg.st 4',
                  'scoreboard players operation $phn mg.st /= #4 mg.st', 'execute if score $phn mg.st matches ..0 run scoreboard players set $phn mg.st 1',
                  'execute if score $n0 mg.st matches 2.. run function mg:ph/pick', 'execute as @a[tag=mg.play,tag=!mg.phs] run tag @s add mg.phh',
                  'team join mg_red @a[tag=mg.phs]', 'team join mg_ph @a[tag=mg.phh]',
-                 f'tp @a[tag=mg.phs] 0.5 89 {Z}.5', 'execute as @a[tag=mg.phs] at @s run spawnpoint @s ~ ~ ~',
-                 f'spreadplayers 0 {Z} 2 13 under 85 false @a[tag=mg.phh]', 'execute as @a[tag=mg.phh] at @s run spawnpoint @s ~ ~ ~'])
+                 ] + per_map('tp @a[tag=mg.phs] 0.5 {cy} {z}.5') + ['execute as @a[tag=mg.phs] at @s run spawnpoint @s ~ ~ ~'] +
+  per_map('spreadplayers 0 {z} 2 {r} under {u} false @a[tag=mg.phh]') + ['execute as @a[tag=mg.phh] at @s run spawnpoint @s ~ ~ ~'])
 w('ph/pick', ['execute as @a[tag=mg.play,tag=!mg.phs,sort=random,limit=1] run tag @s add mg.phs',
               'scoreboard players remove $phn mg.st 1', 'execute if score $phn mg.st matches 1.. run function mg:ph/pick'])
 w('ph/kill_all', ['kill @e[tag=mg.phd]', 'kill @e[tag=mg.phi]'])
 w('ph/go', ['# Départ : 30 s pour se cacher', 'scoreboard players set $pht mg.st 0', 'scoreboard players set $phc mg.st 0', 'scoreboard players set @a mg.deaths 0',
             'execute as @a[tag=mg.phh] run function mg:ph/become_prop', 'execute as @a[tag=mg.phs] run function mg:ph/seeker_kit',
-            'effect give @a[tag=mg.phs] minecraft:blindness 31 0 true',
+            'effect give @a[tag=mg.phs] minecraft:blindness 31 0 true'] +
+  [f'execute if score $phm mg.st matches {n} run tellraw @a[tag=mg.play] ' + js([{'text': '🗺 Carte : ', 'color': 'gray'}, {'text': nm, 'color': 'aqua', 'bold': True}])
+   for (n, nm, *_) in MAPS] + [
             'tellraw @a[tag=mg.phh] ' + js([{'text': '🎭 PROP HUNT — tu te caches ! ', 'color': 'gold', 'bold': True},
                                             {'text': 'Regarde un objet du manoir et ACCROUPIS-TOI pour en prendre l\'apparence. Reste immobile 2 s pour te caler sur la grille. Les chercheurs arrivent dans 30 s ; toutes les 20 s tu fais un petit bruit, et ta corne (clic droit) en fait un quand tu veux. Attention : 5 cœurs seulement !', 'color': 'gray'}]),
             # seul : entraînement, pas de victoire
@@ -106,7 +285,7 @@ w('ph/become_prop', ['# @s devient cacheur : invisible, petit, un objet au hasar
                      '# Cacheur fragile : 5 cœurs (2 coups d\'épée de chercheur)',
                      'attribute @s minecraft:max_health base set 10', 'effect give @s minecraft:instant_health 1 0 true',
                      'item replace entity @s hotbar.0 with minecraft:goat_horn[instrument="minecraft:ponder_goat_horn",custom_name={"text":"📯 Faire du bruit","color":"gold","italic":false},lore=[{"text":"Clic droit : un bruit pour narguer les chercheurs","color":"gray","italic":false}]]',
-                     'execute store result score @s mg.php run random value 1..' + str(len(PROPS)),
+                     'function mg:ph/rnd',
                      'execute at @s run summon minecraft:block_display ~ ~ ~ {Tags:["mg.phd","mg.phnew"],teleport_duration:1,block_state:{Name:"minecraft:barrel"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.5f,0f,-0.5f],scale:[1f,1f,1f]}}',
                      'execute at @s run summon minecraft:interaction ~ ~ ~ {Tags:["mg.phi","mg.phnew"],width:1.02f,height:1.02f}',
                      'scoreboard players operation @e[tag=mg.phnew] mg.pid = @s mg.pid', 'tag @e[tag=mg.phnew] remove mg.phnew',
@@ -158,8 +337,8 @@ w('ph/seeker_kit', ['# @s : chercheur', 'clear @s', 'effect clear @s minecraft:i
                     'item replace entity @s armor.chest with minecraft:leather_chestplate[dyed_color=16711680,unbreakable={}]',
                     'item replace entity @s armor.head with minecraft:leather_helmet[dyed_color=16711680,unbreakable={}]',
                     'effect give @s minecraft:saturation infinite 0 true', 'effect give @s minecraft:speed infinite 0 true'])
-w('ph/release', ['# Fin de la cachette : les chercheurs entrent', 'effect clear @a[tag=mg.phs] minecraft:blindness',
-                 f'spreadplayers 0 {Z} 1 4 under 85 false @a[tag=mg.phs]', 'execute as @a[tag=mg.phs] at @s run spawnpoint @s ~ ~ ~',
+w('ph/release', ['# Fin de la cachette : les chercheurs entrent', 'effect clear @a[tag=mg.phs] minecraft:blindness'] +
+  per_map('spreadplayers 0 {z} 1 4 under {u} false @a[tag=mg.phs]') + ['execute as @a[tag=mg.phs] at @s run spawnpoint @s ~ ~ ~',
                  'title @a[tag=mg.play] title {"text":"Les chercheurs arrivent !","color":"red","bold":true}',
                  'execute as @a[tag=mg.play] at @s run playsound minecraft:entity.wolf.howl master @s ~ ~ ~ 0.7 1'])
 w('ph/taunt', ['# Toutes les 20 s : chaque cacheur fait un petit bruit',
@@ -174,12 +353,12 @@ w('ph/found', ['# @s (cacheur) trouvé : devient chercheur', 'scoreboard players
                'scoreboard players operation $pid mg.st = @s mg.pid',
                'execute as @e[tag=mg.phd] if score @s mg.pid = $pid mg.st run kill @s',
                'execute as @e[tag=mg.phi] if score @s mg.pid = $pid mg.st run kill @s',
-               'tag @s remove mg.phh', 'tag @s add mg.phs', 'team join mg_red @s', 'function mg:ph/seeker_kit',
-               f'spreadplayers 0 {Z} 1 4 under 85 false @s',
+               'tag @s remove mg.phh', 'tag @s add mg.phs', 'team join mg_red @s', 'function mg:ph/seeker_kit'] +
+  per_map('spreadplayers 0 {z} 1 4 under {u} false @s') + [
                'tellraw @a[tag=mg.play] [{"text":"🎭 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a été trouvé et rejoint les chercheurs !","color":"gray"}]',
                'execute as @a[tag=mg.play] at @s run playsound minecraft:entity.item.break master @s ~ ~ ~ 0.8 0.7'])
 w('ph/tick', ['# 🎭 Prop Hunt — tick', 'scoreboard players add $pht mg.st 1',
-              f'execute if score $pht mg.st matches ..{HIDE - 1} run tp @a[tag=mg.phs] 0.5 89 {Z}.5',
+              ] + [f'execute if score $pht mg.st matches ..{HIDE - 1} ' + l[8:] for l in per_map('tp @a[tag=mg.phs] 0.5 {cy} {z}.5')] + [
               f'execute if score $pht mg.st matches {HIDE} run function mg:ph/release',
               # copie d'objet (accroupi), suivi, coups sur les objets
               'execute as @a[tag=mg.phh,scores={mg.gsn=1..},tag=!mg.phsn] run function mg:ph/copy',
@@ -231,4 +410,6 @@ C.patch('core/load', 'scoreboard objectives add mg.bw trigger', ['team add mg_ph
                                                                  'scoreboard players set #4 mg.st 4'])
 C.patch('desinstaller', 'scoreboard objectives remove mg.bw', ['team remove mg_ph'])
 C.forceload([f'# Prop Hunt (z {Z})', f'forceload add -23 {Z - 18} 23 {Z + 18}'])
+C.forceload([f'# Prop Hunt, autres cartes (z {Z2}, {Z3}, {Z4})', f'forceload add -27 {Z2 - 19} 27 {Z2 + 19}',
+             f'forceload add -25 {Z3 - 17} 25 {Z3 + 17}', f'forceload add -23 {Z4 - 18} 23 {Z4 + 18}'])
 print('Prop Hunt OK')
