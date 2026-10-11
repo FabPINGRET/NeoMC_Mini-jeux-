@@ -47,6 +47,8 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.phpt dummy
+scoreboard objectives add mg.phcd dummy
 scoreboard objectives add mg.phn minecraft.used:minecraft.goat_horn
 scoreboard objectives add mg.php dummy
 scoreboard objectives add mg.phx dummy

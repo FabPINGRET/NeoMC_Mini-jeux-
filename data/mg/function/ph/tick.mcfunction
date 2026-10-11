@@ -11,8 +11,12 @@ tag @a[tag=mg.phsn,scores={mg.gsn=0}] remove mg.phsn
 execute as @a[tag=mg.phsn] unless score @s mg.gsn matches 1.. run tag @s remove mg.phsn
 scoreboard players set @a[tag=mg.phx] mg.gsn 0
 execute as @a[tag=mg.phh] at @s run function mg:ph/follow
-execute as @a[tag=mg.phh,scores={mg.phn=1..}] at @s run function mg:ph/taunt_one
+execute as @e[type=minecraft:interaction,tag=mg.phi] if data entity @s interaction run function mg:ph/use_prop
+execute as @a[tag=mg.phh,scores={mg.phn=1..}] run tag @s add mg.phuse
 scoreboard players reset @a[scores={mg.phn=1..}] mg.phn
+scoreboard players remove @a[tag=mg.phx,scores={mg.phcd=1..}] mg.phcd 1
+execute as @a[tag=mg.phh,tag=mg.phuse] at @s run function mg:ph/horn
+tag @a remove mg.phuse
 execute as @e[type=minecraft:interaction,tag=mg.phi] if data entity @s attack run function mg:ph/hit_prop
 execute if score $n0 mg.st matches 2.. as @a[tag=mg.phh,scores={mg.deaths=1..}] run function mg:ph/found
 execute unless score $n0 mg.st matches 2.. as @e[type=minecraft:player,tag=mg.phh,scores={mg.deaths=1..}] run function mg:ph/srevive

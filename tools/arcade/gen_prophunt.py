@@ -344,6 +344,13 @@ w('ph/release', ['# Fin de la cachette : les chercheurs entrent', 'effect clear 
   per_map('spreadplayers 0 {z} 1 4 under {u} false @a[tag=mg.phs]') + ['execute as @a[tag=mg.phs] at @s run spawnpoint @s ~ ~ ~',
                  'title @a[tag=mg.play] title {"text":"Les chercheurs arrivent !","color":"red","bold":true}',
                  'execute as @a[tag=mg.play] at @s run playsound minecraft:entity.wolf.howl master @s ~ ~ ~ 0.7 1'])
+w('ph/use_prop', ['# @s = interaction cliquée (clic droit) : si c\'est un cacheur → corne', 'execute on target if entity @s[tag=mg.phh] run tag @s add mg.phuse',
+                  'data remove entity @s interaction'])
+w('ph/horn', ['# @s (cacheur) : bruit volontaire, recharge 3 s',
+              'execute if score @s mg.phcd matches 1.. run return run title @s actionbar {"text":"📯 Corne en recharge…","color":"gray"}',
+              'scoreboard players set @s mg.phcd 60', 'function mg:ph/taunt_one',
+              'playsound minecraft:item.goat_horn.sound.0 player @a ~ ~ ~ 1.5 1.2',
+              'title @s actionbar {"text":"📯 Tu as fait du bruit !","color":"gold"}'])
 w('ph/taunt', ['# Toutes les 20 s : chaque cacheur fait un petit bruit',
                'execute as @a[tag=mg.phh] at @s run function mg:ph/taunt_one'])
 w('ph/taunt_one', ['execute store result score $phq mg.st run random value 0..3',
@@ -369,8 +376,13 @@ w('ph/tick', ['# 🎭 Prop Hunt — tick', 'scoreboard players add $pht mg.st 1'
               'tag @a[tag=mg.phsn] remove mg.phsn' if False else 'execute as @a[tag=mg.phsn] unless score @s mg.gsn matches 1.. run tag @s remove mg.phsn',
               'scoreboard players set @a[tag=mg.phx] mg.gsn 0',
               'execute as @a[tag=mg.phh] at @s run function mg:ph/follow',
-              'execute as @a[tag=mg.phh,scores={mg.phn=1..}] at @s run function mg:ph/taunt_one',
+              # corne : le cacheur est DANS sa propre interaction (taille 0,5) → son clic droit touche l'interaction, pas la corne
+              'execute as @e[type=minecraft:interaction,tag=mg.phi] if data entity @s interaction run function mg:ph/use_prop',
+              'execute as @a[tag=mg.phh,scores={mg.phn=1..}] run tag @s add mg.phuse',
               'scoreboard players reset @a[scores={mg.phn=1..}] mg.phn',
+              'scoreboard players remove @a[tag=mg.phx,scores={mg.phcd=1..}] mg.phcd 1',
+              'execute as @a[tag=mg.phh,tag=mg.phuse] at @s run function mg:ph/horn',
+              'tag @a remove mg.phuse',
               'execute as @e[type=minecraft:interaction,tag=mg.phi] if data entity @s attack run function mg:ph/hit_prop',
               'execute if score $n0 mg.st matches 2.. as @a[tag=mg.phh,scores={mg.deaths=1..}] run function mg:ph/found',
               # seul : le cacheur reste cacheur
@@ -431,7 +443,7 @@ w('ph/cleanup', ['function mg:ph/kill_all', 'execute as @a[tag=mg.phx] run attri
 
 C.register([96], 'ph', [C.announce(96, '', '🎭 PROP HUNT', 'gold', 'cachez-vous en objets, les chercheurs arrivent dans 30 s !')])
 C.objectives([('mg.phn', 'minecraft.used:minecraft.goat_horn'), ('mg.pid', 'dummy'), ('mg.php', 'dummy'), ('mg.phx', 'dummy'), ('mg.phz', 'dummy'), ('mg.phs', 'dummy')])
-C.objectives([('mg.phpt', 'dummy')])
+C.objectives([('mg.phpt', 'dummy'), ('mg.phcd', 'dummy')])
 C.patch('core/load', 'scoreboard objectives add mg.bw trigger', ['team add mg_ph', 'team modify mg_ph nametagVisibility never',
                                                                  'team modify mg_ph friendlyFire false', 'team modify mg_ph collisionRule never',
                                                                  'scoreboard players set #4 mg.st 4'])
