@@ -71,6 +71,7 @@ data remove storage mg:lobby pvpc2
 data remove storage mg:pvpc p
 data remove storage mg:pvpc s
 bossbar remove mg:soleil
+bossbar remove mg:ev
 team remove mg_sq
 data remove storage mg:sq b
 scoreboard objectives remove mg.sqx

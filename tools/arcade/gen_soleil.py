@@ -110,9 +110,28 @@ w('soleil/green', ['# Feu vert : la poupée tourne le dos ; durée au hasard (pl
                    'execute store result score $sqt mg.st run random value 35..90',
                    'execute if score $sqc mg.st matches 600.. store result score $sqt mg.st run random value 25..65',
                    'execute if score $sqc mg.st matches 1200.. store result score $sqt mg.st run random value 15..45',
-                   f'title {PL} times 0 30 5', f'title {PL} title {{"text":"1, 2, 3…","color":"green","bold":true}}',
-                   f'title {PL} subtitle {{"text":"avance !","color":"gray"}}',
-                   f'execute as {PL} at @s run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 0.8 0.8'])
+                   # compteur : durée totale notée, « 1… 2… 3… » égrenés au tiers et aux deux tiers
+                   'scoreboard players operation $sqg mg.st = $sqt mg.st', 'scoreboard players set $sqk mg.st -1',
+                   f'title {PL} times 0 20 4', f'title {PL} subtitle {{"text":"avance !","color":"gray"}}'])
+# compteur sonore et visuel du feu vert
+CNT = ['# Feu vert : « 1… 2… 3… » (titre + note de plus en plus aiguë) et barre de temps restant (barre d\'action)',
+       'scoreboard players operation $k mg.st = $sqg mg.st', 'scoreboard players operation $k mg.st -= $sqt mg.st',
+       'scoreboard players operation $k mg.st *= #3 mg.st', 'scoreboard players operation $k mg.st /= $sqg mg.st',
+       'execute if score $k mg.st matches 3.. run scoreboard players set $k mg.st 2',
+       'execute unless score $k mg.st = $sqk mg.st run function mg:soleil/count_step',
+       # barre : 10 cases, vert → jaune → rouge
+       'scoreboard players set #10 mg.st 10', 'scoreboard players operation $b mg.st = $sqt mg.st', 'scoreboard players operation $b mg.st *= #10 mg.st',
+       'scoreboard players operation $b mg.st /= $sqg mg.st']
+BARS = []
+for n in range(11):
+    col = 'green' if n >= 7 else ('yellow' if n >= 4 else 'red')
+    BARS.append(f'execute if score $b mg.st matches {n} run title {PL} actionbar [{{"text":"🟢 ","color":"{col}"}},'
+                f'{{"text":"{"█" * n}","color":"{col}"}},{{"text":"{"█" * (10 - n)}","color":"dark_gray"}},{{"text":" avance !","color":"{col}","bold":true}}]')
+w('soleil/count', CNT + BARS)
+STEPS = [(0, '1…', 'green', 0.9), (1, '2…', 'yellow', 1.1), (2, '3…', 'gold', 1.35)]
+w('soleil/count_step', ['scoreboard players operation $sqk mg.st = $k mg.st'] +
+  [f'execute if score $k mg.st matches {k} run title {PL} title {{"text":"{t}","color":"{c}","bold":true}}' for k, t, c, _ in STEPS] +
+  [f'execute if score $k mg.st matches {k} as {PL} at @s run playsound minecraft:block.note_block.bell master @s ~ ~ ~ 1 {p}' for k, _, _, p in STEPS])
 w('soleil/red', ['# Feu rouge : la poupée se retourne, 0,5 s de grâce', 'scoreboard players set $sqp mg.st 1', 'scoreboard players set $sqt mg.st 10',
                  'function mg:soleil/turn {yaw:180}',
                  f'title {PL} times 0 25 5', f'title {PL} title {{"text":"SOLEIL !","color":"red","bold":true}}',
@@ -150,7 +169,9 @@ w('soleil/finish', ['# @s franchit la ligne rouge', 'tag @s add mg.sqf', 'scoreb
 w('soleil/tick', ['# 🔴 1, 2, 3 Soleil — tick', 'scoreboard players add $sqc mg.st 1', 'scoreboard players remove $sqt mg.st 1',
                   'execute store result bossbar mg:soleil value run scoreboard players get $sqc mg.st',
                   f'execute as @a[tag=mg.play,tag=!mg.sqf,x={X1 - 1},y=55,z={ZF},dx={X2 - X1 + 2},dy=30,dz={ZE - ZF + 2}] run function mg:soleil/finish',
+                  'execute if score $sqp mg.st matches 0 if score $sqt mg.st matches 1.. run function mg:soleil/count',
                   'execute if score $sqp mg.st matches 0 if score $sqt mg.st matches ..0 run function mg:soleil/red',
+                  f'execute if score $sqp mg.st matches 1..2 run title {PL} actionbar {{"text":"🔴 NE BOUGE PLUS !","color":"red","bold":true}}',
                   'execute if score $sqp mg.st matches 1 if score $sqt mg.st matches ..0 run function mg:soleil/watch',
                   f'execute if score $sqp mg.st matches 2 as {AL} run function mg:soleil/check',
                   'execute if score $sqp mg.st matches 2 if score $sqt mg.st matches ..0 run function mg:soleil/green',
