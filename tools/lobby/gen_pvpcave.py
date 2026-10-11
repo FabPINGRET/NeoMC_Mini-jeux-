@@ -11,6 +11,7 @@ dans la roche → arène PvP simple en dessous. Pour se taper dessus en attendan
 - Boutique (émeraude de la barre, clic droit) : pomme d'or, pomme d'or enchantée (très chère), potions de soin / dégâts /
   force / vitesse / régénération, chien de garde, flèches, perle de l'Ender, totem, épée en diamant.
 - Retour au spawn (boussole de la barre, clic droit) : 5 s sans bouger de l'arène ni prendre de coup, sinon annulé.
+- Mort : retour au mini-lobby sans équipement (achats perdus), il faut rechoisir une classe.
 - Une partie qui démarre retire les joueurs de l'arène (kit, chiens) ; mg:core/reset_player fait aussi le ménage.
 Tout est reconstruit si le bloc témoin (pierre de magnétite cachée) disparaît.
 """
@@ -253,6 +254,9 @@ w('pvpc/tick', ['# ⚔ Arène PvP souterraine — tick (seulement si quelqu\'un 
    'execute as @a[tag=mg.pvpc,scores={mg.deaths=1..}] run function mg:pvpc/died',
    'execute as @a[tag=mg.pvpc,scores={mg.pshop=1..}] run function mg:pvpc/buy',
    'execute as @a[tag=mg.pvpc,scores={mg.phc=1..}] run function mg:pvpc/home_tick',
+   # émeraude (boutique) et boussole (retour) : consommées au clic droit → rendues dès qu'elles manquent
+   'execute as @a[tag=mg.pvpc] unless items entity @s container.* minecraft:emerald[minecraft:custom_data~{pvpc_shop:1b}] run function mg:pvpc/give_shop',
+   'execute as @a[tag=mg.pvpc] unless items entity @s container.* minecraft:recovery_compass[minecraft:custom_data~{pvpc_home:1b}] run function mg:pvpc/give_home',
    # sorti de la zone autrement (tp, menu…) : plus inscrit
    f'execute as @a[tag=mg.pvpc] unless entity @s[{ZONE}] run function mg:pvpc/cleanup',
    # pièces ramassées
@@ -300,9 +304,13 @@ w('pvpc/streak', ['# Bonus de série (@s, macro : n kills, b pièces, t texte)',
                   '$scoreboard players add @s mg.pco $(b)',
                   '$tellraw @a[tag=mg.pvpc] [{"text":"🔥 ","color":"red"},{"selector":"@s","color":"yellow"},{"text":" $(t) ($(n) kills d\'affilée) : +$(b) 💰","color":"red"}]',
                   'execute as @a[tag=mg.pvpc] at @s run playsound minecraft:entity.blaze.shoot master @s ~ ~ ~ 0.6 1.4'])
-w('pvpc/died', ['# @s est mort dans l\'arène : série perdue, réapparaît dans l\'arène protégé 3 s, kit de classe rendu',
+w('pvpc/died', ['# @s est mort dans l\'arène : série perdue, équipement (et achats) perdus, retour au mini-lobby pour rechoisir une classe',
                 'scoreboard players set @s mg.deaths 0', 'scoreboard players set @s mg.pks 0', 'scoreboard players set @s mg.phc 0',
-                'function mg:pvpc/equip', 'effect give @s minecraft:resistance 3 4 true'])
+                'function mg:pvpc/cleanup', 'clear @s', 'effect clear @s', 'function mg:core/attr_reset',
+                f'tp @s 13.5 {ry1} 11.0 180 0', f'spawnpoint @s 13 {ry1} 11',
+                'function mg:core/give_menu', 'function mg:core/heal',
+                'title @s title {"text":"☠ Tu es mort","color":"red","bold":true}',
+                'title @s subtitle {"text":"marche sur un socle pour redescendre","color":"gray"}'])
 w('pvpc/dog', ['# @s achète un chien de garde (2 au maximum)',
                'scoreboard players operation $p mg.st = @s mg.pvid', 'scoreboard players set $n mg.st 0',
                'execute as @e[type=minecraft:wolf,tag=mg.pdog] if score @s mg.pvid = $p mg.st run scoreboard players add $n mg.st 1',
@@ -351,6 +359,8 @@ for key, fn in (('shop', 'pvpc/shop_adv'), ('home', 'pvpc/home_adv')):
         json.dump({'criteria': {'use': {'trigger': 'minecraft:consume_item', 'conditions': {'item': {'predicates': {
             'minecraft:custom_data': f'{{pvpc_{key}:1b}}'}}}}}, 'rewards': {'function': f'mg:{fn}'}}, f, ensure_ascii=False, indent=2)
         f.write('\n')
+w('pvpc/give_shop', [f'execute unless items entity @s hotbar.7 * run return run item replace entity @s hotbar.7 with {SHOP_ITEM}', f'give @s {SHOP_ITEM}'])
+w('pvpc/give_home', [f'execute unless items entity @s hotbar.8 * run return run item replace entity @s hotbar.8 with {HOME_ITEM}', f'give @s {HOME_ITEM}'])
 w('pvpc/shop_adv', ['advancement revoke @s only mg:pvpc_shop', f'item replace entity @s hotbar.7 with {SHOP_ITEM}',
                     'execute if entity @s[tag=mg.pvpc] run function mg:pvpc/shop'])
 w('pvpc/home_adv', ['advancement revoke @s only mg:pvpc_home', f'item replace entity @s hotbar.8 with {HOME_ITEM}',
