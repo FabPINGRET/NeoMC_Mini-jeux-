@@ -255,8 +255,10 @@ w('pvpc/tick', ['# ⚔ Arène PvP souterraine — tick (seulement si quelqu\'un 
    'execute as @a[tag=mg.pvpc,scores={mg.pshop=1..}] run function mg:pvpc/buy',
    'execute as @a[tag=mg.pvpc,scores={mg.phc=1..}] run function mg:pvpc/home_tick',
    # émeraude (boutique) et boussole (retour) : consommées au clic droit → rendues dès qu'elles manquent
-   'execute as @a[tag=mg.pvpc] unless items entity @s container.* minecraft:emerald[minecraft:custom_data~{pvpc_shop:1b}] run function mg:pvpc/give_shop',
-   'execute as @a[tag=mg.pvpc] unless items entity @s container.* minecraft:recovery_compass[minecraft:custom_data~{pvpc_home:1b}] run function mg:pvpc/give_home',
+   'execute as @a[tag=mg.pvpc,tag=!mg.pgw] unless items entity @s container.* minecraft:emerald[minecraft:custom_data~{pvpc_shop:1b}] run function mg:pvpc/give_shop',
+   'execute as @a[tag=mg.pvpc,tag=!mg.pgw] unless items entity @s container.* minecraft:recovery_compass[minecraft:custom_data~{pvpc_home:1b}] run function mg:pvpc/give_home',
+   # un tick d'attente après le clic : le client doit d'abord recevoir le slot vide
+   'tag @a[tag=mg.pgw] remove mg.pgw',
    # sorti de la zone autrement (tp, menu…) : plus inscrit
    f'execute as @a[tag=mg.pvpc] unless entity @s[{ZONE}] run function mg:pvpc/cleanup',
    # pièces ramassées
@@ -361,9 +363,11 @@ for key, fn in (('shop', 'pvpc/shop_adv'), ('home', 'pvpc/home_adv')):
         f.write('\n')
 w('pvpc/give_shop', [f'execute unless items entity @s hotbar.7 * run return run item replace entity @s hotbar.7 with {SHOP_ITEM}', f'give @s {SHOP_ITEM}'])
 w('pvpc/give_home', [f'execute unless items entity @s hotbar.8 * run return run item replace entity @s hotbar.8 with {HOME_ITEM}', f'give @s {HOME_ITEM}'])
-w('pvpc/shop_adv', ['advancement revoke @s only mg:pvpc_shop', f'item replace entity @s hotbar.7 with {SHOP_ITEM}',
+# NB : ne PAS remettre l'objet ici — le serveur croit le slot inchangé et n'envoie rien au client (objet fantôme).
+# L'objet consommé est rendu au tick suivant par pvpc/give_shop / give_home.
+w('pvpc/shop_adv', ['advancement revoke @s only mg:pvpc_shop', 'tag @s add mg.pgw',
                     'execute if entity @s[tag=mg.pvpc] run function mg:pvpc/shop'])
-w('pvpc/home_adv', ['advancement revoke @s only mg:pvpc_home', f'item replace entity @s hotbar.8 with {HOME_ITEM}',
+w('pvpc/home_adv', ['advancement revoke @s only mg:pvpc_home', 'tag @s add mg.pgw',
                     'execute unless entity @s[tag=mg.pvpc] run return 0',
                     'execute if score @s mg.phc matches 1.. run return 0',
                     'scoreboard players set @s mg.phc 100', 'scoreboard players set @s mg.pdt 0',
