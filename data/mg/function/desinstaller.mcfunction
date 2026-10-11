@@ -22,6 +22,8 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.phpt
+scoreboard objectives remove mg.phcd
 scoreboard objectives remove mg.phn
 scoreboard objectives remove mg.php
 scoreboard objectives remove mg.phx
