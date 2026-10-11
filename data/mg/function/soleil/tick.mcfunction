@@ -3,7 +3,9 @@ scoreboard players add $sqc mg.st 1
 scoreboard players remove $sqt mg.st 1
 execute store result bossbar mg:soleil value run scoreboard players get $sqc mg.st
 execute as @a[tag=mg.play,tag=!mg.sqf,x=-21,y=55,z=37080,dx=42,dy=30,dz=18] run function mg:soleil/finish
+execute if score $sqp mg.st matches 0 if score $sqt mg.st matches 1.. run function mg:soleil/count
 execute if score $sqp mg.st matches 0 if score $sqt mg.st matches ..0 run function mg:soleil/red
+execute if score $sqp mg.st matches 1..2 run title @a[tag=mg.play] actionbar {"text":"🔴 NE BOUGE PLUS !","color":"red","bold":true}
 execute if score $sqp mg.st matches 1 if score $sqt mg.st matches ..0 run function mg:soleil/watch
 execute if score $sqp mg.st matches 2 as @a[tag=mg.play,tag=!mg.sqf] run function mg:soleil/check
 execute if score $sqp mg.st matches 2 if score $sqt mg.st matches ..0 run function mg:soleil/green
