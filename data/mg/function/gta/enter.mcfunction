@@ -26,6 +26,7 @@ title @s title {"text":"NEO GTA","color":"gold","bold":true}
 title @s subtitle {"text":"Deviens le plus riche de Neo City","color":"gray"}
 tellraw @s [{"text":"🚓 NEO GTA","color":"gold","bold":true},{"text":" : deviens le plus riche de la ville","color":"yellow"}]
 tellraw @s [{"text":" 💵 Gagner : ","color":"green"},{"text":"accroupi + arme en main pour braquer passants, commerces, banque ; missions au 📱","color":"gray"}]
+tellraw @s [{"text":" 🔫 Armes : ","color":"gold"},{"text":"clic gauche tirer, clic droit viser, accroupi recharger","color":"gray"}]
 tellraw @s [{"text":" 🔫 Dépenser : ","color":"aqua"},{"text":"armurerie et concession au parc, tout ce qui est acheté est gratuit à la villa","color":"gray"}]
 tellraw @s [{"text":" ★ Police : ","color":"red"},{"text":"chaque crime = étoile, une de moins toutes les 15 s","color":"gray"}]
 tellraw @s [{"text":" 🚪 Sortir : ","color":"yellow"},{"text":"Échap → ≡ Menu","color":"gray"}]

@@ -22,6 +22,13 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.evd
+scoreboard objectives remove mg.evc
+scoreboard objectives remove mg.evw
+scoreboard objectives remove mg.lrc
+kill @e[type=minecraft:interaction,tag=mg.gci]
+scoreboard objectives remove mg.gcid
+scoreboard objectives remove mg.gbu
 data remove storage mg:ms t
 scoreboard objectives remove mg.msx
 scoreboard objectives remove mg.msz

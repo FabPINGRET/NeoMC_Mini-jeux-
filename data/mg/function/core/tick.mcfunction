@@ -13,6 +13,7 @@ scoreboard players enable @a mg.tel
 scoreboard players enable @a mg.pl
 scoreboard players enable @a mg.dice
 scoreboard players enable @a mg.xs
+execute if score $setup mg.st matches 1 run function mg:gun/cl_tick
 function mg:gta/pre_tick
 function mg:survie/tick
 execute as @a[scores={mg.dice=5..10}] run function mg:party/menu_cmd
@@ -60,7 +61,9 @@ execute as @a[scores={mg.xs=1..}] run function mg:elyrace/solo/cmd
 execute if entity @a[tag=mg.xso] run function mg:elyrace/solo/tick
 
 # Armurerie du lobby
+execute if score $setup mg.st matches 1 run function mg:lobby/guns_tick
 execute if score $setup mg.st matches 1 run function mg:lobby/armory_tick
+execute if score $setup mg.st matches 1 run function mg:lobby/ev/tick
 scoreboard players remove @a[scores={mg.fd=1..}] mg.fd 1
 # Parcours d'élytra : socle de départ, joueurs en vol, objets du parcours jamais conservés
 execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.ely,gamemode=adventure,x=16,y=63,z=-9,dx=0.99,dy=2.5,dz=0.99] run function mg:elytra/start
