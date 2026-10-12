@@ -1,6 +1,6 @@
 """🎳 Bowling façon Wii Sports — id 214, salle de 8 pistes en z 35170 (x -34..33, z 35130..35185, y 62..76).
 
-    flock /home/claude/gen.lock python3 tools/arcade/gen_bowling.py .
+    python tools/arcade/gen_bowling.py .        (depuis la racine du dépôt)
 
 Chacun sa piste, tout le monde joue en même temps (8 joueurs max : au-delà, les joueurs en trop regardent en
 spectateur — une piste partagée doublerait la durée de la partie). FRAMES frames (5 par défaut, ~5 min ; 10 = partie

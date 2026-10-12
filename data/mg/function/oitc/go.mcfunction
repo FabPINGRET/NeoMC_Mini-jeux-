@@ -1,6 +1,7 @@
 # One in the Chamber — début de partie (premier à 10 kills)
 gamemode adventure @a[tag=mg.play]
 scoreboard players set @a[tag=mg.play] mg.lv 3
+scoreboard players reset * mg.ok
 scoreboard players set @a[tag=mg.play] mg.ok 0
 scoreboard players set $og mg.st 10
 scoreboard players set $osi mg.st 600

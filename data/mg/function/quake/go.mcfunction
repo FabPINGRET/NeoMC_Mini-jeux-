@@ -8,6 +8,7 @@ scoreboard players reset @a mg.gi
 scoreboard players set @a[tag=mg.play] mg.ks 0
 scoreboard players reset @a mg.us
 kill @e[type=minecraft:marker,tag=mg.grm]
+scoreboard players reset * mg.qk
 scoreboard players set @a[tag=mg.play] mg.qk 0
 scoreboard players set @a[tag=mg.play] mg.cd 0
 scoreboard players set @a[tag=mg.play] mg.deaths 0

@@ -1,3 +1,5 @@
+execute unless score $state mg.st matches 0 run scoreboard players reset $evk mg.st
+execute if score $evon mg.st matches 1.. run scoreboard players reset $evk mg.st
 execute unless score $state mg.st matches 0 run return run tellraw @s {"text":"Une partie est en cours.","color":"red"}
 execute if score $evon mg.st matches 1.. run return run tellraw @s {"text":"Un événement est déjà en cours (⛔ Arrêter dans le menu des événements).","color":"red"}
 scoreboard players set $evn mg.st 60

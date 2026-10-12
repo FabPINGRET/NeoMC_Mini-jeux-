@@ -334,6 +334,8 @@ execute if score $game mg.st matches 7 if score $sm mg.st matches 4 run function
 execute if score $game mg.st matches 7 if score $sm mg.st matches 5 run function mg:sheepwar7/prepare
 execute if score $game mg.st matches 7 if score $sm mg.st matches 6 run function mg:sheepwar8/prepare
 
+# Partie annulée pendant la préparation (ex. Téléphone sans assez de joueurs) : pas de gel ni de titre
+execute if score $state mg.st matches 3 run return 0
 # Gel pendant le compte à rebours
 execute as @a[tag=mg.play] run function mg:core/freeze
 effect give @a[tag=mg.play] minecraft:resistance 15 255 true

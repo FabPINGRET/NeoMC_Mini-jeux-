@@ -1,6 +1,6 @@
 """⛳ Golf façon Wii Sports — id 215, parcours de 6 trous (par 23) sur une île flottante 200×200 (centre X, Z ci-dessous).
 
-    cd /home/claude/dp && flock /home/claude/gen.lock python3 tools/arcade/gen_golf.py .
+    python tools/arcade/gen_golf.py .        (depuis la racine du dépôt)
     python3 tools/arcade/gen_golf.py . --map      # aperçu ASCII du parcours (n'écrit rien)
 
 Tout le monde joue en même temps, chacun sa balle (item_display), même parcours. Le joueur tient un club

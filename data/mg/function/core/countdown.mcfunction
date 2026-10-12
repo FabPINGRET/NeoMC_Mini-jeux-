@@ -8,10 +8,10 @@ execute if score $timer mg.st matches 80 run title @a[tag=!mg.surv] title [{"tex
 execute if score $timer mg.st matches 60 run title @a[tag=!mg.surv] title [{"text":"3","color":"gold","bold":true}]
 execute if score $timer mg.st matches 40 run title @a[tag=!mg.surv] title [{"text":"2","color":"red","bold":true}]
 execute if score $timer mg.st matches 20 run title @a[tag=!mg.surv] title [{"text":"1","color":"dark_red","bold":true}]
-execute if score $timer mg.st matches 100 as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 1
-execute if score $timer mg.st matches 80 as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 1
-execute if score $timer mg.st matches 60 as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 1.2
-execute if score $timer mg.st matches 40 as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 1.4
-execute if score $timer mg.st matches 20 as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 1.6
+execute if score $timer mg.st matches 100 as @a[tag=!mg.surv] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 1
+execute if score $timer mg.st matches 80 as @a[tag=!mg.surv] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 1
+execute if score $timer mg.st matches 60 as @a[tag=!mg.surv] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 1.2
+execute if score $timer mg.st matches 40 as @a[tag=!mg.surv] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 1.4
+execute if score $timer mg.st matches 20 as @a[tag=!mg.surv] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 1.6
 
 execute if score $timer mg.st matches ..0 run function mg:core/begin

@@ -1,4 +1,5 @@
 # @s atterrit dans l'eau : niveau suivant (ou victoire)
+execute unless score $state mg.st matches 2 run return 0
 execute if score @s mg.cd matches 1.. run return 0
 execute at @s run particle minecraft:splash ~ ~ ~ 0.5 0.5 0.5 0.2 60
 execute at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.3

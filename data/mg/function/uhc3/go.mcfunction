@@ -4,6 +4,7 @@ scoreboard players set #-1 mg.st -1
 scoreboard players set $zr mg.st 42
 gamerule natural_health_regeneration false
 gamerule keep_inventory false
+tellraw @a[tag=mg.surv] {"text":"⚠ Partie UHC en cours : inventaire NON conservé à la mort jusqu’à la fin de la partie, prudence !","color":"red"}
 gamemode survival @a[tag=mg.play]
 team join mg_green @a[tag=mg.play]
 give @a[tag=mg.play] minecraft:iron_pickaxe[enchantments={efficiency:5},unbreakable={}]

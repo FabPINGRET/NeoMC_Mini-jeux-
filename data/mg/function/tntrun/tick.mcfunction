@@ -2,6 +2,11 @@
 
 # Marquage du bloc sous chaque joueur (au sol uniquement)
 execute as @a[tag=mg.play] at @s if block ~ ~-1 ~ minecraft:white_wool run setblock ~ ~-1 ~ minecraft:red_wool
+# Coins du joueur (0,3 bloc) : rester au bord d'un bloc ne protège plus
+execute as @a[tag=mg.play] at @s positioned ~0.3 ~ ~0.3 if block ~ ~-1 ~ minecraft:white_wool run setblock ~ ~-1 ~ minecraft:red_wool
+execute as @a[tag=mg.play] at @s positioned ~-0.3 ~ ~0.3 if block ~ ~-1 ~ minecraft:white_wool run setblock ~ ~-1 ~ minecraft:red_wool
+execute as @a[tag=mg.play] at @s positioned ~0.3 ~ ~-0.3 if block ~ ~-1 ~ minecraft:white_wool run setblock ~ ~-1 ~ minecraft:red_wool
+execute as @a[tag=mg.play] at @s positioned ~-0.3 ~ ~-0.3 if block ~ ~-1 ~ minecraft:white_wool run setblock ~ ~-1 ~ minecraft:red_wool
 
 # Décroissance : les blocs marqués disparaissent régulièrement
 scoreboard players remove $dk mg.st 1

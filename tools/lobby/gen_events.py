@@ -36,6 +36,9 @@ w('lobby/ev/second', ['scoreboard players set $evtk mg.st 0',
                       'execute unless score $evn mg.st matches -2147483648.. run scoreboard players set $evn mg.st ' + str(EVERY),
                       'execute if score $evon mg.st matches 1.. unless score $state mg.st matches 0 run return run function mg:lobby/ev/stop',
                       'execute if score $evon mg.st matches 1.. run return run function mg:lobby/ev/run',
+                      # annonce en cours mais partie lancée / lobby vide : on la remet à plus tard (barre retirée)
+                      'execute unless score $state mg.st matches 0 if score $evn mg.st matches 1..60 run function mg:lobby/ev/postpone',
+                      f'execute unless entity {L} if score $evn mg.st matches 1..60 run function mg:lobby/ev/postpone',
                       'execute unless score $state mg.st matches 0 run return 0',
                       f'execute unless entity {L} run return 0',
                       'scoreboard players remove $evn mg.st 1',
@@ -63,7 +66,11 @@ w('lobby/ev/countdown', [f'bossbar set mg:ev players {L}',
 
 w('lobby/ev/force', ['# Admin : événement au hasard dans 10 s', 'scoreboard players reset $evk mg.st', 'scoreboard players set $evn mg.st 61',
                      'function mg:lobby/ev/force_go'])
-w('lobby/ev/force_go', ['execute unless score $state mg.st matches 0 run return run tellraw @s {"text":"Une partie est en cours.","color":"red"}',
+w('lobby/ev/postpone', ['# Annonce suspendue (partie lancée ou lobby vide) : même événement réannoncé au retour',
+                        'bossbar remove mg:ev', 'scoreboard players set $evn mg.st 61'])
+w('lobby/ev/force_go', ['execute unless score $state mg.st matches 0 run scoreboard players reset $evk mg.st',
+                        'execute if score $evon mg.st matches 1.. run scoreboard players reset $evk mg.st',
+                        'execute unless score $state mg.st matches 0 run return run tellraw @s {"text":"Une partie est en cours.","color":"red"}',
                         'execute if score $evon mg.st matches 1.. run return run tellraw @s {"text":"Un événement est déjà en cours (⛔ Arrêter dans le menu des événements).","color":"red"}',
                         'scoreboard players set $evn mg.st 60', 'scoreboard players set $evf mg.st 1', 'function mg:lobby/ev/pick',
                         'scoreboard players set $evf mg.st 0', 'scoreboard players set $evn mg.st 11', 'bossbar set mg:ev max 10',
@@ -71,8 +78,8 @@ w('lobby/ev/force_go', ['execute unless score $state mg.st matches 0 run return 
 for k in NAMES:
     w(f'lobby/ev/force_{k}', [f'# Admin : événement {k} dans 10 s', f'scoreboard players set $evk mg.st {k}', 'function mg:lobby/ev/force_go'])
 w('lobby/ev/cancel', ['# Admin : arrête l\'événement en cours ou annule celui qui est annoncé (le prochain revient dans 30 min)',
-                     'execute unless score $evon mg.st matches 1.. unless score $evn mg.st matches 1..60 run return run tellraw @s {"text":"Aucun événement en cours ni annoncé.","color":"gray"}',
-                     f'scoreboard players set $evn mg.st {EVERY}', 'function mg:lobby/ev/stop',
+                     'execute unless score $evon mg.st matches 1.. unless score $evn mg.st matches 1..61 run return run tellraw @s {"text":"Aucun événement en cours ni annoncé.","color":"gray"}',
+                     f'scoreboard players set $evn mg.st {EVERY}', 'scoreboard players reset $evk mg.st', 'function mg:lobby/ev/stop',
                      'tellraw @a {"text":"🎉 L\'événement du lobby a été annulé par un admin.","color":"gray"}'])
 
 # Menu admin des événements : mg.opt 67 (fenêtre), 68 au hasard, 68 + k événement k, 72 arrêter / annuler

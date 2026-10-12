@@ -147,11 +147,11 @@ def zone(key, Z):
                       f'scoreboard players remove @a[tag=mg.play] mg.tz {Z}',
                       'execute as @a[tag=mg.play,scores={mg.tx=..-1}] run scoreboard players operation @s mg.tx *= #-1 mg.st',
                       'execute as @a[tag=mg.play,scores={mg.tz=..-1}] run scoreboard players operation @s mg.tz *= #-1 mg.st',
+                      'tag @a remove mg.zout',
                       'execute as @a[tag=mg.play] if score @s mg.tx > $zr mg.st run tag @s add mg.zout',
                       'execute as @a[tag=mg.play] if score @s mg.tz > $zr mg.st run tag @s add mg.zout',
                       'execute as @a[tag=mg.zout] run damage @s 2 minecraft:outside_border',
                       'title @a[tag=mg.zout] actionbar {"text":"⚠ Hors de la zone ! Reviens vers le centre","color":"red","bold":true}',
-                      'tag @a remove mg.zout',
                       'execute store result storage mg:zone r int 1 run scoreboard players get $zr mg.st',
                       'scoreboard players operation $zn mg.st = $zr mg.st', 'scoreboard players operation $zn mg.st *= #-1 mg.st',
                       'execute store result storage mg:zone n int 1 run scoreboard players get $zn mg.st',
@@ -252,6 +252,8 @@ w('uhc/kill_all', ['kill @e[tag=mg.uhcmob]', f'kill @e[type=minecraft:item,x={-R
 w('uhc/go', ['# Départ : survie, pas de régénération naturelle, inventaire lâché à la mort',
              'scoreboard players set $uht mg.st 0', 'scoreboard players set #-1 mg.st -1', f'scoreboard players set $zr mg.st {RU + 2}',
              'gamerule natural_health_regeneration false', 'gamerule keep_inventory false',
+             # keep_inventory est global (toutes dimensions) : on prévient les joueurs en survie
+             'tellraw @a[tag=mg.surv] ' + js({'text': '⚠ Partie UHC en cours : inventaire NON conservé à la mort jusqu’à la fin de la partie, prudence !', 'color': 'red'}),
              'gamemode survival @a[tag=mg.play]', 'team join mg_green @a[tag=mg.play]',
              # outils en fer (le diamant demande au moins du fer), Efficacité V + Célérité III : la roche casse d'un coup
              'give @a[tag=mg.play] minecraft:iron_pickaxe[enchantments={efficiency:5},unbreakable={}]',
@@ -368,6 +370,7 @@ w('hg/kill_all', [f'kill @e[type=minecraft:item,x={-RH - 3},y=60,z={ZH - RH - 3}
                   f'kill @e[type=minecraft:experience_orb,x={-RH - 3},y=60,z={ZH - RH - 3},dx={2 * RH + 6},dy=60,dz={2 * RH + 6}]'])
 w('hg/go', ['# Départ : 10 s figés sur les socles', 'scoreboard players set $hgt mg.st 0', 'scoreboard players set #-1 mg.st -1',
             f'scoreboard players set $zr mg.st {RH + 2}', 'gamerule keep_inventory false', 'scoreboard players set @a mg.deaths 0',
+            'tellraw @a[tag=mg.surv] ' + js({'text': '⚠ Partie Hunger Games en cours : inventaire NON conservé à la mort jusqu’à la fin de la partie, prudence !', 'color': 'red'}),
             'team join mg_green @a[tag=mg.play]',
             'tellraw @a[tag=mg.play] ' + js([{'text': '🏹 MINI HUNGER GAMES : ', 'color': 'gold', 'bold': True},
                                              {'text': 'fouille les coffres (les meilleurs sont à la corne d\'abondance au centre). PvP après 20 s, coffres remplis à 2 min 30, la zone rétrécit à partir de 3 min. Dernier en vie gagne !', 'color': 'gray'}])])
@@ -452,5 +455,5 @@ C.patch('core/load', 'scoreboard objectives add mg.bw trigger', ['scoreboard pla
 C.patch('desinstaller', 'scoreboard objectives remove mg.bw', ['data remove storage mg:zone r'])
 C.forceload([f'# Mini UHC Run (z {ZU}) et Mini Hunger Games (z {ZH})', f'forceload add {-RU - 2} {ZU - RU - 2} {RU + 2} {ZU + RU + 2}',
              f'forceload add {-RH - 2} {ZH - RH - 2} {RH + 2} {ZH + RH + 2}'])
-print('UHC/HG OK', len(open(os.path.join(C.F, 'uhc/build.mcfunction')).read().split('\n')), 'lignes UHC,',
-      len(open(os.path.join(C.F, 'hg/build.mcfunction')).read().split('\n')), 'lignes HG')
+print('UHC/HG OK', len(open(os.path.join(C.F, 'uhc/build.mcfunction'), encoding='utf-8').read().split('\n')), 'lignes UHC,',
+      len(open(os.path.join(C.F, 'hg/build.mcfunction'), encoding='utf-8').read().split('\n')), 'lignes HG')

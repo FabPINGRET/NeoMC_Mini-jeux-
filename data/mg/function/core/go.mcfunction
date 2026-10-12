@@ -2,6 +2,9 @@
 
 # Valeur invalide ?
 execute unless score @s mg.go matches 1..226 unless score @s mg.go matches 100..196 unless score @s mg.go matches 200..213 run return run scoreboard players reset @s mg.go
+# 197 et 199 : ids sans jeu (trous de la plage des variantes) → refusés
+execute if score @s mg.go matches 197 run return run scoreboard players reset @s mg.go
+execute if score @s mg.go matches 199 run return run scoreboard players reset @s mg.go
 
 # Réservé aux admins
 execute unless entity @s[tag=mg.admin] unless entity @s[tag=mg.vauto] run tellraw @s [{"text":"⚠ Seul un admin peut lancer un jeu.","color":"red"}]

@@ -1232,7 +1232,8 @@ C.patch('core/load', 'execute unless score $rp mg.st matches 0..1 run scoreboard
          'scoreboard players set $gtw mg.st 0'])
 C.objectives([('mg.gqs', 'minecraft.used:minecraft.warped_fungus_on_a_stick')])
 C.patch('core/load', 'scoreboard objectives add mg.bw trigger',
-        ['scoreboard objectives modify mg.gta displayname [{"text":"💵 Neo GTA","color":"green","bold":true},{"text":" : les plus riches","color":"gray","bold":false}]'])
+        ['scoreboard objectives add mg.gta dummy {"text":"💵 Dollars","color":"green"}',
+         'scoreboard objectives modify mg.gta displayname [{"text":"💵 Neo GTA","color":"green","bold":true},{"text":" : les plus riches","color":"gray","bold":false}]'])
 C.objectives([('mg.grob', 'dummy'), ('mg.gsid', 'dummy'), ('mg.gveh', 'dummy')])
 C.patch('desinstaller', 'scoreboard objectives remove mg.bw',
         ['schedule clear mg:gta/wb_step', 'schedule clear mg:gta/world_build', 'schedule clear mg:gta/session_setup',

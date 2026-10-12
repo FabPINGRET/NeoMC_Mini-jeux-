@@ -56,12 +56,12 @@ w('version/load', ['# Au chargement (/reload ou démarrage) : version des fichie
                    'function #mg:version',
                    f'execute store result storage {S} gt long 1 run time query gametime'])
 w('version/ago', ['# $vm = minutes de jeu depuis la valeur de jeu $vg (→ $vh h $vm min)',
-                  'execute store result score $vn mg.st run time query gametime',
-                  'scoreboard players operation $vn mg.st -= $vg mg.st',
+                  'execute store result score $vago mg.st run time query gametime',
+                  'scoreboard players operation $vago mg.st -= $vg mg.st',
                   'scoreboard players set #1200 mg.st 1200', 'scoreboard players set #60 mg.st 60',
-                  'scoreboard players operation $vn mg.st /= #1200 mg.st',
-                  'scoreboard players operation $vh mg.st = $vn mg.st', 'scoreboard players operation $vh mg.st /= #60 mg.st',
-                  'scoreboard players operation $vm mg.st = $vn mg.st', 'scoreboard players operation $vm mg.st %= #60 mg.st'])
+                  'scoreboard players operation $vago mg.st /= #1200 mg.st',
+                  'scoreboard players operation $vh mg.st = $vago mg.st', 'scoreboard players operation $vh mg.st /= #60 mg.st',
+                  'scoreboard players operation $vm mg.st = $vago mg.st', 'scoreboard players operation $vm mg.st %= #60 mg.st'])
 AGO = [{'text': ' (il y a ', 'color': 'gray'}, {'score': {'name': '$vh', 'objective': 'mg.st'}, 'color': 'gray'}, {'text': ' h ', 'color': 'gray'},
        {'score': {'name': '$vm', 'objective': 'mg.st'}, 'color': 'gray'}, {'text': ' min de serveur allumé)', 'color': 'gray'}]
 RELOAD = {'text': '[Appliquer : /reload]', 'color': 'green', 'bold': True,
