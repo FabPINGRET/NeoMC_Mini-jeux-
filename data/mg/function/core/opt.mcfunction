@@ -46,5 +46,12 @@ execute if score @s mg.opt matches 48 if entity @s[tag=mg.admin] run function mg
 execute if score @s mg.opt matches 49 run function mg:troll/zinedine
 execute if score @s mg.opt matches 13 if entity @s[tag=mg.admin] run function mg:vote/reset
 execute if score @s mg.opt matches 62..65 run function mg:tpg/run
+execute if score @s mg.opt matches 67..72 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Réservé aux admins.","color":"red"}
+execute if score @s mg.opt matches 67 if entity @s[tag=mg.admin] run function mg:lobby/ev/menu
+execute if score @s mg.opt matches 68 if entity @s[tag=mg.admin] run function mg:lobby/ev/force
+execute if score @s mg.opt matches 69 if entity @s[tag=mg.admin] run function mg:lobby/ev/force_1
+execute if score @s mg.opt matches 70 if entity @s[tag=mg.admin] run function mg:lobby/ev/force_2
+execute if score @s mg.opt matches 71 if entity @s[tag=mg.admin] run function mg:lobby/ev/force_3
+execute if score @s mg.opt matches 72 if entity @s[tag=mg.admin] run function mg:lobby/ev/cancel
 execute if score @s mg.opt matches 66 if entity @s[tag=mg.admin] run function mg:vote/open
 scoreboard players reset @s mg.opt
