@@ -126,6 +126,44 @@
     {
       "label": [
         {
+          "text": "🎃 Déco Halloween",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Pose ou retire le décor d'Halloween du spawn (réversible)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 73"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🎄 Déco Noël",
+          "color": "red",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Pose ou retire le décor de Noël du spawn (réversible)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 74"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour au menu",
           "color": "yellow"
         }

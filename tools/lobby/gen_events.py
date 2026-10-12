@@ -87,6 +87,9 @@ EV_OPT = 67
 EV_BTN = [('🎲 Au hasard', 'light_purple', EV_OPT + 1, 'Un des trois événements, annoncé 10 s avant')]
 EV_BTN += [(NAMES[k][0], NAMES[k][1], EV_OPT + 1 + k, NAMES[k][2]) for k in NAMES]
 EV_BTN += [('⛔ Arrêter / annuler', 'dark_red', EV_OPT + 5, 'Arrête l\'événement en cours ou annule celui qui est annoncé')]
+# Décors saisonniers du spawn (tools/lobby/gen_themes.py) : bascule pose / retrait
+EV_BTN += [('🎃 Déco Halloween', 'gold', 73, 'Pose ou retire le décor d\'Halloween du spawn (réversible)'),
+           ('🎄 Déco Noël', 'red', 74, 'Pose ou retire le décor de Noël du spawn (réversible)')]
 dialog = {'type': 'minecraft:multi_action', 'title': {'text': '🎉 Événements du lobby', 'color': 'light_purple', 'bold': True},
           'pause': False, 'can_close_with_escape': True,
           'body': [{'type': 'minecraft:plain_message', 'contents': [
