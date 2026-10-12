@@ -47,6 +47,13 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+team add mg_mm
+team modify mg_mm nametagVisibility never
+team modify mg_mm collisionRule never
+team modify mg_mm friendlyFire true
+scoreboard objectives add mg.mmk playerKillCount
+scoreboard objectives add mg.mma dummy
+scoreboard objectives add mg.mmo dummy
 scoreboard objectives add mg.zqx dummy
 scoreboard objectives add mg.zqz dummy
 scoreboard objectives add mg.zsk dummy

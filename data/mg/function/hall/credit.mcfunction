@@ -54,3 +54,4 @@ execute if score $game mg.st matches 221..223 run function mg:hall/game {obj:"mg
 execute if score $game mg.st matches 224 run function mg:hall/game {obj:"mg.wg_slimejump",key:"slimejump",lbl:"🟩 Slime Jump",col:"green"}
 execute if score $game mg.st matches 225 run function mg:hall/game {obj:"mg.wg_lab",key:"lab",lbl:"🙈 Labyrinthe aveugle",col:"light_purple"}
 execute if score $game mg.st matches 226 run function mg:hall/game {obj:"mg.wg_master",key:"master",lbl:"👑 Master dit",col:"gold"}
+execute if score $game mg.st matches 227 run function mg:hall/game {obj:"mg.wg_murder",key:"murder",lbl:"🔪 Murder Mystery",col:"red"}

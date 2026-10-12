@@ -175,6 +175,8 @@ summon minecraft:text_display -13.5 64.8 24.2 {Tags:["mg.hall","mg.h_lab"],billb
 execute if data storage mg:hall e.lab run data modify entity @e[type=minecraft:text_display,tag=mg.h_lab,limit=1] text set from storage mg:hall e.lab
 summon minecraft:text_display -10.5 64.8 24.2 {Tags:["mg.hall","mg.h_master"],billboard:"vertical",line_width:99,text:[{"text":"👑 Master dit","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.125f,1.125f,1.125f]}}
 execute if data storage mg:hall e.master run data modify entity @e[type=minecraft:text_display,tag=mg.h_master,limit=1] text set from storage mg:hall e.master
+summon minecraft:text_display -7.5 64.8 24.2 {Tags:["mg.hall","mg.h_murder"],billboard:"vertical",line_width:99,text:[{"text":"🔪 Murder Mystery","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.125f,1.125f,1.125f]}}
+execute if data storage mg:hall e.murder run data modify entity @e[type=minecraft:text_display,tag=mg.h_murder,limit=1] text set from storage mg:hall e.murder
 data modify storage mg:hall v2 set value 1b
 data modify storage mg:hall v3 set value 1b
 data modify storage mg:hall v4 set value 1b

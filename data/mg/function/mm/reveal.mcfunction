@@ -1,0 +1,2 @@
+tellraw @a[tag=mg.mmx] [{"text":"🔪 Le tueur était : ","color":"red"},{"selector":"@a[tag=mg.mmm]","color":"yellow","bold":true},{"text":" (","color":"gray"},{"score":{"name":"$mmc","objective":"mg.st"},"color":"red"},{"text":" victime(s))","color":"gray"}]
+execute if entity @a[tag=mg.mmd] run tellraw @a[tag=mg.mmx] [{"text":"🏹 Le détective : ","color":"aqua"},{"selector":"@a[tag=mg.mmd]","color":"yellow"}]

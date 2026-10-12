@@ -323,6 +323,32 @@
     {
       "label": [
         {
+          "text": "🔪 🔪 Murder Mystery ",
+          "color": "red"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Un tueur caché, un détective armé : démasquez-le avant qu'il ne vous élimine tous",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 227"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🎾 Wii Sports ▸",
           "color": "aqua"
         }
