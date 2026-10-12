@@ -49,3 +49,7 @@ patch_fn('drive', 'execute if score $kyy mg.st matches ..6000 run return run fun
 patch_fn('rescue', 'scoreboard players set @s mg.khi 0\n', 'scoreboard players set @s mg.khi 0\nscoreboard players set @s mg.kof 0\n')
 patch_fn('cp_pass', 'scoreboard players add @s mg.kcp 1\n', 'scoreboard players add @s mg.kcp 1\nscoreboard players set @s mg.kof 0\n')
 patch_fn('prepare', 'scoreboard players set @a[tag=mg.play] mg.kvm 1\n', 'scoreboard players set @a[tag=mg.play] mg.kvm 1\nscoreboard players set @a[tag=mg.play] mg.kof 0\n')
+
+# Les notes des joueurs remplacent les étoiles dans les menus : à refaire après chaque régénération des menus
+import runpy
+runpy.run_path(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'rating', 'gen_rating.py'), run_name='__main__')

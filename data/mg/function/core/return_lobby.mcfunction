@@ -70,7 +70,7 @@ kill @e[tag=mg.hl]
 kill @e[tag=mg.alembic]
 kill @e[tag=mg.cloud]
 kill @e[tag=mg.meteor]
-kill @e[distance=0..,type=minecraft:chicken]
+kill @e[distance=0..,type=minecraft:chicken,tag=]
 
 
 # Règles remises à la normale (régénération / grief modifiés par PvP et Mob Arena)

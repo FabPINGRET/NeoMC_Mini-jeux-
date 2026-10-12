@@ -96,3 +96,7 @@ i = t.index('scoreboard players reset @s mg.opt')
 t[i:i] = [line]
 open(p, 'w', encoding='utf-8', newline='\n').write('\n'.join(t))
 print('TP général OK :', ', '.join(k for k, *_ in DEST))
+
+# Les notes des joueurs remplacent les étoiles dans les menus : à refaire après chaque régénération des menus
+import runpy
+runpy.run_path(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'rating', 'gen_rating.py'), run_name='__main__')
