@@ -1,2 +1,2 @@
-forceload remove -20 23980 380 24020
+forceload remove -20 23980 500 24020
 function mg:core/forceloads

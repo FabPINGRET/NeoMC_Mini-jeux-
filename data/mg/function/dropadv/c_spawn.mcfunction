@@ -43,5 +43,17 @@ execute if score $dcl mg.st matches 10 if score $dcs mg.st matches 0 run tp @s 3
 execute if score $dcl mg.st matches 10 if score $dcs mg.st matches 1 run tp @s 360.5 301 24011.5 180 25
 execute if score $dcl mg.st matches 10 if score $dcs mg.st matches 2 run tp @s 349.5 301 24000.5 -90 25
 execute if score $dcl mg.st matches 10 if score $dcs mg.st matches 3 run tp @s 371.5 301 24000.5 90 25
+execute if score $dcl mg.st matches 11 if score $dcs mg.st matches 0 run tp @s 400.5 301 23989.5 0 25
+execute if score $dcl mg.st matches 11 if score $dcs mg.st matches 1 run tp @s 400.5 301 24011.5 180 25
+execute if score $dcl mg.st matches 11 if score $dcs mg.st matches 2 run tp @s 389.5 301 24000.5 -90 25
+execute if score $dcl mg.st matches 11 if score $dcs mg.st matches 3 run tp @s 411.5 301 24000.5 90 25
+execute if score $dcl mg.st matches 12 if score $dcs mg.st matches 0 run tp @s 440.5 301 23989.5 0 25
+execute if score $dcl mg.st matches 12 if score $dcs mg.st matches 1 run tp @s 440.5 301 24011.5 180 25
+execute if score $dcl mg.st matches 12 if score $dcs mg.st matches 2 run tp @s 429.5 301 24000.5 -90 25
+execute if score $dcl mg.st matches 12 if score $dcs mg.st matches 3 run tp @s 451.5 301 24000.5 90 25
+execute if score $dcl mg.st matches 13 if score $dcs mg.st matches 0 run tp @s 480.5 301 23989.5 0 25
+execute if score $dcl mg.st matches 13 if score $dcs mg.st matches 1 run tp @s 480.5 301 24011.5 180 25
+execute if score $dcl mg.st matches 13 if score $dcs mg.st matches 2 run tp @s 469.5 301 24000.5 -90 25
+execute if score $dcl mg.st matches 13 if score $dcs mg.st matches 3 run tp @s 491.5 301 24000.5 90 25
 scoreboard players set @s mg.cd 20
 effect give @s minecraft:resistance 2 255 true

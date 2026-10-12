@@ -97,6 +97,18 @@
     {
       "label": [
         {
+          "text": "228",
+          "color": "white"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.vote set 1228"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Autres jeux",
           "color": "yellow"
         }

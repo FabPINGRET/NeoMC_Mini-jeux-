@@ -261,6 +261,8 @@ execute store result score #vm64 mg.st if entity @a[scores={mg.vc=1064}]
 execute if score #vm64 mg.st matches 1.. run scoreboard players operation Dropper mg.vb += #vm64 mg.st
 execute store result score #vm65 mg.st if entity @a[scores={mg.vc=1065}]
 execute if score #vm65 mg.st matches 1.. run scoreboard players operation Dropper mg.vb += #vm65 mg.st
+execute store result score #vm228 mg.st if entity @a[scores={mg.vc=1228}]
+execute if score #vm228 mg.st matches 1.. run scoreboard players operation Dropper mg.vb += #vm228 mg.st
 execute store result score #vm75 mg.st if entity @a[scores={mg.vc=1075}]
 execute if score #vm75 mg.st matches 1.. run scoreboard players operation Elytra mg.vb += #vm75 mg.st
 execute store result score #vm76 mg.st if entity @a[scores={mg.vc=1076}]

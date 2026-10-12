@@ -45,7 +45,7 @@
       ],
       "tooltip": [
         {
-          "text": "10 grands niveaux à thème enchaînés (arc-en-ciel, mine, enfer, salon géant, nuages...) : le premier qui les finit gagne",
+          "text": "13 grands niveaux à thème enchaînés (arc-en-ciel, mine, enfer, usine, espace, ballons...) : le premier qui les finit gagne",
           "color": "gray"
         }
       ],
@@ -78,6 +78,32 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 65"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Solo : essais ",
+          "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Chacun pour soi sur les 13 niveaux de l'Aventure : chaque saut compte, le moins d'essais gagne. Records personnel et du serveur",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 228"
       }
     },
     {

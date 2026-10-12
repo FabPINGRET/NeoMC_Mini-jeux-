@@ -26,6 +26,9 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.dtr
+scoreboard objectives remove mg.dtt
+scoreboard objectives remove mg.dsb
 scoreboard objectives remove mg.hat
 scoreboard objectives remove mg.hid
 team remove mg_mm
@@ -505,6 +508,9 @@ schedule clear mg:dropadv/build_6
 schedule clear mg:dropadv/build_7
 schedule clear mg:dropadv/build_8
 schedule clear mg:dropadv/build_9
+schedule clear mg:dropadv/build_18
+schedule clear mg:dropadv/build_19
+schedule clear mg:dropadv/build_20
 schedule clear mg:dropadv/build_wait
 schedule clear mg:kart/build
 schedule clear mg:kart/place_all

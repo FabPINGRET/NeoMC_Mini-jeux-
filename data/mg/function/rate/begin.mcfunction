@@ -19,6 +19,7 @@ execute if score $game mg.st matches 20..21 run data modify storage mg:rate key 
 execute if score $game mg.st matches 22 run data modify storage mg:rate key merge value {f:"sumo",g:8}
 execute if score $game mg.st matches 23 run data modify storage mg:rate key merge value {f:"dropper",g:9}
 execute if score $game mg.st matches 64..65 run data modify storage mg:rate key merge value {f:"dropper",g:9}
+execute if score $game mg.st matches 228 run data modify storage mg:rate key merge value {f:"dropper",g:9}
 execute if score $game mg.st matches 26 run data modify storage mg:rate key merge value {f:"oitc",g:10}
 execute if score $game mg.st matches 27 run data modify storage mg:rate key merge value {f:"tnttag",g:11}
 execute if score $game mg.st matches 28 run data modify storage mg:rate key merge value {f:"blockparty",g:12}
