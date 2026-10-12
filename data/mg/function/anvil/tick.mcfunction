@@ -18,6 +18,9 @@ execute as @e[type=minecraft:marker,tag=mg.sh] at @s run function mg:anvil/shado
 scoreboard players remove $cl mg.st 1
 execute if score $cl mg.st matches ..0 run function mg:anvil/cleanup
 
+# Anti-camping dans les coins
+function mg:anvil/corner_tick
+
 # Mort (enclume) ou chute → éliminé
 execute as @a[tag=mg.play,scores={mg.deaths=1..}] run function mg:core/eliminate
 execute as @a[tag=mg.play] store result score @s mg.t run data get entity @s Pos[1]

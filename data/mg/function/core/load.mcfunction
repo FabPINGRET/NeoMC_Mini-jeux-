@@ -387,6 +387,7 @@ function mg:hall/objectives
 # Mini-jeu Élytra + suivi des reconnexions + tableaux de partie
 function mg:sky/load
 scoreboard objectives add mg.seen dummy
+scoreboard objectives add mg.acn dummy
 scoreboard objectives add mg.sbg dummy
 execute unless data storage mg:hall sbon run scoreboard players set $sb mg.st 1
 data modify storage mg:hall sbon set value 1b
