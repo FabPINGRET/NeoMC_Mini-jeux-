@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "≡ MENU",
+    "color": "gold",
+    "bold": true
+  },
+  "external_title": {
+    "text": "≡ Menu",
+    "color": "gold"
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Survie, Neo GTA, Mini Party et aide.",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 1,
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "▶ Ouvrir le menu",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Ouvre ton menu (les admins y ont aussi le menu admin)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.sv set 6"
+      }
+    }
+  ]
+}
