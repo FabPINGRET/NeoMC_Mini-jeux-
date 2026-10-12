@@ -621,6 +621,7 @@ data remove storage mg:lobby food1
 function mg:hall/remove
 function mg:sky/remove
 scoreboard objectives remove mg.seen
+scoreboard objectives remove mg.acn
 scoreboard objectives remove mg.sbg
 scoreboard objectives remove mg.ehw
 clear @a minecraft:elytra[minecraft:custom_data~{mg_elyf:1b}]
