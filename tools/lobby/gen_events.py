@@ -5,8 +5,10 @@ Toutes les 30 min (jeu au repos, au moins un joueur au lobby), annonce 1 min ava
   💰 Pluie de pièces : des pépites (1) et des lingots (5) tombent sur l'île pendant 60 s ; le plus riche gagne.
   🗝 Chasse au trésor : un coffre caché sur l'île, indices chaud / froid ; le premier qui clique dessus gagne.
 Gagnant : couronne (jusqu'à la prochaine partie), feu d'artifice, mg.evw + 1. Une partie qui démarre arrête l'événement.
-Admin : /function mg:lobby/ev/force (au hasard, annonce 10 s) ou mg:lobby/ev/force_1..3.
+Admin : menu ≡ → 🎉 Événements du lobby (mg.opt 67 : au hasard 68, événement k 68+k, arrêter/annuler 72),
+ou /function mg:lobby/ev/force (au hasard, annonce 10 s), mg:lobby/ev/force_1..3, mg:lobby/ev/cancel.
 """
+import json
 import os
 import sys
 
@@ -58,9 +60,45 @@ w('lobby/ev/countdown', [f'bossbar set mg:ev players {L}',
 w('lobby/ev/force', ['# Admin : événement au hasard dans 10 s', 'scoreboard players reset $evk mg.st', 'scoreboard players set $evn mg.st 61',
                      'function mg:lobby/ev/force_go'])
 w('lobby/ev/force_go', ['execute unless score $state mg.st matches 0 run return run tellraw @s {"text":"Une partie est en cours.","color":"red"}',
-                        'scoreboard players set $evn mg.st 60', 'function mg:lobby/ev/pick', 'scoreboard players set $evn mg.st 11'])
+                        'execute if score $evon mg.st matches 1.. run return run tellraw @s {"text":"Un événement est déjà en cours (⛔ Arrêter dans le menu des événements).","color":"red"}',
+                        'scoreboard players set $evn mg.st 60', 'function mg:lobby/ev/pick', 'scoreboard players set $evn mg.st 11',
+                        'tellraw @s {"text":"✔ Événement lancé : il commence dans 10 s.","color":"green"}'])
 for k in NAMES:
     w(f'lobby/ev/force_{k}', [f'# Admin : événement {k} dans 10 s', f'scoreboard players set $evk mg.st {k}', 'function mg:lobby/ev/force_go'])
+w('lobby/ev/cancel', ['# Admin : arrête l\'événement en cours ou annule celui qui est annoncé (le prochain revient dans 30 min)',
+                     'execute unless score $evon mg.st matches 1.. unless score $evn mg.st matches 1..60 run return run tellraw @s {"text":"Aucun événement en cours ni annoncé.","color":"gray"}',
+                     f'scoreboard players set $evn mg.st {EVERY}', 'function mg:lobby/ev/stop',
+                     'tellraw @a {"text":"🎉 L\'événement du lobby a été annulé par un admin.","color":"gray"}'])
+
+# Menu admin des événements : mg.opt 67 (fenêtre), 68 au hasard, 68 + k événement k, 72 arrêter / annuler
+EV_OPT = 67
+EV_BTN = [('🎲 Au hasard', 'light_purple', EV_OPT + 1, 'Un des trois événements, annoncé 10 s avant')]
+EV_BTN += [(NAMES[k][0], NAMES[k][1], EV_OPT + 1 + k, NAMES[k][2]) for k in NAMES]
+EV_BTN += [('⛔ Arrêter / annuler', 'dark_red', EV_OPT + 5, 'Arrête l\'événement en cours ou annule celui qui est annoncé')]
+dialog = {'type': 'minecraft:multi_action', 'title': {'text': '🎉 Événements du lobby', 'color': 'light_purple', 'bold': True},
+          'pause': False, 'can_close_with_escape': True,
+          'body': [{'type': 'minecraft:plain_message', 'contents': [
+              {'text': 'Lance un événement surprise au spawn (jeu au repos, joueurs au lobby). Il commence 10 s après l\'annonce et dure 3 min.',
+               'color': 'gray'}]}],
+          'columns': 2, 'exit_action': {'label': [{'text': 'Fermer', 'color': 'gray'}]},
+          'actions': [{'label': [{'text': t, 'color': c, 'bold': True}], 'tooltip': [{'text': tip, 'color': 'gray'}],
+                       'action': {'type': 'minecraft:run_command', 'command': f'trigger mg.opt set {o}'}} for t, c, o, tip in EV_BTN]
+                     + [{'label': [{'text': '« Retour au menu', 'color': 'yellow'}], 'action': {'type': 'minecraft:run_command', 'command': 'trigger mg.menu'}}]}
+with open(os.path.join(sys.argv[1] if len(sys.argv) > 1 else '.', 'data/mg/dialog/lobby_events.json'), 'w', encoding='utf-8', newline='\n') as f:
+    f.write(json.dumps(dialog, ensure_ascii=False, indent=2) + '\n')
+w('lobby/ev/menu', ['# Admin : fenêtre des événements du lobby, sinon menu texte', 'scoreboard players set $dlg mg.st 0',
+                   'execute store success score $dlg mg.st run dialog show @s mg:lobby_events',
+                   'execute unless score $dlg mg.st matches 1 run function mg:lobby/ev/menu_chat'])
+w('lobby/ev/menu_chat', ['# Menu texte des événements du lobby (@s = admin)',
+                        'tellraw @s {"text":"🎉 Événements du lobby","color":"light_purple","bold":true}'] +
+  [f'tellraw @s ["",{js({"text": " [" + t + "]", "color": c, "click_event": {"action": "run_command", "command": f"trigger mg.opt set {o}"}, "hover_event": {"action": "show_text", "value": tip}})}]'
+   for t, c, o, tip in EV_BTN])
+C.patch('core/opt', 'execute if score @s mg.opt matches 62..65 run function mg:tpg/run', [
+    f'execute if score @s mg.opt matches {EV_OPT}..{EV_OPT + 5} unless entity @s[tag=mg.admin] run tellraw @s {{"text":"⚠ Réservé aux admins.","color":"red"}}',
+    f'execute if score @s mg.opt matches {EV_OPT} if entity @s[tag=mg.admin] run function mg:lobby/ev/menu',
+    f'execute if score @s mg.opt matches {EV_OPT + 1} if entity @s[tag=mg.admin] run function mg:lobby/ev/force'] +
+    [f'execute if score @s mg.opt matches {EV_OPT + 1 + k} if entity @s[tag=mg.admin] run function mg:lobby/ev/force_{k}' for k in NAMES] +
+    [f'execute if score @s mg.opt matches {EV_OPT + 5} if entity @s[tag=mg.admin] run function mg:lobby/ev/cancel'])
 
 w('lobby/ev/start', [f'scoreboard players set $evn mg.st {EVERY}', 'scoreboard players operation $evon mg.st = $evk mg.st',
                      'scoreboard players reset $evk mg.st', f'scoreboard players set $evt mg.st {LEN}',

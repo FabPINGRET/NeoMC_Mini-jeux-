@@ -248,6 +248,24 @@
     {
       "label": [
         {
+          "text": "🎉 Événements du lobby ▸",
+          "color": "light_purple"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Lancer ou arrêter un événement surprise au spawn",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 67"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "👁 Voir le menu joueur",
           "color": "aqua"
         }
