@@ -540,39 +540,6 @@ for k, (name, color) in ITEMS.items():
     hud.append(f'execute unless score @s mg.khi matches 1.. if score @s mg.kit matches {k} run title @s actionbar [{base},{{"text":"{name} (Ctrl)","color":"{color}","bold":true}}{tail}]')
 fn('hud', '\n'.join(hud) + '\n')
 
-# ------------------------------------------------------------------ minimap (tableau de droite)
-fn('minimap', '''# Minimap : carte de base, un point par pilote à la couleur de son kart, puis les 15 lignes du tableau
-data modify storage mg:kart mm set from storage mg:kart base
-execute as @a[tag=mg.play] run function mg:kart/mm_dot
-function mg:kart/mm_show with storage mg:kart mm
-''')
-fn('mm_dot', f'''# Case du kart de @s sur la minimap
-scoreboard players operation $me mg.st = @s mg.ri
-tag @e[tag=mg.kdot] remove mg.kdot
-execute as {KART}] if score @s mg.ri = $me mg.st run tag @s add mg.kdot
-execute unless entity @e[tag=mg.kdot] run return 0
-execute store result score $mx mg.st run data get entity @e[tag=mg.kdot,limit=1] Pos[0]
-execute store result score $mz mg.st run data get entity @e[tag=mg.kdot,limit=1] Pos[2]
-scoreboard players operation $mx mg.st += #kmx0 mg.st
-scoreboard players operation $mx mg.st *= #kmc mg.st
-scoreboard players operation $mx mg.st /= #kmw mg.st
-scoreboard players operation $mz mg.st -= #kmz0 mg.st
-scoreboard players operation $mz mg.st *= #kmr mg.st
-scoreboard players operation $mz mg.st /= #kmh mg.st
-execute if score $mx mg.st matches ..-1 run scoreboard players set $mx mg.st 0
-execute if score $mz mg.st matches ..-1 run scoreboard players set $mz mg.st 0
-execute if score $mx mg.st >= #kmc mg.st run scoreboard players operation $mx mg.st = #kmc mg.st
-execute if score $mx mg.st >= #kmc mg.st run scoreboard players remove $mx mg.st 1
-execute if score $mz mg.st >= #kmr mg.st run scoreboard players operation $mz mg.st = #kmr mg.st
-execute if score $mz mg.st >= #kmr mg.st run scoreboard players remove $mz mg.st 1
-execute store result storage mg:kart dot.c int 1 run scoreboard players get $mx mg.st
-execute store result storage mg:kart dot.r int 1 run scoreboard players get $mz mg.st
-scoreboard players operation $kc mg.st = @e[tag=mg.kdot,limit=1] mg.kcol
-''' + '\n'.join(f'execute if score $kc mg.st matches {k} run data modify storage mg:kart dot.col set value "{c}"' for k, c in enumerate(TEXTC, 1)) + '''
-function mg:kart/mm_dot_m with storage mg:kart dot
-''')
-fn('mm_dot_m', '$data modify storage mg:kart mm.l$(r)[$(c)] set value {text:"█",color:"$(col)"}\n')
-
 # ------------------------------------------------------------------ objets
 fn('box_hit', f'''# Boîte touchée (@s = boîte) : elle disparaît 3 s ; les pilotes sans objet dont le kart est tout près en reçoivent un
 tag @s add mg.kboff
@@ -749,8 +716,8 @@ scoreboard players add $kr0 mg.st 1
 function mg:kart/end_line
 ''')
 # ------------------------------------------------------------------ aiguillage vers le circuit ($ktr : 1 = Champignon, 2 = Royaume Koopa)
-for name in ('cp_check', 'cp_tp', 'bill_step', 'grid_tp', 'gate_on', 'gate_off', 'boxes', 'fl_add', 'fl_remove', 'mm_base', 'mm_show',
-             'mm_init', 'const', 'hazards', 'track_tick'):
+for name in ('cp_check', 'cp_tp', 'bill_step', 'grid_tp', 'gate_on', 'gate_off', 'boxes', 'fl_add', 'fl_remove',
+             'const', 'hazards', 'track_tick'):
     # kart libre du spawn ($klob = 1) : table t4 (ex-patch de tools/lobby/wire_lobkart.py)
     klob = f'execute if score $klob mg.st matches 1 run return run function mg:kart/t4/{name}\n' if name in ('cp_check', 'cp_tp', 'bill_step') else ''
     fn(name, f"""# Aiguillage : table du circuit en cours (générée dans t1/, t2/ ou t3/ pour l'arène de bataille)
@@ -780,7 +747,8 @@ execute at @s run function mg:kart/probe
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'items_part.py'), encoding='utf-8').read())
 
 # anciennes fonctions qui n'existent plus dans cette version
-for old in ('remount', 'star_touch_old', 'grid_player'):
+for old in ('remount', 'star_touch_old', 'grid_player',
+            'minimap', 'mm_dot', 'mm_dot_m', 'mm_base', 'mm_show', 'mm_init'):
     p = os.path.join(K, old + '.mcfunction')
     if os.path.exists(p): os.remove(p)
 print('ok')
