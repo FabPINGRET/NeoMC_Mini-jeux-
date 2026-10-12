@@ -9,5 +9,8 @@ execute if score @s mg.dlv matches 7 run tp @s 240.5 301 23989.5 0 25
 execute if score @s mg.dlv matches 8 run tp @s 280.5 301 23989.5 0 25
 execute if score @s mg.dlv matches 9 run tp @s 320.5 301 23989.5 0 25
 execute if score @s mg.dlv matches 10 run tp @s 360.5 301 23989.5 0 25
+execute if score @s mg.dlv matches 11 run tp @s 400.5 301 23989.5 0 25
+execute if score @s mg.dlv matches 12 run tp @s 440.5 301 23989.5 0 25
+execute if score @s mg.dlv matches 13 run tp @s 480.5 301 23989.5 0 25
 scoreboard players set @s mg.cd 10
 effect give @s minecraft:resistance 2 255 true

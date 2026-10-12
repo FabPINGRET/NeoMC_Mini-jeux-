@@ -1,11 +1,11 @@
-"""The Dropper : Aventure (id 64) — 10 niveaux à thème enchaînés : python gen_dropper_adv.py <racine du dépôt>
+"""The Dropper : Aventure (id 64) — 13 niveaux à thème enchaînés (+ Défi, id 65, et Essais, id 228 : dropadv_solo.py) : python gen_dropper_adv.py <racine du dépôt>
 
 Inspiré des maps de dropper classiques (puits à thème, une idée par niveau), constructions originales.
 Chaque niveau est un puits de 23 x 23 (intérieur) sur 260 blocs, en trois « actes » (trois idées d'obstacles du même thème,
 séparés par une bande lumineuse) : on part du rebord en haut (y 301), on saute dans l'ouverture et on doit finir dans l'eau
 du fond. Toucher quoi que ce soit d'autre = retour en haut du niveau ; réussir = niveau suivant.
 Chaque niveau est vérifié par une chute simulée (voir plus bas) : s'il n'y a pas de passage, un trou est percé.
-Le premier à finir les 10 niveaux gagne ; sinon, au bout de 10 minutes, le plus avancé (puis le moins d'échecs).
+Le premier à finir tous les niveaux gagne ; sinon, au bout d'une minute par niveau, le plus avancé (puis le moins d'échecs).
 Sortie : data/mg/function/dropadv/*.mcfunction
 """
 import math, os, random, sys
@@ -412,6 +412,91 @@ x, z = L.rnd.randint(-5, 5), L.rnd.randint(-5, 5)
 L.fill(x - 1, FLOOR + 1, z - 1, x + 1, FLOOR + 3, z + 1, 'air'); L.set(x, FLOOR, z, 'water')
 LV.append(L)
 
+# ------------------------------------------------------------------ 11. L'usine
+L = Lv(10, 'L\'usine', 'gold', 'gray_concrete', 'Tapis roulants et pistons, engrenages qui tournent, puis la presse hydraulique.')
+L.shell(mats=['iron_block', 'waxed_copper_block', 'waxed_exposed_copper', 'polished_andesite', 'redstone_lamp[lit=true]'],
+        acts=('redstone_lamp[lit=true]', 'redstone_lamp[lit=true]'))
+for n, y in enumerate(spread(TOP - 10, A1 + 3, 6)):                     # acte 1 : tapis roulants (bord jaune) et bras de piston
+    o = L.rnd.randint(-8, 8)
+    if n % 2:
+        L.fill(-IN, y, o - 1, IN, y, o + 1, 'black_concrete'); L.fill(-IN, y, o - 2, IN, y, o - 2, 'yellow_concrete'); L.fill(-IN, y, o + 2, IN, y, o + 2, 'yellow_concrete')
+    else:
+        L.fill(o - 1, y, -IN, o + 1, y, IN, 'black_concrete'); L.fill(o - 2, y, -IN, o - 2, y, IN, 'yellow_concrete'); L.fill(o + 2, y, -IN, o + 2, y, IN, 'yellow_concrete')
+    yp, s, ln, a = y - 3, L.rnd.choice((-1, 1)), L.rnd.randint(4, 8), L.rnd.randint(-8, 8)
+    e = s * IN
+    if n % 2: L.fill(e, yp, a, e - s * ln, yp, a, 'piston[facing=west]' if s > 0 else 'piston[facing=east]')
+    else: L.fill(a, yp, e, a, yp, e - s * ln, 'piston[facing=north]' if s > 0 else 'piston[facing=south]')
+for n, y in enumerate(spread(A1 - 6, A2 + 2, 8)):                       # acte 2 : engrenages (moyeu, 8 dents, couronne), décalés
+    ox, oz, a0 = L.rnd.randint(-3, 3), L.rnd.randint(-3, 3), n * 0.35
+    def gear(x, z, ox=ox, oz=oz, a0=a0):
+        r = math.hypot(x - ox, z - oz)
+        if r <= 1.6: return 'iron_block'
+        if 7.6 < r <= 8.6: return 'waxed_copper_block'
+        if r <= 7.6 and abs(math.sin(4 * (math.atan2(z - oz, x - ox) - a0))) < 0.3: return 'waxed_exposed_copper'
+        return None
+    L.layer(y, gear)
+prev = (0, 0)
+for n, y in enumerate(spread(A2 - 6, FLOOR + 14, 12)):                  # acte 3 : presse (plateau de 2, une ouverture près de la précédente), chaînes
+    hx, hz = max(-7, min(7, prev[0] + L.rnd.randint(-1, 1))), max(-7, min(7, prev[1] + L.rnd.randint(-1, 1))); prev = (hx, hz)
+    for yy in (y, y - 1): L.layer(yy, lambda x, z, hx=hx, hz=hz: None if abs(x - hx) <= 2 and abs(z - hz) <= 2 else 'iron_block')
+    L.fill(-IN, y - 1, -IN, IN, y - 1, -IN, 'yellow_concrete'); L.fill(-IN, y - 1, IN, IN, y - 1, IN, 'yellow_concrete')
+    for (x, z) in ((-8, -8), (8, -8), (-8, 8), (8, 8)): L.fill(x, y + 1, z, x, y + 4, z, 'iron_chain')
+L.fill(-IN, FLOOR, -IN, IN, FLOOR, IN, 'polished_andesite')
+x, z = max(-5, min(5, prev[0])), max(-5, min(5, prev[1]))              # la cuve, sous la dernière ouverture
+L.fill(x - 3, FLOOR + 1, z - 3, x + 3, FLOOR + 1, z + 3, 'iron_block'); L.fill(x - 2, FLOOR, z - 2, x + 2, FLOOR + 1, z + 2, 'water')
+LV.append(L)
+
+# ------------------------------------------------------------------ 12. L'espace
+L = Lv(11, 'L\'espace', 'dark_aqua', 'black_concrete', 'Champ d\'astéroïdes, planètes et anneaux, station spatiale... atterris dans le cratère lunaire.')
+L.shell(mats=['sea_lantern', 'white_concrete', 'glowstone', 'end_rod'], acts=('purple_stained_glass', 'light_blue_stained_glass'))
+for y in spread(TOP - 8, A1 + 3, 4):                                     # acte 1 : astéroïdes
+    for _ in range(2): L.ball(L.rnd.randint(-9, 9), y, L.rnd.randint(-9, 9), L.rnd.randint(1, 2), L.rnd.choice(['cobbled_deepslate', 'tuff', 'basalt', 'blackstone']))
+PLANETS = [('red_terracotta', None), ('yellow_terracotta', 'white_terracotta'), ('light_blue_concrete', None), ('orange_terracotta', 'brown_terracotta')]
+for n, y in enumerate(spread(A1 - 10, A2 + 8, 19)):                     # acte 2 : planètes (et anneaux de Saturne)
+    blk, ring = PLANETS[n % len(PLANETS)]
+    px, pz, r = L.rnd.randint(-5, 5), L.rnd.randint(-5, 5), L.rnd.randint(4, 6)
+    L.ball(px, y, pz, r, blk)
+    if ring: L.layer(y, lambda x, z, px=px, pz=pz, r=r, ring=ring: ring if r + 1.5 < math.hypot(x - px, z - pz) <= r + 3.5 else None)
+    else: L.set(px + 1, y + r, pz, 'white_concrete')
+for y in spread(A2 - 6, FLOOR + 14, 9):                                  # acte 3 : station spatiale (poutre et panneaux solaires)
+    o = L.rnd.randint(-7, 7)
+    if L.rnd.random() < 0.5:
+        L.fill(-IN, y, o, IN, y, o, 'iron_block')
+        for e in (-1, 1): L.fill(e * 4, y, o - 3, e * 9, y, o + 3, 'light_blue_concrete')
+    else:
+        L.fill(o, y, -IN, o, y, IN, 'iron_block')
+        for e in (-1, 1): L.fill(o - 3, y, e * 4, o + 3, y, e * 9, 'light_blue_concrete')
+L.fill(-IN, FLOOR, -IN, IN, FLOOR, IN, 'end_stone')
+for _ in range(6): L.disc(FLOOR, L.rnd.randint(1, 3), 'end_stone_bricks', L.rnd.randint(-8, 8), L.rnd.randint(-8, 8))
+x, z = L.rnd.randint(-5, 5), L.rnd.randint(-5, 5)                         # cratère : rebord, eau au centre
+L.disc(FLOOR + 1, 3, 'end_stone', x, z); L.disc(FLOOR + 1, 1, 'air', x, z); L.fill(x - 1, FLOOR, z - 1, x + 1, FLOOR, z + 1, 'water')
+LV.append(L)
+
+# ------------------------------------------------------------------ 13. Les ballons
+L = Lv(12, 'Les ballons', 'light_purple', 'white_concrete', 'Grappes de ballons, guirlandes de fanions, puis les montgolfières !')
+WOOLS = ['red', 'orange', 'yellow', 'lime', 'light_blue', 'pink', 'purple', 'magenta']
+L.shell(mats=[f'{c}_wool' for c in WOOLS], acts=('pink_concrete', 'lime_concrete'))
+for y in spread(TOP - 10, A1 + 6, 5):                                    # acte 1 : ballons et leur ficelle
+    for _ in range(2):
+        bx, bz = L.rnd.randint(-8, 8), L.rnd.randint(-8, 8)
+        L.ball(bx, y, bz, L.rnd.randint(1, 2), f'{L.rnd.choice(WOOLS)}_wool'); L.fill(bx, y - 5, bz, bx, y - 3, bz, 'oak_fence')
+for n, y in enumerate(spread(A1 - 6, A2 + 2, 5)):                        # acte 2 : guirlandes de fanions en diagonale
+    o, d = L.rnd.randint(-6, 6), (1 if n % 2 else -1)
+    for k in range(2):
+        L.layer(y, lambda x, z, o=o + k * 7 - 3, d=d: f'{WOOLS[(x + 11) % len(WOOLS)]}_wool' if abs(x * d - z - o) <= 0 else None)
+for n, y in enumerate(spread(A2 - 10, FLOOR + 22, 32)):                 # acte 3 : montgolfières (enveloppe rayée, nacelle)
+    bx, bz, c1, c2 = L.rnd.randint(-4, 4), L.rnd.randint(-4, 4), WOOLS[n % len(WOOLS)], WOOLS[(n + 3) % len(WOOLS)]
+    for dy in range(-6, 7):
+        rr = int(math.sqrt(max(0, 49 - dy * dy * (0.9 if dy > 0 else 1.2))) + 0.5)
+        L.disc(y + dy, rr, f'{c1 if (dy // 2) % 2 else c2}_wool', bx, bz)
+    for (x, z) in ((-2, -2), (2, -2), (-2, 2), (2, 2)): L.fill(bx + x, y - 10, bz + z, bx + x, y - 7, bz + z, 'oak_fence')
+    L.fill(bx - 2, y - 12, bz - 2, bx + 2, y - 11, bz + 2, 'spruce_planks')
+L.fill(-IN, FLOOR, -IN, IN, FLOOR, IN, 'white_concrete')
+L.layer(FLOOR, lambda x, z: f'{WOOLS[((x + 11) // 3 + (z + 11) // 3) % len(WOOLS)]}_concrete' if (x + z) % 2 == 0 else None)
+x, z = L.rnd.randint(-5, 5), L.rnd.randint(-5, 5)
+L.fill(x - 1, FLOOR, z - 1, x + 1, FLOOR, z + 1, 'water')
+LV.append(L)
+
 # ------------------------------------------------------------------ vérification : chaque niveau doit être faisable
 # Chute simulée tick par tick (gravité de Minecraft : v = (v + 0,08) x 0,98) avec un déplacement horizontal limité à HS bloc/tick
 # (75 % de la vitesse maximale en l'air, pour laisser de la marge). Si aucun passage n'existe, on perce un trou de 3 x 3 dans
@@ -470,6 +555,7 @@ for L in LV:
     print(f'niveau {L.k + 1} ({L.name}) : faisable' + (f' après {fixes} passage(s) percé(s)' if fixes else ''))
 
 N = len(LV)
+ATIME = 1200 * N              # Aventure : une minute par niveau
 # ------------------------------------------------------------------ fonctions de jeu
 X1, X2 = -WALL - 6, (N - 1) * SPACING + WALL + 6
 wr('fl_add', [f'forceload add {X1} {CZ - WALL - 6} {X2} {CZ + WALL + 6}'])
@@ -479,11 +565,11 @@ for L in LV:
     for i in range(0, len(L.cmd), 2500):
         parts.append([f'# Dropper Aventure : niveau {L.k + 1} ({L.name})'] + L.cmd[i:i + 2500])
 parts.append(['function mg:dropadv/fl_remove', 'data modify storage mg:dropadv v3 set value 1b',
-              'tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"The Dropper : Aventure construit (10 niveaux).","color":"green"}]'])
+              'tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"The Dropper : Aventure construit (' + str(N) + ' niveaux).","color":"green"}]'])
 for k, p in enumerate(parts, 1):
     if k < len(parts): p = p + [f'schedule function mg:dropadv/build_{k + 1} 3t']
     wr(f'build_{k}', p)
-wr('build', ['# (OP) Construit les 10 niveaux du Dropper Aventure', 'function mg:dropadv/fl_add', 'scoreboard players set $daw mg.st 0',
+wr('build', [f'# (OP) Construit les {N} niveaux du Dropper Aventure', 'function mg:dropadv/fl_add', 'scoreboard players set $daw mg.st 0',
              'schedule function mg:dropadv/build_wait 20t'])
 lo = []
 for L in LV:
@@ -516,7 +602,7 @@ wr('titles', tl)
 wr('go', ['# The Dropper : Aventure — départ',
           'effect give @a[tag=mg.play] minecraft:saturation infinite 0 true',
           'execute as @a[tag=mg.play] run function mg:dropper/attr_on',
-          'tellraw @a[tag=mg.play] [{"text":"⬇ THE DROPPER : AVENTURE ! ","color":"aqua","bold":true},{"text":"10 niveaux à thème. Saute dans le puits et atterris dans l\'EAU du fond : tout le reste te renvoie en haut du niveau. Le premier à finir les 10 niveaux gagne (10 minutes au plus).","color":"gray"}]',
+          'tellraw @a[tag=mg.play] [{"text":"⬇ THE DROPPER : AVENTURE ! ","color":"aqua","bold":true},{"text":"' + str(N) + ' niveaux à thème. Saute dans le puits et atterris dans l\'EAU du fond : tout le reste te renvoie en haut du niveau. Le premier à finir les ' + str(N) + ' niveaux gagne (' + str(N) + ' minutes au plus).","color":"gray"}]',
           'function mg:dropadv/show_level_all'])
 wr('show_level_all', ['execute as @a[tag=mg.play] run function mg:dropadv/show_level'])
 wr('show_level', [f'execute if score @s mg.dlv matches {L.k + 1} run title @s title [{{"text":"{L.name}","color":"{L.colr}","bold":true}}]' for L in LV] +
@@ -531,9 +617,9 @@ wr('tick', ['# The Dropper : Aventure — chaque tick',
             f'execute as @a[tag=mg.play,scores={{mg.t=..{FLOOR - 4}}}] run function mg:dropadv/fail',
             'scoreboard players operation $dam mg.st = $dat mg.st', 'scoreboard players operation $dam mg.st %= #k10 mg.st',
             'execute if score $dam mg.st matches 0 as @a[tag=mg.play] run function mg:dropadv/hud',
-            'execute if score $dat mg.st matches 12000.. run return run function mg:dropadv/timeout',
+            f'execute if score $dat mg.st matches {ATIME}.. run return run function mg:dropadv/timeout',
             'execute unless entity @a[tag=mg.play] run function mg:core/draw'])
-wr('hud', ['scoreboard players set $dsl mg.st 12000', 'scoreboard players operation $dsl mg.st -= $dat mg.st', 'scoreboard players operation $dsl mg.st /= #k20 mg.st'] +
+wr('hud', [f'scoreboard players set $dsl mg.st {ATIME}', 'scoreboard players operation $dsl mg.st -= $dat mg.st', 'scoreboard players operation $dsl mg.st /= #k20 mg.st'] +
    [f'execute if score @s mg.dlv matches {L.k + 1} run title @s actionbar [{{"text":"⬇ Niveau {L.k + 1}/{N} : ","color":"gray"}},{{"text":"{L.name}","color":"{L.colr}","bold":true}},'
     f'{{"text":"   ✖ ","color":"red"}},{{"score":{{"name":"@s","objective":"mg.dfl"}},"color":"white"}},{{"text":"   ⏱ ","color":"gold"}},{{"score":{{"name":"$dsl","objective":"mg.st"}},"color":"yellow"}},{{"text":" s","color":"gold"}}]'
     for L in LV])
@@ -651,3 +737,5 @@ for L in LV:
                '{"text":" : ","color":"gray"},{"text":"' + L.name + '","color":"' + L.colr + '","bold":true},{"text":"   ★ ","color":"gold"},{"score":{"name":"@s","objective":"mg.dpw"},"color":"yellow"},'
                '{"text":"/' + str(WINS) + '   ⏱ ","color":"gold"},{"score":{"name":"$dsl","objective":"mg.st"},"color":"yellow"},{"text":" s","color":"gold"}]')
 wr('c_hud', hud)
+
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dropadv_solo.py'), encoding='utf-8').read())

@@ -22,7 +22,7 @@ GAMES = [  # clé, libellé, couleur, plages de $game
     ('mobarena', '☠ Mob Arena', 'dark_green', [(6, 6)]),
     ('splegg', '❍ Splegg', 'yellow', [(20, 21)]),
     ('sumo', '✊ Sumo', 'gold', [(22, 22)]),
-    ('dropper', '⬇ Dropper', 'aqua', [(23, 23), (64, 65)]),
+    ('dropper', '⬇ Dropper', 'aqua', [(23, 23), (64, 65), (228, 228)]),
     ('oitc', '➶ One in the Chamber', 'gold', [(26, 26)]),
     ('tnttag', '✹ TNT Tag', 'red', [(27, 27)]),
     ('blockparty', '▦ Block Party', 'light_purple', [(28, 28)]),

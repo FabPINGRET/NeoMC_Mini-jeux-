@@ -11,6 +11,7 @@ execute if score $game mg.st matches 20..21 run function mg:hall/game {obj:"mg.w
 execute if score $game mg.st matches 22 run function mg:hall/game {obj:"mg.wg_sumo",key:"sumo",lbl:"✊ Sumo",col:"gold"}
 execute if score $game mg.st matches 23 run function mg:hall/game {obj:"mg.wg_dropper",key:"dropper",lbl:"⬇ Dropper",col:"aqua"}
 execute if score $game mg.st matches 64..65 run function mg:hall/game {obj:"mg.wg_dropper",key:"dropper",lbl:"⬇ Dropper",col:"aqua"}
+execute if score $game mg.st matches 228 run function mg:hall/game {obj:"mg.wg_dropper",key:"dropper",lbl:"⬇ Dropper",col:"aqua"}
 execute if score $game mg.st matches 26 run function mg:hall/game {obj:"mg.wg_oitc",key:"oitc",lbl:"➶ One in the Chamber",col:"gold"}
 execute if score $game mg.st matches 27 run function mg:hall/game {obj:"mg.wg_tnttag",key:"tnttag",lbl:"✹ TNT Tag",col:"red"}
 execute if score $game mg.st matches 28 run function mg:hall/game {obj:"mg.wg_blockparty",key:"blockparty",lbl:"▦ Block Party",col:"light_purple"}

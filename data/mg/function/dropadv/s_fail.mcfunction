@@ -1,0 +1,9 @@
+# @s a touché autre chose que l'eau : un essai de plus, retour en haut du niveau
+execute if score @s mg.cd matches 1.. run return 0
+scoreboard players add @s mg.dfl 1
+scoreboard players add @s mg.dtt 1
+scoreboard players add @s mg.dtr 1
+execute at @s run particle minecraft:poof ~ ~0.2 ~ 0.3 0.2 0.3 0.05 15
+execute at @s run playsound minecraft:entity.villager.no master @s ~ ~ ~ 0.8 1
+title @s actionbar [{"text":"✖ Raté ! Essai n°","color":"red"},{"score":{"name":"@s","objective":"mg.dtr"},"color":"white"},{"text":" sur ce niveau...","color":"red"}]
+function mg:dropadv/spawn

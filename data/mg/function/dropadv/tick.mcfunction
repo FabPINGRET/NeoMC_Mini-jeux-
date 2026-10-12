@@ -9,5 +9,5 @@ execute as @a[tag=mg.play,scores={mg.t=..36}] run function mg:dropadv/fail
 scoreboard players operation $dam mg.st = $dat mg.st
 scoreboard players operation $dam mg.st %= #k10 mg.st
 execute if score $dam mg.st matches 0 as @a[tag=mg.play] run function mg:dropadv/hud
-execute if score $dat mg.st matches 12000.. run return run function mg:dropadv/timeout
+execute if score $dat mg.st matches 15600.. run return run function mg:dropadv/timeout
 execute unless entity @a[tag=mg.play] run function mg:core/draw

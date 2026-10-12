@@ -18,4 +18,10 @@ execute store success score $dld mg.st unless block 320 300 24000 minecraft:bedr
 execute if score $dld mg.st matches 0 run return fail
 execute store success score $dld mg.st unless block 360 300 24000 minecraft:bedrock
 execute if score $dld mg.st matches 0 run return fail
+execute store success score $dld mg.st unless block 400 300 24000 minecraft:bedrock
+execute if score $dld mg.st matches 0 run return fail
+execute store success score $dld mg.st unless block 440 300 24000 minecraft:bedrock
+execute if score $dld mg.st matches 0 run return fail
+execute store success score $dld mg.st unless block 480 300 24000 minecraft:bedrock
+execute if score $dld mg.st matches 0 run return fail
 return 1

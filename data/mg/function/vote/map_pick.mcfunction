@@ -131,6 +131,7 @@ execute if score $vwin mg.st matches 10 run scoreboard players operation $vmm mg
 execute if score $vwin mg.st matches 10 run scoreboard players operation $vmm mg.st > #vm25 mg.st
 execute if score $vwin mg.st matches 10 run scoreboard players operation $vmm mg.st > #vm64 mg.st
 execute if score $vwin mg.st matches 10 run scoreboard players operation $vmm mg.st > #vm65 mg.st
+execute if score $vwin mg.st matches 10 run scoreboard players operation $vmm mg.st > #vm228 mg.st
 execute if score $vwin mg.st matches 21 run scoreboard players operation $vmm mg.st > #vm75 mg.st
 execute if score $vwin mg.st matches 21 run scoreboard players operation $vmm mg.st > #vm76 mg.st
 execute if score $vwin mg.st matches 21 run scoreboard players operation $vmm mg.st > #vm77 mg.st
@@ -267,6 +268,7 @@ execute if score $vwin mg.st matches 10 if score #vm23 mg.st = $vmm mg.st run sc
 execute if score $vwin mg.st matches 10 if score #vm25 mg.st = $vmm mg.st run scoreboard players add $vmc mg.st 1
 execute if score $vwin mg.st matches 10 if score #vm64 mg.st = $vmm mg.st run scoreboard players add $vmc mg.st 1
 execute if score $vwin mg.st matches 10 if score #vm65 mg.st = $vmm mg.st run scoreboard players add $vmc mg.st 1
+execute if score $vwin mg.st matches 10 if score #vm228 mg.st = $vmm mg.st run scoreboard players add $vmc mg.st 1
 execute if score $vwin mg.st matches 21 if score #vm75 mg.st = $vmm mg.st run scoreboard players add $vmc mg.st 1
 execute if score $vwin mg.st matches 21 if score #vm76 mg.st = $vmm mg.st run scoreboard players add $vmc mg.st 1
 execute if score $vwin mg.st matches 21 if score #vm77 mg.st = $vmm mg.st run scoreboard players add $vmc mg.st 1
@@ -666,6 +668,9 @@ execute if score $vwin mg.st matches 10 if score #vm64 mg.st = $vmm mg.st if sco
 execute if score $vwin mg.st matches 10 if score #vm65 mg.st = $vmm mg.st run scoreboard players remove $vmk mg.st 1
 execute if score $vwin mg.st matches 10 if score #vm65 mg.st = $vmm mg.st if score $vmk mg.st matches 0 run scoreboard players set @s mg.go 65
 execute if score $vwin mg.st matches 10 if score #vm65 mg.st = $vmm mg.st if score $vmk mg.st matches 0 run tellraw @a [{"text":"☑ Carte la plus votée : ","color":"gray"},{"text":"Défi ★★★☆","color":"aqua","bold":true},{"text":" (","color":"gray"},{"score":{"name":"#vm65","objective":"mg.st"},"color":"gold"},{"text":" vote(s))","color":"gray"}]
+execute if score $vwin mg.st matches 10 if score #vm228 mg.st = $vmm mg.st run scoreboard players remove $vmk mg.st 1
+execute if score $vwin mg.st matches 10 if score #vm228 mg.st = $vmm mg.st if score $vmk mg.st matches 0 run scoreboard players set @s mg.go 228
+execute if score $vwin mg.st matches 10 if score #vm228 mg.st = $vmm mg.st if score $vmk mg.st matches 0 run tellraw @a [{"text":"☑ Carte la plus votée : ","color":"gray"},{"text":"228","color":"aqua","bold":true},{"text":" (","color":"gray"},{"score":{"name":"#vm228","objective":"mg.st"},"color":"gold"},{"text":" vote(s))","color":"gray"}]
 execute if score $vwin mg.st matches 21 if score #vm75 mg.st = $vmm mg.st run scoreboard players remove $vmk mg.st 1
 execute if score $vwin mg.st matches 21 if score #vm75 mg.st = $vmm mg.st if score $vmk mg.st matches 0 run scoreboard players set @s mg.go 75
 execute if score $vwin mg.st matches 21 if score #vm75 mg.st = $vmm mg.st if score $vmk mg.st matches 0 run tellraw @a [{"text":"☑ Carte la plus votée : ","color":"gray"},{"text":"Course d'anneaux ★★☆☆","color":"aqua","bold":true},{"text":" (","color":"gray"},{"score":{"name":"#vm75","objective":"mg.st"},"color":"gold"},{"text":" vote(s))","color":"gray"}]

@@ -880,7 +880,7 @@ NATIVE = {
     6: ('Classique', 2), 8: ('Nether', 3), 9: ('End', 3), 10: ('Ultra hard', 4), 11: ('Volant', 3), 12: ('Araignée', 3),
     37: ('Cathédrale (20 vagues)', 4), 38: ('Laboratoire (20 vagues)', 4), 39: ('Temple (20 vagues)', 4),
     40: ('Forge (20 vagues)', 4), 41: ('Vaisseau (20 vagues)', 4),
-    23: ('Dropper', 2), 25: ('Tube commun', 2), 64: ('Aventure', 3), 65: ('Défi', 3),
+    23: ('Dropper', 2), 25: ('Tube commun', 2), 64: ('Aventure', 3), 65: ('Défi', 3), 228: ('Solo : essais', 2),
     75: ('Course d\'anneaux', 2), 76: ('Course + combat', 3), 77: ('Survie en vol', 4),
     61: ('Circuit Champignon', 2), 62: ('Royaume Koopa', 3), 63: ('Bataille', 2), 56: ('Bateaux sur glace', 2),
     81: ('Canyon du Couchant', 3), 30: ('Turf Wars', 2),
@@ -962,7 +962,7 @@ VG = [
     (6, 'Sheep-War', '☁ Sheep War', 'white', [5, 7, 14, 15, 16, 17, 18, 19]),
     (16, 'Paintball', '▓ Paintball', 'gold', [36, 54, 55]),
     (7, 'Mob-Arena', '☠ Mob Arena', 'dark_green', [6, 8, 9, 10, 11, 12, 37, 38, 39, 40, 41]),
-    (10, 'Dropper', '⬇ The Dropper', 'aqua', [23, 25, 64, 65]),
+    (10, 'Dropper', '⬇ The Dropper', 'aqua', [23, 25, 64, 65, 228]),
     (21, 'Elytra', '🪽 Élytra', 'aqua', [75, 76, 77]),
 ]
 

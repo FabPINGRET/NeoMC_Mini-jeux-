@@ -184,7 +184,7 @@ execute if score $game mg.st matches 22 unless score $sg mg.st matches 1 run tel
 execute if score $game mg.st matches 23 if score $sg mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"THE DROPPER — TUBE COMMUN","color":"aqua","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 65 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⬇ DROPPER : DÉFI","color":"aqua","bold":true},{"text":" (même puits pour tous, niveau au hasard, premier à 3 manches) !","color":"gray"}]
 execute if score $game mg.st matches 66 run function mg:elyrace/announce
-execute if score $game mg.st matches 64 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⬇ THE DROPPER : AVENTURE","color":"aqua","bold":true},{"text":" (10 niveaux à thème, le premier qui les finit gagne) !","color":"gray"}]
+execute if score $game mg.st matches 64 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⬇ THE DROPPER : AVENTURE","color":"aqua","bold":true},{"text":" (13 niveaux à thème, le premier qui les finit gagne) !","color":"gray"}]
 execute if score $game mg.st matches 23 unless score $sg mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"THE DROPPER","color":"aqua","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 26 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"ONE IN THE CHAMBER","color":"gold","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 26 if score $om mg.st matches 1 run tellraw @a [{"text":"Carte : ","color":"gray"},{"text":"CHÂTEAU","color":"gold","bold":true},{"text":" (41×41 : donjon à étage, quatre tours à échelles)","color":"gray"}]
@@ -252,6 +252,7 @@ execute if score $game mg.st matches 224 run tellraw @a [{"selector":"@s","color
 execute if score $game mg.st matches 225 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🙈 LABYRINTHE AVEUGLE","color":"light_purple","bold":true},{"text":" : par paires : le marcheur est aveugle, son guide le dirige d'en haut !","color":"gray"}]
 execute if score $game mg.st matches 226 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"👑 MASTER DIT","color":"gold","bold":true},{"text":" : obéis vite aux ordres du Master… mais seulement quand il dit « Master dit » !","color":"gray"}]
 execute if score $game mg.st matches 227 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🔪 MURDER MYSTERY","color":"red","bold":true},{"text":" : un tueur se cache parmi vous… le détective doit le démasquer !","color":"gray"}]
+execute if score $game mg.st matches 228 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"⬇ DROPPER : ESSAIS","color":"aqua","bold":true},{"text":" : les 13 niveaux de l'Aventure, le moins d'essais gagne !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 83 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"📞 TÉLÉPHONE","color":"gold","bold":true},{"text":" : mot → construction → devinette → construction → devinette !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
@@ -298,6 +299,7 @@ execute if score $game mg.st matches 31 run function mg:quake/prepare
 execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
+execute if score $game mg.st matches 228 run function mg:dropadv/s_prepare
 execute if score $game mg.st matches 227 run function mg:mm/prepare
 execute if score $game mg.st matches 226 run function mg:master/prepare
 execute if score $game mg.st matches 225 run function mg:lab/prepare
