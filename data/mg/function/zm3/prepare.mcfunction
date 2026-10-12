@@ -2,6 +2,8 @@
 function mg:zm3/build
 function mg:zm3/kill_all
 function mg:zm3/entities
+scoreboard players set @e[type=minecraft:marker,tag=mg.zwin] mg.zws 6
+execute as @e[type=minecraft:marker,tag=mg.zwin] at @s run function mg:zx/win_set
 scoreboard players set $px mg.st 0
 scoreboard players set $py mg.st 84
 scoreboard players set $pz mg.st 36100

@@ -8,3 +8,5 @@ execute if items entity @s weapon.mainhand *[custom_data~{gun:3}] run return run
 execute if items entity @s weapon.mainhand *[custom_data~{gun:4}] run return run function mg:gun/fire_4
 execute if items entity @s weapon.mainhand *[custom_data~{gun:5}] run return run function mg:gun/fire_5
 execute if items entity @s weapon.mainhand *[custom_data~{gun:6}] run return run function mg:gun/fire_6
+execute if items entity @s weapon.mainhand *[custom_data~{gun:7}] run return run function mg:gun/fire_7
+execute if items entity @s weapon.mainhand *[custom_data~{gun:8}] run return run function mg:gun/fire_8

@@ -47,6 +47,28 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.zkl minecraft.custom:minecraft.mob_kills
+scoreboard objectives add mg.zid dummy
+scoreboard objectives add mg.zmi dummy
+scoreboard objectives add mg.zmo dummy
+scoreboard objectives add mg.zmc dummy
+scoreboard objectives add mg.zws dummy
+scoreboard objectives add mg.zpy dummy
+scoreboard objectives add mg.zpl dummy
+scoreboard objectives add mg.zrt dummy
+scoreboard objectives add mg.zrp dummy
+scoreboard objectives add mg.gcd dummy
+scoreboard objectives add mg.grl dummy
+scoreboard objectives add mg.grt dummy
+scoreboard objectives add mg.gsn minecraft.custom:minecraft.sneak_time
+scoreboard objectives add mg.g1 dummy
+scoreboard objectives add mg.g2 dummy
+scoreboard objectives add mg.g3 dummy
+scoreboard objectives add mg.g4 dummy
+scoreboard objectives add mg.g5 dummy
+scoreboard objectives add mg.g6 dummy
+scoreboard objectives add mg.g7 dummy
+scoreboard objectives add mg.g8 dummy
 scoreboard objectives add mg.phn minecraft.used:minecraft.goat_horn
 scoreboard objectives add mg.php dummy
 scoreboard objectives add mg.phx dummy
@@ -242,16 +264,6 @@ scoreboard players set #8 mg.st 8
 scoreboard players set #60 mg.st 60
 scoreboard objectives add mg.zpt dummy {"text":"🧟 Points","color":"dark_green"}
 scoreboard objectives add mg.zk minecraft.killed:minecraft.zombie
-scoreboard objectives add mg.gcd dummy
-scoreboard objectives add mg.grl dummy
-scoreboard objectives add mg.grt dummy
-scoreboard objectives add mg.gsn minecraft.custom:minecraft.sneak_time
-scoreboard objectives add mg.g1 dummy
-scoreboard objectives add mg.g2 dummy
-scoreboard objectives add mg.g3 dummy
-scoreboard objectives add mg.g4 dummy
-scoreboard objectives add mg.g5 dummy
-scoreboard objectives add mg.g6 dummy
 scoreboard players set #7 mg.st 7
 scoreboard players set #11 mg.st 11
 scoreboard players set #30 mg.st 30

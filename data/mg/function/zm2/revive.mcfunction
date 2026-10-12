@@ -1,5 +1,6 @@
 # @s revient (pistolet + couteau)
 tag @s remove mg.zdead
+tag @s remove mg.zqrw
 gamemode adventure @s
 spreadplayers 0 35800 1 4 under 84 false @s
 function mg:zm2/kit

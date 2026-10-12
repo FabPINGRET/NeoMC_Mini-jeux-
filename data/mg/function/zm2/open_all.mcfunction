@@ -6,4 +6,6 @@ fill 21 81 35789 23 83 35789 minecraft:air
 kill @e[tag=mg.zbuy]
 kill @e[type=minecraft:text_display,tag=mg.zent]
 kill @e[type=minecraft:item_display,tag=mg.zent]
+kill @e[tag=mg.zwin]
+summon minecraft:interaction 22.5 81 35773.5 {Tags:["mg.zent","mg.zlock"],width:1.1f,height:1.1f}
 tag @e[tag=mg.zsp] add mg.zon

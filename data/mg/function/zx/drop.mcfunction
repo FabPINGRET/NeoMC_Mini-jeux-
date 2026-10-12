@@ -1,0 +1,10 @@
+execute store result score $zx2 mg.st run random value 1..5
+execute if score $zx2 mg.st matches 1 run summon minecraft:item_display ~ ~1 ~ {Tags:["mg.zent","mg.zpu","mg.zpun"],Glowing:1b,glow_color_override:5635925,brightness:{sky:15,block:15},item:{id:"minecraft:skeleton_skull",count:1},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.8f,0.8f,0.8f]}}
+execute if score $zx2 mg.st matches 2 run summon minecraft:item_display ~ ~1 ~ {Tags:["mg.zent","mg.zpu","mg.zpun"],Glowing:1b,glow_color_override:5635925,brightness:{sky:15,block:15},item:{id:"minecraft:tnt",count:1},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.8f,0.8f,0.8f]}}
+execute if score $zx2 mg.st matches 3 run summon minecraft:item_display ~ ~1 ~ {Tags:["mg.zent","mg.zpu","mg.zpun"],Glowing:1b,glow_color_override:5635925,brightness:{sky:15,block:15},item:{id:"minecraft:experience_bottle",count:1},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.8f,0.8f,0.8f]}}
+execute if score $zx2 mg.st matches 4 run summon minecraft:item_display ~ ~1 ~ {Tags:["mg.zent","mg.zpu","mg.zpun"],Glowing:1b,glow_color_override:5635925,brightness:{sky:15,block:15},item:{id:"minecraft:iron_axe",count:1},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.8f,0.8f,0.8f]}}
+execute if score $zx2 mg.st matches 5 run summon minecraft:item_display ~ ~1 ~ {Tags:["mg.zent","mg.zpu","mg.zpun"],Glowing:1b,glow_color_override:5635925,brightness:{sky:15,block:15},item:{id:"minecraft:blaze_powder",count:1},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.8f,0.8f,0.8f]}}
+scoreboard players operation @e[tag=mg.zpun] mg.zpy = $zx2 mg.st
+scoreboard players set @e[tag=mg.zpun] mg.zpl 0
+tag @e[tag=mg.zpun] remove mg.zpun
+playsound minecraft:block.amethyst_block.chime master @a ~ ~ ~ 1.5 1.2

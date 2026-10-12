@@ -8,3 +8,5 @@ scoreboard players reset @s mg.g3
 scoreboard players reset @s mg.g4
 scoreboard players reset @s mg.g5
 scoreboard players reset @s mg.g6
+scoreboard players reset @s mg.g7
+scoreboard players reset @s mg.g8
