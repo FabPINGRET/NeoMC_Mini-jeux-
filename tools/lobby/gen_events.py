@@ -46,12 +46,16 @@ w('lobby/ev/second', ['scoreboard players set $evtk mg.st 0',
 w('lobby/ev/pick', ['execute unless score $evk mg.st matches 1..3 store result score $evk mg.st run random value 1..3',
                     'bossbar add mg:ev ""', 'bossbar set mg:ev max 60', 'bossbar set mg:ev style notched_10'] +
   [f'execute if score $evk mg.st matches {k} run function mg:lobby/ev/ann_{k}' for k in NAMES])
+# Annonce : « dans 1 min » (automatique) ou « dans 10 s » ($evf 1 : lancé par un admin, force_go)
 for k, (nm, col, desc) in NAMES.items():
-    w(f'lobby/ev/ann_{k}', [f'bossbar set mg:ev name ' + js([{'text': 'Événement : ', 'color': 'white'}, {'text': nm, 'color': col, 'bold': True}, {'text': ' dans 1 min', 'color': 'gray'}]),
-                            f'bossbar set mg:ev color {"red" if col == "red" else "yellow" if col == "gold" else "blue"}',
-                            'tellraw @a ' + js([{'text': '🎉 ÉVÉNEMENT SURPRISE au spawn dans 1 minute : ', 'color': 'light_purple', 'bold': True},
-                                                {'text': nm, 'color': col, 'bold': True}, {'text': f'\n{desc}', 'color': 'gray'}]),
-                            f'execute as @a[tag=!mg.surv] at @s run playsound minecraft:block.bell.use master @s ~ ~ ~ 1 0.8'])
+    ann = []
+    for cond, short, long in (('unless', '1 min', '1 minute'), ('if', '10 s', '10 secondes')):
+        pre = f'execute {cond} score $evf mg.st matches 1 run '
+        ann += [pre + 'bossbar set mg:ev name ' + js([{'text': 'Événement : ', 'color': 'white'}, {'text': nm, 'color': col, 'bold': True}, {'text': f' dans {short}', 'color': 'gray'}]),
+                pre + 'tellraw @a ' + js([{'text': f'🎉 ÉVÉNEMENT SURPRISE au spawn dans {long} : ', 'color': 'light_purple', 'bold': True},
+                                          {'text': nm, 'color': col, 'bold': True}, {'text': f'\n{desc}', 'color': 'gray'}])]
+    w(f'lobby/ev/ann_{k}', ann + [f'bossbar set mg:ev color {"red" if col == "red" else "yellow" if col == "gold" else "blue"}',
+                                  f'execute as @a[tag=!mg.surv] at @s run playsound minecraft:block.bell.use master @s ~ ~ ~ 1 0.8'])
 w('lobby/ev/countdown', [f'bossbar set mg:ev players {L}',
                          'execute store result bossbar mg:ev value run scoreboard players get $evn mg.st',
                          f'execute if score $evn mg.st matches 1..5 as {L} at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 1.4',
@@ -61,7 +65,8 @@ w('lobby/ev/force', ['# Admin : événement au hasard dans 10 s', 'scoreboard pl
                      'function mg:lobby/ev/force_go'])
 w('lobby/ev/force_go', ['execute unless score $state mg.st matches 0 run return run tellraw @s {"text":"Une partie est en cours.","color":"red"}',
                         'execute if score $evon mg.st matches 1.. run return run tellraw @s {"text":"Un événement est déjà en cours (⛔ Arrêter dans le menu des événements).","color":"red"}',
-                        'scoreboard players set $evn mg.st 60', 'function mg:lobby/ev/pick', 'scoreboard players set $evn mg.st 11',
+                        'scoreboard players set $evn mg.st 60', 'scoreboard players set $evf mg.st 1', 'function mg:lobby/ev/pick',
+                        'scoreboard players set $evf mg.st 0', 'scoreboard players set $evn mg.st 11', 'bossbar set mg:ev max 10',
                         'tellraw @s {"text":"✔ Événement lancé : il commence dans 10 s.","color":"green"}'])
 for k in NAMES:
     w(f'lobby/ev/force_{k}', [f'# Admin : événement {k} dans 10 s', f'scoreboard players set $evk mg.st {k}', 'function mg:lobby/ev/force_go'])
