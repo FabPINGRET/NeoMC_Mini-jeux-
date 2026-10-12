@@ -9,7 +9,8 @@ d'origine ; « on » ne pose un bloc que si le bloc d'origine est encore là, «
 thème est encore là (rien d'autre n'est écrasé). Les plots et les zones modifiées par d'autres fonctions (jeux,
 animations) ne sont jamais touchés. Les entités du décor (mg.lby) sont rhabillées par lobby/theme/<t>/reskin, rappelé à
 chaque lobby/deco (bascule du resource pack) ; « off » relance lobby/deco, qui repose le décor d'origine.
-Ajouter un thème : une fonction theme_<nom>() qui remplit CH et renvoie (reskin, fx, titre), puis l'inscrire dans THEMES.
+Ajouter un thème : une fonction theme_<nom>() qui remplit CH et renvoie (reskin, fx, titre), puis l'inscrire dans THEMES
+(et dans tools/lobby/gen_theme_maps.py, qui habille aussi les cartes de jeu pendant les parties).
 """
 import glob
 import os

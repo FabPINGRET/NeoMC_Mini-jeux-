@@ -1,0 +1,37 @@
+# noel : habille la carte cham (généré par tools/lobby/gen_theme_maps.py ; inverse : noel_off)
+scoreboard players set $tm2 mg.st 2
+execute if block -26 84 26598 minecraft:air run setblock -26 84 26598 minecraft:snow[layers=1]
+execute if block -11 84 26598 minecraft:air run setblock -11 84 26598 minecraft:snow[layers=1]
+execute if block 10 84 26604 minecraft:oak_leaves run setblock 10 84 26604 minecraft:redstone_lamp[lit=true]
+execute if block 10 84 26609 minecraft:oak_leaves run setblock 10 84 26609 minecraft:verdant_froglight
+execute if block 10 85 26608 minecraft:oak_leaves run setblock 10 85 26608 minecraft:redstone_lamp[lit=true]
+execute if block 10 85 26616 minecraft:oak_leaves run setblock 10 85 26616 minecraft:redstone_lamp[lit=true]
+execute if block 10 86 26618 minecraft:oak_leaves run setblock 10 86 26618 minecraft:ochre_froglight
+execute if block 13 83 26619 minecraft:oak_leaves run setblock 13 83 26619 minecraft:redstone_lamp[lit=true]
+execute if block 17 84 26606 minecraft:oak_leaves run setblock 17 84 26606 minecraft:redstone_lamp[lit=true]
+execute if block 17 85 26601 minecraft:oak_leaves run setblock 17 85 26601 minecraft:sea_lantern
+execute if block 17 85 26608 minecraft:oak_leaves run setblock 17 85 26608 minecraft:verdant_froglight
+execute if block 17 86 26604 minecraft:oak_leaves run setblock 17 86 26604 minecraft:verdant_froglight
+execute if block 17 86 26619 minecraft:oak_leaves run setblock 17 86 26619 minecraft:verdant_froglight
+execute if block 18 86 26605 minecraft:oak_leaves run setblock 18 86 26605 minecraft:pearlescent_froglight
+execute if block 19 83 26619 minecraft:oak_leaves run setblock 19 83 26619 minecraft:redstone_lamp[lit=true]
+execute if block 19 86 26606 minecraft:oak_leaves run setblock 19 86 26606 minecraft:sea_lantern
+execute if block 20 81 26619 minecraft:oak_leaves run setblock 20 81 26619 minecraft:verdant_froglight
+execute if block 20 84 26619 minecraft:oak_leaves run setblock 20 84 26619 minecraft:sea_lantern
+execute if block 20 85 26601 minecraft:oak_leaves run setblock 20 85 26601 minecraft:redstone_lamp[lit=true]
+execute if block 20 86 26604 minecraft:oak_leaves run setblock 20 86 26604 minecraft:verdant_froglight
+execute if block 20 86 26608 minecraft:oak_leaves run setblock 20 86 26608 minecraft:pearlescent_froglight
+execute if block 21 81 26601 minecraft:oak_leaves run setblock 21 81 26601 minecraft:redstone_lamp[lit=true]
+execute if block 21 84 26608 minecraft:oak_leaves run setblock 21 84 26608 minecraft:sea_lantern
+execute if block 21 86 26601 minecraft:oak_leaves run setblock 21 86 26601 minecraft:verdant_froglight
+execute if block 21 86 26608 minecraft:oak_leaves run setblock 21 86 26608 minecraft:redstone_lamp[lit=true]
+execute if block 23 86 26619 minecraft:oak_leaves run setblock 23 86 26619 minecraft:pearlescent_froglight
+execute if block 24 86 26619 minecraft:oak_leaves run setblock 24 86 26619 minecraft:sea_lantern
+execute if block 27 82 26606 minecraft:oak_leaves run setblock 27 82 26606 minecraft:redstone_lamp[lit=true]
+execute if block 27 82 26607 minecraft:oak_leaves run setblock 27 82 26607 minecraft:ochre_froglight
+execute if block 27 82 26610 minecraft:oak_leaves run setblock 27 82 26610 minecraft:sea_lantern
+execute if block 27 84 26601 minecraft:oak_leaves run setblock 27 84 26601 minecraft:sea_lantern
+execute if block 27 85 26617 minecraft:oak_leaves run setblock 27 85 26617 minecraft:sea_lantern
+execute if block 27 85 26618 minecraft:oak_leaves run setblock 27 85 26618 minecraft:sea_lantern
+execute if block 27 86 26611 minecraft:oak_leaves run setblock 27 86 26611 minecraft:redstone_lamp[lit=true]
+execute if block 27 86 26615 minecraft:oak_leaves run setblock 27 86 26615 minecraft:sea_lantern
