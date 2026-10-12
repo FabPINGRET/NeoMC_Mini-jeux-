@@ -44,12 +44,13 @@ scoreboard objectives remove mg.g5
 scoreboard objectives remove mg.g6
 scoreboard objectives remove mg.g7
 scoreboard objectives remove mg.g8
+scoreboard objectives remove mg.phpt
+scoreboard objectives remove mg.phcd
 scoreboard objectives remove mg.phn
 scoreboard objectives remove mg.php
 scoreboard objectives remove mg.phx
 scoreboard objectives remove mg.phz
 scoreboard objectives remove mg.phs
-scoreboard objectives remove mg.phpt
 scoreboard objectives remove mg.evd
 scoreboard objectives remove mg.evc
 scoreboard objectives remove mg.evw
@@ -203,8 +204,6 @@ scoreboard objectives remove mg.gsb
 scoreboard objectives remove mg.gs1
 scoreboard objectives remove mg.gs2
 scoreboard objectives remove mg.gs3
-scoreboard objectives remove mg.gcas
-scoreboard objectives remove mg.gcre
 scoreboard objectives remove mg.gmis
 scoreboard objectives remove mg.gmt
 scoreboard objectives remove mg.gms

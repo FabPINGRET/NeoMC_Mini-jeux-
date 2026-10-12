@@ -9,8 +9,9 @@ execute as @a[tag=mg.pvpc,scores={mg.pkc=1..}] run function mg:pvpc/kill
 execute as @a[tag=mg.pvpc,scores={mg.deaths=1..}] run function mg:pvpc/died
 execute as @a[tag=mg.pvpc,scores={mg.pshop=1..}] run function mg:pvpc/buy
 execute as @a[tag=mg.pvpc,scores={mg.phc=1..}] run function mg:pvpc/home_tick
-execute as @a[tag=mg.pvpc] unless items entity @s container.* minecraft:emerald[minecraft:custom_data~{pvpc_shop:1b}] run function mg:pvpc/give_shop
-execute as @a[tag=mg.pvpc] unless items entity @s container.* minecraft:recovery_compass[minecraft:custom_data~{pvpc_home:1b}] run function mg:pvpc/give_home
+execute as @a[tag=mg.pvpc,tag=!mg.pgw] unless items entity @s container.* minecraft:emerald[minecraft:custom_data~{pvpc_shop:1b}] run function mg:pvpc/give_shop
+execute as @a[tag=mg.pvpc,tag=!mg.pgw] unless items entity @s container.* minecraft:recovery_compass[minecraft:custom_data~{pvpc_home:1b}] run function mg:pvpc/give_home
+tag @a[tag=mg.pgw] remove mg.pgw
 execute as @a[tag=mg.pvpc] unless entity @s[x=-12,y=40,z=-10,dx=51,dy=20,dz=45] run function mg:pvpc/cleanup
 execute as @a[tag=mg.pvpc] if items entity @s container.* minecraft:gold_nugget[custom_data~{pvpc_coin:1b}] run function mg:pvpc/coins_picked
 scoreboard players add $pvt mg.st 1

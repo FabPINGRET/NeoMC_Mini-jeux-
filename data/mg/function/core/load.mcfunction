@@ -69,12 +69,13 @@ scoreboard objectives add mg.g5 dummy
 scoreboard objectives add mg.g6 dummy
 scoreboard objectives add mg.g7 dummy
 scoreboard objectives add mg.g8 dummy
+scoreboard objectives add mg.phpt dummy
+scoreboard objectives add mg.phcd dummy
 scoreboard objectives add mg.phn minecraft.used:minecraft.goat_horn
 scoreboard objectives add mg.php dummy
 scoreboard objectives add mg.phx dummy
 scoreboard objectives add mg.phz dummy
 scoreboard objectives add mg.phs dummy
-scoreboard objectives add mg.phpt dummy
 scoreboard objectives add mg.evd minecraft.custom:minecraft.damage_dealt
 scoreboard objectives add mg.evc dummy
 scoreboard objectives add mg.evw dummy
@@ -194,8 +195,6 @@ scoreboard objectives add mg.gsb dummy
 scoreboard objectives add mg.gs1 dummy
 scoreboard objectives add mg.gs2 dummy
 scoreboard objectives add mg.gs3 dummy
-scoreboard objectives add mg.gcas trigger
-scoreboard objectives add mg.gcre dummy
 scoreboard objectives modify mg.gta displayname [{"text":"💵 Neo GTA","color":"green","bold":true},{"text":" : les plus riches","color":"gray","bold":false}]
 scoreboard objectives add mg.gmis trigger
 scoreboard objectives add mg.gmt dummy
@@ -213,7 +212,6 @@ scoreboard objectives add mg.grob dummy
 scoreboard objectives add mg.gsid dummy
 scoreboard objectives add mg.gveh dummy
 scoreboard objectives add mg.gqs minecraft.used:minecraft.warped_fungus_on_a_stick
-scoreboard objectives add mg.gta dummy {"text":"💵 Dollars","color":"green","bold":true}
 scoreboard objectives add mg.gwl dummy {"text":"★ recherché","color":"gold"}
 scoreboard objectives add mg.gwt dummy
 scoreboard objectives add mg.grk dummy
@@ -445,6 +443,7 @@ function mg:hall/objectives
 # Mini-jeu Élytra + suivi des reconnexions + tableaux de partie
 function mg:sky/load
 scoreboard objectives add mg.seen dummy
+scoreboard objectives add mg.acn dummy
 scoreboard objectives add mg.sbg dummy
 execute unless data storage mg:hall sbon run scoreboard players set $sb mg.st 1
 data modify storage mg:hall sbon set value 1b

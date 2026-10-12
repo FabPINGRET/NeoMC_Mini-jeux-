@@ -10,5 +10,6 @@ scoreboard players set $hc mg.st 120
 scoreboard players set $hmin mg.st 45
 scoreboard players set $c6 mg.st 6
 effect give @a[tag=mg.play] minecraft:saturation infinite 0 true
-tellraw @a[tag=mg.play] [{"text":"⚓ PLUIE D'ENCLUMES ! ","color":"gray","bold":true},{"text":"Des enclumes tombent du ciel : surveille le sol, une tache noire = une enclume dans 1,5 s ! La pluie s'intensifie toutes les 8 s. Dernier debout = gagnant !","color":"dark_gray"}]
+scoreboard players set @a mg.acn 0
+tellraw @a[tag=mg.play] [{"text":"⚓ PLUIE D'ENCLUMES ! ","color":"gray","bold":true},{"text":"Des enclumes tombent du ciel : surveille le sol, une tache noire = une enclume dans 1,5 s ! La pluie s'intensifie toutes les 8 s. Interdit de camper dans un coin (5 s max) ! Dernier debout = gagnant !","color":"dark_gray"}]
 execute if score $sg mg.st matches 2 run tellraw @a[tag=mg.play] [{"text":"⚓ SOL TROUÉ : ","color":"red","bold":true},{"text":"de temps en temps, une zone du sol vire au rouge puis disparaît pendant 6 s. Ne reste pas dessus !","color":"gray"}]
