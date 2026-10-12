@@ -510,8 +510,20 @@ w('zx/tick', ['# Zombies, chaque tick : bonus en cours, bonus au sol, grenades s
    'execute as @e[type=minecraft:item_display,tag=mg.zmk] at @s run function mg:zx/mk_tick',
    'execute as @e[type=minecraft:item_display,tag=mg.zrk] at @s run function mg:zx/rk_tick',
    'scoreboard players add $zxt mg.st 1', 'execute if score $zxt mg.st matches 10.. run function mg:zx/win_fix_all'])
-w('zx/second', ['# Chaque seconde : les zombies collés à une fenêtre arrachent une planche',
-                'execute if score $zph mg.st matches 1 as @e[type=minecraft:marker,tag=mg.zwin,scores={mg.zws=1..}] at @s if entity @e[tag=mg.zz,distance=..2.3] run function mg:zx/win_hit'])
+w('zx/second', ['# Chaque seconde : les zombies dans l\'enclos d\'une fenêtre arrachent une planche ; zombie coincé = renvoyé à une apparition',
+                'execute if score $zph mg.st matches 1 as @e[type=minecraft:marker,tag=mg.zwin,scores={mg.zws=1..}] at @s if entity @e[tag=mg.zz,distance=..3.6] run function mg:zx/win_hit',
+                'execute if score $zph mg.st matches 1 as @e[tag=mg.zz] at @s run function mg:zx/stuck'])
+w('zx/stuck', ['# @s (mob) : immobile 12 s loin des joueurs et des fenêtres → retiré, il réapparaîtra (compté dans les restants)',
+               'execute store result score $sx mg.st run data get entity @s Pos[0]', 'execute store result score $sz mg.st run data get entity @s Pos[2]',
+               'scoreboard players operation $sx mg.st -= @s mg.zqx', 'scoreboard players operation $sz mg.st -= @s mg.zqz',
+               'execute store result score @s mg.zqx run data get entity @s Pos[0]', 'execute store result score @s mg.zqz run data get entity @s Pos[2]',
+               'scoreboard players add @s mg.zsk 1',
+               'execute unless score $sx mg.st matches 0 run scoreboard players set @s mg.zsk 0',
+               'execute unless score $sz mg.st matches 0 run scoreboard players set @s mg.zsk 0',
+               'execute if entity @a[tag=mg.play,tag=!mg.zdead,distance=..3] run scoreboard players set @s mg.zsk 0',
+               'execute if entity @e[type=minecraft:marker,tag=mg.zwin,scores={mg.zws=1..},distance=..3.6] run scoreboard players set @s mg.zsk 0',
+               'execute if score @s mg.zsk matches 12.. run function mg:zx/unstick'])
+w('zx/unstick', ['scoreboard players add $zleft mg.st 1', 'particle minecraft:large_smoke ~ ~1 ~ 0.3 0.5 0.3 0.02 10', 'tp @s ~ -200 ~', 'kill @s'])
 
 # --- mobs : variantes tirées au sort (stats de la manche dans storage mg:zm, voir zm/round_start)
 MOB = '{{Tags:["mg.zz","mg.gtg","mg.mob"],PersistenceRequired:1b,CanPickUpLoot:0b,DeathLootTable:"minecraft:empty",Health:$({h})f,{x}attributes:[{{id:"minecraft:max_health",base:$({h})d}},{{id:"minecraft:follow_range",base:64d}},{{id:"minecraft:movement_speed",base:$({s})d}}{a}]}}'
@@ -693,6 +705,7 @@ C.register([97, 98], 'zmode', [
 C.objectives([('mg.zpt', 'dummy {"text":"🧟 Points","color":"dark_green"}'), ('mg.zk', 'minecraft.killed:minecraft.zombie')])
 C.objectives([('mg.zkl', 'minecraft.custom:minecraft.mob_kills'), ('mg.zid', 'dummy'), ('mg.zmi', 'dummy'), ('mg.zmo', 'dummy'), ('mg.zmc', 'dummy'),
               ('mg.zws', 'dummy'), ('mg.zpy', 'dummy'), ('mg.zpl', 'dummy'), ('mg.zrt', 'dummy'), ('mg.zrp', 'dummy')])
+C.objectives([('mg.zqx', 'dummy'), ('mg.zqz', 'dummy'), ('mg.zsk', 'dummy')])
 C.patch('core/load', 'scoreboard objectives add mg.bw trigger', ['scoreboard players set #2 mg.st 2', 'scoreboard players set #3 mg.st 3',
                                                                  'scoreboard players set #5 mg.st 5', 'scoreboard players set #8 mg.st 8',
                                                                  'scoreboard players set #60 mg.st 60'])

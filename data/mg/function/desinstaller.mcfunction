@@ -22,6 +22,9 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.zqx
+scoreboard objectives remove mg.zqz
+scoreboard objectives remove mg.zsk
 scoreboard objectives remove mg.zkl
 scoreboard objectives remove mg.zid
 scoreboard objectives remove mg.zmi

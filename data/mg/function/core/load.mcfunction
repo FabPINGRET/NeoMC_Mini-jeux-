@@ -47,6 +47,9 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.zqx dummy
+scoreboard objectives add mg.zqz dummy
+scoreboard objectives add mg.zsk dummy
 scoreboard objectives add mg.zkl minecraft.custom:minecraft.mob_kills
 scoreboard objectives add mg.zid dummy
 scoreboard objectives add mg.zmi dummy
