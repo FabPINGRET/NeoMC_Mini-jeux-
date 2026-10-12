@@ -248,6 +248,24 @@
     {
       "label": [
         {
+          "text": "👁 Voir le menu joueur",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Ouvre le menu tel qu’un joueur le voit (votes)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 66"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "ℹ Version du datapack",
           "color": "gray"
         }

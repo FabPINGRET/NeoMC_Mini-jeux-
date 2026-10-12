@@ -166,6 +166,14 @@ for f in sorted(os.listdir(os.path.join(D, 'dialog'))):
     w(f'rate/d/{name}', [f'# Fenêtre « {name} » avec les notes des joueurs (macro : storage mg:rate lab). Générée depuis dialog/{name}.json.',
                          f'$return run dialog show @s {to_snbt(d, holes)}'])
 
+# Menu Échap des admins : main_menu + « Menu admin » (le menu Échap est un lanceur, dialog/esc_menu.json → mg.sv 6)
+d = json.load(open(os.path.join(D, 'dialog', 'main_menu.json'), encoding='utf-8'))
+d['actions'] = d.get('actions', []) + [{'label': [{'text': '🛠 Menu admin', 'color': 'red', 'bold': True}],
+                                       'tooltip': [{'text': 'Lancer un jeu, votes, arrêter la partie… (admins seulement)', 'color': 'gray'}],
+                                       'action': {'type': 'minecraft:run_command', 'command': 'trigger mg.sv set 5'}}]
+w('rate/d/main_menu_admin', ['# Menu Échap des admins : main_menu + bouton « Menu admin ». Généré depuis dialog/main_menu.json.',
+                            f'return run dialog show @s {js(d)}'])
+
 # appels : « dialog show @s mg:<nom> » → fenêtre avec notes
 conv = set(CONVERTED)
 for root, _, files in os.walk(F):

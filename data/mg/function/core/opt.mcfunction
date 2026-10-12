@@ -46,4 +46,5 @@ execute if score @s mg.opt matches 48 if entity @s[tag=mg.admin] run function mg
 execute if score @s mg.opt matches 49 run function mg:troll/zinedine
 execute if score @s mg.opt matches 13 if entity @s[tag=mg.admin] run function mg:vote/reset
 execute if score @s mg.opt matches 62..65 run function mg:tpg/run
+execute if score @s mg.opt matches 66 if entity @s[tag=mg.admin] run function mg:vote/open
 scoreboard players reset @s mg.opt
