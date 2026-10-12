@@ -32,6 +32,39 @@ summon minecraft:interaction -9.5 81 35784.5 {Tags:["mg.zent","mg.zbuy","mg.zb13
 summon minecraft:text_display -9.0 83.3 35784.5 {Tags:["mg.zent"],billboard:"center",text:[{"text":"🔫 Mitraillette","color":"aqua","bold":true},{"text":"\n1000 pts","color":"yellow"}]}
 execute if score $rp mg.st matches 1 run summon minecraft:item_display -9.95 82.4 35784.5 {Tags:["mg.zent"],Rotation:[90f,0f],item:{id:"minecraft:warped_fungus_on_a_stick",count:1,components:{"minecraft:item_model":"mg:gun_smg"}},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]}}
 execute unless score $rp mg.st matches 1 run summon minecraft:item_display -9.95 82.4 35784.5 {Tags:["mg.zent"],Rotation:[90f,0f],item:{id:"minecraft:crossbow",count:1},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]}}
+summon minecraft:interaction 10.5 81 35771.5 {Tags:["mg.zent","mg.zbuy","mg.zb14"],width:1.3f,height:2.4f,response:1b}
+summon minecraft:text_display 10.0 83.3 35771.5 {Tags:["mg.zent"],billboard:"center",text:[{"text":"🔫 Sniper","color":"aqua","bold":true},{"text":"\n1500 pts","color":"yellow"}]}
+execute if score $rp mg.st matches 1 run summon minecraft:item_display 10.95 82.4 35771.5 {Tags:["mg.zent"],Rotation:[-90f,0f],item:{id:"minecraft:warped_fungus_on_a_stick",count:1,components:{"minecraft:item_model":"mg:gun_sniper"}},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]}}
+execute unless score $rp mg.st matches 1 run summon minecraft:item_display 10.95 82.4 35771.5 {Tags:["mg.zent"],Rotation:[-90f,0f],item:{id:"minecraft:crossbow",count:1},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]}}
+summon minecraft:interaction -9.5 81 35773.5 {Tags:["mg.zent","mg.zbuy","mg.zb15"],width:1.3f,height:2.4f,response:1b}
+summon minecraft:text_display -9.0 83.3 35773.5 {Tags:["mg.zent"],billboard:"center",text:[{"text":"🐵 Grenades singe ×3","color":"aqua","bold":true},{"text":"\n1000 pts","color":"yellow"}]}
+summon minecraft:item_display -9.95 82.4 35773.5 {Tags:["mg.zent"],Rotation:[90f,0f],item:{id:"minecraft:snowball",count:1},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]}}
+summon minecraft:interaction -8.5 81 35796.5 {Tags:["mg.zent","mg.zbuy","mg.zb23"],width:1.3f,height:2.4f,response:1b}
+summon minecraft:text_display -8.0 84.4 35796.5 {Tags:["mg.zent"],billboard:"center",text:[{"text":"💙 Quick Revive","color":"aqua","bold":true},{"text":"\nrelevé 5 s après ta mort (une fois), 1500 pts","color":"yellow"}]}
+summon minecraft:interaction 9.5 81 35786.5 {Tags:["mg.zent","mg.zbuy","mg.zb24"],width:1.3f,height:2.4f,response:1b}
+summon minecraft:text_display 9.0 84.4 35786.5 {Tags:["mg.zent"],billboard:"center",text:[{"text":"🍺 Double Tap","color":"aqua","bold":true},{"text":"\ntir plus rapide, dégâts ×2, 2000 pts","color":"yellow"}]}
+summon minecraft:interaction 31.5 81 35796.5 {Tags:["mg.zent","mg.zbuy","mg.zb25"],width:1.3f,height:2.4f,response:1b}
+summon minecraft:text_display 31.0 84.4 35796.5 {Tags:["mg.zent"],billboard:"center",text:[{"text":"🏃 Stamin-Up","color":"aqua","bold":true},{"text":"\ntu cours plus vite, 2000 pts","color":"yellow"}]}
+summon minecraft:interaction 31.5 81 35772.5 {Tags:["mg.zent","mg.zbuy","mg.zb26"],width:1.3f,height:2.4f,response:1b}
+summon minecraft:text_display 31.0 84.4 35772.5 {Tags:["mg.zent"],billboard:"center",text:[{"text":"🐴 Mule Kick","color":"aqua","bold":true},{"text":"\nune 3e arme, 4000 pts","color":"yellow"}]}
+summon minecraft:interaction 28.5 81 35769.5 {Tags:["mg.zent","mg.zbuy","mg.zb27"],width:1.3f,height:2.4f,response:1b}
+summon minecraft:text_display 28.5 84.4 35769.0 {Tags:["mg.zent"],billboard:"center",text:[{"text":"⚡ Pack-a-Punch","color":"light_purple","bold":true},{"text":"\narme en main améliorée (×3), 3000 pts","color":"yellow"}]}
+summon minecraft:interaction -5 81 35795 {Tags:["mg.zent","mg.zlock"],width:2.05f,height:2.05f}
+summon minecraft:interaction 6 81 35805 {Tags:["mg.zent","mg.zlock"],width:2.05f,height:2.05f}
+summon minecraft:interaction -4 81 35775 {Tags:["mg.zent","mg.zlock"],width:2.05f,height:2.05f}
+summon minecraft:interaction 7 81 35782 {Tags:["mg.zent","mg.zlock"],width:2.05f,height:2.05f}
+summon minecraft:interaction 18 81 35796 {Tags:["mg.zent","mg.zlock"],width:2.05f,height:2.05f}
+summon minecraft:interaction 28 81 35803 {Tags:["mg.zent","mg.zlock"],width:2.05f,height:2.05f}
+summon minecraft:interaction 17 81 35772 {Tags:["mg.zent","mg.zlock"],width:2.05f,height:2.05f}
+summon minecraft:interaction 28 81 35781 {Tags:["mg.zent","mg.zlock"],width:2.05f,height:2.05f}
+summon minecraft:marker -10.5 81 35804.5 {Tags:["mg.zent","mg.zwin"]}
+summon minecraft:marker 0.5 81 35811.5 {Tags:["mg.zent","mg.zwin"]}
+summon minecraft:marker -10.5 81 35778.5 {Tags:["mg.zent","mg.zwin"]}
+summon minecraft:marker 0.5 81 35767.5 {Tags:["mg.zent","mg.zwin"]}
+summon minecraft:marker 33.5 81 35804.5 {Tags:["mg.zent","mg.zwin"]}
+summon minecraft:marker 22.5 81 35811.5 {Tags:["mg.zent","mg.zwin"]}
+summon minecraft:marker 33.5 81 35778.5 {Tags:["mg.zent","mg.zwin"]}
+summon minecraft:marker 22.5 81 35767.5 {Tags:["mg.zent","mg.zwin"]}
 summon minecraft:interaction 31.5 81 35806.5 {Tags:["mg.zent","mg.zbuy","mg.zb21"],width:1.3f,height:2.4f,response:1b}
 summon minecraft:text_display 31.0 84.4 35806.5 {Tags:["mg.zent"],billboard:"center",text:[{"text":"❤ Juggernog","color":"red","bold":true},{"text":"\n2× plus de vie — 2500 pts","color":"yellow"}]}
 summon minecraft:interaction 31.5 81 35785.5 {Tags:["mg.zent","mg.zbuy","mg.zb22"],width:1.3f,height:2.4f,response:1b}

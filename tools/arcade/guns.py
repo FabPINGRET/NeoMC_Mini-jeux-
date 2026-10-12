@@ -17,10 +17,14 @@ GUNS = {
     4: ('Fusil M14', 'rifle', 10, 7, 10, 40, 80, [(0, 0)], 'yellow'),
     5: ('Sniper', 'sniper', 35, 30, 5, 60, 120, [(0, 0)], 'light_purple'),
     6: ('Ray Gun', 'raygun', 20, 8, 20, 50, 60, [(0, 0)], 'green'),
+    7: ('Mitrailleuse RPK', 'rifle', 6, 2, 60, 80, 60, [(0, 0)], 'red'),
+    8: ('Revolver Python', 'pistol', 14, 10, 6, 40, 60, [(0, 0)], 'dark_aqua'),
 }
 STEP = 0.4
 SOUND = {1: ('entity.firework_rocket.blast', 1.6), 2: ('entity.firework_rocket.blast', 2.0), 3: ('entity.generic.explode', 1.8),
-         4: ('entity.firework_rocket.large_blast', 1.4), 5: ('entity.firework_rocket.large_blast', 0.7), 6: ('block.beacon.power_select', 2.0)}
+         4: ('entity.firework_rocket.large_blast', 1.4), 5: ('entity.firework_rocket.large_blast', 0.7), 6: ('block.beacon.power_select', 2.0),
+         7: ('entity.firework_rocket.blast', 1.2), 8: ('entity.firework_rocket.large_blast', 1.0)}
+# Zombies : arme améliorée (Pack-a-Punch, custom_data pap:1b) = dégâts ×3, chargeur ×2 ; fusil à pompe à bout portant (5 blocs) = dégâts ×4
 
 
 def item(n, slot_expr):
@@ -39,20 +43,24 @@ def build():
           [f'scoreboard players set @s mg.g{n} {mag}', f'execute if entity @s[tag=mg.gtw] run scoreboard players set @s mg.g{n} {2 * mag}'])
         # tir
         F = [f'# Tir : {name} (@s = tireur, position/rotation du tireur)',
+             f'execute unless score @s mg.g{n} = @s mg.g{n} run scoreboard players set @s mg.g{n} {mag}',   # arme ramassée au sol
              f'execute if score @s mg.g{n} matches ..0 run return run function mg:gun/reload_{n}',
              f'scoreboard players remove @s mg.g{n} 1', f'scoreboard players set @s mg.gcd {cd}',
+             f'execute if entity @s[tag=mg.zdbl] run scoreboard players set @s mg.gcd {max(1, cd * 2 // 3)}',
+             'execute if items entity @s weapon.mainhand *[custom_data~{pap:1b}] run tag @s add mg.gpap',
              'tag @s add mg.gsh', f'scoreboard players set $gdn mg.st {n}']
         for (a, b) in pel:
             F += [f'scoreboard players set $grs mg.st {int(rng / STEP)}', 'scoreboard players set $gstop mg.st 0',
                   f'execute anchored eyes rotated ~{a} ~{b} positioned ^ ^ ^0.6 run function mg:gun/ray']
         snd, pt = SOUND[n]
-        F += ['tag @s remove mg.gsh', 'tag @e[tag=mg.ghd] remove mg.ghd',
+        F += ['tag @s remove mg.gsh', 'tag @s remove mg.gpap', 'tag @e[tag=mg.ghd] remove mg.ghd',
               f'playsound minecraft:{snd} player @a ~ ~ ~ {0.5 if n == 2 else 0.9} {pt}',
               'execute anchored eyes positioned ^-0.25 ^-0.15 ^0.8 run particle minecraft:small_flame ~ ~ ~ 0.02 0.02 0.02 0 3' if n != 6 else
               'execute anchored eyes positioned ^-0.25 ^-0.15 ^0.8 run particle minecraft:happy_villager ~ ~ ~ 0.05 0.05 0.05 0 4',
               f'execute if score @s mg.g{n} matches 0 run function mg:gun/reload_{n}']
         w(f'gun/fire_{n}', F)
-        w(f'gun/reload_{n}', [f'# Recharge {name}', f'execute if score @s mg.g{n} matches {mag}.. run return 0',
+        w(f'gun/reload_{n}', [f'# Recharge {name}', f'execute if score @s mg.g{n} matches {2 * mag}.. run return 0',
+                              f'execute if score @s mg.g{n} matches {mag}.. unless items entity @s container.* *[custom_data~{{gun:{n},pap:1b}}] unless entity @s[tag=mg.gtw] run return 0',
                               'execute if score @s mg.grl matches 1.. run return 0',
                               f'scoreboard players set @s mg.grl {rl}', f'execute if entity @s[tag=mg.zsc] run scoreboard players set @s mg.grl {rl // 2}',
                               f'scoreboard players set @s mg.grt {n}',
@@ -87,16 +95,22 @@ def build():
        'scoreboard players set #2 mg.st 2',
        'execute unless entity @a[tag=mg.gsh,tag=mg.gtw] run scoreboard players operation $gdm mg.st *= #2 mg.st',
        'execute if entity @a[tag=mg.gsh,tag=mg.zdbl] run scoreboard players operation $gdm mg.st *= #2 mg.st',
+       'scoreboard players set #3 mg.st 3', 'scoreboard players set #4 mg.st 4',
+       'execute if entity @a[tag=mg.gsh,tag=mg.gpap] run scoreboard players operation $gdm mg.st *= #3 mg.st',
+       f'execute if score $gdn mg.st matches 3 if score $grs mg.st matches {int(16 / STEP) - int(5 / STEP)}.. unless entity @a[tag=mg.gsh,tag=mg.gtw] run scoreboard players operation $gdm mg.st *= #4 mg.st',
        'execute if entity @s[type=minecraft:player] run function mg:gun/hit_player',
        'execute unless entity @s[type=minecraft:player] run function mg:gun/hit_mob',
        'execute if score $zpts mg.st matches 1 run scoreboard players add @a[tag=mg.gsh,limit=1] mg.zpt 10',   # Zombies (toutes les cartes) : $zpts = 1
+       'execute if score $zpts mg.st matches 1 if score $zdp mg.st matches 1.. run scoreboard players add @a[tag=mg.gsh,limit=1] mg.zpt 10',   # points doubles
        'particle minecraft:damage_indicator ~ ~1.2 ~ 0.2 0.3 0.2 0 2',
        'execute as @a[tag=mg.gsh,limit=1] at @s run playsound minecraft:entity.arrow.hit_player player @s ~ ~ ~ 0.5 1.6'])
-    w('gun/hit_mob', ['# Mob : on retire la vie directement (pas d\'invulnérabilité), coup fatal crédité au tireur',
+    w('gun/hit_mob', ['# Mob : on retire la vie directement (pas d\'invulnérabilité), coup fatal crédité au tireur ; Zombies : mort instantanée, bonus lâché au hasard',
+                      'execute if score $zpts mg.st matches 1 if score $zik mg.st matches 1.. run scoreboard players set $gdm mg.st 1000000',
                       'execute store result score $gh mg.st run data get entity @s Health 10',
                       'scoreboard players operation $gh mg.st -= $gdm mg.st',
                       'execute if score $gh mg.st matches 1.. store result entity @s Health float 0.1 run scoreboard players get $gh mg.st',
                       'execute if score $gh mg.st matches 1.. at @s run playsound minecraft:entity.zombie.hurt hostile @a ~ ~ ~ 0.5 1',
+                      'execute if score $gh mg.st matches ..0 if score $zpts mg.st matches 1 if entity @s[tag=mg.zz] at @s run function mg:zx/drop_roll',
                       'execute if score $gh mg.st matches ..0 run damage @s 1000 minecraft:player_attack by @a[tag=mg.gsh,limit=1]'])
     w('gun/hit_player', ['# Joueur : Infection (zombie touché) = dégâts doublés ; Neo GTA (tireur mg.gtw) = dégâts normaux ; lobby (tireur mg.lsh) = un demi-cœur',
                          'execute if entity @a[tag=mg.gsh,tag=mg.lsh] run return run damage @s 1 minecraft:player_attack by @a[tag=mg.gsh,limit=1]'] +
@@ -105,7 +119,8 @@ def build():
     w('gun/reload_tick', ['# @s recharge', 'scoreboard players remove @s mg.grl 1',
                           'execute if score @s mg.grl matches 1.. run return 0'] +
       [l for n, g in GUNS.items() for l in (f'execute if score @s mg.grt matches {n} run scoreboard players set @s mg.g{n} {g[4]}',
-                                             f'execute if entity @s[tag=mg.gtw] if score @s mg.grt matches {n} run scoreboard players set @s mg.g{n} {2 * g[4]}')] +   # Neo GTA : chargeurs doublés
+                                             f'execute if entity @s[tag=mg.gtw] if score @s mg.grt matches {n} run scoreboard players set @s mg.g{n} {2 * g[4]}',
+                                             f'execute if score @s mg.grt matches {n} if items entity @s container.* *[custom_data~{{gun:{n},pap:1b}}] run scoreboard players set @s mg.g{n} {2 * g[4]}')] +   # Neo GTA, arme améliorée : chargeurs doublés
 
       ['playsound minecraft:item.crossbow.loading_end player @s ~ ~ ~ 0.8 1.4'])
     w('gun/sneak', ['# Accroupi avec une arme en main : recharge', 'scoreboard players reset @s mg.gsn'] +

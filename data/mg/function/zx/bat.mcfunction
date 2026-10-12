@@ -1,0 +1,2 @@
+# Macro $(m) : modèle
+$item replace entity @s hotbar.0 with minecraft:wooden_sword[item_model="$(m)",unbreakable={},custom_name={"text":"🏏 Batte cloutée","color":"gold","italic":false},attribute_modifiers=[{type:"minecraft:attack_damage",id:"mg:zbat",amount:13.0,operation:"add_value",slot:"mainhand"},{type:"minecraft:attack_knockback",id:"mg:zbatk",amount:1.0,operation:"add_value",slot:"mainhand"}]]

@@ -22,6 +22,28 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.zkl
+scoreboard objectives remove mg.zid
+scoreboard objectives remove mg.zmi
+scoreboard objectives remove mg.zmo
+scoreboard objectives remove mg.zmc
+scoreboard objectives remove mg.zws
+scoreboard objectives remove mg.zpy
+scoreboard objectives remove mg.zpl
+scoreboard objectives remove mg.zrt
+scoreboard objectives remove mg.zrp
+scoreboard objectives remove mg.gcd
+scoreboard objectives remove mg.grl
+scoreboard objectives remove mg.grt
+scoreboard objectives remove mg.gsn
+scoreboard objectives remove mg.g1
+scoreboard objectives remove mg.g2
+scoreboard objectives remove mg.g3
+scoreboard objectives remove mg.g4
+scoreboard objectives remove mg.g5
+scoreboard objectives remove mg.g6
+scoreboard objectives remove mg.g7
+scoreboard objectives remove mg.g8
 scoreboard objectives remove mg.phn
 scoreboard objectives remove mg.php
 scoreboard objectives remove mg.phx
@@ -282,16 +304,6 @@ data remove storage mg:frz p
 data remove storage mg:zm hp
 scoreboard objectives remove mg.zpt
 scoreboard objectives remove mg.zk
-scoreboard objectives remove mg.gcd
-scoreboard objectives remove mg.grl
-scoreboard objectives remove mg.grt
-scoreboard objectives remove mg.gsn
-scoreboard objectives remove mg.g1
-scoreboard objectives remove mg.g2
-scoreboard objectives remove mg.g3
-scoreboard objectives remove mg.g4
-scoreboard objectives remove mg.g5
-scoreboard objectives remove mg.g6
 data remove storage mg:zone r
 scoreboard objectives remove mg.cf
 stopsound @a record
