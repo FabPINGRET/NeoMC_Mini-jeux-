@@ -196,3 +196,7 @@ patch('core/menu_quake_chat', chat, ['tellraw @s ' + json.dumps(['', {'text': ' 
                                                                {'text': ' [🎯 Tours (sniper)]', 'color': 'green',
                                                                 'click_event': {'action': 'run_command', 'command': 'trigger mg.go set 80'}}], ensure_ascii=False)])
 print('Quake sniper : build_5 (Ravin), build_6 (Tours) + crochets')
+
+# Les notes des joueurs remplacent les étoiles dans les menus : à refaire après chaque régénération des menus
+import runpy
+runpy.run_path(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'rating', 'gen_rating.py'), run_name='__main__')

@@ -243,3 +243,7 @@ C.patch('core/load', 'scoreboard objectives add mg.evw dummy', ['scoreboard play
 C.patch('core/tick', 'execute if score $setup mg.st matches 1 run function mg:lobby/armory_tick',
         ['execute if score $setup mg.st matches 1 run function mg:lobby/ev/tick'])
 print('ok')
+
+# Les notes des joueurs remplacent les étoiles dans les menus : à refaire après chaque régénération des menus
+import runpy
+runpy.run_path(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'rating', 'gen_rating.py'), run_name='__main__')
