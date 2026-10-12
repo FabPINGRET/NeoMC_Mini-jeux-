@@ -24,6 +24,11 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+team remove mg_mm
+data remove storage mg:mm d
+scoreboard objectives remove mg.mmk
+scoreboard objectives remove mg.mma
+scoreboard objectives remove mg.mmo
 scoreboard objectives remove mg.zqx
 scoreboard objectives remove mg.zqz
 scoreboard objectives remove mg.zsk

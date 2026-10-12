@@ -1,0 +1,1 @@
+give @s minecraft:iron_sword[unbreakable={},custom_data={mg_mmk:1b},custom_name={"text":"🔪 Couteau","color":"red","italic":false},attribute_modifiers=[{type:"minecraft:attack_damage",id:"mg:mmk",amount:50.0,operation:"add_value",slot:"mainhand"},{type:"minecraft:attack_speed",id:"mg:mmks",amount:100.0,operation:"add_value",slot:"mainhand"}]]
