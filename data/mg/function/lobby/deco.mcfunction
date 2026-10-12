@@ -5,3 +5,4 @@ function mg:lobby/deco_common
 execute if score $rp mg.st matches 1 run function mg:lobby/deco_rp
 execute unless score $rp mg.st matches 1 run function mg:lobby/deco_vn
 data modify storage mg:lobby deco3 set value 1b
+execute if score $theme mg.st matches 1.. run function mg:lobby/theme/reskin
