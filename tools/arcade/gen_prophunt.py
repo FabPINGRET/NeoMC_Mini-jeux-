@@ -24,8 +24,12 @@ PROPS = ['barrel', 'crafting_table', 'bookshelf', 'hay_block', 'pumpkin', 'carve
          'anvil', 'furnace', 'smoker', 'loom', 'fletching_table', 'smithing_table', 'cartography_table', 'beehive', 'jukebox', 'note_block',
          'cake', 'brewing_stand', 'grindstone', 'stonecutter', 'potted_red_tulip', 'oak_leaves', 'cobweb', 'target', 'lectern', 'blast_furnace',
          'dried_kelp_block', 'sponge', 'iron_block', 'oxidized_copper', 'blue_wool', 'tnt', 'honey_block', 'red_wool', 'yellow_wool', 'white_wool',
-         'packed_ice', 'blue_ice', 'moss_block', 'azalea', 'flowering_azalea', 'potted_fern']
+         'packed_ice', 'blue_ice', 'moss_block', 'azalea', 'flowering_azalea', 'potted_fern',
+         'soul_lantern', 'pale_oak_leaves']  # blocs posés par le décor d'Halloween (tools/lobby/gen_theme_maps.py)
 PID = {p: i + 1 for i, p in enumerate(PROPS)}
+LEAVES = ('oak_leaves', 'pale_oak_leaves')
+# Halloween ($theme 1) : toutes les lanternes de la carte deviennent des lanternes des âmes → l'objet suit
+HALLOWEEN = {'lantern': 'soul_lantern'}
 ROOMS = [  # (x1, x2, z1, z2, sol, objets)
     (-19, -8, Z - 14, Z - 1, 'spruce_planks', ['furnace', 'smoker', 'cauldron', 'barrel', 'crafting_table', 'cake', 'blast_furnace', 'potted_red_tulip']),
     (-6, 6, Z - 14, Z - 1, 'oak_planks', ['bookshelf', 'lectern', 'lantern', 'potted_red_tulip', 'cartography_table', 'jukebox']),
@@ -294,9 +298,12 @@ w('ph/become_prop', ['# @s devient cacheur : invisible, petit, un objet au hasar
                      'scoreboard players operation @e[tag=mg.phnew] mg.pid = @s mg.pid', 'tag @e[tag=mg.phnew] remove mg.phnew',
                      'function mg:ph/apply'])
 A = ['# @s (cacheur) : met l\'apparence de son objet ($php) sur son block_display',
-     'scoreboard players operation $pid mg.st = @s mg.pid', 'scoreboard players operation $pp mg.st = @s mg.php']
+     'scoreboard players operation $pid mg.st = @s mg.pid']
+A += [f'execute if score $theme mg.st matches 1 if score @s mg.php matches {PID[a]} run scoreboard players set @s mg.php {PID[b]}'
+      for a, b in HALLOWEEN.items()]
+A += ['scoreboard players operation $pp mg.st = @s mg.php']
 for p, i in PID.items():
-    st = '{Name:"minecraft:oak_leaves",Properties:{persistent:"true"}}' if p == 'oak_leaves' else f'{{Name:"minecraft:{p}"}}'
+    st = f'{{Name:"minecraft:{p}",Properties:{{persistent:"true"}}}}' if p in LEAVES else f'{{Name:"minecraft:{p}"}}'
     A.append(f'execute if score $pp mg.st matches {i} as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {st}')
 for p, i in PID.items():
     A.append(f'execute if score $pp mg.st matches {i} run title @s actionbar [{{"text":"🎭 Tu es : ","color":"gold"}},{{"translate":"block.minecraft.{p}","color":"yellow","bold":true}}]')

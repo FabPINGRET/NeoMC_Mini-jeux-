@@ -47,3 +47,5 @@ execute if block ~ ~ ~ minecraft:moss_block run return run function mg:ph/got {p
 execute if block ~ ~ ~ minecraft:azalea run return run function mg:ph/got {p:44}
 execute if block ~ ~ ~ minecraft:flowering_azalea run return run function mg:ph/got {p:45}
 execute if block ~ ~ ~ minecraft:potted_fern run return run function mg:ph/got {p:46}
+execute if block ~ ~ ~ minecraft:soul_lantern run return run function mg:ph/got {p:47}
+execute if block ~ ~ ~ minecraft:pale_oak_leaves run return run function mg:ph/got {p:48}

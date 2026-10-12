@@ -1,5 +1,6 @@
 # @s (cacheur) : met l'apparence de son objet ($php) sur son block_display
 scoreboard players operation $pid mg.st = @s mg.pid
+execute if score $theme mg.st matches 1 if score @s mg.php matches 10 run scoreboard players set @s mg.php 47
 scoreboard players operation $pp mg.st = @s mg.php
 execute if score $pp mg.st matches 1 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:barrel"}
 execute if score $pp mg.st matches 2 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:crafting_table"}
@@ -47,6 +48,8 @@ execute if score $pp mg.st matches 43 as @e[type=minecraft:block_display,tag=mg.
 execute if score $pp mg.st matches 44 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:azalea"}
 execute if score $pp mg.st matches 45 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:flowering_azalea"}
 execute if score $pp mg.st matches 46 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:potted_fern"}
+execute if score $pp mg.st matches 47 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:soul_lantern"}
+execute if score $pp mg.st matches 48 as @e[type=minecraft:block_display,tag=mg.phd] if score @s mg.pid = $pid mg.st run data modify entity @s block_state set value {Name:"minecraft:pale_oak_leaves",Properties:{persistent:"true"}}
 execute if score $pp mg.st matches 1 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.barrel","color":"yellow","bold":true}]
 execute if score $pp mg.st matches 2 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.crafting_table","color":"yellow","bold":true}]
 execute if score $pp mg.st matches 3 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.bookshelf","color":"yellow","bold":true}]
@@ -93,3 +96,5 @@ execute if score $pp mg.st matches 43 run title @s actionbar [{"text":"🎭 Tu e
 execute if score $pp mg.st matches 44 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.azalea","color":"yellow","bold":true}]
 execute if score $pp mg.st matches 45 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.flowering_azalea","color":"yellow","bold":true}]
 execute if score $pp mg.st matches 46 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.potted_fern","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 47 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.soul_lantern","color":"yellow","bold":true}]
+execute if score $pp mg.st matches 48 run title @s actionbar [{"text":"🎭 Tu es : ","color":"gold"},{"translate":"block.minecraft.pale_oak_leaves","color":"yellow","bold":true}]
