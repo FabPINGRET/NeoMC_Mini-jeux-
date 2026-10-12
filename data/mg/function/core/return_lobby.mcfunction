@@ -1,4 +1,5 @@
 # Retour au lobby de tous les participants + nettoyage du monde
+execute if score $tmap mg.st matches 1 run function mg:lobby/theme/map/end
 
 # Classements par jeu et hall des scores : crédit des vainqueurs (avant la remise à zéro des tags)
 execute as @a[tag=mg.win] run function mg:hall/credit

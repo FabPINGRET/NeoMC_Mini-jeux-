@@ -3,6 +3,7 @@
 Toutes les 30 min (jeu au repos, au moins un joueur au lobby), annonce 1 min avant puis un des trois événements (3 min) :
   👑 Roi Zombie : un husk géant (vie selon le nombre de joueurs) et ses sbires ; épée prêtée ; le plus gros cogneur gagne.
   💰 Pluie de pièces : des pépites (1) et des lingots (5) tombent sur l'île pendant 60 s ; le plus riche gagne.
+     Décor saisonnier actif ($theme) : devient 🍬 Chasse aux bonbons (Halloween) ou 🎁 Chasse aux cadeaux (Noël).
   🗝 Chasse au trésor : un coffre caché sur l'île, indices chaud / froid ; le premier qui clique dessus gagne.
 Gagnant : couronne (jusqu'à la prochaine partie), feu d'artifice, mg.evw + 1. Une partie qui démarre arrête l'événement.
 Admin : menu ≡ → 🎉 Événements du lobby (mg.opt 67 : au hasard 68, événement k 68+k, arrêter/annuler 72),
@@ -49,15 +50,27 @@ w('lobby/ev/second', ['scoreboard players set $evtk mg.st 0',
 w('lobby/ev/pick', ['execute unless score $evk mg.st matches 1..3 store result score $evk mg.st run random value 1..3',
                     'bossbar add mg:ev ""', 'bossbar set mg:ev max 60', 'bossbar set mg:ev style notched_10'] +
   [f'execute if score $evk mg.st matches {k} run function mg:lobby/ev/ann_{k}' for k in NAMES])
+# Habillage saisonnier de la pluie de pièces ($theme mg.st, tools/lobby/gen_themes.py) : mêmes objets
+# (pépite = 1, lingot = 5, comptage et nettoyage inchangés), seuls le nom et l'apparence (item_model) changent.
+# thème : (condition, nom, couleur, description, petit (nom, modèle), gros (nom, modèle), unité, particule, gagnant)
+E2_SKINS = {0: ('unless score $theme mg.st matches 1..2', NAMES[2][0], 'gold', NAMES[2][2],
+                ('Pièce (1)', None), ('Gros lingot (5)', None), 'pièces', 'wax_on', '💰 Le plus riche : '),
+            1: ('if score $theme mg.st matches 1', '🍬 Chasse aux bonbons', 'gold',
+                'Des bonbons tombent du ciel ! Bonbon = 1, citrouille-surprise = 5. Le plus gourmand gagne.',
+                ('🍬 Bonbon (1)', 'minecraft:cookie'), ('🎃 Citrouille-surprise (5)', 'minecraft:jack_o_lantern'), 'bonbons', 'soul', '🍬 Le plus gourmand : '),
+            2: ('if score $theme mg.st matches 2', '🎁 Chasse aux cadeaux', 'red',
+                'Le traîneau perd sa cargaison ! Biscuit = 1, cadeau = 5. Le plus chargé gagne.',
+                ('🍪 Biscuit (1)', 'minecraft:cookie'), ('🎁 Cadeau (5)', 'minecraft:red_shulker_box'), 'cadeaux', 'snowflake', '🎁 Le plus chargé : ')}
 # Annonce : « dans 1 min » (automatique) ou « dans 10 s » ($evf 1 : lancé par un admin, force_go)
-for k, (nm, col, desc) in NAMES.items():
+for k, (nm0, col0, desc0) in NAMES.items():
     ann = []
-    for cond, short, long in (('unless', '1 min', '1 minute'), ('if', '10 s', '10 secondes')):
-        pre = f'execute {cond} score $evf mg.st matches 1 run '
+    for tcond, nm, col, desc in ([(s[0], s[1], s[2], s[3]) for s in E2_SKINS.values()] if k == 2 else [('', nm0, col0, desc0)]):
+      for cond, short, long in (('unless', '1 min', '1 minute'), ('if', '10 s', '10 secondes')):
+        pre = f'execute {tcond + " " if tcond else ""}{cond} score $evf mg.st matches 1 run '
         ann += [pre + 'bossbar set mg:ev name ' + js([{'text': 'Événement : ', 'color': 'white'}, {'text': nm, 'color': col, 'bold': True}, {'text': f' dans {short}', 'color': 'gray'}]),
                 pre + 'tellraw @a ' + js([{'text': f'🎉 ÉVÉNEMENT SURPRISE au spawn dans {long} : ', 'color': 'light_purple', 'bold': True},
                                           {'text': nm, 'color': col, 'bold': True}, {'text': f'\n{desc}', 'color': 'gray'}])]
-    w(f'lobby/ev/ann_{k}', ann + [f'bossbar set mg:ev color {"red" if col == "red" else "yellow" if col == "gold" else "blue"}',
+    w(f'lobby/ev/ann_{k}', ann + [f'bossbar set mg:ev color {"red" if col0 == "red" else "yellow" if col0 == "gold" else "blue"}',
                                   f'execute as @a[tag=!mg.surv] at @s run playsound minecraft:block.bell.use master @s ~ ~ ~ 1 0.8'])
 w('lobby/ev/countdown', [f'bossbar set mg:ev players {L}',
                          'execute store result bossbar mg:ev value run scoreboard players get $evn mg.st',
@@ -182,35 +195,41 @@ w('lobby/ev/e1_end', ['execute if entity @e[tag=mg.evb] run tellraw @a {"text":"
                       f'execute if score $evbest mg.st matches 1.. as {L} if score @s mg.evd = $evbest mg.st run tag @s add mg.evwin',
                       'execute as @a[tag=mg.evwin,limit=1,sort=random] run function mg:lobby/ev/win', 'tag @a remove mg.evwin'])
 
-# ---------------------------------------------------------------- 💰 Pluie de pièces (60 s)
-COIN = 'components:{{"minecraft:custom_data":{{mg_ev:1b}},"minecraft:item_name":{{"text":"{n}","color":"gold"}}}}'
-w('lobby/ev/e2_start', [f'scoreboard players set $evt mg.st 60', 'bossbar set mg:ev max 60', 'bossbar set mg:ev color yellow',
-                        f'title {L} title {{"text":"💰 PLUIE DE PIÈCES","color":"gold","bold":true}}',
-                        f'title {L} subtitle {{"text":"Ramasse tout ce qui tombe !","color":"gray"}}'])
-w('lobby/ev/e2_sec', ['bossbar set mg:ev name {"text":"💰 Pluie de pièces","color":"gold","bold":true}',
-                      'execute store result bossbar mg:ev value run scoreboard players get $evt mg.st',
-                      'execute in minecraft:overworld run function mg:lobby/ev/e2_coin', 'execute in minecraft:overworld run function mg:lobby/ev/e2_coin',
-                      'execute in minecraft:overworld run function mg:lobby/ev/e2_coin', 'execute in minecraft:overworld run function mg:lobby/ev/e2_coin',
-                      'execute in minecraft:overworld run function mg:lobby/ev/e2_coin', 'execute in minecraft:overworld run function mg:lobby/ev/e2_coin',
-                      f'execute as {L} run function mg:lobby/ev/e2_count'])
+# ---------------------------------------------------------------- 💰 Pluie de pièces (60 s), habillée selon $theme
+def coin(n, model):
+    comps = '"minecraft:custom_data":{mg_ev:1b},"minecraft:item_name":' + js({'text': n, 'color': 'gold'})
+    return 'components:{' + comps + (f',"minecraft:item_model":"{model}"' if model else '') + '}'
+
+
+SK = list(E2_SKINS.values())
+w('lobby/ev/e2_start', ['scoreboard players set $evt mg.st 60', 'bossbar set mg:ev max 60'] +
+  [f'execute {s[0]} run bossbar set mg:ev color {"red" if s[2] == "red" else "yellow"}' for s in SK] +
+  [f'execute {s[0]} run title {L} title ' + js({'text': s[1].upper(), 'color': s[2], 'bold': True}) for s in SK] +
+  [f'title {L} subtitle {{"text":"Ramasse tout ce qui tombe !","color":"gray"}}'])
+w('lobby/ev/e2_sec', [f'execute {s[0]} run bossbar set mg:ev name ' + js({'text': s[1], 'color': s[2], 'bold': True}) for s in SK] +
+  ['execute store result bossbar mg:ev value run scoreboard players get $evt mg.st'] +
+  ['execute in minecraft:overworld run function mg:lobby/ev/e2_coin'] * 6 +
+  [f'execute as {L} run function mg:lobby/ev/e2_count'])
 w('lobby/ev/e2_coin', ['summon minecraft:marker 0 64 0 {Tags:["mg.evx","mg.evp"]}',
                        'spreadplayers 0 0 0 40 under 85 false @e[type=minecraft:marker,tag=mg.evp]',
-                       'execute store result score $evr mg.st run random value 1..8',
-                       'execute at @e[type=minecraft:marker,tag=mg.evp] if score $evr mg.st matches 1 run summon minecraft:item ~ ~14 ~ {Tags:["mg.evx","mg.keep"],Glowing:1b,Item:{id:"minecraft:gold_ingot",count:1,'
-                       + COIN.format(n='Gros lingot (5)') + '}}',
-                       'execute at @e[type=minecraft:marker,tag=mg.evp] unless score $evr mg.st matches 1 run summon minecraft:item ~ ~14 ~ {Tags:["mg.evx","mg.keep"],Item:{id:"minecraft:gold_nugget",count:1,'
-                       + COIN.format(n='Pièce (1)') + '}}',
-                       'execute at @e[type=minecraft:marker,tag=mg.evp] run particle minecraft:wax_on ~ ~14 ~ 0.3 0.3 0.3 0 5',
-                       'kill @e[type=minecraft:marker,tag=mg.evp]'])
+                       'execute store result score $evr mg.st run random value 1..8'] +
+  [f'execute {s[0]} at @e[type=minecraft:marker,tag=mg.evp] if score $evr mg.st matches 1 run summon minecraft:item ~ ~14 ~ '
+   '{Tags:["mg.evx","mg.keep"],Glowing:1b,Item:{id:"minecraft:gold_ingot",count:1,' + coin(*s[5]) + '}}' for s in SK] +
+  [f'execute {s[0]} at @e[type=minecraft:marker,tag=mg.evp] unless score $evr mg.st matches 1 run summon minecraft:item ~ ~14 ~ '
+   '{Tags:["mg.evx","mg.keep"],Item:{id:"minecraft:gold_nugget",count:1,' + coin(*s[4]) + '}}' for s in SK] +
+  [f'execute {s[0]} at @e[type=minecraft:marker,tag=mg.evp] run particle minecraft:{s[7]} ~ ~14 ~ 0.3 0.3 0.3 0 5' for s in SK] +
+  ['kill @e[type=minecraft:marker,tag=mg.evp]'])
 w('lobby/ev/e2_count', [f'execute store result score @s mg.evc run clear @s minecraft:gold_nugget{EVI} 0',
                         f'execute store result score #evi mg.st run clear @s minecraft:gold_ingot{EVI} 0',
-                        'scoreboard players operation #evi mg.st *= #ev5 mg.st', 'scoreboard players operation @s mg.evc += #evi mg.st',
-                        'title @s actionbar [{"text":"💰 ","color":"gold"},{"score":{"name":"@s","objective":"mg.evc"},"color":"yellow","bold":true},{"text":" pièces","color":"gold"}]'])
+                        'scoreboard players operation #evi mg.st *= #ev5 mg.st', 'scoreboard players operation @s mg.evc += #evi mg.st'] +
+  [f'execute {s[0]} run title @s actionbar ' + js([{'text': s[1].split()[0] + ' ', 'color': 'gold'}, {'score': {'name': '@s', 'objective': 'mg.evc'}, 'color': 'yellow', 'bold': True},
+                                                   {'text': ' ' + s[6], 'color': 'gold'}]) for s in SK])
 w('lobby/ev/e2_end', [f'execute as {L} run function mg:lobby/ev/e2_count',
                       'scoreboard players set $evbest mg.st 0', f'execute as {L} run scoreboard players operation $evbest mg.st > @s mg.evc',
-                      f'execute if score $evbest mg.st matches 1.. as {L} if score @s mg.evc = $evbest mg.st run tag @s add mg.evwin',
-                      'execute as @a[tag=mg.evwin,limit=1,sort=random] run tellraw @a [{"text":"💰 Le plus riche : ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" (","color":"gray"},{"score":{"name":"$evbest","objective":"mg.st"},"color":"yellow"},{"text":" pièces)","color":"gray"}]',
-                      'execute as @a[tag=mg.evwin,limit=1,sort=random] run function mg:lobby/ev/win', 'tag @a remove mg.evwin'])
+                      f'execute if score $evbest mg.st matches 1.. as {L} if score @s mg.evc = $evbest mg.st run tag @s add mg.evwin'] +
+  [f'execute {s[0]} as @a[tag=mg.evwin,limit=1,sort=random] run tellraw @a ' + js([{'text': s[8], 'color': 'gold'}, {'selector': '@s', 'color': 'yellow'}, {'text': ' (', 'color': 'gray'},
+                                                                                   {'score': {'name': '$evbest', 'objective': 'mg.st'}, 'color': 'yellow'}, {'text': ' ' + s[6] + ')', 'color': 'gray'}]) for s in SK] +
+  ['execute as @a[tag=mg.evwin,limit=1,sort=random] run function mg:lobby/ev/win', 'tag @a remove mg.evwin'])
 
 # ---------------------------------------------------------------- 🗝 Chasse au trésor
 w('lobby/ev/e3_start', ['bossbar set mg:ev color blue',
