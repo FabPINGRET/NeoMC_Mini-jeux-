@@ -106,6 +106,7 @@ forceload add -12 38588 12 38612
 forceload add -27 23681 27 23719
 forceload add -25 23783 25 23817
 forceload add -23 23882 23 23918
+forceload add -35 7 -15 27
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl

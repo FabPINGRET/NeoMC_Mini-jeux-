@@ -3,6 +3,8 @@ execute if score $tmap mg.st matches 1 run function mg:lobby/theme/map/end
 execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off
 kill @e[type=minecraft:text_display,tag=mg.deco]
 kill @e[tag=mg.lby]
+kill @e[tag=mg.hat]
+clear @a *[minecraft:custom_data~{mg_hat:1b}]
 kill @e[tag=mg.lkart]
 kill @e[tag=mg.arm]
 kill @e[tag=mg.mob]
@@ -24,6 +26,8 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.hat
+scoreboard objectives remove mg.hid
 team remove mg_mm
 data remove storage mg:mm d
 scoreboard objectives remove mg.mmk
