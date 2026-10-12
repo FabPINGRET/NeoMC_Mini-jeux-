@@ -198,6 +198,7 @@ scoreboard objectives add mg.gsb dummy
 scoreboard objectives add mg.gs1 dummy
 scoreboard objectives add mg.gs2 dummy
 scoreboard objectives add mg.gs3 dummy
+scoreboard objectives add mg.gta dummy {"text":"💵 Dollars","color":"green"}
 scoreboard objectives modify mg.gta displayname [{"text":"💵 Neo GTA","color":"green","bold":true},{"text":" : les plus riches","color":"gray","bold":false}]
 scoreboard objectives add mg.gmis trigger
 scoreboard objectives add mg.gmt dummy

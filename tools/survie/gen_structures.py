@@ -17,7 +17,7 @@ SKIP = {'strongholds', 'nether_fossils'}
 os.makedirs(OUT, exist_ok=True)
 for f in sorted(os.listdir(SRC)):
     k = f[:-5]
-    d = json.load(open(os.path.join(SRC, f)))
+    d = json.load(open(os.path.join(SRC, f), encoding='utf-8'))
     p = d['placement']
     if k in SKIP or p.get('type') != 'minecraft:random_spread':
         continue
@@ -27,5 +27,5 @@ for f in sorted(os.listdir(SRC)):
         p['separation'] = min(max(0, round(p['separation'] * F)), p['spacing'] - 1)
     if 'frequency' in p and old[0] == 1:   # seulement mines et trésors (les avant-postes gardent leur fréquence)
         p['frequency'] = round(min(1.0, p['frequency'] * 2.5), 4)
-    json.dump(d, open(os.path.join(OUT, f), 'w'), indent=2)
+    json.dump(d, open(os.path.join(OUT, f), 'w', encoding='utf-8'), indent=2)
     print(f'{k:20} spacing/separation/frequency {old} -> {(p["spacing"], p["separation"], p.get("frequency"))}')

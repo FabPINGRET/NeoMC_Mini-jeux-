@@ -4,11 +4,11 @@ execute as @a[tag=mg.play] store result score @s mg.tz run data get entity @s Po
 scoreboard players remove @a[tag=mg.play] mg.tz 34600
 execute as @a[tag=mg.play,scores={mg.tx=..-1}] run scoreboard players operation @s mg.tx *= #-1 mg.st
 execute as @a[tag=mg.play,scores={mg.tz=..-1}] run scoreboard players operation @s mg.tz *= #-1 mg.st
+tag @a remove mg.zout
 execute as @a[tag=mg.play] if score @s mg.tx > $zr mg.st run tag @s add mg.zout
 execute as @a[tag=mg.play] if score @s mg.tz > $zr mg.st run tag @s add mg.zout
 execute as @a[tag=mg.zout] run damage @s 2 minecraft:outside_border
 title @a[tag=mg.zout] actionbar {"text":"⚠ Hors de la zone ! Reviens vers le centre","color":"red","bold":true}
-tag @a remove mg.zout
 execute store result storage mg:zone r int 1 run scoreboard players get $zr mg.st
 scoreboard players operation $zn mg.st = $zr mg.st
 scoreboard players operation $zn mg.st *= #-1 mg.st

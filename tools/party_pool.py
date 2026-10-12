@@ -6,7 +6,7 @@ Chaque jeu : (id de lancement, nom affiché, couleur, limite de temps en ticks p
 Format court (3 à 6 min) ; la limite est un filet de sécurité : à expiration, One in the Chamber donne la victoire au meilleur tueur,
 les autres jeux s'arrêtent sans vainqueur (+3 pièces pour tous).
 """
-import os, sys
+import json, os, sys
 
 R = sys.argv[1]
 P = os.path.join(R, 'data/mg/function/party/')
@@ -51,7 +51,7 @@ show = ['# Affiche le mini-jeu n° $mgk en titre, règle $mgid (id de lancement)
 for k, (gid, name, col, lim) in enumerate(POOL, 1):
     show += [f'execute if score $mgk mg.st matches {k} run scoreboard players set $mgid mg.st {gid}',
              f'execute if score $mgk mg.st matches {k} run scoreboard players set $mplim mg.st {lim}',
-             f'execute if score $mgk mg.st matches {k} run title @a[tag=mg.mpp] title [{{"text":"{name}","color":"{col}","bold":true}}]']
+             f'execute if score $mgk mg.st matches {k} run title @a[tag=mg.mpp] title [{{"text":{json.dumps(name, ensure_ascii=False)},"color":"{col}","bold":true}}]']
 show.append('execute as @a[tag=mg.mpp] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 1.5')
 w('pick_show', show)
 f = [f'# Tirage final : un mini-jeu pas encore joué dans cette Mini Party (quand les {N} sont passés, le cycle recommence)',
@@ -78,7 +78,7 @@ w('watch', ['# Mini-jeu de la Mini Party en cours (core/game_tick) : format cour
             f'execute if score $game mg.st matches 4 if score $mpgt mg.st matches {2 * M + 600} run function mg:party/bw_sudden',
             'scoreboard players operation $mprest mg.st = $mplim mg.st', 'scoreboard players operation $mprest mg.st -= $mpgt mg.st',
             f'execute if score $mprest mg.st matches {M} run tellraw @a[tag=!mg.surv] [{{"text":"⏱ ","color":"gold"}},{{"text":"Plus qu’une minute pour ce mini-jeu !","color":"yellow"}}]',
-            'execute if score $mplim mg.st matches 1.. if score $mpgt mg.st = $mplim mg.st run function mg:party/watch_end'])
+            'execute if score $state mg.st matches 2 if score $mplim mg.st matches 1.. if score $mpgt mg.st = $mplim mg.st run function mg:party/watch_end'])
 w('bw_sudden', ['# Bedwars en Mini Party : mort subite, tous les lits sont détruits (le tick du Bedwars annonce chaque lit)',
                 'fill -36 64 1199 -34 64 1201 minecraft:air replace #minecraft:beds', 'fill 34 64 1199 36 64 1201 minecraft:air replace #minecraft:beds',
                 'fill -1 64 1163 1 64 1165 minecraft:air replace #minecraft:beds', 'fill -1 64 1235 1 64 1237 minecraft:air replace #minecraft:beds',

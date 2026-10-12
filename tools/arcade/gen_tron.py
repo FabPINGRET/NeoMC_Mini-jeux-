@@ -148,8 +148,9 @@ w('tron/out', ['# @s éliminé : ses marqueurs et sa moto disparaissent, ses mur
                'execute as @e[tag=mg.trh] if score @s mg.trc = $tid mg.st run tp @s ~ -100 ~',
                'execute at @s run particle minecraft:explosion ~ ~1 ~ 0.3 0.3 0.3 0 3', 'execute at @s run playsound minecraft:entity.generic.explode master @a ~ ~ ~ 0.6 1.6',
                'attribute @s minecraft:jump_strength base reset', 'function mg:core/eliminate'])
-w('tron/cleanup', ['execute as @a run ride @s dismount', 'effect clear @a[tag=mg.play] minecraft:glowing', 'scoreboard players reset @a mg.trj', 'kill @e[tag=mg.trm]', 'kill @e[tag=mg.trp]', 'execute as @e[tag=mg.trh] run tp @s ~ -100 ~', 'kill @e[tag=mg.trh]',
-                   'execute as @a run attribute @s minecraft:jump_strength base reset', 'scoreboard players reset @a mg.trc', 'scoreboard players reset @a mg.trs'])
+w('tron/cleanup', ['execute as @a[tag=mg.play] run ride @s dismount', 'effect clear @a[tag=mg.play] minecraft:glowing', 'scoreboard players reset @a mg.trj', 'kill @e[tag=mg.trm]', 'kill @e[tag=mg.trp]', 'execute as @e[tag=mg.trh] run tp @s ~ -100 ~', 'kill @e[tag=mg.trh]',
+                   'execute as @a[tag=mg.play] run attribute @s minecraft:jump_strength base reset',
+                   'execute as @a[tag=mg.out] run attribute @s minecraft:jump_strength base reset', 'scoreboard players reset @a mg.trc', 'scoreboard players reset @a mg.trs'])
 
 C.register([84, 85], 'tron', [
     C.announce(84, '', '⚡ TRON', 'aqua', 'laisse un mur derrière toi, ne touche aucun mur !'),

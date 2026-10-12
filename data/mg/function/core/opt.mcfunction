@@ -45,6 +45,7 @@ execute if score @s mg.opt matches 48 unless entity @s[tag=mg.admin] run tellraw
 execute if score @s mg.opt matches 48 if entity @s[tag=mg.admin] run function mg:version/show
 execute if score @s mg.opt matches 49 run function mg:troll/zinedine
 execute if score @s mg.opt matches 13 if entity @s[tag=mg.admin] run function mg:vote/reset
+execute if score @s mg.opt matches 13 unless entity @s[tag=mg.admin] run tellraw @s [{"text":"⚠ Seul un admin peut réinitialiser le vote.","color":"red"}]
 execute if score @s mg.opt matches 62..65 run function mg:tpg/run
 execute if score @s mg.opt matches 67..72 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Réservé aux admins.","color":"red"}
 execute if score @s mg.opt matches 67 if entity @s[tag=mg.admin] run function mg:lobby/ev/menu

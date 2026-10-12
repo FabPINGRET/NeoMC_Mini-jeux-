@@ -24,6 +24,7 @@ import os
 import re
 import sys
 
+sys.stdout.reconfigure(encoding='utf-8')   # sortie console en UTF-8 (Windows : cp1252 sinon)
 R = sys.argv[1] if len(sys.argv) > 1 else '.'
 D = os.path.join(R, 'data/mg')
 F = os.path.join(D, 'function')

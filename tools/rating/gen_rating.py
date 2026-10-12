@@ -38,6 +38,7 @@ def patch(rel, anchor, new, where='after'):
     L = open(p, encoding='utf-8').read().split('\n')
     if all(l in L for l in new):
         return
+    assert L.count(anchor) == 1, f'{rel}: ancre absente ou multiple ({L.count(anchor)}) : {anchor}'
     i = L.index(anchor) + (1 if where == 'after' else 0)
     L[i:i] = new
     open(p, 'w', encoding='utf-8', newline='\n').write('\n'.join(L))

@@ -6,4 +6,4 @@ execute if score $game mg.st matches 4 if score $mpgt mg.st matches 3000 run fun
 scoreboard players operation $mprest mg.st = $mplim mg.st
 scoreboard players operation $mprest mg.st -= $mpgt mg.st
 execute if score $mprest mg.st matches 1200 run tellraw @a[tag=!mg.surv] [{"text":"⏱ ","color":"gold"},{"text":"Plus qu’une minute pour ce mini-jeu !","color":"yellow"}]
-execute if score $mplim mg.st matches 1.. if score $mpgt mg.st = $mplim mg.st run function mg:party/watch_end
+execute if score $state mg.st matches 2 if score $mplim mg.st matches 1.. if score $mpgt mg.st = $mplim mg.st run function mg:party/watch_end
