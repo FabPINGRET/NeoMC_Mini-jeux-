@@ -86,6 +86,9 @@ execute if score $lan mg.t matches 15 run function mg:rank/tick
 execute as @a[scores={mg.rt=1..}] run function mg:rate/submit
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 16 63 -9 minecraft:sea_lantern run function mg:elytra/build
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 32 63 -15 minecraft:sea_lantern run function mg:elytra/build
+# Panneaux flottants des 3 socles d'élytra (6 text_display) : reconstruits s'il en manque un
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 store result score $eld mg.t if entity @e[type=minecraft:text_display,tag=mg.elyd,x=14,y=66,z=-23,dx=21,dy=3,dz=17]
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 if score $eld mg.t matches ..5 run function mg:elytra/build
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.ely] minecraft:elytra[minecraft:custom_data~{mg_ely:1b}]
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.ely] minecraft:firework_rocket[minecraft:custom_data~{mg_ely:1b}]
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.play,tag=!mg.xso] minecraft:elytra[minecraft:custom_data~{mg_elyr:1b}]
