@@ -1,0 +1,5 @@
+# 🎃 Buffet d'Halloween (@s = joueur) : tarte à la citrouille et latte à la citrouille (boisson, sans bouteille vide)
+give @s minecraft:pumpkin_pie 3
+execute if score $rp mg.st matches 1 run give @s minecraft:honey_bottle[minecraft:item_name={"text":"Latte à la citrouille","color":"gold"},minecraft:food={nutrition:6,saturation:9.6f,can_always_eat:true},minecraft:consumable={consume_seconds:1.6f,animation:"drink",sound:"minecraft:entity.generic.drink",has_consume_particles:false},!minecraft:use_remainder,minecraft:item_model="mg:pumpkin_latte"] 2
+execute unless score $rp mg.st matches 1 run give @s minecraft:honey_bottle[minecraft:item_name={"text":"Latte à la citrouille","color":"gold"},minecraft:food={nutrition:6,saturation:9.6f,can_always_eat:true},minecraft:consumable={consume_seconds:1.6f,animation:"drink",sound:"minecraft:entity.generic.drink",has_consume_particles:false},!minecraft:use_remainder] 2
+title @s actionbar [{"text":"🎃 Joyeux Halloween, bon appétit ! (recharge dans 30 s)","color":"gold"}]

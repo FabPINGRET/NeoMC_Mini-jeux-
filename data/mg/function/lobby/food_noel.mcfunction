@@ -1,0 +1,6 @@
+# 🎄 Buffet de Noël (@s = joueur) : sucres d'orge et lait de poule (boisson, sans bouteille vide)
+execute if score $rp mg.st matches 1 run give @s minecraft:cookie[minecraft:item_name={"text":"Sucre d'orge","color":"red"},minecraft:food={nutrition:6,saturation:7.2f},minecraft:item_model="mg:candy_cane"] 3
+execute unless score $rp mg.st matches 1 run give @s minecraft:cookie[minecraft:item_name={"text":"Sucre d'orge","color":"red"},minecraft:food={nutrition:6,saturation:7.2f}] 3
+execute if score $rp mg.st matches 1 run give @s minecraft:honey_bottle[minecraft:item_name={"text":"Lait de poule","color":"yellow"},minecraft:food={nutrition:6,saturation:9.6f,can_always_eat:true},minecraft:consumable={consume_seconds:1.6f,animation:"drink",sound:"minecraft:entity.generic.drink",has_consume_particles:false},!minecraft:use_remainder,minecraft:item_model="mg:eggnog"] 2
+execute unless score $rp mg.st matches 1 run give @s minecraft:honey_bottle[minecraft:item_name={"text":"Lait de poule","color":"yellow"},minecraft:food={nutrition:6,saturation:9.6f,can_always_eat:true},minecraft:consumable={consume_seconds:1.6f,animation:"drink",sound:"minecraft:entity.generic.drink",has_consume_particles:false},!minecraft:use_remainder,minecraft:item_model="minecraft:milk_bucket"] 2
+title @s actionbar [{"text":"🎄 Joyeux Noël, bon appétit ! (recharge dans 30 s)","color":"red"}]

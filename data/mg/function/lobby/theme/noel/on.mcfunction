@@ -12174,6 +12174,7 @@ execute if block 75 65 29 minecraft:air run setblock 75 65 29 minecraft:red_cand
 execute if block 75 65 34 minecraft:air run setblock 75 65 34 minecraft:red_candle[lit=true,candles=4]
 execute if block 77 65 1 minecraft:air run setblock 77 65 1 minecraft:snow[layers=1]
 function mg:lobby/theme/noel/reskin
+function mg:lobby/food_skin
 function mg:lobby/theme/water_fix
 tellraw @a [{"text":"🎄 ","color":"red"},{"text":"Il neige sur le spawn… Joyeuses fêtes !","color":"green","bold":true}]
 execute as @a[x=-80,y=30,z=-80,dx=160,dy=120,dz=160,tag=!mg.play,tag=!mg.surv,gamemode=!spectator] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 0.8

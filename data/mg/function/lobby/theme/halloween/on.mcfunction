@@ -5521,6 +5521,7 @@ execute if block 75 65 29 minecraft:air run setblock 75 65 29 minecraft:orange_c
 execute if block 75 65 34 minecraft:air run setblock 75 65 34 minecraft:orange_candle[lit=true,candles=4]
 function mg:lobby/theme/halloween/water_on
 function mg:lobby/theme/halloween/reskin
+function mg:lobby/food_skin
 function mg:lobby/theme/water_fix
 tellraw @a [{"text":"🎃 ","color":"gold"},{"text":"Le spawn se pare de ses habits d'Halloween… Bouh !","color":"gold","bold":true}]
 execute as @a[x=-80,y=30,z=-80,dx=160,dy=120,dz=160,tag=!mg.play,tag=!mg.surv,gamemode=!spectator] at @s run playsound minecraft:entity.witch.celebrate master @s ~ ~ ~ 1 0.8
