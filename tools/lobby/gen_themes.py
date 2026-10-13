@@ -411,7 +411,7 @@ for tid, key, label, opt, make in THEMES:
                   f'execute if score $theme mg.st matches {tid} run return run tellraw @s {{"text":"Ce décor est déjà en place.","color":"gray"}}',
                   'execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off',
                   f'scoreboard players set $theme mg.st {tid}'] + on + on_x +
-      [f'function mg:{T}/reskin', 'function mg:lobby/theme/water_fix', 'tellraw @a ' + js(hello), f'execute as {LOBBY} at @s run playsound {snd} master @s ~ ~ ~ 1 0.8'])
+      [f'function mg:{T}/reskin', 'function mg:lobby/food_skin', 'function mg:lobby/theme/water_fix', 'tellraw @a ' + js(hello), f'execute as {LOBBY} at @s run playsound {snd} master @s ~ ~ ~ 1 0.8'])
     w(f'{T}/off', [f'# {label} : chaque bloc d\'origine revient (s\'il n\'a pas changé entre-temps) — appelé par lobby/theme/off'] +
       off + off_x)
     w(f'{T}/reskin', [f'# {label} : entités du décor (mg.lby) ; rappelé par lobby/deco tant que le thème est actif',
@@ -432,7 +432,7 @@ w('lobby/theme/off', ['# Retire le décor saisonnier en place ($theme) et rétab
    'function mg:lobby/deco',
    'tellraw @a[tag=mg.admin] {"text":"Décor saisonnier retiré, spawn d\'origine rétabli.","color":"gray"}'])
 w('lobby/theme/reskin', ['# Appelé à la fin de lobby/deco : rhabille les entités du décor selon le thème actif'] +
-  [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/reskin' for tid, key, *_ in THEMES])
+  [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/reskin' for tid, key, *_ in THEMES] + ['function mg:lobby/food_skin'])
 w('lobby/theme/tick', ['# Habillage des animaux tourné comme eux (chaque tick), puis ambiance du thème (chaque seconde)',
                        'execute as @e[type=minecraft:item_display,tag=mg.thrid] at @s on vehicle rotated as @s on passengers '
                        'if entity @s[tag=mg.thrid] run rotate @s ~ 0',

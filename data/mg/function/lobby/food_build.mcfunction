@@ -29,3 +29,4 @@ summon minecraft:item_display 25.5 65.4 19.5 {Tags:["mg.foodd","mg.lspin","mg.lb
 summon minecraft:item_display 26.5 66.0 19.5 {Tags:["mg.foodd","mg.lspin","mg.lbob"],billboard:"fixed",item:{id:"minecraft:golden_carrot"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.0f,1.0f,1.0f]}}
 summon minecraft:text_display 26.5 68.3 19.5 {Tags:["mg.foodd"],billboard:"center",background:0,text:[{"text":"🍖 Buffet gratuit","color":"gold","bold":true}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.1f,1.1f,1.1f]}}
 summon minecraft:text_display 24.5 65.6 19.5 {Tags:["mg.foodd"],billboard:"center",background:0,text:[{"text":"Monte sur le bloc d'or !","color":"yellow"}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.7f,0.7f,0.7f]}}
+function mg:lobby/food_skin
