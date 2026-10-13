@@ -433,8 +433,11 @@ for tid, key, label, opt, make in THEMES:
     w(f'{T}/on', [f'# {label} : pose le décor du spawn (généré par tools/lobby/gen_themes.py ; inverse : lobby/theme/off)',
                   f'execute if score $theme mg.st matches {tid} run return run tellraw @s {{"text":"Ce décor est déjà en place.","color":"gray"}}',
                   'execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off',
-                  f'scoreboard players set $theme mg.st {tid}'] + on + on_x +
-      [f'function mg:{T}/reskin', 'function mg:lobby/food_skin', 'function mg:lobby/theme/water_fix', 'tellraw @a ' + js(hello), f'execute as {LOBBY} at @s run playsound {snd} master @s ~ ~ ~ 1 0.8'])
+                  f'scoreboard players set $theme mg.st {tid}', f'data modify storage mg:lobby theme set value {tid}',
+                  f'function mg:{T}/place', 'tellraw @a ' + js(hello), f'execute as {LOBBY} at @s run playsound {snd} master @s ~ ~ ~ 1 0.8'])
+    w(f'{T}/place', [f"# {label} : blocs du décor (là où le bloc d'origine est encore là), entités, eau ; "
+                     'appelé par on et par lobby/theme/restore (redémarrage)'] + on + on_x +
+      [f'function mg:{T}/reskin', 'function mg:lobby/food_skin', 'function mg:lobby/theme/water_fix'])
     w(f'{T}/off', [f'# {label} : chaque bloc d\'origine revient (s\'il n\'a pas changé entre-temps) — appelé par lobby/theme/off'] +
       off + off_x)
     w(f'{T}/reskin', [f'# {label} : entités du décor (mg.lby) ; rappelé par lobby/deco tant que le thème est actif',
@@ -451,9 +454,18 @@ for tid, key, label, opt, make in THEMES:
 w('lobby/theme/off', ['# Retire le décor saisonnier en place ($theme) et rétablit le spawn d\'origine',
                       'execute unless score $theme mg.st matches 1.. run return run tellraw @s {"text":"Aucun décor saisonnier en place.","color":"gray"}'] +
   [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/off' for tid, key, *_ in THEMES] +
-  ['scoreboard players set $theme mg.st 0', 'function mg:lobby/theme/clear', 'function mg:lobby/theme/water_fix',
+  ['scoreboard players set $theme mg.st 0', 'data remove storage mg:lobby theme', 'function mg:lobby/theme/clear', 'function mg:lobby/theme/water_fix',
    'function mg:lobby/deco', 'function mg:lobby/food_skin',
    'tellraw @a[tag=mg.admin] {"text":"Décor saisonnier retiré, spawn d\'origine rétabli.","color":"gray"}'])
+# Redémarrage / rechargement : le décor actif (score $theme, sinon sa copie mg:lobby theme) est reposé quand un joueur
+# est au spawn depuis 5 s (chunks chargés) : blocs manquants, entités, eau ; rien n'est doublé
+w('lobby/theme/restore', ['# Décor saisonnier reposé après un redémarrage (appelé par core/tick tant que $thrs >= 1)',
+                          'scoreboard players add $thrs mg.st 1',
+                          'execute if score $thrs mg.st matches ..100 run return 0',
+                          'scoreboard players set $thrs mg.st 0',
+                          'execute unless score $theme mg.st matches 1.. store result score $theme mg.st run data get storage mg:lobby theme'] +
+  [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/place' for tid, key, *_ in THEMES] +
+  ['execute if score $theme mg.st matches 1.. store result storage mg:lobby theme int 1 run scoreboard players get $theme mg.st'])
 w('lobby/theme/reskin', ['# Appelé à la fin de lobby/deco : rhabille les entités du décor selon le thème actif'] +
   [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/reskin' for tid, key, *_ in THEMES] + ['function mg:lobby/food_skin'])
 w('lobby/theme/tick', ['# Habillage des animaux tourné comme eux (chaque tick), puis ambiance du thème (chaque seconde)',
@@ -501,6 +513,9 @@ with open(os.path.join(C.D, 'worldgen', 'biome', 'halloween.json'), 'w', encodin
 # ------------------------------------------------------------------ branchements
 C.patch('core/tick', 'execute if score $setup mg.st matches 1 run function mg:lobby/ev/tick',
         ['execute if score $theme mg.st matches 1.. run function mg:lobby/theme/tick'])
+C.patch('core/tick', 'execute if score $theme mg.st matches 1.. run function mg:lobby/theme/tick',
+        [f'execute if score $thrs mg.st matches 1.. if entity {LOBBY} run function mg:lobby/theme/restore'])
+C.patch('core/load', 'scoreboard objectives add mg.st dummy', ['scoreboard players set $thrs mg.st 1'])
 C.patch('lobby/deco', 'data modify storage mg:lobby deco3 set value 1b',
         ['execute if score $theme mg.st matches 1.. run function mg:lobby/theme/reskin'])
 C.patch('core/opt', 'execute if score @s mg.opt matches 62..65 run function mg:tpg/run',

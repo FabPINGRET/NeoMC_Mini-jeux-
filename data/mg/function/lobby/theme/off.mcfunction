@@ -3,6 +3,7 @@ execute unless score $theme mg.st matches 1.. run return run tellraw @s {"text":
 execute if score $theme mg.st matches 1 run function mg:lobby/theme/halloween/off
 execute if score $theme mg.st matches 2 run function mg:lobby/theme/noel/off
 scoreboard players set $theme mg.st 0
+data remove storage mg:lobby theme
 function mg:lobby/theme/clear
 function mg:lobby/theme/water_fix
 function mg:lobby/deco
