@@ -362,7 +362,8 @@ def theme_noel():
              'minecraft:entity.player.levelup')
     # bonshommes de neige immobiles : le spawn a mob_griefing à true, en marchant ils laisseraient des traînées de neige
     mobs = [mob('snowman', 'minecraft:snow_golem', 6, 'NoAI:1b,Pumpkin:0b', rand_yaw=True),
-            mob('reindeer', 'minecraft:cow', 4, 'Silent:1b,variant:"minecraft:cold"', rp_nbt='Silent:1b,variant:"mg:reindeer"')]
+            mob('reindeer', 'minecraft:cow', 3, 'Silent:1b,variant:"minecraft:cold"', rp_nbt='Silent:1b,variant:"mg:reindeer"'),
+            mob('rudolph', 'minecraft:cow', 1, 'Silent:1b,variant:"minecraft:cold"', rp_nbt='Silent:1b,variant:"mg:rudolph"')]
     melt = ['execute as @e[type=minecraft:snow_golem,tag=mg.thmob] at @s run fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:air '
             'replace minecraft:snow[layers=1]']
     return reskin, fx, hello, mobs, {'off': melt}
