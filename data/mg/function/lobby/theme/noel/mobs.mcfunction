@@ -5,5 +5,8 @@ execute store result score $thn mg.st if entity @e[type=minecraft:snow_golem,tag
 execute if score $thn mg.st matches ..5 run function mg:lobby/theme/spot {f:"lobby/theme/noel/snowman"}
 execute if score $thn mg.st matches 7.. as @e[type=minecraft:snow_golem,tag=mg.th_snowman,limit=1,sort=random] run function mg:lobby/theme/gone
 execute store result score $thn mg.st if entity @e[type=minecraft:cow,tag=mg.th_reindeer]
-execute if score $thn mg.st matches ..3 run function mg:lobby/theme/spot {f:"lobby/theme/noel/reindeer"}
-execute if score $thn mg.st matches 5.. as @e[type=minecraft:cow,tag=mg.th_reindeer,limit=1,sort=random] run function mg:lobby/theme/gone
+execute if score $thn mg.st matches ..2 run function mg:lobby/theme/spot {f:"lobby/theme/noel/reindeer"}
+execute if score $thn mg.st matches 4.. as @e[type=minecraft:cow,tag=mg.th_reindeer,limit=1,sort=random] run function mg:lobby/theme/gone
+execute store result score $thn mg.st if entity @e[type=minecraft:cow,tag=mg.th_rudolph]
+execute if score $thn mg.st matches ..0 run function mg:lobby/theme/spot {f:"lobby/theme/noel/rudolph"}
+execute if score $thn mg.st matches 2.. as @e[type=minecraft:cow,tag=mg.th_rudolph,limit=1,sort=random] run function mg:lobby/theme/gone
