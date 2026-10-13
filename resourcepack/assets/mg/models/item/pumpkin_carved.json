@@ -1,0 +1,118 @@
+{
+  "textures": {
+    "s": "mg:item/pumpkin_skin",
+    "t": "mg:item/pumpkin_top",
+    "st": "mg:item/pumpkin_stem",
+    "f": "mg:item/pumpkin_face_carved",
+    "particle": "mg:item/pumpkin_skin"
+  },
+  "elements": [
+    {
+      "from": [
+        1,
+        0,
+        1
+      ],
+      "to": [
+        15,
+        14,
+        15
+      ],
+      "faces": {
+        "north": {
+          "texture": "#s",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#s",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#s",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#s",
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#t",
+          "tintindex": 0
+        },
+        "down": {
+          "texture": "#t",
+          "tintindex": 0
+        }
+      }
+    },
+    {
+      "from": [
+        7,
+        14,
+        7
+      ],
+      "to": [
+        9,
+        17,
+        9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#st"
+        },
+        "south": {
+          "texture": "#st"
+        },
+        "east": {
+          "texture": "#st"
+        },
+        "west": {
+          "texture": "#st"
+        },
+        "up": {
+          "texture": "#st"
+        },
+        "down": {
+          "texture": "#st"
+        }
+      }
+    },
+    {
+      "from": [
+        1,
+        0,
+        0.9
+      ],
+      "to": [
+        15,
+        14,
+        0.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#f",
+          "uv": [
+            1,
+            2,
+            15,
+            16
+          ]
+        }
+      }
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [
+        30,
+        225,
+        0
+      ],
+      "scale": [
+        0.6,
+        0.6,
+        0.6
+      ]
+    }
+  }
+}

@@ -5516,3 +5516,4 @@ execute if block 74 65 -28 minecraft:black_candle run setblock 74 65 -28 minecra
 execute if block 75 65 -28 minecraft:orange_candle run setblock 75 65 -28 minecraft:air
 execute if block 75 65 29 minecraft:orange_candle run setblock 75 65 29 minecraft:air
 execute if block 75 65 34 minecraft:orange_candle run setblock 75 65 34 minecraft:air
+function mg:lobby/theme/halloween/water_off

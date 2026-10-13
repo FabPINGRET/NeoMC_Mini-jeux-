@@ -1,5 +1,5 @@
 # 🎄 Noël : entités du décor (mg.lby) ; rappelé par lobby/deco tant que le thème est actif
-kill @e[tag=mg.thm]
+function mg:lobby/theme/clear
 execute as @e[type=minecraft:item_display,tag=mg.lby] if items entity @s contents *[minecraft:item_model="mg:balloon"] run item replace entity @s contents with minecraft:snow_block
 execute as @e[type=minecraft:item_display,tag=mg.lby] if items entity @s contents *[minecraft:item_model="mg:item_box"] run item replace entity @s contents with minecraft:red_shulker_box
 execute as @e[type=minecraft:item_display,tag=mg.lby] if items entity @s contents *[minecraft:item_model="mg:crystal"] run item replace entity @s contents with minecraft:blue_ice

@@ -1,5 +1,9 @@
 # 🎃 Halloween : entités du décor (mg.lby) ; rappelé par lobby/deco tant que le thème est actif
-kill @e[tag=mg.thm]
+function mg:lobby/theme/clear
+execute as @e[type=minecraft:item_display,tag=mg.lby] if items entity @s contents *[minecraft:item_model="mg:balloon"] if score $rp mg.st matches 1 run function mg:lobby/theme/halloween/pumpkin_lit
+execute as @e[type=minecraft:item_display,tag=mg.lby] if items entity @s contents *[minecraft:item_model="mg:item_box"] if score $rp mg.st matches 1 run function mg:lobby/theme/halloween/pumpkin_carved
+execute as @e[type=minecraft:item_display,tag=mg.lby] if items entity @s contents *[minecraft:item_model="mg:star"] if score $rp mg.st matches 1 run function mg:lobby/theme/halloween/pumpkin_lit
+execute as @e[type=minecraft:item_display,tag=mg.lby] if items entity @s contents minecraft:nether_star if score $rp mg.st matches 1 run function mg:lobby/theme/halloween/pumpkin_lit
 execute as @e[type=minecraft:item_display,tag=mg.lby] if items entity @s contents *[minecraft:item_model="mg:balloon"] run item replace entity @s contents with minecraft:jack_o_lantern
 execute as @e[type=minecraft:item_display,tag=mg.lby] if items entity @s contents *[minecraft:item_model="mg:item_box"] run item replace entity @s contents with minecraft:carved_pumpkin
 execute as @e[type=minecraft:item_display,tag=mg.lby] if items entity @s contents *[minecraft:item_model="mg:star"] run item replace entity @s contents with minecraft:jack_o_lantern
