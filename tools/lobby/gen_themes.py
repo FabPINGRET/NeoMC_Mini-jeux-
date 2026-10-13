@@ -151,6 +151,22 @@ def free(x, y, z):
     return abs(x) <= LIM and abs(z) <= LIM and not inplot(x, z) and not dyn(x, y, z)
 
 
+def opening(k):
+    return k not in W or bid(W[k]) in PLANTS
+
+
+# ------------------------------------------------------------------ fontaines et cascades (eau qui déborde)
+# Une source qui déborde (air dessous ou à côté) alimente un écoulement : toute l'eau voisine (6 blocs, jusqu'à 30 plus
+# bas) reste liquide (pas de glace à Noël) et lobby/theme/water_fix la remet d'aplomb à chaque bascule de thème.
+WATER = {k for k, b in W.items() if bid(b) == 'minecraft:water'}
+SPILL = [k for k in sorted(WATER) if opening((k[0], k[1] - 1, k[2]))
+         or any(opening((k[0] + a, k[1], k[2] + c)) for a, c in ((1, 0), (-1, 0), (0, 1), (0, -1)))]
+FLOW = {}                                # source qui déborde -> eau de son ouvrage
+for s in SPILL:
+    FLOW[s] = {k for k in WATER if max(abs(k[0] - s[0]), abs(k[2] - s[2])) <= 6 and s[1] - 30 <= k[1] <= s[1]}
+FOUNT = set().union(*FLOW.values()) if FLOW else set()
+
+
 CH = {}                                  # (x, y, z) -> (bloc d'origine, bloc du thème), rempli par un thème
 FACES = ['north', 'south', 'east', 'west']
 
@@ -177,6 +193,36 @@ def title(parts):
     return ('summon minecraft:text_display 0.5 74 0.5 {Tags:["mg.lby","mg.thm"],billboard:"center",background:1426063360,'
             'shadow:1b,text:' + js(parts) + ',transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],'
             'right_rotation:[0f,0f,0f,1f],scale:[2f,2f,2f]}}')
+
+
+# ------------------------------------------------------------------ animaux des thèmes
+# Tenus à un nombre fixe, réapparaissent sur un point d'herbe tiré au hasard (lobby/theme/spot), ramenés s'ils sortent
+# du spawn. Habillage (resource pack) : item_display « tête » monté sur l'animal, tourné comme lui à chaque tick.
+MOB_BOX = 'x=-78,y=50,z=-78,dx=156,dy=70,dz=156'
+MOB_BASE = 'PersistenceRequired:1b,Invulnerable:1b,DeathLootTable:"minecraft:empty"'
+_rs = random.Random(20261013)
+_cand = [(x, y + 1, z) for (x, y, z), b in sorted(W.items())
+         if bid(b) in GROUND and y >= G - 1 and 100 <= x * x + z * z <= 62 * 62 and free(x, y + 1, z)
+         and bid(W.get((x, y + 1, z))) in PLANTS | {'minecraft:air'} and (x, y + 2, z) not in W and (x, y + 3, z) not in W]
+SPOTS = sorted(_rs.sample(_cand, min(48, len(_cand))))
+
+
+def mob(key, entity, n, nbt='', dress=None, rand_yaw=False):
+    """dress = (modèle du resource pack, translation [x, y, z], échelle, invisible ?)"""
+    return {'key': key, 'entity': entity, 'n': n, 'nbt': nbt, 'dress': dress, 'yaw': rand_yaw}
+
+
+def water_biome(biome):
+    """fillbiome des colonnes de 16×16 qui contiennent de l'eau (aller : the_void → biome, retour : biome → the_void)"""
+    cols = {}
+    for (x, y, z), b in W.items():
+        if bid(b) == 'minecraft:water' and abs(x) <= LIM and abs(z) <= LIM:
+            lo, hi = cols.get((x >> 4, z >> 4), (y, y))
+            cols[(x >> 4, z >> 4)] = (min(lo, y), max(hi, y))
+    box = [(cx * 16, lo - 2, cz * 16, cx * 16 + 15, hi + 2, cz * 16 + 15) for (cx, cz), (lo, hi) in sorted(cols.items())]
+    go = [f'fillbiome {a} {b} {c} {d} {e} {f} {biome} replace minecraft:the_void' for a, b, c, d, e, f in box]
+    back = [f'fillbiome {a} {b} {c} {d} {e} {f} minecraft:the_void replace {biome}' for a, b, c, d, e, f in box]
+    return go, back
 
 
 # ------------------------------------------------------------------ 🎃 Halloween
@@ -221,7 +267,15 @@ def theme_halloween():
             if solid(cx, cy + 1, cz) and bid(W.get((cx, cy, cz + dz))) in WALLS and rnd.random() < 0.08:
                 change((cx, cy, cz), 'minecraft:cobweb')
     on_fences(rnd, 0.3, ['orange', 'orange', 'black', 'purple'])
-    reskin = [item_swap('*[minecraft:item_model="mg:balloon"]', 'minecraft:jack_o_lantern'),
+    PUMP = [0xFF8A1C, 0x8E3BD6, 0x4FC23A, 0xECECF4, 0x3A3440, 0xD62A2A, 0x3A7BE0, 0x2FC8B5, 0xFF6FB5]
+    pump = {st: ['execute store result score $thp mg.st run random value 1..' + str(len(PUMP))]
+            + [f'execute if score $thp mg.st matches {i} run item replace entity @s contents with minecraft:leather_horse_armor'
+               f'[minecraft:item_model="mg:pumpkin_{st}",minecraft:dyed_color={c}]' for i, c in enumerate(PUMP, 1)]
+            for st in ('lit', 'carved')}             # citrouilles colorées du resource pack (couleur tirée au hasard)
+    reskin = [f'{IT}*[minecraft:item_model="mg:{m}"] if score $rp mg.st matches 1 run function mg:lobby/theme/halloween/pumpkin_{st}'
+              for m, st in (('balloon', 'lit'), ('item_box', 'carved'), ('star', 'lit'))]
+    reskin += [f'{IT}minecraft:nether_star if score $rp mg.st matches 1 run function mg:lobby/theme/halloween/pumpkin_lit',
+               item_swap('*[minecraft:item_model="mg:balloon"]', 'minecraft:jack_o_lantern'),
               item_swap('*[minecraft:item_model="mg:item_box"]', 'minecraft:carved_pumpkin'),
               item_swap('*[minecraft:item_model="mg:star"]', 'minecraft:jack_o_lantern'),
               item_swap('minecraft:nether_star', 'minecraft:jack_o_lantern'),
@@ -236,7 +290,11 @@ def theme_halloween():
           f'execute if score $thr mg.st matches 1 in minecraft:overworld as {LOBBY} at @s run playsound minecraft:ambient.cave ambient @s ~ ~ ~ 0.6 1']
     hello = ([{'text': '🎃 ', 'color': 'gold'}, {'text': 'Le spawn se pare de ses habits d\'Halloween… Bouh !', 'color': 'gold', 'bold': True}],
              'minecraft:entity.witch.celebrate')
-    return reskin, fx, hello
+    mobs = [mob('bat', 'minecraft:bat', 8),
+            mob('ghost', 'minecraft:allay', 6, 'Silent:1b', ('mg:hat/ghost', [0, -0.3, 0], 1.0, True))]
+    return reskin, fx, hello, mobs, {'water': water_biome('mg:halloween'),
+                                     'files': {f'pumpkin_{st}': [f'# 🎃 Halloween : citrouille {st} de couleur aléatoire (pack activé)'] + ls
+                                               for st, ls in pump.items()}}
 
 
 # ------------------------------------------------------------------ 🎄 Noël
@@ -249,7 +307,7 @@ def theme_noel():
         x, y, z = k
         if i.endswith('_leaves') and (x, y + 1, z) in W and rnd.random() < 0.07:
             change(k, rnd.choice(LIGHTS))
-        elif i == 'minecraft:water' and (x, y + 1, z) not in W and states(b).get('level', '0') == '0':
+        elif i == 'minecraft:water' and (x, y + 1, z) not in W and states(b).get('level', '0') == '0' and k not in FOUNT:
             change(k, 'minecraft:ice')
         elif i in FLOWERS or i == 'minecraft:pink_petals' or (i in ('minecraft:short_grass', 'minecraft:fern') and rnd.random() < 0.7):
             if bid(W.get((x, y - 1, z))) in SNOWABLE:
@@ -284,7 +342,12 @@ def theme_noel():
           f'execute if score $thr mg.st matches 1 in minecraft:overworld as {LOBBY} at @s run playsound minecraft:block.amethyst_block.chime ambient @s ~ ~2 ~ 1 0.8']
     hello = ([{'text': '🎄 ', 'color': 'red'}, {'text': 'Il neige sur le spawn… Joyeuses fêtes !', 'color': 'green', 'bold': True}],
              'minecraft:entity.player.levelup')
-    return reskin, fx, hello
+    # bonshommes de neige immobiles : le spawn a mob_griefing à true, en marchant ils laisseraient des traînées de neige
+    mobs = [mob('snowman', 'minecraft:snow_golem', 6, 'NoAI:1b,Pumpkin:0b', rand_yaw=True),
+            mob('reindeer', 'minecraft:horse', 4, 'Variant:3', ('mg:hat/antlers', [0, 0.35, 0.95], 0.9, False))]
+    melt = ['execute as @e[type=minecraft:snow_golem,tag=mg.thmob] at @s run fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:air '
+            'replace minecraft:snow[layers=1]']
+    return reskin, fx, hello, mobs, {'off': melt}
 
 
 THEMES = [(1, 'halloween', '🎃 Halloween', 73, theme_halloween), (2, 'noel', '🎄 Noël', 74, theme_noel)]
@@ -293,17 +356,66 @@ THEMES = [(1, 'halloween', '🎃 Halloween', 73, theme_halloween), (2, 'noel', '
 stats = []
 for tid, key, label, opt, make in THEMES:
     CH.clear()
-    reskin, fx, (hello, snd) = make()
+    reskin, fx, (hello, snd), mobs, extra = make()
     T = f'lobby/theme/{key}'
+    on_x, off_x = [], list(extra.get('off', []))
+    if 'water' in extra:                 # fonctions à part : le biome du pack n'existe qu'après un redémarrage du serveur,
+        go, back = extra['water']        # d'ici là seules elles échouent au chargement (on/off restent valides)
+        w(f'{T}/water_on', [f'# {label} : biome du thème sur les colonnes d\'eau du spawn (couleur de l\'eau)'] + go)
+        w(f'{T}/water_off', [f'# {label} : rend le biome the_void aux colonnes d\'eau du spawn'] + back)
+        on_x, off_x = [f'function mg:{T}/water_on'], [f'function mg:{T}/water_off'] + off_x
+    for n, ls in extra.get('files', {}).items():
+        w(f'{T}/{n}', ls)
+    fx = fx + [f'function mg:{T}/mobs']
+    mob_lines = [f'# {label} : animaux du thème, chaque seconde (joueur au spawn : chunks chargés, comptes justes)',
+                 'execute unless entity @a[x=-80,y=30,z=-80,dx=160,dy=120,dz=160,tag=!mg.play,limit=1] run return 0',
+                 f'execute as @e[tag=mg.thmob] unless entity @s[{MOB_BOX}] run function mg:lobby/theme/spot {{f:"lobby/theme/back"}}']
+    for m in mobs:
+        sel = f'@e[type={m["entity"]},tag=mg.th_{m["key"]}]'
+        mob_lines += [f'execute store result score $thn mg.st if entity {sel}',
+                      f'execute if score $thn mg.st matches ..{m["n"] - 1} run function mg:lobby/theme/spot {{f:"{T}/{m["key"]}"}}',
+                      f'execute if score $thn mg.st matches {m["n"] + 1}.. as {sel[:-1]},limit=1,sort=random] run function mg:lobby/theme/gone']
+        tags = ['mg.thm', 'mg.thmob', f'mg.th_{m["key"]}'] + (['mg.thdress'] if m['dress'] else [])
+        body = [f'# {label} : un animal du thème à cet endroit (appelé par lobby/theme/spot)',
+                f'summon {m["entity"]} ~ ~ ~ {{Tags:{js(tags)},{MOB_BASE}{"," + m["nbt"] if m["nbt"] else ""}}}']
+        if m['yaw']:
+            body.append(f'execute as @e[type={m["entity"]},tag=mg.th_{m["key"]},distance=..0.1] store result entity @s Rotation[0] float 1 run random value 0..359')
+        w(f'{T}/{m["key"]}', body)
+        if m['dress']:
+            model, (tx, ty, tz), sc, invis = m['dress']
+            w(f'{T}/dress_{m["key"]}', [f'# {label} : habillage resource pack (@s = animal, position = animal)',
+                                        'summon minecraft:item_display ~ ~ ~ {Tags:["mg.thm","mg.thrid","mg.thnew"],item_display:"head",'
+                                        'teleport_duration:3,item:{id:"minecraft:flower_banner_pattern",count:1,components:'
+                                        f'{{"minecraft:item_model":"{model}"}}}},transformation:{{left_rotation:[0f,0f,0f,1f],'
+                                        f'right_rotation:[0f,0f,0f,1f],translation:[{tx}f,{ty}f,{tz}f],scale:[{sc}f,{sc}f,{sc}f]}}}}',
+                                        'ride @e[type=minecraft:item_display,tag=mg.thnew,limit=1] mount @s',
+                                        'tag @e[tag=mg.thnew] remove mg.thnew'] +
+              (['effect give @s minecraft:invisibility infinite 0 true'] if invis else []))
+    if any(m['dress'] for m in mobs):
+        mob_lines += ['# habillage : chaque animal à habiller a son item_display monté, les orphelins disparaissent',
+                      'execute if score $rp mg.st matches 1 run tag @e[tag=mg.thdress] add mg.thnd',
+                      'execute as @e[type=minecraft:item_display,tag=mg.thrid] on vehicle run tag @s remove mg.thnd'] + \
+                     [f'execute as @e[tag=mg.thnd,tag=mg.th_{m["key"]}] at @s run function mg:{T}/dress_{m["key"]}'
+                      for m in mobs if m['dress']] + \
+                     ['tag @e[tag=mg.thnd] remove mg.thnd',
+                      'tag @e[type=minecraft:item_display,tag=mg.thrid] add mg.thor',
+                      'execute as @e[tag=mg.thmob] on passengers run tag @s remove mg.thor',
+                      'kill @e[tag=mg.thor]']
+    if any(m['entity'] == 'minecraft:allay' for m in mobs):
+        mob_lines += ['# un objet donné à un allay retombe par terre (on ne le perd pas, l\'allay ne le duplique pas)',
+                      'execute as @e[type=minecraft:allay,tag=mg.thmob] if items entity @s weapon.mainhand * at @s run function mg:lobby/theme/allay_drop']
+    w(f'{T}/mobs', mob_lines)
     on = [f'execute if block {x} {y} {z} {bid(o)} run setblock {x} {y} {z} {n}' for (x, y, z), (o, n) in sorted(CH.items())]
     off = [f'execute if block {x} {y} {z} {bid(n)} run setblock {x} {y} {z} {o}' for (x, y, z), (o, n) in sorted(CH.items())]
     w(f'{T}/on', [f'# {label} : pose le décor du spawn (généré par tools/lobby/gen_themes.py ; inverse : lobby/theme/off)',
                   f'execute if score $theme mg.st matches {tid} run return run tellraw @s {{"text":"Ce décor est déjà en place.","color":"gray"}}',
                   'execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off',
-                  f'scoreboard players set $theme mg.st {tid}'] + on +
-      [f'function mg:{T}/reskin', 'tellraw @a ' + js(hello), f'execute as {LOBBY} at @s run playsound {snd} master @s ~ ~ ~ 1 0.8'])
-    w(f'{T}/off', [f'# {label} : chaque bloc d\'origine revient (s\'il n\'a pas changé entre-temps) — appelé par lobby/theme/off'] + off)
-    w(f'{T}/reskin', [f'# {label} : entités du décor (mg.lby) ; rappelé par lobby/deco tant que le thème est actif', 'kill @e[tag=mg.thm]'] + reskin)
+                  f'scoreboard players set $theme mg.st {tid}'] + on + on_x +
+      [f'function mg:{T}/reskin', 'function mg:lobby/theme/water_fix', 'tellraw @a ' + js(hello), f'execute as {LOBBY} at @s run playsound {snd} master @s ~ ~ ~ 1 0.8'])
+    w(f'{T}/off', [f'# {label} : chaque bloc d\'origine revient (s\'il n\'a pas changé entre-temps) — appelé par lobby/theme/off'] +
+      off + off_x)
+    w(f'{T}/reskin', [f'# {label} : entités du décor (mg.lby) ; rappelé par lobby/deco tant que le thème est actif',
+                      'function mg:lobby/theme/clear'] + reskin)
     w(f'{T}/fx', [f'# {label} : ambiance, chaque seconde'] + fx)
     w(f'{T}/toggle', [f'# Admin (mg.opt {opt}) : pose ou retire le décor {label}',
                       f'execute if score $theme mg.st matches {tid} run return run function mg:lobby/theme/off',
@@ -316,13 +428,52 @@ for tid, key, label, opt, make in THEMES:
 w('lobby/theme/off', ['# Retire le décor saisonnier en place ($theme) et rétablit le spawn d\'origine',
                       'execute unless score $theme mg.st matches 1.. run return run tellraw @s {"text":"Aucun décor saisonnier en place.","color":"gray"}'] +
   [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/off' for tid, key, *_ in THEMES] +
-  ['scoreboard players set $theme mg.st 0', 'kill @e[tag=mg.thm]', 'function mg:lobby/deco',
+  ['scoreboard players set $theme mg.st 0', 'function mg:lobby/theme/clear', 'function mg:lobby/theme/water_fix',
+   'function mg:lobby/deco',
    'tellraw @a[tag=mg.admin] {"text":"Décor saisonnier retiré, spawn d\'origine rétabli.","color":"gray"}'])
 w('lobby/theme/reskin', ['# Appelé à la fin de lobby/deco : rhabille les entités du décor selon le thème actif'] +
   [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/reskin' for tid, key, *_ in THEMES])
-w('lobby/theme/tick', ['scoreboard players add $tht mg.st 1', 'execute if score $tht mg.st matches ..19 run return 0',
+w('lobby/theme/tick', ['# Habillage des animaux tourné comme eux (chaque tick), puis ambiance du thème (chaque seconde)',
+                       'execute as @e[type=minecraft:item_display,tag=mg.thrid] at @s on vehicle rotated as @s on passengers '
+                       'if entity @s[tag=mg.thrid] run rotate @s ~ 0',
+                       'scoreboard players add $tht mg.st 1', 'execute if score $tht mg.st matches ..19 run return 0',
                        'scoreboard players set $tht mg.st 0'] +
   [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/fx' for tid, key, *_ in THEMES])
+w('lobby/theme/spot', ['# Point d\'herbe du spawn tiré au hasard : y lance mg:$(f) (exécutant conservé) — généré par gen_themes.py',
+                       f'execute store result score $thp mg.st run random value 1..{len(SPOTS)}'] +
+  [f'$execute if score $thp mg.st matches {i} positioned {x + 0.5} {y} {z + 0.5} run function mg:$(f)' for i, (x, y, z) in enumerate(SPOTS, 1)])
+fix = ['# Fontaines et cascades du spawn remises d\'aplomb : eau débordée retirée, sources et plantes d\'origine reposées',
+       '# (relancé à chaque bascule de thème ; à la main : /function mg:lobby/theme/water_fix)']
+boxes = set()
+for s, blocks in sorted(FLOW.items()):
+    xs, ys, zs = [k[0] for k in blocks], [k[1] for k in blocks], [k[2] for k in blocks]
+    boxes.add((min(xs) - 2, max(xs) + 2, min(ys) - 1, max(ys) + 1, min(zs) - 2, max(zs) + 2))
+for x1, x2, y1, y2, z1, z2 in sorted(boxes):
+    inside = [(k, b) for k, b in sorted(W.items()) if x1 <= k[0] <= x2 and y1 <= k[1] <= y2 and z1 <= k[2] <= z2]
+    fix.append(f'fill {x1} {y1} {z1} {x2} {y2} {z2} minecraft:air replace minecraft:water')
+    fix += [f'setblock {x} {y} {z} {b}' for (x, y, z), b in inside if bid(b) == 'minecraft:water']
+    fix += [f'execute if block {x} {y} {z} minecraft:air run setblock {x} {y} {z} {b}' for (x, y, z), b in inside if bid(b) in PLANTS]
+w('lobby/theme/water_fix', fix)
+w('lobby/theme/back', ['# Animal du thème sorti du spawn : ramené sur un point au hasard (appelé par lobby/theme/spot)', 'tp @s ~ ~ ~'])
+w('lobby/theme/gone', ['# Retire un animal du thème sans animation de mort ni butin (@s)',
+                       'execute on passengers run kill @s[type=minecraft:item_display]',
+                       'execute at @s run tp @s ~ -300 ~', 'kill @s'])
+w('lobby/theme/clear', ['# Retire toutes les entités des thèmes (titre, animaux, habillages)',
+                        'kill @e[type=minecraft:item_display,tag=mg.thrid]',
+                        'execute as @e[tag=mg.thmob] run function mg:lobby/theme/gone', 'kill @e[tag=mg.thm]'])
+w('lobby/theme/allay_drop', ['# Allay du thème qui tient un objet (@s, position = allay) : l\'objet retombe au sol',
+                             'summon minecraft:item ~ ~ ~ {Tags:["mg.thdrop"],Item:{id:"minecraft:stone",count:1},PickupDelay:10s}',
+                             'data modify entity @e[type=minecraft:item,tag=mg.thdrop,limit=1] Item set from entity @s equipment.mainhand',
+                             'tag @e[tag=mg.thdrop] remove mg.thdrop',
+                             'item replace entity @s weapon.mainhand with minecraft:air'])
+os.makedirs(os.path.join(C.D, 'worldgen', 'biome'), exist_ok=True)      # eau rouge d'Halloween : the_void + water_color
+with open(os.path.join(C.D, 'worldgen', 'biome', 'halloween.json'), 'w', encoding='utf-8', newline='\n') as f:
+    f.write(js({'attributes': {'minecraft:visual/sky_color': '#7ba4ff', 'minecraft:visual/water_fog_color': '#3a0505'},
+                'carvers': [], 'downfall': 0.5, 'effects': {'water_color': '#a3120c'}, 'features': [],
+                'has_precipitation': False, 'spawn_costs': {},
+                'spawners': {k: [] for k in ('ambient', 'axolotls', 'creature', 'misc', 'monster', 'underground_water_creature',
+                                              'water_ambient', 'water_creature')},
+                'temperature': 0.5}) + '\n')
 
 # ------------------------------------------------------------------ branchements
 C.patch('core/tick', 'execute if score $setup mg.st matches 1 run function mg:lobby/ev/tick',
