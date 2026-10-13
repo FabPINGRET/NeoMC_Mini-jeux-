@@ -268,6 +268,21 @@ def theme_halloween():
             if solid(cx, cy + 1, cz) and bid(W.get((cx, cy, cz + dz))) in WALLS and rnd.random() < 0.08:
                 change((cx, cy, cz), 'minecraft:cobweb')
     on_fences(rnd, 0.3, ['orange', 'orange', 'black', 'purple'])
+    lrnd = random.Random(20261101)                       # tirage à part : le reste du décor ne bouge pas
+    canopy = {}                                          # colonne (x, z) -> plus haut feuillage à 2 blocs près
+    for (x, y, z), b in W.items():
+        if bid(b).endswith('_leaves'):
+            for a in range(-2, 3):
+                for c in range(-2, 3):
+                    canopy[(x + a, z + c)] = max(canopy.get((x + a, z + c), y), y)
+    for (x, y, z), b in sorted(W.items()):               # feuilles mortes : tapis sous les arbres, quelques-unes ailleurs
+        if bid(b) not in GROUND or x * x + z * z < 36 or y < G - 1:
+            continue
+        up = (x, y + 1, z)
+        under = y < canopy.get((x, z), -999) <= y + 12
+        if (bid(W.get(up)) in ('minecraft:air', 'minecraft:short_grass', 'minecraft:fern') and (x, y + 2, z) not in W
+                and up not in CH and lrnd.random() < (0.4 if under else 0.06)):
+            change(up, f'minecraft:leaf_litter[segment_amount={lrnd.randint(1, 4)},facing={lrnd.choice(FACES)}]')
     PUMP = [0xFF8A1C, 0x8E3BD6, 0x4FC23A, 0xECECF4, 0x3A3440, 0xD62A2A, 0x3A7BE0, 0x2FC8B5, 0xFF6FB5]
     pump = {st: ['execute store result score $thp mg.st run random value 1..' + str(len(PUMP))]
             + [f'execute if score $thp mg.st matches {i} run item replace entity @s contents with minecraft:leather_horse_armor'
@@ -287,6 +302,8 @@ def theme_halloween():
                      {'text': '\nBonbons ou mini-jeux ?', 'color': 'dark_purple', 'italic': True}])]
     fx = [f'execute in minecraft:overworld as {LOBBY} at @s run particle minecraft:ash ~ ~3 ~ 8 3 8 0 25 normal @s',
           f'execute in minecraft:overworld as {LOBBY} at @s run particle minecraft:soul ~ ~0.3 ~ 6 0.5 6 0.01 2 normal @s',
+          *[f'execute in minecraft:overworld as {LOBBY} at @s run particle minecraft:tinted_leaves{{color:[{c}]}} ~ ~7 ~ 10 3 10 0 {n} normal @s'
+            for c, n in (('0.93,0.45,0.08,1.0', 5), ('0.78,0.16,0.08,1.0', 3), ('0.95,0.72,0.15,1.0', 3), ('0.52,0.30,0.14,1.0', 2))],
           'execute store result score $thr mg.st run random value 1..40',
           f'execute if score $thr mg.st matches 1 in minecraft:overworld as {LOBBY} at @s run playsound minecraft:ambient.cave ambient @s ~ ~ ~ 0.6 1']
     hello = ([{'text': '🎃 ', 'color': 'gold'}, {'text': 'Le spawn se pare de ses habits d\'Halloween… Bouh !', 'color': 'gold', 'bold': True}],
