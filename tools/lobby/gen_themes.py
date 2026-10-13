@@ -451,7 +451,7 @@ w('lobby/theme/off', ['# Retire le décor saisonnier en place ($theme) et rétab
                       'execute unless score $theme mg.st matches 1.. run return run tellraw @s {"text":"Aucun décor saisonnier en place.","color":"gray"}'] +
   [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/off' for tid, key, *_ in THEMES] +
   ['scoreboard players set $theme mg.st 0', 'function mg:lobby/theme/clear', 'function mg:lobby/theme/water_fix',
-   'function mg:lobby/deco',
+   'function mg:lobby/deco', 'function mg:lobby/food_skin',
    'tellraw @a[tag=mg.admin] {"text":"Décor saisonnier retiré, spawn d\'origine rétabli.","color":"gray"}'])
 w('lobby/theme/reskin', ['# Appelé à la fin de lobby/deco : rhabille les entités du décor selon le thème actif'] +
   [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/reskin' for tid, key, *_ in THEMES] + ['function mg:lobby/food_skin'])

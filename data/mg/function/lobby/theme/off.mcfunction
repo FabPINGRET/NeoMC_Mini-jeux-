@@ -6,4 +6,5 @@ scoreboard players set $theme mg.st 0
 function mg:lobby/theme/clear
 function mg:lobby/theme/water_fix
 function mg:lobby/deco
+function mg:lobby/food_skin
 tellraw @a[tag=mg.admin] {"text":"Décor saisonnier retiré, spawn d'origine rétabli.","color":"gray"}
