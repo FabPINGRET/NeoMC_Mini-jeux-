@@ -11,9 +11,9 @@ execute if score $theme mg.st matches 1 run item replace entity @e[tag=mg.food1]
 execute if score $theme mg.st matches 1 if score $rp mg.st matches 1 run item replace entity @e[tag=mg.food2] contents with minecraft:honey_bottle[minecraft:item_model="mg:pumpkin_latte"]
 execute if score $theme mg.st matches 1 unless score $rp mg.st matches 1 run item replace entity @e[tag=mg.food2] contents with minecraft:honey_bottle
 execute if score $theme mg.st matches 1 run data modify entity @e[tag=mg.foodt,limit=1] text set value {"text":"🎃 Buffet d'Halloween","color":"gold","bold":true}
-# 🎄 Noël : sucre d'orge et lait de poule
+# 🎄 Noël : sucre d'orge et chocolat chaud
 execute if score $theme mg.st matches 2 if score $rp mg.st matches 1 run item replace entity @e[tag=mg.food1] contents with minecraft:cookie[minecraft:item_model="mg:candy_cane"]
 execute if score $theme mg.st matches 2 unless score $rp mg.st matches 1 run item replace entity @e[tag=mg.food1] contents with minecraft:cookie
-execute if score $theme mg.st matches 2 if score $rp mg.st matches 1 run item replace entity @e[tag=mg.food2] contents with minecraft:honey_bottle[minecraft:item_model="mg:eggnog"]
-execute if score $theme mg.st matches 2 unless score $rp mg.st matches 1 run item replace entity @e[tag=mg.food2] contents with minecraft:milk_bucket
+execute if score $theme mg.st matches 2 if score $rp mg.st matches 1 run item replace entity @e[tag=mg.food2] contents with minecraft:honey_bottle[minecraft:item_model="mg:hot_chocolate"]
+execute if score $theme mg.st matches 2 unless score $rp mg.st matches 1 run item replace entity @e[tag=mg.food2] contents with minecraft:mushroom_stew
 execute if score $theme mg.st matches 2 run data modify entity @e[tag=mg.foodt,limit=1] text set value [{"text":"🎄 ","color":"green"},{"text":"Buffet de Noël","color":"red","bold":true}]

@@ -1,0 +1,6 @@
+{
+  "asset_id": "mg:entity/cow/reindeer",
+  "baby_asset_id": "mg:entity/cow/reindeer_baby",
+  "model": "cold",
+  "spawn_conditions": []
+}

@@ -207,9 +207,10 @@ _cand = [(x, y + 1, z) for (x, y, z), b in sorted(W.items())
 SPOTS = sorted(_rs.sample(_cand, min(48, len(_cand))))
 
 
-def mob(key, entity, n, nbt='', dress=None, rand_yaw=False):
-    """dress = (modèle du resource pack, translation [x, y, z], échelle, invisible ?)"""
-    return {'key': key, 'entity': entity, 'n': n, 'nbt': nbt, 'dress': dress, 'yaw': rand_yaw}
+def mob(key, entity, n, nbt='', dress=None, rand_yaw=False, rp_nbt=None):
+    """dress = (modèle du resource pack, translation [x, y, z], échelle, invisible ?) ;
+    rp_nbt = NBT utilisé à la place de nbt quand le resource pack est activé (variante dont la texture n'existe que dans le pack)"""
+    return {'key': key, 'entity': entity, 'n': n, 'nbt': nbt, 'dress': dress, 'yaw': rand_yaw, 'rp_nbt': rp_nbt}
 
 
 def water_biome(biome):
@@ -344,7 +345,7 @@ def theme_noel():
              'minecraft:entity.player.levelup')
     # bonshommes de neige immobiles : le spawn a mob_griefing à true, en marchant ils laisseraient des traînées de neige
     mobs = [mob('snowman', 'minecraft:snow_golem', 6, 'NoAI:1b,Pumpkin:0b', rand_yaw=True),
-            mob('reindeer', 'minecraft:horse', 4, 'Variant:3,Tame:1b', ('mg:hat/antlers', [0, 0.35, 0.95], 0.9, False))]
+            mob('reindeer', 'minecraft:cow', 4, 'Silent:1b,variant:"minecraft:cold"', rp_nbt='Silent:1b,variant:"mg:reindeer"')]
     melt = ['execute as @e[type=minecraft:snow_golem,tag=mg.thmob] at @s run fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:air '
             'replace minecraft:snow[layers=1]']
     return reskin, fx, hello, mobs, {'off': melt}
@@ -376,8 +377,12 @@ for tid, key, label, opt, make in THEMES:
                       f'execute if score $thn mg.st matches ..{m["n"] - 1} run function mg:lobby/theme/spot {{f:"{T}/{m["key"]}"}}',
                       f'execute if score $thn mg.st matches {m["n"] + 1}.. as {sel[:-1]},limit=1,sort=random] run function mg:lobby/theme/gone']
         tags = ['mg.thm', 'mg.thmob', f'mg.th_{m["key"]}'] + (['mg.thdress'] if m['dress'] else [])
-        body = [f'# {label} : un animal du thème à cet endroit (appelé par lobby/theme/spot)',
-                f'summon {m["entity"]} ~ ~ ~ {{Tags:{js(tags)},{MOB_BASE}{"," + m["nbt"] if m["nbt"] else ""}}}']
+        summon = lambda nb: f'summon {m["entity"]} ~ ~ ~ {{Tags:{js(tags)},{MOB_BASE}{"," + nb if nb else ""}}}'
+        body = [f'# {label} : un animal du thème à cet endroit (appelé par lobby/theme/spot)']
+        if m['rp_nbt']:
+            body += ['execute if score $rp mg.st matches 1 run ' + summon(m['rp_nbt']), 'execute unless score $rp mg.st matches 1 run ' + summon(m['nbt'])]
+        else:
+            body.append(summon(m['nbt']))
         if m['yaw']:
             body.append(f'execute as @e[type={m["entity"]},tag=mg.th_{m["key"]},distance=..0.1] store result entity @s Rotation[0] float 1 run random value 0..359')
         w(f'{T}/{m["key"]}', body)
