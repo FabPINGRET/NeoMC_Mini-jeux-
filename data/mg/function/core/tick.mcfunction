@@ -65,6 +65,7 @@ execute if score $setup mg.st matches 1 run function mg:lobby/guns_tick
 execute if score $setup mg.st matches 1 run function mg:lobby/armory_tick
 execute if score $setup mg.st matches 1 run function mg:lobby/ev/tick
 execute if score $theme mg.st matches 1.. run function mg:lobby/theme/tick
+execute if score $thrs mg.st matches 1.. if entity @a[x=-80,y=30,z=-80,dx=160,dy=120,dz=160,tag=!mg.play,tag=!mg.surv,gamemode=!spectator] run function mg:lobby/theme/restore
 function mg:hat/tick
 scoreboard players remove @a[scores={mg.fd=1..}] mg.fd 1
 # Parcours d'élytra : socle de départ, joueurs en vol, objets du parcours jamais conservés
