@@ -9,171 +9,40 @@ d'origine ; « on » ne pose un bloc que si le bloc d'origine est encore là, «
 thème est encore là (rien d'autre n'est écrasé). Les plots et les zones modifiées par d'autres fonctions (jeux,
 animations) ne sont jamais touchés. Les entités du décor (mg.lby) sont rhabillées par lobby/theme/<t>/reskin, rappelé à
 chaque lobby/deco (bascule du resource pack) ; « off » relance lobby/deco, qui repose le décor d'origine.
-Ajouter un thème : une fonction theme_<nom>() qui remplit CH et renvoie (reskin, fx, titre), puis l'inscrire dans THEMES
-(et dans tools/lobby/gen_theme_maps.py, qui habille aussi les cartes de jeu pendant les parties).
+« on » = place (blocs, entités, eau) + messages ; lobby/theme/restore rappelle place après un redémarrage, d'après $theme
+ou sa copie dans le storage mg:lobby theme.
+Ajouter un thème : une fonction theme_<nom>() qui remplit CH et renvoie (reskin, fx, hello, mobs, extra), puis l'inscrire
+dans THEMES (et dans tools/lobby/gen_theme_maps.py, qui habille aussi les cartes de jeu pendant les parties).
+
+Modules (jamais lancés seuls, chargés ici après C.init) : theme_world.py (modèle du spawn : W, DYN, CH, familles de
+blocs), theme_water.py (fontaines, cascades, biome d'eau, water_fix), theme_mobs.py (animaux, spot/back/gone/clear).
 """
-import glob
 import os
 import random
-import re
 import sys
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'arcade'))
-import common as C
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(HERE, '..', 'arcade'))
+sys.path.insert(0, HERE)
+import common as C                                               # noqa: E402
 
 C.init(sys.argv[1] if len(sys.argv) > 1 else '.')
 w, js = C.w, C.js
 F = C.F
-G = 63                                   # sol du spawn (pieds en y 64)
-LIM = 78                                 # zone décorée : |x|, |z| <= LIM (forceload du spawn : -80..80)
-LOBBY = '@a[x=-80,y=30,z=-80,dx=160,dy=120,dz=160,tag=!mg.play,tag=!mg.surv,gamemode=!spectator]'
 
-# ------------------------------------------------------------------ plots (jamais touchés)
-PLOTS = []
-for l in open(os.path.join(F, 'plot', 'build_all.mcfunction'), encoding='utf-8'):
-    m = re.search(r'wx1:(-?\d+),wx2:(-?\d+),wz1:(-?\d+),wz2:(-?\d+)', l)
-    if m:
-        PLOTS.append(tuple(int(v) for v in m.groups()))
+import theme_mobs as TM                                          # noqa: E402
+import theme_water as TWA                                        # noqa: E402
+import theme_world as TW                                         # noqa: E402
+from theme_mobs import mob                                       # noqa: E402
+from theme_water import FOUNT, water_biome                       # noqa: E402
+from theme_world import (CH, DIRT, DYN, FLOWERS, G, GROUND, LOBBY, SNOWABLE, W, WALLS, bid, change,  # noqa: E402
+                         solid, states)
 
+TW.load(F)                               # W, DYN, PLOTS remplis sur place, puis ce qui en dérive
+TWA.load()
+TM.load()
 
-def inplot(x, z):
-    return any(a - 1 <= x <= b + 1 and c - 1 <= z <= d + 1 for a, b, c, d in PLOTS)
-
-
-# ------------------------------------------------------------------ reconstitution des blocs du spawn
-CMD = re.compile(r'^(setblock|fill) (-?\d+) (-?\d+) (-?\d+)(?: (-?\d+) (-?\d+) (-?\d+))? (.+)$')
-W = {}                                   # (x, y, z) -> bloc (l'air n'est pas stocké)
-DYN = []                                 # boîtes modifiées ailleurs (jeux, animations) : on n'y touche pas
-
-
-def block_and_mode(rest):
-    depth = 0
-    for i, ch in enumerate(rest):
-        if ch in '[{':
-            depth += 1
-        elif ch in ']}':
-            depth -= 1
-        elif ch == ' ' and depth == 0:
-            return rest[:i], rest[i + 1:].split(' ')
-    return rest, []
-
-
-def clip(a, b):
-    return max(min(a, b), -LIM - 2), min(max(a, b), LIM + 2)
-
-
-def apply(line, dynamic):
-    m = CMD.match(line.strip())
-    if not m:
-        return
-    x1, y1, z1 = int(m[2]), int(m[3]), int(m[4])
-    x2, y2, z2 = (x1, y1, z1) if m[5] is None else (int(m[5]), int(m[6]), int(m[7]))
-    xa, xb = clip(x1, x2)
-    za, zb = clip(z1, z2)
-    if xa > xb or za > zb:
-        return
-    ya, yb = min(y1, y2), max(y1, y2)
-    blk, mode = block_and_mode(m[8])
-    if dynamic or (m[1] == 'fill' and mode and mode[0] in ('replace', 'hollow', 'outline')):
-        DYN.append((xa, xb, ya, yb, za, zb))
-        return
-    keep = bool(mode) and mode[0] == 'keep'
-    air = blk in ('minecraft:air', 'air')
-    for x in range(xa, xb + 1):
-        for z in range(za, zb + 1):
-            for y in range(ya, yb + 1):
-                k = (x, y, z)
-                if air:
-                    W.pop(k, None)
-                elif not (keep and k in W):
-                    W[k] = blk
-
-
-def num(p):
-    m = re.search(r'build_(\d+)', p)
-    return int(m[1]) if m else 99
-
-
-BASE = sorted(glob.glob(os.path.join(F, 'lobby', 'build_*.mcfunction')), key=num)
-BASE += [p for p in sorted(glob.glob(os.path.join(F, 'lobby', '*build*.mcfunction')))
-         if p not in BASE and not p.endswith(os.sep + 'build.mcfunction')]
-BASE.append(os.path.join(F, 'parkour', 'build.mcfunction'))
-for p in BASE:
-    for l in open(p, encoding='utf-8'):
-        apply(l, False)
-for p in glob.glob(os.path.join(F, '**', '*.mcfunction'), recursive=True):
-    if p in BASE or (os.sep + 'theme' + os.sep) in p or p.endswith(os.sep + 'desinstaller.mcfunction'):
-        continue
-    for l in open(p, encoding='utf-8'):
-        if l.startswith(('setblock ', 'fill ')):
-            apply(l, True)
-
-
-def dyn(x, y, z):
-    return any(a <= x <= b and c <= y <= d and e <= z <= f for a, b, c, d, e, f in DYN)
-
-
-def bid(b):
-    return (b or 'minecraft:air').split('[')[0].split('{')[0]
-
-
-def states(b):
-    m = re.search(r'\[([^\]]*)\]', b or '')
-    return dict(kv.split('=') for kv in m[1].split(',')) if m and m[1] else {}
-
-
-PLANTS = {'minecraft:short_grass', 'minecraft:fern', 'minecraft:pink_petals', 'minecraft:dandelion', 'minecraft:poppy',
-          'minecraft:blue_orchid', 'minecraft:allium', 'minecraft:azure_bluet', 'minecraft:red_tulip', 'minecraft:orange_tulip',
-          'minecraft:white_tulip', 'minecraft:pink_tulip', 'minecraft:oxeye_daisy', 'minecraft:cornflower',
-          'minecraft:lily_of_the_valley'}
-FLOWERS = PLANTS - {'minecraft:short_grass', 'minecraft:fern', 'minecraft:pink_petals'}
-NOT_SOLID = PLANTS | {'minecraft:air', 'minecraft:light', 'minecraft:barrier', 'minecraft:water', 'minecraft:vine',
-                      'minecraft:glow_lichen', 'minecraft:lantern', 'minecraft:spore_blossom', 'minecraft:bamboo',
-                      'minecraft:pointed_dripstone'}
-GROUND = {'minecraft:grass_block', 'minecraft:moss_block', 'minecraft:podzol', 'minecraft:coarse_dirt', 'minecraft:dirt',
-          'minecraft:rooted_dirt'}
-DIRT = GROUND - {'minecraft:grass_block', 'minecraft:moss_block'}
-WALLS = {'minecraft:stone_bricks', 'minecraft:mossy_stone_bricks', 'minecraft:cracked_stone_bricks', 'minecraft:spruce_planks',
-         'minecraft:deepslate_tiles', 'minecraft:polished_deepslate', 'minecraft:cobbled_deepslate', 'minecraft:cobblestone',
-         'minecraft:mossy_cobblestone', 'minecraft:stone', 'minecraft:tuff', 'minecraft:deepslate', 'minecraft:andesite',
-         'minecraft:spruce_log', 'minecraft:dark_oak_log', 'minecraft:oak_log', 'minecraft:stripped_spruce_log'}
-# surfaces pleines où la neige tient (le haut d'un bloc entier)
-SNOWABLE = GROUND | WALLS | {'minecraft:dirt_path', 'minecraft:packed_mud', 'minecraft:calcite', 'minecraft:smooth_quartz',
-                             'minecraft:polished_andesite', 'minecraft:polished_diorite', 'minecraft:white_concrete',
-                             'minecraft:gray_concrete'}
-
-
-def solid(x, y, z):
-    return bid(W.get((x, y, z))) not in NOT_SOLID
-
-
-def free(x, y, z):
-    return abs(x) <= LIM and abs(z) <= LIM and not inplot(x, z) and not dyn(x, y, z)
-
-
-def opening(k):
-    return k not in W or bid(W[k]) in PLANTS
-
-
-# ------------------------------------------------------------------ fontaines et cascades (eau qui déborde)
-# Une source qui déborde (air dessous ou à côté) alimente un écoulement : toute l'eau voisine (6 blocs, jusqu'à 30 plus
-# bas) reste liquide (pas de glace à Noël) et lobby/theme/water_fix la remet d'aplomb à chaque bascule de thème.
-WATER = {k for k, b in W.items() if bid(b) == 'minecraft:water'}
-SPILL = [k for k in sorted(WATER) if opening((k[0], k[1] - 1, k[2]))
-         or any(opening((k[0] + a, k[1], k[2] + c)) for a, c in ((1, 0), (-1, 0), (0, 1), (0, -1)))]
-FLOW = {}                                # source qui déborde -> eau de son ouvrage
-for s in SPILL:
-    FLOW[s] = {k for k in WATER if max(abs(k[0] - s[0]), abs(k[2] - s[2])) <= 6 and s[1] - 30 <= k[1] <= s[1]}
-FOUNT = set().union(*FLOW.values()) if FLOW else set()
-
-
-CH = {}                                  # (x, y, z) -> (bloc d'origine, bloc du thème), rempli par un thème
 FACES = ['north', 'south', 'east', 'west']
-
-
-def change(k, new):
-    if k not in CH and free(*k):
-        CH[k] = (W.get(k, 'minecraft:air'), new)
 
 
 def on_fences(rnd, p, blocks):
@@ -193,37 +62,6 @@ def title(parts):
     return ('summon minecraft:text_display 0.5 74 0.5 {Tags:["mg.lby","mg.thm"],billboard:"center",background:1426063360,'
             'shadow:1b,text:' + js(parts) + ',transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],'
             'right_rotation:[0f,0f,0f,1f],scale:[2f,2f,2f]}}')
-
-
-# ------------------------------------------------------------------ animaux des thèmes
-# Tenus à un nombre fixe, réapparaissent sur un point d'herbe tiré au hasard (lobby/theme/spot), ramenés s'ils sortent
-# du spawn. Habillage (resource pack) : item_display « tête » monté sur l'animal, tourné comme lui à chaque tick.
-MOB_BOX = 'x=-78,y=50,z=-78,dx=156,dy=70,dz=156'
-MOB_BASE = 'PersistenceRequired:1b,Invulnerable:1b,DeathLootTable:"minecraft:empty"'
-_rs = random.Random(20261013)
-_cand = [(x, y + 1, z) for (x, y, z), b in sorted(W.items())
-         if bid(b) in GROUND and y >= G - 1 and 100 <= x * x + z * z <= 62 * 62 and free(x, y + 1, z)
-         and bid(W.get((x, y + 1, z))) in PLANTS | {'minecraft:air'} and (x, y + 2, z) not in W and (x, y + 3, z) not in W]
-SPOTS = sorted(_rs.sample(_cand, min(48, len(_cand))))
-
-
-def mob(key, entity, n, nbt='', dress=None, rand_yaw=False, rp_nbt=None):
-    """dress = (modèle du resource pack, translation [x, y, z], échelle, invisible ?) ;
-    rp_nbt = NBT utilisé à la place de nbt quand le resource pack est activé (variante dont la texture n'existe que dans le pack)"""
-    return {'key': key, 'entity': entity, 'n': n, 'nbt': nbt, 'dress': dress, 'yaw': rand_yaw, 'rp_nbt': rp_nbt}
-
-
-def water_biome(biome):
-    """fillbiome des colonnes de 16×16 qui contiennent de l'eau (aller : the_void → biome, retour : biome → the_void)"""
-    cols = {}
-    for (x, y, z), b in W.items():
-        if bid(b) == 'minecraft:water' and abs(x) <= LIM and abs(z) <= LIM:
-            lo, hi = cols.get((x >> 4, z >> 4), (y, y))
-            cols[(x >> 4, z >> 4)] = (min(lo, y), max(hi, y))
-    box = [(cx * 16, lo - 2, cz * 16, cx * 16 + 15, hi + 2, cz * 16 + 15) for (cx, cz), (lo, hi) in sorted(cols.items())]
-    go = [f'fillbiome {a} {b} {c} {d} {e} {f} {biome} replace minecraft:the_void' for a, b, c, d, e, f in box]
-    back = [f'fillbiome {a} {b} {c} {d} {e} {f} minecraft:the_void replace {biome}' for a, b, c, d, e, f in box]
-    return go, back
 
 
 # ------------------------------------------------------------------ 🎃 Halloween
@@ -378,56 +216,13 @@ for tid, key, label, opt, make in THEMES:
     reskin, fx, (hello, snd), mobs, extra = make()
     T = f'lobby/theme/{key}'
     on_x, off_x = [], list(extra.get('off', []))
-    if 'water' in extra:                 # fonctions à part : le biome du pack n'existe qu'après un redémarrage du serveur,
-        go, back = extra['water']        # d'ici là seules elles échouent au chargement (on/off restent valides)
-        w(f'{T}/water_on', [f'# {label} : biome du thème sur les colonnes d\'eau du spawn (couleur de l\'eau)'] + go)
-        w(f'{T}/water_off', [f'# {label} : rend le biome the_void aux colonnes d\'eau du spawn'] + back)
-        on_x, off_x = [f'function mg:{T}/water_on'], [f'function mg:{T}/water_off'] + off_x
+    if 'water' in extra:
+        on_x, off_water = TWA.write_toggle(T, label, extra['water'])
+        off_x = off_water + off_x
     for n, ls in extra.get('files', {}).items():
         w(f'{T}/{n}', ls)
     fx = fx + [f'function mg:{T}/mobs']
-    mob_lines = [f'# {label} : animaux du thème, chaque seconde (joueur au spawn : chunks chargés, comptes justes)',
-                 'execute unless entity @a[x=-80,y=30,z=-80,dx=160,dy=120,dz=160,tag=!mg.play,limit=1] run return 0',
-                 f'execute as @e[tag=mg.thmob] unless entity @s[{MOB_BOX}] run function mg:lobby/theme/spot {{f:"lobby/theme/back"}}']
-    for m in mobs:
-        sel = f'@e[type={m["entity"]},tag=mg.th_{m["key"]}]'
-        mob_lines += [f'execute store result score $thn mg.st if entity {sel}',
-                      f'execute if score $thn mg.st matches ..{m["n"] - 1} run function mg:lobby/theme/spot {{f:"{T}/{m["key"]}"}}',
-                      f'execute if score $thn mg.st matches {m["n"] + 1}.. as {sel[:-1]},limit=1,sort=random] run function mg:lobby/theme/gone']
-        tags = ['mg.thm', 'mg.thmob', f'mg.th_{m["key"]}'] + (['mg.thdress'] if m['dress'] else [])
-        summon = lambda nb: f'summon {m["entity"]} ~ ~ ~ {{Tags:{js(tags)},{MOB_BASE}{"," + nb if nb else ""}}}'
-        body = [f'# {label} : un animal du thème à cet endroit (appelé par lobby/theme/spot)']
-        if m['rp_nbt']:
-            body += ['execute if score $rp mg.st matches 1 run ' + summon(m['rp_nbt']), 'execute unless score $rp mg.st matches 1 run ' + summon(m['nbt'])]
-        else:
-            body.append(summon(m['nbt']))
-        if m['yaw']:
-            body.append(f'execute as @e[type={m["entity"]},tag=mg.th_{m["key"]},distance=..0.1] store result entity @s Rotation[0] float 1 run random value 0..359')
-        w(f'{T}/{m["key"]}', body)
-        if m['dress']:
-            model, (tx, ty, tz), sc, invis = m['dress']
-            w(f'{T}/dress_{m["key"]}', [f'# {label} : habillage resource pack (@s = animal, position = animal)',
-                                        'summon minecraft:item_display ~ ~ ~ {Tags:["mg.thm","mg.thrid","mg.thnew"],item_display:"head",'
-                                        'teleport_duration:3,item:{id:"minecraft:flower_banner_pattern",count:1,components:'
-                                        f'{{"minecraft:item_model":"{model}"}}}},transformation:{{left_rotation:[0f,0f,0f,1f],'
-                                        f'right_rotation:[0f,0f,0f,1f],translation:[{tx}f,{ty}f,{tz}f],scale:[{sc}f,{sc}f,{sc}f]}}}}',
-                                        'ride @e[type=minecraft:item_display,tag=mg.thnew,limit=1] mount @s',
-                                        'tag @e[tag=mg.thnew] remove mg.thnew'] +
-              (['effect give @s minecraft:invisibility infinite 0 true'] if invis else []))
-    if any(m['dress'] for m in mobs):
-        mob_lines += ['# habillage : chaque animal à habiller a son item_display monté, les orphelins disparaissent',
-                      'execute if score $rp mg.st matches 1 run tag @e[tag=mg.thdress] add mg.thnd',
-                      'execute as @e[type=minecraft:item_display,tag=mg.thrid] on vehicle run tag @s remove mg.thnd'] + \
-                     [f'execute as @e[tag=mg.thnd,tag=mg.th_{m["key"]}] at @s run function mg:{T}/dress_{m["key"]}'
-                      for m in mobs if m['dress']] + \
-                     ['tag @e[tag=mg.thnd] remove mg.thnd',
-                      'tag @e[type=minecraft:item_display,tag=mg.thrid] add mg.thor',
-                      'execute as @e[tag=mg.thmob] on passengers run tag @s remove mg.thor',
-                      'kill @e[tag=mg.thor]']
-    if any(m['entity'] == 'minecraft:allay' for m in mobs):
-        mob_lines += ['# un objet donné à un allay retombe par terre (on ne le perd pas, l\'allay ne le duplique pas)',
-                      'execute as @e[type=minecraft:allay,tag=mg.thmob] if items entity @s weapon.mainhand * at @s run function mg:lobby/theme/allay_drop']
-    w(f'{T}/mobs', mob_lines)
+    TM.write_mobs(T, label, mobs)
     on = [f'execute if block {x} {y} {z} {bid(o)} run setblock {x} {y} {z} {n}' for (x, y, z), (o, n) in sorted(CH.items())]
     off = [f'execute if block {x} {y} {z} {bid(n)} run setblock {x} {y} {z} {o}' for (x, y, z), (o, n) in sorted(CH.items())]
     w(f'{T}/on', [f'# {label} : pose le décor du spawn (généré par tools/lobby/gen_themes.py ; inverse : lobby/theme/off)',
@@ -474,41 +269,9 @@ w('lobby/theme/tick', ['# Habillage des animaux tourné comme eux (chaque tick),
                        'scoreboard players add $tht mg.st 1', 'execute if score $tht mg.st matches ..19 run return 0',
                        'scoreboard players set $tht mg.st 0'] +
   [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/fx' for tid, key, *_ in THEMES])
-w('lobby/theme/spot', ['# Point d\'herbe du spawn tiré au hasard : y lance mg:$(f) (exécutant conservé) — généré par gen_themes.py',
-                       f'execute store result score $thp mg.st run random value 1..{len(SPOTS)}'] +
-  [f'$execute if score $thp mg.st matches {i} positioned {x + 0.5} {y} {z + 0.5} run function mg:$(f)' for i, (x, y, z) in enumerate(SPOTS, 1)])
-fix = ['# Fontaines et cascades du spawn remises d\'aplomb : eau débordée retirée, sources et plantes d\'origine reposées',
-       '# (relancé à chaque bascule de thème ; à la main : /function mg:lobby/theme/water_fix)']
-boxes = set()
-for s, blocks in sorted(FLOW.items()):
-    xs, ys, zs = [k[0] for k in blocks], [k[1] for k in blocks], [k[2] for k in blocks]
-    boxes.add((min(xs) - 2, max(xs) + 2, min(ys) - 1, max(ys) + 1, min(zs) - 2, max(zs) + 2))
-for x1, x2, y1, y2, z1, z2 in sorted(boxes):
-    inside = [(k, b) for k, b in sorted(W.items()) if x1 <= k[0] <= x2 and y1 <= k[1] <= y2 and z1 <= k[2] <= z2]
-    fix.append(f'fill {x1} {y1} {z1} {x2} {y2} {z2} minecraft:air replace minecraft:water')
-    fix += [f'setblock {x} {y} {z} {b}' for (x, y, z), b in inside if bid(b) == 'minecraft:water']
-    fix += [f'execute if block {x} {y} {z} minecraft:air run setblock {x} {y} {z} {b}' for (x, y, z), b in inside if bid(b) in PLANTS]
-w('lobby/theme/water_fix', fix)
-w('lobby/theme/back', ['# Animal du thème sorti du spawn : ramené sur un point au hasard (appelé par lobby/theme/spot)', 'tp @s ~ ~ ~'])
-w('lobby/theme/gone', ['# Retire un animal du thème sans animation de mort ni butin (@s)',
-                       'execute on passengers run kill @s[type=minecraft:item_display]',
-                       'execute at @s run tp @s ~ -300 ~', 'kill @s'])
-w('lobby/theme/clear', ['# Retire toutes les entités des thèmes (titre, animaux, habillages)',
-                        'kill @e[type=minecraft:item_display,tag=mg.thrid]',
-                        'execute as @e[tag=mg.thmob] run function mg:lobby/theme/gone', 'kill @e[tag=mg.thm]'])
-w('lobby/theme/allay_drop', ['# Allay du thème qui tient un objet (@s, position = allay) : l\'objet retombe au sol',
-                             'summon minecraft:item ~ ~ ~ {Tags:["mg.thdrop"],Item:{id:"minecraft:stone",count:1},PickupDelay:10s}',
-                             'data modify entity @e[type=minecraft:item,tag=mg.thdrop,limit=1] Item set from entity @s equipment.mainhand',
-                             'tag @e[tag=mg.thdrop] remove mg.thdrop',
-                             'item replace entity @s weapon.mainhand with minecraft:air'])
-os.makedirs(os.path.join(C.D, 'worldgen', 'biome'), exist_ok=True)      # eau rouge d'Halloween : the_void + water_color
-with open(os.path.join(C.D, 'worldgen', 'biome', 'halloween.json'), 'w', encoding='utf-8', newline='\n') as f:
-    f.write(js({'attributes': {'minecraft:visual/sky_color': '#7ba4ff', 'minecraft:visual/water_fog_color': '#3a0505'},
-                'carvers': [], 'downfall': 0.5, 'effects': {'water_color': '#a3120c'}, 'features': [],
-                'has_precipitation': False, 'spawn_costs': {},
-                'spawners': {k: [] for k in ('ambient', 'axolotls', 'creature', 'misc', 'monster', 'underground_water_creature',
-                                              'water_ambient', 'water_creature')},
-                'temperature': 0.5}) + '\n')
+TM.write_common()                        # spot, back, gone, clear, allay_drop
+TWA.write_fix()                          # water_fix
+TWA.write_biome()                        # worldgen/biome/halloween.json
 
 # ------------------------------------------------------------------ branchements
 C.patch('core/tick', 'execute if score $setup mg.st matches 1 run function mg:lobby/ev/tick',
