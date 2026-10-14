@@ -65,6 +65,25 @@
     {
       "label": [
         {
+          "text": "🦖 Aller à Terra Nova",
+          "color": "green",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Colonie préhistorique : missions, jungle, dinosaures (tes crédits y sont gardés)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.sv set 7"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "⌂ Retour au lobby",
           "color": "gold",
           "bold": true
