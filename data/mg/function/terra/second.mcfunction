@@ -48,7 +48,7 @@ scoreboard players operation $tvq4 mg.st %= #400 mg.st
 execute if score $tvq4 mg.st matches 0 run function mg:terra/herb_fill
 execute if score $tvq4 mg.st matches 200 as @e[tag=mg.tvhos,tag=!mg.tvhunt] at @s unless entity @a[tag=mg.tvw,distance=..80] run tp @s ~ -400 ~
 execute as @e[tag=mg.tvhos,x=-28,y=58,z=-28,dx=56,dy=30,dz=56] at @s run function mg:terra/zap
-execute as @e[tag=mg.tvherb,x=-28,y=58,z=-28,dx=56,dy=30,dz=56] run tp @s @e[type=minecraft:marker,tag=mg.tvhp,sort=random,limit=1]
+execute as @e[tag=mg.tvherb,x=-28,y=58,z=-28,dx=56,dy=30,dz=56] unless predicate mg:has_passenger run tp @s @e[type=minecraft:marker,tag=mg.tvhp,sort=random,limit=1]
 execute as @e[tag=mg.tvcarno,tag=!mg.tvnetted] at @s unless entity @s[x=-28,y=58,z=-28,dx=56,dy=30,dz=56] run function mg:terra/carno_smash
 execute unless entity @e[tag=mg.tvcarno] run bossbar set mg:tvcarno players
 execute as @e[tag=mg.tvhunt,limit=1] at @s run function mg:terra/carno_bar

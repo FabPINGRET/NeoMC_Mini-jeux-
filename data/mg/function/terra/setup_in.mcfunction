@@ -1,6 +1,7 @@
 # Session (dans la dimension) : panneaux, présentoirs, tableau, marqueurs, herbivores, barres
 # reste d'une session interrompue (/reload, arrêt du serveur) : tout est retiré avant
 function mg:terra/clear
+function mg:terra/shop_fix
 execute as @a[tag=mg.tvw] run function mg:terra/mis_clear
 function mg:terra/rules
 summon minecraft:marker -11.5 65 16.5 {Tags:["mg.tv","mg.tvexit"]}
@@ -15,40 +16,45 @@ summon minecraft:text_display 8.4 67.4 -22.5 {Tags:["mg.tv"],Rotation:[90f,0f],t
 summon minecraft:interaction 8.8 65 -22.5 {Tags:["mg.tv","mg.tvboard"],width:2.6f,height:3.2f,response:1b}
 summon minecraft:villager -15.5 65 -23.5 {Tags:["mg.tv"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[0f,0f],VillagerData:{profession:"minecraft:weaponsmith",level:5,type:"minecraft:jungle"},Offers:{Recipes:[]},CustomName:{"text":"🛒 Intendant","color":"gold"},CustomNameVisible:1b}
 summon minecraft:villager 20.5 65 17.5 {Tags:["mg.tv"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[90f,0f],VillagerData:{profession:"minecraft:cleric",level:5,type:"minecraft:jungle"},Offers:{Recipes:[]},CustomName:{"text":"✚ Médecin","color":"red"},CustomNameVisible:1b}
-summon minecraft:item_display -21.5 66.7 -21.5 {Tags:["mg.tv","mg.tvpdi"],item:{id:"minecraft:goat_horn",count:1},billboard:"fixed",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
-summon minecraft:text_display -21.5 67.55 -21.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"📢 Canon sonique\n","color":"aqua","bold":true},{"text":"300 ₵","color":"green","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
-summon minecraft:interaction -21.5 65 -21.5 {Tags:["mg.tv","mg.tvbuy","mg.tvn"],width:1.2f,height:2.4f,response:1b}
+summon minecraft:item_display -22.5 66.7 -21.5 {Tags:["mg.tv","mg.tvpdi"],item:{id:"minecraft:goat_horn",count:1},billboard:"fixed",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
+summon minecraft:text_display -22.5 67.55 -21.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"📢 Canon sonique\n","color":"aqua","bold":true},{"text":"150 ₵","color":"green","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:interaction -22.5 65 -21.5 {Tags:["mg.tv","mg.tvbuy","mg.tvn"],width:1.2f,height:2.4f,response:1b}
 scoreboard players set @e[tag=mg.tvn,limit=1] mg.tvk 1
 tag @e[tag=mg.tvn] remove mg.tvn
-summon minecraft:item_display -19.5 66.7 -21.5 {Tags:["mg.tv","mg.tvpdi"],item:{id:"minecraft:crossbow",count:1},billboard:"fixed",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
-summon minecraft:text_display -19.5 67.55 -21.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"🔫 Fusil à impulsions Mk2\n","color":"gold","bold":true},{"text":"450 ₵","color":"green","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
-summon minecraft:interaction -19.5 65 -21.5 {Tags:["mg.tv","mg.tvbuy","mg.tvn"],width:1.2f,height:2.4f,response:1b}
+summon minecraft:item_display -20.5 66.7 -21.5 {Tags:["mg.tv","mg.tvpdi"],item:{id:"minecraft:crossbow",count:1},billboard:"fixed",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
+summon minecraft:text_display -20.5 67.55 -21.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"🔫 Fusil à impulsions Mk2\n","color":"gold","bold":true},{"text":"220 ₵","color":"green","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:interaction -20.5 65 -21.5 {Tags:["mg.tv","mg.tvbuy","mg.tvn"],width:1.2f,height:2.4f,response:1b}
 scoreboard players set @e[tag=mg.tvn,limit=1] mg.tvk 2
 tag @e[tag=mg.tvn] remove mg.tvn
-summon minecraft:item_display -17.5 66.7 -21.5 {Tags:["mg.tv","mg.tvpdi"],item:{id:"minecraft:fishing_rod",count:1},billboard:"fixed",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
-summon minecraft:text_display -17.5 67.55 -21.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"🕸 Lance-filets (+3 filets)\n","color":"white","bold":true},{"text":"150 ₵","color":"green","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
-summon minecraft:interaction -17.5 65 -21.5 {Tags:["mg.tv","mg.tvbuy","mg.tvn"],width:1.2f,height:2.4f,response:1b}
+summon minecraft:item_display -18.5 66.7 -21.5 {Tags:["mg.tv","mg.tvpdi"],item:{id:"minecraft:fishing_rod",count:1},billboard:"fixed",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
+summon minecraft:text_display -18.5 67.55 -21.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"🕸 Lance-filets (+3 filets)\n","color":"white","bold":true},{"text":"80 ₵","color":"green","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:interaction -18.5 65 -21.5 {Tags:["mg.tv","mg.tvbuy","mg.tvn"],width:1.2f,height:2.4f,response:1b}
 scoreboard players set @e[tag=mg.tvn,limit=1] mg.tvk 3
 tag @e[tag=mg.tvn] remove mg.tvn
-summon minecraft:item_display -15.5 66.7 -21.5 {Tags:["mg.tv","mg.tvpdi"],item:{id:"minecraft:cobweb",count:1},billboard:"fixed",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
-summon minecraft:text_display -15.5 67.55 -21.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"🕸 Filets ×3\n","color":"white","bold":true},{"text":"60 ₵","color":"green","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
-summon minecraft:interaction -15.5 65 -21.5 {Tags:["mg.tv","mg.tvbuy","mg.tvn"],width:1.2f,height:2.4f,response:1b}
+summon minecraft:item_display -16.5 66.7 -21.5 {Tags:["mg.tv","mg.tvpdi"],item:{id:"minecraft:cobweb",count:1},billboard:"fixed",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
+summon minecraft:text_display -16.5 67.55 -21.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"🕸 Filets ×3\n","color":"white","bold":true},{"text":"25 ₵","color":"green","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:interaction -16.5 65 -21.5 {Tags:["mg.tv","mg.tvbuy","mg.tvn"],width:1.2f,height:2.4f,response:1b}
 scoreboard players set @e[tag=mg.tvn,limit=1] mg.tvk 4
 tag @e[tag=mg.tvn] remove mg.tvn
-summon minecraft:item_display -13.5 66.7 -21.5 {Tags:["mg.tv","mg.tvpdi"],item:{id:"minecraft:tripwire_hook",count:1},billboard:"fixed",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
-summon minecraft:text_display -13.5 67.55 -21.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"⚙ Pièges au sol ×3\n","color":"gray","bold":true},{"text":"90 ₵","color":"green","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
-summon minecraft:interaction -13.5 65 -21.5 {Tags:["mg.tv","mg.tvbuy","mg.tvn"],width:1.2f,height:2.4f,response:1b}
+summon minecraft:item_display -14.5 66.7 -21.5 {Tags:["mg.tv","mg.tvpdi"],item:{id:"minecraft:tripwire_hook",count:1},billboard:"fixed",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
+summon minecraft:text_display -14.5 67.55 -21.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"⚙ Pièges au sol ×3\n","color":"gray","bold":true},{"text":"45 ₵","color":"green","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:interaction -14.5 65 -21.5 {Tags:["mg.tv","mg.tvbuy","mg.tvn"],width:1.2f,height:2.4f,response:1b}
 scoreboard players set @e[tag=mg.tvn,limit=1] mg.tvk 5
 tag @e[tag=mg.tvn] remove mg.tvn
-summon minecraft:item_display -11.5 66.7 -21.5 {Tags:["mg.tv","mg.tvpdi"],item:{id:"minecraft:golden_apple",count:1},billboard:"fixed",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
-summon minecraft:text_display -11.5 67.55 -21.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"✚ Trousses de soins ×2\n","color":"red","bold":true},{"text":"40 ₵","color":"green","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
-summon minecraft:interaction -11.5 65 -21.5 {Tags:["mg.tv","mg.tvbuy","mg.tvn"],width:1.2f,height:2.4f,response:1b}
+summon minecraft:item_display -12.5 66.7 -21.5 {Tags:["mg.tv","mg.tvpdi"],item:{id:"minecraft:golden_apple",count:1},billboard:"fixed",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
+summon minecraft:text_display -12.5 67.55 -21.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"✚ Trousses de soins ×2\n","color":"red","bold":true},{"text":"15 ₵","color":"green","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:interaction -12.5 65 -21.5 {Tags:["mg.tv","mg.tvbuy","mg.tvn"],width:1.2f,height:2.4f,response:1b}
 scoreboard players set @e[tag=mg.tvn,limit=1] mg.tvk 6
 tag @e[tag=mg.tvn] remove mg.tvn
-summon minecraft:item_display -9.5 66.7 -21.5 {Tags:["mg.tv","mg.tvpdi"],item:{id:"minecraft:chainmail_chestplate",count:1},billboard:"fixed",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
-summon minecraft:text_display -9.5 67.55 -21.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"🛡 Armure de patrouille\n","color":"dark_aqua","bold":true},{"text":"200 ₵","color":"green","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
-summon minecraft:interaction -9.5 65 -21.5 {Tags:["mg.tv","mg.tvbuy","mg.tvn"],width:1.2f,height:2.4f,response:1b}
+summon minecraft:item_display -10.5 66.7 -21.5 {Tags:["mg.tv","mg.tvpdi"],item:{id:"minecraft:chainmail_chestplate",count:1},billboard:"fixed",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
+summon minecraft:text_display -10.5 67.55 -21.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"🛡 Armure de patrouille\n","color":"dark_aqua","bold":true},{"text":"100 ₵","color":"green","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:interaction -10.5 65 -21.5 {Tags:["mg.tv","mg.tvbuy","mg.tvn"],width:1.2f,height:2.4f,response:1b}
 scoreboard players set @e[tag=mg.tvn,limit=1] mg.tvk 7
+tag @e[tag=mg.tvn] remove mg.tvn
+summon minecraft:item_display -8.5 66.7 -21.5 {Tags:["mg.tv","mg.tvpdi"],item:{id:"minecraft:saddle",count:1},billboard:"fixed",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
+summon minecraft:text_display -8.5 67.55 -21.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"🐴 Selle de brachiosaure\n","color":"yellow","bold":true},{"text":"40 ₵","color":"green","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:interaction -8.5 65 -21.5 {Tags:["mg.tv","mg.tvbuy","mg.tvn"],width:1.2f,height:2.4f,response:1b}
+scoreboard players set @e[tag=mg.tvn,limit=1] mg.tvk 8
 tag @e[tag=mg.tvn] remove mg.tvn
 summon minecraft:text_display 62.5 69 -73.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"📡 Outpost Alpha\n","color":"aqua","bold":true},{"text":"générateur de la colonie","color":"gray","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]}}
 summon minecraft:text_display -71.5 74 6.5 {Tags:["mg.tv"],billboard:"vertical",text:[{"text":"📡 Outpost Bravo\n","color":"aqua","bold":true},{"text":"générateur de la colonie","color":"gray","bold":false}],background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]}}

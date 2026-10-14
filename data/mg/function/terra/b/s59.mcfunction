@@ -1,4 +1,5 @@
 # Construction de Terra Nova, étape 59/101 (dimension mg:terranova, générée)
+setblock -18 71 -18 minecraft:daylight_detector
 setblock -14 71 -18 minecraft:daylight_detector
 setblock -10 71 -18 minecraft:daylight_detector
 fill 10 64 -25 24 64 -11 minecraft:spruce_planks

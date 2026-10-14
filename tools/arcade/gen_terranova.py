@@ -304,7 +304,10 @@ for cx in (-WALL, WALL):
 # dépôt d'équipement (nord-ouest)
 building(-24, -25, -8, -11, 6, 'spruce_planks', 'smooth_stone', 'dark_oak_slab', 'stripped_dark_oak_log', ('e', -18, 3))
 fill(-23, G + 1, -24, -9, G + 1, -24, 'barrel[facing=up]')
-PADS = [(-22, 'sonic'), (-20, 'mk2'), (-18, 'net'), (-16, 'netx'), (-14, 'trap'), (-12, 'med'), (-10, 'armor')]
+PADS = [(-23, 'sonic'), (-21, 'mk2'), (-19, 'net'), (-17, 'netx'), (-15, 'trap'), (-13, 'med'), (-11, 'armor'), (-9, 'saddle')]
+SHOP_FIX = ['# Socles des présentoirs du dépôt (corrige un monde construit avant le 8e présentoir)',
+            f'fill -23 {G + 1} -22 -9 {G + 1} -22 minecraft:air'] + [f'setblock {x} {G + 1} -22 minecraft:polished_andesite' for (x, _) in PADS]
+w('terra/shop_fix', SHOP_FIX)
 for (x, _) in PADS:
     setb(x, G + 1, -22, 'polished_andesite')
 for x in range(-22, -9, 4):
@@ -457,6 +460,8 @@ TRAP = (f'{WF}[custom_data={{tv:6}},item_model="minecraft:tripwire_hook",unbreak
         f'lore={lo("Clic droit : pose un piège à tes pieds", "Le premier prédateur qui marche dessus est bloqué 6 s")}]')
 HOME = (f'{WF}[custom_data={{tv:9}},item_model="minecraft:bell",unbreakable={{}},custom_name={nm("📡 Rappel à la colonie", "green")},'
         f'lore={lo("Clic droit : retour à la colonie en 5 s", "Annulé si tu prends un coup")}]')
+SADDLE = (f'minecraft:saddle[custom_name={nm("🐴 Selle de brachiosaure", "yellow")},'
+          f'lore={lo("Clic droit sur un brachiosaure pour la poser,", "puis clic droit pour monter (Z/Q/S/D, espace = élan)")}]')
 MEDK = f'minecraft:golden_apple[custom_name={nm("✚ Trousse de soins", "red")}]'
 UNIF_C = f'minecraft:leather_chestplate[dyed_color=9140827,unbreakable={{}},custom_name={nm("Uniforme de colon", "gold")}]'
 UNIF_B = f'minecraft:leather_boots[dyed_color=5915971,unbreakable={{}},custom_name={nm("Bottes de colon", "gold")}]'
@@ -644,12 +649,13 @@ def tdisp(x, y, z, text, scale=1.0, bg=1140850688, extra=''):
             f'{TR % (0, 0, 0, scale, scale, scale)}{extra}}}')
 
 
-PAD = {'sonic': (1, '📢 Canon sonique', 'aqua', 300, 'minecraft:goat_horn'), 'mk2': (2, '🔫 Fusil à impulsions Mk2', 'gold', 450, 'minecraft:crossbow'),
-       'net': (3, '🕸 Lance-filets (+3 filets)', 'white', 150, 'minecraft:fishing_rod'), 'netx': (4, '🕸 Filets ×3', 'white', 60, 'minecraft:cobweb'),
-       'trap': (5, '⚙ Pièges au sol ×3', 'gray', 90, 'minecraft:tripwire_hook'), 'med': (6, '✚ Trousses de soins ×2', 'red', 40, 'minecraft:golden_apple'),
-       'armor': (7, '🛡 Armure de patrouille', 'dark_aqua', 200, 'minecraft:chainmail_chestplate')}
+PAD = {'sonic': (1, '📢 Canon sonique', 'aqua', 150, 'minecraft:goat_horn'), 'mk2': (2, '🔫 Fusil à impulsions Mk2', 'gold', 220, 'minecraft:crossbow'),
+       'net': (3, '🕸 Lance-filets (+3 filets)', 'white', 80, 'minecraft:fishing_rod'), 'netx': (4, '🕸 Filets ×3', 'white', 25, 'minecraft:cobweb'),
+       'trap': (5, '⚙ Pièges au sol ×3', 'gray', 45, 'minecraft:tripwire_hook'), 'med': (6, '✚ Trousses de soins ×2', 'red', 15, 'minecraft:golden_apple'),
+       'armor': (7, '🛡 Armure de patrouille', 'dark_aqua', 100, 'minecraft:chainmail_chestplate'),
+       'saddle': (8, '🐴 Selle de brachiosaure', 'yellow', 40, 'minecraft:saddle')}
 SU = ['# Session (dans la dimension) : panneaux, présentoirs, tableau, marqueurs, herbivores, barres',
-      '# reste d\'une session interrompue (/reload, arrêt du serveur) : tout est retiré avant', 'function mg:terra/clear',
+      '# reste d\'une session interrompue (/reload, arrêt du serveur) : tout est retiré avant', 'function mg:terra/clear', 'function mg:terra/shop_fix',
       'execute as @a[tag=mg.tvw] run function mg:terra/mis_clear', 'function mg:terra/rules',
       f'summon minecraft:marker {EXITA[0] + 0.5} 65 {EXITA[1] + 0.5} {{Tags:["mg.tv","mg.tvexit"]}}',
       tdisp(0.5, 73, 0.5, [{'text': 'TERRA NOVA\n', 'color': 'green', 'bold': True}, {'text': 'Colonie humaine · il y a 85 millions d\'années', 'color': 'gray', 'bold': False}], 3.0),
@@ -696,7 +702,7 @@ INVIS = 'active_effects:[{id:"minecraft:invisibility",duration:-1,amplifier:0,sh
 
 def attrs(**a):
     names = {'hp': 'max_health', 'spd': 'movement_speed', 'fol': 'follow_range', 'dmg': 'attack_damage', 'scale': 'scale',
-             'step': 'step_height', 'kb': 'knockback_resistance', 'akb': 'attack_knockback'}
+             'step': 'step_height', 'kb': 'knockback_resistance', 'akb': 'attack_knockback', 'jump': 'jump_strength'}
     return 'attributes:[' + ','.join(f'{{id:"minecraft:{names[k]}",base:{v}}}' for k, v in a.items()) + ']'
 
 
@@ -711,13 +717,13 @@ def dino(key, mob, tags, label, col, nbt, at, hp, model):
 
 
 dino('raptor', 'vindicator', '"mg.tvhos","mg.tvraptor"', 'Slasher', 'green', 'CanPickUpLoot:0b,',
-     attrs(hp=18, spd=0.36, fol=48, dmg=5, scale=0.85, step=1.1), 18, RAPTOR)
+     attrs(hp=18, spd=0.46, fol=48, dmg=5, scale=0.85, step=1.1), 18, RAPTOR)
 dino('carno', 'hoglin', '"mg.tvhos","mg.tvcarno"', 'Carnotaure', 'red', 'IsImmuneToZombification:1b,CannotBeHunted:1b,',
      attrs(hp=160, spd=0.33, fol=40, dmg=12, scale=1.5, step=1.1, kb=0.8, akb=1.5), 160, CARNO)
 dino('brachio', 'camel', '"mg.tvherb","mg.tvbig","mg.tvbrach"', 'Brachiosaure', 'gray', '',
-     attrs(hp=120, spd=0.07, scale=2.0, kb=1.0), 120, BRACH)
+     attrs(hp=120, spd=0.11, scale=2.0, kb=1.0, jump=0.5), 120, BRACH)
 dino('pachy', 'goat', '"mg.tvherb","mg.tvpachy"', 'Pachycéphalosaure', 'gold', 'HasLeftHorn:0b,HasRightHorn:0b,IsScreamingGoat:0b,',
-     attrs(hp=24, spd=0.22, scale=1.2), 24, PACHY)
+     attrs(hp=24, spd=0.32, scale=1.2), 24, PACHY)
 w('terra/dsync', ['# @s (dinosaure, à sa position) : son modèle le suit (position et cap)',
                   'scoreboard players operation $tvi mg.st = @s mg.tvid',
                   'scoreboard players set $tvf mg.st 0',
@@ -911,6 +917,7 @@ BUY = ['# @s (joueur) achète au présentoir $tvk : prix, conditions, objet',
        f'execute if score $tvk mg.st matches 7 run item replace entity @s armor.head with {ARM["head"]}',
        f'execute if score $tvk mg.st matches 7 run item replace entity @s armor.chest with {ARM["chest"]}',
        f'execute if score $tvk mg.st matches 7 run item replace entity @s armor.legs with {ARM["legs"]}',
+       f'execute if score $tvk mg.st matches 8 run give @s {SADDLE}',
        'scoreboard players set @s mg.tval 50',
        'title @s actionbar [{"text":"✔ Acheté ! ","color":"green","bold":true},{"text":"reste ","color":"gray"},{"score":{"name":"@s","objective":"mg.tvc"},"color":"yellow"},{"text":" ₵","color":"yellow"}]',
        'execute at @s run playsound minecraft:entity.villager.yes player @s ~ ~ ~ 0.8 1.1']
@@ -939,9 +946,18 @@ BOARD = {'type': 'minecraft:multi_action', 'title': {'text': '📋 Missions de l
                      mbtn('✖ Abandonner ma mission', 'gray', 'Annule la mission en cours', 9)]}
 w('terra/board_int', ['# @s (tableau) : le colon qui a cliqué voit les missions',
                       'execute on target if entity @s[tag=mg.tvw] run function mg:terra/board', 'data remove entity @s interaction'])
-w('terra/board', ['# @s : fenêtre des missions', 'scoreboard players enable @s mg.tvms', f'dialog show @s {js(BOARD)}'])
+MLINKS = [{'text': '📋 Missions : ', 'color': 'gold', 'bold': True}] + [
+    {'text': f'[{a["label"][0]["text"]}] ', 'color': a['label'][0]['color'], 'bold': False,
+     'click_event': {'action': 'run_command', 'command': a['action']['command'].replace('trigger', '/trigger')},
+     'hover_event': {'action': 'show_text', 'value': a['tooltip'][0]['text']}} for a in BOARD['actions']]
+w('terra/board', ['# @s : fenêtre des missions (sinon liens cliquables dans le chat)', 'scoreboard players enable @s mg.tvms',
+                  'scoreboard players set $dlg mg.st 0', f'execute store success score $dlg mg.st run dialog show @s {js(BOARD)}',
+                  'execute unless score $dlg mg.st matches 1 run tellraw @s ' + js(MLINKS),
+                  'execute at @s run playsound minecraft:item.book.page_turn player @s ~ ~ ~ 0.8 1'])
 w('terra/mission_cmd', ['# @s : choix au tableau (trigger mg.tvms)',
                         'execute if score @s mg.tvms matches 9 run function mg:terra/abandon',
+                        'execute if score @s mg.tvms matches 1..4 unless score @s mg.tvm matches 1.. at @s run playsound minecraft:block.note_block.bell player @s ~ ~ ~ 0.8 1.2',
+                        'execute if score @s mg.tvms matches 1..4 unless score @s mg.tvm matches 1.. run title @s title {"text":"📋 Mission acceptée","color":"gold","bold":true}',
                         'execute if score @s mg.tvms matches 1..4 if score @s mg.tvm matches 1.. run tellraw @s {"text":"Tu as déjà une mission : termine-la ou abandonne-la au tableau.","color":"yellow"}',
                         'execute if score @s mg.tvms matches 1 unless score @s mg.tvm matches 1.. run function mg:terra/m1',
                         'execute if score @s mg.tvms matches 2 unless score @s mg.tvm matches 1.. run function mg:terra/m2',
@@ -1257,7 +1273,7 @@ SEC = ['# Chaque seconde (dans la dimension) : colonie, soins, primes, missions,
        'execute if score $tvq4 mg.st matches 200 as @e[tag=mg.tvhos,tag=!mg.tvhunt] at @s unless entity @a[tag=mg.tvw,distance=..80] run tp @s ~ -400 ~',
        # défenses du périmètre, herbivores égarés
        f'execute as @e[tag=mg.tvhos,{COLONY_BOX}] at @s run function mg:terra/zap',
-       f'execute as @e[tag=mg.tvherb,{COLONY_BOX}] run tp @s @e[type=minecraft:marker,tag=mg.tvhp,sort=random,limit=1]',
+       f'execute as @e[tag=mg.tvherb,{COLONY_BOX}] unless predicate mg:has_passenger run tp @s @e[type=minecraft:marker,tag=mg.tvhp,sort=random,limit=1]',
        # carnotaure
        f'execute as @e[tag=mg.tvcarno,tag=!mg.tvnetted] at @s unless entity @s[{COLONY_BOX}] run function mg:terra/carno_smash',
        'execute unless entity @e[tag=mg.tvcarno] run bossbar set mg:tvcarno players',
