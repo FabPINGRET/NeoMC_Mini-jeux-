@@ -24,6 +24,9 @@ execute if score $ar mg.st matches 0 as @a[tag=mg.play,scores={mg.t=..70}] run f
 execute if score $ar mg.st matches 1.. as @a[tag=mg.play] if score @s mg.t <= $ky mg.st run function mg:quake/respawn
 execute as @a[tag=mg.play,scores={mg.deaths=1..}] run function mg:quake/respawn
 
+# Cartes verticales : tremplins
+execute if score $ar mg.st matches 0 if score $qm mg.st matches 10..11 run function mg:quake/pads
+
 # Minuteur
 scoreboard players remove $tl mg.st 1
 execute if score $tl mg.st matches 1200 run tellraw @a[tag=mg.play] [{"text":"⚡ Plus qu'une minute !","color":"aqua"}]

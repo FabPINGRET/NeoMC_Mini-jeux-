@@ -41,6 +41,14 @@ execute if score $qm mg.st matches 9 run function mg:quake/build_6
 execute if score $qm mg.st matches 9 run scoreboard players set $qg mg.st 30
 execute if score $qm mg.st matches 9 run scoreboard players set $qt mg.st 12000
 execute if score $qm mg.st matches 9 run scoreboard players set $pz mg.st 15800
+execute if score $qm mg.st matches 10 run function mg:quake/build_7
+execute if score $qm mg.st matches 10 run scoreboard players set $qg mg.st 20
+execute if score $qm mg.st matches 10 run scoreboard players set $qt mg.st 7200
+execute if score $qm mg.st matches 10 run scoreboard players set $pz mg.st 16100
+execute if score $qm mg.st matches 11 run function mg:quake/build_8
+execute if score $qm mg.st matches 11 run scoreboard players set $qg mg.st 20
+execute if score $qm mg.st matches 11 run scoreboard players set $qt mg.st 7200
+execute if score $qm mg.st matches 11 run scoreboard players set $pz mg.st 16400
 kill @e[distance=0..,type=minecraft:item]
 scoreboard players reset @a mg.qs
 tag @a remove mg.prot
@@ -59,6 +67,8 @@ execute if score $qm mg.st matches 6 run spawnpoint @a[tag=mg.play] 0 81 11316
 execute if score $qm mg.st matches 7 run spawnpoint @a[tag=mg.play] 0 81 11513
 execute if score $qm mg.st matches 8 run spawnpoint @a[tag=mg.play] 0 87 15400
 execute if score $qm mg.st matches 9 run spawnpoint @a[tag=mg.play] 0 81 15770
+execute if score $qm mg.st matches 10 run spawnpoint @a[tag=mg.play] 0 87 16100
+execute if score $qm mg.st matches 11 run spawnpoint @a[tag=mg.play] 0 81 16410
 scoreboard players set @a[tag=mg.play] mg.qk 0
 scoreboard players set @a[tag=mg.play] mg.cd 0
 function mg:quake/spread_all

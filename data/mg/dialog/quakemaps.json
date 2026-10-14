@@ -303,6 +303,58 @@
     {
       "label": [
         {
+          "text": "🌀 Spirale (vertical) ",
+          "color": "light_purple"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Vertical : 27×27, pyramide, balcon et boucle suspendue, tremplins",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 233"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🏗 Chantier (vertical) ",
+          "color": "yellow"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Vertical : 25×25, immeuble à 3 étages, échafaudage, grue, tremplins",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 234"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🎲 Variante au hasard",
           "color": "gold"
         }
