@@ -93,6 +93,42 @@
     {
       "label": [
         {
+          "text": "🧟 Zombies — Usine",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "7 salles, 8 portes, deux chemins vers la salle des machines",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 229"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🧟 Zombies — Station",
+          "color": "light_purple"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Quais, galerie et réacteur : 7 salles en boucle",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 231"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour",
           "color": "yellow"
         }

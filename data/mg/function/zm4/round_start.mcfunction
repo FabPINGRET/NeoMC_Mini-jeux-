@@ -1,0 +1,73 @@
+# Nouvelle manche : nombre, vie et vitesse des zombies
+scoreboard players add $zr mg.st 1
+scoreboard players set $zph mg.st 1
+scoreboard players set $zsc mg.st 0
+scoreboard players reset * mg.zrp
+scoreboard players operation $zleft mg.st = $zr mg.st
+scoreboard players set #4 mg.st 4
+scoreboard players operation $zleft mg.st *= #4 mg.st
+scoreboard players add $zleft mg.st 5
+execute store result score $zpn mg.st if entity @a[tag=mg.play]
+scoreboard players operation $zn mg.st = $zpn mg.st
+scoreboard players operation $zn mg.st *= #2 mg.st
+scoreboard players remove $zn mg.st 1
+execute if score $zn mg.st matches ..1 run scoreboard players set $zn mg.st 2
+scoreboard players operation $zleft mg.st *= $zn mg.st
+scoreboard players operation $zleft mg.st /= #2 mg.st
+execute if score $zleft mg.st matches 161.. run scoreboard players set $zleft mg.st 160
+scoreboard players operation $zmx mg.st = $zpn mg.st
+scoreboard players operation $zmx mg.st *= #4 mg.st
+scoreboard players add $zmx mg.st 16
+execute if score $zmx mg.st matches 41.. run scoreboard players set $zmx mg.st 40
+scoreboard players operation $zhp mg.st = $zr mg.st
+scoreboard players set #8 mg.st 8
+scoreboard players operation $zhp mg.st *= #8 mg.st
+scoreboard players add $zhp mg.st 8
+execute if score $zhp mg.st matches 151.. run scoreboard players set $zhp mg.st 150
+scoreboard players set $zsp mg.st 23
+execute if score $zr mg.st matches 4.. run scoreboard players set $zsp mg.st 27
+execute if score $zr mg.st matches 7.. run scoreboard players set $zsp mg.st 32
+execute if score $zr mg.st matches 13.. run scoreboard players set $zsp mg.st 35
+scoreboard players operation $zsi mg.st = $zr mg.st
+scoreboard players operation $zsi mg.st *= #2 mg.st
+scoreboard players set $zsj mg.st 22
+scoreboard players operation $zsj mg.st -= $zsi mg.st
+execute if score $zsj mg.st matches ..7 run scoreboard players set $zsj mg.st 8
+execute if score $zpn mg.st matches 3.. run scoreboard players operation $zsj mg.st -= $zpn mg.st
+execute if score $zpn mg.st matches 3.. run scoreboard players add $zsj mg.st 2
+execute if score $zsj mg.st matches ..3 run scoreboard players set $zsj mg.st 4
+execute store result storage mg:zm hp int 1 run scoreboard players get $zhp mg.st
+execute store result storage mg:zm sp double 0.01 run scoreboard players get $zsp mg.st
+scoreboard players set #10 mg.st 10
+scoreboard players set #6 mg.st 6
+scoreboard players operation $zx mg.st = $zhp mg.st
+scoreboard players operation $zx mg.st *= #6 mg.st
+scoreboard players operation $zx mg.st /= #10 mg.st
+execute store result storage mg:zm hpf int 1 run scoreboard players get $zx mg.st
+scoreboard players operation $zx mg.st = $zhp mg.st
+scoreboard players operation $zx mg.st *= #3 mg.st
+execute store result storage mg:zm hpb int 1 run scoreboard players get $zx mg.st
+scoreboard players operation $zx mg.st = $zhp mg.st
+scoreboard players operation $zx mg.st /= #2 mg.st
+execute store result storage mg:zm hpd int 1 run scoreboard players get $zx mg.st
+scoreboard players operation $zx mg.st = $zsp mg.st
+scoreboard players add $zx mg.st 7
+execute store result storage mg:zm spf double 0.01 run scoreboard players get $zx mg.st
+scoreboard players remove $zx mg.st 10
+execute store result storage mg:zm spb double 0.01 run scoreboard players get $zx mg.st
+scoreboard players add $zx mg.st 15
+execute store result storage mg:zm spd double 0.01 run scoreboard players get $zx mg.st
+scoreboard players set $zdog mg.st 0
+execute if score $zr mg.st matches 5 run scoreboard players set $zdog mg.st 1
+execute if score $zr mg.st matches 10 run scoreboard players set $zdog mg.st 1
+execute if score $zr mg.st matches 15 run scoreboard players set $zdog mg.st 1
+execute if score $zdog mg.st matches 1 run scoreboard players operation $zleft mg.st = $zpn mg.st
+execute if score $zdog mg.st matches 1 run scoreboard players operation $zleft mg.st *= #3 mg.st
+execute if score $zdog mg.st matches 1 run scoreboard players add $zleft mg.st 6
+execute if score $zdog mg.st matches 1 run title @a[tag=mg.play] title {"text":"🔥 Chiens de l'enfer","color":"gold","bold":true}
+execute if score $zdog mg.st matches 1 run title @a[tag=mg.play] subtitle [{"score":{"name":"$zleft","objective":"mg.st"},"color":"yellow"},{"text":" chiens","color":"gray"}]
+execute if score $zdog mg.st matches 1 as @a[tag=mg.play] at @s run playsound minecraft:entity.wolf.howl master @s ~ ~ ~ 1 0.6
+execute if score $zdog mg.st matches 1 run return 0
+title @a[tag=mg.play] title [{"text":"Manche ","color":"dark_red","bold":true},{"score":{"name":"$zr","objective":"mg.st"},"color":"red","bold":true}]
+title @a[tag=mg.play] subtitle [{"score":{"name":"$zleft","objective":"mg.st"},"color":"yellow"},{"text":" zombies","color":"gray"}]
+execute as @a[tag=mg.play] at @s run playsound minecraft:entity.wither.spawn master @s ~ ~ ~ 0.3 0.6

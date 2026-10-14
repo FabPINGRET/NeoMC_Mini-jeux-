@@ -27,6 +27,7 @@ execute if score $zhp mg.st matches 151.. run scoreboard players set $zhp mg.st 
 scoreboard players set $zsp mg.st 23
 execute if score $zr mg.st matches 4.. run scoreboard players set $zsp mg.st 27
 execute if score $zr mg.st matches 7.. run scoreboard players set $zsp mg.st 32
+execute if score $zr mg.st matches 13.. run scoreboard players set $zsp mg.st 35
 scoreboard players operation $zsi mg.st = $zr mg.st
 scoreboard players operation $zsi mg.st *= #2 mg.st
 scoreboard players set $zsj mg.st 22
@@ -58,6 +59,8 @@ scoreboard players add $zx mg.st 15
 execute store result storage mg:zm spd double 0.01 run scoreboard players get $zx mg.st
 scoreboard players set $zdog mg.st 0
 execute if score $zr mg.st matches 5 run scoreboard players set $zdog mg.st 1
+execute if score $zr mg.st matches 10 run scoreboard players set $zdog mg.st 1
+execute if score $zr mg.st matches 15 run scoreboard players set $zdog mg.st 1
 execute if score $zdog mg.st matches 1 run scoreboard players operation $zleft mg.st = $zpn mg.st
 execute if score $zdog mg.st matches 1 run scoreboard players operation $zleft mg.st *= #3 mg.st
 execute if score $zdog mg.st matches 1 run scoreboard players add $zleft mg.st 6
