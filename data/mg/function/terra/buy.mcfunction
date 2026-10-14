@@ -1,12 +1,13 @@
 # @s (joueur) achète au présentoir $tvk : prix, conditions, objet
 scoreboard players set $tvp mg.st 0
-execute if score $tvk mg.st matches 1 run scoreboard players set $tvp mg.st 300
-execute if score $tvk mg.st matches 2 run scoreboard players set $tvp mg.st 450
-execute if score $tvk mg.st matches 3 run scoreboard players set $tvp mg.st 150
-execute if score $tvk mg.st matches 4 run scoreboard players set $tvp mg.st 60
-execute if score $tvk mg.st matches 5 run scoreboard players set $tvp mg.st 90
-execute if score $tvk mg.st matches 6 run scoreboard players set $tvp mg.st 40
-execute if score $tvk mg.st matches 7 run scoreboard players set $tvp mg.st 200
+execute if score $tvk mg.st matches 1 run scoreboard players set $tvp mg.st 150
+execute if score $tvk mg.st matches 2 run scoreboard players set $tvp mg.st 220
+execute if score $tvk mg.st matches 3 run scoreboard players set $tvp mg.st 80
+execute if score $tvk mg.st matches 4 run scoreboard players set $tvp mg.st 25
+execute if score $tvk mg.st matches 5 run scoreboard players set $tvp mg.st 45
+execute if score $tvk mg.st matches 6 run scoreboard players set $tvp mg.st 15
+execute if score $tvk mg.st matches 7 run scoreboard players set $tvp mg.st 100
+execute if score $tvk mg.st matches 8 run scoreboard players set $tvp mg.st 40
 execute if score $tvk mg.st matches 1 if items entity @s container.* *[custom_data~{tv:4}] run return run function mg:terra/buy_has
 execute if score $tvk mg.st matches 2 if items entity @s container.* *[custom_data~{tv:3}] run return run function mg:terra/buy_has
 execute if score $tvk mg.st matches 3 if items entity @s container.* *[custom_data~{tv:5}] run return run function mg:terra/buy_has_net
@@ -25,6 +26,7 @@ execute if score $tvk mg.st matches 6 run give @s minecraft:golden_apple[custom_
 execute if score $tvk mg.st matches 7 run item replace entity @s armor.head with minecraft:chainmail_helmet[unbreakable={},custom_data={tvarm:1b},custom_name={"text":"🛡 Armure de patrouille","color":"dark_aqua","italic":false,"bold":true}]
 execute if score $tvk mg.st matches 7 run item replace entity @s armor.chest with minecraft:chainmail_chestplate[unbreakable={},custom_data={tvarm:1b},custom_name={"text":"🛡 Armure de patrouille","color":"dark_aqua","italic":false,"bold":true}]
 execute if score $tvk mg.st matches 7 run item replace entity @s armor.legs with minecraft:chainmail_leggings[unbreakable={},custom_data={tvarm:1b},custom_name={"text":"🛡 Armure de patrouille","color":"dark_aqua","italic":false,"bold":true}]
+execute if score $tvk mg.st matches 8 run give @s minecraft:saddle[custom_name={"text":"🐴 Selle de brachiosaure","color":"yellow","italic":false,"bold":true},lore=[{"text":"Clic droit sur un brachiosaure pour la poser,","color":"gray","italic":false},{"text":"puis clic droit pour monter (Z/Q/S/D, espace = élan)","color":"gray","italic":false}]]
 scoreboard players set @s mg.tval 50
 title @s actionbar [{"text":"✔ Acheté ! ","color":"green","bold":true},{"text":"reste ","color":"gray"},{"score":{"name":"@s","objective":"mg.tvc"},"color":"yellow"},{"text":" ₵","color":"yellow"}]
 execute at @s run playsound minecraft:entity.villager.yes player @s ~ ~ ~ 0.8 1.1
