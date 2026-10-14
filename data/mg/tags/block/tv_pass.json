@@ -1,0 +1,14 @@
+{
+  "values": [
+    "#mg:ray_pass",
+    "#minecraft:leaves",
+    "minecraft:bamboo",
+    "minecraft:firefly_bush",
+    {
+      "id": "minecraft:bush",
+      "required": false
+    },
+    "minecraft:cocoa",
+    "minecraft:melon_stem"
+  ]
+}

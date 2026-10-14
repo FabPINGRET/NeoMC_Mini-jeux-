@@ -41,7 +41,7 @@
       },
       "tooltip": [
         {
-          "text": "Les joueurs à Neo GTA en sortent d'abord (tout est sauvegardé)",
+          "text": "Les joueurs à Neo GTA ou Terra Nova en sortent d'abord (tout est sauvegardé)",
           "color": "gray"
         }
       ]
@@ -67,6 +67,24 @@
     {
       "label": [
         {
+          "text": "🦖 Tout le monde → Terra Nova",
+          "color": "dark_green"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 75"
+      },
+      "tooltip": [
+        {
+          "text": "Les joueurs en survie, à Neo GTA ou sur leur plot en sortent d'abord (tout est sauvegardé)",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
           "text": "🏠 Tout le monde → Lobby",
           "color": "yellow"
         }
@@ -77,7 +95,7 @@
       },
       "tooltip": [
         {
-          "text": "Sort tout le monde de la survie, de Neo GTA, des plots, du kart, du parkour, des élytra et de la montagne russe : prêt pour lancer un mini-jeu",
+          "text": "Sort tout le monde de la survie, de Neo GTA, de Terra Nova, des plots, du kart, du parkour, des élytra et de la montagne russe : prêt pour lancer un mini-jeu",
           "color": "gray"
         }
       ]

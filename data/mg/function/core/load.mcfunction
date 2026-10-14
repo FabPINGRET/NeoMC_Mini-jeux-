@@ -5,6 +5,11 @@ scoreboard objectives add mg.st dummy
 scoreboard players set $thrs mg.st 1
 # Modèles du resource pack activés par défaut (/function mg:rp_off pour les couper)
 execute unless score $rp mg.st matches 0..1 run scoreboard players set $rp mg.st 1
+# Terra Nova : construite une fois (dimension mg:terranova, ~2 min, après Neo City), règles du monde
+execute if score $setup mg.st matches 1 unless data storage mg:terra built run schedule function mg:terra/world_build 200s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby tvclean run schedule function mg:terra/spawn_clean 9s
+scoreboard players set $tvw mg.st 0
+function mg:terra/rules
 # Neo City (monde GTA) : construite une fois (dimension mg:gta, 2 min)
 execute if score $setup mg.st matches 1 unless data storage mg:gta built run schedule function mg:gta/world_build 45s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby gtaclean run schedule function mg:gta/spawn_clean 8s
@@ -48,6 +53,33 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.tvc dummy {"text":"₵ Terra Nova","color":"green"}
+scoreboard objectives add mg.tvq minecraft.used:minecraft.warped_fungus_on_a_stick
+scoreboard objectives add mg.tvdd minecraft.custom:minecraft.damage_dealt
+scoreboard objectives add mg.tvdt minecraft.custom:minecraft.damage_taken
+scoreboard objectives add mg.tvkr minecraft.killed:minecraft.vindicator
+scoreboard objectives add mg.tvkc minecraft.killed:minecraft.hoglin
+scoreboard objectives add mg.tvkb minecraft.killed:minecraft.camel
+scoreboard objectives add mg.tvkg minecraft.killed:minecraft.goat
+scoreboard objectives add mg.tvms trigger
+scoreboard objectives add mg.tvpid dummy
+scoreboard objectives add mg.tvid dummy
+scoreboard objectives add mg.tvo dummy
+scoreboard objectives add mg.tvk dummy
+scoreboard objectives add mg.tvh dummy
+scoreboard objectives add mg.tvcd dummy
+scoreboard objectives add mg.tvsc dummy
+scoreboard objectives add mg.tvnet dummy
+scoreboard objectives add mg.tvtr dummy
+scoreboard objectives add mg.tvst dummy
+scoreboard objectives add mg.tvm dummy
+scoreboard objectives add mg.tvmo dummy
+scoreboard objectives add mg.tvmp dummy
+scoreboard objectives add mg.tvhm dummy
+scoreboard objectives add mg.tval dummy
+scoreboard objectives add mg.tvx dummy
+scoreboard objectives add mg.tvy dummy
+scoreboard objectives add mg.tvz dummy
 scoreboard objectives add mg.dsb dummy
 scoreboard objectives add mg.hat dummy
 scoreboard objectives add mg.hid dummy

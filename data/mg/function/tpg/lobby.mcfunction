@@ -1,5 +1,6 @@
 # TP général → lobby (@s = admin) : chacun quitte proprement son activité (sauvegardes comprises), puis remise à zéro au spawn
 execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.mpp,tag=mg.gtw] run function mg:gta/leave
+execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.mpp,tag=mg.tvw] run function mg:terra/leave
 execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.mpp,tag=mg.surv,tag=!mg.gtw] run function mg:survie/leave
 execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.mpp,tag=mg.inplot] run function mg:plot/leave
 execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.mpp,tag=mg.visit] run function mg:plot/leave

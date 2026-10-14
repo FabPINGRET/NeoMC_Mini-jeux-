@@ -54,8 +54,9 @@ execute if score @s mg.opt matches 70 if entity @s[tag=mg.admin] run function mg
 execute if score @s mg.opt matches 71 if entity @s[tag=mg.admin] run function mg:lobby/ev/force_3
 execute if score @s mg.opt matches 72 if entity @s[tag=mg.admin] run function mg:lobby/ev/cancel
 execute if score @s mg.opt matches 66 if entity @s[tag=mg.admin] run function mg:vote/open
-execute if score @s mg.opt matches 62..65 run function mg:tpg/run
 execute if score @s mg.opt matches 73..74 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Réservé aux admins.","color":"red"}
 execute if score @s mg.opt matches 73 if entity @s[tag=mg.admin] run function mg:lobby/theme/halloween/toggle
 execute if score @s mg.opt matches 74 if entity @s[tag=mg.admin] run function mg:lobby/theme/noel/toggle
+execute if score @s mg.opt matches 62..65 run function mg:tpg/run
+execute if score @s mg.opt matches 75 run function mg:tpg/run
 scoreboard players reset @s mg.opt

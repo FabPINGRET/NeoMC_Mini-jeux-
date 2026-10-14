@@ -1,4 +1,5 @@
 # Désinstallation (OP) — retire scoreboards, équipes, décor et zones chargées
+execute as @a[tag=mg.tvw] in minecraft:overworld run function mg:terra/leave
 execute if score $tmap mg.st matches 1 run function mg:lobby/theme/map/end
 execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off
 kill @e[type=minecraft:text_display,tag=mg.deco]
@@ -26,6 +27,49 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.tvc
+schedule clear mg:terra/wb_step
+schedule clear mg:terra/world_build
+schedule clear mg:terra/session_setup
+schedule clear mg:terra/spawn_clean
+execute in mg:terranova run forceload remove all
+kill @e[tag=mg.tvport]
+kill @e[tag=mg.tv]
+team remove mg_tv
+bossbar remove mg:tvcarno
+bossbar remove mg:tvo1
+bossbar remove mg:tvo2
+bossbar remove mg:tvo3
+data remove storage mg:terra built
+data remove storage mg:terra d
+data remove storage mg:terra h
+data remove storage mg:lobby tvclean
+scoreboard objectives remove mg.tvq
+scoreboard objectives remove mg.tvdd
+scoreboard objectives remove mg.tvdt
+scoreboard objectives remove mg.tvkr
+scoreboard objectives remove mg.tvkc
+scoreboard objectives remove mg.tvkb
+scoreboard objectives remove mg.tvkg
+scoreboard objectives remove mg.tvms
+scoreboard objectives remove mg.tvpid
+scoreboard objectives remove mg.tvid
+scoreboard objectives remove mg.tvo
+scoreboard objectives remove mg.tvk
+scoreboard objectives remove mg.tvh
+scoreboard objectives remove mg.tvcd
+scoreboard objectives remove mg.tvsc
+scoreboard objectives remove mg.tvnet
+scoreboard objectives remove mg.tvtr
+scoreboard objectives remove mg.tvst
+scoreboard objectives remove mg.tvm
+scoreboard objectives remove mg.tvmo
+scoreboard objectives remove mg.tvmp
+scoreboard objectives remove mg.tvhm
+scoreboard objectives remove mg.tval
+scoreboard objectives remove mg.tvx
+scoreboard objectives remove mg.tvy
+scoreboard objectives remove mg.tvz
 scoreboard objectives remove mg.dtr
 scoreboard objectives remove mg.dtt
 scoreboard objectives remove mg.dsb

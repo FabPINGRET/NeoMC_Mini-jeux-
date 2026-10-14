@@ -18,9 +18,10 @@ FREE = 'tag=!mg.play,tag=!mg.out,tag=!mg.mpp'
 
 # clé, libellé, couleur, info-bulle, mg.opt, lignes de la fonction tpg/<clé>
 DEST = [
-    ('survie', '🌲 Tout le monde → Survie', 'green', 'Les joueurs à Neo GTA en sortent d\'abord (tout est sauvegardé)', 63, [
+    ('survie', '🌲 Tout le monde → Survie', 'green', 'Les joueurs à Neo GTA ou Terra Nova en sortent d\'abord (tout est sauvegardé)', 63, [
         '# TP général → survie (@s = admin)',
         f'execute as @a[{FREE},tag=mg.gtw] run function mg:gta/leave',
+        f'execute as @a[{FREE},tag=mg.tvw] run function mg:terra/leave',
         f'execute as @a[{FREE},tag=!mg.surv] run function mg:survie/enter',
         'tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a envoyé tout le monde en survie.","color":"gray"}]']),
     ('gta', '🚓 Tout le monde → Neo GTA', 'gold', 'Les joueurs en survie ou sur leur plot en sortent d\'abord (tout est sauvegardé)', 64, [
@@ -30,9 +31,17 @@ DEST = [
         f'execute as @a[{FREE},tag=mg.inplot] run function mg:plot/leave',
         f'execute as @a[{FREE},tag=!mg.gtw] run function mg:gta/enter',
         'tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a envoyé tout le monde à Neo GTA.","color":"gray"}]']),
-    ('lobby', '🏠 Tout le monde → Lobby', 'yellow', 'Sort tout le monde de la survie, de Neo GTA, des plots, du kart, du parkour, des élytra et de la montagne russe : prêt pour lancer un mini-jeu', 65, [
+    ('terra', '🦖 Tout le monde → Terra Nova', 'dark_green', 'Les joueurs en survie, à Neo GTA ou sur leur plot en sortent d\'abord (tout est sauvegardé)', 75, [
+        '# TP général → Terra Nova (@s = admin)',
+        'execute unless data storage mg:terra built run return run function mg:terra/not_ready',
+        f'execute as @a[{FREE},tag=mg.surv,tag=!mg.tvw] run function mg:survie/leave',
+        f'execute as @a[{FREE},tag=mg.inplot] run function mg:plot/leave',
+        f'execute as @a[{FREE},tag=!mg.tvw] run function mg:terra/enter',
+        'tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a envoyé tout le monde à Terra Nova.","color":"gray"}]']),
+    ('lobby', '🏠 Tout le monde → Lobby', 'yellow', 'Sort tout le monde de la survie, de Neo GTA, de Terra Nova, des plots, du kart, du parkour, des élytra et de la montagne russe : prêt pour lancer un mini-jeu', 65, [
         '# TP général → lobby (@s = admin) : chacun quitte proprement son activité (sauvegardes comprises), puis remise à zéro au spawn',
         f'execute as @a[{FREE},tag=mg.gtw] run function mg:gta/leave',
+        f'execute as @a[{FREE},tag=mg.tvw] run function mg:terra/leave',
         f'execute as @a[{FREE},tag=mg.surv,tag=!mg.gtw] run function mg:survie/leave',
         f'execute as @a[{FREE},tag=mg.inplot] run function mg:plot/leave',
         f'execute as @a[{FREE},tag=mg.visit] run function mg:plot/leave',
@@ -81,7 +90,13 @@ w('tpg/open', ['# Fenêtre du TP général (@s = admin), sinon liens dans le cha
                     for _, l, c, _, o, _ in DEST], ensure_ascii=False)])
 for k, _, _, _, _, lines in DEST:
     w(f'tpg/{k}', lines)
-lo, hi = OPEN_OPT, max(o for *_, o, _ in DEST)
+OPTS = sorted({OPEN_OPT} | {o for *_, o, _ in DEST})
+RANGES = []
+for o in OPTS:
+    if RANGES and o == RANGES[-1][1] + 1:
+        RANGES[-1][1] = o
+    else:
+        RANGES.append([o, o])
 w('tpg/run', ['# mg.opt 62.. : TP général (@s = joueur)',
               f'execute unless entity @s[tag=mg.admin] run return run tellraw @s {{"text":"⚠ Réservé aux admins.","color":"red"}}',
               f'execute if score @s mg.opt matches {OPEN_OPT} run return run function mg:tpg/open'] +
@@ -90,10 +105,11 @@ w('tpg/run', ['# mg.opt 62.. : TP général (@s = joueur)',
 # branchement dans core/opt (avant la remise à zéro finale)
 p = os.path.join(F, 'core/opt.mcfunction')
 t = open(p, encoding='utf-8').read().split('\n')
-line = f'execute if score @s mg.opt matches {lo}..{hi} run function mg:tpg/run'
+new_lines = [f'execute if score @s mg.opt matches {a}..{b} run function mg:tpg/run' if a != b else f'execute if score @s mg.opt matches {a} run function mg:tpg/run'
+             for a, b in RANGES]
 t = [l for l in t if not (l.startswith('execute if score @s mg.opt matches ') and l.endswith(' run function mg:tpg/run'))]
 i = t.index('scoreboard players reset @s mg.opt')
-t[i:i] = [line]
+t[i:i] = new_lines
 open(p, 'w', encoding='utf-8', newline='\n').write('\n'.join(t))
 print('TP général OK :', ', '.join(k for k, *_ in DEST))
 

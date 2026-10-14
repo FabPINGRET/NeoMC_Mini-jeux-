@@ -1,0 +1,20 @@
+# Construction de Terra Nova, étape 101/101 (dimension mg:terranova, générée)
+place feature minecraft:grass_jungle 5 65 -33
+place feature minecraft:grass_jungle -22 68 -78
+place feature minecraft:grass_jungle -56 69 -4
+place feature minecraft:grass_jungle 20 66 61
+place feature minecraft:grass_jungle 36 72 -90
+place feature minecraft:grass_jungle 33 66 -68
+place feature minecraft:grass_jungle -58 65 29
+place feature minecraft:grass_jungle 81 66 64
+place feature minecraft:large_fern -2 65 -80
+place feature minecraft:grass_jungle -16 66 42
+place feature minecraft:grass_jungle -47 64 83
+place feature minecraft:large_fern 70 66 4
+place feature minecraft:large_fern 48 64 -30
+place feature minecraft:grass_jungle -75 66 -57
+place feature minecraft:grass_jungle 59 65 -44
+place feature minecraft:jungle_tree_no_vine -20 65 -6
+place feature minecraft:jungle_tree_no_vine 21 65 -6
+place feature minecraft:jungle_tree_no_vine -4 65 21
+place feature minecraft:jungle_tree_no_vine 24 65 4

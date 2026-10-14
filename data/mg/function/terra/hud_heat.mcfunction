@@ -1,0 +1,13 @@
+# @s tient un fusil à impulsions : jauge de chaleur
+execute if entity @s[tag=mg.tvoh] run return run title @s actionbar [{"text":"⚠ SURCHAUFFE ","color":"red","bold":true},{"text":"refroidissement…","color":"gray"}]
+execute if score @s mg.tvh matches 0..99 run title @s actionbar [{"text":"🔫 Chaleur ","color":"aqua"},{"text":"","color":"green"},{"text":"▮▮▮▮▮▮▮▮▮▮","color":"dark_gray"}]
+execute if score @s mg.tvh matches 100..199 run title @s actionbar [{"text":"🔫 Chaleur ","color":"aqua"},{"text":"▮","color":"green"},{"text":"▮▮▮▮▮▮▮▮▮","color":"dark_gray"}]
+execute if score @s mg.tvh matches 200..299 run title @s actionbar [{"text":"🔫 Chaleur ","color":"aqua"},{"text":"▮▮","color":"green"},{"text":"▮▮▮▮▮▮▮▮","color":"dark_gray"}]
+execute if score @s mg.tvh matches 300..399 run title @s actionbar [{"text":"🔫 Chaleur ","color":"aqua"},{"text":"▮▮▮","color":"green"},{"text":"▮▮▮▮▮▮▮","color":"dark_gray"}]
+execute if score @s mg.tvh matches 400..499 run title @s actionbar [{"text":"🔫 Chaleur ","color":"aqua"},{"text":"▮▮▮▮","color":"green"},{"text":"▮▮▮▮▮▮","color":"dark_gray"}]
+execute if score @s mg.tvh matches 500..599 run title @s actionbar [{"text":"🔫 Chaleur ","color":"aqua"},{"text":"▮▮▮▮▮","color":"green"},{"text":"▮▮▮▮▮","color":"dark_gray"}]
+execute if score @s mg.tvh matches 600..699 run title @s actionbar [{"text":"🔫 Chaleur ","color":"aqua"},{"text":"▮▮▮▮▮▮","color":"gold"},{"text":"▮▮▮▮","color":"dark_gray"}]
+execute if score @s mg.tvh matches 700..799 run title @s actionbar [{"text":"🔫 Chaleur ","color":"aqua"},{"text":"▮▮▮▮▮▮▮","color":"gold"},{"text":"▮▮▮","color":"dark_gray"}]
+execute if score @s mg.tvh matches 800..899 run title @s actionbar [{"text":"🔫 Chaleur ","color":"aqua"},{"text":"▮▮▮▮▮▮▮▮","color":"gold"},{"text":"▮▮","color":"dark_gray"}]
+execute if score @s mg.tvh matches 900..999 run title @s actionbar [{"text":"🔫 Chaleur ","color":"aqua"},{"text":"▮▮▮▮▮▮▮▮▮","color":"red"},{"text":"▮","color":"dark_gray"}]
+execute if score @s mg.tvh matches 1000..1099 run title @s actionbar [{"text":"🔫 Chaleur ","color":"aqua"},{"text":"▮▮▮▮▮▮▮▮▮▮","color":"red"},{"text":"","color":"dark_gray"}]
