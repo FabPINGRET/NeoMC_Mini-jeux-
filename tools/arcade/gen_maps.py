@@ -44,6 +44,10 @@ MAPS = [
                             p=dict(Z=35800, blocks=LABO, name='Laboratoire'))),
     ('gen_zombies.py', dict(sfx='3', keys=['zmode', 'zm', 'inf'], ids={'97': 212, '98': 213}, entry='zmode', label='Manoir',
                             p=dict(Z=36100, blocks=MANOIR, name='Manoir'))),
+    ('gen_zombies.py', dict(sfx='4', keys=['zmode', 'zm', 'inf'], ids={'97': 229, '98': 230}, entry='zmode', label='Usine',
+                            p=dict(Z=39100, layout='usine', name='Usine'))),
+    ('gen_zombies.py', dict(sfx='5', keys=['zmode', 'zm', 'inf'], ids={'97': 231, '98': 232}, entry='zmode', label='Station',
+                            p=dict(Z=39400, layout='station', name='Station'))),
 ]
 for script, cfg in MAPS:
     env = dict(os.environ, NEOMC_MAP=json.dumps(cfg, ensure_ascii=False))
@@ -51,3 +55,12 @@ for script, cfg in MAPS:
     if out.returncode:
         sys.exit(out.stdout + out.stderr)
     print(f'{script} → {"/".join(k + cfg["sfx"] for k in cfg["keys"])} : ids {sorted(cfg["ids"].values())}')
+
+# ids des cartes acceptés par core/go (1..N)
+import re
+_p = os.path.join(R, 'data/mg/function/core/go.mcfunction')
+_t = open(_p, encoding='utf-8').read()
+_hi = max(max(c['ids'].values()) for _, c in MAPS)
+_m = re.search(r'unless score @s mg\.go matches 1\.\.(\d+) unless', _t)
+if _m and int(_m.group(1)) < _hi:
+    open(_p, 'w', encoding='utf-8', newline='\n').write(_t.replace(_m.group(0), f'unless score @s mg.go matches 1..{_hi} unless'))

@@ -4,11 +4,11 @@
 
 Zombies (97) : coop contre des manches de zombies de plus en plus nombreux et résistants. Armes réelles (tools/arcade/guns.py),
 points (+10 par balle qui touche, +60 par kill), portes à acheter, armes au mur, boîte mystère, Juggernog, Speed Cola.
-Mort → spectateur jusqu'à la fin de la manche (réanimé avec pistolet). 10 manches = victoire, tout le monde mort = défaite.
+Mort → spectateur jusqu'à la fin de la manche (réanimé avec pistolet). 20 manches = victoire, tout le monde mort = défaite.
 Façon Call of Duty : boissons (Juggernog, Speed Cola, Quick Revive, Double Tap, Stamin-Up, Mule Kick), Pack-a-Punch (arme ×3),
 fenêtres barricadées que les zombies cassent et que l'on répare accroupi devant, bonus lâchés par les zombies (mort instantanée,
 Kaboom, points doubles, charpentier, vente de feu), grenade singe, lance-roquettes, batte, mobs variés (rapides, rampants, brutes)
-et manche des chiens à la 5. Munitions illimitées (seul le chargeur se recharge). Q = jeter une arme à un coéquipier.
+et manches des chiens à la 5, 10 et 15. Munitions illimitées (seul le chargeur se recharge). Q = jeter une arme à un coéquipier.
 Partie commune à toutes les cartes (bonus, singe, roquettes, fenêtres) : fonctions zx/.
 Infection (98) : un ou plusieurs joueurs commencent zombies ; un survivant tué devient zombie. Survivants armés,
 zombies au corps à corps (plus rapides et plus forts), réapparition infinie. 3 min : les survivants restants gagnent.
@@ -26,7 +26,8 @@ w, js = C.w, C.js
 Z = C.param('Z', 23200)
 THEME = C.param('blocks', {})     # carte supplémentaire : remplacement des blocs du décor (tools/arcade/gen_maps.py)
 NAME = C.param('name', 'Bunker')
-ROUNDS = 10
+ROUNDS = 20
+LAYOUT = C.param('layout', None)   # carte au plan différent (tools/arcade/zombie_layouts.py), sinon le bunker
 G.build()
 
 ROOMS = {'a': (-10, 10, Z - 10, Z + 10), 'b': (-10, 10, Z - 32, Z - 12), 'c': (12, 32, Z - 10, Z + 10), 'd': (12, 32, Z - 32, Z - 12)}
@@ -53,19 +54,53 @@ PERKS = [('zb23', '💙 Quick Revive', 'relevé 5 s après ta mort (une fois)', 
          ('zb26', '🐴 Mule Kick', 'une 3e arme', 4000, (32, Z - 28), (31.5, Z - 27.5), (31.0, Z - 27.5), ('green_glazed_terracotta', 'green_stained_glass')),
          ('zb27', '⚡ Pack-a-Punch', 'arme en main améliorée (×3)', 3000, (28, Z - 32), (28.5, Z - 30.5), (28.5, Z - 31.0), ('obsidian', 'crying_obsidian'))]
 BARRELS = [(-6, Z - 6), (5, Z + 4), (-5, Z - 26), (6, Z - 19), (17, Z - 5), (27, Z + 2), (16, Z - 29), (27, Z - 20)]
+# machines fixes : (bloc, interaction, étiquette) ; boîte mystère ; départ ; zone de la carte (x1, z1, x2, z2)
+JUG = ((32, Z + 6), (31.5, Z + 6.5), (31.0, Z + 6.5))
+SPEED = ((32, Z - 15), (31.5, Z - 14.5), (31.0, Z - 14.5))
+BOXP = (22, Z - 27)
+SX, SZ = 0, Z
+AREA = (-17, Z - 39, 39, Z + 17)
+LY = None
+if LAYOUT:
+    import zombie_layouts
+    LY = zombie_layouts.get(LAYOUT, Z)
+    ROOMS, DOORS, WIN, WALL, BARRELS = LY['rooms'], LY['doors'], LY['wins'], LY['walls'], LY['barrels']
+    PERKS = [(t, nm, tx, c, LY['perks'][t][0], LY['perks'][t][1], LY['perks'][t][2], blk) for (t, nm, tx, c, _, _, _, blk) in PERKS]
+    JUG, SPEED, BOXP = LY['jug'], LY['speed'], LY['box']
+    SX, SZ = LY['start']
+    AREA = LY['area']
+AX1, AZ1, AX2, AZ2 = AREA
+
+
+def inf_spread(sel):
+    """Infection : joueurs répartis dans la carte (bunker : autour du centre ; plan : centre d'une salle au hasard)"""
+    if LY:
+        return f'execute as {sel} run tp @s @e[type=minecraft:marker,tag=mg.zrc,sort=random,limit=1]'
+    return f'spreadplayers 11 {Z - 11} 4 18 under 84 false {sel}'
 
 # ------------------------------------------------------------------ carte
 L = ['# 🧟 Bunker (Zombies / Infection) — 4 salles 21×21, x −11..33, z 23167..23211, sol y 80, toit y 86']
-L += [f'fill -17 {y} {Z - 39} 39 {y} {Z + 17} minecraft:air' for y in range(78, 92)]
-L += [f'fill -11 79 {Z - 33} 33 79 {Z + 11} minecraft:stone']
-for r, (x1, x2, z1, z2) in ROOMS.items():
+L += [f'fill {AX1} {y} {AZ1} {AX2} {y} {AZ2} minecraft:air' for y in range(78, 92)]
+if LY:
+    # plan : tout plein, puis les salles creusées (murs d'un bloc entre salles voisines)
+    L[0] = f'# 🧟 {NAME} (Zombies / Infection) — ' + ', '.join(LY['names'].values()) + ' — sol y 80, toit y 86'
+    L += [f'fill {AX1 + 1} 79 {AZ1 + 1} {AX2 - 1} 79 {AZ2 - 1} minecraft:stone',
+          f'fill {AX1 + 1} 80 {AZ1 + 1} {AX2 - 1} 85 {AZ2 - 1} minecraft:{LY["wall"]}',
+          f'fill {AX1 + 1} 81 {AZ1 + 1} {AX2 - 1} 81 {AZ2 - 1} minecraft:{LY["band"]}',
+          f'fill {AX1 + 1} 86 {AZ1 + 1} {AX2 - 1} 86 {AZ2 - 1} minecraft:{LY["roof"]}']
+    for r, (x1, x2, z1, z2) in ROOMS.items():
+        L += [f'fill {x1} 80 {z1} {x2} 80 {z2} minecraft:{LY["floors"][r]}', f'fill {x1} 81 {z1} {x2} 85 {z2} minecraft:air']
+        L += [f'setblock {x} 86 {z} minecraft:{LY["light"]}' for x in range(x1 + 2, x2 - 1, 5) for z in range(z1 + 2, z2 - 1, 5)]
+else:
+    L += [f'fill -11 79 {Z - 33} 33 79 {Z + 11} minecraft:stone']
+for r, (x1, x2, z1, z2) in (ROOMS.items() if not LY else []):
     L.append(f'fill {x1} 80 {z1} {x2} 80 {z2} minecraft:{ {"a": "polished_andesite", "b": "stone_bricks", "c": "polished_deepslate", "d": "mossy_stone_bricks"}[r] }')
-L += [f'fill -11 80 {Z - 33} 33 85 {Z - 33} minecraft:stone_bricks', f'fill -11 80 {Z + 11} 33 85 {Z + 11} minecraft:stone_bricks',
+L += [] if LY else [f'fill -11 80 {Z - 33} 33 85 {Z - 33} minecraft:stone_bricks', f'fill -11 80 {Z + 11} 33 85 {Z + 11} minecraft:stone_bricks',
       f'fill -11 80 {Z - 32} -11 85 {Z + 10} minecraft:stone_bricks', f'fill 33 80 {Z - 32} 33 85 {Z + 10} minecraft:stone_bricks',
       f'fill 11 80 {Z - 32} 11 85 {Z + 10} minecraft:stone_bricks', f'fill -10 80 {Z - 11} 32 85 {Z - 11} minecraft:stone_bricks',
       f'fill -11 86 {Z - 33} 33 86 {Z + 11} minecraft:smooth_stone',
       f'fill -11 81 {Z - 33} 33 81 {Z + 11} minecraft:cracked_stone_bricks replace minecraft:stone_bricks']
-L += [f'setblock {x} 86 {z} minecraft:sea_lantern' for x in range(-6, 33, 6) for z in range(Z - 30, Z + 11, 6)]
+L += [] if LY else [f'setblock {x} 86 {z} minecraft:sea_lantern' for x in range(-6, 33, 6) for z in range(Z - 30, Z + 11, 6)]
 # portes : ouverture 3×3 + barricade en planches
 for d, (nm, cost, (x1, z1, x2, z2), _, _) in DOORS.items():
     L.append(f'fill {x1} 81 {z1} {x2} 83 {z2} minecraft:dark_oak_planks')
@@ -83,15 +118,16 @@ for (r, x, z, nx, nz) in WIN:
 # décor : caisses, tables, éclairage
 for (x, z) in BARRELS:
     L +=[f'fill {x} 81 {z} {x + 1} 81 {z + 1} minecraft:barrel[facing=up]', f'setblock {x} 82 {z} minecraft:barrel[facing=up]']
-for (x, z) in [(3, Z - 3), (-3, Z - 20), (20, Z + 3), (24, Z - 24)]:
+for (x, z) in ([] if LY else [(3, Z - 3), (-3, Z - 20), (20, Z + 3), (24, Z - 24)]):
     L += [f'fill {x} 81 {z} {x + 2} 81 {z} minecraft:spruce_slab[type=top]', f'setblock {x + 1} 82 {z} minecraft:lantern']
 # machines : Juggernog (rouge), Speed Cola (vert), boîte mystère
-L += [f'setblock 32 81 {Z + 6} minecraft:red_glazed_terracotta', f'setblock 32 82 {Z + 6} minecraft:red_stained_glass',
-      f'setblock 32 83 {Z + 6} minecraft:redstone_lamp[lit=true]',
-      f'setblock 32 81 {Z - 15} minecraft:lime_glazed_terracotta', f'setblock 32 82 {Z - 15} minecraft:lime_stained_glass',
-      f'setblock 32 83 {Z - 15} minecraft:redstone_lamp[lit=true]',
-      f'setblock 22 81 {Z - 27} minecraft:chest[facing=south]', f'setblock 21 81 {Z - 27} minecraft:spruce_planks',
-      f'setblock 23 81 {Z - 27} minecraft:spruce_planks', f'setblock 22 85 {Z - 27} minecraft:soul_lantern[hanging=true]']
+(jx, jz), (sx_, sz_), (bx_, bz_) = JUG[0], SPEED[0], BOXP
+L += [f'setblock {jx} 81 {jz} minecraft:red_glazed_terracotta', f'setblock {jx} 82 {jz} minecraft:red_stained_glass',
+      f'setblock {jx} 83 {jz} minecraft:redstone_lamp[lit=true]',
+      f'setblock {sx_} 81 {sz_} minecraft:lime_glazed_terracotta', f'setblock {sx_} 82 {sz_} minecraft:lime_stained_glass',
+      f'setblock {sx_} 83 {sz_} minecraft:redstone_lamp[lit=true]',
+      f'setblock {bx_} 81 {bz_} minecraft:chest[facing=south]', f'setblock {bx_ - 1} 81 {bz_} minecraft:spruce_planks',
+      f'setblock {bx_ + 1} 81 {bz_} minecraft:spruce_planks', f'setblock {bx_} 85 {bz_} minecraft:soul_lantern[hanging=true]']
 for _, _, _, _, (bx, bz), _, _, (b1, b2) in PERKS:
     L += [f'setblock {bx} 81 {bz} minecraft:{b1}', f'setblock {bx} 82 {bz} minecraft:{b2}', f'setblock {bx} 83 {bz} minecraft:redstone_lamp[lit=true]']
 import re
@@ -126,22 +162,26 @@ for tag, nm, txt, cost, _, (ix, iz), (tx, tz), _ in PERKS:
 E += [f'summon minecraft:interaction {x + 1} 81 {z + 1} {{Tags:["mg.zent","mg.zlock"],width:2.05f,height:2.05f}}' for (x, z) in BARRELS]
 # fenêtres : un marqueur dans chaque ouverture (barricade, zx/win_*)
 E += [f'summon minecraft:marker {x + .5} 81 {z + .5} {{Tags:["mg.zent","mg.zwin"]}}' for (r, x, z, nx, nz) in WIN]
-E += [f'summon minecraft:interaction 31.5 81 {Z + 6.5} {{Tags:["mg.zent","mg.zbuy","mg.zb21"],width:1.3f,height:2.4f,response:1b}}',
-      f'summon minecraft:text_display 31.0 84.4 {Z + 6.5} {{Tags:["mg.zent"],billboard:"center",text:[{{"text":"❤ Juggernog","color":"red","bold":true}},{{"text":"\\n2× plus de vie — 2500 pts","color":"yellow"}}]}}',
-      f'summon minecraft:interaction 31.5 81 {Z - 14.5} {{Tags:["mg.zent","mg.zbuy","mg.zb22"],width:1.3f,height:2.4f,response:1b}}',
-      f'summon minecraft:text_display 31.0 84.4 {Z - 14.5} {{Tags:["mg.zent"],billboard:"center",text:[{{"text":"⚡ Speed Cola","color":"green","bold":true}},{{"text":"\\nrecharge 2× plus vite — 3000 pts","color":"yellow"}}]}}',
-      f'summon minecraft:interaction 22.5 81 {Z - 26.5} {{Tags:["mg.zent","mg.zbuy","mg.zb20"],width:1.6f,height:1.6f,response:1b}}',
-      f'summon minecraft:text_display 22.5 83.4 {Z - 26.5} {{Tags:["mg.zent"],billboard:"center",text:[{{"text":"❓ Boîte mystère","color":"light_purple","bold":true}},{{"text":"\\narme au hasard — 950 pts","color":"yellow"}}]}}',
+(jix, jiz), (jtx, jtz), (six, siz), (stx, stz) = JUG[1], JUG[2], SPEED[1], SPEED[2]
+bix, biz = BOXP[0] + 0.5, BOXP[1] + 0.5
+if LY:   # infection : centres des salles (répartition des joueurs)
+    E += [f'summon minecraft:marker {(x1 + x2) / 2 + .5} 81 {(z1 + z2) / 2 + .5} {{Tags:["mg.zent","mg.zrc"]}}' for (x1, x2, z1, z2) in ROOMS.values()]
+E += [f'summon minecraft:interaction {jix} 81 {jiz} {{Tags:["mg.zent","mg.zbuy","mg.zb21"],width:1.3f,height:2.4f,response:1b}}',
+      f'summon minecraft:text_display {jtx} 84.4 {jtz} {{Tags:["mg.zent"],billboard:"center",text:[{{"text":"❤ Juggernog","color":"red","bold":true}},{{"text":"\\n2× plus de vie — 2500 pts","color":"yellow"}}]}}',
+      f'summon minecraft:interaction {six} 81 {siz} {{Tags:["mg.zent","mg.zbuy","mg.zb22"],width:1.3f,height:2.4f,response:1b}}',
+      f'summon minecraft:text_display {stx} 84.4 {stz} {{Tags:["mg.zent"],billboard:"center",text:[{{"text":"⚡ Speed Cola","color":"green","bold":true}},{{"text":"\\nrecharge 2× plus vite — 3000 pts","color":"yellow"}}]}}',
+      f'summon minecraft:interaction {bix} 81 {biz} {{Tags:["mg.zent","mg.zbuy","mg.zb20"],width:1.6f,height:1.6f,response:1b}}',
+      f'summon minecraft:text_display {bix} 83.4 {biz} {{Tags:["mg.zent"],billboard:"center",text:[{{"text":"❓ Boîte mystère","color":"light_purple","bold":true}},{{"text":"\\narme au hasard — 950 pts","color":"yellow"}}]}}',
       'tag @e[tag=mg.zr_a] add mg.zon']
 w('zm/entities', E)
 w('zm/open_all', ['# Infection : toutes les portes ouvertes, pas d\'achats'] +
   [f'fill {x1} 81 {z1} {x2} 83 {z2} minecraft:air' for d, (_, _, (x1, z1, x2, z2), _, _) in DOORS.items()] +
   ['kill @e[tag=mg.zbuy]', 'kill @e[type=minecraft:text_display,tag=mg.zent]', 'kill @e[type=minecraft:item_display,tag=mg.zent]',
-   'kill @e[tag=mg.zwin]', f'summon minecraft:interaction 22.5 81 {Z - 26.5} {{Tags:["mg.zent","mg.zlock"],width:1.1f,height:1.1f}}',
+   'kill @e[tag=mg.zwin]', f'summon minecraft:interaction {bix} 81 {biz} {{Tags:["mg.zent","mg.zlock"],width:1.1f,height:1.1f}}',
    'tag @e[tag=mg.zsp] add mg.zon'])
 w('zm/kill_all', ['kill @e[tag=mg.zz]', 'kill @e[tag=mg.zent]',
-                  f'kill @e[type=minecraft:item,x=-17,y=70,z={Z - 39},dx=56,dy=25,dz=56]',
-                  f'kill @e[type=minecraft:experience_orb,x=-17,y=70,z={Z - 39},dx=56,dy=25,dz=56]'])
+                  f'kill @e[type=minecraft:item,x={AX1},y=70,z={AZ1},dx={AX2 - AX1},dy=25,dz={AZ2 - AZ1}]',
+                  f'kill @e[type=minecraft:experience_orb,x={AX1},y=70,z={AZ1},dx={AX2 - AX1},dy=25,dz={AZ2 - AZ1}]'])
 
 # ------------------------------------------------------------------ commun (dispatch 97 / 98)
 w('zmode/prepare', ['execute if score $game mg.st matches 97 run function mg:zm/prepare', 'execute if score $game mg.st matches 98 run function mg:inf/prepare'])
@@ -158,9 +198,9 @@ w('zmode/cleanup', ['scoreboard players set $zpts mg.st 0', 'function mg:zx/rese
 # ------------------------------------------------------------------ ZOMBIES
 w('zm/prepare', ['# 🧟 Zombies — préparation', 'function mg:zm/build', 'function mg:zm/kill_all', 'function mg:zm/entities',
                  'scoreboard players set @e[type=minecraft:marker,tag=mg.zwin] mg.zws 6', 'execute as @e[type=minecraft:marker,tag=mg.zwin] at @s run function mg:zx/win_set',
-                 'scoreboard players set $px mg.st 0', 'scoreboard players set $py mg.st 84', f'scoreboard players set $pz mg.st {Z}',
+                 f'scoreboard players set $px mg.st {SX}', 'scoreboard players set $py mg.st 84', f'scoreboard players set $pz mg.st {SZ}',
                  'clear @a[tag=mg.play]', 'gamemode adventure @a[tag=mg.play]', 'team join mg_blue @a[tag=mg.play]',
-                 f'spreadplayers 0 {Z} 2 6 under 84 false @a[tag=mg.play]', 'execute as @a[tag=mg.play] at @s run spawnpoint @s ~ ~ ~'])
+                 f'spreadplayers {SX} {SZ} 2 6 under 84 false @a[tag=mg.play]', 'execute as @a[tag=mg.play] at @s run spawnpoint @s ~ ~ ~'])
 w('zm/kit', ['# @s : couteau + pistolet', 'clear @s', 'function mg:gun/reset',
              'item replace entity @s hotbar.0 with minecraft:iron_sword[unbreakable={},custom_name=[{"text":"🔪 Couteau","color":"gray","italic":false}]]',
              G.give(1, 'hotbar.1'), 'item replace entity @s hotbar.8 with minecraft:cooked_beef 16'])
@@ -211,7 +251,7 @@ w('zm/round_start', ['# Nouvelle manche : nombre, vie et vitesse des zombies', '
                      'scoreboard players operation $zhp mg.st *= #8 mg.st', 'scoreboard players add $zhp mg.st 8',
                      'execute if score $zhp mg.st matches 151.. run scoreboard players set $zhp mg.st 150',
                      'scoreboard players set $zsp mg.st 23', 'execute if score $zr mg.st matches 4.. run scoreboard players set $zsp mg.st 27',
-                     'execute if score $zr mg.st matches 7.. run scoreboard players set $zsp mg.st 32',
+                     'execute if score $zr mg.st matches 7.. run scoreboard players set $zsp mg.st 32', 'execute if score $zr mg.st matches 13.. run scoreboard players set $zsp mg.st 35',
                      'scoreboard players operation $zsi mg.st = $zr mg.st', 'scoreboard players operation $zsi mg.st *= #2 mg.st',
                      'scoreboard players set $zsj mg.st 22', 'scoreboard players operation $zsj mg.st -= $zsi mg.st',
                      'execute if score $zsj mg.st matches ..7 run scoreboard players set $zsj mg.st 8',
@@ -232,8 +272,9 @@ w('zm/round_start', ['# Nouvelle manche : nombre, vie et vitesse des zombies', '
                      'execute store result storage mg:zm spf double 0.01 run scoreboard players get $zx mg.st',
                      'scoreboard players remove $zx mg.st 10', 'execute store result storage mg:zm spb double 0.01 run scoreboard players get $zx mg.st',
                      'scoreboard players add $zx mg.st 15', 'execute store result storage mg:zm spd double 0.01 run scoreboard players get $zx mg.st',
-                     # manche 5 : chiens de l'enfer (6 + 3 par joueur)
+                     # manches 5, 10 et 15 : chiens de l'enfer (6 + 3 par joueur)
                      'scoreboard players set $zdog mg.st 0', 'execute if score $zr mg.st matches 5 run scoreboard players set $zdog mg.st 1',
+                     'execute if score $zr mg.st matches 10 run scoreboard players set $zdog mg.st 1', 'execute if score $zr mg.st matches 15 run scoreboard players set $zdog mg.st 1',
                      'execute if score $zdog mg.st matches 1 run scoreboard players operation $zleft mg.st = $zpn mg.st',
                      'execute if score $zdog mg.st matches 1 run scoreboard players operation $zleft mg.st *= #3 mg.st',
                      'execute if score $zdog mg.st matches 1 run scoreboard players add $zleft mg.st 6',
@@ -260,14 +301,14 @@ w('zm/round_end', [f'# Manche terminée', f'execute if score $zr mg.st matches {
                    'execute as @a[tag=mg.play,tag=mg.zdead] run function mg:zm/revive',
                    'execute as @a[tag=mg.play] at @s run playsound minecraft:block.bell.use master @s ~ ~ ~ 1 0.8'])
 w('zm/die', ['# @s est tombé : spectateur jusqu\'à la fin de la manche, perd ses boissons', 'scoreboard players set @s mg.deaths 0',
-             'tag @s add mg.zdead', 'gamemode spectator @s', f'tp @s 0 84 {Z}',
+             'tag @s add mg.zdead', 'gamemode spectator @s', f'tp @s {SX} 84 {SZ}',
              'execute if entity @s[tag=mg.zjug] run attribute @s minecraft:max_health base set 20', 'tag @s remove mg.zjug', 'tag @s remove mg.zsc',
              'tag @s remove mg.zdbl', 'tag @s remove mg.zst', 'tag @s remove mg.zmu',
              'execute if entity @s[tag=mg.zqr] run scoreboard players set @s mg.zrt 100', 'execute if entity @s[tag=mg.zqr] run tag @s add mg.zqrw',
              'execute if entity @s[tag=mg.zqr] run return run tag @s remove mg.zqr',
              'tellraw @a[tag=mg.play] [{"text":"☠ ","color":"red"},{"selector":"@s","color":"red"},{"text":" est tombé ! Il reviendra à la fin de la manche.","color":"gray"}]'])
 w('zm/revive', ['# @s revient (pistolet + couteau)', 'tag @s remove mg.zdead', 'tag @s remove mg.zqrw', 'gamemode adventure @s',
-                f'spreadplayers 0 {Z} 1 4 under 84 false @s', 'function mg:zm/kit', 'effect give @s minecraft:instant_health 1 4 true'])
+                f'spreadplayers {SX} {SZ} 1 4 under 84 false @s', 'function mg:zm/kit', 'effect give @s minecraft:instant_health 1 4 true'])
 w('zm/second', ['# Chaque seconde : zombies tombés hors de la carte ou perdus',
                 'execute as @e[tag=mg.zz] at @s if entity @s[y=-64,dy=139] run function mg:zm/lost',
                 'execute as @e[tag=mg.zz] at @s unless entity @a[tag=mg.play,tag=!mg.zdead,distance=..48] run function mg:zm/lost',
@@ -275,7 +316,7 @@ w('zm/second', ['# Chaque seconde : zombies tombés hors de la carte ou perdus',
                 'execute if score $zph mg.st matches 1 run title @a[tag=mg.play] actionbar [{"text":"🧟 Manche ","color":"dark_green"},{"score":{"name":"$zr","objective":"mg.st"},"color":"green","bold":true},{"text":" — restants : ","color":"gray"},{"score":{"name":"$zal","objective":"mg.st"},"color":"yellow"},{"text":" + ","color":"gray"},{"score":{"name":"$zleft","objective":"mg.st"},"color":"yellow"}]'])
 w('zm/lost', ['# @s (zombie) perdu : réapparaît dans un enclos ouvert',
               'execute at @e[type=minecraft:marker,tag=mg.zsp,tag=mg.zon,sort=random,limit=1] run tp @s ~ ~ ~'])
-w('zm/victory', ['# 10 manches !', 'kill @e[tag=mg.zz]', 'tag @a[tag=mg.play] add mg.win', 'scoreboard players add @a[tag=mg.play] mg.wins 1',
+w('zm/victory', [f'# {ROUNDS} manches !', 'kill @e[tag=mg.zz]', 'tag @a[tag=mg.play] add mg.win', 'scoreboard players add @a[tag=mg.play] mg.wins 1',
                  'scoreboard players set $state mg.st 3', 'scoreboard players set $timer mg.st 140',
                  'title @a[tag=!mg.surv] title {"text":"VICTOIRE !","color":"gold","bold":true}',
                  f'title @a[tag=!mg.surv] subtitle {{"text":"{ROUNDS} manches de zombies repoussées","color":"yellow"}}',
@@ -356,9 +397,9 @@ w('zm/box', ['# Boîte mystère : ' + ', '.join(f'{(G.GUNS[n][0] if n in G.GUNS 
              'execute store result score $zx mg.st run random value 1..20'] +
   [f'execute if score $zx mg.st matches {a}..{b} run scoreboard players set $zgn mg.st {n}' for a, b, n in BOX] +
   ['execute as @a[tag=mg.zbuyer] run function mg:zm/give_gun',
-             f'particle minecraft:witch 22.5 82.5 {Z - 26.5} 0.4 0.4 0.4 0.1 30',
-             f'playsound minecraft:block.chest.open master @a 22.5 82 {Z - 26.5} 1 0.8',
-             f'playsound minecraft:entity.player.levelup master @a 22.5 82 {Z - 26.5} 0.6 1.6'] +
+             f'particle minecraft:witch {BOXP[0] + 0.5} 82.5 {BOXP[1] + 0.5} 0.4 0.4 0.4 0.1 30',
+             f'playsound minecraft:block.chest.open master @a {BOXP[0] + 0.5} 82 {BOXP[1] + 0.5} 1 0.8',
+             f'playsound minecraft:entity.player.levelup master @a {BOXP[0] + 0.5} 82 {BOXP[1] + 0.5} 0.6 1.6'] +
   [f'execute if score $zgn mg.st matches {n} run title @a[tag=mg.zbuyer] actionbar ' + js([{'text': '❓ Boîte mystère : ', 'color': 'light_purple'}, {'text': g[0], 'color': g[8], 'bold': True}])
    for n, g in G.GUNS.items()] +
   [f'execute if score $zgn mg.st matches {n} run title @a[tag=mg.zbuyer] actionbar ' + js([{'text': '❓ Boîte mystère : ', 'color': 'light_purple'}, {'text': nm, 'color': col, 'bold': True}])
@@ -396,9 +437,9 @@ w('zm/pap', PAP)
 # ------------------------------------------------------------------ INFECTION
 LIMIT = 3600
 w('inf/prepare', ['# 🧪 Infection — préparation', 'function mg:zm/build', 'function mg:zm/kill_all', 'function mg:zm/entities', 'function mg:zm/open_all',
-                  'scoreboard players set $px mg.st 11', 'scoreboard players set $py mg.st 84', f'scoreboard players set $pz mg.st {Z - 11}',
+                  f'scoreboard players set $px mg.st {SX if LY else 11}', 'scoreboard players set $py mg.st 84', f'scoreboard players set $pz mg.st {SZ if LY else Z - 11}',
                   'clear @a[tag=mg.play]', 'gamemode adventure @a[tag=mg.play]', 'team join mg_blue @a[tag=mg.play]',
-                  f'spreadplayers 11 {Z - 11} 4 18 under 84 false @a[tag=mg.play]', 'execute as @a[tag=mg.play] at @s run spawnpoint @s ~ ~ ~',
+                  inf_spread('@a[tag=mg.play]'), 'execute as @a[tag=mg.play] at @s run spawnpoint @s ~ ~ ~',
                   'tag @a remove mg.zhit', 'advancement revoke @a only mg:infhit'])
 w('inf/kit', ['# @s : survivant (couteau, pistolet, une arme au hasard)', 'clear @s', 'function mg:gun/reset',
               'item replace entity @s hotbar.0 with minecraft:iron_sword[unbreakable={},custom_name=[{"text":"🔪 Couteau","color":"gray","italic":false}]]',
@@ -454,7 +495,7 @@ w('inf/tick', ['# 🧪 Infection — tick', 'scoreboard players add $ift mg.st 1
                'execute if score $state mg.st matches 2 if score $infm mg.st matches 1 if score $ins mg.st matches 0 run return run function mg:inf/zombies_win',
                f'execute if score $state mg.st matches 2 if score $ift mg.st matches {LIMIT}.. run function mg:inf/survivors_win'])
 w('inf/srespawn', ['# @s (entraînement, seul) : mort ou chute → retour au bunker, kit rendu', 'scoreboard players set @s mg.deaths 0',
-                   f'spreadplayers 11 {Z - 11} 4 18 under 84 false @s', 'execute at @s run spawnpoint @s ~ ~ ~', 'function mg:inf/kit',
+                   inf_spread('@s'), 'execute at @s run spawnpoint @s ~ ~ ~', 'function mg:inf/kit',
                    'effect give @s minecraft:resistance 2 4 true', 'effect give @s minecraft:instant_health 1 4 true',
                    'tellraw @s {"text":"🧪 Entraînement : retour au bunker.","color":"yellow"}'])
 w('inf/zdie', ['# @s (zombie) tué : réapparaît', 'scoreboard players set @s mg.deaths 0', 'function mg:inf/zspawn',
@@ -710,5 +751,5 @@ C.patch('core/load', 'scoreboard objectives add mg.bw trigger', ['scoreboard pla
                                                                  'scoreboard players set #5 mg.st 5', 'scoreboard players set #8 mg.st 8',
                                                                  'scoreboard players set #60 mg.st 60'])
 C.patch('desinstaller', 'scoreboard objectives remove mg.bw', ['data remove storage mg:zm hp'])
-C.forceload([f'# Bunker Zombies / Infection (z {Z})', f'forceload add -17 {Z - 39} 39 {Z + 17}'])
+C.forceload([f'# {NAME} Zombies / Infection (z {Z})', f'forceload add {AX1} {AZ1} {AX2} {AZ2}'])
 print('Zombies/Infection OK')

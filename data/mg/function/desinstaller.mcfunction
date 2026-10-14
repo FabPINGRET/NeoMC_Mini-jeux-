@@ -27,6 +27,10 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+schedule clear mg:zmode5/prepare_b
+forceload remove -51 39364 51 39435
+schedule clear mg:zmode4/prepare_b
+forceload remove -36 39042 40 39120
 scoreboard objectives remove mg.tvc
 schedule clear mg:terra/wb_step
 schedule clear mg:terra/world_build

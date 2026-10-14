@@ -93,6 +93,42 @@
     {
       "label": [
         {
+          "text": "🧪 Infection — Usine",
+          "color": "aqua"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Usine à 7 salles, tout ouvert",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 230"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🧪 Infection — Station",
+          "color": "light_purple"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Station à 7 salles, tout ouvert",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 232"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🧟 Joueurs vs mobs — Bunker",
           "color": "red"
         }

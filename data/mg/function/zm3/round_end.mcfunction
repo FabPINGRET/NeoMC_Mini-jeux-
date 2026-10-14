@@ -1,5 +1,5 @@
 # Manche terminée
-execute if score $zr mg.st matches 10.. run return run function mg:zm3/victory
+execute if score $zr mg.st matches 20.. run return run function mg:zm3/victory
 scoreboard players set $zph mg.st 0
 scoreboard players set $zb mg.st 200
 tellraw @a[tag=mg.play] [{"text":"🧟 Manche ","color":"dark_green"},{"score":{"name":"$zr","objective":"mg.st"},"color":"green","bold":true},{"text":" terminée ! Prochaine dans 10 s.","color":"gray"}]
