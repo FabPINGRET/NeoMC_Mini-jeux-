@@ -23,8 +23,8 @@ Ajouter un thème : une fonction theme_<nom>() qui remplit CH et renvoie (reskin
 dans THEMES (et dans tools/lobby/gen_theme_maps.py, qui habille aussi les cartes de jeu pendant les parties).
 
 Modules (jamais lancés seuls, chargés ici après C.init) : theme_world.py (modèle du spawn : W, DYN, CH, familles de
-blocs, zones réservées), theme_water.py (fontaines, cascades, biome d'eau, water_fix), theme_mobs.py (animaux, spot/back/gone/
-clear), theme_core.py (off, sync, restore, reskin, tick).
+blocs, zones réservées), theme_water.py (fontaines, cascades, biome d'eau, water_fix, water_check), theme_mobs.py (animaux,
+spot/back/gone/clear), theme_core.py (off, sync, restore, reskin, tick).
 """
 import os
 import random
@@ -238,8 +238,9 @@ for tid, key, label, opt, make in THEMES:
                   f'scoreboard players set $theme mg.st {tid}', f'data modify storage mg:lobby theme set value {tid}',
                   f'function mg:{T}/place', 'tellraw @a ' + js(hello), f'execute as {LOBBY} at @s run playsound {snd} master @s ~ ~ ~ 1 0.8'])
     w(f'{T}/place', [f"# {label} : blocs du décor (là où le bloc d'origine est encore là), entités, eau ; "
-                     'appelé par on et par lobby/theme/restore (redémarrage)'] + on + on_x +
-      [f'function mg:{T}/reskin', 'function mg:lobby/food_skin', 'function mg:lobby/theme/water_fix'])
+                     'appelé par on et par lobby/theme/restore (redémarrage)',
+                     '# eau remise d\'aplomb d\'abord : le décor (glace...) se pose sur l\'eau réparée',
+                     'function mg:lobby/theme/water_fix'] + on + on_x + [f'function mg:{T}/reskin', 'function mg:lobby/food_skin'])
     w(f'{T}/off', [f'# {label} : chaque bloc d\'origine revient (s\'il n\'a pas changé entre-temps) — appelé par lobby/theme/off'] +
       off + off_x)
     w(f'{T}/reskin', [f'# {label} : entités du décor (mg.lby) ; rappelé par lobby/deco tant que le thème est actif',
@@ -256,7 +257,8 @@ for tid, key, label, opt, make in THEMES:
 TC.write_dispatch(THEMES)               # off, sync, restore, reskin, tick (appellent le thème actif)
 TM.load(ALLCH)                           # points d'apparition des animaux (hors cellules changées par un thème)
 TM.write_common()                        # spot, back, gone, clear, allay_drop
-TWA.write_fix()                          # water_fix
+TWA.write_fix(ALLCH)                     # water_fix
+TWA.write_check(ALLCH)                   # water_check (diagnostic, ne modifie rien)
 TWA.write_biome(HALLOWEEN_BIOME, '#a3120c', '#3a0505')   # worldgen/biome/halloween.json
 
 # ------------------------------------------------------------------ branchements
@@ -270,6 +272,7 @@ C.patch('core/tick', f'execute if score $thrs mg.st matches 1.. if entity {LOBBY
         ['execute if score $lan mg.t matches 30 unless score $theme mg.st matches 1.. unless data storage mg:lobby theme '
          'as @e[tag=mg.thmob] run function mg:lobby/theme/gone'])
 C.patch('core/load', 'scoreboard objectives add mg.st dummy', ['scoreboard players set $thrs mg.st 1'])
+C.patch('core/load', 'scoreboard objectives add mg.st dummy', ['scoreboard players set $thsw mg.st 0'])   # drapeau de bascule jamais resté à 1
 # reconstruction du spawn : le décor est reposé par restore (comme après un redémarrage)
 C.patch('lobby/build_end', 'data modify storage mg:lobby v6 set value 1b',
         ['execute if score $theme mg.st matches 1.. run scoreboard players set $thrs mg.st 1'])

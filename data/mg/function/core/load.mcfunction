@@ -2,6 +2,7 @@
 
 # --- Objectifs ---
 scoreboard objectives add mg.st dummy
+scoreboard players set $thsw mg.st 0
 scoreboard players set $thrs mg.st 1
 # Modèles du resource pack activés par défaut (/function mg:rp_off pour les couper)
 execute unless score $rp mg.st matches 0..1 run scoreboard players set $rp mg.st 1

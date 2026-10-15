@@ -1,4 +1,6 @@
 # 🎃 Halloween : blocs du décor (là où le bloc d'origine est encore là), entités, eau ; appelé par on et par lobby/theme/restore (redémarrage)
+# eau remise d'aplomb d'abord : le décor (glace...) se pose sur l'eau réparée
+function mg:lobby/theme/water_fix
 execute if block -78 65 -2 minecraft:lantern run setblock -78 65 -2 minecraft:soul_lantern
 execute if block -78 65 3 minecraft:lantern run setblock -78 65 3 minecraft:soul_lantern
 execute if block -75 65 -34 minecraft:air run setblock -75 65 -34 minecraft:black_candle[lit=true,candles=1]
@@ -7152,4 +7154,3 @@ execute if block 75 65 34 minecraft:air run setblock 75 65 34 minecraft:orange_c
 function mg:lobby/theme/halloween/water_on
 function mg:lobby/theme/halloween/reskin
 function mg:lobby/food_skin
-function mg:lobby/theme/water_fix

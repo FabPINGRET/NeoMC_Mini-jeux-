@@ -1,4 +1,6 @@
 # 🎄 Noël : blocs du décor (là où le bloc d'origine est encore là), entités, eau ; appelé par on et par lobby/theme/restore (redémarrage)
+# eau remise d'aplomb d'abord : le décor (glace...) se pose sur l'eau réparée
+function mg:lobby/theme/water_fix
 execute if block -78 64 0 minecraft:air run setblock -78 64 0 minecraft:snow[layers=1]
 execute if block -78 64 1 minecraft:air run setblock -78 64 1 minecraft:snow[layers=1]
 execute if block -77 64 -1 minecraft:air run setblock -77 64 -1 minecraft:snow[layers=1]
@@ -12053,4 +12055,3 @@ execute if block 75 65 34 minecraft:air run setblock 75 65 34 minecraft:red_cand
 execute if block 77 65 1 minecraft:air run setblock 77 65 1 minecraft:snow[layers=1]
 function mg:lobby/theme/noel/reskin
 function mg:lobby/food_skin
-function mg:lobby/theme/water_fix
