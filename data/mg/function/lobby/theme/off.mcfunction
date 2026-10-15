@@ -5,6 +5,9 @@ execute if score $theme mg.st matches 1 run function mg:lobby/theme/halloween/of
 execute if score $theme mg.st matches 2 run function mg:lobby/theme/noel/off
 scoreboard players set $theme mg.st 0
 data remove storage mg:lobby theme
+scoreboard players reset $thw mg.st
+scoreboard players reset $thd mg.st
+scoreboard players reset $thi mg.st
 function mg:lobby/theme/clear
 # $thsw (bascule d'un thème à l'autre) : le place du nouveau thème remet l'eau d'aplomb, une seule fois pour les deux
 execute unless score $thsw mg.st matches 1 run function mg:lobby/theme/water_fix
