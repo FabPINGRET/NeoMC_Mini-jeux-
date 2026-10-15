@@ -7625,7 +7625,6 @@ execute if block 22 64 17 minecraft:snow run setblock 22 64 17 minecraft:air
 execute if block 22 64 18 minecraft:snow run setblock 22 64 18 minecraft:cornflower
 execute if block 22 64 19 minecraft:snow run setblock 22 64 19 minecraft:red_tulip
 execute if block 22 64 20 minecraft:snow run setblock 22 64 20 minecraft:air
-execute if block 22 64 21 minecraft:snow run setblock 22 64 21 minecraft:orange_tulip
 execute if block 22 64 25 minecraft:snow run setblock 22 64 25 minecraft:air
 execute if block 22 64 26 minecraft:snow run setblock 22 64 26 minecraft:air
 execute if block 22 64 27 minecraft:snow run setblock 22 64 27 minecraft:air
@@ -7757,7 +7756,6 @@ execute if block 23 64 15 minecraft:snow run setblock 23 64 15 minecraft:air
 execute if block 23 64 17 minecraft:snow run setblock 23 64 17 minecraft:air
 execute if block 23 64 19 minecraft:snow run setblock 23 64 19 minecraft:air
 execute if block 23 64 20 minecraft:snow run setblock 23 64 20 minecraft:air
-execute if block 23 64 23 minecraft:snow run setblock 23 64 23 minecraft:air
 execute if block 23 64 24 minecraft:snow run setblock 23 64 24 minecraft:short_grass
 execute if block 23 64 25 minecraft:snow run setblock 23 64 25 minecraft:short_grass
 execute if block 23 64 26 minecraft:snow run setblock 23 64 26 minecraft:air
@@ -12051,3 +12049,5 @@ execute if block 75 65 -33 minecraft:red_candle run setblock 75 65 -33 minecraft
 execute if block 75 65 29 minecraft:red_candle run setblock 75 65 29 minecraft:air
 execute if block 75 65 34 minecraft:red_candle run setblock 75 65 34 minecraft:air
 execute if block 77 65 1 minecraft:snow run setblock 77 65 1 minecraft:air
+clear @a[tag=!mg.surv] *[minecraft:custom_data~{mg_thg:1b}]
+scoreboard players reset @a[tag=!mg.surv] mg.thfw
