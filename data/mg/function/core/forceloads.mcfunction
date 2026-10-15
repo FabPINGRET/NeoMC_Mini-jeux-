@@ -107,6 +107,9 @@ forceload add -27 23681 27 23719
 forceload add -25 23783 25 23817
 forceload add -23 23882 23 23918
 forceload add -35 7 -15 27
+# Quake vertical (Spirale z 16100, Chantier z 16400)
+forceload add -16 16084 16 16116
+forceload add -15 16385 15 16415
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl
