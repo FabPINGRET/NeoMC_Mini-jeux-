@@ -7,6 +7,10 @@ execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off
 scoreboard players set $thsw mg.st 0
 scoreboard players set $theme mg.st 1
 data modify storage mg:lobby theme set value 1
+# chute de particules : démarre tout de suite, avec fondu d'entrée (voir theme_fall.py)
+scoreboard players set $thw mg.st 1
+execute store result score $thd mg.st run random value 60..240
+scoreboard players set $thi mg.st 0
 function mg:lobby/theme/halloween/place
 tellraw @a [{"text":"🎃 ","color":"gold"},{"text":"Le spawn se pare de ses habits d'Halloween… Bouh !","color":"gold","bold":true}]
 execute as @a[x=-80,y=30,z=-80,dx=160,dy=120,dz=160,tag=!mg.play,tag=!mg.surv,gamemode=!spectator] at @s run playsound minecraft:entity.witch.celebrate master @s ~ ~ ~ 1 0.8

@@ -20,11 +20,13 @@ d'élytra sont réservés (theme_world.reserve) : ni décor ni animal autour.
 Les fichiers générés pour un nouveau thème ou une nouvelle fonctionnalité restent sous lobby/theme/ : theme_world.load ignore
 ce dossier en cherchant les zones modifiées par les jeux.
 Ajouter un thème : une fonction theme_<nom>() qui remplit CH et renvoie (reskin, fx, hello, mobs, extra), puis l'inscrire
-dans THEMES (et dans tools/lobby/gen_theme_maps.py, qui habille aussi les cartes de jeu pendant les parties).
+dans THEMES (et dans tools/lobby/gen_theme_maps.py, qui habille aussi les cartes de jeu pendant les parties). Particules qui
+tombent par intermittence : les déclarer dans SPECS de theme_fall.py et mettre TF.fx_call(clé, LOBBY) dans le fx du thème.
 
 Modules (jamais lancés seuls, chargés ici après C.init) : theme_world.py (modèle du spawn : W, DYN, CH, familles de
 blocs, zones réservées), theme_water.py (fontaines, cascades, biome d'eau, water_fix, water_check), theme_mobs.py (animaux,
-spot/back/gone/clear), theme_core.py (off, sync, restore, reskin, tick).
+spot/back/gone/clear), theme_core.py (off, sync, restore, reskin, tick), theme_fall.py (feuilles et neige qui tombent
+par intermittence).
 """
 import os
 import random
@@ -40,6 +42,7 @@ w, js = C.w, C.js
 F = C.F
 
 import theme_core as TC                                          # noqa: E402
+import theme_fall as TF                                          # noqa: E402
 import theme_mobs as TM                                          # noqa: E402
 import theme_water as TWA                                        # noqa: E402
 import theme_world as TW                                         # noqa: E402
@@ -143,8 +146,7 @@ def theme_halloween():
                      {'text': '\nBonbons ou mini-jeux ?', 'color': 'dark_purple', 'italic': True}])]
     fx = [f'execute in minecraft:overworld as {LOBBY} at @s run particle minecraft:ash ~ ~3 ~ 8 3 8 0 25 normal @s',
           f'execute in minecraft:overworld as {LOBBY} at @s run particle minecraft:soul ~ ~0.3 ~ 6 0.5 6 0.01 2 normal @s',
-          *[f'execute in minecraft:overworld as {LOBBY} at @s run particle minecraft:tinted_leaves{{color:[{c}]}} ~ ~7 ~ 10 3 10 0 {n} normal @s'
-            for c, n in (('0.93,0.45,0.08,1.0', 5), ('0.78,0.16,0.08,1.0', 3), ('0.95,0.72,0.15,1.0', 3), ('0.52,0.30,0.14,1.0', 2))],
+          *TF.fx_call('halloween', LOBBY),               # feuilles qui tombent par intermittence (theme_fall.py)
           'execute store result score $thr mg.st run random value 1..40',
           f'execute if score $thr mg.st matches 1 in minecraft:overworld as {LOBBY} at @s run playsound minecraft:ambient.cave ambient @s ~ ~ ~ 0.6 1']
     hello = ([{'text': '🎃 ', 'color': 'gold'}, {'text': 'Le spawn se pare de ses habits d\'Halloween… Bouh !', 'color': 'gold', 'bold': True}],
@@ -195,8 +197,7 @@ def theme_noel():
               'minecraft:leather_helmet[minecraft:dyed_color=13369344]',
               title([{'text': '🎄 Joyeux Noël ! 🎄', 'color': 'red', 'bold': True},
                      {'text': '\net bonnes fêtes sur NeoMC', 'color': 'dark_green', 'italic': True}])]
-    fx = [f'execute in minecraft:overworld as {LOBBY} at @s run particle minecraft:snowflake ~ ~6 ~ 10 4 10 0 30 normal @s',
-          f'execute in minecraft:overworld as {LOBBY} at @s run particle minecraft:white_ash ~ ~3 ~ 8 3 8 0 20 normal @s',
+    fx = [*TF.fx_call('noel', LOBBY),                   # neige et cendre blanche qui tombent par intermittence (theme_fall.py)
           'execute store result score $thr mg.st run random value 1..45',
           f'execute if score $thr mg.st matches 1 in minecraft:overworld as {LOBBY} at @s run playsound minecraft:block.amethyst_block.chime ambient @s ~ ~2 ~ 1 0.8']
     hello = ([{'text': '🎄 ', 'color': 'red'}, {'text': 'Il neige sur le spawn… Joyeuses fêtes !', 'color': 'green', 'bold': True}],
@@ -225,6 +226,8 @@ for tid, key, label, opt, make in THEMES:
         w(f'{T}/{n}', ls)
     fx = fx + [f'function mg:{T}/mobs']
     TM.write_mobs(T, label, mobs)
+    if key in TF.SPECS:                  # chutes par intermittence (feuilles, neige) : thème sans SPECS = pas de chute
+        TF.write_fall(key, label)
     on = [f'execute if block {x} {y} {z} {bid(o)} run setblock {x} {y} {z} {n}' for (x, y, z), (o, n) in sorted(CH.items())]
     off = [f'execute if block {x} {y} {z} {bid(n)} run setblock {x} {y} {z} {o}' for (x, y, z), (o, n) in sorted(CH.items())]
     ALLCH.update(CH)
@@ -236,7 +239,7 @@ for tid, key, label, opt, make in THEMES:
                   'execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off',
                   'scoreboard players set $thsw mg.st 0',
                   f'scoreboard players set $theme mg.st {tid}', f'data modify storage mg:lobby theme set value {tid}',
-                  f'function mg:{T}/place', 'tellraw @a ' + js(hello), f'execute as {LOBBY} at @s run playsound {snd} master @s ~ ~ ~ 1 0.8'])
+                  *(TF.on_lines() if key in TF.SPECS else []), f'function mg:{T}/place', 'tellraw @a ' + js(hello), f'execute as {LOBBY} at @s run playsound {snd} master @s ~ ~ ~ 1 0.8'])
     w(f'{T}/place', [f"# {label} : blocs du décor (là où le bloc d'origine est encore là), entités, eau ; "
                      'appelé par on et par lobby/theme/restore (redémarrage)',
                      '# eau remise d\'aplomb d\'abord : le décor (glace...) se pose sur l\'eau réparée',
@@ -255,6 +258,7 @@ for tid, key, label, opt, make in THEMES:
     stats.append(f'{key} : {len(CH)} blocs (' + ', '.join(f'{v} {k}' for k, v in sorted(n.items(), key=lambda t: -t[1])) + ')')
 
 TC.write_dispatch(THEMES)               # off, sync, restore, reskin, tick (appellent le thème actif)
+TF.write_common()                        # fall_tick, fall_flip (cycle des chutes)
 TM.load(ALLCH)                           # points d'apparition des animaux (hors cellules changées par un thème)
 TM.write_common()                        # spot, back, gone, clear, allay_drop
 TWA.write_fix(ALLCH)                     # water_fix
