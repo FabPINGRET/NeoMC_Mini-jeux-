@@ -16,7 +16,10 @@ FOUNT = set()                            # toute l'eau des ouvrages (fontaines e
 
 
 def load():
-    """À appeler une fois theme_world.load() fait."""
+    """À appeler une fois theme_world.load() fait ; rappelable."""
+    assert W, 'theme_world.load(F) doit être appelé avant theme_water.load()'
+    for d in (WATER, SPILL, FLOW, FOUNT):
+        d.clear()
     WATER.update(k for k, b in W.items() if bid(b) == 'minecraft:water')
     SPILL.extend(k for k in sorted(WATER) if opening((k[0], k[1] - 1, k[2]))
                  or any(opening((k[0] + a, k[1], k[2] + c)) for a, c in ((1, 0), (-1, 0), (0, 1), (0, -1))))
@@ -64,12 +67,12 @@ def write_fix():
     C.w('lobby/theme/water_fix', fix)
 
 
-def write_biome():
-    """Eau rouge d'Halloween : biome the_void + water_color"""
+def write_biome(name, water_color, fog_color):
+    """Biome d'eau colorée (the_void + water_color) : data/mg/worldgen/biome/<name>.json, référencé par water_biome('mg:<name>')"""
     os.makedirs(os.path.join(C.D, 'worldgen', 'biome'), exist_ok=True)
-    with open(os.path.join(C.D, 'worldgen', 'biome', 'halloween.json'), 'w', encoding='utf-8', newline='\n') as f:
-        f.write(C.js({'attributes': {'minecraft:visual/sky_color': '#7ba4ff', 'minecraft:visual/water_fog_color': '#3a0505'},
-                      'carvers': [], 'downfall': 0.5, 'effects': {'water_color': '#a3120c'}, 'features': [],
+    with open(os.path.join(C.D, 'worldgen', 'biome', f'{name}.json'), 'w', encoding='utf-8', newline='\n') as f:
+        f.write(C.js({'attributes': {'minecraft:visual/sky_color': '#7ba4ff', 'minecraft:visual/water_fog_color': fog_color},
+                      'carvers': [], 'downfall': 0.5, 'effects': {'water_color': water_color}, 'features': [],
                       'has_precipitation': False, 'spawn_costs': {},
                       'spawners': {k: [] for k in ('ambient', 'axolotls', 'creature', 'misc', 'monster', 'underground_water_creature',
                                                     'water_ambient', 'water_creature')},

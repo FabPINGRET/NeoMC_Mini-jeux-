@@ -1,6 +1,6 @@
 # 🎃 Halloween : animaux du thème, chaque seconde (joueur au spawn : chunks chargés, comptes justes)
-execute unless entity @a[x=-80,y=30,z=-80,dx=160,dy=120,dz=160,tag=!mg.play,limit=1] run return 0
-execute as @e[tag=mg.thmob] unless entity @s[x=-78,y=50,z=-78,dx=156,dy=70,dz=156] run function mg:lobby/theme/spot {f:"lobby/theme/back"}
+execute unless entity @a[x=-80,y=30,z=-80,dx=160,dy=120,dz=160,tag=!mg.play,tag=!mg.surv,gamemode=!spectator] run return 0
+execute as @e[tag=mg.thmob] unless entity @s[x=-70,y=50,z=-70,dx=140,dy=70,dz=140] run function mg:lobby/theme/spot {f:"lobby/theme/back"}
 execute store result score $thn mg.st if entity @e[type=minecraft:bat,tag=mg.th_bat]
 execute if score $thn mg.st matches ..7 run function mg:lobby/theme/spot {f:"lobby/theme/halloween/bat"}
 execute if score $thn mg.st matches 9.. as @e[type=minecraft:bat,tag=mg.th_bat,limit=1,sort=random] run function mg:lobby/theme/gone

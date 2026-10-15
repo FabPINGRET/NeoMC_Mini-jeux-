@@ -137,8 +137,8 @@ w('tron/jump_arm', ['# @s arme son saut : la moto peut sauter pendant 3 s', 'sco
                     'title @s actionbar {"text":"⤴ SAUT ARMÉ : maintiens Espace puis relâche !","color":"gold","bold":true}',
                     'execute at @s run playsound minecraft:entity.horse.jump master @s ~ ~ ~ 1 1.2'])
 w('tron/remount', ['# @s est descendu : on le remet sur sa moto (Maj ne sert à rien)',
-                   'execute as @e[tag=mg.trh] if score @s mg.trc = $tid mg.st run tag @s add mg.thm',
-                   'ride @s mount @e[tag=mg.thm,limit=1]', 'tag @e remove mg.thm'])
+                   'execute as @e[tag=mg.trh] if score @s mg.trc = $tid mg.st run tag @s add mg.trmt',
+                   'ride @s mount @e[tag=mg.trmt,limit=1]', 'tag @e remove mg.trmt'])
 w('tron/out_wall', ['tellraw @a [{"selector":"@s","color":"yellow"},{"text":" s\'est écrasé contre un mur !","color":"gray"}]', 'function mg:tron/out'])
 w('tron/out_still', ['tellraw @a [{"selector":"@s","color":"yellow"},{"text":" s\'est arrêté trop longtemps !","color":"gray"}]', 'function mg:tron/out'])
 w('tron/out_dismount', ['tellraw @a [{"selector":"@s","color":"yellow"},{"text":" est descendu de sa moto !","color":"gray"}]', 'function mg:tron/out'])

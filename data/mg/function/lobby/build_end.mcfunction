@@ -17,4 +17,5 @@ forceload remove 81 -32 144 32
 forceload remove -115 81 115 225
 function mg:core/forceloads
 data modify storage mg:lobby v6 set value 1b
+execute if score $theme mg.st matches 1.. run scoreboard players set $thrs mg.st 1
 tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Spawn construit.","color":"green"}]

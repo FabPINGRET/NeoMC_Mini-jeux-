@@ -10,12 +10,21 @@ thème est encore là (rien d'autre n'est écrasé). Les plots et les zones modi
 animations) ne sont jamais touchés. Les entités du décor (mg.lby) sont rhabillées par lobby/theme/<t>/reskin, rappelé à
 chaque lobby/deco (bascule du resource pack) ; « off » relance lobby/deco, qui repose le décor d'origine.
 « on » = place (blocs, entités, eau) + messages ; lobby/theme/restore rappelle place après un redémarrage, d'après $theme
-ou sa copie dans le storage mg:lobby theme.
+ou sa copie dans le storage mg:lobby theme (lobby/theme/sync rétablit $theme d'après le storage s'il est perdu ; $thrs :
+compteur de restore, remis à 1 par core/load et par la reconstruction du spawn, lobby/build_end).
+Entités : toutes portent le tag mg.thx (jamais mg.thm : Tron l'utilise comme tag temporaire) ; lobby/theme/clear retire le
+titre et toutes les entités des thèmes (animaux, habillages) et, pour les anciens mondes, le titre taggé mg.thm (jamais de kill
+générique sur ce tag) ; lobby/theme/gone retire un animal (la traînée d'un bonhomme de neige fond) ; lobby/theme/allay_drop
+fait lâcher à un allay du thème l'objet qu'on lui a donné. Sans thème, core/tick balaie les animaux restants. Les socles
+d'élytra sont réservés (theme_world.reserve) : ni décor ni animal autour.
+Les fichiers générés pour un nouveau thème ou une nouvelle fonctionnalité restent sous lobby/theme/ : theme_world.load ignore
+ce dossier en cherchant les zones modifiées par les jeux.
 Ajouter un thème : une fonction theme_<nom>() qui remplit CH et renvoie (reskin, fx, hello, mobs, extra), puis l'inscrire
 dans THEMES (et dans tools/lobby/gen_theme_maps.py, qui habille aussi les cartes de jeu pendant les parties).
 
 Modules (jamais lancés seuls, chargés ici après C.init) : theme_world.py (modèle du spawn : W, DYN, CH, familles de
-blocs), theme_water.py (fontaines, cascades, biome d'eau, water_fix), theme_mobs.py (animaux, spot/back/gone/clear).
+blocs, zones réservées), theme_water.py (fontaines, cascades, biome d'eau, water_fix), theme_mobs.py (animaux, spot/back/gone/
+clear), theme_core.py (off, sync, restore, reskin, tick).
 """
 import os
 import random
@@ -30,17 +39,18 @@ C.init(sys.argv[1] if len(sys.argv) > 1 else '.')
 w, js = C.w, C.js
 F = C.F
 
+import theme_core as TC                                          # noqa: E402
 import theme_mobs as TM                                          # noqa: E402
 import theme_water as TWA                                        # noqa: E402
 import theme_world as TW                                         # noqa: E402
 from theme_mobs import mob                                       # noqa: E402
 from theme_water import FOUNT, water_biome                       # noqa: E402
-from theme_world import (CH, DIRT, DYN, FLOWERS, G, GROUND, LOBBY, SNOWABLE, W, WALLS, bid, change,  # noqa: E402
-                         solid, states)
+from theme_world import (CH, DIRT, DYN, FLOWERS, G, GROUND, LOBBY, SNOWABLE, TUFT, W, WALLS, bid, canopy,  # noqa: E402
+                         change, solid, states, tuft_free)
 
-TW.load(F)                               # W, DYN, PLOTS remplis sur place, puis ce qui en dérive
-TWA.load()
-TM.load()
+TW.load(F)                               # W, DYN, PLOTS, RESERVED remplis sur place, puis ce qui en dérive
+TWA.load()                               # (TM.load : après les thèmes, il lui faut les cellules qu'ils changent)
+HALLOWEEN_BIOME = 'halloween'            # biome d'eau rouge : worldgen/biome/<nom>.json, mg:<nom> dans fillbiome
 
 FACES = ['north', 'south', 'east', 'west']
 
@@ -59,7 +69,7 @@ def item_swap(pred, item):
 
 
 def title(parts):
-    return ('summon minecraft:text_display 0.5 74 0.5 {Tags:["mg.lby","mg.thm"],billboard:"center",background:1426063360,'
+    return ('summon minecraft:text_display 0.5 74 0.5 {Tags:["mg.lby","' + TM.THEME_TAG + '"],billboard:"center",background:1426063360,'
             'shadow:1b,text:' + js(parts) + ',transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],'
             'right_rotation:[0f,0f,0f,1f],scale:[2f,2f,2f]}}')
 
@@ -92,8 +102,7 @@ def theme_halloween():
         if bid(b) not in GROUND or x * x + z * z < 64 or y < G - 1:
             continue
         up = (x, y + 1, z)
-        if bid(W.get(up)) in ('minecraft:air', 'minecraft:short_grass', 'minecraft:fern') and (x, y + 2, z) not in W \
-                and up not in CH and rnd.random() < 0.045:
+        if tuft_free(up) and rnd.random() < 0.045:
             kind = rnd.choice(['minecraft:carved_pumpkin', 'minecraft:jack_o_lantern', 'minecraft:jack_o_lantern', 'minecraft:pumpkin'])
             change(up, kind + ('' if kind == 'minecraft:pumpkin' else f'[facing={rnd.choice(FACES)}]'))
     for (x, y, z), b in sorted(W.items()):               # toiles d'araignée dans les coins sous plafond
@@ -107,19 +116,13 @@ def theme_halloween():
                 change((cx, cy, cz), 'minecraft:cobweb')
     on_fences(rnd, 0.3, ['orange', 'orange', 'black', 'purple'])
     lrnd = random.Random(20261101)                       # tirage à part : le reste du décor ne bouge pas
-    canopy = {}                                          # colonne (x, z) -> plus haut feuillage à 2 blocs près
-    for (x, y, z), b in W.items():
-        if bid(b).endswith('_leaves'):
-            for a in range(-2, 3):
-                for c in range(-2, 3):
-                    canopy[(x + a, z + c)] = max(canopy.get((x + a, z + c), y), y)
+    crown = canopy()                                     # colonne (x, z) -> plus haut feuillage à 2 blocs près
     for (x, y, z), b in sorted(W.items()):               # feuilles mortes : tapis sous les arbres, quelques-unes ailleurs
         if bid(b) not in GROUND or x * x + z * z < 36 or y < G - 1:
             continue
         up = (x, y + 1, z)
-        under = y < canopy.get((x, z), -999) <= y + 12
-        if (bid(W.get(up)) in ('minecraft:air', 'minecraft:short_grass', 'minecraft:fern') and (x, y + 2, z) not in W
-                and up not in CH and lrnd.random() < (0.4 if under else 0.06)):
+        under = y < crown.get((x, z), -999) <= y + 12
+        if tuft_free(up) and lrnd.random() < (0.4 if under else 0.06):
             change(up, f'minecraft:leaf_litter[segment_amount={lrnd.randint(1, 4)},facing={lrnd.choice(FACES)}]')
     PUMP = [0xFF8A1C, 0x8E3BD6, 0x4FC23A, 0xECECF4, 0x3A3440, 0xD62A2A, 0x3A7BE0, 0x2FC8B5, 0xFF6FB5]
     pump = {st: ['execute store result score $thp mg.st run random value 1..' + str(len(PUMP))]
@@ -148,7 +151,7 @@ def theme_halloween():
              'minecraft:entity.witch.celebrate')
     mobs = [mob('bat', 'minecraft:bat', 8),
             mob('ghost', 'minecraft:allay', 6, 'Silent:1b', ('mg:hat/ghost', [0, -0.3, 0], 1.0, True))]
-    return reskin, fx, hello, mobs, {'water': water_biome('mg:halloween'),
+    return reskin, fx, hello, mobs, {'water': water_biome(f'mg:{HALLOWEEN_BIOME}'),
                                      'files': {f'pumpkin_{st}': [f'# 🎃 Halloween : citrouille {st} de couleur aléatoire (pack activé)'] + ls
                                                for st, ls in pump.items()}}
 
@@ -179,7 +182,7 @@ def theme_noel():
             continue
         up = (x, y + 1, z)
         near_log = any(bid(W.get((x + dx, y + 1, z + dz))).endswith('_log') for dx, dz in ((1, 0), (-1, 0), (0, 1), (0, -1)))
-        if near_log and bid(W.get(up)) in ('minecraft:air', 'minecraft:short_grass', 'minecraft:fern') and rnd.random() < 0.5:
+        if near_log and bid(W.get(up)) in TUFT and rnd.random() < 0.5:
             CH.pop(up, None)
             change(up, rnd.choice(['minecraft:red_shulker_box', 'minecraft:green_shulker_box', 'minecraft:white_shulker_box',
                                    'minecraft:red_wool', 'minecraft:lime_wool']))
@@ -202,15 +205,14 @@ def theme_noel():
     mobs = [mob('snowman', 'minecraft:snow_golem', 6, 'NoAI:1b,Pumpkin:0b', rand_yaw=True),
             mob('reindeer', 'minecraft:cow', 3, 'Silent:1b,variant:"minecraft:cold"', rp_nbt='Silent:1b,variant:"mg:reindeer"'),
             mob('rudolph', 'minecraft:cow', 1, 'Silent:1b,variant:"minecraft:cold"', rp_nbt='Silent:1b,variant:"mg:rudolph"')]
-    melt = ['execute as @e[type=minecraft:snow_golem,tag=mg.thmob] at @s run fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:air '
-            'replace minecraft:snow[layers=1]']
-    return reskin, fx, hello, mobs, {'off': melt}
+    return reskin, fx, hello, mobs, {}                   # la traînée de chaque bonhomme fond dans lobby/theme/gone
 
 
 THEMES = [(1, 'halloween', '🎃 Halloween', 73, theme_halloween), (2, 'noel', '🎄 Noël', 74, theme_noel)]
 
 # ------------------------------------------------------------------ fonctions
 stats = []
+ALLCH = set()                            # cellules changées par au moins un thème (points d'apparition des animaux)
 for tid, key, label, opt, make in THEMES:
     CH.clear()
     reskin, fx, (hello, snd), mobs, extra = make()
@@ -225,9 +227,14 @@ for tid, key, label, opt, make in THEMES:
     TM.write_mobs(T, label, mobs)
     on = [f'execute if block {x} {y} {z} {bid(o)} run setblock {x} {y} {z} {n}' for (x, y, z), (o, n) in sorted(CH.items())]
     off = [f'execute if block {x} {y} {z} {bid(n)} run setblock {x} {y} {z} {o}' for (x, y, z), (o, n) in sorted(CH.items())]
+    ALLCH.update(CH)
     w(f'{T}/on', [f'# {label} : pose le décor du spawn (généré par tools/lobby/gen_themes.py ; inverse : lobby/theme/off)',
+                  'function mg:lobby/theme/sync',
                   f'execute if score $theme mg.st matches {tid} run return run tellraw @s {{"text":"Ce décor est déjà en place.","color":"gray"}}',
+                  '# $thsw : l\'autre thème est retiré pour laisser la place, sans le message « décor retiré »',
+                  'scoreboard players set $thsw mg.st 1',
                   'execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off',
+                  'scoreboard players set $thsw mg.st 0',
                   f'scoreboard players set $theme mg.st {tid}', f'data modify storage mg:lobby theme set value {tid}',
                   f'function mg:{T}/place', 'tellraw @a ' + js(hello), f'execute as {LOBBY} at @s run playsound {snd} master @s ~ ~ ~ 1 0.8'])
     w(f'{T}/place', [f"# {label} : blocs du décor (là où le bloc d'origine est encore là), entités, eau ; "
@@ -238,7 +245,7 @@ for tid, key, label, opt, make in THEMES:
     w(f'{T}/reskin', [f'# {label} : entités du décor (mg.lby) ; rappelé par lobby/deco tant que le thème est actif',
                       'function mg:lobby/theme/clear'] + reskin)
     w(f'{T}/fx', [f'# {label} : ambiance, chaque seconde'] + fx)
-    w(f'{T}/toggle', [f'# Admin (mg.opt {opt}) : pose ou retire le décor {label}',
+    w(f'{T}/toggle', [f'# Admin (mg.opt {opt}) : pose ou retire le décor {label}', 'function mg:lobby/theme/sync',
                       f'execute if score $theme mg.st matches {tid} run return run function mg:lobby/theme/off',
                       f'function mg:{T}/on'])
     n = {}
@@ -246,39 +253,26 @@ for tid, key, label, opt, make in THEMES:
         n[bid(nw)[10:]] = n.get(bid(nw)[10:], 0) + 1
     stats.append(f'{key} : {len(CH)} blocs (' + ', '.join(f'{v} {k}' for k, v in sorted(n.items(), key=lambda t: -t[1])) + ')')
 
-w('lobby/theme/off', ['# Retire le décor saisonnier en place ($theme) et rétablit le spawn d\'origine',
-                      'execute unless score $theme mg.st matches 1.. run return run tellraw @s {"text":"Aucun décor saisonnier en place.","color":"gray"}'] +
-  [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/off' for tid, key, *_ in THEMES] +
-  ['scoreboard players set $theme mg.st 0', 'data remove storage mg:lobby theme', 'function mg:lobby/theme/clear', 'function mg:lobby/theme/water_fix',
-   'function mg:lobby/deco', 'function mg:lobby/food_skin',
-   'tellraw @a[tag=mg.admin] {"text":"Décor saisonnier retiré, spawn d\'origine rétabli.","color":"gray"}'])
-# Redémarrage / rechargement : le décor actif (score $theme, sinon sa copie mg:lobby theme) est reposé quand un joueur
-# est au spawn depuis 5 s (chunks chargés) : blocs manquants, entités, eau ; rien n'est doublé
-w('lobby/theme/restore', ['# Décor saisonnier reposé après un redémarrage (appelé par core/tick tant que $thrs >= 1)',
-                          'scoreboard players add $thrs mg.st 1',
-                          'execute if score $thrs mg.st matches ..100 run return 0',
-                          'scoreboard players set $thrs mg.st 0',
-                          'execute unless score $theme mg.st matches 1.. store result score $theme mg.st run data get storage mg:lobby theme'] +
-  [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/place' for tid, key, *_ in THEMES] +
-  ['execute if score $theme mg.st matches 1.. store result storage mg:lobby theme int 1 run scoreboard players get $theme mg.st'])
-w('lobby/theme/reskin', ['# Appelé à la fin de lobby/deco : rhabille les entités du décor selon le thème actif'] +
-  [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/reskin' for tid, key, *_ in THEMES] + ['function mg:lobby/food_skin'])
-w('lobby/theme/tick', ['# Habillage des animaux tourné comme eux (chaque tick), puis ambiance du thème (chaque seconde)',
-                       'execute as @e[type=minecraft:item_display,tag=mg.thrid] at @s on vehicle rotated as @s on passengers '
-                       'if entity @s[tag=mg.thrid] run rotate @s ~ 0',
-                       'scoreboard players add $tht mg.st 1', 'execute if score $tht mg.st matches ..19 run return 0',
-                       'scoreboard players set $tht mg.st 0'] +
-  [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/fx' for tid, key, *_ in THEMES])
+TC.write_dispatch(THEMES)               # off, sync, restore, reskin, tick (appellent le thème actif)
+TM.load(ALLCH)                           # points d'apparition des animaux (hors cellules changées par un thème)
 TM.write_common()                        # spot, back, gone, clear, allay_drop
 TWA.write_fix()                          # water_fix
-TWA.write_biome()                        # worldgen/biome/halloween.json
+TWA.write_biome(HALLOWEEN_BIOME, '#a3120c', '#3a0505')   # worldgen/biome/halloween.json
 
 # ------------------------------------------------------------------ branchements
 C.patch('core/tick', 'execute if score $setup mg.st matches 1 run function mg:lobby/ev/tick',
         ['execute if score $theme mg.st matches 1.. run function mg:lobby/theme/tick'])
 C.patch('core/tick', 'execute if score $theme mg.st matches 1.. run function mg:lobby/theme/tick',
         [f'execute if score $thrs mg.st matches 1.. if entity {LOBBY} run function mg:lobby/theme/restore'])
+# sans thème, les animaux restants (sortis de la zone, ancien monde) sont retirés, toutes les 2 s ($lan : 40 ticks) ;
+# pas si le score est perdu mais la copie storage reste (lobby/theme/sync le rétablit au prochain restore)
+C.patch('core/tick', f'execute if score $thrs mg.st matches 1.. if entity {LOBBY} run function mg:lobby/theme/restore',
+        ['execute if score $lan mg.t matches 30 unless score $theme mg.st matches 1.. unless data storage mg:lobby theme '
+         'as @e[tag=mg.thmob] run function mg:lobby/theme/gone'])
 C.patch('core/load', 'scoreboard objectives add mg.st dummy', ['scoreboard players set $thrs mg.st 1'])
+# reconstruction du spawn : le décor est reposé par restore (comme après un redémarrage)
+C.patch('lobby/build_end', 'data modify storage mg:lobby v6 set value 1b',
+        ['execute if score $theme mg.st matches 1.. run scoreboard players set $thrs mg.st 1'])
 C.patch('lobby/deco', 'data modify storage mg:lobby deco3 set value 1b',
         ['execute if score $theme mg.st matches 1.. run function mg:lobby/theme/reskin'])
 C.patch('core/opt', 'execute if score @s mg.opt matches 62..65 run function mg:tpg/run',
@@ -286,6 +280,10 @@ C.patch('core/opt', 'execute if score @s mg.opt matches 62..65 run function mg:t
         [f'execute if score @s mg.opt matches {opt} if entity @s[tag=mg.admin] run function mg:lobby/theme/{key}/toggle' for _, key, _, opt, _ in THEMES])
 C.patch('desinstaller', '# Désinstallation (OP) — retire scoreboards, équipes, décor et zones chargées',
         ['execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off'])
+C.patch('desinstaller', 'execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off',
+        ['data remove storage mg:lobby theme'])           # même si $theme est perdu : plus de copie qui repose un décor
+C.patch('desinstaller', 'execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off',
+        ['function mg:lobby/theme/sync'], where='before')   # $theme perdu mais copie storage là : off doit quand même tourner
 print(f'Thèmes ({len(DYN)} zones dynamiques évitées) :')
 for s in stats:
     print('  ' + s)

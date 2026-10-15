@@ -66,6 +66,7 @@ execute if score $setup mg.st matches 1 run function mg:lobby/armory_tick
 execute if score $setup mg.st matches 1 run function mg:lobby/ev/tick
 execute if score $theme mg.st matches 1.. run function mg:lobby/theme/tick
 execute if score $thrs mg.st matches 1.. if entity @a[x=-80,y=30,z=-80,dx=160,dy=120,dz=160,tag=!mg.play,tag=!mg.surv,gamemode=!spectator] run function mg:lobby/theme/restore
+execute if score $lan mg.t matches 30 unless score $theme mg.st matches 1.. unless data storage mg:lobby theme as @e[tag=mg.thmob] run function mg:lobby/theme/gone
 function mg:hat/tick
 scoreboard players remove @a[scores={mg.fd=1..}] mg.fd 1
 # Parcours d'élytra : socle de départ, joueurs en vol, objets du parcours jamais conservés
@@ -89,7 +90,7 @@ execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless blo
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 32 63 -15 minecraft:sea_lantern run function mg:elytra/build
 # Panneaux flottants des 3 socles d'élytra (6 text_display) : reconstruits s'il en manque un
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 store result score $eld mg.t if entity @e[type=minecraft:text_display,tag=mg.elyd,x=14,y=66,z=-23,dx=21,dy=3,dz=17]
-execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 if score $eld mg.t matches ..5 run function mg:elytra/build
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 if score $eld mg.t matches ..5 if score $thrs mg.st matches 0 run function mg:elytra/build
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.ely] minecraft:elytra[minecraft:custom_data~{mg_ely:1b}]
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.ely] minecraft:firework_rocket[minecraft:custom_data~{mg_ely:1b}]
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.play,tag=!mg.xso] minecraft:elytra[minecraft:custom_data~{mg_elyr:1b}]

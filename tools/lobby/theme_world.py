@@ -2,7 +2,13 @@
 
 load(F) relit les fonctions de construction du spawn (lobby/*build*, parkour/build) et remplit sur place W (bloc d'origine
 de chaque position), DYN (zones modifiées ailleurs) et PLOTS : les autres modules peuvent donc importer ces noms avant
-l'appel. CH reçoit les remplacements d'un thème : (x, y, z) -> (bloc d'origine, bloc du thème), via change().
+l'appel (load est idempotent). CH reçoit les remplacements d'un thème : (x, y, z) -> (bloc d'origine, bloc du thème), via change().
+RESERVED : boîtes où rien n'est posé (ni bloc ni animal), cf. reserve() ; free() les exclut, change() et les points d'apparition
+des animaux passent par free(). Règle : RESERVED est à l'appelant (reserve() avant ou après load(), load() n'y touche pas) ;
+les socles d'élytra sont dans PAD_BOXES, reconstruit par load().
+Contrainte : load() ignore les fonctions sous .../theme/ (setblock/fill des thèmes eux-mêmes) : tout fichier généré pour un
+nouveau thème ou une nouvelle fonctionnalité doit donc rester sous lobby/theme/, sinon ses blocs seraient pris pour des zones
+modifiées par un jeu.
 """
 import glob
 import os
@@ -10,13 +16,28 @@ import re
 
 G = 63                                   # sol du spawn (pieds en y 64)
 LIM = 78                                 # zone décorée : |x|, |z| <= LIM (forceload du spawn : -80..80)
-LOBBY = '@a[x=-80,y=30,z=-80,dx=160,dy=120,dz=160,tag=!mg.play,tag=!mg.surv,gamemode=!spectator]'
+LOBBY_BOX = 'x=-80,y=30,z=-80,dx=160,dy=120,dz=160'   # le spawn (volume de sélecteur)
+LOBBY = f'@a[{LOBBY_BOX},tag=!mg.play,tag=!mg.surv,gamemode=!spectator]'
 
 PLOTS = []                               # parcelles (jamais touchées) : (wx1, wx2, wz1, wz2)
 CMD = re.compile(r'^(setblock|fill) (-?\d+) (-?\d+) (-?\d+)(?: (-?\d+) (-?\d+) (-?\d+))? (.+)$')
 W = {}                                   # (x, y, z) -> bloc (l'air n'est pas stocké)
 DYN = []                                 # boîtes modifiées ailleurs (jeux, animations) : on n'y touche pas
 CH = {}                                  # (x, y, z) -> (bloc d'origine, bloc du thème), rempli par un thème
+RESERVED = []                            # boîtes (x1, x2, y1, y2, z1, z2) sans décor ni animal (cf. reserve), jamais vidé par load
+PAD_BOXES = []                           # idem, pour les socles d'élytra : reconstruit à chaque load
+# socles du parcours d'élytra (elytra/build) : centre (x, z) ; panneaux flottants jusqu'à y 68, d'où la boîte de hauteur 9
+ELYTRA_PADS = [(16, -9), (32, -15), (16, -21)]
+PAD_MARGIN = 4                           # socle de 5x5 (±2) + 2 blocs autour
+
+
+def reserve(x1, x2, y1, y2, z1, z2):
+    """Interdit toute pose (blocs d'un thème, point d'apparition d'animal) dans cette boîte ; ex. les futurs PNJ du spawn."""
+    RESERVED.append((min(x1, x2), max(x1, x2), min(y1, y2), max(y1, y2), min(z1, z2), max(z1, z2)))
+
+
+def reserved(x, y, z):
+    return any(a <= x <= b and c <= y <= d and e <= z <= f for a, b, c, d, e, f in RESERVED + PAD_BOXES)
 
 
 def inplot(x, z):
@@ -73,7 +94,11 @@ def num(p):
 
 
 def load(F):
-    """F = dossier des fonctions (data/mg/function). À appeler une fois, avant toute lecture de W, DYN, PLOTS."""
+    """F = dossier des fonctions (data/mg/function). À appeler avant toute lecture de W, DYN, PLOTS ; rappelable (repart de zéro)."""
+    for d in (PLOTS, W, DYN, PAD_BOXES):
+        d.clear()
+    for x, z in ELYTRA_PADS:
+        PAD_BOXES.append((x - PAD_MARGIN, x + PAD_MARGIN, G, G + 8, z - PAD_MARGIN, z + PAD_MARGIN))
     for l in open(os.path.join(F, 'plot', 'build_all.mcfunction'), encoding='utf-8'):
         m = re.search(r'wx1:(-?\d+),wx2:(-?\d+),wz1:(-?\d+),wz2:(-?\d+)', l)
         if m:
@@ -133,7 +158,26 @@ def solid(x, y, z):
 
 
 def free(x, y, z):
-    return abs(x) <= LIM and abs(z) <= LIM and not inplot(x, z) and not dyn(x, y, z)
+    return abs(x) <= LIM and abs(z) <= LIM and not inplot(x, z) and not dyn(x, y, z) and not reserved(x, y, z)
+
+
+TUFT = ('minecraft:air', 'minecraft:short_grass', 'minecraft:fern')     # ce qu'on peut remplacer au-dessus du sol
+
+
+def tuft_free(up):
+    """La case up (au-dessus d'un sol) est de l'air ou une touffe, sans bloc au-dessus et pas encore changée par le thème."""
+    return bid(W.get(up)) in TUFT and (up[0], up[1] + 1, up[2]) not in W and up not in CH
+
+
+def canopy(r=2):
+    """Colonne (x, z) -> plus haut feuillage à r blocs près (horizontalement)."""
+    top = {}
+    for (x, y, z), b in W.items():
+        if bid(b).endswith('_leaves'):
+            for a in range(-r, r + 1):
+                for c in range(-r, r + 1):
+                    top[(x + a, z + c)] = max(top.get((x + a, z + c), y), y)
+    return top
 
 
 def opening(k):

@@ -1,6 +1,10 @@
 # 🎄 Noël : pose le décor du spawn (généré par tools/lobby/gen_themes.py ; inverse : lobby/theme/off)
+function mg:lobby/theme/sync
 execute if score $theme mg.st matches 2 run return run tellraw @s {"text":"Ce décor est déjà en place.","color":"gray"}
+# $thsw : l'autre thème est retiré pour laisser la place, sans le message « décor retiré »
+scoreboard players set $thsw mg.st 1
 execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off
+scoreboard players set $thsw mg.st 0
 scoreboard players set $theme mg.st 2
 data modify storage mg:lobby theme set value 2
 function mg:lobby/theme/noel/place

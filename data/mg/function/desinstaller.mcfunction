@@ -1,6 +1,8 @@
 # Désinstallation (OP) — retire scoreboards, équipes, décor et zones chargées
 execute if score $tmap mg.st matches 1 run function mg:lobby/theme/map/end
+function mg:lobby/theme/sync
 execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off
+data remove storage mg:lobby theme
 kill @e[type=minecraft:text_display,tag=mg.deco]
 kill @e[tag=mg.lby]
 kill @e[tag=mg.hat]
