@@ -1,9 +1,10 @@
-"""Fonctions communes des décors saisonniers (importé par gen_themes.py, jamais lancé seul) : off, sync, restore, reskin, tick.
+"""Fonctions communes des décors saisonniers (importé par gen_themes.py, jamais lancé seul) : off, sync, restore, reskin, tick, branchements.
 
 Chacune appelle les fonctions du thème actif ($theme) d'après THEMES = [(id, clé, libellé, mg.opt, fabrique), ...].
 """
 import common as C
 import theme_fall as TF
+from theme_world import LOBBY
 
 w = C.w
 
@@ -37,3 +38,32 @@ def write_dispatch(THEMES):
                            'scoreboard players add $tht mg.st 1', 'execute if score $tht mg.st matches ..19 run return 0',
                            'scoreboard players set $tht mg.st 0', 'function mg:lobby/theme/fall_tick'] +
       [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/fx' for tid, key, *_ in THEMES])
+
+
+def write_wiring(THEMES):
+    """Branche les thèmes dans les fonctions du pack (tick, chargement, deco, menu admin, désinstallation)."""
+    C.patch('core/tick', 'execute if score $setup mg.st matches 1 run function mg:lobby/ev/tick',
+            ['execute if score $theme mg.st matches 1.. run function mg:lobby/theme/tick'])
+    C.patch('core/tick', 'execute if score $theme mg.st matches 1.. run function mg:lobby/theme/tick',
+            [f'execute if score $thrs mg.st matches 1.. if entity {LOBBY} run function mg:lobby/theme/restore'])
+    # sans thème, les animaux restants (sortis de la zone, ancien monde) sont retirés, toutes les 2 s ($lan : 40 ticks) ;
+    # pas si le score est perdu mais la copie storage reste (lobby/theme/sync le rétablit au prochain restore)
+    C.patch('core/tick', f'execute if score $thrs mg.st matches 1.. if entity {LOBBY} run function mg:lobby/theme/restore',
+            ['execute if score $lan mg.t matches 30 unless score $theme mg.st matches 1.. unless data storage mg:lobby theme '
+             'as @e[tag=mg.thmob] run function mg:lobby/theme/gone'])
+    C.patch('core/load', 'scoreboard objectives add mg.st dummy', ['scoreboard players set $thrs mg.st 1'])
+    C.patch('core/load', 'scoreboard objectives add mg.st dummy', ['scoreboard players set $thsw mg.st 0'])   # drapeau de bascule jamais resté à 1
+    # reconstruction du spawn : le décor est reposé par restore (comme après un redémarrage)
+    C.patch('lobby/build_end', 'data modify storage mg:lobby v6 set value 1b',
+            ['execute if score $theme mg.st matches 1.. run scoreboard players set $thrs mg.st 1'])
+    C.patch('lobby/deco', 'data modify storage mg:lobby deco3 set value 1b',
+            ['execute if score $theme mg.st matches 1.. run function mg:lobby/theme/reskin'])
+    C.patch('core/opt', 'execute if score @s mg.opt matches 62..65 run function mg:tpg/run',
+            [f'execute if score @s mg.opt matches {THEMES[0][3]}..{THEMES[-1][3]} unless entity @s[tag=mg.admin] run tellraw @s {{"text":"⚠ Réservé aux admins.","color":"red"}}'] +
+            [f'execute if score @s mg.opt matches {opt} if entity @s[tag=mg.admin] run function mg:lobby/theme/{key}/toggle' for _, key, _, opt, _ in THEMES])
+    C.patch('desinstaller', '# Désinstallation (OP) — retire scoreboards, équipes, décor et zones chargées',
+            ['execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off'])
+    C.patch('desinstaller', 'execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off',
+            ['data remove storage mg:lobby theme'])           # même si $theme est perdu : plus de copie qui repose un décor
+    C.patch('desinstaller', 'execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off',
+            ['function mg:lobby/theme/sync'], where='before')   # $theme perdu mais copie storage là : off doit quand même tourner

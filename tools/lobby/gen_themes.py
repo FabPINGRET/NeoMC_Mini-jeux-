@@ -26,7 +26,7 @@ tombent par intermittence : les déclarer dans SPECS de theme_fall.py et mettre 
 Modules (jamais lancés seuls, chargés ici après C.init) : theme_world.py (modèle du spawn : W, DYN, CH, familles de
 blocs, zones réservées), theme_water.py (fontaines, cascades, biome d'eau, water_fix, water_check), theme_mobs.py (animaux,
 spot/back/gone/clear), theme_core.py (off, sync, restore, reskin, tick), theme_fall.py (feuilles et neige qui tombent
-par intermittence).
+par intermittence), theme_npcs.py (PNJ : sorcière d'Halloween, lutin de Noël).
 """
 import os
 import random
@@ -44,6 +44,7 @@ F = C.F
 import theme_core as TC                                          # noqa: E402
 import theme_fall as TF                                          # noqa: E402
 import theme_mobs as TM                                          # noqa: E402
+import theme_npcs as TN                                          # noqa: E402
 import theme_water as TWA                                        # noqa: E402
 import theme_world as TW                                         # noqa: E402
 from theme_mobs import mob                                       # noqa: E402
@@ -53,6 +54,7 @@ from theme_world import (CH, DIRT, DYN, FLOWERS, G, GROUND, LOBBY, SNOWABLE, TUF
 
 TW.load(F)                               # W, DYN, PLOTS, RESERVED remplis sur place, puis ce qui en dérive
 TWA.load()                               # (TM.load : après les thèmes, il lui faut les cellules qu'ils changent)
+TN.prepare()                             # place du PNJ vérifiée et réservée : avant les thèmes (change() passe par free())
 HALLOWEEN_BIOME = 'halloween'            # biome d'eau rouge : worldgen/biome/<nom>.json, mg:<nom> dans fillbiome
 
 FACES = ['north', 'south', 'east', 'west']
@@ -153,7 +155,7 @@ def theme_halloween():
              'minecraft:entity.witch.celebrate')
     mobs = [mob('bat', 'minecraft:bat', 8),
             mob('ghost', 'minecraft:allay', 6, 'Silent:1b', ('mg:hat/ghost', [0, -0.3, 0], 1.0, True))]
-    return reskin, fx, hello, mobs, {'water': water_biome(f'mg:{HALLOWEEN_BIOME}'),
+    return reskin, fx, hello, mobs, {'water': water_biome(f'mg:{HALLOWEEN_BIOME}'), 'npc': 'witch',
                                      'files': {f'pumpkin_{st}': [f'# 🎃 Halloween : citrouille {st} de couleur aléatoire (pack activé)'] + ls
                                                for st, ls in pump.items()}}
 
@@ -206,13 +208,14 @@ def theme_noel():
     mobs = [mob('snowman', 'minecraft:snow_golem', 6, 'NoAI:1b,Pumpkin:0b', rand_yaw=True),
             mob('reindeer', 'minecraft:cow', 3, 'Silent:1b,variant:"minecraft:cold"', rp_nbt='Silent:1b,variant:"mg:reindeer"'),
             mob('rudolph', 'minecraft:cow', 1, 'Silent:1b,variant:"minecraft:cold"', rp_nbt='Silent:1b,variant:"mg:rudolph"')]
-    return reskin, fx, hello, mobs, {}                   # la traînée de chaque bonhomme fond dans lobby/theme/gone
+    return reskin, fx, hello, mobs, {'npc': 'elf'}       # la traînée de chaque bonhomme fond dans lobby/theme/gone
 
 
 THEMES = [(1, 'halloween', '🎃 Halloween', 73, theme_halloween), (2, 'noel', '🎄 Noël', 74, theme_noel)]
 
 # ------------------------------------------------------------------ fonctions
 stats = []
+NPC_THEMES = []                          # (id, clé) des thèmes qui ont un PNJ
 ALLCH = set()                            # cellules changées par au moins un thème (points d'apparition des animaux)
 for tid, key, label, opt, make in THEMES:
     CH.clear()
@@ -225,6 +228,10 @@ for tid, key, label, opt, make in THEMES:
     for n, ls in extra.get('files', {}).items():
         w(f'{T}/{n}', ls)
     fx = fx + [f'function mg:{T}/mobs']
+    if 'npc' in extra:                   # PNJ du thème : réhabillé avec le décor, gardé chaque seconde, cadeaux retirés au off
+        npc_reskin, npc_fx, npc_off = TN.write_npc(T, label, extra['npc'])
+        reskin, fx, off_x = reskin + npc_reskin, fx + npc_fx, off_x + npc_off
+        NPC_THEMES.append((tid, key))
     TM.write_mobs(T, label, mobs)
     if key in TF.SPECS:                  # chutes par intermittence (feuilles, neige) : thème sans SPECS = pas de chute
         TF.write_fall(key, label)
@@ -263,34 +270,12 @@ TM.load(ALLCH)                           # points d'apparition des animaux (hors
 TM.write_common()                        # spot, back, gone, clear, allay_drop
 TWA.write_fix(ALLCH)                     # water_fix
 TWA.write_check(ALLCH)                   # water_check (diagnostic, ne modifie rien)
+TN.write_common(NPC_THEMES)              # npc_use, npc_second, fw_use, advancement mg:theme_fw
 TWA.write_biome(HALLOWEEN_BIOME, '#a3120c', '#3a0505')   # worldgen/biome/halloween.json
 
 # ------------------------------------------------------------------ branchements
-C.patch('core/tick', 'execute if score $setup mg.st matches 1 run function mg:lobby/ev/tick',
-        ['execute if score $theme mg.st matches 1.. run function mg:lobby/theme/tick'])
-C.patch('core/tick', 'execute if score $theme mg.st matches 1.. run function mg:lobby/theme/tick',
-        [f'execute if score $thrs mg.st matches 1.. if entity {LOBBY} run function mg:lobby/theme/restore'])
-# sans thème, les animaux restants (sortis de la zone, ancien monde) sont retirés, toutes les 2 s ($lan : 40 ticks) ;
-# pas si le score est perdu mais la copie storage reste (lobby/theme/sync le rétablit au prochain restore)
-C.patch('core/tick', f'execute if score $thrs mg.st matches 1.. if entity {LOBBY} run function mg:lobby/theme/restore',
-        ['execute if score $lan mg.t matches 30 unless score $theme mg.st matches 1.. unless data storage mg:lobby theme '
-         'as @e[tag=mg.thmob] run function mg:lobby/theme/gone'])
-C.patch('core/load', 'scoreboard objectives add mg.st dummy', ['scoreboard players set $thrs mg.st 1'])
-C.patch('core/load', 'scoreboard objectives add mg.st dummy', ['scoreboard players set $thsw mg.st 0'])   # drapeau de bascule jamais resté à 1
-# reconstruction du spawn : le décor est reposé par restore (comme après un redémarrage)
-C.patch('lobby/build_end', 'data modify storage mg:lobby v6 set value 1b',
-        ['execute if score $theme mg.st matches 1.. run scoreboard players set $thrs mg.st 1'])
-C.patch('lobby/deco', 'data modify storage mg:lobby deco3 set value 1b',
-        ['execute if score $theme mg.st matches 1.. run function mg:lobby/theme/reskin'])
-C.patch('core/opt', 'execute if score @s mg.opt matches 62..65 run function mg:tpg/run',
-        [f'execute if score @s mg.opt matches {THEMES[0][3]}..{THEMES[-1][3]} unless entity @s[tag=mg.admin] run tellraw @s {{"text":"⚠ Réservé aux admins.","color":"red"}}'] +
-        [f'execute if score @s mg.opt matches {opt} if entity @s[tag=mg.admin] run function mg:lobby/theme/{key}/toggle' for _, key, _, opt, _ in THEMES])
-C.patch('desinstaller', '# Désinstallation (OP) — retire scoreboards, équipes, décor et zones chargées',
-        ['execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off'])
-C.patch('desinstaller', 'execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off',
-        ['data remove storage mg:lobby theme'])           # même si $theme est perdu : plus de copie qui repose un décor
-C.patch('desinstaller', 'execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off',
-        ['function mg:lobby/theme/sync'], where='before')   # $theme perdu mais copie storage là : off doit quand même tourner
+TC.write_wiring(THEMES)                # branchements dans core/tick, core/load, lobby/deco, core/opt, desinstaller
+TN.wire()                                # objectif mg.thc, boucle de clic, nettoyages
 print(f'Thèmes ({len(DYN)} zones dynamiques évitées) :')
 for s in stats:
     print('  ' + s)

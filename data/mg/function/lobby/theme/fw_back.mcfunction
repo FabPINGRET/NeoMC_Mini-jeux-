@@ -1,0 +1,3 @@
+# Feu d'artifice refusé (@s = joueur) : l'étoile consommée lui est rendue (sauf en créatif : elle n'est pas consommée)
+execute if entity @s[gamemode=creative] run return 0
+give @s minecraft:firework_star[minecraft:custom_data={mg_thg:1b,mg_thfw:1b},minecraft:item_model="minecraft:firework_rocket",minecraft:custom_name={"text":"Feu d'artifice du lutin","color":"red","italic":false},minecraft:lore=[{"text":"Clic droit à ciel ouvert : il part tout seul.","color":"gray","italic":false}],minecraft:enchantment_glint_override=true,minecraft:consumable={consume_seconds:0.05f,animation:"none",sound:"minecraft:entity.firework_rocket.launch",has_consume_particles:false},minecraft:use_cooldown={seconds:1.5f}] 1

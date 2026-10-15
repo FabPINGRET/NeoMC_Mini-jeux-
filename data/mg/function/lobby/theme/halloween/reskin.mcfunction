@@ -12,3 +12,4 @@ execute as @e[type=minecraft:item_display,tag=mg.lby] if items entity @s content
 execute as @e[type=minecraft:item_display,tag=mg.lby] if items entity @s contents minecraft:amethyst_cluster run item replace entity @s contents with minecraft:wither_skeleton_skull
 execute as @e[type=minecraft:armor_stand,tag=mg.lby] run item replace entity @s armor.head with minecraft:carved_pumpkin
 summon minecraft:text_display 0.5 74 0.5 {Tags:["mg.lby","mg.thx"],billboard:"center",background:1426063360,shadow:1b,text:[{"text":"🎃 Joyeux Halloween ! 🎃","color":"gold","bold":true},{"text":"\nBonbons ou mini-jeux ?","color":"dark_purple","italic":true}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2f,2f,2f]}}
+function mg:lobby/theme/halloween/npc

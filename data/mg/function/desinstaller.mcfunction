@@ -12,6 +12,10 @@ kill @e[tag=mg.arm]
 kill @e[tag=mg.mob]
 kill @e[tag=mg.sheep]
 kill @e[tag=mg.npc]
+clear @a *[minecraft:custom_data~{mg_thg:1b}]
+kill @e[tag=mg.thnpc]
+advancement revoke @a only mg:theme_fw
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{mg_thg:1b}] run kill @s
 execute as @a run function mg:core/unfreeze
 forceload remove all
 data remove storage mg:var a
@@ -28,6 +32,8 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.thc
+scoreboard objectives remove mg.thfw
 scoreboard objectives remove mg.dtr
 scoreboard objectives remove mg.dtt
 scoreboard objectives remove mg.dsb
