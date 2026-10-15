@@ -1,7 +1,9 @@
 # Désinstallation (OP) — retire scoreboards, équipes, décor et zones chargées
 execute as @a[tag=mg.tvw] in minecraft:overworld run function mg:terra/leave
 execute if score $tmap mg.st matches 1 run function mg:lobby/theme/map/end
+function mg:lobby/theme/sync
 execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off
+data remove storage mg:lobby theme
 kill @e[type=minecraft:text_display,tag=mg.deco]
 kill @e[tag=mg.lby]
 kill @e[tag=mg.hat]
@@ -11,6 +13,10 @@ kill @e[tag=mg.arm]
 kill @e[tag=mg.mob]
 kill @e[tag=mg.sheep]
 kill @e[tag=mg.npc]
+clear @a *[minecraft:custom_data~{mg_thg:1b}]
+kill @e[tag=mg.thnpc]
+advancement revoke @a only mg:theme_fw
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{mg_thg:1b}] run kill @s
 execute as @a run function mg:core/unfreeze
 forceload remove all
 data remove storage mg:var a
@@ -74,6 +80,8 @@ scoreboard objectives remove mg.tval
 scoreboard objectives remove mg.tvx
 scoreboard objectives remove mg.tvy
 scoreboard objectives remove mg.tvz
+scoreboard objectives remove mg.thc
+scoreboard objectives remove mg.thfw
 scoreboard objectives remove mg.dtr
 scoreboard objectives remove mg.dtt
 scoreboard objectives remove mg.dsb

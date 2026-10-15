@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "fw": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": "{mg_thfw:1b}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "mg:lobby/theme/fw_use"
+  }
+}
