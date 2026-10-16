@@ -4,7 +4,7 @@ Objet STEW : ragoût fixe (custom_data mg_thg + mg_thst, aucun effet de ragoût)
 mg_thst) appelle lobby/theme/stew_eat, qui ricane puis tire 1..8 : 1-4 effet vanilla (invisibilité, lueur, nausée, lévitation),
 5-8 effet maison : stew_mini (taille -70 %, 30 s), stew_moon (marche lunaire : gravité -75 %, saut +30 %, 20 s, à vérifier en jeu :
 ~5,5 blocs de haut), stew_burp et stew_wind (instantanés). Le vent (charge de vent sous les pieds, le mangeur en est le propriétaire)
-tombe en rot si stew_wind_ok trouve un bloc fragile (tag mg:wind_touchy) à moins de 2 blocs en horizontale (y -1..+2) ou un
+tombe en rot si stew_wind_ok : joueur en élytres libres, pas de sol sous les pieds, ou bloc fragile (tag mg:wind_touchy) à moins de 2 blocs en horizontale (y -1..+2) ou un
 armor_stand / mannequin à moins de 4 blocs. Un effet vanilla (1-4) se cumule avec un effet maison encore actif : un seul effet par ragoût.
 Effets chronométrés : un seul à la fois (stew_clear d'abord), objectif mg.ths en secondes, modificateurs d'attribut mg:thstew
 (jamais les valeurs de base), tag mg.thmini pendant le mini-moi. stew_clear les retire ; il est appelé par la seconde (fin, joueur
@@ -90,7 +90,10 @@ def wind():
 def wind_ok():
     """1 si rien de fragile autour des pieds (@s, position = pieds) : tout refus sort en 0, la valeur est toujours écrite."""
     rng = lambda lo, hi: [f'{d}' if d else '' for d in range(lo, hi + 1)]
-    return ['# Le coup de vent est-il sans risque ? 0 : bloc déclenchable (#mg:wind_touchy, x/z -2..2, y -1..2) ou mannequin à moins de 4 blocs'] + \
+    return ['# Le coup de vent est-il sans risque ? 0 : en vol (élytres libres) ou sans sol sous les pieds (la charge exploserait loin en bas),',
+            '# bloc déclenchable (#mg:wind_touchy, x/z -2..2, y -1..2) ou mannequin à moins de 4 blocs',
+            'execute if entity @s[tag=mg.elyf] run return 0',
+            'execute if block ~ ~-1 ~ #minecraft:replaceable run return 0'] + \
            [f'execute if block ~{dx} ~{dy} ~{dz} #mg:wind_touchy run return 0'
             for dx in rng(-2, 2) for dy in rng(-1, 2) for dz in rng(-2, 2)] + \
            [f'execute if entity @e[type={t},distance=..4] run return 0' for t in ('minecraft:armor_stand', 'minecraft:mannequin')] + ['return 1']

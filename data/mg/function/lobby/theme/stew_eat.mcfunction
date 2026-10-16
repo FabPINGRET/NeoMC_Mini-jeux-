@@ -5,7 +5,6 @@ execute unless score $theme mg.st matches 1.. run return 0
 execute if entity @s[tag=mg.surv] run return 0
 execute if entity @s[tag=mg.play] run return 0
 execute if entity @s[tag=mg.ely] run return 0
-execute if entity @s[tag=mg.elyf] run return 0
 execute if entity @s[tag=mg.xso] run return 0
 execute if entity @s[tag=mg.lk] run return 0
 execute if entity @s[tag=mg.inplot] run return 0
