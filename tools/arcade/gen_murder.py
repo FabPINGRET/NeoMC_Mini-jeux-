@@ -121,8 +121,7 @@ w('mm/hero', ['# @s a abattu le tueur', 'tag @s add mg.mmhero', 'scoreboard play
               say('@a[tag=mg.mmx]', [{'text': '🏹 ', 'color': 'aqua'}, {'selector': '@s', 'color': 'aqua', 'bold': True},
                                      {'text': ' a abattu le tueur !', 'color': 'gray'}])])
 w('mm/bad_kill', ['# @s (pas le tueur) a tué un innocent : il est éliminé aussi',
-                  say('@a[tag=mg.mmx]', [{'text': '🔪 ', 'color': 'red'}, {'selector': '@s', 'color': 'yellow'},
-                                         {'text': ' a tué un innocent… et le paie de sa vie !', 'color': 'gray'}]),
+                  say('@s', [{'text': '🔪 Tu as tué un innocent… et tu le paies de ta vie !', 'color': 'red'}]),
                   'execute if items entity @s container.* minecraft:bow run function mg:mm/drop_here',
                   'clear @s', 'effect clear @s minecraft:glowing', 'function mg:core/eliminate'])
 w('mm/die', ['# @s est mort : son arc tombe, puis il est éliminé (seul : il continue)',
@@ -196,7 +195,17 @@ w('mm/cleanup', ['function mg:mm/kill_all', 'effect clear @a[tag=mg.mmx] minecra
 
 C.register([GID], 'mm', [C.announce(GID, '', '🔪 MURDER MYSTERY', 'red', 'un tueur se cache parmi vous… le détective doit le démasquer !')])
 C.objectives([('mg.mmk', 'playerKillCount'), ('mg.mma', 'dummy'), ('mg.mmo', 'dummy')])
-C.patch('core/load', 'scoreboard objectives add mg.bw trigger', ['team add mg_mm', 'team modify mg_mm nametagVisibility never',
+C.patch('core/load', 'scoreboard objectives add mg.bw trigger', ['team add mg_mm', 'team modify mg_mm nametagVisibility never', 'team modify mg_mm deathMessageVisibility never',
                                                                  'team modify mg_mm collisionRule never', 'team modify mg_mm friendlyFire true'])
 C.patch('desinstaller', 'scoreboard objectives remove mg.bw', ['team remove mg_mm', 'data remove storage mg:mm d'])
 print('Murder Mystery OK')
+
+# pas de morts ni d'éliminations dans le chat pendant la partie (les joueurs ne doivent pas savoir qui est tombé)
+_el = C.lines_of('core/eliminate')
+_old = 'tellraw @a [{"selector":"@s","color":"red"},{"text":" est éliminé !","color":"gray"}]'
+if _old in _el:
+    i = _el.index(_old)
+    _el[i:i + 1] = [f'execute unless score $game mg.st matches {GID} run ' + _old,
+                    f'execute if score $game mg.st matches {GID} run tellraw @s {{"text":"☠ Tu es éliminé : tu regardes la suite en silence.","color":"gray"}}']
+    C.w('core/eliminate', _el[:-1] if _el[-1] == '' else _el)
+
