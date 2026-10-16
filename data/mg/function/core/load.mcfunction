@@ -54,6 +54,8 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.mo dummy
+scoreboard objectives add mg.mv dummy
 team add mg_mm
 team modify mg_mm nametagVisibility never
 team modify mg_mm deathMessageVisibility never

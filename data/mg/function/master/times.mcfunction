@@ -1,1 +1,1 @@
-$title @a[tag=mg.play] times 0 $(d) 4
+$title @s times 0 $(d) 4
