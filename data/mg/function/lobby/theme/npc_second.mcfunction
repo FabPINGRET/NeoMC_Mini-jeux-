@@ -2,7 +2,6 @@
 scoreboard players remove @a[scores={mg.thc=1..}] mg.thc 1
 clear @a[tag=mg.play] *[minecraft:custom_data~{mg_thg:1b}]
 clear @a[tag=mg.ely] *[minecraft:custom_data~{mg_thg:1b}]
-clear @a[tag=mg.elyf] *[minecraft:custom_data~{mg_thg:1b}]
 clear @a[tag=mg.xso] *[minecraft:custom_data~{mg_thg:1b}]
 clear @a[tag=mg.lk] *[minecraft:custom_data~{mg_thg:1b}]
 clear @a[tag=mg.inplot] *[minecraft:custom_data~{mg_thg:1b}]
@@ -16,7 +15,6 @@ execute as @a[scores={mg.ths=0}] at @s run playsound minecraft:block.amethyst_bl
 execute as @a[scores={mg.ths=0}] run function mg:lobby/theme/stew_clear
 execute as @a[tag=mg.play,scores={mg.ths=1..}] run function mg:lobby/theme/stew_clear
 execute as @a[tag=mg.ely,scores={mg.ths=1..}] run function mg:lobby/theme/stew_clear
-execute as @a[tag=mg.elyf,scores={mg.ths=1..}] run function mg:lobby/theme/stew_clear
 execute as @a[tag=mg.xso,scores={mg.ths=1..}] run function mg:lobby/theme/stew_clear
 execute as @a[tag=mg.lk,scores={mg.ths=1..}] run function mg:lobby/theme/stew_clear
 execute as @a[tag=mg.inplot,scores={mg.ths=1..}] run function mg:lobby/theme/stew_clear

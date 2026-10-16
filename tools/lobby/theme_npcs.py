@@ -6,7 +6,7 @@ lobby/theme/clear) ; le corps porte aussi mg.thmob (retiré par lobby/theme/gone
 bedwars/prepare tuent ce tag. Cadeau : objet tagué custom_data mg_thg (ragoût mystère / feux d'artifice), recharge de 30 s
 (objectif mg.thc, secondes) ; rien n'est donné à qui tient déjà 2 objets du PNJ (le lutin en donne 3). Les feux d'artifice ont un
 budget par joueur (mg.thfw, +3 par don) : une étoile prise dans un coffre ou ramassée ne part pas. Cadeaux retirés à la bascule du
-thème, à chaque lancement de partie, et chaque seconde chez les joueurs occupés ailleurs (partie, plot, élytres, kart...).
+thème, à chaque lancement de partie, et chaque seconde chez les joueurs occupés ailleurs (partie, plot, parcours d'élytra, kart...) ; élytres libres exclues : restent au lobby.
 Fichiers : lobby/theme/<t>/npc (idempotent : retire puis repose), <t>/npc_give ; communs : npc_use, npc_second, fw_use (feux d'artifice
 de Noël : l'étoile consommée déclenche l'advancement mg:theme_fw, écrit ici ; le ragoût et ses effets : theme_stew.py). Tout reste sous
 lobby/theme/ (cf. theme_world.load).
@@ -26,7 +26,7 @@ YAW = 135                                # regarde vers le centre du spawn
 BUFFET = (24, 63, 19)                    # bloc d'or du buffet
 COOLDOWN = 30                            # secondes entre deux cadeaux
 GIFT = '*[minecraft:custom_data~{mg_thg:1b}]'
-BUSY = ['mg.play', 'mg.ely', 'mg.elyf', 'mg.xso', 'mg.lk', 'mg.inplot', 'mg.visit']   # joueurs occupés : pas de cadeau gardé
+BUSY = ['mg.play', 'mg.ely', 'mg.xso', 'mg.lk', 'mg.inplot', 'mg.visit']   # joueurs occupés : pas de cadeau gardé (mg.elyf exclu : élytres libres = restent au lobby)
 OVW = 'execute in minecraft:overworld run '
 POS = f'{SPOT[0] + 0.5} {SPOT[1]} {SPOT[2] + 0.5}'
 LOADED = f'{SPOT[0]} {SPOT[1]} {SPOT[2]}'
