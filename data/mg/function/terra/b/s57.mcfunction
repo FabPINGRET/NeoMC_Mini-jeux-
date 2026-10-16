@@ -180,7 +180,18 @@ setblock 7 64 0 minecraft:polished_andesite
 setblock 7 64 1 minecraft:andesite
 setblock 7 64 2 minecraft:polished_andesite
 fill -1 64 -1 1 64 1 minecraft:chiseled_stone_bricks
-fill -27 65 -27 27 76 27 minecraft:air
+fill -27 65 -27 27 65 27 minecraft:air
+fill -27 66 -27 27 66 27 minecraft:air
+fill -27 67 -27 27 67 27 minecraft:air
+fill -27 68 -27 27 68 27 minecraft:air
+fill -27 69 -27 27 69 27 minecraft:air
+fill -27 70 -27 27 70 27 minecraft:air
+fill -27 71 -27 27 71 27 minecraft:air
+fill -27 72 -27 27 72 27 minecraft:air
+fill -27 73 -27 27 73 27 minecraft:air
+fill -27 74 -27 27 74 27 minecraft:air
+fill -27 75 -27 27 75 27 minecraft:air
+fill -27 76 -27 27 76 27 minecraft:air
 fill -28 62 -28 28 70 -28 minecraft:spruce_log
 fill -28 71 -28 28 71 -28 minecraft:spruce_fence
 fill -28 62 28 28 70 28 minecraft:spruce_log
@@ -288,14 +299,3 @@ setblock -21 70 -17 minecraft:lantern[hanging=true]
 setblock -16 70 -22 minecraft:lantern[hanging=true]
 setblock -16 70 -17 minecraft:lantern[hanging=true]
 setblock -11 70 -22 minecraft:lantern[hanging=true]
-setblock -11 70 -17 minecraft:lantern[hanging=true]
-fill -23 65 -24 -9 65 -24 minecraft:barrel[facing=up]
-setblock -23 65 -22 minecraft:polished_andesite
-setblock -21 65 -22 minecraft:polished_andesite
-setblock -19 65 -22 minecraft:polished_andesite
-setblock -17 65 -22 minecraft:polished_andesite
-setblock -15 65 -22 minecraft:polished_andesite
-setblock -13 65 -22 minecraft:polished_andesite
-setblock -11 65 -22 minecraft:polished_andesite
-setblock -9 65 -22 minecraft:polished_andesite
-setblock -22 71 -18 minecraft:daylight_detector

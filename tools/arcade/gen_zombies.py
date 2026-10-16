@@ -85,7 +85,8 @@ if LY:
     # plan : tout plein, puis les salles creusées (murs d'un bloc entre salles voisines)
     L[0] = f'# 🧟 {NAME} (Zombies / Infection) — ' + ', '.join(LY['names'].values()) + ' — sol y 80, toit y 86'
     L += [f'fill {AX1 + 1} 79 {AZ1 + 1} {AX2 - 1} 79 {AZ2 - 1} minecraft:stone',
-          f'fill {AX1 + 1} 80 {AZ1 + 1} {AX2 - 1} 85 {AZ2 - 1} minecraft:{LY["wall"]}',
+          # une couche par fill (limite de 32 768 blocs par commande)
+          *[f'fill {AX1 + 1} {y} {AZ1 + 1} {AX2 - 1} {y} {AZ2 - 1} minecraft:{LY["wall"]}' for y in range(80, 86)],
           f'fill {AX1 + 1} 81 {AZ1 + 1} {AX2 - 1} 81 {AZ2 - 1} minecraft:{LY["band"]}',
           f'fill {AX1 + 1} 86 {AZ1 + 1} {AX2 - 1} 86 {AZ2 - 1} minecraft:{LY["roof"]}']
     for r, (x1, x2, z1, z2) in ROOMS.items():
@@ -294,7 +295,7 @@ w('zm/spawn', ['scoreboard players set $zsc mg.st 0', 'scoreboard players remove
                'execute as @e[type=minecraft:marker,tag=mg.zsp,tag=mg.zon,sort=random,limit=1] at @s run function mg:zx/spawn_pick'])
 w('zm/spawn_one', ['# Un zombie (macro : $(hp) vie, $(sp) vitesse)',
                    '$summon minecraft:zombie ~ ~ ~ {Tags:["mg.zz","mg.gtg","mg.mob"],PersistenceRequired:1b,CanPickUpLoot:0b,IsBaby:0b,CanBreakDoors:0b,DeathLootTable:"minecraft:empty",Health:$(hp)f,attributes:[{id:"minecraft:max_health",base:$(hp)d},{id:"minecraft:follow_range",base:64d},{id:"minecraft:movement_speed",base:$(sp)d},{id:"minecraft:spawn_reinforcements",base:0d}]}',
-                   'particle minecraft:large_smoke ~ ~1 ~ 0.3 0.5 0.3 0.02 10'])
+                   'particle minecraft:large_smoke ~ ~1 ~ 0.3 0.5 0.3 0.02 10', 'execute if score $rp mg.st matches 1 as @e[type=!minecraft:wolf,tag=mg.zz,tag=!mg.zmk,distance=..2] run function mg:zx/mask'])
 w('zm/round_end', [f'# Manche terminée', f'execute if score $zr mg.st matches {ROUNDS}.. run return run function mg:zm/victory',
                    'scoreboard players set $zph mg.st 0', 'scoreboard players set $zb mg.st 200',
                    'tellraw @a[tag=mg.play] [{"text":"🧟 Manche ","color":"dark_green"},{"score":{"name":"$zr","objective":"mg.st"},"color":"green","bold":true},{"text":" terminée ! Prochaine dans 10 s.","color":"gray"}]',
@@ -553,7 +554,11 @@ w('zx/tick', ['# Zombies, chaque tick : bonus en cours, bonus au sol, grenades s
    'scoreboard players add $zxt mg.st 1', 'execute if score $zxt mg.st matches 10.. run function mg:zx/win_fix_all'])
 w('zx/second', ['# Chaque seconde : les zombies dans l\'enclos d\'une fenêtre arrachent une planche ; zombie coincé = renvoyé à une apparition',
                 'execute if score $zph mg.st matches 1 as @e[type=minecraft:marker,tag=mg.zwin,scores={mg.zws=1..}] at @s if entity @e[tag=mg.zz,distance=..3.6] run function mg:zx/win_hit',
-                'execute if score $zph mg.st matches 1 as @e[tag=mg.zz] at @s run function mg:zx/stuck'])
+                'execute if score $zph mg.st matches 1 as @e[tag=mg.zz] at @s run function mg:zx/stuck',
+                # chiens : traînée de braises ; relancés sur un survivant s'ils n'en mordent aucun (toutes les 4 s)
+                'execute as @e[type=minecraft:wolf,tag=mg.zz] at @s run particle minecraft:flame ~ ~0.4 ~ 0.25 0.2 0.25 0.01 2',
+                'scoreboard players add $zdg mg.st 1', 'execute if score $zdg mg.st matches 4.. run scoreboard players set $zdg mg.st 0',
+                'execute if score $zdg mg.st matches 0 as @e[type=minecraft:wolf,tag=mg.zz] at @s unless entity @a[tag=mg.play,tag=!mg.zdead,distance=..4] run function mg:zx/dog_aggro'])
 w('zx/stuck', ['# @s (mob) : immobile 12 s loin des joueurs et des fenêtres → retiré, il réapparaîtra (compté dans les restants)',
                'execute store result score $sx mg.st run data get entity @s Pos[0]', 'execute store result score $sz mg.st run data get entity @s Pos[2]',
                'scoreboard players operation $sx mg.st -= @s mg.zqx', 'scoreboard players operation $sz mg.st -= @s mg.zqz',
@@ -578,17 +583,28 @@ w('zx/spawn_pick', ['# Un mob de la manche à cet enclos : zombie, zombie villag
                     'execute if score $zr mg.st matches 6.. if score $zx2 mg.st matches 56..65 run return run function mg:zx/spawn_brute with storage mg:zm',
                     'execute if score $zr mg.st matches 8.. if score $zx2 mg.st matches 66..72 run return run function mg:zx/spawn_brute with storage mg:zm',
                     'function mg:zm/spawn_one with storage mg:zm'])
-w('zx/spawn_villager', ['$summon minecraft:zombie_villager ~ ~ ~ ' + MOB.format(h='hp', s='sp', x='IsBaby:0b,', a=RF), 'particle minecraft:large_smoke ~ ~1 ~ 0.3 0.5 0.3 0.02 10'])
+w('zx/spawn_villager', ['$summon minecraft:zombie_villager ~ ~ ~ ' + MOB.format(h='hp', s='sp', x='IsBaby:0b,', a=RF), 'particle minecraft:large_smoke ~ ~1 ~ 0.3 0.5 0.3 0.02 10', 'execute if score $rp mg.st matches 1 as @e[type=!minecraft:wolf,tag=mg.zz,tag=!mg.zmk,distance=..2] run function mg:zx/mask'])
 w('zx/spawn_runner', ['# Rapide (husk) : moins de vie, plus vite', '$summon minecraft:husk ~ ~ ~ ' + MOB.format(h='hpf', s='spf', x='IsBaby:0b,', a=RF),
-                      'particle minecraft:large_smoke ~ ~1 ~ 0.3 0.5 0.3 0.02 10'])
+                      'particle minecraft:large_smoke ~ ~1 ~ 0.3 0.5 0.3 0.02 10', 'execute if score $rp mg.st matches 1 as @e[type=!minecraft:wolf,tag=mg.zz,tag=!mg.zmk,distance=..2] run function mg:zx/mask'])
 w('zx/spawn_crawler', ['# Rampant (araignée venimeuse) : petit, rapide', '$summon minecraft:cave_spider ~ ~ ~ ' + MOB.format(h='hpf', s='spf', x='', a=''),
                        'particle minecraft:large_smoke ~ ~0.5 ~ 0.3 0.3 0.3 0.02 10'])
 w('zx/spawn_brute', ['# Brute (noyé en armure) : 3× plus de vie, frappe fort, plus lent',
                      '$summon minecraft:drowned ~ ~ ~ ' + MOB.format(h='hpb', s='spb', x='IsBaby:0b,equipment:{head:{id:"minecraft:iron_helmet",count:1},chest:{id:"minecraft:iron_chestplate",count:1}},drop_chances:{head:0f,chest:0f},',
                                                                      a=RF + ',{id:"minecraft:attack_damage",base:7d}'),
-                     'particle minecraft:large_smoke ~ ~1 ~ 0.4 0.6 0.4 0.02 16'])
-w('zx/spawn_dog', ['# Chien de l\'enfer (petit zoglin) : peu de vie, très rapide', '$summon minecraft:zoglin ~ ~ ~ ' + MOB.format(h='hpd', s='spd', x='IsBaby:1b,', a=',{id:"minecraft:attack_damage",base:4d}'),
+                     'particle minecraft:large_smoke ~ ~1 ~ 0.4 0.6 0.4 0.02 16',
+                     'execute if score $rp mg.st matches 1 as @e[type=minecraft:drowned,tag=mg.zz,tag=!mg.zmk,distance=..2] run function mg:zx/mask_n {n:5}'])
+DOG = MOB.format(h='hpd', s='spd', x='sound_variant:"minecraft:angry",variant:"VAR",', a=',{id:"minecraft:attack_damage",base:4d},{id:"minecraft:scale",base:1.15d}')
+w('zx/spawn_dog', ['# Chien de l\'enfer (loup calciné, variante mg:hellhound du resource pack) : peu de vie, très rapide, lâché sur le joueur le plus proche',
+                   '$execute if score $rp mg.st matches 1 run summon minecraft:wolf ~ ~ ~ ' + DOG.replace('VAR', 'mg:hellhound'),
+                   '$execute unless score $rp mg.st matches 1 run summon minecraft:wolf ~ ~ ~ ' + DOG.replace('VAR', 'minecraft:black'),
+                   'execute as @e[type=minecraft:wolf,tag=mg.zz,distance=..2] at @s run function mg:zx/dog_aggro',
                    'particle minecraft:flame ~ ~0.5 ~ 0.3 0.3 0.3 0.05 20', 'playsound minecraft:entity.wolf.growl hostile @a ~ ~ ~ 1 0.6'])
+w('zx/dog_aggro', ['# @s (chien) : en colère contre le survivant le plus proche (un loup ne chasse que s\'il est provoqué)',
+                   'damage @s 0.01 minecraft:generic by @p[tag=mg.play,tag=!mg.zdead,gamemode=adventure]'])
+w('zx/mask', ['# @s (zombie) : masque qui fait peur au hasard (resource pack, objet sur la tête)', 'execute store result score $zx3 mg.st run random value 1..4'] +
+  [f'execute if score $zx3 mg.st matches {n} run return run function mg:zx/mask_n {{n:{n}}}' for n in range(1, 5)])
+w('zx/mask_n', ['# @s : masque n° $(n) sur la tête, jamais lâché', '$item replace entity @s armor.head with minecraft:paper[item_model="mg:zm/mask_$(n)"]',
+                'data modify entity @s drop_chances.head set value 0f', 'tag @s add mg.zmk'])
 
 # --- fenêtres barricadées (marqueur mg.zwin dans l'ouverture, mg.zws = planches 0..6)
 w('zx/win_set', ['# Blocs de la fenêtre (@s, à sa position) selon ses planches',
@@ -731,6 +747,11 @@ with open(_adv, 'w', encoding='utf-8', newline='\n') as _f:
         'requirements': [['mob', 'joueur']], 'rewards': {'function': 'mg:infhit/hit'}}, _f, ensure_ascii=False, indent=2)
     _f.write('\n')
 if not C.MAP:
+    os.makedirs(os.path.join(C.D, 'wolf_variant'), exist_ok=True)
+    _wa = {'angry': 'mg:entity/wolf/hellhound_angry', 'tame': 'mg:entity/wolf/hellhound', 'wild': 'mg:entity/wolf/hellhound'}
+    with open(os.path.join(C.D, 'wolf_variant', 'hellhound.json'), 'w', encoding='utf-8', newline='\n') as _f:
+        json.dump({'assets': _wa, 'baby_assets': _wa, 'spawn_conditions': []}, _f, indent=2)
+        _f.write('\n')
     # 217/218/219 : Infection « joueurs contre mobs » sur Bunker / Laboratoire / Manoir → jeu 98/211/213 + $infm = 1
     C.patch('core/request', 'execute if score $game mg.st matches 91..92 run scoreboard players set $game mg.st 28', [
         '# Infection : 217 Bunker, 218 Laboratoire, 219 Manoir = joueurs contre mobs → jeu 98 / 211 / 213 + $infm 1',

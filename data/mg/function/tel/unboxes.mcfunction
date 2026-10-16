@@ -1,0 +1,25 @@
+# Toutes les boîtes retirées
+execute positioned -352 64 19500 run function mg:tel/unbox
+execute positioned -352 64 19564 run function mg:tel/unbox
+execute positioned -288 64 19500 run function mg:tel/unbox
+execute positioned -288 64 19564 run function mg:tel/unbox
+execute positioned -224 64 19500 run function mg:tel/unbox
+execute positioned -224 64 19564 run function mg:tel/unbox
+execute positioned -160 64 19500 run function mg:tel/unbox
+execute positioned -160 64 19564 run function mg:tel/unbox
+execute positioned -96 64 19500 run function mg:tel/unbox
+execute positioned -96 64 19564 run function mg:tel/unbox
+execute positioned -32 64 19500 run function mg:tel/unbox
+execute positioned -32 64 19564 run function mg:tel/unbox
+execute positioned 32 64 19500 run function mg:tel/unbox
+execute positioned 32 64 19564 run function mg:tel/unbox
+execute positioned 96 64 19500 run function mg:tel/unbox
+execute positioned 96 64 19564 run function mg:tel/unbox
+execute positioned 160 64 19500 run function mg:tel/unbox
+execute positioned 160 64 19564 run function mg:tel/unbox
+execute positioned 224 64 19500 run function mg:tel/unbox
+execute positioned 224 64 19564 run function mg:tel/unbox
+execute positioned 288 64 19500 run function mg:tel/unbox
+execute positioned 288 64 19564 run function mg:tel/unbox
+execute positioned 352 64 19500 run function mg:tel/unbox
+execute positioned 352 64 19564 run function mg:tel/unbox

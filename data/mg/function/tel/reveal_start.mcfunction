@@ -1,6 +1,7 @@
 # Révélation : chaîne par chaîne (mot → construction → devinette → construction → devinette)
 clear @a[tag=mg.play]
 gamemode spectator @a[tag=mg.play]
+function mg:tel/unboxes
 scoreboard objectives setdisplay sidebar mg.tpt
 scoreboard players set $rc mg.st 0
 scoreboard players set $rs mg.st -1

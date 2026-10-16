@@ -118,6 +118,13 @@ scoreboard objectives add mg.tvses dummy
 scoreboard objectives add mg.tvak dummy
 scoreboard objectives add mg.tvab dummy
 scoreboard objectives add mg.tvph dummy
+scoreboard objectives add mg.mo dummy
+scoreboard objectives add mg.mv dummy
+team add mg_mm
+team modify mg_mm nametagVisibility never
+team modify mg_mm deathMessageVisibility never
+team modify mg_mm collisionRule never
+team modify mg_mm friendlyFire true
 scoreboard objectives add mg.tvc dummy {"text":"₵ Terra Nova","color":"green"}
 scoreboard objectives add mg.tvq minecraft.used:minecraft.warped_fungus_on_a_stick
 scoreboard objectives add mg.tvdd minecraft.custom:minecraft.damage_dealt
@@ -150,10 +157,6 @@ scoreboard objectives add mg.thfw dummy
 scoreboard objectives add mg.dsb dummy
 scoreboard objectives add mg.hat dummy
 scoreboard objectives add mg.hid dummy
-team add mg_mm
-team modify mg_mm nametagVisibility never
-team modify mg_mm collisionRule never
-team modify mg_mm friendlyFire true
 scoreboard objectives add mg.mmk playerKillCount
 scoreboard objectives add mg.mma dummy
 scoreboard objectives add mg.mmo dummy

@@ -12,3 +12,10 @@ setblock ~-12 ~ ~-12 minecraft:sea_lantern
 setblock ~12 ~ ~-12 minecraft:sea_lantern
 setblock ~-12 ~ ~12 minecraft:sea_lantern
 setblock ~12 ~ ~12 minecraft:sea_lantern
+# boîte opaque : on ne voit pas les autres parcelles
+fill ~-18 ~-8 ~-18 ~18 ~-8 ~18 minecraft:white_concrete
+fill ~-18 ~42 ~-18 ~18 ~42 ~18 minecraft:white_concrete
+fill ~-18 ~-7 ~-18 ~-18 ~41 ~18 minecraft:light_blue_concrete
+fill ~18 ~-7 ~-18 ~18 ~41 ~18 minecraft:light_blue_concrete
+fill ~-17 ~-7 ~-18 ~17 ~41 ~-18 minecraft:light_blue_concrete
+fill ~-17 ~-7 ~18 ~17 ~41 ~18 minecraft:light_blue_concrete

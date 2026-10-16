@@ -95,6 +95,8 @@ scoreboard objectives remove mg.tvses
 scoreboard objectives remove mg.tvak
 scoreboard objectives remove mg.tvab
 scoreboard objectives remove mg.tvph
+scoreboard objectives remove mg.mo
+scoreboard objectives remove mg.mv
 schedule clear mg:zmode5/prepare_b
 forceload remove -51 39364 51 39435
 schedule clear mg:zmode4/prepare_b
