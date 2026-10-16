@@ -3,12 +3,16 @@
     python tools/telephone/gen_tel.py .        (depuis la racine du dépôt ; idempotent)
 
 Une chaîne par joueur, tout le monde joue en même temps (le joueur d'indice i travaille sur la chaîne (i + étape) mod N) :
-  étape 0  écrire un mot (livre, 60 s)          → ch[c].s0
+  étape 0  écrire un mot (livre, 30 s)          → ch[c].s0
   étape 1  construire ce mot (2 min 30)         → parcelle (c, 0)
   étape 2  deviner la construction (60 s)       → ch[c].s2
   étape 3  construire la devinette (2 min 30)   → parcelle (c, 1)
   étape 4  deviner (60 s)                       → ch[c].s4
-  révélation chaîne par chaîne ; devinette identique au mot de départ = +1 pour le devineur et le constructeur d'avant.
+  En devinant, on note la construction (1 à 5 ★, boutons dans le chat → /trigger mg.tel set 11..15) → ch[c].v1 / v3.
+  révélation chaîne par chaîne : chaque construction rapporte ses ★ à son constructeur ;
+  devinette identique au mot de départ = +3 pour le devineur et le constructeur d'avant.
+Chaque parcelle est enfermée dans une boîte opaque (±18, y 56..106) pendant la partie : on ne voit pas les autres
+constructions (vision nocturne pour l'éclairage) ; les boîtes sont retirées à la révélation.
 Parcelles 25×25 : x = 64·c − 352, z = 19500 (+64 pour la 2e construction), y 64. Salle d'attente : 0 64 19420.
 """
 import json
@@ -22,7 +26,8 @@ GID = 83
 NMAX = 12
 PX = lambda c: 64 * c - 352
 PZ = lambda b: 19500 + 64 * b
-T_WRITE, T_BUILD, T_GUESS = 1200, 3000, 1200
+T_WRITE, T_BUILD, T_GUESS = 600, 3000, 1200
+MATCH = 3                     # points d'une devinette identique au mot de départ
 
 
 def w(rel, lines):
@@ -39,6 +44,10 @@ def js(o):
 VALID = js(['', {'text': ' [✔ Valider]', 'color': 'green', 'bold': True,
                  'click_event': {'action': 'run_command', 'command': '/trigger mg.tel set 1'},
                  'hover_event': {'action': 'show_text', 'value': 'Écris sur la 1re page du livre, clique « Terminé », puis valide'}}])
+_SC = [('1', 'Raté', 'red'), ('2', 'Moyen', 'gold'), ('3', 'Bien', 'yellow'), ('4', 'Super', 'green'), ('5', 'Épique', 'aqua')]
+VOTE = js([{'text': '★ Note cette construction : ', 'color': 'gold'}] + [x for n, t, c in _SC for x in (
+    {'text': f'[{n}★]', 'color': c, 'click_event': {'action': 'run_command', 'command': f'/trigger mg.tel set 1{n}'},
+     'hover_event': {'action': 'show_text', 'value': f'{n} — {t} (rapporte {n} point(s) au constructeur)'}}, {'text': ' '})])
 BOOK = 'minecraft:writable_book[custom_name=[{"text":"📞 Écris ici (1re page)","color":"gold","italic":false}]]'
 
 # ------------------------------------------------------------------ décor
@@ -49,7 +58,15 @@ w('plot', ['# Parcelle du Téléphone (position = centre, y 64) : 25×25 + chemi
            'fill ~-15 ~-2 ~-15 ~15 ~-1 ~15 minecraft:dirt', 'fill ~-15 ~ ~-15 ~15 ~ ~15 minecraft:polished_andesite',
            'fill ~-12 ~ ~-12 ~12 ~ ~12 minecraft:stone_bricks', 'fill ~-11 ~ ~-11 ~11 ~ ~11 minecraft:grass_block',
            'setblock ~-12 ~ ~-12 minecraft:sea_lantern', 'setblock ~12 ~ ~-12 minecraft:sea_lantern',
-           'setblock ~-12 ~ ~12 minecraft:sea_lantern', 'setblock ~12 ~ ~12 minecraft:sea_lantern'])
+           'setblock ~-12 ~ ~12 minecraft:sea_lantern', 'setblock ~12 ~ ~12 minecraft:sea_lantern',
+           '# boîte opaque : on ne voit pas les autres parcelles',
+           'fill ~-18 ~-8 ~-18 ~18 ~-8 ~18 minecraft:white_concrete', 'fill ~-18 ~42 ~-18 ~18 ~42 ~18 minecraft:white_concrete',
+           'fill ~-18 ~-7 ~-18 ~-18 ~41 ~18 minecraft:light_blue_concrete', 'fill ~18 ~-7 ~-18 ~18 ~41 ~18 minecraft:light_blue_concrete',
+           'fill ~-17 ~-7 ~-18 ~17 ~41 ~-18 minecraft:light_blue_concrete', 'fill ~-17 ~-7 ~18 ~17 ~41 ~18 minecraft:light_blue_concrete'])
+w('unbox', ['# Retire la boîte opaque d\'une parcelle (révélation)',
+            'fill ~-18 ~-8 ~-18 ~18 ~-8 ~18 minecraft:air', 'fill ~-18 ~42 ~-18 ~18 ~42 ~18 minecraft:air',
+            'fill ~-18 ~-7 ~-18 ~-18 ~41 ~18 minecraft:air', 'fill ~18 ~-7 ~-18 ~18 ~41 ~18 minecraft:air',
+            'fill ~-17 ~-7 ~-18 ~17 ~41 ~-18 minecraft:air', 'fill ~-17 ~-7 ~18 ~17 ~41 ~18 minecraft:air'])
 w('room', ['# Salle d\'attente / révélation (0 64 19420)',
            'fill -8 60 19412 8 72 19428 minecraft:air', 'fill -7 63 19413 7 63 19427 minecraft:smooth_quartz',
            'fill -6 63 19414 6 63 19426 minecraft:light_blue_concrete', 'fill -7 64 19413 7 66 19413 minecraft:glass',
@@ -59,6 +76,7 @@ for c in range(NMAX):
     for b in range(2):
         L.append(f'execute positioned {PX(c)} 64 {PZ(b)} run function mg:tel/plot')
 w('plots', L)
+w('unboxes', ['# Toutes les boîtes retirées'] + [f'execute positioned {PX(c)} 64 {PZ(b)} run function mg:tel/unbox' for c in range(NMAX) for b in range(2)])
 w('fl_add', ['# Zones chargées pendant la partie'] + [f'forceload add {PX(c) - 18} {PZ(b) - 18} {PX(c) + 18} {PZ(b) + 18}' for c in range(NMAX) for b in range(2)]
   )
 w('fl_remove', ['# Fin de partie : zones libérées'] + [f'forceload remove {PX(c) - 18} {PZ(b) - 18} {PX(c) + 18} {PZ(b) + 18}' for c in range(NMAX) for b in range(2)]
@@ -89,7 +107,7 @@ w('assign', [f'execute if score $tk mg.st matches ..{NMAX - 1} run scoreboard pl
              f'execute if score $tk mg.st matches {NMAX}.. run scoreboard players set @s mg.ti -1',
              'scoreboard players add $tk mg.st 1'])
 w('init_ch', ['execute if score $tk mg.st >= $tn mg.st run return 0',
-              'data modify storage mg:tel ch append value {s0:"",s2:"",s4:""}', 'scoreboard players add $tk mg.st 1', 'function mg:tel/init_ch'])
+              'data modify storage mg:tel ch append value {s0:"",s2:"",s4:"",v1:0,v3:0}', 'scoreboard players add $tk mg.st 1', 'function mg:tel/init_ch'])
 w('go', ['# Départ : étape 0 (écrire le mot)', 'scoreboard objectives setdisplay sidebar', 'function mg:tel/phase_start'])
 
 # ------------------------------------------------------------------ étapes
@@ -104,6 +122,7 @@ w('phase_start', [
     f'execute if score $tp mg.st matches 2 run scoreboard players set $tlim mg.st {T_GUESS}',
     f'execute if score $tp mg.st matches 3 run scoreboard players set $tlim mg.st {T_BUILD}',
     f'execute if score $tp mg.st matches 4 run scoreboard players set $tlim mg.st {T_GUESS}',
+    f'effect give {P} minecraft:night_vision infinite 0 true',
     f'execute if score $tp mg.st matches 0 as {P} run function mg:tel/start_write',
     f'execute if score $tp mg.st matches 1 as {P} run function mg:tel/start_build',
     f'execute if score $tp mg.st matches 3 as {P} run function mg:tel/start_build',
@@ -127,7 +146,7 @@ w('start_write', ['# @s : écrire un mot', 'function mg:tel/chain_of',
                   'title @s title {"text":"📞 Écris un mot","color":"gold","bold":true}',
                   'title @s subtitle {"text":"Livre : 1re page, « Terminé », puis Valider","color":"gray"}',
                   'tellraw @s ' + js([{'text': '\n📞 Écris un mot ou une petite expression ', 'color': 'gold', 'bold': True},
-                                      {'text': '(sur la 1re page du livre, puis « Terminé ») : un autre joueur devra le construire. 60 s.', 'color': 'gray'}]),
+                                      {'text': '(sur la 1re page du livre, puis « Terminé ») : un autre joueur devra le construire. ' + str(T_WRITE // 20) + ' s.', 'color': 'gray'}]),
                   'tellraw @s ' + VALID])
 w('start_build', ['# @s : construire (mot ou devinette précédente de sa chaîne)',
                   'function mg:tel/chain_of', 'function mg:tel/start_build_m with storage mg:tel p'])
@@ -143,6 +162,7 @@ w('start_guess_m', ['$tp @s $(x).5 65 $(vz).5 0 20', 'gamemode adventure @s', f'
                     'title @s subtitle {"text":"Fais le tour, écris ta réponse dans le livre, puis Valider","color":"gray"}',
                     'tellraw @s ' + js([{'text': '\n🔍 Devine ce que représente cette construction ', 'color': 'aqua', 'bold': True},
                                         {'text': '(1re page du livre, puis « Terminé »). 60 s.', 'color': 'gray'}]),
+                    'tellraw @s ' + VOTE,
                     'tellraw @s ' + VALID])
 
 # validation (trigger mg.tel)
@@ -150,6 +170,7 @@ w('cast', ['# @s a utilisé /trigger mg.tel (1 = valider le livre)',
            'execute unless score $state mg.st matches 2 run return run scoreboard players reset @s mg.tel',
            f'execute unless score $game mg.st matches {GID} run return run scoreboard players reset @s mg.tel',
            'execute unless score @s mg.ti matches 0.. run return run scoreboard players reset @s mg.tel',
+           'execute if score @s mg.tel matches 11..15 run return run function mg:tel/rate',
            'execute unless score $tp mg.st matches 0 unless score $tp mg.st matches 2 unless score $tp mg.st matches 4 run return run scoreboard players reset @s mg.tel',
            'execute if entity @s[tag=mg.tdone] run tellraw @s {"text":"✔ Déjà validé (tu peux encore corriger : réécris puis valide à nouveau).","color":"gray"}',
            'function mg:tel/read_book',
@@ -169,6 +190,18 @@ w('read_book', ['# @s : lit la 1re page de son livre → ch[mg.tc].s<étape>',
                 'tag @s add mg.tdone',
                 'tellraw @s [{"text":"✔ Enregistré : ","color":"green"},{"nbt":"tmp","storage":"mg:tel","color":"white"},{"text":" — en attente des autres…","color":"gray"}]',
                 'execute at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 1.2'])
+w('rate', ['# @s note (1 à 5 ★) la construction qu\'il devine → ch[mg.tc].v1 (étape 2) / v3 (étape 4)',
+           'execute unless score $tp mg.st matches 2 unless score $tp mg.st matches 4 run return run scoreboard players reset @s mg.tel',
+           'scoreboard players remove @s mg.tel 10',
+           'execute store result storage mg:tel p.c int 1 run scoreboard players get @s mg.tc',
+           'execute store result storage mg:tel p.v int 1 run scoreboard players get @s mg.tel',
+           'execute if score $tp mg.st matches 2 run data modify storage mg:tel p.k set value "v1"',
+           'execute if score $tp mg.st matches 4 run data modify storage mg:tel p.k set value "v3"',
+           'function mg:tel/rate_m with storage mg:tel p',
+           'title @s actionbar [{"text":"★ Note enregistrée : ","color":"gold"},{"score":{"name":"@s","objective":"mg.tel"},"color":"yellow","bold":true},{"text":"/5 (modifiable)","color":"gray"}]',
+           'execute at @s run playsound minecraft:ui.button.click master @s ~ ~ ~ 1 1.5',
+           'scoreboard players reset @s mg.tel'])
+w('rate_m', ['$data modify storage mg:tel ch[$(c)].$(k) set value $(v)'])
 w('store', ['$data modify storage mg:tel ch[$(c)].$(k) set from storage mg:tel tmp'])
 
 # fin d'étape : réponses manquantes
@@ -229,7 +262,7 @@ w('hud', ['# Barre d\'action : étape + temps restant',
 # ------------------------------------------------------------------ révélation
 V = '@a[tag=!mg.surv]'
 w('reveal_start', ['# Révélation : chaîne par chaîne (mot → construction → devinette → construction → devinette)',
-                   f'clear @a[tag=mg.play]', f'gamemode spectator @a[tag=mg.play]',
+                   f'clear @a[tag=mg.play]', f'gamemode spectator @a[tag=mg.play]', 'function mg:tel/unboxes',
                    'scoreboard objectives setdisplay sidebar mg.tpt',
                    'scoreboard players set $rc mg.st 0', 'scoreboard players set $rs mg.st -1', 'scoreboard players set $tt mg.st 0',
                    'scoreboard players set $tlim mg.st 1',
@@ -265,6 +298,7 @@ w('reveal_show', [
     '$execute if score $rs mg.st matches 0 run title @a[tag=!mg.surv] title [{"text":"« ","color":"gold"},{"nbt":"ch[$(c)].s0","storage":"mg:tel","color":"white","bold":true},{"text":" »","color":"gold"}]',
     '$execute if score $rs mg.st matches 1 run tp @a[tag=!mg.surv,tag=mg.play] $(x).5 74 19480.5 0 30',
     '$execute if score $rs mg.st matches 1 run tellraw @a[tag=!mg.surv] [{"text":"  ✎ construit par ","color":"gray"},' + SEL('a') + ']',
+    '$execute if score $rs mg.st matches 1 run function mg:tel/stars {c:$(c),a:$(a),b:$(b),k:"v1"}',
     '$execute if score $rs mg.st matches 1 run title @a[tag=!mg.surv] subtitle [{"text":"✎ construit par ","color":"gray"},' + SEL('a') + ']',
     'execute if score $rs mg.st matches 1 run title @a[tag=!mg.surv] title {"text":""}',
     '$execute if score $rs mg.st matches 2 run tellraw @a[tag=!mg.surv] [{"text":"  🔍 ","color":"gray"},' + SEL('a') + ',{"text":" a deviné : ","color":"gray"},{"nbt":"ch[$(c)].s2","storage":"mg:tel","color":"white","bold":true}]',
@@ -272,32 +306,40 @@ w('reveal_show', [
     '$execute if score $rs mg.st matches 2 run function mg:tel/check {c:$(c),a:$(a),b:$(b),k:"s2"}',
     '$execute if score $rs mg.st matches 3 run tp @a[tag=!mg.surv,tag=mg.play] $(x).5 74 19544.5 0 30',
     '$execute if score $rs mg.st matches 3 run tellraw @a[tag=!mg.surv] [{"text":"  ✎ construit par ","color":"gray"},' + SEL('a') + ']',
+    '$execute if score $rs mg.st matches 3 run function mg:tel/stars {c:$(c),a:$(a),b:$(b),k:"v3"}',
     '$execute if score $rs mg.st matches 3 run title @a[tag=!mg.surv] subtitle [{"text":"✎ construit par ","color":"gray"},' + SEL('a') + ']',
     'execute if score $rs mg.st matches 3 run title @a[tag=!mg.surv] title {"text":""}',
     '$execute if score $rs mg.st matches 4 run tellraw @a[tag=!mg.surv] [{"text":"  🔍 ","color":"gray"},' + SEL('a') + ',{"text":" a deviné : ","color":"gray"},{"nbt":"ch[$(c)].s4","storage":"mg:tel","color":"white","bold":true}]',
     '$execute if score $rs mg.st matches 4 run title @a[tag=!mg.surv] title [{"text":"« ","color":"aqua"},{"nbt":"ch[$(c)].s4","storage":"mg:tel","color":"white","bold":true},{"text":" »","color":"aqua"}]',
     '$execute if score $rs mg.st matches 4 run function mg:tel/check {c:$(c),a:$(a),b:$(b),k:"s4"}',
     'execute as @a[tag=!mg.surv] at @s run playsound minecraft:block.note_block.chime master @s ~ ~ ~ 1 1'])
-w('check', ['# Macro : la devinette $(k) de la chaîne $(c) est-elle le mot de départ ? +1 au devineur (a) et au constructeur (b)',
+ST = {n: '★' * n + '☆' * (5 - n) for n in range(1, 6)}
+w('stars', ['# Macro : note $(k) de la construction de la chaîne $(c) (constructeur a) → points au constructeur',
+            '$execute store result score $tsv mg.st run data get storage mg:tel ch[$(c)].$(k)',
+            'execute unless score $tsv mg.st matches 1..5 run return run tellraw @a[tag=!mg.surv] {"text":"     (pas de note)","color":"dark_gray"}',
+            '$scoreboard players operation @a[scores={mg.ti=$(a)}] mg.tpt += $tsv mg.st'] +
+  [f'execute if score $tsv mg.st matches {n} run tellraw @a[tag=!mg.surv] [{{"text":"     {ST[n]}","color":"gold"}},{{"text":"  +{n} point(s) au constructeur","color":"gray"}}]' for n in range(1, 6)])
+w('check', [f'# Macro : la devinette $(k) de la chaîne $(c) est-elle le mot de départ ? +{MATCH} au devineur (a) et au constructeur (b)',
             '$data modify storage mg:tel cmp set from storage mg:tel ch[$(c)].s0',
             '$execute store success score $tneq mg.st run data modify storage mg:tel cmp set from storage mg:tel ch[$(c)].$(k)',
             'execute if score $tneq mg.st matches 1 run return run tellraw @a[tag=!mg.surv] {"text":"     ✘ ce n\'est plus le mot de départ…","color":"red"}',
-            '$scoreboard players add @a[scores={mg.ti=$(a)}] mg.tpt 1',
-            '$scoreboard players add @a[scores={mg.ti=$(b)}] mg.tpt 1',
-            'tellraw @a[tag=!mg.surv] {"text":"     ✔ C\'EST LE MOT DE DÉPART ! +1 au devineur et au constructeur","color":"green","bold":true}',
+            f'$scoreboard players add @a[scores={{mg.ti=$(a)}}] mg.tpt {MATCH}',
+            f'$scoreboard players add @a[scores={{mg.ti=$(b)}}] mg.tpt {MATCH}',
+            'tellraw @a[tag=!mg.surv] {"text":"     ✔ C\'EST LE MOT DE DÉPART ! +' + str(MATCH) + ' au devineur et au constructeur","color":"green","bold":true}',
             'execute as @a[tag=!mg.surv] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.2'])
 w('finish', ['# Fin : le plus de points gagne (égalité ou 0 point = pas de vainqueur)',
-             'tp @a[tag=mg.play] 0.5 64 19420.5', 'gamemode adventure @a[tag=mg.play]',
+             'tp @a[tag=mg.play] 0.5 64 19420.5', 'gamemode adventure @a[tag=mg.play]', 'effect clear @a[tag=mg.play] minecraft:night_vision',
              'scoreboard players set $tmax mg.st 0', 'scoreboard players operation $tmax mg.st > @a[tag=mg.play] mg.tpt',
-             'execute if score $tmax mg.st matches 0 run tellraw @a[tag=!mg.surv] {"text":"📞 Aucun mot n\'a survécu jusqu\'au bout : pas de vainqueur !","color":"gold"}',
+             'execute if score $tmax mg.st matches 0 run tellraw @a[tag=!mg.surv] {"text":"📞 Personne n\'a marqué de point : pas de vainqueur !","color":"gold"}',
              'execute if score $tmax mg.st matches 0 run return run function mg:core/draw',
              'scoreboard players set $twn mg.st 0',
              'execute as @a[tag=mg.play] if score @s mg.tpt = $tmax mg.st run scoreboard players add $twn mg.st 1',
              'execute if score $twn mg.st matches 2.. run tellraw @a[tag=!mg.surv] {"text":"📞 Égalité en tête : pas de vainqueur unique !","color":"gold"}',
              'execute if score $twn mg.st matches 2.. run return run function mg:core/draw',
              'execute as @a[tag=mg.play] if score @s mg.tpt = $tmax mg.st run function mg:core/win_player'])
-w('cleanup', ['# Fin de partie Téléphone', 'function mg:tel/fl_remove', 'tag @a remove mg.tdone', 'scoreboard players reset @a mg.ti',
-              'scoreboard players reset @a mg.tc', 'scoreboard players reset @a mg.tpt', 'clear @a minecraft:writable_book', 'data remove storage mg:tel ch'])
+w('cleanup', ['# Fin de partie Téléphone', 'function mg:tel/unboxes', 'function mg:tel/fl_remove', 'tag @a remove mg.tdone', 'scoreboard players reset @a mg.ti',
+              'scoreboard players reset @a mg.tc', 'scoreboard players reset @a mg.tpt', 'clear @a minecraft:writable_book', 'data remove storage mg:tel ch',
+              'effect clear @a[tag=mg.play] minecraft:night_vision'])
 
 
 # ------------------------------------------------------------------ crochets
