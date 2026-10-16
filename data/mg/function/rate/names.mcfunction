@@ -42,6 +42,8 @@ execute if data storage mg:rate key{f:"slimejump"} run data modify storage mg:ra
 execute if data storage mg:rate key{f:"lab"} run data modify storage mg:rate cur.g set value '🙈 Labyrinthe aveugle'
 execute if data storage mg:rate key{f:"master"} run data modify storage mg:rate cur.g set value '👑 Master dit'
 execute if data storage mg:rate key{f:"murder"} run data modify storage mg:rate cur.g set value '🔪 Murder Mystery'
+execute if data storage mg:rate key{f:"bman"} run data modify storage mg:rate cur.g set value '💣 Bomberman'
+execute if data storage mg:rate key{f:"maze"} run data modify storage mg:rate cur.g set value '🌀 Labyrinthe géant'
 execute if data storage mg:rate key{m:1} run data modify storage mg:rate cur.m set value 'Tour de neige'
 execute if data storage mg:rate key{m:2} run data modify storage mg:rate cur.m set value 'Tour de laine'
 execute if data storage mg:rate key{m:3} run data modify storage mg:rate cur.m set value 'Arène classique'

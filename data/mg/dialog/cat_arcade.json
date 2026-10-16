@@ -349,6 +349,84 @@
     {
       "label": [
         {
+          "text": "💣 💣 Bomberman ",
+          "color": "red"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Pose des bombes, casse les briques, ramasse les bonus : dernier debout gagne (2 à 8)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 239"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "💣 💣 Bomberman — équipes ",
+          "color": "red"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Rouges contre bleus : la dernière équipe debout gagne",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 240"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🌀 🌀 Labyrinthe géant ",
+          "color": "light_purple"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Course dans un labyrinthe de 100 × 100 : bonus, pièges, grilles, téléporteurs",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 241"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🎾 Wii Sports ▸",
           "color": "aqua"
         }

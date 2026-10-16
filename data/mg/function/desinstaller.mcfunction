@@ -33,6 +33,22 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+schedule clear mg:maze/build
+scoreboard objectives remove mg.jid
+scoreboard objectives remove mg.jc
+scoreboard objectives remove mg.je
+scoreboard objectives remove mg.jk
+scoreboard objectives remove mg.jt
+scoreboard objectives remove mg.jp
+scoreboard objectives remove mg.yid
+scoreboard objectives remove mg.yn
+scoreboard objectives remove mg.yr
+scoreboard objectives remove mg.yv
+scoreboard objectives remove mg.yu
+scoreboard objectives remove mg.yh
+scoreboard objectives remove mg.ym
+scoreboard objectives remove mg.yo
+scoreboard objectives remove mg.yt
 schedule clear mg:zmode7/prepare_b
 forceload remove -36 40164 54 40236
 schedule clear mg:zmode6/prepare_b

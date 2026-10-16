@@ -56,6 +56,8 @@ GAMES = [  # clé, libellé, couleur, plages de $game
     ('lab', '🙈 Labyrinthe aveugle', 'light_purple', [(225, 225)]),
     ('master', '👑 Master dit', 'gold', [(226, 226)]),
     ('murder', '🔪 Murder Mystery', 'red', [(227, 227)]),
+    ('bman', '💣 Bomberman', 'red', [(239, 240)]),
+    ('maze', '🌀 Labyrinthe géant', 'light_purple', [(241, 241)]),
 ]
 X0, X1, Z0, Z1 = -24, -6, 11, 25           # emprise du hall (sol y 63), ouvert au nord, juste au sud-ouest de la place
 OLD_Z0, OLD_Z1 = 21, 35                    # ancien emplacement (v8 et avant), nettoyé une fois
@@ -189,15 +191,16 @@ plaques.append((-12.5, 69.9, PZ + 0.5, 'elyg', '🪽 Record Élytra : course', '
 plaques.append((-15.5, 73.9, Z1 - 0.7, 'gen', '🏅 Meilleur niveau général', 'aqua', 1.5))   # juste au-dessus du tableau
 for x, k, l, c, it in peds:
     b.append(f'summon minecraft:item_display {x} 65.8 {PZ}.5 {{Tags:["mg.hall","mg.lspin","mg.lbob"],billboard:"fixed",item:{{id:"minecraft:{it}"}},{TR % (0.9, 0.9, 0.9)}}}')
-xs = [-22.5 + 3.0 * i for i in range(6)]   # 6 colonnes × 6 rangées sur le mur du fond (36 plaques), texte plus grand
+xs = [-22.75 + 2.5 * i for i in range(7)]   # 7 colonnes × 7 rangées sur le mur du fond (49 plaques)
+GS = 1.0                                    # taille du texte des plaques de jeux
 ys = [72.6, 71.3, 70.0, 68.7, 67.4, 66.1, 64.8]   # 7 rangées (42 places)   # plus bas (à hauteur des yeux) et texte plus grand
 assert len(GAMES) <= len(xs) * len(ys), 'agrandir la grille de plaques'
 for i, (k, l, c, _) in enumerate(GAMES):
-    plaques.append((xs[i % 6], ys[i // 6], Z1 - 0.8, k, l, c, 1.125))
+    plaques.append((xs[i % 7], ys[i // 7], Z1 - 0.8, k, l, c, GS))
 b.append('')
 b.append('# Plaques : texte par défaut, puis meneur enregistré s\'il existe')
 for x, y, z, k, l, c, s in plaques:
-    lw = 200 if k == 'gen' else int(2.8 / (0.025 * s))   # retour à la ligne : pas de chevauchement avec la plaque voisine (3 blocs)
+    lw = 200 if k == 'gen' else int((2.3 if s == GS else 2.8) / (0.025 * s))   # retour à la ligne : pas de chevauchement avec la plaque voisine
     b.append(f'summon minecraft:text_display {x} {y} {z} {{Tags:["mg.hall","mg.h_{k}"],billboard:"vertical",line_width:{lw},text:[{{"text":"{q(l)}","color":"{c}","bold":true}},{{"text":"\\n— personne —","color":"dark_gray","bold":false}}],{TR % (s, s, s)}}}')
     b.append(f'execute if data storage mg:hall e.{k} run data modify entity @e[type=minecraft:text_display,tag=mg.h_{k},limit=1] text set from storage mg:hall e.{k}')
 # Version du hall : core/load reconstruit le hall (une fois) sur les mondes dont les plaques sont plus anciennes (nouveau jeu ajouté)

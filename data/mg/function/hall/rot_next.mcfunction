@@ -1,8 +1,8 @@
 # Tableau suivant ayant au moins un score (sinon victoires)
 scoreboard players add $rot mg.st 1
-execute unless score $rot mg.st matches 1..47 run scoreboard players set $rot mg.st 1
+execute unless score $rot mg.st matches 1..49 run scoreboard players set $rot mg.st 1
 scoreboard players add $rtry mg.st 1
-execute if score $rtry mg.st matches 48.. run return run scoreboard objectives setdisplay sidebar mg.wins
+execute if score $rtry mg.st matches 50.. run return run scoreboard objectives setdisplay sidebar mg.wins
 execute if score $rot mg.st matches 1 if score #any mg.lvl matches 1.. run return run scoreboard objectives setdisplay sidebar mg.lvl
 execute if score $rot mg.st matches 2 if score #any mg.wins matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wins
 execute if score $rot mg.st matches 3 if score #any mg.stp matches 1.. run return run scoreboard objectives setdisplay sidebar mg.stp
@@ -50,4 +50,6 @@ execute if score $rot mg.st matches 44 if score #any mg.wg_slimejump matches 1..
 execute if score $rot mg.st matches 45 if score #any mg.wg_lab matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_lab
 execute if score $rot mg.st matches 46 if score #any mg.wg_master matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_master
 execute if score $rot mg.st matches 47 if score #any mg.wg_murder matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_murder
+execute if score $rot mg.st matches 48 if score #any mg.wg_bman matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_bman
+execute if score $rot mg.st matches 49 if score #any mg.wg_maze matches 1.. run return run scoreboard objectives setdisplay sidebar mg.wg_maze
 function mg:hall/rot_next

@@ -282,6 +282,9 @@ execute if score $game mg.st matches 235 run tellraw @a [{"selector":"@s","color
 execute if score $game mg.st matches 236 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧪 INFECTION — Hôpital","color":"dark_green","bold":true},{"text":" : survivants armés contre zombies contagieux, 3 min !","color":"gray"}]
 execute if score $game mg.st matches 237 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧟 ZOMBIES — Mine","color":"dark_green","bold":true},{"text":" : survivez à 20 manches dans le bunker !","color":"gray"}]
 execute if score $game mg.st matches 238 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧪 INFECTION — Mine","color":"dark_green","bold":true},{"text":" : survivants armés contre zombies contagieux, 3 min !","color":"gray"}]
+execute if score $game mg.st matches 239 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"💣 BOMBERMAN","color":"red","bold":true},{"text":" : pose des bombes, casse les briques, dernier debout gagne !","color":"gray"}]
+execute if score $game mg.st matches 240 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"💣 BOMBERMAN — ÉQUIPES","color":"red","bold":true},{"text":" : rouges contre bleus, la dernière équipe debout gagne !","color":"gray"}]
+execute if score $game mg.st matches 241 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🌀 LABYRINTHE GÉANT","color":"light_purple","bold":true},{"text":" : le premier à traverser le labyrinthe géant gagne !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 83 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"📞 TÉLÉPHONE","color":"gold","bold":true},{"text":" : mot → construction → devinette → construction → devinette !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
@@ -328,6 +331,8 @@ execute if score $game mg.st matches 31 run function mg:quake/prepare
 execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
+execute if score $game mg.st matches 241 run function mg:maze/prepare
+execute if score $game mg.st matches 239..240 run function mg:bman/prepare
 execute if score $game mg.st matches 237..238 run function mg:zmode7/prepare
 execute if score $game mg.st matches 235..236 run function mg:zmode6/prepare
 execute if score $game mg.st matches 231..232 run function mg:zmode5/prepare

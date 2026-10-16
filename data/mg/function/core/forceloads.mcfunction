@@ -110,6 +110,10 @@ forceload add -35 7 -15 27
 # Quake vertical (Spirale z 16100, Chantier z 16400)
 forceload add -16 16084 16 16116
 forceload add -15 16385 15 16415
+# Bomberman (z 40700)
+forceload add -12 40689 12 40711
+# Labyrinthe géant : sas de départ (z 41100)
+forceload add -58 41095 -51 41104
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl
