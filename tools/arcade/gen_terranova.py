@@ -273,7 +273,8 @@ for x in range(-8, 9):
         if x * x + z * z <= 56:
             setb(x, G, z, 'polished_andesite' if (x + z) % 2 else 'andesite')
 fill(-1, G, -1, 1, G, 1, 'chiseled_stone_bricks')
-fill(-WALL + 1, G + 1, -WALL + 1, WALL - 1, G + 12, WALL - 1, 'air')
+for _y in range(G + 1, G + 13):
+    fill(-WALL + 1, _y, -WALL + 1, WALL - 1, _y, WALL - 1, 'air')
 # palissade
 for (a, b, c, d) in [(-WALL, -WALL, WALL, -WALL), (-WALL, WALL, WALL, WALL), (-WALL, -WALL, -WALL, WALL), (WALL, -WALL, WALL, WALL)]:
     fill(a, G - 2, b, c, G + 6, d, 'spruce_log')

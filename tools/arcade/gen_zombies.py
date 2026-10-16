@@ -85,7 +85,8 @@ if LY:
     # plan : tout plein, puis les salles creusées (murs d'un bloc entre salles voisines)
     L[0] = f'# 🧟 {NAME} (Zombies / Infection) — ' + ', '.join(LY['names'].values()) + ' — sol y 80, toit y 86'
     L += [f'fill {AX1 + 1} 79 {AZ1 + 1} {AX2 - 1} 79 {AZ2 - 1} minecraft:stone',
-          f'fill {AX1 + 1} 80 {AZ1 + 1} {AX2 - 1} 85 {AZ2 - 1} minecraft:{LY["wall"]}',
+          # une couche par fill (limite de 32 768 blocs par commande)
+          *[f'fill {AX1 + 1} {y} {AZ1 + 1} {AX2 - 1} {y} {AZ2 - 1} minecraft:{LY["wall"]}' for y in range(80, 86)],
           f'fill {AX1 + 1} 81 {AZ1 + 1} {AX2 - 1} 81 {AZ2 - 1} minecraft:{LY["band"]}',
           f'fill {AX1 + 1} 86 {AZ1 + 1} {AX2 - 1} 86 {AZ2 - 1} minecraft:{LY["roof"]}']
     for r, (x1, x2, z1, z2) in ROOMS.items():
