@@ -40,12 +40,12 @@ def pending_msg():
 def lists(w):
     w('duel/list', [
         '# Liste cliquable des adversaires libres (@s = joueur) : lien = trigger mg.duel 1000 + id',
-        say('@s', tx('— Duel sniper 1v1 : clique sur un adversaire —', 'gold')),
         'function mg:duel/busy',
         'execute if score $dlb mg.st matches 1 run return run ' + say('@s', tx('Tu ne peux pas défier maintenant (partie ou activité en cours).')),
         'execute if entity @s[tag=mg.dlrq] run return run ' + say('@s', tx('Tu as déjà une invitation en cours : '), btn('[Annuler]', 'red', 4, 'Annuler l\'invitation')),
         'execute if score @s mg.dlto matches 1.. run return run ' + pending_msg(),
         'execute unless data storage mg:duel {built:1b} run return run ' + say('@s', tx('Les arènes sont en construction, réessaie dans quelques minutes.')),
+        say('@s', tx('— Duel sniper 1v1 : clique sur un adversaire —', 'gold')),
         'scoreboard players set $dlc mg.st 0',
         'tag @s add mg.dlq',
         'execute as @a[tag=!mg.dlq,tag=mg.init] run function mg:duel/list_one',

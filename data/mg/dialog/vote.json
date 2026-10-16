@@ -366,6 +366,24 @@
     {
       "label": [
         {
+          "text": "⚔ Défier en duel",
+          "color": "red"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Sniper 1v1 : tête = élimination, corps = 2 touches, premier à 3 manches",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.duel set 1"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "⌂ Aller sur mon plot",
           "color": "green"
         }
