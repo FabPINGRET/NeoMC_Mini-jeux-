@@ -1,4 +1,10 @@
-# 🚩 Capture the Flag — prairie x −42..42, z 21578..21622 ; bases aux deux bouts
+# 🚩 Capture the Flag — Prairie : x −42..42, z 21578..21622 ; bases aux deux bouts, ravin central (3 ponts),
+# tours de guet, tunnels sur les côtés
+fill -44 73 21576 44 73 21624 minecraft:air
+fill -44 74 21576 44 74 21624 minecraft:air
+fill -44 75 21576 44 75 21624 minecraft:air
+fill -44 76 21576 44 76 21624 minecraft:air
+fill -44 77 21576 44 77 21624 minecraft:air
 fill -44 78 21576 44 78 21624 minecraft:air
 fill -44 79 21576 44 79 21624 minecraft:air
 fill -44 80 21576 44 80 21624 minecraft:air
@@ -22,8 +28,18 @@ fill -44 97 21576 44 97 21624 minecraft:air
 fill -44 98 21576 44 98 21624 minecraft:air
 fill -44 99 21576 44 99 21624 minecraft:air
 fill -44 100 21576 44 100 21624 minecraft:air
+fill -42 73 21578 42 73 21622 minecraft:stone
+fill -42 74 21578 42 74 21622 minecraft:stone
+fill -42 75 21578 42 75 21622 minecraft:stone
+fill -42 76 21578 42 76 21622 minecraft:stone
+fill -42 77 21578 42 77 21622 minecraft:stone
 fill -42 78 21578 42 79 21622 minecraft:dirt
-fill -42 80 21578 42 80 21622 minecraft:grass_block
+fill -42 80 21578 -1 80 21622 minecraft:grass_block
+fill 0 80 21578 42 80 21622 minecraft:grass_block
+fill -27 80 21594 -7 80 21594 minecraft:dirt_path
+fill -27 80 21606 -7 80 21606 minecraft:dirt_path
+fill 7 80 21594 27 80 21594 minecraft:dirt_path
+fill 7 80 21606 27 80 21606 minecraft:dirt_path
 fill -42 80 21592 -28 80 21608 minecraft:red_terracotta
 fill -42 81 21592 -28 83 21608 minecraft:stone_bricks hollow
 fill -41 81 21593 -29 83 21607 minecraft:air
@@ -36,6 +52,55 @@ setblock -35 81 21600 minecraft:red_glazed_terracotta
 fill -36 80 21599 -34 80 21601 minecraft:gold_block
 setblock -40 81 21595 minecraft:lantern
 setblock -40 81 21605 minecraft:lantern
+fill -20 81 21598 -16 87 21602 minecraft:stone_bricks
+fill -19 81 21599 -17 86 21601 minecraft:air
+fill -20 81 21600 -20 82 21600 minecraft:air
+fill -17 81 21600 -17 87 21600 minecraft:ladder[facing=west]
+fill -20 88 21598 -16 88 21602 minecraft:stone_brick_wall
+fill -19 88 21599 -17 88 21601 minecraft:air
+setblock -18 88 21600 minecraft:lantern
+fill -30 75 21580 -10 75 21581 minecraft:stone_bricks
+fill -26 76 21580 -14 77 21581 minecraft:air
+fill -30 80 21580 -30 81 21581 minecraft:air
+fill -30 79 21580 -30 79 21581 minecraft:stone_brick_stairs[facing=west]
+fill -29 79 21580 -29 81 21581 minecraft:air
+fill -29 78 21580 -29 78 21581 minecraft:stone_brick_stairs[facing=west]
+fill -28 78 21580 -28 81 21581 minecraft:air
+fill -28 77 21580 -28 77 21581 minecraft:stone_brick_stairs[facing=west]
+fill -27 77 21580 -27 81 21581 minecraft:air
+fill -27 76 21580 -27 76 21581 minecraft:stone_brick_stairs[facing=west]
+fill -26 76 21580 -26 77 21581 minecraft:air
+fill -10 80 21580 -10 81 21581 minecraft:air
+fill -10 79 21580 -10 79 21581 minecraft:stone_brick_stairs[facing=east]
+fill -11 79 21580 -11 81 21581 minecraft:air
+fill -11 78 21580 -11 78 21581 minecraft:stone_brick_stairs[facing=east]
+fill -12 78 21580 -12 81 21581 minecraft:air
+fill -12 77 21580 -12 77 21581 minecraft:stone_brick_stairs[facing=east]
+fill -13 77 21580 -13 81 21581 minecraft:air
+fill -13 76 21580 -13 76 21581 minecraft:stone_brick_stairs[facing=east]
+fill -14 76 21580 -14 77 21581 minecraft:air
+setblock -20 78 21580 minecraft:glowstone
+fill -30 75 21619 -10 75 21620 minecraft:stone_bricks
+fill -26 76 21619 -14 77 21620 minecraft:air
+fill -30 80 21619 -30 81 21620 minecraft:air
+fill -30 79 21619 -30 79 21620 minecraft:stone_brick_stairs[facing=west]
+fill -29 79 21619 -29 81 21620 minecraft:air
+fill -29 78 21619 -29 78 21620 minecraft:stone_brick_stairs[facing=west]
+fill -28 78 21619 -28 81 21620 minecraft:air
+fill -28 77 21619 -28 77 21620 minecraft:stone_brick_stairs[facing=west]
+fill -27 77 21619 -27 81 21620 minecraft:air
+fill -27 76 21619 -27 76 21620 minecraft:stone_brick_stairs[facing=west]
+fill -26 76 21619 -26 77 21620 minecraft:air
+fill -10 80 21619 -10 81 21620 minecraft:air
+fill -10 79 21619 -10 79 21620 minecraft:stone_brick_stairs[facing=east]
+fill -11 79 21619 -11 81 21620 minecraft:air
+fill -11 78 21619 -11 78 21620 minecraft:stone_brick_stairs[facing=east]
+fill -12 78 21619 -12 81 21620 minecraft:air
+fill -12 77 21619 -12 77 21620 minecraft:stone_brick_stairs[facing=east]
+fill -13 77 21619 -13 81 21620 minecraft:air
+fill -13 76 21619 -13 76 21620 minecraft:stone_brick_stairs[facing=east]
+fill -14 76 21619 -14 77 21620 minecraft:air
+setblock -20 78 21619 minecraft:glowstone
 fill 28 80 21592 42 80 21608 minecraft:blue_terracotta
 fill 28 81 21592 42 83 21608 minecraft:stone_bricks hollow
 fill 29 81 21593 41 83 21607 minecraft:air
@@ -48,33 +113,113 @@ setblock 35 81 21600 minecraft:blue_glazed_terracotta
 fill 34 80 21599 36 80 21601 minecraft:gold_block
 setblock 40 81 21595 minecraft:lantern
 setblock 40 81 21605 minecraft:lantern
-fill -3 81 21597 3 81 21603 minecraft:moss_block
-fill -2 82 21598 2 82 21602 minecraft:moss_block
-fill -1 83 21599 1 83 21601 minecraft:mossy_cobblestone
-fill -20 81 21588 -16 82 21588 minecraft:cobblestone_wall
-fill 16 81 21612 20 82 21612 minecraft:cobblestone_wall
-fill -20 81 21612 -16 82 21612 minecraft:cobblestone_wall
-fill 16 81 21588 20 82 21588 minecraft:cobblestone_wall
-fill -12 81 21600 -8 82 21600 minecraft:cobblestone_wall
-fill 8 81 21600 12 82 21600 minecraft:cobblestone_wall
-fill -2 81 21585 2 82 21585 minecraft:cobblestone_wall
-fill -2 81 21615 2 82 21615 minecraft:cobblestone_wall
-fill -22 81 21603 -21 82 21604 minecraft:hay_block
-fill 22 81 21597 23 82 21598 minecraft:hay_block
-fill -6 81 21591 -5 82 21592 minecraft:hay_block
-fill 6 81 21609 7 82 21610 minecraft:hay_block
-fill -26 81 21584 -25 82 21585 minecraft:hay_block
-fill 26 81 21616 27 82 21617 minecraft:hay_block
-fill -14 81 21581 -14 85 21581 minecraft:oak_log
-fill -16 85 21579 -12 87 21583 minecraft:oak_leaves[persistent=true] replace minecraft:air
-fill 14 81 21619 14 85 21619 minecraft:oak_log
-fill 12 85 21617 16 87 21621 minecraft:oak_leaves[persistent=true] replace minecraft:air
-fill -30 81 21618 -30 85 21618 minecraft:oak_log
-fill -32 85 21616 -28 87 21620 minecraft:oak_leaves[persistent=true] replace minecraft:air
-fill 30 81 21582 30 85 21582 minecraft:oak_log
-fill 28 85 21580 32 87 21584 minecraft:oak_leaves[persistent=true] replace minecraft:air
-fill -43 78 21577 43 100 21577 minecraft:barrier
-fill -43 78 21623 43 100 21623 minecraft:barrier
-fill -43 78 21578 -43 100 21622 minecraft:barrier
-fill 43 78 21578 43 100 21622 minecraft:barrier
+fill 16 81 21598 20 87 21602 minecraft:stone_bricks
+fill 17 81 21599 19 86 21601 minecraft:air
+fill 20 81 21600 20 82 21600 minecraft:air
+fill 17 81 21600 17 87 21600 minecraft:ladder[facing=east]
+fill 16 88 21598 20 88 21602 minecraft:stone_brick_wall
+fill 17 88 21599 19 88 21601 minecraft:air
+setblock 18 88 21600 minecraft:lantern
+fill 10 75 21580 30 75 21581 minecraft:stone_bricks
+fill 14 76 21580 26 77 21581 minecraft:air
+fill 30 80 21580 30 81 21581 minecraft:air
+fill 30 79 21580 30 79 21581 minecraft:stone_brick_stairs[facing=east]
+fill 29 79 21580 29 81 21581 minecraft:air
+fill 29 78 21580 29 78 21581 minecraft:stone_brick_stairs[facing=east]
+fill 28 78 21580 28 81 21581 minecraft:air
+fill 28 77 21580 28 77 21581 minecraft:stone_brick_stairs[facing=east]
+fill 27 77 21580 27 81 21581 minecraft:air
+fill 27 76 21580 27 76 21581 minecraft:stone_brick_stairs[facing=east]
+fill 26 76 21580 26 77 21581 minecraft:air
+fill 10 80 21580 10 81 21581 minecraft:air
+fill 10 79 21580 10 79 21581 minecraft:stone_brick_stairs[facing=west]
+fill 11 79 21580 11 81 21581 minecraft:air
+fill 11 78 21580 11 78 21581 minecraft:stone_brick_stairs[facing=west]
+fill 12 78 21580 12 81 21581 minecraft:air
+fill 12 77 21580 12 77 21581 minecraft:stone_brick_stairs[facing=west]
+fill 13 77 21580 13 81 21581 minecraft:air
+fill 13 76 21580 13 76 21581 minecraft:stone_brick_stairs[facing=west]
+fill 14 76 21580 14 77 21581 minecraft:air
+setblock 20 78 21580 minecraft:glowstone
+fill 10 75 21619 30 75 21620 minecraft:stone_bricks
+fill 14 76 21619 26 77 21620 minecraft:air
+fill 30 80 21619 30 81 21620 minecraft:air
+fill 30 79 21619 30 79 21620 minecraft:stone_brick_stairs[facing=east]
+fill 29 79 21619 29 81 21620 minecraft:air
+fill 29 78 21619 29 78 21620 minecraft:stone_brick_stairs[facing=east]
+fill 28 78 21619 28 81 21620 minecraft:air
+fill 28 77 21619 28 77 21620 minecraft:stone_brick_stairs[facing=east]
+fill 27 77 21619 27 81 21620 minecraft:air
+fill 27 76 21619 27 76 21620 minecraft:stone_brick_stairs[facing=east]
+fill 26 76 21619 26 77 21620 minecraft:air
+fill 10 80 21619 10 81 21620 minecraft:air
+fill 10 79 21619 10 79 21620 minecraft:stone_brick_stairs[facing=west]
+fill 11 79 21619 11 81 21620 minecraft:air
+fill 11 78 21619 11 78 21620 minecraft:stone_brick_stairs[facing=west]
+fill 12 78 21619 12 81 21620 minecraft:air
+fill 12 77 21619 12 77 21620 minecraft:stone_brick_stairs[facing=west]
+fill 13 77 21619 13 81 21620 minecraft:air
+fill 13 76 21619 13 76 21620 minecraft:stone_brick_stairs[facing=west]
+fill 14 76 21619 14 77 21620 minecraft:air
+setblock 20 78 21619 minecraft:glowstone
+fill -5 75 21578 5 80 21622 minecraft:air
+fill -5 74 21578 5 74 21622 minecraft:gravel
+fill -5 75 21578 5 75 21622 minecraft:water
+fill -1 75 21589 -1 75 21591 minecraft:stone_brick_stairs[facing=west]
+fill 1 75 21589 1 75 21591 minecraft:stone_brick_stairs[facing=east]
+fill -2 76 21589 -2 76 21591 minecraft:stone_brick_stairs[facing=west]
+fill 2 76 21589 2 76 21591 minecraft:stone_brick_stairs[facing=east]
+fill -3 77 21589 -3 77 21591 minecraft:stone_brick_stairs[facing=west]
+fill 3 77 21589 3 77 21591 minecraft:stone_brick_stairs[facing=east]
+fill -4 78 21589 -4 78 21591 minecraft:stone_brick_stairs[facing=west]
+fill 4 78 21589 4 78 21591 minecraft:stone_brick_stairs[facing=east]
+fill -5 79 21589 -5 79 21591 minecraft:stone_brick_stairs[facing=west]
+fill 5 79 21589 5 79 21591 minecraft:stone_brick_stairs[facing=east]
+fill -1 75 21609 -1 75 21611 minecraft:stone_brick_stairs[facing=west]
+fill 1 75 21609 1 75 21611 minecraft:stone_brick_stairs[facing=east]
+fill -2 76 21609 -2 76 21611 minecraft:stone_brick_stairs[facing=west]
+fill 2 76 21609 2 76 21611 minecraft:stone_brick_stairs[facing=east]
+fill -3 77 21609 -3 77 21611 minecraft:stone_brick_stairs[facing=west]
+fill 3 77 21609 3 77 21611 minecraft:stone_brick_stairs[facing=east]
+fill -4 78 21609 -4 78 21611 minecraft:stone_brick_stairs[facing=west]
+fill 4 78 21609 4 78 21611 minecraft:stone_brick_stairs[facing=east]
+fill -5 79 21609 -5 79 21611 minecraft:stone_brick_stairs[facing=west]
+fill 5 79 21609 5 79 21611 minecraft:stone_brick_stairs[facing=east]
+fill -6 80 21598 6 80 21602 minecraft:stone_bricks
+fill -5 81 21598 5 81 21598 minecraft:stone_brick_wall
+fill -5 81 21602 5 81 21602 minecraft:stone_brick_wall
+fill -6 80 21583 6 80 21583 minecraft:oak_planks
+fill -6 80 21617 6 80 21617 minecraft:oak_planks
+fill -26 81 21588 -22 82 21588 minecraft:cobblestone_wall
+fill 22 81 21612 26 82 21612 minecraft:cobblestone_wall
+fill -26 81 21612 -22 82 21612 minecraft:cobblestone_wall
+fill 22 81 21588 26 82 21588 minecraft:cobblestone_wall
+fill -14 81 21600 -10 82 21600 minecraft:cobblestone_wall
+fill 10 81 21600 14 82 21600 minecraft:cobblestone_wall
+fill -12 81 21588 -8 82 21588 minecraft:cobblestone_wall
+fill 8 81 21612 12 82 21612 minecraft:cobblestone_wall
+fill -22 81 21604 -21 82 21605 minecraft:hay_block
+fill 22 81 21596 23 82 21597 minecraft:hay_block
+fill -9 81 21592 -8 82 21593 minecraft:hay_block
+fill 9 81 21608 10 82 21609 minecraft:hay_block
+fill -30 81 21584 -29 82 21585 minecraft:hay_block
+fill 30 81 21616 31 82 21617 minecraft:hay_block
+fill -14 81 21608 -13 82 21609 minecraft:hay_block
+fill 14 81 21592 15 82 21593 minecraft:hay_block
+fill -14 81 21586 -14 85 21586 minecraft:oak_log
+fill -16 85 21584 -12 87 21588 minecraft:oak_leaves[persistent=true] replace minecraft:air
+fill 14 81 21614 14 85 21614 minecraft:oak_log
+fill 12 85 21612 16 87 21616 minecraft:oak_leaves[persistent=true] replace minecraft:air
+fill -36 81 21616 -36 85 21616 minecraft:oak_log
+fill -38 85 21614 -34 87 21618 minecraft:oak_leaves[persistent=true] replace minecraft:air
+fill 36 81 21584 36 85 21584 minecraft:oak_log
+fill 34 85 21582 38 87 21586 minecraft:oak_leaves[persistent=true] replace minecraft:air
+fill -26 81 21599 -22 81 21601 minecraft:moss_block
+fill -25 82 21600 -23 82 21600 minecraft:moss_block
+fill 22 81 21599 26 81 21601 minecraft:moss_block
+fill 23 82 21600 25 82 21600 minecraft:moss_block
+fill -43 73 21577 43 100 21577 minecraft:barrier
+fill -43 73 21623 43 100 21623 minecraft:barrier
+fill -43 73 21578 -43 100 21622 minecraft:barrier
+fill 43 73 21578 43 100 21622 minecraft:barrier
 fill -42 100 21578 42 100 21622 minecraft:barrier

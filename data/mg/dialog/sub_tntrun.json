@@ -77,6 +77,58 @@
     {
       "label": [
         {
+          "text": "✷ TNT Run — Glacier ",
+          "color": "aqua"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Même taille que la tour de laine, en glace qui glisse",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 244"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "✷ TNT Run — Grand glacier ",
+          "color": "aqua"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Un peu plus grand (35 → 27), en glace qui glisse",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 245"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🎲 Variante au hasard",
           "color": "gold"
         }

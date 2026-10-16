@@ -183,27 +183,19 @@
     {
       "label": [
         {
-          "text": "🚩 🚩 Capture the Flag ",
+          "text": "🚩 Capture the Flag ▸",
           "color": "gold"
-        },
-        {
-          "text": "★★★",
-          "color": "gold"
-        },
-        {
-          "text": "☆",
-          "color": "dark_gray"
         }
       ],
       "tooltip": [
         {
-          "text": "Ramène le drapeau adverse sur ton socle, 3 captures",
+          "text": "Ramène le drapeau adverse sur ton socle — Prairie, Nether, Banquise",
           "color": "gray"
         }
       ],
       "action": {
         "type": "minecraft:run_command",
-        "command": "trigger mg.go set 93"
+        "command": "trigger mg.opt set 58"
       }
     },
     {

@@ -640,7 +640,7 @@ BODY_NOTE = [{'text': '\nCartes d’origine, puis ✦ variantes (ce jeu sur la c
              {'text': ' difficile.', 'color': 'gray'}]
 OPT_CAT = {'sols': 40, 'equipes': 41, 'courses': 42, 'fete': 43, 'votes': 44, 'joueur': 45, 'kart': 46, 'arcade': 47, 'combat': 14,
            # choix de la carte des jeux d'arcade (cartes supplémentaires : tools/arcade/gen_maps.py)
-           'tron': 50, 'koth': 51, 'uhc': 52, 'hg': 53, 'zombies': 54, 'infection': 55, 'wii': 56, 'autotamp': 57}
+           'tron': 50, 'koth': 51, 'uhc': 52, 'hg': 53, 'zombies': 54, 'infection': 55, 'wii': 56, 'autotamp': 57, 'ctf': 58}
 SUB = {'pvp': ('sub_pvparena', 'combat'), 'oitc': ('sub_oitc', 'combat'), 'quake': ('quakemaps', 'combat'),
        'tnttag': ('sub_tnttag', 'combat'), 'spleef': ('sub_spleef', 'sols'), 'tntrun': ('sub_tntrun', 'sols'),
        'splegg': ('sub_splegg', 'sols')}
@@ -709,7 +709,7 @@ CATS = {
         act('🏰 The Towers', 'gold', 'trigger mg.go set 88', 'Saute dans le puits adverse, 5 points pour gagner'),
         act('🚚 Convoi', 'gold', 'trigger mg.go set 89', 'Escorte ou bloque le convoi, 2 manches'),
         act('🚚 Convoi — coop', 'green', 'trigger mg.go set 90', 'Tous ensemble contre les monstres'),
-        act('🚩 Capture the Flag', 'gold', 'trigger mg.go set 93', 'Ramène le drapeau adverse sur ton socle, 3 captures')], 'menu'),
+        act('🚩 Capture the Flag ▸', 'gold', OPEN(58), 'Ramène le drapeau adverse sur ton socle — Prairie, Nether, Banquise')], 'menu'),
     'courses': ('🏁 Courses et vol', 'gold', 'Le premier arrivé gagne.', [
         act('🏎 Kart ▸', 'gold', OPEN(46), 'Circuit Champignon, Royaume Koopa, Bataille'),
         known('trigger mg.go set 56', '⛵ Course de bateaux (glace)', 'aqua'),
@@ -748,6 +748,10 @@ CATS = {
         act('🏍 Tron moto', 'gold', 'trigger mg.go set 85', 'À cheval, saut toutes les 20 s'),
         act('⚡ Tron à pied — XXL', 'aqua', 'trigger mg.go set 200', 'Arène géante 201×201'),
         act('🏍 Tron moto — XXL', 'gold', 'trigger mg.go set 201', 'Arène géante 201×201, à cheval')], 'arcade'),
+    'ctf': ('🚩 Capture the Flag', 'gold', 'Rouge contre Bleu, 3 captures. Choisis la carte.', [
+        act('🚩 Prairie', 'green', 'trigger mg.go set 93', 'Ravin à 3 ponts, tours de guet, tunnels'),
+        act('🚩 Nether', 'red', 'trigger mg.go set 242', 'Même plan, ravin de lave, sol des forêts du Nether'),
+        act('🚩 Banquise', 'aqua', 'trigger mg.go set 243', 'Même plan sur la neige : ravin gelé, allées de glace qui glissent')], 'equipes'),
     'koth': ('👑 King of the Hill', 'gold', 'Solo ou équipes, choisis la carte.', [
         act('👑 Solo — Colline', 'gold', 'trigger mg.go set 86', 'Colline en gradins, 60 points'),
         act('👑 Équipes — Colline', 'red', 'trigger mg.go set 87', 'Rouge contre Bleu, 90 points'),
@@ -895,7 +899,7 @@ NATIVE = {
     75: ('Course d\'anneaux', 2), 76: ('Course + combat', 3), 77: ('Survie en vol', 4),
     61: ('Circuit Champignon', 2), 62: ('Royaume Koopa', 3), 63: ('Bataille', 2), 56: ('Bateaux sur glace', 2),
     81: ('Canyon du Couchant', 3), 30: ('Turf Wars', 2),
-    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2), 88: ('🏰 The Towers', 3), 89: ('🚚 Convoi', 3), 90: ('🚚 Convoi — coop', 3), 91: ('▦ Block Party — bandes', 3), 92: ('▦ Block Party — mixte', 3), 93: ('🚩 Capture the Flag', 3), 94: ('⛏ Mini UHC Run', 3), 95: ('🏹 Mini Hunger Games', 3), 96: ('🎭 Prop Hunt', 2), 97: ('🧟 Zombies', 3), 98: ('🧪 Infection', 2), 220: ('🔴 1, 2, 3 Soleil', 2), 221: ('🚗 Autos tamponneuses', 2), 222: ('🚗 Autos tamponneuses — 3 coups', 2), 223: ('🚗 Autos tamponneuses — 8 coups', 2), 224: ('🟩 Slime Jump', 3), 225: ('🙈 Labyrinthe aveugle', 2), 226: ('👑 Master dit', 2), 227: ('🔪 Murder Mystery', 3), 239: ('💣 Bomberman', 3), 240: ('💣 Bomberman — équipes', 3), 241: ('🌀 Labyrinthe géant', 3),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
+    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2), 88: ('🏰 The Towers', 3), 89: ('🚚 Convoi', 3), 90: ('🚚 Convoi — coop', 3), 91: ('▦ Block Party — bandes', 3), 92: ('▦ Block Party — mixte', 3), 93: ('🚩 Capture the Flag', 3), 94: ('⛏ Mini UHC Run', 3), 95: ('🏹 Mini Hunger Games', 3), 96: ('🎭 Prop Hunt', 2), 97: ('🧟 Zombies', 3), 98: ('🧪 Infection', 2), 220: ('🔴 1, 2, 3 Soleil', 2), 221: ('🚗 Autos tamponneuses', 2), 222: ('🚗 Autos tamponneuses — 3 coups', 2), 223: ('🚗 Autos tamponneuses — 8 coups', 2), 224: ('🟩 Slime Jump', 3), 225: ('🙈 Labyrinthe aveugle', 2), 226: ('👑 Master dit', 2), 227: ('🔪 Murder Mystery', 3), 242: ('🚩 CTF — Nether', 3), 243: ('🚩 CTF — Banquise', 3), 244: ('✷ TNT Run — Glacier', 3), 245: ('✷ TNT Run — Grand glacier', 3), 239: ('💣 Bomberman', 3), 240: ('💣 Bomberman — équipes', 3), 241: ('🌀 Labyrinthe géant', 3),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
 }
 SHORT_OPT = {   # boutons de navigation (mg.opt) : noms courts
     24: '➶ OITC ▸', 10: '⚡ Quake ▸', 20: '⚓ Enclumes ▸', 19: '⬇ Dropper ▸', 28: '🪽 Course élytres ▸', 23: '⚔ Arène PvP ▸',

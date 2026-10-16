@@ -1,8 +1,10 @@
-"""🚩 Capture the Flag — Rouge contre Bleu (id 93). Arène 85×45 en z 21600.
+"""🚩 Capture the Flag — Rouge contre Bleu (id 93). Arène 85×45 en z 21600 : ravin central à 3 ponts, tours de guet, tunnels.
 
     python tools/arcade/gen_ctf.py .
 
-Prends le drapeau adverse dans sa base et ramène-le sur ton socle pendant que TON drapeau y est encore.
+Prends le drapeau adverse dans sa base et ramène-le sur ton socle pendant que TON drapeau y est encore
+(et on ne peut pas prendre le drapeau adverse tant que le sien est porté ou tombé).
+Cartes : Prairie (93), Nether (242, lave dans le ravin), Banquise (243, glace qui glisse) — réglage `theme` (gen_maps.py).
 3 captures pour gagner (ou le plus de captures au bout de 10 min). Le porteur brille et a le drapeau sur la tête ;
 s'il meurt, le drapeau tombe : un adversaire peut le reprendre, un défenseur le renvoie chez lui en le touchant,
 sinon il rentre seul au bout de 30 s. Réapparition illimitée dans sa base.
@@ -13,7 +15,7 @@ import common as C
 
 C.init(sys.argv[1] if len(sys.argv) > 1 else '.')
 w, js = C.w, C.js
-Z = 21600
+Z = C.param('Z', 21600)
 WIN, LIMIT, DROP = 3, 12000, 600
 T = {  # équipe : (nom, couleur texte, couleur blocs, x du socle, signe, rgb, adverse)
     'red': ('ROUGE', 'red', 'red', -35, -1, 16711680, 'blue'),
@@ -26,32 +28,83 @@ DRP = {'red': 'mg.cfdr', 'blue': 'mg.cfdb'}  # drapeau tombé (item_display)
 TIM = {'red': '$cfrt', 'blue': '$cfbt'}
 
 # ---------- arène
-L = ['# 🚩 Capture the Flag — prairie x −42..42, z 21578..21622 ; bases aux deux bouts']
-L += [f'fill -44 {y} {Z - 24} 44 {y} {Z + 24} minecraft:air' for y in range(78, 101)]
-L += [f'fill -42 78 {Z - 22} 42 79 {Z + 22} minecraft:dirt', f'fill -42 80 {Z - 22} 42 80 {Z + 22} minecraft:grass_block']
+TH = C.param('theme', 'prairie')
+NAME = C.param('name', 'Prairie')
+THEMES = {
+    'prairie': dict(g1='grass_block', g2='grass_block', dirt='dirt', under='stone', liq='water', wall='stone_bricks', wallw='stone_brick_wall',
+                    st='stone_brick_stairs', cover='cobblestone_wall', hay='hay_block', log='oak_log', leaves='oak_leaves[persistent=true]',
+                    planks='oak_planks', bridge='stone_bricks', lantern='lantern', path='dirt_path', mound='moss_block', bot='gravel'),
+    'nether': dict(g1='crimson_nylium', g2='warped_nylium', dirt='netherrack', under='netherrack', liq='lava', wall='nether_bricks',
+                   wallw='nether_brick_wall', st='nether_brick_stairs', cover='blackstone_wall', hay='shroomlight', log='crimson_stem',
+                   leaves='nether_wart_block', planks='crimson_planks', bridge='polished_blackstone_bricks', lantern='soul_lantern',
+                   path='soul_soil', mound='blackstone', bot='magma_block'),
+    'neige': dict(g1='snow_block', g2='snow_block', dirt='dirt', under='stone', liq='ice', wall='packed_ice', wallw='diorite_wall',
+                  st='diorite_stairs', cover='diorite_wall', hay='snow_block', log='spruce_log', leaves='spruce_leaves[persistent=true]',
+                  planks='spruce_planks', bridge='packed_ice', lantern='lantern', path='blue_ice', mound='snow_block', bot='stone'),
+}
+K = THEMES[TH]
+L = [f'# 🚩 Capture the Flag — {NAME} : x −42..42, z {Z - 22}..{Z + 22} ; bases aux deux bouts, ravin central (3 ponts),',
+     '# tours de guet, tunnels sur les côtés']
+L += [f'fill -44 {y} {Z - 24} 44 {y} {Z + 24} minecraft:air' for y in range(73, 101)]
+L += [f'fill -42 {y} {Z - 22} 42 {y} {Z + 22} minecraft:{K["under"]}' for y in range(73, 78)]
+L += [f'fill -42 78 {Z - 22} 42 79 {Z + 22} minecraft:{K["dirt"]}', f'fill -42 80 {Z - 22} -1 80 {Z + 22} minecraft:{K["g1"]}',
+      f'fill 0 80 {Z - 22} 42 80 {Z + 22} minecraft:{K["g2"]}']
+# allées (glissantes sur la banquise, lentes dans le Nether)
+L += [f'fill -27 80 {Z + zz} -7 80 {Z + zz} minecraft:{K["path"]}' for zz in (-6, 6)]
+L += [f'fill 7 80 {Z + zz} 27 80 {Z + zz} minecraft:{K["path"]}' for zz in (-6, 6)]
 for t, (nm, col, blk, x, s, rgb, oth) in T.items():
     bx0, bx1 = x - 7, x + 7
     L += [f'fill {bx0} 80 {Z - 8} {bx1} 80 {Z + 8} minecraft:{blk}_terracotta',
-          f'fill {bx0} 81 {Z - 8} {bx1} 83 {Z + 8} minecraft:stone_bricks hollow',
+          f'fill {bx0} 81 {Z - 8} {bx1} 83 {Z + 8} minecraft:{K["wall"]} hollow',
           f'fill {bx0 + 1} 81 {Z - 7} {bx1 - 1} 83 {Z + 7} minecraft:air',
-          f'fill {bx0} 84 {Z - 8} {bx1} 84 {Z + 8} minecraft:stone_brick_wall',
+          f'fill {bx0} 84 {Z - 8} {bx1} 84 {Z + 8} minecraft:{K["wallw"]}',
           f'fill {bx0 + 1} 84 {Z - 7} {bx1 - 1} 84 {Z + 7} minecraft:air',
           # trois entrées (avant, côtés)
           f'fill {x - 7 * s} 81 {Z - 1} {x - 7 * s} 82 {Z + 1} minecraft:air',
           f'fill {x - 1} 81 {Z - 8} {x + 1} 82 {Z - 8} minecraft:air', f'fill {x - 1} 81 {Z + 8} {x + 1} 82 {Z + 8} minecraft:air',
           f'setblock {x} 81 {Z} minecraft:{blk}_glazed_terracotta', f'fill {x - 1} 80 {Z - 1} {x + 1} 80 {Z + 1} minecraft:gold_block',
-          f'setblock {x + 5 * s} 81 {Z - 5} minecraft:lantern', f'setblock {x + 5 * s} 81 {Z + 5} minecraft:lantern']
-# milieu : murets, meules de foin, une butte centrale et deux couloirs
-L += [f'fill -3 81 {Z - 3} 3 81 {Z + 3} minecraft:moss_block', f'fill -2 82 {Z - 2} 2 82 {Z + 2} minecraft:moss_block',
-      f'fill -1 83 {Z - 1} 1 83 {Z + 1} minecraft:mossy_cobblestone']
-for (x, z) in [(-18, -12), (18, 12), (-18, 12), (18, -12), (-10, 0), (10, 0), (0, -15), (0, 15)]:
-    L.append(f'fill {x - 2} 81 {Z + z} {x + 2} 82 {Z + z} minecraft:cobblestone_wall')
-for (x, z) in [(-22, 3), (22, -3), (-6, -9), (6, 9), (-26, -16), (26, 16)]:
-    L.append(f'fill {x} 81 {Z + z} {x + 1} 82 {Z + z + 1} minecraft:hay_block')
-for (x, z) in [(-14, -19), (14, 19), (-30, 18), (30, -18)]:
-    L += [f'fill {x} 81 {Z + z} {x} 85 {Z + z} minecraft:oak_log', f'fill {x - 2} 85 {Z + z - 2} {x + 2} 87 {Z + z + 2} minecraft:oak_leaves[persistent=true] replace minecraft:air']
-L += [f'fill -43 78 {Z - 23} 43 100 {Z - 23} minecraft:barrier', f'fill -43 78 {Z + 23} 43 100 {Z + 23} minecraft:barrier',
-      f'fill -43 78 {Z - 22} -43 100 {Z + 22} minecraft:barrier', f'fill 43 78 {Z - 22} 43 100 {Z + 22} minecraft:barrier',
+          f'setblock {x + 5 * s} 81 {Z - 5} minecraft:{K["lantern"]}', f'setblock {x + 5 * s} 81 {Z + 5} minecraft:{K["lantern"]}']
+    # tour de guet (x ±18) : porte côté base, échelle intérieure, plateforme crénelée en y 88
+    tx = 18 * s
+    L += [f'fill {tx - 2} 81 {Z - 2} {tx + 2} 87 {Z + 2} minecraft:{K["wall"]}', f'fill {tx - 1} 81 {Z - 1} {tx + 1} 86 {Z + 1} minecraft:air',
+          f'fill {tx + 2 * s} 81 {Z} {tx + 2 * s} 82 {Z} minecraft:air',
+          f'fill {tx - s} 81 {Z} {tx - s} 87 {Z} minecraft:ladder[facing={"east" if s > 0 else "west"}]',
+          f'fill {tx - 2} 88 {Z - 2} {tx + 2} 88 {Z + 2} minecraft:{K["wallw"]}', f'fill {tx - 1} 88 {Z - 1} {tx + 1} 88 {Z + 1} minecraft:air',
+          f'setblock {tx} 88 {Z} minecraft:{K["lantern"]}']
+    # tunnels (z ±19..20, y 76..77) de x ±30 à x ±10, escaliers aux deux bouts
+    for zt in (-20, 19):
+        lo, hi = sorted((10 * s, 30 * s))
+        L += [f'fill {lo} 75 {Z + zt} {hi} 75 {Z + zt + 1} minecraft:{K["bridge"]}', f'fill {lo + 4} 76 {Z + zt} {hi - 4} 77 {Z + zt + 1} minecraft:air']
+        for e, d in ((30 * s, -s), (10 * s, s)):          # entrée côté e, descente vers l'intérieur du tunnel (sens d)
+            fac = {1: 'west', -1: 'east'}[d]                  # on monte en allant vers l'entrée (sens −d)
+            for k in range(4):
+                xk = e + d * k
+                L += [f'fill {xk} {80 - k} {Z + zt} {xk} 81 {Z + zt + 1} minecraft:air',
+                      f'fill {xk} {79 - k} {Z + zt} {xk} {79 - k} {Z + zt + 1} minecraft:{K["st"]}[facing={fac}]']
+            L.append(f'fill {e + d * 4} 76 {Z + zt} {e + d * 4} 77 {Z + zt + 1} minecraft:air')
+        L.append(f'setblock {20 * s} 78 {Z + zt} minecraft:{"shroomlight" if TH == "nether" else "glowstone"}')
+# ravin central (x −5..5), fond y 74, liquide en y 75 ; escaliers pour remonter (z ±9..11) ; 3 ponts
+L += [f'fill -5 75 {Z - 22} 5 80 {Z + 22} minecraft:air', f'fill -5 74 {Z - 22} 5 74 {Z + 22} minecraft:{K["bot"]}',
+      f'fill -5 75 {Z - 22} 5 75 {Z + 22} minecraft:{K["liq"]}']
+for zz in (-11, 9):
+    for k in range(1, 6):
+        L += [f'fill {-k} {74 + k} {Z + zz} {-k} {74 + k} {Z + zz + 2} minecraft:{K["st"]}[facing=west]',
+              f'fill {k} {74 + k} {Z + zz} {k} {74 + k} {Z + zz + 2} minecraft:{K["st"]}[facing=east]']
+L += [f'fill -6 80 {Z - 2} 6 80 {Z + 2} minecraft:{K["bridge"]}', f'fill -5 81 {Z - 2} 5 81 {Z - 2} minecraft:{K["wallw"]}',
+      f'fill -5 81 {Z + 2} 5 81 {Z + 2} minecraft:{K["wallw"]}',
+      f'fill -6 80 {Z - 17} 6 80 {Z - 17} minecraft:{K["planks"]}', f'fill -6 80 {Z + 17} 6 80 {Z + 17} minecraft:{K["planks"]}']
+# couverts : murets, bottes, arbres
+for (x, z) in [(-24, -12), (24, 12), (-24, 12), (24, -12), (-12, 0), (12, 0), (-10, -12), (10, 12)]:
+    L.append(f'fill {x - 2} 81 {Z + z} {x + 2} 82 {Z + z} minecraft:{K["cover"]}')
+for (x, z) in [(-22, 4), (22, -4), (-9, -8), (9, 8), (-30, -16), (30, 16), (-14, 8), (14, -8)]:
+    L.append(f'fill {x} 81 {Z + z} {x + 1} 82 {Z + z + 1} minecraft:{K["hay"]}')
+for (x, z) in [(-14, -14), (14, 14), (-36, 16), (36, -16)]:
+    L += [f'fill {x} 81 {Z + z} {x} 85 {Z + z} minecraft:{K["log"]}', f'fill {x - 2} 85 {Z + z - 2} {x + 2} 87 {Z + z + 2} minecraft:{K["leaves"]} replace minecraft:air']
+# buttes près des tours (on y monte pour tirer par-dessus les murets)
+for s in (-1, 1):
+    L += [f'fill {24 * s - 2} 81 {Z - 1} {24 * s + 2} 81 {Z + 1} minecraft:{K["mound"]}', f'fill {24 * s - 1} 82 {Z} {24 * s + 1} 82 {Z} minecraft:{K["mound"]}']
+L += [f'fill -43 73 {Z - 23} 43 100 {Z - 23} minecraft:barrier', f'fill -43 73 {Z + 23} 43 100 {Z + 23} minecraft:barrier',
+      f'fill -43 73 {Z - 22} -43 100 {Z + 22} minecraft:barrier', f'fill 43 73 {Z - 22} 43 100 {Z + 22} minecraft:barrier',
       f'fill -42 100 {Z - 22} 42 100 {Z + 22} minecraft:barrier']
 w('ctf/build', L)
 
@@ -97,6 +150,7 @@ w('ctf/go', ['# Départ', 'scoreboard players set $cft mg.st 0', 'execute as @a[
              'execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] ' + js([{'text': "🚩 Mode entraînement (seul) : le drapeau bleu n'est pas défendu, entraîne-toi aux captures. Pas de victoire ; il faut au moins 2 joueurs pour une vraie partie.", 'color': 'yellow'}])])
 
 # ---------- tick
+LOCK = js({'text': '⚠ Ton drapeau est en cours de capture : récupère-le avant de prendre celui d\'en face !', 'color': 'red'})
 TK = ['# 🚩 Capture the Flag — tick', 'scoreboard players add $cft mg.st 1',
       'execute as @a[tag=mg.play,scores={mg.deaths=1..}] run function mg:ctf/respawn',
       'execute as @a[tag=mg.play] store result score @s mg.t run data get entity @s Pos[1]',
@@ -107,8 +161,11 @@ for t, (nm, col, blk, x, s, rgb, oth) in T.items():
            # le marqueur suit le porteur (sa dernière position sert si le porteur meurt)
            f'execute as @e[type=minecraft:marker,tag={POS[t]}] at @a[tag={CAR[t]},limit=1] run tp @s ~ ~ ~',
            # prise au socle / ramassage par terre (adversaire) ; renvoi par un défenseur
-           f'execute if score {ST[t]} mg.st matches 0 positioned {x} 82 {Z} as @a[tag=mg.play,team={en},distance=..2,limit=1,sort=nearest] run function mg:ctf/take_{t}',
-           f'execute if score {ST[t]} mg.st matches 2 as @e[tag={DRP[t]}] at @s as @a[tag=mg.play,team={en},distance=..1.6,limit=1,sort=nearest] run function mg:ctf/take_{t}',
+           # (on ne peut prendre le drapeau adverse que si le sien est au socle)
+           f'execute if score {ST[t]} mg.st matches 0 if score {ST[oth]} mg.st matches 0 positioned {x} 82 {Z} as @a[tag=mg.play,team={en},distance=..2,limit=1,sort=nearest] run function mg:ctf/take_{t}',
+           f'execute if score {ST[t]} mg.st matches 2 if score {ST[oth]} mg.st matches 0 as @e[tag={DRP[t]}] at @s as @a[tag=mg.play,team={en},distance=..1.6,limit=1,sort=nearest] run function mg:ctf/take_{t}',
+           f'execute if score {ST[t]} mg.st matches 0 unless score {ST[oth]} mg.st matches 0 positioned {x} 82 {Z} as @a[tag=mg.play,team={en},distance=..2] run title @s actionbar ' + LOCK,
+           f'execute if score {ST[t]} mg.st matches 2 unless score {ST[oth]} mg.st matches 0 as @e[tag={DRP[t]}] at @s as @a[tag=mg.play,team={en},distance=..1.6] run title @s actionbar ' + LOCK,
            f'execute if score {ST[t]} mg.st matches 2 as @e[tag={DRP[t]}] at @s if entity @a[tag=mg.play,team={me},distance=..1.6] run function mg:ctf/return_{t}',
            f'execute if score {ST[t]} mg.st matches 2 run scoreboard players remove {TIM[t]} mg.st 1',
            f'execute if score {ST[t]} mg.st matches 2 if score {TIM[t]} mg.st matches ..0 run function mg:ctf/return_{t}',
