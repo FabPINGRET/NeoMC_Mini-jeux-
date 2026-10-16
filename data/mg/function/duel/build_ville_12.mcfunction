@@ -1,0 +1,61 @@
+# Duel sniper : Ville (z 40400), lot 12/17 — généré par tools/duel/gen_duel_maps.py
+fill 20 82 40420 20 83 40421 minecraft:air
+fill -13 82 40379 -13 83 40380 minecraft:air
+fill 13 82 40420 13 83 40421 minecraft:air
+fill -17 81 40373 -16 82 40373 minecraft:air
+fill 16 81 40427 17 82 40427 minecraft:air
+fill -17 81 40382 -16 82 40382 minecraft:air
+fill 16 81 40418 17 82 40418 minecraft:air
+fill -18 83 40382 -17 86 40382 minecraft:air
+fill 17 83 40418 18 86 40418 minecraft:air
+fill -19 84 40373 -16 86 40373 minecraft:air
+fill 16 84 40427 19 86 40427 minecraft:air
+fill -19 85 40373 -18 86 40373 minecraft:air
+fill 18 85 40427 19 86 40427 minecraft:air
+fill -17 84 40373 -16 85 40373 minecraft:mossy_stone_bricks
+fill 16 84 40427 17 85 40427 minecraft:mossy_stone_bricks
+fill -17 81 40382 -16 83 40382 minecraft:mossy_stone_bricks
+fill 16 81 40418 17 83 40418 minecraft:mossy_stone_bricks
+fill -19 83 40373 -18 83 40373 minecraft:cracked_stone_bricks
+fill 18 83 40427 19 83 40427 minecraft:cracked_stone_bricks
+fill -18 82 40373 -17 84 40373 minecraft:mossy_stone_bricks
+fill 17 82 40427 18 84 40427 minecraft:mossy_stone_bricks
+fill -19 86 40374 -17 86 40381 minecraft:stone_brick_slab[type=bottom]
+fill 17 86 40419 19 86 40426 minecraft:stone_brick_slab[type=bottom]
+fill -7 81 40373 6 90 40382 minecraft:stone_bricks
+fill -6 81 40418 7 90 40427 minecraft:stone_bricks
+fill -6 81 40374 5 90 40381 minecraft:air
+fill -5 81 40419 6 90 40426 minecraft:air
+fill -6 85 40374 5 85 40381 minecraft:dark_oak_planks
+fill -5 85 40419 6 85 40426 minecraft:dark_oak_planks
+fill -6 81 40381 -6 85 40381 minecraft:ladder[facing=east]
+fill 6 81 40419 6 85 40419 minecraft:ladder[facing=west]
+setblock -1 83 40377 minecraft:light[level=13]
+setblock 1 83 40423 minecraft:light[level=13]
+setblock -1 88 40377 minecraft:light[level=13]
+setblock 1 88 40423 minecraft:light[level=13]
+fill -5 82 40373 -4 83 40373 minecraft:air
+fill 4 82 40427 5 83 40427 minecraft:air
+fill -5 82 40382 -4 83 40382 minecraft:air
+fill 4 82 40418 5 83 40418 minecraft:air
+fill -1 82 40373 0 83 40373 minecraft:air
+fill 0 82 40427 1 83 40427 minecraft:air
+fill -1 82 40382 0 83 40382 minecraft:air
+fill 0 82 40418 1 83 40418 minecraft:air
+fill 3 82 40373 4 83 40373 minecraft:air
+fill -4 82 40427 -3 83 40427 minecraft:air
+fill 3 82 40382 4 83 40382 minecraft:air
+fill -4 82 40418 -3 83 40418 minecraft:air
+fill -7 82 40375 -7 83 40376 minecraft:air
+fill 7 82 40424 7 83 40425 minecraft:air
+fill 6 82 40375 6 83 40376 minecraft:air
+fill -6 82 40424 -6 83 40425 minecraft:air
+fill -7 82 40379 -7 83 40380 minecraft:air
+fill 7 82 40420 7 83 40421 minecraft:air
+fill 6 82 40379 6 83 40380 minecraft:air
+fill -6 82 40420 -6 83 40421 minecraft:air
+fill -5 87 40373 -4 88 40373 minecraft:air
+fill 4 87 40427 5 88 40427 minecraft:air
+fill -5 87 40382 -4 88 40382 minecraft:air
+fill 4 87 40418 5 88 40418 minecraft:air
+fill -1 87 40373 0 88 40373 minecraft:air

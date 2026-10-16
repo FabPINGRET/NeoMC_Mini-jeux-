@@ -575,6 +575,7 @@ execute in mg:survie run gamerule spawn_mobs true
 function mg:hall/objectives
 # Mini-jeu Élytra + suivi des reconnexions + tableaux de partie
 function mg:sky/load
+function mg:duel/load
 scoreboard objectives add mg.seen dummy
 scoreboard objectives add mg.acn dummy
 scoreboard objectives add mg.sbg dummy

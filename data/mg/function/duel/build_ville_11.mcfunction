@@ -1,0 +1,61 @@
+# Duel sniper : Ville (z 40400), lot 11/17 — généré par tools/duel/gen_duel_maps.py
+fill -7 84 40431 -5 87 40431 minecraft:air
+fill 2 83 40369 3 85 40369 minecraft:cracked_stone_bricks
+fill -3 83 40431 -2 85 40431 minecraft:cracked_stone_bricks
+fill 4 85 40369 5 85 40369 minecraft:mossy_stone_bricks
+fill -5 85 40431 -4 85 40431 minecraft:mossy_stone_bricks
+fill 6 82 40369 7 85 40369 minecraft:mossy_stone_bricks
+fill -7 82 40431 -6 85 40431 minecraft:mossy_stone_bricks
+fill 7 83 40359 8 84 40359 minecraft:mossy_stone_bricks
+fill -8 83 40441 -7 84 40441 minecraft:mossy_stone_bricks
+fill 2 87 40360 6 87 40368 minecraft:stone_brick_slab[type=bottom]
+fill -6 87 40432 -2 87 40440 minecraft:stone_brick_slab[type=bottom]
+fill 16 81 40359 20 85 40369 minecraft:stone_bricks
+fill -20 81 40431 -16 85 40441 minecraft:stone_bricks
+fill 17 81 40360 19 85 40368 minecraft:air
+fill -19 81 40432 -17 85 40440 minecraft:air
+setblock 18 83 40364 minecraft:light[level=13]
+setblock -18 83 40436 minecraft:light[level=13]
+fill 16 82 40361 16 83 40362 minecraft:air
+fill -16 82 40438 -16 83 40439 minecraft:air
+fill 20 82 40361 20 83 40362 minecraft:air
+fill -20 82 40438 -20 83 40439 minecraft:air
+fill 16 82 40365 16 83 40366 minecraft:air
+fill -16 82 40434 -16 83 40435 minecraft:air
+fill 20 82 40365 20 83 40366 minecraft:air
+fill -20 82 40434 -20 83 40435 minecraft:air
+fill 18 81 40359 19 82 40359 minecraft:air
+fill -19 81 40441 -18 82 40441 minecraft:air
+fill 18 81 40369 19 82 40369 minecraft:air
+fill -19 81 40431 -18 82 40431 minecraft:air
+fill 17 82 40369 18 85 40369 minecraft:air
+fill -18 82 40431 -17 85 40431 minecraft:air
+fill 17 84 40359 20 85 40359 minecraft:air
+fill -20 84 40441 -17 85 40441 minecraft:air
+fill 17 84 40359 19 85 40359 minecraft:air
+fill -19 84 40441 -17 85 40441 minecraft:air
+fill 18 82 40369 19 82 40369 minecraft:cracked_stone_bricks
+fill -19 82 40431 -18 82 40431 minecraft:cracked_stone_bricks
+fill 18 82 40359 19 82 40359 minecraft:cracked_stone_bricks
+fill -19 82 40441 -18 82 40441 minecraft:cracked_stone_bricks
+fill 17 81 40369 18 82 40369 minecraft:cracked_stone_bricks
+fill -18 81 40431 -17 82 40431 minecraft:cracked_stone_bricks
+fill 18 81 40369 19 83 40369 minecraft:cracked_stone_bricks
+fill -19 81 40431 -18 83 40431 minecraft:cracked_stone_bricks
+fill 17 85 40360 18 85 40368 minecraft:stone_brick_slab[type=bottom]
+fill -18 85 40432 -17 85 40440 minecraft:stone_brick_slab[type=bottom]
+fill -20 81 40373 -13 86 40382 minecraft:stone_bricks
+fill 13 81 40418 20 86 40427 minecraft:stone_bricks
+fill -19 81 40374 -14 86 40381 minecraft:air
+fill 14 81 40419 19 86 40426 minecraft:air
+setblock -17 83 40377 minecraft:light[level=13]
+setblock 17 83 40423 minecraft:light[level=13]
+fill -18 82 40373 -17 83 40373 minecraft:air
+fill 17 82 40427 18 83 40427 minecraft:air
+fill -18 82 40382 -17 83 40382 minecraft:air
+fill 17 82 40418 18 83 40418 minecraft:air
+fill -20 82 40375 -20 83 40376 minecraft:air
+fill 20 82 40424 20 83 40425 minecraft:air
+fill -13 82 40375 -13 83 40376 minecraft:air
+fill 13 82 40424 13 83 40425 minecraft:air
+fill -20 82 40379 -20 83 40380 minecraft:air

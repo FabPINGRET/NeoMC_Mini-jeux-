@@ -116,6 +116,10 @@ forceload add -12 40689 12 40711
 forceload add -58 41095 -51 41104
 # TNT Run glace (z 41700)
 forceload add -19 41681 19 41719
+# Duel sniper (Canyon z 40000, Ville z 40400, Glacier z 40800)
+forceload add -22 39928 22 40072
+forceload add -22 40328 22 40472
+forceload add -22 40728 22 40872
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl

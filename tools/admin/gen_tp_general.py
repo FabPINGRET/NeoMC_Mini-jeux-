@@ -29,14 +29,14 @@ DEST = [
         'execute unless data storage mg:gta built run return run function mg:gta/not_ready',
         f'execute as @a[{FREE},tag=mg.surv,tag=!mg.gtw] run function mg:survie/leave',
         f'execute as @a[{FREE},tag=mg.inplot] run function mg:plot/leave',
-        f'execute as @a[{FREE},tag=!mg.gtw] run function mg:gta/enter',
+        f'execute as @a[{FREE},tag=!mg.gtw,tag=!mg.dl] run function mg:gta/enter',
         'tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a envoyé tout le monde à Neo GTA.","color":"gray"}]']),
     ('terra', '🦖 Tout le monde → Terra Nova', 'dark_green', 'Les joueurs en survie, à Neo GTA ou sur leur plot en sortent d\'abord (tout est sauvegardé)', 75, [
         '# TP général → Terra Nova (@s = admin)',
         'execute unless data storage mg:terra built run return run function mg:terra/not_ready',
         f'execute as @a[{FREE},tag=mg.surv,tag=!mg.tvw] run function mg:survie/leave',
         f'execute as @a[{FREE},tag=mg.inplot] run function mg:plot/leave',
-        f'execute as @a[{FREE},tag=!mg.tvw] run function mg:terra/enter',
+        f'execute as @a[{FREE},tag=!mg.tvw,tag=!mg.dl] run function mg:terra/enter',
         'tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a envoyé tout le monde à Terra Nova.","color":"gray"}]']),
     ('lobby', '🏠 Tout le monde → Lobby', 'yellow', 'Sort tout le monde de la survie, de Neo GTA, de Terra Nova, des plots, du kart, du parkour, des élytra et de la montagne russe : prêt pour lancer un mini-jeu', 65, [
         '# TP général → lobby (@s = admin) : chacun quitte proprement son activité (sauvegardes comprises), puis remise à zéro au spawn',

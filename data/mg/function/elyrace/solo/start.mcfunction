@@ -6,6 +6,7 @@ execute unless entity @s[tag=mg.init] run return run tellraw @s [{"text":"⚠ ",
 execute if entity @s[tag=mg.play] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Impossible pendant que tu participes à une partie.","color":"red"}]
 execute if entity @s[tag=mg.out] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Impossible : tu regardes la partie en cours en spectateur.","color":"red"}]
 execute if entity @s[tag=mg.xso] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Tu es déjà en contre-la-montre solo.","color":"red"}]
+execute if entity @s[tag=mg.dl] run return run tellraw @s [{"text":"⚔ Duel en cours : termine-le (ou abandonne-le) avant.","color":"red"}]
 execute if entity @s[gamemode=spectator] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Impossible en mode spectateur.","color":"red"}]
 execute if entity @s[tag=mg.ely] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Termine d'abord ton activité en cours (parcours d'élytra, élytres libres, kart libre ou parkour).","color":"red"}]
 execute if entity @s[tag=mg.elyf] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Termine d'abord ton activité en cours (parcours d'élytra, élytres libres, kart libre ou parkour).","color":"red"}]

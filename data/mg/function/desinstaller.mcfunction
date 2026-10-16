@@ -797,6 +797,7 @@ schedule clear mg:elytra/spawn_clean
 data remove storage mg:lobby food1
 function mg:hall/remove
 function mg:sky/remove
+function mg:duel/remove
 scoreboard objectives remove mg.seen
 scoreboard objectives remove mg.acn
 scoreboard objectives remove mg.sbg

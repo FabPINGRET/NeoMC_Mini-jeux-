@@ -1,0 +1,19 @@
+# @s occupé ? -> $dlb = 1 (partie, plot, parcours, élytres, kart, duel...) ; l'invitation en cours (mg.dlrq) est testée à part
+scoreboard players set $dlb mg.st 0
+execute unless entity @s[tag=mg.init] run scoreboard players set $dlb mg.st 1
+execute if entity @s[gamemode=spectator] run scoreboard players set $dlb mg.st 1
+execute if entity @s[tag=mg.play] run scoreboard players set $dlb mg.st 1
+execute if entity @s[tag=mg.out] run scoreboard players set $dlb mg.st 1
+execute if entity @s[tag=mg.surv] run scoreboard players set $dlb mg.st 1
+execute if entity @s[tag=mg.inplot] run scoreboard players set $dlb mg.st 1
+execute if entity @s[tag=mg.visit] run scoreboard players set $dlb mg.st 1
+execute if entity @s[tag=mg.xso] run scoreboard players set $dlb mg.st 1
+execute if entity @s[tag=mg.ely] run scoreboard players set $dlb mg.st 1
+execute if entity @s[tag=mg.elyf] run scoreboard players set $dlb mg.st 1
+execute if entity @s[tag=mg.pkr] run scoreboard players set $dlb mg.st 1
+execute if entity @s[tag=mg.lk] run scoreboard players set $dlb mg.st 1
+execute if entity @s[tag=mg.mpp] run scoreboard players set $dlb mg.st 1
+execute if entity @s[tag=mg.gtw] run scoreboard players set $dlb mg.st 1
+execute if entity @s[tag=mg.tvw] run scoreboard players set $dlb mg.st 1
+execute if entity @s[tag=mg.pvpc] run scoreboard players set $dlb mg.st 1
+execute if entity @s[tag=mg.dl] run scoreboard players set $dlb mg.st 1

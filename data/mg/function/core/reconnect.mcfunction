@@ -1,5 +1,6 @@
 # Joueur qui revient après une déconnexion (@s = joueur)
 scoreboard players reset @s mg.lg
+function mg:duel/reconnect
 function mg:lobkart/leave
 
 # Tag de Mini Party périmé (la partie s'est terminée pendant son absence)

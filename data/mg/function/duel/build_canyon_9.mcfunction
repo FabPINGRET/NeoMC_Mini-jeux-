@@ -1,0 +1,19 @@
+# Duel sniper : Canyon (z 40000), lot 9/9 — généré par tools/duel/gen_duel_maps.py
+fill 1 73 40016 3 74 40018 minecraft:andesite
+fill -3 74 39982 -1 74 39984 minecraft:mossy_cobblestone
+fill 1 74 40016 3 74 40018 minecraft:mossy_cobblestone
+fill -14 73 39988 -12 75 39990 minecraft:andesite
+fill 12 73 40010 14 75 40012 minecraft:andesite
+fill -14 75 39988 -12 75 39990 minecraft:mossy_cobblestone
+fill 12 75 40010 14 75 40012 minecraft:mossy_cobblestone
+fill 2 73 39991 4 75 39993 minecraft:andesite
+fill -4 73 40007 -2 75 40009 minecraft:andesite
+fill 2 75 39991 4 75 39993 minecraft:mossy_cobblestone
+fill -4 75 40007 -2 75 40009 minecraft:mossy_cobblestone
+fill -2 88 39933 2 88 39935 minecraft:polished_andesite
+fill -2 88 40065 2 88 40067 minecraft:polished_andesite
+fill -21 62 39929 21 113 39929 minecraft:barrier
+fill -21 62 40071 21 113 40071 minecraft:barrier
+fill -21 62 39929 -21 113 40071 minecraft:barrier
+fill 21 62 39929 21 113 40071 minecraft:barrier
+fill -21 113 39929 21 113 40071 minecraft:barrier
