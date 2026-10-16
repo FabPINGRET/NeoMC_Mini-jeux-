@@ -13,6 +13,7 @@ scoreboard players enable @a mg.tel
 scoreboard players enable @a mg.pl
 scoreboard players enable @a mg.dice
 scoreboard players enable @a mg.xs
+scoreboard players enable @a mg.duel
 execute if score $setup mg.st matches 1 run function mg:gun/cl_tick
 function mg:gta/pre_tick
 function mg:terra/pre_tick
@@ -60,6 +61,11 @@ execute as @a[scores={mg.go=1..}] run function mg:core/go
 execute as @a[scores={mg.opt=1..}] run function mg:core/opt
 execute as @a[scores={mg.xs=1..}] run function mg:elyrace/solo/cmd
 execute if entity @a[tag=mg.xso] run function mg:elyrace/solo/tick
+# Duel sniper : commandes, puis boucle (duellistes, ou invitations en attente)
+execute as @a[scores={mg.duel=1..}] run function mg:duel/cmd
+execute if entity @a[tag=mg.dl] run function mg:duel/tick
+execute unless entity @a[tag=mg.dl] if entity @a[scores={mg.dlto=1..}] run function mg:duel/tick
+execute unless entity @a[tag=mg.dl] unless entity @a[scores={mg.dlto=1..}] if entity @a[tag=mg.dlrq] run function mg:duel/tick
 
 # Armurerie du lobby
 execute if score $setup mg.st matches 1 run function mg:lobby/guns_tick
@@ -114,7 +120,7 @@ execute if score $setup mg.st matches 1 run function mg:plot/tick
 
 # Canne ≡ MENU : refilée aux admins dès que leur inventaire est libre (toutes les 2 s ; hors partie, plot créatif, parkour, spectateur, créatif)
 scoreboard players add $gmt mg.t 1
-execute if score $gmt mg.t matches 40.. as @a[tag=mg.admin,tag=mg.init,tag=!mg.surv,tag=!mg.play,tag=!mg.out,tag=!mg.inplot,tag=!mg.pkr,tag=!mg.lk,tag=!mg.visit,gamemode=!spectator,gamemode=!creative] run function mg:core/give_menu_safe
+execute if score $gmt mg.t matches 40.. as @a[tag=mg.admin,tag=mg.init,tag=!mg.surv,tag=!mg.play,tag=!mg.out,tag=!mg.inplot,tag=!mg.pkr,tag=!mg.lk,tag=!mg.visit,tag=!mg.dl,gamemode=!spectator,gamemode=!creative] run function mg:core/give_menu_safe
 execute if score $gmt mg.t matches 40.. run scoreboard players set $gmt mg.t 0
 
 # Compte à rebours : aucun tir (flèche, œuf, boule de neige, trident, perle, liste dans tags/entity_type/shot.json) ne part des joueurs gelés

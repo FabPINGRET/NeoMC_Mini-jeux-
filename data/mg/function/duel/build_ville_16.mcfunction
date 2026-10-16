@@ -1,0 +1,62 @@
+# Duel sniper : Ville (z 40400), lot 16/17 — généré par tools/duel/gen_duel_maps.py
+fill -15 82 40407 -14 85 40407 minecraft:mossy_stone_bricks
+fill 17 82 40386 18 85 40386 minecraft:cracked_stone_bricks
+fill -18 82 40414 -17 85 40414 minecraft:cracked_stone_bricks
+fill 8 83 40386 9 83 40386 minecraft:mossy_stone_bricks
+fill -9 83 40414 -8 83 40414 minecraft:mossy_stone_bricks
+fill 8 86 40386 9 87 40386 minecraft:mossy_stone_bricks
+fill -9 86 40414 -8 87 40414 minecraft:mossy_stone_bricks
+fill 3 88 40387 11 88 40392 minecraft:stone_brick_slab[type=bottom]
+fill -11 88 40408 -3 88 40413 minecraft:stone_brick_slab[type=bottom]
+fill -4 81 40396 4 94 40404 minecraft:stone_bricks
+fill -3 81 40397 3 94 40403 minecraft:air
+fill -3 85 40397 3 85 40403 minecraft:dark_oak_planks
+fill -3 89 40397 3 89 40403 minecraft:dark_oak_planks
+fill -3 81 40403 -3 89 40403 minecraft:ladder[facing=east]
+setblock 0 83 40400 minecraft:light[level=13]
+setblock 0 88 40400 minecraft:light[level=13]
+setblock 0 92 40400 minecraft:light[level=13]
+fill -2 82 40396 -1 83 40396 minecraft:air
+fill -2 82 40404 -1 83 40404 minecraft:air
+fill -4 82 40398 -4 83 40399 minecraft:air
+fill 4 82 40398 4 83 40399 minecraft:air
+fill -2 87 40396 -1 88 40396 minecraft:air
+fill -2 87 40404 -1 88 40404 minecraft:air
+fill -4 87 40398 -4 88 40399 minecraft:air
+fill 4 87 40398 4 88 40399 minecraft:air
+fill -2 91 40396 -1 92 40396 minecraft:air
+fill -2 91 40404 -1 92 40404 minecraft:air
+fill -4 91 40398 -4 92 40399 minecraft:air
+fill 4 91 40398 4 92 40399 minecraft:air
+fill 0 81 40396 1 82 40396 minecraft:air
+fill 0 81 40404 1 82 40404 minecraft:air
+fill 0 91 40404 3 94 40404 minecraft:air
+fill -3 91 40404 0 94 40404 minecraft:air
+fill -3 91 40404 -1 94 40404 minecraft:air
+fill 0 81 40396 1 85 40396 minecraft:mossy_stone_bricks
+fill 1 88 40396 2 92 40396 minecraft:cracked_stone_bricks
+fill -2 87 40396 -1 92 40396 minecraft:mossy_stone_bricks
+fill 0 81 40396 1 85 40396 minecraft:mossy_stone_bricks
+fill -3 94 40397 0 94 40403 minecraft:stone_brick_slab[type=bottom]
+# façades-écrans autour du départ et couverts de rue
+fill -20 81 40339 -7 85 40339 minecraft:stone_bricks
+fill 7 81 40461 20 85 40461 minecraft:stone_bricks
+fill -18 82 40339 -17 83 40339 minecraft:air
+fill 17 82 40461 18 83 40461 minecraft:air
+fill -14 82 40339 -13 83 40339 minecraft:air
+fill 13 82 40461 14 83 40461 minecraft:air
+fill -10 82 40339 -9 83 40339 minecraft:air
+fill 9 82 40461 10 83 40461 minecraft:air
+fill 6 81 40339 20 85 40339 minecraft:stone_bricks
+fill -20 81 40461 -6 85 40461 minecraft:stone_bricks
+fill 8 82 40339 9 83 40339 minecraft:air
+fill -9 82 40461 -8 83 40461 minecraft:air
+fill 12 82 40339 13 83 40339 minecraft:air
+fill -13 82 40461 -12 83 40461 minecraft:air
+fill 16 82 40339 17 83 40339 minecraft:air
+fill -17 82 40461 -16 83 40461 minecraft:air
+fill -14 81 40357 -10 82 40357 minecraft:stone_bricks
+fill 10 81 40443 14 82 40443 minecraft:stone_bricks
+fill -13 83 40357 -12 83 40357 minecraft:cracked_stone_bricks
+fill 12 83 40443 13 83 40443 minecraft:cracked_stone_bricks
+fill 4 81 40357 9 82 40357 minecraft:stone_bricks

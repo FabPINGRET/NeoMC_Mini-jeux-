@@ -798,7 +798,8 @@ CATS = {
     'joueur': ('👤 Joueur et plots', 'aqua', 'Tes options et ton plot.', [
         known(OPEN(1), 'Mode spectateur ON/OFF', 'gray'), known(OPEN(2), 'Classement des victoires', 'gold'),
         known('trigger mg.pl set 1', '⌂ Aller sur mon plot', 'green'), known('trigger mg.pl set 2', '↩ Quitter mon plot', 'yellow'),
-        known('trigger mg.pl set 3', '◎ Visiter les plots', 'aqua')], 'menu'),
+        known('trigger mg.pl set 3', '◎ Visiter les plots', 'aqua'),
+        known('trigger mg.duel set 1', '⚔ Défier en duel', 'red', 'Sniper 1v1 : tête = élimination, corps = 2 touches, premier à 3 manches')], 'menu'),
 }
 for key, (title, col, body, acts, parent) in CATS.items():
     save_dialog(f'cat_{key}', {'type': 'minecraft:multi_action', 'title': {'text': title, 'color': col, 'bold': True},
