@@ -3,3 +3,6 @@
 cache/
 releases/minijeux_void*.zip
 __pycache__/
+
+# Config locale du bridge Claude (cle API)
+tools/claude-bridge/config.json

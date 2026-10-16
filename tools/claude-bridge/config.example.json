@@ -1,0 +1,14 @@
+{
+  "serverDir": "C:/ServeurPaper",
+  "repoDir": "../..",
+  "rcon": { "host": "127.0.0.1", "port": 25575, "password": "change-moi" },
+  "allowedPlayers": ["TonPseudo"],
+  "prefix": "!claude",
+  "anthropicApiKey": "sk-ant-...",
+  "model": "sonnet",
+  "maxBudgetUsd": 1,
+  "maxFixAttempts": 2,
+  "timeoutMinutes": 10,
+  "reloadWaitMs": 5000,
+  "claudeCommand": "claude"
+}
