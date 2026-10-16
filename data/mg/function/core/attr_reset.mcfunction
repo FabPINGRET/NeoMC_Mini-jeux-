@@ -8,4 +8,5 @@ attribute @s minecraft:movement_speed modifier remove mg:aim
 # Prop Hunt (cacheurs à 5 cœurs) : vie max normale au retour
 attribute @s minecraft:max_health base set 20
 function mg:core/attr_reset_g
+function mg:lobby/theme/stew_clear
 function mg:core/unfreeze

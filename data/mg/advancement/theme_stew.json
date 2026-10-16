@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "stew": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": "{mg_thst:1b}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "mg:lobby/theme/stew_eat"
+  }
+}

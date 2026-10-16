@@ -8,13 +8,15 @@ bedwars/prepare tuent ce tag. Cadeau : objet tagué custom_data mg_thg (ragoût 
 budget par joueur (mg.thfw, +3 par don) : une étoile prise dans un coffre ou ramassée ne part pas. Cadeaux retirés à la bascule du
 thème, à chaque lancement de partie, et chaque seconde chez les joueurs occupés ailleurs (partie, plot, élytres, kart...).
 Fichiers : lobby/theme/<t>/npc (idempotent : retire puis repose), <t>/npc_give ; communs : npc_use, npc_second, fw_use (feux d'artifice
-de Noël : l'étoile consommée déclenche l'advancement mg:theme_fw, écrit ici). Tout reste sous lobby/theme/ (cf. theme_world.load).
+de Noël : l'étoile consommée déclenche l'advancement mg:theme_fw, écrit ici ; le ragoût et ses effets : theme_stew.py). Tout reste sous
+lobby/theme/ (cf. theme_world.load).
 check_spot() arrête le générateur si l'emplacement n'est plus libre ; prepare() la vérifie et réserve la place (à appeler avant les thèmes).
 """
 import json
 import os
 
 import common as C
+import theme_stew as TS
 from theme_mobs import THEME_TAG
 from theme_water import FOUNT
 from theme_world import ELYTRA_PADS, NOT_SOLID, PAD_MARGIN, W, bid, free, reserve
@@ -93,17 +95,6 @@ def gate(icon, color):
             f'execute if score $thg mg.st matches 2.. run return run title @s actionbar {{"text":"{icon} Utilise d\'abord ton cadeau !","color":"{color}"}}']
 
 
-STEW_EFFECTS = [('invisibility', 400), ('glowing', 200), ('nausea', 160), ('darkness', 200), ('hunger', 200), ('luck', 400)]
-
-
-def stew(effect, ticks):
-    return ('minecraft:suspicious_stew[minecraft:custom_data={mg_thg:1b},minecraft:custom_name={"text":"Ragoût mystère","color":"gold","italic":false},'
-            'minecraft:lore=[{"text":"Une sorcière y a jeté un peu de tout…","color":"gray","italic":false},'
-            '{"text":"Effet : surprise !","color":"dark_purple","italic":false}],'
-            f'minecraft:food={{nutrition:0,saturation:0f,can_always_eat:true}},!minecraft:use_remainder,'
-            f'minecraft:suspicious_stew_effects=[{{id:"minecraft:{effect}",duration:{ticks}}}]]')
-
-
 STAR = ('minecraft:firework_star[minecraft:custom_data={mg_thg:1b,mg_thfw:1b},minecraft:item_model="minecraft:firework_rocket",'
         'minecraft:custom_name={"text":"Feu d\'artifice du lutin","color":"red","italic":false},'
         'minecraft:lore=[{"text":"Clic droit à ciel ouvert : il part tout seul.","color":"gray","italic":false}],'
@@ -114,9 +105,7 @@ STAR = ('minecraft:firework_star[minecraft:custom_data={mg_thg:1b,mg_thfw:1b},mi
 
 def witch_give():
     lines = ['# 🎃 La sorcière donne un ragoût mystère (@s = joueur) ; appelé par lobby/theme/npc_use'] + gate('🎃', 'gold')
-    lines.append(f'execute store result score $thr mg.st run random value 1..{len(STEW_EFFECTS)}')
-    lines += [f'execute if score $thr mg.st matches {i} run give @s {stew(e, t)}' for i, (e, t) in enumerate(STEW_EFFECTS, 1)]
-    return lines + [f'scoreboard players set @s mg.thc {COOLDOWN}',
+    return lines + [f'give @s {TS.STEW}', f'scoreboard players set @s mg.thc {COOLDOWN}',
                     'execute at @s run playsound minecraft:entity.witch.celebrate neutral @a[distance=..16] ~ ~ ~ 1 1',
                     'execute at @e[type=minecraft:interaction,tag=mg.thnpci,limit=1] run particle minecraft:witch ~ ~1 ~ 0.3 0.5 0.3 0.05 15 normal',
                     'title @s actionbar {"text":"🎃 Hihihi… un ragoût mystère !","color":"gold"}']
@@ -149,7 +138,7 @@ def write_npc(T, label, kind):
     return ([f'function mg:{T}/npc'],
             [f'execute in minecraft:overworld unless score $thrs mg.st matches 1.. if loaded {LOADED} {m} run function mg:{T}/npc'
              for m in ('unless entity @e[type=minecraft:interaction,tag=mg.thnpci]', 'unless entity @e[tag=mg.thnpc,tag=mg.thmob]')],
-            [f'clear @a[tag=!mg.surv] {GIFT}', 'scoreboard players reset @a[tag=!mg.surv] mg.thfw'])
+            [f'clear @a[tag=!mg.surv] {GIFT}', 'scoreboard players reset @a[tag=!mg.surv] mg.thfw'] + TS.off_lines())
 
 
 # ------------------------------------------------------------------ fonctions communes
@@ -168,8 +157,10 @@ def write_common(themes):
        for tid, key in themes] +
       [f'execute if data entity @s attack on attacker {who} if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/npc_give'
        for tid, key in themes] + ['data remove entity @s interaction', 'data remove entity @s attack'])
-    w('lobby/theme/npc_second', ['# Chaque seconde (lobby/theme/tick) : recharge des cadeaux, objets retirés aux joueurs occupés ailleurs',
-                                 'scoreboard players remove @a[scores={mg.thc=1..}] mg.thc 1'] + [f'clear @a[tag={t}] {GIFT}' for t in BUSY])
+    w('lobby/theme/npc_second', ['# Chaque seconde (lobby/theme/tick) : recharge des cadeaux, objets retirés aux joueurs occupés ailleurs, effets du ragoût',
+                                 'scoreboard players remove @a[scores={mg.thc=1..}] mg.thc 1'] + [f'clear @a[tag={t}] {GIFT}' for t in BUSY] +
+      TS.second_lines(BUSY))
+    TS.write_files(BUSY)                 # stew_*, advancement mg:theme_stew, tag mg:wind_touchy
     sky = ' '.join(f'if block ~ ~{dy} ~ #mg:sky_clear' for dy in range(2, 15))
     w('lobby/theme/fw_use', ['# 🎄 Étoile de feu d\'artifice consommée (advancement mg:theme_fw ; @s = joueur) : fusée à 4 explosions de Noël, tirée au hasard',
                              'advancement revoke @s only mg:theme_fw',
@@ -208,9 +199,9 @@ def wire():
             ['execute as @e[type=minecraft:interaction,tag=mg.thnpci] if data entity @s interaction run function mg:lobby/theme/npc_use',
              'execute as @e[type=minecraft:interaction,tag=mg.thnpci] if data entity @s attack run function mg:lobby/theme/npc_use'], where='before')
     C.patch('lobby/theme/tick', 'scoreboard players set $tht mg.st 0', ['function mg:lobby/theme/npc_second'])
-    # lancement d'une partie : plus de cadeau ni d'effet de ragoût chez les participants
+    # lancement d'une partie : plus de cadeau chez les participants (leurs effets de ragoût : theme_stew.wire, en dernier)
     C.patch('core/request', 'clear @a[tag=!mg.surv] minecraft:snowball',
-            [f'clear @a[tag=!mg.surv] {GIFT}', 'scoreboard players reset @a[tag=!mg.surv] mg.thfw'] + [f'effect clear @a[tag=mg.play] minecraft:{e}' for e, _ in STEW_EFFECTS])
+            [f'clear @a[tag=!mg.surv] {GIFT}', 'scoreboard players reset @a[tag=!mg.surv] mg.thfw'])
     # sans thème (ancien monde) : les restes du PNJ (zone cliquable, indication) partent avec le corps, au même balayage
     C.patch('core/tick', 'execute if score $lan mg.t matches 30 unless score $theme mg.st matches 1.. unless data storage mg:lobby theme '
             'as @e[tag=mg.thmob] run function mg:lobby/theme/gone',
@@ -218,3 +209,4 @@ def wire():
     C.patch('desinstaller', 'kill @e[tag=mg.npc]',
             [f'clear @a {GIFT}', 'kill @e[tag=mg.thnpc]', 'advancement revoke @a only mg:theme_fw',
              f'execute as @e[type=minecraft:item] if items entity @s contents {GIFT} run kill @s'])
+    TS.wire()                            # objectif mg.ths, core/request (stew_game), core/attr_reset, desinstaller : après les patchs ci-dessus

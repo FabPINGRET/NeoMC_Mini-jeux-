@@ -7097,3 +7097,4 @@ execute if block 75 65 34 minecraft:orange_candle run setblock 75 65 34 minecraf
 function mg:lobby/theme/halloween/water_off
 clear @a[tag=!mg.surv] *[minecraft:custom_data~{mg_thg:1b}]
 scoreboard players reset @a[tag=!mg.surv] mg.thfw
+execute as @a[scores={mg.ths=1..}] run function mg:lobby/theme/stew_clear

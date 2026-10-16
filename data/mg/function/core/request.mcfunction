@@ -152,12 +152,7 @@ clear @a[tag=!mg.surv] minecraft:wind_charge
 clear @a[tag=!mg.surv] minecraft:snowball
 clear @a[tag=!mg.surv] *[minecraft:custom_data~{mg_thg:1b}]
 scoreboard players reset @a[tag=!mg.surv] mg.thfw
-effect clear @a[tag=mg.play] minecraft:invisibility
-effect clear @a[tag=mg.play] minecraft:glowing
-effect clear @a[tag=mg.play] minecraft:nausea
-effect clear @a[tag=mg.play] minecraft:darkness
-effect clear @a[tag=mg.play] minecraft:hunger
-effect clear @a[tag=mg.play] minecraft:luck
+execute as @a[tag=mg.play] run function mg:lobby/theme/stew_game
 scoreboard players reset @a mg.qs
 scoreboard players reset @a mg.fw
 scoreboard players reset @a mg.wc
