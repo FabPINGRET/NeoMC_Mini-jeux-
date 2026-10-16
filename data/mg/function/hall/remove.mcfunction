@@ -41,6 +41,8 @@ scoreboard objectives remove mg.wg_slimejump
 scoreboard objectives remove mg.wg_lab
 scoreboard objectives remove mg.wg_master
 scoreboard objectives remove mg.wg_murder
+scoreboard objectives remove mg.wg_bman
+scoreboard objectives remove mg.wg_maze
 kill @e[tag=mg.hall]
 schedule clear mg:hall/build
 data remove storage mg:hall e

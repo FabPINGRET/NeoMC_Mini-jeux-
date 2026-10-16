@@ -41,6 +41,8 @@ scoreboard objectives add mg.wg_slimejump dummy [{"text":"🟩 Slime Jump","colo
 scoreboard objectives add mg.wg_lab dummy [{"text":"🙈 Labyrinthe aveugle","color":"light_purple","bold":true},{"text":" — victoires","color":"gray","bold":false}]
 scoreboard objectives add mg.wg_master dummy [{"text":"👑 Master dit","color":"gold","bold":true},{"text":" — victoires","color":"gray","bold":false}]
 scoreboard objectives add mg.wg_murder dummy [{"text":"🔪 Murder Mystery","color":"red","bold":true},{"text":" — victoires","color":"gray","bold":false}]
+scoreboard objectives add mg.wg_bman dummy [{"text":"💣 Bomberman","color":"red","bold":true},{"text":" — victoires","color":"gray","bold":false}]
+scoreboard objectives add mg.wg_maze dummy [{"text":"🌀 Labyrinthe géant","color":"light_purple","bold":true},{"text":" — victoires","color":"gray","bold":false}]
 scoreboard objectives modify mg.stp displayname [{"text":"▶ Parties jouées","color":"green","bold":true}]
 scoreboard objectives modify mg.stk displayname [{"text":"⚔ Kills","color":"red","bold":true},{"text":" (toutes parties)","color":"gray","bold":false}]
 scoreboard objectives modify mg.wins displayname [{"text":"✦ Victoires","color":"gold","bold":true},{"text":" (tous les jeux)","color":"gray","bold":false}]

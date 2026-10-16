@@ -1,0 +1,1 @@
+summon minecraft:item_display ~ ~0.45 ~ {Tags:["mg.yd"],item:{id:"minecraft:tnt",count:1},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.85f,0.85f,0.85f]}}

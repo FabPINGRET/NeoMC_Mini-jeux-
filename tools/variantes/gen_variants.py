@@ -731,6 +731,9 @@ CATS = {
         act('🙈 Labyrinthe aveugle', 'light_purple', 'trigger mg.go set 225', 'Par paires : le marcheur est aveugle, le guide le dirige d\'en haut (au vocal)'),
         act('👑 Master dit', 'gold', 'trigger mg.go set 226', 'Ordres ultra rapides ; sans « Master dit », c\'est un piège !'),
         act('🔪 Murder Mystery', 'red', 'trigger mg.go set 227', 'Un tueur caché, un détective armé : démasquez-le avant qu\'il ne vous élimine tous'),
+        act('💣 Bomberman', 'red', 'trigger mg.go set 239', 'Pose des bombes, casse les briques, ramasse les bonus : dernier debout gagne (2 à 8)'),
+        act('💣 Bomberman — équipes', 'red', 'trigger mg.go set 240', 'Rouges contre bleus : la dernière équipe debout gagne'),
+        act('🌀 Labyrinthe géant', 'light_purple', 'trigger mg.go set 241', 'Course dans un labyrinthe de 100 × 100 : bonus, pièges, grilles, téléporteurs'),
         act('🎾 Wii Sports ▸', 'aqua', OPEN(56), 'Bowling, golf, tennis : chacun sa piste')], 'menu'),
     'autotamp': ('🚗 Autos tamponneuses', 'aqua', 'Choisis le nombre de coups avant d\'être éliminé.', [
         act('🚗 3 coups', 'red', 'trigger mg.go set 222', 'Partie courte et brutale'),
@@ -892,7 +895,7 @@ NATIVE = {
     75: ('Course d\'anneaux', 2), 76: ('Course + combat', 3), 77: ('Survie en vol', 4),
     61: ('Circuit Champignon', 2), 62: ('Royaume Koopa', 3), 63: ('Bataille', 2), 56: ('Bateaux sur glace', 2),
     81: ('Canyon du Couchant', 3), 30: ('Turf Wars', 2),
-    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2), 88: ('🏰 The Towers', 3), 89: ('🚚 Convoi', 3), 90: ('🚚 Convoi — coop', 3), 91: ('▦ Block Party — bandes', 3), 92: ('▦ Block Party — mixte', 3), 93: ('🚩 Capture the Flag', 3), 94: ('⛏ Mini UHC Run', 3), 95: ('🏹 Mini Hunger Games', 3), 96: ('🎭 Prop Hunt', 2), 97: ('🧟 Zombies', 3), 98: ('🧪 Infection', 2), 220: ('🔴 1, 2, 3 Soleil', 2), 221: ('🚗 Autos tamponneuses', 2), 222: ('🚗 Autos tamponneuses — 3 coups', 2), 223: ('🚗 Autos tamponneuses — 8 coups', 2), 224: ('🟩 Slime Jump', 3), 225: ('🙈 Labyrinthe aveugle', 2), 226: ('👑 Master dit', 2), 227: ('🔪 Murder Mystery', 3),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
+    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2), 88: ('🏰 The Towers', 3), 89: ('🚚 Convoi', 3), 90: ('🚚 Convoi — coop', 3), 91: ('▦ Block Party — bandes', 3), 92: ('▦ Block Party — mixte', 3), 93: ('🚩 Capture the Flag', 3), 94: ('⛏ Mini UHC Run', 3), 95: ('🏹 Mini Hunger Games', 3), 96: ('🎭 Prop Hunt', 2), 97: ('🧟 Zombies', 3), 98: ('🧪 Infection', 2), 220: ('🔴 1, 2, 3 Soleil', 2), 221: ('🚗 Autos tamponneuses', 2), 222: ('🚗 Autos tamponneuses — 3 coups', 2), 223: ('🚗 Autos tamponneuses — 8 coups', 2), 224: ('🟩 Slime Jump', 3), 225: ('🙈 Labyrinthe aveugle', 2), 226: ('👑 Master dit', 2), 227: ('🔪 Murder Mystery', 3), 239: ('💣 Bomberman', 3), 240: ('💣 Bomberman — équipes', 3), 241: ('🌀 Labyrinthe géant', 3),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
 }
 SHORT_OPT = {   # boutons de navigation (mg.opt) : noms courts
     24: '➶ OITC ▸', 10: '⚡ Quake ▸', 20: '⚓ Enclumes ▸', 19: '⬇ Dropper ▸', 28: '🪽 Course élytres ▸', 23: '⚔ Arène PvP ▸',

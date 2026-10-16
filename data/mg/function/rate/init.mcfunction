@@ -521,3 +521,7 @@ data modify storage mg:rate lab.fmaster set value '""'
 function mg:rate/lab_fam {f:"master",g:41}
 data modify storage mg:rate lab.fmurder set value '""'
 function mg:rate/lab_fam {f:"murder",g:42}
+data modify storage mg:rate lab.fbman set value '""'
+function mg:rate/lab_fam {f:"bman",g:43}
+data modify storage mg:rate lab.fmaze set value '""'
+function mg:rate/lab_fam {f:"maze",g:44}

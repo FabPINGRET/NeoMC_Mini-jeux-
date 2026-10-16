@@ -64,3 +64,5 @@ execute if score $game mg.st matches 224 run function mg:hall/game {obj:"mg.wg_s
 execute if score $game mg.st matches 225 run function mg:hall/game {obj:"mg.wg_lab",key:"lab",lbl:"🙈 Labyrinthe aveugle",col:"light_purple"}
 execute if score $game mg.st matches 226 run function mg:hall/game {obj:"mg.wg_master",key:"master",lbl:"👑 Master dit",col:"gold"}
 execute if score $game mg.st matches 227 run function mg:hall/game {obj:"mg.wg_murder",key:"murder",lbl:"🔪 Murder Mystery",col:"red"}
+execute if score $game mg.st matches 239..240 run function mg:hall/game {obj:"mg.wg_bman",key:"bman",lbl:"💣 Bomberman",col:"red"}
+execute if score $game mg.st matches 241 run function mg:hall/game {obj:"mg.wg_maze",key:"maze",lbl:"🌀 Labyrinthe géant",col:"light_purple"}
