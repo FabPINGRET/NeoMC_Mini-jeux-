@@ -11,5 +11,6 @@ execute store result storage mg:c y int 1 run scoreboard players get $py mg.st
 execute store result storage mg:c z int 1 run scoreboard players get $pz mg.st
 function mg:core/tp_perch with storage mg:c
 
-tellraw @a [{"selector":"@s","color":"red"},{"text":" est éliminé !","color":"gray"}]
+execute unless score $game mg.st matches 227 run tellraw @a [{"selector":"@s","color":"red"},{"text":" est éliminé !","color":"gray"}]
+execute if score $game mg.st matches 227 run tellraw @s {"text":"☠ Tu es éliminé : tu regardes la suite en silence.","color":"gray"}
 execute as @a[tag=!mg.surv] at @s run playsound minecraft:entity.blaze.death master @s ~ ~ ~ 0.5 0.8
