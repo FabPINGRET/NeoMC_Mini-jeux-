@@ -95,6 +95,18 @@ def patch(rel, anchor, new_lines, where='after'):
         f.write('\n'.join(lines))
 
 
+def drop_lines(rel, lines):
+    """Retire d'une fonction les lignes exactes données (rien ne change si elles n'y sont plus)."""
+    p = os.path.join(F, rel + '.mcfunction')
+    with open(p, encoding='utf-8') as f:
+        txt = f.read().split('\n')
+    kept = [l for l in txt if l not in lines]
+    if len(kept) == len(txt):
+        return
+    with open(p, 'w', encoding='utf-8', newline='\n') as f:
+        f.write('\n'.join(kept))
+
+
 def go_range(gid):
     """Élargit la plage d'ids acceptés par core/go (1..N) si besoin."""
     p = os.path.join(F, 'core/go.mcfunction')

@@ -11956,3 +11956,4 @@ execute if block 75 65 34 minecraft:red_candle run setblock 75 65 34 minecraft:a
 execute if block 77 65 1 minecraft:snow run setblock 77 65 1 minecraft:air
 clear @a[tag=!mg.surv] *[minecraft:custom_data~{mg_thg:1b}]
 scoreboard players reset @a[tag=!mg.surv] mg.thfw
+execute as @a[scores={mg.ths=1..}] run function mg:lobby/theme/stew_clear
