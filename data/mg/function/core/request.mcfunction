@@ -278,6 +278,10 @@ execute if score $game mg.st matches 229 run tellraw @a [{"selector":"@s","color
 execute if score $game mg.st matches 230 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧪 INFECTION — Usine","color":"dark_green","bold":true},{"text":" : survivants armés contre zombies contagieux, 3 min !","color":"gray"}]
 execute if score $game mg.st matches 231 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧟 ZOMBIES — Station","color":"dark_green","bold":true},{"text":" : survivez à 20 manches dans le bunker !","color":"gray"}]
 execute if score $game mg.st matches 232 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧪 INFECTION — Station","color":"dark_green","bold":true},{"text":" : survivants armés contre zombies contagieux, 3 min !","color":"gray"}]
+execute if score $game mg.st matches 235 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧟 ZOMBIES — Hôpital","color":"dark_green","bold":true},{"text":" : survivez à 20 manches dans le bunker !","color":"gray"}]
+execute if score $game mg.st matches 236 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧪 INFECTION — Hôpital","color":"dark_green","bold":true},{"text":" : survivants armés contre zombies contagieux, 3 min !","color":"gray"}]
+execute if score $game mg.st matches 237 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧟 ZOMBIES — Mine","color":"dark_green","bold":true},{"text":" : survivez à 20 manches dans le bunker !","color":"gray"}]
+execute if score $game mg.st matches 238 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧪 INFECTION — Mine","color":"dark_green","bold":true},{"text":" : survivants armés contre zombies contagieux, 3 min !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 83 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"📞 TÉLÉPHONE","color":"gold","bold":true},{"text":" : mot → construction → devinette → construction → devinette !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
@@ -324,6 +328,8 @@ execute if score $game mg.st matches 31 run function mg:quake/prepare
 execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
+execute if score $game mg.st matches 237..238 run function mg:zmode7/prepare
+execute if score $game mg.st matches 235..236 run function mg:zmode6/prepare
 execute if score $game mg.st matches 231..232 run function mg:zmode5/prepare
 execute if score $game mg.st matches 229..230 run function mg:zmode4/prepare
 execute if score $game mg.st matches 228 run function mg:dropadv/s_prepare

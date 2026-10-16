@@ -129,6 +129,42 @@
     {
       "label": [
         {
+          "text": "🧟 Zombies — Hôpital",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Deux étages, cage d'escalier, galerie au-dessus des urgences",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 235"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🧟 Zombies — Mine",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Rampe, terrasses, puits avec un trou vers la galerie basse",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 237"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour",
           "color": "yellow"
         }

@@ -33,6 +33,11 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+schedule clear mg:zmode7/prepare_b
+forceload remove -36 40164 54 40236
+schedule clear mg:zmode6/prepare_b
+forceload remove -40 39772 56 39818
+scoreboard objectives remove mg.zdr
 scoreboard objectives remove mg.trsp
 scoreboard objectives remove mg.trs1
 scoreboard objectives remove mg.trs2

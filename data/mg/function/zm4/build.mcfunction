@@ -24,6 +24,18 @@ fill -35 81 39043 39 81 39119 minecraft:cyan_terracotta
 fill -35 86 39043 39 86 39119 minecraft:smooth_stone
 fill -8 80 39092 8 80 39108 minecraft:polished_andesite
 fill -8 81 39092 8 85 39108 minecraft:air
+fill -4 80 39070 4 80 39090 minecraft:iron_block
+fill -4 81 39070 4 85 39090 minecraft:air
+fill -30 80 39088 -10 80 39112 minecraft:smooth_stone
+fill -30 81 39088 -10 85 39112 minecraft:air
+fill 10 80 39086 32 80 39114 minecraft:spruce_planks
+fill 10 81 39086 32 85 39114 minecraft:air
+fill -12 80 39048 14 80 39068 minecraft:polished_deepslate
+fill -12 81 39048 14 85 39068 minecraft:air
+fill -30 80 39064 -14 80 39086 minecraft:dark_oak_planks
+fill -30 81 39064 -14 85 39086 minecraft:air
+fill 16 80 39056 34 80 39084 minecraft:stone_bricks
+fill 16 81 39056 34 85 39084 minecraft:air
 setblock -6 86 39094 minecraft:sea_lantern
 setblock -6 86 39099 minecraft:sea_lantern
 setblock -6 86 39104 minecraft:sea_lantern
@@ -33,14 +45,10 @@ setblock -1 86 39104 minecraft:sea_lantern
 setblock 4 86 39094 minecraft:sea_lantern
 setblock 4 86 39099 minecraft:sea_lantern
 setblock 4 86 39104 minecraft:sea_lantern
-fill -4 80 39070 4 80 39090 minecraft:iron_block
-fill -4 81 39070 4 85 39090 minecraft:air
 setblock -2 86 39072 minecraft:sea_lantern
 setblock -2 86 39077 minecraft:sea_lantern
 setblock -2 86 39082 minecraft:sea_lantern
 setblock -2 86 39087 minecraft:sea_lantern
-fill -30 80 39088 -10 80 39112 minecraft:smooth_stone
-fill -30 81 39088 -10 85 39112 minecraft:air
 setblock -28 86 39090 minecraft:sea_lantern
 setblock -28 86 39095 minecraft:sea_lantern
 setblock -28 86 39100 minecraft:sea_lantern
@@ -61,8 +69,6 @@ setblock -13 86 39095 minecraft:sea_lantern
 setblock -13 86 39100 minecraft:sea_lantern
 setblock -13 86 39105 minecraft:sea_lantern
 setblock -13 86 39110 minecraft:sea_lantern
-fill 10 80 39086 32 80 39114 minecraft:spruce_planks
-fill 10 81 39086 32 85 39114 minecraft:air
 setblock 12 86 39088 minecraft:sea_lantern
 setblock 12 86 39093 minecraft:sea_lantern
 setblock 12 86 39098 minecraft:sea_lantern
@@ -83,8 +89,6 @@ setblock 27 86 39093 minecraft:sea_lantern
 setblock 27 86 39098 minecraft:sea_lantern
 setblock 27 86 39103 minecraft:sea_lantern
 setblock 27 86 39108 minecraft:sea_lantern
-fill -12 80 39048 14 80 39068 minecraft:polished_deepslate
-fill -12 81 39048 14 85 39068 minecraft:air
 setblock -10 86 39050 minecraft:sea_lantern
 setblock -10 86 39055 minecraft:sea_lantern
 setblock -10 86 39060 minecraft:sea_lantern
@@ -105,8 +109,6 @@ setblock 10 86 39050 minecraft:sea_lantern
 setblock 10 86 39055 minecraft:sea_lantern
 setblock 10 86 39060 minecraft:sea_lantern
 setblock 10 86 39065 minecraft:sea_lantern
-fill -30 80 39064 -14 80 39086 minecraft:dark_oak_planks
-fill -30 81 39064 -14 85 39086 minecraft:air
 setblock -28 86 39066 minecraft:sea_lantern
 setblock -28 86 39071 minecraft:sea_lantern
 setblock -28 86 39076 minecraft:sea_lantern
@@ -119,8 +121,6 @@ setblock -18 86 39066 minecraft:sea_lantern
 setblock -18 86 39071 minecraft:sea_lantern
 setblock -18 86 39076 minecraft:sea_lantern
 setblock -18 86 39081 minecraft:sea_lantern
-fill 16 80 39056 34 80 39084 minecraft:stone_bricks
-fill 16 81 39056 34 85 39084 minecraft:air
 setblock 18 86 39058 minecraft:sea_lantern
 setblock 18 86 39063 minecraft:sea_lantern
 setblock 18 86 39068 minecraft:sea_lantern
