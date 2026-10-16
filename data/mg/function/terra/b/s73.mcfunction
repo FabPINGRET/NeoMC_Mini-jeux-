@@ -1,4 +1,7 @@
-# Construction de Terra Nova, étape 73/101 (dimension mg:terranova, générée)
+# Construction de Terra Nova, étape 73/100 (dimension mg:terranova, générée)
+place feature minecraft:jungle_bush 7 65 -58
+place feature minecraft:jungle_bush -35 64 70
+place feature minecraft:jungle_bush 53 65 85
 place feature minecraft:jungle_bush -90 70 -32
 place feature minecraft:jungle_bush 59 64 52
 place feature minecraft:jungle_bush 36 65 -81
@@ -36,6 +39,3 @@ place feature minecraft:jungle_bush 51 64 -46
 place feature minecraft:jungle_bush -59 66 -60
 place feature minecraft:jungle_bush 19 67 62
 place feature minecraft:jungle_bush -73 64 73
-place feature minecraft:jungle_bush -65 65 14
-place feature minecraft:jungle_bush -73 64 79
-place feature minecraft:jungle_bush -82 66 29

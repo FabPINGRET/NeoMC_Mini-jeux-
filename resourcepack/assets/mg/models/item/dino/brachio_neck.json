@@ -1,0 +1,214 @@
+{
+  "textures": {
+    "belly": "mg:item/dino/brachio_belly",
+    "skin": "mg:item/dino/brachio_skin",
+    "stripe": "mg:item/dino/brachio_stripe",
+    "particle": "mg:item/dino/brachio_belly"
+  },
+  "elements": [
+    {
+      "from": [
+        6.208,
+        6.208,
+        6.925
+      ],
+      "to": [
+        9.792,
+        9.792,
+        30.187
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            13.44,
+            13.44
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            13.44,
+            13.44
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            13.44
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            13.44
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            13.44,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            13.44,
+            16.0
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        6.566,
+        6.165,
+        8.0
+      ],
+      "to": [
+        9.434,
+        7.283,
+        29.077
+      ],
+      "faces": {
+        "north": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            10.75,
+            4.19
+          ]
+        },
+        "south": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            10.75,
+            4.19
+          ]
+        },
+        "east": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            16.0,
+            4.19
+          ]
+        },
+        "west": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            16.0,
+            4.19
+          ]
+        },
+        "up": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            10.75,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            10.75,
+            16.0
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        7.317,
+        9.792,
+        8.853
+      ],
+      "to": [
+        8.683,
+        10.048,
+        28.48
+      ],
+      "faces": {
+        "north": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            5.12,
+            1.0
+          ]
+        },
+        "south": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            5.12,
+            1.0
+          ]
+        },
+        "east": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            16.0,
+            1.0
+          ]
+        },
+        "west": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            16.0,
+            1.0
+          ]
+        },
+        "up": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            5.12,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            5.12,
+            16.0
+          ]
+        }
+      }
+    }
+  ]
+}

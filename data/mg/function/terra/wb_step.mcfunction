@@ -100,6 +100,5 @@ execute if score $tvb mg.st matches 97 in mg:terranova run function mg:terra/b/s
 execute if score $tvb mg.st matches 98 in mg:terranova run function mg:terra/b/s98
 execute if score $tvb mg.st matches 99 in mg:terranova run function mg:terra/b/s99
 execute if score $tvb mg.st matches 100 in mg:terranova run function mg:terra/b/s100
-execute if score $tvb mg.st matches 101 in mg:terranova run function mg:terra/b/s101
-execute if score $tvb mg.st matches 102 run function mg:terra/wb_done
-execute if score $tvb mg.st matches ..101 run schedule function mg:terra/wb_step 1t
+execute if score $tvb mg.st matches 101 run function mg:terra/wb_done
+execute if score $tvb mg.st matches ..100 run schedule function mg:terra/wb_step 1t

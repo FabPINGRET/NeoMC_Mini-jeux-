@@ -1,6 +1,8 @@
 # @s a abattu un carnotaure : 120 ₵ (+ mission de chasse), les autres chasseurs ont une part
 scoreboard players set @s mg.tvkc 0
+function mg:terra/rpg/k_carno
 scoreboard players add @s mg.tvc 120
+function mg:terra/rpg/xp {n:60}
 scoreboard players set @s mg.tval 40
 title @s actionbar [{"text":"+120 ₵ ","color":"gold","bold":true},{"text":"carnotaure abattu !","color":"gray"}]
 execute at @s run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 0.6 1.2

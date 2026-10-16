@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "skin": "mg:item/dino/carno_skin",
+    "particle": "mg:item/dino/carno_skin"
+  },
+  "elements": [
+    {
+      "from": [
+        3.968,
+        -7.96,
+        2.355
+      ],
+      "to": [
+        12.032,
+        11.125,
+        14.048
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            8.06,
+            16.0
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            8.06,
+            16.0
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.69,
+            16.0
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.69,
+            16.0
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            8.06,
+            11.69
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            8.06,
+            11.69
+          ]
+        }
+      }
+    }
+  ]
+}

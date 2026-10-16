@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "beak": "mg:item/dino/ankylo_beak",
+    "particle": "mg:item/dino/ankylo_beak"
+  },
+  "elements": [
+    {
+      "from": [
+        4.191,
+        6.226,
+        8.0
+      ],
+      "to": [
+        11.809,
+        8.0,
+        17.715
+      ],
+      "faces": {
+        "north": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            7.62,
+            1.77
+          ]
+        },
+        "south": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            7.62,
+            1.77
+          ]
+        },
+        "east": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            9.72,
+            1.77
+          ]
+        },
+        "west": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            9.72,
+            1.77
+          ]
+        },
+        "up": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            7.62,
+            9.72
+          ]
+        },
+        "down": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            7.62,
+            9.72
+          ]
+        }
+      }
+    }
+  ]
+}

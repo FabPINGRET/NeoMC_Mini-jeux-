@@ -4,3 +4,4 @@ tag @s remove mg.surv
 function mg:terra/mis_clear
 function mg:terra/traps_clear
 function mg:terra/untag
+function mg:terra/rpg/leave

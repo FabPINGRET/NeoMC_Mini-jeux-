@@ -6,5 +6,5 @@ execute anchored eyes positioned ^ ^ ^1.5 run particle minecraft:sonic_boom ~ ~ 
 execute anchored eyes positioned ^ ^ ^3.5 run particle minecraft:sonic_boom ~ ~ ~ 0.4 0.3 0.4 0 2 force
 execute anchored eyes positioned ^ ^ ^6 run particle minecraft:sonic_boom ~ ~ ~ 0.9 0.5 0.9 0 3 force
 tag @s add mg.tvsrc
-execute anchored eyes positioned ^ ^ ^4 as @e[tag=mg.tvd,distance=..4.5] at @s run function mg:terra/sonic_hit
+execute anchored eyes positioned ^ ^ ^4 as @e[tag=mg.tvtg,distance=..4.5] at @s run function mg:terra/sonic_hit
 tag @s remove mg.tvsrc

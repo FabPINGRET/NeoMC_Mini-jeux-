@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "skin": "mg:item/dino/ptera_skin",
+    "particle": "mg:item/dino/ptera_skin"
+  },
+  "elements": [
+    {
+      "from": [
+        5.696,
+        5.696,
+        6.72
+      ],
+      "to": [
+        10.304,
+        10.304,
+        18.24
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            4.61,
+            4.61
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            4.61,
+            4.61
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.52,
+            4.61
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.52,
+            4.61
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            4.61,
+            11.52
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            4.61,
+            11.52
+          ]
+        }
+      }
+    }
+  ]
+}

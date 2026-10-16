@@ -1,0 +1,21 @@
+# intro : ticks 361 à 380
+execute if score @s mg.trct matches 361 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.6469 70.1044 -8.2637 -162.9 18.7
+execute if score @s mg.trct matches 362 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.6609 70.0475 -8.3088 -162.9 18.8
+execute if score @s mg.trct matches 363 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.6773 69.9913 -8.3487 -162.9 18.9
+execute if score @s mg.trct matches 364 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.696 69.936 -8.384 -163.0 19.1
+execute if score @s mg.trct matches 365 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.7165 69.8815 -8.4151 -163.0 19.2
+execute if score @s mg.trct matches 366 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.7385 69.8279 -8.4425 -163.1 19.4
+execute if score @s mg.trct matches 367 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.7618 69.7753 -8.4668 -163.2 19.5
+execute if score @s mg.trct matches 368 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.7859 69.7236 -8.4884 -163.4 19.7
+execute if score @s mg.trct matches 369 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.8106 69.6729 -8.5079 -163.5 19.9
+execute if score @s mg.trct matches 370 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.8355 69.6233 -8.5257 -163.6 20.0
+execute if score @s mg.trct matches 371 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.8603 69.5748 -8.5424 -163.8 20.2
+execute if score @s mg.trct matches 372 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.8846 69.5273 -8.5585 -164.0 20.4
+execute if score @s mg.trct matches 373 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.9083 69.481 -8.5745 -164.1 20.5
+execute if score @s mg.trct matches 374 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.9308 69.4359 -8.5908 -164.3 20.7
+execute if score @s mg.trct matches 375 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.952 69.392 -8.608 -164.4 20.9
+execute if score @s mg.trct matches 376 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.9715 69.3494 -8.6266 -164.5 21.0
+execute if score @s mg.trct matches 377 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 11.9889 69.308 -8.6471 -164.7 21.2
+execute if score @s mg.trct matches 378 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 12.0039 69.268 -8.67 -164.8 21.4
+execute if score @s mg.trct matches 379 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 12.0162 69.2293 -8.6958 -164.8 21.5
+execute if score @s mg.trct matches 380 run return run execute in mg:terranova as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run tp @s 12.0256 69.1921 -8.725 -164.8 21.7

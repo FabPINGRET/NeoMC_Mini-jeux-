@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "beak": "mg:item/dino/galli_beak",
+    "particle": "mg:item/dino/galli_beak"
+  },
+  "elements": [
+    {
+      "from": [
+        6.72,
+        6.976,
+        8.0
+      ],
+      "to": [
+        9.28,
+        8.0,
+        13.712
+      ],
+      "faces": {
+        "north": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            2.56,
+            1.02
+          ]
+        },
+        "south": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            2.56,
+            1.02
+          ]
+        },
+        "east": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            5.71,
+            1.02
+          ]
+        },
+        "west": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            5.71,
+            1.02
+          ]
+        },
+        "up": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            2.56,
+            5.71
+          ]
+        },
+        "down": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            2.56,
+            5.71
+          ]
+        }
+      }
+    }
+  ]
+}

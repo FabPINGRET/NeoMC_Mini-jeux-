@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "skin": "mg:item/dino/rex_skin",
+    "particle": "mg:item/dino/rex_skin"
+  },
+  "elements": [
+    {
+      "from": [
+        2.01,
+        -15.04,
+        -0.387
+      ],
+      "to": [
+        13.99,
+        12.493,
+        16.986
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            14.98,
+            16.0
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            14.98,
+            16.0
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            16.0
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            16.0
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            14.98,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            14.98,
+            16.0
+          ]
+        }
+      }
+    }
+  ]
+}

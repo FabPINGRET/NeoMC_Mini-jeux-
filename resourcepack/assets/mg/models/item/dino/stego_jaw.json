@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "beak": "mg:item/dino/stego_beak",
+    "particle": "mg:item/dino/stego_beak"
+  },
+  "elements": [
+    {
+      "from": [
+        5.604,
+        6.444,
+        8.0
+      ],
+      "to": [
+        10.396,
+        8.0,
+        19.482
+      ],
+      "faces": {
+        "north": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            4.79,
+            1.56
+          ]
+        },
+        "south": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            4.79,
+            1.56
+          ]
+        },
+        "east": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            11.48,
+            1.56
+          ]
+        },
+        "west": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            11.48,
+            1.56
+          ]
+        },
+        "up": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            4.79,
+            11.48
+          ]
+        },
+        "down": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            4.79,
+            11.48
+          ]
+        }
+      }
+    }
+  ]
+}

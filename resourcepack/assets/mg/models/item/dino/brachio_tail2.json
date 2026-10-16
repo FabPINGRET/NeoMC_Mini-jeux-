@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "skin": "mg:item/dino/brachio_skin",
+    "particle": "mg:item/dino/brachio_skin"
+  },
+  "elements": [
+    {
+      "from": [
+        6.054,
+        6.054,
+        -13.12
+      ],
+      "to": [
+        9.946,
+        9.946,
+        8.24
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            7.78,
+            7.78
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            7.78,
+            7.78
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            7.78
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            7.78
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            7.78,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            7.78,
+            16.0
+          ]
+        }
+      }
+    }
+  ]
+}

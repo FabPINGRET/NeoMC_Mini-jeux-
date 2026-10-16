@@ -1,0 +1,283 @@
+{
+  "textures": {
+    "beak": "mg:item/dino/galli_beak",
+    "eye": "mg:item/dino/galli_eye",
+    "skin": "mg:item/dino/galli_skin",
+    "stripe": "mg:item/dino/galli_stripe",
+    "particle": "mg:item/dino/galli_beak"
+  },
+  "elements": [
+    {
+      "from": [
+        6.4,
+        7.2,
+        6.88
+      ],
+      "to": [
+        9.6,
+        10.24,
+        12.166
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            3.2,
+            3.04
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            3.2,
+            3.04
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            5.29,
+            3.04
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            5.29,
+            3.04
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            3.2,
+            5.29
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            3.2,
+            5.29
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        6.848,
+        7.2,
+        12.166
+      ],
+      "to": [
+        9.152,
+        8.96,
+        14.72
+      ],
+      "faces": {
+        "north": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            2.3,
+            1.76
+          ]
+        },
+        "south": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            2.3,
+            1.76
+          ]
+        },
+        "east": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            2.55,
+            1.76
+          ]
+        },
+        "west": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            2.55,
+            1.76
+          ]
+        },
+        "up": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            2.3,
+            2.55
+          ]
+        },
+        "down": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            2.3,
+            2.55
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        6.208,
+        9.024,
+        10.688
+      ],
+      "to": [
+        9.792,
+        9.6,
+        11.629
+      ],
+      "faces": {
+        "north": {
+          "texture": "#eye",
+          "uv": [
+            0,
+            0,
+            3.58,
+            1.0
+          ]
+        },
+        "south": {
+          "texture": "#eye",
+          "uv": [
+            0,
+            0,
+            3.58,
+            1.0
+          ]
+        },
+        "east": {
+          "texture": "#eye",
+          "uv": [
+            0,
+            0,
+            1.0,
+            1.0
+          ]
+        },
+        "west": {
+          "texture": "#eye",
+          "uv": [
+            0,
+            0,
+            1.0,
+            1.0
+          ]
+        },
+        "up": {
+          "texture": "#eye",
+          "uv": [
+            0,
+            0,
+            3.58,
+            1.0
+          ]
+        },
+        "down": {
+          "texture": "#eye",
+          "uv": [
+            0,
+            0,
+            3.58,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        7.36,
+        10.208,
+        7.36
+      ],
+      "to": [
+        8.64,
+        10.368,
+        11.75
+      ],
+      "faces": {
+        "north": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            1.28,
+            1.0
+          ]
+        },
+        "south": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            1.28,
+            1.0
+          ]
+        },
+        "east": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            4.39,
+            1.0
+          ]
+        },
+        "west": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            4.39,
+            1.0
+          ]
+        },
+        "up": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            1.28,
+            4.39
+          ]
+        },
+        "down": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            1.28,
+            4.39
+          ]
+        }
+      }
+    }
+  ]
+}

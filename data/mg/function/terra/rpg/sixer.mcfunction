@@ -1,0 +1,3 @@
+# Renégat (humain hostile, arbalète)
+tag @e[tag=mg.tvlast] remove mg.tvlast
+summon minecraft:pillager ~ ~ ~ {Tags:["mg.tv","mg.tvhos","mg.tvtg","mg.trsix","mg.tvlast"],PersistenceRequired:1b,CanJoinRaid:0b,PatrolLeader:0b,DeathLootTable:"minecraft:empty",CustomName:{"text":"Renégat","color":"red"},equipment:{mainhand:{id:"minecraft:crossbow",count:1},chest:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":10040115}},head:{id:"minecraft:leather_helmet",count:1,components:{"minecraft:dyed_color":3355443}}},drop_chances:{mainhand:0f,chest:0f,head:0f},attributes:[{id:"minecraft:max_health",base:24},{id:"minecraft:follow_range",base:32}],Health:24f}

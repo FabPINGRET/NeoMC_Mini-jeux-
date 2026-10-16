@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "skin": "mg:item/dino/stego_skin",
+    "particle": "mg:item/dino/stego_skin"
+  },
+  "elements": [
+    {
+      "from": [
+        4.88,
+        -2.868,
+        4.88
+      ],
+      "to": [
+        11.12,
+        10.288,
+        11.12
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            6.24,
+            13.16
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            6.24,
+            13.16
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            6.24,
+            13.16
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            6.24,
+            13.16
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            6.24,
+            6.24
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            6.24,
+            6.24
+          ]
+        }
+      }
+    }
+  ]
+}

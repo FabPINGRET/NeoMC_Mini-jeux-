@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "skin": "mg:item/dino/compy_skin",
+    "particle": "mg:item/dino/compy_skin"
+  },
+  "elements": [
+    {
+      "from": [
+        7.328,
+        4.808,
+        7.059
+      ],
+      "to": [
+        8.672,
+        8.554,
+        9.008
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            1.34,
+            3.75
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            1.34,
+            3.75
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            1.95,
+            3.75
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            1.95,
+            3.75
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            1.34,
+            1.95
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            1.34,
+            1.95
+          ]
+        }
+      }
+    }
+  ]
+}

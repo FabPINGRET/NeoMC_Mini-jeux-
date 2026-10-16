@@ -23,6 +23,7 @@ execute in mg:terranova run tp @s 0.5 65 4.5 180 0
 function mg:terra/kit
 title @s times 10 60 20
 title @s title {"text":"TERRA NOVA","color":"green","bold":true}
+function mg:terra/rpg/enter
 title @s subtitle {"text":"Il y a 85 millions d'années…","color":"gray"}
 tellraw @s [{"text":"🦖 TERRA NOVA","color":"green","bold":true},{"text":" : bienvenue dans la colonie, colon !","color":"yellow"}]
 tellraw @s [{"text":" 📋 Missions : ","color":"gold"},{"text":"tableau sur le mur du QG (nord-est de la place), récompenses en crédits ₵","color":"gray"}]

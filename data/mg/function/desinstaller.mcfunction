@@ -33,11 +33,88 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.trsp
+scoreboard objectives remove mg.trs1
+scoreboard objectives remove mg.trs2
+scoreboard objectives remove mg.trs3
+scoreboard objectives remove mg.trs4
+scoreboard objectives remove mg.trkt
+scoreboard objectives remove mg.trel
+scoreboard objectives remove mg.trac
+scoreboard objectives remove mg.trtc
+scoreboard objectives remove mg.trsq
+scoreboard objectives remove mg.trsa
+scoreboard objectives remove mg.trq4
+scoreboard objectives remove mg.trzm
+scoreboard objectives remove mg.trcs
+scoreboard objectives remove mg.trct
+scoreboard objectives remove mg.trox
+scoreboard objectives remove mg.troy
+scoreboard objectives remove mg.troz
+scoreboard objectives remove mg.tron
+scoreboard objectives remove mg.trod
+scoreboard objectives remove mg.trlv
+scoreboard objectives remove mg.trxp
+scoreboard objectives remove mg.trch
+scoreboard objectives remove mg.trqp
+scoreboard objectives remove mg.trbs
+scoreboard objectives remove mg.trpo
+scoreboard objectives remove mg.trtv
+scoreboard objectives remove mg.treg
+scoreboard objectives remove mg.trwp
+scoreboard objectives remove mg.trml
+scoreboard objectives remove mg.trar
+scoreboard objectives remove mg.trmt
+scoreboard objectives remove mg.trgr
+scoreboard objectives remove mg.trdn
+scoreboard objectives remove mg.trvn
+scoreboard objectives remove mg.trec
+scoreboard objectives remove mg.trai
+scoreboard objectives remove mg.trrx
+scoreboard objectives remove mg.trrg
+scoreboard objectives remove mg.trpk
+scoreboard objectives remove mg.trsc
+scoreboard objectives remove mg.trnid
+scoreboard objectives remove mg.trcl
+scoreboard objectives remove mg.trcd
+scoreboard objectives remove mg.trdg
+scoreboard objectives remove mg.trtk
+scoreboard objectives remove mg.trdt
+scoreboard objectives remove mg.tkdilo
+scoreboard objectives remove mg.tkcompy
+scoreboard objectives remove mg.tkptera
+scoreboard objectives remove mg.tksix
+scoreboard objectives remove mg.tkherb
+scoreboard objectives remove mg.tkherb2
+scoreboard objectives remove mg.tkherb3
+scoreboard objectives remove mg.tkherb4
+scoreboard objectives remove mg.tvat
+scoreboard objectives remove mg.tvaf
+scoreboard objectives remove mg.tvas
+scoreboard objectives remove mg.tvses
+scoreboard objectives remove mg.tvak
+scoreboard objectives remove mg.tvab
+scoreboard objectives remove mg.tvph
 schedule clear mg:zmode5/prepare_b
 forceload remove -51 39364 51 39435
 schedule clear mg:zmode4/prepare_b
 forceload remove -36 39042 40 39120
 scoreboard objectives remove mg.tvc
+schedule clear mg:terra/rpg/boss/wake
+schedule clear mg:terra/rb_step
+schedule clear mg:terra/world_build2
+schedule clear mg:terra/bio_step
+schedule clear mg:terra/rpg/setup_s
+bossbar remove mg:trspino
+bossbar remove mg:trrex
+bossbar remove mg:trvarek
+bossbar remove mg:trdg0
+bossbar remove mg:trdg1
+bossbar remove mg:trdg2
+bossbar remove mg:trdg3
+data remove storage mg:terra v2
+data remove storage mg:terra bio
+data remove storage mg:terra s
 schedule clear mg:terra/wb_step
 schedule clear mg:terra/world_build
 schedule clear mg:terra/session_setup

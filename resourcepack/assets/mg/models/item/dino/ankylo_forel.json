@@ -1,0 +1,145 @@
+{
+  "textures": {
+    "dark": "mg:item/dino/ankylo_dark",
+    "skin": "mg:item/dino/ankylo_skin",
+    "particle": "mg:item/dino/ankylo_dark"
+  },
+  "elements": [
+    {
+      "from": [
+        5.258,
+        0.627,
+        5.258
+      ],
+      "to": [
+        10.742,
+        8.32,
+        10.742
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            5.48,
+            7.69
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            5.48,
+            7.69
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            5.48,
+            7.69
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            5.48,
+            7.69
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            5.48,
+            5.48
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            5.48,
+            5.48
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        4.736,
+        0.627,
+        4.736
+      ],
+      "to": [
+        11.264,
+        1.856,
+        12.047
+      ],
+      "faces": {
+        "north": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            6.53,
+            1.23
+          ]
+        },
+        "south": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            6.53,
+            1.23
+          ]
+        },
+        "east": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            7.31,
+            1.23
+          ]
+        },
+        "west": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            7.31,
+            1.23
+          ]
+        },
+        "up": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            6.53,
+            7.31
+          ]
+        },
+        "down": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            6.53,
+            7.31
+          ]
+        }
+      }
+    }
+  ]
+}

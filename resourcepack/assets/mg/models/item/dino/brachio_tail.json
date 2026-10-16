@@ -1,0 +1,145 @@
+{
+  "textures": {
+    "skin": "mg:item/dino/brachio_skin",
+    "stripe": "mg:item/dino/brachio_stripe",
+    "particle": "mg:item/dino/brachio_skin"
+  },
+  "elements": [
+    {
+      "from": [
+        4.526,
+        4.526,
+        -14.821
+      ],
+      "to": [
+        11.474,
+        11.474,
+        8.457
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            12.16,
+            12.16
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            12.16,
+            12.16
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            12.16
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            12.16
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            12.16,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            12.16,
+            16.0
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        5.915,
+        11.474,
+        -13.943
+      ],
+      "to": [
+        10.085,
+        11.657,
+        8.0
+      ],
+      "faces": {
+        "north": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            7.3,
+            1.0
+          ]
+        },
+        "south": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            7.3,
+            1.0
+          ]
+        },
+        "east": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            16.0,
+            1.0
+          ]
+        },
+        "west": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            16.0,
+            1.0
+          ]
+        },
+        "up": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            7.3,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            7.3,
+            16.0
+          ]
+        }
+      }
+    }
+  ]
+}

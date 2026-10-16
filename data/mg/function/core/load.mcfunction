@@ -8,6 +8,8 @@ scoreboard players set $thrs mg.st 1
 execute unless score $rp mg.st matches 0..1 run scoreboard players set $rp mg.st 1
 # Terra Nova : construite une fois (dimension mg:terranova, ~2 min, après Neo City), règles du monde
 execute if score $setup mg.st matches 1 unless data storage mg:terra built run schedule function mg:terra/world_build 200s
+# Terra Nova RPG : régions construites une fois sur un monde déjà construit (avant la mise à jour du RPG)
+execute if score $setup mg.st matches 1 if data storage mg:terra built unless data storage mg:terra v2 run schedule function mg:terra/world_build2 210s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby tvclean run schedule function mg:terra/spawn_clean 9s
 scoreboard players set $tvw mg.st 0
 function mg:terra/rules
@@ -54,6 +56,68 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.trsp dummy
+scoreboard objectives add mg.trs1 dummy
+scoreboard objectives add mg.trs2 dummy
+scoreboard objectives add mg.trs3 dummy
+scoreboard objectives add mg.trs4 dummy
+scoreboard objectives add mg.trkt dummy
+scoreboard objectives add mg.trel dummy
+scoreboard objectives add mg.trac dummy
+scoreboard objectives add mg.trtc dummy
+scoreboard objectives add mg.trsq dummy
+scoreboard objectives add mg.trsa dummy
+scoreboard objectives add mg.trq4 dummy
+scoreboard objectives add mg.trzm dummy
+scoreboard objectives add mg.trcs dummy
+scoreboard objectives add mg.trct dummy
+scoreboard objectives add mg.trox dummy
+scoreboard objectives add mg.troy dummy
+scoreboard objectives add mg.troz dummy
+scoreboard objectives add mg.tron dummy
+scoreboard objectives add mg.trod dummy
+scoreboard objectives add mg.trlv dummy
+scoreboard objectives add mg.trxp dummy
+scoreboard objectives add mg.trch dummy
+scoreboard objectives add mg.trqp dummy
+scoreboard objectives add mg.trbs dummy
+scoreboard objectives add mg.trpo dummy
+scoreboard objectives add mg.trtv dummy
+scoreboard objectives add mg.treg dummy
+scoreboard objectives add mg.trwp dummy
+scoreboard objectives add mg.trml dummy
+scoreboard objectives add mg.trar dummy
+scoreboard objectives add mg.trmt dummy
+scoreboard objectives add mg.trgr dummy
+scoreboard objectives add mg.trdn dummy
+scoreboard objectives add mg.trvn dummy
+scoreboard objectives add mg.trec dummy
+scoreboard objectives add mg.trai dummy
+scoreboard objectives add mg.trrx dummy
+scoreboard objectives add mg.trrg dummy
+scoreboard objectives add mg.trpk dummy
+scoreboard objectives add mg.trsc dummy
+scoreboard objectives add mg.trnid dummy
+scoreboard objectives add mg.trcl dummy
+scoreboard objectives add mg.trcd dummy
+scoreboard objectives add mg.trdg dummy
+scoreboard objectives add mg.trtk trigger
+scoreboard objectives add mg.trdt minecraft.custom:minecraft.damage_taken
+scoreboard objectives add mg.tkdilo minecraft.killed:minecraft.zombie_villager
+scoreboard objectives add mg.tkcompy minecraft.killed:minecraft.silverfish
+scoreboard objectives add mg.tkptera minecraft.killed:minecraft.phantom
+scoreboard objectives add mg.tksix minecraft.killed:minecraft.pillager
+scoreboard objectives add mg.tkherb minecraft.killed:minecraft.iron_golem
+scoreboard objectives add mg.tkherb2 minecraft.killed:minecraft.polar_bear
+scoreboard objectives add mg.tkherb3 minecraft.killed:minecraft.panda
+scoreboard objectives add mg.tkherb4 minecraft.killed:minecraft.pig
+scoreboard objectives add mg.tvat dummy
+scoreboard objectives add mg.tvaf dummy
+scoreboard objectives add mg.tvas dummy
+scoreboard objectives add mg.tvses dummy
+scoreboard objectives add mg.tvak dummy
+scoreboard objectives add mg.tvab dummy
+scoreboard objectives add mg.tvph dummy
 scoreboard objectives add mg.tvc dummy {"text":"₵ Terra Nova","color":"green"}
 scoreboard objectives add mg.tvq minecraft.used:minecraft.warped_fungus_on_a_stick
 scoreboard objectives add mg.tvdd minecraft.custom:minecraft.damage_dealt

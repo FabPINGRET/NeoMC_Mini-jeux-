@@ -71,7 +71,7 @@ summon minecraft:marker 37.5 67 -65.5 {Tags:["mg.tv","mg.tvsp","mg.tvfar"]}
 summon minecraft:marker 84.5 66 66.5 {Tags:["mg.tv","mg.tvsp","mg.tvfar"]}
 summon minecraft:marker 54.5 64 6.5 {Tags:["mg.tv","mg.tvsp"]}
 summon minecraft:marker -29.5 64 -50.5 {Tags:["mg.tv","mg.tvsp"]}
-summon minecraft:marker -86.5 73 3.5 {Tags:["mg.tv","mg.tvsp","mg.tvfar"]}
+summon minecraft:marker -86.5 69 3.5 {Tags:["mg.tv","mg.tvsp","mg.tvfar"]}
 summon minecraft:marker 73.5 66 -0.5 {Tags:["mg.tv","mg.tvsp","mg.tvfar"]}
 summon minecraft:marker -38.5 65 54.5 {Tags:["mg.tv","mg.tvsp","mg.tvfar"]}
 summon minecraft:marker 74.5 65 -73.5 {Tags:["mg.tv","mg.tvsp","mg.tvfar"]}

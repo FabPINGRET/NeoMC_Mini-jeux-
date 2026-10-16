@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "skin": "mg:item/dino/spino_skin",
+    "particle": "mg:item/dino/spino_skin"
+  },
+  "elements": [
+    {
+      "from": [
+        2.72,
+        -12.4,
+        0.608
+      ],
+      "to": [
+        13.28,
+        11.96,
+        15.92
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            10.56,
+            16.0
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            10.56,
+            16.0
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            15.31,
+            16.0
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            15.31,
+            16.0
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            10.56,
+            15.31
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            10.56,
+            15.31
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,115 +1,301 @@
-# Construction de Terra Nova, étape 57/101 (dimension mg:terranova, générée)
-fill 14 62 -82 16 64 -80 minecraft:rooted_dirt replace minecraft:grass_block
-fill 72 67 -87 74 69 -85 minecraft:coarse_dirt replace minecraft:grass_block
-fill -25 64 66 -23 66 68 minecraft:moss_block replace minecraft:grass_block
-fill -58 62 76 -56 64 78 minecraft:podzol replace minecraft:grass_block
-fill -86 64 -86 -80 66 -80 minecraft:rooted_dirt replace minecraft:grass_block
-fill 52 68 88 54 70 90 minecraft:podzol replace minecraft:grass_block
-fill -85 66 45 -83 68 47 minecraft:podzol replace minecraft:grass_block
-fill -6 62 84 -4 64 86 minecraft:podzol replace minecraft:grass_block
-fill -51 65 -34 -45 67 -28 minecraft:moss_block replace minecraft:grass_block
-fill -62 62 22 -56 64 28 minecraft:rooted_dirt replace minecraft:grass_block
-fill -21 70 -90 -19 72 -88 minecraft:coarse_dirt replace minecraft:grass_block
-fill 62 65 71 66 67 75 minecraft:podzol replace minecraft:grass_block
-fill -35 63 -26 -31 65 -22 minecraft:podzol replace minecraft:grass_block
-fill 0 63 48 4 65 52 minecraft:coarse_dirt replace minecraft:grass_block
-fill -4 63 -62 -2 65 -60 minecraft:rooted_dirt replace minecraft:grass_block
-fill -72 64 -34 -68 66 -30 minecraft:moss_block replace minecraft:grass_block
-fill -85 66 -13 -83 68 -11 minecraft:podzol replace minecraft:grass_block
-fill -62 62 31 -60 64 33 minecraft:podzol replace minecraft:grass_block
-fill -47 63 40 -45 65 42 minecraft:moss_block replace minecraft:grass_block
-fill -63 65 -80 -59 67 -76 minecraft:rooted_dirt replace minecraft:grass_block
-fill -18 63 55 -16 65 57 minecraft:coarse_dirt replace minecraft:grass_block
-fill 72 65 -80 76 67 -76 minecraft:podzol replace minecraft:grass_block
-fill -47 66 -33 -43 68 -29 minecraft:coarse_dirt replace minecraft:grass_block
-fill 69 63 -39 75 65 -33 minecraft:podzol replace minecraft:grass_block
-fill 82 62 28 88 64 34 minecraft:coarse_dirt replace minecraft:grass_block
-fill 77 65 -11 81 67 -7 minecraft:podzol replace minecraft:grass_block
-fill -58 62 -30 -54 64 -26 minecraft:podzol replace minecraft:grass_block
-fill 49 62 77 51 64 79 minecraft:podzol replace minecraft:grass_block
-fill -47 62 -63 -43 64 -59 minecraft:coarse_dirt replace minecraft:grass_block
-fill 80 65 -28 86 67 -22 minecraft:coarse_dirt replace minecraft:grass_block
-fill -89 66 45 -83 68 51 minecraft:coarse_dirt replace minecraft:grass_block
-fill 63 63 57 67 65 61 minecraft:rooted_dirt replace minecraft:grass_block
-fill -77 66 -78 -75 68 -76 minecraft:rooted_dirt replace minecraft:grass_block
-fill 40 62 78 42 64 80 minecraft:podzol replace minecraft:grass_block
-fill -59 63 25 -55 65 29 minecraft:podzol replace minecraft:grass_block
-fill 84 67 -14 86 69 -12 minecraft:podzol replace minecraft:grass_block
-fill 74 64 -6 76 66 -4 minecraft:podzol replace minecraft:grass_block
-fill 52 63 -12 56 65 -8 minecraft:podzol replace minecraft:grass_block
-fill 10 62 34 14 64 38 minecraft:coarse_dirt replace minecraft:grass_block
-fill 61 66 13 67 68 19 minecraft:podzol replace minecraft:grass_block
-fill 73 62 55 77 64 59 minecraft:coarse_dirt replace minecraft:grass_block
-fill -78 63 24 -72 65 30 minecraft:coarse_dirt replace minecraft:grass_block
-fill -70 75 -93 -64 77 -87 minecraft:podzol replace minecraft:grass_block
-fill 0 65 -69 6 67 -63 minecraft:podzol replace minecraft:grass_block
-fill 86 64 -70 88 66 -68 minecraft:moss_block replace minecraft:grass_block
-fill -12 64 46 -8 66 50 minecraft:podzol replace minecraft:grass_block
-fill -62 62 83 -60 64 85 minecraft:podzol replace minecraft:grass_block
-fill -62 63 -67 -56 65 -61 minecraft:coarse_dirt replace minecraft:grass_block
-fill 33 63 22 35 65 24 minecraft:podzol replace minecraft:grass_block
-fill -89 64 65 -85 66 69 minecraft:podzol replace minecraft:grass_block
-fill -61 63 45 -57 65 49 minecraft:moss_block replace minecraft:grass_block
-fill 6 64 -74 8 66 -72 minecraft:podzol replace minecraft:grass_block
-fill -70 67 -8 -68 69 -6 minecraft:coarse_dirt replace minecraft:grass_block
-fill -73 63 -66 -69 65 -62 minecraft:moss_block replace minecraft:grass_block
-fill 33 63 -4 35 65 -2 minecraft:podzol replace minecraft:grass_block
-fill -2 63 -85 0 65 -83 minecraft:coarse_dirt replace minecraft:grass_block
-fill -58 62 -31 -54 64 -27 minecraft:coarse_dirt replace minecraft:grass_block
-fill 17 64 -40 23 66 -34 minecraft:coarse_dirt replace minecraft:grass_block
-fill -93 71 45 -87 73 51 minecraft:podzol replace minecraft:grass_block
-fill 56 62 42 58 64 44 minecraft:rooted_dirt replace minecraft:grass_block
-fill -19 62 -41 -17 64 -39 minecraft:moss_block replace minecraft:grass_block
-fill 80 64 7 84 66 11 minecraft:moss_block replace minecraft:grass_block
-fill -18 68 -73 -16 70 -71 minecraft:coarse_dirt replace minecraft:grass_block
-fill -18 65 -81 -16 67 -79 minecraft:podzol replace minecraft:grass_block
-fill 80 64 -32 82 66 -30 minecraft:rooted_dirt replace minecraft:grass_block
-fill -25 68 -87 -23 70 -85 minecraft:coarse_dirt replace minecraft:grass_block
-fill -76 66 85 -70 68 91 minecraft:moss_block replace minecraft:grass_block
-fill -45 66 -83 -41 68 -79 minecraft:moss_block replace minecraft:grass_block
-fill -31 63 76 -25 65 82 minecraft:moss_block replace minecraft:grass_block
-fill -78 63 -38 -74 65 -34 minecraft:moss_block replace minecraft:grass_block
-fill -72 63 -22 -66 65 -16 minecraft:coarse_dirt replace minecraft:grass_block
-fill 17 69 83 23 71 89 minecraft:coarse_dirt replace minecraft:grass_block
-fill 72 64 75 78 66 81 minecraft:podzol replace minecraft:grass_block
-fill -80 63 29 -74 65 35 minecraft:moss_block replace minecraft:grass_block
-fill 76 65 3 80 67 7 minecraft:coarse_dirt replace minecraft:grass_block
-fill 1 63 47 7 65 53 minecraft:moss_block replace minecraft:grass_block
-fill -15 63 -38 -13 65 -36 minecraft:podzol replace minecraft:grass_block
-fill 65 63 -9 71 65 -3 minecraft:coarse_dirt replace minecraft:grass_block
-fill -56 63 49 -54 65 51 minecraft:coarse_dirt replace minecraft:grass_block
-fill 2 62 79 8 64 85 minecraft:podzol replace minecraft:grass_block
-fill -72 63 62 -68 65 66 minecraft:moss_block replace minecraft:grass_block
-fill 77 63 61 81 65 65 minecraft:podzol replace minecraft:grass_block
-fill 65 64 11 69 66 15 minecraft:podzol replace minecraft:grass_block
-fill -55 63 -39 -53 65 -37 minecraft:coarse_dirt replace minecraft:grass_block
-fill 3 63 63 5 65 65 minecraft:podzol replace minecraft:grass_block
-fill 64 65 27 66 67 29 minecraft:podzol replace minecraft:grass_block
-fill -72 66 -81 -70 68 -79 minecraft:rooted_dirt replace minecraft:grass_block
-fill 52 62 31 58 64 37 minecraft:rooted_dirt replace minecraft:grass_block
-fill -70 65 -14 -66 67 -10 minecraft:moss_block replace minecraft:grass_block
-fill 46 64 33 52 66 39 minecraft:rooted_dirt replace minecraft:grass_block
-fill 14 63 71 16 65 73 minecraft:moss_block replace minecraft:grass_block
-fill 64 65 68 68 67 72 minecraft:moss_block replace minecraft:grass_block
-fill 77 64 52 83 66 58 minecraft:coarse_dirt replace minecraft:grass_block
-fill 70 66 -87 76 68 -81 minecraft:moss_block replace minecraft:grass_block
-fill 58 63 -50 62 65 -46 minecraft:moss_block replace minecraft:grass_block
-fill 85 65 44 91 67 50 minecraft:podzol replace minecraft:grass_block
-fill -85 64 29 -83 66 31 minecraft:rooted_dirt replace minecraft:grass_block
-fill 53 63 49 59 65 55 minecraft:moss_block replace minecraft:grass_block
-fill -43 64 -9 -41 66 -7 minecraft:podzol replace minecraft:grass_block
-fill 20 63 -72 26 65 -66 minecraft:podzol replace minecraft:grass_block
-fill -17 65 -88 -11 67 -82 minecraft:podzol replace minecraft:grass_block
-fill -80 63 60 -78 65 62 minecraft:podzol replace minecraft:grass_block
-fill 5 63 54 9 65 58 minecraft:podzol replace minecraft:grass_block
-fill -54 64 31 -48 66 37 minecraft:podzol replace minecraft:grass_block
-fill -79 65 -57 -73 67 -51 minecraft:coarse_dirt replace minecraft:grass_block
-fill -73 63 33 -69 65 37 minecraft:moss_block replace minecraft:grass_block
-fill 42 62 -36 48 64 -30 minecraft:podzol replace minecraft:grass_block
-fill -75 65 53 -71 67 57 minecraft:rooted_dirt replace minecraft:grass_block
-fill -8 64 38 -4 66 42 minecraft:moss_block replace minecraft:grass_block
-fill -25 62 68 -19 64 74 minecraft:podzol replace minecraft:grass_block
-fill 48 63 -25 50 65 -23 minecraft:coarse_dirt replace minecraft:grass_block
-fill 24 63 -73 28 65 -69 minecraft:rooted_dirt replace minecraft:grass_block
-fill -15 62 58 -9 64 64 minecraft:podzol replace minecraft:grass_block
-fill -23 62 60 -19 64 64 minecraft:podzol replace minecraft:grass_block
+# Construction de Terra Nova, étape 57/100 (dimension mg:terranova, générée)
+fill -27 64 -27 27 64 27 minecraft:grass_block
+fill -2 64 -28 2 64 28 minecraft:packed_mud
+fill -27 64 -2 27 64 2 minecraft:packed_mud
+setblock -7 64 -2 minecraft:polished_andesite
+setblock -7 64 -1 minecraft:andesite
+setblock -7 64 0 minecraft:polished_andesite
+setblock -7 64 1 minecraft:andesite
+setblock -7 64 2 minecraft:polished_andesite
+setblock -6 64 -4 minecraft:andesite
+setblock -6 64 -3 minecraft:polished_andesite
+setblock -6 64 -2 minecraft:andesite
+setblock -6 64 -1 minecraft:polished_andesite
+setblock -6 64 0 minecraft:andesite
+setblock -6 64 1 minecraft:polished_andesite
+setblock -6 64 2 minecraft:andesite
+setblock -6 64 3 minecraft:polished_andesite
+setblock -6 64 4 minecraft:andesite
+setblock -5 64 -5 minecraft:andesite
+setblock -5 64 -4 minecraft:polished_andesite
+setblock -5 64 -3 minecraft:andesite
+setblock -5 64 -2 minecraft:polished_andesite
+setblock -5 64 -1 minecraft:andesite
+setblock -5 64 0 minecraft:polished_andesite
+setblock -5 64 1 minecraft:andesite
+setblock -5 64 2 minecraft:polished_andesite
+setblock -5 64 3 minecraft:andesite
+setblock -5 64 4 minecraft:polished_andesite
+setblock -5 64 5 minecraft:andesite
+setblock -4 64 -6 minecraft:andesite
+setblock -4 64 -5 minecraft:polished_andesite
+setblock -4 64 -4 minecraft:andesite
+setblock -4 64 -3 minecraft:polished_andesite
+setblock -4 64 -2 minecraft:andesite
+setblock -4 64 -1 minecraft:polished_andesite
+setblock -4 64 0 minecraft:andesite
+setblock -4 64 1 minecraft:polished_andesite
+setblock -4 64 2 minecraft:andesite
+setblock -4 64 3 minecraft:polished_andesite
+setblock -4 64 4 minecraft:andesite
+setblock -4 64 5 minecraft:polished_andesite
+setblock -4 64 6 minecraft:andesite
+setblock -3 64 -6 minecraft:polished_andesite
+setblock -3 64 -5 minecraft:andesite
+setblock -3 64 -4 minecraft:polished_andesite
+setblock -3 64 -3 minecraft:andesite
+setblock -3 64 -2 minecraft:polished_andesite
+setblock -3 64 -1 minecraft:andesite
+setblock -3 64 0 minecraft:polished_andesite
+setblock -3 64 1 minecraft:andesite
+setblock -3 64 2 minecraft:polished_andesite
+setblock -3 64 3 minecraft:andesite
+setblock -3 64 4 minecraft:polished_andesite
+setblock -3 64 5 minecraft:andesite
+setblock -3 64 6 minecraft:polished_andesite
+setblock -2 64 -7 minecraft:polished_andesite
+setblock -2 64 -6 minecraft:andesite
+setblock -2 64 -5 minecraft:polished_andesite
+setblock -2 64 -4 minecraft:andesite
+setblock -2 64 -3 minecraft:polished_andesite
+setblock -2 64 -2 minecraft:andesite
+setblock -2 64 -1 minecraft:polished_andesite
+setblock -2 64 0 minecraft:andesite
+setblock -2 64 1 minecraft:polished_andesite
+setblock -2 64 2 minecraft:andesite
+setblock -2 64 3 minecraft:polished_andesite
+setblock -2 64 4 minecraft:andesite
+setblock -2 64 5 minecraft:polished_andesite
+setblock -2 64 6 minecraft:andesite
+setblock -2 64 7 minecraft:polished_andesite
+setblock -1 64 -7 minecraft:andesite
+setblock -1 64 -6 minecraft:polished_andesite
+setblock -1 64 -5 minecraft:andesite
+setblock -1 64 -4 minecraft:polished_andesite
+setblock -1 64 -3 minecraft:andesite
+setblock -1 64 -2 minecraft:polished_andesite
+setblock -1 64 -1 minecraft:andesite
+setblock -1 64 0 minecraft:polished_andesite
+setblock -1 64 1 minecraft:andesite
+setblock -1 64 2 minecraft:polished_andesite
+setblock -1 64 3 minecraft:andesite
+setblock -1 64 4 minecraft:polished_andesite
+setblock -1 64 5 minecraft:andesite
+setblock -1 64 6 minecraft:polished_andesite
+setblock -1 64 7 minecraft:andesite
+setblock 0 64 -7 minecraft:polished_andesite
+setblock 0 64 -6 minecraft:andesite
+setblock 0 64 -5 minecraft:polished_andesite
+setblock 0 64 -4 minecraft:andesite
+setblock 0 64 -3 minecraft:polished_andesite
+setblock 0 64 -2 minecraft:andesite
+setblock 0 64 -1 minecraft:polished_andesite
+setblock 0 64 0 minecraft:andesite
+setblock 0 64 1 minecraft:polished_andesite
+setblock 0 64 2 minecraft:andesite
+setblock 0 64 3 minecraft:polished_andesite
+setblock 0 64 4 minecraft:andesite
+setblock 0 64 5 minecraft:polished_andesite
+setblock 0 64 6 minecraft:andesite
+setblock 0 64 7 minecraft:polished_andesite
+setblock 1 64 -7 minecraft:andesite
+setblock 1 64 -6 minecraft:polished_andesite
+setblock 1 64 -5 minecraft:andesite
+setblock 1 64 -4 minecraft:polished_andesite
+setblock 1 64 -3 minecraft:andesite
+setblock 1 64 -2 minecraft:polished_andesite
+setblock 1 64 -1 minecraft:andesite
+setblock 1 64 0 minecraft:polished_andesite
+setblock 1 64 1 minecraft:andesite
+setblock 1 64 2 minecraft:polished_andesite
+setblock 1 64 3 minecraft:andesite
+setblock 1 64 4 minecraft:polished_andesite
+setblock 1 64 5 minecraft:andesite
+setblock 1 64 6 minecraft:polished_andesite
+setblock 1 64 7 minecraft:andesite
+setblock 2 64 -7 minecraft:polished_andesite
+setblock 2 64 -6 minecraft:andesite
+setblock 2 64 -5 minecraft:polished_andesite
+setblock 2 64 -4 minecraft:andesite
+setblock 2 64 -3 minecraft:polished_andesite
+setblock 2 64 -2 minecraft:andesite
+setblock 2 64 -1 minecraft:polished_andesite
+setblock 2 64 0 minecraft:andesite
+setblock 2 64 1 minecraft:polished_andesite
+setblock 2 64 2 minecraft:andesite
+setblock 2 64 3 minecraft:polished_andesite
+setblock 2 64 4 minecraft:andesite
+setblock 2 64 5 minecraft:polished_andesite
+setblock 2 64 6 minecraft:andesite
+setblock 2 64 7 minecraft:polished_andesite
+setblock 3 64 -6 minecraft:polished_andesite
+setblock 3 64 -5 minecraft:andesite
+setblock 3 64 -4 minecraft:polished_andesite
+setblock 3 64 -3 minecraft:andesite
+setblock 3 64 -2 minecraft:polished_andesite
+setblock 3 64 -1 minecraft:andesite
+setblock 3 64 0 minecraft:polished_andesite
+setblock 3 64 1 minecraft:andesite
+setblock 3 64 2 minecraft:polished_andesite
+setblock 3 64 3 minecraft:andesite
+setblock 3 64 4 minecraft:polished_andesite
+setblock 3 64 5 minecraft:andesite
+setblock 3 64 6 minecraft:polished_andesite
+setblock 4 64 -6 minecraft:andesite
+setblock 4 64 -5 minecraft:polished_andesite
+setblock 4 64 -4 minecraft:andesite
+setblock 4 64 -3 minecraft:polished_andesite
+setblock 4 64 -2 minecraft:andesite
+setblock 4 64 -1 minecraft:polished_andesite
+setblock 4 64 0 minecraft:andesite
+setblock 4 64 1 minecraft:polished_andesite
+setblock 4 64 2 minecraft:andesite
+setblock 4 64 3 minecraft:polished_andesite
+setblock 4 64 4 minecraft:andesite
+setblock 4 64 5 minecraft:polished_andesite
+setblock 4 64 6 minecraft:andesite
+setblock 5 64 -5 minecraft:andesite
+setblock 5 64 -4 minecraft:polished_andesite
+setblock 5 64 -3 minecraft:andesite
+setblock 5 64 -2 minecraft:polished_andesite
+setblock 5 64 -1 minecraft:andesite
+setblock 5 64 0 minecraft:polished_andesite
+setblock 5 64 1 minecraft:andesite
+setblock 5 64 2 minecraft:polished_andesite
+setblock 5 64 3 minecraft:andesite
+setblock 5 64 4 minecraft:polished_andesite
+setblock 5 64 5 minecraft:andesite
+setblock 6 64 -4 minecraft:andesite
+setblock 6 64 -3 minecraft:polished_andesite
+setblock 6 64 -2 minecraft:andesite
+setblock 6 64 -1 minecraft:polished_andesite
+setblock 6 64 0 minecraft:andesite
+setblock 6 64 1 minecraft:polished_andesite
+setblock 6 64 2 minecraft:andesite
+setblock 6 64 3 minecraft:polished_andesite
+setblock 6 64 4 minecraft:andesite
+setblock 7 64 -2 minecraft:polished_andesite
+setblock 7 64 -1 minecraft:andesite
+setblock 7 64 0 minecraft:polished_andesite
+setblock 7 64 1 minecraft:andesite
+setblock 7 64 2 minecraft:polished_andesite
+fill -1 64 -1 1 64 1 minecraft:chiseled_stone_bricks
+fill -27 65 -27 27 76 27 minecraft:air
+fill -28 62 -28 28 70 -28 minecraft:spruce_log
+fill -28 71 -28 28 71 -28 minecraft:spruce_fence
+fill -28 62 28 28 70 28 minecraft:spruce_log
+fill -28 71 28 28 71 28 minecraft:spruce_fence
+fill -28 62 -28 -28 70 28 minecraft:spruce_log
+fill -28 71 -28 -28 71 28 minecraft:spruce_fence
+fill 28 62 -28 28 70 28 minecraft:spruce_log
+fill 28 71 -28 28 71 28 minecraft:spruce_fence
+fill -3 65 -28 3 69 -28 minecraft:air
+fill -3 71 -28 3 71 -28 minecraft:air
+fill -4 65 -28 -4 73 -28 minecraft:dark_oak_log
+fill 4 65 -28 4 73 -28 minecraft:dark_oak_log
+fill -4 70 -28 4 71 -28 minecraft:stripped_dark_oak_log[axis=x]
+fill -3 69 -28 3 69 -28 minecraft:iron_bars
+setblock -4 74 -28 minecraft:lantern
+setblock 4 74 -28 minecraft:lantern
+fill -3 64 -29 3 64 -27 minecraft:packed_mud
+fill -3 65 28 3 69 28 minecraft:air
+fill -3 71 28 3 71 28 minecraft:air
+fill -4 65 28 -4 73 28 minecraft:dark_oak_log
+fill 4 65 28 4 73 28 minecraft:dark_oak_log
+fill -4 70 28 4 71 28 minecraft:stripped_dark_oak_log[axis=x]
+fill -3 69 28 3 69 28 minecraft:iron_bars
+setblock -4 74 28 minecraft:lantern
+setblock 4 74 28 minecraft:lantern
+fill -3 64 27 3 64 29 minecraft:packed_mud
+fill -30 62 -30 -26 75 -26 minecraft:spruce_planks hollow
+fill -30 76 -30 -26 76 -26 minecraft:dark_oak_slab
+fill -30 62 -30 -30 77 -30 minecraft:stripped_spruce_log
+fill -30 62 -26 -30 77 -26 minecraft:stripped_spruce_log
+fill -26 62 -30 -26 77 -30 minecraft:stripped_spruce_log
+fill -26 62 -26 -26 77 -26 minecraft:stripped_spruce_log
+fill -30 73 -28 -26 74 -28 minecraft:light_gray_stained_glass_pane
+fill -28 73 -30 -28 74 -26 minecraft:light_gray_stained_glass_pane
+setblock -28 77 -28 minecraft:lightning_rod
+setblock -28 78 -28 minecraft:end_rod
+setblock -29 77 -29 minecraft:lantern
+setblock -27 77 -27 minecraft:lantern
+fill -30 62 26 -26 75 30 minecraft:spruce_planks hollow
+fill -30 76 26 -26 76 30 minecraft:dark_oak_slab
+fill -30 62 26 -30 77 26 minecraft:stripped_spruce_log
+fill -30 62 30 -30 77 30 minecraft:stripped_spruce_log
+fill -26 62 26 -26 77 26 minecraft:stripped_spruce_log
+fill -26 62 30 -26 77 30 minecraft:stripped_spruce_log
+fill -30 73 28 -26 74 28 minecraft:light_gray_stained_glass_pane
+fill -28 73 26 -28 74 30 minecraft:light_gray_stained_glass_pane
+setblock -28 77 28 minecraft:lightning_rod
+setblock -28 78 28 minecraft:end_rod
+setblock -29 77 27 minecraft:lantern
+setblock -27 77 29 minecraft:lantern
+fill 26 62 -30 30 75 -26 minecraft:spruce_planks hollow
+fill 26 76 -30 30 76 -26 minecraft:dark_oak_slab
+fill 26 62 -30 26 77 -30 minecraft:stripped_spruce_log
+fill 26 62 -26 26 77 -26 minecraft:stripped_spruce_log
+fill 30 62 -30 30 77 -30 minecraft:stripped_spruce_log
+fill 30 62 -26 30 77 -26 minecraft:stripped_spruce_log
+fill 26 73 -28 30 74 -28 minecraft:light_gray_stained_glass_pane
+fill 28 73 -30 28 74 -26 minecraft:light_gray_stained_glass_pane
+setblock 28 77 -28 minecraft:lightning_rod
+setblock 28 78 -28 minecraft:end_rod
+setblock 27 77 -29 minecraft:lantern
+setblock 29 77 -27 minecraft:lantern
+fill 26 62 26 30 75 30 minecraft:spruce_planks hollow
+fill 26 76 26 30 76 30 minecraft:dark_oak_slab
+fill 26 62 26 26 77 26 minecraft:stripped_spruce_log
+fill 26 62 30 26 77 30 minecraft:stripped_spruce_log
+fill 30 62 26 30 77 26 minecraft:stripped_spruce_log
+fill 30 62 30 30 77 30 minecraft:stripped_spruce_log
+fill 26 73 28 30 74 28 minecraft:light_gray_stained_glass_pane
+fill 28 73 26 28 74 30 minecraft:light_gray_stained_glass_pane
+setblock 28 77 28 minecraft:lightning_rod
+setblock 28 78 28 minecraft:end_rod
+setblock 27 77 27 minecraft:lantern
+setblock 29 77 29 minecraft:lantern
+fill -24 64 -25 -8 64 -11 minecraft:smooth_stone
+fill -24 65 -25 -8 70 -11 minecraft:spruce_planks hollow
+fill -23 65 -24 -9 70 -12 minecraft:air
+fill -24 65 -25 -24 70 -25 minecraft:stripped_dark_oak_log
+fill -24 65 -11 -24 70 -11 minecraft:stripped_dark_oak_log
+fill -8 65 -25 -8 70 -25 minecraft:stripped_dark_oak_log
+fill -8 65 -11 -8 70 -11 minecraft:stripped_dark_oak_log
+fill -25 71 -26 -7 71 -10 minecraft:dark_oak_slab
+fill -22 66 -25 -22 67 -25 minecraft:glass_pane
+fill -22 66 -11 -22 67 -11 minecraft:glass_pane
+fill -19 66 -25 -19 67 -25 minecraft:glass_pane
+fill -19 66 -11 -19 67 -11 minecraft:glass_pane
+fill -16 66 -25 -16 67 -25 minecraft:glass_pane
+fill -16 66 -11 -16 67 -11 minecraft:glass_pane
+fill -13 66 -25 -13 67 -25 minecraft:glass_pane
+fill -13 66 -11 -13 67 -11 minecraft:glass_pane
+fill -10 66 -25 -10 67 -25 minecraft:glass_pane
+fill -10 66 -11 -10 67 -11 minecraft:glass_pane
+fill -24 66 -23 -24 67 -23 minecraft:glass_pane
+fill -8 66 -23 -8 67 -23 minecraft:glass_pane
+fill -24 66 -20 -24 67 -20 minecraft:glass_pane
+fill -8 66 -20 -8 67 -20 minecraft:glass_pane
+fill -24 66 -17 -24 67 -17 minecraft:glass_pane
+fill -8 66 -17 -8 67 -17 minecraft:glass_pane
+fill -24 66 -14 -24 67 -14 minecraft:glass_pane
+fill -8 66 -14 -8 67 -14 minecraft:glass_pane
+fill -8 65 -19 -8 67 -17 minecraft:air
+fill -8 68 -20 -8 68 -16 minecraft:stripped_dark_oak_log
+setblock -21 70 -22 minecraft:lantern[hanging=true]
+setblock -21 70 -17 minecraft:lantern[hanging=true]
+setblock -16 70 -22 minecraft:lantern[hanging=true]
+setblock -16 70 -17 minecraft:lantern[hanging=true]
+setblock -11 70 -22 minecraft:lantern[hanging=true]
+setblock -11 70 -17 minecraft:lantern[hanging=true]
+fill -23 65 -24 -9 65 -24 minecraft:barrel[facing=up]
+setblock -23 65 -22 minecraft:polished_andesite
+setblock -21 65 -22 minecraft:polished_andesite
+setblock -19 65 -22 minecraft:polished_andesite
+setblock -17 65 -22 minecraft:polished_andesite
+setblock -15 65 -22 minecraft:polished_andesite
+setblock -13 65 -22 minecraft:polished_andesite
+setblock -11 65 -22 minecraft:polished_andesite
+setblock -9 65 -22 minecraft:polished_andesite
+setblock -22 71 -18 minecraft:daylight_detector

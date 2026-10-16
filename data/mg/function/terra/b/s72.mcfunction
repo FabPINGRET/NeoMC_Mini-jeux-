@@ -1,8 +1,13 @@
-# Construction de Terra Nova, étape 72/101 (dimension mg:terranova, générée)
+# Construction de Terra Nova, étape 72/100 (dimension mg:terranova, générée)
+place feature minecraft:jungle_bush 59 65 -30
+place feature minecraft:jungle_bush 83 64 32
+place feature minecraft:jungle_bush -67 64 -22
+place feature minecraft:jungle_bush -29 66 80
+place feature minecraft:jungle_bush -90 76 0
 place feature minecraft:jungle_bush 77 65 -50
 place feature minecraft:jungle_bush -81 68 -57
 place feature minecraft:jungle_bush -37 68 15
-place feature minecraft:jungle_bush -18 68 88
+place feature minecraft:jungle_bush -18 67 88
 place feature minecraft:jungle_bush 47 71 -89
 place feature minecraft:jungle_bush -74 66 -29
 place feature minecraft:jungle_bush -66 64 36
@@ -13,7 +18,7 @@ place feature minecraft:jungle_bush 55 69 25
 place feature minecraft:jungle_bush -70 64 23
 place feature minecraft:jungle_bush -86 65 60
 place feature minecraft:jungle_bush -32 64 -47
-place feature minecraft:jungle_bush -26 67 86
+place feature minecraft:jungle_bush -26 66 86
 place feature minecraft:jungle_bush -44 67 -28
 place feature minecraft:jungle_bush -58 68 -83
 place feature minecraft:jungle_bush 85 67 -19
@@ -33,9 +38,4 @@ place feature minecraft:jungle_bush -86 66 76
 place feature minecraft:jungle_bush -73 75 -89
 place feature minecraft:jungle_bush -34 69 -82
 place feature minecraft:jungle_bush 10 65 80
-place feature minecraft:jungle_bush 0 66 44
-place feature minecraft:jungle_bush 56 64 -40
 place feature minecraft:jungle_bush 86 66 -35
-place feature minecraft:jungle_bush 7 65 -58
-place feature minecraft:jungle_bush -35 64 70
-place feature minecraft:jungle_bush 53 65 85

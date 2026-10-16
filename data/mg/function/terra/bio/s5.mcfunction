@@ -1,0 +1,25 @@
+# Biomes de Terra Nova, étape 5 (dimension mg:terranova)
+fillbiome 64 48 -96 79 175 -81 mg:tv_jungle
+fillbiome 64 48 -80 79 175 -65 mg:tv_jungle
+fillbiome 64 48 -64 79 175 -49 mg:tv_jungle
+fillbiome 64 48 -48 79 175 -33 mg:tv_jungle
+fillbiome 64 48 -32 79 175 -17 mg:tv_jungle
+fillbiome 64 48 -16 79 175 -1 mg:tv_jungle
+fillbiome 64 48 0 79 175 15 mg:tv_jungle
+fillbiome 64 48 16 79 175 31 mg:tv_jungle
+fillbiome 64 48 32 79 175 47 mg:tv_jungle
+fillbiome 64 48 48 79 175 63 mg:tv_jungle
+fillbiome 64 48 64 79 175 79 mg:tv_jungle
+fillbiome 64 48 80 79 175 95 mg:tv_jungle
+fillbiome 80 48 -96 95 175 -81 mg:tv_jungle
+fillbiome 80 48 -80 95 175 -65 mg:tv_jungle
+fillbiome 80 48 -64 95 175 -49 mg:tv_jungle
+fillbiome 80 48 -48 95 175 -33 mg:tv_jungle
+fillbiome 80 48 -32 95 175 -17 mg:tv_jungle
+fillbiome 80 48 -16 95 175 -1 mg:tv_jungle
+fillbiome 80 48 0 95 175 15 mg:tv_jungle
+fillbiome 80 48 16 95 175 31 mg:tv_jungle
+fillbiome 80 48 32 95 175 47 mg:tv_jungle
+fillbiome 80 48 48 95 175 63 mg:tv_jungle
+fillbiome 80 48 64 95 175 79 mg:tv_jungle
+fillbiome 80 48 80 95 175 95 mg:tv_jungle

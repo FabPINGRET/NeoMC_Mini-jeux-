@@ -1,0 +1,22 @@
+# Chaque seconde : découverte des lieux (joueurs proches)
+execute positioned 0 65 0 as @a[tag=mg.tvw,distance=..20] run function mg:terra/rpg/poi/colonie
+execute positioned -25 64 -56 as @a[tag=mg.tvw,distance=..8] run function mg:terra/rpg/poi/cascade
+execute positioned -30 65 -122 as @a[tag=mg.tvw,distance=..8] run function mg:terra/rpg/poi/echo
+execute positioned -62 64 -168 as @a[tag=mg.tvw,distance=..12] run function mg:terra/rpg/poi/station
+execute positioned 10 65 -196 as @a[tag=mg.tvw,distance=..26] run function mg:terra/rpg/poi/lagune
+execute positioned 55 64 -178 as @a[tag=mg.tvw,distance=..10] run function mg:terra/rpg/poi/mere
+execute positioned 62 64 -118 as @a[tag=mg.tvw,distance=..8] run function mg:terra/rpg/poi/ponton
+execute positioned 128 71 6 as @a[tag=mg.tvw,distance=..8] run function mg:terra/rpg/poi/delta
+execute positioned 178 63 -22 as @a[tag=mg.tvw,distance=..18] run function mg:terra/rpg/poi/eau
+execute positioned 222 68 58 as @a[tag=mg.tvw,distance=..18] run function mg:terra/rpg/poi/aiguilles
+execute positioned 150 69 62 as @a[tag=mg.tvw,distance=..14] run function mg:terra/rpg/poi/geants
+execute positioned -200 65 4 as @a[tag=mg.tvw,distance=..26] run function mg:terra/rpg/poi/fort
+execute positioned -150 65 -58 as @a[tag=mg.tvw,distance=..10] run function mg:terra/rpg/poi/arche
+execute positioned -142 81 62 as @a[tag=mg.tvw,distance=..9] run function mg:terra/rpg/poi/belvedere
+execute positioned -26 69 122 as @a[tag=mg.tvw,distance=..8] run function mg:terra/rpg/poi/refuge
+execute positioned 58 86 176 as @a[tag=mg.tvw,distance=..9] run function mg:terra/rpg/poi/pont
+execute positioned 0 99 186 as @a[tag=mg.tvw,distance=..15] run function mg:terra/rpg/poi/caldeira
+execute positioned 63 64 -178 as @a[tag=mg.tvw,distance=..6] run function mg:terra/rpg/poi/dg_arbre
+execute positioned 221 68 24 as @a[tag=mg.tvw,distance=..6] run function mg:terra/rpg/poi/dg_pic
+execute positioned -190 65 -55 as @a[tag=mg.tvw,distance=..6] run function mg:terra/rpg/poi/dg_mine
+execute positioned -49 90 182 as @a[tag=mg.tvw,distance=..6] run function mg:terra/rpg/poi/dg_tube

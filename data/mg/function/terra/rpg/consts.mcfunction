@@ -1,0 +1,26 @@
+# Constantes (puissances de 2 pour les bits, diviseurs)
+scoreboard players set #p0 mg.st 1
+scoreboard players set #p1 mg.st 2
+scoreboard players set #p2 mg.st 4
+scoreboard players set #p3 mg.st 8
+scoreboard players set #p4 mg.st 16
+scoreboard players set #p5 mg.st 32
+scoreboard players set #p6 mg.st 64
+scoreboard players set #p7 mg.st 128
+scoreboard players set #p8 mg.st 256
+scoreboard players set #p9 mg.st 512
+scoreboard players set #p10 mg.st 1024
+scoreboard players set #p11 mg.st 2048
+scoreboard players set #p12 mg.st 4096
+scoreboard players set #p13 mg.st 8192
+scoreboard players set #p14 mg.st 16384
+scoreboard players set #p15 mg.st 32768
+scoreboard players set #p16 mg.st 65536
+scoreboard players set #p17 mg.st 131072
+scoreboard players set #p18 mg.st 262144
+scoreboard players set #p19 mg.st 524288
+scoreboard players set #2 mg.st 2
+scoreboard players set #40 mg.st 40
+scoreboard players set #100 mg.st 100
+scoreboard players set #5 mg.st 5
+scoreboard players set #m1 mg.st -1

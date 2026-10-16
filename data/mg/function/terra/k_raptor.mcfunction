@@ -1,4 +1,5 @@
 # @s a abattu mg.tvkr slasher(s) : 12 ₵ chacun, progression de la chasse
+function mg:terra/rpg/k_raptor
 scoreboard players operation $tvk2 mg.st = @s mg.tvkr
 scoreboard players operation $tvk2 mg.st *= #12 mg.st
 scoreboard players operation @s mg.tvc += $tvk2 mg.st

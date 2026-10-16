@@ -1,5 +1,6 @@
 # Retire tout ce que Terra Nova a posé (entités, objets au sol, barres)
 kill @e[tag=mg.tv]
+function mg:terra/rpg/clear
 execute in mg:terranova run kill @e[type=minecraft:item,x=-100,y=40,z=-100,dx=200,dy=80,dz=200]
 execute in mg:terranova run kill @e[type=minecraft:experience_orb,x=-100,y=40,z=-100,dx=200,dy=80,dz=200]
 bossbar remove mg:tvcarno

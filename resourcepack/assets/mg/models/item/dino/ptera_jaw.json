@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "beak": "mg:item/dino/ptera_beak",
+    "particle": "mg:item/dino/ptera_beak"
+  },
+  "elements": [
+    {
+      "from": [
+        6.72,
+        6.464,
+        8.0
+      ],
+      "to": [
+        9.28,
+        8.0,
+        26.432
+      ],
+      "faces": {
+        "north": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            2.56,
+            1.54
+          ]
+        },
+        "south": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            2.56,
+            1.54
+          ]
+        },
+        "east": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            16.0,
+            1.54
+          ]
+        },
+        "west": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            16.0,
+            1.54
+          ]
+        },
+        "up": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            2.56,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            2.56,
+            16.0
+          ]
+        }
+      }
+    }
+  ]
+}
