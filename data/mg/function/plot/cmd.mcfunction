@@ -1,4 +1,6 @@
 # Trigger mg.pl (@s = joueur) : 1 = aller sur son plot, 2 = retour au spawn, 3 = liste des plots, 101..115 = visiter le plot n°1..15 en spectateur
+execute if entity @s[tag=mg.dl] run tellraw @s [{"text":"⚔ Duel en cours : termine-le (ou abandonne-le) avant.","color":"red"}]
+execute if entity @s[tag=mg.dl] run scoreboard players reset @s mg.pl
 execute if score @s mg.pl matches 1 run function mg:plot/enter
 execute if score @s mg.pl matches 2 run function mg:plot/leave
 execute if score @s mg.pl matches 3 run function mg:plot/list

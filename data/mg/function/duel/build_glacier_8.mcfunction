@@ -1,0 +1,61 @@
+# Duel sniper : Glacier (z 40800), lot 8/11 — généré par tools/duel/gen_duel_maps.py
+fill -8 82 40785 -8 82 40787 minecraft:snow_block
+fill 8 82 40813 8 82 40815 minecraft:snow_block
+setblock -8 83 40786 minecraft:snow[layers=4]
+setblock 8 83 40814 minecraft:snow[layers=4]
+fill 3 81 40790 9 81 40794 minecraft:snow_block
+fill -9 81 40806 -3 81 40810 minecraft:snow_block
+fill 4 81 40789 8 81 40795 minecraft:snow_block
+fill -8 81 40805 -4 81 40811 minecraft:snow_block
+fill 5 82 40792 7 82 40792 minecraft:snow_block
+fill -7 82 40808 -5 82 40808 minecraft:snow_block
+fill 6 82 40791 6 82 40793 minecraft:snow_block
+fill -6 82 40807 -6 82 40809 minecraft:snow_block
+setblock 6 83 40792 minecraft:snow[layers=4]
+setblock -6 83 40808 minecraft:snow[layers=4]
+fill -16 81 40755 -14 81 40757 minecraft:packed_ice
+fill 14 81 40843 16 81 40845 minecraft:packed_ice
+fill -16 82 40755 -14 82 40757 minecraft:packed_ice
+fill 14 82 40843 16 82 40845 minecraft:packed_ice
+fill -16 83 40755 -14 83 40757 minecraft:packed_ice
+fill 14 83 40843 16 83 40845 minecraft:packed_ice
+fill -16 84 40755 -14 84 40757 minecraft:packed_ice
+fill 14 84 40843 16 84 40845 minecraft:packed_ice
+fill -15 85 40755 -13 85 40757 minecraft:blue_ice
+fill 13 85 40843 15 85 40845 minecraft:blue_ice
+fill -15 86 40755 -13 86 40757 minecraft:blue_ice
+fill 13 86 40843 15 86 40845 minecraft:blue_ice
+fill -14 87 40756 -14 87 40756 minecraft:blue_ice
+fill 14 87 40844 14 87 40844 minecraft:blue_ice
+fill -14 88 40756 -14 88 40756 minecraft:blue_ice
+fill 14 88 40844 14 88 40844 minecraft:blue_ice
+fill -13 89 40756 -13 89 40756 minecraft:blue_ice
+fill 13 89 40844 13 89 40844 minecraft:blue_ice
+fill 3 81 40759 5 81 40761 minecraft:packed_ice
+fill -5 81 40839 -3 81 40841 minecraft:packed_ice
+fill 3 82 40759 5 82 40761 minecraft:packed_ice
+fill -5 82 40839 -3 82 40841 minecraft:packed_ice
+fill 3 83 40759 5 83 40761 minecraft:packed_ice
+fill -5 83 40839 -3 83 40841 minecraft:packed_ice
+fill 3 84 40759 5 84 40761 minecraft:packed_ice
+fill -5 84 40839 -3 84 40841 minecraft:packed_ice
+fill 2 85 40759 4 85 40761 minecraft:packed_ice
+fill -4 85 40839 -2 85 40841 minecraft:packed_ice
+fill 2 86 40759 4 86 40761 minecraft:packed_ice
+fill -4 86 40839 -2 86 40841 minecraft:packed_ice
+fill 2 87 40759 4 87 40761 minecraft:blue_ice
+fill -4 87 40839 -2 87 40841 minecraft:blue_ice
+fill 2 88 40759 4 88 40761 minecraft:blue_ice
+fill -4 88 40839 -2 88 40841 minecraft:blue_ice
+fill 1 89 40759 3 89 40761 minecraft:blue_ice
+fill -3 89 40839 -1 89 40841 minecraft:blue_ice
+fill 2 90 40760 2 90 40760 minecraft:blue_ice
+fill -2 90 40840 -2 90 40840 minecraft:blue_ice
+fill 2 91 40760 2 91 40760 minecraft:blue_ice
+fill -2 91 40840 -2 91 40840 minecraft:blue_ice
+fill 2 92 40760 2 92 40760 minecraft:blue_ice
+fill -2 92 40840 -2 92 40840 minecraft:blue_ice
+fill 13 81 40767 15 81 40769 minecraft:packed_ice
+fill -15 81 40831 -13 81 40833 minecraft:packed_ice
+fill 13 82 40767 15 82 40769 minecraft:packed_ice
+fill -15 82 40831 -13 82 40833 minecraft:packed_ice

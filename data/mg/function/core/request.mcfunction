@@ -146,7 +146,7 @@ execute as @a[tag=mg.play,tag=mg.elyf] run function mg:elytra/free_stop
 # État : compte à rebours de 10 s
 scoreboard players set $state mg.st 1
 function mg:vote/clear
-clear @a[tag=!mg.surv] minecraft:warped_fungus_on_a_stick
+clear @a[tag=!mg.surv,tag=!mg.dl] minecraft:warped_fungus_on_a_stick
 clear @a[tag=!mg.surv] minecraft:blaze_rod
 clear @a[tag=!mg.surv] minecraft:wind_charge
 clear @a[tag=!mg.surv] minecraft:snowball
@@ -387,5 +387,5 @@ title @a[tag=mg.play] title [{"text":"Préparez-vous !","color":"gold"}]
 title @a[tag=mg.play] subtitle [{"text":"Début dans 10 secondes...","color":"gray"}]
 execute as @a[tag=!mg.surv] at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 1 0.8
 # Rappel aux joueurs en pause (après prepare : une partie annulée, $state 3, n'en envoie pas ; pas en Mini Party, $mpl)
-execute unless score $mpl mg.st matches 1 unless score $mp mg.st matches 1 unless score $state mg.st matches 3 run tellraw @a[tag=mg.init,tag=mg.spectate,tag=!mg.surv] [{"text":"⏸ Partie lancée sans toi (pause). ","color":"gray"},{"text":"[▶ Reprendre les parties]","color":"green","click_event":{"action":"run_command","command":"trigger mg.opt set 1"},"hover_event":{"action":"show_text","value":"Désactiver la pause : tu seras téléporté aux prochaines parties"}}]
-execute unless score $mpl mg.st matches 1 if score $mp mg.st matches 1 unless score $state mg.st matches 3 run tellraw @a[tag=mg.init,tag=mg.spectate,tag=!mg.surv] [{"text":"⏸ Partie lancée sans toi (pause). ","color":"gray"},{"text":"[▶ Reprendre les parties]","color":"green","click_event":{"action":"run_command","command":"trigger mg.opt set 1"},"hover_event":{"action":"show_text","value":"La Mini Party se joue sans toi ; tu seras téléporté aux parties suivantes"}}]
+execute unless score $mpl mg.st matches 1 unless score $mp mg.st matches 1 unless score $state mg.st matches 3 run tellraw @a[tag=mg.init,tag=mg.spectate,tag=!mg.surv,tag=!mg.dl] [{"text":"⏸ Partie lancée sans toi (pause). ","color":"gray"},{"text":"[▶ Reprendre les parties]","color":"green","click_event":{"action":"run_command","command":"trigger mg.opt set 1"},"hover_event":{"action":"show_text","value":"Désactiver la pause : tu seras téléporté aux prochaines parties"}}]
+execute unless score $mpl mg.st matches 1 if score $mp mg.st matches 1 unless score $state mg.st matches 3 run tellraw @a[tag=mg.init,tag=mg.spectate,tag=!mg.surv,tag=!mg.dl] [{"text":"⏸ Partie lancée sans toi (pause). ","color":"gray"},{"text":"[▶ Reprendre les parties]","color":"green","click_event":{"action":"run_command","command":"trigger mg.opt set 1"},"hover_event":{"action":"show_text","value":"La Mini Party se joue sans toi ; tu seras téléporté aux parties suivantes"}}]

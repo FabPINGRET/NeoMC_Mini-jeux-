@@ -1,0 +1,25 @@
+# Duel sniper : Ville (z 40400), lot 17/17 — généré par tools/duel/gen_duel_maps.py
+fill -9 81 40443 -4 82 40443 minecraft:stone_bricks
+fill 5 83 40357 7 83 40357 minecraft:cracked_stone_bricks
+fill -7 83 40443 -5 83 40443 minecraft:cracked_stone_bricks
+fill 2 81 40371 6 82 40371 minecraft:stone_bricks
+fill -6 81 40429 -2 82 40429 minecraft:stone_bricks
+fill 3 83 40371 4 83 40371 minecraft:cracked_stone_bricks
+fill -4 83 40429 -3 83 40429 minecraft:cracked_stone_bricks
+fill -18 81 40371 -14 82 40371 minecraft:stone_bricks
+fill 14 81 40429 18 82 40429 minecraft:stone_bricks
+fill -17 83 40371 -16 83 40371 minecraft:cracked_stone_bricks
+fill 16 83 40429 17 83 40429 minecraft:cracked_stone_bricks
+fill -12 81 40384 -8 82 40384 minecraft:stone_bricks
+fill 8 81 40416 12 82 40416 minecraft:stone_bricks
+fill -11 83 40384 -10 83 40384 minecraft:cracked_stone_bricks
+fill 10 83 40416 11 83 40416 minecraft:cracked_stone_bricks
+fill 6 81 40384 11 82 40384 minecraft:stone_bricks
+fill -11 81 40416 -6 82 40416 minecraft:stone_bricks
+fill 7 83 40384 9 83 40384 minecraft:cracked_stone_bricks
+fill -9 83 40416 -7 83 40416 minecraft:cracked_stone_bricks
+fill -21 62 40329 21 113 40329 minecraft:barrier
+fill -21 62 40471 21 113 40471 minecraft:barrier
+fill -21 62 40329 -21 113 40471 minecraft:barrier
+fill 21 62 40329 21 113 40471 minecraft:barrier
+fill -21 113 40329 21 113 40471 minecraft:barrier

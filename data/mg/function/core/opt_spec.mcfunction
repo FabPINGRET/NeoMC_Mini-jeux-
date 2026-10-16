@@ -1,4 +1,5 @@
 # Bascule pause (@s = joueur ; tag mg.spectate : le joueur reste où il est quand une partie est lancée)
+execute if entity @s[tag=mg.dl] run return run tellraw @s [{"text":"⚔ Duel en cours : termine-le (ou abandonne-le) avant.","color":"red"}]
 execute store success score @s mg.t if entity @s[tag=mg.spectate]
 
 # Était en pause → redevient joueur
