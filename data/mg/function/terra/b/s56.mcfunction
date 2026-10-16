@@ -1,240 +1,4 @@
-# Construction de Terra Nova, étape 56/101 (dimension mg:terranova, générée)
-fill 94 88 -81 94 88 -81 minecraft:mossy_cobblestone
-fill 94 56 -80 94 87 -79 minecraft:stone
-fill 94 88 -80 94 88 -79 minecraft:stone
-fill 94 56 -78 94 86 -77 minecraft:stone
-fill 94 87 -78 94 87 -77 minecraft:stone
-fill 94 56 -76 94 86 -76 minecraft:stone
-fill 94 87 -76 94 87 -76 minecraft:mossy_cobblestone
-fill 94 56 -75 94 86 -72 minecraft:stone
-fill 94 87 -75 94 87 -72 minecraft:stone
-fill 94 56 -71 94 86 -71 minecraft:stone
-fill 94 87 -71 94 87 -71 minecraft:mossy_cobblestone
-fill 94 56 -70 94 85 -68 minecraft:stone
-fill 94 86 -70 94 86 -68 minecraft:stone
-fill 94 56 -67 94 84 -67 minecraft:stone
-fill 94 85 -67 94 85 -67 minecraft:stone
-fill 94 56 -66 94 84 -66 minecraft:stone
-fill 94 85 -66 94 85 -66 minecraft:mossy_cobblestone
-fill 94 56 -65 94 84 -62 minecraft:stone
-fill 94 85 -65 94 85 -62 minecraft:stone
-fill 94 56 -61 94 84 -61 minecraft:stone
-fill 94 85 -61 94 85 -61 minecraft:mossy_cobblestone
-fill 94 56 -60 94 84 -57 minecraft:stone
-fill 94 85 -60 94 85 -57 minecraft:stone
-fill 94 56 -56 94 83 -56 minecraft:stone
-fill 94 84 -56 94 84 -56 minecraft:mossy_cobblestone
-fill 94 56 -55 94 80 -52 minecraft:stone
-fill 94 81 -55 94 81 -52 minecraft:stone
-fill 94 56 -51 94 80 -51 minecraft:stone
-fill 94 81 -51 94 81 -51 minecraft:mossy_cobblestone
-fill 94 56 -50 94 80 -48 minecraft:stone
-fill 94 81 -50 94 81 -48 minecraft:stone
-fill 94 56 -47 94 83 -47 minecraft:stone
-fill 94 84 -47 94 84 -47 minecraft:stone
-fill 94 56 -46 94 84 -46 minecraft:stone
-fill 94 85 -46 94 85 -46 minecraft:mossy_cobblestone
-fill 94 56 -45 94 84 -42 minecraft:stone
-fill 94 85 -45 94 85 -42 minecraft:stone
-fill 94 56 -41 94 84 -41 minecraft:stone
-fill 94 85 -41 94 85 -41 minecraft:mossy_cobblestone
-fill 94 56 -40 94 84 -39 minecraft:stone
-fill 94 85 -40 94 85 -39 minecraft:stone
-fill 94 56 -38 94 83 -37 minecraft:stone
-fill 94 84 -38 94 84 -37 minecraft:stone
-fill 94 56 -36 94 83 -36 minecraft:stone
-fill 94 84 -36 94 84 -36 minecraft:mossy_cobblestone
-fill 94 56 -35 94 83 -35 minecraft:stone
-fill 94 84 -35 94 84 -35 minecraft:stone
-fill 94 56 -34 94 84 -33 minecraft:stone
-fill 94 85 -34 94 85 -33 minecraft:stone
-fill 94 56 -32 94 85 -32 minecraft:stone
-fill 94 86 -32 94 86 -32 minecraft:stone
-fill 94 56 -31 94 85 -31 minecraft:stone
-fill 94 86 -31 94 86 -31 minecraft:mossy_cobblestone
-fill 94 56 -30 94 85 -27 minecraft:stone
-fill 94 86 -30 94 86 -27 minecraft:stone
-fill 94 56 -26 94 85 -26 minecraft:stone
-fill 94 86 -26 94 86 -26 minecraft:mossy_cobblestone
-fill 94 56 -25 94 85 -23 minecraft:stone
-fill 94 86 -25 94 86 -23 minecraft:stone
-fill 94 56 -22 94 86 -22 minecraft:stone
-fill 94 87 -22 94 87 -22 minecraft:stone
-fill 94 56 -21 94 86 -21 minecraft:stone
-fill 94 87 -21 94 87 -21 minecraft:mossy_cobblestone
-fill 94 56 -20 94 86 -18 minecraft:stone
-fill 94 87 -20 94 87 -18 minecraft:stone
-fill 94 56 -17 94 87 -17 minecraft:stone
-fill 94 88 -17 94 88 -17 minecraft:stone
-fill 94 56 -16 94 87 -16 minecraft:stone
-fill 94 88 -16 94 88 -16 minecraft:mossy_cobblestone
-fill 94 56 -15 94 87 -13 minecraft:stone
-fill 94 88 -15 94 88 -13 minecraft:stone
-fill 94 56 -12 94 88 -12 minecraft:stone
-fill 94 89 -12 94 89 -12 minecraft:stone
-fill 94 56 -11 94 88 -11 minecraft:stone
-fill 94 89 -11 94 89 -11 minecraft:mossy_cobblestone
-fill 94 56 -10 94 88 -7 minecraft:stone
-fill 94 89 -10 94 89 -7 minecraft:stone
-fill 94 56 -6 94 88 -6 minecraft:stone
-fill 94 89 -6 94 89 -6 minecraft:mossy_cobblestone
-fill 94 56 -5 94 88 -3 minecraft:stone
-fill 94 89 -5 94 89 -3 minecraft:stone
-fill 94 56 -2 94 89 -2 minecraft:stone
-fill 94 90 -2 94 90 -2 minecraft:stone
-fill 94 56 -1 94 89 -1 minecraft:stone
-fill 94 90 -1 94 90 -1 minecraft:mossy_cobblestone
-fill 94 56 0 94 89 1 minecraft:stone
-fill 94 90 0 94 90 1 minecraft:stone
-fill 94 56 2 94 88 3 minecraft:stone
-fill 94 89 2 94 89 3 minecraft:stone
-fill 94 56 4 94 87 4 minecraft:stone
-fill 94 88 4 94 88 4 minecraft:mossy_cobblestone
-fill 94 56 5 94 87 5 minecraft:stone
-fill 94 88 5 94 88 5 minecraft:stone
-fill 94 56 6 94 86 8 minecraft:stone
-fill 94 87 6 94 87 8 minecraft:stone
-fill 94 56 9 94 85 9 minecraft:stone
-fill 94 86 9 94 86 9 minecraft:mossy_cobblestone
-fill 94 56 10 94 85 11 minecraft:stone
-fill 94 86 10 94 86 11 minecraft:stone
-fill 94 56 12 94 86 13 minecraft:stone
-fill 94 87 12 94 87 13 minecraft:stone
-fill 94 56 14 94 86 14 minecraft:stone
-fill 94 87 14 94 87 14 minecraft:mossy_cobblestone
-fill 94 56 15 94 86 15 minecraft:stone
-fill 94 87 15 94 87 15 minecraft:stone
-fill 94 56 16 94 87 18 minecraft:stone
-fill 94 88 16 94 88 18 minecraft:stone
-fill 94 56 19 94 86 19 minecraft:stone
-fill 94 87 19 94 87 19 minecraft:mossy_cobblestone
-fill 94 56 20 94 86 21 minecraft:stone
-fill 94 87 20 94 87 21 minecraft:stone
-fill 94 56 22 94 85 23 minecraft:stone
-fill 94 86 22 94 86 23 minecraft:stone
-fill 94 56 24 94 84 24 minecraft:stone
-fill 94 85 24 94 85 24 minecraft:mossy_cobblestone
-fill 94 56 25 94 84 26 minecraft:stone
-fill 94 85 25 94 85 26 minecraft:stone
-fill 94 56 27 94 83 28 minecraft:stone
-fill 94 84 27 94 84 28 minecraft:stone
-fill 94 56 29 94 83 29 minecraft:stone
-fill 94 84 29 94 84 29 minecraft:mossy_cobblestone
-fill 94 56 30 94 83 33 minecraft:stone
-fill 94 84 30 94 84 33 minecraft:stone
-fill 94 56 34 94 83 34 minecraft:stone
-fill 94 84 34 94 84 34 minecraft:mossy_cobblestone
-fill 94 56 35 94 83 38 minecraft:stone
-fill 94 84 35 94 84 38 minecraft:stone
-fill 94 56 39 94 83 39 minecraft:stone
-fill 94 84 39 94 84 39 minecraft:mossy_cobblestone
-fill 94 56 40 94 83 41 minecraft:stone
-fill 94 84 40 94 84 41 minecraft:stone
-fill 94 56 42 94 82 43 minecraft:stone
-fill 94 83 42 94 83 43 minecraft:stone
-fill 94 56 44 94 82 44 minecraft:stone
-fill 94 83 44 94 83 44 minecraft:mossy_cobblestone
-fill 94 56 45 94 82 45 minecraft:stone
-fill 94 83 45 94 83 45 minecraft:stone
-fill 94 56 46 94 83 48 minecraft:stone
-fill 94 84 46 94 84 48 minecraft:stone
-fill 94 56 49 94 84 49 minecraft:stone
-fill 94 85 49 94 85 49 minecraft:mossy_cobblestone
-fill 94 56 50 94 84 50 minecraft:stone
-fill 94 85 50 94 85 50 minecraft:stone
-fill 94 56 51 94 85 53 minecraft:stone
-fill 94 86 51 94 86 53 minecraft:stone
-fill 94 56 54 94 86 54 minecraft:stone
-fill 94 87 54 94 87 54 minecraft:mossy_cobblestone
-fill 94 56 55 94 86 55 minecraft:stone
-fill 94 87 55 94 87 55 minecraft:stone
-fill 94 56 56 94 87 57 minecraft:stone
-fill 94 88 56 94 88 57 minecraft:stone
-fill 94 56 58 94 86 58 minecraft:stone
-fill 94 87 58 94 87 58 minecraft:stone
-fill 94 56 59 94 86 59 minecraft:stone
-fill 94 87 59 94 87 59 minecraft:mossy_cobblestone
-fill 94 56 60 94 86 61 minecraft:stone
-fill 94 87 60 94 87 61 minecraft:stone
-fill 94 56 62 94 87 63 minecraft:stone
-fill 94 88 62 94 88 63 minecraft:stone
-fill 94 56 64 94 87 64 minecraft:stone
-fill 94 88 64 94 88 64 minecraft:mossy_cobblestone
-fill 94 56 65 94 87 68 minecraft:stone
-fill 94 88 65 94 88 68 minecraft:stone
-fill 94 56 69 94 87 69 minecraft:stone
-fill 94 88 69 94 88 69 minecraft:mossy_cobblestone
-fill 94 56 70 94 87 72 minecraft:stone
-fill 94 88 70 94 88 72 minecraft:stone
-fill 94 56 73 94 86 73 minecraft:stone
-fill 94 87 73 94 87 73 minecraft:stone
-fill 94 56 74 94 86 74 minecraft:stone
-fill 94 87 74 94 87 74 minecraft:mossy_cobblestone
-fill 94 56 75 94 86 76 minecraft:stone
-fill 94 87 75 94 87 76 minecraft:stone
-fill 94 56 77 94 85 77 minecraft:stone
-fill 94 86 77 94 86 77 minecraft:stone
-fill 94 56 78 94 86 78 minecraft:stone
-fill 94 87 78 94 87 78 minecraft:stone
-fill 94 56 79 94 86 79 minecraft:stone
-fill 94 87 79 94 87 79 minecraft:mossy_cobblestone
-fill 94 56 80 94 86 80 minecraft:stone
-fill 94 87 80 94 87 80 minecraft:stone
-fill 94 56 81 94 85 83 minecraft:stone
-fill 94 86 81 94 86 83 minecraft:stone
-fill 94 56 84 94 85 84 minecraft:stone
-fill 94 86 84 94 86 84 minecraft:mossy_cobblestone
-fill 94 56 85 94 85 87 minecraft:stone
-fill 94 86 85 94 86 87 minecraft:stone
-fill 94 56 88 94 86 88 minecraft:stone
-fill 94 87 88 94 87 88 minecraft:stone
-fill 94 56 89 94 86 89 minecraft:stone
-fill 94 87 89 94 87 89 minecraft:mossy_cobblestone
-fill 94 56 90 94 86 93 minecraft:stone
-fill 94 87 90 94 87 93 minecraft:stone
-fill 94 56 94 94 85 94 minecraft:stone
-fill 94 86 94 94 86 94 minecraft:mossy_cobblestone
-fill 94 56 95 94 89 95 minecraft:stone
-fill 94 90 95 94 90 95 minecraft:stone
-fill 95 56 -96 95 91 -96 minecraft:stone
-fill 95 92 -96 95 92 -96 minecraft:stone
-fill 95 56 -95 95 91 -95 minecraft:stone
-fill 95 92 -95 95 92 -95 minecraft:mossy_cobblestone
-fill 95 56 -94 95 91 -93 minecraft:stone
-fill 95 92 -94 95 92 -93 minecraft:stone
-fill 95 56 -92 95 92 -91 minecraft:stone
-fill 95 93 -92 95 93 -91 minecraft:stone
-fill 95 56 -90 95 93 -90 minecraft:stone
-fill 95 94 -90 95 94 -90 minecraft:mossy_cobblestone
-fill 95 56 -89 95 93 -86 minecraft:stone
-fill 95 94 -89 95 94 -86 minecraft:stone
-fill 95 56 -85 95 92 -85 minecraft:stone
-fill 95 93 -85 95 93 -85 minecraft:mossy_cobblestone
-fill 95 56 -84 95 92 -81 minecraft:stone
-fill 95 93 -84 95 93 -81 minecraft:stone
-fill 95 56 -80 95 92 -80 minecraft:stone
-fill 95 93 -80 95 93 -80 minecraft:mossy_cobblestone
-fill 95 56 -79 95 91 -77 minecraft:stone
-fill 95 92 -79 95 92 -77 minecraft:stone
-fill 95 56 -76 95 90 -76 minecraft:stone
-fill 95 91 -76 95 91 -76 minecraft:stone
-fill 95 56 -75 95 90 -75 minecraft:stone
-fill 95 91 -75 95 91 -75 minecraft:mossy_cobblestone
-fill 95 56 -74 95 90 -71 minecraft:stone
-fill 95 91 -74 95 91 -71 minecraft:stone
-fill 95 56 -70 95 90 -70 minecraft:stone
-fill 95 91 -70 95 91 -70 minecraft:mossy_cobblestone
-fill 95 56 -69 95 90 -69 minecraft:stone
-fill 95 91 -69 95 91 -69 minecraft:stone
-fill 95 56 -68 95 89 -66 minecraft:stone
-fill 95 90 -68 95 90 -66 minecraft:stone
-fill 95 56 -65 95 89 -65 minecraft:stone
-fill 95 90 -65 95 90 -65 minecraft:mossy_cobblestone
-fill 95 56 -64 95 88 -63 minecraft:stone
-fill 95 89 -64 95 89 -63 minecraft:stone
-fill 95 56 -62 95 89 -61 minecraft:stone
-fill 95 90 -62 95 90 -61 minecraft:stone
-fill 95 56 -60 95 89 -60 minecraft:stone
+# Construction de Terra Nova, étape 56/100 (dimension mg:terranova, générée)
 fill 95 90 -60 95 90 -60 minecraft:mossy_cobblestone
 fill 95 56 -59 95 88 -56 minecraft:stone
 fill 95 89 -59 95 89 -56 minecraft:stone
@@ -318,22 +82,22 @@ fill 95 56 21 95 90 21 minecraft:stone
 fill 95 91 21 95 91 21 minecraft:stone
 fill 95 56 22 95 89 23 minecraft:stone
 fill 95 90 22 95 90 23 minecraft:stone
-fill 95 56 24 95 88 24 minecraft:stone
-fill 95 89 24 95 89 24 minecraft:stone
-fill 95 56 25 95 88 25 minecraft:stone
-fill 95 89 25 95 89 25 minecraft:mossy_cobblestone
-fill 95 56 26 95 88 29 minecraft:stone
-fill 95 89 26 95 89 29 minecraft:stone
-fill 95 56 30 95 88 30 minecraft:stone
-fill 95 89 30 95 89 30 minecraft:mossy_cobblestone
-fill 95 56 31 95 88 33 minecraft:stone
-fill 95 89 31 95 89 33 minecraft:stone
-fill 95 56 34 95 87 34 minecraft:stone
-fill 95 88 34 95 88 34 minecraft:stone
-fill 95 56 35 95 87 35 minecraft:stone
-fill 95 88 35 95 88 35 minecraft:mossy_cobblestone
-fill 95 56 36 95 87 39 minecraft:stone
-fill 95 88 36 95 88 39 minecraft:stone
+fill 95 56 24 95 82 24 minecraft:stone
+fill 95 83 24 95 83 24 minecraft:stone
+fill 95 56 25 95 75 25 minecraft:stone
+fill 95 76 25 95 76 25 minecraft:mossy_cobblestone
+fill 95 56 26 95 68 26 minecraft:dirt
+fill 95 69 26 95 69 26 minecraft:grass_block
+fill 95 56 27 95 65 33 minecraft:dirt
+fill 95 66 27 95 66 33 minecraft:grass_block
+fill 95 56 34 95 68 34 minecraft:dirt
+fill 95 69 34 95 69 34 minecraft:grass_block
+fill 95 56 35 95 74 35 minecraft:stone
+fill 95 75 35 95 75 35 minecraft:mossy_cobblestone
+fill 95 56 36 95 81 36 minecraft:stone
+fill 95 82 36 95 82 36 minecraft:stone
+fill 95 56 37 95 87 39 minecraft:stone
+fill 95 88 37 95 88 39 minecraft:stone
 fill 95 56 40 95 86 40 minecraft:stone
 fill 95 87 40 95 87 40 minecraft:mossy_cobblestone
 fill 95 56 41 95 86 44 minecraft:stone
@@ -410,7 +174,7 @@ fill 78 63 -77 84 65 -71 minecraft:moss_block replace minecraft:grass_block
 fill 75 67 -90 81 69 -84 minecraft:podzol replace minecraft:grass_block
 fill 53 64 83 59 66 89 minecraft:moss_block replace minecraft:grass_block
 fill -21 62 75 -15 64 81 minecraft:podzol replace minecraft:grass_block
-fill -93 76 0 -87 78 6 minecraft:rooted_dirt replace minecraft:grass_block
+fill -93 66 0 -87 68 6 minecraft:rooted_dirt replace minecraft:grass_block
 fill -80 63 61 -78 65 63 minecraft:coarse_dirt replace minecraft:grass_block
 fill 84 62 42 88 64 46 minecraft:rooted_dirt replace minecraft:grass_block
 fill -90 67 33 -86 69 37 minecraft:podzol replace minecraft:grass_block
@@ -429,9 +193,9 @@ fill 53 62 6 57 64 10 minecraft:podzol replace minecraft:grass_block
 fill -24 64 54 -22 66 56 minecraft:podzol replace minecraft:grass_block
 fill 78 64 75 84 66 81 minecraft:podzol replace minecraft:grass_block
 fill -61 65 -17 -59 67 -15 minecraft:podzol replace minecraft:grass_block
-fill -22 67 86 -18 69 90 minecraft:coarse_dirt replace minecraft:grass_block
+fill -22 64 86 -18 66 90 minecraft:coarse_dirt replace minecraft:grass_block
 fill 56 62 9 58 64 11 minecraft:podzol replace minecraft:grass_block
-fill -31 69 86 -25 71 92 minecraft:podzol replace minecraft:grass_block
+fill -31 64 86 -25 66 92 minecraft:podzol replace minecraft:grass_block
 fill -84 66 -74 -82 68 -72 minecraft:coarse_dirt replace minecraft:grass_block
 fill -55 64 39 -51 66 43 minecraft:moss_block replace minecraft:grass_block
 fill -63 64 -78 -57 66 -72 minecraft:coarse_dirt replace minecraft:grass_block
@@ -449,3 +213,117 @@ fill -17 63 49 -13 65 53 minecraft:coarse_dirt replace minecraft:grass_block
 fill -44 63 56 -42 65 58 minecraft:moss_block replace minecraft:grass_block
 fill 62 63 62 68 65 68 minecraft:podzol replace minecraft:grass_block
 fill -91 65 19 -85 67 25 minecraft:podzol replace minecraft:grass_block
+fill 14 62 -82 16 64 -80 minecraft:rooted_dirt replace minecraft:grass_block
+fill 72 67 -87 74 69 -85 minecraft:coarse_dirt replace minecraft:grass_block
+fill -25 64 66 -23 66 68 minecraft:moss_block replace minecraft:grass_block
+fill -58 62 76 -56 64 78 minecraft:podzol replace minecraft:grass_block
+fill -86 64 -86 -80 66 -80 minecraft:rooted_dirt replace minecraft:grass_block
+fill 52 68 88 54 70 90 minecraft:podzol replace minecraft:grass_block
+fill -85 66 45 -83 68 47 minecraft:podzol replace minecraft:grass_block
+fill -6 62 84 -4 64 86 minecraft:podzol replace minecraft:grass_block
+fill -51 65 -34 -45 67 -28 minecraft:moss_block replace minecraft:grass_block
+fill -62 62 22 -56 64 28 minecraft:rooted_dirt replace minecraft:grass_block
+fill -21 70 -90 -19 72 -88 minecraft:coarse_dirt replace minecraft:grass_block
+fill 62 65 71 66 67 75 minecraft:podzol replace minecraft:grass_block
+fill -35 63 -26 -31 65 -22 minecraft:podzol replace minecraft:grass_block
+fill 0 63 48 4 65 52 minecraft:coarse_dirt replace minecraft:grass_block
+fill -4 63 -62 -2 65 -60 minecraft:rooted_dirt replace minecraft:grass_block
+fill -72 64 -34 -68 66 -30 minecraft:moss_block replace minecraft:grass_block
+fill -85 66 -13 -83 68 -11 minecraft:podzol replace minecraft:grass_block
+fill -62 62 31 -60 64 33 minecraft:podzol replace minecraft:grass_block
+fill -47 63 40 -45 65 42 minecraft:moss_block replace minecraft:grass_block
+fill -63 65 -80 -59 67 -76 minecraft:rooted_dirt replace minecraft:grass_block
+fill -18 63 55 -16 65 57 minecraft:coarse_dirt replace minecraft:grass_block
+fill 72 65 -80 76 67 -76 minecraft:podzol replace minecraft:grass_block
+fill -47 66 -33 -43 68 -29 minecraft:coarse_dirt replace minecraft:grass_block
+fill 69 63 -39 75 65 -33 minecraft:podzol replace minecraft:grass_block
+fill 82 62 28 88 64 34 minecraft:coarse_dirt replace minecraft:grass_block
+fill 77 65 -11 81 67 -7 minecraft:podzol replace minecraft:grass_block
+fill -58 62 -30 -54 64 -26 minecraft:podzol replace minecraft:grass_block
+fill 49 62 77 51 64 79 minecraft:podzol replace minecraft:grass_block
+fill -47 62 -63 -43 64 -59 minecraft:coarse_dirt replace minecraft:grass_block
+fill 80 65 -28 86 67 -22 minecraft:coarse_dirt replace minecraft:grass_block
+fill -89 66 45 -83 68 51 minecraft:coarse_dirt replace minecraft:grass_block
+fill 63 63 57 67 65 61 minecraft:rooted_dirt replace minecraft:grass_block
+fill -77 66 -78 -75 68 -76 minecraft:rooted_dirt replace minecraft:grass_block
+fill 40 62 78 42 64 80 minecraft:podzol replace minecraft:grass_block
+fill -59 63 25 -55 65 29 minecraft:podzol replace minecraft:grass_block
+fill 84 67 -14 86 69 -12 minecraft:podzol replace minecraft:grass_block
+fill 74 64 -6 76 66 -4 minecraft:podzol replace minecraft:grass_block
+fill 52 63 -12 56 65 -8 minecraft:podzol replace minecraft:grass_block
+fill 10 62 34 14 64 38 minecraft:coarse_dirt replace minecraft:grass_block
+fill 61 66 13 67 68 19 minecraft:podzol replace minecraft:grass_block
+fill 73 62 55 77 64 59 minecraft:coarse_dirt replace minecraft:grass_block
+fill -78 63 24 -72 65 30 minecraft:coarse_dirt replace minecraft:grass_block
+fill -70 75 -93 -64 77 -87 minecraft:podzol replace minecraft:grass_block
+fill 0 65 -69 6 67 -63 minecraft:podzol replace minecraft:grass_block
+fill 86 64 -70 88 66 -68 minecraft:moss_block replace minecraft:grass_block
+fill -12 64 46 -8 66 50 minecraft:podzol replace minecraft:grass_block
+fill -62 62 83 -60 64 85 minecraft:podzol replace minecraft:grass_block
+fill -62 63 -67 -56 65 -61 minecraft:coarse_dirt replace minecraft:grass_block
+fill 33 63 22 35 65 24 minecraft:podzol replace minecraft:grass_block
+fill -89 64 65 -85 66 69 minecraft:podzol replace minecraft:grass_block
+fill -61 63 45 -57 65 49 minecraft:moss_block replace minecraft:grass_block
+fill 6 64 -74 8 66 -72 minecraft:podzol replace minecraft:grass_block
+fill -70 67 -8 -68 69 -6 minecraft:coarse_dirt replace minecraft:grass_block
+fill -73 63 -66 -69 65 -62 minecraft:moss_block replace minecraft:grass_block
+fill 33 63 -4 35 65 -2 minecraft:podzol replace minecraft:grass_block
+fill -2 63 -85 0 65 -83 minecraft:coarse_dirt replace minecraft:grass_block
+fill -58 62 -31 -54 64 -27 minecraft:coarse_dirt replace minecraft:grass_block
+fill 17 64 -40 23 66 -34 minecraft:coarse_dirt replace minecraft:grass_block
+fill -93 71 45 -87 73 51 minecraft:podzol replace minecraft:grass_block
+fill 56 62 42 58 64 44 minecraft:rooted_dirt replace minecraft:grass_block
+fill -19 62 -41 -17 64 -39 minecraft:moss_block replace minecraft:grass_block
+fill 80 64 7 84 66 11 minecraft:moss_block replace minecraft:grass_block
+fill -18 68 -73 -16 70 -71 minecraft:coarse_dirt replace minecraft:grass_block
+fill -18 65 -81 -16 67 -79 minecraft:podzol replace minecraft:grass_block
+fill 80 64 -32 82 66 -30 minecraft:rooted_dirt replace minecraft:grass_block
+fill -25 67 -87 -23 69 -85 minecraft:coarse_dirt replace minecraft:grass_block
+fill -76 66 85 -70 68 91 minecraft:moss_block replace minecraft:grass_block
+fill -45 66 -83 -41 68 -79 minecraft:moss_block replace minecraft:grass_block
+fill -31 63 76 -25 65 82 minecraft:moss_block replace minecraft:grass_block
+fill -78 63 -38 -74 65 -34 minecraft:moss_block replace minecraft:grass_block
+fill -72 63 -22 -66 65 -16 minecraft:coarse_dirt replace minecraft:grass_block
+fill 17 69 83 23 71 89 minecraft:coarse_dirt replace minecraft:grass_block
+fill 72 64 75 78 66 81 minecraft:podzol replace minecraft:grass_block
+fill -80 63 29 -74 65 35 minecraft:moss_block replace minecraft:grass_block
+fill 76 65 3 80 67 7 minecraft:coarse_dirt replace minecraft:grass_block
+fill 1 63 47 7 65 53 minecraft:moss_block replace minecraft:grass_block
+fill -15 63 -38 -13 65 -36 minecraft:podzol replace minecraft:grass_block
+fill 65 63 -9 71 65 -3 minecraft:coarse_dirt replace minecraft:grass_block
+fill -56 63 49 -54 65 51 minecraft:coarse_dirt replace minecraft:grass_block
+fill 2 62 79 8 64 85 minecraft:podzol replace minecraft:grass_block
+fill -72 63 62 -68 65 66 minecraft:moss_block replace minecraft:grass_block
+fill 77 63 61 81 65 65 minecraft:podzol replace minecraft:grass_block
+fill 65 64 11 69 66 15 minecraft:podzol replace minecraft:grass_block
+fill -55 63 -39 -53 65 -37 minecraft:coarse_dirt replace minecraft:grass_block
+fill 3 63 63 5 65 65 minecraft:podzol replace minecraft:grass_block
+fill 64 65 27 66 67 29 minecraft:podzol replace minecraft:grass_block
+fill -72 66 -81 -70 68 -79 minecraft:rooted_dirt replace minecraft:grass_block
+fill 52 62 31 58 64 37 minecraft:rooted_dirt replace minecraft:grass_block
+fill -70 65 -14 -66 67 -10 minecraft:moss_block replace minecraft:grass_block
+fill 46 64 33 52 66 39 minecraft:rooted_dirt replace minecraft:grass_block
+fill 14 63 71 16 65 73 minecraft:moss_block replace minecraft:grass_block
+fill 64 65 68 68 67 72 minecraft:moss_block replace minecraft:grass_block
+fill 77 64 52 83 66 58 minecraft:coarse_dirt replace minecraft:grass_block
+fill 70 66 -87 76 68 -81 minecraft:moss_block replace minecraft:grass_block
+fill 58 63 -50 62 65 -46 minecraft:moss_block replace minecraft:grass_block
+fill 85 65 44 91 67 50 minecraft:podzol replace minecraft:grass_block
+fill -85 64 29 -83 66 31 minecraft:rooted_dirt replace minecraft:grass_block
+fill 53 63 49 59 65 55 minecraft:moss_block replace minecraft:grass_block
+fill -43 64 -9 -41 66 -7 minecraft:podzol replace minecraft:grass_block
+fill 20 63 -72 26 65 -66 minecraft:podzol replace minecraft:grass_block
+fill -17 65 -88 -11 67 -82 minecraft:podzol replace minecraft:grass_block
+fill -80 63 60 -78 65 62 minecraft:podzol replace minecraft:grass_block
+fill 5 63 54 9 65 58 minecraft:podzol replace minecraft:grass_block
+fill -54 64 31 -48 66 37 minecraft:podzol replace minecraft:grass_block
+fill -79 65 -57 -73 67 -51 minecraft:coarse_dirt replace minecraft:grass_block
+fill -73 63 33 -69 65 37 minecraft:moss_block replace minecraft:grass_block
+fill 42 62 -36 48 64 -30 minecraft:podzol replace minecraft:grass_block
+fill -75 65 53 -71 67 57 minecraft:rooted_dirt replace minecraft:grass_block
+fill -8 64 38 -4 66 42 minecraft:moss_block replace minecraft:grass_block
+fill -25 62 68 -19 64 74 minecraft:podzol replace minecraft:grass_block
+fill 48 63 -25 50 65 -23 minecraft:coarse_dirt replace minecraft:grass_block
+fill 24 63 -73 28 65 -69 minecraft:rooted_dirt replace minecraft:grass_block
+fill -15 62 58 -9 64 64 minecraft:podzol replace minecraft:grass_block
+fill -23 62 60 -19 64 64 minecraft:podzol replace minecraft:grass_block

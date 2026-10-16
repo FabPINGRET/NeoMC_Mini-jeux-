@@ -1,0 +1,214 @@
+{
+  "textures": {
+    "beak": "mg:item/dino/stego_beak",
+    "eye": "mg:item/dino/stego_eye",
+    "skin": "mg:item/dino/stego_skin",
+    "particle": "mg:item/dino/stego_beak"
+  },
+  "elements": [
+    {
+      "from": [
+        4.256,
+        5.878,
+        5.878
+      ],
+      "to": [
+        11.744,
+        12.95,
+        15.488
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            7.49,
+            7.07
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            7.49,
+            7.07
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            9.61,
+            7.07
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            9.61,
+            7.07
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            7.49,
+            9.61
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            7.49,
+            9.61
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        5.379,
+        5.878,
+        15.488
+      ],
+      "to": [
+        10.621,
+        10.475,
+        20.48
+      ],
+      "faces": {
+        "north": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            5.24,
+            4.6
+          ]
+        },
+        "south": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            5.24,
+            4.6
+          ]
+        },
+        "east": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            4.99,
+            4.6
+          ]
+        },
+        "west": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            4.99,
+            4.6
+          ]
+        },
+        "up": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            5.24,
+            4.99
+          ]
+        },
+        "down": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            5.24,
+            4.99
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        4.064,
+        10.122,
+        11.744
+      ],
+      "to": [
+        11.936,
+        11.324,
+        13.242
+      ],
+      "faces": {
+        "north": {
+          "texture": "#eye",
+          "uv": [
+            0,
+            0,
+            7.87,
+            1.2
+          ]
+        },
+        "south": {
+          "texture": "#eye",
+          "uv": [
+            0,
+            0,
+            7.87,
+            1.2
+          ]
+        },
+        "east": {
+          "texture": "#eye",
+          "uv": [
+            0,
+            0,
+            1.5,
+            1.2
+          ]
+        },
+        "west": {
+          "texture": "#eye",
+          "uv": [
+            0,
+            0,
+            1.5,
+            1.2
+          ]
+        },
+        "up": {
+          "texture": "#eye",
+          "uv": [
+            0,
+            0,
+            7.87,
+            1.5
+          ]
+        },
+        "down": {
+          "texture": "#eye",
+          "uv": [
+            0,
+            0,
+            7.87,
+            1.5
+          ]
+        }
+      }
+    }
+  ]
+}

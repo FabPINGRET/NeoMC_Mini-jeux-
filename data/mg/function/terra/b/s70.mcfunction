@@ -1,17 +1,21 @@
-# Construction de Terra Nova, étape 70/101 (dimension mg:terranova, générée)
-place feature minecraft:bamboo_some_podzol -48 64 -62
-place feature minecraft:bamboo_some_podzol 38 64 -14
-place feature minecraft:bamboo_some_podzol -45 69 -22
-place feature minecraft:bamboo_some_podzol 58 65 -1
-place feature minecraft:bamboo_some_podzol -76 64 17
-place feature minecraft:bamboo_some_podzol 2 66 46
-place feature minecraft:bamboo_some_podzol -26 66 84
-place feature minecraft:bamboo_some_podzol -42 65 40
-place feature minecraft:bamboo_some_podzol 0 66 -68
-place feature minecraft:bamboo_some_podzol -88 68 28
-place feature minecraft:bamboo_some_podzol -75 64 -38
-place feature minecraft:bamboo_some_podzol -11 64 76
-place feature minecraft:bamboo_some_podzol 41 64 73
+# Construction de Terra Nova, étape 70/100 (dimension mg:terranova, générée)
+place feature minecraft:jungle_bush -75 64 -38
+place feature minecraft:jungle_bush -54 67 29
+place feature minecraft:jungle_bush 55 65 84
+place feature minecraft:jungle_bush -14 64 79
+place feature minecraft:jungle_bush 26 66 -79
+place feature minecraft:jungle_bush 63 64 78
+place feature minecraft:jungle_bush 55 64 -40
+place feature minecraft:jungle_bush 20 75 88
+place feature minecraft:jungle_bush 23 64 -83
+place feature minecraft:jungle_bush -11 64 76
+place feature minecraft:jungle_bush -39 67 -44
+place feature minecraft:jungle_bush -87 68 37
+place feature minecraft:jungle_bush 70 66 -34
+place feature minecraft:jungle_bush 41 64 73
+place feature minecraft:jungle_bush 75 65 -43
+place feature minecraft:jungle_bush -68 65 -62
+place feature minecraft:jungle_bush 38 64 52
 place feature minecraft:jungle_bush 62 64 52
 place feature minecraft:jungle_bush 22 65 -72
 place feature minecraft:jungle_bush -68 64 78
@@ -33,9 +37,5 @@ place feature minecraft:jungle_bush -81 67 37
 place feature minecraft:jungle_bush 73 65 -9
 place feature minecraft:jungle_bush 44 65 53
 place feature minecraft:jungle_bush 37 65 -23
+place feature minecraft:jungle_bush 2 66 46
 place feature minecraft:jungle_bush -62 72 -87
-place feature minecraft:jungle_bush 17 67 60
-place feature minecraft:jungle_bush -61 67 -57
-place feature minecraft:jungle_bush 75 67 69
-place feature minecraft:jungle_bush -4 66 -76
-place feature minecraft:jungle_bush 61 65 -3

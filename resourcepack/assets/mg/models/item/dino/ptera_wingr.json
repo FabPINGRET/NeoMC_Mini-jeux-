@@ -1,0 +1,145 @@
+{
+  "textures": {
+    "skin": "mg:item/dino/ptera_skin",
+    "wing": "mg:item/dino/ptera_wing",
+    "particle": "mg:item/dino/ptera_skin"
+  },
+  "elements": [
+    {
+      "from": [
+        -11.627,
+        7.488,
+        -1.387
+      ],
+      "to": [
+        8.0,
+        8.512,
+        12.267
+      ],
+      "faces": {
+        "north": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            1.54
+          ]
+        },
+        "south": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            1.54
+          ]
+        },
+        "east": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            1.54
+          ]
+        },
+        "west": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            1.54
+          ]
+        },
+        "up": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            16.0
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        -11.627,
+        6.976,
+        10.56
+      ],
+      "to": [
+        8.0,
+        8.853,
+        12.608
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            2.82
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            2.82
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            3.07,
+            2.82
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            3.07,
+            2.82
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            3.07
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            3.07
+          ]
+        }
+      }
+    }
+  ]
+}

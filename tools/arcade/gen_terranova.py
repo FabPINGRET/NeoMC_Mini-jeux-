@@ -29,6 +29,9 @@ import sys
 import common as C
 
 C.init(sys.argv[1] if len(sys.argv) > 1 else '.')
+import shutil
+for _d in ('b', 'r', 'bio', 'an', 'dino', 'rpg'):                  # dossiers entièrement générés : repartis de zéro
+    shutil.rmtree(os.path.join(C.F, 'terra', _d), ignore_errors=True)
 w, js = C.w, C.js
 DIM = 'mg:terranova'
 HX = 96                                  # carte : x, z de -96 à 95
@@ -76,7 +79,29 @@ def edge(x, z):
     return min(x + HX, HX - 1 - x, z + HX, HX - 1 - z)
 
 
-def height(x, z):
+# cols vers les régions (tv_world.py) : (axe du bord, coordonnée du couloir)
+PASSES = {'n': ('z', -30), 's': ('z', -24), 'e': ('x', 30), 'w': ('x', 6)}
+PASS_Y = 66
+
+
+def valley_pass(x, z):
+    """(distance au bord du côté le plus proche, distance au couloir du col de ce côté)."""
+    d = {'w': x + HX, 'e': HX - 1 - x, 'n': z + HX, 's': HX - 1 - z}
+    side = min(d, key=d.get)
+    ax, c = PASSES[side]
+    return d[side], (abs(x - c) if ax == 'z' else abs(z - c))
+
+
+def lerp_(a, b, t):
+    return a + (b - a) * t
+
+
+def smooth_(t):
+    t = max(0.0, min(1.0, t))
+    return t * t * (3 - 2 * t)
+
+
+def height(x, z, passes=True):
     h = raw_h(x, z)
     d = max(abs(x), abs(z))
     if d <= 31:
@@ -94,12 +119,19 @@ def height(x, z):
     if dr < 7 and d > 31:
         h = min(h, 59 if dr < 4 else 62 + (dr - 4) * 0.7)
     e = edge(x, z)
+    db, dc = valley_pass(x, z)
+    if passes and db < 16 and dc <= 3:
+        h = lerp_(PASS_Y, h, smooth_(db / 16))
     if e < 12:
-        h += ((12 - e) / 12) ** 2 * 26
+        f = 1.0
+        if passes and dc <= 7:
+            f = 0.0 if dc <= 3 else (dc - 3) / 4
+        h += ((12 - e) / 12) ** 2 * 26 * f
     return max(59, min(95, round(h)))
 
 
 H = {(x, z): height(x, z) for x in range(-HX, HX) for z in range(-HX, HX)}
+H_OLD = {c: height(*c, passes=False) for c in H if valley_pass(*c)[0] < 16 and valley_pass(*c)[1] <= 7}
 
 
 def surface(x, z):
@@ -390,6 +422,18 @@ for k, (name, ox, oz) in enumerate(OUTPOSTS, 1):
     w(f'terra/out_build_{k}', L)
     S.append(f'function mg:terra/out_build_{k}')
 
+# ---------------------------------------------------------------- régions du RPG (tv_world.py)
+TVW = dict(globals())
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tv_world.py'), encoding='utf-8').read(), TVW)
+R_TERRAIN, RS_CMD, R_VEG, R_BIOME, V_PATCH, V_BIOME, VSTRUCT, FL_REGIONS = (TVW[k] for k in (
+    'R_TERRAIN', 'RS_CMD', 'R_VEG', 'R_BIOME', 'V_PATCH', 'V_BIOME', 'VSTRUCT', 'FL_REGIONS'))
+VCARVE = []                                         # mondes construits avant les cols : falaises creusées
+for (x, z), h0 in sorted(H_OLD.items()):
+    h = H[(x, z)]
+    if h != h0:
+        VCARVE += [f'fill {x} 56 {z} {x} {h - 1} {z} minecraft:{under(x, z)}', f'setblock {x} {h} {z} minecraft:{surface(x, z)}',
+                   f'fill {x} {h + 1} {z} {x} {max(h, h0) + 12} {z} minecraft:air']
+
 # ---------------------------------------------------------------- étapes de construction
 STEPS = []
 for i in range(0, len(TERRAIN), 450):
@@ -406,20 +450,57 @@ w('terra/wb_step', ['# Une étape de construction de Terra Nova par tick ($tvb),
   [f'execute if score $tvb mg.st matches {i} in {DIM} run function mg:terra/b/s{i}' for i in range(1, NS + 1)] +
   [f'execute if score $tvb mg.st matches {NS + 1} run function mg:terra/wb_done',
    f'execute if score $tvb mg.st matches ..{NS} run schedule function mg:terra/wb_step 1t'])
-w('terra/wb_done', ['# Terra Nova prête : murs du bord, drapeau, plus de chargement forcé si personne ne joue',
+w('terra/wb_done', ['# Vallée de Terra Nova prête : drapeau, puis construction des régions du RPG',
                     f'execute in {DIM} run kill @e[type=minecraft:item,x=-100,y=40,z=-100,dx=200,dy=80,dz=200]',
-                    f'execute in {DIM} run function mg:terra/walls',
                     f'execute in {DIM} if block 0 {G} 0 minecraft:chiseled_stone_bricks run data modify storage mg:terra built set value 1b',
-                    f'execute unless score $tvw mg.st matches 1 in {DIM} run forceload remove {FL}',
-                    'execute if data storage mg:terra built run tellraw @a[tag=mg.admin] {"text":"🦖 Terra Nova est construite.","color":"green"}'])
+                    'function mg:terra/world_build2'])
+# régions : chargement forcé de toute la carte, une étape par tick
+RSTEPS = []
+for k in ('n', 'e', 'w', 's'):
+    for L, n in ((R_TERRAIN[k], 450), (RS_CMD[k], 200), (R_VEG[k], 40)):
+        for i in range(0, len(L), n):
+            RSTEPS.append(L[i:i + n])
+for L in (VCARVE + V_PATCH + VSTRUCT,):
+    for i in range(0, len(L), 300):
+        RSTEPS.append(L[i:i + 300])
+for i, L in enumerate(RSTEPS, 1):
+    w(f'terra/r/s{i}', [f'# Construction des régions de Terra Nova, étape {i}/{len(RSTEPS)} (dimension {DIM}, générée)'] + L)
+NR = len(RSTEPS)
+FL_ALL = [FL] + list(FL_REGIONS.values())
+w('terra/rb_step', ['# Une étape de construction des régions par tick ($tvrb), dans la dimension. Planifiée.',
+                    'scoreboard players add $tvrb mg.st 1'] +
+  [f'execute if score $tvrb mg.st matches {i} in {DIM} run function mg:terra/r/s{i}' for i in range(1, NR + 1)] +
+  [f'execute if score $tvrb mg.st matches {NR + 1} run function mg:terra/rb_done',
+   f'execute if score $tvrb mg.st matches ..{NR} run schedule function mg:terra/rb_step 1t'])
+w('terra/world_build2', ['# Construction des régions du RPG (marais, plaines, canyon, volcan) + cols de la vallée (~3 min)',
+                         'scoreboard players set $tvrb mg.st 0'] + [f'execute in {DIM} run forceload add {f}' for f in FL_ALL] +
+  ['schedule function mg:terra/rb_step 100t'])
+# biomes du datapack : connus seulement après un redémarrage du serveur. Les fonctions bio/* ne se chargent pas avant :
+# mg:terra/bio_try (session, fin de construction) teste mg:terra/bio/ok et lance le remplissage une fois.
+BIO = [l for k in ('n', 'e', 'w', 's') for l in R_BIOME[k]] + V_BIOME
+for i in range(0, len(BIO), 150):
+    w(f'terra/bio/s{i // 150 + 1}', [f'# Biomes de Terra Nova, étape {i // 150 + 1} (dimension {DIM})'] + BIO[i:i + 150])
+NB = (len(BIO) + 149) // 150
+w('terra/bio/ok', ['# Se charge seulement si les biomes du datapack existent (sinon l’appel échoue)', 'execute if biome 0 0 0 mg:tv_jungle run return 1', 'return 1'])
+w('terra/bio_try', ['# Biomes des régions posés une seule fois, dès que le serveur les connaît (après un redémarrage)',
+                    'execute if data storage mg:terra bio run return 0', 'execute unless data storage mg:terra v2 run return 0',
+                    'scoreboard players set $tvbo mg.st 0', 'execute store result score $tvbo mg.st run function mg:terra/bio/ok',
+                    'execute unless score $tvbo mg.st matches 1 run return 0',
+                    'data modify storage mg:terra bio set value 1b', 'scoreboard players set $tvbs mg.st 0'] +
+  [f'execute in {DIM} run forceload add {f}' for f in FL_ALL] + ['schedule function mg:terra/bio_step 60t'])
+w('terra/bio_step', ['# Une étape de biomes par tick (zone chargée : session ou fin de construction)', 'scoreboard players add $tvbs mg.st 1'] +
+  [f'execute if score $tvbs mg.st matches {i} in {DIM} run function mg:terra/bio/s{i}' for i in range(1, NB + 1)] +
+  [f'execute if score $tvbs mg.st matches ..{NB - 1} run return run schedule function mg:terra/bio_step 1t'] +
+  [f'execute unless score $tvw mg.st matches 1 in {DIM} run forceload remove {f}' for f in FL_ALL])
+w('terra/rb_done', ['# Régions prêtes : bords de la carte, drapeau, plus de chargement forcé si personne ne joue',
+                    f'execute in {DIM} run kill @e[type=minecraft:item,x=-260,y=40,z=-260,dx=520,dy=140,dz=520]',
+                    f'execute in {DIM} run function mg:terra/walls_old', f'execute in {DIM} run function mg:terra/walls',
+                    'data modify storage mg:terra v2 set value 1b'] +
+  [f'execute unless score $tvw mg.st matches 1 in {DIM} run forceload remove {f}' for f in FL_ALL] +
+  ['function mg:terra/bio_try', 'tellraw @a[tag=mg.admin] {"text":"🦖 Terra Nova est construite (vallée et régions du RPG).","color":"green"}'])
 w('terra/world_build', ['# Première construction de Terra Nova (ou reconstruction complète, ~2 min)',
                         f'execute in {DIM} run forceload add {FL}', 'scoreboard players set $tvb mg.st 0',
                         'schedule function mg:terra/wb_step 40t'])
-w('terra/walls', ['# Bord de la carte (barrières invisibles au-dessus des falaises)',
-                  f'fill {-HX - 1} 50 {-HX - 1} {-HX - 1} 150 {HX} minecraft:barrier',
-                  f'fill {HX} 50 {-HX - 1} {HX} 150 {HX} minecraft:barrier',
-                  f'fill {-HX} 50 {-HX - 1} {HX - 1} 150 {-HX - 1} minecraft:barrier',
-                  f'fill {-HX} 50 {HX} {HX - 1} 150 {HX} minecraft:barrier'])
 os.makedirs(os.path.join(C.D, 'dimension'), exist_ok=True)
 with open(os.path.join(C.D, 'dimension', 'terranova.json'), 'w', encoding='utf-8', newline='\n') as f:
     json.dump({'type': 'minecraft:overworld', 'generator': {'type': 'minecraft:flat', 'settings': {
@@ -472,12 +553,12 @@ ARM = {s: f'minecraft:chainmail_{p}[unbreakable={{}},custom_data={{tvarm:1b}},cu
 w('terra/loc', ['# @s : 📡 localisateur (boussole) vers $(x) $(y) $(z) (macro), en case 9 de la barre',
                 'clear @s minecraft:compass[minecraft:custom_data~{tvloc:1b}]',
                 f'$item replace entity @s hotbar.8 with minecraft:compass[custom_data={{tvloc:1b}},lodestone_tracker={{target:{{pos:[I;$(x),$(y),$(z)],dimension:"{DIM}"}},tracked:false}},'
-                f'custom_name={nm("📡 Localisateur", "aqua")},lore={lo("Indique la colonie ou l’objectif de ta mission")}]'])
+                f'custom_name={nm("📡 Localisateur", "aqua")},lore={lo("Indique la colonie ou l’objectif de ta mission")}]',
+                '$scoreboard players set @s mg.trox $(x)', '$scoreboard players set @s mg.troy $(y)', '$scoreboard players set @s mg.troz $(z)',
+                'scoreboard players set @s mg.tron 1'])
 LOC_HOME = 'function mg:terra/loc {x:0,y:65,z:0}'
-w('terra/kit', ['# @s : équipement de base (à chaque arrivée : seuls les crédits sont gardés)', 'clear @s',
-                f'item replace entity @s hotbar.0 with {PROD}', f'item replace entity @s hotbar.1 with {RIFLE1}',
-                f'item replace entity @s hotbar.7 with {HOME}', LOC_HOME,
-                f'item replace entity @s armor.chest with {UNIF_C}', f'item replace entity @s armor.feet with {UNIF_B}',
+w('terra/kit', ['# @s : équipement (paliers du RPG gardés : mêlée, fusil, armure, scanner, sifflet)', 'clear @s',
+                'function mg:terra/rpg/kit', f'item replace entity @s hotbar.7 with {HOME}', 'function mg:terra/rpg/qloc',
                 'scoreboard players set @s mg.tvnet 0', 'scoreboard players set @s mg.tvtr 0',
                 'effect give @s minecraft:saturation infinite 0 true'])
 
@@ -566,7 +647,8 @@ w('terra/lobby_tick', ['# Chaque tick (core/tick, monde des mini-jeux) : portail
                        f'execute if score $tvw mg.st matches 1 in {DIM} run function mg:terra/tick'])
 w('terra/pre_tick', ['# Avant la survie (core/tick) : un joueur de Terra Nova sorti de la dimension sans passer par la sortie perd ses tags',
                      f'execute as @a[tag=mg.tvw] at @s unless dimension {DIM} run function mg:terra/strayed'])
-w('terra/strayed', ['# @s a quitté Terra Nova autrement (téléportation…)', 'tag @s remove mg.tvw', 'tag @s remove mg.surv', 'function mg:terra/mis_clear', 'function mg:terra/traps_clear', 'function mg:terra/untag'])
+w('terra/strayed', ['# @s a quitté Terra Nova autrement (téléportation…)', 'tag @s remove mg.tvw', 'tag @s remove mg.surv', 'function mg:terra/mis_clear', 'function mg:terra/traps_clear', 'function mg:terra/untag',
+                     'function mg:terra/rpg/leave'])
 w('terra/traps_clear', ['# @s part : ses pièges disparaissent', 'scoreboard players operation $own mg.st = @s mg.tvpid',
                         'execute as @e[tag=mg.tvtrap] if score @s mg.tvo = $own mg.st run kill @s', 'execute as @e[tag=mg.tvtrapd] if score @s mg.tvo = $own mg.st run kill @s'])
 
@@ -585,7 +667,7 @@ w('terra/enter', ['# @s entre dans le portail de Terra Nova (contexte : monde de
                   f'execute in {DIM} run spawnpoint @s {int(MED[0])} {MED[1]} {int(MED[2])}',
                   f'execute in {DIM} run tp @s {SPAWN[0]} {SPAWN[1]} {SPAWN[2]} 180 0',
                   'function mg:terra/kit',
-                  'title @s times 10 60 20', 'title @s title {"text":"TERRA NOVA","color":"green","bold":true}',
+                  'title @s times 10 60 20', 'title @s title {"text":"TERRA NOVA","color":"green","bold":true}', 'function mg:terra/rpg/enter',
                   'title @s subtitle {"text":"Il y a 85 millions d\'années…","color":"gray"}',
                   'tellraw @s ' + js([{'text': '🦖 TERRA NOVA', 'color': 'green', 'bold': True}, {'text': ' : bienvenue dans la colonie, colon !', 'color': 'yellow'}]),
                   'tellraw @s ' + js([{'text': ' 📋 Missions : ', 'color': 'gold'}, {'text': 'tableau sur le mur du QG (nord-est de la place), récompenses en crédits ₵', 'color': 'gray'}]),
@@ -613,27 +695,32 @@ w('terra/join', ['# @s : réglages d\'arrivée (les crédits sont gardés d\'une
                  'scoreboard players set @s mg.tvkr 0', 'scoreboard players set @s mg.tvkc 0', 'scoreboard players set @s mg.tvkb 0',
                  'scoreboard players set @s mg.tvkg 0', 'scoreboard players set @s mg.tvdd 0', 'scoreboard players reset @s mg.tvq',
                  'scoreboard players enable @s mg.tvms', 'tag @s remove mg.tvoh', 'tag @s remove mg.tvout',
-                 'team add mg_tv', 'team modify mg_tv friendlyFire false', 'team modify mg_tv color dark_green', 'team join mg_tv @s'])
+                 'team add mg_tv', 'team modify mg_tv friendlyFire false', 'team modify mg_tv color dark_green', 'team join mg_tv @s',
+                 'function mg:terra/rpg/join'])
 w('terra/untag', ['# @s : plus joueur de Terra Nova (tags, titres, recharges)', 'tag @s remove mg.tvout', 'tag @s remove mg.tvoh', 'tag @s remove mg.tvin2',
                   'title @s clear', 'title @s reset', 'scoreboard players set @s mg.tvhm 0', 'scoreboard players set @s mg.tvh 0',
                   'effect clear @s minecraft:slowness', 'team leave @s'])
 w('terra/leave', ['# @s retourne au lobby (appelé dans le monde des mini-jeux : execute in minecraft:overworld)',
                   'execute unless entity @s[tag=mg.tvw] run return 0',
                   'tag @s remove mg.tvw', 'tag @s remove mg.surv', 'function mg:terra/mis_clear', 'function mg:terra/traps_clear', 'function mg:terra/untag',
-                  'function mg:core/reset_player', 'attribute @s minecraft:fall_damage_multiplier base set 0',
+                  'function mg:terra/rpg/leave', 'function mg:core/reset_player', 'attribute @s minecraft:fall_damage_multiplier base set 0',
                   'tellraw @s [{"text":"⌂ Retour au lobby. Tes crédits restent à Terra Nova : ","color":"gold"},'
                   '{"score":{"name":"@s","objective":"mg.tvc"},"color":"green","bold":true},{"text":" ₵","color":"green"}]'])
 w('terra/session_start', ['# Premier joueur à Terra Nova : chargement de la carte, entités dans 1,5 s',
-                          'scoreboard players set $tvw mg.st 1', 'scoreboard players set $tvt mg.st 0', 'scoreboard players set $tvsu mg.st 0',
-                          f'execute in {DIM} run forceload add {FL}', 'schedule function mg:terra/session_setup 30t'])
+                          'scoreboard players set $tvw mg.st 1', 'scoreboard players add $tvses mg.st 1', 'scoreboard players set $tvt mg.st 0', 'scoreboard players set $tvsu mg.st 0',
+                          f'execute in {DIM} run forceload add {FL}'] + [f'execute in {DIM} run forceload add {f}' for f in FL_REGIONS.values()] +
+  ['schedule function mg:terra/session_setup 30t', 'schedule function mg:terra/rpg/setup_s 100t'])
+w('terra/rpg/setup_s', ['# Session : entités du RPG (régions chargées)', 'execute unless score $tvw mg.st matches 1 run return 0',
+                        f'execute in {DIM} run function mg:terra/rpg/setup'])
 w('terra/session_setup', ['# Session : entités de Terra Nova (dans la dimension)',
                           'execute unless score $tvw mg.st matches 1 run return 0', f'execute in {DIM} run function mg:terra/setup_in'])
 w('terra/session_end', ['# Plus personne à Terra Nova : entités retirées, outposts réparés, plus de chargement forcé',
                         'scoreboard players set $tvw mg.st 0', 'scoreboard players set $tvsu mg.st 0', 'schedule clear mg:terra/session_setup',
                         'function mg:terra/clear', 'team remove mg_tv'] +
   [f'execute in {DIM} run function mg:terra/out_build_{k}' for k in range(1, 4)] +
-  [f'execute in {DIM} run forceload remove {FL}'])
-w('terra/clear', ['# Retire tout ce que Terra Nova a posé (entités, objets au sol, barres)', 'kill @e[tag=mg.tv]',
+  [f'execute in {DIM} run forceload remove {FL}'] + [f'execute in {DIM} run forceload remove {f}' for f in FL_REGIONS.values()] +
+  ['schedule clear mg:terra/rpg/setup_s'])
+w('terra/clear', ['# Retire tout ce que Terra Nova a posé (entités, objets au sol, barres)', 'kill @e[tag=mg.tv]', 'function mg:terra/rpg/clear',
                   f'execute in {DIM} run kill @e[type=minecraft:item,x=-100,y=40,z=-100,dx=200,dy=80,dz=200]',
                   f'execute in {DIM} run kill @e[type=minecraft:experience_orb,x=-100,y=40,z=-100,dx=200,dy=80,dz=200]',
                   'bossbar remove mg:tvcarno'] + [f'bossbar remove mg:tvo{k}' for k in range(1, 4)] +
@@ -703,49 +790,29 @@ INVIS = 'active_effects:[{id:"minecraft:invisibility",duration:-1,amplifier:0,sh
 
 def attrs(**a):
     names = {'hp': 'max_health', 'spd': 'movement_speed', 'fol': 'follow_range', 'dmg': 'attack_damage', 'scale': 'scale',
-             'step': 'step_height', 'kb': 'knockback_resistance', 'akb': 'attack_knockback', 'jump': 'jump_strength'}
+             'step': 'step_height', 'kb': 'knockback_resistance', 'akb': 'attack_knockback', 'jump': 'jump_strength', 'armor': 'armor'}
     return 'attributes:[' + ','.join(f'{{id:"minecraft:{names[k]}",base:{v}}}' for k, v in a.items()) + ']'
 
 
-def dino(key, mob, tags, label, col, nbt, at, hp, model):
-    L = [f'# Dinosaure : {label} ({mob} invisible + modèle en block_display, lié par mg.tvid)',
-         'tag @e[tag=mg.tvlast] remove mg.tvlast', 'scoreboard players add $tvid mg.st 1',
-         f'summon minecraft:{mob} ~ ~ ~ {{Tags:["mg.tv","mg.tvd","mg.tvn","mg.tvlast",{tags}],PersistenceRequired:1b,Silent:1b,'
-         f'DeathLootTable:"minecraft:empty",Health:{hp}f,CustomName:{js({"text": label, "color": col})},CustomNameVisible:0b,{nbt}{INVIS},{at}}}']
-    L += [part('"mg.tv","mg.tvp","mg.tvn"', *p) for p in model]
-    L += ['scoreboard players operation @e[tag=mg.tvn] mg.tvid = $tvid mg.st', 'tag @e[tag=mg.tvn] remove mg.tvn']
-    w(f'terra/dino/{key}', L)
-
-
-dino('raptor', 'vindicator', '"mg.tvhos","mg.tvraptor"', 'Slasher', 'green', 'CanPickUpLoot:0b,',
-     attrs(hp=18, spd=0.46, fol=48, dmg=5, scale=0.85, step=1.1), 18, RAPTOR)
-dino('carno', 'hoglin', '"mg.tvhos","mg.tvcarno"', 'Carnotaure', 'red', 'IsImmuneToZombification:1b,CannotBeHunted:1b,',
-     attrs(hp=160, spd=0.33, fol=40, dmg=12, scale=1.5, step=1.1, kb=0.8, akb=1.5), 160, CARNO)
-dino('brachio', 'camel', '"mg.tvherb","mg.tvbig","mg.tvbrach"', 'Brachiosaure', 'gray', '',
-     attrs(hp=120, spd=0.11, scale=2.0, kb=1.0, jump=0.5), 120, BRACH)
-dino('pachy', 'goat', '"mg.tvherb","mg.tvpachy"', 'Pachycéphalosaure', 'gold', 'HasLeftHorn:0b,HasRightHorn:0b,IsScreamingGoat:0b,',
-     attrs(hp=24, spd=0.32, scale=1.2), 24, PACHY)
-w('terra/dsync', ['# @s (dinosaure, à sa position) : son modèle le suit (position et cap)',
-                  'scoreboard players operation $tvi mg.st = @s mg.tvid',
-                  'scoreboard players set $tvf mg.st 0',
-                  'execute rotated ~ 0 as @e[type=minecraft:block_display,tag=mg.tvp,distance=..14] if score @s mg.tvid = $tvi mg.st run function mg:terra/pf',
-                  '# téléporté (repoussé hors de la colonie…) : modèle cherché partout',
-                  'execute if score $tvf mg.st matches 0 rotated ~ 0 as @e[type=minecraft:block_display,tag=mg.tvp] if score @s mg.tvid = $tvi mg.st run function mg:terra/pf'])
-w('terra/pf', ['tp @s ~ ~ ~ ~ 0', 'tag @s add mg.tvok', 'scoreboard players set $tvf mg.st 1'])
+TVD = dict(globals())
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tv_dino_fn.py'), encoding='utf-8').read(), TVD)
 w('terra/pack', ['# Meute de 2 ou 3 slashers ici, lancée sur le colon le plus proche hors de la colonie',
-                 'tag @e[tag=mg.tvpk] remove mg.tvpk', 'execute store result score $tvn mg.st run random value 2..3', 'function mg:terra/pack_one',
+                 'tag @e[tag=mg.tvpk] remove mg.tvpk', 'execute store result score $tvn mg.st run random value 2..4', 'function mg:terra/pack_one',
                  'execute as @e[tag=mg.tvpk] at @s run damage @s 0.01 minecraft:generic by @p[tag=mg.tvout,gamemode=adventure,distance=..70]',
                  'tag @e[tag=mg.tvpk] remove mg.tvpk'])
 w('terra/pack_one', ['function mg:terra/dino/raptor', 'tag @e[tag=mg.tvlast] add mg.tvpk', 'scoreboard players remove $tvn mg.st 1',
                      'execute if score $tvn mg.st matches 1.. run function mg:terra/pack_one'])
 w('terra/pack_try', ['# Une meute sur un point d\'apparition entre 24 et 64 blocs d\'un colon (aucun à moins de 22)',
-                     'scoreboard players set $tvpk mg.st 8', 'scoreboard players set $tvf mg.st 0',
-                     'execute as @e[type=minecraft:marker,tag=mg.tvsp,sort=random] at @s if score $tvf mg.st matches 0 if entity @a[tag=mg.tvout,gamemode=adventure,distance=24..64] unless entity @a[tag=mg.tvw,distance=..22] run function mg:terra/pack_at'])
+                     'scoreboard players set $tvpk mg.st 5', 'tag @e[tag=mg.trok] remove mg.trok',
+                     'execute as @e[type=minecraft:marker,tag=mg.tvsp] at @s if entity @a[tag=mg.tvout,gamemode=adventure,distance=24..64] unless entity @a[tag=mg.tvw,distance=..22] run tag @s add mg.trok',
+                     '# un seul point tiré parmi les points possibles (une condition « if score » serait évaluée pour tous avant la première apparition)',
+                     'execute as @e[tag=mg.trok,sort=random,limit=1] at @s run function mg:terra/pack_at', 'tag @e[tag=mg.trok] remove mg.trok'])
 w('terra/pack_at', ['scoreboard players set $tvf mg.st 1', 'function mg:terra/pack'])
 w('terra/carno_try', ['# Une chance sur 90 par seconde : un carnotaure sauvage apparaît loin des colons',
                       'execute store result score $tvr mg.st run random value 0..89', 'execute unless score $tvr mg.st matches 0 run return 0',
-                      'scoreboard players set $tvf mg.st 0',
-                      'execute as @e[type=minecraft:marker,tag=mg.tvsp,sort=random] at @s if score $tvf mg.st matches 0 if entity @a[tag=mg.tvout,gamemode=adventure,distance=36..80] unless entity @a[tag=mg.tvw,distance=..30] run function mg:terra/carno_at'])
+                      'tag @e[tag=mg.trok] remove mg.trok',
+                      'execute as @e[type=minecraft:marker,tag=mg.tvsp] at @s if entity @a[tag=mg.tvout,gamemode=adventure,distance=36..80] unless entity @a[tag=mg.tvw,distance=..30] run tag @s add mg.trok',
+                      'execute as @e[tag=mg.trok,sort=random,limit=1] at @s run function mg:terra/carno_at', 'tag @e[tag=mg.trok] remove mg.trok'])
 w('terra/carno_at', ['scoreboard players set $tvf mg.st 1', 'scoreboard players set $tvcc mg.st 240', 'function mg:terra/dino/carno',
                      'tellraw @a[tag=mg.tvw] {"text":"🦖 Un rugissement résonne dans la jungle… un carnotaure rôde.","color":"red"}',
                      'execute as @a[tag=mg.tvw] at @s run playsound minecraft:entity.ravager.roar hostile @s ~ ~ ~ 0.6 0.55'])
@@ -785,7 +852,7 @@ w('terra/net_on', ['# @s (dinosaure) : pris dans un filet (5 s, carnotaure 2,5 s
 
 # ================================================================ armes
 def gain(n, why, col='green'):
-    return [f'scoreboard players add @s mg.tvc {n}', 'scoreboard players set @s mg.tval 40',
+    return [f'scoreboard players add @s mg.tvc {n}', f'function mg:terra/rpg/xp {{n:{max(5, n // 2)}}}', 'scoreboard players set @s mg.tval 40',
             f'title @s actionbar [{{"text":"+{n} ₵ ","color":"{col}","bold":true}},{{"text":"{why}","color":"gray"}}]',
             'execute at @s run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 0.6 1.2']
 
@@ -800,25 +867,43 @@ w('terra/use', ['# @s : clic droit avec un objet de Terra Nova',
                 'execute if items entity @s weapon.mainhand *[custom_data~{tv:4}] run return run function mg:terra/sonic',
                 'execute if items entity @s weapon.mainhand *[custom_data~{tv:5}] run return run function mg:terra/net_fire',
                 'execute if items entity @s weapon.mainhand *[custom_data~{tv:6}] run return run function mg:terra/trap_use',
-                'execute if items entity @s weapon.mainhand *[custom_data~{tv:9}] run return run function mg:terra/home'])
-for n, heat, cd, dmg in [(2, 140, 4, 5), (3, 90, 3, 7)]:
-    w(f'terra/fire{n}', [f'# @s tire au fusil à impulsions{" Mk2" if n == 3 else ""} : +{heat} de chaleur, surchauffe à 1000',
+                'execute if items entity @s weapon.mainhand *[custom_data~{tv:9}] run return run function mg:terra/home',
+                'execute if items entity @s weapon.mainhand *[custom_data~{tv:7}] run return run function mg:terra/fire7',
+                'execute if items entity @s weapon.mainhand *[custom_data~{tv:8}] run return run function mg:terra/fire8',
+                'execute if items entity @s weapon.mainhand *[custom_data~{tv:10}] run return run function mg:terra/rpg/scan',
+                'execute if items entity @s weapon.mainhand *[custom_data~{tv:11}] run return run function mg:terra/rpg/whistle',
+                'execute if items entity @s weapon.mainhand *[custom_data~{tv:14}] run return run function mg:terra/rpg/cl/use',
+                'execute if items entity @s weapon.mainhand *[custom_data~{tv:15}] run return run function mg:terra/rpg/sheet'])
+RCOL = {2: '0.35,0.75,1.0', 3: '1.0,0.7,0.2', 7: '0.8,0.3,1.0', 8: '1.0,1.0,0.4'}
+for n, heat, cd, dmg in [(2, 140, 4, 5), (3, 90, 3, 7), (7, 60, 3, 11), (8, 45, 3, 16)]:
+    w(f'terra/fire{n}', [f'# @s tire ({ {2: "fusil à impulsions", 3: "fusil Mk2", 7: "fusil à plasma Mk3", 8: "lance-foudre"}[n]}) : +{heat} de chaleur, surchauffe à 1000',
                          'execute if entity @s[tag=mg.tvoh] run return run playsound minecraft:block.dispenser.fail player @s ~ ~ ~ 0.5 1.6',
                          'execute if score @s mg.tvcd matches 1.. run return 0',
                          f'scoreboard players set @s mg.tvcd {cd}', f'scoreboard players add @s mg.tvh {heat}',
+                         f'execute if score @s mg.trcl matches 1 run scoreboard players remove @s mg.tvh {heat * 3 // 10}',
                          'execute if score @s mg.tvh matches 1000.. run function mg:terra/overheat',
-                         f'playsound minecraft:entity.breeze.shoot player @a ~ ~ ~ 0.7 {1.9 if n == 2 else 1.6}',
+                         f'playsound minecraft:entity.breeze.shoot player @a ~ ~ ~ 0.7 {1.9 if n == 2 else 1.6}' if n < 8 else
+                         'playsound minecraft:item.trident.thunder player @a ~ ~ ~ 0.5 1.8',
                          'scoreboard players set $tvr mg.st 0', 'tag @s add mg.tvsh',
-                         f'execute anchored eyes positioned ^ ^ ^0.6 run function mg:terra/ray{n}', 'tag @s remove mg.tvsh'])
+                         f'execute anchored eyes positioned ^ ^ ^0.6 run function mg:terra/ray{n}', 'tag @s remove mg.tvsh', 'tag @e[tag=mg.tvhitn] remove mg.tvhitn'])
     w(f'terra/ray{n}', ['# Un pas (0,5 bloc) du tir à impulsions',
-                        f'particle minecraft:dust{{color:[{0.35 if n == 2 else 1.0},{0.75 if n == 2 else 0.7},{1.0 if n == 2 else 0.2}],scale:0.7}} ~ ~ ~ 0 0 0 0 1 force',
+                        f'particle minecraft:dust{{color:[{RCOL[n]}],scale:{0.7 if n < 7 else 1.0}}} ~ ~ ~ 0 0 0 0 1 force',
                         'scoreboard players add $tvr mg.st 1',
-                        f'execute positioned ~-0.5 ~-0.5 ~-0.5 as @e[tag=mg.tvd,dx=0,dy=0,dz=0,limit=1] positioned ~0.5 ~0.5 ~0.5 run return run function mg:terra/hit{n}',
+                        f'execute positioned ~-0.5 ~-0.5 ~-0.5 as @e[tag=mg.tvtg,tag=!mg.tvhitn,dx=0,dy=0,dz=0,limit=1] positioned ~0.5 ~0.5 ~0.5 run {"" if n == 7 else "return run "}function mg:terra/hit{n}',
                         'execute unless block ~ ~ ~ #mg:tv_pass run return run particle minecraft:electric_spark ~ ~ ~ 0.1 0.1 0.1 0.2 6',
                         f'execute if score $tvr mg.st matches ..80 positioned ^ ^ ^0.5 run function mg:terra/ray{n}'])
-    w(f'terra/hit{n}', ['# @s (dinosaure) touché par une impulsion', f'damage @s {dmg} minecraft:player_attack by @a[tag=mg.tvsh,limit=1]',
+    w(f'terra/hit{n}', ['# @s (dinosaure) touché par une impulsion' + (' (plasma : traverse)' if n == 7 else ''),
+                        '# précision du tireur : +1 dégât tous les 2 points (chiffre affiché au-dessus de la cible)',
+                        f'execute if entity @a[tag=mg.tvsh,scores={{mg.trs4=8..}}] run function mg:terra/hitd {{d:{dmg + 4}}}',
+                        f'execute if entity @a[tag=mg.tvsh,scores={{mg.trs4=6..7}}] run function mg:terra/hitd {{d:{dmg + 3}}}',
+                        f'execute if entity @a[tag=mg.tvsh,scores={{mg.trs4=4..5}}] run function mg:terra/hitd {{d:{dmg + 2}}}',
+                        f'execute if entity @a[tag=mg.tvsh,scores={{mg.trs4=2..3}}] run function mg:terra/hitd {{d:{dmg + 1}}}',
+                        f'execute unless entity @a[tag=mg.tvsh,scores={{mg.trs4=2..}}] run function mg:terra/hitd {{d:{dmg}}}', 'tag @s add mg.tvhitn',
+                        'particle minecraft:electric_spark ~ ~1 ~ 0.3 0.6 0.3 0.5 30' if n == 8 else 'particle minecraft:crit ~ ~ ~ 0 0 0 0 1',
                         'particle minecraft:electric_spark ~ ~ ~ 0.2 0.2 0.2 0.3 10',
                         'execute as @a[tag=mg.tvsh] at @s run playsound minecraft:entity.arrow.hit_player player @s ~ ~ ~ 0.4 1.5'])
+w('terra/hitd', ['# @s (cible) : dégâts du tir ($(d)) et chiffre flottant', '$damage @s $(d) minecraft:player_attack by @a[tag=mg.tvsh,limit=1]',
+                 '$execute at @s run function mg:terra/rpg/dmgnum {d:$(d)}'])
 w('terra/overheat', ['# @s : surchauffe, plus de tir avant refroidissement complet', 'tag @s add mg.tvoh', 'scoreboard players set @s mg.tvh 1000',
                      'playsound minecraft:block.fire.extinguish player @s ~ ~ ~ 0.8 1.2', 'scoreboard players set @s mg.tval 0'])
 w('terra/cooled', ['# @s : fusil refroidi', 'tag @s remove mg.tvoh', 'playsound minecraft:block.beacon.power_select player @s ~ ~ ~ 0.4 1.8'])
@@ -829,7 +914,7 @@ w('terra/sonic', ['# @s : canon sonique, onde en cône (sphère de 4,5 blocs cen
                   'execute anchored eyes positioned ^ ^ ^3.5 run particle minecraft:sonic_boom ~ ~ ~ 0.4 0.3 0.4 0 2 force',
                   'execute anchored eyes positioned ^ ^ ^6 run particle minecraft:sonic_boom ~ ~ ~ 0.9 0.5 0.9 0 3 force',
                   'tag @s add mg.tvsrc',
-                  'execute anchored eyes positioned ^ ^ ^4 as @e[tag=mg.tvd,distance=..4.5] at @s run function mg:terra/sonic_hit',
+                  'execute anchored eyes positioned ^ ^ ^4 as @e[tag=mg.tvtg,distance=..4.5] at @s run function mg:terra/sonic_hit',
                   'tag @s remove mg.tvsrc'])
 w('terra/sonic_hit', ['# @s (dinosaure) pris dans l\'onde : dégâts, ralenti, repoussé (sauf les géants)',
                       'damage @s 3 minecraft:sonic_boom by @a[tag=mg.tvsrc,limit=1]', 'effect give @s minecraft:slowness 4 2 true',
@@ -838,7 +923,7 @@ w('terra/sonic_hit', ['# @s (dinosaure) pris dans l\'onde : dégâts, ralenti, r
                       'execute unless entity @s[tag=mg.tvcarno] facing entity @a[tag=mg.tvsrc,limit=1] feet rotated ~180 -25 positioned 0.0 0.0 0.0 summon minecraft:marker run function mg:terra/vec {d:1.8}',
                       'function mg:terra/push'])
 w('terra/prod_hit', ['# @s a frappé avec le bâton électrique : le dinosaure visé est étourdi',
-                     'execute anchored eyes positioned ^ ^ ^1.8 as @e[tag=mg.tvd,distance=..2.4,sort=nearest,limit=1] at @s run function mg:terra/stun'])
+                     'execute anchored eyes positioned ^ ^ ^1.8 as @e[tag=mg.tvtg,distance=..2.4,sort=nearest,limit=1] at @s run function mg:terra/stun'])
 w('terra/stun', ['# @s (dinosaure) : étourdi 3 s', 'effect give @s minecraft:slowness 3 4 true', 'effect give @s minecraft:weakness 3 1 true',
                  'particle minecraft:electric_spark ~ ~1 ~ 0.3 0.6 0.3 0.25 25', 'playsound minecraft:item.trident.thunder player @a ~ ~ ~ 0.25 2'])
 w('terra/net_fire', ['# @s : lance-filets (un filet par tir)',
@@ -848,7 +933,7 @@ w('terra/net_fire', ['# @s : lance-filets (un filet par tir)',
 w('terra/no_net', say('🕸 Plus de filets : achète-en au dépôt de la colonie', 'red') + ['playsound minecraft:block.dispenser.fail player @s ~ ~ ~ 0.5 1.2'])
 w('terra/net_ray', ['# Un pas (0,5 bloc) du filet', 'particle minecraft:block{block_state:"minecraft:cobweb"} ~ ~ ~ 0.05 0.05 0.05 0 2',
                     'scoreboard players add $tvr mg.st 1',
-                    'execute positioned ~-0.5 ~-0.5 ~-0.5 as @e[tag=mg.tvd,tag=!mg.tvnetted,dx=0,dy=0,dz=0,limit=1] at @s run return run function mg:terra/net_on',
+                    'execute positioned ~-0.5 ~-0.5 ~-0.5 as @e[tag=mg.tvtg,tag=!mg.tvnetted,dx=0,dy=0,dz=0,limit=1] at @s run return run function mg:terra/net_on',
                     'execute unless block ~ ~ ~ #mg:tv_pass run return 0',
                     'execute if score $tvr mg.st matches ..48 positioned ^ ^ ^0.5 run function mg:terra/net_ray'])
 w('terra/trap_use', ['# @s : pose un piège à ses pieds (hors de la colonie, 4 actifs au plus)',
@@ -857,7 +942,8 @@ w('terra/trap_use', ['# @s : pose un piège à ses pieds (hors de la colonie, 4 
                      'execute if block ~ ~-0.3 ~ #mg:tv_pass run return run function mg:terra/trap_air',
                      'scoreboard players operation $own mg.st = @s mg.tvpid', 'scoreboard players set $tvn mg.st 0',
                      'execute as @e[type=minecraft:marker,tag=mg.tvtrap] if score @s mg.tvo = $own mg.st run scoreboard players add $tvn mg.st 1',
-                     'execute if score $tvn mg.st matches 4.. run return run function mg:terra/trap_max',
+                     'execute if score $tvn mg.st matches 4.. unless score @s mg.trcl matches 4 run return run function mg:terra/trap_max',
+                     'execute if score $tvn mg.st matches 8.. run return run function mg:terra/trap_max',
                      'scoreboard players remove @s mg.tvtr 1', 'execute align xyz positioned ~0.5 ~ ~0.5 run function mg:terra/trap_new'])
 w('terra/no_trap', say('⚙ Plus de pièges : achète-en au dépôt de la colonie', 'red'))
 w('terra/trap_here', say('⚙ Pas de pièges dans la colonie : pose-les dans la jungle', 'yellow'))
@@ -901,15 +987,15 @@ w('terra/home_go', ['# @s : de retour sur la place de la colonie', f'tp @s {SPAW
 BUY = ['# @s (joueur) achète au présentoir $tvk : prix, conditions, objet',
        'scoreboard players set $tvp mg.st 0'] + [f'execute if score $tvk mg.st matches {c} run scoreboard players set $tvp mg.st {p}' for (c, _, _, p, _) in PAD.values()] + [
        'execute if score $tvk mg.st matches 1 if items entity @s container.* *[custom_data~{tv:4}] run return run function mg:terra/buy_has',
-       'execute if score $tvk mg.st matches 2 if items entity @s container.* *[custom_data~{tv:3}] run return run function mg:terra/buy_has',
+       'execute if score $tvk mg.st matches 2 if score @s mg.trwp matches 2.. run return run function mg:terra/buy_has',
        'execute if score $tvk mg.st matches 3 if items entity @s container.* *[custom_data~{tv:5}] run return run function mg:terra/buy_has_net',
        'execute if score $tvk mg.st matches 4 unless items entity @s container.* *[custom_data~{tv:5}] run return run function mg:terra/buy_need_net',
-       'execute if score $tvk mg.st matches 7 if items entity @s armor.chest *[custom_data~{tvarm:1b}] run return run function mg:terra/buy_has',
+       'execute if score $tvk mg.st matches 7 if score @s mg.trar matches 1.. run return run function mg:terra/buy_has',
        'execute if score @s mg.tvc < $tvp mg.st run return run function mg:terra/buy_poor',
        'scoreboard players operation @s mg.tvc -= $tvp mg.st',
        'execute if score $tvk mg.st matches 1 run give @s ' + SONIC,
        'execute if score $tvk mg.st matches 2 run clear @s ' + WF + '[minecraft:custom_data~{tv:2}]',
-       'execute if score $tvk mg.st matches 2 run give @s ' + RIFLE2,
+       'execute if score $tvk mg.st matches 2 run give @s ' + RIFLE2, 'execute if score $tvk mg.st matches 2 run scoreboard players set @s mg.trwp 2',
        'execute if score $tvk mg.st matches 3 run give @s ' + NETL,
        'execute if score $tvk mg.st matches 3..4 run scoreboard players add @s mg.tvnet 3',
        'execute if score $tvk mg.st matches 5 unless items entity @s container.* *[custom_data~{tv:6}] run give @s ' + TRAP,
@@ -918,6 +1004,7 @@ BUY = ['# @s (joueur) achète au présentoir $tvk : prix, conditions, objet',
        f'execute if score $tvk mg.st matches 7 run item replace entity @s armor.head with {ARM["head"]}',
        f'execute if score $tvk mg.st matches 7 run item replace entity @s armor.chest with {ARM["chest"]}',
        f'execute if score $tvk mg.st matches 7 run item replace entity @s armor.legs with {ARM["legs"]}',
+       'execute if score $tvk mg.st matches 7 run scoreboard players set @s mg.trar 1',
        f'execute if score $tvk mg.st matches 8 run give @s {SADDLE}',
        'scoreboard players set @s mg.tval 50',
        'title @s actionbar [{"text":"✔ Acheté ! ","color":"green","bold":true},{"text":"reste ","color":"gray"},{"score":{"name":"@s","objective":"mg.tvc"},"color":"yellow"},{"text":" ₵","color":"yellow"}]',
@@ -973,7 +1060,7 @@ w('terra/mis_clear', ['# @s : plus de mission (caisse posée ou portée retirée
                       'execute as @e[tag=mg.tvcarry] if score @s mg.tvo = $own mg.st run kill @s',
                       'tag @s remove mg.tvcar', 'effect clear @s minecraft:slowness',
                       'scoreboard players set @s mg.tvm 0', 'scoreboard players set @s mg.tvmp 0', 'scoreboard players set @s mg.tvmo 0',
-                      f'execute if entity @s[tag=mg.tvw] run {LOC_HOME}'])
+                      'execute if entity @s[tag=mg.tvw] run function mg:terra/rpg/qloc'])
 
 # ---------------------------------------------------------------- mission 1 : récupération de matériel
 M1 = ['# @s : mission « Récupération de matériel » : une caisse sur un point au hasard',
@@ -1137,7 +1224,7 @@ w('terra/hunt_spawn', ['function mg:terra/dino/carno', 'tag @e[tag=mg.tvlast] ad
 w('terra/hunt_loc', ['# Localisateurs des chasseurs de carnotaure : vers le carnotaure traqué',
                      'execute as @e[tag=mg.tvhunt,limit=1] run function mg:terra/mark_loc',
                      'execute if entity @e[tag=mg.tvhunt] as @a[tag=mg.tvw,scores={mg.tvm=4}] run function mg:terra/loc with storage mg:terra h'])
-w('terra/k_raptor', ['# @s a abattu mg.tvkr slasher(s) : 12 ₵ chacun, progression de la chasse',
+w('terra/k_raptor', ['# @s a abattu mg.tvkr slasher(s) : 12 ₵ chacun, progression de la chasse', 'function mg:terra/rpg/k_raptor',
                      'scoreboard players operation $tvk2 mg.st = @s mg.tvkr', 'scoreboard players operation $tvk2 mg.st *= #12 mg.st',
                      'scoreboard players operation @s mg.tvc += $tvk2 mg.st', 'scoreboard players set @s mg.tval 30',
                      'title @s actionbar [{"text":"+","color":"green","bold":true},{"score":{"name":"$tvk2","objective":"mg.st"},"color":"green","bold":true},{"text":" ₵ ","color":"green","bold":true},{"text":"slasher abattu","color":"gray"}]',
@@ -1146,7 +1233,7 @@ w('terra/k_raptor', ['# @s a abattu mg.tvkr slasher(s) : 12 ₵ chacun, progress
                      'scoreboard players set @s mg.tvkr 0',
                      'execute if score @s mg.tvm matches 3 if score @s mg.tvmp matches 5.. run function mg:terra/m3_done'])
 w('terra/k_carno', ['# @s a abattu un carnotaure : 120 ₵ (+ mission de chasse), les autres chasseurs ont une part',
-                    'scoreboard players set @s mg.tvkc 0'] + gain(120, 'carnotaure abattu !', 'gold') +
+                    'scoreboard players set @s mg.tvkc 0', 'function mg:terra/rpg/k_carno'] + gain(120, 'carnotaure abattu !', 'gold') +
   ['tellraw @a[tag=mg.tvw] [{"text":"🦖 ","color":"red"},{"selector":"@s","color":"yellow"},{"text":" a abattu le carnotaure !","color":"red","bold":true}]',
    'execute if entity @e[tag=mg.tvhunt] run return 0',
    'tag @s add mg.tvkill',
@@ -1177,11 +1264,14 @@ w('terra/gate_in', ['tag @s remove mg.tvout'] + say('🏠 De retour dans la colo
 w('terra/gate_out', ['tag @s add mg.tvout'] + say('🌿 Tu quittes le périmètre : prudence, colon !', 'gold') +
   ['execute at @s run playsound minecraft:block.bell.use player @s ~ ~ ~ 0.5 0.8'])
 HM = ['# @s : barre d\'action (crédits + mission)']
-CRED = '{"score":{"name":"@s","objective":"mg.tvc"},"color":"yellow","bold":true},{"text":" ₵","color":"yellow"},{"text":"   ","color":"gray"}'
-for cond, txt, col in [('scores={mg.tvm=0}', '📋 Missions au tableau du QG', 'gray'), ('scores={mg.tvm=1},tag=!mg.tvcar', '📦 Trouve la caisse (📡)', 'yellow'),
+CRED = ('{"text":"⭐","color":"gold"},{"score":{"name":"@s","objective":"mg.trlv"},"color":"gold","bold":true},{"text":"  ","color":"gray"},'
+        '{"score":{"name":"@s","objective":"mg.tvc"},"color":"yellow","bold":true},{"text":" ₵","color":"yellow"},{"text":"   ","color":"gray"}')
+HM.append('execute if entity @s[scores={mg.tvm=0}] run return run function mg:terra/rpg/hud')
+for cond, txt, col in [('scores={mg.tvm=1},tag=!mg.tvcar', '📦 Trouve la caisse (📡)', 'yellow'),
                        ('scores={mg.tvm=1},tag=mg.tvcar', '📦 Rapporte la caisse à la colonie !', 'gold'), ('scores={mg.tvm=2}', '🛡 Rejoins l\'outpost et défends-le (📡)', 'aqua'),
                        ('scores={mg.tvm=4}', '🦖 Traque le carnotaure (📡)', 'red')]:
-    HM.append(f'execute if entity @s[{cond}] run return run title @s actionbar [{CRED},{{"text":"{txt}","color":"{col}"}}]')
+    DST = ',{"text":"  📍 ","color":"gold"},{"score":{"name":"@s","objective":"mg.trod"},"color":"yellow","bold":true},{"text":" m","color":"gold"}'
+    HM.append(f'execute if entity @s[{cond}] run return run title @s actionbar [{CRED},{{"text":"{txt}","color":"{col}"}}{DST}]')
 HM.append(f'execute if entity @s[scores={{mg.tvm=3}}] run return run title @s actionbar [{CRED},{{"text":"🦖 Slashers : ","color":"green"}},{{"score":{{"name":"@s","objective":"mg.tvmp"}},"color":"white","bold":true}},{{"text":" / 5","color":"white"}}]')
 w('terra/hud_main', HM)
 HH = ['# @s tient un fusil à impulsions : jauge de chaleur',
@@ -1194,6 +1284,10 @@ w('terra/hud_heat', HH)
 w('terra/hud_one', ['# @s : barre d\'action selon l\'objet en main',
                     'execute if items entity @s weapon.mainhand *[custom_data~{tv:2}] run return run function mg:terra/hud_heat',
                     'execute if items entity @s weapon.mainhand *[custom_data~{tv:3}] run return run function mg:terra/hud_heat',
+                    'execute if items entity @s weapon.mainhand *[custom_data~{tv:7}] run return run function mg:terra/hud_heat',
+                    'execute if items entity @s weapon.mainhand *[custom_data~{tv:14}] if score @s mg.trcd matches 1.. run return run title @s actionbar {"text":"🎖 Capacité : recharge…","color":"gray"}',
+                    'execute if items entity @s weapon.mainhand *[custom_data~{tv:14}] run return run title @s actionbar {"text":"🎖 Capacité PRÊTE (clic droit)","color":"gold","bold":true}',
+                    'execute if items entity @s weapon.mainhand *[custom_data~{tv:8}] run return run function mg:terra/hud_heat',
                     'execute if items entity @s weapon.mainhand *[custom_data~{tv:4}] if score @s mg.tvsc matches 1.. run return run title @s actionbar {"text":"📢 Canon sonique : recharge…","color":"gray"}',
                     'execute if items entity @s weapon.mainhand *[custom_data~{tv:4}] run return run title @s actionbar {"text":"📢 Canon sonique : PRÊT (clic droit)","color":"aqua","bold":true}',
                     'execute if items entity @s weapon.mainhand *[custom_data~{tv:5}] run return run title @s actionbar [{"text":"🕸 Filets : ","color":"white"},{"score":{"name":"@s","objective":"mg.tvnet"},"color":"yellow","bold":true}]',
@@ -1208,6 +1302,8 @@ w('terra/tick', ['# 🦖 Terra Nova : chaque tick tant qu\'un joueur y est (cont
                  'execute as @a[tag=mg.tvw,scores={mg.tvq=1..}] at @s run function mg:terra/use',
                  'scoreboard players reset @a[scores={mg.tvq=1..}] mg.tvq',
                  'execute as @a[tag=mg.tvw,scores={mg.tvdd=1..}] if items entity @s weapon.mainhand *[custom_data~{tv:1}] at @s run function mg:terra/prod_hit',
+                 'execute as @a[tag=mg.tvw,scores={mg.tvdd=1..}] if items entity @s weapon.mainhand *[custom_data~{tv:12}] at @s run function mg:terra/prod_hit',
+                 'execute as @a[tag=mg.tvw,scores={mg.tvdd=1..}] if items entity @s weapon.mainhand *[custom_data~{tv:13}] at @s run function mg:terra/prod_hit',
                  'scoreboard players reset @a[scores={mg.tvdd=1..}] mg.tvdd',
                  'scoreboard players remove @a[tag=mg.tvw,scores={mg.tvh=1..}] mg.tvh 15',
                  'scoreboard players set @a[tag=mg.tvw,scores={mg.tvh=..-1}] mg.tvh 0',
@@ -1221,7 +1317,9 @@ w('terra/tick', ['# 🦖 Terra Nova : chaque tick tant qu\'un joueur y est (cont
                  'execute as @e[type=minecraft:interaction,tag=mg.tvboard] if data entity @s interaction run function mg:terra/board_int',
                  'execute as @e[type=minecraft:item_display,tag=mg.tvpdi] at @s run tp @s ~ ~ ~ ~4 ~',
                  # dinosaures : modèles, filets, pièges
-                 'execute as @e[tag=mg.tvd] at @s if entity @a[tag=mg.tvw,distance=..64] run function mg:terra/dsync',
+                 'scoreboard players operation $tvq3b mg.st = $tvt mg.st', 'scoreboard players set #3 mg.st 3', 'scoreboard players operation $tvq3b mg.st %= #3 mg.st',
+                 'execute as @e[tag=mg.tvd] at @s if entity @a[tag=mg.tvw,distance=..32] run function mg:terra/dsync',
+                 'execute as @e[tag=mg.tvd] if score @s mg.tvph = $tvq3b mg.st at @s unless entity @a[tag=mg.tvw,distance=..32] if entity @a[tag=mg.tvw,distance=..64] run function mg:terra/dsync',
                  'execute if score $tvq mg.st matches 0 as @e[tag=mg.tvd] at @s unless entity @a[tag=mg.tvw,distance=..64] run function mg:terra/dsync',
                  'execute if score $tvq mg.st matches 10 as @e[tag=mg.tvd] at @s unless entity @a[tag=mg.tvw,distance=..64] run function mg:terra/dsync',
                  'scoreboard players remove @e[tag=mg.tvd,scores={mg.tvst=1..}] mg.tvst 1',
@@ -1238,10 +1336,11 @@ w('terra/tick', ['# 🦖 Terra Nova : chaque tick tant qu\'un joueur y est (cont
                  'execute as @a[tag=mg.tvw] at @s if entity @e[type=minecraft:marker,tag=mg.tvexit,distance=..1.4] in minecraft:overworld run function mg:terra/leave',
                  'execute if score $tvq mg.st matches 0 run function mg:terra/second',
                  'execute if score $tvq mg.st matches 5 as @a[tag=mg.tvw,scores={mg.tval=..0}] run function mg:terra/hud_one',
-                 'execute if score $tvq mg.st matches 15 as @a[tag=mg.tvw,scores={mg.tval=..0}] run function mg:terra/hud_one'])
+                 'execute if score $tvq mg.st matches 15 as @a[tag=mg.tvw,scores={mg.tval=..0}] run function mg:terra/hud_one',
+                 'function mg:terra/rpg/tick'])
 SEC = ['# Chaque seconde (dans la dimension) : colonie, soins, primes, missions, population de dinosaures, carnotaure',
        'execute unless score $tvsu mg.st matches 1.. run return 0',
-       'execute if score $tvsu mg.st matches 2 run kill @e[type=minecraft:block_display,tag=mg.tvp,tag=!mg.tvok]',
+       'execute if score $tvsu mg.st matches 2 run kill @e[tag=mg.tvp,tag=!mg.tvok]',
        'tag @e[tag=mg.tvok] remove mg.tvok', 'scoreboard players set $tvsu mg.st 2',
        'scoreboard players set #4 mg.st 4', 'scoreboard players set #10 mg.st 10', 'scoreboard players set #12 mg.st 12',
        'function mg:terra/gate',
@@ -1260,9 +1359,10 @@ SEC = ['# Chaque seconde (dans la dimension) : colonie, soins, primes, missions,
        'execute unless entity @e[tag=mg.tvhunt] if entity @a[tag=mg.tvw,scores={mg.tvm=4}] as @e[type=minecraft:marker,tag=mg.tvfar,sort=random,limit=1] at @s run function mg:terra/hunt_spawn',
        # population
        'execute store result score $tvno mg.st if entity @a[tag=mg.tvout,gamemode=adventure]',
-       'execute store result score $tvnr mg.st if entity @e[tag=mg.tvraptor]',
-       'scoreboard players operation $tvwr mg.st = $tvno mg.st', 'scoreboard players operation $tvwr mg.st += $tvno mg.st', 'scoreboard players add $tvwr mg.st 3',
-       'execute if score $tvwr mg.st matches 15.. run scoreboard players set $tvwr mg.st 14',
+       'execute store result score $tvnr mg.st if entity @e[tag=mg.tvraptor,tag=!mg.trr]',
+       '# slashers de la vallée : 3 par colon dehors + 6 (20 au plus)',
+       'scoreboard players operation $tvwr mg.st = $tvno mg.st', 'scoreboard players set #3 mg.st 3', 'scoreboard players operation $tvwr mg.st *= #3 mg.st',
+       'scoreboard players add $tvwr mg.st 6', 'execute if score $tvwr mg.st matches 21.. run scoreboard players set $tvwr mg.st 20',
        'scoreboard players remove $tvpk mg.st 1', 'scoreboard players remove $tvcc mg.st 1',
        'execute if score $tvno mg.st matches 1.. if score $tvpk mg.st matches ..0 if score $tvnr mg.st < $tvwr mg.st run function mg:terra/pack_try',
        'execute if score $tvno mg.st matches 1.. if score $tvcc mg.st matches ..0 unless entity @e[tag=mg.tvcarno] run function mg:terra/carno_try',
@@ -1286,7 +1386,10 @@ SEC = ['# Chaque seconde (dans la dimension) : colonie, soins, primes, missions,
        'execute if score $tvr mg.st matches 10..12 as @e[tag=mg.tvcarno,sort=random,limit=1] at @s run playsound minecraft:entity.ravager.roar hostile @a ~ ~ ~ 2 0.6',
        'execute if score $tvr mg.st matches 13..15 as @e[tag=mg.tvbrach,sort=random,limit=1] at @s run playsound minecraft:entity.camel.ambient neutral @a ~ ~ ~ 2.5 0.45',
        'execute if score $tvr mg.st matches 16..17 as @e[tag=mg.tvpachy,sort=random,limit=1] at @s run playsound minecraft:entity.goat.ambient neutral @a ~ ~ ~ 1.2 0.6',
-       'execute if score $tvr mg.st matches 18 as @a[tag=mg.tvout,sort=random,limit=1] at @s run playsound minecraft:entity.parrot.ambient ambient @s ~ ~8 ~ 0.6 0.8']
+       'execute if score $tvr mg.st matches 18 as @a[tag=mg.tvout,sort=random,limit=1] at @s run playsound minecraft:entity.parrot.ambient ambient @s ~ ~8 ~ 0.6 0.8',
+       '# RPG (régions, campagne, boss) ; dinosaures d\'une session précédente restés dans une zone non chargée : retirés',
+       'function mg:terra/rpg/second',
+       'execute as @e[tag=mg.tvd,tag=!mg.trmount] unless score @s mg.tvses = $tvses mg.st run tp @s ~ -400 ~']
 w('terra/second', SEC)
 
 # ================================================================ câblage
@@ -1329,6 +1432,7 @@ C.objectives([('mg.tvq', 'minecraft.used:minecraft.warped_fungus_on_a_stick'), (
               ('mg.tvcd', 'dummy'), ('mg.tvsc', 'dummy'), ('mg.tvnet', 'dummy'), ('mg.tvtr', 'dummy'), ('mg.tvst', 'dummy'), ('mg.tvm', 'dummy'),
               ('mg.tvmo', 'dummy'), ('mg.tvmp', 'dummy'), ('mg.tvhm', 'dummy'), ('mg.tval', 'dummy'), ('mg.tvx', 'dummy'), ('mg.tvy', 'dummy'),
               ('mg.tvz', 'dummy')])
+C.objectives([('mg.tvat', 'dummy'), ('mg.tvaf', 'dummy'), ('mg.tvas', 'dummy'), ('mg.tvses', 'dummy'), ('mg.tvak', 'dummy'), ('mg.tvab', 'dummy'), ('mg.tvph', 'dummy')])
 C.patch('core/load', 'scoreboard objectives add mg.bw trigger',
         ['scoreboard objectives add mg.tvc dummy {"text":"₵ Terra Nova","color":"green"}'])
 C.patch('desinstaller', 'scoreboard objectives remove mg.bw',
@@ -1349,3 +1453,13 @@ if not any(a['action'].get('command') == 'trigger mg.sv set 7' for a in _m['acti
         f.write('\n')
 print(f'Terra Nova OK : {len(TERRAIN)} cmd de relief, {len(S)} de colonie, {len(VEG)} de végétation, {NS} étapes, '
       f'{len(CRATES)} caisses, {len(SPAWNS)} points d\'apparition ({len(FAR)} lointains), {len(HERBS)} herbivores')
+# ================================================================ RPG (tv_rpg.py) : niveaux, campagne, PNJ, boss, forge, voyages
+TVR = dict(globals())
+TVR.update({k: TVW[k] for k in ('POIS', 'CAMPS', 'MARKERS', 'DATA_PTS', 'CELL', 'RIFT', 'VOLC', 'LAG', 'FORT', 'DELTA', 'CALD_Y', 'REGIONS',
+                                'PASS_GATE', 'ECHO', 'LOOKOUT', 'REFUGE', 'BRIDGE', 'BR_Y', 'STATION', 'ground', 'EGGS', 'LAB_NPC', 'FORGE_NPC',
+                                'COLONY_BEACON', 'DUNGEONS', 'CACHES')})
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tv_rpg.py'), encoding='utf-8').read(), TVR)
+if os.environ.get('TV_DUMP'):                       # aperçu de la carte (outil de mise au point)
+    import pickle
+    pickle.dump({'H': H, 'surface': {c: surface(*c) for c in H}, 'COL': TVW['COL'], 'POIS': TVW['POIS'], 'MARKERS': TVW['MARKERS']},
+                open(os.environ['TV_DUMP'], 'wb'))

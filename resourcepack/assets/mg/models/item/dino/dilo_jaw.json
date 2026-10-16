@@ -1,0 +1,145 @@
+{
+  "textures": {
+    "belly": "mg:item/dino/dilo_belly",
+    "teeth": "mg:item/dino/dilo_teeth",
+    "particle": "mg:item/dino/dilo_belly"
+  },
+  "elements": [
+    {
+      "from": [
+        5.76,
+        6.336,
+        8.0
+      ],
+      "to": [
+        10.24,
+        8.0,
+        18.45
+      ],
+      "faces": {
+        "north": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            4.48,
+            1.66
+          ]
+        },
+        "south": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            4.48,
+            1.66
+          ]
+        },
+        "east": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            10.45,
+            1.66
+          ]
+        },
+        "west": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            10.45,
+            1.66
+          ]
+        },
+        "up": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            4.48,
+            10.45
+          ]
+        },
+        "down": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            4.48,
+            10.45
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        6.32,
+        8.0,
+        12.95
+      ],
+      "to": [
+        9.68,
+        9.0,
+        17.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#teeth",
+          "uv": [
+            0,
+            0,
+            3.36,
+            1.0
+          ]
+        },
+        "south": {
+          "texture": "#teeth",
+          "uv": [
+            0,
+            0,
+            3.36,
+            1.0
+          ]
+        },
+        "east": {
+          "texture": "#teeth",
+          "uv": [
+            0,
+            0,
+            4.95,
+            1.0
+          ]
+        },
+        "west": {
+          "texture": "#teeth",
+          "uv": [
+            0,
+            0,
+            4.95,
+            1.0
+          ]
+        },
+        "up": {
+          "texture": "#teeth",
+          "uv": [
+            0,
+            0,
+            3.36,
+            4.95
+          ]
+        },
+        "down": {
+          "texture": "#teeth",
+          "uv": [
+            0,
+            0,
+            3.36,
+            4.95
+          ]
+        }
+      }
+    }
+  ]
+}

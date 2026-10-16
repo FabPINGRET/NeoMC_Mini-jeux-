@@ -22,3 +22,4 @@ team add mg_tv
 team modify mg_tv friendlyFire false
 team modify mg_tv color dark_green
 team join mg_tv @s
+function mg:terra/rpg/join

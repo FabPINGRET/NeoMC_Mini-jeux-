@@ -1,5 +1,21 @@
-# Bord de la carte (barrières invisibles au-dessus des falaises)
-fill -97 50 -97 -97 150 96 minecraft:barrier
-fill 96 50 -97 96 150 96 minecraft:barrier
-fill -96 50 -97 95 150 -97 minecraft:barrier
-fill -96 50 96 95 150 96 minecraft:barrier
+# Bords de la carte en croix (barrières invisibles), ouvertures des cols
+fill -96 50 -97 -34 160 -97 minecraft:barrier
+fill -26 50 -97 95 160 -97 minecraft:barrier
+fill -96 50 96 -28 160 96 minecraft:barrier
+fill -20 50 96 95 160 96 minecraft:barrier
+fill 96 50 -96 96 160 26 minecraft:barrier
+fill 96 50 34 96 160 95 minecraft:barrier
+fill -97 50 -96 -97 160 2 minecraft:barrier
+fill -97 50 10 -97 160 95 minecraft:barrier
+fill -96 50 -257 95 160 -257 minecraft:barrier
+fill -97 50 -256 -97 160 -97 minecraft:barrier
+fill 96 50 -256 96 160 -97 minecraft:barrier
+fill -96 50 256 95 160 256 minecraft:barrier
+fill -97 50 96 -97 160 255 minecraft:barrier
+fill 96 50 96 96 160 255 minecraft:barrier
+fill 256 50 -96 256 160 95 minecraft:barrier
+fill 96 50 -97 255 160 -97 minecraft:barrier
+fill 96 50 96 255 160 96 minecraft:barrier
+fill -257 50 -96 -257 160 95 minecraft:barrier
+fill -256 50 -97 -97 160 -97 minecraft:barrier
+fill -256 50 96 -97 160 96 minecraft:barrier

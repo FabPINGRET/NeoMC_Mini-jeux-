@@ -1,0 +1,23 @@
+# Construction des régions de Terra Nova, étape 99/435 (dimension mg:terranova, générée)
+place feature minecraft:seagrass_short -71 61 -187
+place feature minecraft:seagrass_short 72 61 -180
+place feature minecraft:seagrass_short 15 62 -185
+place feature minecraft:seagrass_short -30 61 -171
+place feature minecraft:seagrass_short -21 61 -134
+place feature minecraft:seagrass_short 13 61 -237
+place feature minecraft:seagrass_short -29 61 -186
+place feature minecraft:seagrass_short -75 61 -185
+place feature minecraft:seagrass_short 6 62 -207
+place feature minecraft:seagrass_short -1 62 -220
+place feature minecraft:seagrass_short -73 61 -186
+place feature minecraft:seagrass_short 11 62 -182
+place feature minecraft:seagrass_short 15 62 -204
+place feature minecraft:seagrass_short -9 62 -186
+place feature minecraft:seagrass_short 15 62 -213
+place feature minecraft:seagrass_short 29 62 -196
+place feature minecraft:seagrass_short 14 62 -210
+place feature minecraft:seagrass_short 71 61 -151
+place feature minecraft:seagrass_short -76 61 -124
+place feature minecraft:seagrass_short -46 61 -163
+place feature minecraft:seagrass_short 76 61 -179
+place feature minecraft:seagrass_short -17 62 -202

@@ -1,0 +1,145 @@
+{
+  "textures": {
+    "frill": "mg:item/dino/dilo_frill",
+    "stripe": "mg:item/dino/dilo_stripe",
+    "particle": "mg:item/dino/dilo_frill"
+  },
+  "elements": [
+    {
+      "from": [
+        8.0,
+        4.4,
+        4.15
+      ],
+      "to": [
+        8.6,
+        11.6,
+        8.0
+      ],
+      "faces": {
+        "north": {
+          "texture": "#frill",
+          "uv": [
+            0,
+            0,
+            1.0,
+            7.2
+          ]
+        },
+        "south": {
+          "texture": "#frill",
+          "uv": [
+            0,
+            0,
+            1.0,
+            7.2
+          ]
+        },
+        "east": {
+          "texture": "#frill",
+          "uv": [
+            0,
+            0,
+            3.85,
+            7.2
+          ]
+        },
+        "west": {
+          "texture": "#frill",
+          "uv": [
+            0,
+            0,
+            3.85,
+            7.2
+          ]
+        },
+        "up": {
+          "texture": "#frill",
+          "uv": [
+            0,
+            0,
+            1.0,
+            3.85
+          ]
+        },
+        "down": {
+          "texture": "#frill",
+          "uv": [
+            0,
+            0,
+            1.0,
+            3.85
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        8.0,
+        5.6,
+        4.7
+      ],
+      "to": [
+        8.8,
+        10.4,
+        7.45
+      ],
+      "faces": {
+        "north": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            1.0,
+            4.8
+          ]
+        },
+        "south": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            1.0,
+            4.8
+          ]
+        },
+        "east": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            2.75,
+            4.8
+          ]
+        },
+        "west": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            2.75,
+            4.8
+          ]
+        },
+        "up": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            1.0,
+            2.75
+          ]
+        },
+        "down": {
+          "texture": "#stripe",
+          "uv": [
+            0,
+            0,
+            1.0,
+            2.75
+          ]
+        }
+      }
+    }
+  ]
+}

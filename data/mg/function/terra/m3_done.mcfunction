@@ -1,5 +1,6 @@
 # @s a abattu ses 5 slashers
 scoreboard players add @s mg.tvc 200
+function mg:terra/rpg/xp {n:100}
 scoreboard players set @s mg.tval 40
 title @s actionbar [{"text":"+200 ₵ ","color":"green","bold":true},{"text":"chasse réussie","color":"gray"}]
 execute at @s run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 0.6 1.2

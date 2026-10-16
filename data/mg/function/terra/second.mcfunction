@@ -1,6 +1,6 @@
 # Chaque seconde (dans la dimension) : colonie, soins, primes, missions, population de dinosaures, carnotaure
 execute unless score $tvsu mg.st matches 1.. run return 0
-execute if score $tvsu mg.st matches 2 run kill @e[type=minecraft:block_display,tag=mg.tvp,tag=!mg.tvok]
+execute if score $tvsu mg.st matches 2 run kill @e[tag=mg.tvp,tag=!mg.tvok]
 tag @e[tag=mg.tvok] remove mg.tvok
 scoreboard players set $tvsu mg.st 2
 scoreboard players set #4 mg.st 4
@@ -29,11 +29,13 @@ execute if score $tvq2 mg.st matches 0 if entity @a[tag=mg.tvw,scores={mg.tvm=4}
 execute unless entity @a[tag=mg.tvw,scores={mg.tvm=4}] run tag @e[tag=mg.tvhunt] remove mg.tvhunt
 execute unless entity @e[tag=mg.tvhunt] if entity @a[tag=mg.tvw,scores={mg.tvm=4}] as @e[type=minecraft:marker,tag=mg.tvfar,sort=random,limit=1] at @s run function mg:terra/hunt_spawn
 execute store result score $tvno mg.st if entity @a[tag=mg.tvout,gamemode=adventure]
-execute store result score $tvnr mg.st if entity @e[tag=mg.tvraptor]
+execute store result score $tvnr mg.st if entity @e[tag=mg.tvraptor,tag=!mg.trr]
+# slashers de la vallée : 3 par colon dehors + 6 (20 au plus)
 scoreboard players operation $tvwr mg.st = $tvno mg.st
-scoreboard players operation $tvwr mg.st += $tvno mg.st
-scoreboard players add $tvwr mg.st 3
-execute if score $tvwr mg.st matches 15.. run scoreboard players set $tvwr mg.st 14
+scoreboard players set #3 mg.st 3
+scoreboard players operation $tvwr mg.st *= #3 mg.st
+scoreboard players add $tvwr mg.st 6
+execute if score $tvwr mg.st matches 21.. run scoreboard players set $tvwr mg.st 20
 scoreboard players remove $tvpk mg.st 1
 scoreboard players remove $tvcc mg.st 1
 execute if score $tvno mg.st matches 1.. if score $tvpk mg.st matches ..0 if score $tvnr mg.st < $tvwr mg.st run function mg:terra/pack_try
@@ -59,3 +61,6 @@ execute if score $tvr mg.st matches 10..12 as @e[tag=mg.tvcarno,sort=random,limi
 execute if score $tvr mg.st matches 13..15 as @e[tag=mg.tvbrach,sort=random,limit=1] at @s run playsound minecraft:entity.camel.ambient neutral @a ~ ~ ~ 2.5 0.45
 execute if score $tvr mg.st matches 16..17 as @e[tag=mg.tvpachy,sort=random,limit=1] at @s run playsound minecraft:entity.goat.ambient neutral @a ~ ~ ~ 1.2 0.6
 execute if score $tvr mg.st matches 18 as @a[tag=mg.tvout,sort=random,limit=1] at @s run playsound minecraft:entity.parrot.ambient ambient @s ~ ~8 ~ 0.6 0.8
+# RPG (régions, campagne, boss) ; dinosaures d'une session précédente restés dans une zone non chargée : retirés
+function mg:terra/rpg/second
+execute as @e[tag=mg.tvd,tag=!mg.trmount] unless score @s mg.tvses = $tvses mg.st run tp @s ~ -400 ~

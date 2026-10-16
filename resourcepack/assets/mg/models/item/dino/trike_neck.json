@@ -1,0 +1,145 @@
+{
+  "textures": {
+    "belly": "mg:item/dino/trike_belly",
+    "skin": "mg:item/dino/trike_skin",
+    "particle": "mg:item/dino/trike_belly"
+  },
+  "elements": [
+    {
+      "from": [
+        1.76,
+        1.76,
+        4.256
+      ],
+      "to": [
+        14.24,
+        14.24,
+        15.28
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            12.48,
+            12.48
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            12.48,
+            12.48
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.02,
+            12.48
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.02,
+            12.48
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            12.48,
+            11.02
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            12.48,
+            11.02
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        3.008,
+        1.6,
+        8.0
+      ],
+      "to": [
+        12.992,
+        5.504,
+        14.916
+      ],
+      "faces": {
+        "north": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            9.98,
+            3.9
+          ]
+        },
+        "south": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            9.98,
+            3.9
+          ]
+        },
+        "east": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            6.92,
+            3.9
+          ]
+        },
+        "west": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            6.92,
+            3.9
+          ]
+        },
+        "up": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            9.98,
+            6.92
+          ]
+        },
+        "down": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            9.98,
+            6.92
+          ]
+        }
+      }
+    }
+  ]
+}

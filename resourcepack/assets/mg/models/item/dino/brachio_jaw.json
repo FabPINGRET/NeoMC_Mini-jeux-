@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "beak": "mg:item/dino/brachio_beak",
+    "particle": "mg:item/dino/brachio_beak"
+  },
+  "elements": [
+    {
+      "from": [
+        3.699,
+        5.466,
+        8.0
+      ],
+      "to": [
+        12.301,
+        8.0,
+        26.253
+      ],
+      "faces": {
+        "north": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            8.6,
+            2.53
+          ]
+        },
+        "south": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            8.6,
+            2.53
+          ]
+        },
+        "east": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            16.0,
+            2.53
+          ]
+        },
+        "west": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            16.0,
+            2.53
+          ]
+        },
+        "up": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            8.6,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            8.6,
+            16.0
+          ]
+        }
+      }
+    }
+  ]
+}

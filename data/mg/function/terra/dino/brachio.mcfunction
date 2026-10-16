@@ -1,19 +1,13 @@
-# Dinosaure : Brachiosaure (camel invisible + modèle en block_display, lié par mg.tvid)
+# Dinosaure : Brachiosaure (camel invisible + modèle articulé, lié par mg.tvid)
 tag @e[tag=mg.tvlast] remove mg.tvlast
 scoreboard players add $tvid mg.st 1
-summon minecraft:camel ~ ~ ~ {Tags:["mg.tv","mg.tvd","mg.tvn","mg.tvlast","mg.tvherb","mg.tvbig","mg.tvbrach"],PersistenceRequired:1b,Silent:1b,DeathLootTable:"minecraft:empty",Health:120f,CustomName:{"text":"Brachiosaure","color":"gray"},CustomNameVisible:0b,active_effects:[{id:"minecraft:invisibility",duration:-1,amplifier:0,show_particles:0b}],attributes:[{id:"minecraft:max_health",base:120},{id:"minecraft:movement_speed",base:0.11},{id:"minecraft:scale",base:2.0},{id:"minecraft:knockback_resistance",base:1.0},{id:"minecraft:jump_strength",base:0.5}]}
-summon minecraft:block_display ~ ~ ~ {Tags:["mg.tv","mg.tvp","mg.tvn","mg.tvok"],block_state:{Name:"minecraft:light_gray_terracotta"},teleport_duration:2,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-1.3f,2.4f,-2.0f],scale:[2.6f,2.0f,4.0f]}}
-summon minecraft:block_display ~ ~ ~ {Tags:["mg.tv","mg.tvp","mg.tvn","mg.tvok"],block_state:{Name:"minecraft:white_terracotta"},teleport_duration:2,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-1.2f,2.3f,-1.6f],scale:[2.4f,0.15f,3.2f]}}
-summon minecraft:block_display ~ ~ ~ {Tags:["mg.tv","mg.tvp","mg.tvn","mg.tvok"],block_state:{Name:"minecraft:light_gray_terracotta"},teleport_duration:2,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.45f,3.8f,1.7f],scale:[0.9f,2.4f,0.9f]}}
-summon minecraft:block_display ~ ~ ~ {Tags:["mg.tv","mg.tvp","mg.tvn","mg.tvok"],block_state:{Name:"minecraft:light_gray_terracotta"},teleport_duration:2,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.4f,6.0f,2.2f],scale:[0.8f,2.2f,0.8f]}}
-summon minecraft:block_display ~ ~ ~ {Tags:["mg.tv","mg.tvp","mg.tvn","mg.tvok"],block_state:{Name:"minecraft:light_gray_terracotta"},teleport_duration:2,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.5f,8.0f,2.0f],scale:[1.0f,0.7f,1.6f]}}
-summon minecraft:block_display ~ ~ ~ {Tags:["mg.tv","mg.tvp","mg.tvn","mg.tvok"],block_state:{Name:"minecraft:black_concrete"},teleport_duration:2,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.52f,8.4f,3.0f],scale:[1.04f,0.1f,0.1f]}}
-summon minecraft:block_display ~ ~ ~ {Tags:["mg.tv","mg.tvp","mg.tvn","mg.tvok"],block_state:{Name:"minecraft:light_gray_terracotta"},teleport_duration:2,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.35f,2.9f,-4.6f],scale:[0.7f,0.7f,2.7f]}}
-summon minecraft:block_display ~ ~ ~ {Tags:["mg.tv","mg.tvp","mg.tvn","mg.tvok"],block_state:{Name:"minecraft:light_gray_terracotta"},teleport_duration:2,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.2f,2.9f,-6.6f],scale:[0.4f,0.4f,2.1f]}}
-summon minecraft:block_display ~ ~ ~ {Tags:["mg.tv","mg.tvp","mg.tvn","mg.tvok"],block_state:{Name:"minecraft:gray_terracotta"},teleport_duration:2,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-1.25f,0.0f,-1.8f],scale:[0.75f,2.5f,0.75f]}}
-summon minecraft:block_display ~ ~ ~ {Tags:["mg.tv","mg.tvp","mg.tvn","mg.tvok"],block_state:{Name:"minecraft:gray_terracotta"},teleport_duration:2,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.5f,0.0f,-1.8f],scale:[0.75f,2.5f,0.75f]}}
-summon minecraft:block_display ~ ~ ~ {Tags:["mg.tv","mg.tvp","mg.tvn","mg.tvok"],block_state:{Name:"minecraft:gray_terracotta"},teleport_duration:2,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-1.25f,0.0f,0.9f],scale:[0.75f,2.5f,0.75f]}}
-summon minecraft:block_display ~ ~ ~ {Tags:["mg.tv","mg.tvp","mg.tvn","mg.tvok"],block_state:{Name:"minecraft:gray_terracotta"},teleport_duration:2,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0.5f,0.0f,0.9f],scale:[0.75f,2.5f,0.75f]}}
-summon minecraft:block_display ~ ~ ~ {Tags:["mg.tv","mg.tvp","mg.tvn","mg.tvok"],block_state:{Name:"minecraft:gray_terracotta"},teleport_duration:2,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-1.31f,3.3f,-0.5f],scale:[2.62f,0.4f,0.6f]}}
+summon minecraft:camel ~ ~ ~ {Tags:["mg.tv","mg.tvd","mg.tvtg","mg.tvn","mg.tvlast","mg.tvs_brachio","mg.tvherb","mg.tvbig","mg.tvbrach"],PersistenceRequired:1b,Silent:1b,DeathLootTable:"minecraft:empty",Health:120f,CustomName:{"text":"Brachiosaure","color":"gray"},CustomNameVisible:0b,active_effects:[{id:"minecraft:invisibility",duration:-1,amplifier:0,show_particles:0b}],attributes:[{id:"minecraft:max_health",base:120},{id:"minecraft:movement_speed",base:0.11},{id:"minecraft:scale",base:2.0},{id:"minecraft:knockback_resistance",base:1.0},{id:"minecraft:jump_strength",base:0.5}]}
+execute if score $rp mg.st matches 1 run function mg:terra/dino/brachio_rp
+execute unless score $rp mg.st matches 1 run function mg:terra/dino/brachio_bd
 scoreboard players operation @e[tag=mg.tvn] mg.tvid = $tvid mg.st
+scoreboard players operation @e[tag=mg.tvn] mg.tvses = $tvses mg.st
+scoreboard players set #3 mg.st 3
+scoreboard players operation @e[tag=mg.tvn,tag=mg.tvd] mg.tvph = $tvid mg.st
+scoreboard players operation @e[tag=mg.tvn,tag=mg.tvd] mg.tvph %= #3 mg.st
 tag @e[tag=mg.tvn] remove mg.tvn
+execute as @e[tag=mg.tvlast,limit=1] at @s run function mg:terra/dsync

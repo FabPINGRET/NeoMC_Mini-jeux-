@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "skin": "mg:item/dino/dilo_skin",
+    "particle": "mg:item/dino/dilo_skin"
+  },
+  "elements": [
+    {
+      "from": [
+        6.2,
+        -1.0,
+        5.48
+      ],
+      "to": [
+        9.8,
+        9.44,
+        10.7
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            3.6,
+            10.44
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            3.6,
+            10.44
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            5.22,
+            10.44
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            5.22,
+            10.44
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            3.6,
+            5.22
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            3.6,
+            5.22
+          ]
+        }
+      }
+    }
+  ]
+}

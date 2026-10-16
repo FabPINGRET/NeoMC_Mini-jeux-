@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "beak": "mg:item/dino/trike_beak",
+    "particle": "mg:item/dino/trike_beak"
+  },
+  "elements": [
+    {
+      "from": [
+        3.008,
+        5.163,
+        8.0
+      ],
+      "to": [
+        12.992,
+        8.0,
+        26.179
+      ],
+      "faces": {
+        "north": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            9.98,
+            2.84
+          ]
+        },
+        "south": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            9.98,
+            2.84
+          ]
+        },
+        "east": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            16.0,
+            2.84
+          ]
+        },
+        "west": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            16.0,
+            2.84
+          ]
+        },
+        "up": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            9.98,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#beak",
+          "uv": [
+            0,
+            0,
+            9.98,
+            16.0
+          ]
+        }
+      }
+    }
+  ]
+}
