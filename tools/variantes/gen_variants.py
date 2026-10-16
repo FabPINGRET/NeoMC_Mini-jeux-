@@ -798,8 +798,7 @@ CATS = {
     'joueur': ('👤 Joueur et plots', 'aqua', 'Tes options et ton plot.', [
         known(OPEN(1), 'Mode spectateur ON/OFF', 'gray'), known(OPEN(2), 'Classement des victoires', 'gold'),
         known('trigger mg.pl set 1', '⌂ Aller sur mon plot', 'green'), known('trigger mg.pl set 2', '↩ Quitter mon plot', 'yellow'),
-        known('trigger mg.pl set 3', '◎ Visiter les plots', 'aqua'),
-        known('trigger mg.duel set 1', '⚔ Défier en duel', 'red', 'Sniper 1v1 : tête = élimination, corps = 2 touches, premier à 3 manches')], 'menu'),
+        known('trigger mg.pl set 3', '◎ Visiter les plots', 'aqua')], 'menu'),   # le duel est dans la fenêtre de vote (voir plus bas)
 }
 for key, (title, col, body, acts, parent) in CATS.items():
     save_dialog(f'cat_{key}', {'type': 'minecraft:multi_action', 'title': {'text': title, 'color': col, 'bold': True},
@@ -1114,6 +1113,22 @@ patch('vote/chat', 'tellraw @s [{"text":"\\n☑ VOTE : quel jeu veux-tu jouer ? 
 patch('vote/chat', 'tellraw @s [{"text":"\\n☑ VOTE : quel jeu veux-tu jouer ? ","color":"green","bold":true},{"text":"(clique)","color":"gray"}]',
       ['tellraw @s ' + js(['', {'text': ' [🗺 Voter pour une carte précise ▸]', 'color': 'green', 'bold': True,
                                 'click_event': {'action': 'run_command', 'command': 'trigger mg.vote set 91'}}])])
+# ⚔ « Défier en duel » : dans la fenêtre de vote des joueurs (les admins l'ouvrent par « 👁 Voir le menu joueur », opt 66),
+# pas dans vote_pvp : simple sous-menu du vote PvP, on y arrive depuis vote
+DUEL_TIP = 'Sniper 1v1 : tête = élimination, corps = 2 touches, premier à 3 manches'
+DBTN = act('⚔ Défier en duel', 'red', 'trigger mg.duel set 1', DUEL_TIP)
+d = load_dialog('vote')
+if not any(a.get('action', {}).get('command') == 'trigger mg.duel set 1' for a in d['actions']):
+    pl = [i for i, a in enumerate(d['actions']) if a.get('action', {}).get('command') == 'trigger mg.pl set 1']
+    d['actions'].insert(pl[0] if pl else len(d['actions']), DBTN)   # avant les boutons de plot, sinon en fin de liste
+    save_dialog('vote', d)
+# patch() pose « après l'ancre » : placé après les deux précédents, ce crochet s'affiche en premier (ligne duel avant carte et Zinedine)
+# idempotence sur la commande (pas sur le texte de la ligne) : changer libellé ou tooltip plus tard ne dupliquera pas la ligne
+if 'trigger mg.duel set 1' not in open(os.path.join(F, 'vote/chat.mcfunction'), encoding='utf-8').read():
+    patch('vote/chat', 'tellraw @s [{"text":"\\n☑ VOTE : quel jeu veux-tu jouer ? ","color":"green","bold":true},{"text":"(clique)","color":"gray"}]',
+          ['tellraw @s ' + js(['', {'text': ' [⚔ Défier en duel]', 'color': 'red',
+                                    'click_event': {'action': 'run_command', 'command': 'trigger mg.duel set 1'},
+                                    'hover_event': {'action': 'show_text', 'value': DUEL_TIP}}])])
 
 # ============================================================ lancement automatique par majorité de votes
 # ≥ 3 joueurs et plus de la moitié votent pour le même jeu (votes jeu + cartes) → compte à rebours de 10 s → lancement.

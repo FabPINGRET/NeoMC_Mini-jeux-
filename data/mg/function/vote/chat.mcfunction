@@ -1,5 +1,6 @@
 # Menu de vote en chat cliquable (@s = joueur)
 tellraw @s [{"text":"\n☑ VOTE : quel jeu veux-tu jouer ? ","color":"green","bold":true},{"text":"(clique)","color":"gray"}]
+tellraw @s ["",{"text":" [⚔ Défier en duel]","color":"red","click_event":{"action":"run_command","command":"trigger mg.duel set 1"},"hover_event":{"action":"show_text","value":"Sniper 1v1 : tête = élimination, corps = 2 touches, premier à 3 manches"}}]
 tellraw @s ["",{"text":" [🚫 Exclure Zinedine]","color":"red","click_event":{"action":"run_command","command":"trigger mg.opt set 49"}}]
 tellraw @s ["",{"text":" [🗺 Voter pour une carte précise ▸]","color":"green","bold":true,"click_event":{"action":"run_command","command":"trigger mg.vote set 91"}}]
 tellraw @s ["",{"text":" [❄ Spleef]","color":"aqua","click_event":{"action":"run_command","command":"trigger mg.vote set 1"},"hover_event":{"action":"show_text","value":"Voter pour ce jeu"}}]
