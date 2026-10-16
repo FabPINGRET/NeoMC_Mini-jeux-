@@ -114,6 +114,8 @@ forceload add -15 16385 15 16415
 forceload add -12 40689 12 40711
 # Labyrinthe géant : sas de départ (z 41100)
 forceload add -58 41095 -51 41104
+# TNT Run glace (z 41700)
+forceload add -19 41681 19 41719
 function mg:tnttag/map/fl
 # [variantes] sols des variantes (z 24300)
 function mg:var/fl

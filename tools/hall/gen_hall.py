@@ -15,7 +15,7 @@ import os
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'data', 'mg', 'function', 'hall')
 GAMES = [  # clé, libellé, couleur, plages de $game
     ('spleef', '❄ Spleef', 'aqua', [(1, 1)]),
-    ('tntrun', '✷ TNT Run', 'red', [(2, 2)]),
+    ('tntrun', '✷ TNT Run', 'red', [(2, 2), (244, 245)]),
     ('pvp', '⚔ PvP', 'gold', [(3, 3)]),
     ('bedwars', '🛏 Bedwars', 'red', [(4, 4)]),
     ('sheepwar', '🐑 Sheep War', 'white', [(5, 5), (7, 7)]),
@@ -41,7 +41,7 @@ GAMES = [  # clé, libellé, couleur, plages de $game
     ('koth', '👑 King of the Hill', 'gold', [(86, 87), (206, 209)]),
     ('tower', '🏰 The Towers', 'gold', [(88, 88)]),
     ('convoy', '🚚 Convoi', 'gold', [(89, 90)]),
-    ('ctf', '🚩 Capture the Flag', 'red', [(93, 93)]),
+    ('ctf', '🚩 Capture the Flag', 'red', [(93, 93), (242, 243)]),
     ('uhc', '⛏ Mini UHC Run', 'gold', [(94, 94), (202, 202), (204, 204)]),
     ('hg', '🏹 Mini Hunger Games', 'gold', [(95, 95), (203, 203), (205, 205)]),
     ('prophunt', '🎭 Prop Hunt', 'gold', [(96, 96)]),

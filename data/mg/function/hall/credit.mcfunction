@@ -2,6 +2,7 @@
 function mg:hall/top {obj:"mg.wins",key:"wins",lbl:"👑 Champion des mini-jeux",col:"gold",unit:" victoire(s)"}
 execute if score $game mg.st matches 1 run function mg:hall/game {obj:"mg.wg_spleef",key:"spleef",lbl:"❄ Spleef",col:"aqua"}
 execute if score $game mg.st matches 2 run function mg:hall/game {obj:"mg.wg_tntrun",key:"tntrun",lbl:"✷ TNT Run",col:"red"}
+execute if score $game mg.st matches 244..245 run function mg:hall/game {obj:"mg.wg_tntrun",key:"tntrun",lbl:"✷ TNT Run",col:"red"}
 execute if score $game mg.st matches 3 run function mg:hall/game {obj:"mg.wg_pvp",key:"pvp",lbl:"⚔ PvP",col:"gold"}
 execute if score $game mg.st matches 4 run function mg:hall/game {obj:"mg.wg_bedwars",key:"bedwars",lbl:"🛏 Bedwars",col:"red"}
 execute if score $game mg.st matches 5 run function mg:hall/game {obj:"mg.wg_sheepwar",key:"sheepwar",lbl:"🐑 Sheep War",col:"white"}
@@ -33,6 +34,7 @@ execute if score $game mg.st matches 206..209 run function mg:hall/game {obj:"mg
 execute if score $game mg.st matches 88 run function mg:hall/game {obj:"mg.wg_tower",key:"tower",lbl:"🏰 The Towers",col:"gold"}
 execute if score $game mg.st matches 89..90 run function mg:hall/game {obj:"mg.wg_convoy",key:"convoy",lbl:"🚚 Convoi",col:"gold"}
 execute if score $game mg.st matches 93 run function mg:hall/game {obj:"mg.wg_ctf",key:"ctf",lbl:"🚩 Capture the Flag",col:"red"}
+execute if score $game mg.st matches 242..243 run function mg:hall/game {obj:"mg.wg_ctf",key:"ctf",lbl:"🚩 Capture the Flag",col:"red"}
 execute if score $game mg.st matches 94 run function mg:hall/game {obj:"mg.wg_uhc",key:"uhc",lbl:"⛏ Mini UHC Run",col:"gold"}
 execute if score $game mg.st matches 202 run function mg:hall/game {obj:"mg.wg_uhc",key:"uhc",lbl:"⛏ Mini UHC Run",col:"gold"}
 execute if score $game mg.st matches 204 run function mg:hall/game {obj:"mg.wg_uhc",key:"uhc",lbl:"⛏ Mini UHC Run",col:"gold"}

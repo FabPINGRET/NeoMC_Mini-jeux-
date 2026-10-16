@@ -33,6 +33,10 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+schedule clear mg:ctf3/prepare_b
+forceload remove -44 41476 44 41524
+schedule clear mg:ctf2/prepare_b
+forceload remove -44 41376 44 41424
 schedule clear mg:maze/build
 scoreboard objectives remove mg.jid
 scoreboard objectives remove mg.jc

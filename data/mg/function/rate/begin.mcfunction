@@ -10,6 +10,7 @@ data modify storage mg:rate key.f set value ""
 data modify storage mg:rate key.g set value 0
 execute if score $game mg.st matches 1 run data modify storage mg:rate key merge value {f:"spleef",g:1}
 execute if score $game mg.st matches 2 run data modify storage mg:rate key merge value {f:"tntrun",g:2}
+execute if score $game mg.st matches 244..245 run data modify storage mg:rate key merge value {f:"tntrun",g:2}
 execute if score $game mg.st matches 3 run data modify storage mg:rate key merge value {f:"pvp",g:3}
 execute if score $game mg.st matches 4 run data modify storage mg:rate key merge value {f:"bedwars",g:4}
 execute if score $game mg.st matches 5 run data modify storage mg:rate key merge value {f:"sheepwar",g:5}
@@ -41,6 +42,7 @@ execute if score $game mg.st matches 206..209 run data modify storage mg:rate ke
 execute if score $game mg.st matches 88 run data modify storage mg:rate key merge value {f:"tower",g:26}
 execute if score $game mg.st matches 89..90 run data modify storage mg:rate key merge value {f:"convoy",g:27}
 execute if score $game mg.st matches 93 run data modify storage mg:rate key merge value {f:"ctf",g:28}
+execute if score $game mg.st matches 242..243 run data modify storage mg:rate key merge value {f:"ctf",g:28}
 execute if score $game mg.st matches 94 run data modify storage mg:rate key merge value {f:"uhc",g:29}
 execute if score $game mg.st matches 202 run data modify storage mg:rate key merge value {f:"uhc",g:29}
 execute if score $game mg.st matches 204 run data modify storage mg:rate key merge value {f:"uhc",g:29}
