@@ -1,0 +1,13 @@
+{
+  "assets": {
+    "angry": "mg:entity/wolf/hellhound_angry",
+    "tame": "mg:entity/wolf/hellhound",
+    "wild": "mg:entity/wolf/hellhound"
+  },
+  "baby_assets": {
+    "angry": "mg:entity/wolf/hellhound_angry",
+    "tame": "mg:entity/wolf/hellhound",
+    "wild": "mg:entity/wolf/hellhound"
+  },
+  "spawn_conditions": []
+}
