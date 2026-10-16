@@ -6,6 +6,8 @@ Ordres : sauter, s'accroupir, sprinter, regarder le ciel, regarder le sol, ne pl
 - « Master dit : … » → il faut le faire avant la fin du délai (sinon éliminé).
 - La même consigne SANS « Master dit » (sauter, s'accroupir, sprinter seulement) → la faire = éliminé.
 - Le délai raccourcit à chaque tour (3 s → 1 s). Si tout le monde rate le même tour, le tour est annulé.
+- Rarement (~12 %, dès le 3e tour, à 2 joueurs ou plus) : « chacun sa consigne » — chaque joueur reçoit son propre ordre,
+  copier le voisin ne marche plus. Ordres par joueur : scores mg.mo (ordre) / mg.mv (1 vrai, 0 piège).
 - Dernier debout = victoire ; 5 min max (match nul s'il reste plusieurs joueurs). Seul : entraînement de 20 tours.
 """
 import json
@@ -75,17 +77,29 @@ NEW = ['# Nouvel ordre ($mso = ordre, $msv = 1 vrai / 0 piège, délai $msw)', '
        'scoreboard players operation $msw mg.st -= $r mg.st', 'execute if score $msw mg.st matches ..19 run scoreboard players set $msw mg.st 20',
        'scoreboard players operation $mst mg.st = $msw mg.st', 'scoreboard players set $msp mg.st 1',
        f'tag {PL} remove mg.mso', f'tag {PL} remove mg.msf',
-       f'execute store result storage mg:ms t.d int 1 run scoreboard players get $msw mg.st']
-for n, txt, trap in ORD:
-    NEW.append(f'execute if score $mso mg.st matches {n} if score $msv mg.st matches 1 run function mg:master/say {{t:"{txt}",m:"👑 Master dit : "}}')
-    if trap:
-        NEW.append(f'execute if score $mso mg.st matches {n} if score $msv mg.st matches 0 run function mg:master/say {{t:"{txt}",m:""}}')
+       f'execute store result storage mg:ms t.d int 1 run scoreboard players get $msw mg.st',
+       # rare : chacun sa consigne (≥ 2 joueurs, dès le 3e tour)
+       'scoreboard players set $msx mg.st 0', 'execute store result score $r mg.st run random value 1..100',
+       'execute if score $n0 mg.st matches 2.. if score $msr mg.st matches 3.. if score $r mg.st matches ..12 run scoreboard players set $msx mg.st 1',
+       f'execute as {PL} run scoreboard players operation @s mg.mo = $mso mg.st',
+       f'execute as {PL} run scoreboard players operation @s mg.mv = $msv mg.st',
+       f'execute if score $msx mg.st matches 1 as {PL} run function mg:master/roll',
+       f'execute as {PL} at @s run function mg:master/show']
 w('master/new', NEW)
+w('master/roll', ['# @s : ordre personnel (tour « chacun sa consigne »)', 'execute store result score @s mg.mo run random value 1..10',
+                  'scoreboard players set @s mg.mv 1', 'execute store result score $r mg.st run random value 1..100',
+                  'execute if score @s mg.mo matches 1..3 if score $r mg.st matches ..35 run scoreboard players set @s mg.mv 0'])
+SHOW = ['# @s : affiche son ordre (mg.mo / mg.mv)']
+for n, txt, trap in ORD:
+    SHOW.append(f'execute if score @s mg.mo matches {n} if score @s mg.mv matches 1 run function mg:master/say {{t:"{txt}",m:"👑 Master dit : "}}')
+    if trap:
+        SHOW.append(f'execute if score @s mg.mo matches {n} if score @s mg.mv matches 0 run function mg:master/say {{t:"{txt}",m:""}}')
+w('master/show', SHOW)
 w('master/say', ['function mg:master/times with storage mg:ms t',
-                 '$title @a[tag=mg.play] title [{"text":"$(m)","color":"gold","bold":true},{"text":"$(t)","color":"white","bold":true}]',
-                 'title @a[tag=mg.play] subtitle ""',
-                 'execute as @a[tag=mg.play] at @s run playsound minecraft:block.note_block.bit master @s ~ ~ ~ 1 1.6'])
-w('master/times', ['$title @a[tag=mg.play] times 0 $(d) 4'])
+                 '$title @s title [{"text":"$(m)","color":"gold","bold":true},{"text":"$(t)","color":"white","bold":true}]',
+                 'title @s subtitle ""',
+                 'playsound minecraft:block.note_block.bit master @s ~ ~ ~ 1 1.6'])
+w('master/times', ['$title @s times 0 $(d) 4'])
 w('master/mark', ['# @s : position au début du délai (après la petite grâce)',
                   'execute store result score @s mg.msx run data get entity @s Pos[0] 100',
                   'execute store result score @s mg.msz run data get entity @s Pos[2] 100'])
@@ -100,38 +114,40 @@ W = ['# Pendant le délai : on note qui fait l\'action (mg.mso) ou qui tombe dan
      'scoreboard players operation $e mg.st = $msw mg.st',
      'scoreboard players operation $e mg.st -= $mst mg.st',
      # vrais ordres
-     f'execute if score $msv mg.st matches 1 if score $mso mg.st matches 1 as {PL} if predicate mg:ms_jump run tag @s add mg.mso',
-     f'execute if score $msv mg.st matches 1 if score $mso mg.st matches 2 as {PL} if predicate mg:sneak run tag @s add mg.mso',
-     f'execute if score $msv mg.st matches 1 if score $mso mg.st matches 3 as {PL} if predicate mg:ms_sprint run tag @s add mg.mso',
-     f'execute if score $mso mg.st matches 4..5 as {PL} run function mg:master/pitch',
-     'execute if score $mso mg.st matches 4 as @a[tag=mg.play,scores={mg.t=..-50}] run tag @s add mg.mso',
-     'execute if score $mso mg.st matches 5 as @a[tag=mg.play,scores={mg.t=50..}] run tag @s add mg.mso',
-     f'execute if score $mso mg.st matches 6 if score $e mg.st matches {GRACE * 2} as {PL} run function mg:master/mark',
-     f'execute if score $mso mg.st matches 6 if score $e mg.st matches {GRACE * 2 + 1}.. as {PL} run function mg:master/moved',
+     'execute as @a[tag=mg.play,scores={mg.mo=1,mg.mv=1}] if predicate mg:ms_jump run tag @s add mg.mso',
+     'execute as @a[tag=mg.play,scores={mg.mo=2,mg.mv=1}] if predicate mg:sneak run tag @s add mg.mso',
+     'execute as @a[tag=mg.play,scores={mg.mo=3,mg.mv=1}] if predicate mg:ms_sprint run tag @s add mg.mso',
+     'execute as @a[tag=mg.play,scores={mg.mo=4..5}] run function mg:master/pitch',
+     'execute as @a[tag=mg.play,scores={mg.mo=4,mg.t=..-50}] run tag @s add mg.mso',
+     'execute as @a[tag=mg.play,scores={mg.mo=5,mg.t=50..}] run tag @s add mg.mso',
+     f'execute if score $e mg.st matches {GRACE * 2} as @a[tag=mg.play,scores={{mg.mo=6}}] run function mg:master/mark',
+     f'execute if score $e mg.st matches {GRACE * 2 + 1}.. as @a[tag=mg.play,scores={{mg.mo=6}}] run function mg:master/moved',
      # pièges (après une petite grâce : le temps de lire)
-     f'execute if score $msv mg.st matches 0 if score $e mg.st matches {GRACE}.. if score $mso mg.st matches 1 as {PL} if predicate mg:ms_jump run tag @s add mg.msf',
-     f'execute if score $msv mg.st matches 0 if score $e mg.st matches {GRACE}.. if score $mso mg.st matches 2 as {PL} if predicate mg:sneak run tag @s add mg.msf',
-     f'execute if score $msv mg.st matches 0 if score $e mg.st matches {GRACE}.. if score $mso mg.st matches 3 as {PL} if predicate mg:ms_sprint run tag @s add mg.msf']
+     f'execute if score $e mg.st matches {GRACE}.. as @a[tag=mg.play,scores={{mg.mo=1,mg.mv=0}}] if predicate mg:ms_jump run tag @s add mg.msf',
+     f'execute if score $e mg.st matches {GRACE}.. as @a[tag=mg.play,scores={{mg.mo=2,mg.mv=0}}] if predicate mg:sneak run tag @s add mg.msf',
+     f'execute if score $e mg.st matches {GRACE}.. as @a[tag=mg.play,scores={{mg.mo=3,mg.mv=0}}] if predicate mg:ms_sprint run tag @s add mg.msf']
 w('master/window', W)
 # fin du délai : qui échoue ?
 E = ['# Fin du délai : échecs → tag mg.msk ; tout le monde a raté → tour annulé', f'tag {PL} remove mg.msk',
-     'execute if score $msv mg.st matches 1 if score $mso mg.st matches 1..5 as @a[tag=mg.play,tag=!mg.mso] run tag @s add mg.msk',
-     'execute if score $mso mg.st matches 6 as @a[tag=mg.play,tag=mg.msf] run tag @s add mg.msk',
-     'execute if score $msv mg.st matches 0 as @a[tag=mg.play,tag=mg.msf] run tag @s add mg.msk']
+     'tag @a[tag=mg.play,tag=!mg.mso,scores={mg.mo=1..5,mg.mv=1}] add mg.msk',
+     'tag @a[tag=mg.play,tag=mg.msf,scores={mg.mo=6}] add mg.msk',
+     'tag @a[tag=mg.play,tag=mg.msf,scores={mg.mv=0}] add mg.msk']
 for n, blk in COLORS.items():
-    E.append(f'execute if score $mso mg.st matches {n} as @a[tag=mg.play] at @s unless block ~ ~-0.5 ~ minecraft:{blk} run tag @s add mg.msk')
+    E.append(f'execute as @a[tag=mg.play,scores={{mg.mo={n}}}] at @s unless block ~ ~-0.5 ~ minecraft:{blk} run tag @s add mg.msk')
 E += ['execute store result score $k mg.st if entity @a[tag=mg.msk]', 'execute store result score $a mg.st if entity @a[tag=mg.play]',
       'scoreboard players set $msp mg.st 2', 'scoreboard players set $mst mg.st 30',
-      'execute if score $msv mg.st matches 0 if score $k mg.st matches 0 run title @a[tag=mg.play] actionbar {"text":"✔ Piège évité par tout le monde !","color":"green"}',
-      'execute if score $k mg.st matches 0 if score $msv mg.st matches 1 run title @a[tag=mg.play] actionbar {"text":"✔ Tout le monde a réussi","color":"green"}',
+      f'execute if score $msx mg.st matches 1 run tellraw {PL} ' + js({'text': '🔀 Ce tour-ci, chacun avait sa propre consigne !', 'color': 'light_purple', 'bold': True}),
+      'execute if score $msx mg.st matches 0 if score $msv mg.st matches 0 if score $k mg.st matches 0 run title @a[tag=mg.play] actionbar {"text":"✔ Piège évité par tout le monde !","color":"green"}',
+      'execute if score $k mg.st matches 0 if score $msx mg.st matches 0 if score $msv mg.st matches 1 run title @a[tag=mg.play] actionbar {"text":"✔ Tout le monde a réussi","color":"green"}',
+      'execute if score $k mg.st matches 0 if score $msx mg.st matches 1 run title @a[tag=mg.play] actionbar {"text":"✔ Tout le monde a réussi","color":"green"}',
       'execute if score $k mg.st matches 1.. if score $k mg.st = $a mg.st run return run function mg:master/void',
       'execute if score $k mg.st matches 1.. as @a[tag=mg.msk] run function mg:master/ko']
 w('master/end_round', E)
 w('master/void', ['tellraw @a[tag=mg.play] {"text":"👑 Tout le monde a raté : tour annulé !","color":"yellow"}', 'tag @a remove mg.msk',
                   'execute as @a[tag=mg.play] at @s run playsound minecraft:entity.villager.no master @s ~ ~ ~ 1 1'])
 w('master/ko', ['# @s a raté', 'tag @s remove mg.msk',
-                'execute if score $msv mg.st matches 0 run tellraw @a[tag=!mg.surv] [{"text":"👑 ","color":"gold"},{"selector":"@s","color":"red"},{"text":" est tombé dans le piège !","color":"gray"}]',
-                'execute if score $msv mg.st matches 1 run tellraw @a[tag=!mg.surv] [{"text":"👑 ","color":"gold"},{"selector":"@s","color":"red"},{"text":" a été trop lent !","color":"gray"}]',
+                'execute if score @s mg.mv matches 0 run tellraw @a[tag=!mg.surv] [{"text":"👑 ","color":"gold"},{"selector":"@s","color":"red"},{"text":" est tombé dans le piège !","color":"gray"}]',
+                'execute if score @s mg.mv matches 1 run tellraw @a[tag=!mg.surv] [{"text":"👑 ","color":"gold"},{"selector":"@s","color":"red"},{"text":" a été trop lent !","color":"gray"}]',
                 'scoreboard players add @s mg.msm 1',
                 'execute if score $n0 mg.st matches 2.. run return run function mg:core/eliminate',
                 'title @s actionbar {"text":"✖ Raté ! (entraînement)","color":"red"}'])
@@ -151,10 +167,11 @@ w('master/end', ['# Fin : dernier debout gagne ; sinon match nul', 'execute unle
                  'execute if score $a mg.st matches 1 as @a[tag=mg.play,limit=1] run return run function mg:core/win_player',
                  'function mg:core/draw'])
 w('master/cleanup', ['kill @e[tag=mg.msd]', 'tag @a remove mg.mso', 'tag @a remove mg.msf', 'tag @a remove mg.msk',
-                     'scoreboard players reset * mg.msm', 'team leave @a[team=mg_sq]', 'title @a reset'])
+                     'scoreboard players reset * mg.msm', 'scoreboard players reset * mg.mo', 'scoreboard players reset * mg.mv', 'team leave @a[team=mg_sq]', 'title @a reset'])
 
 C.register([GID], 'master', [C.announce(GID, '', '👑 MASTER DIT', 'gold', 'obéis vite aux ordres du Master… mais seulement quand il dit « Master dit » !')])
 C.objectives([('mg.msx', 'dummy'), ('mg.msz', 'dummy'), ('mg.msm', 'dummy')])
+C.objectives([('mg.mo', 'dummy'), ('mg.mv', 'dummy')])
 C.patch('desinstaller', 'scoreboard objectives remove mg.bw', ['data remove storage mg:ms t'])
 C.forceload([f'# Master dit (z {Z})', f'forceload add -{RAD + 3} {Z - RAD - 3} {RAD + 3} {Z + RAD + 3}'])
 print('Master dit OK')
