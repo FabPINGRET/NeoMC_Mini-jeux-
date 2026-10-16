@@ -1,4 +1,15 @@
 # Construction de Terra Nova, étape 59/101 (dimension mg:terranova, générée)
+setblock -11 70 -17 minecraft:lantern[hanging=true]
+fill -23 65 -24 -9 65 -24 minecraft:barrel[facing=up]
+setblock -23 65 -22 minecraft:polished_andesite
+setblock -21 65 -22 minecraft:polished_andesite
+setblock -19 65 -22 minecraft:polished_andesite
+setblock -17 65 -22 minecraft:polished_andesite
+setblock -15 65 -22 minecraft:polished_andesite
+setblock -13 65 -22 minecraft:polished_andesite
+setblock -11 65 -22 minecraft:polished_andesite
+setblock -9 65 -22 minecraft:polished_andesite
+setblock -22 71 -18 minecraft:daylight_detector
 setblock -18 71 -18 minecraft:daylight_detector
 setblock -14 71 -18 minecraft:daylight_detector
 setblock -10 71 -18 minecraft:daylight_detector

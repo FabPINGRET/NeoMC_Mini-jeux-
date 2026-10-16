@@ -14,7 +14,12 @@ fill -36 89 39042 40 89 39120 minecraft:air
 fill -36 90 39042 40 90 39120 minecraft:air
 fill -36 91 39042 40 91 39120 minecraft:air
 fill -35 79 39043 39 79 39119 minecraft:stone
-fill -35 80 39043 39 85 39119 minecraft:gray_concrete
+fill -35 80 39043 39 80 39119 minecraft:gray_concrete
+fill -35 81 39043 39 81 39119 minecraft:gray_concrete
+fill -35 82 39043 39 82 39119 minecraft:gray_concrete
+fill -35 83 39043 39 83 39119 minecraft:gray_concrete
+fill -35 84 39043 39 84 39119 minecraft:gray_concrete
+fill -35 85 39043 39 85 39119 minecraft:gray_concrete
 fill -35 81 39043 39 81 39119 minecraft:cyan_terracotta
 fill -35 86 39043 39 86 39119 minecraft:smooth_stone
 fill -8 80 39092 8 80 39108 minecraft:polished_andesite
