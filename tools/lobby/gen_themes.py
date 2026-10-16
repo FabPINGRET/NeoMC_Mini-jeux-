@@ -26,7 +26,8 @@ tombent par intermittence : les déclarer dans SPECS de theme_fall.py et mettre 
 Modules (jamais lancés seuls, chargés ici après C.init) : theme_world.py (modèle du spawn : W, DYN, CH, familles de
 blocs, zones réservées), theme_water.py (fontaines, cascades, biome d'eau, water_fix, water_check), theme_mobs.py (animaux,
 spot/back/gone/clear), theme_core.py (off, sync, restore, reskin, tick), theme_fall.py (feuilles et neige qui tombent
-par intermittence), theme_npcs.py (PNJ : sorcière d'Halloween, lutin de Noël).
+par intermittence), theme_npcs.py (PNJ : sorcière d'Halloween, lutin de Noël), theme_stew.py (ragoût de la sorcière : effets
+vanilla et maison tirés à la consommation, chronos, nettoyages).
 """
 import os
 import random

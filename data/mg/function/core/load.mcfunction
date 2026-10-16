@@ -56,6 +56,7 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.ths dummy
 scoreboard objectives add mg.jid dummy
 scoreboard objectives add mg.jc dummy
 scoreboard objectives add mg.je dummy

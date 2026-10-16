@@ -16,6 +16,8 @@ kill @e[tag=mg.npc]
 clear @a *[minecraft:custom_data~{mg_thg:1b}]
 kill @e[tag=mg.thnpc]
 advancement revoke @a only mg:theme_fw
+advancement revoke @a only mg:theme_stew
+execute as @a run function mg:lobby/theme/stew_clear
 execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{mg_thg:1b}] run kill @s
 execute as @a run function mg:core/unfreeze
 forceload remove all
@@ -33,6 +35,7 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.ths
 schedule clear mg:ctf3/prepare_b
 forceload remove -44 41476 44 41524
 schedule clear mg:ctf2/prepare_b
