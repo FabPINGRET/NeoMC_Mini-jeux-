@@ -330,6 +330,7 @@ exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'hats_rp.py')
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pumpkin_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'food_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'reindeer_rp.py'), encoding='utf-8').read())
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'zombies_rp.py'), encoding='utf-8').read())
 
 # ------------------------------------------------------------------ pack.mcmeta, zip
 wjson(os.path.join(OUT, 'pack.mcmeta'), {"pack": {"description": [{"text": "NeoMC Mini-Jeux", "color": "gold"},
