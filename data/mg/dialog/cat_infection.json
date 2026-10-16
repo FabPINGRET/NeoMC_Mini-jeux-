@@ -129,6 +129,42 @@
     {
       "label": [
         {
+          "text": "🧪 Infection — Hôpital",
+          "color": "green"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Hôpital sur deux étages, tout ouvert",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 236"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🧪 Infection — Mine",
+          "color": "gold"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Mine à niveaux, tout ouvert",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 238"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🧟 Joueurs vs mobs — Bunker",
           "color": "red"
         }

@@ -24,6 +24,18 @@ fill -50 81 39365 50 81 39434 minecraft:light_blue_terracotta
 fill -50 86 39365 50 86 39434 minecraft:smooth_quartz
 fill -7 80 39393 7 80 39407 minecraft:smooth_quartz
 fill -7 81 39393 7 85 39407 minecraft:air
+fill -25 80 39398 -9 80 39402 minecraft:light_gray_concrete
+fill -25 81 39398 -9 85 39402 minecraft:air
+fill 9 80 39398 25 80 39402 minecraft:light_gray_concrete
+fill 9 81 39398 25 85 39402 minecraft:air
+fill -45 80 39388 -27 80 39412 minecraft:polished_diorite
+fill -45 81 39388 -27 85 39412 minecraft:air
+fill 27 80 39388 45 80 39412 minecraft:polished_diorite
+fill 27 81 39388 45 85 39412 minecraft:air
+fill -45 80 39370 45 80 39386 minecraft:white_terracotta
+fill -45 81 39370 45 85 39386 minecraft:air
+fill -12 80 39409 12 80 39429 minecraft:warped_planks
+fill -12 81 39409 12 85 39429 minecraft:air
 setblock -5 86 39395 minecraft:sea_lantern
 setblock -5 86 39400 minecraft:sea_lantern
 setblock -5 86 39405 minecraft:sea_lantern
@@ -33,18 +45,12 @@ setblock 0 86 39405 minecraft:sea_lantern
 setblock 5 86 39395 minecraft:sea_lantern
 setblock 5 86 39400 minecraft:sea_lantern
 setblock 5 86 39405 minecraft:sea_lantern
-fill -25 80 39398 -9 80 39402 minecraft:light_gray_concrete
-fill -25 81 39398 -9 85 39402 minecraft:air
 setblock -23 86 39400 minecraft:sea_lantern
 setblock -18 86 39400 minecraft:sea_lantern
 setblock -13 86 39400 minecraft:sea_lantern
-fill 9 80 39398 25 80 39402 minecraft:light_gray_concrete
-fill 9 81 39398 25 85 39402 minecraft:air
 setblock 11 86 39400 minecraft:sea_lantern
 setblock 16 86 39400 minecraft:sea_lantern
 setblock 21 86 39400 minecraft:sea_lantern
-fill -45 80 39388 -27 80 39412 minecraft:polished_diorite
-fill -45 81 39388 -27 85 39412 minecraft:air
 setblock -43 86 39390 minecraft:sea_lantern
 setblock -43 86 39395 minecraft:sea_lantern
 setblock -43 86 39400 minecraft:sea_lantern
@@ -60,8 +66,6 @@ setblock -33 86 39395 minecraft:sea_lantern
 setblock -33 86 39400 minecraft:sea_lantern
 setblock -33 86 39405 minecraft:sea_lantern
 setblock -33 86 39410 minecraft:sea_lantern
-fill 27 80 39388 45 80 39412 minecraft:polished_diorite
-fill 27 81 39388 45 85 39412 minecraft:air
 setblock 29 86 39390 minecraft:sea_lantern
 setblock 29 86 39395 minecraft:sea_lantern
 setblock 29 86 39400 minecraft:sea_lantern
@@ -77,8 +81,6 @@ setblock 39 86 39395 minecraft:sea_lantern
 setblock 39 86 39400 minecraft:sea_lantern
 setblock 39 86 39405 minecraft:sea_lantern
 setblock 39 86 39410 minecraft:sea_lantern
-fill -45 80 39370 45 80 39386 minecraft:white_terracotta
-fill -45 81 39370 45 85 39386 minecraft:air
 setblock -43 86 39372 minecraft:sea_lantern
 setblock -43 86 39377 minecraft:sea_lantern
 setblock -43 86 39382 minecraft:sea_lantern
@@ -133,8 +135,6 @@ setblock 37 86 39382 minecraft:sea_lantern
 setblock 42 86 39372 minecraft:sea_lantern
 setblock 42 86 39377 minecraft:sea_lantern
 setblock 42 86 39382 minecraft:sea_lantern
-fill -12 80 39409 12 80 39429 minecraft:warped_planks
-fill -12 81 39409 12 85 39429 minecraft:air
 setblock -10 86 39411 minecraft:sea_lantern
 setblock -10 86 39416 minecraft:sea_lantern
 setblock -10 86 39421 minecraft:sea_lantern

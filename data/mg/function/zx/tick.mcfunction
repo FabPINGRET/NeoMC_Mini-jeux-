@@ -12,3 +12,4 @@ execute as @e[type=minecraft:item_display,tag=mg.zmk] at @s run function mg:zx/m
 execute as @e[type=minecraft:item_display,tag=mg.zrk] at @s run function mg:zx/rk_tick
 scoreboard players add $zxt mg.st 1
 execute if score $zxt mg.st matches 10.. run function mg:zx/win_fix_all
+execute as @a[tag=mg.play,scores={mg.zdr=1..}] at @s run function mg:zx/drop_back
