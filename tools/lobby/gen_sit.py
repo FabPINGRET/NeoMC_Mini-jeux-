@@ -1,19 +1,26 @@
 """🪑 S'asseoir et emotes au spawn (lobby seulement) : python tools/lobby/gen_sit.py .
-(depuis la racine ; idempotent ; APRÈS tools/cosmetics/gen_hats.py, AVANT tools/variantes/gen_variants.py qui passe en dernier)
+(depuis la racine ; idempotent ; APRÈS tools/cosmetics/gen_hats.py, AVANT tools/variantes/gen_variants.py qui passe en dernier ;
+aussi APRÈS tools/lobby/gen_lobby.py et tools/hall/gen_hall.py, dont il relit les constructions (bancs, conteneurs) : à relancer après eux)
 
 - 🪑 S'asseoir (mg.opt 76, bouton du menu Échap) : sur un banc sous les pieds ou adjacent (spruce_stairs[half=bottom] :
   ceux de gen_lobby.py), sinon par terre ; on se lève avec le même bouton, Maj ou en quittant le spawn. Le siège est un
   item_display (tag mg.seat) que le joueur monte (tag mg.sit). Réglage de hauteur : SEAT_DY (banc) et GROUND_DY (sol), à ajuster en jeu.
+  Un banc occupé (siège à moins de 0,3) est sauté : sit/bench_at, appelé pour chaque candidat de sit/bench, retourne 0.
+- Clic droit sur un banc du spawn ou du Hall : s'y assoit (ou se lève s'il y est déjà) ; zones cliquables, liste des bancs et advancement
+  dans sit_bench.py (importé ici, jamais lancé seul).
+- 🎉 Objet « Emotes » (pomme de terre empoisonnée habillée en éclat d'améthyste, hotbar.8, clic droit = fenêtre des emotes) : donné,
+  retiré, rendu et purgé des conteneurs du spawn par sit_item.py (importé ici).
 - 🎉 Emotes (mg.opt 83 : fenêtre mg:lobby_emotes ; 77 ✋ Salut, 78 ♪ Danse, 79 🎉 Fête, 80 😵 Étourdi) : particules et son à 16 blocs,
   message en actionbar à 10 blocs, recharge 3 s (mg.lsc = tick de la dernière emote).
 - Admin (menu 🎉 Événements du lobby) : 81 coupe / rétablit tout cela ($sitoff mg.st = 1 : coupé, absent : actif), 82 affiche
-  les compteurs d'usage (mg.lsn : $sit, $emo1..4).
+  les compteurs d'usage (mg.lsn : $sit, $emo1..4, $itm objet, $bnc clic sur un banc). Couper retire aussi les zones des bancs et l'objet.
 - Refus (sit/ok) : hors du spawn, partie / survie / plot / visite / parkour / kart / élytra / duel / GTA / Terra Nova / Mini Party /
   mini-moi du ragoût, spectateur, déjà en véhicule, arène PvP souterraine : message court en actionbar.
 - Une partie qui démarre (core/request), core/load et desinstaller relèvent les joueurs et retirent les sièges ; core/tick appelle
   lobby/sit/tick (sièges orphelins : Maj vanilla, reconnexion) tant qu'un joueur est assis et vide les sièges sinon.
-Tags : mg.sit (joueur assis), mg.seat (siège), mg.seatn (siège en cours de pose), mg.seato (candidat orphelin, balayage de sit/tick).
-mg.opt 76..83 ; objectifs mg.lsc, mg.lsn.
+Tags : mg.sit (joueur assis), mg.seat (siège), mg.seatn (siège en cours de pose), mg.seato (candidat orphelin, balayage de sit/tick) ;
+mg.bench, mg.lbc (sit_bench.py) ; mg.lsg, mg.lsw (sit_item.py).
+mg.opt 76..83 ; objectifs mg.lsc, mg.lsn, mg.lsb (recharge du clic sur un banc).
 Relancer ce script après gen_events.py (qui réécrit dialog/lobby_events.json, donc les boutons 81 et 82) ; après gen_tp_general.py
 les lignes de core/opt changent seulement d'ordre. Glyphes : seulement ceux déjà présents dans data/.
 """
@@ -24,9 +31,12 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'arcade'))
 import common as C
+import sit_bench as SB                                              # noqa: E402
+import sit_item as SI                                               # noqa: E402
 from theme_world import LOBBY_BOX
 
 C.init(sys.argv[1] if len(sys.argv) > 1 else '.')
+BENCHES = SB.benches()                   # avant toute écriture : le générateur s'arrête ici si les bancs (spawn, Hall) sont introuvables
 w, js = C.w, C.js
 SEAT_DY = 0.5                            # hauteur du siège au-dessus du bloc d'un escalier (surface basse) : à régler en jeu
 GROUND_DY = 0                            # idem sur le sol, au niveau des pieds
@@ -83,12 +93,16 @@ w('lobby/sit/try', ['# @s : bouton « S\'asseoir » (mg.opt 76) : se lève si d�
                     '# core/opt tourne sans « at @s » : les coordonnées relatives de sit/bench se lisent à la position du joueur',
                     'execute at @s if function mg:lobby/sit/bench run return 1',
                     f'execute at @s positioned ~ {rel(GROUND_DY)} ~ run return run function mg:lobby/sit/seat'])
-w('lobby/sit/bench', ['# @s : un banc (spruce_stairs[half=bottom]) sous les pieds ou à côté ? Oui : s\'y assoit (sit/seat), retourne 1 ; non : retourne 0',
-                      f'# siège au centre du bloc, {SEAT_DY} au-dessus de son pied (SEAT_DY) ; regard vers la marche basse : yaw opposé au facing '
-                      '(east 90, west -90, north 0, south 180)'] +
-  [f'execute if block {p} minecraft:spruce_stairs[half=bottom,facing={f}] positioned {p} align xyz positioned ~0.5 {rel(SEAT_DY)} ~0.5 '
-   f'rotated {yaw} 0 run return run function mg:lobby/sit/seat'
-   for p in (' '.join(rel(v) for v in a) for a in AT) for f, yaw in FACING] + ['return 0'])
+w('lobby/sit/bench', ['# @s : un banc (spruce_stairs[half=bottom]) sous les pieds ou à côté, et libre ? Oui : s\'y assoit (sit/seat), retourne 1 ; non : retourne 0',
+                      '# un banc occupé est sauté (sit/bench_at retourne 0) : le candidat suivant, puis le sol'] +
+  [f'execute positioned {p} align xyz if function mg:lobby/sit/bench_at run return 1' for p in (' '.join(rel(v) for v in a) for a in AT)] +
+  ['return 0'])
+w('lobby/sit/bench_at', ['# @s : position = coin du bloc (align xyz). Banc libre (pas de siège à moins de 0,3) ? Oui : s\'y assoit (sit/seat), retourne 1 ; non : 0',
+                         f'# siège au centre du bloc, {SEAT_DY} au-dessus de son pied (SEAT_DY) ; regard vers la marche basse : yaw opposé au facing '
+                         '(east 90, west -90, north 0, south 180)',
+                         f'execute positioned ~0.5 {rel(SEAT_DY)} ~0.5 if entity @e[type=minecraft:item_display,tag=mg.seat,distance=..0.3] run return 0'] +
+  [f'execute if block ~ ~ ~ minecraft:spruce_stairs[half=bottom,facing={f}] positioned ~0.5 {rel(SEAT_DY)} ~0.5 '
+   f'rotated {yaw} 0 run return run function mg:lobby/sit/seat' for f, yaw in FACING] + ['return 0'])
 w('lobby/sit/seat', ['# @s = joueur ; position = point d\'assise, rotation = sens du regard (posés par sit/try ou sit/bench) ; retourne 1',
                      'summon minecraft:item_display ~ ~ ~ {Tags:["mg.seat","mg.seatn"]}',
                      'tp @s ~ ~ ~ ~ ~',
@@ -134,14 +148,18 @@ for k, glyph, name, col, verb, (pn, py, dx, dy, dz, sp, n), sound, pitch in EMOT
 w('lobby/sit/menu', ['# @s : fenêtre des emotes', 'dialog show @s mg:lobby_emotes'])
 
 # ---------------------------------------------------------------- admin : activer / couper, compteurs
-w('lobby/sit/admin_toggle', ['# Admin (@s) : coupe / rétablit l\'assise et les emotes du lobby ($sitoff mg.st = 1 : coupé, absent : actif)',
+w('lobby/sit/admin_toggle', ['# Admin (@s) : coupe / rétablit l\'assise, les emotes, l\'objet 🎉 et les zones des bancs du lobby ($sitoff mg.st = 1 : coupé, absent : actif)',
                              'execute store success score #sitw mg.st if score $sitoff mg.st matches 1',
                              'execute if score #sitw mg.st matches 1 run scoreboard players reset $sitoff mg.st',
+                             '# $lbx absent : sit/bench_check repose les zones des bancs au prochain passage (toutes les 2 s)',
+                             'execute if score #sitw mg.st matches 1 run scoreboard players reset $lbx mg.st',
                              'execute if score #sitw mg.st matches 1 run return run tellraw @s ' + js({'text': '🪑 Assis et emotes du lobby : activés.', 'color': 'green'}),
                              'scoreboard players set $sitoff mg.st 1',
                              'execute as @a[tag=mg.sit] run function mg:lobby/sit/stand',
+                             SB.KILL,
+                             f'clear @a {SI.PRED}',
                              'tellraw @s ' + js({'text': '🪑 Assis et emotes du lobby : désactivés.', 'color': 'red'})])
-COUNTERS = [('$sit', '🪑 Assis')] + [(f'$emo{k}', f'{g} {nm}') for k, g, nm, *_ in EMOTES]
+COUNTERS = [('$sit', '🪑 Assis'), ('$bnc', '🪑 Clic banc'), ('$itm', '🎉 Objet')] + [(f'$emo{k}', f'{g} {nm}') for k, g, nm, *_ in EMOTES]
 w('lobby/sit/admin_stats', ['# Admin (@s) : compteurs d\'usage (assis, emotes), depuis la création de l\'objectif mg.lsn'] +
   [f'execute unless score {n} mg.lsn matches 0.. run scoreboard players set {n} mg.lsn 0' for n, _ in COUNTERS] +
   ['execute if score $sitoff mg.st matches 1 run tellraw @s ' + js({'text': '🪑 Assis et emotes : désactivés', 'color': 'red'}),
@@ -186,9 +204,9 @@ write_json('lobby_emotes.json', {
         {'text': f'Une emote visible par les joueurs autour de toi (spawn seulement, une toutes les {COOLDOWN // 20} s).', 'color': 'gray'}]}],
     'columns': 2, 'exit_action': {'label': [{'text': 'Fermer', 'color': 'gray'}]},
     'actions': [act(f'{g} {nm}', c, OPT_EMOTE + k - 1, f'Fait une emote « {nm} »') for k, g, nm, c, *_ in EMOTES] +
-               [act('🪑 S\'asseoir / se lever', 'gold', OPT_SIT, 'Sur un banc sous les pieds ou adjacent, sinon par terre ; Maj pour se lever')]})
+               [act('🪑 S\'asseoir / se lever', 'gold', OPT_SIT, 'Sur un banc sous les pieds ou adjacent, sinon par terre, ou clic droit sur un banc ; Maj pour se lever')]})
 add_buttons('main_menu.json', [
-    act('🪑 S\'asseoir', 'gold', OPT_SIT, 'Sur un banc sous les pieds ou adjacent, sinon par terre (spawn) ; Maj ou le même bouton pour se lever'),
+    act('🪑 S\'asseoir', 'gold', OPT_SIT, 'Sur un banc sous les pieds ou adjacent, sinon par terre (spawn), ou clic droit sur un banc ; Maj ou le même bouton pour se lever'),
     act('🎉 Emotes ▸', 'light_purple', OPT_MENU, 'Salut, danse, fête, étourdi : une emote visible autour de toi (spawn)')],
     before='trigger mg.sv set 3')
 add_buttons('lobby_events.json', [
@@ -218,6 +236,7 @@ C.patch('lobby/ev/menu_chat', chat_line(*CHAT_LAST), [
 
 # ---------------------------------------------------------------- câblage (une ligne par patch)
 C.objectives([('mg.lsc', 'dummy'), ('mg.lsn', 'dummy')])
+C.objectives([('mg.lsb', 'dummy')])                                     # recharge du clic sur un banc (sit_bench.py)
 ANCHOR = 'scoreboard objectives add mg.st dummy'
 KILL = 'kill @e[type=minecraft:item_display,tag=mg.seat]'
 UNTAG = 'tag @a remove mg.sit'
@@ -228,7 +247,7 @@ C.patch('desinstaller', 'kill @e[tag=mg.npc]', [KILL])
 C.patch('desinstaller', KILL, [UNTAG])
 TICK = 'execute if entity @a[tag=mg.sit] run function mg:lobby/sit/tick'
 C.patch('core/tick', 'execute if entity @a[tag=mg.visit] run function mg:plot/visit_guard', [TICK])
-# sièges sans aucun assis : balayage une fois par seconde (même cadence que les nettoyages voisins : $lan mg.t = 30)
+# sièges sans aucun assis : balayage toutes les 2 s (même cadence que les nettoyages voisins : $lan mg.t = 30)
 SWEEP = ('execute unless entity @a[tag=mg.sit] if entity @e[type=minecraft:item_display,tag=mg.seat,limit=1] '
          'run kill @e[type=minecraft:item_display,tag=mg.seat]')
 C.drop_lines('core/tick', [SWEEP])                                    # ancienne version (chaque tick)
@@ -247,6 +266,11 @@ for line in ([f'execute if score @s mg.opt matches {OPT_SIT} run function mg:lob
               f'execute if score @s mg.opt matches {OPT_STATS} if entity @s[tag=mg.admin] run function mg:lobby/sit/admin_stats',
               f'execute if score @s mg.opt matches {OPT_MENU} run function mg:lobby/sit/menu']):
     C.patch('core/opt', RESET, [line], where='before')
+# objet 🎉 Emotes et clic droit sur un banc (sit_item.py, sit_bench.py) : fonctions et advancements, puis leurs lignes (après celles ci-dessus)
+SI.write(BUSY)
+SB.write(BENCHES, rel(SEAT_DY), actionbar)
+SI.wire(UNTAG)
+SB.wire(UNTAG)
 print('Assis / emotes OK :', len(EMOTES), 'emotes')
 
 # Les notes des joueurs remplacent les étoiles dans les menus (et la fenêtre mg:lobby_emotes devient rate/d/) : à refaire après chaque régénération des menus
