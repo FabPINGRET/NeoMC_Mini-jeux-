@@ -78,8 +78,8 @@ execute if score $lan mg.t matches 30 unless score $theme mg.st matches 1.. unle
 function mg:hat/tick
 scoreboard players remove @a[scores={mg.fd=1..}] mg.fd 1
 # Parcours d'élytra : socle de départ, joueurs en vol, objets du parcours jamais conservés
-execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.ely,gamemode=adventure,x=16,y=63,z=-9,dx=0.99,dy=2.5,dz=0.99] run function mg:elytra/start
-execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.ely,gamemode=adventure,x=32,y=63,z=-15,dx=0.99,dy=2.5,dz=0.99] run function mg:elytra/start2
+execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.ely,tag=!mg.pkr,gamemode=adventure,x=16,y=63,z=-9,dx=0.99,dy=2.5,dz=0.99] run function mg:elytra/start
+execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.ely,tag=!mg.pkr,gamemode=adventure,x=32,y=63,z=-15,dx=0.99,dy=2.5,dz=0.99] run function mg:elytra/start2
 execute as @a[tag=mg.ely] at @s run function mg:elytra/player
 # Élytres libres : socle (une fois par passage), joueurs en vol, objets jamais conservés hors du vol libre
 execute as @a[tag=mg.efp] unless entity @s[x=16,y=63,z=-21,dx=0.99,dy=2.5,dz=0.99] run tag @s remove mg.efp
