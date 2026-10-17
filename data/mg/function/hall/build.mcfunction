@@ -20,6 +20,9 @@ fill -60 62 15 -6 62 36 minecraft:dirt
 fill -60 63 15 -6 63 36 minecraft:grass_block
 fill -59 63 23 -6 63 27 minecraft:dirt_path
 fill -13 63 19 -6 63 31 minecraft:polished_andesite
+fill -5 64 15 -4 65 36 minecraft:air
+fill -5 63 15 -4 63 36 minecraft:grass_block
+fill -5 63 19 -4 63 31 minecraft:polished_andesite
 fill -60 64 19 -12 64 19 minecraft:moss_block
 fill -60 64 31 -12 64 31 minecraft:moss_block
 fill -60 64 19 -60 64 31 minecraft:moss_block
@@ -816,3 +819,4 @@ data modify storage mg:hall v18 set value 1b
 data modify storage mg:hall v19 set value 1b
 data modify storage mg:hall v20 set value 1b
 data modify storage mg:hall v21 set value 1b
+data modify storage mg:hall v22 set value 1b
