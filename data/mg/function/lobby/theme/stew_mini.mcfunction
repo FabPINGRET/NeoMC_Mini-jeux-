@@ -1,5 +1,5 @@
 # 🎃 Ragoût (mini-moi : taille -70 %, 45 s, objectif mg.ths) ; @s = joueur
-execute if entity @s[tag=mg.thmini] at @s unless block ~ ~1 ~ #minecraft:replaceable run return run function mg:lobby/theme/stew_burp
+execute if entity @s[tag=mg.thmini] at @s unless block ~ ~1 ~ #minecraft:replaceable run return run function mg:lobby/theme/stew_fizzle
 function mg:lobby/theme/stew_clear
 attribute @s minecraft:scale modifier add mg:thstew -0.7 add_multiplied_base
 tag @s add mg.thmini

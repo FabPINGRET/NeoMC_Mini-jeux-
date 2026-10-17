@@ -1,5 +1,5 @@
 # 🎃 Ragoût (flash : vitesse +80 %, pas +0,85, 20 s, objectif mg.ths) ; @s = joueur
-execute if entity @s[tag=mg.thmini] at @s unless block ~ ~1 ~ #minecraft:replaceable run return run function mg:lobby/theme/stew_burp
+execute if entity @s[tag=mg.thmini] at @s unless block ~ ~1 ~ #minecraft:replaceable run return run function mg:lobby/theme/stew_fizzle
 function mg:lobby/theme/stew_clear
 attribute @s minecraft:movement_speed modifier add mg:thstew 0.8 add_multiplied_base
 attribute @s minecraft:step_height modifier add mg:thstew 0.85 add_multiplied_base

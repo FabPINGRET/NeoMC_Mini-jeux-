@@ -21,7 +21,7 @@ STEP = 8                                 # secondes par ligne
 PERIOD = 180                             # secondes entre deux séries de lignes
 FEATURES = {
     'halloween': ('purple', [
-        '🎃 Ragoût mystère de la sorcière : 12 effets, dont le lapin !',
+        '🎃 Ragoût mystère de la sorcière : un effet surprise à chaque bol… oserez-vous ?',
         '🎩 {n} chapeaux d\'Halloween, galerie sous le Hall des scores',
         '🍬 Événement : la pluie de pièces devient chasse aux bonbons',
         '👻 Fantômes, chauves-souris et eau rouge au spawn',

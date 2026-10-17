@@ -1,5 +1,5 @@
 # 🎃 Ragoût (lapin : taille -65 %, saut +30 %, vitesse +20 %, vrai lapin figé, 40 s, objectif mg.ths) ; @s = joueur
-execute if entity @s[tag=mg.thmini] at @s unless block ~ ~1 ~ #minecraft:replaceable run return run function mg:lobby/theme/stew_burp
+execute if entity @s[tag=mg.thmini] at @s unless block ~ ~1 ~ #minecraft:replaceable run return run function mg:lobby/theme/stew_fizzle
 function mg:lobby/theme/stew_clear
 attribute @s minecraft:scale modifier add mg:thstew -0.65 add_multiplied_base
 attribute @s minecraft:jump_strength modifier add mg:thstew 0.3 add_multiplied_base
