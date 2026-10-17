@@ -816,6 +816,9 @@ w('terra/carno_try', ['# Une chance sur 90 par seconde : un carnotaure sauvage a
 w('terra/carno_at', ['scoreboard players set $tvf mg.st 1', 'scoreboard players set $tvcc mg.st 240', 'function mg:terra/dino/carno',
                      'tellraw @a[tag=mg.tvw] {"text":"🦖 Un rugissement résonne dans la jungle… un carnotaure rôde.","color":"red"}',
                      'execute as @a[tag=mg.tvw] at @s run playsound minecraft:entity.ravager.roar hostile @s ~ ~ ~ 0.6 0.55'])
+w('terra/brach_saddle', ['# @s : brachiosaure monté sans selle → sellé (sinon on ne peut pas le diriger)',
+                         'item replace entity @s saddle with minecraft:saddle',
+                         'execute on passengers run title @s actionbar ' + js({'text': '🦕 Brachiosaure sellé : Z/Q/S/D pour le diriger, espace = élan', 'color': 'yellow'})])
 w('terra/herb_fill', ['# Toutes les 20 s : 3 brachiosaures et 4 pachycéphalosaures dans la jungle',
                       'execute store result score $tvn mg.st if entity @e[tag=mg.tvbrach]',
                       'execute if score $tvn mg.st matches ..2 as @e[type=minecraft:marker,tag=mg.tvhp,sort=random,limit=1] at @s unless entity @a[tag=mg.tvw,distance=..30] run function mg:terra/dino/brachio',
@@ -1375,6 +1378,8 @@ SEC = ['# Chaque seconde (dans la dimension) : colonie, soins, primes, missions,
        # défenses du périmètre, herbivores égarés
        f'execute as @e[tag=mg.tvhos,{COLONY_BOX}] at @s run function mg:terra/zap',
        f'execute as @e[tag=mg.tvherb,{COLONY_BOX}] unless predicate mg:has_passenger run tp @s @e[type=minecraft:marker,tag=mg.tvhp,sort=random,limit=1]',
+       # brachiosaure monté sans selle (impossible à diriger) : sellé d'office
+       'execute as @e[tag=mg.tvbrach] if predicate mg:has_passenger unless items entity @s saddle minecraft:saddle run function mg:terra/brach_saddle',
        # carnotaure
        f'execute as @e[tag=mg.tvcarno,tag=!mg.tvnetted] at @s unless entity @s[{COLONY_BOX}] run function mg:terra/carno_smash',
        'execute unless entity @e[tag=mg.tvcarno] run bossbar set mg:tvcarno players',

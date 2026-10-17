@@ -14,6 +14,8 @@ kill @e[tag=mg.arm]
 kill @e[tag=mg.mob]
 kill @e[tag=mg.sheep]
 kill @e[tag=mg.npc]
+kill @e[type=minecraft:item_display,tag=mg.seat]
+tag @a remove mg.sit
 clear @a *[minecraft:custom_data~{mg_thg:1b}]
 kill @e[tag=mg.thnpc]
 advancement revoke @a only mg:theme_fw
@@ -42,6 +44,8 @@ scoreboard objectives remove mg.dku
 scoreboard objectives remove mg.dkc
 scoreboard objectives remove mg.dsk
 scoreboard objectives remove mg.dok
+scoreboard objectives remove mg.lsc
+scoreboard objectives remove mg.lsn
 schedule clear mg:maze/build_step
 scoreboard objectives remove mg.thbn
 scoreboard objectives remove mg.ths
@@ -548,6 +552,7 @@ scoreboard objectives remove mg.lv
 scoreboard objectives remove mg.mb
 scoreboard objectives remove mg.st
 scoreboard objectives remove mg.t
+scoreboard objectives remove mg.svl
 scoreboard objectives remove mg.wins
 scoreboard objectives remove mg.deaths
 scoreboard objectives remove mg.cs

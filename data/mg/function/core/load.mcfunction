@@ -2,6 +2,9 @@
 
 # --- Objectifs ---
 scoreboard objectives add mg.st dummy
+# Sièges du lobby (s'asseoir)
+kill @e[type=minecraft:item_display,tag=mg.seat]
+tag @a remove mg.sit
 bossbar remove mg:thb
 scoreboard players set $thsw mg.st 0
 scoreboard players set $thrs mg.st 1
@@ -25,6 +28,8 @@ scoreboard players set $gtw mg.st 0
 execute unless data storage mg:rank rpfix run scoreboard players set $rp mg.st 1
 data modify storage mg:rank rpfix set value 1b
 scoreboard objectives add mg.t dummy
+scoreboard objectives add mg.svl dummy {"text":"⛏ Survie — niveau","color":"green"}
+scoreboard players set $sbm mg.st -1
 scoreboard objectives add mg.wins dummy [{"text":"✦ Victoires ✦","color":"gold"}]
 scoreboard objectives add mg.stp dummy
 scoreboard objectives add mg.stk playerKillCount
@@ -57,6 +62,8 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.lsc dummy
+scoreboard objectives add mg.lsn dummy
 team add mg_thbun
 team modify mg_thbun collisionRule never
 scoreboard objectives add mg.thbn dummy
@@ -550,7 +557,7 @@ execute if score $setup mg.st matches 1 if data storage mg:kart built2 unless da
 execute if score $setup mg.st matches 1 unless data storage mg:dropadv v3 run schedule function mg:dropadv/build 40s
 execute if score $setup mg.st matches 1 run scoreboard players set $xbk mg.st 0
 execute if score $setup mg.st matches 1 run schedule function mg:elyrace/build_next 60s
-execute if score $setup mg.st matches 1 unless data storage mg:hall v14 run schedule function mg:hall/build 20s
+execute if score $setup mg.st matches 1 unless data storage mg:hall v16 run schedule function mg:hall/build 20s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/build 10s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/food_build 25s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:elytra/build 30s

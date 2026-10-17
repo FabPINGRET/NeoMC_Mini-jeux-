@@ -88,8 +88,10 @@ execute as @a[tag=mg.elyf] at @s run function mg:elytra/free_tick
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.elyf] minecraft:elytra[minecraft:custom_data~{mg_elyf:1b}]
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.elyf] minecraft:firework_rocket[minecraft:custom_data~{mg_elyf:1b}]
 # Tableau à droite tournant (lobby) + reconstruction des ajouts du spawn s'ils ont été effacés
-execute if score $setup mg.st matches 1 if score $state mg.st matches 0 if score $sb mg.st matches 1 run function mg:hall/board_tick
-execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block -16 64 15 minecraft:gold_block run function mg:hall/build
+execute if score $setup mg.st matches 1 if score $state mg.st matches 0 if score $sbm mg.st matches 0 run function mg:hall/board_tick
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 5 run function mg:sb/auto
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block -9 64 27 minecraft:gold_block run function mg:hall/build
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 12 run function mg:hall/t3_tick
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 24 63 19 minecraft:gold_block run function mg:lobby/food_build
 execute if score $setup mg.st matches 1 if entity @a[x=-75,y=55,z=-75,dx=150,dy=60,dz=150] run function mg:coaster/tick
 execute if score $lan mg.t matches 15 run function mg:rank/tick
@@ -142,3 +144,5 @@ execute as @a[tag=mg.init,tag=!mg.play,tag=!mg.out,tag=!mg.surv] at @s run funct
 
 # Visiteurs de plots : confinés à la zone des plots
 execute if entity @a[tag=mg.visit] run function mg:plot/visit_guard
+execute if entity @a[tag=mg.sit] run function mg:lobby/sit/tick
+execute if score $lan mg.t matches 30 unless entity @a[tag=mg.sit] if entity @e[type=minecraft:item_display,tag=mg.seat,limit=1] run kill @e[type=minecraft:item_display,tag=mg.seat]

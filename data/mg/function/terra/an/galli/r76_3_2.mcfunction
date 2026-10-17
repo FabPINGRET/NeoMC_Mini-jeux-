@@ -1,2 +1,2 @@
-tp @s ^0 ^1.5267 ^0.4729 ~-91.9891 -89.582
-data merge entity @s {start_interpolation:0,interpolation_duration:2,transformation:{left_rotation:[0f,0f,-0.6947f,0.7193f]}}
+tp @s ^0 ^1.5267 ^0.4729 ~88.0109 89.582
+data merge entity @s {start_interpolation:0,interpolation_duration:2,transformation:{left_rotation:[0f,0f,0.6947f,0.7193f]}}
