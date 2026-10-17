@@ -5,11 +5,19 @@ scoreboard objectives add mg.dfl dummy
 scoreboard objectives add mg.dtr dummy
 scoreboard objectives add mg.dtt dummy [{"text":"⬇ Dropper : essais","color":"aqua","bold":true}]
 scoreboard objectives add mg.dsb dummy
+scoreboard objectives add mg.dok dummy [{"text":"⬇ Dropper : niveaux réussis","color":"aqua","bold":true}]
+scoreboard objectives add mg.dsk dummy
+scoreboard objectives add mg.dkc dummy
+scoreboard objectives add mg.dku dummy
 tag @a remove mg.ddone
 scoreboard players set @a[tag=mg.play] mg.dlv 1
 scoreboard players set @a[tag=mg.play] mg.dfl 0
 scoreboard players set @a[tag=mg.play] mg.dtt 1
 scoreboard players set @a[tag=mg.play] mg.dtr 1
+scoreboard players set @a[tag=mg.play] mg.dok 0
+scoreboard players set @a[tag=mg.play] mg.dsk 0
+scoreboard players set @a[tag=mg.play] mg.dkc 0
+scoreboard players set @a[tag=mg.play] mg.dku 0
 scoreboard players set $dat mg.st 0
 scoreboard players set #k10 mg.st 10
 scoreboard players set #k20 mg.st 20

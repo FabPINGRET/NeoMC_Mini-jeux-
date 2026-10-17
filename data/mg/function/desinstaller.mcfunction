@@ -40,6 +40,10 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.dku
+scoreboard objectives remove mg.dkc
+scoreboard objectives remove mg.dsk
+scoreboard objectives remove mg.dok
 scoreboard objectives remove mg.lsc
 scoreboard objectives remove mg.lsn
 schedule clear mg:maze/build_step
