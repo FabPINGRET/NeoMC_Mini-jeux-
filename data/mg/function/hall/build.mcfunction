@@ -12,6 +12,10 @@ execute unless data storage mg:hall v15 run function mg:hall/clear_old
 
 # terrain des versions précédentes rendu à la pelouse, puis l'allée et ses deux rangées de stands
 fill -60 64 15 -6 84 36 minecraft:air
+fill -61 73 14 -11 73 14 minecraft:air replace minecraft:dark_oak_slab
+fill -61 73 37 -11 73 37 minecraft:air replace minecraft:dark_oak_slab
+fill -61 73 14 -61 73 37 minecraft:air replace minecraft:dark_oak_slab
+fill -11 73 14 -11 73 37 minecraft:air replace minecraft:dark_oak_slab
 fill -60 62 15 -6 62 36 minecraft:dirt
 fill -60 63 15 -6 63 36 minecraft:grass_block
 fill -59 63 23 -6 63 27 minecraft:dirt_path
@@ -356,6 +360,281 @@ fill -15 65 22 -15 66 22 minecraft:spruce_fence
 setblock -15 64 28 minecraft:spruce_planks
 fill -15 65 28 -15 66 28 minecraft:spruce_fence
 
+# Décor : arches d'entrée (est) et de sortie (ouest)
+fill -12 64 22 -12 68 22 minecraft:stripped_spruce_log
+fill -12 64 28 -12 68 28 minecraft:stripped_spruce_log
+fill -12 69 22 -12 69 28 minecraft:spruce_planks
+fill -12 70 22 -12 70 28 minecraft:spruce_slab[type=bottom]
+setblock -12 70 25 minecraft:spruce_planks
+setblock -12 71 25 minecraft:lantern
+setblock -12 68 24 minecraft:lantern[hanging=true]
+setblock -12 68 26 minecraft:lantern[hanging=true]
+fill -60 64 22 -60 68 22 minecraft:stripped_spruce_log
+fill -60 64 28 -60 68 28 minecraft:stripped_spruce_log
+fill -60 69 22 -60 69 28 minecraft:spruce_planks
+fill -60 70 22 -60 70 28 minecraft:spruce_slab[type=bottom]
+setblock -60 70 25 minecraft:spruce_planks
+setblock -60 71 25 minecraft:lantern
+setblock -60 68 24 minecraft:lantern[hanging=true]
+setblock -60 68 26 minecraft:lantern[hanging=true]
+# Décor : arbres de part et d'autre (chênes et bouleaux)
+fill -58 67 14 -54 68 18 minecraft:oak_leaves[persistent=true]
+fill -58 67 14 -58 68 14 minecraft:air
+fill -54 67 14 -54 68 14 minecraft:air
+fill -58 67 18 -58 68 18 minecraft:air
+fill -54 67 18 -54 68 18 minecraft:air
+fill -57 69 16 -55 69 16 minecraft:oak_leaves[persistent=true]
+fill -56 69 15 -56 69 17 minecraft:oak_leaves[persistent=true]
+setblock -56 70 16 minecraft:oak_leaves[persistent=true]
+fill -56 64 16 -56 69 16 minecraft:oak_log
+fill -52 67 32 -48 68 36 minecraft:birch_leaves[persistent=true]
+fill -52 67 32 -52 68 32 minecraft:air
+fill -48 67 32 -48 68 32 minecraft:air
+fill -52 67 36 -52 68 36 minecraft:air
+fill -48 67 36 -48 68 36 minecraft:air
+fill -51 69 34 -49 69 34 minecraft:birch_leaves[persistent=true]
+fill -50 69 33 -50 69 35 minecraft:birch_leaves[persistent=true]
+setblock -50 70 34 minecraft:birch_leaves[persistent=true]
+fill -50 64 34 -50 69 34 minecraft:birch_log
+fill -46 67 14 -42 68 18 minecraft:birch_leaves[persistent=true]
+fill -46 67 14 -46 68 14 minecraft:air
+fill -42 67 14 -42 68 14 minecraft:air
+fill -46 67 18 -46 68 18 minecraft:air
+fill -42 67 18 -42 68 18 minecraft:air
+fill -45 69 16 -43 69 16 minecraft:birch_leaves[persistent=true]
+fill -44 69 15 -44 69 17 minecraft:birch_leaves[persistent=true]
+setblock -44 70 16 minecraft:birch_leaves[persistent=true]
+fill -44 64 16 -44 69 16 minecraft:birch_log
+fill -40 67 32 -36 68 36 minecraft:oak_leaves[persistent=true]
+fill -40 67 32 -40 68 32 minecraft:air
+fill -36 67 32 -36 68 32 minecraft:air
+fill -40 67 36 -40 68 36 minecraft:air
+fill -36 67 36 -36 68 36 minecraft:air
+fill -39 69 34 -37 69 34 minecraft:oak_leaves[persistent=true]
+fill -38 69 33 -38 69 35 minecraft:oak_leaves[persistent=true]
+setblock -38 70 34 minecraft:oak_leaves[persistent=true]
+fill -38 64 34 -38 69 34 minecraft:oak_log
+fill -34 67 14 -30 68 18 minecraft:oak_leaves[persistent=true]
+fill -34 67 14 -34 68 14 minecraft:air
+fill -30 67 14 -30 68 14 minecraft:air
+fill -34 67 18 -34 68 18 minecraft:air
+fill -30 67 18 -30 68 18 minecraft:air
+fill -33 69 16 -31 69 16 minecraft:oak_leaves[persistent=true]
+fill -32 69 15 -32 69 17 minecraft:oak_leaves[persistent=true]
+setblock -32 70 16 minecraft:oak_leaves[persistent=true]
+fill -32 64 16 -32 69 16 minecraft:oak_log
+fill -28 67 32 -24 68 36 minecraft:birch_leaves[persistent=true]
+fill -28 67 32 -28 68 32 minecraft:air
+fill -24 67 32 -24 68 32 minecraft:air
+fill -28 67 36 -28 68 36 minecraft:air
+fill -24 67 36 -24 68 36 minecraft:air
+fill -27 69 34 -25 69 34 minecraft:birch_leaves[persistent=true]
+fill -26 69 33 -26 69 35 minecraft:birch_leaves[persistent=true]
+setblock -26 70 34 minecraft:birch_leaves[persistent=true]
+fill -26 64 34 -26 69 34 minecraft:birch_log
+fill -22 67 14 -18 68 18 minecraft:birch_leaves[persistent=true]
+fill -22 67 14 -22 68 14 minecraft:air
+fill -18 67 14 -18 68 14 minecraft:air
+fill -22 67 18 -22 68 18 minecraft:air
+fill -18 67 18 -18 68 18 minecraft:air
+fill -21 69 16 -19 69 16 minecraft:birch_leaves[persistent=true]
+fill -20 69 15 -20 69 17 minecraft:birch_leaves[persistent=true]
+setblock -20 70 16 minecraft:birch_leaves[persistent=true]
+fill -20 64 16 -20 69 16 minecraft:birch_log
+fill -16 67 32 -12 68 36 minecraft:oak_leaves[persistent=true]
+fill -16 67 32 -16 68 32 minecraft:air
+fill -12 67 32 -12 68 32 minecraft:air
+fill -16 67 36 -16 68 36 minecraft:air
+fill -12 67 36 -12 68 36 minecraft:air
+fill -15 69 34 -13 69 34 minecraft:oak_leaves[persistent=true]
+fill -14 69 33 -14 69 35 minecraft:oak_leaves[persistent=true]
+setblock -14 70 34 minecraft:oak_leaves[persistent=true]
+fill -14 64 34 -14 69 34 minecraft:oak_log
+# Décor : massifs fleuris le long de la bordure, herbes et buissons
+setblock -60 64 18 minecraft:dandelion
+setblock -59 64 18 minecraft:oxeye_daisy
+setblock -58 64 18 minecraft:lily_of_the_valley
+setblock -57 64 18 minecraft:azalea
+setblock -56 64 18 minecraft:allium
+setblock -55 64 18 minecraft:lily_of_the_valley
+setblock -54 64 18 minecraft:red_tulip
+setblock -53 64 18 minecraft:lily_of_the_valley
+setblock -52 64 18 minecraft:white_tulip
+setblock -51 64 18 minecraft:flowering_azalea
+setblock -50 64 18 minecraft:allium
+setblock -49 64 18 minecraft:poppy
+setblock -48 64 18 minecraft:dandelion
+setblock -47 64 18 minecraft:dandelion
+setblock -46 64 18 minecraft:azure_bluet
+setblock -45 64 18 minecraft:azalea
+setblock -44 64 18 minecraft:white_tulip
+setblock -43 64 18 minecraft:poppy
+setblock -42 64 18 minecraft:white_tulip
+setblock -41 64 18 minecraft:oxeye_daisy
+setblock -40 64 18 minecraft:allium
+setblock -39 64 18 minecraft:flowering_azalea
+setblock -38 64 18 minecraft:azure_bluet
+setblock -37 64 18 minecraft:oxeye_daisy
+setblock -36 64 18 minecraft:oxeye_daisy
+setblock -35 64 18 minecraft:red_tulip
+setblock -34 64 18 minecraft:lily_of_the_valley
+setblock -33 64 18 minecraft:azalea
+setblock -32 64 18 minecraft:oxeye_daisy
+setblock -31 64 18 minecraft:dandelion
+setblock -30 64 18 minecraft:lily_of_the_valley
+setblock -29 64 18 minecraft:lily_of_the_valley
+setblock -28 64 18 minecraft:azure_bluet
+setblock -27 64 18 minecraft:flowering_azalea
+setblock -26 64 18 minecraft:white_tulip
+setblock -25 64 18 minecraft:cornflower
+setblock -24 64 18 minecraft:azure_bluet
+setblock -23 64 18 minecraft:poppy
+setblock -22 64 18 minecraft:oxeye_daisy
+setblock -21 64 18 minecraft:flowering_azalea
+setblock -20 64 18 minecraft:white_tulip
+setblock -19 64 18 minecraft:red_tulip
+setblock -18 64 18 minecraft:dandelion
+setblock -17 64 18 minecraft:red_tulip
+setblock -16 64 18 minecraft:lily_of_the_valley
+setblock -15 64 18 minecraft:flowering_azalea
+setblock -14 64 18 minecraft:dandelion
+setblock -13 64 18 minecraft:red_tulip
+setblock -12 64 18 minecraft:lily_of_the_valley
+setblock -60 64 32 minecraft:white_tulip
+setblock -59 64 32 minecraft:red_tulip
+setblock -58 64 32 minecraft:lily_of_the_valley
+setblock -57 64 32 minecraft:flowering_azalea
+setblock -56 64 32 minecraft:red_tulip
+setblock -55 64 32 minecraft:white_tulip
+setblock -54 64 32 minecraft:lily_of_the_valley
+setblock -53 64 32 minecraft:lily_of_the_valley
+setblock -52 64 32 minecraft:poppy
+setblock -51 64 32 minecraft:azalea
+setblock -50 64 32 minecraft:cornflower
+setblock -49 64 32 minecraft:poppy
+setblock -48 64 32 minecraft:lily_of_the_valley
+setblock -47 64 32 minecraft:dandelion
+setblock -46 64 32 minecraft:red_tulip
+setblock -45 64 32 minecraft:flowering_azalea
+setblock -44 64 32 minecraft:cornflower
+setblock -43 64 32 minecraft:white_tulip
+setblock -42 64 32 minecraft:allium
+setblock -41 64 32 minecraft:dandelion
+setblock -40 64 32 minecraft:white_tulip
+setblock -39 64 32 minecraft:flowering_azalea
+setblock -38 64 32 minecraft:lily_of_the_valley
+setblock -37 64 32 minecraft:azure_bluet
+setblock -36 64 32 minecraft:lily_of_the_valley
+setblock -35 64 32 minecraft:red_tulip
+setblock -34 64 32 minecraft:azure_bluet
+setblock -33 64 32 minecraft:flowering_azalea
+setblock -32 64 32 minecraft:red_tulip
+setblock -31 64 32 minecraft:red_tulip
+setblock -30 64 32 minecraft:allium
+setblock -29 64 32 minecraft:azure_bluet
+setblock -28 64 32 minecraft:azure_bluet
+setblock -27 64 32 minecraft:azalea
+setblock -26 64 32 minecraft:poppy
+setblock -25 64 32 minecraft:cornflower
+setblock -24 64 32 minecraft:white_tulip
+setblock -23 64 32 minecraft:lily_of_the_valley
+setblock -22 64 32 minecraft:white_tulip
+setblock -21 64 32 minecraft:flowering_azalea
+setblock -20 64 32 minecraft:allium
+setblock -19 64 32 minecraft:azure_bluet
+setblock -18 64 32 minecraft:white_tulip
+setblock -17 64 32 minecraft:white_tulip
+setblock -16 64 32 minecraft:lily_of_the_valley
+setblock -15 64 32 minecraft:flowering_azalea
+setblock -14 64 32 minecraft:red_tulip
+setblock -13 64 32 minecraft:lily_of_the_valley
+setblock -12 64 32 minecraft:poppy
+execute if block -60 64 15 minecraft:air if block -60 63 15 minecraft:grass_block run setblock -60 64 15 minecraft:cornflower
+execute if block -46 64 15 minecraft:air if block -46 63 15 minecraft:grass_block run setblock -46 64 15 minecraft:short_grass
+execute if block -45 64 15 minecraft:air if block -45 63 15 minecraft:grass_block run setblock -45 64 15 minecraft:poppy
+execute if block -42 64 15 minecraft:air if block -42 63 15 minecraft:grass_block run setblock -42 64 15 minecraft:short_grass
+execute if block -35 64 15 minecraft:air if block -35 63 15 minecraft:grass_block run setblock -35 64 15 minecraft:fern
+execute if block -26 64 15 minecraft:air if block -26 63 15 minecraft:grass_block run setblock -26 64 15 minecraft:dandelion
+execute if block -23 64 15 minecraft:air if block -23 63 15 minecraft:grass_block run setblock -23 64 15 minecraft:cornflower
+execute if block -22 64 15 minecraft:air if block -22 63 15 minecraft:grass_block run setblock -22 64 15 minecraft:short_grass
+execute if block -14 64 15 minecraft:air if block -14 63 15 minecraft:grass_block run setblock -14 64 15 minecraft:short_grass
+execute if block -12 64 15 minecraft:air if block -12 63 15 minecraft:grass_block run setblock -12 64 15 minecraft:fern
+execute if block -8 64 15 minecraft:air if block -8 63 15 minecraft:grass_block run setblock -8 64 15 minecraft:poppy
+execute if block -62 64 16 minecraft:air if block -62 63 16 minecraft:grass_block run setblock -62 64 16 minecraft:poppy
+execute if block -59 64 16 minecraft:air if block -59 63 16 minecraft:grass_block run setblock -59 64 16 minecraft:dandelion
+execute if block -52 64 16 minecraft:air if block -52 63 16 minecraft:grass_block run setblock -52 64 16 minecraft:cornflower
+execute if block -50 64 16 minecraft:air if block -50 63 16 minecraft:grass_block run setblock -50 64 16 minecraft:dandelion
+execute if block -48 64 16 minecraft:air if block -48 63 16 minecraft:grass_block run setblock -48 64 16 minecraft:cornflower
+execute if block -44 64 16 minecraft:air if block -44 63 16 minecraft:grass_block run setblock -44 64 16 minecraft:dandelion
+execute if block -40 64 16 minecraft:air if block -40 63 16 minecraft:grass_block run setblock -40 64 16 minecraft:cornflower
+execute if block -35 64 16 minecraft:air if block -35 63 16 minecraft:grass_block run setblock -35 64 16 minecraft:fern
+execute if block -33 64 16 minecraft:air if block -33 63 16 minecraft:grass_block run setblock -33 64 16 minecraft:poppy
+execute if block -26 64 16 minecraft:air if block -26 63 16 minecraft:grass_block run setblock -26 64 16 minecraft:dandelion
+execute if block -12 64 16 minecraft:air if block -12 63 16 minecraft:grass_block run setblock -12 64 16 minecraft:dandelion
+execute if block -59 64 17 minecraft:air if block -59 63 17 minecraft:grass_block run setblock -59 64 17 minecraft:fern
+execute if block -58 64 17 minecraft:air if block -58 63 17 minecraft:grass_block run setblock -58 64 17 minecraft:poppy
+execute if block -57 64 17 minecraft:air if block -57 63 17 minecraft:grass_block run setblock -57 64 17 minecraft:cornflower
+execute if block -56 64 17 minecraft:air if block -56 63 17 minecraft:grass_block run setblock -56 64 17 minecraft:fern
+execute if block -46 64 17 minecraft:air if block -46 63 17 minecraft:grass_block run setblock -46 64 17 minecraft:poppy
+execute if block -41 64 17 minecraft:air if block -41 63 17 minecraft:grass_block run setblock -41 64 17 minecraft:short_grass
+execute if block -40 64 17 minecraft:air if block -40 63 17 minecraft:grass_block run setblock -40 64 17 minecraft:short_grass
+execute if block -39 64 17 minecraft:air if block -39 63 17 minecraft:grass_block run setblock -39 64 17 minecraft:dandelion
+execute if block -16 64 17 minecraft:air if block -16 63 17 minecraft:grass_block run setblock -16 64 17 minecraft:cornflower
+execute if block -8 64 17 minecraft:air if block -8 63 17 minecraft:grass_block run setblock -8 64 17 minecraft:fern
+execute if block -6 64 17 minecraft:air if block -6 63 17 minecraft:grass_block run setblock -6 64 17 minecraft:short_grass
+execute if block -63 64 33 minecraft:air if block -63 63 33 minecraft:grass_block run setblock -63 64 33 minecraft:short_grass
+execute if block -62 64 33 minecraft:air if block -62 63 33 minecraft:grass_block run setblock -62 64 33 minecraft:short_grass
+execute if block -56 64 33 minecraft:air if block -56 63 33 minecraft:grass_block run setblock -56 64 33 minecraft:poppy
+execute if block -51 64 33 minecraft:air if block -51 63 33 minecraft:grass_block run setblock -51 64 33 minecraft:dandelion
+execute if block -50 64 33 minecraft:air if block -50 63 33 minecraft:grass_block run setblock -50 64 33 minecraft:cornflower
+execute if block -45 64 33 minecraft:air if block -45 63 33 minecraft:grass_block run setblock -45 64 33 minecraft:short_grass
+execute if block -44 64 33 minecraft:air if block -44 63 33 minecraft:grass_block run setblock -44 64 33 minecraft:dandelion
+execute if block -28 64 33 minecraft:air if block -28 63 33 minecraft:grass_block run setblock -28 64 33 minecraft:short_grass
+execute if block -6 64 33 minecraft:air if block -6 63 33 minecraft:grass_block run setblock -6 64 33 minecraft:short_grass
+execute if block -57 64 34 minecraft:air if block -57 63 34 minecraft:grass_block run setblock -57 64 34 minecraft:fern
+execute if block -53 64 34 minecraft:air if block -53 63 34 minecraft:grass_block run setblock -53 64 34 minecraft:short_grass
+execute if block -48 64 34 minecraft:air if block -48 63 34 minecraft:grass_block run setblock -48 64 34 minecraft:poppy
+execute if block -43 64 34 minecraft:air if block -43 63 34 minecraft:grass_block run setblock -43 64 34 minecraft:dandelion
+execute if block -42 64 34 minecraft:air if block -42 63 34 minecraft:grass_block run setblock -42 64 34 minecraft:short_grass
+execute if block -38 64 34 minecraft:air if block -38 63 34 minecraft:grass_block run setblock -38 64 34 minecraft:dandelion
+execute if block -32 64 34 minecraft:air if block -32 63 34 minecraft:grass_block run setblock -32 64 34 minecraft:poppy
+execute if block -29 64 34 minecraft:air if block -29 63 34 minecraft:grass_block run setblock -29 64 34 minecraft:dandelion
+execute if block -20 64 34 minecraft:air if block -20 63 34 minecraft:grass_block run setblock -20 64 34 minecraft:fern
+execute if block -18 64 34 minecraft:air if block -18 63 34 minecraft:grass_block run setblock -18 64 34 minecraft:short_grass
+execute if block -14 64 34 minecraft:air if block -14 63 34 minecraft:grass_block run setblock -14 64 34 minecraft:fern
+execute if block -13 64 34 minecraft:air if block -13 63 34 minecraft:grass_block run setblock -13 64 34 minecraft:fern
+execute if block -11 64 34 minecraft:air if block -11 63 34 minecraft:grass_block run setblock -11 64 34 minecraft:dandelion
+execute if block -9 64 34 minecraft:air if block -9 63 34 minecraft:grass_block run setblock -9 64 34 minecraft:fern
+execute if block -58 64 35 minecraft:air if block -58 63 35 minecraft:grass_block run setblock -58 64 35 minecraft:dandelion
+execute if block -52 64 35 minecraft:air if block -52 63 35 minecraft:grass_block run setblock -52 64 35 minecraft:short_grass
+execute if block -47 64 35 minecraft:air if block -47 63 35 minecraft:grass_block run setblock -47 64 35 minecraft:poppy
+execute if block -40 64 35 minecraft:air if block -40 63 35 minecraft:grass_block run setblock -40 64 35 minecraft:poppy
+execute if block -32 64 35 minecraft:air if block -32 63 35 minecraft:grass_block run setblock -32 64 35 minecraft:cornflower
+execute if block -27 64 35 minecraft:air if block -27 63 35 minecraft:grass_block run setblock -27 64 35 minecraft:fern
+execute if block -24 64 35 minecraft:air if block -24 63 35 minecraft:grass_block run setblock -24 64 35 minecraft:cornflower
+execute if block -21 64 35 minecraft:air if block -21 63 35 minecraft:grass_block run setblock -21 64 35 minecraft:short_grass
+execute if block -13 64 35 minecraft:air if block -13 63 35 minecraft:grass_block run setblock -13 64 35 minecraft:poppy
+execute if block -60 64 36 minecraft:air if block -60 63 36 minecraft:grass_block run setblock -60 64 36 minecraft:dandelion
+execute if block -58 64 36 minecraft:air if block -58 63 36 minecraft:grass_block run setblock -58 64 36 minecraft:dandelion
+execute if block -51 64 36 minecraft:air if block -51 63 36 minecraft:grass_block run setblock -51 64 36 minecraft:short_grass
+execute if block -37 64 36 minecraft:air if block -37 63 36 minecraft:grass_block run setblock -37 64 36 minecraft:short_grass
+execute if block -32 64 36 minecraft:air if block -32 63 36 minecraft:grass_block run setblock -32 64 36 minecraft:poppy
+execute if block -28 64 36 minecraft:air if block -28 63 36 minecraft:grass_block run setblock -28 64 36 minecraft:fern
+execute if block -26 64 36 minecraft:air if block -26 63 36 minecraft:grass_block run setblock -26 64 36 minecraft:dandelion
+execute if block -14 64 36 minecraft:air if block -14 63 36 minecraft:grass_block run setblock -14 64 36 minecraft:poppy
+execute if block -13 64 36 minecraft:air if block -13 63 36 minecraft:grass_block run setblock -13 64 36 minecraft:poppy
+# Décor : réverbères et bancs de la place d'entrée
+fill -11 64 19 -11 66 19 minecraft:dark_oak_fence
+setblock -11 67 19 minecraft:lantern
+fill -6 64 19 -6 66 19 minecraft:dark_oak_fence
+setblock -6 67 19 minecraft:lantern
+fill -11 64 31 -11 66 31 minecraft:dark_oak_fence
+setblock -11 67 31 minecraft:lantern
+fill -6 64 31 -6 66 31 minecraft:dark_oak_fence
+setblock -6 67 31 minecraft:lantern
+fill -10 64 19 -7 64 19 minecraft:spruce_stairs[facing=north]
+fill -10 64 31 -7 64 31 minecraft:spruce_stairs[facing=south]
+
 # Place d'entrée (est) : piédestaux d'honneur
 setblock -9 64 20 minecraft:emerald_block
 setblock -9 64 25 minecraft:gold_block
@@ -536,3 +815,4 @@ data modify storage mg:hall v17 set value 1b
 data modify storage mg:hall v18 set value 1b
 data modify storage mg:hall v19 set value 1b
 data modify storage mg:hall v20 set value 1b
+data modify storage mg:hall v21 set value 1b
