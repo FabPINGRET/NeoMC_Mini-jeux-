@@ -144,3 +144,5 @@ execute as @a[tag=mg.init,tag=!mg.play,tag=!mg.out,tag=!mg.surv] at @s run funct
 
 # Visiteurs de plots : confinés à la zone des plots
 execute if entity @a[tag=mg.visit] run function mg:plot/visit_guard
+execute if entity @a[tag=mg.sit] run function mg:lobby/sit/tick
+execute if score $lan mg.t matches 30 unless entity @a[tag=mg.sit] if entity @e[type=minecraft:item_display,tag=mg.seat,limit=1] run kill @e[type=minecraft:item_display,tag=mg.seat]

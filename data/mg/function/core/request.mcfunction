@@ -141,6 +141,7 @@ execute as @a[tag=mg.play,tag=mg.visit] run function mg:plot/leave_game
 # Activités du spawn : un participant en kart libre ou en élytres en sort sur place (avant la téléportation de prepare)
 execute as @a[tag=mg.play,tag=mg.lk] run function mg:lobkart/leave
 execute as @a[tag=mg.play,tag=mg.ely] run function mg:elytra/stop_quiet
+execute as @a[tag=mg.play,tag=mg.sit] run function mg:lobby/sit/stand
 execute as @a[tag=mg.play,tag=mg.elyf] run function mg:elytra/free_stop
 
 # État : compte à rebours de 10 s
