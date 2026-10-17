@@ -391,7 +391,7 @@ patch('core/load', 'scoreboard objectives add mg.bw trigger', ['scoreboard objec
 patch('desinstaller', 'scoreboard objectives remove mg.bw', ['schedule clear mg:tel/plots', 'scoreboard objectives remove mg.tel', 'scoreboard objectives remove mg.ti',
                                                              'scoreboard objectives remove mg.tc', 'scoreboard objectives remove mg.tx',
                                                              'scoreboard objectives remove mg.tz', 'scoreboard objectives remove mg.tpt'])
-# menu : catégorie Fête et création (généré par gen_variants : on ajoute au tableau CATS via le dialog directement)
+# menu : catégorie Fête et création (généré par gen_variants : les catégories sont construites par build() de var_cats.py ; on ajoute via le dialog directement)
 p = os.path.join(D, 'dialog/cat_fete.json')
 d = json.load(open(p, encoding='utf-8'))
 if not any(a.get('action', {}).get('command') == f'trigger mg.go set {GID}' for a in d['actions']):

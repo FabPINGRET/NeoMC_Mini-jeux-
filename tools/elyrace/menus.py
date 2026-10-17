@@ -6,12 +6,12 @@ import json
 
 import game as G
 
-TITLE = "🪽 Course élytres"      # titre court, identique a SHORT_TITLE de tools/variantes/gen_variants.py (qui le reecrit sinon)
+TITLE = "🪽 Course élytres"      # titre court, identique a SHORT_TITLE de tools/variantes/var_stars.py (que gen_variants.py reecrit sinon)
 RANDOM_TIP = "Un parcours tiré au hasard parmi ceux qui sont construits."
 BACK_OPT = 42                     # mg.opt de la categorie « Courses et vol » (menu en arbre de gen_variants.py)
 
 # Valeurs de /trigger mg.xs (contre-la-montre solo, ouvert a tous) : 10 + NUM = solo sur le parcours NUM. Aucune etiquette de ces boutons
-# ne commence par « : gen_variants.py (is_back) retire de sub_elyrace tout bouton dont le libelle commence ainsi.
+# ne commence par « : var_menus.py (is_back) retire de sub_elyrace tout bouton dont le libelle commence ainsi.
 SOLO_MENU, SOLO_QUIT, SOLO_RECORDS, SOLO_STOP, SOLO_RANDOM = 1, 2, 3, 4, 10     # SOLO_STOP : un admin arrete tous les solos (pas de bouton)
 SOLO_RETRY = 5          # [Rejouer] du message d'arrivee (phase 4 du solo) : relance le meme parcours, sans repasser par le lobby
 SOLO_LOBBY = 6          # [Retour au lobby] du meme message : arret silencieux en phase 4 seulement (un vieux lien du chat n'abandonne pas une tentative suivante)
@@ -34,7 +34,7 @@ def route_id(spec):
 
 
 def star_label(name, n, col):
-    """Libelle d'une carte : nom puis difficulte (★ pleines, ☆ vides sur 4), meme forme que gen_variants.star_label (a garder identique :
+    """Libelle d'une carte : nom puis difficulte (★ pleines, ☆ vides sur 4), meme forme que var_stars.star_label (a garder identique :
     gen_variants reecrit tout bouton `trigger mg.go set <id>` de NATIVE, et doit retrouver ce que ce module produit)."""
     return [{"text": name + " ", "color": col}, {"text": "★" * n, "color": "gold"}, {"text": "☆" * (4 - n), "color": "dark_gray"}]
 
