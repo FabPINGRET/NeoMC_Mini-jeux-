@@ -19,3 +19,8 @@ execute as @a[tag=mg.xso,scores={mg.ths=1..}] run function mg:lobby/theme/stew_c
 execute as @a[tag=mg.lk,scores={mg.ths=1..}] run function mg:lobby/theme/stew_clear
 execute as @a[tag=mg.inplot,scores={mg.ths=1..}] run function mg:lobby/theme/stew_clear
 execute as @a[tag=mg.visit,scores={mg.ths=1..}] run function mg:lobby/theme/stew_clear
+execute as @a[tag=mg.pkr,scores={mg.ths=1..}] run function mg:lobby/theme/stew_clear
+# lapins : tous marqués orphelins, ceux des joueurs lapin sont gardés (stew_rabbit_keep), les autres tués
+tag @e[type=minecraft:rabbit,tag=mg.thbun] add mg.thbo
+execute as @a[tag=mg.thbun] run function mg:lobby/theme/stew_rabbit_keep
+kill @e[type=minecraft:rabbit,tag=mg.thbo]
