@@ -59,14 +59,15 @@ GAMES = [  # clé, libellé, couleur, plages de $game
     ('bman', '💣 Bomberman', 'red', [(239, 240)]),
     ('maze', '🌀 Labyrinthe géant', 'light_purple', [(241, 241)]),
 ]
-# Hall v16 : « Jardin des champions » à ciel ouvert au sud-ouest de la place (x -60..-12, z 15..36, sol y 63) : pas de
-# bâtiment, des haies basses (1 bloc) qui forment 45 petits stands en 3 rangées le long de 2 allées ouvertes à l'est, chacun
-# avec son podium et le top 3 du jeu. Plaza d'entrée à l'est (x -11..-6) avec les piédestaux d'honneur.
-HX0, HX1, HZ0, HZ1 = -60, -12, 15, 36      # haie du pourtour comprise
-BX0, BP, NB = -59, 3, 15                   # 1er stand en x -59, un stand tous les 3 blocs (2 d'intérieur + haie), 15 par rangée
+# Hall v18 : « Allée des champions » à ciel ouvert au sud-ouest de la place : une seule allée est-ouest (z 24..27) bordée
+# de chaque côté par une rangée de stands (22 par côté, 2 blocs chacun) : sol à la couleur du jeu, podium, top 3. Bordure
+# basse (1 bloc) autour, place d'entrée à l'est (x -11..-6) avec les piédestaux d'honneur.
+HX0, HX1, HZ0, HZ1 = -60, -12, 20, 31      # bordure comprise
+CX0, CZ0, CZ1 = -60, 15, 36                # zone dégagée (anciennes versions du hall)
+BX0, BP, NB = -59, 2, 22                   # 1er stand en x -59, un stand tous les 2 blocs, 22 par côté
 OLD = (-24, -6, 11, 25)                    # hall v14 (x1, x2, z1, z2), effacé une fois
-MARK = (-9, 64, 27)                        # piédestal du champion (bloc d'or) : témoin de présence
-VERSION = 17
+MARK = (-9, 64, 25)                        # piédestal du champion (bloc d'or) : témoin de présence
+VERSION = 18
 TR = 'transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[%sf,%sf,%sf]}'
 
 def W(name, lines):
@@ -88,7 +89,7 @@ W('objectives', ['# Objectifs des classements par jeu (généré par tools/hall/
     'scoreboard objectives add mg.genc dummy'])
 W('remove', ['# Désinstallation des classements et du hall'] +
   [f'scoreboard objectives remove mg.wg_{k}' for k, *_ in GAMES] +
-  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall t3', 'data remove storage mg:hall t3x', 'data remove storage mg:hall v15', 'data remove storage mg:hall v16', 'data remove storage mg:hall v17', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8', 'data remove storage mg:hall v9', 'data remove storage mg:hall v10', 'data remove storage mg:hall v11', 'data remove storage mg:hall v12', 'data remove storage mg:hall v13', 'data remove storage mg:hall v14',
+  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall t3', 'data remove storage mg:hall t3x', 'data remove storage mg:hall v15', 'data remove storage mg:hall v16', 'data remove storage mg:hall v17', 'data remove storage mg:hall v18', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8', 'data remove storage mg:hall v9', 'data remove storage mg:hall v10', 'data remove storage mg:hall v11', 'data remove storage mg:hall v12', 'data remove storage mg:hall v13', 'data remove storage mg:hall v14',
    'scoreboard objectives remove mg.gen', 'scoreboard objectives remove mg.lvl', 'scoreboard objectives remove mg.genc'])
 
 # ---------------------------------------------------------------- crédit des vainqueurs
@@ -151,15 +152,15 @@ for i, (obj, _) in enumerate(BOARDS, 1):
 rn.append('function mg:hall/rot_next')
 W('rot_next', rn)
 
-# ---------------------------------------------------------------- construction du hall (v16 : à ciel ouvert)
+# ---------------------------------------------------------------- construction du hall (v18 : une allée, les stands de chaque côté)
 CONC = {'gold': 'yellow', 'aqua': 'light_blue', 'red': 'red', 'white': 'white', 'dark_green': 'green', 'yellow': 'yellow',
         'light_purple': 'magenta', 'gray': 'gray', 'green': 'lime'}
-# rangées : (z intérieur 1, z intérieur 2, z du fond, sens de l'ouverture +1 vers le sud / -1 vers le nord)
-ROWS = [(16, 19, 16, 1), (23, 26, 26, -1), (28, 31, 28, 1)]
-STANDS = [(BX0 + BP * i, r) for r in ROWS for i in range(NB)]
-assert len(GAMES) <= len(STANDS), f'agrandir le jardin : {len(GAMES)} jeux pour {len(STANDS)} stands'
-x1h = HX1 - 1
-b = ['# Jardin des champions (Hall des scores v16, à ciel ouvert, sud-ouest de la place) : construction + top 3 (généré par tools/hall/gen_hall.py)',
+AZ1, AZ2 = 24, 27                          # allée (z)
+# côtés : (z intérieur 1, z intérieur 2, z du fond / podium, sens vers l'allée)
+SIDES = [(HZ0 + 1, AZ1 - 1, HZ0 + 1, 1), (AZ2 + 1, HZ1 - 1, HZ1 - 1, -1)]
+STANDS = [(BX0 + BP * i, sd) for sd in SIDES for i in range(NB)]
+assert len(GAMES) <= len(STANDS), f'allonger l\'allée : {len(GAMES)} jeux pour {len(STANDS)} stands'
+b = ['# Allée des champions (Hall des scores v18, à ciel ouvert, sud-ouest de la place) : construction + top 3 (généré par tools/hall/gen_hall.py)',
      '# Chunks pas encore chargés (démarrage du serveur) : on réessaie dans 1 s, 60 fois au plus',
      f'execute store success score #hl mg.st unless block {HX0 + 2} 300 {HZ0 + 3} minecraft:bedrock',
      f'execute if score #hl mg.st matches 1 store success score #hl mg.st unless block {HX1 - 2} 300 {HZ1 - 3} minecraft:bedrock',
@@ -170,24 +171,16 @@ b = ['# Jardin des champions (Hall des scores v16, à ciel ouvert, sud-ouest de 
      'scoreboard players set #hlr mg.st 0',
      'kill @e[tag=mg.hall]',
      'execute unless data storage mg:hall v15 run function mg:hall/clear_old', '',
-     '# terrain dégagé (arbres, ancienne fontaine, bâtiment v15), sol, haies basses',
-     f'fill {HX0} 64 {HZ0} {HX1 + 6} 84 {HZ1} minecraft:air',
-     f'fill {HX0} 62 {HZ0} {HX1} 62 {HZ1} minecraft:dirt',
-     f'fill {HX0} 63 {HZ0} {HX1} 63 {HZ1} minecraft:grass_block',
-     # allées (gravier clair, bordures) et plaza d'entrée à l'est
-     f'fill {HX0 + 1} 63 20 {HX1 + 6} 63 22 minecraft:dirt_path', f'fill {HX0 + 1} 63 32 {HX1 + 6} 63 34 minecraft:dirt_path',
-     f'fill {HX1 - 1} 63 20 {HX1 + 6} 63 34 minecraft:polished_andesite',
-     # haie du pourtour (2 blocs), ouverte à l'est sur les allées
+     '# terrain des versions précédentes rendu à la pelouse, puis l\'allée et ses deux rangées de stands',
+     f'fill {CX0} 64 {CZ0} {HX1 + 6} 84 {CZ1} minecraft:air',
+     f'fill {CX0} 62 {CZ0} {HX1 + 6} 62 {CZ1} minecraft:dirt',
+     f'fill {CX0} 63 {CZ0} {HX1 + 6} 63 {CZ1} minecraft:grass_block',
+     f'fill {HX0 + 1} 63 {AZ1} {HX1 + 6} 63 {AZ2} minecraft:dirt_path',
+     f'fill {HX1 - 1} 63 {HZ0} {HX1 + 6} 63 {HZ1} minecraft:polished_andesite',
+     # bordure basse (1 bloc) autour des stands, ouverte à l'est sur l'allée
      *[f'fill {xa} 64 {za} {xb} 64 {zb} minecraft:moss_block' for xa, za, xb, zb in ((HX0, HZ0, HX1, HZ0), (HX0, HZ1, HX1, HZ1), (HX0, HZ0, HX0, HZ1), (HX1, HZ0, HX1, HZ1))],
-     f'fill {HX1} 64 20 {HX1} 64 34 minecraft:air',
-     # haie du milieu (dos des rangées 2 et 3) et bas du pourtour sud
-     f'fill {HX0} 64 27 {HX1 - 2} 64 27 minecraft:moss_block',
-     f'fill {HX0} 64 35 {HX1} 64 35 minecraft:moss_carpet']
-for (x0, (za, zb, back, sgn)) in STANDS:
-    xw = x0 + 2                                         # haie entre deux stands
-    if xw <= x1h - 2:
-        b.append(f'fill {xw} 64 {za} {xw} 64 {zb} minecraft:moss_block')
-        b.append(f'setblock {xw} 65 {back} minecraft:lantern')
+     f'fill {HX1} 64 {AZ1} {HX1} 64 {AZ2} minecraft:air',
+     *[f'setblock {x} 65 {z} minecraft:lantern' for x in range(HX0, HX1 + 1, 6) for z in (HZ0, HZ1)]]
 for i, (k, l, c, _) in enumerate(GAMES):
     x0, (za, zb, back, sgn) = STANDS[i]
     cc = CONC.get(c, 'white')
@@ -195,19 +188,19 @@ for i, (k, l, c, _) in enumerate(GAMES):
           f'fill {x0} 64 {back} {x0 + 1} 64 {back} minecraft:polished_andesite',
           f'setblock {x0} 65 {back} minecraft:gold_block', f'setblock {x0 + 1} 65 {back} minecraft:iron_block',
           f'setblock {x0} 64 {back + sgn} minecraft:copper_block']
-b += ['', '# Plaza d\'entrée (est) : piédestaux d\'honneur',
-      f'setblock -9 64 22 minecraft:emerald_block', f'setblock {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block', f'setblock -9 64 32 minecraft:lapis_block',
+b += ['', '# Place d\'entrée (est) : piédestaux d\'honneur',
+      f'setblock -9 64 21 minecraft:emerald_block', f'setblock {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block', f'setblock -9 64 30 minecraft:lapis_block',
       '', '# Tampon de résolution des noms (invisible)',
-      f'summon minecraft:item_display -8.5 64.5 27.5 {{Tags:["mg.hall","mg.hallbuf"],item:{{id:"minecraft:paper"}},{TR % (0.001, 0.001, 0.001)}}}',
-      f'summon minecraft:text_display -8.5 71.2 27.5 {{Tags:["mg.hall"],billboard:"vertical",background:0,text:[{{"text":"🏆 Jardin des champions","color":"gold","bold":true}},{{"text":"\\n🥇 🥈 🥉 le top 3 de chaque jeu, dans les allées","color":"gray","bold":false}}],{TR % (1.6, 1.6, 1.6)}}}',
+      f'summon minecraft:item_display -8.5 64.5 25.5 {{Tags:["mg.hall","mg.hallbuf"],item:{{id:"minecraft:paper"}},{TR % (0.001, 0.001, 0.001)}}}',
+      f'summon minecraft:text_display -8.5 70.8 25.5 {{Tags:["mg.hall"],billboard:"vertical",background:0,text:[{{"text":"🏆 Allée des champions","color":"gold","bold":true}},{{"text":"\\n🥇 🥈 🥉 le top 3 de chaque jeu, de chaque côté de l\'allée","color":"gray","bold":false}}],{TR % (1.6, 1.6, 1.6)}}}',
       '', '# Piédestaux : objet qui tourne + plaque']
-peds = [(-8.5, 22.5, 'stp', '▶ Le plus assidu', 'green', 'clock'),
-        (-8.5, 27.5, 'wins', '👑 Champion des mini-jeux', 'gold', 'totem_of_undying'),
-        (-8.5, 32.5, 'ely', "🪽 Record petit parcours d'élytra", 'aqua', 'elytra')]
+peds = [(-8.5, 21.5, 'stp', '▶ Le plus assidu', 'green', 'clock'),
+        (-8.5, 25.5, 'wins', '👑 Champion des mini-jeux', 'gold', 'totem_of_undying'),
+        (-8.5, 30.5, 'ely', "🪽 Record petit parcours d'élytra", 'aqua', 'elytra')]
 plaques = [(x, 66.7, z, k, l, c, 0.9) for x, z, k, l, c, _ in peds]
-plaques.append((-8.5, 68.1, 32.5, 'ely2', "🪽 Record grand parcours d'élytra", 'light_purple', 0.9))
-plaques.append((-8.5, 69.5, 32.5, 'elyg', '🪽 Record Élytra : course', 'aqua', 0.9))
-plaques.append((-8.5, 69.4, 27.5, 'gen', '🏅 Meilleur niveau général', 'aqua', 1.1))
+plaques.append((-8.5, 68.1, 30.5, 'ely2', "🪽 Record grand parcours d'élytra", 'light_purple', 0.9))
+plaques.append((-8.5, 69.5, 30.5, 'elyg', '🪽 Record Élytra : course', 'aqua', 0.9))
+plaques.append((-8.5, 68.6, 25.5, 'gen', '🏅 Meilleur niveau général', 'aqua', 1.1))
 for x, z, k, l, c, it in peds:
     b.append(f'summon minecraft:item_display {x} 65.8 {z} {{Tags:["mg.hall","mg.lspin","mg.lbob"],billboard:"fixed",item:{{id:"minecraft:{it}"}},{TR % (0.8, 0.8, 0.8)}}}')
 b.append('')
@@ -217,17 +210,18 @@ for x, y, z, k, l, c, s in plaques:
     b.append(f'summon minecraft:text_display {x} {y} {z} {{Tags:["mg.hall","mg.h_{k}"],billboard:"vertical",line_width:{lw},text:[{{"text":"{q(l)}","color":"{c}","bold":true}},{{"text":"\\n— personne —","color":"dark_gray","bold":false}}],{TR % (s, s, s)}}}')
     b.append(f'execute if data storage mg:hall e.{k} run data modify entity @e[type=minecraft:text_display,tag=mg.h_{k},limit=1] text set from storage mg:hall e.{k}')
 b.append('')
-b.append('# Stands : top 3 de chaque jeu (texte par défaut, puis top 3 enregistré)')
+b.append('# Stands : top 3 de chaque jeu (texte par défaut, puis top 3 enregistré) ; un panneau sur deux plus haut, pour qu\'ils ne se touchent pas')
 for i, (k, l, c, _) in enumerate(GAMES):
     x0, (za, zb, back, sgn) = STANDS[i]
-    b.append(f'summon minecraft:text_display {x0 + 1.0} 66.4 {back + 0.5} {{Tags:["mg.hall","mg.h3_{k}"],billboard:"vertical",line_width:120,'
+    y = 66.3 if (i % NB) % 2 == 0 else 67.5
+    b.append(f'summon minecraft:text_display {x0 + 1.0} {y} {back + 0.5} {{Tags:["mg.hall","mg.h3_{k}"],billboard:"vertical",line_width:130,'
              f'text:[{{"text":"{q(l)}","color":"{c}","bold":true}},{{"text":"\\n— personne —","color":"dark_gray","bold":false}}],{TR % (0.5, 0.5, 0.5)}}}')
     b.append(f'execute if data storage mg:hall t3x.{k} run data modify entity @e[type=minecraft:text_display,tag=mg.h3_{k},limit=1] text set from storage mg:hall t3x.{k}')
 b += [f'data modify storage mg:hall v{v} set value 1b' for v in range(2, VERSION + 1)]
 W('build', b)
 ox1, ox2, oz1, oz2 = OLD
 W('clear_old', ['# Ancien hall (v14 : x %d..%d, z %d..%d) : ce qui dépasse du nouveau est rendu à la pelouse (une fois)' % OLD,
-                f'fill {ox1} 64 {oz1} {ox2} 79 {HZ0 - 1} minecraft:air', f'fill {ox1} 63 {oz1} {ox2} 63 {HZ0 - 1} minecraft:grass_block'])
+                f'fill {ox1} 64 {oz1} {ox2} 79 {CZ0 - 1} minecraft:air', f'fill {ox1} 63 {oz1} {ox2} 63 {CZ0 - 1} minecraft:grass_block'])
 
 # ---------------------------------------------------------------- top 3 par jeu (storage mg:hall t3.<clé> = [{u, n, s}], t3x.<clé> = texte)
 W('t3', ['# @s : sa place dans le top 3 du jeu $(k) (score dans $(obj)) — macro {k, obj, lbl, col}',
@@ -290,6 +284,8 @@ _sub('core/load', 'unless data storage mg:hall v9 run schedule function mg:hall/
 _sub('core/load', 'unless data storage mg:hall v14 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
 _sub('core/load', 'unless data storage mg:hall v15 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
 _sub('core/load', 'unless data storage mg:hall v16 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
+_sub('core/load', 'unless data storage mg:hall v17 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
+_sub('core/tick', 'unless block -9 64 27 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')
 _sub('core/tick', 'unless block -16 64 15 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')
 _sub('core/tick', 'unless block -58 64 26 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')
 _T3 = 'execute if score $setup mg.st matches 1 if score $lan mg.t matches 12 run function mg:hall/t3_tick'
