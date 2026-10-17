@@ -25,6 +25,8 @@ scoreboard players set $gtw mg.st 0
 execute unless data storage mg:rank rpfix run scoreboard players set $rp mg.st 1
 data modify storage mg:rank rpfix set value 1b
 scoreboard objectives add mg.t dummy
+scoreboard objectives add mg.svl dummy {"text":"⛏ Survie — niveau","color":"green"}
+scoreboard players set $sbm mg.st -1
 scoreboard objectives add mg.wins dummy [{"text":"✦ Victoires ✦","color":"gold"}]
 scoreboard objectives add mg.stp dummy
 scoreboard objectives add mg.stk playerKillCount
