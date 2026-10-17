@@ -152,7 +152,6 @@ execute if block -63 64 18 minecraft:leaf_litter run setblock -63 64 18 minecraf
 execute if block -63 64 19 minecraft:leaf_litter run setblock -63 64 19 minecraft:air
 execute if block -63 64 20 minecraft:leaf_litter run setblock -63 64 20 minecraft:air
 execute if block -63 64 22 minecraft:jack_o_lantern run setblock -63 64 22 minecraft:air
-execute if block -63 64 23 minecraft:leaf_litter run setblock -63 64 23 minecraft:air
 execute if block -63 64 30 minecraft:leaf_litter run setblock -63 64 30 minecraft:air
 execute if block -63 64 32 minecraft:leaf_litter run setblock -63 64 32 minecraft:short_grass
 execute if block -63 65 -18 minecraft:pale_oak_leaves run setblock -63 65 -18 minecraft:azalea_leaves[persistent=true]
@@ -174,8 +173,6 @@ execute if block -62 64 5 minecraft:leaf_litter run setblock -62 64 5 minecraft:
 execute if block -62 64 16 minecraft:jack_o_lantern run setblock -62 64 16 minecraft:air
 execute if block -62 64 21 minecraft:short_dry_grass run setblock -62 64 21 minecraft:orange_tulip
 execute if block -62 64 22 minecraft:short_dry_grass run setblock -62 64 22 minecraft:cornflower
-execute if block -62 64 23 minecraft:leaf_litter run setblock -62 64 23 minecraft:short_grass
-execute if block -62 64 24 minecraft:leaf_litter run setblock -62 64 24 minecraft:air
 execute if block -62 64 30 minecraft:leaf_litter run setblock -62 64 30 minecraft:air
 execute if block -62 64 31 minecraft:leaf_litter run setblock -62 64 31 minecraft:air
 execute if block -62 64 32 minecraft:leaf_litter run setblock -62 64 32 minecraft:air

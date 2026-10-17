@@ -53,6 +53,7 @@ data remove storage mg:hall v16
 data remove storage mg:hall v17
 data remove storage mg:hall v18
 data remove storage mg:hall v19
+data remove storage mg:hall v20
 data remove storage mg:hall sbon
 data remove storage mg:hall v2
 data remove storage mg:hall v3
