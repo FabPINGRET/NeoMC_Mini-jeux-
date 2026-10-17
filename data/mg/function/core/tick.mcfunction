@@ -90,7 +90,7 @@ execute if score $lan mg.t matches 20 run clear @a[tag=!mg.elyf] minecraft:firew
 # Tableau à droite tournant (lobby) + reconstruction des ajouts du spawn s'ils ont été effacés
 execute if score $setup mg.st matches 1 if score $state mg.st matches 0 if score $sbm mg.st matches 0 run function mg:hall/board_tick
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 5 run function mg:sb/auto
-execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block -58 64 26 minecraft:gold_block run function mg:hall/build
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block -9 64 27 minecraft:gold_block run function mg:hall/build
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 12 run function mg:hall/t3_tick
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 24 63 19 minecraft:gold_block run function mg:lobby/food_build
 execute if score $setup mg.st matches 1 if entity @a[x=-75,y=55,z=-75,dx=150,dy=60,dz=150] run function mg:coaster/tick
