@@ -213,6 +213,7 @@ ELYF = 'minecraft:elytra[minecraft:custom_data={mg_elyf:1b},minecraft:unbreakabl
 ROCF = 'minecraft:firework_rocket[minecraft:custom_data={mg_elyf:1b},minecraft:fireworks={flight_duration:1},minecraft:custom_name={"text":"Fusée du spawn","color":"gold","italic":false}]'
 W('free_pad', ['# Socle « élytres libres » (@s, une fois par passage) : prendre ou rendre',
     'tag @s add mg.efp',
+    'execute if entity @s[tag=mg.pkr] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Pas d\'élytres pendant le parkour.","color":"red"}]',
     'execute if entity @s[tag=mg.elyf] run return run function mg:elytra/free_off',
     'tag @s add mg.elyf',
     f'item replace entity @s armor.chest with {ELYF}',
@@ -221,11 +222,13 @@ W('free_pad', ['# Socle « élytres libres » (@s, une fois par passage) : prend
     'effect give @s minecraft:levitation 2 14 true',
     'playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 0.8 1.4',
     'title @s actionbar [{"text":"🪽 Ouvre tes élytres en l\'air (Espace) — fusées illimitées. Remonte sur le socle pour les rendre.","color":"white"}]'])
-W('free_tick', ['# Élytres libres, chaque tick (@s) : retirées en partie, en survie, sur un plot, en visite',
+W('free_tick', ['# Élytres libres, chaque tick (@s) : retirées en partie, en survie, sur un plot, en visite, en parkour',
     'execute if entity @s[tag=mg.play] run return run function mg:elytra/free_stop',
     'execute if entity @s[tag=mg.surv] run return run function mg:elytra/free_stop',
     'execute if entity @s[tag=mg.inplot] run return run function mg:elytra/free_stop',
     'execute if entity @s[tag=mg.visit] run return run function mg:elytra/free_stop',
+    'execute if entity @s[tag=mg.pkr] run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Pas d\'élytres pendant le parkour : rendues.","color":"red"}]',
+    'execute if entity @s[tag=mg.pkr] run return run function mg:elytra/free_stop',
     'execute unless entity @s[gamemode=adventure] run return run function mg:elytra/free_stop',
     'execute if score $lan mg.t matches 30 run function mg:elytra/free_refill'])
 W('free_refill', ['# Fusées illimitées : jamais moins de 3 (toutes les 2 s), protection renouvelée',
