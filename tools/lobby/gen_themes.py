@@ -27,7 +27,8 @@ Modules (jamais lancés seuls, chargés ici après C.init) : theme_world.py (mod
 blocs, zones réservées), theme_water.py (fontaines, cascades, biome d'eau, water_fix, water_check), theme_mobs.py (animaux,
 spot/back/gone/clear), theme_core.py (off, sync, restore, reskin, tick), theme_fall.py (feuilles et neige qui tombent
 par intermittence), theme_npcs.py (PNJ : sorcière d'Halloween, lutin de Noël), theme_stew.py (ragoût de la sorcière : effets
-vanilla et maison tirés à la consommation, chronos, nettoyages).
+vanilla et maison tirés à la consommation, chronos, nettoyages), theme_banner.py (bandeau : bossbar qui présente à tour de rôle
+les nouveautés du thème en place).
 """
 import os
 import random
@@ -45,6 +46,7 @@ F = C.F
 import theme_core as TC                                          # noqa: E402
 import theme_fall as TF                                          # noqa: E402
 import theme_mobs as TM                                          # noqa: E402
+import theme_banner as TB                                        # noqa: E402
 import theme_npcs as TN                                          # noqa: E402
 import theme_water as TWA                                        # noqa: E402
 import theme_world as TW                                         # noqa: E402
@@ -277,6 +279,7 @@ TWA.write_biome(HALLOWEEN_BIOME, '#a3120c', '#3a0505')   # worldgen/biome/hallow
 # ------------------------------------------------------------------ branchements
 TC.write_wiring(THEMES)                # branchements dans core/tick, core/load, lobby/deco, core/opt, desinstaller
 TN.wire()                                # objectif mg.thc, boucle de clic, nettoyages
+TB.write(THEMES)                         # bandeau (bossbar mg:thb) : lignes par thème, banner, banner_hide, branchements (tick, off, load, désinstaller)
 print(f'Thèmes ({len(DYN)} zones dynamiques évitées) :')
 for s in stats:
     print('  ' + s)

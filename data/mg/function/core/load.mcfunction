@@ -2,6 +2,7 @@
 
 # --- Objectifs ---
 scoreboard objectives add mg.st dummy
+bossbar remove mg:thb
 scoreboard players set $thsw mg.st 0
 scoreboard players set $thrs mg.st 1
 # Modèles du resource pack activés par défaut (/function mg:rp_off pour les couper)
