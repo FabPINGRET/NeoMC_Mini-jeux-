@@ -1,15 +1,15 @@
 # Brachiosaure : @s (os) posé pour l’état idle, image 2
-execute if score @s mg.tvab matches 141 run return run tp @s ^0 ^2.5192 ^0 ~-0 -0
+execute if score @s mg.tvab matches 141 run return run tp @s ^0 ^2.5192 ^0 ~180 0
 execute if score @s mg.tvab matches 142 run return run function mg:terra/an/brachio/r142_0_2
-execute if score @s mg.tvab matches 143 run return run tp @s ^0.0718 ^7.9984 ^4.5519 ~-1.6209 -5
-execute if score @s mg.tvab matches 144 run return run tp @s ^0.0723 ^7.7832 ^4.5707 ~-1.6209 -3.2
-execute if score @s mg.tvab matches 145 run return run tp @s ^0 ^3.0692 ^-1.89 ~-4.8 6.8
+execute if score @s mg.tvab matches 143 run return run tp @s ^0.0718 ^7.9984 ^4.5519 ~178.379 5
+execute if score @s mg.tvab matches 144 run return run tp @s ^0.0723 ^7.7832 ^4.5707 ~178.379 3.2
+execute if score @s mg.tvab matches 145 run return run tp @s ^0 ^3.0692 ^-1.89 ~175.2 -6.8
 execute if score @s mg.tvab matches 146 run return run function mg:terra/an/brachio/r146_0_2
-execute if score @s mg.tvab matches 147 run return run tp @s ^0.908 ^3.0192 ^1.428 ~-0 -0
-execute if score @s mg.tvab matches 148 run return run tp @s ^0.908 ^1.4592 ^1.428 ~-0 -0
-execute if score @s mg.tvab matches 149 run return run tp @s ^-0.908 ^3.0192 ^1.428 ~-0 -0
-execute if score @s mg.tvab matches 150 run return run tp @s ^-0.908 ^1.4592 ^1.428 ~-0 -0
-execute if score @s mg.tvab matches 151 run return run tp @s ^0.908 ^2.5192 ^-1.26 ~-0 -0
-execute if score @s mg.tvab matches 152 run return run tp @s ^0.908 ^1.2192 ^-1.26 ~-0 -0
-execute if score @s mg.tvab matches 153 run return run tp @s ^-0.908 ^2.5192 ^-1.26 ~-0 -0
-execute if score @s mg.tvab matches 154 run return run tp @s ^-0.908 ^1.2192 ^-1.26 ~-0 -0
+execute if score @s mg.tvab matches 147 run return run tp @s ^0.908 ^3.0192 ^1.428 ~180 0
+execute if score @s mg.tvab matches 148 run return run tp @s ^0.908 ^1.4592 ^1.428 ~180 0
+execute if score @s mg.tvab matches 149 run return run tp @s ^-0.908 ^3.0192 ^1.428 ~180 0
+execute if score @s mg.tvab matches 150 run return run tp @s ^-0.908 ^1.4592 ^1.428 ~180 0
+execute if score @s mg.tvab matches 151 run return run tp @s ^0.908 ^2.5192 ^-1.26 ~180 0
+execute if score @s mg.tvab matches 152 run return run tp @s ^0.908 ^1.2192 ^-1.26 ~180 0
+execute if score @s mg.tvab matches 153 run return run tp @s ^-0.908 ^2.5192 ^-1.26 ~180 0
+execute if score @s mg.tvab matches 154 run return run tp @s ^-0.908 ^1.2192 ^-1.26 ~180 0

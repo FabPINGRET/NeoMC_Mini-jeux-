@@ -548,6 +548,7 @@ scoreboard objectives remove mg.lv
 scoreboard objectives remove mg.mb
 scoreboard objectives remove mg.st
 scoreboard objectives remove mg.t
+scoreboard objectives remove mg.svl
 scoreboard objectives remove mg.wins
 scoreboard objectives remove mg.deaths
 scoreboard objectives remove mg.cs

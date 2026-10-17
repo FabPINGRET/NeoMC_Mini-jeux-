@@ -93,8 +93,8 @@ scoreboard players set $sbon mg.st 0
 scoreboard players reset * mg.sbg
 function mg:core/hp_display
 bossbar remove mg:boss
-execute if score $sb mg.st matches 1 run scoreboard objectives setdisplay sidebar mg.wins
-execute unless score $sb mg.st matches 1 run scoreboard objectives setdisplay sidebar
+scoreboard objectives setdisplay sidebar
+scoreboard players set $sbm mg.st -1
 scoreboard players set $state mg.st 0
 scoreboard players set $game mg.st 0
 function mg:vote/refresh

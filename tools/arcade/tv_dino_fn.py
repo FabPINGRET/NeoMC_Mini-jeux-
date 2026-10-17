@@ -94,11 +94,15 @@ def rollq(c):
     return T.qaxis('z', c)
 
 
+# ⚠ L'item_display affiche son objet tourné de 180° autour de Y (depuis 23w16a, voir minecraft.wiki « Display ») :
+# rendu = Ry(-lacet)·Rx(tangage)·T·Ry(180°)·modèle = Ry(180° - lacet)·Rx(-tangage)·Rz(-roulis)·modèle (si T = Rz(roulis)).
+# Pour obtenir Ry(a)·Rx(b)·Rz(c), on vise donc lacet + 180°, tangage -b, roulis -c (avant : cous et queues à l'envers,
+# le cou du brachiosaure plongeait vers le sol).
 def leaf(key, bn, si, f):
     pos, a, b, c = POSE[(key, bn)][(si, f)]
-    L = [f'tp @s ^{g4(pos[0])} ^{g4(pos[1])} ^{g4(pos[2])} ~{g4(-a)} {g4(b)}']
+    L = [f'tp @s ^{g4(pos[0])} ^{g4(pos[1])} ^{g4(pos[2])} ~{g4(180 - a)} {g4(-b)}']
     if (key, bn) in ROLL:
-        q = rollq(c)
+        q = rollq(-c)
         L.append(f'data merge entity @s {{start_interpolation:0,interpolation_duration:2,transformation:{{left_rotation:[{f4(q[0])},{f4(q[1])},{f4(q[2])},{f4(q[3])}]}}}}')
     return L
 
@@ -127,7 +131,7 @@ for key, sp in T.SPECIES.items():
         pos, a, bb, c = POSE[(key, b.name)][(0, 0)]
         RP.append(f'summon minecraft:item_display ~ ~ ~ {{Tags:[{PT},"mg.tvnb"],teleport_duration:1,{vr}'
                   f'item:{{id:"minecraft:paper",count:1,components:{{"minecraft:item_model":"mg:dino/{key}_{b.name}"}}}},'
-                  f'{tr((0, 0, 0), rollq(c), T.bone_scale(b))}}}')
+                  f'{tr((0, 0, 0), rollq(-c), T.bone_scale(b))}}}')
         RP += [f'scoreboard players set @e[tag=mg.tvnb] mg.tvab {BONE_ID[(key, b.name)]}', 'tag @e[tag=mg.tvnb] remove mg.tvnb']
     w(f'terra/dino/{key}_rp', RP)
     BD = [f'# {sp.label} : modèle en blocs (sans resource pack, pose fixe)']
