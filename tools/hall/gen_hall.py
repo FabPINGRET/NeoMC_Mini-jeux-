@@ -67,7 +67,7 @@ CX0, CZ0, CZ1 = -60, 15, 36                # zone dégagée (anciennes versions 
 BX0, BP, NB = -59, 2, 22                   # 1er stand en x -59, un stand tous les 2 blocs, 22 par côté
 OLD = (-24, -6, 11, 25)                    # hall v14 (x1, x2, z1, z2), effacé une fois
 MARK = (-9, 64, 25)                        # piédestal du champion (bloc d'or) : témoin de présence
-VERSION = 21
+VERSION = 22
 TR = 'transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[%sf,%sf,%sf]}'
 
 def W(name, lines):
@@ -89,7 +89,7 @@ W('objectives', ['# Objectifs des classements par jeu (généré par tools/hall/
     'scoreboard objectives add mg.genc dummy'])
 W('remove', ['# Désinstallation des classements et du hall'] +
   [f'scoreboard objectives remove mg.wg_{k}' for k, *_ in GAMES] +
-  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall t3', 'data remove storage mg:hall t3x', 'data remove storage mg:hall v15', 'data remove storage mg:hall v16', 'data remove storage mg:hall v17', 'data remove storage mg:hall v18', 'data remove storage mg:hall v19', 'data remove storage mg:hall v20', 'data remove storage mg:hall v21', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8', 'data remove storage mg:hall v9', 'data remove storage mg:hall v10', 'data remove storage mg:hall v11', 'data remove storage mg:hall v12', 'data remove storage mg:hall v13', 'data remove storage mg:hall v14',
+  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall t3', 'data remove storage mg:hall t3x', 'data remove storage mg:hall v15', 'data remove storage mg:hall v16', 'data remove storage mg:hall v17', 'data remove storage mg:hall v18', 'data remove storage mg:hall v19', 'data remove storage mg:hall v20', 'data remove storage mg:hall v21', 'data remove storage mg:hall v22', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8', 'data remove storage mg:hall v9', 'data remove storage mg:hall v10', 'data remove storage mg:hall v11', 'data remove storage mg:hall v12', 'data remove storage mg:hall v13', 'data remove storage mg:hall v14',
    'scoreboard objectives remove mg.gen', 'scoreboard objectives remove mg.lvl', 'scoreboard objectives remove mg.genc'])
 
 # ---------------------------------------------------------------- crédit des vainqueurs
@@ -180,6 +180,9 @@ b = ['# Allée des champions (Hall des scores v18, à ciel ouvert, sud-ouest de 
      f'fill {CX0} 63 {CZ0} {HX1 + 6} 63 {CZ1} minecraft:grass_block',
      f'fill {HX0 + 1} 63 {AZ1} {HX1 + 6} 63 {AZ2} minecraft:dirt_path',
      f'fill {HX1 - 1} 63 {HZ0} {HX1 + 6} 63 {HZ1} minecraft:polished_andesite',
+     # bordure de l'avenue du Kart (x -5..-4 : herbe, fleurs, azalées) retirée le long du hall : la place rejoint l'avenue
+     f'fill -5 64 {CZ0} -4 65 {CZ1} minecraft:air', f'fill -5 63 {CZ0} -4 63 {CZ1} minecraft:grass_block',
+     f'fill -5 63 {HZ0} -4 63 {HZ1} minecraft:polished_andesite',
      # bordure basse (1 bloc) autour des stands, ouverte à l'est sur l'allée
      *[f'fill {xa} 64 {za} {xb} 64 {zb} minecraft:moss_block' for xa, za, xb, zb in ((HX0, HZ0, HX1, HZ0), (HX0, HZ1, HX1, HZ1), (HX0, HZ0, HX0, HZ1), (HX1, HZ0, HX1, HZ1))],
      f'fill {HX1} 64 {AZ1} {HX1} 64 {AZ2} minecraft:air',
@@ -360,6 +363,7 @@ _sub('core/load', 'unless data storage mg:hall v17 run schedule function mg:hall
 _sub('core/load', 'unless data storage mg:hall v18 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
 _sub('core/load', 'unless data storage mg:hall v19 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
 _sub('core/load', 'unless data storage mg:hall v20 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
+_sub('core/load', 'unless data storage mg:hall v21 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
 _sub('core/tick', 'unless block -9 64 27 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')
 _sub('core/tick', 'unless block -16 64 15 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')
 _sub('core/tick', 'unless block -58 64 26 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')
