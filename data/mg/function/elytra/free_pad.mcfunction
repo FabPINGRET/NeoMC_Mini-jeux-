@@ -1,5 +1,6 @@
 # Socle « élytres libres » (@s, une fois par passage) : prendre ou rendre
 tag @s add mg.efp
+execute if entity @s[tag=mg.pkr] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Pas d'élytres pendant le parkour.","color":"red"}]
 execute if entity @s[tag=mg.elyf] run return run function mg:elytra/free_off
 tag @s add mg.elyf
 item replace entity @s armor.chest with minecraft:elytra[minecraft:custom_data={mg_elyf:1b},minecraft:unbreakable={},minecraft:enchantments={"minecraft:binding_curse":1},minecraft:custom_name={"text":"Élytres du spawn","color":"white","italic":false}]
