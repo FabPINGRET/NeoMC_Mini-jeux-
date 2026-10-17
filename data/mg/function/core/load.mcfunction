@@ -2,6 +2,9 @@
 
 # --- Objectifs ---
 scoreboard objectives add mg.st dummy
+# Sièges du lobby (s'asseoir)
+kill @e[type=minecraft:item_display,tag=mg.seat]
+tag @a remove mg.sit
 bossbar remove mg:thb
 scoreboard players set $thsw mg.st 0
 scoreboard players set $thrs mg.st 1
@@ -57,6 +60,8 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.lsc dummy
+scoreboard objectives add mg.lsn dummy
 team add mg_thbun
 team modify mg_thbun collisionRule never
 scoreboard objectives add mg.thbn dummy

@@ -164,6 +164,44 @@
     {
       "label": [
         {
+          "text": "🪑 Assis/emotes on/off",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Active ou coupe l'assise et les emotes du lobby (actif par défaut)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 81"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🪑 Stats",
+          "color": "aqua",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Affiche les compteurs d'usage (assis, emotes)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 82"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour au menu",
           "color": "yellow"
         }
