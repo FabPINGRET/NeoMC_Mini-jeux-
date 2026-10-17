@@ -4,6 +4,7 @@ Inspiré des maps de dropper classiques (puits à thème, une idée par niveau),
 Chaque niveau est un puits de 23 x 23 (intérieur) sur 260 blocs, en trois « actes » (trois idées d'obstacles du même thème,
 séparés par une bande lumineuse) : on part du rebord en haut (y 301), on saute dans l'ouverture et on doit finir dans l'eau
 du fond. Toucher quoi que ce soit d'autre = retour en haut du niveau ; réussir = niveau suivant.
+Ordre de jeu (ORDER) : Spirale, La mine, ..., Les ballons, puis l'Arc-en-ciel, de loin le plus dur, pour finir (13/13).
 Chaque niveau est vérifié par une chute simulée (voir plus bas) : s'il n'y a pas de passage, un trou est percé.
 Le premier à finir tous les niveaux gagne ; sinon, au bout d'une minute par niveau, le plus avancé (puis le moins d'échecs).
 Sortie : data/mg/function/dropadv/*.mcfunction
@@ -20,6 +21,8 @@ TOP, FLOOR = 300, 40          # rebord de départ, sol du fond (l'eau est juste 
 IN, WALL = 11, 14             # demi-intérieur, demi-extérieur (murs de 3)
 SPACING = 40
 A1, A2 = 222, 142             # limites des trois actes (haut : TOP..A1, milieu : A1..A2, bas : A2..FLOOR)
+ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 0]   # indices de construction (k) dans l'ordre de jeu : l'Arc-en-ciel (k 0), de loin le plus dur, passe en dernier
+                              # k pilote la position du puits (cx) et la graine (640 + k) : changer l'ordre ne déplace ni ne régénère aucun puits
 RAIN = ['red', 'orange', 'yellow', 'lime', 'light_blue', 'blue', 'purple', 'magenta']
 
 def wr(name, lines):
@@ -29,6 +32,7 @@ def wr(name, lines):
 class Lv:
     def __init__(self, k, name, colr, wall, desc):
         self.k, self.name, self.colr, self.wall, self.desc = k, name, colr, wall, desc
+        self.n = ORDER.index(k) + 1       # numéro dans la suite jouée (mg.dlv, $dcl, « Niveau n/N »)
         self.cx = k * SPACING
         self.cmd = []
         self.rnd = random.Random(640 + k)
@@ -126,7 +130,7 @@ def spread(y1, y2, step, jitter=0, rnd=None):
     return ys
 
 LV = []
-# ------------------------------------------------------------------ 1. Arc-en-ciel
+# ------------------------------------------------------------------ k 0. Arc-en-ciel (joué en dernier : voir ORDER)
 L = Lv(0, 'Arc-en-ciel', 'light_purple', 'white_concrete', 'Entonnoirs, rayons et nuages pastel : suis les couleurs !')
 L.shell(acts=('magenta_stained_glass', 'light_blue_stained_glass'))
 for i in range(0, 8): L.band(TOP - 1 - i * 8, TOP - 1 - i * 8, f'{RAIN[i % 8]}_concrete')
@@ -151,7 +155,7 @@ for i, c in enumerate(RAIN[:5]): L.disc(FLOOR, 7 - i, f'{c}_concrete')
 L.disc(FLOOR, 2, 'water')
 LV.append(L)
 
-# ------------------------------------------------------------------ 2. Spirale
+# ------------------------------------------------------------------ k 1. Spirale
 L = Lv(1, 'Spirale', 'yellow', 'black_concrete', 'Boules qui tournent, barres pivotantes, spirale qui se resserre.')
 L.shell(round_=True, acts=('glowstone', 'shroomlight'))
 a = 0.0
@@ -174,7 +178,7 @@ for n, y in enumerate(spread(A2 - 6, FLOOR + 10, 6)):                    # acte 
 L.disc(FLOOR, IN, 'black_concrete'); L.disc(FLOOR, 5, 'yellow_concrete'); L.disc(FLOOR, 3, 'water')
 LV.append(L)
 
-# ------------------------------------------------------------------ 3. La mine
+# ------------------------------------------------------------------ k 2. La mine
 L = Lv(2, 'La mine', 'gray', 'stone', 'Poutres et toiles, galeries et filons, puis le lac souterrain.')
 L.shell(mats=['coal_ore', 'iron_ore', 'andesite', 'gravel', 'cobblestone', 'copper_ore', 'gold_ore', 'tuff'], acts=('lantern', 'redstone_ore'))
 for y in range(FLOOR + 1, TOP, 3):                                       # parois irrégulières
@@ -210,7 +214,7 @@ L.fill(-IN, FLOOR, -IN, IN, FLOOR, IN, 'gravel')
 L.disc(FLOOR, 4, 'water')
 LV.append(L)
 
-# ------------------------------------------------------------------ 4. Rideaux
+# ------------------------------------------------------------------ k 3. Rideaux
 L = Lv(3, 'Rideaux', 'white', 'quartz_block', 'Rideaux percés, grilles croisées, puis le damier final.')
 L.shell(acts=('pink_wool', 'light_blue_wool'))
 cols = ['white', 'pink', 'light_blue', 'lime', 'yellow', 'orange']
@@ -233,7 +237,7 @@ L.fill(-IN, FLOOR, -IN, IN, FLOOR, IN, 'quartz_block')
 L.fill(L.path[FLOOR][0] - 1, FLOOR, L.path[FLOOR][1] - 1, L.path[FLOOR][0] + 1, FLOOR, L.path[FLOOR][1] + 1, 'water')
 LV.append(L)
 
-# ------------------------------------------------------------------ 5. Trous piégés
+# ------------------------------------------------------------------ k 4. Trous piégés
 L = Lv(4, 'Trous piégés', 'dark_purple', 'obsidian', 'Des planchers troués... mais certains trous sont fermés par du verre !')
 L.shell(acts=('crying_obsidian', 'crying_obsidian'))
 L.wall_spots(TOP, FLOOR, 300, ['crying_obsidian', 'purple_stained_glass'])
@@ -261,7 +265,7 @@ L.fill(-IN, FLOOR, -IN, IN, FLOOR, IN, 'obsidian')
 L.fill(L.path[FLOOR][0] - 1, FLOOR, L.path[FLOOR][1] - 1, L.path[FLOOR][0] + 1, FLOOR, L.path[FLOOR][1] + 1, 'water')
 LV.append(L)
 
-# ------------------------------------------------------------------ 6. L'Enfer
+# ------------------------------------------------------------------ k 5. L'Enfer
 L = Lv(5, 'L\'Enfer', 'red', 'netherrack', 'Basalte et champignons, ponts de forteresse, puis le cœur du volcan.')
 L.shell(mats=['magma_block', 'nether_quartz_ore', 'nether_gold_ore', 'blackstone', 'crimson_nylium', 'glowstone'], acts=('magma_block', 'shroomlight'))
 for y in spread(TOP - 10, A1 + 3, 7):                                    # acte 1 : piliers de basalte et champignons
@@ -293,7 +297,7 @@ L.disc(FLOOR, 5, 'magma_block')
 L.disc(FLOOR, 3, 'water')
 LV.append(L)
 
-# ------------------------------------------------------------------ 7. Le salon géant
+# ------------------------------------------------------------------ k 6. Le salon géant
 L = Lv(6, 'Le salon géant', 'gold', 'yellow_terracotta', 'Tu es minuscule dans un salon : lustre, étagères, table... vise le bocal !')
 L.shell(acts=('white_terracotta', 'white_terracotta'))
 for y in range(FLOOR + 1, TOP, 4):                                       # papier peint rayé
@@ -334,7 +338,7 @@ L.fill(-2, FLOOR + 1, -2, 2, FLOOR + 3, 2, 'water')
 L.fill(-1, FLOOR + 4, -1, 1, FLOOR + 4, 1, 'water')
 LV.append(L)
 
-# ------------------------------------------------------------------ 8. La bibliothèque
+# ------------------------------------------------------------------ k 7. La bibliothèque
 L = Lv(7, 'La bibliothèque', 'dark_red', 'bookshelf', 'Étagères géantes, livres volants, lustres... vise l\'encrier.')
 L.shell(acts=('chiseled_bookshelf', 'chiseled_bookshelf'))
 for y in spread(TOP - 10, A1 + 3, 9):                                    # acte 1 : étagères qui avancent, livres volants
@@ -360,7 +364,7 @@ L.fill(2, FLOOR + 1, 2, 6, FLOOR + 3, 6, 'black_concrete'); L.fill(3, FLOOR + 1,
 L.fill(4, FLOOR + 4, 4, 4, FLOOR + 10, 4, 'white_wool')       # plume
 LV.append(L)
 
-# ------------------------------------------------------------------ 9. La forêt
+# ------------------------------------------------------------------ k 8. La forêt
 L = Lv(8, 'La forêt', 'green', 'oak_log', 'Canopée, branches et toiles, champignons... les nénuphars ne sont PAS de l\'eau !')
 L.shell(mats=['moss_block', 'oak_leaves[persistent=true]', 'mossy_cobblestone'], acts=('glowstone', 'shroomlight'))
 prev = (0, 0)
@@ -389,7 +393,7 @@ for _ in range(16):
     if x * x + z * z <= 30: L.set(x, FLOOR + 1, z, 'lily_pad')
 LV.append(L)
 
-# ------------------------------------------------------------------ 10. Les nuages
+# ------------------------------------------------------------------ k 9. Les nuages
 L = Lv(9, 'Les nuages', 'aqua', 'light_blue_concrete', 'Nuages, arcs-en-ciel croisés, îles volantes : un seul bloc d\'eau au fond !')
 L.shell(acts=('white_concrete', 'yellow_concrete'))
 for y in spread(TOP - 8, A1 + 3, 5):                                     # acte 1 : nuages
@@ -412,7 +416,7 @@ x, z = L.rnd.randint(-5, 5), L.rnd.randint(-5, 5)
 L.fill(x - 1, FLOOR + 1, z - 1, x + 1, FLOOR + 3, z + 1, 'air'); L.set(x, FLOOR, z, 'water')
 LV.append(L)
 
-# ------------------------------------------------------------------ 11. L'usine
+# ------------------------------------------------------------------ k 10. L'usine
 L = Lv(10, 'L\'usine', 'gold', 'gray_concrete', 'Tapis roulants et pistons, engrenages qui tournent, puis la presse hydraulique.')
 L.shell(mats=['iron_block', 'waxed_copper_block', 'waxed_exposed_copper', 'polished_andesite', 'redstone_lamp[lit=true]'],
         acts=('redstone_lamp[lit=true]', 'redstone_lamp[lit=true]'))
@@ -446,7 +450,7 @@ x, z = max(-5, min(5, prev[0])), max(-5, min(5, prev[1]))              # la cuve
 L.fill(x - 3, FLOOR + 1, z - 3, x + 3, FLOOR + 1, z + 3, 'iron_block'); L.fill(x - 2, FLOOR, z - 2, x + 2, FLOOR + 1, z + 2, 'water')
 LV.append(L)
 
-# ------------------------------------------------------------------ 12. L'espace
+# ------------------------------------------------------------------ k 11. L'espace
 L = Lv(11, 'L\'espace', 'dark_aqua', 'black_concrete', 'Champ d\'astéroïdes, planètes et anneaux, station spatiale... atterris dans le cratère lunaire.')
 L.shell(mats=['sea_lantern', 'white_concrete', 'glowstone', 'end_rod'], acts=('purple_stained_glass', 'light_blue_stained_glass'))
 for y in spread(TOP - 8, A1 + 3, 4):                                     # acte 1 : astéroïdes
@@ -472,7 +476,7 @@ x, z = L.rnd.randint(-5, 5), L.rnd.randint(-5, 5)                         # crat
 L.disc(FLOOR + 1, 3, 'end_stone', x, z); L.disc(FLOOR + 1, 1, 'air', x, z); L.fill(x - 1, FLOOR, z - 1, x + 1, FLOOR, z + 1, 'water')
 LV.append(L)
 
-# ------------------------------------------------------------------ 13. Les ballons
+# ------------------------------------------------------------------ k 12. Les ballons
 L = Lv(12, 'Les ballons', 'light_purple', 'white_concrete', 'Grappes de ballons, guirlandes de fanions, puis les montgolfières !')
 WOOLS = ['red', 'orange', 'yellow', 'lime', 'light_blue', 'pink', 'purple', 'magenta']
 L.shell(mats=[f'{c}_wool' for c in WOOLS], acts=('pink_concrete', 'lime_concrete'))
@@ -552,9 +556,10 @@ for L in LV:
             L.fill(max(-IN, x - 1), min(bad), max(-IN, z - 1), min(IN, x + 1), max(bad), min(IN, z + 1), 'air')
         fixes += 1
         assert fixes < 80, L.name
-    print(f'niveau {L.k + 1} ({L.name}) : faisable' + (f' après {fixes} passage(s) percé(s)' if fixes else ''))
+    print(f'niveau {L.n} ({L.name}) : faisable' + (f' après {fixes} passage(s) percé(s)' if fixes else ''))
 
 N = len(LV)
+assert sorted(ORDER) == [L.k for L in LV], ORDER
 ATIME = 1200 * N              # Aventure : une minute par niveau
 # ------------------------------------------------------------------ fonctions de jeu
 X1, X2 = -WALL - 6, (N - 1) * SPACING + WALL + 6
@@ -563,7 +568,7 @@ wr('fl_remove', [f'forceload remove {X1} {CZ - WALL - 6} {X2} {CZ + WALL + 6}', 
 parts = []
 for L in LV:
     for i in range(0, len(L.cmd), 2500):
-        parts.append([f'# Dropper Aventure : niveau {L.k + 1} ({L.name})'] + L.cmd[i:i + 2500])
+        parts.append([f'# Dropper Aventure : niveau {L.k + 1} ({L.name})'] + L.cmd[i:i + 2500])   # k + 1 voulu : garde les build_* identiques (le numéro joué est L.n)
 parts.append(['function mg:dropadv/fl_remove', 'data modify storage mg:dropadv v3 set value 1b',
               'tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"The Dropper : Aventure construit (' + str(N) + ' niveaux).","color":"green"}]'])
 for k, p in enumerate(parts, 1):
@@ -580,7 +585,7 @@ wr('build_wait', ['execute if function mg:dropadv/loaded_all run return run func
                   'schedule function mg:dropadv/build_wait 20t'])
 
 wr('spawn', ['# Place @s sur le rebord de départ de son niveau (mg.dlv)'] +
-   [f'execute if score @s mg.dlv matches {L.k + 1} run tp @s {L.cx + 0.5} {TOP + 1} {CZ - 11 + 0.5} 0 25' for L in LV] +
+   [f'execute if score @s mg.dlv matches {L.n} run tp @s {L.cx + 0.5} {TOP + 1} {CZ - 11 + 0.5} 0 25' for L in LV] +
    ['scoreboard players set @s mg.cd 10', 'effect give @s minecraft:resistance 2 255 true'])
 wr('prepare', ['# The Dropper : Aventure — préparation',
                'function mg:dropadv/fl_add',
@@ -591,12 +596,12 @@ wr('prepare', ['# The Dropper : Aventure — préparation',
                'gamemode adventure @a[tag=mg.play]', 'clear @a[tag=mg.play]',
                'execute as @a[tag=mg.play] run function mg:dropadv/spawn',
                'scoreboard objectives setdisplay sidebar mg.dlv',
-               'scoreboard players set $px mg.st 0', f'scoreboard players set $py mg.st {TOP + 3}', f'scoreboard players set $pz mg.st {CZ - 11}',
+               f'scoreboard players set $px mg.st {LV[ORDER[0]].cx}', f'scoreboard players set $py mg.st {TOP + 3}', f'scoreboard players set $pz mg.st {CZ - 11}',
                'function mg:dropadv/titles'])
 tl = ['kill @e[type=minecraft:text_display,tag=mg.dat]']
 for L in LV:
     tl.append(f'summon minecraft:text_display {L.cx + 0.5} {TOP + 4} {CZ - 3.5} {{Tags:["mg.dat","mg.fx"],billboard:"vertical",'
-              f'text:[{{"text":"Niveau {L.k + 1}\\n","color":"white"}},{{"text":"{L.name}","color":"{L.colr}","bold":true}},{{"text":"\\n{L.desc}","color":"gray"}}],'
+              f'text:[{{"text":"Niveau {L.n}\\n","color":"white"}},{{"text":"{L.name}","color":"{L.colr}","bold":true}},{{"text":"\\n{L.desc}","color":"gray"}}],'
               f'background:1342177280,transformation:{{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.6f,1.6f,1.6f]}}}}')
 wr('titles', tl)
 wr('go', ['# The Dropper : Aventure — départ',
@@ -605,8 +610,8 @@ wr('go', ['# The Dropper : Aventure — départ',
           'tellraw @a[tag=mg.play] [{"text":"⬇ THE DROPPER : AVENTURE ! ","color":"aqua","bold":true},{"text":"' + str(N) + ' niveaux à thème. Saute dans le puits et atterris dans l\'EAU du fond : tout le reste te renvoie en haut du niveau. Le premier à finir les ' + str(N) + ' niveaux gagne (' + str(N) + ' minutes au plus).","color":"gray"}]',
           'function mg:dropadv/show_level_all'])
 wr('show_level_all', ['execute as @a[tag=mg.play] run function mg:dropadv/show_level'])
-wr('show_level', [f'execute if score @s mg.dlv matches {L.k + 1} run title @s title [{{"text":"{L.name}","color":"{L.colr}","bold":true}}]' for L in LV] +
-   [f'execute if score @s mg.dlv matches {L.k + 1} run title @s subtitle [{{"text":"Niveau {L.k + 1}/{N} : {L.desc}","color":"gray"}}]' for L in LV])
+wr('show_level', [f'execute if score @s mg.dlv matches {L.n} run title @s title [{{"text":"{L.name}","color":"{L.colr}","bold":true}}]' for L in LV] +
+   [f'execute if score @s mg.dlv matches {L.n} run title @s subtitle [{{"text":"Niveau {L.n}/{N} : {L.desc}","color":"gray"}}]' for L in LV])
 wr('tick', ['# The Dropper : Aventure — chaque tick',
             'scoreboard players add $dat mg.st 1',
             'scoreboard players remove @a[tag=mg.play,scores={mg.cd=1..}] mg.cd 1',
@@ -620,7 +625,7 @@ wr('tick', ['# The Dropper : Aventure — chaque tick',
             f'execute if score $dat mg.st matches {ATIME}.. run return run function mg:dropadv/timeout',
             'execute unless entity @a[tag=mg.play] run function mg:core/draw'])
 wr('hud', [f'scoreboard players set $dsl mg.st {ATIME}', 'scoreboard players operation $dsl mg.st -= $dat mg.st', 'scoreboard players operation $dsl mg.st /= #k20 mg.st'] +
-   [f'execute if score @s mg.dlv matches {L.k + 1} run title @s actionbar [{{"text":"⬇ Niveau {L.k + 1}/{N} : ","color":"gray"}},{{"text":"{L.name}","color":"{L.colr}","bold":true}},'
+   [f'execute if score @s mg.dlv matches {L.n} run title @s actionbar [{{"text":"⬇ Niveau {L.n}/{N} : ","color":"gray"}},{{"text":"{L.name}","color":"{L.colr}","bold":true}},'
     f'{{"text":"   ✖ ","color":"red"}},{{"score":{{"name":"@s","objective":"mg.dfl"}},"color":"white"}},{{"text":"   ⏱ ","color":"gold"}},{{"score":{{"name":"$dsl","objective":"mg.st"}},"color":"yellow"}},{{"text":" s","color":"gold"}}]'
     for L in LV])
 wr('success', ['# @s atterrit dans l\'eau : niveau suivant (ou victoire)',
@@ -684,7 +689,7 @@ sp = ['# Place @s sur un des 4 côtés du rebord du niveau de la manche ($dcl)',
       'scoreboard players operation $dcs mg.st = $dci mg.st', 'scoreboard players operation $dcs mg.st %= #k4 mg.st', 'scoreboard players add $dci mg.st 1']
 for L in LV:
     for s_, (dx, dz, yaw) in enumerate(SIDES):
-        sp.append(f'execute if score $dcl mg.st matches {L.k + 1} if score $dcs mg.st matches {s_} run tp @s {L.cx + dx + 0.5} {TOP + 1} {CZ + dz + 0.5} {yaw} 25')
+        sp.append(f'execute if score $dcl mg.st matches {L.n} if score $dcs mg.st matches {s_} run tp @s {L.cx + dx + 0.5} {TOP + 1} {CZ + dz + 0.5} {yaw} 25')
 sp += ['scoreboard players set @s mg.cd 20', 'effect give @s minecraft:resistance 2 255 true']
 wr('c_spawn', sp)
 wr('c_go', ['# Dropper : Défi — départ de la première manche',
@@ -733,7 +738,7 @@ wr('c_timeout', ['# 90 s sans gagnant : manche annulée, nouveau niveau',
                  'scoreboard players set $dcph mg.st 2', 'scoreboard players set $dct mg.st 40'])
 hud = ['scoreboard players set $dsl mg.st 1800', 'scoreboard players operation $dsl mg.st -= $dct mg.st', 'scoreboard players operation $dsl mg.st /= #k20 mg.st']
 for L in LV:
-    hud.append('execute if score $dcl mg.st matches ' + str(L.k + 1) + ' run title @s actionbar [{"text":"⬇ Manche ","color":"gray"},{"score":{"name":"$dcr","objective":"mg.st"},"color":"white"},'
+    hud.append('execute if score $dcl mg.st matches ' + str(L.n) + ' run title @s actionbar [{"text":"⬇ Manche ","color":"gray"},{"score":{"name":"$dcr","objective":"mg.st"},"color":"white"},'
                '{"text":" : ","color":"gray"},{"text":"' + L.name + '","color":"' + L.colr + '","bold":true},{"text":"   ★ ","color":"gold"},{"score":{"name":"@s","objective":"mg.dpw"},"color":"yellow"},'
                '{"text":"/' + str(WINS) + '   ⏱ ","color":"gold"},{"score":{"name":"$dsl","objective":"mg.st"},"color":"yellow"},{"text":" s","color":"gold"}]')
 wr('c_hud', hud)
