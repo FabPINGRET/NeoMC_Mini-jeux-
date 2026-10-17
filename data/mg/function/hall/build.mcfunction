@@ -39,226 +39,318 @@ setblock -18 65 20 minecraft:lantern
 setblock -18 65 31 minecraft:lantern
 setblock -12 65 20 minecraft:lantern
 setblock -12 65 31 minecraft:lantern
-fill -59 63 21 -58 63 23 minecraft:light_blue_concrete
-fill -59 64 21 -58 64 21 minecraft:polished_andesite
-setblock -59 65 21 minecraft:gold_block
-setblock -58 65 21 minecraft:iron_block
-setblock -59 64 22 minecraft:copper_block
-fill -57 63 21 -56 63 23 minecraft:red_concrete
-fill -57 64 21 -56 64 21 minecraft:polished_andesite
-setblock -57 65 21 minecraft:gold_block
-setblock -56 65 21 minecraft:iron_block
-setblock -57 64 22 minecraft:copper_block
-fill -55 63 21 -54 63 23 minecraft:yellow_concrete
-fill -55 64 21 -54 64 21 minecraft:polished_andesite
-setblock -55 65 21 minecraft:gold_block
-setblock -54 65 21 minecraft:iron_block
-setblock -55 64 22 minecraft:copper_block
-fill -53 63 21 -52 63 23 minecraft:red_concrete
-fill -53 64 21 -52 64 21 minecraft:polished_andesite
-setblock -53 65 21 minecraft:gold_block
-setblock -52 65 21 minecraft:iron_block
-setblock -53 64 22 minecraft:copper_block
-fill -51 63 21 -50 63 23 minecraft:white_concrete
-fill -51 64 21 -50 64 21 minecraft:polished_andesite
-setblock -51 65 21 minecraft:gold_block
-setblock -50 65 21 minecraft:iron_block
-setblock -51 64 22 minecraft:copper_block
-fill -49 63 21 -48 63 23 minecraft:green_concrete
-fill -49 64 21 -48 64 21 minecraft:polished_andesite
-setblock -49 65 21 minecraft:gold_block
-setblock -48 65 21 minecraft:iron_block
-setblock -49 64 22 minecraft:copper_block
-fill -47 63 21 -46 63 23 minecraft:yellow_concrete
-fill -47 64 21 -46 64 21 minecraft:polished_andesite
-setblock -47 65 21 minecraft:gold_block
-setblock -46 65 21 minecraft:iron_block
-setblock -47 64 22 minecraft:copper_block
-fill -45 63 21 -44 63 23 minecraft:yellow_concrete
-fill -45 64 21 -44 64 21 minecraft:polished_andesite
-setblock -45 65 21 minecraft:gold_block
-setblock -44 65 21 minecraft:iron_block
-setblock -45 64 22 minecraft:copper_block
-fill -43 63 21 -42 63 23 minecraft:light_blue_concrete
-fill -43 64 21 -42 64 21 minecraft:polished_andesite
-setblock -43 65 21 minecraft:gold_block
-setblock -42 65 21 minecraft:iron_block
-setblock -43 64 22 minecraft:copper_block
-fill -41 63 21 -40 63 23 minecraft:yellow_concrete
-fill -41 64 21 -40 64 21 minecraft:polished_andesite
-setblock -41 65 21 minecraft:gold_block
-setblock -40 65 21 minecraft:iron_block
-setblock -41 64 22 minecraft:copper_block
-fill -39 63 21 -38 63 23 minecraft:red_concrete
-fill -39 64 21 -38 64 21 minecraft:polished_andesite
-setblock -39 65 21 minecraft:gold_block
-setblock -38 65 21 minecraft:iron_block
-setblock -39 64 22 minecraft:copper_block
-fill -37 63 21 -36 63 23 minecraft:magenta_concrete
-fill -37 64 21 -36 64 21 minecraft:polished_andesite
-setblock -37 65 21 minecraft:gold_block
-setblock -36 65 21 minecraft:iron_block
-setblock -37 64 22 minecraft:copper_block
-fill -35 63 21 -34 63 23 minecraft:gray_concrete
-fill -35 64 21 -34 64 21 minecraft:polished_andesite
-setblock -35 65 21 minecraft:gold_block
-setblock -34 65 21 minecraft:iron_block
-setblock -35 64 22 minecraft:copper_block
-fill -33 63 21 -32 63 23 minecraft:yellow_concrete
-fill -33 64 21 -32 64 21 minecraft:polished_andesite
-setblock -33 65 21 minecraft:gold_block
-setblock -32 65 21 minecraft:iron_block
-setblock -33 64 22 minecraft:copper_block
-fill -31 63 21 -30 63 23 minecraft:light_blue_concrete
-fill -31 64 21 -30 64 21 minecraft:polished_andesite
-setblock -31 65 21 minecraft:gold_block
-setblock -30 65 21 minecraft:iron_block
-setblock -31 64 22 minecraft:copper_block
-fill -29 63 21 -28 63 23 minecraft:yellow_concrete
-fill -29 64 21 -28 64 21 minecraft:polished_andesite
-setblock -29 65 21 minecraft:gold_block
-setblock -28 65 21 minecraft:iron_block
-setblock -29 64 22 minecraft:copper_block
-fill -27 63 21 -26 63 23 minecraft:light_blue_concrete
-fill -27 64 21 -26 64 21 minecraft:polished_andesite
-setblock -27 65 21 minecraft:gold_block
-setblock -26 65 21 minecraft:iron_block
-setblock -27 64 22 minecraft:copper_block
-fill -25 63 21 -24 63 23 minecraft:lime_concrete
-fill -25 64 21 -24 64 21 minecraft:polished_andesite
-setblock -25 65 21 minecraft:gold_block
-setblock -24 65 21 minecraft:iron_block
-setblock -25 64 22 minecraft:copper_block
-fill -23 63 21 -22 63 23 minecraft:yellow_concrete
-fill -23 64 21 -22 64 21 minecraft:polished_andesite
-setblock -23 65 21 minecraft:gold_block
-setblock -22 65 21 minecraft:iron_block
-setblock -23 64 22 minecraft:copper_block
-fill -21 63 21 -20 63 23 minecraft:red_concrete
-fill -21 64 21 -20 64 21 minecraft:polished_andesite
-setblock -21 65 21 minecraft:gold_block
-setblock -20 65 21 minecraft:iron_block
-setblock -21 64 22 minecraft:copper_block
-fill -19 63 21 -18 63 23 minecraft:light_blue_concrete
-fill -19 64 21 -18 64 21 minecraft:polished_andesite
-setblock -19 65 21 minecraft:gold_block
-setblock -18 65 21 minecraft:iron_block
-setblock -19 64 22 minecraft:copper_block
-fill -17 63 21 -16 63 23 minecraft:light_blue_concrete
-fill -17 64 21 -16 64 21 minecraft:polished_andesite
-setblock -17 65 21 minecraft:gold_block
-setblock -16 65 21 minecraft:iron_block
-setblock -17 64 22 minecraft:copper_block
-fill -59 63 28 -58 63 30 minecraft:yellow_concrete
-fill -59 64 30 -58 64 30 minecraft:polished_andesite
-setblock -59 65 30 minecraft:gold_block
-setblock -58 65 30 minecraft:iron_block
-setblock -59 64 29 minecraft:copper_block
-fill -57 63 28 -56 63 30 minecraft:light_blue_concrete
-fill -57 64 30 -56 64 30 minecraft:polished_andesite
-setblock -57 65 30 minecraft:gold_block
-setblock -56 65 30 minecraft:iron_block
-setblock -57 64 29 minecraft:copper_block
-fill -55 63 28 -54 63 30 minecraft:yellow_concrete
-fill -55 64 30 -54 64 30 minecraft:polished_andesite
-setblock -55 65 30 minecraft:gold_block
-setblock -54 65 30 minecraft:iron_block
-setblock -55 64 29 minecraft:copper_block
-fill -53 63 28 -52 63 30 minecraft:yellow_concrete
-fill -53 64 30 -52 64 30 minecraft:polished_andesite
-setblock -53 65 30 minecraft:gold_block
-setblock -52 65 30 minecraft:iron_block
-setblock -53 64 29 minecraft:copper_block
-fill -51 63 28 -50 63 30 minecraft:yellow_concrete
-fill -51 64 30 -50 64 30 minecraft:polished_andesite
-setblock -51 65 30 minecraft:gold_block
-setblock -50 65 30 minecraft:iron_block
-setblock -51 64 29 minecraft:copper_block
-fill -49 63 28 -48 63 30 minecraft:red_concrete
-fill -49 64 30 -48 64 30 minecraft:polished_andesite
-setblock -49 65 30 minecraft:gold_block
-setblock -48 65 30 minecraft:iron_block
-setblock -49 64 29 minecraft:copper_block
-fill -47 63 28 -46 63 30 minecraft:yellow_concrete
-fill -47 64 30 -46 64 30 minecraft:polished_andesite
-setblock -47 65 30 minecraft:gold_block
-setblock -46 65 30 minecraft:iron_block
-setblock -47 64 29 minecraft:copper_block
-fill -45 63 28 -44 63 30 minecraft:yellow_concrete
-fill -45 64 30 -44 64 30 minecraft:polished_andesite
-setblock -45 65 30 minecraft:gold_block
-setblock -44 65 30 minecraft:iron_block
-setblock -45 64 29 minecraft:copper_block
-fill -43 63 28 -42 63 30 minecraft:yellow_concrete
-fill -43 64 30 -42 64 30 minecraft:polished_andesite
-setblock -43 65 30 minecraft:gold_block
-setblock -42 65 30 minecraft:iron_block
-setblock -43 64 29 minecraft:copper_block
-fill -41 63 28 -40 63 30 minecraft:green_concrete
-fill -41 64 30 -40 64 30 minecraft:polished_andesite
-setblock -41 65 30 minecraft:gold_block
-setblock -40 65 30 minecraft:iron_block
-setblock -41 64 29 minecraft:copper_block
-fill -39 63 28 -38 63 30 minecraft:lime_concrete
-fill -39 64 30 -38 64 30 minecraft:polished_andesite
-setblock -39 65 30 minecraft:gold_block
-setblock -38 65 30 minecraft:iron_block
-setblock -39 64 29 minecraft:copper_block
-fill -37 63 28 -36 63 30 minecraft:red_concrete
-fill -37 64 30 -36 64 30 minecraft:polished_andesite
-setblock -37 65 30 minecraft:gold_block
-setblock -36 65 30 minecraft:iron_block
-setblock -37 64 29 minecraft:copper_block
-fill -35 63 28 -34 63 30 minecraft:lime_concrete
-fill -35 64 30 -34 64 30 minecraft:polished_andesite
-setblock -35 65 30 minecraft:gold_block
-setblock -34 65 30 minecraft:iron_block
-setblock -35 64 29 minecraft:copper_block
-fill -33 63 28 -32 63 30 minecraft:light_blue_concrete
-fill -33 64 30 -32 64 30 minecraft:polished_andesite
-setblock -33 65 30 minecraft:gold_block
-setblock -32 65 30 minecraft:iron_block
-setblock -33 64 29 minecraft:copper_block
-fill -31 63 28 -30 63 30 minecraft:red_concrete
-fill -31 64 30 -30 64 30 minecraft:polished_andesite
-setblock -31 65 30 minecraft:gold_block
-setblock -30 65 30 minecraft:iron_block
-setblock -31 64 29 minecraft:copper_block
-fill -29 63 28 -28 63 30 minecraft:light_blue_concrete
-fill -29 64 30 -28 64 30 minecraft:polished_andesite
-setblock -29 65 30 minecraft:gold_block
-setblock -28 65 30 minecraft:iron_block
-setblock -29 64 29 minecraft:copper_block
-fill -27 63 28 -26 63 30 minecraft:lime_concrete
-fill -27 64 30 -26 64 30 minecraft:polished_andesite
-setblock -27 65 30 minecraft:gold_block
-setblock -26 65 30 minecraft:iron_block
-setblock -27 64 29 minecraft:copper_block
-fill -25 63 28 -24 63 30 minecraft:magenta_concrete
-fill -25 64 30 -24 64 30 minecraft:polished_andesite
-setblock -25 65 30 minecraft:gold_block
-setblock -24 65 30 minecraft:iron_block
-setblock -25 64 29 minecraft:copper_block
-fill -23 63 28 -22 63 30 minecraft:yellow_concrete
-fill -23 64 30 -22 64 30 minecraft:polished_andesite
-setblock -23 65 30 minecraft:gold_block
-setblock -22 65 30 minecraft:iron_block
-setblock -23 64 29 minecraft:copper_block
-fill -21 63 28 -20 63 30 minecraft:red_concrete
-fill -21 64 30 -20 64 30 minecraft:polished_andesite
-setblock -21 65 30 minecraft:gold_block
-setblock -20 65 30 minecraft:iron_block
-setblock -21 64 29 minecraft:copper_block
-fill -19 63 28 -18 63 30 minecraft:red_concrete
-fill -19 64 30 -18 64 30 minecraft:polished_andesite
-setblock -19 65 30 minecraft:gold_block
-setblock -18 65 30 minecraft:iron_block
-setblock -19 64 29 minecraft:copper_block
-fill -17 63 28 -16 63 30 minecraft:magenta_concrete
-fill -17 64 30 -16 64 30 minecraft:polished_andesite
-setblock -17 65 30 minecraft:gold_block
-setblock -16 65 30 minecraft:iron_block
-setblock -17 64 29 minecraft:copper_block
+fill -59 63 21 -58 63 23 minecraft:spruce_planks
+fill -59 64 21 -58 66 21 minecraft:stripped_spruce_wood
+setblock -59 64 23 minecraft:spruce_planks
+setblock -58 64 23 minecraft:snow_block
+fill -59 65 23 -59 66 23 minecraft:spruce_fence
+fill -59 67 21 -58 67 23 minecraft:red_wool
+setblock -58 66 22 minecraft:light[level=13]
+fill -57 63 21 -56 63 23 minecraft:spruce_planks
+fill -57 64 21 -56 66 21 minecraft:stripped_spruce_wood
+setblock -57 64 23 minecraft:spruce_planks
+setblock -56 64 23 minecraft:tnt
+fill -57 65 23 -57 66 23 minecraft:spruce_fence
+fill -57 67 21 -56 67 23 minecraft:white_wool
+setblock -56 66 22 minecraft:light[level=13]
+fill -55 63 21 -54 63 23 minecraft:spruce_planks
+fill -55 64 21 -54 66 21 minecraft:stripped_spruce_wood
+setblock -55 64 23 minecraft:spruce_planks
+setblock -54 64 23 minecraft:chiseled_stone_bricks
+fill -55 65 23 -55 66 23 minecraft:spruce_fence
+fill -55 67 21 -54 67 23 minecraft:red_wool
+setblock -54 66 22 minecraft:light[level=13]
+fill -53 63 21 -52 63 23 minecraft:spruce_planks
+fill -53 64 21 -52 66 21 minecraft:stripped_spruce_wood
+setblock -53 64 23 minecraft:spruce_planks
+setblock -52 64 23 minecraft:red_wool
+fill -53 65 23 -53 66 23 minecraft:spruce_fence
+fill -53 67 21 -52 67 23 minecraft:white_wool
+setblock -52 66 22 minecraft:light[level=13]
+fill -51 63 21 -50 63 23 minecraft:spruce_planks
+fill -51 64 21 -50 66 21 minecraft:stripped_spruce_wood
+setblock -51 64 23 minecraft:spruce_planks
+setblock -50 64 23 minecraft:white_wool
+fill -51 65 23 -51 66 23 minecraft:spruce_fence
+fill -51 67 21 -50 67 23 minecraft:red_wool
+setblock -50 66 22 minecraft:light[level=13]
+fill -49 63 21 -48 63 23 minecraft:spruce_planks
+fill -49 64 21 -48 66 21 minecraft:stripped_spruce_wood
+setblock -49 64 23 minecraft:spruce_planks
+setblock -48 64 23 minecraft:mossy_cobblestone
+fill -49 65 23 -49 66 23 minecraft:spruce_fence
+fill -49 67 21 -48 67 23 minecraft:white_wool
+setblock -48 66 22 minecraft:light[level=13]
+fill -47 63 21 -46 63 23 minecraft:spruce_planks
+fill -47 64 21 -46 66 21 minecraft:stripped_spruce_wood
+setblock -47 64 23 minecraft:spruce_planks
+setblock -46 64 23 minecraft:hay_block
+fill -47 65 23 -47 66 23 minecraft:spruce_fence
+fill -47 67 21 -46 67 23 minecraft:red_wool
+setblock -46 66 22 minecraft:light[level=13]
+fill -45 63 21 -44 63 23 minecraft:spruce_planks
+fill -45 64 21 -44 66 21 minecraft:stripped_spruce_wood
+setblock -45 64 23 minecraft:spruce_planks
+setblock -44 64 23 minecraft:slime_block
+fill -45 65 23 -45 66 23 minecraft:spruce_fence
+fill -45 67 21 -44 67 23 minecraft:white_wool
+setblock -44 66 22 minecraft:light[level=13]
+fill -43 63 21 -42 63 23 minecraft:spruce_planks
+fill -43 64 21 -42 66 21 minecraft:stripped_spruce_wood
+setblock -43 64 23 minecraft:spruce_planks
+setblock -42 64 23 minecraft:blue_ice
+fill -43 65 23 -43 66 23 minecraft:spruce_fence
+fill -43 67 21 -42 67 23 minecraft:red_wool
+setblock -42 66 22 minecraft:light[level=13]
+fill -41 63 21 -40 63 23 minecraft:spruce_planks
+fill -41 64 21 -40 66 21 minecraft:stripped_spruce_wood
+setblock -41 64 23 minecraft:spruce_planks
+setblock -40 64 23 minecraft:target
+fill -41 65 23 -41 66 23 minecraft:spruce_fence
+fill -41 67 21 -40 67 23 minecraft:white_wool
+setblock -40 66 22 minecraft:light[level=13]
+fill -39 63 21 -38 63 23 minecraft:spruce_planks
+fill -39 64 21 -38 66 21 minecraft:stripped_spruce_wood
+setblock -39 64 23 minecraft:spruce_planks
+setblock -38 64 23 minecraft:red_concrete
+fill -39 65 23 -39 66 23 minecraft:spruce_fence
+fill -39 67 21 -38 67 23 minecraft:red_wool
+setblock -38 66 22 minecraft:light[level=13]
+fill -37 63 21 -36 63 23 minecraft:spruce_planks
+fill -37 64 21 -36 66 21 minecraft:stripped_spruce_wood
+setblock -37 64 23 minecraft:spruce_planks
+setblock -36 64 23 minecraft:jukebox
+fill -37 65 23 -37 66 23 minecraft:spruce_fence
+fill -37 67 21 -36 67 23 minecraft:white_wool
+setblock -36 66 22 minecraft:light[level=13]
+fill -35 63 21 -34 63 23 minecraft:spruce_planks
+fill -35 64 21 -34 66 21 minecraft:stripped_spruce_wood
+setblock -35 64 23 minecraft:spruce_planks
+setblock -34 64 23 minecraft:anvil
+fill -35 65 23 -35 66 23 minecraft:spruce_fence
+fill -35 67 21 -34 67 23 minecraft:red_wool
+setblock -34 66 22 minecraft:light[level=13]
+fill -33 63 21 -32 63 23 minecraft:spruce_planks
+fill -33 64 21 -32 66 21 minecraft:stripped_spruce_wood
+setblock -33 64 23 minecraft:spruce_planks
+setblock -32 64 23 minecraft:red_terracotta
+fill -33 65 23 -33 66 23 minecraft:spruce_fence
+fill -33 67 21 -32 67 23 minecraft:white_wool
+setblock -32 66 22 minecraft:light[level=13]
+fill -31 63 21 -30 63 23 minecraft:spruce_planks
+fill -31 64 21 -30 66 21 minecraft:stripped_spruce_wood
+setblock -31 64 23 minecraft:spruce_planks
+setblock -30 64 23 minecraft:target
+fill -31 65 23 -31 66 23 minecraft:spruce_fence
+fill -31 67 21 -30 67 23 minecraft:red_wool
+setblock -30 66 22 minecraft:light[level=13]
+fill -29 63 21 -28 63 23 minecraft:spruce_planks
+fill -29 64 21 -28 66 21 minecraft:stripped_spruce_wood
+setblock -29 64 23 minecraft:spruce_planks
+setblock -28 64 23 minecraft:lime_concrete
+fill -29 65 23 -29 66 23 minecraft:spruce_fence
+fill -29 67 21 -28 67 23 minecraft:white_wool
+setblock -28 66 22 minecraft:light[level=13]
+fill -27 63 21 -26 63 23 minecraft:spruce_planks
+fill -27 64 21 -26 66 21 minecraft:stripped_spruce_wood
+setblock -27 64 23 minecraft:spruce_planks
+setblock -26 64 23 minecraft:packed_ice
+fill -27 65 23 -27 66 23 minecraft:spruce_fence
+fill -27 67 21 -26 67 23 minecraft:red_wool
+setblock -26 66 22 minecraft:light[level=13]
+fill -25 63 21 -24 63 23 minecraft:spruce_planks
+fill -25 64 21 -24 66 21 minecraft:stripped_spruce_wood
+setblock -25 64 23 minecraft:spruce_planks
+setblock -24 64 23 minecraft:crafting_table
+fill -25 65 23 -25 66 23 minecraft:spruce_fence
+fill -25 67 21 -24 67 23 minecraft:white_wool
+setblock -24 66 22 minecraft:light[level=13]
+fill -23 63 21 -22 63 23 minecraft:spruce_planks
+fill -23 64 21 -22 66 21 minecraft:stripped_spruce_wood
+setblock -23 64 23 minecraft:spruce_planks
+setblock -22 64 23 minecraft:cake
+fill -23 65 23 -23 66 23 minecraft:spruce_fence
+fill -23 67 21 -22 67 23 minecraft:red_wool
+setblock -22 66 22 minecraft:light[level=13]
+fill -21 63 21 -20 63 23 minecraft:spruce_planks
+fill -21 64 21 -20 66 21 minecraft:stripped_spruce_wood
+setblock -21 64 23 minecraft:spruce_planks
+setblock -20 64 23 minecraft:redstone_block
+fill -21 65 23 -21 66 23 minecraft:spruce_fence
+fill -21 67 21 -20 67 23 minecraft:white_wool
+setblock -20 66 22 minecraft:light[level=13]
+fill -19 63 21 -18 63 23 minecraft:spruce_planks
+fill -19 64 21 -18 66 21 minecraft:stripped_spruce_wood
+setblock -19 64 23 minecraft:spruce_planks
+setblock -18 64 23 minecraft:end_stone_bricks
+fill -19 65 23 -19 66 23 minecraft:spruce_fence
+fill -19 67 21 -18 67 23 minecraft:red_wool
+setblock -18 66 22 minecraft:light[level=13]
+fill -17 63 21 -16 63 23 minecraft:spruce_planks
+fill -17 64 21 -16 66 21 minecraft:stripped_spruce_wood
+setblock -17 64 23 minecraft:spruce_planks
+setblock -16 64 23 minecraft:purpur_block
+fill -17 65 23 -17 66 23 minecraft:spruce_fence
+fill -17 67 21 -16 67 23 minecraft:white_wool
+setblock -16 66 22 minecraft:light[level=13]
+fill -59 63 28 -58 63 30 minecraft:spruce_planks
+fill -59 64 30 -58 66 30 minecraft:stripped_spruce_wood
+setblock -59 64 28 minecraft:spruce_planks
+setblock -58 64 28 minecraft:bookshelf
+fill -59 65 28 -59 66 28 minecraft:spruce_fence
+fill -59 67 30 -58 67 28 minecraft:red_wool
+setblock -58 66 29 minecraft:light[level=13]
+fill -57 63 28 -56 63 30 minecraft:spruce_planks
+fill -57 64 30 -56 66 30 minecraft:stripped_spruce_wood
+setblock -57 64 28 minecraft:spruce_planks
+setblock -56 64 28 minecraft:sea_lantern
+fill -57 65 28 -57 66 28 minecraft:spruce_fence
+fill -57 67 30 -56 67 28 minecraft:white_wool
+setblock -56 66 29 minecraft:light[level=13]
+fill -55 63 28 -54 63 30 minecraft:spruce_planks
+fill -55 64 30 -54 66 30 minecraft:stripped_spruce_wood
+setblock -55 64 28 minecraft:spruce_planks
+setblock -54 64 28 minecraft:gold_block
+fill -55 65 28 -55 66 28 minecraft:spruce_fence
+fill -55 67 30 -54 67 28 minecraft:red_wool
+setblock -54 66 29 minecraft:light[level=13]
+fill -53 63 28 -52 63 30 minecraft:spruce_planks
+fill -53 64 30 -52 66 30 minecraft:stripped_spruce_wood
+setblock -53 64 28 minecraft:spruce_planks
+setblock -52 64 28 minecraft:quartz_block
+fill -53 65 28 -53 66 28 minecraft:spruce_fence
+fill -53 67 30 -52 67 28 minecraft:white_wool
+setblock -52 66 29 minecraft:light[level=13]
+fill -51 63 28 -50 63 30 minecraft:spruce_planks
+fill -51 64 30 -50 66 30 minecraft:stripped_spruce_wood
+setblock -51 64 28 minecraft:spruce_planks
+setblock -50 64 28 minecraft:barrel
+fill -51 65 28 -51 66 28 minecraft:spruce_fence
+fill -51 67 30 -50 67 28 minecraft:red_wool
+setblock -50 66 29 minecraft:light[level=13]
+fill -49 63 28 -48 63 30 minecraft:spruce_planks
+fill -49 64 30 -48 66 30 minecraft:stripped_spruce_wood
+setblock -49 64 28 minecraft:spruce_planks
+setblock -48 64 28 minecraft:blue_wool
+fill -49 65 28 -49 66 28 minecraft:spruce_fence
+fill -49 67 30 -48 67 28 minecraft:white_wool
+setblock -48 66 29 minecraft:light[level=13]
+fill -47 63 28 -46 63 30 minecraft:spruce_planks
+fill -47 64 30 -46 66 30 minecraft:stripped_spruce_wood
+setblock -47 64 28 minecraft:spruce_planks
+setblock -46 64 28 minecraft:grass_block
+fill -47 65 28 -47 66 28 minecraft:spruce_fence
+fill -47 67 30 -46 67 28 minecraft:red_wool
+setblock -46 66 29 minecraft:light[level=13]
+fill -45 63 28 -44 63 30 minecraft:spruce_planks
+fill -45 64 30 -44 66 30 minecraft:stripped_spruce_wood
+setblock -45 64 28 minecraft:spruce_planks
+setblock -44 64 28 minecraft:chest
+fill -45 65 28 -45 66 28 minecraft:spruce_fence
+fill -45 67 30 -44 67 28 minecraft:white_wool
+setblock -44 66 29 minecraft:light[level=13]
+fill -43 63 28 -42 63 30 minecraft:spruce_planks
+fill -43 64 30 -42 66 30 minecraft:stripped_spruce_wood
+setblock -43 64 28 minecraft:spruce_planks
+setblock -42 64 28 minecraft:pumpkin
+fill -43 65 28 -43 66 28 minecraft:spruce_fence
+fill -43 67 30 -42 67 28 minecraft:red_wool
+setblock -42 66 29 minecraft:light[level=13]
+fill -41 63 28 -40 63 30 minecraft:spruce_planks
+fill -41 64 30 -40 66 30 minecraft:stripped_spruce_wood
+setblock -41 64 28 minecraft:spruce_planks
+setblock -40 64 28 minecraft:mossy_stone_bricks
+fill -41 65 28 -41 66 28 minecraft:spruce_fence
+fill -41 67 30 -40 67 28 minecraft:white_wool
+setblock -40 66 29 minecraft:light[level=13]
+fill -39 63 28 -38 63 30 minecraft:spruce_planks
+fill -39 64 30 -38 66 30 minecraft:stripped_spruce_wood
+setblock -39 64 28 minecraft:spruce_planks
+setblock -38 64 28 minecraft:green_concrete
+fill -39 65 28 -39 66 28 minecraft:spruce_fence
+fill -39 67 30 -38 67 28 minecraft:red_wool
+setblock -38 66 29 minecraft:light[level=13]
+fill -37 63 28 -36 63 30 minecraft:spruce_planks
+fill -37 64 30 -36 66 30 minecraft:stripped_spruce_wood
+setblock -37 64 28 minecraft:spruce_planks
+setblock -36 64 28 minecraft:tnt
+fill -37 65 28 -37 66 28 minecraft:spruce_fence
+fill -37 67 30 -36 67 28 minecraft:white_wool
+setblock -36 66 29 minecraft:light[level=13]
+fill -35 63 28 -34 63 30 minecraft:spruce_planks
+fill -35 64 30 -34 66 30 minecraft:stripped_spruce_wood
+setblock -35 64 28 minecraft:spruce_planks
+setblock -34 64 28 minecraft:moss_block
+fill -35 65 28 -35 66 28 minecraft:spruce_fence
+fill -35 67 30 -34 67 28 minecraft:red_wool
+setblock -34 66 29 minecraft:light[level=13]
+fill -33 63 28 -32 63 30 minecraft:spruce_planks
+fill -33 64 30 -32 66 30 minecraft:stripped_spruce_wood
+setblock -33 64 28 minecraft:spruce_planks
+setblock -32 64 28 minecraft:white_concrete
+fill -33 65 28 -33 66 28 minecraft:spruce_fence
+fill -33 67 30 -32 67 28 minecraft:white_wool
+setblock -32 66 29 minecraft:light[level=13]
+fill -31 63 28 -30 63 30 minecraft:spruce_planks
+fill -31 64 30 -30 66 30 minecraft:stripped_spruce_wood
+setblock -31 64 28 minecraft:spruce_planks
+setblock -30 64 28 minecraft:red_concrete
+fill -31 65 28 -31 66 28 minecraft:spruce_fence
+fill -31 67 30 -30 67 28 minecraft:red_wool
+setblock -30 66 29 minecraft:light[level=13]
+fill -29 63 28 -28 63 30 minecraft:spruce_planks
+fill -29 64 30 -28 66 30 minecraft:stripped_spruce_wood
+setblock -29 64 28 minecraft:spruce_planks
+setblock -28 64 28 minecraft:blue_ice
+fill -29 65 28 -29 66 28 minecraft:spruce_fence
+fill -29 67 30 -28 67 28 minecraft:white_wool
+setblock -28 66 29 minecraft:light[level=13]
+fill -27 63 28 -26 63 30 minecraft:spruce_planks
+fill -27 64 30 -26 66 30 minecraft:stripped_spruce_wood
+setblock -27 64 28 minecraft:spruce_planks
+setblock -26 64 28 minecraft:slime_block
+fill -27 65 28 -27 66 28 minecraft:spruce_fence
+fill -27 67 30 -26 67 28 minecraft:red_wool
+setblock -26 66 29 minecraft:light[level=13]
+fill -25 63 28 -24 63 30 minecraft:spruce_planks
+fill -25 64 30 -24 66 30 minecraft:stripped_spruce_wood
+setblock -25 64 28 minecraft:spruce_planks
+setblock -24 64 28 minecraft:black_concrete
+fill -25 65 28 -25 66 28 minecraft:spruce_fence
+fill -25 67 30 -24 67 28 minecraft:white_wool
+setblock -24 66 29 minecraft:light[level=13]
+fill -23 63 28 -22 63 30 minecraft:spruce_planks
+fill -23 64 30 -22 66 30 minecraft:stripped_spruce_wood
+setblock -23 64 28 minecraft:spruce_planks
+setblock -22 64 28 minecraft:gold_block
+fill -23 65 28 -23 66 28 minecraft:spruce_fence
+fill -23 67 30 -22 67 28 minecraft:red_wool
+setblock -22 66 29 minecraft:light[level=13]
+fill -21 63 28 -20 63 30 minecraft:spruce_planks
+fill -21 64 30 -20 66 30 minecraft:stripped_spruce_wood
+setblock -21 64 28 minecraft:spruce_planks
+setblock -20 64 28 minecraft:redstone_block
+fill -21 65 28 -21 66 28 minecraft:spruce_fence
+fill -21 67 30 -20 67 28 minecraft:white_wool
+setblock -20 66 29 minecraft:light[level=13]
+fill -19 63 28 -18 63 30 minecraft:spruce_planks
+fill -19 64 30 -18 66 30 minecraft:stripped_spruce_wood
+setblock -19 64 28 minecraft:spruce_planks
+setblock -18 64 28 minecraft:stone_bricks
+fill -19 65 28 -19 66 28 minecraft:spruce_fence
+fill -19 67 30 -18 67 28 minecraft:red_wool
+setblock -18 66 29 minecraft:light[level=13]
+fill -17 63 28 -16 63 30 minecraft:spruce_planks
+fill -17 64 30 -16 66 30 minecraft:stripped_spruce_wood
+setblock -17 64 28 minecraft:spruce_planks
+setblock -16 64 28 minecraft:moss_block
+fill -17 65 28 -17 66 28 minecraft:spruce_fence
+fill -17 67 30 -16 67 28 minecraft:white_wool
+setblock -16 66 29 minecraft:light[level=13]
+setblock -15 64 23 minecraft:spruce_planks
+fill -15 65 23 -15 66 23 minecraft:spruce_fence
+setblock -15 64 28 minecraft:spruce_planks
+fill -15 65 28 -15 66 28 minecraft:spruce_fence
 
 # Place d'entrée (est) : piédestaux d'honneur
 setblock -9 64 21 minecraft:emerald_block
@@ -288,94 +380,138 @@ execute if data storage mg:hall e.elyg run data modify entity @e[type=minecraft:
 summon minecraft:text_display -8.5 68.6 25.5 {Tags:["mg.hall","mg.h_gen"],billboard:"vertical",line_width:200,text:[{"text":"🏅 Meilleur niveau général","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.1f,1.1f,1.1f]}}
 execute if data storage mg:hall e.gen run data modify entity @e[type=minecraft:text_display,tag=mg.h_gen,limit=1] text set from storage mg:hall e.gen
 
-# Stands : top 3 de chaque jeu (texte par défaut, puis top 3 enregistré) ; un panneau sur deux plus haut, pour qu'ils ne se touchent pas
-summon minecraft:text_display -58.0 66.3 21.5 {Tags:["mg.hall","mg.h3_spleef"],billboard:"vertical",line_width:130,text:[{"text":"❄ Spleef","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+# Étals : top 3 de chaque jeu sur fond sombre (texte par défaut, puis top 3 enregistré), objet du jeu sur le comptoir
+summon minecraft:text_display -58.0 65.35 22.5 {Tags:["mg.hall","mg.h3_spleef"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"❄ Spleef","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -57.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:diamond_shovel"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.spleef run data modify entity @e[type=minecraft:text_display,tag=mg.h3_spleef,limit=1] text set from storage mg:hall t3x.spleef
-summon minecraft:text_display -56.0 67.5 21.5 {Tags:["mg.hall","mg.h3_tntrun"],billboard:"vertical",line_width:130,text:[{"text":"✷ TNT Run","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -56.0 65.35 22.5 {Tags:["mg.hall","mg.h3_tntrun"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"✷ TNT Run","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -55.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:tnt"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.tntrun run data modify entity @e[type=minecraft:text_display,tag=mg.h3_tntrun,limit=1] text set from storage mg:hall t3x.tntrun
-summon minecraft:text_display -54.0 66.3 21.5 {Tags:["mg.hall","mg.h3_pvp"],billboard:"vertical",line_width:130,text:[{"text":"⚔ PvP","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -54.0 65.35 22.5 {Tags:["mg.hall","mg.h3_pvp"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"⚔ PvP","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -53.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:iron_sword"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.pvp run data modify entity @e[type=minecraft:text_display,tag=mg.h3_pvp,limit=1] text set from storage mg:hall t3x.pvp
-summon minecraft:text_display -52.0 67.5 21.5 {Tags:["mg.hall","mg.h3_bedwars"],billboard:"vertical",line_width:130,text:[{"text":"🛏 Bedwars","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -52.0 65.35 22.5 {Tags:["mg.hall","mg.h3_bedwars"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🛏 Bedwars","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -51.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:red_bed"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.bedwars run data modify entity @e[type=minecraft:text_display,tag=mg.h3_bedwars,limit=1] text set from storage mg:hall t3x.bedwars
-summon minecraft:text_display -50.0 66.3 21.5 {Tags:["mg.hall","mg.h3_sheepwar"],billboard:"vertical",line_width:130,text:[{"text":"🐑 Sheep War","color":"white","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -50.0 65.35 22.5 {Tags:["mg.hall","mg.h3_sheepwar"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🐑 Sheep War","color":"white","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -49.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:shears"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.sheepwar run data modify entity @e[type=minecraft:text_display,tag=mg.h3_sheepwar,limit=1] text set from storage mg:hall t3x.sheepwar
-summon minecraft:text_display -48.0 67.5 21.5 {Tags:["mg.hall","mg.h3_mobarena"],billboard:"vertical",line_width:130,text:[{"text":"☠ Mob Arena","color":"dark_green","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -48.0 65.35 22.5 {Tags:["mg.hall","mg.h3_mobarena"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"☠ Mob Arena","color":"dark_green","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -47.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:zombie_head"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.mobarena run data modify entity @e[type=minecraft:text_display,tag=mg.h3_mobarena,limit=1] text set from storage mg:hall t3x.mobarena
-summon minecraft:text_display -46.0 66.3 21.5 {Tags:["mg.hall","mg.h3_splegg"],billboard:"vertical",line_width:130,text:[{"text":"❍ Splegg","color":"yellow","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -46.0 65.35 22.5 {Tags:["mg.hall","mg.h3_splegg"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"❍ Splegg","color":"yellow","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -45.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:egg"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.splegg run data modify entity @e[type=minecraft:text_display,tag=mg.h3_splegg,limit=1] text set from storage mg:hall t3x.splegg
-summon minecraft:text_display -44.0 67.5 21.5 {Tags:["mg.hall","mg.h3_sumo"],billboard:"vertical",line_width:130,text:[{"text":"✊ Sumo","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -44.0 65.35 22.5 {Tags:["mg.hall","mg.h3_sumo"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"✊ Sumo","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -43.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:slime_ball"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.sumo run data modify entity @e[type=minecraft:text_display,tag=mg.h3_sumo,limit=1] text set from storage mg:hall t3x.sumo
-summon minecraft:text_display -42.0 66.3 21.5 {Tags:["mg.hall","mg.h3_dropper"],billboard:"vertical",line_width:130,text:[{"text":"⬇ Dropper","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -42.0 65.35 22.5 {Tags:["mg.hall","mg.h3_dropper"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"⬇ Dropper","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -41.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:feather"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.dropper run data modify entity @e[type=minecraft:text_display,tag=mg.h3_dropper,limit=1] text set from storage mg:hall t3x.dropper
-summon minecraft:text_display -40.0 67.5 21.5 {Tags:["mg.hall","mg.h3_oitc"],billboard:"vertical",line_width:130,text:[{"text":"➶ One in the Chamber","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -40.0 65.35 22.5 {Tags:["mg.hall","mg.h3_oitc"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"➶ One in the Chamber","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -39.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:bow"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.oitc run data modify entity @e[type=minecraft:text_display,tag=mg.h3_oitc,limit=1] text set from storage mg:hall t3x.oitc
-summon minecraft:text_display -38.0 66.3 21.5 {Tags:["mg.hall","mg.h3_tnttag"],billboard:"vertical",line_width:130,text:[{"text":"✹ TNT Tag","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -38.0 65.35 22.5 {Tags:["mg.hall","mg.h3_tnttag"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"✹ TNT Tag","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -37.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:tnt"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.tnttag run data modify entity @e[type=minecraft:text_display,tag=mg.h3_tnttag,limit=1] text set from storage mg:hall t3x.tnttag
-summon minecraft:text_display -36.0 67.5 21.5 {Tags:["mg.hall","mg.h3_blockparty"],billboard:"vertical",line_width:130,text:[{"text":"▦ Block Party","color":"light_purple","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -36.0 65.35 22.5 {Tags:["mg.hall","mg.h3_blockparty"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"▦ Block Party","color":"light_purple","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -35.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:music_disc_cat"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.blockparty run data modify entity @e[type=minecraft:text_display,tag=mg.h3_blockparty,limit=1] text set from storage mg:hall t3x.blockparty
-summon minecraft:text_display -34.0 66.3 21.5 {Tags:["mg.hall","mg.h3_anvil"],billboard:"vertical",line_width:130,text:[{"text":"⚓ Pluie d'enclumes","color":"gray","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -34.0 65.35 22.5 {Tags:["mg.hall","mg.h3_anvil"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"⚓ Pluie d'enclumes","color":"gray","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -33.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:anvil"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.anvil run data modify entity @e[type=minecraft:text_display,tag=mg.h3_anvil,limit=1] text set from storage mg:hall t3x.anvil
-summon minecraft:text_display -32.0 67.5 21.5 {Tags:["mg.hall","mg.h3_turf"],billboard:"vertical",line_width:130,text:[{"text":"▮ Turf Wars","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -32.0 65.35 22.5 {Tags:["mg.hall","mg.h3_turf"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"▮ Turf Wars","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -31.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:bow"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.turf run data modify entity @e[type=minecraft:text_display,tag=mg.h3_turf,limit=1] text set from storage mg:hall t3x.turf
-summon minecraft:text_display -30.0 66.3 21.5 {Tags:["mg.hall","mg.h3_quake"],billboard:"vertical",line_width:130,text:[{"text":"⚡ Quakecraft","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -30.0 65.35 22.5 {Tags:["mg.hall","mg.h3_quake"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"⚡ Quakecraft","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -29.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:diamond_hoe"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.quake run data modify entity @e[type=minecraft:text_display,tag=mg.h3_quake,limit=1] text set from storage mg:hall t3x.quake
-summon minecraft:text_display -28.0 67.5 21.5 {Tags:["mg.hall","mg.h3_paintball"],billboard:"vertical",line_width:130,text:[{"text":"▓ Paintball","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -28.0 65.35 22.5 {Tags:["mg.hall","mg.h3_paintball"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"▓ Paintball","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -27.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:snowball"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.paintball run data modify entity @e[type=minecraft:text_display,tag=mg.h3_paintball,limit=1] text set from storage mg:hall t3x.paintball
-summon minecraft:text_display -26.0 66.3 21.5 {Tags:["mg.hall","mg.h3_icerace"],billboard:"vertical",line_width:130,text:[{"text":"⛵ Course de bateaux","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -26.0 65.35 22.5 {Tags:["mg.hall","mg.h3_icerace"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"⛵ Course de bateaux","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -25.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:oak_boat"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.icerace run data modify entity @e[type=minecraft:text_display,tag=mg.h3_icerace,limit=1] text set from storage mg:hall t3x.icerace
-summon minecraft:text_display -24.0 67.5 21.5 {Tags:["mg.hall","mg.h3_bb"],billboard:"vertical",line_width:130,text:[{"text":"✎ Build Battle","color":"green","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -24.0 65.35 22.5 {Tags:["mg.hall","mg.h3_bb"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"✎ Build Battle","color":"green","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -23.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:brick"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.bb run data modify entity @e[type=minecraft:text_display,tag=mg.h3_bb,limit=1] text set from storage mg:hall t3x.bb
-summon minecraft:text_display -22.0 66.3 21.5 {Tags:["mg.hall","mg.h3_party"],billboard:"vertical",line_width:130,text:[{"text":"★ Mini Party","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -22.0 65.35 22.5 {Tags:["mg.hall","mg.h3_party"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"★ Mini Party","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -21.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:cake"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.party run data modify entity @e[type=minecraft:text_display,tag=mg.h3_party,limit=1] text set from storage mg:hall t3x.party
-summon minecraft:text_display -20.0 67.5 21.5 {Tags:["mg.hall","mg.h3_kart"],billboard:"vertical",line_width:130,text:[{"text":"🏎 Kart","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -20.0 65.35 22.5 {Tags:["mg.hall","mg.h3_kart"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🏎 Kart","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -19.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:minecart"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.kart run data modify entity @e[type=minecraft:text_display,tag=mg.h3_kart,limit=1] text set from storage mg:hall t3x.kart
-summon minecraft:text_display -18.0 66.3 21.5 {Tags:["mg.hall","mg.h3_elyrace"],billboard:"vertical",line_width:130,text:[{"text":"🪽 Course d'élytres","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -18.0 65.35 22.5 {Tags:["mg.hall","mg.h3_elyrace"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🪽 Course d'élytres","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -17.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:elytra"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.elyrace run data modify entity @e[type=minecraft:text_display,tag=mg.h3_elyrace,limit=1] text set from storage mg:hall t3x.elyrace
-summon minecraft:text_display -16.0 67.5 21.5 {Tags:["mg.hall","mg.h3_elytra"],billboard:"vertical",line_width:130,text:[{"text":"🪽 Élytra (3 modes)","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -16.0 65.35 22.5 {Tags:["mg.hall","mg.h3_elytra"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🪽 Élytra (3 modes)","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -15.5 65.45 23.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:firework_rocket"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.elytra run data modify entity @e[type=minecraft:text_display,tag=mg.h3_elytra,limit=1] text set from storage mg:hall t3x.elytra
-summon minecraft:text_display -58.0 66.3 30.5 {Tags:["mg.hall","mg.h3_telephone"],billboard:"vertical",line_width:130,text:[{"text":"📞 Téléphone","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -58.0 65.35 29.5 {Tags:["mg.hall","mg.h3_telephone"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"📞 Téléphone","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -57.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:writable_book"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.telephone run data modify entity @e[type=minecraft:text_display,tag=mg.h3_telephone,limit=1] text set from storage mg:hall t3x.telephone
-summon minecraft:text_display -56.0 67.5 30.5 {Tags:["mg.hall","mg.h3_tron"],billboard:"vertical",line_width:130,text:[{"text":"⚡ Tron","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -56.0 65.35 29.5 {Tags:["mg.hall","mg.h3_tron"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"⚡ Tron","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -55.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:blaze_rod"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.tron run data modify entity @e[type=minecraft:text_display,tag=mg.h3_tron,limit=1] text set from storage mg:hall t3x.tron
-summon minecraft:text_display -54.0 66.3 30.5 {Tags:["mg.hall","mg.h3_koth"],billboard:"vertical",line_width:130,text:[{"text":"👑 King of the Hill","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -54.0 65.35 29.5 {Tags:["mg.hall","mg.h3_koth"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"👑 King of the Hill","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -53.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:golden_helmet"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.koth run data modify entity @e[type=minecraft:text_display,tag=mg.h3_koth,limit=1] text set from storage mg:hall t3x.koth
-summon minecraft:text_display -52.0 67.5 30.5 {Tags:["mg.hall","mg.h3_tower"],billboard:"vertical",line_width:130,text:[{"text":"🏰 The Towers","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -52.0 65.35 29.5 {Tags:["mg.hall","mg.h3_tower"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🏰 The Towers","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -51.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:golden_apple"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.tower run data modify entity @e[type=minecraft:text_display,tag=mg.h3_tower,limit=1] text set from storage mg:hall t3x.tower
-summon minecraft:text_display -50.0 66.3 30.5 {Tags:["mg.hall","mg.h3_convoy"],billboard:"vertical",line_width:130,text:[{"text":"🚚 Convoi","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -50.0 65.35 29.5 {Tags:["mg.hall","mg.h3_convoy"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🚚 Convoi","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -49.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:chest_minecart"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.convoy run data modify entity @e[type=minecraft:text_display,tag=mg.h3_convoy,limit=1] text set from storage mg:hall t3x.convoy
-summon minecraft:text_display -48.0 67.5 30.5 {Tags:["mg.hall","mg.h3_ctf"],billboard:"vertical",line_width:130,text:[{"text":"🚩 Capture the Flag","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -48.0 65.35 29.5 {Tags:["mg.hall","mg.h3_ctf"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🚩 Capture the Flag","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -47.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:red_banner"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.ctf run data modify entity @e[type=minecraft:text_display,tag=mg.h3_ctf,limit=1] text set from storage mg:hall t3x.ctf
-summon minecraft:text_display -46.0 66.3 30.5 {Tags:["mg.hall","mg.h3_uhc"],billboard:"vertical",line_width:130,text:[{"text":"⛏ Mini UHC Run","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -46.0 65.35 29.5 {Tags:["mg.hall","mg.h3_uhc"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"⛏ Mini UHC Run","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -45.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:golden_apple"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.uhc run data modify entity @e[type=minecraft:text_display,tag=mg.h3_uhc,limit=1] text set from storage mg:hall t3x.uhc
-summon minecraft:text_display -44.0 67.5 30.5 {Tags:["mg.hall","mg.h3_hg"],billboard:"vertical",line_width:130,text:[{"text":"🏹 Mini Hunger Games","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -44.0 65.35 29.5 {Tags:["mg.hall","mg.h3_hg"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🏹 Mini Hunger Games","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -43.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:iron_axe"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.hg run data modify entity @e[type=minecraft:text_display,tag=mg.h3_hg,limit=1] text set from storage mg:hall t3x.hg
-summon minecraft:text_display -42.0 66.3 30.5 {Tags:["mg.hall","mg.h3_prophunt"],billboard:"vertical",line_width:130,text:[{"text":"🎭 Prop Hunt","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -42.0 65.35 29.5 {Tags:["mg.hall","mg.h3_prophunt"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🎭 Prop Hunt","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -41.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:armor_stand"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.prophunt run data modify entity @e[type=minecraft:text_display,tag=mg.h3_prophunt,limit=1] text set from storage mg:hall t3x.prophunt
-summon minecraft:text_display -40.0 67.5 30.5 {Tags:["mg.hall","mg.h3_zombies"],billboard:"vertical",line_width:130,text:[{"text":"🧟 Zombies","color":"dark_green","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -40.0 65.35 29.5 {Tags:["mg.hall","mg.h3_zombies"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🧟 Zombies","color":"dark_green","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -39.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:rotten_flesh"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.zombies run data modify entity @e[type=minecraft:text_display,tag=mg.h3_zombies,limit=1] text set from storage mg:hall t3x.zombies
-summon minecraft:text_display -38.0 66.3 30.5 {Tags:["mg.hall","mg.h3_infection"],billboard:"vertical",line_width:130,text:[{"text":"🧪 Infection","color":"green","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -38.0 65.35 29.5 {Tags:["mg.hall","mg.h3_infection"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🧪 Infection","color":"green","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -37.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:zombie_head"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.infection run data modify entity @e[type=minecraft:text_display,tag=mg.h3_infection,limit=1] text set from storage mg:hall t3x.infection
-summon minecraft:text_display -36.0 67.5 30.5 {Tags:["mg.hall","mg.h3_bomber"],billboard:"vertical",line_width:130,text:[{"text":"💣 Bombardier","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -36.0 65.35 29.5 {Tags:["mg.hall","mg.h3_bomber"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"💣 Bombardier","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -35.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:fire_charge"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.bomber run data modify entity @e[type=minecraft:text_display,tag=mg.h3_bomber,limit=1] text set from storage mg:hall t3x.bomber
-summon minecraft:text_display -34.0 66.3 30.5 {Tags:["mg.hall","mg.h3_chameleon"],billboard:"vertical",line_width:130,text:[{"text":"🦎 Meccha Chameleon","color":"green","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -34.0 65.35 29.5 {Tags:["mg.hall","mg.h3_chameleon"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🦎 Meccha Chameleon","color":"green","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -33.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:lime_dye"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.chameleon run data modify entity @e[type=minecraft:text_display,tag=mg.h3_chameleon,limit=1] text set from storage mg:hall t3x.chameleon
-summon minecraft:text_display -32.0 67.5 30.5 {Tags:["mg.hall","mg.h3_wii"],billboard:"vertical",line_width:130,text:[{"text":"🎾 Wii Sports","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -32.0 65.35 29.5 {Tags:["mg.hall","mg.h3_wii"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🎾 Wii Sports","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -31.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:snowball"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.wii run data modify entity @e[type=minecraft:text_display,tag=mg.h3_wii,limit=1] text set from storage mg:hall t3x.wii
-summon minecraft:text_display -30.0 66.3 30.5 {Tags:["mg.hall","mg.h3_soleil"],billboard:"vertical",line_width:130,text:[{"text":"🔴 1, 2, 3 Soleil","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -30.0 65.35 29.5 {Tags:["mg.hall","mg.h3_soleil"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🔴 1, 2, 3 Soleil","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -29.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:red_dye"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.soleil run data modify entity @e[type=minecraft:text_display,tag=mg.h3_soleil,limit=1] text set from storage mg:hall t3x.soleil
-summon minecraft:text_display -28.0 67.5 30.5 {Tags:["mg.hall","mg.h3_autotamp"],billboard:"vertical",line_width:130,text:[{"text":"🚗 Autos tamponneuses","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -28.0 65.35 29.5 {Tags:["mg.hall","mg.h3_autotamp"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🚗 Autos tamponneuses","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -27.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:oak_boat"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.autotamp run data modify entity @e[type=minecraft:text_display,tag=mg.h3_autotamp,limit=1] text set from storage mg:hall t3x.autotamp
-summon minecraft:text_display -26.0 66.3 30.5 {Tags:["mg.hall","mg.h3_slimejump"],billboard:"vertical",line_width:130,text:[{"text":"🟩 Slime Jump","color":"green","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -26.0 65.35 29.5 {Tags:["mg.hall","mg.h3_slimejump"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🟩 Slime Jump","color":"green","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -25.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:slime_ball"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.slimejump run data modify entity @e[type=minecraft:text_display,tag=mg.h3_slimejump,limit=1] text set from storage mg:hall t3x.slimejump
-summon minecraft:text_display -24.0 67.5 30.5 {Tags:["mg.hall","mg.h3_lab"],billboard:"vertical",line_width:130,text:[{"text":"🙈 Labyrinthe aveugle","color":"light_purple","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -24.0 65.35 29.5 {Tags:["mg.hall","mg.h3_lab"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🙈 Labyrinthe aveugle","color":"light_purple","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -23.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:ink_sac"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.lab run data modify entity @e[type=minecraft:text_display,tag=mg.h3_lab,limit=1] text set from storage mg:hall t3x.lab
-summon minecraft:text_display -22.0 66.3 30.5 {Tags:["mg.hall","mg.h3_master"],billboard:"vertical",line_width:130,text:[{"text":"👑 Master dit","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -22.0 65.35 29.5 {Tags:["mg.hall","mg.h3_master"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"👑 Master dit","color":"gold","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -21.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:clock"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.master run data modify entity @e[type=minecraft:text_display,tag=mg.h3_master,limit=1] text set from storage mg:hall t3x.master
-summon minecraft:text_display -20.0 67.5 30.5 {Tags:["mg.hall","mg.h3_murder"],billboard:"vertical",line_width:130,text:[{"text":"🔪 Murder Mystery","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -20.0 65.35 29.5 {Tags:["mg.hall","mg.h3_murder"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🔪 Murder Mystery","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -19.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:iron_sword"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.murder run data modify entity @e[type=minecraft:text_display,tag=mg.h3_murder,limit=1] text set from storage mg:hall t3x.murder
-summon minecraft:text_display -18.0 66.3 30.5 {Tags:["mg.hall","mg.h3_bman"],billboard:"vertical",line_width:130,text:[{"text":"💣 Bomberman","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -18.0 65.35 29.5 {Tags:["mg.hall","mg.h3_bman"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"💣 Bomberman","color":"red","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -17.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:tnt"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.bman run data modify entity @e[type=minecraft:text_display,tag=mg.h3_bman,limit=1] text set from storage mg:hall t3x.bman
-summon minecraft:text_display -16.0 67.5 30.5 {Tags:["mg.hall","mg.h3_maze"],billboard:"vertical",line_width:130,text:[{"text":"🌀 Labyrinthe géant","color":"light_purple","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.5f,0.5f,0.5f]}}
+summon minecraft:text_display -16.0 65.35 29.5 {Tags:["mg.hall","mg.h3_maze"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🌀 Labyrinthe géant","color":"light_purple","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
+summon minecraft:item_display -15.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:compass"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.maze run data modify entity @e[type=minecraft:text_display,tag=mg.h3_maze,limit=1] text set from storage mg:hall t3x.maze
 data modify storage mg:hall v2 set value 1b
 data modify storage mg:hall v3 set value 1b
@@ -394,3 +530,4 @@ data modify storage mg:hall v15 set value 1b
 data modify storage mg:hall v16 set value 1b
 data modify storage mg:hall v17 set value 1b
 data modify storage mg:hall v18 set value 1b
+data modify storage mg:hall v19 set value 1b
