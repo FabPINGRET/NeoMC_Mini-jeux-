@@ -145,6 +145,19 @@ Les votes de tout le monde sont **cumulés depuis le début** (scores `mg.rts/mg
 
 Toutes les fenêtres du datapack (menus, votes, kart, classes, Mini Party…) sont affichées « inline » par des fonctions (`mg:rate/d/<nom>`, générées depuis `data/mg/dialog/*.json` par `tools/rating/gen_rating.py`, relancé automatiquement par `tools/variantes/gen_variants.py`) : un simple `/minecraft:reload` suffit à appliquer une modification de menu (les fichiers `dialog/*.json` ne sont relus qu'au redémarrage du serveur). Seul `mg:main_menu` (bouton du menu Échap) reste lié au redémarrage. Un générateur qui écrit une fenêtre ou un `dialog show` doit donc être suivi de `tools/variantes/gen_variants.py` (avec `PYTHONUTF8=1`). `tools/elyrace/gen_elyrace.py` écrit lui-même la forme finale des appels (`menus.rate_call`) et son `--check` la vérifie ; seul `rate/d/` (régénéré depuis `dialog/*.json` par `gen_variants.py` → `gen_rating.py`) reste périmé tant que la chaîne n'est pas relancée.
 
+### Ordre des générateurs
+
+Règle : un générateur qui **réécrit un fichier en entier, ou pose une ligne servant d'ancre**, passe avant ceux qui y **ajoutent une ligne** (patch / garde) ; `gen_variants.py` passe en dernier (il réécrit les menus et relance `gen_rating.py`, donc `rate/d/`). Lancer depuis la racine avec `PYTHONUTF8=1`. Principales contraintes (non exhaustif, vérifiées dans le code) :
+
+- `tools/admin/gen_tp_general.py .` → `tools/duel/gen_duel.py .` : le premier réécrit `tpg/lobby` et, relancé après, perd la ligne `duel/stop` ajoutée par le second.
+- `tools/arcade/gen_gta.py .`, `gen_terranova.py .` et `tools/elyrace/gen_elyrace.py .` → `tools/duel/gen_duel.py .` : même cas pour `gta/menu_go`, `terra/menu_go` et `elyrace/solo/start` (gardes du duel ; `gen_elyrace` efface et réécrit tout `elyrace/**`).
+- `tools/duel/gen_duel_maps.py .` → `tools/duel/gen_duel.py .` : convention (`gen_duel` importe `MAPS`, pas de dépendance de fichier).
+- `tools/arcade/gen_bomber.py .` → `gen_villa.py .` → `gen_gta.py .` (le jeu lit `neo_villa.json` et la ville du Bombardier).
+- `tools/admin/gen_tp_general.py .` → `tools/lobby/gen_events.py .` → `gen_themes.py .` → `tools/cosmetics/gen_hats.py .` : chacun s'ancre sur la ligne posée par le précédent (`tpg/run` de `core/opt`, puis `lobby/ev/tick` et `lobby/theme/tick` de `core/tick`).
+- `tools/lobby/gen_lobby.py .` → `gen_themes.py .` ; générateurs de cartes → `gen_theme_maps.py .`.
+- `tools/quake/gen_sniper.py .` → `gen_vertical.py .` ; `tools/arcade/gen_chameleon.py .` → `tools/resourcepack/gen_rp.py .`.
+- Tout générateur de fenêtre ou de `dialog show`, puis en dernier `tools/variantes/gen_variants.py .` (sans quoi `rate/d/` reste périmé).
+
 ## 🗺️ 1. Créer la map vide (solo / LAN)
 
 1. **Nouveau monde** → Onglet **Monde** → Type de monde : **Superflat** (Ultra-plat).

@@ -1,6 +1,6 @@
 """🦖 Terra Nova : colonie préhistorique, monde libre (dimension mg:terranova) relié au lobby par un portail (en face de Neo GTA).
 
-    python tools/arcade/gen_terranova.py .
+    python tools/arcade/gen_terranova.py .      (avant tools/duel/gen_duel.py : il ajoute une garde à terra/menu_go, réécrit ici)
 
 Monde
 - Dimension mg:terranova (data/mg/dimension/terranova.json) : vide, biome the_void (aucune apparition naturelle). Carte bornée

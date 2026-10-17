@@ -7,7 +7,8 @@
 Sortie : data/mg/function/elyrace/** (un sous-dossier c<N>/ par parcours ; solo/ = contre-la-montre solo par joueur, records), core/sub/elyrace,
 dialog/sub_elyrace.json, dialog/sub_elyrace_solo.json, advancement/elyrace_wall.json, tags/damage_type/elyrace_wall.json.
 Les fichiers generes ne se modifient jamais a la main. Les branchements dans le moteur (wire_elyrace*.py) se font apres la generation.
-Ordre de la chaine : ce generateur, puis tools/variantes/gen_variants.py (PYTHONUTF8=1 ; il relance tools/rating/gen_rating.py, qui reecrit
+Ordre de la chaine : ce generateur, puis tools/duel/gen_duel.py (garde dans elyrace/solo/start, effacee par la reecriture
+de elyrace/**), puis tools/variantes/gen_variants.py (PYTHONUTF8=1 ; il relance tools/rating/gen_rating.py, qui reecrit
 les fenetres en rate/d/<nom>). Les ouvertures de fenetre sont donc ecrites ici sous leur forme finale (menus.rate_call) et --check le verifie.
 Pour ajouter un parcours : ecrire son module « spec » (voir course_common.py), l'ajouter a SPECS.
 Python stdlib uniquement (compatible 3.8).

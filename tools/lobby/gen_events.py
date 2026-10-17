@@ -1,4 +1,4 @@
-"""🎉 Événements surprises du lobby : python tools/lobby/gen_events.py .
+"""🎉 Événements surprises du lobby : python tools/lobby/gen_events.py .   (après tools/admin/gen_tp_general.py : ancre `tpg/run` de core/opt)
 
 Toutes les 30 min (jeu au repos, au moins un joueur au lobby), annonce 1 min avant puis un des trois événements (3 min) :
   👑 Roi Zombie : un husk géant (vie selon le nombre de joueurs) et ses sbires ; épée prêtée ; le plus gros cogneur gagne.
