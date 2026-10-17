@@ -60,13 +60,13 @@ GAMES = [  # clé, libellé, couleur, plages de $game
     ('maze', '🌀 Labyrinthe géant', 'light_purple', [(241, 241)]),
 ]
 # Hall v16 : « Jardin des champions » à ciel ouvert au sud-ouest de la place (x -60..-12, z 15..36, sol y 63) : pas de
-# bâtiment, des haies basses (2 blocs) qui forment 45 petits stands en 3 rangées le long de 2 allées ouvertes à l'est, chacun
+# bâtiment, des haies basses (1 bloc) qui forment 45 petits stands en 3 rangées le long de 2 allées ouvertes à l'est, chacun
 # avec son podium et le top 3 du jeu. Plaza d'entrée à l'est (x -11..-6) avec les piédestaux d'honneur.
 HX0, HX1, HZ0, HZ1 = -60, -12, 15, 36      # haie du pourtour comprise
 BX0, BP, NB = -59, 3, 15                   # 1er stand en x -59, un stand tous les 3 blocs (2 d'intérieur + haie), 15 par rangée
 OLD = (-24, -6, 11, 25)                    # hall v14 (x1, x2, z1, z2), effacé une fois
 MARK = (-9, 64, 27)                        # piédestal du champion (bloc d'or) : témoin de présence
-VERSION = 16
+VERSION = 17
 TR = 'transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[%sf,%sf,%sf]}'
 
 def W(name, lines):
@@ -88,7 +88,7 @@ W('objectives', ['# Objectifs des classements par jeu (généré par tools/hall/
     'scoreboard objectives add mg.genc dummy'])
 W('remove', ['# Désinstallation des classements et du hall'] +
   [f'scoreboard objectives remove mg.wg_{k}' for k, *_ in GAMES] +
-  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall t3', 'data remove storage mg:hall t3x', 'data remove storage mg:hall v15', 'data remove storage mg:hall v16', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8', 'data remove storage mg:hall v9', 'data remove storage mg:hall v10', 'data remove storage mg:hall v11', 'data remove storage mg:hall v12', 'data remove storage mg:hall v13', 'data remove storage mg:hall v14',
+  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall t3', 'data remove storage mg:hall t3x', 'data remove storage mg:hall v15', 'data remove storage mg:hall v16', 'data remove storage mg:hall v17', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8', 'data remove storage mg:hall v9', 'data remove storage mg:hall v10', 'data remove storage mg:hall v11', 'data remove storage mg:hall v12', 'data remove storage mg:hall v13', 'data remove storage mg:hall v14',
    'scoreboard objectives remove mg.gen', 'scoreboard objectives remove mg.lvl', 'scoreboard objectives remove mg.genc'])
 
 # ---------------------------------------------------------------- crédit des vainqueurs
@@ -178,16 +178,16 @@ b = ['# Jardin des champions (Hall des scores v16, à ciel ouvert, sud-ouest de 
      f'fill {HX0 + 1} 63 20 {HX1 + 6} 63 22 minecraft:dirt_path', f'fill {HX0 + 1} 63 32 {HX1 + 6} 63 34 minecraft:dirt_path',
      f'fill {HX1 - 1} 63 20 {HX1 + 6} 63 34 minecraft:polished_andesite',
      # haie du pourtour (2 blocs), ouverte à l'est sur les allées
-     *[f'fill {xa} 64 {za} {xb} 65 {zb} minecraft:moss_block' for xa, za, xb, zb in ((HX0, HZ0, HX1, HZ0), (HX0, HZ1, HX1, HZ1), (HX0, HZ0, HX0, HZ1), (HX1, HZ0, HX1, HZ1))],
-     f'fill {HX1} 64 20 {HX1} 65 34 minecraft:air',
+     *[f'fill {xa} 64 {za} {xb} 64 {zb} minecraft:moss_block' for xa, za, xb, zb in ((HX0, HZ0, HX1, HZ0), (HX0, HZ1, HX1, HZ1), (HX0, HZ0, HX0, HZ1), (HX1, HZ0, HX1, HZ1))],
+     f'fill {HX1} 64 20 {HX1} 64 34 minecraft:air',
      # haie du milieu (dos des rangées 2 et 3) et bas du pourtour sud
-     f'fill {HX0} 64 27 {HX1 - 2} 65 27 minecraft:moss_block',
+     f'fill {HX0} 64 27 {HX1 - 2} 64 27 minecraft:moss_block',
      f'fill {HX0} 64 35 {HX1} 64 35 minecraft:moss_carpet']
 for (x0, (za, zb, back, sgn)) in STANDS:
     xw = x0 + 2                                         # haie entre deux stands
     if xw <= x1h - 2:
-        b.append(f'fill {xw} 64 {za} {xw} 65 {zb} minecraft:moss_block')
-        b.append(f'setblock {xw} 66 {back} minecraft:lantern')
+        b.append(f'fill {xw} 64 {za} {xw} 64 {zb} minecraft:moss_block')
+        b.append(f'setblock {xw} 65 {back} minecraft:lantern')
 for i, (k, l, c, _) in enumerate(GAMES):
     x0, (za, zb, back, sgn) = STANDS[i]
     cc = CONC.get(c, 'white')
@@ -289,6 +289,7 @@ _sub('core/load', 'unless data storage mg:hall v13 run schedule function mg:hall
 _sub('core/load', 'unless data storage mg:hall v9 run schedule function mg:hall/build', 'unless data storage mg:hall v10 run schedule function mg:hall/build')
 _sub('core/load', 'unless data storage mg:hall v14 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
 _sub('core/load', 'unless data storage mg:hall v15 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
+_sub('core/load', 'unless data storage mg:hall v16 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
 _sub('core/tick', 'unless block -16 64 15 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')
 _sub('core/tick', 'unless block -58 64 26 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')
 _T3 = 'execute if score $setup mg.st matches 1 if score $lan mg.t matches 12 run function mg:hall/t3_tick'
