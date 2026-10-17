@@ -226,6 +226,10 @@ for tid, key, make, seed in THEMES:
     for k, (ff, o, n) in ch.items():
         BY.setdefault((key, RID.get((ff, (k[0] >> 6, k[2] >> 6)))), []).append((k, o, n))
 
+# numérotation des cartes recalculée à chaque passage : les anciens dossiers sont retirés
+import shutil
+for _d in glob.glob(os.path.join(F, 'lobby', 'theme', 'map', '*', '')):
+    shutil.rmtree(_d)
 begin, end, stats = [], [], []
 for i, (f, comp) in enumerate(REGIONS):
     name = f'{f}_{i}'

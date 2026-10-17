@@ -799,6 +799,9 @@ execute if data storage mg:hall t3x.bman run data modify entity @e[type=minecraf
 summon minecraft:text_display -16.0 65.35 29.5 {Tags:["mg.hall","mg.h3_maze"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"🌀 Labyrinthe géant","color":"light_purple","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
 summon minecraft:item_display -15.5 65.45 28.5 {Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{id:"minecraft:compass"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.55f,0.55f,0.55f]}}
 execute if data storage mg:hall t3x.maze run data modify entity @e[type=minecraft:text_display,tag=mg.h3_maze,limit=1] text set from storage mg:hall t3x.maze
+
+# Décor saisonnier en place (🎃 / 🎄) : l'allée suit (l'allée est hors du décor généré par gen_themes.py)
+execute if score $theme mg.st matches 1.. run function mg:hall/theme_on
 data modify storage mg:hall v2 set value 1b
 data modify storage mg:hall v3 set value 1b
 data modify storage mg:hall v4 set value 1b
@@ -820,3 +823,4 @@ data modify storage mg:hall v19 set value 1b
 data modify storage mg:hall v20 set value 1b
 data modify storage mg:hall v21 set value 1b
 data modify storage mg:hall v22 set value 1b
+data modify storage mg:hall v23 set value 1b

@@ -67,7 +67,7 @@ CX0, CZ0, CZ1 = -60, 15, 36                # zone dégagée (anciennes versions 
 BX0, BP, NB = -59, 2, 22                   # 1er stand en x -59, un stand tous les 2 blocs, 22 par côté
 OLD = (-24, -6, 11, 25)                    # hall v14 (x1, x2, z1, z2), effacé une fois
 MARK = (-9, 64, 25)                        # piédestal du champion (bloc d'or) : témoin de présence
-VERSION = 22
+VERSION = 23
 TR = 'transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[%sf,%sf,%sf]}'
 
 def W(name, lines):
@@ -89,7 +89,7 @@ W('objectives', ['# Objectifs des classements par jeu (généré par tools/hall/
     'scoreboard objectives add mg.genc dummy'])
 W('remove', ['# Désinstallation des classements et du hall'] +
   [f'scoreboard objectives remove mg.wg_{k}' for k, *_ in GAMES] +
-  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall t3', 'data remove storage mg:hall t3x', 'data remove storage mg:hall v15', 'data remove storage mg:hall v16', 'data remove storage mg:hall v17', 'data remove storage mg:hall v18', 'data remove storage mg:hall v19', 'data remove storage mg:hall v20', 'data remove storage mg:hall v21', 'data remove storage mg:hall v22', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8', 'data remove storage mg:hall v9', 'data remove storage mg:hall v10', 'data remove storage mg:hall v11', 'data remove storage mg:hall v12', 'data remove storage mg:hall v13', 'data remove storage mg:hall v14',
+  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall t3', 'data remove storage mg:hall t3x', 'data remove storage mg:hall v15', 'data remove storage mg:hall v16', 'data remove storage mg:hall v17', 'data remove storage mg:hall v18', 'data remove storage mg:hall v19', 'data remove storage mg:hall v20', 'data remove storage mg:hall v21', 'data remove storage mg:hall v22', 'data remove storage mg:hall v23', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8', 'data remove storage mg:hall v9', 'data remove storage mg:hall v10', 'data remove storage mg:hall v11', 'data remove storage mg:hall v12', 'data remove storage mg:hall v13', 'data remove storage mg:hall v14',
    'scoreboard objectives remove mg.gen', 'scoreboard objectives remove mg.lvl', 'scoreboard objectives remove mg.genc'])
 
 # ---------------------------------------------------------------- crédit des vainqueurs
@@ -292,8 +292,52 @@ for i, (k, l, c, _) in enumerate(GAMES):
              f'text:[{{"text":"{q(l)}","color":"{c}","bold":true}},{{"text":"\\n— personne —","color":"dark_gray","bold":false}}],{TR % (0.45, 0.45, 0.45)}}}')
     b.append(f'summon minecraft:item_display {x0 + 1.5} 65.45 {back + 2 * sgn + 0.5} {{Tags:["mg.hall","mg.lspin"],billboard:"fixed",item:{{id:"minecraft:{it}"}},{TR % (0.55, 0.55, 0.55)}}}')
     b.append(f'execute if data storage mg:hall t3x.{k} run data modify entity @e[type=minecraft:text_display,tag=mg.h3_{k},limit=1] text set from storage mg:hall t3x.{k}')
+b += ['', '# Décor saisonnier en place (🎃 / 🎄) : l\'allée suit (l\'allée est hors du décor généré par gen_themes.py)',
+      'execute if score $theme mg.st matches 1.. run function mg:hall/theme_on']
 b += [f'data modify storage mg:hall v{v} set value 1b' for v in range(2, VERSION + 1)]
 W('build', b)
+# ---------------------------------------------------------------- décors saisonniers de l'allée (posés par lobby/theme/<t>/place,
+# retirés par lobby/theme/off qui reconstruit l'allée : hall/build)
+EX = HX1 + 6
+W('theme_on', ['# Décor saisonnier de l\'allée des champions selon $theme (1 🎃 Halloween, 2 🎄 Noël) — généré par tools/hall/gen_hall.py',
+               'execute if score $theme mg.st matches 1 run function mg:hall/theme_h',
+               'execute if score $theme mg.st matches 2 run function mg:hall/theme_n'])
+TH = ['# 🎃 Allée des champions : auvents orange / noir, citrouilles-lanternes, lanternes d\'âmes, citrouilles et toiles',
+      f'fill {HX0} 67 {HZ0} {HX1} 67 {HZ1} minecraft:orange_wool replace minecraft:red_wool',
+      f'fill {HX0} 67 {HZ0} {HX1} 67 {HZ1} minecraft:black_wool replace minecraft:white_wool',
+      f'fill {CX0} 64 {CZ0} {EX} 71 {CZ1} minecraft:jack_o_lantern replace minecraft:lantern[hanging=false]',
+      f'fill {CX0} 64 {CZ0} {EX} 71 {CZ1} minecraft:soul_lantern[hanging=true] replace minecraft:lantern[hanging=true]']
+# citrouilles sculptées sur la bordure, entre deux lanternes, tournées vers l'allée
+for x in range(HX0 + 3, HX1, 6):
+    TH += [f'execute if block {x} 65 {HZ0} minecraft:air run setblock {x} 65 {HZ0} minecraft:carved_pumpkin[facing=south]',
+           f'execute if block {x} 65 {HZ1} minecraft:air run setblock {x} 65 {HZ1} minecraft:carved_pumpkin[facing=north]']
+# citrouilles au pied des réverbères de la place, toiles dans les arches
+for x in (HX1 + 1, EX):
+    TH += [f'execute if block {x} 64 {HZ0 + 1} minecraft:air run setblock {x} 64 {HZ0 + 1} minecraft:pumpkin',
+           f'execute if block {x} 64 {HZ1 - 1} minecraft:air run setblock {x} 64 {HZ1 - 1} minecraft:pumpkin']
+for xa in (HX1, HX0):
+    TH += [f'execute if block {xa} 68 {AZ1} minecraft:air run setblock {xa} 68 {AZ1} minecraft:cobweb',
+           f'execute if block {xa} 68 {AZ2} minecraft:air run setblock {xa} 68 {AZ2} minecraft:cobweb']
+TH += [f'fill {CX0} 64 {CZ0} {EX} 70 {CZ1} minecraft:pale_oak_leaves[persistent=true] replace #minecraft:leaves',
+       f'fill {CX0} 64 {CZ0} {EX} 64 {CZ1} minecraft:leaf_litter replace minecraft:short_grass']
+W('theme_h', TH)
+TN = ['# 🎄 Allée des champions : neige sur la pelouse, la bordure, les auvents et les cimes ; allée, place et étals dégagés',
+      f'fill {CX0} 64 {CZ0} {EX} 64 {CZ1} minecraft:snow replace minecraft:air',
+      f'fill {HX0 + 1} 64 {HZ0 + 1} {HX1 - 1} 64 {HZ1 - 1} minecraft:air replace minecraft:snow',
+      f'fill {HX0 - 3} 64 {AZ1} {EX} 64 {AZ2} minecraft:air replace minecraft:snow',
+      f'fill {HX1 - 1} 64 {HZ0} {EX} 64 {HZ1} minecraft:air replace minecraft:snow',
+      *[f'fill {xa} 65 {za} {xb} 65 {zb} minecraft:snow replace minecraft:air' for xa, za, xb, zb in ((HX0, HZ0, HX1, HZ0), (HX0, HZ1, HX1, HZ1))]]
+for i in range(len(GAMES)):
+    x0, (za, zb, back, sgn) = STANDS[i]
+    TN.append(f'fill {x0} 68 {min(back, back + 2 * sgn)} {x0 + 1} 68 {max(back, back + 2 * sgn)} minecraft:snow replace minecraft:air')
+for i, x in enumerate(range(HX0 + 4, HX1 - 2, 12)):
+    for (tx, tz) in ((x, HZ0 - 3), (x + 6, HZ1 + 3)):
+        TN += [f'setblock {tx} 71 {tz} minecraft:snow'] + [f'execute if block {tx + dx} 70 {tz + dz} minecraft:air run setblock {tx + dx} 70 {tz + dz} minecraft:snow'
+                                                            for dx, dz in ((1, 0), (-1, 0), (0, 1), (0, -1))]
+GIFT = ['red_shulker_box', 'green_shulker_box', 'white_shulker_box']
+TN[1:1] = [f'execute if block {tx + 1} 64 {tz + 1} minecraft:air run setblock {tx + 1} 64 {tz + 1} minecraft:{GIFT[j % 3]}'
+           for j, (tx, tz) in enumerate((x + d, z) for x in range(HX0 + 4, HX1 - 2, 12) for d, z in ((0, HZ0 - 3), (6, HZ1 + 3)))]
+W('theme_n', TN)
 ox1, ox2, oz1, oz2 = OLD
 W('clear_old', ['# Ancien hall (v14 : x %d..%d, z %d..%d) : ce qui dépasse du nouveau est rendu à la pelouse (une fois)' % OLD,
                 f'fill {ox1} 64 {oz1} {ox2} 79 {CZ0 - 1} minecraft:air', f'fill {ox1} 63 {oz1} {ox2} 63 {CZ0 - 1} minecraft:grass_block'])
@@ -364,6 +408,7 @@ _sub('core/load', 'unless data storage mg:hall v18 run schedule function mg:hall
 _sub('core/load', 'unless data storage mg:hall v19 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
 _sub('core/load', 'unless data storage mg:hall v20 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
 _sub('core/load', 'unless data storage mg:hall v21 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
+_sub('core/load', 'unless data storage mg:hall v22 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
 _sub('core/tick', 'unless block -9 64 27 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')
 _sub('core/tick', 'unless block -16 64 15 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')
 _sub('core/tick', 'unless block -58 64 26 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')

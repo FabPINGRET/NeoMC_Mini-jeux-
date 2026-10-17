@@ -11338,3 +11338,4 @@ execute if block 75 65 34 minecraft:air run setblock 75 65 34 minecraft:red_cand
 execute if block 77 65 1 minecraft:air run setblock 77 65 1 minecraft:snow[layers=1]
 function mg:lobby/theme/noel/reskin
 function mg:lobby/food_skin
+function mg:hall/theme_on

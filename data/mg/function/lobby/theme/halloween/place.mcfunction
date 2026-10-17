@@ -6732,3 +6732,4 @@ execute if block 75 65 34 minecraft:air run setblock 75 65 34 minecraft:orange_c
 function mg:lobby/theme/halloween/water_on
 function mg:lobby/theme/halloween/reskin
 function mg:lobby/food_skin
+function mg:hall/theme_on

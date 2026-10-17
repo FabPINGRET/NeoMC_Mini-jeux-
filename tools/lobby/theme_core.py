@@ -17,6 +17,7 @@ def write_dispatch(THEMES):
        '# $thsw (bascule d\'un thème à l\'autre) : le place du nouveau thème remet l\'eau d\'aplomb, une seule fois pour les deux',
        'execute unless score $thsw mg.st matches 1 run function mg:lobby/theme/water_fix',
        'function mg:lobby/deco', 'function mg:lobby/food_skin',
+       '# allée des champions (hors décor généré) : reconstruite telle quelle', 'function mg:hall/build',
        'execute unless score $thsw mg.st matches 1 run tellraw @a[tag=mg.admin] {"text":"Décor saisonnier retiré, spawn d\'origine rétabli.","color":"gray"}'])
     # $theme perdu (scoreboard réinitialisé) alors que la copie mg:lobby theme reste : le score en est rétabli
     w('lobby/theme/sync', ['# $theme remis d\'après sa copie mg:lobby theme s\'il manque ou vaut 0 (appelé par on, off, toggle, restore)',

@@ -253,7 +253,7 @@ for tid, key, label, opt, make in THEMES:
     w(f'{T}/place', [f"# {label} : blocs du décor (là où le bloc d'origine est encore là), entités, eau ; "
                      'appelé par on et par lobby/theme/restore (redémarrage)',
                      '# eau remise d\'aplomb d\'abord : le décor (glace...) se pose sur l\'eau réparée',
-                     'function mg:lobby/theme/water_fix'] + on + on_x + [f'function mg:{T}/reskin', 'function mg:lobby/food_skin'])
+                     'function mg:lobby/theme/water_fix'] + on + on_x + [f'function mg:{T}/reskin', 'function mg:lobby/food_skin', 'function mg:hall/theme_on'])
     w(f'{T}/off', [f'# {label} : chaque bloc d\'origine revient (s\'il n\'a pas changé entre-temps) — appelé par lobby/theme/off'] +
       off + off_x)
     w(f'{T}/reskin', [f'# {label} : entités du décor (mg.lby) ; rappelé par lobby/deco tant que le thème est actif',

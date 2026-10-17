@@ -2,5 +2,7 @@
 scoreboard players set $tm3 mg.st 1
 execute if block -40 81 21595 minecraft:lantern run setblock -40 81 21595 minecraft:soul_lantern
 execute if block -40 81 21605 minecraft:lantern run setblock -40 81 21605 minecraft:soul_lantern
+execute if block -18 88 21600 minecraft:lantern run setblock -18 88 21600 minecraft:soul_lantern
+execute if block 18 88 21600 minecraft:lantern run setblock 18 88 21600 minecraft:soul_lantern
 execute if block 40 81 21595 minecraft:lantern run setblock 40 81 21595 minecraft:soul_lantern
 execute if block 40 81 21605 minecraft:lantern run setblock 40 81 21605 minecraft:soul_lantern
