@@ -1,4 +1,4 @@
-"""🎃🎄 Décors saisonniers du spawn, réversibles : python tools/lobby/gen_themes.py .   (après gen_lobby.py)
+"""🎃🎄 Décors saisonniers du spawn, réversibles : python tools/lobby/gen_themes.py .   (après gen_lobby.py, tools/admin/gen_tp_general.py et gen_events.py : ancres de core/opt et core/tick)
 
 Admin : menu des événements du lobby → « 🎃 Déco Halloween » (mg.opt 73) / « 🎄 Déco Noël » (mg.opt 74) : bascule
 (pose le thème, ou le retire s'il est déjà en place ; un seul thème à la fois, l'autre est retiré d'abord).

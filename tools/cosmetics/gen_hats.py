@@ -1,6 +1,6 @@
 """🎩 Chapeaux cosmétiques : choisis dans une galerie souterraine sous le Hall, portés en permanence (lobby et parties).
 
-    python tools/cosmetics/gen_hats.py .
+    python tools/cosmetics/gen_hats.py .      (après tools/lobby/gen_themes.py : ancre `lobby/theme/tick` de core/tick)
 
 - Le chapeau choisi (score mg.hat, 0 = aucun) est remis sur la tête dès qu'elle est vide ; s'il traîne ailleurs dans l'inventaire
   (curseur, main secondaire, sac), il est retiré. Un casque de jeu occupe la tête : le chapeau suit alors la tête (item_display

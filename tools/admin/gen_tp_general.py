@@ -1,6 +1,7 @@
 """TP général (admin) : envoie tous les joueurs disponibles vers un monde (survie, Neo GTA… extensible).
 
-    python tools/admin/gen_tp_general.py .      (depuis la racine du dépôt ; idempotent)
+    python tools/admin/gen_tp_general.py .      (depuis la racine du dépôt ; idempotent ; AVANT tools/duel/gen_duel.py,
+    qui ajoute une ligne à tpg/lobby, réécrit en entier ici)
 
 Menu principal → « 🌍 TP général (admin) ▸ » (mg.opt 62) → fenêtre mg:tp_general → une destination (mg.opt 63..) :
 survie, Neo GTA, ou retour de tous au lobby (sortie des activités secondaires avant de lancer un mini-jeu).

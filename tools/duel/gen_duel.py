@@ -1,6 +1,8 @@
 """Duel sniper 1v1 : démarrage, fin et câblage dans le datapack.
 
-    python tools/duel/gen_duel.py .        (depuis la racine du dépôt ; idempotent)
+    python tools/duel/gen_duel.py .        (depuis la racine du dépôt ; idempotent ; APRÈS tools/admin/gen_tp_general.py, tools/arcade/gen_gta.py,
+    gen_terranova.py et tools/elyrace/gen_elyrace.py : il ajoute des lignes à tpg/lobby, gta/menu_go, terra/menu_go
+    et elyrace/solo/start, qu'ils réécrivent en entier ; aussi après gen_duel_maps.py, par convention)
 
 Les arènes sont posées par gen_duel_maps.py ; la liste et les invitations viennent de duel_invite.py ; le combat
 (tick, lunette, tir, manches) de duel_play.py.

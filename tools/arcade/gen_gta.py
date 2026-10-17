@@ -1,6 +1,7 @@
 """🚓 Neo GTA : la ville de Neo City, monde libre (dimension mg:gta) relié au lobby par un portail, hors mini-jeux.
 
-    python tools/arcade/gen_gta.py .          (après gen_bomber.py : réutilise sa ville et ses explosions)
+    python tools/arcade/gen_gta.py .          (après gen_bomber.py : réutilise sa ville et ses explosions ; avant tools/duel/gen_duel.py,
+                                         qui ajoute une garde à gta/menu_go, réécrit en entier ici)
 
 Monde
 - Dimension mg:gta (data/mg/dimension/gta.json) : vide, biome the_void (aucun monstre naturel). La ville du Bombardier y est
