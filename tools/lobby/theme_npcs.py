@@ -160,7 +160,7 @@ def write_common(themes):
     w('lobby/theme/npc_second', ['# Chaque seconde (lobby/theme/tick) : recharge des cadeaux, objets retirés aux joueurs occupés ailleurs, effets du ragoût',
                                  'scoreboard players remove @a[scores={mg.thc=1..}] mg.thc 1'] + [f'clear @a[tag={t}] {GIFT}' for t in BUSY] +
       TS.second_lines(BUSY))
-    TS.write_files(BUSY)                 # stew_*, advancement mg:theme_stew, tag mg:wind_touchy
+    TS.write_files(BUSY)                 # stew_*, advancement mg:theme_stew
     sky = ' '.join(f'if block ~ ~{dy} ~ #mg:sky_clear' for dy in range(2, 15))
     w('lobby/theme/fw_use', ['# 🎄 Étoile de feu d\'artifice consommée (advancement mg:theme_fw ; @s = joueur) : fusée à 4 explosions de Noël, tirée au hasard',
                              'advancement revoke @s only mg:theme_fw',
