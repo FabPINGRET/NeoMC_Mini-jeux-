@@ -9,6 +9,7 @@ execute as @a[tag=mg.play,tag=!mg.ddone,scores={mg.t=..36}] run function mg:drop
 scoreboard players operation $dam mg.st = $dat mg.st
 scoreboard players operation $dam mg.st %= #k10 mg.st
 execute if score $dam mg.st matches 0 as @a[tag=mg.play,tag=!mg.ddone] run function mg:dropadv/s_hud
+function mg:dropadv/k_tick
 execute if score $dat mg.st matches 36000.. run return run function mg:dropadv/s_end
 execute unless entity @a[tag=mg.play] run return run function mg:core/draw
 execute unless entity @a[tag=mg.play,tag=!mg.ddone] run function mg:dropadv/s_end

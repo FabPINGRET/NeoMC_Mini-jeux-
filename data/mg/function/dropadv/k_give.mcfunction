@@ -1,0 +1,2 @@
+# Redonne l'objet « Passer ce niveau » (jeté, perdu ou déplacé)
+item replace entity @s hotbar.8 with minecraft:warped_fungus_on_a_stick[custom_data={mg_dskip:1b},item_model="minecraft:spectral_arrow",unbreakable={},custom_name=[{"text":"⏭ Passer ce niveau","color":"gold","bold":true,"italic":false}],lore=[[{"text":"Clic droit 2 fois (en 3 s) : niveau suivant,","color":"gray","italic":false}],[{"text":"mais il ne compte pas comme réussi","color":"gray","italic":false}]]]

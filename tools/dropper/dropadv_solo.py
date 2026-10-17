@@ -1,26 +1,26 @@
 # ================================================================== DROPPER : ESSAIS (id 228) — chacun pour soi, le moins d'essais gagne
-# Exécuté par gen_dropper_adv.py (exec) : utilise wr, LV, N, TOP, FLOOR, R. Mêmes niveaux que l'Aventure.
-# Un essai = un saut depuis le rebord : on part à 1, +1 à chaque raté et à chaque niveau réussi (sauf le dernier) ;
+# Exécuté par gen_dropper_adv.py (exec) : utilise wr, LV, N, TOP, FLOOR, R, PLAY et les constantes de dropadv_skip.py. Mêmes niveaux que l'Aventure.
+# Un essai = un saut depuis le rebord : on part à 1, +1 à chaque raté et à chaque niveau réussi ou passé (sauf le dernier) ;
 # total à l'arrivée = nombre de niveaux + ratés. Fini = spectateur (tag mg.ddone) ; quand tout le monde a fini
-# (ou au bout de 30 minutes), le moins d'essais gagne. Records : personnel (mg.dsb, gardé entre les parties)
-# et serveur (#srv mg.dsb, nom du détenteur dans storage mg:dropadv rec).
+# (ou au bout de 30 minutes), le plus de niveaux réussis (mg.dok) puis le moins d'essais gagne : un niveau passé ne compte pas.
+# Records : personnel (mg.dsb, gardé entre les parties) et serveur (#srv mg.dsb, nom du détenteur dans storage mg:dropadv rec),
+# jamais battus par un joueur qui a passé un niveau.
 import json, re
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'arcade'))
 import common as C
 
 SID = 228
 STIME = 36000                 # 30 minutes
-PLAY = '@a[tag=mg.play,tag=!mg.ddone]'
 REC = '{"nbt":"rec","storage":"mg:dropadv","interpret":true}'
 
 wr('s_prepare', ['# Dropper : Essais — préparation',
                  'function mg:dropadv/fl_add',
                  'scoreboard objectives add mg.dlv dummy', 'scoreboard objectives add mg.dfl dummy', 'scoreboard objectives add mg.dtr dummy',
                  'scoreboard objectives add mg.dtt dummy [{"text":"⬇ Dropper : essais","color":"aqua","bold":true}]',
-                 'scoreboard objectives add mg.dsb dummy',
+                 'scoreboard objectives add mg.dsb dummy'] + KPREP + [
                  'tag @a remove mg.ddone',
                  'scoreboard players set @a[tag=mg.play] mg.dlv 1', 'scoreboard players set @a[tag=mg.play] mg.dfl 0',
-                 'scoreboard players set @a[tag=mg.play] mg.dtt 1', 'scoreboard players set @a[tag=mg.play] mg.dtr 1',
+                 'scoreboard players set @a[tag=mg.play] mg.dtt 1', 'scoreboard players set @a[tag=mg.play] mg.dtr 1'] + KRESET + [
                  'scoreboard players set $dat mg.st 0', 'scoreboard players set #k10 mg.st 10', 'scoreboard players set #k20 mg.st 20', 'scoreboard players set #k1000 mg.st 1000',
                  'gamemode adventure @a[tag=mg.play]', 'clear @a[tag=mg.play]',
                  'execute as @a[tag=mg.play] run function mg:dropadv/spawn',
@@ -31,6 +31,7 @@ wr('s_go', ['# Dropper : Essais — départ',
             'effect give @a[tag=mg.play] minecraft:saturation infinite 0 true',
             'execute as @a[tag=mg.play] run function mg:dropper/attr_on',
             f'tellraw @a[tag=mg.play] [{{"text":"⬇ DROPPER : ESSAIS ! ","color":"aqua","bold":true}},{{"text":"Les {N} niveaux de l\'Aventure, chacun à son rythme. Chaque saut compte pour un essai : atterris dans l\'EAU du premier coup ! Le moins d\'essais gagne (30 minutes au plus).","color":"gray"}}]',
+            KGO,
             'function mg:dropadv/s_records',
             'function mg:dropadv/show_level_all'])
 wr('s_records', ['# Rappel des records (serveur pour tous, personnel pour chacun)',
@@ -47,10 +48,11 @@ wr('s_tick', ['# Dropper : Essais — chaque tick',
               f'execute as {PLAY[:-1]},scores={{mg.t=..{FLOOR - 4}}}] run function mg:dropadv/s_fail',
               'scoreboard players operation $dam mg.st = $dat mg.st', 'scoreboard players operation $dam mg.st %= #k10 mg.st',
               f'execute if score $dam mg.st matches 0 as {PLAY} run function mg:dropadv/s_hud',
+              'function mg:dropadv/k_tick',
               f'execute if score $dat mg.st matches {STIME}.. run return run function mg:dropadv/s_end',
               'execute unless entity @a[tag=mg.play] run return run function mg:core/draw',
               f'execute unless entity {PLAY} run function mg:dropadv/s_end'])
-wr('s_hud', [f'scoreboard players set $dsl mg.st {STIME}', 'scoreboard players operation $dsl mg.st -= $dat mg.st', 'scoreboard players operation $dsl mg.st /= #k20 mg.st'] +
+wr('s_hud', KHUD + [f'scoreboard players set $dsl mg.st {STIME}', 'scoreboard players operation $dsl mg.st -= $dat mg.st', 'scoreboard players operation $dsl mg.st /= #k20 mg.st'] +
    [f'execute if score @s mg.dlv matches {L.n} run title @s actionbar [{{"text":"⬇ {L.n}/{N} : ","color":"gray"}},{{"text":"{L.name}","color":"{L.colr}","bold":true}},'
     f'{{"text":"   essai ","color":"gray"}},{{"score":{{"name":"@s","objective":"mg.dtr"}},"color":"white"}},{{"text":"   Σ ","color":"aqua"}},{{"score":{{"name":"@s","objective":"mg.dtt"}},"color":"white"}},'
     f'{{"text":"   ⏱ ","color":"gold"}},{{"score":{{"name":"$dsl","objective":"mg.st"}},"color":"yellow"}},{{"text":" s","color":"gold"}}]'
@@ -62,6 +64,8 @@ wr('s_success', ['# @s atterrit dans l\'eau : niveau réussi (en mg.dtr essais),
                  'execute at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.3',
                  'execute if score @s mg.dtr matches 1 run tellraw @a[tag=mg.play] [{"text":"⬇ ","color":"aqua"},{"selector":"@s","color":"yellow"},{"text":" réussit le niveau ","color":"gray"},{"score":{"name":"@s","objective":"mg.dlv"},"color":"aqua","bold":true},{"text":" du premier coup !","color":"green"}]',
                  'execute if score @s mg.dtr matches 2.. run tellraw @a[tag=mg.play] [{"text":"⬇ ","color":"aqua"},{"selector":"@s","color":"yellow"},{"text":" réussit le niveau ","color":"gray"},{"score":{"name":"@s","objective":"mg.dlv"},"color":"aqua","bold":true},{"text":" en ","color":"gray"},{"score":{"name":"@s","objective":"mg.dtr"},"color":"white"},{"text":" essais","color":"gray"}]',
+                 'scoreboard players add @s mg.dok 1',
+                 'scoreboard players set @s mg.dkc 0',
                  'scoreboard players add @s mg.dlv 1',
                  f'execute if score @s mg.dlv matches {N + 1}.. run return run function mg:dropadv/s_done',
                  'scoreboard players add @s mg.dtt 1', 'scoreboard players set @s mg.dtr 1',
@@ -75,8 +79,11 @@ wr('s_fail', ['# @s a touché autre chose que l\'eau : un essai de plus, retour 
               'function mg:dropadv/spawn'])
 wr('s_done', ['# @s a fini tous les niveaux : total d\'essais, records, puis spectateur en attendant les autres',
               f'scoreboard players set @s mg.dlv {N}', 'tag @s add mg.ddone', 'gamemode spectator @s',
-              f'tellraw @a[tag=!mg.surv] [{{"text":"🏁 ","color":"gold"}},{{"selector":"@s","color":"gold","bold":true}},{{"text":" termine les {N} niveaux en ","color":"yellow"}},{{"score":{{"name":"@s","objective":"mg.dtt"}},"color":"white","bold":true}},{{"text":" essais !","color":"yellow"}}]',
+              f'execute if score @s mg.dsk matches 0 run tellraw @a[tag=!mg.surv] [{{"text":"🏁 ","color":"gold"}},{{"selector":"@s","color":"gold","bold":true}},{{"text":" termine les {N} niveaux en ","color":"yellow"}},{{"score":{{"name":"@s","objective":"mg.dtt"}},"color":"white","bold":true}},{{"text":" essais !","color":"yellow"}}]',
+              f'execute if score @s mg.dsk matches 1.. run tellraw @a[tag=!mg.surv] [{{"text":"🏁 ","color":"gold"}},{{"selector":"@s","color":"gold","bold":true}},{{"text":" arrive au bout : ","color":"yellow"}},{{"score":{{"name":"@s","objective":"mg.dok"}},"color":"white","bold":true}},{{"text":"/{N} réussis (","color":"yellow"}},{{"score":{{"name":"@s","objective":"mg.dsk"}},"color":"white"}},{{"text":" passé(s)), ","color":"yellow"}},{{"score":{{"name":"@s","objective":"mg.dtt"}},"color":"white","bold":true}},{{"text":" essais","color":"yellow"}}]',
               'execute at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 1 1',
+              CLEAR,
+              'execute if score @s mg.dsk matches 1.. run return run tellraw @s [{"text":"★ Niveau(x) passé(s) : pas de record cette fois.","color":"gray"}]',
               'scoreboard players set $dsn mg.st 0',
               'execute unless score @s mg.dsb matches 1.. run scoreboard players set $dsn mg.st 1',
               'execute if score @s mg.dsb matches 1.. if score @s mg.dtt < @s mg.dsb run scoreboard players set $dsn mg.st 1',
@@ -93,15 +100,22 @@ wr('s_srv', ['# @s bat le record du serveur',
              'data modify storage mg:dropadv rec set from entity @e[type=minecraft:item_display,tag=mg.hallbuf,limit=1] item.components."minecraft:custom_name"',
              'tellraw @a[tag=!mg.surv] [{"text":"🏆 Nouveau record du serveur : ","color":"gold","bold":true},{"selector":"@s","color":"yellow"},{"text":" en ","color":"gold"},{"score":{"name":"#srv","objective":"mg.dsb"},"color":"white","bold":true},{"text":" essais !","color":"gold"}]',
              'execute as @a[tag=!mg.surv] at @s run playsound minecraft:entity.firework_rocket.twinkle master @s ~ ~ ~ 1 1'])
-wr('s_end', ['# Fin : le moins d\'essais parmi ceux qui ont fini ; personne n\'a fini → le plus avancé (Aventure)',
+wr('s_end', ['# Fin : le plus de niveaux réussis (mg.dok), puis le moins d\'essais (mg.dtt) ; personne n\'a réussi de niveau : match nul',
+             'execute unless score $state mg.st matches 2 run return 0',
              f'execute if score $dat mg.st matches {STIME}.. run tellraw @a[tag=!mg.surv] [{{"text":"⏱ Temps écoulé !","color":"gold"}}]',
-             'scoreboard players set $dbest mg.st 999999',
-             'execute as @a[tag=mg.play,tag=mg.ddone] if score @s mg.dtt < $dbest mg.st run scoreboard players operation $dbest mg.st = @s mg.dtt',
-             'execute if score $dbest mg.st matches 999999 run return run function mg:dropadv/timeout',
-             'execute as @a[tag=mg.play,tag=mg.ddone] if score @s mg.dtt = $dbest mg.st run tag @s add mg.dwin',
+             f'execute as @a[tag=mg.play] run tellraw @a[tag=!mg.surv] [{{"selector":"@s","color":"yellow"}},{{"text":" : ","color":"gray"}},{{"score":{{"name":"@s","objective":"mg.dok"}},"color":"white","bold":true}},{{"text":"/{N} réussis, ","color":"gray"}},{{"score":{{"name":"@s","objective":"mg.dsk"}},"color":"white"}},{{"text":" passé(s), ","color":"gray"}},{{"score":{{"name":"@s","objective":"mg.dtt"}},"color":"white"}},{{"text":" essais","color":"gray"}}]',
+             'execute unless entity @a[tag=mg.play,scores={mg.dok=1..}] run return run function mg:core/draw',
+             '# score = niveaux réussis × 1 000 000 − essais (au plus 13 millions : pas de dépassement)',
+             'execute as @a[tag=mg.play] run scoreboard players operation @s mg.t = @s mg.dok',
+             'execute as @a[tag=mg.play] run scoreboard players operation @s mg.t *= #k1000 mg.st',
+             'execute as @a[tag=mg.play] run scoreboard players operation @s mg.t *= #k1000 mg.st',
+             'execute as @a[tag=mg.play] run scoreboard players operation @s mg.t -= @s mg.dtt',
+             'scoreboard players set $dbest mg.st -999999999',
+             'execute as @a[tag=mg.play] if score @s mg.t > $dbest mg.st run scoreboard players operation $dbest mg.st = @s mg.t',
+             'execute as @a[tag=mg.play] if score @s mg.t = $dbest mg.st run tag @s add mg.dwin',
              'execute as @a[tag=mg.dwin,limit=1] run function mg:core/win_player',
              'tag @a remove mg.dwin'])
-wr('s_cleanup', ['function mg:dropadv/cleanup', 'tag @a remove mg.ddone'])
+wr('s_cleanup', ['function mg:dropadv/cleanup'])
 
 # ------------------------------------------------------------------ câblage dans core/ (idempotent) et menu du Dropper
 C.init(R)

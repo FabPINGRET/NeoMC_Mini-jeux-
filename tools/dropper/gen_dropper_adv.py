@@ -6,7 +6,8 @@ séparés par une bande lumineuse) : on part du rebord en haut (y 301), on saute
 du fond. Toucher quoi que ce soit d'autre = retour en haut du niveau ; réussir = niveau suivant.
 Ordre de jeu (ORDER) : Spirale, La mine, ..., Les ballons, puis l'Arc-en-ciel, de loin le plus dur, pour finir (13/13).
 Chaque niveau est vérifié par une chute simulée (voir plus bas) : s'il n'y a pas de passage, un trou est percé.
-Le premier à finir tous les niveaux gagne ; sinon, au bout d'une minute par niveau, le plus avancé (puis le moins d'échecs).
+Le premier à finir tous les niveaux sans en passer gagne ; sinon, au bout d'une minute par niveau (ou quand tout le monde a fini),
+le plus de niveaux réussis (puis le moins d'échecs). Objet « Passer ce niveau » (Aventure et Essais) : dropadv_skip.py.
 Sortie : data/mg/function/dropadv/*.mcfunction
 """
 import math, os, random, sys
@@ -561,6 +562,8 @@ for L in LV:
 N = len(LV)
 assert sorted(ORDER) == [L.k for L in LV], ORDER
 ATIME = 1200 * N              # Aventure : une minute par niveau
+PLAY = '@a[tag=mg.play,tag=!mg.ddone]'   # joueurs encore en jeu (ni arrivés au bout après une passe, ni spectateurs)
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dropadv_skip.py'), encoding='utf-8').read())   # objet « Passer ce niveau » : ITEM, KHUD, KPREP, KRESET, KGO
 # ------------------------------------------------------------------ fonctions de jeu
 X1, X2 = -WALL - 6, (N - 1) * SPACING + WALL + 6
 wr('fl_add', [f'forceload add {X1} {CZ - WALL - 6} {X2} {CZ + WALL + 6}'])
@@ -590,12 +593,13 @@ wr('spawn', ['# Place @s sur le rebord de départ de son niveau (mg.dlv)'] +
 wr('prepare', ['# The Dropper : Aventure — préparation',
                'function mg:dropadv/fl_add',
                'scoreboard objectives add mg.dlv dummy [{"text":"⬇ Dropper : niveau","color":"aqua","bold":true}]',
-               'scoreboard objectives add mg.dfl dummy',
-               'scoreboard players set @a[tag=mg.play] mg.dlv 1', 'scoreboard players set @a[tag=mg.play] mg.dfl 0',
+               'scoreboard objectives add mg.dfl dummy'] + KPREP + [
+               'tag @a remove mg.ddone',
+               'scoreboard players set @a[tag=mg.play] mg.dlv 1', 'scoreboard players set @a[tag=mg.play] mg.dfl 0'] + KRESET + [
                'scoreboard players set $dat mg.st 0', 'scoreboard players set #k10 mg.st 10', 'scoreboard players set #k20 mg.st 20', 'scoreboard players set #k1000 mg.st 1000',
                'gamemode adventure @a[tag=mg.play]', 'clear @a[tag=mg.play]',
                'execute as @a[tag=mg.play] run function mg:dropadv/spawn',
-               'scoreboard objectives setdisplay sidebar mg.dlv',
+               'scoreboard objectives setdisplay sidebar mg.dok',
                f'scoreboard players set $px mg.st {LV[ORDER[0]].cx}', f'scoreboard players set $py mg.st {TOP + 3}', f'scoreboard players set $pz mg.st {CZ - 11}',
                'function mg:dropadv/titles'])
 tl = ['kill @e[type=minecraft:text_display,tag=mg.dat]']
@@ -608,6 +612,7 @@ wr('go', ['# The Dropper : Aventure — départ',
           'effect give @a[tag=mg.play] minecraft:saturation infinite 0 true',
           'execute as @a[tag=mg.play] run function mg:dropper/attr_on',
           'tellraw @a[tag=mg.play] [{"text":"⬇ THE DROPPER : AVENTURE ! ","color":"aqua","bold":true},{"text":"' + str(N) + ' niveaux à thème. Saute dans le puits et atterris dans l\'EAU du fond : tout le reste te renvoie en haut du niveau. Le premier à finir les ' + str(N) + ' niveaux gagne (' + str(N) + ' minutes au plus).","color":"gray"}]',
+          KGO,
           'function mg:dropadv/show_level_all'])
 wr('show_level_all', ['execute as @a[tag=mg.play] run function mg:dropadv/show_level'])
 wr('show_level', [f'execute if score @s mg.dlv matches {L.n} run title @s title [{{"text":"{L.name}","color":"{L.colr}","bold":true}}]' for L in LV] +
@@ -615,16 +620,18 @@ wr('show_level', [f'execute if score @s mg.dlv matches {L.n} run title @s title 
 wr('tick', ['# The Dropper : Aventure — chaque tick',
             'scoreboard players add $dat mg.st 1',
             'scoreboard players remove @a[tag=mg.play,scores={mg.cd=1..}] mg.cd 1',
-            'execute as @a[tag=mg.play] at @s if block ~ ~ ~ minecraft:water run function mg:dropadv/success',
-            'execute as @a[tag=mg.play] at @s if block ~ ~ ~ minecraft:lava run function mg:dropadv/fail',
-            'execute as @a[tag=mg.play] store result score @s mg.t run data get entity @s Pos[1]',
-            f'execute as @a[tag=mg.play,scores={{mg.cd=0,mg.t=..{TOP - 2}}}] at @s if data entity @s {{OnGround:1b}} unless block ~ ~ ~ minecraft:water run function mg:dropadv/fail',
-            f'execute as @a[tag=mg.play,scores={{mg.t=..{FLOOR - 4}}}] run function mg:dropadv/fail',
+            f'execute as {PLAY} at @s if block ~ ~ ~ minecraft:water run function mg:dropadv/success',
+            f'execute as {PLAY} at @s if block ~ ~ ~ minecraft:lava run function mg:dropadv/fail',
+            f'execute as {PLAY} store result score @s mg.t run data get entity @s Pos[1]',
+            f'execute as {PLAY[:-1]},scores={{mg.cd=0,mg.t=..{TOP - 2}}}] at @s if data entity @s {{OnGround:1b}} unless block ~ ~ ~ minecraft:water run function mg:dropadv/fail',
+            f'execute as {PLAY[:-1]},scores={{mg.t=..{FLOOR - 4}}}] run function mg:dropadv/fail',
             'scoreboard players operation $dam mg.st = $dat mg.st', 'scoreboard players operation $dam mg.st %= #k10 mg.st',
-            'execute if score $dam mg.st matches 0 as @a[tag=mg.play] run function mg:dropadv/hud',
+            f'execute if score $dam mg.st matches 0 as {PLAY} run function mg:dropadv/hud',
+            'function mg:dropadv/k_tick',
             f'execute if score $dat mg.st matches {ATIME}.. run return run function mg:dropadv/timeout',
-            'execute unless entity @a[tag=mg.play] run function mg:core/draw'])
-wr('hud', [f'scoreboard players set $dsl mg.st {ATIME}', 'scoreboard players operation $dsl mg.st -= $dat mg.st', 'scoreboard players operation $dsl mg.st /= #k20 mg.st'] +
+            'execute unless entity @a[tag=mg.play] run return run function mg:core/draw',
+            f'execute unless entity {PLAY} run function mg:dropadv/k_end'])
+wr('hud', KHUD + [f'scoreboard players set $dsl mg.st {ATIME}', 'scoreboard players operation $dsl mg.st -= $dat mg.st', 'scoreboard players operation $dsl mg.st /= #k20 mg.st'] +
    [f'execute if score @s mg.dlv matches {L.n} run title @s actionbar [{{"text":"⬇ Niveau {L.n}/{N} : ","color":"gray"}},{{"text":"{L.name}","color":"{L.colr}","bold":true}},'
     f'{{"text":"   ✖ ","color":"red"}},{{"score":{{"name":"@s","objective":"mg.dfl"}},"color":"white"}},{{"text":"   ⏱ ","color":"gold"}},{{"score":{{"name":"$dsl","objective":"mg.st"}},"color":"yellow"}},{{"text":" s","color":"gold"}}]'
     for L in LV])
@@ -633,9 +640,11 @@ wr('success', ['# @s atterrit dans l\'eau : niveau suivant (ou victoire)',
                'execute if score @s mg.cd matches 1.. run return 0',
                'execute at @s run particle minecraft:splash ~ ~ ~ 0.5 0.5 0.5 0.2 60',
                'execute at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.3',
+               'scoreboard players add @s mg.dok 1',
+               'scoreboard players set @s mg.dkc 0',          # une demande de passage faite sur le niveau réussi ne vaut pas pour le suivant
                'scoreboard players add @s mg.dlv 1',
                f'execute if score @s mg.dlv matches {N + 1}.. run return run function mg:dropadv/finish',
-               'tellraw @a[tag=mg.play] [{"text":"⬇ ","color":"aqua"},{"selector":"@s","color":"yellow"},{"text":" passe au niveau ","color":"gray"},{"score":{"name":"@s","objective":"mg.dlv"},"color":"aqua","bold":true}]',
+               'tellraw @a[tag=mg.play] [{"text":"⬇ ","color":"aqua"},{"selector":"@s","color":"yellow"},{"text":" monte au niveau ","color":"gray"},{"score":{"name":"@s","objective":"mg.dlv"},"color":"aqua","bold":true}]',
                'function mg:dropadv/spawn', 'function mg:dropadv/show_level'])
 wr('fail', ['# @s a touché autre chose que l\'eau : retour en haut du niveau',
             'execute if score @s mg.cd matches 1.. run return 0',
@@ -645,19 +654,14 @@ wr('fail', ['# @s a touché autre chose que l\'eau : retour en haut du niveau',
             'title @s actionbar [{"text":"✖ Raté ! Retour en haut du niveau...","color":"red"}]',
             'function mg:dropadv/spawn'])
 wr('finish', [f'scoreboard players set @s mg.dlv {N}',
+              'execute if score @s mg.dsk matches 1.. run return run function mg:dropadv/k_done',
               f'tellraw @a[tag=!mg.surv] [{{"text":"🏆 ","color":"gold"}},{{"selector":"@s","color":"gold","bold":true}},{{"text":" termine les {N} niveaux du Dropper !","color":"yellow"}}]',
               'function mg:core/win_player'])
-wr('timeout', ['# Temps écoulé : le plus avancé gagne (à égalité, le moins d\'échecs)',
-               'execute as @a[tag=mg.play] run scoreboard players operation @s mg.t = @s mg.dlv',
-               'execute as @a[tag=mg.play] run scoreboard players operation @s mg.t *= #k1000 mg.st',
-               'execute as @a[tag=mg.play] run scoreboard players operation @s mg.t -= @s mg.dfl',
-               'scoreboard players set $dbest mg.st -999999',
-               'execute as @a[tag=mg.play] if score @s mg.t > $dbest mg.st run scoreboard players operation $dbest mg.st = @s mg.t',
+wr('timeout', ['# Temps écoulé : classement aux niveaux réussis (voir k_rank)',
+               'execute unless score $state mg.st matches 2 run return 0',
                'tellraw @a[tag=!mg.surv] [{"text":"⏱ Temps écoulé !","color":"gold"}]',
-               'execute as @a[tag=mg.play] if score @s mg.t = $dbest mg.st run tag @s add mg.dwin',
-               'execute as @a[tag=mg.dwin,limit=1] run function mg:core/win_player',
-               'tag @a remove mg.dwin'])
-wr('cleanup', ['kill @e[type=minecraft:text_display,tag=mg.dat]', 'function mg:dropadv/fl_remove', 'scoreboard objectives setdisplay sidebar'])
+               'function mg:dropadv/k_rank'])
+wr('cleanup', ['kill @e[type=minecraft:text_display,tag=mg.dat]', KKILL, 'function mg:dropadv/fl_remove', 'scoreboard objectives setdisplay sidebar', 'tag @a remove mg.ddone'])
 print('niveaux', N, '| étapes de construction', len(parts), '| commandes', sum(len(L.cmd) for L in LV))
 
 # ================================================================== DROPPER : DÉFI (id 65) — compétitif, niveau de l'Aventure tiré au hasard

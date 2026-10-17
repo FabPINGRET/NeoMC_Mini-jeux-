@@ -1,3 +1,5 @@
+execute unless items entity @s container.* *[custom_data~{mg_dskip:1b}] unless items entity @s weapon.offhand *[custom_data~{mg_dskip:1b}] unless items entity @s player.cursor *[custom_data~{mg_dskip:1b}] run function mg:dropadv/k_give
+execute if score @s mg.dkc matches 1.. run return run title @s actionbar "⏭ Clic droit encore pour passer (ne comptera pas)"
 scoreboard players set $dsl mg.st 36000
 scoreboard players operation $dsl mg.st -= $dat mg.st
 scoreboard players operation $dsl mg.st /= #k20 mg.st
