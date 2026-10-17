@@ -53,7 +53,7 @@ def write(THEMES):
                                        f'bossbar set mg:thb color {color}', f'bossbar set mg:thb max {len(texts)}',
                                        'execute store result bossbar mg:thb value run scoreboard players get $thbl mg.st'] +
           [f'execute if score $thbl mg.st matches {k} run bossbar set mg:thb name ' +
-           js([{'text': f'{label} · ', 'color': color, 'bold': True}, {'text': t.format(n=n), 'color': 'white'}])
+           js([{'text': f'{label} · ', 'color': {'purple': 'dark_purple'}.get(color, color), 'bold': True}, {'text': t.format(n=n), 'color': 'white'}])
            for k, t in enumerate(texts, 1)])
     w('lobby/theme/banner', [
         f'# Bandeau du thème en place (chaque seconde, lobby/theme/tick) : une ligne toutes les {STEP} s, puis rien jusqu\'à la fin du cycle de {PERIOD} s ($thbt = seconde du cycle)',
