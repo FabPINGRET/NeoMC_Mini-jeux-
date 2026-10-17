@@ -5,6 +5,7 @@ attribute @s minecraft:jump_strength modifier remove mg:thstew
 attribute @s minecraft:movement_speed modifier remove mg:thstew
 attribute @s minecraft:step_height modifier remove mg:thstew
 attribute @s minecraft:friction_modifier modifier remove mg:thstew
+attribute @s minecraft:air_drag_modifier modifier remove mg:thstew
 attribute @s minecraft:bounciness modifier remove mg:thstew
 execute if entity @s[tag=mg.thbun] run effect clear @s minecraft:invisibility
 execute if entity @s[tag=mg.thbun] run scoreboard players operation $thbi mg.st = @s mg.thbn
