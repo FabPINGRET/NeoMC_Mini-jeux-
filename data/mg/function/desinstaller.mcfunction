@@ -37,6 +37,7 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+schedule clear mg:maze/build_step
 scoreboard objectives remove mg.thbn
 scoreboard objectives remove mg.ths
 schedule clear mg:ctf3/prepare_b

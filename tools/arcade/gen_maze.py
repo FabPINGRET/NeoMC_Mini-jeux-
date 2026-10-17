@@ -136,7 +136,7 @@ for v, seed in enumerate(SEEDS, 1):
         L += [f'fill {XM + a} {FY} {ZM + b1} {XM + a} {FY + 2} {ZM + b2} minecraft:moss_block' for b1, b2 in runs([b for b in range(S) if wall[a][b]])]
     for b in range(0, S, 3):
         L += [f'fill {XM + a1} {FY} {ZM + b} {XM + a2} {FY + 2} {ZM + b} minecraft:moss_block' for a1, a2 in runs([a for a in range(S) if wall[a][b]])]
-    L.append(f'fill {XM} {FY + 2} {ZM} {XM + S - 1} {FY + 2} {ZM + S - 1} minecraft:flowering_azalea_leaves[persistent=true] replace minecraft:moss_block')
+    # (plus de feuilles d'azalée sur le dessus : 10 000 blocs de feuilles = particules de feuilles qui tombent → gros lag client)
     # cases spéciales : loin du départ (i ≥ 3), jamais deux fois la même
     cells = [(i, j) for i in range(3, N) for j in range(N) if (i, j) != (N - 1, MID)]
     rnd.shuffle(cells)
@@ -156,7 +156,10 @@ for v, seed in enumerate(SEEDS, 1):
     gates = inner[:12]
     GA, GB = gates[0::2], gates[1::2]
     L += [gate_fill(p, 'iron_bars')[0] for p in GA]
-    w(f'maze/walls_{v}', L)
+    # construction étalée sur 4 ticks (4 fichiers) au lieu d'un seul gros paquet de blocs
+    q = (len(L) + 3) // 4
+    for k in range(4):
+        w(f'maze/walls_{v}_{k + 1}', [f'# Labyrinthe n° {v}, haies partie {k + 1}/4'] + L[1 + k * q: 1 + (k + 1) * q])
     E = [f'# Labyrinthe n° {v} : marqueurs des bonus, pièges, téléporteurs']
     for k, (i, j) in enumerate(bonus):
         E.append(f'summon minecraft:marker {ccx(i)} {FY} {ccz(j)} {{Tags:["mg.jent","mg.jbm","mg.jb{k % 3 + 1}"]}}')
@@ -192,19 +195,27 @@ B = ['# 🌀 Labyrinthe géant : construction (zone chargée ?)',
      f'execute unless loaded {XE2} 64 {ZM + S} run return run schedule function mg:maze/build 10t',
      f'execute unless loaded 0 64 {Z} run return run schedule function mg:maze/build 10t',
      f'kill @e[type=!minecraft:player,x={XM},y=55,z={ZM},dx={XE2 - XM},dy=40,dz={S}]']
-B += [f'fill {XM} {y} {ZM} {XM + S - 1} {y} {ZM + S - 1} minecraft:air' for y in range(FY, FY + 6)]
-B += [f'fill {XM} {FY - 2} {ZM} {XM + S - 1} {FY - 2} {ZM + S - 1} minecraft:dirt', f'fill {XM} {FY - 1} {ZM} {XM + S - 1} {FY - 1} {ZM + S - 1} minecraft:grass_block',
+B += [f'fill {XM} {y} {ZM} {XM + S - 1} {y} {ZM + S - 1} minecraft:air' for y in range(FY, FY + 4)]
+B += ['scoreboard players set $jbs mg.st 1', 'schedule function mg:maze/build_step 2t']
+w('maze/build', B)
+# étapes suivantes (un petit paquet de blocs toutes les 2 ticks : pas de pic de lag chez les joueurs)
+B = [f'fill {XM} {FY - 2} {ZM} {XM + S - 1} {FY - 2} {ZM + S - 1} minecraft:dirt', f'fill {XM} {FY - 1} {ZM} {XM + S - 1} {FY - 1} {ZM + S - 1} minecraft:grass_block',
       # salle de sortie (or)
       f'fill {XE1} {FY - 1} {ZM + EB - 3} {XE2} {FY + 4} {ZM + EB + 4} minecraft:air',
       f'fill {XE1} {FY - 1} {ZM + EB - 3} {XE2} {FY - 1} {ZM + EB + 4} minecraft:gold_block',
       f'fill {XE1} {FY} {ZM + EB - 3} {XE2} {FY + 3} {ZM + EB - 3} minecraft:glass', f'fill {XE1} {FY} {ZM + EB + 4} {XE2} {FY + 3} {ZM + EB + 4} minecraft:glass',
       f'fill {XE2} {FY} {ZM + EB - 2} {XE2} {FY + 3} {ZM + EB + 3} minecraft:glass',
       f'setblock {XE1 + 3} {FY + 3} {ZM + EB + 1} minecraft:glowstone']
-B += [f'execute if score $jv mg.st matches {v} run function mg:maze/walls_{v}' for v in (1, 2, 3)]
-B += [f'execute if score $jv mg.st matches {v} run function mg:maze/ents_{v}' for v in (1, 2, 3)]
-B += ['scoreboard players set $jg mg.st 0', 'scoreboard players set $jok mg.st 1',
-      f'summon minecraft:text_display {XE1 + 3} {FY + 2.5} {ZM + EB + 1} {{Tags:["mg.jent"],billboard:"center",text:{js({"text": "🏆 SORTIE", "color": "gold", "bold": True})}}}']
-w('maze/build', B)
+w('maze/build_1', ['# Sol et salle de sortie'] + B)
+for k in range(1, 5):
+    w(f'maze/build_{k + 1}', [f'# Haies, partie {k}/4'] + [f'execute if score $jv mg.st matches {v} run function mg:maze/walls_{v}_{k}' for v in (1, 2, 3)])
+w('maze/build_6', ['# Marqueurs, panneau de sortie ; ouverture du sas si la partie a déjà commencé'] +
+  [f'execute if score $jv mg.st matches {v} run function mg:maze/ents_{v}' for v in (1, 2, 3)] +
+  ['scoreboard players set $jg mg.st 0', 'scoreboard players set $jok mg.st 1',
+   f'summon minecraft:text_display {XE1 + 3} {FY + 2.5} {ZM + EB + 1} {{Tags:["mg.jent"],billboard:"center",text:{js({"text": "🏆 SORTIE", "color": "gold", "bold": True})}}}',
+   'execute if score $state mg.st matches 2 run function mg:maze/open'])
+w('maze/build_step', ['# Étape $jbs de la construction'] + [f'execute if score $jbs mg.st matches {k} run function mg:maze/build_{k}' for k in range(1, 7)] +
+  ['scoreboard players add $jbs mg.st 1', 'execute if score $jbs mg.st matches ..6 run schedule function mg:maze/build_step 2t'])
 FL = f'forceload add {XM - 1} {ZM - 1} {XE2 + 1} {ZM + S}'
 w('maze/prepare', ['# 🌀 Labyrinthe géant — préparation (le labyrinthe est construit 1 s plus tard, chunks chargés)',
                    FL, 'scoreboard players set $jok mg.st 0', 'execute store result score $jv mg.st run random value 1..3',
@@ -219,9 +230,9 @@ w('maze/prepare', ['# 🌀 Labyrinthe géant — préparation (le labyrinthe est
                                                     {'text': 'traverse le labyrinthe d\'ouest en est, le premier sur l\'or gagne ! Bonus : ⚡ vitesse, 🧭 boussole vers la sortie, '
                                                              '🦅 vue d\'aigle. Méfie-toi des toiles, des grilles qui se ferment, des téléporteurs (obsidienne) et des cases piégées.',
                                              'color': 'gray'}])])
-w('maze/go', ['# Départ : le sas s\'ouvre', 'execute unless score $jok mg.st matches 1 run function mg:maze/build',
-              f'fill {XS2} {FY} {ZM + EB} {XS2} {FY + 2} {ZM + EB + 1} minecraft:air',
+w('maze/go', ['# Départ : le sas s\'ouvre (dès que le labyrinthe est fini de construire)', 'execute if score $jok mg.st matches 1 run function mg:maze/open',
               f'effect give {PL} minecraft:night_vision infinite 0 true', 'scoreboard players set $jtm mg.st 0'])
+w('maze/open', [f'fill {XS2} {FY} {ZM + EB} {XS2} {FY + 2} {ZM + EB + 1} minecraft:air'])
 
 # ------------------------------------------------------------------ jeu
 EXIT = f'x={XE1},y={FY - 1},z={ZM + EB - 3},dx={XE2 - XE1},dy=6,dz=7'
@@ -257,7 +268,7 @@ w('maze/bonus_tick', ['# @s : emplacement de bonus (mg.jt = temps avant retour)'
                       'execute if score @s mg.jt matches 1.. run return run scoreboard players remove @s mg.jt 1',
                       'execute unless entity @e[type=minecraft:item_display,tag=mg.jbd,distance=..0.5] run function mg:maze/bonus_show',
                       'execute as @a[tag=mg.play,gamemode=adventure,distance=..1.2,limit=1,sort=nearest] run function mg:maze/bonus_take'])
-w('maze/bonus_show', [f'execute if entity @s[tag=mg.jb{n}] run summon minecraft:item_display ~ ~0.7 ~ {{Tags:["mg.jent","mg.jbd"],Glowing:1b,billboard:"vertical",'
+w('maze/bonus_show', [f'execute if entity @s[tag=mg.jb{n}] run summon minecraft:item_display ~ ~0.7 ~ {{Tags:["mg.jent","mg.jbd"],billboard:"vertical",brightness:{{sky:15,block:15}},'
                       f'item:{{id:"minecraft:{it}",count:1}},transformation:{{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}}}'
                       for n, (it, _, _) in BON.items()])
 w('maze/bonus_take', ['# @s prend le bonus de l\'emplacement le plus proche', 'tag @e[type=minecraft:marker,tag=mg.jbm,sort=nearest,limit=1] add mg.jbt'] +
@@ -307,13 +318,13 @@ w('maze/second', ['# Chaque seconde : boussole, chrono',
                   'scoreboard players operation $jq mg.st /= #20 mg.st', 'scoreboard players operation $js mg.st -= $jq mg.st',
                   f'execute if score $js mg.st matches 0.. run title @a[tag=mg.play,scores={{mg.je=0}}] actionbar [{{"text":"🌀 ⏱ ","color":"light_purple"}},{{"score":{{"name":"$js","objective":"mg.st"}},"color":"yellow"}},{{"text":" s","color":"gray"}}]',
                   f'kill @e[type=minecraft:item,x={XM},y=55,z={ZM},dx={S},dy=40,dz={S}]'])
-w('maze/cleanup', ['# Fin du Labyrinthe géant', 'schedule clear mg:maze/build', f'kill @e[type=!minecraft:player,x={XM},y=55,z={ZM},dx={XE2 - XM},dy=40,dz={S}]',
+w('maze/cleanup', ['# Fin du Labyrinthe géant', 'schedule clear mg:maze/build', 'schedule clear mg:maze/build_step', f'kill @e[type=!minecraft:player,x={XM},y=55,z={ZM},dx={XE2 - XM},dy=40,dz={S}]',
                    'effect clear @a minecraft:night_vision', 'clear @a minecraft:compass', 'team leave @a[team=mg_sq]',
                    'scoreboard players reset * mg.jid', 'scoreboard players reset * mg.jc', 'scoreboard players reset * mg.je', 'scoreboard players reset * mg.jk',
                    'function mg:maze/sas', FL.replace('forceload add', 'forceload remove')])
 
 C.register([GID], 'maze', [C.announce(GID, '', '🌀 LABYRINTHE GÉANT', 'light_purple', 'le premier à traverser le labyrinthe géant gagne !')])
 C.objectives([('mg.jid', 'dummy'), ('mg.jc', 'dummy'), ('mg.je', 'dummy'), ('mg.jk', 'dummy'), ('mg.jt', 'dummy'), ('mg.jp', 'dummy')])
-C.patch('desinstaller', 'scoreboard objectives remove mg.bw', ['schedule clear mg:maze/build'])
+C.patch('desinstaller', 'scoreboard objectives remove mg.bw', ['schedule clear mg:maze/build', 'schedule clear mg:maze/build_step'])
 C.forceload([f'# Labyrinthe géant : sas de départ (z {Z})', f'forceload add {XS1 - 1} {ZS1 - 1} {XS2} {ZS2 + 1}'])
 print('Labyrinthe géant OK')
