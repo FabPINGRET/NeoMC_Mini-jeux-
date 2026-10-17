@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "use": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": "{mg_emote:1b}"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "mg:lobby/sit/item_adv"
+  }
+}

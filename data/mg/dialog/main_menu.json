@@ -129,7 +129,7 @@
       ],
       "tooltip": [
         {
-          "text": "Sur un banc sous les pieds ou adjacent, sinon par terre (spawn) ; Maj ou le même bouton pour se lever",
+          "text": "Sur un banc sous les pieds ou adjacent, sinon par terre (spawn), ou clic droit sur un banc ; Maj ou le même bouton pour se lever",
           "color": "gray"
         }
       ],

@@ -1,0 +1,6 @@
+# @s : exactement un objet 🎉 Emotes dans l'inventaire (en rend un s'il manque, retire les surplus)
+execute store result score #lsi mg.st run clear @s *[minecraft:custom_data~{mg_emote:1b}] 0
+execute if score #lsi mg.st matches 1 run return 0
+execute if score #lsi mg.st matches 2.. run clear @s *[minecraft:custom_data~{mg_emote:1b}]
+execute unless items entity @s hotbar.8 * run return run item replace entity @s hotbar.8 with minecraft:poisonous_potato[!minecraft:food,item_model="minecraft:amethyst_shard",custom_data={mg_emote:1b},max_stack_size=1,enchantment_glint_override=true,consumable={consume_seconds:0.05f,animation:"none",sound:"minecraft:ui.button.click",has_consume_particles:false},custom_name=[{"text":"🎉 Emotes","color":"light_purple","bold":true,"italic":false}],lore=[[{"text":"Clic droit : ouvrir les emotes","color":"gray","italic":false}]]]
+give @s minecraft:poisonous_potato[!minecraft:food,item_model="minecraft:amethyst_shard",custom_data={mg_emote:1b},max_stack_size=1,enchantment_glint_override=true,consumable={consume_seconds:0.05f,animation:"none",sound:"minecraft:ui.button.click",has_consume_particles:false},custom_name=[{"text":"🎉 Emotes","color":"light_purple","bold":true,"italic":false}],lore=[[{"text":"Clic droit : ouvrir les emotes","color":"gray","italic":false}]]]

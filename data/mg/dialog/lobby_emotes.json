@@ -114,7 +114,7 @@
       ],
       "tooltip": [
         {
-          "text": "Sur un banc sous les pieds ou adjacent, sinon par terre ; Maj pour se lever",
+          "text": "Sur un banc sous les pieds ou adjacent, sinon par terre, ou clic droit sur un banc ; Maj pour se lever",
           "color": "gray"
         }
       ],
