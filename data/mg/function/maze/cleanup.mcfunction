@@ -1,5 +1,6 @@
 # Fin du Labyrinthe géant
 schedule clear mg:maze/build
+schedule clear mg:maze/build_step
 kill @e[type=!minecraft:player,x=-50,y=55,z=41050,dx=106,dy=40,dz=100]
 effect clear @a minecraft:night_vision
 clear @a minecraft:compass
