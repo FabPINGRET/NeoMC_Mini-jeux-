@@ -25,7 +25,7 @@ wr('s_prepare', ['# Dropper : Essais — préparation',
                  'gamemode adventure @a[tag=mg.play]', 'clear @a[tag=mg.play]',
                  'execute as @a[tag=mg.play] run function mg:dropadv/spawn',
                  'scoreboard objectives setdisplay sidebar mg.dtt',
-                 'scoreboard players set $px mg.st 0', f'scoreboard players set $py mg.st {TOP + 3}', f'scoreboard players set $pz mg.st {CZ - 11}',
+                 f'scoreboard players set $px mg.st {LV[ORDER[0]].cx}', f'scoreboard players set $py mg.st {TOP + 3}', f'scoreboard players set $pz mg.st {CZ - 11}',
                  'function mg:dropadv/titles'])
 wr('s_go', ['# Dropper : Essais — départ',
             'effect give @a[tag=mg.play] minecraft:saturation infinite 0 true',
@@ -51,7 +51,7 @@ wr('s_tick', ['# Dropper : Essais — chaque tick',
               'execute unless entity @a[tag=mg.play] run return run function mg:core/draw',
               f'execute unless entity {PLAY} run function mg:dropadv/s_end'])
 wr('s_hud', [f'scoreboard players set $dsl mg.st {STIME}', 'scoreboard players operation $dsl mg.st -= $dat mg.st', 'scoreboard players operation $dsl mg.st /= #k20 mg.st'] +
-   [f'execute if score @s mg.dlv matches {L.k + 1} run title @s actionbar [{{"text":"⬇ {L.k + 1}/{N} : ","color":"gray"}},{{"text":"{L.name}","color":"{L.colr}","bold":true}},'
+   [f'execute if score @s mg.dlv matches {L.n} run title @s actionbar [{{"text":"⬇ {L.n}/{N} : ","color":"gray"}},{{"text":"{L.name}","color":"{L.colr}","bold":true}},'
     f'{{"text":"   essai ","color":"gray"}},{{"score":{{"name":"@s","objective":"mg.dtr"}},"color":"white"}},{{"text":"   Σ ","color":"aqua"}},{{"score":{{"name":"@s","objective":"mg.dtt"}},"color":"white"}},'
     f'{{"text":"   ⏱ ","color":"gold"}},{{"score":{{"name":"$dsl","objective":"mg.st"}},"color":"yellow"}},{{"text":" s","color":"gold"}}]'
     for L in LV])
@@ -125,7 +125,7 @@ _d = json.load(open(_p, encoding='utf-8'))
 _acts = _d['actions']
 for _a in _acts:
     if _a.get('action', {}).get('command') == 'trigger mg.go set 64':
-        _a['tooltip'] = [{'text': f'{N} grands niveaux à thème enchaînés (arc-en-ciel, mine, enfer, usine, espace, ballons...) : le premier qui les finit gagne', 'color': 'gray'}]
+        _a['tooltip'] = [{'text': f'{N} grands niveaux à thème enchaînés (spirale, mine, enfer, usine, espace, ballons... et l\'arc-en-ciel, le plus dur, pour finir) : le premier qui les finit gagne', 'color': 'gray'}]
 if not any(_a.get('action', {}).get('command') == f'trigger mg.go set {SID}' for _a in _acts):
     _i = next(i for i, _a in enumerate(_acts) if _a.get('action', {}).get('command') == 'trigger mg.go set 65')
     _acts.insert(_i + 1, {'label': [{'text': 'Solo : essais ', 'color': 'aqua'}, {'text': '★★', 'color': 'gold'}, {'text': '☆☆', 'color': 'dark_gray'}],
