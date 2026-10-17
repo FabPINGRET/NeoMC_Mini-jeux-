@@ -4,6 +4,8 @@ execute unless score $theme mg.st matches 1.. run return run tellraw @s {"text":
 execute if score $theme mg.st matches 1 run function mg:lobby/theme/halloween/off
 execute if score $theme mg.st matches 2 run function mg:lobby/theme/noel/off
 scoreboard players set $theme mg.st 0
+scoreboard players reset $thbt mg.st
+function mg:lobby/theme/banner_hide
 data remove storage mg:lobby theme
 scoreboard players reset $thw mg.st
 scoreboard players reset $thd mg.st
