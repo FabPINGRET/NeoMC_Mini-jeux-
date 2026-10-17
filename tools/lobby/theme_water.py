@@ -8,7 +8,7 @@ write_biome.
 import os
 
 import common as C
-from theme_world import DYN, LIM, PAD_BOXES, PLANTS, PLOTS, RESERVED, W, bid, free, opening
+from theme_world import DYN, LIM, PAD_BOXES, PLANTS, PLOTS, RESERVED, W, bid, dyn, free, opening
 
 WATER = set()                            # sources d'eau du spawn
 SPILL = []                               # sources qui débordent
@@ -21,7 +21,8 @@ def load():
     assert W, 'theme_world.load(F) doit être appelé avant theme_water.load()'
     for d in (WATER, SPILL, FLOW, FOUNT):
         d.clear()
-    WATER.update(k for k, b in W.items() if bid(b) == 'minecraft:water')
+    # (l'eau d'une zone modifiée ailleurs n'est plus celle du spawn : ex. l'ancienne fontaine sous le grand Hall des scores)
+    WATER.update(k for k, b in W.items() if bid(b) == 'minecraft:water' and not dyn(*k))
     SPILL.extend(k for k in sorted(WATER) if opening((k[0], k[1] - 1, k[2]))
                  or any(opening((k[0] + a, k[1], k[2] + c)) for a, c in ((1, 0), (-1, 0), (0, 1), (0, -1))))
     for s in SPILL:
