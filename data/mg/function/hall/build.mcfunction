@@ -17,103 +17,103 @@ fill -60 63 15 -12 63 36 minecraft:grass_block
 fill -59 63 20 -6 63 22 minecraft:dirt_path
 fill -59 63 32 -6 63 34 minecraft:dirt_path
 fill -13 63 20 -6 63 34 minecraft:polished_andesite
-fill -60 64 15 -12 65 15 minecraft:moss_block
-fill -60 64 36 -12 65 36 minecraft:moss_block
-fill -60 64 15 -60 65 36 minecraft:moss_block
-fill -12 64 15 -12 65 36 minecraft:moss_block
-fill -12 64 20 -12 65 34 minecraft:air
-fill -60 64 27 -14 65 27 minecraft:moss_block
+fill -60 64 15 -12 64 15 minecraft:moss_block
+fill -60 64 36 -12 64 36 minecraft:moss_block
+fill -60 64 15 -60 64 36 minecraft:moss_block
+fill -12 64 15 -12 64 36 minecraft:moss_block
+fill -12 64 20 -12 64 34 minecraft:air
+fill -60 64 27 -14 64 27 minecraft:moss_block
 fill -60 64 35 -12 64 35 minecraft:moss_carpet
-fill -57 64 16 -57 65 19 minecraft:moss_block
-setblock -57 66 16 minecraft:lantern
-fill -54 64 16 -54 65 19 minecraft:moss_block
-setblock -54 66 16 minecraft:lantern
-fill -51 64 16 -51 65 19 minecraft:moss_block
-setblock -51 66 16 minecraft:lantern
-fill -48 64 16 -48 65 19 minecraft:moss_block
-setblock -48 66 16 minecraft:lantern
-fill -45 64 16 -45 65 19 minecraft:moss_block
-setblock -45 66 16 minecraft:lantern
-fill -42 64 16 -42 65 19 minecraft:moss_block
-setblock -42 66 16 minecraft:lantern
-fill -39 64 16 -39 65 19 minecraft:moss_block
-setblock -39 66 16 minecraft:lantern
-fill -36 64 16 -36 65 19 minecraft:moss_block
-setblock -36 66 16 minecraft:lantern
-fill -33 64 16 -33 65 19 minecraft:moss_block
-setblock -33 66 16 minecraft:lantern
-fill -30 64 16 -30 65 19 minecraft:moss_block
-setblock -30 66 16 minecraft:lantern
-fill -27 64 16 -27 65 19 minecraft:moss_block
-setblock -27 66 16 minecraft:lantern
-fill -24 64 16 -24 65 19 minecraft:moss_block
-setblock -24 66 16 minecraft:lantern
-fill -21 64 16 -21 65 19 minecraft:moss_block
-setblock -21 66 16 minecraft:lantern
-fill -18 64 16 -18 65 19 minecraft:moss_block
-setblock -18 66 16 minecraft:lantern
-fill -15 64 16 -15 65 19 minecraft:moss_block
-setblock -15 66 16 minecraft:lantern
-fill -57 64 23 -57 65 26 minecraft:moss_block
-setblock -57 66 26 minecraft:lantern
-fill -54 64 23 -54 65 26 minecraft:moss_block
-setblock -54 66 26 minecraft:lantern
-fill -51 64 23 -51 65 26 minecraft:moss_block
-setblock -51 66 26 minecraft:lantern
-fill -48 64 23 -48 65 26 minecraft:moss_block
-setblock -48 66 26 minecraft:lantern
-fill -45 64 23 -45 65 26 minecraft:moss_block
-setblock -45 66 26 minecraft:lantern
-fill -42 64 23 -42 65 26 minecraft:moss_block
-setblock -42 66 26 minecraft:lantern
-fill -39 64 23 -39 65 26 minecraft:moss_block
-setblock -39 66 26 minecraft:lantern
-fill -36 64 23 -36 65 26 minecraft:moss_block
-setblock -36 66 26 minecraft:lantern
-fill -33 64 23 -33 65 26 minecraft:moss_block
-setblock -33 66 26 minecraft:lantern
-fill -30 64 23 -30 65 26 minecraft:moss_block
-setblock -30 66 26 minecraft:lantern
-fill -27 64 23 -27 65 26 minecraft:moss_block
-setblock -27 66 26 minecraft:lantern
-fill -24 64 23 -24 65 26 minecraft:moss_block
-setblock -24 66 26 minecraft:lantern
-fill -21 64 23 -21 65 26 minecraft:moss_block
-setblock -21 66 26 minecraft:lantern
-fill -18 64 23 -18 65 26 minecraft:moss_block
-setblock -18 66 26 minecraft:lantern
-fill -15 64 23 -15 65 26 minecraft:moss_block
-setblock -15 66 26 minecraft:lantern
-fill -57 64 28 -57 65 31 minecraft:moss_block
-setblock -57 66 28 minecraft:lantern
-fill -54 64 28 -54 65 31 minecraft:moss_block
-setblock -54 66 28 minecraft:lantern
-fill -51 64 28 -51 65 31 minecraft:moss_block
-setblock -51 66 28 minecraft:lantern
-fill -48 64 28 -48 65 31 minecraft:moss_block
-setblock -48 66 28 minecraft:lantern
-fill -45 64 28 -45 65 31 minecraft:moss_block
-setblock -45 66 28 minecraft:lantern
-fill -42 64 28 -42 65 31 minecraft:moss_block
-setblock -42 66 28 minecraft:lantern
-fill -39 64 28 -39 65 31 minecraft:moss_block
-setblock -39 66 28 minecraft:lantern
-fill -36 64 28 -36 65 31 minecraft:moss_block
-setblock -36 66 28 minecraft:lantern
-fill -33 64 28 -33 65 31 minecraft:moss_block
-setblock -33 66 28 minecraft:lantern
-fill -30 64 28 -30 65 31 minecraft:moss_block
-setblock -30 66 28 minecraft:lantern
-fill -27 64 28 -27 65 31 minecraft:moss_block
-setblock -27 66 28 minecraft:lantern
-fill -24 64 28 -24 65 31 minecraft:moss_block
-setblock -24 66 28 minecraft:lantern
-fill -21 64 28 -21 65 31 minecraft:moss_block
-setblock -21 66 28 minecraft:lantern
-fill -18 64 28 -18 65 31 minecraft:moss_block
-setblock -18 66 28 minecraft:lantern
-fill -15 64 28 -15 65 31 minecraft:moss_block
-setblock -15 66 28 minecraft:lantern
+fill -57 64 16 -57 64 19 minecraft:moss_block
+setblock -57 65 16 minecraft:lantern
+fill -54 64 16 -54 64 19 minecraft:moss_block
+setblock -54 65 16 minecraft:lantern
+fill -51 64 16 -51 64 19 minecraft:moss_block
+setblock -51 65 16 minecraft:lantern
+fill -48 64 16 -48 64 19 minecraft:moss_block
+setblock -48 65 16 minecraft:lantern
+fill -45 64 16 -45 64 19 minecraft:moss_block
+setblock -45 65 16 minecraft:lantern
+fill -42 64 16 -42 64 19 minecraft:moss_block
+setblock -42 65 16 minecraft:lantern
+fill -39 64 16 -39 64 19 minecraft:moss_block
+setblock -39 65 16 minecraft:lantern
+fill -36 64 16 -36 64 19 minecraft:moss_block
+setblock -36 65 16 minecraft:lantern
+fill -33 64 16 -33 64 19 minecraft:moss_block
+setblock -33 65 16 minecraft:lantern
+fill -30 64 16 -30 64 19 minecraft:moss_block
+setblock -30 65 16 minecraft:lantern
+fill -27 64 16 -27 64 19 minecraft:moss_block
+setblock -27 65 16 minecraft:lantern
+fill -24 64 16 -24 64 19 minecraft:moss_block
+setblock -24 65 16 minecraft:lantern
+fill -21 64 16 -21 64 19 minecraft:moss_block
+setblock -21 65 16 minecraft:lantern
+fill -18 64 16 -18 64 19 minecraft:moss_block
+setblock -18 65 16 minecraft:lantern
+fill -15 64 16 -15 64 19 minecraft:moss_block
+setblock -15 65 16 minecraft:lantern
+fill -57 64 23 -57 64 26 minecraft:moss_block
+setblock -57 65 26 minecraft:lantern
+fill -54 64 23 -54 64 26 minecraft:moss_block
+setblock -54 65 26 minecraft:lantern
+fill -51 64 23 -51 64 26 minecraft:moss_block
+setblock -51 65 26 minecraft:lantern
+fill -48 64 23 -48 64 26 minecraft:moss_block
+setblock -48 65 26 minecraft:lantern
+fill -45 64 23 -45 64 26 minecraft:moss_block
+setblock -45 65 26 minecraft:lantern
+fill -42 64 23 -42 64 26 minecraft:moss_block
+setblock -42 65 26 minecraft:lantern
+fill -39 64 23 -39 64 26 minecraft:moss_block
+setblock -39 65 26 minecraft:lantern
+fill -36 64 23 -36 64 26 minecraft:moss_block
+setblock -36 65 26 minecraft:lantern
+fill -33 64 23 -33 64 26 minecraft:moss_block
+setblock -33 65 26 minecraft:lantern
+fill -30 64 23 -30 64 26 minecraft:moss_block
+setblock -30 65 26 minecraft:lantern
+fill -27 64 23 -27 64 26 minecraft:moss_block
+setblock -27 65 26 minecraft:lantern
+fill -24 64 23 -24 64 26 minecraft:moss_block
+setblock -24 65 26 minecraft:lantern
+fill -21 64 23 -21 64 26 minecraft:moss_block
+setblock -21 65 26 minecraft:lantern
+fill -18 64 23 -18 64 26 minecraft:moss_block
+setblock -18 65 26 minecraft:lantern
+fill -15 64 23 -15 64 26 minecraft:moss_block
+setblock -15 65 26 minecraft:lantern
+fill -57 64 28 -57 64 31 minecraft:moss_block
+setblock -57 65 28 minecraft:lantern
+fill -54 64 28 -54 64 31 minecraft:moss_block
+setblock -54 65 28 minecraft:lantern
+fill -51 64 28 -51 64 31 minecraft:moss_block
+setblock -51 65 28 minecraft:lantern
+fill -48 64 28 -48 64 31 minecraft:moss_block
+setblock -48 65 28 minecraft:lantern
+fill -45 64 28 -45 64 31 minecraft:moss_block
+setblock -45 65 28 minecraft:lantern
+fill -42 64 28 -42 64 31 minecraft:moss_block
+setblock -42 65 28 minecraft:lantern
+fill -39 64 28 -39 64 31 minecraft:moss_block
+setblock -39 65 28 minecraft:lantern
+fill -36 64 28 -36 64 31 minecraft:moss_block
+setblock -36 65 28 minecraft:lantern
+fill -33 64 28 -33 64 31 minecraft:moss_block
+setblock -33 65 28 minecraft:lantern
+fill -30 64 28 -30 64 31 minecraft:moss_block
+setblock -30 65 28 minecraft:lantern
+fill -27 64 28 -27 64 31 minecraft:moss_block
+setblock -27 65 28 minecraft:lantern
+fill -24 64 28 -24 64 31 minecraft:moss_block
+setblock -24 65 28 minecraft:lantern
+fill -21 64 28 -21 64 31 minecraft:moss_block
+setblock -21 65 28 minecraft:lantern
+fill -18 64 28 -18 64 31 minecraft:moss_block
+setblock -18 65 28 minecraft:lantern
+fill -15 64 28 -15 64 31 minecraft:moss_block
+setblock -15 65 28 minecraft:lantern
 fill -59 63 16 -58 63 19 minecraft:light_blue_concrete
 fill -59 64 16 -58 64 16 minecraft:polished_andesite
 setblock -59 65 16 minecraft:gold_block
@@ -467,3 +467,4 @@ data modify storage mg:hall v13 set value 1b
 data modify storage mg:hall v14 set value 1b
 data modify storage mg:hall v15 set value 1b
 data modify storage mg:hall v16 set value 1b
+data modify storage mg:hall v17 set value 1b
