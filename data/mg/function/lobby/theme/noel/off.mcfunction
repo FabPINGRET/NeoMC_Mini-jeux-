@@ -389,11 +389,6 @@ execute if block -63 64 15 minecraft:snow run setblock -63 64 15 minecraft:air
 execute if block -63 64 17 minecraft:snow run setblock -63 64 17 minecraft:air
 execute if block -63 64 18 minecraft:snow run setblock -63 64 18 minecraft:air
 execute if block -63 64 21 minecraft:red_wool run setblock -63 64 21 minecraft:air
-execute if block -63 64 23 minecraft:snow run setblock -63 64 23 minecraft:air
-execute if block -63 64 24 minecraft:snow run setblock -63 64 24 minecraft:air
-execute if block -63 64 25 minecraft:snow run setblock -63 64 25 minecraft:air
-execute if block -63 64 26 minecraft:snow run setblock -63 64 26 minecraft:air
-execute if block -63 64 27 minecraft:snow run setblock -63 64 27 minecraft:air
 execute if block -63 64 28 minecraft:snow run setblock -63 64 28 minecraft:air
 execute if block -63 64 29 minecraft:snow run setblock -63 64 29 minecraft:air
 execute if block -63 64 30 minecraft:snow run setblock -63 64 30 minecraft:air
@@ -457,11 +452,6 @@ execute if block -62 64 19 minecraft:snow run setblock -62 64 19 minecraft:air
 execute if block -62 64 20 minecraft:snow run setblock -62 64 20 minecraft:short_grass
 execute if block -62 64 21 minecraft:snow run setblock -62 64 21 minecraft:orange_tulip
 execute if block -62 64 22 minecraft:snow run setblock -62 64 22 minecraft:cornflower
-execute if block -62 64 23 minecraft:snow run setblock -62 64 23 minecraft:short_grass
-execute if block -62 64 24 minecraft:snow run setblock -62 64 24 minecraft:air
-execute if block -62 64 25 minecraft:snow run setblock -62 64 25 minecraft:air
-execute if block -62 64 26 minecraft:snow run setblock -62 64 26 minecraft:air
-execute if block -62 64 27 minecraft:snow run setblock -62 64 27 minecraft:air
 execute if block -62 64 28 minecraft:snow run setblock -62 64 28 minecraft:air
 execute if block -62 64 29 minecraft:snow run setblock -62 64 29 minecraft:air
 execute if block -62 64 30 minecraft:snow run setblock -62 64 30 minecraft:air
@@ -520,10 +510,6 @@ execute if block -61 64 16 minecraft:snow run setblock -61 64 16 minecraft:air
 execute if block -61 64 17 minecraft:snow run setblock -61 64 17 minecraft:air
 execute if block -61 64 19 minecraft:snow run setblock -61 64 19 minecraft:air
 execute if block -61 64 21 minecraft:snow run setblock -61 64 21 minecraft:air
-execute if block -61 64 24 minecraft:snow run setblock -61 64 24 minecraft:air
-execute if block -61 64 25 minecraft:snow run setblock -61 64 25 minecraft:air
-execute if block -61 64 26 minecraft:snow run setblock -61 64 26 minecraft:air
-execute if block -61 64 27 minecraft:snow run setblock -61 64 27 minecraft:air
 execute if block -61 64 33 minecraft:snow run setblock -61 64 33 minecraft:lily_of_the_valley
 execute if block -61 64 34 minecraft:snow run setblock -61 64 34 minecraft:air
 execute if block -61 64 35 minecraft:snow run setblock -61 64 35 minecraft:air

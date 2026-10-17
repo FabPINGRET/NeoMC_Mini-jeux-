@@ -154,7 +154,6 @@ execute if block -63 64 18 minecraft:air run setblock -63 64 18 minecraft:leaf_l
 execute if block -63 64 19 minecraft:air run setblock -63 64 19 minecraft:leaf_litter[segment_amount=1,facing=north]
 execute if block -63 64 20 minecraft:air run setblock -63 64 20 minecraft:leaf_litter[segment_amount=2,facing=west]
 execute if block -63 64 22 minecraft:air run setblock -63 64 22 minecraft:jack_o_lantern[facing=north]
-execute if block -63 64 23 minecraft:air run setblock -63 64 23 minecraft:leaf_litter[segment_amount=4,facing=north]
 execute if block -63 64 30 minecraft:air run setblock -63 64 30 minecraft:leaf_litter[segment_amount=2,facing=west]
 execute if block -63 64 32 minecraft:short_grass run setblock -63 64 32 minecraft:leaf_litter[segment_amount=1,facing=west]
 execute if block -63 65 -18 minecraft:azalea_leaves run setblock -63 65 -18 minecraft:pale_oak_leaves[persistent=true]
@@ -176,8 +175,6 @@ execute if block -62 64 5 minecraft:air run setblock -62 64 5 minecraft:leaf_lit
 execute if block -62 64 16 minecraft:air run setblock -62 64 16 minecraft:jack_o_lantern[facing=east]
 execute if block -62 64 21 minecraft:orange_tulip run setblock -62 64 21 minecraft:short_dry_grass
 execute if block -62 64 22 minecraft:cornflower run setblock -62 64 22 minecraft:short_dry_grass
-execute if block -62 64 23 minecraft:short_grass run setblock -62 64 23 minecraft:leaf_litter[segment_amount=3,facing=north]
-execute if block -62 64 24 minecraft:air run setblock -62 64 24 minecraft:leaf_litter[segment_amount=3,facing=east]
 execute if block -62 64 30 minecraft:air run setblock -62 64 30 minecraft:leaf_litter[segment_amount=3,facing=south]
 execute if block -62 64 31 minecraft:air run setblock -62 64 31 minecraft:leaf_litter[segment_amount=4,facing=east]
 execute if block -62 64 32 minecraft:air run setblock -62 64 32 minecraft:leaf_litter[segment_amount=3,facing=south]
