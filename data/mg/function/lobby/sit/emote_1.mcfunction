@@ -9,3 +9,7 @@ scoreboard players add $emo1 mg.lsn 1
 execute at @s run particle minecraft:happy_villager ~ ~2 ~ 0.4 0.3 0.4 0 8 normal @a[distance=..16]
 execute at @s run playsound minecraft:entity.villager.yes player @a[distance=..16] ~ ~ ~ 1 1.2
 execute at @s run title @a[distance=..10,tag=!mg.play,tag=!mg.pkr,tag=!mg.lk,tag=!mg.ely,tag=!mg.elyf] actionbar [{"text":"✋ ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" salue tout le monde !","color":"gray"}]
+# mouvement (sit_move.py) : l'image 0 est jouée par core/tick -> move_tick, le même tick
+scoreboard players set @s mg.lsk 1
+scoreboard players set @s mg.lse -1
+tag @s add mg.lsm

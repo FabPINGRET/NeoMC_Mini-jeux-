@@ -9,3 +9,7 @@ scoreboard players add $emo4 mg.lsn 1
 execute at @s run particle minecraft:crit ~ ~2.1 ~ 0.35 0.1 0.35 0.15 10 normal @a[distance=..16]
 execute at @s run playsound minecraft:entity.villager.hurt player @a[distance=..16] ~ ~ ~ 1 1.3
 execute at @s run title @a[distance=..10,tag=!mg.play,tag=!mg.pkr,tag=!mg.lk,tag=!mg.ely,tag=!mg.elyf] actionbar [{"text":"😵 ","color":"yellow"},{"selector":"@s","color":"yellow"},{"text":" est étourdi...","color":"gray"}]
+# mouvement (sit_move.py) : l'image 0 est jouée par core/tick -> move_tick, le même tick
+scoreboard players set @s mg.lsk 4
+scoreboard players set @s mg.lse -1
+tag @s add mg.lsm

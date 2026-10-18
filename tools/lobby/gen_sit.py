@@ -11,7 +11,8 @@ aussi APRÈS tools/lobby/gen_lobby.py et tools/hall/gen_hall.py, dont il relit l
 - 🎉 Objet « Emotes » (pomme de terre empoisonnée habillée en éclat d'améthyste, hotbar.8, clic droit = fenêtre des emotes) : donné,
   retiré, rendu et purgé des conteneurs du spawn par sit_item.py (importé ici).
 - 🎉 Emotes (mg.opt 83 : fenêtre mg:lobby_emotes ; 77 ✋ Salut, 78 ♪ Danse, 79 🎉 Fête, 80 😵 Étourdi) : particules et son à 16 blocs,
-  message en actionbar à 10 blocs, recharge 3 s (mg.lsc = tick de la dernière emote).
+  message en actionbar à 10 blocs, recharge 3 s (mg.lsc = tick de la dernière emote), et un mouvement du joueur (coups de bras, rotation :
+  sit_move.py, importé ici ; mg.lsk = emote en cours, mg.lse = image, tag mg.lsm).
 - Admin (menu 🎉 Événements du lobby) : 81 coupe / rétablit tout cela ($sitoff mg.st = 1 : coupé, absent : actif), 82 affiche
   les compteurs d'usage (mg.lsn : $sit, $emo1..4, $itm objet, $bnc clic sur un banc). Couper retire aussi les zones des bancs et l'objet.
 - Refus (sit/ok) : hors du spawn, partie / survie / plot / visite / parkour / kart / élytra / duel / GTA / Terra Nova / Mini Party /
@@ -19,8 +20,8 @@ aussi APRÈS tools/lobby/gen_lobby.py et tools/hall/gen_hall.py, dont il relit l
 - Une partie qui démarre (core/request), core/load et desinstaller relèvent les joueurs et retirent les sièges ; core/tick appelle
   lobby/sit/tick (sièges orphelins : Maj vanilla, reconnexion) tant qu'un joueur est assis et vide les sièges sinon.
 Tags : mg.sit (joueur assis), mg.seat (siège), mg.seatn (siège en cours de pose), mg.seato (candidat orphelin, balayage de sit/tick) ;
-mg.bench, mg.lbc (sit_bench.py) ; mg.lsg, mg.lsw (sit_item.py).
-mg.opt 76..83 ; objectifs mg.lsc, mg.lsn, mg.lsb (recharge du clic sur un banc).
+mg.bench, mg.lbc (sit_bench.py) ; mg.lsg, mg.lsw (sit_item.py) ; mg.lsm (sit_move.py).
+mg.opt 76..83 ; objectifs mg.lsc, mg.lsn, mg.lsb (recharge du clic sur un banc), mg.lse, mg.lsk (sit_move.py).
 Relancer ce script après gen_events.py (qui réécrit dialog/lobby_events.json, donc les boutons 81 et 82) ; après gen_tp_general.py
 les lignes de core/opt changent seulement d'ordre. Glyphes : seulement ceux déjà présents dans data/.
 """
@@ -33,6 +34,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'
 import common as C
 import sit_bench as SB                                              # noqa: E402
 import sit_item as SI                                               # noqa: E402
+import sit_move as SM                                               # noqa: E402
 from theme_world import LOBBY_BOX
 
 C.init(sys.argv[1] if len(sys.argv) > 1 else '.')
@@ -105,6 +107,8 @@ w('lobby/sit/bench_at', ['# @s : position = coin du bloc (align xyz). Banc libre
    f'rotated {yaw} 0 run return run function mg:lobby/sit/seat' for f, yaw in FACING] + ['return 0'])
 w('lobby/sit/seat', ['# @s = joueur ; position = point d\'assise, rotation = sens du regard (posés par sit/try ou sit/bench) ; retourne 1',
                      'summon minecraft:item_display ~ ~ ~ {Tags:["mg.seat","mg.seatn"]}',
+                     '# s\'asseoir arrête le mouvement d\'une emote en cours (sit_move.py), avant le tp qui fixe le regard',
+                     'execute if entity @s[tag=mg.lsm] run function mg:lobby/sit/move_stop',
                      'tp @s ~ ~ ~ ~ ~',
                      'execute store success score #sitm mg.st run ride @s mount @e[type=minecraft:item_display,tag=mg.seatn,distance=..1,sort=nearest,limit=1]',
                      'execute if score #sitm mg.st matches 1 run tag @s add mg.sit',
@@ -144,7 +148,8 @@ for k, glyph, name, col, verb, (pn, py, dx, dy, dz, sp, n), sound, pitch in EMOT
         f'execute at @s run particle minecraft:{pn} ~ {rel(py)} ~ {dx} {dy} {dz} {sp} {n} normal @a[distance=..16]',
         f'execute at @s run playsound minecraft:{sound} player @a[distance=..16] ~ ~ ~ 1 {pitch}',
         'execute at @s run title @a[distance=..10,tag=!mg.play,tag=!mg.pkr,tag=!mg.lk,tag=!mg.ely,tag=!mg.elyf] actionbar ' + js(
-            [{'text': glyph + ' ', 'color': col}, {'selector': '@s', 'color': 'yellow'}, NOTE(' ' + verb)])])
+            [{'text': glyph + ' ', 'color': col}, {'selector': '@s', 'color': 'yellow'}, NOTE(' ' + verb)])] +
+        SM.start_lines(k))
 w('lobby/sit/menu', ['# @s : fenêtre des emotes', 'dialog show @s mg:lobby_emotes'])
 
 # ---------------------------------------------------------------- admin : activer / couper, compteurs
@@ -201,7 +206,7 @@ write_json('lobby_emotes.json', {
     'type': 'minecraft:multi_action', 'title': {'text': '🎉 Emotes', 'color': 'light_purple', 'bold': True},
     'pause': False, 'can_close_with_escape': True,
     'body': [{'type': 'minecraft:plain_message', 'contents': [
-        {'text': f'Une emote visible par les joueurs autour de toi (spawn seulement, une toutes les {COOLDOWN // 20} s).', 'color': 'gray'}]}],
+        {'text': f'Une emote animée, visible par les joueurs autour de toi (spawn seulement, une toutes les {COOLDOWN // 20} s).', 'color': 'gray'}]}],
     'columns': 2, 'exit_action': {'label': [{'text': 'Fermer', 'color': 'gray'}]},
     'actions': [act(f'{g} {nm}', c, OPT_EMOTE + k - 1, f'Fait une emote « {nm} »') for k, g, nm, c, *_ in EMOTES] +
                [act('🪑 S\'asseoir / se lever', 'gold', OPT_SIT, 'Sur un banc sous les pieds ou adjacent, sinon par terre, ou clic droit sur un banc ; Maj pour se lever')]})
@@ -269,8 +274,10 @@ for line in ([f'execute if score @s mg.opt matches {OPT_SIT} run function mg:lob
 # objet 🎉 Emotes et clic droit sur un banc (sit_item.py, sit_bench.py) : fonctions et advancements, puis leurs lignes (après celles ci-dessus)
 SI.write(BUSY)
 SB.write(BENCHES, rel(SEAT_DY), actionbar)
+SM.write(COOLDOWN)
 SI.wire(UNTAG)
 SB.wire(UNTAG)
+SM.wire(UNTAG)
 print('Assis / emotes OK :', len(EMOTES), 'emotes')
 
 # Les notes des joueurs remplacent les étoiles dans les menus (et la fenêtre mg:lobby_emotes devient rate/d/) : à refaire après chaque régénération des menus

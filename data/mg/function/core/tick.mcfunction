@@ -148,4 +148,5 @@ execute if entity @a[tag=mg.lsg] run function mg:lobby/sit/item_tick
 execute if score $lan mg.t matches 30 run function mg:lobby/sit/item_second
 execute if score $lan mg.t matches 30 run function mg:lobby/sit/bench_check
 execute if entity @a[tag=mg.sit] run function mg:lobby/sit/tick
+execute if entity @a[tag=mg.lsm] run function mg:lobby/sit/move_tick
 execute if score $lan mg.t matches 30 unless entity @a[tag=mg.sit] if entity @e[type=minecraft:item_display,tag=mg.seat,limit=1] run kill @e[type=minecraft:item_display,tag=mg.seat]
