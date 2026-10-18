@@ -51,6 +51,8 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.ft
+scoreboard objectives remove mg.ftn
 scoreboard objectives remove mg.lse
 scoreboard objectives remove mg.lsk
 scoreboard objectives remove mg.lsb
@@ -306,6 +308,14 @@ data remove storage mg:lobby pvpc1
 data remove storage mg:lobby pvpc2
 data remove storage mg:pvpc p
 data remove storage mg:pvpc s
+schedule clear mg:foot/build_start
+schedule clear mg:foot/build_go
+kill @e[type=minecraft:sulfur_cube,tag=mg.ball]
+kill @e[type=minecraft:text_display,tag=mg.ftd]
+tag @a remove mg.ftr
+tag @a remove mg.ftb
+tag @a remove mg.ftin
+data remove storage mg:lobby foot1
 bossbar remove mg:soleil
 bossbar remove mg:ev
 team remove mg_sq
@@ -643,6 +653,8 @@ team remove mg_blue
 team remove mg_green
 team remove mg_yellow
 team remove mg_party
+team remove mg_ftr
+team remove mg_ftb
 tag @a remove mg.init
 tag @a remove mg.play
 tag @a remove mg.out

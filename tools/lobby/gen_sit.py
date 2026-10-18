@@ -16,7 +16,7 @@ aussi APRÈS tools/lobby/gen_lobby.py et tools/hall/gen_hall.py, dont il relit l
 - Admin (menu 🎉 Événements du lobby) : 81 coupe / rétablit tout cela ($sitoff mg.st = 1 : coupé, absent : actif), 82 affiche
   les compteurs d'usage (mg.lsn : $sit, $emo1..4, $itm objet, $bnc clic sur un banc). Couper retire aussi les zones des bancs et l'objet.
 - Refus (sit/ok) : hors du spawn, partie / survie / plot / visite / parkour / kart / élytra / duel / GTA / Terra Nova / Mini Party /
-  mini-moi du ragoût, spectateur, déjà en véhicule, arène PvP souterraine : message court en actionbar.
+  mini-moi du ragoût, spectateur, déjà en véhicule, arène PvP et terrain de foot souterrains : message court en actionbar.
 - Une partie qui démarre (core/request), core/load et desinstaller relèvent les joueurs et retirent les sièges ; core/tick appelle
   lobby/sit/tick (sièges orphelins : Maj vanilla, reconnexion) tant qu'un joueur est assis et vide les sièges sinon.
 Tags : mg.sit (joueur assis), mg.seat (siège), mg.seatn (siège en cours de pose), mg.seato (candidat orphelin, balayage de sit/tick) ;
@@ -35,6 +35,7 @@ import common as C
 import sit_bench as SB                                              # noqa: E402
 import sit_item as SI                                               # noqa: E402
 import sit_move as SM                                               # noqa: E402
+from foot_build import FOOT_ZONE
 from theme_world import LOBBY_BOX
 
 C.init(sys.argv[1] if len(sys.argv) > 1 else '.')
@@ -45,6 +46,7 @@ GROUND_DY = 0                            # idem sur le sol, au niveau des pieds
 OPT_SIT, OPT_EMOTE, OPT_TOGGLE, OPT_STATS, OPT_MENU = 76, 77, 81, 82, 83     # emotes : 77..80
 COOLDOWN = 60                            # ticks entre deux emotes
 PVP_ZONE = 'x=-12,y=40,z=-10,dx=51,dy=20,dz=45'     # le souterrain PvP (ZONE de gen_pvpcave.py) : pas d'assise
+# le terrain de foot souterrain (FOOT_ZONE de foot_build.py, constantes seules : l'import ne lance rien) : pas d'assise non plus
 # Tags qui disent « occupé ailleurs » (vérifiés dans data/) : partie, éliminé, survie, plot, visite, parkour, kart du lobby,
 # élytra (parcours, libre), course d'élytres solo, duel, Neo GTA, Terra Nova, Mini Party, arène PvP du spawn, mini-moi / lapin du ragoût
 BUSY = ['mg.play', 'mg.out', 'mg.surv', 'mg.inplot', 'mg.visit', 'mg.pkr', 'mg.lk', 'mg.ely', 'mg.elyf', 'mg.xso', 'mg.dl', 'mg.gtw',
@@ -76,6 +78,7 @@ w('lobby/sit/ok', ['# @s : peut être assis / faire une emote ici ? Retourne 1 o
                    'execute if score $sitoff mg.st matches 1 run return 0',
                    f'execute unless entity {OK_SEL} run return 0',
                    f'execute if entity @s[{PVP_ZONE}] run return 0',
+                   f'execute if entity @s[{FOOT_ZONE}] run return 0',
                    'return 1'])
 w('lobby/sit/can', ['# @s : peut s\'asseoir / faire une emote ? Retourne 1 ou 0 ; refus : message court en actionbar',
                     'execute if score $sitoff mg.st matches 1 run ' + actionbar('🪑 Assis et emotes désactivés par un admin.'),
