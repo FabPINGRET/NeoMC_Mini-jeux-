@@ -1272,7 +1272,7 @@ setblock 24 63 -31 minecraft:water
 setblock 24 63 -30 minecraft:water
 setblock 24 63 -29 minecraft:water
 setblock 24 63 -28 minecraft:water
-execute unless block 25 63 -34 minecraft:ice run setblock 25 63 -34 minecraft:water
+setblock 25 63 -34 minecraft:water
 setblock 25 63 -33 minecraft:water
 setblock 25 63 -32 minecraft:water
 setblock 25 63 -31 minecraft:water
@@ -1281,8 +1281,8 @@ setblock 25 63 -29 minecraft:water
 setblock 25 63 -28 minecraft:water
 setblock 25 63 -27 minecraft:water
 setblock 25 63 -26 minecraft:water
-execute unless block 26 63 -35 minecraft:ice run setblock 26 63 -35 minecraft:water
-execute unless block 26 63 -34 minecraft:ice run setblock 26 63 -34 minecraft:water
+setblock 26 63 -35 minecraft:water
+setblock 26 63 -34 minecraft:water
 setblock 26 63 -33 minecraft:water
 setblock 26 63 -32 minecraft:water
 setblock 26 63 -31 minecraft:water
@@ -1295,8 +1295,8 @@ setblock 26 63 -25 minecraft:water
 setblock 27 62 -31 minecraft:water
 setblock 27 62 -30 minecraft:water
 setblock 27 62 -29 minecraft:water
-execute unless block 27 63 -35 minecraft:ice run setblock 27 63 -35 minecraft:water
-execute unless block 27 63 -34 minecraft:ice run setblock 27 63 -34 minecraft:water
+setblock 27 63 -35 minecraft:water
+setblock 27 63 -34 minecraft:water
 setblock 27 63 -33 minecraft:water
 setblock 27 63 -32 minecraft:water
 setblock 27 63 -31 minecraft:water
@@ -1312,7 +1312,7 @@ setblock 28 62 -31 minecraft:water
 setblock 28 62 -30 minecraft:water
 setblock 28 62 -29 minecraft:water
 setblock 28 62 -28 minecraft:water
-execute unless block 28 63 -35 minecraft:ice run setblock 28 63 -35 minecraft:water
+setblock 28 63 -35 minecraft:water
 setblock 28 63 -34 minecraft:water
 setblock 28 63 -33 minecraft:water
 setblock 28 63 -32 minecraft:water
@@ -1331,8 +1331,8 @@ setblock 29 62 -30 minecraft:water
 setblock 29 62 -29 minecraft:water
 setblock 29 62 -28 minecraft:water
 setblock 29 62 -27 minecraft:water
-execute unless block 29 63 -35 minecraft:ice run setblock 29 63 -35 minecraft:water
-execute unless block 29 63 -34 minecraft:ice run setblock 29 63 -34 minecraft:water
+setblock 29 63 -35 minecraft:water
+setblock 29 63 -34 minecraft:water
 setblock 29 63 -33 minecraft:water
 setblock 29 63 -32 minecraft:water
 setblock 29 63 -31 minecraft:water
@@ -1350,7 +1350,7 @@ setblock 30 62 -30 minecraft:water
 setblock 30 62 -29 minecraft:water
 setblock 30 62 -28 minecraft:water
 setblock 30 62 -27 minecraft:water
-execute unless block 30 63 -35 minecraft:ice run setblock 30 63 -35 minecraft:water
+setblock 30 63 -35 minecraft:water
 setblock 30 63 -34 minecraft:water
 setblock 30 63 -33 minecraft:water
 setblock 30 63 -32 minecraft:water
@@ -1369,8 +1369,8 @@ setblock 31 62 -30 minecraft:water
 setblock 31 62 -29 minecraft:water
 setblock 31 62 -28 minecraft:water
 setblock 31 62 -27 minecraft:water
-execute unless block 31 63 -35 minecraft:ice run setblock 31 63 -35 minecraft:water
-execute unless block 31 63 -34 minecraft:ice run setblock 31 63 -34 minecraft:water
+setblock 31 63 -35 minecraft:water
+setblock 31 63 -34 minecraft:water
 setblock 31 63 -33 minecraft:water
 setblock 31 63 -32 minecraft:water
 setblock 31 63 -31 minecraft:water
@@ -1386,8 +1386,8 @@ setblock 32 62 -31 minecraft:water
 setblock 32 62 -30 minecraft:water
 setblock 32 62 -29 minecraft:water
 setblock 32 62 -28 minecraft:water
-execute unless block 32 63 -35 minecraft:ice run setblock 32 63 -35 minecraft:water
-execute unless block 32 63 -34 minecraft:ice run setblock 32 63 -34 minecraft:water
+setblock 32 63 -35 minecraft:water
+setblock 32 63 -34 minecraft:water
 setblock 32 63 -33 minecraft:water
 setblock 32 63 -32 minecraft:water
 setblock 32 63 -31 minecraft:water
@@ -1401,8 +1401,8 @@ setblock 32 63 -24 minecraft:water
 setblock 33 62 -31 minecraft:water
 setblock 33 62 -30 minecraft:water
 setblock 33 62 -29 minecraft:water
-execute unless block 33 63 -35 minecraft:ice run setblock 33 63 -35 minecraft:water
-execute unless block 33 63 -34 minecraft:ice run setblock 33 63 -34 minecraft:water
+setblock 33 63 -35 minecraft:water
+setblock 33 63 -34 minecraft:water
 setblock 33 63 -33 minecraft:water
 setblock 33 63 -32 minecraft:water
 setblock 33 63 -31 minecraft:water
@@ -1412,26 +1412,26 @@ setblock 33 63 -28 minecraft:water
 setblock 33 63 -27 minecraft:water
 setblock 33 63 -26 minecraft:water
 setblock 33 63 -25 minecraft:water
-execute unless block 34 63 -35 minecraft:ice run setblock 34 63 -35 minecraft:water
-execute unless block 34 63 -34 minecraft:ice run setblock 34 63 -34 minecraft:water
-execute unless block 34 63 -33 minecraft:ice run setblock 34 63 -33 minecraft:water
-execute unless block 34 63 -32 minecraft:ice run setblock 34 63 -32 minecraft:water
-execute unless block 34 63 -31 minecraft:ice run setblock 34 63 -31 minecraft:water
+setblock 34 63 -35 minecraft:water
+setblock 34 63 -34 minecraft:water
+setblock 34 63 -33 minecraft:water
+setblock 34 63 -32 minecraft:water
+setblock 34 63 -31 minecraft:water
 setblock 34 63 -30 minecraft:water
-execute unless block 34 63 -29 minecraft:ice run setblock 34 63 -29 minecraft:water
-execute unless block 34 63 -28 minecraft:ice run setblock 34 63 -28 minecraft:water
-execute unless block 34 63 -27 minecraft:ice run setblock 34 63 -27 minecraft:water
-execute unless block 34 63 -26 minecraft:ice run setblock 34 63 -26 minecraft:water
+setblock 34 63 -29 minecraft:water
+setblock 34 63 -28 minecraft:water
+setblock 34 63 -27 minecraft:water
+setblock 34 63 -26 minecraft:water
 setblock 34 63 -25 minecraft:water
 setblock 35 63 -34 minecraft:water
-execute unless block 35 63 -33 minecraft:ice run setblock 35 63 -33 minecraft:water
-execute unless block 35 63 -32 minecraft:ice run setblock 35 63 -32 minecraft:water
+setblock 35 63 -33 minecraft:water
+setblock 35 63 -32 minecraft:water
 setblock 35 63 -31 minecraft:water
-execute unless block 35 63 -30 minecraft:ice run setblock 35 63 -30 minecraft:water
-execute unless block 35 63 -29 minecraft:ice run setblock 35 63 -29 minecraft:water
-execute unless block 35 63 -28 minecraft:ice run setblock 35 63 -28 minecraft:water
-execute unless block 35 63 -27 minecraft:ice run setblock 35 63 -27 minecraft:water
-execute unless block 35 63 -26 minecraft:ice run setblock 35 63 -26 minecraft:water
+setblock 35 63 -30 minecraft:water
+setblock 35 63 -29 minecraft:water
+setblock 35 63 -28 minecraft:water
+setblock 35 63 -27 minecraft:water
+setblock 35 63 -26 minecraft:water
 execute if block 22 64 -27 minecraft:air run setblock 22 64 -27 minecraft:short_grass
 execute if block 22 64 -23 minecraft:air run setblock 22 64 -23 minecraft:azure_bluet
 execute if block 22 64 -22 minecraft:air run setblock 22 64 -22 minecraft:short_grass

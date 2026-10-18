@@ -1,5 +1,14 @@
 # Désinstallation (OP) — retire scoreboards, équipes, décor et zones chargées
 # À lancer depuis le spawn (chunks chargés) : les zones de bancs (interaction mg.bench) d'un chunk non chargé survivent à la désinstallation
+kill @e[tag=mg.lfs]
+kill @e[type=minecraft:marker,tag=mg.lfm]
+setblock 36 64 -27 minecraft:air
+clear @a *[minecraft:custom_data~{mg_rod:1b}]
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{mg_rod:1b}] run kill @s
+function mg:lobby/fish/purge
+advancement revoke @a only mg:lobby_fish
+advancement revoke @a only mg:lobby_fish_take
+tag @a remove mg.lfc
 execute as @a[tag=mg.tvw] in minecraft:overworld run function mg:terra/leave
 execute if score $tmap mg.st matches 1 run function mg:lobby/theme/map/end
 function mg:lobby/theme/sync
@@ -51,6 +60,9 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.lfb
+scoreboard objectives remove mg.lfn
+scoreboard objectives remove mg.lfu
 scoreboard objectives remove mg.ft
 scoreboard objectives remove mg.ftn
 scoreboard objectives remove mg.lse

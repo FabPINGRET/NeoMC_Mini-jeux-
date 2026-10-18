@@ -202,6 +202,44 @@
     {
       "label": [
         {
+          "text": "🎣 Pêche on/off",
+          "color": "green",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Active ou coupe la pêche à l'étang du spawn (active par défaut)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 86"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🎣 Stats pêche",
+          "color": "aqua",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Affiche les compteurs d'usage de la pêche (cannes, prises, dorés, déchets, lancers)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 87"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🪑 Assis/emotes on/off",
           "color": "gold",
           "bold": true

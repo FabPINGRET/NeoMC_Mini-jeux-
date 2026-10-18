@@ -665,6 +665,8 @@ summon minecraft:text_display -8.5 69.5 30.5 {Tags:["mg.hall","mg.h_elyg"],billb
 execute if data storage mg:hall e.elyg run data modify entity @e[type=minecraft:text_display,tag=mg.h_elyg,limit=1] text set from storage mg:hall e.elyg
 summon minecraft:text_display -8.5 68.6 25.5 {Tags:["mg.hall","mg.h_gen"],billboard:"vertical",line_width:200,text:[{"text":"🏅 Meilleur niveau général","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.1f,1.1f,1.1f]}}
 execute if data storage mg:hall e.gen run data modify entity @e[type=minecraft:text_display,tag=mg.h_gen,limit=1] text set from storage mg:hall e.gen
+summon minecraft:text_display -8.5 68.1 20.5 {Tags:["mg.hall","mg.h_fish"],billboard:"vertical",line_width:115,text:[{"text":"🎣 Plus belle prise","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.9f,0.9f,0.9f]}}
+execute if data storage mg:hall e.fish run data modify entity @e[type=minecraft:text_display,tag=mg.h_fish,limit=1] text set from storage mg:hall e.fish
 
 # Étals : top 3 de chaque jeu sur fond sombre (texte par défaut, puis top 3 enregistré), objet du jeu sur le comptoir
 summon minecraft:text_display -58.0 65.35 21.5 {Tags:["mg.hall","mg.h3_spleef"],billboard:"vertical",line_width:120,background:-937815024,text:[{"text":"❄ Spleef","color":"aqua","bold":true},{"text":"\n— personne —","color":"dark_gray","bold":false}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.45f,0.45f,0.45f]}}
@@ -824,3 +826,4 @@ data modify storage mg:hall v20 set value 1b
 data modify storage mg:hall v21 set value 1b
 data modify storage mg:hall v22 set value 1b
 data modify storage mg:hall v23 set value 1b
+data modify storage mg:hall v24 set value 1b
