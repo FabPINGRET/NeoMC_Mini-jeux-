@@ -315,6 +315,7 @@ kill @e[type=minecraft:text_display,tag=mg.ftd]
 tag @a remove mg.ftr
 tag @a remove mg.ftb
 tag @a remove mg.ftin
+tag @a remove mg.ftlt
 data remove storage mg:lobby foot1
 bossbar remove mg:soleil
 bossbar remove mg:ev

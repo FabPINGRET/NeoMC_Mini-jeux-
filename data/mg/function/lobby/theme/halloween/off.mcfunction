@@ -1678,8 +1678,6 @@ execute if block -19 64 -26 minecraft:leaf_litter run setblock -19 64 -26 minecr
 execute if block -19 64 -24 minecraft:short_dry_grass run setblock -19 64 -24 minecraft:short_grass
 execute if block -19 64 -23 minecraft:leaf_litter run setblock -19 64 -23 minecraft:air
 execute if block -19 64 -22 minecraft:leaf_litter run setblock -19 64 -22 minecraft:short_grass
-execute if block -19 64 -19 minecraft:leaf_litter run setblock -19 64 -19 minecraft:short_grass
-execute if block -19 64 -18 minecraft:leaf_litter run setblock -19 64 -18 minecraft:air
 execute if block -19 64 -16 minecraft:pale_oak_leaves run setblock -19 64 -16 minecraft:azalea_leaves[persistent=true]
 execute if block -19 64 -15 minecraft:pale_oak_leaves run setblock -19 64 -15 minecraft:flowering_azalea_leaves[persistent=true]
 execute if block -19 64 -14 minecraft:pale_oak_leaves run setblock -19 64 -14 minecraft:flowering_azalea_leaves[persistent=true]
@@ -1795,8 +1793,6 @@ execute if block -17 64 -31 minecraft:leaf_litter run setblock -17 64 -31 minecr
 execute if block -17 64 -29 minecraft:leaf_litter run setblock -17 64 -29 minecraft:air
 execute if block -17 64 -24 minecraft:leaf_litter run setblock -17 64 -24 minecraft:air
 execute if block -17 64 -23 minecraft:leaf_litter run setblock -17 64 -23 minecraft:air
-execute if block -17 64 -18 minecraft:leaf_litter run setblock -17 64 -18 minecraft:air
-execute if block -17 64 -17 minecraft:leaf_litter run setblock -17 64 -17 minecraft:air
 execute if block -17 64 -16 minecraft:leaf_litter run setblock -17 64 -16 minecraft:air
 execute if block -17 64 -15 minecraft:leaf_litter run setblock -17 64 -15 minecraft:air
 execute if block -17 64 -12 minecraft:short_dry_grass run setblock -17 64 -12 minecraft:azure_bluet

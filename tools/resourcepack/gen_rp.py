@@ -1,6 +1,6 @@
 """Génère le resource pack NeoMC (pixel art, kart 3D, boîtes ?) : python tools/resourcepack/gen_rp.py <racine du dépôt>.
 
-Tout est dans l'espace de noms « mg » : aucune texture vanilla n'est remplacée (la survie n'est pas touchée).
+Tout est dans l'espace de noms « mg » : aucune texture vanilla n'est remplacée, sauf le modèle du bloc de test (la survie n'est pas touchée).
 Sortie : resourcepack/ (dossier) et releases/neomc_resourcepack.zip (+ empreinte SHA-1 affichée).
 """
 import hashlib, json, math, os, struct, sys, zipfile, zlib
@@ -332,6 +332,7 @@ exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'food_rp.py')
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'reindeer_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'zombies_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dino_rp.py'), encoding='utf-8').read())
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'foot_rp.py'), encoding='utf-8').read())
 
 # ------------------------------------------------------------------ pack.mcmeta, zip
 wjson(os.path.join(OUT, 'pack.mcmeta'), {"pack": {"description": [{"text": "NeoMC Mini-Jeux", "color": "gold"},

@@ -2,7 +2,8 @@
 
 Même mécanique que gen_sit.py (admin_toggle / admin_stats, add_buttons / chat_line recopiés : gen_sit.py s'exécute à l'import).
 - mg.opt 84 : coupe / rétablit le terrain ($ftoff mg.st = 1 : coupé, absent : actif). Couper : plus de balle, joueurs du terrain renvoyés au
-  spawn, équipes quittées, puits refermé (margelle pleine) et panneaux retirés. Rétablir : puits rouvert, panneaux reposés.
+  spawn, équipes quittées, tapis d'entrée éteint (plus de bloc d'or, plus de téléportation) et panneaux retirés. Rétablir : tapis rallumé,
+  panneaux reposés.
 - mg.opt 85 : compteurs d'usage (objectif mg.ftn : $but buts, $eq choix d'équipe, $ent entrées sur le terrain) et score en cours.
 - Boutons dans dialog/lobby_events.json (avant « trigger mg.menu ») et lignes de lobby/ev/menu_chat (après la dernière du menu texte).
   gen_events.py réécrit ces deux fichiers : le relancer impose de relancer gen_foot.py (et gen_sit.py) ensuite.
@@ -54,14 +55,15 @@ def write():
     w('foot/admin_toggle', ['# Admin (@s) : coupe / rétablit le terrain de foot ($ftoff mg.st = 1 : coupé, absent : actif)',
                             'execute store success score #ftw mg.st if score $ftoff mg.st matches 1',
                             'execute if score #ftw mg.st matches 1 run scoreboard players reset $ftoff mg.st',
-                            'execute if score #ftw mg.st matches 1 run function mg:foot/hole_open',
-                            'execute if score #ftw mg.st matches 1 run return run tellraw @s ' + js({'text': '⚽ Terrain de foot : activé.', 'color': 'green'}),
+                            'execute if score #ftw mg.st matches 1 run function mg:foot/entry_open',
+                            'execute if score #ftw mg.st matches 1 run return run tellraw @s ' + js({'text': '⚽ Terrain de foot : activé (tapis rallumé).', 'color': 'green'}),
                             'scoreboard players set $ftoff mg.st 1',
                             f'kill {FB.BALLS}',
                             f'execute as @a[{FB.FOOT_ZONE}] run function mg:foot/leave',
-                            'execute as @a run function mg:foot/cleanup', 'tag @a remove mg.ftin',
-                            'function mg:foot/hole_close',
-                            'tellraw @s ' + js({'text': '⚽ Terrain de foot : désactivé (joueurs renvoyés au spawn, trou refermé).', 'color': 'red'})])
+                            'execute as @a run function mg:foot/cleanup', 'execute as @a[tag=mg.ftin] run scoreboard players reset @s mg.ft',
+                            'tag @a remove mg.ftin', 'tag @a remove mg.ftlt',
+                            'function mg:foot/entry_close',
+                            'tellraw @s ' + js({'text': '⚽ Terrain de foot : désactivé (joueurs renvoyés au spawn, tapis éteint).', 'color': 'red'})])
     w('foot/admin_stats', ['# Admin (@s) : compteurs d\'usage du terrain de foot (objectif mg.ftn) et score en cours (mg.ft)'] +
       [f'execute unless score {n} mg.ftn matches 0.. run scoreboard players set {n} mg.ftn 0' for n, _ in COUNTERS] +
       ['execute if score $ftoff mg.st matches 1 run tellraw @s ' + js({'text': '⚽ Terrain de foot : désactivé', 'color': 'red'}),

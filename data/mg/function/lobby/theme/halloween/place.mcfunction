@@ -1680,8 +1680,6 @@ execute if block -19 64 -26 minecraft:air run setblock -19 64 -26 minecraft:leaf
 execute if block -19 64 -24 minecraft:short_grass run setblock -19 64 -24 minecraft:short_dry_grass
 execute if block -19 64 -23 minecraft:air run setblock -19 64 -23 minecraft:leaf_litter[segment_amount=1,facing=north]
 execute if block -19 64 -22 minecraft:short_grass run setblock -19 64 -22 minecraft:leaf_litter[segment_amount=4,facing=north]
-execute if block -19 64 -19 minecraft:short_grass run setblock -19 64 -19 minecraft:leaf_litter[segment_amount=1,facing=north]
-execute if block -19 64 -18 minecraft:air run setblock -19 64 -18 minecraft:leaf_litter[segment_amount=2,facing=west]
 execute if block -19 64 -16 minecraft:azalea_leaves run setblock -19 64 -16 minecraft:pale_oak_leaves[persistent=true]
 execute if block -19 64 -15 minecraft:flowering_azalea_leaves run setblock -19 64 -15 minecraft:pale_oak_leaves[persistent=true]
 execute if block -19 64 -14 minecraft:flowering_azalea_leaves run setblock -19 64 -14 minecraft:pale_oak_leaves[persistent=true]
@@ -1797,8 +1795,6 @@ execute if block -17 64 -31 minecraft:air run setblock -17 64 -31 minecraft:leaf
 execute if block -17 64 -29 minecraft:air run setblock -17 64 -29 minecraft:leaf_litter[segment_amount=4,facing=east]
 execute if block -17 64 -24 minecraft:air run setblock -17 64 -24 minecraft:leaf_litter[segment_amount=2,facing=north]
 execute if block -17 64 -23 minecraft:air run setblock -17 64 -23 minecraft:leaf_litter[segment_amount=3,facing=west]
-execute if block -17 64 -18 minecraft:air run setblock -17 64 -18 minecraft:leaf_litter[segment_amount=1,facing=east]
-execute if block -17 64 -17 minecraft:air run setblock -17 64 -17 minecraft:leaf_litter[segment_amount=2,facing=south]
 execute if block -17 64 -16 minecraft:air run setblock -17 64 -16 minecraft:leaf_litter[segment_amount=1,facing=east]
 execute if block -17 64 -15 minecraft:air run setblock -17 64 -15 minecraft:leaf_litter[segment_amount=1,facing=west]
 execute if block -17 64 -12 minecraft:azure_bluet run setblock -17 64 -12 minecraft:short_dry_grass
