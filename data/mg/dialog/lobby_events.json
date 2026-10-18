@@ -164,6 +164,44 @@
     {
       "label": [
         {
+          "text": "⚽ Foot on/off",
+          "color": "green",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Active ou coupe le terrain de foot souterrain du spawn (actif par défaut)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 84"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⚽ Stats foot",
+          "color": "aqua",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Affiche les compteurs d'usage du foot (buts, équipes, entrées) et le score en cours",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 85"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🪑 Assis/emotes on/off",
           "color": "gold",
           "bold": true

@@ -67,6 +67,9 @@ execute if score @s mg.opt matches 81..82 unless entity @s[tag=mg.admin] run tel
 execute if score @s mg.opt matches 81 if entity @s[tag=mg.admin] run function mg:lobby/sit/admin_toggle
 execute if score @s mg.opt matches 82 if entity @s[tag=mg.admin] run function mg:lobby/sit/admin_stats
 execute if score @s mg.opt matches 83 run function mg:lobby/sit/menu
+execute if score @s mg.opt matches 84..85 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Réservé aux admins.","color":"red"}
+execute if score @s mg.opt matches 84 if entity @s[tag=mg.admin] run function mg:foot/admin_toggle
+execute if score @s mg.opt matches 85 if entity @s[tag=mg.admin] run function mg:foot/admin_stats
 execute if score @s mg.opt matches 62..65 run function mg:tpg/run
 execute if score @s mg.opt matches 75 run function mg:tpg/run
 scoreboard players reset @s mg.opt

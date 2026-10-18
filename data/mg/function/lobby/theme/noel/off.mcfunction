@@ -4765,10 +4765,8 @@ execute if block -2 64 -22 minecraft:snow run setblock -2 64 -22 minecraft:air
 execute if block -2 64 -21 minecraft:snow run setblock -2 64 -21 minecraft:air
 execute if block -2 64 -20 minecraft:snow run setblock -2 64 -20 minecraft:air
 execute if block -2 64 -19 minecraft:snow run setblock -2 64 -19 minecraft:air
-execute if block -2 64 -18 minecraft:snow run setblock -2 64 -18 minecraft:air
 execute if block -2 64 -17 minecraft:snow run setblock -2 64 -17 minecraft:air
 execute if block -2 64 -16 minecraft:snow run setblock -2 64 -16 minecraft:air
-execute if block -2 64 -15 minecraft:snow run setblock -2 64 -15 minecraft:air
 execute if block -2 64 -14 minecraft:snow run setblock -2 64 -14 minecraft:air
 execute if block -2 64 -13 minecraft:snow run setblock -2 64 -13 minecraft:air
 execute if block -2 64 -12 minecraft:snow run setblock -2 64 -12 minecraft:air
@@ -4868,7 +4866,6 @@ execute if block -1 64 -21 minecraft:snow run setblock -1 64 -21 minecraft:air
 execute if block -1 64 -20 minecraft:snow run setblock -1 64 -20 minecraft:air
 execute if block -1 64 -19 minecraft:snow run setblock -1 64 -19 minecraft:air
 execute if block -1 64 -18 minecraft:snow run setblock -1 64 -18 minecraft:air
-execute if block -1 64 -16 minecraft:snow run setblock -1 64 -16 minecraft:air
 execute if block -1 64 -15 minecraft:snow run setblock -1 64 -15 minecraft:air
 execute if block -1 64 -14 minecraft:snow run setblock -1 64 -14 minecraft:air
 execute if block -1 64 -13 minecraft:snow run setblock -1 64 -13 minecraft:air
@@ -4958,7 +4955,6 @@ execute if block 0 64 -25 minecraft:snow run setblock 0 64 -25 minecraft:air
 execute if block 0 64 -22 minecraft:snow run setblock 0 64 -22 minecraft:air
 execute if block 0 64 -21 minecraft:snow run setblock 0 64 -21 minecraft:air
 execute if block 0 64 -19 minecraft:snow run setblock 0 64 -19 minecraft:air
-execute if block 0 64 -17 minecraft:snow run setblock 0 64 -17 minecraft:air
 execute if block 0 64 -15 minecraft:snow run setblock 0 64 -15 minecraft:air
 execute if block 0 64 -14 minecraft:snow run setblock 0 64 -14 minecraft:air
 execute if block 0 64 -13 minecraft:snow run setblock 0 64 -13 minecraft:air
@@ -5049,10 +5045,8 @@ execute if block 1 64 -22 minecraft:snow run setblock 1 64 -22 minecraft:air
 execute if block 1 64 -21 minecraft:snow run setblock 1 64 -21 minecraft:air
 execute if block 1 64 -20 minecraft:snow run setblock 1 64 -20 minecraft:air
 execute if block 1 64 -19 minecraft:snow run setblock 1 64 -19 minecraft:air
-execute if block 1 64 -18 minecraft:snow run setblock 1 64 -18 minecraft:air
 execute if block 1 64 -17 minecraft:snow run setblock 1 64 -17 minecraft:air
 execute if block 1 64 -16 minecraft:snow run setblock 1 64 -16 minecraft:air
-execute if block 1 64 -15 minecraft:snow run setblock 1 64 -15 minecraft:air
 execute if block 1 64 -13 minecraft:snow run setblock 1 64 -13 minecraft:air
 execute if block 1 64 -12 minecraft:snow run setblock 1 64 -12 minecraft:air
 execute if block 1 64 -11 minecraft:snow run setblock 1 64 -11 minecraft:air

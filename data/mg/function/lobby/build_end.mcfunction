@@ -12,6 +12,7 @@ setblock 27 90 -27 minecraft:water
 function mg:lobby/deco
 function mg:lobby/armory_build
 function mg:parkour/build
+function mg:foot/build
 forceload remove -80 -80 80 80
 forceload remove 81 -32 144 32
 forceload remove -115 81 115 225

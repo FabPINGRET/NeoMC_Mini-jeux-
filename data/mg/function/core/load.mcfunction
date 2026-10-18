@@ -65,6 +65,13 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.ft dummy
+scoreboard objectives add mg.ftn dummy
+scoreboard players add $ftr mg.ft 0
+scoreboard players add $ftb mg.ft 0
+scoreboard players add $ftg mg.ft 0
+scoreboard players add $fte mg.ft 0
+scoreboard players add $fti mg.ft 0
 scoreboard objectives add mg.lse dummy
 scoreboard objectives add mg.lsk dummy
 scoreboard objectives add mg.lsb dummy
@@ -263,6 +270,7 @@ scoreboard objectives add mg.pshop trigger
 scoreboard objectives add mg.pvid dummy
 scoreboard objectives add mg.pcl dummy
 execute if score $setup mg.st matches 1 unless data storage mg:lobby pvpc2 run schedule function mg:pvpc/build_start 22s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby foot1 run schedule function mg:foot/build_start 24s
 team add mg_sq
 team modify mg_sq friendlyFire false
 team modify mg_sq collisionRule never
@@ -543,6 +551,15 @@ team modify mg_yellow prefix [{"text":"⬤ ","color":"yellow"}]
 team add mg_party
 team modify mg_party friendlyFire false
 team modify mg_party collisionRule never
+# Équipes du terrain de foot (pas celles des jeux)
+team add mg_ftr
+team modify mg_ftr color red
+team modify mg_ftr friendlyFire false
+team modify mg_ftr prefix [{"text":"⬤ ","color":"red"}]
+team add mg_ftb
+team modify mg_ftb color blue
+team modify mg_ftb friendlyFire false
+team modify mg_ftb prefix [{"text":"⬤ ","color":"blue"}]
 
 # --- Globals par défaut (seulement si absents) ---
 execute unless score $state mg.st = $state mg.st run scoreboard players set $state mg.st 0
