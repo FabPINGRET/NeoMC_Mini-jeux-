@@ -24,7 +24,7 @@ dans THEMES (et dans tools/lobby/gen_theme_maps.py, qui habille aussi les cartes
 tombent par intermittence : les déclarer dans SPECS de theme_fall.py et mettre TF.fx_call(clé, LOBBY) dans le fx du thème.
 
 Modules (jamais lancés seuls, chargés ici après C.init) : theme_world.py (modèle du spawn : W, DYN, CH, familles de
-blocs, zones réservées), theme_water.py (fontaines, cascades, biome d'eau, water_fix, water_check), theme_mobs.py (animaux,
+blocs, zones réservées), theme_water.py (fontaines, cascades, biome du thème (eau, herbe, feuillage), water_fix, water_check), theme_mobs.py (animaux,
 spot/back/gone/clear), theme_core.py (off, sync, restore, reskin, tick), theme_fall.py (feuilles et neige qui tombent
 par intermittence), theme_npcs.py (PNJ : sorcière d'Halloween, lutin de Noël), theme_stew.py (ragoût de la sorcière : effets
 vanilla et maison tirés à la consommation, chronos, nettoyages), theme_banner.py (bandeau : bossbar qui présente à tour de rôle
@@ -51,14 +51,14 @@ import theme_npcs as TN                                          # noqa: E402
 import theme_water as TWA                                        # noqa: E402
 import theme_world as TW                                         # noqa: E402
 from theme_mobs import mob                                       # noqa: E402
-from theme_water import FOUNT, water_biome                       # noqa: E402
+from theme_water import FOUNT, theme_biome                       # noqa: E402
 from theme_world import (CH, DIRT, DYN, FLOWERS, G, GROUND, LOBBY, SNOWABLE, TUFT, W, WALLS, bid, canopy,  # noqa: E402
                          change, solid, states, tuft_free)
 
 TW.load(F)                               # W, DYN, PLOTS, RESERVED remplis sur place, puis ce qui en dérive
 TWA.load()                               # (TM.load : après les thèmes, il lui faut les cellules qu'ils changent)
 TN.prepare()                             # place du PNJ vérifiée et réservée : avant les thèmes (change() passe par free())
-HALLOWEEN_BIOME = 'halloween'            # biome d'eau rouge : worldgen/biome/<nom>.json, mg:<nom> dans fillbiome
+HALLOWEEN_BIOME = 'halloween'            # biome du thème (eau rouge, herbe et feuillage gris) : worldgen/biome/<nom>.json, mg:<nom> dans fillbiome
 
 FACES = ['north', 'south', 'east', 'west']
 
@@ -158,7 +158,8 @@ def theme_halloween():
              'minecraft:entity.witch.celebrate')
     mobs = [mob('bat', 'minecraft:bat', 8),
             mob('ghost', 'minecraft:allay', 6, 'Silent:1b', ('mg:hat/ghost', [0, -0.3, 0], 1.0, True))]
-    return reskin, fx, hello, mobs, {'water': water_biome(f'mg:{HALLOWEEN_BIOME}'), 'npc': 'witch',
+    # water = biome du thème (eau + herbe + feuillage)
+    return reskin, fx, hello, mobs, {'water': theme_biome(f'mg:{HALLOWEEN_BIOME}'), 'npc': 'witch',
                                      'files': {f'pumpkin_{st}': [f'# 🎃 Halloween : citrouille {st} de couleur aléatoire (pack activé)'] + ls
                                                for st, ls in pump.items()}}
 
@@ -225,7 +226,7 @@ for tid, key, label, opt, make in THEMES:
     reskin, fx, (hello, snd), mobs, extra = make()
     T = f'lobby/theme/{key}'
     on_x, off_x = [], list(extra.get('off', []))
-    if 'water' in extra:
+    if 'water' in extra:                 # water = biome du thème (eau + herbe + feuillage)
         on_x, off_water = TWA.write_toggle(T, label, extra['water'])
         off_x = off_water + off_x
     for n, ls in extra.get('files', {}).items():
@@ -274,7 +275,8 @@ TM.write_common()                        # spot, back, gone, clear, allay_drop
 TWA.write_fix(ALLCH)                     # water_fix
 TWA.write_check(ALLCH)                   # water_check (diagnostic, ne modifie rien)
 TN.write_common(NPC_THEMES)              # npc_use, npc_second, fw_use, advancement mg:theme_fw
-TWA.write_biome(HALLOWEEN_BIOME, '#a3120c', '#3a0505')   # worldgen/biome/halloween.json
+TWA.write_biome(HALLOWEEN_BIOME, water_color='#a3120c', fog_color='#3a0505', grass_color='#778272',
+                foliage_color='#878d76', dry_foliage_color='#a0a69c')   # worldgen/biome/halloween.json (herbe, feuillage, feuillage sec : palette du jardin pâle)
 
 # ------------------------------------------------------------------ branchements
 TC.write_wiring(THEMES)                # branchements dans core/tick, core/load, lobby/deco, core/opt, desinstaller
