@@ -5,11 +5,11 @@ mg_thst) appelle lobby/theme/stew_eat, qui ricane puis tire 1..10 : 1-4 effet va
 lévitation 10 s suivie d'une chute lente 18 s ; durée annoncée en actionbar), 5-10 effet maison : stew_mini (taille -70 %, 45 s),
 stew_moon (marche lunaire : gravité -75 %, saut +30 %, 30 s, à vérifier en jeu : ~5,5 blocs de haut), stew_rabbit (lapin : taille -65 %, saut +30 %, vitesse +20 %, 40 s, joueur invisible
 et remplacé par un vrai lapin figé qui le suit, cf. ci-dessous), stew_flash (vitesse +80 %, pas +0,85, 20 s, étincelles chaque tick),
-stew_skate (patinoire : friction_modifier -1,0, air_drag_modifier -0,4 et vitesse -30 %, 25 s) et stew_bounce (rebond : bounciness +0,8, saut +20 %, 30 s).
+stew_skate (patinoire : friction_modifier -1,0, air_drag_modifier -0,8 et vitesse -60 %, 25 s) et stew_bounce (rebond : bounciness +0,8, saut +20 %, 30 s).
 Les attributs friction_modifier, air_drag_modifier et bounciness viennent de 26.2 ; leurs ids et le sens de la glisse (valeur plus basse = plus glissant) sont vérifiés dans le registre 26.2 et les données vanilla (sulfur_cube fast_sliding : -0,95).
-Rétention horizontale par tick (javap LivingEntity 26.2) = clamp(1-(1-friction du bloc)*m_friction) * clamp(1-(1-0,91)*m_traînée), m = valeur de l'attribut (base 1) : m_friction 0 et m_traînée 0,6 donnent ~0,946 (glace ~0,892).
-Accélération au sol = vitesse x 0,216 / f^3 (f = friction modifiée) : sans le -30 % de vitesse, la vitesse max serait ~3x la marche (glace ~2x) ; avec, ~2,2x (glace ~1,6x).
-Effets de bord de la traînée -40 % : chutes un peu plus rapides (dégâts de chute inchangés, ils dépendent de la distance), sauts un peu plus hauts et sauts en sprint plus longs ; l'élytre n'est pas touché (updateFallFlyingMovement utilise des traînées fixes 0,99 / 0,98, vérifié par javap).
+Rétention horizontale par tick (javap LivingEntity 26.2) = clamp(1-(1-friction du bloc)*m_friction) * clamp(1-(1-0,91)*m_traînée), m = valeur de l'attribut (base 1) : m_friction 0 et m_traînée 0,2 donnent ~0,982 (glace ~0,892).
+Accélération au sol = vitesse x 0,216 / f^3 (f = friction modifiée) : sans le -60 % de vitesse, la vitesse max serait ~5,5x la marche ; avec, ~2,2x au sol ; en sautant en continu ~5x, ~10x en sprint (vitesse de vol 0,02 / 0,026 et élan de saut 0,2 non touchés par movement_speed ; avant : ~1 bloc/tick en sprint sauté).
+Effets de bord de la traînée -80 % : chutes plus rapides (vitesse terminale 0,08/(1-0,996) = 20 blocs/tick au lieu de 4 en vanilla, dégâts de chute inchangés, ils dépendent de la distance), sauts ~1,30 bloc et sauts en sprint nettement plus longs (rétention en l'air 0,982 au lieu de 0,91) ; l'élytre n'est pas touché (updateFallFlyingMovement utilise des traînées fixes 0,99 / 0,98, vérifié par javap).
 Un effet vanilla (1-4) se cumule avec un effet maison encore actif : un seul effet par ragoût.
 Effets chronométrés : un seul à la fois (stew_clear d'abord), objectif mg.ths en secondes, modificateurs d'attribut mg:thstew
 (jamais les valeurs de base), tag mg.thmini pendant le mini-moi et le lapin, mg.thzap pendant le flash. stew_clear les retire ; il est appelé par la seconde (fin, joueur
@@ -39,7 +39,7 @@ VANILLA = [('invisibility', 45, '👻 Invisible !', 'gray', []), ('glowing', 30,
            ('levitation', 10, '🎈 Tu t\'envoles… et tu redescends en douceur', 'light_purple', [('slow_falling', 18)])]   # tirages 1..4 : (effet, secondes, texte, couleur, effets en plus)
 OLD_EFFECTS = ['darkness', 'hunger', 'luck']                                             # effets des anciens ragoûts
 CUSTOM = ['mini', 'moon', 'rabbit', 'flash', 'skate', 'bounce']                          # tirages 5..10
-SKATE = [('friction_modifier', -1.0), ('air_drag_modifier', -0.4), ('movement_speed', -0.3)]   # friction -100 %, traînée de l'air -40 %, vitesse -30 % (rétention ~0,946/tick, glace ~0,892 ; vitesse max au sol ~2,2x la marche, glace ~1,6x)
+SKATE = [('friction_modifier', -1.0), ('air_drag_modifier', -0.8), ('movement_speed', -0.6)]   # friction -100 %, traînée de l'air -80 %, vitesse -60 % (rétention ~0,982/tick, avant 0,946, glace ~0,892 : glissade ~3x plus longue ; vitesse max ~2,2x la marche (au sol) : 0,04 x 0,216 = 0,0086/tick / (1 - 0,982) ; saut ~1,30 bloc (avant ~1,28, vanilla ~1,25))
 OP = 'add_multiplied_base'                                                               # opération par défaut des modificateurs
 ATTRS = ('scale', 'gravity', 'jump_strength', 'movement_speed', 'step_height', 'friction_modifier', 'air_drag_modifier', 'bounciness')
 F = 'lobby/theme'
@@ -153,7 +153,7 @@ def write_files(busy):
     w(f'{F}/stew_rabbit_keep', rabbit_keep())
     w(f'{F}/stew_flash', timed('flash : vitesse +80 %, pas +0,85', [('movement_speed', 0.8), ('step_height', 0.85)], 20,
                                'breeze.wind_burst', 1.2, '⚡ Flash : super vitesse !', 'yellow', extra=['tag @s add mg.thzap']))
-    w(f'{F}/stew_skate', timed('patinoire : friction -100 %, traînée de l\'air -40 %, vitesse -30 %', SKATE, 25, 'player.hurt_freeze', 1, '⛸ Patinoire : ça glisse !', 'aqua'))
+    w(f'{F}/stew_skate', timed('patinoire : friction -100 %, traînée de l\'air -80 %, vitesse -60 %', SKATE, 25, 'player.hurt_freeze', 1, '⛸ Patinoire : ça glisse !', 'aqua'))
     w(f'{F}/stew_bounce', timed('rebond : bounciness +0,8, saut +20 %', [('bounciness', 0.8, 'add_value'), ('jump_strength', 0.2)], 30,
                                 'slime.jump', 1, '🏀 Tu rebondis !', 'gold'))
     for rel, obj in (('advancement/theme_stew.json',
