@@ -12,7 +12,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Une emote visible par les joueurs autour de toi (spawn seulement, une toutes les 3 s).",
+          "text": "Une emote animée, visible par les joueurs autour de toi (spawn seulement, une toutes les 3 s).",
           "color": "gray"
         }
       ]

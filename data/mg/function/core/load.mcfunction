@@ -5,6 +5,7 @@ scoreboard objectives add mg.st dummy
 # Sièges du lobby (s'asseoir)
 kill @e[type=minecraft:item_display,tag=mg.seat]
 tag @a remove mg.sit
+tag @a remove mg.lsm
 kill @e[type=minecraft:interaction,tag=mg.bench]
 scoreboard players reset $lbx mg.st
 bossbar remove mg:thb
@@ -64,6 +65,8 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.lse dummy
+scoreboard objectives add mg.lsk dummy
 scoreboard objectives add mg.lsb dummy
 scoreboard objectives add mg.lsc dummy
 scoreboard objectives add mg.lsn dummy

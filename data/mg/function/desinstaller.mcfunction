@@ -17,6 +17,7 @@ kill @e[tag=mg.sheep]
 kill @e[tag=mg.npc]
 kill @e[type=minecraft:item_display,tag=mg.seat]
 tag @a remove mg.sit
+tag @a remove mg.lsm
 kill @e[type=minecraft:interaction,tag=mg.bench]
 advancement revoke @a only mg:lobby_bench
 tag @a remove mg.lbc
@@ -50,6 +51,8 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.lse
+scoreboard objectives remove mg.lsk
 scoreboard objectives remove mg.lsb
 scoreboard objectives remove mg.dku
 scoreboard objectives remove mg.dkc
