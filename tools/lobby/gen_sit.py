@@ -47,10 +47,8 @@ OPT_SIT, OPT_EMOTE, OPT_TOGGLE, OPT_STATS, OPT_MENU = 76, 77, 81, 82, 83     # e
 COOLDOWN = 60                            # ticks entre deux emotes
 PVP_ZONE = 'x=-12,y=40,z=-10,dx=51,dy=20,dz=45'     # le souterrain PvP (ZONE de gen_pvpcave.py) : pas d'assise
 # le terrain de foot souterrain (FOOT_ZONE de foot_build.py, constantes seules : l'import ne lance rien) : pas d'assise non plus
-# Tags qui disent « occupé ailleurs » (vérifiés dans data/) : partie, éliminé, survie, plot, visite, parkour, kart du lobby,
-# élytra (parcours, libre), course d'élytres solo, duel, Neo GTA, Terra Nova, Mini Party, arène PvP du spawn, mini-moi / lapin du ragoût
-BUSY = ['mg.play', 'mg.out', 'mg.surv', 'mg.inplot', 'mg.visit', 'mg.pkr', 'mg.lk', 'mg.ely', 'mg.elyf', 'mg.xso', 'mg.dl', 'mg.gtw',
-        'mg.tvw', 'mg.mpp', 'mg.pvpc', 'mg.thbun', 'mg.thmini']
+# Tags « occupé ailleurs » : BUSY de sit_item.py (liste partagée avec la pêche, gen_fish.py)
+BUSY = SI.BUSY
 OK_SEL = f'@s[{LOBBY_BOX},' + ','.join(f'tag=!{t}' for t in BUSY) + ',gamemode=!spectator]'
 FACING = [('east', 90), ('west', -90), ('north', 0), ('south', 180)]      # facing de l'escalier -> yaw du siège (dos au dossier)
 # où chercher un banc : sous les pieds (debout sur le dossier), aux pieds (marche basse), puis les 4 voisins

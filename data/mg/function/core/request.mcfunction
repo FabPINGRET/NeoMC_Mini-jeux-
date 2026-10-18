@@ -144,6 +144,7 @@ execute as @a[tag=mg.play,tag=mg.ely] run function mg:elytra/stop_quiet
 execute as @a[tag=mg.play,tag=mg.sit] run function mg:lobby/sit/stand
 clear @a[tag=mg.play] *[minecraft:custom_data~{mg_emote:1b}]
 execute as @a[tag=mg.play] run function mg:foot/cleanup
+clear @a[tag=mg.play] *[minecraft:custom_data~{mg_rod:1b}]
 execute as @a[tag=mg.play,tag=mg.elyf] run function mg:elytra/free_stop
 
 # État : compte à rebours de 10 s

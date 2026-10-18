@@ -3,7 +3,7 @@
 Une pomme de terre empoisonnée habillée en éclat d'améthyste (item_model ; custom_data mg_emote ; sans sa nourriture ni son poison :
 !minecraft:food, et notre consumable remplace celui d'origine, sans on_consume_effects) rangée en hotbar.8, donnée au spawn à qui ne
 l'a pas et retirée à qui ne doit pas l'avoir. Aucune recette n'utilise cette base (un vrai éclat d'améthyste se craft : table du spawn).
-- Garde (lobby/sit/item_keep, sans message) : dans le spawn, overworld, ni spectateur ni occupé ailleurs (BUSY de gen_sit.py), assis et
+- Garde (lobby/sit/item_keep, sans message) : dans le spawn, overworld, ni spectateur ni occupé ailleurs (BUSY ci-dessous), assis et
   emotes pas coupés par un admin. Contrairement à sit/ok, le ragoût (mini-moi, lapin) et les élytres (parcours, libres) le GARDENT :
   KEEP_BUSY les retire de BUSY ; le clic passe quand même par sit/can, qui affiche alors le refus habituel.
 - Clic = consommation (modèle pvpc : advancement mg:lobby_emote -> lobby/sit/item_adv). L'objet n'est PAS remis dans le même tick (le
@@ -30,8 +30,13 @@ ITEM = ('minecraft:poisonous_potato[!minecraft:food,item_model="minecraft:amethy
         'enchantment_glint_override=true,' + CONS +
         ',custom_name=[{"text":"🎉 Emotes","color":"light_purple","bold":true,"italic":false}],'
         'lore=[[{"text":"Clic droit : ouvrir les emotes","color":"gray","italic":false}]]]')
+# Tags qui disent « occupé ailleurs » (vérifiés dans data/) : partie, éliminé, survie, plot, visite, parkour, kart du lobby,
+# élytra (parcours, libre), course d'élytres solo, duel, Neo GTA, Terra Nova, Mini Party, arène PvP du spawn, mini-moi / lapin du ragoût
+# (liste de gen_sit.py, partagée avec la pêche de gen_fish.py)
+BUSY = ['mg.play', 'mg.out', 'mg.surv', 'mg.inplot', 'mg.visit', 'mg.pkr', 'mg.lk', 'mg.ely', 'mg.elyf', 'mg.xso', 'mg.dl', 'mg.gtw',
+        'mg.tvw', 'mg.mpp', 'mg.pvpc', 'mg.thbun', 'mg.thmini']
 SLOT = 'hotbar.8'                        # le spawn n'utilise que hotbar.0..4 ; seule l'arène PvP (occupée : objet retiré) prend 7 et 8
-KEEP_FREE = ['mg.thbun', 'mg.thmini', 'mg.ely', 'mg.elyf']        # états du BUSY de gen_sit.py où l'objet reste en main
+KEEP_FREE = ['mg.thbun', 'mg.thmini', 'mg.ely', 'mg.elyf']        # états du BUSY ci-dessus où l'objet reste en main
 DROPPED = f'execute as @e[type=minecraft:item] if items entity @s contents {PRED} run kill @s'
 TICK_LINE = 'execute if entity @a[tag=mg.lsg] run function mg:lobby/sit/item_tick'
 SECOND_LINE = 'execute if score $lan mg.t matches 30 run function mg:lobby/sit/item_second'
@@ -53,7 +58,7 @@ def containers():
 
 
 def write(busy):
-    """Écrit les fonctions lobby/sit/item_* et l'advancement mg:lobby_emote ; busy = BUSY de gen_sit.py."""
+    """Écrit les fonctions lobby/sit/item_* et l'advancement mg:lobby_emote ; busy = BUSY (gen_sit.py le passe)."""
     w = C.w
     assert set(KEEP_FREE) <= set(busy), set(KEEP_FREE) - set(busy)
     keep_busy = [t for t in busy if t not in KEEP_FREE]

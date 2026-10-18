@@ -2,6 +2,8 @@
 
 # --- Objectifs ---
 scoreboard objectives add mg.st dummy
+kill @e[type=minecraft:marker,tag=mg.lfm]
+tag @a remove mg.lfc
 # Sièges du lobby (s'asseoir)
 kill @e[type=minecraft:item_display,tag=mg.seat]
 tag @a remove mg.sit
@@ -65,6 +67,9 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.lfb dummy
+scoreboard objectives add mg.lfn dummy
+scoreboard objectives add mg.lfu minecraft.used:minecraft.fishing_rod
 scoreboard objectives add mg.ft dummy
 scoreboard objectives add mg.ftn dummy
 scoreboard players add $ftr mg.ft 0
@@ -580,7 +585,7 @@ execute if score $setup mg.st matches 1 if data storage mg:kart built2 unless da
 execute if score $setup mg.st matches 1 unless data storage mg:dropadv v3 run schedule function mg:dropadv/build 40s
 execute if score $setup mg.st matches 1 run scoreboard players set $xbk mg.st 0
 execute if score $setup mg.st matches 1 run schedule function mg:elyrace/build_next 60s
-execute if score $setup mg.st matches 1 unless data storage mg:hall v23 run schedule function mg:hall/build 20s
+execute if score $setup mg.st matches 1 unless data storage mg:hall v24 run schedule function mg:hall/build 20s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/build 10s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/food_build 25s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:elytra/build 30s

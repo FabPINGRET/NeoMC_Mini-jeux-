@@ -67,7 +67,7 @@ CX0, CZ0, CZ1 = -60, 15, 36                # zone dégagée (anciennes versions 
 BX0, BP, NB = -59, 2, 22                   # 1er stand en x -59, un stand tous les 2 blocs, 22 par côté
 OLD = (-24, -6, 11, 25)                    # hall v14 (x1, x2, z1, z2), effacé une fois
 MARK = (-9, 64, 25)                        # piédestal du champion (bloc d'or) : témoin de présence
-VERSION = 23
+VERSION = 24
 TR = 'transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[%sf,%sf,%sf]}'
 
 def W(name, lines):
@@ -89,7 +89,7 @@ W('objectives', ['# Objectifs des classements par jeu (généré par tools/hall/
     'scoreboard objectives add mg.genc dummy'])
 W('remove', ['# Désinstallation des classements et du hall'] +
   [f'scoreboard objectives remove mg.wg_{k}' for k, *_ in GAMES] +
-  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall t3', 'data remove storage mg:hall t3x', 'data remove storage mg:hall v15', 'data remove storage mg:hall v16', 'data remove storage mg:hall v17', 'data remove storage mg:hall v18', 'data remove storage mg:hall v19', 'data remove storage mg:hall v20', 'data remove storage mg:hall v21', 'data remove storage mg:hall v22', 'data remove storage mg:hall v23', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8', 'data remove storage mg:hall v9', 'data remove storage mg:hall v10', 'data remove storage mg:hall v11', 'data remove storage mg:hall v12', 'data remove storage mg:hall v13', 'data remove storage mg:hall v14',
+  ['kill @e[tag=mg.hall]', 'schedule clear mg:hall/build', 'data remove storage mg:hall e', 'data remove storage mg:hall t3', 'data remove storage mg:hall t3x', 'data remove storage mg:hall v15', 'data remove storage mg:hall v16', 'data remove storage mg:hall v17', 'data remove storage mg:hall v18', 'data remove storage mg:hall v19', 'data remove storage mg:hall v20', 'data remove storage mg:hall v21', 'data remove storage mg:hall v22', 'data remove storage mg:hall v23', 'data remove storage mg:hall v24', 'data remove storage mg:hall sbon', 'data remove storage mg:hall v2', 'data remove storage mg:hall v3', 'data remove storage mg:hall v4', 'data remove storage mg:hall v5', 'data remove storage mg:hall v6', 'data remove storage mg:hall v7', 'data remove storage mg:hall v8', 'data remove storage mg:hall v9', 'data remove storage mg:hall v10', 'data remove storage mg:hall v11', 'data remove storage mg:hall v12', 'data remove storage mg:hall v13', 'data remove storage mg:hall v14',
    'scoreboard objectives remove mg.gen', 'scoreboard objectives remove mg.lvl', 'scoreboard objectives remove mg.genc'])
 
 # ---------------------------------------------------------------- crédit des vainqueurs
@@ -275,6 +275,7 @@ plaques = [(x, 66.7, z, k, l, c, 0.9) for x, z, k, l, c, _ in peds]
 plaques.append((-8.5, 68.1, 30.5, 'ely2', "🪽 Record grand parcours d'élytra", 'light_purple', 0.9))
 plaques.append((-8.5, 69.5, 30.5, 'elyg', '🪽 Record Élytra : course', 'aqua', 0.9))
 plaques.append((-8.5, 68.6, 25.5, 'gen', '🏅 Meilleur niveau général', 'aqua', 1.1))
+plaques.append((-8.5, 68.1, 20.5, 'fish', '🎣 Plus belle prise', 'aqua', 0.9))      # record de taille de la pêche à l'étang (lobby/fish/pb, objectif mg.lfb)
 for x, z, k, l, c, it in peds:
     b.append(f'summon minecraft:item_display {x} 65.8 {z} {{Tags:["mg.hall","mg.lspin","mg.lbob"],billboard:"fixed",item:{{id:"minecraft:{it}"}},{TR % (0.8, 0.8, 0.8)}}}')
 b.append('')
@@ -409,6 +410,7 @@ _sub('core/load', 'unless data storage mg:hall v19 run schedule function mg:hall
 _sub('core/load', 'unless data storage mg:hall v20 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
 _sub('core/load', 'unless data storage mg:hall v21 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
 _sub('core/load', 'unless data storage mg:hall v22 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
+_sub('core/load', 'unless data storage mg:hall v23 run schedule function mg:hall/build', f'unless data storage mg:hall v{VERSION} run schedule function mg:hall/build')
 _sub('core/tick', 'unless block -9 64 27 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')
 _sub('core/tick', 'unless block -16 64 15 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')
 _sub('core/tick', 'unless block -58 64 26 minecraft:gold_block run function mg:hall/build', f'unless block {MARK[0]} {MARK[1]} {MARK[2]} minecraft:gold_block run function mg:hall/build')

@@ -30,6 +30,7 @@ par intermittence), theme_npcs.py (PNJ : sorcière d'Halloween, lutin de Noël),
 vanilla et maison tirés à la consommation, chronos, nettoyages), theme_banner.py (bandeau : bossbar qui présente à tour de rôle
 les nouveautés du thème en place).
 """
+import math
 import os
 import random
 import sys
@@ -58,6 +59,9 @@ from theme_world import (CH, DIRT, DYN, FLOWERS, G, GROUND, LOBBY, SNOWABLE, TUF
 TW.load(F)                               # W, DYN, PLOTS, RESERVED remplis sur place, puis ce qui en dérive
 TWA.load()                               # (TM.load : après les thèmes, il lui faut les cellules qu'ils changent)
 TN.prepare()                             # place du PNJ vérifiée et réservée : avant les thèmes (change() passe par free())
+# l'étang reste liquide : on y pêche (gen_fish). POND = (x, z, rayon) recopié de gen_lobby.py ; son eau est à moins de rayon + 1,2 du centre
+POND = (30, -30, 6.6)
+POND_W = {k for k, b in W.items() if bid(b) == 'minecraft:water' and math.hypot(k[0] - POND[0], k[2] - POND[1]) <= POND[2] + 1.2}
 HALLOWEEN_BIOME = 'halloween'            # biome du thème (eau rouge, herbe et feuillage gris) : worldgen/biome/<nom>.json, mg:<nom> dans fillbiome
 
 FACES = ['north', 'south', 'east', 'west']
@@ -174,7 +178,7 @@ def theme_noel():
         x, y, z = k
         if i.endswith('_leaves') and (x, y + 1, z) in W and rnd.random() < 0.07:
             change(k, rnd.choice(LIGHTS))
-        elif i == 'minecraft:water' and (x, y + 1, z) not in W and states(b).get('level', '0') == '0' and k not in FOUNT:
+        elif i == 'minecraft:water' and (x, y + 1, z) not in W and states(b).get('level', '0') == '0' and k not in FOUNT and k not in POND_W:
             change(k, 'minecraft:ice')
         elif i in FLOWERS or i == 'minecraft:pink_petals' or (i in ('minecraft:short_grass', 'minecraft:fern') and rnd.random() < 0.7):
             if bid(W.get((x, y - 1, z))) in SNOWABLE:
@@ -212,7 +216,11 @@ def theme_noel():
     mobs = [mob('snowman', 'minecraft:snow_golem', 6, 'NoAI:1b,Pumpkin:0b', rand_yaw=True),
             mob('reindeer', 'minecraft:cow', 3, 'Silent:1b,variant:"minecraft:cold"', rp_nbt='Silent:1b,variant:"mg:reindeer"'),
             mob('rudolph', 'minecraft:cow', 1, 'Silent:1b,variant:"minecraft:cold"', rp_nbt='Silent:1b,variant:"mg:rudolph"')]
-    return reskin, fx, hello, mobs, {'npc': 'elf'}       # la traînée de chaque bonhomme fond dans lobby/theme/gone
+    # l'étang ne gèle plus, mais « off » remet de l'eau là où une version précédente (déjà déployée) a laissé de la glace (water_fix ne couvre que sa boîte)
+    # (seules les cases que l'ancien gel couvrait : surface, niveau 0, hors FOUNT, case libre : sans lignes inutiles sur l'eau profonde ou la fontaine)
+    pond_off = [f'execute if block {x} {y} {z} minecraft:ice run setblock {x} {y} {z} minecraft:water' for x, y, z in sorted(POND_W)
+                if (x, y + 1, z) not in W and states(W[(x, y, z)]).get('level', '0') == '0' and (x, y, z) not in FOUNT and TW.free(x, y, z)]
+    return reskin, fx, hello, mobs, {'npc': 'elf', 'off': pond_off}       # la traînée de chaque bonhomme fond dans lobby/theme/gone
 
 
 THEMES = [(1, 'halloween', '🎃 Halloween', 73, theme_halloween), (2, 'noel', '🎄 Noël', 74, theme_noel)]

@@ -42,6 +42,10 @@ execute if score $setup mg.st matches 1 unless score $ftoff mg.st matches 1 if b
 execute if score $setup mg.st matches 1 unless score $ftoff mg.st matches 1 if entity @a[x=-17,y=46,z=-41,dx=38,dy=8,dz=27] run function mg:foot/tick
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 30 if loaded 2 48 -31 run function mg:foot/second
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 if loaded 2 46 -30 if loaded -17 46 -41 if loaded 21 46 -41 if loaded -17 46 -14 if loaded 21 46 -14 unless block 2 46 -30 minecraft:lodestone run function mg:foot/build
+execute if entity @a[tag=mg.lfc] run function mg:lobby/fish/after
+execute if entity @e[type=minecraft:marker,tag=mg.lfm] run function mg:lobby/fish/after
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 30 if loaded 36 64 -27 run function mg:lobby/fish/second
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless score $lfoff mg.st matches 1 if loaded 36 64 -27 unless block 36 64 -27 minecraft:spruce_log run function mg:lobby/fish/build
 execute as @a[scores={mg.menu=1}] run function mg:core/menu_use
 execute as @a[scores={mg.menu=2..}] run function mg:core/menu_chat_force
 
