@@ -4,8 +4,10 @@
 
 Modules : ol_world (relief, biomes, végétation), ol_structs (constructions, donjons), ol_beasts / ol_beast_fn (dragons articulés),
 ol_mobs (bestiaire, apparitions, victoires), ol_class (niveaux, classes, compétences, forge), ol_quest (campagne, PNJ, quêtes, boutiques,
-voyages, succès), ol_boss (boss, donjons), ol_cine (cinématiques, indicateur). Tout est écrit sous data/mg/function/ombre/ (repartie de zéro).
+voyages, succès), ol_boss (boss, donjons), ol_cine (cinématiques, indicateur). Tout est écrit sous data/mg/function/ombre/ (repartie de zéro), plus data/mg/damage_type/spell.json
+et data/minecraft/tags/damage_type/{bypasses_armor,no_knockback}.json (ol_class : dégâts des sorts).
 Ajouter la dimension et ses biomes demande un redémarrage du serveur ; la carte se construit seule ensuite (~4 min).
+Idem pour un nouveau type de dégâts (registre dynamique) : redémarrage requis, un /reload ne suffit pas.
 """
 import os
 import re

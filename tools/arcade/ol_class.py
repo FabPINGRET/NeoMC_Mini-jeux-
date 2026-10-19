@@ -4,7 +4,7 @@ Scores (gardés d'une visite à l'autre) : mg.ollv niveau (1..35), mg.olxp XP, m
 mg.ols1..4 Vigueur, Force, Agilité, Esprit (15 au plus), mg.olsp points à répartir, mg.olwt palier d'arme (1..9), mg.olat palier d'armure (0..9).
 Pendant la visite : mg.olmp / mg.olmm mana (barre d'XP = mana), mg.olc1..4 recharges des compétences (ticks).
 """
-from ol_core import w, js, P, TEXT, nm, lo, WF, dlg, show, bit_test, say
+from ol_core import w, wjson, js, P, TEXT, nm, lo, WF, dlg, show, bit_test, say
 
 LV_MAX = 35
 CLASSES = {
@@ -277,7 +277,11 @@ def dclean(L):
     return [l for l in L if l != '#']
 
 
-w('cl/hit', ['# @s (monstre) : dégâts $(d) du lanceur (tag mg.olcast), chiffre flottant', '$damage @s $(d) minecraft:magic by @a[tag=mg.olcast,limit=1]',
+# mg:spell : message « magic » mais hors du tag witch_resistant_to (les sorcières réduisent minecraft:magic à 15 %) ; armure ignorée et pas de recul comme magic
+wjson('damage_type/spell.json', {'message_id': 'magic', 'exhaustion': 0.0, 'scaling': 'never'})
+for _t in ('bypasses_armor', 'no_knockback'):
+    wjson(f'../minecraft/tags/damage_type/{_t}.json', {'replace': False, 'values': [{'id': 'mg:spell', 'required': False}]})
+w('cl/hit', ['# @s (monstre) : dégâts $(d) du lanceur (tag mg.olcast), chiffre flottant', '$damage @s $(d) mg:spell by @a[tag=mg.olcast,limit=1]',
              '$summon minecraft:text_display ~ ~2 ~ {Tags:["mg.ol","mg.oldmg"],billboard:"center",teleport_duration:10,text:{"text":"-$(d)","color":"gold","bold":true},background:0,shadow:1b,see_through:1b}',
              'scoreboard players set @e[tag=mg.oldmg,distance=..2.5,sort=nearest,limit=1] mg.olst 12'])
 w('cl/hit2', ['# @s (mort-vivant) : dégâts doublés', 'execute store result storage mg:ombre s2.d int 2 run data get storage mg:ombre s.d',
