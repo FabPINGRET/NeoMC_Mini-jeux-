@@ -1,4 +1,5 @@
 # Chaque seconde : boss (déclenchement, suivi, victoire) et donjons
+tag @a remove mg.olboss_in
 scoreboard players remove $obc0 mg.st 1
 # arène plus chargée (plus personne autour) : le combat s'arrête sans victoire ; boss resté d'un ancien combat : retiré
 execute if score $ob0 mg.st matches 1 positioned -204.5 71 -41.5 unless loaded ~ ~ ~ run scoreboard players set $ob0 mg.st 0
