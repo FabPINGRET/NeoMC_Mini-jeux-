@@ -1,20 +1,21 @@
 """Ragoût de la sorcière d'Halloween (importé par theme_npcs.py, jamais lancé seul) : un seul objet, l'effet est tiré à la consommation.
 
-Objet STEW : ragoût fixe (custom_data mg_thg + mg_thst, aucun effet de ragoût). L'advancement mg:theme_stew (consume_item sur
-mg_thst) appelle lobby/theme/stew_eat, qui ricane puis tire 1..12 : 1-4 effet vanilla (invisibilité 45 s, lueur 30 s, nausée 15 s,
-lévitation 10 s suivie d'une chute lente 18 s ; durée annoncée en actionbar), 5-12 effet maison : stew_mini (taille -70 %, 45 s),
-stew_moon (marche lunaire : gravité -75 %, saut +30 %, 30 s, à vérifier en jeu : ~5,5 blocs de haut), stew_burp et stew_wind
-(instantanés, le vent annonce son décollage), stew_rabbit (lapin : taille -65 %, saut +30 %, vitesse +20 %, 40 s, joueur invisible
+Objet STEW : ragoût fixe (custom_data mg_thg + mg_thst, aucun effet de ragoût, nutrition 0, mangeable rassasié grâce à can_always_eat). L'advancement mg:theme_stew (consume_item sur
+mg_thst) appelle lobby/theme/stew_eat, qui ricane puis tire 1..10 : 1-4 effet vanilla (invisibilité 45 s, lueur 30 s, nausée 15 s,
+lévitation 10 s suivie d'une chute lente 18 s ; durée annoncée en actionbar), 5-10 effet maison : stew_mini (taille -70 %, 45 s),
+stew_moon (marche lunaire : gravité -75 %, saut +30 %, 30 s, à vérifier en jeu : ~5,5 blocs de haut), stew_rabbit (lapin : taille -65 %, saut +30 %, vitesse +20 %, 40 s, joueur invisible
 et remplacé par un vrai lapin figé qui le suit, cf. ci-dessous), stew_flash (vitesse +80 %, pas +0,85, 20 s, étincelles chaque tick),
-stew_skate (patinoire : friction_modifier -0,9, 25 s) et stew_bounce (rebond : bounciness +0,8, saut +20 %, 30 s).
-Les attributs friction_modifier et bounciness viennent de 26.2 ; leurs ids et le sens de la glisse (valeur plus basse = plus glissant) sont vérifiés dans le registre 26.2 et les données vanilla (sulfur_cube fast_sliding : -0,95). Le vent (charge de vent sous les pieds, le mangeur en est le propriétaire)
-tombe en rot si stew_wind_ok : joueur en élytres libres, pas de sol sous les pieds, ou bloc fragile (tag mg:wind_touchy) à moins de 2 blocs en horizontale (y -1..+2) ou un
-armor_stand / mannequin à moins de 4 blocs. Un effet vanilla (1-4) se cumule avec un effet maison encore actif : un seul effet par ragoût.
+stew_skate (patinoire : friction_modifier -1,0, air_drag_modifier -0,8 et vitesse -60 %, 25 s) et stew_bounce (rebond : bounciness +0,8, saut +20 %, 30 s).
+Les attributs friction_modifier, air_drag_modifier et bounciness viennent de 26.2 ; leurs ids et le sens de la glisse (valeur plus basse = plus glissant) sont vérifiés dans le registre 26.2 et les données vanilla (sulfur_cube fast_sliding : -0,95).
+Rétention horizontale par tick (javap LivingEntity 26.2) = clamp(1-(1-friction du bloc)*m_friction) * clamp(1-(1-0,91)*m_traînée), m = valeur de l'attribut (base 1) : m_friction 0 et m_traînée 0,2 donnent ~0,982 (glace ~0,892).
+Accélération au sol = vitesse x 0,216 / f^3 (f = friction modifiée) : sans le -60 % de vitesse, la vitesse max serait ~5,5x la marche ; avec, ~2,2x au sol ; en sautant en continu ~5x, ~10x en sprint (vitesse de vol 0,02 / 0,026 et élan de saut 0,2 non touchés par movement_speed ; avant : ~1 bloc/tick en sprint sauté).
+Effets de bord de la traînée -80 % : chutes plus rapides (vitesse terminale 0,08/(1-0,996) = 20 blocs/tick au lieu de 4 en vanilla, dégâts de chute inchangés, ils dépendent de la distance), sauts ~1,30 bloc et sauts en sprint nettement plus longs (rétention en l'air 0,982 au lieu de 0,91) ; l'élytre n'est pas touché (updateFallFlyingMovement utilise des traînées fixes 0,99 / 0,98, vérifié par javap).
+Un effet vanilla (1-4) se cumule avec un effet maison encore actif : un seul effet par ragoût.
 Effets chronométrés : un seul à la fois (stew_clear d'abord), objectif mg.ths en secondes, modificateurs d'attribut mg:thstew
 (jamais les valeurs de base), tag mg.thmini pendant le mini-moi et le lapin, mg.thzap pendant le flash. stew_clear les retire ; il est appelé par la seconde (fin, joueur
 occupé, mg.pkr compris ; la fin du mini-moi est reportée tant que la tête est bloquée), par lobby/theme/<t>/off (sans contrôle de tête : accepté),
 par core/request (stew_game), core/attr_reset et desinstaller. Un 2e ragoût chronométré mangé en mini sans place pour se relever
-tombe en rot. Les anciens ragoûts (mg_thg sans mg_thst, effets vanilla) sont retirés chaque seconde ; leurs effets darkness / hunger /
+fait pschitt (stew_fizzle, sans toucher aux attributs). Les anciens ragoûts (mg_thg sans mg_thst, effets vanilla) sont retirés chaque seconde ; leurs effets darkness / hunger /
 luck restent effacés au lancement d'une partie (stew_game) pendant la transition. Tout reste sous lobby/theme/ (cf. theme_world.load).
 Lapin : tag mg.thbun (joueur et lapin), objectif mg.thbn = identifiant du lapin (compteur $thbn, copié sur le joueur et sur son lapin), équipe mg_thbun
 (collisionRule never, créée par core/load, retirée par desinstaller). stew_rabbit_tp (chaque tick, par lobby/theme/tick) recolle le lapin au joueur ;
@@ -37,16 +38,14 @@ VANILLA = [('invisibility', 45, '👻 Invisible !', 'gray', []), ('glowing', 30,
            ('nausea', 15, '😵 Le monde tourne…', 'dark_green', []),
            ('levitation', 10, '🎈 Tu t\'envoles… et tu redescends en douceur', 'light_purple', [('slow_falling', 18)])]   # tirages 1..4 : (effet, secondes, texte, couleur, effets en plus)
 OLD_EFFECTS = ['darkness', 'hunger', 'luck']                                             # effets des anciens ragoûts
-CUSTOM = ['mini', 'moon', 'burp', 'wind', 'rabbit', 'flash', 'skate', 'bounce']          # tirages 5..12
-SKATE = ('friction_modifier', -0.9)                                                      # friction plus faible = glisse (vanilla fast_sliding : -0,95)
+CUSTOM = ['mini', 'moon', 'rabbit', 'flash', 'skate', 'bounce']                          # tirages 5..10
+SKATE = [('friction_modifier', -1.0), ('air_drag_modifier', -0.8), ('movement_speed', -0.6)]   # friction -100 %, traînée de l'air -80 %, vitesse -60 % (rétention ~0,982/tick, avant 0,946, glace ~0,892 : glissade ~3x plus longue ; vitesse max ~2,2x la marche (au sol) : 0,04 x 0,216 = 0,0086/tick / (1 - 0,982) ; saut ~1,30 bloc (avant ~1,28, vanilla ~1,25))
 OP = 'add_multiplied_base'                                                               # opération par défaut des modificateurs
-ATTRS = ('scale', 'gravity', 'jump_strength', 'movement_speed', 'step_height', 'friction_modifier', 'bounciness')
-TOUCHY = ['#minecraft:doors', '#minecraft:trapdoors', '#minecraft:fence_gates', '#minecraft:buttons',
-          'minecraft:lever', 'minecraft:bell', '#minecraft:candles', '#minecraft:candle_cakes']      # blocs que le coup de vent déclencherait
+ATTRS = ('scale', 'gravity', 'jump_strength', 'movement_speed', 'step_height', 'friction_modifier', 'air_drag_modifier', 'bounciness')
 F = 'lobby/theme'
 SELF = 'execute at @s run playsound minecraft:'
-ROT = ('execute if entity @s[tag=mg.thmini] at @s unless block ~ ~1 ~ #minecraft:replaceable '
-       f'run return run function mg:{F}/stew_burp')           # mini-moi sans place pour se relever : pas d'autre effet chronométré
+NO_ROOM = ('execute if entity @s[tag=mg.thmini] at @s unless block ~ ~1 ~ #minecraft:replaceable '
+           f'run return run function mg:{F}/stew_fizzle')     # mini-moi sans place pour se relever : pschitt, ni stew_clear ni attribut (le joueur serait redimensionné coincé)
 RB = 'minecraft:rabbit'
 RABBIT_AS = f'as @e[type={RB},tag=mg.thbun] if score @s mg.thbn = $thbi mg.st run '    # lapin du joueur courant (id copié dans $thbi)
 RABBIT_ID = 'execute ' + RABBIT_AS
@@ -80,7 +79,7 @@ def eat(busy):
 
 def timed(desc, mods, secs, sound, pitch, msg, color, extra=()):
     """Effet chronométré : le précédent est retiré, modificateurs (attribut, valeur[, opération]) ajoutés, compte à rebours mg.ths."""
-    return [f'# 🎃 Ragoût ({desc}, {secs} s, objectif mg.ths) ; @s = joueur', ROT, f'function mg:{F}/stew_clear'] + \
+    return [f'# 🎃 Ragoût ({desc}, {secs} s, objectif mg.ths) ; @s = joueur', NO_ROOM,f'function mg:{F}/stew_clear'] + \
            [f'attribute @s minecraft:{a} modifier add {MOD} {v} {op[0] if op else OP}' for a, v, *op in mods] + list(extra) + \
            [f'scoreboard players set @s mg.ths {secs}', SELF + f'entity.{sound} neutral @a[distance=..16] ~ ~ ~ 1 {pitch}', bar(f'{msg} ({secs} s)', color)]
 
@@ -100,34 +99,12 @@ def game():
            [f'effect clear @s minecraft:{e}' for e in [v[0] for v in VANILLA] + extras + OLD_EFFECTS] + [f'function mg:{F}/stew_clear']
 
 
-def burp():
-    return ['# 🎃 Ragoût : rot de sorcière, instantané (@s = joueur) ; aussi le repli du coup de vent et du ragoût sans place',
-            SELF + 'entity.player.burp neutral @a[distance=..16] ~ ~ ~ 2 0.5',
-            'execute at @s run particle minecraft:dust{color:[0.35,0.8,0.2],scale:1.2} ~ ~1.5 ~ 0.3 0.2 0.3 0.02 14 normal',
-            'execute at @s run title @a[distance=..10,tag=!mg.play] actionbar [{"selector":"@s"}," a roté comme une sorcière !"]']
-
-
-def wind():
-    owner = 'minecraft:wind_charge,tag=mg.thwind'
-    return ['# 🎃 Ragoût : coup de vent sous les pieds, instantané (@s = joueur) ; rot si stew_wind_ok refuse',
-            f'execute store result score $thw mg.st at @s run function mg:{F}/stew_wind_ok',
-            f'execute if score $thw mg.st matches 0 run return run function mg:{F}/stew_burp',
-            'execute at @s run summon minecraft:wind_charge ~ ~0.05 ~ {Tags:["mg.thwind"],Motion:[0d,-1d,0d]}',
-            f'data modify entity @e[type={owner},limit=1] Owner set from entity @s UUID',
-            f'tag @e[type={owner}] remove mg.thwind',
-            bar('💨 Coup de vent : décollage !', 'white')]
-
-
-def wind_ok():
-    """1 si rien de fragile autour des pieds (@s, position = pieds) : tout refus sort en 0, la valeur est toujours écrite."""
-    rng = lambda lo, hi: [f'{d}' if d else '' for d in range(lo, hi + 1)]
-    return ['# Le coup de vent est-il sans risque ? 0 : en vol (élytres libres) ou sans sol sous les pieds (la charge exploserait loin en bas),',
-            '# bloc déclenchable (#mg:wind_touchy, x/z -2..2, y -1..2) ou mannequin à moins de 4 blocs',
-            'execute if entity @s[tag=mg.elyf] run return 0',
-            'execute if block ~ ~-1 ~ #minecraft:replaceable run return 0'] + \
-           [f'execute if block ~{dx} ~{dy} ~{dz} #mg:wind_touchy run return 0'
-            for dx in rng(-2, 2) for dy in rng(-1, 2) for dz in rng(-2, 2)] + \
-           [f'execute if entity @e[type={t},distance=..4] run return 0' for t in ('minecraft:armor_stand', 'minecraft:mannequin')] + ['return 1']
+def fizzle():
+    return ['# 🎃 Ragoût : pschitt, instantané (@s = joueur) ; repli du ragoût chronométré sans place pour se relever, mini-moi sous un bloc (aucun attribut touché, pas de stew_clear)',
+            SELF + 'entity.witch.celebrate neutral @a[distance=..16] ~ ~ ~ 1 1.4',
+            'execute at @s run particle minecraft:smoke ~ ~1 ~ 0.3 0.3 0.3 0.02 10 normal',
+            'execute at @s run particle minecraft:poof ~ ~1 ~ 0.3 0.3 0.3 0.02 6 normal',
+            bar('🫧 Le ragoût fait pschitt… rien ne se passe', 'gray')]
 
 
 def rabbit_body():
@@ -157,7 +134,7 @@ def rabbit_keep():
 
 
 def write_files(busy):
-    """Écrit stew_eat/clear/game/mini/moon/burp/wind/wind_ok/rabbit(_body/_tp/_keep)/flash/skate/bounce, l'advancement mg:theme_stew et le tag de blocs mg:wind_touchy."""
+    """Écrit stew_eat/clear/game/mini/moon/fizzle/rabbit(_body/_tp/_keep)/flash/skate/bounce et l'advancement mg:theme_stew."""
     w = C.w
     w(f'{F}/stew_eat', eat(busy))
     w(f'{F}/stew_clear', clear())
@@ -166,9 +143,7 @@ def write_files(busy):
                               extra=['tag @s add mg.thmini']))
     w(f'{F}/stew_moon', timed('marche lunaire : gravité -75 %, saut +30 %', [('gravity', -0.75), ('jump_strength', 0.3)], 30,
                               'enderman.teleport', 0.6, '🌙 Marche lunaire : saute très haut !', 'aqua'))
-    w(f'{F}/stew_burp', burp())
-    w(f'{F}/stew_wind', wind())
-    w(f'{F}/stew_wind_ok', wind_ok())
+    w(f'{F}/stew_fizzle', fizzle())
     w(f'{F}/stew_rabbit', timed('lapin : taille -65 %, saut +30 %, vitesse +20 %, vrai lapin figé', [('scale', -0.65), ('jump_strength', 0.3), ('movement_speed', 0.2)], 40,
                                 'rabbit.jump', 1.2, '🐰 Tu es un lapin !', 'gold',
                                 extra=['tag @s add mg.thmini', 'tag @s add mg.thbun', INVIS,
@@ -178,13 +153,12 @@ def write_files(busy):
     w(f'{F}/stew_rabbit_keep', rabbit_keep())
     w(f'{F}/stew_flash', timed('flash : vitesse +80 %, pas +0,85', [('movement_speed', 0.8), ('step_height', 0.85)], 20,
                                'breeze.wind_burst', 1.2, '⚡ Flash : super vitesse !', 'yellow', extra=['tag @s add mg.thzap']))
-    w(f'{F}/stew_skate', timed('patinoire : friction -90 %', [SKATE], 25, 'player.hurt_freeze', 1, '⛸ Patinoire : ça glisse !', 'aqua'))
+    w(f'{F}/stew_skate', timed('patinoire : friction -100 %, traînée de l\'air -80 %, vitesse -60 %', SKATE, 25, 'player.hurt_freeze', 1, '⛸ Patinoire : ça glisse !', 'aqua'))
     w(f'{F}/stew_bounce', timed('rebond : bounciness +0,8, saut +20 %', [('bounciness', 0.8, 'add_value'), ('jump_strength', 0.2)], 30,
                                 'slime.jump', 1, '🏀 Tu rebondis !', 'gold'))
-    for rel, obj in (('tags/block/wind_touchy.json', {'values': TOUCHY}),
-                     ('advancement/theme_stew.json',
+    for rel, obj in (('advancement/theme_stew.json',
                       {'criteria': {'stew': {'trigger': 'minecraft:consume_item', 'conditions': {'item': {'predicates': {
-                          'minecraft:custom_data': '{mg_thst:1b}'}}}}}, 'rewards': {'function': f'mg:{F}/stew_eat'}})):
+                          'minecraft:custom_data': '{mg_thst:1b}'}}}}}, 'rewards': {'function': f'mg:{F}/stew_eat'}}),):
         path = os.path.join(C.D, rel)
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, 'w', encoding='utf-8', newline='\n') as f:

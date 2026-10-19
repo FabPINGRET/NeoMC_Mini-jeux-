@@ -978,6 +978,13 @@ for (px, pz, c), (it, mdl, name, col) in zip(PADS, PADM):
         ab.append(cond + f'summon minecraft:item_display {cx} 65.6 {cz} {{Tags:["mg.arm","mg.lspin","mg.lbob"],billboard:"fixed",item:{itm},' + TF.format(ty=0, s=1.4) + '}')
     ab.append(f'summon minecraft:text_display {cx} 67.2 {cz} {{Tags:["mg.arm"],billboard:"center",background:0,text:[{{"text":"{name}","color":"{col}","bold":true}}],'
               + TF.format(ty=0, s=1.0) + '}')
+# grande carte du lobby (modèle mg:lobby_map, tools/resourcepack/lobbymap_rp.py) : disque de 11 blocs contre le mur ouest (x -57), au-dessus du panneau d'armes
+MAP_C, MAP_D = (-55.97, 75.5, 0.5), 11
+for my, mz in ((y, z) for y in range(70, 82) for z in range(-5, 7)):
+    if math.hypot(max(my - MAP_C[1], MAP_C[1] - my - 1, 0), max(mz - MAP_C[2], MAP_C[2] - mz - 1, 0)) < MAP_D / 2:   # case (y, z) touchée par le disque
+        assert get(-56, my, mz) is None, ('carte du lobby : case occupée', -56, my, mz, get(-56, my, mz))
+ab.append('execute if score $rp mg.st matches 1 run summon minecraft:item_display ' + ' '.join(str(c) for c in MAP_C)
+          + ' {Tags:["mg.arm","mg.lmap"],billboard:"fixed",Rotation:[-90f,0f],brightness:{sky:15,block:15},item:' + rp('lobby_map') + ',' + TF.format(ty=0, s=MAP_D) + '}')
 wr('lobby/armory_build', ab)
 at = ['# Spawn (chaque tick après le setup) : socles de l\'armurerie, armes, portail des plots, animation du décor']
 for i, (px, pz, c) in enumerate(PADS, 1):

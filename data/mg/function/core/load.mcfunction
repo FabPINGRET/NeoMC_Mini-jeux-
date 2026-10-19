@@ -2,6 +2,14 @@
 
 # --- Objectifs ---
 scoreboard objectives add mg.st dummy
+kill @e[type=minecraft:marker,tag=mg.lfm]
+tag @a remove mg.lfc
+# Sièges du lobby (s'asseoir)
+kill @e[type=minecraft:item_display,tag=mg.seat]
+tag @a remove mg.sit
+tag @a remove mg.lsm
+kill @e[type=minecraft:interaction,tag=mg.bench]
+scoreboard players reset $lbx mg.st
 bossbar remove mg:thb
 scoreboard players set $thsw mg.st 0
 scoreboard players set $thrs mg.st 1
@@ -36,6 +44,8 @@ scoreboard players set $gtw mg.st 0
 execute unless data storage mg:rank rpfix run scoreboard players set $rp mg.st 1
 data modify storage mg:rank rpfix set value 1b
 scoreboard objectives add mg.t dummy
+scoreboard objectives add mg.svl dummy {"text":"⛏ Survie — niveau","color":"green"}
+scoreboard players set $sbm mg.st -1
 scoreboard objectives add mg.wins dummy [{"text":"✦ Victoires ✦","color":"gold"}]
 scoreboard objectives add mg.stp dummy
 scoreboard objectives add mg.stk playerKillCount
@@ -164,6 +174,21 @@ scoreboard objectives add mg.olq minecraft.used:minecraft.warped_fungus_on_a_sti
 scoreboard objectives add mg.oldt minecraft.custom:minecraft.damage_taken
 scoreboard objectives add mg.oltk trigger
 scoreboard objectives add mg.olhb minecraft.used:minecraft.honey_bottle
+scoreboard objectives add mg.lfb dummy
+scoreboard objectives add mg.lfn dummy
+scoreboard objectives add mg.lfu minecraft.used:minecraft.fishing_rod
+scoreboard objectives add mg.ft dummy
+scoreboard objectives add mg.ftn dummy
+scoreboard players add $ftr mg.ft 0
+scoreboard players add $ftb mg.ft 0
+scoreboard players add $ftg mg.ft 0
+scoreboard players add $fte mg.ft 0
+scoreboard players add $fti mg.ft 0
+scoreboard objectives add mg.lse dummy
+scoreboard objectives add mg.lsk dummy
+scoreboard objectives add mg.lsb dummy
+scoreboard objectives add mg.lsc dummy
+scoreboard objectives add mg.lsn dummy
 team add mg_thbun
 team modify mg_thbun collisionRule never
 scoreboard objectives add mg.thbn dummy
@@ -357,6 +382,7 @@ scoreboard objectives add mg.pshop trigger
 scoreboard objectives add mg.pvid dummy
 scoreboard objectives add mg.pcl dummy
 execute if score $setup mg.st matches 1 unless data storage mg:lobby pvpc2 run schedule function mg:pvpc/build_start 22s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby foot1 run schedule function mg:foot/build_start 24s
 team add mg_sq
 team modify mg_sq friendlyFire false
 team modify mg_sq collisionRule never
@@ -637,6 +663,15 @@ team modify mg_yellow prefix [{"text":"⬤ ","color":"yellow"}]
 team add mg_party
 team modify mg_party friendlyFire false
 team modify mg_party collisionRule never
+# Équipes du terrain de foot (pas celles des jeux)
+team add mg_ftr
+team modify mg_ftr color red
+team modify mg_ftr friendlyFire false
+team modify mg_ftr prefix [{"text":"⬤ ","color":"red"}]
+team add mg_ftb
+team modify mg_ftb color blue
+team modify mg_ftb friendlyFire false
+team modify mg_ftb prefix [{"text":"⬤ ","color":"blue"}]
 
 # --- Globals par défaut (seulement si absents) ---
 execute unless score $state mg.st = $state mg.st run scoreboard players set $state mg.st 0
@@ -657,7 +692,7 @@ execute if score $setup mg.st matches 1 if data storage mg:kart built2 unless da
 execute if score $setup mg.st matches 1 unless data storage mg:dropadv v3 run schedule function mg:dropadv/build 40s
 execute if score $setup mg.st matches 1 run scoreboard players set $xbk mg.st 0
 execute if score $setup mg.st matches 1 run schedule function mg:elyrace/build_next 60s
-execute if score $setup mg.st matches 1 unless data storage mg:hall v14 run schedule function mg:hall/build 20s
+execute if score $setup mg.st matches 1 unless data storage mg:hall v24 run schedule function mg:hall/build 20s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/build 10s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:lobby/food_build 25s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:elytra/build 30s

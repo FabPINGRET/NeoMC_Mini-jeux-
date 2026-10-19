@@ -46,6 +46,18 @@ scoreboard objectives remove mg.wg_maze
 kill @e[tag=mg.hall]
 schedule clear mg:hall/build
 data remove storage mg:hall e
+data remove storage mg:hall t3
+data remove storage mg:hall t3x
+data remove storage mg:hall v15
+data remove storage mg:hall v16
+data remove storage mg:hall v17
+data remove storage mg:hall v18
+data remove storage mg:hall v19
+data remove storage mg:hall v20
+data remove storage mg:hall v21
+data remove storage mg:hall v22
+data remove storage mg:hall v23
+data remove storage mg:hall v24
 data remove storage mg:hall sbon
 data remove storage mg:hall v2
 data remove storage mg:hall v3

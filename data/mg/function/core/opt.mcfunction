@@ -1,4 +1,5 @@
 # Options du menu (@s = joueur, mg.opt = valeur)
+execute if entity @s[tag=mg.sit] unless score @s mg.opt matches 76..83 run function mg:lobby/sit/stand
 execute if score @s mg.opt matches 7..8 unless entity @s[tag=mg.admin] run tellraw @s [{"text":"⚠ Menus de lancement réservés aux admins. ","color":"red"},{"text":"Vote plutôt pour un jeu : fenêtre ☑ VOTES ou /trigger mg.vote","color":"gray"}]
 execute if score @s mg.opt matches 10 unless entity @s[tag=mg.admin] run tellraw @s [{"text":"⚠ Menus de lancement réservés aux admins. ","color":"red"},{"text":"Vote plutôt pour un jeu : fenêtre ☑ VOTES ou /trigger mg.vote","color":"gray"}]
 execute if score @s mg.opt matches 14 unless entity @s[tag=mg.admin] run tellraw @s [{"text":"⚠ Menus de lancement réservés aux admins. ","color":"red"},{"text":"Vote plutôt pour un jeu : fenêtre ☑ VOTES ou /trigger mg.vote","color":"gray"}]
@@ -57,6 +58,21 @@ execute if score @s mg.opt matches 66 if entity @s[tag=mg.admin] run function mg
 execute if score @s mg.opt matches 73..74 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Réservé aux admins.","color":"red"}
 execute if score @s mg.opt matches 73 if entity @s[tag=mg.admin] run function mg:lobby/theme/halloween/toggle
 execute if score @s mg.opt matches 74 if entity @s[tag=mg.admin] run function mg:lobby/theme/noel/toggle
+execute if score @s mg.opt matches 76 run function mg:lobby/sit/try
+execute if score @s mg.opt matches 77 run function mg:lobby/sit/emote_1
+execute if score @s mg.opt matches 78 run function mg:lobby/sit/emote_2
+execute if score @s mg.opt matches 79 run function mg:lobby/sit/emote_3
+execute if score @s mg.opt matches 80 run function mg:lobby/sit/emote_4
+execute if score @s mg.opt matches 81..82 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Réservé aux admins.","color":"red"}
+execute if score @s mg.opt matches 81 if entity @s[tag=mg.admin] run function mg:lobby/sit/admin_toggle
+execute if score @s mg.opt matches 82 if entity @s[tag=mg.admin] run function mg:lobby/sit/admin_stats
+execute if score @s mg.opt matches 83 run function mg:lobby/sit/menu
+execute if score @s mg.opt matches 84..85 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Réservé aux admins.","color":"red"}
+execute if score @s mg.opt matches 84 if entity @s[tag=mg.admin] run function mg:foot/admin_toggle
+execute if score @s mg.opt matches 85 if entity @s[tag=mg.admin] run function mg:foot/admin_stats
+execute if score @s mg.opt matches 86..87 unless entity @s[tag=mg.admin] run tellraw @s {"text":"⚠ Réservé aux admins.","color":"red"}
+execute if score @s mg.opt matches 86 if entity @s[tag=mg.admin] run function mg:lobby/fish/admin_toggle
+execute if score @s mg.opt matches 87 if entity @s[tag=mg.admin] run function mg:lobby/fish/admin_stats
 execute if score @s mg.opt matches 62..65 run function mg:tpg/run
 execute if score @s mg.opt matches 75 run function mg:tpg/run
 scoreboard players reset @s mg.opt

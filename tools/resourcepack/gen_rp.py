@@ -1,7 +1,8 @@
 """Génère le resource pack NeoMC (pixel art, kart 3D, boîtes ?) : python tools/resourcepack/gen_rp.py <racine du dépôt>.
 
-Tout est dans l'espace de noms « mg » : aucune texture vanilla n'est remplacée (la survie n'est pas touchée).
+Tout est dans l'espace de noms « mg » : aucune texture vanilla n'est remplacée, sauf le modèle du bloc de test (la survie n'est pas touchée).
 Sortie : resourcepack/ (dossier) et releases/neomc_resourcepack.zip (+ empreinte SHA-1 affichée).
+La carte du lobby (lobbymap_rp.py) est rendue depuis data/mg/function : lancer après les générateurs du spawn (gen_lobby, gen_hall, gen_pvpcave, gen_foot, gen_gta, gen_terranova).
 """
 import hashlib, json, math, os, struct, sys, zipfile, zlib
 
@@ -333,6 +334,8 @@ exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'reindeer_rp.
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'zombies_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dino_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ol_rp.py'), encoding='utf-8').read())
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'foot_rp.py'), encoding='utf-8').read())
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lobbymap_rp.py'), encoding='utf-8').read())
 
 # ------------------------------------------------------------------ pack.mcmeta, zip
 wjson(os.path.join(OUT, 'pack.mcmeta'), {"pack": {"description": [{"text": "NeoMC Mini-Jeux", "color": "gold"},

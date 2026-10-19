@@ -39,6 +39,14 @@ execute as @a[scores={mg.cs=1..},tag=!mg.surv] run function mg:core/menu_use
 execute if score $setup mg.st matches 1 if entity @a[x=-12,y=40,z=-10,dx=51,dy=20,dz=45] run function mg:pvpc/tick
 execute if score $setup mg.st matches 1 unless entity @a[x=-12,y=40,z=-10,dx=51,dy=20,dz=45] if entity @a[tag=mg.pvpc] run function mg:pvpc/tick
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 if loaded 13 53 5 unless block 13 53 5 minecraft:lodestone run function mg:pvpc/build
+execute if score $setup mg.st matches 1 unless score $ftoff mg.st matches 1 if block -18 63 -18 minecraft:gold_block as @a[tag=!mg.play,tag=!mg.out,tag=!mg.surv,tag=!mg.inplot,tag=!mg.visit,tag=!mg.lk,tag=!mg.pkr,tag=!mg.ely,tag=!mg.elyf,gamemode=adventure,x=-18.7,y=63,z=-18.7,dx=1.4,dy=2.5,dz=1.4] run function mg:foot/go
+execute if score $setup mg.st matches 1 unless score $ftoff mg.st matches 1 if entity @a[x=-17,y=46,z=-41,dx=38,dy=8,dz=27] run function mg:foot/tick
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 30 if loaded 2 48 -31 run function mg:foot/second
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 if loaded 2 46 -30 if loaded -17 46 -41 if loaded 21 46 -41 if loaded -17 46 -14 if loaded 21 46 -14 unless block 2 46 -30 minecraft:lodestone run function mg:foot/build
+execute if entity @a[tag=mg.lfc] run function mg:lobby/fish/after
+execute if entity @e[type=minecraft:marker,tag=mg.lfm] run function mg:lobby/fish/after
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 30 if loaded 36 64 -27 run function mg:lobby/fish/second
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless score $lfoff mg.st matches 1 if loaded 36 64 -27 unless block 36 64 -27 minecraft:spruce_log run function mg:lobby/fish/build
 execute as @a[scores={mg.menu=1}] run function mg:core/menu_use
 execute as @a[scores={mg.menu=2..}] run function mg:core/menu_chat_force
 
@@ -89,8 +97,10 @@ execute as @a[tag=mg.elyf] at @s run function mg:elytra/free_tick
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.elyf] minecraft:elytra[minecraft:custom_data~{mg_elyf:1b}]
 execute if score $lan mg.t matches 20 run clear @a[tag=!mg.elyf] minecraft:firework_rocket[minecraft:custom_data~{mg_elyf:1b}]
 # Tableau à droite tournant (lobby) + reconstruction des ajouts du spawn s'ils ont été effacés
-execute if score $setup mg.st matches 1 if score $state mg.st matches 0 if score $sb mg.st matches 1 run function mg:hall/board_tick
-execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block -16 64 15 minecraft:gold_block run function mg:hall/build
+execute if score $setup mg.st matches 1 if score $state mg.st matches 0 if score $sbm mg.st matches 0 run function mg:hall/board_tick
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 5 run function mg:sb/auto
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block -9 64 25 minecraft:gold_block run function mg:hall/build
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 12 run function mg:hall/t3_tick
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 24 63 19 minecraft:gold_block run function mg:lobby/food_build
 execute if score $setup mg.st matches 1 if entity @a[x=-75,y=55,z=-75,dx=150,dy=60,dz=150] run function mg:coaster/tick
 execute if score $lan mg.t matches 15 run function mg:rank/tick
@@ -144,3 +154,9 @@ execute as @a[tag=mg.init,tag=!mg.play,tag=!mg.out,tag=!mg.surv] at @s run funct
 
 # Visiteurs de plots : confinés à la zone des plots
 execute if entity @a[tag=mg.visit] run function mg:plot/visit_guard
+execute if entity @a[tag=mg.lsg] run function mg:lobby/sit/item_tick
+execute if score $lan mg.t matches 30 run function mg:lobby/sit/item_second
+execute if score $lan mg.t matches 30 run function mg:lobby/sit/bench_check
+execute if entity @a[tag=mg.sit] run function mg:lobby/sit/tick
+execute if entity @a[tag=mg.lsm] run function mg:lobby/sit/move_tick
+execute if score $lan mg.t matches 30 unless entity @a[tag=mg.sit] if entity @e[type=minecraft:item_display,tag=mg.seat,limit=1] run kill @e[type=minecraft:item_display,tag=mg.seat]

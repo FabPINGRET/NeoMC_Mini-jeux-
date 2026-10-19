@@ -1,4 +1,4 @@
-"""Eau du spawn pour les décors saisonniers : fontaines, cascades, biome d'eau (importé par gen_themes.py, jamais lancé seul).
+"""Eau du spawn pour les décors saisonniers : fontaines, cascades, biome du thème : eau, herbe et feuillage (importé par gen_themes.py, jamais lancé seul).
 
 Une source qui déborde (air dessous ou à côté) alimente un écoulement : toute l'eau voisine (6 blocs, jusqu'à 30 plus
 bas) reste liquide (pas de glace à Noël) et lobby/theme/water_fix la remet d'aplomb à chaque bascule de thème.
@@ -8,7 +8,7 @@ write_biome.
 import os
 
 import common as C
-from theme_world import DYN, LIM, PAD_BOXES, PLANTS, PLOTS, RESERVED, W, bid, free, opening
+from theme_world import DYN, LIM, PAD_BOXES, PLANTS, PLOTS, RESERVED, W, bid, dyn, free, opening
 
 WATER = set()                            # sources d'eau du spawn
 SPILL = []                               # sources qui débordent
@@ -21,7 +21,8 @@ def load():
     assert W, 'theme_world.load(F) doit être appelé avant theme_water.load()'
     for d in (WATER, SPILL, FLOW, FOUNT):
         d.clear()
-    WATER.update(k for k, b in W.items() if bid(b) == 'minecraft:water')
+    # (l'eau d'une zone modifiée ailleurs n'est plus celle du spawn : ex. l'ancienne fontaine sous le grand Hall des scores)
+    WATER.update(k for k, b in W.items() if bid(b) == 'minecraft:water' and not dyn(*k))
     SPILL.extend(k for k in sorted(WATER) if opening((k[0], k[1] - 1, k[2]))
                  or any(opening((k[0] + a, k[1], k[2] + c)) for a, c in ((1, 0), (-1, 0), (0, 1), (0, -1))))
     for s in SPILL:
@@ -29,14 +30,27 @@ def load():
     FOUNT.update(set().union(*FLOW.values()) if FLOW else set())
 
 
-def water_biome(biome):
-    """fillbiome des colonnes de 16×16 qui contiennent de l'eau (aller : the_void → biome, retour : biome → the_void)"""
+# blocs dont la couleur vient du biome du thème : eau, herbe, touffes d'herbe, lianes (feuilles : suffixe _leaves)
+TINTED = {'minecraft:water', 'minecraft:grass_block', 'minecraft:short_grass', 'minecraft:fern', 'minecraft:tall_grass',
+          'minecraft:large_fern', 'minecraft:vine'}
+
+
+def tinted(i):
+    return i in TINTED or i.endswith('_leaves')
+
+
+def theme_biome(biome):
+    """fillbiome des colonnes de 16×16 qui contiennent de l'eau (couleur de l'eau) ou un bloc teinté par le biome : herbe,
+    touffes, feuilles, lianes (aller : the_void → biome, retour : biome → the_void). Une seule boîte par colonne : sa hauteur
+    monte jusqu'au sommet des arbres. Le biome se lit par cellule de 4 blocs : la marge de 2 en hauteur suffit à couvrir celle
+    de chaque bloc."""
     cols = {}
     for (x, y, z), b in W.items():
-        if bid(b) == 'minecraft:water' and abs(x) <= LIM and abs(z) <= LIM:
+        if tinted(bid(b)) and abs(x) <= LIM and abs(z) <= LIM:
             lo, hi = cols.get((x >> 4, z >> 4), (y, y))
             cols[(x >> 4, z >> 4)] = (min(lo, y), max(hi, y))
     box = [(cx * 16, lo - 2, cz * 16, cx * 16 + 15, hi + 2, cz * 16 + 15) for (cx, cz), (lo, hi) in sorted(cols.items())]
+    assert all(16 * 16 * (e - b + 1) <= 32768 for _, b, _, _, e, _ in box), 'boîte fillbiome > 32768 blocs'
     go = [f'fillbiome {a} {b} {c} {d} {e} {f} {biome} replace minecraft:the_void' for a, b, c, d, e, f in box]
     back = [f'fillbiome {a} {b} {c} {d} {e} {f} minecraft:the_void replace {biome}' for a, b, c, d, e, f in box]
     return go, back
@@ -126,12 +140,13 @@ def plan(touched):
 
 # ------------------------------------------------------------------ fonctions écrites
 def write_toggle(T, label, water):
-    """water = (aller, retour) de water_biome ; écrit T/water_on et T/water_off, renvoie (on_x, off_x) à greffer à place / off.
+    """water = (aller, retour) de theme_biome ; écrit T/water_on et T/water_off, renvoie (on_x, off_x) à greffer à place / off.
     Fonctions à part : le biome du pack n'existe qu'après un redémarrage du serveur, d'ici là seules elles échouent au
     chargement (place et off restent valides)."""
     go, back = water
-    C.w(f'{T}/water_on', [f'# {label} : biome du thème sur les colonnes d\'eau du spawn (couleur de l\'eau)'] + go)
-    C.w(f'{T}/water_off', [f'# {label} : rend le biome the_void aux colonnes d\'eau du spawn'] + back)
+    # water = biome du thème (eau + herbe + feuillage) : les noms water/water_on/water_off restent ceux des fonctions générées
+    C.w(f'{T}/water_on', [f'# {label} : biome du thème sur les colonnes d\'eau et de sol du spawn (couleur de l\'eau, teinte de l\'herbe et du feuillage)'] + go)
+    C.w(f'{T}/water_off', [f'# {label} : rend le biome the_void aux colonnes d\'eau et de sol du spawn'] + back)
     return [f'function mg:{T}/water_on'], [f'function mg:{T}/water_off']
 
 
@@ -171,12 +186,15 @@ def write_check(touched):
     C.w('lobby/theme/water_check', chk)
 
 
-def write_biome(name, water_color, fog_color):
-    """Biome d'eau colorée (the_void + water_color) : data/mg/worldgen/biome/<name>.json, référencé par water_biome('mg:<name>')"""
+def write_biome(name, water_color, fog_color, grass_color, foliage_color, dry_foliage_color):
+    """Biome du thème (the_void + couleurs de l'eau, de l'herbe, du feuillage et du feuillage sec, en #rrggbb) :
+    data/mg/worldgen/biome/<name>.json, référencé par theme_biome('mg:<name>')"""
     os.makedirs(os.path.join(C.D, 'worldgen', 'biome'), exist_ok=True)
     with open(os.path.join(C.D, 'worldgen', 'biome', f'{name}.json'), 'w', encoding='utf-8', newline='\n') as f:
         f.write(C.js({'attributes': {'minecraft:visual/sky_color': '#7ba4ff', 'minecraft:visual/water_fog_color': fog_color},
-                      'carvers': [], 'downfall': 0.5, 'effects': {'water_color': water_color}, 'features': [],
+                      'carvers': [], 'downfall': 0.5, 'effects': {'water_color': water_color, 'grass_color': grass_color,
+                                              'foliage_color': foliage_color, 'dry_foliage_color': dry_foliage_color},
+                      'features': [],
                       'has_precipitation': False, 'spawn_costs': {},
                       'spawners': {k: [] for k in ('ambient', 'axolotls', 'creature', 'misc', 'monster', 'underground_water_creature',
                                                     'water_ambient', 'water_creature')},

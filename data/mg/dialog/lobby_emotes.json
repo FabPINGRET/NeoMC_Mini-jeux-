@@ -1,0 +1,127 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "🎉 Emotes",
+    "color": "light_purple",
+    "bold": true
+  },
+  "pause": false,
+  "can_close_with_escape": true,
+  "body": [
+    {
+      "type": "minecraft:plain_message",
+      "contents": [
+        {
+          "text": "Une emote animée, visible par les joueurs autour de toi (spawn seulement, une toutes les 3 s).",
+          "color": "gray"
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "exit_action": {
+    "label": [
+      {
+        "text": "Fermer",
+        "color": "gray"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "label": [
+        {
+          "text": "✋ Salut",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Fait une emote « Salut »",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 77"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "♪ Danse",
+          "color": "aqua",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Fait une emote « Danse »",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 78"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🎉 Fête",
+          "color": "light_purple",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Fait une emote « Fête »",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 79"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "😵 Étourdi",
+          "color": "yellow",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Fait une emote « Étourdi »",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 80"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🪑 S'asseoir / se lever",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Sur un banc sous les pieds ou adjacent, sinon par terre, ou clic droit sur un banc ; Maj pour se lever",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 76"
+      }
+    }
+  ]
+}

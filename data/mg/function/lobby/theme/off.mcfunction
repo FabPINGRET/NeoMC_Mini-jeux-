@@ -15,4 +15,6 @@ function mg:lobby/theme/clear
 execute unless score $thsw mg.st matches 1 run function mg:lobby/theme/water_fix
 function mg:lobby/deco
 function mg:lobby/food_skin
+# allée des champions (hors décor généré) : reconstruite telle quelle
+function mg:hall/build
 execute unless score $thsw mg.st matches 1 run tellraw @a[tag=mg.admin] {"text":"Décor saisonnier retiré, spawn d'origine rétabli.","color":"gray"}

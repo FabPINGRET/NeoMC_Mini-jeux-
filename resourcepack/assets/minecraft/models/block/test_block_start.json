@@ -1,0 +1,122 @@
+{
+  "textures": {
+    "ball": "mg:block/football",
+    "particle": "mg:block/football"
+  },
+  "elements": [
+    {
+      "from": [
+        2,
+        2,
+        2
+      ],
+      "to": [
+        14,
+        14,
+        14
+      ],
+      "faces": {
+        "north": {
+          "texture": "#ball"
+        },
+        "south": {
+          "texture": "#ball"
+        },
+        "east": {
+          "texture": "#ball"
+        },
+        "west": {
+          "texture": "#ball"
+        },
+        "up": {
+          "texture": "#ball"
+        },
+        "down": {
+          "texture": "#ball"
+        }
+      }
+    },
+    {
+      "from": [
+        2,
+        2.5,
+        2
+      ],
+      "to": [
+        14,
+        13.5,
+        14
+      ],
+      "faces": {
+        "north": {
+          "texture": "#ball"
+        },
+        "south": {
+          "texture": "#ball"
+        },
+        "east": {
+          "texture": "#ball"
+        },
+        "west": {
+          "texture": "#ball"
+        },
+        "up": {
+          "texture": "#ball"
+        },
+        "down": {
+          "texture": "#ball"
+        }
+      },
+      "rotation": {
+        "origin": [
+          8,
+          8,
+          8
+        ],
+        "axis": "y",
+        "angle": 45
+      }
+    },
+    {
+      "from": [
+        2.5,
+        2,
+        2
+      ],
+      "to": [
+        13.5,
+        14,
+        14
+      ],
+      "faces": {
+        "north": {
+          "texture": "#ball"
+        },
+        "south": {
+          "texture": "#ball"
+        },
+        "east": {
+          "texture": "#ball"
+        },
+        "west": {
+          "texture": "#ball"
+        },
+        "up": {
+          "texture": "#ball"
+        },
+        "down": {
+          "texture": "#ball"
+        }
+      },
+      "rotation": {
+        "origin": [
+          8,
+          8,
+          8
+        ],
+        "axis": "x",
+        "angle": 45
+      }
+    }
+  ]
+}

@@ -1,20 +1,5 @@
 # halloween : carte tnttag rétablie (bloc d'origine remis si le bloc du thème est encore là)
-execute if block -20 88 26815 minecraft:soul_lantern run setblock -20 88 26815 minecraft:lantern
-execute if block -20 96 26782 minecraft:soul_lantern run setblock -20 96 26782 minecraft:lantern
-execute if block -14 88 26798 minecraft:soul_lantern run setblock -14 88 26798 minecraft:lantern
-execute if block -13 92 26791 minecraft:soul_lantern run setblock -13 92 26791 minecraft:lantern
-execute if block -12 88 26822 minecraft:soul_lantern run setblock -12 88 26822 minecraft:lantern
-execute if block -10 93 26786 minecraft:soul_lantern run setblock -10 93 26786 minecraft:lantern
-execute if block -10 93 26790 minecraft:soul_lantern run setblock -10 93 26790 minecraft:lantern
-execute if block -6 84 26802 minecraft:soul_lantern run setblock -6 84 26802 minecraft:lantern
-execute if block 0 84 26779 minecraft:soul_lantern run setblock 0 84 26779 minecraft:lantern
-execute if block 7 88 26807 minecraft:soul_lantern run setblock 7 88 26807 minecraft:lantern
-execute if block 10 93 26786 minecraft:soul_lantern run setblock 10 93 26786 minecraft:lantern
-execute if block 10 93 26790 minecraft:soul_lantern run setblock 10 93 26790 minecraft:lantern
-execute if block 12 85 26816 minecraft:soul_lantern run setblock 12 85 26816 minecraft:lantern[hanging=true]
-execute if block 12 85 26818 minecraft:soul_lantern run setblock 12 85 26818 minecraft:lantern[hanging=true]
-execute if block 13 92 26791 minecraft:soul_lantern run setblock 13 92 26791 minecraft:lantern
-execute if block 14 88 26802 minecraft:soul_lantern run setblock 14 88 26802 minecraft:lantern
-execute if block 16 84 26822 minecraft:soul_lantern run setblock 16 84 26822 minecraft:lantern
-execute if block 21 88 26806 minecraft:soul_lantern run setblock 21 88 26806 minecraft:lantern
-execute if block 21 96 26781 minecraft:soul_lantern run setblock 21 96 26781 minecraft:lantern
+execute if block -15 81 6085 minecraft:soul_lantern run setblock -15 81 6085 minecraft:lantern
+execute if block -15 81 6115 minecraft:soul_lantern run setblock -15 81 6115 minecraft:lantern
+execute if block 15 81 6085 minecraft:soul_lantern run setblock 15 81 6085 minecraft:lantern
+execute if block 15 81 6115 minecraft:soul_lantern run setblock 15 81 6115 minecraft:lantern

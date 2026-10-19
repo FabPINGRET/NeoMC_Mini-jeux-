@@ -1,4 +1,14 @@
 # Désinstallation (OP) — retire scoreboards, équipes, décor et zones chargées
+# À lancer depuis le spawn (chunks chargés) : les zones de bancs (interaction mg.bench) d'un chunk non chargé survivent à la désinstallation
+kill @e[tag=mg.lfs]
+kill @e[type=minecraft:marker,tag=mg.lfm]
+setblock 36 64 -27 minecraft:air
+clear @a *[minecraft:custom_data~{mg_rod:1b}]
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{mg_rod:1b}] run kill @s
+function mg:lobby/fish/purge
+advancement revoke @a only mg:lobby_fish
+advancement revoke @a only mg:lobby_fish_take
+tag @a remove mg.lfc
 execute as @a[tag=mg.tvw] in minecraft:overworld run function mg:terra/leave
 execute as @a[tag=mg.olw] in minecraft:overworld run function mg:ombre/leave
 execute if score $tmap mg.st matches 1 run function mg:lobby/theme/map/end
@@ -15,6 +25,18 @@ kill @e[tag=mg.arm]
 kill @e[tag=mg.mob]
 kill @e[tag=mg.sheep]
 kill @e[tag=mg.npc]
+kill @e[type=minecraft:item_display,tag=mg.seat]
+tag @a remove mg.sit
+tag @a remove mg.lsm
+kill @e[type=minecraft:interaction,tag=mg.bench]
+advancement revoke @a only mg:lobby_bench
+tag @a remove mg.lbc
+clear @a *[minecraft:custom_data~{mg_emote:1b}]
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{mg_emote:1b}] run kill @s
+function mg:lobby/sit/item_purge
+advancement revoke @a only mg:lobby_emote
+tag @a remove mg.lsg
+tag @a remove mg.lsw
 clear @a *[minecraft:custom_data~{mg_thg:1b}]
 kill @e[tag=mg.thnpc]
 advancement revoke @a only mg:theme_fw
@@ -166,6 +188,20 @@ scoreboard objectives remove mg.olq
 scoreboard objectives remove mg.oldt
 scoreboard objectives remove mg.oltk
 scoreboard objectives remove mg.olhb
+scoreboard objectives remove mg.lfb
+scoreboard objectives remove mg.lfn
+scoreboard objectives remove mg.lfu
+scoreboard objectives remove mg.ft
+scoreboard objectives remove mg.ftn
+scoreboard objectives remove mg.lse
+scoreboard objectives remove mg.lsk
+scoreboard objectives remove mg.lsb
+scoreboard objectives remove mg.dku
+scoreboard objectives remove mg.dkc
+scoreboard objectives remove mg.dsk
+scoreboard objectives remove mg.dok
+scoreboard objectives remove mg.lsc
+scoreboard objectives remove mg.lsn
 schedule clear mg:maze/build_step
 scoreboard objectives remove mg.thbn
 scoreboard objectives remove mg.ths
@@ -412,6 +448,15 @@ data remove storage mg:lobby pvpc1
 data remove storage mg:lobby pvpc2
 data remove storage mg:pvpc p
 data remove storage mg:pvpc s
+schedule clear mg:foot/build_start
+schedule clear mg:foot/build_go
+kill @e[type=minecraft:sulfur_cube,tag=mg.ball]
+kill @e[type=minecraft:text_display,tag=mg.ftd]
+tag @a remove mg.ftr
+tag @a remove mg.ftb
+tag @a remove mg.ftin
+tag @a remove mg.ftlt
+data remove storage mg:lobby foot1
 bossbar remove mg:soleil
 bossbar remove mg:ev
 team remove mg_sq
@@ -672,6 +717,7 @@ scoreboard objectives remove mg.lv
 scoreboard objectives remove mg.mb
 scoreboard objectives remove mg.st
 scoreboard objectives remove mg.t
+scoreboard objectives remove mg.svl
 scoreboard objectives remove mg.wins
 scoreboard objectives remove mg.deaths
 scoreboard objectives remove mg.cs
@@ -748,6 +794,8 @@ team remove mg_blue
 team remove mg_green
 team remove mg_yellow
 team remove mg_party
+team remove mg_ftr
+team remove mg_ftb
 tag @a remove mg.init
 tag @a remove mg.play
 tag @a remove mg.out

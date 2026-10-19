@@ -16,7 +16,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Survie, Mini Party et aide.",
+          "text": "Survie, Mini Party, assis/emotes et aide.",
           "color": "gray"
         }
       ]
@@ -136,6 +136,44 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.dice set 10"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🪑 S'asseoir",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Sur un banc sous les pieds ou adjacent, sinon par terre (spawn), ou clic droit sur un banc ; Maj ou le même bouton pour se lever",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 76"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🎉 Emotes ▸",
+          "color": "light_purple",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Salut, danse, fête, étourdi : une emote visible autour de toi (spawn)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 83"
       }
     },
     {
