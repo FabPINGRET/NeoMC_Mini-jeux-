@@ -28,7 +28,7 @@ blocs, zones réservées), theme_water.py (fontaines, cascades, biome du thème 
 spot/back/gone/clear), theme_core.py (off, sync, restore, reskin, tick), theme_fall.py (feuilles et neige qui tombent
 par intermittence), theme_npcs.py (PNJ : sorcière d'Halloween, lutin de Noël), theme_stew.py (ragoût de la sorcière : effets
 vanilla et maison tirés à la consommation, chronos, nettoyages), theme_banner.py (bandeau : bossbar qui présente à tour de rôle
-les nouveautés du thème en place).
+les nouveautés du thème en place), theme_rink.py (patinoire de Noël : glace derrière le buffet, arbres dégagés, glisse).
 """
 import math
 import os
@@ -49,6 +49,7 @@ import theme_fall as TF                                          # noqa: E402
 import theme_mobs as TM                                          # noqa: E402
 import theme_banner as TB                                        # noqa: E402
 import theme_npcs as TN                                          # noqa: E402
+import theme_rink as TR                                          # noqa: E402
 import theme_water as TWA                                        # noqa: E402
 import theme_world as TW                                         # noqa: E402
 from theme_mobs import mob                                       # noqa: E402
@@ -59,6 +60,7 @@ from theme_world import (CH, DIRT, DYN, FLOWERS, G, GROUND, LOBBY, SNOWABLE, TUF
 TW.load(F)                               # W, DYN, PLOTS, RESERVED remplis sur place, puis ce qui en dérive
 TWA.load()                               # (TM.load : après les thèmes, il lui faut les cellules qu'ils changent)
 TN.prepare()                             # place du PNJ vérifiée et réservée : avant les thèmes (change() passe par free())
+TR.check()                               # place de la patinoire de Noël vérifiée (le générateur s'arrête sinon)
 # l'étang reste liquide : on y pêche (gen_fish). POND = (x, z, rayon) recopié de gen_lobby.py ; son eau est à moins de rayon + 1,2 du centre
 POND = (30, -30, 6.6)
 POND_W = {k for k, b in W.items() if bid(b) == 'minecraft:water' and math.hypot(k[0] - POND[0], k[2] - POND[1]) <= POND[2] + 1.2}
@@ -162,8 +164,7 @@ def theme_halloween():
              'minecraft:entity.witch.celebrate')
     mobs = [mob('bat', 'minecraft:bat', 8),
             mob('ghost', 'minecraft:allay', 6, 'Silent:1b', ('mg:hat/ghost', [0, -0.3, 0], 1.0, True))]
-    # water = biome du thème (eau + herbe + feuillage)
-    return reskin, fx, hello, mobs, {'water': theme_biome(f'mg:{HALLOWEEN_BIOME}'), 'npc': 'witch',
+    return reskin, fx, hello, mobs, {'water': theme_biome(f'mg:{HALLOWEEN_BIOME}'), 'npc': 'witch',      # water = biome du thème (eau + herbe + feuillage)
                                      'files': {f'pumpkin_{st}': [f'# 🎃 Halloween : citrouille {st} de couleur aléatoire (pack activé)'] + ls
                                                for st, ls in pump.items()}}
 
@@ -199,6 +200,7 @@ def theme_noel():
             change(up, rnd.choice(['minecraft:red_shulker_box', 'minecraft:green_shulker_box', 'minecraft:white_shulker_box',
                                    'minecraft:red_wool', 'minecraft:lime_wool']))
     on_fences(rnd, 0.3, ['red', 'red', 'green', 'white'])
+    TR.carve()                                           # patinoire (theme_rink.py) en dernier : arbres dégagés, glace ; le tirage rnd ne bouge pas
     reskin = [item_swap('*[minecraft:item_model="mg:balloon"]', 'minecraft:snow_block'),
               item_swap('*[minecraft:item_model="mg:item_box"]', 'minecraft:red_shulker_box'),
               item_swap('*[minecraft:item_model="mg:crystal"]', 'minecraft:blue_ice'),
@@ -207,7 +209,8 @@ def theme_noel():
               'minecraft:leather_helmet[minecraft:dyed_color=13369344]',
               title([{'text': '🎄 Joyeux Noël ! 🎄', 'color': 'red', 'bold': True},
                      {'text': '\net bonnes fêtes sur NeoMC', 'color': 'dark_green', 'italic': True}])]
-    fx = [*TF.fx_call('noel', LOBBY),                   # neige et cendre blanche qui tombent par intermittence (theme_fall.py)
+    reskin += TR.reskin()
+    fx = [*TF.fx_call('noel', LOBBY),                  # neige et cendre blanche qui tombent par intermittence (theme_fall.py)
           'execute store result score $thr mg.st run random value 1..45',
           f'execute if score $thr mg.st matches 1 in minecraft:overworld as {LOBBY} at @s run playsound minecraft:block.amethyst_block.chime ambient @s ~ ~2 ~ 1 0.8']
     hello = ([{'text': '🎄 ', 'color': 'red'}, {'text': 'Il neige sur le spawn… Joyeuses fêtes !', 'color': 'green', 'bold': True}],
@@ -220,7 +223,7 @@ def theme_noel():
     # (seules les cases que l'ancien gel couvrait : surface, niveau 0, hors FOUNT, case libre : sans lignes inutiles sur l'eau profonde ou la fontaine)
     pond_off = [f'execute if block {x} {y} {z} minecraft:ice run setblock {x} {y} {z} minecraft:water' for x, y, z in sorted(POND_W)
                 if (x, y + 1, z) not in W and states(W[(x, y, z)]).get('level', '0') == '0' and (x, y, z) not in FOUNT and TW.free(x, y, z)]
-    return reskin, fx, hello, mobs, {'npc': 'elf', 'off': pond_off}       # la traînée de chaque bonhomme fond dans lobby/theme/gone
+    return reskin, fx, hello, mobs, {'npc': 'elf', 'off': pond_off + TR.off_lines(), 'pre': TR.pre_lines()}       # la traînée de chaque bonhomme fond dans lobby/theme/gone
 
 
 THEMES = [(1, 'halloween', '🎃 Halloween', 73, theme_halloween), (2, 'noel', '🎄 Noël', 74, theme_noel)]
@@ -247,7 +250,8 @@ for tid, key, label, opt, make in THEMES:
     TM.write_mobs(T, label, mobs)
     if key in TF.SPECS:                  # chutes par intermittence (feuilles, neige) : thème sans SPECS = pas de chute
         TF.write_fall(key, label)
-    on = [f'execute if block {x} {y} {z} {bid(o)} run setblock {x} {y} {z} {n}' for (x, y, z), (o, n) in sorted(CH.items())]
+    on = [f'execute if block {x} {y} {z} {bid(o)} run setblock {x} {y} {z} {n}' for (x, y, z), (o, n) in sorted(CH.items())
+          if not ('pre' in extra and n == TR.AIR)]      # « pre » vide déjà les cellules « -> air » dans « place » ; « off » les restaure (CH entier)
     off = [f'execute if block {x} {y} {z} {bid(n)} run setblock {x} {y} {z} {o}' for (x, y, z), (o, n) in sorted(CH.items())]
     ALLCH.update(CH)
     w(f'{T}/on', [f'# {label} : pose le décor du spawn (généré par tools/lobby/gen_themes.py ; inverse : lobby/theme/off)',
@@ -262,7 +266,7 @@ for tid, key, label, opt, make in THEMES:
     w(f'{T}/place', [f"# {label} : blocs du décor (là où le bloc d'origine est encore là), entités, eau ; "
                      'appelé par on et par lobby/theme/restore (redémarrage)',
                      '# eau remise d\'aplomb d\'abord : le décor (glace...) se pose sur l\'eau réparée',
-                     'function mg:lobby/theme/water_fix'] + on + on_x + [f'function mg:{T}/reskin', 'function mg:lobby/food_skin', 'function mg:hall/theme_on'])
+                     'function mg:lobby/theme/water_fix'] + list(extra.get('pre', [])) + on + on_x + [f'function mg:{T}/reskin', 'function mg:lobby/food_skin', 'function mg:hall/theme_on'])
     w(f'{T}/off', [f'# {label} : chaque bloc d\'origine revient (s\'il n\'a pas changé entre-temps) — appelé par lobby/theme/off'] +
       off + off_x)
     w(f'{T}/reskin', [f'# {label} : entités du décor (mg.lby) ; rappelé par lobby/deco tant que le thème est actif',
@@ -290,6 +294,7 @@ TWA.write_biome(HALLOWEEN_BIOME, water_color='#a3120c', fog_color='#3a0505', gra
 TC.write_wiring(THEMES)                # branchements dans core/tick, core/load, lobby/deco, core/opt, desinstaller
 TN.wire()                                # objectif mg.thc, boucle de clic, nettoyages
 TB.write(THEMES)                         # bandeau (bossbar mg:thb) : lignes par thème, banner, banner_hide, branchements (tick, off, load, désinstaller)
+TR.write()                               # patinoire de Noël : rink_on/set/unset/off, branchements (tick, attr_reset, désinstaller)
 print(f'Thèmes ({len(DYN)} zones dynamiques évitées) :')
 for s in stats:
     print('  ' + s)

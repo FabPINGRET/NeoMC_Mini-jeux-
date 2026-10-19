@@ -12,7 +12,7 @@ scoreboard players operation $thbl mg.st /= #thb8 mg.st
 scoreboard players add $thbl mg.st 1
 # passé la dernière ligne : barre retirée jusqu'à la prochaine période
 execute if score $theme mg.st matches 1 if score $thbl mg.st matches 6.. run return run function mg:lobby/theme/banner_hide
-execute if score $theme mg.st matches 2 if score $thbl mg.st matches 6.. run return run function mg:lobby/theme/banner_hide
+execute if score $theme mg.st matches 2 if score $thbl mg.st matches 7.. run return run function mg:lobby/theme/banner_hide
 # mg:thb absente (la bossbar n'a jamais été masquée : le succès de get visible vaut son existence)
 execute store success score $thbe mg.st run bossbar get mg:thb visible
 execute if score $thbe mg.st matches 0 run bossbar add mg:thb ""
