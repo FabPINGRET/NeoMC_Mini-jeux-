@@ -1,4 +1,16 @@
 # Construction des régions de Terra Nova, étape 77/436 (dimension mg:terranova, générée)
+fill 49 104 -186 61 104 -186 minecraft:mangrove_leaves[persistent=true]
+fill 49 104 -170 61 104 -170 minecraft:mangrove_leaves[persistent=true]
+fill 49 104 -169 50 104 -164 minecraft:air
+fill 50 104 -183 60 104 -173 minecraft:air
+setblock 50 104 -172 minecraft:air
+fill 51 104 -187 52 104 -187 minecraft:mangrove_leaves[persistent=true]
+fill 51 104 -172 52 104 -172 minecraft:mangrove_leaves[persistent=true]
+fill 51 104 -169 59 104 -169 minecraft:mangrove_leaves[persistent=true]
+fill 51 104 -168 54 104 -164 minecraft:air
+setblock 53 104 -187 minecraft:air
+setblock 53 104 -172 minecraft:air
+fill 54 104 -187 59 104 -187 minecraft:mangrove_leaves[persistent=true]
 fill 54 104 -172 63 104 -172 minecraft:mangrove_leaves[persistent=true]
 setblock 55 104 -188 minecraft:mangrove_leaves[persistent=true]
 setblock 55 104 -185 minecraft:air
@@ -187,15 +199,3 @@ fill 62 106 -170 69 106 -170 minecraft:air
 fill 63 106 -185 69 106 -185 minecraft:air
 fill 63 106 -171 69 106 -171 minecraft:air
 fill 64 106 -184 69 106 -182 minecraft:air
-fill 64 106 -181 64 106 -178 minecraft:mangrove_leaves[persistent=true]
-fill 64 106 -173 69 106 -172 minecraft:air
-fill 65 106 -181 69 106 -179 minecraft:air
-setblock 65 106 -178 minecraft:mangrove_leaves[persistent=true]
-fill 65 106 -177 69 106 -174 minecraft:air
-fill 66 106 -178 69 106 -178 minecraft:air
-fill 41 107 -192 69 107 -188 minecraft:air
-fill 41 107 -187 50 107 -187 minecraft:air
-fill 41 107 -186 48 107 -186 minecraft:air
-fill 41 107 -185 47 107 -185 minecraft:air
-fill 41 107 -184 46 107 -183 minecraft:air
-fill 41 107 -182 45 107 -164 minecraft:air

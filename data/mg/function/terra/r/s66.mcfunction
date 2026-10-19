@@ -1,4 +1,5 @@
 # Construction des régions de Terra Nova, étape 66/436 (dimension mg:terranova, générée)
+fill 61 68 -177 61 68 -176 minecraft:mangrove_log[axis=y]
 fill 61 68 -175 69 68 -174 minecraft:air
 fill 62 68 -180 69 68 -176 minecraft:air
 fill 41 69 -192 69 69 -184 minecraft:air
@@ -198,4 +199,3 @@ fill 41 73 -181 50 73 -181 minecraft:air
 fill 41 73 -180 49 73 -164 minecraft:air
 setblock 50 73 -180 minecraft:mangrove_wood
 fill 50 73 -179 50 73 -177 minecraft:mangrove_log[axis=y]
-setblock 50 73 -176 minecraft:mangrove_wood

@@ -1,5 +1,4 @@
 # Construction des régions de Terra Nova, étape 58/436 (dimension mg:terranova, générée)
-fill -26 67 -128 -24 67 -128 minecraft:mangrove_log
 fill -26 67 -127 -26 67 -126 minecraft:mangrove_log
 fill -26 67 -125 -22 67 -122 minecraft:air
 setblock -25 67 -127 minecraft:ladder[facing=south]
@@ -144,12 +143,13 @@ setblock -24 72 -127 minecraft:mangrove_log
 fill -23 72 -128 -22 72 -126 minecraft:air
 fill -38 73 -130 -22 73 -130 minecraft:air
 fill -38 73 -129 -28 73 -114 minecraft:air
-fill -27 73 -129 -23 73 -128 minecraft:mangrove_slab[type=bottom]
-fill -27 73 -127 -26 73 -125 minecraft:mangrove_slab[type=bottom]
+fill -27 73 -129 -23 73 -129 minecraft:mangrove_slab[type=bottom]
+fill -27 73 -128 -26 73 -125 minecraft:mangrove_slab[type=bottom]
 fill -27 73 -124 -22 73 -114 minecraft:air
-setblock -25 73 -127 minecraft:mangrove_trapdoor[facing=south,half=bottom,open=false]
+setblock -25 73 -128 minecraft:mangrove_log
+setblock -25 73 -127 minecraft:ladder[facing=south]
 fill -25 73 -126 -23 73 -125 minecraft:mangrove_slab[type=bottom]
-fill -24 73 -127 -23 73 -127 minecraft:mangrove_slab[type=bottom]
+fill -24 73 -128 -23 73 -127 minecraft:mangrove_slab[type=bottom]
 fill -22 73 -129 -22 73 -125 minecraft:air
 fill -38 74 -130 -22 74 -130 minecraft:air
 fill -38 74 -129 -28 74 -114 minecraft:air

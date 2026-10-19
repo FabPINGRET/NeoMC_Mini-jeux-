@@ -1,201 +1,201 @@
 # Construction des régions de Terra Nova, étape 310/436 (dimension mg:terranova, générée)
-fill -180 65 -16 -178 65 -16 minecraft:air
-setblock -180 65 -13 minecraft:stripped_dark_oak_log
-fill -180 65 -12 -180 65 1 minecraft:stripped_spruce_log
-fill -180 65 7 -180 65 20 minecraft:stripped_spruce_log
-setblock -180 65 21 minecraft:stripped_dark_oak_log
-fill -180 65 24 -178 65 24 minecraft:air
-setblock -180 65 27 minecraft:stripped_dark_oak_log
-fill -179 65 -19 -178 65 -19 minecraft:spruce_planks
-fill -179 65 -13 -178 65 -13 minecraft:spruce_planks
-fill -179 65 -12 -177 65 -1 minecraft:air
-fill -179 65 0 -177 65 1 minecraft:spruce_planks
-fill -179 65 7 -177 65 8 minecraft:spruce_planks
-fill -179 65 9 -177 65 20 minecraft:air
-fill -179 65 21 -178 65 21 minecraft:spruce_planks
-fill -179 65 27 -178 65 27 minecraft:spruce_planks
-setblock -177 65 -19 minecraft:stripped_dark_oak_log
-fill -177 65 -18 -177 65 -17 minecraft:spruce_planks
-setblock -177 65 -16 minecraft:stripped_dark_oak_log
-fill -177 65 -15 -177 65 -14 minecraft:spruce_planks
-setblock -177 65 -13 minecraft:stripped_dark_oak_log
-setblock -177 65 21 minecraft:stripped_dark_oak_log
-fill -177 65 22 -177 65 23 minecraft:spruce_planks
-setblock -177 65 24 minecraft:stripped_dark_oak_log
-fill -177 65 25 -177 65 26 minecraft:spruce_planks
-setblock -177 65 27 minecraft:stripped_dark_oak_log
-setblock -223 66 -19 minecraft:stripped_dark_oak_log
-fill -223 66 -18 -223 66 -17 minecraft:spruce_planks
-setblock -223 66 -16 minecraft:stripped_dark_oak_log
-fill -223 66 -15 -223 66 -14 minecraft:spruce_planks
-setblock -223 66 -13 minecraft:stripped_dark_oak_log
-fill -223 66 -12 -221 66 20 minecraft:air
-setblock -223 66 21 minecraft:stripped_dark_oak_log
-fill -223 66 22 -223 66 23 minecraft:spruce_planks
-setblock -223 66 24 minecraft:stripped_dark_oak_log
-fill -223 66 25 -223 66 26 minecraft:spruce_planks
-setblock -223 66 27 minecraft:stripped_dark_oak_log
-fill -222 66 -19 -221 66 -19 minecraft:spruce_planks
-fill -222 66 -18 -218 66 -17 minecraft:air
-fill -222 66 -16 -220 66 -14 minecraft:air
-fill -222 66 -13 -221 66 -13 minecraft:spruce_planks
-fill -222 66 21 -221 66 21 minecraft:spruce_planks
-fill -222 66 22 -218 66 23 minecraft:air
-fill -222 66 24 -220 66 26 minecraft:air
-fill -222 66 27 -221 66 27 minecraft:spruce_planks
-setblock -220 66 -19 minecraft:stripped_dark_oak_log
-setblock -220 66 -13 minecraft:stripped_dark_oak_log
-fill -220 66 -12 -220 66 20 minecraft:stripped_spruce_log
-setblock -220 66 21 minecraft:stripped_dark_oak_log
-setblock -220 66 27 minecraft:stripped_dark_oak_log
-fill -219 66 -19 -218 66 -19 minecraft:spruce_planks
-setblock -219 66 -16 minecraft:ladder[facing=west]
-fill -219 66 -15 -218 66 -14 minecraft:air
-fill -219 66 -13 -218 66 -13 minecraft:spruce_planks
-fill -219 66 -12 -217 66 -7 minecraft:air
-setblock -219 66 -6 minecraft:ladder[facing=east]
-fill -219 66 -5 -217 66 -3 minecraft:air
-fill -219 66 -2 -218 66 13 minecraft:air
-setblock -219 66 14 minecraft:ladder[facing=east]
-fill -219 66 15 -215 66 20 minecraft:air
-fill -219 66 21 -218 66 21 minecraft:spruce_planks
-setblock -219 66 24 minecraft:ladder[facing=west]
-fill -219 66 25 -218 66 26 minecraft:air
-fill -219 66 27 -218 66 27 minecraft:spruce_planks
-fill -218 66 -16 -217 66 -16 minecraft:air
-fill -218 66 -6 -217 66 -6 minecraft:air
-fill -218 66 14 -215 66 14 minecraft:air
-fill -218 66 24 -217 66 24 minecraft:air
-setblock -217 66 -19 minecraft:stripped_dark_oak_log
-fill -217 66 -18 -217 66 -17 minecraft:spruce_planks
-fill -217 66 -15 -217 66 -14 minecraft:spruce_planks
-setblock -217 66 -13 minecraft:stripped_dark_oak_log
-fill -217 66 -2 -217 66 0 minecraft:brown_wool
-fill -217 66 1 -181 66 2 minecraft:air
-fill -217 66 3 -217 66 5 minecraft:red_wool
-fill -217 66 6 -177 66 6 minecraft:air
-fill -217 66 7 -181 66 7 minecraft:air
-fill -217 66 8 -215 66 13 minecraft:air
-setblock -217 66 21 minecraft:stripped_dark_oak_log
-fill -217 66 22 -217 66 23 minecraft:spruce_planks
-fill -217 66 25 -217 66 26 minecraft:spruce_planks
-setblock -217 66 27 minecraft:stripped_dark_oak_log
-fill -216 66 -19 -184 66 -17 minecraft:air
-fill -216 66 -16 -184 66 -16 minecraft:stripped_spruce_log
-fill -216 66 -15 -213 66 -13 minecraft:air
-setblock -216 66 -12 minecraft:stripped_spruce_log
-setblock -216 66 -11 minecraft:dark_oak_planks
-setblock -216 66 -10 minecraft:spruce_trapdoor[facing=north,half=bottom,open=true]
-setblock -216 66 -9 minecraft:dark_oak_planks
-setblock -216 66 -8 minecraft:stripped_spruce_log
-setblock -216 66 -7 minecraft:dark_oak_planks
-setblock -216 66 -6 minecraft:spruce_trapdoor[facing=north,half=bottom,open=true]
-setblock -216 66 -5 minecraft:dark_oak_planks
-setblock -216 66 -4 minecraft:stripped_spruce_log
-fill -216 66 -3 -190 66 -3 minecraft:air
-fill -216 66 -2 -216 66 0 minecraft:air
-fill -216 66 3 -216 66 5 minecraft:air
-fill -216 66 21 -184 66 22 minecraft:air
-fill -216 66 23 -213 66 23 minecraft:air
-fill -216 66 24 -184 66 24 minecraft:stripped_spruce_log
-fill -216 66 25 -184 66 27 minecraft:air
-setblock -215 66 -12 minecraft:dark_oak_planks
-fill -215 66 -11 -205 66 -9 minecraft:air
-fill -215 66 -8 -215 66 -5 minecraft:air
-setblock -215 66 -4 minecraft:dark_oak_planks
-fill -215 66 -2 -215 66 0 minecraft:brown_wool
-fill -215 66 3 -215 66 5 minecraft:red_wool
-setblock -214 66 -12 minecraft:spruce_trapdoor[facing=north,half=bottom,open=true]
-setblock -214 66 -8 minecraft:spruce_pressure_plate
-fill -214 66 -7 -205 66 -5 minecraft:air
-setblock -214 66 -4 minecraft:spruce_trapdoor[facing=north,half=bottom,open=true]
-fill -214 66 -2 -190 66 0 minecraft:air
-fill -214 66 3 -177 66 5 minecraft:air
-setblock -214 66 8 minecraft:stripped_dark_oak_log
-setblock -214 66 9 minecraft:spruce_planks
-setblock -214 66 10 minecraft:glass_pane
-fill -214 66 11 -214 66 12 minecraft:spruce_planks
-setblock -214 66 13 minecraft:glass_pane
-fill -214 66 14 -214 66 15 minecraft:spruce_planks
-setblock -214 66 16 minecraft:glass_pane
-setblock -214 66 17 minecraft:spruce_planks
-setblock -214 66 18 minecraft:stripped_dark_oak_log
-fill -214 66 19 -181 66 20 minecraft:air
-setblock -213 66 -12 minecraft:dark_oak_planks
-fill -213 66 -8 -205 66 -8 minecraft:air
-setblock -213 66 -4 minecraft:dark_oak_planks
-setblock -213 66 8 minecraft:spruce_planks
-fill -213 66 9 -213 66 17 minecraft:air
-setblock -213 66 18 minecraft:spruce_planks
-setblock -212 66 -15 minecraft:spruce_fence
-fill -212 66 -14 -184 66 -14 minecraft:air
-fill -212 66 -13 -196 66 -13 minecraft:air
-setblock -212 66 -12 minecraft:stripped_spruce_log
-setblock -212 66 -4 minecraft:stripped_spruce_log
-setblock -212 66 8 minecraft:glass_pane
-setblock -212 66 9 minecraft:ladder[facing=south]
-fill -212 66 10 -205 66 17 minecraft:air
-setblock -212 66 18 minecraft:glass_pane
-setblock -212 66 23 minecraft:spruce_fence
-fill -211 66 -15 -207 66 -15 minecraft:air
-setblock -211 66 -12 minecraft:dark_oak_planks
-setblock -211 66 -4 minecraft:dark_oak_planks
-fill -211 66 8 -210 66 8 minecraft:spruce_planks
-fill -211 66 9 -205 66 9 minecraft:air
-fill -211 66 18 -210 66 18 minecraft:spruce_planks
-fill -211 66 23 -207 66 23 minecraft:air
-setblock -210 66 -12 minecraft:spruce_trapdoor[facing=north,half=bottom,open=true]
-setblock -210 66 -4 minecraft:spruce_trapdoor[facing=north,half=bottom,open=true]
-setblock -209 66 -12 minecraft:dark_oak_planks
-setblock -209 66 -4 minecraft:dark_oak_planks
-setblock -209 66 8 minecraft:glass_pane
-setblock -209 66 18 minecraft:glass_pane
-setblock -208 66 -12 minecraft:stripped_spruce_log
-setblock -208 66 -4 minecraft:stripped_spruce_log
-fill -208 66 8 -207 66 8 minecraft:spruce_planks
-fill -208 66 18 -207 66 18 minecraft:spruce_planks
-setblock -207 66 -12 minecraft:dark_oak_planks
-setblock -207 66 -4 minecraft:dark_oak_planks
-setblock -206 66 -15 minecraft:spruce_fence
-setblock -206 66 -12 minecraft:spruce_trapdoor[facing=north,half=bottom,open=true]
-setblock -206 66 -4 minecraft:spruce_trapdoor[facing=north,half=bottom,open=true]
-setblock -206 66 8 minecraft:glass_pane
-setblock -206 66 18 minecraft:glass_pane
-setblock -206 66 23 minecraft:spruce_fence
-fill -205 66 -15 -201 66 -15 minecraft:air
-setblock -205 66 -12 minecraft:dark_oak_planks
-setblock -205 66 -4 minecraft:dark_oak_planks
-setblock -205 66 8 minecraft:spruce_planks
-setblock -205 66 18 minecraft:spruce_planks
-fill -205 66 23 -201 66 23 minecraft:air
-setblock -204 66 -12 minecraft:stripped_spruce_log
-setblock -204 66 -11 minecraft:dark_oak_planks
-setblock -204 66 -10 minecraft:spruce_trapdoor[facing=north,half=bottom,open=true]
-setblock -204 66 -9 minecraft:dark_oak_planks
-setblock -204 66 -8 minecraft:spruce_door[facing=east,half=upper,hinge=left,open=false]
-setblock -204 66 -7 minecraft:dark_oak_planks
-setblock -204 66 -6 minecraft:spruce_trapdoor[facing=north,half=bottom,open=true]
-setblock -204 66 -5 minecraft:dark_oak_planks
-setblock -204 66 -4 minecraft:stripped_spruce_log
-setblock -204 66 8 minecraft:stripped_dark_oak_log
-setblock -204 66 9 minecraft:spruce_planks
-setblock -204 66 10 minecraft:glass_pane
-setblock -204 66 11 minecraft:spruce_planks
-fill -204 66 12 -197 66 14 minecraft:air
-setblock -204 66 15 minecraft:spruce_planks
-setblock -204 66 16 minecraft:glass_pane
-setblock -204 66 17 minecraft:spruce_planks
-setblock -204 66 18 minecraft:stripped_dark_oak_log
-fill -203 66 -12 -196 66 -4 minecraft:air
-fill -203 66 8 -181 66 9 minecraft:air
-fill -203 66 10 -197 66 11 minecraft:air
-fill -203 66 15 -192 66 15 minecraft:air
-fill -203 66 16 -197 66 18 minecraft:air
-setblock -200 66 -15 minecraft:spruce_fence
-setblock -200 66 23 minecraft:spruce_fence
-fill -199 66 -15 -195 66 -15 minecraft:air
-fill -199 66 23 -195 66 23 minecraft:air
-fill -196 66 10 -186 66 10 minecraft:stripped_dark_oak_log
-fill -196 66 11 -196 66 12 minecraft:stripped_dark_oak_log
-fill -196 66 13 -192 66 14 minecraft:air
-fill -196 66 16 -196 66 18 minecraft:stripped_dark_oak_log
+fill -214 65 -7 -205 65 -7 minecraft:air
+fill -214 65 -6 -213 65 -5 minecraft:air
+fill -214 65 -2 -214 65 0 minecraft:brown_wool
+fill -214 65 3 -214 65 5 minecraft:red_wool
+setblock -214 65 8 minecraft:stripped_dark_oak_log
+fill -214 65 9 -214 65 12 minecraft:spruce_planks
+setblock -214 65 13 minecraft:stripped_dark_oak_log
+fill -214 65 14 -214 65 17 minecraft:spruce_planks
+setblock -214 65 18 minecraft:stripped_dark_oak_log
+fill -214 65 19 -181 65 20 minecraft:air
+setblock -213 65 -11 minecraft:air
+fill -213 65 -8 -205 65 -8 minecraft:air
+fill -213 65 -2 -208 65 0 minecraft:air
+fill -213 65 3 -193 65 3 minecraft:air
+fill -213 65 4 -209 65 5 minecraft:air
+fill -213 65 8 -210 65 8 minecraft:spruce_planks
+fill -213 65 9 -213 65 17 minecraft:air
+fill -213 65 18 -210 65 18 minecraft:spruce_planks
+setblock -212 65 -15 minecraft:spruce_fence
+setblock -212 65 -12 minecraft:stripped_spruce_log
+setblock -212 65 -11 minecraft:red_bed[facing=north,part=head]
+setblock -212 65 -10 minecraft:red_bed[facing=north,part=foot]
+setblock -212 65 -6 minecraft:red_bed[facing=south,part=foot]
+setblock -212 65 -5 minecraft:red_bed[facing=south,part=head]
+setblock -212 65 -4 minecraft:stripped_spruce_log
+setblock -212 65 9 minecraft:ladder[facing=south]
+fill -212 65 10 -212 65 17 minecraft:air
+setblock -212 65 23 minecraft:spruce_fence
+fill -211 65 -15 -207 65 -15 minecraft:air
+fill -211 65 -12 -209 65 -12 minecraft:dark_oak_planks
+setblock -211 65 -11 minecraft:chest[facing=south]
+fill -211 65 -10 -210 65 -10 minecraft:air
+fill -211 65 -6 -210 65 -5 minecraft:air
+fill -211 65 -4 -209 65 -4 minecraft:dark_oak_planks
+fill -211 65 9 -205 65 9 minecraft:air
+fill -211 65 10 -207 65 10 minecraft:spruce_stairs[facing=south,half=bottom]
+fill -211 65 11 -211 65 17 minecraft:air
+fill -211 65 23 -207 65 23 minecraft:air
+setblock -210 65 -11 minecraft:air
+setblock -210 65 11 minecraft:barrel[facing=up]
+fill -210 65 12 -197 65 14 minecraft:air
+fill -210 65 15 -205 65 15 minecraft:air
+setblock -210 65 16 minecraft:lectern[facing=north]
+fill -210 65 17 -205 65 17 minecraft:air
+setblock -209 65 -11 minecraft:red_bed[facing=north,part=head]
+setblock -209 65 -10 minecraft:red_bed[facing=north,part=foot]
+setblock -209 65 -6 minecraft:red_bed[facing=south,part=foot]
+setblock -209 65 -5 minecraft:red_bed[facing=south,part=head]
+setblock -209 65 8 minecraft:stripped_dark_oak_log
+fill -209 65 11 -205 65 11 minecraft:air
+setblock -209 65 16 minecraft:cartography_table
+setblock -209 65 18 minecraft:stripped_dark_oak_log
+setblock -208 65 -12 minecraft:stripped_spruce_log
+setblock -208 65 -11 minecraft:chest[facing=south]
+fill -208 65 -10 -207 65 -10 minecraft:air
+fill -208 65 -6 -207 65 -5 minecraft:air
+setblock -208 65 -4 minecraft:stripped_spruce_log
+setblock -208 65 4 minecraft:campfire[lit=true]
+fill -208 65 5 -177 65 5 minecraft:air
+fill -208 65 8 -205 65 8 minecraft:spruce_planks
+fill -208 65 16 -205 65 16 minecraft:air
+fill -208 65 18 -205 65 18 minecraft:spruce_planks
+fill -207 65 -12 -205 65 -12 minecraft:dark_oak_planks
+setblock -207 65 -11 minecraft:air
+fill -207 65 -4 -205 65 -4 minecraft:dark_oak_planks
+setblock -207 65 -2 minecraft:barrel[facing=up]
+fill -207 65 -1 -185 65 0 minecraft:air
+fill -207 65 4 -206 65 4 minecraft:air
+setblock -206 65 -15 minecraft:spruce_fence
+setblock -206 65 -11 minecraft:red_bed[facing=north,part=head]
+setblock -206 65 -10 minecraft:red_bed[facing=north,part=foot]
+setblock -206 65 -6 minecraft:red_bed[facing=south,part=foot]
+setblock -206 65 -5 minecraft:red_bed[facing=south,part=head]
+fill -206 65 -2 -193 65 -2 minecraft:air
+fill -206 65 10 -205 65 10 minecraft:air
+setblock -206 65 23 minecraft:spruce_fence
+fill -205 65 -15 -201 65 -15 minecraft:air
+setblock -205 65 -11 minecraft:chest[facing=south]
+setblock -205 65 -10 minecraft:air
+fill -205 65 -6 -205 65 -5 minecraft:air
+setblock -205 65 4 minecraft:barrel[facing=up]
+fill -205 65 23 -201 65 23 minecraft:air
+setblock -204 65 -12 minecraft:stripped_spruce_log
+fill -204 65 -11 -204 65 -9 minecraft:dark_oak_planks
+setblock -204 65 -8 minecraft:spruce_door[facing=east,half=lower,hinge=left,open=false]
+fill -204 65 -7 -204 65 -5 minecraft:dark_oak_planks
+setblock -204 65 -4 minecraft:stripped_spruce_log
+fill -204 65 4 -203 65 4 minecraft:air
+setblock -204 65 8 minecraft:stripped_dark_oak_log
+fill -204 65 9 -204 65 11 minecraft:spruce_planks
+fill -204 65 15 -204 65 17 minecraft:spruce_planks
+setblock -204 65 18 minecraft:stripped_dark_oak_log
+fill -203 65 -12 -197 65 -7 minecraft:air
+fill -203 65 -6 -199 65 -4 minecraft:air
+fill -203 65 8 -181 65 9 minecraft:air
+fill -203 65 10 -197 65 11 minecraft:air
+fill -203 65 15 -192 65 15 minecraft:air
+fill -203 65 16 -197 65 18 minecraft:air
+setblock -202 65 4 minecraft:campfire[lit=true]
+fill -201 65 4 -177 65 4 minecraft:air
+setblock -200 65 -15 minecraft:spruce_fence
+setblock -200 65 23 minecraft:spruce_fence
+fill -199 65 -15 -195 65 -15 minecraft:air
+fill -199 65 23 -195 65 23 minecraft:air
+setblock -198 65 -6 minecraft:campfire[lit=true]
+fill -198 65 -5 -181 65 -5 minecraft:air
+fill -198 65 -4 -192 65 -4 minecraft:air
+fill -197 65 -6 -187 65 -6 minecraft:air
+fill -196 65 -13 -196 65 -11 minecraft:red_wool
+fill -196 65 -10 -195 65 -7 minecraft:air
+fill -196 65 10 -186 65 10 minecraft:stripped_dark_oak_log
+fill -196 65 11 -196 65 12 minecraft:stripped_dark_oak_log
+fill -196 65 13 -192 65 14 minecraft:air
+fill -196 65 16 -196 65 18 minecraft:stripped_dark_oak_log
+fill -195 65 -13 -195 65 -11 minecraft:air
+fill -195 65 11 -187 65 11 minecraft:barrel[facing=up]
+fill -195 65 12 -187 65 12 minecraft:air
+fill -195 65 16 -187 65 16 minecraft:air
+fill -195 65 17 -187 65 17 minecraft:chest[facing=north]
+fill -195 65 18 -186 65 18 minecraft:stripped_dark_oak_log
+setblock -194 65 -15 minecraft:spruce_fence
+fill -194 65 -13 -184 65 -13 minecraft:hay_block
+fill -194 65 -12 -193 65 -11 minecraft:air
+setblock -194 65 -10 minecraft:spruce_fence
+fill -194 65 -9 -181 65 -8 minecraft:air
+setblock -194 65 -7 minecraft:spruce_planks
+setblock -194 65 23 minecraft:spruce_fence
+fill -193 65 -15 -189 65 -15 minecraft:air
+setblock -193 65 -10 minecraft:air
+fill -193 65 -7 -181 65 -7 minecraft:air
+fill -193 65 23 -189 65 23 minecraft:air
+fill -192 65 -12 -192 65 -11 minecraft:red_wool
+setblock -192 65 -10 minecraft:spruce_fence
+setblock -192 65 -2 minecraft:anvil[facing=north]
+setblock -192 65 2 minecraft:campfire[lit=true]
+setblock -192 65 3 minecraft:spruce_planks
+fill -191 65 -12 -181 65 -11 minecraft:air
+setblock -191 65 -10 minecraft:air
+setblock -191 65 -4 minecraft:spruce_planks
+setblock -191 65 -2 minecraft:grindstone[face=floor,facing=north]
+fill -191 65 2 -177 65 3 minecraft:air
+fill -191 65 13 -189 65 13 minecraft:polished_blackstone
+fill -191 65 14 -191 65 15 minecraft:polished_blackstone
+setblock -190 65 -10 minecraft:spruce_fence
+fill -190 65 -4 -181 65 -4 minecraft:air
+setblock -190 65 -2 minecraft:smithing_table
+setblock -190 65 14 minecraft:respawn_anchor[charges=4]
+fill -190 65 15 -189 65 15 minecraft:polished_blackstone
+setblock -189 65 -10 minecraft:air
+fill -189 65 -3 -188 65 -3 minecraft:cobblestone
+setblock -189 65 -2 minecraft:blast_furnace[facing=north,lit=true]
+setblock -189 65 14 minecraft:polished_blackstone
+setblock -188 65 -15 minecraft:spruce_fence
+setblock -188 65 -10 minecraft:spruce_fence
+setblock -188 65 -2 minecraft:cobblestone
+fill -188 65 13 -187 65 15 minecraft:air
+setblock -188 65 23 minecraft:spruce_fence
+fill -187 65 -15 -184 65 -15 minecraft:air
+setblock -187 65 -10 minecraft:air
+fill -187 65 -3 -181 65 -2 minecraft:air
+fill -187 65 23 -184 65 23 minecraft:air
+setblock -186 65 -10 minecraft:spruce_fence
+setblock -186 65 -6 minecraft:hay_block
+fill -186 65 11 -186 65 17 minecraft:stripped_dark_oak_log
+setblock -185 65 -10 minecraft:air
+fill -185 65 -6 -182 65 -6 minecraft:air
+setblock -185 65 6 minecraft:hay_block
+fill -185 65 7 -181 65 7 minecraft:air
+fill -185 65 10 -181 65 13 minecraft:air
+fill -185 65 14 -182 65 18 minecraft:air
+setblock -184 65 -10 minecraft:spruce_fence
+setblock -184 65 -1 minecraft:barrel[facing=up]
+fill -184 65 0 -181 65 0 minecraft:air
+fill -184 65 6 -177 65 6 minecraft:air
+setblock -183 65 -19 minecraft:stripped_dark_oak_log
+fill -183 65 -18 -183 65 -17 minecraft:spruce_planks
+fill -183 65 -16 -182 65 -16 minecraft:stripped_dark_oak_log
+setblock -183 65 -15 minecraft:spruce_planks
+setblock -183 65 -13 minecraft:stripped_dark_oak_log
+fill -183 65 -10 -181 65 -10 minecraft:air
+fill -183 65 -1 -181 65 -1 minecraft:air
+setblock -183 65 21 minecraft:stripped_dark_oak_log
+setblock -183 65 23 minecraft:spruce_planks
+fill -183 65 24 -182 65 24 minecraft:stripped_dark_oak_log
+fill -183 65 25 -183 65 26 minecraft:spruce_planks
+setblock -183 65 27 minecraft:stripped_dark_oak_log
+fill -182 65 -19 -181 65 -19 minecraft:spruce_planks
+fill -182 65 -18 -178 65 -17 minecraft:air
+fill -182 65 -15 -178 65 -15 minecraft:air
+fill -182 65 -13 -181 65 -13 minecraft:spruce_planks
+fill -182 65 21 -181 65 21 minecraft:spruce_planks
+fill -182 65 23 -178 65 23 minecraft:air
+fill -182 65 25 -178 65 26 minecraft:air
+fill -182 65 27 -181 65 27 minecraft:spruce_planks
+setblock -181 65 -16 minecraft:ladder[facing=east]
+setblock -181 65 -6 minecraft:ladder[facing=west]
+setblock -181 65 14 minecraft:ladder[facing=west]
+fill -181 65 15 -181 65 18 minecraft:air
+setblock -181 65 24 minecraft:ladder[facing=east]
+setblock -180 65 -19 minecraft:stripped_dark_oak_log

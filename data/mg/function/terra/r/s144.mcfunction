@@ -1,41 +1,23 @@
 # Construction des régions de Terra Nova, étape 144/436 (dimension mg:terranova, générée)
-place feature minecraft:acacia 170 67 -42
-place feature minecraft:acacia 206 67 19
-place feature minecraft:acacia 150 67 25
-place feature minecraft:acacia 118 66 -27
-place feature minecraft:acacia 247 72 35
-place feature minecraft:acacia 212 68 -78
-place feature minecraft:acacia 245 69 2
-place feature minecraft:acacia 247 70 15
-place feature minecraft:acacia 171 71 -73
-place feature minecraft:acacia 193 68 85
-place feature minecraft:acacia 203 69 -15
-place feature minecraft:acacia 143 67 -35
-place feature minecraft:acacia 118 68 -83
-place feature minecraft:acacia 130 67 -25
-place feature minecraft:acacia 240 67 76
-place feature minecraft:acacia 168 64 30
-place feature minecraft:acacia 207 65 77
-place feature minecraft:acacia 169 72 84
-place feature minecraft:acacia 197 68 49
-place feature minecraft:acacia 234 68 4
-place feature minecraft:acacia 217 69 48
-place feature minecraft:acacia 144 69 -60
-place feature minecraft:acacia 181 70 -47
-place feature minecraft:acacia 160 66 -6
-place feature minecraft:acacia 132 68 74
-place feature minecraft:acacia 216 69 -63
-place feature minecraft:acacia 226 69 -58
-place feature minecraft:acacia 201 69 27
-place feature minecraft:acacia 173 66 -1
-place feature minecraft:acacia 175 72 -86
-place feature minecraft:acacia 131 65 -55
-place feature minecraft:acacia 212 70 -48
-place feature minecraft:acacia 125 64 -48
-place feature minecraft:acacia 157 70 -78
-place feature minecraft:acacia 175 70 -60
-place feature minecraft:acacia 187 69 -81
-place feature minecraft:acacia 108 67 -68
-place feature minecraft:acacia 110 66 -49
-place feature minecraft:acacia 198 70 -43
-place feature minecraft:acacia 113 69 36
+fill 231 114 29 234 114 29 minecraft:air
+fill 232 114 20 234 114 20 minecraft:air
+setblock 232 114 21 minecraft:hay_block
+setblock 232 114 22 minecraft:air
+setblock 232 114 27 minecraft:hay_block
+fill 232 114 28 234 114 28 minecraft:air
+fill 233 114 21 234 114 21 minecraft:air
+setblock 233 114 22 minecraft:dead_bush
+fill 233 114 23 233 114 24 minecraft:hay_block
+setblock 233 114 25 minecraft:dead_bush
+setblock 233 114 26 minecraft:hay_block
+fill 233 114 27 234 114 27 minecraft:air
+setblock 234 114 22 minecraft:air
+setblock 234 114 23 minecraft:spruce_fence
+setblock 234 114 24 minecraft:air
+setblock 234 114 25 minecraft:spruce_fence
+setblock 234 114 26 minecraft:air
+fill 222 115 18 234 115 30 minecraft:air
+fill 222 116 18 234 116 30 minecraft:air
+fill 222 117 18 234 117 30 minecraft:air
+fill 222 118 18 234 118 30 minecraft:air
+fill 222 119 18 234 119 30 minecraft:air

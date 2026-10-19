@@ -1,4 +1,161 @@
 # Construction des régions de Terra Nova, étape 321/436 (dimension mg:terranova, générée)
+setblock -183 77 27 minecraft:stripped_dark_oak_log
+fill -182 77 -19 -181 77 -19 minecraft:spruce_planks
+fill -182 77 -18 -178 77 -17 minecraft:air
+fill -182 77 -15 -178 77 -14 minecraft:air
+fill -182 77 -13 -181 77 -13 minecraft:spruce_planks
+fill -182 77 21 -181 77 21 minecraft:spruce_planks
+fill -182 77 22 -178 77 23 minecraft:air
+fill -182 77 25 -178 77 26 minecraft:air
+fill -182 77 27 -181 77 27 minecraft:spruce_planks
+setblock -181 77 -16 minecraft:ladder[facing=east]
+setblock -181 77 24 minecraft:ladder[facing=east]
+setblock -180 77 -19 minecraft:stripped_dark_oak_log
+setblock -180 77 -16 minecraft:iron_chain
+setblock -180 77 -13 minecraft:stripped_dark_oak_log
+setblock -180 77 21 minecraft:stripped_dark_oak_log
+setblock -180 77 24 minecraft:iron_chain
+setblock -180 77 27 minecraft:stripped_dark_oak_log
+fill -179 77 -19 -178 77 -19 minecraft:spruce_planks
+fill -179 77 -16 -178 77 -16 minecraft:air
+fill -179 77 -13 -178 77 -13 minecraft:spruce_planks
+fill -179 77 21 -178 77 21 minecraft:spruce_planks
+fill -179 77 24 -178 77 24 minecraft:air
+fill -179 77 27 -178 77 27 minecraft:spruce_planks
+setblock -177 77 -19 minecraft:stripped_dark_oak_log
+fill -177 77 -18 -177 77 -17 minecraft:spruce_planks
+setblock -177 77 -16 minecraft:stripped_dark_oak_log
+fill -177 77 -15 -177 77 -14 minecraft:spruce_planks
+setblock -177 77 -13 minecraft:stripped_dark_oak_log
+setblock -177 77 21 minecraft:stripped_dark_oak_log
+fill -177 77 22 -177 77 23 minecraft:spruce_planks
+setblock -177 77 24 minecraft:stripped_dark_oak_log
+fill -177 77 25 -177 77 26 minecraft:spruce_planks
+setblock -177 77 27 minecraft:stripped_dark_oak_log
+fill -224 78 -20 -216 78 -12 minecraft:dark_oak_planks
+fill -224 78 20 -216 78 28 minecraft:dark_oak_planks
+fill -223 78 -11 -177 78 6 minecraft:air
+fill -223 78 7 -211 78 19 minecraft:air
+fill -215 78 -19 -185 78 -12 minecraft:air
+fill -215 78 20 -185 78 27 minecraft:air
+fill -210 78 7 -210 78 19 minecraft:dark_oak_stairs[facing=east,half=bottom]
+setblock -209 78 7 minecraft:air
+setblock -209 78 8 minecraft:spruce_planks
+fill -209 78 9 -209 78 17 minecraft:air
+setblock -209 78 18 minecraft:spruce_planks
+setblock -209 78 19 minecraft:air
+fill -208 78 7 -208 78 19 minecraft:dark_oak_stairs[facing=west,half=bottom]
+fill -207 78 7 -177 78 19 minecraft:air
+fill -184 78 -20 -176 78 -12 minecraft:dark_oak_planks
+fill -184 78 20 -176 78 28 minecraft:dark_oak_planks
+fill -224 79 -20 -216 79 -20 minecraft:dark_oak_planks
+fill -224 79 -19 -224 79 -12 minecraft:dark_oak_planks
+fill -224 79 20 -216 79 20 minecraft:dark_oak_planks
+fill -224 79 21 -224 79 28 minecraft:dark_oak_planks
+fill -223 79 -19 -217 79 -13 minecraft:air
+fill -223 79 -12 -216 79 -12 minecraft:dark_oak_planks
+fill -223 79 -11 -177 79 6 minecraft:air
+fill -223 79 7 -210 79 19 minecraft:air
+fill -223 79 21 -217 79 27 minecraft:air
+fill -223 79 28 -216 79 28 minecraft:dark_oak_planks
+fill -216 79 -19 -216 79 -13 minecraft:dark_oak_planks
+fill -216 79 21 -216 79 27 minecraft:dark_oak_planks
+fill -215 79 -19 -185 79 -12 minecraft:air
+fill -215 79 20 -185 79 27 minecraft:air
+fill -209 79 7 -209 79 19 minecraft:dark_oak_slab
+fill -208 79 7 -177 79 19 minecraft:air
+fill -184 79 -20 -176 79 -20 minecraft:dark_oak_planks
+fill -184 79 -19 -184 79 -12 minecraft:dark_oak_planks
+fill -184 79 20 -176 79 20 minecraft:dark_oak_planks
+fill -184 79 21 -184 79 28 minecraft:dark_oak_planks
+fill -183 79 -19 -177 79 -13 minecraft:air
+fill -183 79 -12 -176 79 -12 minecraft:dark_oak_planks
+fill -183 79 21 -177 79 27 minecraft:air
+fill -183 79 28 -176 79 28 minecraft:dark_oak_planks
+fill -176 79 -19 -176 79 -13 minecraft:dark_oak_planks
+fill -176 79 21 -176 79 27 minecraft:dark_oak_planks
+fill -223 80 -19 -217 80 -19 minecraft:dark_oak_planks
+fill -223 80 -18 -223 80 -13 minecraft:dark_oak_planks
+fill -223 80 -12 -177 80 20 minecraft:air
+fill -223 80 21 -217 80 21 minecraft:dark_oak_planks
+fill -223 80 22 -223 80 27 minecraft:dark_oak_planks
+fill -222 80 -18 -218 80 -14 minecraft:air
+fill -222 80 -13 -217 80 -13 minecraft:dark_oak_planks
+fill -222 80 22 -218 80 26 minecraft:air
+fill -222 80 27 -217 80 27 minecraft:dark_oak_planks
+fill -217 80 -18 -217 80 -14 minecraft:dark_oak_planks
+fill -217 80 22 -217 80 26 minecraft:dark_oak_planks
+fill -216 80 -19 -184 80 -13 minecraft:air
+fill -216 80 21 -184 80 27 minecraft:air
+fill -183 80 -19 -177 80 -19 minecraft:dark_oak_planks
+fill -183 80 -18 -183 80 -13 minecraft:dark_oak_planks
+fill -183 80 21 -177 80 21 minecraft:dark_oak_planks
+fill -183 80 22 -183 80 27 minecraft:dark_oak_planks
+fill -182 80 -18 -178 80 -14 minecraft:air
+fill -182 80 -13 -177 80 -13 minecraft:dark_oak_planks
+fill -182 80 22 -178 80 26 minecraft:air
+fill -182 80 27 -177 80 27 minecraft:dark_oak_planks
+fill -177 80 -18 -177 80 -14 minecraft:dark_oak_planks
+fill -177 80 22 -177 80 26 minecraft:dark_oak_planks
+fill -223 81 -19 -177 81 -19 minecraft:air
+fill -223 81 -18 -223 81 27 minecraft:air
+fill -222 81 -18 -218 81 -18 minecraft:dark_oak_planks
+fill -222 81 -17 -222 81 -14 minecraft:dark_oak_planks
+fill -222 81 -13 -177 81 21 minecraft:air
+fill -222 81 22 -218 81 22 minecraft:dark_oak_planks
+fill -222 81 23 -222 81 26 minecraft:dark_oak_planks
+fill -222 81 27 -177 81 27 minecraft:air
+fill -221 81 -17 -219 81 -15 minecraft:air
+fill -221 81 -14 -218 81 -14 minecraft:dark_oak_planks
+fill -221 81 23 -219 81 25 minecraft:air
+fill -221 81 26 -218 81 26 minecraft:dark_oak_planks
+fill -218 81 -17 -218 81 -15 minecraft:dark_oak_planks
+fill -218 81 23 -218 81 25 minecraft:dark_oak_planks
+fill -217 81 -18 -183 81 -14 minecraft:air
+fill -217 81 22 -183 81 26 minecraft:air
+fill -182 81 -18 -178 81 -18 minecraft:dark_oak_planks
+fill -182 81 -17 -182 81 -14 minecraft:dark_oak_planks
+fill -182 81 22 -178 81 22 minecraft:dark_oak_planks
+fill -182 81 23 -182 81 26 minecraft:dark_oak_planks
+fill -181 81 -17 -179 81 -15 minecraft:air
+fill -181 81 -14 -178 81 -14 minecraft:dark_oak_planks
+fill -181 81 23 -179 81 25 minecraft:air
+fill -181 81 26 -178 81 26 minecraft:dark_oak_planks
+fill -178 81 -17 -178 81 -15 minecraft:dark_oak_planks
+fill -178 81 23 -178 81 25 minecraft:dark_oak_planks
+fill -177 81 -18 -177 81 -14 minecraft:air
+fill -177 81 22 -177 81 26 minecraft:air
+fill -223 82 -19 -177 82 -18 minecraft:air
+fill -223 82 -17 -222 82 27 minecraft:air
+fill -221 82 -17 -219 82 -17 minecraft:dark_oak_planks
+fill -221 82 -16 -221 82 -15 minecraft:dark_oak_planks
+fill -221 82 -14 -177 82 22 minecraft:air
+fill -221 82 23 -219 82 23 minecraft:dark_oak_planks
+fill -221 82 24 -221 82 25 minecraft:dark_oak_planks
+fill -221 82 26 -177 82 27 minecraft:air
+setblock -220 82 -16 minecraft:air
+fill -220 82 -15 -219 82 -15 minecraft:dark_oak_planks
+setblock -220 82 24 minecraft:air
+fill -220 82 25 -219 82 25 minecraft:dark_oak_planks
+setblock -219 82 -16 minecraft:dark_oak_planks
+setblock -219 82 24 minecraft:dark_oak_planks
+fill -218 82 -17 -182 82 -15 minecraft:air
+fill -218 82 23 -182 82 25 minecraft:air
+fill -181 82 -17 -179 82 -17 minecraft:dark_oak_planks
+fill -181 82 -16 -181 82 -15 minecraft:dark_oak_planks
+fill -181 82 23 -179 82 23 minecraft:dark_oak_planks
+fill -181 82 24 -181 82 25 minecraft:dark_oak_planks
+setblock -180 82 -16 minecraft:air
+fill -180 82 -15 -179 82 -15 minecraft:dark_oak_planks
+setblock -180 82 24 minecraft:air
+fill -180 82 25 -179 82 25 minecraft:dark_oak_planks
+setblock -179 82 -16 minecraft:dark_oak_planks
+setblock -179 82 24 minecraft:dark_oak_planks
+fill -178 82 -17 -177 82 -15 minecraft:air
+fill -178 82 23 -177 82 25 minecraft:air
+fill -223 83 -19 -177 83 -17 minecraft:air
+fill -223 83 -16 -221 83 27 minecraft:air
+setblock -220 83 -16 minecraft:dark_oak_slab
 fill -220 83 -15 -177 83 23 minecraft:air
 setblock -220 83 24 minecraft:dark_oak_slab
 fill -220 83 25 -177 83 27 minecraft:air
@@ -42,160 +199,3 @@ fill -143 72 -60 -141 74 -56 minecraft:red_terracotta
 fill -144 73 -60 -142 75 -56 minecraft:red_terracotta
 fill -144 75 -60 -142 77 -56 minecraft:light_gray_terracotta
 fill -145 76 -60 -143 78 -56 minecraft:light_gray_terracotta
-fill -146 77 -60 -144 79 -56 minecraft:light_gray_terracotta
-fill -147 78 -60 -145 80 -56 minecraft:brown_terracotta
-fill -147 79 -60 -145 81 -56 minecraft:brown_terracotta
-fill -148 79 -60 -146 81 -56 minecraft:brown_terracotta
-fill -149 80 -60 -147 82 -56 minecraft:brown_terracotta
-fill -150 80 -60 -148 82 -56 minecraft:brown_terracotta
-fill -151 80 -60 -149 82 -56 minecraft:brown_terracotta
-fill -152 80 -60 -150 82 -56 minecraft:brown_terracotta
-fill -153 80 -60 -151 82 -56 minecraft:brown_terracotta
-fill -154 79 -60 -152 81 -56 minecraft:brown_terracotta
-fill -155 79 -60 -153 81 -56 minecraft:brown_terracotta
-fill -155 78 -60 -153 80 -56 minecraft:brown_terracotta
-fill -156 77 -60 -154 79 -56 minecraft:light_gray_terracotta
-fill -157 76 -60 -155 78 -56 minecraft:light_gray_terracotta
-fill -158 75 -60 -156 77 -56 minecraft:light_gray_terracotta
-fill -158 73 -60 -156 75 -56 minecraft:red_terracotta
-fill -159 72 -60 -157 74 -56 minecraft:red_terracotta
-fill -159 71 -60 -157 73 -56 minecraft:white_terracotta
-fill -160 69 -60 -158 71 -56 minecraft:white_terracotta
-fill -160 67 -60 -158 69 -56 minecraft:yellow_terracotta
-fill -160 66 -60 -158 68 -56 minecraft:yellow_terracotta
-fill -160 64 -60 -158 66 -56 minecraft:terracotta
-fill -161 64 -61 -157 70 -55 minecraft:red_terracotta
-fill -143 64 -61 -139 70 -55 minecraft:red_terracotta
-fill -149 64 55 -135 64 69 minecraft:terracotta
-fill -149 65 55 -135 65 69 minecraft:terracotta
-fill -149 66 55 -135 66 69 minecraft:yellow_terracotta
-fill -149 67 55 -135 67 69 minecraft:yellow_terracotta
-fill -149 68 55 -135 68 69 minecraft:yellow_terracotta
-fill -149 69 55 -135 69 69 minecraft:white_terracotta
-fill -149 70 55 -135 70 69 minecraft:white_terracotta
-fill -149 71 55 -135 71 69 minecraft:white_terracotta
-fill -149 72 55 -135 72 69 minecraft:red_terracotta
-fill -149 73 55 -135 73 69 minecraft:red_terracotta
-fill -149 74 55 -135 74 69 minecraft:red_terracotta
-fill -149 75 55 -135 75 69 minecraft:light_gray_terracotta
-fill -149 76 55 -135 76 69 minecraft:light_gray_terracotta
-fill -149 77 55 -135 77 69 minecraft:light_gray_terracotta
-fill -149 78 55 -135 78 69 minecraft:brown_terracotta
-fill -149 79 55 -135 79 69 minecraft:brown_terracotta
-setblock -142 61 55 minecraft:acacia_log
-setblock -142 62 55 minecraft:acacia_log
-setblock -142 62 62 minecraft:acacia_log
-setblock -135 62 55 minecraft:acacia_log
-setblock -142 63 55 minecraft:acacia_log
-setblock -142 63 62 minecraft:acacia_log
-setblock -135 63 55 minecraft:acacia_log
-setblock -135 63 62 minecraft:acacia_log
-setblock -135 63 69 minecraft:acacia_log
-fill -143 64 49 -141 64 54 minecraft:acacia_planks
-setblock -142 64 55 minecraft:acacia_log
-setblock -142 64 62 minecraft:acacia_log
-setblock -135 64 55 minecraft:acacia_log
-setblock -135 64 62 minecraft:acacia_log
-setblock -135 64 69 minecraft:acacia_log
-fill -143 65 49 -141 65 54 minecraft:acacia_planks
-setblock -142 65 55 minecraft:acacia_log
-setblock -142 65 62 minecraft:acacia_log
-setblock -135 65 55 minecraft:acacia_log
-setblock -135 65 62 minecraft:acacia_log
-setblock -135 65 69 minecraft:acacia_log
-setblock -134 65 61 minecraft:acacia_planks
-fill -143 66 49 -141 66 54 minecraft:acacia_planks
-setblock -142 66 55 minecraft:acacia_log
-setblock -142 66 62 minecraft:acacia_log
-setblock -135 66 55 minecraft:acacia_log
-setblock -135 66 62 minecraft:acacia_log
-setblock -135 66 69 minecraft:acacia_log
-fill -134 66 61 -129 66 63 minecraft:acacia_planks
-fill -143 67 49 -141 67 54 minecraft:acacia_planks
-setblock -142 67 55 minecraft:acacia_log
-setblock -142 67 62 minecraft:acacia_log
-setblock -135 67 55 minecraft:acacia_log
-setblock -135 67 62 minecraft:acacia_log
-setblock -135 67 69 minecraft:acacia_log
-fill -134 67 61 -129 67 63 minecraft:acacia_planks
-fill -143 68 49 -141 68 54 minecraft:acacia_planks
-setblock -142 68 55 minecraft:acacia_log
-setblock -142 68 62 minecraft:acacia_log
-setblock -135 68 55 minecraft:acacia_log
-setblock -135 68 62 minecraft:acacia_log
-setblock -135 68 69 minecraft:acacia_log
-fill -134 68 61 -129 68 63 minecraft:acacia_planks
-fill -143 69 49 -141 69 54 minecraft:acacia_planks
-setblock -142 69 55 minecraft:acacia_log
-setblock -142 69 62 minecraft:acacia_log
-setblock -135 69 55 minecraft:acacia_log
-setblock -135 69 62 minecraft:acacia_log
-setblock -135 69 69 minecraft:acacia_log
-fill -134 69 61 -129 69 63 minecraft:acacia_planks
-fill -143 70 49 -141 70 54 minecraft:acacia_planks
-setblock -142 70 55 minecraft:acacia_log
-setblock -142 70 62 minecraft:acacia_log
-setblock -135 70 55 minecraft:acacia_log
-setblock -135 70 62 minecraft:acacia_log
-setblock -135 70 69 minecraft:acacia_log
-fill -134 70 61 -129 70 63 minecraft:acacia_planks
-fill -143 71 49 -141 71 54 minecraft:acacia_planks
-setblock -142 71 55 minecraft:acacia_log
-setblock -142 71 62 minecraft:acacia_log
-setblock -135 71 55 minecraft:acacia_log
-setblock -135 71 62 minecraft:acacia_log
-setblock -135 71 69 minecraft:acacia_log
-fill -134 71 61 -129 71 63 minecraft:acacia_planks
-fill -143 72 49 -141 72 54 minecraft:acacia_planks
-setblock -142 72 55 minecraft:acacia_log
-setblock -142 72 62 minecraft:acacia_log
-setblock -142 72 69 minecraft:acacia_log
-setblock -135 72 55 minecraft:acacia_log
-setblock -135 72 62 minecraft:acacia_log
-setblock -135 72 69 minecraft:acacia_log
-fill -134 72 61 -129 72 63 minecraft:acacia_planks
-fill -143 73 49 -141 73 54 minecraft:acacia_planks
-setblock -142 73 55 minecraft:acacia_log
-setblock -142 73 62 minecraft:acacia_log
-setblock -142 73 69 minecraft:acacia_log
-setblock -135 73 55 minecraft:acacia_log
-setblock -135 73 62 minecraft:acacia_log
-setblock -135 73 69 minecraft:acacia_log
-fill -134 73 61 -129 73 63 minecraft:acacia_planks
-fill -143 74 49 -141 74 54 minecraft:acacia_planks
-setblock -142 74 55 minecraft:acacia_log
-setblock -142 74 62 minecraft:acacia_log
-setblock -142 74 69 minecraft:acacia_log
-setblock -135 74 55 minecraft:acacia_log
-setblock -135 74 62 minecraft:acacia_log
-setblock -135 74 69 minecraft:acacia_log
-fill -134 74 61 -129 74 63 minecraft:acacia_planks
-fill -143 75 49 -141 75 49 minecraft:acacia_stairs[facing=south,half=bottom]
-fill -143 75 50 -141 75 54 minecraft:acacia_planks
-setblock -142 75 55 minecraft:acacia_log
-setblock -142 75 62 minecraft:acacia_log
-setblock -142 75 69 minecraft:acacia_log
-fill -142 75 70 -141 75 70 minecraft:acacia_planks
-setblock -135 75 55 minecraft:acacia_log
-setblock -135 75 62 minecraft:acacia_log
-setblock -135 75 69 minecraft:acacia_log
-fill -134 75 61 -130 75 63 minecraft:acacia_planks
-fill -129 75 61 -129 75 63 minecraft:acacia_stairs[facing=west,half=bottom]
-fill -143 76 50 -141 76 50 minecraft:acacia_stairs[facing=south,half=bottom]
-fill -143 76 51 -141 76 54 minecraft:acacia_planks
-setblock -142 76 55 minecraft:acacia_log
-setblock -142 76 62 minecraft:acacia_log
-setblock -142 76 69 minecraft:acacia_log
-fill -142 76 70 -141 76 70 minecraft:acacia_planks
-setblock -135 76 55 minecraft:acacia_log
-setblock -135 76 62 minecraft:acacia_log
-setblock -135 76 69 minecraft:acacia_log
-fill -134 76 61 -131 76 63 minecraft:acacia_planks
-fill -130 76 61 -130 76 63 minecraft:acacia_stairs[facing=west,half=bottom]
-setblock -149 77 55 minecraft:acacia_log
-setblock -149 77 62 minecraft:acacia_log
-setblock -149 77 69 minecraft:acacia_log
-fill -143 77 51 -141 77 51 minecraft:acacia_stairs[facing=south,half=bottom]
-fill -143 77 52 -141 77 54 minecraft:acacia_planks
-setblock -142 77 55 minecraft:acacia_log
-setblock -142 77 62 minecraft:acacia_log

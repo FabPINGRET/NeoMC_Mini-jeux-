@@ -1,4 +1,5 @@
 # Construction des régions de Terra Nova, étape 64/436 (dimension mg:terranova, générée)
+fill 55 63 -189 55 63 -187 minecraft:mangrove_wood
 setblock 55 63 -186 minecraft:mangrove_roots
 setblock 55 63 -170 minecraft:mangrove_roots
 fill 55 63 -169 55 63 -167 minecraft:mangrove_wood
@@ -121,18 +122,18 @@ setblock 56 64 -170 minecraft:rooted_dirt
 fill 57 64 -186 69 64 -186 minecraft:air
 fill 57 64 -185 58 64 -185 minecraft:rooted_dirt
 setblock 57 64 -184 minecraft:mangrove_log[axis=y]
-setblock 57 64 -178 minecraft:mangrove_slab[type=top]
+fill 57 64 -178 58 64 -178 minecraft:mangrove_slab[type=top]
 setblock 57 64 -172 minecraft:mangrove_log[axis=y]
 fill 57 64 -170 69 64 -170 minecraft:air
 setblock 58 64 -184 minecraft:mangrove_roots
 setblock 58 64 -183 minecraft:mangrove_log[axis=y]
-fill 58 64 -178 69 64 -178 minecraft:air
 fill 58 64 -173 59 64 -173 minecraft:mangrove_log[axis=y]
 setblock 58 64 -172 minecraft:mangrove_roots
 setblock 59 64 -185 minecraft:mangrove_wood
 fill 59 64 -184 60 64 -184 minecraft:rooted_dirt
 setblock 59 64 -183 minecraft:mangrove_wood
 fill 59 64 -182 60 64 -182 minecraft:mangrove_log[axis=y]
+fill 59 64 -178 69 64 -178 minecraft:air
 fill 59 64 -174 60 64 -174 minecraft:mangrove_log[axis=y]
 fill 59 64 -172 60 64 -172 minecraft:rooted_dirt
 setblock 59 64 -171 minecraft:mangrove_wood
@@ -198,4 +199,3 @@ fill 55 65 -185 55 65 -184 minecraft:mangrove_wood
 setblock 55 65 -178 minecraft:mangrove_log[axis=y]
 fill 55 65 -177 56 65 -176 minecraft:air
 fill 55 65 -172 55 65 -171 minecraft:mangrove_wood
-fill 55 65 -170 69 65 -164 minecraft:air

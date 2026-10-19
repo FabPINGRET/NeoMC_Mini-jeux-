@@ -70,7 +70,7 @@ fill -37 65 -114 -22 65 -114 minecraft:air
 fill -36 65 -129 -32 65 -129 minecraft:mangrove_fence
 setblock -36 65 -128 minecraft:barrel[facing=north]
 setblock -36 65 -127 minecraft:mangrove_planks
-fill -36 65 -126 -26 65 -124 minecraft:air
+fill -36 65 -126 -27 65 -124 minecraft:air
 fill -36 65 -121 -35 65 -121 minecraft:mangrove_planks
 setblock -36 65 -120 minecraft:cartography_table
 fill -36 65 -119 -33 65 -119 minecraft:air
@@ -106,18 +106,18 @@ fill -28 65 -116 -27 65 -116 minecraft:air
 fill -28 65 -115 -24 65 -115 minecraft:mangrove_fence
 setblock -27 65 -118 minecraft:air
 fill -26 65 -128 -24 65 -128 minecraft:mangrove_log
-setblock -26 65 -127 minecraft:mangrove_log
+fill -26 65 -127 -26 65 -126 minecraft:mangrove_log
+fill -26 65 -125 -24 65 -124 minecraft:air
 setblock -26 65 -120 minecraft:stripped_mangrove_log[axis=x]
 fill -26 65 -119 -24 65 -119 minecraft:air
 setblock -26 65 -118 minecraft:campfire[lit=true]
 setblock -26 65 -116 minecraft:stripped_mangrove_log[axis=x]
 setblock -25 65 -127 minecraft:ladder[facing=south]
-fill -25 65 -126 -24 65 -126 minecraft:mangrove_log
-fill -25 65 -125 -24 65 -124 minecraft:air
+setblock -25 65 -126 minecraft:air
 fill -25 65 -120 -24 65 -120 minecraft:air
 setblock -25 65 -118 minecraft:air
 setblock -25 65 -116 minecraft:air
-setblock -24 65 -127 minecraft:mangrove_log
+fill -24 65 -127 -24 65 -126 minecraft:mangrove_log
 setblock -24 65 -118 minecraft:stripped_mangrove_log[axis=z]
 setblock -24 65 -116 minecraft:iron_bars
 setblock -23 65 -129 minecraft:mangrove_log
@@ -158,12 +158,11 @@ setblock -32 66 -117 minecraft:stripped_mangrove_log
 fill -31 66 -121 -22 66 -117 minecraft:air
 fill -31 66 -116 -25 66 -116 minecraft:air
 fill -26 66 -128 -24 66 -128 minecraft:mangrove_log
-setblock -26 66 -127 minecraft:mangrove_log
-fill -26 66 -126 -26 66 -122 minecraft:air
+fill -26 66 -127 -26 66 -126 minecraft:mangrove_log
+fill -26 66 -125 -22 66 -122 minecraft:air
 setblock -25 66 -127 minecraft:ladder[facing=south]
-fill -25 66 -126 -24 66 -126 minecraft:mangrove_log
-fill -25 66 -125 -22 66 -122 minecraft:air
-setblock -24 66 -127 minecraft:mangrove_log
+setblock -25 66 -126 minecraft:air
+fill -24 66 -127 -24 66 -126 minecraft:mangrove_log
 setblock -24 66 -116 minecraft:iron_bars
 setblock -23 66 -129 minecraft:mangrove_log
 fill -23 66 -128 -22 66 -126 minecraft:air
@@ -199,3 +198,4 @@ setblock -32 67 -118 minecraft:mangrove_planks
 setblock -32 67 -117 minecraft:stripped_mangrove_log
 fill -31 67 -121 -22 67 -117 minecraft:air
 fill -31 67 -116 -25 67 -116 minecraft:air
+fill -26 67 -128 -24 67 -128 minecraft:mangrove_log
