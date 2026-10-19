@@ -802,6 +802,13 @@ tag @a remove mg.play
 tag @a remove mg.out
 tag @a remove mg.win
 tag @a remove mg.spectate
+tag @a remove mg.optq
+tag @a remove mg.pulls
+tag @a remove mg.pullg
+tag @a remove mg.pullt
+tag @a remove mg.pullo
+# (ancienne version)
+tag @a remove mg.pullp
 tag @a remove mg.admin
 tellraw @a [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Désinstallé. Les constructions restent (les arènes ne sont pas effacées). Retire ensuite le datapack du dossier datapacks.","color":"gray"}]
 

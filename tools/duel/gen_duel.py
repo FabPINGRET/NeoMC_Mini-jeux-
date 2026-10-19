@@ -237,8 +237,6 @@ def wire():
               'clear @a[tag=!mg.surv,tag=!mg.dl] minecraft:warped_fungus_on_a_stick')
     old = 'execute if score $gmt mg.t matches 40.. as @a[tag=mg.admin,tag=mg.init,tag=!mg.surv,tag=!mg.play,tag=!mg.out,tag=!mg.inplot,tag=!mg.pkr,tag=!mg.lk,tag=!mg.visit,gamemode=!spectator,gamemode=!creative] run function mg:core/give_menu_safe'
     edit_line('core/tick', old, old.replace('tag=!mg.visit,', 'tag=!mg.visit,tag=!mg.dl,'))
-    # une partie lancée par un admin n'appelle pas les duellistes (pull_all leur retirait la pause)
-    edit_line('core/pull_all', 'tag @a[tag=mg.spectate] add mg.pullp', 'tag @a[tag=mg.spectate,tag=!mg.dl] add mg.pullp')
     # le TP général les arrête proprement (sinon reset_player sans stop = forfait arbitraire de l'adversaire)
     guard('tpg/lobby', 'run function mg:core/reset_player', ['execute as @a[tag=mg.dl] run function mg:duel/stop'], 'before')
     # pas de rappel « partie lancée sans toi (pause) » ni de bascule de pause pour un duelliste
