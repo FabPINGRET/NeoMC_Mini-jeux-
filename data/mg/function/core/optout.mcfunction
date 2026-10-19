@@ -7,10 +7,9 @@ execute if entity @s[tag=mg.pulls] in minecraft:overworld run function mg:survie
 execute if entity @s[tag=mg.pullg] in minecraft:overworld run function mg:gta/enter
 execute if entity @s[tag=mg.pullt] in minecraft:overworld run function mg:terra/enter
 execute if entity @s[tag=mg.pullo] in minecraft:overworld run function mg:ombre/enter
-execute if entity @s[tag=mg.pullp] run tag @s add mg.spectate
 tag @s remove mg.pulls
 tag @s remove mg.pullg
 tag @s remove mg.pullt
 tag @s remove mg.pullo
-tag @s remove mg.pullp
-tellraw @s {"text":"✖ Tu ne participes pas à cette partie.","color":"gray"}
+execute if entity @s[tag=!mg.optq] run tellraw @s {"text":"✖ Tu ne participes pas à cette partie.","color":"gray"}
+tag @s remove mg.optq

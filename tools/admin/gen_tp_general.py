@@ -19,10 +19,11 @@ FREE = 'tag=!mg.play,tag=!mg.out,tag=!mg.mpp'
 
 # clé, libellé, couleur, info-bulle, mg.opt, lignes de la fonction tpg/<clé>
 DEST = [
-    ('survie', '🌲 Tout le monde → Survie', 'green', 'Les joueurs à Neo GTA ou Terra Nova en sortent d\'abord (tout est sauvegardé)', 63, [
+    ('survie', '🌲 Tout le monde → Survie', 'green', 'Les joueurs à Neo GTA, Terra Nova ou Ombrelune en sortent d\'abord (tout est sauvegardé)', 63, [
         '# TP général → survie (@s = admin)',
         f'execute as @a[{FREE},tag=mg.gtw] run function mg:gta/leave',
         f'execute as @a[{FREE},tag=mg.tvw] run function mg:terra/leave',
+        f'execute as @a[{FREE},tag=mg.olw] run function mg:ombre/leave',
         f'execute as @a[{FREE},tag=!mg.surv] run function mg:survie/enter',
         'tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a envoyé tout le monde en survie.","color":"gray"}]']),
     ('gta', '🚓 Tout le monde → Neo GTA', 'gold', 'Les joueurs en survie ou sur leur plot en sortent d\'abord (tout est sauvegardé)', 64, [
@@ -39,10 +40,11 @@ DEST = [
         f'execute as @a[{FREE},tag=mg.inplot] run function mg:plot/leave',
         f'execute as @a[{FREE},tag=!mg.tvw,tag=!mg.dl] run function mg:terra/enter',
         'tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a envoyé tout le monde à Terra Nova.","color":"gray"}]']),
-    ('lobby', '🏠 Tout le monde → Lobby', 'yellow', 'Sort tout le monde de la survie, de Neo GTA, de Terra Nova, des plots, du kart, du parkour, des élytra et de la montagne russe : prêt pour lancer un mini-jeu', 65, [
+    ('lobby', '🏠 Tout le monde → Lobby', 'yellow', 'Sort tout le monde de la survie, de Neo GTA, de Terra Nova, d\'Ombrelune, des plots, du kart, du parkour, des élytra et de la montagne russe : prêt pour lancer un mini-jeu', 65, [
         '# TP général → lobby (@s = admin) : chacun quitte proprement son activité (sauvegardes comprises), puis remise à zéro au spawn',
         f'execute as @a[{FREE},tag=mg.gtw] run function mg:gta/leave',
         f'execute as @a[{FREE},tag=mg.tvw] run function mg:terra/leave',
+        f'execute as @a[{FREE},tag=mg.olw] run function mg:ombre/leave',
         f'execute as @a[{FREE},tag=mg.surv,tag=!mg.gtw] run function mg:survie/leave',
         f'execute as @a[{FREE},tag=mg.inplot] run function mg:plot/leave',
         f'execute as @a[{FREE},tag=mg.visit] run function mg:plot/leave',

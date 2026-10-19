@@ -16,7 +16,7 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "Survie, Mini Party, assis/emotes et aide.",
+          "text": "Survie, Mini Party, assis/emotes, pause et aide.",
           "color": "gray"
         }
       ]
@@ -117,6 +117,25 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.sv set 2"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "⏸ Pause ON/OFF",
+          "color": "gray",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Pause : tu n'es plus appelé aux parties (votes ni admin), où que tu sois ; re-clique pour reprendre. Pendant le compte à rebours : tu retournes où tu étais. En pleine partie : abandon.",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 1"
       }
     },
     {

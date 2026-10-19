@@ -126,7 +126,6 @@ tag @a remove mg.pulls
 tag @a remove mg.pullg
 tag @a remove mg.pullt
 tag @a remove mg.pullo
-tag @a remove mg.pullp
 scoreboard players set $pull mg.st 0
 execute if entity @s[tag=mg.admin,tag=!mg.vauto] unless score $mpl mg.st matches 1 run function mg:core/pull_all
 # Participants = tous les joueurs initialisés hors pause et hors survie (Mini Party en cours : seulement ses participants)
@@ -394,3 +393,7 @@ execute as @a[tag=!mg.surv] at @s run playsound minecraft:block.note_block.pling
 # Rappel aux joueurs en pause (après prepare : une partie annulée, $state 3, n'en envoie pas ; pas en Mini Party, $mpl)
 execute unless score $mpl mg.st matches 1 unless score $mp mg.st matches 1 unless score $state mg.st matches 3 run tellraw @a[tag=mg.init,tag=mg.spectate,tag=!mg.surv,tag=!mg.dl] [{"text":"⏸ Partie lancée sans toi (pause). ","color":"gray"},{"text":"[▶ Reprendre les parties]","color":"green","click_event":{"action":"run_command","command":"trigger mg.opt set 1"},"hover_event":{"action":"show_text","value":"Désactiver la pause : tu seras téléporté aux prochaines parties"}}]
 execute unless score $mpl mg.st matches 1 if score $mp mg.st matches 1 unless score $state mg.st matches 3 run tellraw @a[tag=mg.init,tag=mg.spectate,tag=!mg.surv,tag=!mg.dl] [{"text":"⏸ Partie lancée sans toi (pause). ","color":"gray"},{"text":"[▶ Reprendre les parties]","color":"green","click_event":{"action":"run_command","command":"trigger mg.opt set 1"},"hover_event":{"action":"show_text","value":"La Mini Party se joue sans toi ; tu seras téléporté aux parties suivantes"}}]
+# Lancement admin (pull_all) : info à l'admin (joueurs en pause laissés où ils sont) et rappel aux joueurs en pause en survie ou dans un monde (après prepare : une partie annulée, $state 3, n'en envoie pas)
+execute if score $pull mg.st matches 1 unless score $state mg.st matches 3 store result score $pzn mg.st if entity @a[tag=mg.spectate,tag=!mg.dl,tag=!mg.xso]
+execute if score $pull mg.st matches 1 unless score $state mg.st matches 3 if score $pzn mg.st matches 1.. run tellraw @s [{"text":"⏸ ","color":"gray"},{"score":{"name":"$pzn","objective":"mg.st"},"color":"yellow"},{"text":" joueur(s) en pause laissé(s) où ils sont.","color":"gray"}]
+execute if score $pull mg.st matches 1 unless score $state mg.st matches 3 run tellraw @a[tag=mg.spectate,tag=mg.surv] [{"text":"⏸ Une partie est lancée sans toi (pause). ","color":"gray"},{"text":"[▶ Reprendre]","color":"green","click_event":{"action":"run_command","command":"trigger mg.opt set 1"},"hover_event":{"action":"show_text","value":"Désactiver la pause : tu seras rappelé aux prochains lancements admin"}}]
