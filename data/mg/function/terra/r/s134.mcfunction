@@ -1,5 +1,4 @@
 # Construction des régions de Terra Nova, étape 134/436 (dimension mg:terranova, générée)
-fill 120 74 -2 136 74 -2 minecraft:air
 fill 120 74 -1 120 74 14 minecraft:air
 setblock 121 74 -1 minecraft:lantern[hanging=false]
 fill 121 74 0 131 74 6 minecraft:air
@@ -131,12 +130,13 @@ setblock 134 78 1 minecraft:birch_log
 fill 135 78 0 136 78 2 minecraft:air
 fill 120 79 -2 136 79 -2 minecraft:air
 fill 120 79 -1 130 79 14 minecraft:air
-fill 131 79 -1 135 79 0 minecraft:birch_slab[type=bottom]
-fill 131 79 1 132 79 3 minecraft:birch_slab[type=bottom]
+fill 131 79 -1 135 79 -1 minecraft:birch_slab[type=bottom]
+fill 131 79 0 132 79 3 minecraft:birch_slab[type=bottom]
 fill 131 79 4 136 79 14 minecraft:air
-setblock 133 79 1 minecraft:birch_trapdoor[facing=south,half=bottom,open=false]
+setblock 133 79 0 minecraft:birch_log
+setblock 133 79 1 minecraft:ladder[facing=south]
 fill 133 79 2 135 79 3 minecraft:birch_slab[type=bottom]
-fill 134 79 1 135 79 1 minecraft:birch_slab[type=bottom]
+fill 134 79 0 135 79 1 minecraft:birch_slab[type=bottom]
 fill 136 79 -1 136 79 3 minecraft:air
 fill 120 80 -2 136 80 -2 minecraft:air
 fill 120 80 -1 130 80 14 minecraft:air

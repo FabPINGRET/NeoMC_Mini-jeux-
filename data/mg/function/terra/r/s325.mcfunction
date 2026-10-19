@@ -1,4 +1,161 @@
 # Construction des régions de Terra Nova, étape 325/436 (dimension mg:terranova, générée)
+fill -141 78 69 -139 78 71 minecraft:smooth_red_sandstone
+fill -141 79 69 -139 82 71 minecraft:air
+fill -143 79 69 -141 79 71 minecraft:smooth_red_sandstone
+fill -143 80 69 -141 83 71 minecraft:air
+fill -232 64 -58 -231 64 -58 minecraft:coarse_dirt
+setblock -232 64 -57 minecraft:coarse_dirt
+setblock -232 64 -56 minecraft:gravel
+fill -232 64 -55 -231 64 -55 minecraft:coarse_dirt
+setblock -232 64 -54 minecraft:coarse_dirt
+setblock -232 64 -53 minecraft:gravel
+fill -232 64 -52 -231 64 -52 minecraft:coarse_dirt
+setblock -231 64 -60 minecraft:gravel
+fill -231 64 -59 -230 64 -59 minecraft:coarse_dirt
+setblock -231 64 -57 minecraft:gravel
+fill -231 64 -56 -230 64 -56 minecraft:coarse_dirt
+setblock -231 64 -54 minecraft:gravel
+fill -231 64 -53 -230 64 -53 minecraft:coarse_dirt
+setblock -231 64 -51 minecraft:gravel
+fill -231 64 -50 -230 64 -50 minecraft:coarse_dirt
+setblock -230 64 -61 minecraft:gravel
+fill -230 64 -60 -229 64 -60 minecraft:coarse_dirt
+setblock -230 64 -58 minecraft:gravel
+fill -230 64 -57 -229 64 -57 minecraft:coarse_dirt
+setblock -230 64 -55 minecraft:gravel
+fill -230 64 -54 -229 64 -54 minecraft:coarse_dirt
+setblock -230 64 -52 minecraft:gravel
+fill -230 64 -51 -229 64 -51 minecraft:coarse_dirt
+setblock -230 64 -49 minecraft:gravel
+fill -229 64 -61 -228 64 -61 minecraft:coarse_dirt
+setblock -229 64 -59 minecraft:gravel
+fill -229 64 -58 -228 64 -58 minecraft:coarse_dirt
+setblock -229 64 -56 minecraft:gravel
+fill -229 64 -55 -228 64 -55 minecraft:coarse_dirt
+setblock -229 64 -53 minecraft:gravel
+fill -229 64 -52 -228 64 -52 minecraft:coarse_dirt
+setblock -229 64 -50 minecraft:gravel
+fill -229 64 -49 -228 64 -49 minecraft:coarse_dirt
+fill -228 64 -62 -227 64 -62 minecraft:coarse_dirt
+setblock -228 64 -60 minecraft:gravel
+fill -228 64 -59 -227 64 -59 minecraft:coarse_dirt
+setblock -228 64 -57 minecraft:gravel
+fill -228 64 -56 -227 64 -56 minecraft:coarse_dirt
+setblock -228 64 -54 minecraft:gravel
+fill -228 64 -53 -227 64 -53 minecraft:coarse_dirt
+setblock -228 64 -51 minecraft:gravel
+fill -228 64 -50 -227 64 -50 minecraft:coarse_dirt
+setblock -228 64 -48 minecraft:gravel
+setblock -227 64 -61 minecraft:gravel
+fill -227 64 -60 -226 64 -60 minecraft:coarse_dirt
+setblock -227 64 -58 minecraft:gravel
+fill -227 64 -57 -226 64 -57 minecraft:coarse_dirt
+setblock -227 64 -55 minecraft:gravel
+fill -227 64 -54 -226 64 -54 minecraft:coarse_dirt
+setblock -227 64 -52 minecraft:gravel
+fill -227 64 -51 -226 64 -51 minecraft:coarse_dirt
+setblock -227 64 -49 minecraft:gravel
+fill -227 64 -48 -226 64 -48 minecraft:coarse_dirt
+setblock -226 64 -62 minecraft:gravel
+fill -226 64 -61 -225 64 -61 minecraft:coarse_dirt
+setblock -226 64 -59 minecraft:gravel
+fill -226 64 -58 -225 64 -58 minecraft:coarse_dirt
+setblock -226 64 -56 minecraft:gravel
+fill -226 64 -55 -225 64 -55 minecraft:coarse_dirt
+setblock -226 64 -53 minecraft:gravel
+fill -226 64 -52 -225 64 -52 minecraft:coarse_dirt
+setblock -226 64 -50 minecraft:gravel
+fill -226 64 -49 -225 64 -49 minecraft:coarse_dirt
+fill -225 64 -62 -224 64 -62 minecraft:coarse_dirt
+setblock -225 64 -60 minecraft:gravel
+fill -225 64 -59 -224 64 -59 minecraft:coarse_dirt
+setblock -225 64 -57 minecraft:gravel
+fill -225 64 -56 -224 64 -56 minecraft:coarse_dirt
+setblock -225 64 -54 minecraft:gravel
+fill -225 64 -53 -224 64 -53 minecraft:coarse_dirt
+setblock -225 64 -51 minecraft:gravel
+fill -225 64 -50 -224 64 -50 minecraft:coarse_dirt
+setblock -225 64 -48 minecraft:gravel
+setblock -224 64 -61 minecraft:gravel
+fill -224 64 -60 -223 64 -60 minecraft:coarse_dirt
+setblock -224 64 -58 minecraft:gravel
+fill -224 64 -57 -223 64 -57 minecraft:coarse_dirt
+setblock -224 64 -55 minecraft:gravel
+fill -224 64 -54 -223 64 -54 minecraft:coarse_dirt
+setblock -224 64 -52 minecraft:gravel
+fill -224 64 -51 -223 64 -51 minecraft:coarse_dirt
+setblock -224 64 -49 minecraft:gravel
+fill -224 64 -48 -223 64 -48 minecraft:coarse_dirt
+setblock -223 64 -62 minecraft:gravel
+fill -223 64 -61 -222 64 -61 minecraft:coarse_dirt
+setblock -223 64 -59 minecraft:gravel
+fill -223 64 -58 -222 64 -58 minecraft:coarse_dirt
+setblock -223 64 -56 minecraft:gravel
+fill -223 64 -55 -222 64 -55 minecraft:coarse_dirt
+setblock -223 64 -53 minecraft:gravel
+fill -223 64 -52 -222 64 -52 minecraft:coarse_dirt
+setblock -223 64 -50 minecraft:gravel
+fill -223 64 -49 -222 64 -49 minecraft:coarse_dirt
+fill -222 64 -65 -220 64 -65 minecraft:packed_mud
+fill -222 64 -64 -220 64 -63 minecraft:gravel
+setblock -222 64 -62 minecraft:coarse_dirt
+setblock -222 64 -60 minecraft:gravel
+fill -222 64 -59 -221 64 -59 minecraft:coarse_dirt
+setblock -222 64 -57 minecraft:gravel
+fill -222 64 -56 -221 64 -56 minecraft:coarse_dirt
+setblock -222 64 -54 minecraft:gravel
+fill -222 64 -53 -221 64 -53 minecraft:coarse_dirt
+setblock -222 64 -51 minecraft:gravel
+fill -222 64 -50 -221 64 -50 minecraft:coarse_dirt
+fill -222 64 -48 -220 64 -46 minecraft:gravel
+fill -222 64 -45 -220 64 -45 minecraft:packed_mud
+fill -221 64 -62 -220 64 -62 minecraft:gravel
+setblock -221 64 -61 minecraft:gravel
+fill -221 64 -60 -220 64 -60 minecraft:coarse_dirt
+setblock -221 64 -58 minecraft:gravel
+fill -221 64 -57 -220 64 -57 minecraft:coarse_dirt
+setblock -221 64 -55 minecraft:gravel
+fill -221 64 -54 -220 64 -54 minecraft:coarse_dirt
+setblock -221 64 -52 minecraft:gravel
+fill -221 64 -51 -220 64 -51 minecraft:coarse_dirt
+setblock -221 64 -49 minecraft:gravel
+setblock -220 64 -61 minecraft:coarse_dirt
+setblock -220 64 -59 minecraft:gravel
+fill -220 64 -58 -219 64 -58 minecraft:coarse_dirt
+setblock -220 64 -56 minecraft:gravel
+fill -220 64 -55 -219 64 -55 minecraft:coarse_dirt
+setblock -220 64 -53 minecraft:gravel
+fill -220 64 -52 -219 64 -52 minecraft:coarse_dirt
+setblock -220 64 -50 minecraft:gravel
+setblock -220 64 -49 minecraft:coarse_dirt
+setblock -219 64 -60 minecraft:gravel
+setblock -219 64 -59 minecraft:coarse_dirt
+setblock -219 64 -57 minecraft:gravel
+fill -219 64 -56 -218 64 -56 minecraft:coarse_dirt
+setblock -219 64 -54 minecraft:gravel
+fill -219 64 -53 -218 64 -53 minecraft:coarse_dirt
+setblock -219 64 -51 minecraft:gravel
+setblock -219 64 -50 minecraft:coarse_dirt
+setblock -218 64 -58 minecraft:gravel
+setblock -218 64 -57 minecraft:coarse_dirt
+fill -218 64 -55 -216 64 -55 minecraft:gravel
+setblock -218 64 -54 minecraft:coarse_dirt
+setblock -218 64 -52 minecraft:gravel
+fill -217 64 -56 -216 64 -56 minecraft:gravel
+fill -217 64 -54 -216 64 -54 minecraft:gravel
+fill -215 64 -56 -215 64 -54 minecraft:packed_mud
+fill -214 64 -56 -211 64 -54 minecraft:gravel
+fill -211 64 -73 -203 64 -67 minecraft:spruce_planks
+fill -211 64 -43 -203 64 -37 minecraft:spruce_planks
+fill -210 64 -56 -210 64 -54 minecraft:packed_mud
+fill -209 64 -56 -206 64 -56 minecraft:gravel
+fill -209 64 -55 -209 64 -54 minecraft:gravel
+fill -208 64 -66 -206 64 -66 minecraft:gravel
+fill -208 64 -65 -206 64 -65 minecraft:packed_mud
+fill -208 64 -64 -206 64 -61 minecraft:gravel
+fill -208 64 -60 -206 64 -60 minecraft:packed_mud
+fill -208 64 -59 -206 64 -57 minecraft:gravel
+fill -208 64 -55 -205 64 -55 minecraft:packed_mud
 fill -208 64 -54 -206 64 -51 minecraft:gravel
 fill -208 64 -50 -206 64 -50 minecraft:packed_mud
 fill -208 64 -49 -206 64 -46 minecraft:gravel
@@ -42,160 +199,3 @@ fill -227 65 -57 -226 65 -57 minecraft:air
 setblock -227 65 -55 minecraft:bone_block[axis=z]
 fill -227 65 -52 -218 65 -52 minecraft:air
 setblock -227 65 -51 minecraft:skeleton_skull
-fill -226 65 -60 -219 65 -60 minecraft:air
-fill -226 65 -58 -222 65 -58 minecraft:air
-fill -226 65 -55 -220 65 -55 minecraft:air
-setblock -226 65 -53 minecraft:skeleton_skull
-fill -226 65 -51 -219 65 -51 minecraft:air
-fill -226 65 -49 -220 65 -49 minecraft:air
-setblock -225 65 -57 minecraft:cobweb
-fill -225 65 -53 -222 65 -53 minecraft:air
-setblock -224 65 -57 minecraft:air
-setblock -223 65 -64 minecraft:spruce_log
-setblock -223 65 -57 minecraft:cobweb
-fill -222 65 -65 -222 65 -63 minecraft:air
-fill -222 65 -57 -218 65 -57 minecraft:air
-fill -222 65 -47 -222 65 -45 minecraft:air
-fill -221 65 -65 -221 65 -62 minecraft:rail[shape=north_south]
-setblock -221 65 -58 minecraft:hay_block
-setblock -221 65 -53 minecraft:cobweb
-fill -221 65 -48 -221 65 -45 minecraft:rail[shape=north_south]
-fill -220 65 -65 -220 65 -62 minecraft:air
-setblock -220 65 -58 minecraft:bone_block[axis=x]
-setblock -220 65 -54 minecraft:skeleton_skull
-fill -220 65 -53 -218 65 -53 minecraft:air
-fill -220 65 -48 -220 65 -45 minecraft:air
-setblock -219 65 -64 minecraft:spruce_log
-fill -219 65 -58 -218 65 -58 minecraft:air
-setblock -219 65 -55 minecraft:skeleton_skull
-fill -219 65 -54 -208 65 -54 minecraft:air
-setblock -219 65 -48 minecraft:spruce_log
-setblock -218 65 -55 minecraft:air
-fill -217 65 -55 -209 65 -55 minecraft:rail[shape=east_west]
-setblock -216 65 -57 minecraft:spruce_log
-setblock -216 65 -53 minecraft:spruce_log
-setblock -212 65 -57 minecraft:spruce_log
-setblock -212 65 -53 minecraft:spruce_log
-setblock -211 65 -73 minecraft:spruce_log
-fill -211 65 -72 -211 65 -68 minecraft:air
-setblock -211 65 -67 minecraft:spruce_log
-setblock -211 65 -43 minecraft:spruce_log
-fill -211 65 -42 -205 65 -39 minecraft:air
-setblock -211 65 -38 minecraft:air
-setblock -211 65 -37 minecraft:spruce_log
-fill -210 65 -73 -204 65 -73 minecraft:air
-fill -210 65 -72 -204 65 -72 minecraft:barrel[facing=south]
-fill -210 65 -71 -203 65 -71 minecraft:air
-fill -210 65 -70 -210 65 -67 minecraft:air
-fill -210 65 -43 -204 65 -43 minecraft:air
-setblock -210 65 -38 minecraft:brown_bed[facing=south,part=foot]
-setblock -210 65 -37 minecraft:brown_bed[facing=south,part=head]
-fill -209 65 -70 -208 65 -70 minecraft:tnt
-fill -209 65 -69 -203 65 -68 minecraft:air
-fill -209 65 -67 -204 65 -67 minecraft:air
-setblock -209 65 -64 minecraft:spruce_log
-setblock -209 65 -60 minecraft:spruce_log
-setblock -209 65 -56 minecraft:spruce_log
-setblock -209 65 -52 minecraft:spruce_log
-setblock -209 65 -48 minecraft:spruce_log
-setblock -209 65 -44 minecraft:spruce_log
-fill -209 65 -38 -209 65 -37 minecraft:air
-fill -208 65 -66 -208 65 -55 minecraft:air
-fill -208 65 -53 -208 65 -44 minecraft:air
-setblock -208 65 -38 minecraft:brown_bed[facing=south,part=foot]
-setblock -208 65 -37 minecraft:brown_bed[facing=south,part=head]
-fill -207 65 -70 -203 65 -70 minecraft:air
-fill -207 65 -66 -207 65 -44 minecraft:rail[shape=north_south]
-fill -207 65 -38 -206 65 -37 minecraft:air
-fill -206 65 -66 -206 65 -44 minecraft:air
-setblock -205 65 -64 minecraft:spruce_log
-setblock -205 65 -60 minecraft:spruce_log
-setblock -205 65 -56 minecraft:spruce_log
-fill -205 65 -55 -193 65 -55 minecraft:rail[shape=east_west]
-fill -205 65 -54 -190 65 -54 minecraft:air
-setblock -205 65 -52 minecraft:spruce_log
-setblock -205 65 -48 minecraft:spruce_log
-setblock -205 65 -44 minecraft:spruce_log
-setblock -205 65 -38 minecraft:chest[facing=north]
-fill -205 65 -37 -204 65 -37 minecraft:air
-setblock -204 65 -57 minecraft:spruce_log
-fill -204 65 -56 -190 65 -56 minecraft:air
-setblock -204 65 -53 minecraft:spruce_log
-setblock -204 65 -42 minecraft:crafting_table
-fill -204 65 -41 -203 65 -38 minecraft:air
-setblock -203 65 -73 minecraft:spruce_log
-setblock -203 65 -72 minecraft:air
-setblock -203 65 -67 minecraft:spruce_log
-setblock -203 65 -43 minecraft:spruce_log
-setblock -203 65 -42 minecraft:air
-setblock -203 65 -37 minecraft:spruce_log
-setblock -200 65 -57 minecraft:spruce_log
-setblock -200 65 -53 minecraft:spruce_log
-setblock -196 65 -57 minecraft:spruce_log
-setblock -196 65 -53 minecraft:spruce_log
-setblock -193 65 -57 minecraft:gold_ore
-setblock -192 65 -57 minecraft:spruce_log
-fill -192 65 -55 -190 65 -55 minecraft:air
-setblock -192 65 -53 minecraft:spruce_log
-fill -191 65 -57 -190 65 -57 minecraft:air
-fill -191 65 -53 -190 65 -53 minecraft:air
-fill -232 66 -58 -218 66 -52 minecraft:air
-fill -231 66 -60 -219 66 -59 minecraft:air
-fill -231 66 -51 -219 66 -50 minecraft:air
-fill -230 66 -61 -220 66 -61 minecraft:air
-fill -230 66 -49 -220 66 -49 minecraft:air
-fill -228 66 -62 -220 66 -62 minecraft:air
-fill -228 66 -48 -220 66 -48 minecraft:air
-setblock -223 66 -64 minecraft:spruce_log
-fill -222 66 -65 -220 66 -63 minecraft:air
-fill -222 66 -47 -220 66 -45 minecraft:air
-setblock -219 66 -64 minecraft:spruce_log
-setblock -219 66 -48 minecraft:spruce_log
-fill -217 66 -56 -210 66 -54 minecraft:air
-setblock -216 66 -57 minecraft:spruce_log
-setblock -216 66 -53 minecraft:spruce_log
-setblock -212 66 -57 minecraft:spruce_log
-setblock -212 66 -53 minecraft:spruce_log
-setblock -211 66 -73 minecraft:spruce_log
-fill -211 66 -72 -211 66 -68 minecraft:air
-setblock -211 66 -67 minecraft:spruce_log
-setblock -211 66 -43 minecraft:spruce_log
-fill -211 66 -42 -203 66 -38 minecraft:air
-setblock -211 66 -37 minecraft:spruce_log
-fill -210 66 -73 -204 66 -73 minecraft:air
-fill -210 66 -72 -204 66 -72 minecraft:barrel[facing=south]
-fill -210 66 -71 -203 66 -68 minecraft:air
-fill -210 66 -67 -204 66 -67 minecraft:air
-fill -210 66 -43 -204 66 -43 minecraft:air
-fill -210 66 -37 -204 66 -37 minecraft:air
-setblock -209 66 -64 minecraft:spruce_log
-setblock -209 66 -60 minecraft:spruce_log
-setblock -209 66 -56 minecraft:spruce_log
-fill -209 66 -55 -190 66 -54 minecraft:air
-setblock -209 66 -52 minecraft:spruce_log
-setblock -209 66 -48 minecraft:spruce_log
-setblock -209 66 -47 minecraft:iron_ore
-setblock -209 66 -44 minecraft:spruce_log
-fill -208 66 -66 -206 66 -56 minecraft:air
-fill -208 66 -53 -206 66 -44 minecraft:air
-setblock -205 66 -64 minecraft:spruce_log
-setblock -205 66 -60 minecraft:spruce_log
-setblock -205 66 -56 minecraft:spruce_log
-setblock -205 66 -52 minecraft:spruce_log
-setblock -205 66 -48 minecraft:spruce_log
-setblock -205 66 -44 minecraft:spruce_log
-setblock -204 66 -57 minecraft:spruce_log
-fill -204 66 -56 -190 66 -56 minecraft:air
-setblock -204 66 -53 minecraft:spruce_log
-setblock -203 66 -73 minecraft:spruce_log
-setblock -203 66 -72 minecraft:air
-setblock -203 66 -67 minecraft:spruce_log
-setblock -203 66 -43 minecraft:spruce_log
-setblock -203 66 -37 minecraft:spruce_log
-setblock -200 66 -57 minecraft:spruce_log
-setblock -200 66 -53 minecraft:spruce_log
-setblock -197 66 -53 minecraft:iron_ore
-setblock -196 66 -57 minecraft:spruce_log
-setblock -196 66 -53 minecraft:spruce_log
-setblock -194 66 -53 minecraft:coal_ore
-setblock -192 66 -57 minecraft:spruce_log

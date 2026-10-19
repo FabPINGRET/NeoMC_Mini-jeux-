@@ -371,8 +371,8 @@ for z in (12, 15, 20, 23):
 setb(12, G + 1, 11, 'brewing_stand')
 setb(13, G + 1, 11, 'cauldron')
 # maisons des colons (sud-ouest) + portail du temps
-for (x1, z1) in [(-25, 20), (-25, 7)]:
-    building(x1, z1, x1 + 8, z1 + 5, 4, 'birch_planks', 'spruce_planks', 'dark_oak_slab', 'stripped_birch_log', ('e', z1 + 2, 1))
+for (x1, z1, dz_door) in [(-25, 20, 2), (-25, 7, 4)]:                          # maison 2 : porte à z=11, hors du four de la forge (z 8..10)
+    building(x1, z1, x1 + 8, z1 + 5, 4, 'birch_planks', 'spruce_planks', 'dark_oak_slab', 'stripped_birch_log', ('e', z1 + dz_door, 1))
     setb(x1 + 6, G + 1, z1 + 1, 'barrel[facing=up]')
     setb(x1 + 1, G + 1, z1 + 4, 'crafting_table')
 ex, ez = EXITA
@@ -763,7 +763,7 @@ SU = ['# Session (dans la dimension) : panneaux, présentoirs, tableau, marqueur
       tdisp(0.5, 75.6, WALL + 0.5, {'text': '🚪 PORTE SUD', 'color': 'yellow', 'bold': True}, 1.5),
       f'summon minecraft:text_display 8.4 67.4 -22.5 {{Tags:["mg.tv"],Rotation:[90f,0f],text:{js([{"text": "📋 MISSIONS\n", "color": "gold", "bold": True}, {"text": "clic droit sur le tableau", "color": "gray", "bold": False}])},background:-1442840576,{TR % (0, 0, 0, 1.2, 1.2, 1.2)}}}',
       'summon minecraft:interaction 8.8 65 -22.5 {Tags:["mg.tv","mg.tvboard"],width:2.6f,height:3.2f,response:1b}',
-      'summon minecraft:villager -15.5 65 -23.5 {Tags:["mg.tv"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[0f,0f],'
+      'summon minecraft:villager -15.5 65 -22.5 {Tags:["mg.tv"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[0f,0f],'
       'VillagerData:{profession:"minecraft:weaponsmith",level:5,type:"minecraft:jungle"},Offers:{Recipes:[]},'
       f'CustomName:{js({"text": "🛒 Intendant", "color": "gold"})},CustomNameVisible:1b}}',
       'summon minecraft:villager 20.5 65 17.5 {Tags:["mg.tv"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,Rotation:[90f,0f],'

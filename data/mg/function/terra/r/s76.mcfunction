@@ -1,4 +1,13 @@
 # Construction des régions de Terra Nova, étape 76/436 (dimension mg:terranova, générée)
+fill 63 101 -183 65 101 -183 minecraft:mangrove_leaves[persistent=true]
+fill 63 101 -181 65 101 -181 minecraft:mangrove_leaves[persistent=true]
+setblock 63 101 -180 minecraft:mangrove_leaves[persistent=true]
+fill 63 101 -179 69 101 -178 minecraft:air
+fill 64 101 -188 69 101 -188 minecraft:air
+fill 64 101 -187 64 101 -186 minecraft:air
+fill 64 101 -185 66 101 -184 minecraft:mangrove_leaves[persistent=true]
+fill 64 101 -180 69 101 -180 minecraft:air
+fill 65 101 -187 65 101 -186 minecraft:mangrove_leaves[persistent=true]
 fill 66 101 -187 69 101 -187 minecraft:air
 setblock 66 101 -186 minecraft:mangrove_leaves[persistent=true]
 fill 66 101 -183 69 101 -183 minecraft:air
@@ -38,26 +47,29 @@ fill 50 102 -175 51 102 -173 minecraft:air
 fill 50 102 -171 55 102 -171 minecraft:mangrove_leaves[persistent=true]
 fill 50 102 -170 50 102 -164 minecraft:air
 fill 51 102 -186 56 102 -186 minecraft:mangrove_leaves[persistent=true]
-fill 51 102 -180 52 102 -176 minecraft:hay_block
+fill 51 102 -180 52 102 -180 minecraft:hay_block
+fill 51 102 -179 51 102 -176 minecraft:hay_block
 fill 51 102 -170 59 102 -170 minecraft:mangrove_leaves[persistent=true]
 fill 51 102 -169 54 102 -164 minecraft:air
 fill 52 102 -181 58 102 -181 minecraft:hay_block
-fill 52 102 -175 58 102 -175 minecraft:hay_block
+fill 52 102 -179 53 102 -178 minecraft:air
+fill 52 102 -177 52 102 -175 minecraft:hay_block
 fill 52 102 -174 52 102 -173 minecraft:air
 fill 53 102 -182 57 102 -182 minecraft:hay_block
 setblock 53 102 -180 minecraft:air
-fill 53 102 -179 55 102 -179 minecraft:moss_carpet
-fill 53 102 -178 54 102 -177 minecraft:moss_carpet
+fill 53 102 -177 57 102 -177 minecraft:moss_carpet
 setblock 53 102 -176 minecraft:air
+fill 53 102 -175 58 102 -175 minecraft:hay_block
 fill 53 102 -174 57 102 -174 minecraft:hay_block
 fill 53 102 -173 60 102 -173 minecraft:air
 setblock 54 102 -184 minecraft:air
 fill 54 102 -180 56 102 -180 minecraft:moss_carpet
+fill 54 102 -179 55 102 -179 minecraft:moss_carpet
+setblock 54 102 -178 minecraft:moss_carpet
 fill 54 102 -176 56 102 -176 minecraft:moss_carpet
 setblock 55 102 -187 minecraft:mangrove_leaves[persistent=true]
 fill 55 102 -184 60 102 -184 minecraft:mangrove_leaves[persistent=true]
 setblock 55 102 -178 minecraft:sniffer_egg
-fill 55 102 -177 57 102 -177 minecraft:moss_carpet
 setblock 55 102 -169 minecraft:mangrove_leaves[persistent=true]
 fill 55 102 -168 69 102 -164 minecraft:air
 fill 56 102 -187 69 102 -187 minecraft:air
@@ -187,15 +199,3 @@ fill 48 104 -185 54 104 -185 minecraft:mangrove_leaves[persistent=true]
 fill 48 104 -174 49 104 -173 minecraft:mangrove_leaves[persistent=true]
 fill 48 104 -171 61 104 -171 minecraft:mangrove_leaves[persistent=true]
 fill 48 104 -170 48 104 -164 minecraft:air
-fill 49 104 -186 61 104 -186 minecraft:mangrove_leaves[persistent=true]
-fill 49 104 -170 61 104 -170 minecraft:mangrove_leaves[persistent=true]
-fill 49 104 -169 50 104 -164 minecraft:air
-fill 50 104 -183 60 104 -173 minecraft:air
-setblock 50 104 -172 minecraft:air
-fill 51 104 -187 52 104 -187 minecraft:mangrove_leaves[persistent=true]
-fill 51 104 -172 52 104 -172 minecraft:mangrove_leaves[persistent=true]
-fill 51 104 -169 59 104 -169 minecraft:mangrove_leaves[persistent=true]
-fill 51 104 -168 54 104 -164 minecraft:air
-setblock 53 104 -187 minecraft:air
-setblock 53 104 -172 minecraft:air
-fill 54 104 -187 59 104 -187 minecraft:mangrove_leaves[persistent=true]

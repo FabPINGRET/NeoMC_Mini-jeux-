@@ -1,4 +1,10 @@
 # Construction des régions de Terra Nova, étape 70/436 (dimension mg:terranova, générée)
+setblock 51 86 -180 minecraft:mangrove_wood
+fill 51 86 -179 51 86 -177 minecraft:mangrove_log[axis=y]
+setblock 51 86 -176 minecraft:mangrove_wood
+fill 51 86 -175 51 86 -164 minecraft:air
+setblock 52 86 -181 minecraft:mangrove_wood
+setblock 52 86 -180 minecraft:mangrove_log[axis=y]
 fill 52 86 -179 53 86 -179 minecraft:mangrove_slab[type=top]
 fill 52 86 -178 54 86 -177 minecraft:air
 fill 52 86 -176 52 86 -175 minecraft:mangrove_log[axis=y]
@@ -43,7 +49,7 @@ setblock 51 87 -176 minecraft:mangrove_wood
 fill 51 87 -175 51 87 -164 minecraft:air
 setblock 52 87 -181 minecraft:mangrove_wood
 setblock 52 87 -180 minecraft:mangrove_log[axis=y]
-fill 52 87 -179 54 87 -177 minecraft:mangrove_planks
+fill 52 87 -179 53 87 -177 minecraft:air
 fill 52 87 -176 52 87 -175 minecraft:mangrove_log[axis=y]
 fill 52 87 -174 52 87 -164 minecraft:air
 setblock 53 87 -182 minecraft:mangrove_wood
@@ -55,6 +61,7 @@ setblock 53 87 -174 minecraft:mangrove_wood
 fill 53 87 -173 69 87 -164 minecraft:air
 fill 54 87 -182 56 87 -182 minecraft:mangrove_log[axis=y]
 setblock 54 87 -181 minecraft:mangrove_planks
+fill 54 87 -179 54 87 -177 minecraft:mangrove_planks
 setblock 54 87 -175 minecraft:mangrove_planks
 fill 54 87 -174 56 87 -174 minecraft:mangrove_log[axis=y]
 fill 55 87 -181 56 87 -179 minecraft:air
@@ -192,10 +199,3 @@ fill 52 90 -178 52 90 -177 minecraft:air
 setblock 52 90 -175 minecraft:mangrove_log[axis=y]
 fill 52 90 -174 52 90 -164 minecraft:air
 fill 53 90 -182 55 90 -182 minecraft:mangrove_log[axis=y]
-fill 53 90 -180 55 90 -180 minecraft:air
-setblock 53 90 -178 minecraft:lantern[hanging=true]
-fill 53 90 -177 58 90 -177 minecraft:air
-fill 53 90 -176 57 90 -176 minecraft:air
-setblock 53 90 -175 minecraft:mangrove_wood
-fill 53 90 -174 55 90 -174 minecraft:mangrove_log[axis=y]
-fill 53 90 -173 69 90 -164 minecraft:air

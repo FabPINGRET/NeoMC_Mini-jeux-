@@ -1,4 +1,161 @@
 # Construction des régions de Terra Nova, étape 326/436 (dimension mg:terranova, générée)
+fill -226 65 -60 -219 65 -60 minecraft:air
+fill -226 65 -58 -222 65 -58 minecraft:air
+fill -226 65 -55 -220 65 -55 minecraft:air
+setblock -226 65 -53 minecraft:skeleton_skull
+fill -226 65 -51 -219 65 -51 minecraft:air
+fill -226 65 -49 -220 65 -49 minecraft:air
+setblock -225 65 -57 minecraft:cobweb
+fill -225 65 -53 -222 65 -53 minecraft:air
+setblock -224 65 -57 minecraft:air
+setblock -223 65 -64 minecraft:spruce_log
+setblock -223 65 -57 minecraft:cobweb
+fill -222 65 -65 -222 65 -63 minecraft:air
+fill -222 65 -57 -218 65 -57 minecraft:air
+fill -222 65 -47 -222 65 -45 minecraft:air
+fill -221 65 -65 -221 65 -62 minecraft:rail[shape=north_south]
+setblock -221 65 -58 minecraft:hay_block
+setblock -221 65 -53 minecraft:cobweb
+fill -221 65 -48 -221 65 -45 minecraft:rail[shape=north_south]
+fill -220 65 -65 -220 65 -62 minecraft:air
+setblock -220 65 -58 minecraft:bone_block[axis=x]
+setblock -220 65 -54 minecraft:skeleton_skull
+fill -220 65 -53 -218 65 -53 minecraft:air
+fill -220 65 -48 -220 65 -45 minecraft:air
+setblock -219 65 -64 minecraft:spruce_log
+fill -219 65 -58 -218 65 -58 minecraft:air
+setblock -219 65 -55 minecraft:skeleton_skull
+fill -219 65 -54 -208 65 -54 minecraft:air
+setblock -219 65 -48 minecraft:spruce_log
+setblock -218 65 -55 minecraft:air
+fill -217 65 -55 -209 65 -55 minecraft:rail[shape=east_west]
+setblock -216 65 -57 minecraft:spruce_log
+setblock -216 65 -53 minecraft:spruce_log
+setblock -212 65 -57 minecraft:spruce_log
+setblock -212 65 -53 minecraft:spruce_log
+setblock -211 65 -73 minecraft:spruce_log
+fill -211 65 -72 -211 65 -68 minecraft:air
+setblock -211 65 -67 minecraft:spruce_log
+setblock -211 65 -43 minecraft:spruce_log
+fill -211 65 -42 -205 65 -39 minecraft:air
+setblock -211 65 -38 minecraft:air
+setblock -211 65 -37 minecraft:spruce_log
+fill -210 65 -73 -204 65 -73 minecraft:air
+fill -210 65 -72 -204 65 -72 minecraft:barrel[facing=south]
+fill -210 65 -71 -203 65 -71 minecraft:air
+fill -210 65 -70 -210 65 -67 minecraft:air
+fill -210 65 -43 -204 65 -43 minecraft:air
+setblock -210 65 -38 minecraft:brown_bed[facing=south,part=foot]
+setblock -210 65 -37 minecraft:brown_bed[facing=south,part=head]
+fill -209 65 -70 -208 65 -70 minecraft:tnt
+fill -209 65 -69 -203 65 -68 minecraft:air
+fill -209 65 -67 -204 65 -67 minecraft:air
+setblock -209 65 -64 minecraft:spruce_log
+setblock -209 65 -60 minecraft:spruce_log
+setblock -209 65 -56 minecraft:spruce_log
+setblock -209 65 -52 minecraft:spruce_log
+setblock -209 65 -48 minecraft:spruce_log
+setblock -209 65 -44 minecraft:spruce_log
+fill -209 65 -38 -209 65 -37 minecraft:air
+fill -208 65 -66 -208 65 -55 minecraft:air
+fill -208 65 -53 -208 65 -44 minecraft:air
+setblock -208 65 -38 minecraft:brown_bed[facing=south,part=foot]
+setblock -208 65 -37 minecraft:brown_bed[facing=south,part=head]
+fill -207 65 -70 -203 65 -70 minecraft:air
+fill -207 65 -66 -207 65 -44 minecraft:rail[shape=north_south]
+fill -207 65 -38 -206 65 -37 minecraft:air
+fill -206 65 -66 -206 65 -44 minecraft:air
+setblock -205 65 -64 minecraft:spruce_log
+setblock -205 65 -60 minecraft:spruce_log
+setblock -205 65 -56 minecraft:spruce_log
+fill -205 65 -55 -193 65 -55 minecraft:rail[shape=east_west]
+fill -205 65 -54 -190 65 -54 minecraft:air
+setblock -205 65 -52 minecraft:spruce_log
+setblock -205 65 -48 minecraft:spruce_log
+setblock -205 65 -44 minecraft:spruce_log
+setblock -205 65 -38 minecraft:chest[facing=north]
+fill -205 65 -37 -204 65 -37 minecraft:air
+setblock -204 65 -57 minecraft:spruce_log
+fill -204 65 -56 -190 65 -56 minecraft:air
+setblock -204 65 -53 minecraft:spruce_log
+setblock -204 65 -42 minecraft:crafting_table
+fill -204 65 -41 -203 65 -38 minecraft:air
+setblock -203 65 -73 minecraft:spruce_log
+setblock -203 65 -72 minecraft:air
+setblock -203 65 -67 minecraft:spruce_log
+setblock -203 65 -43 minecraft:spruce_log
+setblock -203 65 -42 minecraft:air
+setblock -203 65 -37 minecraft:spruce_log
+setblock -200 65 -57 minecraft:spruce_log
+setblock -200 65 -53 minecraft:spruce_log
+setblock -196 65 -57 minecraft:spruce_log
+setblock -196 65 -53 minecraft:spruce_log
+setblock -193 65 -57 minecraft:gold_ore
+setblock -192 65 -57 minecraft:spruce_log
+fill -192 65 -55 -190 65 -55 minecraft:air
+setblock -192 65 -53 minecraft:spruce_log
+fill -191 65 -57 -190 65 -57 minecraft:air
+fill -191 65 -53 -190 65 -53 minecraft:air
+fill -232 66 -58 -218 66 -52 minecraft:air
+fill -231 66 -60 -219 66 -59 minecraft:air
+fill -231 66 -51 -219 66 -50 minecraft:air
+fill -230 66 -61 -220 66 -61 minecraft:air
+fill -230 66 -49 -220 66 -49 minecraft:air
+fill -228 66 -62 -220 66 -62 minecraft:air
+fill -228 66 -48 -220 66 -48 minecraft:air
+setblock -223 66 -64 minecraft:spruce_log
+fill -222 66 -65 -220 66 -63 minecraft:air
+fill -222 66 -47 -220 66 -45 minecraft:air
+setblock -219 66 -64 minecraft:spruce_log
+setblock -219 66 -48 minecraft:spruce_log
+fill -217 66 -56 -210 66 -54 minecraft:air
+setblock -216 66 -57 minecraft:spruce_log
+setblock -216 66 -53 minecraft:spruce_log
+setblock -212 66 -57 minecraft:spruce_log
+setblock -212 66 -53 minecraft:spruce_log
+setblock -211 66 -73 minecraft:spruce_log
+fill -211 66 -72 -211 66 -68 minecraft:air
+setblock -211 66 -67 minecraft:spruce_log
+setblock -211 66 -43 minecraft:spruce_log
+fill -211 66 -42 -203 66 -38 minecraft:air
+setblock -211 66 -37 minecraft:spruce_log
+fill -210 66 -73 -204 66 -73 minecraft:air
+fill -210 66 -72 -204 66 -72 minecraft:barrel[facing=south]
+fill -210 66 -71 -203 66 -68 minecraft:air
+fill -210 66 -67 -204 66 -67 minecraft:air
+fill -210 66 -43 -204 66 -43 minecraft:air
+fill -210 66 -37 -204 66 -37 minecraft:air
+setblock -209 66 -64 minecraft:spruce_log
+setblock -209 66 -60 minecraft:spruce_log
+setblock -209 66 -56 minecraft:spruce_log
+fill -209 66 -55 -190 66 -54 minecraft:air
+setblock -209 66 -52 minecraft:spruce_log
+setblock -209 66 -48 minecraft:spruce_log
+setblock -209 66 -47 minecraft:iron_ore
+setblock -209 66 -44 minecraft:spruce_log
+fill -208 66 -66 -206 66 -56 minecraft:air
+fill -208 66 -53 -206 66 -44 minecraft:air
+setblock -205 66 -64 minecraft:spruce_log
+setblock -205 66 -60 minecraft:spruce_log
+setblock -205 66 -56 minecraft:spruce_log
+setblock -205 66 -52 minecraft:spruce_log
+setblock -205 66 -48 minecraft:spruce_log
+setblock -205 66 -44 minecraft:spruce_log
+setblock -204 66 -57 minecraft:spruce_log
+fill -204 66 -56 -190 66 -56 minecraft:air
+setblock -204 66 -53 minecraft:spruce_log
+setblock -203 66 -73 minecraft:spruce_log
+setblock -203 66 -72 minecraft:air
+setblock -203 66 -67 minecraft:spruce_log
+setblock -203 66 -43 minecraft:spruce_log
+setblock -203 66 -37 minecraft:spruce_log
+setblock -200 66 -57 minecraft:spruce_log
+setblock -200 66 -53 minecraft:spruce_log
+setblock -197 66 -53 minecraft:iron_ore
+setblock -196 66 -57 minecraft:spruce_log
+setblock -196 66 -53 minecraft:spruce_log
+setblock -194 66 -53 minecraft:coal_ore
+setblock -192 66 -57 minecraft:spruce_log
 setblock -192 66 -53 minecraft:spruce_log
 fill -191 66 -57 -190 66 -57 minecraft:air
 fill -191 66 -53 -190 66 -53 minecraft:air
@@ -42,160 +199,3 @@ setblock -205 67 -64 minecraft:spruce_log
 setblock -205 67 -60 minecraft:spruce_log
 setblock -205 67 -56 minecraft:spruce_log
 setblock -205 67 -52 minecraft:spruce_log
-setblock -205 67 -48 minecraft:spruce_log
-setblock -205 67 -44 minecraft:spruce_log
-setblock -204 67 -57 minecraft:spruce_log
-fill -204 67 -56 -190 67 -56 minecraft:air
-setblock -204 67 -53 minecraft:spruce_log
-setblock -203 67 -73 minecraft:spruce_log
-setblock -203 67 -67 minecraft:spruce_log
-setblock -203 67 -43 minecraft:spruce_log
-setblock -203 67 -37 minecraft:spruce_log
-setblock -200 67 -57 minecraft:spruce_log
-setblock -200 67 -53 minecraft:spruce_log
-setblock -196 67 -57 minecraft:spruce_log
-setblock -196 67 -53 minecraft:spruce_log
-setblock -192 67 -57 minecraft:spruce_log
-setblock -192 67 -53 minecraft:spruce_log
-fill -191 67 -57 -190 67 -57 minecraft:air
-fill -191 67 -53 -190 67 -53 minecraft:air
-fill -232 68 -58 -218 68 -52 minecraft:air
-fill -231 68 -60 -219 68 -59 minecraft:air
-fill -231 68 -51 -219 68 -50 minecraft:air
-fill -230 68 -61 -220 68 -61 minecraft:air
-fill -230 68 -49 -220 68 -49 minecraft:air
-fill -228 68 -62 -220 68 -62 minecraft:air
-fill -228 68 -48 -222 68 -48 minecraft:air
-setblock -223 68 -64 minecraft:spruce_log
-fill -222 68 -65 -220 68 -65 minecraft:air
-fill -222 68 -64 -222 68 -63 minecraft:air
-fill -222 68 -47 -220 68 -45 minecraft:air
-setblock -221 68 -64 minecraft:lantern[hanging=true]
-fill -221 68 -63 -220 68 -63 minecraft:air
-setblock -221 68 -48 minecraft:lantern[hanging=true]
-setblock -220 68 -64 minecraft:air
-setblock -220 68 -48 minecraft:air
-setblock -219 68 -64 minecraft:spruce_log
-setblock -219 68 -48 minecraft:spruce_log
-fill -217 68 -56 -210 68 -56 minecraft:air
-fill -217 68 -55 -217 68 -54 minecraft:air
-setblock -216 68 -57 minecraft:spruce_log
-setblock -216 68 -55 minecraft:lantern[hanging=true]
-fill -216 68 -54 -190 68 -54 minecraft:air
-setblock -216 68 -53 minecraft:spruce_log
-fill -215 68 -55 -201 68 -55 minecraft:air
-setblock -212 68 -57 minecraft:spruce_log
-setblock -212 68 -53 minecraft:spruce_log
-setblock -211 68 -73 minecraft:spruce_log
-fill -211 68 -72 -203 68 -68 minecraft:air
-setblock -211 68 -67 minecraft:spruce_log
-setblock -211 68 -43 minecraft:spruce_log
-fill -211 68 -42 -203 68 -38 minecraft:air
-setblock -211 68 -37 minecraft:spruce_log
-fill -210 68 -73 -204 68 -73 minecraft:air
-fill -210 68 -67 -204 68 -67 minecraft:air
-fill -210 68 -43 -204 68 -43 minecraft:air
-fill -210 68 -37 -204 68 -37 minecraft:air
-setblock -209 68 -64 minecraft:spruce_log
-setblock -209 68 -60 minecraft:spruce_log
-setblock -209 68 -56 minecraft:spruce_log
-setblock -209 68 -52 minecraft:spruce_log
-setblock -209 68 -48 minecraft:spruce_log
-setblock -209 68 -44 minecraft:spruce_log
-fill -208 68 -66 -206 68 -65 minecraft:air
-fill -208 68 -64 -208 68 -56 minecraft:air
-fill -208 68 -53 -206 68 -49 minecraft:air
-fill -208 68 -48 -208 68 -44 minecraft:air
-setblock -207 68 -64 minecraft:lantern[hanging=true]
-fill -207 68 -63 -206 68 -57 minecraft:air
-setblock -207 68 -56 minecraft:lantern[hanging=true]
-setblock -207 68 -48 minecraft:lantern[hanging=true]
-fill -207 68 -47 -206 68 -44 minecraft:air
-setblock -206 68 -64 minecraft:air
-setblock -206 68 -56 minecraft:air
-setblock -206 68 -48 minecraft:air
-setblock -205 68 -64 minecraft:spruce_log
-setblock -205 68 -60 minecraft:spruce_log
-setblock -205 68 -56 minecraft:spruce_log
-setblock -205 68 -52 minecraft:spruce_log
-setblock -205 68 -48 minecraft:spruce_log
-setblock -205 68 -44 minecraft:spruce_log
-setblock -204 68 -57 minecraft:spruce_log
-fill -204 68 -56 -190 68 -56 minecraft:air
-setblock -204 68 -53 minecraft:spruce_log
-setblock -203 68 -73 minecraft:spruce_log
-setblock -203 68 -67 minecraft:spruce_log
-setblock -203 68 -43 minecraft:spruce_log
-setblock -203 68 -37 minecraft:spruce_log
-setblock -200 68 -57 minecraft:spruce_log
-setblock -200 68 -55 minecraft:lantern[hanging=true]
-setblock -200 68 -53 minecraft:spruce_log
-fill -199 68 -55 -190 68 -55 minecraft:air
-setblock -196 68 -57 minecraft:spruce_log
-setblock -196 68 -53 minecraft:spruce_log
-setblock -192 68 -57 minecraft:spruce_log
-setblock -192 68 -53 minecraft:spruce_log
-fill -191 68 -57 -190 68 -57 minecraft:air
-fill -191 68 -53 -190 68 -53 minecraft:air
-fill -231 69 -58 -219 69 -52 minecraft:air
-fill -230 69 -59 -220 69 -59 minecraft:air
-fill -230 69 -51 -220 69 -51 minecraft:air
-fill -229 69 -60 -221 69 -60 minecraft:air
-fill -229 69 -50 -221 69 -50 minecraft:air
-fill -228 69 -61 -222 69 -61 minecraft:air
-fill -228 69 -49 -222 69 -49 minecraft:air
-fill -223 69 -64 -219 69 -64 minecraft:spruce_planks
-fill -223 69 -48 -219 69 -48 minecraft:spruce_planks
-fill -220 69 -60 -219 69 -60 minecraft:spruce_planks
-fill -216 69 -57 -216 69 -53 minecraft:spruce_planks
-fill -212 69 -57 -212 69 -53 minecraft:spruce_planks
-setblock -211 69 -73 minecraft:spruce_log
-fill -211 69 -72 -203 69 -68 minecraft:air
-setblock -211 69 -67 minecraft:spruce_log
-setblock -211 69 -43 minecraft:spruce_log
-fill -211 69 -42 -203 69 -38 minecraft:air
-setblock -211 69 -37 minecraft:spruce_log
-fill -210 69 -73 -204 69 -73 minecraft:air
-fill -210 69 -67 -204 69 -67 minecraft:air
-fill -210 69 -43 -204 69 -43 minecraft:air
-fill -210 69 -37 -204 69 -37 minecraft:air
-fill -209 69 -64 -205 69 -64 minecraft:spruce_planks
-fill -209 69 -60 -205 69 -60 minecraft:spruce_planks
-fill -209 69 -56 -204 69 -56 minecraft:spruce_planks
-fill -209 69 -52 -205 69 -52 minecraft:spruce_planks
-fill -209 69 -48 -205 69 -48 minecraft:spruce_planks
-fill -209 69 -44 -205 69 -44 minecraft:spruce_planks
-setblock -208 69 -57 minecraft:spruce_planks
-fill -208 69 -55 -208 69 -53 minecraft:spruce_planks
-setblock -204 69 -57 minecraft:spruce_planks
-fill -204 69 -55 -204 69 -53 minecraft:spruce_planks
-setblock -203 69 -73 minecraft:spruce_log
-setblock -203 69 -67 minecraft:spruce_log
-setblock -203 69 -43 minecraft:spruce_log
-setblock -203 69 -37 minecraft:spruce_log
-fill -200 69 -57 -200 69 -53 minecraft:spruce_planks
-fill -196 69 -57 -196 69 -53 minecraft:spruce_planks
-fill -192 69 -57 -192 69 -53 minecraft:spruce_log[axis=z]
-fill -191 69 -57 -190 69 -53 minecraft:air
-fill -230 70 -58 -220 70 -56 minecraft:air
-fill -230 70 -55 -226 70 -52 minecraft:air
-fill -229 70 -59 -221 70 -59 minecraft:air
-fill -229 70 -51 -221 70 -51 minecraft:air
-fill -228 70 -60 -222 70 -60 minecraft:air
-fill -228 70 -50 -222 70 -50 minecraft:air
-setblock -225 70 -55 minecraft:lantern[hanging=true]
-fill -225 70 -54 -220 70 -52 minecraft:air
-fill -224 70 -55 -220 70 -55 minecraft:air
-setblock -211 70 -73 minecraft:spruce_log
-fill -211 70 -72 -203 70 -71 minecraft:air
-fill -211 70 -70 -208 70 -68 minecraft:air
-setblock -211 70 -67 minecraft:spruce_log
-setblock -211 70 -43 minecraft:spruce_log
-fill -211 70 -42 -203 70 -41 minecraft:air
-fill -211 70 -40 -208 70 -38 minecraft:air
-setblock -211 70 -37 minecraft:spruce_log
-fill -210 70 -73 -204 70 -73 minecraft:air
-fill -210 70 -67 -204 70 -67 minecraft:air
-fill -210 70 -43 -204 70 -43 minecraft:air
-fill -210 70 -37 -204 70 -37 minecraft:air
-setblock -207 70 -70 minecraft:lantern[hanging=true]

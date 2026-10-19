@@ -1,201 +1,201 @@
 # Construction des régions de Terra Nova, étape 307/436 (dimension mg:terranova, générée)
-setblock -195 64 -15 minecraft:packed_mud
-fill -195 64 -14 -195 64 -13 minecraft:coarse_dirt
-fill -195 64 -11 -192 64 -11 minecraft:coarse_dirt
-setblock -195 64 -10 minecraft:packed_mud
-fill -195 64 -9 -195 64 -6 minecraft:coarse_dirt
-setblock -195 64 -5 minecraft:packed_mud
-fill -195 64 -4 -195 64 -1 minecraft:coarse_dirt
-setblock -195 64 0 minecraft:packed_mud
-setblock -195 64 1 minecraft:coarse_dirt
-fill -195 64 9 -192 64 9 minecraft:coarse_dirt
-setblock -195 64 10 minecraft:packed_mud
-fill -195 64 11 -195 64 14 minecraft:coarse_dirt
-setblock -195 64 15 minecraft:packed_mud
-fill -195 64 16 -195 64 19 minecraft:coarse_dirt
-setblock -195 64 20 minecraft:packed_mud
-fill -195 64 21 -195 64 24 minecraft:coarse_dirt
-setblock -195 64 25 minecraft:packed_mud
-fill -194 64 -15 -191 64 -15 minecraft:coarse_dirt
-setblock -194 64 -14 minecraft:packed_mud
-setblock -194 64 -13 minecraft:coarse_dirt
-fill -194 64 -10 -191 64 -10 minecraft:coarse_dirt
-setblock -194 64 -9 minecraft:packed_mud
-fill -194 64 -8 -194 64 -5 minecraft:coarse_dirt
-setblock -194 64 -4 minecraft:packed_mud
-fill -194 64 -3 -194 64 0 minecraft:coarse_dirt
-setblock -194 64 1 minecraft:packed_mud
-fill -194 64 10 -191 64 10 minecraft:coarse_dirt
-setblock -194 64 11 minecraft:packed_mud
-fill -194 64 12 -194 64 15 minecraft:coarse_dirt
-setblock -194 64 16 minecraft:packed_mud
-fill -194 64 17 -194 64 20 minecraft:coarse_dirt
-setblock -194 64 21 minecraft:packed_mud
-fill -194 64 22 -194 64 25 minecraft:coarse_dirt
-setblock -194 64 26 minecraft:packed_mud
-setblock -193 64 -18 minecraft:packed_mud
-fill -193 64 -14 -190 64 -14 minecraft:coarse_dirt
-setblock -193 64 -13 minecraft:packed_mud
-fill -193 64 -9 -190 64 -9 minecraft:coarse_dirt
-setblock -193 64 -8 minecraft:packed_mud
-fill -193 64 -7 -193 64 -4 minecraft:coarse_dirt
-setblock -193 64 -3 minecraft:packed_mud
-fill -193 64 -2 -193 64 1 minecraft:coarse_dirt
-setblock -193 64 7 minecraft:packed_mud
-fill -193 64 11 -190 64 11 minecraft:coarse_dirt
-setblock -193 64 12 minecraft:packed_mud
-fill -193 64 13 -193 64 16 minecraft:coarse_dirt
-setblock -193 64 17 minecraft:packed_mud
-fill -193 64 18 -193 64 21 minecraft:coarse_dirt
-setblock -193 64 22 minecraft:packed_mud
-fill -193 64 23 -193 64 26 minecraft:coarse_dirt
-fill -192 64 -18 -189 64 -18 minecraft:coarse_dirt
-setblock -192 64 -17 minecraft:packed_mud
-fill -192 64 -13 -189 64 -13 minecraft:coarse_dirt
-setblock -192 64 -12 minecraft:packed_mud
-fill -192 64 -8 -189 64 -8 minecraft:coarse_dirt
-setblock -192 64 -7 minecraft:packed_mud
-fill -192 64 -6 -192 64 -3 minecraft:coarse_dirt
-setblock -192 64 -2 minecraft:packed_mud
-fill -192 64 -1 -192 64 1 minecraft:coarse_dirt
-fill -192 64 7 -189 64 7 minecraft:coarse_dirt
-setblock -192 64 8 minecraft:packed_mud
-fill -192 64 12 -189 64 12 minecraft:coarse_dirt
-setblock -192 64 13 minecraft:packed_mud
-fill -192 64 14 -192 64 17 minecraft:coarse_dirt
-setblock -192 64 18 minecraft:packed_mud
-fill -192 64 19 -192 64 22 minecraft:coarse_dirt
-setblock -192 64 23 minecraft:packed_mud
-fill -192 64 24 -192 64 26 minecraft:coarse_dirt
-fill -191 64 -17 -188 64 -17 minecraft:coarse_dirt
-setblock -191 64 -16 minecraft:packed_mud
-fill -191 64 -12 -188 64 -12 minecraft:coarse_dirt
-setblock -191 64 -11 minecraft:packed_mud
-fill -191 64 -7 -188 64 -7 minecraft:coarse_dirt
-setblock -191 64 -6 minecraft:packed_mud
-fill -191 64 -5 -191 64 -2 minecraft:coarse_dirt
-setblock -191 64 -1 minecraft:packed_mud
-fill -191 64 0 -191 64 1 minecraft:coarse_dirt
-fill -191 64 8 -188 64 8 minecraft:coarse_dirt
-setblock -191 64 9 minecraft:packed_mud
-fill -191 64 13 -188 64 13 minecraft:coarse_dirt
-setblock -191 64 14 minecraft:packed_mud
-fill -191 64 15 -191 64 18 minecraft:coarse_dirt
-setblock -191 64 19 minecraft:packed_mud
-fill -191 64 20 -191 64 23 minecraft:coarse_dirt
-setblock -191 64 24 minecraft:packed_mud
-fill -191 64 25 -191 64 26 minecraft:coarse_dirt
-fill -190 64 -16 -187 64 -16 minecraft:coarse_dirt
-setblock -190 64 -15 minecraft:packed_mud
-fill -190 64 -11 -187 64 -11 minecraft:coarse_dirt
-setblock -190 64 -10 minecraft:packed_mud
-fill -190 64 -6 -187 64 -6 minecraft:coarse_dirt
-setblock -190 64 -5 minecraft:packed_mud
-fill -190 64 -4 -190 64 -1 minecraft:coarse_dirt
-setblock -190 64 0 minecraft:packed_mud
-setblock -190 64 1 minecraft:coarse_dirt
-fill -190 64 9 -187 64 9 minecraft:coarse_dirt
-setblock -190 64 10 minecraft:packed_mud
-fill -190 64 14 -187 64 14 minecraft:coarse_dirt
-setblock -190 64 15 minecraft:packed_mud
-fill -190 64 16 -190 64 19 minecraft:coarse_dirt
-setblock -190 64 20 minecraft:packed_mud
-fill -190 64 21 -190 64 24 minecraft:coarse_dirt
-setblock -190 64 25 minecraft:packed_mud
-setblock -190 64 26 minecraft:coarse_dirt
-fill -189 64 -15 -186 64 -15 minecraft:coarse_dirt
-setblock -189 64 -14 minecraft:packed_mud
-fill -189 64 -10 -186 64 -10 minecraft:coarse_dirt
-setblock -189 64 -9 minecraft:packed_mud
-fill -189 64 -5 -186 64 -5 minecraft:coarse_dirt
-setblock -189 64 -4 minecraft:packed_mud
-fill -189 64 -3 -189 64 0 minecraft:coarse_dirt
-setblock -189 64 1 minecraft:packed_mud
-fill -189 64 10 -186 64 10 minecraft:coarse_dirt
-setblock -189 64 11 minecraft:packed_mud
-fill -189 64 15 -186 64 15 minecraft:coarse_dirt
-setblock -189 64 16 minecraft:packed_mud
-fill -189 64 17 -189 64 20 minecraft:coarse_dirt
-setblock -189 64 21 minecraft:packed_mud
-fill -189 64 22 -189 64 25 minecraft:coarse_dirt
-setblock -189 64 26 minecraft:packed_mud
-setblock -188 64 -18 minecraft:packed_mud
-fill -188 64 -14 -185 64 -14 minecraft:coarse_dirt
-setblock -188 64 -13 minecraft:packed_mud
-fill -188 64 -9 -185 64 -9 minecraft:coarse_dirt
-setblock -188 64 -8 minecraft:packed_mud
-fill -188 64 -4 -185 64 -4 minecraft:coarse_dirt
-setblock -188 64 -3 minecraft:packed_mud
-fill -188 64 -2 -188 64 1 minecraft:coarse_dirt
-setblock -188 64 7 minecraft:packed_mud
-fill -188 64 11 -185 64 11 minecraft:coarse_dirt
-setblock -188 64 12 minecraft:packed_mud
-fill -188 64 16 -185 64 16 minecraft:coarse_dirt
-setblock -188 64 17 minecraft:packed_mud
-fill -188 64 18 -188 64 21 minecraft:coarse_dirt
-setblock -188 64 22 minecraft:packed_mud
-fill -188 64 23 -188 64 26 minecraft:coarse_dirt
-fill -187 64 -18 -184 64 -18 minecraft:coarse_dirt
-setblock -187 64 -17 minecraft:packed_mud
-fill -187 64 -13 -184 64 -13 minecraft:coarse_dirt
-setblock -187 64 -12 minecraft:packed_mud
-fill -187 64 -8 -184 64 -8 minecraft:coarse_dirt
-setblock -187 64 -7 minecraft:packed_mud
-fill -187 64 -3 -184 64 -3 minecraft:coarse_dirt
-setblock -187 64 -2 minecraft:packed_mud
-fill -187 64 -1 -187 64 1 minecraft:coarse_dirt
-fill -187 64 7 -184 64 7 minecraft:coarse_dirt
-setblock -187 64 8 minecraft:packed_mud
-fill -187 64 12 -184 64 12 minecraft:coarse_dirt
-setblock -187 64 13 minecraft:packed_mud
-fill -187 64 17 -184 64 17 minecraft:coarse_dirt
-setblock -187 64 18 minecraft:packed_mud
-fill -187 64 19 -187 64 22 minecraft:coarse_dirt
-setblock -187 64 23 minecraft:packed_mud
-fill -187 64 24 -187 64 26 minecraft:coarse_dirt
-fill -186 64 -17 -183 64 -17 minecraft:coarse_dirt
-setblock -186 64 -16 minecraft:packed_mud
-fill -186 64 -12 -183 64 -12 minecraft:coarse_dirt
-setblock -186 64 -11 minecraft:packed_mud
-fill -186 64 -7 -183 64 -7 minecraft:coarse_dirt
-setblock -186 64 -6 minecraft:packed_mud
-fill -186 64 -2 -183 64 -2 minecraft:coarse_dirt
-setblock -186 64 -1 minecraft:packed_mud
-fill -186 64 0 -186 64 1 minecraft:coarse_dirt
-fill -186 64 8 -183 64 8 minecraft:coarse_dirt
-setblock -186 64 9 minecraft:packed_mud
-fill -186 64 13 -183 64 13 minecraft:coarse_dirt
-setblock -186 64 14 minecraft:packed_mud
-fill -186 64 18 -183 64 18 minecraft:coarse_dirt
-setblock -186 64 19 minecraft:packed_mud
-fill -186 64 20 -186 64 23 minecraft:coarse_dirt
-setblock -186 64 24 minecraft:packed_mud
-fill -186 64 25 -186 64 26 minecraft:coarse_dirt
-fill -185 64 -16 -182 64 -16 minecraft:coarse_dirt
-setblock -185 64 -15 minecraft:packed_mud
-fill -185 64 -11 -182 64 -11 minecraft:coarse_dirt
-setblock -185 64 -10 minecraft:packed_mud
-fill -185 64 -6 -182 64 -6 minecraft:coarse_dirt
-setblock -185 64 -5 minecraft:packed_mud
-fill -185 64 -1 -182 64 -1 minecraft:coarse_dirt
-setblock -185 64 0 minecraft:packed_mud
-setblock -185 64 1 minecraft:coarse_dirt
-fill -185 64 9 -182 64 9 minecraft:coarse_dirt
-setblock -185 64 10 minecraft:packed_mud
-fill -185 64 14 -182 64 14 minecraft:coarse_dirt
-setblock -185 64 15 minecraft:packed_mud
-fill -185 64 19 -182 64 19 minecraft:coarse_dirt
-setblock -185 64 20 minecraft:packed_mud
-fill -185 64 21 -185 64 24 minecraft:coarse_dirt
-setblock -185 64 25 minecraft:packed_mud
-setblock -185 64 26 minecraft:coarse_dirt
-fill -184 64 -15 -181 64 -15 minecraft:coarse_dirt
-setblock -184 64 -14 minecraft:packed_mud
-fill -184 64 -10 -181 64 -10 minecraft:coarse_dirt
-setblock -184 64 -9 minecraft:packed_mud
-fill -184 64 -5 -181 64 -5 minecraft:coarse_dirt
-setblock -184 64 -4 minecraft:packed_mud
-fill -184 64 0 -181 64 0 minecraft:coarse_dirt
-setblock -184 64 1 minecraft:packed_mud
-fill -184 64 10 -181 64 10 minecraft:coarse_dirt
-setblock -184 64 11 minecraft:packed_mud
+fill -211 64 -5 -211 64 -2 minecraft:coarse_dirt
+setblock -211 64 -1 minecraft:packed_mud
+fill -211 64 0 -211 64 1 minecraft:coarse_dirt
+fill -211 64 8 -208 64 8 minecraft:coarse_dirt
+setblock -211 64 9 minecraft:packed_mud
+fill -211 64 13 -208 64 13 minecraft:coarse_dirt
+setblock -211 64 14 minecraft:packed_mud
+fill -211 64 15 -211 64 18 minecraft:coarse_dirt
+setblock -211 64 19 minecraft:packed_mud
+fill -211 64 20 -211 64 23 minecraft:coarse_dirt
+setblock -211 64 24 minecraft:packed_mud
+fill -211 64 25 -211 64 26 minecraft:coarse_dirt
+fill -210 64 -16 -207 64 -16 minecraft:coarse_dirt
+setblock -210 64 -15 minecraft:packed_mud
+fill -210 64 -11 -207 64 -11 minecraft:coarse_dirt
+setblock -210 64 -10 minecraft:packed_mud
+fill -210 64 -6 -207 64 -6 minecraft:coarse_dirt
+setblock -210 64 -5 minecraft:packed_mud
+fill -210 64 -4 -210 64 -1 minecraft:coarse_dirt
+setblock -210 64 0 minecraft:packed_mud
+setblock -210 64 1 minecraft:coarse_dirt
+fill -210 64 9 -207 64 9 minecraft:coarse_dirt
+setblock -210 64 10 minecraft:packed_mud
+fill -210 64 14 -207 64 14 minecraft:coarse_dirt
+setblock -210 64 15 minecraft:packed_mud
+fill -210 64 16 -210 64 19 minecraft:coarse_dirt
+setblock -210 64 20 minecraft:packed_mud
+fill -210 64 21 -210 64 24 minecraft:coarse_dirt
+setblock -210 64 25 minecraft:packed_mud
+setblock -210 64 26 minecraft:coarse_dirt
+fill -209 64 -15 -206 64 -15 minecraft:coarse_dirt
+setblock -209 64 -14 minecraft:packed_mud
+fill -209 64 -10 -206 64 -10 minecraft:coarse_dirt
+setblock -209 64 -9 minecraft:packed_mud
+fill -209 64 -5 -206 64 -5 minecraft:coarse_dirt
+setblock -209 64 -4 minecraft:packed_mud
+fill -209 64 -3 -209 64 0 minecraft:coarse_dirt
+setblock -209 64 1 minecraft:packed_mud
+fill -209 64 10 -206 64 10 minecraft:coarse_dirt
+setblock -209 64 11 minecraft:packed_mud
+fill -209 64 15 -206 64 15 minecraft:coarse_dirt
+setblock -209 64 16 minecraft:packed_mud
+fill -209 64 17 -209 64 20 minecraft:coarse_dirt
+setblock -209 64 21 minecraft:packed_mud
+fill -209 64 22 -209 64 25 minecraft:coarse_dirt
+setblock -209 64 26 minecraft:packed_mud
+setblock -208 64 -18 minecraft:packed_mud
+fill -208 64 -14 -205 64 -14 minecraft:coarse_dirt
+setblock -208 64 -13 minecraft:packed_mud
+fill -208 64 -9 -205 64 -9 minecraft:coarse_dirt
+setblock -208 64 -8 minecraft:packed_mud
+fill -208 64 -4 -205 64 -4 minecraft:coarse_dirt
+setblock -208 64 -3 minecraft:packed_mud
+fill -208 64 -2 -208 64 1 minecraft:coarse_dirt
+setblock -208 64 7 minecraft:packed_mud
+fill -208 64 11 -205 64 11 minecraft:coarse_dirt
+setblock -208 64 12 minecraft:packed_mud
+fill -208 64 16 -205 64 16 minecraft:coarse_dirt
+setblock -208 64 17 minecraft:packed_mud
+fill -208 64 18 -208 64 21 minecraft:coarse_dirt
+setblock -208 64 22 minecraft:packed_mud
+fill -208 64 23 -208 64 26 minecraft:coarse_dirt
+fill -207 64 -18 -204 64 -18 minecraft:coarse_dirt
+setblock -207 64 -17 minecraft:packed_mud
+fill -207 64 -13 -204 64 -13 minecraft:coarse_dirt
+setblock -207 64 -12 minecraft:packed_mud
+fill -207 64 -8 -204 64 -8 minecraft:coarse_dirt
+setblock -207 64 -7 minecraft:packed_mud
+fill -207 64 -3 -204 64 -3 minecraft:coarse_dirt
+setblock -207 64 -2 minecraft:packed_mud
+fill -207 64 -1 -207 64 1 minecraft:coarse_dirt
+fill -207 64 7 -204 64 7 minecraft:coarse_dirt
+setblock -207 64 8 minecraft:packed_mud
+fill -207 64 12 -204 64 12 minecraft:coarse_dirt
+setblock -207 64 13 minecraft:packed_mud
+fill -207 64 17 -204 64 17 minecraft:coarse_dirt
+setblock -207 64 18 minecraft:packed_mud
+fill -207 64 19 -207 64 22 minecraft:coarse_dirt
+setblock -207 64 23 minecraft:packed_mud
+fill -207 64 24 -207 64 26 minecraft:coarse_dirt
+fill -206 64 -17 -203 64 -17 minecraft:coarse_dirt
+setblock -206 64 -16 minecraft:packed_mud
+fill -206 64 -12 -203 64 -12 minecraft:coarse_dirt
+setblock -206 64 -11 minecraft:packed_mud
+fill -206 64 -7 -203 64 -7 minecraft:coarse_dirt
+setblock -206 64 -6 minecraft:packed_mud
+fill -206 64 -2 -203 64 -2 minecraft:coarse_dirt
+setblock -206 64 -1 minecraft:packed_mud
+fill -206 64 0 -206 64 1 minecraft:coarse_dirt
+fill -206 64 8 -203 64 8 minecraft:coarse_dirt
+setblock -206 64 9 minecraft:packed_mud
+fill -206 64 13 -203 64 13 minecraft:coarse_dirt
+setblock -206 64 14 minecraft:packed_mud
+fill -206 64 18 -203 64 18 minecraft:coarse_dirt
+setblock -206 64 19 minecraft:packed_mud
+fill -206 64 20 -206 64 23 minecraft:coarse_dirt
+setblock -206 64 24 minecraft:packed_mud
+fill -206 64 25 -206 64 26 minecraft:coarse_dirt
+fill -205 64 -16 -202 64 -16 minecraft:coarse_dirt
+setblock -205 64 -15 minecraft:packed_mud
+fill -205 64 -11 -203 64 -11 minecraft:coarse_dirt
+setblock -205 64 -10 minecraft:packed_mud
+fill -205 64 -6 -203 64 -6 minecraft:coarse_dirt
+setblock -205 64 -5 minecraft:packed_mud
+fill -205 64 -1 -203 64 -1 minecraft:coarse_dirt
+setblock -205 64 0 minecraft:packed_mud
+setblock -205 64 1 minecraft:coarse_dirt
+fill -205 64 9 -203 64 9 minecraft:coarse_dirt
+setblock -205 64 10 minecraft:packed_mud
+fill -205 64 14 -203 64 14 minecraft:coarse_dirt
+setblock -205 64 15 minecraft:packed_mud
+fill -205 64 19 -203 64 19 minecraft:coarse_dirt
+setblock -205 64 20 minecraft:packed_mud
+fill -205 64 21 -205 64 24 minecraft:coarse_dirt
+setblock -205 64 25 minecraft:packed_mud
+setblock -205 64 26 minecraft:coarse_dirt
+fill -204 64 -15 -203 64 -15 minecraft:coarse_dirt
+setblock -204 64 -14 minecraft:packed_mud
+fill -204 64 -10 -203 64 -10 minecraft:coarse_dirt
+setblock -204 64 -9 minecraft:packed_mud
+fill -204 64 -5 -203 64 -5 minecraft:coarse_dirt
+setblock -204 64 -4 minecraft:packed_mud
+fill -204 64 0 -203 64 0 minecraft:coarse_dirt
+setblock -204 64 1 minecraft:packed_mud
+fill -204 64 10 -203 64 10 minecraft:coarse_dirt
+setblock -204 64 11 minecraft:packed_mud
+fill -204 64 15 -203 64 15 minecraft:coarse_dirt
+setblock -204 64 16 minecraft:packed_mud
+fill -204 64 20 -203 64 20 minecraft:coarse_dirt
+setblock -204 64 21 minecraft:packed_mud
+fill -204 64 22 -204 64 25 minecraft:coarse_dirt
+setblock -204 64 26 minecraft:packed_mud
+setblock -203 64 -18 minecraft:packed_mud
+setblock -203 64 -14 minecraft:coarse_dirt
+setblock -203 64 -13 minecraft:packed_mud
+setblock -203 64 -9 minecraft:coarse_dirt
+setblock -203 64 -8 minecraft:packed_mud
+setblock -203 64 -4 minecraft:coarse_dirt
+setblock -203 64 -3 minecraft:packed_mud
+setblock -203 64 1 minecraft:coarse_dirt
+setblock -203 64 7 minecraft:packed_mud
+setblock -203 64 11 minecraft:coarse_dirt
+setblock -203 64 12 minecraft:packed_mud
+setblock -203 64 16 minecraft:coarse_dirt
+setblock -203 64 17 minecraft:packed_mud
+setblock -203 64 21 minecraft:coarse_dirt
+setblock -203 64 22 minecraft:packed_mud
+fill -203 64 23 -203 64 26 minecraft:coarse_dirt
+fill -202 64 -18 -199 64 -18 minecraft:coarse_dirt
+setblock -202 64 -17 minecraft:packed_mud
+fill -202 64 -15 -198 64 1 minecraft:dirt_path
+fill -202 64 7 -198 64 23 minecraft:dirt_path
+fill -202 64 24 -202 64 26 minecraft:coarse_dirt
+fill -201 64 -17 -198 64 -17 minecraft:coarse_dirt
+setblock -201 64 -16 minecraft:packed_mud
+setblock -201 64 24 minecraft:packed_mud
+fill -201 64 25 -201 64 26 minecraft:coarse_dirt
+fill -200 64 -16 -197 64 -16 minecraft:coarse_dirt
+fill -200 64 24 -197 64 24 minecraft:coarse_dirt
+setblock -200 64 25 minecraft:packed_mud
+setblock -200 64 26 minecraft:coarse_dirt
+fill -199 64 25 -196 64 25 minecraft:coarse_dirt
+setblock -199 64 26 minecraft:packed_mud
+setblock -198 64 -18 minecraft:packed_mud
+fill -198 64 26 -195 64 26 minecraft:coarse_dirt
+fill -197 64 -18 -194 64 -18 minecraft:coarse_dirt
+setblock -197 64 -17 minecraft:packed_mud
+fill -197 64 -15 -196 64 -13 minecraft:coarse_dirt
+setblock -197 64 -12 minecraft:packed_mud
+fill -197 64 -11 -197 64 -8 minecraft:coarse_dirt
+setblock -197 64 -7 minecraft:packed_mud
+fill -197 64 -6 -197 64 -3 minecraft:coarse_dirt
+setblock -197 64 -2 minecraft:packed_mud
+fill -197 64 -1 -197 64 1 minecraft:coarse_dirt
+fill -197 64 7 -194 64 7 minecraft:coarse_dirt
+setblock -197 64 8 minecraft:packed_mud
+fill -197 64 9 -197 64 12 minecraft:coarse_dirt
+setblock -197 64 13 minecraft:packed_mud
+fill -197 64 14 -197 64 17 minecraft:coarse_dirt
+setblock -197 64 18 minecraft:packed_mud
+fill -197 64 19 -197 64 22 minecraft:coarse_dirt
+setblock -197 64 23 minecraft:packed_mud
+fill -196 64 -17 -193 64 -17 minecraft:coarse_dirt
+setblock -196 64 -16 minecraft:packed_mud
+fill -196 64 -12 -193 64 -12 minecraft:coarse_dirt
+setblock -196 64 -11 minecraft:packed_mud
+fill -196 64 -10 -196 64 -7 minecraft:coarse_dirt
+setblock -196 64 -6 minecraft:packed_mud
+fill -196 64 -5 -196 64 -2 minecraft:coarse_dirt
+setblock -196 64 -1 minecraft:packed_mud
+fill -196 64 0 -196 64 1 minecraft:coarse_dirt
+fill -196 64 8 -193 64 8 minecraft:coarse_dirt
+setblock -196 64 9 minecraft:packed_mud
+fill -196 64 10 -196 64 13 minecraft:coarse_dirt
+setblock -196 64 14 minecraft:packed_mud
+fill -196 64 15 -196 64 18 minecraft:coarse_dirt
+setblock -196 64 19 minecraft:packed_mud
+fill -196 64 20 -196 64 23 minecraft:coarse_dirt
+setblock -196 64 24 minecraft:packed_mud
+fill -195 64 -16 -192 64 -16 minecraft:coarse_dirt

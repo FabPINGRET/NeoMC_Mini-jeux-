@@ -57,7 +57,7 @@ setblock 121 71 13 minecraft:birch_log
 fill 121 71 14 136 71 14 minecraft:air
 fill 122 71 -1 126 71 -1 minecraft:birch_fence
 fill 122 71 0 122 71 1 minecraft:hay_block
-fill 122 71 2 132 71 4 minecraft:air
+fill 122 71 2 131 71 4 minecraft:air
 fill 122 71 7 123 71 7 minecraft:birch_planks
 setblock 122 71 8 minecraft:cartography_table
 fill 122 71 9 125 71 9 minecraft:air
@@ -93,18 +93,18 @@ fill 130 71 12 131 71 12 minecraft:air
 fill 130 71 13 134 71 13 minecraft:birch_fence
 setblock 131 71 10 minecraft:air
 fill 132 71 0 134 71 0 minecraft:birch_log
-setblock 132 71 1 minecraft:birch_log
+fill 132 71 1 132 71 2 minecraft:birch_log
+fill 132 71 3 134 71 4 minecraft:air
 setblock 132 71 8 minecraft:stripped_birch_log[axis=x]
 fill 132 71 9 134 71 9 minecraft:air
 setblock 132 71 10 minecraft:campfire[lit=true]
 setblock 132 71 12 minecraft:stripped_birch_log[axis=x]
 setblock 133 71 1 minecraft:ladder[facing=south]
-fill 133 71 2 134 71 2 minecraft:birch_log
-fill 133 71 3 134 71 4 minecraft:air
+setblock 133 71 2 minecraft:air
 fill 133 71 8 134 71 8 minecraft:air
 setblock 133 71 10 minecraft:air
 setblock 133 71 12 minecraft:air
-setblock 134 71 1 minecraft:birch_log
+fill 134 71 1 134 71 2 minecraft:birch_log
 setblock 134 71 10 minecraft:stripped_birch_log[axis=z]
 setblock 134 71 12 minecraft:iron_bars
 setblock 135 71 -1 minecraft:birch_log
@@ -145,12 +145,11 @@ setblock 126 72 11 minecraft:stripped_birch_log
 fill 127 72 7 136 72 11 minecraft:air
 fill 127 72 12 133 72 12 minecraft:air
 fill 132 72 0 134 72 0 minecraft:birch_log
-setblock 132 72 1 minecraft:birch_log
-fill 132 72 2 132 72 6 minecraft:air
+fill 132 72 1 132 72 2 minecraft:birch_log
+fill 132 72 3 136 72 6 minecraft:air
 setblock 133 72 1 minecraft:ladder[facing=south]
-fill 133 72 2 134 72 2 minecraft:birch_log
-fill 133 72 3 136 72 6 minecraft:air
-setblock 134 72 1 minecraft:birch_log
+setblock 133 72 2 minecraft:air
+fill 134 72 1 134 72 2 minecraft:birch_log
 setblock 134 72 12 minecraft:iron_bars
 setblock 135 72 -1 minecraft:birch_log
 fill 135 72 0 136 72 2 minecraft:air
@@ -199,3 +198,4 @@ fill 135 73 12 136 73 12 minecraft:air
 setblock 135 73 13 minecraft:birch_log
 setblock 136 73 -1 minecraft:air
 setblock 136 73 13 minecraft:air
+fill 120 74 -2 136 74 -2 minecraft:air

@@ -1,5 +1,4 @@
 # Construction des régions de Terra Nova, étape 409/436 (dimension mg:terranova, générée)
-setblock -28 71 126 minecraft:dark_oak_planks
 setblock -28 71 127 minecraft:stripped_dark_oak_log
 fill -27 71 123 -18 71 127 minecraft:air
 fill -27 71 128 -21 71 128 minecraft:air
@@ -148,12 +147,13 @@ setblock -20 76 117 minecraft:dark_oak_log
 fill -19 76 116 -18 76 118 minecraft:air
 fill -34 77 114 -18 77 114 minecraft:air
 fill -34 77 115 -24 77 130 minecraft:air
-fill -23 77 115 -19 77 116 minecraft:dark_oak_slab[type=bottom]
-fill -23 77 117 -22 77 119 minecraft:dark_oak_slab[type=bottom]
+fill -23 77 115 -19 77 115 minecraft:dark_oak_slab[type=bottom]
+fill -23 77 116 -22 77 119 minecraft:dark_oak_slab[type=bottom]
 fill -23 77 120 -18 77 130 minecraft:air
-setblock -21 77 117 minecraft:dark_oak_trapdoor[facing=south,half=bottom,open=false]
+setblock -21 77 116 minecraft:dark_oak_log
+setblock -21 77 117 minecraft:ladder[facing=south]
 fill -21 77 118 -19 77 119 minecraft:dark_oak_slab[type=bottom]
-fill -20 77 117 -19 77 117 minecraft:dark_oak_slab[type=bottom]
+fill -20 77 116 -19 77 117 minecraft:dark_oak_slab[type=bottom]
 fill -18 77 115 -18 77 119 minecraft:air
 fill -34 78 114 -18 78 114 minecraft:air
 fill -34 78 115 -24 78 130 minecraft:air

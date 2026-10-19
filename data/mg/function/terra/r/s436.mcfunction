@@ -100,8 +100,7 @@ setblock -6 64 6 minecraft:cracked_stone_bricks
 setblock -6 64 7 minecraft:stone_bricks
 setblock -6 64 9 minecraft:cracked_stone_bricks
 setblock -6 64 10 minecraft:stone_bricks
-fill -17 65 3 -5 65 3 minecraft:air
-fill -17 65 4 -17 65 11 minecraft:air
+fill -16 65 3 -5 65 3 minecraft:air
 setblock -16 65 4 minecraft:stripped_dark_oak_log
 fill -16 65 5 -14 65 7 minecraft:air
 fill -16 65 8 -13 65 8 minecraft:bricks
@@ -140,8 +139,7 @@ fill -6 65 9 -5 65 9 minecraft:air
 setblock -6 65 10 minecraft:stripped_dark_oak_log
 setblock -5 65 4 minecraft:air
 setblock -5 65 10 minecraft:air
-fill -17 66 3 -5 66 3 minecraft:air
-fill -17 66 4 -17 66 11 minecraft:air
+fill -16 66 3 -5 66 3 minecraft:air
 setblock -16 66 4 minecraft:stripped_dark_oak_log
 fill -16 66 5 -8 66 7 minecraft:air
 fill -16 66 8 -13 66 8 minecraft:bricks
@@ -167,8 +165,7 @@ fill -6 66 5 -5 66 5 minecraft:air
 setblock -6 66 10 minecraft:stripped_dark_oak_log
 setblock -5 66 4 minecraft:air
 setblock -5 66 10 minecraft:air
-fill -17 67 3 -5 67 3 minecraft:air
-fill -17 67 4 -17 67 11 minecraft:air
+fill -16 67 3 -5 67 3 minecraft:air
 setblock -16 67 4 minecraft:stripped_dark_oak_log
 fill -16 67 5 -5 67 7 minecraft:air
 fill -16 67 8 -13 67 10 minecraft:bricks
@@ -184,8 +181,7 @@ setblock -6 67 4 minecraft:stripped_dark_oak_log
 setblock -6 67 10 minecraft:stripped_dark_oak_log
 setblock -5 67 4 minecraft:air
 setblock -5 67 10 minecraft:air
-fill -17 68 3 -5 68 3 minecraft:air
-fill -17 68 4 -17 68 11 minecraft:air
+fill -16 68 3 -5 68 3 minecraft:air
 setblock -16 68 4 minecraft:stripped_dark_oak_log
 fill -16 68 5 -5 68 6 minecraft:air
 fill -16 68 7 -12 68 7 minecraft:air
@@ -205,7 +201,6 @@ setblock -6 68 10 minecraft:stripped_dark_oak_log
 setblock -5 68 4 minecraft:air
 setblock -5 68 10 minecraft:air
 fill -17 69 3 -5 69 3 minecraft:deepslate_tile_stairs[facing=south,half=bottom]
-fill -17 69 4 -17 69 10 minecraft:air
 fill -17 69 11 -5 69 11 minecraft:deepslate_tile_stairs[facing=north,half=bottom]
 fill -16 69 4 -6 69 4 minecraft:dark_oak_log[axis=x]
 fill -16 69 5 -5 69 6 minecraft:air
@@ -218,13 +213,12 @@ fill -11 69 8 -5 69 8 minecraft:air
 fill -10 69 7 -5 69 7 minecraft:air
 setblock -5 69 4 minecraft:air
 setblock -5 69 10 minecraft:air
-fill -17 70 3 -5 70 3 minecraft:air
 fill -17 70 4 -5 70 4 minecraft:deepslate_tile_stairs[facing=south,half=bottom]
-fill -17 70 5 -17 70 9 minecraft:air
 setblock -17 70 10 minecraft:deepslate_tile_stairs[facing=north,half=bottom]
-fill -17 70 11 -5 70 11 minecraft:air
+fill -16 70 3 -5 70 3 minecraft:air
 fill -16 70 5 -16 70 8 minecraft:dark_oak_planks
 fill -16 70 9 -16 70 10 minecraft:bricks
+fill -16 70 11 -5 70 11 minecraft:air
 fill -15 70 5 -7 70 8 minecraft:air
 setblock -15 70 9 minecraft:air
 fill -15 70 10 -14 70 10 minecraft:bricks
@@ -233,11 +227,9 @@ fill -13 70 9 -7 70 9 minecraft:air
 fill -13 70 10 -5 70 10 minecraft:deepslate_tile_stairs[facing=north,half=bottom]
 fill -6 70 5 -6 70 9 minecraft:dark_oak_planks
 fill -5 70 5 -5 70 9 minecraft:air
-fill -17 71 3 -5 71 4 minecraft:air
 fill -17 71 5 -5 71 5 minecraft:deepslate_tile_stairs[facing=south,half=bottom]
-fill -17 71 6 -17 71 8 minecraft:air
 setblock -17 71 9 minecraft:deepslate_tile_stairs[facing=north,half=bottom]
-fill -17 71 10 -17 71 11 minecraft:air
+fill -16 71 3 -5 71 4 minecraft:air
 fill -16 71 6 -16 71 8 minecraft:dark_oak_planks
 fill -16 71 9 -16 71 10 minecraft:bricks
 fill -16 71 11 -5 71 11 minecraft:air
@@ -249,11 +241,9 @@ fill -13 71 9 -5 71 9 minecraft:deepslate_tile_stairs[facing=north,half=bottom]
 fill -13 71 10 -5 71 10 minecraft:air
 fill -6 71 6 -6 71 8 minecraft:dark_oak_planks
 fill -5 71 6 -5 71 8 minecraft:air
-fill -17 72 3 -5 72 5 minecraft:air
 fill -17 72 6 -5 72 6 minecraft:deepslate_tile_stairs[facing=south,half=bottom]
-setblock -17 72 7 minecraft:air
 fill -17 72 8 -5 72 8 minecraft:deepslate_tile_stairs[facing=north,half=bottom]
-fill -17 72 9 -17 72 11 minecraft:air
+fill -16 72 3 -5 72 5 minecraft:air
 setblock -16 72 7 minecraft:dark_oak_planks
 fill -16 72 9 -16 72 10 minecraft:bricks
 fill -16 72 11 -5 72 11 minecraft:air
@@ -264,10 +254,9 @@ setblock -14 72 9 minecraft:bricks
 fill -13 72 9 -5 72 10 minecraft:air
 setblock -6 72 7 minecraft:dark_oak_planks
 setblock -5 72 7 minecraft:air
-fill -17 73 3 -5 73 6 minecraft:air
 fill -17 73 7 -5 73 7 minecraft:deepslate_tile_slab
-fill -17 73 8 -5 73 8 minecraft:air
-fill -17 73 9 -17 73 11 minecraft:air
+fill -16 73 3 -5 73 6 minecraft:air
+fill -16 73 8 -5 73 8 minecraft:air
 fill -16 73 9 -16 73 10 minecraft:bricks
 fill -16 73 11 -5 73 11 minecraft:air
 setblock -15 73 9 minecraft:air

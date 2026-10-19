@@ -1,201 +1,284 @@
 # Construction des régions de Terra Nova, étape 305/436 (dimension mg:terranova, générée)
-fill -222 64 -18 -219 64 -18 minecraft:coarse_dirt
-setblock -222 64 -17 minecraft:packed_mud
-fill -222 64 -16 -222 64 -13 minecraft:coarse_dirt
-setblock -222 64 -12 minecraft:packed_mud
-fill -222 64 -11 -222 64 -8 minecraft:coarse_dirt
-setblock -222 64 -7 minecraft:packed_mud
-fill -222 64 -6 -222 64 -3 minecraft:coarse_dirt
-setblock -222 64 -2 minecraft:packed_mud
-fill -222 64 -1 -222 64 2 minecraft:coarse_dirt
-setblock -222 64 3 minecraft:packed_mud
-fill -222 64 4 -222 64 7 minecraft:coarse_dirt
-setblock -222 64 8 minecraft:packed_mud
-fill -222 64 9 -222 64 12 minecraft:coarse_dirt
-setblock -222 64 13 minecraft:packed_mud
-fill -222 64 14 -222 64 17 minecraft:coarse_dirt
-setblock -222 64 18 minecraft:packed_mud
-fill -222 64 19 -222 64 22 minecraft:coarse_dirt
-setblock -222 64 23 minecraft:packed_mud
-fill -222 64 24 -222 64 26 minecraft:coarse_dirt
-fill -221 64 -17 -218 64 -17 minecraft:coarse_dirt
-setblock -221 64 -16 minecraft:packed_mud
-fill -221 64 -15 -221 64 -12 minecraft:coarse_dirt
-setblock -221 64 -11 minecraft:packed_mud
-fill -221 64 -10 -221 64 -7 minecraft:coarse_dirt
-setblock -221 64 -6 minecraft:packed_mud
-fill -221 64 -5 -221 64 -2 minecraft:coarse_dirt
-setblock -221 64 -1 minecraft:packed_mud
-fill -221 64 0 -221 64 3 minecraft:coarse_dirt
-setblock -221 64 4 minecraft:packed_mud
-fill -221 64 5 -221 64 8 minecraft:coarse_dirt
-setblock -221 64 9 minecraft:packed_mud
-fill -221 64 10 -221 64 13 minecraft:coarse_dirt
-setblock -221 64 14 minecraft:packed_mud
-fill -221 64 15 -221 64 18 minecraft:coarse_dirt
-setblock -221 64 19 minecraft:packed_mud
-fill -221 64 20 -221 64 23 minecraft:coarse_dirt
-setblock -221 64 24 minecraft:packed_mud
-fill -221 64 25 -221 64 26 minecraft:coarse_dirt
-fill -220 64 -16 -217 64 -16 minecraft:coarse_dirt
-setblock -220 64 -15 minecraft:packed_mud
-fill -220 64 -14 -220 64 -11 minecraft:coarse_dirt
-setblock -220 64 -10 minecraft:packed_mud
-fill -220 64 -9 -220 64 -6 minecraft:coarse_dirt
-setblock -220 64 -5 minecraft:packed_mud
-fill -220 64 -4 -220 64 -1 minecraft:coarse_dirt
-setblock -220 64 0 minecraft:packed_mud
-fill -220 64 1 -220 64 4 minecraft:coarse_dirt
-setblock -220 64 5 minecraft:packed_mud
-fill -220 64 6 -220 64 9 minecraft:coarse_dirt
-setblock -220 64 10 minecraft:packed_mud
-fill -220 64 11 -220 64 14 minecraft:coarse_dirt
-setblock -220 64 15 minecraft:packed_mud
-fill -220 64 16 -220 64 19 minecraft:coarse_dirt
-setblock -220 64 20 minecraft:packed_mud
-fill -220 64 21 -220 64 24 minecraft:coarse_dirt
-setblock -220 64 25 minecraft:packed_mud
-setblock -220 64 26 minecraft:coarse_dirt
-fill -219 64 -15 -216 64 -15 minecraft:coarse_dirt
-setblock -219 64 -14 minecraft:packed_mud
-fill -219 64 -13 -219 64 -10 minecraft:coarse_dirt
-setblock -219 64 -9 minecraft:packed_mud
-fill -219 64 -8 -219 64 -5 minecraft:coarse_dirt
-setblock -219 64 -4 minecraft:packed_mud
-fill -219 64 -3 -219 64 0 minecraft:coarse_dirt
-setblock -219 64 1 minecraft:packed_mud
-fill -219 64 2 -180 64 6 minecraft:dirt_path
-fill -219 64 7 -219 64 10 minecraft:coarse_dirt
-setblock -219 64 11 minecraft:packed_mud
-fill -219 64 12 -219 64 15 minecraft:coarse_dirt
-setblock -219 64 16 minecraft:packed_mud
-fill -219 64 17 -219 64 20 minecraft:coarse_dirt
-setblock -219 64 21 minecraft:packed_mud
-fill -219 64 22 -219 64 25 minecraft:coarse_dirt
-setblock -219 64 26 minecraft:packed_mud
-setblock -218 64 -18 minecraft:packed_mud
-fill -218 64 -14 -215 64 -14 minecraft:coarse_dirt
-setblock -218 64 -13 minecraft:packed_mud
-fill -218 64 -12 -218 64 -9 minecraft:coarse_dirt
-setblock -218 64 -8 minecraft:packed_mud
-fill -218 64 -7 -218 64 -4 minecraft:coarse_dirt
-setblock -218 64 -3 minecraft:packed_mud
-fill -218 64 -2 -218 64 1 minecraft:coarse_dirt
-setblock -218 64 7 minecraft:packed_mud
-fill -218 64 8 -218 64 11 minecraft:coarse_dirt
-setblock -218 64 12 minecraft:packed_mud
-fill -218 64 13 -218 64 16 minecraft:coarse_dirt
-setblock -218 64 17 minecraft:packed_mud
-fill -218 64 18 -218 64 21 minecraft:coarse_dirt
-setblock -218 64 22 minecraft:packed_mud
-fill -218 64 23 -218 64 26 minecraft:coarse_dirt
-fill -217 64 -18 -214 64 -18 minecraft:coarse_dirt
-setblock -217 64 -17 minecraft:packed_mud
-fill -217 64 -13 -214 64 -13 minecraft:coarse_dirt
-setblock -217 64 -12 minecraft:packed_mud
-fill -217 64 -11 -217 64 -8 minecraft:coarse_dirt
-setblock -217 64 -7 minecraft:packed_mud
-fill -217 64 -6 -217 64 -3 minecraft:coarse_dirt
-setblock -217 64 -2 minecraft:packed_mud
-fill -217 64 -1 -217 64 1 minecraft:coarse_dirt
-fill -217 64 7 -214 64 7 minecraft:coarse_dirt
-setblock -217 64 8 minecraft:packed_mud
-fill -217 64 9 -217 64 12 minecraft:coarse_dirt
-setblock -217 64 13 minecraft:packed_mud
-fill -217 64 14 -217 64 17 minecraft:coarse_dirt
-setblock -217 64 18 minecraft:packed_mud
-fill -217 64 19 -217 64 22 minecraft:coarse_dirt
-setblock -217 64 23 minecraft:packed_mud
-fill -217 64 24 -217 64 26 minecraft:coarse_dirt
-fill -216 64 -17 -213 64 -17 minecraft:coarse_dirt
-setblock -216 64 -16 minecraft:packed_mud
-fill -216 64 -12 -213 64 -12 minecraft:coarse_dirt
-setblock -216 64 -11 minecraft:packed_mud
-fill -216 64 -10 -216 64 -7 minecraft:coarse_dirt
-setblock -216 64 -6 minecraft:packed_mud
-fill -216 64 -5 -216 64 -2 minecraft:coarse_dirt
-setblock -216 64 -1 minecraft:packed_mud
-fill -216 64 0 -216 64 1 minecraft:coarse_dirt
-fill -216 64 8 -213 64 8 minecraft:coarse_dirt
-setblock -216 64 9 minecraft:packed_mud
-fill -216 64 10 -216 64 13 minecraft:coarse_dirt
-setblock -216 64 14 minecraft:packed_mud
-fill -216 64 15 -216 64 18 minecraft:coarse_dirt
-setblock -216 64 19 minecraft:packed_mud
-fill -216 64 20 -216 64 23 minecraft:coarse_dirt
-setblock -216 64 24 minecraft:packed_mud
-fill -216 64 25 -216 64 26 minecraft:coarse_dirt
-fill -215 64 -16 -212 64 -16 minecraft:coarse_dirt
-setblock -215 64 -15 minecraft:packed_mud
-fill -215 64 -11 -212 64 -11 minecraft:coarse_dirt
-setblock -215 64 -10 minecraft:packed_mud
-fill -215 64 -9 -215 64 -6 minecraft:coarse_dirt
-setblock -215 64 -5 minecraft:packed_mud
-fill -215 64 -4 -215 64 -1 minecraft:coarse_dirt
-setblock -215 64 0 minecraft:packed_mud
-setblock -215 64 1 minecraft:coarse_dirt
-fill -215 64 9 -212 64 9 minecraft:coarse_dirt
-setblock -215 64 10 minecraft:packed_mud
-fill -215 64 11 -215 64 14 minecraft:coarse_dirt
-setblock -215 64 15 minecraft:packed_mud
-fill -215 64 16 -215 64 19 minecraft:coarse_dirt
-setblock -215 64 20 minecraft:packed_mud
-fill -215 64 21 -215 64 24 minecraft:coarse_dirt
-setblock -215 64 25 minecraft:packed_mud
-setblock -215 64 26 minecraft:coarse_dirt
-fill -214 64 -15 -211 64 -15 minecraft:coarse_dirt
-setblock -214 64 -14 minecraft:packed_mud
-fill -214 64 -10 -211 64 -10 minecraft:coarse_dirt
-setblock -214 64 -9 minecraft:packed_mud
-fill -214 64 -8 -214 64 -5 minecraft:coarse_dirt
-setblock -214 64 -4 minecraft:packed_mud
-fill -214 64 -3 -214 64 0 minecraft:coarse_dirt
-setblock -214 64 1 minecraft:packed_mud
-fill -214 64 10 -211 64 10 minecraft:coarse_dirt
-setblock -214 64 11 minecraft:packed_mud
-fill -214 64 12 -214 64 15 minecraft:coarse_dirt
-setblock -214 64 16 minecraft:packed_mud
-fill -214 64 17 -214 64 20 minecraft:coarse_dirt
-setblock -214 64 21 minecraft:packed_mud
-fill -214 64 22 -214 64 25 minecraft:coarse_dirt
-setblock -214 64 26 minecraft:packed_mud
-setblock -213 64 -18 minecraft:packed_mud
-fill -213 64 -14 -210 64 -14 minecraft:coarse_dirt
-setblock -213 64 -13 minecraft:packed_mud
-fill -213 64 -9 -210 64 -9 minecraft:coarse_dirt
-setblock -213 64 -8 minecraft:packed_mud
-fill -213 64 -7 -213 64 -4 minecraft:coarse_dirt
-setblock -213 64 -3 minecraft:packed_mud
-fill -213 64 -2 -213 64 1 minecraft:coarse_dirt
-setblock -213 64 7 minecraft:packed_mud
-fill -213 64 11 -210 64 11 minecraft:coarse_dirt
-setblock -213 64 12 minecraft:packed_mud
-fill -213 64 13 -213 64 16 minecraft:coarse_dirt
-setblock -213 64 17 minecraft:packed_mud
-fill -213 64 18 -213 64 21 minecraft:coarse_dirt
-setblock -213 64 22 minecraft:packed_mud
-fill -213 64 23 -213 64 26 minecraft:coarse_dirt
-fill -212 64 -18 -209 64 -18 minecraft:coarse_dirt
-setblock -212 64 -17 minecraft:packed_mud
-fill -212 64 -13 -209 64 -13 minecraft:coarse_dirt
-setblock -212 64 -12 minecraft:packed_mud
-fill -212 64 -8 -209 64 -8 minecraft:coarse_dirt
-setblock -212 64 -7 minecraft:packed_mud
-fill -212 64 -6 -212 64 -3 minecraft:coarse_dirt
-setblock -212 64 -2 minecraft:packed_mud
-fill -212 64 -1 -212 64 1 minecraft:coarse_dirt
-fill -212 64 7 -209 64 7 minecraft:coarse_dirt
-setblock -212 64 8 minecraft:packed_mud
-fill -212 64 12 -209 64 12 minecraft:coarse_dirt
-setblock -212 64 13 minecraft:packed_mud
-fill -212 64 14 -212 64 17 minecraft:coarse_dirt
-setblock -212 64 18 minecraft:packed_mud
-fill -212 64 19 -212 64 22 minecraft:coarse_dirt
-setblock -212 64 23 minecraft:packed_mud
-fill -212 64 24 -212 64 26 minecraft:coarse_dirt
-fill -211 64 -17 -208 64 -17 minecraft:coarse_dirt
-setblock -211 64 -16 minecraft:packed_mud
-fill -211 64 -12 -208 64 -12 minecraft:coarse_dirt
-setblock -211 64 -11 minecraft:packed_mud
-fill -211 64 -7 -208 64 -7 minecraft:coarse_dirt
-setblock -211 64 -6 minecraft:packed_mud
+fill -97 56 -5 -97 58 -5 minecraft:orange_terracotta
+fill -97 59 -5 -97 61 -5 minecraft:terracotta
+fill -97 62 -5 -97 64 -5 minecraft:yellow_terracotta
+fill -97 65 -5 -97 67 -5 minecraft:white_terracotta
+fill -97 68 -5 -97 70 -5 minecraft:red_terracotta
+fill -97 71 -5 -97 73 -5 minecraft:light_gray_terracotta
+fill -97 74 -5 -97 76 -5 minecraft:brown_terracotta
+fill -97 77 -5 -97 79 -5 minecraft:orange_terracotta
+fill -97 80 -5 -97 82 -5 minecraft:red_terracotta
+fill -97 83 -5 -97 85 -5 minecraft:terracotta
+fill -97 86 -5 -97 88 -5 minecraft:orange_terracotta
+fill -97 89 -5 -97 91 -5 minecraft:terracotta
+fill -97 92 -5 -97 94 -5 minecraft:yellow_terracotta
+fill -97 95 -5 -97 97 -5 minecraft:white_terracotta
+fill -97 98 -5 -97 100 -5 minecraft:red_terracotta
+fill -97 101 -5 -97 103 -5 minecraft:light_gray_terracotta
+fill -97 104 -5 -97 104 -5 minecraft:brown_terracotta
+fill -97 105 -5 -97 105 -5 minecraft:red_sand
+fill -97 56 -4 -97 58 -4 minecraft:orange_terracotta
+fill -97 59 -4 -97 61 -4 minecraft:terracotta
+fill -97 62 -4 -97 64 -4 minecraft:yellow_terracotta
+fill -97 65 -4 -97 67 -4 minecraft:white_terracotta
+fill -97 68 -4 -97 70 -4 minecraft:red_terracotta
+fill -97 71 -4 -97 73 -4 minecraft:light_gray_terracotta
+fill -97 74 -4 -97 76 -4 minecraft:brown_terracotta
+fill -97 77 -4 -97 79 -4 minecraft:orange_terracotta
+fill -97 80 -4 -97 82 -4 minecraft:red_terracotta
+fill -97 83 -4 -97 85 -4 minecraft:terracotta
+fill -97 86 -4 -97 88 -4 minecraft:orange_terracotta
+fill -97 89 -4 -97 91 -4 minecraft:terracotta
+fill -97 92 -4 -97 94 -4 minecraft:yellow_terracotta
+fill -97 95 -4 -97 97 -4 minecraft:white_terracotta
+fill -97 98 -4 -97 100 -4 minecraft:red_terracotta
+fill -97 101 -4 -97 103 -4 minecraft:light_gray_terracotta
+fill -97 104 -4 -97 105 -4 minecraft:brown_terracotta
+fill -97 106 -4 -97 106 -4 minecraft:red_sand
+fill -97 56 -3 -97 58 -1 minecraft:orange_terracotta
+fill -97 59 -3 -97 61 -1 minecraft:terracotta
+fill -97 62 -3 -97 64 -1 minecraft:yellow_terracotta
+fill -97 65 -3 -97 67 -1 minecraft:white_terracotta
+fill -97 68 -3 -97 70 -1 minecraft:red_terracotta
+fill -97 71 -3 -97 73 -1 minecraft:light_gray_terracotta
+fill -97 74 -3 -97 76 -1 minecraft:brown_terracotta
+fill -97 77 -3 -97 79 -1 minecraft:orange_terracotta
+fill -97 80 -3 -97 82 -1 minecraft:red_terracotta
+fill -97 83 -3 -97 85 -1 minecraft:terracotta
+fill -97 86 -3 -97 88 -1 minecraft:orange_terracotta
+fill -97 89 -3 -97 91 -1 minecraft:terracotta
+fill -97 92 -3 -97 94 -1 minecraft:yellow_terracotta
+fill -97 95 -3 -97 97 -1 minecraft:white_terracotta
+fill -97 98 -3 -97 100 -1 minecraft:red_terracotta
+fill -97 101 -3 -97 103 -1 minecraft:light_gray_terracotta
+fill -97 104 -3 -97 106 -1 minecraft:brown_terracotta
+fill -97 107 -3 -97 109 -1 minecraft:orange_terracotta
+fill -97 110 -3 -97 112 -1 minecraft:red_terracotta
+fill -97 113 -3 -97 115 -1 minecraft:terracotta
+fill -97 116 -3 -97 116 -1 minecraft:red_sand
+fill -97 56 0 -97 58 0 minecraft:orange_terracotta
+fill -97 59 0 -97 61 0 minecraft:terracotta
+fill -97 62 0 -97 64 0 minecraft:yellow_terracotta
+fill -97 65 0 -97 67 0 minecraft:white_terracotta
+fill -97 68 0 -97 70 0 minecraft:red_terracotta
+fill -97 71 0 -97 73 0 minecraft:light_gray_terracotta
+fill -97 74 0 -97 76 0 minecraft:brown_terracotta
+fill -97 77 0 -97 79 0 minecraft:orange_terracotta
+fill -97 80 0 -97 82 0 minecraft:red_terracotta
+fill -97 83 0 -97 85 0 minecraft:terracotta
+fill -97 86 0 -97 87 0 minecraft:orange_terracotta
+fill -97 88 0 -97 88 0 minecraft:red_sand
+fill -97 56 1 -97 58 1 minecraft:orange_terracotta
+fill -97 59 1 -97 61 1 minecraft:terracotta
+fill -97 62 1 -97 64 1 minecraft:yellow_terracotta
+fill -97 65 1 -97 67 1 minecraft:white_terracotta
+fill -97 68 1 -97 70 1 minecraft:red_terracotta
+fill -97 71 1 -97 73 1 minecraft:light_gray_terracotta
+fill -97 74 1 -97 76 1 minecraft:brown_terracotta
+fill -97 77 1 -97 79 1 minecraft:orange_terracotta
+fill -97 80 1 -97 80 1 minecraft:red_terracotta
+fill -97 81 1 -97 81 1 minecraft:red_sand
+fill -97 56 2 -97 58 2 minecraft:orange_terracotta
+fill -97 59 2 -97 61 2 minecraft:terracotta
+fill -97 62 2 -97 64 2 minecraft:yellow_terracotta
+fill -97 65 2 -97 67 2 minecraft:white_terracotta
+fill -97 68 2 -97 70 2 minecraft:red_terracotta
+fill -97 71 2 -97 73 2 minecraft:light_gray_terracotta
+fill -97 74 2 -97 74 2 minecraft:red_sand
+fill -97 56 3 -97 65 4 minecraft:red_sandstone
+fill -97 66 3 -97 66 4 minecraft:red_sand
+fill -97 56 5 -97 65 7 minecraft:red_sandstone
+fill -97 66 5 -97 66 7 minecraft:dirt_path
+fill -97 56 8 -97 65 9 minecraft:red_sandstone
+fill -97 66 8 -97 66 9 minecraft:red_sand
+fill -97 56 10 -97 58 10 minecraft:orange_terracotta
+fill -97 59 10 -97 61 10 minecraft:terracotta
+fill -97 62 10 -97 64 10 minecraft:yellow_terracotta
+fill -97 65 10 -97 67 10 minecraft:white_terracotta
+fill -97 68 10 -97 70 10 minecraft:red_terracotta
+fill -97 71 10 -97 73 10 minecraft:light_gray_terracotta
+fill -97 74 10 -97 74 10 minecraft:red_sand
+fill -97 56 11 -97 58 11 minecraft:orange_terracotta
+fill -97 59 11 -97 61 11 minecraft:terracotta
+fill -97 62 11 -97 64 11 minecraft:yellow_terracotta
+fill -97 65 11 -97 67 11 minecraft:white_terracotta
+fill -97 68 11 -97 70 11 minecraft:red_terracotta
+fill -97 71 11 -97 73 11 minecraft:light_gray_terracotta
+fill -97 74 11 -97 76 11 minecraft:brown_terracotta
+fill -97 77 11 -97 79 11 minecraft:orange_terracotta
+fill -97 80 11 -97 80 11 minecraft:red_terracotta
+fill -97 81 11 -97 81 11 minecraft:red_sand
+fill -97 56 12 -97 58 12 minecraft:orange_terracotta
+fill -97 59 12 -97 61 12 minecraft:terracotta
+fill -97 62 12 -97 64 12 minecraft:yellow_terracotta
+fill -97 65 12 -97 67 12 minecraft:white_terracotta
+fill -97 68 12 -97 70 12 minecraft:red_terracotta
+fill -97 71 12 -97 73 12 minecraft:light_gray_terracotta
+fill -97 74 12 -97 76 12 minecraft:brown_terracotta
+fill -97 77 12 -97 79 12 minecraft:orange_terracotta
+fill -97 80 12 -97 82 12 minecraft:red_terracotta
+fill -97 83 12 -97 85 12 minecraft:terracotta
+fill -97 86 12 -97 87 12 minecraft:orange_terracotta
+fill -97 88 12 -97 88 12 minecraft:red_sand
+fill -97 56 13 -97 58 14 minecraft:orange_terracotta
+fill -97 59 13 -97 61 14 minecraft:terracotta
+fill -97 62 13 -97 64 14 minecraft:yellow_terracotta
+fill -97 65 13 -97 67 14 minecraft:white_terracotta
+fill -97 68 13 -97 70 14 minecraft:red_terracotta
+fill -97 71 13 -97 73 14 minecraft:light_gray_terracotta
+fill -97 74 13 -97 76 14 minecraft:brown_terracotta
+fill -97 77 13 -97 79 14 minecraft:orange_terracotta
+fill -97 80 13 -97 82 14 minecraft:red_terracotta
+fill -97 83 13 -97 85 14 minecraft:terracotta
+fill -97 86 13 -97 88 14 minecraft:orange_terracotta
+fill -97 89 13 -97 91 14 minecraft:terracotta
+fill -97 92 13 -97 94 14 minecraft:yellow_terracotta
+fill -97 95 13 -97 97 14 minecraft:white_terracotta
+fill -97 98 13 -97 100 14 minecraft:red_terracotta
+fill -97 101 13 -97 101 14 minecraft:light_gray_terracotta
+fill -97 102 13 -97 102 14 minecraft:red_sand
+fill -97 56 15 -97 58 21 minecraft:orange_terracotta
+fill -97 59 15 -97 61 21 minecraft:terracotta
+fill -97 62 15 -97 64 21 minecraft:yellow_terracotta
+fill -97 65 15 -97 67 21 minecraft:white_terracotta
+fill -97 68 15 -97 70 21 minecraft:red_terracotta
+fill -97 71 15 -97 73 21 minecraft:light_gray_terracotta
+fill -97 74 15 -97 76 21 minecraft:brown_terracotta
+fill -97 77 15 -97 79 21 minecraft:orange_terracotta
+fill -97 80 15 -97 82 21 minecraft:red_terracotta
+fill -97 83 15 -97 85 21 minecraft:terracotta
+fill -97 86 15 -97 88 21 minecraft:orange_terracotta
+fill -97 89 15 -97 91 21 minecraft:terracotta
+fill -97 92 15 -97 94 21 minecraft:yellow_terracotta
+fill -97 95 15 -97 97 21 minecraft:white_terracotta
+fill -97 98 15 -97 100 21 minecraft:red_terracotta
+fill -97 101 15 -97 103 21 minecraft:light_gray_terracotta
+fill -97 104 15 -97 106 21 minecraft:brown_terracotta
+fill -97 107 15 -97 109 21 minecraft:orange_terracotta
+fill -97 110 15 -97 111 21 minecraft:red_terracotta
+fill -97 112 15 -97 112 21 minecraft:red_sand
+fill -97 56 22 -97 58 40 minecraft:orange_terracotta
+fill -97 59 22 -97 61 40 minecraft:terracotta
+fill -97 62 22 -97 64 40 minecraft:yellow_terracotta
+fill -97 65 22 -97 67 40 minecraft:white_terracotta
+fill -97 68 22 -97 70 40 minecraft:red_terracotta
+fill -97 71 22 -97 73 40 minecraft:light_gray_terracotta
+fill -97 74 22 -97 76 40 minecraft:brown_terracotta
+fill -97 77 22 -97 79 40 minecraft:orange_terracotta
+fill -97 80 22 -97 82 40 minecraft:red_terracotta
+fill -97 83 22 -97 85 40 minecraft:terracotta
+fill -97 86 22 -97 88 40 minecraft:orange_terracotta
+fill -97 89 22 -97 91 40 minecraft:terracotta
+fill -97 92 22 -97 94 40 minecraft:yellow_terracotta
+fill -97 95 22 -97 97 40 minecraft:white_terracotta
+fill -97 98 22 -97 100 40 minecraft:red_terracotta
+fill -97 101 22 -97 103 40 minecraft:light_gray_terracotta
+fill -97 104 22 -97 106 40 minecraft:brown_terracotta
+fill -97 107 22 -97 109 40 minecraft:orange_terracotta
+fill -97 110 22 -97 112 40 minecraft:red_terracotta
+fill -97 113 22 -97 113 40 minecraft:terracotta
+fill -97 114 22 -97 114 40 minecraft:red_sand
+fill -97 56 41 -97 58 43 minecraft:orange_terracotta
+fill -97 59 41 -97 61 43 minecraft:terracotta
+fill -97 62 41 -97 64 43 minecraft:yellow_terracotta
+fill -97 65 41 -97 67 43 minecraft:white_terracotta
+fill -97 68 41 -97 70 43 minecraft:red_terracotta
+fill -97 71 41 -97 73 43 minecraft:light_gray_terracotta
+fill -97 74 41 -97 76 43 minecraft:brown_terracotta
+fill -97 77 41 -97 79 43 minecraft:orange_terracotta
+fill -97 80 41 -97 82 43 minecraft:red_terracotta
+fill -97 83 41 -97 85 43 minecraft:terracotta
+fill -97 86 41 -97 88 43 minecraft:orange_terracotta
+fill -97 89 41 -97 91 43 minecraft:terracotta
+fill -97 92 41 -97 94 43 minecraft:yellow_terracotta
+fill -97 95 41 -97 97 43 minecraft:white_terracotta
+fill -97 98 41 -97 100 43 minecraft:red_terracotta
+fill -97 101 41 -97 103 43 minecraft:light_gray_terracotta
+fill -97 104 41 -97 106 43 minecraft:brown_terracotta
+fill -97 107 41 -97 109 43 minecraft:orange_terracotta
+fill -97 110 41 -97 112 43 minecraft:red_terracotta
+fill -97 113 41 -97 115 43 minecraft:terracotta
+fill -97 116 41 -97 116 43 minecraft:red_sand
+fill -97 56 44 -97 58 54 minecraft:orange_terracotta
+fill -97 59 44 -97 61 54 minecraft:terracotta
+fill -97 62 44 -97 64 54 minecraft:yellow_terracotta
+fill -97 65 44 -97 67 54 minecraft:white_terracotta
+fill -97 68 44 -97 70 54 minecraft:red_terracotta
+fill -97 71 44 -97 73 54 minecraft:light_gray_terracotta
+fill -97 74 44 -97 76 54 minecraft:brown_terracotta
+fill -97 77 44 -97 79 54 minecraft:orange_terracotta
+fill -97 80 44 -97 82 54 minecraft:red_terracotta
+fill -97 83 44 -97 85 54 minecraft:terracotta
+fill -97 86 44 -97 88 54 minecraft:orange_terracotta
+fill -97 89 44 -97 91 54 minecraft:terracotta
+fill -97 92 44 -97 94 54 minecraft:yellow_terracotta
+fill -97 95 44 -97 97 54 minecraft:white_terracotta
+fill -97 98 44 -97 100 54 minecraft:red_terracotta
+fill -97 101 44 -97 103 54 minecraft:light_gray_terracotta
+fill -97 104 44 -97 106 54 minecraft:brown_terracotta
+fill -97 107 44 -97 109 54 minecraft:orange_terracotta
+fill -97 110 44 -97 112 54 minecraft:red_terracotta
+fill -97 113 44 -97 113 54 minecraft:terracotta
+fill -97 114 44 -97 114 54 minecraft:red_sand
+fill -97 56 55 -97 58 73 minecraft:orange_terracotta
+fill -97 59 55 -97 61 73 minecraft:terracotta
+fill -97 62 55 -97 64 73 minecraft:yellow_terracotta
+fill -97 65 55 -97 67 73 minecraft:white_terracotta
+fill -97 68 55 -97 70 73 minecraft:red_terracotta
+fill -97 71 55 -97 73 73 minecraft:light_gray_terracotta
+fill -97 74 55 -97 76 73 minecraft:brown_terracotta
+fill -97 77 55 -97 79 73 minecraft:orange_terracotta
+fill -97 80 55 -97 82 73 minecraft:red_terracotta
+fill -97 83 55 -97 85 73 minecraft:terracotta
+fill -97 86 55 -97 88 73 minecraft:orange_terracotta
+fill -97 89 55 -97 91 73 minecraft:terracotta
+fill -97 92 55 -97 94 73 minecraft:yellow_terracotta
+fill -97 95 55 -97 97 73 minecraft:white_terracotta
+fill -97 98 55 -97 100 73 minecraft:red_terracotta
+fill -97 101 55 -97 103 73 minecraft:light_gray_terracotta
+fill -97 104 55 -97 106 73 minecraft:brown_terracotta
+fill -97 107 55 -97 109 73 minecraft:orange_terracotta
+fill -97 110 55 -97 111 73 minecraft:red_terracotta
+fill -97 112 55 -97 112 73 minecraft:red_sand
+fill -97 56 74 -97 58 79 minecraft:orange_terracotta
+fill -97 59 74 -97 61 79 minecraft:terracotta
+fill -97 62 74 -97 64 79 minecraft:yellow_terracotta
+fill -97 65 74 -97 67 79 minecraft:white_terracotta
+fill -97 68 74 -97 70 79 minecraft:red_terracotta
+fill -97 71 74 -97 73 79 minecraft:light_gray_terracotta
+fill -97 74 74 -97 76 79 minecraft:brown_terracotta
+fill -97 77 74 -97 79 79 minecraft:orange_terracotta
+fill -97 80 74 -97 82 79 minecraft:red_terracotta
+fill -97 83 74 -97 85 79 minecraft:terracotta
+fill -97 86 74 -97 88 79 minecraft:orange_terracotta
+fill -97 89 74 -97 91 79 minecraft:terracotta
+fill -97 92 74 -97 94 79 minecraft:yellow_terracotta
+fill -97 95 74 -97 97 79 minecraft:white_terracotta
+fill -97 98 74 -97 100 79 minecraft:red_terracotta
+fill -97 101 74 -97 103 79 minecraft:light_gray_terracotta
+fill -97 104 74 -97 106 79 minecraft:brown_terracotta
+fill -97 107 74 -97 109 79 minecraft:orange_terracotta
+fill -97 110 74 -97 112 79 minecraft:red_terracotta
+fill -97 113 74 -97 113 79 minecraft:terracotta
+fill -97 114 74 -97 114 79 minecraft:red_sand
+fill -97 56 80 -97 58 95 minecraft:orange_terracotta
+fill -97 59 80 -97 61 95 minecraft:terracotta
+fill -97 62 80 -97 64 95 minecraft:yellow_terracotta
+fill -97 65 80 -97 67 95 minecraft:white_terracotta
+fill -97 68 80 -97 70 95 minecraft:red_terracotta
+fill -97 71 80 -97 73 95 minecraft:light_gray_terracotta
+fill -97 74 80 -97 76 95 minecraft:brown_terracotta
+fill -97 77 80 -97 79 95 minecraft:orange_terracotta
+fill -97 80 80 -97 82 95 minecraft:red_terracotta
+fill -97 83 80 -97 85 95 minecraft:terracotta
+fill -97 86 80 -97 88 95 minecraft:orange_terracotta
+fill -97 89 80 -97 91 95 minecraft:terracotta
+fill -97 92 80 -97 94 95 minecraft:yellow_terracotta
+fill -97 95 80 -97 97 95 minecraft:white_terracotta
+fill -97 98 80 -97 100 95 minecraft:red_terracotta
+fill -97 101 80 -97 103 95 minecraft:light_gray_terracotta
+fill -97 104 80 -97 106 95 minecraft:brown_terracotta
+fill -97 107 80 -97 109 95 minecraft:orange_terracotta
+fill -97 110 80 -97 112 95 minecraft:red_terracotta
+fill -97 113 80 -97 115 95 minecraft:terracotta
+fill -97 116 80 -97 116 95 minecraft:red_sand

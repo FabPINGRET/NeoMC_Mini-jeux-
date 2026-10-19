@@ -437,10 +437,13 @@ gy = ground(*DELTA) - 1
 F('e', dx_ + 8, gy + 1, dz_ - 8, dx_ + 10, gy + 10, dz_ - 6, 'stripped_birch_log', 'outline')          # tour de guet
 F('e', dx_ + 9, gy + 1, dz_ - 7, dx_ + 9, gy + 10, dz_ - 7, 'ladder[facing=south]')
 F('e', dx_ + 7, gy + 11, dz_ - 9, dx_ + 11, gy + 11, dz_ - 5, 'birch_slab')
-B('e', dx_ + 9, gy + 11, dz_ - 7, 'air')
+F('e', dx_ + 9, gy + 1, dz_ - 6, dx_ + 9, gy + 2, dz_ - 6, 'air')                                    # porte côté sol
+B('e', dx_ + 9, gy + 11, dz_ - 7, 'ladder[facing=south]')
+B('e', dx_ + 9, gy + 11, dz_ - 8, 'stripped_birch_log')                                           # support de l'échelon du haut
 F('e', dx_ + 7, gy + 12, dz_ - 9, dx_ + 11, gy + 12, dz_ - 5, 'birch_fence', 'outline')
-F('e', dx_ + 9, gy + 13, dz_ - 7, dx_ + 9, gy + 17, dz_ - 7, 'iron_bars')
-B('e', dx_ + 9, gy + 18, dz_ - 7, 'lightning_rod')
+F('e', dx_ + 9, gy + 13, dz_ - 7, dx_ + 9, gy + 18, dz_ - 7, 'air')                                  # ancienne antenne (hors de l'échelle)
+F('e', dx_ + 11, gy + 13, dz_ - 9, dx_ + 11, gy + 17, dz_ - 9, 'iron_bars')
+B('e', dx_ + 11, gy + 18, dz_ - 9, 'lightning_rod')
 F('e', dx_ - 10, gy + 1, dz_ - 9, dx_ - 8, gy + 3, dz_ - 7, 'hay_block')
 # les Aiguilles (pitons rocheux, nids de ptéranodons au sommet)
 NESTS = []
@@ -493,7 +496,7 @@ for y in range(64, 80):
     F('w', lkx - 7, y, lkz - 7, lkx + 7, y, lkz + 7, STRATA[(y // 3) % len(STRATA)])
 camp('w', lkx, lkz, 80, 'acacia', 'orange_wool')
 for i in range(16):                                                          # escalier en colimaçon
-    a = _m.radians(i * 30)
+    a = _m.radians(-135 + i * 15)                                                # départ côté plate-forme d'Inès (-145,81,59)
     px, pz = round(lkx + 8 * _m.cos(a)), round(lkz + 8 * _m.sin(a))
     F('w', px - 1, 64 + i, pz - 1, px + 1, 64 + i, pz + 1, 'smooth_red_sandstone')
     F('w', px - 1, 65 + i, pz - 1, px + 1, 68 + i, pz + 1, 'air')

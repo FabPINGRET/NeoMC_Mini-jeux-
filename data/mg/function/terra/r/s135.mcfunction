@@ -4,13 +4,16 @@ fill 131 85 1 135 85 1 minecraft:birch_slab
 fill 136 71 -2 138 80 0 minecraft:stripped_birch_log outline
 fill 137 71 -1 137 80 -1 minecraft:ladder[facing=south]
 fill 135 81 -3 139 81 1 minecraft:birch_slab
-setblock 137 81 -1 minecraft:air
+fill 137 71 0 137 72 0 minecraft:air
+setblock 137 81 -1 minecraft:ladder[facing=south]
+setblock 137 81 -2 minecraft:stripped_birch_log
 fill 135 82 -3 139 82 -3 minecraft:birch_fence
 fill 135 82 1 139 82 1 minecraft:birch_fence
 fill 135 82 -3 135 82 1 minecraft:birch_fence
 fill 139 82 -3 139 82 1 minecraft:birch_fence
-fill 137 83 -1 137 87 -1 minecraft:iron_bars
-setblock 137 88 -1 minecraft:lightning_rod
+fill 137 83 -1 137 88 -1 minecraft:air
+fill 139 83 -3 139 87 -3 minecraft:iron_bars
+setblock 139 88 -3 minecraft:lightning_rod
 fill 118 71 -3 120 73 -1 minecraft:hay_block
 fill 219 66 55 225 66 61 minecraft:andesite
 fill 219 67 55 225 67 61 minecraft:andesite
@@ -196,6 +199,3 @@ fill 223 71 77 229 71 83 minecraft:tuff
 fill 223 72 77 229 72 83 minecraft:stone
 fill 223 73 77 229 73 83 minecraft:stone
 fill 223 74 77 229 74 83 minecraft:stone
-fill 223 75 77 229 75 83 minecraft:stone
-fill 223 76 77 229 76 83 minecraft:andesite
-fill 223 77 77 229 77 83 minecraft:andesite

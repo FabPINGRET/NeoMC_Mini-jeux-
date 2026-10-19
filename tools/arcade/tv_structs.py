@@ -5,6 +5,24 @@ import math
 from tv_build import Vox, AIR
 
 
+def spiral_clear_inner(v, cx, cz, r, y1, y2, per_turn):
+    """Dégage (AIR, y+1..y+3) la case intérieure (r - 1) de chaque marche d'un colimaçon posé par Vox.spiral.
+    Même angle et même arrondi que Vox.spiral ; les cases de marche (intérieure ou extérieure) ne sont jamais touchées."""
+    steps = set()
+    for i, y in enumerate(range(y1, y2 + 1)):
+        a = 2 * math.pi * i / per_turn
+        steps.add((round(cx + r * math.cos(a)), y, round(cz + r * math.sin(a))))
+        steps.add((round(cx + (r - 1) * math.cos(a)), y, round(cz + (r - 1) * math.sin(a))))
+    for i, y in enumerate(range(y1, y2 + 1)):
+        a = 2 * math.pi * i / per_turn
+        x2, z2 = round(cx + (r - 1) * math.cos(a)), round(cz + (r - 1) * math.sin(a))
+        if (x2, z2) == (cx, cz):
+            continue
+        for yy in (y + 1, y + 2, y + 3):
+            if (x2, yy, z2) not in steps:
+                v.set(x2, yy, z2, AIR)
+
+
 # ================================================================ camp avancé (balise de voyage au centre, sur la plate-forme)
 def camp(cx, cz, y, gh, wood='spruce', roof='green', accent='lantern'):
     v = Vox(cx * 31 + cz)
@@ -57,10 +75,11 @@ def camp(cx, cz, y, gh, wood='spruce', roof='green', accent='lantern'):
     v.fill(tx, y + 1, tz, tx, y + 8, tz, AIR)
     v.fill(tx, y + 1, tz, tx, y + 9, tz, 'ladder[facing=south]')
     v.fill(tx - 1, y + 1, tz - 1, tx + 1, y + 8, tz - 1, log)
-    v.set(tx - 1, y + 1, tz + 1, AIR)
-    v.set(tx - 1, y + 2, tz + 1, AIR)
+    v.set(tx, y + 1, tz + 1, AIR)
+    v.set(tx, y + 2, tz + 1, AIR)
     v.fill(tx - 2, y + 9, tz - 2, tx + 2, y + 9, tz + 2, f'{wood}_slab[type=bottom]')
-    v.set(tx, y + 9, tz, f'{wood}_trapdoor[facing=south,half=bottom,open=false]')
+    v.set(tx, y + 9, tz, 'ladder[facing=south]')
+    v.set(tx, y + 9, tz - 1, log)                                           # support de l'échelon du haut
     v.fill(tx - 2, y + 10, tz - 2, tx + 2, y + 10, tz + 2, f'{wood}_fence', outline=True)
     v.pillars(tx - 2, tz - 2, tx + 2, tz + 2, y + 10, y + 12, log)
     v.gable_roof(tx - 2, tz - 2, tx + 2, tz + 2, y + 13, 'x', f'{wood}_stairs', f'{wood}_slab', planks, overhang=0)
@@ -106,7 +125,7 @@ def station(sx, sz):
     v.fill(sx + 3, y0 + 6, sz - 7, sx + 9, y0 + 6, sz + 7, AIR)
     # escalier intérieur
     v.stair_run(sx - 8, y0 + 1, sz + 6, 1, 0, 5, 'polished_andesite_stairs', 'east')
-    v.fill(sx - 8, y0 + 5, sz + 5, sx - 3, y0 + 5, sz + 7, AIR)
+    v.fill(sx - 8, y0 + 5, sz + 5, sx - 5, y0 + 5, sz + 7, AIR)
     # porte principale (est) et sas
     v.opening(sx + 10, y0 + 1, sz - 1, sx + 10, y0 + 3, sz + 1)
     v.fill(sx + 11, y0, sz - 2, sx + 13, y0, sz + 2, 'polished_andesite')
@@ -216,6 +235,7 @@ def fort(fx, fz, fy=64):
     for z in (fz - 4, fz + 4):
         v.set(fx + 24, fy + 7, z, 'red_wall_banner[facing=east]')
     # tours d'angle (toit en pyramide, intérieur)
+    doors = []
     for (a, b) in [(-20, -20), (20, -20), (-20, 20), (20, 20)]:
         cx, cz = fx + a, fz + b
         v.fill(cx - 3, fy + 1, cz - 3, cx + 3, fy + 13, cz + 3, 'spruce_planks', hollow=True)
@@ -225,6 +245,7 @@ def fort(fx, fz, fy=64):
             v.fill(cx - 2, yy, cz - 2, cx + 2, yy, cz + 2, 'spruce_planks')
             v.set(cx + (1 if a < 0 else -1), yy, cz, AIR)
         v.fill(cx + (1 if a < 0 else -1), fy + 1, cz, cx + (1 if a < 0 else -1), fy + 13, cz, 'ladder[facing=' + ('west' if a < 0 else 'east') + ']')
+        v.fill(cx + (2 if a < 0 else -2), fy + 1, cz, cx + (2 if a < 0 else -2), fy + 13, cz, 'stripped_dark_oak_log')   # support des échelons
         v.windows(cx - 3, cz - 3, cx + 3, cz + 3, fy + 11, 1, AIR, every=2)
         v.fill(cx - 4, fy + 14, cz - 4, cx + 4, fy + 14, cz + 4, 'dark_oak_planks')
         for i in range(5):
@@ -233,7 +254,9 @@ def fort(fx, fz, fy=64):
         v.set(cx, fy + 21, cz, 'red_wool')
         v.lamp(cx, fy + 12, cz)
         door_x = cx - 3 if a > 0 else cx + 3
-        v.opening(door_x, fy + 1, cz, door_x, fy + 2, cz)
+        door_z = cz + (2 if b < 0 else -2)                                  # hors de l'axe de l'échelle et de son support
+        v.opening(door_x, fy + 1, door_z, door_x, fy + 2, door_z)
+        doors.append((door_x, door_z))
     # caserne (longue maison, couchettes)
     x1, z1, x2, z2 = fx - 16, fz - 16, fx - 4, fz - 8
     v.fill(x1, fy + 1, z1, x2, fy + 4, z2, 'dark_oak_planks', hollow=True)
@@ -303,6 +326,8 @@ def fort(fx, fz, fy=64):
     for (a, b) in [(2, -10), (-2, 0), (8, -2), (-8, 0)]:
         v.set(fx + a, fy + 1, fz + b, 'campfire[lit=true]')
     v.scatter(fx - 18, fy + 1, fz - 18, fx + 18, fz + 18, ['barrel[facing=up]', 'hay_block', 'spruce_planks'], 14)
+    for (door_x, door_z) in doors:                                           # le décor ne doit pas boucher les portes des tours
+        v.fill(door_x - 1, fy + 1, door_z, door_x + 1, fy + 2, door_z, AIR)
     return v
 
 
@@ -409,7 +434,7 @@ def lab(G):
 
 def forge(G):
     v = Vox(6)
-    v.clear(-17, G + 1, 3, -5, G + 9, 11)
+    v.clear(-16, G + 1, 3, -5, G + 9, 11)                                # x>=-16 : ne pas effacer le mur est de la maison 2
     v.fill(-16, G, 4, -6, G, 10, lambda x, y, z: 'stone_bricks' if (x + z) % 3 else 'cracked_stone_bricks')
     for (x, z) in [(-16, 4), (-6, 4), (-16, 10), (-6, 10), (-11, 4), (-11, 10)]:
         v.fill(x, G + 1, z, x, G + 4, z, 'stripped_dark_oak_log')
@@ -502,12 +527,13 @@ def tree_heart(mx, mz, g):
     v.set(mx, top + 1, mz, 'sniffer_egg')
     v.set(mx + 1, top + 1, mz - 1, 'turtle_egg[eggs=3]')
     v.scatter(mx - 4, top + 1, mz - 4, mx + 4, mz + 4, ['bone_block[axis=x]', 'skeleton_skull'], 5)
-    v.set(mx, top, mz, 'mangrove_planks')
-    v.clear(mx - 1, top, mz - 1, mx - 1, top, mz - 1)                         # arrivée de l'escalier
     for a in range(0, 360, 40):
         r = math.radians(a)
         x, z = round(mx + 9 * math.cos(r)), round(mz + 9 * math.sin(r))
         v.fill(x, top - 10, z, x, top - 1, z, 'vine[north=true]', only=(AIR, None))
+    # la volée gagne sur les paliers et le plancher du nid (sans le pilier central, déjà posé)
+    v.spiral(mx, mz, R - 1, g + 1, top - 1, 'mangrove_slab[type=top]', per_turn=14)
+    spiral_clear_inner(v, mx, mz, R - 1, g + 1, top - 1, 14)               # paliers / feuilles au-dessus de la case intérieure
     return v, (mx + 0.5, top + 1, mz + 0.5), (mx + R + 4, g + 1, mz)
 
 
@@ -517,7 +543,7 @@ def spire_nest(px, pz, g):
     top = g + 46
     for y in range(g - 2, top + 1):
         t = (y - g) / (top - g)
-        r = 7.5 - 3.2 * max(0, t)
+        r = 7.5 - 1.8 * max(0, t)                                            # silhouette assez large pour la volée (r=3, mur d >= 3,5 en haut)
         for x in range(px - 9, px + 10):
             for z in range(pz - 9, pz + 10):
                 d = math.hypot(x - px, z - pz) + 0.6 * math.sin(y * 0.7 + x * 0.3)
@@ -525,14 +551,15 @@ def spire_nest(px, pz, g):
                     if d >= r - 1.6:
                         v.set(x, y, z, ['andesite', 'stone', 'tuff', 'stone', 'calcite'][(y // 5) % 5])
                     else:
-                        v.set(x, y, z, AIR)
+                        v.set(x, y, z, AIR if y > g else 'stone')              # remblai : seuil de l'entrée au niveau du sol
     v.spiral(px, pz, 3, g + 1, top - 1, 'stone_brick_slab[type=top]', center='stone_bricks', per_turn=12)
     v.clear(px - 9, g + 1, pz - 1, px - 4, g + 3, pz + 1)                      # entrée ouest
     v.set(px - 7, g + 4, pz, 'lantern[hanging=true]')
     for yy in range(g + 8, top, 8):                                          # meurtrières lumineuses
-        v.set(px + round(6.5 - 2.6 * (yy - g) / (top - g)), yy, pz, 'glass')
-        v.set(px, yy, pz - round(6.5 - 2.6 * (yy - g) / (top - g)), 'glass')
-        v.lamp(px - 2, yy + 2, pz + 1, False, 'lantern')
+        r_y = 7.5 - 1.8 * (yy - g) / (top - g)                               # rayon de la silhouette à cette hauteur
+        v.set(px + round(r_y - 0.8), yy, pz, 'glass')
+        v.set(px, yy, pz - round(r_y - 0.8), 'glass')
+        v.lamp(px - 1, yy + 2, pz, False, 'lantern')                         # hors de la volée
     # nid au sommet
     v.fill(px - 6, top, pz - 6, px + 6, top, pz + 6, 'stone', only=(None, AIR))
     v.clear(px - 6, top + 1, pz - 6, px + 6, top + 6, pz + 6)
@@ -547,8 +574,22 @@ def spire_nest(px, pz, g):
                 v.set(x, top + 1, z, 'brown_carpet')
     v.set(px, top + 1, pz, 'sniffer_egg')
     v.set(px + 1, top + 1, pz + 1, 'sniffer_egg')
-    v.clear(px - 1, top, pz - 1, px, top, pz)                                 # trappe de l'escalier
     v.scatter(px - 5, top + 1, pz - 5, px + 5, pz + 5, ['bone_block[axis=x]', 'white_carpet', 'skeleton_skull'], 6)
+    # la volée gagne sur le plancher du nid (sans le pilier central, déjà posé)
+    v.spiral(px, pz, 3, g + 1, top - 1, 'stone_brick_slab[type=top]', per_turn=12)
+    spiral_clear_inner(v, px, pz, 3, g + 1, top - 1, 12)
+
+    def step_cells(i):                                                         # cases de la marche i (extérieure, intérieure), même arrondi que Vox.spiral
+        a = 2 * math.pi * i / 12
+        return [(round(px + rr * math.cos(a)), round(pz + rr * math.sin(a))) for rr in (3, 2)]
+    last = top - 1 - (g + 1)
+    for (ax, az) in step_cells(last - 1):                                      # passage en diagonale vers la dernière marche : seuls les 2 coins du plancher s'ouvrent
+        for (bx, bz) in step_cells(last):
+            if abs(ax - bx) == 1 and abs(az - bz) == 1:
+                for (qx, qz) in ((ax, bz), (bx, az)):
+                    if (qx, qz) not in step_cells(last - 1) + step_cells(last) + [(px, pz)]:
+                        v.fill(qx, top, qz, qx, top + 2, qz, AIR)
+                        v.set(qx, top - 1, qz, 'stone_brick_slab[type=top]')   # palier sous le coin ouvert, au niveau de la dernière marche (sinon chute jusqu'au remblai)
     return v, (px + 0.5, top + 1, pz + 0.5), (px - 7, g + 1, pz)
 
 

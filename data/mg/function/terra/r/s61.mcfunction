@@ -32,11 +32,12 @@ fill -72 68 -176 -59 68 -173 minecraft:smooth_stone
 fill -72 68 -172 -61 68 -164 minecraft:smooth_stone
 fill -72 68 -163 -71 68 -160 minecraft:smooth_stone
 fill -72 68 -159 -60 68 -158 minecraft:air
-fill -70 68 -163 -65 68 -161 minecraft:air
+fill -70 68 -163 -67 68 -161 minecraft:air
 fill -70 68 -160 -55 68 -160 minecraft:smooth_stone
-fill -64 68 -163 -52 68 -163 minecraft:smooth_stone
-fill -64 68 -162 -56 68 -162 minecraft:smooth_stone
-fill -64 68 -161 -61 68 -161 minecraft:smooth_stone
+fill -66 68 -163 -52 68 -163 minecraft:smooth_stone
+setblock -66 68 -162 minecraft:polished_andesite_stairs[facing=east,half=bottom]
+fill -66 68 -161 -61 68 -161 minecraft:smooth_stone
+fill -65 68 -162 -56 68 -162 minecraft:smooth_stone
 setblock -60 68 -172 minecraft:air
 fill -60 68 -171 -60 68 -168 minecraft:smooth_stone
 fill -60 68 -167 -58 68 -167 minecraft:air
@@ -198,4 +199,3 @@ setblock -69 70 -177 minecraft:vine[south=true]
 setblock -69 70 -176 minecraft:white_concrete
 setblock -69 70 -160 minecraft:white_concrete
 fill -68 70 -177 -64 70 -177 minecraft:air
-setblock -68 70 -176 minecraft:cyan_stained_glass_pane

@@ -1,4 +1,11 @@
 # Construction des régions de Terra Nova, étape 75/436 (dimension mg:terranova, générée)
+fill 59 99 -181 62 99 -181 minecraft:mangrove_leaves[persistent=true]
+setblock 59 99 -179 minecraft:mangrove_log[axis=y]
+setblock 59 99 -178 minecraft:mangrove_wood
+setblock 59 99 -177 minecraft:mangrove_log[axis=y]
+fill 59 99 -175 69 99 -175 minecraft:air
+fill 60 99 -189 66 99 -189 minecraft:mangrove_leaves[persistent=true]
+fill 60 99 -180 67 99 -180 minecraft:mangrove_leaves[persistent=true]
 fill 60 99 -179 66 99 -179 minecraft:mangrove_leaves[persistent=true]
 fill 60 99 -178 62 99 -176 minecraft:air
 fill 62 99 -188 62 99 -187 minecraft:air
@@ -76,24 +83,26 @@ fill 51 100 -170 69 100 -170 minecraft:air
 setblock 52 100 -181 minecraft:mangrove_log[axis=y]
 setblock 52 100 -180 minecraft:mangrove_wood
 fill 52 100 -179 53 100 -179 minecraft:mangrove_slab[type=top]
-fill 52 100 -178 54 100 -177 minecraft:mangrove_leaves[persistent=true]
+fill 52 100 -178 53 100 -177 minecraft:air
 setblock 52 100 -176 minecraft:mangrove_wood
 fill 52 100 -175 53 100 -175 minecraft:mangrove_log[axis=y]
 setblock 53 100 -182 minecraft:mangrove_log[axis=y]
 setblock 53 100 -181 minecraft:mangrove_wood
 fill 53 100 -180 57 100 -180 minecraft:mangrove_leaves[persistent=true]
-fill 53 100 -176 55 100 -176 minecraft:mangrove_leaves[persistent=true]
+fill 53 100 -176 54 100 -176 minecraft:air
 setblock 53 100 -174 minecraft:mangrove_log[axis=y]
 fill 53 100 -173 69 100 -173 minecraft:air
 fill 53 100 -172 61 100 -172 minecraft:air
 setblock 54 100 -182 minecraft:mangrove_wood
 fill 54 100 -181 56 100 -181 minecraft:mangrove_leaves[persistent=true]
 fill 54 100 -179 58 100 -179 minecraft:mangrove_leaves[persistent=true]
+fill 54 100 -178 54 100 -177 minecraft:mangrove_leaves[persistent=true]
 fill 54 100 -175 56 100 -175 minecraft:mangrove_leaves[persistent=true]
 setblock 54 100 -174 minecraft:mangrove_wood
 fill 55 100 -182 57 100 -182 minecraft:mangrove_log[axis=y]
 setblock 55 100 -178 minecraft:mangrove_log[axis=y]
 fill 55 100 -177 58 100 -177 minecraft:mangrove_leaves[persistent=true]
+setblock 55 100 -176 minecraft:mangrove_leaves[persistent=true]
 fill 55 100 -174 57 100 -174 minecraft:mangrove_log[axis=y]
 fill 56 100 -178 58 100 -178 minecraft:mangrove_leaves[persistent=true]
 setblock 56 100 -176 minecraft:air
@@ -165,15 +174,15 @@ fill 49 101 -181 49 101 -179 minecraft:mangrove_leaves[persistent=true]
 setblock 49 101 -178 minecraft:air
 fill 49 101 -177 49 101 -175 minecraft:mangrove_leaves[persistent=true]
 fill 50 101 -183 60 101 -180 minecraft:mangrove_planks
-fill 50 101 -179 53 101 -173 minecraft:mangrove_planks
+fill 50 101 -179 51 101 -173 minecraft:mangrove_planks
 fill 50 101 -172 51 101 -164 minecraft:air
 fill 52 101 -184 58 101 -184 minecraft:mangrove_leaves[persistent=true]
+fill 52 101 -179 53 101 -177 minecraft:air
+fill 52 101 -176 60 101 -173 minecraft:mangrove_planks
 fill 52 101 -172 58 101 -172 minecraft:mangrove_leaves[persistent=true]
 fill 52 101 -171 54 101 -164 minecraft:air
-setblock 54 101 -179 minecraft:air
-fill 54 101 -178 60 101 -173 minecraft:mangrove_planks
+fill 54 101 -179 60 101 -177 minecraft:mangrove_planks
 setblock 55 101 -185 minecraft:mangrove_leaves[persistent=true]
-fill 55 101 -179 60 101 -179 minecraft:mangrove_planks
 setblock 55 101 -171 minecraft:mangrove_leaves[persistent=true]
 fill 55 101 -170 69 101 -164 minecraft:air
 fill 56 101 -185 59 101 -185 minecraft:air
@@ -190,12 +199,3 @@ fill 62 101 -181 62 101 -179 minecraft:air
 setblock 62 101 -178 minecraft:mangrove_leaves[persistent=true]
 fill 62 101 -177 69 101 -175 minecraft:air
 setblock 63 101 -188 minecraft:mangrove_leaves[persistent=true]
-fill 63 101 -183 65 101 -183 minecraft:mangrove_leaves[persistent=true]
-fill 63 101 -181 65 101 -181 minecraft:mangrove_leaves[persistent=true]
-setblock 63 101 -180 minecraft:mangrove_leaves[persistent=true]
-fill 63 101 -179 69 101 -178 minecraft:air
-fill 64 101 -188 69 101 -188 minecraft:air
-fill 64 101 -187 64 101 -186 minecraft:air
-fill 64 101 -185 66 101 -184 minecraft:mangrove_leaves[persistent=true]
-fill 64 101 -180 69 101 -180 minecraft:air
-fill 65 101 -187 65 101 -186 minecraft:mangrove_leaves[persistent=true]

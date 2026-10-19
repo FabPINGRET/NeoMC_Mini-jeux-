@@ -1,201 +1,201 @@
 # Construction des régions de Terra Nova, étape 142/436 (dimension mg:terranova, générée)
-fill 225 102 27 231 102 27 minecraft:andesite
-fill 226 102 20 230 102 20 minecraft:andesite
-fill 226 102 21 226 102 22 minecraft:air
-fill 226 102 25 230 102 26 minecraft:air
-fill 226 102 28 230 102 28 minecraft:andesite
-setblock 227 102 21 minecraft:andesite
-fill 227 102 22 228 102 22 minecraft:air
-setblock 228 102 21 minecraft:air
+setblock 228 100 24 minecraft:stone_bricks
+fill 228 100 25 231 100 25 minecraft:air
+fill 229 100 24 232 100 24 minecraft:air
+fill 230 100 20 231 100 20 minecraft:andesite
+fill 230 100 28 231 100 28 minecraft:andesite
+fill 231 100 21 232 100 21 minecraft:andesite
+fill 231 100 27 232 100 27 minecraft:andesite
+fill 232 100 22 233 100 23 minecraft:andesite
+fill 232 100 25 233 100 26 minecraft:andesite
+setblock 233 100 24 minecraft:andesite
+fill 222 101 22 223 101 26 minecraft:andesite
+fill 223 101 20 226 101 20 minecraft:andesite
+fill 223 101 21 224 101 21 minecraft:andesite
+fill 223 101 27 224 101 28 minecraft:andesite
+fill 224 101 22 227 101 23 minecraft:air
+fill 224 101 24 226 101 26 minecraft:air
+fill 225 101 19 230 101 19 minecraft:andesite
+fill 225 101 21 227 101 21 minecraft:air
+fill 225 101 27 230 101 27 minecraft:air
+fill 225 101 28 226 101 29 minecraft:andesite
+fill 227 101 20 228 101 20 minecraft:air
+setblock 227 101 24 minecraft:lantern[hanging=false]
+fill 227 101 25 231 101 26 minecraft:air
+fill 227 101 28 228 101 28 minecraft:air
+fill 227 101 29 230 101 29 minecraft:andesite
+fill 228 101 21 228 101 22 minecraft:stone_brick_slab[type=top]
+fill 228 101 23 231 101 23 minecraft:air
+setblock 228 101 24 minecraft:stone_bricks
+fill 229 101 20 231 101 20 minecraft:andesite
+fill 229 101 21 230 101 22 minecraft:air
+fill 229 101 24 232 101 24 minecraft:air
+fill 229 101 28 231 101 28 minecraft:andesite
+fill 231 101 21 232 101 21 minecraft:andesite
+setblock 231 101 22 minecraft:air
+fill 231 101 27 232 101 27 minecraft:andesite
+fill 232 101 22 233 101 23 minecraft:andesite
+fill 232 101 25 233 101 26 minecraft:andesite
+setblock 233 101 24 minecraft:andesite
+fill 222 102 23 223 102 25 minecraft:andesite
+fill 223 102 21 225 102 21 minecraft:andesite
+fill 223 102 22 224 102 22 minecraft:andesite
+fill 223 102 26 224 102 27 minecraft:andesite
+fill 224 102 20 232 102 20 minecraft:andesite
+fill 224 102 23 232 102 23 minecraft:air
+fill 224 102 24 227 102 25 minecraft:air
+fill 224 102 28 232 102 28 minecraft:andesite
+fill 225 102 22 228 102 22 minecraft:air
+fill 225 102 26 231 102 26 minecraft:air
+setblock 225 102 27 minecraft:andesite
+fill 226 102 19 230 102 19 minecraft:andesite
+fill 226 102 21 229 102 21 minecraft:air
+fill 226 102 27 230 102 27 minecraft:air
+fill 226 102 29 230 102 29 minecraft:andesite
 setblock 228 102 24 minecraft:stone_bricks
-setblock 229 102 21 minecraft:andesite
+fill 228 102 25 232 102 25 minecraft:air
 setblock 229 102 22 minecraft:stone_brick_slab[type=top]
-fill 229 102 24 231 102 24 minecraft:air
+fill 229 102 24 232 102 24 minecraft:air
 setblock 230 102 21 minecraft:stone_brick_slab[type=top]
-setblock 230 102 22 minecraft:air
-fill 231 102 21 231 102 23 minecraft:andesite
-fill 231 102 25 232 102 26 minecraft:andesite
-fill 232 102 22 232 102 24 minecraft:andesite
-setblock 233 102 24 minecraft:andesite
-fill 224 103 23 225 103 25 minecraft:andesite
-fill 225 103 21 225 103 22 minecraft:andesite
-fill 225 103 26 226 103 27 minecraft:andesite
-setblock 226 103 21 minecraft:air
-setblock 226 103 22 minecraft:andesite
-fill 226 103 23 229 103 23 minecraft:air
-fill 226 103 24 227 103 25 minecraft:air
-fill 227 103 20 231 103 20 minecraft:andesite
-setblock 227 103 21 minecraft:andesite
-fill 227 103 22 230 103 22 minecraft:air
-fill 227 103 26 230 103 26 minecraft:air
-fill 227 103 27 232 103 27 minecraft:andesite
-fill 227 103 28 231 103 28 minecraft:andesite
-setblock 228 103 21 minecraft:air
+fill 230 102 22 231 102 22 minecraft:air
+fill 231 102 21 233 102 21 minecraft:andesite
+fill 231 102 27 233 102 27 minecraft:andesite
+fill 232 102 22 233 102 22 minecraft:andesite
+fill 232 102 26 233 102 26 minecraft:andesite
+fill 233 102 23 234 102 25 minecraft:andesite
+fill 223 103 22 224 103 26 minecraft:andesite
+fill 224 103 21 225 103 21 minecraft:andesite
+fill 224 103 27 225 103 27 minecraft:andesite
+fill 225 103 20 227 103 20 minecraft:andesite
+fill 225 103 22 230 103 22 minecraft:air
+fill 225 103 23 229 103 23 minecraft:air
+fill 225 103 24 227 103 26 minecraft:air
+fill 225 103 28 227 103 28 minecraft:andesite
+fill 226 103 19 231 103 19 minecraft:andesite
+fill 226 103 21 231 103 21 minecraft:air
+fill 226 103 27 231 103 27 minecraft:air
+fill 226 103 29 231 103 29 minecraft:andesite
+fill 228 103 20 229 103 20 minecraft:air
 setblock 228 103 24 minecraft:stone_bricks
-fill 228 103 25 231 103 25 minecraft:air
-setblock 229 103 21 minecraft:andesite
-fill 229 103 24 231 103 24 minecraft:air
-setblock 230 103 21 minecraft:air
+fill 228 103 25 232 103 26 minecraft:air
+fill 228 103 28 229 103 28 minecraft:air
+fill 229 103 24 232 103 24 minecraft:air
+fill 230 103 20 233 103 20 minecraft:andesite
 setblock 230 103 23 minecraft:stone_brick_slab[type=top]
-fill 231 103 21 232 103 21 minecraft:andesite
+fill 230 103 28 233 103 28 minecraft:andesite
 setblock 231 103 22 minecraft:stone_brick_slab[type=top]
-setblock 231 103 23 minecraft:air
-fill 231 103 26 232 103 26 minecraft:andesite
-fill 232 103 22 232 103 25 minecraft:andesite
-fill 233 103 23 233 103 25 minecraft:andesite
-fill 224 104 23 225 104 25 minecraft:andesite
-fill 225 104 21 227 104 21 minecraft:andesite
-setblock 225 104 22 minecraft:andesite
-fill 225 104 26 225 104 27 minecraft:andesite
-fill 226 104 20 231 104 20 minecraft:andesite
-fill 226 104 22 231 104 23 minecraft:air
-fill 226 104 24 227 104 26 minecraft:air
-fill 226 104 27 227 104 28 minecraft:andesite
-fill 228 104 21 230 104 21 minecraft:air
+fill 231 103 23 232 103 23 minecraft:air
+fill 232 103 21 233 103 21 minecraft:andesite
+setblock 232 103 22 minecraft:air
+fill 232 103 27 233 103 27 minecraft:andesite
+fill 233 103 22 234 103 26 minecraft:andesite
+fill 223 104 22 224 104 26 minecraft:andesite
+fill 224 104 21 225 104 21 minecraft:andesite
+fill 224 104 27 225 104 27 minecraft:andesite
+fill 225 104 20 226 104 20 minecraft:andesite
+fill 225 104 22 232 104 23 minecraft:air
+fill 225 104 24 227 104 26 minecraft:air
+fill 225 104 28 226 104 28 minecraft:andesite
+fill 226 104 19 232 104 19 minecraft:andesite
+fill 226 104 21 231 104 21 minecraft:air
+fill 226 104 27 231 104 27 minecraft:air
+fill 226 104 29 232 104 29 minecraft:andesite
+fill 227 104 20 230 104 20 minecraft:air
+fill 227 104 28 230 104 28 minecraft:air
 setblock 228 104 24 minecraft:stone_bricks
-fill 228 104 25 231 104 26 minecraft:air
-fill 228 104 27 229 104 27 minecraft:air
-fill 228 104 28 231 104 28 minecraft:andesite
+fill 228 104 25 232 104 26 minecraft:air
+setblock 229 104 18 minecraft:andesite
 setblock 229 104 24 minecraft:air
+setblock 229 104 30 minecraft:andesite
 fill 230 104 24 231 104 24 minecraft:stone_brick_slab[type=top]
-fill 230 104 27 232 104 27 minecraft:andesite
-fill 231 104 21 232 104 21 minecraft:andesite
-fill 232 104 22 233 104 26 minecraft:andesite
-fill 224 105 22 225 105 23 minecraft:stone
-fill 224 105 24 224 105 26 minecraft:stone
-fill 225 105 21 226 105 21 minecraft:stone
-fill 225 105 24 227 105 24 minecraft:air
-fill 225 105 25 225 105 27 minecraft:stone
-fill 226 105 20 231 105 20 minecraft:stone
-fill 226 105 22 231 105 23 minecraft:air
-fill 226 105 25 229 105 26 minecraft:air
-fill 226 105 27 226 105 28 minecraft:stone
-fill 227 105 21 230 105 21 minecraft:air
-fill 227 105 27 230 105 27 minecraft:air
-fill 227 105 28 231 105 28 minecraft:stone
-fill 228 105 19 230 105 19 minecraft:stone
+fill 231 104 20 233 104 20 minecraft:andesite
+fill 231 104 28 233 104 28 minecraft:andesite
+fill 232 104 21 233 104 21 minecraft:andesite
+fill 232 104 24 233 104 24 minecraft:air
+fill 232 104 27 233 104 27 minecraft:andesite
+fill 233 104 22 234 104 23 minecraft:andesite
+fill 233 104 25 234 104 26 minecraft:andesite
+setblock 234 104 24 minecraft:andesite
+fill 223 105 22 224 105 23 minecraft:stone
+fill 223 105 24 223 105 26 minecraft:stone
+fill 224 105 21 225 105 21 minecraft:stone
+fill 224 105 24 227 105 24 minecraft:air
+fill 224 105 25 224 105 27 minecraft:stone
+fill 225 105 20 226 105 20 minecraft:stone
+fill 225 105 22 232 105 23 minecraft:air
+fill 225 105 25 229 105 26 minecraft:air
+fill 225 105 27 225 105 28 minecraft:stone
+fill 226 105 19 232 105 19 minecraft:stone
+fill 226 105 21 232 105 21 minecraft:air
+fill 226 105 27 232 105 27 minecraft:air
+fill 226 105 28 226 105 29 minecraft:stone
+fill 227 105 18 230 105 18 minecraft:stone
+fill 227 105 20 231 105 20 minecraft:air
+fill 227 105 28 231 105 28 minecraft:air
+fill 227 105 29 232 105 29 minecraft:stone
+fill 227 105 30 230 105 30 minecraft:stone
 setblock 228 105 24 minecraft:stone_bricks
-fill 228 105 29 230 105 29 minecraft:stone
-fill 229 105 24 231 105 24 minecraft:air
+fill 229 105 24 232 105 24 minecraft:air
 fill 230 105 25 231 105 25 minecraft:stone_brick_slab[type=top]
-fill 230 105 26 231 105 26 minecraft:air
-fill 231 105 21 232 105 21 minecraft:stone
-fill 231 105 27 232 105 27 minecraft:stone
-fill 232 105 22 233 105 26 minecraft:stone
-fill 224 106 22 225 106 22 minecraft:stone
-fill 224 106 23 224 106 26 minecraft:stone
-fill 225 106 21 226 106 21 minecraft:stone
-fill 225 106 23 231 106 23 minecraft:air
-fill 225 106 24 227 106 25 minecraft:air
-fill 225 106 26 225 106 27 minecraft:stone
-fill 226 106 20 231 106 20 minecraft:stone
-fill 226 106 22 231 106 22 minecraft:air
-fill 226 106 26 228 106 26 minecraft:air
-fill 226 106 27 226 106 28 minecraft:stone
-fill 227 106 19 229 106 19 minecraft:stone
-fill 227 106 21 230 106 21 minecraft:air
-fill 227 106 27 229 106 27 minecraft:air
-fill 227 106 28 231 106 28 minecraft:stone
-fill 227 106 29 229 106 29 minecraft:stone
+fill 230 105 26 232 105 26 minecraft:air
+fill 232 105 20 233 105 20 minecraft:stone
+setblock 232 105 25 minecraft:air
+fill 232 105 28 233 105 28 minecraft:stone
+fill 233 105 21 233 105 27 minecraft:stone
+fill 234 105 22 234 105 26 minecraft:stone
+fill 223 106 22 224 106 22 minecraft:stone
+fill 223 106 23 223 106 26 minecraft:stone
+fill 224 106 20 225 106 20 minecraft:stone
+setblock 224 106 21 minecraft:stone
+fill 224 106 23 232 106 23 minecraft:air
+fill 224 106 24 227 106 25 minecraft:air
+fill 224 106 26 224 106 28 minecraft:stone
+fill 225 106 19 231 106 19 minecraft:stone
+fill 225 106 21 231 106 22 minecraft:air
+fill 225 106 26 228 106 27 minecraft:air
+fill 225 106 28 225 106 29 minecraft:stone
+fill 226 106 18 230 106 18 minecraft:stone
+fill 226 106 20 230 106 20 minecraft:air
+fill 226 106 28 230 106 28 minecraft:air
+fill 226 106 29 231 106 29 minecraft:stone
+fill 226 106 30 230 106 30 minecraft:stone
 setblock 228 106 24 minecraft:stone_bricks
-fill 228 106 25 231 106 25 minecraft:air
-fill 229 106 24 231 106 24 minecraft:air
+fill 228 106 25 232 106 25 minecraft:air
+fill 229 106 24 232 106 24 minecraft:air
 setblock 229 106 26 minecraft:stone_brick_slab[type=top]
-fill 230 106 26 231 106 26 minecraft:air
+setblock 229 106 27 minecraft:air
+fill 230 106 26 232 106 26 minecraft:air
 setblock 230 106 27 minecraft:stone_brick_slab[type=top]
-fill 231 106 21 232 106 21 minecraft:stone
-fill 231 106 27 232 106 27 minecraft:stone
-fill 232 106 22 232 106 26 minecraft:stone
-setblock 233 106 24 minecraft:stone
-fill 224 107 21 225 107 21 minecraft:stone
-fill 224 107 22 224 107 27 minecraft:stone
-fill 225 107 20 227 107 20 minecraft:stone
-fill 225 107 22 230 107 23 minecraft:air
-fill 225 107 24 227 107 26 minecraft:air
-fill 225 107 27 225 107 28 minecraft:stone
-fill 226 107 21 229 107 21 minecraft:air
-fill 226 107 27 227 107 27 minecraft:air
-fill 226 107 28 230 107 28 minecraft:stone
-fill 227 107 19 229 107 19 minecraft:stone
-fill 227 107 29 229 107 29 minecraft:stone
-setblock 228 107 20 minecraft:glass
+fill 231 106 20 232 106 20 minecraft:stone
+setblock 231 106 27 minecraft:air
+fill 231 106 28 232 106 28 minecraft:stone
+fill 232 106 21 233 106 21 minecraft:stone
+setblock 232 106 22 minecraft:air
+fill 232 106 27 233 106 27 minecraft:stone
+fill 233 106 22 233 106 26 minecraft:stone
+setblock 234 106 24 minecraft:stone
+fill 222 107 24 223 107 24 minecraft:stone
+fill 223 107 21 224 107 21 minecraft:stone
+fill 223 107 22 223 107 23 minecraft:stone
+fill 223 107 25 223 107 27 minecraft:stone
+fill 224 107 20 225 107 20 minecraft:stone
+fill 224 107 22 231 107 23 minecraft:air
+fill 224 107 24 227 107 26 minecraft:air
+fill 224 107 27 224 107 28 minecraft:stone
+fill 225 107 19 227 107 19 minecraft:stone
+fill 225 107 21 231 107 21 minecraft:air
+fill 225 107 27 227 107 27 minecraft:air
+fill 225 107 28 225 107 29 minecraft:stone
+fill 226 107 18 229 107 18 minecraft:stone
+fill 226 107 20 230 107 20 minecraft:air
+fill 226 107 28 230 107 28 minecraft:air
+fill 226 107 29 231 107 29 minecraft:stone
+fill 226 107 30 229 107 30 minecraft:stone
+setblock 228 107 19 minecraft:glass
 setblock 228 107 24 minecraft:stone_bricks
-fill 228 107 25 231 107 25 minecraft:air
+fill 228 107 25 232 107 25 minecraft:air
 fill 228 107 26 228 107 27 minecraft:stone_brick_slab[type=top]
-fill 229 107 20 230 107 20 minecraft:stone
-fill 229 107 24 231 107 24 minecraft:air
-fill 229 107 26 230 107 27 minecraft:air
-fill 230 107 21 231 107 21 minecraft:stone
-fill 231 107 22 232 107 22 minecraft:stone
-setblock 231 107 23 minecraft:air
-fill 231 107 26 232 107 26 minecraft:stone
-setblock 231 107 27 minecraft:stone
-setblock 232 107 23 minecraft:stone
-setblock 232 107 24 minecraft:glass
-setblock 232 107 25 minecraft:stone
-fill 223 108 23 224 108 25 minecraft:stone
-fill 224 108 21 226 108 21 minecraft:stone
-setblock 224 108 22 minecraft:stone
-fill 224 108 26 224 108 27 minecraft:stone
-fill 225 108 20 230 108 20 minecraft:stone
-fill 225 108 22 230 108 23 minecraft:air
-fill 225 108 24 227 108 25 minecraft:air
-fill 225 108 26 226 108 26 minecraft:air
-fill 225 108 27 225 108 28 minecraft:stone
-setblock 226 108 27 minecraft:stone_brick_slab[type=top]
-fill 226 108 28 230 108 28 minecraft:stone
-fill 227 108 21 229 108 21 minecraft:air
-setblock 227 108 26 minecraft:stone_brick_slab[type=top]
-fill 227 108 27 230 108 27 minecraft:air
-setblock 228 108 24 minecraft:stone_bricks
-fill 228 108 25 231 108 25 minecraft:air
-fill 228 108 26 230 108 26 minecraft:air
-fill 229 108 24 230 108 24 minecraft:air
-fill 230 108 21 231 108 21 minecraft:stone
-fill 231 108 22 231 108 24 minecraft:stone
-fill 231 108 26 231 108 27 minecraft:stone
-fill 232 108 23 232 108 25 minecraft:stone
-fill 223 109 23 224 109 25 minecraft:stone
-fill 224 109 21 230 109 21 minecraft:stone
-fill 224 109 22 225 109 22 minecraft:stone
-fill 224 109 26 224 109 27 minecraft:stone
-fill 225 109 23 230 109 23 minecraft:air
-fill 225 109 24 227 109 24 minecraft:air
-setblock 225 109 25 minecraft:air
-setblock 225 109 26 minecraft:stone_brick_slab[type=top]
-setblock 225 109 27 minecraft:stone
-fill 226 109 20 229 109 20 minecraft:stone
-fill 226 109 22 229 109 22 minecraft:air
-setblock 226 109 25 minecraft:lantern[hanging=false]
-fill 226 109 26 229 109 26 minecraft:air
-setblock 226 109 27 minecraft:air
-fill 226 109 28 229 109 28 minecraft:stone
-fill 227 109 25 230 109 25 minecraft:air
-setblock 227 109 27 minecraft:stone
-setblock 228 109 24 minecraft:stone_bricks
-setblock 228 109 27 minecraft:air
-fill 229 109 24 230 109 24 minecraft:air
-setblock 229 109 27 minecraft:stone
-fill 230 109 22 231 109 22 minecraft:stone
-fill 230 109 26 231 109 26 minecraft:stone
-setblock 230 109 27 minecraft:air
-fill 231 109 23 231 109 25 minecraft:stone
-fill 224 110 22 226 110 22 minecraft:tuff
-fill 224 110 23 225 110 23 minecraft:tuff
-fill 224 110 24 224 110 26 minecraft:tuff
-fill 225 110 21 230 110 21 minecraft:tuff
-fill 225 110 24 226 110 24 minecraft:stone_brick_slab[type=top]
-setblock 225 110 25 minecraft:tuff
-setblock 225 110 26 minecraft:air
-setblock 225 110 27 minecraft:tuff
-fill 226 110 23 230 110 23 minecraft:air
-fill 226 110 25 230 110 25 minecraft:air
-setblock 226 110 26 minecraft:tuff
-setblock 226 110 27 minecraft:air
-fill 227 110 20 228 110 20 minecraft:tuff
-fill 227 110 22 229 110 22 minecraft:air
-setblock 227 110 24 minecraft:air
-fill 227 110 26 229 110 26 minecraft:air
-fill 227 110 27 227 110 28 minecraft:tuff
-setblock 228 110 24 minecraft:stone_bricks
-setblock 228 110 27 minecraft:air
+fill 229 107 19 231 107 19 minecraft:stone
+fill 229 107 24 232 107 24 minecraft:air
+fill 229 107 26 231 107 27 minecraft:air
+fill 231 107 20 232 107 20 minecraft:stone

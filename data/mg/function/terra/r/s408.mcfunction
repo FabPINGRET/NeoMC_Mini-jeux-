@@ -75,7 +75,7 @@ fill -33 69 130 -18 69 130 minecraft:air
 fill -32 69 115 -28 69 115 minecraft:dark_oak_fence
 fill -32 69 116 -31 69 116 minecraft:hay_block
 setblock -32 69 117 minecraft:hay_block
-fill -32 69 118 -22 69 120 minecraft:air
+fill -32 69 118 -23 69 120 minecraft:air
 fill -32 69 123 -31 69 123 minecraft:dark_oak_planks
 setblock -32 69 124 minecraft:cartography_table
 fill -32 69 125 -29 69 125 minecraft:air
@@ -110,18 +110,18 @@ fill -24 69 128 -23 69 128 minecraft:air
 fill -24 69 129 -20 69 129 minecraft:dark_oak_fence
 setblock -23 69 126 minecraft:air
 fill -22 69 116 -20 69 116 minecraft:dark_oak_log
-setblock -22 69 117 minecraft:dark_oak_log
+fill -22 69 117 -22 69 118 minecraft:dark_oak_log
+fill -22 69 119 -20 69 120 minecraft:air
 setblock -22 69 124 minecraft:stripped_dark_oak_log[axis=x]
 fill -22 69 125 -20 69 125 minecraft:air
 setblock -22 69 126 minecraft:campfire[lit=true]
 setblock -22 69 128 minecraft:stripped_dark_oak_log[axis=x]
 setblock -21 69 117 minecraft:ladder[facing=south]
-fill -21 69 118 -20 69 118 minecraft:dark_oak_log
-fill -21 69 119 -20 69 120 minecraft:air
+setblock -21 69 118 minecraft:air
 fill -21 69 124 -20 69 124 minecraft:air
 setblock -21 69 126 minecraft:air
 setblock -21 69 128 minecraft:air
-setblock -20 69 117 minecraft:dark_oak_log
+fill -20 69 117 -20 69 118 minecraft:dark_oak_log
 setblock -20 69 126 minecraft:stripped_dark_oak_log[axis=z]
 setblock -20 69 128 minecraft:iron_bars
 setblock -19 69 115 minecraft:dark_oak_log
@@ -162,12 +162,11 @@ setblock -28 70 127 minecraft:stripped_dark_oak_log
 fill -27 70 123 -18 70 127 minecraft:air
 fill -27 70 128 -21 70 128 minecraft:air
 fill -22 70 116 -20 70 116 minecraft:dark_oak_log
-setblock -22 70 117 minecraft:dark_oak_log
-fill -22 70 118 -22 70 122 minecraft:air
+fill -22 70 117 -22 70 118 minecraft:dark_oak_log
+fill -22 70 119 -18 70 122 minecraft:air
 setblock -21 70 117 minecraft:ladder[facing=south]
-fill -21 70 118 -20 70 118 minecraft:dark_oak_log
-fill -21 70 119 -18 70 122 minecraft:air
-setblock -20 70 117 minecraft:dark_oak_log
+setblock -21 70 118 minecraft:air
+fill -20 70 117 -20 70 118 minecraft:dark_oak_log
 setblock -20 70 128 minecraft:iron_bars
 setblock -19 70 115 minecraft:dark_oak_log
 fill -19 70 116 -18 70 118 minecraft:air
@@ -199,3 +198,4 @@ fill -29 71 123 -28 71 123 minecraft:stripped_dark_oak_log
 fill -29 71 128 -28 71 128 minecraft:stripped_dark_oak_log
 setblock -28 71 124 minecraft:dark_oak_planks
 setblock -28 71 125 minecraft:glass_pane
+setblock -28 71 126 minecraft:dark_oak_planks

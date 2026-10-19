@@ -69,11 +69,11 @@ summon minecraft:interaction -167.5 69 -156.5 {Tags:["mg.ol","mg.olnpc","mg.olnn
 scoreboard players set @e[tag=mg.olnn,limit=1] mg.olnid 14
 tag @e[tag=mg.olnn] remove mg.olnn
 summon minecraft:text_display -167.5 71.35 -156.5 {Tags:["mg.ol"],billboard:"vertical",text:{"text":"💬 clic droit","color":"gray"},background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.6f,0.6f,0.6f]}}
-summon minecraft:villager 0.5 75 -130.5 {Tags:["mg.ol","mg.olnpcv"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,VillagerData:{profession:"minecraft:weaponsmith",level:5,type:"minecraft:snow"},Offers:{Recipes:[]},CustomName:{"text":"🪓 Jarl Bjorn","color":"aqua"},CustomNameVisible:1b}
-summon minecraft:interaction 0.5 75 -130.5 {Tags:["mg.ol","mg.olnpc","mg.olnn"],width:1.1f,height:2.2f,response:1b}
+summon minecraft:villager 0.5 75 -132.5 {Tags:["mg.ol","mg.olnpcv"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,VillagerData:{profession:"minecraft:weaponsmith",level:5,type:"minecraft:snow"},Offers:{Recipes:[]},CustomName:{"text":"🪓 Jarl Bjorn","color":"aqua"},CustomNameVisible:1b}
+summon minecraft:interaction 0.5 75 -132.5 {Tags:["mg.ol","mg.olnpc","mg.olnn"],width:1.1f,height:2.2f,response:1b}
 scoreboard players set @e[tag=mg.olnn,limit=1] mg.olnid 15
 tag @e[tag=mg.olnn] remove mg.olnn
-summon minecraft:text_display 0.5 77.35 -130.5 {Tags:["mg.ol"],billboard:"vertical",text:{"text":"💬 clic droit","color":"gray"},background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.6f,0.6f,0.6f]}}
+summon minecraft:text_display 0.5 77.35 -132.5 {Tags:["mg.ol"],billboard:"vertical",text:{"text":"💬 clic droit","color":"gray"},background:1140850688,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.6f,0.6f,0.6f]}}
 summon minecraft:villager -5.5 75 -111.5 {Tags:["mg.ol","mg.olnpcv"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,VillagerData:{profession:"minecraft:leatherworker",level:5,type:"minecraft:snow"},Offers:{Recipes:[]},CustomName:{"text":"🧵 Sigrun, fourreuse","color":"aqua"},CustomNameVisible:1b}
 summon minecraft:interaction -5.5 75 -111.5 {Tags:["mg.ol","mg.olnpc","mg.olnn"],width:1.1f,height:2.2f,response:1b}
 scoreboard players set @e[tag=mg.olnn,limit=1] mg.olnid 16

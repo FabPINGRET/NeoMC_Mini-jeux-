@@ -141,8 +141,8 @@ fill -20 66 7 -20 67 7 minecraft:glass_pane
 fill -20 66 12 -20 67 12 minecraft:glass_pane
 fill -25 66 9 -25 67 9 minecraft:glass_pane
 fill -17 66 9 -17 67 9 minecraft:glass_pane
-fill -17 65 9 -17 67 9 minecraft:air
-fill -17 68 8 -17 68 10 minecraft:stripped_birch_log
+fill -17 65 11 -17 67 11 minecraft:air
+fill -17 68 10 -17 68 12 minecraft:stripped_birch_log
 setblock -22 68 10 minecraft:lantern[hanging=true]
 setblock -19 65 8 minecraft:barrel[facing=up]
 setblock -24 65 11 minecraft:crafting_table
