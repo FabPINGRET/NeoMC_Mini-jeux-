@@ -216,7 +216,7 @@ for dx in (-4, 0, 4):
 for fac in ('north', 'south', 'east', 'west'):
     gx, gy_, gz = S.SPOTS['gate_' + fac]
     dx, dz = S.dir_vec(fac)
-    for side in (-3, 3):
+    for side in (-2, 2):
         px_, pz_ = (gx - dx * 13 + (side if dz else 0), gz - dz * 13 + (side if dx else 0))
         STAT.append(f'summon minecraft:vindicator {px_} 65 {pz_} {{Tags:["mg.ol"],NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b,'
                     f'CustomName:{js(TEXT("Garde de Havreclair", "aqua"))},equipment:{{mainhand:{{id:"minecraft:iron_sword",count:1}},head:{{id:"minecraft:iron_helmet",count:1}},'

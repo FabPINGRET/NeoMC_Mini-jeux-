@@ -87,6 +87,20 @@ def crenels(v, x1, z1, x2, z2, y, mat):
                 v.set(x, y, z, mat)
 
 
+def brace_ladders(v, mat):
+    """Étaie chaque échelle : si la case derrière (dos de l'échelle) est vide ou non porteuse (air, escalier, dalle, vitre, barrière,
+    muret, trappe, tapis, barreaux, lanterne, chaîne), y pose mat. Jamais une porte ni une autre échelle (dos à dos)."""
+    for (x, y, z), b in list(v.v.items()):
+        if not b.startswith('ladder[facing='):
+            continue
+        dx, dz = dir_vec(b[len('ladder[facing='):].split(',')[0].rstrip(']'))
+        back = v.get(x - dx, y, z - dz)
+        name = back.split('[')[0] if back else None
+        if name is None or name == AIR or name.endswith(('_stairs', '_slab', '_pane', '_fence', '_wall', '_trapdoor', '_carpet', 'lantern')) \
+                or name in ('iron_bars', 'iron_chain'):
+            v.set(x - dx, y, z - dz, mat)
+
+
 def stone_mix(r, base='stone_bricks', moss='mossy_stone_bricks', crack='cracked_stone_bricks', pm=0.12, pc=0.08):
     def f(x, y, z):
         q = r.random()
@@ -285,7 +299,7 @@ def city():
         along_x = facing in ('north', 'south')
         for k in range(-2, 3):
             for t in range(-2, 1):
-                x, z = (gx + k, gz - t * (1 if gz > 0 else -1)) if along_x else (gx - t * (1 if gx > 0 else -1), gz + k)
+                x, z = (gx + k, gz + t * (1 if gz > 0 else -1)) if along_x else (gx + t * (1 if gx > 0 else -1), gz + k)
                 v.fill(x, Y + 1, z, x, Y + 6, z, AIR)
                 v.set(x, Y, z, 'stone_bricks')
         for k in (-6, 6):
@@ -385,6 +399,14 @@ def city():
                 taken.append((x - 2, z - 2, x + 2, z + 2))
             elif q < 0.5:
                 v.set(x, Y + 1, z, rh.choice(['short_grass', 'poppy', 'dandelion', 'cornflower', 'oxeye_daisy', 'azure_bluet', 'bush', 'short_grass']))
+    # un lampadaire devant une porte de maison la bloque : on l'enlève (AIR explicite, le monde est déjà construit)
+    for k in range(-50, 51, 10):
+        if abs(k) > 14:
+            for (x, z) in ((4, k), (-4, k), (k, 4), (k, -4)):
+                if any('_door[' in (v.get(x + ddx, Y + 1, z + ddz) or '') for ddx, ddz in ((1, 0), (-1, 0), (0, 1), (0, -1))):
+                    v.fill(x, Y + 1, z, x, Y + 3, z, AIR)
+    # échelles intérieures des maisons : dos étayé
+    brace_ladders(v, 'stripped_spruce_log')
     SPOTS['city_houses'] = houses
     # arbres et jardins dans les espaces verts
     return v
@@ -445,8 +467,11 @@ def castle(v, Y):
     for (cx, cz) in ((kx1, kz1), (kx2, kz1), (kx1, kz2), (kx2, kz2)):
         round_tower(v, cx, cz, Y + 1, 3, 26, sm, floor='spruce_planks', crenel='stone_bricks', roof='blue_terracotta', roof_h=8)
     # escalier intérieur
-    v.stair_run(kx2 - 2, Y + 1, kz2 - 3, 0, -1, 8, 'dark_oak_stairs', 'north', support='stone_bricks')
+    v.stair_run(kx2 - 2, Y + 1, kz2 - 4, 0, -1, 9, 'dark_oak_stairs', 'north', support='stone_bricks')   # pied hors de l'anneau de la tour SE
     v.fill(kx2 - 2, Y + 9, kz1 + 5, kx2 - 2, Y + 9, kz2 - 4, AIR)
+    # étage 2 -> 3 : volée du côté ouest, en sens inverse
+    v.stair_run(kx1 + 2, Y + 10, kz1 + 5, 0, 1, 7, 'dark_oak_stairs', 'south', support='stone_bricks')
+    v.fill(kx1 + 2, Y + 16, kz1 + 5, kx1 + 2, Y + 16, kz2 - 6, AIR)
     # bannières et drapeaux
     v.fill(0, Y + 23, (kz1 + kz2) // 2, 0, Y + 30, (kz1 + kz2) // 2, 'spruce_fence')
     v.fill(1, Y + 28, (kz1 + kz2) // 2, 3, Y + 30, (kz1 + kz2) // 2, 'blue_wool')
@@ -589,8 +614,8 @@ def tavern(v, Y):
     v.frame_walls(x1, z1, x2, z2, Y + 5, Y + 8, 'white_terracotta', 'spruce_log', 'stripped_spruce_log', step=4)
     v.fill(x1 + 1, Y + 1, z1 + 1, x2 - 1, Y + 8, z2 - 1, AIR)
     v.fill(x1 + 1, Y + 5, z1 + 1, x2 - 1, Y + 5, z2 - 1, 'spruce_planks')
-    v.fill(x1 + 2, Y + 5, z1 + 2, x1 + 4, Y + 5, z1 + 4, AIR)
-    v.stair_run(x1 + 2, Y + 1, z1 + 8, 0, -1, 4, 'spruce_stairs', 'north', support='spruce_planks')
+    v.fill(x1 + 2, Y + 5, z1 + 5, x1 + 4, Y + 5, z1 + 7, AIR)   # trou d'étage au-dessus de la volée
+    v.stair_run(x1 + 2, Y + 1, z1 + 8, 0, -1, 5, 'spruce_stairs', 'north', support='spruce_planks')
     v.windows(x1, z1, x2, z2, Y + 2, 2, 'glass_pane', every=4)
     v.windows(x1, z1, x2, z2, Y + 6, 2, 'glass_pane', every=4)
     v.gable_roof(x1, z1, x2, z2, Y + 9, 'x', 'spruce_stairs', 'spruce_slab', 'spruce_planks')
@@ -690,7 +715,10 @@ def alchemist(v, Y):
     v.set(x1 + 5, Y + 1, z1 + 3, 'brewing_stand')
     spot('alchemist', x1 + 6, Y + 1, z1 - 2)
     for x in range(x1, x2 + 1, 2):
-        v.set(x, Y + 1, z1 - 2, 'potted_red_mushroom' if x % 4 else 'potted_crimson_fungus')
+        if x == x1 + 6:                          # place de Fenna : AIR explicite (un ancien pot a pu être construit)
+            v.set(x, Y + 1, z1 - 2, AIR)
+        else:
+            v.set(x, Y + 1, z1 - 2, 'potted_red_mushroom' if x % 4 else 'potted_crimson_fungus')
 
 
 # ================================================================ VALDOR
@@ -820,7 +848,9 @@ def bandit_fort():
         v.fill(tx - 2, y + 11, tz - 2, tx + 2, y + 11, tz + 2, 'spruce_fence', outline=True)
         v.fill(tx - 2, y + 14, tz - 2, tx + 2, y + 14, tz + 2, 'dark_oak_slab')
         v.fill(tx, y + 1, tz, tx, y + 10, tz, 'ladder[facing=north]')
-        v.set(tx, y + 12, tz, 'campfire[lit=true]')
+        v.fill(tx, y + 1, tz + 1, tx, y + 9, tz + 1, 'spruce_log')       # dos de l'échelle
+        v.set(tx, y + 12, tz, AIR)                                         # sortie haute dégagée (AIR explicite : l'ancien feu de camp)
+        v.set(tx + 1, y + 11, tz + 1, 'campfire[lit=true]')                # remplace le haut du poteau d'angle (tx+1, tz+1)
     # grande hutte de Brennic (ouest)
     hx1, hz1, hx2, hz2 = x1 + 3, cz - 6, x1 + 13, cz + 6
     v.fill(hx1, y + 1, hz1, hx2, y + 5, hz2, 'spruce_planks', hollow=True)
@@ -907,6 +937,7 @@ def dungeon(key, region, entry, y_floor, theme, rooms_dir, name, alpha):
     # salles
     cx, cz = sx + dx * (n + 4), sz + dz * (n + 4)
     rooms = []
+    links = []
     sizes = [(7, 5), (8, 6), (8, 6), (11, 9)]
     pos = 0
     for i, (half, hgt) in enumerate(sizes):
@@ -929,15 +960,33 @@ def dungeon(key, region, entry, y_floor, theme, rooms_dir, name, alpha):
                     v.set(x, y, z, b)
         rooms.append(dict(c=(rx + 0.5, y, rz + 0.5), half=half, h=hgt))
         pos += half
-        # couloir vers la salle suivante (porte au bout)
         if i < len(sizes) - 1:
-            for k in range(1, 5):
-                xx, zz = rx + dx * (half + k), rz + dz * (half + k)
-                for w_ in (-1, 0, 1):
-                    x, z = (xx + (w_ if dz else 0), zz + (w_ if dx else 0))
-                    v.fill(x, y, z, x, y + 2, z, AIR)
-                    v.set(x, y - 1, z, t['floor'])
+            links.append((rx, rz, half))
         rooms[-1]['door'] = (rx + dx * (half + 1), y, rz + dz * (half + 1))
+    # couloirs vers la salle suivante (porte au bout) : creusés après TOUTES les coques, sinon la coque de la salle suivante les rebouche ;
+    # le tronçon half+2 n'appartient à aucune coque et le sous-sol est vide : murs / plafond only=(None,) comme le couloir d'entrée
+    for (rx, rz, half) in links:
+        for k in range(1, 5):
+            xx, zz = rx + dx * (half + k), rz + dz * (half + k)
+            for w_ in (-1, 0, 1):
+                x, z = (xx + (w_ if dz else 0), zz + (w_ if dx else 0))
+                v.fill(x, y_floor, z, x, y_floor + 2, z, AIR)
+                v.set(x, y_floor - 1, z, t['floor'])
+                v.fill(x, y_floor + 3, z, x, y_floor + 3, z, wl, only=(None,))
+            for w_ in (-2, 2):
+                x, z = (xx + (w_ if dz else 0), zz + (w_ if dx else 0))
+                v.fill(x, y_floor - 1, z, x, y_floor + 3, z, wl, only=(None,))
+    # couloir d'entrée : de l'escalier (n) à la coque de la salle 1 (n + 3) ; sous la croûte le sous-sol est vide, d'où les murs only=(None,)
+    for k in range(n + 1, n + 4):
+        xx, zz = sx + dx * k, sz + dz * k
+        for w_ in (-1, 0, 1):
+            x, z = (xx + (w_ if dz else 0), zz + (w_ if dx else 0))
+            v.fill(x, y_floor, z, x, y_floor + 2, z, AIR)
+            v.set(x, y_floor - 1, z, t['floor'])
+            v.fill(x, y_floor + 3, z, x, y_floor + 3, z, wl, only=(None,))
+        for w_ in (-2, 2):
+            x, z = (xx + (w_ if dz else 0), zz + (w_ if dx else 0))
+            v.fill(x, y_floor - 1, z, x, y_floor + 3, z, wl, only=(None,))
     # trésor derrière la dernière salle
     last = rooms[-1]
     tx, tz = round(last['c'][0] - 0.5) + dx * (last['half'] - 1), round(last['c'][2] - 0.5) + dz * (last['half'] - 1)
@@ -1029,6 +1078,8 @@ def aelindor():
     v.fill(cx - 2, py + 1, cz - 9, cx + 2, py + 1, cz - 8, 'moss_carpet')
     v.set(cx, py + 1, cz - 9, 'birch_stairs[facing=south]')
     spot('elyndra', cx, py + 1, cz - 7)
+    # la couronne d'un arbre voisin déborde sur la salle : on dégage le feuillage autour de la reine
+    v.fill(cx - 10, py + 1, cz - 10, cx + 10, py + 3, cz + 10, AIR, only=('jungle_leaves[persistent=true]', 'azalea_leaves[persistent=true]'))
     spot('waystone_nw', cx + 4, y + 1, cz + 9)
     v.set(cx + 4, y + 1, cz + 9, 'lodestone')
     v.set(cx + 4, y + 2, cz + 9, 'amethyst_cluster[facing=up]')
@@ -1141,7 +1192,7 @@ def hrafnheim():
     longhouse(v, cx - 8, cz - 15, 17, 9, y, 'x', r)
     for x in (cx - 6, cx + 6):
         v.set(x, y + 4, cz - 10, 'white_wall_banner[facing=south]') if False else None
-    spot('bjorn', cx, y + 1, cz - 11)
+    spot('bjorn', cx, y + 1, cz - 13)            # derrière le feu de camp de la halle (cz - 11)
     for (hx, hz, ax) in ((cx - 18, cz - 4, 'z'), (cx + 12, cz - 4, 'z'), (cx - 18, cz + 6, 'z'), (cx + 12, cz + 6, 'z')):
         longhouse(v, hx, hz, 9, 6, y, ax, r)
     # braseros
@@ -1237,6 +1288,7 @@ def stilt_village():
     v.set(cx - 2, deck + 2, cz - 2, 'amethyst_cluster[facing=up]')
     spot('herbalist', cx - 3, deck + 1, cz + 3)
     LORE.append(('ne', huts[3][0], deck + 1, huts[3][1]))
+    brace_ladders(v, 'mangrove_log')
     return v
 
 
@@ -1622,9 +1674,12 @@ def citadel():
         round_tower(v, tx, tz, y + 1, 5, 22, wl, floor='polished_blackstone', crenel='polished_blackstone_bricks', roof='black_concrete', roof_h=10)
         v.set(tx, y + 23, tz, 'soul_lantern') if False else None
     # porte (est, vers le camp rebelle)
-    v.fill(x2 - 3, y + 1, cz - 3, x2, y + 9, cz + 3, AIR)
-    v.fill(x2 - 3, y + 10, cz - 3, x2, y + 10, cz + 3, 'chiseled_polished_blackstone')
+    v.fill(x2 - 5, y + 1, cz - 2, x2 + 5, y + 9, cz + 2, AIR)       # traverse aussi l'anneau (rayon 5) de la tour de la porte ; 5 de large comme les barreaux
+    v.fill(x2 - 5, y + 10, cz - 2, x2 + 5, y + 10, cz + 2, 'chiseled_polished_blackstone')
     v.fill(x2, y + 1, cz - 2, x2, y + 8, cz + 2, 'iron_bars')
+    v.fill(x2, y + 1, cz - 4, x2, y + 9, cz - 3, wl)                  # flancs des barreaux : l'intérieur de la tour (rayon 5) les laissait contourner
+    v.fill(x2, y + 1, cz + 3, x2, y + 9, cz + 4, wl)
+    v.fill(x2, y + 9, cz - 2, x2, y + 9, cz + 2, wl)                  # fente au-dessus des barreaux
     SPOTS['cit_gate'] = (x2, y + 1, cz - 2, x2, y + 8, cz + 2)
     spot('cit_out', x2 + 6, y + 1, cz)
     # pylônes de la cour
