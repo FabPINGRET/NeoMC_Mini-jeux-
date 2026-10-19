@@ -126,6 +126,20 @@ def dyn(x, y, z):
     return any(a <= x <= b and c <= y <= d and e <= z <= f for a, b, c, d, e, f in DYN)
 
 
+def restore_lines(W, box):
+    """Lignes qui rendent à la boîte (x1, x2, y1, y2, z1, z2) les blocs du spawn W (l'air n'y est pas stocké) : un fill par couche
+    identique sur toute la boîte, sinon un setblock par case. Sert à rendre un ancien site (puits, portail déplacé) au décor d'origine."""
+    x1, x2, y1, y2, z1, z2 = box
+    L = []
+    for y in range(y1, y2 + 1):
+        cells = [(x, z, W.get((x, y, z), 'minecraft:air')) for x in range(x1, x2 + 1) for z in range(z1, z2 + 1)]
+        if len({b for _, _, b in cells}) == 1:
+            L.append(f'fill {x1} {y} {z1} {x2} {y} {z2} {cells[0][2]}')
+        else:
+            L += [f'setblock {x} {y} {z} {b}' for x, z, b in cells]
+    return L
+
+
 # ------------------------------------------------------------------ blocs : id, états, familles
 def bid(b):
     return (b or 'minecraft:air').split('[')[0].split('{')[0]

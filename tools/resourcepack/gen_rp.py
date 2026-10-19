@@ -2,7 +2,7 @@
 
 Tout est dans l'espace de noms « mg » : aucune texture vanilla n'est remplacée, sauf le modèle du bloc de test (la survie n'est pas touchée).
 Sortie : resourcepack/ (dossier) et releases/neomc_resourcepack.zip (+ empreinte SHA-1 affichée).
-La carte du lobby (lobbymap_rp.py) est rendue depuis data/mg/function : lancer après les générateurs du spawn (gen_lobby, gen_hall, gen_pvpcave, gen_foot, gen_gta, gen_terranova).
+La carte du lobby (lobbymap_rp.py) est rendue depuis data/mg/function : lancer après les générateurs du spawn (gen_lobby, gen_hall, gen_pvpcave, gen_foot, gen_gta, gen_terranova, gen_ombrelune).
 """
 import hashlib, json, math, os, struct, sys, zipfile, zlib
 

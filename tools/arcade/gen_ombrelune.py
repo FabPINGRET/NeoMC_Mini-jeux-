@@ -1,6 +1,7 @@
-"""🌙 Ombrelune : RPG médiéval-fantastique en monde ouvert (dimension mg:ombrelune), relié au lobby par un portail (avenue est).
+"""🌙 Ombrelune : RPG médiéval-fantastique en monde ouvert (dimension mg:ombrelune), relié au lobby par un portail (avenue nord, côté ouest, au nord de Terra Nova).
 
-    python tools/arcade/gen_ombrelune.py .     (après gen_terranova.py ; puis tools/resourcepack/gen_rp.py pour les dragons 3D)
+    python tools/arcade/gen_ombrelune.py .     (après gen_terranova.py, AVANT gen_foot.py et gen_themes.py : le portail est une construction du spawn ;
+                                                puis tools/resourcepack/gen_rp.py pour les dragons 3D et la carte du lobby)
 
 Modules : ol_world (relief, biomes, végétation), ol_structs (constructions, donjons), ol_beasts / ol_beast_fn (dragons articulés),
 ol_mobs (bestiaire, apparitions, victoires), ol_class (niveaux, classes, compétences, forge), ol_quest (campagne, PNJ, quêtes, boutiques,
@@ -21,6 +22,9 @@ import common as C
 C.init(sys.argv[1] if len(sys.argv) > 1 else '.')
 shutil.rmtree(os.path.join(C.F, 'ombre'), ignore_errors=True)
 shutil.rmtree(os.path.join(C.D, 'advancement', 'ombre'), ignore_errors=True)
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lobby'))
+import theme_world as TW  # noqa: E402
+TW.load(C.F)                         # sans ombre/ (effacé ci-dessus) : le modèle du spawn (TW.W) ne connaît pas encore le portail, ancien ni nouveau
 
 import ol_world as W
 import ol_structs as S
@@ -34,7 +38,8 @@ import ol_quest as Q  # noqa: E402
 import ol_boss as BO  # noqa: E402
 import ol_cine  # noqa: E402,F401
 
-PX, PZ = 40, -9                      # portail du lobby (avenue est, côté nord ; ouverture x 39..41, z -9)
+PX, PZ = -9, -29                     # portail du lobby (avenue nord, côté ouest, au nord de Terra Nova (-9, -19) ; ouverture z -30..-28, plan x -9)
+OLD_P = (40, -9)                     # ancien portail (avenue est, côté nord) : nettoyé par portal_build, décor du spawn restitué
 SPAWN = (0.5, 65, 9.5)
 
 # ================================================================ construction du monde, région par région
@@ -101,34 +106,62 @@ for b, d in W.BIOMES.items():
         f.write('\n')
 
 # ================================================================ portail du lobby
-PB = ['# Portail d\'Ombrelune au lobby (avenue est, côté nord), reconstruit s\'il disparaît', 'kill @e[tag=mg.olport]',
-      f'fill {PX - 4} 64 {PZ - 4} {PX + 4} 75 {PZ + 1} minecraft:air',
-      f'fill {PX - 4} 63 {PZ - 4} {PX + 4} 63 {PZ + 1} minecraft:polished_deepslate',
-      f'fill {PX - 3} 63 {PZ - 3} {PX + 3} 63 {PZ} minecraft:deepslate_tiles',
-      f'fill {PX - 1} 63 {PZ + 1} {PX + 1} 63 {PZ + 5} minecraft:stone_bricks',
-      f'fill {PX - 1} 64 {PZ + 1} {PX + 1} 66 {PZ + 5} minecraft:air',
-      f'fill {PX - 2} 64 {PZ} {PX - 2} 70 {PZ} minecraft:polished_blackstone_bricks', f'fill {PX + 2} 64 {PZ} {PX + 2} 70 {PZ} minecraft:polished_blackstone_bricks',
-      f'fill {PX - 3} 64 {PZ} {PX - 3} 69 {PZ} minecraft:crying_obsidian', f'fill {PX + 3} 64 {PZ} {PX + 3} 69 {PZ} minecraft:crying_obsidian',
-      f'fill {PX - 3} 71 {PZ} {PX + 3} 71 {PZ} minecraft:polished_blackstone_brick_slab',
-      f'fill {PX - 1} 70 {PZ} {PX + 1} 70 {PZ} minecraft:chiseled_polished_blackstone',
-      f'setblock {PX} 72 {PZ} minecraft:amethyst_block', f'setblock {PX} 73 {PZ} minecraft:amethyst_cluster[facing=up]',
-      f'setblock {PX - 3} 70 {PZ} minecraft:soul_lantern', f'setblock {PX + 3} 70 {PZ} minecraft:soul_lantern',
-      f'setblock {PX} 63 {PZ} minecraft:chiseled_polished_blackstone',
-      f'summon minecraft:text_display {PX + 0.5} 75.4 {PZ + 0.6} {{Tags:["mg.olport"],text:{js(TEXT("🌙 OMBRELUNE", "light_purple", bold=True))},background:-1442840576,{TR % (0, 0, 0, 2.6, 2.6, 2.6)}}}',
-      f'summon minecraft:text_display {PX + 0.5} 74.95 {PZ + 0.6} {{Tags:["mg.olport"],text:{js(TEXT("RPG médiéval-fantastique : 8 régions, dragons, donjons", "gray"))},background:0,{TR % (0, 0, 0, 0.9, 0.9, 0.9)}}}',
-      f'summon minecraft:text_display {PX + 0.5} 64.4 {PZ + 1.2} {{Tags:["mg.olport"],text:{js(TEXT("▶ entre dans le portail", "yellow"))},background:0,{TR % (0, 0, 0, 0.8, 0.8, 0.8)}}}',
-      f'function mg:{P}/spawn_clean']
+# Même gabarit et même implantation que le portail de Terra Nova (gen_terranova.py, PB : plaque 9x9, cadre dans le plan x = PX, passage
+# jusqu'à l'avenue, lanternes d'angle, textes tournés vers l'est), avec la palette d'Ombrelune (deepslate, pierre noire, obsidienne pleureuse, améthyste).
+OX, OZ = OLD_P
+# le site doit rester du décor pur : aucune zone modifiée ailleurs (jeux, animations) dans la boîte du portail (arbre de x -15 compris),
+# et rien d'autre que de l'herbe (y 63), des feuilles, des bûches ou des plantes dans W (portal_build commence par tout vider jusqu'en y 80)
+SITE = (PX - 9, PX + 4, 63, 80, PZ - 4, PZ + 4)
+for d in TW.DYN:
+    assert not (SITE[0] <= d[1] and d[0] <= SITE[1] and SITE[2] <= d[3] and d[2] <= SITE[3] and SITE[4] <= d[5] and d[4] <= SITE[5]), \
+        f'portail : le site {SITE} touche une zone modifiée ailleurs (DYN) : {d}'
+for (x, y, z), b in TW.W.items():
+    if SITE[0] <= x <= SITE[1] and SITE[2] <= y <= SITE[3] and SITE[4] <= z <= SITE[5]:
+        k = TW.bid(b)
+        assert (y == 63 and k in TW.GROUND) or (y > 63 and (k.endswith(('_leaves', '_log')) or k in TW.PLANTS)), f'portail : décor inattendu en {(x, y, z)} ({b})'
+# ancien site (avenue est) : une seule fois (drapeau olsite), et seulement si l'ancien portail est encore là (bloc témoin) : vidé, puis sol,
+# fleurs et haie d'origine rendus (theme_world.W). Hors de portal_build, qui est rejoué à chaque reconstruction : après un lobby/build le cerisier
+# repousse sur x 33..47 et la coupe y ferait un trou ; la carte du lobby (qui ne rejoue que portal_build) redessine l'arbre entier. Les arbres
+# coupés par l'ancien spawn_clean ne reviennent pas.
+OLD_SITE = ['# Ancien portail d\'Ombrelune (avenue est) : nettoyé une seule fois, décor du spawn rendu',
+            f'fill {OX - 4} 64 {OZ - 4} {OX + 4} 75 {OZ + 1} minecraft:air', f'fill {OX - 1} 64 {OZ + 1} {OX + 1} 66 {OZ + 5} minecraft:air']
+OLD_SITE += TW.restore_lines(TW.W, (OX - 4, OX + 4, 63, 63, OZ - 4, OZ + 5))
+OLD_SITE += [f'setblock {x} 64 {z} {TW.W[(x, 64, z)]}' for x in range(OX - 4, OX + 5) for z in range(OZ - 4, OZ + 6) if TW.bid(TW.W.get((x, 64, z))) in TW.PLANTS]
+OLD_SITE += TW.restore_lines(TW.W, (OX - 1, OX + 1, 64, 64, OZ + 5, OZ + 5)) + ['data modify storage mg:lobby olsite set value 1b']
+w('old_site', OLD_SITE)
+PB = ['# Portail d\'Ombrelune au lobby (avenue nord, côté ouest, au nord de Terra Nova), reconstruit s\'il disparaît', 'kill @e[tag=mg.olport]',
+      f'execute unless data storage mg:lobby olsite if block {OX} 63 {OZ} minecraft:chiseled_polished_blackstone run function mg:{P}/old_site']
+PB += [f'fill {PX - 9} 64 {PZ - 4} {PX + 4} 80 {PZ + 4} minecraft:air',
+       f'fill {PX - 4} 63 {PZ - 4} {PX + 4} 63 {PZ + 4} minecraft:polished_deepslate',
+       f'fill {PX - 3} 63 {PZ - 3} {PX + 3} 63 {PZ + 3} minecraft:deepslate_tiles',
+       f'fill {PX + 1} 63 {PZ} {PX + 4} 63 {PZ} minecraft:polished_blackstone_bricks',
+       f'fill {PX} 64 {PZ - 2} {PX} 70 {PZ - 2} minecraft:polished_blackstone_bricks', f'fill {PX} 64 {PZ + 2} {PX} 70 {PZ + 2} minecraft:polished_blackstone_bricks',
+       f'fill {PX} 64 {PZ - 3} {PX} 69 {PZ - 3} minecraft:crying_obsidian', f'fill {PX} 64 {PZ + 3} {PX} 69 {PZ + 3} minecraft:crying_obsidian',
+       f'fill {PX} 71 {PZ - 3} {PX} 71 {PZ + 3} minecraft:polished_blackstone_brick_slab',
+       f'fill {PX} 70 {PZ - 1} {PX} 70 {PZ + 1} minecraft:chiseled_polished_blackstone',
+       f'setblock {PX} 72 {PZ} minecraft:amethyst_block', f'setblock {PX} 73 {PZ} minecraft:amethyst_cluster[facing=up]',
+       f'setblock {PX} 70 {PZ - 3} minecraft:soul_lantern', f'setblock {PX} 70 {PZ + 3} minecraft:soul_lantern',
+       f'setblock {PX} 63 {PZ} minecraft:chiseled_polished_blackstone',
+       # passage jusqu'à l'avenue (haie ouverte, x -8 à -4), comme Terra Nova
+       f'fill -4 64 {PZ - 1} {PX + 1} 66 {PZ + 1} minecraft:air', f'fill -4 63 {PZ - 1} {PX + 5} 63 {PZ + 1} minecraft:stone_bricks']
+for s in (-1, 1):                                              # lanternes d'angle (mur de pierre noire + lanterne d'âme) et grappes d'améthyste (au lieu des fougères)
+    PB += [f'fill {PX + 3} 64 {PZ + 4 * s} {PX + 3} 65 {PZ + 4 * s} minecraft:polished_blackstone_wall', f'setblock {PX + 3} 66 {PZ + 4 * s} minecraft:soul_lantern',
+           f'setblock {PX - 2} 64 {PZ + 3 * s} minecraft:amethyst_cluster[facing=up]']
+PB += [f'summon minecraft:text_display {PX + 0.6} 75.4 {PZ + 0.5} {{Tags:["mg.olport"],Rotation:[-90f,0f],text:{js(TEXT("🌙 OMBRELUNE", "light_purple", bold=True))},background:-1442840576,{TR % (0, 0, 0, 2.6, 2.6, 2.6)}}}',
+       f'summon minecraft:text_display {PX + 0.6} 74.95 {PZ + 0.5} {{Tags:["mg.olport"],Rotation:[-90f,0f],text:{js(TEXT("RPG médiéval-fantastique : 8 régions, dragons, donjons", "gray"))},background:0,{TR % (0, 0, 0, 0.9, 0.9, 0.9)}}}',
+       f'summon minecraft:text_display {PX + 0.6} 64.4 {PZ + 0.5} {{Tags:["mg.olport"],Rotation:[-90f,0f],text:{js(TEXT("▶ entre dans le portail", "yellow"))},background:0,{TR % (0, 0, 0, 0.8, 0.8, 0.8)}}}',
+       f'function mg:{P}/spawn_clean']
 w('portal_build', PB)
-w('spawn_clean', ['# Abords du portail : arbres coupés, passage depuis l\'avenue',
-                  f'fill {PX - 7} 64 {PZ - 8} {PX + 7} 80 {PZ + 2} minecraft:air replace #minecraft:leaves',
-                  f'fill {PX - 7} 64 {PZ - 8} {PX + 7} 80 {PZ + 2} minecraft:air replace #minecraft:logs',
+w('spawn_clean', ['# Abords du portail : haie et bancs de l\'avenue (x -4) dégagés en face du portail, comme Terra Nova',
+                  f'fill -4 64 {PZ - 7} -4 72 {PZ + 4} minecraft:air',
+                  f'fill -4 63 {PZ - 7} -4 63 {PZ + 5} minecraft:stone_bricks',
                   'data modify storage mg:lobby olclean set value 1b'])
 ENTER_SEL = ('tag=!mg.play,tag=!mg.out,tag=!mg.surv,tag=!mg.inplot,tag=!mg.visit,tag=!mg.lk,tag=!mg.pkr,tag=!mg.ely,tag=!mg.elyf,'
-             f'gamemode=adventure,x={PX - 1},y=64,z={PZ},dx=2,dy=2,dz=0')
+             f'gamemode=adventure,x={PX},y=64,z={PZ - 1},dx=0,dy=2,dz=2')
 w('lobby_tick', ['# Chaque tick (monde des mini-jeux) : portail d\'Ombrelune, session du monde',
                  f'execute if score $setup mg.st matches 1 as @a[{ENTER_SEL}] run function mg:{P}/enter',
-                 f'particle minecraft:dust{{color:[0.7,0.45,1.0],scale:1.1}} {PX + 0.5} 67 {PZ + 0.5} 1.0 1.4 0.05 0 3',
-                 f'particle minecraft:reverse_portal {PX + 0.5} 67 {PZ + 0.5} 1.0 1.4 0.05 0 2',
+                 f'particle minecraft:dust{{color:[0.7,0.45,1.0],scale:1.1}} {PX + 0.5} 67 {PZ + 0.5} 0.05 1.4 1.0 0 3',
+                 f'particle minecraft:reverse_portal {PX + 0.5} 67 {PZ + 0.5} 0.05 1.4 1.0 0 2',
                  f'execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block {PX} 63 {PZ} minecraft:chiseled_polished_blackstone run function mg:{P}/portal_build',
                  f'execute unless score $olw mg.st matches 1 if entity @a[tag=mg.olw] run function mg:{P}/session_start',
                  f'execute if score $olw mg.st matches 1 unless entity @a[tag=mg.olw] run function mg:{P}/session_end',
@@ -155,7 +188,7 @@ w('enter', ['# @s entre dans le portail d\'Ombrelune (contexte : monde des mini-
             'tellraw @s ' + js([TEXT(' 🌀 Pierres d\'appel : ', 'light_purple'), TEXT('voyage entre les régions. Sortir : pierre de la place ou Échap → ≡ Menu', 'gray')]),
             f'execute if score @s mg.olch matches 1.. run function mg:{P}/q/say', f'function mg:{P}/qloc',
             'execute at @s run playsound minecraft:block.portal.travel master @s ~ ~ ~ 0.3 1.6'])
-w('not_ready', [f'tp @s {PX}.5 64 {PZ + 4}.5 180 0',
+w('not_ready', [f'tp @s {PX + 3}.5 64 {PZ}.5 90 0',
                 'tellraw @s {"text":"🚧 Ombrelune est en construction (quelques minutes après le démarrage du serveur). Réessaie bientôt !","color":"yellow"}'])
 w('menu_go', ['# @s : « Aller à Ombrelune » (menu Échap, trigger mg.sv 8)',
               'execute unless score $setup mg.st matches 1 run return run tellraw @s {"text":"⚠ Installation manquante : un OP doit d\'abord lancer /function mg:setup","color":"red"}',
@@ -390,6 +423,7 @@ C.patch('desinstaller', 'scoreboard objectives remove mg.bw',
          'schedule clear mg:ombre/st/step', 'schedule clear mg:ombre/st/check', 'schedule clear mg:ombre/boss/wake', f'execute in {DIM} run forceload remove all', 'kill @e[tag=mg.olport]',
          f'execute in {DIM} run kill @e[tag=mg.ol]', 'team remove mg_ol', 'team remove mg_olel', 'function mg:ombre/boss/clear',
          'data remove storage mg:ombre built', 'data remove storage mg:ombre sv', 'data remove storage mg:lobby olclean'])
+C.patch('desinstaller', 'data remove storage mg:ombre sv', ['data remove storage mg:lobby olsite'])    # patch séparé : modifier la liste ci-dessus la dupliquerait
 # menu Échap : bouton « Aller à Ombrelune » (après Terra Nova)
 _mp = os.path.join(C.D, 'dialog', 'main_menu.json')
 _m = json.load(open(_mp, encoding='utf-8'))

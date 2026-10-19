@@ -39,7 +39,7 @@ execute as @a[scores={mg.cs=1..},tag=!mg.surv] run function mg:core/menu_use
 execute if score $setup mg.st matches 1 if entity @a[x=-12,y=40,z=-10,dx=51,dy=20,dz=45] run function mg:pvpc/tick
 execute if score $setup mg.st matches 1 unless entity @a[x=-12,y=40,z=-10,dx=51,dy=20,dz=45] if entity @a[tag=mg.pvpc] run function mg:pvpc/tick
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 if loaded 13 53 5 unless block 13 53 5 minecraft:lodestone run function mg:pvpc/build
-execute if score $setup mg.st matches 1 unless score $ftoff mg.st matches 1 if block -18 63 -18 minecraft:gold_block as @a[tag=!mg.play,tag=!mg.out,tag=!mg.surv,tag=!mg.inplot,tag=!mg.visit,tag=!mg.lk,tag=!mg.pkr,tag=!mg.ely,tag=!mg.elyf,gamemode=adventure,x=-18.7,y=63,z=-18.7,dx=1.4,dy=2.5,dz=1.4] run function mg:foot/go
+execute if score $setup mg.st matches 1 unless score $ftoff mg.st matches 1 if block -6 63 -39 minecraft:gold_block run function mg:foot/pad
 execute if score $setup mg.st matches 1 unless score $ftoff mg.st matches 1 if entity @a[x=-17,y=46,z=-41,dx=38,dy=8,dz=27] run function mg:foot/tick
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 30 if loaded 2 48 -31 run function mg:foot/second
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 if loaded 2 46 -30 if loaded -17 46 -41 if loaded 21 46 -41 if loaded -17 46 -14 if loaded 21 46 -14 unless block 2 46 -30 minecraft:lodestone run function mg:foot/build

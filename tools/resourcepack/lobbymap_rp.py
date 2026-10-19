@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------ spawn : grande carte du lobby (fond de l'armurerie), vue de dessus, nord en haut
 # Exécuté par gen_rp.py (exec, après lobby_rp.py) : utilise sys, os, math, wjson, item_def, png_rgba, new_img, render_text, blit, ACCENT, A, R.
 # La carte est rendue depuis les fonctions de construction du spawn (data/mg/function, via tools/lobby/theme_world.py) : gen_lobby, gen_hall,
-# gen_pvpcave, gen_foot, gen_gta et gen_terranova passent donc AVANT gen_rp (cf. README, « Ordre des générateurs »).
+# gen_pvpcave, gen_foot, gen_gta, gen_terranova et gen_ombrelune passent donc AVANT gen_rp (cf. README, « Ordre des générateurs »).
 # Fenêtre x, z de -78 à 77 à 4 px par bloc (624 x 624 = 16 x 39 : mipmaps intacts), nord (z négatif) en haut, est (x positif) à droite.
 LM_X0 = LM_Z0 = -78
 LM_S = 4
@@ -43,7 +43,7 @@ def lm_tops():
     F_ = os.path.join(R, 'data', 'mg', 'function')
     TW.load(F_)
     # load() range ces constructions parmi les zones modifiées ailleurs (DYN) : on les rejoue pour que leurs blocs figurent dans W
-    for rel in ('hall/build', 'gta/portal_build', 'terra/portal_build', 'pvpc/build', 'foot/build', 'elytra/build'):
+    for rel in ('hall/build', 'gta/portal_build', 'terra/portal_build', 'ombre/portal_build', 'pvpc/build', 'foot/build', 'elytra/build'):
         p = os.path.join(F_, *rel.split('/')) + '.mcfunction'
         assert os.path.isfile(p), ('fonction de construction absente (relancer son générateur)', p)
         for l in open(p, encoding='utf-8'):
@@ -99,8 +99,8 @@ def lm_render():
         lm_ring(img, cx, cy, r - 1, col)
         marks.append((name, cx - r, cy - r, cx + r + 1, cy + r + 1))
     for txt, (x, z) in (('ARMURERIE', (-46, -5)), ('VOUS ÊTES ICI', (-46, 6)), ('STAND DE TIR', (-47, -25)), ('HALL DES SCORES', (-36, 25)),
-                        ('PLOTS', (0, -54)), ('KART', (0, 58)), ('PARKOUR', (58, 0)), ('TERRA NOVA', (-9, -26)), ('NEO GTA', (9, -12)),
-                        ('FOOT', (-18, -12)), ('ÉLYTRES', (24, -4)), ('PVP', (13, 17)), ('ÉTANG', (32, -36))):
+                        ('PLOTS', (0, -54)), ('KART', (0, 58)), ('PARKOUR', (58, 0)), ('TERRA NOVA', (-9, -19)), ('NEO GTA', (9, -12)),
+                        ('OMBRELUNE', (-9, -29)), ('FOOT', (-6, -39)), ('ÉLYTRES', (24, -4)), ('PVP', (13, 17)), ('ÉTANG', (32, -36))):
         t = render_text(txt, 2, (255, 255, 255), (225, 225, 235), (20, 20, 24), ol=1, shadow=(0, 0, 0, 120), sh=1)
         cx, cy = lm_px(x, z)
         top = 0 if any(c in ACCENT for c in txt) else 4        # sans accent, les 2 rangées d'accent (4 px) sont vides : on centre la hauteur utile
