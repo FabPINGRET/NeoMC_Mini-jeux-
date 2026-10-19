@@ -34,7 +34,9 @@ POND_C = '30.5 64 -29.5'                 # centre de l'étang (POND = (30, -30, 
 FISH_R = 12                              # rayon de garde de la canne autour du centre de l'étang
 SLOT = 'hotbar.7'                        # le spawn n'utilise que hotbar.0..4 ; hotbar.8 est l'objet emotes
 PRED = '*[minecraft:custom_data~{mg_rod:1b}]'
-ROD = ('minecraft:fishing_rod[custom_data={mg_rod:1b},unbreakable={},'
+# Lure I : -5 s sur l'attente de base (la pêche à l'étang mord plus vite) ; glint et infobulle d'enchantement cachés pour garder l'aspect de la canne
+ROD = ('minecraft:fishing_rod[custom_data={mg_rod:1b},unbreakable={},enchantments={"minecraft:lure":1},enchantment_glint_override=false,'
+       'tooltip_display={hidden_components:["minecraft:enchantments"]},'
        'custom_name=[{"text":"🎣 Canne du spawn","color":"aqua","bold":true,"italic":false}],'
        'lore=[[{"text":"Lance ta ligne dans l\'étang : les prises sont virtuelles","color":"gray","italic":false}]]]')
 POS = ' '.join(map(str, SOCLE))
