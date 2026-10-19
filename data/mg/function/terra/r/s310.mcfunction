@@ -1,4 +1,4 @@
-# Construction des régions de Terra Nova, étape 310/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 310/436 (dimension mg:terranova, générée)
 fill -180 65 -16 -178 65 -16 minecraft:air
 setblock -180 65 -13 minecraft:stripped_dark_oak_log
 fill -180 65 -12 -180 65 1 minecraft:stripped_spruce_log

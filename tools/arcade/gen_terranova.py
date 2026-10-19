@@ -398,20 +398,28 @@ for (x, z) in [(-6, 10), (-7, 10), (-6, 11), (6, -6), (7, -6), (-24, -4), (-23, 
 # ---------------------------------------------------------------- outposts (blocs « légers » : le carnotaure les casse)
 LIGHT = ['oak_planks', 'oak_fence', 'oak_slab', 'white_wool', 'glass_pane', 'scaffolding', 'oak_trapdoor', 'lantern']
 OUT_B = {}
+
+
+def ring(x1, y, z1, x2, z2, b):
+    """Contour d'une couche (un fill outline d'une seule couche la remplit entièrement)."""
+    return [f'fill {x1} {y} {z1} {x2} {y} {z1} minecraft:{b}', f'fill {x1} {y} {z2} {x2} {y} {z2} minecraft:{b}',
+            f'fill {x1} {y} {z1} {x1} {y} {z2} minecraft:{b}', f'fill {x2} {y} {z1} {x2} {y} {z2} minecraft:{b}']
+
+
 for k, (name, ox, oz) in enumerate(OUTPOSTS, 1):
     h = OUT_H[name]
     L = [f'# Outpost {name} : (re)construction',
          f'fill {ox - 6} {h + 1} {oz - 6} {ox + 6} {h + 7} {oz + 6} minecraft:air',
          f'fill {ox - 5} {h} {oz - 5} {ox + 5} {h} {oz + 5} minecraft:oak_planks',
-         f'fill {ox - 5} {h + 1} {oz - 5} {ox + 5} {h + 1} {oz + 5} minecraft:oak_fence outline',
+         *ring(ox - 5, h + 1, oz - 5, ox + 5, oz + 5, 'oak_fence'),
          f'fill {ox - 1} {h + 1} {oz - 5} {ox + 1} {h + 1} {oz - 5} minecraft:air', f'fill {ox - 1} {h + 1} {oz + 5} {ox + 1} {h + 1} {oz + 5} minecraft:air',
          f'fill {ox - 5} {h + 1} {oz - 1} {ox - 5} {h + 1} {oz + 1} minecraft:air', f'fill {ox + 5} {h + 1} {oz - 1} {ox + 5} {h + 1} {oz + 1} minecraft:air',
          f'setblock {ox} {h + 1} {oz} minecraft:iron_block', f'setblock {ox} {h + 2} {oz} minecraft:lodestone',
          f'setblock {ox} {h + 3} {oz} minecraft:lightning_rod',
          f'fill {ox - 1} {h + 1} {oz - 1} {ox + 1} {h + 1} {oz + 1} minecraft:oak_slab replace minecraft:air',
-         f'fill {ox + 2} {h + 1} {oz + 2} {ox + 4} {h + 1} {oz + 4} minecraft:oak_fence outline',
+         *ring(ox + 2, h + 1, oz + 2, ox + 4, oz + 4, 'oak_fence'),
          f'fill {ox + 2} {h + 2} {oz + 2} {ox + 4} {h + 2} {oz + 4} minecraft:white_wool',
-         f'fill {ox - 4} {h + 1} {oz + 2} {ox - 2} {h + 1} {oz + 4} minecraft:oak_fence outline',
+         *ring(ox - 4, h + 1, oz + 2, ox - 2, oz + 4, 'oak_fence'),
          f'fill {ox - 4} {h + 2} {oz + 2} {ox - 2} {h + 2} {oz + 4} minecraft:white_wool',
          f'fill {ox - 4} {h + 1} {oz - 4} {ox - 4} {h + 3} {oz - 4} minecraft:oak_fence',
          f'setblock {ox - 4} {h + 4} {oz - 4} minecraft:lantern',

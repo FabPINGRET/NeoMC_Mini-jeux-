@@ -1,0 +1,145 @@
+{
+  "textures": {
+    "skin": "mg:item/beast/nyxar_skin",
+    "spike": "mg:item/beast/nyxar_spike",
+    "particle": "mg:item/beast/nyxar_skin"
+  },
+  "elements": [
+    {
+      "from": [
+        4.16,
+        4.16,
+        -13.12
+      ],
+      "to": [
+        11.84,
+        11.84,
+        8.32
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.52,
+            11.52
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.52,
+            11.52
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            11.52
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            11.52
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.52,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.52,
+            16.0
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        7.067,
+        11.84,
+        -8.427
+      ],
+      "to": [
+        8.933,
+        16.107,
+        -1.387
+      ],
+      "faces": {
+        "north": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            2.8,
+            6.4
+          ]
+        },
+        "south": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            2.8,
+            6.4
+          ]
+        },
+        "east": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            10.56,
+            6.4
+          ]
+        },
+        "west": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            10.56,
+            6.4
+          ]
+        },
+        "up": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            2.8,
+            10.56
+          ]
+        },
+        "down": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            2.8,
+            10.56
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "skin": "mg:item/beast/ignarok_skin",
+    "particle": "mg:item/beast/ignarok_skin"
+  },
+  "elements": [
+    {
+      "from": [
+        2.288,
+        -15.1,
+        2.288
+      ],
+      "to": [
+        13.712,
+        11.83,
+        13.712
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.42,
+            16.0
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.42,
+            16.0
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.42,
+            16.0
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.42,
+            16.0
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.42,
+            11.42
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.42,
+            11.42
+          ]
+        }
+      }
+    }
+  ]
+}

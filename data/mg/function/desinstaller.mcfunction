@@ -10,6 +10,7 @@ advancement revoke @a only mg:lobby_fish
 advancement revoke @a only mg:lobby_fish_take
 tag @a remove mg.lfc
 execute as @a[tag=mg.tvw] in minecraft:overworld run function mg:terra/leave
+execute as @a[tag=mg.olw] in minecraft:overworld run function mg:ombre/leave
 execute if score $tmap mg.st matches 1 run function mg:lobby/theme/map/end
 function mg:lobby/theme/sync
 execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off
@@ -60,6 +61,133 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+schedule clear mg:ombre/wb_step
+schedule clear mg:ombre/world_build
+schedule clear mg:ombre/session_setup
+schedule clear mg:ombre/spawn_clean
+schedule clear mg:ombre/st/step
+schedule clear mg:ombre/st/check
+schedule clear mg:ombre/boss/wake
+execute in mg:ombrelune run forceload remove all
+kill @e[tag=mg.olport]
+execute in mg:ombrelune run kill @e[tag=mg.ol]
+team remove mg_ol
+team remove mg_olel
+function mg:ombre/boss/clear
+data remove storage mg:ombre built
+data remove storage mg:ombre sv
+data remove storage mg:lobby olclean
+schedule clear mg:ombre/wb_step
+schedule clear mg:ombre/world_build
+schedule clear mg:ombre/session_setup
+schedule clear mg:ombre/spawn_clean
+schedule clear mg:ombre/bio_step
+schedule clear mg:ombre/boss/wake
+execute in mg:ombrelune run forceload remove all
+kill @e[tag=mg.olport]
+execute in mg:ombrelune run kill @e[tag=mg.ol]
+team remove mg_ol
+team remove mg_olel
+function mg:ombre/boss/clear
+data remove storage mg:ombre built
+data remove storage mg:ombre bio
+data remove storage mg:lobby olclean
+scoreboard objectives remove mg.olab
+scoreboard objectives remove mg.olac
+scoreboard objectives remove mg.olaf
+scoreboard objectives remove mg.olak
+scoreboard objectives remove mg.olal
+scoreboard objectives remove mg.olat
+scoreboard objectives remove mg.olbk
+scoreboard objectives remove mg.olbless
+scoreboard objectives remove mg.olbs
+scoreboard objectives remove mg.olbs2
+scoreboard objectives remove mg.olc0
+scoreboard objectives remove mg.olc1
+scoreboard objectives remove mg.olc2
+scoreboard objectives remove mg.olc3
+scoreboard objectives remove mg.olc4
+scoreboard objectives remove mg.olcd
+scoreboard objectives remove mg.olcf
+scoreboard objectives remove mg.olch
+scoreboard objectives remove mg.olcl
+scoreboard objectives remove mg.olcn
+scoreboard objectives remove mg.olcp
+scoreboard objectives remove mg.olcs
+scoreboard objectives remove mg.olct
+scoreboard objectives remove mg.olctk
+scoreboard objectives remove mg.oldg
+scoreboard objectives remove mg.olel
+scoreboard objectives remove mg.olfire
+scoreboard objectives remove mg.olfur
+scoreboard objectives remove mg.olg
+scoreboard objectives remove mg.olhorse
+scoreboard objectives remove mg.olid
+scoreboard objectives remove mg.olkt
+scoreboard objectives remove mg.ollv
+scoreboard objectives remove mg.olm1
+scoreboard objectives remove mg.olm2
+scoreboard objectives remove mg.olm3
+scoreboard objectives remove mg.olm4
+scoreboard objectives remove mg.olm5
+scoreboard objectives remove mg.olm6
+scoreboard objectives remove mg.olm7
+scoreboard objectives remove mg.olm8
+scoreboard objectives remove mg.olm9
+scoreboard objectives remove mg.olmk
+scoreboard objectives remove mg.olmm
+scoreboard objectives remove mg.olmp
+scoreboard objectives remove mg.olnid
+scoreboard objectives remove mg.olo
+scoreboard objectives remove mg.olod
+scoreboard objectives remove mg.olon
+scoreboard objectives remove mg.olox
+scoreboard objectives remove mg.oloy
+scoreboard objectives remove mg.oloz
+scoreboard objectives remove mg.olpg
+scoreboard objectives remove mg.olpid
+scoreboard objectives remove mg.olpk
+scoreboard objectives remove mg.olpo
+scoreboard objectives remove mg.olpw
+scoreboard objectives remove mg.olq1
+scoreboard objectives remove mg.olq10
+scoreboard objectives remove mg.olq11
+scoreboard objectives remove mg.olq12
+scoreboard objectives remove mg.olq13
+scoreboard objectives remove mg.olq14
+scoreboard objectives remove mg.olq15
+scoreboard objectives remove mg.olq16
+scoreboard objectives remove mg.olq2
+scoreboard objectives remove mg.olq3
+scoreboard objectives remove mg.olq4
+scoreboard objectives remove mg.olq5
+scoreboard objectives remove mg.olq6
+scoreboard objectives remove mg.olq7
+scoreboard objectives remove mg.olq8
+scoreboard objectives remove mg.olq9
+scoreboard objectives remove mg.olqp
+scoreboard objectives remove mg.olrg
+scoreboard objectives remove mg.ols1
+scoreboard objectives remove mg.ols2
+scoreboard objectives remove mg.ols3
+scoreboard objectives remove mg.ols4
+scoreboard objectives remove mg.olsa
+scoreboard objectives remove mg.olsd
+scoreboard objectives remove mg.olses
+scoreboard objectives remove mg.olsh
+scoreboard objectives remove mg.olsp
+scoreboard objectives remove mg.olst
+scoreboard objectives remove mg.olsx
+scoreboard objectives remove mg.olsy
+scoreboard objectives remove mg.olsz
+scoreboard objectives remove mg.oltc
+scoreboard objectives remove mg.olws
+scoreboard objectives remove mg.olwt
+scoreboard objectives remove mg.olxp
+scoreboard objectives remove mg.olq
+scoreboard objectives remove mg.oldt
+scoreboard objectives remove mg.oltk
+scoreboard objectives remove mg.olhb
 scoreboard objectives remove mg.lfb
 scoreboard objectives remove mg.lfn
 scoreboard objectives remove mg.lfu

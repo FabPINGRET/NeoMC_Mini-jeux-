@@ -1,9 +1,4 @@
-# Construction des régions de Terra Nova, étape 78/435 (dimension mg:terranova, générée)
-fill 41 107 -187 50 107 -187 minecraft:air
-fill 41 107 -186 48 107 -186 minecraft:air
-fill 41 107 -185 47 107 -185 minecraft:air
-fill 41 107 -184 46 107 -183 minecraft:air
-fill 41 107 -182 45 107 -164 minecraft:air
+# Construction des régions de Terra Nova, étape 78/436 (dimension mg:terranova, générée)
 fill 46 107 -182 49 107 -182 minecraft:mangrove_leaves[persistent=true]
 fill 46 107 -181 46 107 -174 minecraft:mangrove_leaves[persistent=true]
 fill 46 107 -173 46 107 -164 minecraft:air
@@ -199,3 +194,8 @@ fill 53 110 -181 62 110 -181 minecraft:mangrove_leaves[persistent=true]
 fill 53 110 -172 63 110 -172 minecraft:mangrove_leaves[persistent=true]
 fill 53 110 -171 55 110 -171 minecraft:air
 fill 53 110 -170 54 110 -164 minecraft:air
+fill 55 110 -182 57 110 -182 minecraft:mangrove_leaves[persistent=true]
+fill 55 110 -170 61 110 -170 minecraft:mangrove_leaves[persistent=true]
+fill 55 110 -169 57 110 -164 minecraft:air
+fill 56 110 -171 60 110 -171 minecraft:mangrove_leaves[persistent=true]
+setblock 58 110 -183 minecraft:mangrove_leaves[persistent=true]

@@ -1,4 +1,4 @@
-# Construction des régions de Terra Nova, étape 133/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 133/436 (dimension mg:terranova, générée)
 setblock 135 66 -1 minecraft:birch_log
 setblock 121 67 -1 minecraft:birch_log
 setblock 121 67 6 minecraft:birch_log
@@ -48,7 +48,8 @@ fill 120 71 -2 136 71 -2 minecraft:air
 fill 120 71 -1 120 71 14 minecraft:air
 setblock 121 71 -1 minecraft:birch_log
 fill 121 71 0 121 71 4 minecraft:birch_fence
-fill 121 71 5 121 71 6 minecraft:air
+fill 121 71 5 136 71 5 minecraft:air
+fill 121 71 6 127 71 6 minecraft:air
 setblock 121 71 7 minecraft:stripped_birch_log
 fill 121 71 8 121 71 10 minecraft:birch_planks
 fill 121 71 11 121 71 12 minecraft:stripped_birch_log
@@ -56,8 +57,7 @@ setblock 121 71 13 minecraft:birch_log
 fill 121 71 14 136 71 14 minecraft:air
 fill 122 71 -1 126 71 -1 minecraft:birch_fence
 fill 122 71 0 122 71 1 minecraft:hay_block
-fill 122 71 2 131 71 4 minecraft:birch_fence
-fill 122 71 5 126 71 6 minecraft:birch_fence
+fill 122 71 2 132 71 4 minecraft:air
 fill 122 71 7 123 71 7 minecraft:birch_planks
 setblock 122 71 8 minecraft:cartography_table
 fill 122 71 9 125 71 9 minecraft:air
@@ -66,13 +66,13 @@ setblock 122 71 11 minecraft:white_bed[facing=south,part=head]
 fill 122 71 12 124 71 12 minecraft:birch_planks
 fill 122 71 13 126 71 13 minecraft:birch_fence
 setblock 123 71 0 minecraft:barrel[facing=north]
-fill 123 71 1 131 71 1 minecraft:birch_fence
+fill 123 71 1 131 71 1 minecraft:air
 setblock 123 71 8 minecraft:barrel[facing=up]
 fill 123 71 10 124 71 11 minecraft:air
 setblock 124 71 0 minecraft:barrel[facing=up]
 setblock 124 71 7 minecraft:birch_door[facing=north,half=lower,hinge=left,open=false]
 setblock 124 71 8 minecraft:air
-fill 125 71 0 131 71 0 minecraft:birch_fence
+fill 125 71 0 131 71 0 minecraft:air
 fill 125 71 7 126 71 7 minecraft:stripped_birch_log
 setblock 125 71 8 minecraft:crafting_table
 setblock 125 71 10 minecraft:white_bed[facing=south,part=foot]
@@ -81,42 +81,35 @@ fill 125 71 12 126 71 12 minecraft:stripped_birch_log
 fill 126 71 8 126 71 10 minecraft:birch_planks
 setblock 126 71 11 minecraft:stripped_birch_log
 fill 127 71 -1 129 71 -1 minecraft:air
-fill 127 71 5 131 71 5 minecraft:air
-fill 127 71 6 127 71 7 minecraft:air
-fill 127 71 8 131 71 9 minecraft:birch_fence
-fill 127 71 10 129 71 12 minecraft:birch_fence
-fill 127 71 13 129 71 13 minecraft:air
+fill 127 71 7 136 71 7 minecraft:air
+fill 127 71 8 131 71 9 minecraft:air
+fill 127 71 10 129 71 13 minecraft:air
 setblock 128 71 6 minecraft:lightning_rod
-fill 128 71 7 131 71 7 minecraft:air
-fill 129 71 6 131 71 6 minecraft:air
+fill 129 71 6 136 71 6 minecraft:air
 fill 130 71 -1 134 71 -1 minecraft:birch_fence
 setblock 130 71 10 minecraft:stripped_birch_log[axis=z]
-fill 130 71 11 135 71 11 minecraft:birch_fence
-fill 130 71 12 131 71 13 minecraft:birch_fence
-setblock 131 71 10 minecraft:birch_fence
+fill 130 71 11 134 71 11 minecraft:air
+fill 130 71 12 131 71 12 minecraft:air
+fill 130 71 13 134 71 13 minecraft:birch_fence
+setblock 131 71 10 minecraft:air
 fill 132 71 0 134 71 0 minecraft:birch_log
 setblock 132 71 1 minecraft:birch_log
-setblock 132 71 2 minecraft:air
-fill 132 71 3 135 71 4 minecraft:birch_fence
-fill 132 71 5 134 71 7 minecraft:birch_fence
 setblock 132 71 8 minecraft:stripped_birch_log[axis=x]
-fill 132 71 9 135 71 9 minecraft:birch_fence
+fill 132 71 9 134 71 9 minecraft:air
 setblock 132 71 10 minecraft:campfire[lit=true]
 setblock 132 71 12 minecraft:stripped_birch_log[axis=x]
-fill 132 71 13 134 71 13 minecraft:birch_fence
 setblock 133 71 1 minecraft:ladder[facing=south]
 fill 133 71 2 134 71 2 minecraft:birch_log
-fill 133 71 8 135 71 8 minecraft:birch_fence
-setblock 133 71 10 minecraft:birch_fence
-setblock 133 71 12 minecraft:birch_fence
+fill 133 71 3 134 71 4 minecraft:air
+fill 133 71 8 134 71 8 minecraft:air
+setblock 133 71 10 minecraft:air
+setblock 133 71 12 minecraft:air
 setblock 134 71 1 minecraft:birch_log
 setblock 134 71 10 minecraft:stripped_birch_log[axis=z]
 setblock 134 71 12 minecraft:iron_bars
 setblock 135 71 -1 minecraft:birch_log
-fill 135 71 0 135 71 2 minecraft:birch_fence
-fill 135 71 5 136 71 7 minecraft:air
-setblock 135 71 10 minecraft:birch_fence
-setblock 135 71 12 minecraft:birch_fence
+fill 135 71 0 135 71 4 minecraft:birch_fence
+fill 135 71 8 135 71 12 minecraft:birch_fence
 setblock 135 71 13 minecraft:birch_log
 fill 136 71 -1 136 71 4 minecraft:air
 fill 136 71 8 136 71 13 minecraft:air
@@ -199,3 +192,10 @@ fill 132 73 3 136 73 6 minecraft:air
 setblock 133 73 1 minecraft:ladder[facing=south]
 fill 133 73 2 134 73 2 minecraft:birch_log
 setblock 134 73 1 minecraft:birch_log
+setblock 134 73 12 minecraft:iron_bars
+setblock 135 73 -1 minecraft:birch_log
+fill 135 73 0 136 73 2 minecraft:air
+fill 135 73 12 136 73 12 minecraft:air
+setblock 135 73 13 minecraft:birch_log
+setblock 136 73 -1 minecraft:air
+setblock 136 73 13 minecraft:air

@@ -1,4 +1,4 @@
-# Construction des régions de Terra Nova, étape 309/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 309/436 (dimension mg:terranova, générée)
 fill -214 65 3 -214 65 5 minecraft:red_wool
 setblock -214 65 8 minecraft:stripped_dark_oak_log
 fill -214 65 9 -214 65 12 minecraft:spruce_planks

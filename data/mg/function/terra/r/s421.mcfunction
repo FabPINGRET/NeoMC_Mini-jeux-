@@ -1,41 +1,41 @@
-# Construction des régions de Terra Nova, étape 421/435 (dimension mg:terranova, générée)
-place feature minecraft:patch_fire 46 90 199
-place feature minecraft:patch_fire 48 67 132
-place feature minecraft:patch_fire -28 81 134
-place feature minecraft:patch_fire -88 69 155
-place feature minecraft:patch_fire -82 64 125
-place feature minecraft:patch_fire 41 98 182
-place feature minecraft:patch_fire 68 70 172
-place feature minecraft:patch_fire -20 90 141
-place feature minecraft:patch_fire 56 65 237
-place feature minecraft:patch_fire -85 66 167
-place feature minecraft:patch_fire 55 63 125
-place feature minecraft:patch_fire -77 64 114
-place feature minecraft:patch_fire -44 64 113
-place feature minecraft:patch_fire -81 64 184
-place feature minecraft:patch_fire 85 68 164
-place feature minecraft:patch_fire -12 66 107
-place feature minecraft:patch_fire -66 65 147
-place feature minecraft:patch_fire -57 73 151
-place feature minecraft:patch_fire 71 65 159
-place feature minecraft:patch_fire 5 81 246
-fill -72 69 186 -70 69 188 minecraft:potent_sulfur replace #mg:tv_ground
-fill -31 96 212 -29 96 214 minecraft:magma_block replace #mg:tv_ground
-fill 35 99 188 37 99 190 minecraft:magma_block replace #mg:tv_ground
-fill -26 109 181 -24 109 183 minecraft:magma_block replace #mg:tv_ground
-fill -17 71 118 -15 71 120 minecraft:sulfur replace #mg:tv_ground
-fill 26 109 181 28 109 183 minecraft:sulfur replace #mg:tv_ground
-fill -22 85 136 -20 85 138 minecraft:potent_sulfur replace #mg:tv_ground
-fill -37 91 161 -35 91 163 minecraft:magma_block replace #mg:tv_ground
-fill 21 95 219 23 95 221 minecraft:magma_block replace #mg:tv_ground
-fill -9 86 234 -7 86 236 minecraft:magma_block replace #mg:tv_ground
-fill 2 109 159 4 109 161 minecraft:magma_block replace #mg:tv_ground
-fill -27 98 212 -25 98 214 minecraft:magma_block replace #mg:tv_ground
-fill -63 74 173 -61 74 175 minecraft:magma_block replace #mg:tv_ground
-fill -18 69 116 -16 69 118 minecraft:potent_sulfur replace #mg:tv_ground
-fill 4 112 163 6 112 165 minecraft:magma_block replace #mg:tv_ground
-fill 5 90 231 7 90 233 minecraft:sulfur replace #mg:tv_ground
-fill 34 93 206 36 93 208 minecraft:magma_block replace #mg:tv_ground
-fill 43 91 191 45 91 193 minecraft:sulfur replace #mg:tv_ground
-fill 13 94 224 15 94 226 minecraft:potent_sulfur replace #mg:tv_ground
-fill 58 70 219 60 70 221 minecraft:potent_sulfur replace #mg:tv_ground
+# Construction des régions de Terra Nova, étape 421/436 (dimension mg:terranova, générée)
+place feature minecraft:dead_bush 67 71 190
+place feature minecraft:dead_bush -88 68 225
+place feature minecraft:dead_bush -36 64 113
+place feature minecraft:dead_bush -64 75 193
+place feature minecraft:dead_bush 67 66 218
+place feature minecraft:dead_bush -77 67 216
+place feature minecraft:dead_bush -59 65 143
+place feature minecraft:dead_bush -58 66 123
+place feature minecraft:dead_bush 39 64 113
+place feature minecraft:dead_bush -61 66 118
+place feature minecraft:dead_bush -7 72 119
+place feature minecraft:dead_bush 26 90 148
+place feature minecraft:dead_bush 13 66 107
+place feature minecraft:dead_bush 39 63 122
+place feature minecraft:dead_bush -77 65 161
+place feature minecraft:dead_bush 25 77 129
+place feature minecraft:dead_bush -59 66 128
+place feature minecraft:dead_bush -75 65 234
+place feature minecraft:dead_bush 68 70 184
+place feature minecraft:dead_bush -82 66 196
+place feature minecraft:dead_bush -49 67 134
+place feature minecraft:dead_bush -67 66 242
+place feature minecraft:dead_bush -63 66 124
+place feature minecraft:dead_bush 74 65 187
+place feature minecraft:dead_bush -67 64 221
+place feature minecraft:dead_bush -67 64 108
+place feature minecraft:dead_bush 77 64 194
+place feature minecraft:dead_bush -83 65 233
+place feature minecraft:dead_bush -53 65 106
+place feature minecraft:dead_bush 75 66 147
+place feature minecraft:dead_bush 73 65 216
+place feature minecraft:dead_bush -74 65 179
+place feature minecraft:dead_bush -69 66 210
+place feature minecraft:dead_bush 50 64 243
+place feature minecraft:dead_bush -58 65 132
+place feature minecraft:dead_bush -61 65 131
+place feature minecraft:dead_bush -44 75 234
+place feature minecraft:dead_bush 38 71 132
+place feature minecraft:dead_bush 65 67 222
+place feature minecraft:dead_bush -72 66 105

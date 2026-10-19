@@ -1,201 +1,201 @@
-# Construction des régions de Terra Nova, étape 413/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 413/436 (dimension mg:terranova, générée)
+setblock 8 98 178 minecraft:blackstone
+setblock 8 98 179 minecraft:polished_blackstone
+setblock 8 98 180 minecraft:blackstone
+setblock 8 98 181 minecraft:polished_blackstone
+fill 8 98 182 8 98 189 minecraft:polished_blackstone_bricks
+setblock 8 98 191 minecraft:polished_blackstone
+setblock 8 98 192 minecraft:blackstone
+setblock 8 98 193 minecraft:polished_blackstone
+setblock 8 98 194 minecraft:blackstone
+setblock 8 98 195 minecraft:polished_blackstone_bricks
+fill 8 98 196 9 98 196 minecraft:magma_block
+setblock 9 98 177 minecraft:magma_block
+setblock 9 98 178 minecraft:polished_blackstone_bricks
+setblock 9 98 179 minecraft:blackstone
+setblock 9 98 180 minecraft:polished_blackstone
+setblock 9 98 181 minecraft:blackstone
+setblock 9 98 182 minecraft:polished_blackstone
+setblock 9 98 183 minecraft:blackstone
+setblock 9 98 184 minecraft:polished_blackstone
+setblock 9 98 185 minecraft:blackstone
+setblock 9 98 186 minecraft:polished_blackstone
+setblock 9 98 187 minecraft:blackstone
+setblock 9 98 188 minecraft:polished_blackstone
+setblock 9 98 189 minecraft:blackstone
+setblock 9 98 190 minecraft:polished_blackstone
+setblock 9 98 191 minecraft:blackstone
+setblock 9 98 192 minecraft:polished_blackstone
+setblock 9 98 193 minecraft:blackstone
+setblock 9 98 194 minecraft:polished_blackstone_bricks
+setblock 9 98 195 minecraft:magma_block
+fill 10 98 176 12 98 176 minecraft:blackstone
+fill 10 98 177 10 98 178 minecraft:blackstone
+setblock 10 98 179 minecraft:polished_blackstone_bricks
+setblock 10 98 180 minecraft:blackstone
+setblock 10 98 181 minecraft:polished_blackstone
+setblock 10 98 182 minecraft:blackstone
+setblock 10 98 183 minecraft:polished_blackstone
+setblock 10 98 184 minecraft:blackstone
+setblock 10 98 185 minecraft:polished_blackstone
+setblock 10 98 186 minecraft:blackstone
+setblock 10 98 187 minecraft:polished_blackstone
+setblock 10 98 188 minecraft:blackstone
+setblock 10 98 189 minecraft:polished_blackstone
+setblock 10 98 190 minecraft:blackstone
+setblock 10 98 191 minecraft:polished_blackstone
+setblock 10 98 192 minecraft:blackstone
+setblock 10 98 193 minecraft:polished_blackstone_bricks
+fill 10 98 194 12 98 194 minecraft:blackstone
+fill 10 98 195 10 98 196 minecraft:blackstone
+setblock 11 98 177 minecraft:lava
+fill 11 98 178 12 98 178 minecraft:blackstone
+fill 11 98 179 12 98 180 minecraft:magma_block
+setblock 11 98 181 minecraft:polished_blackstone_bricks
+setblock 11 98 182 minecraft:polished_blackstone
+setblock 11 98 183 minecraft:blackstone
+setblock 11 98 184 minecraft:polished_blackstone
+setblock 11 98 185 minecraft:blackstone
+setblock 11 98 186 minecraft:polished_blackstone
+setblock 11 98 187 minecraft:blackstone
+setblock 11 98 188 minecraft:polished_blackstone
+setblock 11 98 189 minecraft:blackstone
+setblock 11 98 190 minecraft:polished_blackstone
+setblock 11 98 191 minecraft:polished_blackstone_bricks
+fill 11 98 192 12 98 193 minecraft:magma_block
+setblock 11 98 195 minecraft:lava
+fill 11 98 196 12 98 196 minecraft:blackstone
+setblock 12 98 177 minecraft:blackstone
+fill 12 98 181 13 98 182 minecraft:magma_block
+fill 12 98 183 12 98 189 minecraft:polished_blackstone_bricks
+fill 12 98 190 13 98 191 minecraft:magma_block
+setblock 12 98 195 minecraft:blackstone
+fill 13 98 183 13 98 189 minecraft:magma_block
+setblock 14 98 186 minecraft:magma_block
+fill -12 99 176 -10 99 176 minecraft:polished_blackstone_wall
+fill -12 99 177 -12 99 178 minecraft:polished_blackstone_wall
+setblock -12 99 186 minecraft:potent_sulfur
+setblock -12 99 190 minecraft:basalt[axis=x]
+fill -12 99 194 -10 99 194 minecraft:polished_blackstone_wall
+fill -12 99 195 -12 99 196 minecraft:polished_blackstone_wall
+setblock -11 99 177 minecraft:air
+fill -11 99 178 -10 99 178 minecraft:polished_blackstone_wall
+setblock -11 99 186 minecraft:polished_basalt[axis=y]
+setblock -11 99 191 minecraft:basalt[axis=x]
+setblock -11 99 195 minecraft:air
+fill -11 99 196 -10 99 196 minecraft:polished_blackstone_wall
+setblock -10 99 177 minecraft:polished_blackstone_wall
+setblock -10 99 179 minecraft:basalt[axis=x]
+setblock -10 99 180 minecraft:polished_basalt[axis=y]
+setblock -10 99 192 minecraft:polished_basalt[axis=y]
+setblock -10 99 195 minecraft:polished_blackstone_wall
+fill -9 99 177 -9 99 178 minecraft:basalt[axis=x]
+setblock -9 99 183 minecraft:skeleton_skull
+setblock -8 99 174 minecraft:potent_sulfur
+setblock -8 99 179 minecraft:bone_block[axis=z]
+setblock -8 99 186 minecraft:skeleton_skull
+setblock -8 99 194 minecraft:bone_block[axis=x]
+setblock -6 99 176 minecraft:polished_basalt[axis=y]
+setblock -6 99 193 minecraft:bone_block[axis=x]
+setblock -5 99 175 minecraft:basalt[axis=x]
+fill -5 99 185 5 99 187 minecraft:polished_blackstone_brick_slab[type=bottom]
+setblock -5 99 188 minecraft:sulfur
+setblock -5 99 196 minecraft:polished_basalt[axis=y]
+setblock -5 99 199 minecraft:potent_sulfur
+setblock -4 99 174 minecraft:basalt[axis=x]
+setblock -4 99 176 minecraft:chiseled_polished_blackstone
+fill -4 99 183 4 99 184 minecraft:polished_blackstone_brick_slab[type=bottom]
+fill -4 99 188 4 99 189 minecraft:polished_blackstone_brick_slab[type=bottom]
+setblock -3 99 176 minecraft:obsidian
+fill -3 99 182 3 99 182 minecraft:polished_blackstone_brick_slab[type=bottom]
+fill -3 99 190 3 99 190 minecraft:polished_blackstone_brick_slab[type=bottom]
+fill -3 99 198 -2 99 198 minecraft:basalt[axis=x]
+setblock -2 99 176 minecraft:crying_obsidian
+setblock -2 99 177 minecraft:bone_block[axis=x]
+fill -2 99 199 2 99 201 minecraft:air
+fill -1 99 176 1 99 176 minecraft:air
+fill -1 99 181 1 99 181 minecraft:polished_blackstone_brick_slab[type=bottom]
+fill -1 99 191 1 99 191 minecraft:polished_blackstone_brick_slab[type=bottom]
+setblock -1 99 196 minecraft:bone_block[axis=z]
+setblock -1 99 197 minecraft:basalt[axis=x]
+setblock 0 99 175 minecraft:polished_basalt[axis=y]
+setblock 0 99 197 minecraft:polished_basalt[axis=y]
+setblock 2 99 176 minecraft:crying_obsidian
+setblock 2 99 179 minecraft:potent_sulfur
+setblock 2 99 192 minecraft:bone_block[axis=x]
+setblock 3 99 173 minecraft:sulfur
+setblock 3 99 176 minecraft:obsidian
+setblock 4 99 174 minecraft:skeleton_skull
+setblock 4 99 176 minecraft:chiseled_polished_blackstone
+fill 4 99 191 8 99 195 minecraft:bone_block
+setblock 5 99 198 minecraft:skeleton_skull
+setblock 6 99 176 minecraft:polished_basalt[axis=y]
+setblock 6 99 196 minecraft:polished_basalt[axis=y]
+setblock 7 99 176 minecraft:basalt[axis=x]
+fill 8 99 177 9 99 177 minecraft:basalt[axis=x]
+fill 9 99 192 11 99 193 minecraft:bone_block
+setblock 9 99 194 minecraft:bone_block
+setblock 9 99 195 minecraft:basalt[axis=x]
+fill 10 99 176 12 99 176 minecraft:polished_blackstone_wall
+fill 10 99 177 10 99 178 minecraft:polished_blackstone_wall
+setblock 10 99 180 minecraft:polished_basalt[axis=y]
+fill 10 99 194 12 99 194 minecraft:polished_blackstone_wall
+fill 10 99 195 10 99 196 minecraft:polished_blackstone_wall
+setblock 11 99 177 minecraft:air
+fill 11 99 178 12 99 178 minecraft:polished_blackstone_wall
+setblock 11 99 186 minecraft:polished_basalt[axis=y]
+setblock 11 99 195 minecraft:air
+fill 11 99 196 12 99 196 minecraft:polished_blackstone_wall
+setblock 12 99 177 minecraft:polished_blackstone_wall
+setblock 12 99 195 minecraft:polished_blackstone_wall
+setblock 13 99 195 minecraft:potent_sulfur
+setblock 13 99 196 minecraft:sulfur
+setblock -11 100 186 minecraft:basalt[axis=y]
+setblock -10 100 180 minecraft:basalt[axis=y]
+setblock -10 100 192 minecraft:basalt[axis=y]
+setblock -6 100 176 minecraft:basalt[axis=y]
+setblock -5 100 196 minecraft:basalt[axis=y]
+setblock -4 100 176 minecraft:chiseled_polished_blackstone
+setblock -3 100 176 minecraft:obsidian
+fill -3 100 185 3 100 187 minecraft:chiseled_polished_blackstone
+setblock -2 100 176 minecraft:crying_obsidian
+fill -2 100 184 2 100 184 minecraft:chiseled_polished_blackstone
+fill -2 100 188 2 100 188 minecraft:chiseled_polished_blackstone
+fill -2 100 199 2 100 201 minecraft:air
+fill -1 100 176 1 100 176 minecraft:purple_stained_glass_pane
+fill -1 100 183 1 100 183 minecraft:chiseled_polished_blackstone
+fill -1 100 189 1 100 189 minecraft:chiseled_polished_blackstone
+setblock 0 100 175 minecraft:basalt[axis=y]
+setblock 0 100 197 minecraft:basalt[axis=y]
+setblock 2 100 176 minecraft:crying_obsidian
+setblock 3 100 176 minecraft:obsidian
+setblock 4 100 176 minecraft:chiseled_polished_blackstone
+fill 4 100 191 4 100 195 minecraft:bone_block
+fill 5 100 191 7 100 195 minecraft:air
+setblock 6 100 176 minecraft:basalt[axis=y]
+setblock 6 100 196 minecraft:basalt[axis=y]
+fill 8 100 191 8 100 195 minecraft:bone_block
+fill 9 100 192 11 100 194 minecraft:bone_block
+setblock 10 100 180 minecraft:basalt[axis=y]
+setblock 11 100 186 minecraft:basalt[axis=y]
+setblock -11 101 186 minecraft:basalt[axis=y]
+setblock -10 101 180 minecraft:basalt[axis=y]
+setblock -10 101 192 minecraft:basalt[axis=y]
+setblock -6 101 176 minecraft:basalt[axis=y]
+setblock -5 101 196 minecraft:basalt[axis=y]
+setblock -4 101 176 minecraft:chiseled_polished_blackstone
+setblock -3 101 176 minecraft:obsidian
+setblock -2 101 176 minecraft:crying_obsidian
+fill -2 101 199 2 101 201 minecraft:air
+fill -1 101 176 1 101 176 minecraft:purple_stained_glass_pane
+setblock 0 101 175 minecraft:basalt[axis=y]
+setblock 2 101 176 minecraft:crying_obsidian
+setblock 3 101 176 minecraft:obsidian
+setblock 4 101 176 minecraft:chiseled_polished_blackstone
+fill 4 101 191 5 101 191 minecraft:bone_block
+fill 4 101 192 4 101 195 minecraft:bone_block
 fill 5 101 192 7 101 195 minecraft:air
 fill 6 101 191 7 101 191 minecraft:air
 setblock 6 101 196 minecraft:basalt[axis=y]
 fill 8 101 191 8 101 195 minecraft:bone_block
 fill 9 101 192 10 101 193 minecraft:white_concrete
-setblock 10 101 180 minecraft:basalt[axis=y]
-setblock 11 101 186 minecraft:basalt[axis=y]
-setblock -11 102 186 minecraft:basalt[axis=y]
-setblock -10 102 192 minecraft:basalt[axis=y]
-setblock -6 102 176 minecraft:basalt[axis=y]
-setblock -5 102 196 minecraft:basalt[axis=y]
-setblock -4 102 176 minecraft:chiseled_polished_blackstone
-setblock -3 102 176 minecraft:obsidian
-setblock -2 102 176 minecraft:crying_obsidian
-fill -2 102 199 2 102 201 minecraft:air
-fill -1 102 176 1 102 176 minecraft:purple_stained_glass_pane
-setblock 0 102 175 minecraft:basalt[axis=y]
-setblock 2 102 176 minecraft:crying_obsidian
-setblock 3 102 176 minecraft:obsidian
-setblock 4 102 176 minecraft:chiseled_polished_blackstone
-fill 4 102 191 8 102 195 minecraft:bone_block
-setblock 6 102 196 minecraft:basalt[axis=y]
-setblock 10 102 180 minecraft:basalt[axis=y]
-setblock 10 102 192 minecraft:basalt[axis=y]
-setblock 11 102 186 minecraft:basalt[axis=y]
-setblock -11 103 186 minecraft:basalt[axis=y]
-setblock -10 103 192 minecraft:basalt[axis=y]
-setblock -6 103 176 minecraft:basalt[axis=y]
-setblock -5 103 196 minecraft:basalt[axis=y]
-setblock -4 103 176 minecraft:soul_lantern[hanging=false]
-setblock -3 103 176 minecraft:obsidian
-setblock -2 103 176 minecraft:crying_obsidian
-fill -2 103 199 2 103 201 minecraft:air
-fill -1 103 176 1 103 176 minecraft:purple_stained_glass_pane
-setblock 0 103 175 minecraft:basalt[axis=y]
-setblock 2 103 176 minecraft:crying_obsidian
-setblock 3 103 176 minecraft:obsidian
-setblock 4 103 176 minecraft:soul_lantern[hanging=false]
-setblock 6 103 196 minecraft:basalt[axis=y]
-setblock 10 103 180 minecraft:basalt[axis=y]
-setblock 11 103 186 minecraft:basalt[axis=y]
-setblock -11 104 186 minecraft:basalt[axis=y]
-setblock -6 104 176 minecraft:basalt[axis=y]
-setblock -5 104 196 minecraft:basalt[axis=y]
-setblock -3 104 176 minecraft:obsidian
-setblock -2 104 176 minecraft:crying_obsidian
-fill -2 104 199 2 104 201 minecraft:air
-fill -1 104 176 1 104 176 minecraft:purple_stained_glass_pane
-setblock 0 104 175 minecraft:basalt[axis=y]
-setblock 2 104 176 minecraft:crying_obsidian
-setblock 3 104 176 minecraft:obsidian
-setblock 6 104 196 minecraft:basalt[axis=y]
-setblock 10 104 180 minecraft:basalt[axis=y]
-setblock 11 104 186 minecraft:basalt[axis=y]
-setblock -11 105 186 minecraft:basalt[axis=y]
-setblock -5 105 196 minecraft:basalt[axis=y]
-setblock -3 105 176 minecraft:obsidian
-setblock -2 105 176 minecraft:crying_obsidian
-fill -1 105 176 1 105 176 minecraft:purple_stained_glass_pane
-setblock 0 105 175 minecraft:basalt[axis=y]
-setblock 2 105 176 minecraft:crying_obsidian
-setblock 3 105 176 minecraft:obsidian
-setblock 6 105 196 minecraft:basalt[axis=y]
-setblock 10 105 180 minecraft:basalt[axis=y]
-setblock 11 105 186 minecraft:basalt[axis=y]
-setblock -11 106 186 minecraft:basalt[axis=y]
-setblock -5 106 196 minecraft:basalt[axis=y]
-setblock -3 106 176 minecraft:obsidian
-fill -2 106 176 2 106 176 minecraft:crying_obsidian
-setblock 0 106 175 minecraft:basalt[axis=y]
-setblock 3 106 176 minecraft:obsidian
-setblock 6 106 196 minecraft:magma_block
-setblock 10 106 180 minecraft:magma_block
-setblock 11 106 186 minecraft:basalt[axis=y]
-setblock -11 107 186 minecraft:basalt[axis=y]
-setblock -5 107 196 minecraft:magma_block
-fill -3 107 176 3 107 176 minecraft:obsidian
-setblock 0 107 175 minecraft:magma_block
-setblock 11 107 186 minecraft:basalt[axis=y]
-setblock -11 108 186 minecraft:magma_block
-fill -3 108 176 3 108 176 minecraft:polished_blackstone_brick_wall
-setblock 11 108 186 minecraft:magma_block
-setblock 0 109 176 minecraft:end_rod[facing=up]
-setblock -48 88 185 minecraft:blackstone
-fill -47 88 184 -43 88 184 minecraft:blackstone
-fill -42 88 185 -41 88 185 minecraft:blackstone
-fill -40 88 186 -39 88 186 minecraft:blackstone
-setblock -38 88 187 minecraft:blackstone
-setblock -37 88 188 minecraft:blackstone
-setblock -36 88 189 minecraft:blackstone
-fill -35 88 190 -34 88 190 minecraft:blackstone
-fill -33 88 191 -32 88 191 minecraft:blackstone
-fill -31 88 192 -28 88 192 minecraft:blackstone
-fill -27 88 191 -26 88 191 minecraft:blackstone
-fill -52 89 180 -48 89 184 minecraft:basalt[axis=y]
-setblock -48 89 185 minecraft:lava
-setblock -48 89 186 minecraft:blackstone
-setblock -47 89 179 minecraft:magma_block
-setblock -47 89 180 minecraft:tuff
-fill -47 89 181 -43 89 182 minecraft:air
-fill -47 89 183 -43 89 183 minecraft:blackstone
-fill -47 89 184 -43 89 184 minecraft:lava
-fill -47 89 185 -43 89 185 minecraft:blackstone
-fill -46 89 179 -44 89 179 minecraft:blackstone
-setblock -46 89 180 minecraft:basalt[axis=y]
-setblock -45 89 180 minecraft:magma_block
-fill -44 89 180 -42 89 180 minecraft:basalt[axis=y]
-setblock -43 89 179 minecraft:basalt[axis=y]
-setblock -42 89 181 minecraft:magma_block
-fill -42 89 182 -41 89 183 minecraft:air
-fill -42 89 184 -41 89 184 minecraft:blackstone
-fill -42 89 185 -41 89 185 minecraft:lava
-fill -42 89 186 -41 89 186 minecraft:blackstone
-fill -41 89 180 -41 89 181 minecraft:blackstone
-fill -40 89 181 -39 89 181 minecraft:basalt[axis=y]
-fill -40 89 182 -39 89 182 minecraft:blackstone
-fill -40 89 183 -39 89 184 minecraft:air
-fill -40 89 185 -39 89 185 minecraft:blackstone
-fill -40 89 186 -39 89 186 minecraft:lava
-fill -40 89 187 -39 89 187 minecraft:blackstone
-setblock -38 89 182 minecraft:basalt[axis=y]
-setblock -38 89 183 minecraft:blackstone
-fill -38 89 184 -38 89 185 minecraft:air
-setblock -38 89 186 minecraft:blackstone
-setblock -38 89 187 minecraft:lava
-setblock -38 89 188 minecraft:blackstone
-setblock -37 89 183 minecraft:basalt[axis=y]
-setblock -37 89 184 minecraft:tuff
-fill -37 89 185 -37 89 186 minecraft:air
-setblock -37 89 187 minecraft:blackstone
-setblock -37 89 188 minecraft:lava
-setblock -37 89 189 minecraft:blackstone
-setblock -36 89 184 minecraft:cracked_polished_blackstone_bricks
-setblock -36 89 185 minecraft:polished_blackstone_bricks
-setblock -36 89 186 minecraft:cracked_polished_blackstone_bricks
-setblock -36 89 187 minecraft:polished_blackstone_bricks
-setblock -36 89 188 minecraft:cracked_polished_blackstone_bricks
-setblock -36 89 189 minecraft:lava
-setblock -36 89 190 minecraft:blackstone
-setblock -35 89 182 minecraft:polished_blackstone_bricks
-setblock -35 89 183 minecraft:cracked_polished_blackstone_bricks
-setblock -35 89 184 minecraft:polished_blackstone_bricks
-setblock -35 89 185 minecraft:cracked_polished_blackstone_bricks
-setblock -35 89 186 minecraft:polished_blackstone_bricks
-setblock -35 89 187 minecraft:cracked_polished_blackstone_bricks
-setblock -35 89 188 minecraft:polished_blackstone_bricks
-setblock -35 89 189 minecraft:cracked_polished_blackstone_bricks
-setblock -35 89 190 minecraft:polished_blackstone_bricks
-setblock -35 89 191 minecraft:blackstone
-setblock -34 89 180 minecraft:cracked_polished_blackstone_bricks
-setblock -34 89 181 minecraft:polished_blackstone_bricks
-setblock -34 89 182 minecraft:cracked_polished_blackstone_bricks
-setblock -34 89 183 minecraft:polished_blackstone_bricks
-setblock -34 89 184 minecraft:cracked_polished_blackstone_bricks
-setblock -34 89 185 minecraft:polished_blackstone_bricks
-setblock -34 89 186 minecraft:cracked_polished_blackstone_bricks
-setblock -34 89 187 minecraft:polished_blackstone_bricks
-setblock -34 89 188 minecraft:cracked_polished_blackstone_bricks
-setblock -34 89 189 minecraft:polished_blackstone_bricks
-setblock -34 89 190 minecraft:cracked_polished_blackstone_bricks
-setblock -34 89 191 minecraft:polished_blackstone_bricks
-setblock -34 89 192 minecraft:cracked_polished_blackstone_bricks
-setblock -33 89 180 minecraft:polished_blackstone_bricks
-setblock -33 89 181 minecraft:cracked_polished_blackstone_bricks
-setblock -33 89 182 minecraft:polished_blackstone_bricks
-setblock -33 89 183 minecraft:cracked_polished_blackstone_bricks
-setblock -33 89 184 minecraft:polished_blackstone_bricks
-setblock -33 89 185 minecraft:cracked_polished_blackstone_bricks
-setblock -33 89 186 minecraft:polished_blackstone_bricks
-setblock -33 89 187 minecraft:cracked_polished_blackstone_bricks
-setblock -33 89 188 minecraft:polished_blackstone_bricks
-setblock -33 89 189 minecraft:cracked_polished_blackstone_bricks
-setblock -33 89 190 minecraft:polished_blackstone_bricks
-setblock -33 89 191 minecraft:cracked_polished_blackstone_bricks
-setblock -33 89 192 minecraft:polished_blackstone_bricks
-setblock -32 89 179 minecraft:polished_blackstone_bricks
-setblock -32 89 180 minecraft:cracked_polished_blackstone_bricks
-setblock -32 89 181 minecraft:polished_blackstone_bricks
-setblock -32 89 182 minecraft:cracked_polished_blackstone_bricks
-setblock -32 89 183 minecraft:polished_blackstone_bricks
-setblock -32 89 184 minecraft:cracked_polished_blackstone_bricks
-setblock -32 89 185 minecraft:polished_blackstone_bricks
-setblock -32 89 186 minecraft:cracked_polished_blackstone_bricks
-setblock -32 89 187 minecraft:polished_blackstone_bricks
-setblock -32 89 188 minecraft:cracked_polished_blackstone_bricks
-setblock -32 89 189 minecraft:polished_blackstone_bricks
-setblock -32 89 190 minecraft:cracked_polished_blackstone_bricks
-setblock -32 89 191 minecraft:polished_blackstone_bricks
-setblock -32 89 192 minecraft:cracked_polished_blackstone_bricks
-setblock -32 89 193 minecraft:polished_blackstone_bricks
-setblock -31 89 179 minecraft:cracked_polished_blackstone_bricks
-setblock -31 89 180 minecraft:polished_blackstone_bricks
-setblock -31 89 181 minecraft:cracked_polished_blackstone_bricks
-setblock -31 89 182 minecraft:polished_blackstone_bricks
-setblock -31 89 183 minecraft:cracked_polished_blackstone_bricks
-setblock -31 89 184 minecraft:polished_blackstone_bricks
-setblock -31 89 185 minecraft:cracked_polished_blackstone_bricks
-setblock -31 89 186 minecraft:polished_blackstone_bricks
-setblock -31 89 187 minecraft:cracked_polished_blackstone_bricks
-setblock -31 89 188 minecraft:polished_blackstone_bricks

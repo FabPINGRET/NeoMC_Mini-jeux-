@@ -1,0 +1,214 @@
+{
+  "textures": {
+    "belly": "mg:item/beast/drake_belly",
+    "skin": "mg:item/beast/drake_skin",
+    "spike": "mg:item/beast/drake_spike",
+    "particle": "mg:item/beast/drake_belly"
+  },
+  "elements": [
+    {
+      "from": [
+        5.43,
+        5.43,
+        7.2
+      ],
+      "to": [
+        10.57,
+        10.57,
+        18.2
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            5.14,
+            5.14
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            5.14,
+            5.14
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.0,
+            5.14
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            11.0,
+            5.14
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            5.14,
+            11.0
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            5.14,
+            11.0
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        6.058,
+        5.27,
+        8.0
+      ],
+      "to": [
+        9.942,
+        6.972,
+        18.2
+      ],
+      "faces": {
+        "north": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            3.88,
+            1.7
+          ]
+        },
+        "south": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            3.88,
+            1.7
+          ]
+        },
+        "east": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            10.2,
+            1.7
+          ]
+        },
+        "west": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            10.2,
+            1.7
+          ]
+        },
+        "up": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            3.88,
+            10.2
+          ]
+        },
+        "down": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            3.88,
+            10.2
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        7.456,
+        10.57,
+        12.08
+      ],
+      "to": [
+        8.544,
+        12.61,
+        14.528
+      ],
+      "faces": {
+        "north": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            1.09,
+            2.04
+          ]
+        },
+        "south": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            1.09,
+            2.04
+          ]
+        },
+        "east": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            2.45,
+            2.04
+          ]
+        },
+        "west": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            2.45,
+            2.04
+          ]
+        },
+        "up": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            1.09,
+            2.45
+          ]
+        },
+        "down": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            1.09,
+            2.45
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -435,5 +435,6 @@ execute if score $tvrb mg.st matches 432 in mg:terranova run function mg:terra/r
 execute if score $tvrb mg.st matches 433 in mg:terranova run function mg:terra/r/s433
 execute if score $tvrb mg.st matches 434 in mg:terranova run function mg:terra/r/s434
 execute if score $tvrb mg.st matches 435 in mg:terranova run function mg:terra/r/s435
-execute if score $tvrb mg.st matches 436 run function mg:terra/rb_done
-execute if score $tvrb mg.st matches ..435 run schedule function mg:terra/rb_step 1t
+execute if score $tvrb mg.st matches 436 in mg:terranova run function mg:terra/r/s436
+execute if score $tvrb mg.st matches 437 run function mg:terra/rb_done
+execute if score $tvrb mg.st matches ..436 run schedule function mg:terra/rb_step 1t

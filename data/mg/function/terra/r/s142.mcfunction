@@ -1,4 +1,23 @@
-# Construction des régions de Terra Nova, étape 142/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 142/436 (dimension mg:terranova, générée)
+fill 225 102 27 231 102 27 minecraft:andesite
+fill 226 102 20 230 102 20 minecraft:andesite
+fill 226 102 21 226 102 22 minecraft:air
+fill 226 102 25 230 102 26 minecraft:air
+fill 226 102 28 230 102 28 minecraft:andesite
+setblock 227 102 21 minecraft:andesite
+fill 227 102 22 228 102 22 minecraft:air
+setblock 228 102 21 minecraft:air
+setblock 228 102 24 minecraft:stone_bricks
+setblock 229 102 21 minecraft:andesite
+setblock 229 102 22 minecraft:stone_brick_slab[type=top]
+fill 229 102 24 231 102 24 minecraft:air
+setblock 230 102 21 minecraft:stone_brick_slab[type=top]
+setblock 230 102 22 minecraft:air
+fill 231 102 21 231 102 23 minecraft:andesite
+fill 231 102 25 232 102 26 minecraft:andesite
+fill 232 102 22 232 102 24 minecraft:andesite
+setblock 233 102 24 minecraft:andesite
+fill 224 103 23 225 103 25 minecraft:andesite
 fill 225 103 21 225 103 22 minecraft:andesite
 fill 225 103 26 226 103 27 minecraft:andesite
 setblock 226 103 21 minecraft:air
@@ -180,22 +199,3 @@ fill 227 110 26 229 110 26 minecraft:air
 fill 227 110 27 227 110 28 minecraft:tuff
 setblock 228 110 24 minecraft:stone_bricks
 setblock 228 110 27 minecraft:air
-setblock 228 110 28 minecraft:tuff
-fill 229 110 24 230 110 24 minecraft:air
-fill 229 110 27 230 110 27 minecraft:tuff
-fill 230 110 22 231 110 22 minecraft:tuff
-fill 230 110 26 231 110 26 minecraft:tuff
-fill 231 110 23 231 110 25 minecraft:tuff
-fill 224 111 23 224 111 25 minecraft:tuff
-fill 225 111 22 226 111 22 minecraft:tuff
-fill 225 111 23 226 111 23 minecraft:stone_brick_slab[type=top]
-fill 225 111 24 227 111 24 minecraft:air
-setblock 225 111 25 minecraft:tuff
-setblock 225 111 26 minecraft:air
-fill 226 111 21 230 111 21 minecraft:tuff
-fill 226 111 25 230 111 25 minecraft:air
-setblock 226 111 26 minecraft:tuff
-setblock 226 111 27 minecraft:air
-fill 227 111 22 229 111 23 minecraft:air
-fill 227 111 26 229 111 26 minecraft:air
-fill 227 111 27 230 111 27 minecraft:tuff

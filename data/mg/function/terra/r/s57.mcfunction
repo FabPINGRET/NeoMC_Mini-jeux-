@@ -1,4 +1,4 @@
-# Construction des régions de Terra Nova, étape 57/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 57/436 (dimension mg:terranova, générée)
 setblock -37 58 -122 minecraft:mangrove_log
 setblock -30 58 -122 minecraft:mangrove_log
 setblock -37 59 -122 minecraft:mangrove_log
@@ -60,7 +60,8 @@ fill -38 65 -130 -22 65 -130 minecraft:air
 fill -38 65 -129 -38 65 -114 minecraft:air
 setblock -37 65 -129 minecraft:mangrove_log
 fill -37 65 -128 -37 65 -124 minecraft:mangrove_fence
-fill -37 65 -123 -37 65 -122 minecraft:air
+fill -37 65 -123 -22 65 -123 minecraft:air
+fill -37 65 -122 -31 65 -122 minecraft:air
 setblock -37 65 -121 minecraft:stripped_mangrove_log
 fill -37 65 -120 -37 65 -118 minecraft:mangrove_planks
 fill -37 65 -117 -37 65 -116 minecraft:stripped_mangrove_log
@@ -69,8 +70,7 @@ fill -37 65 -114 -22 65 -114 minecraft:air
 fill -36 65 -129 -32 65 -129 minecraft:mangrove_fence
 setblock -36 65 -128 minecraft:barrel[facing=north]
 setblock -36 65 -127 minecraft:mangrove_planks
-fill -36 65 -126 -27 65 -124 minecraft:mangrove_fence
-fill -36 65 -123 -32 65 -122 minecraft:mangrove_fence
+fill -36 65 -126 -26 65 -124 minecraft:air
 fill -36 65 -121 -35 65 -121 minecraft:mangrove_planks
 setblock -36 65 -120 minecraft:cartography_table
 fill -36 65 -119 -33 65 -119 minecraft:air
@@ -79,13 +79,13 @@ setblock -36 65 -117 minecraft:cyan_bed[facing=south,part=head]
 fill -36 65 -116 -34 65 -116 minecraft:mangrove_planks
 fill -36 65 -115 -32 65 -115 minecraft:mangrove_fence
 setblock -35 65 -128 minecraft:barrel[facing=up]
-fill -35 65 -127 -27 65 -127 minecraft:mangrove_fence
+fill -35 65 -127 -27 65 -127 minecraft:air
 setblock -35 65 -120 minecraft:barrel[facing=up]
 fill -35 65 -118 -34 65 -117 minecraft:air
 setblock -34 65 -128 minecraft:barrel[facing=north]
 setblock -34 65 -121 minecraft:mangrove_door[facing=north,half=lower,hinge=left,open=false]
 setblock -34 65 -120 minecraft:air
-fill -33 65 -128 -27 65 -128 minecraft:mangrove_fence
+fill -33 65 -128 -27 65 -128 minecraft:air
 fill -33 65 -121 -32 65 -121 minecraft:stripped_mangrove_log
 setblock -33 65 -120 minecraft:crafting_table
 setblock -33 65 -118 minecraft:cyan_bed[facing=south,part=foot]
@@ -94,42 +94,35 @@ fill -33 65 -116 -32 65 -116 minecraft:stripped_mangrove_log
 fill -32 65 -120 -32 65 -118 minecraft:mangrove_planks
 setblock -32 65 -117 minecraft:stripped_mangrove_log
 fill -31 65 -129 -29 65 -129 minecraft:air
-fill -31 65 -123 -27 65 -123 minecraft:air
-fill -31 65 -122 -31 65 -121 minecraft:air
-fill -31 65 -120 -27 65 -119 minecraft:mangrove_fence
-fill -31 65 -118 -29 65 -116 minecraft:mangrove_fence
-fill -31 65 -115 -29 65 -115 minecraft:air
+fill -31 65 -121 -22 65 -121 minecraft:air
+fill -31 65 -120 -27 65 -119 minecraft:air
+fill -31 65 -118 -29 65 -115 minecraft:air
 setblock -30 65 -122 minecraft:lightning_rod
-fill -30 65 -121 -27 65 -121 minecraft:air
-fill -29 65 -122 -27 65 -122 minecraft:air
+fill -29 65 -122 -22 65 -122 minecraft:air
 fill -28 65 -129 -24 65 -129 minecraft:mangrove_fence
 setblock -28 65 -118 minecraft:stripped_mangrove_log[axis=z]
-fill -28 65 -117 -23 65 -117 minecraft:mangrove_fence
-fill -28 65 -116 -27 65 -115 minecraft:mangrove_fence
-setblock -27 65 -118 minecraft:mangrove_fence
+fill -28 65 -117 -24 65 -117 minecraft:air
+fill -28 65 -116 -27 65 -116 minecraft:air
+fill -28 65 -115 -24 65 -115 minecraft:mangrove_fence
+setblock -27 65 -118 minecraft:air
 fill -26 65 -128 -24 65 -128 minecraft:mangrove_log
 setblock -26 65 -127 minecraft:mangrove_log
-setblock -26 65 -126 minecraft:air
-fill -26 65 -125 -23 65 -124 minecraft:mangrove_fence
-fill -26 65 -123 -24 65 -121 minecraft:mangrove_fence
 setblock -26 65 -120 minecraft:stripped_mangrove_log[axis=x]
-fill -26 65 -119 -23 65 -119 minecraft:mangrove_fence
+fill -26 65 -119 -24 65 -119 minecraft:air
 setblock -26 65 -118 minecraft:campfire[lit=true]
 setblock -26 65 -116 minecraft:stripped_mangrove_log[axis=x]
-fill -26 65 -115 -24 65 -115 minecraft:mangrove_fence
 setblock -25 65 -127 minecraft:ladder[facing=south]
 fill -25 65 -126 -24 65 -126 minecraft:mangrove_log
-fill -25 65 -120 -23 65 -120 minecraft:mangrove_fence
-setblock -25 65 -118 minecraft:mangrove_fence
-setblock -25 65 -116 minecraft:mangrove_fence
+fill -25 65 -125 -24 65 -124 minecraft:air
+fill -25 65 -120 -24 65 -120 minecraft:air
+setblock -25 65 -118 minecraft:air
+setblock -25 65 -116 minecraft:air
 setblock -24 65 -127 minecraft:mangrove_log
 setblock -24 65 -118 minecraft:stripped_mangrove_log[axis=z]
 setblock -24 65 -116 minecraft:iron_bars
 setblock -23 65 -129 minecraft:mangrove_log
-fill -23 65 -128 -23 65 -126 minecraft:mangrove_fence
-fill -23 65 -123 -22 65 -121 minecraft:air
-setblock -23 65 -118 minecraft:mangrove_fence
-setblock -23 65 -116 minecraft:mangrove_fence
+fill -23 65 -128 -23 65 -124 minecraft:mangrove_fence
+fill -23 65 -120 -23 65 -116 minecraft:mangrove_fence
 setblock -23 65 -115 minecraft:mangrove_log
 fill -22 65 -129 -22 65 -124 minecraft:air
 fill -22 65 -120 -22 65 -115 minecraft:air
@@ -199,3 +192,10 @@ setblock -35 67 -116 minecraft:glass_pane
 setblock -34 67 -121 minecraft:mangrove_planks
 setblock -34 67 -116 minecraft:mangrove_planks
 fill -33 67 -121 -32 67 -121 minecraft:stripped_mangrove_log
+fill -33 67 -116 -32 67 -116 minecraft:stripped_mangrove_log
+setblock -32 67 -120 minecraft:mangrove_planks
+setblock -32 67 -119 minecraft:glass_pane
+setblock -32 67 -118 minecraft:mangrove_planks
+setblock -32 67 -117 minecraft:stripped_mangrove_log
+fill -31 67 -121 -22 67 -117 minecraft:air
+fill -31 67 -116 -25 67 -116 minecraft:air

@@ -1,4 +1,67 @@
-# Construction des régions de Terra Nova, étape 325/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 325/436 (dimension mg:terranova, générée)
+fill -208 64 -54 -206 64 -51 minecraft:gravel
+fill -208 64 -50 -206 64 -50 minecraft:packed_mud
+fill -208 64 -49 -206 64 -46 minecraft:gravel
+fill -208 64 -45 -206 64 -45 minecraft:packed_mud
+fill -208 64 -44 -206 64 -44 minecraft:gravel
+setblock -205 64 -56 minecraft:packed_mud
+setblock -205 64 -54 minecraft:packed_mud
+fill -204 64 -56 -201 64 -54 minecraft:gravel
+fill -200 64 -56 -200 64 -54 minecraft:packed_mud
+fill -199 64 -56 -196 64 -54 minecraft:gravel
+fill -195 64 -56 -195 64 -54 minecraft:packed_mud
+fill -194 64 -56 -193 64 -54 minecraft:gravel
+fill -232 65 -58 -228 65 -57 minecraft:air
+fill -232 65 -56 -232 65 -52 minecraft:air
+setblock -231 65 -61 minecraft:cobweb
+fill -231 65 -60 -228 65 -59 minecraft:air
+setblock -231 65 -56 minecraft:bone_block[axis=z]
+setblock -231 65 -55 minecraft:chest[facing=east]
+fill -231 65 -54 -231 65 -53 minecraft:air
+setblock -231 65 -52 minecraft:bone_block[axis=z]
+fill -231 65 -51 -231 65 -50 minecraft:air
+fill -230 65 -61 -220 65 -61 minecraft:air
+fill -230 65 -56 -210 65 -56 minecraft:air
+fill -230 65 -55 -228 65 -55 minecraft:air
+setblock -230 65 -54 minecraft:bone_block[axis=z]
+fill -230 65 -53 -227 65 -53 minecraft:air
+fill -230 65 -52 -229 65 -52 minecraft:air
+setblock -230 65 -51 minecraft:hay_block
+fill -230 65 -50 -219 65 -50 minecraft:air
+fill -230 65 -49 -229 65 -49 minecraft:air
+fill -229 65 -54 -221 65 -54 minecraft:air
+fill -229 65 -51 -228 65 -51 minecraft:air
+fill -228 65 -62 -222 65 -62 minecraft:air
+setblock -228 65 -52 minecraft:bone_block[axis=z]
+fill -228 65 -49 -227 65 -49 minecraft:skeleton_skull
+fill -228 65 -48 -222 65 -48 minecraft:air
+setblock -227 65 -60 minecraft:hay_block
+fill -227 65 -59 -219 65 -59 minecraft:air
+setblock -227 65 -58 minecraft:hay_block
+fill -227 65 -57 -226 65 -57 minecraft:air
+setblock -227 65 -55 minecraft:bone_block[axis=z]
+fill -227 65 -52 -218 65 -52 minecraft:air
+setblock -227 65 -51 minecraft:skeleton_skull
+fill -226 65 -60 -219 65 -60 minecraft:air
+fill -226 65 -58 -222 65 -58 minecraft:air
+fill -226 65 -55 -220 65 -55 minecraft:air
+setblock -226 65 -53 minecraft:skeleton_skull
+fill -226 65 -51 -219 65 -51 minecraft:air
+fill -226 65 -49 -220 65 -49 minecraft:air
+setblock -225 65 -57 minecraft:cobweb
+fill -225 65 -53 -222 65 -53 minecraft:air
+setblock -224 65 -57 minecraft:air
+setblock -223 65 -64 minecraft:spruce_log
+setblock -223 65 -57 minecraft:cobweb
+fill -222 65 -65 -222 65 -63 minecraft:air
+fill -222 65 -57 -218 65 -57 minecraft:air
+fill -222 65 -47 -222 65 -45 minecraft:air
+fill -221 65 -65 -221 65 -62 minecraft:rail[shape=north_south]
+setblock -221 65 -58 minecraft:hay_block
+setblock -221 65 -53 minecraft:cobweb
+fill -221 65 -48 -221 65 -45 minecraft:rail[shape=north_south]
+fill -220 65 -65 -220 65 -62 minecraft:air
+setblock -220 65 -58 minecraft:bone_block[axis=x]
 setblock -220 65 -54 minecraft:skeleton_skull
 fill -220 65 -53 -218 65 -53 minecraft:air
 fill -220 65 -48 -220 65 -45 minecraft:air
@@ -136,66 +199,3 @@ setblock -196 66 -57 minecraft:spruce_log
 setblock -196 66 -53 minecraft:spruce_log
 setblock -194 66 -53 minecraft:coal_ore
 setblock -192 66 -57 minecraft:spruce_log
-setblock -192 66 -53 minecraft:spruce_log
-fill -191 66 -57 -190 66 -57 minecraft:air
-fill -191 66 -53 -190 66 -53 minecraft:air
-fill -232 67 -58 -218 67 -52 minecraft:air
-fill -231 67 -60 -219 67 -59 minecraft:air
-fill -231 67 -51 -219 67 -50 minecraft:air
-fill -230 67 -61 -220 67 -61 minecraft:air
-fill -230 67 -49 -220 67 -49 minecraft:air
-fill -228 67 -62 -220 67 -62 minecraft:air
-fill -228 67 -48 -220 67 -48 minecraft:air
-setblock -223 67 -64 minecraft:spruce_log
-fill -222 67 -65 -220 67 -63 minecraft:air
-fill -222 67 -47 -220 67 -45 minecraft:air
-setblock -219 67 -64 minecraft:spruce_log
-setblock -219 67 -48 minecraft:spruce_log
-fill -217 67 -56 -210 67 -54 minecraft:air
-setblock -216 67 -57 minecraft:spruce_log
-setblock -216 67 -53 minecraft:spruce_log
-setblock -212 67 -57 minecraft:spruce_log
-setblock -212 67 -53 minecraft:spruce_log
-setblock -211 67 -73 minecraft:spruce_log
-fill -211 67 -72 -203 67 -68 minecraft:air
-setblock -211 67 -67 minecraft:spruce_log
-setblock -211 67 -43 minecraft:spruce_log
-fill -211 67 -42 -203 67 -38 minecraft:air
-setblock -211 67 -37 minecraft:spruce_log
-fill -210 67 -73 -204 67 -73 minecraft:air
-fill -210 67 -67 -204 67 -67 minecraft:air
-fill -210 67 -43 -204 67 -43 minecraft:air
-fill -210 67 -37 -204 67 -37 minecraft:air
-setblock -209 67 -64 minecraft:spruce_log
-setblock -209 67 -60 minecraft:spruce_log
-setblock -209 67 -56 minecraft:spruce_log
-fill -209 67 -55 -190 67 -54 minecraft:air
-setblock -209 67 -52 minecraft:spruce_log
-setblock -209 67 -48 minecraft:spruce_log
-setblock -209 67 -44 minecraft:spruce_log
-fill -208 67 -66 -206 67 -56 minecraft:air
-fill -208 67 -53 -206 67 -44 minecraft:air
-setblock -205 67 -64 minecraft:spruce_log
-setblock -205 67 -60 minecraft:spruce_log
-setblock -205 67 -56 minecraft:spruce_log
-setblock -205 67 -52 minecraft:spruce_log
-setblock -205 67 -48 minecraft:spruce_log
-setblock -205 67 -44 minecraft:spruce_log
-setblock -204 67 -57 minecraft:spruce_log
-fill -204 67 -56 -190 67 -56 minecraft:air
-setblock -204 67 -53 minecraft:spruce_log
-setblock -203 67 -73 minecraft:spruce_log
-setblock -203 67 -67 minecraft:spruce_log
-setblock -203 67 -43 minecraft:spruce_log
-setblock -203 67 -37 minecraft:spruce_log
-setblock -200 67 -57 minecraft:spruce_log
-setblock -200 67 -53 minecraft:spruce_log
-setblock -196 67 -57 minecraft:spruce_log
-setblock -196 67 -53 minecraft:spruce_log
-setblock -192 67 -57 minecraft:spruce_log
-setblock -192 67 -53 minecraft:spruce_log
-fill -191 67 -57 -190 67 -57 minecraft:air
-fill -191 67 -53 -190 67 -53 minecraft:air
-fill -232 68 -58 -218 68 -52 minecraft:air
-fill -231 68 -60 -219 68 -59 minecraft:air
-fill -231 68 -51 -219 68 -50 minecraft:air

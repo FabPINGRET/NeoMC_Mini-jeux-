@@ -1,0 +1,145 @@
+{
+  "textures": {
+    "belly": "mg:item/beast/ignarok_belly",
+    "teeth": "mg:item/beast/ignarok_teeth",
+    "particle": "mg:item/beast/ignarok_belly"
+  },
+  "elements": [
+    {
+      "from": [
+        3.072,
+        4.976,
+        8.0
+      ],
+      "to": [
+        12.928,
+        8.0,
+        29.28
+      ],
+      "faces": {
+        "north": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            14.78,
+            4.54
+          ]
+        },
+        "south": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            14.78,
+            4.54
+          ]
+        },
+        "east": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            16.0,
+            4.54
+          ]
+        },
+        "west": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            16.0,
+            4.54
+          ]
+        },
+        "up": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            14.78,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            14.78,
+            16.0
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        4.304,
+        8.0,
+        18.08
+      ],
+      "to": [
+        11.696,
+        9.12,
+        28.608
+      ],
+      "faces": {
+        "north": {
+          "texture": "#teeth",
+          "uv": [
+            0,
+            0,
+            11.09,
+            1.68
+          ]
+        },
+        "south": {
+          "texture": "#teeth",
+          "uv": [
+            0,
+            0,
+            11.09,
+            1.68
+          ]
+        },
+        "east": {
+          "texture": "#teeth",
+          "uv": [
+            0,
+            0,
+            15.79,
+            1.68
+          ]
+        },
+        "west": {
+          "texture": "#teeth",
+          "uv": [
+            0,
+            0,
+            15.79,
+            1.68
+          ]
+        },
+        "up": {
+          "texture": "#teeth",
+          "uv": [
+            0,
+            0,
+            11.09,
+            15.79
+          ]
+        },
+        "down": {
+          "texture": "#teeth",
+          "uv": [
+            0,
+            0,
+            11.09,
+            15.79
+          ]
+        }
+      }
+    }
+  ]
+}

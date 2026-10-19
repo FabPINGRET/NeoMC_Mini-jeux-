@@ -1,4 +1,197 @@
-# Construction des régions de Terra Nova, étape 408/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 408/436 (dimension mg:terranova, générée)
+setblock -33 61 115 minecraft:dark_oak_log
+fill -39 62 121 -39 62 123 minecraft:dark_oak_planks
+setblock -33 62 115 minecraft:dark_oak_log
+fill -39 63 121 -39 63 123 minecraft:dark_oak_stairs[facing=east,half=bottom]
+fill -38 63 121 -38 63 123 minecraft:dark_oak_planks
+setblock -33 63 115 minecraft:dark_oak_log
+setblock -39 64 123 minecraft:dark_oak_planks
+fill -38 64 121 -38 64 123 minecraft:dark_oak_stairs[facing=east,half=bottom]
+fill -37 64 121 -35 64 121 minecraft:dark_oak_planks
+fill -37 64 122 -37 64 123 minecraft:dark_oak_planks
+setblock -33 64 115 minecraft:dark_oak_log
+setblock -19 64 115 minecraft:dark_oak_log
+fill -37 65 121 -37 65 123 minecraft:dark_oak_stairs[facing=east,half=bottom]
+fill -36 65 121 -34 65 121 minecraft:dark_oak_planks
+fill -36 65 122 -35 65 122 minecraft:dark_oak_planks
+setblock -36 65 123 minecraft:dark_oak_planks
+setblock -33 65 115 minecraft:dark_oak_log
+setblock -33 65 122 minecraft:dark_oak_log
+setblock -33 65 129 minecraft:dark_oak_log
+setblock -26 65 115 minecraft:dark_oak_log
+setblock -26 65 122 minecraft:dark_oak_log
+setblock -26 65 129 minecraft:dark_oak_log
+setblock -19 65 115 minecraft:dark_oak_log
+setblock -19 65 122 minecraft:dark_oak_log
+setblock -19 65 129 minecraft:dark_oak_log
+fill -36 66 121 -36 66 123 minecraft:dark_oak_stairs[facing=east,half=bottom]
+fill -35 66 121 -34 66 122 minecraft:dark_oak_planks
+setblock -35 66 123 minecraft:dark_oak_planks
+setblock -33 66 115 minecraft:dark_oak_log
+setblock -33 66 122 minecraft:dark_oak_log
+setblock -33 66 129 minecraft:dark_oak_log
+setblock -26 66 115 minecraft:dark_oak_log
+setblock -26 66 122 minecraft:dark_oak_log
+setblock -26 66 129 minecraft:dark_oak_log
+setblock -19 66 115 minecraft:dark_oak_log
+setblock -19 66 122 minecraft:dark_oak_log
+setblock -19 66 129 minecraft:dark_oak_log
+fill -35 67 121 -35 67 123 minecraft:dark_oak_stairs[facing=east,half=bottom]
+fill -34 67 121 -34 67 123 minecraft:dark_oak_planks
+setblock -33 67 115 minecraft:dark_oak_log
+setblock -33 67 122 minecraft:dark_oak_log
+setblock -33 67 129 minecraft:dark_oak_log
+fill -27 67 114 -25 67 114 minecraft:dark_oak_planks
+setblock -26 67 115 minecraft:dark_oak_log
+setblock -26 67 122 minecraft:dark_oak_log
+setblock -26 67 129 minecraft:dark_oak_log
+setblock -19 67 115 minecraft:dark_oak_log
+setblock -19 67 122 minecraft:dark_oak_log
+setblock -19 67 129 minecraft:dark_oak_log
+fill -34 68 121 -34 68 123 minecraft:dark_oak_stairs[facing=east,half=bottom]
+fill -33 68 115 -19 68 115 minecraft:stripped_dark_oak_log[axis=x]
+fill -33 68 116 -19 68 120 minecraft:dark_oak_planks
+fill -33 68 121 -28 68 128 minecraft:dark_oak_planks
+fill -33 68 129 -19 68 129 minecraft:stripped_dark_oak_log[axis=x]
+fill -27 68 114 -25 68 114 minecraft:dark_oak_stairs[facing=south,half=bottom]
+fill -27 68 121 -25 68 121 minecraft:polished_andesite
+fill -27 68 122 -27 68 123 minecraft:polished_andesite
+fill -27 68 124 -19 68 128 minecraft:dark_oak_planks
+setblock -26 68 122 minecraft:lodestone
+fill -26 68 123 -25 68 123 minecraft:polished_andesite
+setblock -25 68 122 minecraft:polished_andesite
+fill -24 68 121 -19 68 123 minecraft:dark_oak_planks
+fill -34 69 114 -18 69 114 minecraft:air
+fill -34 69 115 -34 69 130 minecraft:air
+setblock -33 69 115 minecraft:dark_oak_log
+fill -33 69 116 -33 69 120 minecraft:dark_oak_fence
+fill -33 69 121 -18 69 121 minecraft:air
+fill -33 69 122 -27 69 122 minecraft:air
+setblock -33 69 123 minecraft:stripped_dark_oak_log
+fill -33 69 124 -33 69 126 minecraft:dark_oak_planks
+fill -33 69 127 -33 69 128 minecraft:stripped_dark_oak_log
+setblock -33 69 129 minecraft:dark_oak_log
+fill -33 69 130 -18 69 130 minecraft:air
+fill -32 69 115 -28 69 115 minecraft:dark_oak_fence
+fill -32 69 116 -31 69 116 minecraft:hay_block
+setblock -32 69 117 minecraft:hay_block
+fill -32 69 118 -22 69 120 minecraft:air
+fill -32 69 123 -31 69 123 minecraft:dark_oak_planks
+setblock -32 69 124 minecraft:cartography_table
+fill -32 69 125 -29 69 125 minecraft:air
+setblock -32 69 126 minecraft:gray_bed[facing=south,part=foot]
+setblock -32 69 127 minecraft:gray_bed[facing=south,part=head]
+fill -32 69 128 -30 69 128 minecraft:dark_oak_planks
+fill -32 69 129 -28 69 129 minecraft:dark_oak_fence
+fill -31 69 117 -23 69 117 minecraft:air
+setblock -31 69 124 minecraft:barrel[facing=up]
+fill -31 69 126 -30 69 127 minecraft:air
+setblock -30 69 116 minecraft:dark_oak_planks
+setblock -30 69 123 minecraft:dark_oak_door[facing=north,half=lower,hinge=left,open=false]
+setblock -30 69 124 minecraft:air
+fill -29 69 116 -23 69 116 minecraft:air
+fill -29 69 123 -28 69 123 minecraft:stripped_dark_oak_log
+setblock -29 69 124 minecraft:crafting_table
+setblock -29 69 126 minecraft:gray_bed[facing=south,part=foot]
+setblock -29 69 127 minecraft:gray_bed[facing=south,part=head]
+fill -29 69 128 -28 69 128 minecraft:stripped_dark_oak_log
+fill -28 69 124 -28 69 126 minecraft:dark_oak_planks
+setblock -28 69 127 minecraft:stripped_dark_oak_log
+fill -27 69 115 -25 69 115 minecraft:air
+fill -27 69 123 -18 69 123 minecraft:air
+fill -27 69 124 -23 69 125 minecraft:air
+fill -27 69 126 -25 69 129 minecraft:air
+setblock -26 69 122 minecraft:lightning_rod
+fill -25 69 122 -18 69 122 minecraft:air
+fill -24 69 115 -20 69 115 minecraft:dark_oak_fence
+setblock -24 69 126 minecraft:stripped_dark_oak_log[axis=z]
+fill -24 69 127 -20 69 127 minecraft:air
+fill -24 69 128 -23 69 128 minecraft:air
+fill -24 69 129 -20 69 129 minecraft:dark_oak_fence
+setblock -23 69 126 minecraft:air
+fill -22 69 116 -20 69 116 minecraft:dark_oak_log
+setblock -22 69 117 minecraft:dark_oak_log
+setblock -22 69 124 minecraft:stripped_dark_oak_log[axis=x]
+fill -22 69 125 -20 69 125 minecraft:air
+setblock -22 69 126 minecraft:campfire[lit=true]
+setblock -22 69 128 minecraft:stripped_dark_oak_log[axis=x]
+setblock -21 69 117 minecraft:ladder[facing=south]
+fill -21 69 118 -20 69 118 minecraft:dark_oak_log
+fill -21 69 119 -20 69 120 minecraft:air
+fill -21 69 124 -20 69 124 minecraft:air
+setblock -21 69 126 minecraft:air
+setblock -21 69 128 minecraft:air
+setblock -20 69 117 minecraft:dark_oak_log
+setblock -20 69 126 minecraft:stripped_dark_oak_log[axis=z]
+setblock -20 69 128 minecraft:iron_bars
+setblock -19 69 115 minecraft:dark_oak_log
+fill -19 69 116 -19 69 120 minecraft:dark_oak_fence
+fill -19 69 124 -19 69 128 minecraft:dark_oak_fence
+setblock -19 69 129 minecraft:dark_oak_log
+fill -18 69 115 -18 69 120 minecraft:air
+fill -18 69 124 -18 69 129 minecraft:air
+fill -34 70 114 -18 70 114 minecraft:air
+fill -34 70 115 -34 70 130 minecraft:air
+setblock -33 70 115 minecraft:dark_oak_log
+fill -33 70 116 -33 70 122 minecraft:air
+setblock -33 70 123 minecraft:stripped_dark_oak_log
+setblock -33 70 124 minecraft:dark_oak_planks
+setblock -33 70 125 minecraft:glass_pane
+setblock -33 70 126 minecraft:dark_oak_planks
+fill -33 70 127 -33 70 128 minecraft:stripped_dark_oak_log
+setblock -33 70 129 minecraft:dark_oak_log
+fill -33 70 130 -18 70 130 minecraft:air
+fill -32 70 115 -20 70 115 minecraft:air
+setblock -32 70 116 minecraft:barrel[facing=up]
+fill -32 70 117 -23 70 122 minecraft:air
+setblock -32 70 123 minecraft:dark_oak_planks
+fill -32 70 124 -29 70 127 minecraft:air
+setblock -32 70 128 minecraft:dark_oak_planks
+fill -32 70 129 -20 70 129 minecraft:air
+fill -31 70 116 -23 70 116 minecraft:air
+setblock -31 70 123 minecraft:glass_pane
+setblock -31 70 128 minecraft:glass_pane
+setblock -30 70 123 minecraft:dark_oak_door[facing=north,half=upper,hinge=left,open=false]
+setblock -30 70 128 minecraft:dark_oak_planks
+fill -29 70 123 -28 70 123 minecraft:stripped_dark_oak_log
+fill -29 70 128 -28 70 128 minecraft:stripped_dark_oak_log
+setblock -28 70 124 minecraft:dark_oak_planks
+setblock -28 70 125 minecraft:glass_pane
+setblock -28 70 126 minecraft:dark_oak_planks
+setblock -28 70 127 minecraft:stripped_dark_oak_log
+fill -27 70 123 -18 70 127 minecraft:air
+fill -27 70 128 -21 70 128 minecraft:air
+fill -22 70 116 -20 70 116 minecraft:dark_oak_log
+setblock -22 70 117 minecraft:dark_oak_log
+fill -22 70 118 -22 70 122 minecraft:air
+setblock -21 70 117 minecraft:ladder[facing=south]
+fill -21 70 118 -20 70 118 minecraft:dark_oak_log
+fill -21 70 119 -18 70 122 minecraft:air
+setblock -20 70 117 minecraft:dark_oak_log
+setblock -20 70 128 minecraft:iron_bars
+setblock -19 70 115 minecraft:dark_oak_log
+fill -19 70 116 -18 70 118 minecraft:air
+fill -19 70 128 -18 70 128 minecraft:air
+setblock -19 70 129 minecraft:dark_oak_log
+setblock -18 70 115 minecraft:air
+setblock -18 70 129 minecraft:air
+fill -34 71 114 -18 71 114 minecraft:air
+fill -34 71 115 -34 71 130 minecraft:air
+setblock -33 71 115 minecraft:dark_oak_log
+fill -33 71 116 -23 71 122 minecraft:air
+setblock -33 71 123 minecraft:stripped_dark_oak_log
+setblock -33 71 124 minecraft:dark_oak_planks
+setblock -33 71 125 minecraft:glass_pane
+setblock -33 71 126 minecraft:dark_oak_planks
+fill -33 71 127 -33 71 128 minecraft:stripped_dark_oak_log
+setblock -33 71 129 minecraft:dark_oak_log
+fill -33 71 130 -18 71 130 minecraft:air
+fill -32 71 115 -20 71 115 minecraft:air
+setblock -32 71 123 minecraft:dark_oak_planks
+fill -32 71 124 -29 71 127 minecraft:air
+setblock -32 71 128 minecraft:dark_oak_planks
+fill -32 71 129 -20 71 129 minecraft:air
+setblock -31 71 123 minecraft:glass_pane
 setblock -31 71 128 minecraft:glass_pane
 setblock -30 71 123 minecraft:dark_oak_planks
 setblock -30 71 128 minecraft:dark_oak_planks
@@ -6,196 +199,3 @@ fill -29 71 123 -28 71 123 minecraft:stripped_dark_oak_log
 fill -29 71 128 -28 71 128 minecraft:stripped_dark_oak_log
 setblock -28 71 124 minecraft:dark_oak_planks
 setblock -28 71 125 minecraft:glass_pane
-setblock -28 71 126 minecraft:dark_oak_planks
-setblock -28 71 127 minecraft:stripped_dark_oak_log
-fill -27 71 123 -18 71 127 minecraft:air
-fill -27 71 128 -21 71 128 minecraft:air
-fill -22 71 116 -20 71 116 minecraft:dark_oak_log
-fill -22 71 117 -22 71 118 minecraft:dark_oak_log
-fill -22 71 119 -18 71 122 minecraft:air
-setblock -21 71 117 minecraft:ladder[facing=south]
-fill -21 71 118 -20 71 118 minecraft:dark_oak_log
-setblock -20 71 117 minecraft:dark_oak_log
-setblock -20 71 128 minecraft:iron_bars
-setblock -19 71 115 minecraft:dark_oak_log
-fill -19 71 116 -18 71 118 minecraft:air
-fill -19 71 128 -18 71 128 minecraft:air
-setblock -19 71 129 minecraft:dark_oak_log
-setblock -18 71 115 minecraft:air
-setblock -18 71 129 minecraft:air
-fill -34 72 114 -18 72 114 minecraft:air
-fill -34 72 115 -34 72 130 minecraft:air
-setblock -33 72 115 minecraft:lantern[hanging=false]
-fill -33 72 116 -23 72 122 minecraft:air
-setblock -33 72 123 minecraft:stripped_dark_oak_log
-fill -33 72 124 -33 72 126 minecraft:dark_oak_planks
-fill -33 72 127 -33 72 128 minecraft:stripped_dark_oak_log
-setblock -33 72 129 minecraft:lantern[hanging=false]
-fill -33 72 130 -18 72 130 minecraft:air
-fill -32 72 115 -20 72 115 minecraft:air
-fill -32 72 123 -30 72 123 minecraft:dark_oak_planks
-fill -32 72 124 -29 72 125 minecraft:air
-fill -32 72 126 -31 72 127 minecraft:air
-fill -32 72 128 -30 72 128 minecraft:dark_oak_planks
-fill -32 72 129 -20 72 129 minecraft:air
-setblock -30 72 126 minecraft:lantern[hanging=true]
-fill -30 72 127 -29 72 127 minecraft:air
-fill -29 72 123 -28 72 123 minecraft:stripped_dark_oak_log
-setblock -29 72 126 minecraft:air
-fill -29 72 128 -28 72 128 minecraft:stripped_dark_oak_log
-fill -28 72 124 -28 72 126 minecraft:dark_oak_planks
-setblock -28 72 127 minecraft:stripped_dark_oak_log
-fill -27 72 123 -18 72 127 minecraft:air
-fill -27 72 128 -21 72 128 minecraft:air
-fill -22 72 116 -20 72 116 minecraft:dark_oak_log
-fill -22 72 117 -22 72 118 minecraft:dark_oak_log
-fill -22 72 119 -18 72 122 minecraft:air
-setblock -21 72 117 minecraft:ladder[facing=south]
-fill -21 72 118 -20 72 118 minecraft:dark_oak_log
-setblock -20 72 117 minecraft:dark_oak_log
-setblock -20 72 128 minecraft:iron_bars
-setblock -19 72 115 minecraft:lantern[hanging=false]
-fill -19 72 116 -18 72 118 minecraft:air
-fill -19 72 128 -18 72 128 minecraft:air
-setblock -19 72 129 minecraft:lantern[hanging=false]
-setblock -18 72 115 minecraft:air
-setblock -18 72 129 minecraft:air
-fill -34 73 114 -18 73 115 minecraft:air
-fill -34 73 116 -23 73 121 minecraft:air
-fill -34 73 122 -34 73 129 minecraft:dark_oak_stairs[facing=east,half=bottom]
-fill -34 73 130 -18 73 130 minecraft:air
-fill -33 73 122 -28 73 122 minecraft:air
-fill -33 73 123 -33 73 129 minecraft:air
-fill -32 73 123 -29 73 125 minecraft:dark_oak_planks
-fill -32 73 126 -31 73 128 minecraft:dark_oak_planks
-fill -32 73 129 -28 73 129 minecraft:air
-setblock -30 73 126 minecraft:iron_chain
-fill -30 73 127 -29 73 128 minecraft:dark_oak_planks
-setblock -29 73 126 minecraft:dark_oak_planks
-fill -28 73 123 -28 73 128 minecraft:air
-fill -27 73 122 -27 73 129 minecraft:dark_oak_stairs[facing=west,half=bottom]
-fill -26 73 122 -18 73 127 minecraft:air
-fill -26 73 128 -22 73 129 minecraft:air
-fill -22 73 116 -20 73 116 minecraft:dark_oak_log
-fill -22 73 117 -22 73 118 minecraft:dark_oak_log
-fill -22 73 119 -18 73 121 minecraft:air
-setblock -21 73 117 minecraft:ladder[facing=south]
-fill -21 73 118 -20 73 118 minecraft:dark_oak_log
-setblock -21 73 128 minecraft:iron_trapdoor[facing=west,half=bottom,open=true]
-fill -21 73 129 -18 73 129 minecraft:air
-setblock -20 73 117 minecraft:dark_oak_log
-setblock -20 73 128 minecraft:iron_bars
-fill -19 73 116 -18 73 118 minecraft:air
-fill -19 73 128 -18 73 128 minecraft:air
-fill -34 74 114 -18 74 115 minecraft:air
-fill -34 74 116 -23 74 121 minecraft:air
-fill -34 74 122 -34 74 130 minecraft:air
-fill -33 74 122 -33 74 129 minecraft:dark_oak_stairs[facing=east,half=bottom]
-fill -33 74 130 -18 74 130 minecraft:air
-fill -32 74 122 -29 74 122 minecraft:air
-fill -32 74 123 -29 74 123 minecraft:dark_oak_planks
-fill -32 74 124 -29 74 127 minecraft:air
-fill -32 74 128 -29 74 128 minecraft:dark_oak_planks
-fill -32 74 129 -29 74 129 minecraft:air
-fill -28 74 122 -28 74 129 minecraft:dark_oak_stairs[facing=west,half=bottom]
-fill -27 74 122 -18 74 127 minecraft:air
-fill -27 74 128 -21 74 129 minecraft:air
-fill -22 74 116 -20 74 116 minecraft:dark_oak_log
-fill -22 74 117 -22 74 118 minecraft:dark_oak_log
-fill -22 74 119 -18 74 121 minecraft:air
-setblock -21 74 117 minecraft:ladder[facing=south]
-fill -21 74 118 -20 74 118 minecraft:dark_oak_log
-setblock -20 74 117 minecraft:dark_oak_log
-setblock -20 74 128 minecraft:iron_bars
-fill -20 74 129 -18 74 129 minecraft:air
-fill -19 74 116 -18 74 118 minecraft:air
-fill -19 74 128 -18 74 128 minecraft:air
-fill -34 75 114 -18 75 115 minecraft:air
-fill -34 75 116 -23 75 121 minecraft:air
-fill -34 75 122 -33 75 130 minecraft:air
-fill -32 75 122 -32 75 129 minecraft:dark_oak_stairs[facing=east,half=bottom]
-fill -32 75 130 -18 75 130 minecraft:air
-fill -31 75 122 -30 75 122 minecraft:air
-fill -31 75 123 -30 75 123 minecraft:dark_oak_planks
-fill -31 75 124 -30 75 127 minecraft:air
-fill -31 75 128 -30 75 128 minecraft:dark_oak_planks
-fill -31 75 129 -30 75 129 minecraft:air
-fill -29 75 122 -29 75 129 minecraft:dark_oak_stairs[facing=west,half=bottom]
-fill -28 75 122 -18 75 127 minecraft:air
-fill -28 75 128 -21 75 129 minecraft:air
-fill -22 75 116 -20 75 116 minecraft:dark_oak_log
-fill -22 75 117 -22 75 118 minecraft:dark_oak_log
-fill -22 75 119 -18 75 121 minecraft:air
-setblock -21 75 117 minecraft:ladder[facing=south]
-fill -21 75 118 -20 75 118 minecraft:dark_oak_log
-setblock -20 75 117 minecraft:dark_oak_log
-setblock -20 75 128 minecraft:lightning_rod
-fill -20 75 129 -18 75 129 minecraft:air
-fill -19 75 116 -18 75 118 minecraft:air
-fill -19 75 128 -18 75 128 minecraft:air
-fill -34 76 114 -18 76 115 minecraft:air
-fill -34 76 116 -23 76 121 minecraft:air
-fill -34 76 122 -32 76 130 minecraft:air
-setblock -31 76 122 minecraft:dark_oak_stairs[facing=east,half=bottom]
-fill -31 76 123 -30 76 123 minecraft:dark_oak_planks
-fill -31 76 124 -31 76 127 minecraft:dark_oak_stairs[facing=east,half=bottom]
-fill -31 76 128 -30 76 128 minecraft:dark_oak_planks
-setblock -31 76 129 minecraft:dark_oak_stairs[facing=east,half=bottom]
-fill -31 76 130 -18 76 130 minecraft:air
-setblock -30 76 122 minecraft:dark_oak_stairs[facing=west,half=bottom]
-fill -30 76 124 -30 76 127 minecraft:dark_oak_stairs[facing=west,half=bottom]
-setblock -30 76 129 minecraft:dark_oak_stairs[facing=west,half=bottom]
-fill -29 76 122 -18 76 129 minecraft:air
-fill -22 76 116 -20 76 116 minecraft:dark_oak_log
-fill -22 76 117 -22 76 118 minecraft:dark_oak_log
-fill -22 76 119 -18 76 121 minecraft:air
-setblock -21 76 117 minecraft:ladder[facing=south]
-fill -21 76 118 -20 76 118 minecraft:dark_oak_log
-setblock -20 76 117 minecraft:dark_oak_log
-fill -19 76 116 -18 76 118 minecraft:air
-fill -34 77 114 -18 77 114 minecraft:air
-fill -34 77 115 -24 77 130 minecraft:air
-fill -23 77 115 -19 77 116 minecraft:dark_oak_slab[type=bottom]
-fill -23 77 117 -22 77 119 minecraft:dark_oak_slab[type=bottom]
-fill -23 77 120 -18 77 130 minecraft:air
-setblock -21 77 117 minecraft:dark_oak_trapdoor[facing=south,half=bottom,open=false]
-fill -21 77 118 -19 77 119 minecraft:dark_oak_slab[type=bottom]
-fill -20 77 117 -19 77 117 minecraft:dark_oak_slab[type=bottom]
-fill -18 77 115 -18 77 119 minecraft:air
-fill -34 78 114 -18 78 114 minecraft:air
-fill -34 78 115 -24 78 130 minecraft:air
-setblock -23 78 115 minecraft:dark_oak_log
-fill -23 78 116 -19 78 118 minecraft:dark_oak_fence
-setblock -23 78 119 minecraft:dark_oak_log
-fill -23 78 120 -18 78 130 minecraft:air
-fill -22 78 115 -20 78 115 minecraft:dark_oak_fence
-fill -22 78 119 -20 78 119 minecraft:dark_oak_fence
-setblock -19 78 115 minecraft:dark_oak_log
-setblock -19 78 119 minecraft:dark_oak_log
-fill -18 78 115 -18 78 119 minecraft:air
-fill -34 79 114 -18 79 114 minecraft:air
-fill -34 79 115 -24 79 130 minecraft:air
-setblock -23 79 115 minecraft:dark_oak_log
-fill -23 79 116 -18 79 118 minecraft:air
-setblock -23 79 119 minecraft:dark_oak_log
-fill -23 79 120 -18 79 130 minecraft:air
-fill -22 79 115 -20 79 115 minecraft:air
-fill -22 79 119 -20 79 119 minecraft:air
-setblock -19 79 115 minecraft:dark_oak_log
-setblock -19 79 119 minecraft:dark_oak_log
-setblock -18 79 115 minecraft:air
-setblock -18 79 119 minecraft:air
-fill -34 80 114 -18 80 114 minecraft:air
-fill -34 80 115 -24 80 130 minecraft:air
-setblock -23 80 115 minecraft:dark_oak_log
-fill -23 80 116 -18 80 116 minecraft:air
-fill -23 80 117 -22 80 118 minecraft:air
-setblock -23 80 119 minecraft:dark_oak_log
-fill -23 80 120 -18 80 130 minecraft:air
-fill -22 80 115 -20 80 115 minecraft:air
-fill -22 80 119 -20 80 119 minecraft:air
-setblock -21 80 117 minecraft:lantern[hanging=true]
-fill -21 80 118 -18 80 118 minecraft:air
-fill -20 80 117 -18 80 117 minecraft:air
-setblock -19 80 115 minecraft:dark_oak_log
-setblock -19 80 119 minecraft:dark_oak_log

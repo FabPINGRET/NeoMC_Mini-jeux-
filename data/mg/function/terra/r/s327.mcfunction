@@ -1,41 +1,25 @@
-# Construction des régions de Terra Nova, étape 327/435 (dimension mg:terranova, générée)
-place feature minecraft:dead_bush -163 64 55
-place feature minecraft:dead_bush -173 86 -86
-place feature minecraft:dead_bush -181 65 52
-place feature minecraft:dead_bush -177 86 85
-place feature minecraft:dead_bush -146 74 83
-place feature minecraft:dead_bush -164 66 -62
-place feature minecraft:dead_bush -155 85 -42
-place feature minecraft:dead_bush -167 87 86
-place feature minecraft:dead_bush -207 87 -43
-place feature minecraft:dead_bush -228 85 -46
-place feature minecraft:dead_bush -199 66 47
-place feature minecraft:dead_bush -108 65 -37
-place feature minecraft:dead_bush -220 85 -33
-place feature minecraft:dead_bush -154 85 -40
-place feature minecraft:dead_bush -181 65 -46
-place feature minecraft:dead_bush -167 64 37
-place feature minecraft:dead_bush -247 66 -77
-place feature minecraft:dead_bush -242 87 86
-place feature minecraft:dead_bush -222 85 -34
-place feature minecraft:dead_bush -137 66 -70
-place feature minecraft:dead_bush -215 66 31
-place feature minecraft:dead_bush -239 65 -28
-place feature minecraft:dead_bush -118 64 -61
-place feature minecraft:dead_bush -184 65 50
-place feature minecraft:dead_bush -109 65 32
-place feature minecraft:dead_bush -106 77 -85
-place feature minecraft:dead_bush -186 85 -81
-place feature minecraft:dead_bush -177 65 -27
-place feature minecraft:dead_bush -248 88 52
-place feature minecraft:dead_bush -163 83 -23
-place feature minecraft:dead_bush -236 65 17
-place feature minecraft:dead_bush -211 66 34
-place feature minecraft:dead_bush -139 66 -69
-place feature minecraft:dead_bush -155 85 -21
-place feature minecraft:dead_bush -157 65 -69
-place feature minecraft:dead_bush -206 65 -30
-place feature minecraft:dead_bush -248 88 -52
-place feature minecraft:dead_bush -139 65 80
-place feature minecraft:dead_bush -105 68 -53
-place feature minecraft:dead_bush -240 87 -42
+# Construction des régions de Terra Nova, étape 327/436 (dimension mg:terranova, générée)
+fill -207 70 -69 -203 70 -68 minecraft:air
+setblock -207 70 -40 minecraft:lantern[hanging=true]
+fill -207 70 -39 -203 70 -38 minecraft:air
+fill -206 70 -70 -203 70 -70 minecraft:air
+fill -206 70 -40 -203 70 -40 minecraft:air
+setblock -203 70 -73 minecraft:spruce_log
+setblock -203 70 -67 minecraft:spruce_log
+setblock -203 70 -43 minecraft:spruce_log
+setblock -203 70 -37 minecraft:spruce_log
+fill -229 71 -57 -221 71 -56 minecraft:air
+fill -229 71 -55 -226 71 -53 minecraft:air
+fill -228 71 -58 -222 71 -58 minecraft:air
+fill -228 71 -52 -222 71 -52 minecraft:air
+fill -227 71 -59 -223 71 -59 minecraft:air
+fill -227 71 -51 -223 71 -51 minecraft:air
+setblock -225 71 -55 minecraft:iron_chain
+fill -225 71 -54 -221 71 -53 minecraft:air
+fill -224 71 -55 -221 71 -55 minecraft:air
+setblock -207 71 -70 minecraft:iron_chain
+setblock -207 71 -40 minecraft:iron_chain
+fill -228 72 -57 -222 72 -53 minecraft:air
+fill -227 72 -58 -223 72 -58 minecraft:air
+fill -227 72 -52 -223 72 -52 minecraft:air
+fill -227 73 -57 -223 73 -53 minecraft:air

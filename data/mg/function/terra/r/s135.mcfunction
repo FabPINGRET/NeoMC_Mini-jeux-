@@ -1,16 +1,14 @@
-# Construction des régions de Terra Nova, étape 135/435 (dimension mg:terranova, générée)
-setblock 131 84 1 minecraft:birch_planks
-fill 131 84 2 135 84 2 minecraft:birch_stairs[facing=north,half=bottom]
-fill 131 84 3 136 84 14 minecraft:air
-fill 132 84 1 134 84 1 minecraft:air
-setblock 135 84 1 minecraft:birch_planks
+# Construction des régions de Terra Nova, étape 135/436 (dimension mg:terranova, générée)
 fill 136 84 0 136 84 2 minecraft:air
 fill 131 85 1 135 85 1 minecraft:birch_slab
 fill 136 71 -2 138 80 0 minecraft:stripped_birch_log outline
 fill 137 71 -1 137 80 -1 minecraft:ladder[facing=south]
 fill 135 81 -3 139 81 1 minecraft:birch_slab
 setblock 137 81 -1 minecraft:air
-fill 135 82 -3 139 82 1 minecraft:birch_fence outline
+fill 135 82 -3 139 82 -3 minecraft:birch_fence
+fill 135 82 1 139 82 1 minecraft:birch_fence
+fill 135 82 -3 135 82 1 minecraft:birch_fence
+fill 139 82 -3 139 82 1 minecraft:birch_fence
 fill 137 83 -1 137 87 -1 minecraft:iron_bars
 setblock 137 88 -1 minecraft:lightning_rod
 fill 118 71 -3 120 73 -1 minecraft:hay_block
@@ -35,7 +33,10 @@ fill 220 83 56 224 83 60 minecraft:andesite
 fill 220 84 56 224 84 60 minecraft:stone
 fill 221 85 57 223 85 59 minecraft:stone
 fill 221 86 57 223 86 59 minecraft:stone
-fill 220 87 56 224 87 60 minecraft:hay_block outline
+fill 220 87 56 224 87 56 minecraft:hay_block
+fill 220 87 60 224 87 60 minecraft:hay_block
+fill 220 87 56 220 87 60 minecraft:hay_block
+fill 224 87 56 224 87 60 minecraft:hay_block
 setblock 222 87 58 minecraft:sniffer_egg
 fill 228 67 40 236 67 48 minecraft:stone
 fill 228 68 40 236 68 48 minecraft:tuff
@@ -64,7 +65,10 @@ fill 230 90 42 234 90 46 minecraft:stone
 fill 230 91 42 234 91 46 minecraft:stone
 fill 230 92 42 234 92 46 minecraft:andesite
 fill 230 93 42 234 93 46 minecraft:andesite
-fill 230 94 42 234 94 46 minecraft:hay_block outline
+fill 230 94 42 234 94 42 minecraft:hay_block
+fill 230 94 46 234 94 46 minecraft:hay_block
+fill 230 94 42 230 94 46 minecraft:hay_block
+fill 234 94 42 234 94 46 minecraft:hay_block
 setblock 232 94 44 minecraft:sniffer_egg
 fill 211 64 69 217 64 75 minecraft:tuff
 fill 211 65 69 217 65 75 minecraft:tuff
@@ -103,7 +107,10 @@ fill 213 97 71 215 97 73 minecraft:tuff
 fill 213 98 71 215 98 73 minecraft:tuff
 fill 213 99 71 215 99 73 minecraft:tuff
 fill 213 100 71 215 100 73 minecraft:stone
-fill 212 101 70 216 101 74 minecraft:hay_block outline
+fill 212 101 70 216 101 70 minecraft:hay_block
+fill 212 101 74 216 101 74 minecraft:hay_block
+fill 212 101 70 212 101 74 minecraft:hay_block
+fill 216 101 70 216 101 74 minecraft:hay_block
 setblock 214 101 72 minecraft:sniffer_egg
 fill 234 65 62 242 65 70 minecraft:stone
 fill 234 66 62 242 66 70 minecraft:stone
@@ -133,7 +140,10 @@ fill 236 89 64 240 89 68 minecraft:stone
 fill 236 90 64 240 90 68 minecraft:stone
 fill 236 91 64 240 91 68 minecraft:stone
 fill 236 92 64 240 92 68 minecraft:tuff
-fill 236 93 64 240 93 68 minecraft:hay_block outline
+fill 236 93 64 240 93 64 minecraft:hay_block
+fill 236 93 68 240 93 68 minecraft:hay_block
+fill 236 93 64 236 93 68 minecraft:hay_block
+fill 240 93 64 240 93 68 minecraft:hay_block
 setblock 238 93 66 minecraft:sniffer_egg
 fill 203 65 49 209 65 55 minecraft:andesite
 fill 203 66 49 209 66 55 minecraft:andesite
@@ -170,7 +180,10 @@ fill 204 96 50 208 96 54 minecraft:andesite
 fill 205 97 51 207 97 53 minecraft:andesite
 fill 205 98 51 207 98 53 minecraft:andesite
 fill 205 99 51 207 99 53 minecraft:andesite
-fill 204 100 50 208 100 54 minecraft:hay_block outline
+fill 204 100 50 208 100 50 minecraft:hay_block
+fill 204 100 54 208 100 54 minecraft:hay_block
+fill 204 100 50 204 100 54 minecraft:hay_block
+fill 208 100 50 208 100 54 minecraft:hay_block
 setblock 206 100 52 minecraft:sniffer_egg
 fill 222 64 76 230 64 84 minecraft:stone
 fill 222 65 76 230 65 84 minecraft:stone
@@ -186,16 +199,3 @@ fill 223 74 77 229 74 83 minecraft:stone
 fill 223 75 77 229 75 83 minecraft:stone
 fill 223 76 77 229 76 83 minecraft:andesite
 fill 223 77 77 229 77 83 minecraft:andesite
-fill 223 78 77 229 78 83 minecraft:andesite
-fill 223 79 77 229 79 83 minecraft:andesite
-fill 223 80 77 229 80 83 minecraft:stone
-fill 223 81 77 229 81 83 minecraft:stone
-fill 223 82 77 229 82 83 minecraft:stone
-fill 224 83 78 228 83 82 minecraft:stone
-fill 224 84 78 228 84 82 minecraft:tuff
-fill 224 85 78 228 85 82 minecraft:tuff
-fill 224 86 78 228 86 82 minecraft:tuff
-fill 224 87 78 228 87 82 minecraft:tuff
-fill 224 88 78 228 88 82 minecraft:stone
-fill 224 89 78 228 89 82 minecraft:stone
-fill 224 90 78 228 90 82 minecraft:stone

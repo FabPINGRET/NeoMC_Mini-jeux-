@@ -1,0 +1,21 @@
+# boss_malveth : ticks 61 à 80
+execute if score @s mg.olctk matches 61 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.222 69.464 183.679 134.5 -5.3
+execute if score @s mg.olctk matches 62 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.265 69.4265 183.623 134.4 -5.8
+execute if score @s mg.olctk matches 63 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.306 69.3916 183.569 134.3 -6.3
+execute if score @s mg.olctk matches 64 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.344 69.359 183.517 134.2 -6.8
+execute if score @s mg.olctk matches 65 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.381 69.3289 183.466 134.1 -7.2
+execute if score @s mg.olctk matches 66 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.415 69.301 183.417 134.0 -7.7
+execute if score @s mg.olctk matches 67 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.448 69.2753 183.37 133.9 -8.2
+execute if score @s mg.olctk matches 68 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.478 69.2516 183.324 133.8 -8.6
+execute if score @s mg.olctk matches 69 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.507 69.2299 183.28 133.8 -9.0
+execute if score @s mg.olctk matches 70 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.535 69.2101 183.237 133.7 -9.4
+execute if score @s mg.olctk matches 71 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.56 69.192 183.196 133.5 -9.9
+execute if score @s mg.olctk matches 72 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.584 69.1756 183.156 133.4 -10.3
+execute if score @s mg.olctk matches 73 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.606 69.1608 183.117 133.3 -10.6
+execute if score @s mg.olctk matches 74 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.627 69.1475 183.08 133.2 -11.0
+execute if score @s mg.olctk matches 75 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.647 69.1356 183.044 133.1 -11.4
+execute if score @s mg.olctk matches 76 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.666 69.125 183.009 133.0 -11.7
+execute if score @s mg.olctk matches 77 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.683 69.1156 182.976 132.9 -12.1
+execute if score @s mg.olctk matches 78 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.699 69.1073 182.943 132.8 -12.4
+execute if score @s mg.olctk matches 79 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.714 69.1 182.912 132.7 -12.8
+execute if score @s mg.olctk matches 80 run return run execute in mg:ombrelune as @e[tag=mg.olcam] if score @s mg.olo = $own mg.st run tp @s -166.729 69.0936 182.882 132.6 -13.1

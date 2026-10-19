@@ -1,4 +1,23 @@
-# Construction des régions de Terra Nova, étape 141/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 141/436 (dimension mg:terranova, générée)
+fill 225 94 23 232 94 23 minecraft:air
+fill 225 94 24 227 94 25 minecraft:air
+fill 225 94 28 232 94 28 minecraft:stone
+fill 226 94 22 231 94 22 minecraft:air
+fill 226 94 26 228 94 26 minecraft:air
+setblock 226 94 27 minecraft:stone
+fill 227 94 21 230 94 21 minecraft:air
+fill 227 94 27 229 94 27 minecraft:air
+fill 228 94 19 230 94 19 minecraft:stone
+setblock 228 94 24 minecraft:stone_bricks
+fill 228 94 25 232 94 25 minecraft:air
+fill 228 94 29 230 94 29 minecraft:stone
+fill 229 94 24 232 94 24 minecraft:air
+setblock 229 94 26 minecraft:stone_brick_slab[type=top]
+fill 230 94 26 231 94 26 minecraft:air
+setblock 230 94 27 minecraft:stone_brick_slab[type=top]
+fill 231 94 21 233 94 21 minecraft:stone
+fill 231 94 27 233 94 27 minecraft:stone
+fill 232 94 22 233 94 22 minecraft:stone
 fill 232 94 26 233 94 26 minecraft:stone
 fill 233 94 23 234 94 25 minecraft:stone
 fill 224 95 22 225 95 22 minecraft:calcite
@@ -180,22 +199,3 @@ fill 224 102 25 225 102 26 minecraft:andesite
 setblock 225 102 21 minecraft:andesite
 fill 225 102 23 230 102 23 minecraft:air
 fill 225 102 24 227 102 24 minecraft:air
-fill 225 102 27 231 102 27 minecraft:andesite
-fill 226 102 20 230 102 20 minecraft:andesite
-fill 226 102 21 226 102 22 minecraft:air
-fill 226 102 25 230 102 26 minecraft:air
-fill 226 102 28 230 102 28 minecraft:andesite
-setblock 227 102 21 minecraft:andesite
-fill 227 102 22 228 102 22 minecraft:air
-setblock 228 102 21 minecraft:air
-setblock 228 102 24 minecraft:stone_bricks
-setblock 229 102 21 minecraft:andesite
-setblock 229 102 22 minecraft:stone_brick_slab[type=top]
-fill 229 102 24 231 102 24 minecraft:air
-setblock 230 102 21 minecraft:stone_brick_slab[type=top]
-setblock 230 102 22 minecraft:air
-fill 231 102 21 231 102 23 minecraft:andesite
-fill 231 102 25 232 102 26 minecraft:andesite
-fill 232 102 22 232 102 24 minecraft:andesite
-setblock 233 102 24 minecraft:andesite
-fill 224 103 23 225 103 25 minecraft:andesite

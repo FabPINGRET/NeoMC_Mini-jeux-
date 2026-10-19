@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "skin": "mg:item/beast/drake_skin",
+    "particle": "mg:item/beast/drake_skin"
+  },
+  "elements": [
+    {
+      "from": [
+        5.96,
+        -1.724,
+        5.96
+      ],
+      "to": [
+        10.04,
+        9.55,
+        10.04
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            4.08,
+            11.27
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            4.08,
+            11.27
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            4.08,
+            11.27
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            4.08,
+            11.27
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            4.08,
+            4.08
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            4.08,
+            4.08
+          ]
+        }
+      }
+    }
+  ]
+}

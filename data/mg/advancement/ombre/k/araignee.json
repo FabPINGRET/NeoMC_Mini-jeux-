@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "k": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "nbt": "{Tags:[\"mg.olk_araignee\"]}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "mg:ombre/k/araignee"
+  }
+}

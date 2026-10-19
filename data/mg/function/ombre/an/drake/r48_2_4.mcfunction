@@ -1,0 +1,2 @@
+tp @s ^-0.1517 ^0.9197 ^-2.131 ~135.337 31.1543
+data merge entity @s {start_interpolation:0,interpolation_duration:2,transformation:{left_rotation:[0f,0f,0.1159f,0.9933f]}}

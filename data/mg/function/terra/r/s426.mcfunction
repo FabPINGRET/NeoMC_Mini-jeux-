@@ -1,301 +1,301 @@
-# Construction des régions de Terra Nova, étape 426/435 (dimension mg:terranova, générée)
-fill -27 56 94 -27 65 94 minecraft:dirt
-setblock -27 66 94 minecraft:grass_block
-fill -27 67 94 -27 99 94 minecraft:air
-fill -27 56 95 -27 65 95 minecraft:dirt
-setblock -27 66 95 minecraft:grass_block
-fill -27 67 95 -27 104 95 minecraft:air
-fill -26 56 -96 -26 72 -96 minecraft:stone
-setblock -26 73 -96 minecraft:mossy_cobblestone
-fill -26 74 -96 -26 104 -96 minecraft:air
-fill -26 56 -95 -26 71 -95 minecraft:stone
-setblock -26 72 -95 minecraft:stone
-fill -26 73 -95 -26 100 -95 minecraft:air
-fill -26 56 -94 -26 71 -94 minecraft:stone
-setblock -26 72 -94 minecraft:stone
-fill -26 73 -94 -26 97 -94 minecraft:air
-fill -26 56 -93 -26 70 -93 minecraft:stone
-setblock -26 71 -93 minecraft:stone
-fill -26 72 -93 -26 94 -93 minecraft:air
-fill -26 56 -92 -26 70 -92 minecraft:stone
-setblock -26 71 -92 minecraft:stone
-fill -26 72 -92 -26 92 -92 minecraft:air
-fill -26 56 -91 -26 70 -91 minecraft:stone
-setblock -26 71 -91 minecraft:mossy_cobblestone
-fill -26 72 -91 -26 89 -91 minecraft:air
-fill -26 56 -90 -26 69 -90 minecraft:dirt
-setblock -26 70 -90 minecraft:grass_block
-fill -26 71 -90 -26 87 -90 minecraft:air
-fill -26 56 -89 -26 69 -89 minecraft:dirt
-setblock -26 70 -89 minecraft:grass_block
-fill -26 71 -89 -26 85 -89 minecraft:air
-fill -26 56 -88 -26 68 -88 minecraft:dirt
-setblock -26 69 -88 minecraft:grass_block
-fill -26 70 -88 -26 83 -88 minecraft:air
-fill -26 56 -87 -26 68 -87 minecraft:dirt
-setblock -26 69 -87 minecraft:grass_block
-fill -26 70 -87 -26 82 -87 minecraft:air
-fill -26 56 -86 -26 67 -86 minecraft:dirt
-setblock -26 68 -86 minecraft:grass_block
-fill -26 69 -86 -26 81 -86 minecraft:air
-fill -26 56 85 -26 64 85 minecraft:dirt
-setblock -26 65 85 minecraft:grass_block
-fill -26 66 85 -26 78 85 minecraft:air
-fill -26 56 86 -26 64 86 minecraft:dirt
-setblock -26 65 86 minecraft:grass_block
-fill -26 66 86 -26 78 86 minecraft:air
-fill -26 56 87 -26 64 87 minecraft:dirt
-setblock -26 65 87 minecraft:grass_block
-fill -26 66 87 -26 79 87 minecraft:air
-fill -26 56 88 -26 64 88 minecraft:dirt
-setblock -26 65 88 minecraft:grass_block
-fill -26 66 88 -26 81 88 minecraft:air
-fill -26 56 89 -26 64 89 minecraft:dirt
-setblock -26 65 89 minecraft:grass_block
-fill -26 66 89 -26 83 89 minecraft:air
-fill -26 56 90 -26 65 90 minecraft:dirt
-setblock -26 66 90 minecraft:grass_block
-fill -26 67 90 -26 85 90 minecraft:air
-fill -26 56 91 -26 65 91 minecraft:dirt
-setblock -26 66 91 minecraft:grass_block
-fill -26 67 91 -26 88 91 minecraft:air
-fill -26 56 92 -26 65 92 minecraft:dirt
-setblock -26 66 92 minecraft:grass_block
-fill -26 67 92 -26 91 92 minecraft:air
-fill -26 56 93 -26 65 93 minecraft:dirt
-setblock -26 66 93 minecraft:grass_block
-fill -26 67 93 -26 95 93 minecraft:air
-fill -26 56 94 -26 65 94 minecraft:dirt
-setblock -26 66 94 minecraft:grass_block
-fill -26 67 94 -26 99 94 minecraft:air
-fill -26 56 95 -26 65 95 minecraft:dirt
-setblock -26 66 95 minecraft:grass_block
-fill -26 67 95 -26 104 95 minecraft:air
-fill -25 56 -96 -25 78 -96 minecraft:stone
-setblock -25 79 -96 minecraft:stone
-fill -25 80 -96 -25 104 -96 minecraft:air
-fill -25 56 -95 -25 76 -95 minecraft:stone
-setblock -25 77 -95 minecraft:mossy_cobblestone
-fill -25 78 -95 -25 100 -95 minecraft:air
-fill -25 56 -94 -25 75 -94 minecraft:stone
-setblock -25 76 -94 minecraft:stone
-fill -25 77 -94 -25 97 -94 minecraft:air
-fill -25 56 -93 -25 74 -93 minecraft:stone
-setblock -25 75 -93 minecraft:stone
-fill -25 76 -93 -25 94 -93 minecraft:air
-fill -25 56 -92 -25 73 -92 minecraft:stone
-setblock -25 74 -92 minecraft:stone
-fill -25 75 -92 -25 91 -92 minecraft:air
-fill -25 56 -91 -25 72 -91 minecraft:stone
-setblock -25 73 -91 minecraft:stone
-fill -25 74 -91 -25 89 -91 minecraft:air
-fill -25 56 -90 -25 71 -90 minecraft:dirt
-setblock -25 72 -90 minecraft:grass_block
-fill -25 73 -90 -25 87 -90 minecraft:air
-fill -25 56 -89 -25 70 -89 minecraft:dirt
-setblock -25 71 -89 minecraft:grass_block
-fill -25 72 -89 -25 85 -89 minecraft:air
-fill -25 56 -88 -25 69 -88 minecraft:dirt
-setblock -25 70 -88 minecraft:grass_block
-fill -25 71 -88 -25 83 -88 minecraft:air
-fill -25 56 -87 -25 68 -87 minecraft:dirt
-setblock -25 69 -87 minecraft:grass_block
-fill -25 70 -87 -25 82 -87 minecraft:air
-fill -25 56 -86 -25 67 -86 minecraft:dirt
-setblock -25 68 -86 minecraft:grass_block
-fill -25 69 -86 -25 81 -86 minecraft:air
-fill -25 56 86 -25 64 86 minecraft:dirt
-setblock -25 65 86 minecraft:grass_block
-fill -25 66 86 -25 78 86 minecraft:air
-fill -25 56 87 -25 64 87 minecraft:dirt
-setblock -25 65 87 minecraft:grass_block
-fill -25 66 87 -25 80 87 minecraft:air
-fill -25 56 88 -25 64 88 minecraft:dirt
-setblock -25 65 88 minecraft:grass_block
-fill -25 66 88 -25 81 88 minecraft:air
-fill -25 56 89 -25 65 89 minecraft:dirt
-setblock -25 66 89 minecraft:grass_block
-fill -25 67 89 -25 83 89 minecraft:air
-fill -25 56 90 -25 65 90 minecraft:dirt
-setblock -25 66 90 minecraft:grass_block
-fill -25 67 90 -25 86 90 minecraft:air
-fill -25 56 91 -25 65 91 minecraft:dirt
-setblock -25 66 91 minecraft:grass_block
-fill -25 67 91 -25 88 91 minecraft:air
-fill -25 56 92 -25 65 92 minecraft:dirt
-setblock -25 66 92 minecraft:grass_block
-fill -25 67 92 -25 92 92 minecraft:air
-fill -25 56 93 -25 65 93 minecraft:dirt
-setblock -25 66 93 minecraft:grass_block
-fill -25 67 93 -25 95 93 minecraft:air
-fill -25 56 94 -25 65 94 minecraft:dirt
-setblock -25 66 94 minecraft:grass_block
-fill -25 67 94 -25 99 94 minecraft:air
-fill -25 56 95 -25 65 95 minecraft:dirt
-setblock -25 66 95 minecraft:grass_block
-fill -25 67 95 -25 104 95 minecraft:air
-fill -24 56 -96 -24 85 -96 minecraft:stone
-setblock -24 86 -96 minecraft:stone
-fill -24 87 -96 -24 104 -96 minecraft:air
-fill -24 56 -95 -24 82 -95 minecraft:stone
-setblock -24 83 -95 minecraft:stone
-fill -24 84 -95 -24 100 -95 minecraft:air
-fill -24 56 -94 -24 79 -94 minecraft:stone
-setblock -24 80 -94 minecraft:mossy_cobblestone
-fill -24 81 -94 -24 97 -94 minecraft:air
-fill -24 56 -93 -24 77 -93 minecraft:stone
-setblock -24 78 -93 minecraft:stone
-fill -24 79 -93 -24 94 -93 minecraft:air
-fill -24 56 -92 -24 75 -92 minecraft:stone
-setblock -24 76 -92 minecraft:stone
-fill -24 77 -92 -24 91 -92 minecraft:air
-fill -24 56 -91 -24 73 -91 minecraft:stone
-setblock -24 74 -91 minecraft:stone
-fill -24 75 -91 -24 89 -91 minecraft:air
-fill -24 56 -90 -24 72 -90 minecraft:dirt
-setblock -24 73 -90 minecraft:grass_block
-fill -24 74 -90 -24 87 -90 minecraft:air
-fill -24 56 -89 -24 71 -89 minecraft:dirt
-setblock -24 72 -89 minecraft:grass_block
-fill -24 73 -89 -24 85 -89 minecraft:air
-fill -24 56 -87 -24 68 -87 minecraft:dirt
-setblock -24 69 -87 minecraft:grass_block
-fill -24 70 -87 -24 82 -87 minecraft:air
-fill -24 56 -86 -24 67 -86 minecraft:dirt
-setblock -24 68 -86 minecraft:grass_block
-fill -24 69 -86 -24 81 -86 minecraft:air
-fill -24 56 81 -24 64 81 minecraft:dirt
-setblock -24 65 81 minecraft:grass_block
-fill -24 66 81 -24 77 81 minecraft:air
-fill -24 56 86 -24 64 86 minecraft:dirt
-setblock -24 65 86 minecraft:grass_block
-fill -24 66 86 -24 78 86 minecraft:air
-fill -24 56 87 -24 64 87 minecraft:dirt
-setblock -24 65 87 minecraft:grass_block
-fill -24 66 87 -24 80 87 minecraft:air
-fill -24 56 88 -24 64 88 minecraft:dirt
-setblock -24 65 88 minecraft:grass_block
-fill -24 66 88 -24 81 88 minecraft:air
-fill -24 56 89 -24 65 89 minecraft:dirt
-setblock -24 66 89 minecraft:grass_block
-fill -24 67 89 -24 83 89 minecraft:air
-fill -24 56 90 -24 65 90 minecraft:dirt
-setblock -24 66 90 minecraft:grass_block
-fill -24 67 90 -24 86 90 minecraft:air
-fill -24 56 91 -24 65 91 minecraft:dirt
-setblock -24 66 91 minecraft:grass_block
-fill -24 67 91 -24 88 91 minecraft:air
-fill -24 56 92 -24 65 92 minecraft:dirt
-setblock -24 66 92 minecraft:grass_block
-fill -24 67 92 -24 92 92 minecraft:air
-fill -24 56 93 -24 65 93 minecraft:dirt
-setblock -24 66 93 minecraft:grass_block
-fill -24 67 93 -24 95 93 minecraft:air
-fill -24 56 94 -24 65 94 minecraft:dirt
-setblock -24 66 94 minecraft:grass_block
-fill -24 67 94 -24 99 94 minecraft:air
-fill -24 56 95 -24 65 95 minecraft:dirt
-setblock -24 66 95 minecraft:grass_block
-fill -24 67 95 -24 104 95 minecraft:air
-fill -23 56 83 -23 64 83 minecraft:dirt
-setblock -23 65 83 minecraft:grass_block
-fill -23 66 83 -23 77 83 minecraft:air
-fill -23 56 86 -23 64 86 minecraft:dirt
-setblock -23 65 86 minecraft:grass_block
-fill -23 66 86 -23 78 86 minecraft:air
-fill -23 56 87 -23 64 87 minecraft:dirt
-setblock -23 65 87 minecraft:grass_block
-fill -23 66 87 -23 79 87 minecraft:air
-fill -23 56 88 -23 64 88 minecraft:dirt
-setblock -23 65 88 minecraft:grass_block
-fill -23 66 88 -23 81 88 minecraft:air
-fill -23 56 89 -23 64 89 minecraft:dirt
-setblock -23 65 89 minecraft:grass_block
-fill -23 66 89 -23 83 89 minecraft:air
-fill -23 56 90 -23 65 90 minecraft:dirt
-setblock -23 66 90 minecraft:grass_block
-fill -23 67 90 -23 85 90 minecraft:air
-fill -23 56 91 -23 65 91 minecraft:dirt
-setblock -23 66 91 minecraft:grass_block
-fill -23 67 91 -23 88 91 minecraft:air
-fill -23 56 92 -23 65 92 minecraft:dirt
-setblock -23 66 92 minecraft:grass_block
-fill -23 67 92 -23 92 92 minecraft:air
-fill -23 56 93 -23 65 93 minecraft:dirt
-setblock -23 66 93 minecraft:grass_block
-fill -23 67 93 -23 95 93 minecraft:air
-fill -23 56 94 -23 65 94 minecraft:dirt
-setblock -23 66 94 minecraft:grass_block
-fill -23 67 94 -23 99 94 minecraft:air
-fill -23 56 95 -23 65 95 minecraft:dirt
-setblock -23 66 95 minecraft:grass_block
-fill -23 67 95 -23 104 95 minecraft:air
-fill -22 56 86 -22 64 86 minecraft:dirt
-setblock -22 65 86 minecraft:grass_block
-fill -22 66 86 -22 78 86 minecraft:air
-fill -22 56 87 -22 64 87 minecraft:dirt
-setblock -22 65 87 minecraft:grass_block
-fill -22 66 87 -22 79 87 minecraft:air
-fill -22 56 88 -22 64 88 minecraft:dirt
-setblock -22 65 88 minecraft:grass_block
-fill -22 66 88 -22 81 88 minecraft:air
-fill -22 56 89 -22 64 89 minecraft:dirt
-setblock -22 65 89 minecraft:grass_block
-fill -22 66 89 -22 83 89 minecraft:air
-fill -22 56 90 -22 65 90 minecraft:dirt
-setblock -22 66 90 minecraft:grass_block
-fill -22 67 90 -22 85 90 minecraft:air
-fill -22 56 91 -22 65 91 minecraft:dirt
-setblock -22 66 91 minecraft:grass_block
-fill -22 67 91 -22 88 91 minecraft:air
-fill -22 56 92 -22 65 92 minecraft:dirt
-setblock -22 66 92 minecraft:grass_block
-fill -22 67 92 -22 91 92 minecraft:air
-fill -22 56 93 -22 65 93 minecraft:dirt
-setblock -22 66 93 minecraft:grass_block
-fill -22 67 93 -22 95 93 minecraft:air
-fill -22 56 94 -22 65 94 minecraft:dirt
-setblock -22 66 94 minecraft:grass_block
-fill -22 67 94 -22 99 94 minecraft:air
-fill -22 56 95 -22 65 95 minecraft:dirt
-setblock -22 66 95 minecraft:grass_block
-fill -22 67 95 -22 104 95 minecraft:air
-fill -21 56 82 -21 63 82 minecraft:dirt
-setblock -21 64 82 minecraft:grass_block
-fill -21 65 82 -21 76 82 minecraft:air
-fill -21 56 87 -21 64 87 minecraft:dirt
-setblock -21 65 87 minecraft:grass_block
-fill -21 66 87 -21 79 87 minecraft:air
-fill -21 56 88 -21 64 88 minecraft:dirt
-setblock -21 65 88 minecraft:grass_block
-fill -21 66 88 -21 80 88 minecraft:air
-fill -21 56 89 -21 64 89 minecraft:dirt
-setblock -21 65 89 minecraft:grass_block
-fill -21 66 89 -21 82 89 minecraft:air
-fill -21 56 90 -21 65 90 minecraft:dirt
-setblock -21 66 90 minecraft:grass_block
-fill -21 67 90 -21 85 90 minecraft:air
-fill -21 56 91 -21 65 91 minecraft:dirt
-setblock -21 66 91 minecraft:grass_block
-fill -21 67 91 -21 88 91 minecraft:air
-fill -21 56 92 -21 65 92 minecraft:dirt
-setblock -21 66 92 minecraft:grass_block
-fill -21 67 92 -21 91 92 minecraft:air
-fill -21 56 93 -21 65 93 minecraft:dirt
-setblock -21 66 93 minecraft:grass_block
-fill -21 67 93 -21 95 93 minecraft:air
-fill -21 56 94 -21 65 94 minecraft:dirt
-setblock -21 66 94 minecraft:grass_block
-fill -21 67 94 -21 99 94 minecraft:air
-fill -21 56 95 -21 65 95 minecraft:dirt
-setblock -21 66 95 minecraft:grass_block
-fill -21 67 95 -21 104 95 minecraft:air
-fill -20 56 84 -20 62 84 minecraft:dirt
-setblock -20 63 84 minecraft:grass_block
-fill -20 64 84 -20 76 84 minecraft:air
-fill -20 56 86 -20 63 86 minecraft:dirt
-setblock -20 64 86 minecraft:grass_block
-fill -20 65 86 -20 77 86 minecraft:air
-fill -20 56 87 -20 63 87 minecraft:dirt
-setblock -20 64 87 minecraft:grass_block
-fill -20 65 87 -20 78 87 minecraft:air
+# Construction des régions de Terra Nova, étape 426/436 (dimension mg:terranova, générée)
+fill -31 56 -93 -31 65 -93 minecraft:dirt
+setblock -31 66 -93 minecraft:grass_block
+fill -31 67 -93 -31 93 -93 minecraft:air
+fill -31 56 -92 -31 65 -92 minecraft:dirt
+setblock -31 66 -92 minecraft:grass_block
+fill -31 67 -92 -31 90 -92 minecraft:air
+fill -31 56 -91 -31 65 -91 minecraft:dirt
+setblock -31 66 -91 minecraft:grass_block
+fill -31 67 -91 -31 87 -91 minecraft:air
+fill -31 56 -90 -31 65 -90 minecraft:dirt
+setblock -31 66 -90 minecraft:grass_block
+fill -31 67 -90 -31 85 -90 minecraft:air
+fill -31 56 -89 -31 65 -89 minecraft:dirt
+setblock -31 66 -89 minecraft:grass_block
+fill -31 67 -89 -31 84 -89 minecraft:air
+fill -31 56 -88 -31 66 -88 minecraft:dirt
+setblock -31 67 -88 minecraft:grass_block
+fill -31 68 -88 -31 82 -88 minecraft:air
+fill -31 56 -87 -31 66 -87 minecraft:dirt
+setblock -31 67 -87 minecraft:grass_block
+fill -31 68 -87 -31 81 -87 minecraft:air
+fill -31 56 -86 -31 66 -86 minecraft:dirt
+setblock -31 67 -86 minecraft:grass_block
+fill -31 68 -86 -31 80 -86 minecraft:air
+fill -31 56 -85 -31 66 -85 minecraft:dirt
+setblock -31 67 -85 minecraft:grass_block
+fill -31 68 -85 -31 80 -85 minecraft:air
+fill -31 56 -84 -31 66 -84 minecraft:dirt
+setblock -31 67 -84 minecraft:grass_block
+fill -31 68 -84 -31 80 -84 minecraft:air
+fill -30 56 -96 -30 65 -96 minecraft:dirt
+setblock -30 66 -96 minecraft:grass_block
+fill -30 67 -96 -30 103 -96 minecraft:air
+fill -30 56 -95 -30 65 -95 minecraft:dirt
+setblock -30 66 -95 minecraft:grass_block
+fill -30 67 -95 -30 100 -95 minecraft:air
+fill -30 56 -94 -30 65 -94 minecraft:dirt
+setblock -30 66 -94 minecraft:grass_block
+fill -30 67 -94 -30 96 -94 minecraft:air
+fill -30 56 -93 -30 65 -93 minecraft:dirt
+setblock -30 66 -93 minecraft:grass_block
+fill -30 67 -93 -30 93 -93 minecraft:air
+fill -30 56 -92 -30 65 -92 minecraft:dirt
+setblock -30 66 -92 minecraft:grass_block
+fill -30 67 -92 -30 91 -92 minecraft:air
+fill -30 56 -91 -30 65 -91 minecraft:dirt
+setblock -30 66 -91 minecraft:grass_block
+fill -30 67 -91 -30 88 -91 minecraft:air
+fill -30 56 -90 -30 65 -90 minecraft:dirt
+setblock -30 66 -90 minecraft:grass_block
+fill -30 67 -90 -30 86 -90 minecraft:air
+fill -30 56 -89 -30 66 -89 minecraft:dirt
+setblock -30 67 -89 minecraft:grass_block
+fill -30 68 -89 -30 84 -89 minecraft:air
+fill -30 56 -88 -30 66 -88 minecraft:dirt
+setblock -30 67 -88 minecraft:grass_block
+fill -30 68 -88 -30 82 -88 minecraft:air
+fill -30 56 -87 -30 66 -87 minecraft:dirt
+setblock -30 67 -87 minecraft:grass_block
+fill -30 68 -87 -30 81 -87 minecraft:air
+fill -30 56 -86 -30 66 -86 minecraft:dirt
+setblock -30 67 -86 minecraft:grass_block
+fill -30 68 -86 -30 80 -86 minecraft:air
+fill -30 56 -85 -30 66 -85 minecraft:dirt
+setblock -30 67 -85 minecraft:grass_block
+fill -30 68 -85 -30 80 -85 minecraft:air
+fill -30 56 -84 -30 66 -84 minecraft:dirt
+setblock -30 67 -84 minecraft:grass_block
+fill -30 68 -84 -30 80 -84 minecraft:air
+fill -30 56 -83 -30 66 -83 minecraft:dirt
+setblock -30 67 -83 minecraft:grass_block
+fill -30 68 -83 -30 80 -83 minecraft:air
+fill -30 56 88 -30 66 88 minecraft:dirt
+setblock -30 67 88 minecraft:grass_block
+fill -30 68 88 -30 80 88 minecraft:air
+fill -30 56 89 -30 67 89 minecraft:dirt
+setblock -30 68 89 minecraft:grass_block
+fill -30 69 89 -30 82 89 minecraft:air
+fill -30 56 90 -30 69 90 minecraft:dirt
+setblock -30 70 90 minecraft:grass_block
+fill -30 71 90 -30 84 90 minecraft:air
+fill -30 56 91 -30 71 91 minecraft:stone
+setblock -30 72 91 minecraft:stone
+fill -30 73 91 -30 87 91 minecraft:air
+fill -30 56 92 -30 74 92 minecraft:stone
+setblock -30 75 92 minecraft:stone
+fill -30 76 92 -30 91 92 minecraft:air
+fill -30 56 93 -30 77 93 minecraft:stone
+setblock -30 78 93 minecraft:stone
+fill -30 79 93 -30 94 93 minecraft:air
+fill -30 56 94 -30 80 94 minecraft:stone
+setblock -30 81 94 minecraft:stone
+fill -30 82 94 -30 98 94 minecraft:air
+fill -30 56 95 -30 83 95 minecraft:stone
+setblock -30 84 95 minecraft:mossy_cobblestone
+fill -30 85 95 -30 103 95 minecraft:air
+fill -29 56 -96 -29 65 -96 minecraft:dirt
+setblock -29 66 -96 minecraft:grass_block
+fill -29 67 -96 -29 104 -96 minecraft:air
+fill -29 56 -95 -29 65 -95 minecraft:dirt
+setblock -29 66 -95 minecraft:grass_block
+fill -29 67 -95 -29 100 -95 minecraft:air
+fill -29 56 -94 -29 65 -94 minecraft:dirt
+setblock -29 66 -94 minecraft:grass_block
+fill -29 67 -94 -29 97 -94 minecraft:air
+fill -29 56 -93 -29 65 -93 minecraft:dirt
+setblock -29 66 -93 minecraft:grass_block
+fill -29 67 -93 -29 94 -93 minecraft:air
+fill -29 56 -92 -29 65 -92 minecraft:dirt
+setblock -29 66 -92 minecraft:grass_block
+fill -29 67 -92 -29 91 -92 minecraft:air
+fill -29 56 -91 -29 65 -91 minecraft:dirt
+setblock -29 66 -91 minecraft:grass_block
+fill -29 67 -91 -29 89 -91 minecraft:air
+fill -29 56 -90 -29 66 -90 minecraft:dirt
+setblock -29 67 -90 minecraft:grass_block
+fill -29 68 -90 -29 86 -90 minecraft:air
+fill -29 56 -89 -29 66 -89 minecraft:dirt
+setblock -29 67 -89 minecraft:grass_block
+fill -29 68 -89 -29 84 -89 minecraft:air
+fill -29 56 -88 -29 66 -88 minecraft:dirt
+setblock -29 67 -88 minecraft:grass_block
+fill -29 68 -88 -29 82 -88 minecraft:air
+fill -29 56 -87 -29 66 -87 minecraft:dirt
+setblock -29 67 -87 minecraft:grass_block
+fill -29 68 -87 -29 81 -87 minecraft:air
+fill -29 56 -86 -29 66 -86 minecraft:dirt
+setblock -29 67 -86 minecraft:grass_block
+fill -29 68 -86 -29 80 -86 minecraft:air
+fill -29 56 -85 -29 66 -85 minecraft:dirt
+setblock -29 67 -85 minecraft:grass_block
+fill -29 68 -85 -29 80 -85 minecraft:air
+fill -29 56 -84 -29 66 -84 minecraft:dirt
+setblock -29 67 -84 minecraft:grass_block
+fill -29 68 -84 -29 80 -84 minecraft:air
+fill -29 56 86 -29 64 86 minecraft:dirt
+setblock -29 65 86 minecraft:grass_block
+fill -29 66 86 -29 78 86 minecraft:air
+fill -29 56 87 -29 64 87 minecraft:dirt
+setblock -29 65 87 minecraft:grass_block
+fill -29 66 87 -29 79 87 minecraft:air
+fill -29 56 88 -29 65 88 minecraft:dirt
+setblock -29 66 88 minecraft:grass_block
+fill -29 67 88 -29 80 88 minecraft:air
+fill -29 56 89 -29 66 89 minecraft:dirt
+setblock -29 67 89 minecraft:grass_block
+fill -29 68 89 -29 82 89 minecraft:air
+fill -29 56 90 -29 67 90 minecraft:dirt
+setblock -29 68 90 minecraft:grass_block
+fill -29 69 90 -29 85 90 minecraft:air
+fill -29 56 91 -29 69 91 minecraft:dirt
+setblock -29 70 91 minecraft:grass_block
+fill -29 71 91 -29 87 91 minecraft:air
+fill -29 56 92 -29 70 92 minecraft:stone
+setblock -29 71 92 minecraft:stone
+fill -29 72 92 -29 91 92 minecraft:air
+fill -29 56 93 -29 72 93 minecraft:stone
+setblock -29 73 93 minecraft:stone
+fill -29 74 93 -29 94 93 minecraft:air
+fill -29 56 94 -29 75 94 minecraft:stone
+setblock -29 76 94 minecraft:stone
+fill -29 77 94 -29 99 94 minecraft:air
+fill -29 56 95 -29 77 95 minecraft:stone
+setblock -29 78 95 minecraft:stone
+fill -29 79 95 -29 103 95 minecraft:air
+fill -28 56 -96 -28 65 -96 minecraft:dirt
+setblock -28 66 -96 minecraft:grass_block
+fill -28 67 -96 -28 104 -96 minecraft:air
+fill -28 56 -95 -28 65 -95 minecraft:dirt
+setblock -28 66 -95 minecraft:grass_block
+fill -28 67 -95 -28 100 -95 minecraft:air
+fill -28 56 -94 -28 65 -94 minecraft:dirt
+setblock -28 66 -94 minecraft:grass_block
+fill -28 67 -94 -28 97 -94 minecraft:air
+fill -28 56 -93 -28 65 -93 minecraft:dirt
+setblock -28 66 -93 minecraft:grass_block
+fill -28 67 -93 -28 95 -93 minecraft:air
+fill -28 56 -92 -28 65 -92 minecraft:dirt
+setblock -28 66 -92 minecraft:grass_block
+fill -28 67 -92 -28 92 -92 minecraft:air
+fill -28 56 -91 -28 66 -91 minecraft:dirt
+setblock -28 67 -91 minecraft:grass_block
+fill -28 68 -91 -28 89 -91 minecraft:air
+fill -28 56 -90 -28 66 -90 minecraft:dirt
+setblock -28 67 -90 minecraft:grass_block
+fill -28 68 -90 -28 87 -90 minecraft:air
+fill -28 56 -89 -28 66 -89 minecraft:dirt
+setblock -28 67 -89 minecraft:grass_block
+fill -28 68 -89 -28 84 -89 minecraft:air
+fill -28 56 -88 -28 66 -88 minecraft:dirt
+setblock -28 67 -88 minecraft:grass_block
+fill -28 68 -88 -28 83 -88 minecraft:air
+fill -28 56 -87 -28 66 -87 minecraft:dirt
+setblock -28 67 -87 minecraft:grass_block
+fill -28 68 -87 -28 81 -87 minecraft:air
+fill -28 56 -86 -28 66 -86 minecraft:dirt
+setblock -28 67 -86 minecraft:grass_block
+fill -28 68 -86 -28 80 -86 minecraft:air
+fill -28 56 -85 -28 66 -85 minecraft:dirt
+setblock -28 67 -85 minecraft:grass_block
+fill -28 68 -85 -28 80 -85 minecraft:air
+fill -28 56 -84 -28 66 -84 minecraft:dirt
+setblock -28 67 -84 minecraft:grass_block
+fill -28 68 -84 -28 80 -84 minecraft:air
+fill -28 56 86 -28 64 86 minecraft:dirt
+setblock -28 65 86 minecraft:grass_block
+fill -28 66 86 -28 78 86 minecraft:air
+fill -28 56 87 -28 64 87 minecraft:dirt
+setblock -28 65 87 minecraft:grass_block
+fill -28 66 87 -28 79 87 minecraft:air
+fill -28 56 88 -28 64 88 minecraft:dirt
+setblock -28 65 88 minecraft:grass_block
+fill -28 66 88 -28 80 88 minecraft:air
+fill -28 56 89 -28 64 89 minecraft:dirt
+setblock -28 65 89 minecraft:grass_block
+fill -28 66 89 -28 82 89 minecraft:air
+fill -28 56 90 -28 65 90 minecraft:dirt
+setblock -28 66 90 minecraft:grass_block
+fill -28 67 90 -28 85 90 minecraft:air
+fill -28 56 91 -28 66 91 minecraft:dirt
+setblock -28 67 91 minecraft:grass_block
+fill -28 68 91 -28 88 91 minecraft:air
+fill -28 56 92 -28 67 92 minecraft:dirt
+setblock -28 68 92 minecraft:grass_block
+fill -28 69 92 -28 91 92 minecraft:air
+fill -28 56 93 -28 68 93 minecraft:dirt
+setblock -28 69 93 minecraft:grass_block
+fill -28 70 93 -28 95 93 minecraft:air
+fill -28 56 94 -28 69 94 minecraft:dirt
+setblock -28 70 94 minecraft:grass_block
+fill -28 71 94 -28 99 94 minecraft:air
+fill -28 56 95 -28 71 95 minecraft:stone
+setblock -28 72 95 minecraft:stone
+fill -28 73 95 -28 103 95 minecraft:air
+fill -27 56 -96 -27 65 -96 minecraft:dirt
+setblock -27 66 -96 minecraft:grass_block
+fill -27 67 -96 -27 104 -96 minecraft:air
+fill -27 56 -95 -27 65 -95 minecraft:dirt
+setblock -27 66 -95 minecraft:grass_block
+fill -27 67 -95 -27 100 -95 minecraft:air
+fill -27 56 -94 -27 65 -94 minecraft:dirt
+setblock -27 66 -94 minecraft:grass_block
+fill -27 67 -94 -27 97 -94 minecraft:air
+fill -27 56 -93 -27 65 -93 minecraft:dirt
+setblock -27 66 -93 minecraft:grass_block
+fill -27 67 -93 -27 95 -93 minecraft:air
+fill -27 56 -92 -27 65 -92 minecraft:dirt
+setblock -27 66 -92 minecraft:grass_block
+fill -27 67 -92 -27 92 -92 minecraft:air
+fill -27 56 -91 -27 66 -91 minecraft:dirt
+setblock -27 67 -91 minecraft:grass_block
+fill -27 68 -91 -27 89 -91 minecraft:air
+fill -27 56 -90 -27 66 -90 minecraft:dirt
+setblock -27 67 -90 minecraft:grass_block
+fill -27 68 -90 -27 87 -90 minecraft:air
+fill -27 56 -89 -27 66 -89 minecraft:dirt
+setblock -27 67 -89 minecraft:grass_block
+fill -27 68 -89 -27 85 -89 minecraft:air
+fill -27 56 -88 -27 66 -88 minecraft:dirt
+setblock -27 67 -88 minecraft:grass_block
+fill -27 68 -88 -27 83 -88 minecraft:air
+fill -27 56 -87 -27 66 -87 minecraft:dirt
+setblock -27 67 -87 minecraft:grass_block
+fill -27 68 -87 -27 82 -87 minecraft:air
+fill -27 56 -86 -27 66 -86 minecraft:dirt
+setblock -27 67 -86 minecraft:grass_block
+fill -27 68 -86 -27 81 -86 minecraft:air
+fill -27 56 -85 -27 66 -85 minecraft:dirt
+setblock -27 67 -85 minecraft:grass_block
+fill -27 68 -85 -27 80 -85 minecraft:air
+fill -27 56 -84 -27 66 -84 minecraft:dirt
+setblock -27 67 -84 minecraft:grass_block
+fill -27 68 -84 -27 80 -84 minecraft:air
+fill -27 56 85 -27 64 85 minecraft:dirt
+setblock -27 65 85 minecraft:grass_block
+fill -27 66 85 -27 78 85 minecraft:air
+fill -27 56 86 -27 64 86 minecraft:dirt
+setblock -27 65 86 minecraft:grass_block
+fill -27 66 86 -27 78 86 minecraft:air
+fill -27 56 87 -27 64 87 minecraft:dirt
+setblock -27 65 87 minecraft:grass_block
+fill -27 66 87 -27 79 87 minecraft:air
+fill -27 56 88 -27 64 88 minecraft:dirt
+setblock -27 65 88 minecraft:grass_block
+fill -27 66 88 -27 80 88 minecraft:air
+fill -27 56 89 -27 64 89 minecraft:dirt
+setblock -27 65 89 minecraft:grass_block
+fill -27 66 89 -27 82 89 minecraft:air
+fill -27 56 90 -27 65 90 minecraft:dirt
+setblock -27 66 90 minecraft:grass_block
+fill -27 67 90 -27 85 90 minecraft:air
+fill -27 56 91 -27 65 91 minecraft:dirt
+setblock -27 66 91 minecraft:grass_block
+fill -27 67 91 -27 88 91 minecraft:air
+fill -27 56 92 -27 65 92 minecraft:dirt
+setblock -27 66 92 minecraft:grass_block
+fill -27 67 92 -27 91 92 minecraft:air
+fill -27 56 93 -27 65 93 minecraft:dirt
+setblock -27 66 93 minecraft:grass_block
+fill -27 67 93 -27 95 93 minecraft:air

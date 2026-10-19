@@ -1,0 +1,145 @@
+{
+  "textures": {
+    "skin": "mg:item/beast/ignarok_skin",
+    "spike": "mg:item/beast/ignarok_spike",
+    "particle": "mg:item/beast/ignarok_skin"
+  },
+  "elements": [
+    {
+      "from": [
+        2.624,
+        2.624,
+        -13.289
+      ],
+      "to": [
+        13.376,
+        13.376,
+        8.64
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            13.44,
+            13.44
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            13.44,
+            13.44
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            13.44
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            13.44
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            13.44,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            13.44,
+            16.0
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        6.925,
+        13.376,
+        -9.741
+      ],
+      "to": [
+        9.075,
+        18.752,
+        -2.644
+      ],
+      "faces": {
+        "north": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            2.69,
+            6.72
+          ]
+        },
+        "south": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            2.69,
+            6.72
+          ]
+        },
+        "east": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            8.87,
+            6.72
+          ]
+        },
+        "west": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            8.87,
+            6.72
+          ]
+        },
+        "up": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            2.69,
+            8.87
+          ]
+        },
+        "down": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            2.69,
+            8.87
+          ]
+        }
+      }
+    }
+  ]
+}

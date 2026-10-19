@@ -125,6 +125,7 @@ execute if score $game mg.st matches 8..12 run scoreboard players set $game mg.s
 tag @a remove mg.pulls
 tag @a remove mg.pullg
 tag @a remove mg.pullt
+tag @a remove mg.pullo
 tag @a remove mg.pullp
 scoreboard players set $pull mg.st 0
 execute if entity @s[tag=mg.admin,tag=!mg.vauto] unless score $mpl mg.st matches 1 run function mg:core/pull_all

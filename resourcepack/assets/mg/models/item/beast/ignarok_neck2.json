@@ -1,0 +1,214 @@
+{
+  "textures": {
+    "belly": "mg:item/beast/ignarok_belly",
+    "skin": "mg:item/beast/ignarok_skin",
+    "spike": "mg:item/beast/ignarok_spike",
+    "particle": "mg:item/beast/ignarok_belly"
+  },
+  "elements": [
+    {
+      "from": [
+        2.92,
+        2.92,
+        7.36
+      ],
+      "to": [
+        13.08,
+        13.08,
+        28.16
+      ],
+      "faces": {
+        "north": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            12.7,
+            12.7
+          ]
+        },
+        "south": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            12.7,
+            12.7
+          ]
+        },
+        "east": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            12.7
+          ]
+        },
+        "west": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            16.0,
+            12.7
+          ]
+        },
+        "up": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            12.7,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#skin",
+          "uv": [
+            0,
+            0,
+            12.7,
+            16.0
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        4.162,
+        2.792,
+        8.0
+      ],
+      "to": [
+        11.838,
+        5.968,
+        28.16
+      ],
+      "faces": {
+        "north": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            9.6,
+            3.97
+          ]
+        },
+        "south": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            9.6,
+            3.97
+          ]
+        },
+        "east": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            16.0,
+            3.97
+          ]
+        },
+        "west": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            16.0,
+            3.97
+          ]
+        },
+        "up": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            9.6,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#belly",
+          "uv": [
+            0,
+            0,
+            9.6,
+            16.0
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        6.925,
+        13.08,
+        16.064
+      ],
+      "to": [
+        9.075,
+        17.112,
+        20.902
+      ],
+      "faces": {
+        "north": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            2.69,
+            5.04
+          ]
+        },
+        "south": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            2.69,
+            5.04
+          ]
+        },
+        "east": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            6.05,
+            5.04
+          ]
+        },
+        "west": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            6.05,
+            5.04
+          ]
+        },
+        "up": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            2.69,
+            6.05
+          ]
+        },
+        "down": {
+          "texture": "#spike",
+          "uv": [
+            0,
+            0,
+            2.69,
+            6.05
+          ]
+        }
+      }
+    }
+  ]
+}

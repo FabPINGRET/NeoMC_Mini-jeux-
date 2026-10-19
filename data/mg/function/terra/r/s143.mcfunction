@@ -1,4 +1,23 @@
-# Construction des régions de Terra Nova, étape 143/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 143/436 (dimension mg:terranova, générée)
+setblock 228 110 28 minecraft:tuff
+fill 229 110 24 230 110 24 minecraft:air
+fill 229 110 27 230 110 27 minecraft:tuff
+fill 230 110 22 231 110 22 minecraft:tuff
+fill 230 110 26 231 110 26 minecraft:tuff
+fill 231 110 23 231 110 25 minecraft:tuff
+fill 224 111 23 224 111 25 minecraft:tuff
+fill 225 111 22 226 111 22 minecraft:tuff
+fill 225 111 23 226 111 23 minecraft:stone_brick_slab[type=top]
+fill 225 111 24 227 111 24 minecraft:air
+setblock 225 111 25 minecraft:tuff
+setblock 225 111 26 minecraft:air
+fill 226 111 21 230 111 21 minecraft:tuff
+fill 226 111 25 230 111 25 minecraft:air
+setblock 226 111 26 minecraft:tuff
+setblock 226 111 27 minecraft:air
+fill 227 111 22 229 111 23 minecraft:air
+fill 227 111 26 229 111 26 minecraft:air
+fill 227 111 27 230 111 27 minecraft:tuff
 setblock 228 111 24 minecraft:stone_bricks
 fill 229 111 24 230 111 24 minecraft:air
 fill 230 111 22 231 111 22 minecraft:tuff

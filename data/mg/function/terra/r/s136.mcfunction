@@ -1,6 +1,22 @@
-# Construction des régions de Terra Nova, étape 136/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 136/436 (dimension mg:terranova, générée)
+fill 223 78 77 229 78 83 minecraft:andesite
+fill 223 79 77 229 79 83 minecraft:andesite
+fill 223 80 77 229 80 83 minecraft:stone
+fill 223 81 77 229 81 83 minecraft:stone
+fill 223 82 77 229 82 83 minecraft:stone
+fill 224 83 78 228 83 82 minecraft:stone
+fill 224 84 78 228 84 82 minecraft:tuff
+fill 224 85 78 228 85 82 minecraft:tuff
+fill 224 86 78 228 86 82 minecraft:tuff
+fill 224 87 78 228 87 82 minecraft:tuff
+fill 224 88 78 228 88 82 minecraft:stone
+fill 224 89 78 228 89 82 minecraft:stone
+fill 224 90 78 228 90 82 minecraft:stone
 fill 224 91 78 228 91 82 minecraft:stone
-fill 224 92 78 228 92 82 minecraft:hay_block outline
+fill 224 92 78 228 92 78 minecraft:hay_block
+fill 224 92 82 228 92 82 minecraft:hay_block
+fill 224 92 78 224 92 82 minecraft:hay_block
+fill 228 92 78 228 92 82 minecraft:hay_block
 setblock 226 92 80 minecraft:sniffer_egg
 fill 241 67 47 247 67 53 minecraft:tuff
 fill 241 68 47 247 68 53 minecraft:stone
@@ -34,7 +50,10 @@ fill 242 95 48 246 95 52 minecraft:stone
 fill 243 96 49 245 96 51 minecraft:tuff
 fill 243 97 49 245 97 51 minecraft:tuff
 fill 243 98 49 245 98 51 minecraft:tuff
-fill 242 99 48 246 99 52 minecraft:hay_block outline
+fill 242 99 48 246 99 48 minecraft:hay_block
+fill 242 99 52 246 99 52 minecraft:hay_block
+fill 242 99 48 242 99 52 minecraft:hay_block
+fill 246 99 48 246 99 52 minecraft:hay_block
 setblock 244 99 50 minecraft:sniffer_egg
 setblock 136 70 62 minecraft:bone_block[axis=x]
 setblock 137 70 62 minecraft:bone_block[axis=x]
@@ -180,22 +199,3 @@ fill 233 67 20 234 67 20 minecraft:stone
 fill 233 67 28 234 67 28 minecraft:stone
 fill 234 67 21 235 67 21 minecraft:stone
 fill 234 67 27 235 67 27 minecraft:stone
-fill 235 67 22 235 67 26 minecraft:stone
-fill 236 67 23 236 67 25 minecraft:stone
-fill 219 68 23 234 68 23 minecraft:air
-fill 219 68 24 227 68 25 minecraft:air
-fill 222 68 21 223 68 22 minecraft:stone
-fill 222 68 26 223 68 27 minecraft:stone
-fill 223 68 20 224 68 20 minecraft:stone
-fill 223 68 28 224 68 28 minecraft:stone
-fill 224 68 19 226 68 19 minecraft:stone
-fill 224 68 21 233 68 22 minecraft:air
-fill 224 68 26 234 68 26 minecraft:air
-fill 224 68 27 233 68 27 minecraft:air
-fill 224 68 29 226 68 29 minecraft:stone
-fill 225 68 18 233 68 18 minecraft:stone
-fill 225 68 20 232 68 20 minecraft:air
-fill 225 68 28 232 68 28 minecraft:air
-fill 225 68 30 233 68 30 minecraft:stone
-fill 227 68 17 231 68 17 minecraft:stone
-fill 227 68 19 231 68 19 minecraft:air

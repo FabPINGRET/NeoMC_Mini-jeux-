@@ -1,4 +1,67 @@
-# Construction des régions de Terra Nova, étape 324/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 324/436 (dimension mg:terranova, générée)
+setblock -137 93 57 minecraft:iron_chain
+fill -137 93 58 -134 93 58 minecraft:air
+fill -136 93 57 -134 93 57 minecraft:air
+setblock -134 93 55 minecraft:air
+setblock -134 93 59 minecraft:air
+fill -150 94 54 -134 94 55 minecraft:air
+fill -150 94 56 -140 94 70 minecraft:air
+fill -139 94 56 -135 94 56 minecraft:acacia_stairs[facing=south,half=bottom]
+setblock -139 94 57 minecraft:acacia_planks
+fill -139 94 58 -135 94 58 minecraft:acacia_stairs[facing=north,half=bottom]
+fill -139 94 59 -134 94 70 minecraft:air
+fill -138 94 57 -136 94 57 minecraft:air
+setblock -135 94 57 minecraft:acacia_planks
+fill -134 94 56 -134 94 58 minecraft:air
+fill -139 95 57 -135 95 57 minecraft:acacia_slab
+fill -135 64 61 -133 64 63 minecraft:smooth_red_sandstone
+fill -135 65 61 -133 68 63 minecraft:air
+fill -136 65 65 -134 65 67 minecraft:smooth_red_sandstone
+fill -136 66 65 -134 69 67 minecraft:air
+fill -139 66 68 -137 66 70 minecraft:smooth_red_sandstone
+fill -139 67 68 -137 70 70 minecraft:air
+fill -143 67 69 -141 67 71 minecraft:smooth_red_sandstone
+fill -143 68 69 -141 71 71 minecraft:air
+fill -147 68 68 -145 68 70 minecraft:smooth_red_sandstone
+fill -147 69 68 -145 72 70 minecraft:air
+fill -150 69 65 -148 69 67 minecraft:smooth_red_sandstone
+fill -150 70 65 -148 73 67 minecraft:air
+fill -151 70 61 -149 70 63 minecraft:smooth_red_sandstone
+fill -151 71 61 -149 74 63 minecraft:air
+fill -150 71 57 -148 71 59 minecraft:smooth_red_sandstone
+fill -150 72 57 -148 75 59 minecraft:air
+fill -147 72 54 -145 72 56 minecraft:smooth_red_sandstone
+fill -147 73 54 -145 76 56 minecraft:air
+fill -143 73 53 -141 73 55 minecraft:smooth_red_sandstone
+fill -143 74 53 -141 77 55 minecraft:air
+fill -139 74 54 -137 74 56 minecraft:smooth_red_sandstone
+fill -139 75 54 -137 78 56 minecraft:air
+fill -136 75 57 -134 75 59 minecraft:smooth_red_sandstone
+fill -136 76 57 -134 79 59 minecraft:air
+fill -135 76 61 -133 76 63 minecraft:smooth_red_sandstone
+fill -135 77 61 -133 80 63 minecraft:air
+fill -136 77 65 -134 77 67 minecraft:smooth_red_sandstone
+fill -136 78 65 -134 81 67 minecraft:air
+fill -139 78 68 -137 78 70 minecraft:smooth_red_sandstone
+fill -139 79 68 -137 82 70 minecraft:air
+fill -143 79 69 -141 79 71 minecraft:smooth_red_sandstone
+fill -143 80 69 -141 83 71 minecraft:air
+fill -232 64 -58 -231 64 -58 minecraft:coarse_dirt
+setblock -232 64 -57 minecraft:coarse_dirt
+setblock -232 64 -56 minecraft:gravel
+fill -232 64 -55 -231 64 -55 minecraft:coarse_dirt
+setblock -232 64 -54 minecraft:coarse_dirt
+setblock -232 64 -53 minecraft:gravel
+fill -232 64 -52 -231 64 -52 minecraft:coarse_dirt
+setblock -231 64 -60 minecraft:gravel
+fill -231 64 -59 -230 64 -59 minecraft:coarse_dirt
+setblock -231 64 -57 minecraft:gravel
+fill -231 64 -56 -230 64 -56 minecraft:coarse_dirt
+setblock -231 64 -54 minecraft:gravel
+fill -231 64 -53 -230 64 -53 minecraft:coarse_dirt
+setblock -231 64 -51 minecraft:gravel
+fill -231 64 -50 -230 64 -50 minecraft:coarse_dirt
+setblock -230 64 -61 minecraft:gravel
 fill -230 64 -60 -229 64 -60 minecraft:coarse_dirt
 setblock -230 64 -58 minecraft:gravel
 fill -230 64 -57 -229 64 -57 minecraft:coarse_dirt
@@ -136,66 +199,3 @@ fill -208 64 -64 -206 64 -61 minecraft:gravel
 fill -208 64 -60 -206 64 -60 minecraft:packed_mud
 fill -208 64 -59 -206 64 -57 minecraft:gravel
 fill -208 64 -55 -205 64 -55 minecraft:packed_mud
-fill -208 64 -54 -206 64 -51 minecraft:gravel
-fill -208 64 -50 -206 64 -50 minecraft:packed_mud
-fill -208 64 -49 -206 64 -46 minecraft:gravel
-fill -208 64 -45 -206 64 -45 minecraft:packed_mud
-fill -208 64 -44 -206 64 -44 minecraft:gravel
-setblock -205 64 -56 minecraft:packed_mud
-setblock -205 64 -54 minecraft:packed_mud
-fill -204 64 -56 -201 64 -54 minecraft:gravel
-fill -200 64 -56 -200 64 -54 minecraft:packed_mud
-fill -199 64 -56 -196 64 -54 minecraft:gravel
-fill -195 64 -56 -195 64 -54 minecraft:packed_mud
-fill -194 64 -56 -193 64 -54 minecraft:gravel
-fill -232 65 -58 -228 65 -57 minecraft:air
-fill -232 65 -56 -232 65 -52 minecraft:air
-setblock -231 65 -61 minecraft:cobweb
-fill -231 65 -60 -228 65 -59 minecraft:air
-setblock -231 65 -56 minecraft:bone_block[axis=z]
-setblock -231 65 -55 minecraft:chest[facing=east]
-fill -231 65 -54 -231 65 -53 minecraft:air
-setblock -231 65 -52 minecraft:bone_block[axis=z]
-fill -231 65 -51 -231 65 -50 minecraft:air
-fill -230 65 -61 -220 65 -61 minecraft:air
-fill -230 65 -56 -210 65 -56 minecraft:air
-fill -230 65 -55 -228 65 -55 minecraft:air
-setblock -230 65 -54 minecraft:bone_block[axis=z]
-fill -230 65 -53 -227 65 -53 minecraft:air
-fill -230 65 -52 -229 65 -52 minecraft:air
-setblock -230 65 -51 minecraft:hay_block
-fill -230 65 -50 -219 65 -50 minecraft:air
-fill -230 65 -49 -229 65 -49 minecraft:air
-fill -229 65 -54 -221 65 -54 minecraft:air
-fill -229 65 -51 -228 65 -51 minecraft:air
-fill -228 65 -62 -222 65 -62 minecraft:air
-setblock -228 65 -52 minecraft:bone_block[axis=z]
-fill -228 65 -49 -227 65 -49 minecraft:skeleton_skull
-fill -228 65 -48 -222 65 -48 minecraft:air
-setblock -227 65 -60 minecraft:hay_block
-fill -227 65 -59 -219 65 -59 minecraft:air
-setblock -227 65 -58 minecraft:hay_block
-fill -227 65 -57 -226 65 -57 minecraft:air
-setblock -227 65 -55 minecraft:bone_block[axis=z]
-fill -227 65 -52 -218 65 -52 minecraft:air
-setblock -227 65 -51 minecraft:skeleton_skull
-fill -226 65 -60 -219 65 -60 minecraft:air
-fill -226 65 -58 -222 65 -58 minecraft:air
-fill -226 65 -55 -220 65 -55 minecraft:air
-setblock -226 65 -53 minecraft:skeleton_skull
-fill -226 65 -51 -219 65 -51 minecraft:air
-fill -226 65 -49 -220 65 -49 minecraft:air
-setblock -225 65 -57 minecraft:cobweb
-fill -225 65 -53 -222 65 -53 minecraft:air
-setblock -224 65 -57 minecraft:air
-setblock -223 65 -64 minecraft:spruce_log
-setblock -223 65 -57 minecraft:cobweb
-fill -222 65 -65 -222 65 -63 minecraft:air
-fill -222 65 -57 -218 65 -57 minecraft:air
-fill -222 65 -47 -222 65 -45 minecraft:air
-fill -221 65 -65 -221 65 -62 minecraft:rail[shape=north_south]
-setblock -221 65 -58 minecraft:hay_block
-setblock -221 65 -53 minecraft:cobweb
-fill -221 65 -48 -221 65 -45 minecraft:rail[shape=north_south]
-fill -220 65 -65 -220 65 -62 minecraft:air
-setblock -220 65 -58 minecraft:bone_block[axis=x]

@@ -1,4 +1,65 @@
-# Construction des régions de Terra Nova, étape 323/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 323/436 (dimension mg:terranova, générée)
+setblock -137 83 57 minecraft:ladder[facing=south]
+fill -137 83 58 -136 83 58 minecraft:acacia_log
+setblock -136 83 57 minecraft:acacia_log
+setblock -136 83 68 minecraft:iron_bars
+setblock -135 83 55 minecraft:acacia_log
+fill -135 83 56 -134 83 58 minecraft:air
+fill -135 83 68 -134 83 68 minecraft:air
+setblock -135 83 69 minecraft:acacia_log
+setblock -134 83 55 minecraft:air
+setblock -134 83 69 minecraft:air
+fill -150 84 54 -134 84 54 minecraft:air
+fill -150 84 55 -150 84 70 minecraft:air
+setblock -149 84 55 minecraft:lantern[hanging=false]
+fill -149 84 56 -139 84 62 minecraft:air
+setblock -149 84 63 minecraft:stripped_acacia_log
+fill -149 84 64 -149 84 66 minecraft:acacia_planks
+fill -149 84 67 -149 84 68 minecraft:stripped_acacia_log
+setblock -149 84 69 minecraft:lantern[hanging=false]
+fill -149 84 70 -144 84 70 minecraft:air
+fill -148 84 55 -136 84 55 minecraft:air
+fill -148 84 63 -146 84 63 minecraft:acacia_planks
+fill -148 84 64 -145 84 65 minecraft:air
+fill -148 84 66 -147 84 67 minecraft:air
+fill -148 84 68 -146 84 68 minecraft:acacia_planks
+fill -148 84 69 -136 84 69 minecraft:air
+setblock -146 84 66 minecraft:lantern[hanging=true]
+fill -146 84 67 -145 84 67 minecraft:air
+fill -145 84 63 -144 84 63 minecraft:stripped_acacia_log
+setblock -145 84 66 minecraft:air
+fill -145 84 68 -144 84 68 minecraft:stripped_acacia_log
+fill -144 84 64 -144 84 66 minecraft:acacia_planks
+setblock -144 84 67 minecraft:stripped_acacia_log
+fill -143 84 63 -134 84 67 minecraft:air
+fill -143 84 68 -137 84 68 minecraft:air
+setblock -143 84 70 minecraft:acacia_planks
+fill -142 84 70 -134 84 70 minecraft:air
+fill -138 84 56 -136 84 56 minecraft:acacia_log
+fill -138 84 57 -138 84 58 minecraft:acacia_log
+fill -138 84 59 -134 84 62 minecraft:air
+setblock -137 84 57 minecraft:ladder[facing=south]
+fill -137 84 58 -136 84 58 minecraft:acacia_log
+setblock -136 84 57 minecraft:acacia_log
+setblock -136 84 68 minecraft:iron_bars
+setblock -135 84 55 minecraft:lantern[hanging=false]
+fill -135 84 56 -134 84 58 minecraft:air
+fill -135 84 68 -134 84 68 minecraft:air
+setblock -135 84 69 minecraft:lantern[hanging=false]
+setblock -134 84 55 minecraft:air
+setblock -134 84 69 minecraft:air
+fill -150 85 54 -134 85 55 minecraft:air
+fill -150 85 56 -139 85 61 minecraft:air
+fill -150 85 62 -150 85 69 minecraft:acacia_stairs[facing=east,half=bottom]
+fill -150 85 70 -144 85 70 minecraft:air
+fill -149 85 62 -144 85 62 minecraft:air
+fill -149 85 63 -149 85 69 minecraft:air
+fill -148 85 63 -145 85 65 minecraft:acacia_planks
+fill -148 85 66 -147 85 68 minecraft:acacia_planks
+fill -148 85 69 -144 85 69 minecraft:air
+setblock -146 85 66 minecraft:iron_chain
+fill -146 85 67 -145 85 68 minecraft:acacia_planks
+setblock -145 85 66 minecraft:acacia_planks
 fill -144 85 63 -144 85 68 minecraft:air
 fill -143 85 62 -143 85 69 minecraft:acacia_stairs[facing=west,half=bottom]
 setblock -143 85 70 minecraft:acacia_planks
@@ -93,12 +154,14 @@ fill -134 89 55 -134 89 59 minecraft:air
 fill -150 90 54 -134 90 54 minecraft:air
 fill -150 90 55 -140 90 70 minecraft:air
 setblock -139 90 55 minecraft:acacia_log
-fill -139 90 56 -135 90 58 minecraft:acacia_fence
+fill -139 90 56 -139 90 58 minecraft:acacia_fence
 setblock -139 90 59 minecraft:acacia_log
 fill -139 90 60 -134 90 70 minecraft:air
 fill -138 90 55 -136 90 55 minecraft:acacia_fence
+fill -138 90 56 -136 90 58 minecraft:air
 fill -138 90 59 -136 90 59 minecraft:acacia_fence
 setblock -135 90 55 minecraft:acacia_log
+fill -135 90 56 -135 90 58 minecraft:acacia_fence
 setblock -135 90 59 minecraft:acacia_log
 fill -134 90 55 -134 90 59 minecraft:air
 fill -150 91 54 -134 91 54 minecraft:air
@@ -136,66 +199,3 @@ fill -139 93 56 -134 93 56 minecraft:air
 fill -139 93 57 -138 93 58 minecraft:air
 fill -139 93 59 -135 93 59 minecraft:acacia_stairs[facing=north,half=bottom]
 fill -139 93 60 -134 93 70 minecraft:air
-setblock -137 93 57 minecraft:iron_chain
-fill -137 93 58 -134 93 58 minecraft:air
-fill -136 93 57 -134 93 57 minecraft:air
-setblock -134 93 55 minecraft:air
-setblock -134 93 59 minecraft:air
-fill -150 94 54 -134 94 55 minecraft:air
-fill -150 94 56 -140 94 70 minecraft:air
-fill -139 94 56 -135 94 56 minecraft:acacia_stairs[facing=south,half=bottom]
-setblock -139 94 57 minecraft:acacia_planks
-fill -139 94 58 -135 94 58 minecraft:acacia_stairs[facing=north,half=bottom]
-fill -139 94 59 -134 94 70 minecraft:air
-fill -138 94 57 -136 94 57 minecraft:air
-setblock -135 94 57 minecraft:acacia_planks
-fill -134 94 56 -134 94 58 minecraft:air
-fill -139 95 57 -135 95 57 minecraft:acacia_slab
-fill -135 64 61 -133 64 63 minecraft:smooth_red_sandstone
-fill -135 65 61 -133 68 63 minecraft:air
-fill -136 65 65 -134 65 67 minecraft:smooth_red_sandstone
-fill -136 66 65 -134 69 67 minecraft:air
-fill -139 66 68 -137 66 70 minecraft:smooth_red_sandstone
-fill -139 67 68 -137 70 70 minecraft:air
-fill -143 67 69 -141 67 71 minecraft:smooth_red_sandstone
-fill -143 68 69 -141 71 71 minecraft:air
-fill -147 68 68 -145 68 70 minecraft:smooth_red_sandstone
-fill -147 69 68 -145 72 70 minecraft:air
-fill -150 69 65 -148 69 67 minecraft:smooth_red_sandstone
-fill -150 70 65 -148 73 67 minecraft:air
-fill -151 70 61 -149 70 63 minecraft:smooth_red_sandstone
-fill -151 71 61 -149 74 63 minecraft:air
-fill -150 71 57 -148 71 59 minecraft:smooth_red_sandstone
-fill -150 72 57 -148 75 59 minecraft:air
-fill -147 72 54 -145 72 56 minecraft:smooth_red_sandstone
-fill -147 73 54 -145 76 56 minecraft:air
-fill -143 73 53 -141 73 55 minecraft:smooth_red_sandstone
-fill -143 74 53 -141 77 55 minecraft:air
-fill -139 74 54 -137 74 56 minecraft:smooth_red_sandstone
-fill -139 75 54 -137 78 56 minecraft:air
-fill -136 75 57 -134 75 59 minecraft:smooth_red_sandstone
-fill -136 76 57 -134 79 59 minecraft:air
-fill -135 76 61 -133 76 63 minecraft:smooth_red_sandstone
-fill -135 77 61 -133 80 63 minecraft:air
-fill -136 77 65 -134 77 67 minecraft:smooth_red_sandstone
-fill -136 78 65 -134 81 67 minecraft:air
-fill -139 78 68 -137 78 70 minecraft:smooth_red_sandstone
-fill -139 79 68 -137 82 70 minecraft:air
-fill -143 79 69 -141 79 71 minecraft:smooth_red_sandstone
-fill -143 80 69 -141 83 71 minecraft:air
-fill -232 64 -58 -231 64 -58 minecraft:coarse_dirt
-setblock -232 64 -57 minecraft:coarse_dirt
-setblock -232 64 -56 minecraft:gravel
-fill -232 64 -55 -231 64 -55 minecraft:coarse_dirt
-setblock -232 64 -54 minecraft:coarse_dirt
-setblock -232 64 -53 minecraft:gravel
-fill -232 64 -52 -231 64 -52 minecraft:coarse_dirt
-setblock -231 64 -60 minecraft:gravel
-fill -231 64 -59 -230 64 -59 minecraft:coarse_dirt
-setblock -231 64 -57 minecraft:gravel
-fill -231 64 -56 -230 64 -56 minecraft:coarse_dirt
-setblock -231 64 -54 minecraft:gravel
-fill -231 64 -53 -230 64 -53 minecraft:coarse_dirt
-setblock -231 64 -51 minecraft:gravel
-fill -231 64 -50 -230 64 -50 minecraft:coarse_dirt
-setblock -230 64 -61 minecraft:gravel

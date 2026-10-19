@@ -1,4 +1,4 @@
-# Construction des régions de Terra Nova, étape 235/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 235/436 (dimension mg:terranova, générée)
 fill -181 83 -86 -181 83 -86 minecraft:red_sand
 fill -181 56 -85 -181 58 -85 minecraft:orange_terracotta
 fill -181 59 -85 -181 61 -85 minecraft:terracotta

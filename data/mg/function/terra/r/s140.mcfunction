@@ -1,4 +1,23 @@
-# Construction des régions de Terra Nova, étape 140/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 140/436 (dimension mg:terranova, générée)
+setblock 228 86 24 minecraft:stone_bricks
+fill 228 86 30 230 86 30 minecraft:tuff
+fill 229 86 24 233 86 24 minecraft:air
+fill 231 86 20 233 86 20 minecraft:tuff
+fill 231 86 28 233 86 28 minecraft:tuff
+fill 233 86 21 234 86 22 minecraft:tuff
+setblock 233 86 23 minecraft:air
+fill 233 86 26 234 86 27 minecraft:tuff
+fill 234 86 23 234 86 25 minecraft:tuff
+fill 223 87 22 224 87 23 minecraft:tuff
+fill 223 87 24 223 87 26 minecraft:tuff
+fill 224 87 20 226 87 20 minecraft:tuff
+setblock 224 87 21 minecraft:tuff
+fill 224 87 24 227 87 24 minecraft:air
+fill 224 87 25 224 87 28 minecraft:tuff
+fill 225 87 19 232 87 19 minecraft:tuff
+fill 225 87 21 232 87 22 minecraft:air
+fill 225 87 23 226 87 23 minecraft:stone_brick_slab[type=top]
+fill 225 87 25 232 87 27 minecraft:air
 fill 225 87 28 226 87 29 minecraft:tuff
 fill 227 87 18 230 87 18 minecraft:tuff
 fill 227 87 20 231 87 20 minecraft:air
@@ -180,22 +199,3 @@ fill 224 94 21 226 94 21 minecraft:stone
 fill 224 94 22 225 94 22 minecraft:stone
 fill 224 94 26 225 94 27 minecraft:stone
 fill 225 94 20 232 94 20 minecraft:stone
-fill 225 94 23 232 94 23 minecraft:air
-fill 225 94 24 227 94 25 minecraft:air
-fill 225 94 28 232 94 28 minecraft:stone
-fill 226 94 22 231 94 22 minecraft:air
-fill 226 94 26 228 94 26 minecraft:air
-setblock 226 94 27 minecraft:stone
-fill 227 94 21 230 94 21 minecraft:air
-fill 227 94 27 229 94 27 minecraft:air
-fill 228 94 19 230 94 19 minecraft:stone
-setblock 228 94 24 minecraft:stone_bricks
-fill 228 94 25 232 94 25 minecraft:air
-fill 228 94 29 230 94 29 minecraft:stone
-fill 229 94 24 232 94 24 minecraft:air
-setblock 229 94 26 minecraft:stone_brick_slab[type=top]
-fill 230 94 26 231 94 26 minecraft:air
-setblock 230 94 27 minecraft:stone_brick_slab[type=top]
-fill 231 94 21 233 94 21 minecraft:stone
-fill 231 94 27 233 94 27 minecraft:stone
-fill 232 94 22 233 94 22 minecraft:stone

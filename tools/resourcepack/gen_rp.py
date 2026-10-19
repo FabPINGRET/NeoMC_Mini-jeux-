@@ -333,6 +333,7 @@ exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'food_rp.py')
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'reindeer_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'zombies_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dino_rp.py'), encoding='utf-8').read())
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ol_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'foot_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lobbymap_rp.py'), encoding='utf-8').read())
 

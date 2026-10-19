@@ -1,4 +1,4 @@
-# Construction des régions de Terra Nova, étape 318/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 318/436 (dimension mg:terranova, générée)
 fill -182 73 24 -182 73 26 minecraft:air
 fill -182 73 27 -181 73 27 minecraft:spruce_planks
 setblock -181 73 -16 minecraft:ladder[facing=east]
@@ -138,13 +138,17 @@ fill -180 74 24 -178 74 24 minecraft:spruce_planks
 setblock -180 74 27 minecraft:stripped_dark_oak_log
 fill -179 74 -19 -178 74 -19 minecraft:spruce_planks
 fill -179 74 -13 -178 74 -13 minecraft:spruce_planks
-fill -179 74 0 -177 74 8 minecraft:spruce_fence
+fill -179 74 0 -177 74 0 minecraft:spruce_fence
+fill -179 74 1 -179 74 8 minecraft:spruce_fence
 fill -179 74 9 -177 74 19 minecraft:air
 fill -179 74 21 -178 74 21 minecraft:spruce_planks
 fill -179 74 27 -178 74 27 minecraft:spruce_planks
+fill -178 74 1 -178 74 7 minecraft:air
+fill -178 74 8 -177 74 8 minecraft:spruce_fence
 setblock -177 74 -19 minecraft:stripped_dark_oak_log
 setblock -177 74 -16 minecraft:stripped_dark_oak_log
 setblock -177 74 -13 minecraft:stripped_dark_oak_log
+fill -177 74 1 -177 74 7 minecraft:spruce_fence
 setblock -177 74 21 minecraft:stripped_dark_oak_log
 setblock -177 74 24 minecraft:stripped_dark_oak_log
 setblock -177 74 27 minecraft:stripped_dark_oak_log
@@ -195,7 +199,3 @@ setblock -218 75 21 minecraft:spruce_planks
 setblock -218 75 24 minecraft:air
 setblock -218 75 27 minecraft:spruce_planks
 setblock -217 75 -19 minecraft:stripped_dark_oak_log
-setblock -217 75 -18 minecraft:spruce_planks
-setblock -217 75 -16 minecraft:stripped_dark_oak_log
-setblock -217 75 -14 minecraft:spruce_planks
-setblock -217 75 -13 minecraft:stripped_dark_oak_log

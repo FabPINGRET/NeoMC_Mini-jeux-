@@ -84,6 +84,25 @@
     {
       "label": [
         {
+          "text": "🌙 Aller à Ombrelune",
+          "color": "light_purple",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "RPG médiéval-fantastique : 8 régions, dragons, donjons (ta progression y est gardée)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.sv set 8"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "⌂ Retour au lobby",
           "color": "gold",
           "bold": true
