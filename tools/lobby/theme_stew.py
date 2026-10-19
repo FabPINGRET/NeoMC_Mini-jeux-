@@ -12,7 +12,8 @@ Accélération au sol = vitesse x 0,216 / f^3 (f = friction modifiée) : sans le
 Effets de bord de la traînée -80 % : chutes plus rapides (vitesse terminale 0,08/(1-0,996) = 20 blocs/tick au lieu de 4 en vanilla, dégâts de chute inchangés, ils dépendent de la distance), sauts ~1,30 bloc et sauts en sprint nettement plus longs (rétention en l'air 0,982 au lieu de 0,91) ; l'élytre n'est pas touché (updateFallFlyingMovement utilise des traînées fixes 0,99 / 0,98, vérifié par javap).
 Un effet vanilla (1-4) se cumule avec un effet maison encore actif : un seul effet par ragoût.
 Effets chronométrés : un seul à la fois (stew_clear d'abord), objectif mg.ths en secondes, modificateurs d'attribut mg:thstew
-(jamais les valeurs de base), tag mg.thmini pendant le mini-moi et le lapin, mg.thzap pendant le flash. stew_clear les retire ; il est appelé par la seconde (fin, joueur
+(jamais les valeurs de base), tag mg.thmini pendant le mini-moi et le lapin, mg.thzap pendant le flash, mg.thsk pendant le patin (la patinoire de Noël, theme_rink.py, retire alors sa propre
+glisse mg:thrink : jamais de cumul). stew_clear les retire ; il est appelé par la seconde (fin, joueur
 occupé, mg.pkr compris ; la fin du mini-moi est reportée tant que la tête est bloquée), par lobby/theme/<t>/off (sans contrôle de tête : accepté),
 par core/request (stew_game), core/attr_reset et desinstaller. Un 2e ragoût chronométré mangé en mini sans place pour se relever
 fait pschitt (stew_fizzle, sans toucher aux attributs). Les anciens ragoûts (mg_thg sans mg_thst, effets vanilla) sont retirés chaque seconde ; leurs effets darkness / hunger /
@@ -85,9 +86,10 @@ def timed(desc, mods, secs, sound, pitch, msg, color, extra=()):
 
 
 def clear():
-    return ['# Retire les modificateurs, le tag mini-moi / lapin / flash, le lapin et le chrono du ragoût chez @s (silencieux ; jamais les valeurs de base)'] + \
+    return ['# Retire les modificateurs, le tag mini-moi / lapin / flash / patin, le lapin et le chrono du ragoût chez @s (silencieux ; jamais les valeurs de base)'] + \
            [f'attribute @s minecraft:{a} modifier remove {MOD}' for a in ATTRS] + \
-           ['execute if entity @s[tag=mg.thbun] run effect clear @s minecraft:invisibility',
+           ['tag @s remove mg.thsk',
+            'execute if entity @s[tag=mg.thbun] run effect clear @s minecraft:invisibility',
             'execute if entity @s[tag=mg.thbun] run ' + COPY_ID,
             'execute if entity @s[tag=mg.thbun] ' + RABBIT_AS + 'kill @s',
             'tag @s remove mg.thmini', 'tag @s remove mg.thbun', 'tag @s remove mg.thzap', 'scoreboard players reset @s mg.ths']
@@ -134,7 +136,7 @@ def rabbit_keep():
 
 
 def write_files(busy):
-    """Écrit stew_eat/clear/game/mini/moon/fizzle/rabbit(_body/_tp/_keep)/flash/skate/bounce et l'advancement mg:theme_stew."""
+    """Écrit stew_eat/clear/game/mini/moon/fizzle/rabbit(_body/_tp/_keep)/flash/skate (tag mg.thsk)/bounce et l'advancement mg:theme_stew."""
     w = C.w
     w(f'{F}/stew_eat', eat(busy))
     w(f'{F}/stew_clear', clear())
@@ -153,7 +155,8 @@ def write_files(busy):
     w(f'{F}/stew_rabbit_keep', rabbit_keep())
     w(f'{F}/stew_flash', timed('flash : vitesse +80 %, pas +0,85', [('movement_speed', 0.8), ('step_height', 0.85)], 20,
                                'breeze.wind_burst', 1.2, '⚡ Flash : super vitesse !', 'yellow', extra=['tag @s add mg.thzap']))
-    w(f'{F}/stew_skate', timed('patinoire : friction -100 %, traînée de l\'air -80 %, vitesse -60 %', SKATE, 25, 'player.hurt_freeze', 1, '⛸ Patinoire : ça glisse !', 'aqua'))
+    w(f'{F}/stew_skate', timed('patinoire : friction -100 %, traînée de l\'air -80 %, vitesse -60 %', SKATE, 25, 'player.hurt_freeze', 1, '⛸ Patinoire : ça glisse !', 'aqua',
+                              extra=['tag @s add mg.thsk', f'function mg:{F}/rink_unset']))      # la glisse de la piste part tout de suite (sans effet hors piste)
     w(f'{F}/stew_bounce', timed('rebond : bounciness +0,8, saut +20 %', [('bounciness', 0.8, 'add_value'), ('jump_strength', 0.2)], 30,
                                 'slime.jump', 1, '🏀 Tu rebondis !', 'gold'))
     for rel, obj in (('advancement/theme_stew.json',

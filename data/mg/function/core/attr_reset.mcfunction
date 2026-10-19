@@ -9,4 +9,5 @@ attribute @s minecraft:movement_speed modifier remove mg:aim
 attribute @s minecraft:max_health base set 20
 function mg:core/attr_reset_g
 function mg:lobby/theme/stew_clear
+function mg:lobby/theme/rink_off
 function mg:core/unfreeze

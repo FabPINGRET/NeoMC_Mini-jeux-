@@ -42,6 +42,7 @@ kill @e[tag=mg.thnpc]
 advancement revoke @a only mg:theme_fw
 advancement revoke @a only mg:theme_stew
 execute as @a run function mg:lobby/theme/stew_clear
+execute as @a run function mg:lobby/theme/rink_off
 kill @e[type=minecraft:rabbit,tag=mg.thbun]
 team remove mg_thbun
 execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{mg_thg:1b}] run kill @s

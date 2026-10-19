@@ -31,7 +31,8 @@ FEATURES = {
         '🎩 {n} chapeaux de Noël, galerie sous le Hall des scores',
         '🎁 Événement : la pluie de pièces devient chasse aux cadeaux',
         '🔴 Bonhommes de neige, rennes et Rudolph au spawn',
-        '❄ De la neige sur les cartes de jeu en partie']),
+        '❄ De la neige sur les cartes de jeu en partie',
+        '⛸ Patinoire derrière le buffet : ça glisse !']),
 }
 SPEC = ',gamemode=!spectator]'
 assert LOBBY.endswith(SPEC), 'theme_world.LOBBY a changé de forme : adapter SHOWN'
