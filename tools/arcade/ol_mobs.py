@@ -228,6 +228,8 @@ w('m/second', ['# Chaque seconde : monstres neutres provoqués, capacités, noms
                'execute as @e[tag=mg.olelnm] run function mg:ombre/m/elite_name',
                'execute if score $olq60 mg.st matches 20 as @e[tag=mg.olm,tag=!mg.olboss,tag=!mg.olalpha,tag=!mg.oldg] at @s unless entity @a[tag=mg.olw,distance=..100] run kill @s',
                '# capacités',
+               '# sorcières : la potion bue (soin, résistance au feu, vitesse) est retirée de la main avant de faire effet (boisson de 32 ticks, contrôle chaque seconde)',
+               'execute as @e[type=minecraft:witch,tag=mg.olm] if items entity @s weapon.mainhand minecraft:potion run item replace entity @s weapon.mainhand with air',
                'execute as @e[tag=mg.olk_yeti] at @s if entity @a[tag=mg.olw,gamemode=adventure,distance=..3] if predicate mg:tv_c20 run function mg:ombre/m/ab_slam',
                'execute as @e[tag=mg.olk_drake] at @s if entity @a[tag=mg.olw,gamemode=adventure,distance=3..9] if predicate mg:tv_c33 run function mg:ombre/m/ab_breath',
                'execute as @e[tag=mg.olk_garou] at @s if entity @a[tag=mg.olw,gamemode=adventure,distance=3..8] if predicate mg:tv_c20 run function mg:ombre/m/ab_pounce',
