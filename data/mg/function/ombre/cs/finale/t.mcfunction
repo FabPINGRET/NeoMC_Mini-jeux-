@@ -1,0 +1,24 @@
+# Cinématique « finale » : un tick
+execute if score @s mg.olctk matches 1 run function mg:ombre/cs/finale/k0
+execute if score @s mg.olctk matches 71 run function mg:ombre/cs/finale/k1
+execute if score @s mg.olctk matches 141 run function mg:ombre/cs/finale/k2
+execute if score @s mg.olctk matches 211 run function mg:ombre/cs/finale/k3
+execute if score @s mg.olctk matches 281 run function mg:ombre/cs/finale/k4
+execute if score @s mg.olctk matches 1..20 run function mg:ombre/cs/finale/p0
+execute if score @s mg.olctk matches 21..40 run function mg:ombre/cs/finale/p1
+execute if score @s mg.olctk matches 41..60 run function mg:ombre/cs/finale/p2
+execute if score @s mg.olctk matches 61..80 run function mg:ombre/cs/finale/p3
+execute if score @s mg.olctk matches 81..100 run function mg:ombre/cs/finale/p4
+execute if score @s mg.olctk matches 101..120 run function mg:ombre/cs/finale/p5
+execute if score @s mg.olctk matches 121..140 run function mg:ombre/cs/finale/p6
+execute if score @s mg.olctk matches 141..160 run function mg:ombre/cs/finale/p7
+execute if score @s mg.olctk matches 161..180 run function mg:ombre/cs/finale/p8
+execute if score @s mg.olctk matches 181..200 run function mg:ombre/cs/finale/p9
+execute if score @s mg.olctk matches 201..220 run function mg:ombre/cs/finale/p10
+execute if score @s mg.olctk matches 221..240 run function mg:ombre/cs/finale/p11
+execute if score @s mg.olctk matches 241..260 run function mg:ombre/cs/finale/p12
+execute if score @s mg.olctk matches 261..280 run function mg:ombre/cs/finale/p13
+execute if score @s mg.olctk matches 281..300 run function mg:ombre/cs/finale/p14
+execute if score @s mg.olctk matches 301..320 run function mg:ombre/cs/finale/p15
+execute if score @s mg.olctk matches 321..340 run function mg:ombre/cs/finale/p16
+execute if score @s mg.olctk matches 322.. run function mg:ombre/cs/end_spawn

@@ -1,9 +1,4 @@
-# Construction des régions de Terra Nova, étape 60/435 (dimension mg:terranova, générée)
-setblock -42 64 -161 minecraft:iron_trapdoor[facing=north,half=top,open=false]
-setblock -42 64 -155 minecraft:iron_trapdoor[facing=north,half=top,open=false]
-fill -74 65 -178 -50 65 -178 minecraft:air
-fill -74 65 -177 -57 65 -177 minecraft:air
-fill -74 65 -176 -73 65 -158 minecraft:air
+# Construction des régions de Terra Nova, étape 60/436 (dimension mg:terranova, générée)
 fill -72 65 -176 -52 65 -176 minecraft:white_concrete
 fill -72 65 -175 -72 65 -160 minecraft:white_concrete
 fill -72 65 -159 -59 65 -158 minecraft:air
@@ -199,3 +194,8 @@ fill -59 67 -159 -58 67 -159 minecraft:vine[north=true]
 fill -59 67 -158 -50 67 -158 minecraft:air
 fill -58 67 -177 -56 67 -177 minecraft:vine[south=true]
 setblock -58 67 -160 minecraft:cyan_stained_glass_pane
+setblock -57 67 -176 minecraft:light_gray_concrete
+setblock -57 67 -160 minecraft:light_gray_concrete
+fill -57 67 -159 -55 67 -159 minecraft:air
+setblock -56 67 -176 minecraft:white_concrete
+setblock -56 67 -168 minecraft:sea_lantern

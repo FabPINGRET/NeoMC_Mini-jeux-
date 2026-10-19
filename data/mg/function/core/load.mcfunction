@@ -9,6 +9,17 @@ scoreboard players set $thrs mg.st 1
 execute unless score $rp mg.st matches 0..1 run scoreboard players set $rp mg.st 1
 # Terra Nova : construite une fois (dimension mg:terranova, ~2 min, après Neo City), règles du monde
 execute if score $setup mg.st matches 1 unless data storage mg:terra built run schedule function mg:terra/world_build 200s
+# Ombrelune : construite une fois (dimension mg:ombrelune, ~4 min, après Terra Nova), règles du monde
+execute if score $setup mg.st matches 1 unless data storage mg:ombre built unless score $olb mg.st matches 1.. run schedule function mg:ombre/world_build 260s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby olclean run schedule function mg:ombre/spawn_clean 10s
+execute if score $setup mg.st matches 1 run schedule function mg:ombre/st/check 30s
+scoreboard players set $olw mg.st 0
+function mg:ombre/rules
+# Ombrelune : construite une fois (dimension mg:ombrelune, ~4 min, après Terra Nova), règles du monde
+execute if score $setup mg.st matches 1 unless data storage mg:ombre built unless score $olb mg.st matches 1.. run schedule function mg:ombre/world_build 260s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby olclean run schedule function mg:ombre/spawn_clean 10s
+scoreboard players set $olw mg.st 0
+function mg:ombre/rules
 # Terra Nova RPG : régions construites une fois sur un monde déjà construit (avant la mise à jour du RPG)
 execute if score $setup mg.st matches 1 if data storage mg:terra built unless data storage mg:terra v2 run schedule function mg:terra/world_build2 210s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby tvclean run schedule function mg:terra/spawn_clean 9s
@@ -57,6 +68,102 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.olab dummy
+scoreboard objectives add mg.olac dummy
+scoreboard objectives add mg.olaf dummy
+scoreboard objectives add mg.olak dummy
+scoreboard objectives add mg.olal dummy
+scoreboard objectives add mg.olat dummy
+scoreboard objectives add mg.olbk dummy
+scoreboard objectives add mg.olbless dummy
+scoreboard objectives add mg.olbs dummy
+scoreboard objectives add mg.olbs2 dummy
+scoreboard objectives add mg.olc0 dummy
+scoreboard objectives add mg.olc1 dummy
+scoreboard objectives add mg.olc2 dummy
+scoreboard objectives add mg.olc3 dummy
+scoreboard objectives add mg.olc4 dummy
+scoreboard objectives add mg.olcd dummy
+scoreboard objectives add mg.olcf dummy
+scoreboard objectives add mg.olch dummy
+scoreboard objectives add mg.olcl dummy
+scoreboard objectives add mg.olcn dummy
+scoreboard objectives add mg.olcp dummy
+scoreboard objectives add mg.olcs dummy
+scoreboard objectives add mg.olct dummy
+scoreboard objectives add mg.olctk dummy
+scoreboard objectives add mg.oldg dummy
+scoreboard objectives add mg.olel dummy
+scoreboard objectives add mg.olfire dummy
+scoreboard objectives add mg.olfur dummy
+scoreboard objectives add mg.olg dummy
+scoreboard objectives add mg.olhorse dummy
+scoreboard objectives add mg.olid dummy
+scoreboard objectives add mg.olkt dummy
+scoreboard objectives add mg.ollv dummy
+scoreboard objectives add mg.olm1 dummy
+scoreboard objectives add mg.olm2 dummy
+scoreboard objectives add mg.olm3 dummy
+scoreboard objectives add mg.olm4 dummy
+scoreboard objectives add mg.olm5 dummy
+scoreboard objectives add mg.olm6 dummy
+scoreboard objectives add mg.olm7 dummy
+scoreboard objectives add mg.olm8 dummy
+scoreboard objectives add mg.olm9 dummy
+scoreboard objectives add mg.olmk dummy
+scoreboard objectives add mg.olmm dummy
+scoreboard objectives add mg.olmp dummy
+scoreboard objectives add mg.olnid dummy
+scoreboard objectives add mg.olo dummy
+scoreboard objectives add mg.olod dummy
+scoreboard objectives add mg.olon dummy
+scoreboard objectives add mg.olox dummy
+scoreboard objectives add mg.oloy dummy
+scoreboard objectives add mg.oloz dummy
+scoreboard objectives add mg.olpg dummy
+scoreboard objectives add mg.olpid dummy
+scoreboard objectives add mg.olpk dummy
+scoreboard objectives add mg.olpo dummy
+scoreboard objectives add mg.olpw dummy
+scoreboard objectives add mg.olq1 dummy
+scoreboard objectives add mg.olq10 dummy
+scoreboard objectives add mg.olq11 dummy
+scoreboard objectives add mg.olq12 dummy
+scoreboard objectives add mg.olq13 dummy
+scoreboard objectives add mg.olq14 dummy
+scoreboard objectives add mg.olq15 dummy
+scoreboard objectives add mg.olq16 dummy
+scoreboard objectives add mg.olq2 dummy
+scoreboard objectives add mg.olq3 dummy
+scoreboard objectives add mg.olq4 dummy
+scoreboard objectives add mg.olq5 dummy
+scoreboard objectives add mg.olq6 dummy
+scoreboard objectives add mg.olq7 dummy
+scoreboard objectives add mg.olq8 dummy
+scoreboard objectives add mg.olq9 dummy
+scoreboard objectives add mg.olqp dummy
+scoreboard objectives add mg.olrg dummy
+scoreboard objectives add mg.ols1 dummy
+scoreboard objectives add mg.ols2 dummy
+scoreboard objectives add mg.ols3 dummy
+scoreboard objectives add mg.ols4 dummy
+scoreboard objectives add mg.olsa dummy
+scoreboard objectives add mg.olsd dummy
+scoreboard objectives add mg.olses dummy
+scoreboard objectives add mg.olsh dummy
+scoreboard objectives add mg.olsp dummy
+scoreboard objectives add mg.olst dummy
+scoreboard objectives add mg.olsx dummy
+scoreboard objectives add mg.olsy dummy
+scoreboard objectives add mg.olsz dummy
+scoreboard objectives add mg.oltc dummy
+scoreboard objectives add mg.olws dummy
+scoreboard objectives add mg.olwt dummy
+scoreboard objectives add mg.olxp dummy
+scoreboard objectives add mg.olq minecraft.used:minecraft.warped_fungus_on_a_stick
+scoreboard objectives add mg.oldt minecraft.custom:minecraft.damage_taken
+scoreboard objectives add mg.oltk trigger
+scoreboard objectives add mg.olhb minecraft.used:minecraft.honey_bottle
 team add mg_thbun
 team modify mg_thbun collisionRule never
 scoreboard objectives add mg.thbn dummy

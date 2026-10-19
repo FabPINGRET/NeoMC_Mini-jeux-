@@ -1,301 +1,301 @@
-# Construction des régions de Terra Nova, étape 431/435 (dimension mg:terranova, générée)
-fill -17 64 63 -17 66 63 minecraft:air replace #mg:tv_pass
-setblock -17 63 64 minecraft:dirt_path
-fill -17 64 64 -17 66 64 minecraft:air replace #mg:tv_pass
-setblock -17 63 65 minecraft:dirt_path
-fill -17 64 65 -17 66 65 minecraft:air replace #mg:tv_pass
-setblock -17 63 66 minecraft:dirt_path
-fill -17 64 66 -17 66 66 minecraft:air replace #mg:tv_pass
-setblock -17 63 67 minecraft:dirt_path
-fill -17 64 67 -17 66 67 minecraft:air replace #mg:tv_pass
-setblock -17 63 68 minecraft:dirt_path
-fill -17 64 68 -17 66 68 minecraft:air replace #mg:tv_pass
-setblock -17 63 69 minecraft:dirt_path
-fill -17 64 69 -17 66 69 minecraft:air replace #mg:tv_pass
-setblock -17 63 70 minecraft:dirt_path
-fill -17 64 70 -17 66 70 minecraft:air replace #mg:tv_pass
-setblock -16 63 -52 minecraft:dirt_path
-fill -16 64 -52 -16 66 -52 minecraft:air replace #mg:tv_pass
-setblock -16 63 -51 minecraft:dirt_path
-fill -16 64 -51 -16 66 -51 minecraft:air replace #mg:tv_pass
-setblock -16 63 -50 minecraft:dirt_path
-fill -16 64 -50 -16 66 -50 minecraft:air replace #mg:tv_pass
-setblock -16 63 -49 minecraft:spruce_planks
-setblock -16 63 -48 minecraft:spruce_planks
-setblock -16 63 61 minecraft:spruce_planks
-setblock -16 63 62 minecraft:dirt_path
-fill -16 64 62 -16 66 62 minecraft:air replace #mg:tv_pass
-setblock -16 63 63 minecraft:dirt_path
-fill -16 64 63 -16 66 63 minecraft:air replace #mg:tv_pass
-setblock -16 63 64 minecraft:dirt_path
-fill -16 64 64 -16 66 64 minecraft:air replace #mg:tv_pass
-setblock -16 63 65 minecraft:dirt_path
-fill -16 64 65 -16 66 65 minecraft:air replace #mg:tv_pass
-setblock -16 63 66 minecraft:dirt_path
-fill -16 64 66 -16 66 66 minecraft:air replace #mg:tv_pass
-setblock -16 63 67 minecraft:dirt_path
-fill -16 64 67 -16 66 67 minecraft:air replace #mg:tv_pass
-setblock -15 63 -51 minecraft:dirt_path
-fill -15 64 -51 -15 66 -51 minecraft:air replace #mg:tv_pass
-setblock -15 63 -50 minecraft:dirt_path
-fill -15 64 -50 -15 66 -50 minecraft:air replace #mg:tv_pass
-setblock -15 63 -49 minecraft:spruce_planks
-setblock -15 63 -48 minecraft:spruce_planks
-setblock -15 63 -47 minecraft:spruce_planks
-setblock -15 63 -46 minecraft:spruce_planks
-setblock -15 63 58 minecraft:dirt_path
-fill -15 64 58 -15 66 58 minecraft:air replace #mg:tv_pass
-setblock -15 63 59 minecraft:spruce_planks
-setblock -15 63 60 minecraft:spruce_planks
-setblock -15 63 61 minecraft:spruce_planks
-setblock -15 63 62 minecraft:dirt_path
-fill -15 64 62 -15 66 62 minecraft:air replace #mg:tv_pass
-setblock -15 63 63 minecraft:dirt_path
-fill -15 64 63 -15 66 63 minecraft:air replace #mg:tv_pass
-setblock -15 63 64 minecraft:dirt_path
-fill -15 64 64 -15 66 64 minecraft:air replace #mg:tv_pass
-setblock -15 63 65 minecraft:dirt_path
-fill -15 64 65 -15 66 65 minecraft:air replace #mg:tv_pass
-setblock -15 63 66 minecraft:dirt_path
-fill -15 64 66 -15 66 66 minecraft:air replace #mg:tv_pass
-setblock -14 63 -50 minecraft:dirt_path
-fill -14 64 -50 -14 66 -50 minecraft:air replace #mg:tv_pass
-setblock -14 63 -49 minecraft:dirt_path
-fill -14 64 -49 -14 66 -49 minecraft:air replace #mg:tv_pass
-setblock -14 63 -48 minecraft:dirt_path
-fill -14 64 -48 -14 66 -48 minecraft:air replace #mg:tv_pass
-setblock -14 63 -47 minecraft:spruce_planks
-setblock -14 63 -46 minecraft:spruce_planks
-setblock -14 63 -45 minecraft:spruce_planks
-setblock -14 63 57 minecraft:dirt_path
-fill -14 64 57 -14 66 57 minecraft:air replace #mg:tv_pass
-setblock -14 63 58 minecraft:dirt_path
-fill -14 64 58 -14 66 58 minecraft:air replace #mg:tv_pass
-setblock -14 63 59 minecraft:dirt_path
-fill -14 64 59 -14 66 59 minecraft:air replace #mg:tv_pass
-setblock -14 63 60 minecraft:dirt_path
-fill -14 64 60 -14 66 60 minecraft:air replace #mg:tv_pass
-setblock -14 63 61 minecraft:dirt_path
-fill -14 64 61 -14 66 61 minecraft:air replace #mg:tv_pass
-setblock -14 63 62 minecraft:dirt_path
-fill -14 64 62 -14 66 62 minecraft:air replace #mg:tv_pass
-setblock -14 63 63 minecraft:dirt_path
-fill -14 64 63 -14 66 63 minecraft:air replace #mg:tv_pass
-setblock -13 63 -49 minecraft:dirt_path
-fill -13 64 -49 -13 66 -49 minecraft:air replace #mg:tv_pass
-setblock -13 63 -48 minecraft:dirt_path
-fill -13 64 -48 -13 66 -48 minecraft:air replace #mg:tv_pass
-setblock -13 63 -47 minecraft:spruce_planks
-setblock -13 63 -46 minecraft:spruce_planks
-setblock -13 63 -45 minecraft:spruce_planks
-setblock -13 63 -44 minecraft:spruce_planks
-setblock -13 63 -43 minecraft:spruce_planks
-setblock -13 63 54 minecraft:dirt_path
-fill -13 64 54 -13 66 54 minecraft:air replace #mg:tv_pass
-setblock -13 63 55 minecraft:dirt_path
-fill -13 64 55 -13 66 55 minecraft:air replace #mg:tv_pass
-setblock -13 63 56 minecraft:dirt_path
-fill -13 64 56 -13 66 56 minecraft:air replace #mg:tv_pass
-setblock -13 63 57 minecraft:dirt_path
-fill -13 64 57 -13 66 57 minecraft:air replace #mg:tv_pass
-setblock -13 63 58 minecraft:dirt_path
-fill -13 64 58 -13 66 58 minecraft:air replace #mg:tv_pass
-setblock -13 63 59 minecraft:dirt_path
-fill -13 64 59 -13 66 59 minecraft:air replace #mg:tv_pass
-setblock -13 63 60 minecraft:dirt_path
-fill -13 64 60 -13 66 60 minecraft:air replace #mg:tv_pass
-setblock -13 63 61 minecraft:dirt_path
-fill -13 64 61 -13 66 61 minecraft:air replace #mg:tv_pass
-setblock -13 63 62 minecraft:dirt_path
-fill -13 64 62 -13 66 62 minecraft:air replace #mg:tv_pass
-setblock -12 63 -47 minecraft:spruce_planks
-setblock -12 63 -46 minecraft:spruce_planks
-setblock -12 63 -45 minecraft:spruce_planks
-setblock -12 63 -44 minecraft:spruce_planks
-setblock -12 63 -43 minecraft:spruce_planks
-setblock -12 63 -42 minecraft:spruce_planks
-setblock -12 64 53 minecraft:dirt_path
-fill -12 65 53 -12 67 53 minecraft:air replace #mg:tv_pass
-setblock -12 63 54 minecraft:dirt_path
-fill -12 64 54 -12 66 54 minecraft:air replace #mg:tv_pass
-setblock -12 63 55 minecraft:dirt_path
-fill -12 64 55 -12 66 55 minecraft:air replace #mg:tv_pass
-setblock -12 63 56 minecraft:dirt_path
-fill -12 64 56 -12 66 56 minecraft:air replace #mg:tv_pass
-setblock -12 63 57 minecraft:dirt_path
-fill -12 64 57 -12 66 57 minecraft:air replace #mg:tv_pass
-setblock -12 63 58 minecraft:dirt_path
-fill -12 64 58 -12 66 58 minecraft:air replace #mg:tv_pass
-setblock -12 63 59 minecraft:dirt_path
-fill -12 64 59 -12 66 59 minecraft:air replace #mg:tv_pass
-setblock -11 63 -46 minecraft:spruce_planks
-setblock -11 63 -45 minecraft:spruce_planks
-setblock -11 63 -44 minecraft:spruce_planks
-setblock -11 63 -43 minecraft:spruce_planks
-setblock -11 63 -42 minecraft:spruce_planks
-setblock -11 63 -41 minecraft:spruce_planks
-setblock -11 64 50 minecraft:dirt_path
-fill -11 65 50 -11 67 50 minecraft:air replace #mg:tv_pass
-setblock -11 64 51 minecraft:dirt_path
-fill -11 65 51 -11 67 51 minecraft:air replace #mg:tv_pass
-setblock -11 64 52 minecraft:dirt_path
-fill -11 65 52 -11 67 52 minecraft:air replace #mg:tv_pass
-setblock -11 64 53 minecraft:dirt_path
-fill -11 65 53 -11 67 53 minecraft:air replace #mg:tv_pass
-setblock -11 63 54 minecraft:dirt_path
-fill -11 64 54 -11 66 54 minecraft:air replace #mg:tv_pass
-setblock -11 63 55 minecraft:dirt_path
-fill -11 64 55 -11 66 55 minecraft:air replace #mg:tv_pass
-setblock -11 63 56 minecraft:dirt_path
-fill -11 64 56 -11 66 56 minecraft:air replace #mg:tv_pass
-setblock -11 63 57 minecraft:dirt_path
-fill -11 64 57 -11 66 57 minecraft:air replace #mg:tv_pass
-setblock -11 63 58 minecraft:dirt_path
-fill -11 64 58 -11 66 58 minecraft:air replace #mg:tv_pass
-setblock -10 63 -44 minecraft:spruce_planks
-setblock -10 63 -43 minecraft:spruce_planks
-setblock -10 63 -42 minecraft:spruce_planks
-setblock -10 63 -41 minecraft:spruce_planks
-setblock -10 63 -40 minecraft:spruce_planks
-setblock -10 65 48 minecraft:dirt_path
-fill -10 66 48 -10 68 48 minecraft:air replace #mg:tv_pass
-setblock -10 64 49 minecraft:dirt_path
-fill -10 65 49 -10 67 49 minecraft:air replace #mg:tv_pass
-setblock -10 64 50 minecraft:dirt_path
-fill -10 65 50 -10 67 50 minecraft:air replace #mg:tv_pass
-setblock -10 64 51 minecraft:dirt_path
-fill -10 65 51 -10 67 51 minecraft:air replace #mg:tv_pass
-setblock -10 63 52 minecraft:dirt_path
-fill -10 64 52 -10 66 52 minecraft:air replace #mg:tv_pass
-setblock -10 63 53 minecraft:dirt_path
-fill -10 64 53 -10 66 53 minecraft:air replace #mg:tv_pass
-setblock -10 63 54 minecraft:dirt_path
-fill -10 64 54 -10 66 54 minecraft:air replace #mg:tv_pass
-setblock -10 63 55 minecraft:dirt_path
-fill -10 64 55 -10 66 55 minecraft:air replace #mg:tv_pass
-setblock -9 63 -43 minecraft:spruce_planks
-setblock -9 63 -42 minecraft:spruce_planks
-setblock -9 63 -41 minecraft:spruce_planks
-setblock -9 63 -40 minecraft:spruce_planks
-setblock -9 63 -39 minecraft:spruce_planks
-setblock -9 63 -38 minecraft:spruce_planks
-setblock -9 65 46 minecraft:dirt_path
-fill -9 66 46 -9 68 46 minecraft:air replace #mg:tv_pass
-setblock -9 65 47 minecraft:dirt_path
-fill -9 66 47 -9 68 47 minecraft:air replace #mg:tv_pass
-setblock -9 65 48 minecraft:dirt_path
-fill -9 66 48 -9 68 48 minecraft:air replace #mg:tv_pass
-setblock -9 64 49 minecraft:dirt_path
-fill -9 65 49 -9 67 49 minecraft:air replace #mg:tv_pass
-setblock -9 64 50 minecraft:dirt_path
-fill -9 65 50 -9 67 50 minecraft:air replace #mg:tv_pass
-setblock -9 63 51 minecraft:dirt_path
-fill -9 64 51 -9 66 51 minecraft:air replace #mg:tv_pass
-setblock -9 63 52 minecraft:dirt_path
-fill -9 64 52 -9 66 52 minecraft:air replace #mg:tv_pass
-setblock -9 63 53 minecraft:dirt_path
-fill -9 64 53 -9 66 53 minecraft:air replace #mg:tv_pass
-setblock -9 63 54 minecraft:dirt_path
-fill -9 64 54 -9 66 54 minecraft:air replace #mg:tv_pass
-setblock -8 63 -42 minecraft:spruce_planks
-setblock -8 63 -41 minecraft:spruce_planks
-setblock -8 63 -40 minecraft:spruce_planks
-setblock -8 63 -39 minecraft:spruce_planks
-setblock -8 63 -38 minecraft:spruce_planks
-setblock -8 63 -37 minecraft:dirt_path
-fill -8 64 -37 -8 66 -37 minecraft:air replace #mg:tv_pass
-setblock -8 65 44 minecraft:dirt_path
-fill -8 66 44 -8 68 44 minecraft:air replace #mg:tv_pass
-setblock -8 65 45 minecraft:dirt_path
-fill -8 66 45 -8 68 45 minecraft:air replace #mg:tv_pass
-setblock -8 65 46 minecraft:dirt_path
-fill -8 66 46 -8 68 46 minecraft:air replace #mg:tv_pass
-setblock -8 65 47 minecraft:dirt_path
-fill -8 66 47 -8 68 47 minecraft:air replace #mg:tv_pass
-setblock -8 65 48 minecraft:dirt_path
-fill -8 66 48 -8 68 48 minecraft:air replace #mg:tv_pass
-setblock -8 64 49 minecraft:dirt_path
-fill -8 65 49 -8 67 49 minecraft:air replace #mg:tv_pass
-setblock -8 64 50 minecraft:dirt_path
-fill -8 65 50 -8 67 50 minecraft:air replace #mg:tv_pass
-setblock -8 63 51 minecraft:dirt_path
-fill -8 64 51 -8 66 51 minecraft:air replace #mg:tv_pass
-setblock -7 63 -41 minecraft:spruce_planks
-setblock -7 63 -40 minecraft:spruce_planks
-setblock -7 63 -39 minecraft:spruce_planks
-setblock -7 63 -38 minecraft:spruce_planks
-setblock -7 63 -37 minecraft:dirt_path
-fill -7 64 -37 -7 66 -37 minecraft:air replace #mg:tv_pass
-setblock -7 63 -36 minecraft:dirt_path
-fill -7 64 -36 -7 66 -36 minecraft:air replace #mg:tv_pass
-setblock -7 65 42 minecraft:dirt_path
-fill -7 66 42 -7 68 42 minecraft:air replace #mg:tv_pass
-setblock -7 65 43 minecraft:dirt_path
-fill -7 66 43 -7 68 43 minecraft:air replace #mg:tv_pass
-setblock -7 64 44 minecraft:dirt_path
-fill -7 65 44 -7 67 44 minecraft:air replace #mg:tv_pass
-setblock -7 65 45 minecraft:dirt_path
-fill -7 66 45 -7 68 45 minecraft:air replace #mg:tv_pass
-setblock -7 65 46 minecraft:dirt_path
-fill -7 66 46 -7 68 46 minecraft:air replace #mg:tv_pass
-setblock -7 65 47 minecraft:dirt_path
-fill -7 66 47 -7 68 47 minecraft:air replace #mg:tv_pass
-setblock -7 65 48 minecraft:dirt_path
-fill -7 66 48 -7 68 48 minecraft:air replace #mg:tv_pass
-setblock -7 64 49 minecraft:dirt_path
-fill -7 65 49 -7 67 49 minecraft:air replace #mg:tv_pass
-setblock -6 63 -39 minecraft:spruce_planks
-setblock -6 63 -38 minecraft:spruce_planks
-setblock -6 63 -37 minecraft:dirt_path
-fill -6 64 -37 -6 66 -37 minecraft:air replace #mg:tv_pass
-setblock -6 63 -36 minecraft:dirt_path
-fill -6 64 -36 -6 66 -36 minecraft:air replace #mg:tv_pass
-setblock -6 63 -35 minecraft:dirt_path
-fill -6 64 -35 -6 66 -35 minecraft:air replace #mg:tv_pass
-setblock -6 65 39 minecraft:dirt_path
-fill -6 66 39 -6 68 39 minecraft:air replace #mg:tv_pass
-setblock -6 65 40 minecraft:dirt_path
-fill -6 66 40 -6 68 40 minecraft:air replace #mg:tv_pass
-setblock -6 65 41 minecraft:dirt_path
-fill -6 66 41 -6 68 41 minecraft:air replace #mg:tv_pass
-setblock -6 65 42 minecraft:dirt_path
-fill -6 66 42 -6 68 42 minecraft:air replace #mg:tv_pass
-setblock -6 65 43 minecraft:dirt_path
-fill -6 66 43 -6 68 43 minecraft:air replace #mg:tv_pass
-setblock -6 64 44 minecraft:dirt_path
-fill -6 65 44 -6 67 44 minecraft:air replace #mg:tv_pass
-setblock -6 65 45 minecraft:dirt_path
-fill -6 66 45 -6 68 45 minecraft:air replace #mg:tv_pass
-setblock -6 65 46 minecraft:dirt_path
-fill -6 66 46 -6 68 46 minecraft:air replace #mg:tv_pass
-setblock -6 65 47 minecraft:dirt_path
-fill -6 66 47 -6 68 47 minecraft:air replace #mg:tv_pass
-setblock -5 63 -38 minecraft:spruce_planks
-setblock -5 63 -37 minecraft:dirt_path
-fill -5 64 -37 -5 66 -37 minecraft:air replace #mg:tv_pass
-setblock -5 63 -36 minecraft:dirt_path
-fill -5 64 -36 -5 66 -36 minecraft:air replace #mg:tv_pass
-setblock -5 63 -35 minecraft:dirt_path
-fill -5 64 -35 -5 66 -35 minecraft:air replace #mg:tv_pass
-setblock -5 64 -34 minecraft:dirt_path
-fill -5 65 -34 -5 67 -34 minecraft:air replace #mg:tv_pass
-setblock -5 65 37 minecraft:dirt_path
-fill -5 66 37 -5 68 37 minecraft:air replace #mg:tv_pass
-setblock -5 65 38 minecraft:dirt_path
-fill -5 66 38 -5 68 38 minecraft:air replace #mg:tv_pass
-setblock -5 65 39 minecraft:dirt_path
-fill -5 66 39 -5 68 39 minecraft:air replace #mg:tv_pass
-setblock -5 66 40 minecraft:dirt_path
-fill -5 67 40 -5 69 40 minecraft:air replace #mg:tv_pass
-setblock -5 65 41 minecraft:dirt_path
-fill -5 66 41 -5 68 41 minecraft:air replace #mg:tv_pass
-setblock -5 65 42 minecraft:dirt_path
-fill -5 66 42 -5 68 42 minecraft:air replace #mg:tv_pass
-setblock -5 65 43 minecraft:dirt_path
-fill -5 66 43 -5 68 43 minecraft:air replace #mg:tv_pass
-setblock -5 65 44 minecraft:dirt_path
-fill -5 66 44 -5 68 44 minecraft:air replace #mg:tv_pass
-setblock -5 65 45 minecraft:dirt_path
-fill -5 66 45 -5 68 45 minecraft:air replace #mg:tv_pass
-setblock -4 63 -37 minecraft:dirt_path
-fill -4 64 -37 -4 66 -37 minecraft:air replace #mg:tv_pass
+# Construction des régions de Terra Nova, étape 431/436 (dimension mg:terranova, générée)
+setblock -25 67 -69 minecraft:dirt_path
+fill -25 68 -69 -25 70 -69 minecraft:air replace #mg:tv_pass
+setblock -25 67 -68 minecraft:dirt_path
+fill -25 68 -68 -25 70 -68 minecraft:air replace #mg:tv_pass
+setblock -25 68 -67 minecraft:dirt_path
+fill -25 69 -67 -25 71 -67 minecraft:air replace #mg:tv_pass
+setblock -25 68 -66 minecraft:dirt_path
+fill -25 69 -66 -25 71 -66 minecraft:air replace #mg:tv_pass
+setblock -25 64 -65 minecraft:dirt_path
+fill -25 65 -65 -25 67 -65 minecraft:air replace #mg:tv_pass
+setblock -25 63 -64 minecraft:dirt_path
+fill -25 64 -64 -25 66 -64 minecraft:air replace #mg:tv_pass
+setblock -25 63 -63 minecraft:dirt_path
+fill -25 64 -63 -25 66 -63 minecraft:air replace #mg:tv_pass
+setblock -25 63 -62 minecraft:spruce_planks
+setblock -25 64 78 minecraft:dirt_path
+fill -25 65 78 -25 67 78 minecraft:air replace #mg:tv_pass
+setblock -25 65 79 minecraft:dirt_path
+fill -25 66 79 -25 68 79 minecraft:air replace #mg:tv_pass
+setblock -25 65 80 minecraft:dirt_path
+fill -25 66 80 -25 68 80 minecraft:air replace #mg:tv_pass
+setblock -25 65 81 minecraft:dirt_path
+fill -25 66 81 -25 68 81 minecraft:air replace #mg:tv_pass
+setblock -25 65 82 minecraft:dirt_path
+fill -25 66 82 -25 68 82 minecraft:air replace #mg:tv_pass
+setblock -25 65 83 minecraft:dirt_path
+fill -25 66 83 -25 68 83 minecraft:air replace #mg:tv_pass
+setblock -25 65 84 minecraft:dirt_path
+fill -25 66 84 -25 68 84 minecraft:air replace #mg:tv_pass
+setblock -25 65 85 minecraft:dirt_path
+fill -25 66 85 -25 68 85 minecraft:air replace #mg:tv_pass
+setblock -25 65 86 minecraft:dirt_path
+fill -25 66 86 -25 68 86 minecraft:air replace #mg:tv_pass
+setblock -25 65 87 minecraft:dirt_path
+fill -25 66 87 -25 68 87 minecraft:air replace #mg:tv_pass
+setblock -25 65 88 minecraft:dirt_path
+fill -25 66 88 -25 68 88 minecraft:air replace #mg:tv_pass
+setblock -25 66 89 minecraft:dirt_path
+fill -25 67 89 -25 69 89 minecraft:air replace #mg:tv_pass
+setblock -25 66 90 minecraft:dirt_path
+fill -25 67 90 -25 69 90 minecraft:air replace #mg:tv_pass
+setblock -25 66 91 minecraft:dirt_path
+fill -25 67 91 -25 69 91 minecraft:air replace #mg:tv_pass
+setblock -25 66 92 minecraft:dirt_path
+fill -25 67 92 -25 69 92 minecraft:air replace #mg:tv_pass
+setblock -25 66 93 minecraft:dirt_path
+fill -25 67 93 -25 69 93 minecraft:air replace #mg:tv_pass
+setblock -25 66 94 minecraft:dirt_path
+fill -25 67 94 -25 69 94 minecraft:air replace #mg:tv_pass
+setblock -25 66 95 minecraft:dirt_path
+fill -25 67 95 -25 69 95 minecraft:air replace #mg:tv_pass
+setblock -24 68 -68 minecraft:dirt_path
+fill -24 69 -68 -24 71 -68 minecraft:air replace #mg:tv_pass
+setblock -24 68 -67 minecraft:dirt_path
+fill -24 69 -67 -24 71 -67 minecraft:air replace #mg:tv_pass
+setblock -24 67 -66 minecraft:dirt_path
+fill -24 68 -66 -24 70 -66 minecraft:air replace #mg:tv_pass
+setblock -24 64 -65 minecraft:dirt_path
+fill -24 65 -65 -24 67 -65 minecraft:air replace #mg:tv_pass
+setblock -24 63 -64 minecraft:dirt_path
+fill -24 64 -64 -24 66 -64 minecraft:air replace #mg:tv_pass
+setblock -24 63 -63 minecraft:spruce_planks
+setblock -24 63 -62 minecraft:spruce_planks
+setblock -24 63 -61 minecraft:spruce_planks
+setblock -24 63 -60 minecraft:spruce_planks
+setblock -24 63 -59 minecraft:spruce_planks
+setblock -24 64 77 minecraft:dirt_path
+fill -24 65 77 -24 67 77 minecraft:air replace #mg:tv_pass
+setblock -24 64 78 minecraft:dirt_path
+fill -24 65 78 -24 67 78 minecraft:air replace #mg:tv_pass
+setblock -24 64 79 minecraft:dirt_path
+fill -24 65 79 -24 67 79 minecraft:air replace #mg:tv_pass
+setblock -24 64 80 minecraft:dirt_path
+fill -24 65 80 -24 67 80 minecraft:air replace #mg:tv_pass
+setblock -24 65 81 minecraft:dirt_path
+fill -24 66 81 -24 68 81 minecraft:air replace #mg:tv_pass
+setblock -24 65 82 minecraft:dirt_path
+fill -24 66 82 -24 68 82 minecraft:air replace #mg:tv_pass
+setblock -24 65 83 minecraft:dirt_path
+fill -24 66 83 -24 68 83 minecraft:air replace #mg:tv_pass
+setblock -24 65 84 minecraft:dirt_path
+fill -24 66 84 -24 68 84 minecraft:air replace #mg:tv_pass
+setblock -24 65 85 minecraft:dirt_path
+fill -24 66 85 -24 68 85 minecraft:air replace #mg:tv_pass
+setblock -24 65 86 minecraft:dirt_path
+fill -24 66 86 -24 68 86 minecraft:air replace #mg:tv_pass
+setblock -24 65 87 minecraft:dirt_path
+fill -24 66 87 -24 68 87 minecraft:air replace #mg:tv_pass
+setblock -24 65 88 minecraft:dirt_path
+fill -24 66 88 -24 68 88 minecraft:air replace #mg:tv_pass
+setblock -24 66 89 minecraft:dirt_path
+fill -24 67 89 -24 69 89 minecraft:air replace #mg:tv_pass
+setblock -24 66 90 minecraft:dirt_path
+fill -24 67 90 -24 69 90 minecraft:air replace #mg:tv_pass
+setblock -24 66 91 minecraft:dirt_path
+fill -24 67 91 -24 69 91 minecraft:air replace #mg:tv_pass
+setblock -24 66 92 minecraft:dirt_path
+fill -24 67 92 -24 69 92 minecraft:air replace #mg:tv_pass
+setblock -24 66 93 minecraft:dirt_path
+fill -24 67 93 -24 69 93 minecraft:air replace #mg:tv_pass
+setblock -24 66 94 minecraft:dirt_path
+fill -24 67 94 -24 69 94 minecraft:air replace #mg:tv_pass
+setblock -24 66 95 minecraft:dirt_path
+fill -24 67 95 -24 69 95 minecraft:air replace #mg:tv_pass
+setblock -23 63 -65 minecraft:dirt_path
+fill -23 64 -65 -23 66 -65 minecraft:air replace #mg:tv_pass
+setblock -23 63 -64 minecraft:dirt_path
+fill -23 64 -64 -23 66 -64 minecraft:air replace #mg:tv_pass
+setblock -23 63 -63 minecraft:spruce_planks
+setblock -23 63 -62 minecraft:spruce_planks
+setblock -23 63 -61 minecraft:spruce_planks
+setblock -23 63 -60 minecraft:spruce_planks
+setblock -23 63 -59 minecraft:spruce_planks
+setblock -23 63 -58 minecraft:spruce_planks
+setblock -23 63 -57 minecraft:spruce_planks
+setblock -23 64 74 minecraft:dirt_path
+fill -23 65 74 -23 67 74 minecraft:air replace #mg:tv_pass
+setblock -23 64 75 minecraft:dirt_path
+fill -23 65 75 -23 67 75 minecraft:air replace #mg:tv_pass
+setblock -23 64 76 minecraft:dirt_path
+fill -23 65 76 -23 67 76 minecraft:air replace #mg:tv_pass
+setblock -23 64 77 minecraft:dirt_path
+fill -23 65 77 -23 67 77 minecraft:air replace #mg:tv_pass
+setblock -23 64 78 minecraft:dirt_path
+fill -23 65 78 -23 67 78 minecraft:air replace #mg:tv_pass
+setblock -23 64 79 minecraft:dirt_path
+fill -23 65 79 -23 67 79 minecraft:air replace #mg:tv_pass
+setblock -23 64 80 minecraft:dirt_path
+fill -23 65 80 -23 67 80 minecraft:air replace #mg:tv_pass
+setblock -23 64 81 minecraft:dirt_path
+fill -23 65 81 -23 67 81 minecraft:air replace #mg:tv_pass
+setblock -23 64 82 minecraft:dirt_path
+fill -23 65 82 -23 67 82 minecraft:air replace #mg:tv_pass
+setblock -23 65 83 minecraft:dirt_path
+fill -23 66 83 -23 68 83 minecraft:air replace #mg:tv_pass
+setblock -23 65 84 minecraft:dirt_path
+fill -23 66 84 -23 68 84 minecraft:air replace #mg:tv_pass
+setblock -23 65 85 minecraft:dirt_path
+fill -23 66 85 -23 68 85 minecraft:air replace #mg:tv_pass
+setblock -23 65 86 minecraft:dirt_path
+fill -23 66 86 -23 68 86 minecraft:air replace #mg:tv_pass
+setblock -23 65 87 minecraft:dirt_path
+fill -23 66 87 -23 68 87 minecraft:air replace #mg:tv_pass
+setblock -23 65 88 minecraft:dirt_path
+fill -23 66 88 -23 68 88 minecraft:air replace #mg:tv_pass
+setblock -23 65 89 minecraft:dirt_path
+fill -23 66 89 -23 68 89 minecraft:air replace #mg:tv_pass
+setblock -23 66 90 minecraft:dirt_path
+fill -23 67 90 -23 69 90 minecraft:air replace #mg:tv_pass
+setblock -23 66 91 minecraft:dirt_path
+fill -23 67 91 -23 69 91 minecraft:air replace #mg:tv_pass
+setblock -23 66 92 minecraft:dirt_path
+fill -23 67 92 -23 69 92 minecraft:air replace #mg:tv_pass
+setblock -23 66 93 minecraft:dirt_path
+fill -23 67 93 -23 69 93 minecraft:air replace #mg:tv_pass
+setblock -23 66 94 minecraft:dirt_path
+fill -23 67 94 -23 69 94 minecraft:air replace #mg:tv_pass
+setblock -23 66 95 minecraft:dirt_path
+fill -23 67 95 -23 69 95 minecraft:air replace #mg:tv_pass
+setblock -22 63 -63 minecraft:spruce_planks
+setblock -22 63 -62 minecraft:spruce_planks
+setblock -22 63 -61 minecraft:spruce_planks
+setblock -22 63 -60 minecraft:spruce_planks
+setblock -22 63 -59 minecraft:spruce_planks
+setblock -22 63 -58 minecraft:spruce_planks
+setblock -22 63 -57 minecraft:spruce_planks
+setblock -22 63 -56 minecraft:spruce_planks
+setblock -22 63 73 minecraft:dirt_path
+fill -22 64 73 -22 66 73 minecraft:air replace #mg:tv_pass
+setblock -22 64 74 minecraft:dirt_path
+fill -22 65 74 -22 67 74 minecraft:air replace #mg:tv_pass
+setblock -22 64 75 minecraft:dirt_path
+fill -22 65 75 -22 67 75 minecraft:air replace #mg:tv_pass
+setblock -22 64 76 minecraft:dirt_path
+fill -22 65 76 -22 67 76 minecraft:air replace #mg:tv_pass
+setblock -22 64 77 minecraft:dirt_path
+fill -22 65 77 -22 67 77 minecraft:air replace #mg:tv_pass
+setblock -22 64 78 minecraft:dirt_path
+fill -22 65 78 -22 67 78 minecraft:air replace #mg:tv_pass
+setblock -22 64 79 minecraft:dirt_path
+fill -22 65 79 -22 67 79 minecraft:air replace #mg:tv_pass
+setblock -21 63 -60 minecraft:spruce_planks
+setblock -21 63 -59 minecraft:spruce_planks
+setblock -21 63 -58 minecraft:spruce_planks
+setblock -21 63 -57 minecraft:spruce_planks
+setblock -21 63 -56 minecraft:spruce_planks
+setblock -21 63 -55 minecraft:spruce_planks
+setblock -21 63 -54 minecraft:dirt_path
+fill -21 64 -54 -21 66 -54 minecraft:air replace #mg:tv_pass
+setblock -21 63 70 minecraft:dirt_path
+fill -21 64 70 -21 66 70 minecraft:air replace #mg:tv_pass
+setblock -21 63 71 minecraft:dirt_path
+fill -21 64 71 -21 66 71 minecraft:air replace #mg:tv_pass
+setblock -21 63 72 minecraft:dirt_path
+fill -21 64 72 -21 66 72 minecraft:air replace #mg:tv_pass
+setblock -21 63 73 minecraft:dirt_path
+fill -21 64 73 -21 66 73 minecraft:air replace #mg:tv_pass
+setblock -21 63 74 minecraft:dirt_path
+fill -21 64 74 -21 66 74 minecraft:air replace #mg:tv_pass
+setblock -21 64 75 minecraft:dirt_path
+fill -21 65 75 -21 67 75 minecraft:air replace #mg:tv_pass
+setblock -21 64 76 minecraft:dirt_path
+fill -21 65 76 -21 67 76 minecraft:air replace #mg:tv_pass
+setblock -21 64 77 minecraft:dirt_path
+fill -21 65 77 -21 67 77 minecraft:air replace #mg:tv_pass
+setblock -21 64 78 minecraft:dirt_path
+fill -21 65 78 -21 67 78 minecraft:air replace #mg:tv_pass
+setblock -20 63 -58 minecraft:spruce_planks
+setblock -20 63 -57 minecraft:spruce_planks
+setblock -20 63 -56 minecraft:spruce_planks
+setblock -20 63 -55 minecraft:dirt_path
+fill -20 64 -55 -20 66 -55 minecraft:air replace #mg:tv_pass
+setblock -20 63 -54 minecraft:dirt_path
+fill -20 64 -54 -20 66 -54 minecraft:air replace #mg:tv_pass
+setblock -20 63 -53 minecraft:dirt_path
+fill -20 64 -53 -20 66 -53 minecraft:air replace #mg:tv_pass
+setblock -20 63 69 minecraft:dirt_path
+fill -20 64 69 -20 66 69 minecraft:air replace #mg:tv_pass
+setblock -20 63 70 minecraft:dirt_path
+fill -20 64 70 -20 66 70 minecraft:air replace #mg:tv_pass
+setblock -20 63 71 minecraft:dirt_path
+fill -20 64 71 -20 66 71 minecraft:air replace #mg:tv_pass
+setblock -20 63 72 minecraft:dirt_path
+fill -20 64 72 -20 66 72 minecraft:air replace #mg:tv_pass
+setblock -20 63 73 minecraft:dirt_path
+fill -20 64 73 -20 66 73 minecraft:air replace #mg:tv_pass
+setblock -20 63 74 minecraft:dirt_path
+fill -20 64 74 -20 66 74 minecraft:air replace #mg:tv_pass
+setblock -20 64 75 minecraft:dirt_path
+fill -20 65 75 -20 67 75 minecraft:air replace #mg:tv_pass
+setblock -19 63 -57 minecraft:spruce_planks
+setblock -19 63 -56 minecraft:spruce_planks
+setblock -19 63 -55 minecraft:dirt_path
+fill -19 64 -55 -19 66 -55 minecraft:air replace #mg:tv_pass
+setblock -19 64 -54 minecraft:dirt_path
+fill -19 65 -54 -19 67 -54 minecraft:air replace #mg:tv_pass
+setblock -19 63 -53 minecraft:dirt_path
+fill -19 64 -53 -19 66 -53 minecraft:air replace #mg:tv_pass
+setblock -19 63 -52 minecraft:dirt_path
+fill -19 64 -52 -19 66 -52 minecraft:air replace #mg:tv_pass
+setblock -19 63 -51 minecraft:dirt_path
+fill -19 64 -51 -19 66 -51 minecraft:air replace #mg:tv_pass
+setblock -19 63 66 minecraft:spruce_planks
+setblock -19 63 67 minecraft:dirt_path
+fill -19 64 67 -19 66 67 minecraft:air replace #mg:tv_pass
+setblock -19 63 68 minecraft:dirt_path
+fill -19 64 68 -19 66 68 minecraft:air replace #mg:tv_pass
+setblock -19 63 69 minecraft:dirt_path
+fill -19 64 69 -19 66 69 minecraft:air replace #mg:tv_pass
+setblock -19 63 70 minecraft:dirt_path
+fill -19 64 70 -19 66 70 minecraft:air replace #mg:tv_pass
+setblock -19 63 71 minecraft:dirt_path
+fill -19 64 71 -19 66 71 minecraft:air replace #mg:tv_pass
+setblock -19 63 72 minecraft:dirt_path
+fill -19 64 72 -19 66 72 minecraft:air replace #mg:tv_pass
+setblock -19 63 73 minecraft:dirt_path
+fill -19 64 73 -19 66 73 minecraft:air replace #mg:tv_pass
+setblock -19 63 74 minecraft:dirt_path
+fill -19 64 74 -19 66 74 minecraft:air replace #mg:tv_pass
+setblock -18 63 -55 minecraft:dirt_path
+fill -18 64 -55 -18 66 -55 minecraft:air replace #mg:tv_pass
+setblock -18 63 -54 minecraft:dirt_path
+fill -18 64 -54 -18 66 -54 minecraft:air replace #mg:tv_pass
+setblock -18 63 -53 minecraft:dirt_path
+fill -18 64 -53 -18 66 -53 minecraft:air replace #mg:tv_pass
+setblock -18 63 -52 minecraft:dirt_path
+fill -18 64 -52 -18 66 -52 minecraft:air replace #mg:tv_pass
+setblock -18 63 -51 minecraft:dirt_path
+fill -18 64 -51 -18 66 -51 minecraft:air replace #mg:tv_pass
+setblock -18 63 -50 minecraft:dirt_path
+fill -18 64 -50 -18 66 -50 minecraft:air replace #mg:tv_pass
+setblock -18 63 65 minecraft:dirt_path
+fill -18 64 65 -18 66 65 minecraft:air replace #mg:tv_pass
+setblock -18 63 66 minecraft:dirt_path
+fill -18 64 66 -18 66 66 minecraft:air replace #mg:tv_pass
+setblock -18 63 67 minecraft:dirt_path
+fill -18 64 67 -18 66 67 minecraft:air replace #mg:tv_pass
+setblock -18 63 68 minecraft:dirt_path
+fill -18 64 68 -18 66 68 minecraft:air replace #mg:tv_pass
+setblock -18 63 69 minecraft:dirt_path
+fill -18 64 69 -18 66 69 minecraft:air replace #mg:tv_pass
+setblock -18 63 70 minecraft:dirt_path
+fill -18 64 70 -18 66 70 minecraft:air replace #mg:tv_pass
+setblock -18 63 71 minecraft:dirt_path
+fill -18 64 71 -18 66 71 minecraft:air replace #mg:tv_pass
+setblock -17 63 -54 minecraft:dirt_path
+fill -17 64 -54 -17 66 -54 minecraft:air replace #mg:tv_pass
+setblock -17 63 -53 minecraft:dirt_path
+fill -17 64 -53 -17 66 -53 minecraft:air replace #mg:tv_pass
+setblock -17 63 -52 minecraft:dirt_path
+fill -17 64 -52 -17 66 -52 minecraft:air replace #mg:tv_pass
+setblock -17 63 -51 minecraft:dirt_path
+fill -17 64 -51 -17 66 -51 minecraft:air replace #mg:tv_pass
+setblock -17 63 -50 minecraft:dirt_path
+fill -17 64 -50 -17 66 -50 minecraft:air replace #mg:tv_pass
+setblock -17 63 -49 minecraft:dirt_path
+fill -17 64 -49 -17 66 -49 minecraft:air replace #mg:tv_pass
+setblock -17 63 62 minecraft:dirt_path
+fill -17 64 62 -17 66 62 minecraft:air replace #mg:tv_pass
+setblock -17 63 63 minecraft:dirt_path

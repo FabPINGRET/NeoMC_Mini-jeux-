@@ -1,4 +1,4 @@
-# Construction des régions de Terra Nova, étape 243/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 243/436 (dimension mg:terranova, générée)
 fill -173 68 -85 -173 70 -85 minecraft:red_terracotta
 fill -173 71 -85 -173 73 -85 minecraft:light_gray_terracotta
 fill -173 74 -85 -173 76 -85 minecraft:brown_terracotta

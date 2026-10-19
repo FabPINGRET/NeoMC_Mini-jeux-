@@ -1,4 +1,23 @@
-# Construction des régions de Terra Nova, étape 138/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 138/436 (dimension mg:terranova, générée)
+fill 226 73 26 232 73 26 minecraft:air
+fill 226 73 31 228 73 31 minecraft:calcite
+fill 227 73 25 232 73 25 minecraft:air
+setblock 228 73 24 minecraft:stone_bricks
+fill 229 73 24 232 73 24 minecraft:air
+fill 230 73 19 232 73 19 minecraft:calcite
+fill 230 73 29 232 73 29 minecraft:calcite
+fill 231 73 20 233 73 20 minecraft:calcite
+fill 231 73 28 233 73 28 minecraft:calcite
+fill 232 73 21 233 73 21 minecraft:calcite
+fill 232 73 22 232 73 23 minecraft:air
+fill 232 73 27 233 73 27 minecraft:calcite
+fill 233 73 22 234 73 26 minecraft:calcite
+fill 221 74 22 222 74 26 minecraft:calcite
+fill 222 74 20 224 74 20 minecraft:calcite
+fill 222 74 21 223 74 21 minecraft:calcite
+fill 222 74 27 223 74 28 minecraft:calcite
+fill 223 74 19 226 74 19 minecraft:calcite
+fill 223 74 22 232 74 23 minecraft:air
 fill 223 74 24 224 74 26 minecraft:air
 fill 223 74 29 226 74 29 minecraft:calcite
 fill 224 74 18 230 74 18 minecraft:calcite
@@ -180,22 +199,3 @@ setblock 231 79 22 minecraft:stone_brick_slab[type=top]
 fill 231 79 23 233 79 23 minecraft:air
 fill 231 79 29 232 79 29 minecraft:andesite
 fill 232 79 20 233 79 20 minecraft:andesite
-setblock 232 79 22 minecraft:air
-fill 232 79 28 233 79 28 minecraft:andesite
-fill 233 79 21 234 79 22 minecraft:andesite
-fill 233 79 26 234 79 27 minecraft:andesite
-fill 234 79 23 234 79 25 minecraft:andesite
-fill 222 80 22 223 80 22 minecraft:stone
-fill 222 80 23 222 80 26 minecraft:stone
-fill 223 80 20 224 80 20 minecraft:stone
-setblock 223 80 21 minecraft:stone
-fill 223 80 23 232 80 23 minecraft:air
-fill 223 80 24 227 80 25 minecraft:air
-fill 223 80 26 223 80 28 minecraft:stone
-fill 224 80 19 225 80 19 minecraft:stone
-fill 224 80 21 232 80 22 minecraft:air
-fill 224 80 26 232 80 27 minecraft:air
-fill 224 80 28 224 80 29 minecraft:stone
-fill 225 80 18 231 80 18 minecraft:stone
-fill 225 80 20 231 80 20 minecraft:air
-fill 225 80 28 231 80 28 minecraft:air

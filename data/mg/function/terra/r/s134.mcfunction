@@ -1,11 +1,4 @@
-# Construction des régions de Terra Nova, étape 134/435 (dimension mg:terranova, générée)
-setblock 134 73 12 minecraft:iron_bars
-setblock 135 73 -1 minecraft:birch_log
-fill 135 73 0 136 73 2 minecraft:air
-fill 135 73 12 136 73 12 minecraft:air
-setblock 135 73 13 minecraft:birch_log
-setblock 136 73 -1 minecraft:air
-setblock 136 73 13 minecraft:air
+# Construction des régions de Terra Nova, étape 134/436 (dimension mg:terranova, générée)
 fill 120 74 -2 136 74 -2 minecraft:air
 fill 120 74 -1 120 74 14 minecraft:air
 setblock 121 74 -1 minecraft:lantern[hanging=false]
@@ -148,12 +141,14 @@ fill 136 79 -1 136 79 3 minecraft:air
 fill 120 80 -2 136 80 -2 minecraft:air
 fill 120 80 -1 130 80 14 minecraft:air
 setblock 131 80 -1 minecraft:birch_log
-fill 131 80 0 135 80 2 minecraft:birch_fence
+fill 131 80 0 131 80 2 minecraft:birch_fence
 setblock 131 80 3 minecraft:birch_log
 fill 131 80 4 136 80 14 minecraft:air
 fill 132 80 -1 134 80 -1 minecraft:birch_fence
+fill 132 80 0 134 80 2 minecraft:air
 fill 132 80 3 134 80 3 minecraft:birch_fence
 setblock 135 80 -1 minecraft:birch_log
+fill 135 80 0 135 80 2 minecraft:birch_fence
 setblock 135 80 3 minecraft:birch_log
 fill 136 80 -1 136 80 3 minecraft:air
 fill 120 81 -2 136 81 -2 minecraft:air
@@ -199,3 +194,8 @@ setblock 136 83 3 minecraft:air
 fill 120 84 -2 136 84 -1 minecraft:air
 fill 120 84 0 130 84 14 minecraft:air
 fill 131 84 0 135 84 0 minecraft:birch_stairs[facing=south,half=bottom]
+setblock 131 84 1 minecraft:birch_planks
+fill 131 84 2 135 84 2 minecraft:birch_stairs[facing=north,half=bottom]
+fill 131 84 3 136 84 14 minecraft:air
+fill 132 84 1 134 84 1 minecraft:air
+setblock 135 84 1 minecraft:birch_planks

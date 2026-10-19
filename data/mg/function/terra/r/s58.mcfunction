@@ -1,11 +1,4 @@
-# Construction des régions de Terra Nova, étape 58/435 (dimension mg:terranova, générée)
-fill -33 67 -116 -32 67 -116 minecraft:stripped_mangrove_log
-setblock -32 67 -120 minecraft:mangrove_planks
-setblock -32 67 -119 minecraft:glass_pane
-setblock -32 67 -118 minecraft:mangrove_planks
-setblock -32 67 -117 minecraft:stripped_mangrove_log
-fill -31 67 -121 -22 67 -117 minecraft:air
-fill -31 67 -116 -25 67 -116 minecraft:air
+# Construction des régions de Terra Nova, étape 58/436 (dimension mg:terranova, générée)
 fill -26 67 -128 -24 67 -128 minecraft:mangrove_log
 fill -26 67 -127 -26 67 -126 minecraft:mangrove_log
 fill -26 67 -125 -22 67 -122 minecraft:air
@@ -161,12 +154,14 @@ fill -22 73 -129 -22 73 -125 minecraft:air
 fill -38 74 -130 -22 74 -130 minecraft:air
 fill -38 74 -129 -28 74 -114 minecraft:air
 setblock -27 74 -129 minecraft:mangrove_log
-fill -27 74 -128 -23 74 -126 minecraft:mangrove_fence
+fill -27 74 -128 -27 74 -126 minecraft:mangrove_fence
 setblock -27 74 -125 minecraft:mangrove_log
 fill -27 74 -124 -22 74 -114 minecraft:air
 fill -26 74 -129 -24 74 -129 minecraft:mangrove_fence
+fill -26 74 -128 -24 74 -126 minecraft:air
 fill -26 74 -125 -24 74 -125 minecraft:mangrove_fence
 setblock -23 74 -129 minecraft:mangrove_log
+fill -23 74 -128 -23 74 -126 minecraft:mangrove_fence
 setblock -23 74 -125 minecraft:mangrove_log
 fill -22 74 -129 -22 74 -125 minecraft:air
 fill -38 75 -130 -22 75 -130 minecraft:air
@@ -199,3 +194,8 @@ setblock -22 76 -129 minecraft:air
 setblock -22 76 -125 minecraft:air
 fill -38 77 -130 -22 77 -130 minecraft:air
 fill -38 77 -129 -28 77 -114 minecraft:air
+fill -27 77 -129 -23 77 -129 minecraft:mangrove_stairs[facing=south,half=bottom]
+fill -27 77 -128 -22 77 -128 minecraft:air
+fill -27 77 -127 -26 77 -126 minecraft:air
+fill -27 77 -125 -23 77 -125 minecraft:mangrove_stairs[facing=north,half=bottom]
+fill -27 77 -124 -22 77 -114 minecraft:air

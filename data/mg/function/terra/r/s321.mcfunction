@@ -1,4 +1,72 @@
-# Construction des régions de Terra Nova, étape 321/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 321/436 (dimension mg:terranova, générée)
+fill -220 83 -15 -177 83 23 minecraft:air
+setblock -220 83 24 minecraft:dark_oak_slab
+fill -220 83 25 -177 83 27 minecraft:air
+fill -219 83 -16 -181 83 -16 minecraft:air
+fill -219 83 24 -181 83 24 minecraft:air
+setblock -180 83 -16 minecraft:dark_oak_slab
+setblock -180 83 24 minecraft:dark_oak_slab
+fill -179 83 -16 -177 83 -16 minecraft:air
+fill -179 83 24 -177 83 24 minecraft:air
+fill -223 84 -19 -177 84 -17 minecraft:air
+fill -223 84 -16 -221 84 27 minecraft:air
+setblock -220 84 -16 minecraft:dark_oak_fence
+fill -220 84 -15 -177 84 23 minecraft:air
+setblock -220 84 24 minecraft:dark_oak_fence
+fill -220 84 25 -177 84 27 minecraft:air
+fill -219 84 -16 -181 84 -16 minecraft:air
+fill -219 84 24 -181 84 24 minecraft:air
+setblock -180 84 -16 minecraft:dark_oak_fence
+setblock -180 84 24 minecraft:dark_oak_fence
+fill -179 84 -16 -177 84 -16 minecraft:air
+fill -179 84 24 -177 84 24 minecraft:air
+fill -223 85 -19 -177 85 -17 minecraft:air
+fill -223 85 -16 -221 85 27 minecraft:air
+setblock -220 85 -16 minecraft:red_wool
+fill -220 85 -15 -177 85 23 minecraft:air
+setblock -220 85 24 minecraft:red_wool
+fill -220 85 25 -177 85 27 minecraft:air
+fill -219 85 -16 -181 85 -16 minecraft:air
+fill -219 85 24 -181 85 24 minecraft:air
+setblock -180 85 -16 minecraft:red_wool
+setblock -180 85 24 minecraft:red_wool
+fill -179 85 -16 -177 85 -16 minecraft:air
+fill -179 85 24 -177 85 24 minecraft:air
+fill -223 86 -19 -177 86 27 minecraft:air
+fill -142 64 -60 -140 66 -56 minecraft:terracotta
+fill -142 66 -60 -140 68 -56 minecraft:yellow_terracotta
+fill -142 67 -60 -140 69 -56 minecraft:yellow_terracotta
+fill -142 69 -60 -140 71 -56 minecraft:white_terracotta
+fill -143 71 -60 -141 73 -56 minecraft:white_terracotta
+fill -143 72 -60 -141 74 -56 minecraft:red_terracotta
+fill -144 73 -60 -142 75 -56 minecraft:red_terracotta
+fill -144 75 -60 -142 77 -56 minecraft:light_gray_terracotta
+fill -145 76 -60 -143 78 -56 minecraft:light_gray_terracotta
+fill -146 77 -60 -144 79 -56 minecraft:light_gray_terracotta
+fill -147 78 -60 -145 80 -56 minecraft:brown_terracotta
+fill -147 79 -60 -145 81 -56 minecraft:brown_terracotta
+fill -148 79 -60 -146 81 -56 minecraft:brown_terracotta
+fill -149 80 -60 -147 82 -56 minecraft:brown_terracotta
+fill -150 80 -60 -148 82 -56 minecraft:brown_terracotta
+fill -151 80 -60 -149 82 -56 minecraft:brown_terracotta
+fill -152 80 -60 -150 82 -56 minecraft:brown_terracotta
+fill -153 80 -60 -151 82 -56 minecraft:brown_terracotta
+fill -154 79 -60 -152 81 -56 minecraft:brown_terracotta
+fill -155 79 -60 -153 81 -56 minecraft:brown_terracotta
+fill -155 78 -60 -153 80 -56 minecraft:brown_terracotta
+fill -156 77 -60 -154 79 -56 minecraft:light_gray_terracotta
+fill -157 76 -60 -155 78 -56 minecraft:light_gray_terracotta
+fill -158 75 -60 -156 77 -56 minecraft:light_gray_terracotta
+fill -158 73 -60 -156 75 -56 minecraft:red_terracotta
+fill -159 72 -60 -157 74 -56 minecraft:red_terracotta
+fill -159 71 -60 -157 73 -56 minecraft:white_terracotta
+fill -160 69 -60 -158 71 -56 minecraft:white_terracotta
+fill -160 67 -60 -158 69 -56 minecraft:yellow_terracotta
+fill -160 66 -60 -158 68 -56 minecraft:yellow_terracotta
+fill -160 64 -60 -158 66 -56 minecraft:terracotta
+fill -161 64 -61 -157 70 -55 minecraft:red_terracotta
+fill -143 64 -61 -139 70 -55 minecraft:red_terracotta
+fill -149 64 55 -135 64 69 minecraft:terracotta
 fill -149 65 55 -135 65 69 minecraft:terracotta
 fill -149 66 55 -135 66 69 minecraft:yellow_terracotta
 fill -149 67 55 -135 67 69 minecraft:yellow_terracotta
@@ -131,71 +199,3 @@ fill -143 77 51 -141 77 51 minecraft:acacia_stairs[facing=south,half=bottom]
 fill -143 77 52 -141 77 54 minecraft:acacia_planks
 setblock -142 77 55 minecraft:acacia_log
 setblock -142 77 62 minecraft:acacia_log
-setblock -142 77 69 minecraft:acacia_log
-fill -142 77 70 -141 77 70 minecraft:acacia_planks
-setblock -135 77 55 minecraft:acacia_log
-setblock -135 77 62 minecraft:acacia_log
-setblock -135 77 69 minecraft:acacia_log
-fill -134 77 61 -132 77 63 minecraft:acacia_planks
-fill -131 77 61 -131 77 63 minecraft:acacia_stairs[facing=west,half=bottom]
-setblock -149 78 55 minecraft:acacia_log
-setblock -149 78 62 minecraft:acacia_log
-setblock -149 78 69 minecraft:acacia_log
-fill -143 78 52 -141 78 52 minecraft:acacia_stairs[facing=south,half=bottom]
-fill -143 78 53 -141 78 54 minecraft:acacia_planks
-setblock -142 78 55 minecraft:acacia_log
-setblock -142 78 62 minecraft:acacia_log
-setblock -142 78 69 minecraft:acacia_log
-fill -142 78 70 -141 78 70 minecraft:acacia_planks
-setblock -135 78 55 minecraft:acacia_log
-setblock -135 78 62 minecraft:acacia_log
-setblock -135 78 69 minecraft:acacia_log
-fill -134 78 61 -133 78 63 minecraft:acacia_planks
-fill -132 78 61 -132 78 63 minecraft:acacia_stairs[facing=west,half=bottom]
-setblock -149 79 55 minecraft:acacia_log
-setblock -149 79 62 minecraft:acacia_log
-setblock -149 79 69 minecraft:acacia_log
-fill -143 79 53 -141 79 53 minecraft:acacia_stairs[facing=south,half=bottom]
-fill -143 79 54 -141 79 54 minecraft:acacia_planks
-fill -143 79 70 -141 79 70 minecraft:acacia_planks
-setblock -142 79 55 minecraft:acacia_log
-setblock -142 79 62 minecraft:acacia_log
-setblock -142 79 69 minecraft:acacia_log
-setblock -135 79 55 minecraft:acacia_log
-setblock -135 79 62 minecraft:acacia_log
-setblock -135 79 69 minecraft:acacia_log
-fill -134 79 61 -134 79 63 minecraft:acacia_planks
-fill -133 79 61 -133 79 63 minecraft:acacia_stairs[facing=west,half=bottom]
-fill -149 80 55 -135 80 55 minecraft:stripped_acacia_log[axis=x]
-fill -149 80 56 -135 80 60 minecraft:acacia_planks
-fill -149 80 61 -144 80 68 minecraft:acacia_planks
-fill -149 80 69 -135 80 69 minecraft:stripped_acacia_log[axis=x]
-fill -143 80 54 -141 80 54 minecraft:acacia_stairs[facing=south,half=bottom]
-fill -143 80 61 -141 80 61 minecraft:polished_andesite
-fill -143 80 62 -143 80 63 minecraft:polished_andesite
-fill -143 80 64 -135 80 68 minecraft:acacia_planks
-fill -143 80 70 -141 80 70 minecraft:acacia_stairs[facing=north,half=bottom]
-setblock -142 80 62 minecraft:lodestone
-fill -142 80 63 -141 80 63 minecraft:polished_andesite
-setblock -141 80 62 minecraft:polished_andesite
-fill -140 80 61 -135 80 63 minecraft:acacia_planks
-fill -134 80 61 -134 80 63 minecraft:acacia_stairs[facing=west,half=bottom]
-fill -150 81 54 -134 81 54 minecraft:air
-fill -150 81 55 -150 81 70 minecraft:air
-setblock -149 81 55 minecraft:acacia_log
-fill -149 81 56 -149 81 60 minecraft:acacia_fence
-fill -149 81 61 -149 81 62 minecraft:air
-setblock -149 81 63 minecraft:stripped_acacia_log
-fill -149 81 64 -149 81 66 minecraft:acacia_planks
-fill -149 81 67 -149 81 68 minecraft:stripped_acacia_log
-setblock -149 81 69 minecraft:acacia_log
-fill -149 81 70 -144 81 70 minecraft:air
-fill -148 81 55 -144 81 55 minecraft:acacia_fence
-setblock -148 81 56 minecraft:hay_block
-setblock -148 81 57 minecraft:barrel[facing=up]
-fill -148 81 58 -139 81 60 minecraft:acacia_fence
-fill -148 81 61 -144 81 62 minecraft:acacia_fence
-fill -148 81 63 -147 81 63 minecraft:acacia_planks
-setblock -148 81 64 minecraft:cartography_table
-fill -148 81 65 -145 81 65 minecraft:air
-setblock -148 81 66 minecraft:orange_bed[facing=south,part=foot]

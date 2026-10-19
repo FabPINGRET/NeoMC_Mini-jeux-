@@ -29,7 +29,8 @@ class Vox:
         for x in range(x1, x2 + 1):
             for y in range(y1, y2 + 1):
                 for z in range(z1, z2 + 1):
-                    edge = x in (x1, x2) or y in (y1, y2) or z in (z1, z2)
+                    # une couche seule en outline : seulement le contour (sinon tout est « bord »)
+                    edge = x in (x1, x2) or z in (z1, z2) or (y in (y1, y2) and not (outline and y1 == y2))
                     if (hollow or outline) and not edge:
                         if hollow:
                             self.v[(x, y, z)] = AIR

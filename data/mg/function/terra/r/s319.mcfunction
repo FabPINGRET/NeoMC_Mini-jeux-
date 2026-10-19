@@ -1,4 +1,8 @@
-# Construction des régions de Terra Nova, étape 319/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 319/436 (dimension mg:terranova, générée)
+setblock -217 75 -18 minecraft:spruce_planks
+setblock -217 75 -16 minecraft:stripped_dark_oak_log
+setblock -217 75 -14 minecraft:spruce_planks
+setblock -217 75 -13 minecraft:stripped_dark_oak_log
 setblock -217 75 21 minecraft:stripped_dark_oak_log
 setblock -217 75 22 minecraft:spruce_planks
 setblock -217 75 24 minecraft:stripped_dark_oak_log
@@ -195,7 +199,3 @@ setblock -220 77 -16 minecraft:iron_chain
 fill -220 77 -15 -218 77 -14 minecraft:air
 setblock -220 77 -13 minecraft:stripped_dark_oak_log
 setblock -220 77 21 minecraft:stripped_dark_oak_log
-setblock -220 77 24 minecraft:iron_chain
-fill -220 77 25 -218 77 26 minecraft:air
-setblock -220 77 27 minecraft:stripped_dark_oak_log
-fill -219 77 -19 -218 77 -19 minecraft:spruce_planks

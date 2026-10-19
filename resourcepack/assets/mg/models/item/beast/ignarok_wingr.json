@@ -1,0 +1,145 @@
+{
+  "textures": {
+    "dark": "mg:item/beast/ignarok_dark",
+    "wing": "mg:item/beast/ignarok_wing",
+    "particle": "mg:item/beast/ignarok_dark"
+  },
+  "elements": [
+    {
+      "from": [
+        -13.504,
+        7.194,
+        6.925
+      ],
+      "to": [
+        8.0,
+        8.806,
+        9.075
+      ],
+      "faces": {
+        "north": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16.0,
+            4.03
+          ]
+        },
+        "south": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16.0,
+            4.03
+          ]
+        },
+        "east": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            5.38,
+            4.03
+          ]
+        },
+        "west": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            5.38,
+            4.03
+          ]
+        },
+        "up": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16.0,
+            5.38
+          ]
+        },
+        "down": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16.0,
+            5.38
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        -13.504,
+        7.664,
+        -10.063
+      ],
+      "to": [
+        8.0,
+        8.336,
+        8.0
+      ],
+      "faces": {
+        "north": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            1.68
+          ]
+        },
+        "south": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            1.68
+          ]
+        },
+        "east": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            1.68
+          ]
+        },
+        "west": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            1.68
+          ]
+        },
+        "up": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            16.0
+          ]
+        }
+      }
+    }
+  ]
+}

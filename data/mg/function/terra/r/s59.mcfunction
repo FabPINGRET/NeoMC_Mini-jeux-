@@ -1,9 +1,4 @@
-# Construction des régions de Terra Nova, étape 59/435 (dimension mg:terranova, générée)
-fill -27 77 -129 -23 77 -129 minecraft:mangrove_stairs[facing=south,half=bottom]
-fill -27 77 -128 -22 77 -128 minecraft:air
-fill -27 77 -127 -26 77 -126 minecraft:air
-fill -27 77 -125 -23 77 -125 minecraft:mangrove_stairs[facing=north,half=bottom]
-fill -27 77 -124 -22 77 -114 minecraft:air
+# Construction des régions de Terra Nova, étape 59/436 (dimension mg:terranova, générée)
 setblock -25 77 -127 minecraft:iron_chain
 fill -25 77 -126 -22 77 -126 minecraft:air
 fill -24 77 -127 -22 77 -127 minecraft:air
@@ -199,3 +194,8 @@ setblock -48 64 -157 minecraft:iron_bars
 fill -47 64 -157 -45 64 -157 minecraft:iron_block
 setblock -44 64 -160 minecraft:campfire[lit=true,signal_fire=false]
 setblock -44 64 -157 minecraft:iron_bars
+setblock -42 64 -161 minecraft:iron_trapdoor[facing=north,half=top,open=false]
+setblock -42 64 -155 minecraft:iron_trapdoor[facing=north,half=top,open=false]
+fill -74 65 -178 -50 65 -178 minecraft:air
+fill -74 65 -177 -57 65 -177 minecraft:air
+fill -74 65 -176 -73 65 -158 minecraft:air

@@ -1,0 +1,145 @@
+{
+  "textures": {
+    "dark": "mg:item/beast/nyxar_dark",
+    "wing": "mg:item/beast/nyxar_wing",
+    "particle": "mg:item/beast/nyxar_dark"
+  },
+  "elements": [
+    {
+      "from": [
+        -14.154,
+        7.262,
+        7.015
+      ],
+      "to": [
+        8.0,
+        8.738,
+        8.985
+      ],
+      "faces": {
+        "north": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16.0,
+            4.8
+          ]
+        },
+        "south": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16.0,
+            4.8
+          ]
+        },
+        "east": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            6.4,
+            4.8
+          ]
+        },
+        "west": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            6.4,
+            4.8
+          ]
+        },
+        "up": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16.0,
+            6.4
+          ]
+        },
+        "down": {
+          "texture": "#dark",
+          "uv": [
+            0,
+            0,
+            16.0,
+            6.4
+          ]
+        }
+      }
+    },
+    {
+      "from": [
+        -14.154,
+        7.692,
+        -10.609
+      ],
+      "to": [
+        8.0,
+        8.308,
+        8.0
+      ],
+      "faces": {
+        "north": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            2.0
+          ]
+        },
+        "south": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            2.0
+          ]
+        },
+        "east": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            2.0
+          ]
+        },
+        "west": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            2.0
+          ]
+        },
+        "up": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            16.0
+          ]
+        },
+        "down": {
+          "texture": "#wing",
+          "uv": [
+            0,
+            0,
+            16.0,
+            16.0
+          ]
+        }
+      }
+    }
+  ]
+}

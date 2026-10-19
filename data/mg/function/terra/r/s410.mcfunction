@@ -1,201 +1,201 @@
-# Construction des régions de Terra Nova, étape 410/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 410/436 (dimension mg:terranova, générée)
+fill -23 81 116 -18 81 116 minecraft:air
+fill -23 81 117 -22 81 118 minecraft:air
+fill -23 81 119 -19 81 119 minecraft:dark_oak_stairs[facing=north,half=bottom]
+fill -23 81 120 -18 81 130 minecraft:air
+setblock -21 81 117 minecraft:iron_chain
+fill -21 81 118 -18 81 118 minecraft:air
+fill -20 81 117 -18 81 117 minecraft:air
+setblock -18 81 115 minecraft:air
+setblock -18 81 119 minecraft:air
+fill -34 82 114 -18 82 115 minecraft:air
+fill -34 82 116 -24 82 130 minecraft:air
+fill -23 82 116 -19 82 116 minecraft:dark_oak_stairs[facing=south,half=bottom]
+setblock -23 82 117 minecraft:dark_oak_planks
+fill -23 82 118 -19 82 118 minecraft:dark_oak_stairs[facing=north,half=bottom]
+fill -23 82 119 -18 82 130 minecraft:air
+fill -22 82 117 -20 82 117 minecraft:air
+setblock -19 82 117 minecraft:dark_oak_planks
+fill -18 82 116 -18 82 118 minecraft:air
+fill -23 83 117 -19 83 117 minecraft:dark_oak_slab
+setblock 55 85 174 minecraft:obsidian
+setblock 55 86 174 minecraft:air
+setblock 55 85 175 minecraft:obsidian
+setblock 55 86 175 minecraft:air
+setblock 55 85 176 minecraft:obsidian
+setblock 55 86 176 minecraft:air
+setblock 56 85 174 minecraft:obsidian
+setblock 56 86 174 minecraft:air
+setblock 56 85 175 minecraft:obsidian
+setblock 56 86 175 minecraft:air
+setblock 56 85 176 minecraft:obsidian
+setblock 56 86 176 minecraft:air
+setblock 56 85 177 minecraft:obsidian
+setblock 56 86 177 minecraft:air
+setblock 56 85 178 minecraft:obsidian
+setblock 56 86 178 minecraft:air
+setblock 57 85 174 minecraft:obsidian
+setblock 57 86 174 minecraft:air
+setblock 57 85 175 minecraft:obsidian
+setblock 57 86 175 minecraft:air
+setblock 57 85 176 minecraft:obsidian
+setblock 57 86 176 minecraft:air
+setblock 57 85 177 minecraft:obsidian
+setblock 57 86 177 minecraft:air
+setblock 57 85 178 minecraft:obsidian
+setblock 57 86 178 minecraft:air
+setblock 58 85 174 minecraft:obsidian
+setblock 58 86 174 minecraft:air
+setblock 58 85 175 minecraft:obsidian
+setblock 58 86 175 minecraft:air
+setblock 58 85 176 minecraft:obsidian
+setblock 58 86 176 minecraft:air
+setblock 58 85 177 minecraft:obsidian
+setblock 58 86 177 minecraft:air
+setblock 58 85 178 minecraft:obsidian
+setblock 58 86 178 minecraft:air
+setblock 59 85 174 minecraft:obsidian
+setblock 59 86 174 minecraft:air
+setblock 59 85 175 minecraft:obsidian
+setblock 59 86 175 minecraft:air
+setblock 59 85 176 minecraft:obsidian
+setblock 59 86 176 minecraft:air
+setblock 59 85 177 minecraft:obsidian
+setblock 59 86 177 minecraft:air
+setblock 59 85 178 minecraft:obsidian
+setblock 59 86 178 minecraft:air
+setblock 60 85 175 minecraft:obsidian
+setblock 60 86 175 minecraft:air
+setblock 60 85 176 minecraft:obsidian
+setblock 60 86 176 minecraft:air
+setblock 60 85 177 minecraft:obsidian
+setblock 60 86 177 minecraft:air
+setblock 60 85 178 minecraft:obsidian
+setblock 60 86 178 minecraft:air
+setblock 61 85 177 minecraft:obsidian
+setblock 61 86 177 minecraft:air
+setblock 61 85 178 minecraft:obsidian
+setblock 61 86 178 minecraft:air
+fill -23 62 99 -23 66 99 minecraft:obsidian
+setblock -23 67 99 minecraft:air
+fill -22 62 98 -22 66 98 minecraft:obsidian
+setblock -22 67 98 minecraft:air
+fill -23 62 100 -23 66 100 minecraft:obsidian
+setblock -23 67 100 minecraft:air
+fill -22 62 99 -22 66 99 minecraft:obsidian
+setblock -22 67 99 minecraft:air
+fill -23 62 101 -23 66 101 minecraft:obsidian
+setblock -23 67 101 minecraft:air
+fill -22 62 100 -22 66 100 minecraft:obsidian
+setblock -22 67 100 minecraft:air
+fill -23 62 102 -23 66 102 minecraft:obsidian
+setblock -23 67 102 minecraft:air
+fill -22 62 101 -22 66 101 minecraft:obsidian
+setblock -22 67 101 minecraft:air
+fill -23 62 103 -23 66 103 minecraft:obsidian
+setblock -23 67 103 minecraft:air
+fill -22 62 102 -22 66 102 minecraft:obsidian
+setblock -22 67 102 minecraft:air
+fill -22 62 103 -22 66 103 minecraft:obsidian
+setblock -22 67 103 minecraft:air
+fill -22 62 104 -22 66 104 minecraft:obsidian
+setblock -22 67 104 minecraft:air
+fill -33 63 128 -33 67 128 minecraft:obsidian
+setblock -33 68 128 minecraft:air
+fill -34 63 128 -34 67 128 minecraft:obsidian
+setblock -34 68 128 minecraft:air
+fill -35 63 128 -35 67 128 minecraft:obsidian
+setblock -35 68 128 minecraft:air
+fill -34 63 129 -34 67 129 minecraft:obsidian
+setblock -34 68 129 minecraft:air
+fill -36 63 128 -36 67 128 minecraft:obsidian
+setblock -36 68 128 minecraft:air
+fill -36 63 129 -36 67 129 minecraft:obsidian
+setblock -36 68 129 minecraft:air
+fill -35 63 129 -35 67 129 minecraft:obsidian
+setblock -35 68 129 minecraft:air
+fill -35 63 130 -35 67 130 minecraft:obsidian
+setblock -35 68 130 minecraft:air
+fill -36 63 130 -36 67 130 minecraft:obsidian
+setblock -36 68 130 minecraft:air
+fill -37 63 129 -37 67 129 minecraft:obsidian
+setblock -37 68 129 minecraft:air
+fill -37 63 130 -37 67 130 minecraft:obsidian
+setblock -37 68 130 minecraft:air
+fill -37 63 131 -37 67 131 minecraft:obsidian
+setblock -37 68 131 minecraft:air
+fill -38 64 130 -38 68 130 minecraft:obsidian
+setblock -38 69 130 minecraft:air
+fill -38 64 131 -38 68 131 minecraft:obsidian
+setblock -38 69 131 minecraft:air
+fill -39 64 131 -39 68 131 minecraft:obsidian
+setblock -39 69 131 minecraft:air
+fill -39 64 132 -39 68 132 minecraft:obsidian
+setblock -39 69 132 minecraft:air
+fill 59 81 179 59 85 179 minecraft:obsidian
+setblock 59 86 179 minecraft:air
+fill 60 81 179 60 85 179 minecraft:obsidian
+setblock 60 86 179 minecraft:air
+fill 61 81 179 61 85 179 minecraft:obsidian
+setblock 61 86 179 minecraft:air
+fill 57 81 179 57 85 179 minecraft:obsidian
+setblock 57 86 179 minecraft:air
+fill 58 81 178 58 85 178 minecraft:obsidian
+setblock 58 86 178 minecraft:air
+fill 58 81 179 58 85 179 minecraft:obsidian
+setblock 58 86 179 minecraft:air
+fill 59 81 178 59 85 178 minecraft:obsidian
+setblock 59 86 178 minecraft:air
+fill 60 81 178 60 85 178 minecraft:obsidian
+setblock 60 86 178 minecraft:air
+fill 57 81 178 57 85 178 minecraft:obsidian
+setblock 57 86 178 minecraft:air
+fill 58 81 177 58 85 177 minecraft:obsidian
+setblock 58 86 177 minecraft:air
+fill 59 81 177 59 85 177 minecraft:obsidian
+setblock 59 86 177 minecraft:air
+fill 60 81 177 60 85 177 minecraft:obsidian
+setblock 60 86 177 minecraft:air
+fill 61 81 178 61 85 178 minecraft:obsidian
+setblock 61 86 178 minecraft:air
+fill 57 81 177 57 85 177 minecraft:obsidian
+setblock 57 86 177 minecraft:air
+fill 58 81 176 58 85 176 minecraft:obsidian
+setblock 58 86 176 minecraft:air
+fill 59 81 176 59 85 176 minecraft:obsidian
+setblock 59 86 176 minecraft:air
+fill 60 81 176 60 85 176 minecraft:obsidian
+setblock 60 86 176 minecraft:air
+fill 61 81 177 61 85 177 minecraft:obsidian
+setblock 61 86 177 minecraft:air
+fill 56 81 177 56 85 177 minecraft:obsidian
+setblock 56 86 177 minecraft:air
+fill 56 81 178 56 85 178 minecraft:obsidian
+setblock 56 86 178 minecraft:air
+fill 56 81 179 56 85 179 minecraft:obsidian
+setblock 56 86 179 minecraft:air
+fill 57 81 176 57 85 176 minecraft:obsidian
+setblock 57 86 176 minecraft:air
+fill 56 81 176 56 85 176 minecraft:obsidian
+setblock 56 86 176 minecraft:air
+fill 57 81 175 57 85 175 minecraft:obsidian
+setblock 57 86 175 minecraft:air
+fill 58 81 175 58 85 175 minecraft:obsidian
+setblock 58 86 175 minecraft:air
+fill 59 81 175 59 85 175 minecraft:obsidian
+setblock 59 86 175 minecraft:air
+fill 56 81 175 56 85 175 minecraft:obsidian
+setblock 56 86 175 minecraft:air
+fill 57 81 174 57 85 174 minecraft:obsidian
+setblock 57 86 174 minecraft:air
+fill 58 81 174 58 85 174 minecraft:obsidian
+setblock 58 86 174 minecraft:air
+fill 59 81 174 59 85 174 minecraft:obsidian
+setblock 59 86 174 minecraft:air
+fill 60 81 175 60 85 175 minecraft:obsidian
+setblock 60 86 175 minecraft:air
 fill 55 81 174 55 85 174 minecraft:obsidian
 setblock 55 86 174 minecraft:air
 fill 55 81 175 55 85 175 minecraft:obsidian
 setblock 55 86 175 minecraft:air
 fill 55 81 176 55 85 176 minecraft:obsidian
-setblock 55 86 176 minecraft:air
-fill 56 81 173 56 85 173 minecraft:obsidian
-setblock 56 86 173 minecraft:air
-fill 56 81 174 56 85 174 minecraft:obsidian
-setblock 56 86 174 minecraft:air
-fill 57 81 173 57 85 173 minecraft:obsidian
-setblock 57 86 173 minecraft:air
-fill 58 81 173 58 85 173 minecraft:obsidian
-setblock 58 86 173 minecraft:air
-fill 55 81 173 55 85 173 minecraft:obsidian
-setblock 55 86 173 minecraft:air
-fill 59 81 173 59 85 173 minecraft:obsidian
-setblock 59 86 173 minecraft:air
-fill 54 81 173 54 85 173 minecraft:obsidian
-setblock 54 86 173 minecraft:air
-fill -2 99 201 2 107 206 minecraft:air
-fill -2 98 201 2 98 206 minecraft:polished_blackstone
-fill -14 98 186 -13 98 186 minecraft:magma_block
-fill -13 98 181 -12 98 182 minecraft:magma_block
-fill -13 98 183 -13 98 185 minecraft:magma_block
-fill -13 98 187 -13 98 191 minecraft:magma_block
-fill -12 98 176 -10 98 176 minecraft:blackstone
-fill -12 98 177 -12 98 178 minecraft:blackstone
-fill -12 98 179 -11 98 180 minecraft:magma_block
-fill -12 98 183 -12 98 189 minecraft:polished_blackstone_bricks
-fill -12 98 190 -12 98 193 minecraft:magma_block
-fill -12 98 194 -10 98 194 minecraft:blackstone
-fill -12 98 195 -12 98 196 minecraft:blackstone
-setblock -11 98 177 minecraft:lava
-fill -11 98 178 -10 98 178 minecraft:blackstone
-setblock -11 98 181 minecraft:polished_blackstone_bricks
-setblock -11 98 182 minecraft:polished_blackstone
-setblock -11 98 183 minecraft:blackstone
-setblock -11 98 184 minecraft:polished_blackstone
-setblock -11 98 185 minecraft:blackstone
-setblock -11 98 186 minecraft:polished_blackstone
-setblock -11 98 187 minecraft:blackstone
-setblock -11 98 188 minecraft:polished_blackstone
-setblock -11 98 189 minecraft:blackstone
-setblock -11 98 190 minecraft:polished_blackstone
-setblock -11 98 191 minecraft:polished_blackstone_bricks
-fill -11 98 192 -11 98 193 minecraft:magma_block
-setblock -11 98 195 minecraft:lava
-fill -11 98 196 -10 98 196 minecraft:blackstone
-setblock -10 98 177 minecraft:blackstone
-setblock -10 98 179 minecraft:polished_blackstone_bricks
-setblock -10 98 180 minecraft:blackstone
-setblock -10 98 181 minecraft:polished_blackstone
-setblock -10 98 182 minecraft:blackstone
-setblock -10 98 183 minecraft:polished_blackstone
-setblock -10 98 184 minecraft:blackstone
-setblock -10 98 185 minecraft:polished_blackstone
-setblock -10 98 186 minecraft:blackstone
-setblock -10 98 187 minecraft:polished_blackstone
-setblock -10 98 188 minecraft:blackstone
-setblock -10 98 189 minecraft:polished_blackstone
-setblock -10 98 190 minecraft:blackstone
-setblock -10 98 191 minecraft:polished_blackstone
-setblock -10 98 192 minecraft:blackstone
-setblock -10 98 193 minecraft:polished_blackstone_bricks
-setblock -10 98 195 minecraft:blackstone
-fill -9 98 176 -8 98 176 minecraft:magma_block
-setblock -9 98 177 minecraft:magma_block
-setblock -9 98 178 minecraft:polished_blackstone_bricks
-setblock -9 98 179 minecraft:blackstone
-setblock -9 98 180 minecraft:polished_blackstone
-setblock -9 98 181 minecraft:blackstone
-setblock -9 98 182 minecraft:polished_blackstone
-setblock -9 98 183 minecraft:blackstone
-setblock -9 98 184 minecraft:polished_blackstone
-setblock -9 98 185 minecraft:blackstone
-setblock -9 98 186 minecraft:polished_blackstone
-setblock -9 98 187 minecraft:blackstone
-setblock -9 98 188 minecraft:polished_blackstone
-setblock -9 98 189 minecraft:blackstone
-setblock -9 98 190 minecraft:polished_blackstone
-setblock -9 98 191 minecraft:blackstone
-setblock -9 98 192 minecraft:polished_blackstone
-setblock -9 98 193 minecraft:blackstone
-setblock -9 98 194 minecraft:polished_blackstone_bricks
-fill -9 98 195 -9 98 196 minecraft:magma_block
-fill -8 98 175 -6 98 175 minecraft:magma_block
-setblock -8 98 177 minecraft:polished_blackstone_bricks
-setblock -8 98 178 minecraft:blackstone
-setblock -8 98 179 minecraft:polished_blackstone
-setblock -8 98 180 minecraft:blackstone
-setblock -8 98 181 minecraft:polished_blackstone
-fill -8 98 182 -7 98 182 minecraft:polished_blackstone_bricks
-fill -8 98 183 -8 98 190 minecraft:polished_blackstone_bricks
-setblock -8 98 191 minecraft:polished_blackstone
-setblock -8 98 192 minecraft:blackstone
-setblock -8 98 193 minecraft:polished_blackstone
-setblock -8 98 194 minecraft:blackstone
-setblock -8 98 195 minecraft:polished_blackstone_bricks
-fill -8 98 196 -8 98 197 minecraft:magma_block
-fill -7 98 174 -4 98 174 minecraft:magma_block
-setblock -7 98 176 minecraft:polished_blackstone_bricks
-setblock -7 98 177 minecraft:blackstone
-setblock -7 98 178 minecraft:polished_blackstone
-setblock -7 98 179 minecraft:blackstone
-setblock -7 98 180 minecraft:polished_blackstone
-setblock -7 98 181 minecraft:polished_blackstone_bricks
-setblock -7 98 183 minecraft:blackstone
-setblock -7 98 184 minecraft:polished_blackstone
-setblock -7 98 185 minecraft:blackstone
-setblock -7 98 186 minecraft:polished_blackstone
-setblock -7 98 187 minecraft:blackstone
-setblock -7 98 188 minecraft:polished_blackstone
-setblock -7 98 189 minecraft:blackstone
-fill -7 98 190 -7 98 191 minecraft:polished_blackstone_bricks
-setblock -7 98 192 minecraft:polished_blackstone
-setblock -7 98 193 minecraft:blackstone
-setblock -7 98 194 minecraft:polished_blackstone
-setblock -7 98 195 minecraft:blackstone
-setblock -7 98 196 minecraft:polished_blackstone_bricks
-fill -7 98 197 -6 98 198 minecraft:magma_block
-setblock -6 98 176 minecraft:blackstone
-setblock -6 98 177 minecraft:polished_blackstone
-setblock -6 98 178 minecraft:blackstone
-setblock -6 98 179 minecraft:polished_blackstone
-setblock -6 98 180 minecraft:polished_blackstone_bricks
-setblock -6 98 181 minecraft:polished_blackstone
-setblock -6 98 182 minecraft:blackstone
-setblock -6 98 183 minecraft:polished_blackstone
-setblock -6 98 184 minecraft:blackstone
-setblock -6 98 185 minecraft:polished_blackstone
-setblock -6 98 186 minecraft:blackstone
-setblock -6 98 187 minecraft:polished_blackstone
-setblock -6 98 188 minecraft:blackstone
-setblock -6 98 189 minecraft:polished_blackstone
-setblock -6 98 190 minecraft:blackstone
-setblock -6 98 191 minecraft:polished_blackstone
-setblock -6 98 192 minecraft:polished_blackstone_bricks
-setblock -6 98 193 minecraft:polished_blackstone
-setblock -6 98 194 minecraft:blackstone
-setblock -6 98 195 minecraft:polished_blackstone
-setblock -6 98 196 minecraft:blackstone
-fill -5 98 173 5 98 173 minecraft:magma_block
-setblock -5 98 175 minecraft:polished_blackstone_bricks
-setblock -5 98 176 minecraft:polished_blackstone
-setblock -5 98 177 minecraft:blackstone
-setblock -5 98 178 minecraft:polished_blackstone
-fill -5 98 179 -4 98 179 minecraft:polished_blackstone_bricks
-setblock -5 98 180 minecraft:polished_blackstone
-setblock -5 98 181 minecraft:blackstone
-setblock -5 98 182 minecraft:polished_blackstone
-setblock -5 98 183 minecraft:blackstone
-setblock -5 98 184 minecraft:polished_blackstone
-setblock -5 98 185 minecraft:blackstone
-setblock -5 98 186 minecraft:polished_blackstone
-setblock -5 98 187 minecraft:blackstone
-setblock -5 98 188 minecraft:polished_blackstone
-setblock -5 98 189 minecraft:blackstone
-setblock -5 98 190 minecraft:polished_blackstone
-setblock -5 98 191 minecraft:blackstone
-setblock -5 98 192 minecraft:polished_blackstone
-fill -5 98 193 -4 98 193 minecraft:polished_blackstone_bricks
-setblock -5 98 194 minecraft:polished_blackstone
-setblock -5 98 195 minecraft:blackstone
-setblock -5 98 196 minecraft:polished_blackstone
-setblock -5 98 197 minecraft:polished_blackstone_bricks
-fill -5 98 198 -4 98 199 minecraft:magma_block
-setblock -4 98 175 minecraft:polished_blackstone
-setblock -4 98 176 minecraft:blackstone
-setblock -4 98 177 minecraft:polished_blackstone
-fill -4 98 178 -3 98 178 minecraft:polished_blackstone_bricks
-setblock -4 98 180 minecraft:blackstone
-setblock -4 98 181 minecraft:polished_blackstone
-setblock -4 98 182 minecraft:blackstone
-setblock -4 98 183 minecraft:polished_blackstone
-fill -4 98 184 -4 98 188 minecraft:polished_blackstone_bricks
-setblock -4 98 189 minecraft:polished_blackstone
-setblock -4 98 190 minecraft:blackstone
-setblock -4 98 191 minecraft:polished_blackstone
-setblock -4 98 192 minecraft:blackstone
-fill -4 98 194 4 98 194 minecraft:polished_blackstone_bricks
-setblock -4 98 195 minecraft:polished_blackstone
-setblock -4 98 196 minecraft:blackstone
-setblock -4 98 197 minecraft:polished_blackstone
-fill -3 98 174 3 98 174 minecraft:polished_blackstone_bricks
-setblock -3 98 175 minecraft:blackstone
-setblock -3 98 176 minecraft:polished_blackstone
-setblock -3 98 177 minecraft:blackstone
-setblock -3 98 179 minecraft:blackstone
-setblock -3 98 180 minecraft:polished_blackstone
-setblock -3 98 181 minecraft:blackstone
-setblock -3 98 182 minecraft:polished_blackstone
-setblock -3 98 183 minecraft:polished_blackstone_bricks
-setblock -3 98 184 minecraft:polished_blackstone
-setblock -3 98 185 minecraft:blackstone
-setblock -3 98 186 minecraft:polished_blackstone
-setblock -3 98 187 minecraft:blackstone
-setblock -3 98 188 minecraft:polished_blackstone
-setblock -3 98 189 minecraft:polished_blackstone_bricks
-setblock -3 98 190 minecraft:polished_blackstone

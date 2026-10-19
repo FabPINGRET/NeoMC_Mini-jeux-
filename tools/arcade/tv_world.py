@@ -360,6 +360,10 @@ RS_CMD = {k: [] for k in REGIONS}
 
 
 def F(k, x1, y1, z1, x2, y2, z2, b, mode=''):
+    if mode == 'outline' and y1 == y2:
+        for a in ((x1, z1, x2, z1), (x1, z2, x2, z2), (x1, z1, x1, z2), (x2, z1, x2, z2)):
+            F(k, a[0], y1, a[1], a[2], y2, a[3], b)
+        return
     RS_CMD[k].append(f'fill {x1} {y1} {z1} {x2} {y2} {z2} minecraft:{b}{" " + mode if mode else ""}')
 
 

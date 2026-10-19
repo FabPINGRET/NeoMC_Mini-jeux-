@@ -1,0 +1,56 @@
+# @s : 📍 localisateur et indicateur vers l'objectif de la campagne (sauf contrat suivi)
+execute if score @s mg.olcf matches 1 run return 0
+execute if score @s mg.olch matches 0 run return run function mg:ombre/loc {x:-31,y:65,z:-31}
+execute if score @s mg.olch matches 1 run return run function mg:ombre/loc {x:-26,y:65,z:-9}
+execute if score @s mg.olch matches 2 run return run function mg:ombre/loc {x:6,y:65,z:-29}
+execute if score @s mg.olch matches 3 run return run function mg:ombre/loc {x:-100,y:66,z:6}
+execute if score @s mg.olch matches 4 run return run function mg:ombre/loc {x:6,y:65,z:-29}
+execute if score @s mg.olch matches 5 run return run function mg:ombre/loc {x:-147,y:67,z:24}
+execute if score @s mg.olch matches 6 run return run function mg:ombre/loc {x:-172,y:68,z:-24}
+execute if score @s mg.olch matches 7 run return run function mg:ombre/loc {x:-147,y:67,z:24}
+execute if score @s mg.olch matches 8 run return run function mg:ombre/loc {x:-204,y:71,z:-41}
+execute if score @s mg.olch matches 9 run return run function mg:ombre/loc {x:-147,y:67,z:24}
+execute if score @s mg.olch matches 10 run return run function mg:ombre/loc {x:-31,y:65,z:-31}
+execute if score @s mg.olch matches 11 run return run function mg:ombre/loc {x:-159,y:101,z:-171}
+execute if score @s mg.olch matches 12 run return run function mg:ombre/loc {x:-223,y:66,z:-143}
+execute if score @s mg.olch matches 13 run return run function mg:ombre/loc {x:-159,y:101,z:-171}
+execute if score @s mg.olch matches 14 run return run function mg:ombre/loc {x:-204,y:72,z:-204}
+execute if score @s mg.olch matches 15 run return run function mg:ombre/loc {x:-159,y:101,z:-171}
+execute if score @s mg.olch matches 16 run return run function mg:ombre/loc {x:0,y:75,z:-130}
+execute if score @s mg.olch matches 17 run return run function mg:ombre/loc {x:-5,y:75,z:-111}
+execute if score @s mg.olch matches 18 run return run function mg:ombre/loc {x:0,y:75,z:-130}
+execute if score @s mg.olch matches 19 run return run function mg:ombre/loc {x:20,y:90,z:-160}
+execute if score @s mg.olch matches 20 run return run function mg:ombre/loc {x:0,y:75,z:-130}
+execute if score @s mg.olch matches 21 run return run function mg:ombre/loc {x:30,y:105,z:-204}
+execute if score @s mg.olch matches 22 run return run function mg:ombre/loc {x:0,y:75,z:-130}
+execute if score @s mg.olch matches 23 run return run function mg:ombre/loc {x:152,y:68,z:-115}
+execute if score @s mg.olch matches 24 run return run function mg:ombre/loc {x:147,y:68,z:-114}
+execute if score @s mg.olch matches 25 run return run function mg:ombre/loc {x:152,y:68,z:-115}
+execute if score @s mg.olch matches 26 run return run function mg:ombre/loc {x:182,y:63,z:-202}
+execute if score @s mg.olch matches 27 run return run function mg:ombre/loc {x:205,y:65,z:-187}
+execute if score @s mg.olch matches 28 run return run function mg:ombre/loc {x:152,y:68,z:-115}
+execute if score @s mg.olch matches 29 run return run function mg:ombre/loc {x:130,y:65,z:5}
+execute if score @s mg.olch matches 30 run return run function mg:ombre/loc {x:162,y:66,z:52}
+execute if score @s mg.olch matches 31 run return run function mg:ombre/loc {x:130,y:65,z:5}
+execute if score @s mg.olch matches 32 run return run function mg:ombre/loc {x:194,y:65,z:-43}
+execute if score @s mg.olch matches 33 run return run function mg:ombre/loc {x:198,y:65,z:-27}
+execute if score @s mg.olch matches 34 run return run function mg:ombre/loc {x:130,y:65,z:5}
+execute if score @s mg.olch matches 35 run return run function mg:ombre/loc {x:140,y:67,z:104}
+execute if score @s mg.olch matches 36 run return run function mg:ombre/loc {x:140,y:67,z:104}
+execute if score @s mg.olch matches 37 run return run function mg:ombre/loc {x:180,y:117,z:198}
+execute if score @s mg.olch matches 38 run return run function mg:ombre/loc {x:180,y:117,z:180}
+execute if score @s mg.olch matches 39 run return run function mg:ombre/loc {x:140,y:67,z:104}
+execute if score @s mg.olch matches 40 run return run function mg:ombre/loc {x:-1,y:67,z:108}
+execute if score @s mg.olch matches 41 run return run function mg:ombre/loc {x:-9,y:67,z:133}
+execute if score @s mg.olch matches 42 run return run function mg:ombre/loc {x:0,y:67,z:146}
+execute if score @s mg.olch matches 43 run return run function mg:ombre/loc {x:0,y:67,z:188}
+execute if score @s mg.olch matches 44 run return run function mg:ombre/loc {x:-1,y:67,z:108}
+execute if score @s mg.olch matches 45 run return run function mg:ombre/loc {x:-31,y:65,z:-31}
+execute if score @s mg.olch matches 46 run return run function mg:ombre/loc {x:-105,y:65,z:152}
+execute if score @s mg.olch matches 47 run return run function mg:ombre/loc {x:-153,y:67,z:162}
+execute if score @s mg.olch matches 48 run return run function mg:ombre/loc {x:-171,y:67,z:178}
+execute if score @s mg.olch matches 49 run return run function mg:ombre/loc {x:-171,y:102,z:178}
+execute if score @s mg.olch matches 50 run return run function mg:ombre/loc {x:-171,y:102,z:178}
+execute if score @s mg.olch matches 51 run return run function mg:ombre/loc {x:2,y:65,z:-43}
+function mg:ombre/loc {x:6,y:65,z:6}
+scoreboard players set @s mg.olon 0

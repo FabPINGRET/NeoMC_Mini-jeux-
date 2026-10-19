@@ -1,4 +1,4 @@
-# Construction des régions de Terra Nova, étape 316/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 316/436 (dimension mg:terranova, générée)
 setblock -220 72 17 minecraft:stripped_spruce_log
 setblock -220 72 18 minecraft:spruce_fence
 setblock -220 72 19 minecraft:stripped_spruce_log

@@ -1,0 +1,19 @@
+# @s quitte Ombrelune : bonus retirés
+attribute @s minecraft:max_health modifier remove mg:ollv
+attribute @s minecraft:max_health modifier remove mg:olst
+attribute @s minecraft:max_health modifier remove mg:olcl
+attribute @s minecraft:attack_damage modifier remove mg:ollv
+attribute @s minecraft:attack_damage modifier remove mg:olst
+attribute @s minecraft:attack_damage modifier remove mg:olcl
+attribute @s minecraft:movement_speed modifier remove mg:ollv
+attribute @s minecraft:movement_speed modifier remove mg:olst
+attribute @s minecraft:movement_speed modifier remove mg:olcl
+attribute @s minecraft:armor modifier remove mg:ollv
+attribute @s minecraft:armor modifier remove mg:olst
+attribute @s minecraft:armor modifier remove mg:olcl
+attribute @s minecraft:knockback_resistance modifier remove mg:ollv
+attribute @s minecraft:knockback_resistance modifier remove mg:olst
+attribute @s minecraft:knockback_resistance modifier remove mg:olcl
+attribute @s minecraft:safe_fall_distance modifier remove mg:ollv
+attribute @s minecraft:safe_fall_distance modifier remove mg:olst
+attribute @s minecraft:safe_fall_distance modifier remove mg:olcl

@@ -1,4 +1,23 @@
-# Construction des régions de Terra Nova, étape 137/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 137/436 (dimension mg:terranova, générée)
+fill 235 67 22 235 67 26 minecraft:stone
+fill 236 67 23 236 67 25 minecraft:stone
+fill 219 68 23 234 68 23 minecraft:air
+fill 219 68 24 227 68 25 minecraft:air
+fill 222 68 21 223 68 22 minecraft:stone
+fill 222 68 26 223 68 27 minecraft:stone
+fill 223 68 20 224 68 20 minecraft:stone
+fill 223 68 28 224 68 28 minecraft:stone
+fill 224 68 19 226 68 19 minecraft:stone
+fill 224 68 21 233 68 22 minecraft:air
+fill 224 68 26 234 68 26 minecraft:air
+fill 224 68 27 233 68 27 minecraft:air
+fill 224 68 29 226 68 29 minecraft:stone
+fill 225 68 18 233 68 18 minecraft:stone
+fill 225 68 20 232 68 20 minecraft:air
+fill 225 68 28 232 68 28 minecraft:air
+fill 225 68 30 233 68 30 minecraft:stone
+fill 227 68 17 231 68 17 minecraft:stone
+fill 227 68 19 231 68 19 minecraft:air
 fill 227 68 29 231 68 29 minecraft:air
 fill 227 68 31 231 68 31 minecraft:stone
 setblock 228 68 24 minecraft:stone_bricks
@@ -180,22 +199,3 @@ fill 225 73 29 229 73 29 minecraft:air
 fill 225 73 30 230 73 30 minecraft:calcite
 fill 226 73 17 228 73 17 minecraft:calcite
 setblock 226 73 25 minecraft:stone_brick_slab[type=top]
-fill 226 73 26 232 73 26 minecraft:air
-fill 226 73 31 228 73 31 minecraft:calcite
-fill 227 73 25 232 73 25 minecraft:air
-setblock 228 73 24 minecraft:stone_bricks
-fill 229 73 24 232 73 24 minecraft:air
-fill 230 73 19 232 73 19 minecraft:calcite
-fill 230 73 29 232 73 29 minecraft:calcite
-fill 231 73 20 233 73 20 minecraft:calcite
-fill 231 73 28 233 73 28 minecraft:calcite
-fill 232 73 21 233 73 21 minecraft:calcite
-fill 232 73 22 232 73 23 minecraft:air
-fill 232 73 27 233 73 27 minecraft:calcite
-fill 233 73 22 234 73 26 minecraft:calcite
-fill 221 74 22 222 74 26 minecraft:calcite
-fill 222 74 20 224 74 20 minecraft:calcite
-fill 222 74 21 223 74 21 minecraft:calcite
-fill 222 74 27 223 74 28 minecraft:calcite
-fill 223 74 19 226 74 19 minecraft:calcite
-fill 223 74 22 232 74 23 minecraft:air

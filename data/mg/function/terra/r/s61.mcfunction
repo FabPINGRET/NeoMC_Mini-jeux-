@@ -1,9 +1,4 @@
-# Construction des régions de Terra Nova, étape 61/435 (dimension mg:terranova, générée)
-setblock -57 67 -176 minecraft:light_gray_concrete
-setblock -57 67 -160 minecraft:light_gray_concrete
-fill -57 67 -159 -55 67 -159 minecraft:air
-setblock -56 67 -176 minecraft:white_concrete
-setblock -56 67 -168 minecraft:sea_lantern
+# Construction des régions de Terra Nova, étape 61/436 (dimension mg:terranova, générée)
 setblock -56 67 -160 minecraft:white_concrete
 fill -55 67 -177 -50 67 -177 minecraft:air
 setblock -55 67 -176 minecraft:cyan_stained_glass_pane
@@ -199,3 +194,8 @@ fill -71 70 -174 -61 70 -161 minecraft:air
 setblock -71 70 -160 minecraft:white_concrete
 setblock -70 70 -176 minecraft:cyan_stained_glass_pane
 setblock -70 70 -160 minecraft:air
+setblock -69 70 -177 minecraft:vine[south=true]
+setblock -69 70 -176 minecraft:white_concrete
+setblock -69 70 -160 minecraft:white_concrete
+fill -68 70 -177 -64 70 -177 minecraft:air
+setblock -68 70 -176 minecraft:cyan_stained_glass_pane

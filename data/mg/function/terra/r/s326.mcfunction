@@ -1,4 +1,67 @@
-# Construction des régions de Terra Nova, étape 326/435 (dimension mg:terranova, générée)
+# Construction des régions de Terra Nova, étape 326/436 (dimension mg:terranova, générée)
+setblock -192 66 -53 minecraft:spruce_log
+fill -191 66 -57 -190 66 -57 minecraft:air
+fill -191 66 -53 -190 66 -53 minecraft:air
+fill -232 67 -58 -218 67 -52 minecraft:air
+fill -231 67 -60 -219 67 -59 minecraft:air
+fill -231 67 -51 -219 67 -50 minecraft:air
+fill -230 67 -61 -220 67 -61 minecraft:air
+fill -230 67 -49 -220 67 -49 minecraft:air
+fill -228 67 -62 -220 67 -62 minecraft:air
+fill -228 67 -48 -220 67 -48 minecraft:air
+setblock -223 67 -64 minecraft:spruce_log
+fill -222 67 -65 -220 67 -63 minecraft:air
+fill -222 67 -47 -220 67 -45 minecraft:air
+setblock -219 67 -64 minecraft:spruce_log
+setblock -219 67 -48 minecraft:spruce_log
+fill -217 67 -56 -210 67 -54 minecraft:air
+setblock -216 67 -57 minecraft:spruce_log
+setblock -216 67 -53 minecraft:spruce_log
+setblock -212 67 -57 minecraft:spruce_log
+setblock -212 67 -53 minecraft:spruce_log
+setblock -211 67 -73 minecraft:spruce_log
+fill -211 67 -72 -203 67 -68 minecraft:air
+setblock -211 67 -67 minecraft:spruce_log
+setblock -211 67 -43 minecraft:spruce_log
+fill -211 67 -42 -203 67 -38 minecraft:air
+setblock -211 67 -37 minecraft:spruce_log
+fill -210 67 -73 -204 67 -73 minecraft:air
+fill -210 67 -67 -204 67 -67 minecraft:air
+fill -210 67 -43 -204 67 -43 minecraft:air
+fill -210 67 -37 -204 67 -37 minecraft:air
+setblock -209 67 -64 minecraft:spruce_log
+setblock -209 67 -60 minecraft:spruce_log
+setblock -209 67 -56 minecraft:spruce_log
+fill -209 67 -55 -190 67 -54 minecraft:air
+setblock -209 67 -52 minecraft:spruce_log
+setblock -209 67 -48 minecraft:spruce_log
+setblock -209 67 -44 minecraft:spruce_log
+fill -208 67 -66 -206 67 -56 minecraft:air
+fill -208 67 -53 -206 67 -44 minecraft:air
+setblock -205 67 -64 minecraft:spruce_log
+setblock -205 67 -60 minecraft:spruce_log
+setblock -205 67 -56 minecraft:spruce_log
+setblock -205 67 -52 minecraft:spruce_log
+setblock -205 67 -48 minecraft:spruce_log
+setblock -205 67 -44 minecraft:spruce_log
+setblock -204 67 -57 minecraft:spruce_log
+fill -204 67 -56 -190 67 -56 minecraft:air
+setblock -204 67 -53 minecraft:spruce_log
+setblock -203 67 -73 minecraft:spruce_log
+setblock -203 67 -67 minecraft:spruce_log
+setblock -203 67 -43 minecraft:spruce_log
+setblock -203 67 -37 minecraft:spruce_log
+setblock -200 67 -57 minecraft:spruce_log
+setblock -200 67 -53 minecraft:spruce_log
+setblock -196 67 -57 minecraft:spruce_log
+setblock -196 67 -53 minecraft:spruce_log
+setblock -192 67 -57 minecraft:spruce_log
+setblock -192 67 -53 minecraft:spruce_log
+fill -191 67 -57 -190 67 -57 minecraft:air
+fill -191 67 -53 -190 67 -53 minecraft:air
+fill -232 68 -58 -218 68 -52 minecraft:air
+fill -231 68 -60 -219 68 -59 minecraft:air
+fill -231 68 -51 -219 68 -50 minecraft:air
 fill -230 68 -61 -220 68 -61 minecraft:air
 fill -230 68 -49 -220 68 -49 minecraft:air
 fill -228 68 -62 -220 68 -62 minecraft:air
@@ -136,27 +199,3 @@ fill -210 70 -67 -204 70 -67 minecraft:air
 fill -210 70 -43 -204 70 -43 minecraft:air
 fill -210 70 -37 -204 70 -37 minecraft:air
 setblock -207 70 -70 minecraft:lantern[hanging=true]
-fill -207 70 -69 -203 70 -68 minecraft:air
-setblock -207 70 -40 minecraft:lantern[hanging=true]
-fill -207 70 -39 -203 70 -38 minecraft:air
-fill -206 70 -70 -203 70 -70 minecraft:air
-fill -206 70 -40 -203 70 -40 minecraft:air
-setblock -203 70 -73 minecraft:spruce_log
-setblock -203 70 -67 minecraft:spruce_log
-setblock -203 70 -43 minecraft:spruce_log
-setblock -203 70 -37 minecraft:spruce_log
-fill -229 71 -57 -221 71 -56 minecraft:air
-fill -229 71 -55 -226 71 -53 minecraft:air
-fill -228 71 -58 -222 71 -58 minecraft:air
-fill -228 71 -52 -222 71 -52 minecraft:air
-fill -227 71 -59 -223 71 -59 minecraft:air
-fill -227 71 -51 -223 71 -51 minecraft:air
-setblock -225 71 -55 minecraft:iron_chain
-fill -225 71 -54 -221 71 -53 minecraft:air
-fill -224 71 -55 -221 71 -55 minecraft:air
-setblock -207 71 -70 minecraft:iron_chain
-setblock -207 71 -40 minecraft:iron_chain
-fill -228 72 -57 -222 72 -53 minecraft:air
-fill -227 72 -58 -223 72 -58 minecraft:air
-fill -227 72 -52 -223 72 -52 minecraft:air
-fill -227 73 -57 -223 73 -53 minecraft:air
