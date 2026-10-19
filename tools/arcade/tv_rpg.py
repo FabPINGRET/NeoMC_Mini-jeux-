@@ -812,7 +812,7 @@ SU += ['bossbar add mg:trspino {"text":"🦖 Spinosaure, reine du marais","color
        'function mg:terra/bio_try', f'function mg:{P}/dg_setup', f'function mg:{P}/setup2']
 w(f'{P}/setup', SU)
 w(f'{P}/clear', ['# Fin de session : barres des boss, invocations (vex) retirées', 'bossbar remove mg:trspino', 'bossbar remove mg:trrex', 'bossbar remove mg:trvarek',
-                 f'execute in {DIM} run kill @e[type=minecraft:vex]', 'scoreboard players set $trspa mg.st 0', 'scoreboard players set $trva mg.st 0',
+                 f'execute in {DIM} run kill @e[type=minecraft:vex,x=-260,y=-64,z=-260,dx=520,dy=400,dz=520]', 'scoreboard players set $trspa mg.st 0', 'scoreboard players set $trva mg.st 0',
                  'scoreboard players set $trra mg.st 0', f'function mg:{P}/dg_clear'])
 
 # ================================================================ boucles : tick, seconde

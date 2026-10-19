@@ -89,6 +89,41 @@ jobs:
               print('\n'.join(bad)); sys.exit(1)
           print('desinstaller OK')
           PY
+      - name: Garde-fous sélecteurs et tags RPG
+        run: |
+          python3 - <<'PY'
+          import glob, os, re, sys
+          bad = []
+          def code(f):
+              return [(i, l.strip()) for i, l in enumerate(open(f, encoding='utf-8'), 1)
+                      if l.strip() and not l.strip().startswith('#')]
+          for f in sorted(glob.glob('data/mg/function/**/*.mcfunction', recursive=True)):
+              f = f.replace(os.sep, '/')
+              for i, s in code(f):
+                  if re.search(r'kill @e\[type=minecraft:[a-z_]+\]', s):
+                      bad.append(f'{f}:{i}: kill @e par type seul (sans tag ni position, tue dans toutes les dimensions) : {s}')
+          OL = 'data/mg/function/ombre/'
+          if os.path.exists(OL + 'bosses.mcfunction'):
+              c = code(OL + 'bosses.mcfunction')
+              if not c or c[0][1] != 'tag @a remove mg.olboss_in':
+                  bad.append(f'{OL}bosses.mcfunction: la 1re ligne non commentaire doit etre "tag @a remove mg.olboss_in" (trouve : {c[0][1] if c else "rien"})')
+          else:
+              bad.append(f'{OL}bosses.mcfunction: fichier absent')
+          if os.path.exists(OL + 'boss/fx_sec.mcfunction'):
+              for i, s in code(OL + 'boss/fx_sec.mcfunction'):
+                  if 'mg.olboss_in' in s:
+                      bad.append(f'{OL}boss/fx_sec.mcfunction:{i}: mg.olboss_in interdit ici (retire dans le meme tick que la pose) : {s}')
+          else:
+              bad.append(f'{OL}boss/fx_sec.mcfunction: fichier absent')
+          if os.path.exists(OL + 'untag.mcfunction'):
+              if not any(s == 'tag @s remove mg.olboss_in' for _, s in code(OL + 'untag.mcfunction')):
+                  bad.append(f'{OL}untag.mcfunction: "tag @s remove mg.olboss_in" manquant')
+          else:
+              bad.append(f'{OL}untag.mcfunction: fichier absent')
+          if bad:
+              print('\n'.join(bad)); sys.exit(1)
+          print('garde-fous RPG OK')
+          PY
       - name: Lint Spyglass (indicatif)
         continue-on-error: true
         run: |

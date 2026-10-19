@@ -8,3 +8,4 @@ xp set @s 0 levels
 xp set @s 0 points
 function mg:ombre/horse_gone
 tag @s remove mg.olintro
+tag @s remove mg.olboss_in

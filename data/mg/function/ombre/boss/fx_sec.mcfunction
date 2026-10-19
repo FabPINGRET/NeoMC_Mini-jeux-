@@ -8,4 +8,3 @@ execute as @e[type=minecraft:marker,tag=mg.olspike,scores={mg.olst=..0}] at @s r
 execute as @e[type=minecraft:marker,tag=mg.olfall,scores={mg.olst=..0}] at @s run function mg:ombre/boss/fall_hit
 execute as @e[type=minecraft:marker,tag=mg.oldive,scores={mg.olst=..0}] at @s run function mg:ombre/boss/dive_hit
 function mg:ombre/boss/pill_sec
-tag @a remove mg.olboss_in

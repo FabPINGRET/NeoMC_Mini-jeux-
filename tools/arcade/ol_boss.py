@@ -69,7 +69,8 @@ def arena(k):
     return a['c'], a['r']
 
 
-SECOND = ['# Chaque seconde : boss (déclenchement, suivi, victoire) et donjons']
+SECOND = ['# Chaque seconde : boss (déclenchement, suivi, victoire) et donjons',
+          'tag @a remove mg.olboss_in']  # d'abord : les boss/<nom> ci-dessous reposent le tag, il vaut pour le tick suivant
 SETUP = ['# Session : barres des boss et des alphas']
 CLEAR = ['# Fin de session : barres retirées']
 for k, (name, col, summ, hp, abil, reg) in BOSSES.items():
@@ -307,7 +308,7 @@ w('boss/fx_sec', ['# Chaque seconde : pics de glace, pluies de feu, piqué de Ny
                   'execute as @e[type=minecraft:marker,tag=mg.olspike,scores={mg.olst=..0}] at @s run function mg:ombre/boss/spike_hit',
                   'execute as @e[type=minecraft:marker,tag=mg.olfall,scores={mg.olst=..0}] at @s run function mg:ombre/boss/fall_hit',
                   'execute as @e[type=minecraft:marker,tag=mg.oldive,scores={mg.olst=..0}] at @s run function mg:ombre/boss/dive_hit',
-                  f'function mg:{P}/boss/pill_sec', 'tag @a remove mg.olboss_in'])
+                  f'function mg:{P}/boss/pill_sec'])
 w('boss/spike_hit', ['particle minecraft:block{block_state:"minecraft:blue_ice"} ~ ~1 ~ 0.4 1 0.4 0 40 force', 'playsound minecraft:block.glass.break hostile @a ~ ~ ~ 1 0.6',
                      'execute as @a[tag=mg.olw,gamemode=adventure,distance=..2] run damage @s 10 minecraft:freeze',
                      'effect give @a[tag=mg.olw,gamemode=adventure,distance=..2] minecraft:levitation 1 5 true', 'kill @s'])
