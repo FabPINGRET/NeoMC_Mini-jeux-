@@ -542,7 +542,7 @@ RIFLE1 = (f'{WF}[custom_data={{tv:2}},item_model="minecraft:crossbow",unbreakabl
           f'lore={lo("Clic droit : tir (maintenir = rafale)", "Attention à la surchauffe !")}]')
 RIFLE2 = (f'{WF}[custom_data={{tv:3}},item_model="minecraft:crossbow",unbreakable={{}},enchantment_glint_override=true,'
           f'custom_name={nm("🔫 Fusil à impulsions Mk2", "gold")},lore={lo("Plus puissant, chauffe moins vite", "Clic droit : tir")}]')
-SONIC = (f'{WF}[custom_data={{tv:4}},item_model="minecraft:goat_horn",unbreakable={{}},custom_name={nm("📢 Canon sonique", "aqua")},'
+SONIC = (f'{WF}[custom_data={{tv:4}},item_model="minecraft:goat_horn",unbreakable={{}},use_cooldown={{seconds:4f,cooldown_group:"mg:tvsonic"}},custom_name={nm("📢 Canon sonique", "aqua")},'   # 4 s = mg.tvsc 80 ticks (terra/sonic)
          f'lore={lo("Clic droit : onde de choc en cône (8 blocs)", "Repousse et ralentit, recharge 4 s")}]')
 NETL = (f'{WF}[custom_data={{tv:5}},item_model="minecraft:fishing_rod",unbreakable={{}},custom_name={nm("🕸 Lance-filets", "white")},'
         f'lore={lo("Clic droit : immobilise un dinosaure 5 s", "Filets en vente au dépôt")}]')

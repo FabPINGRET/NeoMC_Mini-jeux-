@@ -31,9 +31,11 @@ KILLER = '@a[tag=mg.play,tag=mg.mmm]'
 KNIFE = ('minecraft:iron_sword[unbreakable={},custom_data={mg_mmk:1b},custom_name={"text":"🔪 Couteau","color":"red","italic":false},'
          'attribute_modifiers=[{type:"minecraft:attack_damage",id:"mg:mmk",amount:50.0,operation:"add_value",slot:"mainhand"},'
          '{type:"minecraft:attack_speed",id:"mg:mmks",amount:100.0,operation:"add_value",slot:"mainhand"}]]')
-BOW = 'minecraft:bow[unbreakable={},custom_data={mg_mm:1b},custom_name={"text":"🏹 Arc du détective","color":"aqua","italic":false}]'
+# use_cooldown = ARROW_CD : la flèche achetée avec l'or attend la fin du verrou vanilla de l'arc (<= 5 s) avant de pouvoir tirer
+BOW = f'minecraft:bow[unbreakable={{}},use_cooldown={{seconds:{ARROW_CD / 20:g}f,cooldown_group:"mg:mmbow"}},custom_data={{mg_mm:1b}},custom_name={{"text":"🏹 Arc du détective","color":"aqua","italic":false}}]'
 BOW_ENT = ('{Tags:["mg.mmb","mg.keep"],PickupDelay:40s,Age:-32768s,Glowing:1b,Invulnerable:1b,Item:{id:"minecraft:bow",count:1,components:{'
-           '"minecraft:unbreakable":{},"minecraft:custom_data":{mg_mm:1b},"minecraft:custom_name":{"text":"🏹 Arc du détective","color":"aqua","italic":false}}}}')
+           f'"minecraft:unbreakable":{{}},"minecraft:use_cooldown":{{seconds:{ARROW_CD / 20:g}f,cooldown_group:"mg:mmbow"}},'
+           '"minecraft:custom_data":{mg_mm:1b},"minecraft:custom_name":{"text":"🏹 Arc du détective","color":"aqua","italic":false}}}}')
 
 
 def per_map(fmt):

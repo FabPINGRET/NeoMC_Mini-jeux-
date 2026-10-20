@@ -190,11 +190,11 @@ def start():
            'unbreakable={},custom_name=' + js(tx('🎯 Sniper de duel', 'aqua', bold=True, italic=False)) + ',lore=['
            + js(tx('Clic droit : tir (recharge 2 s)', 'gray', italic=False)) + ',' + js(tx('Accroupi : lunette — tête = élimination, corps = 2 touches', 'gray', italic=False)) + ']]')
     w('duel/kit', ['# Kit du duel (@s) : le sniper en main, le couteau (clic gauche) dans l\'inventaire', 'clear @s *[custom_data~{mg_dl:1b}]', kit,
-                   'give @s ' + duel_play.knife('mg_dl')])
+                   duel_play.kit_cd('mg:dlsn', 'mg.dlp'), 'give @s ' + duel_play.knife('mg_dl')])
     sp = ['# Départ de manche (@s = duelliste) : défieur au nord, invité au sud ; 3 s de protection (mg.dlp), tir impossible',
           'scoreboard players set @s mg.dlhp 2',
           'function mg:duel/unscope',
-          'tag @s add mg.dlp',
+          'tag @s add mg.dlp'] + duel_play.disarm_cd('mg_dl') + [
           'scoreboard players set @s mg.dlx 60',
           'scoreboard players set @s mg.dlcd 0',
           'scoreboard players set @s mg.dlkc 0',

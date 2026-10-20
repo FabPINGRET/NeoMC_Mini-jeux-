@@ -5,6 +5,9 @@ Chargeur par type (mg.g1..mg.g6), rechargement auto quand vide ou en s'accroupis
 cadence mg.gcd. Rayon par pas de 0,4 bloc ; cibles = entités taguées mg.gtg (zombies, joueurs infectés).
 Dégâts sur les mobs : on retire directement de la vie (pas d'invulnérabilité entre deux balles), coup fatal via
 `damage … by <tireur>` pour que le kill soit crédité. Sur les joueurs : `damage … by <tireur>`.
+Overlay de recharge dans la hotbar : composant use_cooldown (groupes mg:gun<n>) posé avant le clic qui vide le chargeur, variante
+marquée par custom_data gcr (voir gun/cd_*) ; cadence du Sniper aussi. Limites : recharge par accroupi / Q, Neo GTA et lobby sans overlay ;
+fenêtre d'1 tick après un achat (Speed Cola, munitions : zm/tick passe après gun/tick), où l'overlay peut être celui de l'état précédent.
 """
 import common as C
 
@@ -132,6 +135,34 @@ def build():
                      {'text': f' / {g[4]}', 'color': 'gray'}]))
     H.append('execute if score @s mg.grl matches 1.. run title @s actionbar {"text":"⟳ Rechargement…","color":"yellow"}')
     w('gun/hud', H)
+    # Overlay de recharge (hotbar) : le composant use_cooldown ne s'applique qu'au clic, donc il est posé AVANT le clic qui vide
+    # le chargeur (variante « dernière balle », gcr 1b / 2b Speed Cola) puis ramené à 0,05 s pendant la recharge (gcr 0b).
+    # Le groupe mg:gun<n> ne change jamais entre variantes. Sniper (SNP) : variante normale = cadence (gcr 0b, 3b Double Tap) ;
+    # gcr 4b = Sniper neutralisé (0,05 s) pendant une recharge sans overlay (accroupi, Q, autre arme) : un clic refusé ne verrouille rien.
+    SNP = 5
+    w('gun/cd_set', ['# Pose use_cooldown (n = arme, s = secondes) et le marqueur de variante gcr (m) sur l\'objet en main',
+                     '$item modify entity @s weapon.mainhand {function:"minecraft:set_components",components:{"minecraft:use_cooldown":{seconds:$(s)f,cooldown_group:"mg:gun$(n)"}}}',
+                     '$item modify entity @s weapon.mainhand {function:"minecraft:set_custom_data",tag:{gcr:$(m)b}}'])
+    cdn = ['# Variante normale (hors dernière balle) : retire l\'overlay de recharge ; Sniper : overlay de cadence',
+           f'execute unless items entity @s weapon.mainhand *[custom_data~{{gun:{SNP}}}] unless items entity @s weapon.mainhand *[custom_data~{{gcr:1b}}] unless items entity @s weapon.mainhand *[custom_data~{{gcr:2b}}] run return 0']
+    for n, g in GUNS.items():
+        if n == SNP:
+            s, s2 = f'{g[3] / 20:g}', f'{max(1, g[3] * 2 // 3) / 20:g}'
+            cdn += [f'execute if items entity @s weapon.mainhand *[custom_data~{{gun:{n}}}] unless entity @s[tag=mg.zdbl] unless items entity @s weapon.mainhand *[custom_data~{{gcr:0b}}] run return run function mg:gun/cd_set {{n:{n},s:{s},m:0}}',
+                    f'execute if items entity @s weapon.mainhand *[custom_data~{{gun:{n}}}] if entity @s[tag=mg.zdbl] unless items entity @s weapon.mainhand *[custom_data~{{gcr:3b}}] run return run function mg:gun/cd_set {{n:{n},s:{s2},m:3}}']
+        else:
+            cdn += [f'execute if items entity @s weapon.mainhand *[custom_data~{{gun:{n},gcr:{m}b}}] run return run function mg:gun/cd_set {{n:{n},s:0.05,m:0}}' for m in (1, 2)]
+    w('gun/cd_n', cdn)
+    w('gun/cd_r', ['# Variante « dernière balle » (macro n, s = recharge, h = recharge Speed Cola) : l\'overlay couvre la recharge',
+                   '$execute if entity @s[tag=mg.zsc] unless items entity @s weapon.mainhand *[custom_data~{gcr:2b}] run function mg:gun/cd_set {n:$(n),s:$(h),m:2}',
+                   '$execute unless entity @s[tag=mg.zsc] unless items entity @s weapon.mainhand *[custom_data~{gcr:1b}] run function mg:gun/cd_set {n:$(n),s:$(s),m:1}'])
+    w('gun/cd_hand', ['# @s tient une arme mg_gun : choisit la variante use_cooldown (limites : accroupi, Q, Neo GTA, lobby)',
+                      f'execute if score @s mg.grl matches 1.. if items entity @s weapon.mainhand *[custom_data~{{gun:{SNP},gcr:4b}}] run return 0',
+                      f'execute if score @s mg.grl matches 1.. if items entity @s weapon.mainhand *[custom_data~{{gun:{SNP}}}] run return run function mg:gun/cd_set {{n:{SNP},s:0.05,m:4}}',
+                      'execute if score @s mg.grl matches 1.. run return run function mg:gun/cd_n',
+                      'execute if score @s mg.gcd matches 1.. run return run function mg:gun/cd_n'] +
+      [f'execute if items entity @s weapon.mainhand *[custom_data~{{gun:{n}}}] if score @s mg.g{n} matches ..1 run return run function mg:gun/cd_r {{n:{n},s:{g[5] / 20:g},h:{g[5] // 2 / 20:g}}}' for n, g in GUNS.items()] +
+      ['function mg:gun/cd_n'])
     w('gun/tick', ['# Armes : à appeler chaque tick par le jeu',
                    'execute as @a[tag=mg.play,scores={mg.qs=1..}] at @s run function mg:gun/use',
                    'scoreboard players reset @a[scores={mg.qs=1..}] mg.qs',
@@ -139,6 +170,7 @@ def build():
                    'execute as @a[scores={mg.grl=1..}] at @s run function mg:gun/reload_tick',
                    'execute as @a[tag=mg.play,scores={mg.gsn=1..}] at @s run function mg:gun/sneak',
                    'scoreboard players reset @a[scores={mg.gsn=1..}] mg.gsn',
+                   'execute as @a[tag=mg.play,tag=!mg.gtw] if items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] run function mg:gun/cd_hand',
                    'execute as @a[tag=mg.play] if items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] run function mg:gun/hud'])
     w('gun/reset', ['# @s : munitions et recharge remises à zéro', 'scoreboard players reset @s mg.grl', 'scoreboard players reset @s mg.grt',
                     'scoreboard players reset @s mg.gcd'] + [f'scoreboard players reset @s mg.g{n}' for n in GUNS])
