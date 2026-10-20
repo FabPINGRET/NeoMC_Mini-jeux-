@@ -6,25 +6,31 @@ R, D, F sont lus à l'appel (VC.F, jamais `from var_common import F`) : ils n'ex
 """
 import json
 import os
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+import mcfn
 
 R = '.'
 D = F = None
+_fn = None      # mcfn.Fn sur F (posé par init)
 written = []
+js = mcfn.js
 
 
 def init(root):
-    global R, D, F
+    """Pose R, D, F et _fn ; replace et drop_lines sont des alias de _fn : à importer (from var_common import ...) après init()."""
+    global R, D, F, _fn, replace, drop_lines
     R = root
     D = os.path.join(R, 'data/mg')
     F = os.path.join(D, 'function')
+    _fn = mcfn.Fn(F)
+    replace, drop_lines = _fn.replace, _fn.drop_lines
 
 
 def w(rel, lines):
-    path = os.path.join(F, rel + '.mcfunction')
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(lines) + '\n')
-    written.append(path)
+    _fn.write(rel, lines)
+    written.append(_fn.path(rel))
 
 
 def wjson(path, obj):
@@ -37,10 +43,6 @@ def wjson(path, obj):
 
 def stars(n):
     return '★' * n + '☆' * (4 - n)
-
-
-def js(o):
-    return json.dumps(o, ensure_ascii=False, separators=(',', ':'))
 
 
 def patch(rel, anchor, new_lines, where='after', count=1):
@@ -59,23 +61,7 @@ def patch(rel, anchor, new_lines, where='after', count=1):
         f.write('\n'.join(lines))
 
 
-def replace(rel, old, new):
-    path = os.path.join(F, rel + '.mcfunction')
-    txt = open(path, encoding='utf-8').read()
-    if new in txt:
-        return
-    if txt.count(old) != 1:
-        raise SystemExit(f'{rel} : texte à remplacer introuvable ou multiple : {old!r}')
-    with open(path, 'w', encoding='utf-8', newline='\n') as f:
-        f.write(txt.replace(old, new))
-
-
-def drop_lines(rel, lines):
-    path = os.path.join(F, rel + '.mcfunction')
-    txt = open(path, encoding='utf-8').read().split('\n')
-    txt = [l for l in txt if l not in lines]
-    with open(path, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(txt))
+# replace(rel, old, new) et drop_lines(rel, lines) : alias de _fn posés par init (voir mcfn.Fn).
 
 
 # Menus : un dialogue = data/mg/dialog/<nom>.json

@@ -47,33 +47,18 @@ OVERSIZE = {
 }
 
 ALLOWED = {
-    ('tools/arcade/common.py', 'js'),
-    ('tools/arcade/common.py', '_write'),
-    ('tools/arcade/common.py', 'patch'),
-    ('tools/arcade/common.py', 'go_range'),
-    ('tools/arcade/common.py', 'drop_lines'),
+    ('tools/arcade/common.py', 'patch'),         # traduit les lignes (_tx) puis délègue à mcfn.Fn.patch
+    ('tools/arcade/common.py', 'go_range'),      # silencieux si core/go n'a pas la plage (mcfn : SystemExit)
     ('tools/dropper/gen_dropper_adv.py', 'wr'),
-    ('tools/dropper/wire_dropadv.py', 'patch'),
-    ('tools/dropper/wire_dropdefi.py', 'patch'),
-    ('tools/duel/duel_invite.py', 'js'),
     ('tools/elyrace/wire_elyrace2.py', 'go_range'),
-    ('tools/kart/wire_kart.py', 'patch'),
-    ('tools/kart/wire_kart2.py', 'patch'),
-    ('tools/kart/wire_kart3.py', 'patch'),
     ('tools/kart/write_kart.py', 'wr'),
     ('tools/lobby/gen_lobby.py', 'wr'),
     ('tools/lobby/gen_pvpcave.py', 'w'),
     ('tools/lobby/gen_pvpcave.py', 'js'),
     ('tools/lobby/gen_pvpcave.py', 'patch'),
-    ('tools/lobby/wire_lobkart.py', 'patch'),
-    ('tools/lobby/wire_secrets.py', 'patch'),
     ('tools/mobarena/scale_waves.py', 'w'),
     ('tools/party_pool.py', 'w'),
-    ('tools/variantes/var_common.py', 'w'),
-    ('tools/variantes/var_common.py', 'js'),
-    ('tools/variantes/var_common.py', 'patch'),
-    ('tools/variantes/var_common.py', 'replace'),
-    ('tools/variantes/var_common.py', 'drop_lines'),
+    ('tools/variantes/var_common.py', 'patch'),  # idempotence par sous-chaîne + paramètre count : pas celui de mcfn
 }
 
 
