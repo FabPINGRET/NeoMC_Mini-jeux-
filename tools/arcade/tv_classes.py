@@ -140,52 +140,5 @@ w(f'{P}/cl/second', ['# Chaque seconde : tourelles, soins du scientifique (toute
 w(f'{P}/cl/turret_one', ['tag @s add mg.trcur', 'function mg:terra/rpg/cl/turret', 'tag @s remove mg.trcur'])
 w(f'{P}/cl/tick', ['scoreboard players remove @a[tag=mg.tvw,scores={mg.trcd=1..}] mg.trcd 1'])
 
-# ================================================================ donjons : alphas, barres de vie, récompenses
-TROPH = {'dilo': ('mg.trvn', 3, 'glandes à venin'), 'ptera': ('mg.trai', 3, 'ailes'), 'raptor': ('mg.trgr', 6, 'griffes'), 'carno': ('mg.trdn', 3, 'dents')}
-ALPHA_HP = {'dilo': 120, 'ptera': 90, 'raptor': 120, 'carno': 450}
-DG = ['# Chaque seconde : donjons (déclenchement de l\'alpha à l\'approche, suivi, victoire)']
-for i, (k, key, name, sp, (ax, ay, az), door) in enumerate(DUNGEONS):
-    hp = ALPHA_HP[sp]
-    w(f'{P}/dg/{key}_start', [f'# {name} : l\'alpha se réveille', f'execute positioned {ax} {ay} {az} run function mg:terra/dino/{sp}',
-                              f'tag @e[tag=mg.tvlast] add mg.trboss', f'tag @e[tag=mg.tvlast] add mg.trdg_{key}',
-                              f'execute as @e[tag=mg.tvlast] run attribute @s minecraft:max_health base set {hp}',
-                              f'execute as @e[tag=mg.tvlast] run attribute @s minecraft:attack_damage modifier add mg:tralpha 0.5 add_multiplied_base',
-                              f'execute as @e[tag=mg.tvlast] run data merge entity @s {{Health:{hp}f,CustomName:{js(TEXT("Alpha : " + name, "dark_red", bold=True))}}}',
-                              'scoreboard players operation $tvi mg.st = @e[tag=mg.tvlast,limit=1] mg.tvid',
-                              'execute as @e[tag=mg.tvp] if score @s mg.tvid = $tvi mg.st run data merge entity @s {Glowing:1b,glow_color_override:16729156}'] +
-      ([f'execute positioned {ax} {ay} {az} run function mg:terra/dino/raptor', 'tag @e[tag=mg.tvlast] add mg.trr',
-        f'execute positioned {ax} {ay} {az} run function mg:terra/dino/raptor', 'tag @e[tag=mg.tvlast] add mg.trr'] if sp == 'raptor' else []) +
-      [f'scoreboard players set $trda{i} mg.st 1', f'scoreboard players set $trdr{i} mg.st 0', f'bossbar set mg:trdg{i} max {hp}',
-       f'execute positioned {ax} {ay} {az} run title @a[tag=mg.tvw,distance=..30] title {js(TEXT("ALPHA", "dark_red", bold=True))}',
-       f'execute positioned {ax} {ay} {az} run title @a[tag=mg.tvw,distance=..30] subtitle {js(TEXT(name, "gray"))}',
-       f'execute positioned {ax} {ay} {az} as @a[tag=mg.tvw,distance=..30] at @s run playsound minecraft:entity.ravager.roar hostile @s ~ ~ ~ 1 0.8'])
-    w(f'{P}/dg/{key}', [f'# {name} : chaque seconde pendant le combat',
-                        f'execute positioned {ax} {ay} {az} run bossbar set mg:trdg{i} players @a[tag=mg.tvw,distance=..40]',
-                        f'execute store result bossbar mg:trdg{i} value run data get entity @e[tag=mg.trdg_{key},limit=1] Health',
-                        f'execute positioned {ax} {ay} {az} unless entity @a[tag=mg.tvw,gamemode=adventure,distance=..44] run scoreboard players add $trdr{i} mg.st 1',
-                        f'execute positioned {ax} {ay} {az} if entity @a[tag=mg.tvw,gamemode=adventure,distance=..44] run scoreboard players set $trdr{i} mg.st 0',
-                        f'execute if score $trdr{i} mg.st matches 20.. run function mg:{P}/dg/{key}_reset'])
-    w(f'{P}/dg/{key}_reset', [f'scoreboard players set $trda{i} mg.st 0', f'execute as @e[tag=mg.trdg_{key}] at @s run tp @s ~ -400 ~', f'kill @e[tag=mg.trdg_{key}]',
-                                    f'scoreboard players set $trdc{i} mg.st 10', f'bossbar set mg:trdg{i} players'])
-    o, q, lab = TROPH[sp]
-    w(f'{P}/dg/{key}_win', [f'# {name} : alpha vaincu', f'scoreboard players set $trda{i} mg.st 0', f'scoreboard players set $trdc{i} mg.st 180',
-                            f'bossbar set mg:trdg{i} players', f'execute positioned {ax} {ay} {az} as @a[tag=mg.tvw,distance=..48] run function mg:{P}/dg/{key}_rw'])
-    w(f'{P}/dg/{key}_rw', [f'# @s a vaincu l\'alpha : {name}', f'scoreboard players add @s {o} {q}', 'scoreboard players add @s mg.tvc 150', f'function mg:{P}/xp {{n:300}}',
-                           'tellraw @s ' + js(TEXT(f'  +{q} {lab}, +150 ₵', 'gold')), 'title @s title {"text":"ALPHA VAINCU","color":"gold","bold":true}'] +
-      bit_test('mg.trdg', i) + [f'execute if score $b mg.st matches 0 run function mg:{P}/dg/{key}_first'])
-    w(f'{P}/dg/{key}_first', [f'# Premier passage : {name}', f'scoreboard players operation @s mg.trdg += #p{i} mg.st', f'function mg:{P}/xp {{n:500}}',
-                              f'title @s subtitle {js(TEXT("Donjon terminé : " + name + " (+500 XP)", "yellow"))}',
-                              'tellraw @a[tag=mg.tvw] ' + js([TEXT('🏆 ', 'gold'), {'selector': '@s', 'color': 'yellow'}, TEXT(' a terminé le donjon « ' + name + ' » !', 'gold')])])
-    DG += [f'scoreboard players remove $trdc{i} mg.st 1',
-           f'execute if score $trda{i} mg.st matches 1 unless entity @e[tag=mg.trdg_{key}] run function mg:{P}/dg/{key}_win',
-           f'execute unless score $trda{i} mg.st matches 1 if score $trdc{i} mg.st matches ..0 positioned {ax} {ay} {az} if entity @a[tag=mg.tvw,gamemode=adventure,distance=..12] run function mg:{P}/dg/{key}_start',
-           f'execute if score $trda{i} mg.st matches 1 run function mg:{P}/dg/{key}']
-w(f'{P}/dungeons', DG)
-DG_SETUP = ['# Session : barres des alphas des donjons']
-DG_CLEAR = ['# Fin de session : barres des alphas']
-for i, (k, key, name, sp, pos, door) in enumerate(DUNGEONS):
-    DG_SETUP += [f'bossbar add mg:trdg{i} {js(TEXT("👑 Alpha : " + name, "dark_red"))}', f'bossbar set mg:trdg{i} color red', f'bossbar set mg:trdg{i} style notched_10',
-                 f'bossbar set mg:trdg{i} players', f'scoreboard players set $trda{i} mg.st 0', f'scoreboard players set $trdc{i} mg.st 0']
-    DG_CLEAR += [f'bossbar remove mg:trdg{i}', f'scoreboard players set $trda{i} mg.st 0']
-w(f'{P}/dg_setup', DG_SETUP)
-w(f'{P}/dg_clear', DG_CLEAR)
+# ================================================================ donjons : alphas, salles et vagues (tv_dungeons.py)
+exec(open(os.path.join(os.path.dirname(os.path.abspath(C.__file__)), 'tv_dungeons.py'), encoding='utf-8').read())

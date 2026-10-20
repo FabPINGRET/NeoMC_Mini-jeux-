@@ -124,6 +124,8 @@ jobs:
               print('\n'.join(bad)); sys.exit(1)
           print('garde-fous RPG OK')
           PY
+      - name: Tests unitaires (donjons de Terra Nova, tailles des sources)
+        run: python3 -m unittest discover -s tools/tests -v
       - name: Lint Spyglass (indicatif)
         continue-on-error: true
         run: |
