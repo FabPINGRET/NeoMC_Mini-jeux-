@@ -38,7 +38,6 @@ OVERSIZE = {
     'tools/bedwars/gen_maps.py': 830,
     'tools/dropper/gen_dropper_adv.py': 750,
     'tools/kart/gen_kart.py': 530,
-    'tools/kart/gen_kart2.py': 1142,
     'tools/kart/write_kart.py': 754,
     'tools/lobby/gen_lobby.py': 1407,
     'tools/mini-party/gen_board.py': 924,
