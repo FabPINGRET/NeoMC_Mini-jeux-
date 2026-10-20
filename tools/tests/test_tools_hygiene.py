@@ -42,7 +42,6 @@ OVERSIZE = {
     'tools/kart/write_kart.py': 754,
     'tools/lobby/gen_lobby.py': 1407,
     'tools/mini-party/gen_board.py': 924,
-    'tools/sky/gen_sky.py': 1220,
     'tools/tnttag/gen_maps.py': 983,
 }
 
