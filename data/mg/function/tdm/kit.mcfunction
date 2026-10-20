@@ -1,0 +1,12 @@
+# Kit TDM (@s) : le sniper en main, le couteau (clic gauche) dans l'inventaire, cuir aux couleurs de l'équipe
+clear @s *[custom_data~{mg_tm:1b}]
+item replace entity @s weapon.mainhand with minecraft:warped_fungus_on_a_stick[custom_data={mg_tm:1b},item_model="minecraft:spyglass",unbreakable={},custom_name={"text":"🎯 Sniper TDM","color":"aqua","bold":true,"italic":false},lore=[{"text":"Clic droit : tir (recharge 2 s)","color":"gray","italic":false},{"text":"Accroupi : lunette — tête = élimination, corps = 2 touches","color":"gray","italic":false}]]
+give @s minecraft:stone_sword[custom_data={mg_tm:1b,mg_kn:1b},unbreakable={},custom_name={"text":"🔪 Couteau","color":"red","bold":true,"italic":false},lore=[{"text":"Clic gauche : 1 dégât (2 coups = élimination), recharge 1 s","color":"gray","italic":false}]]
+execute if entity @s[team=mg_red] run item replace entity @s armor.chest with minecraft:leather_chestplate[dyed_color=16711680,unbreakable={}]
+execute if entity @s[team=mg_red] run item replace entity @s armor.head with minecraft:leather_helmet[dyed_color=16711680,unbreakable={}]
+execute if entity @s[team=mg_red] run item replace entity @s armor.legs with minecraft:leather_leggings[dyed_color=16711680,unbreakable={}]
+execute if entity @s[team=mg_red] run item replace entity @s armor.feet with minecraft:leather_boots[dyed_color=16711680,unbreakable={}]
+execute if entity @s[team=mg_blue] run item replace entity @s armor.chest with minecraft:leather_chestplate[dyed_color=255,unbreakable={}]
+execute if entity @s[team=mg_blue] run item replace entity @s armor.head with minecraft:leather_helmet[dyed_color=255,unbreakable={}]
+execute if entity @s[team=mg_blue] run item replace entity @s armor.legs with minecraft:leather_leggings[dyed_color=255,unbreakable={}]
+execute if entity @s[team=mg_blue] run item replace entity @s armor.feet with minecraft:leather_boots[dyed_color=255,unbreakable={}]

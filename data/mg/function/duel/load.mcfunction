@@ -7,4 +7,5 @@ scoreboard objectives add mg.dli dummy
 scoreboard objectives add mg.dlhp dummy
 scoreboard objectives add mg.dlr dummy
 scoreboard objectives add mg.dlcd dummy
+scoreboard objectives add mg.dlkc dummy
 scoreboard objectives add mg.dlw dummy {"text":"⚔ Duels gagnés","color":"gold"}

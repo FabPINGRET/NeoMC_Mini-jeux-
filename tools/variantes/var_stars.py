@@ -31,7 +31,7 @@ NATIVE = {
     75: ('Course d\'anneaux', 2), 76: ('Course + combat', 3), 77: ('Survie en vol', 4),
     61: ('Circuit Champignon', 2), 62: ('Royaume Koopa', 3), 63: ('Bataille', 2), 56: ('Bateaux sur glace', 2),
     81: ('Canyon du Couchant', 3), 30: ('Turf Wars', 2),
-    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2), 88: ('🏰 The Towers', 3), 89: ('🚚 Convoi', 3), 90: ('🚚 Convoi — coop', 3), 91: ('▦ Block Party — bandes', 3), 92: ('▦ Block Party — mixte', 3), 93: ('🚩 Capture the Flag', 3), 94: ('⛏ Mini UHC Run', 3), 95: ('🏹 Mini Hunger Games', 3), 96: ('🎭 Prop Hunt', 2), 97: ('🧟 Zombies', 3), 98: ('🧪 Infection', 2), 220: ('🔴 1, 2, 3 Soleil', 2), 221: ('🚗 Autos tamponneuses', 2), 222: ('🚗 Autos tamponneuses — 3 coups', 2), 223: ('🚗 Autos tamponneuses — 8 coups', 2), 224: ('🟩 Slime Jump', 3), 225: ('🙈 Labyrinthe aveugle', 2), 226: ('👑 Master dit', 2), 227: ('🔪 Murder Mystery', 3), 242: ('🚩 CTF — Nether', 3), 243: ('🚩 CTF — Banquise', 3), 244: ('✷ TNT Run — Glacier', 3), 245: ('✷ TNT Run — Grand glacier', 3), 239: ('💣 Bomberman', 3), 240: ('💣 Bomberman — équipes', 3), 241: ('🌀 Labyrinthe géant', 3),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
+    83: ('📞 Téléphone (5+)', 2), 84: ('⚡ Tron (à pied)', 3), 85: ('🏍 Tron moto', 4), 86: ('👑 King of the Hill', 2), 87: ('👑 KotH — équipes', 2), 88: ('🏰 The Towers', 3), 89: ('🚚 Convoi', 3), 90: ('🚚 Convoi — coop', 3), 91: ('▦ Block Party — bandes', 3), 92: ('▦ Block Party — mixte', 3), 93: ('🚩 Capture the Flag', 3), 94: ('⛏ Mini UHC Run', 3), 95: ('🏹 Mini Hunger Games', 3), 96: ('🎭 Prop Hunt', 2), 97: ('🧟 Zombies', 3), 98: ('🧪 Infection', 2), 220: ('🔴 1, 2, 3 Soleil', 2), 221: ('🚗 Autos tamponneuses', 2), 222: ('🚗 Autos tamponneuses — 3 coups', 2), 223: ('🚗 Autos tamponneuses — 8 coups', 2), 224: ('🟩 Slime Jump', 3), 225: ('🙈 Labyrinthe aveugle', 2), 226: ('👑 Master dit', 2), 227: ('🔪 Murder Mystery', 3), 242: ('🚩 CTF — Nether', 3), 243: ('🚩 CTF — Banquise', 3), 244: ('✷ TNT Run — Glacier', 3), 245: ('✷ TNT Run — Grand glacier', 3), 239: ('💣 Bomberman', 3), 240: ('💣 Bomberman — équipes', 3), 241: ('🌀 Labyrinthe géant', 3), 246: ('🎯 TDM sniper', 3),   # 81 = Canyon du Couchant (Course d'élytres : 66 = parcours au hasard, plus une carte)
 }
 SHORT_OPT = {   # boutons de navigation (mg.opt) : noms courts
     24: '➶ OITC ▸', 10: '⚡ Quake ▸', 20: '⚓ Enclumes ▸', 19: '⬇ Dropper ▸', 28: '🪽 Course élytres ▸', 23: '⚔ Arène PvP ▸',
@@ -61,7 +61,7 @@ def run():
             if kind == 'go' and n in NATIVE:
                 nm, st = NATIVE[n]
                 icon = a['label'][0].get('text', '').split(' ')[0]
-                if name.startswith('cat_') and len(icon) <= 2 and not icon[:1].isalnum():   # dans une catégorie, garder l'icône du jeu
+                if name.startswith('cat_') and len(icon) <= 2 and not icon[:1].isalnum() and not nm.startswith(icon):   # dans une catégorie, garder l'icône du jeu
                     nm = f'{icon} {nm}'
                 new = star_label(nm, st, col)
                 if a['label'] != new:

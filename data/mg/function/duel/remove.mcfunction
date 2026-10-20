@@ -26,6 +26,7 @@ scoreboard objectives remove mg.dli
 scoreboard objectives remove mg.dlhp
 scoreboard objectives remove mg.dlr
 scoreboard objectives remove mg.dlcd
+scoreboard objectives remove mg.dlkc
 scoreboard objectives remove mg.dlw
 # objectif d'une version de développement antérieure (absent d'un monde neuf : sans effet)
 scoreboard objectives remove mg.dlsp0

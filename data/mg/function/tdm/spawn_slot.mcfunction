@@ -1,0 +1,27 @@
+# (@s, position = centre de l'arène à la hauteur du sol, #tms = départ 0..11) : tp au départ de l'équipe
+execute if entity @s[team=mg_red] run spawnpoint @s ~ ~ ~-66
+execute if entity @s[team=mg_blue] run spawnpoint @s ~ ~ ~66
+execute if entity @s[team=mg_red] if score #tms mg.st matches 0 run tp @s ~-5 ~ ~-66 0 0
+execute if entity @s[team=mg_red] if score #tms mg.st matches 1 run tp @s ~-3 ~ ~-66 0 0
+execute if entity @s[team=mg_red] if score #tms mg.st matches 2 run tp @s ~-1 ~ ~-66 0 0
+execute if entity @s[team=mg_red] if score #tms mg.st matches 3 run tp @s ~1 ~ ~-66 0 0
+execute if entity @s[team=mg_red] if score #tms mg.st matches 4 run tp @s ~3 ~ ~-66 0 0
+execute if entity @s[team=mg_red] if score #tms mg.st matches 5 run tp @s ~5 ~ ~-66 0 0
+execute if entity @s[team=mg_red] if score #tms mg.st matches 6 run tp @s ~-5 ~ ~-68 0 0
+execute if entity @s[team=mg_red] if score #tms mg.st matches 7 run tp @s ~-3 ~ ~-68 0 0
+execute if entity @s[team=mg_red] if score #tms mg.st matches 8 run tp @s ~-1 ~ ~-68 0 0
+execute if entity @s[team=mg_red] if score #tms mg.st matches 9 run tp @s ~1 ~ ~-68 0 0
+execute if entity @s[team=mg_red] if score #tms mg.st matches 10 run tp @s ~3 ~ ~-68 0 0
+execute if entity @s[team=mg_red] if score #tms mg.st matches 11 run tp @s ~5 ~ ~-68 0 0
+execute if entity @s[team=mg_blue] if score #tms mg.st matches 0 run tp @s ~-5 ~ ~66 180 0
+execute if entity @s[team=mg_blue] if score #tms mg.st matches 1 run tp @s ~-3 ~ ~66 180 0
+execute if entity @s[team=mg_blue] if score #tms mg.st matches 2 run tp @s ~-1 ~ ~66 180 0
+execute if entity @s[team=mg_blue] if score #tms mg.st matches 3 run tp @s ~1 ~ ~66 180 0
+execute if entity @s[team=mg_blue] if score #tms mg.st matches 4 run tp @s ~3 ~ ~66 180 0
+execute if entity @s[team=mg_blue] if score #tms mg.st matches 5 run tp @s ~5 ~ ~66 180 0
+execute if entity @s[team=mg_blue] if score #tms mg.st matches 6 run tp @s ~-5 ~ ~68 180 0
+execute if entity @s[team=mg_blue] if score #tms mg.st matches 7 run tp @s ~-3 ~ ~68 180 0
+execute if entity @s[team=mg_blue] if score #tms mg.st matches 8 run tp @s ~-1 ~ ~68 180 0
+execute if entity @s[team=mg_blue] if score #tms mg.st matches 9 run tp @s ~1 ~ ~68 180 0
+execute if entity @s[team=mg_blue] if score #tms mg.st matches 10 run tp @s ~3 ~ ~68 180 0
+execute if entity @s[team=mg_blue] if score #tms mg.st matches 11 run tp @s ~5 ~ ~68 180 0

@@ -25,7 +25,8 @@ def build(known):
             act('🏰 The Towers', 'gold', 'trigger mg.go set 88', 'Saute dans le puits adverse, 5 points pour gagner'),
             act('🚚 Convoi', 'gold', 'trigger mg.go set 89', 'Escorte ou bloque le convoi, 2 manches'),
             act('🚚 Convoi — coop', 'green', 'trigger mg.go set 90', 'Tous ensemble contre les monstres'),
-            act('🚩 Capture the Flag ▸', 'gold', OPEN(58), 'Ramène le drapeau adverse sur ton socle — Prairie, Nether, Banquise')], 'menu'),
+            act('🚩 Capture the Flag ▸', 'gold', OPEN(58), 'Ramène le drapeau adverse sur ton socle — Prairie, Nether, Banquise'),
+            act('🎯 TDM sniper', 'gold', 'trigger mg.go set 246', 'Rouge contre Bleu au sniper et au couteau dans les arènes du duel, packs de soin : 25 frags ou 8 min')], 'menu'),
         'courses': ('🏁 Courses et vol', 'gold', 'Le premier arrivé gagne.', [
             act('🏎 Kart ▸', 'gold', OPEN(46), 'Circuit Champignon, Royaume Koopa, Bataille'),
             known('trigger mg.go set 56', '⛵ Course de bateaux (glace)', 'aqua'),

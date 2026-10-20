@@ -62,6 +62,11 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.tmk
+scoreboard objectives remove mg.tmhp
+scoreboard objectives remove mg.tmcd
+scoreboard objectives remove mg.tmx
+scoreboard objectives remove mg.tmkc
 schedule clear mg:ombre/wb_step
 schedule clear mg:ombre/world_build
 schedule clear mg:ombre/session_setup
@@ -990,6 +995,8 @@ data remove storage mg:lobby food1
 function mg:hall/remove
 function mg:sky/remove
 function mg:duel/remove
+kill @e[type=minecraft:item_display,tag=mg.tmhk]
+function mg:tdm/cleanup
 scoreboard objectives remove mg.seen
 scoreboard objectives remove mg.acn
 scoreboard objectives remove mg.sbg

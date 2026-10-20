@@ -4,10 +4,31 @@ Un duel = 2 joueurs (tag mg.dl, mg.dli = instance 1..3 = arène) ; mg.dla marque
 mg.dlhp = PV de la manche (2 ; tête = 2 dégâts, corps = 1) ; mg.dlr = manches gagnées (3 pour gagner).
 Tags temporaires : mg.dlsh tireur, mg.dlvc victime touchée, mg.dlwn gagnant, mg.dlsp joueurs de l'instance en cours,
 mg.dlp manche en préparation (3 s : intouchable, ne tire pas ; mg.dlx sert alors de décompte), mg.dlsc lunette.
+Couteau (stone_sword, clic gauche) : l'advancement mg:duel_melee (player_hurt_entity) appelle duel/melee_adv ; 1 dégât (= touche au
+corps), recharge 1 s (mg.dlkc). Les helpers knife() et write_adv() servent aussi au TDM (tools/tdm).
 """
+import json
+import os
 
 SNEAK = '{condition:"minecraft:entity_properties",entity:"this",predicate:{flags:{is_sneaking:true}}}'
 SCOPE = chr(0xE222)      # cache de lunette du resource pack (font mg:gta, comme le sniper de Neo City)
+
+
+def knife(key):
+    """Item du couteau : stone_sword marquée {key:1b, mg_kn:1b} (key = mg_dl ou mg_tm : sniper_kill / item_kill le couvrent)."""
+    def js(o):
+        return json.dumps(o, ensure_ascii=False, separators=(',', ':'))
+    return (f'minecraft:stone_sword[custom_data={{{key}:1b,mg_kn:1b}},unbreakable={{}},custom_name='
+            + js({'text': '🔪 Couteau', 'color': 'red', 'bold': True, 'italic': False}) + ',lore=['
+            + js({'text': 'Clic gauche : 1 dégât (2 coups = élimination), recharge 1 s', 'color': 'gray', 'italic': False}) + ']]')
+
+
+def write_adv(D, name, fn):
+    """Écrit l'advancement D/advancement/<name>.json : un joueur en frappe un autre -> récompense = la fonction fn."""
+    os.makedirs(os.path.join(D, 'advancement'), exist_ok=True)
+    with open(os.path.join(D, 'advancement', name + '.json'), 'w', encoding='utf-8', newline='\n') as f:
+        json.dump({'criteria': {'hit': {'trigger': 'minecraft:player_hurt_entity'}}, 'rewards': {'function': fn}}, f, indent=2)
+        f.write('\n')
 
 
 def sniper_kill(zs):
@@ -42,12 +63,14 @@ def build(w, js, zs):
         'execute as @a[tag=mg.dl,scores={mg.dlcd=1}] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 0.6 2',
         'execute as @a[tag=mg.dl,tag=!mg.dlp,scores={mg.dlcd=1}] run title @s actionbar ' + js([tx('🎯 Sniper prêt', 'aqua')]),
         'scoreboard players remove @a[tag=mg.dl,scores={mg.dlcd=1..}] mg.dlcd 1',
+        'scoreboard players remove @a[tag=mg.dl,scores={mg.dlkc=1..}] mg.dlkc 1',
         'execute as @a[tag=mg.dl,scores={mg.qs=1..}] run function mg:duel/shoot',
-        '# le kit est rendu si un effacement (lancement de partie) l\'a retiré',
-        'execute as @a[tag=mg.dl] unless items entity @s container.* *[custom_data~{mg_dl:1b}] run function mg:duel/kit',
-        '# snipers jetés ou ramassés par un autre : retirés',
+        '# le kit (sniper et couteau) est rendu si un effacement (lancement de partie) ou un jet l\'a retiré',
+        'execute as @a[tag=mg.dl] unless items entity @s container.* minecraft:warped_fungus_on_a_stick[custom_data~{mg_dl:1b}] run function mg:duel/kit',
+        'execute as @a[tag=mg.dl] unless items entity @s container.* *[custom_data~{mg_dl:1b,mg_kn:1b}] run function mg:duel/kit',
+        '# sniper et couteau jetés ou ramassés par un autre : retirés',
         sniper_kill(zs),
-        'clear @a[tag=!mg.dl] minecraft:warped_fungus_on_a_stick[custom_data~{mg_dl:1b}]',
+        'clear @a[tag=!mg.dl] *[custom_data~{mg_dl:1b}]',
         '# hors de l\'arène (chute, mort et réapparition au lobby...) : forfait ; puis adversaire parti',
     ] + [f'execute as @a[tag=mg.dl,scores={{mg.dli={i}}}] unless entity @s[x=-22,dx=44,y=60,dy=500,z={z - 72},dz=145] run function mg:duel/forfeit'
          for i, z in enumerate(zs, 1)]
@@ -157,6 +180,29 @@ def build(w, js, zs):
         + js([tx('🎯 Touché au corps : encore une touche !', 'aqua')]),
         'execute if score $dld mg.st matches ..1 if score @s mg.dlhp matches 1.. run title @s actionbar '
         + js([tx('💥 Touché ! Encore une touche et tu perds la manche.', 'red')]),
+    ])
+
+    # ------------------------------------------------------------------ couteau (clic gauche)
+    w('duel/melee_adv', [
+        '# Récompense de mg:duel_melee (@s = attaquant) : coup de couteau = 1 dégât à l\'adversaire de la même arène',
+        'advancement revoke @s only mg:duel_melee',
+        'execute unless entity @s[tag=mg.dl,tag=!mg.dlp] run return 0',
+        'execute unless items entity @s weapon.mainhand *[custom_data~{mg_kn:1b}] run return 0',
+        'execute if score @s mg.dlkc matches 1.. run return 0',
+        '# recharge posée AVANT le coup (un coup balayé déclenche l\'advancement plusieurs fois dans le même tick)',
+        'scoreboard players set @s mg.dlkc 20',
+        'tag @s add mg.dlsh',
+        'scoreboard players operation $dli mg.st = @s mg.dli',
+        'execute as @a[tag=mg.dl,tag=!mg.dlsh,tag=!mg.dlp,distance=..5] if score @s mg.dli = $dli mg.st if data entity @s {HurtTime:10s} run tag @s add mg.dlvc',
+        'execute as @p[tag=mg.dlvc] run function mg:duel/melee_hit',
+        'tag @a remove mg.dlvc',
+        'tag @s remove mg.dlsh',
+    ])
+    w('duel/melee_hit', [
+        '# Coup de couteau (@s = victime ; l\'attaquant porte mg.dlsh) : 1 dégât, manche perdue si les PV sont épuisés',
+        'scoreboard players set $dld mg.st 1',
+        'function mg:duel/hit',
+        'execute if score @s mg.dlhp matches ..0 run function mg:duel/round',
     ])
 
     # ------------------------------------------------------------------ manches
