@@ -25,7 +25,6 @@ OVERSIZE = {
     'tools/arcade/gen_golf.py': 887,
     'tools/arcade/gen_gta.py': 1243,
     'tools/arcade/gen_tennis.py': 613,
-    'tools/arcade/gen_terranova.py': 1482,
     'tools/arcade/gen_villa.py': 516,
     'tools/arcade/gen_zombies.py': 815,
     'tools/arcade/gta_plus.py': 532,
