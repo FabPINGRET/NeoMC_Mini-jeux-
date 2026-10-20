@@ -3,7 +3,9 @@ execute if score @s mg.trcl matches 3 run return run tellraw @s {"text":"Tu es d
 scoreboard players set @s mg.trcl 3
 scoreboard players set @s mg.trcd 0
 function mg:terra/rpg/stats
-function mg:terra/kit
+clear @s *[custom_data~{tv:14}]
+function mg:terra/rpg/kit
+function mg:terra/rpg/cl/bonus
 title @s times 5 50 15
 title @s title {"text":"🔬 SCIENTIFIQUE","color":"aqua","bold":true}
 title @s subtitle {"text":"Soigneur : régénère lentement les colons proches, +50 % d'XP au scanner.","color":"gray"}

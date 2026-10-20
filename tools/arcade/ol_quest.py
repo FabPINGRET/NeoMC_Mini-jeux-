@@ -562,8 +562,6 @@ for t, (gold, mat, q, lv) in CL.FORGE_A.items():
       buy(gold, [f'scoreboard players remove @s {mo} {q}', f'scoreboard players set @s mg.olat {t}', f'function mg:{P}/kit',
                  'execute at @s run playsound minecraft:block.anvil.use player @a ~ ~ ~ 0.8 0.8'], CL.ARM_NAME[t]))
 w('sh/802', FA)
-FL_ = ['# @s : coûts de la forge (affichés avant le choix)']
-w('forge_costs', FL_)
 
 # ================================================================ contrats de la guilde (chasses répétables)
 CT_KINDS = [k for r in W.ORDER for k in M.REG_KINDS[r]]
@@ -847,6 +845,3 @@ w('hz/heat', ['damage @s 1 minecraft:hot_floor', 'particle minecraft:flame ~ ~1 
               'title @s actionbar {"text":"🔥 La chaleur t\'écrase ! Durgan (Bastion des Braises) peut forger un talisman.","color":"gold"}'])
 w('hz/dark', ['effect give @s minecraft:darkness 4 0 true', 'scoreboard players set @s mg.olal 40',
               'title @s actionbar {"text":"🌑 Les ténèbres te rongent. Seule la bénédiction de l\'Aube t\'en protège.","color":"dark_purple"}'])
-
-# ================================================================ entités de la session (PNJ, pierres, quêtes, pages)
-w('q/setup', SETUP_NPC + SETUP_WS + SETUP_Q + SETUP_LORE + [f'function mg:{P}/tc_deco'])

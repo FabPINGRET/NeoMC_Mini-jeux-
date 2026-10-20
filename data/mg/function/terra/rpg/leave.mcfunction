@@ -5,3 +5,4 @@ scoreboard players set @s mg.trrg 0
 function mg:terra/rpg/cl/remove
 function mg:terra/rpg/cs/stop
 function mg:terra/rpg/st/remove
+tag @s remove mg.trkb

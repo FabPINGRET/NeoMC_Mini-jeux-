@@ -37,5 +37,13 @@ scoreboard players set @s mg.trrg 0
 scoreboard players set @s mg.trpk 0
 scoreboard players set @s mg.trsc 0
 scoreboard players set @s mg.trdt 0
+scoreboard players set @s mg.tkdilo 0
+scoreboard players set @s mg.tkcompy 0
+scoreboard players set @s mg.tkptera 0
+scoreboard players set @s mg.tksix 0
+scoreboard players set @s mg.tkherb 0
+scoreboard players set @s mg.tkherb2 0
+scoreboard players set @s mg.tkherb3 0
+scoreboard players set @s mg.tkherb4 0
 scoreboard players enable @s mg.trtk
 function mg:terra/rpg/stats

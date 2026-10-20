@@ -1,0 +1,6 @@
+# TP général → Ombrelune (@s = admin)
+execute unless data storage mg:ombre built run return run function mg:ombre/not_ready
+execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.mpp,tag=mg.surv,tag=!mg.olw] run function mg:survie/leave
+execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.mpp,tag=mg.inplot] run function mg:plot/leave
+execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.mpp,tag=!mg.olw,tag=!mg.dl] run function mg:ombre/enter
+tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a envoyé tout le monde à Ombrelune.","color":"gray"}]

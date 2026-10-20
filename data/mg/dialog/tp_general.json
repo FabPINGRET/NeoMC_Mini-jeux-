@@ -85,6 +85,24 @@
     {
       "label": [
         {
+          "text": "🌙 Tout le monde → Ombrelune",
+          "color": "light_purple"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 88"
+      },
+      "tooltip": [
+        {
+          "text": "Les joueurs en survie, à Neo GTA, à Terra Nova ou sur leur plot en sortent d'abord (tout est sauvegardé)",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
           "text": "🏠 Tout le monde → Lobby",
           "color": "yellow"
         }

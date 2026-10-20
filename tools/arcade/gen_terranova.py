@@ -567,7 +567,6 @@ w('terra/loc', ['# @s : 📡 localisateur (boussole) vers $(x) $(y) $(z) (macro)
 LOC_HOME = 'function mg:terra/loc {x:0,y:65,z:0}'
 w('terra/kit', ['# @s : équipement (paliers du RPG gardés : mêlée, fusil, armure, scanner, sifflet)', 'clear @s',
                 'function mg:terra/rpg/kit', f'item replace entity @s hotbar.7 with {HOME}', 'function mg:terra/rpg/qloc',
-                'scoreboard players set @s mg.tvnet 0', 'scoreboard players set @s mg.tvtr 0',
                 'effect give @s minecraft:saturation infinite 0 true'])
 
 # ================================================================ portail du lobby (monde des mini-jeux)
@@ -655,8 +654,11 @@ w('terra/lobby_tick', ['# Chaque tick (core/tick, monde des mini-jeux) : portail
                        f'execute if score $tvw mg.st matches 1 in {DIM} run function mg:terra/tick'])
 w('terra/pre_tick', ['# Avant la survie (core/tick) : un joueur de Terra Nova sorti de la dimension sans passer par la sortie perd ses tags',
                      f'execute as @a[tag=mg.tvw] at @s unless dimension {DIM} run function mg:terra/strayed'])
-w('terra/strayed', ['# @s a quitté Terra Nova autrement (téléportation…)', 'tag @s remove mg.tvw', 'tag @s remove mg.surv', 'function mg:terra/mis_clear', 'function mg:terra/traps_clear', 'function mg:terra/untag',
-                     'function mg:terra/rpg/leave'])
+w('terra/strayed', ['# @s a quitté Terra Nova autrement (téléportation…) : retour au lobby complet, sauf s\'il est déjà dans une partie',
+                     'tag @s remove mg.tvw', 'tag @s remove mg.surv', 'function mg:terra/mis_clear', 'function mg:terra/traps_clear', 'function mg:terra/untag',
+                     'function mg:terra/rpg/leave',
+                     'execute unless entity @s[tag=mg.play] unless entity @s[tag=mg.out] in minecraft:overworld run function mg:core/reset_player',
+                     'attribute @s minecraft:fall_damage_multiplier base set 0'])
 w('terra/traps_clear', ['# @s part : ses pièges disparaissent', 'scoreboard players operation $own mg.st = @s mg.tvpid',
                         'execute as @e[tag=mg.tvtrap] if score @s mg.tvo = $own mg.st run kill @s', 'execute as @e[tag=mg.tvtrapd] if score @s mg.tvo = $own mg.st run kill @s'])
 
@@ -674,7 +676,8 @@ w('terra/enter', ['# @s entre dans le portail de Terra Nova (contexte : monde de
                   'function mg:terra/join', 'function mg:core/heal',
                   f'execute in {DIM} run spawnpoint @s {int(MED[0])} {MED[1]} {int(MED[2])}',
                   f'execute in {DIM} run tp @s {SPAWN[0]} {SPAWN[1]} {SPAWN[2]} 180 0',
-                  'function mg:terra/kit',
+                  'scoreboard players set @s mg.tvnet 0', 'scoreboard players set @s mg.tvtr 0', 'tag @s remove mg.trkb',
+                  'function mg:terra/kit', 'function mg:terra/rpg/cl/bonus',
                   'title @s times 10 60 20', 'title @s title {"text":"TERRA NOVA","color":"green","bold":true}', 'function mg:terra/rpg/enter',
                   'title @s subtitle {"text":"Il y a 85 millions d\'années…","color":"gray"}',
                   'tellraw @s ' + js([{'text': '🦖 TERRA NOVA', 'color': 'green', 'bold': True}, {'text': ' : bienvenue dans la colonie, colon !', 'color': 'yellow'}]),
@@ -688,6 +691,7 @@ w('terra/not_ready', ['# Terra Nova pas encore construite : on recule le joueur'
                       'tellraw @s {"text":"🚧 Terra Nova est en construction (quelques minutes après le démarrage du serveur). Réessaie bientôt !","color":"yellow"}'])
 w('terra/menu_go', ['# @s : « Aller à Terra Nova » du menu Échap (trigger mg.sv 7), d\'où qu\'on soit hors partie',
                     'execute unless score $setup mg.st matches 1 run return run tellraw @s {"text":"⚠ Installation manquante : un OP doit d\'abord lancer /function mg:setup","color":"red"}',
+                    'execute unless data storage mg:terra built run return run tellraw @s {"text":"🚧 Terra Nova est en construction, réessaie bientôt.","color":"yellow"}',
                     'execute if entity @s[tag=mg.tvw] run return run tellraw @s {"text":"Tu es déjà à Terra Nova.","color":"gray"}',
                     'execute if entity @s[tag=mg.play] run return run tellraw @s {"text":"⚠ Tu participes à la partie en cours : Terra Nova sera accessible après.","color":"red"}',
                     'execute if entity @s[tag=mg.out] run return run tellraw @s {"text":"⚠ Partie en cours : Terra Nova sera accessible après.","color":"red"}',
@@ -1351,7 +1355,7 @@ w('terra/tick', ['# 🦖 Terra Nova : chaque tick tant qu\'un joueur y est (cont
                  'function mg:terra/rpg/tick'])
 SEC = ['# Chaque seconde (dans la dimension) : colonie, soins, primes, missions, population de dinosaures, carnotaure',
        'execute unless score $tvsu mg.st matches 1.. run return 0',
-       'execute if score $tvsu mg.st matches 2 run kill @e[tag=mg.tvp,tag=!mg.tvok]',
+       'execute if score $tvsu mg.st matches 2 run kill @e[type=#mg:tv_part,tag=mg.tvp,tag=!mg.tvok]',
        'tag @e[tag=mg.tvok] remove mg.tvok', 'scoreboard players set $tvsu mg.st 2',
        'scoreboard players set #4 mg.st 4', 'scoreboard players set #10 mg.st 10', 'scoreboard players set #12 mg.st 12',
        'function mg:terra/gate',
