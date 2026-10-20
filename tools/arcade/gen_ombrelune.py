@@ -88,9 +88,9 @@ w('wb_step', ['# Construction : 220 commandes par tick, dans la région chargée
               f'execute in {DIM} unless function mg:{P}/b/ready run return run schedule function mg:{P}/wb_step 2t',
               'scoreboard players set $olk mg.st 220', f'execute in {DIM} run function mg:{P}/b/run',
               f'schedule function mg:{P}/wb_step 1t'])
-w('world_build', ["# Construction d'Ombrelune (ou reconstruction complète, ~3 min)", 'scoreboard players set $olb mg.st 0', 'scoreboard players set $olrl mg.st 0',
+w('world_build', ["# Construction d'Ombrelune (ou reconstruction complète, ~4 min)", 'scoreboard players set $olb mg.st 0', 'scoreboard players set $olrl mg.st 0',
                   'scoreboard players set $olrr mg.st 0', 'data remove storage mg:ombre q', f'execute in {DIM} run forceload remove all',
-                  f'schedule function mg:{P}/wb_step 20t', 'tellraw @a[tag=mg.admin] {"text":"🌙 Construction de la carte d\'Ombrelune lancée (~3 min).","color":"light_purple"}'])
+                  f'schedule function mg:{P}/wb_step 20t', 'tellraw @a[tag=mg.admin] {"text":"🌙 Construction de la carte d\'Ombrelune lancée (~4 min).","color":"light_purple"}'])
 w('wb_done', ['# Ombrelune construite : entités permanentes ensuite', f'execute in {DIM} run kill @e[type=minecraft:item,x=-240,y=0,z=-240,dx=480,dy=300,dz=480]',
               f'execute in {DIM} run forceload remove all', 'data modify storage mg:ombre built set value 1b', 'data remove storage mg:ombre q',
               'tellraw @a[tag=mg.admin] {"text":"🌙 Ombrelune est construite (PNJ et objets en cours de pose).","color":"light_purple"}', f'function mg:{P}/st/start'])
@@ -167,7 +167,10 @@ w('lobby_tick', ['# Chaque tick (monde des mini-jeux) : portail d\'Ombrelune, se
                  f'execute if score $olw mg.st matches 1 unless entity @a[tag=mg.olw] run function mg:{P}/session_end',
                  f'execute if score $olw mg.st matches 1 in {DIM} run function mg:{P}/tick'])
 w('pre_tick', [f'execute as @a[tag=mg.olw] at @s unless dimension {DIM} run function mg:{P}/strayed'])
-w('strayed', ['# @s a quitté Ombrelune autrement', 'tag @s remove mg.olw', 'tag @s remove mg.surv', f'function mg:{P}/untag'])
+w('strayed', ['# @s a quitté Ombrelune autrement (mort hors dimension, /tp…) : retour au lobby complet, sauf s\'il est déjà dans une partie',
+              'tag @s remove mg.olw', 'tag @s remove mg.surv', f'function mg:{P}/untag',
+              'execute unless entity @s[tag=mg.play] unless entity @s[tag=mg.out] in minecraft:overworld run function mg:core/reset_player',
+              'attribute @s minecraft:fall_damage_multiplier base set 0'])
 
 # ================================================================ entrée, sortie, session
 w('enter', ['# @s entre dans le portail d\'Ombrelune (contexte : monde des mini-jeux)',
@@ -192,6 +195,7 @@ w('not_ready', [f'tp @s {PX + 3}.5 64 {PZ}.5 90 0',
                 'tellraw @s {"text":"🚧 Ombrelune est en construction (quelques minutes après le démarrage du serveur). Réessaie bientôt !","color":"yellow"}'])
 w('menu_go', ['# @s : « Aller à Ombrelune » (menu Échap, trigger mg.sv 8)',
               'execute unless score $setup mg.st matches 1 run return run tellraw @s {"text":"⚠ Installation manquante : un OP doit d\'abord lancer /function mg:setup","color":"red"}',
+              'execute unless data storage mg:ombre built run return run tellraw @s {"text":"🚧 Ombrelune est en construction, réessaie bientôt.","color":"yellow"}',
               'execute if entity @s[tag=mg.olw] run return run tellraw @s {"text":"Tu es déjà à Ombrelune.","color":"gray"}',
               'execute if entity @s[tag=mg.play] run return run tellraw @s {"text":"⚠ Tu participes à la partie en cours : Ombrelune sera accessible après.","color":"red"}',
               'execute if entity @s[tag=mg.out] run return run tellraw @s {"text":"⚠ Partie en cours : Ombrelune sera accessible après.","color":"red"}',
@@ -406,24 +410,33 @@ _st = [l.replace('tag=!mg.gtw,tag=!mg.tvw,tag=!mg.svg2,', 'tag=!mg.gtw,tag=!mg.t
 C.w('survie/tick', _st[:-1] if _st[-1] == '' else _st)
 C.patch('desinstaller', 'execute as @a[tag=mg.tvw] in minecraft:overworld run function mg:terra/leave',
         ['execute as @a[tag=mg.olw] in minecraft:overworld run function mg:ombre/leave'])
-C.patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:terra built run schedule function mg:terra/world_build 200s',
-        ['# Ombrelune : construite une fois (dimension mg:ombrelune, ~4 min, après Terra Nova), règles du monde',
-         'execute if score $setup mg.st matches 1 unless data storage mg:ombre built unless score $olb mg.st matches 1.. run schedule function mg:ombre/world_build 260s',
-         'execute if score $setup mg.st matches 1 unless data storage mg:lobby olclean run schedule function mg:ombre/spawn_clean 10s',
-         'execute if score $setup mg.st matches 1 run schedule function mg:ombre/st/check 30s',
-         'scoreboard players set $olw mg.st 0', 'function mg:ombre/rules'])
+# core/load et desinstaller ne sont que patchés : on retire d'abord nos lignes (y compris celles d'une version périmée, déjà en double dans le fichier,
+# qui rendaient l'ancre « kill @e[tag=mg.ol] » ambiguë), puis on les repose une seule fois (modèle : gen_fish.py)
+OL_LOAD = ['# Ombrelune : construite une fois (dimension mg:ombrelune, ~4 min, après Terra Nova), règles du monde',
+           'execute if score $setup mg.st matches 1 unless data storage mg:ombre built unless score $olb mg.st matches 1.. run schedule function mg:ombre/world_build 260s',
+           'execute if score $setup mg.st matches 1 unless data storage mg:lobby olclean run schedule function mg:ombre/spawn_clean 10s',
+           'execute if score $setup mg.st matches 1 run schedule function mg:ombre/st/check 30s',
+           'scoreboard players set $olw mg.st 0', 'function mg:ombre/rules']
+OL_FORCELOAD = f'execute in {DIM} run forceload remove all'
+C.drop_lines('core/load', OL_LOAD)
+C.patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:terra built run schedule function mg:terra/world_build 200s', OL_LOAD)
 OBJ_DUMMY = sorted({o for o, _ in JOIN_DEF} | {'mg.ollv', 'mg.olpid', 'mg.olmp', 'mg.olmm', 'mg.olal', 'mg.olrg', 'mg.olsx', 'mg.olsy', 'mg.olsz', 'mg.olpk',
                                                'mg.olcs', 'mg.olctk', 'mg.olcf', 'mg.olox', 'mg.oloy', 'mg.oloz', 'mg.olon', 'mg.olod', 'mg.olid', 'mg.olab',
                                                'mg.olak', 'mg.olaf', 'mg.olat', 'mg.olses', 'mg.olo', 'mg.olst', 'mg.olpw', 'mg.olnid', 'mg.olmk'} |
                     {f'mg.olc{i}' for i in range(5)})
 C.objectives([(o, 'dummy') for o in OBJ_DUMMY] + [('mg.olq', 'minecraft.used:minecraft.warped_fungus_on_a_stick'), ('mg.oldt', 'minecraft.custom:minecraft.damage_taken'),
                                                   ('mg.oltk', 'trigger'), ('mg.olhb', 'minecraft.used:minecraft.honey_bottle')])
-C.patch('desinstaller', 'scoreboard objectives remove mg.bw',
-        ['schedule clear mg:ombre/wb_step', 'schedule clear mg:ombre/world_build', 'schedule clear mg:ombre/session_setup', 'schedule clear mg:ombre/spawn_clean',
-         'schedule clear mg:ombre/st/step', 'schedule clear mg:ombre/st/check', 'schedule clear mg:ombre/boss/wake', f'execute in {DIM} run forceload remove all', 'kill @e[tag=mg.olport]',
-         f'execute in {DIM} run kill @e[tag=mg.ol]', 'team remove mg_ol', 'team remove mg_olel', 'function mg:ombre/boss/clear',
-         'data remove storage mg:ombre built', 'data remove storage mg:ombre sv', 'data remove storage mg:lobby olclean'])
-C.patch('desinstaller', 'data remove storage mg:ombre sv', ['data remove storage mg:lobby olsite'])    # patch séparé : modifier la liste ci-dessus la dupliquerait
+OL_UNINST = ['schedule clear mg:ombre/wb_step', 'schedule clear mg:ombre/world_build', 'schedule clear mg:ombre/session_setup', 'schedule clear mg:ombre/spawn_clean',
+             'schedule clear mg:ombre/st/step', 'schedule clear mg:ombre/st/check', 'schedule clear mg:ombre/boss/wake', 'kill @e[tag=mg.olport]',
+             f'execute in {DIM} run kill @e[tag=mg.ol]', 'team remove mg_ol', 'team remove mg_olel', 'function mg:ombre/boss/clear',
+             'data remove storage mg:ombre built', 'data remove storage mg:ombre sv', 'data remove storage mg:lobby olclean', 'data remove storage mg:lobby olsite'] + \
+            [f'data remove storage mg:ombre {k}' for k in ('q', 'c', 'd', 'o', 'en', 's', 's2', 'st', 'mb', 'ct')]
+# versions périmées : bio_step et mg:ombre bio (plus générés), purgés des fichiers déjà installés
+C.drop_lines('desinstaller', OL_UNINST + [OL_FORCELOAD, 'schedule clear mg:ombre/bio_step', 'data remove storage mg:ombre bio'])
+C.patch('desinstaller', 'scoreboard objectives remove mg.bw', OL_UNINST)
+# forceload après le kill : kill n'atteint que les chunks chargés (un décharge préalable le rendrait inopérant). Les entités mg.ols restées dans des
+# chunks non chargés sont purgées à la réinstallation (st/<i> : kill @e[tag=mg.ols] de la région, chunks chargés le temps de la pose).
+C.patch('desinstaller', f'execute in {DIM} run kill @e[tag=mg.ol]', [OL_FORCELOAD])
 # menu Échap : bouton « Aller à Ombrelune » (après Terra Nova)
 _mp = os.path.join(C.D, 'dialog', 'main_menu.json')
 _m = json.load(open(_mp, encoding='utf-8'))

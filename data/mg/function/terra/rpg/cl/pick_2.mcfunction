@@ -3,7 +3,9 @@ execute if score @s mg.trcl matches 2 run return run tellraw @s {"text":"Tu es d
 scoreboard players set @s mg.trcl 2
 scoreboard players set @s mg.trcd 0
 function mg:terra/rpg/stats
-function mg:terra/kit
+clear @s *[custom_data~{tv:14}]
+function mg:terra/rpg/kit
+function mg:terra/rpg/cl/bonus
 title @s times 5 50 15
 title @s title {"text":"🏹 ÉCLAIREUR","color":"green","bold":true}
 title @s subtitle {"text":"Agile : +15 % de vitesse, sauts plus hauts, chutes amorties, +2 dégâts en mêlée.","color":"gray"}

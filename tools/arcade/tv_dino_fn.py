@@ -70,6 +70,11 @@ def g4(v):
 
 
 PT = '"mg.tv","mg.tvp","mg.tvn","mg.tvok"'
+# pièces du modèle (mg.tvp) : item_display (os 3D) ou block_display (modèle en blocs, filets) ; les sélecteurs les filtrent par type
+os.makedirs(os.path.join(C.D, 'tags/entity_type'), exist_ok=True)
+with open(os.path.join(C.D, 'tags/entity_type/tv_part.json'), 'w', encoding='utf-8', newline='\n') as f:
+    json.dump({'values': ['minecraft:item_display', 'minecraft:block_display']}, f, indent=2)
+    f.write('\n')
 BONE_ID = {}                                  # (espèce, os) -> n° unique (score mg.tvab de l'item_display)
 for key, sp in T.SPECIES.items():
     for b in sp.bones:
@@ -160,7 +165,7 @@ for key, sp in T.SPECIES.items():
                 seen[k] = f'terra/an/{key}/f{si * 8 + f}'
                 w(seen[k], [f'# {sp.label} : @s (os) posé pour l’état {st}, image {f}'] + L)
             # pas de « return run » devant un execute à plusieurs entités : il s'arrêterait après la première
-            F.append(f'execute if score $tvak mg.st matches {si * 8 + f} as @e[tag=mg.tvc,distance=..16] run function mg:{seen[k]}')
+            F.append(f'execute if score $tvak mg.st matches {si * 8 + f} as @e[type=#mg:tv_part,tag=mg.tvc,distance=..16] run function mg:{seen[k]}')
         w(f'terra/an/{key}/s{si}', [f'# {sp.label}, état {st} : image $tvak'] + F)
     w(f'terra/an/{key}/go', [f'# {sp.label} (contexte : position et cap du dinosaure) : pose de ses os marqués mg.tvc'] +
       [f'execute if score $tvak mg.st matches {si * 8}..{si * 8 + 7} run return run function mg:terra/an/{key}/s{si}' for si in range(len(T.STATES))])
@@ -186,11 +191,11 @@ w('terra/dsync', ['# @s (dinosaure, à sa position) : son modèle le suit. Os du
                   'scoreboard players operation $tvi mg.st = @s mg.tvid',
                   'execute if entity @s[tag=mg.tvrp] if entity @a[tag=mg.tvw,distance=..48] run function mg:terra/an_state',
                   'scoreboard players operation $tvak mg.st = @s mg.tvak',
-                  'execute as @e[tag=mg.tvp,distance=..16] if score @s mg.tvid = $tvi mg.st run tag @s add mg.tvc',
+                  'execute as @e[type=#mg:tv_part,tag=mg.tvp,distance=..16] if score @s mg.tvid = $tvi mg.st run tag @s add mg.tvc',
                   '# téléporté (repoussé hors de la colonie…) : modèle cherché partout',
-                  'execute unless entity @e[tag=mg.tvc,distance=..16,limit=1] as @e[tag=mg.tvp] if score @s mg.tvid = $tvi mg.st run tp @s ~ ~ ~',
-                  'execute unless entity @e[tag=mg.tvc,distance=..16,limit=1] as @e[tag=mg.tvp,distance=..16] if score @s mg.tvid = $tvi mg.st run tag @s add mg.tvc',
-                  'tag @e[tag=mg.tvc,distance=..16] add mg.tvok',
+                  'execute unless entity @e[type=#mg:tv_part,tag=mg.tvc,distance=..16,limit=1] as @e[type=#mg:tv_part,tag=mg.tvp] if score @s mg.tvid = $tvi mg.st run tp @s ~ ~ ~',
+                  'execute unless entity @e[type=#mg:tv_part,tag=mg.tvc,distance=..16,limit=1] as @e[type=#mg:tv_part,tag=mg.tvp,distance=..16] if score @s mg.tvid = $tvi mg.st run tag @s add mg.tvc',
+                  'tag @e[type=#mg:tv_part,tag=mg.tvc,distance=..16] add mg.tvok',
                   'execute if entity @s[tag=mg.tvrp] rotated ~ 0 run function mg:terra/an_sp',
-                  'execute as @e[tag=mg.tvc,distance=..16] unless score @s mg.tvab matches 1.. run tp @s ~ ~ ~ ~ 0',
-                  'tag @e[tag=mg.tvc,distance=..16] remove mg.tvc'])
+                  'execute as @e[type=#mg:tv_part,tag=mg.tvc,distance=..16] unless score @s mg.tvab matches 1.. run tp @s ~ ~ ~ ~ 0',
+                  'tag @e[type=#mg:tv_part,tag=mg.tvc,distance=..16] remove mg.tvc'])

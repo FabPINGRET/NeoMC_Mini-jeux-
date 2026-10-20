@@ -62,11 +62,6 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
-scoreboard objectives remove mg.tmk
-scoreboard objectives remove mg.tmhp
-scoreboard objectives remove mg.tmcd
-scoreboard objectives remove mg.tmx
-scoreboard objectives remove mg.tmkc
 schedule clear mg:ombre/wb_step
 schedule clear mg:ombre/world_build
 schedule clear mg:ombre/session_setup
@@ -74,31 +69,31 @@ schedule clear mg:ombre/spawn_clean
 schedule clear mg:ombre/st/step
 schedule clear mg:ombre/st/check
 schedule clear mg:ombre/boss/wake
-execute in mg:ombrelune run forceload remove all
 kill @e[tag=mg.olport]
 execute in mg:ombrelune run kill @e[tag=mg.ol]
+execute in mg:ombrelune run forceload remove all
 team remove mg_ol
 team remove mg_olel
 function mg:ombre/boss/clear
 data remove storage mg:ombre built
 data remove storage mg:ombre sv
+data remove storage mg:lobby olclean
 data remove storage mg:lobby olsite
-data remove storage mg:lobby olclean
-schedule clear mg:ombre/wb_step
-schedule clear mg:ombre/world_build
-schedule clear mg:ombre/session_setup
-schedule clear mg:ombre/spawn_clean
-schedule clear mg:ombre/bio_step
-schedule clear mg:ombre/boss/wake
-execute in mg:ombrelune run forceload remove all
-kill @e[tag=mg.olport]
-execute in mg:ombrelune run kill @e[tag=mg.ol]
-team remove mg_ol
-team remove mg_olel
-function mg:ombre/boss/clear
-data remove storage mg:ombre built
-data remove storage mg:ombre bio
-data remove storage mg:lobby olclean
+data remove storage mg:ombre q
+data remove storage mg:ombre c
+data remove storage mg:ombre d
+data remove storage mg:ombre o
+data remove storage mg:ombre en
+data remove storage mg:ombre s
+data remove storage mg:ombre s2
+data remove storage mg:ombre st
+data remove storage mg:ombre mb
+data remove storage mg:ombre ct
+scoreboard objectives remove mg.tmk
+scoreboard objectives remove mg.tmhp
+scoreboard objectives remove mg.tmcd
+scoreboard objectives remove mg.tmx
+scoreboard objectives remove mg.tmkc
 scoreboard objectives remove mg.olab
 scoreboard objectives remove mg.olac
 scoreboard objectives remove mg.olaf

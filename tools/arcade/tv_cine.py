@@ -149,7 +149,7 @@ for name, (cid, end, keys) in CINES.items():
         for t in range(b0, min(last, b0 + 19) + 1):
             pos, at = pose_at(keys, t)
             yw, pt = look(pos, at)
-            B.append(f'execute if score @s mg.trct matches {t + 1} run return run execute in {DIM} as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st '
+            B.append(f'execute if score @s mg.trct matches {t + 1} run return run execute in {DIM} as @e[type=minecraft:item_display,tag=mg.trcam] if score @s mg.tvo = $own mg.st '
                      f'run tp @s {g4(pos[0])} {g4(pos[1])} {g4(pos[2])} {yw} {pt}')
         w(f'{CS}/{name}/p{b0 // 20}', B)
         T.append(f'execute if score @s mg.trct matches {b0 + 1}..{b0 + 20} run function mg:{CS}/{name}/p{b0 // 20}')
@@ -158,8 +158,9 @@ for name, (cid, end, keys) in CINES.items():
     RUN.append(f'execute if score @s mg.trcs matches {cid} run function mg:{CS}/{name}/t')
 RUN += ['tag @s remove mg.trcsme']
 w(f'{CS}/run', RUN)
-w(f'{CS}/lock', ['tag @s add mg.trcsme', 'execute as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run spectate @s @a[tag=mg.trcsme,limit=1]'])
-END = ['scoreboard players operation $own mg.st = @s mg.tvpid', 'spectate', 'execute as @e[tag=mg.trcam] if score @s mg.tvo = $own mg.st run kill @s',
+w(f'{CS}/lock', ['tag @s add mg.trcsme', 'execute as @e[type=minecraft:item_display,tag=mg.trcam] if score @s mg.tvo = $own mg.st run spectate @s @a[tag=mg.trcsme,limit=1]',
+                  'tag @s remove mg.trcsme'])
+END = ['scoreboard players operation $own mg.st = @s mg.tvpid', 'spectate', 'execute as @e[type=minecraft:item_display,tag=mg.trcam] if score @s mg.tvo = $own mg.st run kill @s',
        'tag @s remove mg.trcine', 'scoreboard players set @s mg.trcs 0', 'gamemode adventure @s', 'title @s clear']
 w(f'{CS}/end_back', ['# fin de cinématique : retour à l\'endroit de départ'] + END +
   ['execute store result storage mg:terra d.x int 1 run scoreboard players get @s mg.tvx', 'execute store result storage mg:terra d.y int 1 run scoreboard players get @s mg.tvy',

@@ -20,7 +20,11 @@ function mg:terra/join
 function mg:core/heal
 execute in mg:terranova run spawnpoint @s 16 65 17
 execute in mg:terranova run tp @s 0.5 65 4.5 180 0
+scoreboard players set @s mg.tvnet 0
+scoreboard players set @s mg.tvtr 0
+tag @s remove mg.trkb
 function mg:terra/kit
+function mg:terra/rpg/cl/bonus
 title @s times 10 60 20
 title @s title {"text":"TERRA NOVA","color":"green","bold":true}
 function mg:terra/rpg/enter

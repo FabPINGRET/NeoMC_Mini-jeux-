@@ -197,14 +197,17 @@ w(f'{P}/join', ['# @s : scores du RPG à la première visite',
   ['# points de caractéristique : 1 par niveau gagné (rattrapage pour les colons déjà avancés)',
    'execute unless score @s mg.trsp matches -2147483648.. run function mg:terra/rpg/st/backfill'] +
   ['scoreboard players set @s mg.trrg 0', 'scoreboard players set @s mg.trpk 0', 'scoreboard players set @s mg.trsc 0',
-   'scoreboard players set @s mg.trdt 0', 'scoreboard players enable @s mg.trtk', f'function mg:{P}/stats'])
+   'scoreboard players set @s mg.trdt 0'] +
+  [f'scoreboard players set @s mg.tk{k} 0' for k in ('dilo', 'compy', 'ptera', 'six', 'herb', 'herb2', 'herb3', 'herb4')] +
+  ['scoreboard players enable @s mg.trtk', f'function mg:{P}/stats'])
 w(f'{P}/enter', ['# @s arrive à Terra Nova (après le kit) : rappel de la campagne',
                  'tellraw @s ' + js([TEXT('⭐ Niveau ', 'gold'), {'score': {'name': '@s', 'objective': 'mg.trlv'}, 'color': 'yellow', 'bold': True},
                                      TEXT('   📜 Campagne : ', 'gold'), TEXT('[voir l\'objectif]', 'aqua', click_event={'action': 'run_command', 'command': '/trigger mg.trtk set 9'})]),
                  f'function mg:{P}/obj_say', f'function mg:{P}/qloc',
                  'execute if score @s mg.trcl matches 0 run tellraw @s ' + js([TEXT('🎖 Choisis ta classe auprès de la Commandante Varga (QG) : ', 'gold'), TEXT('[choisir]', 'yellow', click_event={'action': 'run_command', 'command': '/trigger mg.trtk set 600'})])])
 w(f'{P}/leave', ['# @s quitte Terra Nova : bonus de vie retiré, monture renvoyée', 'attribute @s minecraft:max_health modifier remove mg:trlv',
-                 f'function mg:{P}/mount_gone', 'scoreboard players set @s mg.trrg 0', f'function mg:{P}/cl/remove', f'function mg:{P}/cs/stop', f'function mg:{P}/st/remove'])
+                 f'function mg:{P}/mount_gone', 'scoreboard players set @s mg.trrg 0', f'function mg:{P}/cl/remove', f'function mg:{P}/cs/stop', f'function mg:{P}/st/remove',
+                 'tag @s remove mg.trkb'])
 
 # ================================================================ régions : titres, accès par la campagne
 RC = ['# Chaque seconde, @s (joueur) : région où il se trouve (0 vallée, 1 nord, 2 est, 3 ouest, 4 sud)', 'scoreboard players set $r mg.st 0']
@@ -512,8 +515,10 @@ w(f'{P}/whistle', ['# @s : sifflet : son raptor apparaît à côté de lui (l\'a
                    'scoreboard players operation @e[tag=mg.tvn] mg.tvid = $tvid mg.st', 'scoreboard players operation @e[tag=mg.tvn] mg.tvses = $tvses mg.st',
                    'scoreboard players operation @e[tag=mg.tvlast] mg.tvo = @s mg.tvpid', 'scoreboard players set @e[tag=mg.tvlast] mg.tvph 0', 'tag @e[tag=mg.tvn] remove mg.tvn',
                    'ride @s mount @e[tag=mg.tvlast,limit=1]', 'execute at @s run playsound minecraft:entity.fox.screech player @a ~ ~ ~ 1 1.3'])
-w(f'{P}/mount_gone', ['# @s : sa monture disparaît', 'scoreboard players operation $own mg.st = @s mg.tvpid',
-                      'execute as @e[tag=mg.trmount] if score @s mg.tvo = $own mg.st at @s run tp @s ~ -400 ~'])
+w(f'{P}/mount_gone', ['# @s : sa monture disparaît (le joueur descend d\'abord, puis la monture est envoyée sous le monde et retirée)', 'ride @s dismount',
+                      'scoreboard players operation $own mg.st = @s mg.tvpid',
+                      'execute as @e[tag=mg.trmount] if score @s mg.tvo = $own mg.st at @s run tp @s ~ -400 ~',
+                      'execute as @e[tag=mg.trmount] if score @s mg.tvo = $own mg.st run kill @s'])
 
 # ================================================================ modules de données (étape 32) et cellule (étape 64)
 MT = ['# Tous les 5 ticks, @s (accroupi, étape 32 ou 64) : ramassage d\'un module / de la cellule (2 s)', 'scoreboard players set $k mg.st 0',
@@ -651,7 +656,8 @@ w(f'{P}/boss/spino_p3', ['# Reine enragée (25 %)', 'tag @s add mg.trp3', 'effec
                          'scoreboard players set @s mg.tvat 16', 'tag @s add mg.tvroar', 'playsound minecraft:entity.ender_dragon.growl hostile @a ~ ~ ~ 2 0.8',
                          'tellraw @a[tag=mg.tvw,distance=..60] {"text":"🦖 La reine du marais est enragée !","color":"red","bold":true}'])
 w(f'{P}/boss/spino_reset', ['# Plus personne près de la lagune : la reine replonge (combat remis à zéro)', 'scoreboard players set $trspa mg.st 0',
-                            'execute as @e[tag=mg.tvspino] at @s run tp @s ~ -400 ~', 'bossbar set mg:trspino players'])
+                            'execute as @e[tag=mg.tvspino] at @s run tp @s ~ -400 ~', 'kill @e[tag=mg.tvspino]', 'scoreboard players set $trspc mg.st 10',
+                            'bossbar set mg:trspino players'])
 w(f'{P}/boss/spino_win', ['# La reine du marais est vaincue', 'scoreboard players set $trspa mg.st 0', 'scoreboard players set $trspc mg.st 120',
                           'bossbar set mg:trspino players',
                           f'execute positioned {lx} {ly} {lz} as @a[tag=mg.tvw,distance=..64] run function mg:{P}/boss/spino_reward',
@@ -678,7 +684,8 @@ w(f'{P}/boss/varek', ['# Chaque seconde (Varek en vie)', f'execute positioned {f
                       f'execute positioned {fx_} {fy_} {fz_} unless entity @a[tag=mg.tvw,gamemode=adventure,distance=..56] run scoreboard players add $trvr mg.st 1',
                       f'execute positioned {fx_} {fy_} {fz_} if entity @a[tag=mg.tvw,gamemode=adventure,distance=..56] run scoreboard players set $trvr mg.st 0',
                       f'execute if score $trvr mg.st matches 20.. run function mg:{P}/boss/varek_reset'])
-w(f'{P}/boss/varek_reset', ['scoreboard players set $trva mg.st 0', 'execute as @e[tag=mg.trvarek] at @s run tp @s ~ -400 ~', 'bossbar set mg:trvarek players'])
+w(f'{P}/boss/varek_reset', ['scoreboard players set $trva mg.st 0', 'execute as @e[tag=mg.trvarek] at @s run tp @s ~ -400 ~', 'kill @e[tag=mg.trvarek]',
+                                         'scoreboard players set $trvc mg.st 10', 'bossbar set mg:trvarek players'])
 w(f'{P}/boss/varek_win', ['# Varek est vaincu', 'scoreboard players set $trva mg.st 0', 'scoreboard players set $trvc mg.st 120', 'bossbar set mg:trvarek players',
                           f'execute positioned {fx_} {fy_} {fz_} as @a[tag=mg.tvw,distance=..64] run function mg:{P}/boss/varek_reward'])
 w(f'{P}/boss/varek_reward', ['scoreboard players add @s mg.tvc 120', f'function mg:{P}/xp {{n:300}}', 'tellraw @s {"text":"  +120 ₵ (prime sur Varek)","color":"green"}',
@@ -746,7 +753,8 @@ w(f'{P}/boss/rex_call', ['# Le Roi appelle deux slashers', 'scoreboard players s
                          f'execute positioned {cx_} {cy_} {cz_} as @e[tag=mg.tvraptor,distance=..12] run damage @s 0.01 minecraft:generic by @p[tag=mg.tvw,gamemode=adventure]'])
 w(f'{P}/boss/rex_p3', ['# Roi enragé (20 %)', 'tag @s add mg.trp3', 'effect give @s minecraft:speed infinite 0 true', 'effect give @s minecraft:strength infinite 0 true',
                        'function mg:terra/rpg/boss/rex_roar', 'tellraw @a[tag=mg.tvw,distance=..60] {"text":"🦖 Le Roi Tyran est fou de rage !","color":"red","bold":true}'])
-w(f'{P}/boss/rex_reset', ['scoreboard players set $trra mg.st 0', 'execute as @e[tag=mg.tvrex] at @s run tp @s ~ -400 ~', 'kill @e[tag=mg.trgey]', 'bossbar set mg:trrex players'])
+w(f'{P}/boss/rex_reset', ['scoreboard players set $trra mg.st 0', 'execute as @e[tag=mg.tvrex] at @s run tp @s ~ -400 ~', 'kill @e[tag=mg.tvrex]',
+                                       'scoreboard players set $trrc mg.st 10', 'kill @e[tag=mg.trgey]', 'bossbar set mg:trrex players'])
 w(f'{P}/boss/rex_win', ['# Le Roi Tyran est vaincu : la faille se révèle', 'scoreboard players set $trra mg.st 0', 'scoreboard players set $trrc mg.st 180',
                         'kill @e[tag=mg.trgey]', 'bossbar set mg:trrex players',
                         f'execute positioned {cx_} {cy_} {cz_} as @a[tag=mg.tvw,distance=..64] run function mg:{P}/boss/rex_reward',

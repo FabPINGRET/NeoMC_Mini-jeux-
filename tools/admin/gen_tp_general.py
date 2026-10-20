@@ -4,7 +4,8 @@
     qui ajoute une ligne à tpg/lobby, réécrit en entier ici)
 
 Menu principal → « 🌍 TP général (admin) ▸ » (mg.opt 62) → fenêtre mg:tp_general → une destination (mg.opt 63..) :
-survie, Neo GTA, ou retour de tous au lobby (sortie des activités secondaires avant de lancer un mini-jeu).
+survie, Neo GTA, Terra Nova, Ombrelune, ou retour de tous au lobby (sortie des activités secondaires avant de lancer un mini-jeu).
+Ids : 63..65 (survie, GTA, lobby), 75 (Terra Nova) et 88 (Ombrelune) : 59 et 61 fusionneraient la plage 62..65 sur laquelle gen_events.py et theme_core.py s'ancrent.
 Joueurs concernés : tous sauf ceux d'une partie en cours (mg.play / mg.out) et de la Mini Party (mg.mpp).
 Pour ajouter une destination : une entrée dans DEST + sa fonction tpg/<clé>.
 """
@@ -40,6 +41,13 @@ DEST = [
         f'execute as @a[{FREE},tag=mg.inplot] run function mg:plot/leave',
         f'execute as @a[{FREE},tag=!mg.tvw,tag=!mg.dl] run function mg:terra/enter',
         'tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a envoyé tout le monde à Terra Nova.","color":"gray"}]']),
+    ('ombre', '🌙 Tout le monde → Ombrelune', 'light_purple', 'Les joueurs en survie, à Neo GTA, à Terra Nova ou sur leur plot en sortent d\'abord (tout est sauvegardé)', 88, [
+        '# TP général → Ombrelune (@s = admin)',
+        'execute unless data storage mg:ombre built run return run function mg:ombre/not_ready',
+        f'execute as @a[{FREE},tag=mg.surv,tag=!mg.olw] run function mg:survie/leave',
+        f'execute as @a[{FREE},tag=mg.inplot] run function mg:plot/leave',
+        f'execute as @a[{FREE},tag=!mg.olw,tag=!mg.dl] run function mg:ombre/enter',
+        'tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a envoyé tout le monde à Ombrelune.","color":"gray"}]']),
     ('lobby', '🏠 Tout le monde → Lobby', 'yellow', 'Sort tout le monde de la survie, de Neo GTA, de Terra Nova, d\'Ombrelune, des plots, du kart, du parkour, des élytra et de la montagne russe : prêt pour lancer un mini-jeu', 65, [
         '# TP général → lobby (@s = admin) : chacun quitte proprement son activité (sauvegardes comprises), puis remise à zéro au spawn',
         f'execute as @a[{FREE},tag=mg.gtw] run function mg:gta/leave',

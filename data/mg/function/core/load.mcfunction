@@ -23,11 +23,6 @@ execute if score $setup mg.st matches 1 unless data storage mg:lobby olclean run
 execute if score $setup mg.st matches 1 run schedule function mg:ombre/st/check 30s
 scoreboard players set $olw mg.st 0
 function mg:ombre/rules
-# Ombrelune : construite une fois (dimension mg:ombrelune, ~4 min, après Terra Nova), règles du monde
-execute if score $setup mg.st matches 1 unless data storage mg:ombre built unless score $olb mg.st matches 1.. run schedule function mg:ombre/world_build 260s
-execute if score $setup mg.st matches 1 unless data storage mg:lobby olclean run schedule function mg:ombre/spawn_clean 10s
-scoreboard players set $olw mg.st 0
-function mg:ombre/rules
 # Terra Nova RPG : régions construites une fois sur un monde déjà construit (avant la mise à jour du RPG)
 execute if score $setup mg.st matches 1 if data storage mg:terra built unless data storage mg:terra v2 run schedule function mg:terra/world_build2 210s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby tvclean run schedule function mg:terra/spawn_clean 9s

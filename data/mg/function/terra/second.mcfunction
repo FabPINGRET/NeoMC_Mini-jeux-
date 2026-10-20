@@ -1,6 +1,6 @@
 # Chaque seconde (dans la dimension) : colonie, soins, primes, missions, population de dinosaures, carnotaure
 execute unless score $tvsu mg.st matches 1.. run return 0
-execute if score $tvsu mg.st matches 2 run kill @e[tag=mg.tvp,tag=!mg.tvok]
+execute if score $tvsu mg.st matches 2 run kill @e[type=#mg:tv_part,tag=mg.tvp,tag=!mg.tvok]
 tag @e[tag=mg.tvok] remove mg.tvok
 scoreboard players set $tvsu mg.st 2
 scoreboard players set #4 mg.st 4

@@ -2,7 +2,7 @@
 Module importé par gen_ombrelune.py.
 
 Boss : $ob<i> actif (0/1), $obc<i> attente avant de pouvoir revenir, $obr<i> secondes sans joueur, $obt<i>_<j> minuteurs des attaques.
-Donjons : $od<i> état (0 libre, 1..3 vague de la salle, 4 alpha, 5 terminé), $odw<i> secondes sans joueur.
+Donjons : $od<i> état (0 libre, 2n+1 vague de la salle n+1, 2n+2 salle n+1 vidée (n = 0..2), 7 alpha, 8 terminé), $odw<i> secondes sans joueur.
 """
 import math
 

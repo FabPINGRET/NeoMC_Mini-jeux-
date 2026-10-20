@@ -38,7 +38,7 @@ CL_D = dlg('🎖 Classe de colon', 'gold', 'Chaque classe a un talent permanent 
 w(f'{P}/cl/menu', [f'# @s : choix de la classe'] + show(CL_D))
 for n, (key, name, col, model, passive, active, ranks) in CLASSES.items():
     w(f'{P}/cl/pick_{n}', [f'# @s devient {name}', 'execute if score @s mg.trcl matches ' + str(n) + ' run return run tellraw @s ' + js(TEXT('Tu es déjà ' + name + '.', 'gray')),
-                           f'scoreboard players set @s mg.trcl {n}', 'scoreboard players set @s mg.trcd 0', f'function mg:{P}/stats', 'function mg:terra/kit',
+                           f'scoreboard players set @s mg.trcl {n}', 'scoreboard players set @s mg.trcd 0', f'function mg:{P}/stats', 'clear @s *[custom_data~{tv:14}]', f'function mg:{P}/kit', f'function mg:{P}/cl/bonus',
                            'title @s times 5 50 15', f'title @s title {js(TEXT(name.upper(), col, bold=True))}', f'title @s subtitle {js(TEXT(passive, "gray"))}',
                            'tellraw @s ' + js([TEXT('🎖 Classe : ', 'gold'), TEXT(name, col, bold=True), TEXT(' — ' + active, 'gray')]),
                            'execute at @s run playsound minecraft:item.armor.equip_netherite player @s ~ ~ ~ 1 1'])
@@ -59,9 +59,14 @@ w(f'{P}/cl/remove', ['# @s quitte Terra Nova : talents retirés'] + [f'attribute
 KITC = ['# @s : objet de capacité et bonus d\'équipement de la classe']
 for n in CLASSES:
     KITC.append(f'execute if score @s mg.trcl matches {n} run item replace entity @s hotbar.4 with {ability_item(n)}')
-KITC += ['execute if score @s mg.trcl matches 4 run give @s ' + NETL_ITEM, 'execute if score @s mg.trcl matches 4 run scoreboard players add @s mg.tvnet 3',
-         'execute if score @s mg.trcl matches 4 run give @s ' + TRAP_ITEM, 'execute if score @s mg.trcl matches 4 run scoreboard players add @s mg.tvtr 3']
+# kit rappelé sans `clear` (achats, forge) : les objets de l'ingénieur ne sont donnés que s'il ne les a pas (même garde que le dépôt)
+KITC += ['execute if score @s mg.trcl matches 4 unless items entity @s container.* *[custom_data~{tv:5}] run give @s ' + NETL_ITEM,
+         'execute if score @s mg.trcl matches 4 unless items entity @s container.* *[custom_data~{tv:6}] run give @s ' + TRAP_ITEM]
 w(f'{P}/cl/kit', KITC)
+# +3 filets et +3 pièges offerts à l'ingénieur : une seule fois par visite (tag mg.trkb, retiré et compteurs remis à 0 par terra/enter)
+w(f'{P}/cl/bonus', ['# @s : bonus de départ de l\'ingénieur (une fois par visite)', 'execute unless score @s mg.trcl matches 4 run return 0',
+                    'execute if entity @s[tag=mg.trkb] run return 0', 'tag @s add mg.trkb',
+                    'scoreboard players add @s mg.tvnet 3', 'scoreboard players add @s mg.tvtr 3'])
 
 # ---------------------------------------------------------------- capacité active
 USE = ['# @s : clic droit sur l\'objet de capacité',
@@ -160,7 +165,8 @@ for i, (k, key, name, sp, (ax, ay, az), door) in enumerate(DUNGEONS):
                         f'execute positioned {ax} {ay} {az} unless entity @a[tag=mg.tvw,gamemode=adventure,distance=..44] run scoreboard players add $trdr{i} mg.st 1',
                         f'execute positioned {ax} {ay} {az} if entity @a[tag=mg.tvw,gamemode=adventure,distance=..44] run scoreboard players set $trdr{i} mg.st 0',
                         f'execute if score $trdr{i} mg.st matches 20.. run function mg:{P}/dg/{key}_reset'])
-    w(f'{P}/dg/{key}_reset', [f'scoreboard players set $trda{i} mg.st 0', f'execute as @e[tag=mg.trdg_{key}] at @s run tp @s ~ -400 ~', f'bossbar set mg:trdg{i} players'])
+    w(f'{P}/dg/{key}_reset', [f'scoreboard players set $trda{i} mg.st 0', f'execute as @e[tag=mg.trdg_{key}] at @s run tp @s ~ -400 ~', f'kill @e[tag=mg.trdg_{key}]',
+                                    f'scoreboard players set $trdc{i} mg.st 10', f'bossbar set mg:trdg{i} players'])
     o, q, lab = TROPH[sp]
     w(f'{P}/dg/{key}_win', [f'# {name} : alpha vaincu', f'scoreboard players set $trda{i} mg.st 0', f'scoreboard players set $trdc{i} mg.st 180',
                             f'bossbar set mg:trdg{i} players', f'execute positioned {ax} {ay} {az} as @a[tag=mg.tvw,distance=..48] run function mg:{P}/dg/{key}_rw'])

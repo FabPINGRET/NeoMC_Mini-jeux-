@@ -3,7 +3,9 @@ execute if score @s mg.trcl matches 1 run return run tellraw @s {"text":"Tu es d
 scoreboard players set @s mg.trcl 1
 scoreboard players set @s mg.trcd 0
 function mg:terra/rpg/stats
-function mg:terra/kit
+clear @s *[custom_data~{tv:14}]
+function mg:terra/rpg/kit
+function mg:terra/rpg/cl/bonus
 title @s times 5 50 15
 title @s title {"text":"🎖 SOLDAT","color":"red","bold":true}
 title @s subtitle {"text":"Endurant : +3 cœurs, +2 armure, le fusil chauffe 30 % moins vite.","color":"gray"}
