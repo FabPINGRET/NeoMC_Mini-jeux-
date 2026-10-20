@@ -387,7 +387,7 @@ scoreboard objectives add mg.pshop trigger
 scoreboard objectives add mg.pvid dummy
 scoreboard objectives add mg.pcl dummy
 execute if score $setup mg.st matches 1 unless data storage mg:lobby pvpc2 run schedule function mg:pvpc/build_start 22s
-execute if score $setup mg.st matches 1 unless data storage mg:lobby foot1 run schedule function mg:foot/build_start 24s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby foot2 run schedule function mg:foot/build_start 24s
 team add mg_sq
 team modify mg_sq friendlyFire false
 team modify mg_sq collisionRule never

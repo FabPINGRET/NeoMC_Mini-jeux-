@@ -88,10 +88,28 @@ execute if block -2 64 -18 minecraft:polished_blackstone_wall run fill -2 64 -18
 execute if block -2 64 -15 minecraft:polished_blackstone_wall run fill -2 64 -15 -2 65 -15 minecraft:air
 execute if block 1 64 -18 minecraft:polished_blackstone_wall run fill 1 64 -18 1 65 -18 minecraft:air
 execute if block 1 64 -15 minecraft:polished_blackstone_wall run fill 1 64 -15 1 65 -15 minecraft:air
-fill -19 63 -19 -17 63 -17 minecraft:green_glazed_terracotta
-setblock -18 63 -18 minecraft:gold_block
-fill -19 64 -19 -17 66 -17 minecraft:air
+# ancien tapis : rendu à l'herbe
+fill -19 63 -19 -17 63 -17 minecraft:grass_block
+setblock -19 64 -19 minecraft:short_grass
+setblock -19 64 -18 minecraft:air
+setblock -19 64 -17 minecraft:air
+setblock -18 64 -19 minecraft:dandelion
+setblock -18 64 -18 minecraft:air
+setblock -18 64 -17 minecraft:air
+setblock -17 64 -19 minecraft:air
+setblock -17 64 -18 minecraft:air
+setblock -17 64 -17 minecraft:air
+fill -7 63 -40 -5 63 -38 minecraft:green_glazed_terracotta
+setblock -6 63 -39 minecraft:gold_block
+fill -7 64 -40 -5 66 -38 minecraft:air
+fill -4 64 -40 -4 66 -38 minecraft:air
+setblock -4 63 -39 minecraft:stone_bricks
+setblock -4 63 -38 minecraft:stone_bricks
+fill -8 64 -41 -8 80 -37 minecraft:air
+fill -8 64 -41 -8 66 -41 minecraft:white_concrete
+fill -8 64 -37 -8 66 -37 minecraft:white_concrete
+fill -8 67 -41 -8 67 -37 minecraft:white_concrete
 setblock 2 46 -30 minecraft:lodestone
 function mg:foot/labels
 execute if score $ftoff mg.st matches 1 run function mg:foot/entry_close
-data modify storage mg:lobby foot1 set value 1b
+data modify storage mg:lobby foot2 set value 1b

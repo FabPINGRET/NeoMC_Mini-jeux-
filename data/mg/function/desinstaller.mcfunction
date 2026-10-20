@@ -82,6 +82,7 @@ team remove mg_olel
 function mg:ombre/boss/clear
 data remove storage mg:ombre built
 data remove storage mg:ombre sv
+data remove storage mg:lobby olsite
 data remove storage mg:lobby olclean
 schedule clear mg:ombre/wb_step
 schedule clear mg:ombre/world_build
@@ -463,6 +464,7 @@ tag @a remove mg.ftb
 tag @a remove mg.ftin
 tag @a remove mg.ftlt
 data remove storage mg:lobby foot1
+data remove storage mg:lobby foot2
 bossbar remove mg:soleil
 bossbar remove mg:ev
 team remove mg_sq
