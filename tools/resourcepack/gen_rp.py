@@ -344,7 +344,8 @@ wjson(os.path.join(OUT, 'pack.mcmeta'), {"pack": {"description": [{"text": "NeoM
 z = os.path.join(R, 'releases', 'neomc_resourcepack.zip')
 os.makedirs(os.path.dirname(z), exist_ok=True)
 with zipfile.ZipFile(z, 'w', zipfile.ZIP_DEFLATED) as zf:
-    for root, _, files in os.walk(OUT):
+    for root, dirs, files in os.walk(OUT):
+        dirs.sort()
         for f in sorted(files):
             p = os.path.join(root, f)
             info = zipfile.ZipInfo(os.path.relpath(p, OUT).replace(os.sep, '/'), date_time=(2026, 1, 1, 0, 0, 0))
