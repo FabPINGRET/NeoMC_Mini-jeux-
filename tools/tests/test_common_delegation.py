@@ -59,8 +59,10 @@ class CommonDelegation(Base):
                          'a\nfunction mg:koth2/go\nexecute if score $game mg.st matches 206 run say hi\n')
 
     def test_go_range(self):
+        self.assertIs(common.go_range.__self__, common._fn)   # alias de mcfn.Fn.go_range, pas un wrapper
         common.w('core/go', ['say rien'])
-        common.go_range(99)                                   # motif absent : silencieux, fichier intact
+        with self.assertRaises(SystemExit):                   # motif absent : echec franc (delegue a mcfn), fichier intact
+            common.go_range(99)
         self.assertEqual(self.read('core/go'), 'say rien\n')
         common.w('core/go', ['execute unless score @s mg.go matches 1..5 unless entity @s'])
         common.go_range(9)

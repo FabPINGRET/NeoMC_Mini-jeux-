@@ -48,7 +48,6 @@ OVERSIZE = {
 
 ALLOWED = {
     ('tools/arcade/common.py', 'patch'),         # traduit les lignes (_tx) puis délègue à mcfn.Fn.patch
-    ('tools/arcade/common.py', 'go_range'),      # silencieux si core/go n'a pas la plage (mcfn : SystemExit)
     ('tools/dropper/gen_dropper_adv.py', 'wr'),
     ('tools/elyrace/wire_elyrace2.py', 'go_range'),
     ('tools/kart/write_kart.py', 'wr'),
