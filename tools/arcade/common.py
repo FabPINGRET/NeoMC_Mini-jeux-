@@ -53,12 +53,12 @@ js = mcfn.js
 
 
 def init(root):
-    global R, D, F, _fn, _write, lines_of, drop_lines
+    global R, D, F, _fn, _write, lines_of, drop_lines, go_range
     R = root
     D = os.path.join(R, 'data/mg')
     F = os.path.join(D, 'function')
     _fn = mcfn.Fn(F)
-    _write, lines_of, drop_lines = _fn.write, _fn.lines_of, _fn.drop_lines
+    _write, lines_of, drop_lines, go_range = _fn.write, _fn.lines_of, _fn.drop_lines, _fn.go_range
 
 
 def w(rel, lines):
@@ -73,22 +73,13 @@ def w(rel, lines):
     _write(rel, lines)
 
 
-# _write(rel, lines), lines_of(rel) et drop_lines(rel, lines) : alias de _fn posés par init (voir mcfn.Fn).
+# _write(rel, lines), lines_of(rel), drop_lines(rel, lines) et go_range(gid) : alias de _fn posés par init (voir mcfn.Fn).
+# go_range lève SystemExit si core/go n'a pas la plage « 1..N unless » (plus de silence : la plage manquante se voit).
 
 
 def patch(rel, anchor, new_lines, where='after'):
     """mcfn.Fn.patch, après translation des lignes vers la carte clonée (_tx)."""
     _fn.patch(rel, anchor, [_tx(l) for l in new_lines], where)
-
-
-def go_range(gid):
-    """Élargit la plage d'ids acceptés par core/go (1..N) si besoin."""
-    p = os.path.join(F, 'core/go.mcfunction')
-    t = open(p, encoding='utf-8').read()
-    m = re.search(r'unless score @s mg\.go matches 1\.\.(\d+) unless', t)
-    if m and int(m.group(1)) < gid:
-        t = t.replace(m.group(0), f'unless score @s mg.go matches 1..{gid} unless')
-        open(p, 'w', encoding='utf-8', newline='\n').write(t)
 
 
 def register(gids, key, announce_lines, prepare=True, go=True, tick=True, cleanup=True):
