@@ -11,17 +11,15 @@ Relancer ensuite tools/variantes/gen_variants.py (étoiles, votes par carte).
 """
 import json
 import os
-import re
 import sys
 
 R = sys.argv[1] if len(sys.argv) > 1 else '.'
 D = os.path.join(R, 'data/mg')
 F = os.path.join(D, 'function')
-
-
-def w(rel, lines):
-    with open(os.path.join(F, rel + '.mcfunction'), 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(lines) + '\n')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+import mcfn
+_fn = mcfn.Fn(F)
+w, patch, go_range = _fn.write, _fn.patch, _fn.go_range
 
 
 def clear(x1, x2, z1, z2, y1, y2):
@@ -147,31 +145,6 @@ w('quake/pad', ['# @s sur un tremplin : envolée d\'une seconde (macro : $(a) = 
 
 
 # ------------------------------------------------------------- crochets
-def patch(rel, anchor, new_lines, where='after'):
-    p = os.path.join(F, rel + '.mcfunction')
-    lines = open(p, encoding='utf-8').read().split('\n')
-    if all(l in lines for l in new_lines):
-        return
-    idx = [i for i, l in enumerate(lines) if l == anchor]
-    if len(idx) != 1:
-        raise SystemExit(f'{rel} : ancre {anchor!r} trouvée {len(idx)} fois')
-    i = idx[0] + (1 if where == 'after' else 0)
-    lines[i:i] = new_lines
-    with open(p, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(lines))
-
-
-def go_range(gid):
-    p = os.path.join(F, 'core/go.mcfunction')
-    t = open(p, encoding='utf-8').read()
-    m = re.search(r'unless score @s mg\.go matches 1\.\.(\d+) unless', t)
-    if not m:
-        raise SystemExit('core/go : plage « unless score @s mg.go matches 1..N unless » introuvable')
-    if int(m.group(1)) < gid:
-        with open(p, 'w', encoding='utf-8', newline='\n') as f:
-            f.write(t.replace(m.group(0), f'unless score @s mg.go matches 1..{gid} unless'))
-
-
 go_range(234)
 patch('core/request', 'execute if score $game mg.st matches 79..80 run scoreboard players set $game mg.st 31', [
     '# Quake vertical : 233 = Spirale, 234 = Chantier → $qm 10 / 11',

@@ -22,6 +22,10 @@ import sys
 R = sys.argv[1] if len(sys.argv) > 1 else '.'
 D = os.path.join(R, 'data/mg')
 F = os.path.join(D, 'function')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+import mcfn
+_fn = mcfn.Fn(F)
+js, patch, go_range = mcfn.js, _fn.patch, _fn.go_range
 GID = 83
 NMAX = 12
 PX = lambda c: 64 * c - 352
@@ -31,14 +35,7 @@ MATCH = 3                     # points d'une devinette identique au mot de dépa
 
 
 def w(rel, lines):
-    p = os.path.join(F, 'tel', rel + '.mcfunction')
-    os.makedirs(os.path.dirname(p), exist_ok=True)
-    with open(p, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(lines) + '\n')
-
-
-def js(o):
-    return json.dumps(o, ensure_ascii=False, separators=(',', ':'))
+    _fn.write('tel/' + rel, lines)
 
 
 VALID = js(['', {'text': ' [✔ Valider]', 'color': 'green', 'bold': True,
@@ -343,35 +340,7 @@ w('cleanup', ['# Fin de partie Téléphone', 'function mg:tel/unboxes', 'functio
 
 
 # ------------------------------------------------------------------ crochets
-def patch(rel, anchor, new_lines, where='after'):
-    p = os.path.join(F, rel + '.mcfunction')
-    lines = open(p, encoding='utf-8').read().split('\n')
-    if all(l in lines for l in new_lines):
-        return
-    idx = [i for i, l in enumerate(lines) if l == anchor]
-    if len(idx) != 1:
-        raise SystemExit(f'{rel} : ancre {anchor!r} trouvée {len(idx)} fois')
-    i = idx[0] + (1 if where == 'after' else 0)
-    lines[i:i] = new_lines
-    with open(p, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(lines))
-
-
-def replace(rel, old, new):
-    p = os.path.join(F, rel + '.mcfunction')
-    t = open(p, encoding='utf-8').read()
-    if new in t:
-        return
-    assert t.count(old) == 1, (rel, old)
-    with open(p, 'w', encoding='utf-8', newline='\n') as f:
-        f.write(t.replace(old, new))
-
-
-import re as _re
-_p = os.path.join(F, 'core/go.mcfunction'); _t = open(_p, encoding='utf-8').read()
-_m = _re.search(r'unless score @s mg\.go matches 1\.\.(\d+) unless', _t)
-if _m and int(_m.group(1)) < GID:
-    open(_p, 'w', encoding='utf-8', newline='\n').write(_t.replace(_m.group(0), f'unless score @s mg.go matches 1..{GID} unless'))
+go_range(GID)
 patch('core/request', 'execute if score $game mg.st matches 57..58 run function mg:bb/prepare', [f'execute if score $game mg.st matches {GID} run function mg:tel/prepare'])
 first_bb = next(l for l in open(os.path.join(F, 'core/request.mcfunction'), encoding='utf-8').read().split('\n')
                 if l.startswith('execute if score $game mg.st matches 57 run tellraw'))

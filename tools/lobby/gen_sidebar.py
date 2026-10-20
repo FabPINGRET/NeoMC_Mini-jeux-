@@ -17,23 +17,10 @@ import sys
 
 R = sys.argv[1] if len(sys.argv) > 1 else '.'
 F = os.path.join(R, 'data/mg/function')
-
-
-def w(rel, lines):
-    p = os.path.join(F, rel + '.mcfunction')
-    os.makedirs(os.path.dirname(p), exist_ok=True)
-    with open(p, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(lines) + '\n')
-
-
-def sub(rel, old, new):
-    p = os.path.join(F, rel + '.mcfunction')
-    t = open(p, encoding='utf-8').read()
-    if new in t:
-        return
-    assert t.count(old) == 1, (rel, old)
-    with open(p, 'w', encoding='utf-8', newline='\n') as f:
-        f.write(t.replace(old, new))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+import mcfn
+_fn = mcfn.Fn(F)
+w, sub = _fn.write, _fn.replace
 
 
 SPAWN = '@a[tag=!mg.surv]'
