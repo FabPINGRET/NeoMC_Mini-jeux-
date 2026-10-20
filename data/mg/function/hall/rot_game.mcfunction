@@ -1,1 +1,0 @@
-function mg:hall/rotate
