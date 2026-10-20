@@ -15,23 +15,10 @@ import sys
 
 R = sys.argv[1] if len(sys.argv) > 1 else '.'
 F = os.path.join(R, 'data/mg/function')
-
-
-def w(rel, lines):
-    p = os.path.join(F, rel + '.mcfunction')
-    os.makedirs(os.path.dirname(p), exist_ok=True)
-    with open(p, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(lines) + '\n')
-
-
-def patch(rel, anchor, new, where='after'):
-    p = os.path.join(F, rel + '.mcfunction')
-    L = open(p, encoding='utf-8').read().split('\n')
-    if all(l in L for l in new):
-        return
-    i = L.index(anchor) + (1 if where == 'after' else 0)
-    L[i:i] = new
-    open(p, 'w', encoding='utf-8', newline='\n').write('\n'.join(L))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+import mcfn
+_fn = mcfn.Fn(F)
+w, patch = _fn.write, _fn.patch
 
 
 w('rank/tick', ['# Classement général : chaque seconde (core/tick). Généré par tools/rank/gen_rank.py.',
