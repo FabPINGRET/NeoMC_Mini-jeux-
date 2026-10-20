@@ -13,7 +13,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, '..', 'duel'))
-from duel_play import SNEAK, SCOPE
+from duel_play import SNEAK, SCOPE, SHOT_CD, arm_cd
 
 P = 'tag=mg.play,gamemode=adventure'
 TEAMS = (('red', 'Rouge', 'red', 'blue'), ('blue', 'Bleu', 'blue', 'red'))     # équipe, score d'équipe, couleur, couleur adverse
@@ -77,6 +77,8 @@ def build(w, js, zs, win, limit):
         'execute if score @s mg.tmx matches 20 run title @s actionbar ' + js([tx('1', 'yellow', bold=True)]),
         'execute if score @s mg.tmx matches ..0 run title @s actionbar ' + js([tx('🎯 FEU !', 'red', bold=True)]),
         'execute if score @s mg.tmx matches ..0 at @s run playsound minecraft:entity.firework_rocket.blast master @s ~ ~ ~ 0.6 1.4',
+        '# l\'overlay de recharge du sniper (use_cooldown) n\'est posé qu\'ici : sinon un clic protégé verrouillerait le tir'] +
+      arm_cd('mg_tm', 'mg:tmsn', 'mg.tmx') + [
         'execute if score @s mg.tmx matches ..0 run tag @s remove mg.tmp',
         'execute if score @s mg.tmx matches ..0 run scoreboard players reset @s mg.tmx',
     ])
@@ -109,7 +111,7 @@ def build(w, js, zs, win, limit):
         'execute unless items entity @s weapon.* *[custom_data~{mg_tm:1b}] run return 0',
         'execute if entity @s[tag=mg.tmp] run return 0',
         'execute if score @s mg.tmcd matches 1.. run return 0',
-        'scoreboard players set @s mg.tmcd 40',
+        f'scoreboard players set @s mg.tmcd {SHOT_CD}',
         'tag @s add mg.tmsh',
         '# le rayon ne vise que l\'équipe adverse : il traverse les coéquipiers (pas de tir ami)',
         f'execute if entity @s[team=mg_red] run tag @a[{P},team=mg_blue] add mg.tmen',

@@ -90,7 +90,7 @@ def spawn():
     sp = ['# Apparition de @s (participant, $tma = arène, #tms = départ) : PV neufs, 3 s de protection (mg.tmp), tir impossible',
           'scoreboard players set @s mg.tmhp 2',
           'function mg:tdm/unscope',
-          'tag @s add mg.tmp',
+          'tag @s add mg.tmp'] + duel_play.disarm_cd('mg_tm') + [
           f'scoreboard players set @s mg.tmx {PROT}',
           'scoreboard players set @s mg.tmcd 0',
           'scoreboard players set @s mg.tmkc 0',
@@ -127,6 +127,7 @@ def kit():
     lines = ['# Kit TDM (@s) : le sniper en main, le couteau (clic gauche) dans l\'inventaire, cuir aux couleurs de l\'équipe',
              'clear @s *[custom_data~{mg_tm:1b}]',
              f'item replace entity @s weapon.mainhand with {sniper}',
+             duel_play.kit_cd('mg:tmsn', 'mg.tmp'),
              'give @s ' + duel_play.knife('mg_tm')]
     for t, rgb in RGB.items():
         for slot, piece in (('chest', 'chestplate'), ('head', 'helmet'), ('legs', 'leggings'), ('feet', 'boots')):

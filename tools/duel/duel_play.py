@@ -31,6 +31,34 @@ def write_adv(D, name, fn):
         f.write('\n')
 
 
+SHOT_CD = 40     # recharge du tir en ticks (mg.dlcd / mg.tmcd) ; l'overlay vanilla du sniper (use_cooldown) en dérive
+
+
+def cd_mod(group):
+    """Modificateur d'objet : pose use_cooldown (SHOT_CD) dans le groupe de cooldown `group`."""
+    return ('{function:"minecraft:set_components",components:{"minecraft:use_cooldown":'
+            f'{{seconds:{SHOT_CD / 20:g}f,cooldown_group:"{group}"}}}}}}')
+
+
+def arm_cd(key, group, score):
+    """Lignes : pose use_cooldown (SHOT_CD) sur le sniper de la hotbar quand le décompte de protection `score` est écoulé.
+    Le composant n'est pas dans le kit : un clic pendant la protection ne tire pas mais poserait quand même le verrou vanilla."""
+    return [f'execute if score @s {score} matches ..0 if items entity @s hotbar.{i} minecraft:warped_fungus_on_a_stick[custom_data~{{{key}:1b}}] '
+            f'run item modify entity @s hotbar.{i} {cd_mod(group)}' for i in range(9)]
+
+
+def disarm_cd(key):
+    """Lignes : retire use_cooldown du sniper de la hotbar (début de protection : le sniper garde sinon celui de la manche / vie précédente)."""
+    return [f'execute if items entity @s hotbar.{i} minecraft:warped_fungus_on_a_stick[custom_data~{{{key}:1b}}] '
+            f'run item modify entity @s hotbar.{i} {{function:"minecraft:set_components",components:{{"!minecraft:use_cooldown":{{}}}}}}'
+            for i in range(9)]
+
+
+def kit_cd(group, prot_tag):
+    """Ligne pour duel/kit et tdm/kit : le sniper redonné en pleine vie (hors protection) reçoit l'overlay tout de suite."""
+    return f'execute unless entity @s[tag={prot_tag}] run item modify entity @s weapon.mainhand {cd_mod(group)}'
+
+
 def sniper_kill(zs):
     """Supprime les snipers au sol, dans la boîte des arènes seulement (même forme que desinstaller : pas de nbt global)."""
     z0, z1 = min(zs) - 72, max(zs) + 73
@@ -89,6 +117,8 @@ def build(w, js, zs):
         'execute if score @s mg.dlx matches 20 run title @s actionbar ' + js([tx('1', 'yellow', bold=True)]),
         'execute if score @s mg.dlx matches ..0 run title @s actionbar ' + js([tx('⚔ FEU !', 'red', bold=True)]),
         'execute if score @s mg.dlx matches ..0 at @s run playsound minecraft:entity.firework_rocket.blast master @s ~ ~ ~ 0.6 1.4',
+        '# l\'overlay de recharge du sniper (use_cooldown) n\'est posé qu\'ici : sinon un clic protégé verrouillerait le tir'] +
+      arm_cd('mg_dl', 'mg:dlsn', 'mg.dlx') + [
         'execute if score @s mg.dlx matches ..0 run tag @s remove mg.dlp',
         'execute if score @s mg.dlx matches ..0 run scoreboard players reset @s mg.dlx',
     ])
@@ -121,7 +151,7 @@ def build(w, js, zs):
         'execute unless items entity @s weapon.* *[custom_data~{mg_dl:1b}] run return 0',
         'execute if entity @s[tag=mg.dlp] run return 0',
         'execute if score @s mg.dlcd matches 1.. run return 0',
-        'scoreboard players set @s mg.dlcd 40',
+        f'scoreboard players set @s mg.dlcd {SHOT_CD}',
         'tag @s add mg.dlsh',
         '# le rayon ne touche que l\'adversaire de la même arène (mg.dli)',
         'scoreboard players operation $dli mg.st = @s mg.dli',
