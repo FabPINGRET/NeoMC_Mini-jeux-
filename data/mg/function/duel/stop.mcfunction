@@ -11,9 +11,10 @@ scoreboard players reset @s mg.dlhp
 scoreboard players reset @s mg.dlr
 scoreboard players reset @s mg.dlcd
 scoreboard players reset @s mg.dlx
+scoreboard players reset @s mg.dlkc
 title @s reset
 execute as @e[type=minecraft:item,x=-22,y=60,z=39928,dx=44,dy=500,dz=945] if items entity @s contents *[custom_data~{mg_dl:1b}] run kill @s
-clear @s minecraft:warped_fungus_on_a_stick[custom_data~{mg_dl:1b}]
+clear @s *[custom_data~{mg_dl:1b}]
 # effets du duel (setup) retirés sauf si une partie a pris le joueur (ses effets sont les siens ; ailleurs, enter / reset_player les effacent)
 execute unless entity @s[tag=mg.play] unless entity @s[tag=mg.out] run effect clear @s minecraft:resistance
 execute unless entity @s[tag=mg.play] unless entity @s[tag=mg.out] run effect clear @s minecraft:saturation

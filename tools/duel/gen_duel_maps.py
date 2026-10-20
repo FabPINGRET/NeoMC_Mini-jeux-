@@ -226,6 +226,8 @@ def main(root):
     C.w('duel/build_all', ['# Duel sniper : (re)construit les 3 arènes (une fois au chargement, ou à la main : /function mg:duel/build_all)',
                            'execute if entity @a[tag=mg.dl] run return run tellraw @a[tag=mg.admin] '
                            + C.js([{'text': '⚔ Duel sniper : reconstruction ignorée, un duel est en cours (réessaie après).', 'color': 'red'}]),
+                           'execute if score $tma mg.st matches 1.. run return run tellraw @a[tag=mg.admin] '
+                           + C.js([{'text': '⚔ Duel sniper : reconstruction ignorée, une partie TDM est en cours (réessaie après).', 'color': 'red'}]),
                            'data remove storage mg:duel built'] + [zone(m) for m in MAPS] + sched)
     C.w('duel/build_clear', ['# Duel sniper : annule la construction en cours (appelé par duel/remove)', 'schedule clear mg:duel/build_all']
         + [f'schedule clear mg:duel/{n}' for n in names])

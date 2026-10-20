@@ -288,6 +288,7 @@ execute if score $game mg.st matches 242 run tellraw @a [{"selector":"@s","color
 execute if score $game mg.st matches 243 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🚩 CAPTURE THE FLAG — Banquise","color":"gold","bold":true},{"text":" : rouges contre bleus, 3 captures pour gagner !","color":"gray"}]
 execute if score $game mg.st matches 244 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"✷ TNT RUN — GLACIER","color":"aqua","bold":true},{"text":" : la glace glisse et s'efface sous tes pas !","color":"gray"}]
 execute if score $game mg.st matches 245 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"✷ TNT RUN — GRAND GLACIER","color":"aqua","bold":true},{"text":" : la glace glisse et s'efface sous tes pas !","color":"gray"}]
+execute if score $game mg.st matches 246 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🎯 TDM SNIPER","color":"gold","bold":true},{"text":" : rouges contre bleus au sniper, 25 frags pour gagner !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 83 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"📞 TÉLÉPHONE","color":"gold","bold":true},{"text":" : mot → construction → devinette → construction → devinette !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
@@ -334,6 +335,7 @@ execute if score $game mg.st matches 31 run function mg:quake/prepare
 execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
+execute if score $game mg.st matches 246 run function mg:tdm/prepare
 execute if score $game mg.st matches 244..245 run function mg:tntice/prepare
 execute if score $game mg.st matches 243 run function mg:ctf3/prepare
 execute if score $game mg.st matches 242 run function mg:ctf2/prepare

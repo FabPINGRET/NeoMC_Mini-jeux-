@@ -10,12 +10,14 @@ execute as @a[tag=mg.dlp] run function mg:duel/prot_tick
 execute as @a[tag=mg.dl,scores={mg.dlcd=1}] at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 0.6 2
 execute as @a[tag=mg.dl,tag=!mg.dlp,scores={mg.dlcd=1}] run title @s actionbar [{"text":"🎯 Sniper prêt","color":"aqua"}]
 scoreboard players remove @a[tag=mg.dl,scores={mg.dlcd=1..}] mg.dlcd 1
+scoreboard players remove @a[tag=mg.dl,scores={mg.dlkc=1..}] mg.dlkc 1
 execute as @a[tag=mg.dl,scores={mg.qs=1..}] run function mg:duel/shoot
-# le kit est rendu si un effacement (lancement de partie) l'a retiré
-execute as @a[tag=mg.dl] unless items entity @s container.* *[custom_data~{mg_dl:1b}] run function mg:duel/kit
-# snipers jetés ou ramassés par un autre : retirés
+# le kit (sniper et couteau) est rendu si un effacement (lancement de partie) ou un jet l'a retiré
+execute as @a[tag=mg.dl] unless items entity @s container.* minecraft:warped_fungus_on_a_stick[custom_data~{mg_dl:1b}] run function mg:duel/kit
+execute as @a[tag=mg.dl] unless items entity @s container.* *[custom_data~{mg_dl:1b,mg_kn:1b}] run function mg:duel/kit
+# sniper et couteau jetés ou ramassés par un autre : retirés
 execute as @e[type=minecraft:item,x=-22,y=60,z=39928,dx=44,dy=500,dz=945] if items entity @s contents *[custom_data~{mg_dl:1b}] run kill @s
-clear @a[tag=!mg.dl] minecraft:warped_fungus_on_a_stick[custom_data~{mg_dl:1b}]
+clear @a[tag=!mg.dl] *[custom_data~{mg_dl:1b}]
 # hors de l'arène (chute, mort et réapparition au lobby...) : forfait ; puis adversaire parti
 execute as @a[tag=mg.dl,scores={mg.dli=1}] unless entity @s[x=-22,dx=44,y=60,dy=500,z=39928,dz=145] run function mg:duel/forfeit
 execute as @a[tag=mg.dl,scores={mg.dli=2}] unless entity @s[x=-22,dx=44,y=60,dy=500,z=40328,dz=145] run function mg:duel/forfeit

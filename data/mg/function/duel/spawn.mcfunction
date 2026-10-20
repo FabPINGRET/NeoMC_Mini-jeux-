@@ -4,6 +4,7 @@ function mg:duel/unscope
 tag @s add mg.dlp
 scoreboard players set @s mg.dlx 60
 scoreboard players set @s mg.dlcd 0
+scoreboard players set @s mg.dlkc 0
 title @s actionbar {"text":"3","color":"yellow","bold":true}
 execute if entity @s[tag=mg.dla,scores={mg.dli=1}] run tp @s 0.5 89 39934.5 0 0
 execute if entity @s[tag=!mg.dla,scores={mg.dli=1}] run tp @s 0.5 89 40066.5 180 0

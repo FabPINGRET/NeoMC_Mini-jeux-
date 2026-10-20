@@ -105,7 +105,7 @@
     {
       "label": [
         {
-          "text": "🏰 🏰 The Towers ",
+          "text": "🏰 The Towers ",
           "color": "gold"
         },
         {
@@ -131,7 +131,7 @@
     {
       "label": [
         {
-          "text": "🚚 🚚 Convoi ",
+          "text": "🚚 Convoi ",
           "color": "gold"
         },
         {
@@ -157,7 +157,7 @@
     {
       "label": [
         {
-          "text": "🚚 🚚 Convoi — coop ",
+          "text": "🚚 Convoi — coop ",
           "color": "green"
         },
         {
@@ -196,6 +196,32 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.opt set 58"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🎯 TDM sniper ",
+          "color": "gold"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Rouge contre Bleu au sniper et au couteau dans les arènes du duel, packs de soin : 25 frags ou 8 min",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 246"
       }
     },
     {

@@ -8,6 +8,7 @@ Les arènes sont posées par gen_duel_maps.py ; la liste et les invitations vien
 (tick, lunette, tir, manches) de duel_play.py.
 Flux : bouton « Défier en duel » (trigger mg.duel 1) -> liste cliquable (trigger 1000 + id du joueur) -> invitation
 de 30 s (2 = accepter, 3 = refuser, 4 = annuler ; 5 = abandonner pendant le duel) -> duel dans une arène libre au hasard, premier à 3 manches.
+Armes : le sniper (clic droit) et un couteau (clic gauche, advancement mg:duel_melee, 1 dégât).
 Aucun jeu n'est lancé : le duelliste est en « pause » (mg.spectate) tant que dure le duel (s'il y était déjà, le tag
 mg.dlpz le mémorise). Occupé = un des tags de la fonction duel/busy (partie, plot, parcours, élytres, kart...).
 """
@@ -28,7 +29,7 @@ w, js = C.w, C.js
 BUSY = ['mg.play', 'mg.out', 'mg.surv', 'mg.inplot', 'mg.visit', 'mg.xso', 'mg.ely', 'mg.elyf', 'mg.pkr', 'mg.lk',
         'mg.mpp', 'mg.gtw', 'mg.tvw', 'mg.pvpc', 'mg.dl']
 OBJ = [('mg.duel', 'trigger'), ('mg.dlid', 'dummy'), ('mg.dlto', 'dummy'), ('mg.dlx', 'dummy'), ('mg.dli', 'dummy'),
-       ('mg.dlhp', 'dummy'), ('mg.dlr', 'dummy'), ('mg.dlcd', 'dummy'),
+       ('mg.dlhp', 'dummy'), ('mg.dlr', 'dummy'), ('mg.dlcd', 'dummy'), ('mg.dlkc', 'dummy'),
        ('mg.dlw', 'dummy ' + js({'text': '⚔ Duels gagnés', 'color': 'gold'}))]
 TAGS = ['mg.dl', 'mg.dla', 'mg.dlp', 'mg.dlsc', 'mg.dlsh', 'mg.dlvc', 'mg.dlwn', 'mg.dlsp', 'mg.dlrq', 'mg.dlca',
         'mg.dltg', 'mg.dlt2', 'mg.dlq', 'mg.dlfl', 'mg.dlpz']
@@ -138,7 +139,7 @@ def start():
                         say('@a[tag=mg.dlca]', tx('⚔ Aucune arène libre pour le moment : invitation annulée.')), 'function mg:duel/inv_end'])
     w('duel/inv_end', ['# Ferme l\'invitation (@s = invité ; le défieur porte mg.dlca)',
                        'tag @a[tag=mg.dlca] remove mg.dlrq', 'scoreboard players reset @s mg.dlto', 'scoreboard players reset @s mg.dlx'])
-    pick = ['# Arène libre au hasard -> $dli (1 Canyon, 2 Ville, 3 Glacier ; 0 = aucune ou pas encore construites)',
+    pick = ['# Arène libre au hasard -> $dli (1 Canyon, 2 Ville, 3 Glacier ; 0 = aucune ou pas encore construites ; sans duel en cours ni TDM ($tma))',
             'scoreboard players set $dli mg.st 0',
             'execute unless data storage mg:duel {built:1b} run return 0',
             'execute store result score #dlm mg.st run random value 1..3']
@@ -146,7 +147,7 @@ def start():
         for k in range(3):
             a = (m - 1 + k) % 3 + 1
             pick.append(f'execute if score #dlm mg.st matches {m} if score $dli mg.st matches 0 unless entity @a[tag=mg.dl,scores={{mg.dli={a}}}] '
-                        f'run scoreboard players set $dli mg.st {a}')
+                        f'unless score $tma mg.st matches {a} run scoreboard players set $dli mg.st {a}')
     w('duel/pick', pick)
     start_l = ['# Départ du duel (@s = invité = départ sud ; le défieur porte mg.dlca = départ nord ; $dli = arène)',
                'tag @a[tag=mg.dlca] add mg.dla',
@@ -188,13 +189,15 @@ def start():
     kit = ('item replace entity @s weapon.mainhand with minecraft:warped_fungus_on_a_stick[custom_data={mg_dl:1b},item_model="minecraft:spyglass",'
            'unbreakable={},custom_name=' + js(tx('🎯 Sniper de duel', 'aqua', bold=True, italic=False)) + ',lore=['
            + js(tx('Clic droit : tir (recharge 2 s)', 'gray', italic=False)) + ',' + js(tx('Accroupi : lunette — tête = élimination, corps = 2 touches', 'gray', italic=False)) + ']]')
-    w('duel/kit', ['# Kit du duel (@s) : le sniper en main', 'clear @s minecraft:warped_fungus_on_a_stick[custom_data~{mg_dl:1b}]', kit])
+    w('duel/kit', ['# Kit du duel (@s) : le sniper en main, le couteau (clic gauche) dans l\'inventaire', 'clear @s *[custom_data~{mg_dl:1b}]', kit,
+                   'give @s ' + duel_play.knife('mg_dl')])
     sp = ['# Départ de manche (@s = duelliste) : défieur au nord, invité au sud ; 3 s de protection (mg.dlp), tir impossible',
           'scoreboard players set @s mg.dlhp 2',
           'function mg:duel/unscope',
           'tag @s add mg.dlp',
           'scoreboard players set @s mg.dlx 60',
           'scoreboard players set @s mg.dlcd 0',
+          'scoreboard players set @s mg.dlkc 0',
           'title @s actionbar ' + js(tx('3', 'yellow', bold=True))]
     for i, m in enumerate(MAPS, 1):
         sp.append(f'execute if entity @s[tag=mg.dla,scores={{mg.dli={i}}}] run tp @s 0.5 {m["y"]} {m["z"] - 66}.5 0 0')
@@ -209,9 +212,10 @@ def start():
         'tag @s remove mg.dlpz',
         'scoreboard players reset @s mg.dli', 'scoreboard players reset @s mg.dlhp',
         'scoreboard players reset @s mg.dlr', 'scoreboard players reset @s mg.dlcd', 'scoreboard players reset @s mg.dlx',
+        'scoreboard players reset @s mg.dlkc',
         'title @s reset',
         sniper_kill([m['z'] for m in MAPS]),
-        'clear @s minecraft:warped_fungus_on_a_stick[custom_data~{mg_dl:1b}]',
+        'clear @s *[custom_data~{mg_dl:1b}]',
         '# effets du duel (setup) retirés sauf si une partie a pris le joueur (ses effets sont les siens ; ailleurs, enter / reset_player les effacent)',
         'execute unless entity @s[tag=mg.play] unless entity @s[tag=mg.out] run effect clear @s minecraft:resistance',
         'execute unless entity @s[tag=mg.play] unless entity @s[tag=mg.out] run effect clear @s minecraft:saturation',
@@ -260,6 +264,7 @@ def main(root):
     duel_invite.invitations(w)
     start()
     duel_play.build(w, js, [m['z'] for m in MAPS])
+    duel_play.write_adv(C.D, 'duel_melee', 'mg:duel/melee_adv')
     wire()
 
 

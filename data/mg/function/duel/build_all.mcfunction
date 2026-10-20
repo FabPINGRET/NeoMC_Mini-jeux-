@@ -1,5 +1,6 @@
 # Duel sniper : (re)construit les 3 arènes (une fois au chargement, ou à la main : /function mg:duel/build_all)
 execute if entity @a[tag=mg.dl] run return run tellraw @a[tag=mg.admin] [{"text":"⚔ Duel sniper : reconstruction ignorée, un duel est en cours (réessaie après).","color":"red"}]
+execute if score $tma mg.st matches 1.. run return run tellraw @a[tag=mg.admin] [{"text":"⚔ Duel sniper : reconstruction ignorée, une partie TDM est en cours (réessaie après).","color":"red"}]
 data remove storage mg:duel built
 forceload add -22 39928 22 40072
 forceload add -22 40328 22 40472
