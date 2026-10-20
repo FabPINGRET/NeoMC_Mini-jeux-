@@ -718,7 +718,7 @@ function mg:kart/end_line
 # ------------------------------------------------------------------ aiguillage vers le circuit ($ktr : 1 = Champignon, 2 = Royaume Koopa)
 for name in ('cp_check', 'cp_tp', 'bill_step', 'grid_tp', 'gate_on', 'gate_off', 'boxes', 'fl_add', 'fl_remove',
              'const', 'hazards', 'track_tick'):
-    # kart libre du spawn ($klob = 1) : table t4 (ex-patch de tools/lobby/wire_lobkart.py)
+    # kart libre du spawn ($klob = 1) : table t4 (ex-patch de l'ancien wire_lobkart.py, supprimé)
     klob = f'execute if score $klob mg.st matches 1 run return run function mg:kart/t4/{name}\n' if name in ('cp_check', 'cp_tp', 'bill_step') else ''
     fn(name, f"""# Aiguillage : table du circuit en cours (générée dans t1/, t2/ ou t3/ pour l'arène de bataille)
 {klob}execute if score $ktr mg.st matches 2 run function mg:kart/t2/{name}

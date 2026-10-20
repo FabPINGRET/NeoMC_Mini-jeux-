@@ -4,13 +4,14 @@ Un défi = le défieur (tag mg.dlrq, numéro mg.dlid) pose sur l'invité mg.dlto
 Tags temporaires : mg.dltg adversaire visé (challenge, expire, refuse), mg.dlt2 invité retrouvé par rq_check,
 mg.dlca défieur retrouvé par accept / cancel, mg.dlq demandeur de la liste.
 """
-import json
+import os
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+import mcfn
 
 INV = 600      # ticks de validité d'une invitation
-
-
-def js(o):
-    return json.dumps(o, ensure_ascii=False, separators=(',', ':'))
+js = mcfn.js
 
 
 def tx(text, color='gray', **kw):

@@ -10,6 +10,10 @@ import atexit
 import json
 import os
 import re
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+import mcfn
 
 MAP = json.loads(os.environ.get('NEOMC_MAP') or 'null')
 _FL = []          # zones de la carte clonée (forceload pendant la partie)
@@ -44,17 +48,17 @@ def _rel(rel):
 
 R = '.'
 D = F = None
+_fn = None        # mcfn.Fn sur F (posé par init) : écriture et lecture des fonctions, drop_lines
+js = mcfn.js
 
 
 def init(root):
-    global R, D, F
+    global R, D, F, _fn, _write, lines_of, drop_lines
     R = root
     D = os.path.join(R, 'data/mg')
     F = os.path.join(D, 'function')
-
-
-def js(o):
-    return json.dumps(o, ensure_ascii=False, separators=(',', ':'))
+    _fn = mcfn.Fn(F)
+    _write, lines_of, drop_lines = _fn.write, _fn.lines_of, _fn.drop_lines
 
 
 def w(rel, lines):
@@ -69,42 +73,12 @@ def w(rel, lines):
     _write(rel, lines)
 
 
-def _write(rel, lines):
-    p = os.path.join(F, rel + '.mcfunction')
-    os.makedirs(os.path.dirname(p), exist_ok=True)
-    with open(p, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(lines) + '\n')
-
-
-def lines_of(rel):
-    return open(os.path.join(F, rel + '.mcfunction'), encoding='utf-8').read().split('\n')
+# _write(rel, lines), lines_of(rel) et drop_lines(rel, lines) : alias de _fn posés par init (voir mcfn.Fn).
 
 
 def patch(rel, anchor, new_lines, where='after'):
-    new_lines = [_tx(l) for l in new_lines]
-    p = os.path.join(F, rel + '.mcfunction')
-    lines = open(p, encoding='utf-8').read().split('\n')
-    if all(l in lines for l in new_lines):
-        return
-    idx = [i for i, l in enumerate(lines) if l == anchor]
-    if len(idx) != 1:
-        raise SystemExit(f'{rel} : ancre {anchor!r} trouvée {len(idx)} fois')
-    i = idx[0] + (1 if where == 'after' else 0)
-    lines[i:i] = new_lines
-    with open(p, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(lines))
-
-
-def drop_lines(rel, lines):
-    """Retire d'une fonction les lignes exactes données (rien ne change si elles n'y sont plus)."""
-    p = os.path.join(F, rel + '.mcfunction')
-    with open(p, encoding='utf-8') as f:
-        txt = f.read().split('\n')
-    kept = [l for l in txt if l not in lines]
-    if len(kept) == len(txt):
-        return
-    with open(p, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(kept))
+    """mcfn.Fn.patch, après translation des lignes vers la carte clonée (_tx)."""
+    _fn.patch(rel, anchor, [_tx(l) for l in new_lines], where)
 
 
 def go_range(gid):
