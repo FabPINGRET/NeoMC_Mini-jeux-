@@ -370,10 +370,8 @@ px, py, pz = SP['pyr_door']
 DOORS = {'kgate': ([f'fill {x1} {y1} {z1} {x2} {y2} {z2} minecraft:air'], [f'fill {x1} {y1} {z1} {x2} {y2} {z2} minecraft:deepslate_tiles']),
          'citadel': ([f'fill {cx1} {cy1} {cz1} {cx2} {cy2} {cz2} minecraft:air'], [f'fill {cx1} {cy1} {cz1} {cx2} {cy2} {cz2} minecraft:iron_bars']),
          'pyramid': ([f'fill {px - 1} {py} {pz} {px + 1} {py + 2} {pz} minecraft:air'], [f'fill {px - 1} {py} {pz} {px + 1} {py + 2} {pz} minecraft:chiseled_sandstone'])}
-for k, (op, cl) in DOORS.items():
+for k, (op, _) in DOORS.items():
     w(f'door/{k}_open', [f'# Porte {k} : ouverte', 'playsound minecraft:block.iron_door.open master @a ~ ~ ~ 1 0.5'] + op)
-    w(f'door/{k}_close', [f'# Porte {k} : fermée'] + cl)
-SETUP_Q += [f'function mg:{P}/door/{k}_close' for k in DOORS]
 
 # ================================================================ quêtes secondaires
 SIDE = {  # n° : (PNJ, titre, texte, type, cible, quantité, (xp, or, bonus))
@@ -712,7 +710,6 @@ for i, (r, x, y, z) in enumerate(CHESTS):
        'execute at @s run playsound minecraft:block.chest.open player @s ~ ~ ~ 1 0.8', 'execute at @s run particle minecraft:happy_villager ~ ~1 ~ 0.6 0.6 0.6 0 20'])
 TC += [f'execute positioned {x + 0.5} {y + 1.2} {z + 0.5} run particle minecraft:end_rod ~ ~ ~ 0.15 0.3 0.15 0.01 1' for (r, x, y, z) in CHESTS]
 w('tc_tick', TC)
-w('tc_deco', DECO)
 
 # ================================================================ succès
 ACH = [(0, 'Premier sang', 'Vaincre un premier monstre', 'score @s mg.olkt matches 1..', 50),

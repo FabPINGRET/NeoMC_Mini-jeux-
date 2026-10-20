@@ -191,8 +191,6 @@ w('gta/pheli_tick', ['# @s : hélico de police (chaque tick) : vole vers 14 bloc
                      'execute if score $gq2 mg.st matches 0 at @p[tag=mg.gtw,scores={mg.gwl=5..}] run particle minecraft:dust{color:[1.0,1.0,0.85],scale:2.5} ~ ~0.2 ~ 1.4 0.05 1.4 0 14 force'])
 w('gta/pheli_remove', ['# @s : l\'hélico de police repart', 'scoreboard players operation $gv mg.st = @s mg.gvid',
                        'execute as @e[type=minecraft:block_display] if score @s mg.gvid = $gv mg.st run kill @s', 'kill @s'])
-w('gta/pcar_remove', ['# @s : policier d\'une voiture de police qui repart : la voiture aussi',
-                      'execute on vehicle run function mg:gta/veh_remove', 'tp @s ~ -300 ~'])
 w('gta/veh_remove', ['# @s : véhicule (cheval ou ghast) retiré sans explosion : sa carrosserie et sa zone cliquable aussi', 'scoreboard players operation $gv mg.st = @s mg.gvid',
                      'execute as @e[type=minecraft:block_display] if score @s mg.gvid = $gv mg.st run kill @s',
                      'execute as @e[type=minecraft:interaction] if score @s mg.gvid = $gv mg.st run kill @s', 'tp @s ~ -300 ~'])
@@ -342,27 +340,6 @@ SIGNS = [(HOSP[0], HOSP[1] - 2, '🏥 HÔPITAL', 'red'), (POLI[0], POLI[1] - 2, 
 SIGN_CMDS = [f'summon minecraft:text_display {x + 0.5} 70.6 {Z + z - 0.1} {{Tags:["mg.gta"],Rotation:[180f,0f],text:{js({"text": t, "color": c, "bold": True})},'
              f'background:-1442840576,{TR % (0, 0, 0, 1.6, 1.6, 1.6)}}}' for (x, z, t, c) in SIGNS]
 w('gta/places_setup', ['# Enseignes des lieux (contexte : dimension mg:gta)'] + SIGN_CMDS)
-# casino
-w('gta/casino_slot', ['# @s joue à la machine à sous (déjà payée 50 $) : 55 % rien, 30 % 100 $, 12 % 250 $, 3 % jackpot 1 000 $',
-                      'execute store result score $gr mg.st run random value 0..99', 'scoreboard players set $gcv mg.st 0',
-                      'execute if score $gr mg.st matches 55..84 run scoreboard players set $gcv mg.st 100',
-                      'execute if score $gr mg.st matches 85..96 run scoreboard players set $gcv mg.st 250',
-                      'execute if score $gr mg.st matches 97.. run scoreboard players set $gcv mg.st 1000',
-                      'scoreboard players operation @s mg.gta += $gcv mg.st', 'scoreboard players set @s mg.gal 40',
-                      'execute if score $gcv mg.st matches 0 run title @s actionbar {"text":"🎰 🍋 🍒 🔔 … perdu !","color":"gray"}',
-                      'execute if score $gcv mg.st matches 100 run title @s actionbar {"text":"🎰 🍒 🍒 🍋 … +100 $","color":"green","bold":true}',
-                      'execute if score $gcv mg.st matches 250 run title @s actionbar {"text":"🎰 🔔 🔔 🔔 … +250 $ !","color":"gold","bold":true}',
-                      'execute if score $gcv mg.st matches 1000 run title @s title {"text":"💰 JACKPOT 💰","color":"gold","bold":true}',
-                      'execute if score $gcv mg.st matches 1000 run tellraw @a[tag=mg.gtw] [{"selector":"@s","color":"yellow"},{"text":" a touché le JACKPOT du casino : 1 000 $ !","color":"gold"}]',
-                      'execute if score $gcv mg.st matches 1.. at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.4',
-                      'execute if score $gcv mg.st matches 0 at @s run playsound minecraft:block.note_block.bass player @s ~ ~ ~ 1 0.6'])
-w('gta/casino_roulette', ['# @s mise 100 $ à la roulette : 47 % de chances de doubler',
-                          'execute store result score $gr mg.st run random value 0..99', 'scoreboard players set @s mg.gal 40',
-                          'execute if score $gr mg.st matches ..46 run scoreboard players add @s mg.gta 200',
-                          'execute if score $gr mg.st matches ..46 run title @s actionbar {"text":"🎡 Rouge ! +200 $","color":"red","bold":true}',
-                          'execute if score $gr mg.st matches 47.. run title @s actionbar {"text":"🎡 Noir… la banque gagne","color":"gray"}',
-                          'execute if score $gr mg.st matches ..46 at @s run playsound minecraft:entity.player.levelup player @s ~ ~ ~ 1 1.2',
-                          'execute if score $gr mg.st matches 47.. at @s run playsound minecraft:block.note_block.bass player @s ~ ~ ~ 1 0.6'])
 # boîte de nuit : piste qui change de couleur, lasers, musique pour ceux qui sont dedans
 FX1, FZ1, FX2, FZ2 = CLUB['floor']
 BX1, BZ1, BX2, BZ2 = CLUB['box']

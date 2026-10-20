@@ -181,7 +181,6 @@ B5.append(tdisp(0.5, 68.7, Z0 + 2.1, 0, ['mg.bdeco'], snbt_text([('Chaussures ·
 B5 += ['execute as @a[tag=mg.bwl] run function mg:bowl/rack_me',
        'execute as @a[tag=mg.bwl] run function mg:bowl/name']
 w('bowl/build_5', B5)
-w('bowl/build', ['# (OP) Construit / remet à neuf la salle de bowling (5 étapes sur 8 ticks)', 'function mg:bowl/build_1'])
 
 # ───────────────────────────── quilles ─────────────────────────────
 PINS = []

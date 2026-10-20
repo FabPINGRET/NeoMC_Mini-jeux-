@@ -141,7 +141,6 @@ W('rotate', ['# Tableau à droite : affichage suivant',
     'function mg:hall/rot_next'])
 W('rot_votes', ['scoreboard players set $rph mg.st 1', 'scoreboard players set $hrt mg.st 120',
     'scoreboard objectives setdisplay sidebar mg.vb'])
-W('rot_game', ['function mg:hall/rotate'])
 rn = ['# Tableau suivant ayant au moins un score (sinon victoires)',
       'scoreboard players add $rot mg.st 1',
       f'execute unless score $rot mg.st matches 1..{len(BOARDS)} run scoreboard players set $rot mg.st 1',

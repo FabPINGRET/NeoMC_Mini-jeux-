@@ -358,8 +358,6 @@ write('boxes', boxes)
 write('hazards', spawn)
 write('track_tick', tick)
 write('spec_tp', ['# Pilote éliminé : vue d\'ensemble de l\'arène', f'tp @s 0.5 {ROAD + 36} {W(0) + 60.5} 180 50'])
-write('hz_hit', ['scoreboard players operation $ko mg.st = @s mg.ri',
-                 'execute as @a[tag=mg.play] if score @s mg.ri = $ko mg.st unless score @s mg.khi matches 1.. run function mg:kart/hit'])
 write('hz_big', ['scoreboard players operation $ko mg.st = @s mg.ri',
                  'execute as @a[tag=mg.play] if score @s mg.ri = $ko mg.st unless score @s mg.khi matches 1.. run function mg:kart/hit_big'])
 write('fl_add', ['# Forteresse Bob-omb : zone chargée', f'forceload add {-HX} {W(-HZ)} {HX} {W(HZ)}'])
