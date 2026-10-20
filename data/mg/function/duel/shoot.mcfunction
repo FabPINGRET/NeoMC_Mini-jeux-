@@ -1,6 +1,7 @@
-# Tir du sniper (@s = duelliste qui a fait un clic droit) : rayon de 150 blocs, recharge 2 s
+# Tir du sniper (@s = duelliste qui a fait un clic gauche, gun/cl_left) : rayon de 150 blocs, recharge 2 s
 scoreboard players reset @s mg.qs
-execute unless items entity @s weapon.* *[custom_data~{mg_dl:1b}] run return 0
+# le sniper en main droite seulement (le couteau porte aussi mg_dl ; un clic droit vanilla avec lui ne doit pas tirer)
+execute unless items entity @s weapon.mainhand minecraft:warped_fungus_on_a_stick[custom_data~{mg_dl:1b}] run return 0
 execute if entity @s[tag=mg.dlp] run return 0
 execute if score @s mg.dlcd matches 1.. run return 0
 scoreboard players set @s mg.dlcd 40

@@ -7,6 +7,7 @@ data remove storage mg:duel m
 tag @a remove mg.dla
 tag @a remove mg.dlp
 tag @a remove mg.dlsc
+tag @a remove mg.dlcr
 tag @a remove mg.dlsh
 tag @a remove mg.dlvc
 tag @a remove mg.dlwn

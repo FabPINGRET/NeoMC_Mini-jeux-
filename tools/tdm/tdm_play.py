@@ -4,16 +4,17 @@ Deux équipes du cœur (mg_red / mg_blue), tous les participants (tag mg.play, m
 ($tma = arène réservée, 1..3). mg.tmhp = PV (2 ; tête = 2 dégâts, corps = 1) ; mg.tmk = frags (joueur, et Rouge / Bleu pour
 l'équipe) ; mg.tmcd = recharge du tir ; mg.tmx = décompte de protection (réapparition : 3 s intouchable, ne tire pas).
 Tags temporaires : mg.tmsh tireur, mg.tmen équipe adverse du tireur (seule visée : le rayon traverse les coéquipiers),
-mg.tmvc victime touchée, mg.tmp protégé, mg.tmsc lunette.
+mg.tmvc victime touchée, mg.tmp protégé, mg.tmsc lunette, mg.tmcr accroupi.
+Sniper : clic gauche = tir, clic droit = lunette (mg.gads, boîte de clic de tools/arcade/gen_gunclick.py).
 Couteau (stone_sword, clic gauche) : l'advancement mg:tdm_melee appelle tdm/melee_adv ; 1 dégât, recharge 1 s (mg.tmkc), même
-filtre d'équipe adverse que le tir. Packs de soin : tdm_packs.py. La réapparition (tdm/spawn, tdm/respawn) et le kit : gen_tdm.py.
+filtre d'équipe adverse que le tir ; sur la boîte de clic d'un adversaire armé du sniper : tdm/box_knife (via gun/cl_foreign). Packs de soin : tdm_packs.py. La réapparition (tdm/spawn, tdm/respawn) et le kit : gen_tdm.py.
 """
 import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, '..', 'duel'))
-from duel_play import SNEAK, SCOPE, SHOT_CD, arm_cd
+from duel_play import SNEAK, SCOPE, SHOT_CD
 
 P = 'tag=mg.play,gamemode=adventure'
 TEAMS = (('red', 'Rouge', 'red', 'blue'), ('blue', 'Bleu', 'blue', 'red'))     # équipe, score d'équipe, couleur, couleur adverse
@@ -77,20 +78,21 @@ def build(w, js, zs, win, limit):
         'execute if score @s mg.tmx matches 20 run title @s actionbar ' + js([tx('1', 'yellow', bold=True)]),
         'execute if score @s mg.tmx matches ..0 run title @s actionbar ' + js([tx('🎯 FEU !', 'red', bold=True)]),
         'execute if score @s mg.tmx matches ..0 at @s run playsound minecraft:entity.firework_rocket.blast master @s ~ ~ ~ 0.6 1.4',
-        '# l\'overlay de recharge du sniper (use_cooldown) n\'est posé qu\'ici : sinon un clic protégé verrouillerait le tir'] +
-      arm_cd('mg_tm', 'mg:tmsn', 'mg.tmx') + [
         'execute if score @s mg.tmx matches ..0 run tag @s remove mg.tmp',
         'execute if score @s mg.tmx matches ..0 run scoreboard players reset @s mg.tmx',
     ])
 
     # ------------------------------------------------------------------ lunette
     w('tdm/scope', [
-        '# Lunette (@s = joueur, position exécutée) : accroupi = zoom (lenteur) + cache ; se relever la retire',
-        f'execute if predicate {SNEAK} run return run function mg:tdm/scope_on',
+        '# Lunette (@s = joueur, position exécutée) : clic droit = zoom (lenteur) + cache, de nouveau clic droit = retirée (mg.gads, gun/cl_right)',
+        '# mg.tmcr = accroupi (hauteur de tête pour le rayon : la lunette se pose debout aussi)',
+        f'execute if predicate {SNEAK} run tag @s add mg.tmcr',
+        f'execute unless predicate {SNEAK} run tag @s remove mg.tmcr',
+        'execute if entity @s[tag=mg.gads] run return run function mg:tdm/scope_on',
         'execute if entity @s[tag=mg.tmsc] run function mg:tdm/unscope',
     ])
     w('tdm/scope_on', [
-        '# Lunette en place (renouvelée à chaque tick tant qu\'il reste accroupi)',
+        '# Lunette en place (renouvelée à chaque tick tant que mg.gads est posé)',
         'tag @s add mg.tmsc',
         'effect give @s minecraft:slowness 1 6 true',
         'title @s times 0 5 2',
@@ -106,9 +108,10 @@ def build(w, js, zs, win, limit):
 
     # ------------------------------------------------------------------ tir
     w('tdm/shoot', [
-        '# Tir du sniper (@s = joueur qui a fait un clic droit) : rayon de 150 blocs, recharge 2 s',
+        '# Tir du sniper (@s = joueur qui a fait un clic gauche, gun/cl_left) : rayon de 150 blocs, recharge 2 s',
         'scoreboard players reset @s mg.qs',
-        'execute unless items entity @s weapon.* *[custom_data~{mg_tm:1b}] run return 0',
+        '# le sniper en main droite seulement (le couteau porte aussi mg_tm ; un clic droit vanilla avec lui ne doit pas tirer)',
+        'execute unless items entity @s weapon.mainhand minecraft:warped_fungus_on_a_stick[custom_data~{mg_tm:1b}] run return 0',
         'execute if entity @s[tag=mg.tmp] run return 0',
         'execute if score @s mg.tmcd matches 1.. run return 0',
         f'scoreboard players set @s mg.tmcd {SHOT_CD}',
@@ -140,12 +143,12 @@ def build(w, js, zs, win, limit):
         'execute unless loaded ~ ~ ~ run return 0',
         'tp @e[type=minecraft:marker,tag=mg.tmend,distance=..1,limit=1] ~ ~ ~',
         'execute unless block ~ ~ ~ #mg:ray_pass run return run particle minecraft:electric_spark ~ ~ ~ 0.1 0.1 0.1 0.1 4',
-        '# tête : 0,4 autour des yeux (1,62 debout, 1,27 accroupi), testée AVANT le corps',
-        f'execute positioned ~ ~-1.62 ~ as @a[{base},tag=!mg.tmsc,distance=..0.4,{chk}hit_head',
-        f'execute positioned ~ ~-1.27 ~ as @a[{base},tag=mg.tmsc,distance=..0.4,{chk}hit_head',
+        '# tête : 0,4 autour des yeux (1,62 debout, 1,27 accroupi : mg.tmcr), testée AVANT le corps',
+        f'execute positioned ~ ~-1.62 ~ as @a[{base},tag=!mg.tmcr,distance=..0.4,{chk}hit_head',
+        f'execute positioned ~ ~-1.27 ~ as @a[{base},tag=mg.tmcr,distance=..0.4,{chk}hit_head',
         '# corps (zone resserrée sous la tête : un tir à la tête ne devient pas un tir au corps)',
-        f'execute positioned ~ ~-0.7 ~ as @a[{base},tag=!mg.tmsc,distance=..0.8,{chk}hit_body',
-        f'execute positioned ~ ~-0.5 ~ as @a[{base},tag=mg.tmsc,distance=..0.75,{chk}hit_body',
+        f'execute positioned ~ ~-0.7 ~ as @a[{base},tag=!mg.tmcr,distance=..0.8,{chk}hit_body',
+        f'execute positioned ~ ~-0.5 ~ as @a[{base},tag=mg.tmcr,distance=..0.75,{chk}hit_body',
         'scoreboard players remove $rs mg.st 1',
         'execute if score $rs mg.st matches 1.. positioned ^ ^ ^0.5 run function mg:tdm/ray',
     ])
@@ -205,6 +208,27 @@ def build(w, js, zs, win, limit):
         'scoreboard players set $tmd mg.st 1',
         'function mg:tdm/hit',
         'execute if score @s mg.tmhp matches ..0 run function mg:tdm/frag',
+    ])
+    w('tdm/box_knife', [
+        '# Coup de couteau sur la boîte de clic d\'un adversaire (gun/cl_foreign : @s = attaquant, victime = @a[tag=mg.gcme]) :',
+        '# la boîte de 2,6 blocs autour de ses yeux intercepte le coup, mg:tdm_melee ne se déclenche donc pas ; mêmes règles que melee_adv',
+        'execute unless score $game mg.st matches 246 run return 0',
+        'execute unless score $state mg.st matches 2 run return 0',
+        'execute unless entity @s[tag=mg.play,tag=!mg.tmp] run return 0',
+        'execute unless items entity @s weapon.mainhand *[custom_data~{mg_kn:1b}] run return 0',
+        'execute if score @s mg.tmkc matches 1.. run return 0',
+        f'execute if entity @s[team=mg_red] run tag @a[{P},team=mg_blue] add mg.tmen',
+        f'execute if entity @s[team=mg_blue] run tag @a[{P},team=mg_red] add mg.tmen',
+        '# victime = adversaire non protégé propriétaire de la boîte frappée, à portée du couteau (pas de coup ami)',
+        'execute at @s as @a[tag=mg.gcme,tag=mg.tmen,tag=!mg.tmp,distance=..4.5] run tag @s add mg.tmvc',
+        'execute unless entity @a[tag=mg.tmvc] run return run tag @a remove mg.tmen',
+        '# recharge posée AVANT le coup (comme melee_adv), puis le coup existant (melee_hit)',
+        'scoreboard players set @s mg.tmkc 20',
+        'tag @s add mg.tmsh',
+        'execute as @a[tag=mg.tmvc,limit=1] run function mg:tdm/melee_hit',
+        'tag @a remove mg.tmvc',
+        'tag @a remove mg.tmen',
+        'tag @s remove mg.tmsh',
     ])
 
     # ------------------------------------------------------------------ frags

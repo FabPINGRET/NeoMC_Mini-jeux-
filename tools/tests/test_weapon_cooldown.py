@@ -1,4 +1,4 @@
-"""Overlay de recharge (use_cooldown) dans la hotbar : armes (gun/cd_*), snipers duel/TDM, arc Murder, canon sonique Terra Nova.
+"""Overlay de recharge (use_cooldown) dans la hotbar : armes (gun/cd_*), arc Murder, canon sonique Terra Nova ; absent des snipers duel/TDM.
 Lancer depuis n'importe où : python -m unittest discover -s tools/tests -v   (la racine du dépôt est dérivée de ce fichier).
 """
 import re
@@ -12,10 +12,9 @@ sys.path[:0] = [str(ROOT / 'tools' / 'arcade'), str(ROOT / 'tools' / 'duel')]
 import guns                                             # noqa: E402
 import duel_play                                        # noqa: E402
 
-SECS = f'seconds:{duel_play.SHOT_CD / 20:g}f'
 ARROW_CD = int(re.search(r'^ARROW_CD = (\d+)', (ROOT / 'tools/arcade/gen_murder.py').read_text(encoding='utf-8'), re.M).group(1))
-GAMES = (('duel', 'mg.dlp', 'mg:dlsn', 'prot_tick', 'spawn'), ('tdm', 'mg.tmp', 'mg:tmsn', 'prot_tick', 'spawn_do'))
-NEW_GROUPS = {'mg:gun$(n)': 'gun/', 'mg:dlsn': 'duel/', 'mg:tmsn': 'tdm/', 'mg:mmbow': 'mm/', 'mg:tvsonic': 'terra/'}
+GAMES = (('duel', 'prot_tick', 'spawn'), ('tdm', 'prot_tick', 'spawn_do'))
+NEW_GROUPS = {'mg:gun$(n)': 'gun/', 'mg:mmbow': 'mm/', 'mg:tvsonic': 'terra/'}
 
 
 def lines(rel):
@@ -73,22 +72,13 @@ class GunCooldown(unittest.TestCase):
 
 class SniperCooldown(unittest.TestCase):
     def test_duel_tdm(self):
-        for game, tag, group, prot, spawn in GAMES:
-            pt, sp, kit = code(f'{game}/{prot}'), code(f'{game}/{spawn}'), code(f'{game}/kit')
-            arm = [i for i, l in enumerate(pt) if 'use_cooldown' in l]
-            end = next(i for i, l in enumerate(pt) if l.endswith(f'tag @s remove {tag}'))
-            self.assertEqual(len(arm), 9, f'{game}/{prot}')
-            self.assertTrue(all(i < end for i in arm))
-            for k, i in enumerate(arm):
-                self.assertIn(f'hotbar.{k} ', pt[i])
-                self.assertIn('matches ..0 ', pt[i])
-                self.assertIn(f'{SECS},cooldown_group:"{group}"', pt[i])
-            dis = [i for i, l in enumerate(sp) if '"!minecraft:use_cooldown":{}' in l]
-            self.assertEqual(len(dis), 9, f'{game}/{spawn}')
-            self.assertTrue(all(i > sp.index(f'tag @s add {tag}') for i in dis))
-            self.assertEqual([l for l in kit if 'use_cooldown' in l], [duel_play.kit_cd(group, tag)])
-            self.assertIn(f'unless entity @s[tag={tag}]', duel_play.kit_cd(group, tag))
-        self.assertEqual(duel_play.SHOT_CD / 20, 2)
+        """Le clic droit ouvre la lunette (plus de tir) : l'overlay de recharge vanilla est retiré des snipers duel / TDM."""
+        for game in ('duel', 'tdm'):
+            for p in sorted((FUNC / game).rglob('*.mcfunction')):
+                txt = p.read_text(encoding='utf-8')
+                for needle in ('use_cooldown', 'mg:dlsn', 'mg:tmsn'):
+                    self.assertNotIn(needle, txt, f'{p.relative_to(FUNC).as_posix()} : {needle}')
+        self.assertEqual(duel_play.SHOT_CD / 20, 2)         # la recharge du tir (mg.dlcd / mg.tmcd) reste de 2 s
 
     def test_murder_and_terra(self):
         for f in ('det_kit', 'drop_at', 'drop_here', 'gold_newbow'):
@@ -112,7 +102,7 @@ class GroupsAndSyntax(unittest.TestCase):
         print('groupes :', sorted(found))
 
     def test_syntax(self):
-        files = [f'gun/cd_{x}' for x in ('set', 'n', 'r', 'hand')] + [f'{g}/{f}' for g, _, _, p, s in GAMES for f in (p, s, 'kit')]
+        files = [f'gun/cd_{x}' for x in ('set', 'n', 'r', 'hand')] + [f'{g}/{f}' for g, p, s in GAMES for f in (p, s, 'kit')]
         files += [f'mm/{f}' for f in ('det_kit', 'drop_at', 'drop_here', 'gold_newbow')] + ['terra/buy']
         for rel in files:
             for l in code(rel):

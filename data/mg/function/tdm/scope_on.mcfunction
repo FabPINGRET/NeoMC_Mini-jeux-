@@ -1,4 +1,4 @@
-# Lunette en place (renouvelée à chaque tick tant qu'il reste accroupi)
+# Lunette en place (renouvelée à chaque tick tant que mg.gads est posé)
 tag @s add mg.tmsc
 effect give @s minecraft:slowness 1 6 true
 title @s times 0 5 2
