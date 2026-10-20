@@ -459,34 +459,8 @@ write('loaded_all', lo)
 for k, p in enumerate(parts, 1):
     if k < len(parts): p = p + [f'schedule function mg:kart/build_{k + 1} 2t']
     write(f'build_{k}', p)
-# ------------------------------------------------------------------ minimap (tableau de droite) : 15 lignes x 24 cases
+# seules les constantes #km* restent, pour la parité avec data/, lues par rien
 MMC, MMR = 24, 15
-cells = []
-for r in range(MMR):
-    row = []
-    for c in range(MMC):
-        x1 = -HX + c * (2 * HX + 1) // MMC; x2 = -HX + (c + 1) * (2 * HX + 1) // MMC
-        z1 = -HZ + r * (2 * HZ + 1) // MMR; z2 = -HZ + (r + 1) * (2 * HZ + 1) // MMR
-        kinds = set()
-        for x in range(x1, x2):
-            for z in range(z1, z2):
-                cc = col.get((x, z))
-                if cc is None: continue
-                if (x, z) in ROADSET: kinds.add('road')
-                elif cc['water']: kinds.add('water')
-                else: kinds.add('grass')
-        sx, sz = pts[START]
-        if x1 <= sx < x2 and z1 <= sz < z2: color = 'white'
-        elif 'road' in kinds: color = 'gray'
-        elif 'water' in kinds: color = 'dark_aqua'
-        elif 'grass' in kinds: color = 'dark_green'
-        else: color = 'black'
-        row.append('{text:"█",color:"%s"}' % color)
-    cells.append('l%d:[%s]' % (r, ','.join(row)))
-write('mm_base', ['# Minimap : carte de base (générée)', 'data modify storage mg:kart base set value {' + ','.join(cells) + '}'])
-write('mm_show', ['# Minimap : affiche les 15 lignes dans le tableau de droite (macro, storage mg:kart mm)'] +
-      [f'$scoreboard players display name m{r:02d} mg.kmap $(l{r})' for r in range(MMR)])
-write('mm_init', ['# Minimap : lignes du tableau (ordre de haut en bas)'] + [f'scoreboard players set m{r:02d} mg.kmap {MMR - r}' for r in range(MMR)])
 
 write('hazards', ['# Circuit Champignon : pas de danger'])
 write('track_tick', ['# Circuit Champignon : pas de danger'])
