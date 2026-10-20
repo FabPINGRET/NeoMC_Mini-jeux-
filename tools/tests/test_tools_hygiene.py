@@ -19,7 +19,6 @@ HELPERS = {'patch', 'replace', 'sub', 'go_range', 'js', 'drop_lines'}
 WRITERS = {'w', 'wr', '_write'}
 
 OVERSIZE = {
-    'tools/arcade/gen_bomber.py': 1040,
     'tools/arcade/gen_bowling.py': 739,
     'tools/arcade/gen_chameleon.py': 579,
     'tools/arcade/gen_golf.py': 887,
