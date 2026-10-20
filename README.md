@@ -113,7 +113,7 @@ Un monde à part (dimension `mg:gta`), hors des mini-jeux : on y entre par le **
 - **Concession** (moto, muscle car, supercar, hélico, avion), 🔥 nitro / 📯 klaxon, 🎨 peinture au garage. **Neo Hills** : la villa des joueurs sur la colline au nord (manoir détaillé, garage, piscine, tennis, hélistation) ; tout ce qui a été acheté une fois y est gratuit pour tout le monde.
 - **Lieux** : armurerie, banque, concession, aérodrome, casino, boîte de nuit (piste animée, musique), hôpital, commissariat, 6 commerces aménagés.
 - **Interface** (resource pack) : étoiles de recherche, viseur, dollars en chiffres verts, carte (case 9) et mini-carte, radio dans les véhicules.
-- Générateurs : `tools/arcade/gen_bomber.py` (ville), `gen_villa.py` (Neo Hills), `gen_gta.py` + `gta_plus.py` (jeu), dans cet ordre. `gen_gta.py` exécute ses parts `gta_world.py`, `gta_session.py`, `gta_police.py`, `gta_drive.py`, `gta_heists.py`, puis `gta_plus.py` et `gta_city.py` (jamais lancées seules).
+- Générateurs : `tools/arcade/gen_bomber.py` (ville ; façade qui exécute `bomber_city.py`, `bomber_park.py`, `bomber_export.py`, `bomber_game.py`, dans cet ordre), `gen_villa.py` (Neo Hills), `gen_gta.py` + `gta_plus.py` (jeu), dans cet ordre. `gen_gta.py` exécute ses parts `gta_world.py`, `gta_session.py`, `gta_police.py`, `gta_drive.py`, `gta_heists.py`, puis `gta_plus.py` et `gta_city.py` (jamais lancées seules).
 
 ## 🦖 Terra Nova (monde libre RPG)
 
