@@ -131,40 +131,8 @@ for k, p in enumerate(parts, 1):
 for f in os.listdir(OUT):
     if f.startswith('build_') and f[6:-11].isdigit() and int(f[6:-11]) > len(parts): os.remove(os.path.join(OUT, f))
 
-# minimap
+# seules les constantes #km* restent, pour la parité avec data/, lues par rien
 MMC, MMR = 24, 15
-cells = []
-for r in range(MMR):
-    row = []
-    for c_ in range(MMC):
-        x1 = -HX + c_ * (2 * HX + 1) // MMC; x2 = -HX + (c_ + 1) * (2 * HX + 1) // MMC
-        z1 = -HZ + r * (2 * HZ + 1) // MMR; z2 = -HZ + (r + 1) * (2 * HZ + 1) // MMR
-        kinds = set()
-        for x in range(x1, x2):
-            for z in range(z1, z2):
-                cc = col.get((x, z))
-                if cc is None: continue
-                if (x, z) in ROADSET: kinds.add('road')
-                elif cc['liq'] == 'lava': kinds.add('lava')
-                elif cc['liq']: kinds.add('water')
-                elif cc['reg'] in ('desert', 'plage') or cc['top'] == 'sand': kinds.add('sand')
-                elif cc['reg'] == 'volcan': kinds.add('rock')
-                else: kinds.add('grass')
-        sx_, sz_ = pts[START]
-        if x1 <= sx_ < x2 and z1 <= sz_ < z2: color = 'white'
-        elif 'road' in kinds: color = 'gray'
-        elif 'lava' in kinds: color = 'gold'
-        elif 'water' in kinds: color = 'dark_aqua'
-        elif 'sand' in kinds: color = 'yellow'
-        elif 'rock' in kinds: color = 'dark_gray'
-        elif 'grass' in kinds: color = 'dark_green'
-        else: color = 'black'
-        row.append('{text:"█",color:"%s"}' % color)
-    cells.append('l%d:[%s]' % (r, ','.join(row)))
-write('mm_base', ['# Minimap du Royaume Koopa (générée)', 'data modify storage mg:kart base set value {' + ','.join(cells) + '}'])
-write('mm_show', ['# Minimap : affiche les 15 lignes dans le tableau de droite (macro, storage mg:kart mm)'] +
-      [f'$scoreboard players display name m{r:02d} mg.kmap $(l{r})' for r in range(MMR)])
-write('mm_init', ['# Minimap : lignes du tableau (ordre de haut en bas)'] + [f'scoreboard players set m{r:02d} mg.kmap {MMR - r}' for r in range(MMR)])
 write('const', ['# Constantes du Royaume Koopa (générées)', f'scoreboard players set $kK mg.st {K}', 'scoreboard players set $kLaps mg.st 3',
                 f'scoreboard players set #kmx0 mg.st {HX}', f'scoreboard players set #kmz0 mg.st {ZC - HZ}', f'scoreboard players set #kmc mg.st {MMC}',
                 f'scoreboard players set #kmw mg.st {2 * HX + 1}', f'scoreboard players set #kmr mg.st {MMR}', f'scoreboard players set #kmh mg.st {2 * HZ + 1}',

@@ -36,29 +36,29 @@ for f in (0.18, 0.5, 0.82):
         spawn.append(f'summon minecraft:item_display {P(*top)} {{Tags:["mg.kthw","{t}",{HZT}],teleport_duration:2,item:{{id:"minecraft:chiseled_stone_bricks"}},'
                      f'Rotation:[{yaw_of(-tangent(i)[0], -tangent(i)[1])}f,0f],{tf(3.2)}}}')
         phase(100, o)
-        at(48, f'tp @e[tag={t}] {P(top[0], top[1] + 0.5, top[2])}')
+        at(48, f'tp @e[type=minecraft:item_display,tag={t}] {P(top[0], top[1] + 0.5, top[2])}')
         at(52, f'execute positioned {P(*bot)} run playsound minecraft:block.stone.hit master @a[tag=mg.play,distance=..20] ~ ~ ~ 1 0.5')
-        at(60, f'data merge entity @e[tag={t},limit=1] {{teleport_duration:2}}')
-        at(60, f'tp @e[tag={t}] {P(*bot)}')
+        at(60, f'data merge entity @e[type=minecraft:item_display,tag={t},limit=1] {{teleport_duration:2}}')
+        at(60, f'tp @e[type=minecraft:item_display,tag={t}] {P(*bot)}')
         at(62, f'execute positioned {P(x, y, z)} run particle minecraft:explosion ~ ~0.3 ~ 1.2 0.2 1.2 0 4')
         at(62, f'execute positioned {P(x, y, z)} run playsound minecraft:entity.generic.explode master @a[tag=mg.play,distance=..28] ~ ~ ~ 0.8 0.6')
         hit_at('61..84', (x, y, z), 2.3, big=True)
-        at(85, f'data merge entity @e[tag={t},limit=1] {{teleport_duration:20}}')
-        at(85, f'tp @e[tag={t}] {P(*top)}')
-        at(99, f'data merge entity @e[tag={t},limit=1] {{teleport_duration:3}}')
+        at(85, f'data merge entity @e[type=minecraft:item_display,tag={t},limit=1] {{teleport_duration:20}}')
+        at(85, f'tp @e[type=minecraft:item_display,tag={t}] {P(*top)}')
+        at(99, f'data merge entity @e[type=minecraft:item_display,tag={t},limit=1] {{teleport_duration:3}}')
 # Barres de feu : 2 dans le château, sens opposés
 for f, spd in ((0.34, 7), (0.66, -6)):
     i = (CA + int(((CB - CA) % NP) * f)) % NP
     x, y, z = road_pt(i, 0, 0.7)
     t = nid()
     spawn.append(f'summon minecraft:item_display {P(x, y, z)} {{Tags:["mg.kfbc","{t}",{HZT}],item:{{id:"minecraft:magma_block"}},brightness:{{sky:15,block:15}},{tf(0.9, flip=False)}}}')
-    tick.append(f'execute as @e[tag={t}] at @s run rotate @s ~{spd} 0')
+    tick.append(f'execute as @e[type=minecraft:item_display,tag={t}] at @s run rotate @s ~{spd} 0')
     for k in range(1, 6):
         tb = f'{t}b{k}'
         spawn.append(f'summon minecraft:item_display {P(x, y, z)} {{Tags:["mg.kfb","{tb}",{HZT}],teleport_duration:1,item:{{id:"minecraft:magma_block"}},brightness:{{sky:15,block:15}},{tf(0.55, flip=False)}}}')
-        tick.append(f'execute as @e[tag={t}] at @s positioned ^ ^ ^{round(0.85 * k, 2)} run tp @e[tag={tb}] ~ ~ ~')
-tick.append(f'execute as @e[tag=mg.kfb] at @s positioned ~ ~-0.7 ~ as @e[type=minecraft:block_display,tag=mg.kart,distance=..1.05] run function {PF}hz_hit')
-tick.append('execute if score $kph mg.st matches 0 as @e[tag=mg.kfb] at @s run particle minecraft:flame ~ ~ ~ 0.1 0.1 0.1 0.01 1')
+        tick.append(f'execute as @e[type=minecraft:item_display,tag={t}] at @s positioned ^ ^ ^{round(0.85 * k, 2)} run tp @e[type=minecraft:item_display,tag={tb}] ~ ~ ~')
+tick.append(f'execute as @e[type=minecraft:item_display,tag=mg.kfb] at @s positioned ~ ~-0.7 ~ as @e[type=minecraft:block_display,tag=mg.kart,distance=..1.05] run function {PF}hz_hit')
+tick.append('execute if score $kph mg.st matches 0 as @e[type=minecraft:item_display,tag=mg.kfb] at @s run particle minecraft:flame ~ ~ ~ 0.1 0.1 0.1 0.01 1')
 # Sauteurs : Cheep Cheep (plage, par-dessus la chaussée) et Podoboos (château, d'un canal de lave à l'autre)
 def leaper(i, item, span, low, o, T=100, sound='entity.salmon.flop', billboard=True):
     t = nid()
@@ -66,18 +66,18 @@ def leaper(i, item, span, low, o, T=100, sound='entity.salmon.flop', billboard=T
     spawn.append(f'summon minecraft:item_display {P(*A)} {{Tags:["mg.kleap","{t}",{HZT}],teleport_duration:6,item:{{id:"minecraft:{item}"}},'
                  f'billboard:"center",brightness:{{sky:15,block:15}},{tf(1.4, 0.3, flip=False)}}}')
     phase(T, o)
-    at(1, f'data merge entity @e[tag={t},limit=1] {{teleport_duration:6}}')
-    at(1, f'tp @e[tag={t}] {P(*E1)}')
+    at(1, f'data merge entity @e[type=minecraft:item_display,tag={t},limit=1] {{teleport_duration:6}}')
+    at(1, f'tp @e[type=minecraft:item_display,tag={t}] {P(*E1)}')
     at(1, f'execute positioned {P(*A)} run particle minecraft:{"splash" if "fish" in item else "lava"} ~ ~0.5 ~ 0.4 0.2 0.4 0 12')
     at(1, f'execute positioned {P(*A)} run playsound minecraft:{sound} master @a[tag=mg.play,distance=..20] ~ ~ ~ 1 1')
-    at(7, f'data merge entity @e[tag={t},limit=1] {{teleport_duration:4}}')
-    at(7, f'tp @e[tag={t}] {P(*M)}')
-    at(11, f'tp @e[tag={t}] {P(*E2)}')
-    at(15, f'data merge entity @e[tag={t},limit=1] {{teleport_duration:6}}')
-    at(15, f'tp @e[tag={t}] {P(*Bp)}')
+    at(7, f'data merge entity @e[type=minecraft:item_display,tag={t},limit=1] {{teleport_duration:4}}')
+    at(7, f'tp @e[type=minecraft:item_display,tag={t}] {P(*M)}')
+    at(11, f'tp @e[type=minecraft:item_display,tag={t}] {P(*E2)}')
+    at(15, f'data merge entity @e[type=minecraft:item_display,tag={t},limit=1] {{teleport_duration:6}}')
+    at(15, f'tp @e[type=minecraft:item_display,tag={t}] {P(*Bp)}')
     at(21, f'execute positioned {P(*Bp)} run particle minecraft:{"splash" if "fish" in item else "lava"} ~ ~0.5 ~ 0.4 0.2 0.4 0 12')
-    at(60, f'data merge entity @e[tag={t},limit=1] {{teleport_duration:0}}')
-    at(60, f'tp @e[tag={t}] {P(*A)}')
+    at(60, f'data merge entity @e[type=minecraft:item_display,tag={t},limit=1] {{teleport_duration:0}}')
+    at(60, f'tp @e[type=minecraft:item_display,tag={t}] {P(*A)}')
     for p in range(7, 16):
         q = lerp(E1, M, (p - 7) / 4) if p <= 11 else lerp(M, E2, (p - 11) / 4)
         hit_at(str(p), (q[0], q[1] - 0.6, q[2]), 1.5)
@@ -104,15 +104,15 @@ for k, f in enumerate((0.05, 0.2, 0.35, 0.5, 0.65, 0.8, 0.95)):
     yaw = yaw_of(-nx2 * side, -nz2 * side)
     spawn.append(f'summon minecraft:item_display {P(*rest)} {{Tags:["mg.kpir","{t}",{HZT}],teleport_duration:10,item:{{id:"minecraft:red_mushroom_block"}},Rotation:[{yaw}f,0f],{tf(1.5)}}}')
     phase(70, k * 23)
-    at(10, f'tp @e[tag={t}] {P(rest[0], rest[1] + 0.4, rest[2])}')
-    at(25, f'tp @e[tag={t}] {P(*rest)}')
+    at(10, f'tp @e[type=minecraft:item_display,tag={t}] {P(rest[0], rest[1] + 0.4, rest[2])}')
+    at(25, f'tp @e[type=minecraft:item_display,tag={t}] {P(*rest)}')
     at(40, f'execute positioned {P(*rest)} run playsound minecraft:entity.ravager.roar master @a[tag=mg.play,distance=..18] ~ ~ ~ 0.4 1.8')
-    at(48, f'data merge entity @e[tag={t},limit=1] {{teleport_duration:3}}')
-    at(48, f'tp @e[tag={t}] {P(*lunge)}')
+    at(48, f'data merge entity @e[type=minecraft:item_display,tag={t},limit=1] {{teleport_duration:3}}')
+    at(48, f'tp @e[type=minecraft:item_display,tag={t}] {P(*lunge)}')
     at(50, f'execute positioned {P(*lunge)} run playsound minecraft:entity.evoker_fangs.attack master @a[tag=mg.play,distance=..18] ~ ~ ~ 1 1.2')
     hit_at('50..55', (lunge[0], lunge[1] - 0.9, lunge[2]), 2.0)
-    at(56, f'data merge entity @e[tag={t},limit=1] {{teleport_duration:10}}')
-    at(56, f'tp @e[tag={t}] {P(*rest)}')
+    at(56, f'data merge entity @e[type=minecraft:item_display,tag={t},limit=1] {{teleport_duration:10}}')
+    at(56, f'tp @e[type=minecraft:item_display,tag={t}] {P(*rest)}')
 # Goombas (jungle) et Pokeys (désert) : traversent la piste en patrouille
 def walker(i, item, tag, speed, T, scale, flip_start):
     a, b = road_pt(i, -4.0), road_pt(i, 4.0)
@@ -130,10 +130,10 @@ for k, f in enumerate((0.15, 0.35, 0.55, 0.75)):
     walker((a0 + int(((a1 - a0) % NP) * f)) % NP, 'cactus', 'mg.kpok', 0.12, 66, 1.3, k % 2)
 consts.add(66)
 tick += ['scoreboard players operation $hw mg.st = $ktime mg.st', 'scoreboard players operation $hw mg.st %= #h66 mg.st',
-         'execute as @e[tag=mg.kwalk] at @s run tp @s ^ ^ ^0.12',
-         'execute if score $hw mg.st matches 0 as @e[tag=mg.kwalk] at @s run tp @s ~ ~ ~ ~180 0',
-         f'execute as @e[tag=mg.kgoo,tag=!mg.kdead] at @s if entity @e[type=minecraft:block_display,tag=mg.kart,distance=..1.4] run function {PF}goo_squash',
-         f'execute as @e[tag=mg.kpok] at @s positioned ~ ~-0.6 ~ as @e[type=minecraft:block_display,tag=mg.kart,distance=..1.4] run function {PF}hz_hit',
+         'execute as @e[type=minecraft:item_display,tag=mg.kwalk] at @s run tp @s ^ ^ ^0.12',
+         'execute if score $hw mg.st matches 0 as @e[type=minecraft:item_display,tag=mg.kwalk] at @s run tp @s ~ ~ ~ ~180 0',
+         f'execute as @e[type=minecraft:item_display,tag=mg.kgoo,tag=!mg.kdead] at @s if entity @e[type=minecraft:block_display,tag=mg.kart,distance=..1.4] run function {PF}goo_squash',
+         f'execute as @e[type=minecraft:item_display,tag=mg.kpok] at @s positioned ~ ~-0.6 ~ as @e[type=minecraft:block_display,tag=mg.kart,distance=..1.4] run function {PF}hz_hit',
          f'execute as @e[tag=mg.kdead] run function {PF}goo_wait']
 # Chomp : bondit d'un bout à l'autre de la piste à la sortie du pont
 ci = near_wp(-91, 146)
@@ -153,21 +153,21 @@ for k in range(1, 6):
     spawn.append(f'summon minecraft:item_display {P(*q)} {{Tags:["mg.kchain","{tl}",{HZT}],teleport_duration:3,item:{{id:"minecraft:iron_block"}},{tf(0.3, flip=False)}}}')
 phase(90, 0)
 for p_, h_ in ((15, 0.6), (18, 0), (30, 0.6), (33, 0), (45, 0.6), (48, 0)):
-    at(p_, f'tp @e[tag={t}] {P(restp[0], restp[1] + h_, restp[2])}')
+    at(p_, f'tp @e[type=minecraft:item_display,tag={t}] {P(restp[0], restp[1] + h_, restp[2])}')
 at(52, f'execute positioned {P(*restp)} run playsound minecraft:entity.wolf.growl master @a[tag=mg.play,distance=..24] ~ ~ ~ 1 0.5')
 at(58, f'execute positioned {P(*restp)} run playsound minecraft:entity.wolf.ambient master @a[tag=mg.play,distance=..30] ~ ~ ~ 1 0.5')
-at(60, f'data merge entity @e[tag={t},limit=1] {{teleport_duration:4}}')
-at(60, f'tp @e[tag={t}] {P(*farp)}')
+at(60, f'data merge entity @e[type=minecraft:item_display,tag={t},limit=1] {{teleport_duration:4}}')
+at(60, f'tp @e[type=minecraft:item_display,tag={t}] {P(*farp)}')
 for k, tl in enumerate(links, 1):
-    at(60, f'data merge entity @e[tag={tl},limit=1] {{teleport_duration:4}}')
-    at(60, f'tp @e[tag={tl}] {P(*lerp((post[0], post[1] + 1.2, post[2]), farp, k / 6))}')
-    at(72, f'data merge entity @e[tag={tl},limit=1] {{teleport_duration:15}}')
-    at(72, f'tp @e[tag={tl}] {P(*lerp((post[0], post[1] + 1.2, post[2]), restp, k / 6))}')
+    at(60, f'data merge entity @e[type=minecraft:item_display,tag={tl},limit=1] {{teleport_duration:4}}')
+    at(60, f'tp @e[type=minecraft:item_display,tag={tl}] {P(*lerp((post[0], post[1] + 1.2, post[2]), farp, k / 6))}')
+    at(72, f'data merge entity @e[type=minecraft:item_display,tag={tl},limit=1] {{teleport_duration:15}}')
+    at(72, f'tp @e[type=minecraft:item_display,tag={tl}] {P(*lerp((post[0], post[1] + 1.2, post[2]), restp, k / 6))}')
 for k in range(5):
     q = lerp(road_pt(ci, (HW - 0.5) * side, 0), road_pt(ci, -(HW - 1.5) * side, 0), k / 4)
     hit_at('61..70', q, 1.8, big=True)
-at(72, f'data merge entity @e[tag={t},limit=1] {{teleport_duration:15}}')
-at(72, f'tp @e[tag={t}] {P(*restp)}')
+at(72, f'data merge entity @e[type=minecraft:item_display,tag={t},limit=1] {{teleport_duration:15}}')
+at(72, f'tp @e[type=minecraft:item_display,tag={t}] {P(*restp)}')
 # Sables mouvants : tourbillon de particules
 qx, qy, qz = road_pt(QUICK, -2.0, 0.2)
 tick.append(f'execute if score $kph mg.st matches 2 positioned {P(qx, qy, qz)} run particle minecraft:falling_dust{{block_state:"minecraft:sand"}} ~ ~ ~ 2 0.1 4 0 6')

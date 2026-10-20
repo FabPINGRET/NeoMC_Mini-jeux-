@@ -388,7 +388,7 @@ for k, p in enumerate(parts, 1):
 for f in os.listdir(OUT):
     if f.startswith('build_') and f[6:-11].isdigit() and int(f[6:-11]) > len(parts): os.remove(os.path.join(OUT, f))
 MMC, MMR = 24, 15      # grille de la minimap : seules les constantes #km* restent (la minimap t3 elle-même n'est plus générée) ;
-                       # écrites dans t3/const pour la parité avec data/ mais lues par rien : à retirer dans le mini-lot kart-realign
+                       # écrites dans t3/const pour la parité avec data/ mais lues par rien : retrait soumis à décision (touche data/)
 write('const', ['# Constantes de la Forteresse Bob-omb', 'scoreboard players set $kK mg.st 1', 'scoreboard players set $kLaps mg.st 1',
                 f'scoreboard players set #kmx0 mg.st {HX}', f'scoreboard players set #kmz0 mg.st {ZC - HZ}', f'scoreboard players set #kmc mg.st {MMC}',
                 f'scoreboard players set #kmw mg.st {2 * HX + 1}', f'scoreboard players set #kmr mg.st {MMR}', f'scoreboard players set #kmh mg.st {2 * HZ + 1}',
