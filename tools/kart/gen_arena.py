@@ -302,20 +302,20 @@ for n, (px, pz) in enumerate(((0, -58), (0, 58))):
     tick += ['scoreboard players operation $hp mg.st = $ktime mg.st', f'scoreboard players add $hp mg.st {n * 45}', 'scoreboard players operation $hp mg.st %= #h90 mg.st']
     def at(p, cmd): tick.append(f'execute if score $hp mg.st matches {p} run {cmd}')
     for p_, h_ in ((15, 0.6), (18, 0), (30, 0.6), (33, 0)):
-        at(p_, f'tp @e[tag={t}] {Pt(rest[0], rest[1] + h_, rest[2])}')
+        at(p_, f'tp @e[type=minecraft:item_display,tag={t}] {Pt(rest[0], rest[1] + h_, rest[2])}')
     at(52, f'execute positioned {Pt(*rest)} run playsound minecraft:entity.wolf.growl master @a[tag=mg.play,distance=..30] ~ ~ ~ 1 0.5')
-    at(60, f'data merge entity @e[tag={t},limit=1] {{teleport_duration:4}}')
-    at(60, f'tp @e[tag={t}] {Pt(*far)}')
+    at(60, f'data merge entity @e[type=minecraft:item_display,tag={t},limit=1] {{teleport_duration:4}}')
+    at(60, f'tp @e[type=minecraft:item_display,tag={t}] {Pt(*far)}')
     for k, tl in enumerate(links, 1):
-        at(60, f'data merge entity @e[tag={tl},limit=1] {{teleport_duration:4}}')
-        at(60, f'tp @e[tag={tl}] {Pt(*lerp((post[0], post[1] + 1.2, post[2]), far, k / 6))}')
-        at(72, f'data merge entity @e[tag={tl},limit=1] {{teleport_duration:15}}')
-        at(72, f'tp @e[tag={tl}] {Pt(*lerp((post[0], post[1] + 1.2, post[2]), rest, k / 6))}')
+        at(60, f'data merge entity @e[type=minecraft:item_display,tag={tl},limit=1] {{teleport_duration:4}}')
+        at(60, f'tp @e[type=minecraft:item_display,tag={tl}] {Pt(*lerp((post[0], post[1] + 1.2, post[2]), far, k / 6))}')
+        at(72, f'data merge entity @e[type=minecraft:item_display,tag={tl},limit=1] {{teleport_duration:15}}')
+        at(72, f'tp @e[type=minecraft:item_display,tag={tl}] {Pt(*lerp((post[0], post[1] + 1.2, post[2]), rest, k / 6))}')
     for k in range(6):
         q = lerp((rest[0], ROAD + 1, rest[2]), (far[0], ROAD + 1, far[2]), k / 5)
         tick.append(f'execute if score $hp mg.st matches 61..70 positioned {Pt(*q)} as @e[type=minecraft:block_display,tag=mg.kart,distance=..1.9] run function {PF}hz_big')
-    at(72, f'data merge entity @e[tag={t},limit=1] {{teleport_duration:15}}')
-    at(72, f'tp @e[tag={t}] {Pt(*rest)}')
+    at(72, f'data merge entity @e[type=minecraft:item_display,tag={t},limit=1] {{teleport_duration:15}}')
+    at(72, f'tp @e[type=minecraft:item_display,tag={t}] {Pt(*rest)}')
 tick.append('function mg:kart/bat_tick')
 spawn.append(f'summon minecraft:text_display {Pt(0.5, ROAD + 20, 0.5)} {{Tags:[{HZT}],billboard:"vertical",text:[{{"text":"FORTERESSE ","color":"gold","bold":true}},{{"text":"BOB-OMB","color":"red","bold":true}}],'
              f'background:1342177280,{tf(5, False)}}}')
@@ -387,30 +387,8 @@ for k, p in enumerate(parts, 1):
     write(f'build_{k}', p)
 for f in os.listdir(OUT):
     if f.startswith('build_') and f[6:-11].isdigit() and int(f[6:-11]) > len(parts): os.remove(os.path.join(OUT, f))
-MMC, MMR = 24, 15
-cells = []
-for r in range(MMR):
-    row = []
-    for c_ in range(MMC):
-        x1 = -HX + c_ * (2 * HX + 1) // MMC; x2 = -HX + (c_ + 1) * (2 * HX + 1) // MMC
-        z1 = -HZ + r * (2 * HZ + 1) // MMR; z2 = -HZ + (r + 1) * (2 * HZ + 1) // MMR
-        kinds = set()
-        for x in range(x1, x2):
-            for z in range(z1, z2):
-                cc = col.get((x, z))
-                if cc: kinds.add(cc['zone'])
-        if 'douve' in kinds: color = 'dark_aqua'
-        elif kinds & {'donjon', 'statue', 'rampe'}: color = 'red'
-        elif 'terrasse' in kinds: color = 'white'
-        elif 'mur' in kinds: color = 'dark_gray'
-        elif kinds & {'cour', 'massif', 'barriere', 'garde'}: color = 'gray'
-        elif 'dehors' in kinds: color = 'dark_green'
-        else: color = 'black'
-        row.append('{text:"█",color:"%s"}' % color)
-    cells.append('l%d:[%s]' % (r, ','.join(row)))
-write('mm_base', ['# Minimap de la Forteresse Bob-omb', 'data modify storage mg:kart base set value {' + ','.join(cells) + '}'])
-write('mm_show', [f'$scoreboard players display name m{r:02d} mg.kmap $(l{r})' for r in range(MMR)])
-write('mm_init', [f'scoreboard players set m{r:02d} mg.kmap {MMR - r}' for r in range(MMR)])
+MMC, MMR = 24, 15      # grille de la minimap : seules les constantes #km* restent (la minimap t3 elle-même n'est plus générée) ;
+                       # écrites dans t3/const pour la parité avec data/ mais lues par rien : à retirer dans le mini-lot kart-realign
 write('const', ['# Constantes de la Forteresse Bob-omb', 'scoreboard players set $kK mg.st 1', 'scoreboard players set $kLaps mg.st 1',
                 f'scoreboard players set #kmx0 mg.st {HX}', f'scoreboard players set #kmz0 mg.st {ZC - HZ}', f'scoreboard players set #kmc mg.st {MMC}',
                 f'scoreboard players set #kmw mg.st {2 * HX + 1}', f'scoreboard players set #kmr mg.st {MMR}', f'scoreboard players set #kmh mg.st {2 * HZ + 1}',
