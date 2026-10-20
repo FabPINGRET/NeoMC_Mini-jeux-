@@ -11,21 +11,15 @@ import sys
 R = sys.argv[1] if len(sys.argv) > 1 else '.'
 F = os.path.join(R, 'data/mg/function')
 sys.path.insert(0, os.path.join(R, 'tools/elytra'))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+import mcfn
+_fn = mcfn.Fn(F)
+w, patch = _fn.write, _fn.patch
 
 PADS = [(16, -9), (32, -15), (16, -21)]                  # socles d'élytra (tools/elytra/gen_elytra.py)
 ELY = (round(sum(p[0] for p in PADS) / 3), 63, round(sum(p[1] for p in PADS) / 3))   # (21, 63, -15)
 COASTER = (-48, 63, 41)                                  # à l'ouest du guichet (-45, 64, 41) de tools/arcade/gen_coaster.py
 BEACONS = [(ELY, None, 'blanche, élytra'), (COASTER, 'red_stained_glass', 'rouge, montagne russe')]
-
-
-def patch(rel, anchor, new, where='after'):
-    p = os.path.join(F, rel + '.mcfunction')
-    L = open(p, encoding='utf-8').read().split('\n')
-    if all(l in L for l in new):
-        return
-    i = L.index(anchor) + (1 if where == 'after' else 0)
-    L[i:i] = new
-    open(p, 'w', encoding='utf-8', newline='\n').write('\n'.join(L))
 
 
 L = ['# Balises du spawn (générées par tools/lobby/gen_beacons.py)']
@@ -37,8 +31,7 @@ for (x, y, z), glass, lab in BEACONS:
     if glass:
         L.append(f'setblock {x} {y + 1} {z} minecraft:{glass}')
 L.append('data modify storage mg:lobby beacon1 set value 1b')
-with open(os.path.join(F, 'lobby/beacons.mcfunction'), 'w', encoding='utf-8', newline='\n') as f:
-    f.write('\n'.join(L) + '\n')
+w('lobby/beacons', L)
 
 patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby food1 run schedule function mg:lobby/food_build 12s',
       ['execute if score $setup mg.st matches 1 unless data storage mg:lobby beacon1 run schedule function mg:lobby/beacons 18s'])

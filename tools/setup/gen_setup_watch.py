@@ -7,31 +7,15 @@ Dropper aventure, buffet, hall, montagne russe…). Chacune pose un drapeau en s
 puis mg:core/setup_watch vérifie toutes les 2 s, affiche l'avancement toutes les 20 s et annonce la fin (ou, après 15 min,
 ce qui manque).
 """
-import json
 import os
 import sys
 
 R = sys.argv[1] if len(sys.argv) > 1 else '.'
 F = os.path.join(R, 'data/mg/function')
-
-
-def js(o):
-    return json.dumps(o, ensure_ascii=False, separators=(',', ':'))
-
-
-def w(rel, lines):
-    with open(os.path.join(F, rel + '.mcfunction'), 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(lines) + '\n')
-
-
-def patch(rel, anchor, new, where='after'):
-    p = os.path.join(F, rel + '.mcfunction')
-    L = open(p, encoding='utf-8').read().split('\n')
-    if all(l in L for l in new):
-        return
-    i = L.index(anchor) + (1 if where == 'after' else 0)
-    L[i:i] = new
-    open(p, 'w', encoding='utf-8', newline='\n').write('\n'.join(L))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+import mcfn
+_fn = mcfn.Fn(F)
+js, w, patch = mcfn.js, _fn.write, _fn.patch
 
 
 # (libellé, [(storage, chemin)])

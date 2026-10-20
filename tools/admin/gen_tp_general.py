@@ -15,6 +15,10 @@ import sys
 
 R = sys.argv[1] if len(sys.argv) > 1 else '.'
 F = os.path.join(R, 'data/mg/function')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+import mcfn
+_fn = mcfn.Fn(F)
+w = _fn.write
 OPEN_OPT = 62
 FREE = 'tag=!mg.play,tag=!mg.out,tag=!mg.mpp'
 
@@ -64,13 +68,6 @@ DEST = [
         f'execute as @a[{FREE}] run function mg:core/reset_player',
         'tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a ramené tout le monde au lobby.","color":"gray"}]']),
 ]
-
-
-def w(rel, lines):
-    p = os.path.join(F, rel + '.mcfunction')
-    os.makedirs(os.path.dirname(p), exist_ok=True)
-    with open(p, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(lines) + '\n')
 
 
 def act(label, col, cmd, tip=None):
