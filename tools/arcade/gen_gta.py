@@ -12,7 +12,7 @@ Monde
 - Session : démarre au premier joueur (forceload + entités), s'arrête au dernier. Les dollars (mg.gta) sont gardés.
 
 Jeu
-- Batte et pistolet au départ, 16 points d'armes (mitraillette, fusil à pompe, fusil, sniper avec lunette accroupi,
+- Batte et pistolet au départ, 16 points d'armes (mitraillette, fusil à pompe, fusil, sniper avec lunette au clic droit,
   Ray Gun, lance-roquettes qui détruit les immeubles, soins, gilet), réapparition 30 s. Armes : mg:gun (guns.py).
 - Voitures (chevaux invisibles rapetissés, carrosserie block_display) : on est assis dans l'habitacle, elles renversent
   ce qu'elles percutent, explosent sous les tirs et réapparaissent ailleurs. Hélicos : happy ghasts invisibles et

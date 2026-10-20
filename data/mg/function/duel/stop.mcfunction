@@ -3,7 +3,10 @@ tag @s remove mg.dl
 tag @s remove mg.dla
 tag @s remove mg.dlp
 tag @s remove mg.dlsc
+tag @s remove mg.dlcr
 tag @s remove mg.dlsp
+# lunette levée (la boîte de clic disparaît avec mg.dl : gun/cl_tick)
+execute if entity @s[tag=mg.gads] run function mg:gun/cl_unaim
 execute unless entity @s[tag=mg.dlpz] run tag @s remove mg.spectate
 tag @s remove mg.dlpz
 scoreboard players reset @s mg.dli

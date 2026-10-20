@@ -9,4 +9,5 @@ tag @a remove mg.tmen
 tag @a remove mg.tmvc
 tag @a remove mg.tmp
 tag @a remove mg.tmsc
+tag @a remove mg.tmcr
 scoreboard players reset * mg.tmk

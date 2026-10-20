@@ -13,5 +13,5 @@ scoreboard players set @a mg.deaths 0
 scoreboard players set Rouge mg.tmk 0
 scoreboard players set Bleu mg.tmk 0
 scoreboard objectives setdisplay sidebar mg.tmk
-tellraw @a[tag=mg.play] [{"text":"🎯 TDM SNIPER : ","color":"gold","bold":true},{"text":"tête = élimination, corps = 2 touches, accroupi = lunette. Tu réapparais tout de suite (3 s de protection). 25 frags pour gagner l'équipe, 8 min max. Pas de tir ami.","color":"gray"}]
+tellraw @a[tag=mg.play] [{"text":"🎯 TDM SNIPER : ","color":"gold","bold":true},{"text":"tête = élimination, corps = 2 touches. Clic gauche : tir · clic droit : lunette. Tu réapparais tout de suite (3 s de protection). 25 frags pour gagner l'équipe, 8 min max. Pas de tir ami.","color":"gray"}]
 execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] {"text":"🎯 Mode entraînement (seul) : pas d'adversaire ni de victoire ; il faut au moins 2 joueurs pour une vraie partie.","color":"yellow"}

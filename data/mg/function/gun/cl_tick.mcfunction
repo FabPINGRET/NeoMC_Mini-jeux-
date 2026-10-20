@@ -3,6 +3,9 @@ tag @a remove mg.gcw
 execute as @a[tag=mg.gtw,gamemode=!spectator] if items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] run tag @s add mg.gcw
 execute as @a[tag=mg.gtw,gamemode=!spectator] if items entity @s weapon.mainhand *[custom_data~{rpg:1b}] run tag @s add mg.gcw
 execute if score $state mg.st matches 0 as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.gtw,tag=!mg.out,gamemode=!spectator] if items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] run tag @s add mg.gcw
+# sniper du duel et du TDM (le couteau porte aussi mg_dl / mg_tm : seul le sniper arme la boîte)
+execute as @a[tag=mg.dl,gamemode=!spectator] if items entity @s weapon.mainhand minecraft:warped_fungus_on_a_stick[custom_data~{mg_dl:1b}] run tag @s add mg.gcw
+execute as @a[tag=mg.play,gamemode=adventure] if items entity @s weapon.mainhand minecraft:warped_fungus_on_a_stick[custom_data~{mg_tm:1b}] run tag @s add mg.gcw
 execute as @a[tag=mg.gads,tag=!mg.gcw] run function mg:gun/cl_unaim
 execute unless entity @a[tag=mg.gcw] run return run kill @e[type=minecraft:interaction,tag=mg.gci]
 execute as @a[tag=mg.gcw] unless score @s mg.gcid matches 1.. run function mg:gun/cl_id

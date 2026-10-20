@@ -8,7 +8,7 @@ Les arènes sont posées par gen_duel_maps.py ; la liste et les invitations vien
 (tick, lunette, tir, manches) de duel_play.py.
 Flux : bouton « Défier en duel » (trigger mg.duel 1) -> liste cliquable (trigger 1000 + id du joueur) -> invitation
 de 30 s (2 = accepter, 3 = refuser, 4 = annuler ; 5 = abandonner pendant le duel) -> duel dans une arène libre au hasard, premier à 3 manches.
-Armes : le sniper (clic droit) et un couteau (clic gauche, advancement mg:duel_melee, 1 dégât).
+Armes : le sniper (clic gauche = tir, clic droit = lunette) et un couteau (clic gauche, advancement mg:duel_melee, 1 dégât).
 Aucun jeu n'est lancé : le duelliste est en « pause » (mg.spectate) tant que dure le duel (s'il y était déjà, le tag
 mg.dlpz le mémorise). Occupé = un des tags de la fonction duel/busy (partie, plot, parcours, élytres, kart...).
 """
@@ -31,7 +31,7 @@ BUSY = ['mg.play', 'mg.out', 'mg.surv', 'mg.inplot', 'mg.visit', 'mg.xso', 'mg.e
 OBJ = [('mg.duel', 'trigger'), ('mg.dlid', 'dummy'), ('mg.dlto', 'dummy'), ('mg.dlx', 'dummy'), ('mg.dli', 'dummy'),
        ('mg.dlhp', 'dummy'), ('mg.dlr', 'dummy'), ('mg.dlcd', 'dummy'), ('mg.dlkc', 'dummy'),
        ('mg.dlw', 'dummy ' + js({'text': '⚔ Duels gagnés', 'color': 'gold'}))]
-TAGS = ['mg.dl', 'mg.dla', 'mg.dlp', 'mg.dlsc', 'mg.dlsh', 'mg.dlvc', 'mg.dlwn', 'mg.dlsp', 'mg.dlrq', 'mg.dlca',
+TAGS = ['mg.dl', 'mg.dla', 'mg.dlp', 'mg.dlsc', 'mg.dlcr', 'mg.dlsh', 'mg.dlvc', 'mg.dlwn', 'mg.dlsp', 'mg.dlrq', 'mg.dlca',
         'mg.dltg', 'mg.dlt2', 'mg.dlq', 'mg.dlfl', 'mg.dlpz']
 NO_REPLY = 'execute if entity @s[tag=mg.dl] run return run ' + say('@s', tx('⚔ Duel en cours : termine-le (ou abandonne-le) avant.', 'red'))
 
@@ -160,7 +160,7 @@ def start():
             f'@a[tag=mg.dl,scores={{mg.dli={i}}}]', tx('⚔ Duel sniper : ', 'gold'),
             {'selector': f'@a[tag=mg.dla,scores={{mg.dli={i}}}]', 'color': 'white'}, tx(' contre '),
             {'selector': f'@a[tag=mg.dl,tag=!mg.dla,scores={{mg.dli={i}}}]', 'color': 'white'},
-            tx(f' - {m["name"]} - premier à 3 manches. Tête = élimination, corps = 2 touches. Accroupi = lunette. Abandon : trigger mg.duel 5.')))
+            tx(f' - {m["name"]} - premier à 3 manches. Tête = élimination, corps = 2 touches. Clic gauche : tir · clic droit : lunette. Abandon : trigger mg.duel 5.')))
     w('duel/start', start_l)
     w('duel/setup', [
         '# Prépare un duelliste (@s ; $dli = arène) : pause mémorisée (mg.dlpz), inventaire, kit, départ',
@@ -186,15 +186,19 @@ def start():
         'function mg:duel/kit',
         'function mg:duel/spawn',
     ])
-    kit = ('item replace entity @s weapon.mainhand with minecraft:warped_fungus_on_a_stick[custom_data={mg_dl:1b},item_model="minecraft:spyglass",'
-           'unbreakable={},custom_name=' + js(tx('🎯 Sniper de duel', 'aqua', bold=True, italic=False)) + ',lore=['
-           + js(tx('Clic droit : tir (recharge 2 s)', 'gray', italic=False)) + ',' + js(tx('Accroupi : lunette — tête = élimination, corps = 2 touches', 'gray', italic=False)) + ']]')
-    w('duel/kit', ['# Kit du duel (@s) : le sniper en main, le couteau (clic gauche) dans l\'inventaire', 'clear @s *[custom_data~{mg_dl:1b}]', kit,
-                   duel_play.kit_cd('mg:dlsn', 'mg.dlp'), 'give @s ' + duel_play.knife('mg_dl')])
+    rest = (',unbreakable={},custom_name=' + js(tx('🎯 Sniper de duel', 'aqua', bold=True, italic=False)) + ',lore=['
+            + js(tx('Clic gauche : tir (recharge 2 s)', 'gray', italic=False)) + ',' + js(tx('Clic droit : lunette — tête = élimination, corps = 2 touches', 'gray', italic=False)) + ']]')
+    # icône du pack (mg:gun_sniper) si le resource pack est actif ($rp), sinon la longue-vue vanilla
+    kit = [f'execute {cond} score $rp mg.st matches 1 run item replace entity @s weapon.mainhand with '
+           f'minecraft:warped_fungus_on_a_stick[custom_data={{mg_dl:1b}},item_model="{model}"' + rest
+           for cond, model in (('if', 'mg:gun_sniper'), ('unless', 'minecraft:spyglass'))]
+    w('duel/kit', ['# Kit du duel (@s) : le sniper en main, le couteau (clic gauche) dans l\'inventaire', 'clear @s *[custom_data~{mg_dl:1b}]'] + kit
+      + ['give @s ' + duel_play.knife('mg_dl')])
     sp = ['# Départ de manche (@s = duelliste) : défieur au nord, invité au sud ; 3 s de protection (mg.dlp), tir impossible',
           'scoreboard players set @s mg.dlhp 2',
           'function mg:duel/unscope',
-          'tag @s add mg.dlp'] + duel_play.disarm_cd('mg_dl') + [
+          'execute if entity @s[tag=mg.gads] run function mg:gun/cl_unaim',
+          'tag @s add mg.dlp',
           'scoreboard players set @s mg.dlx 60',
           'scoreboard players set @s mg.dlcd 0',
           'scoreboard players set @s mg.dlkc 0',
@@ -207,7 +211,9 @@ def start():
                     'execute as @a[tag=mg.dlsp] run function mg:duel/spawn', 'tag @a remove mg.dlsp'])
     w('duel/stop', [
         '# Fin de duel pour @s (fin normale, forfait, reconnexion, désinstallation) : état effacé, retour au lobby',
-        'tag @s remove mg.dl', 'tag @s remove mg.dla', 'tag @s remove mg.dlp', 'tag @s remove mg.dlsc', 'tag @s remove mg.dlsp',
+        'tag @s remove mg.dl', 'tag @s remove mg.dla', 'tag @s remove mg.dlp', 'tag @s remove mg.dlsc', 'tag @s remove mg.dlcr', 'tag @s remove mg.dlsp',
+        '# lunette levée (la boîte de clic disparaît avec mg.dl : gun/cl_tick)',
+        'execute if entity @s[tag=mg.gads] run function mg:gun/cl_unaim',
         'execute unless entity @s[tag=mg.dlpz] run tag @s remove mg.spectate',
         'tag @s remove mg.dlpz',
         'scoreboard players reset @s mg.dli', 'scoreboard players reset @s mg.dlhp',

@@ -72,35 +72,34 @@ def reticle_img(rgb):
 
 
 def scope_img():
-    """Lunette du sniper : 512 × 256, noir hors du cercle, fin réticule à graduations."""
-    w, h = 512, 256
+    """Lunette du sniper : 256 × 128 (jamais plus large que l'atlas de police du client, 256 px : au-delà le glyphe manque et
+    s'affiche en rectangle blanc), noir hors du cercle, fin réticule à graduations."""
+    w, h = 256, 128
     img = [[(0, 0, 0, 255) for _ in range(w)] for _ in range(h)]
-    cx, cy, r = (w - 1) / 2, (h - 1) / 2, 118
+    cx, cy, r = (w - 1) / 2, (h - 1) / 2, 59
     for y in range(h):
         for x in range(w):
             d = math.hypot(x - cx, y - cy)
-            if d < r - 3:
+            if d < r - 2:
                 img[y][x] = T_
             elif d < r:
                 img[y][x] = (0, 0, 0, 200)
-            elif d < r + 2:
+            elif d < r + 1:
                 img[y][x] = (20, 20, 20, 255)
     line = (10, 10, 10, 230)
+    mx, my = w // 2 - 1, h // 2 - 1             # colonne et ligne centrales (le centre est entre mx / mx+1 et my / my+1)
     for x in range(int(cx - r), int(cx + r) + 1):
-        if abs(x - cx) > 3:
-            img[127][x] = line; img[128][x] = line
+        if abs(x - cx) > 2:
+            img[my][x] = line; img[my + 1][x] = line
     for y in range(int(cy - r), int(cy + r) + 1):
-        if 0 <= y < h and abs(y - cy) > 3:
-            img[y][255] = line; img[y][256] = line
-    for k in range(1, 8):                       # graduations (mil-dots)
-        for sgn in (-1, 1):
+        if 0 <= y < h and abs(y - cy) > 2:
+            img[y][mx] = line; img[y][mx + 1] = line
+    for k in range(1, 8):                       # graduations (mil-dots), tous les 7 px, symétriques autour du centre
+        for x, y in ((mx - 7 * k, my - 7 * k), (mx + 1 + 7 * k, my + 1 + 7 * k)):
             for dd in (-1, 0, 1, 2):
-                x = int(cx + sgn * k * 14)
-                img[127 + dd][x] = line
-                y = int(cy + sgn * k * 14)
-                if 0 <= y < h:
-                    img[y][255 + dd] = line
-    img[127][255] = img[128][256] = img[127][256] = img[128][255] = (220, 30, 30, 255)
+                img[my + dd][x] = line
+                img[y][mx + dd] = line
+    img[my][mx] = img[my + 1][mx + 1] = img[my][mx + 1] = img[my + 1][mx] = (220, 30, 30, 255)
     return img
 
 

@@ -3,9 +3,11 @@
 Un duel = 2 joueurs (tag mg.dl, mg.dli = instance 1..3 = arène) ; mg.dla marque le défieur (départ nord) ;
 mg.dlhp = PV de la manche (2 ; tête = 2 dégâts, corps = 1) ; mg.dlr = manches gagnées (3 pour gagner).
 Tags temporaires : mg.dlsh tireur, mg.dlvc victime touchée, mg.dlwn gagnant, mg.dlsp joueurs de l'instance en cours,
-mg.dlp manche en préparation (3 s : intouchable, ne tire pas ; mg.dlx sert alors de décompte), mg.dlsc lunette.
+mg.dlp manche en préparation (3 s : intouchable, ne tire pas ; mg.dlx sert alors de décompte), mg.dlsc lunette, mg.dlcr accroupi.
+Sniper : clic gauche = tir, clic droit = lunette (mg.gads, boîte de clic de tools/arcade/gen_gunclick.py).
 Couteau (stone_sword, clic gauche) : l'advancement mg:duel_melee (player_hurt_entity) appelle duel/melee_adv ; 1 dégât (= touche au
-corps), recharge 1 s (mg.dlkc). Les helpers knife() et write_adv() servent aussi au TDM (tools/tdm).
+corps), recharge 1 s (mg.dlkc) ; sur la boîte de clic d'un adversaire armé du sniper : duel/box_knife (via gun/cl_foreign).
+Les helpers knife() et write_adv() servent aussi au TDM (tools/tdm).
 """
 import json
 import os
@@ -24,39 +26,18 @@ def knife(key):
 
 
 def write_adv(D, name, fn):
-    """Écrit l'advancement D/advancement/<name>.json : un joueur en frappe un autre -> récompense = la fonction fn."""
+    """Écrit l'advancement D/advancement/<name>.json : un joueur en frappe un autre -> récompense = la fonction fn.
+    Condition : l'entité frappée est un joueur (frapper la boîte de clic, une interaction, déclenche aussi player_hurt_entity :
+    sans filtre, melee_adv poserait la recharge du couteau avant gun/cl_foreign et le coup sur la boîte serait perdu)."""
+    hurt = {'condition': 'minecraft:entity_properties', 'entity': 'this', 'predicate': {'minecraft:entity_type': 'minecraft:player'}}
     os.makedirs(os.path.join(D, 'advancement'), exist_ok=True)
     with open(os.path.join(D, 'advancement', name + '.json'), 'w', encoding='utf-8', newline='\n') as f:
-        json.dump({'criteria': {'hit': {'trigger': 'minecraft:player_hurt_entity'}}, 'rewards': {'function': fn}}, f, indent=2)
+        json.dump({'criteria': {'hit': {'trigger': 'minecraft:player_hurt_entity', 'conditions': {'entity': [hurt]}}},
+                   'rewards': {'function': fn}}, f, indent=2)
         f.write('\n')
 
 
-SHOT_CD = 40     # recharge du tir en ticks (mg.dlcd / mg.tmcd) ; l'overlay vanilla du sniper (use_cooldown) en dérive
-
-
-def cd_mod(group):
-    """Modificateur d'objet : pose use_cooldown (SHOT_CD) dans le groupe de cooldown `group`."""
-    return ('{function:"minecraft:set_components",components:{"minecraft:use_cooldown":'
-            f'{{seconds:{SHOT_CD / 20:g}f,cooldown_group:"{group}"}}}}}}')
-
-
-def arm_cd(key, group, score):
-    """Lignes : pose use_cooldown (SHOT_CD) sur le sniper de la hotbar quand le décompte de protection `score` est écoulé.
-    Le composant n'est pas dans le kit : un clic pendant la protection ne tire pas mais poserait quand même le verrou vanilla."""
-    return [f'execute if score @s {score} matches ..0 if items entity @s hotbar.{i} minecraft:warped_fungus_on_a_stick[custom_data~{{{key}:1b}}] '
-            f'run item modify entity @s hotbar.{i} {cd_mod(group)}' for i in range(9)]
-
-
-def disarm_cd(key):
-    """Lignes : retire use_cooldown du sniper de la hotbar (début de protection : le sniper garde sinon celui de la manche / vie précédente)."""
-    return [f'execute if items entity @s hotbar.{i} minecraft:warped_fungus_on_a_stick[custom_data~{{{key}:1b}}] '
-            f'run item modify entity @s hotbar.{i} {{function:"minecraft:set_components",components:{{"!minecraft:use_cooldown":{{}}}}}}'
-            for i in range(9)]
-
-
-def kit_cd(group, prot_tag):
-    """Ligne pour duel/kit et tdm/kit : le sniper redonné en pleine vie (hors protection) reçoit l'overlay tout de suite."""
-    return f'execute unless entity @s[tag={prot_tag}] run item modify entity @s weapon.mainhand {cd_mod(group)}'
+SHOT_CD = 40     # recharge du tir en ticks (mg.dlcd / mg.tmcd) ; pas d'overlay vanilla (use_cooldown) sur le sniper
 
 
 def sniper_kill(zs):
@@ -117,20 +98,21 @@ def build(w, js, zs):
         'execute if score @s mg.dlx matches 20 run title @s actionbar ' + js([tx('1', 'yellow', bold=True)]),
         'execute if score @s mg.dlx matches ..0 run title @s actionbar ' + js([tx('⚔ FEU !', 'red', bold=True)]),
         'execute if score @s mg.dlx matches ..0 at @s run playsound minecraft:entity.firework_rocket.blast master @s ~ ~ ~ 0.6 1.4',
-        '# l\'overlay de recharge du sniper (use_cooldown) n\'est posé qu\'ici : sinon un clic protégé verrouillerait le tir'] +
-      arm_cd('mg_dl', 'mg:dlsn', 'mg.dlx') + [
         'execute if score @s mg.dlx matches ..0 run tag @s remove mg.dlp',
         'execute if score @s mg.dlx matches ..0 run scoreboard players reset @s mg.dlx',
     ])
 
     # ------------------------------------------------------------------ lunette
     w('duel/scope', [
-        '# Lunette (@s = duelliste, position exécutée) : accroupi = zoom (lenteur) + cache ; se relever la retire',
-        f'execute if predicate {SNEAK} run return run function mg:duel/scope_on',
+        '# Lunette (@s = duelliste, position exécutée) : clic droit = zoom (lenteur) + cache, de nouveau clic droit = retirée (mg.gads, gun/cl_right)',
+        '# mg.dlcr = accroupi (hauteur de tête pour le rayon : la lunette se pose debout aussi)',
+        f'execute if predicate {SNEAK} run tag @s add mg.dlcr',
+        f'execute unless predicate {SNEAK} run tag @s remove mg.dlcr',
+        'execute if entity @s[tag=mg.gads] run return run function mg:duel/scope_on',
         'execute if entity @s[tag=mg.dlsc] run function mg:duel/unscope',
     ])
     w('duel/scope_on', [
-        '# Lunette en place (renouvelée à chaque tick tant qu\'il reste accroupi)',
+        '# Lunette en place (renouvelée à chaque tick tant que mg.gads est posé)',
         'tag @s add mg.dlsc',
         'effect give @s minecraft:slowness 1 6 true',
         'title @s times 0 5 2',
@@ -146,9 +128,10 @@ def build(w, js, zs):
 
     # ------------------------------------------------------------------ tir
     w('duel/shoot', [
-        '# Tir du sniper (@s = duelliste qui a fait un clic droit) : rayon de 150 blocs, recharge 2 s',
+        '# Tir du sniper (@s = duelliste qui a fait un clic gauche, gun/cl_left) : rayon de 150 blocs, recharge 2 s',
         'scoreboard players reset @s mg.qs',
-        'execute unless items entity @s weapon.* *[custom_data~{mg_dl:1b}] run return 0',
+        '# le sniper en main droite seulement (le couteau porte aussi mg_dl ; un clic droit vanilla avec lui ne doit pas tirer)',
+        'execute unless items entity @s weapon.mainhand minecraft:warped_fungus_on_a_stick[custom_data~{mg_dl:1b}] run return 0',
         'execute if entity @s[tag=mg.dlp] run return 0',
         'execute if score @s mg.dlcd matches 1.. run return 0',
         f'scoreboard players set @s mg.dlcd {SHOT_CD}',
@@ -178,12 +161,12 @@ def build(w, js, zs):
         'execute unless loaded ~ ~ ~ run return 0',
         'tp @e[type=minecraft:marker,tag=mg.dlend,distance=..1,limit=1] ~ ~ ~',
         'execute unless block ~ ~ ~ #mg:ray_pass run return run particle minecraft:electric_spark ~ ~ ~ 0.1 0.1 0.1 0.1 4',
-        '# tête : 0,4 autour des yeux (1,62 debout, 1,27 accroupi), testée AVANT le corps',
-        f'execute positioned ~ ~-1.62 ~ as @a[{base},tag=!mg.dlsc,distance=..0.4,{chk}hit_head',
-        f'execute positioned ~ ~-1.27 ~ as @a[{base},tag=mg.dlsc,distance=..0.4,{chk}hit_head',
+        '# tête : 0,4 autour des yeux (1,62 debout, 1,27 accroupi : mg.dlcr), testée AVANT le corps',
+        f'execute positioned ~ ~-1.62 ~ as @a[{base},tag=!mg.dlcr,distance=..0.4,{chk}hit_head',
+        f'execute positioned ~ ~-1.27 ~ as @a[{base},tag=mg.dlcr,distance=..0.4,{chk}hit_head',
         '# corps (zone resserrée sous la tête : un tir à la tête ne devient pas un tir au corps)',
-        f'execute positioned ~ ~-0.7 ~ as @a[{base},tag=!mg.dlsc,distance=..0.8,{chk}hit_body',
-        f'execute positioned ~ ~-0.5 ~ as @a[{base},tag=mg.dlsc,distance=..0.75,{chk}hit_body',
+        f'execute positioned ~ ~-0.7 ~ as @a[{base},tag=!mg.dlcr,distance=..0.8,{chk}hit_body',
+        f'execute positioned ~ ~-0.5 ~ as @a[{base},tag=mg.dlcr,distance=..0.75,{chk}hit_body',
         'scoreboard players remove $rs mg.st 1',
         'execute if score $rs mg.st matches 1.. positioned ^ ^ ^0.5 run function mg:duel/ray',
     ])
@@ -233,6 +216,22 @@ def build(w, js, zs):
         'scoreboard players set $dld mg.st 1',
         'function mg:duel/hit',
         'execute if score @s mg.dlhp matches ..0 run function mg:duel/round',
+    ])
+    w('duel/box_knife', [
+        '# Coup de couteau sur la boîte de clic de l\'adversaire (gun/cl_foreign : @s = attaquant, victime = @a[tag=mg.gcme]) :',
+        '# la boîte de 2,6 blocs autour de ses yeux intercepte le coup, mg:duel_melee ne se déclenche donc pas ; mêmes règles que melee_adv',
+        'execute unless entity @s[tag=mg.dl,tag=!mg.dlp] run return 0',
+        'execute unless items entity @s weapon.mainhand *[custom_data~{mg_kn:1b}] run return 0',
+        'execute if score @s mg.dlkc matches 1.. run return 0',
+        'scoreboard players operation $dli mg.st = @s mg.dli',
+        'execute at @s as @a[tag=mg.gcme,tag=mg.dl,tag=!mg.dlp,distance=..4.5] if score @s mg.dli = $dli mg.st run tag @s add mg.dlvc',
+        'execute unless entity @a[tag=mg.dlvc] run return 0',
+        '# recharge posée AVANT le coup (comme melee_adv), puis le coup existant (melee_hit)',
+        'scoreboard players set @s mg.dlkc 20',
+        'tag @s add mg.dlsh',
+        'execute as @a[tag=mg.dlvc,limit=1] run function mg:duel/melee_hit',
+        'tag @a remove mg.dlvc',
+        'tag @s remove mg.dlsh',
     ])
 
     # ------------------------------------------------------------------ manches

@@ -4,12 +4,12 @@
     (arènes, MAPS, fonction duel/pick) et après tout générateur qui réécrit core/request, core/begin, core/game_tick ou
     core/return_lobby ; avant tools/variantes/gen_variants.py)
 
-Même sniper que le duel (rayon, tête = 2 dégâts, corps = 1, 2 PV, accroupi = lunette) mais le kit est marqué mg_tm : le duel
+Même sniper que le duel (rayon, tête = 2 dégâts, corps = 1, 2 PV, clic gauche = tir, clic droit = lunette) mais le kit est marqué mg_tm : le duel
 ne le touche pas. Le jeu est une partie du cœur (prepare / go / tick / cleanup, équipes mg_red / mg_blue de core/assign_teams).
 L'arène est tirée au hasard parmi celles sans duel en cours et réservée par $tma (le duel ne la prend plus, build_all non plus).
 Réapparition immédiate à un des 12 départs de son équipe, 3 s de protection. Pas de tir ami : le rayon traverse les coéquipiers.
 25 frags pour gagner (ou le plus de frags au bout de 8 min). Seul : mode entraînement (pas de victoire).
-Armes : le sniper (clic droit) et un couteau (clic gauche, advancement mg:tdm_melee, 1 dégât, recharge 1 s ; helpers de duel_play.py).
+Armes : le sniper (clic gauche = tir, clic droit = lunette) et un couteau (clic gauche, advancement mg:tdm_melee, 1 dégât, recharge 1 s ; helpers de duel_play.py).
 Des packs de soin (pomme dorée, ramassés à 1 PV) apparaissent de temps en temps sur des emplacements fixes (tdm_packs.py).
 Le combat (tick, lunette, tir, rayon, couteau, frags) est dans tdm_play.py.
 """
@@ -32,7 +32,7 @@ GID = 246
 WIN, LIMIT, PROT = 25, 9600, 60          # frags pour gagner, durée max (8 min, en ticks), protection de réapparition (3 s)
 OBJ = [('mg.tmk', 'dummy ' + js({'text': '🎯 Frags', 'color': 'gold'})), ('mg.tmhp', 'dummy'), ('mg.tmcd', 'dummy'), ('mg.tmx', 'dummy'),
        ('mg.tmkc', 'dummy')]
-TAGS = ['mg.tmsh', 'mg.tmen', 'mg.tmvc', 'mg.tmp', 'mg.tmsc']
+TAGS = ['mg.tmsh', 'mg.tmen', 'mg.tmvc', 'mg.tmp', 'mg.tmsc', 'mg.tmcr']
 SLOTS = [(dx, k) for k in range(2) for dx in (-5, -3, -1, 1, 3, 5)]      # 12 départs par équipe : x (de 0,5) et rang de départ (zl 66 / 68)
 RGB = {'red': 16711680, 'blue': 255}
 
@@ -90,7 +90,8 @@ def spawn():
     sp = ['# Apparition de @s (participant, $tma = arène, #tms = départ) : PV neufs, 3 s de protection (mg.tmp), tir impossible',
           'scoreboard players set @s mg.tmhp 2',
           'function mg:tdm/unscope',
-          'tag @s add mg.tmp'] + duel_play.disarm_cd('mg_tm') + [
+          'execute if entity @s[tag=mg.gads] run function mg:gun/cl_unaim',
+          'tag @s add mg.tmp',
           f'scoreboard players set @s mg.tmx {PROT}',
           'scoreboard players set @s mg.tmcd 0',
           'scoreboard players set @s mg.tmkc 0',
@@ -120,15 +121,15 @@ def spawn():
 
 
 def kit():
-    sniper = ('minecraft:warped_fungus_on_a_stick[custom_data={mg_tm:1b},item_model="minecraft:spyglass",unbreakable={},custom_name='
-              + js(tx('🎯 Sniper TDM', 'aqua', bold=True, italic=False)) + ',lore=['
-              + js(tx('Clic droit : tir (recharge 2 s)', 'gray', italic=False)) + ','
-              + js(tx('Accroupi : lunette — tête = élimination, corps = 2 touches', 'gray', italic=False)) + ']]')
+    rest = (',unbreakable={},custom_name=' + js(tx('🎯 Sniper TDM', 'aqua', bold=True, italic=False)) + ',lore=['
+            + js(tx('Clic gauche : tir (recharge 2 s)', 'gray', italic=False)) + ','
+            + js(tx('Clic droit : lunette — tête = élimination, corps = 2 touches', 'gray', italic=False)) + ']]')
+    # icône du pack (mg:gun_sniper) si le resource pack est actif ($rp), sinon la longue-vue vanilla
+    sniper = [f'execute {cond} score $rp mg.st matches 1 run item replace entity @s weapon.mainhand with '
+              f'minecraft:warped_fungus_on_a_stick[custom_data={{mg_tm:1b}},item_model="{model}"' + rest
+              for cond, model in (('if', 'mg:gun_sniper'), ('unless', 'minecraft:spyglass'))]
     lines = ['# Kit TDM (@s) : le sniper en main, le couteau (clic gauche) dans l\'inventaire, cuir aux couleurs de l\'équipe',
-             'clear @s *[custom_data~{mg_tm:1b}]',
-             f'item replace entity @s weapon.mainhand with {sniper}',
-             duel_play.kit_cd('mg:tmsn', 'mg.tmp'),
-             'give @s ' + duel_play.knife('mg_tm')]
+             'clear @s *[custom_data~{mg_tm:1b}]'] + sniper + ['give @s ' + duel_play.knife('mg_tm')]
     for t, rgb in RGB.items():
         for slot, piece in (('chest', 'chestplate'), ('head', 'helmet'), ('legs', 'leggings'), ('feet', 'boots')):
             lines.append(f'execute if entity @s[team=mg_{t}] run item replace entity @s armor.{slot} with minecraft:leather_{piece}[dyed_color={rgb},unbreakable={{}}]')
@@ -137,7 +138,7 @@ def kit():
 
 def play():
     intro = js([tx('🎯 TDM SNIPER : ', 'gold', bold=True),
-                tx('tête = élimination, corps = 2 touches, accroupi = lunette. Tu réapparais tout de suite (3 s de protection). '
+                tx('tête = élimination, corps = 2 touches. Clic gauche : tir · clic droit : lunette. Tu réapparais tout de suite (3 s de protection). '
                    f'{WIN} frags pour gagner l\'équipe, {LIMIT // 1200} min max. Pas de tir ami.')])
     w('tdm/go', [
         '# Départ',
