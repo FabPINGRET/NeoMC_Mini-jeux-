@@ -195,31 +195,34 @@ class Vox:
             self.set(x, y, z, f'{kind}[hanging=false]')
 
     # ---------------------------------------------------------------- sortie
-    def cmds(self):
-        """Commandes fill : par couche, rectangles de même bloc fusionnés (glouton)."""
+    def cmds(self, late=()):
+        """Commandes fill : par couche, rectangles de même bloc fusionnés (glouton).
+        late : noms de blocs (sans minecraft: ni état) émis dans une passe finale, après toute la structure. Reconstruction en place : une
+        échelle (ou autre bloc à support) posée avant son dos saute si l'ancien dos est non porteur (vitre...) et ne revient pas."""
         out = []
-        layers = {}
+        layers, late_layers = {}, {}
         for (x, y, z), b in self.v.items():
-            layers.setdefault(y, {})[(x, z)] = b
-        for y in sorted(layers):
-            L = dict(layers[y])
-            for (x, z) in sorted(L):
-                if (x, z) not in L:
-                    continue
-                b = L[(x, z)]
-                x2 = x
-                while (x2 + 1, z) in L and L[(x2 + 1, z)] == b:
-                    x2 += 1
-                z2 = z
-                while all((xx, z2 + 1) in L and L[(xx, z2 + 1)] == b for xx in range(x, x2 + 1)):
-                    z2 += 1
-                for xx in range(x, x2 + 1):
-                    for zz in range(z, z2 + 1):
-                        del L[(xx, zz)]
-                if (x, z) == (x2, z2):
-                    out.append(f'setblock {x} {y} {z} minecraft:{b}')
-                else:
-                    out.append(f'fill {x} {y} {z} {x2} {y} {z2} minecraft:{b}')
+            (late_layers if b.split('[')[0] in late else layers).setdefault(y, {})[(x, z)] = b
+        for pool in (layers, late_layers):
+            for y in sorted(pool):
+                L = dict(pool[y])
+                for (x, z) in sorted(L):
+                    if (x, z) not in L:
+                        continue
+                    b = L[(x, z)]
+                    x2 = x
+                    while (x2 + 1, z) in L and L[(x2 + 1, z)] == b:
+                        x2 += 1
+                    z2 = z
+                    while all((xx, z2 + 1) in L and L[(xx, z2 + 1)] == b for xx in range(x, x2 + 1)):
+                        z2 += 1
+                    for xx in range(x, x2 + 1):
+                        for zz in range(z, z2 + 1):
+                            del L[(xx, zz)]
+                    if (x, z) == (x2, z2):
+                        out.append(f'setblock {x} {y} {z} minecraft:{b}')
+                    else:
+                        out.append(f'fill {x} {y} {z} {x2} {y} {z2} minecraft:{b}')
         return out
 
 

@@ -178,7 +178,7 @@ def citadel():
     # donjon central (salle du trône au rez-de-chaussée, sommet = arène de Nyxar)
     kx1, kz1, kx2, kz2 = cx - 14, cz - 14, cx + 14, cz + 14
     v.walls(kx1, kz1, kx2, kz2, y + 1, y + 34, wl)
-    v.fill(kx1 + 1, y + 1, kz1 + 1, kx2 - 1, y + 33, kz2 - 1, AIR)
+    v.fill(kx1 + 1, y + 1, kz1 + 1, kx2 - 1, y + 34, kz2 - 1, AIR)
     v.fill(kx1, y + 35, kz1, kx2, y + 35, kz2, 'polished_blackstone_bricks')
     crenels(v, kx1, kz1, kx2, kz1, y + 36, 'polished_blackstone_bricks')
     crenels(v, kx1, kz2, kx2, kz2, y + 36, 'polished_blackstone_bricks')
