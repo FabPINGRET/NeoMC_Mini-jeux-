@@ -99,11 +99,12 @@ tire = [''.join('h' if 5 <= x <= 10 and 5 <= y <= 10 else ('g' if (x + y) % 4 ==
 png(os.path.join(A, 'textures', 'item', 'kart_wheel.png'), tire, {'h': (180, 180, 190, 255), 'g': (50, 50, 55, 255), 'k': (20, 20, 22, 255)})
 
 # ------------------------------------------------------------------ modèles
-def item_def(name, model, tint=None, oversized=False):
+def item_def(name, model, tint=None, oversized=False, swap_anim=True):
     m = {"type": "minecraft:model", "model": model}
     if tint is not None: m["tints"] = [{"type": "minecraft:dye", "default": tint}]
     d = {"model": m}
     if oversized: d["oversized_in_gui"] = True       # aperçu en grand dans les fenêtres de choix du kart
+    if not swap_anim: d["hand_animation_on_swap"] = False   # armes : cf. tools/arcade/guns.py (barre de damage)
     wjson(os.path.join(A, 'items', name + '.json'), d)
 
 FLAT = {'banana': 'banana', 'shell_green': 'shell', 'shell_red': 'shell_red', 'shell_blue': 'shell_blue', 'mushroom': 'mushroom',

@@ -2,7 +2,9 @@
 Lobby et Neo GTA : barre de durabilité (gun/bar) à la place.
 Lancer depuis n'importe où : python -m unittest discover -s tools/tests -v   (la racine du dépôt est dérivée de ce fichier).
 """
+import ast
 import json
+import os
 import re
 import sys
 import unittest
@@ -188,6 +190,32 @@ class HandAnimation(unittest.TestCase):
             self.assertIs(d.get('hand_animation_on_swap'), False, name)        # champ racine, à côté de « model »
             self.assertIn('model', d, name)
             self.assertNotIn('hand_animation_on_swap', d['model'], name)
+
+    def test_generator_emits_flag(self):
+        """Le générateur doit écrire le champ : sinon gen_rp.py le retire des gun_*.json à la prochaine régénération."""
+        rp = ROOT / 'tools' / 'resourcepack'
+        fn = [n for n in ast.parse((rp / 'gen_rp.py').read_text(encoding='utf-8')).body
+              if isinstance(n, ast.FunctionDef) and n.name == 'item_def']
+        self.assertEqual(len(fn), 1, 'gen_rp.py : def item_def introuvable')
+        written = []
+        ns = {'os': os, 'A': 'A', 'wjson': lambda path, obj: written.append(json.loads(json.dumps(obj)))}   # copie à l'appel, comme le vrai wjson
+        exec(compile(ast.Module([fn[0]], []), 'gen_rp.py', 'exec'), ns)              # la fonction seule : gen_rp.py lit sys.argv au chargement
+        ns['item_def']('x', 'mg:item/x', swap_anim=False)
+        ns['item_def']('x', 'mg:item/x')
+        self.assertEqual(written[0], {'model': {'type': 'minecraft:model', 'model': 'mg:item/x'}, 'hand_animation_on_swap': False})
+        self.assertNotIn('hand_animation_on_swap', written[1], 'hors armes : pas de champ par défaut')
+
+    def test_guns_loop_passes_swap_anim_false(self):
+        """gen_rp.py ne voit que la boucle GSPR (7 gun_*, bazooka compris) : elle doit appeler item_def(..., swap_anim=False)."""
+        tree = ast.parse((ROOT / 'tools' / 'resourcepack' / 'guns_rp.py').read_text(encoding='utf-8'))
+        loops = [n for n in ast.walk(tree) if isinstance(n, ast.For) and ast.unparse(n.iter) == 'GSPR.items()']
+        self.assertEqual(len(loops), 1, 'guns_rp.py : boucle « for ... in GSPR.items() » introuvable')
+        calls = [c for s in loops[0].body for c in ast.walk(s)
+                 if isinstance(c, ast.Call) and isinstance(c.func, ast.Name) and c.func.id == 'item_def']
+        self.assertEqual(len(calls), 1, 'la boucle GSPR doit appeler item_def une fois')
+        kw = {k.arg: k.value for k in calls[0].keywords}
+        self.assertIsInstance(kw.get('swap_anim'), ast.Constant, 'swap_anim=False manquant dans la boucle GSPR')
+        self.assertIs(kw['swap_anim'].value, False)
 
 
 class SniperCooldown(unittest.TestCase):
