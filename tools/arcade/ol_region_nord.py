@@ -5,7 +5,7 @@ import random
 
 from tv_build import Vox, AIR
 import ol_world as W
-from ol_skit import ARENAS, LORE, cone_roof, round_tower, spot
+from ol_skit import ARENAS, LORE, cone_roof, round_tower, spiral_well, spot
 
 
 # ================================================================ SYLVANOR
@@ -47,12 +47,7 @@ def giant_tree(v, cx, cz, y, h, r, plats, seed):
             x, z = round(cx + (r + 1) * math.cos(math.radians(a))), round(cz + (r + 1) * math.sin(math.radians(a)))
             v.set(x, py + 1, z, 'lantern')
     # escalier en colimaçon autour du tronc
-    for i, yy in enumerate(range(y + 1, max(plats) + 1)):
-        a = 2 * math.pi * i / 24
-        for rr_ in (r + 1, r + 2):
-            x, z = round(cx + rr_ * math.cos(a)), round(cz + rr_ * math.sin(a))
-            v.set(x, yy, z, 'birch_slab[type=top]' if v.get(x, yy, z) in (None, AIR) else v.get(x, yy, z))
-            v.fill(x, yy + 1, z, x, yy + 3, z, AIR, only=(None, AIR, 'jungle_leaves[persistent=true]', 'azalea_leaves[persistent=true]'))
+    spiral_well(v, cx, cz, r + 2, y + 1, max(plats), 'birch_slab[type=top]', per_turn=24, keep=('jungle_wood', 'stripped_jungle_wood'))
 
 
 def rope_bridge(v, a, b, y):

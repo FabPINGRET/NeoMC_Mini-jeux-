@@ -85,18 +85,58 @@ def crenels(v, x1, z1, x2, z2, y, mat):
                 v.set(x, y, z, mat)
 
 
+def flimsy(b):
+    """Vrai si le bloc b (None = case vide) ne peut pas servir de dos à une échelle : air, escalier, dalle, vitre, barrière, muret,
+    trappe, tapis, barreaux, lanterne, chaîne. Jamais une porte ni une autre échelle (dos à dos)."""
+    name = b.split('[')[0] if b else None
+    return name is None or name == AIR or name.endswith(('_stairs', '_slab', '_pane', '_fence', '_wall', '_trapdoor', '_carpet', 'lantern')) \
+        or name in ('iron_bars', 'iron_chain')
+
+
 def brace_ladders(v, mat):
-    """Étaie chaque échelle : si la case derrière (dos de l'échelle) est vide ou non porteuse (air, escalier, dalle, vitre, barrière,
-    muret, trappe, tapis, barreaux, lanterne, chaîne), y pose mat. Jamais une porte ni une autre échelle (dos à dos)."""
+    """Étaie chaque échelle : si la case derrière (dos de l'échelle) est flimsy (vide ou non porteuse), y pose mat."""
     for (x, y, z), b in list(v.v.items()):
         if not b.startswith('ladder[facing='):
             continue
         dx, dz = dir_vec(b[len('ladder[facing='):].split(',')[0].rstrip(']'))
-        back = v.get(x - dx, y, z - dz)
-        name = back.split('[')[0] if back else None
-        if name is None or name == AIR or name.endswith(('_stairs', '_slab', '_pane', '_fence', '_wall', '_trapdoor', '_carpet', 'lantern')) \
-                or name in ('iron_bars', 'iron_chain'):
+        if flimsy(v.get(x - dx, y, z - dz)):
             v.set(x - dx, y, z - dz, mat)
+
+
+def spiral_well(v, cx, cz, r, y1, y2, step, per_turn=12, head=3, keep=()):
+    """Colimaçon praticable autour de (cx, cz), marches de y1 à y2 : la marche i (hauteur y1 + i) occupe tous les blocs de l'anneau
+    r - 1.5 < d <= r + 0.5 dont l'angle (sens de Vox.spiral) tombe dans le secteur i % per_turn, donc deux marches consécutives se touchent
+    par une face. Trois passes : (a) AIR sur les cases vides (None) de l'anneau élargi r - 2 < d <= r + 1, de y1 à y2 + head ;
+    (b) AIR sur `head` cases au-dessus de chaque marche (perce les planchers), sauf cases de marche et blocs dont le nom est dans keep ;
+    (c) pose des marches (sans remplacer un bloc keep : un tronc fait aussi une marche). Renvoie [(y, [(x, z), ...]), ...]."""
+    def ring(lo, hi):
+        n = math.ceil(hi)
+        return [(x, z) for x in range(cx - n, cx + n + 1) for z in range(cz - n, cz + n + 1) if lo < math.hypot(x - cx, z - cz) <= hi]
+
+    def kept(x, y, z):
+        b = v.get(x, y, z)
+        return b is not None and b.split('[')[0] in keep
+
+    sectors = {}
+    for (x, z) in ring(r - 1.5, r + 0.5):
+        k = int((math.atan2(z - cz, x - cx) % (2 * math.pi)) * per_turn / (2 * math.pi) + 1e-9) % per_turn
+        sectors.setdefault(k, []).append((x, z))
+    steps = [(y1 + i, sectors.get(i % per_turn, [])) for i in range(y2 - y1 + 1)]
+    for (x, z) in ring(r - 2, r + 1):
+        for y in range(y1, y2 + head + 1):
+            if v.get(x, y, z) is None:
+                v.set(x, y, z, AIR)
+    cells = {(x, y, z) for y, xz in steps for (x, z) in xz}
+    for y, xz in steps:
+        for (x, z) in xz:
+            for yy in range(y + 1, y + head + 1):
+                if (x, yy, z) not in cells and not kept(x, yy, z):
+                    v.set(x, yy, z, AIR)
+    for y, xz in steps:
+        for (x, z) in xz:
+            if not kept(x, y, z):
+                v.set(x, y, z, step)
+    return steps
 
 
 def stone_mix(r, base='stone_bricks', moss='mossy_stone_bricks', crack='cracked_stone_bricks', pm=0.12, pc=0.08):

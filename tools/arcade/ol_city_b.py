@@ -5,7 +5,7 @@ import math
 import random
 
 from tv_build import AIR
-from ol_skit import HOUSE_STYLES, cone_roof, crenels, house, round_tower, spot, stone_mix
+from ol_skit import HOUSE_STYLES, cone_roof, crenels, house, round_tower, spiral_well, spot, stone_mix
 
 
 def castle(v, Y):
@@ -150,7 +150,7 @@ def mage_tower(v, Y):
     cx, cz = -34, -34
     wall = lambda x, y, z: 'purpur_block' if (y % 7 == 0) else ('deepslate_bricks' if r.random() < 0.8 else 'cracked_deepslate_bricks')
     round_tower(v, cx, cz, Y + 1, 6, 34, wall, floor='dark_oak_planks', floors=(Y + 9, Y + 17, Y + 25), roof='purple_terracotta', roof_h=14)
-    v.spiral(cx, cz, 4, Y + 1, Y + 33, 'polished_deepslate_slab[type=top]', per_turn=16)
+    spiral_well(v, cx, cz, 4, Y + 1, Y + 25, 'polished_deepslate_slab[type=top]', per_turn=16)
     for fy in (Y + 9, Y + 17, Y + 25):
         for k in range(16):
             a = 2 * math.pi * k / 16

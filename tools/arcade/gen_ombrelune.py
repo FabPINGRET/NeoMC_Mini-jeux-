@@ -51,7 +51,7 @@ RIDX = {r: i + 1 for i, r in enumerate(RKEYS)}
 PACK = 2500
 PACKS = []                                   # (n° de région, commandes)
 for r in RKEYS:
-    cmds = W.terrain_cmds(r) + W.biome_fill(r) + W.VEG[r] + [c for n_, rg, v in STRUCTS if rg == r for c in v.cmds()] + W.WALLS_R[r]
+    cmds = W.terrain_cmds(r) + W.biome_fill(r) + W.VEG[r] + [c for n_, rg, v in STRUCTS if rg == r for c in v.cmds(late=('ladder',))] + W.WALLS_R[r]
     for i in range(0, len(cmds), PACK):
         PACKS.append((RIDX[r], cmds[i:i + PACK]))
 NP = len(PACKS)

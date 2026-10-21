@@ -5,7 +5,7 @@ import random
 
 from tv_build import Vox, AIR
 import ol_world as W
-from ol_skit import ARENAS, HOUSE_STYLES, LORE, cone_roof, house, round_tower, spot
+from ol_skit import ARENAS, HOUSE_STYLES, LORE, brace_ladders, cone_roof, house, round_tower, spot
 
 
 # ================================================================ VALDOR
@@ -71,6 +71,7 @@ def brumecombe():
     # auberge (plus grande) au nord de la place
     house(v, cx - 6, cz - 30, 12, 9, y, 'south', HOUSE_STYLES[0], floors=2)
     spot('farmer', cx + 22, y + 1, cz - 10)
+    brace_ladders(v, 'stripped_spruce_log')                  # échelles intérieures des maisons : dos étayé
     return v
 
 
@@ -136,7 +137,8 @@ def bandit_fort():
         v.fill(tx - 2, y + 14, tz - 2, tx + 2, y + 14, tz + 2, 'dark_oak_slab')
         v.fill(tx, y + 1, tz, tx, y + 10, tz, 'ladder[facing=north]')
         v.fill(tx, y + 1, tz + 1, tx, y + 9, tz + 1, 'spruce_log')       # dos de l'échelle
-        v.set(tx, y + 12, tz, AIR)                                         # sortie haute dégagée (AIR explicite : l'ancien feu de camp)
+        v.set(tx, y + 11, tz, AIR)                                         # sortie haute dégagée (AIR explicite : l'ancien feu de camp)
+        v.set(tx, y + 12, tz, AIR)
         v.set(tx + 1, y + 11, tz + 1, 'campfire[lit=true]')                # remplace le haut du poteau d'angle (tx+1, tz+1)
     # grande hutte de Brennic (ouest)
     hx1, hz1, hx2, hz2 = x1 + 3, cz - 6, x1 + 13, cz + 6
