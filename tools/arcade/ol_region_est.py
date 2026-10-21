@@ -3,6 +3,7 @@
 import math
 
 from tv_build import Vox, AIR
+import ol_access as A
 import ol_world as W
 from ol_skit import ARENAS, LORE, SPOTS, brace_ladders, cone_roof, crenels, round_tower, spot
 
@@ -274,7 +275,7 @@ def caldera():
             if d <= 15.5:
                 v.set(x, y, z, 'blackstone' if r.random() < 0.6 else ('basalt' if r.random() < 0.6 else 'magma_block'))
                 v.fill(x, y + 1, z, x, y + 22, z, AIR)
-                if 12.5 < d and r.random() < 0.25:
+                if 12.5 < d and r.random() < 0.25 and not A.in_breach(x, z, (x0, z0)):   # pas de lave dans la brèche
                     v.set(x, y, z, 'lava')
     for a in range(15, 360, 45):
         x, z = round(x0 + 12 * math.cos(math.radians(a))), round(z0 + 12 * math.sin(math.radians(a)))
@@ -290,5 +291,6 @@ def caldera():
     for (x, z) in ((x0 + 6, z0 + 6), (x0 + 7, z0 + 5), (x0 + 5, z0 + 7)):
         v.set(x, y + 1, z, 'dragon_egg') if False else v.set(x, y + 1, z, 'sniffer_egg')
     ARENAS['ignarok'] = dict(c=(x0 + 0.5, y + 1, z0 + 0.5), r=14)
+    spot('cald_in', *A.breach_pt((x0, z0), y + 1))   # bout de la rampe : objectif de la quête « gravis le volcan »
     LORE.append(('se', x0 - 10, y + 1, z0 + 8))
     return v

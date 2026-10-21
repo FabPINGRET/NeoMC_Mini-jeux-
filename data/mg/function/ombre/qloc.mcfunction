@@ -37,7 +37,7 @@ execute if score @s mg.olch matches 33 run return run function mg:ombre/loc {x:1
 execute if score @s mg.olch matches 34 run return run function mg:ombre/loc {x:130,y:65,z:5}
 execute if score @s mg.olch matches 35 run return run function mg:ombre/loc {x:140,y:67,z:104}
 execute if score @s mg.olch matches 36 run return run function mg:ombre/loc {x:140,y:67,z:104}
-execute if score @s mg.olch matches 37 run return run function mg:ombre/loc {x:180,y:117,z:198}
+execute if score @s mg.olch matches 37 run return run function mg:ombre/loc {x:191,y:117,z:166}
 execute if score @s mg.olch matches 38 run return run function mg:ombre/loc {x:180,y:117,z:180}
 execute if score @s mg.olch matches 39 run return run function mg:ombre/loc {x:140,y:67,z:104}
 execute if score @s mg.olch matches 40 run return run function mg:ombre/loc {x:-1,y:67,z:108}

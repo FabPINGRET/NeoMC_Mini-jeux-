@@ -26,7 +26,7 @@ OVERSIZE = {
     'tools/arcade/gen_villa.py': 516,
     'tools/arcade/gen_zombies.py': 815,
     'tools/arcade/ol_quest.py': 847,
-    'tools/arcade/ol_world.py': 620,
+    'tools/arcade/ol_world.py': 616,
     'tools/arcade/tv_dinos.py': 540,
     'tools/arcade/tv_rpg.py': 938,
     'tools/arcade/tv_structs.py': 723,

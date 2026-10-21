@@ -150,3 +150,5 @@ execute if score $olb mg.st matches 147 run function mg:ombre/d/147
 execute if score $olb mg.st matches 148 run function mg:ombre/d/148
 execute if score $olb mg.st matches 149 run function mg:ombre/d/149
 execute if score $olb mg.st matches 150 run function mg:ombre/d/150
+execute if score $olb mg.st matches 151 run function mg:ombre/d/151
+execute if score $olb mg.st matches 152 run function mg:ombre/d/152
