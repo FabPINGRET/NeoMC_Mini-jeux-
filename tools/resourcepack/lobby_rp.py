@@ -29,10 +29,18 @@ LSPR = {
     'wind_orb': orb('wind'),
     'snow_orb': orb('snow'),
 }
+# pose en main du railgun : celle d'item/generated fait pointer le canon (à droite du sprite) vers le joueur.
+# Le jeu inverse Y et Z pour la main gauche mais pas le sprite, d'où des angles opposés.
+LDISPLAY = {'laser_gun': {
+    "firstperson_righthand": {"rotation": [0, 90, -25], "translation": [1.13, 3.2, 1.13], "scale": [0.68, 0.68, 0.68]},
+    "thirdperson_righthand": {"rotation": [0, 90, 0], "translation": [0, 3, 1], "scale": [0.55, 0.55, 0.55]},
+    "firstperson_lefthand": {"rotation": [0, -90, 25], "translation": [1.13, 3.2, 1.13], "scale": [0.68, 0.68, 0.68]},
+    "thirdperson_lefthand": {"rotation": [0, -90, 0], "translation": [0, 3, 1], "scale": [0.55, 0.55, 0.55]}}}
 for name, rows in LSPR.items():
     png(os.path.join(A, 'textures', 'item', name + '.png'), pad(rows), LPAL)
     parent = 'minecraft:item/handheld' if name == 'magic_wand' else 'minecraft:item/generated'
-    wjson(os.path.join(A, 'models', 'item', name + '.json'), {"parent": parent, "textures": {"layer0": f"mg:item/{name}"}})
+    wjson(os.path.join(A, 'models', 'item', name + '.json'),
+          {"parent": parent, "textures": {"layer0": f"mg:item/{name}"}, **({"display": LDISPLAY[name]} if name in LDISPLAY else {})})
     item_def(name, f'mg:item/{name}')
 
 # trophée (coupe dorée) et cristal (teinté par dyed_color)
