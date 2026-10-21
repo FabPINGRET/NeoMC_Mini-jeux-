@@ -6,6 +6,9 @@ gamemode adventure @s
 spawnpoint @s 0 64 0
 tp @s 0.5 64 0.5 facing 0.5 64 8.5
 effect clear @s
+# Bootstrap admin armé par mg:setup depuis la console : le premier joueur qui rejoint devient admin
+execute if score $adm mg.st matches 0 run tag @s add mg.admin
+execute if score $adm mg.st matches 0 run scoreboard players set $adm mg.st 1
 function mg:core/give_menu
 
 tellraw @s [{"text":"\n✦ Bienvenue dans les MINI-JEUX ! ✦","color":"gold","bold":true}]
