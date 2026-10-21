@@ -2,5 +2,6 @@
   "model": {
     "type": "minecraft:model",
     "model": "mg:item/gun_sniper"
-  }
+  },
+  "hand_animation_on_swap": false
 }

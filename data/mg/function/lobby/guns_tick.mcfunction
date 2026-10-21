@@ -7,6 +7,9 @@ execute as @e[type=minecraft:interaction,tag=mg.lgi] at @s run function mg:lobby
 tag @a[tag=mg.lgn,tag=!mg.lgn2] remove mg.lgn
 tag @a[tag=mg.lgn2] add mg.lgn
 execute as @e[type=minecraft:item_display,tag=mg.lrkt] at @s run function mg:lobby/rkt_tick
+execute as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.gtw] if items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] unless items entity @s weapon.mainhand *[custom_data~{lrpg:1b}] run function mg:gun/bar
+execute as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.gtw] unless items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] run function mg:gun/bar_clear
+execute as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.gtw] if items entity @s weapon.mainhand *[custom_data~{lrpg:1b}] run function mg:gun/bar_clear
 execute unless score $state mg.st matches 0 run return 0
 scoreboard players remove @a[tag=!mg.play,tag=!mg.surv,tag=!mg.gtw,scores={mg.lrc=1..}] mg.lrc 1
 execute as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.gtw,scores={mg.qs=1..}] if items entity @s weapon.mainhand *[custom_data~{lrpg:1b}] at @s run function mg:lobby/rpg_fire

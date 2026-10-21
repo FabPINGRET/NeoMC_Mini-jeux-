@@ -144,6 +144,9 @@ w('gta/tick', ['# 🚓 Neo City : chaque tick tant qu\'un joueur y est', 'scoreb
                'execute as @a[tag=mg.gtw,scores={mg.grl=1..}] at @s run function mg:gun/reload_tick',
                'execute as @a[tag=mg.gtw,scores={mg.gsn=1..}] at @s run function mg:gun/sneak',
                'scoreboard players reset @a[tag=mg.gtw,scores={mg.gsn=1..}] mg.gsn',
+               # barre de durabilité (recharge de l'arme en main, cadence du Sniper) ; mg_gun exclut le bazooka (rpg:1b seul), sans chargeur
+               'execute as @a[tag=mg.gtw] if items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] run function mg:gun/bar',
+               'execute as @a[tag=mg.gtw] unless items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] run function mg:gun/bar_clear',
                'execute as @a[tag=mg.gscope] unless items entity @s weapon.mainhand *[custom_data~{gun:5}] run function mg:gta/unscope',
                'execute as @a[tag=mg.gscope,tag=!mg.gads] run function mg:gta/unscope',
                'execute as @e[type=minecraft:item_display,tag=mg.grkt] at @s run function mg:gta/rocket_tick',

@@ -24,6 +24,8 @@ scoreboard players remove @a[tag=mg.gtw,scores={mg.gcd=1..}] mg.gcd 1
 execute as @a[tag=mg.gtw,scores={mg.grl=1..}] at @s run function mg:gun/reload_tick
 execute as @a[tag=mg.gtw,scores={mg.gsn=1..}] at @s run function mg:gun/sneak
 scoreboard players reset @a[tag=mg.gtw,scores={mg.gsn=1..}] mg.gsn
+execute as @a[tag=mg.gtw] if items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] run function mg:gun/bar
+execute as @a[tag=mg.gtw] unless items entity @s weapon.mainhand *[custom_data~{mg_gun:1b}] run function mg:gun/bar_clear
 execute as @a[tag=mg.gscope] unless items entity @s weapon.mainhand *[custom_data~{gun:5}] run function mg:gta/unscope
 execute as @a[tag=mg.gscope,tag=!mg.gads] run function mg:gta/unscope
 execute as @e[type=minecraft:item_display,tag=mg.grkt] at @s run function mg:gta/rocket_tick

@@ -3,6 +3,9 @@
 Six armes (mg:gun, tools/arcade/guns.py) exposées côté nord de l'Armurerie ; clic droit sur l'une = elle va dans la case 2.
 Au lobby, une balle touche le Roi Zombie des événements (mg.gtg) et les autres joueurs du lobby (un demi-cœur) : aucun bloc cassé.
 Le railgun du socle 1 ne part plus quand on tire avec une arme (même clic droit sur warped_fungus_on_a_stick).
+Indicateur de recharge / cadence du Sniper : barre de durabilité de l'objet (mg:gun/bar), pas use_cooldown (le tir au clic gauche n'est pas un « use » ;
+use_cooldown reste réservé à Zombies et Infection, voir gun/cd_*). Le bazooka (lrpg) n'a pas de chargeur : pas de barre.
+La barre est gérée avant le garde « minijeu en cours » ($state) ; gun/bar_clear remet à zéro une arme qui n'est plus en main (bazooka compris).
 """
 import os
 import sys
@@ -43,6 +46,9 @@ w('lobby/guns_tick', ['# Armes de Neo GTA au lobby (chaque tick, avant lobby/arm
                       'tag @a remove mg.lgn2', 'execute as @e[type=minecraft:interaction,tag=mg.lgi] at @s run function mg:lobby/guns_near',
                       'tag @a[tag=mg.lgn,tag=!mg.lgn2] remove mg.lgn', 'tag @a[tag=mg.lgn2] add mg.lgn',
                       'execute as @e[type=minecraft:item_display,tag=mg.lrkt] at @s run function mg:lobby/rkt_tick',
+                      f'execute as {LOB} if items entity @s weapon.mainhand *[custom_data~{{mg_gun:1b}}] unless items entity @s weapon.mainhand *[custom_data~{{lrpg:1b}}] run function mg:gun/bar',
+                      f'execute as {LOB} unless items entity @s weapon.mainhand *[custom_data~{{mg_gun:1b}}] run function mg:gun/bar_clear',
+                      f'execute as {LOB} if items entity @s weapon.mainhand *[custom_data~{{lrpg:1b}}] run function mg:gun/bar_clear',
                       'execute unless score $state mg.st matches 0 run return 0',
                       f'scoreboard players remove {lob('scores={mg.lrc=1..}')} mg.lrc 1',
                       f'execute as {lob('scores={mg.qs=1..}')} if items entity @s weapon.mainhand *[custom_data~{{lrpg:1b}}] at @s run function mg:lobby/rpg_fire',
