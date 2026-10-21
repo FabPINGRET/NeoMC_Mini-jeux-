@@ -765,7 +765,7 @@ SHEET = [TEXT('\n📖 Journal de ', 'gold', bold=True), {'selector': '@s', 'colo
          TEXT('   🛡 Armure ', 'gray'), {'score': {'name': '@s', 'objective': 'mg.olat'}, 'color': 'white'},
          TEXT('\n✦ Points à répartir : ', 'light_purple'), {'score': {'name': '@s', 'objective': 'mg.olsp'}, 'color': 'light_purple', 'bold': True}]
 for n, obj, name, col, eff in CL.STATS:
-    SHEET += [TEXT(f'\n {name} ', col), {'score': {'name': '@s', 'objective': obj}, 'color': 'white', 'bold': True}, TEXT('/15 ', 'gray'),
+    SHEET += [TEXT(f'\n {name} ', col), {'score': {'name': '@s', 'objective': obj}, 'color': 'white', 'bold': True}, TEXT(' ', 'gray'),
               {'text': '[+]', 'color': 'green', 'bold': True, 'click_event': {'action': 'run_command', 'command': f'/trigger mg.oltk set {700 + n}'},
                'hover_event': {'action': 'show_text', 'value': eff}}]
 SHEET += [TEXT('\n'), {'text': '[📜 Quête]', 'color': 'yellow', 'click_event': {'action': 'run_command', 'command': '/trigger mg.oltk set 9'}}, TEXT(' '),

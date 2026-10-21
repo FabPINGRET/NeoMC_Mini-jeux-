@@ -1,7 +1,7 @@
 """⚔ Ombrelune : niveaux, caractéristiques, classes, mana, compétences, équipement par paliers (forge). Module importé par gen_ombrelune.py.
 
 Scores (gardés d'une visite à l'autre) : mg.ollv niveau (1..35), mg.olxp XP, mg.olcl classe (0 aucune, 1 chevalier, 2 rôdeur, 3 mage, 4 clerc),
-mg.ols1..4 Vigueur, Force, Agilité, Esprit (15 au plus), mg.olsp points à répartir, mg.olwt palier d'arme (1..9), mg.olat palier d'armure (0..9).
+mg.ols1..4 Vigueur, Force, Agilité, Esprit (sans plafond), mg.olsp points à répartir, mg.olwt palier d'arme (1..9), mg.olat palier d'armure (0..9).
 Pendant la visite : mg.olmp / mg.olmm mana (barre d'XP = mana), mg.olc1..4 recharges des compétences (ticks).
 """
 from ol_core import w, wjson, js, P, TEXT, nm, lo, WF, dlg, show, bit_test, say
@@ -446,9 +446,8 @@ w('cl/second', ['# Chaque seconde : mana, pluies de flèches, marques, aura du c
 # ================================================================ caractéristiques (journal)
 for n, obj, name, col, eff in STATS:
     w(f'st/add_{n}', [f'# @s met un point en {name}', 'execute unless score @s mg.olsp matches 1.. run return run tellraw @s {"text":"Aucun point à répartir.","color":"gray"}',
-                      f'execute if score @s {obj} matches 15.. run return run tellraw @s {{"text":"{name} est déjà au maximum (15).","color":"gray"}}',
                       'scoreboard players remove @s mg.olsp 1', f'scoreboard players add @s {obj} 1', f'function mg:{P}/stats',
-                      f'tellraw @s [{{"text":"{name} ","color":"{col}","bold":true}},{{"score":{{"name":"@s","objective":"{obj}"}},"color":"white"}},{{"text":" / 15  ({eff})","color":"gray"}}]',
+                      f'tellraw @s [{{"text":"{name} ","color":"{col}","bold":true}},{{"score":{{"name":"@s","objective":"{obj}"}},"color":"white"}},{{"text":"  ({eff})","color":"gray"}}]',
                       'execute at @s run playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 0.7 1.4', f'function mg:{P}/sheet'])
 w('st/reset', ['# @s : redistribue ses points (300 💰, maître d\'armes)', 'execute unless score @s mg.olg matches 300.. run return run tellraw @s {"text":"Il faut 300 💰.","color":"red"}',
                'scoreboard players remove @s mg.olg 300'] + [f'scoreboard players operation @s mg.olsp += @s {o}' for _, o, *_r in STATS] +
