@@ -99,11 +99,15 @@ def witch_isle():
         v.set(x, gy + 5, z, 'soul_lantern')
         tot.append((x + 0.5, gy, z + 0.5))
     SPOTS['totems'] = tot
-    # ponton (passerelle depuis la rive sud)
-    for z in range(z0 + 10, z0 + 30):
-        v.set(x0, y, z, 'mangrove_planks')
-        v.set(x0 - 1, y, z, 'mangrove_slab[type=top]')
-        v.set(x0 + 1, y, z, 'mangrove_slab[type=top]')
+    # ponton (passerelle depuis la rive sud) : tablier à y - 1, pour qu'on puisse y monter depuis l'eau ou la rive (à y, c'était un mur de 2 blocs)
+    v.fill(x0 - 1, y, z0 + 10, x0 + 1, y, z0 + 29, AIR, keep=True)        # libère l'ancien niveau, sans toucher à l'anneau de l'île
+    zend = next((z for z in range(z0 + 11, z0 + 45) if W.H[(x0, z)] >= W.WATER), None)      # jusqu'à la rive sud
+    assert zend is not None, f"ponton : aucune rive au sud de l'île (x {x0}, z {z0 + 11}..{z0 + 44})"
+    for z in range(z0 + 11, zend + 1):
+        v.set(x0, y - 1, z, 'mangrove_planks')
+        v.set(x0 - 1, y - 1, z, 'mangrove_slab[type=top]')
+        v.set(x0 + 1, y - 1, z, 'mangrove_slab[type=top]')
+    for z in range(z0 + 10, zend + 1):
         if z % 4 == 0:
             v.fill(x0 + 2, y - 4, z, x0 + 2, y + 1, z, 'mangrove_log')
             v.set(x0 + 2, y + 2, z, 'soul_lantern')

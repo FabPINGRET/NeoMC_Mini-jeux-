@@ -158,13 +158,12 @@ def citadel():
         round_tower(v, tx, tz, y + 1, 5, 22, wl, floor='polished_blackstone', crenel='polished_blackstone_bricks', roof='black_concrete', roof_h=10)
         v.set(tx, y + 23, tz, 'soul_lantern') if False else None
     # porte (est, vers le camp rebelle)
-    v.fill(x2 - 5, y + 1, cz - 2, x2 + 5, y + 9, cz + 2, AIR)       # traverse aussi l'anneau (rayon 5) de la tour de la porte ; 5 de large comme les barreaux
+    v.fill(x2 - 5, y + 1, cz - 2, x2 + 5, y + 9, cz + 2, AIR)       # traverse aussi l'anneau (rayon 5) de la tour de la porte ; 5 de large, comme la grille du donjon
     v.fill(x2 - 5, y + 10, cz - 2, x2 + 5, y + 10, cz + 2, 'chiseled_polished_blackstone')
-    v.fill(x2, y + 1, cz - 2, x2, y + 8, cz + 2, 'iron_bars')
-    v.fill(x2, y + 1, cz - 4, x2, y + 9, cz - 3, wl)                  # flancs des barreaux : l'intérieur de la tour (rayon 5) les laissait contourner
+    v.fill(x2, y + 1, cz - 4, x2, y + 9, cz - 3, wl)                  # flancs : plus de grille ici, gardés pour ne pas décaler les tirages de wl (donc le reste de l'enceinte)
     v.fill(x2, y + 1, cz + 3, x2, y + 9, cz + 4, wl)
-    v.fill(x2, y + 9, cz - 2, x2, y + 9, cz + 2, wl)                  # fente au-dessus des barreaux
-    SPOTS['cit_gate'] = (x2, y + 1, cz - 2, x2, y + 8, cz + 2)
+    v.fill(x2, y + 9, cz - 2, x2, y + 9, cz + 2, wl)                  # fente au-dessus de la passe : reste un mur
+    SPOTS['cit_gate_old'] = (x2, y + 1, cz - 2, x2, y + 8, cz + 2)    # ancienne grille d'enceinte (x2, y + 1..8) : déjà posée sur un serveur construit, vidée par la synchro des stations
     spot('cit_out', x2 + 6, y + 1, cz)
     # pylônes de la cour
     pyl = []
@@ -188,6 +187,8 @@ def citadel():
         for (zz) in (kz1, kz2):
             v.fill(x, y + 4, zz, x, y + 12, zz, 'purple_stained_glass_pane')
     v.fill(kx2, y + 1, cz - 2, kx2, y + 6, cz + 2, AIR)
+    v.fill(kx2, y + 1, cz - 2, kx2, y + 6, cz + 2, 'iron_bars')       # la grille ferme le donjon, pas l'enceinte (la cour reste accessible) ; ouverte par door/citadel_open
+    SPOTS['cit_gate'] = (kx2, y + 1, cz - 2, kx2, y + 6, cz + 2)
     # trône de Malveth (ouest de la salle)
     v.fill(kx1 + 1, y + 1, cz - 4, kx1 + 4, y + 2, cz + 4, 'crying_obsidian')
     v.fill(kx1 + 1, y + 3, cz - 1, kx1 + 1, y + 9, cz + 1, 'obsidian')

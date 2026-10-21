@@ -89,6 +89,7 @@ data remove storage mg:ombre s2
 data remove storage mg:ombre st
 data remove storage mg:ombre mb
 data remove storage mg:ombre ct
+data remove storage mg:ombre doors
 scoreboard objectives remove mg.tmk
 scoreboard objectives remove mg.tmhp
 scoreboard objectives remove mg.tmcd

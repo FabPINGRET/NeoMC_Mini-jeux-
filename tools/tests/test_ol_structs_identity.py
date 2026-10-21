@@ -13,7 +13,7 @@ BUILDERS = ('city', 'castle', 'temple', 'mage_tower', 'guild', 'tavern', 'forge_
             'village', 'brumecombe', 'windmill', 'bandit_fort', 'dungeon', 'giant_tree', 'rope_bridge', 'aelindor', 'spider_lair',
             'shrine', 'longhouse', 'hrafnheim', 'giant_hold', 'stilt_village', 'witch_isle', 'oasis_town', 'pyramid', 'obelisks',
             'bastion', 'caldera', 'dwarf_camp', 'dwarf_gate', 'rebel_camp', 'citadel', 'soul_well_entry', 'chapel')
-TOOLS = ('spot', 'dir_vec', 'opp', 'cone_roof', 'round_tower', 'crenels', 'brace_ladders', 'stone_mix', 'house')
+TOOLS = ('spot', 'dir_vec', 'opp', 'cone_roof', 'round_tower', 'crenels', 'brace_ladders', 'stone_mix', 'house', 'struct_cmds')
 
 if str(ARCADE) not in sys.path:
     sys.path.insert(0, str(ARCADE))

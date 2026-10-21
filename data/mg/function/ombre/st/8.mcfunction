@@ -37,7 +37,7 @@ setblock -15 119 183 minecraft:chest[facing=south]
 setblock -14 119 183 minecraft:spruce_fence
 setblock -14 120 183 minecraft:spruce_fence
 setblock -14 121 183 minecraft:red_wool
-fill -4 67 140 4 79 141 minecraft:deepslate_tiles
+execute unless data storage mg:ombre doors.kgate run fill -4 67 140 4 79 141 minecraft:deepslate_tiles
 summon minecraft:interaction -11.5 67 180.5 {Tags:["mg.ol","mg.ols","mg.olpill"],width:1.4f,height:5.2f,response:1b}
 setblock -11 71 180 minecraft:light_blue_stained_glass
 summon minecraft:interaction 12.5 67 180.5 {Tags:["mg.ol","mg.ols","mg.olpill"],width:1.4f,height:5.2f,response:1b}

@@ -115,7 +115,7 @@ def temple(v, Y):
     # transept
     v.walls(x1, -34, x2, -28, Y + 1, Y + 10, mat)
     v.fill(x1 + 1, Y + 1, -33, x2 - 1, Y + 10, -29, AIR)
-    v.fill(nx1 + 1, Y + 1, -33, nx2 - 1, Y + 10, -29, AIR)
+    v.fill(nx1 + 1, Y + 1, -34, nx2 - 1, Y + 10, -28, AIR)             # -34 et -28 : les murs du transept coupaient la nef en trois (autel inaccessible)
     v.gable_roof(x1, -34, x2, -28, Y + 11, 'x', 'deepslate_tile_stairs', 'deepslate_tile_slab', 'deepslate_tiles')
     # entrée (sud)
     v.fill(31, Y + 1, z2, 35, Y + 4, z2, AIR)
