@@ -5,5 +5,7 @@ tag @s add mg.dltg
 execute as @a[tag=mg.dlrq] if score @s mg.dlid = $dlt mg.st run function mg:duel/expire_c
 tag @s remove mg.dltg
 tellraw @s [{"text":"⚔ L'invitation au duel a expiré.","color":"gray"}]
+execute if entity @s[tag=mg.dlui] run dialog clear @s
+tag @s remove mg.dlui
 scoreboard players reset @s mg.dlto
 scoreboard players reset @s mg.dlx

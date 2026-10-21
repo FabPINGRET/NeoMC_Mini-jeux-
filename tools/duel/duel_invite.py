@@ -3,6 +3,11 @@
 Un défi = le défieur (tag mg.dlrq, numéro mg.dlid) pose sur l'invité mg.dlto = son numéro et mg.dlx = 600 ticks.
 Tags temporaires : mg.dltg adversaire visé (challenge, expire, refuse), mg.dlt2 invité retrouvé par rq_check,
 mg.dlca défieur retrouvé par accept / cancel, mg.dlq demandeur de la liste.
+L'invité reçoit une fenêtre (dialog, inline : Accepter = trigger 2, Refuser = 3, Plus tard = 7) en plus d'une ligne de chat de secours
+(la fenêtre se rouvre par le bouton [Répondre] = trigger 6) ; mg.dlui = fenêtre ouverte, fermée (dialog clear) à l'expiration,
+au refus ou à l'annulation. Si une autre fenêtre la remplace (note de fin de partie mg.rate, invité devenu occupé), duel/tick retire
+mg.dlui sans rien fermer (et fait expirer l'invitation d'un invité devenu occupé).
+La déconnexion du défieur n'est pas détectée avant l'expiration : l'invité qui accepte entre-temps reçoit fail_gone.
 """
 import os
 import sys
@@ -32,10 +37,26 @@ def say(who, *parts):
     return f'tellraw {who} ' + js(list(parts))
 
 
-def pending_msg():
-    """Message quand @s a reçu une invitation : il doit y répondre avant de défier."""
-    return say('@s', tx('Tu as reçu une invitation de duel : '), btn('[✔ Accepter]', 'green', 2, 'Relever le défi'),
-               tx(' '), btn('[✘ Refuser]', 'red', 3, 'Refuser le défi'), tx(' avant d\'en lancer une.'))
+def act(label, color, n):
+    return {'label': {'text': label, 'color': color, 'bold': True},
+            'action': {'type': 'minecraft:run_command', 'command': f'trigger mg.duel set {n}'}}
+
+
+# fenêtre d'invitation (inline : le pseudo du défieur est un trou de macro, remplacé par duel/inv_dlg)
+DLG = {'type': 'minecraft:multi_action', 'title': {'text': '⚔ Duel sniper', 'color': 'gold', 'bold': True},
+       'pause': False, 'can_close_with_escape': True, 'after_action': 'close', 'columns': 2,
+       'body': [{'type': 'minecraft:plain_message', 'contents': [
+           {'text': '@@p@@', 'color': 'yellow', 'bold': True},
+           {'text': f' te défie en duel sniper 1v1 : premier à 3 manches. Invitation : {INV // 20} s au total.', 'color': 'gray'}]}],
+       'actions': [act('✔ Accepter', 'green', 2), act('✘ Refuser', 'red', 3)],
+       'exit_action': {'label': {'text': 'Plus tard', 'color': 'gray'},
+                       'action': {'type': 'minecraft:run_command', 'command': 'trigger mg.duel set 7'}}}
+# fermeture de la fenêtre de @s si elle est ouverte (mg.dlui : on ne ferme pas la fenêtre d'une autre fonctionnalité)
+CLOSE_DLG = ['execute if entity @s[tag=mg.dlui] run dialog clear @s', 'tag @s remove mg.dlui']
+
+
+# @s a reçu une invitation : ligne de chat de secours + fenêtre rouverte (il doit répondre avant de défier)
+PENDING = 'function mg:duel/pending'
 
 
 def lists(w):
@@ -44,7 +65,7 @@ def lists(w):
         'function mg:duel/busy',
         'execute if score $dlb mg.st matches 1 run return run ' + say('@s', tx('Tu ne peux pas défier maintenant (partie ou activité en cours).')),
         'execute if entity @s[tag=mg.dlrq] run return run ' + say('@s', tx('Tu as déjà une invitation en cours : '), btn('[Annuler]', 'red', 4, 'Annuler l\'invitation')),
-        'execute if score @s mg.dlto matches 1.. run return run ' + pending_msg(),
+        'execute if score @s mg.dlto matches 1.. run return run ' + PENDING,
         'execute unless data storage mg:duel {built:1b} run return run ' + say('@s', tx('Les arènes sont en construction, réessaie dans quelques minutes.')),
         say('@s', tx('— Duel sniper 1v1 : clique sur un adversaire —', 'gold')),
         'scoreboard players set $dlc mg.st 0',
@@ -88,7 +109,7 @@ def invitations(w):
         '# Contrôles puis invitation (@s = défieur ; l\'adversaire porte mg.dltg)',
         'execute if entity @s[tag=mg.dlrq] run function mg:duel/rq_check',
         'execute if entity @s[tag=mg.dlrq] run return run ' + say('@s', tx('Tu as déjà une invitation en cours : '), btn('[Annuler]', 'red', 4, 'Annuler l\'invitation')),
-        'execute if score @s mg.dlto matches 1.. run return run ' + pending_msg(),
+        'execute if score @s mg.dlto matches 1.. run return run ' + PENDING,
         'function mg:duel/busy',
         'execute if score $dlb mg.st matches 1 run return run ' + say('@s', tx('Tu ne peux pas défier maintenant (partie ou activité en cours).')),
         'execute unless entity @a[tag=mg.dltg] run return run ' + say('@s', tx('Ce joueur n\'est plus là.')),
@@ -104,9 +125,43 @@ def invitations(w):
         f'scoreboard players set @a[tag=mg.dltg,limit=1] mg.dlx {INV}',
         'tag @s add mg.dlrq',
         say('@a[tag=mg.dltg,limit=1]', sel('@s', 'yellow', bold=True), tx(' te défie en duel sniper 1v1 (30 s) : '),
-            btn('[✔ Accepter]', 'green', 2, 'Relever le défi'), tx(' '), btn('[✘ Refuser]', 'red', 3, 'Refuser le défi')),
+            btn('[✔ Accepter]', 'green', 2, 'Relever le défi'), tx(' '), btn('[✘ Refuser]', 'red', 3, 'Refuser le défi'),
+            tx(' '), btn('[Répondre]', 'gold', 6, 'Rouvrir la fenêtre')),
+        '# pas de fenêtre d\'office pendant la note de fin de partie (mg.rate) : la ligne de chat et [Répondre] suffisent',
+        'execute as @a[tag=mg.dltg,tag=!mg.rate,limit=1] run function mg:duel/inv_show',
         say('@s', tx('⚔ Défi envoyé à '), sel('@a[tag=mg.dltg,limit=1]', 'white'), tx(' (30 s) '), btn('[Annuler]', 'red', 4, 'Annuler l\'invitation')),
     ])
+    w('duel/pending', [
+        '# Invitation déjà reçue (@s = invité) : ligne de chat de secours, puis la fenêtre est rouverte',
+        say('@s', tx('Tu as reçu une invitation de duel : '), btn('[✔ Accepter]', 'green', 2, 'Relever le défi'),
+            tx(' '), btn('[✘ Refuser]', 'red', 3, 'Refuser le défi'), tx(' avant d\'en lancer une.')),
+        'function mg:duel/inv_show',
+    ])
+    w('duel/inv_busy', [
+        '# Invité en attente (@s, appelé chaque tick par duel/tick) : devenu occupé, son invitation expire ;',
+        '# sa fenêtre a été remplacée par une autre : mg.dlui est retiré sans dialog clear',
+        'function mg:duel/busy',
+        'execute if score $dlb mg.st matches 1 run tag @s remove mg.dlui',
+        'execute if score $dlb mg.st matches 1 run function mg:duel/expire',
+    ])
+    w('duel/inv_show', [
+        '# Ouvre (ou rouvre) la fenêtre d\'invitation (@s = invité) ; le pseudo du défieur vient de duel/inv_name (repli : « Un joueur »)',
+        'execute unless score @s mg.dlto matches 1.. run return 0',
+        'data modify storage mg:duel inv set value {p:"Un joueur"}',
+        'scoreboard players operation #dln mg.st = @s mg.dlto',
+        'execute as @a[tag=mg.dlrq] if score @s mg.dlid = #dln mg.st at @s run function mg:duel/inv_name',
+        'tag @s add mg.dlui',
+        'function mg:duel/inv_dlg with storage mg:duel inv',
+    ])
+    w('duel/inv_name', [
+        '# Pseudo du défieur (@s = défieur, à sa position) -> mg:duel inv.p : lu sur sa tête (loot mg:plot_head), comme kart/cam_new',
+        'summon minecraft:item_display ~ ~ ~ {Tags:["mg.dlnm"]}',
+        'loot replace entity @e[type=minecraft:item_display,tag=mg.dlnm,limit=1] contents loot mg:plot_head',
+        'data modify storage mg:duel inv.p set from entity @e[type=minecraft:item_display,tag=mg.dlnm,limit=1] item.components."minecraft:profile".name',
+        'kill @e[type=minecraft:item_display,tag=mg.dlnm]',
+    ])
+    w('duel/inv_dlg', ['# Fenêtre d\'invitation (macro : $(p) = pseudo du défieur)',
+                       '$dialog show @s ' + js(DLG).replace('@@p@@', '$(p)')])
     w('duel/cancel', [
         '# Annuler son invitation (@s = défieur) ; ignoré pendant un duel (bouton périmé : l\'abandon est le trigger 5)',
         'execute if entity @s[tag=mg.dl] run return 0',
@@ -121,6 +176,7 @@ def invitations(w):
     w('duel/cancel_t', [
         '# L\'invité apprend l\'annulation (@s = invité ; le défieur porte mg.dlca)',
         say('@s', sel('@a[tag=mg.dlca,limit=1]', 'white'), tx(' a annulé son invitation au duel.')),
+        *CLOSE_DLG,
         'scoreboard players reset @s mg.dlto',
         'scoreboard players reset @s mg.dlx',
     ])
@@ -143,6 +199,7 @@ def invitations(w):
             'execute as @a[tag=mg.dlrq] if score @s mg.dlid = $dlt mg.st run function mg:duel/' + name + '_c',
             'tag @s remove mg.dltg',
             say('@s', to_t),
+            *CLOSE_DLG,
             'scoreboard players reset @s mg.dlto',
             'scoreboard players reset @s mg.dlx',
         ])

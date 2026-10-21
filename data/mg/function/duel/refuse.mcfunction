@@ -5,5 +5,7 @@ tag @s add mg.dltg
 execute as @a[tag=mg.dlrq] if score @s mg.dlid = $dlt mg.st run function mg:duel/refuse_c
 tag @s remove mg.dltg
 tellraw @s [{"text":"⚔ Tu as refusé le duel.","color":"gray"}]
+execute if entity @s[tag=mg.dlui] run dialog clear @s
+tag @s remove mg.dlui
 scoreboard players reset @s mg.dlto
 scoreboard players reset @s mg.dlx
