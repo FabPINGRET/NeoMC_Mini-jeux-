@@ -46,8 +46,8 @@ summon minecraft:interaction -11.5 67 198.5 {Tags:["mg.ol","mg.ols","mg.olpill"]
 setblock -11 71 198 minecraft:light_blue_stained_glass
 summon minecraft:interaction 12.5 67 198.5 {Tags:["mg.ol","mg.ols","mg.olpill"],width:1.4f,height:5.2f,response:1b}
 setblock 12 71 198 minecraft:light_blue_stained_glass
-summon minecraft:marker -62.5 123 159.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
-summon minecraft:marker 45.5 119 163.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
+summon minecraft:marker -62.5 67 159.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
+summon minecraft:marker 45.5 92 163.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -65.5 125 177.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -31.5 125 154.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -45.5 127 193.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
@@ -56,11 +56,11 @@ summon minecraft:marker 11.5 124 158.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker 47.5 126 185.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker 8.5 110 141.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -62.5 128 225.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
-summon minecraft:marker -40.5 78 137.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
+summon minecraft:marker -40.5 76 137.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker 62.5 67 97.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker 42.5 66 94.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker 16.5 127 225.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
-summon minecraft:marker 36.5 125 149.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
+summon minecraft:marker 36.5 68 149.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -35.5 123 225.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -39.5 65 115.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker 36.5 124 220.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
@@ -69,12 +69,12 @@ summon minecraft:marker 24.5 123 184.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker 57.5 66 114.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -23.5 126 222.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker 39.5 65 117.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
-summon minecraft:marker 22.5 106 140.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
+summon minecraft:marker 22.5 67 140.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -12.5 123 213.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker 57.5 124 150.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -4.5 120 183.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -29.5 68 97.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
-summon minecraft:marker 56.5 124 176.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
+summon minecraft:marker 56.5 121 176.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -10.5 128 157.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker 12.5 121 183.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -27.5 122 196.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
@@ -86,7 +86,7 @@ summon minecraft:marker 39.5 124 194.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -57.5 128 203.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -44.5 126 213.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -17.5 119 188.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
-summon minecraft:marker -51.5 121 144.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
+summon minecraft:marker -51.5 115 144.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker 31.5 125 207.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker 62.5 122 219.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}
 summon minecraft:marker -10.5 120 200.5 {Tags:["mg.ol","mg.ols","mg.olsp_s"]}

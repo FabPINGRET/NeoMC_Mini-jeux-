@@ -11,6 +11,8 @@ import functools
 import math
 import random
 
+from ol_access import lerp, smooth, volcano, gorges, carved, ramp_routes, PARVIS
+
 CELL = 160
 HALF = 240                      # x, z de -HALF à HALF - 1
 G = 64                          # sol de la cité (on marche à y 65)
@@ -94,15 +96,6 @@ def ridged(seed, cell, x, z):
     return 1 - abs(fbm(seed, cell, x, z, 3))
 
 
-def lerp(a, b, t):
-    return a + (b - a) * t
-
-
-def smooth(t):
-    t = max(0.0, min(1.0, t))
-    return t * t * (3 - 2 * t)
-
-
 # ---------------------------------------------------------------- lieux principaux (centre x, z)
 P = {
     # Havreclair
@@ -150,6 +143,7 @@ FLAT = [
     (-124, 134, -92, 166, 64, 8),                                  # camp des rebelles
     (-210, 140, -134, 216, 66, 10),                                # citadelle
     (-222, 96, -198, 120, 64, 6),                                  # puits des âmes
+    PARVIS,                                                        # parvis de la porte de Khazgarde
 ]
 
 
@@ -228,7 +222,7 @@ def h_se(x, z):
         h = CALD_Y
     elif r < 21:
         h = max(h, CALD_Y + 4 + (21 - r) * 0.4)
-    return h
+    return volcano(x, z, h, (VX, VZ), CALD_Y)
 
 
 KZ = P['kgate'][1]                 # face de la montagne (porte naine)
@@ -239,7 +233,7 @@ def h_s(x, z):
     if z > KZ - 6:
         t = smooth((z - (KZ - 6)) / 10)
         m = lerp(m, 112 + 14 * ridged(802, 50, x, z) + 4 * fbm(803, 14, x, z), t)
-    return m
+    return gorges(x, z, m)
 
 
 def h_sw(x, z):
@@ -416,7 +410,7 @@ ROUTES = [
     [(-20, 132), (-60, 160), (-80, 168), (-96, 166)],
     # Ombre
     [(-96, 166), (-106, 156)], [(-120, 156), (-140, 170), (-148, 178)], [(-118, 140), (-160, 120), (-198, 110)],
-]
+] + ramp_routes((VX, VZ))
 ROAD = set()
 for _pts in ROUTES:
     for (px, pz) in polyline(_pts):
@@ -452,16 +446,18 @@ def terrain_cmds(k):
                 top, und, fl, fy = COL[c]
                 if c in ROAD and COL[c][2] is None:
                     top = ROAD_TOP[k] if not (ROAD_TOP[k] == 'dirt_path' and top in ('sand', 'snow_block', 'stone')) else 'gravel'
-                return (H[c], top, und, fl, fy, bottom(*c))
+                return (H[c], top, und, fl, fy, bottom(*c), carved(*c))
             kk = key(z)
             z2 = z
             while z2 + 1 < z1 and key(z2 + 1) == kk:
                 z2 += 1
-            h, top, und, fl, fy, lo_ = kk
+            h, top, und, fl, fy, lo_, cut = kk
             if h - 4 >= lo_:
                 out.append(f'fill {x} {lo_} {z} {x} {h - 4} {z2} minecraft:{"stone" if k not in ("se", "sw") else "blackstone"}')
             out.append(f'fill {x} {max(lo_, h - 3)} {z} {x} {h - 1} {z2} minecraft:{und}')
             out.append(f'fill {x} {h} {z} {x} {h} {z2} minecraft:{top}')
+            if cut:   # colonne creusée : vide l'ancien relief au-dessus (reconstruction en place)
+                out.append(f'fill {x} {h + 1} {z} {x} 150 {z2} minecraft:air')
             if fl:
                 out.append(f'fill {x} {h + 1} {z} {x} {fy} {z2} minecraft:{fl}')
             z = z2 + 1

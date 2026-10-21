@@ -180,7 +180,7 @@ st('talk', 6, 'Rejoins Durgan au Bastion des Braises (Pyrecendre)', npc='durgan'
    text='Le souffle d\'Ignarok fond l\'acier. Apporte-moi 6 écailles de drake : je forgerai un talisman qui te protégera du feu.', btn='Je chasse les drakes')
 st('mat', 6, 'Apporte 6 écailles de drake à Durgan', npc='durgan', at=tgt('durgan'), mat=6, n=6, rw=(300, 0), give='fire',
    text='Six écailles… Le talisman est prêt. Avec lui, la chaleur du volcan ne t\'atteindra plus.', btn='Recevoir le talisman ignifuge')
-st('go', 6, 'Gravis le volcan jusqu\'à la caldeira, au sommet', at=T(W.VX, W.CALD_Y + 1, W.VZ + 18), r=10)
+st('go', 6, 'Gravis le volcan par la rampe nord jusqu\'à la caldeira', at=tgt('cald_in'), r=10)
 st('boss', 6, 'Abats Ignarok, le dragon de feu', boss='ignarok', at=T(*S.ARENAS['ignarok']['c']))
 st('talk', 6, 'Retourne voir Durgan au Bastion', npc='durgan', at=tgt('durgan'), rw=(1200, 800),
    text='Le dragon est mort ! Mon roi doit l\'apprendre : Thrain campe devant Khazgarde, notre cité perdue, à l\'ouest du volcan. '

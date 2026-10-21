@@ -3,7 +3,7 @@
     python tools/arcade/gen_ombrelune.py .     (après gen_terranova.py, AVANT gen_foot.py et gen_themes.py : le portail est une construction du spawn ;
                                                 puis tools/resourcepack/gen_rp.py pour les dragons 3D et la carte du lobby)
 
-Modules : ol_world (relief, biomes, végétation), ol_structs (constructions, donjons), ol_beasts / ol_beast_fn (dragons articulés),
+Modules : ol_world (relief, biomes, végétation), ol_access (rampe du volcan, gorges des cols, parvis), ol_structs (constructions, donjons), ol_beasts / ol_beast_fn (dragons articulés),
 ol_mobs (bestiaire, apparitions, victoires), ol_class (niveaux, classes, compétences, forge), ol_quest (campagne, PNJ, quêtes, boutiques,
 voyages, succès), ol_boss (boss, donjons), ol_cine (cinématiques, indicateur). Tout est écrit sous data/mg/function/ombre/ (repartie de zéro), plus data/mg/damage_type/spell.json
 et data/minecraft/tags/damage_type/{bypasses_armor,no_knockback}.json (ol_class : dégâts des sorts).
