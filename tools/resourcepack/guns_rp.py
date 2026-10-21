@@ -82,7 +82,7 @@ for name, rows in GSPR.items():
         "parent": "minecraft:item/handheld", "textures": {"layer0": f"mg:item/{name}"},
         "display": {"firstperson_righthand": {"rotation": [0, 90, 0], "translation": [1.13, 3.2, 1.13], "scale": [0.68, 0.68, 0.68]},
                     "thirdperson_righthand": {"rotation": [0, 90, 0], "translation": [0, 2, 0.5], "scale": [0.85, 0.85, 0.85]}}})
-    item_def(name, f'mg:item/{name}')
+    item_def(name, f'mg:item/{name}', swap_anim=False)
 
 # Batte de baseball (GTA) : tenue comme une épée (modèle handheld standard), bois clair, poignée scotchée
 BAT = ['', '', '',
