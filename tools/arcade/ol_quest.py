@@ -363,15 +363,7 @@ for i, s_ in enumerate(STEPS):
         GO.append(f'execute if score @s mg.olch matches {i} positioned {x} {y} {z} if entity @s[distance=..{s_["r"]}] run function mg:{P}/q/adv')
 w('q/gotick', GO)
 
-# portes (ouvertes quand l'étape est finie par un joueur, refermées à chaque session)
-x1, y1, z1, x2, y2, z2 = SP['kgate_door']
-cx1, cy1, cz1, cx2, cy2, cz2 = SP['cit_gate']
-px, py, pz = SP['pyr_door']
-DOORS = {'kgate': ([f'fill {x1} {y1} {z1} {x2} {y2} {z2} minecraft:air'], [f'fill {x1} {y1} {z1} {x2} {y2} {z2} minecraft:deepslate_tiles']),
-         'citadel': ([f'fill {cx1} {cy1} {cz1} {cx2} {cy2} {cz2} minecraft:air'], [f'fill {cx1} {cy1} {cz1} {cx2} {cy2} {cz2} minecraft:iron_bars']),
-         'pyramid': ([f'fill {px - 1} {py} {pz} {px + 1} {py + 2} {pz} minecraft:air'], [f'fill {px - 1} {py} {pz} {px + 1} {py + 2} {pz} minecraft:chiseled_sandstone'])}
-for k, (op, _) in DOORS.items():
-    w(f'door/{k}_open', [f'# Porte {k} : ouverte', 'playsound minecraft:block.iron_door.open master @a ~ ~ ~ 1 0.5'] + op)
+# portes (door/<k>_open, appelées par q/actdone<i> ci-dessus) : ol_doors.py
 
 # ================================================================ quêtes secondaires
 SIDE = {  # n° : (PNJ, titre, texte, type, cible, quantité, (xp, or, bonus))

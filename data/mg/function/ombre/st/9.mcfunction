@@ -32,7 +32,8 @@ setblock -223 63 214 minecraft:chest[facing=south]
 setblock -222 63 214 minecraft:spruce_fence
 setblock -222 64 214 minecraft:spruce_fence
 setblock -222 65 214 minecraft:red_wool
-fill -138 67 176 -138 74 180 minecraft:iron_bars
+execute unless data storage mg:ombre doors.citadel run fill -158 67 176 -158 72 180 minecraft:iron_bars
+fill -138 67 176 -138 74 180 minecraft:air
 summon minecraft:marker -118.5 66 109.5 {Tags:["mg.ol","mg.ols","mg.olsp_sw"]}
 summon minecraft:marker -101.5 63 187.5 {Tags:["mg.ol","mg.ols","mg.olsp_sw"]}
 summon minecraft:marker -123.5 69 208.5 {Tags:["mg.ol","mg.ols","mg.olsp_sw"]}

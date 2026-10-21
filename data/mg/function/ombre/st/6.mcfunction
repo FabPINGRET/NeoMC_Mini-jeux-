@@ -44,7 +44,7 @@ setblock 99 68 10 minecraft:chest[facing=south]
 setblock 100 68 10 minecraft:spruce_fence
 setblock 100 69 10 minecraft:spruce_fence
 setblock 100 70 10 minecraft:red_wool
-fill 197 65 -39 199 67 -39 minecraft:chiseled_sandstone
+execute unless data storage mg:ombre doors.pyramid run fill 197 65 -39 199 67 -39 minecraft:chiseled_sandstone
 summon minecraft:marker 118.5 66 -61.5 {Tags:["mg.ol","mg.ols","mg.olsp_e"]}
 summon minecraft:marker 107.5 68 47.5 {Tags:["mg.ol","mg.ols","mg.olsp_e"]}
 summon minecraft:marker 98.5 68 -62.5 {Tags:["mg.ol","mg.ols","mg.olsp_e"]}

@@ -103,6 +103,14 @@ def brace_ladders(v, mat):
             v.set(x - dx, y, z - dz, mat)
 
 
+LATE = frozenset({'ladder'})      # blocs à support émis après tout le reste de la structure (un plancher posé ensuite écraserait l'échelle)
+
+
+def struct_cmds(v):
+    """Commandes de construction d'une structure, telles que gen_ombrelune les écrit (échelles en fin de passe)."""
+    return v.cmds(late=LATE)
+
+
 def spiral_well(v, cx, cz, r, y1, y2, step, per_turn=12, head=3, keep=()):
     """Colimaçon praticable autour de (cx, cz), marches de y1 à y2 : la marche i (hauteur y1 + i) occupe tous les blocs de l'anneau
     r - 1.5 < d <= r + 0.5 dont l'angle (sens de Vox.spiral) tombe dans le secteur i % per_turn, donc deux marches consécutives se touchent

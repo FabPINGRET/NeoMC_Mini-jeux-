@@ -10,7 +10,7 @@ import ol_world as W
 
 from ol_skit import (  # noqa: F401 (réexport)
     SPOTS, DUNGEONS, ARENAS, LORE, CHESTS, G, spot, dir_vec, opp, cone_roof, round_tower, crenels,
-    brace_ladders, stone_mix, HOUSE_STYLES, house
+    brace_ladders, stone_mix, HOUSE_STYLES, house, struct_cmds
 )
 from ol_city import city  # noqa: F401 (réexport)
 from ol_city_b import castle, temple, mage_tower, guild, tavern, forge_b, market, stables, alchemist  # noqa: F401 (réexport)

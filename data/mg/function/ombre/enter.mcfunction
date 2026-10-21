@@ -32,4 +32,5 @@ tellraw @s [{"text":" ✦ Mana : ","color":"aqua"},{"text":"la barre d'XP. Comp�
 tellraw @s [{"text":" 🌀 Pierres d'appel : ","color":"light_purple"},{"text":"voyage entre les régions. Sortir : pierre de la place ou Échap → ≡ Menu","color":"gray"}]
 execute if score @s mg.olch matches 1.. run function mg:ombre/q/say
 function mg:ombre/qloc
+execute in mg:ombrelune run function mg:ombre/door/catchup
 execute at @s run playsound minecraft:block.portal.travel master @s ~ ~ ~ 0.3 1.6

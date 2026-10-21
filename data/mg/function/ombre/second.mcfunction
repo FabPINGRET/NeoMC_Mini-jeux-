@@ -5,6 +5,7 @@ scoreboard players enable @a[tag=mg.olw] mg.oltk
 execute as @a[tag=mg.olw,tag=!mg.olcine] at @s run function mg:ombre/region
 execute as @a[tag=mg.olw,tag=!mg.olcine] at @s run function mg:ombre/q/gotick
 function mg:ombre/ws_tick
+function mg:ombre/door/catchup
 execute as @a[tag=mg.olw,tag=!mg.olintro,tag=!mg.olcine,scores={mg.olch=0}] run function mg:ombre/intro_go
 execute if score $olq60 mg.st matches 0 run function mg:ombre/pois
 execute if score $olq60 mg.st matches 40 run function mg:ombre/pois

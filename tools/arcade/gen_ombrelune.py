@@ -5,10 +5,16 @@
 
 Modules : ol_world (relief, biomes, végétation), ol_access (rampe du volcan, gorges des cols, parvis), ol_structs (constructions, donjons), ol_beasts / ol_beast_fn (dragons articulés),
 ol_mobs (bestiaire, apparitions, victoires), ol_class (niveaux, classes, compétences, forge), ol_quest (campagne, PNJ, quêtes, boutiques,
-voyages, succès), ol_boss (boss, donjons), ol_cine (cinématiques, indicateur). Tout est écrit sous data/mg/function/ombre/ (repartie de zéro), plus data/mg/damage_type/spell.json
+voyages, succès), ol_doors (portes de quête, drapeau mg:ombre doors), ol_boss (boss, donjons), ol_cine (cinématiques, indicateur). Tout est écrit sous data/mg/function/ombre/ (repartie de zéro), plus data/mg/damage_type/spell.json
 et data/minecraft/tags/damage_type/{bypasses_armor,no_knockback}.json (ol_class : dégâts des sorts).
 Ajouter la dimension et ses biomes demande un redémarrage du serveur ; la carte se construit seule ensuite (~4 min).
 Idem pour un nouveau type de dégâts (registre dynamique) : redémarrage requis, un /reload ne suffit pas.
+Déploiement sur un serveur déjà construit : le monde n'est construit qu'une fois (mg:ombre built), un /reload ne refait donc ni le terrain ni les
+constructions. Un changement de construction (ex. transept de la cathédrale, ponton de Morvaine) demande la reconstruction : /function mg:ombre/world_build
+(~4 min ; efface le drapeau mg:ombre doors, les portes sont reposées fermées puis les entités permanentes reposées). Les entités et les stations
+(st/<région> : PNJ, portes, grille de l'ancien emplacement de la citadelle) se resynchronisent seules au rechargement du datapack (st/check, SV changé).
+Portes de quête : celles que la quête a déjà ouvertes sont rouvertes automatiquement (door/catchup) après une reconstruction ou un premier déploiement,
+dès qu'un joueur ayant dépassé l'étape est présent ou entre (et que les chunks de la porte sont chargés) : aucune commande OP n'est nécessaire.
 """
 import os
 import re
@@ -35,6 +41,7 @@ import ol_beast_fn  # noqa: E402,F401
 import ol_mobs as M  # noqa: E402
 import ol_class as CL  # noqa: E402
 import ol_quest as Q  # noqa: E402
+import ol_doors as DR  # noqa: E402
 import ol_boss as BO  # noqa: E402
 import ol_cine  # noqa: E402,F401
 
@@ -51,7 +58,7 @@ RIDX = {r: i + 1 for i, r in enumerate(RKEYS)}
 PACK = 2500
 PACKS = []                                   # (n° de région, commandes)
 for r in RKEYS:
-    cmds = W.terrain_cmds(r) + W.biome_fill(r) + W.VEG[r] + [c for n_, rg, v in STRUCTS if rg == r for c in v.cmds(late=('ladder',))] + W.WALLS_R[r]
+    cmds = W.terrain_cmds(r) + W.biome_fill(r) + W.VEG[r] + [c for n_, rg, v in STRUCTS if rg == r for c in S.struct_cmds(v)] + W.WALLS_R[r]
     for i in range(0, len(cmds), PACK):
         PACKS.append((RIDX[r], cmds[i:i + PACK]))
 NP = len(PACKS)
@@ -89,10 +96,12 @@ w('wb_step', ['# Construction : 220 commandes par tick, dans la région chargée
               'scoreboard players set $olk mg.st 220', f'execute in {DIM} run function mg:{P}/b/run',
               f'schedule function mg:{P}/wb_step 1t'])
 w('world_build', ["# Construction d'Ombrelune (ou reconstruction complète, ~4 min)", 'scoreboard players set $olb mg.st 0', 'scoreboard players set $olrl mg.st 0',
-                  'scoreboard players set $olrr mg.st 0', 'data remove storage mg:ombre q', f'execute in {DIM} run forceload remove all',
+                  'scoreboard players set $olrr mg.st 0', 'data remove storage mg:ombre q', f'data remove storage mg:ombre {DR.DOORS_KEY}',
+                  f'execute in {DIM} run forceload remove all',
                   f'schedule function mg:{P}/wb_step 20t', 'tellraw @a[tag=mg.admin] {"text":"🌙 Construction de la carte d\'Ombrelune lancée (~4 min).","color":"light_purple"}'])
 w('wb_done', ['# Ombrelune construite : entités permanentes ensuite', f'execute in {DIM} run kill @e[type=minecraft:item,x=-240,y=0,z=-240,dx=480,dy=300,dz=480]',
               f'execute in {DIM} run forceload remove all', 'data modify storage mg:ombre built set value 1b', 'data remove storage mg:ombre q',
+              f'data remove storage mg:ombre {DR.DOORS_KEY}',           # toutes les portes viennent d'être reposées fermées : st/start les referme sans drapeau
               'tellraw @a[tag=mg.admin] {"text":"🌙 Ombrelune est construite (PNJ et objets en cours de pose).","color":"light_purple"}', f'function mg:{P}/st/start'])
 
 # dimension et biomes
@@ -190,6 +199,7 @@ w('enter', ['# @s entre dans le portail d\'Ombrelune (contexte : monde des mini-
             'tellraw @s ' + js([TEXT(' ✦ Mana : ', 'aqua'), TEXT('la barre d\'XP. Compétences en cases 3 à 6 (clic droit).', 'gray')]),
             'tellraw @s ' + js([TEXT(' 🌀 Pierres d\'appel : ', 'light_purple'), TEXT('voyage entre les régions. Sortir : pierre de la place ou Échap → ≡ Menu', 'gray')]),
             f'execute if score @s mg.olch matches 1.. run function mg:{P}/q/say', f'function mg:{P}/qloc',
+            f'execute in {DIM} run function mg:{P}/door/catchup',           # ses portes de quête déjà ouvertes (reconstruction, premier déploiement)
             'execute at @s run playsound minecraft:block.portal.travel master @s ~ ~ ~ 0.3 1.6'])
 w('not_ready', [f'tp @s {PX + 3}.5 64 {PZ}.5 90 0',
                 'tellraw @s {"text":"🚧 Ombrelune est en construction (quelques minutes après le démarrage du serveur). Réessaie bientôt !","color":"yellow"}'])
@@ -244,7 +254,7 @@ w('setup', ['# Session (dans la dimension) : équipes, règles, barres des boss'
             'team join mg_ol @a[tag=mg.olw]', f'function mg:{P}/boss/setup', 'scoreboard players set $olsu mg.st 1'])
 
 # ---- entités permanentes (posées après la construction, puis à chaque mise à jour du datapack qui les change)
-STAT = Q.SETUP_NPC + Q.SETUP_WS + Q.SETUP_Q + Q.SETUP_LORE + Q.DECO + [l for k in Q.DOORS for l in Q.DOORS[k][1]] + BO.PSUM
+STAT = Q.SETUP_NPC + Q.SETUP_WS + Q.SETUP_Q + Q.SETUP_LORE + Q.DECO + DR.DOORS_CLOSE + DR.DOORS_LEGACY + BO.PSUM
 STAT.append(tdisp(0.5, 76, 0.5, [TEXT('HAVRECLAIR\n', 'gold', bold=True), TEXT("Dernière cité libre d'Ombrelune", 'gray', bold=False)], 3.0))
 for r, pts in M.SPAWN_PTS.items():
     for (x, y, z) in pts:
@@ -263,7 +273,8 @@ for fac in ('north', 'south', 'east', 'west'):
 GROUPS = {r: [] for r in RKEYS}
 cur_r = None
 for l in STAT:
-    m = re.match(r'(?:summon \S+|setblock|fill) (-?[\d.]+) (-?[\d.]+) (-?[\d.]+)', l)
+    m = re.match(r'(?:execute unless data storage \S+ \S+ run )?(?:summon \S+|setblock|fill) (-?[\d.]+) (-?[\d.]+) (-?[\d.]+)', l)
+    assert m or not re.match(r'execute .* run (?:summon|setblock|fill) ', l), f'ligne STAT préfixée non reconnue (région inconnue, elle serait rangée dans la précédente) : {l[:120]}'
     if m:
         cur_r = W.region_at(int(float(m.group(1)) // 1), int(float(m.group(3)) // 1)) or 'hub'
     if l.startswith('#') or l.startswith('function') or cur_r is None:
@@ -286,6 +297,7 @@ w('st/step', [f'execute if score $ols mg.st matches {len(RKEYS) + 1}.. run retur
   [f'execute if score $ols mg.st matches {i} in {DIM} run function mg:{P}/b/uf{i}' for i in RIDX.values()] +
   ['scoreboard players add $ols mg.st 1', 'scoreboard players set $olsw mg.st 0', f'schedule function mg:{P}/st/step 2t'])
 w('st/done', [f'data modify storage mg:ombre sv set value {SV}', 'scoreboard players set $olrl mg.st 0',
+              f'execute in {DIM} run function mg:{P}/door/catchup',          # portes refermées par la synchro pour des joueurs déjà avancés
               'tellraw @a[tag=mg.admin] {"text":"🌙 Ombrelune : PNJ et objets posés.","color":"light_purple"}'])
 w('st/check', ['# Au chargement : entités permanentes à (re)poser si le datapack les a changées', 'execute unless data storage mg:ombre built run return 0',
                f'execute unless data storage mg:ombre {{sv:{SV}}} run function mg:{P}/st/start'])
@@ -372,7 +384,7 @@ w('second', ['# Chaque seconde (dimension) : régions, lieux, quêtes, monstres,
              'effect give @a[tag=mg.olw] minecraft:saturation infinite 0 true', 'scoreboard players enable @a[tag=mg.olw] mg.oltk',
              f'execute as @a[tag=mg.olw,tag=!mg.olcine] at @s run function mg:{P}/region',
              f'execute as @a[tag=mg.olw,tag=!mg.olcine] at @s run function mg:{P}/q/gotick',
-             f'function mg:{P}/ws_tick',
+             f'function mg:{P}/ws_tick', f'function mg:{P}/door/catchup',    # une porte lointaine se rouvre quand ses chunks se chargent
              f'execute as @a[tag=mg.olw,tag=!mg.olintro,tag=!mg.olcine,scores={{mg.olch=0}}] run function mg:{P}/intro_go',
              f'execute if score $olq60 mg.st matches 0 run function mg:{P}/pois', f'execute if score $olq60 mg.st matches 40 run function mg:{P}/pois',
              f'execute if score $olq60 mg.st matches 20 as @a[tag=mg.olw,tag=!mg.olcine] at @s run function mg:{P}/hazard',
@@ -430,7 +442,7 @@ OL_UNINST = ['schedule clear mg:ombre/wb_step', 'schedule clear mg:ombre/world_b
              'schedule clear mg:ombre/st/step', 'schedule clear mg:ombre/st/check', 'schedule clear mg:ombre/boss/wake', 'kill @e[tag=mg.olport]',
              f'execute in {DIM} run kill @e[tag=mg.ol]', 'team remove mg_ol', 'team remove mg_olel', 'function mg:ombre/boss/clear',
              'data remove storage mg:ombre built', 'data remove storage mg:ombre sv', 'data remove storage mg:lobby olclean', 'data remove storage mg:lobby olsite'] + \
-            [f'data remove storage mg:ombre {k}' for k in ('q', 'c', 'd', 'o', 'en', 's', 's2', 'st', 'mb', 'ct')]
+            [f'data remove storage mg:ombre {k}' for k in ('q', 'c', 'd', 'o', 'en', 's', 's2', 'st', 'mb', 'ct', DR.DOORS_KEY)]
 # versions périmées : bio_step et mg:ombre bio (plus générés), purgés des fichiers déjà installés
 C.drop_lines('desinstaller', OL_UNINST + [OL_FORCELOAD, 'schedule clear mg:ombre/bio_step', 'data remove storage mg:ombre bio'])
 C.patch('desinstaller', 'scoreboard objectives remove mg.bw', OL_UNINST)

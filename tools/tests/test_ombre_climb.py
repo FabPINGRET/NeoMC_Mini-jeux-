@@ -8,7 +8,9 @@ clôtures, murets, portillons et barreaux (1,5 de haut) ne se montent pas.
 Hors Vox : au-dessus du sol virtuel c'est de l'air, en dessous c'est plein.
 """
 import collections
+import functools
 import math
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -29,6 +31,12 @@ DIRS = ((1, 0), (-1, 0), (0, 1), (0, -1))
 TREES = ((0, 0, 5, (10, 20, 32)), (-15, 12, 3, (10, 20)), (15, 10, 3, (10, 20)), (2, -16, 3, (10, 20)))
 CASTLE_OUT = (0, -24)          # sur la rue, devant la porte de l'enceinte (z2 = -26)
 TAVERN_OUT = (-22, 15)         # devant la porte est de la taverne (x2 = -24)
+
+
+@functools.lru_cache(maxsize=None)
+def structures():
+    """all_structures() une seule fois pour tous les tests (construction lente, SPOTS / ARENAS ne s'enrichissent qu'une fois)."""
+    return tuple(S.all_structures())
 
 
 def name(b):
@@ -54,15 +62,23 @@ class Walk:
     def ladder(self, x, y, z):
         return name(self.v.get((x, y, z))) == 'ladder'
 
+    def rises(self, x, y, z):
+        """Monter d'une case sur place (échelle au-dessus) : surchargé par les marches qui nagent."""
+        return self.ladder(x, y + 1, z)
+
+    def sinks(self, x, y, z):
+        """Descendre d'une case sur place (échelle sous les pieds ou eau dessous)."""
+        return self.ladder(x, y, z)
+
     def supported(self, x, y, z):
         return not self.free(x, y - 1, z) or self.ladder(x, y, z) or self.ladder(x, y + 1, z)
 
     def moves(self, p):
         x, y, z = p
         out = []
-        if self.ladder(x, y + 1, z) and self.free(x, y + 2, z):
+        if self.rises(x, y, z) and self.free(x, y + 1, z) and self.free(x, y + 2, z):
             out.append((x, y + 1, z))
-        if self.ladder(x, y, z) and self.free(x, y - 1, z):
+        if self.sinks(x, y, z) and self.free(x, y - 1, z):
             out.append((x, y - 1, z))
         for dx, dz in DIRS:
             nx, nz = x + dx, z + dz
@@ -99,7 +115,7 @@ def cell(spot):
 class OmbreClimb(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.vox = {n: v for n, _region, v in S.all_structures()}
+        cls.vox = {n: v for n, _region, v in structures()}
         cls.city = cls.vox['city']
 
     def floor_cells(self, reach, vox, y_feet, mat):
@@ -190,9 +206,9 @@ class OmbreClimb(unittest.TestCase):
 
     def test_ladders_emitted_after_their_back(self):
         """Reconstruction en place : une échelle posée avant son dos saute si l'ancien dos est une vitre. Même conversion que gen_ombrelune.py."""
-        for n, _region, v in S.all_structures():
+        for n, _region, v in structures():
             with self.subTest(n):
-                rank = self.emit_order(v.cmds(late=('ladder',)))
+                rank = self.emit_order(K.struct_cmds(v))
                 bad = []
                 for (x, y, z), b in v.v.items():
                     if name(b) != 'ladder':
@@ -202,6 +218,12 @@ class OmbreClimb(unittest.TestCase):
                     if back in v.v and rank[back] > rank[(x, y, z)]:
                         bad.append(((x, y, z), back))
                 self.assertEqual(bad, [], 'échelle émise avant son dos')
+
+    def test_generator_uses_struct_cmds(self):
+        """Garde de source : gen_ombrelune écrit les structures via struct_cmds (échelles en fin de passe), pas via un v.cmds() nu."""
+        src = (ARCADE / 'gen_ombrelune.py').read_text(encoding='utf-8')
+        self.assertIn('S.struct_cmds(v)', src)
+        self.assertIsNone(re.search(r'\bv\.cmds\(', src), 'gen_ombrelune appelle v.cmds() directement')
 
 
 if __name__ == '__main__':

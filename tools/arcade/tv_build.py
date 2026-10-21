@@ -199,6 +199,7 @@ class Vox:
         """Commandes fill : par couche, rectangles de même bloc fusionnés (glouton).
         late : noms de blocs (sans minecraft: ni état) émis dans une passe finale, après toute la structure. Reconstruction en place : une
         échelle (ou autre bloc à support) posée avant son dos saute si l'ancien dos est non porteur (vitre...) et ne revient pas."""
+        late = frozenset(late)
         out = []
         layers, late_layers = {}, {}
         for (x, y, z), b in self.v.items():
