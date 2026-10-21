@@ -7,7 +7,8 @@
 Les arènes sont posées par gen_duel_maps.py ; la liste et les invitations viennent de duel_invite.py ; le combat
 (tick, lunette, tir, manches) de duel_play.py.
 Flux : bouton « Défier en duel » (trigger mg.duel 1) -> liste cliquable (trigger 1000 + id du joueur) -> invitation
-de 30 s (2 = accepter, 3 = refuser, 4 = annuler ; 5 = abandonner pendant le duel) -> duel dans une arène libre au hasard, premier à 3 manches.
+de 30 s (2 = accepter, 3 = refuser, 4 = annuler ; 5 = abandonner pendant le duel ; 6 = rouvrir la fenêtre d'invitation, 7 = « Plus tard ») ->
+duel dans une arène libre au hasard, premier à 3 manches. L'invité reçoit une fenêtre (dialog) et une ligne de chat de secours.
 Armes : le sniper (clic gauche = tir, clic droit = lunette) et un couteau (clic gauche, advancement mg:duel_melee, 1 dégât).
 Aucun jeu n'est lancé : le duelliste est en « pause » (mg.spectate) tant que dure le duel (s'il y était déjà, le tag
 mg.dlpz le mémorise). Occupé = un des tags de la fonction duel/busy (partie, plot, parcours, élytres, kart...).
@@ -32,7 +33,7 @@ OBJ = [('mg.duel', 'trigger'), ('mg.dlid', 'dummy'), ('mg.dlto', 'dummy'), ('mg.
        ('mg.dlhp', 'dummy'), ('mg.dlr', 'dummy'), ('mg.dlcd', 'dummy'), ('mg.dlkc', 'dummy'),
        ('mg.dlw', 'dummy ' + js({'text': '⚔ Duels gagnés', 'color': 'gold'}))]
 TAGS = ['mg.dl', 'mg.dla', 'mg.dlp', 'mg.dlsc', 'mg.dlcr', 'mg.dlsh', 'mg.dlvc', 'mg.dlwn', 'mg.dlsp', 'mg.dlrq', 'mg.dlca',
-        'mg.dltg', 'mg.dlt2', 'mg.dlq', 'mg.dlfl', 'mg.dlpz']
+        'mg.dltg', 'mg.dlt2', 'mg.dlq', 'mg.dlfl', 'mg.dlpz', 'mg.dlui']
 NO_REPLY = 'execute if entity @s[tag=mg.dl] run return run ' + say('@s', tx('⚔ Duel en cours : termine-le (ou abandonne-le) avant.', 'red'))
 
 
@@ -75,17 +76,19 @@ def basics():
     w('duel/load', ['# Duel sniper : objectifs (à appeler depuis core/load)'] + [f'scoreboard objectives add {n} {c}' for n, c in OBJ])
     w('duel/remove', ['# Duel sniper : désinstallation (à appeler depuis mg:desinstaller)',
                       'execute as @a[tag=mg.dl] run function mg:duel/stop',
+                      'execute as @a[tag=mg.dlui] run dialog clear @s',
                       'kill @e[type=minecraft:marker,tag=mg.dlend]',
                       'function mg:duel/build_clear',
                       'data remove storage mg:duel built',
-                      'data remove storage mg:duel m']
+                      'data remove storage mg:duel m',
+                      'data remove storage mg:duel inv']
       + [f'tag @a remove {t}' for t in TAGS if t != 'mg.dl']
       + [f'scoreboard objectives remove {n}' for n, c in OBJ]
       + ['# objectif d\'une version de développement antérieure (absent d\'un monde neuf : sans effet)',
          'scoreboard objectives remove mg.dlsp0'])
     w('duel/cmd', [
         '# Trigger mg.duel (@s = joueur) : 1 = liste des adversaires, 2 = accepter, 3 = refuser, 4 = annuler son invitation (sans effet pendant un duel),',
-        '# 5 = abandonner le duel (sans effet hors duel),',
+        '# 5 = abandonner le duel (sans effet hors duel), 6 = rouvrir la fenêtre d\'invitation, 7 = « Plus tard » (fenêtre fermée, invitation gardée),',
         '# 1000 + id = défier le joueur d\'id mg.dlid (liste cliquable). Remis à zéro d\'abord (core/tick le réactive)',
         'scoreboard players operation #dlv mg.st = @s mg.duel',
         'scoreboard players reset @s mg.duel',
@@ -94,6 +97,9 @@ def basics():
         'execute if score #dlv mg.st matches 3 run function mg:duel/refuse',
         'execute if score #dlv mg.st matches 4 run function mg:duel/cancel',
         'execute if score #dlv mg.st matches 5 if entity @s[tag=mg.dl] run function mg:duel/forfeit',
+        'execute if score #dlv mg.st matches 6 if score @s mg.dlto matches 1.. run function mg:duel/inv_show',
+        'execute if score #dlv mg.st matches 6 unless score @s mg.dlto matches 1.. run ' + say('@s', tx('Tu n\'as aucune invitation de duel en attente.')),
+        'execute if score #dlv mg.st matches 7 run tag @s remove mg.dlui',
         'execute if score #dlv mg.st matches 1000.. run function mg:duel/challenge',
     ])
     w('duel/busy', ['# @s occupé ? -> $dlb = 1 (partie, plot, parcours, élytres, kart, duel...) ; l\'invitation en cours (mg.dlrq) est testée à part',
@@ -107,6 +113,7 @@ def basics():
     w('duel/reconnect', ['# Joueur reconnecté (core/reconnect, @s = joueur) : duel périmé et invitations effacés',
                          'execute if entity @s[tag=mg.dl] run function mg:duel/stop',
                          'tag @s remove mg.dlrq',
+                         'tag @s remove mg.dlui',
                          'scoreboard players reset @s mg.dlto',
                          'scoreboard players reset @s mg.dlx'])
 
@@ -138,7 +145,8 @@ def start():
     w('duel/fail_map', [say('@s', tx('⚔ Aucune arène libre pour le moment : invitation annulée.')),
                         say('@a[tag=mg.dlca]', tx('⚔ Aucune arène libre pour le moment : invitation annulée.')), 'function mg:duel/inv_end'])
     w('duel/inv_end', ['# Ferme l\'invitation (@s = invité ; le défieur porte mg.dlca)',
-                       'tag @a[tag=mg.dlca] remove mg.dlrq', 'scoreboard players reset @s mg.dlto', 'scoreboard players reset @s mg.dlx'])
+                       'tag @a[tag=mg.dlca] remove mg.dlrq', 'tag @s remove mg.dlui',
+                       'scoreboard players reset @s mg.dlto', 'scoreboard players reset @s mg.dlx'])
     pick = ['# Arène libre au hasard -> $dli (1 Canyon, 2 Ville, 3 Glacier ; 0 = aucune ou pas encore construites ; sans duel en cours ni TDM ($tma))',
             'scoreboard players set $dli mg.st 0',
             'execute unless data storage mg:duel {built:1b} run return 0',

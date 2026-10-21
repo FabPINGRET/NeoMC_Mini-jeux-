@@ -1,0 +1,3 @@
+# Invitation déjà reçue (@s = invité) : ligne de chat de secours, puis la fenêtre est rouverte
+tellraw @s [{"text":"Tu as reçu une invitation de duel : ","color":"gray"},{"text":"[✔ Accepter]","color":"green","bold":true,"click_event":{"action":"run_command","command":"trigger mg.duel set 2"},"hover_event":{"action":"show_text","value":"Relever le défi"}},{"text":" ","color":"gray"},{"text":"[✘ Refuser]","color":"red","bold":true,"click_event":{"action":"run_command","command":"trigger mg.duel set 3"},"hover_event":{"action":"show_text","value":"Refuser le défi"}},{"text":" avant d'en lancer une.","color":"gray"}]
+function mg:duel/inv_show

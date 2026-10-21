@@ -1,7 +1,7 @@
 # Contrôles puis invitation (@s = défieur ; l'adversaire porte mg.dltg)
 execute if entity @s[tag=mg.dlrq] run function mg:duel/rq_check
 execute if entity @s[tag=mg.dlrq] run return run tellraw @s [{"text":"Tu as déjà une invitation en cours : ","color":"gray"},{"text":"[Annuler]","color":"red","bold":true,"click_event":{"action":"run_command","command":"trigger mg.duel set 4"},"hover_event":{"action":"show_text","value":"Annuler l'invitation"}}]
-execute if score @s mg.dlto matches 1.. run return run tellraw @s [{"text":"Tu as reçu une invitation de duel : ","color":"gray"},{"text":"[✔ Accepter]","color":"green","bold":true,"click_event":{"action":"run_command","command":"trigger mg.duel set 2"},"hover_event":{"action":"show_text","value":"Relever le défi"}},{"text":" ","color":"gray"},{"text":"[✘ Refuser]","color":"red","bold":true,"click_event":{"action":"run_command","command":"trigger mg.duel set 3"},"hover_event":{"action":"show_text","value":"Refuser le défi"}},{"text":" avant d'en lancer une.","color":"gray"}]
+execute if score @s mg.dlto matches 1.. run return run function mg:duel/pending
 function mg:duel/busy
 execute if score $dlb mg.st matches 1 run return run tellraw @s [{"text":"Tu ne peux pas défier maintenant (partie ou activité en cours).","color":"gray"}]
 execute unless entity @a[tag=mg.dltg] run return run tellraw @s [{"text":"Ce joueur n'est plus là.","color":"gray"}]
@@ -16,5 +16,7 @@ execute unless score @s mg.dlid matches 1.. run function mg:duel/new_id
 scoreboard players operation @a[tag=mg.dltg,limit=1] mg.dlto = @s mg.dlid
 scoreboard players set @a[tag=mg.dltg,limit=1] mg.dlx 600
 tag @s add mg.dlrq
-tellraw @a[tag=mg.dltg,limit=1] [{"selector":"@s","color":"yellow","bold":true},{"text":" te défie en duel sniper 1v1 (30 s) : ","color":"gray"},{"text":"[✔ Accepter]","color":"green","bold":true,"click_event":{"action":"run_command","command":"trigger mg.duel set 2"},"hover_event":{"action":"show_text","value":"Relever le défi"}},{"text":" ","color":"gray"},{"text":"[✘ Refuser]","color":"red","bold":true,"click_event":{"action":"run_command","command":"trigger mg.duel set 3"},"hover_event":{"action":"show_text","value":"Refuser le défi"}}]
+tellraw @a[tag=mg.dltg,limit=1] [{"selector":"@s","color":"yellow","bold":true},{"text":" te défie en duel sniper 1v1 (30 s) : ","color":"gray"},{"text":"[✔ Accepter]","color":"green","bold":true,"click_event":{"action":"run_command","command":"trigger mg.duel set 2"},"hover_event":{"action":"show_text","value":"Relever le défi"}},{"text":" ","color":"gray"},{"text":"[✘ Refuser]","color":"red","bold":true,"click_event":{"action":"run_command","command":"trigger mg.duel set 3"},"hover_event":{"action":"show_text","value":"Refuser le défi"}},{"text":" ","color":"gray"},{"text":"[Répondre]","color":"gold","bold":true,"click_event":{"action":"run_command","command":"trigger mg.duel set 6"},"hover_event":{"action":"show_text","value":"Rouvrir la fenêtre"}}]
+# pas de fenêtre d'office pendant la note de fin de partie (mg.rate) : la ligne de chat et [Répondre] suffisent
+execute as @a[tag=mg.dltg,tag=!mg.rate,limit=1] run function mg:duel/inv_show
 tellraw @s [{"text":"⚔ Défi envoyé à ","color":"gray"},{"selector":"@a[tag=mg.dltg,limit=1]","color":"white"},{"text":" (30 s) ","color":"gray"},{"text":"[Annuler]","color":"red","bold":true,"click_event":{"action":"run_command","command":"trigger mg.duel set 4"},"hover_event":{"action":"show_text","value":"Annuler l'invitation"}}]
