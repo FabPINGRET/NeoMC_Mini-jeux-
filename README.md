@@ -206,7 +206,7 @@ Une fois dans le monde, un joueur **OP** tape :
 
 Le datapack construit alors **tout** : lobby, toutes les arènes, règles de jeu, spawn. C'est prêt en ~5 secondes. Celui qui lance la commande devient **admin** et reçoit l'objet **≡ MENU** ; les autres joueurs sont simplement téléportés au lobby.
 
-Pour nommer d'autres admins : `/function mg:admin` (en étant OP) ou `/tag <joueur> add mg.admin`.
+Pour nommer d'autres admins : `/function mg:admin` (en étant OP) ou `/tag <joueur> add mg.admin`. Si `mg:setup` est lancé pour la première fois depuis la console du serveur (ou rcon), le premier joueur présent au lobby à la fin de l'installation (ou, s'il n'y en a aucun, le premier qui se connecte) devient admin.
 
 Optionnel : `/function mg:nettoyer_plateforme` efface la petite plateforme de départ du préréglage « Le Néant ».
 
