@@ -2,5 +2,6 @@
   "model": {
     "type": "minecraft:model",
     "model": "mg:item/gun_raygun"
-  }
+  },
+  "hand_animation_on_swap": false
 }

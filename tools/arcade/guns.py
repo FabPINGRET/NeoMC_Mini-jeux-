@@ -6,8 +6,14 @@ cadence mg.gcd. Rayon par pas de 0,4 bloc ; cibles = entités taguées mg.gtg (z
 Dégâts sur les mobs : on retire directement de la vie (pas d'invulnérabilité entre deux balles), coup fatal via
 `damage … by <tireur>` pour que le kill soit crédité. Sur les joueurs : `damage … by <tireur>`.
 Overlay de recharge dans la hotbar : composant use_cooldown (groupes mg:gun<n>) posé avant le clic qui vide le chargeur, variante
-marquée par custom_data gcr (voir gun/cd_*) ; cadence du Sniper aussi. Limites : recharge par accroupi / Q, Neo GTA et lobby sans overlay ;
+marquée par custom_data gcr (voir gun/cd_*) ; cadence du Sniper aussi. Limites : recharge par accroupi / Q sans overlay ;
 fenêtre d'1 tick après un achat (Speed Cola, munitions : zm/tick passe après gun/tick), où l'overlay peut être celui de l'état précédent.
+Lobby et Neo GTA : pas d'use_cooldown (tir au clic gauche, gcd partagé) mais une barre de durabilité (gun/bar, appelée par lobby/guns_tick
+et gta/tick) : recharge de l'arme en main et cadence du Sniper seule ; en Neo GTA, gcd étant partagé, un Sniper en main montre aussi (sur 30 ticks) le gcd laissé par une autre arme ou le bazooka.
+Une arme qui n'est plus l'objet en main (autre case, main gauche) est remise à zéro par gun/bar_clear (hotbar.0..8 et main gauche, garde unbreakable).
+Limite : une arme jetée (Q) pendant la recharge n'est plus dans l'inventaire et garde sa barre au sol.
+La barre change le damage de l'objet à chaque tick : les définitions mg/items/gun_*.json portent hand_animation_on_swap:false (sinon l'animation de
+changement d'objet se rejouerait) ; le repli minecraft:crossbow ($rp ≠ 1, sans pack) n'a pas ce réglage et continue de s'animer.
 """
 import common as C
 
@@ -163,6 +169,41 @@ def build():
                       'execute if score @s mg.gcd matches 1.. run return run function mg:gun/cd_n'] +
       [f'execute if items entity @s weapon.mainhand *[custom_data~{{gun:{n}}}] if score @s mg.g{n} matches ..1 run return run function mg:gun/cd_r {{n:{n},s:{g[5] / 20:g},h:{g[5] // 2 / 20:g}}}' for n, g in GUNS.items()] +
       ['function mg:gun/cd_n'])
+    # Barre de durabilité (lobby, Neo GTA) : le tir au clic gauche / le gcd partagé ne passent pas par use_cooldown (réservé à Zombies et
+    # Infection). La barre se REMPLIT au fil de la recharge (ou de la cadence du Sniper) : set_damage prend la fraction de durabilité
+    # restante (1 = barre pleine), donc damage = (total - reste) / total, soit la progression. Les faux joueurs $gbt (durée totale),
+    # $gbr (ticks restants) et $gbar (millièmes) sont sur mg.st. L'objet est posé « unbreakable » : on retire le composant pour
+    # afficher la barre (dans le même item modify, avant set_damage qui ignore un objet incassable) puis on le remet à la fin.
+    w('gun/bar_set', ['# @s tient une arme : barre de durabilité = progression ($gbt = durée totale, $gbr = ticks restants)',
+                      'execute unless score $gbt mg.st matches 1.. run return 0',
+                      'scoreboard players operation $gbar mg.st = $gbt mg.st', 'scoreboard players operation $gbar mg.st -= $gbr mg.st',
+                      'scoreboard players set #1000 mg.st 1000', 'scoreboard players operation $gbar mg.st *= #1000 mg.st',
+                      'scoreboard players operation $gbar mg.st /= $gbt mg.st',
+                      'execute if score $gbar mg.st matches ..0 run scoreboard players set $gbar mg.st 1',   # set_damage 0 = objet « cassé »
+                      'execute if score $gbar mg.st matches 1000.. run scoreboard players set $gbar mg.st 999',
+                      'item modify entity @s weapon.mainhand [{function:"minecraft:set_components",components:{"!minecraft:unbreakable":{}}},'
+                      '{function:"minecraft:set_damage",damage:{type:"minecraft:score",target:{type:"minecraft:fixed",name:"$gbar"},score:"mg.st",scale:0.001}}]'])
+    bar = ['# @s tient une arme mg_gun (lobby, Neo GTA) : barre de durabilité pendant la recharge, puis pendant la cadence du Sniper',
+           '# La recharge est celle de l\'arme en main seulement (mg.grt) ; gcd est partagé en Neo GTA : la cadence du Sniper n\'est montrée que s\'il n\'y a pas de recharge',
+           'scoreboard players set $gbt mg.st 0',
+           'execute if score @s mg.grl matches 1.. run scoreboard players operation $gbr mg.st = @s mg.grl',
+           'execute unless score @s mg.grl matches 1.. if score @s mg.gcd matches 1.. run scoreboard players operation $gbr mg.st = @s mg.gcd']
+    bar += [f'execute if score @s mg.grl matches 1.. if score @s mg.grt matches {n} if items entity @s weapon.mainhand *[custom_data~{{gun:{n}}}] run scoreboard players set $gbt mg.st {g[5]}'
+            for n, g in GUNS.items()]
+    bar += [f'execute unless score @s mg.grl matches 1.. if score @s mg.gcd matches 1.. if items entity @s weapon.mainhand *[custom_data~{{gun:{SNP}}}] run scoreboard players set $gbt mg.st {GUNS[SNP][3]}',
+            'execute if score $gbt mg.st matches 1.. run return run function mg:gun/bar_set',
+            '# Rien à montrer : on remet à zéro toute arme restée avec une barre (celle qui vient de finir sa recharge comprise)',
+            'function mg:gun/bar_clear']
+    w('gun/bar', bar)
+    # Remise à zéro (incassable, intact) de chaque arme mg_gun qui n'est plus incassable : hotbar.0..8 et main gauche. Les objets déjà incassables
+    # (tout l'inventaire hors recharge, bazooka du lobby compris : lrpg porte mg_gun + unbreakable) ne sont pas touchés. Garde en tête : un seul
+    # test (hotbar.* puis main gauche) tant qu'aucune barre ne traîne, donc coût minime les ticks sans recharge. Le bazooka GTA (rpg:1b seul)
+    # n'a pas mg_gun. Appelée par gun/bar (rien à montrer) et par lobby/guns_tick, gta/tick quand l'objet en main n'est pas l'arme à barre.
+    bar_off = '*[custom_data~{mg_gun:1b},!minecraft:unbreakable]'
+    reset = '{function:"minecraft:set_components",components:{"minecraft:unbreakable":{},"minecraft:damage":0}}'
+    w('gun/bar_clear', ['# @s : toute arme mg_gun sans unbreakable (barre de durabilité figée) redevient incassable et intacte (hotbar.0..8, main gauche)',
+                        f'execute unless items entity @s hotbar.* {bar_off} unless items entity @s weapon.offhand {bar_off} run return 0'] +
+      [f'execute if items entity @s {s} {bar_off} run item modify entity @s {s} {reset}' for s in [f'hotbar.{i}' for i in range(9)] + ['weapon.offhand']])
     w('gun/tick', ['# Armes : à appeler chaque tick par le jeu',
                    'execute as @a[tag=mg.play,scores={mg.qs=1..}] at @s run function mg:gun/use',
                    'scoreboard players reset @a[scores={mg.qs=1..}] mg.qs',

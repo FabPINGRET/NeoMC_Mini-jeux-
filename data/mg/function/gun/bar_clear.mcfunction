@@ -1,0 +1,12 @@
+# @s : toute arme mg_gun sans unbreakable (barre de durabilité figée) redevient incassable et intacte (hotbar.0..8, main gauche)
+execute unless items entity @s hotbar.* *[custom_data~{mg_gun:1b},!minecraft:unbreakable] unless items entity @s weapon.offhand *[custom_data~{mg_gun:1b},!minecraft:unbreakable] run return 0
+execute if items entity @s hotbar.0 *[custom_data~{mg_gun:1b},!minecraft:unbreakable] run item modify entity @s hotbar.0 {function:"minecraft:set_components",components:{"minecraft:unbreakable":{},"minecraft:damage":0}}
+execute if items entity @s hotbar.1 *[custom_data~{mg_gun:1b},!minecraft:unbreakable] run item modify entity @s hotbar.1 {function:"minecraft:set_components",components:{"minecraft:unbreakable":{},"minecraft:damage":0}}
+execute if items entity @s hotbar.2 *[custom_data~{mg_gun:1b},!minecraft:unbreakable] run item modify entity @s hotbar.2 {function:"minecraft:set_components",components:{"minecraft:unbreakable":{},"minecraft:damage":0}}
+execute if items entity @s hotbar.3 *[custom_data~{mg_gun:1b},!minecraft:unbreakable] run item modify entity @s hotbar.3 {function:"minecraft:set_components",components:{"minecraft:unbreakable":{},"minecraft:damage":0}}
+execute if items entity @s hotbar.4 *[custom_data~{mg_gun:1b},!minecraft:unbreakable] run item modify entity @s hotbar.4 {function:"minecraft:set_components",components:{"minecraft:unbreakable":{},"minecraft:damage":0}}
+execute if items entity @s hotbar.5 *[custom_data~{mg_gun:1b},!minecraft:unbreakable] run item modify entity @s hotbar.5 {function:"minecraft:set_components",components:{"minecraft:unbreakable":{},"minecraft:damage":0}}
+execute if items entity @s hotbar.6 *[custom_data~{mg_gun:1b},!minecraft:unbreakable] run item modify entity @s hotbar.6 {function:"minecraft:set_components",components:{"minecraft:unbreakable":{},"minecraft:damage":0}}
+execute if items entity @s hotbar.7 *[custom_data~{mg_gun:1b},!minecraft:unbreakable] run item modify entity @s hotbar.7 {function:"minecraft:set_components",components:{"minecraft:unbreakable":{},"minecraft:damage":0}}
+execute if items entity @s hotbar.8 *[custom_data~{mg_gun:1b},!minecraft:unbreakable] run item modify entity @s hotbar.8 {function:"minecraft:set_components",components:{"minecraft:unbreakable":{},"minecraft:damage":0}}
+execute if items entity @s weapon.offhand *[custom_data~{mg_gun:1b},!minecraft:unbreakable] run item modify entity @s weapon.offhand {function:"minecraft:set_components",components:{"minecraft:unbreakable":{},"minecraft:damage":0}}
