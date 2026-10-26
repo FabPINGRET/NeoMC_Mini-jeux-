@@ -47,9 +47,7 @@ execute store result storage mg:zm hpf int 1 run scoreboard players get $zx mg.s
 scoreboard players operation $zx mg.st = $zhp mg.st
 scoreboard players operation $zx mg.st *= #3 mg.st
 execute store result storage mg:zm hpb int 1 run scoreboard players get $zx mg.st
-scoreboard players operation $zx mg.st = $zhp mg.st
-scoreboard players operation $zx mg.st /= #2 mg.st
-execute store result storage mg:zm hpd int 1 run scoreboard players get $zx mg.st
+execute store result storage mg:zm hpd int 1 run scoreboard players get $zhp mg.st
 scoreboard players operation $zx mg.st = $zsp mg.st
 scoreboard players add $zx mg.st 7
 execute store result storage mg:zm spf double 0.01 run scoreboard players get $zx mg.st
