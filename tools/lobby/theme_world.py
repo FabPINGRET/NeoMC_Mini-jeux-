@@ -88,6 +88,54 @@ def apply(line, dynamic):
                     W[k] = blk
 
 
+def clear_box(line):
+    """Boîte (x1, x2, y1, y2, z1, z2, filtre) effacée par un fill / setblock d'air simple, coupée comme apply(), sinon None.
+    filtre = bloc après « replace » (None : tout est effacé ; un #tag reste tel quel). `keep` n'efface rien : None."""
+    m = CMD.match(line.strip())
+    if not m:
+        return None
+    blk, mode = block_and_mode(m[8])
+    if blk not in ('minecraft:air', 'air') or (mode and mode[0] == 'keep'):
+        return None
+    x1, y1, z1 = int(m[2]), int(m[3]), int(m[4])
+    x2, y2, z2 = (x1, y1, z1) if m[5] is None else (int(m[5]), int(m[6]), int(m[7]))
+    xa, xb = clip(x1, x2)
+    za, zb = clip(z1, z2)
+    if xa > xb or za > zb:
+        return None
+    filt = None
+    if m[1] == 'fill' and len(mode) > 1 and mode[0] == 'replace':
+        filt = mode[1]
+        if not filt.startswith('#') and ':' not in filt.split('[')[0]:
+            filt = 'minecraft:' + filt
+    return xa, xb, min(y1, y2), max(y1, y2), za, zb, filt
+
+
+def other_dimension(lines):
+    """Vrai si la fonction (lignes déjà lues) construit dans une autre dimension (ex. terra/b) : hors lobby."""
+    return bool(lines) and 'dimension mg:' in lines[0]
+
+
+def clears(F):
+    """Effacements d'air du lobby posés par les autres fonctions de F (Hall, */spawn_clean, portails...) : liste de
+    (chemin relatif à F, n° de ligne, boîte de clear_box). Ignore les build_N du spawn (gen_lobby les écrit), desinstaller
+    et les fonctions d'une autre dimension, comme load()."""
+    out = []
+    for p in sorted(glob.glob(os.path.join(F, '**', '*.mcfunction'), recursive=True)):
+        rel = os.path.relpath(p, F).replace(os.sep, '/')
+        if re.fullmatch(r'lobby/build_\d+\.mcfunction', rel) or rel == 'desinstaller.mcfunction':
+            continue
+        with open(p, encoding='utf-8') as f:
+            lines = f.readlines()
+        if other_dimension(lines):
+            continue
+        for i, l in enumerate(lines, 1):
+            b = clear_box(l)
+            if b:
+                out.append((rel, i, b))
+    return out
+
+
 def num(p):
     m = re.search(r'build_(\d+)', p)
     return int(m[1]) if m else 99
@@ -115,7 +163,7 @@ def load(F):
             continue
         with open(p, encoding='utf-8') as f:
             lines = f.readlines()
-        if lines and 'dimension mg:' in lines[0]:      # construit dans une autre dimension (ex. terra/b) : hors lobby
+        if other_dimension(lines):      # construit dans une autre dimension (ex. terra/b) : hors lobby
             continue
         for l in lines:
             if l.startswith(('setblock ', 'fill ')):

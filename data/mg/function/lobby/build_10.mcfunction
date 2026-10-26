@@ -1,9 +1,4 @@
 # Spawn, partie 10/11 (généré par tools/lobby/gen_lobby.py)
-setblock -42 65 -24 minecraft:light[level=12] strict
-setblock -42 65 -12 minecraft:light[level=12] strict
-setblock -42 65 -11 minecraft:cracked_stone_bricks strict
-setblock -42 65 -6 minecraft:light[level=12] strict
-setblock -42 65 6 minecraft:light[level=12] strict
 fill -42 65 11 -41 65 11 minecraft:stone_bricks strict
 setblock -42 65 12 minecraft:light[level=12] strict
 fill -42 65 200 -41 65 200 minecraft:barrier strict
@@ -1188,7 +1183,6 @@ fill -57 68 -11 -57 69 -10 minecraft:stone_bricks strict
 fill -57 68 -9 -57 69 -9 minecraft:mossy_stone_bricks strict
 fill -57 68 9 -57 68 11 minecraft:stone_bricks strict
 fill -56 68 -18 -38 68 -16 minecraft:spruce_slab strict
-setblock -56 68 32 minecraft:lantern strict
 fill -56 68 35 -56 69 36 minecraft:oak_leaves[persistent=true] strict
 fill -56 68 38 -56 69 39 minecraft:oak_leaves[persistent=true] strict
 fill -55 68 36 -55 68 39 minecraft:oak_leaves[persistent=true] strict
@@ -1377,12 +1371,9 @@ setblock -6 68 37 minecraft:red_concrete strict
 setblock -5 68 -13 minecraft:lantern strict
 setblock -5 68 13 minecraft:lantern strict
 setblock -4 68 -37 minecraft:lantern strict
-setblock -4 68 -17 minecraft:lantern strict
-setblock -4 68 17 minecraft:lantern strict
 setblock 0 68 60 minecraft:white_concrete strict
 setblock 0 68 72 minecraft:white_concrete strict
 setblock 4 68 -37 minecraft:lantern strict
-setblock 4 68 -17 minecraft:lantern strict
 setblock 4 68 17 minecraft:lantern strict
 setblock 5 68 -13 minecraft:lantern strict
 setblock 5 68 13 minecraft:lantern strict
@@ -1425,7 +1416,6 @@ fill 16 68 -55 16 69 -53 minecraft:birch_leaves[persistent=true] strict
 fill 16 68 -17 18 68 -13 minecraft:cherry_leaves[persistent=true] strict
 fill 16 68 17 16 69 19 minecraft:red_mushroom_block strict
 fill 17 68 -53 17 68 -52 minecraft:birch_leaves[persistent=true] strict
-setblock 17 68 -4 minecraft:lantern strict
 setblock 17 68 4 minecraft:lantern strict
 fill 18 68 -55 18 69 -53 minecraft:birch_leaves[persistent=true] strict
 fill 19 68 -54 19 69 -54 minecraft:birch_leaves[persistent=true] strict
@@ -2999,4 +2989,14 @@ setblock 126 88 -2 minecraft:sea_lantern strict
 fill 126 88 -1 126 88 1 minecraft:smooth_quartz strict
 setblock 126 88 2 minecraft:sea_lantern strict
 setblock 126 88 11 minecraft:amethyst_block strict
+fill 127 88 -1 127 88 1 minecraft:sea_lantern strict
+setblock 129 88 10 minecraft:end_stone_bricks strict
+setblock 131 88 8 minecraft:lantern[hanging=true] strict
+fill -38 89 29 -38 89 33 minecraft:dirt strict
+fill -37 89 28 -37 89 34 minecraft:dirt strict
+fill -36 89 27 -36 89 34 minecraft:dirt strict
+fill -35 89 27 -35 89 28 minecraft:dirt strict
+fill -35 89 29 -35 89 35 minecraft:coarse_dirt strict
+fill -34 89 27 -33 89 27 minecraft:dirt strict
+fill -34 89 28 -33 89 35 minecraft:coarse_dirt strict
 schedule function mg:lobby/build_11 1t

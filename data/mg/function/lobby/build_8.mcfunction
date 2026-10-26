@@ -2082,7 +2082,6 @@ setblock -56 64 -15 minecraft:red_tulip strict
 setblock -56 64 -11 minecraft:deepslate_bricks strict
 fill -56 64 -9 -56 65 -9 minecraft:mossy_stone_bricks strict
 setblock -56 64 11 minecraft:deepslate_bricks strict
-setblock -56 64 32 minecraft:chiseled_stone_bricks strict
 fill -56 64 37 -56 69 37 minecraft:oak_log strict
 setblock -56 64 41 minecraft:short_grass strict
 setblock -56 64 43 minecraft:short_grass strict
@@ -2999,4 +2998,5 @@ setblock -19 64 5 minecraft:orange_tulip strict
 setblock -19 64 7 minecraft:short_grass strict
 setblock -19 64 15 minecraft:short_grass strict
 setblock -19 64 19 minecraft:short_grass strict
+setblock -19 64 21 minecraft:cornflower strict
 schedule function mg:lobby/build_9 1t
