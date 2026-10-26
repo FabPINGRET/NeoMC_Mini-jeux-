@@ -331,7 +331,7 @@ w('zm/revive', ['# @s revient (pistolet + couteau)', 'tag @s remove mg.zdead', '
 w('zm/second', ['# Chaque seconde : zombies tombés hors de la carte ou perdus',
                 'execute as @e[tag=mg.zz] at @s if entity @s[y=-64,dy=139] run function mg:zm/lost',
                 'execute as @e[tag=mg.zz] at @s unless entity @a[tag=mg.play,tag=!mg.zdead,distance=..48] run function mg:zm/lost',
-                'function mg:zx/second',
+                'function mg:zx/second', 'execute if score $zleft mg.st matches ..0 run effect give @e[tag=mg.zz] minecraft:glowing infinite 0 true',
                 'execute if score $zph mg.st matches 1 run title @a[tag=mg.play] actionbar [{"text":"🧟 Manche ","color":"dark_green"},{"score":{"name":"$zr","objective":"mg.st"},"color":"green","bold":true},{"text":" — restants : ","color":"gray"},{"score":{"name":"$zal","objective":"mg.st"},"color":"yellow"},{"text":" + ","color":"gray"},{"score":{"name":"$zleft","objective":"mg.st"},"color":"yellow"}]'])
 w('zm/lost', ['# @s (zombie) perdu : réapparaît dans un enclos ouvert',
               'execute at @e[type=minecraft:marker,tag=mg.zsp,tag=mg.zon,sort=random,limit=1] run tp @s ~ ~ ~'])
