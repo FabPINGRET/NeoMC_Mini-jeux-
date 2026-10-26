@@ -56,6 +56,10 @@ MAPS = [
                             p=dict(Z=39800, layout='hopital', name='Hôpital'))),
     ('gen_zombies.py', dict(sfx='7', keys=['zmode', 'zm', 'inf'], ids={'97': 237, '98': 238}, entry='zmode', label='Mine',
                             p=dict(Z=40200, layout='mine', name='Mine'))),
+    ('gen_zombies.py', dict(sfx='8', keys=['zmode', 'zm', 'inf'], ids={'97': 247, '98': 248}, entry='zmode', label='Catacombes',
+                            p=dict(Z=42100, layout='catacombes', name='Catacombes'))),
+    ('gen_zombies.py', dict(sfx='9', keys=['zmode', 'zm', 'inf'], ids={'97': 249, '98': 250}, entry='zmode', label='Thermes',
+                            p=dict(Z=42500, layout='thermes', name='Thermes'))),
 ]
 for script, cfg in MAPS:
     env = dict(os.environ, NEOMC_MAP=json.dumps(cfg, ensure_ascii=False))
