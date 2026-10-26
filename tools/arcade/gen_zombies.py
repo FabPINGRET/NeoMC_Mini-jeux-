@@ -279,14 +279,13 @@ w('zm/round_start', ['# Nouvelle manche : nombre, vie et vitesse des zombies', '
                      'execute if score $zsj mg.st matches ..3 run scoreboard players set $zsj mg.st 4',
                      'execute store result storage mg:zm hp int 1 run scoreboard players get $zhp mg.st',
                      'execute store result storage mg:zm sp double 0.01 run scoreboard players get $zsp mg.st',
-                     # variantes : rapides et rampants (vie ×0,6, +0,07 vitesse), brutes (vie ×3, −0,03), chiens (vie ×0,5, +0,12)
+                     # variantes : rapides et rampants (vie ×0,6, +0,07 vitesse), brutes (vie ×3, −0,03), chiens (vie ×1, +0,12)
                      'scoreboard players set #10 mg.st 10', 'scoreboard players set #6 mg.st 6',
                      'scoreboard players operation $zx mg.st = $zhp mg.st', 'scoreboard players operation $zx mg.st *= #6 mg.st', 'scoreboard players operation $zx mg.st /= #10 mg.st',
                      'execute store result storage mg:zm hpf int 1 run scoreboard players get $zx mg.st',
                      'scoreboard players operation $zx mg.st = $zhp mg.st', 'scoreboard players operation $zx mg.st *= #3 mg.st',
                      'execute store result storage mg:zm hpb int 1 run scoreboard players get $zx mg.st',
-                     'scoreboard players operation $zx mg.st = $zhp mg.st', 'scoreboard players operation $zx mg.st /= #2 mg.st',
-                     'execute store result storage mg:zm hpd int 1 run scoreboard players get $zx mg.st',
+                     'execute store result storage mg:zm hpd int 1 run scoreboard players get $zhp mg.st',
                      'scoreboard players operation $zx mg.st = $zsp mg.st', 'scoreboard players add $zx mg.st 7',
                      'execute store result storage mg:zm spf double 0.01 run scoreboard players get $zx mg.st',
                      'scoreboard players remove $zx mg.st 10', 'execute store result storage mg:zm spb double 0.01 run scoreboard players get $zx mg.st',
@@ -331,7 +330,7 @@ w('zm/revive', ['# @s revient (pistolet + couteau)', 'tag @s remove mg.zdead', '
 w('zm/second', ['# Chaque seconde : zombies tombés hors de la carte ou perdus',
                 'execute as @e[tag=mg.zz] at @s if entity @s[y=-64,dy=139] run function mg:zm/lost',
                 'execute as @e[tag=mg.zz] at @s unless entity @a[tag=mg.play,tag=!mg.zdead,distance=..48] run function mg:zm/lost',
-                'function mg:zx/second', 'execute if score $zleft mg.st matches ..0 run effect give @e[tag=mg.zz] minecraft:glowing infinite 0 true',
+                'function mg:zx/second', 'execute if score $zleft mg.st matches ..0 if score $zal mg.st matches ..3 run effect give @e[tag=mg.zz] minecraft:glowing infinite 0 true',
                 'execute if score $zph mg.st matches 1 run title @a[tag=mg.play] actionbar [{"text":"🧟 Manche ","color":"dark_green"},{"score":{"name":"$zr","objective":"mg.st"},"color":"green","bold":true},{"text":" — restants : ","color":"gray"},{"score":{"name":"$zal","objective":"mg.st"},"color":"yellow"},{"text":" + ","color":"gray"},{"score":{"name":"$zleft","objective":"mg.st"},"color":"yellow"}]'])
 w('zm/lost', ['# @s (zombie) perdu : réapparaît dans un enclos ouvert',
               'execute at @e[type=minecraft:marker,tag=mg.zsp,tag=mg.zon,sort=random,limit=1] run tp @s ~ ~ ~'])
@@ -761,8 +760,40 @@ w('zx/rk_step', ['execute unless block ^ ^ ^0.7 #mg:ray_pass positioned ^ ^ ^0.4
                  'tp @s ^ ^ ^0.7'])
 w('zx/rk_boom', ['# La roquette explose : 100 de dégâts dans un rayon de 4 (crédités au tireur)'] + BOOM +
   ['scoreboard players set $gdm mg.st 1000', 'execute as @e[tag=mg.zz,distance=..4] run function mg:gun/hit_mob', 'tag @a remove mg.gsh',
+   '# souffle : les survivants à 6 blocs sont projetés en arrière',
+   'execute store result score $kbx mg.st run data get entity @s Pos[0] 1000', 'execute store result score $kby mg.st run data get entity @s Pos[1] 1000',
+   'execute store result score $kbz mg.st run data get entity @s Pos[2] 1000',
+   'execute as @e[tag=mg.zz,distance=..6] facing entity @s feet rotated ~ -22 run function mg:zx/rk_kb',
    'particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 0 1 force', 'particle minecraft:flame ~ ~ ~ 1.5 1.2 1.5 0.12 40 force',
    'playsound minecraft:entity.generic.explode master @a ~ ~ ~ 4 0.8', 'kill @s'])
+
+w('zx/rk_kb', ['# @s (mob) soufflé par la roquette : vitesse dans la direction explosion → mob (contexte : explosion, tourné vers @s, levé de 22°)',
+               'summon minecraft:marker ^ ^ ^1 {Tags:["mg.zkb"]}',
+               'execute store result score $kvx mg.st run data get entity @e[type=minecraft:marker,tag=mg.zkb,limit=1] Pos[0] 1000',
+               'execute store result score $kvy mg.st run data get entity @e[type=minecraft:marker,tag=mg.zkb,limit=1] Pos[1] 1000',
+               'execute store result score $kvz mg.st run data get entity @e[type=minecraft:marker,tag=mg.zkb,limit=1] Pos[2] 1000',
+               'kill @e[type=minecraft:marker,tag=mg.zkb]',
+               'scoreboard players operation $kvx mg.st -= $kbx mg.st', 'scoreboard players operation $kvy mg.st -= $kby mg.st',
+               'scoreboard players operation $kvz mg.st -= $kbz mg.st',
+               'execute store result entity @s Motion[0] double 0.0014 run scoreboard players get $kvx mg.st',
+               'execute store result entity @s Motion[1] double 0.0016 run scoreboard players get $kvy mg.st',
+               'execute store result entity @s Motion[2] double 0.0014 run scoreboard players get $kvz mg.st'])
+
+# --- malus, rarement (8 %), quand un mob mord un survivant
+w('zx/malus', ['# Avancement mg:zmhurt : @s touché par un mob du mode Zombies → 8 % de chances d\'un malus court',
+               'advancement revoke @s only mg:zmhurt',
+               'execute unless score $state mg.st matches 2 run return 0', 'execute unless entity @s[tag=mg.play,tag=!mg.zdead] run return 0',
+               'execute store result score #zml mg.st run random value 1..100', 'execute if score #zml mg.st matches 9.. run return 0',
+               'execute store result score #zml mg.st run random value 1..4',
+               'execute if score #zml mg.st matches 1 run effect give @s minecraft:slowness 1 2 true',
+               'execute if score #zml mg.st matches 1 run title @s actionbar {"text":"🐌 Jambe mordue : ralenti 1 s","color":"red"}',
+               'execute if score #zml mg.st matches 2 run effect give @s minecraft:blindness 2 0 true',
+               'execute if score #zml mg.st matches 2 run title @s actionbar {"text":"🩸 Du sang dans les yeux : aveuglé 2 s","color":"red"}',
+               'execute if score #zml mg.st matches 3 run effect give @s minecraft:nausea 4 0 true',
+               'execute if score #zml mg.st matches 3 run title @s actionbar {"text":"🤢 Infecté : nausée 4 s","color":"red"}',
+               'execute if score #zml mg.st matches 4 run effect give @s minecraft:weakness 3 0 true',
+               'execute if score #zml mg.st matches 4 run title @s actionbar {"text":"💢 Bras mordu : faiblesse 3 s","color":"red"}',
+               'playsound minecraft:entity.zombie.infect player @s ~ ~ ~ 0.8 1.2'])
 
 # --- batte (comme dans Neo GTA, en plus forte) : remplace le couteau
 BATZ = ('item replace entity @s hotbar.0 with minecraft:wooden_sword[item_model="$(m)",unbreakable={},'
@@ -783,6 +814,12 @@ with open(_adv, 'w', encoding='utf-8', newline='\n') as _f:
         'mob': {'trigger': 'minecraft:entity_hurt_player', 'conditions': {'damage': {'type': {'source_entity': {'minecraft:entity_type': 'minecraft:zombie'}}}}},
         'joueur': {'trigger': 'minecraft:entity_hurt_player', 'conditions': {'damage': {'type': {'source_entity': {'minecraft:entity_type': 'minecraft:player', 'team': 'mg_green'}}}}}},
         'requirements': [['mob', 'joueur']], 'rewards': {'function': 'mg:infhit/hit'}}, _f, ensure_ascii=False, indent=2)
+    _f.write('\n')
+_adv = os.path.join(C.D, 'advancement', 'zmhurt.json')
+with open(_adv, 'w', encoding='utf-8', newline='\n') as _f:
+    json.dump({'criteria': {'mob': {'trigger': 'minecraft:entity_hurt_player', 'conditions': {'damage': {'type': {
+        'source_entity': {'minecraft:nbt': '{Tags:["mg.zz"]}'}}}}}},
+        'rewards': {'function': 'mg:zx/malus'}}, _f, ensure_ascii=False, indent=2)
     _f.write('\n')
 if not C.MAP:
     os.makedirs(os.path.join(C.D, 'wolf_variant'), exist_ok=True)
