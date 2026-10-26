@@ -57,6 +57,8 @@ execute if score $game mg.st matches 229 run data modify storage mg:rate key mer
 execute if score $game mg.st matches 231 run data modify storage mg:rate key merge value {f:"zombies",g:32}
 execute if score $game mg.st matches 235 run data modify storage mg:rate key merge value {f:"zombies",g:32}
 execute if score $game mg.st matches 237 run data modify storage mg:rate key merge value {f:"zombies",g:32}
+execute if score $game mg.st matches 247 run data modify storage mg:rate key merge value {f:"zombies",g:32}
+execute if score $game mg.st matches 249 run data modify storage mg:rate key merge value {f:"zombies",g:32}
 execute if score $game mg.st matches 98 run data modify storage mg:rate key merge value {f:"infection",g:33}
 execute if score $game mg.st matches 211 run data modify storage mg:rate key merge value {f:"infection",g:33}
 execute if score $game mg.st matches 213 run data modify storage mg:rate key merge value {f:"infection",g:33}
@@ -65,6 +67,8 @@ execute if score $game mg.st matches 230 run data modify storage mg:rate key mer
 execute if score $game mg.st matches 232 run data modify storage mg:rate key merge value {f:"infection",g:33}
 execute if score $game mg.st matches 236 run data modify storage mg:rate key merge value {f:"infection",g:33}
 execute if score $game mg.st matches 238 run data modify storage mg:rate key merge value {f:"infection",g:33}
+execute if score $game mg.st matches 248 run data modify storage mg:rate key merge value {f:"infection",g:33}
+execute if score $game mg.st matches 250 run data modify storage mg:rate key merge value {f:"infection",g:33}
 execute if score $game mg.st matches 99 run data modify storage mg:rate key merge value {f:"bomber",g:34}
 execute if score $game mg.st matches 198 run data modify storage mg:rate key merge value {f:"chameleon",g:35}
 execute if score $game mg.st matches 214..216 run data modify storage mg:rate key merge value {f:"wii",g:36}

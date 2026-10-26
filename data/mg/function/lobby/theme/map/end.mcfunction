@@ -120,3 +120,6 @@ scoreboard players reset $tm38 mg.st
 execute in minecraft:overworld if score $tm39 mg.st matches 1 run function mg:lobby/theme/map/zm3_39/halloween_off
 execute in minecraft:overworld if score $tm39 mg.st matches 2 run function mg:lobby/theme/map/zm3_39/noel_off
 scoreboard players reset $tm39 mg.st
+execute in minecraft:overworld if score $tm40 mg.st matches 1 run function mg:lobby/theme/map/zm9_40/halloween_off
+execute in minecraft:overworld if score $tm40 mg.st matches 2 run function mg:lobby/theme/map/zm9_40/noel_off
+scoreboard players reset $tm40 mg.st

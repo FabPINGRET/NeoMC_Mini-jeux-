@@ -165,6 +165,42 @@
     {
       "label": [
         {
+          "text": "🧟 Zombies — Catacombes",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "8 cryptes en anneau à demi-niveaux, autel central à deux accès",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 247"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🧟 Zombies — Thermes",
+          "color": "yellow"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "6 salles arrondies en anneau, terrasse et bassins, piscine centrale",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 249"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour",
           "color": "yellow"
         }

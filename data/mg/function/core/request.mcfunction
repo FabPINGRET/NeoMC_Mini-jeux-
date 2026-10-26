@@ -289,6 +289,10 @@ execute if score $game mg.st matches 243 run tellraw @a [{"selector":"@s","color
 execute if score $game mg.st matches 244 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"✷ TNT RUN — GLACIER","color":"aqua","bold":true},{"text":" : la glace glisse et s'efface sous tes pas !","color":"gray"}]
 execute if score $game mg.st matches 245 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"✷ TNT RUN — GRAND GLACIER","color":"aqua","bold":true},{"text":" : la glace glisse et s'efface sous tes pas !","color":"gray"}]
 execute if score $game mg.st matches 246 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🎯 TDM SNIPER","color":"gold","bold":true},{"text":" : rouges contre bleus au sniper, 25 frags pour gagner !","color":"gray"}]
+execute if score $game mg.st matches 247 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧟 ZOMBIES — Catacombes","color":"dark_green","bold":true},{"text":" : survivez à 20 manches dans le bunker !","color":"gray"}]
+execute if score $game mg.st matches 248 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧪 INFECTION — Catacombes","color":"dark_green","bold":true},{"text":" : survivants armés contre zombies contagieux, 3 min !","color":"gray"}]
+execute if score $game mg.st matches 249 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧟 ZOMBIES — Thermes","color":"dark_green","bold":true},{"text":" : survivez à 20 manches dans le bunker !","color":"gray"}]
+execute if score $game mg.st matches 250 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance ","color":"gray"},{"text":"🧪 INFECTION — Thermes","color":"dark_green","bold":true},{"text":" : survivants armés contre zombies contagieux, 3 min !","color":"gray"}]
 execute if score $game mg.st matches 57 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE","color":"green","bold":true},{"text":" — thème aléatoire, puis vote !","color":"gray"}]
 execute if score $game mg.st matches 83 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"📞 TÉLÉPHONE","color":"gold","bold":true},{"text":" : mot → construction → devinette → construction → devinette !","color":"gray"}]
 execute if score $game mg.st matches 58 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance un ","color":"gray"},{"text":"BUILD BATTLE — MAÎTRE DU MOT","color":"dark_aqua","bold":true},{"text":" : un joueur donne le thème !","color":"gray"}]
@@ -335,6 +339,8 @@ execute if score $game mg.st matches 31 run function mg:quake/prepare
 execute if score $game mg.st matches 36 run function mg:paintball/prepare
 execute if score $game mg.st matches 56 run function mg:icerace/prepare
 execute if score $game mg.st matches 57..58 run function mg:bb/prepare
+execute if score $game mg.st matches 249..250 run function mg:zmode9/prepare
+execute if score $game mg.st matches 247..248 run function mg:zmode8/prepare
 execute if score $game mg.st matches 246 run function mg:tdm/prepare
 execute if score $game mg.st matches 244..245 run function mg:tntice/prepare
 execute if score $game mg.st matches 243 run function mg:ctf3/prepare

@@ -203,6 +203,157 @@ LAYOUTS['mine'] = dict(
              (36, -20), (44, -24)],
     extra=_M_EXTRA, centers={'b': (12, 0), 'd': (-20, -8)}, start=(0, 0))
 
+# ------------------------------------------------------------------ cartes « en cercle » à demi-niveaux
+# Salles plus petites, coins arrondis (pans coupés), sols décalés de 1 à 3 blocs (80 / 81 / 82 / 83) : chaque porte est
+# au niveau de la salle la plus haute, un palier + quelques marches montent du côté de la plus basse. Les salles forment
+# un anneau (on peut tourner en rond une fois les portes ouvertes) ; au centre, une salle reliée par deux passages.
+
+def approach(x1, z1, x2, z2, d, y0, dy, stair, sup):
+    """palier + dy marches devant une porte (barrage x1..x2 / z1..z2 dans le mur), côté de la salle basse (sol y0) ;
+    d = (dx, dz) : du mur vers la salle basse"""
+    dx, dz = d
+    facing = {(1, 0): 'west', (-1, 0): 'east', (0, 1): 'north', (0, -1): 'south'}[d]
+    box = lambda o: (x1 + dx * o, z1 + dz * o, x2 + dx * o, z2 + dz * o)
+    a = box(1)
+    out = [('fill', a[0], y0 + 1, a[1], a[2], y0 + dy, a[3], sup)]
+    for k in range(1, dy + 1):
+        b, top = box(1 + k), y0 + dy - k + 1
+        if top - 1 >= y0 + 1:
+            out.append(('fill', b[0], y0 + 1, b[1], b[2], top - 1, b[3], sup))
+        out.append(('fill', b[0], top, b[1], b[2], top, b[3], f'{stair}[facing={facing}]'))
+    return out
+
+
+def chamfer(room, c, mat):
+    """pans coupés de taille c aux 4 coins d'une salle (x1, x2, z1, z2[, y, h]) : murs remplis sur toute la hauteur"""
+    x1, x2, z1, z2 = room[:4]
+    y, h = (room[4] if len(room) > 4 else 80), (room[5] if len(room) > 5 else 5)
+    out = []
+    for cx, sx in ((x1, 1), (x2, -1)):
+        for cz, sz in ((z1, 1), (z2, -1)):
+            for i in range(c):
+                for j in range(c - i):
+                    out.append(('fill', cx + sx * i, y + 1, cz + sz * j, cx + sx * i, y + h, cz + sz * j, mat))
+    return out
+
+
+def passage(x1, z1, x2, z2, floor):
+    return [('fill', x1, 80, z1, x2, 80, z2, floor), ('fill', x1, 81, z1, x2, 83, z2, 'air')]
+
+
+def pillar(x, z, y, h, mat, top=None):
+    out = [('fill', x, y + 1, z, x, y + h, z, mat)]
+    return out + ([('set', x, y + h - 1, z, top)] if top else [])
+
+
+# 💀 Catacombes : anneau de 8 cryptes autour d'un autel central (2 passages), sols 80 / 82 / 83
+_CR = {'a': (-7, 7, 14, 24, 80, 6), 'b': (-21, -9, 12, 26, 82), 'c': (-19, -11, -10, 10, 80, 6), 'd': (-21, -9, -26, -12, 83),
+       'e': (-7, 7, -26, -16, 80, 6), 'f': (9, 21, -26, -12, 82), 'g': (11, 19, -10, 10, 80, 6), 'h': (9, 21, 12, 26, 83),
+       'i': (-6, 6, -6, 6)}
+_CW, _CS, _CST = 'tuff_bricks', 'polished_tuff', 'tuff_brick_stairs'
+_C_EXTRA = (
+    [e for r, c in (('a', 2), ('b', 2), ('c', 2), ('d', 2), ('e', 2), ('f', 2), ('g', 2), ('h', 2), ('i', 2)) for e in chamfer(_CR[r], c, _CW)] +
+    approach(-8, 18, -8, 20, (1, 0), 80, 2, _CST, _CS) +        # 1 Crypte → Chapelle (82)
+    approach(-16, 11, -14, 11, (0, -1), 80, 2, _CST, _CS) +     # 2 Chapelle → Galerie (côté galerie, 80)
+    approach(-16, -11, -14, -11, (0, 1), 80, 3, _CST, _CS) +    # 3 Galerie → Puits (83)
+    approach(-8, -22, -8, -20, (1, 0), 80, 3, _CST, _CS) +      # 4 Puits → Ossuaire (côté ossuaire, 80)
+    approach(8, -22, 8, -20, (-1, 0), 80, 2, _CST, _CS) +       # 5 Ossuaire → Sacristie (82)
+    approach(14, -11, 16, -11, (0, 1), 80, 2, _CST, _CS) +      # 6 Sacristie → Galerie est (côté galerie, 80)
+    approach(14, 11, 16, 11, (0, -1), 80, 3, _CST, _CS) +       # 7 Galerie est → Caveau (83)
+    approach(8, 18, 8, 20, (-1, 0), 80, 3, _CST, _CS) +         # 8 Crypte → Caveau (83)
+    passage(-1, 7, 1, 12, 'chiseled_tuff') + passage(-1, -14, 1, -7, 'chiseled_tuff') +
+    # autel : estrade d'un demi-bloc puis d'un bloc, lanterne d'âmes
+    [('fill', -3, 81, -3, 3, 81, 3, 'polished_deepslate_slab[type=bottom]'), ('fill', -2, 81, -2, 2, 81, 2, 'polished_deepslate'),
+     ('set', 0, 82, 0, 'soul_lantern')] +
+    # chapelle et sacristie : 4 piliers ; puits : margelle ; caveau : sarcophages ; ossuaire : colonnes d'os
+    [e for x in (-18, -12) for z in (16, 22) for e in pillar(x, z, 82, 5, 'chiseled_tuff_bricks', 'soul_lantern')] +
+    [e for x in (12, 18) for z in (-23, -15) for e in pillar(x, z, 82, 5, 'chiseled_tuff_bricks', 'soul_lantern')] +
+    [('fill', -16, 84, -20, -14, 84, -18, 'cobbled_deepslate_wall'), ('set', -15, 84, -19, 'air'), ('set', -15, 83, -19, 'water')] +
+    [('fill', 12, 84, 17, 13, 84, 20, 'polished_deepslate'), ('fill', 17, 84, 17, 18, 84, 20, 'polished_deepslate')] +
+    [e for x in (-3, 3) for e in pillar(x, -24, 80, 6, 'bone_block')]
+)
+LAYOUTS['catacombes'] = dict(
+    rooms=_CR,
+    names={'a': 'Crypte', 'b': 'Chapelle', 'c': 'Galerie des os', 'd': 'Puits', 'e': 'Ossuaire', 'f': 'Sacristie',
+           'g': 'Galerie est', 'h': 'Caveau', 'i': 'Autel'},
+    floors={'a': 'polished_deepslate', 'b': 'deepslate_tiles', 'c': 'tuff_bricks', 'd': 'cobbled_deepslate', 'e': 'polished_tuff',
+            'f': 'deepslate_bricks', 'g': 'tuff_bricks', 'h': 'polished_blackstone_bricks', 'i': 'chiseled_deepslate'},
+    wall=_CW, band='chiseled_tuff', roof='deepslate_tiles', light='shroomlight',
+    doors={1: ('Crypte → Chapelle', 750, (-8, 18, -8, 20), (-7.5, 19.5), 'b', 82),
+           2: ('Chapelle → Galerie des os', 1000, (-16, 11, -14, 11), (-14.5, 11.5), 'c', 82),
+           3: ('Galerie des os → Puits', 1250, (-16, -11, -14, -11), (-14.5, -10.5), 'd', 83),
+           4: ('Puits → Ossuaire', 1500, (-8, -22, -8, -20), (-7.5, -20.5), 'e', 83),
+           5: ('Ossuaire → Sacristie', 1500, (8, -22, 8, -20), (8.5, -20.5), 'f', 82),
+           6: ('Sacristie → Galerie est', 1250, (14, -11, 16, -11), (15.5, -10.5), 'g', 82),
+           7: ('Galerie est → Caveau', 1000, (14, 11, 16, 11), (15.5, 11.5), 'h', 83),
+           8: ('Crypte → Caveau', 750, (8, 18, 8, 20), (8.5, 19.5), 'h', 83),
+           9: ('Crypte → Autel', 2000, (-1, 13, 1, 13), (0.5, 13.5), 'i', 80),
+           10: ('Ossuaire → Autel', 2000, (-1, -15, 1, -15), (0.5, -14.5), 'i', 80)},
+    windows=[('a', -4, 25, 0, 1), ('a', 4, 25, 0, 1), ('b', -22, 19, -1, 0), ('b', -15, 27, 0, 1),
+             ('c', -20, -3, -1, 0), ('c', -20, 5, -1, 0), ('d', -22, -19, -1, 0), ('d', -15, -27, 0, -1),
+             ('e', -4, -27, 0, -1), ('e', 4, -27, 0, -1), ('f', 22, -19, 1, 0), ('f', 15, -27, 0, -1),
+             ('g', 20, -3, 1, 0), ('g', 20, 5, 1, 0), ('h', 22, 19, 1, 0), ('h', 15, 27, 0, 1),
+             ('i', 4, -7, 0, -1), ('i', -4, 7, 0, 1)],
+    wall_buys=[('zb11', 'Fusil M14', 500, -8, 22, 'w', 4), ('zb12', 'Fusil à pompe', 500, 8, 16, 'e', 3),
+               ('zb13', 'Mitraillette', 1000, -20, -8, 'w', 2), ('zb14', 'Sniper', 1500, 20, 1, 'e', 5),
+               ('zb15', 'Grenades singe ×3', 1000, -22, 14, 'w', 11)],
+    perks={'zb23': (-21, 24, 'w'), 'zb24': (-9, -14, 'e'), 'zb25': (21, -14, 'e'), 'zb26': (21, 24, 'e'), 'zb27': (6, 0, 'e')},
+    jug=(-19, 0, 'w'), speed=(19, -6, 'e'), box=(0, -21),
+    barrels=[(-3, 22), (2, 22), (-11, 13), (-11, 24), (-13, 3), (-17, -6), (-19, -23), (-12, -16), (-6, -18), (4, -19),
+             (11, -25), (10, -20), (13, 2), (15, -4), (11, 14), (18, 23)],
+    extra=_C_EXTRA, centers={'i': (0, 5), 'e': (0, -18), 'd': (-12, -24), 'b': (-15, 19), 'f': (15, -19)}, start=(0, 19))
+
+# 🏛 Thermes : anneau de 6 salles autour de la piscine centrale (2 passages), sols 80 / 81 / 82 / 83, terrasse dans le bassin
+_TR = {'a': (-6, 6, 12, 22, 80, 6), 'b': (-20, -8, 4, 20, 81), 'c': (-20, -8, -18, 2, 83), 'd': (-6, 6, -26, -12, 80, 7),
+       'e': (8, 20, -18, 2, 82), 'f': (8, 20, 4, 20, 81), 'g': (-4, 4, -6, 6)}
+_TW, _TS, _TST = 'cut_sandstone', 'smooth_sandstone', 'smooth_sandstone_stairs'
+_T_EXTRA = (
+    [e for r, c in (('a', 3), ('b', 2), ('c', 2), ('d', 3), ('e', 2), ('f', 2), ('g', 3)) for e in chamfer(_TR[r], c, _TW)] +
+    approach(-7, 15, -7, 17, (1, 0), 80, 1, _TST, _TS) +        # 1 Atrium → Vestiaire (81)
+    approach(-15, 3, -13, 3, (0, 1), 81, 2, _TST, _TS) +        # 2 Vestiaire → Frigidarium (83)
+    approach(-7, -16, -7, -14, (1, 0), 80, 3, _TST, _TS) +      # 3 Frigidarium → Bassin (côté bassin, 80)
+    approach(7, -16, 7, -14, (-1, 0), 80, 2, _TST, _TS) +       # 4 Bassin → Caldarium (82)
+    approach(13, 3, 15, 3, (0, 1), 81, 1, _TST, _TS) +          # 5 Caldarium → Palestre (côté palestre, 81)
+    approach(7, 15, 7, 17, (-1, 0), 80, 1, _TST, _TS) +         # 6 Atrium → Palestre (81)
+    passage(-1, 7, 1, 10, 'prismarine_bricks') + passage(-1, -10, 1, -7, 'prismarine_bricks') +
+    # bassin : terrasse nord (2 blocs) + escalier central ; piscine et impluvium en verre bleu, frigidarium creusé d'un bloc
+    [('fill', -6, 81, -26, 6, 82, -24, _TW), ('fill', -6, 82, -26, 6, 82, -24, 'smooth_sandstone')] +
+    stairs(-1, 1, -22, -22, 80, 2, 'north', _TST, _TS) +
+    [('fill', -2, 80, -2, 2, 80, 2, 'light_blue_stained_glass'), ('fill', -2, 80, 14, 2, 80, 18, 'air'),
+     ('fill', -2, 79, 14, 2, 79, 18, 'light_blue_stained_glass'),
+     ('fill', -16, 83, -10, -12, 83, -6, 'air'), ('fill', -16, 82, -10, -12, 82, -6, 'light_blue_stained_glass')] +
+    # caldarium : 4 colonnes ; palestre : estrade d'un demi-bloc ; vestiaire : bancs
+    [e for x in (12, 16) for z in (-12, -6) for e in pillar(x, z, 82, 5, 'chiseled_sandstone', 'lantern')] +
+    [('fill', 12, 82, 9, 16, 82, 15, 'smooth_sandstone_slab[type=bottom]')] +
+    [('fill', x, 82, 9, x, 82, 13, 'cut_sandstone_slab[type=bottom]') for x in (-18, -13)]
+)
+LAYOUTS['thermes'] = dict(
+    rooms=_TR,
+    names={'a': 'Atrium', 'b': 'Vestiaire', 'c': 'Frigidarium', 'd': 'Bassin', 'e': 'Caldarium', 'f': 'Palestre', 'g': 'Piscine'},
+    floors={'a': 'smooth_quartz', 'b': 'birch_planks', 'c': 'prismarine_bricks', 'd': 'smooth_sandstone', 'e': 'terracotta',
+            'f': 'cut_red_sandstone', 'g': 'prismarine_bricks'},
+    wall=_TW, band='chiseled_sandstone', roof='smooth_sandstone', light='sea_lantern',
+    doors={1: ('Atrium → Vestiaire', 750, (-7, 15, -7, 17), (-6.5, 16.5), 'b', 81),
+           2: ('Vestiaire → Frigidarium', 1000, (-15, 3, -13, 3), (-13.5, 3.5), 'c', 83),
+           3: ('Frigidarium → Bassin', 1250, (-7, -16, -7, -14), (-6.5, -14.5), 'd', 83),
+           4: ('Bassin → Caldarium', 1250, (7, -16, 7, -14), (7.5, -14.5), 'e', 82),
+           5: ('Caldarium → Palestre', 1000, (13, 3, 15, 3), (14.5, 3.5), 'f', 82),
+           6: ('Atrium → Palestre', 750, (7, 15, 7, 17), (7.5, 16.5), 'f', 81),
+           7: ('Atrium → Piscine', 2000, (-1, 11, 1, 11), (0.5, 11.5), 'g', 80),
+           8: ('Bassin → Piscine', 2000, (-1, -11, 1, -11), (0.5, -10.5), 'g', 80)},
+    windows=[('a', -3, 23, 0, 1), ('a', 3, 23, 0, 1), ('b', -21, 12, -1, 0), ('b', -14, 21, 0, 1),
+             ('c', -21, -8, -1, 0), ('c', -14, -19, 0, -1), ('d', -3, -27, 0, -1, 82), ('d', 3, -27, 0, -1, 82),
+             ('e', 21, -8, 1, 0), ('e', 14, -19, 0, -1), ('f', 21, 12, 1, 0), ('f', 14, 21, 0, 1)],
+    wall_buys=[('zb11', 'Fusil M14', 500, -7, 19, 'w', 4), ('zb12', 'Fusil à pompe', 500, 7, 19, 'e', 3),
+               ('zb13', 'Mitraillette', 1000, -21, -2, 'w', 2), ('zb14', 'Sniper', 1500, 21, -2, 'e', 5),
+               ('zb15', 'Grenades singe ×3', 1000, -21, 6, 'w', 11)],
+    perks={'zb23': (-20, 18, 'w'), 'zb24': (-8, -2, 'e'), 'zb25': (20, 18, 'e'), 'zb26': (8, -2, 'w'), 'zb27': (4, 0, 'e')},
+    jug=(-6, -20, 'w'), speed=(20, -14, 'e'), box=(-14, -15),
+    barrels=[(-17, 7), (-11, 16), (-18, -15), (-11, -4), (-3, -20), (2, -20), (10, -17), (17, -1),
+             (10, 6), (17, 17)],
+    extra=_T_EXTRA, centers={'a': (0, 20), 'c': (-11, -2), 'd': (0, -18), 'e': (14, -9), 'f': (10, 18), 'g': (0, 4)}, start=(0, 20))
+
+
 def get(name, Z):
     """Plan `name` en coordonnées absolues pour une carte en Z"""
     L = LAYOUTS[name]

@@ -62,6 +62,10 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+schedule clear mg:zmode9/prepare_b
+forceload remove -26 42468 26 42528
+schedule clear mg:zmode8/prepare_b
+forceload remove -27 42068 27 42132
 schedule clear mg:ombre/wb_step
 schedule clear mg:ombre/world_build
 schedule clear mg:ombre/session_setup

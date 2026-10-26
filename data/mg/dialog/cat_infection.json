@@ -165,6 +165,42 @@
     {
       "label": [
         {
+          "text": "🧪 Infection — Catacombes",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Cryptes en anneau, tout ouvert",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 248"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "🧪 Infection — Thermes",
+          "color": "yellow"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Thermes en anneau, tout ouvert",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 250"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "🧟 Joueurs vs mobs — Bunker",
           "color": "red"
         }
