@@ -27,6 +27,10 @@ for l in open(os.path.join(F, 'plot', 'build_all.mcfunction'), encoding='utf-8')
     m = re.search(r'\{n:(\d+),lx:([-\d.]+),lz:([-\d.]+),wx1:(-?\d+),wx2:(-?\d+),wz1:(-?\d+),wz2:(-?\d+)', l)
     if m: PLOTS.append((int(m[1]), float(m[2]), float(m[3])) + tuple(int(v) for v in m.groups()[3:]))
 assert len(PLOTS) == 15
+# effacements d'air posés ailleurs (Hall, */spawn_clean, portails) : un lampadaire dessous serait coupé (lamp() n'en pose pas)
+import theme_world as TW
+CLEARS = TW.clears(F)
+NOLAMP = set()   # bases (x, 64, z) de lampadaires non posés : l'air y garde la case occupée pour le reste de la génération
 def inplot(x, z, mg=0): return any(a - mg <= x <= b + mg and c - mg <= z <= d + mg for _, _, _, a, b, c, d in PLOTS)
 
 W = {}
@@ -118,6 +122,11 @@ for (x, z) in ISL:
 def lamp(x, z, kind='blackstone', top='lantern'):
     wall = {'blackstone': 'polished_blackstone_wall', 'stone': 'stone_brick_wall', 'andesite': 'andesite_wall'}[kind]
     base = {'blackstone': 'chiseled_polished_blackstone', 'stone': 'chiseled_stone_bricks', 'andesite': 'polished_andesite'}[kind]
+    col = {f'minecraft:{n}' for n in (base, wall, top)}
+    if any(x1 <= x <= x2 and z1 <= z <= z2 and y1 <= 68 and y2 >= 64 and (f is None or TW.bid(f) in col)
+           for _, _, (x1, x2, y1, y2, z1, z2, f) in CLEARS):
+        put(x, 64, z, 'air'); NOLAMP.add((x, 64, z))    # un clear posé ailleurs emporterait la base : pas de poteau en l'air
+        return                                          # (put et non « return » seul : la suite du flux rnd reste identique)
     put(x, 64, z, base); put(x, 65, z, wall); put(x, 66, z, wall); put(x, 67, z, wall); put(x, 68, z, top)
 def bench(cells, facing):
     for (x, z) in cells: put(x, 64, z, f'spruce_stairs[facing={facing}]')
@@ -194,8 +203,10 @@ for x in range(-77, 78):
     if zz: clear.append(f'fill {x} 64 {min(zz)} {x} 122 {max(zz)} minecraft:air strict')
 clear.append('fill 18 63 -8 125 80 6 minecraft:air strict')        # ancien parkour
 for (x, z) in ISL: assert not inplot(x, z)
-strict = {k: v for k, v in W.items() if not is_conn(v)}
-conn = {k: v for k, v in W.items() if is_conn(v)}
+for k in sorted(NOLAMP): print('lampadaire non pose (clear ailleurs) :', k[0], k[2])
+OUT = {k: v for k, v in W.items() if not (k in NOLAMP and v == 'air')}
+strict = {k: v for k, v in OUT.items() if not is_conn(v)}
+conn = {k: v for k, v in OUT.items() if is_conn(v)}
 CMDS = clear + merge(strict, ' strict') + merge(conn, '')
 print('blocs', len(W), '| commandes', len(CMDS), '| arbres', len(TREES))
 

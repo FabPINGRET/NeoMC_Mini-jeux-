@@ -1,5 +1,4 @@
 # Spawn, partie 9/11 (généré par tools/lobby/gen_lobby.py)
-setblock -19 64 21 minecraft:cornflower strict
 setblock -19 64 22 minecraft:short_grass strict
 setblock -19 64 24 minecraft:blue_orchid strict
 setblock -19 64 27 minecraft:pink_tulip strict
@@ -533,11 +532,9 @@ fill -4 64 -24 -4 64 -22 minecraft:spruce_stairs[facing=west] strict
 setblock -4 64 -21 minecraft:flowering_azalea_leaves[persistent=true] strict
 fill -4 64 -20 -4 64 -19 minecraft:azalea_leaves[persistent=true] strict
 setblock -4 64 -18 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock -4 64 -17 minecraft:chiseled_polished_blackstone strict
 setblock -4 64 -16 minecraft:flowering_azalea_leaves[persistent=true] strict
 setblock -4 64 -15 minecraft:azalea_leaves[persistent=true] strict
 fill -4 64 15 -4 64 16 minecraft:azalea_leaves[persistent=true] strict
-setblock -4 64 17 minecraft:chiseled_polished_blackstone strict
 fill -4 64 18 -4 64 20 minecraft:azalea_leaves[persistent=true] strict
 setblock -4 64 21 minecraft:flowering_azalea_leaves[persistent=true] strict
 fill -4 64 22 -4 64 24 minecraft:spruce_stairs[facing=west] strict
@@ -600,7 +597,6 @@ setblock 4 64 -25 minecraft:azalea_leaves[persistent=true] strict
 fill 4 64 -24 4 64 -22 minecraft:spruce_stairs[facing=east] strict
 setblock 4 64 -21 minecraft:azalea_leaves[persistent=true] strict
 fill 4 64 -20 4 64 -18 minecraft:flowering_azalea_leaves[persistent=true] strict
-setblock 4 64 -17 minecraft:chiseled_polished_blackstone strict
 fill 4 64 -16 4 64 -15 minecraft:azalea_leaves[persistent=true] strict
 fill 4 64 15 4 64 16 minecraft:azalea_leaves[persistent=true] strict
 setblock 4 64 17 minecraft:chiseled_polished_blackstone strict
@@ -1058,7 +1054,6 @@ fill 17 64 -15 17 67 -15 minecraft:cherry_log strict
 setblock 17 64 -12 minecraft:pink_petals[flower_amount=3,facing=east] strict
 setblock 17 64 -6 minecraft:orange_tulip strict
 setblock 17 64 -5 minecraft:lily_of_the_valley strict
-setblock 17 64 -4 minecraft:chiseled_polished_blackstone strict
 setblock 17 64 4 minecraft:chiseled_polished_blackstone strict
 setblock 17 64 5 minecraft:cornflower strict
 setblock 17 64 6 minecraft:oxeye_daisy strict
@@ -2999,4 +2994,9 @@ setblock -43 65 201 minecraft:barrier strict
 setblock -43 65 207 minecraft:light[level=13] strict
 fill -43 65 212 -42 65 212 minecraft:barrier strict
 setblock -42 65 -30 minecraft:light[level=12] strict
+setblock -42 65 -24 minecraft:light[level=12] strict
+setblock -42 65 -12 minecraft:light[level=12] strict
+setblock -42 65 -11 minecraft:cracked_stone_bricks strict
+setblock -42 65 -6 minecraft:light[level=12] strict
+setblock -42 65 6 minecraft:light[level=12] strict
 schedule function mg:lobby/build_10 1t

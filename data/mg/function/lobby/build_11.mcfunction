@@ -1,14 +1,4 @@
 # Spawn, partie 11/11 (généré par tools/lobby/gen_lobby.py)
-fill 127 88 -1 127 88 1 minecraft:sea_lantern strict
-setblock 129 88 10 minecraft:end_stone_bricks strict
-setblock 131 88 8 minecraft:lantern[hanging=true] strict
-fill -38 89 29 -38 89 33 minecraft:dirt strict
-fill -37 89 28 -37 89 34 minecraft:dirt strict
-fill -36 89 27 -36 89 34 minecraft:dirt strict
-fill -35 89 27 -35 89 28 minecraft:dirt strict
-fill -35 89 29 -35 89 35 minecraft:coarse_dirt strict
-fill -34 89 27 -33 89 27 minecraft:dirt strict
-fill -34 89 28 -33 89 35 minecraft:coarse_dirt strict
 setblock -32 89 -35 minecraft:rooted_dirt strict
 setblock -31 89 28 minecraft:dirt strict
 fill -31 89 29 -31 89 34 minecraft:coarse_dirt strict
@@ -584,7 +574,6 @@ fill -64 65 7 -64 67 7 minecraft:stone_brick_wall
 fill -61 65 -20 -61 67 -20 minecraft:stone_brick_wall
 fill -61 65 20 -61 67 20 minecraft:stone_brick_wall
 fill -57 65 -33 -57 65 -16 minecraft:stone_brick_wall
-fill -56 65 32 -56 67 32 minecraft:stone_brick_wall
 fill -48 65 -43 -48 67 -43 minecraft:stone_brick_wall
 fill -48 65 43 -48 67 43 minecraft:stone_brick_wall
 fill -38 65 52 -38 67 52 minecraft:stone_brick_wall
@@ -599,17 +588,13 @@ fill -13 65 5 -13 67 5 minecraft:polished_blackstone_wall
 fill -5 65 -13 -5 67 -13 minecraft:polished_blackstone_wall
 fill -5 65 13 -5 67 13 minecraft:polished_blackstone_wall
 fill -4 65 -37 -4 67 -37 minecraft:polished_blackstone_wall
-fill -4 65 -17 -4 67 -17 minecraft:polished_blackstone_wall
-fill -4 65 17 -4 67 17 minecraft:polished_blackstone_wall
 fill 4 65 -37 4 67 -37 minecraft:polished_blackstone_wall
-fill 4 65 -17 4 67 -17 minecraft:polished_blackstone_wall
 fill 4 65 17 4 67 17 minecraft:polished_blackstone_wall
 fill 5 65 -13 5 67 -13 minecraft:polished_blackstone_wall
 fill 5 65 13 5 67 13 minecraft:polished_blackstone_wall
 fill 13 65 -63 13 67 -63 minecraft:stone_brick_wall
 fill 13 65 -5 13 67 -5 minecraft:polished_blackstone_wall
 fill 13 65 5 13 67 5 minecraft:polished_blackstone_wall
-fill 17 65 -4 17 67 -4 minecraft:polished_blackstone_wall
 fill 17 65 4 17 67 4 minecraft:polished_blackstone_wall
 fill 37 65 -4 37 67 -4 minecraft:polished_blackstone_wall
 fill 37 65 4 37 67 4 minecraft:polished_blackstone_wall
