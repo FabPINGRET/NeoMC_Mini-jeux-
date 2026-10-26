@@ -225,26 +225,26 @@ fill 13 86 39792 17 90 39795 minecraft:stone_bricks
 fill 14 87 39793 16 89 39795 minecraft:air
 fill 15 87 39796 15 88 39796 minecraft:air
 fill 14 89 39796 16 89 39796 minecraft:iron_bars
-fill -5 81 39795 -4 81 39796 minecraft:barrel[facing=up]
-setblock -5 82 39795 minecraft:barrel[facing=up]
-fill 4 81 39803 5 81 39804 minecraft:barrel[facing=up]
-setblock 4 82 39803 minecraft:barrel[facing=up]
-fill 40 81 39805 41 81 39806 minecraft:barrel[facing=up]
-setblock 40 82 39805 minecraft:barrel[facing=up]
-fill 44 81 39793 45 81 39794 minecraft:barrel[facing=up]
-setblock 44 82 39793 minecraft:barrel[facing=up]
-fill -30 87 39791 -29 87 39792 minecraft:barrel[facing=up]
-setblock -30 88 39791 minecraft:barrel[facing=up]
-fill -22 87 39800 -21 87 39801 minecraft:barrel[facing=up]
-setblock -22 88 39800 minecraft:barrel[facing=up]
-fill 13 81 39789 14 81 39790 minecraft:barrel[facing=up]
-setblock 13 82 39789 minecraft:barrel[facing=up]
-fill 25 81 39782 26 81 39783 minecraft:barrel[facing=up]
-setblock 25 82 39782 minecraft:barrel[facing=up]
-fill -4 87 39803 -3 87 39804 minecraft:barrel[facing=up]
-setblock -4 88 39803 minecraft:barrel[facing=up]
-fill 4 87 39794 5 87 39795 minecraft:barrel[facing=up]
-setblock 4 88 39794 minecraft:barrel[facing=up]
+fill -5 81 39795 -4 81 39796 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock -5 82 39795 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill 4 81 39803 5 81 39804 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock 4 82 39803 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill 40 81 39805 41 81 39806 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock 40 82 39805 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill 44 81 39793 45 81 39794 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock 44 82 39793 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill -30 87 39791 -29 87 39792 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock -30 88 39791 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill -22 87 39800 -21 87 39801 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock -22 88 39800 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill 13 81 39789 14 81 39790 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock 13 82 39789 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill 25 81 39782 26 81 39783 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock 25 82 39782 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill -4 87 39803 -3 87 39804 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock -4 88 39803 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill 4 87 39794 5 87 39795 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock 4 88 39794 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
 setblock 8 87 39805 minecraft:red_glazed_terracotta
 setblock 8 88 39805 minecraft:red_stained_glass
 setblock 8 89 39805 minecraft:redstone_lamp[lit=true]

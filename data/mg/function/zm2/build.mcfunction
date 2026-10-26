@@ -111,22 +111,22 @@ fill 20 80 35763 24 84 35766 minecraft:white_concrete
 fill 21 81 35764 23 83 35766 minecraft:air
 fill 22 81 35767 22 82 35767 minecraft:air
 fill 21 83 35767 23 83 35767 minecraft:iron_bars
-fill -6 81 35794 -5 81 35795 minecraft:barrel[facing=up]
-setblock -6 82 35794 minecraft:barrel[facing=up]
-fill 5 81 35804 6 81 35805 minecraft:barrel[facing=up]
-setblock 5 82 35804 minecraft:barrel[facing=up]
-fill -5 81 35774 -4 81 35775 minecraft:barrel[facing=up]
-setblock -5 82 35774 minecraft:barrel[facing=up]
-fill 6 81 35781 7 81 35782 minecraft:barrel[facing=up]
-setblock 6 82 35781 minecraft:barrel[facing=up]
-fill 17 81 35795 18 81 35796 minecraft:barrel[facing=up]
-setblock 17 82 35795 minecraft:barrel[facing=up]
-fill 27 81 35802 28 81 35803 minecraft:barrel[facing=up]
-setblock 27 82 35802 minecraft:barrel[facing=up]
-fill 16 81 35771 17 81 35772 minecraft:barrel[facing=up]
-setblock 16 82 35771 minecraft:barrel[facing=up]
-fill 27 81 35780 28 81 35781 minecraft:barrel[facing=up]
-setblock 27 82 35780 minecraft:barrel[facing=up]
+fill -6 81 35794 -5 81 35795 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock -6 82 35794 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill 5 81 35804 6 81 35805 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock 5 82 35804 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill -5 81 35774 -4 81 35775 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock -5 82 35774 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill 6 81 35781 7 81 35782 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock 6 82 35781 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill 17 81 35795 18 81 35796 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock 17 82 35795 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill 27 81 35802 28 81 35803 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock 27 82 35802 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill 16 81 35771 17 81 35772 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock 16 82 35771 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+fill 27 81 35780 28 81 35781 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
+setblock 27 82 35780 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
 fill 3 81 35797 5 81 35797 minecraft:smooth_quartz_slab[type=top]
 setblock 4 82 35797 minecraft:lantern
 fill -3 81 35780 -1 81 35780 minecraft:smooth_quartz_slab[type=top]

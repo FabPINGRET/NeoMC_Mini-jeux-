@@ -133,7 +133,7 @@ for (r, x, z, nx, nz), y in zip(WIN, WINY):
     L.append(f'fill {x - px} {y + 3} {z - pz} {x + px} {y + 3} {z + pz} minecraft:iron_bars')
 # décor : caisses, tables, éclairage
 for (x, z), y in zip(BARRELS, BARY):
-    L +=[f'fill {x} {y + 1} {z} {x + 1} {y + 1} {z + 1} minecraft:barrel[facing=up]', f'setblock {x} {y + 2} {z} minecraft:barrel[facing=up]']
+    L +=[f'fill {x} {y + 1} {z} {x + 1} {y + 1} {z + 1} minecraft:barrel[facing=up]{{lock:{{items:"minecraft:barrier"}}}}', f'setblock {x} {y + 2} {z} minecraft:barrel[facing=up]{{lock:{{items:"minecraft:barrier"}}}}']
 for (x, z) in ([] if LY else [(3, Z - 3), (-3, Z - 20), (20, Z + 3), (24, Z - 24)]):
     L += [f'fill {x} 81 {z} {x + 2} 81 {z} minecraft:spruce_slab[type=top]', f'setblock {x + 1} 82 {z} minecraft:lantern']
 # machines : Juggernog (rouge), Speed Cola (vert), boîte mystère
@@ -177,7 +177,7 @@ for tag, nm, txt, cost, _, (ix, iz), (tx, tz), _ in PERKS:
     E += [f'summon minecraft:interaction {ix} {y + 1} {iz} {{Tags:["mg.zent","mg.zbuy","mg.{tag}"],width:1.3f,height:2.4f,response:1b}}',
           f'summon minecraft:text_display {tx} {y + 4.4} {tz} {{Tags:["mg.zent"],billboard:"center",text:' +
           js([{'text': nm, 'color': 'light_purple' if tag == 'zb27' else 'aqua', 'bold': True}, {'text': f'\n{txt}, {cost} pts', 'color': 'yellow'}]) + '}']
-# caisses : une interaction par-dessus pour qu'on ne puisse pas les ouvrir
+# caisses : verrouillées (lock) + une interaction par-dessus pour qu'on ne puisse pas les ouvrir
 E += [f'summon minecraft:interaction {x + 1} {y + 1} {z + 1} {{Tags:["mg.zent","mg.zlock"],width:2.05f,height:2.05f}}' for (x, z), y in zip(BARRELS, BARY)]
 # fenêtres : un marqueur dans chaque ouverture (barricade, zx/win_*)
 E += [f'summon minecraft:marker {x + .5} {y + 1} {z + .5} {{Tags:["mg.zent","mg.zwin"]}}' for (r, x, z, nx, nz), y in zip(WIN, WINY)]
