@@ -26,10 +26,10 @@ summon minecraft:text_display -14.5 86.3 42110.0 {Tags:["mg.zent","mg.zd2"],bill
 summon minecraft:text_display -14.5 86.3 42113.0 {Tags:["mg.zent","mg.zd2"],billboard:"center",text:[{"text":"🚪 Porte Chapelle → Galerie des os","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
 summon minecraft:interaction -14.5 84 42089.5 {Tags:["mg.zent","mg.zbuy","mg.zb3","mg.zd3"],width:3.4f,height:3f,response:1b}
 summon minecraft:text_display -14.5 87.3 42088.0 {Tags:["mg.zent","mg.zd3"],billboard:"center",text:[{"text":"🚪 Porte Galerie des os → Puits","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
-summon minecraft:text_display -14.5 87.3 42091.0 {Tags:["mg.zent","mg.zd3"],billboard:"center",text:[{"text":"🚪 Porte Galerie des os → Puits","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
+summon minecraft:text_display -14.5 86.7 42091.0 {Tags:["mg.zent","mg.zd3"],billboard:"center",text:[{"text":"🚪 Porte Galerie des os → Puits","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
 summon minecraft:interaction -7.5 84 42079.5 {Tags:["mg.zent","mg.zbuy","mg.zb4","mg.zd4"],width:3.4f,height:3f,response:1b}
 summon minecraft:text_display -9.0 87.3 42079.5 {Tags:["mg.zent","mg.zd4"],billboard:"center",text:[{"text":"🚪 Porte Puits → Ossuaire","color":"gold","bold":true},{"text":"\nclic droit — 1500 pts","color":"yellow"}]}
-summon minecraft:text_display -6.0 87.3 42079.5 {Tags:["mg.zent","mg.zd4"],billboard:"center",text:[{"text":"🚪 Porte Puits → Ossuaire","color":"gold","bold":true},{"text":"\nclic droit — 1500 pts","color":"yellow"}]}
+summon minecraft:text_display -6.0 86.7 42079.5 {Tags:["mg.zent","mg.zd4"],billboard:"center",text:[{"text":"🚪 Porte Puits → Ossuaire","color":"gold","bold":true},{"text":"\nclic droit — 1500 pts","color":"yellow"}]}
 summon minecraft:interaction 8.5 83 42079.5 {Tags:["mg.zent","mg.zbuy","mg.zb5","mg.zd5"],width:3.4f,height:3f,response:1b}
 summon minecraft:text_display 7.0 86.3 42079.5 {Tags:["mg.zent","mg.zd5"],billboard:"center",text:[{"text":"🚪 Porte Ossuaire → Sacristie","color":"gold","bold":true},{"text":"\nclic droit — 1500 pts","color":"yellow"}]}
 summon minecraft:text_display 10.0 86.3 42079.5 {Tags:["mg.zent","mg.zd5"],billboard:"center",text:[{"text":"🚪 Porte Ossuaire → Sacristie","color":"gold","bold":true},{"text":"\nclic droit — 1500 pts","color":"yellow"}]}
@@ -37,17 +37,17 @@ summon minecraft:interaction 15.5 83 42089.5 {Tags:["mg.zent","mg.zbuy","mg.zb6"
 summon minecraft:text_display 15.5 86.3 42088.0 {Tags:["mg.zent","mg.zd6"],billboard:"center",text:[{"text":"🚪 Porte Sacristie → Galerie est","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
 summon minecraft:text_display 15.5 86.3 42091.0 {Tags:["mg.zent","mg.zd6"],billboard:"center",text:[{"text":"🚪 Porte Sacristie → Galerie est","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
 summon minecraft:interaction 15.5 84 42111.5 {Tags:["mg.zent","mg.zbuy","mg.zb7","mg.zd7"],width:3.4f,height:3f,response:1b}
-summon minecraft:text_display 15.5 87.3 42110.0 {Tags:["mg.zent","mg.zd7"],billboard:"center",text:[{"text":"🚪 Porte Galerie est → Caveau","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
+summon minecraft:text_display 15.5 86.7 42110.0 {Tags:["mg.zent","mg.zd7"],billboard:"center",text:[{"text":"🚪 Porte Galerie est → Caveau","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
 summon minecraft:text_display 15.5 87.3 42113.0 {Tags:["mg.zent","mg.zd7"],billboard:"center",text:[{"text":"🚪 Porte Galerie est → Caveau","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
 summon minecraft:interaction 8.5 84 42119.5 {Tags:["mg.zent","mg.zbuy","mg.zb8","mg.zd8"],width:3.4f,height:3f,response:1b}
-summon minecraft:text_display 7.0 87.3 42119.5 {Tags:["mg.zent","mg.zd8"],billboard:"center",text:[{"text":"🚪 Porte Crypte → Caveau","color":"gold","bold":true},{"text":"\nclic droit — 750 pts","color":"yellow"}]}
+summon minecraft:text_display 7.0 86.7 42119.5 {Tags:["mg.zent","mg.zd8"],billboard:"center",text:[{"text":"🚪 Porte Crypte → Caveau","color":"gold","bold":true},{"text":"\nclic droit — 750 pts","color":"yellow"}]}
 summon minecraft:text_display 10.0 87.3 42119.5 {Tags:["mg.zent","mg.zd8"],billboard:"center",text:[{"text":"🚪 Porte Crypte → Caveau","color":"gold","bold":true},{"text":"\nclic droit — 750 pts","color":"yellow"}]}
 summon minecraft:interaction 0.5 81 42113.5 {Tags:["mg.zent","mg.zbuy","mg.zb9","mg.zd9"],width:3.4f,height:3f,response:1b}
-summon minecraft:text_display 0.5 84.3 42112.0 {Tags:["mg.zent","mg.zd9"],billboard:"center",text:[{"text":"🚪 Porte Crypte → Autel","color":"gold","bold":true},{"text":"\nclic droit — 2000 pts","color":"yellow"}]}
+summon minecraft:text_display 0.5 83.7 42112.0 {Tags:["mg.zent","mg.zd9"],billboard:"center",text:[{"text":"🚪 Porte Crypte → Autel","color":"gold","bold":true},{"text":"\nclic droit — 2000 pts","color":"yellow"}]}
 summon minecraft:text_display 0.5 84.3 42115.0 {Tags:["mg.zent","mg.zd9"],billboard:"center",text:[{"text":"🚪 Porte Crypte → Autel","color":"gold","bold":true},{"text":"\nclic droit — 2000 pts","color":"yellow"}]}
 summon minecraft:interaction 0.5 81 42085.5 {Tags:["mg.zent","mg.zbuy","mg.zb10","mg.zd10"],width:3.4f,height:3f,response:1b}
 summon minecraft:text_display 0.5 84.3 42084.0 {Tags:["mg.zent","mg.zd10"],billboard:"center",text:[{"text":"🚪 Porte Ossuaire → Autel","color":"gold","bold":true},{"text":"\nclic droit — 2000 pts","color":"yellow"}]}
-summon minecraft:text_display 0.5 84.3 42087.0 {Tags:["mg.zent","mg.zd10"],billboard:"center",text:[{"text":"🚪 Porte Ossuaire → Autel","color":"gold","bold":true},{"text":"\nclic droit — 2000 pts","color":"yellow"}]}
+summon minecraft:text_display 0.5 83.7 42087.0 {Tags:["mg.zent","mg.zd10"],billboard:"center",text:[{"text":"🚪 Porte Ossuaire → Autel","color":"gold","bold":true},{"text":"\nclic droit — 2000 pts","color":"yellow"}]}
 summon minecraft:interaction -6.5 81 42122.5 {Tags:["mg.zent","mg.zbuy","mg.zb11"],width:1.3f,height:2.4f,response:1b}
 summon minecraft:text_display -6.0 83.3 42122.5 {Tags:["mg.zent"],billboard:"center",text:[{"text":"🔫 Fusil M14","color":"aqua","bold":true},{"text":"\n500 pts","color":"yellow"}]}
 execute if score $rp mg.st matches 1 run summon minecraft:item_display -6.95 82.4 42122.5 {Tags:["mg.zent"],Rotation:[90f,0f],item:{id:"minecraft:warped_fungus_on_a_stick",count:1,components:{"minecraft:item_model":"mg:gun_rifle"}},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]}}

@@ -1,12 +1,12 @@
 # 🎄 Allée des champions : neige sur la pelouse, la bordure, les auvents et les cimes ; allée, place et étals dégagés
-execute if block -55 64 17 minecraft:air run setblock -55 64 17 minecraft:red_shulker_box
-execute if block -49 64 35 minecraft:air run setblock -49 64 35 minecraft:green_shulker_box
-execute if block -43 64 17 minecraft:air run setblock -43 64 17 minecraft:white_shulker_box
-execute if block -37 64 35 minecraft:air run setblock -37 64 35 minecraft:red_shulker_box
-execute if block -31 64 17 minecraft:air run setblock -31 64 17 minecraft:green_shulker_box
-execute if block -25 64 35 minecraft:air run setblock -25 64 35 minecraft:white_shulker_box
-execute if block -19 64 17 minecraft:air run setblock -19 64 17 minecraft:red_shulker_box
-execute if block -13 64 35 minecraft:air run setblock -13 64 35 minecraft:green_shulker_box
+execute if block -55 64 17 minecraft:air run setblock -55 64 17 minecraft:red_shulker_box{lock:{items:"minecraft:barrier"}}
+execute if block -49 64 35 minecraft:air run setblock -49 64 35 minecraft:green_shulker_box{lock:{items:"minecraft:barrier"}}
+execute if block -43 64 17 minecraft:air run setblock -43 64 17 minecraft:white_shulker_box{lock:{items:"minecraft:barrier"}}
+execute if block -37 64 35 minecraft:air run setblock -37 64 35 minecraft:red_shulker_box{lock:{items:"minecraft:barrier"}}
+execute if block -31 64 17 minecraft:air run setblock -31 64 17 minecraft:green_shulker_box{lock:{items:"minecraft:barrier"}}
+execute if block -25 64 35 minecraft:air run setblock -25 64 35 minecraft:white_shulker_box{lock:{items:"minecraft:barrier"}}
+execute if block -19 64 17 minecraft:air run setblock -19 64 17 minecraft:red_shulker_box{lock:{items:"minecraft:barrier"}}
+execute if block -13 64 35 minecraft:air run setblock -13 64 35 minecraft:green_shulker_box{lock:{items:"minecraft:barrier"}}
 fill -60 64 15 -6 64 36 minecraft:snow replace minecraft:air
 fill -59 64 20 -13 64 30 minecraft:air replace minecraft:snow
 fill -63 64 23 -6 64 27 minecraft:air replace minecraft:snow

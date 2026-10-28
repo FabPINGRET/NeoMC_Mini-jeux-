@@ -32,6 +32,9 @@ execute unless score @s mg.fb20 matches -2147483648.. run scoreboard players set
 execute unless score @s mg.fb21 matches -2147483648.. run scoreboard players set @s mg.fb21 0
 execute unless score @s mg.fb22 matches -2147483648.. run scoreboard players set @s mg.fb22 0
 execute unless score @s mg.fb23 matches -2147483648.. run scoreboard players set @s mg.fb23 0
+execute unless score @s mg.fb24 matches -2147483648.. run scoreboard players set @s mg.fb24 0
+execute unless score @s mg.fb25 matches -2147483648.. run scoreboard players set @s mg.fb25 0
+execute unless score @s mg.fb26 matches -2147483648.. run scoreboard players set @s mg.fb26 0
 scoreboard players reset @s mg.fnd
 scoreboard players reset @s mg.fnk
 scoreboard players reset @s mg.fnu

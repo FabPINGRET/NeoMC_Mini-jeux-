@@ -1,5 +1,5 @@
 # ⛏ Régénération du chunk de mine (les joueurs dedans remontent d'abord)
-execute as @a[tag=mg.fnw,x=0,y=39,z=46000,dx=15,dy=60,dz=15] run function mg:filon/to_surface
+execute as @a[tag=mg.fnw,x=0,y=39,z=46000,dx=15,dy=64,dz=15] run function mg:filon/to_surface
 kill @e[type=minecraft:item,x=0,y=39,z=46000,dx=15,dy=61,dz=15]
 kill @e[type=minecraft:tnt,x=-2,y=38,z=45998,dx=19,dy=65,dz=19]
 fill 0 99 46000 15 99 46015 minecraft:stone
@@ -62,107 +62,411 @@ fill 0 43 46000 15 43 46015 minecraft:deepslate
 fill 0 42 46000 15 42 46015 minecraft:deepslate
 fill 0 41 46000 15 41 46015 minecraft:deepslate
 fill 0 40 46000 15 40 46015 minecraft:deepslate
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
-function mg:filon/rpf {f:"ore_copper_large",y1:60,y2:95}
-function mg:filon/rpf {f:"ore_copper_large",y1:60,y2:95}
-function mg:filon/rpf {f:"ore_copper_large",y1:60,y2:95}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
-function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
-function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
-function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
-function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
-function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
-function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
-function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
-function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
-function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
-function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
-function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
-function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
-function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
-function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
-function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
-function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
-function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
-function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
-function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
-function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
-function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
-function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
-function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
-function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
-function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
-function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
-function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
-function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
-function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
-function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
-function mg:filon/rpf {f:"ore_diamond_small",y1:40,y2:55}
-function mg:filon/rpf {f:"ore_diamond_small",y1:40,y2:55}
-function mg:filon/rpf {f:"ore_diamond_small",y1:40,y2:55}
-function mg:filon/rpf {f:"ore_diamond_small",y1:40,y2:55}
-function mg:filon/rpf {f:"ore_diamond_small",y1:40,y2:55}
-function mg:filon/rpf {f:"ore_diamond_medium",y1:40,y2:52}
-function mg:filon/rpf {f:"ore_diamond_medium",y1:40,y2:52}
-function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
-function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
-function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
-function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
-function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
-function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
-function mg:filon/rpf {f:"ore_andesite",y1:50,y2:98}
-function mg:filon/rpf {f:"ore_andesite",y1:50,y2:98}
-function mg:filon/rpf {f:"ore_diorite",y1:50,y2:98}
-function mg:filon/rpf {f:"ore_diorite",y1:50,y2:98}
-function mg:filon/rpf {f:"ore_granite",y1:50,y2:98}
-function mg:filon/rpf {f:"ore_granite",y1:50,y2:98}
-function mg:filon/rpf {f:"ore_tuff",y1:40,y2:69}
-function mg:filon/rpf {f:"ore_tuff",y1:40,y2:69}
-function mg:filon/rpf {f:"ore_gravel",y1:40,y2:98}
-function mg:filon/rpf {f:"ore_gravel",y1:40,y2:98}
-function mg:filon/rpf {f:"ore_gravel",y1:40,y2:98}
+execute store result score $fnrich mg.st run random value 50..150
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_coal",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_small",y1:60,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_large",y1:60,y2:95}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_large",y1:60,y2:95}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_large",y1:60,y2:95}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_large",y1:60,y2:95}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_large",y1:60,y2:95}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_copper_large",y1:60,y2:95}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron",y1:45,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_iron_small",y1:40,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gold",y1:40,y2:75}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_redstone",y1:40,y2:62}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_lapis",y1:40,y2:70}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diamond_small",y1:40,y2:55}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diamond_small",y1:40,y2:55}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diamond_small",y1:40,y2:55}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diamond_small",y1:40,y2:55}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diamond_small",y1:40,y2:55}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diamond_small",y1:40,y2:55}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diamond_small",y1:40,y2:55}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diamond_small",y1:40,y2:55}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diamond_small",y1:40,y2:55}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diamond_small",y1:40,y2:55}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diamond_medium",y1:40,y2:52}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diamond_medium",y1:40,y2:52}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diamond_medium",y1:40,y2:52}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diamond_medium",y1:40,y2:52}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_emerald",y1:70,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_andesite",y1:50,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_andesite",y1:50,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_andesite",y1:50,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_andesite",y1:50,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diorite",y1:50,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diorite",y1:50,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diorite",y1:50,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_diorite",y1:50,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_granite",y1:50,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_granite",y1:50,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_granite",y1:50,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_granite",y1:50,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_tuff",y1:40,y2:69}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_tuff",y1:40,y2:69}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_tuff",y1:40,y2:69}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_tuff",y1:40,y2:69}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gravel",y1:40,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gravel",y1:40,y2:98}
+execute store result score #fr mg.st run random value 1..100
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gravel",y1:40,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gravel",y1:40,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gravel",y1:40,y2:98}
+execute store result score #fr mg.st run random value 101..200
+execute if score #fr mg.st <= $fnrich mg.st run function mg:filon/rpf {f:"ore_gravel",y1:40,y2:98}
 # jackpots ordinaires : bloc d'or brut (30 %), débris antique (25 %), coffre enfoui (40 %), bloc de fer brut (35 %)
 execute store result score #fr mg.st run random value 1..100
 execute if score #fr mg.st matches ..30 run function mg:filon/rset {b:"raw_gold_block",y1:40,y2:85}

@@ -1779,10 +1779,10 @@ fill 12 101 45985 12 103 45985 minecraft:spruce_fence
 fill 16 101 45985 16 103 45985 minecraft:spruce_fence
 fill 12 104 45984 16 104 45986 minecraft:spruce_slab[type=bottom]
 setblock 14 103 45986 minecraft:lantern[hanging=true]
-setblock 1 101 45985 minecraft:barrel[facing=up]
+setblock 1 101 45985 minecraft:barrel[facing=up]{lock:{items:"minecraft:barrier"}}
 setblock 3 101 45985 minecraft:gold_block
-setblock 13 101 45985 minecraft:anvil
-setblock 15 101 45985 minecraft:smithing_table
+setblock 13 101 45985 minecraft:lodestone
+setblock 15 101 45985 minecraft:cut_copper
 fill 6 100 45983 10 100 45983 minecraft:polished_andesite
 fill 6 101 45983 10 104 45983 minecraft:dark_oak_planks
 fill 6 105 45983 10 105 45983 minecraft:dark_oak_slab[type=bottom]

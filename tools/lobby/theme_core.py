@@ -34,7 +34,7 @@ def write_dispatch(THEMES):
     w('lobby/theme/reskin', ['# Appelé à la fin de lobby/deco : rhabille les entités du décor selon le thème actif'] +
       [f'execute if score $theme mg.st matches {tid} run function mg:lobby/theme/{key}/reskin' for tid, key, *_ in THEMES] + ['function mg:lobby/food_skin'])
     w('lobby/theme/tick', ['# Habillage des animaux tourné comme eux (chaque tick), puis cycle des chutes et ambiance du thème (chaque seconde)',
-                           'execute as @e[type=minecraft:item_display,tag=mg.thrid] on vehicle rotated as @s on passengers '
+                           'execute as @e[type=minecraft:item_display,tag=mg.thrid,x=-80,y=30,z=-80,dx=160,dy=120,dz=160] on vehicle rotated as @s on passengers '
                            'if entity @s[tag=mg.thrid] run rotate @s ~ 0',
                            'scoreboard players add $tht mg.st 1', 'execute if score $tht mg.st matches ..19 run return 0',
                            'scoreboard players set $tht mg.st 0', 'function mg:lobby/theme/fall_tick'] +

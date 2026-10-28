@@ -1,4 +1,4 @@
-# 💰 @s vend tout ce qui est vendable dans son inventaire, au cours du moment
+# 💰 @s vend tout ce qui est vendable dans son inventaire, au cours du moment (Σ nombre × base en dixièmes × cours % ÷ 1000)
 scoreboard players set #tot mg.st 0
 execute store result score #n mg.st run clear @s minecraft:cobblestone
 scoreboard players operation #n mg.st *= #fb0 mg.st
@@ -96,7 +96,7 @@ execute store result score #n mg.st run clear @s minecraft:gold_nugget[minecraft
 scoreboard players operation #n mg.st *= #fb23 mg.st
 scoreboard players operation #n mg.st *= $fm23 mg.st
 scoreboard players operation #tot mg.st += #n mg.st
-scoreboard players operation #tot mg.st /= #fn100 mg.st
+scoreboard players operation #tot mg.st /= #fn1000 mg.st
 execute if score #tot mg.st matches ..0 run return run tellraw @s {"text":"Rien à vendre : va miner ! ⛏","color":"gray"}
 scoreboard players operation @s mg.fnp += #tot mg.st
 scoreboard players operation @s mg.fns += #tot mg.st

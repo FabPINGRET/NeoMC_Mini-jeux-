@@ -31,5 +31,8 @@ scoreboard players set @s mg.fb20 0
 scoreboard players set @s mg.fb21 0
 scoreboard players set @s mg.fb22 0
 scoreboard players set @s mg.fb23 0
+scoreboard players set @s mg.fb24 0
+scoreboard players set @s mg.fb25 0
+scoreboard players set @s mg.fb26 0
 scoreboard players operation @s mg.fnsea = $fnsea mg.st
 tag @s add mg.fnnew

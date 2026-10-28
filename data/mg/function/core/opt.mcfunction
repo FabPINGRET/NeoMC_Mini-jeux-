@@ -75,5 +75,5 @@ execute if score @s mg.opt matches 86 if entity @s[tag=mg.admin] run function mg
 execute if score @s mg.opt matches 87 if entity @s[tag=mg.admin] run function mg:lobby/fish/admin_stats
 execute if score @s mg.opt matches 62..65 run function mg:tpg/run
 execute if score @s mg.opt matches 75 run function mg:tpg/run
-execute if score @s mg.opt matches 88 run function mg:tpg/run
+execute if score @s mg.opt matches 88..89 run function mg:tpg/run
 scoreboard players reset @s mg.opt

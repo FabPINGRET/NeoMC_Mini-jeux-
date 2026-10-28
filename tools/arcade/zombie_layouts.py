@@ -308,7 +308,7 @@ _TR = {'a': (-6, 6, 12, 22, 80, 6), 'b': (-20, -8, 4, 20, 81), 'c': (-20, -8, -1
        'e': (8, 20, -18, 2, 82), 'f': (8, 20, 4, 20, 81), 'g': (-4, 4, -6, 6)}
 _TW, _TS, _TST = 'cut_sandstone', 'smooth_sandstone', 'smooth_sandstone_stairs'
 _T_EXTRA = (
-    [e for r, c in (('a', 3), ('b', 2), ('c', 2), ('d', 3), ('e', 2), ('f', 2), ('g', 3)) for e in chamfer(_TR[r], c, _TW)] +
+    [e for r, c in (('a', 3), ('b', 2), ('c', 2), ('d', 2), ('e', 2), ('f', 2), ('g', 3)) for e in chamfer(_TR[r], c, _TW)] +     # bassin : pans de 2 (portes 3 et 4 dans les coins)
     approach(-7, 15, -7, 17, (1, 0), 80, 1, _TST, _TS) +        # 1 Atrium → Vestiaire (81)
     approach(-15, 3, -13, 3, (0, 1), 81, 2, _TST, _TS) +        # 2 Vestiaire → Frigidarium (83)
     approach(-7, -16, -7, -14, (1, 0), 80, 3, _TST, _TS) +      # 3 Frigidarium → Bassin (côté bassin, 80)

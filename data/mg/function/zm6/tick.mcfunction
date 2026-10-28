@@ -2,8 +2,8 @@
 execute as @a[tag=mg.play,tag=!mg.zdead,scores={mg.deaths=1..}] run function mg:zm6/die
 execute as @a[tag=mg.play,scores={mg.zkl=1..}] run function mg:zm6/kill_points
 execute as @a[tag=mg.zqrw] run function mg:zm6/qr_tick
-function mg:zx/tick
-execute as @e[type=minecraft:interaction,tag=mg.zbuy] if data entity @s interaction run function mg:zm6/buy
+execute positioned 8 80 39795 run function mg:zx/tick
+execute as @e[type=minecraft:interaction,tag=mg.zbuy,x=-48,y=-64,z=39764,dx=112,dy=384,dz=62] if data entity @s interaction run function mg:zm6/buy
 execute if score $zph mg.st matches 0 run function mg:zm6/break_tick
 execute if score $zph mg.st matches 1 run function mg:zm6/round_tick
 scoreboard players add $zt mg.st 1

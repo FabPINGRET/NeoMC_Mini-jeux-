@@ -103,6 +103,24 @@
     {
       "label": [
         {
+          "text": "⛏ Tout le monde → Filon",
+          "color": "gold"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.opt set 89"
+      },
+      "tooltip": [
+        {
+          "text": "Les joueurs en survie, dans un monde ou sur leur plot en sortent d'abord (tout est sauvegardé)",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
           "text": "🏠 Tout le monde → Lobby",
           "color": "yellow"
         }
@@ -113,7 +131,7 @@
       },
       "tooltip": [
         {
-          "text": "Sort tout le monde de la survie, de Neo GTA, de Terra Nova, d'Ombrelune, des plots, du kart, du parkour, des élytra et de la montagne russe : prêt pour lancer un mini-jeu",
+          "text": "Sort tout le monde de la survie, de Neo GTA, de Terra Nova, d'Ombrelune, du Filon, des plots, du kart, du parkour, des élytra et de la montagne russe : prêt pour lancer un mini-jeu",
           "color": "gray"
         }
       ]

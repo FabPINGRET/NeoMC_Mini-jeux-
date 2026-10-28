@@ -7,6 +7,9 @@ execute if score $state mg.st matches 0 as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.
 execute as @a[tag=mg.dl,gamemode=!spectator] if items entity @s weapon.mainhand minecraft:warped_fungus_on_a_stick[custom_data~{mg_dl:1b}] run tag @s add mg.gcw
 execute as @a[tag=mg.play,gamemode=adventure] if items entity @s weapon.mainhand minecraft:warped_fungus_on_a_stick[custom_data~{mg_tm:1b}] run tag @s add mg.gcw
 execute as @a[tag=mg.gads,tag=!mg.gcw] run function mg:gun/cl_unaim
+# personne n'a d'arme en main : les boîtes ne sont balayées qu'une fois ($gcib, posé par cl_new et au chargement), pas à chaque tick
+execute unless entity @a[tag=mg.gcw] unless score $gcib mg.st matches 1 run return 0
+execute unless entity @a[tag=mg.gcw] run scoreboard players set $gcib mg.st 0
 execute unless entity @a[tag=mg.gcw] run return run kill @e[type=minecraft:interaction,tag=mg.gci]
 execute as @a[tag=mg.gcw] unless score @s mg.gcid matches 1.. run function mg:gun/cl_id
 # un clic droit passé à côté de la boîte : visée

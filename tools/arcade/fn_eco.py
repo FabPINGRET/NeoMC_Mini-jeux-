@@ -9,24 +9,28 @@ w(f'{P}/market', MK)
 BD = ['# Tableau du marché : prix du moment (tas de 64 pour les pierres) et tendance']
 parts = [TXT('📈 COURS DU MARCHÉ', 'gold', bold=True), TXT('\n(change toutes les 15 min)\n', 'gray')]
 shown = [i for i, s in enumerate(SELL) if s[3]]
-BD += [f'scoreboard players operation #pp mg.st = $fm0 mg.st', 'scoreboard players operation #pp mg.st *= #fn64 mg.st',
-       'scoreboard players operation #pp mg.st /= #fn100 mg.st', 'execute store result storage mg:filon b.s int 1 run scoreboard players get #pp mg.st',
+# prix affiché = base (dixièmes) × cours / 100 → dixièmes de point : « 4,5 pts » (b.p = entier, b.d = décimale)
+BD += [f'scoreboard players set #pp mg.st {SELL[0][1]}', 'scoreboard players operation #pp mg.st *= #fn64 mg.st', 'scoreboard players operation #pp mg.st *= $fm0 mg.st',
+       'scoreboard players operation #pp mg.st /= #fn100 mg.st', 'scoreboard players operation #pd mg.st = #pp mg.st', 'scoreboard players operation #pp mg.st /= #fn10 mg.st',
+       'scoreboard players operation #pd mg.st %= #fn10 mg.st',
+       'execute store result storage mg:filon b.s int 1 run scoreboard players get #pp mg.st', 'execute store result storage mg:filon b.sd int 1 run scoreboard players get #pd mg.st',
        'data modify storage mg:filon b.sc set value "green"', 'execute if score $fm0 mg.st < $fo0 mg.st run data modify storage mg:filon b.sc set value "red"']
-parts += [TXT('Pierre (×64) : '), {'text': '$(s)', 'color': '$(sc)'}, TXT(' pts\n')]
+parts += [TXT('Pierre (×64) : '), {'text': '$(s),$(sd)', 'color': '$(sc)'}, TXT(' pts\n')]
 for i in shown:
     _, base, nm, _, _, _ = SELL[i]
     BD += [f'scoreboard players set #pp mg.st {base}', f'scoreboard players operation #pp mg.st *= $fm{i} mg.st', 'scoreboard players operation #pp mg.st /= #fn100 mg.st',
-           f'execute store result storage mg:filon b.p{i} int 1 run scoreboard players get #pp mg.st',
+           'scoreboard players operation #pd mg.st = #pp mg.st', 'scoreboard players operation #pp mg.st /= #fn10 mg.st', 'scoreboard players operation #pd mg.st %= #fn10 mg.st',
+           f'execute store result storage mg:filon b.p{i} int 1 run scoreboard players get #pp mg.st', f'execute store result storage mg:filon b.d{i} int 1 run scoreboard players get #pd mg.st',
            f'data modify storage mg:filon b.a{i} set value "▲"', f'data modify storage mg:filon b.c{i} set value "green"',
            f'execute if score $fm{i} mg.st < $fo{i} mg.st run data modify storage mg:filon b.a{i} set value "▼"',
            f'execute if score $fm{i} mg.st < $fo{i} mg.st run data modify storage mg:filon b.c{i} set value "red"',
            f'execute if score $fm{i} mg.st = $fo{i} mg.st run data modify storage mg:filon b.a{i} set value "="',
            f'execute if score $fm{i} mg.st = $fo{i} mg.st run data modify storage mg:filon b.c{i} set value "gray"']
-    parts += [TXT(f'{nm} : '), {'text': f'$(p{i}) $(a{i})', 'color': f'$(c{i})'}, TXT(' pts\n')]
+    parts += [TXT(f'{nm} : '), {'text': f'$(p{i}),$(d{i}) $(a{i})', 'color': f'$(c{i})'}, TXT(' pts\n')]
 BD += [f'function mg:{P}/board_set with storage mg:filon b']
 w(f'{P}/board', BD)
 w(f'{P}/board_set', [f'$data modify entity @e[type=minecraft:text_display,tag=mg.fnboard,limit=1] text set value {js(parts)}'])
-CONSTS = ['scoreboard players set #fn100 mg.st 100', 'scoreboard players set #fn64 mg.st 64', 'scoreboard players set #fn2 mg.st 2'] + \
+CONSTS = ['scoreboard players set #fn100 mg.st 100', 'scoreboard players set #fn1000 mg.st 1000', 'scoreboard players set #fn10 mg.st 10', 'scoreboard players set #fn64 mg.st 64', 'scoreboard players set #fn2 mg.st 2'] + \
          [f'scoreboard players set #fb{i} mg.st {s[1]}' for i, s in enumerate(SELL)] + \
          [f'execute unless score $fm{i} mg.st matches 1.. run scoreboard players set $fm{i} mg.st 100' for i in range(NS)] + \
          [f'execute unless score $fo{i} mg.st matches 1.. run scoreboard players set $fo{i} mg.st 100' for i in range(NS)] + \
@@ -38,11 +42,11 @@ CONSTS = ['scoreboard players set #fn100 mg.st 100', 'scoreboard players set #fn
           'bossbar add mg:filon ""', 'bossbar set mg:filon max 2700', 'bossbar set mg:filon style notched_10']
 
 # ---------------------------------------------------------------- vente
-SL = ['# 💰 @s vend tout ce qui est vendable dans son inventaire, au cours du moment', 'scoreboard players set #tot mg.st 0']
+SL = ['# 💰 @s vend tout ce qui est vendable dans son inventaire, au cours du moment (Σ nombre × base en dixièmes × cours % ÷ 1000)', 'scoreboard players set #tot mg.st 0']
 for i, (iid_, *_) in enumerate(SELL):
     SL += [f'execute store result score #n mg.st run clear @s {iid(iid_)}', f'scoreboard players operation #n mg.st *= #fb{i} mg.st',
            f'scoreboard players operation #n mg.st *= $fm{i} mg.st', 'scoreboard players operation #tot mg.st += #n mg.st']
-SL += ['scoreboard players operation #tot mg.st /= #fn100 mg.st',
+SL += ['scoreboard players operation #tot mg.st /= #fn1000 mg.st',
        'execute if score #tot mg.st matches ..0 run return run tellraw @s {"text":"Rien à vendre : va miner ! ⛏","color":"gray"}',
        'scoreboard players operation @s mg.fnp += #tot mg.st', 'scoreboard players operation @s mg.fns += #tot mg.st',
        'tellraw @s [{"text":"💰 Vendu pour ","color":"gold"},{"score":{"name":"#tot","objective":"mg.st"},"color":"yellow","bold":true},{"text":" pts. Solde : ","color":"gold"},'
@@ -119,7 +123,10 @@ w(f'{P}/rope', ['# 🪢 Corde de remontée (recharge 120 s)',
 w(f'{P}/to_surface', [f'tp @s {SPAWN[0]} {SPAWN[1]} {SPAWN[2]} 0 0', 'tag @s remove mg.fnin', 'team join mg_fn @s'])
 w(f'{P}/dyn', ['# 🧨 Dynamite : seulement dans la mine, sous la surface (les murs du puits protègent l\'île)',
                f'execute unless entity @s[x=0,y={YB - 1},z={Z0},dx=15,dy={95 - YB},dz=15] run return run title @s actionbar {{"text":"🧨 Seulement dans la mine, au moins 4 blocs sous la surface.","color":"red"}}',
-               'execute anchored eyes positioned ^ ^ ^1.2 run summon minecraft:tnt ~ ~-0.5 ~ {fuse:40,Tags:["mg.fntnt"]}',
+               '# la TNT appartient au lanceur : hors PvP (tous dans l\'équipe mg_fn, sans tir ami) elle ne blesse personne, elle creuse seulement',
+               'execute anchored eyes positioned ^ ^ ^1.2 run summon minecraft:tnt ~ ~-0.5 ~ {fuse:40,Tags:["mg.fntnt","mg.fntntn"]}',
+               'data modify entity @e[type=minecraft:tnt,tag=mg.fntntn,limit=1] owner set from entity @s UUID',
+               'tag @e[type=minecraft:tnt,tag=mg.fntntn] remove mg.fntntn',
                'clear @s minecraft:warped_fungus_on_a_stick[minecraft:custom_data~{fn_dyn:1b}] 1',
                'title @s actionbar {"text":"🧨 Recule ! 2 secondes…","color":"red","bold":true}'])
 

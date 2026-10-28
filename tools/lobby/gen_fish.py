@@ -95,11 +95,11 @@ C.patch('desinstaller', SB.HEADER_NOTE, DESINST)
 C.patch('core/request', 'execute as @a[tag=mg.play,tag=mg.elyf] run function mg:elytra/free_stop', [f'clear @a[tag=mg.play] {FR.PRED}'], where='before')
 # core/tick, juste après la ligne foot/build : après une prise, entretien toutes les 2 s (chunk du socle chargé), reconstruction si le bloc du socle manque
 TICK = ['execute if entity @a[tag=mg.lfc] run function mg:lobby/fish/after',
-        'execute if entity @e[type=minecraft:marker,tag=mg.lfm] run function mg:lobby/fish/after',      # joueur déconnecté entre la prise et ce tick
+        'execute if score $lan mg.t matches 30 if entity @e[type=minecraft:marker,tag=mg.lfm] run function mg:lobby/fish/after',      # joueur déconnecté entre la prise et ce tick (filet : toutes les 2 s)
         f'execute if score $setup mg.st matches 1 if score $lan mg.t matches 30 if loaded {FR.POS} run function mg:lobby/fish/second',
         f'execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless score $lfoff mg.st matches 1 if loaded {FR.POS} '
         f'unless block {FR.POS} {FR.LOG} run function mg:lobby/fish/build']
-C.drop_lines('core/tick', TICK)          # core/tick n'est que patché (jamais réécrit) : on retire d'abord nos lignes, puis on les repose
+C.drop_lines('core/tick', TICK + ['execute if entity @e[type=minecraft:marker,tag=mg.lfm] run function mg:lobby/fish/after'])   # core/tick n'est que patché : on retire nos lignes (anciennes versions comprises), puis on les repose
 C.patch('core/tick', foot_build_line(), TICK)
 FA.wire()
 print('Pêche à l\'étang OK :', len(FG.CATCHES), 'prises')

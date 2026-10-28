@@ -23,3 +23,6 @@ execute store result score @s mg.fb20 run clear @s minecraft:raw_gold_block
 execute store result score @s mg.fb21 run clear @s minecraft:raw_iron_block
 execute store result score @s mg.fb22 run clear @s minecraft:ancient_debris
 execute store result score @s mg.fb23 run clear @s minecraft:gold_nugget[minecraft:custom_data~{fn_lucky:1b}]
+execute store result score @s mg.fb24 run clear @s minecraft:warped_fungus_on_a_stick[minecraft:custom_data~{fn_dyn:1b}]
+execute store result score @s mg.fb25 run clear @s minecraft:golden_apple
+execute store result score @s mg.fb26 run clear @s minecraft:cooked_beef

@@ -73,6 +73,49 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard players set $gcib mg.st 1
+scoreboard objectives add mg.fb0 dummy
+scoreboard objectives add mg.fb1 dummy
+scoreboard objectives add mg.fb10 dummy
+scoreboard objectives add mg.fb11 dummy
+scoreboard objectives add mg.fb12 dummy
+scoreboard objectives add mg.fb13 dummy
+scoreboard objectives add mg.fb14 dummy
+scoreboard objectives add mg.fb15 dummy
+scoreboard objectives add mg.fb16 dummy
+scoreboard objectives add mg.fb17 dummy
+scoreboard objectives add mg.fb18 dummy
+scoreboard objectives add mg.fb19 dummy
+scoreboard objectives add mg.fb2 dummy
+scoreboard objectives add mg.fb20 dummy
+scoreboard objectives add mg.fb21 dummy
+scoreboard objectives add mg.fb22 dummy
+scoreboard objectives add mg.fb23 dummy
+scoreboard objectives add mg.fb24 dummy
+scoreboard objectives add mg.fb25 dummy
+scoreboard objectives add mg.fb26 dummy
+scoreboard objectives add mg.fb3 dummy
+scoreboard objectives add mg.fb4 dummy
+scoreboard objectives add mg.fb5 dummy
+scoreboard objectives add mg.fb6 dummy
+scoreboard objectives add mg.fb7 dummy
+scoreboard objectives add mg.fb8 dummy
+scoreboard objectives add mg.fb9 dummy
+scoreboard objectives add mg.fnar dummy
+scoreboard objectives add mg.fncd dummy
+scoreboard objectives add mg.fnef dummy
+scoreboard objectives add mg.fnfo dummy
+scoreboard objectives add mg.fnha dummy
+scoreboard objectives add mg.fnp dummy
+scoreboard objectives add mg.fnpk dummy
+scoreboard objectives add mg.fnsea dummy
+scoreboard objectives add mg.fnsw dummy
+scoreboard objectives add mg.fns dummy {"text":"⛏ Filon — saison","color":"gold","bold":true}
+scoreboard objectives add mg.fnl dummy {"text":"⛏ Filon — saison passée","color":"gold"}
+scoreboard objectives add mg.fnu minecraft.used:minecraft.warped_fungus_on_a_stick
+scoreboard objectives add mg.fnd deathCount
+scoreboard objectives add mg.fnk playerKillCount
+scoreboard objectives add mg.fnt trigger
 # Filon : constantes, cours, équipe, barre ; pas de zone chargée hors session ; île construite une fois (~1 s)
 function mg:filon/consts
 scoreboard players set $fnw mg.st 0

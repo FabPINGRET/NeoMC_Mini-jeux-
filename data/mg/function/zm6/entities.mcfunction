@@ -27,15 +27,15 @@ summon minecraft:text_display -10.0 84.3 39800.5 {Tags:["mg.zent","mg.zd3"],bill
 summon minecraft:text_display -7.0 84.3 39800.5 {Tags:["mg.zent","mg.zd3"],billboard:"center",text:[{"text":"🚪 Porte Accueil → Escalier","color":"gold","bold":true},{"text":"\nclic droit — 750 pts","color":"yellow"}]}
 summon minecraft:interaction -8.5 87 39793.5 {Tags:["mg.zent","mg.zbuy","mg.zb4","mg.zd4"],width:3.4f,height:3f,response:1b}
 summon minecraft:text_display -10.0 90.3 39793.5 {Tags:["mg.zent","mg.zd4"],billboard:"center",text:[{"text":"🚪 Porte Escalier → Étage","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
-summon minecraft:text_display -7.0 90.3 39793.5 {Tags:["mg.zent","mg.zd4"],billboard:"center",text:[{"text":"🚪 Porte Escalier → Étage","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
+summon minecraft:text_display -7.0 85.7 39793.5 {Tags:["mg.zent","mg.zd4"],billboard:"center",text:[{"text":"🚪 Porte Escalier → Étage","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
 summon minecraft:interaction -16.5 87 39793.5 {Tags:["mg.zent","mg.zbuy","mg.zb5","mg.zd5"],width:3.4f,height:3f,response:1b}
 summon minecraft:text_display -18.0 90.3 39793.5 {Tags:["mg.zent","mg.zd5"],billboard:"center",text:[{"text":"🚪 Porte Escalier → Bloc opératoire","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
 summon minecraft:text_display -15.0 90.3 39793.5 {Tags:["mg.zent","mg.zd5"],billboard:"center",text:[{"text":"🚪 Porte Escalier → Bloc opératoire","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
 summon minecraft:interaction 9.5 87 39800.5 {Tags:["mg.zent","mg.zbuy","mg.zb6","mg.zd6"],width:3.4f,height:3f,response:1b}
-summon minecraft:text_display 8.0 90.3 39800.5 {Tags:["mg.zent","mg.zd6"],billboard:"center",text:[{"text":"🚪 Porte Étage → Passerelle","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
-summon minecraft:text_display 11.0 90.3 39800.5 {Tags:["mg.zent","mg.zd6"],billboard:"center",text:[{"text":"🚪 Porte Étage → Passerelle","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
+summon minecraft:text_display 8.0 85.7 39800.5 {Tags:["mg.zent","mg.zd6"],billboard:"center",text:[{"text":"🚪 Porte Étage → Passerelle","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
+summon minecraft:text_display 11.0 85.7 39800.5 {Tags:["mg.zent","mg.zd6"],billboard:"center",text:[{"text":"🚪 Porte Étage → Passerelle","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
 summon minecraft:interaction 31.5 87 39800.5 {Tags:["mg.zent","mg.zbuy","mg.zb7","mg.zd7"],width:3.4f,height:3f,response:1b}
-summon minecraft:text_display 30.0 90.3 39800.5 {Tags:["mg.zent","mg.zd7"],billboard:"center",text:[{"text":"🚪 Porte Passerelle → Galerie","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
+summon minecraft:text_display 30.0 85.7 39800.5 {Tags:["mg.zent","mg.zd7"],billboard:"center",text:[{"text":"🚪 Porte Passerelle → Galerie","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
 summon minecraft:text_display 33.0 90.3 39800.5 {Tags:["mg.zent","mg.zd7"],billboard:"center",text:[{"text":"🚪 Porte Passerelle → Galerie","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
 summon minecraft:interaction 20.5 81 39796.5 {Tags:["mg.zent","mg.zbuy","mg.zb8","mg.zd8"],width:3.4f,height:3f,response:1b}
 summon minecraft:text_display 20.5 84.3 39795.0 {Tags:["mg.zent","mg.zd8"],billboard:"center",text:[{"text":"🚪 Porte Couloir → Morgue","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}

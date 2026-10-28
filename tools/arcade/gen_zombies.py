@@ -73,6 +73,16 @@ if LAYOUT:
     AREA = LY['area']
     TOP = LY['top']
 AX1, AZ1, AX2, AZ2 = AREA
+ZCX, ZCZ = (AX1 + AX2) // 2, (AZ1 + AZ2) // 2                      # centre de la carte : zx/tick et zx/second s'exécutent de là (distance=..80)
+ZBOX = f'x={AX1 - 8},y=-64,z={AZ1 - 8},dx={AX2 - AX1 + 16},dy=384,dz={AZ2 - AZ1 + 16}'   # boîte de la carte, toute hauteur (zombies tombés compris)
+def ceil_at(x, z):
+    """y du plafond (bloc) au-dessus du point (x, z) : plafond de la plus basse salle qui le contient, sinon celui des passages (84) ; bunker : 86"""
+    if not LY:
+        return 86
+    hit = [LY['ry'][r] + LY['rh'][r] + 1 for r, (x1, x2, z1, z2) in ROOMS.items() if x1 <= x <= x2 and z1 <= z <= z2]
+    return min(hit) if hit else 84
+
+
 # niveau (y du sol) de chaque objet : 80 partout sur le bunker, selon la salle sur les cartes à niveaux
 _YS = LY['ys'] if LY else None
 DOORY = _YS['doors'] if LY else {d: 80 for d in DOORS}
@@ -144,7 +154,7 @@ L += [f'setblock {jx} {JUGY + 1} {jz} minecraft:red_glazed_terracotta', f'setblo
       f'setblock {sx_} {SPEEDY + 1} {sz_} minecraft:lime_glazed_terracotta', f'setblock {sx_} {SPEEDY + 2} {sz_} minecraft:lime_stained_glass',
       f'setblock {sx_} {SPEEDY + 3} {sz_} minecraft:redstone_lamp[lit=true]',
       f'setblock {bx_} {BOXY + 1} {bz_} minecraft:chest[facing=south]', f'setblock {bx_ - 1} {BOXY + 1} {bz_} minecraft:spruce_planks',
-      f'setblock {bx_ + 1} {BOXY + 1} {bz_} minecraft:spruce_planks', f'setblock {bx_} {BOXY + 5} {bz_} minecraft:soul_lantern[hanging=true]']
+      f'setblock {bx_ + 1} {BOXY + 1} {bz_} minecraft:spruce_planks', f'setblock {bx_} {ceil_at(bx_, bz_) - 1} {bz_} minecraft:soul_lantern[hanging=true]']
 for tag, _, _, _, (bx, bz), _, _, (b1, b2) in PERKS:
     y = PERKY[tag]
     L += [f'setblock {bx} {y + 1} {bz} minecraft:{b1}', f'setblock {bx} {y + 2} {bz} minecraft:{b2}', f'setblock {bx} {y + 3} {bz} minecraft:redstone_lamp[lit=true]']
@@ -157,12 +167,17 @@ w('zm/build', L)
 E = ['# Entités du bunker (portes, achats, apparitions) — tag mg.zent', 'kill @e[tag=mg.zent]']
 for (r, x, z, nx, nz), y in zip(WIN, WINY):
     E.append(f'summon minecraft:marker {x + nx * 2 + .5} {y + 1} {z + nz * 2 + .5} {{Tags:["mg.zent","mg.zsp","mg.zr_{r}"]}}')
+
+
 for d, (nm, cost, (x1, z1, x2, z2), (ix, iz), room) in DOORS.items():
     ox, oz = (0, 1.5) if z1 == z2 else (1.5, 0)    # une étiquette sur chaque face du mur (décalage perpendiculaire au mur)
     txt = f'[{{"text":"🚪 Porte {nm}","color":"gold","bold":true}},{{"text":"\\nclic droit — {cost} pts","color":"yellow"}}]'
     y = DOORY[d]
-    E += [f'summon minecraft:interaction {ix} {y + 1} {iz} {{Tags:["mg.zent","mg.zbuy","mg.zb{d}","mg.zd{d}"],width:3.4f,height:3f,response:1b}}',
-          *[f'summon minecraft:text_display {ix + s * ox} {y + 4.3} {iz + s * oz} {{Tags:["mg.zent","mg.zd{d}"],billboard:"center",text:{txt}}}' for s in (-1, 1)]]
+    E.append(f'summon minecraft:interaction {ix} {y + 1} {iz} {{Tags:["mg.zent","mg.zbuy","mg.zb{d}","mg.zd{d}"],width:3.4f,height:3f,response:1b}}')
+    for s in (-1, 1):                              # étiquette sous le plafond du côté bas (salle plus basse que la porte, passage)
+        lx, lz = ix + s * ox, iz + s * oz
+        ly = min(y + 4.3, ceil_at(int(lx // 1), int(lz // 1)) - 0.3)
+        E.append(f'summon minecraft:text_display {lx} {ly} {lz} {{Tags:["mg.zent","mg.zd{d}"],billboard:"center",text:{txt}}}')
 for (tag, nm, cost, (ix, iz), gn, (dx, dz), rot), y in zip(WALL, WALLY):
     TF = 'transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]}'
     icon = '🐵' if gn == 11 else '🔫'
@@ -237,8 +252,8 @@ w('zm/go', ['# Départ', 'scoreboard players set $zpts mg.st 1', 'scoreboard pla
 w('zm/tick', ['# 🧟 Zombies — tick',
               'execute as @a[tag=mg.play,tag=!mg.zdead,scores={mg.deaths=1..}] run function mg:zm/die',
               'execute as @a[tag=mg.play,scores={mg.zkl=1..}] run function mg:zm/kill_points',
-              'execute as @a[tag=mg.zqrw] run function mg:zm/qr_tick', 'function mg:zx/tick',
-              'execute as @e[type=minecraft:interaction,tag=mg.zbuy] if data entity @s interaction run function mg:zm/buy',
+              'execute as @a[tag=mg.zqrw] run function mg:zm/qr_tick', f'execute positioned {ZCX} 80 {ZCZ} run function mg:zx/tick',
+              f'execute as @e[type=minecraft:interaction,tag=mg.zbuy,{ZBOX}] if data entity @s interaction run function mg:zm/buy',
               'execute if score $zph mg.st matches 0 run function mg:zm/break_tick',
               'execute if score $zph mg.st matches 1 run function mg:zm/round_tick',
               'scoreboard players add $zt mg.st 1', 'scoreboard players operation $zq mg.st = $zt mg.st', 'scoreboard players set #20 mg.st 20',
@@ -306,7 +321,7 @@ w('zm/round_start', ['# Nouvelle manche : nombre, vie et vitesse des zombies', '
                      'execute as @a[tag=mg.play] at @s run playsound minecraft:entity.wither.spawn master @s ~ ~ ~ 0.3 0.6'])
 w('zm/round_tick', ['# Manche en cours : apparitions, fin de manche',
                     'scoreboard players add $zsc mg.st 1',
-                    'execute store result score $zal mg.st if entity @e[tag=mg.zz]',
+                    f'execute store result score $zal mg.st if entity @e[tag=mg.zz,{ZBOX}]',
                     'execute if score $zsc mg.st >= $zsj mg.st if score $zleft mg.st matches 1.. if score $zal mg.st < $zmx mg.st run function mg:zm/spawn',
                     'execute if score $zleft mg.st matches ..0 if score $zal mg.st matches 0 run function mg:zm/round_end'])
 w('zm/spawn', ['scoreboard players set $zsc mg.st 0', 'scoreboard players remove $zleft mg.st 1',
@@ -329,9 +344,10 @@ w('zm/die', ['# @s est tombé : spectateur jusqu\'à la fin de la manche, perd s
 w('zm/revive', ['# @s revient (pistolet + couteau)', 'tag @s remove mg.zdead', 'tag @s remove mg.zqrw', 'gamemode adventure @s',
                 f'spreadplayers {SX} {SZ} 1 4 under {SY + 4} false @s', 'function mg:zm/kit', 'effect give @s minecraft:instant_health 1 4 true'])
 w('zm/second', ['# Chaque seconde : zombies tombés hors de la carte ou perdus',
-                'execute as @e[tag=mg.zz] at @s if entity @s[y=-64,dy=139] run function mg:zm/lost',
-                'execute as @e[tag=mg.zz] at @s unless entity @a[tag=mg.play,tag=!mg.zdead,distance=..48] run function mg:zm/lost',
-                'function mg:zx/second', 'execute if score $zleft mg.st matches ..0 if score $zal mg.st matches ..3 run effect give @e[tag=mg.zz] minecraft:glowing infinite 0 true',
+                f'execute as @e[tag=mg.zz,{ZBOX}] at @s if entity @s[y=-64,dy=139] run function mg:zm/lost',
+                f'execute as @e[tag=mg.zz,{ZBOX}] at @s unless entity @a[tag=mg.play,tag=!mg.zdead,distance=..48] run function mg:zm/lost',
+                f'execute positioned {ZCX} 80 {ZCZ} run function mg:zx/second',
+                f'execute if score $zleft mg.st matches ..0 if score $zal mg.st matches ..3 run effect give @e[tag=mg.zz,{ZBOX}] minecraft:glowing infinite 0 true',
                 'execute if score $zph mg.st matches 1 run title @a[tag=mg.play] actionbar [{"text":"🧟 Manche ","color":"dark_green"},{"score":{"name":"$zr","objective":"mg.st"},"color":"green","bold":true},{"text":" — restants : ","color":"gray"},{"score":{"name":"$zal","objective":"mg.st"},"color":"yellow"},{"text":" + ","color":"gray"},{"score":{"name":"$zleft","objective":"mg.st"},"color":"yellow"}]'])
 w('zm/lost', ['# @s (zombie) perdu : réapparaît dans un enclos ouvert',
               'execute at @e[type=minecraft:marker,tag=mg.zsp,tag=mg.zon,sort=random,limit=1] run tp @s ~ ~ ~'])
@@ -565,11 +581,12 @@ TIMERS = [('zik', '💀 Fin de la mort instantanée'), ('zdp', '✖2 Fin des poi
 w('zx/tick', ['# Zombies, chaque tick : bonus en cours, bonus au sol, grenades singe, roquettes, réparation des fenêtres'] +
   [l for t, msg in TIMERS for l in (f'execute if score ${t} mg.st matches 1 run tellraw @a[tag=mg.play] ' + js({'text': msg, 'color': 'gray'}),
                                     f'execute if score ${t} mg.st matches 1.. run scoreboard players remove ${t} mg.st 1')] +
-  ['execute as @e[type=minecraft:item_display,tag=mg.zpu] at @s run function mg:zx/pu_one',
-   'execute as @e[type=minecraft:snowball,tag=!mg.zms] if data entity @s Item.components."minecraft:custom_data".monkey at @s run function mg:zx/mk_new',
-   'execute as @e[type=minecraft:marker,tag=mg.zmt] run function mg:zx/mk_follow',
-   'execute as @e[type=minecraft:item_display,tag=mg.zmk] at @s run function mg:zx/mk_tick',
-   'execute as @e[type=minecraft:item_display,tag=mg.zrk] at @s run function mg:zx/rk_tick',
+  ['# (exécuté depuis le centre de la carte par zm/tick : sélecteurs bornés à 80 blocs)',
+   'execute as @e[type=minecraft:item_display,tag=mg.zpu,distance=..80] at @s run function mg:zx/pu_one',
+   'execute as @e[type=minecraft:snowball,tag=!mg.zms,distance=..80] if data entity @s Item.components."minecraft:custom_data".monkey at @s run function mg:zx/mk_new',
+   'execute as @e[type=minecraft:marker,tag=mg.zmt,distance=..80] run function mg:zx/mk_follow',
+   'execute as @e[type=minecraft:item_display,tag=mg.zmk,distance=..80] at @s run function mg:zx/mk_tick',
+   'execute as @e[type=minecraft:item_display,tag=mg.zrk,distance=..80] at @s run function mg:zx/rk_tick',
    'scoreboard players add $zxt mg.st 1', 'execute if score $zxt mg.st matches 10.. run function mg:zx/win_fix_all',
    'execute as @a[tag=mg.play,scores={mg.zdr=1..}] at @s run function mg:zx/drop_back'])
 # --- Q = recharger : l'arme jetée revient (en main si la main est vide, sinon ramassée aussitôt) et se recharge
@@ -590,12 +607,13 @@ w('zx/drop_mine', ['# @s (objet au sol) : jeté par le joueur dont l\'UUID est d
                    'execute store success score $zq mg.st run data modify storage mg:zm dt set from entity @s Thrower',
                    'execute if score $zq mg.st matches 0 run tag @s add mg.zdi'])
 w('zx/second', ['# Chaque seconde : les zombies dans l\'enclos d\'une fenêtre arrachent une planche ; zombie coincé = renvoyé à une apparition',
-                'execute if score $zph mg.st matches 1 as @e[type=minecraft:marker,tag=mg.zwin,scores={mg.zws=1..}] at @s if entity @e[tag=mg.zz,distance=..3.6] run function mg:zx/win_hit',
-                'execute if score $zph mg.st matches 1 as @e[tag=mg.zz] at @s run function mg:zx/stuck',
+                '# (exécuté depuis le centre de la carte par zm/second : sélecteurs bornés à 80 blocs)',
+                'execute if score $zph mg.st matches 1 as @e[type=minecraft:marker,tag=mg.zwin,scores={mg.zws=1..},distance=..80] at @s if entity @e[tag=mg.zz,distance=..3.6] run function mg:zx/win_hit',
+                'execute if score $zph mg.st matches 1 as @e[tag=mg.zz,distance=..80] at @s run function mg:zx/stuck',
                 # chiens : traînée de braises ; relancés sur un survivant s'ils n'en mordent aucun (toutes les 4 s)
-                'execute as @e[type=minecraft:wolf,tag=mg.zz] at @s run particle minecraft:flame ~ ~0.4 ~ 0.25 0.2 0.25 0.01 2',
+                'execute as @e[type=minecraft:wolf,tag=mg.zz,distance=..80] at @s run particle minecraft:flame ~ ~0.4 ~ 0.25 0.2 0.25 0.01 2',
                 'scoreboard players add $zdg mg.st 1', 'execute if score $zdg mg.st matches 4.. run scoreboard players set $zdg mg.st 0',
-                'execute if score $zdg mg.st matches 0 as @e[type=minecraft:wolf,tag=mg.zz] at @s unless entity @a[tag=mg.play,tag=!mg.zdead,distance=..4] run function mg:zx/dog_aggro'])
+                'execute if score $zdg mg.st matches 0 as @e[type=minecraft:wolf,tag=mg.zz,distance=..80] at @s unless entity @a[tag=mg.play,tag=!mg.zdead,distance=..4] run function mg:zx/dog_aggro'])
 w('zx/stuck', ['# @s (mob) : immobile 12 s loin des joueurs et des fenêtres → retiré, il réapparaîtra (compté dans les restants)',
                'execute store result score $sx mg.st run data get entity @s Pos[0]', 'execute store result score $sz mg.st run data get entity @s Pos[2]',
                'scoreboard players operation $sx mg.st -= @s mg.zqx', 'scoreboard players operation $sz mg.st -= @s mg.zqz',
@@ -631,7 +649,7 @@ w('zx/spawn_brute', ['# Brute (noyé en armure) : 3× plus de vie, frappe fort, 
                      'particle minecraft:large_smoke ~ ~1 ~ 0.4 0.6 0.4 0.02 16',
                      'execute if score $rp mg.st matches 1 as @e[type=minecraft:drowned,tag=mg.zz,tag=!mg.zmk,distance=..2] run function mg:zx/mask_n {n:5}'])
 DOG = MOB.format(h='hpd', s='spd', x='sound_variant:"minecraft:angry",variant:"VAR",', a=',{id:"minecraft:attack_damage",base:4d},{id:"minecraft:scale",base:1.15d}')
-w('zx/spawn_dog', ['# Chien de l\'enfer (loup calciné, variante mg:hellhound du resource pack) : peu de vie, très rapide, lâché sur le joueur le plus proche',
+w('zx/spawn_dog', ['# Chien de l\'enfer (loup calciné, variante mg:hellhound du resource pack) : vie d\'un zombie, très rapide, lâché sur le joueur le plus proche',
                    '$execute if score $rp mg.st matches 1 run summon minecraft:wolf ~ ~ ~ ' + DOG.replace('VAR', 'mg:hellhound'),
                    '$execute unless score $rp mg.st matches 1 run summon minecraft:wolf ~ ~ ~ ' + DOG.replace('VAR', 'minecraft:black'),
                    'execute as @e[type=minecraft:wolf,tag=mg.zz,distance=..2] at @s run function mg:zx/dog_aggro',
@@ -655,7 +673,7 @@ w('zx/win_hit', ['# Un zombie arrache une planche', 'scoreboard players remove @
                  'particle minecraft:block{block_state:"minecraft:spruce_planks"} ~ ~1 ~ 0.3 0.5 0.3 0 12',
                  'playsound minecraft:entity.zombie.attack_wooden_door hostile @a ~ ~ ~ 0.8 1'])
 w('zx/win_fix_all', ['# Toutes les 0,5 s : un joueur accroupi devant une fenêtre abîmée recloue une planche', 'scoreboard players set $zxt mg.st 0',
-                     'execute as @e[type=minecraft:marker,tag=mg.zwin,scores={mg.zws=..5}] at @s as @a[tag=mg.play,tag=!mg.zdead,distance=..2.6,sort=nearest,limit=1] if predicate mg:sneak run function mg:zx/win_fix'])
+                     'execute as @e[type=minecraft:marker,tag=mg.zwin,scores={mg.zws=..5},distance=..80] at @s as @a[tag=mg.play,tag=!mg.zdead,distance=..2.6,sort=nearest,limit=1] if predicate mg:sneak run function mg:zx/win_fix'])
 w('zx/win_fix', ['# @s recloue une planche (à la position de la fenêtre) : +10 pts, 20 fois par manche au plus',
                  'execute as @e[type=minecraft:marker,tag=mg.zwin,sort=nearest,limit=1] run function mg:zx/win_up',
                  'execute if score @s mg.zrp matches ..19 run scoreboard players add @s mg.zpt 10',
@@ -738,37 +756,7 @@ w('zx/mk_boom', ['# La grenade singe explose : zombies à 6 blocs tués (crédit
    'particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 0 1 force', 'particle minecraft:flame ~ ~ ~ 2 1 2 0.1 40 force',
    'playsound minecraft:entity.generic.explode master @a ~ ~ ~ 3 0.9', 'kill @s'])
 
-# --- lance-roquettes (munitions illimitées, une roquette toutes les 1,5 s, sans casser le décor)
-RPGB = ('minecraft:warped_fungus_on_a_stick[custom_data={zrpg:1b},unbreakable={},custom_name=' + js({'text': '🚀 Lance-roquettes', 'color': 'red', 'bold': True, 'italic': False}) +
-        ',lore=[' + js({'text': 'Clic droit : tirer une roquette', 'color': 'gray', 'italic': False}) + ']')
-w('zx/rpg_put', ['# Macro $(slot) : lance-roquettes', f'$execute if score $rp mg.st matches 1 run item replace entity @s $(slot) with {RPGB},item_model="mg:gun_rpg"]',
-                 f'$execute unless score $rp mg.st matches 1 run item replace entity @s $(slot) with {RPGB},item_model="minecraft:crossbow"]'])
-w('zx/rpg_fire', ['# @s tire une roquette', 'scoreboard players reset @s mg.qs', 'execute if score @s mg.gcd matches 1.. run return 0',
-                  'scoreboard players set @s mg.gcd 30',
-                  'execute anchored eyes positioned ^-0.2 ^-0.1 ^1 run summon minecraft:item_display ~ ~ ~ {Tags:["mg.zent","mg.zrk","mg.zrkn"],'
-                  'item:{id:"minecraft:firework_rocket",count:1},teleport_duration:1,'
-                  'transformation:{left_rotation:[0.5f,0.5f,-0.5f,0.5f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.4f,1.4f,1.4f]}}',
-                  'execute anchored eyes positioned ^-0.2 ^-0.1 ^1 rotated as @s run tp @e[type=minecraft:item_display,tag=mg.zrkn] ~ ~ ~ ~ ~',
-                  'scoreboard players operation @e[type=minecraft:item_display,tag=mg.zrkn] mg.zmo = @s mg.zid',
-                  'scoreboard players set @e[type=minecraft:item_display,tag=mg.zrkn] mg.zmc 0', 'tag @e[tag=mg.zrkn] remove mg.zrkn',
-                  'playsound minecraft:entity.firework_rocket.launch player @a ~ ~ ~ 1.5 0.6', 'playsound minecraft:entity.blaze.shoot player @a ~ ~ ~ 1 0.5'])
-w('zx/rk_tick', ['# @s : roquette en vol, 3 pas de 0,7 bloc par tick', 'scoreboard players add @s mg.zmc 1',
-                 'execute if score @s mg.zmc matches 40.. run return run function mg:zx/rk_boom',
-                 'function mg:zx/rk_step', 'execute if entity @s at @s run function mg:zx/rk_step', 'execute if entity @s at @s run function mg:zx/rk_step',
-                 'execute if entity @s run particle minecraft:flame ~ ~ ~ 0.05 0.05 0.05 0.02 3'])
-w('zx/rk_step', ['execute unless block ^ ^ ^0.7 #mg:ray_pass positioned ^ ^ ^0.4 run return run function mg:zx/rk_boom',
-                 'execute positioned ^ ^ ^0.7 positioned ~ ~-1 ~ if entity @e[tag=mg.zz,distance=..1.3] positioned ~ ~1 ~ run return run function mg:zx/rk_boom',
-                 'tp @s ^ ^ ^0.7'])
-w('zx/rk_boom', ['# La roquette explose : 100 de dégâts dans un rayon de 4 (crédités au tireur)'] + BOOM +
-  ['scoreboard players set $gdm mg.st 1000', 'execute as @e[tag=mg.zz,distance=..4] run function mg:gun/hit_mob', 'tag @a remove mg.gsh',
-   '# souffle : les survivants à 6 blocs sont projetés en arrière',
-   'execute store result score $kbx mg.st run data get entity @s Pos[0] 1000', 'execute store result score $kby mg.st run data get entity @s Pos[1] 1000',
-   'execute store result score $kbz mg.st run data get entity @s Pos[2] 1000',
-   'execute as @e[tag=mg.zz,distance=..6] facing entity @s feet rotated ~ -22 run function mg:zx/rk_kb',
-   'particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 0 1 force', 'particle minecraft:flame ~ ~ ~ 1.5 1.2 1.5 0.12 40 force',
-   'playsound minecraft:entity.generic.explode master @a ~ ~ ~ 4 0.8', 'kill @s'])
-
-zm_extras.write(w, C, js)              # souffle des roquettes, malus sur morsure, batte (tools/arcade/zm_extras.py)
+zm_extras.write(w, C, js, BOOM)        # lance-roquettes et souffle, malus sur morsure, batte (tools/arcade/zm_extras.py)
 
 C.w('infhit/hit', ['# Avancement mg:infhit : @s touché par un zombie (mob) ou un joueur infecté (équipe verte)',
                    'advancement revoke @s only mg:infhit',
@@ -804,6 +792,10 @@ C.objectives([('mg.zkl', 'minecraft.custom:minecraft.mob_kills'), ('mg.zid', 'du
               ('mg.zws', 'dummy'), ('mg.zpy', 'dummy'), ('mg.zpl', 'dummy'), ('mg.zrt', 'dummy'), ('mg.zrp', 'dummy')])
 C.objectives([('mg.zqx', 'dummy'), ('mg.zqz', 'dummy'), ('mg.zsk', 'dummy')])
 C.objectives([('mg.zdr', 'minecraft.dropped:minecraft.warped_fungus_on_a_stick')])
+# survie/tick (avant core/game_tick dans core/tick) supprime tout objet au sol du monde des mini-jeux : l'arme qu'un joueur vient de jeter (Q)
+# est marquée mg.keep d'abord, sinon zx/drop_back ne la retrouve jamais et l'arme est perdue
+C.patch('survie/tick', 'execute if score #sv5 mg.st matches 0 in minecraft:overworld positioned 0 0 0 run kill @e[type=minecraft:item,distance=0..,tag=!mg.keep]',
+        ['execute if score $state mg.st matches 2 as @a[tag=mg.play,scores={mg.zdr=1..}] at @s run tag @e[type=minecraft:item,distance=..8] add mg.keep'], where='before')
 C.patch('core/load', 'scoreboard objectives add mg.bw trigger', ['scoreboard players set #2 mg.st 2', 'scoreboard players set #3 mg.st 3',
                                                                  'scoreboard players set #5 mg.st 5', 'scoreboard players set #8 mg.st 8',
                                                                  'scoreboard players set #60 mg.st 60'])

@@ -73,14 +73,14 @@ def write_mobs(T, label, mobs):
               (['effect give @s minecraft:invisibility infinite 0 true'] if invis else []))
     if any(m['dress'] for m in mobs):
         mob_lines += ['# habillage : chaque animal à habiller a son item_display monté, les orphelins disparaissent',
-                      'execute if score $rp mg.st matches 1 run tag @e[tag=mg.thdress] add mg.thnd',
-                      'execute as @e[type=minecraft:item_display,tag=mg.thrid] on vehicle run tag @s remove mg.thnd'] + \
-                     [f'execute as @e[tag=mg.thnd,tag=mg.th_{m["key"]}] at @s run function mg:{T}/dress_{m["key"]}'
+                      f'execute if score $rp mg.st matches 1 run tag @e[tag=mg.thdress,{MOB_BOX}] add mg.thnd',
+                      f'execute as @e[type=minecraft:item_display,tag=mg.thrid,{MOB_BOX}] on vehicle run tag @s remove mg.thnd'] + \
+                     [f'execute as @e[tag=mg.thnd,tag=mg.th_{m["key"]},{MOB_BOX}] at @s run function mg:{T}/dress_{m["key"]}'
                       for m in mobs if m['dress']] + \
-                     ['tag @e[tag=mg.thnd] remove mg.thnd',
-                      'tag @e[type=minecraft:item_display,tag=mg.thrid] add mg.thor',
-                      'execute as @e[tag=mg.thmob] on passengers run tag @s remove mg.thor',
-                      'kill @e[tag=mg.thor]']
+                     [f'tag @e[tag=mg.thnd,{MOB_BOX}] remove mg.thnd',
+                      f'tag @e[type=minecraft:item_display,tag=mg.thrid,{MOB_BOX}] add mg.thor',
+                      f'execute as @e[tag=mg.thmob,{MOB_BOX}] on passengers run tag @s remove mg.thor',
+                      f'kill @e[tag=mg.thor,{MOB_BOX}]']
     if any(m['entity'] == 'minecraft:allay' for m in mobs):
         mob_lines += ['# un objet donné à un allay retombe par terre (on ne le perd pas, l\'allay ne le duplique pas)',
                       'execute as @e[type=minecraft:allay,tag=mg.thmob] if items entity @s weapon.mainhand * at @s run function mg:lobby/theme/allay_drop']

@@ -40,7 +40,7 @@ YT, YB = 99, 40                            # couche du haut / du bas de la mine 
 CX, CZ = 8, Z0 + 8                         # centre de l'île
 R = 30                                     # rayon de l'île
 SPAWN = (8.5, 100, Z0 - 8.5)               # place nord, face à la mine
-PIT = f'x=0,y={YB - 1},z={Z0},dx=15,dy={YT - YB + 1},dz=15'          # volume de la mine (PvP, corde)
+PIT = f'x=0,y={YB - 1},z={Z0},dx=15,dy={YT - YB + 5},dz=15'          # volume de la mine, jusqu'à 3 blocs au-dessus (PvP, corde)
 PLAZA = f'x=-4,y=97,z={Z0 - 24},dx=24,dy=10,dz=20'                   # place (comptoir, magasin) : achats et ventes
 AREA = f'x=-60,y=0,z={Z0 - 70},dx=136,dy=200,dz=136'
 FL = f'{CX - R - 8} {CZ - R - 8} {CX + R + 8} {CZ + R + 8}'          # chargement forcé pendant la session
@@ -56,17 +56,21 @@ MINE_BLOCKS = ['stone', 'deepslate', 'cobblestone', 'cobbled_deepslate', 'andesi
                'medium_amethyst_bud', 'small_amethyst_bud', 'raw_gold_block', 'raw_iron_block', 'ancient_debris']
 LUCKY = 'minecraft:gold_nugget[custom_data={fn_lucky:1b},item_name={"text":"🍀 Pépite de chance","color":"gold"},enchantment_glint_override=true]'
 LUCKY_Q = 'minecraft:gold_nugget[minecraft:custom_data~{fn_lucky:1b}]'
-# (id pour clear/give, prix de base, nom, montré au tableau du marché, variation min..max en %)
-SELL = [('cobblestone', 1, 'Pierre', 0, 60, 150), ('cobbled_deepslate', 1, 'Deepslate', 0, 60, 150), ('andesite', 1, 'Andésite', 0, 60, 150),
-        ('diorite', 1, 'Diorite', 0, 60, 150), ('granite', 1, 'Granite', 0, 60, 150), ('tuff', 1, 'Tuf', 0, 60, 150), ('gravel', 1, 'Gravier', 0, 60, 150),
-        ('flint', 3, 'Silex', 0, 60, 150), ('calcite', 2, 'Calcite', 0, 60, 150), ('smooth_basalt', 2, 'Basalte', 0, 60, 150),
-        ('coal', 4, 'Charbon', 1, 50, 170), ('raw_copper', 3, 'Cuivre brut', 1, 50, 170), ('raw_iron', 7, 'Fer brut', 1, 50, 170),
-        ('raw_gold', 14, 'Or brut', 1, 50, 170), ('redstone', 2, 'Redstone', 1, 50, 170), ('lapis_lazuli', 3, 'Lapis', 1, 50, 170),
-        ('diamond', 50, 'Diamant', 1, 50, 180), ('emerald', 70, 'Émeraude', 1, 50, 180), ('amethyst_shard', 6, 'Éclat d\'améthyste', 1, 50, 170),
-        ('amethyst_block', 10, 'Bloc d\'améthyste', 0, 50, 170), ('raw_gold_block', 140, 'Bloc d\'or brut', 1, 50, 180),
-        ('raw_iron_block', 70, 'Bloc de fer brut', 0, 50, 180), ('ancient_debris', 300, 'Débris antique', 1, 50, 180),
-        (LUCKY_Q, 500, '🍀 Pépite de chance', 1, 50, 180)]
+# (id pour clear/give, prix de base en DIXIÈMES de point, nom, montré au tableau du marché, variation min..max en %)
+# La pierre vaut 0,2 pt : miner tout le chunk rapporte ~3000 pts, les minerais et les jackpots font la différence (la chance, pas la durée)
+SELL = [('cobblestone', 2, 'Pierre', 0, 60, 150), ('cobbled_deepslate', 2, 'Deepslate', 0, 60, 150), ('andesite', 2, 'Andésite', 0, 60, 150),
+        ('diorite', 2, 'Diorite', 0, 60, 150), ('granite', 2, 'Granite', 0, 60, 150), ('tuff', 2, 'Tuf', 0, 60, 150), ('gravel', 2, 'Gravier', 0, 60, 150),
+        ('flint', 20, 'Silex', 0, 60, 150), ('calcite', 10, 'Calcite', 0, 60, 150), ('smooth_basalt', 10, 'Basalte', 0, 60, 150),
+        ('coal', 40, 'Charbon', 1, 50, 170), ('raw_copper', 10, 'Cuivre brut', 1, 50, 170), ('raw_iron', 70, 'Fer brut', 1, 50, 170),
+        ('raw_gold', 140, 'Or brut', 1, 50, 170), ('redstone', 20, 'Redstone', 1, 50, 170), ('lapis_lazuli', 30, 'Lapis', 1, 50, 170),
+        ('diamond', 500, 'Diamant', 1, 50, 180), ('emerald', 700, 'Émeraude', 1, 50, 180), ('amethyst_shard', 50, 'Éclat d\'améthyste', 1, 50, 170),
+        ('amethyst_block', 80, 'Bloc d\'améthyste', 0, 50, 170), ('raw_gold_block', 1400, 'Bloc d\'or brut', 1, 50, 180),
+        ('raw_iron_block', 700, 'Bloc de fer brut', 0, 50, 180), ('ancient_debris', 3000, 'Débris antique', 1, 50, 180),
+        (LUCKY_Q, 5000, '🍀 Pépite de chance', 1, 50, 180)]
 NS = len(SELL)
+DYN_Q = 'minecraft:warped_fungus_on_a_stick[minecraft:custom_data~{fn_dyn:1b}]'
+BAG = [s[0] for s in SELL] + [DYN_Q, 'golden_apple', 'cooked_beef']       # mis de côté à la sortie (mg.fb<i>)
+NB = len(BAG)
 GIVE_ID = {LUCKY_Q: LUCKY}
 iid = lambda s: s if s.startswith('minecraft:') else 'minecraft:' + s
 
@@ -92,23 +96,24 @@ ITEMS = [(7, 20, '🥩 8 steaks', 'minecraft:cooked_beef 8'), (8, 120, '🍎 Pom
          (9, 150, '🧨 Dynamite', 'DYN')]
 DYN = ('minecraft:warped_fungus_on_a_stick[!max_damage,max_stack_size=16,custom_data={fn:1b,fn_dyn:1b},item_model="minecraft:tnt",'
        'item_name={"text":"🧨 Dynamite","color":"red"},lore=[{"text":"Clic droit dans la mine (sous la surface) : explose 2 s plus tard","color":"gray","italic":false}]]')
-ROPE = ('minecraft:warped_fungus_on_a_stick[custom_data={fn:1b,fn_rope:1b},unbreakable={},item_model="minecraft:lead",'
+ROPE = ('minecraft:warped_fungus_on_a_stick[custom_data={fn:1b,fn_kit:1b,fn_rope:1b},unbreakable={},item_model="minecraft:lead",'
         'item_name={"text":"🪢 Corde de remontée","color":"gold"},lore=[{"text":"Clic droit dans la mine : retour à la surface (recharge 120 s)","color":"gray","italic":false}]]')
 DEF = [('mg.fnpk', 1), ('mg.fnef', 2), ('mg.fnfo', 0), ('mg.fnha', 0), ('mg.fnsw', 0), ('mg.fnar', 0), ('mg.fnp', 0), ('mg.fncd', 0)] + \
-      [(f'mg.fb{i}', 0) for i in range(NS)]
+      [(f'mg.fb{i}', 0) for i in range(NB)]
+GIVE_ID[DYN_Q] = DYN
 
-kit = ['# @s : équipement selon ses niveaux (les objets du Filon portent custom_data fn)', 'clear @s *[minecraft:custom_data~{fn:1b}]']
+kit = ['# @s : équipement selon ses niveaux (objets du kit : custom_data fn_kit ; la dynamite achetée est gardée)', 'clear @s *[minecraft:custom_data~{fn_kit:1b}]']
 for pk, (pid, _) in PICK.items():
     for ef in range(2, 6):
         for fo in range(0, 4):
             ench = f'efficiency:{ef}' + (f',fortune:{fo}' if fo else '')
             kit.append(f'execute if score @s mg.fnpk matches {pk} if score @s mg.fnef matches {ef} if score @s mg.fnfo matches {fo} run item replace entity @s hotbar.0 with '
-                       f'minecraft:{pid}[{CB},enchantments={{{ench}}},unbreakable={{}},custom_data={{fn:1b}}]')
+                       f'minecraft:{pid}[{CB},enchantments={{{ench}}},unbreakable={{}},custom_data={{fn:1b,fn_kit:1b}}]')
 for sw, (sid, _) in SWORD.items():
-    kit.append(f'execute if score @s mg.fnsw matches {sw} run item replace entity @s hotbar.1 with minecraft:{sid}[unbreakable={{}},custom_data={{fn:1b}}]')
+    kit.append(f'execute if score @s mg.fnsw matches {sw} run item replace entity @s hotbar.1 with minecraft:{sid}[unbreakable={{}},custom_data={{fn:1b,fn_kit:1b}}]')
 for ar, (aid, _) in ARMOR.items():
     for slot, piece in (('head', 'helmet'), ('chest', 'chestplate'), ('legs', 'leggings'), ('feet', 'boots')):
-        kit.append(f'execute if score @s mg.fnar matches {ar} run item replace entity @s armor.{slot} with minecraft:{aid}_{piece}[unbreakable={{}},custom_data={{fn:1b}}]')
+        kit.append(f'execute if score @s mg.fnar matches {ar} run item replace entity @s armor.{slot} with minecraft:{aid}_{piece}[unbreakable={{}},custom_data={{fn:1b,fn_kit:1b}}]')
 kit.append(f'item replace entity @s hotbar.8 with {ROPE}')
 w(f'{P}/kit', kit)
 
@@ -148,11 +153,13 @@ w(f'{P}/session_ready', ['execute unless score $fnw mg.st matches 1 run return 0
                          f'execute unless entity @e[type=minecraft:text_display,tag=mg.fnboard,{AREA}] run function mg:{P}/ents',
                          'scoreboard players set $fnok mg.st 1', f'function mg:{P}/board',
                          f'execute if score $fnpend mg.st matches 1 run function mg:{P}/regen'])
-w(f'{P}/session_end', ['# Plus personne : zone déchargée', 'scoreboard players set $fnw mg.st 0', 'scoreboard players set $fnok mg.st 0',
-                       f'schedule clear mg:{P}/session_ready', f'forceload remove {FL}', 'bossbar set mg:filon players'])
+w(f'{P}/session_end', ['# Plus personne : zone déchargée (sauf construction en cours : build_wait la décharge)', 'scoreboard players set $fnw mg.st 0',
+                       'scoreboard players set $fnok mg.st 0', f'schedule clear mg:{P}/session_ready',
+                       f'execute unless score $fnb mg.st matches 1 run forceload remove {FL}', 'bossbar set mg:filon players'])
 w(f'{P}/build_start', ['# (Re)construit l\'île (zone chargée le temps de la construction) : au chargement si besoin, ou par un admin',
                        'scoreboard players set $fnb mg.st 1', f'execute in minecraft:overworld run forceload add {FL}', f'schedule function mg:{P}/build_wait 40t'])
-w(f'{P}/build_wait', [f'execute unless loaded {CX - R} {YT} {CZ - R} run return run schedule function mg:{P}/build_wait 20t',
+w(f'{P}/build_wait', [f'execute in minecraft:overworld run forceload add {FL}',
+                      f'execute unless loaded {CX - R} {YT} {CZ - R} run return run schedule function mg:{P}/build_wait 20t',
                       f'execute unless loaded {CX + R} {YT} {CZ + R} run return run schedule function mg:{P}/build_wait 20t',
                       'scoreboard players set $fnb mg.st 0', f'function mg:{P}/build', f'function mg:{P}/regen', 'scoreboard players set $fnrp mg.st 0',
                       f'execute unless score $fnw mg.st matches 1 run forceload remove {FL}'])
@@ -207,7 +214,7 @@ w(f'{P}/consts', ['# Constantes, cours de départ, équipe et barre du Filon (ch
 # ---------------------------------------------------------------- entrée / sortie / saison
 BAG_SAVE = ['# @s : son sac (objets vendables pas encore vendus) mis de côté dans ses scores']
 BAG_LOAD = ['# @s : son sac rendu']
-for i, (iid_, *_) in enumerate(SELL):
+for i, iid_ in enumerate(BAG):
     BAG_SAVE.append(f'execute store result score @s mg.fb{i} run clear @s {iid(iid_)}')
     BAG_LOAD += [f'execute if score @s mg.fb{i} matches 1.. store result storage mg:filon g.n int 1 run scoreboard players get @s mg.fb{i}',
                  f'execute if score @s mg.fb{i} matches 1.. run data modify storage mg:filon g.i set value \'{GIVE_ID.get(iid_, iid(iid_))}\'',
@@ -287,7 +294,7 @@ C.patch('core/request', 'tag @a remove mg.pullo', ['tag @a remove mg.pullf'])
 C._fn.replace('survie/tick', 'execute as @a[tag=mg.surv] at @s if dimension minecraft:overworld run function mg:survie/from_overworld',
               'execute as @a[tag=mg.surv,tag=!mg.fnw] at @s if dimension minecraft:overworld run function mg:survie/from_overworld')
 C._fn.replace('survie/tick', 'tag=!mg.olw,tag=!mg.svg2,', 'tag=!mg.olw,tag=!mg.fnw,tag=!mg.svg2,')
-C.patch('survie/tick', 'execute in minecraft:overworld positioned 0 0 0 run kill @e[type=minecraft:item,distance=0..,tag=!mg.keep]',
+C.patch('survie/tick', 'execute if score #sv5 mg.st matches 0 in minecraft:overworld positioned 0 0 0 run kill @e[type=minecraft:item,distance=0..,tag=!mg.keep]',
         [f'execute if score $fnw mg.st matches 1 in minecraft:overworld run tag @e[type=minecraft:item,{AREA}] add mg.keep'], where='before')
 FN_LOAD = ['# Filon : constantes, cours, équipe, barre ; pas de zone chargée hors session ; île construite une fois (~1 s)', f'function mg:{P}/consts',
            'scoreboard players set $fnw mg.st 0', 'scoreboard players set $fnok mg.st 0', 'scoreboard players set $fnb mg.st 0',
