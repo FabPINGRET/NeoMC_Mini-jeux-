@@ -103,6 +103,25 @@
     {
       "label": [
         {
+          "text": "⛏ Aller au Filon",
+          "color": "gold",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Une île, un chunk à miner, un marché qui bouge : vends, améliore-toi, gagne la saison (progression gardée)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.sv set 9"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "⌂ Retour au lobby",
           "color": "gold",
           "bold": true
