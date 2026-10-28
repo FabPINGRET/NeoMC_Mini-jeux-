@@ -11,6 +11,16 @@ advancement revoke @a only mg:lobby_fish_take
 tag @a remove mg.lfc
 execute as @a[tag=mg.tvw] in minecraft:overworld run function mg:terra/leave
 execute as @a[tag=mg.olw] in minecraft:overworld run function mg:ombre/leave
+execute as @a[tag=mg.fnw] in minecraft:overworld run function mg:filon/leave
+execute in minecraft:overworld run kill @e[tag=mg.fne]
+execute in minecraft:overworld run forceload remove -30 45970 46 46046
+team remove mg_fn
+bossbar remove mg:filon
+schedule clear mg:filon/session_ready
+schedule clear mg:filon/build_start
+schedule clear mg:filon/build_wait
+schedule clear mg:filon/season_end
+data remove storage mg:filon built
 execute if score $tmap mg.st matches 1 run function mg:lobby/theme/map/end
 function mg:lobby/theme/sync
 execute if score $theme mg.st matches 1.. run function mg:lobby/theme/off
@@ -62,6 +72,45 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.fb0
+scoreboard objectives remove mg.fb1
+scoreboard objectives remove mg.fb10
+scoreboard objectives remove mg.fb11
+scoreboard objectives remove mg.fb12
+scoreboard objectives remove mg.fb13
+scoreboard objectives remove mg.fb14
+scoreboard objectives remove mg.fb15
+scoreboard objectives remove mg.fb16
+scoreboard objectives remove mg.fb17
+scoreboard objectives remove mg.fb18
+scoreboard objectives remove mg.fb19
+scoreboard objectives remove mg.fb2
+scoreboard objectives remove mg.fb20
+scoreboard objectives remove mg.fb21
+scoreboard objectives remove mg.fb22
+scoreboard objectives remove mg.fb23
+scoreboard objectives remove mg.fb3
+scoreboard objectives remove mg.fb4
+scoreboard objectives remove mg.fb5
+scoreboard objectives remove mg.fb6
+scoreboard objectives remove mg.fb7
+scoreboard objectives remove mg.fb8
+scoreboard objectives remove mg.fb9
+scoreboard objectives remove mg.fnar
+scoreboard objectives remove mg.fncd
+scoreboard objectives remove mg.fnef
+scoreboard objectives remove mg.fnfo
+scoreboard objectives remove mg.fnha
+scoreboard objectives remove mg.fnp
+scoreboard objectives remove mg.fnpk
+scoreboard objectives remove mg.fnsea
+scoreboard objectives remove mg.fnsw
+scoreboard objectives remove mg.fns
+scoreboard objectives remove mg.fnl
+scoreboard objectives remove mg.fnu
+scoreboard objectives remove mg.fnd
+scoreboard objectives remove mg.fnk
+scoreboard objectives remove mg.fnt
 schedule clear mg:zmode9/prepare_b
 forceload remove -26 42468 26 42528
 schedule clear mg:zmode8/prepare_b

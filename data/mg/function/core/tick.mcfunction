@@ -122,6 +122,7 @@ execute if score $setup mg.st matches 1 run function mg:lobkart/tick
 function mg:gta/lobby_tick
 function mg:terra/lobby_tick
 function mg:ombre/lobby_tick
+function mg:filon/lobby_tick
 
 # Parkour du lobby
 execute if score $setup mg.st matches 1 run function mg:parkour/tick

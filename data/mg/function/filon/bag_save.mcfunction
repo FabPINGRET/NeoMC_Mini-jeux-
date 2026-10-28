@@ -1,0 +1,25 @@
+# @s : son sac (objets vendables pas encore vendus) mis de côté dans ses scores
+execute store result score @s mg.fb0 run clear @s minecraft:cobblestone
+execute store result score @s mg.fb1 run clear @s minecraft:cobbled_deepslate
+execute store result score @s mg.fb2 run clear @s minecraft:andesite
+execute store result score @s mg.fb3 run clear @s minecraft:diorite
+execute store result score @s mg.fb4 run clear @s minecraft:granite
+execute store result score @s mg.fb5 run clear @s minecraft:tuff
+execute store result score @s mg.fb6 run clear @s minecraft:gravel
+execute store result score @s mg.fb7 run clear @s minecraft:flint
+execute store result score @s mg.fb8 run clear @s minecraft:calcite
+execute store result score @s mg.fb9 run clear @s minecraft:smooth_basalt
+execute store result score @s mg.fb10 run clear @s minecraft:coal
+execute store result score @s mg.fb11 run clear @s minecraft:raw_copper
+execute store result score @s mg.fb12 run clear @s minecraft:raw_iron
+execute store result score @s mg.fb13 run clear @s minecraft:raw_gold
+execute store result score @s mg.fb14 run clear @s minecraft:redstone
+execute store result score @s mg.fb15 run clear @s minecraft:lapis_lazuli
+execute store result score @s mg.fb16 run clear @s minecraft:diamond
+execute store result score @s mg.fb17 run clear @s minecraft:emerald
+execute store result score @s mg.fb18 run clear @s minecraft:amethyst_shard
+execute store result score @s mg.fb19 run clear @s minecraft:amethyst_block
+execute store result score @s mg.fb20 run clear @s minecraft:raw_gold_block
+execute store result score @s mg.fb21 run clear @s minecraft:raw_iron_block
+execute store result score @s mg.fb22 run clear @s minecraft:ancient_debris
+execute store result score @s mg.fb23 run clear @s minecraft:gold_nugget[minecraft:custom_data~{fn_lucky:1b}]
