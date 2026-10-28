@@ -55,7 +55,7 @@ import theme_world as TW                                         # noqa: E402
 from theme_mobs import mob                                       # noqa: E402
 from theme_water import FOUNT, theme_biome                       # noqa: E402
 from theme_world import (CH, DIRT, DYN, FLOWERS, G, GROUND, LOBBY, SNOWABLE, TUFT, W, WALLS, bid, canopy,  # noqa: E402
-                         change, solid, states, tuft_free)
+                         change, free, solid, states, tuft_free)
 
 TW.load(F)                               # W, DYN, PLOTS, RESERVED remplis sur place, puis ce qui en dérive
 TWA.load()                               # (TM.load : après les thèmes, il lui faut les cellules qu'ils changent)
@@ -109,6 +109,25 @@ def theme_halloween():
             change(k, 'minecraft:short_dry_grass')
         elif i in FLOWERS and rnd.random() < 0.45:
             change(k, 'minecraft:dead_bush' if bid(W.get((k[0], k[1] - 1, k[2]))) in DIRT else 'minecraft:short_dry_grass')
+    pre = []                                             # lignes jouées dans « place » avant les blocs du thème
+    for (x, y, z), b in sorted(W.items()):               # pics sanglants : bambous -> stalagmites, flaque de sang au pied (sans tirage)
+        if bid(b) != 'minecraft:bamboo' or bid(W.get((x, y - 1, z))) == 'minecraft:bamboo':
+            continue                                      # on part du pied de chaque colonne
+        col = [(x, y, z)]
+        while bid(W.get((x, col[-1][1] + 1, z))) == 'minecraft:bamboo':
+            col.append((x, col[-1][1] + 1, z))
+        pool = (x, y - 1, z)
+        if any(c in CH or not free(*c) for c in col + [pool]):
+            continue                                      # colonne en partie hors décor (DYN...) : jamais à moitié transformée
+        n = len(col)
+        for i, c in enumerate(col):                       # du pied à la pointe : base, milieu, frustum, pointe
+            t = 'tip' if i == n - 1 else 'frustum' if i == n - 2 else 'base' if i == 0 else 'middle'
+            change(c, f'minecraft:pointed_dripstone[thickness={t},vertical_direction=up]')
+        if bid(W.get(pool)) in GROUND:
+            change(pool, 'minecraft:nether_wart_block')   # flaque de sang
+        top = col[-1][1]                                  # le bambou pousse (ticks aléatoires) : la colonne vivante peut dépasser le haut connu de W
+        if all(free(x, yy, z) for yy in range(top + 1, top + 17)):
+            pre.append(f'fill {x} {top + 1} {z} {x} {top + 16} {z} minecraft:air replace minecraft:bamboo')   # sinon les segments en trop casseraient et lâcheraient des objets
     for (x, y, z), (_, new) in list(CH.items()):          # mousse pâle pendante
         if new.startswith('minecraft:pale_oak_leaves') and (x, y - 1, z) not in W and rnd.random() < 0.3:
             change((x, y - 1, z), 'minecraft:pale_hanging_moss[tip=true]')
@@ -164,7 +183,7 @@ def theme_halloween():
              'minecraft:entity.witch.celebrate')
     mobs = [mob('bat', 'minecraft:bat', 8),
             mob('ghost', 'minecraft:allay', 6, 'Silent:1b', ('mg:hat/ghost', [0, -0.3, 0], 1.0, True))]
-    return reskin, fx, hello, mobs, {'water': theme_biome(f'mg:{HALLOWEEN_BIOME}'), 'npc': 'witch',      # water = biome du thème (eau + herbe + feuillage)
+    return reskin, fx, hello, mobs, {'water': theme_biome(f'mg:{HALLOWEEN_BIOME}'), 'npc': 'witch', 'pre': pre,      # water = biome du thème (eau + herbe + feuillage)
                                      'files': {f'pumpkin_{st}': [f'# 🎃 Halloween : citrouille {st} de couleur aléatoire (pack activé)'] + ls
                                                for st, ls in pump.items()}}
 
@@ -222,7 +241,7 @@ def theme_noel():
     # l'étang ne gèle plus, mais « off » remet de l'eau là où une version précédente (déjà déployée) a laissé de la glace (water_fix ne couvre que sa boîte)
     # (seules les cases que l'ancien gel couvrait : surface, niveau 0, hors FOUNT, case libre : sans lignes inutiles sur l'eau profonde ou la fontaine)
     pond_off = [f'execute if block {x} {y} {z} minecraft:ice run setblock {x} {y} {z} minecraft:water' for x, y, z in sorted(POND_W)
-                if (x, y + 1, z) not in W and states(W[(x, y, z)]).get('level', '0') == '0' and (x, y, z) not in FOUNT and TW.free(x, y, z)]
+                if (x, y + 1, z) not in W and states(W[(x, y, z)]).get('level', '0') == '0' and (x, y, z) not in FOUNT and free(x, y, z)]
     return reskin, fx, hello, mobs, {'npc': 'elf', 'off': pond_off + TR.off_lines(), 'pre': TR.pre_lines()}       # la traînée de chaque bonhomme fond dans lobby/theme/gone
 
 
