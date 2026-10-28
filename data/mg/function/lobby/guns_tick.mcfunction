@@ -1,9 +1,9 @@
 # Armes de Neo GTA au lobby (chaque tick, avant lobby/armory_tick)
-execute if score $lan mg.t matches 5 unless entity @e[type=minecraft:interaction,tag=mg.lgi,scores={mg.st=7}] run function mg:lobby/guns_build
-execute as @e[type=minecraft:interaction,tag=mg.lgi] if data entity @s interaction run function mg:lobby/guns_take
-execute as @e[type=minecraft:interaction,tag=mg.lgi] if data entity @s attack run function mg:lobby/guns_take
+execute if score $lan mg.t matches 5 unless entity @e[type=minecraft:interaction,tag=mg.lgi,scores={mg.st=7},x=-50,y=63,z=-8.5,dx=14,dy=3,dz=4] run function mg:lobby/guns_build
+execute as @e[type=minecraft:interaction,tag=mg.lgi,x=-50,y=63,z=-8.5,dx=14,dy=3,dz=4] if data entity @s interaction run function mg:lobby/guns_take
+execute as @e[type=minecraft:interaction,tag=mg.lgi,x=-50,y=63,z=-8.5,dx=14,dy=3,dz=4] if data entity @s attack run function mg:lobby/guns_take
 tag @a remove mg.lgn2
-execute as @e[type=minecraft:interaction,tag=mg.lgi] at @s run function mg:lobby/guns_near
+execute as @e[type=minecraft:interaction,tag=mg.lgi,x=-50,y=63,z=-8.5,dx=14,dy=3,dz=4] at @s run function mg:lobby/guns_near
 tag @a[tag=mg.lgn,tag=!mg.lgn2] remove mg.lgn
 tag @a[tag=mg.lgn2] add mg.lgn
 execute as @e[type=minecraft:item_display,tag=mg.lrkt] at @s run function mg:lobby/rkt_tick

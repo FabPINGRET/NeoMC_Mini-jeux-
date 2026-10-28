@@ -38,12 +38,13 @@ for (n, nm, mdl, col), x in zip(GUNS, XS):
     B.append(f'summon minecraft:interaction {x:.1f} 64.5 {Z} {{Tags:["mg.lgun","mg.lgi"],width:1.0f,height:1.4f,response:1b}}')
     B.append(f'scoreboard players set @e[type=minecraft:interaction,tag=mg.lgi,x={x:.1f},y=64.5,z={Z},distance=..0.1] mg.st {n}')
 w('lobby/guns_build', B)
+LGBOX = f'x={min(XS) - 2:.0f},y=63,z={Z - 2},dx={max(XS) - min(XS) + 4:.0f},dy=3,dz=4'      # les 7 socles : sélecteurs bornés (chaque tick)
 
 w('lobby/guns_tick', ['# Armes de Neo GTA au lobby (chaque tick, avant lobby/armory_tick)',
-                      'execute if score $lan mg.t matches 5 unless entity @e[type=minecraft:interaction,tag=mg.lgi,scores={mg.st=7}] run function mg:lobby/guns_build',
-                      'execute as @e[type=minecraft:interaction,tag=mg.lgi] if data entity @s interaction run function mg:lobby/guns_take',
-                      'execute as @e[type=minecraft:interaction,tag=mg.lgi] if data entity @s attack run function mg:lobby/guns_take',
-                      'tag @a remove mg.lgn2', 'execute as @e[type=minecraft:interaction,tag=mg.lgi] at @s run function mg:lobby/guns_near',
+                      f'execute if score $lan mg.t matches 5 unless entity @e[type=minecraft:interaction,tag=mg.lgi,scores={{mg.st=7}},{LGBOX}] run function mg:lobby/guns_build',
+                      f'execute as @e[type=minecraft:interaction,tag=mg.lgi,{LGBOX}] if data entity @s interaction run function mg:lobby/guns_take',
+                      f'execute as @e[type=minecraft:interaction,tag=mg.lgi,{LGBOX}] if data entity @s attack run function mg:lobby/guns_take',
+                      'tag @a remove mg.lgn2', f'execute as @e[type=minecraft:interaction,tag=mg.lgi,{LGBOX}] at @s run function mg:lobby/guns_near',
                       'tag @a[tag=mg.lgn,tag=!mg.lgn2] remove mg.lgn', 'tag @a[tag=mg.lgn2] add mg.lgn',
                       'execute as @e[type=minecraft:item_display,tag=mg.lrkt] at @s run function mg:lobby/rkt_tick',
                       f'execute as {LOB} if items entity @s weapon.mainhand *[custom_data~{{mg_gun:1b}}] unless items entity @s weapon.mainhand *[custom_data~{{lrpg:1b}}] run function mg:gun/bar',

@@ -67,8 +67,9 @@ w('hat/guard', ['# @s : joueur avec un chapeau choisi, à sa position (chaque ti
                 'execute if entity @s[tag=mg.surv] run return run function mg:hat/strip',
                 'execute if entity @s[gamemode=spectator] run return run function mg:hat/strip',
                 'execute if predicate mg:invisible run return run function mg:hat/strip',
-                f'execute if items entity @s container.* {HAT} run clear @s {HAT}',
-                f'execute if items entity @s player.crafting.* {HAT} run clear @s {HAT}',
+                # parcours complet de l'inventaire : une fois par seconde (le chapeau jeté est balayé par survie/tick de toute façon)
+                f'execute if score $hatt mg.st matches 10 if items entity @s container.* {HAT} run clear @s {HAT}',
+                f'execute if score $hatt mg.st matches 10 if items entity @s player.crafting.* {HAT} run clear @s {HAT}',
                 f'execute if items entity @s weapon.offhand {HAT} run item replace entity @s weapon.offhand with minecraft:air',
                 f'execute if items entity @s player.cursor {HAT} run item replace entity @s player.cursor with minecraft:air',
                 'execute unless items entity @s armor.head * run function mg:hat/wear',

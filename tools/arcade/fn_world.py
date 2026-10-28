@@ -47,8 +47,9 @@ for (x1, sgn) in ((0, 1), (12, -1)):                      # échoppes : comptoir
             f'fill {x1} {YT + 2} {Z0 - 15} {x1} {YT + 4} {Z0 - 15} minecraft:spruce_fence', f'fill {x1 + 4} {YT + 2} {Z0 - 15} {x1 + 4} {YT + 4} {Z0 - 15} minecraft:spruce_fence',
             f'fill {x1} {YT + 5} {Z0 - 16} {x1 + 4} {YT + 5} {Z0 - 14} minecraft:spruce_slab[type=bottom]',
             f'setblock {x1 + 2} {YT + 4} {Z0 - 14} minecraft:lantern[hanging=true]']
-ISL += [f'setblock 1 {YT + 2} {Z0 - 15} minecraft:barrel[facing=up]', f'setblock 3 {YT + 2} {Z0 - 15} minecraft:gold_block',
-        f'setblock 13 {YT + 2} {Z0 - 15} minecraft:anvil', f'setblock 15 {YT + 2} {Z0 - 15} minecraft:smithing_table',
+# décor des échoppes sans interface ouvrable (baril verrouillé, pas d'enclume ni de table de forge utilisables en aventure)
+ISL += [f'setblock 1 {YT + 2} {Z0 - 15} minecraft:barrel[facing=up]{{lock:{{items:"minecraft:barrier"}}}}', f'setblock 3 {YT + 2} {Z0 - 15} minecraft:gold_block',
+        f'setblock 13 {YT + 2} {Z0 - 15} minecraft:lodestone', f'setblock 15 {YT + 2} {Z0 - 15} minecraft:cut_copper',
         f'fill 6 {YT + 1} {Z0 - 17} 10 {YT + 1} {Z0 - 17} minecraft:polished_andesite', f'fill 6 {YT + 2} {Z0 - 17} 10 {YT + 5} {Z0 - 17} minecraft:dark_oak_planks',
         f'fill 6 {YT + 6} {Z0 - 17} 10 {YT + 6} {Z0 - 17} minecraft:dark_oak_slab[type=bottom]',
         # arche de sortie (nord)
@@ -115,8 +116,13 @@ RG = ['# ⛏ Régénération du chunk de mine (les joueurs dedans remontent d\'a
       f'kill @e[type=minecraft:item,x=0,y={YB - 1},z={Z0},dx=15,dy={YT - YB + 2},dz=15]',
       f'kill @e[type=minecraft:tnt,x=-2,y={YB - 2},z={Z0 - 2},dx=19,dy={YT - YB + 6},dz=19]']
 RG += [f'fill 0 {y} {Z0} 15 {y} {Z0 + 15} minecraft:{"stone" if y >= 70 else "deepslate"}' for y in range(YT, YB - 1, -1)]
+# richesse du filon tirée au sort (50 à 150 % des filons de base, secret) : chaque filon a $fnrich % de chances d'être posé,
+# et ($fnrich − 100) % d'être posé une 2e fois
+RG += ['execute store result score $fnrich mg.st run random value 50..150']
 for f, n, y1, y2 in ORES:
-    RG += [f'function mg:{P}/rpf {{f:"{f}",y1:{y1},y2:{y2}}}'] * n
+    for lo in (1, 101):
+        RG += ['execute store result score #fr mg.st run random value %d..%d' % (lo, lo + 99),
+               f'execute if score #fr mg.st <= $fnrich mg.st run function mg:{P}/rpf {{f:"{f}",y1:{y1},y2:{y2}}}'] * n
 RG += ['# jackpots ordinaires : bloc d\'or brut (30 %), débris antique (25 %), coffre enfoui (40 %), bloc de fer brut (35 %)',
        'execute store result score #fr mg.st run random value 1..100',
        f'execute if score #fr mg.st matches ..30 run function mg:{P}/rset {{b:"raw_gold_block",y1:40,y2:85}}',

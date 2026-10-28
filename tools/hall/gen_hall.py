@@ -335,8 +335,8 @@ for i, x in enumerate(range(HX0 + 4, HX1 - 2, 12)):
     for (tx, tz) in ((x, HZ0 - 3), (x + 6, HZ1 + 3)):
         TN += [f'setblock {tx} 71 {tz} minecraft:snow'] + [f'execute if block {tx + dx} 70 {tz + dz} minecraft:air run setblock {tx + dx} 70 {tz + dz} minecraft:snow'
                                                             for dx, dz in ((1, 0), (-1, 0), (0, 1), (0, -1))]
-GIFT = ['red_shulker_box', 'green_shulker_box', 'white_shulker_box']
-TN[1:1] = [f'execute if block {tx + 1} 64 {tz + 1} minecraft:air run setblock {tx + 1} 64 {tz + 1} minecraft:{GIFT[j % 3]}'
+GIFT = ['red_shulker_box', 'green_shulker_box', 'white_shulker_box']     # verrouillées : décor, pas un coffre
+TN[1:1] = [f'execute if block {tx + 1} 64 {tz + 1} minecraft:air run setblock {tx + 1} 64 {tz + 1} minecraft:{GIFT[j % 3]}{{lock:{{items:"minecraft:barrier"}}}}'
            for j, (tx, tz) in enumerate((x + d, z) for x in range(HX0 + 4, HX1 - 2, 12) for d, z in ((0, HZ0 - 3), (6, HZ1 + 3)))]
 W('theme_n', TN)
 ox1, ox2, oz1, oz2 = OLD

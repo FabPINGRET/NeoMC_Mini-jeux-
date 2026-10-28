@@ -17,7 +17,7 @@ summon minecraft:text_display -8.0 85.3 42516.5 {Tags:["mg.zent","mg.zd1"],billb
 summon minecraft:text_display -5.0 85.3 42516.5 {Tags:["mg.zent","mg.zd1"],billboard:"center",text:[{"text":"🚪 Porte Atrium → Vestiaire","color":"gold","bold":true},{"text":"\nclic droit — 750 pts","color":"yellow"}]}
 summon minecraft:interaction -13.5 84 42503.5 {Tags:["mg.zent","mg.zbuy","mg.zb2","mg.zd2"],width:3.4f,height:3f,response:1b}
 summon minecraft:text_display -13.5 87.3 42502.0 {Tags:["mg.zent","mg.zd2"],billboard:"center",text:[{"text":"🚪 Porte Vestiaire → Frigidarium","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
-summon minecraft:text_display -13.5 87.3 42505.0 {Tags:["mg.zent","mg.zd2"],billboard:"center",text:[{"text":"🚪 Porte Vestiaire → Frigidarium","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
+summon minecraft:text_display -13.5 86.7 42505.0 {Tags:["mg.zent","mg.zd2"],billboard:"center",text:[{"text":"🚪 Porte Vestiaire → Frigidarium","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
 summon minecraft:interaction -6.5 84 42485.5 {Tags:["mg.zent","mg.zbuy","mg.zb3","mg.zd3"],width:3.4f,height:3f,response:1b}
 summon minecraft:text_display -8.0 87.3 42485.5 {Tags:["mg.zent","mg.zd3"],billboard:"center",text:[{"text":"🚪 Porte Frigidarium → Bassin","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
 summon minecraft:text_display -5.0 87.3 42485.5 {Tags:["mg.zent","mg.zd3"],billboard:"center",text:[{"text":"🚪 Porte Frigidarium → Bassin","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
@@ -31,11 +31,11 @@ summon minecraft:interaction 7.5 82 42516.5 {Tags:["mg.zent","mg.zbuy","mg.zb6",
 summon minecraft:text_display 6.0 85.3 42516.5 {Tags:["mg.zent","mg.zd6"],billboard:"center",text:[{"text":"🚪 Porte Atrium → Palestre","color":"gold","bold":true},{"text":"\nclic droit — 750 pts","color":"yellow"}]}
 summon minecraft:text_display 9.0 85.3 42516.5 {Tags:["mg.zent","mg.zd6"],billboard:"center",text:[{"text":"🚪 Porte Atrium → Palestre","color":"gold","bold":true},{"text":"\nclic droit — 750 pts","color":"yellow"}]}
 summon minecraft:interaction 0.5 81 42511.5 {Tags:["mg.zent","mg.zbuy","mg.zb7","mg.zd7"],width:3.4f,height:3f,response:1b}
-summon minecraft:text_display 0.5 84.3 42510.0 {Tags:["mg.zent","mg.zd7"],billboard:"center",text:[{"text":"🚪 Porte Atrium → Piscine","color":"gold","bold":true},{"text":"\nclic droit — 2000 pts","color":"yellow"}]}
+summon minecraft:text_display 0.5 83.7 42510.0 {Tags:["mg.zent","mg.zd7"],billboard:"center",text:[{"text":"🚪 Porte Atrium → Piscine","color":"gold","bold":true},{"text":"\nclic droit — 2000 pts","color":"yellow"}]}
 summon minecraft:text_display 0.5 84.3 42513.0 {Tags:["mg.zent","mg.zd7"],billboard:"center",text:[{"text":"🚪 Porte Atrium → Piscine","color":"gold","bold":true},{"text":"\nclic droit — 2000 pts","color":"yellow"}]}
 summon minecraft:interaction 0.5 81 42489.5 {Tags:["mg.zent","mg.zbuy","mg.zb8","mg.zd8"],width:3.4f,height:3f,response:1b}
 summon minecraft:text_display 0.5 84.3 42488.0 {Tags:["mg.zent","mg.zd8"],billboard:"center",text:[{"text":"🚪 Porte Bassin → Piscine","color":"gold","bold":true},{"text":"\nclic droit — 2000 pts","color":"yellow"}]}
-summon minecraft:text_display 0.5 84.3 42491.0 {Tags:["mg.zent","mg.zd8"],billboard:"center",text:[{"text":"🚪 Porte Bassin → Piscine","color":"gold","bold":true},{"text":"\nclic droit — 2000 pts","color":"yellow"}]}
+summon minecraft:text_display 0.5 83.7 42491.0 {Tags:["mg.zent","mg.zd8"],billboard:"center",text:[{"text":"🚪 Porte Bassin → Piscine","color":"gold","bold":true},{"text":"\nclic droit — 2000 pts","color":"yellow"}]}
 summon minecraft:interaction -5.5 81 42519.5 {Tags:["mg.zent","mg.zbuy","mg.zb11"],width:1.3f,height:2.4f,response:1b}
 summon minecraft:text_display -5.0 83.3 42519.5 {Tags:["mg.zent"],billboard:"center",text:[{"text":"🔫 Fusil M14","color":"aqua","bold":true},{"text":"\n500 pts","color":"yellow"}]}
 execute if score $rp mg.st matches 1 run summon minecraft:item_display -5.95 82.4 42519.5 {Tags:["mg.zent"],Rotation:[90f,0f],item:{id:"minecraft:warped_fungus_on_a_stick",count:1,components:{"minecraft:item_model":"mg:gun_rifle"}},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]}}

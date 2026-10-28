@@ -1,31 +1,33 @@
 # Constantes, cours de départ, équipe et barre du Filon (chargement)
 scoreboard players set #fn100 mg.st 100
+scoreboard players set #fn1000 mg.st 1000
+scoreboard players set #fn10 mg.st 10
 scoreboard players set #fn64 mg.st 64
 scoreboard players set #fn2 mg.st 2
-scoreboard players set #fb0 mg.st 1
-scoreboard players set #fb1 mg.st 1
-scoreboard players set #fb2 mg.st 1
-scoreboard players set #fb3 mg.st 1
-scoreboard players set #fb4 mg.st 1
-scoreboard players set #fb5 mg.st 1
-scoreboard players set #fb6 mg.st 1
-scoreboard players set #fb7 mg.st 3
-scoreboard players set #fb8 mg.st 2
-scoreboard players set #fb9 mg.st 2
-scoreboard players set #fb10 mg.st 4
-scoreboard players set #fb11 mg.st 3
-scoreboard players set #fb12 mg.st 7
-scoreboard players set #fb13 mg.st 14
-scoreboard players set #fb14 mg.st 2
-scoreboard players set #fb15 mg.st 3
-scoreboard players set #fb16 mg.st 50
-scoreboard players set #fb17 mg.st 70
-scoreboard players set #fb18 mg.st 6
-scoreboard players set #fb19 mg.st 10
-scoreboard players set #fb20 mg.st 140
-scoreboard players set #fb21 mg.st 70
-scoreboard players set #fb22 mg.st 300
-scoreboard players set #fb23 mg.st 500
+scoreboard players set #fb0 mg.st 2
+scoreboard players set #fb1 mg.st 2
+scoreboard players set #fb2 mg.st 2
+scoreboard players set #fb3 mg.st 2
+scoreboard players set #fb4 mg.st 2
+scoreboard players set #fb5 mg.st 2
+scoreboard players set #fb6 mg.st 2
+scoreboard players set #fb7 mg.st 20
+scoreboard players set #fb8 mg.st 10
+scoreboard players set #fb9 mg.st 10
+scoreboard players set #fb10 mg.st 40
+scoreboard players set #fb11 mg.st 10
+scoreboard players set #fb12 mg.st 70
+scoreboard players set #fb13 mg.st 140
+scoreboard players set #fb14 mg.st 20
+scoreboard players set #fb15 mg.st 30
+scoreboard players set #fb16 mg.st 500
+scoreboard players set #fb17 mg.st 700
+scoreboard players set #fb18 mg.st 50
+scoreboard players set #fb19 mg.st 80
+scoreboard players set #fb20 mg.st 1400
+scoreboard players set #fb21 mg.st 700
+scoreboard players set #fb22 mg.st 3000
+scoreboard players set #fb23 mg.st 5000
 execute unless score $fm0 mg.st matches 1.. run scoreboard players set $fm0 mg.st 100
 execute unless score $fm1 mg.st matches 1.. run scoreboard players set $fm1 mg.st 100
 execute unless score $fm2 mg.st matches 1.. run scoreboard players set $fm2 mg.st 100

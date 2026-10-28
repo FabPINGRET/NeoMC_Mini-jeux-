@@ -252,7 +252,7 @@ setblock -30 89 40217 minecraft:redstone_lamp[lit=true]
 setblock 36 87 40194 minecraft:chest[facing=south]
 setblock 35 87 40194 minecraft:spruce_planks
 setblock 37 87 40194 minecraft:spruce_planks
-setblock 36 91 40194 minecraft:soul_lantern[hanging=true]
+setblock 36 85 40194 minecraft:soul_lantern[hanging=true]
 setblock -30 81 40190 minecraft:light_blue_glazed_terracotta
 setblock -30 82 40190 minecraft:light_blue_stained_glass
 setblock -30 83 40190 minecraft:redstone_lamp[lit=true]

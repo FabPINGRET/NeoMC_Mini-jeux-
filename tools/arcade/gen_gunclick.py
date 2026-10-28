@@ -35,6 +35,9 @@ w('gun/cl_tick', ['# Clic gauche / clic droit des armes (Neo GTA, lobby) : chaqu
                   f'execute as @a[tag=mg.dl,gamemode=!spectator] if items entity @s weapon.mainhand {DLSN} run tag @s add mg.gcw',
                   f'execute as @a[tag=mg.play,gamemode=adventure] if items entity @s weapon.mainhand {TMSN} run tag @s add mg.gcw',
                   'execute as @a[tag=mg.gads,tag=!mg.gcw] run function mg:gun/cl_unaim',
+                  '# personne n\'a d\'arme en main : les boîtes ne sont balayées qu\'une fois ($gcib, posé par cl_new et au chargement), pas à chaque tick',
+                  'execute unless entity @a[tag=mg.gcw] unless score $gcib mg.st matches 1 run return 0',
+                  'execute unless entity @a[tag=mg.gcw] run scoreboard players set $gcib mg.st 0',
                   'execute unless entity @a[tag=mg.gcw] run return run kill @e[type=minecraft:interaction,tag=mg.gci]',
                   'execute as @a[tag=mg.gcw] unless score @s mg.gcid matches 1.. run function mg:gun/cl_id',
                   '# un clic droit passé à côté de la boîte : visée',
@@ -56,7 +59,7 @@ w('gun/cl_ret', ['# Viseur au centre de l\'écran pour ceux qui visent au lobby 
                  f'execute unless score $rp mg.st matches 1 run title @a[{VIS}] title {{"text":"+","color":"white"}}'])
 w('gun/cl_burst', ['scoreboard players set @s mg.qs 1', 'scoreboard players set @s mg.gqs 1'])
 w('gun/cl_id', ['scoreboard players add $gcidn mg.st 1', 'scoreboard players operation @s mg.gcid = $gcidn mg.st'])
-w('gun/cl_new', ['# @s : tient une arme, pas encore de boîte (position = ses yeux)',
+w('gun/cl_new', ['# @s : tient une arme, pas encore de boîte (position = ses yeux)', 'scoreboard players set $gcib mg.st 1',
                  'summon minecraft:interaction ~ ~-1.3 ~ {Tags:["mg.gci","mg.gcin"],width:2.6f,height:2.6f,response:0b}',
                  'scoreboard players operation @e[type=minecraft:interaction,tag=mg.gcin] mg.gcid = @s mg.gcid',
                  'tag @e[tag=mg.gcin] remove mg.gcin', 'tag @s add mg.gchas'])
@@ -94,4 +97,5 @@ w('gun/cl_unaim', ['tag @s remove mg.gads', 'attribute @s minecraft:movement_spe
 C.objectives([('mg.gcid', 'dummy'), ('mg.gbu', 'dummy')])
 C.patch('core/tick', 'function mg:gta/pre_tick', ['execute if score $setup mg.st matches 1 run function mg:gun/cl_tick'], where='before')
 C.patch('desinstaller', 'scoreboard objectives remove mg.bw', ['kill @e[type=minecraft:interaction,tag=mg.gci]'])
+C.patch('core/load', 'scoreboard objectives add mg.bw trigger', ['scoreboard players set $gcib mg.st 1'])
 print('ok')

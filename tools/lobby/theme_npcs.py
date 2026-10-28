@@ -29,6 +29,7 @@ GIFT = '*[minecraft:custom_data~{mg_thg:1b}]'
 BUSY = ['mg.play', 'mg.ely', 'mg.xso', 'mg.lk', 'mg.inplot', 'mg.visit']   # joueurs occupés : pas de cadeau gardé (mg.elyf exclu : élytres libres = restent au lobby)
 OVW = 'execute in minecraft:overworld run '
 POS = f'{SPOT[0] + 0.5} {SPOT[1]} {SPOT[2] + 0.5}'
+NPC_BOX = f'x={SPOT[0] - 1},y={SPOT[1] - 1},z={SPOT[2] - 1},dx=3,dy=3,dz=3'     # zone cliquable du PNJ (unique) : sélecteur borné chaque tick
 LOADED = f'{SPOT[0]} {SPOT[1]} {SPOT[2]}'
 
 
@@ -196,8 +197,8 @@ def wire():
     """Objectif de recharge, boucle de clic, recharge à la seconde, nettoyages (partie, désinstallation, sweep sans thème)."""
     C.objectives([('mg.thc', 'dummy'), ('mg.thfw', 'dummy')])
     C.patch('lobby/theme/tick', 'scoreboard players add $tht mg.st 1',
-            ['execute as @e[type=minecraft:interaction,tag=mg.thnpci] if data entity @s interaction run function mg:lobby/theme/npc_use',
-             'execute as @e[type=minecraft:interaction,tag=mg.thnpci] if data entity @s attack run function mg:lobby/theme/npc_use'], where='before')
+            [f'execute as @e[type=minecraft:interaction,tag=mg.thnpci,{NPC_BOX},limit=1] if data entity @s interaction run function mg:lobby/theme/npc_use',
+             f'execute as @e[type=minecraft:interaction,tag=mg.thnpci,{NPC_BOX},limit=1] if data entity @s attack run function mg:lobby/theme/npc_use'], where='before')
     C.patch('lobby/theme/tick', 'scoreboard players set $tht mg.st 0', ['function mg:lobby/theme/npc_second'])
     # lancement d'une partie : plus de cadeau chez les participants (leurs effets de ragoût : theme_stew.wire, en dernier)
     C.patch('core/request', 'clear @a[tag=!mg.surv] minecraft:snowball',

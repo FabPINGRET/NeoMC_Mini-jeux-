@@ -25,13 +25,13 @@ summon minecraft:text_display 28.0 84.3 40200.5 {Tags:["mg.zent","mg.zd3"],billb
 summon minecraft:text_display 31.0 84.3 40200.5 {Tags:["mg.zent","mg.zd3"],billboard:"center",text:[{"text":"🚪 Porte Rampe → Galerie basse","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
 summon minecraft:interaction 29.5 87 40200.5 {Tags:["mg.zent","mg.zbuy","mg.zb4","mg.zd4"],width:3.4f,height:3f,response:1b}
 summon minecraft:text_display 28.0 90.3 40200.5 {Tags:["mg.zent","mg.zd4"],billboard:"center",text:[{"text":"🚪 Porte Rampe → Puits","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
-summon minecraft:text_display 31.0 90.3 40200.5 {Tags:["mg.zent","mg.zd4"],billboard:"center",text:[{"text":"🚪 Porte Rampe → Puits","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
+summon minecraft:text_display 31.0 85.7 40200.5 {Tags:["mg.zent","mg.zd4"],billboard:"center",text:[{"text":"🚪 Porte Rampe → Puits","color":"gold","bold":true},{"text":"\nclic droit — 1000 pts","color":"yellow"}]}
 summon minecraft:interaction -12.5 87 40215.5 {Tags:["mg.zent","mg.zbuy","mg.zb5","mg.zd5"],width:3.4f,height:3f,response:1b}
 summon minecraft:text_display -12.5 90.3 40214.0 {Tags:["mg.zent","mg.zd5"],billboard:"center",text:[{"text":"🚪 Porte Carrière → Atelier haut","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
 summon minecraft:text_display -12.5 90.3 40217.0 {Tags:["mg.zent","mg.zd5"],billboard:"center",text:[{"text":"🚪 Porte Carrière → Atelier haut","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
 summon minecraft:interaction 39.5 87 40189.5 {Tags:["mg.zent","mg.zbuy","mg.zb6","mg.zd6"],width:3.4f,height:3f,response:1b}
 summon minecraft:text_display 39.5 90.3 40188.0 {Tags:["mg.zent","mg.zd6"],billboard:"center",text:[{"text":"🚪 Porte Puits → Wagonnets","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
-summon minecraft:text_display 39.5 90.3 40191.0 {Tags:["mg.zent","mg.zd6"],billboard:"center",text:[{"text":"🚪 Porte Puits → Wagonnets","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
+summon minecraft:text_display 39.5 85.7 40191.0 {Tags:["mg.zent","mg.zd6"],billboard:"center",text:[{"text":"🚪 Porte Puits → Wagonnets","color":"gold","bold":true},{"text":"\nclic droit — 1250 pts","color":"yellow"}]}
 summon minecraft:interaction -7.5 81 40204.5 {Tags:["mg.zent","mg.zbuy","mg.zb11"],width:1.3f,height:2.4f,response:1b}
 summon minecraft:text_display -7.0 83.3 40204.5 {Tags:["mg.zent"],billboard:"center",text:[{"text":"🔫 Fusil M14","color":"aqua","bold":true},{"text":"\n500 pts","color":"yellow"}]}
 execute if score $rp mg.st matches 1 run summon minecraft:item_display -7.95 82.4 40204.5 {Tags:["mg.zent"],Rotation:[90f,0f],item:{id:"minecraft:warped_fungus_on_a_stick",count:1,components:{"minecraft:item_model":"mg:gun_rifle"}},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]}}

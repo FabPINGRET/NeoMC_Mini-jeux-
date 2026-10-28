@@ -95,3 +95,15 @@ execute if score @s mg.fb23 matches 1.. store result storage mg:filon g.n int 1 
 execute if score @s mg.fb23 matches 1.. run data modify storage mg:filon g.i set value 'minecraft:gold_nugget[custom_data={fn_lucky:1b},item_name={"text":"🍀 Pépite de chance","color":"gold"},enchantment_glint_override=true]'
 execute if score @s mg.fb23 matches 1.. run function mg:filon/give_n with storage mg:filon g
 scoreboard players set @s mg.fb23 0
+execute if score @s mg.fb24 matches 1.. store result storage mg:filon g.n int 1 run scoreboard players get @s mg.fb24
+execute if score @s mg.fb24 matches 1.. run data modify storage mg:filon g.i set value 'minecraft:warped_fungus_on_a_stick[!max_damage,max_stack_size=16,custom_data={fn:1b,fn_dyn:1b},item_model="minecraft:tnt",item_name={"text":"🧨 Dynamite","color":"red"},lore=[{"text":"Clic droit dans la mine (sous la surface) : explose 2 s plus tard","color":"gray","italic":false}]]'
+execute if score @s mg.fb24 matches 1.. run function mg:filon/give_n with storage mg:filon g
+scoreboard players set @s mg.fb24 0
+execute if score @s mg.fb25 matches 1.. store result storage mg:filon g.n int 1 run scoreboard players get @s mg.fb25
+execute if score @s mg.fb25 matches 1.. run data modify storage mg:filon g.i set value 'minecraft:golden_apple'
+execute if score @s mg.fb25 matches 1.. run function mg:filon/give_n with storage mg:filon g
+scoreboard players set @s mg.fb25 0
+execute if score @s mg.fb26 matches 1.. store result storage mg:filon g.n int 1 run scoreboard players get @s mg.fb26
+execute if score @s mg.fb26 matches 1.. run data modify storage mg:filon g.i set value 'minecraft:cooked_beef'
+execute if score @s mg.fb26 matches 1.. run function mg:filon/give_n with storage mg:filon g
+scoreboard players set @s mg.fb26 0
