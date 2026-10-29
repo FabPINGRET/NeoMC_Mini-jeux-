@@ -22,13 +22,11 @@ sys.path.insert(0, HERE)
 import common as C
 import duel_invite
 import duel_play
-from duel_invite import tx, say
+from duel_invite import BUSY, tx, say
 from duel_play import sniper_kill
 from gen_duel_maps import MAPS
 
 w, js = C.w, C.js
-BUSY = ['mg.play', 'mg.out', 'mg.surv', 'mg.inplot', 'mg.visit', 'mg.xso', 'mg.ely', 'mg.elyf', 'mg.pkr', 'mg.lk',
-        'mg.mpp', 'mg.gtw', 'mg.tvw', 'mg.pvpc', 'mg.dl']
 OBJ = [('mg.duel', 'trigger'), ('mg.dlid', 'dummy'), ('mg.dlto', 'dummy'), ('mg.dlx', 'dummy'), ('mg.dli', 'dummy'),
        ('mg.dlhp', 'dummy'), ('mg.dlr', 'dummy'), ('mg.dlcd', 'dummy'), ('mg.dlkc', 'dummy'),
        ('mg.dlw', 'dummy ' + js({'text': '⚔ Duels gagnés', 'color': 'gold'}))]

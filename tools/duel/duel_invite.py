@@ -59,9 +59,30 @@ CLOSE_DLG = ['execute if entity @s[tag=mg.dlui] run dialog clear @s', 'tag @s re
 PENDING = 'function mg:duel/pending'
 
 
+# tags d'occupation (duel/busy, écrit par gen_duel.py ; spectateur et invitation en cours y sont testés à part)
+BUSY = ['mg.play', 'mg.out', 'mg.surv', 'mg.inplot', 'mg.visit', 'mg.xso', 'mg.ely', 'mg.elyf', 'mg.pkr', 'mg.lk',
+        'mg.mpp', 'mg.gtw', 'mg.tvw', 'mg.pvpc', 'mg.dl']
+# occupés de la liste (duel/list_one) : première raison qui s'applique, dans cet ordre
+BUSY_WHY = [
+    ('tag=mg.mpp', 'en Mini Party'), ('tag=mg.play', 'en partie'), ('tag=mg.out', 'en partie'),
+    ('tag=mg.gtw', 'dans GTA'), ('tag=mg.tvw', 'dans Terra Nova'), ('tag=mg.surv', 'en survie'),
+    ('tag=mg.inplot', 'sur un plot'), ('tag=mg.visit', 'sur un plot'),
+    ('tag=mg.ely', 'en course d\'élytres'), ('tag=mg.elyf', 'en course d\'élytres'),
+    ('tag=mg.xso', 'en contre-la-montre'), ('tag=mg.pkr', 'en parcours'), ('tag=mg.lk', 'en kart'),
+    ('tag=mg.pvpc', 'dans l\'arène PvP'), ('tag=mg.dl', 'en duel'), ('gamemode=spectator', 'spectateur'),
+    ('tag=mg.dlrq', 'invitation en cours'), ('scores={mg.dlto=1..}', 'invitation en cours')]
+BUSY_OTHER = 'occupé'
+# chaque tag de BUSY a son libellé (même ensemble) : un tag ajouté à BUSY sans libellé fait échouer la génération
+assert {c[4:] for c, _ in BUSY_WHY if c.startswith('tag=')} - {'mg.dlrq'} == set(BUSY), 'BUSY et BUSY_WHY divergent'
+
+
+def busy_line(label):
+    return say('@a[tag=mg.dlq]', tx('  ⚔ '), sel('@s', 'gray'), tx(' — ' + label))
+
+
 def lists(w):
     w('duel/list', [
-        '# Liste cliquable des adversaires libres (@s = joueur) : lien = trigger mg.duel 1000 + id',
+        '# Liste des adversaires (@s = joueur) : libres = lien cliquable (trigger mg.duel 1000 + id), occupés = ligne grise avec la raison (duel/list_one)',
         'function mg:duel/busy',
         'execute if score $dlb mg.st matches 1 run return run ' + say('@s', tx('Tu ne peux pas défier maintenant (partie ou activité en cours).')),
         'execute if entity @s[tag=mg.dlrq] run return run ' + say('@s', tx('Tu as déjà une invitation en cours : '), btn('[Annuler]', 'red', 4, 'Annuler l\'invitation')),
@@ -75,11 +96,10 @@ def lists(w):
         'execute if score $dlc mg.st matches 0 run ' + say('@s', tx('Personne n\'est disponible pour un duel pour le moment.')),
     ])
     w('duel/list_one', [
-        '# Un candidat (@s = joueur listé ; le demandeur porte mg.dlq) : numéro, occupé ?, ligne cliquable',
+        '# Un candidat (@s = joueur listé ; le demandeur porte mg.dlq) : occupé ? (ligne grise non cliquable + raison), sinon numéro et ligne cliquable',
         'function mg:duel/busy',
-        'execute if score $dlb mg.st matches 1 run return 0',
-        'execute if entity @s[tag=mg.dlrq] run return 0',
-        'execute if score @s mg.dlto matches 1.. run return 0',
+        *['execute if entity @s[' + cond + '] run return run ' + busy_line(label) for cond, label in BUSY_WHY],
+        'execute if score $dlb mg.st matches 1 run return run ' + busy_line(BUSY_OTHER),
         'execute unless score @s mg.dlid matches 1.. run function mg:duel/new_id',
         'scoreboard players add $dlc mg.st 1',
         'scoreboard players operation #dll mg.st = @s mg.dlid',

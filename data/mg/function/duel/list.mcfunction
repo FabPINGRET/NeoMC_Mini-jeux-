@@ -1,4 +1,4 @@
-# Liste cliquable des adversaires libres (@s = joueur) : lien = trigger mg.duel 1000 + id
+# Liste des adversaires (@s = joueur) : libres = lien cliquable (trigger mg.duel 1000 + id), occupés = ligne grise avec la raison (duel/list_one)
 function mg:duel/busy
 execute if score $dlb mg.st matches 1 run return run tellraw @s [{"text":"Tu ne peux pas défier maintenant (partie ou activité en cours).","color":"gray"}]
 execute if entity @s[tag=mg.dlrq] run return run tellraw @s [{"text":"Tu as déjà une invitation en cours : ","color":"gray"},{"text":"[Annuler]","color":"red","bold":true,"click_event":{"action":"run_command","command":"trigger mg.duel set 4"},"hover_event":{"action":"show_text","value":"Annuler l'invitation"}}]
