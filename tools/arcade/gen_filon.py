@@ -93,7 +93,7 @@ SHOP = [(1, 'mg.fnpk', {1: (400, '⛏ Pioche en diamant'), 2: (1500, '⛏ Pioche
         (5, 'mg.fnsw', {0: (60, '🗡 Épée en pierre'), 1: (200, '🗡 Épée en fer'), 2: (600, '🗡 Épée en diamant'), 3: (1500, '🗡 Épée en netherite')}, '🗡 Épée : max'),
         (6, 'mg.fnar', {0: (80, '🛡 Armure en cuir'), 1: (250, '🛡 Armure en mailles'), 2: (600, '🛡 Armure en fer'), 3: (1500, '🛡 Armure en diamant')}, '🛡 Armure : max')]
 ITEMS = [(7, 20, '🥩 8 steaks', 'minecraft:cooked_beef 8'), (8, 120, '🍎 Pomme d\'or', 'minecraft:golden_apple 1'),
-         (9, 150, '🧨 Dynamite', 'DYN')]
+         (9, 150, '🧨 Dynamite', 'DYN 1'), (10, 650, '🧨 5 dynamites', 'DYN 5')]
 DYN = ('minecraft:warped_fungus_on_a_stick[!max_damage,max_stack_size=16,custom_data={fn:1b,fn_dyn:1b},item_model="minecraft:tnt",'
        'item_name={"text":"🧨 Dynamite","color":"red"},lore=[{"text":"Clic droit dans la mine (sous la surface) : explose 2 s plus tard","color":"gray","italic":false}]]')
 ROPE = ('minecraft:warped_fungus_on_a_stick[custom_data={fn:1b,fn_kit:1b,fn_rope:1b},unbreakable={},item_model="minecraft:lead",'
@@ -173,7 +173,7 @@ TK = ['# Chaque tick (joueurs présents) : clics, triggers, objets, morts, sécu
       f'execute as @e[type=minecraft:interaction,tag=mg.fni,{AREA}] if data entity @s interaction run function mg:{P}/click',
       'scoreboard players enable @a[tag=mg.fnw] mg.fnt',
       f'execute as @a[tag=mg.fnw,scores={{mg.fnt=1..}}] run function mg:{P}/cmd',
-      f'execute as @a[tag=mg.fnw,scores={{mg.fnu=1..}}] run function mg:{P}/use',
+      f'execute as @a[tag=mg.fnw,scores={{mg.fnu=1..}}] at @s run function mg:{P}/use',
       f'execute as @a[tag=mg.fnw,scores={{mg.fnd=1..}}] run function mg:{P}/died',
       'scoreboard players reset @a[tag=mg.fnw] mg.fnk',
       '# dans la mine ou en surface',

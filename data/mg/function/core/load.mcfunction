@@ -73,6 +73,12 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+# Filon : constantes, cours, équipe, barre ; pas de zone chargée hors session ; île construite une fois (~1 s)
+function mg:filon/consts
+scoreboard players set $fnw mg.st 0
+scoreboard players set $fnok mg.st 0
+scoreboard players set $fnb mg.st 0
+execute if score $setup mg.st matches 1 unless data storage mg:filon {built:1} run schedule function mg:filon/build_start 45s
 scoreboard players set $gcib mg.st 1
 scoreboard objectives add mg.fb0 dummy
 scoreboard objectives add mg.fb1 dummy
@@ -116,12 +122,6 @@ scoreboard objectives add mg.fnu minecraft.used:minecraft.warped_fungus_on_a_sti
 scoreboard objectives add mg.fnd deathCount
 scoreboard objectives add mg.fnk playerKillCount
 scoreboard objectives add mg.fnt trigger
-# Filon : constantes, cours, équipe, barre ; pas de zone chargée hors session ; île construite une fois (~1 s)
-function mg:filon/consts
-scoreboard players set $fnw mg.st 0
-scoreboard players set $fnok mg.st 0
-scoreboard players set $fnb mg.st 0
-execute if score $setup mg.st matches 1 unless data storage mg:filon {built:1} run schedule function mg:filon/build_start 45s
 # Filon : constantes, cours, équipe, barre ; pas de zone chargée hors session
 scoreboard objectives add mg.fb0 dummy
 scoreboard objectives add mg.fb1 dummy

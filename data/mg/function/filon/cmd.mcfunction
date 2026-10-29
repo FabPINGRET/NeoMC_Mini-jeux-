@@ -1,4 +1,4 @@
-# Trigger mg.fnt (@s) : 1-9 achats, 20 vendre, 21 cours du marché, 30 retour au lobby
+# Trigger mg.fnt (@s) : 1-10 achats, 20 vendre, 21 cours du marché, 30 retour au lobby
 execute unless entity @s[tag=mg.fnw] run return run scoreboard players reset @s mg.fnt
 execute if score @s mg.fnt matches 30 run return run function mg:filon/leave
 execute unless entity @s[x=-4,y=97,z=45976,dx=24,dy=10,dz=20] run tellraw @s {"text":"⚠ Approche-toi du comptoir et du magasin (place de l'île).","color":"red"}
@@ -33,6 +33,7 @@ execute if score @s mg.fnt matches 6 if score #c mg.st matches -1 run tellraw @s
 execute if score @s mg.fnt matches 7 run scoreboard players set #c mg.st 20
 execute if score @s mg.fnt matches 8 run scoreboard players set #c mg.st 120
 execute if score @s mg.fnt matches 9 run scoreboard players set #c mg.st 150
+execute if score @s mg.fnt matches 10 run scoreboard players set #c mg.st 650
 execute if score #c mg.st matches 0.. if score @s mg.fnp < #c mg.st run tellraw @s [{"text":"Pas assez de points (","color":"red"},{"score":{"name":"#c","objective":"mg.st"},"color":"yellow"},{"text":" requis).","color":"red"}]
 execute if score #c mg.st matches 0.. if score @s mg.fnp < #c mg.st at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 0.6
 execute if score #c mg.st matches 0.. if score @s mg.fnp < #c mg.st run scoreboard players set #c mg.st -1
