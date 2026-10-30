@@ -90,7 +90,7 @@ w('prepare', [
     'scoreboard players set $tk mg.st 0',
     'execute as @a[tag=mg.play,sort=random] run function mg:tel/assign',
     'function mg:bb/words_init',
-    'data modify storage mg:tel ch set value []',
+    'data modify storage mg:tel ch set value []', 'function mg:tel/norm_maps',
     'scoreboard players set $tk mg.st 0', 'function mg:tel/init_ch',
     'function mg:tel/fl_add', 'function mg:tel/room', 'schedule function mg:tel/plots 40t',
     'clear @a[tag=mg.play]', 'gamemode adventure @a[tag=mg.play]',
@@ -323,12 +323,53 @@ w('check', [f'# Macro : la devinette $(k) de la chaîne $(c) est-elle le mot de 
             'execute if score #tl mg.st matches 0 run return run tellraw @a[tag=!mg.surv] {"text":"     ✘ chaîne incomplète (joueur parti)","color":"gray"}',
             '$execute store result score #tl mg.st run data get storage mg:tel ch[$(c)].$(k)',
             'execute if score #tl mg.st matches 0 run return run tellraw @a[tag=!mg.surv] {"text":"     ✘ chaîne incomplète (joueur parti)","color":"gray"}',
-            '$execute store success score $tneq mg.st run data modify storage mg:tel cmp set from storage mg:tel ch[$(c)].$(k)',
+            # comparaison souple : minuscules, sans accents, espaces ni ponctuation, sans article au début ni pluriel en s/x (tel/norm)
+            '$data modify storage mg:tel nsrc set from storage mg:tel ch[$(c)].s0', 'function mg:tel/norm',
+            'data modify storage mg:tel cmp set from storage mg:tel nout',
+            'execute store result score #tl mg.st run data get storage mg:tel cmp',
+            '$data modify storage mg:tel nsrc set from storage mg:tel ch[$(c)].$(k)', 'function mg:tel/norm',
+            'execute store success score $tneq mg.st run data modify storage mg:tel cmp set from storage mg:tel nout',
+            'execute if score #tl mg.st matches 0 run scoreboard players set $tneq mg.st 1',
             'execute if score $tneq mg.st matches 1 run return run tellraw @a[tag=!mg.surv] {"text":"     ✘ ce n\'est plus le mot de départ…","color":"red"}',
             f'$scoreboard players add @a[scores={{mg.ti=$(a)}}] mg.tpt {MATCH}',
             f'$scoreboard players add @a[scores={{mg.ti=$(b)}}] mg.tpt {MATCH}',
             'tellraw @a[tag=!mg.surv] {"text":"     ✔ C\'EST LE MOT DE DÉPART ! +' + str(MATCH) + ' au devineur et au constructeur","color":"green","bold":true}',
             'execute as @a[tag=!mg.surv] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.2'])
+# ---------- normalisation des mots (comparaison souple)
+_ACC = {'a': 'àâäáãåÀÂÄÁÃÅ', 'c': 'çÇ', 'e': 'éèêëÉÈÊË', 'i': 'îïìíÎÏÌÍ', 'n': 'ñÑ', 'o': 'ôöòóõÔÖÒÓÕ', 'u': 'ùûüúÙÛÜÚ', 'y': 'ÿýŸÝ'}
+NM2 = {ch: ch for ch in 'abcdefghijklmnopqrstuvwxyz0123456789'}
+NM2.update({ch.upper(): ch for ch in 'abcdefghijklmnopqrstuvwxyz'})
+for base, chars in _ACC.items():
+    NM2.update({ch: base for ch in chars})
+NM2.update({'œ': 'oe', 'Œ': 'oe', 'æ': 'ae', 'Æ': 'ae'})
+NM1 = dict(NM2, **{' ': ' ', "'": ' ', '’': ' ', '-': ' '})   # 1re passe : garde les espaces (articles), 2e passe (NM2) : les retire
+snbt = lambda m: '{' + ','.join(f'"{k}":"{v}"' for k, v in sorted(m.items())) + '}'
+w('norm_maps', ['# Tables de la comparaison souple des mots (tel/norm)', f'data modify storage mg:tel nm1 set value {snbt(NM1)}',
+                f'data modify storage mg:tel nm2 set value {snbt(NM2)}'])
+ART = [('les ', 4), ('une ', 4), ('des ', 4), ('le ', 3), ('la ', 3), ('un ', 3), ('du ', 3), ('de ', 3), ('l ', 2)]
+w('norm', ['# mg:tel nsrc → nout : minuscules, sans accents, sans ponctuation, sans article au début, sans espaces, sans pluriel final en s/x',
+           'execute unless data storage mg:tel nm2 run function mg:tel/norm_maps',
+           'data modify storage mg:tel nc.map set value "nm1"', 'data modify storage mg:tel nout set value ""',
+           'data modify storage mg:tel nrest set from storage mg:tel nsrc', 'function mg:tel/norm_step',
+           'execute store result score #nl mg.st run data get storage mg:tel nout'] +
+  [f'execute if score #nl mg.st matches {n + 1}.. run data modify storage mg:tel pf set string storage mg:tel nout 0 {n}' for n in (4, 3, 2)][:0] +
+  [l for a, n in ART for l in (f'execute if score #nl mg.st matches {n + 1}.. run data modify storage mg:tel pf set string storage mg:tel nout 0 {n}',
+                               f'execute if score #nl mg.st matches {n + 1}.. if data storage mg:tel {{pf:"{a}"}} run data modify storage mg:tel nout set string storage mg:tel nout {n}')] +
+  ['data modify storage mg:tel nc.map set value "nm2"', 'data modify storage mg:tel nrest set from storage mg:tel nout',
+   'data modify storage mg:tel nout set value ""', 'function mg:tel/norm_step',
+   'execute store result score #nl mg.st run data get storage mg:tel nout',
+   'execute if score #nl mg.st matches 4.. run data modify storage mg:tel pf set string storage mg:tel nout -1',
+   'execute if score #nl mg.st matches 4.. if data storage mg:tel {pf:"s"} run data modify storage mg:tel nout set string storage mg:tel nout 0 -1',
+   'execute if score #nl mg.st matches 4.. if data storage mg:tel {pf:"x"} run data modify storage mg:tel nout set string storage mg:tel nout 0 -1'])
+w('norm_step', ['# Un caractère de nrest : traduit par la table nc.map (absent = retiré), ajouté à nout',
+                'execute store result score #nl mg.st run data get storage mg:tel nrest', 'execute if score #nl mg.st matches 0 run return 0',
+                'data modify storage mg:tel nc.c set string storage mg:tel nrest 0 1', 'data modify storage mg:tel nrest set string storage mg:tel nrest 1',
+                'data modify storage mg:tel nc.m set value ""', 'function mg:tel/norm_ch with storage mg:tel nc',
+                'data modify storage mg:tel nc.o set from storage mg:tel nout', 'function mg:tel/norm_cat with storage mg:tel nc',
+                'function mg:tel/norm_step'])
+w('norm_ch', ['# Macro : caractère $(c) → nc.m (guillemet ou antislash : la macro échoue, le caractère est retiré)',
+              '$data modify storage mg:tel nc.m set from storage mg:tel $(map)."$(c)"'])
+w('norm_cat', ['$data modify storage mg:tel nout set value "$(o)$(m)"'])
 w('finish', ['# Fin : le plus de points gagne (égalité ou 0 point = pas de vainqueur)',
              'tp @a[tag=mg.play] 0.5 64 19420.5', 'gamemode adventure @a[tag=mg.play]', 'effect clear @a[tag=mg.play] minecraft:night_vision',
              'scoreboard players set $tmax mg.st 0', 'scoreboard players operation $tmax mg.st > @a[tag=mg.play] mg.tpt',
