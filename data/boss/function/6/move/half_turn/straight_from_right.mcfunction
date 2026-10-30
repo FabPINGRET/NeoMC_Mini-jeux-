@@ -1,0 +1,23 @@
+execute as @n[tag=boss_sh_loc,distance=0..] at @s if entity @s[tag=east] run tag @s add turning_north
+execute as @n[tag=boss_sh_loc,distance=0..] at @s if entity @s[tag=north] run tag @s add turning_west
+execute as @n[tag=boss_sh_loc,distance=0..] at @s if entity @s[tag=west] run tag @s add turning_south
+execute as @n[tag=boss_sh_loc,distance=0..] at @s if entity @s[tag=south] run tag @s add turning_east
+
+execute as @n[tag=boss_sh_loc,distance=0..] at @s run tag @s remove east
+execute as @n[tag=boss_sh_loc,distance=0..] at @s run tag @s remove west
+execute as @n[tag=boss_sh_loc,distance=0..] at @s run tag @s remove south
+execute as @n[tag=boss_sh_loc,distance=0..] at @s run tag @s remove north
+
+execute as @n[tag=boss_sh_loc,distance=0..] at @s if entity @s[tag=turning_east] run tag @s add east
+execute as @n[tag=boss_sh_loc,distance=0..] at @s if entity @s[tag=turning_west] run tag @s add west
+execute as @n[tag=boss_sh_loc,distance=0..] at @s if entity @s[tag=turning_south] run tag @s add south
+execute as @n[tag=boss_sh_loc,distance=0..] at @s if entity @s[tag=turning_north] run tag @s add north
+
+execute as @n[tag=boss_sh_loc,distance=0..] at @s run tag @s remove turning_east
+execute as @n[tag=boss_sh_loc,distance=0..] at @s run tag @s remove turning_west
+execute as @n[tag=boss_sh_loc,distance=0..] at @s run tag @s remove turning_south
+execute as @n[tag=boss_sh_loc,distance=0..] at @s run tag @s remove turning_north
+
+execute as @n[tag=boss_sh_loc,distance=0..] at @s run tp @s ~ ~ ~ ~-90 ~
+
+function boss:6/move/frame/straight

@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Having Fun Isn't Hard...",
+            "color": "yellow"
+        },
+        "description": {
+            "text": "Complete the Orc Library's entire collection"
+        },
+        "icon": {
+            "id": "minecraft:lectern"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:library_start"
+}

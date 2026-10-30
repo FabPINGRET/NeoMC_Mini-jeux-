@@ -1,0 +1,5 @@
+execute positioned -392 58 -75 run playsound minecraft:entity.piglin.jealous neutral @a[tag=mg.flw] ~ ~ ~ 1 1.2
+execute if score moonlight_contagion bool matches 0 positioned -392 58 -75 run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Throdumir","color":"dark_aqua"},{"text":"> We dwarves originally created the","color":"white"},{"text":" Fire Golems","color":"red"},{"text":" to help us mine in places where it got too hot, but they gained sentience and instead became our friends. I can sometimes hear them loudly worshipping the sun from where I sit.","color":"white"}]
+execute if score moonlight_contagion bool matches 1 positioned -392 58 -75 run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Throdumir","color":"dark_aqua"},{"text":"> We dwarves originally created the","color":"white"},{"text":" Fire Golems","color":"red"},{"text":" to help us mine in places where it got too hot, but they gained sentience and instead became our friends. I can sometimes hear them loudly worshipping the moon from where I sit.","color":"white"}]
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

@@ -1,0 +1,6 @@
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.armadillo.death neutral @a[tag=mg.flw] ~ ~ ~ 1 0.5
+execute if score Inventory Amulet matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Nyktarios","color":"#D47453"},{"text":"> When ","color":"white"},{"text":"Morbex","color":"dark_aqua"},{"text":" overthrew the Lords, law and order fell apart. For a cruel usurper, he doesn't pay us much attention, as if controlling the Dark Isles is just a means to an end for him. His focus is somewhere else.","color":"white"}]
+execute if score Inventory Amulet matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Nyktarios","color":"#D47453"},{"text":"> When ","color":"white"},{"text":"Morbex","color":"dark_aqua"},{"text":" overthrew the Lords, law and order fell apart. For a cruel usurper, he never paid us much attention, as if controlling the Dark Isles is just a means to an end for him. I believe his real focus is on whatever his creepy flying","color":"white"},{"text":" machine","color":"dark_aqua"},{"text":" is doing.","color":"white"}]
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

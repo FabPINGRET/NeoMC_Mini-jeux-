@@ -1,0 +1,30 @@
+{
+    "display": {
+        "title": {
+            "text": "Smoke Doctor? I Hardly Know Her!",
+            "color": "gold",
+            "bold": false
+        },
+        "description": {
+            "text": "Repair the door to The Allgrave"
+        },
+        "icon": {
+            "id": "minecraft:trial_key"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "main_quest:quest_9"
+}

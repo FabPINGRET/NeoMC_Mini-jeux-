@@ -1,0 +1,9 @@
+execute if block ~ ~1 ~-1 black_wool run setblock ~ ~1 ~-1 minecraft:dirt
+execute if block ~ ~1 ~-1 red_wool run setblock ~ ~1 ~-1 minecraft:black_wool
+execute if block ~ ~1 ~-1 orange_wool run setblock ~ ~1 ~-1 minecraft:red_wool
+execute if block ~ ~1 ~-1 yellow_wool run setblock ~ ~1 ~-1 minecraft:orange_wool
+execute if block ~ ~1 ~-1 lime_wool run setblock ~ ~1 ~-1 minecraft:yellow_wool
+execute if block ~ ~1 ~-1 blue_wool run setblock ~ ~1 ~-1 minecraft:lime_wool
+execute if block ~ ~1 ~-1 purple_wool run setblock ~ ~1 ~-1 minecraft:blue_wool
+execute if block ~ ~1 ~-1 white_wool run setblock ~ ~1 ~-1 minecraft:purple_wool
+execute if block ~ ~1 ~-1 dirt run setblock ~ ~1 ~-1 minecraft:white_wool

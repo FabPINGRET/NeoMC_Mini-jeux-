@@ -1,0 +1,28 @@
+{
+    "display": {
+        "title": {
+            "text": "Minor Sidequests"
+        },
+        "description": {
+            "text": "Optional quests that still take a while to complete"
+        },
+        "icon": {
+            "id": "minecraft:name_tag"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": false,
+        "background": "minecraft:gui/advancements/backgrounds/husbandry"
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ]
+}

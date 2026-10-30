@@ -1,0 +1,1 @@
+give @p[tag=mg.flw] armor_stand[custom_name="NPC",entity_data={id:"minecraft:armor_stand",NoGravity:1b,Silent:1b,Invulnerable:1b,ShowArms:1b,Small:1b,NoBasePlate:1b,PersistenceRequired:1b,Tags:["npc"],DisabledSlots:7713}] 1

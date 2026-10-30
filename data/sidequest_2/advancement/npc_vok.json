@@ -1,0 +1,36 @@
+{
+    "display": {
+        "title": {
+            "text": "Forged In Fire",
+            "color": "gray"
+        },
+        "description": {
+            "text": "Use Vok Stonebrow's Mountain Forge"
+        },
+        "icon": {
+            "id": "minecraft:egg",
+            "components": {
+                "minecraft:custom_model_data": {
+                    "strings": [
+                        "14"
+                    ]
+                }
+            }
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:npc_willy"
+}

@@ -1,0 +1,11 @@
+execute if score golem_lycan bool matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.ravager.ambient neutral @a[tag=mg.flw] ~ ~ ~ 1 1.5
+execute if score golem_lycan bool matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.breeze.deflect neutral @a[tag=mg.flw] ~ ~ ~ 1 1
+
+execute if score Inventory FeatherBrush matches 0 if score golem_lycan bool matches 0 if score moonlight_contagion bool matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Brukrun","color":"red"},{"text":"> Have you taken care of all the contagions yet? There's not a ton happening in the","color":"white"},{"text":" Magma Kingdom","color":"red"},{"text":" right now. Not besides those weird ","color":"white"},{"text":"bricks","color":"aqua"},{"text":" that have shown up in a few places...","color":"white"}]
+execute if score Inventory FeatherBrush matches 1 if score golem_lycan bool matches 0 if score moonlight_contagion bool matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Brukrun","color":"red"},{"text":"> There's not a ton happening in the","color":"white"},{"text":" Magma Kingdom","color":"red"},{"text":" right now. Not besides those weird ","color":"white"},{"text":"bricks","color":"aqua"},{"text":" that have shown up in a few places...","color":"white"}]
+execute if score golem_lycan bool matches 0 if score moonlight_contagion bool matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Brukrun","color":"red"},{"text":"> Who is that floating being in the blue fire of the Great Altar? Should it be in there? Do we know it's safe?","color":"white"}]
+
+execute if score golem_lycan bool matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Brukrunox","color":"red"},{"text":"> Whoa... I grew a cloaca...","color":"white"}]
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

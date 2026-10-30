@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "No Parents Allowed",
+            "color": "gold"
+        },
+        "description": {
+            "text": "Enter the Noparentunnel Network"
+        },
+        "icon": {
+            "id": "minecraft:iron_shovel"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:exploration"
+}

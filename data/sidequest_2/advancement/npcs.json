@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Helpful NPCs",
+            "color": "aqua"
+        },
+        "description": {
+            "text": "Receive various new abilities or upgrades from unique NPCs..."
+        },
+        "icon": {
+            "id": "minecraft:feather"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:encounters"
+}

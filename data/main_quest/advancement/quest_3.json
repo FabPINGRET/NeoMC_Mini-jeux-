@@ -1,0 +1,37 @@
+{
+    "display": {
+        "title": {
+            "text": "Whisper Hunter",
+            "color": "light_purple",
+            "bold": false
+        },
+        "description": {
+            "text": "Anchor and kill every Whisper in the Floaty Isles"
+        },
+        "icon": {
+            "id": "minecraft:carrot_on_a_stick",
+            "components": {
+                "minecraft:custom_model_data": {
+                    "strings": [
+                        "16"
+                    ]
+                }
+            }
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "main_quest:quest_2"
+}

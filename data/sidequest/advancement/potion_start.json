@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Dragonbrews",
+            "color": "green"
+        },
+        "description": {
+            "text": "Meet Nirizhma at his house"
+        },
+        "icon": {
+            "id": "minecraft:dragon_breath"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest:root"
+}

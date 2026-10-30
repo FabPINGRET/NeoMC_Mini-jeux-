@@ -7,9 +7,9 @@
     spawn (ni survie, ni GTA, ni Terra Nova) → tableaux généraux qui tournent (hall/board_tick, votes compris) ;
     Neo GTA (tag mg.gtw)                    → 💵 Dollars (mg.gta) ;
     Terra Nova (tag mg.tvw)                 → ₵ Terra Nova (mg.tvc) ;
-    Survie (mg.surv sans mg.gtw / mg.tvw / mg.olw / mg.fnw) → ⛏ Survie — niveau (mg.svl, niveau d'XP recopié chaque seconde).
+    Survie (mg.surv sans mg.gtw / mg.tvw / mg.olw / mg.fnw / mg.flw) → ⛏ Survie — niveau (mg.svl, niveau d'XP recopié chaque seconde).
     Filon (tag mg.fnw)                      → ⛏ Filon — saison (mg.fns, points gagnés à la vente).
-  Ombrelune (mg.olw) : pas de tableau propre, ses joueurs ne comptent dans aucun des quatre (ils ne faussent plus le niveau de survie).
+  Ombrelune (mg.olw), Floaty (mg.flw) : pas de tableau propre, leurs joueurs ne comptent dans aucun des quatre (ils ne faussent plus le niveau de survie).
 - $sbm = affichage en cours (−1 inconnu, 0 spawn, 1 GTA, 2 Terra Nova, 3 survie, 4 Filon, 9 masqué).
 - Menu « Classement à droite » (core/opt_sidebar) : $sbo = 1 masque le tableau hors mini-jeu, 0 (défaut) = automatique.
 """
@@ -27,7 +27,7 @@ w, sub = _fn.write, _fn.replace
 SPAWN = '@a[tag=!mg.surv]'
 GTA = '@a[tag=mg.gtw]'
 TV = '@a[tag=mg.tvw]'
-SV = '@a[tag=mg.surv,tag=!mg.gtw,tag=!mg.tvw,tag=!mg.olw,tag=!mg.fnw]'
+SV = '@a[tag=mg.surv,tag=!mg.gtw,tag=!mg.tvw,tag=!mg.olw,tag=!mg.fnw,tag=!mg.flw]'
 FN = '@a[tag=mg.fnw]'
 w('sb/auto', [
     '# 📊 Tableau de droite hors mini-jeu : celui de l\'endroit où sont le plus de joueurs (généré : tools/lobby/gen_sidebar.py)',

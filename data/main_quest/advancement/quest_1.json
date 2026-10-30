@@ -1,0 +1,30 @@
+{
+    "display": {
+        "title": {
+            "text": "It's Dangerous To Go Alone",
+            "color": "green",
+            "bold": false
+        },
+        "description": {
+            "text": "Show Robbo your brand-new gear"
+        },
+        "icon": {
+            "id": "minecraft:wooden_sword"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "main_quest:floaty_isles"
+}

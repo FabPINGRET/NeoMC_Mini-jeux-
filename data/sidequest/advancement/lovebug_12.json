@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Bow Tinker",
+            "color": "light_purple"
+        },
+        "description": {
+            "text": "Report 12 good deeds to the Lovebug"
+        },
+        "icon": {
+            "id": "minecraft:bow"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest:lovebug_9"
+}

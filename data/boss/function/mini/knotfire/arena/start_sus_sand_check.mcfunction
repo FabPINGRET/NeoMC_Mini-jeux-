@@ -1,0 +1,12 @@
+setblock -10682 64 81 minecraft:redstone_block
+setblock -10680 64 89 minecraft:redstone_block
+setblock -10682 64 97 minecraft:redstone_block
+setblock -10689 64 104 minecraft:redstone_block
+setblock -10697 64 106 minecraft:redstone_block
+setblock -10705 64 104 minecraft:redstone_block
+setblock -10712 64 97 minecraft:redstone_block
+setblock -10714 64 89 minecraft:redstone_block
+setblock -10712 64 81 minecraft:redstone_block
+setblock -10705 64 74 minecraft:redstone_block
+setblock -10697 64 72 minecraft:redstone_block
+setblock -10689 64 74 minecraft:redstone_block

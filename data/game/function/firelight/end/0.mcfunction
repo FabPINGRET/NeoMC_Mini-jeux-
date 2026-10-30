@@ -1,0 +1,15 @@
+function game:firelight/exit/narrator
+
+function game:firelight/set/empty
+function game:firelight/scene/empty
+
+function game:firelight/set_change
+
+scoreboard players set firelight_script Value -1
+
+execute positioned 9882 61 -126 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.armadillo.death neutral @a[tag=mg.flw] ~ ~ ~ 1 0.5
+execute positioned 9882 61 -126 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"\n<"},{"text":"Dark Bob Saget","color":"#D47453"},{"text":"> What a perfect play! I've never seen such a moving story with such a likeable protagonist! Feel free to control the play as many more times as you want, but you've made me a ","color":"white"},{"text":"very, very happy producer","color":"red"},{"text":".","color":"white"}]
+
+setblock 9884 57 -126 minecraft:redstone_block
+
+execute positioned 9882 61 -126 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1.75 ~ run particle minecraft:heart ~ ~ ~ 0.3 0.3 0.3 0 10 force

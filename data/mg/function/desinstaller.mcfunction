@@ -12,6 +12,7 @@ tag @a remove mg.lfc
 execute as @a[tag=mg.tvw] in minecraft:overworld run function mg:terra/leave
 execute as @a[tag=mg.olw] in minecraft:overworld run function mg:ombre/leave
 execute as @a[tag=mg.fnw] in minecraft:overworld run function mg:filon/leave
+execute as @a[tag=mg.flw] in minecraft:overworld run function mg:floaty/leave
 execute in minecraft:overworld run kill @e[tag=mg.fne]
 execute in minecraft:overworld run forceload remove -30 45970 46 46046
 team remove mg_fn
@@ -72,6 +73,7 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+scoreboard objectives remove mg.fla
 scoreboard objectives remove mg.fb0
 scoreboard objectives remove mg.fb1
 scoreboard objectives remove mg.fb10
@@ -1101,3 +1103,9 @@ tag @a remove mg.efp
 scoreboard objectives remove mg.ecr
 scoreboard objectives remove mg.erb2
 function mg:elyrace/uninstall
+execute in mg:floaty run forceload remove -9776 416 -9761 431
+tag @a remove mg.flw
+tag @a remove mg.pullw
+data remove storage mg:floaty v
+data remove storage mg:floaty cu
+function floaty:uninstall

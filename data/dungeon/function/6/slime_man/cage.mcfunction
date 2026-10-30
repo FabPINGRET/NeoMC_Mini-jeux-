@@ -1,0 +1,9 @@
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.shulker.ambient neutral @a[tag=mg.flw] ~ ~ ~ 1 1.2
+execute if entity @a[gamemode=!spectator,distance=20..,tag=mg.flw] unless block -10440 -13 13 air at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[tag=mg.flw] [{"text":"<"},{"text":"Slime Man","color":"green"},{"text":"> Could you make sure everyone is over here first? I don't want to talk too loud, there's a monster nearby.","color":"white"}]
+execute unless entity @a[gamemode=!spectator,distance=20..,tag=mg.flw] unless block -10440 -13 13 air at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[tag=mg.flw] [{"text":"<"},{"text":"Slime Man","color":"green"},{"text":"> Ugh, why do these things always happen to me? I was SO CLOSE to getting the","color":"white"},{"text":" magic spell","color":"light_purple"},{"text":", and a monster captured me and locked me in here. All I've ever wanted was to be a hero, but heroes don't get thrown in cages. Where's the glory in this?","color":"white"}]
+execute unless entity @a[gamemode=!spectator,distance=20..,tag=mg.flw] unless block -10440 -13 13 air at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run setblock -10446 -18 15 minecraft:redstone_block
+
+execute if block -10440 -13 13 air at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[tag=mg.flw] [{"text":"<"},{"text":"Slime Man","color":"green"},{"text":"> You... rescued me. You risked your life for me without any prospect of glory or recognition in return. Why? I think I need to sit here for a while and ponder what it really means to be a hero... The","color":"white"},{"text":" magic spell","color":"light_purple"},{"text":" is just ahead if you want to have it. Thank you.","color":"white"}]
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

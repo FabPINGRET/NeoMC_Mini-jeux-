@@ -73,6 +73,11 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+# Floaty : pas de session au chargement (le point de contrôle et les drapeaux du groupe, eux, sont gardés) ; le chunk forcé est persisté dans le monde :
+# après un arrêt en pleine session il resterait forcé à vie, session_start le recharge au besoin
+scoreboard players set $flw mg.st 0
+execute in mg:floaty run forceload remove -9776 416 -9761 431
+scoreboard objectives add mg.fla dummy
 scoreboard players set $gcib mg.st 1
 scoreboard objectives add mg.fb0 dummy
 scoreboard objectives add mg.fb1 dummy

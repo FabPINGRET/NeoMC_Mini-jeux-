@@ -1,0 +1,1 @@
+summon cave_spider ~ ~ ~ {PersistenceRequired:1b,Health:18f,Tags:["enemy","noc","ivyweaver"],CustomName:"Ivyweaver",attributes:[{id:"minecraft:armor",base:12},{id:"minecraft:max_health",base:18},{id:"minecraft:scale",base:2}]}

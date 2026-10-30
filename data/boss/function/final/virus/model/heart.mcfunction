@@ -1,0 +1,1 @@
+summon block_display -12385 128 354 {NoGravity:1b,Silent:1b,Tags:["wv_model_heart"],brightness:{sky:15,block:15},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.5f,0f,-0.5f],scale:[3f,3f,3f]},block_state:{Name:"minecraft:end_gateway"}}

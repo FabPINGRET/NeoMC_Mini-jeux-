@@ -1,0 +1,39 @@
+{
+    "display": {
+        "title": {
+            "text": "Metalscratch & Gildertwist",
+            "color": "light_purple"
+        },
+        "description": {
+            "text": "Have Etch & Inlay decorate your armor"
+        },
+        "icon": {
+            "id": "minecraft:player_head",
+            "components": {
+                "minecraft:profile": {
+                    "properties": [
+                        {
+                            "name": "textures",
+                            "value": "ewogICJ0aW1lc3RhbXAiIDogMTc0Mzc3ODMxMzg2OCwKICAicHJvZmlsZUlkIiA6ICJhODgyMzAzMDVkOWY0ODRiYjNjNjc2OTg1OTYxYjc2YSIsCiAgInByb2ZpbGVOYW1lIiA6ICJMb3JkRHJld3BpY3VzIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2RmOTliYmYxZmM0YTc1MTJkZTU0MmY5NGJmMTliYmQxNWRiODkwZDQwZjU3YTFiOGE0N2JlMWI0MTk1ODVhZWMiCiAgICB9CiAgfQp9"
+                        }
+                    ]
+                }
+            }
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:npc_vok"
+}

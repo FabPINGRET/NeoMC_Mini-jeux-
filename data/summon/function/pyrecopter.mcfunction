@@ -1,0 +1,1 @@
+summon blaze ~ ~ ~ {NoGravity:1b,PersistenceRequired:1b,Health:24f,Tags:["enemy","noc","pyrecopter"],CustomName:"Pyrecopter",attributes:[{id:"minecraft:max_health",base:24},{id:"minecraft:scale",base:1.5}]}

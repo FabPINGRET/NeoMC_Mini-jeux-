@@ -1,0 +1,29 @@
+{
+  "attributes": {
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "minecraft:mycelium"
+        },
+        "probability": 0.01
+      }
+    ],
+    "minecraft:visual/sky_color": "#677468",
+    "minecraft:visual/fog_color": "#96AC98",
+    "minecraft:visual/water_fog_color": "#FBD2FF"
+    },
+  "temperature": 0.5,
+  "downfall": 0.4,
+  "precipitation": "none",
+  "has_precipitation": true,
+  "temperature_modifier": "none",
+  "effects": {
+    "water_color": "#FF95FB",
+    "grass_color": "#FBD2FF",
+    "foliage_color": "#FBD2FF"
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": [],
+  "features": []
+}

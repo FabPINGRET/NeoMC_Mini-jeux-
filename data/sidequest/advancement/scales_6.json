@@ -1,0 +1,36 @@
+{
+    "display": {
+        "title": {
+            "text": "The Power of Wind",
+            "color": "white"
+        },
+        "description": {
+            "text": "Find the Air Scales"
+        },
+        "icon": {
+            "id": "minecraft:quartz",
+            "components": {
+                "minecraft:custom_model_data": {
+                    "strings": [
+                        "8"
+                    ]
+                }
+            }
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest:scales_5"
+}

@@ -1,0 +1,30 @@
+{
+    "display": {
+        "title": {
+            "text": "The Floaty Isles",
+            "color": "gold",
+            "bold": false
+        },
+        "description": {
+            "text": "Complete story quests in the Floaty Isles..."
+        },
+        "icon": {
+            "id": "minecraft:grass_block"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "main_quest:root"
+}

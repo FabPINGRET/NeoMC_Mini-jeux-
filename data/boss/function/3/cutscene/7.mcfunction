@@ -1,0 +1,8 @@
+summon armor_stand -10122 159 -189 {NoGravity:0b,Silent:1b,Invulnerable:1b,ShowArms:1b,NoBasePlate:1b,PersistenceRequired:1b,Tags:["lod_boss_cutscene"],DisabledSlots:4144959,Rotation:[-90F,0F],equipment:{feet:{id:"minecraft:leather_boots",count:1,components:{"minecraft:dyed_color":16764459,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:dune"}}},legs:{id:"minecraft:leather_leggings",count:1,components:{"minecraft:dyed_color":16764459,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:dune"}}},chest:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":16764459,"minecraft:trim":{material:"minecraft:diamond",pattern:"minecraft:dune"}}},head:{id:"minecraft:player_head",count:1,components:{"minecraft:profile":{id:[I;-174658801,-555333643,-1572852588,1453959286],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDU4YTM4NTY1NDg0Yzk5MDZlODgzZGUyMTUxMmQ3NzRlOTQ0MzYxNjI0YmVlYTExOGNlZjJiMjZiYjVmODAzYyJ9fX0="}]}}}}}
+execute as @e[tag=lod_boss_cutscene,distance=0..] at @s run particle minecraft:dust{scale:1,color:[0.900,0.800,0.500]} ~ ~1 ~ 1 1 1 0 200 force
+execute as @e[tag=lod_boss_cutscene,distance=0..] at @s run playsound minecraft:block.enchantment_table.use master @a[tag=mg.flw] ~ ~ ~ 3 0.5
+execute as @e[tag=lod_boss_cutscene,distance=0..] at @s run playsound minecraft:block.end_portal.spawn master @a[tag=mg.flw] ~ ~ ~ 3 0.5
+execute as @e[tag=lod_boss_cutscene,distance=0..] at @s run playsound minecraft:entity.lightning_bolt.impact master @a[tag=mg.flw] ~ ~ ~ 3 1.5
+
+# Every 5 full repeaters is 2 seconds. Every 1 repeater tick is 0.1 seconds
+schedule function floaty:sched/boss/3/cutscene/8 2s

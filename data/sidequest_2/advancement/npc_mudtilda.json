@@ -1,0 +1,36 @@
+{
+    "display": {
+        "title": {
+            "text": "Squelch",
+            "color": "gold"
+        },
+        "description": {
+            "text": "Use Mudtilda's Grime Forge"
+        },
+        "icon": {
+            "id": "minecraft:egg",
+            "components": {
+                "minecraft:custom_model_data": {
+                    "strings": [
+                        "13"
+                    ]
+                }
+            }
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:npc_vyrn"
+}

@@ -1,0 +1,2 @@
+execute positioned -11538 187 -183 run playsound minecraft:entity.strider.ambient neutral @a[tag=mg.flw] ~ ~ ~ 1 2
+execute positioned -11538 187 -183 run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Dark Eebo","color":"blue"},{"text":"> You HATE me! You HATE me! You HATE me!","color":"white"}]

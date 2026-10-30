@@ -1,0 +1,15 @@
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.villager.ambient neutral @a[tag=mg.flw] ~ ~ ~ 1 0.8
+execute if score grove_eye bool matches 0..1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Tony the Apple Rascal","color":"aqua"},{"text":"> You know the dense grove by the windmill? I used to sneak there at ","color":"white"},{"text":"night","color":"light_purple"},{"text":" to pick ","color":"white"},{"text":"very special apples","color":"light_purple"},{"text":" until that hideous ","color":"white"},{"text":"Eye","color":"gold"},{"text":" showed up. Now every night it's there, staring unblinkingly out of the dark, waiting for me. If you could deal with the ","color":"white"},{"text":"Eye","color":"gold"},{"text":" in the grove, I could finally go back to picking my special apples. I'd even let you try some!","color":"white"}]
+
+execute if score grove_eye bool matches 0 run scoreboard players set grove_eye bool 1
+
+execute if score grove_eye bool matches 2 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=!vendor_invisapple_0,tag=mg.flw] [{"text":"<"},{"text":"Tony the Apple Rascal","color":"aqua"},{"text":"> Thanks for defeating the","color":"white"},{"text":" Eye in the Grove","color":"gold"},{"text":"! I'm happy I can pick my special","color":"white"},{"text":" Invisapples","color":"light_purple"},{"text":" again. Try some! They make it much harder for monsters to notice you, especially if you're sneaking or not wearing armor. Come back tomorrow and I can give you more!","color":"white"}]
+execute if score grove_eye bool matches 2 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=vendor_invisapple_0,tag=mg.flw] [{"text":"<"},{"text":"Tony the Apple Rascal","color":"aqua"},{"text":"> Come back tomorrow and I can give you more","color":"white"},{"text":" Invisapples","color":"light_purple"},{"text":"! They make it much harder for monsters to notice you, especially if you're sneaking or not wearing armor.","color":"white"}]
+
+execute if score grove_eye bool matches 2 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run give @a[distance=..10,tag=!vendor_invisapple_0,tag=mg.flw] apple[custom_name={"color":"light_purple","italic":false,"text":"Invisapple"},consumable={on_consume_effects:[{type:"minecraft:apply_effects",effects:[{id:"minecraft:invisibility",amplifier:0,duration:900,show_particles:0b,show_icon:1b}]},{type:"minecraft:play_sound",sound:"entity.illusioner.mirror_move"}]},custom_model_data={strings:["1"]},lore=["Makes you invisible","for a short time"]] 3
+execute if score grove_eye bool matches 2 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tag @a[distance=..10,tag=!vendor_invisapple_0,tag=mg.flw] add vendor_invisapple_0
+
+
+#grove_eye bool is 0 before talking, 1 if talked (so fight is doable), 2 when eye is defeated and vendor is active
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

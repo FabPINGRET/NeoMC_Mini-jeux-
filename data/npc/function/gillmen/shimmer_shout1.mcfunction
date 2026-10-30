@@ -1,0 +1,2 @@
+playsound minecraft:entity.dolphin.hurt neutral @a[tag=mg.flw] ~ ~ ~ 1 1 1
+tellraw @a[tag=mg.flw] [{"text":"<"},{"text":"Shimmer","color":"yellow"},{"text":"> That's all of them, the","color":"white"},{"text":" Lake Freaks ","color":"dark_green"},{"text":"have been destroyed! The ","color":"white"},{"text":"Lake Freak Supreme ","color":"dark_green"},{"text":"will be drawn out now. He's a scary fella so tread water lightly.","color":"white"}]

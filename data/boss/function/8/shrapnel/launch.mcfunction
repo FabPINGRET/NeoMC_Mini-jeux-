@@ -1,0 +1,4 @@
+execute at @n[tag=frostbyte_head,distance=0..] run summon armor_stand ~ ~1.8 ~ {Small:1b,Silent:1b,Invulnerable:1b,Invisible:1b,NoBasePlate:1b,PersistenceRequired:1b,Motion:[2.0,0.7,0.0],Tags:["frostbyte_shrapnel","pos"],DisabledSlots:4144959}
+execute at @n[tag=frostbyte_head,distance=0..] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Invisible:1b,PersistenceRequired:1b,Tags:["frostbyte_shrapnel","draw"],DisabledSlots:4144959,equipment:{head:{id:"minecraft:player_head",count:1,components:{"minecraft:profile":{id:[I;-1621761885,420563628,-1988687145,1381854084],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGRiYTY0MmVmZmZhMTNlYzM3MzBlYWZjNTkxNGFiNjgxMTVjMWY5OTg4MDNmNzQ0NTJlMmUwY2QyNmFmMGI4In19fQ=="}]}}}}}
+
+setblock -10828 67 390 air

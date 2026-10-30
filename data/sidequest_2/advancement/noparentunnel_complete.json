@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "How Are They Doing This?",
+            "color": "gold"
+        },
+        "description": {
+            "text": "Complete the entire Noparentunnel Network"
+        },
+        "icon": {
+            "id": "minecraft:diamond_shovel"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:noparentunnel_open"
+}

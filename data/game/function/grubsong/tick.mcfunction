@@ -1,0 +1,13 @@
+scoreboard players operation grubsong_14 Value = grubsong_13 Value
+scoreboard players operation grubsong_13 Value = grubsong_12 Value
+scoreboard players operation grubsong_12 Value = grubsong_11 Value
+scoreboard players operation grubsong_11 Value = grubsong_10 Value
+scoreboard players operation grubsong_10 Value = grubsong_9 Value
+scoreboard players operation grubsong_9 Value = grubsong_8 Value
+scoreboard players operation grubsong_8 Value = grubsong_7 Value
+scoreboard players operation grubsong_7 Value = grubsong_6 Value
+scoreboard players operation grubsong_6 Value = grubsong_5 Value
+scoreboard players operation grubsong_5 Value = grubsong_4 Value
+scoreboard players operation grubsong_4 Value = grubsong_3 Value
+scoreboard players operation grubsong_3 Value = grubsong_2 Value
+scoreboard players operation grubsong_2 Value = grubsong_1 Value

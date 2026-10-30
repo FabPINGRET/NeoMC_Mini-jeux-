@@ -1,0 +1,29 @@
+{
+  "attributes": {
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "minecraft:spore_blossom_air"
+        },
+        "probability": 0.001
+      }
+    ],
+    "minecraft:visual/sky_color": "#58C5EE",
+    "minecraft:visual/fog_color": "#B0EAFF",
+    "minecraft:visual/water_fog_color": "#3F76E4"
+    },
+  "temperature": 0.5,
+  "downfall": 0.4,
+  "precipitation": "none",
+  "has_precipitation": true,
+  "temperature_modifier": "none",
+  "effects": {
+    "water_color": "#3F76E4",
+    "grass_color": "#59C93C",
+    "foliage_color": "#30BB0B"
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": [],
+  "features": []
+}

@@ -1,0 +1,39 @@
+{
+    "display": {
+        "title": {
+            "text": "Back-Alley Surgery",
+            "color": "light_purple"
+        },
+        "description": {
+            "text": "Have Darknyss Pierre upgrade your step height"
+        },
+        "icon": {
+            "id": "minecraft:player_head",
+            "components": {
+                "minecraft:profile": {
+                    "properties": [
+                        {
+                            "name": "textures",
+                            "value": "ewogICJ0aW1lc3RhbXAiIDogMTc2ODA3NzE1MjI4OSwKICAicHJvZmlsZUlkIiA6ICJhODgyMzAzMDVkOWY0ODRiYjNjNjc2OTg1OTYxYjc2YSIsCiAgInByb2ZpbGVOYW1lIiA6ICJMb3JkRHJld3BpY3VzIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2IxMGRjOWJmNGI2MjEwZWU5OWY2NzhkYzIyZjYwMGJlZDZlZTQwOTliNWI4YWZiYmM4ODkyNTk0N2MwZjQ3OTkiCiAgICB9CiAgfQp9"
+                        }
+                    ]
+                }
+            }
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:npc_scrimp"
+}

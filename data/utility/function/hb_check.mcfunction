@@ -1,0 +1,17 @@
+execute if block ^ ^ ^ honey_block if block ~ ~1 ~ #minecraft:hb_passthrough run tp @s ~ ~1 ~
+execute if block ^ ^ ^ honey_block if block ~ ~1 ~ #minecraft:hb_passthrough run playsound minecraft:item.bottle.fill_dragonbreath player @a[tag=mg.flw] ~ ~ ~ 1 1
+execute if block ^ ^ ^ honey_block if block ~ ~1 ~ #minecraft:hb_passthrough run playsound minecraft:block.honey_block.break player @a[tag=mg.flw] ~ ~ ~ 1 0.1
+execute if block ^ ^ ^ honey_block if block ~ ~1 ~ #minecraft:hb_passthrough positioned ~ ~-0.1 ~ run function utility:hb_trail
+execute if score FreeMagic bool matches 0 if block ^ ^ ^ honey_block if block ~ ~1 ~ #minecraft:hb_passthrough positioned ~ ~-0.1 ~ as @a[scores={CarrotStick=1..},tag=mg.flw] if items entity @s weapon.mainhand minecraft:carrot_on_a_stick[minecraft:custom_model_data={strings:['8']}] run effect give @s minecraft:hunger 3 5 true
+execute if score FreeMagic bool matches 0 if score Ambidextrous bool matches 1 if block ^ ^ ^ honey_block if block ~ ~1 ~ #minecraft:hb_passthrough positioned ~ ~-0.1 ~ as @a[scores={CarrotStick=1..},tag=mg.flw] if items entity @s weapon.offhand minecraft:carrot_on_a_stick[minecraft:custom_model_data={strings:['8']}] run effect give @s minecraft:hunger 3 5 true
+
+execute if block ^ ^ ^ honey_block unless block ~ ~1 ~ #minecraft:hb_passthrough run tellraw @s {"text":"There is no air above this honey...","color":"gray","italic":true}
+execute if block ^ ^ ^ honey_block unless block ~ ~1 ~ #minecraft:hb_passthrough at @s run playsound minecraft:block.note_block.cow_bell master @s ~ ~ ~ 0.5 0.1
+
+execute unless block ^ ^ ^ honey_block unless block ^ ^ ^ #minecraft:hb_passthrough run tellraw @s {"text":"There is no honey above you to boost through...","color":"gray","italic":true}
+execute unless block ^ ^ ^ honey_block unless block ^ ^ ^ #minecraft:hb_passthrough at @s run playsound minecraft:block.note_block.cow_bell master @s ~ ~ ~ 0.5 0.1
+
+execute as @p[scores={CarrotStick=1..},tag=mg.flw] if items entity @s weapon.mainhand minecraft:carrot_on_a_stick[minecraft:custom_model_data={strings:['8']}] if entity @s[distance=200..] run return 0
+execute if score Ambidextrous bool matches 1 as @p[scores={CarrotStick=1..},tag=mg.flw] if items entity @s weapon.offhand minecraft:carrot_on_a_stick[minecraft:custom_model_data={strings:['8']}] if entity @s[distance=200..] run return 0
+
+execute if block ^ ^ ^ #minecraft:hb_passthrough positioned ~ ~1 ~ run function utility:hb_check

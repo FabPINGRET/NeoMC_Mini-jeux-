@@ -1,0 +1,9 @@
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.panda.cant_breed neutral @a[tag=mg.flw] ~ ~ ~ 1 0.8
+execute if block 93 76 222 air if block 93 76 217 air at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Menevain","color":"gold"},{"text":"> This is the","color":"white"},{"text":" Floating Forge","color":"red"},{"text":"! I can only let you operate it by an order from the","color":"white"},{"text":" Viceroy","color":"gold"},{"text":", sorry. Just a workplace safety guideline sort of thing. You should go talk to him if you haven't!","color":"white"}]
+
+execute if block 93 76 222 air unless block 93 76 217 air at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Menevain","color":"gold"},{"text":"> This is the","color":"white"},{"text":" Floating Forge","color":"red"},{"text":"! Use the buttons to operate the hammers ","color":"white"},{"text":"just as the molten iron passes right beneath them","color":"gold"},{"text":"! It takes a bit to get the hang of it, but you'll eventually get a ","color":"white"},{"text":"rhythm","color":"red"},{"text":" down. Keep smashing the iron until it becomes something awesome! Take as many tries as you need.","color":"white"}]
+
+execute unless block 93 76 222 air at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Menevain","color":"gold"},{"text":"> You did it! Unlike with normal iron, that blade will never rust. It's made from metal as old as the stars themselves. Which is pretty old, like 50 at least!","color":"white"}]
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

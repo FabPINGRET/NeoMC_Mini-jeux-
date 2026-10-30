@@ -1,0 +1,16 @@
+execute if entity @s[tag=0] run function boss:7/body_frame/0
+execute if entity @s[tag=1] run function boss:7/body_frame/1
+execute if entity @s[tag=2] run function boss:7/body_frame/2
+execute if entity @s[tag=3] run function boss:7/body_frame/3
+execute if entity @s[tag=4] run function boss:7/body_frame/4
+execute if entity @s[tag=5] run function boss:7/body_frame/5
+execute if entity @s[tag=6] run function boss:7/body_frame/6
+execute if entity @s[tag=7] run function boss:7/body_frame/7
+execute if entity @s[tag=8] run function boss:7/body_frame/8
+execute if entity @s[tag=9] run function boss:7/body_frame/9
+execute if entity @s[tag=10] run function boss:7/body_frame/10
+execute if entity @s[tag=11] run function boss:7/body_frame/11
+execute if entity @s[tag=12] run function boss:7/body_frame/12
+execute if entity @s[tag=13] run function boss:7/body_frame/13
+execute if entity @s[tag=14] run function boss:7/body_frame/14
+execute if entity @s[tag=15] run function boss:7/body_frame/15

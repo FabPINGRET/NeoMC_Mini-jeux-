@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Minibosses",
+            "color": "light_purple"
+        },
+        "description": {
+            "text": "Defeat optional minibosses for interesting rewards..."
+        },
+        "icon": {
+            "id": "minecraft:book"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:encounters"
+}

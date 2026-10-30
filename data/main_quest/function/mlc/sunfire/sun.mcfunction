@@ -1,0 +1,10 @@
+fill -431 54 89 -455 84 65 minecraft:polished_blackstone_brick_wall replace minecraft:prismarine_wall
+fill -431 54 89 -455 84 65 minecraft:nether_brick_fence replace minecraft:pale_oak_fence
+fill -431 54 89 -455 84 65 minecraft:nether_brick_stairs[facing=east,half=bottom] replace minecraft:prismarine_brick_stairs[facing=east,half=bottom]
+fill -431 54 89 -455 84 65 minecraft:nether_brick_stairs[facing=west,half=bottom] replace minecraft:prismarine_brick_stairs[facing=west,half=bottom]
+fill -431 54 89 -455 84 65 minecraft:nether_brick_stairs[facing=north,half=bottom] replace minecraft:prismarine_brick_stairs[facing=north,half=bottom]
+fill -431 54 89 -455 84 65 minecraft:nether_brick_stairs[facing=south,half=bottom] replace minecraft:prismarine_brick_stairs[facing=south,half=bottom]
+fill -431 54 89 -455 84 65 nether_bricks replace minecraft:prismarine_bricks
+fill -431 54 89 -455 84 65 chiseled_nether_bricks replace minecraft:diamond_block
+fill -431 54 89 -455 84 65 chiseled_polished_blackstone replace minecraft:light_blue_glazed_terracotta
+fill -431 54 89 -455 84 65 polished_blackstone_bricks replace minecraft:calcite
