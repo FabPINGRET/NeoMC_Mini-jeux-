@@ -45,7 +45,7 @@ import ol_doors as DR  # noqa: E402
 import ol_boss as BO  # noqa: E402
 import ol_cine  # noqa: E402,F401
 
-PX, PZ = 3, -52                     # portail du lobby (avenue nord, côté ouest, au nord de Terra Nova (-9, -19) ; ouverture z -30..-28, plan x -9)
+PX, PZ = 6, -58                     # portail du lobby (avenue nord, côté ouest, au nord de Terra Nova (-9, -19) ; ouverture z -30..-28, plan x -9)
 OLD_P = (40, -9)                     # ancien portail (avenue est, côté nord) : nettoyé par portal_build, décor du spawn restitué
 SPAWN = (0.5, 65, 9.5)
 

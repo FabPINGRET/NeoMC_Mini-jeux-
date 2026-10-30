@@ -1,11 +1,12 @@
 """Hub des portails (spawn nord, à la place de l'ancien portail des plots) : python tools/lobby/gen_hub.py .
 
-Huit petits portails, chacun dans un plan x = X (ouverture de deux blocs en z), sur deux rangées :
-- rangée nord (z -52) : Neo GTA (-9), Terra Nova (-3), Ombrelune (3), arène PvP (9) ;
-- rangée sud (z -45) : Survie (-9), Filon (-3), Scourge of the Floaty Isles (3, verrouillé), terrain de foot (9).
+Huit petits portails disposés en U, chacun dans un plan x = X (un bloc d'épaisseur, ouverture de deux blocs en z, trois de haut) :
+- branche ouest (x -9) : Neo GTA (z -54), Filon (z -49), Survie (z -44) ;
+- base du U (z -58) : Terra Nova (x -6), Ombrelune (x 6) ;
+- branche est (x 9) : arène PvP (z -54), Scourge of the Floaty Isles (z -49, verrouillé), terrain de foot (z -44).
 Neo GTA, Terra Nova et Ombrelune gardent leur logique d'entrée (lobby_tick de leur générateur, qui lit PX / PZ) :
 leur portail_build n'est plus qu'un appel à mg:hub/build. Les cinq autres entrent par mg:hub/tick.
-Le passage nord-sud reste ouvert en z -49 (entre les deux rangées) et au centre (x -2..2).
+Le centre (x -2..2) reste libre, de l'avenue jusqu'au fond du U.
 
 Ordre : après gen_lobby.py, gen_pvpcave.py, gen_ombrelune.py, gen_foot.py, gen_gta.py et gen_terranova.py.
 Le hub reprend les anciens emplacements (GTA, Terra Nova, Ombrelune) une seule fois (mg:hub oldclean).
@@ -27,22 +28,22 @@ _fn = mcfn.Fn(F)
 w, patch = _fn.write, _fn.patch
 
 TR = 'transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[%sf,%sf,%sf],scale:[%sf,%sf,%sf]}'
-BOX = (-10, 63, -56, 10, 82, -42)                 # zone du hub (x1 y1 z1 x2 y2 z2)
-WITNESS = (0, 63, -49)                            # bloc témoin du hub (au centre du passage nord-sud)
+BOX = (-10, 63, -61, 10, 82, -42)                 # zone du hub (x1 y1 z1 x2 y2 z2)
+WITNESS = (0, 63, -51)                            # bloc témoin du hub (au centre du passage nord-sud)
 WITNESS_BLOCK = 'minecraft:mossy_stone_bricks'
 OLD_SITES = [(5, 13, -23, -15), (-16, -5, -23, -15), (-18, -5, -33, -25)]   # anciens portails GTA, Terra Nova, Ombrelune (x1 x2 z1 z2)
 CLEAN_FLAG = 'mg:hub oldclean'
 
 # id, texte, couleur, garniture, bloc du sol, x, z, witness (portails gérés par leur générateur) ; entry = None (géré par son générateur) ou nom de l'entrée
 SLOTS = [
-    dict(id='gta', title='🚓 NEO GTA', sub='Monde GTA libre : armes, voitures, hélicos, police', col='gold', trim='gold_block', pad='yellow_concrete', x=-9, z=-52, witness='minecraft:chiseled_polished_blackstone', entry=None),
-    dict(id='terra', title='🦖 TERRA NOVA', sub='Colonie préhistorique : missions, jungle, dinosaures', col='green', trim='moss_block', pad='mossy_stone_bricks', x=-3, z=-52, witness='minecraft:chiseled_tuff_bricks', entry=None),
-    dict(id='ombre', title='🌙 OMBRELUNE', sub='RPG médiéval-fantastique : 8 régions, dragons, donjons', col='light_purple', trim='amethyst_block', pad='deepslate_tiles', x=3, z=-52, witness='minecraft:chiseled_polished_blackstone', entry=None),
-    dict(id='pvp', title='⚔ ARÈNE PVP', sub='Trou souterrain : classes, points, mini-lobby', col='red', trim='red_nether_bricks', pad='blackstone', x=9, z=-52, witness=None, entry='pvp'),
-    dict(id='survie', title='🌲 SURVIE', sub='Monde libre : inventaire gardé, structures', col='dark_green', trim='oak_log', pad='grass_block', x=-9, z=-45, witness=None, entry='survie'),
-    dict(id='filon', title='⛏ FILON', sub='Mode long par saisons : mine, comptoir, classement', col='yellow', trim='iron_block', pad='sandstone', x=-3, z=-45, witness=None, entry='filon'),
-    dict(id='floaty', title='🏝 SCOURGE OF THE FLOATY ISLES', sub='Carte d aventure partagée', col='aqua', trim='prismarine_bricks', pad='prismarine', x=3, z=-45, witness=None, entry='floaty'),
-    dict(id='foot', title='⚽ TERRAIN DE FOOT', sub='Vestiaire souterrain, équipes, buts', col='dark_green', trim='green_terracotta', pad='green_terracotta', x=9, z=-45, witness=None, entry='foot'),
+    dict(id='gta', title='🚓 NEO GTA', sub='Monde GTA libre : armes, voitures, hélicos, police', col='gold', trim='gold_block', pad='yellow_concrete', x=-9, z=-54, witness='minecraft:chiseled_polished_blackstone', entry=None),
+    dict(id='terra', title='🦖 TERRA NOVA', sub='Colonie préhistorique : missions, jungle, dinosaures', col='green', trim='moss_block', pad='mossy_stone_bricks', x=-6, z=-58, witness='minecraft:chiseled_tuff_bricks', entry=None),
+    dict(id='ombre', title='🌙 OMBRELUNE', sub='RPG médiéval-fantastique : 8 régions, dragons, donjons', col='light_purple', trim='amethyst_block', pad='deepslate_tiles', x=6, z=-58, witness='minecraft:chiseled_polished_blackstone', entry=None),
+    dict(id='pvp', title='⚔ ARÈNE PVP', sub='Trou souterrain : classes, points, mini-lobby', col='red', trim='red_nether_bricks', pad='blackstone', x=9, z=-54, witness=None, entry='pvp'),
+    dict(id='survie', title='🌲 SURVIE', sub='Monde libre : inventaire gardé, structures', col='dark_green', trim='oak_log', pad='grass_block', x=-9, z=-44, witness=None, entry='survie'),
+    dict(id='filon', title='⛏ FILON', sub='Mode long par saisons : mine, comptoir, classement', col='yellow', trim='iron_block', pad='sandstone', x=-9, z=-49, witness=None, entry='filon'),
+    dict(id='floaty', title='🏝 SCOURGE OF THE FLOATY ISLES', sub='Carte d aventure partagée', col='aqua', trim='prismarine_bricks', pad='prismarine', x=9, z=-49, witness=None, entry='floaty'),
+    dict(id='foot', title='⚽ TERRAIN DE FOOT', sub='Vestiaire souterrain, équipes, buts', col='dark_green', trim='green_terracotta', pad='green_terracotta', x=9, z=-44, witness=None, entry='foot'),
 ]
 ENTER_TAGS = 'tag=!mg.play,tag=!mg.out,tag=!mg.surv,tag=!mg.inplot,tag=!mg.visit,tag=!mg.lk,tag=!mg.pkr,tag=!mg.ely,tag=!mg.elyf,gamemode=adventure'
 
@@ -58,19 +59,19 @@ def box_at(s):
 
 def portal_lines(s):
     x, z, trim = s['x'], s['z'], s['trim']
-    L = [f'# portail {s["id"]} : plan x={x}, ouverture z {z - 1}..{z}',
-         f'fill {x} 64 {z - 3} {x} 70 {z + 2} minecraft:polished_deepslate',           # cadre
-         f'fill {x} 64 {z - 1} {x} 67 {z} minecraft:air',                              # ouverture
-         f'fill {x} 64 {z - 3} {x} 70 {z - 3} minecraft:{trim}',                       # montants
-         f'fill {x} 64 {z + 2} {x} 70 {z + 2} minecraft:{trim}',
-         f'fill {x} 71 {z - 3} {x} 71 {z + 2} minecraft:{trim}',                       # linteau
-         f'fill {x - 1} 63 {z - 2} {x + 1} 63 {z + 1} minecraft:{s["pad"]}',           # sol devant le portail
-         f'summon minecraft:text_display {x + 0.5} 73.2 {z - 0.5} {{Tags:["mg.hubp"],billboard:"center",background:-1442840576,'
+    L = [f'# portail {s["id"]} : plan x={x}, ouverture z {z - 1}..{z}, trois blocs de haut',
+         f'fill {x} 64 {z - 2} {x} 65 {z + 1} minecraft:polished_deepslate',           # corps
+         f'fill {x} 64 {z - 1} {x} 65 {z} minecraft:air',                              # passage (deux blocs)
+         f'fill {x} 64 {z - 2} {x} 65 {z - 2} minecraft:{trim}',                       # montants
+         f'fill {x} 64 {z + 1} {x} 65 {z + 1} minecraft:{trim}',
+         f'fill {x} 66 {z - 2} {x} 66 {z + 1} minecraft:{trim}',                       # linteau
+         f'fill {x} 63 {z - 2} {x} 63 {z + 1} minecraft:{s["pad"]}',                   # sol devant le portail
+         f'summon minecraft:text_display {x + 0.5} 68.4 {z - 0.5} {{Tags:["mg.hubp"],billboard:"center",background:-1442840576,'
          f'text:{snbt_text({"text": s["title"], "color": s["col"], "bold": True})},{TR % (0, 0, 0, 2.2, 2.2, 2.2)}}}',
-         f'summon minecraft:text_display {x + 0.5} 72.5 {z - 0.5} {{Tags:["mg.hubp"],billboard:"center",background:0,'
-         f'text:{snbt_text({"text": s["sub"], "color": "gray"})},{TR % (0, 0, 0, 0.8, 0.8, 0.8)}}}']
-    L.append(f'summon minecraft:text_display {x + 0.5} 66.2 {z - 0.5} {{Tags:["mg.hubp"],billboard:"center",background:0,'
-             f'text:{snbt_text({"text": "▶ entre dans le portail", "color": "yellow"})},{TR % (0, 0, 0, 0.7, 0.7, 0.7)}}}')
+         f'summon minecraft:text_display {x + 0.5} 67.8 {z - 0.5} {{Tags:["mg.hubp"],billboard:"center",background:0,'
+         f'text:{snbt_text({"text": s["sub"], "color": "gray"})},{TR % (0, 0, 0, 0.8, 0.8, 0.8)}}}',
+         f'summon minecraft:text_display {x + 0.5} 67.2 {z - 0.5} {{Tags:["mg.hubp"],billboard:"center",background:0,'
+         f'text:{snbt_text({"text": "▶ entre dans le portail", "color": "yellow"})},{TR % (0, 0, 0, 0.7, 0.7, 0.7)}}}']
     if s['witness']:
         L.append(f'setblock {x} 63 {z} {s["witness"]}')
     return L
@@ -122,7 +123,7 @@ for s in SLOTS:
         TICK.append(f'execute if score $setup mg.st matches 1 in minecraft:overworld as @a[{ENTER_TAGS},{box_at(s)}] run function mg:hub/enter_{s["entry"]}')
 for s in SLOTS:
     x, z = s['x'], s['z']
-    TICK.append(f'particle minecraft:reverse_portal {x + 0.5} 66 {z - 0.5} 0.05 1.1 0.9 0 1')
+    TICK.append(f'particle minecraft:reverse_portal {x + 0.5} 65 {z - 0.5} 0.05 1.1 0.9 0 1')
 w('hub/tick', TICK)
 
 patch('core/tick', 'function mg:floaty/lobby_tick', ['function mg:hub/tick'])
