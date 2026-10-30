@@ -1,14 +1,14 @@
 # Parcours d'élytra et élytres libres : construction (généré par tools/elytra/gen_elytra.py)
 kill @e[tag=mg.elyd]
-data modify storage mg:lobby ely1 set value 1b
+data modify storage mg:lobby ely2 set value 1b
 
 # ===== Petit parcours d'élytra (8 anneaux)
-fill 14 63 -11 18 63 -7 minecraft:smooth_quartz
-fill 15 63 -10 17 63 -8 minecraft:light_blue_concrete
-setblock 16 63 -9 minecraft:sea_lantern
-summon minecraft:item_display 16.5 66 -8.5 {Tags:["mg.elyd","mg.lspin","mg.lbob"],billboard:"fixed",item:{id:"minecraft:elytra"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.4f,1.4f,1.4f]}}
-summon minecraft:text_display 16.5 67.8 -8.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"🪽 Petit parcours d'élytra","color":"aqua","bold":true}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.2f,1.2f,1.2f]}}
-summon minecraft:text_display 16.5 67.3 -8.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"8 anneaux chronométrés — monte au centre du socle","color":"gray"}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.7f,0.7f,0.7f]}}
+fill 14 63 7 18 63 11 minecraft:smooth_quartz
+fill 15 63 8 17 63 10 minecraft:light_blue_concrete
+setblock 16 63 9 minecraft:sea_lantern
+summon minecraft:item_display 16.5 66 9.5 {Tags:["mg.elyd","mg.lspin","mg.lbob"],billboard:"fixed",item:{id:"minecraft:elytra"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.4f,1.4f,1.4f]}}
+summon minecraft:text_display 16.5 67.8 9.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"🪽 Petit parcours d'élytra","color":"aqua","bold":true}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.2f,1.2f,1.2f]}}
+summon minecraft:text_display 16.5 67.3 9.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"8 anneaux chronométrés — monte au centre du socle","color":"gray"}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.7f,0.7f,0.7f]}}
 fill -51 174 -47 -47 174 -43 minecraft:smooth_quartz
 fill -51 174 -47 -51 175 -43 minecraft:light_blue_stained_glass
 setblock -51 176 -45 minecraft:sea_lantern
@@ -71,12 +71,12 @@ setblock -42 138 -15 minecraft:sea_lantern
 summon minecraft:text_display -44.5 139.2 -14.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"🏁","color":"white","bold":true}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2f,2f,2f]}}
 
 # ===== Grand parcours d'élytra (15 anneaux)
-fill 30 63 -17 34 63 -13 minecraft:smooth_quartz
-fill 31 63 -16 33 63 -14 minecraft:purple_concrete
-setblock 32 63 -15 minecraft:sea_lantern
-summon minecraft:item_display 32.5 66 -14.5 {Tags:["mg.elyd","mg.lspin","mg.lbob"],billboard:"fixed",item:{id:"minecraft:elytra"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.4f,1.4f,1.4f]}}
-summon minecraft:text_display 32.5 67.8 -14.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"🪽 Grand parcours d'élytra","color":"light_purple","bold":true}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.2f,1.2f,1.2f]}}
-summon minecraft:text_display 32.5 67.3 -14.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"15 anneaux chronométrés — monte au centre du socle","color":"gray"}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.7f,0.7f,0.7f]}}
+fill 30 63 13 34 63 17 minecraft:smooth_quartz
+fill 31 63 14 33 63 16 minecraft:purple_concrete
+setblock 32 63 15 minecraft:sea_lantern
+summon minecraft:item_display 32.5 66 15.5 {Tags:["mg.elyd","mg.lspin","mg.lbob"],billboard:"fixed",item:{id:"minecraft:elytra"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.4f,1.4f,1.4f]}}
+summon minecraft:text_display 32.5 67.8 15.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"🪽 Grand parcours d'élytra","color":"light_purple","bold":true}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.2f,1.2f,1.2f]}}
+summon minecraft:text_display 32.5 67.3 15.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"15 anneaux chronométrés — monte au centre du socle","color":"gray"}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.7f,0.7f,0.7f]}}
 fill -55 299 -50 -51 299 -46 minecraft:smooth_quartz
 fill -55 299 -50 -55 300 -46 minecraft:light_blue_stained_glass
 setblock -55 301 -48 minecraft:sea_lantern
@@ -188,10 +188,10 @@ setblock 30 204 51 minecraft:sea_lantern
 summon minecraft:text_display 30.5 205.2 48.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"🏁","color":"white","bold":true}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2f,2f,2f]}}
 
 # ===== Élytres libres
-fill 14 63 -23 18 63 -19 minecraft:smooth_quartz
-fill 15 63 -22 17 63 -20 minecraft:white_concrete
-setblock 16 63 -21 minecraft:sea_lantern
-summon minecraft:item_display 16.5 66 -20.5 {Tags:["mg.elyd","mg.lspin","mg.lbob"],billboard:"fixed",item:{id:"minecraft:elytra"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.4f,1.4f,1.4f]}}
-summon minecraft:text_display 16.5 67.8 -20.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"🪽 Élytres libres","color":"white","bold":true}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.2f,1.2f,1.2f]}}
-summon minecraft:text_display 16.5 67.3 -20.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"Vol autour du spawn, fusées illimitées — remonte dessus pour les rendre","color":"gray"}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.7f,0.7f,0.7f]}}
+fill 14 63 -12 18 63 -8 minecraft:smooth_quartz
+fill 15 63 -11 17 63 -9 minecraft:white_concrete
+setblock 16 63 -10 minecraft:sea_lantern
+summon minecraft:item_display 16.5 66 -9.5 {Tags:["mg.elyd","mg.lspin","mg.lbob"],billboard:"fixed",item:{id:"minecraft:elytra"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.4f,1.4f,1.4f]}}
+summon minecraft:text_display 16.5 67.8 -9.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"🪽 Élytres libres","color":"white","bold":true}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.2f,1.2f,1.2f]}}
+summon minecraft:text_display 16.5 67.3 -9.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"Vol autour du spawn, fusées illimitées — remonte dessus pour les rendre","color":"gray"}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.7f,0.7f,0.7f]}}
 function mg:elytra/spawn_clean

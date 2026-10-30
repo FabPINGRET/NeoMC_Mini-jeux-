@@ -11,7 +11,7 @@ Lancer depuis la racine du dépôt : python3 tools/elytra/gen_elytra.py
 import os
 
 OUT = os.path.join('data', 'mg', 'function', 'elytra')
-FREE = (16, 63, -21)                  # socle « élytres libres »
+FREE = (16, 63, -10)                  # socle « élytres libres » (côté gauche de l'avenue, en allant vers l'est)
 DISP = 'transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[%sf,%sf,%sf]}'
 COL = ['light_blue', 'magenta', 'lime', 'orange']
 
@@ -42,10 +42,10 @@ def course2():
     return path
 
 C = {
-    1: dict(name='Petit parcours d\'élytra', short='petit', path=course1(), pad=(16, 63, -9), back=(16.5, 64, -10.5),
+    1: dict(name='Petit parcours d\'élytra', short='petit', path=course1(), pad=(16, 63, 9), back=(16.5, 64, 10.5),
             plat=(-48.5, 175, -44.5), floor=118, rockets=4, pb='mg.erb', rec='$erec', hall='ely',
             lbl='🪽 Record petit parcours d\'élytra', padcol='light_blue_concrete'),
-    2: dict(name='Grand parcours d\'élytra', short='grand', path=course2(), pad=(32, 63, -15), back=(32.5, 64, -16.5),
+    2: dict(name='Grand parcours d\'élytra', short='grand', path=course2(), pad=(32, 63, 15), back=(32.5, 64, 16.5),
             plat=(-52.5, 300, -47.5), floor=185, rockets=6, pb='mg.erb2', rec='$erec2', hall='ely2',
             lbl='🪽 Record grand parcours d\'élytra', padcol='purple_concrete'),
 }
@@ -53,7 +53,7 @@ os.makedirs(OUT, exist_ok=True)
 
 # ---------------------------------------------------------------- construction
 b = ['# Parcours d\'élytra et élytres libres : construction (généré par tools/elytra/gen_elytra.py)',
-     'kill @e[tag=mg.elyd]', 'data modify storage mg:lobby ely1 set value 1b']
+     'kill @e[tag=mg.elyd]', 'data modify storage mg:lobby ely2 set value 1b']
 def pad(p, col, title, sub, tcol):
     px, py, pz = p
     return [f'fill {px-2} {py} {pz-2} {px+2} {py} {pz+2} minecraft:smooth_quartz',
@@ -87,23 +87,34 @@ b += ['function mg:elytra/spawn_clean']
 W('build', b)
 # Abords des socles au spawn (avenue du parkour) : haie/banc/lampadaire de la bordure retirés, arbres qui masquaient les socles
 # enlevés, allées pavées avenue → petit parcours → élytres libres, et avenue → grand parcours (une fois : témoin mg:lobby elyclean)
-SC = ['# Accès dégagés aux socles d\'élytra depuis l\'avenue du parkour (généré par tools/elytra/gen_elytra.py)']
-for (x1, z1, x2, z2) in ((12, -19, 22, -11), (28, -13, 37, -5)):        # arbres entre l'avenue et les socles
+SC = ['# Accès aux socles d\'élytra depuis l\'avenue du parkour (généré par tools/elytra/gen_elytra.py)']
+# anciens socles (nord) rendus à l'herbe : petit, grand, élytres libres d'avant ; anciennes allées et haie percée côté nord
+for (x1, z1, x2, z2) in ((14, -11, 18, -7), (30, -17, 34, -13), (14, -23, 18, -19), (30, -12, 34, -4), (15, -18, 17, -12)):
+    SC.append(f'fill {x1} 63 {z1} {x2} 63 {z2} minecraft:grass_block')
+SC.append('fill 29 64 -4 35 64 -4 minecraft:azalea_leaves[persistent=true]')          # haie du nord rétablie
+# nord : socle des élytres libres, à gauche de l'avenue (haie percée en x 13..19, allée pavée)
+for (x1, z1, x2, z2) in ((12, -19, 22, -7),):                                       # arbres entre l'avenue et le socle
     SC += [f'fill {x1} 64 {z1} {x2} 78 {z2} minecraft:air replace #minecraft:leaves', f'fill {x1} 64 {z1} {x2} 78 {z2} minecraft:air replace #minecraft:logs']
-for (x1, z1, x2, z2) in ((13, -4, 19, -4), (29, -4, 35, -4)):          # bordure de l'avenue face aux socles
+SC += ['fill 13 64 -4 19 72 -4 minecraft:air', 'fill 14 64 -7 18 70 -5 minecraft:air', 'fill 14 63 -7 18 63 -5 minecraft:stone_bricks']
+# sud (à droite de l'avenue) : petit parcours en (16, 9), grand parcours en (32, 15) ; haie percée en z 4
+for (x1, z1, x2, z2) in ((12, 5, 22, 13), (28, 11, 37, 19)):                        # arbres entre l'avenue et les socles
+    SC += [f'fill {x1} 64 {z1} {x2} 78 {z2} minecraft:air replace #minecraft:leaves', f'fill {x1} 64 {z1} {x2} 78 {z2} minecraft:air replace #minecraft:logs']
+for (x1, z1, x2, z2) in ((13, 4, 16, 4), (18, 4, 19, 4), (29, 4, 35, 4)):          # bordure de l'avenue face aux socles (lampadaire en x17 gardé)
     SC.append(f'fill {x1} 64 {z1} {x2} 72 {z2} minecraft:air')
-for (x1, z1, x2, z2) in ((14, -6, 18, -4), (15, -18, 17, -12), (30, -12, 34, -4)):   # allées
+for (x1, z1, x2, z2) in ((14, 5, 18, 6), (30, 5, 34, 12)):                         # allées pavées avenue → socles
     SC += [f'fill {x1} 64 {z1} {x2} 70 {z2} minecraft:air', f'fill {x1} 63 {z1} {x2} 63 {z2} minecraft:stone_bricks']
-SC.append('data modify storage mg:lobby elyclean set value 1b')
+# ancienne balise blanche des élytres (21, 63, -15) : supprimée
+SC += ['setblock 21 63 -15 minecraft:air', 'setblock 21 64 -15 minecraft:air']
+SC.append('data modify storage mg:lobby elyclean2 set value 1b')
 W('spawn_clean', SC)
 def _patch(rel, anchor, line):
     pth = os.path.join('data', 'mg', 'function', rel + '.mcfunction'); t = open(pth, encoding='utf-8').read()
     if line in t: return
     assert anchor in t, (rel, anchor)
     open(pth, 'w', encoding='utf-8', newline='\n').write(t.replace(anchor, anchor + '\n' + line, 1))
-_patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby ely1 run schedule function mg:elytra/build 14s',
-       'execute if score $setup mg.st matches 1 unless data storage mg:lobby elyclean run schedule function mg:elytra/spawn_clean 9s')
-_patch('desinstaller', 'data remove storage mg:lobby ely1', 'data remove storage mg:lobby elyclean\nschedule clear mg:elytra/spawn_clean')
+_patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby ely2 run schedule function mg:elytra/build 14s',
+       'execute if score $setup mg.st matches 1 unless data storage mg:lobby elyclean2 run schedule function mg:elytra/spawn_clean 9s')
+_patch('desinstaller', 'data remove storage mg:lobby ely1', 'data remove storage mg:lobby ely2\ndata remove storage mg:lobby elyclean2\nschedule clear mg:elytra/spawn_clean')
 
 # ---------------------------------------------------------------- départ (start = petit, start2 = grand)
 for c, d in C.items():
@@ -202,7 +213,7 @@ st = ['# Fin du parcours (@s) : retour à son socle, protégé à l\'atterrissag
       'function mg:elytra/stop_quiet']
 for c, d in C.items():
     bx, by, bz = d['back']
-    st.append(f'execute if score @s mg.ecr matches {c} run tp @s {bx} {by} {bz} facing {d["pad"][0]+.5} {by} {bz-6}')
+    st.append(f'execute if score @s mg.ecr matches {c} run tp @s {bx} {by} {bz} facing {d["pad"][0]+.5} {by} {bz+6 if bz > 0 else bz-6}')
 st += ['effect give @s minecraft:resistance 3 4 true', 'function mg:core/heal',
        'execute if score @s mg.ehw matches 1.. run function mg:lobby/give_wand',
        'scoreboard players set @s mg.ehw 0']

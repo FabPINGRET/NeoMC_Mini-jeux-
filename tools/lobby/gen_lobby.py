@@ -291,4 +291,4 @@ def _patch(rel, anchor, line):
     open(pth, 'w', encoding='utf-8', newline='\n').write(t.replace(anchor, anchor + '\n' + line, 1))
 _patch('core/load', 'execute unless score $rp mg.st matches 0.. run function mg:core/rp_default',
        'execute if score $setup mg.st matches 1 unless data storage mg:lobby deco3 run schedule function mg:lobby/deco 6s')
-_patch('desinstaller', 'data remove storage mg:lobby beacon1', 'data remove storage mg:lobby deco3\ndata remove storage mg:lobby deco2')
+_patch('desinstaller', 'schedule clear mg:lobby/food_build', 'data remove storage mg:lobby deco3\ndata remove storage mg:lobby deco2')
