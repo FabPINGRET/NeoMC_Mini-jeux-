@@ -1,4 +1,4 @@
-"""TNT Tag — 3 cartes à relief : python3 tools/tnttag/gen_maps.py (depuis la racine du dépôt)
+"""TNT Tag — 5 cartes à relief : python3 tools/tnttag/gen_maps.py (depuis la racine du dépôt)
 
 Carte 1 « Collines »       centre (0, 26500) : prairie vallonnée, rivière peu profonde, ponts, moulin, kiosque.
 Carte 2 « Canyon »         centre (0, 26800) : mesa en terracotta, plateaux, rampes, arche, tunnel, pont suspendu.
@@ -13,7 +13,7 @@ Vérification intégrée (le script échoue sinon) : simulation de marche (pas d
 hauteur libre 1,8, chutes) : toute position atteignable doit pouvoir revenir au point de départ,
 les points de départ doivent être au sol et atteignables ; sol entre y 80 et 96, eau d'un bloc au plus.
 
-Sorties : data/mg/function/tnttag/map/{build_k,setup_k,info_k}.mcfunction (k = 1..3), sp.mcfunction, fl.mcfunction
+Sorties : data/mg/function/tnttag/map/{build_k,setup_k,info_k}.mcfunction (k = 1..5 ; 4 Icebergs et 5 Patinoire : maps_glace.py), sp, fl
 """
 import math, os, random, sys
 from collections import deque
@@ -935,9 +935,9 @@ def write(name, lines):
 
 def main():
     os.makedirs(OUT, exist_ok=True)
-    cartes = [carte1(), carte2(), carte3()]
+    cartes = [carte1(), carte2(), carte3()] + __import__('maps_glace').cartes(globals())   # 4 et 5 : maps_glace.py
     ok = True
-    fl = ['# TNT Tag — chargement permanent des emprises des 3 cartes à relief (généré par tools/tnttag/gen_maps.py)']
+    fl = ['# TNT Tag — chargement permanent des emprises des 5 cartes à relief (généré par tools/tnttag/gen_maps.py)']
     for c in cartes:
         err, st, fwd = verifier(c)
         cmds, btop = c.commands()

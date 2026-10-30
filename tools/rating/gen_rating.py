@@ -222,6 +222,8 @@ B = ['# Début de partie : clé de la carte ($rgid → storage mg:rate key.m) et
      'execute if score $mp mg.st matches 1 unless score $game mg.st matches 59 run return 0',
      'tag @a remove mg.rate',
      'execute if score $rgid mg.st matches 27 run function mg:rate/fix {base:67,s:"$ttm"}',
+     '# TNT Tag, cartes 4 et 5 (ids 252, 253) : 67 + $ttm tomberait sur les cartes du Bedwars (71, 72)',
+     'execute if score $game mg.st matches 27 if score $rgid mg.st matches 71..72 run scoreboard players add $rgid mg.st 181',
      'execute if score $rgid mg.st matches 4 run function mg:rate/fix {base:71,s:"$bwm"}',
      'execute if score $rgid mg.st matches 78 run function mg:rate/fix {base:74,s:"$elm"}',
      'execute store result storage mg:rate key.m int 1 run scoreboard players get $rgid mg.st',

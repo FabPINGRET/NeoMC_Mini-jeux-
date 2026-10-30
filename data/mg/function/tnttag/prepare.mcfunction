@@ -1,10 +1,12 @@
-# TNT Tag — préparation : carte $ttm (0 classique centre 0 ~ 6100, 1 Collines, 2 Canyon, 3 Village perché)
+# TNT Tag — préparation : carte $ttm (0 classique centre 0 ~ 6100, 1 Collines, 2 Canyon, 3 Village perché, 4 Icebergs, 5 Patinoire)
 tag @a remove mg.bomb
 execute if score $ar mg.st matches 1.. run return run function mg:var/mode/tnttag_prepare
-execute unless score $ttm mg.st matches 0..3 run scoreboard players set $ttm mg.st 0
+execute unless score $ttm mg.st matches 0..5 run scoreboard players set $ttm mg.st 0
 execute if score $ttm mg.st matches 1 run return run function mg:tnttag/map/setup_1
 execute if score $ttm mg.st matches 2 run return run function mg:tnttag/map/setup_2
 execute if score $ttm mg.st matches 3 run return run function mg:tnttag/map/setup_3
+execute if score $ttm mg.st matches 4 run return run function mg:tnttag/map/setup_4
+execute if score $ttm mg.st matches 5 run return run function mg:tnttag/map/setup_5
 function mg:tnttag/build
 kill @e[type=minecraft:item,x=-25,y=70,z=6075,dx=50,dy=30,dz=50]
 scoreboard players set $px mg.st 0

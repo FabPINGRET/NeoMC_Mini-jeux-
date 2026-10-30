@@ -16,11 +16,14 @@ execute if score $game mg.st matches 63 run scoreboard players set $ktr mg.st 3
 execute if score $game mg.st matches 63 run scoreboard players set $game mg.st 61
 execute if score $game mg.st matches 62 run scoreboard players set $game mg.st 61
 
-# TNT Tag : 27 = carte au hasard, 67 = classique, 68 Collines, 69 Canyon, 70 Village perché → jeu 27 + carte $ttm (0..3)
-execute if score $game mg.st matches 27 store result score $ttm mg.st run random value 0..3
+# TNT Tag : 27 = carte au hasard, 67 = classique, 68 Collines, 69 Canyon, 70 Village perché, 252 Icebergs, 253 Patinoire → jeu 27 + carte $ttm (0..5)
+execute if score $game mg.st matches 27 store result score $ttm mg.st run random value 0..5
 execute if score $game mg.st matches 67..70 run scoreboard players operation $ttm mg.st = $game mg.st
 execute if score $game mg.st matches 67..70 run scoreboard players remove $ttm mg.st 67
 execute if score $game mg.st matches 67..70 run scoreboard players set $game mg.st 27
+execute if score $game mg.st matches 252..253 run scoreboard players operation $ttm mg.st = $game mg.st
+execute if score $game mg.st matches 252..253 run scoreboard players remove $ttm mg.st 248
+execute if score $game mg.st matches 252..253 run scoreboard players set $game mg.st 27
 # Bedwars : 4 = carte au hasard, 71 = classique, 72 Caldeira, 73 Hanami, 74 Banquise → jeu 4 + carte $bwm (0..3)
 execute if score $game mg.st matches 4 store result score $bwm mg.st run random value 0..3
 execute if score $game mg.st matches 71..74 run scoreboard players operation $bwm mg.st = $game mg.st
@@ -216,6 +219,8 @@ execute if score $game mg.st matches 27 run tellraw @a [{"selector":"@s","color"
 execute if score $game mg.st matches 27 if score $ttm mg.st matches 1 run function mg:tnttag/map/info_1
 execute if score $game mg.st matches 27 if score $ttm mg.st matches 2 run function mg:tnttag/map/info_2
 execute if score $game mg.st matches 27 if score $ttm mg.st matches 3 run function mg:tnttag/map/info_3
+execute if score $game mg.st matches 27 if score $ttm mg.st matches 4 run function mg:tnttag/map/info_4
+execute if score $game mg.st matches 27 if score $ttm mg.st matches 5 run function mg:tnttag/map/info_5
 execute if score $game mg.st matches 27 if score $ttm mg.st matches 0 run tellraw @a [{"text":"Carte : ","color":"gray"},{"text":"CLASSIQUE","color":"red","bold":true},{"text":" (arène plate 31×31, piliers et murets)","color":"gray"}]
 execute if score $game mg.st matches 28 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"BLOCK PARTY","color":"light_purple","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 29 if score $sg mg.st matches 2 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"PLUIE D'ENCLUMES — SOL TROUÉ","color":"red","bold":true},{"text":" !","color":"gray"}]

@@ -173,6 +173,58 @@
     {
       "label": [
         {
+          "text": "Icebergs ",
+          "color": "aqua"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 252"
+      },
+      "tooltip": [
+        {
+          "text": "Mer gelée glissante, icebergs enneigés, igloo et pics de glace",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
+          "text": "Patinoire ",
+          "color": "light_purple"
+        },
+        {
+          "text": "★★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆",
+          "color": "dark_gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 253"
+      },
+      "tooltip": [
+        {
+          "text": "Grande patinoire glissante, gradins de neige, buts et sculptures de glace",
+          "color": "gray"
+        }
+      ]
+    },
+    {
+      "label": [
+        {
           "text": "🎲 Variante au hasard",
           "color": "gold"
         }
