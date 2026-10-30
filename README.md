@@ -289,6 +289,7 @@ Chaque île a son **VILLAGEOIS BOUTIQUE** : fais un clic droit dessus pour écha
 | `/function mg:aide` | Récapitulatif en jeu | tous (via OP) |
 | `/function mg:admin` | Devenir admin des mini-jeux (reçoit ≡ MENU) | OP |
 | `/function mg:setup` | Installe / reconstruit tout | OP |
+| `/function mg:setup_lobby` | Reconstruit seulement le spawn : île, décor, buffet, socles d'élytra, Hall, arène PvP, étang, hub des portails, terrain de foot (~1 min ; arènes et mondes non touchés) | OP |
 | `/tag <joueur> add mg.olfree` (`remove` pour retirer) | Test : libre circulation à Ombrelune (franchit les verrous de région sans avoir fini la campagne) | OP |
 | `/tag <joueur> add mg.trfree` (`remove` pour retirer) | Test : libre circulation à Terra Nova (franchit les verrous de région sans avoir fini la campagne) | OP |
 | `/function mg:nettoyer_plateforme` | Efface la plateforme du préréglage | OP |
