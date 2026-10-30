@@ -25,15 +25,13 @@ SIGNS = [  # glyphe, texte vanilla, position, échelle rp, échelle vanilla
     ('', '[{"text":"⚔ ARMURERIE ⚔","color":"gold","bold":true}]', (-33.3, 74, 0.5), 3.4, 3),
     ('', '[{"text":"◎ STAND DE TIR ◎","color":"red","bold":true}]', (-46.5, 72.5, -33.2), 2.6, 2.4),
     ('', '[{"text":"⚑ PARKOUR ⚑","color":"green","bold":true}]', (64.5, 75, 0.5), 3.2, 3),
-    ('', '[{"text":"⌂ PLOTS ⌂","color":"light_purple","bold":true}]', (0.5, 80.5, -47), 3.4, 3.4),
     ('', '[{"text":"🏁 GARAGE KART 🏁","color":"red","bold":true}]', (0.5, 75, 36.5), 3.2, 3),
     ('', '[{"text":"★ ARRIVÉE ★","color":"aqua","bold":true}]', (FIN[0], FIN[1] + 5, FIN[2]), 3.4, 3),
 ]
 HINTS = [
     ('[{"text":"Marche sur un socle pour t\'équiper !","color":"gray"}]', (-33.3, 69.4, 0.5), 1.3),
     ('[{"text":"Le railgun marque les points : vise le cœur des cibles !","color":"gray"}]', (-46.5, 71.6, -33.2), 1.1),
-    ('[{"text":"Traverse le portail pour aller sur ","color":"gray"},{"text":"ton plot","color":"light_purple","bold":true}]', (0.5, 79.4, -47), 1.3),
-    ('[{"text":"Bienvenue ! ","color":"yellow","bold":true},{"text":"⚔ Armurerie à l\'ouest, ⚑ Parkour à l\'est, ⌂ Plots au nord, 🏁 Kart au sud","color":"gray"}]', (0.5, 70.2, 17.5), 1.2),
+    ('[{"text":"Bienvenue ! ","color":"yellow","bold":true},{"text":"⚔ Armurerie à l\'ouest, ⚑ Parkour à l\'est, ◈ Portails au nord, 🏁 Kart au sud","color":"gray"}]', (0.5, 70.2, 17.5), 1.2),
 ]
 common = ['# Décor commun (rp ou vanilla)']
 for (t, pos, s) in HINTS: common.append(tdisp(*pos, t, s, yaw=face_spawn(pos[0], pos[2])))
@@ -153,9 +151,6 @@ at += ['', '# Recharge de la baguette et du railgun', 'scoreboard players remove
        'execute if score $state mg.st matches 0 as @e[type=minecraft:snowball,tag=mg.sn] at @s run function mg:lobby/snow_tick',
        'execute if score $state mg.st matches 0 as @a[scores={mg.us=1..},tag=!mg.surv] at @s run function mg:lobby/snow_thrown',
        'execute unless score $state mg.st matches 0 run scoreboard players reset @a mg.fw', '',
-       '# Portail des plots : le traverser envoie sur son plot (une fois par passage)',
-       'execute as @a[tag=mg.lpz] unless entity @s[x=-4,y=64,z=-48,dx=8,dy=3,dz=1] run tag @s remove mg.lpz',
-       'execute as @a[tag=!mg.lpz,tag=!mg.play,tag=!mg.out,tag=!mg.surv,tag=!mg.inplot,gamemode=adventure,x=-4,y=64,z=-48,dx=8,dy=3,dz=1] run function mg:lobby/portal',
        '', '# Décor : animation toutes les 2 s, particules toutes les 0,5 s',
        'scoreboard players add $lan mg.t 1',
        'execute if score $lan mg.t matches 40.. run function mg:lobby/anim',
@@ -163,11 +158,6 @@ at += ['', '# Recharge de la baguette et du railgun', 'scoreboard players remove
        'scoreboard players operation $lfx mg.t = $lan mg.t', 'scoreboard players set $l10 mg.t 10', 'scoreboard players operation $lfx mg.t %= $l10 mg.t',
        'execute if score $lfx mg.t matches 0 if entity @a[x=0,y=64,z=0,distance=..160] run function mg:lobby/fx']
 wr('lobby/armory_tick', at)
-wr('lobby/portal', ['# @s traverse le portail des plots : direction son plot',
-                    'tag @s add mg.lpz',
-                    'execute at @s run playsound minecraft:block.portal.travel master @s ~ ~ ~ 0.2 1.8',
-                    'execute at @s run particle minecraft:reverse_portal ~ ~1 ~ 0.4 0.8 0.4 0.05 40',
-                    'function mg:plot/enter'])
 GIVE_SLOT = {1: 'hotbar.0', 3: 'hotbar.2', 4: 'hotbar.3'}
 for i, slot in GIVE_SLOT.items():
     p = os.path.join(F, 'lobby', f'pad_{i}_give.mcfunction')

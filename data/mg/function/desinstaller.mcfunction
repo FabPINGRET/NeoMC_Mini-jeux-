@@ -1071,6 +1071,9 @@ schedule clear mg:elytra/build
 kill @e[tag=mg.hubp]
 data remove storage mg:hub oldclean
 data remove storage mg:hub floaty
+data remove storage mg:lobby decofix1
+schedule clear mg:hub/decofix_start
+schedule clear mg:hub/decofix_go
 kill @e[tag=mg.elyd]
 clear @a minecraft:elytra[minecraft:custom_data~{mg_ely:1b}]
 clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_ely:1b}]

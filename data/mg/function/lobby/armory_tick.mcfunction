@@ -16,9 +16,6 @@ execute if score $state mg.st matches 0 as @e[type=minecraft:snowball,tag=mg.sn]
 execute if score $state mg.st matches 0 as @a[scores={mg.us=1..},tag=!mg.surv] at @s run function mg:lobby/snow_thrown
 execute unless score $state mg.st matches 0 run scoreboard players reset @a mg.fw
 
-# Portail des plots : le traverser envoie sur son plot (une fois par passage)
-execute as @a[tag=mg.lpz] unless entity @s[x=-4,y=64,z=-48,dx=8,dy=3,dz=1] run tag @s remove mg.lpz
-execute as @a[tag=!mg.lpz,tag=!mg.play,tag=!mg.out,tag=!mg.surv,tag=!mg.inplot,gamemode=adventure,x=-4,y=64,z=-48,dx=8,dy=3,dz=1] run function mg:lobby/portal
 
 # Décor : animation toutes les 2 s, particules toutes les 0,5 s
 scoreboard players add $lan mg.t 1

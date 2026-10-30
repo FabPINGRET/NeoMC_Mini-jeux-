@@ -9,6 +9,7 @@ fill -10 63 -61 10 63 -42 minecraft:smooth_stone
 setblock 0 63 -51 minecraft:mossy_stone_bricks
 execute unless data storage mg:hub floaty run data modify storage mg:hub floaty set value 0b
 execute unless data storage mg:hub oldclean run function mg:hub/old_clean
+schedule function mg:hub/decofix_start 20s
 # portail gta : plan x=-9, ouverture z -55..-54, trois blocs de haut
 fill -9 64 -56 -9 65 -53 minecraft:polished_deepslate
 fill -9 64 -55 -9 65 -54 minecraft:air

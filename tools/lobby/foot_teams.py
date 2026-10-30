@@ -2,7 +2,7 @@
 
 Équipes propres au foot (mg_ftr rouge, mg_ftb bleu : créées par core/load, JAMAIS mg_red / mg_blue des jeux). Tags mg.ftr / mg.ftb.
 - Socle rouge / bleu : tag, équipe, actionbar (foot/tick n'appelle pas la fonction à qui l'a déjà : tag=!mg.ftr). Compteur $eq (mg.ftn).
-- Socle blanc : quitte l'équipe. Socle or : quitte l'équipe et remonte à la surface, sur l'avenue nord, devant le tapis d'entrée (FB.RETURN).
+- Socle blanc : quitte l'équipe. Socle or : quitte l'équipe et remonte à la surface, devant le portail du foot du hub (FB.RETURN).
 - foot/cleanup (@s) : retire les tags d'équipe et quitte l'équipe SI c'est mg_ftr / mg_ftb (jamais l'équipe d'un jeu). Appelé par les socles,
   foot/away, core/reset_player, core/request (lancement d'une partie) et la désactivation par un admin.
 - foot/away (@s) : sorti de la zone (ou de l'overworld) : plus compté (mg.ftin), plus d'équipe, score de buts libres (mg.ft) effacé.
@@ -24,7 +24,7 @@ def write():
     w('foot/pad_white', ['# @s (en équipe) marche sur le socle blanc : quitte son équipe', 'function mg:foot/cleanup',
                          'title @s actionbar ' + js({'text': '✖ Tu as quitté ton équipe', 'color': 'gray'}),
                          'execute at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 0.8'])
-    w('foot/leave', ['# @s marche sur le socle or : quitte son équipe, perd ses buts libres et remonte à la surface (avenue nord, devant le tapis d\'entrée)',
+    w('foot/leave', ['# @s marche sur le socle or : quitte son équipe, perd ses buts libres et remonte à la surface (devant le portail du foot du hub)',
                      'function mg:foot/cleanup', 'tag @s remove mg.ftin',
                      'scoreboard players reset @s mg.ft', 'tag @s remove mg.ftlt',
                      f'tp @s {FB.RETURN[0]} {FB.RETURN[1]} {FB.RETURN[2]} facing 0.5 64 0.5',
