@@ -266,7 +266,7 @@ w('maze/gates', ['# Toutes les 8 s : les grilles A et B s\'échangent', 'scorebo
 BON = {1: ('sugar', '⚡ Vitesse (10 s)', 'aqua'), 2: ('compass', '🧭 Boussole vers la sortie (30 s)', 'gold'), 3: ('ender_eye', '🦅 Vue d\'aigle (6 s)', 'green')}
 w('maze/bonus_tick', ['# @s : emplacement de bonus (mg.jt = temps avant retour)',
                       'execute if score @s mg.jt matches 1.. run return run scoreboard players remove @s mg.jt 1',
-                      'execute unless entity @e[type=minecraft:item_display,tag=mg.jbd,distance=..0.5] run function mg:maze/bonus_show',
+                      'execute unless entity @e[type=minecraft:item_display,tag=mg.jbd,distance=..1] run function mg:maze/bonus_show',
                       'execute as @a[tag=mg.play,gamemode=adventure,distance=..1.2,limit=1,sort=nearest] run function mg:maze/bonus_take'])
 w('maze/bonus_show', [f'execute if entity @s[tag=mg.jb{n}] run summon minecraft:item_display ~ ~0.7 ~ {{Tags:["mg.jent","mg.jbd"],billboard:"vertical",brightness:{{sky:15,block:15}},'
                       f'item:{{id:"minecraft:{it}",count:1}},transformation:{{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}}}'
