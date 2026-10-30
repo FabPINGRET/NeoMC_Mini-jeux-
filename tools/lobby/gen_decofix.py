@@ -1,6 +1,6 @@
 """Décor du spawn remis d'aplomb après les déplacements (portails, socles d'élytra, entrée du foot) : python tools/lobby/gen_decofix.py .
 
-Écrit hub/decofix (une seule fois par monde : drapeau mg:lobby decofix1 ; relancé aussi après chaque mg:hub/build) :
+Écrit hub/decofix (une seule fois par monde : drapeau mg:lobby decofix2 ; relancé aussi après chaque mg:hub/build) :
 1. Anciens sites rendus au décor du spawn (theme_world.W : sol, haies, bancs, lampadaires, fleurs, arbres) : anciens portails GTA / Terra Nova /
    Ombrelune et leurs passages (haies de l'avenue nord refermées), anciens socles et allées d'élytra, anneau de l'ancienne place des plots
    hors du hub (en herbe). Les cases des constructions actuelles (hub, socles d'élytra, foot, arène PvP, Hall) ne sont jamais touchées.
@@ -153,13 +153,13 @@ for blocks in tree_blocks:
         L += [f'setblock {x} {y} {z} minecraft:air' for (x, y, z) in sorted(blocks) if (x, y, z) not in PROT]
 
 L += ['execute unless score $ftoff mg.st matches 1 run function mg:foot/labels',
-      'data modify storage mg:lobby decofix1 set value 1b']
+      'data modify storage mg:lobby decofix2 set value 1b']
 w('hub/decofix', L)
 w('hub/decofix_start', ['# Charge la zone du décor à remettre d\'aplomb, puis hub/decofix (2 s plus tard)',
                         'forceload add -20 -61 40 20', 'schedule function mg:hub/decofix_go 2s'])
 w('hub/decofix_go', ['function mg:hub/decofix', 'forceload remove -20 -61 40 20', 'function mg:core/forceloads'])
-patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby elyclean3 run schedule function mg:elytra/spawn_clean 9s',
-      ['execute if score $setup mg.st matches 1 unless data storage mg:lobby decofix1 run schedule function mg:hub/decofix_start 30s'])
+patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby elyclean4 run schedule function mg:elytra/spawn_clean 9s',
+      ['execute if score $setup mg.st matches 1 unless data storage mg:lobby decofix2 run schedule function mg:hub/decofix_start 30s'])
 patch('desinstaller', 'data remove storage mg:hub floaty',
-      ['data remove storage mg:lobby decofix1', 'schedule clear mg:hub/decofix_start', 'schedule clear mg:hub/decofix_go'])
+      ['data remove storage mg:lobby decofix2', 'schedule clear mg:hub/decofix_start', 'schedule clear mg:hub/decofix_go'])
 print(f'decofix OK : {n_restore} lignes de décor rendu, {removed} arbres coupés retirés ({len(trunks)} arbres au spawn), {len(L)} lignes')
