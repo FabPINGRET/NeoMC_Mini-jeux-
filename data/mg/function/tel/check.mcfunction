@@ -5,7 +5,14 @@ $execute store result score #tl mg.st run data get storage mg:tel ch[$(c)].s0
 execute if score #tl mg.st matches 0 run return run tellraw @a[tag=!mg.surv] {"text":"     ✘ chaîne incomplète (joueur parti)","color":"gray"}
 $execute store result score #tl mg.st run data get storage mg:tel ch[$(c)].$(k)
 execute if score #tl mg.st matches 0 run return run tellraw @a[tag=!mg.surv] {"text":"     ✘ chaîne incomplète (joueur parti)","color":"gray"}
-$execute store success score $tneq mg.st run data modify storage mg:tel cmp set from storage mg:tel ch[$(c)].$(k)
+$data modify storage mg:tel nsrc set from storage mg:tel ch[$(c)].s0
+function mg:tel/norm
+data modify storage mg:tel cmp set from storage mg:tel nout
+execute store result score #tl mg.st run data get storage mg:tel cmp
+$data modify storage mg:tel nsrc set from storage mg:tel ch[$(c)].$(k)
+function mg:tel/norm
+execute store success score $tneq mg.st run data modify storage mg:tel cmp set from storage mg:tel nout
+execute if score #tl mg.st matches 0 run scoreboard players set $tneq mg.st 1
 execute if score $tneq mg.st matches 1 run return run tellraw @a[tag=!mg.surv] {"text":"     ✘ ce n'est plus le mot de départ…","color":"red"}
 $scoreboard players add @a[scores={mg.ti=$(a)}] mg.tpt 3
 $scoreboard players add @a[scores={mg.ti=$(b)}] mg.tpt 3

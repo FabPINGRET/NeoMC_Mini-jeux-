@@ -12,6 +12,7 @@ scoreboard players set $tk mg.st 0
 execute as @a[tag=mg.play,sort=random] run function mg:tel/assign
 function mg:bb/words_init
 data modify storage mg:tel ch set value []
+function mg:tel/norm_maps
 scoreboard players set $tk mg.st 0
 function mg:tel/init_ch
 function mg:tel/fl_add
