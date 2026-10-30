@@ -10,8 +10,8 @@ execute if score $hn mg.st = @s mg.hat run return run tellraw @s {"text":"Tu por
 scoreboard players operation @s mg.hat = $hn mg.st
 function mg:hat/strip
 function mg:hat/wear_now
-playsound minecraft:item.armor.equip_leather master @s ~ ~ ~ 1 1.2
-particle minecraft:happy_villager ~ ~2.1 ~ 0.3 0.2 0.3 0 10
+execute at @s run playsound minecraft:item.armor.equip_leather master @s ~ ~ ~ 1 1.2
+execute at @s run particle minecraft:happy_villager ~ ~2.1 ~ 0.3 0.2 0.3 0 10
 execute if score $hn mg.st matches 1 run tellraw @s [{"text":"🎩 Tu portes maintenant : ","color":"gray"},{"text":"Haut-de-forme","color":"white","bold":true}]
 execute if score $hn mg.st matches 2 run tellraw @s [{"text":"🎩 Tu portes maintenant : ","color":"gray"},{"text":"Chapeau de cowboy","color":"white","bold":true}]
 execute if score $hn mg.st matches 3 run tellraw @s [{"text":"🎩 Tu portes maintenant : ","color":"gray"},{"text":"Bonnet à pompon","color":"white","bold":true}]

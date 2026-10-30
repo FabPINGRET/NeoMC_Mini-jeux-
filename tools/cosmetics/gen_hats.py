@@ -154,8 +154,8 @@ w('hat/pick', ['# @s : joueur ; $hn = chapeau choisi',
    'scoreboard players operation @s mg.hat = $hn mg.st',
    'function mg:hat/strip',
    'function mg:hat/wear_now',
-   'playsound minecraft:item.armor.equip_leather master @s ~ ~ ~ 1 1.2',
-   'particle minecraft:happy_villager ~ ~2.1 ~ 0.3 0.2 0.3 0 10'] +
+   'execute at @s run playsound minecraft:item.armor.equip_leather master @s ~ ~ ~ 1 1.2',
+   'execute at @s run particle minecraft:happy_villager ~ ~2.1 ~ 0.3 0.2 0.3 0 10'] +
   [f'execute if score $hn mg.st matches {n} run tellraw @s ' + js([{'text': '🎩 Tu portes maintenant : ', 'color': 'gray'}, {'text': nm, 'color': RARITY[r][1], 'bold': True}])
    for n, _, nm, r, _ in HATS])
 w('hat/wear_now', ['# @s : chapeau posé tout de suite si la tête est libre (sinon : présentoir au prochain tick)',
@@ -163,17 +163,17 @@ w('hat/wear_now', ['# @s : chapeau posé tout de suite si la tête est libre (si
 w('hat/remove', ['# @s : sans chapeau',
                  'scoreboard players set @s mg.hat 0',
                  'function mg:hat/strip',
-                 'playsound minecraft:item.armor.equip_generic master @s ~ ~ ~ 1 0.8',
+                 'execute at @s run playsound minecraft:item.armor.equip_generic master @s ~ ~ ~ 1 0.8',
                  'tellraw @s ' + js({'text': '🎩 Chapeau rangé.', 'color': 'gray'})])
 w('hat/enter', ['# @s : descend dans la galerie',
                 f'tp @s {LAND_IN}',
-                'playsound minecraft:block.beacon.activate master @s ~ ~ ~ 0.6 1.6',
+                'execute at @s run playsound minecraft:block.beacon.activate master @s ~ ~ ~ 0.6 1.6',
                 'tellraw @s ' + js([{'text': '🎩 Galerie des chapeaux', 'color': 'gold', 'bold': True},
                                     {'text': ' : clique sur un piédestal pour porter son chapeau, partout et pendant les parties. ✦ Victoires : ', 'color': 'gray'},
                                     {'score': {'name': '@s', 'objective': 'mg.wins'}, 'color': 'gold'}])])
 w('hat/leave', ['# @s : remonte devant le Hall',
                 f'tp @s {LAND_OUT}',
-                'playsound minecraft:block.beacon.deactivate master @s ~ ~ ~ 0.6 1.6'])
+                'execute at @s run playsound minecraft:block.beacon.deactivate master @s ~ ~ ~ 0.6 1.6'])
 
 # ------------------------------------------------------------------ galerie : construction
 SLOTS = [(0, None, 'Sans chapeau', None)] + [(n, k, nm, r) for n, k, nm, r, _ in HATS]

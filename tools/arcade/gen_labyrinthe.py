@@ -152,7 +152,9 @@ w('lab/tick', ['# 🙈 Labyrinthe aveugle — tick', 'scoreboard players add $lb
                'execute if score $q mg.st matches 5 if score $lbt mg.st matches 60.. run function mg:lab/blind',
                'execute store result bossbar mg:lab value run scoreboard players get $lbt mg.st',
                'execute if score $state mg.st matches 2 as @a[tag=mg.lbw,tag=mg.play] at @s if block ~ ~-0.5 ~ minecraft:gold_block run return run function mg:lab/win',
-               f'execute if score $state mg.st matches 2 if score $lbt mg.st matches {LIMIT}.. run function mg:lab/timeout'])
+               f'execute if score $state mg.st matches 2 if score $lbt mg.st matches {LIMIT}.. run function mg:lab/timeout',
+               '# plus aucun marcheur en ligne (déconnexions) : fin tout de suite plutôt qu\'au chrono',
+               'execute if score $state mg.st matches 2 if score $lbt mg.st matches 20.. unless entity @a[tag=mg.lbw,tag=mg.play] run function mg:lab/timeout'])
 w('lab/win', ['# @s (marcheur) sur l\'or : sa paire gagne',
               'scoreboard players operation $p mg.st = @s mg.lbp',
               'execute unless score $n0 mg.st matches 2.. run tellraw @a[tag=mg.play] {"text":"🙈 Sortie trouvée ! (entraînement)","color":"yellow"}',

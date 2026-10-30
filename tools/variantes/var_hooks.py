@@ -75,8 +75,8 @@ def run():
           ['scoreboard players set $qcd mg.st 22', VR + 'mode/quake_prepare'])
     patch('quake/spread_one', '# Quakecraft — placement aléatoire selon la carte (@s)', [VR + 'spread_one'])
     replace('quake/tick', 'execute as @a[tag=mg.play,scores={mg.t=..70}] run function mg:quake/respawn',
-            'execute if score $ar mg.st matches 0 as @a[tag=mg.play,scores={mg.t=..70}] run function mg:quake/respawn\n'
-            'execute if score $ar mg.st matches 1.. as @a[tag=mg.play] if score @s mg.t <= $ky mg.st run function mg:quake/respawn')
+            'execute if score $ar mg.st matches 0 as @a[tag=mg.play,tag=!mg.qdd,scores={mg.t=..70}] run function mg:quake/respawn\n'
+            'execute if score $ar mg.st matches 1.. as @a[tag=mg.play,tag=!mg.qdd] if score @s mg.t <= $ky mg.st run function mg:quake/respawn')
     replace('quake/shoot', 'scoreboard players set @s mg.cd 22', 'scoreboard players operation @s mg.cd = $qcd mg.st')
     replace('quake/ray', 'execute unless block ~ ~ ~ #minecraft:air run return run', 'execute unless block ~ ~ ~ #mg:ray_pass run return run')
 

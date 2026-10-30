@@ -10,9 +10,9 @@ execute as @a[tag=mg.play,team=mg_red,x=36,y=76,z=20799,dx=2,dy=3,dz=2] run func
 scoreboard players operation $twq mg.st = $twt mg.st
 scoreboard players set #300 mg.st 300
 scoreboard players operation $twq mg.st %= #300 mg.st
-execute if score $twq mg.st matches 0 run summon minecraft:item 0.5 81.2 20800.5 {Item:{id:"minecraft:arrow",count:4}}
-execute if score $twq mg.st matches 0 run summon minecraft:item 0.5 81.2 20800.5 {Item:{id:"minecraft:golden_apple",count:1}}
-execute if score $twq mg.st matches 0 run summon minecraft:item 0.5 81.2 20800.5 {Item:{id:"minecraft:white_terracotta",count:16}}
+execute if score $twq mg.st matches 0 run summon minecraft:item 0.5 81.2 20800.5 {Tags:["mg.keep"],Item:{id:"minecraft:arrow",count:4}}
+execute if score $twq mg.st matches 0 run summon minecraft:item 0.5 81.2 20800.5 {Tags:["mg.keep"],Item:{id:"minecraft:golden_apple",count:1}}
+execute if score $twq mg.st matches 0 run summon minecraft:item 0.5 81.2 20800.5 {Tags:["mg.keep"],Item:{id:"minecraft:white_terracotta",count:16}}
 execute if score $twt mg.st matches 10800 run tellraw @a[tag=mg.play] {"text":"🏰 Plus qu'une minute !","color":"gold"}
 execute if score $state mg.st matches 2 if score $twt mg.st matches 12000.. run function mg:tower/timeout
 execute store result score $twr mg.st if entity @a[tag=mg.play,team=mg_red]

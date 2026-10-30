@@ -466,9 +466,9 @@ write('hazards', ['# Circuit Champignon : pas de danger'])
 write('track_tick', ['# Circuit Champignon : pas de danger'])
 with open(os.path.join(OUT, 'const.mcfunction'), 'w', encoding='utf-8', newline='\n') as f:
     f.write(f'# Constantes du circuit (générées)\nscoreboard players set $kK mg.st {K}\nscoreboard players set $kLaps mg.st 3\n'
-            f'scoreboard players set $px mg.st 0\nscoreboard players set $py mg.st 110\nscoreboard players set $pz mg.st {ZC}\n'
             f'scoreboard players set #kmx0 mg.st {HX}\nscoreboard players set #kmz0 mg.st {ZC - HZ}\nscoreboard players set #kmc mg.st {MMC}\n'
             f'scoreboard players set #kmw mg.st {2 * HX + 1}\nscoreboard players set #kmr mg.st {MMR}\nscoreboard players set #kmh mg.st {2 * HZ + 1}\n')
+write('perch', ['# Perchoir des spectateurs (kart/prepare seulement : le kart libre relit const à chaque tick)', 'scoreboard players set $px mg.st 0', 'scoreboard players set $py mg.st 110', f'scoreboard players set $pz mg.st {ZC}'])
 print('points de passage', K, '| commandes terrain', len(terrain), 'décor', len(deco), '| étapes', len(parts))
 
 # ------------------------------------------------------------------ aperçu PNG

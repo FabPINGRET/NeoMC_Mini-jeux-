@@ -145,7 +145,7 @@ w('gta/panic', ['# @s vient de tirer : les passants proches paniquent (husk invi
                 'active_effects:[{id:"minecraft:invisibility",duration:-1,amplifier:0,show_particles:0b}],attributes:[{id:"minecraft:scale",base:0.2}]}',
                 'scoreboard players set @e[type=minecraft:husk,tag=mg.gpanic,distance=..1] mg.gtw8 30'])
 w('gta/panic_tick', ['scoreboard players remove @e[type=minecraft:husk,tag=mg.gpanic] mg.gtw8 1',
-                     'execute as @e[type=minecraft:husk,tag=mg.gpanic,scores={mg.gtw8=..0}] run tp @s ~ -300 ~'])
+                     'execute as @e[type=minecraft:husk,tag=mg.gpanic,scores={mg.gtw8=..0}] run kill @s'])
 
 # ---------------------------------------------------------------- police : voitures de police, barrages, hélico
 w('gta/pcar_spawn', ['# Voiture de police pilotée par un policier (contexte : carrefour) : elle poursuit le joueur recherché',
@@ -193,7 +193,7 @@ w('gta/pheli_remove', ['# @s : l\'hélico de police repart', 'scoreboard players
                        'execute as @e[type=minecraft:block_display] if score @s mg.gvid = $gv mg.st run kill @s', 'kill @s'])
 w('gta/veh_remove', ['# @s : véhicule (cheval ou ghast) retiré sans explosion : sa carrosserie et sa zone cliquable aussi', 'scoreboard players operation $gv mg.st = @s mg.gvid',
                      'execute as @e[type=minecraft:block_display] if score @s mg.gvid = $gv mg.st run kill @s',
-                     'execute as @e[type=minecraft:interaction] if score @s mg.gvid = $gv mg.st run kill @s', 'tp @s ~ -300 ~'])
+                     'execute as @e[type=minecraft:interaction] if score @s mg.gvid = $gv mg.st run kill @s', 'kill @s'])
 w('gta/police_plus', ['# Chaque seconde (@s = joueur recherché, à sa position) : voitures de police, barrage, hélico',
                       'execute store result score $gpc mg.st if entity @e[type=minecraft:horse,tag=mg.gpcar,distance=..60]',
                       'scoreboard players operation $gpw mg.st = @s mg.gwl', 'scoreboard players remove $gpw mg.st 1',

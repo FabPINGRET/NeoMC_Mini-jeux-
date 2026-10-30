@@ -127,7 +127,7 @@ w('terra/hitd', ['# @s (cible) : dégâts du tir ($(d)) et chiffre flottant', '$
                  '$execute at @s run function mg:terra/rpg/dmgnum {d:$(d)}'])
 w('terra/overheat', ['# @s : surchauffe, plus de tir avant refroidissement complet', 'tag @s add mg.tvoh', 'scoreboard players set @s mg.tvh 1000',
                      'playsound minecraft:block.fire.extinguish player @s ~ ~ ~ 0.8 1.2', 'scoreboard players set @s mg.tval 0'])
-w('terra/cooled', ['# @s : fusil refroidi', 'tag @s remove mg.tvoh', 'playsound minecraft:block.beacon.power_select player @s ~ ~ ~ 0.4 1.8'])
+w('terra/cooled', ['# @s : fusil refroidi', 'tag @s remove mg.tvoh', 'execute at @s run playsound minecraft:block.beacon.power_select player @s ~ ~ ~ 0.4 1.8'])
 w('terra/sonic', ['# @s : canon sonique, onde en cône (sphère de 4,5 blocs centrée 4 blocs devant)',
                   'execute if score @s mg.tvsc matches 1.. run return run playsound minecraft:block.dispenser.fail player @s ~ ~ ~ 0.5 1.4',
                   'scoreboard players set @s mg.tvsc 80', 'playsound minecraft:entity.warden.sonic_boom player @a ~ ~ ~ 1 1.3',

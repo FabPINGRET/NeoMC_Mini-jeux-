@@ -482,7 +482,7 @@ for npc, (name, col, pos, prof, typ, reg) in NPCS.items():
     w(f'npc/{npc}_gen', show(D))
     L.append(f'function mg:{P}/npc/{npc}_gen')
     w(f'npc/{npc}', L)
-w('npc/any', ['# @s parle au PNJ n° $npc'] + [f'execute if score $npc mg.st matches {i} run return run function mg:{P}/npc/{k}' for k, i in NPC_ID.items()])
+w('npc/any', ['# @s parle au PNJ n° $npc (mg.oltalk : les choix des fenêtres de PNJ ne valent que près d\'un PNJ, cf. tk et second)', 'tag @s add mg.oltalk'] + [f'execute if score $npc mg.st matches {i} run return run function mg:{P}/npc/{k}' for k, i in NPC_ID.items()])
 w('npc/int', ['# @s (interaction d\'un PNJ) : le joueur qui a cliqué lui parle', 'scoreboard players operation $npc mg.st = @s mg.olnid',
               f'execute on target if entity @s[tag=mg.olw] run function mg:{P}/npc/any', 'data remove entity @s interaction'])
 VTYPE = {'plains': 'plains', 'jungle': 'jungle', 'snow': 'snow', 'swamp': 'swamp', 'desert': 'desert', 'savanna': 'savanna', 'taiga': 'taiga'}
@@ -785,6 +785,12 @@ w('sq_list', SQL)
 # ================================================================ choix (trigger mg.oltk)
 TK = ['# @s : choix dans une fenêtre (trigger mg.oltk)', 'scoreboard players operation $tk mg.st = @s mg.oltk', 'scoreboard players reset @s mg.oltk',
       'scoreboard players enable @s mg.oltk',
+      '# choix liés à un PNJ (quêtes, secondaires, classes, boutiques, contrats) : seulement après lui avoir parlé et en restant près de lui (/trigger à distance refusé)',
+      'scoreboard players set $tkn mg.st 0',
+      'execute if score $tk mg.st matches 400..499 run scoreboard players set $tkn mg.st 1', 'execute if score $tk mg.st matches 500 run scoreboard players set $tkn mg.st 1',
+      'execute if score $tk mg.st matches 600..699 run scoreboard players set $tkn mg.st 1', 'execute if score $tk mg.st matches 801..802 run scoreboard players set $tkn mg.st 1',
+      'execute if score $tk mg.st matches 850 run scoreboard players set $tkn mg.st 1', 'execute if score $tk mg.st matches 1000.. run scoreboard players set $tkn mg.st 1',
+      'execute if score $tkn mg.st matches 1 unless entity @s[tag=mg.oltalk] run return run tellraw @s {"text":"Approche-toi du personnage et parle-lui d\'abord.","color":"gray"}',
       f'execute if score $tk mg.st matches 9 run function mg:{P}/q/say', f'execute if score $tk mg.st matches 9 run function mg:{P}/qloc',
       f'execute if score $tk mg.st matches 500 run function mg:{P}/cl/menu'] + \
      [f'execute if score $tk mg.st matches {600 + n} run function mg:{P}/cl/pick_{n}' for n in CL.CLASSES] + \

@@ -8,6 +8,8 @@ def shop_label(nm):
 
 
 S = ['# Entités de la session (contexte : dimension mg:gta)', 'function mg:gta/clear', 'function mg:gta/walls',
+     '# missions en cours annulées : leurs objets (colis, cible, points de contrôle) viennent d\'être retirés par clear',
+     'execute as @a[tag=mg.gtw,scores={mg.gmt=1..}] run function mg:gta/mis_fail',
      'scoreboard players set $gvid mg.st 0', 'team add mg_gciv', 'team modify mg_gciv friendlyFire true', 'team modify mg_gciv seeFriendlyInvisibles false',
      'team modify mg_gciv nametagVisibility always', 'team join mg_gciv @a[tag=mg.gtw,scores={mg.gwl=0}]', 'function mg:gta/bars']
 S += [f'summon minecraft:marker {x} 65 {Z + z} {{Tags:["mg.gta","mg.gix"]}}' for (x, z) in INTER]
@@ -192,7 +194,7 @@ w('gta/tick', ['# 🚓 Neo City : chaque tick tant qu\'un joueur y est', 'scoreb
                'execute if score $gq mg.st matches 5 run function mg:gta/hud',
                'execute if score $gq mg.st matches 5 run function mg:gta/radio_check',
                'execute if score $gq mg.st matches 15 run function mg:gta/hud'])
-w('gta/second', ['# Chaque seconde : véhicules détruits, passants, police, sirènes, valises, ménage',
+w('gta/second', ['# Chaque seconde : véhicules détruits, passants, police, sirènes, valises, ménage', 'scoreboard players remove @a[tag=mg.gtw,scores={mg.gkpc=1..}] mg.gkpc 1',
                  'execute unless score $gsu mg.st matches 1.. run return 0',
                  'execute if score $gsu mg.st matches 1 as @e[type=minecraft:block_display,tag=mg.gvb,tag=!mg.gok] at @s run function mg:gta/wreck',
                  'execute if score $gsu mg.st matches 1 run kill @e[type=minecraft:block_display,tag=mg.gvd,tag=!mg.gok]',

@@ -1,4 +1,6 @@
 # Victoire individuelle (@s = vainqueur)
+# Seul (1 participant) : mode entraînement, pas de victoire comptée (règle commune à tous les jeux)
+execute unless score $n0 mg.st matches 2.. run return run function mg:core/draw_solo
 tag @s add mg.win
 scoreboard players add @s mg.wins 1
 scoreboard players set $state mg.st 3

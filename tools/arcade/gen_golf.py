@@ -595,7 +595,7 @@ for club in (1, 2):
 w('golf/aim', ['# @s : visée (balle à l\'arrêt) : jauge, barre d\'action, ligne de visée, tir au clic droit',
                'scoreboard players remove @s[scores={mg.gfk=1..}] mg.gfk 1', 'function mg:golf/own',
                'execute unless entity @e[tag=mg.gfmy] run return run tag @e[tag=mg.gfmy] remove mg.gfmy',
-               'execute unless entity @e[tag=mg.gfmy,distance=..5] run function mg:golf/place',
+               'execute unless entity @e[tag=mg.gfmy,distance=..5] run function mg:golf/place', 'execute unless items entity @s container.* minecraft:warped_fungus_on_a_stick[custom_data~{golf:1}] run function mg:golf/kit',  # clubs jetés (balayés par survie/tick) : rendus
                'scoreboard players set $gfclub mg.st 0',
                'execute if items entity @s weapon.mainhand minecraft:warped_fungus_on_a_stick[custom_data~{golf:1}] run scoreboard players set $gfclub mg.st 1',
                'execute if items entity @s weapon.mainhand minecraft:warped_fungus_on_a_stick[custom_data~{golf:2}] run scoreboard players set $gfclub mg.st 2',

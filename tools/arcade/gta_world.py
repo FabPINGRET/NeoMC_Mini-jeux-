@@ -92,7 +92,8 @@ w('gta/lobby_tick', ['# Chaque tick (core/tick, monde des mini-jeux) : portail d
 w('gta/pre_tick', ['# Avant la survie (core/tick) : un joueur du GTA sorti de la dimension sans passer par la sortie perd ses tags',
                    f'execute as @a[tag=mg.gtw] at @s unless dimension {DIM} run function mg:gta/strayed'])
 w('gta/strayed', ['# @s a quitté Neo City autrement (téléportation…) : il n\'est plus considéré comme joueur du GTA',
-                  'tag @s remove mg.gtw', 'tag @s remove mg.surv', 'function mg:gta/untag'])
+                  'tag @s remove mg.gtw', 'tag @s remove mg.surv', 'function mg:gta/untag',
+                  'execute in minecraft:overworld run function mg:core/reset_player', 'attribute @s minecraft:fall_damage_multiplier base set 0'])
 
 # ---------------------------------------------------------------- entrée, sortie, session
 P_LINES = ['# @s : à un carrefour au hasard de Neo City (dans la dimension du contexte)',
@@ -101,6 +102,8 @@ P_LINES += [f'execute if score $gr mg.st matches {i} run tp @s {x + 0.5} 65 {Z +
 w('gta/place', P_LINES)
 w('gta/enter', ['# @s entre dans le portail de Neo City',
                 'execute unless data storage mg:gta built run return run function mg:gta/not_ready',
+                '# ville en réparation après le départ du dernier joueur (wb_step, ~8 s) : on attend la fin plutôt que de se faire murer',
+                f'execute if score $gwb mg.st matches 1..{NG + NP + NH["parts"]} run return run function mg:gta/repairing',
                 'execute if entity @s[tag=mg.mpp] run return run tellraw @s {"text":"⚠ Tu participes à la Mini Party : Neo GTA sera accessible après.","color":"red"}',
                 'function mg:lobkart/leave', 'function mg:parkour/quit',
                 'tag @s remove mg.inplot', 'tag @s remove mg.plabel', 'tag @s remove mg.visit',
@@ -122,6 +125,8 @@ w('gta/enter', ['# @s entre dans le portail de Neo City',
                 'tellraw @s ' + js([{'text': ' ★ Police : ', 'color': 'red'}, {'text': 'chaque crime = étoile, une de moins toutes les 15 s', 'color': 'gray'}]),
                 'tellraw @s ' + js([{'text': ' 🚪 Sortir : ', 'color': 'yellow'}, {'text': 'Échap → ≡ Menu', 'color': 'gray'}]),
                 'execute at @s run playsound minecraft:block.portal.travel master @s ~ ~ ~ 0.3 1.6'])
+w('gta/repairing', ['# Neo City en réparation (quelques secondes) : on recule le joueur', f'tp @s {PX - 3}.5 64 {PZ + 0.5} -90 0',
+                    'tellraw @s {"text":"🚧 Neo City se remet en état après la dernière session (quelques secondes). Réessaie tout de suite après !","color":"yellow"}'])
 w('gta/not_ready', ['# Neo City pas encore construite : on recule le joueur', f'tp @s {PX - 3}.5 64 {PZ + 0.5} -90 0',
                     'tellraw @s {"text":"🚧 Neo GTA est en construction (environ 2 minutes après le démarrage du serveur). Réessaie bientôt !","color":"yellow"}'])
 w('gta/menu_go', ['# @s : « Aller dans Neo GTA » du menu Échap (trigger mg.sv 4), d\'où qu\'on soit hors partie',
@@ -140,7 +145,7 @@ w('gta/join', ['# @s : réglages d\'arrivée (les dollars sont gardés d\'une vi
                'function mg:gun/reset', 'scoreboard players set @s mg.gtl 0', 'scoreboard players set @s mg.gal 0', 'tag @s remove mg.gdrv',
                'team join mg_gciv @s'])
 w('gta/untag', ['# @s : plus joueur du GTA (tags, sons, titres, étoiles, mission)', 'function mg:gta/mis_clean', 'tag @s remove mg.gtg', 'tag @s remove mg.gclub', 'tag @s remove mg.gdrv',
-                'tag @s remove mg.gscope', 'tag @s remove mg.grd', 'tag @s remove mg.gro', 'stopsound @s record',
+                'tag @s remove mg.gscope', 'tag @s remove mg.grd', 'tag @s remove mg.gro', 'tag @s remove mg.gslot', 'tag @s remove mg.gcas_slot', 'tag @s remove mg.gcas_roulette', 'tag @s remove mg.gcas_dice', 'stopsound @s record',
                 'title @s clear', 'title @s reset', 'scoreboard players reset @s mg.gwl', 'scoreboard players reset @s mg.gwt',
                 'function mg:gun/reset', 'team leave @s'])
 w('gta/leave', ['# @s retourne au lobby (appelé dans le monde des mini-jeux : execute in minecraft:overworld)',

@@ -72,6 +72,45 @@ scoreboard objectives remove mg.wd
 scoreboard objectives remove mg.vote
 scoreboard objectives remove mg.bb
 scoreboard objectives remove mg.bw
+schedule clear mg:ombre/wb_step
+schedule clear mg:ombre/world_build
+schedule clear mg:ombre/session_setup
+schedule clear mg:ombre/spawn_clean
+schedule clear mg:ombre/st/step
+schedule clear mg:ombre/st/check
+schedule clear mg:ombre/boss/wake
+kill @e[tag=mg.olport]
+execute in mg:ombrelune run kill @e[tag=mg.ol]
+execute in mg:ombrelune run forceload remove all
+team remove mg_ol
+team remove mg_olel
+function mg:ombre/boss/clear
+data remove storage mg:ombre built
+data remove storage mg:ombre sv
+data remove storage mg:lobby olclean
+data remove storage mg:lobby olsite
+data remove storage mg:ombre q
+data remove storage mg:ombre c
+data remove storage mg:ombre d
+data remove storage mg:ombre o
+data remove storage mg:ombre en
+data remove storage mg:ombre s
+data remove storage mg:ombre s2
+data remove storage mg:ombre st
+data remove storage mg:ombre mb
+data remove storage mg:ombre ct
+data remove storage mg:ombre doors
+scoreboard objectives remove mg.grob
+scoreboard objectives remove mg.gsid
+scoreboard objectives remove mg.gveh
+scoreboard objectives remove mg.gkpc
+scoreboard objectives remove mg.gmis
+scoreboard objectives remove mg.gmt
+scoreboard objectives remove mg.gms
+scoreboard objectives remove mg.gmtime
+scoreboard objectives remove mg.gmsec
+scoreboard objectives remove mg.gnit
+scoreboard objectives remove mg.gmvk
 scoreboard objectives remove mg.fb0
 scoreboard objectives remove mg.fb1
 scoreboard objectives remove mg.fb10
@@ -157,34 +196,6 @@ schedule clear mg:zmode9/prepare_b
 forceload remove -26 42468 26 42528
 schedule clear mg:zmode8/prepare_b
 forceload remove -27 42068 27 42132
-schedule clear mg:ombre/wb_step
-schedule clear mg:ombre/world_build
-schedule clear mg:ombre/session_setup
-schedule clear mg:ombre/spawn_clean
-schedule clear mg:ombre/st/step
-schedule clear mg:ombre/st/check
-schedule clear mg:ombre/boss/wake
-kill @e[tag=mg.olport]
-execute in mg:ombrelune run kill @e[tag=mg.ol]
-execute in mg:ombrelune run forceload remove all
-team remove mg_ol
-team remove mg_olel
-function mg:ombre/boss/clear
-data remove storage mg:ombre built
-data remove storage mg:ombre sv
-data remove storage mg:lobby olclean
-data remove storage mg:lobby olsite
-data remove storage mg:ombre q
-data remove storage mg:ombre c
-data remove storage mg:ombre d
-data remove storage mg:ombre o
-data remove storage mg:ombre en
-data remove storage mg:ombre s
-data remove storage mg:ombre s2
-data remove storage mg:ombre st
-data remove storage mg:ombre mb
-data remove storage mg:ombre ct
-data remove storage mg:ombre doors
 scoreboard objectives remove mg.tmk
 scoreboard objectives remove mg.tmhp
 scoreboard objectives remove mg.tmcd

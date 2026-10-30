@@ -1,6 +1,8 @@
 # Entités de la session (contexte : dimension mg:gta)
 function mg:gta/clear
 function mg:gta/walls
+# missions en cours annulées : leurs objets (colis, cible, points de contrôle) viennent d'être retirés par clear
+execute as @a[tag=mg.gtw,scores={mg.gmt=1..}] run function mg:gta/mis_fail
 scoreboard players set $gvid mg.st 0
 team add mg_gciv
 team modify mg_gciv friendlyFire true

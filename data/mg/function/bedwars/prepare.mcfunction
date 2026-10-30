@@ -7,7 +7,7 @@ execute if score $bwm mg.st matches 1 run function mg:bedwars/map/build_1
 execute if score $bwm mg.st matches 2 run function mg:bedwars/map/build_2
 execute if score $bwm mg.st matches 3 run function mg:bedwars/map/build_3
 kill @e[type=minecraft:item,x=-45,y=40,z=1155,dx=90,dy=70,dz=90]
-kill @e[tag=mg.npc]
+kill @e[tag=mg.npc,x=-45,y=40,z=1155,dx=90,dy=70,dz=90]
 
 # Perchoir spectateur
 scoreboard players set $px mg.st 0

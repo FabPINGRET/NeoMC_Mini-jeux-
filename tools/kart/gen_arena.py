@@ -391,9 +391,10 @@ MMC, MMR = 24, 15      # grille de la minimap : seules les constantes #km* reste
                        # écrites dans t3/const pour la parité avec data/ mais lues par rien : retrait soumis à décision (touche data/)
 write('const', ['# Constantes de la Forteresse Bob-omb', 'scoreboard players set $kK mg.st 1', 'scoreboard players set $kLaps mg.st 1',
                 f'scoreboard players set #kmx0 mg.st {HX}', f'scoreboard players set #kmz0 mg.st {ZC - HZ}', f'scoreboard players set #kmc mg.st {MMC}',
-                f'scoreboard players set #kmw mg.st {2 * HX + 1}', f'scoreboard players set #kmr mg.st {MMR}', f'scoreboard players set #kmh mg.st {2 * HZ + 1}',
-                'scoreboard players set $px mg.st 0', f'scoreboard players set $py mg.st {ROAD + 36}', f'scoreboard players set $pz mg.st {ZC + 60}'] +
+                f'scoreboard players set #kmw mg.st {2 * HX + 1}', f'scoreboard players set #kmr mg.st {MMR}', f'scoreboard players set #kmh mg.st {2 * HZ + 1}'] +
       [f'scoreboard players set #h{T} mg.st {T}' for T in sorted(consts)])
+write('perch', ['# Perchoir des spectateurs de la Forteresse Bob-omb (kart/perch, appelé par kart/prepare)',
+                'scoreboard players set $px mg.st 0', f'scoreboard players set $py mg.st {ROAD + 36}', f'scoreboard players set $pz mg.st {ZC + 60}'])
 print('terrain', len(terrain), '| décor', len(B), '| étapes', len(parts), '| boîtes', len(BOXES), '| entités', len(spawn))
 
 if len(sys.argv) > 2:

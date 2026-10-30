@@ -105,7 +105,7 @@ w('lobby/guns_give', ['# @s : joueur du lobby, prend l\'arme $lgn (case 2)', 'fu
   [f'execute if score $lgn mg.st matches {n} run function mg:gun/put_{n} {{slot:"hotbar.1"}}' for n, *_ in GUNS if n < 7] +
   ['execute if score $lgn mg.st matches 7 run function mg:lobby/rpg_give'] +
   ['title @s actionbar [{"text":"🔫 Arme prise (case 2) : ","color":"gold"},{"text":"clic gauche tirer, clic droit viser, accroupi recharger","color":"gray"}]',
-   'playsound minecraft:item.armor.equip_iron player @s ~ ~ ~ 1 1.2'])
+   'execute at @s run playsound minecraft:item.armor.equip_iron player @s ~ ~ ~ 1 1.2'])
 
 C.objectives([('mg.lrc', 'dummy')])
 C.patch('core/tick', 'execute if score $setup mg.st matches 1 run function mg:lobby/armory_tick',

@@ -66,25 +66,26 @@ kill @e[type=minecraft:marker,tag=mg.grm]
 tag @a remove mg.top
 tag @a remove mg.osh
 
-# Nettoyage des entités de jeu
-kill @e[tag=mg.mob]
-kill @e[tag=mg.sheep]
-kill @e[tag=mg.npc]
-kill @e[tag=mg.proj]
-kill @e[tag=mg.fx]
-kill @e[distance=0..,type=minecraft:item]
+# Nettoyage des entités de jeu — monde des mini-jeux seulement (distance=0.. : les PNJ et voitures de Neo City portent aussi mg.npc,
+# les mondes ont leurs propres sessions) ; épargnés : chiens de l'arène PvP (mg.pdog), objets protégés (mg.keep : Filon, pièces), dynamite du Filon
+kill @e[tag=mg.mob,tag=!mg.pdog,distance=0..]
+kill @e[tag=mg.sheep,distance=0..]
+kill @e[tag=mg.npc,distance=0..]
+kill @e[tag=mg.proj,distance=0..]
+kill @e[tag=mg.fx,distance=0..]
+kill @e[distance=0..,type=minecraft:item,tag=!mg.keep]
 kill @e[distance=0..,type=minecraft:arrow]
 kill @e[distance=0..,type=minecraft:snowball]
-kill @e[distance=0..,type=minecraft:tnt]
+kill @e[distance=0..,type=minecraft:tnt,tag=!mg.fntnt]
 kill @e[distance=0..,type=minecraft:experience_orb]
 kill @e[distance=0..,type=minecraft:ender_pearl]
 kill @e[distance=0..,type=minecraft:egg]
-kill @e[tag=mg.sh]
-kill @e[tag=mg.anv]
-kill @e[tag=mg.hl]
-kill @e[tag=mg.alembic]
-kill @e[tag=mg.cloud]
-kill @e[tag=mg.meteor]
+kill @e[tag=mg.sh,distance=0..]
+kill @e[tag=mg.anv,distance=0..]
+kill @e[tag=mg.hl,distance=0..]
+kill @e[tag=mg.alembic,distance=0..]
+kill @e[tag=mg.cloud,distance=0..]
+kill @e[tag=mg.meteor,distance=0..]
 kill @e[distance=0..,type=minecraft:chicken,tag=]
 
 

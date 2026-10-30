@@ -6,6 +6,10 @@ tag @s remove mg.gdrv
 tag @s remove mg.gscope
 tag @s remove mg.grd
 tag @s remove mg.gro
+tag @s remove mg.gslot
+tag @s remove mg.gcas_slot
+tag @s remove mg.gcas_roulette
+tag @s remove mg.gcas_dice
 stopsound @s record
 title @s clear
 title @s reset

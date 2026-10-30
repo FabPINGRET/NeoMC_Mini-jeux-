@@ -73,7 +73,7 @@ def run():
         'tellraw @a[tag=mg.play] [{"text":"➶ Objectif de la variante : ","color":"gold"},{"score":{"name":"$og","objective":"mg.st"},"color":"yellow","bold":true},{"text":" kills.","color":"gold"}]'])
     qsz = {'XS': (20, 7200), 'S': (20, 7200), 'M': (25, 9600), 'L': (30, 12000), 'XL': (30, 12000)}
     L = ['# Quakecraft sur une autre carte ($ar) — appelé par quake/prepare. Généré.',
-         'kill @e[distance=0..,type=minecraft:item]',
+         'kill @e[distance=0..,type=minecraft:item,tag=!mg.keep]',
          'scoreboard players reset @a mg.qs', 'tag @a remove mg.prot', 'tag @a remove mg.qdd', 'tag @a remove mg.qsh']
     for a in ARENAS:
         g, t = qsz[a['size']]

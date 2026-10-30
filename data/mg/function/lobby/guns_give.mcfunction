@@ -8,4 +8,4 @@ execute if score $lgn mg.st matches 5 run function mg:gun/put_5 {slot:"hotbar.1"
 execute if score $lgn mg.st matches 6 run function mg:gun/put_6 {slot:"hotbar.1"}
 execute if score $lgn mg.st matches 7 run function mg:lobby/rpg_give
 title @s actionbar [{"text":"🔫 Arme prise (case 2) : ","color":"gold"},{"text":"clic gauche tirer, clic droit viser, accroupi recharger","color":"gray"}]
-playsound minecraft:item.armor.equip_iron player @s ~ ~ ~ 1 1.2
+execute at @s run playsound minecraft:item.armor.equip_iron player @s ~ ~ ~ 1 1.2

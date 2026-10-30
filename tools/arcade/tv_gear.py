@@ -272,5 +272,7 @@ for k, (name, _, _) in enumerate(OUTPOSTS, 1):
     SU += [f'bossbar add mg:tvo{k} {js({"text": f"🛡 Outpost {name}", "color": "aqua"})}', f'bossbar set mg:tvo{k} color blue',
            f'bossbar set mg:tvo{k} style notched_10', f'bossbar set mg:tvo{k} max 100', f'bossbar set mg:tvo{k} players',
            f'scoreboard players set $tvo{k} mg.st 0']
-SU += ['scoreboard players set $tvcc mg.st 90', 'scoreboard players set $tvpk mg.st 3', 'scoreboard players set $tvsu mg.st 1']
+SU += ['# équipe des colons recréée (session_end la retire ; un joueur reconnecté n\'est pas repassé par enter)',
+       'team add mg_tv', 'team modify mg_tv friendlyFire false', 'team modify mg_tv color dark_green', 'team join mg_tv @a[tag=mg.tvw]',
+       'scoreboard players set $tvcc mg.st 90', 'scoreboard players set $tvpk mg.st 3', 'scoreboard players set $tvsu mg.st 1']
 w('terra/setup_in', SU)

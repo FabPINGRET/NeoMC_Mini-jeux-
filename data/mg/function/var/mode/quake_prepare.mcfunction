@@ -1,5 +1,5 @@
 # Quakecraft sur une autre carte ($ar) — appelé par quake/prepare. Généré.
-kill @e[distance=0..,type=minecraft:item]
+kill @e[distance=0..,type=minecraft:item,tag=!mg.keep]
 scoreboard players reset @a mg.qs
 tag @a remove mg.prot
 tag @a remove mg.qdd

@@ -30,7 +30,7 @@ execute if score $mt mg.st matches 9 run data modify storage mg:mw p set value "
 execute if score $mt mg.st matches 9 run scoreboard players set $pz mg.st 10300
 execute if score $mt mg.st matches 10 run data modify storage mg:mw p set value "ship"
 execute if score $mt mg.st matches 10 run scoreboard players set $pz mg.st 10700
-kill @e[distance=0..,type=minecraft:item]
+kill @e[distance=0..,type=minecraft:item,tag=!mg.keep]
 scoreboard players set $px mg.st 0
 scoreboard players set $py mg.st 82
 scoreboard players set $wv mg.st 0
@@ -50,3 +50,5 @@ scoreboard players reset @a mg.us
 
 # Construction de l'arène + placement des joueurs : 0,75 s plus tard (le temps que les chunks soient bien chargés)
 schedule function mg:mobarena/xbuild 15t
+# Coopération : une équipe sans tir ami (épées, flèches, potions, boules de feu entre coéquipiers)
+team join mg_green @a[tag=mg.play]

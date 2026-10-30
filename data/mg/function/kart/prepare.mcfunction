@@ -21,6 +21,7 @@ tellraw @a[tag=mg.play] [{"text":"\n🎥 ","color":"aqua"},{"text":"Avant le dé
 execute if score $ktr mg.st matches 2 unless data storage mg:kart built2 run tellraw @a [{"text":"⚠ Le Royaume Koopa est encore en construction : course sur le Circuit Champignon.","color":"gold"}]
 execute if score $ktr mg.st matches 2 unless data storage mg:kart built2 run scoreboard players set $ktr mg.st 1
 function mg:kart/const
+function mg:kart/perch
 function mg:kart/fl_add
 scoreboard players set #km1 mg.st -1
 scoreboard players set #k3 mg.st 3

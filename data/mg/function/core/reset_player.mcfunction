@@ -1,6 +1,10 @@
 # Remise à zéro d'un joueur → lobby (@s = joueur)
 function mg:pvpc/cleanup
 function mg:foot/cleanup
+# activités du spawn interrompues par la remise à zéro (reconnexion, fin de partie, retour d'un monde) : parkour, élytres du parcours et libres
+tag @s remove mg.pkr
+execute if entity @s[tag=mg.ely] run function mg:elytra/stop_quiet
+execute if entity @s[tag=mg.elyf] run function mg:elytra/free_stop
 tag @s remove mg.play
 tag @s remove mg.out
 tag @s remove mg.win

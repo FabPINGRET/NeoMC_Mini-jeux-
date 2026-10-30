@@ -1,5 +1,7 @@
 # @s entre dans le portail de Neo City
 execute unless data storage mg:gta built run return run function mg:gta/not_ready
+# ville en réparation après le départ du dernier joueur (wb_step, ~8 s) : on attend la fin plutôt que de se faire murer
+execute if score $gwb mg.st matches 1..153 run return run function mg:gta/repairing
 execute if entity @s[tag=mg.mpp] run return run tellraw @s {"text":"⚠ Tu participes à la Mini Party : Neo GTA sera accessible après.","color":"red"}
 function mg:lobkart/leave
 function mg:parkour/quit

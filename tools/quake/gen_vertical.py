@@ -159,7 +159,7 @@ first_q = next(l for l in open(os.path.join(F, 'core/request.mcfunction'), encod
 patch('core/request', first_q, [ann(10, 'SPIRALE', 'light_purple', 'petite arène sur 3 niveaux, tremplins'),
                                 ann(11, 'CHANTIER', 'yellow', 'immeuble en construction, échafaudage et grue')])
 for qm, build, g, t, z in [(10, 'quake/build_7', 20, 7200, 16100), (11, 'quake/build_8', 20, 7200, 16400)]:
-    patch('quake/prepare', 'kill @e[distance=0..,type=minecraft:item]', [
+    patch('quake/prepare', 'kill @e[distance=0..,type=minecraft:item,tag=!mg.keep]', [
         f'execute if score $qm mg.st matches {qm} run function mg:{build}',
         f'execute if score $qm mg.st matches {qm} run scoreboard players set $qg mg.st {g}',
         f'execute if score $qm mg.st matches {qm} run scoreboard players set $qt mg.st {t}',

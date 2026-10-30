@@ -2,6 +2,7 @@
 scoreboard players set @s mg.gmt 3
 scoreboard players set @s mg.gms 1
 scoreboard players set @s mg.gmtime 1500
+scoreboard players set @s mg.gmvk 0
 scoreboard players operation $gb mg.st = @s mg.bid
 execute as @e[type=minecraft:marker,tag=mg.gix,distance=40..80,sort=random,limit=1] at @s run summon minecraft:item_display ~ ~1.2 ~ {Tags:["mg.gta","mg.gmnew","mg.gmcp"],item:{id:"minecraft:yellow_stained_glass",count:1},billboard:"vertical",Glowing:1b,glow_color_override:16766720,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]}}
 title @s subtitle {"text":"Point de contrôle 1 / 5 : fonce !","color":"yellow"}
