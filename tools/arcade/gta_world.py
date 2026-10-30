@@ -35,52 +35,10 @@ w('gta/walls', ['# Bord de la carte et plafond des hélicos (barrières)',
                 f'fill {NA[0] - 1} {YT} {Z + NZ} {NA[2] + 1} {YT} {Z - HX - 2} minecraft:barrier'])
 
 # ---------------------------------------------------------------- portail du lobby (monde des mini-jeux)
-PB = ['# Portail de Neo GTA au lobby (avenue nord, côté est), reconstruit par mg:gta/lobby_tick s\'il disparaît',
-      'kill @e[tag=mg.gtap]',
-      f'fill {OLD_P[0] - 4} 64 {OLD_P[1] - 4} {OLD_P[0] + 4} 73 {OLD_P[1] + 4} minecraft:air',
-      f'fill {OLD_P[0] - 4} 63 {OLD_P[1] - 4} {OLD_P[0] + 4} 63 {OLD_P[1] + 4} minecraft:grass_block',
-      f'fill {PX - 4} 64 {PZ - 4} {PX + 4} 73 {PZ + 4} minecraft:air',
-      f'fill {PX - 4} 63 {PZ - 4} {PX + 4} 63 {PZ + 4} minecraft:polished_blackstone_bricks',
-      f'fill {PX - 3} 63 {PZ - 3} {PX + 3} 63 {PZ + 3} minecraft:black_concrete',
-      f'fill {PX - 4} 63 {PZ} {PX - 1} 63 {PZ} minecraft:yellow_concrete']
-for k in range(-4, 5, 2):                                     # bandes jaunes et noires (chantier) sur le pourtour
-    PB += [f'setblock {PX + k} 63 {PZ - 4} minecraft:yellow_concrete', f'setblock {PX + k} 63 {PZ + 4} minecraft:yellow_concrete',
-           f'setblock {PX - 4} 63 {PZ + k} minecraft:yellow_concrete', f'setblock {PX + 4} 63 {PZ + k} minecraft:yellow_concrete']
-PB += [f'fill {PX} 64 {PZ - 2} {PX} 69 {PZ - 2} minecraft:black_concrete', f'fill {PX} 64 {PZ + 2} {PX} 69 {PZ + 2} minecraft:black_concrete',
-       f'fill {PX} 70 {PZ - 2} {PX} 70 {PZ + 2} minecraft:black_concrete',
-       f'fill {PX} 64 {PZ - 3} {PX} 70 {PZ - 3} minecraft:yellow_concrete', f'fill {PX} 64 {PZ + 3} {PX} 70 {PZ + 3} minecraft:yellow_concrete',
-       f'fill {PX} 71 {PZ - 3} {PX} 71 {PZ + 3} minecraft:yellow_concrete',
-       f'setblock {PX} 72 {PZ - 3} minecraft:redstone_lamp[lit=true]', f'setblock {PX} 72 {PZ + 3} minecraft:redstone_lamp[lit=true]',
-       f'setblock {PX - 1} 71 {PZ - 3} minecraft:end_rod[facing=west]', f'setblock {PX - 1} 71 {PZ + 3} minecraft:end_rod[facing=west]',
-       f'setblock {PX} 63 {PZ} minecraft:chiseled_polished_blackstone',
-       # haie de l'avenue ouverte devant le portail, passage pavé jusqu'à l'avenue (x 4 à 8)
-       f'fill 4 64 {PZ - 1} {PX - 1} 66 {PZ + 1} minecraft:air', f'fill 4 63 {PZ - 1} {PX - 5} 63 {PZ + 1} minecraft:stone_bricks',
-       f'setblock {PX - 3} 64 {PZ - 4} minecraft:iron_bars', f'setblock {PX - 3} 65 {PZ - 4} minecraft:iron_bars', f'setblock {PX - 3} 66 {PZ - 4} minecraft:lantern',
-       f'setblock {PX - 3} 64 {PZ + 4} minecraft:iron_bars', f'setblock {PX - 3} 65 {PZ + 4} minecraft:iron_bars', f'setblock {PX - 3} 66 {PZ + 4} minecraft:lantern',
-       f'summon minecraft:text_display {PX - 0.6} 72.6 {PZ + 0.5} {{Tags:["mg.gtap"],Rotation:[90f,0f],text:{js({"text": "🚓 NEO GTA", "color": "gold", "bold": True})},'
-       f'background:-1442840576,{TR % (0, 0, 0, 2.6, 2.6, 2.6)}}}',
-       f'summon minecraft:text_display {PX - 0.6} 72.15 {PZ + 0.5} {{Tags:["mg.gtap"],Rotation:[90f,0f],text:{js({"text": "Monde GTA libre : armes, voitures, hélicos, police", "color": "gray"})},'
-       f'background:0,{TR % (0, 0, 0, 0.9, 0.9, 0.9)}}}',
-       f'summon minecraft:text_display {PX - 0.6} 64.4 {PZ + 0.5} {{Tags:["mg.gtap"],Rotation:[90f,0f],text:{js({"text": "▶ entre dans le portail", "color": "yellow"})},'
-       f'background:0,{TR % (0, 0, 0, 0.8, 0.8, 0.8)}}}']
-# petit taxi garé à côté du portail
-for (blk, tx, ty, tz, sx, sy, sz) in [('yellow_concrete', -0.95, 0.05, -1.7, 1.9, 0.75, 3.4), ('black_concrete', -0.8, 0.8, -0.9, 1.6, 0.65, 1.7),
-                                       ('yellow_concrete', -0.3, 1.45, -0.3, 0.6, 0.2, 0.6), ('black_concrete', -1.0, 0.0, -1.25, 0.25, 0.45, 0.6),
-                                       ('black_concrete', 0.75, 0.0, -1.25, 0.25, 0.45, 0.6), ('black_concrete', -1.0, 0.0, 0.85, 0.25, 0.45, 0.6),
-                                       ('black_concrete', 0.75, 0.0, 0.85, 0.25, 0.45, 0.6)]:
-    PB.append(f'summon minecraft:block_display {PX + 2.5} 64 {PZ + 0.5} {{Tags:["mg.gtap"],block_state:{{Name:"minecraft:{blk}"}},{TR % (tx, ty, tz, sx, sy, sz)}}}')
-PB.append('function mg:gta/spawn_clean')
+PB = ['# Portail de Neo GTA au lobby : construit par le hub (mg:hub/build, tools/lobby/gen_hub.py)', 'function mg:hub/build']
 w('gta/portal_build', PB)
 # restes de l'arbre écrasé par le portail + bordure de l'avenue nord dégagée devant le portail (on voit qu'on peut passer)
-w('gta/spawn_clean', ['# Abords du portail de Neo City au spawn : feuillage/troncs coupés autour du portail, bordure de l\'avenue (x 4) dégagée',
-                      f'fill {PX - 4} 64 {PZ - 8} {PX + 4} 76 {PZ + 8} minecraft:air replace #minecraft:leaves',
-                      f'fill {PX - 4} 64 {PZ - 8} {PX + 4} 76 {PZ + 8} minecraft:air replace #minecraft:logs',
-                      # haie, banc et lampadaire de la bordure est de l'avenue, de z {PZ - 7} à {PZ + 4} (avant la place)
-                      f'fill 4 64 {PZ - 7} 4 72 {PZ + 4} minecraft:air',
-                      # bordure pavée face au portail, raccord avec le passage existant
-                      f'fill 4 63 {PZ - 4} 4 63 {PZ + 4} minecraft:stone_bricks',
-                      f'fill 4 63 {PZ - 1} {PX - 5} 63 {PZ + 1} minecraft:stone_bricks',
-                      'data modify storage mg:lobby gtaclean set value 1b'])
+w('gta/spawn_clean', ['# Abords du portail : plus de découpe au spawn, le portail est au hub (tools/lobby/gen_hub.py)', 'data modify storage mg:lobby gtaclean set value 1b'])
 w('gta/lobby_tick', ['# Chaque tick (core/tick, monde des mini-jeux) : portail de Neo City, session du monde GTA',
                      f'execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.out,tag=!mg.surv,tag=!mg.inplot,tag=!mg.visit,tag=!mg.lk,tag=!mg.pkr,tag=!mg.ely,tag=!mg.elyf,gamemode=adventure,x={PX},y=64,z={PZ - 1},dx=0,dy=2,dz=2] run function mg:gta/enter',
                      f'particle minecraft:dust{{color:[1.0,0.82,0.1],scale:1.1}} {PX + 0.5} 66.5 {PZ + 0.5} 0.05 1.3 1.1 0 3',

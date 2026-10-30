@@ -1068,6 +1068,9 @@ data remove storage mg:lobby deco3
 data remove storage mg:lobby deco2
 kill @e[tag=mg.foodd]
 schedule clear mg:elytra/build
+kill @e[tag=mg.hubp]
+data remove storage mg:hub oldclean
+data remove storage mg:hub floaty
 kill @e[tag=mg.elyd]
 clear @a minecraft:elytra[minecraft:custom_data~{mg_ely:1b}]
 clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_ely:1b}]

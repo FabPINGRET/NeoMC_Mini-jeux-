@@ -84,43 +84,9 @@ PACHY = [('brown_terracotta', -0.38, 0.65, -0.65, 0.76, 0.6, 1.25), ('brown_terr
          ('brown_terracotta', -0.13, 0.85, -1.55, 0.26, 0.26, 0.95), ('brown_terracotta', -0.3, 0.0, -0.1, 0.16, 0.7, 0.22),
          ('brown_terracotta', 0.14, 0.0, -0.1, 0.16, 0.7, 0.22)]
 
-PB = ['# Portail de Terra Nova au lobby (avenue nord, côté ouest, en face de Neo GTA), reconstruit par mg:terra/lobby_tick s\'il disparaît',
-      'kill @e[tag=mg.tvport]',
-      f'fill {PX - 4} 64 {PZ - 4} {PX + 4} 73 {PZ + 4} minecraft:air',
-      f'fill {PX - 4} 63 {PZ - 4} {PX + 4} 63 {PZ + 4} minecraft:mossy_stone_bricks',
-      f'fill {PX - 3} 63 {PZ - 3} {PX + 3} 63 {PZ + 3} minecraft:moss_block',
-      f'fill {PX + 1} 63 {PZ} {PX + 4} 63 {PZ} minecraft:coarse_dirt',
-      f'fill {PX} 64 {PZ - 2} {PX} 69 {PZ - 2} minecraft:jungle_log', f'fill {PX} 64 {PZ + 2} {PX} 69 {PZ + 2} minecraft:jungle_log',
-      f'fill {PX} 70 {PZ - 2} {PX} 70 {PZ + 2} minecraft:stripped_jungle_log[axis=z]',
-      f'fill {PX} 64 {PZ - 3} {PX} 70 {PZ - 3} minecraft:mossy_cobblestone', f'fill {PX} 64 {PZ + 3} {PX} 70 {PZ + 3} minecraft:mossy_cobblestone',
-      f'fill {PX} 71 {PZ - 3} {PX} 71 {PZ + 3} minecraft:moss_block',
-      f'fill {PX - 1} 72 {PZ - 3} {PX + 1} 72 {PZ + 3} minecraft:jungle_leaves[persistent=true]',
-      f'setblock {PX} 73 {PZ} minecraft:jungle_leaves[persistent=true]',
-      f'setblock {PX} 63 {PZ} minecraft:chiseled_tuff_bricks',
-      # haie de l'avenue ouverte devant le portail, passage jusqu'à l'avenue (x -8 à -4)
-      f'fill -4 64 {PZ - 1} {PX + 1} 66 {PZ + 1} minecraft:air', f'fill -4 63 {PZ - 1} {PX + 5} 63 {PZ + 1} minecraft:stone_bricks',
-      f'setblock {PX + 3} 64 {PZ - 4} minecraft:bamboo_fence', f'setblock {PX + 3} 65 {PZ - 4} minecraft:bamboo_fence', f'setblock {PX + 3} 66 {PZ - 4} minecraft:lantern',
-      f'setblock {PX + 3} 64 {PZ + 4} minecraft:bamboo_fence', f'setblock {PX + 3} 65 {PZ + 4} minecraft:bamboo_fence', f'setblock {PX + 3} 66 {PZ + 4} minecraft:lantern',
-      f'setblock {PX - 2} 64 {PZ - 3} minecraft:large_fern[half=lower]', f'setblock {PX - 2} 65 {PZ - 3} minecraft:large_fern[half=upper]',
-      f'setblock {PX - 2} 64 {PZ + 3} minecraft:large_fern[half=lower]', f'setblock {PX - 2} 65 {PZ + 3} minecraft:large_fern[half=upper]']
-for y in range(65, 71):
-    PB += [f'setblock {PX + 1} {y} {PZ - 3} minecraft:vine[west=true]', f'setblock {PX + 1} {y} {PZ + 3} minecraft:vine[west=true]']
-PB += [f'summon minecraft:text_display {PX + 0.6} 72.6 {PZ + 0.5} {{Tags:["mg.tvport"],Rotation:[-90f,0f],text:{js({"text": "🦖 TERRA NOVA", "color": "green", "bold": True})},'
-       f'background:-1442840576,{TR % (0, 0, 0, 2.6, 2.6, 2.6)}}}',
-       f'summon minecraft:text_display {PX + 0.6} 72.15 {PZ + 0.5} {{Tags:["mg.tvport"],Rotation:[-90f,0f],text:{js({"text": "Colonie préhistorique : missions, jungle, dinosaures", "color": "gray"})},'
-       f'background:0,{TR % (0, 0, 0, 0.9, 0.9, 0.9)}}}',
-       f'summon minecraft:text_display {PX + 0.6} 64.4 {PZ + 0.5} {{Tags:["mg.tvport"],Rotation:[-90f,0f],text:{js({"text": "▶ entre dans le portail", "color": "yellow"})},'
-       f'background:0,{TR % (0, 0, 0, 0.8, 0.8, 0.8)}}}']
-PB += [part('"mg.tvport"', *p, at=f'{PX - 2.3} 64 {PZ + 0.5}', extra=',Rotation:[-60f,0f]') for p in RAPTOR]
-PB.append('function mg:terra/spawn_clean')
+PB = ['# Portail de Terra Nova au lobby : construit par le hub (mg:hub/build, tools/lobby/gen_hub.py)', 'function mg:hub/build']
 w('terra/portal_build', PB)
-w('terra/spawn_clean', ['# Abords du portail de Terra Nova au spawn : arbre sous le portail coupé, bordure ouest de l\'avenue (x -4) dégagée',
-                        f'fill {PX - 7} 64 {PZ - 4} {PX + 4} 78 {PZ + 4} minecraft:air replace #minecraft:leaves',
-                        f'fill {PX - 7} 64 {PZ - 4} {PX + 4} 78 {PZ + 4} minecraft:air replace #minecraft:logs',
-                        f'fill -4 64 {PZ - 7} -4 72 {PZ + 4} minecraft:air',
-                        f'fill -4 63 {PZ - 4} -4 63 {PZ + 4} minecraft:stone_bricks',
-                        f'fill -4 63 {PZ - 1} {PX + 5} 63 {PZ + 1} minecraft:stone_bricks',
-                        'data modify storage mg:lobby tvclean set value 1b'])
+w('terra/spawn_clean', ['# Abords du portail : plus de découpe au spawn, le portail est au hub (tools/lobby/gen_hub.py)', 'data modify storage mg:lobby tvclean set value 1b'])
 ENTER_SEL = (f'tag=!mg.play,tag=!mg.out,tag=!mg.surv,tag=!mg.inplot,tag=!mg.visit,tag=!mg.lk,tag=!mg.pkr,tag=!mg.ely,tag=!mg.elyf,'
              f'gamemode=adventure,x={PX},y=64,z={PZ - 1},dx=0,dy=2,dz=2')
 w('terra/lobby_tick', ['# Chaque tick (core/tick, monde des mini-jeux) : portail de Terra Nova, session du monde',
