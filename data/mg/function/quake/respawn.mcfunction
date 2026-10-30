@@ -6,6 +6,6 @@ function mg:quake/spread_one
 function mg:quake/kit
 function mg:quake/fx
 tag @s add mg.prot
-scoreboard players set @s mg.qp 60
+scoreboard players set @s mg.qp 40
 tag @s remove mg.qdd
 gamemode adventure @s
