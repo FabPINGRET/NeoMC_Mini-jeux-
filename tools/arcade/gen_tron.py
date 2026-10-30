@@ -100,9 +100,10 @@ w('tron/step', [
     'execute as @e[tag=mg.trm] if score @s mg.trc = $tid mg.st run tag @s add mg.tcm',
     'execute as @e[tag=mg.trp] if score @s mg.trc = $tid mg.st run tag @s add mg.tpm',
     'scoreboard players set $tdead mg.st 0',
-    'execute if score $trt mg.st matches 20.. as @e[tag=mg.tcar,limit=1] at @s run function mg:tron/probe',
-    'scoreboard players add @s mg.trs 1',
     'execute as @e[tag=mg.tcar] at @s if block ~ ~-0.25 ~ #minecraft:air run tag @s add mg.tair',
+    # pas de collision en l'air (saut de la moto) ni pendant le saut armé (3 s) : on passe au-dessus du mur
+    'execute if score $trt mg.st matches 20.. unless entity @e[tag=mg.tair] unless score @s mg.trj matches 341.. as @e[tag=mg.tcar,limit=1] at @s run function mg:tron/probe',
+    'scoreboard players add @s mg.trs 1',
     'execute unless entity @e[tag=mg.tair] as @e[tag=mg.tcm,limit=1] at @s align xyz unless entity @e[tag=mg.tcar,dx=0,dy=0,dz=0] run function mg:tron/lay',
     'execute if entity @e[tag=mg.tair] as @e[tag=mg.tcm,limit=1] at @e[tag=mg.tcar,limit=1] run tp @s ~ 81 ~',
     'execute if entity @e[tag=mg.tair] run scoreboard players set @s mg.trs 0',
@@ -113,7 +114,7 @@ w('tron/step', [
     'execute if score @s mg.trs matches 25 run title @s actionbar {"text":"⚠ Avance ! (immobile = éliminé)","color":"red"}'])
 probe = ['# @s = porteur : touche-t-il un mur ? (4 sondes à mi-hauteur, hors bloc courant et dernier mur posé)',
          'execute if score $trm mg.st matches 0 run scoreboard players set $trr mg.st 0']
-for r, cond in [('0.36', 0), ('0.78', 1)]:
+for r, cond in [('0.31', 0), ('0.72', 1)]:     # à peine plus que la demi-largeur (joueur 0,3, cheval 0,7) : contact réel seulement
     for dx, dz in [(r, '0'), ('-' + r, '0'), ('0', r), ('0', '-' + r)]:
         probe.append(f'execute if score $trm mg.st matches {cond} positioned ~{dx if dx != "0" else ""} ~0.5 ~{dz if dz != "0" else ""} align xyz '
                      f'unless entity @e[tag=mg.tpm,dx=0,dy=0,dz=0] unless entity @e[tag=mg.tcm,dx=0,dy=0,dz=0] '
