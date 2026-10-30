@@ -17,7 +17,8 @@ def build(known):
             known(OPEN(17), '❍ Splegg ▸', 'yellow'), known(OPEN(18), '✊ Sumo ▸', 'gold'),
             known('trigger mg.go set 28', '▦ Block Party', 'light_purple'),
             act('▦ Block Party — bandes', 'light_purple', 'trigger mg.go set 91', 'Le sol est fait de bandes de couleur'),
-            act('▦ Block Party — mixte', 'light_purple', 'trigger mg.go set 92', 'Carrés ou bandes, ça change à chaque manche'), known(OPEN(20), '⚓ Pluie d\'Enclumes ▸', 'dark_gray')], 'menu'),
+            act('▦ Block Party — mixte', 'light_purple', 'trigger mg.go set 92', 'Carrés ou bandes, ça change à chaque manche'), 
+            act('▦ Block Party — sans PvP', 'light_purple', 'trigger mg.go set 251', 'Mixte, sans coups ni bousculade entre joueurs'), known(OPEN(20), '⚓ Pluie d\'Enclumes ▸', 'dark_gray')], 'menu'),
         'equipes': ('⚑ Équipes', 'light_purple', 'Jeux en équipes.', [
             act('⚑ Bedwars ▸', 'light_purple', OPEN(30), 'Protège ton lit, détruis les autres'),
             act('☁ Sheep War ▸', 'white', OPEN(8), 'Moutons explosifs, 8 cartes'),
