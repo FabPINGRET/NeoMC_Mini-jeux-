@@ -7,9 +7,6 @@ scoreboard players set #kmc mg.st 24
 scoreboard players set #kmw mg.st 501
 scoreboard players set #kmr mg.st 15
 scoreboard players set #kmh mg.st 371
-scoreboard players set $px mg.st 0
-scoreboard players set $py mg.st 114
-scoreboard players set $pz mg.st 19000
 scoreboard players set #h66 mg.st 66
 scoreboard players set #h70 mg.st 70
 scoreboard players set #h90 mg.st 90

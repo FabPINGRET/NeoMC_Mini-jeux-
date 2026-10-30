@@ -19,7 +19,6 @@ def fn(name, txt): wr(os.path.join(K, name + '.mcfunction'), txt)
 
 KK = '@e[type=minecraft:block_display,tag=mg.kk,limit=1]'
 KART = '@e[type=minecraft:block_display,tag=mg.kart'
-
 # ------------------------------------------------------------------ prédicats (touches) et tags de blocs
 for key, inp in (('f', 'forward'), ('b', 'backward'), ('l', 'left'), ('r', 'right'), ('j', 'jump'), ('s', 'sprint')):
     wr(os.path.join(DATA, f'mg/predicate/kart_{key}.json'), json.dumps(
@@ -71,6 +70,7 @@ execute as @a[tag=mg.play] run function mg:kart/show_models
 execute if score $ktr mg.st matches 2 unless data storage mg:kart built2 run tellraw @a [{"text":"⚠ Le Royaume Koopa est encore en construction : course sur le Circuit Champignon.","color":"gold"}]
 execute if score $ktr mg.st matches 2 unless data storage mg:kart built2 run scoreboard players set $ktr mg.st 1
 function mg:kart/const
+function mg:kart/perch
 function mg:kart/fl_add
 scoreboard players set #km1 mg.st -1
 scoreboard players set #k3 mg.st 3
@@ -717,7 +717,7 @@ function mg:kart/end_line
 ''')
 # ------------------------------------------------------------------ aiguillage vers le circuit ($ktr : 1 = Champignon, 2 = Royaume Koopa)
 for name in ('cp_check', 'cp_tp', 'bill_step', 'grid_tp', 'gate_on', 'gate_off', 'boxes', 'fl_add', 'fl_remove',
-             'const', 'hazards', 'track_tick'):
+             'const', 'perch', 'hazards', 'track_tick'):
     # kart libre du spawn ($klob = 1) : table t4 (ex-patch de l'ancien wire_lobkart.py, supprimé)
     klob = f'execute if score $klob mg.st matches 1 run return run function mg:kart/t4/{name}\n' if name in ('cp_check', 'cp_tp', 'bill_step') else ''
     fn(name, f"""# Aiguillage : table du circuit en cours (générée dans t1/, t2/ ou t3/ pour l'arène de bataille)

@@ -73,6 +73,17 @@ scoreboard objectives add mg.rp dummy [{"text":"⛵ COURSE — progression %","c
 scoreboard objectives add mg.vote trigger
 scoreboard objectives add mg.bb trigger
 scoreboard objectives add mg.bw trigger
+scoreboard objectives add mg.grob dummy
+scoreboard objectives add mg.gsid dummy
+scoreboard objectives add mg.gveh dummy
+scoreboard objectives add mg.gkpc dummy
+scoreboard objectives add mg.gmis trigger
+scoreboard objectives add mg.gmt dummy
+scoreboard objectives add mg.gms dummy
+scoreboard objectives add mg.gmtime dummy
+scoreboard objectives add mg.gmsec dummy
+scoreboard objectives add mg.gnit dummy
+scoreboard objectives add mg.gmvk dummy
 # Filon : constantes, cours, équipe, barre ; pas de zone chargée hors session ; île construite une fois (~1 s)
 function mg:filon/consts
 scoreboard players set $fnw mg.st 0

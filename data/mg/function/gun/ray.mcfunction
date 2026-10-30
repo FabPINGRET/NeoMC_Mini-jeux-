@@ -1,6 +1,6 @@
-# Un pas de rayon (0,4 bloc)
+# Un pas de rayon (0,4 bloc) ; le tireur (mg.gsh) n'est jamais sa propre cible (tir vers le bas)
 execute unless block ~ ~ ~ #mg:ray_pass run return run function mg:gun/impact
-execute positioned ~-0.99 ~-0.99 ~-0.99 as @e[tag=mg.gtg,tag=!mg.ghd,dx=0,dy=0,dz=0] positioned ~0.99 ~0.99 ~0.99 if entity @s[dx=0,dy=0,dz=0] run tag @s add mg.ghit
+execute positioned ~-0.99 ~-0.99 ~-0.99 as @e[tag=mg.gtg,tag=!mg.ghd,tag=!mg.gsh,dx=0,dy=0,dz=0] positioned ~0.99 ~0.99 ~0.99 if entity @s[dx=0,dy=0,dz=0] run tag @s add mg.ghit
 execute if entity @e[tag=mg.ghit] run function mg:gun/hit_here
 execute if score $gstop mg.st matches 1 run return 0
 execute if score $gdn mg.st matches 6 run particle minecraft:dust{color:[0.3,1.0,0.4],scale:1.2} ~ ~ ~ 0 0 0 0 1

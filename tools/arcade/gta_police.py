@@ -8,8 +8,13 @@ def money(n, why, col='green'):
             'execute at @s run playsound minecraft:block.note_block.bit player @s ~ ~ ~ 0.7 1.6', 'scoreboard players set @s mg.gal 40']
 
 
-w('gta/kill_player', ['# @s a tué un joueur'] + money(100, 'joueur éliminé') + ['scoreboard players remove @s mg.gkp 1',
+# prime de 100 $ au plus une fois par minute (mg.gkpc) : deux amis qui s'entretuent ne fabriquent plus d'argent (la victime perd 25 %, voir wasted)
+w('gta/kill_player', ['# @s a tué un joueur', 'execute if score @s mg.gkpc matches 1.. run return run function mg:gta/kill_player_cd'] + money(100, 'joueur éliminé') +
+                     ['scoreboard players set @s mg.gkpc 60', 'scoreboard players remove @s mg.gkp 1',
                       'execute if score @s mg.gkp matches 1.. run function mg:gta/kill_player'])
+w('gta/kill_player_cd', ['# Prime déjà touchée il y a moins d\'une minute : rien de plus', 'scoreboard players remove @s mg.gkp 1',
+                        'title @s actionbar {"text":"Joueur éliminé — prime déjà touchée il y a moins d\'une minute","color":"gray"}',
+                        'execute if score @s mg.gkp matches 1.. run function mg:gta/kill_player_cd'])
 w('gta/kill_ped', ['# @s a tué un passant : +5 $, une étoile de plus'] + money(5, 'passant', 'yellow') +
   ['scoreboard players remove @s mg.gkv 1', 'function mg:gta/wanted_up', 'execute if score @s mg.gkv matches 1.. run function mg:gta/kill_ped'])
 w('gta/kill_cop', ['# @s a tué un policier : +25 $, une étoile de plus'] + money(25, 'policier abattu', 'aqua') +

@@ -2,6 +2,7 @@
 scoreboard players set @s mg.gmt 2
 scoreboard players set @s mg.gms 1
 scoreboard players set @s mg.gmtime 2400
+scoreboard players set @s mg.gmvk 0
 scoreboard players operation $gb mg.st = @s mg.bid
 execute as @e[type=minecraft:marker,tag=mg.gsw,distance=50..110,sort=random,limit=1] at @s run function mg:gta/mis2_vip
 title @s subtitle {"text":"Élimine la cible marquée","color":"yellow"}

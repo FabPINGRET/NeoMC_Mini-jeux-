@@ -2,6 +2,15 @@
 scoreboard players operation $tk mg.st = @s mg.oltk
 scoreboard players reset @s mg.oltk
 scoreboard players enable @s mg.oltk
+# choix liés à un PNJ (quêtes, secondaires, classes, boutiques, contrats) : seulement après lui avoir parlé et en restant près de lui (/trigger à distance refusé)
+scoreboard players set $tkn mg.st 0
+execute if score $tk mg.st matches 400..499 run scoreboard players set $tkn mg.st 1
+execute if score $tk mg.st matches 500 run scoreboard players set $tkn mg.st 1
+execute if score $tk mg.st matches 600..699 run scoreboard players set $tkn mg.st 1
+execute if score $tk mg.st matches 801..802 run scoreboard players set $tkn mg.st 1
+execute if score $tk mg.st matches 850 run scoreboard players set $tkn mg.st 1
+execute if score $tk mg.st matches 1000.. run scoreboard players set $tkn mg.st 1
+execute if score $tkn mg.st matches 1 unless entity @s[tag=mg.oltalk] run return run tellraw @s {"text":"Approche-toi du personnage et parle-lui d'abord.","color":"gray"}
 execute if score $tk mg.st matches 9 run function mg:ombre/q/say
 execute if score $tk mg.st matches 9 run function mg:ombre/qloc
 execute if score $tk mg.st matches 500 run function mg:ombre/cl/menu

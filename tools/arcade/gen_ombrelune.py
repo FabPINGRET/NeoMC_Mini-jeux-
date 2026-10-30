@@ -227,7 +227,7 @@ w('join', ['# @s : scores à la première visite (gardés ensuite), réglages de
   [f'scoreboard players set @s mg.olc{i} 0' for i in range(0, 5)] +
   ['team add mg_ol', 'team modify mg_ol friendlyFire false', 'team modify mg_ol color light_purple', 'team join mg_ol @s', f'function mg:{P}/stats'])
 w('untag', ['# @s : plus joueur d\'Ombrelune', f'function mg:{P}/cs/stop', 'title @s clear', 'title @s reset', 'team leave @s', f'function mg:{P}/stats_rm',
-            'xp set @s 0 levels', 'xp set @s 0 points', f'function mg:{P}/horse_gone', 'tag @s remove mg.olintro', 'tag @s remove mg.olboss_in'])
+            'xp set @s 0 levels', 'xp set @s 0 points', f'function mg:{P}/horse_gone', 'tag @s remove mg.olintro', 'tag @s remove mg.olboss_in', 'tag @s remove mg.oltalk'])
 w('leave', ['# @s retourne au lobby (contexte : monde des mini-jeux)', 'execute unless entity @s[tag=mg.olw] run return 0',
             'tag @s remove mg.olw', 'tag @s remove mg.surv', f'function mg:{P}/untag', 'function mg:core/reset_player',
             'attribute @s minecraft:fall_damage_multiplier base set 0',
@@ -382,6 +382,8 @@ w('tick', ['# 🌙 Ombrelune : chaque tick tant qu\'un joueur y est (contexte : 
 w('second', ['# Chaque seconde (dimension) : régions, lieux, quêtes, monstres, classes, boss, donjons',
              'execute unless score $olsu mg.st matches 1.. run return 0',
              'effect give @a[tag=mg.olw] minecraft:saturation infinite 0 true', 'scoreboard players enable @a[tag=mg.olw] mg.oltk',
+             '# plus près d\'aucun PNJ : ses fenêtres de PNJ ne valent plus (mg.oltalk, posé par npc/any)',
+             'execute as @a[tag=mg.olw,tag=mg.oltalk] at @s unless entity @e[tag=mg.olnpcv,distance=..8] run tag @s remove mg.oltalk',
              f'execute as @a[tag=mg.olw,tag=!mg.olcine] at @s run function mg:{P}/region',
              f'execute as @a[tag=mg.olw,tag=!mg.olcine] at @s run function mg:{P}/q/gotick',
              f'function mg:{P}/ws_tick', f'function mg:{P}/door/catchup',    # une porte lointaine se rouvre quand ses chunks se chargent

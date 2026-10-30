@@ -2,6 +2,8 @@
 execute unless score $olsu mg.st matches 1.. run return 0
 effect give @a[tag=mg.olw] minecraft:saturation infinite 0 true
 scoreboard players enable @a[tag=mg.olw] mg.oltk
+# plus près d'aucun PNJ : ses fenêtres de PNJ ne valent plus (mg.oltalk, posé par npc/any)
+execute as @a[tag=mg.olw,tag=mg.oltalk] at @s unless entity @e[tag=mg.olnpcv,distance=..8] run tag @s remove mg.oltalk
 execute as @a[tag=mg.olw,tag=!mg.olcine] at @s run function mg:ombre/region
 execute as @a[tag=mg.olw,tag=!mg.olcine] at @s run function mg:ombre/q/gotick
 function mg:ombre/ws_tick

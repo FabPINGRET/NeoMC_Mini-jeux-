@@ -105,7 +105,7 @@ def write_common():
                             '# anciens mondes : le titre portait mg.thm (tag que Tron utilise aussi : jamais de kill générique dessus)',
                             f'kill @e[type=minecraft:text_display,tag=mg.lby,tag=mg.thm,{LOBBY_BOX}]'])
     w('lobby/theme/allay_drop', ['# Allay du thème qui tient un objet (@s, position = allay) : l\'objet retombe au sol',
-                                 'summon minecraft:item ~ ~ ~ {Tags:["mg.thdrop"],Item:{id:"minecraft:stone",count:1},PickupDelay:10s}',
+                                 'summon minecraft:item ~ ~ ~ {Tags:["mg.thdrop","mg.keep"],Item:{id:"minecraft:stone",count:1},PickupDelay:10s}',
                                  'data modify entity @e[type=minecraft:item,tag=mg.thdrop,limit=1] Item set from entity @s equipment.mainhand',
                                  'tag @e[tag=mg.thdrop] remove mg.thdrop',
                                  'item replace entity @s weapon.mainhand with minecraft:air'])

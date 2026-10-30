@@ -78,9 +78,9 @@ def build():
                   'execute if score @s mg.gcd matches 1.. run return 0',
                   'execute if score @s mg.grl matches 1.. run return run playsound minecraft:block.dispenser.fail player @s ~ ~ ~ 0.4 1.8'] +
       [f'execute if items entity @s weapon.mainhand *[custom_data~{{gun:{n}}}] run return run function mg:gun/fire_{n}' for n in GUNS])
-    w('gun/ray', ['# Un pas de rayon (0,4 bloc)',
+    w('gun/ray', ['# Un pas de rayon (0,4 bloc) ; le tireur (mg.gsh) n\'est jamais sa propre cible (tir vers le bas)',
                   'execute unless block ~ ~ ~ #mg:ray_pass run return run function mg:gun/impact',
-                  'execute positioned ~-0.99 ~-0.99 ~-0.99 as @e[tag=mg.gtg,tag=!mg.ghd,dx=0,dy=0,dz=0] positioned ~0.99 ~0.99 ~0.99 if entity @s[dx=0,dy=0,dz=0] run tag @s add mg.ghit',
+                  'execute positioned ~-0.99 ~-0.99 ~-0.99 as @e[tag=mg.gtg,tag=!mg.ghd,tag=!mg.gsh,dx=0,dy=0,dz=0] positioned ~0.99 ~0.99 ~0.99 if entity @s[dx=0,dy=0,dz=0] run tag @s add mg.ghit',
                   'execute if entity @e[tag=mg.ghit] run function mg:gun/hit_here',
                   'execute if score $gstop mg.st matches 1 run return 0',
                   'execute if score $gdn mg.st matches 6 run particle minecraft:dust{color:[0.3,1.0,0.4],scale:1.2} ~ ~ ~ 0 0 0 0 1',
@@ -97,7 +97,7 @@ def build():
     w('gun/splash', ['# Ray Gun : explosion (2,5 blocs)', 'scoreboard players set $gstop mg.st 1',
                      'particle minecraft:dust{color:[0.3,1.0,0.4],scale:2.5} ~ ~ ~ 0.6 0.6 0.6 0 30',
                      'playsound minecraft:entity.generic.explode player @a ~ ~ ~ 0.5 1.8',
-                     'execute as @e[tag=mg.gtg,tag=!mg.ghd,distance=..2.5] run function mg:gun/hit'])
+                     'execute as @e[tag=mg.gtg,tag=!mg.ghd,tag=!mg.gsh,distance=..2.5] run function mg:gun/hit'])
     w('gun/hit', ['# @s = cible touchée (le tireur porte mg.gsh)', 'tag @s add mg.ghd'] +
       [f'execute if score $gdn mg.st matches {n} run scoreboard players set $gdm mg.st {g[2] * 10}' for n, g in GUNS.items()] +
       ['# Modes zombies (Zombies, Infection) : dégâts doublés ; Neo GTA (tireur mg.gtw) : dégâts normaux',

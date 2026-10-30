@@ -135,9 +135,10 @@ for f in os.listdir(OUT):
 MMC, MMR = 24, 15
 write('const', ['# Constantes du Royaume Koopa (générées)', f'scoreboard players set $kK mg.st {K}', 'scoreboard players set $kLaps mg.st 3',
                 f'scoreboard players set #kmx0 mg.st {HX}', f'scoreboard players set #kmz0 mg.st {ZC - HZ}', f'scoreboard players set #kmc mg.st {MMC}',
-                f'scoreboard players set #kmw mg.st {2 * HX + 1}', f'scoreboard players set #kmr mg.st {MMR}', f'scoreboard players set #kmh mg.st {2 * HZ + 1}',
-                'scoreboard players set $px mg.st 0', f'scoreboard players set $py mg.st {ROAD + 50}', f'scoreboard players set $pz mg.st {ZC}'] +
+                f'scoreboard players set #kmw mg.st {2 * HX + 1}', f'scoreboard players set #kmr mg.st {MMR}', f'scoreboard players set #kmh mg.st {2 * HZ + 1}'] +
       [f'scoreboard players set #h{T} mg.st {T}' for T in sorted(consts)])
+write('perch', ['# Perchoir des spectateurs du Royaume Koopa (kart/perch, appelé par kart/prepare)',
+                'scoreboard players set $px mg.st 0', f'scoreboard players set $py mg.st {ROAD + 50}', f'scoreboard players set $pz mg.st {ZC}'])
 print('points de passage', K, '| terrain', len(terrain), '| décor', len(allb), '| étapes', len(parts), '| dangers', HID[0], '| lignes tick', len(tick), '| entités', len(spawn))
 
 # ------------------------------------------------------------------ aperçu PNG

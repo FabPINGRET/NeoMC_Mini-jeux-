@@ -7,3 +7,5 @@ execute if score $q mg.st matches 5 if score $lbt mg.st matches 60.. run functio
 execute store result bossbar mg:lab value run scoreboard players get $lbt mg.st
 execute if score $state mg.st matches 2 as @a[tag=mg.lbw,tag=mg.play] at @s if block ~ ~-0.5 ~ minecraft:gold_block run return run function mg:lab/win
 execute if score $state mg.st matches 2 if score $lbt mg.st matches 4800.. run function mg:lab/timeout
+# plus aucun marcheur en ligne (déconnexions) : fin tout de suite plutôt qu'au chrono
+execute if score $state mg.st matches 2 if score $lbt mg.st matches 20.. unless entity @a[tag=mg.lbw,tag=mg.play] run function mg:lab/timeout

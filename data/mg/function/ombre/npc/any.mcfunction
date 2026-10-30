@@ -1,4 +1,5 @@
-# @s parle au PNJ n° $npc
+# @s parle au PNJ n° $npc (mg.oltalk : les choix des fenêtres de PNJ ne valent que près d'un PNJ, cf. tk et second)
+tag @s add mg.oltalk
 execute if score $npc mg.st matches 1 run return run function mg:ombre/npc/liora
 execute if score $npc mg.st matches 2 run return run function mg:ombre/npc/liora_t
 execute if score $npc mg.st matches 3 run return run function mg:ombre/npc/orren

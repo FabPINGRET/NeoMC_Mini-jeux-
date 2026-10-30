@@ -122,7 +122,7 @@ for c, d in C.items():
         f'give @s minecraft:firework_rocket[minecraft:custom_data={{mg_ely:1b}},minecraft:fireworks={{flight_duration:1}},minecraft:custom_name={{"text":"Fusée du parcours","color":"gold","italic":false}}] {d["rockets"]}',
         'effect give @s minecraft:resistance 600 4 true', 'function mg:core/heal',
         f'tp @s {d["plat"][0]} {d["plat"][1]} {d["plat"][2]} facing {p0[0]+.5} {p0[1]} {p0[2]+.5}',
-        'playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 0.8 1.2',
+        'execute at @s run playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 0.8 1.2',
         f'tellraw @s [{{"text":"🪽 {d["name"]} : ","color":"aqua","bold":true}},{{"text":"saute, plane à travers les {N} anneaux dans l\'ordre (une traînée lumineuse indique le suivant). Le chrono part à l\'ouverture des élytres. {d["rockets"]} fusées.","color":"gray"}}]'])
 W('go', ['# Premières secondes de vol plané : le chrono démarre',
     'scoreboard players set @s mg.est 1', 'scoreboard players set @s mg.et 0',
@@ -220,7 +220,7 @@ W('free_pad', ['# Socle « élytres libres » (@s, une fois par passage) : prend
     f'give @s {ROCF} 3',
     'effect give @s minecraft:resistance 600 4 true',
     'effect give @s minecraft:levitation 2 14 true',
-    'playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 0.8 1.4',
+    'execute at @s run playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 0.8 1.4',
     'title @s actionbar [{"text":"🪽 Ouvre tes élytres en l\'air (Espace) — fusées illimitées. Remonte sur le socle pour les rendre.","color":"white"}]'])
 W('free_tick', ['# Élytres libres, chaque tick (@s) : retirées en partie, en survie, sur un plot, en visite, en parkour',
     'execute if entity @s[tag=mg.play] run return run function mg:elytra/free_stop',
@@ -237,7 +237,7 @@ W('free_refill', ['# Fusées illimitées : jamais moins de 3 (toutes les 2 s), p
     'effect give @s minecraft:resistance 600 4 true'])
 W('free_off', ['# Élytres rendues sur le socle (@s)',
     'function mg:elytra/free_stop',
-    'playsound minecraft:entity.item.pickup master @s ~ ~ ~ 0.8 0.8',
+    'execute at @s run playsound minecraft:entity.item.pickup master @s ~ ~ ~ 0.8 0.8',
     'title @s actionbar [{"text":"Élytres rendues.","color":"gray"}]'])
 W('free_stop', ['# Fin du vol libre (@s) : élytres et fusées retirées, courte protection à l\'atterrissage',
     'tag @s remove mg.elyf',

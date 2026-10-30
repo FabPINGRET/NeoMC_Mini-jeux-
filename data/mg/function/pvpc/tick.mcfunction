@@ -1,9 +1,9 @@
 # ⚔ Arène PvP souterraine — tick (seulement si quelqu'un est dessous ou y est inscrit)
-execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.pvpc,x=8,y=55,z=7,dx=2.99,dy=1.5,dz=2.99] run function mg:pvpc/class_1
-execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.pvpc,x=16,y=55,z=7,dx=2.99,dy=1.5,dz=2.99] run function mg:pvpc/class_2
-execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.pvpc,x=8,y=55,z=15,dx=2.99,dy=1.5,dz=2.99] run function mg:pvpc/class_3
-execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.pvpc,x=16,y=55,z=15,dx=2.99,dy=1.5,dz=2.99] run function mg:pvpc/class_4
-execute as @a[tag=!mg.play,tag=!mg.out,x=12,y=55,z=16,dx=2.99,dy=1.5,dz=2.99] run function mg:pvpc/leave
+execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.pvpc,gamemode=!spectator,gamemode=!creative,x=8,y=55,z=7,dx=2.99,dy=1.5,dz=2.99] run function mg:pvpc/class_1
+execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.pvpc,gamemode=!spectator,gamemode=!creative,x=16,y=55,z=7,dx=2.99,dy=1.5,dz=2.99] run function mg:pvpc/class_2
+execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.pvpc,gamemode=!spectator,gamemode=!creative,x=8,y=55,z=15,dx=2.99,dy=1.5,dz=2.99] run function mg:pvpc/class_3
+execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.pvpc,gamemode=!spectator,gamemode=!creative,x=16,y=55,z=15,dx=2.99,dy=1.5,dz=2.99] run function mg:pvpc/class_4
+execute as @a[tag=!mg.play,tag=!mg.out,gamemode=!spectator,gamemode=!creative,x=12,y=55,z=16,dx=2.99,dy=1.5,dz=2.99] run function mg:pvpc/leave
 execute as @a[tag=mg.pvpc,tag=mg.play] run function mg:pvpc/cleanup
 execute as @a[tag=mg.pvpc,scores={mg.pkc=1..}] run function mg:pvpc/kill
 execute as @a[tag=mg.pvpc,scores={mg.deaths=1..}] run function mg:pvpc/died

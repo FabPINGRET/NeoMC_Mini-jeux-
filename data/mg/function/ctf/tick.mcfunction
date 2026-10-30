@@ -5,6 +5,7 @@ execute as @a[tag=mg.play] store result score @s mg.t run data get entity @s Pos
 execute as @a[tag=mg.play,scores={mg.t=..72}] run function mg:ctf/respawn
 # drapeau ROUGE
 execute as @e[type=minecraft:marker,tag=mg.cfpr] at @a[tag=mg.cfcr,limit=1] run tp @s ~ ~ ~
+execute if score $cfr mg.st matches 1 unless entity @a[tag=mg.cfcr,tag=mg.play,team=mg_blue] run function mg:ctf/drop_red
 execute if score $cfr mg.st matches 0 if score $cfb mg.st matches 0 positioned -35 82 21600 as @a[tag=mg.play,team=mg_blue,distance=..2,limit=1,sort=nearest] run function mg:ctf/take_red
 execute if score $cfr mg.st matches 2 if score $cfb mg.st matches 0 as @e[tag=mg.cfdr] at @s as @a[tag=mg.play,team=mg_blue,distance=..1.6,limit=1,sort=nearest] run function mg:ctf/take_red
 execute if score $cfr mg.st matches 0 unless score $cfb mg.st matches 0 positioned -35 82 21600 as @a[tag=mg.play,team=mg_blue,distance=..2] run title @s actionbar {"text":"⚠ Ton drapeau est en cours de capture : récupère-le avant de prendre celui d'en face !","color":"red"}
@@ -17,6 +18,7 @@ execute as @e[tag=mg.cfdr] at @s run particle minecraft:end_rod ~ ~1 ~ 0.1 0.5 0
 execute if score $cfr mg.st matches 0 positioned -35 82 21600 as @a[tag=mg.cfcb,team=mg_red,distance=..2.5,limit=1] run function mg:ctf/capture_red
 # drapeau BLEU
 execute as @e[type=minecraft:marker,tag=mg.cfpb] at @a[tag=mg.cfcb,limit=1] run tp @s ~ ~ ~
+execute if score $cfb mg.st matches 1 unless entity @a[tag=mg.cfcb,tag=mg.play,team=mg_red] run function mg:ctf/drop_blue
 execute if score $cfb mg.st matches 0 if score $cfr mg.st matches 0 positioned 35 82 21600 as @a[tag=mg.play,team=mg_red,distance=..2,limit=1,sort=nearest] run function mg:ctf/take_blue
 execute if score $cfb mg.st matches 2 if score $cfr mg.st matches 0 as @e[tag=mg.cfdb] at @s as @a[tag=mg.play,team=mg_red,distance=..1.6,limit=1,sort=nearest] run function mg:ctf/take_blue
 execute if score $cfb mg.st matches 0 unless score $cfr mg.st matches 0 positioned 35 82 21600 as @a[tag=mg.play,team=mg_red,distance=..2] run title @s actionbar {"text":"⚠ Ton drapeau est en cours de capture : récupère-le avant de prendre celui d'en face !","color":"red"}

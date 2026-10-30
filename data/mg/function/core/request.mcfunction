@@ -141,6 +141,7 @@ execute as @a[tag=mg.play,tag=mg.inplot] run function mg:plot/leave_game
 execute as @a[tag=mg.play,tag=mg.visit] run function mg:plot/leave_game
 # Activités du spawn : un participant en kart libre ou en élytres en sort sur place (avant la téléportation de prepare)
 execute as @a[tag=mg.play,tag=mg.lk] run function mg:lobkart/leave
+execute as @a[tag=mg.play,tag=mg.pvpc] run function mg:pvpc/cleanup
 execute as @a[tag=mg.play,tag=mg.ely] run function mg:elytra/stop_quiet
 execute as @a[tag=mg.play,tag=mg.sit] run function mg:lobby/sit/stand
 clear @a[tag=mg.play] *[minecraft:custom_data~{mg_emote:1b}]
@@ -148,8 +149,12 @@ execute as @a[tag=mg.play] run function mg:foot/cleanup
 clear @a[tag=mg.play] *[minecraft:custom_data~{mg_rod:1b}]
 execute as @a[tag=mg.play,tag=mg.elyf] run function mg:elytra/free_stop
 
-# État : compte à rebours de 10 s
+# État : compte à rebours de 10 s ; la note de la partie précédente n'est plus demandable (annulation avant le GO : pas de nouvelle note posée)
 scoreboard players set $state mg.st 1
+scoreboard players set $rgf mg.st 0
+# tableau de droite du lobby retiré : un jeu sans tableau n'affiche pas celui d'avant (les jeux qui en ont un le posent dans prepare / sb/start)
+scoreboard objectives setdisplay sidebar
+scoreboard players set $sbm mg.st -1
 function mg:vote/clear
 clear @a[tag=!mg.surv,tag=!mg.dl] minecraft:warped_fungus_on_a_stick
 clear @a[tag=!mg.surv] minecraft:blaze_rod

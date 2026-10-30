@@ -1,5 +1,10 @@
 # Aller en survie (@s)
 execute unless score $setup mg.st matches 1 run return run tellraw @s [{"text":"⚠ Installation manquante : un OP doit d'abord lancer /function mg:setup","color":"red"}]
+# Depuis Neo GTA, Terra Nova, Ombrelune ou le Filon (tag mg.surv aussi) : on en sort d'abord (tout est sauvegardé), puis on entre en survie
+execute if entity @s[tag=mg.gtw] run function mg:gta/leave
+execute if entity @s[tag=mg.tvw] run function mg:terra/leave
+execute if entity @s[tag=mg.olw] run function mg:ombre/leave
+execute if entity @s[tag=mg.fnw] run function mg:filon/leave
 execute if entity @s[tag=mg.surv] run return run tellraw @s [{"text":"Tu es déjà en survie.","color":"gray"}]
 execute if entity @s[tag=mg.play] run return run tellraw @s [{"text":"⚠ Tu participes à la partie en cours : la survie sera accessible après.","color":"red"}]
 execute if entity @s[tag=mg.out] run return run tellraw @s [{"text":"⚠ Partie en cours : la survie sera accessible après.","color":"red"}]
@@ -11,6 +16,7 @@ execute unless score @s mg.svid matches 1.. run return 0
 
 # Quitte proprement le lobby (parkour, plot créatif)
 function mg:parkour/quit
+function mg:pvpc/cleanup
 tag @s remove mg.inplot
 tag @s remove mg.plabel
 tag @s remove mg.visit

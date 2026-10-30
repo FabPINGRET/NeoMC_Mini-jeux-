@@ -160,6 +160,8 @@ for t, (nm, col, blk, x, s, rgb, oth) in T.items():
     TK += [f'# drapeau {nm}',
            # le marqueur suit le porteur (sa dernière position sert si le porteur meurt)
            f'execute as @e[type=minecraft:marker,tag={POS[t]}] at @a[tag={CAR[t]},limit=1] run tp @s ~ ~ ~',
+           # porteur parti (déconnexion, pause → spectateur) : le drapeau tombe là où il était (drop_), sinon la partie serait bloquée
+           f'execute if score {ST[t]} mg.st matches 1 unless entity @a[tag={CAR[t]},tag=mg.play,team={en}] run function mg:ctf/drop_{t}',
            # prise au socle / ramassage par terre (adversaire) ; renvoi par un défenseur
            # (on ne peut prendre le drapeau adverse que si le sien est au socle)
            f'execute if score {ST[t]} mg.st matches 0 if score {ST[oth]} mg.st matches 0 positioned {x} 82 {Z} as @a[tag=mg.play,team={en},distance=..2,limit=1,sort=nearest] run function mg:ctf/take_{t}',

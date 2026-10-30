@@ -183,7 +183,7 @@ def modes(W, OUT):
                  'scoreboard players set @s mg.skg -30',
                  'title @s subtitle [{"text":"Élytres rendues : appuie sur Espace !","color":"yellow","bold":true}]',
                  'title @s title [{"text":" "}]',
-                 'playsound minecraft:item.armor.equip_elytra master @s ~ ~ ~ 1 1.2'])
+                 'execute at @s run playsound minecraft:item.armor.equip_elytra master @s ~ ~ ~ 1 1.2'])
 
     # ---- survie en vol (mode 3)
     ax0, az0 = ARENA
@@ -270,7 +270,7 @@ def modes(W, OUT):
     W('lift', ['# Entrée dans une colonne de vent (@s) : 1,5 s de lévitation, puis 5 s avant la suivante',
                'scoreboard players set @s mg.skl 130',
                'effect give @s minecraft:levitation infinite 9 true',
-               'playsound minecraft:entity.breeze.wind_burst master @s ~ ~ ~ 1 1'])
+               'execute at @s run playsound minecraft:entity.breeze.wind_burst master @s ~ ~ ~ 1 1'])
     W('lift_end', ['# Fin de l\'élan (@s)',
                    'effect clear @s minecraft:levitation',
                    'execute if entity @s[tag=mg.play] run title @s subtitle [{"text":"Appuie sur Espace pour replaner !","color":"yellow","bold":true}]',

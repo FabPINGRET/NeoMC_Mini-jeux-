@@ -1,4 +1,5 @@
 # Chaque seconde : véhicules détruits, passants, police, sirènes, valises, ménage
+scoreboard players remove @a[tag=mg.gtw,scores={mg.gkpc=1..}] mg.gkpc 1
 execute unless score $gsu mg.st matches 1.. run return 0
 execute if score $gsu mg.st matches 1 as @e[type=minecraft:block_display,tag=mg.gvb,tag=!mg.gok] at @s run function mg:gta/wreck
 execute if score $gsu mg.st matches 1 run kill @e[type=minecraft:block_display,tag=mg.gvd,tag=!mg.gok]

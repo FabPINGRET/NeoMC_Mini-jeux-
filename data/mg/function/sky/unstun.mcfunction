@@ -6,4 +6,4 @@ item replace entity @s armor.chest with minecraft:elytra[minecraft:custom_data={
 scoreboard players set @s mg.skg -30
 title @s subtitle [{"text":"Élytres rendues : appuie sur Espace !","color":"yellow","bold":true}]
 title @s title [{"text":" "}]
-playsound minecraft:item.armor.equip_elytra master @s ~ ~ ~ 1 1.2
+execute at @s run playsound minecraft:item.armor.equip_elytra master @s ~ ~ ~ 1 1.2

@@ -134,6 +134,11 @@ bossbar set mg:tvo3 style notched_10
 bossbar set mg:tvo3 max 100
 bossbar set mg:tvo3 players
 scoreboard players set $tvo3 mg.st 0
+# équipe des colons recréée (session_end la retire ; un joueur reconnecté n'est pas repassé par enter)
+team add mg_tv
+team modify mg_tv friendlyFire false
+team modify mg_tv color dark_green
+team join mg_tv @a[tag=mg.tvw]
 scoreboard players set $tvcc mg.st 90
 scoreboard players set $tvpk mg.st 3
 scoreboard players set $tvsu mg.st 1

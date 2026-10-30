@@ -1,4 +1,8 @@
 # 💣 Bombardier : préparation (construction en étapes pendant le compte à rebours)
+# perchoir des spectateurs (reconnexion, pause) : au-dessus de la ville
+scoreboard players set $px mg.st 0
+scoreboard players set $py mg.st 210
+scoreboard players set $pz mg.st 32400
 fill -88 170 32312 88 170 32488 minecraft:barrier
 scoreboard players set $bbs mg.st 0
 execute if data storage mg:bomber v1 run scoreboard players set $bbs mg.st 40

@@ -47,8 +47,10 @@ execute if entity @a[tag=mg.lfc] run function mg:lobby/fish/after
 execute if score $lan mg.t matches 30 if entity @e[type=minecraft:marker,tag=mg.lfm] run function mg:lobby/fish/after
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 30 if loaded 36 64 -27 run function mg:lobby/fish/second
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless score $lfoff mg.st matches 1 if loaded 36 64 -27 unless block 36 64 -27 minecraft:spruce_log run function mg:lobby/fish/build
-execute as @a[scores={mg.menu=1}] run function mg:core/menu_use
-execute as @a[scores={mg.menu=2..}] run function mg:core/menu_chat_force
+# (pas en survie ni dans un monde : la canne du lobby n'a rien à faire dans un inventaire de survie ; là-bas, le menu Échap suffit)
+execute as @a[scores={mg.menu=1},tag=!mg.surv] run function mg:core/menu_use
+execute as @a[scores={mg.menu=2..},tag=!mg.surv] run function mg:core/menu_chat_force
+scoreboard players reset @a[tag=mg.surv,scores={mg.menu=1..}] mg.menu
 
 # Choix de classe (PvP Classes)
 execute as @a[scores={mg.cls=1..}] run function mg:pvp2/choose

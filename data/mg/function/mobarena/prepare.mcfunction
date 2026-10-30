@@ -34,3 +34,5 @@ scoreboard players set @a[tag=mg.play] mg.cl 1
 execute as @a[tag=mg.play] run function mg:mobarena/class_menu
 scoreboard players set $gl mg.st 0
 scoreboard players reset @a mg.us
+# Coopération : une équipe sans tir ami (épées, flèches, potions, boules de feu entre coéquipiers)
+team join mg_green @a[tag=mg.play]

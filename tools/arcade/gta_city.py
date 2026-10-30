@@ -32,7 +32,7 @@ ADOPT = ['tag @e[tag=mg.gmnew] add mg.gmo', 'scoreboard players operation @e[tag
 
 def mis_start(k, lines):
     nm, rw, t = MIS[k]
-    return ([f'# @s démarre : {nm}', f'scoreboard players set @s mg.gmt {k}', 'scoreboard players set @s mg.gms 1', f'scoreboard players set @s mg.gmtime {t}',
+    return ([f'# @s démarre : {nm}', f'scoreboard players set @s mg.gmt {k}', 'scoreboard players set @s mg.gms 1', f'scoreboard players set @s mg.gmtime {t}', 'scoreboard players set @s mg.gmvk 0',
              'scoreboard players operation $gb mg.st = @s mg.bid'] + lines + ADOPT +
             ['title @s times 5 40 10', 'title @s title ' + js({"text": nm.upper(), "color": "gold", "bold": True}),
              'playsound minecraft:block.note_block.chime player @s ~ ~ ~ 1 1.2', 'scoreboard players set @s mg.gtl 50'])
@@ -62,6 +62,7 @@ w('gta/mis_tick', ['# @s (mission en cours, toutes les 5 ticks, à sa position) 
    'execute at @e[tag=mg.gmine] run particle minecraft:end_rod ~ ~3 ~ 0.05 4 0.05 0 8 force @s',
    'execute if score @s mg.gmt matches 1 if score @s mg.gms matches 1 if entity @e[tag=mg.gmine,tag=mg.gmpk,distance=..2.5] run return run function mg:gta/mis1_picked',
    'execute if score @s mg.gmt matches 1 if score @s mg.gms matches 2 if entity @e[tag=mg.gmine,tag=mg.gmdl,distance=..3] run return run function mg:gta/mis_win',
+   'execute if score @s mg.gmt matches 2 unless entity @e[tag=mg.gmine,tag=mg.gmvip] unless score @s mg.gmvk matches 1 run return run function mg:gta/mis_fail',
    'execute if score @s mg.gmt matches 2 unless entity @e[tag=mg.gmine,tag=mg.gmvip] run return run function mg:gta/mis_win',
    'execute if score @s mg.gmt matches 3 if entity @e[tag=mg.gmine,tag=mg.gmcp,distance=..4] run return run function mg:gta/mis3_next'])
 w('gta/mis1_picked', ['# Colis récupéré : livraison à 60..120 blocs', 'kill @e[tag=mg.gmine]', 'scoreboard players set @s mg.gms 2',
@@ -86,7 +87,14 @@ w('gta/mis_win', WIN)
 w('gta/mis_fail', ['# @s : mission échouée ou abandonnée', 'execute unless score @s mg.gmt matches 1.. run return 0', 'function mg:gta/mis_clean',
                    'title @s times 5 40 15', 'title @s title {"text":"MISSION ÉCHOUÉE","color":"red","bold":true}',
                    'execute at @s run playsound minecraft:entity.villager.no player @s ~ ~ ~ 1 0.8', 'scoreboard players set @s mg.gtl 60'])
-w('gta/mis_clean', ['# @s : objets de sa mission retirés'] + OWN + ['kill @e[tag=mg.gmine]', 'scoreboard players set @s mg.gmt 0', 'scoreboard players set @s mg.gms 0'])
+w('gta/mis_clean', ['# @s : objets de sa mission retirés'] + OWN + ['kill @e[tag=mg.gmine]', 'scoreboard players set @s mg.gmt 0', 'scoreboard players set @s mg.gms 0', 'scoreboard players set @s mg.gmvk 0'])
+w('gta/vip_killed', ['# Avancement mg:gta_vip : @s a tué la cible d\'un Contrat (la sienne ou non : mis_tick vérifie que c\'est la sienne qui manque)',
+                     'advancement revoke @s only mg:gta_vip', 'execute if score @s mg.gmt matches 2 run scoreboard players set @s mg.gmvk 1'])
+with open(os.path.join(C.D, 'advancement', 'gta_vip.json'), 'w', encoding='utf-8', newline='\n') as f:
+    json.dump({'criteria': {'k': {'trigger': 'minecraft:player_killed_entity', 'conditions': {'entity': [
+        {'condition': 'minecraft:entity_properties', 'entity': 'this', 'predicate': {'nbt': '{Tags:["mg.gmvip"]}'}}]}}},
+               'rewards': {'function': 'mg:gta/vip_killed'}}, f, ensure_ascii=False, indent=2)
+    f.write('\n')
 MH = ['# @s : barre d\'action pendant une mission']
 _STEP = {1: ' : colis puis livraison', 2: ' : élimine la cible', 3: ' : points de contrôle'}
 for k, (nm, rw, t) in MIS.items():
@@ -116,7 +124,7 @@ PT += [f'execute if score $gr mg.st matches {k} as @e[type=minecraft:block_displ
        for k, c in enumerate(COLORS)]
 PT += ['playsound minecraft:item.dye.use player @s ~ ~ ~ 1 1', 'title @s actionbar {"text":"🎨 Nouvelle peinture !","color":"light_purple","bold":true}', 'scoreboard players set @s mg.gal 30']
 w('gta/paint', PT)
-C.objectives([('mg.gmis', 'trigger'), ('mg.gmt', 'dummy'), ('mg.gms', 'dummy'), ('mg.gmtime', 'dummy'), ('mg.gmsec', 'dummy'), ('mg.gnit', 'dummy')])
+C.objectives([('mg.gmis', 'trigger'), ('mg.gmt', 'dummy'), ('mg.gms', 'dummy'), ('mg.gmtime', 'dummy'), ('mg.gmsec', 'dummy'), ('mg.gnit', 'dummy'), ('mg.gmvk', 'dummy')])
 
 # ---------------------------------------------------------------- lieux : hôpital, commissariat, casino, boîte de nuit
 PL = CITY['places']

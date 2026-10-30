@@ -126,7 +126,7 @@ first_q = next(l for l in open(os.path.join(F, 'core/request.mcfunction'), encod
 patch('core/request', first_q, [ann(8, 'RAVIN', 'gold', 'deux plateaux face à face, railgun longue portée'),
                                 ann(9, 'TOURS', 'green', '9 tours dans une grande plaine, railgun longue portée')])
 for qm, build, g, t, z in [(8, 'quake/build_5', 25, 9600, 15450), (9, 'quake/build_6', 30, 12000, 15800)]:
-    patch('quake/prepare', 'kill @e[distance=0..,type=minecraft:item]', [
+    patch('quake/prepare', 'kill @e[distance=0..,type=minecraft:item,tag=!mg.keep]', [
         f'execute if score $qm mg.st matches {qm} run function mg:{build}',
         f'execute if score $qm mg.st matches {qm} run scoreboard players set $qg mg.st {g}',
         f'execute if score $qm mg.st matches {qm} run scoreboard players set $qt mg.st {t}',

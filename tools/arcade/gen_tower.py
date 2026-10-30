@@ -105,9 +105,9 @@ w('tower/tick', ['# 🏰 The Towers — tick', 'scoreboard players add $twt mg.s
                  # ravitaillement au centre toutes les 15 s
                  'scoreboard players operation $twq mg.st = $twt mg.st', 'scoreboard players set #300 mg.st 300',
                  'scoreboard players operation $twq mg.st %= #300 mg.st',
-                 f'execute if score $twq mg.st matches 0 run summon minecraft:item 0.5 81.2 {Z}.5 {{Item:{{id:"minecraft:arrow",count:4}}}}',
-                 f'execute if score $twq mg.st matches 0 run summon minecraft:item 0.5 81.2 {Z}.5 {{Item:{{id:"minecraft:golden_apple",count:1}}}}',
-                 f'execute if score $twq mg.st matches 0 run summon minecraft:item 0.5 81.2 {Z}.5 {{Item:{{id:"minecraft:white_terracotta",count:16}}}}',
+                 f'execute if score $twq mg.st matches 0 run summon minecraft:item 0.5 81.2 {Z}.5 {{Tags:["mg.keep"],Item:{{id:"minecraft:arrow",count:4}}}}',
+                 f'execute if score $twq mg.st matches 0 run summon minecraft:item 0.5 81.2 {Z}.5 {{Tags:["mg.keep"],Item:{{id:"minecraft:golden_apple",count:1}}}}',
+                 f'execute if score $twq mg.st matches 0 run summon minecraft:item 0.5 81.2 {Z}.5 {{Tags:["mg.keep"],Item:{{id:"minecraft:white_terracotta",count:16}}}}',
                  f'execute if score $twt mg.st matches {LIMIT - 1200} run tellraw @a[tag=mg.play] {{"text":"🏰 Plus qu\'une minute !","color":"gold"}}',
                  f'execute if score $state mg.st matches 2 if score $twt mg.st matches {LIMIT}.. run function mg:tower/timeout',
                  'execute store result score $twr mg.st if entity @a[tag=mg.play,team=mg_red]',

@@ -19,6 +19,8 @@ def item(t, model, name, col, cd, desc, slot):
 
 
 w('bomber/prepare', ['# 💣 Bombardier : préparation (construction en étapes pendant le compte à rebours)',
+                     '# perchoir des spectateurs (reconnexion, pause) : au-dessus de la ville',
+                     'scoreboard players set $px mg.st 0', f'scoreboard players set $py mg.st {YT + 40}', f'scoreboard players set $pz mg.st {Z}',
                      f'fill -{HX} {YT} {Z - HX} {HX} {YT} {Z + HX} minecraft:barrier',
                      'scoreboard players set $bbs mg.st 0',
                      f'execute if data storage mg:bomber v1 run scoreboard players set $bbs mg.st {NG}',

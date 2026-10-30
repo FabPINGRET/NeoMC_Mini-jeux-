@@ -49,7 +49,7 @@ execute if score $qm mg.st matches 11 run function mg:quake/build_8
 execute if score $qm mg.st matches 11 run scoreboard players set $qg mg.st 20
 execute if score $qm mg.st matches 11 run scoreboard players set $qt mg.st 7200
 execute if score $qm mg.st matches 11 run scoreboard players set $pz mg.st 16400
-kill @e[distance=0..,type=minecraft:item]
+kill @e[distance=0..,type=minecraft:item,tag=!mg.keep]
 scoreboard players reset @a mg.qs
 tag @a remove mg.prot
 tag @a remove mg.qdd

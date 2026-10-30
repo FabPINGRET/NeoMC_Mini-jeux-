@@ -16,5 +16,5 @@ give @s minecraft:firework_rocket[minecraft:custom_data={mg_ely:1b},minecraft:fi
 effect give @s minecraft:resistance 600 4 true
 function mg:core/heal
 tp @s -52.5 300 -47.5 facing -29.5 292 -47.5
-playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 0.8 1.2
+execute at @s run playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 0.8 1.2
 tellraw @s [{"text":"🪽 Grand parcours d'élytra : ","color":"aqua","bold":true},{"text":"saute, plane à travers les 15 anneaux dans l'ordre (une traînée lumineuse indique le suivant). Le chrono part à l'ouverture des élytres. 6 fusées.","color":"gray"}]

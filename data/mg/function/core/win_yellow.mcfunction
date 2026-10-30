@@ -1,4 +1,6 @@
 # Victoire de l'équipe JAUNE
+# Seul (1 participant) : mode entraînement, pas de victoire comptée (règle commune à tous les jeux)
+execute unless score $n0 mg.st matches 2.. run return run function mg:core/draw_solo
 tag @a[team=mg_yellow,tag=mg.play] add mg.win
 scoreboard players add @a[team=mg_yellow,tag=mg.play] mg.wins 1
 scoreboard players set $state mg.st 3

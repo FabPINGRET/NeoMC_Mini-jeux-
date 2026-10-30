@@ -6,6 +6,8 @@ execute if score $game mg.st matches 1 run scoreboard players set $sbon mg.st 1
 execute if score $game mg.st matches 1 run scoreboard objectives modify mg.sbg displayname [{"text":"❄ SPLEEF","color":"aqua","bold":true}]
 execute if score $game mg.st matches 2 run scoreboard players set $sbon mg.st 1
 execute if score $game mg.st matches 2 run scoreboard objectives modify mg.sbg displayname [{"text":"✷ TNT RUN","color":"red","bold":true}]
+execute if score $game mg.st matches 244..245 run scoreboard players set $sbon mg.st 1
+execute if score $game mg.st matches 244..245 run scoreboard objectives modify mg.sbg displayname [{"text":"✷ TNT RUN — GLACE","color":"aqua","bold":true}]
 execute if score $game mg.st matches 3 run scoreboard players set $sbon mg.st 1
 execute if score $game mg.st matches 3 run scoreboard objectives modify mg.sbg displayname [{"text":"⚔ ARÈNE PVP","color":"gold","bold":true}]
 execute if score $game mg.st matches 20 run scoreboard players set $sbon mg.st 1

@@ -218,8 +218,10 @@ for (n, nm, col, blk, x, z, desc) in PADS:
                           'scoreboard players set @s mg.pcl ' + str(n), 'function mg:pvpc/equip', 'function mg:pvpc/to_arena',
                           f'tellraw @s [{{"text":"⚔ Classe ","color":"gray"}},{{"text":"{nm}","color":"{col}","bold":true}},'
                           '{"text":" — bonne chance ! ","color":"gray"},{"text":"(émeraude = boutique, boussole = retour)","color":"dark_gray"}]'])
-    pad_lines.append(f'execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.pvpc,x={x},y={ry1},z={z},dx=2.99,dy=1.5,dz=2.99] run function mg:pvpc/class_{n}')
-w('pvpc/equip', ['# @s : kit de sa classe (mg.pcl) + boutique + retour (+ menu)', 'clear @s', 'effect clear @s', 'function mg:core/attr_reset'] +
+    pad_lines.append(f'execute as @a[tag=!mg.play,tag=!mg.out,tag=!mg.pvpc,gamemode=!spectator,gamemode=!creative,x={x},y={ry1},z={z},dx=2.99,dy=1.5,dz=2.99] run function mg:pvpc/class_{n}')
+w('pvpc/equip', ['# @s : kit de sa classe (mg.pcl) + boutique + retour (+ menu) ; les élytres libres du spawn (fusées + résistance toutes les 2 s) s\'arrêtent',
+                 'execute if entity @s[tag=mg.elyf] run function mg:elytra/free_stop', 'execute if entity @s[tag=mg.ely] run function mg:elytra/stop_quiet',
+                 'clear @s', 'effect clear @s', 'function mg:core/attr_reset'] +
   [f'execute if score @s mg.pcl matches {n} run function mg:pvpc/kit_{n}' for n in KITS] +
   ['function mg:pvpc/items', 'function mg:core/give_menu', 'function mg:core/heal'])
 for n, lines in KITS.items():
@@ -247,7 +249,7 @@ w('pvpc/leave', ['# @s remonte au spawn', 'function mg:pvpc/cleanup', 'function 
 
 # ------------------------------------------------------------------ jeu
 w('pvpc/tick', ['# ⚔ Arène PvP souterraine — tick (seulement si quelqu\'un est dessous ou y est inscrit)'] + pad_lines +
-  [f'execute as @a[tag=!mg.play,tag=!mg.out,x={px_},y={ry1},z={pz_},dx=2.99,dy=1.5,dz=2.99] run function mg:pvpc/leave',
+  [f'execute as @a[tag=!mg.play,tag=!mg.out,gamemode=!spectator,gamemode=!creative,x={px_},y={ry1},z={pz_},dx=2.99,dy=1.5,dz=2.99] run function mg:pvpc/leave',
    # une partie a démarré : ses joueurs ne sont plus dans l'arène
    'execute as @a[tag=mg.pvpc,tag=mg.play] run function mg:pvpc/cleanup',
    'execute as @a[tag=mg.pvpc,scores={mg.pkc=1..}] run function mg:pvpc/kill',
@@ -289,7 +291,7 @@ w('pvpc/coin_at', ['# Pile de pièces (+5) en $(x) $(z) ; si le point est dans u
 w('pvpc/coins_picked', ['# @s a ramassé des pièces : 1 pépite = 1 pièce',
                         'execute store result score $n mg.st run clear @s minecraft:gold_nugget[custom_data~{pvpc_coin:1b}]',
                         'scoreboard players operation @s mg.pco += $n mg.st',
-                        'playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 1.4',
+                        'execute at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 1.4',
                         'title @s actionbar [{"text":"💰 +","color":"gold"},{"score":{"name":"$n","objective":"mg.st"},"color":"yellow","bold":true},{"text":" pièces","color":"gold"}]'])
 w('pvpc/kill', ['# @s a fait un ou plusieurs kills : +10 pièces chacun, série, petit soin',
                 'scoreboard players operation $k mg.st = @s mg.pkc', 'scoreboard players reset @s mg.pkc',
@@ -297,7 +299,7 @@ w('pvpc/kill', ['# @s a fait un ou plusieurs kills : +10 pièces chacun, série,
                 'scoreboard players operation $g mg.st = $k mg.st', 'scoreboard players set #10 mg.st 10',
                 'scoreboard players operation $g mg.st *= #10 mg.st', 'scoreboard players operation @s mg.pco += $g mg.st',
                 'effect give @s minecraft:regeneration 3 1 true',
-                'playsound minecraft:entity.player.levelup master @s ~ ~ ~ 0.7 1.6',
+                'execute at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 0.7 1.6',
                 'title @s actionbar [{"text":"⚔ Kill ! ","color":"red","bold":true},{"text":"+","color":"gold"},{"score":{"name":"$g","objective":"mg.st"},"color":"yellow"},{"text":" 💰","color":"gold"}]',
                 'execute if score @s mg.pks matches 3 run function mg:pvpc/streak {n:3,b:15,t:"est en série"}',
                 'execute if score @s mg.pks matches 5 run function mg:pvpc/streak {n:5,b:30,t:"est déchaîné"}',
@@ -318,7 +320,7 @@ w('pvpc/dog', ['# @s achète un chien de garde (2 au maximum)',
                'execute as @e[type=minecraft:wolf,tag=mg.pdog] if score @s mg.pvid = $p mg.st run scoreboard players add $n mg.st 1',
                'execute if score $n mg.st matches 2.. run scoreboard players add @s mg.pco 60',
                'execute if score $n mg.st matches 2.. run return run tellraw @s {"text":"🐺 Tu as déjà 2 chiens (remboursé).","color":"red"}',
-               'execute at @s run summon minecraft:wolf ~ ~ ~ {Tags:["mg.pdog","mg.mob","mg.pdogn"],PersistenceRequired:1b,CollarColor:14b,'
+               'execute at @s run summon minecraft:wolf ~ ~ ~ {Tags:["mg.pdog","mg.pdogn"],PersistenceRequired:1b,CollarColor:14b,'
                'attributes:[{id:"minecraft:max_health",base:30d},{id:"minecraft:attack_damage",base:5d}],Health:30f}',
                'data modify entity @e[type=minecraft:wolf,tag=mg.pdogn,limit=1] Owner set from entity @s UUID',
                'scoreboard players operation @e[type=minecraft:wolf,tag=mg.pdogn,limit=1] mg.pvid = @s mg.pvid',
@@ -398,4 +400,8 @@ patch('core/tick', 'execute as @a[scores={mg.cs=1..},tag=!mg.surv] run function 
     f'execute if score $setup mg.st matches 1 unless entity @a[{ZONE}] if entity @a[tag=mg.pvpc] run function mg:pvpc/tick',
     f'execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 if loaded {SENT[0]} {SENT[1]} {SENT[2]} unless block {SENT[0]} {SENT[1]} {SENT[2]} minecraft:lodestone run function mg:pvpc/build'])
 patch('core/reset_player', 'tag @s remove mg.play', ['function mg:pvpc/cleanup'], where='before')
+# lancement d'une partie : un participant encore dans l'arène en sort AVANT le prepare du jeu (sinon pvpc/tick, au tick suivant, remettait le
+# spawnpoint du lobby par-dessus celui posé par le jeu → réapparition au lobby en pleine partie) ; idem au départ en survie
+patch('core/request', 'execute as @a[tag=mg.play,tag=mg.lk] run function mg:lobkart/leave', ['execute as @a[tag=mg.play,tag=mg.pvpc] run function mg:pvpc/cleanup'])
+patch('survie/enter', 'function mg:parkour/quit', ['function mg:pvpc/cleanup'])
 print('Arène PvP souterraine OK :', len(written), 'fichiers')

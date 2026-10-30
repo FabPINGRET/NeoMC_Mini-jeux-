@@ -1,4 +1,6 @@
-# @s : kit de sa classe (mg.pcl) + boutique + retour (+ menu)
+# @s : kit de sa classe (mg.pcl) + boutique + retour (+ menu) ; les élytres libres du spawn (fusées + résistance toutes les 2 s) s'arrêtent
+execute if entity @s[tag=mg.elyf] run function mg:elytra/free_stop
+execute if entity @s[tag=mg.ely] run function mg:elytra/stop_quiet
 clear @s
 effect clear @s
 function mg:core/attr_reset
