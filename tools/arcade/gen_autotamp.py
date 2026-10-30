@@ -131,9 +131,9 @@ w('autotamp/tick', ['# 🚗 Autos tamponneuses — tick', 'scoreboard players ad
                     f'execute store result bossbar mg:autotamp value run scoreboard players get $att mg.st',
                     f'execute as {BOATS} run function mg:autotamp/speed',
                     f'execute as {BOATS} unless score @s mg.atc matches 1.. at @s run function mg:autotamp/bump',
-                    f'execute as {PL} unless predicate mg:coaster_riding run function mg:autotamp/remount',
+                    f'execute as {PL} unless predicate mg:riding_vehicle run function mg:autotamp/remount',
                     # bateaux sans conducteur (joueur déconnecté, éliminé…)
-                    f'execute as {BOATS} unless predicate mg:coaster_has_rider run kill @s',
+                    f'execute as {BOATS} unless predicate mg:has_passenger run kill @s',
                     'execute store result score $a mg.st if entity ' + PL,
                     'execute if score $state mg.st matches 2 if score $n0 mg.st matches 2.. if score $a mg.st matches ..1 run return run function mg:autotamp/end',
                     f'execute if score $state mg.st matches 2 if score $att mg.st matches {LIMIT}.. run function mg:autotamp/end'])

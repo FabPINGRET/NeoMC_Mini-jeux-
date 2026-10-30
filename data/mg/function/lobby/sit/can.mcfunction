@@ -3,7 +3,7 @@ execute if score $sitoff mg.st matches 1 run title @s actionbar {"text":"🪑 As
 execute if score $sitoff mg.st matches 1 run return 0
 execute unless function mg:lobby/sit/ok run title @s actionbar {"text":"🪑 Pas possible ici (au spawn, hors activité).","color":"gray"}
 execute unless function mg:lobby/sit/ok run return 0
-# déjà dans un véhicule (kart, montagne russe...) : non ; assis, c'est notre propre siège
+# déjà dans un véhicule (kart...) : non ; assis, c'est notre propre siège
 execute unless entity @s[tag=mg.sit] if predicate mg:in_vehicle run title @s actionbar {"text":"🪑 Descends d'abord de ton véhicule.","color":"gray"}
 execute unless entity @s[tag=mg.sit] if predicate mg:in_vehicle run return 0
 return 1
