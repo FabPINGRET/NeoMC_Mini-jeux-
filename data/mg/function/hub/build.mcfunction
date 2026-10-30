@@ -7,7 +7,7 @@ kill @e[type=minecraft:text_display,x=-10,y=63,z=-61,dx=20,dy=19,dz=19]
 kill @e[type=minecraft:item_display,tag=mg.lby,x=-10,y=63,z=-61,dx=20,dy=19,dz=19]
 fill -10 64 -61 10 82 -42 minecraft:air
 fill -10 63 -61 10 63 -42 minecraft:smooth_stone
-setblock 0 63 -52 minecraft:mossy_stone_bricks
+setblock 0 63 -53 minecraft:mossy_stone_bricks
 execute unless data storage mg:hub floaty run data modify storage mg:hub floaty set value 0b
 execute unless data storage mg:hub oldclean run function mg:hub/old_clean
 schedule function mg:hub/decofix_start 20s
@@ -94,3 +94,5 @@ fill 9 63 -46 9 63 -43 minecraft:green_terracotta
 summon minecraft:text_display 9.5 68.4 -44.5 {Tags:["mg.hubp"],billboard:"center",background:-1442840576,text:{"text": "⚽ TERRAIN DE FOOT", "color": "dark_green", "bold": true},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[2.2f,2.2f,2.2f]}}
 summon minecraft:text_display 9.5 67.8 -44.5 {Tags:["mg.hubp"],billboard:"center",background:0,text:{"text": "Vestiaire souterrain, équipes, buts", "color": "gray"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.8f,0.8f,0.8f]}}
 summon minecraft:text_display 9.5 67.2 -44.5 {Tags:["mg.hubp"],billboard:"center",background:0,text:{"text": "▶ entre dans le portail", "color": "yellow"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]}}
+summon minecraft:text_display 0.5 72.6 -50.5 {Tags:["mg.hubp"],billboard:"center",background:-1442840576,text:{"text": "◈ HUB DES PORTAILS ◈", "color": "light_purple", "bold": true},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[3.2f,3.2f,3.2f]}}
+summon minecraft:text_display 0.5 71.9 -50.5 {Tags:["mg.hubp"],billboard:"center",background:0,text:{"text": "Choisis ton monde : entre dans un portail", "color": "gray"},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.2f,1.2f,1.2f]}}

@@ -29,7 +29,7 @@ w, patch = _fn.write, _fn.patch
 
 TR = 'transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[%sf,%sf,%sf],scale:[%sf,%sf,%sf]}'
 BOX = (-10, 63, -61, 10, 82, -42)                 # zone du hub (x1 y1 z1 x2 y2 z2)
-WITNESS = (0, 63, -52)                            # bloc témoin du hub (au centre du passage nord-sud)
+WITNESS = (0, 63, -53)                            # bloc témoin du hub (au centre du passage nord-sud)
 WITNESS_BLOCK = 'minecraft:mossy_stone_bricks'
 OLD_SITES = [(5, 13, -23, -15), (-16, -5, -23, -15), (-18, -5, -33, -25)]   # anciens portails GTA, Terra Nova, Ombrelune (x1 x2 z1 z2)
 CLEAN_FLAG = 'mg:hub oldclean'
@@ -92,6 +92,11 @@ BUILD = ['# Hub des portails : huit petits portails au spawn nord (ex-portail de
          'schedule function mg:hub/decofix_start 20s']           # décor alentour remis d'aplomb (tools/lobby/gen_decofix.py)
 for s in SLOTS:
     BUILD += portal_lines(s)
+# message flottant au centre du hub (vu depuis l'avenue)
+BUILD += [f'summon minecraft:text_display 0.5 72.6 -50.5 {{Tags:["mg.hubp"],billboard:"center",background:-1442840576,'
+          f'text:{snbt_text({"text": "◈ HUB DES PORTAILS ◈", "color": "light_purple", "bold": True})},{TR % (0, 0, 0, 3.2, 3.2, 3.2)}}}',
+          f'summon minecraft:text_display 0.5 71.9 -50.5 {{Tags:["mg.hubp"],billboard:"center",background:0,'
+          f'text:{snbt_text({"text": "Choisis ton monde : entre dans un portail", "color": "gray"})},{TR % (0, 0, 0, 1.2, 1.2, 1.2)}}}']
 w('hub/build', BUILD)
 
 OLD = ['# Anciens portails (GTA, Terra Nova, Ombrelune) : vidés une seule fois, sol rendu au décor du spawn (mg:hub oldclean)']
