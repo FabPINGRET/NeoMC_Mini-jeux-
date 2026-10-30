@@ -114,20 +114,12 @@ w('soleil/green', ['# Feu vert : la poupée tourne le dos ; durée au hasard (pl
                    'scoreboard players operation $sqg mg.st = $sqt mg.st', 'scoreboard players set $sqk mg.st -1',
                    f'title {PL} times 0 20 4', f'title {PL} subtitle {{"text":"avance !","color":"gray"}}'])
 # compteur sonore et visuel du feu vert
-CNT = ['# Feu vert : « 1… 2… 3… » (titre + note de plus en plus aiguë) et barre de temps restant (barre d\'action)',
+CNT = ['# Feu vert : « 1… 2… 3… » (titre + note de plus en plus aiguë) ; pas de barre de temps restant (trop facile)',
        'scoreboard players operation $k mg.st = $sqg mg.st', 'scoreboard players operation $k mg.st -= $sqt mg.st',
        'scoreboard players operation $k mg.st *= #3 mg.st', 'scoreboard players operation $k mg.st /= $sqg mg.st',
        'execute if score $k mg.st matches 3.. run scoreboard players set $k mg.st 2',
-       'execute unless score $k mg.st = $sqk mg.st run function mg:soleil/count_step',
-       # barre : 10 cases, vert → jaune → rouge
-       'scoreboard players set #10 mg.st 10', 'scoreboard players operation $b mg.st = $sqt mg.st', 'scoreboard players operation $b mg.st *= #10 mg.st',
-       'scoreboard players operation $b mg.st /= $sqg mg.st']
-BARS = []
-for n in range(11):
-    col = 'green' if n >= 7 else ('yellow' if n >= 4 else 'red')
-    BARS.append(f'execute if score $b mg.st matches {n} run title {PL} actionbar [{{"text":"🟢 ","color":"{col}"}},'
-                f'{{"text":"{"█" * n}","color":"{col}"}},{{"text":"{"█" * (10 - n)}","color":"dark_gray"}},{{"text":" avance !","color":"{col}","bold":true}}]')
-w('soleil/count', CNT + BARS)
+       'execute unless score $k mg.st = $sqk mg.st run function mg:soleil/count_step']
+w('soleil/count', CNT)
 STEPS = [(0, '1…', 'green', 0.9), (1, '2…', 'yellow', 1.1), (2, '3…', 'gold', 1.35)]
 w('soleil/count_step', ['scoreboard players operation $sqk mg.st = $k mg.st'] +
   [f'execute if score $k mg.st matches {k} run title {PL} title {{"text":"{t}","color":"{c}","bold":true}}' for k, t, c, _ in STEPS] +
