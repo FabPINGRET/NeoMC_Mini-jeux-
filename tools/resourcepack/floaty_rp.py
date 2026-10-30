@@ -1,5 +1,6 @@
 # ------------------------------------------------------------------ Scourge of the Floaty Isles : textures de la carte fusionnées dans le zip
-# Exécuté par gen_rp.py (exec) : n'utilise aucun nom de gen_rp ; gen_rp appelle floaty_extra(OUT) puis floaty_write(zf, ...).
+# Exécuté par gen_rp.py (exec) : n'utilise aucun nom de gen_rp ; gen_rp appelle floaty_extra(OUT), floaty_split (floaty_split.py : pack serveur /
+# pack optionnel), puis floaty_write(zf, ...) pour le zip serveur et floaty_write_opt(...) pour releases/floaty_optional_resourcepack.zip.
 # Que des fonctions, importables telles quelles (tools/tests/test_floaty_rp.py).
 #
 # Source : variable d'environnement NEOMC_FLOATY_RP = dossier OU .zip du resource pack de la carte (racine = pack.mcmeta + assets/).
@@ -139,8 +140,10 @@ def floaty_conflicts(extra, neo):
     return sorted(bad)
 
 
-def floaty_extra(out, env=None):
-    """Fichiers de la carte à ajouter au zip : {chemin: octets}, ou {} si NEOMC_FLOATY_RP est absente. Erreur de source / conflit : SystemExit."""
+def floaty_extra(out, env=None, keep_same=False):
+    """Fichiers de la carte à ajouter au zip : {chemin: octets}, ou {} si NEOMC_FLOATY_RP est absente. Erreur de source / conflit : SystemExit.
+    keep_same : garde aussi les fichiers identiques à l'octet à ceux de NeoMC (l'empreinte du manifeste porte sur toute la carte : à retirer
+    ensuite avec floaty_settle, après floaty_split)."""
     env = os.environ if env is None else env
     if FLOATY_ENV not in env:
         print(f'floaty : ATTENTION {FLOATY_ENV} absente, textures Floaty NON incluses : ce zip n\'a plus les textures de la carte (ne pas le commiter ainsi)')
@@ -160,10 +163,22 @@ def floaty_extra(out, env=None):
         hint = [p for p in bad if p.startswith(FLOATY_MERGEABLE)]
         sys.exit(f"floaty : {len(bad)} fichier(s) de la carte en conflit avec le pack NeoMC, rien n'est fusionné :\n  " + '\n  '.join(bad)
                  + (f'\nfusion JSON à faire à la main pour : {", ".join(hint)}' if hint else ''))
-    extra = {rel: data for rel, data in extra.items() if rel not in neo}      # identiques à l'octet : déjà dans le pack
-    print(f'floaty : {len(extra)} fichier(s) de la carte ajoutés au zip ({sum(len(d) for d in extra.values()) / 1e6:.1f} Mo) depuis {src}')
+    if not keep_same:
+        extra = {rel: data for rel, data in extra.items() if rel not in neo}      # identiques à l'octet : déjà dans le pack
+    verb = 'lus (les identiques à NeoMC sont retirés après la scission)' if keep_same else 'ajoutés au zip'
+    print(f'floaty : {len(extra)} fichier(s) de la carte {verb} ({sum(len(d) for d in extra.values()) / 1e6:.1f} Mo) depuis {src}')
     print(f'floaty : {scope}')
     return extra
+
+
+def floaty_settle(server, opt, out):
+    """(server, opt) sans les fichiers identiques à l'octet à ceux de NeoMC (dossier out : déjà dans le pack) ; SystemExit qui liste les chemins
+    générés par la scission (assets/floaty/..., items enveloppés) ou venus de la carte qui existent déjà dans NeoMC avec un autre contenu."""
+    neo = floaty_neo_files(out)
+    bad = sorted(set(floaty_conflicts(server, neo)) | set(floaty_conflicts(opt, neo)))
+    if bad:
+        sys.exit(f"floaty : {len(bad)} fichier(s) du pack Floaty en conflit avec le pack NeoMC, rien n'est écrit :\n  " + '\n  '.join(bad))
+    return ({rel: data for rel, data in server.items() if rel not in neo}, {rel: data for rel, data in opt.items() if rel not in neo})
 
 
 def floaty_write(zf, extra):
@@ -172,3 +187,14 @@ def floaty_write(zf, extra):
         info = zipfile.ZipInfo(rel, date_time=FLOATY_DATE)
         info.compress_type = zipfile.ZIP_DEFLATED
         zf.writestr(info, extra[rel])
+
+
+def floaty_write_opt(path, opt, meta):
+    """Écrit le pack optionnel path : opt ({chemin: octets}) plus son propre pack.mcmeta (meta, objet JSON), triés, date fixe, reproductible."""
+    if 'pack.mcmeta' in opt:
+        raise ValueError('pack.mcmeta est ajouté par floaty_write_opt : il ne doit pas figurer dans opt')
+    files = dict(opt)
+    files['pack.mcmeta'] = floaty_dump(meta)
+    os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+    with zipfile.ZipFile(path, 'w', zipfile.ZIP_DEFLATED) as zf:
+        floaty_write(zf, files)
