@@ -158,7 +158,7 @@ w('hub/decofix', L)
 w('hub/decofix_start', ['# Charge la zone du décor à remettre d\'aplomb, puis hub/decofix (2 s plus tard)',
                         'forceload add -20 -61 40 20', 'schedule function mg:hub/decofix_go 2s'])
 w('hub/decofix_go', ['function mg:hub/decofix', 'forceload remove -20 -61 40 20', 'function mg:core/forceloads'])
-patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby elyclean4 run schedule function mg:elytra/spawn_clean 9s',
+patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby elyclean5 run schedule function mg:elytra/spawn_clean 9s',
       ['execute if score $setup mg.st matches 1 unless data storage mg:lobby decofix2 run schedule function mg:hub/decofix_start 30s'])
 patch('desinstaller', 'data remove storage mg:hub floaty',
       ['data remove storage mg:lobby decofix2', 'schedule clear mg:hub/decofix_start', 'schedule clear mg:hub/decofix_go'])

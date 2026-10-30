@@ -26,7 +26,7 @@ w('setup_lobby', [
     'execute unless entity @s[tag=mg.admin] run tellraw @s ' + ADMIN % ('Reconstruction du lobby lancée (environ 1 minute)...', 'gray'),
     # drapeaux des constructions du spawn (reposés à la fin de chacune)
     'data remove storage mg:lobby v6', 'data remove storage mg:lobby food1', 'data remove storage mg:lobby ely4',
-    'data remove storage mg:lobby elyclean4', 'data remove storage mg:lobby deco3', 'data remove storage mg:lobby decofix2',
+    'data remove storage mg:lobby elyclean5', 'data remove storage mg:lobby deco3', 'data remove storage mg:lobby decofix2',
     'function mg:lobby/build',
     'schedule function mg:lobby/food_build 20s',
     'schedule function mg:elytra/spawn_clean 22s',

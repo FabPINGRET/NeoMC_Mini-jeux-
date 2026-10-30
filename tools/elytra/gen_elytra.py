@@ -111,7 +111,16 @@ for (x1, z1, x2, z2) in ((22, 5, 26, 6), (32, 5, 36, 6)):                       
     SC += [f'fill {x1} 64 {z1} {x2} 70 {z2} minecraft:air', f'fill {x1} 63 {z1} {x2} 63 {z2} minecraft:stone_bricks']
 # ancienne balise blanche des élytres (21, 63, -15) : supprimée
 SC += ['fill 20 62 -16 22 62 -14 minecraft:dirt', 'setblock 21 63 -15 minecraft:grass_block', 'setblock 21 64 -15 minecraft:air']   # trou rebouché
-SC.append('data modify storage mg:lobby elyclean4 set value 1b')
+# quelques cerisiers autour des élytres libres (hors des boîtes d'arbres coupés ci-dessus : x 20..30, z -19..-7)
+for (tx, tz) in ((16, -10), (34, -10), (24, -22), (30, -22)):
+    SC += [f'# cerisier en ({tx}, {tz})',
+           f'fill {tx - 2} 67 {tz - 1} {tx + 2} 68 {tz + 1} minecraft:cherry_leaves[persistent=true]',
+           f'fill {tx - 1} 67 {tz - 2} {tx + 1} 68 {tz + 2} minecraft:cherry_leaves[persistent=true]',
+           f'fill {tx - 1} 69 {tz - 1} {tx + 1} 69 {tz + 1} minecraft:cherry_leaves[persistent=true]',
+           f'fill {tx - 1} 70 {tz} {tx + 1} 70 {tz} minecraft:cherry_leaves[persistent=true]',
+           f'fill {tx} 70 {tz - 1} {tx} 70 {tz + 1} minecraft:cherry_leaves[persistent=true]',
+           f'fill {tx} 64 {tz} {tx} 68 {tz} minecraft:cherry_log']
+SC.append('data modify storage mg:lobby elyclean5 set value 1b')
 W('spawn_clean', SC)
 def _patch(rel, anchor, line):
     pth = os.path.join('data', 'mg', 'function', rel + '.mcfunction'); t = open(pth, encoding='utf-8').read()
@@ -119,8 +128,8 @@ def _patch(rel, anchor, line):
     assert anchor in t, (rel, anchor)
     open(pth, 'w', encoding='utf-8', newline='\n').write(t.replace(anchor, anchor + '\n' + line, 1))
 _patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby ely4 run schedule function mg:elytra/build 14s',
-       'execute if score $setup mg.st matches 1 unless data storage mg:lobby elyclean4 run schedule function mg:elytra/spawn_clean 9s')
-_patch('desinstaller', 'data remove storage mg:lobby ely1', 'data remove storage mg:lobby ely4\ndata remove storage mg:lobby elyclean4\nschedule clear mg:elytra/spawn_clean')
+       'execute if score $setup mg.st matches 1 unless data storage mg:lobby elyclean5 run schedule function mg:elytra/spawn_clean 9s')
+_patch('desinstaller', 'data remove storage mg:lobby ely1', 'data remove storage mg:lobby ely4\ndata remove storage mg:lobby elyclean5\nschedule clear mg:elytra/spawn_clean')
 
 # ---------------------------------------------------------------- départ (start = petit, start2 = grand)
 for c, d in C.items():
