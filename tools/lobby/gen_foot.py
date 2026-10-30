@@ -1,7 +1,7 @@
 """⚽ Terrain de foot souterrain du spawn : python tools/lobby/gen_foot.py .
 (depuis la racine du dépôt ; idempotent ; APRÈS gen_lobby.py, gen_pvpcave.py, gen_events.py et gen_ombrelune.py, AVANT gen_themes.py)
 
-Un tapis téléporteur (x -7..-5, z -40..-38, bord de l'avenue nord, côté ouest ; ligne de core/tick -> foot/pad -> foot/go) mène à un vestiaire creusé
+Le portail du foot du hub des portails (mg:hub/enter_foot -> foot/go ; l'ancien tapis de l'avenue nord est rendu au décor) mène à un vestiaire creusé
 dans la roche, puis au terrain (31×19, sol vert, deux buts) en dessous. Une balle (sulfur_cube au corps test_block, dessinée en ballon par le
 resource pack, archétype mg:football) au centre ; deux équipes au choix sur les socles du vestiaire. Un but compte pour l'équipe ADVERSE du
 but, quel que soit le tireur. Aucune équipe sur le terrain : buts libres, comptés par joueur (dernier toucheur), remis à zéro à la sortie.
@@ -46,16 +46,12 @@ def overlap(a, b):
 def check_site():
     """Le générateur s'arrête avant d'écrire quoi que ce soit si le site n'est pas celui qu'on croit."""
     # TW.RESERVED est vide ici (seul theme_npcs.prepare le remplit, plus tard) : le test ne porte en pratique que sur PAD_BOXES
-    carpet = (FB.PAD_X[0], FB.PAD_X[1], 63, 66, FB.PAD_Z[0], FB.PAD_Z[1])     # tapis d'entrée et sa colonne dégagée (y 64..66)
     # (nom, boîte) : tout ce qui est en surface (tapis, but blanc, haie ouverte) est contrôlé plus bas, pas comme de la roche
-    for name, box in (('terrain', FB.SHELL), ('vestiaire', FB.LOCKER), ('ancien puits', FB.OLD_SHAFT), ('tapis', carpet),
-                      ('but blanc', FB.GOAL), ('haie ouverte', FB.GATE)):
+    for name, box in (('terrain', FB.SHELL), ('vestiaire', FB.LOCKER), ('ancien puits', FB.OLD_SHAFT)):
         for d in TW.DYN:
             assert not overlap(box, d), f'{name} {box} touche une zone modifiée ailleurs (DYN) : {d}'
         for r in TW.RESERVED + TW.PAD_BOXES:
             assert not overlap(box, r), f'{name} {box} touche une zone réservée : {r}'
-        if box in (carpet, FB.GOAL, FB.GATE):
-            continue                                             # en surface : contrôlé plus bas
         for x in range(box[0], box[1] + 1):
             for y in range(box[2], min(box[3], 62) + 1):
                 for z in range(box[4], box[5] + 1):
@@ -69,36 +65,12 @@ def check_site():
     for x in (x1, x2):                                           # piquets (y 64 et 65) : rien d'autre du spawn à leur place
         for z in (z1, z2):
             assert not any((x, y, z) in TW.W for y in (64, 65)), f'décor du spawn à la place d\'un piquet ({x}, {z})'
-    # tapis : sol d'herbe ou de terre (le terracotta le remplace), colonne y 64..66 libre (plantes tolérées : foot/build les vide)
-    for x in range(FB.PAD_X[0], FB.PAD_X[1] + 1):
-        for z in range(FB.PAD_Z[0], FB.PAD_Z[1] + 1):
-            assert TW.bid(TW.W.get((x, 63, z))) in TW.GROUND, f'tapis : pas de sol d\'herbe en {(x, 63, z)} ({TW.W.get((x, 63, z))})'
-            for y in (64, 65, 66):
-                assert TW.opening((x, y, z)), f'tapis : décor du spawn en {(x, y, z)} ({TW.W.get((x, y, z))})'
     # ancien tapis : sol d'herbe ou de terre d'origine (foot/build le restitue depuis W : un trou dans W laisserait de l'air à sa place)
     ox1, ox2, _, _, oz1, oz2 = FB.OLD_PAD
     for x in range(ox1, ox2 + 1):
         for z in range(oz1, oz2 + 1):
             assert TW.bid(TW.W.get((x, 63, z))) in TW.GROUND, f'ancien tapis : pas de sol d\'herbe en {(x, 63, z)} ({TW.W.get((x, 63, z))})'
-    # but blanc : que de l'air, des plantes ou du bambou (foot/build vide la boîte puis pose les poteaux et la barre)
-    gx1, gx2, gy1, gy2, gz1, gz2 = FB.GOAL
-    for x in range(gx1, gx2 + 1):
-        for y in range(gy1, gy2 + 1):
-            for z in range(gz1, gz2 + 1):
-                b = TW.bid(TW.W.get((x, y, z)))
-                assert b == 'minecraft:air' or b in TW.PLANTS or b == 'minecraft:bamboo', f'but blanc : décor du spawn en {(x, y, z)} ({TW.W.get((x, y, z))})'
-    # haie ouverte : seulement de la haie d'azalée en y 64 (y 65..66 vides) ; sol de y 63 : herbe ou terre (foot/build la remplace par des briques)
-    # ou le purpur de l'anneau de la place des plots (laissé en place)
-    hx1, hx2, hy1, hy2, hz1, hz2 = FB.GATE
-    for x in range(hx1, hx2 + 1):
-        for z in range(hz1, hz2 + 1):
-            assert TW.bid(TW.W.get((x, hy1, z))) in TW.GROUND | {'minecraft:purpur_block'}, f'haie : sol inattendu en {(x, hy1, z)} ({TW.W.get((x, hy1, z))})'
-            assert TW.bid(TW.W.get((x, hy1 + 1, z))).endswith('azalea_leaves'), f'haie : pas de haie d\'azalée en {(x, hy1 + 1, z)} ({TW.W.get((x, hy1 + 1, z))})'
-            for y in range(hy1 + 2, hy2 + 1):
-                assert (x, y, z) not in TW.W, f'haie : décor du spawn en {(x, y, z)} ({TW.W.get((x, y, z))})'
-    # point d'arrivée du socle or (RETURN, sur l'avenue) : sol plein, deux cases libres au-dessus
-    rx, ry, rz = int(FB.RETURN[0] // 1), int(FB.RETURN[1]), int(FB.RETURN[2] // 1)
-    assert TW.solid(rx, ry - 1, rz) and all(TW.opening((rx, y, rz)) for y in (ry, ry + 1)), f'arrivée du socle or ({rx}, {ry - 1}..{ry + 1}, {rz}) obstruée'
+    # point d'arrivée du socle or (RETURN) : dans le hub des portails (sol posé et colonne vidée par mg:hub/build), pas contrôlé sur W
 
 
 # ---------------------------------------------------------------- foot/ mis de côté pendant les contrôles et l'écriture (restauré en cas d'échec)
@@ -158,8 +130,10 @@ def tick_lines(zone, sent):
 
 
 # tapis allumé = bloc d'or au centre (FB.PAD_C ; foot/entry_close le remplace par du vert) : foot/pad fait les particules et l'envoi au terrain
-TICK = [f'execute if score $setup mg.st matches 1 unless score $ftoff mg.st matches 1 if block {FB.PAD_C[0]} 63 {FB.PAD_C[1]} minecraft:gold_block '
-        'run function mg:foot/pad'] + tick_lines(FB.FOOT_ZONE, FB.SENT)
+TICK = tick_lines(FB.FOOT_ZONE, FB.SENT)
+# ligne du tapis de l'avenue nord (x -7..-5 ; entrée passée au hub des portails), recopiée telle quelle de core/tick
+OLD_PAD_LINE = ('execute if score $setup mg.st matches 1 unless score $ftoff mg.st matches 1 if block -6 63 -39 minecraft:gold_block '
+                'run function mg:foot/pad')
 OLD_SX, OLD_SY, OLD_SZ = OLD_SENT
 # ligne du tapis d'avant (x -19..-17, appelait foot/go directement), recopiée telle quelle de core/tick
 OLD_ENTRY = ('execute if score $setup mg.st matches 1 unless score $ftoff mg.st matches 1 if block -18 63 -18 minecraft:gold_block '
@@ -168,7 +142,7 @@ OLD_ENTRY = ('execute if score $setup mg.st matches 1 unless score $ftoff mg.st 
 # toutes les anciennes formes à retirer : zone d'avant (foot/tick), bloc témoin d'avant (foot/build), test d'avant sans les coins, tapis d'avant
 OLD = tick_lines(OLD_ZONE, OLD_SENT) + [
     f'execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 if loaded {OLD_SX} {OLD_SY} {OLD_SZ} unless block {OLD_SX} {OLD_SY} {OLD_SZ} minecraft:lodestone run function mg:foot/build',
-    OLD_ENTRY]
+    OLD_ENTRY, OLD_PAD_LINE]
 C.drop_lines('core/tick', TICK + OLD)      # core/tick n'est que patché (jamais réécrit) : on retire d'abord les lignes du foot (dont les anciennes formes)
 C.patch('core/tick', 'execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 if loaded 13 53 5 unless block 13 53 5 minecraft:lodestone run function mg:pvpc/build', TICK)
 C.patch('core/reset_player', 'tag @s remove mg.play', ['function mg:foot/cleanup'], where='before')

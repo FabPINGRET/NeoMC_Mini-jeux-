@@ -11,4 +11,4 @@ execute as @a[tag=mg.ftin] run scoreboard players reset @s mg.ft
 tag @a remove mg.ftin
 tag @a remove mg.ftlt
 function mg:foot/entry_close
-tellraw @s {"text":"⚽ Terrain de foot : désactivé (joueurs renvoyés au spawn, tapis éteint).","color":"red"}
+tellraw @s {"text":"⚽ Terrain de foot : désactivé (joueurs renvoyés au spawn, portail fermé).","color":"red"}

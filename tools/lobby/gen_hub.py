@@ -86,7 +86,8 @@ BUILD = ['# Hub des portails : huit petits portails au spawn nord (ex-portail de
          f'fill {X1} 63 {Z1} {X2} 63 {Z2} minecraft:smooth_stone',
          f'setblock {WITNESS[0]} {WITNESS[1]} {WITNESS[2]} {WITNESS_BLOCK}',
          'execute unless data storage mg:hub floaty run data modify storage mg:hub floaty set value 0b',
-         f'execute unless data storage mg:hub oldclean run function mg:hub/old_clean']
+         f'execute unless data storage mg:hub oldclean run function mg:hub/old_clean',
+         'schedule function mg:hub/decofix_start 20s']           # décor alentour remis d'aplomb (tools/lobby/gen_decofix.py)
 for s in SLOTS:
     BUILD += portal_lines(s)
 w('hub/build', BUILD)
@@ -107,8 +108,9 @@ ENTER = {
     'floaty': ['# @s entre au portail de Scourge of the Floaty Isles (hub) : verrouillé tant que le terrain n\'est pas installé',
                'execute unless data storage mg:hub {floaty:1b} run return run title @s actionbar {"text":"🔒 Scourge of the Floaty Isles : bientôt disponible","color":"aqua"}',
                'function mg:floaty/menu_go'],
-    'foot': ['# @s entre au portail du terrain de foot (hub) : posé sur le tapis d\'entrée (x -7..-5, z -40..-38)',
-             'tp @s -6.5 64 -38.5 90 0'],
+    'foot': ['# @s entre au portail du terrain de foot (hub) : descend au terrain (foot/go), sauf si un admin l\'a fermé ($ftoff)',
+             'execute if score $ftoff mg.st matches 1 run return run title @s actionbar {"text":"⚽ Terrain de foot fermé pour le moment","color":"red"}',
+             'function mg:foot/go'],
     'pvp': ['# @s entre au portail de l\'arène PvP (hub) : au-dessus du trou, il y tombe',
             'tp @s 13.5 66 12.5 0 0'],
 }

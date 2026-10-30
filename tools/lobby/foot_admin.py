@@ -2,7 +2,7 @@
 
 Même mécanique que gen_sit.py (admin_toggle / admin_stats, add_buttons / chat_line recopiés : gen_sit.py s'exécute à l'import).
 - mg.opt 84 : coupe / rétablit le terrain ($ftoff mg.st = 1 : coupé, absent : actif). Couper : plus de balle, joueurs du terrain renvoyés au
-  spawn, équipes quittées, tapis d'entrée éteint (plus de bloc d'or, plus de téléportation) et panneaux retirés. Rétablir : tapis rallumé,
+  spawn, équipes quittées, portail du hub fermé (plus de téléportation) et panneaux retirés. Rétablir : tapis rallumé,
   panneaux reposés.
 - mg.opt 85 : compteurs d'usage (objectif mg.ftn : $but buts, $eq choix d'équipe, $ent entrées sur le terrain) et score en cours.
 - Boutons dans dialog/lobby_events.json (avant « trigger mg.menu ») et lignes de lobby/ev/menu_chat (après la dernière du menu texte).
@@ -63,7 +63,7 @@ def write():
                             'execute as @a run function mg:foot/cleanup', 'execute as @a[tag=mg.ftin] run scoreboard players reset @s mg.ft',
                             'tag @a remove mg.ftin', 'tag @a remove mg.ftlt',
                             'function mg:foot/entry_close',
-                            'tellraw @s ' + js({'text': '⚽ Terrain de foot : désactivé (joueurs renvoyés au spawn, tapis éteint).', 'color': 'red'})])
+                            'tellraw @s ' + js({'text': '⚽ Terrain de foot : désactivé (joueurs renvoyés au spawn, portail fermé).', 'color': 'red'})])
     w('foot/admin_stats', ['# Admin (@s) : compteurs d\'usage du terrain de foot (objectif mg.ftn) et score en cours (mg.ft)'] +
       [f'execute unless score {n} mg.ftn matches 0.. run scoreboard players set {n} mg.ftn 0' for n, _ in COUNTERS] +
       ['execute if score $ftoff mg.st matches 1 run tellraw @s ' + js({'text': '⚽ Terrain de foot : désactivé', 'color': 'red'}),

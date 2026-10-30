@@ -1,3 +1,2 @@
-# Terrain réactivé : tapis rallumé, panneaux reposés
-setblock -6 63 -39 minecraft:gold_block
+# Terrain réactivé : panneaux reposés
 function mg:foot/labels
