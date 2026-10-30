@@ -6,10 +6,10 @@ tellraw @a[tag=mg.admin] [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Recons
 execute unless entity @s[tag=mg.admin] run tellraw @s [{"text":"[Mini-Jeux] ","color":"gold"},{"text":"Reconstruction du lobby lancée (environ 1 minute)...","color":"gray"}]
 data remove storage mg:lobby v6
 data remove storage mg:lobby food1
-data remove storage mg:lobby ely3
-data remove storage mg:lobby elyclean3
+data remove storage mg:lobby ely4
+data remove storage mg:lobby elyclean4
 data remove storage mg:lobby deco3
-data remove storage mg:lobby decofix1
+data remove storage mg:lobby decofix2
 function mg:lobby/build
 schedule function mg:lobby/food_build 20s
 schedule function mg:elytra/spawn_clean 22s

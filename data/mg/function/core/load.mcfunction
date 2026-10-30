@@ -803,9 +803,9 @@ execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run sche
 execute if score $setup mg.st matches 1 unless data storage mg:lobby v6 run schedule function mg:elytra/build 30s
 execute if score $setup mg.st matches 1 unless data storage mg:lobby food1 run schedule function mg:lobby/food_build 12s
 execute unless data storage mg:lobby coasterbeacon run function mg:lobby/coaster_beacon_off
-execute if score $setup mg.st matches 1 unless data storage mg:lobby ely3 run schedule function mg:elytra/build 14s
-execute if score $setup mg.st matches 1 unless data storage mg:lobby elyclean3 run schedule function mg:elytra/spawn_clean 9s
-execute if score $setup mg.st matches 1 unless data storage mg:lobby decofix1 run schedule function mg:hub/decofix_start 30s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby ely4 run schedule function mg:elytra/build 14s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby elyclean4 run schedule function mg:elytra/spawn_clean 9s
+execute if score $setup mg.st matches 1 unless data storage mg:lobby decofix2 run schedule function mg:hub/decofix_start 30s
 
 # Zones chargées (après une mise à jour du pack, les nouvelles zones sont prises en compte)
 execute if score $setup mg.st matches 1 run function mg:core/forceloads

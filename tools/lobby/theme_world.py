@@ -27,7 +27,7 @@ CH = {}                                  # (x, y, z) -> (bloc d'origine, bloc du
 RESERVED = []                            # boîtes (x1, x2, y1, y2, z1, z2) sans décor ni animal (cf. reserve), jamais vidé par load
 PAD_BOXES = []                           # idem, pour les socles d'élytra : reconstruit à chaque load
 # socles du parcours d'élytra (elytra/build) : centre (x, z) ; panneaux flottants jusqu'à y 68, d'où la boîte de hauteur 9
-ELYTRA_PADS = [(16, -9), (32, -15), (16, -21)]
+ELYTRA_PADS = [(24, 9), (34, 9), (24, -10)]   # socles d'élytra (tools/elytra/gen_elytra.py : petit, grand, élytres libres)
 PAD_MARGIN = 4                           # socle de 5x5 (±2) + 2 blocs autour
 
 

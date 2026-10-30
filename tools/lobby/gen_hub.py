@@ -29,7 +29,7 @@ w, patch = _fn.write, _fn.patch
 
 TR = 'transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[%sf,%sf,%sf],scale:[%sf,%sf,%sf]}'
 BOX = (-10, 63, -61, 10, 82, -42)                 # zone du hub (x1 y1 z1 x2 y2 z2)
-WITNESS = (0, 63, -51)                            # bloc témoin du hub (au centre du passage nord-sud)
+WITNESS = (0, 63, -50)                            # bloc témoin du hub (au centre du passage nord-sud)
 WITNESS_BLOCK = 'minecraft:mossy_stone_bricks'
 OLD_SITES = [(5, 13, -23, -15), (-16, -5, -23, -15), (-18, -5, -33, -25)]   # anciens portails GTA, Terra Nova, Ombrelune (x1 x2 z1 z2)
 CLEAN_FLAG = 'mg:hub oldclean'
@@ -49,7 +49,8 @@ ENTER_TAGS = 'tag=!mg.play,tag=!mg.out,tag=!mg.surv,tag=!mg.inplot,tag=!mg.visit
 
 
 def snbt_text(d):
-    return "'" + json.dumps(d, ensure_ascii=False) + "'"
+    """Composant de texte en SNBT (objet, pas chaîne : une chaîne serait affichée telle quelle, accolades comprises)."""
+    return json.dumps(d, ensure_ascii=False)
 
 
 def box_at(s):

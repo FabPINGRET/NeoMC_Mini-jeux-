@@ -19,7 +19,7 @@ js, w, patch = mcfn.js, _fn.write, _fn.patch
 
 
 # (libellé, [(storage, chemin)])
-JOBS = [('Spawn', [('mg:lobby', 'v6')]), ('Buffet', [('mg:lobby', 'food1')]), ('Élytres du spawn', [('mg:lobby', 'ely3')]),
+JOBS = [('Spawn', [('mg:lobby', 'v6')]), ('Buffet', [('mg:lobby', 'food1')]), ('Élytres du spawn', [('mg:lobby', 'ely4')]),
         ('Hall des scores', [('mg:hall', 'v10')]), ('Plots', [('mg:setup', 'plot')]),
         ('Mini Party', [('mg:party', 'built')]), ('Kart', [('mg:kart', 'built'), ('mg:kart', 'built2'), ('mg:kart', 'built3')]),
         ('Dropper aventure', [('mg:dropadv', 'v3')]), ('Élytra', [('mg:sky', 'built')]),
