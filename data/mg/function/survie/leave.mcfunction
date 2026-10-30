@@ -4,6 +4,9 @@ execute if entity @s[tag=mg.tvw] run return run function mg:terra/leave
 execute if entity @s[tag=mg.olw] run return run function mg:ombre/leave
 execute if entity @s[tag=mg.fnw] run return run function mg:filon/leave
 execute if entity @s[tag=mg.flw] run return run function mg:floaty/leave
+# Sur son plot (ou en visite) : « Retour au lobby » du menu le fait quitter, comme /trigger mg.pl set 2
+execute if entity @s[tag=mg.inplot] run return run function mg:plot/leave
+execute if entity @s[tag=mg.visit] run return run function mg:plot/leave
 execute unless entity @s[tag=mg.surv] run return run tellraw @s [{"text":"Tu n'es pas en survie.","color":"gray"}]
 execute store result storage mg:survie id.id int 1 run scoreboard players get @s mg.svid
 execute store result storage mg:survie id.x int 1 run scoreboard players get @s mg.svvx
