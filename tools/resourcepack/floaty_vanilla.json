@@ -1,0 +1,1902 @@
+{
+  "names_sha256": "4244065d3be9e7c0c4363c9b0e3cf1c1dbd2074ff9790ffbe5c7710a22f0e4e6",
+  "version": {
+    "id": "26.2",
+    "resource": [
+      88,
+      0
+    ]
+  },
+  "replaced": {
+    "items": [
+      "assets/minecraft/items/apple.json",
+      "assets/minecraft/items/armadillo_scute.json",
+      "assets/minecraft/items/bow.json",
+      "assets/minecraft/items/breeze_rod.json",
+      "assets/minecraft/items/brick.json",
+      "assets/minecraft/items/carrot_on_a_stick.json",
+      "assets/minecraft/items/clay_ball.json",
+      "assets/minecraft/items/diamond_sword.json",
+      "assets/minecraft/items/dried_kelp.json",
+      "assets/minecraft/items/egg.json",
+      "assets/minecraft/items/ender_pearl.json",
+      "assets/minecraft/items/flint.json",
+      "assets/minecraft/items/iron_sword.json",
+      "assets/minecraft/items/netherite_sword.json",
+      "assets/minecraft/items/quartz.json",
+      "assets/minecraft/items/rabbit_hide.json",
+      "assets/minecraft/items/stone_sword.json",
+      "assets/minecraft/items/wooden_sword.json"
+    ],
+    "models": [
+      "assets/minecraft/models/item/blaze_rod.json"
+    ],
+    "textures_item": [
+      "assets/minecraft/textures/item/brush.png",
+      "assets/minecraft/textures/item/compass_00.png",
+      "assets/minecraft/textures/item/compass_01.png",
+      "assets/minecraft/textures/item/compass_02.png",
+      "assets/minecraft/textures/item/compass_03.png",
+      "assets/minecraft/textures/item/compass_04.png",
+      "assets/minecraft/textures/item/compass_05.png",
+      "assets/minecraft/textures/item/compass_06.png",
+      "assets/minecraft/textures/item/compass_07.png",
+      "assets/minecraft/textures/item/compass_08.png",
+      "assets/minecraft/textures/item/compass_09.png",
+      "assets/minecraft/textures/item/compass_10.png",
+      "assets/minecraft/textures/item/compass_11.png",
+      "assets/minecraft/textures/item/compass_12.png",
+      "assets/minecraft/textures/item/compass_13.png",
+      "assets/minecraft/textures/item/compass_14.png",
+      "assets/minecraft/textures/item/compass_15.png",
+      "assets/minecraft/textures/item/compass_16.png",
+      "assets/minecraft/textures/item/compass_17.png",
+      "assets/minecraft/textures/item/compass_18.png",
+      "assets/minecraft/textures/item/compass_19.png",
+      "assets/minecraft/textures/item/compass_20.png",
+      "assets/minecraft/textures/item/compass_21.png",
+      "assets/minecraft/textures/item/compass_22.png",
+      "assets/minecraft/textures/item/compass_23.png",
+      "assets/minecraft/textures/item/compass_24.png",
+      "assets/minecraft/textures/item/compass_25.png",
+      "assets/minecraft/textures/item/compass_26.png",
+      "assets/minecraft/textures/item/compass_27.png",
+      "assets/minecraft/textures/item/compass_28.png",
+      "assets/minecraft/textures/item/compass_29.png",
+      "assets/minecraft/textures/item/compass_30.png",
+      "assets/minecraft/textures/item/compass_31.png",
+      "assets/minecraft/textures/item/crossbow_firework.png",
+      "assets/minecraft/textures/item/disc_fragment_5.png",
+      "assets/minecraft/textures/item/elytra.png",
+      "assets/minecraft/textures/item/firework_rocket.png",
+      "assets/minecraft/textures/item/iron_nugget.png",
+      "assets/minecraft/textures/item/lapis_lazuli.png",
+      "assets/minecraft/textures/item/netherite_scrap.png",
+      "assets/minecraft/textures/item/netherite_upgrade_smithing_template.png",
+      "assets/minecraft/textures/item/ominous_trial_key.png",
+      "assets/minecraft/textures/item/slime_ball.png",
+      "assets/minecraft/textures/item/trial_key.png",
+      "assets/minecraft/textures/item/trident.png"
+    ],
+    "textures_block": [
+      "assets/minecraft/textures/block/brown_glazed_terracotta.png",
+      "assets/minecraft/textures/block/cactus_bottom.png",
+      "assets/minecraft/textures/block/cactus_side.png",
+      "assets/minecraft/textures/block/cactus_top.png",
+      "assets/minecraft/textures/block/chiseled_resin_bricks.png",
+      "assets/minecraft/textures/block/coal_ore.png",
+      "assets/minecraft/textures/block/copper_bulb_lit_powered.png",
+      "assets/minecraft/textures/block/copper_bulb_powered.png",
+      "assets/minecraft/textures/block/copper_ore.png",
+      "assets/minecraft/textures/block/cyan_glazed_terracotta.png",
+      "assets/minecraft/textures/block/deepslate_copper_ore.png",
+      "assets/minecraft/textures/block/deepslate_emerald_ore.png",
+      "assets/minecraft/textures/block/deepslate_lapis_ore.png",
+      "assets/minecraft/textures/block/emerald_block.png",
+      "assets/minecraft/textures/block/emerald_ore.png",
+      "assets/minecraft/textures/block/green_glazed_terracotta.png",
+      "assets/minecraft/textures/block/lapis_ore.png",
+      "assets/minecraft/textures/block/light_blue_glazed_terracotta.png",
+      "assets/minecraft/textures/block/lime_glazed_terracotta.png",
+      "assets/minecraft/textures/block/nether_sprouts.png",
+      "assets/minecraft/textures/block/red_glazed_terracotta.png",
+      "assets/minecraft/textures/block/resin_bricks.png",
+      "assets/minecraft/textures/block/warped_nylium.png",
+      "assets/minecraft/textures/block/warped_nylium_side.png",
+      "assets/minecraft/textures/block/warped_roots.png",
+      "assets/minecraft/textures/block/warped_roots_pot.png"
+    ],
+    "textures_entity": [
+      "assets/minecraft/textures/entity/blaze/blaze.png",
+      "assets/minecraft/textures/entity/breeze/breeze.png",
+      "assets/minecraft/textures/entity/breeze/breeze_eyes.png",
+      "assets/minecraft/textures/entity/breeze/breeze_wind.png",
+      "assets/minecraft/textures/entity/equipment/wings/elytra.png",
+      "assets/minecraft/textures/entity/guardian/guardian.png",
+      "assets/minecraft/textures/entity/guardian/guardian_beam.png",
+      "assets/minecraft/textures/entity/guardian/guardian_elder.png",
+      "assets/minecraft/textures/entity/illager/illusioner.png",
+      "assets/minecraft/textures/entity/illager/vex.png",
+      "assets/minecraft/textures/entity/illager/vex_charging.png",
+      "assets/minecraft/textures/entity/slime/slime.png",
+      "assets/minecraft/textures/entity/spider/cave_spider.png",
+      "assets/minecraft/textures/entity/spider/spider_eyes.png",
+      "assets/minecraft/textures/entity/trident/trident.png",
+      "assets/minecraft/textures/entity/zombie/drowned.png",
+      "assets/minecraft/textures/entity/zombie/drowned_outer_layer.png",
+      "assets/minecraft/textures/entity/zombie/husk.png",
+      "assets/minecraft/textures/entity/zombie/husk_baby.png",
+      "assets/minecraft/textures/entity/zombie/zombie.png",
+      "assets/minecraft/textures/entity/zombie/zombie_baby.png"
+    ],
+    "textures_particle": [
+      "assets/minecraft/textures/particle/firefly.png",
+      "assets/minecraft/textures/particle/sculk_soul_0.png",
+      "assets/minecraft/textures/particle/sculk_soul_1.png",
+      "assets/minecraft/textures/particle/sculk_soul_10.png",
+      "assets/minecraft/textures/particle/sculk_soul_2.png",
+      "assets/minecraft/textures/particle/sculk_soul_3.png",
+      "assets/minecraft/textures/particle/sculk_soul_4.png",
+      "assets/minecraft/textures/particle/sculk_soul_5.png",
+      "assets/minecraft/textures/particle/sculk_soul_6.png",
+      "assets/minecraft/textures/particle/sculk_soul_7.png",
+      "assets/minecraft/textures/particle/sculk_soul_8.png",
+      "assets/minecraft/textures/particle/sculk_soul_9.png"
+    ],
+    "textures_painting": [
+      "assets/minecraft/textures/painting/alban.png",
+      "assets/minecraft/textures/painting/aztec.png",
+      "assets/minecraft/textures/painting/aztec2.png",
+      "assets/minecraft/textures/painting/back.png",
+      "assets/minecraft/textures/painting/bomb.png",
+      "assets/minecraft/textures/painting/burning_skull.png",
+      "assets/minecraft/textures/painting/bust.png",
+      "assets/minecraft/textures/painting/cavebird.png",
+      "assets/minecraft/textures/painting/courbet.png",
+      "assets/minecraft/textures/painting/creebet.png",
+      "assets/minecraft/textures/painting/donkey_kong.png",
+      "assets/minecraft/textures/painting/earth.png",
+      "assets/minecraft/textures/painting/fighters.png",
+      "assets/minecraft/textures/painting/fire.png",
+      "assets/minecraft/textures/painting/graham.png",
+      "assets/minecraft/textures/painting/kebab.png",
+      "assets/minecraft/textures/painting/match.png",
+      "assets/minecraft/textures/painting/pigscene.png",
+      "assets/minecraft/textures/painting/plant.png",
+      "assets/minecraft/textures/painting/pointer.png",
+      "assets/minecraft/textures/painting/pool.png",
+      "assets/minecraft/textures/painting/sea.png",
+      "assets/minecraft/textures/painting/skeleton.png",
+      "assets/minecraft/textures/painting/skull_and_roses.png",
+      "assets/minecraft/textures/painting/stage.png",
+      "assets/minecraft/textures/painting/sunset.png",
+      "assets/minecraft/textures/painting/void.png",
+      "assets/minecraft/textures/painting/wanderer.png",
+      "assets/minecraft/textures/painting/wasteland.png",
+      "assets/minecraft/textures/painting/water.png",
+      "assets/minecraft/textures/painting/wind.png",
+      "assets/minecraft/textures/painting/wither.png"
+    ],
+    "textures_other": [
+      "assets/minecraft/textures/gui/container/shulker_box.png",
+      "assets/minecraft/textures/misc/enchanted_glint_item.png",
+      "assets/minecraft/textures/trims/color_palettes/trim_palette.png"
+    ],
+    "sounds": [],
+    "mcmeta": [
+      "assets/minecraft/textures/block/brown_glazed_terracotta.png.mcmeta",
+      "assets/minecraft/textures/block/cactus_bottom.png.mcmeta",
+      "assets/minecraft/textures/block/cactus_side.png.mcmeta",
+      "assets/minecraft/textures/block/cactus_top.png.mcmeta",
+      "assets/minecraft/textures/block/chiseled_resin_bricks.png.mcmeta",
+      "assets/minecraft/textures/block/copper_ore.png.mcmeta",
+      "assets/minecraft/textures/block/deepslate_copper_ore.png.mcmeta",
+      "assets/minecraft/textures/block/deepslate_lapis_ore.png.mcmeta",
+      "assets/minecraft/textures/block/emerald_ore.png.mcmeta",
+      "assets/minecraft/textures/block/lapis_ore.png.mcmeta",
+      "assets/minecraft/textures/block/light_blue_glazed_terracotta.png.mcmeta",
+      "assets/minecraft/textures/block/lime_glazed_terracotta.png.mcmeta",
+      "assets/minecraft/textures/block/red_glazed_terracotta.png.mcmeta",
+      "assets/minecraft/textures/block/resin_bricks.png.mcmeta",
+      "assets/minecraft/textures/item/disc_fragment_5.png.mcmeta",
+      "assets/minecraft/textures/item/lapis_lazuli.png.mcmeta",
+      "assets/minecraft/textures/item/ominous_trial_key.png.mcmeta"
+    ],
+    "other": []
+  },
+  "dropped": [
+    "assets/minecraft/textures/entity/equipment/wings/elytra_old.png",
+    "assets/minecraft/textures/misc/enchanted_glint_entity.png",
+    "assets/minecraft/textures/misc/enchanted_item_glint.png.mcmeta",
+    "assets/minecraft/textures/trims/color_palettes/template.png",
+    "assets/minecraft/textures/trims/models/armor/circles.png",
+    "assets/minecraft/textures/trims/models/armor/circles_leggings.png",
+    "assets/minecraft/textures/trims/models/armor/spider.png",
+    "assets/minecraft/textures/trims/models/armor/spider_leggings.png",
+    "assets/minecraft/textures/trims/models/armor/template.png",
+    "assets/minecraft/textures/trims/models/armor/template_leggings.png"
+  ],
+  "sounds": {
+    "new": [
+      "scourge.virus_beep_1",
+      "scourge.virus_beep_2",
+      "scourge.virus_beep_3",
+      "soundtrack.3am",
+      "soundtrack.3am_dark",
+      "soundtrack.3pm",
+      "soundtrack.3pm_dark",
+      "soundtrack.9am",
+      "soundtrack.9am_1",
+      "soundtrack.9am_dark",
+      "soundtrack.9pm",
+      "soundtrack.9pm_dark",
+      "soundtrack.boss_fanfare",
+      "soundtrack.boss_intro",
+      "soundtrack.boss_theme",
+      "soundtrack.boss_theme_2",
+      "soundtrack.cob_theme",
+      "soundtrack.ed_theme",
+      "soundtrack.fs_theme",
+      "soundtrack.lod_theme",
+      "soundtrack.miniboss_theme",
+      "soundtrack.morbex_theme",
+      "soundtrack.sc_theme",
+      "soundtrack.sh_theme",
+      "soundtrack.skt_theme",
+      "soundtrack.slime_man_action",
+      "soundtrack.slime_man_fail",
+      "soundtrack.slime_man_theme",
+      "soundtrack.sop_theme",
+      "soundtrack.st_theme",
+      "soundtrack.ta_theme",
+      "soundtrack.virion_theme",
+      "soundtrack.virus_theme",
+      "soundtrack.wm_theme",
+      "zelda.error",
+      "zelda.heart_container",
+      "zelda.item_fanfare",
+      "zelda.itemget",
+      "zelda.minor_secret",
+      "zelda.newsong",
+      "zelda.secret"
+    ],
+    "dropped": [
+      "music.creative",
+      "music.dragon",
+      "music.end",
+      "music.end.credits",
+      "music.game",
+      "music.menu",
+      "music.nether.basalt_deltas",
+      "music.nether.crimson_forest",
+      "music.nether.nether_wastes",
+      "music.nether.soul_sand_valley",
+      "music.nether.warped_forest",
+      "music.overworld.badlands",
+      "music.overworld.bamboo_jungle",
+      "music.overworld.cherry_grove",
+      "music.overworld.deep_dark",
+      "music.overworld.desert",
+      "music.overworld.dripstone_caves",
+      "music.overworld.flower_forest",
+      "music.overworld.forest",
+      "music.overworld.frozen_peaks",
+      "music.overworld.grove",
+      "music.overworld.jagged_peaks",
+      "music.overworld.jungle",
+      "music.overworld.lush_caves",
+      "music.overworld.meadow",
+      "music.overworld.old_growth_taiga",
+      "music.overworld.snowy_slopes",
+      "music.overworld.sparse_jungle",
+      "music.overworld.stony_peaks",
+      "music.overworld.swamp",
+      "music.overworld.windswept_forest"
+    ]
+  },
+  "items": {
+    "assets/minecraft/items/apple.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/apple"
+      }
+    },
+    "assets/minecraft/items/armadillo_scute.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/armadillo_scute"
+      }
+    },
+    "assets/minecraft/items/blaze_rod.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/blaze_rod"
+      }
+    },
+    "assets/minecraft/items/bow.json": {
+      "model": {
+        "type": "minecraft:condition",
+        "on_false": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/bow"
+        },
+        "on_true": {
+          "type": "minecraft:range_dispatch",
+          "entries": [
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/bow_pulling_1"
+              },
+              "threshold": 0.65
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/bow_pulling_2"
+              },
+              "threshold": 0.9
+            }
+          ],
+          "fallback": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/bow_pulling_0"
+          },
+          "property": "minecraft:use_duration",
+          "scale": 0.05
+        },
+        "property": "minecraft:using_item"
+      }
+    },
+    "assets/minecraft/items/breeze_rod.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/breeze_rod"
+      }
+    },
+    "assets/minecraft/items/brick.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/brick"
+      }
+    },
+    "assets/minecraft/items/brush.json": {
+      "model": {
+        "type": "minecraft:range_dispatch",
+        "entries": [
+          {
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/brush_brushing_0"
+            },
+            "threshold": 0.25
+          },
+          {
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/brush_brushing_1"
+            },
+            "threshold": 0.5
+          },
+          {
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/brush_brushing_2"
+            },
+            "threshold": 0.75
+          }
+        ],
+        "fallback": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/brush"
+        },
+        "period": 10.0,
+        "property": "minecraft:use_cycle",
+        "scale": 0.1
+      }
+    },
+    "assets/minecraft/items/carrot_on_a_stick.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/carrot_on_a_stick"
+      }
+    },
+    "assets/minecraft/items/clay_ball.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/clay_ball"
+      }
+    },
+    "assets/minecraft/items/compass.json": {
+      "model": {
+        "type": "minecraft:condition",
+        "component": "minecraft:lodestone_tracker",
+        "on_false": {
+          "type": "minecraft:range_dispatch",
+          "entries": [
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_16"
+              },
+              "threshold": 0.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_17"
+              },
+              "threshold": 0.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_18"
+              },
+              "threshold": 1.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_19"
+              },
+              "threshold": 2.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_20"
+              },
+              "threshold": 3.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_21"
+              },
+              "threshold": 4.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_22"
+              },
+              "threshold": 5.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_23"
+              },
+              "threshold": 6.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_24"
+              },
+              "threshold": 7.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_25"
+              },
+              "threshold": 8.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_26"
+              },
+              "threshold": 9.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_27"
+              },
+              "threshold": 10.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_28"
+              },
+              "threshold": 11.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_29"
+              },
+              "threshold": 12.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_30"
+              },
+              "threshold": 13.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_31"
+              },
+              "threshold": 14.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_00"
+              },
+              "threshold": 15.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_01"
+              },
+              "threshold": 16.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_02"
+              },
+              "threshold": 17.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_03"
+              },
+              "threshold": 18.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_04"
+              },
+              "threshold": 19.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_05"
+              },
+              "threshold": 20.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_06"
+              },
+              "threshold": 21.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_07"
+              },
+              "threshold": 22.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_08"
+              },
+              "threshold": 23.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_09"
+              },
+              "threshold": 24.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_10"
+              },
+              "threshold": 25.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_11"
+              },
+              "threshold": 26.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_12"
+              },
+              "threshold": 27.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_13"
+              },
+              "threshold": 28.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_14"
+              },
+              "threshold": 29.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_15"
+              },
+              "threshold": 30.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_16"
+              },
+              "threshold": 31.5
+            }
+          ],
+          "property": "minecraft:compass",
+          "scale": 32.0,
+          "target": "spawn"
+        },
+        "on_true": {
+          "type": "minecraft:range_dispatch",
+          "entries": [
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_16"
+              },
+              "threshold": 0.0
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_17"
+              },
+              "threshold": 0.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_18"
+              },
+              "threshold": 1.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_19"
+              },
+              "threshold": 2.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_20"
+              },
+              "threshold": 3.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_21"
+              },
+              "threshold": 4.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_22"
+              },
+              "threshold": 5.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_23"
+              },
+              "threshold": 6.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_24"
+              },
+              "threshold": 7.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_25"
+              },
+              "threshold": 8.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_26"
+              },
+              "threshold": 9.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_27"
+              },
+              "threshold": 10.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_28"
+              },
+              "threshold": 11.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_29"
+              },
+              "threshold": 12.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_30"
+              },
+              "threshold": 13.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_31"
+              },
+              "threshold": 14.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_00"
+              },
+              "threshold": 15.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_01"
+              },
+              "threshold": 16.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_02"
+              },
+              "threshold": 17.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_03"
+              },
+              "threshold": 18.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_04"
+              },
+              "threshold": 19.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_05"
+              },
+              "threshold": 20.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_06"
+              },
+              "threshold": 21.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_07"
+              },
+              "threshold": 22.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_08"
+              },
+              "threshold": 23.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_09"
+              },
+              "threshold": 24.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_10"
+              },
+              "threshold": 25.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_11"
+              },
+              "threshold": 26.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_12"
+              },
+              "threshold": 27.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_13"
+              },
+              "threshold": 28.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_14"
+              },
+              "threshold": 29.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_15"
+              },
+              "threshold": 30.5
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "minecraft:item/compass_16"
+              },
+              "threshold": 31.5
+            }
+          ],
+          "property": "minecraft:compass",
+          "scale": 32.0,
+          "target": "lodestone"
+        },
+        "property": "minecraft:has_component"
+      }
+    },
+    "assets/minecraft/items/crossbow.json": {
+      "model": {
+        "type": "minecraft:select",
+        "cases": [
+          {
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/crossbow_arrow"
+            },
+            "when": "arrow"
+          },
+          {
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/crossbow_firework"
+            },
+            "when": "rocket"
+          }
+        ],
+        "fallback": {
+          "type": "minecraft:condition",
+          "on_false": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/crossbow"
+          },
+          "on_true": {
+            "type": "minecraft:range_dispatch",
+            "entries": [
+              {
+                "model": {
+                  "type": "minecraft:model",
+                  "model": "minecraft:item/crossbow_pulling_1"
+                },
+                "threshold": 0.58
+              },
+              {
+                "model": {
+                  "type": "minecraft:model",
+                  "model": "minecraft:item/crossbow_pulling_2"
+                },
+                "threshold": 1.0
+              }
+            ],
+            "fallback": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/crossbow_pulling_0"
+            },
+            "property": "minecraft:crossbow/pull"
+          },
+          "property": "minecraft:using_item"
+        },
+        "property": "minecraft:charge_type"
+      }
+    },
+    "assets/minecraft/items/diamond_sword.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/diamond_sword"
+      }
+    },
+    "assets/minecraft/items/disc_fragment_5.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/disc_fragment_5"
+      }
+    },
+    "assets/minecraft/items/dried_kelp.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/dried_kelp"
+      }
+    },
+    "assets/minecraft/items/egg.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/egg"
+      }
+    },
+    "assets/minecraft/items/elytra.json": {
+      "model": {
+        "type": "minecraft:condition",
+        "on_false": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/elytra"
+        },
+        "on_true": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/elytra_broken"
+        },
+        "property": "minecraft:broken"
+      }
+    },
+    "assets/minecraft/items/ender_pearl.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/ender_pearl"
+      }
+    },
+    "assets/minecraft/items/firework_rocket.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/firework_rocket"
+      }
+    },
+    "assets/minecraft/items/flint.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/flint"
+      }
+    },
+    "assets/minecraft/items/iron_nugget.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/iron_nugget"
+      }
+    },
+    "assets/minecraft/items/iron_sword.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/iron_sword"
+      }
+    },
+    "assets/minecraft/items/lapis_lazuli.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/lapis_lazuli"
+      }
+    },
+    "assets/minecraft/items/netherite_scrap.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/netherite_scrap"
+      }
+    },
+    "assets/minecraft/items/netherite_sword.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/netherite_sword"
+      }
+    },
+    "assets/minecraft/items/netherite_upgrade_smithing_template.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/netherite_upgrade_smithing_template"
+      }
+    },
+    "assets/minecraft/items/ominous_trial_key.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/ominous_trial_key"
+      }
+    },
+    "assets/minecraft/items/quartz.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/quartz"
+      }
+    },
+    "assets/minecraft/items/rabbit_hide.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/rabbit_hide"
+      }
+    },
+    "assets/minecraft/items/slime_ball.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/slime_ball"
+      }
+    },
+    "assets/minecraft/items/stone_sword.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/stone_sword"
+      }
+    },
+    "assets/minecraft/items/trial_key.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/trial_key"
+      }
+    },
+    "assets/minecraft/items/trident.json": {
+      "model": {
+        "type": "minecraft:select",
+        "cases": [
+          {
+            "model": {
+              "type": "minecraft:model",
+              "model": "minecraft:item/trident"
+            },
+            "when": [
+              "gui",
+              "ground",
+              "fixed",
+              "on_shelf"
+            ]
+          }
+        ],
+        "fallback": {
+          "type": "minecraft:condition",
+          "on_false": {
+            "type": "minecraft:special",
+            "base": "minecraft:item/trident_in_hand",
+            "model": {
+              "type": "minecraft:trident"
+            }
+          },
+          "on_true": {
+            "type": "minecraft:special",
+            "base": "minecraft:item/trident_throwing",
+            "model": {
+              "type": "minecraft:trident"
+            }
+          },
+          "property": "minecraft:using_item",
+          "transformation": {
+            "left_rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "right_rotation": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "scale": [
+              1.0,
+              -1.0,
+              -1.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "property": "minecraft:display_context"
+      }
+    },
+    "assets/minecraft/items/wooden_sword.json": {
+      "model": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/wooden_sword"
+      }
+    }
+  },
+  "models": {
+    "assets/minecraft/models/item/brush.json": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "item/brush"
+      },
+      "display": {
+        "firstperson_lefthand": {
+          "rotation": [
+            55,
+            -85,
+            0
+          ],
+          "translation": [
+            8.0,
+            0.5,
+            -5.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "thirdperson_righthand": {
+          "rotation": [
+            0,
+            0,
+            45
+          ],
+          "translation": [
+            0,
+            4,
+            0
+          ],
+          "scale": [
+            0.9,
+            0.9,
+            0.9
+          ]
+        },
+        "thirdperson_lefthand": {
+          "rotation": [
+            0,
+            0,
+            -45
+          ],
+          "translation": [
+            0,
+            4,
+            0
+          ],
+          "scale": [
+            0.9,
+            0.9,
+            0.9
+          ]
+        }
+      }
+    },
+    "assets/minecraft/models/item/brush_brushing_0.json": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "item/brush"
+      },
+      "display": {
+        "firstperson_lefthand": {
+          "rotation": [
+            55,
+            -85,
+            0
+          ],
+          "translation": [
+            8.0,
+            0.5,
+            -5.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "thirdperson_righthand": {
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "translation": [
+            4,
+            2,
+            0
+          ],
+          "scale": [
+            0.9,
+            0.9,
+            0.9
+          ]
+        },
+        "thirdperson_lefthand": {
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "translation": [
+            -4,
+            2,
+            0
+          ],
+          "scale": [
+            0.9,
+            0.9,
+            0.9
+          ]
+        }
+      }
+    },
+    "assets/minecraft/models/item/brush_brushing_1.json": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "item/brush"
+      },
+      "display": {
+        "firstperson_lefthand": {
+          "rotation": [
+            55,
+            -85,
+            0
+          ],
+          "translation": [
+            8.0,
+            0.5,
+            -5.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "thirdperson_righthand": {
+          "rotation": [
+            0,
+            0,
+            45
+          ],
+          "translation": [
+            0,
+            4,
+            0
+          ],
+          "scale": [
+            0.9,
+            0.9,
+            0.9
+          ]
+        },
+        "thirdperson_lefthand": {
+          "rotation": [
+            0,
+            0,
+            -45
+          ],
+          "translation": [
+            0,
+            4,
+            0
+          ],
+          "scale": [
+            0.9,
+            0.9,
+            0.9
+          ]
+        }
+      }
+    },
+    "assets/minecraft/models/item/brush_brushing_2.json": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "item/brush"
+      },
+      "display": {
+        "firstperson_lefthand": {
+          "rotation": [
+            55,
+            -85,
+            0
+          ],
+          "translation": [
+            8.0,
+            0.5,
+            -5.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "thirdperson_righthand": {
+          "rotation": [
+            0,
+            0,
+            90
+          ],
+          "translation": [
+            -4,
+            2,
+            0
+          ],
+          "scale": [
+            0.9,
+            0.9,
+            0.9
+          ]
+        },
+        "thirdperson_lefthand": {
+          "rotation": [
+            0,
+            0,
+            -90
+          ],
+          "translation": [
+            4,
+            2,
+            0
+          ],
+          "scale": [
+            0.9,
+            0.9,
+            0.9
+          ]
+        }
+      }
+    },
+    "assets/minecraft/models/item/compass_00.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_00"
+      }
+    },
+    "assets/minecraft/models/item/compass_01.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_01"
+      }
+    },
+    "assets/minecraft/models/item/compass_02.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_02"
+      }
+    },
+    "assets/minecraft/models/item/compass_03.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_03"
+      }
+    },
+    "assets/minecraft/models/item/compass_04.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_04"
+      }
+    },
+    "assets/minecraft/models/item/compass_05.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_05"
+      }
+    },
+    "assets/minecraft/models/item/compass_06.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_06"
+      }
+    },
+    "assets/minecraft/models/item/compass_07.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_07"
+      }
+    },
+    "assets/minecraft/models/item/compass_08.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_08"
+      }
+    },
+    "assets/minecraft/models/item/compass_09.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_09"
+      }
+    },
+    "assets/minecraft/models/item/compass_10.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_10"
+      }
+    },
+    "assets/minecraft/models/item/compass_11.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_11"
+      }
+    },
+    "assets/minecraft/models/item/compass_12.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_12"
+      }
+    },
+    "assets/minecraft/models/item/compass_13.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_13"
+      }
+    },
+    "assets/minecraft/models/item/compass_14.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_14"
+      }
+    },
+    "assets/minecraft/models/item/compass_15.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_15"
+      }
+    },
+    "assets/minecraft/models/item/compass_16.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_16"
+      }
+    },
+    "assets/minecraft/models/item/compass_17.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_17"
+      }
+    },
+    "assets/minecraft/models/item/compass_18.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_18"
+      }
+    },
+    "assets/minecraft/models/item/compass_19.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_19"
+      }
+    },
+    "assets/minecraft/models/item/compass_20.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_20"
+      }
+    },
+    "assets/minecraft/models/item/compass_21.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_21"
+      }
+    },
+    "assets/minecraft/models/item/compass_22.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_22"
+      }
+    },
+    "assets/minecraft/models/item/compass_23.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_23"
+      }
+    },
+    "assets/minecraft/models/item/compass_24.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_24"
+      }
+    },
+    "assets/minecraft/models/item/compass_25.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_25"
+      }
+    },
+    "assets/minecraft/models/item/compass_26.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_26"
+      }
+    },
+    "assets/minecraft/models/item/compass_27.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_27"
+      }
+    },
+    "assets/minecraft/models/item/compass_28.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_28"
+      }
+    },
+    "assets/minecraft/models/item/compass_29.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_29"
+      }
+    },
+    "assets/minecraft/models/item/compass_30.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_30"
+      }
+    },
+    "assets/minecraft/models/item/compass_31.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/compass_31"
+      }
+    },
+    "assets/minecraft/models/item/crossbow_firework.json": {
+      "parent": "minecraft:item/crossbow",
+      "textures": {
+        "layer0": "minecraft:item/crossbow_firework"
+      }
+    },
+    "assets/minecraft/models/item/disc_fragment_5.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/disc_fragment_5"
+      }
+    },
+    "assets/minecraft/models/item/elytra.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/elytra"
+      }
+    },
+    "assets/minecraft/models/item/firework_rocket.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/firework_rocket"
+      }
+    },
+    "assets/minecraft/models/item/iron_nugget.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/iron_nugget"
+      }
+    },
+    "assets/minecraft/models/item/lapis_lazuli.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/lapis_lazuli"
+      }
+    },
+    "assets/minecraft/models/item/netherite_scrap.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/netherite_scrap"
+      }
+    },
+    "assets/minecraft/models/item/netherite_upgrade_smithing_template.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/netherite_upgrade_smithing_template"
+      }
+    },
+    "assets/minecraft/models/item/ominous_trial_key.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/ominous_trial_key"
+      }
+    },
+    "assets/minecraft/models/item/slime_ball.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/slime_ball"
+      }
+    },
+    "assets/minecraft/models/item/trial_key.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/trial_key"
+      }
+    },
+    "assets/minecraft/models/item/trident.json": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "minecraft:item/trident"
+      }
+    },
+    "assets/minecraft/models/item/trident_in_hand.json": {
+      "gui_light": "front",
+      "textures": {
+        "particle": "item/trident"
+      },
+      "display": {
+        "thirdperson_righthand": {
+          "rotation": [
+            0,
+            60,
+            0
+          ],
+          "translation": [
+            11,
+            17,
+            -2
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thirdperson_lefthand": {
+          "rotation": [
+            0,
+            60,
+            0
+          ],
+          "translation": [
+            3,
+            17,
+            12
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "firstperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            25
+          ],
+          "translation": [
+            -3,
+            17,
+            1
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "firstperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            -25
+          ],
+          "translation": [
+            13,
+            17,
+            1
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "gui": {
+          "rotation": [
+            15,
+            -25,
+            -5
+          ],
+          "translation": [
+            2,
+            3,
+            0
+          ],
+          "scale": [
+            0.65,
+            0.65,
+            0.65
+          ]
+        },
+        "fixed": {
+          "rotation": [
+            0,
+            180,
+            0
+          ],
+          "translation": [
+            -2,
+            4,
+            -5
+          ],
+          "scale": [
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        "ground": {
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "translation": [
+            4,
+            4,
+            2
+          ],
+          "scale": [
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      }
+    },
+    "assets/minecraft/models/item/trident_throwing.json": {
+      "gui_light": "front",
+      "textures": {
+        "particle": "item/trident"
+      },
+      "display": {
+        "thirdperson_righthand": {
+          "rotation": [
+            0,
+            90,
+            180
+          ],
+          "translation": [
+            8,
+            -17,
+            9
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "thirdperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            180
+          ],
+          "translation": [
+            8,
+            -17,
+            -7
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "firstperson_righthand": {
+          "rotation": [
+            0,
+            -90,
+            25
+          ],
+          "translation": [
+            -3,
+            17,
+            1
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "firstperson_lefthand": {
+          "rotation": [
+            0,
+            90,
+            -25
+          ],
+          "translation": [
+            13,
+            17,
+            1
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "gui": {
+          "rotation": [
+            15,
+            -25,
+            -5
+          ],
+          "translation": [
+            2,
+            3,
+            0
+          ],
+          "scale": [
+            0.65,
+            0.65,
+            0.65
+          ]
+        },
+        "fixed": {
+          "rotation": [
+            0,
+            180,
+            0
+          ],
+          "translation": [
+            -2,
+            4,
+            -5
+          ],
+          "scale": [
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        "ground": {
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "translation": [
+            4,
+            4,
+            2
+          ],
+          "scale": [
+            0.25,
+            0.25,
+            0.25
+          ]
+        }
+      }
+    }
+  }
+}

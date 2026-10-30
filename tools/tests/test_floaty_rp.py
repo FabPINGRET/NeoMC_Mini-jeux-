@@ -229,10 +229,42 @@ class FloatyRp(unittest.TestCase):
             self.assertTrue(all(i.date_time == fr.FLOATY_DATE for i in added))
             self.assertTrue(all(i.compress_type == zipfile.ZIP_DEFLATED for i in added))
 
+    def test_write_opt_is_sorted_dated_and_reproducible(self):
+        opt = {'assets/minecraft/textures/block/z.png': b'z', 'assets/minecraft/textures/block/a.png': b'a'}
+        meta = {'pack': {'description': 'opt', 'min_format': [88, 0], 'max_format': [88, 99]}}
+        blobs = []
+        for name, files in (('a.zip', opt), ('b.zip', dict(reversed(list(opt.items()))))):
+            path = self.base / 'releases' / name                      # le dossier est créé
+            fr.floaty_write_opt(str(path), files, meta)
+            blobs.append(path.read_bytes())
+        self.assertEqual(blobs[0], blobs[1])
+        with zipfile.ZipFile(io.BytesIO(blobs[0])) as zf:
+            self.assertEqual(zf.namelist(), ['assets/minecraft/textures/block/a.png', 'assets/minecraft/textures/block/z.png', 'pack.mcmeta'])
+            self.assertEqual(json.loads(zf.read('pack.mcmeta').decode('utf-8')), meta)
+            self.assertTrue(all(i.date_time == fr.FLOATY_DATE and i.compress_type == zipfile.ZIP_DEFLATED for i in zf.infolist()))
+
+    def test_write_opt_refuses_its_own_pack_mcmeta_and_leaves_inputs(self):
+        opt = {'pack.mcmeta': b'{}'}
+        with self.assertRaises(ValueError):
+            fr.floaty_write_opt(str(self.base / 'x.zip'), opt, {'pack': {}})
+        self.assertFalse((self.base / 'x.zip').exists())
+        opt = {'assets/minecraft/textures/block/a.png': b'a'}
+        fr.floaty_write_opt(str(self.base / 'y.zip'), opt, {'pack': {}})
+        self.assertEqual(opt, {'assets/minecraft/textures/block/a.png': b'a'})              # pas de pack.mcmeta ajouté à l'entrée
+
     def test_gen_rp_wiring(self):
         src = (RP / 'gen_rp.py').read_text(encoding='utf-8')
         self.assertIn("'floaty_rp.py'", src)
-        self.assertLess(src.index('floaty_extra(OUT)'), src.index('zipfile.ZipFile(z'))      # conflit détecté avant d'ouvrir le zip
+        self.assertIn("'floaty_split.py'", src)
+        self.assertLess(src.index("'floaty_rp.py'"), src.index("'floaty_split.py'"))
+        call = 'floaty_settle(*floaty_split(floaty_extra(OUT, keep_same=True), PACK_FMT), OUT)'      # empreinte sur toute la carte, dédoublonnage après
+        self.assertLess(src.index('PACK_FMT = '), src.index(call))                             # PACK_FMT défini avant la scission qui le contrôle
+        self.assertLess(src.index(call), src.index('zipfile.ZipFile(z'))                       # scission faite avant d'ouvrir le zip
+        self.assertGreater(src.index('floaty_write_opt('), src.index('floaty_write(zf'))
+        self.assertEqual(src.count('**PACK_FMT'), 2)                                         # pack.mcmeta du pack serveur et de l'optionnel
+        self.assertNotIn('hashlib', src)                                                     # plus d'empreinte affichée (décision de Maxime)
+        self.assertNotIn('sha1', src)
+        self.assertLess(src.index('floaty_extra(OUT'), src.index('zipfile.ZipFile(z'))       # conflit détecté avant d'ouvrir le zip
         self.assertGreater(src.index('floaty_write(zf'), src.index('zipfile.ZipFile(z'))
         self.assertEqual(fr.FLOATY_DATE, (2026, 1, 1, 0, 0, 0))
         self.assertIn('date_time=(2026, 1, 1, 0, 0, 0)', src)                                 # même date que les fichiers NeoMC
