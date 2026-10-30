@@ -22,6 +22,7 @@ LOBBY = f'@a[{LOBBY_BOX},tag=!mg.play,tag=!mg.surv,gamemode=!spectator]'
 PLOTS = []                               # parcelles (jamais touchées) : (wx1, wx2, wz1, wz2)
 CMD = re.compile(r'^(setblock|fill) (-?\d+) (-?\d+) (-?\d+)(?: (-?\d+) (-?\d+) (-?\d+))? (.+)$')
 W = {}                                   # (x, y, z) -> bloc (l'air n'est pas stocké)
+RESTORERS = ('decofix', 'old_clean')    # fonctions hub/ qui ne font que rendre le décor du spawn (gen_decofix.py, gen_hub.py)
 DYN = []                                 # boîtes modifiées ailleurs (jeux, animations) : on n'y touche pas
 CH = {}                                  # (x, y, z) -> (bloc d'origine, bloc du thème), rempli par un thème
 RESERVED = []                            # boîtes (x1, x2, y1, y2, z1, z2) sans décor ni animal (cf. reserve), jamais vidé par load
@@ -161,6 +162,8 @@ def load(F):
     for p in glob.glob(os.path.join(F, '**', '*.mcfunction'), recursive=True):
         if p in base or (os.sep + 'theme' + os.sep) in p or p.endswith(os.sep + 'desinstaller.mcfunction'):
             continue
+        if p.endswith(tuple(os.sep + os.path.join('hub', r) + '.mcfunction' for r in RESTORERS)):
+            continue                    # rendent le décor du spawn (W) : pas des zones modifiées ailleurs
         with open(p, encoding='utf-8') as f:
             lines = f.readlines()
         if other_dimension(lines):      # construit dans une autre dimension (ex. terra/b) : hors lobby

@@ -1071,7 +1071,7 @@ schedule clear mg:elytra/build
 kill @e[tag=mg.hubp]
 data remove storage mg:hub oldclean
 data remove storage mg:hub floaty
-data remove storage mg:lobby decofix2
+data remove storage mg:lobby decofix3
 schedule clear mg:core/setup_lobby_done
 schedule clear mg:hub/build
 schedule clear mg:lobby/fish/build
@@ -1083,7 +1083,7 @@ clear @a minecraft:elytra[minecraft:custom_data~{mg_ely:1b}]
 clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_ely:1b}]
 data remove storage mg:lobby ely1
 data remove storage mg:lobby ely4
-data remove storage mg:lobby elyclean5
+data remove storage mg:lobby elyclean6
 schedule clear mg:elytra/spawn_clean
 data remove storage mg:lobby food1
 function mg:hall/remove
