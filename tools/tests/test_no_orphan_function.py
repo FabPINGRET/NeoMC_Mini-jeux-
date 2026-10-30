@@ -20,6 +20,7 @@ ALLOWED = (
     'menu', 'nettoyer_plateforme',                                      # README.md l.214/255/353 et l.210/251 : commandes OP
     'bb/clear_old', 'duel/build_all', 'foot/build_start', 'kart/build_koopa',   # README.md l.314, 83, 313, 17, 29
     'lobby/fish/build', 'parkour/build', 'party/build', 'plot/build', 'pvpc/build_start',              # README.md l.18, 14, 31, 33/315, 16
+    'setup_lobby',                                                      # README.md : reconstruit seulement le spawn (OP)
     'sky/wipe',                                                         # OP : efface le decor Elytra avant reconstruction
     'setup/', 'admin/', 'diag/', 'perf/', 'aide/',                      # menus et outils d'administration
 )

@@ -1072,6 +1072,10 @@ kill @e[tag=mg.hubp]
 data remove storage mg:hub oldclean
 data remove storage mg:hub floaty
 data remove storage mg:lobby decofix1
+schedule clear mg:core/setup_lobby_done
+schedule clear mg:hub/build
+schedule clear mg:lobby/fish/build
+scoreboard players reset $slb mg.st
 schedule clear mg:hub/decofix_start
 schedule clear mg:hub/decofix_go
 kill @e[tag=mg.elyd]
