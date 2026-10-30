@@ -30,6 +30,11 @@ def show(st, n, spawn, roots, missing, cu, terrain=0):
     print('gamerule distincts :')
     for g, c in sorted(st.gamerules.items()):
         print(f'  {c:3d}  {g}')
+    if st.tr is not None:
+        t, f = st.tr, n['fr']
+        print(f'traduction française : traduits {t.translated}, laissés en anglais {t.missing} ({len(t.missing_keys)} textes distincts), '
+              f'protégés refusés {t.refused} ({f["refused"]} clés de la table), lignes illisibles {f["warns"]} ; '
+              f'clés protégées {f["protected"]} (calculées {f["auto"]}, manuelles {f["manual"]})')
     print(f'@x entre guillemets laissés tels quels : {st.str_skipped}')
     for l in st.str_examples:
         print('   ', l)

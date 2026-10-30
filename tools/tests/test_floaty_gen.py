@@ -11,6 +11,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'tools' / 'floaty'))
@@ -20,6 +21,15 @@ import gen_floaty as G  # noqa: E402
 MANIFEST = 'tools/floaty/owned.txt'
 DESINSTALLER = 'data/mg/function/desinstaller.mcfunction'
 NEEDS_GIT = unittest.skipUnless(shutil.which('git'), 'git requis (--adopt consulte git ls-files)')
+
+
+def isolate_fr(case, base):
+    """Pendant le test, le dossier des traductions de gen_floaty est <base>/fr (vide) : generate y écrit fr/protected.txt, jamais dans le vrai
+    dépôt, et la vraie table ne change pas les attentes des fausses cartes. -> ce dossier."""
+    p = mock.patch.object(G, 'FR_DIR', Path(base) / 'fr')
+    p.start()
+    case.addCleanup(p.stop)
+    return Path(base) / 'fr'
 
 
 def git_init(repo):
@@ -79,6 +89,7 @@ class FakeMap(unittest.TestCase):
         tmp = tempfile.TemporaryDirectory()
         self.addCleanup(tmp.cleanup)
         self.map, self.repo = Path(tmp.name) / 'map', Path(tmp.name) / 'repo'
+        self.fr = isolate_fr(self, tmp.name)
         for rel, txt in self.FILES.items():
             self.put(self.map / G.PACK / rel, txt)
         for b in self.BIOMES:
