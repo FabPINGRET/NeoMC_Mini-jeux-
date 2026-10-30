@@ -1,2 +1,2 @@
 # Élytres du spawn terminé ?
-return run execute if data storage mg:lobby ely1
+return run execute if data storage mg:lobby ely2

@@ -3,7 +3,7 @@
 # Drapeaux de fin de chaque construction : effacés ici, reposés à la fin de chacune (suivi : core/setup_watch)
 data remove storage mg:lobby v6
 data remove storage mg:lobby food1
-data remove storage mg:lobby ely1
+data remove storage mg:lobby ely2
 data remove storage mg:hall v10
 data remove storage mg:setup plot
 data remove storage mg:party built
@@ -25,7 +25,6 @@ function mg:elyrace/forget
 schedule function mg:elyrace/build_next 45s
 schedule function mg:sky/build 40s
 schedule function mg:duel/build_all 60s
-schedule function mg:lobby/beacons 55s
 schedule function mg:hall/build 25s
 data remove storage mg:kart built3
 function mg:kart/build
