@@ -23,7 +23,8 @@ execute if score $ar mg.st matches 0 as @a[tag=mg.play,scores={mg.t=..70}] run f
 execute if score $ar mg.st matches 1.. as @a[tag=mg.play] if score @s mg.t <= $ky mg.st run function mg:oitc/death
 
 # Mort → une vie en moins
-execute as @a[tag=mg.play,scores={mg.deaths=1..}] run function mg:oitc/death
+# @e (pas @a) : seulement les joueurs déjà réapparus ; sur un joueur encore mort, téléportation et invincibilité seraient perdues
+execute as @e[type=minecraft:player,tag=mg.play,scores={mg.deaths=1..}] run function mg:oitc/death
 
 # Victoire : premier à 10 kills
 execute if score $state mg.st matches 2 as @a[tag=mg.play] if score @s mg.ok >= $og mg.st run return run function mg:core/win_player

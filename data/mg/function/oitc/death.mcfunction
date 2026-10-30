@@ -9,5 +9,7 @@ execute if score $ar mg.st matches 0 if score $om mg.st matches 2 run spreadplay
 function mg:oitc/kit
 scoreboard players set @s mg.cd 0
 effect clear @s
+# 3 s d'invincibilité au respawn (résistance V : aucun dégât, flèches one-shot comprises)
 effect give @s minecraft:resistance 3 4 true
+title @s actionbar {"text":"🛡 Invincible 3 s","color":"aqua"}
 effect give @s minecraft:saturation infinite 0 true
