@@ -4,6 +4,7 @@ r"""Traduction française des textes visibles de la carte « Scourge of the Floa
                                                            # lignes illisibles (toutes leurs chaînes sont protégées par défaut), à afficher
     tb = fl_tr.Table.load(fr_dir, ctx_path, prot)          # fr/*.json {anglais: français} + ctx.json {"ns:chemin": {anglais: français}}
     st = fl_tr.Stats(tb)                                   # compteurs : translated, missing, refused, errors (+ missing_keys, warns)
+                                                           # st.on_slot = f(ligne, composant, nom) : rappel à chaque emplacement lu (fr_extract)
     ligne = fl_tr.translate_line(ligne, 'ns:chemin', st)   # la ligne, À L'IDENTIQUE si rien n'est traduit ou si elle est illisible
     arbre = fl_tr.translate_tree(arbre, 'ns:chemin', st)   # advancement chargé (json.load) : display.title / display.description
 
@@ -37,6 +38,7 @@ class Stats:
         self.translated = self.missing = self.refused = self.errors = 0
         self.missing_keys = Counter()       # clé normalisée -> occurrences : ce qu'il reste à traduire
         self.warns = []                     # (motif, ligne) : lignes illisibles rendues intactes
+        self.on_slot = None                 # rappel (ligne, composant, nom) à chaque emplacement de texte lu : l'extraction (fr_extract) s'en sert
 
     def warn(self, why, line):
         self.errors += 1
@@ -69,7 +71,10 @@ class Table:
         if not Path(fr_dir).is_dir():
             raise ValueError(f'{fr_dir} : dossier des traductions introuvable')
         t = cls(protected)
+        ctx = Path(ctx_path).resolve() if ctx_path else None
         for p in sorted(Path(fr_dir).glob('*.json')):
+            if p.resolve() == ctx:                  # ctx.json peut vivre dans fr_dir : ce n'est pas une table {anglais: français}
+                continue
             for k, v in _pairs(p):
                 t.add(k, _text_of(v, p), p.name)
         if ctx_path and Path(ctx_path).exists():
@@ -172,6 +177,8 @@ def translate_line(line, ctx_id, st):
     edits = []
     for kind, node in items:
         if kind == 'text':
+            if st.on_slot:
+                st.on_slot(line, node, None)
             _comp(node, _leaf_fn(ctx_id, st, edits), True)
         else:
             new = translate_line(node.v, ctx_id, st)
@@ -188,6 +195,8 @@ def translate_tree(tree, ctx_id, st):
     d = tree.get('display') if isinstance(tree, dict) else None
     for k in ('title', 'description'):
         if isinstance(d, dict) and k in d:
+            if st.on_slot:
+                st.on_slot(None, d[k], f'advancement {k}')
             d[k] = _comp(d[k], fn, True)
     return tree
 

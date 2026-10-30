@@ -208,6 +208,7 @@ class Pipeline(TT.Base):
 
     def setUp(self):
         super().setUp()
+        TG.isolate_fr(self, self.tmp / 'frdir')
         for rel, txt in TG.FakeMap.FILES.items():
             TG.FakeMap.put(self.map / G.PACK / rel, txt)
         for name in TG.FakeMap.BIOMES:

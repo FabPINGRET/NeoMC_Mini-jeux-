@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fl_owned as O  # noqa: E402
 import fl_rewrite as R  # noqa: E402
 import gen_floaty as G  # noqa: E402
-from test_floaty_gen import DESINSTALLER, MANIFEST, NEEDS_GIT, git_init, nbt_bytes, snapshot  # noqa: E402
+from test_floaty_gen import DESINSTALLER, MANIFEST, NEEDS_GIT, git_init, isolate_fr, nbt_bytes, snapshot  # noqa: E402
 
 ROOTS = ['main_quest:root']
 
@@ -78,6 +78,7 @@ class AdoptAndManifest(unittest.TestCase):
         self.addCleanup(tmp.cleanup)
         self.tmp = Path(tmp.name)
         self.map, self.repo = self.tmp / 'map', self.tmp / 'outer' / 'repo'
+        isolate_fr(self, self.tmp / 'frdir')
         self.put(self.map / G.PACK / 'boss/function/a.mcfunction', 'say a\n')
         self.put(self.map / G.PACK / 'minecraft/function/tick.mcfunction', 'say t\n')
         self.put(self.map / G.PACK / 'minecraft/function/load.mcfunction', 'say l\n')

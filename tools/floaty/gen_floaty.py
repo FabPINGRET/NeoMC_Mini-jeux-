@@ -19,6 +19,13 @@ cantonnés à la dimension, gamerule, schedule...) et écrit dans data/<ns>/ du 
   carte), patchs idempotents des fichiers suivis du coeur (fl_core), `gamerule advance_time|random_tick_speed` et `time set|add` RETIRÉS (voir fl_rewrite).
   À relancer APRÈS (le menu et sb/auto ne sont pas régénérés ici) : `python tools/lobby/gen_sidebar.py .` (sb/auto) puis, si le bouton du menu
   a bougé (patch_menu), `python tools/rating/gen_rating.py .` (rate/d/main_menu*.mcfunction) ; gen_tp_general.py n'est pas relancé (voir fl_core).
+Traduction française (fl_fr / fl_tr ; table : tools/floaty/fr/, `--table` pour un autre dossier) : APRÈS la réécriture, les textes visibles des
+lignes (tellraw, title, bossbar, noms et lore d'objets, CustomName, panneaux, text_display, Command: imbriqué), les display.title / description des
+advancements et les barres de boss de floaty:install sont remplacés par leur français ; un texte absent de la table reste en anglais, une table vide
+ne change rien (sortie identique octet pour octet). Les clés PROTÉGÉES (noms comparés par la carte : lock, name=, nbt=, if data / items / block,
+filtres fill / clone, critères d'advancements) sont calculées sur les lignes DÉJÀ réécrites, avant toute traduction, et écrites dans
+fr/protected.txt (section manuelle conservée) ; une clé protégée de la table est refusée. Le bilan donne traduits / manquants / refusés.
+Extraction des textes à traduire : fr_extract.py (même chaîne, écrit sous cache/floaty_fr/, rien dans data/).
 Tout est lu, validé et réécrit EN MÉMOIRE avant la première suppression : une carte incomplète ou illisible ne touche à rien.
 Filtre d'import (include) : on exclut ce qui écraserait ou polluerait le vanilla / le reste du pack (advancements `minecraft:`,
 tags vanilla étendus, tags de fonction tick/load, recettes vanilla, biome small_end_islands, .DS_Store, .bdstudio, fichiers hors dossier,
@@ -35,6 +42,7 @@ import os
 import re
 import shutil
 import sys
+from collections import namedtuple
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -43,14 +51,18 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(ROOT / 'tools' / 'lib'))
 import fl_catchup as CU  # noqa: E402
 import fl_core  # noqa: E402
+import fl_fr  # noqa: E402
 import fl_nbt  # noqa: E402
 import fl_owned as O  # noqa: E402
 import fl_rewrite as R  # noqa: E402
+import fl_scan  # noqa: E402
 import fl_state  # noqa: E402
 import fl_summary  # noqa: E402
 import fl_wire  # noqa: E402
 import mcfn  # noqa: E402
 
+FR_DIR = HERE / 'fr'                                                 # traductions françaises (voir fl_fr) ; lu à l'appel : les tests le remplacent
+DEFAULT = object()                                                   # table= par défaut de generate : FR_DIR, relu à chaque appel
 PACK = Path('datapacks') / 'scourge' / 'data'
 BIOMES = Path('datapacks') / 'biomes' / 'data' / 'minecraft' / 'worldgen' / 'biome'
 TERRAIN_SCHED = Path('tools') / 'floaty' / 'terrain_sched.txt'       # écrit par build_terrain.py (même chemin : build_terrain.SCHED_FILE)
@@ -151,19 +163,26 @@ def rewrite_file(p, roots, st, fn_id=None):
     return CU.instrument(fn_id, out, reg) if reg is not None and fn_id else out
 
 
-def json_text(p, ns, rel, st):
-    """Texte LF du JSON à copier ; advancement de la carte : display.announce_to_chat forcé à false (pas d'annonce dans le chat du
-    serveur) et critères restreints à la dimension (only_in_dimension)."""
+def json_doc(p, ns, rel, st, keys):
+    """Texte LF du JSON à copier, ou, pour un advancement de la carte, l'arbre chargé (as_text l'écrit, après la traduction) : display.announce_to_chat
+    forcé à false (pas d'annonce dans le chat du serveur) et critères restreints à la dimension (only_in_dimension). keys (set) reçoit, AVANT cette
+    restriction, les chaînes des critères : noms d'objets comparés, jamais traduits (fl_fr)."""
     if ns == 'minecraft' or not rel.startswith('advancement/'):
         return p.read_text(encoding='utf-8-sig')           # lecture texte : CRLF -> LF
     d = read_json(p)
+    fl_scan.protect_tree(d, keys)
     disp = d.get('display')
     if isinstance(disp, dict) and disp.get('announce_to_chat') is not False:
         disp['announce_to_chat'] = False
         st.announce += 1
     st.criteria_total += len(d.get('criteria', {}))
     st.criteria += only_in_dimension(d)
-    return json.dumps(d, indent=4, ensure_ascii=False) + '\n'
+    return d
+
+
+def as_text(doc):
+    """Texte LF d'un fichier JSON de render : tel quel, ou l'advancement chargé sérialisé."""
+    return doc if isinstance(doc, str) else json.dumps(doc, indent=4, ensure_ascii=False) + '\n'
 
 
 def only_in_dimension(adv):
@@ -184,10 +203,11 @@ def only_in_dimension(adv):
     return n
 
 
-def render(items, pack, roots, spawn, st, n):
+def render(items, pack, roots, spawn, st, n, keys):
     """Tout ce qui sera écrit (sauf install / uninstall : voir generate), calculé EN MÉMOIRE (lectures et réécritures de la carte comprises) :
-    une carte incomplète ou illisible lève ici, avant toute suppression. -> (fonctions [(ns, nom, lignes)], JSON [(chemin sous data/, texte)],
-    ids des fonctions de la carte). tick / load absents de la carte : fonctions vides (une carte sans boucle est valable)."""
+    une carte incomplète ou illisible lève ici, avant toute suppression. -> (fonctions [(ns, nom, lignes)], JSON [(chemin sous data/, texte ou
+    advancement chargé : json_doc)], ids des fonctions de la carte). tick / load absents de la carte : fonctions vides (une carte sans boucle est
+    valable). keys (set) : voir json_doc."""
     fns, files, names = [], [], set()
     for ns, rel, p in items:
         if rel.endswith('.mcfunction'):
@@ -196,7 +216,7 @@ def render(items, pack, roots, spawn, st, n):
             names.add(f'{ns}:{name}')
             n['mcfunction'] += 1
         else:
-            files.append((f'{ns}/{rel}', json_text(p, ns, rel, st)))
+            files.append((f'{ns}/{rel}', json_doc(p, ns, rel, st, keys)))
             n['json'] += 1
     for f in ('tick', 'load'):
         src = pack / 'minecraft' / 'function' / (f + '.mcfunction')
@@ -218,10 +238,14 @@ def check_desinstaller(root):
     return des
 
 
-def generate(map_dir, root, adopt=False):
-    """Importe la carte map_dir dans root/data ; renvoie (Stats, compteurs, spawn, racines, fonctions planifiées absentes).
-    Les compteurs n portent aussi n['state'] : comptes de fl_state (objectifs, équipes, scores, bossbars, storage, écartés)."""
-    root, pack = Path(root), Path(map_dir) / PACK
+Mapped = namedtuple('Mapped', 'st n spawn roots namespaces mc_files fns files names keys state')
+
+
+def rewrite_map(map_dir, root):
+    """Lit et réécrit toute la carte EN MÉMOIRE, sans rien écrire ni traduire (chaîne partagée avec fr_extract : mêmes lignes, mêmes clés).
+    -> Mapped : st (R.Stats), n (compteurs), spawn, roots, namespaces / mc_files (propriété : fl_owned), fns / files / names (render ; sans
+    install ni uninstall), keys (clés protégées des critères d'advancements), state (fl_state.State)."""
+    pack = Path(map_dir) / PACK
     st, n = R.Stats(), {'mcfunction': 0, 'json': 0}
     st.catchup = CU.Registry()                    # points de contrôle / avancements du groupe vus par rewrite_file (voir fl_catchup)
     items = collect(pack, Path(map_dir) / BIOMES, st.invalid)
@@ -230,24 +254,52 @@ def generate(map_dir, root, adopt=False):
     namespaces = sorted({ns for ns, _, _ in items if ns != 'minecraft'})
     mc_files = sorted(f'data/minecraft/{rel}' for ns, rel, _ in items if ns == 'minecraft')
     st.sched |= set(terrain_targets(root))        # + cibles `schedule function` des commandes du terrain réécrites (build_terrain) : un trampoline chacune
-    fns, files, names = render(items, pack, roots, spawn, st, n)
+    keys = set()
+    fns, files, names = render(items, pack, roots, spawn, st, n, keys)
     state = fl_state.build(map_dir, R.AUTHOR, {fn: R.sched_name(fn) for fn in st.sched})    # après render : st.sched = les trampolines
-    fns += [('floaty', 'install', state.install), ('floaty', 'uninstall', state.uninstall)]
     n['state'], n['sched_missing'], n['players'] = state.counts, state.sched_missing, state.players
     st.install = state.install                                    # lignes de floaty:install : wire en tire barres de boss et objectifs à critère
+    return Mapped(st, n, spawn, roots, namespaces, mc_files, fns, files, names, keys, state)
+
+
+def translate_map(m, table):
+    """Traduit EN PLACE le résultat de rewrite_map avec la table du dossier `table` ; -> Protected (fl_fr). Les clés protégées sont calculées sur les
+    lignes réécrites AVANT toute traduction ; leurs avertissements (lignes illisibles) vont dans m.st.unsafe ; m.st.tr = fl_tr.Stats ; m.n['fr'] : comptes."""
+    pr = fl_fr.protect(m.fns, m.keys, table)
+    for why, line in pr.warns:
+        m.st.warn('traduction : ' + why, line)
+    tb = fl_fr.load_table(table, pr)                              # ValueError (conflit, valeur invalide) : avant toute suppression
+    m.st.tr = fl_fr.translate(m.fns, m.files, m.state.install, tb)
+    m.n['fr'] = {'protected': len(pr.keys), 'auto': len(pr.auto), 'manual': len(pr.manual), 'refused': len(tb.refused), 'warns': len(pr.warns)}
+    return pr
+
+
+def generate(map_dir, root, adopt=False, table=DEFAULT):
+    """Importe la carte map_dir dans root/data ; renvoie (Stats, compteurs, spawn, racines, fonctions planifiées absentes).
+    Les compteurs n portent aussi n['state'] : comptes de fl_state (objectifs, équipes, scores, bossbars, storage, écartés) et n['fr'] (traduction).
+    table : dossier des traductions (fl_fr ; défaut FR_DIR = tools/floaty/fr ; absent ou vide : rien n'est traduit, la sortie est celle d'avant la
+    traduction) ; None : pas de traduction et fr/ n'est ni lu ni écrit. fr/protected.txt est écrit avec les autres fichiers (après les garde-fous)."""
+    root = Path(root)
+    table = FR_DIR if table is DEFAULT else table
+    m = rewrite_map(map_dir, root)
+    st, n = m.st, m.n
+    pr = translate_map(m, table) if table is not None else None
+    fns = m.fns + [('floaty', 'install', m.state.install), ('floaty', 'uninstall', m.state.uninstall)]
     des = check_desinstaller(root)
-    dirs, owned = O.check(root, namespaces, mc_files, adopt)      # tous les garde-fous avant la moindre suppression
+    dirs, owned = O.check(root, m.namespaces, m.mc_files, adopt)  # tous les garde-fous avant la moindre suppression
     O.clean(root, dirs, owned)
-    O.save(root, namespaces, mc_files)                            # avant les écritures : un arrêt en cours de route reste relançable
+    O.save(root, m.namespaces, m.mc_files)                        # avant les écritures : un arrêt en cours de route reste relançable
     for ns, name, lines in fns:
         mcfn.Fn(str(root / 'data' / ns / 'function')).write(name, lines)
-    for rel, text in files:
+    for rel, doc in m.files:
         dest = root / 'data' / rel
         dest.parent.mkdir(parents=True, exist_ok=True)
         with open(dest, 'w', encoding='utf-8', newline='\n') as f:
-            f.write(text)
+            f.write(as_text(doc))
     des.patch('desinstaller', DES_ANCHOR, [UNINSTALL_CALL])
-    return st, n, spawn, roots, sorted(fn for fn in st.sched if fn not in names)
+    if pr is not None:
+        fl_fr.save(table, pr)
+    return st, n, m.spawn, m.roots, sorted(fn for fn in st.sched if fn not in m.names)
 
 
 def prepare_wire(root):
@@ -281,9 +333,10 @@ def main():
     ap.add_argument('--map', required=True, help='dossier de la carte extraite (contient level.dat et datapacks/)')
     ap.add_argument('--root', default=str(ROOT), help='racine du dépôt NeoMC (défaut : celle de ce script)')
     ap.add_argument('--adopt', action='store_true', help='premier passage : déclare possédés les data/<ns> déjà présents (voir fl_owned)')
+    ap.add_argument('--table', default=str(FR_DIR), help='dossier des traductions françaises (défaut : tools/floaty/fr, voir fl_fr)')
     a = ap.parse_args()
     vault = prepare_wire(a.root)
-    st, n, spawn, roots, missing = generate(a.map, Path(a.root), a.adopt)
+    st, n, spawn, roots, missing = generate(a.map, Path(a.root), a.adopt, Path(a.table))
     cu = wire(a.root, st, spawn, vault)
     fl_summary.show(st, n, spawn, roots, missing, cu, len(terrain_targets(a.root)))
 
