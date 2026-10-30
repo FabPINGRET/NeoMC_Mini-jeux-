@@ -588,24 +588,24 @@ w('zx/tick', ['# Zombies, chaque tick : bonus en cours, bonus au sol, grenades s
    'execute as @e[type=minecraft:item_display,tag=mg.zmk,distance=..80] at @s run function mg:zx/mk_tick',
    'execute as @e[type=minecraft:item_display,tag=mg.zrk,distance=..80] at @s run function mg:zx/rk_tick',
    'scoreboard players add $zxt mg.st 1', 'execute if score $zxt mg.st matches 10.. run function mg:zx/win_fix_all',
-   'execute as @a[tag=mg.play,scores={mg.zdr=1..}] at @s run function mg:zx/drop_back'])
+   # arme jetée (Q) : détectée par l'objet au sol et son lanceur (on origin), sans dépendre de la statistique mg.zdr
+   'execute as @e[type=minecraft:item,distance=..80] if items entity @s contents *[custom_data~{mg_gun:1b}] run function mg:zx/q_item',
+   'execute as @e[type=minecraft:item,distance=..80] if items entity @s contents *[custom_data~{zrpg:1b}] run function mg:zx/q_item',
+   'scoreboard players reset @a[scores={mg.zdr=1..}] mg.zdr', 'scoreboard players set $zxon mg.st 2'])
 # --- Q = recharger : l'arme jetée revient (en main si la main est vide, sinon ramassée aussitôt) et se recharge
-DB = ['# @s a jeté (Q) une arme : elle revient et se recharge', 'scoreboard players reset @s mg.zdr',
-      'data modify storage mg:zm du set from entity @s UUID',
-      'execute as @e[type=minecraft:item,distance=..8] if items entity @s contents *[custom_data~{mg_gun:1b}] run function mg:zx/drop_mine',
-      'execute as @e[type=minecraft:item,distance=..8] if items entity @s contents *[custom_data~{zrpg:1b}] run function mg:zx/drop_mine',
-      'execute unless entity @e[type=minecraft:item,tag=mg.zdi] run return 0']
+w('zx/q_item', ['# @s (objet au sol : arme du jeu) : jeté par un joueur de la partie ? Il revient à son lanceur et se recharge',
+                'tag @s add mg.zdi', 'execute on origin if entity @s[tag=mg.play] run function mg:zx/q_back',
+                'tag @s remove mg.zdi'])
+DB = ['# @s (joueur) a jeté (Q) l\'arme marquée mg.zdi : elle revient et se recharge']
 DB += [f'execute if items entity @e[type=minecraft:item,tag=mg.zdi,limit=1] contents *[custom_data~{{gun:{n}}}] run function mg:gun/reload_{n}' for n in G.GUNS]
 DB += ['scoreboard players set $zq mg.st 0', 'execute unless items entity @s weapon.mainhand * run scoreboard players set $zq mg.st 1',
        'execute if score $zq mg.st matches 1 run item replace entity @s weapon.mainhand from entity @e[type=minecraft:item,tag=mg.zdi,limit=1] contents',
        'execute if score $zq mg.st matches 1 run kill @e[type=minecraft:item,tag=mg.zdi,limit=1]',
        'tag @s add mg.zdp', 'execute as @e[type=minecraft:item,tag=mg.zdi] run data merge entity @s {PickupDelay:0s}',
-       'execute as @e[type=minecraft:item,tag=mg.zdi] run tp @s @a[tag=mg.zdp,limit=1]', 'tag @s remove mg.zdp',
-       'tag @e[type=minecraft:item,tag=mg.zdi] remove mg.zdi']
-w('zx/drop_back', DB)
-w('zx/drop_mine', ['# @s (objet au sol) : jeté par le joueur dont l\'UUID est dans mg:zm du ?', 'data modify storage mg:zm dt set from storage mg:zm du',
-                   'execute store success score $zq mg.st run data modify storage mg:zm dt set from entity @s Thrower',
-                   'execute if score $zq mg.st matches 0 run tag @s add mg.zdi'])
+       'execute as @e[type=minecraft:item,tag=mg.zdi] run tp @s @a[tag=mg.zdp,limit=1]', 'tag @s remove mg.zdp']
+w('zx/q_back', DB)
+w('zx/q_keep', ['# @s (objet au sol : arme du jeu) jeté par un joueur de la partie : gardé par le balayage des objets (survie/tick)',
+                'execute store success score $zk mg.st on origin if entity @s[tag=mg.play]', 'execute if score $zk mg.st matches 1 run tag @s add mg.keep'])
 w('zx/second', ['# Chaque seconde : les zombies dans l\'enclos d\'une fenêtre arrachent une planche ; zombie coincé = renvoyé à une apparition',
                 '# (exécuté depuis le centre de la carte par zm/second : sélecteurs bornés à 80 blocs)',
                 'execute if score $zph mg.st matches 1 as @e[type=minecraft:marker,tag=mg.zwin,scores={mg.zws=1..},distance=..80] at @s if entity @e[tag=mg.zz,distance=..3.6] run function mg:zx/win_hit',
@@ -793,9 +793,13 @@ C.objectives([('mg.zkl', 'minecraft.custom:minecraft.mob_kills'), ('mg.zid', 'du
 C.objectives([('mg.zqx', 'dummy'), ('mg.zqz', 'dummy'), ('mg.zsk', 'dummy')])
 C.objectives([('mg.zdr', 'minecraft.dropped:minecraft.warped_fungus_on_a_stick')])
 # survie/tick (avant core/game_tick dans core/tick) supprime tout objet au sol du monde des mini-jeux : l'arme qu'un joueur vient de jeter (Q)
-# est marquée mg.keep d'abord, sinon zx/drop_back ne la retrouve jamais et l'arme est perdue
+# est marquée mg.keep d'abord (zx/q_keep), sinon zx/q_item ne la retrouve jamais et l'arme est perdue
 C.patch('survie/tick', 'execute if score #sv5 mg.st matches 0 in minecraft:overworld positioned 0 0 0 run kill @e[type=minecraft:item,distance=0..,tag=!mg.keep]',
-        ['execute if score $state mg.st matches 2 as @a[tag=mg.play,scores={mg.zdr=1..}] at @s run tag @e[type=minecraft:item,distance=..8] add mg.keep'], where='before')
+        ['# Zombies en cours ($zxon, reposé à 2 par zx/tick) : arme jetée (Q) par un joueur gardée jusqu\'à zx/q_item',
+         'execute if score $zxon mg.st matches 1.. in minecraft:overworld as @e[type=minecraft:item,tag=!mg.keep] if items entity @s contents *[custom_data~{mg_gun:1b}] run function mg:zx/q_keep',
+         'execute if score $zxon mg.st matches 1.. in minecraft:overworld as @e[type=minecraft:item,tag=!mg.keep] if items entity @s contents *[custom_data~{zrpg:1b}] run function mg:zx/q_keep',
+         'execute if score $zxon mg.st matches 1.. run scoreboard players remove $zxon mg.st 1'], where='before')
+C.drop_lines('survie/tick', ['execute if score $state mg.st matches 2 as @a[tag=mg.play,scores={mg.zdr=1..}] at @s run tag @e[type=minecraft:item,distance=..8] add mg.keep'])
 C.patch('core/load', 'scoreboard objectives add mg.bw trigger', ['scoreboard players set #2 mg.st 2', 'scoreboard players set #3 mg.st 3',
                                                                  'scoreboard players set #5 mg.st 5', 'scoreboard players set #8 mg.st 8',
                                                                  'scoreboard players set #60 mg.st 60'])
