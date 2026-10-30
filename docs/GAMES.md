@@ -45,7 +45,6 @@ Bombardier 99 → `mg:bomber/tick` (z 32400, ville 177 × 177, plancher de barri
 Meccha Chameleon 198 → `mg:cham/tick` (z 26600, maison x −28..28, sol y 80, cage des chasseurs sur le toit ; généré par `tools/arcade/gen_chameleon.py`). Corps du caméléon : 6 `block_display` (`mg.cmk1..6`, score `mg.cmid`) + `interaction` `mg.cmi` ; palette et poses = fenêtres en ligne, triggers `mg.cmp` (partie × 100 + matière) et `mg.cmo` ; pipette = rayon testant les 75 matières ; leurres `mg.cmdd`/`mg.cmdi` (`mg.cmdn`) ; coup à la main sur un joueur via l'avancement `mg:cham_hit`. Icônes des outils : `tools/resourcepack/cham_rp.py` (vides en main, visibles dans l'inventaire).
 Les objets au sol y sont tagués `mg.keep` dans `survie/tick`, sinon le nettoyage global les supprime.
 Block Party bandes/mixte 91..92 → jeu 28 + `$bpm` (`tools/blockparty/gen_bp.py`).
-Montagne russe (hors jeux) : `mg:coaster/tick` appelé par `core/tick` quand un joueur est dans x −200..−100 ; voie générée `mg:coaster/track`.
 Monstres/animaux invoqués par un jeu : leur mettre le tag `mg.mob` (ou `mg.npc`), sinon `survie/sweep_mobs` les envoie en y −300.
 | 214 | `mg:bowl/tick` (Wii Sports : bowling) |
 | 215 | `mg:golf/tick` (Wii Sports : golf) |

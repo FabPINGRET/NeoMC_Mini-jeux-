@@ -61,7 +61,7 @@ DEST = [
         f'execute as @a[{FREE},tag=mg.inplot] run function mg:plot/leave',
         f'execute as @a[{FREE},tag=!mg.fnw,tag=!mg.dl] run function mg:filon/enter',
         'tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a envoyé tout le monde au Filon.","color":"gray"}]']),
-    ('lobby', '🏠 Tout le monde → Lobby', 'yellow', 'Sort tout le monde de la survie, de Neo GTA, de Terra Nova, d\'Ombrelune, du Filon, des plots, du kart, du parkour, des élytra et de la montagne russe : prêt pour lancer un mini-jeu', 65, [
+    ('lobby', '🏠 Tout le monde → Lobby', 'yellow', 'Sort tout le monde de la survie, de Neo GTA, de Terra Nova, d\'Ombrelune, du Filon, des plots, du kart, du parkour, des élytra : prêt pour lancer un mini-jeu', 65, [
         '# TP général → lobby (@s = admin) : chacun quitte proprement son activité (sauvegardes comprises), puis remise à zéro au spawn',
         f'execute as @a[{FREE},tag=mg.gtw] run function mg:gta/leave',
         f'execute as @a[{FREE},tag=mg.tvw] run function mg:terra/leave',
@@ -73,7 +73,7 @@ DEST = [
         f'execute as @a[{FREE},tag=mg.pkr] run function mg:parkour/quit',
         f'execute as @a[{FREE},tag=mg.ely] run function mg:elytra/stop_quiet',
         f'execute as @a[{FREE},tag=mg.elyf] run function mg:elytra/free_stop',
-        f'execute as @a[{FREE}] if predicate mg:coaster_riding run ride @s dismount',
+        f'execute as @a[{FREE}] if predicate mg:riding_vehicle run ride @s dismount',
         f'execute as @a[{FREE}] run function mg:core/reset_player',
         'tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a ramené tout le monde au lobby.","color":"gray"}]']),
 ]

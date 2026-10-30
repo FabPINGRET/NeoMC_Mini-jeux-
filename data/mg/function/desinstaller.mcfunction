@@ -1064,31 +1064,10 @@ schedule clear mg:party/build_7
 schedule clear mg:party/build_8
 schedule clear mg:plot/build_all
 schedule clear mg:lobby/food_build
-schedule clear mg:coaster/build_start
-schedule clear mg:coaster/build
-kill @e[tag=mg.cst]
-kill @e[tag=mg.csd]
-data remove storage mg:lobby coaster1
-data remove storage mg:lobby coaster2
-data remove storage mg:lobby coaster3
-data remove storage mg:lobby coaster4
 schedule clear mg:lobby/beacons
 data remove storage mg:lobby beacon1
 data remove storage mg:lobby deco3
 data remove storage mg:lobby deco2
-schedule clear mg:coaster/build_start
-schedule clear mg:coaster/build
-kill @e[tag=mg.cst]
-kill @e[tag=mg.csd]
-data remove storage mg:lobby coaster1
-data remove storage mg:lobby coaster2
-data remove storage mg:lobby coaster3
-schedule clear mg:coaster/build_start
-schedule clear mg:coaster/build
-kill @e[tag=mg.cst]
-kill @e[tag=mg.csd]
-data remove storage mg:lobby coaster1
-data remove storage mg:lobby coaster2
 kill @e[tag=mg.foodd]
 schedule clear mg:elytra/build
 kill @e[tag=mg.elyd]

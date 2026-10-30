@@ -105,7 +105,6 @@ execute if score $setup mg.st matches 1 if score $lan mg.t matches 5 run functio
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block -9 64 25 minecraft:gold_block run function mg:hall/build
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 12 run function mg:hall/t3_tick
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 24 63 19 minecraft:gold_block run function mg:lobby/food_build
-execute if score $setup mg.st matches 1 if entity @a[x=-75,y=55,z=-75,dx=150,dy=60,dz=150] run function mg:coaster/tick
 execute if score $lan mg.t matches 15 run function mg:rank/tick
 execute as @a[scores={mg.rt=1..}] run function mg:rate/submit
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 10 unless block 16 63 -9 minecraft:sea_lantern run function mg:elytra/build

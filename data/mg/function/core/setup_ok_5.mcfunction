@@ -1,2 +1,2 @@
-# Plots terminé ?
-return run execute if data storage mg:setup plot
+# Mini Party terminé ?
+return run execute if data storage mg:party built

@@ -83,7 +83,7 @@ w('lobby/sit/can', ['# @s : peut s\'asseoir / faire une emote ? Retourne 1 ou 0 
                     'execute if score $sitoff mg.st matches 1 run return 0',
                     'execute unless function mg:lobby/sit/ok run ' + actionbar('🪑 Pas possible ici (au spawn, hors activité).'),
                     'execute unless function mg:lobby/sit/ok run return 0',
-                    '# déjà dans un véhicule (kart, montagne russe...) : non ; assis, c\'est notre propre siège',
+                    '# déjà dans un véhicule (kart...) : non ; assis, c\'est notre propre siège',
                     'execute unless entity @s[tag=mg.sit] if predicate mg:in_vehicle run ' + actionbar('🪑 Descends d\'abord de ton véhicule.'),
                     'execute unless entity @s[tag=mg.sit] if predicate mg:in_vehicle run return 0',
                     'return 1'])

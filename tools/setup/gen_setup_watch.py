@@ -3,7 +3,7 @@
     python tools/setup/gen_setup_watch.py .
 
 mg:core/setup_build lance des constructions asynchrones (spawn en 11 tranches, kart, Mini Party, Élytra, course d'élytres,
-Dropper aventure, buffet, hall, montagne russe…). Chacune pose un drapeau en storage à la fin : on les efface au début,
+Dropper aventure, buffet, hall…). Chacune pose un drapeau en storage à la fin : on les efface au début,
 puis mg:core/setup_watch vérifie toutes les 2 s, affiche l'avancement toutes les 20 s et annonce la fin (ou, après 15 min,
 ce qui manque).
 """
@@ -20,7 +20,7 @@ js, w, patch = mcfn.js, _fn.write, _fn.patch
 
 # (libellé, [(storage, chemin)])
 JOBS = [('Spawn', [('mg:lobby', 'v6')]), ('Buffet', [('mg:lobby', 'food1')]), ('Élytres du spawn', [('mg:lobby', 'ely1')]),
-        ('Hall des scores', [('mg:hall', 'v10')]), ('Montagne russe', [('mg:lobby', 'coaster3')]), ('Plots', [('mg:setup', 'plot')]),
+        ('Hall des scores', [('mg:hall', 'v10')]), ('Plots', [('mg:setup', 'plot')]),
         ('Mini Party', [('mg:party', 'built')]), ('Kart', [('mg:kart', 'built'), ('mg:kart', 'built2'), ('mg:kart', 'built3')]),
         ('Dropper aventure', [('mg:dropadv', 'v3')]), ('Élytra', [('mg:sky', 'built')]),
         # drapeaux = FLAG de chaque tools/elyrace/course_*.py (gen_elyrace.py --check echoue s'ils divergent)
@@ -62,7 +62,7 @@ w('core/setup_timeout', ['# 15 min : la génération n\'a pas tout terminé',
                                                            {'text': '⚠ Génération pas terminée après 15 min (souvent : une partie en cours bloque la course d\'élytres). Reste :', 'color': 'red'}]),
                          'function mg:core/setup_progress'])
 
-# câblage dans setup_build : effacer les drapeaux, construire aussi hall et montagne russe, surveiller
+# câblage dans setup_build : effacer les drapeaux, construire aussi le hall, surveiller
 CLEAR = [f'data remove storage {s} {k}' for lab, flags in JOBS for s, k in flags if (s, k) not in (('mg:dropadv', 'v3'),)]
 _p = os.path.join(F, 'core/setup_build.mcfunction')
 _L = open(_p, encoding='utf-8').read().split('\n')
@@ -71,7 +71,7 @@ _head = [l for l in _L[:_cut] if not (l.startswith('# Drapeaux de fin') or (l.st
 open(_p, 'w', encoding='utf-8', newline='\n').write('\n'.join(_head + _L[_cut:]))
 patch('core/setup_build', 'function mg:lobby/build', ['# Drapeaux de fin de chaque construction : effacés ici, reposés à la fin de chacune (suivi : core/setup_watch)'] +
       [c for c in CLEAR if c not in ('data remove storage mg:kart built2', 'data remove storage mg:kart built3')], where='before')
-patch('core/setup_build', 'schedule function mg:sky/build 40s', ['schedule function mg:hall/build 25s', 'schedule function mg:coaster/build_start 50s'])
+patch('core/setup_build', 'schedule function mg:sky/build 40s', ['schedule function mg:hall/build 25s'])
 patch('core/setup_build', 'scoreboard players set $setup mg.st 1', ['scoreboard players set $swt mg.st 0', 'schedule function mg:core/setup_watch 5s'])
 # plots : pas de drapeau de fin → on en pose un
 p = os.path.join(F, 'plot/build_all.mcfunction')

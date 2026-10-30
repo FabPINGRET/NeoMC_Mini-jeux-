@@ -1,2 +1,2 @@
-# Montagne russe terminé ?
-return run execute if data storage mg:lobby coaster3
+# Plots terminé ?
+return run execute if data storage mg:setup plot
