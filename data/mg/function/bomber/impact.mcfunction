@@ -1,10 +1,10 @@
 # @s : la bombe touche (explosion selon le type, points au lanceur)
 scoreboard players operation $bid mg.st = @s mg.bid
-execute if score @s mg.bty matches 1 run function mg:bomber/boom/r6
-execute if score @s mg.bty matches 2 run function mg:bomber/boom/r12
-execute if score @s mg.bty matches 3 run function mg:bomber/boom/r6
-execute if score @s mg.bty matches 4 run function mg:bomber/boom/r4
-execute if score @s mg.bty matches 5 run function mg:bomber/boom/r22
+execute if score @s mg.bty matches 1 run function mg:bomber/boom/r8
+execute if score @s mg.bty matches 2 run function mg:bomber/boom/r16
+execute if score @s mg.bty matches 3 run function mg:bomber/boom/r8
+execute if score @s mg.bty matches 4 run function mg:bomber/boom/r5
+execute if score @s mg.bty matches 5 run function mg:bomber/boom/r28
 execute if score @s mg.bty matches 4 run function mg:bomber/fx_small
 execute if score @s mg.bty matches 1 run function mg:bomber/fx_big
 execute if score @s mg.bty matches 3 run function mg:bomber/fx_big
