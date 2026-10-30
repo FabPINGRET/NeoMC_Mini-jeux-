@@ -7,7 +7,7 @@ execute unless entity @s[tag=mg.admin] run tellraw @s [{"text":"[Mini-Jeux] ","c
 data remove storage mg:lobby v6
 data remove storage mg:lobby food1
 data remove storage mg:lobby ely4
-data remove storage mg:lobby elyclean4
+data remove storage mg:lobby elyclean5
 data remove storage mg:lobby deco3
 data remove storage mg:lobby decofix2
 function mg:lobby/build

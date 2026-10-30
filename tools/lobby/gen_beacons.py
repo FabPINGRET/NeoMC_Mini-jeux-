@@ -1,6 +1,6 @@
 """Suppression one-shot de l'ancienne balise de la montagne russe : python tools/lobby/gen_beacons.py .
 
-La balise des élytra est retirée par elytra/spawn_clean (drapeau mg:lobby elyclean4).
+La balise des élytra est retirée par elytra/spawn_clean (drapeau mg:lobby elyclean5).
 """
 import os
 import sys
