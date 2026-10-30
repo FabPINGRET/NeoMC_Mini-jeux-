@@ -2,8 +2,9 @@
 
     python tools/blockparty/gen_bp.py .
 
-- id 28 : carrés (sols 1..10, d'origine) ; id 91 : bandes (sols 11..20) ; id 92 : mixte (1..20 au hasard)
-  → remappés sur le jeu 28 avec $bpm (0 carrés, 1 bandes, 2 mixte) dans core/request.
+- id 28 : carrés (sols 1..10, d'origine) ; id 91 : bandes (sols 11..20) ; id 92 : mixte (1..20 au hasard) ;
+  id 251 : mixte sans PvP (équipe mg_sq : ni coups ni collisions)
+  → remappés sur le jeu 28 avec $bpm (0 carrés, 1 bandes, 2 mixte) et $bpn (1 = sans PvP) dans core/request.
 - Musique (note blocks) pendant la course ; elle se coupe net avec un « bzibzibzi » de platine au moment
   où les autres blocs disparaissent. Tempo plus rapide au fil des manches.
 """
@@ -150,16 +151,24 @@ w('blockparty/strip_now', sn + ['execute as @a[tag=!mg.surv] at @s run playsound
 C.patch('blockparty/pause_tick', 'scoreboard players remove $bt mg.st 1', ['execute if score $bsc mg.st matches 1.. run function mg:blockparty/scratch'], where='before')
 
 # ---------- modes : ids 91 (bandes) et 92 (mixte) → jeu 28
-C.go_range(92)
+C.go_range(251)
 C.patch('core/request', '# Mini Party : 59 = 8 tours, 60 = 15 tours. Un jeu lancé hors Mini Party ($mpl) met fin à la partie en cours', [
     '# Block Party : 28 = carrés, 91 = bandes, 92 = mixte → jeu 28 + sol $bpm (0..2)',
     'execute if score $game mg.st matches 28 run scoreboard players set $bpm mg.st 0',
     'execute if score $game mg.st matches 91 run scoreboard players set $bpm mg.st 1',
     'execute if score $game mg.st matches 92 run scoreboard players set $bpm mg.st 2',
     'execute if score $game mg.st matches 91..92 run scoreboard players set $game mg.st 28', ''], where='before')
+# 251 = sans PvP (sol mixte, équipe mg_sq : pas de coups ni de collisions) ; $bpn remis à 0 par les autres versions
+C.patch('core/request', 'execute if score $game mg.st matches 91..92 run scoreboard players set $game mg.st 28', [
+    'execute if score $game mg.st matches 28 run scoreboard players set $bpn mg.st 0',
+    'execute if score $game mg.st matches 251 run scoreboard players set $bpn mg.st 1',
+    'execute if score $game mg.st matches 251 run scoreboard players set $bpm mg.st 2',
+    'execute if score $game mg.st matches 251 run scoreboard players set $game mg.st 28'])
 go = C.lines_of('blockparty/go')
 msg = ['execute if score $bpm mg.st matches 1 run tellraw @a[tag=mg.play] {"text":"▦ Version BANDES : le sol est fait de bandes de couleur.","color":"light_purple"}',
-       'execute if score $bpm mg.st matches 2 run tellraw @a[tag=mg.play] {"text":"▦ Version MIXTE : carrés ou bandes, ça change à chaque manche !","color":"light_purple"}']
+       'execute if score $bpm mg.st matches 2 run tellraw @a[tag=mg.play] {"text":"▦ Version MIXTE : carrés ou bandes, ça change à chaque manche !","color":"light_purple"}',
+       'execute if score $bpn mg.st matches 1 run team join mg_sq @a[tag=mg.play]',
+       'execute if score $bpn mg.st matches 1 run tellraw @a[tag=mg.play] {"text":"🕊 Version SANS PvP : impossible de frapper ou de pousser les autres.","color":"aqua"}']
 txt = 'Quand la musique s\'arrête (bzibzibzi…), les autres blocs disparaissent !'
 go = [l.replace('cours sur un bloc de cette couleur avant que tous les autres disparaissent !',
                 'cours sur un bloc de cette couleur : ' + txt) for l in go if l not in msg and l.strip()]

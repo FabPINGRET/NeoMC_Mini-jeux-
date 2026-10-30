@@ -175,6 +175,24 @@
     {
       "label": [
         {
+          "text": "▦ Block Party — sans PvP",
+          "color": "light_purple"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Mixte, sans coups ni bousculade entre joueurs",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 251"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "⚓ Enclumes ▸",
           "color": "gray"
         }

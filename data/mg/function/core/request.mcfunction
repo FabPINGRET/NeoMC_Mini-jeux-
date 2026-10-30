@@ -37,6 +37,10 @@ execute if score $game mg.st matches 28 run scoreboard players set $bpm mg.st 0
 execute if score $game mg.st matches 91 run scoreboard players set $bpm mg.st 1
 execute if score $game mg.st matches 92 run scoreboard players set $bpm mg.st 2
 execute if score $game mg.st matches 91..92 run scoreboard players set $game mg.st 28
+execute if score $game mg.st matches 28 run scoreboard players set $bpn mg.st 0
+execute if score $game mg.st matches 251 run scoreboard players set $bpn mg.st 1
+execute if score $game mg.st matches 251 run scoreboard players set $bpm mg.st 2
+execute if score $game mg.st matches 251 run scoreboard players set $game mg.st 28
 # Autos tamponneuses : 221 = 5 coups, 222 = 3 coups, 223 = 8 coups → $atx
 execute if score $game mg.st matches 221 run scoreboard players set $atx mg.st 5
 execute if score $game mg.st matches 222 run scoreboard players set $atx mg.st 3
