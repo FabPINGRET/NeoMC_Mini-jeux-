@@ -58,6 +58,7 @@ class Stats:
         self.unsafe = []                # (raison, ligne) : avertissements
         self.invalid = []               # fichiers écartés (chemin d'id de ressource invalide), rempli par gen_floaty
         self.str_examples = []
+        self.tr = None                  # fl_tr.Stats de la traduction française (posé par gen_floaty, qui traduit APRÈS la réécriture) ; None : aucune
         self.own_dim = None             # SourceDim (source_dim) : références à la dimension source à ramener à mg:floaty ; None : fonctions de la carte
 
     def warn(self, why, line):
