@@ -3,7 +3,7 @@
 # Drapeaux de fin de chaque construction : effacés ici, reposés à la fin de chacune (suivi : core/setup_watch)
 data remove storage mg:lobby v6
 data remove storage mg:lobby food1
-data remove storage mg:lobby ely2
+data remove storage mg:lobby ely3
 data remove storage mg:hall v10
 data remove storage mg:setup plot
 data remove storage mg:party built

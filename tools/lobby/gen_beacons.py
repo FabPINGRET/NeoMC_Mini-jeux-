@@ -1,6 +1,6 @@
 """Suppression one-shot de l'ancienne balise de la montagne russe : python tools/lobby/gen_beacons.py .
 
-La balise des élytra est retirée par elytra/spawn_clean (drapeau mg:lobby elyclean2).
+La balise des élytra est retirée par elytra/spawn_clean (drapeau mg:lobby elyclean3).
 """
 import os
 import sys
@@ -22,6 +22,6 @@ w('lobby/coaster_beacon_off', ['# Ancienne balise de la montagne russe (supprim�
                               'kill @e[type=minecraft:text_display,tag=mg.csd]',
                               'kill @e[type=minecraft:minecart,tag=mg.cst]',
                               'data modify storage mg:lobby coasterbeacon set value 1b'])
-patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby ely2 run schedule function mg:elytra/build 14s',
+patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby ely3 run schedule function mg:elytra/build 14s',
       ['execute unless data storage mg:lobby coasterbeacon run function mg:lobby/coaster_beacon_off'], 'before')
 print('Balise montagne russe OK')

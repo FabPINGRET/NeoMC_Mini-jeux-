@@ -1075,8 +1075,8 @@ kill @e[tag=mg.elyd]
 clear @a minecraft:elytra[minecraft:custom_data~{mg_ely:1b}]
 clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_ely:1b}]
 data remove storage mg:lobby ely1
-data remove storage mg:lobby ely2
-data remove storage mg:lobby elyclean2
+data remove storage mg:lobby ely3
+data remove storage mg:lobby elyclean3
 schedule clear mg:elytra/spawn_clean
 data remove storage mg:lobby food1
 function mg:hall/remove

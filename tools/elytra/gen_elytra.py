@@ -42,10 +42,10 @@ def course2():
     return path
 
 C = {
-    1: dict(name='Petit parcours d\'élytra', short='petit', path=course1(), pad=(16, 63, 9), back=(16.5, 64, 10.5),
+    1: dict(name='Petit parcours d\'élytra', short='petit', path=course1(), pad=(24, 63, 9), back=(24.5, 64, 10.5),
             plat=(-48.5, 175, -44.5), floor=118, rockets=4, pb='mg.erb', rec='$erec', hall='ely',
             lbl='🪽 Record petit parcours d\'élytra', padcol='light_blue_concrete'),
-    2: dict(name='Grand parcours d\'élytra', short='grand', path=course2(), pad=(32, 63, 15), back=(32.5, 64, 16.5),
+    2: dict(name='Grand parcours d\'élytra', short='grand', path=course2(), pad=(34, 63, 9), back=(34.5, 64, 10.5),
             plat=(-52.5, 300, -47.5), floor=185, rockets=6, pb='mg.erb2', rec='$erec2', hall='ely2',
             lbl='🪽 Record grand parcours d\'élytra', padcol='purple_concrete'),
 }
@@ -53,7 +53,7 @@ os.makedirs(OUT, exist_ok=True)
 
 # ---------------------------------------------------------------- construction
 b = ['# Parcours d\'élytra et élytres libres : construction (généré par tools/elytra/gen_elytra.py)',
-     'kill @e[tag=mg.elyd]', 'data modify storage mg:lobby ely2 set value 1b']
+     'kill @e[tag=mg.elyd]', 'data modify storage mg:lobby ely3 set value 1b']
 def pad(p, col, title, sub, tcol):
     px, py, pz = p
     return [f'fill {px-2} {py} {pz-2} {px+2} {py} {pz+2} minecraft:smooth_quartz',
@@ -97,24 +97,30 @@ for (x1, z1, x2, z2) in ((12, -19, 22, -7),):                                   
     SC += [f'fill {x1} 64 {z1} {x2} 78 {z2} minecraft:air replace #minecraft:leaves', f'fill {x1} 64 {z1} {x2} 78 {z2} minecraft:air replace #minecraft:logs']
 SC += ['fill 13 64 -4 19 72 -4 minecraft:air', 'fill 14 64 -7 18 70 -5 minecraft:air', 'fill 14 63 -7 18 63 -5 minecraft:stone_bricks']
 # sud (à droite de l'avenue) : petit parcours en (16, 9), grand parcours en (32, 15) ; haie percée en z 4
-for (x1, z1, x2, z2) in ((12, 5, 22, 13), (28, 11, 37, 19)):                        # arbres entre l'avenue et les socles
+# sud, anciens socles (petit en (16, 9), grand en (32, 15)) et leurs allées rendus à l'herbe, haie de l'avenue refermée (z 4)
+for (x1, z1, x2, z2) in ((14, 5, 18, 11), (30, 5, 31, 17), (32, 12, 34, 17)):      # sans toucher au nouveau socle (32..36, 7..11)
+    SC.append(f'fill {x1} 63 {z1} {x2} 63 {z2} minecraft:grass_block')
+SC += ['fill 13 64 4 16 64 4 minecraft:azalea_leaves[persistent=true]', 'fill 18 64 4 19 64 4 minecraft:azalea_leaves[persistent=true]',
+       'fill 29 64 4 35 64 4 minecraft:azalea_leaves[persistent=true]']
+# sud (à droite de l'avenue) : petit parcours en (24, 9), grand parcours en (34, 9), à quelques blocs de l'avenue ; haie percée en z 4
+for (x1, z1, x2, z2) in ((20, 5, 28, 13), (30, 5, 39, 13)):                         # arbres entre l'avenue et les socles
     SC += [f'fill {x1} 64 {z1} {x2} 78 {z2} minecraft:air replace #minecraft:leaves', f'fill {x1} 64 {z1} {x2} 78 {z2} minecraft:air replace #minecraft:logs']
-for (x1, z1, x2, z2) in ((13, 4, 16, 4), (18, 4, 19, 4), (29, 4, 35, 4)):          # bordure de l'avenue face aux socles (lampadaire en x17 gardé)
+for (x1, z1, x2, z2) in ((21, 4, 27, 4), (31, 4, 36, 4)):                          # bordure de l'avenue face aux socles (lampadaire en x37 gardé)
     SC.append(f'fill {x1} 64 {z1} {x2} 72 {z2} minecraft:air')
-for (x1, z1, x2, z2) in ((14, 5, 18, 6), (30, 5, 34, 12)):                         # allées pavées avenue → socles
+for (x1, z1, x2, z2) in ((22, 5, 26, 6), (32, 5, 36, 6)):                          # allées pavées avenue → socles
     SC += [f'fill {x1} 64 {z1} {x2} 70 {z2} minecraft:air', f'fill {x1} 63 {z1} {x2} 63 {z2} minecraft:stone_bricks']
 # ancienne balise blanche des élytres (21, 63, -15) : supprimée
 SC += ['setblock 21 63 -15 minecraft:air', 'setblock 21 64 -15 minecraft:air']
-SC.append('data modify storage mg:lobby elyclean2 set value 1b')
+SC.append('data modify storage mg:lobby elyclean3 set value 1b')
 W('spawn_clean', SC)
 def _patch(rel, anchor, line):
     pth = os.path.join('data', 'mg', 'function', rel + '.mcfunction'); t = open(pth, encoding='utf-8').read()
     if line in t: return
     assert anchor in t, (rel, anchor)
     open(pth, 'w', encoding='utf-8', newline='\n').write(t.replace(anchor, anchor + '\n' + line, 1))
-_patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby ely2 run schedule function mg:elytra/build 14s',
-       'execute if score $setup mg.st matches 1 unless data storage mg:lobby elyclean2 run schedule function mg:elytra/spawn_clean 9s')
-_patch('desinstaller', 'data remove storage mg:lobby ely1', 'data remove storage mg:lobby ely2\ndata remove storage mg:lobby elyclean2\nschedule clear mg:elytra/spawn_clean')
+_patch('core/load', 'execute if score $setup mg.st matches 1 unless data storage mg:lobby ely3 run schedule function mg:elytra/build 14s',
+       'execute if score $setup mg.st matches 1 unless data storage mg:lobby elyclean3 run schedule function mg:elytra/spawn_clean 9s')
+_patch('desinstaller', 'data remove storage mg:lobby ely1', 'data remove storage mg:lobby ely3\ndata remove storage mg:lobby elyclean3\nschedule clear mg:elytra/spawn_clean')
 
 # ---------------------------------------------------------------- départ (start = petit, start2 = grand)
 for c, d in C.items():
