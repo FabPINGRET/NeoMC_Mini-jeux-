@@ -43,7 +43,7 @@ def lm_tops():
     F_ = os.path.join(R, 'data', 'mg', 'function')
     TW.load(F_)
     # load() range ces constructions parmi les zones modifiées ailleurs (DYN) : on les rejoue pour que leurs blocs figurent dans W
-    for rel in ('hall/build', 'gta/portal_build', 'terra/portal_build', 'ombre/portal_build', 'pvpc/build', 'foot/build', 'elytra/build'):
+    for rel in ('hall/build', 'hub/build', 'pvpc/build', 'foot/build', 'elytra/build'):
         p = os.path.join(F_, *rel.split('/')) + '.mcfunction'
         assert os.path.isfile(p), ('fonction de construction absente (relancer son générateur)', p)
         for l in open(p, encoding='utf-8'):

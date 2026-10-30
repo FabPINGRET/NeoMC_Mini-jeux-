@@ -126,6 +126,7 @@ function mg:terra/lobby_tick
 function mg:ombre/lobby_tick
 function mg:filon/lobby_tick
 function mg:floaty/lobby_tick
+function mg:hub/tick
 
 # Parkour du lobby
 execute if score $setup mg.st matches 1 run function mg:parkour/tick
