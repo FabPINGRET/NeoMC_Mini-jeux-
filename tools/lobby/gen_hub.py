@@ -29,7 +29,7 @@ w, patch = _fn.write, _fn.patch
 
 TR = 'transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[%sf,%sf,%sf],scale:[%sf,%sf,%sf]}'
 BOX = (-10, 63, -61, 10, 82, -42)                 # zone du hub (x1 y1 z1 x2 y2 z2)
-WITNESS = (0, 63, -50)                            # bloc témoin du hub (au centre du passage nord-sud)
+WITNESS = (0, 63, -52)                            # bloc témoin du hub (au centre du passage nord-sud)
 WITNESS_BLOCK = 'minecraft:mossy_stone_bricks'
 OLD_SITES = [(5, 13, -23, -15), (-16, -5, -23, -15), (-18, -5, -33, -25)]   # anciens portails GTA, Terra Nova, Ombrelune (x1 x2 z1 z2)
 CLEAN_FLAG = 'mg:hub oldclean'
@@ -83,6 +83,7 @@ X1, Y1, Z1, X2, Y2, Z2 = BOX
 BUILD = ['# Hub des portails : huit petits portails au spawn nord (ex-portail des plots), reconstruit par mg:hub/tick si son témoin disparaît',
          f'kill @e[tag=mg.hubp]', 'kill @e[tag=mg.gtap]', 'kill @e[tag=mg.tvport]', 'kill @e[tag=mg.olport]',
          f'kill @e[type=minecraft:text_display,x={X1},y={Y1},z={Z1},dx={X2 - X1},dy={Y2 - Y1},dz={Z2 - Z1}]',
+         f'kill @e[type=minecraft:item_display,tag=mg.lby,x={X1},y={Y1},z={Z1},dx={X2 - X1},dy={Y2 - Y1},dz={Z2 - Z1}]',   # cristaux de l'ancien portail des plots
          f'fill {X1} 64 {Z1} {X2} {Y2} {Z2} minecraft:air',
          f'fill {X1} 63 {Z1} {X2} 63 {Z2} minecraft:smooth_stone',
          f'setblock {WITNESS[0]} {WITNESS[1]} {WITNESS[2]} {WITNESS_BLOCK}',
