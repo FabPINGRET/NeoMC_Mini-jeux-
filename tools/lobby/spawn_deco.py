@@ -80,9 +80,6 @@ vnl.append(idisp(FIN[0], FIN[1] + 1.6, FIN[2], vi('gold_block'), 1.0, BOTH))
 for k, c in enumerate((6740479, 16738740, 8453888, 16766720)):
     a = math.radians(45 + 90 * k)
     rpl.append(idisp(round(FIN[0] + 7 * math.cos(a), 2), FIN[1] + 3, round(FIN[2] + 7 * math.sin(a), 2), rp('crystal', 'minecraft:leather_horse_armor', c), 2.2, BOTH))
-for sx in (-7.5, 8.5):
-    rpl.append(idisp(sx, 68.5, -46.5, rp('crystal', 'minecraft:leather_horse_armor', 11751679), 1.6, BOTH))
-    vnl.append(idisp(sx, 68.5, -46.5, vi('amethyst_cluster'), 1.4, BOTH))
 # boîtes ? au-dessus des jardins aux champignons
 for (x, y, z) in ((24.5, 72, 22.5), (30.5, 74, 30.5), (20.5, 73, 36.5), (38.5, 71, 20.5)):
     rpl.append(idisp(x, y, z, rp('item_box'), 1.2, BOTH))
@@ -107,9 +104,6 @@ anim.append('execute if score $lph mg.st matches 0 as @e[type=minecraft:item_dis
 anim.append('execute if score $lph mg.st matches 2 as @e[type=minecraft:item_display,tag=mg.lbob] run data modify entity @s transformation.translation set value [0f,0.35f,0f]')
 wr('lobby/anim', anim)
 fx = ['# Ambiance du spawn (particules)',
-      'particle minecraft:portal 0.5 68.5 -46.5 2.6 2.8 0.2 0.6 40',
-      'particle minecraft:reverse_portal 0.5 68.5 -46.5 2.4 2.6 0.1 0.01 6',
-      'particle minecraft:dust{color:[0.75,0.4,1.0],scale:1.2} 0.5 68.5 -46.5 2.6 2.8 0.15 0 8',
       'particle minecraft:end_rod 67.5 64.3 0.5 1.2 0.2 1.2 0.01 2',
       f'particle minecraft:end_rod {FIN[0]} {FIN[1] + 2} {FIN[2]} 3 1.5 3 0.01 3',
       'particle minecraft:cherry_leaves 30 72 -30 12 5 12 0 4',

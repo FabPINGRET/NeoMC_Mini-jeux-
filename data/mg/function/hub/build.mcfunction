@@ -4,9 +4,10 @@ kill @e[tag=mg.gtap]
 kill @e[tag=mg.tvport]
 kill @e[tag=mg.olport]
 kill @e[type=minecraft:text_display,x=-10,y=63,z=-61,dx=20,dy=19,dz=19]
+kill @e[type=minecraft:item_display,tag=mg.lby,x=-10,y=63,z=-61,dx=20,dy=19,dz=19]
 fill -10 64 -61 10 82 -42 minecraft:air
 fill -10 63 -61 10 63 -42 minecraft:smooth_stone
-setblock 0 63 -50 minecraft:mossy_stone_bricks
+setblock 0 63 -52 minecraft:mossy_stone_bricks
 execute unless data storage mg:hub floaty run data modify storage mg:hub floaty set value 0b
 execute unless data storage mg:hub oldclean run function mg:hub/old_clean
 schedule function mg:hub/decofix_start 20s

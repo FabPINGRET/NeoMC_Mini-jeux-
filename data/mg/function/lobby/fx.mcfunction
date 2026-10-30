@@ -1,7 +1,4 @@
 # Ambiance du spawn (particules)
-particle minecraft:portal 0.5 68.5 -46.5 2.6 2.8 0.2 0.6 40
-particle minecraft:reverse_portal 0.5 68.5 -46.5 2.4 2.6 0.1 0.01 6
-particle minecraft:dust{color:[0.75,0.4,1.0],scale:1.2} 0.5 68.5 -46.5 2.6 2.8 0.15 0 8
 particle minecraft:end_rod 67.5 64.3 0.5 1.2 0.2 1.2 0.01 2
 particle minecraft:end_rod 124.5 98 0.5 3 1.5 3 0.01 3
 particle minecraft:cherry_leaves 30 72 -30 12 5 12 0 4
