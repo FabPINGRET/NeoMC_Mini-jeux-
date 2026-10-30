@@ -54,6 +54,16 @@ def model_refs(node, out):
     return out
 
 
+def item_refs(item):
+    """(références du cas mg:floaty, références du repli vanilla) d'une définition d'item enveloppée par floaty_split ; (toutes, []) sinon.
+    Le repli est la définition vanilla (hors zip, contrôlée par test_floaty_split_real.py) : ses modèles, et ceux du cas qui en viennent
+    (items que la carte ne redéfinit pas), sont vanilla."""
+    model = item.get('model')
+    if isinstance(model, dict) and model.get('type') == 'minecraft:select' and model.get('property') == 'minecraft:context_dimension':
+        return model_refs([c['model'] for c in model['cases']], []), model_refs(model.get('fallback'), [])
+    return model_refs(item, []), []
+
+
 class CommittedZip(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -116,13 +126,17 @@ class CommittedZip(unittest.TestCase):
     # ---- items / models de la carte
     def test_item_models_exist_or_are_vanilla(self):
         item_stems = {Path(n).stem for n in self.extra if n.startswith('assets/minecraft/items/')}
-        refs = [(n, r) for n in self.extra if n.startswith('assets/minecraft/items/')
-                for r in model_refs(json.loads(self.zf.read(n).decode('utf-8')), [])]
+        refs, vanilla = [], {}
+        for n in self.extra:
+            if n.startswith('assets/minecraft/items/'):
+                case, fallback = item_refs(json.loads(self.zf.read(n).decode('utf-8')))
+                refs.extend((n, r) for r in case)
+                vanilla[n] = set(fallback)
         self.assertTrue(refs)
         broken = []
         for n, r in refs:
             ns, p = ref(r)
-            if f'assets/{ns}/models/{p}.json' in self.nameset:
+            if f'assets/{ns}/models/{p}.json' in self.nameset or r in vanilla[n]:
                 continue
             m = re.fullmatch(r'item/([a-z0-9_]+?)(?:_pulling_\d+|_charged|_firework|_cast|_blocking)?', p) if ns == 'minecraft' else None
             if not (m and m.group(1) in item_stems):                        # modèle vanilla item/<objet> dont l'objet est redéfini par la carte
