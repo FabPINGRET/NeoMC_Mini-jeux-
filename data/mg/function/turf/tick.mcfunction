@@ -16,9 +16,9 @@ title @a[tag=mg.play] actionbar [{"text":"Rouge ","color":"red"},{"score":{"name
 scoreboard players remove $tl mg.st 1
 execute if score $tl mg.st matches 1200 run tellraw @a[tag=mg.play] [{"text":"▮ Plus qu'une minute !","color":"gold"}]
 
-# Victoire : 80 % conquis (25 colonnes sur 31), ou à la fin du temps le plus de colonnes
-execute if score $nr mg.st matches 25.. run return run function mg:core/win_red
-execute if score $nb mg.st matches 25.. run return run function mg:core/win_blue
+# Victoire : 60 % conquis (19 colonnes sur 31), ou à la fin du temps le plus de colonnes
+execute if score $nr mg.st matches 19.. run return run function mg:core/win_red
+execute if score $nb mg.st matches 19.. run return run function mg:core/win_blue
 execute if score $tl mg.st matches ..0 if score $nr mg.st > $nb mg.st run return run function mg:core/win_red
 execute if score $tl mg.st matches ..0 if score $nb mg.st > $nr mg.st run return run function mg:core/win_blue
 execute if score $tl mg.st matches ..0 run return run function mg:core/draw
