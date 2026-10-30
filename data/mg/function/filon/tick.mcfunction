@@ -2,7 +2,7 @@
 execute as @e[type=minecraft:interaction,tag=mg.fni,x=-60,y=0,z=45930,dx=136,dy=200,dz=136] if data entity @s interaction run function mg:filon/click
 scoreboard players enable @a[tag=mg.fnw] mg.fnt
 execute as @a[tag=mg.fnw,scores={mg.fnt=1..}] run function mg:filon/cmd
-execute as @a[tag=mg.fnw,scores={mg.fnu=1..}] run function mg:filon/use
+execute as @a[tag=mg.fnw,scores={mg.fnu=1..}] at @s run function mg:filon/use
 execute as @a[tag=mg.fnw,scores={mg.fnd=1..}] run function mg:filon/died
 scoreboard players reset @a[tag=mg.fnw] mg.fnk
 # dans la mine ou en surface

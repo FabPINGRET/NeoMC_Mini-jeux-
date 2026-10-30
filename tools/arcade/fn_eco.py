@@ -73,7 +73,7 @@ DLG = {'type': 'minecraft:multi_action', 'title': {'text': '🛒 Magasin du Filo
        'actions': acts, 'columns': 2, 'pause': False, 'can_close_with_escape': True}
 w(f'{P}/shop_show', ['$dialog show @s ' + json.dumps(DLG, ensure_ascii=False, separators=(',', ':'))])
 
-BUY = ['# Trigger mg.fnt (@s) : 1-9 achats, 20 vendre, 21 cours du marché, 30 retour au lobby',
+BUY = ['# Trigger mg.fnt (@s) : 1-10 achats, 20 vendre, 21 cours du marché, 30 retour au lobby',
        'execute unless entity @s[tag=mg.fnw] run return run scoreboard players reset @s mg.fnt',
        f'execute if score @s mg.fnt matches 30 run return run function mg:{P}/leave',
        f'execute unless entity @s[{PLAZA}] run tellraw @s {{"text":"⚠ Approche-toi du comptoir et du magasin (place de l\'île).","color":"red"}}',
@@ -96,11 +96,11 @@ OK = ['# Achat payé (#c) : niveau suivant ou objet', 'scoreboard players operat
 for n, obj, _, _ in SHOP:
     OK.append(f'execute if score @s mg.fnt matches {n} run scoreboard players add @s {obj} 1')
 for n, _, _, give in ITEMS:
-    OK.append(f'execute if score @s mg.fnt matches {n} run give @s {DYN if give == "DYN" else give}')
+    OK.append(f'execute if score @s mg.fnt matches {n} run give @s {give.replace("DYN", DYN)}')
 OK += [f'execute if score @s mg.fnt matches 1..6 run function mg:{P}/kit', f'function mg:{P}/effects',
        'execute at @s run playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0.8',
        'tellraw @s [{"text":"🛒 Acheté ! Solde : ","color":"aqua"},{"score":{"name":"@s","objective":"mg.fnp"},"color":"yellow"},{"text":" pts","color":"aqua"}]',
-       f'execute if score @s mg.fnt matches 1..6 run function mg:{P}/shop']
+       '# la fenêtre se rouvre après chaque achat (enchaîner les achats)', f'execute if score @s mg.fnt matches 1..10 run function mg:{P}/shop']
 w(f'{P}/buy_ok', OK)
 MS = ['# Fenêtre « cours du marché » (même contenu que le tableau)', f'function mg:{P}/board']
 w(f'{P}/market_show', MS + [f'function mg:{P}/market_dlg with storage mg:filon b'])
