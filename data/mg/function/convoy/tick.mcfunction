@@ -27,6 +27,6 @@ scoreboard players operation $cvq mg.st %= #20 mg.st
 execute if score $cvq mg.st matches 0 run function mg:convoy/second
 execute if score $state mg.st matches 2 if score $cvp mg.st matches 120.. run return run function mg:convoy/arrived
 execute if score $state mg.st matches 2 if score $cvm mg.st matches 0 if score $cvt mg.st matches 3600.. run return run function mg:convoy/round_end
-execute if score $state mg.st matches 2 if score $cvm mg.st matches 1 if score $cvt mg.st matches 7200.. run return run function mg:convoy/coop_lose
+execute if score $state mg.st matches 2 if score $cvm mg.st matches 1 if score $cvt mg.st matches 10800.. run return run function mg:convoy/coop_lose
 execute store result score $alive mg.st if entity @a[tag=mg.play]
 execute if score $state mg.st matches 2 if score $alive mg.st matches 0 run function mg:core/draw
