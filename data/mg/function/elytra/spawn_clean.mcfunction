@@ -43,18 +43,18 @@ fill 33 69 -11 35 69 -9 minecraft:cherry_leaves[persistent=true]
 fill 33 70 -10 35 70 -10 minecraft:cherry_leaves[persistent=true]
 fill 34 70 -11 34 70 -9 minecraft:cherry_leaves[persistent=true]
 fill 34 64 -10 34 68 -10 minecraft:cherry_log
-# cerisier en (24, -22)
-fill 22 67 -23 26 68 -21 minecraft:cherry_leaves[persistent=true]
-fill 23 67 -24 25 68 -20 minecraft:cherry_leaves[persistent=true]
-fill 23 69 -23 25 69 -21 minecraft:cherry_leaves[persistent=true]
-fill 23 70 -22 25 70 -22 minecraft:cherry_leaves[persistent=true]
-fill 24 70 -23 24 70 -21 minecraft:cherry_leaves[persistent=true]
-fill 24 64 -22 24 68 -22 minecraft:cherry_log
-# cerisier en (30, -22)
-fill 28 67 -23 32 68 -21 minecraft:cherry_leaves[persistent=true]
-fill 29 67 -24 31 68 -20 minecraft:cherry_leaves[persistent=true]
-fill 29 69 -23 31 69 -21 minecraft:cherry_leaves[persistent=true]
-fill 29 70 -22 31 70 -22 minecraft:cherry_leaves[persistent=true]
-fill 30 70 -23 30 70 -21 minecraft:cherry_leaves[persistent=true]
-fill 30 64 -22 30 68 -22 minecraft:cherry_log
-data modify storage mg:lobby elyclean5 set value 1b
+# cerisier en (17, -18)
+fill 15 67 -19 19 68 -17 minecraft:cherry_leaves[persistent=true]
+fill 16 67 -20 18 68 -16 minecraft:cherry_leaves[persistent=true]
+fill 16 69 -19 18 69 -17 minecraft:cherry_leaves[persistent=true]
+fill 16 70 -18 18 70 -18 minecraft:cherry_leaves[persistent=true]
+fill 17 70 -19 17 70 -17 minecraft:cherry_leaves[persistent=true]
+fill 17 64 -18 17 68 -18 minecraft:cherry_log
+# cerisier en (36, -17)
+fill 34 67 -18 38 68 -16 minecraft:cherry_leaves[persistent=true]
+fill 35 67 -19 37 68 -15 minecraft:cherry_leaves[persistent=true]
+fill 35 69 -18 37 69 -16 minecraft:cherry_leaves[persistent=true]
+fill 35 70 -17 37 70 -17 minecraft:cherry_leaves[persistent=true]
+fill 36 70 -18 36 70 -16 minecraft:cherry_leaves[persistent=true]
+fill 36 64 -17 36 68 -17 minecraft:cherry_log
+data modify storage mg:lobby elyclean6 set value 1b

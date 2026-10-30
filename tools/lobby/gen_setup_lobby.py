@@ -26,7 +26,7 @@ w('setup_lobby', [
     'execute unless entity @s[tag=mg.admin] run tellraw @s ' + ADMIN % ('Reconstruction du lobby lancée (environ 1 minute)...', 'gray'),
     # drapeaux des constructions du spawn (reposés à la fin de chacune)
     'data remove storage mg:lobby v6', 'data remove storage mg:lobby food1', 'data remove storage mg:lobby ely4',
-    'data remove storage mg:lobby elyclean5', 'data remove storage mg:lobby deco3', 'data remove storage mg:lobby decofix2',
+    'data remove storage mg:lobby elyclean6', 'data remove storage mg:lobby deco3', 'data remove storage mg:lobby decofix3',
     'function mg:lobby/build',
     'schedule function mg:lobby/food_build 20s',
     'schedule function mg:elytra/spawn_clean 22s',
@@ -40,6 +40,6 @@ w('core/setup_lobby_done', [
     '# Fin de mg:setup_lobby (hub/decofix part encore 20 s après hub/build)',
     'scoreboard players reset $slb mg.st',
     'tellraw @a[tag=mg.admin] ' + ADMIN % ('Lobby reconstruit.', 'green')])
-patch('desinstaller', 'data remove storage mg:lobby decofix2',
+patch('desinstaller', 'data remove storage mg:lobby decofix3',
       ['schedule clear mg:core/setup_lobby_done', 'schedule clear mg:hub/build', 'schedule clear mg:lobby/fish/build', 'scoreboard players reset $slb mg.st'])
 print('setup_lobby OK')

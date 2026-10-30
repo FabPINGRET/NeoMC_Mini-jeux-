@@ -27,7 +27,7 @@ import theme_stew as TS
 from theme_mobs import THEME_TAG
 from theme_world import CH, G, GROUND, PLANTS, SNOWABLE, W, bid, change, free
 
-RINK = (32, 48, 7, 35)                   # (x1, x2, z1, z2) : cases de la piste, 17 x 29
+RINK = (35, 48, 15, 34)                   # (x1, x2, z1, z2) : cases de la piste, 17 x 29
 CHAMFER = 2                              # coins coupés : cases à moins de CHAMFER (somme des distances aux deux bords) retirées
 CLEAR = [((42, 24), 3), ((34, 21), 2), ((43, 12), 3), ((49, 31), 3), ((33, 30), 2)]   # arbres retirés : (centre x, z), rayon Chebyshev
 RADIUS = 60                              # rayon du spawn à partir duquel commence la promenade circulaire : la glace reste en dessous
