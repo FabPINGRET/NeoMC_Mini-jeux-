@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Shield Chic",
+            "color": "gray"
+        },
+        "description": {
+            "text": "Meet Yommod at his Shield Workshop"
+        },
+        "icon": {
+            "id": "minecraft:shield"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:collection"
+}

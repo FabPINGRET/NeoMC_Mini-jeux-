@@ -1,0 +1,10 @@
+execute if score blade_metal_speed Value matches 1..2 as @n[tag=blade_metal_loc,distance=0..] at @s facing entity @n[tag=blade_metal_dest,distance=0..] eyes run tp @s ^ ^ ^0.125
+execute if score blade_metal_speed Value matches 3..4 as @n[tag=blade_metal_loc,distance=0..] at @s facing entity @n[tag=blade_metal_dest,distance=0..] eyes run tp @s ^ ^ ^0.15
+execute if score blade_metal_speed Value matches 5..6 as @n[tag=blade_metal_loc,distance=0..] at @s facing entity @n[tag=blade_metal_dest,distance=0..] eyes run tp @s ^ ^ ^0.175
+execute if score blade_metal_speed Value matches 7..8 as @n[tag=blade_metal_loc,distance=0..] at @s facing entity @n[tag=blade_metal_dest,distance=0..] eyes run tp @s ^ ^ ^0.2
+execute if score blade_metal_speed Value matches 9..10 as @n[tag=blade_metal_loc,distance=0..] at @s facing entity @n[tag=blade_metal_dest,distance=0..] eyes run tp @s ^ ^ ^0.225
+execute if score blade_metal_speed Value matches 11..12 as @n[tag=blade_metal_loc,distance=0..] at @s facing entity @n[tag=blade_metal_dest,distance=0..] eyes run tp @s ^ ^ ^0.25
+execute if score blade_metal_speed Value matches 13..14 as @n[tag=blade_metal_loc,distance=0..] at @s facing entity @n[tag=blade_metal_dest,distance=0..] eyes run tp @s ^ ^ ^0.275
+execute if score blade_metal_speed Value matches 15..16 as @n[tag=blade_metal_loc,distance=0..] at @s facing entity @n[tag=blade_metal_dest,distance=0..] eyes run tp @s ^ ^ ^0.3
+execute if score blade_metal_speed Value matches 17..18 as @n[tag=blade_metal_loc,distance=0..] at @s facing entity @n[tag=blade_metal_dest,distance=0..] eyes run tp @s ^ ^ ^0.35
+execute if score blade_metal_speed Value matches 19..21 as @n[tag=blade_metal_loc,distance=0..] at @s facing entity @n[tag=blade_metal_dest,distance=0..] eyes run tp @s ^ ^ ^0.375

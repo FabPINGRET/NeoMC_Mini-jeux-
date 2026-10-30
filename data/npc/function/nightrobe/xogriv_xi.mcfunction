@@ -1,0 +1,6 @@
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.strider.happy neutral @a[tag=mg.flw] ~ ~ ~ 1 1.2
+execute if block 400 76 1435 tuff at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Xogriv-Xi","color":"light_purple"},{"text":"> We tried reconstructing one of these weird structures we've noticed popping up around the ","color":"white"},{"text":"Floaty Isles","color":"yellow"},{"text":", and it started connecting to Limbohold in strange ways. We know for a fact that these structures are a crude attempt at manipulating space, but they need some sort of activation energy.","color":"white"}]
+execute unless block 400 76 1435 tuff at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Xogriv-Xi","color":"light_purple"},{"text":"> Would you look at that! It's a portal after all. Looks like it leads to the ","color":"white"},{"text":"Dark Isles","color":"dark_purple"},{"text":", nice. Many Nightrobes have been there before, it's a decent dimension for vacationing in.","color":"white"}]
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

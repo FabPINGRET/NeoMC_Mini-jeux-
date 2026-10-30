@@ -1,0 +1,12 @@
+execute if score boss_ta_active_face Value matches 1 run summon marker -11863 236 347 {NoGravity:1b,Silent:1b,Tags:["boss_ta_face_loc"]}
+execute if score boss_ta_active_face Value matches 2 run summon marker -11863 236 330 {NoGravity:1b,Silent:1b,Tags:["boss_ta_face_loc"]}
+execute if score boss_ta_active_face Value matches 3 run summon marker -11863 236 313 {NoGravity:1b,Silent:1b,Tags:["boss_ta_face_loc"]}
+execute if score boss_ta_active_face Value matches 4 run summon marker -11847 236 297 {NoGravity:1b,Silent:1b,Tags:["boss_ta_face_loc"]}
+execute if score boss_ta_active_face Value matches 5 run summon marker -11830 236 297 {NoGravity:1b,Silent:1b,Tags:["boss_ta_face_loc"]}
+execute if score boss_ta_active_face Value matches 6 run summon marker -11813 236 297 {NoGravity:1b,Silent:1b,Tags:["boss_ta_face_loc"]}
+execute if score boss_ta_active_face Value matches 7 run summon marker -11797 236 313 {NoGravity:1b,Silent:1b,Tags:["boss_ta_face_loc"]}
+execute if score boss_ta_active_face Value matches 8 run summon marker -11797 236 330 {NoGravity:1b,Silent:1b,Tags:["boss_ta_face_loc"]}
+execute if score boss_ta_active_face Value matches 9 run summon marker -11797 236 347 {NoGravity:1b,Silent:1b,Tags:["boss_ta_face_loc"]}
+execute if score boss_ta_active_face Value matches 10 run summon marker -11813 236 363 {NoGravity:1b,Silent:1b,Tags:["boss_ta_face_loc"]}
+execute if score boss_ta_active_face Value matches 11 run summon marker -11830 236 363 {NoGravity:1b,Silent:1b,Tags:["boss_ta_face_loc"]}
+execute if score boss_ta_active_face Value matches 12 run summon marker -11847 236 363 {NoGravity:1b,Silent:1b,Tags:["boss_ta_face_loc"]}

@@ -122,6 +122,25 @@
     {
       "label": [
         {
+          "text": "🏝 Aller à Scourge of the Floaty Isles",
+          "color": "aqua",
+          "bold": true
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Une aventure en îles flottantes, une seule partie commune à tout le serveur : rejoins-la à tout moment (ton inventaire de la carte est gardé)",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.sv set 10"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "⌂ Retour au lobby",
           "color": "gold",
           "bold": true

@@ -1,0 +1,5 @@
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.strider.happy neutral @a[tag=mg.flw] ~ ~ ~ 1 1.2
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Klrgryth-Yn","color":"light_purple"},{"text":"> This is the entrance to ","color":"white"},{"text":"Limbohold","color":"light_purple"},{"text":". If you ","color":"white"},{"text":"keep going straight","color":"light_purple"},{"text":", you'll find the nightrobe residences. ","color":"white"},{"text":"Keep turning right","color":"light_purple"},{"text":", and you'll find our archives. ","color":"white"},{"text":"Keep turning left","color":"light_purple"},{"text":", and you'll reach an anomaly we're studying. If you ever get lost, just drop down the hole in the middle to return to this dimension.","color":"white"}]
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

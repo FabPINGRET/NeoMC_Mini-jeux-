@@ -1,0 +1,19 @@
+execute if score bot_lycan bool matches 0 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:block.trial_spawner.detect_player neutral @a[tag=mg.flw] ~ ~ ~ 1 1.5
+execute if score bot_lycan bool matches 1 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.sniffer.eat neutral @a[tag=mg.flw] ~ ~ ~ 1 0.1
+
+execute if score Inventory IcelightScepter matches 0 if score moonlight_contagion bool matches 0 if score bot_lycan bool matches 0 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"11G-2","color":"aqua"},{"text":"> This is ","color":"white"},{"text":"Frostbolt Spire","color":"aqua"},{"text":", where the ","color":"white"},{"text":"Lord of Ice","color":"aqua"},{"text":" is imprisoned. The door has a time lock, so I can only open it ","color":"white"},{"text":"at night","color":"light_purple"},{"text":", but when I'm a ","color":"white"},{"text":"Wereblub","color":"#825440"},{"text":" I can't interface with the door's controls! It's just one bad thing after another here in Windbite lately...","color":"white"},{"text":" bzzrt...","color":"gray","italic":true}]
+
+execute if score Inventory IcelightScepter matches 0 if score Inventory DayNight matches 1 if score moonlight_contagion bool matches 1 if score bot_lycan bool matches 0 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"11G-2","color":"aqua"},{"text":"> This is ","color":"white"},{"text":"Frostbolt Spire","color":"aqua"},{"text":", where the ","color":"white"},{"text":"Lord of Ice","color":"aqua"},{"text":" is imprisoned. The door has a time lock, so I can only open it ","color":"white"},{"text":"at night","color":"light_purple"},{"text":".","color":"white"},{"text":" bzzrt...","color":"gray","italic":true}]
+
+execute if score Inventory IcelightScepter matches 0 if score Inventory DayNight matches 2 if score moonlight_contagion bool matches 1 if score bot_lycan bool matches 0 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"11G-2","color":"aqua"},{"text":"> The chill night air on my circuits feels... like hope. I had wondered if I was ever going to feel that again. The door to ","color":"white"},{"text":"Frostbolt Spire ","color":"aqua"},{"text":"is unlocked. By my calculations, this will be the toughest challenge you've yet faced. Your probability of success is... nevermind. I will not tell you.","color":"white"},{"text":" bzzrt...","color":"gray","italic":true}]
+
+execute if score Inventory DayNight matches 2 if score moonlight_contagion bool matches 1 if score bot_lycan bool matches 0 run setblock 9803 55 77 minecraft:redstone_torch
+
+execute if score Inventory IcelightScepter matches 1 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"11G-2","color":"aqua"},{"text":"> The chill night air on my circuits feels... like hope. I had wondered if I was ever going to feel that again. The ","color":"white"},{"text":"Lord of Ice ","color":"aqua"},{"text":"is free. By my calculations, I'd happy cry if I could.","color":"white"},{"text":" bzzrt...","color":"gray","italic":true}]
+
+
+execute if score bot_lycan bool matches 1 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ as @p[tag=mg.flw] unless items entity @s weapon.* blaze_rod run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Elevngitu","color":"#825440"},{"text":"> Guhhh...","color":"white"}]
+execute if score bot_lycan bool matches 1 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ as @p[tag=mg.flw] if items entity @s weapon.* blaze_rod run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Elevngitu","color":"#825440"},{"text":"> Is this what it feels like to have internal organs? Yuck...","color":"white"}]
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

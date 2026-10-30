@@ -1,0 +1,30 @@
+{
+    "display": {
+        "title": {
+            "text": "Zalvorn the Evil Puppet Guy",
+            "color": "gold",
+            "bold": false
+        },
+        "description": {
+            "text": "Defeat Zalvorn and free Pupu-Nini"
+        },
+        "icon": {
+            "id": "minecraft:jack_o_lantern"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "main_quest:quest_4"
+}

@@ -1,0 +1,36 @@
+{
+    "display": {
+        "title": {
+            "text": "A Reckless Venture",
+            "color": "red"
+        },
+        "description": {
+            "text": "Meet Dungor at the Abnormazoid Menagerie"
+        },
+        "icon": {
+            "id": "minecraft:carrot_on_a_stick",
+            "components": {
+                "minecraft:custom_model_data": {
+                    "strings": [
+                        "17"
+                    ]
+                }
+            }
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:collection"
+}

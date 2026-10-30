@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "And For All Cultures, A Song",
+            "color": "aqua"
+        },
+        "description": {
+            "text": "Help Brendeloy finish all of his songs"
+        },
+        "icon": {
+            "id": "minecraft:jukebox"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:bard_start"
+}

@@ -1,7 +1,8 @@
 """Génère le resource pack NeoMC (pixel art, kart 3D, boîtes ?) : python tools/resourcepack/gen_rp.py <racine du dépôt>.
 
-Tout est dans l'espace de noms « mg » : aucune texture vanilla n'est remplacée, sauf le modèle du bloc de test (la survie n'est pas touchée).
+Tout est dans l'espace de noms « mg » : aucune texture vanilla n'est remplacée, sauf le modèle du bloc de test et sauf les textures de Scourge of the Floaty Isles (zip seulement, cf. ci-dessous et README, section Floaty : elles touchent tout le serveur).
 Sortie : resourcepack/ (dossier) et releases/neomc_resourcepack.zip (+ empreinte SHA-1 affichée).
+Option : NEOMC_FLOATY_RP=<dossier ou .zip du pack de la carte Scourge of the Floaty Isles> ajoute ses assets/ au zip (floaty_rp.py). Le zip commité les contient : TOUJOURS poser la variable, sinon le zip perd les textures Floaty.
 La carte du lobby (lobbymap_rp.py) est rendue depuis data/mg/function : lancer après les générateurs du spawn (gen_lobby, gen_hall, gen_pvpcave, gen_foot, gen_gta, gen_terranova, gen_ombrelune).
 """
 import hashlib, json, math, os, struct, sys, zipfile, zlib
@@ -337,6 +338,8 @@ exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dino_rp.py')
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ol_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'foot_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lobbymap_rp.py'), encoding='utf-8').read())
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'floaty_rp.py'), encoding='utf-8').read())
+FLOATY_EXTRA = floaty_extra(OUT)                # textures de Scourge of the Floaty Isles (variable NEOMC_FLOATY_RP), ajoutées au zip seulement
 
 # ------------------------------------------------------------------ pack.mcmeta, zip
 wjson(os.path.join(OUT, 'pack.mcmeta'), {"pack": {"description": [{"text": "NeoMC Mini-Jeux", "color": "gold"},
@@ -352,5 +355,6 @@ with zipfile.ZipFile(z, 'w', zipfile.ZIP_DEFLATED) as zf:
             info = zipfile.ZipInfo(os.path.relpath(p, OUT).replace(os.sep, '/'), date_time=(2026, 1, 1, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             zf.writestr(info, open(p, 'rb').read())
+    floaty_write(zf, FLOATY_EXTRA)
 sha = hashlib.sha1(open(z, 'rb').read()).hexdigest()
 print('resource pack :', z, '| sha1', sha, '|', os.path.getsize(z), 'octets')

@@ -1,0 +1,6 @@
+summon armor_stand -9934 179 148 {CustomNameVisible:0b,NoGravity:1b,Silent:1b,Invulnerable:1b,ShowArms:1b,NoBasePlate:1b,PersistenceRequired:1b,Tags:["boss_sop_cutscene"],DisabledSlots:4144959,equipment:{feet:{id:"minecraft:leather_boots",count:1,components:{"minecraft:dyed_color":6192150,"minecraft:trim":{material:"minecraft:redstone",pattern:"minecraft:wayfinder"}}},legs:{id:"minecraft:leather_leggings",count:1,components:{"minecraft:dyed_color":6192150,"minecraft:trim":{material:"minecraft:redstone",pattern:"minecraft:wayfinder"}}},chest:{id:"minecraft:leather_chestplate",count:1,components:{"minecraft:dyed_color":6192150,"minecraft:trim":{material:"minecraft:redstone",pattern:"minecraft:wayfinder"}}},head:{id:"minecraft:player_head",count:1,components:{"minecraft:profile":{properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTZmYjliM2UzZjY1MGI3YjI1OGMwNGZmY2I4NWMxYjVkY2FjOTJiODFlNTJkOTkyYzUxMjRiNjcwZmU4ZDYifX19"}]}}},mainhand:{id:"minecraft:bow",count:1}}}
+particle minecraft:block{block_state:"red_wool"} -9934 179.5 148 1 1 1 1 200 force
+playsound minecraft:item.chorus_fruit.teleport hostile @a[tag=mg.flw] -9934 179 148 1 0.1 1
+
+# Every 5 full repeaters is 2 seconds. Every 1 repeater tick is 0.1 seconds
+schedule function floaty:sched/boss/1/cutscene/4 3.2s

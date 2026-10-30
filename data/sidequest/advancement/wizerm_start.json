@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Wizerm is Alive!",
+            "color": "aqua"
+        },
+        "description": {
+            "text": "Find Wizerm in the Dark Isles"
+        },
+        "icon": {
+            "id": "minecraft:blaze_powder"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest:root"
+}

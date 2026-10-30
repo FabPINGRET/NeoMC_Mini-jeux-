@@ -1,0 +1,1 @@
+summon slime ~ ~ ~ {PersistenceRequired:1b,Health:15f,Size:10,Tags:["honeyzilla","enemy"],CustomName:"Honeyzilla",attributes:[{id:"minecraft:armor",base:4},{id:"minecraft:attack_knockback",base:1},{id:"minecraft:max_health",base:15}]}

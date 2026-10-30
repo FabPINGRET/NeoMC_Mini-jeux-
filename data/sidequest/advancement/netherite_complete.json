@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Eternally Bound",
+            "color": "light_purple"
+        },
+        "description": {
+            "text": "Receive every Oath from the Moon Queen"
+        },
+        "icon": {
+            "id": "minecraft:netherite_chestplate"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest:netherite_start"
+}

@@ -1,0 +1,37 @@
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.villager.ambient neutral @a[tag=mg.flw] ~ ~ ~ 1 1.6
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ unless items entity @p[gamemode=!spectator,tag=mg.flw] weapon.* minecraft:flint[minecraft:custom_model_data={strings:['16']}] unless items entity @p[gamemode=!spectator,tag=mg.flw] weapon.* minecraft:flint[minecraft:custom_model_data={strings:['17']}] unless items entity @p[gamemode=!spectator,tag=mg.flw] weapon.* minecraft:flint[minecraft:custom_model_data={strings:['18']}] unless items entity @p[gamemode=!spectator,tag=mg.flw] weapon.* minecraft:flint[minecraft:custom_model_data={strings:['19']}] unless blocks 10438 45 11 10438 45 17 10438 47 11 all run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Aprentix","color":"aqua"},{"text":"> Wizerm is letting me study magic! Right now I'm supposed to learn about ","color":"white"},{"text":"sigils","color":"red"},{"text":". If you bring me a sigil, will you let me ","color":"white"},{"text":"upgrade one of your magic spells","color":"green"},{"text":" with it? If a sigil is active, you can","color":"white"},{"text":" throw your spell in the middle","color":"red"},{"text":", and it will become stronger than ever before!","color":"white"}]
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ if blocks 10438 45 11 10438 45 17 10438 47 11 all run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Aprentix","color":"aqua"},{"text":"> Thanks for helping me learn about ","color":"white"},{"text":"sigils","color":"red"},{"text":"! I hope your ","color":"white"},{"text":"magic spells","color":"green"},{"text":" never fail you. Just like how I hope I don't fail Magical American Civil War Class. Oh yeah, always remember, if a sigil is active, you can","color":"white"},{"text":" throw your spell in the middle","color":"red"},{"text":", and it will become stronger than ever before!","color":"white"}]
+
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ if items entity @p[gamemode=!spectator,tag=mg.flw] weapon.* minecraft:flint[minecraft:custom_model_data={strings:['16']}] run tag @p[tag=mg.flw] add spine_showing
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ if items entity @p[gamemode=!spectator,tag=!spine_showing,tag=mg.flw] weapon.* minecraft:flint[minecraft:custom_model_data={strings:['17']}] run tag @p[tag=mg.flw] add sweet_showing
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ if items entity @p[gamemode=!spectator,tag=!spine_showing,tag=!sweet_showing,tag=mg.flw] weapon.* minecraft:flint[minecraft:custom_model_data={strings:['18']}] run tag @p[tag=mg.flw] add control_showing
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ if items entity @p[gamemode=!spectator,tag=!spine_showing,tag=!sweet_showing,tag=!control_showing,tag=mg.flw] weapon.* minecraft:flint[minecraft:custom_model_data={strings:['19']}] run tag @p[tag=mg.flw] add crash_showing
+
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ if entity @p[gamemode=!spectator,tag=spine_showing,tag=mg.flw] run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Aprentix","color":"aqua"},{"text":"> Wow, a ","color":"white"},{"text":"Spine Sigil","color":"red"},{"text":"! I can use this to upgrade your ","color":"white"},{"text":"Bonestride","color":"green"},{"text":" spell! I put more details about the upgraded spell in the","color":"white"},{"text":" book","color":"red"},{"text":" over there. Well, what are you waiting for?","color":"white"},{"text":" Throw your spell in the sigil","color":"green"},{"text":"!","color":"white"}]
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ if entity @p[gamemode=!spectator,tag=sweet_showing,tag=mg.flw] run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Aprentix","color":"aqua"},{"text":"> Wow, a ","color":"white"},{"text":"Sweet Sigil","color":"gold"},{"text":"! I can use this to upgrade your ","color":"white"},{"text":"Honeyboost","color":"green"},{"text":" spell! I put more details about the upgraded spell in the","color":"white"},{"text":" book","color":"red"},{"text":" over there. Well, what are you waiting for?","color":"white"},{"text":" Throw your spell in the sigil","color":"green"},{"text":"!","color":"white"}]
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ if entity @p[gamemode=!spectator,tag=control_showing,tag=mg.flw] run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Aprentix","color":"aqua"},{"text":"> Wow, a ","color":"white"},{"text":"Control Sigil","color":"green"},{"text":"! I can use this to upgrade your ","color":"white"},{"text":"Dominion Rod","color":"green"},{"text":" spell! I put more details about the upgraded spell in the","color":"white"},{"text":" book","color":"red"},{"text":" over there. Well, what are you waiting for?","color":"white"},{"text":" Throw your spell in the sigil","color":"green"},{"text":"!","color":"white"}]
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ if entity @p[gamemode=!spectator,tag=crash_showing,tag=mg.flw] run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Aprentix","color":"aqua"},{"text":"> Wow, a ","color":"white"},{"text":"Crash Sigil","color":"aqua"},{"text":"! I can use this to upgrade your ","color":"white"},{"text":"Icelight Scepter","color":"green"},{"text":" spell! I put more details about the upgraded spell in the","color":"white"},{"text":" book","color":"red"},{"text":" over there. Well, what are you waiting for?","color":"white"},{"text":" Throw your spell in the sigil","color":"green"},{"text":"!","color":"white"}]
+
+execute if entity @a[tag=spine_showing,tag=mg.flw] run advancement grant @a[gamemode=!spectator,tag=mg.flw] only sidequest:sigil_spine
+execute if entity @a[tag=sweet_showing,tag=mg.flw] run advancement grant @a[gamemode=!spectator,tag=mg.flw] only sidequest:sigil_sweet
+execute if entity @a[tag=control_showing,tag=mg.flw] run advancement grant @a[gamemode=!spectator,tag=mg.flw] only sidequest:sigil_control
+execute if entity @a[tag=crash_showing,tag=mg.flw] run advancement grant @a[gamemode=!spectator,tag=mg.flw] only sidequest:sigil_crash
+
+execute if entity @a[tag=spine_showing,tag=mg.flw] run setblock 10438 45 17 minecraft:redstone_block
+execute if entity @a[tag=sweet_showing,tag=mg.flw] run setblock 10438 45 15 minecraft:redstone_block
+execute if entity @a[tag=control_showing,tag=mg.flw] run setblock 10438 45 13 minecraft:redstone_block
+execute if entity @a[tag=crash_showing,tag=mg.flw] run setblock 10438 45 11 minecraft:redstone_block
+
+
+clear @a[tag=spine_showing,tag=mg.flw] flint[minecraft:custom_model_data={strings:['16']}]
+clear @a[tag=sweet_showing,tag=mg.flw] flint[minecraft:custom_model_data={strings:['17']}]
+clear @a[tag=control_showing,tag=mg.flw] flint[minecraft:custom_model_data={strings:['18']}]
+clear @a[tag=crash_showing,tag=mg.flw] flint[minecraft:custom_model_data={strings:['19']}]
+
+tag @a[tag=mg.flw] remove spine_showing
+tag @a[tag=mg.flw] remove sweet_showing
+tag @a[tag=mg.flw] remove control_showing
+tag @a[tag=mg.flw] remove crash_showing
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

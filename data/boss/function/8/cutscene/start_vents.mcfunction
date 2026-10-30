@@ -1,0 +1,25 @@
+fill -10844 89 370 -10842 92 368 light[level=0]
+fill -10841 89 371 -10839 92 369 light[level=0]
+fill -10838 89 372 -10836 92 370 light[level=0]
+fill -10835 89 373 -10833 92 371 light[level=0]
+fill -10830 89 372 -10832 92 392 light[level=0]
+fill -10833 89 393 -10835 92 391 light[level=0]
+fill -10836 89 394 -10838 92 392 light[level=0]
+fill -10839 89 395 -10841 92 393 light[level=0]
+fill -10842 89 396 -10844 92 394 light[level=0]
+
+execute positioned -10843 88 395 run function dungeon:8/start_fan
+execute positioned -10840 88 394 run function dungeon:8/start_fan
+execute positioned -10837 88 393 run function dungeon:8/start_fan
+execute positioned -10834 88 392 run function dungeon:8/start_fan
+execute positioned -10831 88 391 run function dungeon:8/start_fan
+execute positioned -10831 88 388 run function dungeon:8/start_fan
+execute positioned -10831 88 385 run function dungeon:8/start_fan
+execute positioned -10831 88 382 run function dungeon:8/start_fan
+execute positioned -10831 88 379 run function dungeon:8/start_fan
+execute positioned -10831 88 376 run function dungeon:8/start_fan
+execute positioned -10831 88 373 run function dungeon:8/start_fan
+execute positioned -10834 88 372 run function dungeon:8/start_fan
+execute positioned -10837 88 371 run function dungeon:8/start_fan
+execute positioned -10840 88 370 run function dungeon:8/start_fan
+execute positioned -10843 88 369 run function dungeon:8/start_fan

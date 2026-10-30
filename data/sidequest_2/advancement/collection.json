@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Collection",
+            "color": "gold"
+        },
+        "description": {
+            "text": "Multi-step quests that involve finding things around the Isles. They might have worthwhile rewards..."
+        },
+        "icon": {
+            "id": "minecraft:bundle"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:root"
+}

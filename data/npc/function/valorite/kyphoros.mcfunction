@@ -1,0 +1,6 @@
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.armadillo.death neutral @a[tag=mg.flw] ~ ~ ~ 1 0.5
+execute if score Inventory Amulet matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Kyphoros","color":"#D47453"},{"text":"> The constables and executive staff were arrested by the ","color":"white"},{"text":"Germ Eaters","color":"dark_aqua"},{"text":"! I'm worried they'll come for me next for not being able to get this stupid clock working. I'd join the secret resistance mounting ","color":"white"},{"text":"beneath the apartment building","color":"gold"},{"text":", but I'm a coward.","color":"white"}]
+execute if score Inventory Amulet matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Kyphoros","color":"#D47453"},{"text":"> The ","color":"white"},{"text":"Lord of Flame","color":"red"},{"text":" is back in charge of Valorforge, but I still can't get this stupid clock working. I guess you never really run out of problems.","color":"white"}]
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

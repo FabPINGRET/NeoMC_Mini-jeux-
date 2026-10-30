@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Connecting the Dark Isles",
+            "color": "aqua"
+        },
+        "description": {
+            "text": "Enter the Dark Buh' Tween"
+        },
+        "icon": {
+            "id": "minecraft:sea_lantern"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:exploration"
+}

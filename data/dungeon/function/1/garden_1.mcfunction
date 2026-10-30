@@ -1,0 +1,12 @@
+execute if block -9931 192 273 torchflower run setblock -9931 192 273 short_grass
+execute if block -9931 192 273 lily_of_the_valley run setblock -9931 192 273 torchflower
+execute if block -9931 192 273 cornflower run setblock -9931 192 273 lily_of_the_valley
+execute if block -9931 192 273 oxeye_daisy run setblock -9931 192 273 cornflower
+execute if block -9931 192 273 pink_tulip run setblock -9931 192 273 oxeye_daisy
+execute if block -9931 192 273 azure_bluet run setblock -9931 192 273 pink_tulip
+execute if block -9931 192 273 allium run setblock -9931 192 273 azure_bluet
+execute if block -9931 192 273 blue_orchid run setblock -9931 192 273 allium
+execute if block -9931 192 273 poppy run setblock -9931 192 273 blue_orchid
+execute if block -9931 192 273 dandelion run setblock -9931 192 273 poppy
+execute if block -9931 192 273 air run setblock -9931 192 273 dandelion
+execute if block -9931 192 273 short_grass run setblock -9931 192 273 air

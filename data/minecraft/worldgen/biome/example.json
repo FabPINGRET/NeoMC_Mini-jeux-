@@ -1,0 +1,29 @@
+{
+  "attributes": {
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "minecraft:flame"
+        },
+        "probability": 0.025
+      }
+    ],
+    "minecraft:visual/sky_color": "#D4648E",
+    "minecraft:visual/fog_color": "#D4648E",
+    "minecraft:visual/water_fog_color": "#D4648E"
+    },
+  "temperature": 0.5,
+  "downfall": 0.4,
+  "precipitation": "none",
+  "has_precipitation": true,
+  "temperature_modifier": "none",
+  "effects": {
+    "water_color": "#D4648E",
+    "grass_color": "#D4648E",
+    "foliage_color": "#D4648E"
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": [],
+  "features": []
+}

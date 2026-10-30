@@ -1,0 +1,54 @@
+{
+    "display": {
+        "title": {
+            "text": "Royal Collection",
+            "color": "gray"
+        },
+        "description": {
+            "text": "Give Yommod every single shield pattern"
+        },
+        "icon": {
+            "id": "minecraft:shield",
+            "components": {
+                "minecraft:banner_patterns": [
+                    {
+                        "pattern": "minecraft:flower",
+                        "color": "red"
+                    },
+                    {
+                        "pattern": "minecraft:half_horizontal",
+                        "color": "blue"
+                    },
+                    {
+                        "pattern": "minecraft:triangle_top",
+                        "color": "yellow"
+                    },
+                    {
+                        "pattern": "minecraft:stripe_top",
+                        "color": "blue"
+                    },
+                    {
+                        "pattern": "minecraft:curly_border",
+                        "color": "white"
+                    }
+                ],
+                "minecraft:base_color": "blue"
+            }
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:yommod_start"
+}

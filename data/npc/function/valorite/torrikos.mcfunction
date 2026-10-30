@@ -1,0 +1,6 @@
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.armadillo.death neutral @a[tag=mg.flw] ~ ~ ~ 1 0.5
+execute if score Inventory Amulet matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Torrikos","color":"#D47453"},{"text":"> I'm just a humble steam farmer, but if regular folk like me don't stand up and do something to oppose the usurpers, nothing is gonna change. That's why I've started attending ","color":"white"},{"text":"secret meetings under the apartment building","color":"gold"},{"text":"...","color":"white"}]
+execute if score Inventory Amulet matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Torrikos","color":"#D47453"},{"text":"> I'm just a humble steam farmer, but if regular folk like me don't stand up and do something to oppose the collapse of our world, we could lose it all. The most important thing most people can do is just be a good neighbor.","color":"white"}]
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

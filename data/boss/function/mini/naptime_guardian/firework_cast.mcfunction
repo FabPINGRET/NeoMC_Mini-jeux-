@@ -1,0 +1,2 @@
+execute as @n[tag=naptime_stand,distance=0..] at @s positioned ~ 205 ~ as @a[distance=..2,tag=mg.flw] run damage @s 18 minecraft:fireworks by @n[tag=boss_naptime_name,distance=0..]
+execute as @n[tag=naptime_stand,distance=0..] at @s positioned ~ 205 ~ run summon firework_rocket ~ ~ ~ {LifeTime:0,FireworksItem:{id:"minecraft:firework_rocket",count:1,components:{"minecraft:fireworks":{explosions:[{shape:"small_ball",has_twinkle:true,has_trail:true,colors:[I;3710477],fade_colors:[I;6045976]}]}}}}

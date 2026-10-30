@@ -1,0 +1,1 @@
+give @p[tag=mg.flw] lever[can_place_on={blocks:'emerald_block'},tooltip_display={hidden_components:[can_place_on]},custom_name='Small Key',lore=['Can be placed on a','keyhole in this area'],enchantment_glint_override=true] 1

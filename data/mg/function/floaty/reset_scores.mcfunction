@@ -1,0 +1,23 @@
+# @s : objectifs de la carte à critère automatique (comptent partout, pas seulement dans la carte) remis à zéro
+scoreboard players reset @s BellRung
+scoreboard players reset @s CarrotStick
+scoreboard players reset @s DeathCount
+scoreboard players reset @s DeathFlag
+scoreboard players reset @s ElderGuardianKills
+scoreboard players reset @s GuardianKills
+scoreboard players reset @s KillMoment
+scoreboard players reset @s LeaveGame
+scoreboard players reset @s MobKills
+scoreboard players reset @s Slept
+scoreboard players reset @s horn_blow
+scoreboard players reset @s jump_flag
+scoreboard players reset @s jump_total
+scoreboard players reset @s shield_block
+scoreboard players reset @s sneak_time
+scoreboard players reset @s use_trident
+scoreboard players reset @s shrink_timer
+scoreboard players reset @s grow_timer
+scoreboard players reset @s sneak_speed_timer
+scoreboard players reset @s HBWard
+scoreboard players reset @s jump_flag_buffer
+scoreboard players reset @s sneak_last

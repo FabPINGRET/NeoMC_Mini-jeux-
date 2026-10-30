@@ -1,0 +1,4 @@
+spreadplayers -10222 434 1 24 true @e[tag=boss_5_debris_loc,distance=0..]
+execute as @n[tag=boss_5_debris_loc,distance=0..] at @s run summon armor_stand ~ 91 ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Invisible:1b,PersistenceRequired:1b,Tags:["boss_5_debris"],DisabledSlots:4144959,equipment:{head:{id:"minecraft:player_head",count:1,components:{"minecraft:profile":{id:[I;-1538414118,-1283701639,-1299060351,-85390938],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTVlMGZiODE5NTFmMTE2OGI2YzBmYmQ1OTM0Mjc5MDNiODEwMTQ3MzU5MDQ2YTMwM2VlMDY5NTAzZDg0ZjQyMiJ9fX0="}]}}}}}
+scoreboard players remove boss:skt shortray 1
+execute unless score boss:skt shortray matches 0 run schedule function floaty:sched/boss/5/debris_summon 12t replace

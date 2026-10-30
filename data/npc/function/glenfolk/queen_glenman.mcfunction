@@ -1,0 +1,16 @@
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.villager.ambient neutral @a[tag=mg.flw] ~ ~ ~ 1 1.2
+execute if score mainstory Story matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Queen Glenman","color":"aqua"},{"text":"> We are doing our best to keep the","color":"white"},{"text":" Bloom Contagion","color":"light_purple"},{"text":" contained for now, but we can't hold it back forever. Nobody knows where it came from or why it's here, but we must eliminate it at its source if we want to restore peace. Our lovely","color":"white"},{"text":" Sanctum of Petals","color":"light_purple"},{"text":" has been ruined by it, and none of our men have been successful in fighting their way through to the contagion's origin. Can you help us? Will you be our knight?","color":"white"}]
+
+execute if score mainstory Story matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Queen Glenman","color":"aqua"},{"text":"> You've done us a great service, hero. Out of the two remaining contagions, I do think my husband is right to ask you to take care of the ","color":"white"},{"text":"bone contagion","color":"gray"},{"text":" first. The ","color":"white"},{"text":"dust contagion","color":"gold"},{"text":" which has overtaken the Great Library is being impeded by the Nightrobes of the ","color":"white"},{"text":"Warped Land","color":"light_purple"},{"text":". No doubt they'll ultimately need your help killing it, but it would be strategic to remove the ","color":"white"},{"text":"bone contagion","color":"gray"},{"text":" first.","color":"white"}]
+
+execute if score mainstory Story matches 2 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Queen Glenman","color":"aqua"},{"text":"> You've done us a great service, hero. The ","color":"white"},{"text":"dust contagion","color":"gold"},{"text":" which has overtaken the Great Library is being impeded by the Nightrobes of the ","color":"white"},{"text":"Warped Land","color":"light_purple"},{"text":", and they'll need your help killing it.","color":"white"}]
+
+
+execute if score mainstory Story >= 3 Value if score mainstory Story < 13 Value at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Queen Glenman","color":"aqua"},{"text":"> Everyone knew there were other worlds out there somewhere, but it's a bit spooky now that one of them is so close by. I hope the people over there are nice!","color":"white"}]
+
+execute if score mainstory Story matches 13 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Queen Glenman","color":"aqua"},{"text":"> Is this the end? Can the ","color":"white"},{"text":"Bell of Life","color":"gold"},{"text":" survive this attack?","color":"white"}]
+
+execute positioned 156 61 -11 run kill @e[tag=quest_marker,distance=..1]
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value

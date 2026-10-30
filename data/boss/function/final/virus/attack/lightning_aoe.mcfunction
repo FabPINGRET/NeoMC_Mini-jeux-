@@ -1,0 +1,1 @@
+summon area_effect_cloud ~ ~ ~ {custom_particle:{type:"trial_omen"},Radius:3f,RadiusOnUse:-1f,Duration:160,potion_contents:{custom_effects:[{id:"minecraft:wither",amplifier:2,duration:200,show_particles:0b}]},Tags:["wv_aoe"]}

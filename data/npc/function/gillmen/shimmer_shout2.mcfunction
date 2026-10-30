@@ -1,0 +1,2 @@
+playsound minecraft:entity.dolphin.hurt neutral @a[tag=mg.flw] ~ ~ ~ 1 1 1
+tellraw @a[tag=mg.flw] [{"text":"<"},{"text":"Shimmer","color":"yellow"},{"text":"> That's it! The ","color":"white"},{"text":"Supreme ","color":"dark_green"},{"text":"is dead! Your strength is incredible, Hero. The Gill Guild is forever at your service. Our rebuilding efforts can begin now, but in the meantime, we just heard a","color":"white"},{"text":" Worldgate","color":"dark_purple"},{"text":" open at the bottom of the lake...","color":"white"}]

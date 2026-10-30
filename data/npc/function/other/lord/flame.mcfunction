@@ -1,0 +1,30 @@
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.ravager.stunned neutral @a[tag=mg.flw] ~ ~ ~ 1 1.4
+execute if score Inventory TomeOfTongues matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Lord of Flame","color":"red"},{"text":"> Thank you for freeing me. I can sense that the other six are alive, if not well. The ","color":"white"},{"text":"Lord of Forest","color":"dark_green"},{"text":" is your best option for who to rescue next. Find a way to ","color":"white"},{"text":"Tanglevine","color":"green"},{"text":" as soon as you can.","color":"white"}]
+
+execute if score Inventory TomeOfTongues matches 1 if score Inventory Honeyboost matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Lord of Flame","color":"red"},{"text":"> You are familiar with both the Floaty and Dark Isles, I trust you will be able to find your way to ","color":"white"},{"text":"Moldsap Woods","color":"light_purple"},{"text":" in the north.","color":"white"}]
+
+execute if score Inventory Honeyboost matches 1 if score Inventory DominionRod matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Lord of Flame","color":"red"},{"text":"> The Lord of Stone is an interesting one, he's always so secretive about the goings-on in the ","color":"white"},{"text":"Isle of Silence","color":"gray"},{"text":". Regardless, he needs to be rescued.","color":"white"}]
+
+execute if score Inventory DominionRod matches 1 if score Inventory IcelightScepter matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Lord of Flame","color":"red"},{"text":"> The last news I've gotten from the Windbite Tundra is that the","color":"white"},{"text":" Botsicles ","color":"aqua"},{"text":"have fallen under a transforming curse. They are powerless to rescue the Lord of Ice.","color":"white"}]
+
+execute if score Inventory IcelightScepter matches 1 if score Inventory SoaringTrident matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Lord of Flame","color":"red"},{"text":"> I stay far away from the ","color":"white"},{"text":"Alabaster Pools","color":"blue"},{"text":". I have no desire to go there, though not for a lack of respect for their inhabitants.","color":"white"}]
+
+execute if score Inventory SoaringTrident matches 1 if score Inventory Smokewings matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Lord of Flame","color":"red"},{"text":"> The last Lord is all we need to confront ","color":"white"},{"text":"Morbex","color":"dark_aqua"},{"text":" with our full strength. If anyone can stand up to him, the Lord of Smoke can.","color":"white"}]
+
+execute if score Inventory Smokewings matches 1 if score lord_of_valor Story matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Lord of Flame","color":"red"},{"text":"> The power of the","color":"white"},{"text":" seventh Lord ","color":"yellow"},{"text":"needs a master. We need to appoint a new seventh Lord immediately. Someone native to the ","color":"white"},{"text":"Dark Isles","color":"dark_purple"},{"text":", otherwise you'd be the natural choice. If you know ","color":"white"},{"text":"someone who might make an excellent Lord","color":"gold"},{"text":", send them to us. We will trust your judgement.","color":"white"}]
+
+execute if score Inventory Smokewings matches 1 if score lord_of_valor Story matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Lord of Flame","color":"red"},{"text":"> What?! The","color":"white"},{"text":" Lord of Smoke ","color":"yellow"},{"text":"betrayed us!? You did the right thing killing him, hero, but now the power of the","color":"white"},{"text":" seventh Lord ","color":"yellow"},{"text":"has no master. We need to appoint a new seventh Lord immediately. Someone native to the ","color":"white"},{"text":"Dark Isles","color":"dark_purple"},{"text":", otherwise you'd be the natural choice. If you know ","color":"white"},{"text":"someone who might make an excellent Lord","color":"gold"},{"text":", send them to us. We will trust your judgement.","color":"white"}]
+
+execute if score Inventory Smokewings matches 1 if score lord_of_valor Story matches 0 run scoreboard players set lord_of_valor Story 1
+
+execute if score lord_of_valor Story matches 2 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Lord of Flame","color":"red"},{"text":"> Interesting choice you sent us, hero...","color":"white"}]
+
+execute if score lord_of_valor Story matches 3 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Lord of Flame","color":"red"},{"text":"> With your help, there's no way ","color":"white"},{"text":"Morbex ","color":"dark_aqua"},{"text":"will be able to stay in the ","color":"white"},{"text":"Dark Isles","color":"dark_purple"},{"text":". We can drive him out forever.","color":"white"}]
+
+execute if score lord_of_valor Story matches 4 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Lord of Flame","color":"red"},{"text":"> You saved our world, hero. Let us help you save yours.","color":"white"}]
+
+
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run kill @n[tag=quest_marker,distance=..3]
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

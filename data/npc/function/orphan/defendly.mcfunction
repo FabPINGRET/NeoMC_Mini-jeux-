@@ -1,0 +1,12 @@
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.villager.ambient neutral @a[tag=mg.flw] ~ ~ ~ 1 1.8
+execute if score Inventory Amulet matches 0 if score cinder_concord Story matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Defendly","color":"aqua"},{"text":"> Ho there hero! Oi'm teh ","color":"white"},{"text":"best at diggin tunnels","color":"gold"},{"text":" in teh whole floa'y isles! Sometoims the ground is a bit too hard for us to dig frew, and it's right tough to break the surface from underground. If yew come across any of our","color":"white"},{"text":" nearly-complete tunnel entrances","color":"gold"},{"text":" from up top, do us orphans a favor and ","color":"white"},{"text":"just break it open","color":"gold"},{"text":" real smashy-like.","color":"white"}]
+execute if score Inventory Amulet matches 0 if score cinder_concord Story matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Defendly","color":"aqua"},{"text":"> What's that yew say? Some lads who live frew the","color":"white"},{"text":" Worldgate","color":"dark_purple"},{"text":" in Dwarf City need 'elp diggin a tunnel? Say no more, Oi'll go show 'em how a right-proper tunnel is digged Oi will!","color":"white"}]
+execute if score Inventory Amulet matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Defendly","color":"aqua"},{"text":"> Oi'm back from the ","color":"white"},{"text":"Dark Isles","color":"dark_purple"},{"text":"! Right good of yew to 'elp those people out. Remember, if yew come across any of our","color":"white"},{"text":" nearly-complete tunnel entrances","color":"gold"},{"text":" from up top, do us orphans a favor and ","color":"white"},{"text":"just break it open","color":"gold"},{"text":" real smashy-like.","color":"white"}]
+
+
+execute if score cinder_concord Story matches 1 run function main_quest:open_valorforge_prison
+execute if score cinder_concord Story matches 1 run setblock -209 54 -1201 minecraft:redstone_block
+execute if score cinder_concord Story matches 1 run scoreboard players set cinder_concord Story 2
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

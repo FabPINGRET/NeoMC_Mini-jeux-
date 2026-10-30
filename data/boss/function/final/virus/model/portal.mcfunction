@@ -1,0 +1,1 @@
+execute positioned -12384 123 355 run summon item_display ~ ~-0.4 ~ {item_display:"none",Rotation:[0F,90F],Tags:["world_virus_portal"],brightness:{sky:15,block:15},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[13f,13f,13f]},item:{id:"minecraft:ender_pearl",count:1,components:{"minecraft:custom_model_data":{strings:['3']}}}}

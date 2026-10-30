@@ -1,0 +1,15 @@
+summon guardian -55 54 111 {PersistenceRequired:1b,Health:20f,Tags:["enemy","l_freak"],CustomName:"Lake Freak",attributes:[{id:"minecraft:max_health",base:20}]}
+summon guardian -60 51 136 {PersistenceRequired:1b,Health:20f,Tags:["enemy","l_freak"],CustomName:"Lake Freak",attributes:[{id:"minecraft:max_health",base:20}]}
+summon guardian -98 45 172 {PersistenceRequired:1b,Health:20f,Tags:["enemy","l_freak"],CustomName:"Lake Freak",attributes:[{id:"minecraft:max_health",base:20}]}
+summon guardian -101 38 164 {PersistenceRequired:1b,Health:20f,Tags:["enemy","l_freak"],CustomName:"Lake Freak",attributes:[{id:"minecraft:max_health",base:20}]}
+summon guardian -96 27 157 {PersistenceRequired:1b,Health:20f,Tags:["enemy","l_freak"],CustomName:"Lake Freak",attributes:[{id:"minecraft:max_health",base:20}]}
+summon guardian -133 35 163 {PersistenceRequired:1b,Health:20f,Tags:["enemy","l_freak"],CustomName:"Lake Freak",attributes:[{id:"minecraft:max_health",base:20}]}
+summon guardian -142 48 164 {PersistenceRequired:1b,Health:20f,Tags:["enemy","l_freak"],CustomName:"Lake Freak",attributes:[{id:"minecraft:max_health",base:20}]}
+summon guardian -122 53 175 {PersistenceRequired:1b,Health:20f,Tags:["enemy","l_freak"],CustomName:"Lake Freak",attributes:[{id:"minecraft:max_health",base:20}]}
+summon guardian -131 39 190 {PersistenceRequired:1b,Health:20f,Tags:["enemy","l_freak"],CustomName:"Lake Freak",attributes:[{id:"minecraft:max_health",base:20}]}
+summon guardian -140 39 200 {PersistenceRequired:1b,Health:20f,Tags:["enemy","l_freak"],CustomName:"Lake Freak",attributes:[{id:"minecraft:max_health",base:20}]}
+summon guardian -119 39 218 {PersistenceRequired:1b,Health:20f,Tags:["enemy","l_freak"],CustomName:"Lake Freak",attributes:[{id:"minecraft:max_health",base:20}]}
+summon guardian -116 36 124 {PersistenceRequired:1b,Health:20f,Tags:["enemy","l_freak"],CustomName:"Lake Freak",attributes:[{id:"minecraft:max_health",base:20}]}
+summon guardian -120 36 120 {PersistenceRequired:1b,Health:20f,Tags:["enemy","l_freak"],CustomName:"Lake Freak",attributes:[{id:"minecraft:max_health",base:20}]}
+summon guardian -137 36 121 {PersistenceRequired:1b,Health:20f,Tags:["enemy","l_freak"],CustomName:"Lake Freak",attributes:[{id:"minecraft:max_health",base:20}]}
+summon guardian -132 47 121 {PersistenceRequired:1b,Health:20f,Tags:["enemy","l_freak"],CustomName:"Lake Freak",attributes:[{id:"minecraft:max_health",base:20}]}

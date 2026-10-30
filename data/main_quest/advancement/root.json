@@ -1,0 +1,28 @@
+{
+    "display": {
+        "title": {
+            "text": "Main Quest"
+        },
+        "description": {
+            "text": "Progress through the central quest line"
+        },
+        "icon": {
+            "id": "minecraft:bell"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": false,
+        "background": "minecraft:gui/advancements/backgrounds/stone"
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ]
+}

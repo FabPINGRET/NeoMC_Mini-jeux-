@@ -7,6 +7,8 @@ function mg:lobkart/leave
 execute unless score $mp mg.st matches 1 run tag @s remove mg.mpp
 
 # En survie : il reprend là où il était (rien à faire)
+# Dans la carte Floaty : la partie commune a avancé pendant son absence (cœurs, point de contrôle, avancements)
+execute if entity @s[tag=mg.flw] run function mg:floaty/cu/run
 execute if entity @s[tag=mg.surv] run return 0
 
 # Partie en cours (compte à rebours, jeu ou fin) → il rejoint l'arène en SPECTATEUR

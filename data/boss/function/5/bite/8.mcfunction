@@ -1,0 +1,19 @@
+fill -10247 93 411 -10197 104 459 air replace minecraft:white_stained_glass
+fill -10247 93 411 -10197 104 459 air replace minecraft:green_stained_glass
+fill -10247 93 411 -10197 104 459 air replace minecraft:lime_stained_glass
+fill -10247 93 411 -10197 104 459 air replace minecraft:red_stained_glass
+fill -10247 93 411 -10197 104 459 air replace minecraft:verdant_froglight[axis=x]
+fill -10247 93 411 -10197 104 459 air replace minecraft:verdant_froglight[axis=z]
+fill -10247 93 411 -10197 104 459 air replace minecraft:smooth_quartz_stairs
+
+execute as @e[tag=boss_skt_hole_8,distance=0..] at @s run clone -10175 73 415 -10167 77 428 ~-4 ~1 ~-12
+execute as @e[tag=boss_skt_hole_8,distance=0..] at @s run clone -10199 73 421 -10197 73 423 ~-1 ~ ~-1
+
+summon armor_stand -10222 93 445 {NoGravity:1b,Silent:1b,Invulnerable:1b,Invisible:1b,PersistenceRequired:1b,Tags:["boss_skt_evoker"],DisabledSlots:4144959,Rotation:[180F,0F]}
+summon armor_stand -10222 93 445 {NoGravity:1b,Silent:1b,Invulnerable:1b,Invisible:1b,PersistenceRequired:1b,Tags:["boss_skt_evoker"],DisabledSlots:4144959,Rotation:[185F,0F]}
+summon armor_stand -10222 93 445 {NoGravity:1b,Silent:1b,Invulnerable:1b,Invisible:1b,PersistenceRequired:1b,Tags:["boss_skt_evoker"],DisabledSlots:4144959,Rotation:[190F,0F]}
+summon armor_stand -10222 93 445 {NoGravity:1b,Silent:1b,Invulnerable:1b,Invisible:1b,PersistenceRequired:1b,Tags:["boss_skt_evoker"],DisabledSlots:4144959,Rotation:[175F,0F]}
+summon armor_stand -10222 93 445 {NoGravity:1b,Silent:1b,Invulnerable:1b,Invisible:1b,PersistenceRequired:1b,Tags:["boss_skt_evoker"],DisabledSlots:4144959,Rotation:[170F,0F]}
+
+playsound minecraft:entity.phantom.bite hostile @a[tag=mg.flw] -10222 94 445 3 0.1
+particle minecraft:crit -10222 94 445 1 1 1 0.1 25

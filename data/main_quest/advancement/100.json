@@ -1,0 +1,31 @@
+{
+    "display": {
+        "title": {
+            "text": "100%",
+            "color": "aqua",
+            "bold": true
+        },
+        "description": {
+            "text": "Complete EVERY quest!",
+            "italic": true
+        },
+        "icon": {
+            "id": "minecraft:nether_star"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "main_quest:game_finish"
+}

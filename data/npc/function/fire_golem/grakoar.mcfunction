@@ -1,0 +1,18 @@
+execute if score golem_lycan bool matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.ravager.ambient neutral @a[tag=mg.flw] ~ ~ ~ 1 1.5
+execute if score golem_lycan bool matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.breeze.deflect neutral @a[tag=mg.flw] ~ ~ ~ 1 1
+
+execute if score golem_lycan bool matches 0 if score moonlight_contagion bool matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=!vendor_arrow_7,tag=mg.flw] [{"text":"<"},{"text":"Grakoar","color":"red"},{"text":"> Arrows are fun, aren't they? Rumor has it you shot one towards the Sun in the","color":"white"},{"text":" Sanctum of Petals","color":"light_purple"},{"text":". Pretty risky, I'm surprised She didn't smite you right then and there.","color":"white"}]
+execute if score golem_lycan bool matches 0 if score moonlight_contagion bool matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=vendor_arrow_7,tag=mg.flw] [{"text":"<"},{"text":"Grakoar","color":"red"},{"text":"> I'm fresh out of arrows! Minus this one I'm holding. My memory is bad so I have to use one as a template for making the others.","color":"white"}]
+
+execute if score golem_lycan bool matches 0 if score moonlight_contagion bool matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=!vendor_arrow_7,tag=mg.flw] [{"text":"<"},{"text":"Grakoar","color":"red"},{"text":"> Arrows are fun, aren't they? Rumor has it you shot one towards the Sun in the","color":"white"},{"text":" Sanctum of Petals","color":"light_purple"},{"text":". Pretty risky. Lucky it wasn't the Moon you had to shoot at.","color":"white"}]
+execute if score golem_lycan bool matches 0 if score moonlight_contagion bool matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=vendor_arrow_7,tag=mg.flw] [{"text":"<"},{"text":"Grakoar","color":"red"},{"text":"> I'm fresh out of arrows! Minus this one I'm holding. My memory is bad so I have to use one as a template for making the others. I'll have to make more quickly, it's hard making arrows at night when you have feathers!","color":"white"}]
+
+execute if score golem_lycan bool matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=!vendor_arrow_7,tag=mg.flw] [{"text":"<"},{"text":"Grakoarox","color":"red"},{"text":"> Arrows are fun, aren't they? Rumor has it you shot one towards the Sun in the","color":"white"},{"text":" Sanctum of Petals","color":"light_purple"},{"text":". Pretty risky. Lucky it wasn't the Moon you had to shoot at.","color":"white"}]
+execute if score golem_lycan bool matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=vendor_arrow_7,tag=mg.flw] [{"text":"<"},{"text":"Grakoarox","color":"red"},{"text":"> I'm fresh out of arrows! Minus this one I'm holding. My memory is bad so I have to use one as a template for making the others. At least my feathers grow back every night, I have to pluck a lot of them in order to make these.","color":"white"}]
+
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run give @a[distance=..10,tag=!vendor_arrow_7,tag=mg.flw] arrow 32
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tag @a[distance=..10,tag=!vendor_arrow_7,tag=mg.flw] add vendor_arrow_7
+
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 
