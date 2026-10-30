@@ -44,7 +44,7 @@ import os as _os
 _BB = _os.listdir(_os.path.join(C.F, 'bomber', 'b'))     # étapes de construction du Bombardier (sol g*, ville p*)
 NG, NP = sum(f.startswith('g') for f in _BB), sum(f.startswith('p') for f in _BB)
 FL = f'-{HX} {Z - HX} {HX} {Z + HX}'
-PX, PZ = -9, -52                                  # portail du lobby, le long de l'avenue nord (ouverture x 9, z -20..-18)
+PX, PZ = -9, -54                                  # portail du lobby, le long de l'avenue nord (ouverture x 9, z -20..-18)
 OLD_P = (9, -33)                                 # ancien emplacement du portail (remis en herbe)
 EXIT = (-17, -10)                                # sortie dans la ville (trottoir du carrefour de départ)
 SPAWN = (-12, -6)
