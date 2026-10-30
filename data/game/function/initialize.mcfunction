@@ -1,4 +1,4 @@
-attribute @a[tag=mg.flw] minecraft:fall_damage_multiplier base set 1
+execute as @a[tag=mg.flw] run attribute @s minecraft:fall_damage_multiplier base set 1
 xp set @a[tag=mg.flw] 0 points
 xp set @a[tag=mg.flw] 0 levels
 execute as @a[tag=mg.flw] run attribute @s minecraft:max_health base set 20
