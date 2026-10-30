@@ -10,7 +10,7 @@ scoreboard players operation Rouge mg.ts = $nr mg.st
 scoreboard players operation Bleu mg.ts = $nb mg.st
 
 # Actionbar permanente : rouge / bleu et objectif
-title @a[tag=mg.play] actionbar [{"text":"Rouge ","color":"red"},{"score":{"name":"$nr","objective":"mg.st"},"color":"red","bold":true},{"text":"  |  Objectif 25  |  ","color":"gray"},{"text":"Bleu ","color":"blue"},{"score":{"name":"$nb","objective":"mg.st"},"color":"blue","bold":true}]
+title @a[tag=mg.play] actionbar [{"text":"Rouge ","color":"red"},{"score":{"name":"$nr","objective":"mg.st"},"color":"red","bold":true},{"text":"  |  Objectif 19  |  ","color":"gray"},{"text":"Bleu ","color":"blue"},{"score":{"name":"$nb","objective":"mg.st"},"color":"blue","bold":true}]
 
 # Minuteur 6 min
 scoreboard players remove $tl mg.st 1
