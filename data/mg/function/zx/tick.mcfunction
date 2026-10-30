@@ -13,4 +13,7 @@ execute as @e[type=minecraft:item_display,tag=mg.zmk,distance=..80] at @s run fu
 execute as @e[type=minecraft:item_display,tag=mg.zrk,distance=..80] at @s run function mg:zx/rk_tick
 scoreboard players add $zxt mg.st 1
 execute if score $zxt mg.st matches 10.. run function mg:zx/win_fix_all
-execute as @a[tag=mg.play,scores={mg.zdr=1..}] at @s run function mg:zx/drop_back
+execute as @e[type=minecraft:item,distance=..80] if items entity @s contents *[custom_data~{mg_gun:1b}] run function mg:zx/q_item
+execute as @e[type=minecraft:item,distance=..80] if items entity @s contents *[custom_data~{zrpg:1b}] run function mg:zx/q_item
+scoreboard players reset @a[scores={mg.zdr=1..}] mg.zdr
+scoreboard players set $zxon mg.st 2

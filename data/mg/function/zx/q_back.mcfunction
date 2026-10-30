@@ -1,9 +1,4 @@
-# @s a jeté (Q) une arme : elle revient et se recharge
-scoreboard players reset @s mg.zdr
-data modify storage mg:zm du set from entity @s UUID
-execute as @e[type=minecraft:item,distance=..8] if items entity @s contents *[custom_data~{mg_gun:1b}] run function mg:zx/drop_mine
-execute as @e[type=minecraft:item,distance=..8] if items entity @s contents *[custom_data~{zrpg:1b}] run function mg:zx/drop_mine
-execute unless entity @e[type=minecraft:item,tag=mg.zdi] run return 0
+# @s (joueur) a jeté (Q) l'arme marquée mg.zdi : elle revient et se recharge
 execute if items entity @e[type=minecraft:item,tag=mg.zdi,limit=1] contents *[custom_data~{gun:1}] run function mg:gun/reload_1
 execute if items entity @e[type=minecraft:item,tag=mg.zdi,limit=1] contents *[custom_data~{gun:2}] run function mg:gun/reload_2
 execute if items entity @e[type=minecraft:item,tag=mg.zdi,limit=1] contents *[custom_data~{gun:3}] run function mg:gun/reload_3
@@ -20,4 +15,3 @@ tag @s add mg.zdp
 execute as @e[type=minecraft:item,tag=mg.zdi] run data merge entity @s {PickupDelay:0s}
 execute as @e[type=minecraft:item,tag=mg.zdi] run tp @s @a[tag=mg.zdp,limit=1]
 tag @s remove mg.zdp
-tag @e[type=minecraft:item,tag=mg.zdi] remove mg.zdi
