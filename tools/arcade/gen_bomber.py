@@ -7,11 +7,11 @@
   avec son lac, l'East River avec un pont suspendu et une statue verte sur son île. Taxis jaunes, réverbères.
 - Les joueurs attendent sur un plancher invisible (barrières) à y 170 pendant le compte à rebours ; au GO il disparaît
   et ils VOLENT dans la ville en élytres (fusées illimitées ; posé au sol, accroupi = catapulte vers le ciel) et lâchent
-  les bombes devant eux, dans la direction du regard : bombe (rayon 6), méga-bombe (12), bombe à fragmentation
-  (7 sous-munitions de rayon 4) et, pour la dernière minute, une bombe atomique (rayon 22) par joueur.
+  les bombes devant eux, dans la direction du regard : bombe (rayon 8), méga-bombe (16), bombe à fragmentation
+  (7 sous-munitions de rayon 5) et des bombes atomiques (rayon 28) : une par joueur à 20 s, 50 s et 1 min 20.
 - Dégâts = blocs détruits (bloc doré ou statue : 10 points). Une explosion = fills « replace #mg:bomb_city »
   empilés en sphère (le nombre de blocs remplacés est le score), sans vraie explosion ni objets au sol.
-- 2 min 30, le plus gros score gagne. Barre de boss : part de la ville détruite. Reconstruite à chaque partie
+- 2 min, le plus gros score gagne. Barre de boss : part de la ville détruite. Reconstruite à chaque partie
   (en 80 étapes pendant le compte à rebours), sol et plancher posés une fois (storage mg:bomber v1).
 """
 import math
@@ -28,8 +28,8 @@ Z = 32400
 HX = 88                      # demi-côté de la ville
 Y0, YT = 56, 170             # bas du sol, plancher de barrières
 GY = 64                      # surface (routes, trottoirs) ; bâtiments à partir de 65
-LIMIT = 3000                 # 2 min 30
-NUKE_AT = 1800               # bombe atomique : dernière minute
+LIMIT = 2400                 # 2 min
+NUKE_AT = (400, 1000, 1600)  # bombes atomiques : à 20 s, 50 s et 1 min 20 (une par joueur, case 4)
 random.seed(1999)
 
 # ---------------------------------------------------------------- grille de blocs (comptage) + commandes

@@ -3,8 +3,8 @@
 
 # ---------------------------------------------------------------- jeu
 BOMBS = [  # type, item_model, nom, couleur, cooldown (ticks), vitesse de lancer (‰), description
-    (1, 'tnt', 'Bombe', 'red', 12, 900, 'Rayon 6, recharge 0,6 s'),
-    (2, 'tnt_minecart', 'Méga-bombe', 'dark_red', 140, 600, 'Rayon 12, recharge 7 s'),
+    (1, 'tnt', 'Bombe', 'red', 12, 900, 'Rayon 8, recharge 0,6 s'),
+    (2, 'tnt_minecart', 'Méga-bombe', 'dark_red', 140, 600, 'Rayon 16, recharge 7 s'),
     (3, 'fire_charge', 'Bombe à fragmentation', 'gold', 100, 900, '7 sous-munitions, recharge 5 s'),
 ]
 
@@ -57,12 +57,12 @@ w('bomber/go', ['# Départ : le plancher disparaît, tout le monde s\'envole dan
                 'tellraw @a[tag=mg.play] ' + js([{'text': '💣 BOMBARDIER : ', 'color': 'red', 'bold': True},
                                                  {'text': 'saute et ouvre tes élytres (Espace) : vole entre les gratte-ciel (fusées illimitées, case 9), vise et clic droit pour larguer. '
                                                           'Posé au sol : accroupis-toi pour repartir. Chaque bloc détruit = 1 point, '
-                                                          'or et statue = 10. Bombe atomique pour la dernière minute. 2 min 30.', 'color': 'gray'}])])
+                                                          'or et statue = 10. Bombes atomiques à 20 s, 50 s et 1 min 20. 2 min.', 'color': 'gray'}])])
 w('bomber/build_rest', ['# Filet de sécurité : termine la construction d\'un coup si le départ arrive avant la fin',
                         f'execute if score $bbs mg.st matches ..{NG + NPART - 1} run function mg:bomber/build_step',
                         f'execute if score $bbs mg.st matches ..{NG + NPART - 1} run function mg:bomber/build_rest'])
 
-nuke = item(4, 'nether_star', '☢ Bombe atomique', 'green', 0, 'Rayon 22, une seule !', 3)
+nuke = item(4, 'nether_star', '☢ Bombe atomique', 'green', 0, 'Rayon 28 : une à la fois', 3)
 w('bomber/tick', ['# 💣 Bombardier : tick', 'scoreboard players add $btt mg.st 1',
                   'execute as @a[tag=mg.play,scores={mg.qs=1..}] at @s run function mg:bomber/use',
                   'scoreboard players reset @a[scores={mg.qs=1..}] mg.qs',
@@ -76,7 +76,7 @@ w('bomber/tick', ['# 💣 Bombardier : tick', 'scoreboard players add $btt mg.st
                   'execute if score $bq mg.st matches 0 run function mg:bomber/second',
                   'execute if score $bq mg.st matches 0 run execute at @e[type=minecraft:marker,tag=mg.bsm] run particle minecraft:campfire_cosy_smoke ~ ~ ~ 0.8 0.3 0.8 0.02 3 force',
                   'execute if score $bq mg.st matches 10 run execute at @e[type=minecraft:marker,tag=mg.bsm] run particle minecraft:flame ~ ~0.5 ~ 0.8 0.3 0.8 0.01 4',
-                  f'execute if score $btt mg.st matches {NUKE_AT} run function mg:bomber/nuke_give',
+                  *[f'execute if score $btt mg.st matches {n} run function mg:bomber/nuke_give' for n in NUKE_AT],
                   f'execute if score $btt mg.st matches {LIMIT - 600} run tellraw @a[tag=mg.play] {{"text":"💣 Plus que 30 secondes !","color":"gold"}}',
                   f'execute if score $state mg.st matches 2 if score $btt mg.st matches {LIMIT}.. run function mg:bomber/finish',
                   'execute store result score $alive mg.st if entity @a[tag=mg.play]',
@@ -91,7 +91,7 @@ w('bomber/second', ['# Une seconde : barre de destruction, fusées rechargées, 
                     f'execute as @a[tag=mg.play] unless entity @s[x=-{HX},y=-64,z={Z - HX},dx={2 * HX},dy=400,dz={2 * HX}] run tp @s 0 {YT + 1} {Z}',
                     'execute as @a[tag=mg.play] run ' + ROCKET,
                     'execute if score $state mg.st matches 2 if score $bpct mg.st matches 85.. run function mg:bomber/timeout'])
-w('bomber/nuke_give', ['# Dernière minute : une bombe atomique par joueur',
+w('bomber/nuke_give', ['# Une bombe atomique par joueur (case 4 ; remplace celle pas encore larguée)',
                        'execute as @a[tag=mg.play] run ' + nuke,
                        'title @a[tag=mg.play] title {"text":"☢","color":"green","bold":true}',
                        'title @a[tag=mg.play] subtitle {"text":"Bombe atomique disponible (case 4) !","color":"green"}',
@@ -169,11 +169,11 @@ w('bomber/bomblet', ['# @s : sous-munition (même lanceur, direction écartée a
                      'execute store result entity @s Motion[2] double 0.001 run scoreboard players get $br mg.st'])
 w('bomber/impact', ['# @s : la bombe touche (explosion selon le type, points au lanceur)',
                     'scoreboard players operation $bid mg.st = @s mg.bid',
-                    'execute if score @s mg.bty matches 1 run function mg:bomber/boom/r6',
-                    'execute if score @s mg.bty matches 2 run function mg:bomber/boom/r12',
-                    'execute if score @s mg.bty matches 3 run function mg:bomber/boom/r6',
-                    'execute if score @s mg.bty matches 4 run function mg:bomber/boom/r4',
-                    'execute if score @s mg.bty matches 5 run function mg:bomber/boom/r22',
+                    'execute if score @s mg.bty matches 1 run function mg:bomber/boom/r8',
+                    'execute if score @s mg.bty matches 2 run function mg:bomber/boom/r16',
+                    'execute if score @s mg.bty matches 3 run function mg:bomber/boom/r8',
+                    'execute if score @s mg.bty matches 4 run function mg:bomber/boom/r5',
+                    'execute if score @s mg.bty matches 5 run function mg:bomber/boom/r28',
                     'execute if score @s mg.bty matches 4 run function mg:bomber/fx_small',
                     'execute if score @s mg.bty matches 1 run function mg:bomber/fx_big',
                     'execute if score @s mg.bty matches 3 run function mg:bomber/fx_big',

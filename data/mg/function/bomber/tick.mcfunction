@@ -15,8 +15,10 @@ scoreboard players operation $bq mg.st %= #20 mg.st
 execute if score $bq mg.st matches 0 run function mg:bomber/second
 execute if score $bq mg.st matches 0 run execute at @e[type=minecraft:marker,tag=mg.bsm] run particle minecraft:campfire_cosy_smoke ~ ~ ~ 0.8 0.3 0.8 0.02 3 force
 execute if score $bq mg.st matches 10 run execute at @e[type=minecraft:marker,tag=mg.bsm] run particle minecraft:flame ~ ~0.5 ~ 0.8 0.3 0.8 0.01 4
-execute if score $btt mg.st matches 1800 run function mg:bomber/nuke_give
-execute if score $btt mg.st matches 2400 run tellraw @a[tag=mg.play] {"text":"💣 Plus que 30 secondes !","color":"gold"}
-execute if score $state mg.st matches 2 if score $btt mg.st matches 3000.. run function mg:bomber/finish
+execute if score $btt mg.st matches 400 run function mg:bomber/nuke_give
+execute if score $btt mg.st matches 1000 run function mg:bomber/nuke_give
+execute if score $btt mg.st matches 1600 run function mg:bomber/nuke_give
+execute if score $btt mg.st matches 1800 run tellraw @a[tag=mg.play] {"text":"💣 Plus que 30 secondes !","color":"gold"}
+execute if score $state mg.st matches 2 if score $btt mg.st matches 2400.. run function mg:bomber/finish
 execute store result score $alive mg.st if entity @a[tag=mg.play]
 execute if score $state mg.st matches 2 if score $alive mg.st matches 0 run function mg:core/draw

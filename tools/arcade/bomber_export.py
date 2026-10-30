@@ -99,5 +99,5 @@ def boom(r):
     return L
 
 
-for r in (2, 3, 4, 6, 12, 22):   # 4, 6, 12, 22 = Bombardier (rayons doublés) ; 2 et 3 = Neo GTA (roquette, épave)
+for r in (2, 3, 5, 8, 16, 28):   # 5, 8, 16, 28 = Bombardier ; 2 et 3 = Neo GTA (roquette, épave)
     w(f'bomber/boom/r{r}', boom(r))
