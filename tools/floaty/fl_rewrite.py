@@ -11,7 +11,8 @@ entités : distance=0.. ; @s intact ; voir fl_sel). Ici, les commandes :
 - `say X` (serveur entier) : `tellraw @a[tag=mg.flw] "X"` (JSON échappé).
 - `advancement revoke <cible> everything` : un `revoke ... from <racine>` par advancement racine de la carte (roots), sans toucher aux vanilla.
 - `gamerule fall_damage <bool>` : ATTRIBUT fall_damage_multiplier (0 / 1) des joueurs de la dimension. Choix prudent : on ne sait pas
-  vérifier en jeu que ce gamerule est par dimension. NOTE POUR L3 : ce choix pose l'attribut sur les joueurs, donc L3 doit le remettre
+  vérifier en jeu que ce gamerule est par dimension. `attribute` n'accepte qu'UNE cible : `execute as @a[tag=mg.flw] run attribute @s ...`
+  (un `attribute @a[...]` échoue dès que deux joueurs sont dans la dimension). NOTE POUR L3 : ce choix pose l'attribut sur les joueurs, donc L3 doit le remettre
   (comme core/attr_reset ou <jeu>/leave : `attribute @s minecraft:fall_damage_multiplier base set 0`) quand le joueur quitte mg:floaty.
   `gamerule advance_time|random_tick_speed` et `time set|add` : RETIRÉS (st.neutral). Prouvé sur un serveur 26.2 : un gamerule est GLOBAL
   (`execute in <dim> run gamerule advance_time false` change aussi l'overworld) et `time set` agit sur l'horloge du type de dimension
@@ -138,7 +139,7 @@ def _command(s, st):
     m = re.fullmatch(r'gamerule fall_damage (true|false)\s*', cmd)
     if m:
         st.falls += 1
-        return s[:k] + f'attribute @a[tag={TAG}] minecraft:fall_damage_multiplier base set {int(m.group(1) == "true")}'
+        return s[:k] + f'execute as @a[tag={TAG}] run attribute @s minecraft:fall_damage_multiplier base set {int(m.group(1) == "true")}'
     if cmd.startswith('gamerule '):
         st.gamerules[cmd.strip()] += 1
     if _GLOBAL.match(cmd):

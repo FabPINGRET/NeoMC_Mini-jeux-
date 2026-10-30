@@ -109,10 +109,20 @@ class CommandCase(unittest.TestCase):
         self.assertEqual((st.dropped, st.lines), (3, 3))
 
     def test_fall_damage(self):
-        self.assertEqual(rw('gamerule fall_damage false'), ['attribute @a[tag=mg.flw] minecraft:fall_damage_multiplier base set 0'])
-        self.assertEqual(rw('gamerule fall_damage true'), ['attribute @a[tag=mg.flw] minecraft:fall_damage_multiplier base set 1'])
-        self.assertEqual(rw('execute as @a run gamerule fall_damage false'),
-                         ['execute as @a[tag=mg.flw] run attribute @a[tag=mg.flw] minecraft:fall_damage_multiplier base set 0'])
+        """`attribute` n'a qu'UNE cible : la cible est toujours @s, derrière `execute as @a[tag=mg.flw] run` (jamais `attribute @a[...]`)."""
+        att = 'execute as @a[tag=mg.flw] run attribute @s minecraft:fall_damage_multiplier base set '
+        for line, want in (('gamerule fall_damage false', att + '0'),
+                           ('gamerule fall_damage true', att + '1'),
+                           ('execute as @a run gamerule fall_damage false', 'execute as @a[tag=mg.flw] run ' + att + '0'),
+                           ('$gamerule fall_damage false', '$' + att + '0'),                        # macro : le $ est conservé
+                           ('setblock ~ ~ ~ command_block{Command:"gamerule fall_damage true"}',
+                            'setblock ~ ~ ~ command_block{Command:"' + att + '1"}')):
+            with self.subTest(line):
+                st = R.Stats()
+                out = rw(line, st)
+                self.assertEqual(out, [want])
+                self.assertEqual(st.falls, 1)                                                  # inverse : une seule réécriture par ligne
+                self.assertNotIn('attribute @a', out[0])                                       # inverse : jamais plusieurs cibles pour attribute
 
     def test_global_gamerules_and_time_neutralized(self):
         """gamerule global + horloge partagee avec l'overworld (prouve sur un serveur 26.2) : retires, jamais rejoues."""

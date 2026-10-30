@@ -3,6 +3,7 @@ d'un secteur, gzip / brut réécrits en zlib, LZ4 / externe / corrompu recopiés
 panneaux NBT et JSON, chaînes MUTF-8 / trop longues, vérification de relecture.
 Lancer depuis n'importe où : python -m unittest discover -s tools/tests -v
 """
+import functools
 import gzip
 import json
 import random
@@ -52,19 +53,21 @@ def header_ts(data):
 
 
 def sized(n):
-    """Chunk d'un bloc de commande (OLD) et n caractères hexadécimaux incompressibles."""
-    rnd = random.Random(7)
-    filler = ''.join(rnd.choice('0123456789abcdef') for _ in range(n))
-    return nbt({'DataVersion': Int(4903), 'filler': Str(filler), 'block_entities': Lst(10, [be('command_block', 1, 2, 3, OLD)])})
+    """Chunk d'un bloc de commande (OLD) et n octets aléatoires (TAG_Byte_Array) : incompressibles, donc une taille compressée qui ne
+    dépend presque pas de l'implémentation de zlib (zlib-ng de Python 3.14 sous Windows, zlib 1.3 sous Linux)."""
+    return nbt({'DataVersion': Int(4903), 'filler': (7, random.Random(7).randbytes(n)),
+                'block_entities': Lst(10, [be('command_block', 1, 2, 3, OLD)])})
 
 
+@functools.lru_cache(maxsize=None)
 def growing():
-    """Un chunk qui tient dans 1 secteur et en prend 2 une fois réécrit (OLD -> NEW)."""
-    for n in range(7000, 9000, 4):
+    """Un chunk qui tient dans 1 secteur et en prend 2 une fois réécrit (OLD -> NEW). Calibré par mesure, octet par octet : la taille
+    compressée dépend de la version de zlib, une taille supposée une fois pour toutes casserait sur une autre machine."""
+    for n in range(fl_mca.SECTOR // 2, 2 * fl_mca.SECTOR):
         raw = sized(n)
         if fl_mca.sectors(fl_mca.record(raw)) == 1 and fl_mca.sectors(fl_mca.record(raw.replace(OLD.encode(), NEW.encode()))) == 2:
             return raw
-    raise AssertionError('aucun chunk de test ne change de secteur')
+    raise AssertionError(f'aucun chunk de test ne change de secteur (zlib {zlib.ZLIB_RUNTIME_VERSION})')
 
 
 class Chunk(unittest.TestCase):

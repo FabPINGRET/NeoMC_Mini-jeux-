@@ -5,8 +5,10 @@ Lancer depuis n'importe où : python -m unittest discover -s tools/tests -v
 import struct
 import sys
 import unittest
+import zlib
 from collections import Counter
 from pathlib import Path
+from unittest import mock
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -118,6 +120,39 @@ class Check(unittest.TestCase):
         self.assertEqual(out[4:8], b'\x00\x00\x04\x01')                                  # chunk 1 : glisse au secteur 4, 1 secteur
         self.assertEqual(out[8:4096], b'\0' * (4096 - 8))
         self.assertEqual(len(out), (2 + 2 + 1) * 4096)
+
+
+def record_with(compress):
+    """Remplaçant de fl_mca.record : même enregistrement (longueur, type 2), corps produit par `compress` (compresseur simulé)."""
+    def fake(raw):
+        body = compress(raw)
+        return struct.pack('>IB', len(body) + 1, 2) + body
+    return fake
+
+
+class Calibration(unittest.TestCase):
+    def test_growing_is_measured_not_assumed(self):
+        padded = record_with(lambda raw: zlib.compress(raw, fl_mca.LEVEL) + b'\0' * 300)       # compresseur moins efficace : 300 octets de bourrage
+        stored = record_with(lambda raw: zlib.compress(raw, 0))                                  # compresseur qui ne compresse pas
+        found = {}
+        for name, fake in (('padded', padded), ('stored', stored)):
+            with self.subTest(name), mock.patch.object(fl_mca, 'record', fake):
+                raw = M.growing.__wrapped__()                                          # sans le cache : mesuré sous CE compresseur
+                new = raw.replace(OLD.encode(), NEW.encode())
+                self.assertEqual((fl_mca.sectors(fl_mca.record(raw)), fl_mca.sectors(fl_mca.record(new))), (1, 2))
+                found[name] = len(raw)
+        self.assertNotEqual(found['padded'], found['stored'])                          # le chunk suit le compresseur : rien n'est supposé
+        self.assertLess(found['padded'], found['stored'])                              # le bourrage consomme du secteur : chunk plus petit
+
+    def test_a_small_chunk_stays_in_one_sector_once_rewritten(self):
+        raw = M.sized(16)                                                              # inverse : un chunk loin du bord ne change pas de secteur
+        new = raw.replace(OLD.encode(), NEW.encode())
+        self.assertEqual((fl_mca.sectors(fl_mca.record(raw)), fl_mca.sectors(fl_mca.record(new))), (1, 1))
+
+    def test_growing_raises_when_no_size_crosses_a_sector(self):
+        with mock.patch.object(fl_mca, 'record', record_with(lambda raw: b'x')):       # enregistrement de 6 octets : jamais 2 secteurs
+            with self.assertRaisesRegex(AssertionError, 'zlib'):
+                M.growing.__wrapped__()
 
 
 if __name__ == '__main__':

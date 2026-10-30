@@ -55,7 +55,7 @@ execute as @a[tag=mg.flw] run function game:100_check
 
 #Effects Beyond Scoreboard
 execute as @p[tag=mg.flw] if entity @s[tag=boon_due_4] run fill -9769 256 430 -9761 256 416 minecraft:redstone_block replace minecraft:red_wool
-execute as @p[tag=mg.flw] if entity @s[tag=boon_due_3] run attribute @a[tag=mg.flw] minecraft:fall_damage_multiplier base set 0
+execute as @p[tag=mg.flw] if entity @s[tag=boon_due_3] run execute as @a[tag=mg.flw] run attribute @s minecraft:fall_damage_multiplier base set 0
 execute as @p[tag=mg.flw] if entity @s[tag=boon_due_7] run setblock -9769 248 422 minecraft:redstone_block
 execute as @p[tag=mg.flw] if entity @s[tag=boon_due_7] run setblock -9769 248 424 minecraft:redstone_block
 

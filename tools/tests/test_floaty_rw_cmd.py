@@ -28,7 +28,7 @@ class Rules(unittest.TestCase):
             with self.subTest(cmd):
                 self.assertEqual(self.rw(cmd), (NOOP, 'noop', why))
         new, action, _ = self.rw('gamerule fall_damage false')                       # inverse : réécrit par L1, pas un NOOP
-        self.assertEqual((new, action), ('attribute @a[tag=mg.flw] minecraft:fall_damage_multiplier base set 0', 'reecrit'))
+        self.assertEqual((new, action), ('execute as @a[tag=mg.flw] run attribute @s minecraft:fall_damage_multiplier base set 0', 'reecrit'))
 
     def test_time_set_is_noop_and_time_query_is_kept(self):
         self.assertEqual(self.rw('time set day'), (NOOP, 'noop', 'retiree'))
