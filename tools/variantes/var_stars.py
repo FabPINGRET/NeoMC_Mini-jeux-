@@ -19,7 +19,7 @@ NATIVE = {
     26: ('Arène', 2), 52: ('Château', 2), 53: ('Grande forêt', 3),
     31: ('Néon', 2), 32: ('Volcan XL', 3), 33: ('Jungle XL', 3), 34: ('Désert', 2), 35: ('Glacier', 3),
     43: ('Poussière', 2), 46: ('Mirage', 2), 49: ('Nuketown', 2), 79: ('🎯 Ravin (sniper)', 3), 80: ('🎯 Tours (sniper)', 3), 233: ('🌀 Spirale (vertical)', 3), 234: ('🏗 Chantier (vertical)', 3),
-    67: ('Classique', 3), 68: ('Collines', 2), 69: ('Canyon', 2), 70: ('Village perché', 2),
+    67: ('Classique', 3), 68: ('Collines', 2), 69: ('Canyon', 2), 70: ('Village perché', 2), 252: ('Icebergs', 3), 253: ('Patinoire', 3),
     71: ('Classique', 2), 72: ('Caldeira', 2), 73: ('Hanami', 2), 74: ('Banquise', 3),
     5: ('Classique', 2), 7: ('Forteresses', 2), 14: ('Bastions', 2), 15: ('Cubes voxel', 2), 16: ('Pyramides inversées', 3),
     17: ('Archipel', 2), 18: ('Double canyon', 3), 19: ('Nuages voxel', 3),
