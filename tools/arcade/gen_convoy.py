@@ -7,7 +7,7 @@ moins de 4 blocs et qu'aucun ennemi n'est à moins de 4 blocs (sinon il est bloq
 - 89 : deux manches de 3 min, les équipes échangent les rôles. Score d'une manche = distance parcourue
   (+ temps restant s'il arrive). Meilleur score gagne.
 - 90 : tout le monde escorte. Des vagues de monstres arrivent devant le convoi (plus nombreuses avec plus de joueurs)
-  et l'abîment. Amener le convoi au bout avant 6 min, sans qu'il soit détruit.
+  et l'abîment. Amener le convoi au bout avant 9 min, sans qu'il soit détruit.
 """
 import sys
 import common as C
@@ -16,7 +16,7 @@ C.init(sys.argv[1] if len(sys.argv) > 1 else '.')
 w, js = C.w, C.js
 Z = 21200
 X0, X1 = -60, 60
-ROUND, COOP_LIMIT, SPEED = 3600, 7200, 0.06
+ROUND, COOP_LIMIT, SPEED = 3600, 10800, 0.06       # coop : 9 min (6 min était trop juste)
 CV = '@e[type=minecraft:block_display,tag=mg.cvc,limit=1]'
 
 L = ['# 🚚 Convoi — route x −70..70, z 21188..21212']
@@ -82,7 +82,7 @@ w('convoy/go', ['# Départ', 'execute as @a[tag=mg.play] run function mg:convoy/
                 'execute if score $cvm mg.st matches 0 run function mg:convoy/round_msg',
                 'execute if score $cvm mg.st matches 1 run tellraw @a[tag=mg.play] ' + js([
                     {'text': '🚚 CONVOI (coop) : ', 'color': 'gold', 'bold': True},
-                    {'text': 'restez près du convoi pour le faire avancer, les monstres le bloquent et l\'abîment. Amenez-le aux blocs d\'or avant 6 min !', 'color': 'gray'}])])
+                    {'text': 'restez près du convoi pour le faire avancer, les monstres le bloquent et l\'abîment. Amenez-le aux blocs d\'or avant 9 min !', 'color': 'gray'}])])
 w('convoy/round_msg', ['# Annonce de la manche',
                        'execute if score $cvo mg.st matches 0 run tellraw @a[tag=mg.play] ' + js([
                            {'text': '🚚 MANCHE ', 'color': 'gold', 'bold': True}, {'score': {'name': '$cvr', 'objective': 'mg.st'}, 'color': 'gold', 'bold': True},
