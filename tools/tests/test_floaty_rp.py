@@ -273,8 +273,10 @@ class FloatyRp(unittest.TestCase):
 class FloatyCommittedZip(unittest.TestCase):
     """Garde : releases/neomc_resourcepack.zip (suivi par git) doit contenir la fusion Floaty. Un build sans NEOMC_FLOATY_RP l'appauvrit en silence."""
     ZIP = ROOT / 'releases' / 'neomc_resourcepack.zip'
-    # chemins de la carte, absents de resourcepack/ (donc seule la fusion peut les apporter)
-    KNOWN = ['assets/minecraft/sounds.json', 'assets/minecraft/items/bow.json', 'assets/minecraft/textures/entity/zombie/zombie.png']
+    # fichiers NEUFS de la carte (aucun équivalent vanilla), absents de resourcepack/ : seule la fusion peut les apporter au pack serveur.
+    # Les remplacements du vanilla (items/bow.json, textures/entity/zombie/zombie.png...) n'y sont plus : enveloppés ou renvoyés au pack optionnel
+    # (test_floaty_split_real.py les contrôle).
+    KNOWN = ['assets/minecraft/sounds.json']
 
     def test_zip_exists(self):
         self.assertTrue(self.ZIP.is_file(), f'{self.ZIP} absent : le zip est suivi par git (pas de skip)')
