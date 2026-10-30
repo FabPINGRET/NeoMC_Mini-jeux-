@@ -1,0 +1,5 @@
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.armadillo.death neutral @a[tag=mg.flw] ~ ~ ~ 1 0.5
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Kaldion","color":"#D47453"},{"text":"> The Seven Lords each represented a whole people group in the Dark Isles. ","color":"white"},{"text":"Flame","color":"red"},{"text":" for us, the Valorites, ","color":"white"},{"text":"Forest","color":"dark_green"},{"text":" for the Pygmies, ","color":"white"},{"text":"Stone","color":"gray"},{"text":" for... well I don't know actually. But you get the idea. The strongest was the ","color":"white"},{"text":"Lord of Smoke","color":"yellow"},{"text":", who represented the dead, but even he was subdued by ","color":"white"},{"text":"Lord Morbex","color":"dark_aqua"},{"text":"'s forces.","color":"white"}]
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

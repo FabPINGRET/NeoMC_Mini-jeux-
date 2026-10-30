@@ -1,0 +1,36 @@
+{
+    "display": {
+        "title": {
+            "text": "The Key to Your Identity",
+            "color": "dark_purple"
+        },
+        "description": {
+            "text": "Defeat the divinity beneath the Undercroft"
+        },
+        "icon": {
+            "id": "minecraft:egg",
+            "components": {
+                "minecraft:custom_model_data": {
+                    "strings": [
+                        "11"
+                    ]
+                }
+            }
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest:undercroft_all"
+}

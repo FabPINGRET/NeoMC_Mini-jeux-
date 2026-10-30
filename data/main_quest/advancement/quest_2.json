@@ -1,0 +1,30 @@
+{
+    "display": {
+        "title": {
+            "text": "Case Closed",
+            "color": "dark_aqua",
+            "bold": false
+        },
+        "description": {
+            "text": "Defeat every Bone Monster in Dwarf City"
+        },
+        "icon": {
+            "id": "minecraft:bone"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "main_quest:quest_1"
+}

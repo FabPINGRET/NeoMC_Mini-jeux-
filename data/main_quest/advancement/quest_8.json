@@ -1,0 +1,30 @@
+{
+    "display": {
+        "title": {
+            "text": "A Long-Awaited Answer to Prayer",
+            "color": "aqua",
+            "bold": false
+        },
+        "description": {
+            "text": "Transfer the Moonlight Contagion's lycanthropic curse onto the Fire Golems"
+        },
+        "icon": {
+            "id": "minecraft:clock"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "main_quest:quest_7"
+}

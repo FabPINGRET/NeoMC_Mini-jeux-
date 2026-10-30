@@ -1,0 +1,6 @@
+execute positioned 10109 188 1330 run playsound minecraft:entity.goat.milk neutral @a[tag=mg.flw] ~ ~ ~ 1 1
+execute if score Inventory DominionRod matches 0 positioned 10109 188 1330 run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Mollin the Witness","color":"red"},{"text":"> The ","color":"white"},{"text":"Lord of Stone","color":"gray"},{"text":" was the chiefest of the ","color":"white"},{"text":"Cobblemancers","color":"green"},{"text":" and taught them many powerful magic arts. He was taken from us, and his entire","color":"white"},{"text":" Shrunken Temple ","color":"green"},{"text":"was taken with him.","color":"white"}]
+execute if score Inventory DominionRod matches 1 positioned 10109 188 1330 run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Mollin the Witness","color":"red"},{"text":"> The ","color":"white"},{"text":"Lord of Stone","color":"gray"},{"text":" is the chiefest of the ","color":"white"},{"text":"Cobblemancers","color":"green"},{"text":" and has taught them many powerful magic arts. We owe you a debt of gratitude for returning him to us. Hopefully, one day, the rest of his order returns as well.","color":"white"}]
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

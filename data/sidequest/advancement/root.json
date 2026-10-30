@@ -1,0 +1,28 @@
+{
+    "display": {
+        "title": {
+            "text": "Major Sidequests"
+        },
+        "description": {
+            "text": "Large optional quests that are worth completing"
+        },
+        "icon": {
+            "id": "minecraft:spyglass"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": false,
+        "background": "minecraft:gui/advancements/backgrounds/adventure"
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ]
+}

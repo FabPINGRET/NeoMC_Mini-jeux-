@@ -1,0 +1,10 @@
+execute if score golem_lycan bool matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.ravager.ambient neutral @a[tag=mg.flw] ~ ~ ~ 1 1.5
+execute if score golem_lycan bool matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.breeze.deflect neutral @a[tag=mg.flw] ~ ~ ~ 1 1
+
+execute if score golem_lycan bool matches 0 if score moonlight_contagion bool matches 0 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Brogo","color":"red"},{"text":"> The Eyemaster leads us, his house is on the path below the ","color":"white"},{"text":"Great Altar of Sunfire","color":"red"},{"text":"! He's been in charge of the","color":"white"},{"text":" Fire Golem","color":"red"},{"text":" race since the death of the Magma Knight. There's a bunch of boring lore there, don't worry about it.","color":"white"}]
+execute if score golem_lycan bool matches 0 if score moonlight_contagion bool matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Brogo","color":"red"},{"text":"> The Eyemaster leads us, his house is on the path below the ","color":"white"},{"text":"Great Altar of Moonfire","color":"aqua"},{"text":"! He's been in charge of the","color":"white"},{"text":" Fire Golem","color":"red"},{"text":" race since the death of the Magma Knight. There's a bunch of boring lore there, don't worry about it.","color":"white"}]
+
+execute if score golem_lycan bool matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Brogox","color":"red"},{"text":"> I gotta take advantage of the time when I'm a ","color":"white"},{"text":"Werewing","color":"red"},{"text":" now! I gotta practice flapping in case we can fly.","color":"white"}]
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

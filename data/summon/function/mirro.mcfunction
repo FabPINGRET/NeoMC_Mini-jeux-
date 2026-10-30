@@ -1,0 +1,1 @@
+summon illusioner ~ ~ ~ {PersistenceRequired:1b,PatrolLeader:0b,Patrolling:0b,CanJoinRaid:0b,Tags:["mirro","enemy"],CustomName:"Mirro",equipment:{mainhand:{id:"minecraft:bow",count:1,components:{"minecraft:enchantments":{levels:{"minecraft:power":1,"minecraft:punch":1}}}}}}

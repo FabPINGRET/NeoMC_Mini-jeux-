@@ -1,0 +1,1 @@
+summon vex ~ ~ ~ {PersistenceRequired:1b,Health:28f,Tags:["enemy","noc","d_fairy"],CustomName:"Dead Fairy",equipment:{mainhand:{id:"minecraft:golden_axe",count:1}},attributes:[{id:"minecraft:max_health",base:28},{id:"minecraft:scale",base:2}]}

@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Hello Ground",
+            "color": "light_purple"
+        },
+        "description": {
+            "text": "Report 6 good deeds to the Lovebug"
+        },
+        "icon": {
+            "id": "minecraft:feather"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest:lovebug_4"
+}

@@ -1,0 +1,13 @@
+execute as @n[tag=wv_stab_loc,distance=0..] at @s positioned ^ ^ ^ as @a[distance=..1.5,tag=mg.flw] run damage @s 28 minecraft:dragon_breath
+execute as @n[tag=wv_stab_loc,distance=0..] at @s positioned ^ ^ ^0.5 as @a[distance=..1.5,tag=mg.flw] run damage @s 28 minecraft:dragon_breath
+execute as @n[tag=wv_stab_loc,distance=0..] at @s positioned ^ ^ ^1 as @a[distance=..1.5,tag=mg.flw] run damage @s 28 minecraft:dragon_breath
+execute as @n[tag=wv_stab_loc,distance=0..] at @s positioned ^ ^ ^1.5 as @a[distance=..1.5,tag=mg.flw] run damage @s 28 minecraft:dragon_breath
+execute as @n[tag=wv_stab_loc,distance=0..] at @s positioned ^ ^ ^2 as @a[distance=..1.5,tag=mg.flw] run damage @s 28 minecraft:dragon_breath
+execute as @n[tag=wv_stab_loc,distance=0..] at @s positioned ^ ^ ^2.5 as @a[distance=..1.5,tag=mg.flw] run damage @s 28 minecraft:dragon_breath
+execute as @n[tag=wv_stab_loc,distance=0..] at @s positioned ^ ^ ^3 as @a[distance=..1.5,tag=mg.flw] run damage @s 28 minecraft:dragon_breath
+execute as @n[tag=wv_stab_loc,distance=0..] at @s positioned ^ ^ ^3.5 as @a[distance=..1.5,tag=mg.flw] run damage @s 28 minecraft:dragon_breath
+execute as @n[tag=wv_stab_loc,distance=0..] at @s positioned ^ ^ ^4 as @a[distance=..1.5,tag=mg.flw] run damage @s 28 minecraft:dragon_breath
+execute as @n[tag=wv_stab_loc,distance=0..] at @s positioned ^ ^ ^4.5 as @a[distance=..1.5,tag=mg.flw] run damage @s 28 minecraft:dragon_breath
+execute as @n[tag=wv_stab_loc,distance=0..] at @s positioned ^ ^ ^5 as @a[distance=..1.5,tag=mg.flw] run damage @s 28 minecraft:dragon_breath
+execute as @n[tag=wv_stab_loc,distance=0..] at @s positioned ^ ^ ^5.5 as @a[distance=..1.5,tag=mg.flw] run damage @s 28 minecraft:dragon_breath
+execute as @n[tag=wv_stab_loc,distance=0..] at @s positioned ^ ^ ^6 as @a[distance=..1.5,tag=mg.flw] run damage @s 28 minecraft:dragon_breath

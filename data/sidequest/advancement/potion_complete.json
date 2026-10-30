@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Alchemist Extraordinaire",
+            "color": "green"
+        },
+        "description": {
+            "text": "Give Nirizhma all 5 potion ingredients"
+        },
+        "icon": {
+            "id": "minecraft:cauldron"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest:potion_start"
+}

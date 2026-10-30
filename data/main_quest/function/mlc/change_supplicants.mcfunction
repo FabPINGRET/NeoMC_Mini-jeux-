@@ -1,0 +1,9 @@
+setblock -9765 248 418 minecraft:redstone_block
+setblock -9765 248 420 minecraft:redstone_block
+setblock -9765 248 422 minecraft:redstone_block
+setblock -9765 248 424 minecraft:redstone_block
+setblock -9765 248 426 minecraft:redstone_block
+setblock -9765 248 428 minecraft:redstone_block
+setblock -9765 248 430 minecraft:redstone_block
+setblock -9769 248 416 minecraft:redstone_block
+setblock -9769 248 418 minecraft:redstone_block

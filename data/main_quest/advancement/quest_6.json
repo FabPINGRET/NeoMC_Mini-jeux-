@@ -1,0 +1,30 @@
+{
+    "display": {
+        "title": {
+            "text": "Every Hero Needs A Sidekick",
+            "color": "light_purple",
+            "bold": false
+        },
+        "description": {
+            "text": "Become Slime Man's sidekick! (You can think of a cool sidekick name for yourself! Like Moldly or something)"
+        },
+        "icon": {
+            "id": "minecraft:slime_block"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "main_quest:quest_5"
+}

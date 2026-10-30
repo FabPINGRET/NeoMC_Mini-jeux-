@@ -1,10 +1,11 @@
 """Génère le resource pack NeoMC (pixel art, kart 3D, boîtes ?) : python tools/resourcepack/gen_rp.py <racine du dépôt>.
 
-Tout est dans l'espace de noms « mg » : aucune texture vanilla n'est remplacée, sauf le modèle du bloc de test (la survie n'est pas touchée).
-Sortie : resourcepack/ (dossier) et releases/neomc_resourcepack.zip (+ empreinte SHA-1 affichée).
+Tout est dans l'espace de noms « mg » : aucune texture vanilla n'est remplacée, sauf le modèle du bloc de test et sauf les fichiers de Scourge of the Floaty Isles (zips seulement, cf. ci-dessous et README, section Floaty).
+Sortie : resourcepack/ (dossier), releases/neomc_resourcepack.zip (pack serveur forcé : taille affichée) et, avec NEOMC_FLOATY_RP, releases/floaty_optional_resourcepack.zip (remplacements globaux de la carte, optionnel).
+Option : NEOMC_FLOATY_RP=<dossier ou .zip du pack de la carte Scourge of the Floaty Isles> ajoute ses assets/ aux zips (floaty_rp.py, scission par floaty_split.py : les items vanilla redessinés ne s'appliquent que dans mg:floaty, le reste va au pack optionnel). Le zip commité les contient : TOUJOURS poser la variable, sinon le zip perd les fichiers Floaty.
 La carte du lobby (lobbymap_rp.py) est rendue depuis data/mg/function : lancer après les générateurs du spawn (gen_lobby, gen_hall, gen_pvpcave, gen_foot, gen_gta, gen_terranova, gen_ombrelune).
 """
-import hashlib, json, math, os, struct, sys, zipfile, zlib
+import json, math, os, struct, sys, zipfile, zlib
 
 R = sys.argv[1]
 OUT = os.path.join(R, 'resourcepack')
@@ -337,11 +338,19 @@ exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dino_rp.py')
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ol_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'foot_rp.py'), encoding='utf-8').read())
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lobbymap_rp.py'), encoding='utf-8').read())
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'floaty_rp.py'), encoding='utf-8').read())
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'floaty_split.py'), encoding='utf-8').read())
+PACK_FMT = {"min_format": [88, 0], "max_format": [88, 99]}   # pack_format des deux packs (floaty_split vérifie qu'il couvre la version du manifeste)
+# fichiers de Scourge of the Floaty Isles (variable NEOMC_FLOATY_RP) : pack serveur, pack optionnel ; zips seulement. Les fichiers identiques à ceux de
+# NeoMC ne sont retirés qu'après la scission (floaty_settle), qui refuse aussi un fichier généré en conflit avec un fichier NeoMC.
+FLOATY_EXTRA, FLOATY_OPT = floaty_settle(*floaty_split(floaty_extra(OUT, keep_same=True), PACK_FMT), OUT)
+if FLOATY_EXTRA or FLOATY_OPT:
+    print(f'floaty : {len(FLOATY_EXTRA)} fichier(s) ajoutés au pack serveur, {len(FLOATY_OPT)} au pack optionnel')
 
 # ------------------------------------------------------------------ pack.mcmeta, zip
 wjson(os.path.join(OUT, 'pack.mcmeta'), {"pack": {"description": [{"text": "NeoMC Mini-Jeux", "color": "gold"},
                                                                      {"text": "\nKart 3D, objets Mario Kart, spawn", "color": "gray"}],
-                                                  "min_format": [88, 0], "max_format": [88, 99]}})
+                                                  **PACK_FMT}})
 z = os.path.join(R, 'releases', 'neomc_resourcepack.zip')
 os.makedirs(os.path.dirname(z), exist_ok=True)
 with zipfile.ZipFile(z, 'w', zipfile.ZIP_DEFLATED) as zf:
@@ -352,5 +361,16 @@ with zipfile.ZipFile(z, 'w', zipfile.ZIP_DEFLATED) as zf:
             info = zipfile.ZipInfo(os.path.relpath(p, OUT).replace(os.sep, '/'), date_time=(2026, 1, 1, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             zf.writestr(info, open(p, 'rb').read())
-sha = hashlib.sha1(open(z, 'rb').read()).hexdigest()
-print('resource pack :', z, '| sha1', sha, '|', os.path.getsize(z), 'octets')
+    floaty_write(zf, FLOATY_EXTRA)
+print('resource pack :', z, '|', os.path.getsize(z), 'octets')
+if FLOATY_OPT:
+    zo = os.path.join(R, 'releases', 'floaty_optional_resourcepack.zip')
+    floaty_write_opt(zo, FLOATY_OPT, {"pack": {"description": [{"text": "NeoMC - Floaty (optionnel)", "color": "gold"},
+                                                                  {"text": "\nTextures de la carte qui remplacent le vanilla partout", "color": "gray"}],
+                                               **PACK_FMT}})
+    print('resource pack optionnel :', zo, '|', os.path.getsize(zo), 'octets')
+else:
+    if FLOATY_ENV in os.environ:
+        print('floaty : aucun remplacement global dans la carte : pack optionnel NON écrit, releases/floaty_optional_resourcepack.zip inchangé')
+    else:
+        print('floaty : pack optionnel NON écrit (NEOMC_FLOATY_RP absente) : releases/floaty_optional_resourcepack.zip inchangé')

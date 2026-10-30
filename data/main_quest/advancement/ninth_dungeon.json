@@ -1,0 +1,36 @@
+{
+    "display": {
+        "title": {
+            "text": "Aqualung",
+            "color": "blue"
+        },
+        "description": {
+            "text": "Free the Lord of Water from Wellspring Manor"
+        },
+        "icon": {
+            "id": "minecraft:egg",
+            "components": {
+                "minecraft:custom_model_data": {
+                    "strings": [
+                        "9"
+                    ]
+                }
+            }
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "main_quest:eighth_dungeon"
+}

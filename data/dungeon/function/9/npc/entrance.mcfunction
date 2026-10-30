@@ -1,0 +1,2 @@
+execute as @a[tag=mg.flw] at @s run playsound minecraft:entity.frog.death neutral @s ~ ~ ~ 1 0.7
+execute as @a[tag=mg.flw] at @s run tellraw @s [{"text":"<"},{"text":"Frogcrates","color":"#44BBFF"},{"text":"> This is it,","color":"white"},{"text":" Wellspring Manor","color":"#44BBFF"},{"text":", my mind palace! I store a lot of private memories here, so please be careful. I can see you, but I don't see the ","color":"white"},{"text":"Lord of Water ","color":"blue"},{"text":"yet, let me do a quick sweep of my memories...","color":"white"}]

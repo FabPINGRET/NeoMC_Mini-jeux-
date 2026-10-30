@@ -1,0 +1,37 @@
+{
+    "display": {
+        "title": {
+            "text": "Kinetomancy",
+            "color": "red"
+        },
+        "description": {
+            "text": "Give the Spine Sigil to Aprentix",
+            "color": "dark_purple"
+        },
+        "icon": {
+            "id": "minecraft:flint",
+            "components": {
+                "minecraft:custom_model_data": {
+                    "strings": [
+                        "16"
+                    ]
+                }
+            }
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest:wizerm_start"
+}

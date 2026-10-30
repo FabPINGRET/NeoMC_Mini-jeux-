@@ -1,0 +1,29 @@
+{
+  "attributes": {
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "minecraft:snowflake"
+        },
+        "probability": 0.002
+      }
+    ],
+    "minecraft:visual/sky_color": "#B6F1FC",
+    "minecraft:visual/fog_color": "#D3EBF0",
+    "minecraft:visual/water_fog_color": "#FFFFFF"
+    },
+  "temperature": 0.1,
+  "downfall": 0.4,
+  "precipitation": "none",
+  "has_precipitation": true,
+  "temperature_modifier": "none",
+  "effects": {
+    "water_color": "#FFFFFF",
+    "grass_color": "#B6F1FC",
+    "foliage_color": "#B6F1FC"
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": [],
+  "features": []
+}

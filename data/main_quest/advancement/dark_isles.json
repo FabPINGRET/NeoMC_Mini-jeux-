@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "The Dark Isles",
+            "color": "dark_purple"
+        },
+        "description": {
+            "text": "Complete story quests in the Dark Isles..."
+        },
+        "icon": {
+            "id": "minecraft:warped_nylium"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "main_quest:root"
+}

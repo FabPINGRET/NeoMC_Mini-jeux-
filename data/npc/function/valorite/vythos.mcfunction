@@ -1,0 +1,9 @@
+execute at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.armadillo.death neutral @a[tag=mg.flw] ~ ~ ~ 1 0.5
+execute if score Inventory Amulet matches 0 if block 9899 57 -242 air at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Vythos","color":"#D47453"},{"text":"> The ","color":"white"},{"text":"Ember Depot","color":"aqua"},{"text":" was where we melted down scrap and garbage, but they locked our ","color":"white"},{"text":"Lord of Flame ","color":"red"},{"text":"inside! The key was taken by monsters, and I fear there is no one to rescue him.","color":"white"}]
+execute if score Inventory Amulet matches 0 unless block 9899 57 -242 air at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Vythos","color":"#D47453"},{"text":"> The ","color":"white"},{"text":"Ember Depot","color":"aqua"},{"text":" was where we melted down scrap and garbage, but they locked our ","color":"white"},{"text":"Lord of Flame ","color":"red"},{"text":"inside! Be careful, there are some ","color":"white"},{"text":"monsters with shields ","color":"gold"},{"text":"in there. They ","color":"white"},{"text":"don't take much damage from arrows","color":"gold"},{"text":".","color":"white"}]
+
+execute if score Inventory Amulet matches 1 at @e[sort=nearest,limit=1,tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Vythos","color":"#D47453"},{"text":"> The ","color":"white"},{"text":"Lord of Flame","color":"red"},{"text":" has returned! He walked right out of there and gave me a pat on the head before heading to ","color":"white"},{"text":"Valor Tower","color":"red"},{"text":".","color":"white"}]
+
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

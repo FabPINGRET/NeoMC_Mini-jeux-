@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Clink!",
+            "color": "white"
+        },
+        "description": {
+            "text": "Obtain all 3 glass bottles"
+        },
+        "icon": {
+            "id": "minecraft:glass_bottle"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:misc"
+}

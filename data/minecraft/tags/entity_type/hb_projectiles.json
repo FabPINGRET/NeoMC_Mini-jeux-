@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:arrow",
+    "minecraft:spectral_arrow",
+    "minecraft:trident",
+    "minecraft:wither_skull",
+    "minecraft:small_fireball",
+    "minecraft:dragon_fireball",
+    "minecraft:fireball",
+    "minecraft:llama_spit",
+    "minecraft:wind_charge",
+    "minecraft:splash_potion",
+    "minecraft:lingering_potion"
+  ]
+}

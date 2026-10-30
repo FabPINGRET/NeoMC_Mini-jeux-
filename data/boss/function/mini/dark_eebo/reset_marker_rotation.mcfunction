@@ -1,0 +1,8 @@
+data modify entity @n[tag=deebo_marker,tag=1,distance=0..] Rotation set value [270.0f, 0.0f]
+data modify entity @n[tag=deebo_marker,tag=2,distance=0..] Rotation set value [0.0f, 0.0f]
+data modify entity @n[tag=deebo_marker,tag=3,distance=0..] Rotation set value [0.0f, 0.0f]
+data modify entity @n[tag=deebo_marker,tag=4,distance=0..] Rotation set value [90.0f, 0.0f]
+data modify entity @n[tag=deebo_marker,tag=5,distance=0..] Rotation set value [90.0f, 0.0f]
+data modify entity @n[tag=deebo_marker,tag=6,distance=0..] Rotation set value [180.0f, 0.0f]
+data modify entity @n[tag=deebo_marker,tag=7,distance=0..] Rotation set value [180.0f, 0.0f]
+data modify entity @n[tag=deebo_marker,tag=8,distance=0..] Rotation set value [270.0f, 0.0f]

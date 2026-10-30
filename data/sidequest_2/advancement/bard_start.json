@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "A Song For All Cultures...",
+            "color": "aqua"
+        },
+        "description": {
+            "text": "Meet Brendeloy at his Song Library"
+        },
+        "icon": {
+            "id": "minecraft:goat_horn"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:collection"
+}

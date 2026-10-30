@@ -1,0 +1,39 @@
+{
+    "display": {
+        "title": {
+            "text": "The Spark",
+            "color": "green"
+        },
+        "description": {
+            "text": "Defeat Knotfire"
+        },
+        "icon": {
+            "id": "minecraft:player_head",
+            "components": {
+                "minecraft:profile": {
+                    "properties": [
+                        {
+                            "name": "textures",
+                            "value": "ewogICJ0aW1lc3RhbXAiIDogMTc1Njg3MDM2OTY4NywKICAicHJvZmlsZUlkIiA6ICJhODgyMzAzMDVkOWY0ODRiYjNjNjc2OTg1OTYxYjc2YSIsCiAgInByb2ZpbGVOYW1lIiA6ICJMb3JkRHJld3BpY3VzIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JiNGNiNjNiYjliZjMyMDFkYjUxNDQwNTA4N2Q2M2IzNjU3OGQ4NWU5YWU1MDRlZWYyYTMwOTgyYTRhZmFjNWYiCiAgICB9CiAgfQp9"
+                        }
+                    ]
+                }
+            }
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest_2:mb_choir"
+}

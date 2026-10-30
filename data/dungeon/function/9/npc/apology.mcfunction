@@ -1,0 +1,2 @@
+execute as @a[tag=mg.flw] at @s run playsound minecraft:entity.frog.death neutral @s ~ ~ ~ 1 0.7
+execute as @a[tag=mg.flw] at @s run tellraw @s [{"text":"<"},{"text":"Frogcrates","color":"#44BBFF"},{"text":"> I'm sorry nasty thoughts have been attacking you. Regretfully, I don't have conscious control over everything in here. It's a construct to hold things important for me to remember, but the details are filled in by the more primitive corners of my mind.","color":"white"}]

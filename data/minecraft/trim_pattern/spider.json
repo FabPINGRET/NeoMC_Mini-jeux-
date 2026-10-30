@@ -1,0 +1,7 @@
+{
+  "asset_id": "spider",
+  "description": {
+    "translate": "Spider Armor Trim"
+  },
+  "template_item": "minecraft:cobweb"
+}

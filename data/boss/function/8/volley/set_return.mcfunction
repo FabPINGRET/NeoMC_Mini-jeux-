@@ -1,0 +1,9 @@
+execute if score boss:fs BossHealth matches 10 run scoreboard players set boss:fs_return Value 0
+execute if score boss:fs BossHealth matches 9 run scoreboard players set boss:fs_return Value 1
+execute if score boss:fs BossHealth matches 8 run scoreboard players set boss:fs_return Value 1
+execute if score boss:fs BossHealth matches 7 run scoreboard players set boss:fs_return Value 2
+execute if score boss:fs BossHealth matches 6 run scoreboard players set boss:fs_return Value 2
+execute if score boss:fs BossHealth matches 5 run scoreboard players set boss:fs_return Value 3
+execute if score boss:fs BossHealth matches 4 run scoreboard players set boss:fs_return Value 3
+execute if score boss:fs BossHealth matches 3 run scoreboard players set boss:fs_return Value 4
+execute if score boss:fs BossHealth matches 2 run scoreboard players set boss:fs_return Value 4

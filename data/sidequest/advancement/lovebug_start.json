@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Live, Laugh, Lovebug",
+            "color": "light_purple"
+        },
+        "description": {
+            "text": "Meet the Lovebug in her Bungalow"
+        },
+        "icon": {
+            "id": "minecraft:pink_petals"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest:root"
+}

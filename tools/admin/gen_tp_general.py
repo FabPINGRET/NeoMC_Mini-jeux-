@@ -30,6 +30,7 @@ DEST = [
         f'execute as @a[{FREE},tag=mg.tvw] run function mg:terra/leave',
         f'execute as @a[{FREE},tag=mg.olw] run function mg:ombre/leave',
         f'execute as @a[{FREE},tag=mg.fnw] run function mg:filon/leave',
+        f'execute as @a[{FREE},tag=mg.flw] run function mg:floaty/leave',
         f'execute as @a[{FREE},tag=!mg.surv] run function mg:survie/enter',
         'tellraw @a [{"text":"🌍 ","color":"gold"},{"selector":"@s","color":"yellow"},{"text":" a envoyé tout le monde en survie.","color":"gray"}]']),
     ('gta', '🚓 Tout le monde → Neo GTA', 'gold', 'Les joueurs en survie ou sur leur plot en sortent d\'abord (tout est sauvegardé)', 64, [

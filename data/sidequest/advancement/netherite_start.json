@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "The Light of Oaths",
+            "color": "light_purple"
+        },
+        "description": {
+            "text": "Receive an Oath from the Moon Queen"
+        },
+        "icon": {
+            "id": "minecraft:netherite_sword"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest:root"
+}

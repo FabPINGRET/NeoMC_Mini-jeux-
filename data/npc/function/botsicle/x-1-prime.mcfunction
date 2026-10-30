@@ -1,0 +1,22 @@
+execute if score bot_lycan bool matches 0 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:block.trial_spawner.detect_player neutral @a[tag=mg.flw] ~ ~ ~ 1 1.5
+execute if score bot_lycan bool matches 1 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ run playsound minecraft:entity.sniffer.eat neutral @a[tag=mg.flw] ~ ~ ~ 1 0.1
+
+execute if score bot_lycan bool matches 0 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ run kill @n[tag=quest_marker,distance=..3]
+
+execute if score moonlight_contagion bool matches 0 if score bot_lycan bool matches 0 if score v_paladin Story matches 0 run setblock 9963 51 8 minecraft:redstone_block
+execute if score moonlight_contagion bool matches 0 if score bot_lycan bool matches 0 if score v_paladin Story matches 0 run scoreboard players set v_paladin Story 1
+
+
+execute if score moonlight_contagion bool matches 0 if score bot_lycan bool matches 0 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"X-1 Prime","color":"aqua"},{"text":"> We Botsicles are cursed. The abhorrent","color":"white"},{"text":" Moonlight Contagion ","color":"aqua"},{"text":"has put us under a lycanthropic spell that causes us to morph into disgusting ","color":"white"},{"text":"Walrobotic Wereblubs","color":"#825440"},{"text":" at night. Please, rid us of this curse! The Contagion has nested in","color":"white"},{"text":" Moonbeacon Tower","color":"aqua"},{"text":", protected by an armor-clad fiend. I would ask the ","color":"white"},{"text":"Lord of Ice","color":"aqua"},{"text":" to fight for us, but he was locked away inside","color":"white"},{"text":" Frostbolt Spire","color":"aqua"},{"text":"...","color":"white"},{"text":" bzzrt...","color":"gray","italic":true}]
+
+execute if score moonlight_contagion bool matches 1 if score Inventory IcelightScepter matches 0 if score bot_lycan bool matches 0 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"X-1 Prime","color":"aqua"},{"text":"> The curse has been lifted! But the","color":"white"},{"text":" Lord of Ice ","color":"aqua"},{"text":"is still trapped inside ","color":"white"},{"text":"Frostbolt Spire","color":"aqua"},{"text":". Even I cannot calculate what you may find inside. We had been using the Spire to experiment with a ","color":"white"},{"text":"magic spell","color":"light_purple"},{"text":" that can harness the power of ","color":"white"},{"text":"Blitzite","color":"aqua"},{"text":" before all of this started.","color":"white"},{"text":" bzzrt...","color":"gray","italic":true}]
+
+execute if score Inventory IcelightScepter matches 1 if score bot_lycan bool matches 0 unless score lord_of_valor Story matches 1 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"X-1 Prime","color":"aqua"},{"text":"> Thank you for freeing our Lord! The ","color":"white"},{"text":"Botsicles","color":"aqua"},{"text":" are eternally indebted to you. We've set up ","color":"white"},{"text":"Blitzite stands","color":"aqua"},{"text":" at a few markets around the Isles, please visit them anytime!","color":"white"},{"text":" bzzrt...","color":"gray","italic":true}]
+
+execute if score Inventory IcelightScepter matches 1 if score bot_lycan bool matches 0 if score lord_of_valor Story matches 1 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"X-1 Prime","color":"aqua"},{"text":"> Me, a seventh Lord? Hmm, I'm afraid I'll have to refuse. The Isles aren't ready for a Lord of my particular demographic. Maybe in a few years, but not right now.","color":"white"},{"text":" bzzrt...","color":"gray","italic":true}]
+
+execute if score bot_lycan bool matches 1 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ as @p[tag=mg.flw] unless items entity @s weapon.* blaze_rod run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Eckswunprime","color":"#825440"},{"text":"> Guhhh...","color":"white"}]
+execute if score bot_lycan bool matches 1 at @n[tag=npc,distance=0..] positioned ~ ~1 ~ as @p[tag=mg.flw] if items entity @s weapon.* blaze_rod run tellraw @a[distance=..10,tag=mg.flw] [{"text":"<"},{"text":"Eckswunprime","color":"#825440"},{"text":"> I'm so blubbery... And uncomfortable...","color":"white"}]
+
+#execute if score quest_name Story matches 0
+#execute if score mainstory story >= 0 Value 

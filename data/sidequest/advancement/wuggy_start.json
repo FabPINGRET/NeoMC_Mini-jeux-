@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "Wuggy the Tinker",
+            "color": "white"
+        },
+        "description": {
+            "text": "Meet Wuggy, who can fuse scales to your weapon"
+        },
+        "icon": {
+            "id": "minecraft:anvil"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest:root"
+}

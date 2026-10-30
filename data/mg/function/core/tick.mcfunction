@@ -18,6 +18,7 @@ execute if score $setup mg.st matches 1 run function mg:gun/cl_tick
 function mg:gta/pre_tick
 function mg:terra/pre_tick
 function mg:ombre/pre_tick
+function mg:floaty/pre_tick
 function mg:survie/tick
 execute as @a[scores={mg.dice=5..10}] run function mg:party/menu_cmd
 execute as @a[scores={mg.dice=3}] unless score $game mg.st matches 59 run function mg:party/menu_nomap
@@ -125,6 +126,7 @@ function mg:gta/lobby_tick
 function mg:terra/lobby_tick
 function mg:ombre/lobby_tick
 function mg:filon/lobby_tick
+function mg:floaty/lobby_tick
 
 # Parkour du lobby
 execute if score $setup mg.st matches 1 run function mg:parkour/tick

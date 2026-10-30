@@ -1,0 +1,29 @@
+{
+    "display": {
+        "title": {
+            "text": "The Undercroft",
+            "color": "dark_purple"
+        },
+        "description": {
+            "text": "Meet Quarsheesha in the Undercroft"
+        },
+        "icon": {
+            "id": "minecraft:iron_nugget"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "sidequest:root"
+}

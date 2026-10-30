@@ -1,0 +1,30 @@
+{
+    "display": {
+        "title": {
+            "text": "Dungeons",
+            "color": "dark_aqua",
+            "bold": false
+        },
+        "description": {
+            "text": "Complete large dungeons throughout the Isles..."
+        },
+        "icon": {
+            "id": "minecraft:vault"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "main_quest:root"
+}

@@ -84,6 +84,11 @@ scoreboard objectives add mg.gmtime dummy
 scoreboard objectives add mg.gmsec dummy
 scoreboard objectives add mg.gnit dummy
 scoreboard objectives add mg.gmvk dummy
+# Floaty : pas de session au chargement (le point de contrôle et les drapeaux du groupe, eux, sont gardés) ; le chunk forcé est persisté dans le monde :
+# après un arrêt en pleine session il resterait forcé à vie, session_start le recharge au besoin
+scoreboard players set $flw mg.st 0
+execute in mg:floaty run forceload remove -9776 416 -9761 431
+scoreboard objectives add mg.fla dummy
 # Filon : constantes, cours, équipe, barre ; pas de zone chargée hors session ; île construite une fois (~1 s)
 function mg:filon/consts
 scoreboard players set $fnw mg.st 0

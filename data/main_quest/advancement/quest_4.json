@@ -1,0 +1,37 @@
+{
+    "display": {
+        "title": {
+            "text": "Peaceful Transfer of Power",
+            "color": "aqua",
+            "bold": false
+        },
+        "description": {
+            "text": "Drive Lord Morbex out of Valor Tower"
+        },
+        "icon": {
+            "id": "minecraft:iron_sword",
+            "components": {
+                "minecraft:custom_model_data": {
+                    "strings": [
+                        "100"
+                    ]
+                }
+            }
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "criteria": {
+        "impossible": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "requirements": [
+        [
+            "impossible"
+        ]
+    ],
+    "parent": "main_quest:dark_isles"
+}
