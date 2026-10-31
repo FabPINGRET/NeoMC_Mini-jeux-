@@ -1,4 +1,4 @@
-# Parcours d'élytra et élytres libres : construction (généré par tools/elytra/gen_elytra.py)
+# Parcours d'élytra : construction (généré par tools/elytra/gen_elytra.py)
 kill @e[tag=mg.elyd]
 data modify storage mg:lobby ely4 set value 1b
 
@@ -186,12 +186,4 @@ setblock 30 198 51 minecraft:sea_lantern
 setblock 30 204 45 minecraft:sea_lantern
 setblock 30 204 51 minecraft:sea_lantern
 summon minecraft:text_display 30.5 205.2 48.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"🏁","color":"white","bold":true}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[2f,2f,2f]}}
-
-# ===== Élytres libres
-fill 22 63 -12 26 63 -8 minecraft:smooth_quartz
-fill 23 63 -11 25 63 -9 minecraft:white_concrete
-setblock 24 63 -10 minecraft:sea_lantern
-summon minecraft:item_display 24.5 66 -9.5 {Tags:["mg.elyd","mg.lspin","mg.lbob"],billboard:"fixed",item:{id:"minecraft:elytra"},transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.4f,1.4f,1.4f]}}
-summon minecraft:text_display 24.5 67.8 -9.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"🪽 Élytres libres","color":"white","bold":true}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[1.2f,1.2f,1.2f]}}
-summon minecraft:text_display 24.5 67.3 -9.5 {Tags:["mg.elyd"],billboard:"center",background:0,text:[{"text":"Vol autour du spawn, fusées illimitées — remonte dessus pour les rendre","color":"gray"}],transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.7f,0.7f,0.7f]}}
 function mg:elytra/spawn_clean

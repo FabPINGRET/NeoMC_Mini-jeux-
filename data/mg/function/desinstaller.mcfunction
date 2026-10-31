@@ -1071,7 +1071,7 @@ schedule clear mg:elytra/build
 kill @e[tag=mg.hubp]
 data remove storage mg:hub oldclean
 data remove storage mg:hub floaty
-data remove storage mg:lobby decofix3
+data remove storage mg:lobby decofix4
 schedule clear mg:core/setup_lobby_done
 schedule clear mg:hub/build
 schedule clear mg:lobby/fish/build
@@ -1098,6 +1098,8 @@ scoreboard objectives remove mg.ehw
 clear @a minecraft:elytra[minecraft:custom_data~{mg_elyf:1b}]
 clear @a minecraft:firework_rocket[minecraft:custom_data~{mg_elyf:1b}]
 tag @a remove mg.elyf
+clear @a *[minecraft:custom_data~{mg_elyf:1b}]
+tag @a remove mg.lgear
 tag @a remove mg.efp
 scoreboard objectives remove mg.ecr
 scoreboard objectives remove mg.erb2

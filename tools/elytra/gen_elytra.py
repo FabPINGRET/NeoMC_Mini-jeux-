@@ -1,17 +1,18 @@
-"""Parcours d'élytra du spawn + élytres libres : génère data/mg/function/elytra/*.mcfunction.
+"""Parcours d'élytra du spawn + élytres permanentes au spawn : génère data/mg/function/elytra/*.mcfunction.
 
 Deux parcours chronométrés au-dessus de l'île, hors du volume vidé par la reconstruction
 du lobby (y > 125) et loin des murs de barrières des plots :
   1. petit parcours : boucle carrée, 8 anneaux, plateforme à y 175 (4 fusées) ;
   2. grand parcours : serpentin sur 5 lignes, 15 anneaux, plateforme à y 300 (6 fusées),
      entièrement au-dessus du petit (y > 195).
-Plus un socle « élytres libres » (vol autour du spawn, fusées illimitées).
+Plus l'équipement permanent du spawn (tag mg.lgear, objets custom_data mg_elyf) : élytres, fusées illimitées, ⚡ Vitesse et
+🐇 Super saut (bonus d'attribut tant que l'objet est en main), donnés à tout joueur en aventure au spawn et pas occupé ailleurs,
+retirés dès qu'il quitte le spawn ou entre en partie, parkour, kart, parcours d'élytra... Le socle « élytres libres » n'existe plus.
 Lancer depuis la racine du dépôt : python3 tools/elytra/gen_elytra.py
 """
 import os
 
 OUT = os.path.join('data', 'mg', 'function', 'elytra')
-FREE = (24, 63, -10)                  # socle « élytres libres » (côté gauche de l'avenue, en allant vers l'est)
 DISP = 'transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[%sf,%sf,%sf]}'
 COL = ['light_blue', 'magenta', 'lime', 'orange']
 
@@ -52,7 +53,7 @@ C = {
 os.makedirs(OUT, exist_ok=True)
 
 # ---------------------------------------------------------------- construction
-b = ['# Parcours d\'élytra et élytres libres : construction (généré par tools/elytra/gen_elytra.py)',
+b = ['# Parcours d\'élytra : construction (généré par tools/elytra/gen_elytra.py)',
      'kill @e[tag=mg.elyd]', 'data modify storage mg:lobby ely4 set value 1b']
 def pad(p, col, title, sub, tcol):
     px, py, pz = p
@@ -82,7 +83,6 @@ for c, d in C.items():
         b += [f'setblock {cx} {cy} {cz} minecraft:sea_lantern' for cx, cy, cz in corners]
         label = f'{i}' if i < N else '🏁'
         b.append(f'summon minecraft:text_display {x+.5} {y+4.2} {z+.5} {{Tags:["mg.elyd"],billboard:"center",background:0,text:[{{"text":"{label}","color":"white","bold":true}}],{DISP % (2, 2, 2)}}}')
-b += ['', '# ===== Élytres libres'] + pad(FREE, 'white_concrete', '🪽 Élytres libres', 'Vol autour du spawn, fusées illimitées — remonte dessus pour les rendre', 'white')
 b += ['function mg:elytra/spawn_clean']
 W('build', b)
 # Abords des socles au spawn (avenue du parkour) : haie/banc/lampadaire de la bordure retirés, arbres qui masquaient les socles
@@ -92,10 +92,10 @@ SC = ['# Accès aux socles d\'élytra depuis l\'avenue du parkour (généré par
 for (x1, z1, x2, z2) in ((14, -11, 18, -7), (30, -17, 34, -13), (14, -23, 18, -19), (30, -12, 34, -4), (15, -18, 17, -12)):
     SC.append(f'fill {x1} 63 {z1} {x2} 63 {z2} minecraft:grass_block')
 SC.append('fill 29 64 -4 35 64 -4 minecraft:azalea_leaves[persistent=true]')          # haie du nord rétablie
-# nord : socle des élytres libres, à gauche de l'avenue (haie percée en x 21..27, allée pavée)
-for (x1, z1, x2, z2) in ((20, -19, 30, -7),):                                       # arbres entre l'avenue et le socle
+# nord : ancien socle des élytres libres (24, -10), sa haie percée et son allée : rendus par hub/decofix (plus construits ici) ;
+# le bosquet de cerisiers ci-dessous garde sa clairière (arbres d'origine retirés)
+for (x1, z1, x2, z2) in ((20, -19, 30, -7),):
     SC += [f'fill {x1} 64 {z1} {x2} 78 {z2} minecraft:air replace #minecraft:leaves', f'fill {x1} 64 {z1} {x2} 78 {z2} minecraft:air replace #minecraft:logs']
-SC += ['fill 21 64 -4 27 72 -4 minecraft:air', 'fill 22 64 -7 26 70 -5 minecraft:air', 'fill 22 63 -7 26 63 -5 minecraft:stone_bricks']   # ancien passage (x 13..19) : rendu par hub/decofix
 # sud (à droite de l'avenue) : petit parcours en (16, 9), grand parcours en (32, 15) ; haie percée en z 4
 # sud, anciens socles (petit en (16, 9), grand en (32, 15)) et leurs allées rendus à l'herbe, haie de l'avenue refermée (z 4)
 for (x1, z1, x2, z2) in ((14, 5, 18, 11), (30, 5, 31, 17), (32, 12, 34, 17)):      # sans toucher au nouveau socle (32..36, 7..11)
@@ -111,7 +111,7 @@ for (x1, z1, x2, z2) in ((22, 5, 26, 6), (32, 5, 36, 6)):                       
     SC += [f'fill {x1} 64 {z1} {x2} 70 {z2} minecraft:air', f'fill {x1} 63 {z1} {x2} 63 {z2} minecraft:stone_bricks']
 # ancienne balise blanche des élytres (21, 63, -15) : supprimée
 SC += ['fill 20 62 -16 22 62 -14 minecraft:dirt', 'setblock 21 63 -15 minecraft:grass_block', 'setblock 21 64 -15 minecraft:air']   # trou rebouché
-# quelques cerisiers autour des élytres libres (hors des boîtes d'arbres coupés ci-dessus : x 20..30, z -19..-7)
+# bosquet de cerisiers au nord de l'avenue (hors des boîtes d'arbres coupés ci-dessus : x 20..30, z -19..-7)
 for (tx, tz) in ((16, -10), (34, -10), (17, -18), (36, -17)):   # hors de la boîte d'eau de l'étang (x 22..35, z -35..-22 : theme_water)
     SC += [f'# cerisier en ({tx}, {tz})',
            f'fill {tx - 2} 67 {tz - 1} {tx + 2} 68 {tz + 1} minecraft:cherry_leaves[persistent=true]',
@@ -234,47 +234,93 @@ st += ['effect give @s minecraft:resistance 3 4 true', 'function mg:core/heal',
        'scoreboard players set @s mg.ehw 0']
 W('stop', st)
 
-# ---------------------------------------------------------------- élytres libres
-ELYF = 'minecraft:elytra[minecraft:custom_data={mg_elyf:1b},minecraft:unbreakable={},minecraft:enchantments={"minecraft:binding_curse":1},minecraft:custom_name={"text":"Élytres du spawn","color":"white","italic":false}]'
+# ---------------------------------------------------------------- équipement permanent du spawn (élytres, fusées, vitesse, saut)
+# Tag mg.lgear (PAS mg.elyf : ce tag-là compte comme « occupé » pour les portails, le duel, les emotes...). Tout objet porte
+# custom_data mg_elyf : un seul clear le retire. Base des objets en main : pomme de terre empoisonnée sans nourriture ni consommation
+# (aucune recette ne l'utilise : la table de craft du spawn ne peut pas s'en servir), habillée par item_model.
+LOBBY_BOX = 'x=-80,y=30,z=-80,dx=160,dy=120,dz=160'                 # = theme_world.LOBBY_BOX
+# Occupé ailleurs = pas d'équipement : sit_item.BUSY (partie, survie, plot, visite, parkour, kart, parcours d'élytra, duel, GTA,
+# Terra Nova, Mini Party, arène PvP, ragoût) sans mg.elyf
+GEAR_BUSY = ['mg.play', 'mg.out', 'mg.surv', 'mg.inplot', 'mg.visit', 'mg.pkr', 'mg.lk', 'mg.ely', 'mg.xso', 'mg.dl', 'mg.gtw',
+             'mg.tvw', 'mg.mpp', 'mg.pvpc', 'mg.thbun', 'mg.thmini']
+ANY = '*[minecraft:custom_data~{mg_elyf:1b}]'
+ELYF = ('minecraft:elytra[minecraft:custom_data={mg_elyf:1b},minecraft:unbreakable={},minecraft:enchantments={"minecraft:binding_curse":1},'
+        'minecraft:attribute_modifiers=[{type:"minecraft:fall_damage_multiplier",id:"mg:lobby_fall",amount:-1,operation:"add_multiplied_total",slot:"chest"}],'
+        'minecraft:custom_name={"text":"Élytres du spawn","color":"white","italic":false}]')
 ROCF = 'minecraft:firework_rocket[minecraft:custom_data={mg_elyf:1b},minecraft:fireworks={flight_duration:1},minecraft:custom_name={"text":"Fusée du spawn","color":"gold","italic":false}]'
-W('free_pad', ['# Socle « élytres libres » (@s, une fois par passage) : prendre ou rendre',
-    'tag @s add mg.efp',
-    'execute if entity @s[tag=mg.pkr] run return run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Pas d\'élytres pendant le parkour.","color":"red"}]',
-    'execute if entity @s[tag=mg.elyf] run return run function mg:elytra/free_off',
-    'tag @s add mg.elyf',
-    f'item replace entity @s armor.chest with {ELYF}',
-    f'give @s {ROCF} 3',
-    'effect give @s minecraft:resistance 600 4 true',
-    'effect give @s minecraft:levitation 2 14 true',
-    'execute at @s run playsound minecraft:entity.ender_dragon.flap master @s ~ ~ ~ 0.8 1.4',
-    'title @s actionbar [{"text":"🪽 Ouvre tes élytres en l\'air (Espace) — fusées illimitées. Remonte sur le socle pour les rendre.","color":"white"}]'])
-W('free_tick', ['# Élytres libres, chaque tick (@s) : retirées en partie, en survie, sur un plot, en visite, en parkour',
-    'execute if entity @s[tag=mg.play] run return run function mg:elytra/free_stop',
-    'execute if entity @s[tag=mg.surv] run return run function mg:elytra/free_stop',
-    'execute if entity @s[tag=mg.inplot] run return run function mg:elytra/free_stop',
-    'execute if entity @s[tag=mg.visit] run return run function mg:elytra/free_stop',
-    'execute if entity @s[tag=mg.pkr] run tellraw @s [{"text":"⚠ ","color":"red"},{"text":"Pas d\'élytres pendant le parkour : rendues.","color":"red"}]',
-    'execute if entity @s[tag=mg.pkr] run return run function mg:elytra/free_stop',
-    'execute unless entity @s[gamemode=adventure] run return run function mg:elytra/free_stop',
-    'execute if score $lan mg.t matches 30 run function mg:elytra/free_refill'])
-W('free_refill', ['# Fusées illimitées : jamais moins de 3 (toutes les 2 s), protection renouvelée',
-    'execute store result score $efn mg.st run clear @s minecraft:firework_rocket[minecraft:custom_data~{mg_elyf:1b}] 0',
-    f'execute if score $efn mg.st matches ..2 run give @s {ROCF} 1',
-    'effect give @s minecraft:resistance 600 4 true'])
-W('free_off', ['# Élytres rendues sur le socle (@s)',
-    'function mg:elytra/free_stop',
-    'execute at @s run playsound minecraft:entity.item.pickup master @s ~ ~ ~ 0.8 0.8',
-    'title @s actionbar [{"text":"Élytres rendues.","color":"gray"}]'])
-W('free_stop', ['# Fin du vol libre (@s) : élytres et fusées retirées, courte protection à l\'atterrissage',
+
+
+def held(key, model, name, col, lore, attr, op, amount):
+    return ('minecraft:poisonous_potato[!minecraft:food,!minecraft:consumable,minecraft:item_model="minecraft:' + model + '",'
+            'minecraft:custom_data={mg_elyf:1b,' + key + ':1b},minecraft:max_stack_size=1,minecraft:enchantment_glint_override=true,'
+            f'minecraft:attribute_modifiers=[{{type:"minecraft:{attr}",id:"mg:lobby_{key}",amount:{amount},operation:"{op}",slot:"mainhand"}}],'
+            'minecraft:tooltip_display={hidden_components:["minecraft:attribute_modifiers"]},'
+            f'minecraft:custom_name={{"text":"{name}","color":"{col}","bold":true,"italic":false}},'
+            f'minecraft:lore=[{{"text":"{lore}","color":"gray","italic":false}}]]')
+
+
+SPEED = held('mg_spd', 'sugar', '⚡ Vitesse', 'yellow', 'En main : on marche (et court) deux fois plus vite',
+             'movement_speed', 'add_multiplied_base', 1.0)
+JUMP = held('mg_jmp', 'rabbit_foot', '🐇 Super saut', 'green', 'En main : on saute environ 4 blocs',
+            'jump_strength', 'add_value', 0.4)
+ROCKETS, SLOTS = 3, {'rocket': 'hotbar.5', 'speed': 'hotbar.6', 'jump': 'hotbar.7'}   # le spawn n'utilise que 0..4, emotes en 8
+
+
+def give_one(item, slot, n=1):
+    return [f'execute unless items entity @s {slot} * run return run item replace entity @s {slot} with {item} {n}',
+            f'give @s {item} {n}']
+
+
+W('gear_keep', ['# @s garde-t-il l\'équipement du spawn ? 1 ou 0 (au spawn, overworld, en aventure, pas occupé ailleurs)',
+    'execute at @s unless dimension minecraft:overworld run return 0',
+    f'execute unless entity @s[{LOBBY_BOX},gamemode=adventure,' + ','.join(f'tag=!{t}' for t in GEAR_BUSY) + '] run return 0',
+    'return 1'])
+W('gear_check', ['# @s (gear_keep vrai, toutes les 2 s) : élytres sur le dos, fusées (au moins %d), ⚡ Vitesse et 🐇 Super saut' % ROCKETS,
+    'execute unless entity @s[tag=mg.lgear] run title @s actionbar [{"text":"🪽 Élytres + fusées","color":"white"},{"text":"  ⚡ Vitesse","color":"yellow"},{"text":"  🐇 Super saut","color":"green"},{"text":" : tiens l\'objet en main","color":"gray"}]',
+    'tag @s add mg.lgear',
+    f'execute unless items entity @s armor.chest * run item replace entity @s armor.chest with {ELYF}',
+    f'execute store result score $efn mg.st run clear @s minecraft:firework_rocket[minecraft:custom_data~{{mg_elyf:1b}}] 0',
+    f'execute if score $efn mg.st matches 0 run function mg:elytra/gear_rockets',
+    f'execute if score $efn mg.st matches 1..{ROCKETS - 1} run give @s {ROCF} 1',
+    'execute unless items entity @s container.* *[minecraft:custom_data~{mg_spd:1b}] unless items entity @s player.cursor *[minecraft:custom_data~{mg_spd:1b}] run function mg:elytra/gear_speed',
+    'execute unless items entity @s container.* *[minecraft:custom_data~{mg_jmp:1b}] unless items entity @s player.cursor *[minecraft:custom_data~{mg_jmp:1b}] run function mg:elytra/gear_jump'])
+W('gear_rockets', ['# @s : fusées du spawn rendues'] + give_one(ROCF, SLOTS['rocket'], ROCKETS))
+W('gear_speed', ['# @s : objet ⚡ Vitesse rendu'] + give_one(SPEED, SLOTS['speed']))
+W('gear_jump', ['# @s : objet 🐇 Super saut rendu'] + give_one(JUMP, SLOTS['jump']))
+W('gear_second', ['# Toutes les 2 s (core/tick) : équipement du spawn rendu à qui le garde, objets jetés au sol détruits',
+    f'execute as @e[type=minecraft:item] if items entity @s contents {ANY} run kill @s',
+    'execute as @a[gamemode=adventure] if function mg:elytra/gear_keep run function mg:elytra/gear_check'])
+W('gear_tick', ['# Chaque tick (@s = mg.lgear) : équipement retiré dès qu\'il quitte le spawn ou s\'occupe ailleurs ; protégé en vol plané',
+    'execute unless function mg:elytra/gear_keep run return run function mg:elytra/free_stop',
+    'execute if predicate mg:gliding run effect give @s minecraft:resistance 2 4 true'])
+W('free_stop', ['# Fin de l\'équipement du spawn (@s) : élytres, fusées, ⚡ Vitesse et 🐇 Super saut retirés (appelé aussi à chaque entrée en jeu)',
+    'tag @s remove mg.lgear',
     'tag @s remove mg.elyf',
-    'clear @s minecraft:elytra[minecraft:custom_data~{mg_elyf:1b}]',
-    'clear @s minecraft:firework_rocket[minecraft:custom_data~{mg_elyf:1b}]',
-    'effect clear @s minecraft:levitation',
-    'effect clear @s minecraft:resistance',
-    'effect give @s minecraft:resistance 5 4 true'])
+    f'clear @s {ANY}'])
+TICK_ELY = [
+    '# Parcours d\'élytra : socle de départ, joueurs en vol (généré par tools/elytra/gen_elytra.py)']
+for c, d in C.items():
+    px, py, pz = d['pad']
+    TICK_ELY.append(f'execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.ely,tag=!mg.pkr,gamemode=adventure,'
+                    f'x={px},y={py},z={pz},dx=0.99,dy=2.5,dz=0.99] run function mg:elytra/{"start" if c == 1 else f"start{c}"}')
+TICK_ELY += ['execute as @a[tag=mg.ely] at @s run function mg:elytra/player',
+             '# Équipement permanent du spawn : élytres, fusées, vitesse, saut (gen_elytra.py)',
+             'execute as @a[tag=mg.lgear] run function mg:elytra/gear_tick',
+             'execute if score $setup mg.st matches 1 if score $lan mg.t matches 30 run function mg:elytra/gear_second',
+             f'execute if score $lan mg.t matches 20 run clear @a[tag=!mg.lgear] {ANY}']
+_tp = os.path.join('data', 'mg', 'function', 'core', 'tick.mcfunction')
+_tl = open(_tp, encoding='utf-8').read().split('\n')
+_i = next(k for k, l in enumerate(_tl) if l.startswith('# Parcours d\'élytra : socle de départ'))
+_j = _i + 1
+while _j < len(_tl) and ('elytra/' in _tl[_j] or 'mg_elyf' in _tl[_j] or 'mg.efp' in _tl[_j] or _tl[_j].startswith('# Élytres libres')
+                         or _tl[_j].startswith('# Équipement permanent du spawn')):
+    _j += 1
+_tl[_i:_j] = TICK_ELY
+open(_tp, 'w', encoding='utf-8', newline='\n').write('\n'.join(_tl))
+_patch('desinstaller', 'tag @a remove mg.elyf', f'clear @a {ANY}\ntag @a remove mg.lgear')
 
 # anciens fichiers du premier générateur (un seul parcours)
-for old in ('hud', 'finish'):
+for old in ('hud', 'finish', 'free_pad', 'free_off', 'free_tick', 'free_refill'):   # + anciennes « élytres libres »
     p = os.path.join(OUT, old + '.mcfunction')
     if os.path.exists(p): os.remove(p)
 

@@ -2811,7 +2811,7 @@ fill -9 63 180 -9 63 181 minecraft:white_concrete strict
 setblock -9 63 182 minecraft:stone_bricks strict
 fill -8 63 -62 -8 63 -60 minecraft:dirt_path strict
 fill -8 63 -59 -8 63 -50 minecraft:grass_block strict
-fill -8 63 -49 -8 63 -45 minecraft:purpur_block strict
+fill -8 63 -49 -8 63 -45 minecraft:grass_block strict
 fill -8 63 -44 -8 63 -14 minecraft:grass_block strict
 fill -8 63 -13 -7 63 -13 minecraft:polished_blackstone_bricks strict
 fill -8 63 -12 -8 63 -11 minecraft:polished_diorite strict
@@ -2846,9 +2846,9 @@ setblock -8 63 181 minecraft:stone_bricks strict
 fill -7 63 -69 -2 63 -64 minecraft:grass_block strict
 fill -7 63 -63 -4 63 -60 minecraft:dirt_path strict
 fill -7 63 -59 -7 63 -52 minecraft:grass_block strict
-fill -7 63 -51 -7 63 -49 minecraft:purpur_block strict
-fill -7 63 -48 -7 63 -46 minecraft:obsidian strict
-fill -7 63 -45 -7 63 -43 minecraft:purpur_block strict
+fill -7 63 -51 -7 63 -49 minecraft:grass_block strict
+fill -7 63 -48 -7 63 -46 minecraft:grass_block strict
+fill -7 63 -45 -7 63 -43 minecraft:grass_block strict
 fill -7 63 -42 -7 63 -14 minecraft:grass_block strict
 fill -7 63 -12 -7 63 -10 minecraft:polished_andesite strict
 fill -7 63 -9 -7 63 -7 minecraft:grass_block strict
@@ -2870,9 +2870,9 @@ setblock -7 63 178 minecraft:white_concrete strict
 setblock -7 63 179 minecraft:red_concrete strict
 setblock -7 63 180 minecraft:stone_bricks strict
 fill -6 63 -59 -6 63 -53 minecraft:grass_block strict
-fill -6 63 -52 -6 63 -51 minecraft:purpur_block strict
-fill -6 63 -50 -6 63 -44 minecraft:obsidian strict
-fill -6 63 -43 -6 63 -42 minecraft:purpur_block strict
+fill -6 63 -52 -6 63 -51 minecraft:grass_block strict
+fill -6 63 -50 -6 63 -44 minecraft:grass_block strict
+fill -6 63 -43 -6 63 -42 minecraft:grass_block strict
 fill -6 63 -41 -6 63 -15 minecraft:grass_block strict
 fill -6 63 -14 -4 63 -14 minecraft:polished_blackstone_bricks strict
 fill -6 63 -13 -3 63 -13 minecraft:polished_diorite strict
@@ -2911,11 +2911,11 @@ fill -6 63 177 -5 63 177 minecraft:white_concrete strict
 setblock -6 63 178 minecraft:red_concrete strict
 setblock -6 63 179 minecraft:stone_bricks strict
 fill -5 63 -59 -5 63 -54 minecraft:grass_block strict
-setblock -5 63 -53 minecraft:purpur_block strict
-fill -5 63 -52 -5 63 -47 minecraft:obsidian strict
-fill -5 63 -46 -5 63 -43 minecraft:crying_obsidian strict
-setblock -5 63 -42 minecraft:obsidian strict
-setblock -5 63 -41 minecraft:purpur_block strict
+setblock -5 63 -53 minecraft:grass_block strict
+fill -5 63 -52 -5 63 -47 minecraft:grass_block strict
+fill -5 63 -46 -5 63 -43 minecraft:grass_block strict
+setblock -5 63 -42 minecraft:grass_block strict
+setblock -5 63 -41 minecraft:grass_block strict
 fill -5 63 -40 -5 63 -15 minecraft:grass_block strict
 setblock -5 63 -8 minecraft:stone_bricks strict
 fill -5 63 -7 -5 63 -6 minecraft:water strict
@@ -2945,12 +2945,15 @@ setblock -5 63 167 minecraft:white_concrete strict
 fill -5 63 168 -5 63 176 minecraft:gray_concrete strict
 setblock -5 63 178 minecraft:stone_bricks strict
 fill -4 63 -59 -3 63 -55 minecraft:grass_block strict
-fill -4 63 -54 -4 63 -53 minecraft:purpur_block strict
-fill -4 63 -52 -1 63 -52 minecraft:crying_obsidian strict
-fill -4 63 -51 -4 63 -49 minecraft:obsidian strict
-setblock -4 63 -48 minecraft:crying_obsidian strict
-fill -4 63 -47 -4 63 -42 minecraft:obsidian strict
-fill -4 63 -41 -4 63 -40 minecraft:purpur_block strict
+fill -4 63 -54 -4 63 -53 minecraft:grass_block strict
+setblock -4 63 -52 minecraft:grass_block strict
+setblock -3 63 -52 minecraft:grass_block strict
+setblock -2 63 -52 minecraft:grass_block strict
+setblock -1 63 -52 minecraft:grass_block strict
+fill -4 63 -51 -4 63 -49 minecraft:grass_block strict
+setblock -4 63 -48 minecraft:grass_block strict
+fill -4 63 -47 -4 63 -42 minecraft:grass_block strict
+fill -4 63 -41 -4 63 -40 minecraft:grass_block strict
 fill -4 63 -39 -4 63 -15 minecraft:grass_block strict
 fill -4 63 -9 -1 63 -9 minecraft:stone_bricks strict
 fill -4 63 -8 -4 63 -4 minecraft:water strict
@@ -2980,10 +2983,11 @@ setblock -4 63 176 minecraft:white_concrete strict
 setblock -4 63 177 minecraft:stone_bricks strict
 fill -3 63 -63 -2 63 -61 minecraft:dirt_path strict
 fill -3 63 -60 -2 63 -60 minecraft:coarse_dirt strict
-setblock -3 63 -54 minecraft:purpur_block strict
-fill -3 63 -53 -2 63 -53 minecraft:obsidian strict
-fill -3 63 -51 -3 63 -41 minecraft:obsidian strict
-setblock -3 63 -40 minecraft:purpur_block strict
+setblock -3 63 -54 minecraft:grass_block strict
+setblock -3 63 -53 minecraft:grass_block strict
+setblock -2 63 -53 minecraft:grass_block strict
+fill -3 63 -51 -3 63 -41 minecraft:grass_block strict
+setblock -3 63 -40 minecraft:grass_block strict
 fill -3 63 -39 -3 63 -14 minecraft:polished_andesite strict
 fill -3 63 -8 -3 63 -5 minecraft:water strict
 setblock -3 63 -4 minecraft:polished_blackstone_bricks strict

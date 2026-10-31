@@ -196,7 +196,6 @@ setblock -8 65 181 minecraft:barrier strict
 setblock -7 65 167 minecraft:barrier strict
 setblock -7 65 180 minecraft:barrier strict
 setblock -6 65 -60 minecraft:light[level=12] strict
-setblock -6 65 -42 minecraft:light[level=12] strict
 setblock -6 65 -12 minecraft:light[level=12] strict
 setblock -6 65 0 minecraft:light[level=12] strict
 setblock -6 65 12 minecraft:light[level=12] strict
@@ -229,10 +228,6 @@ setblock -2 65 176 minecraft:barrier strict
 fill -1 65 175 0 65 175 minecraft:barrier strict
 setblock 0 65 -66 minecraft:light[level=12] strict
 setblock 0 65 -60 minecraft:light[level=12] strict
-setblock 0 65 -54 minecraft:light[level=12] strict
-setblock 0 65 -48 minecraft:light[level=12] strict
-setblock 0 65 -47 minecraft:light[level=15] strict
-setblock 0 65 -42 minecraft:light[level=12] strict
 setblock 0 65 -36 minecraft:light[level=12] strict
 setblock 0 65 -30 minecraft:light[level=12] strict
 setblock 0 65 -24 minecraft:light[level=12] strict
@@ -265,7 +260,6 @@ fill 3 65 162 6 65 162 minecraft:barrier strict
 fill 3 65 173 4 65 173 minecraft:barrier strict
 fill 5 65 172 7 65 172 minecraft:barrier strict
 setblock 6 65 -60 minecraft:light[level=12] strict
-setblock 6 65 -42 minecraft:light[level=12] strict
 setblock 6 65 -12 minecraft:light[level=12] strict
 setblock 6 65 0 minecraft:light[level=12] strict
 setblock 6 65 12 minecraft:light[level=12] strict
@@ -768,10 +762,8 @@ setblock -10 66 24 minecraft:oak_leaves[persistent=true] strict
 fill -9 66 -48 -9 67 -46 minecraft:spruce_leaves[persistent=true] strict
 setblock -9 66 14 minecraft:oak_leaves[persistent=true] strict
 setblock -9 66 60 minecraft:coal_block strict
-setblock -8 66 -47 minecraft:end_rod[facing=up] strict
 setblock -8 66 16 minecraft:oak_leaves[persistent=true] strict
 setblock -8 66 24 minecraft:oak_leaves[persistent=true] strict
-fill -6 66 -48 -6 73 -47 minecraft:purpur_block strict
 setblock -6 66 36 minecraft:white_concrete strict
 setblock -6 66 37 minecraft:red_concrete strict
 setblock -5 66 -5 minecraft:sea_lantern strict
@@ -782,10 +774,8 @@ setblock 0 66 72 minecraft:white_concrete strict
 setblock 1 66 174 minecraft:lantern strict
 setblock 5 66 -5 minecraft:sea_lantern strict
 setblock 5 66 5 minecraft:sea_lantern strict
-fill 6 66 -48 6 73 -47 minecraft:purpur_block strict
 setblock 6 66 36 minecraft:white_concrete strict
 setblock 6 66 37 minecraft:red_concrete strict
-setblock 8 66 -47 minecraft:end_rod[facing=up] strict
 setblock 9 66 60 minecraft:coal_block strict
 setblock 10 66 171 minecraft:lantern strict
 setblock 13 66 113 minecraft:lantern strict
@@ -1722,7 +1712,6 @@ setblock -8 69 16 minecraft:oak_leaves[persistent=true] strict
 setblock -8 69 23 minecraft:oak_leaves[persistent=true] strict
 setblock -6 69 36 minecraft:red_concrete strict
 setblock -6 69 37 minecraft:white_concrete strict
-setblock 0 69 -47 minecraft:light[level=15] strict
 setblock 0 69 60 minecraft:black_concrete strict
 setblock 0 69 72 minecraft:black_concrete strict
 fill 6 69 -56 6 70 -55 minecraft:cherry_leaves[persistent=true] strict
@@ -2423,7 +2412,6 @@ fill -22 73 -33 -22 74 -33 minecraft:bamboo[age=0,leaves=large] strict
 fill -21 73 -23 -21 74 -23 minecraft:spruce_leaves[persistent=true] strict
 fill -14 73 -20 -14 74 -20 minecraft:bamboo[age=0,leaves=large] strict
 fill -13 73 -19 -13 74 -19 minecraft:bamboo[age=0,leaves=large] strict
-setblock 0 73 -47 minecraft:light[level=15] strict
 fill 64 73 -4 65 73 -4 minecraft:quartz_bricks strict
 fill 64 73 -3 65 73 3 minecraft:quartz_slab strict
 fill 64 73 4 65 73 4 minecraft:quartz_bricks strict
@@ -2472,10 +2460,6 @@ fill -35 74 13 -34 74 13 minecraft:mossy_stone_bricks strict
 setblock -34 74 -9 minecraft:mossy_stone_bricks strict
 fill -15 74 -29 -15 75 -29 minecraft:spruce_leaves[persistent=true] strict
 fill -13 74 -11 -13 75 -11 minecraft:spruce_leaves[persistent=true] strict
-fill -5 74 -48 -5 74 -47 minecraft:purpur_block strict
-fill -4 74 -48 -4 74 -47 minecraft:amethyst_block strict
-fill 4 74 -48 4 74 -47 minecraft:amethyst_block strict
-fill 5 74 -48 5 74 -47 minecraft:purpur_block strict
 fill 122 74 -2 122 75 2 minecraft:smooth_quartz strict
 fill 123 74 -3 123 75 -3 minecraft:calcite strict
 fill 123 74 -2 123 75 3 minecraft:smooth_quartz strict
@@ -2524,10 +2508,6 @@ fill -33 75 -12 -33 76 -12 minecraft:stone_bricks strict
 setblock -33 75 -10 minecraft:stone_bricks strict
 fill -33 75 10 -33 76 10 minecraft:stone_bricks strict
 setblock -33 75 12 minecraft:stone_bricks strict
-fill -5 75 -48 -4 75 -47 minecraft:purpur_block strict
-fill -3 75 -48 -3 75 -47 minecraft:amethyst_block strict
-fill 3 75 -48 3 75 -47 minecraft:amethyst_block strict
-fill 4 75 -48 5 75 -47 minecraft:purpur_block strict
 setblock 125 75 -3 minecraft:calcite strict
 fill 125 75 -2 125 75 3 minecraft:smooth_quartz strict
 setblock 133 75 7 minecraft:packed_ice strict
@@ -2553,9 +2533,6 @@ fill -35 76 -2 -35 78 2 minecraft:orange_stained_glass strict
 fill -35 76 3 -35 76 7 minecraft:dark_oak_planks strict
 setblock -33 76 -10 minecraft:mossy_stone_bricks strict
 fill -33 76 12 -33 77 12 minecraft:mossy_stone_bricks strict
-fill -4 76 -48 -3 76 -47 minecraft:purpur_block strict
-fill -2 76 -48 2 76 -47 minecraft:amethyst_block strict
-fill 3 76 -48 4 76 -47 minecraft:purpur_block strict
 fill 121 76 -1 121 76 1 minecraft:amethyst_block strict
 setblock 122 76 -2 minecraft:amethyst_block strict
 fill 122 76 -1 122 76 1 minecraft:smooth_quartz strict
@@ -2595,7 +2572,6 @@ setblock -34 77 -13 minecraft:mossy_stone_bricks strict
 setblock -34 77 -9 minecraft:mossy_stone_bricks strict
 fill -33 77 -12 -33 77 -10 minecraft:stone_bricks strict
 fill -33 77 10 -33 77 11 minecraft:stone_bricks strict
-fill -2 77 -48 2 77 -47 minecraft:purpur_block strict
 fill 121 77 -1 121 79 0 minecraft:calcite strict
 fill 121 77 1 121 79 1 minecraft:smooth_quartz strict
 fill 122 77 -2 122 79 1 minecraft:smooth_quartz strict
@@ -2633,7 +2609,6 @@ fill -33 78 -12 -33 78 -11 minecraft:stone_bricks strict
 setblock -33 78 -10 minecraft:mossy_stone_bricks strict
 setblock -33 78 10 minecraft:mossy_stone_bricks strict
 fill -33 78 11 -33 78 12 minecraft:stone_bricks strict
-fill 0 78 -48 0 78 -47 minecraft:amethyst_cluster[facing=up] strict
 setblock 124 78 -3 minecraft:calcite strict
 fill 124 78 -2 124 78 3 minecraft:smooth_quartz strict
 fill 125 78 -3 125 78 3 minecraft:smooth_quartz strict

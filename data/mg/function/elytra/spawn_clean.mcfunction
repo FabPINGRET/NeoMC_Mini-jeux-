@@ -7,9 +7,6 @@ fill 15 63 -18 17 63 -12 minecraft:grass_block
 fill 29 64 -4 35 64 -4 minecraft:azalea_leaves[persistent=true]
 fill 20 64 -19 30 78 -7 minecraft:air replace #minecraft:leaves
 fill 20 64 -19 30 78 -7 minecraft:air replace #minecraft:logs
-fill 21 64 -4 27 72 -4 minecraft:air
-fill 22 64 -7 26 70 -5 minecraft:air
-fill 22 63 -7 26 63 -5 minecraft:stone_bricks
 fill 14 63 5 18 63 11 minecraft:grass_block
 fill 30 63 5 31 63 17 minecraft:grass_block
 fill 32 63 12 34 63 17 minecraft:grass_block
