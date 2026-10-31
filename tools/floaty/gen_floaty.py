@@ -167,6 +167,8 @@ def json_doc(p, ns, rel, st, keys):
     """Texte LF du JSON à copier, ou, pour un advancement de la carte, l'arbre chargé (as_text l'écrit, après la traduction) : display.announce_to_chat
     forcé à false (pas d'annonce dans le chat du serveur) et critères restreints à la dimension (only_in_dimension). keys (set) reçoit, AVANT cette
     restriction, les chaînes des critères : noms d'objets comparés, jamais traduits (fl_fr)."""
+    if ns == 'minecraft' and rel.startswith('recipe/'):
+        return trim_recipe(p.read_text(encoding='utf-8-sig'), rel)
     if ns == 'minecraft' or not rel.startswith('advancement/'):
         return p.read_text(encoding='utf-8-sig')           # lecture texte : CRLF -> LF
     d = read_json(p)
@@ -178,6 +180,30 @@ def json_doc(p, ns, rel, st, keys):
     st.criteria_total += len(d.get('criteria', {}))
     st.criteria += only_in_dimension(d)
     return d
+
+
+def _ingredient(v):
+    """Ingrédient d'avant 1.21.2 ({"item": id} / {"tag": id}) -> format actuel (« id » / « #id ») ; le reste tel quel."""
+    if isinstance(v, dict) and len(v) == 1 and ('item' in v or 'tag' in v):
+        return v['item'] if 'item' in v else '#' + v['tag']
+    return v
+
+
+def trim_recipe(text, rel):
+    """Recette de trim de la carte (format d'avant 1.21.5 : ingrédients en objets, sans « pattern ») -> format 26.2 : ingrédients en
+    chaînes et motif minecraft:<nom> (nom du fichier <nom>_armor_trim.json). Le serveur refusait l'ancien format (erreur au démarrage).
+    Texte qui n'est pas une telle recette (JSON vide des tests, autre type) : rendu tel quel."""
+    try:
+        d = json.loads(text)
+    except ValueError:
+        return text
+    if not isinstance(d, dict) or d.get('type') != 'minecraft:smithing_trim':
+        return text
+    for k in ('template', 'base', 'addition'):
+        if k in d:
+            d[k] = _ingredient(d[k])
+    d.setdefault('pattern', 'minecraft:' + rel.rsplit('/', 1)[-1].removesuffix('.json').removesuffix('_armor_trim'))
+    return json.dumps({k: d[k] for k in ('type', 'template', 'base', 'addition', 'pattern') if k in d} | d, indent=2) + '\n'
 
 
 def as_text(doc):

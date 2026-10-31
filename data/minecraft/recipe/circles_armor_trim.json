@@ -1,12 +1,7 @@
 {
   "type": "minecraft:smithing_trim",
-  "addition": {
-    "tag": "minecraft:trim_materials"
-  },
-  "base": {
-    "tag": "minecraft:trimmable_armor"
-  },
-  "template": {
-    "item": "minecraft:snowball"
-  }
+  "template": "minecraft:snowball",
+  "base": "#minecraft:trimmable_armor",
+  "addition": "#minecraft:trim_materials",
+  "pattern": "minecraft:circles"
 }
