@@ -231,6 +231,58 @@
     {
       "label": [
         {
+          "text": "Mini-îles ",
+          "color": "aqua"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Petite carte : deux îles de laine à 12 blocs, petit muret",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 254"
+      }
+    },
+    {
+      "label": [
+        {
+          "text": "Pont ",
+          "color": "gold"
+        },
+        {
+          "text": "★★",
+          "color": "gold"
+        },
+        {
+          "text": "☆☆",
+          "color": "dark_gray"
+        }
+      ],
+      "tooltip": [
+        {
+          "text": "Petite carte : deux plateformes reliées par un pont de bois",
+          "color": "gray"
+        }
+      ],
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger mg.go set 255"
+      }
+    },
+    {
+      "label": [
+        {
           "text": "« Retour",
           "color": "yellow"
         }

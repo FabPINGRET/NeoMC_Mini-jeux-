@@ -1,0 +1,21 @@
+# Sheep War 10 « Pont » — petite carte (centre 0 ~ 32050) : deux plateformes 9×9 reliées par un pont de bois de 3 blocs
+fill -30 70 32030 30 95 32070 minecraft:air
+fill -18 79 32046 -10 79 32054 minecraft:red_wool
+fill -18 78 32046 -10 78 32054 minecraft:white_wool
+fill -18 77 32046 -10 77 32054 minecraft:light_gray_wool
+fill -17 76 32047 -11 76 32053 minecraft:gray_wool
+fill -16 75 32048 -12 75 32052 minecraft:gray_wool
+fill 10 79 32046 18 79 32054 minecraft:blue_wool
+fill 10 78 32046 18 78 32054 minecraft:white_wool
+fill 10 77 32046 18 77 32054 minecraft:light_gray_wool
+fill 11 76 32047 17 76 32053 minecraft:gray_wool
+fill 12 75 32048 16 75 32052 minecraft:gray_wool
+fill -9 79 32049 9 79 32051 minecraft:oak_planks
+fill -9 78 32050 9 78 32050 minecraft:spruce_planks
+fill -9 80 32048 9 80 32048 minecraft:spruce_fence
+fill -9 80 32052 9 80 32052 minecraft:spruce_fence
+fill -1 80 32048 1 80 32052 minecraft:air
+fill -13 80 32046 -13 81 32048 minecraft:stone_bricks
+fill -13 80 32052 -13 81 32054 minecraft:stone_bricks
+fill 13 80 32046 13 81 32048 minecraft:stone_bricks
+fill 13 80 32052 13 81 32054 minecraft:stone_bricks

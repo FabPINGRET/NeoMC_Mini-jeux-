@@ -22,7 +22,7 @@ NATIVE = {
     67: ('Classique', 3), 68: ('Collines', 2), 69: ('Canyon', 2), 70: ('Village perché', 2), 252: ('Icebergs', 3), 253: ('Patinoire', 3),
     71: ('Classique', 2), 72: ('Caldeira', 2), 73: ('Hanami', 2), 74: ('Banquise', 3),
     5: ('Classique', 2), 7: ('Forteresses', 2), 14: ('Bastions', 2), 15: ('Cubes voxel', 2), 16: ('Pyramides inversées', 3),
-    17: ('Archipel', 2), 18: ('Double canyon', 3), 19: ('Nuages voxel', 3),
+    17: ('Archipel', 2), 18: ('Double canyon', 3), 19: ('Nuages voxel', 3), 254: ('Mini-îles', 2), 255: ('Pont', 2),
     36: ('Terrain', 2), 54: ('Mini-terrain', 3), 55: ('Grand terrain', 1),
     6: ('Classique', 2), 8: ('Nether', 3), 9: ('End', 3), 10: ('Ultra hard', 4), 11: ('Volant', 3), 12: ('Araignée', 3),
     37: ('Cathédrale (20 vagues)', 4), 38: ('Laboratoire (20 vagues)', 4), 39: ('Temple (20 vagues)', 4),

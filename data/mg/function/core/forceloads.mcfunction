@@ -48,6 +48,8 @@ forceload add -48 2960 48 3040
 forceload add -48 3260 48 3340
 forceload add -64 3560 64 3640
 forceload add -48 3860 48 3940
+forceload add -32 31780 32 31820
+forceload add -32 32030 32 32070
 forceload add -48 7260 48 7340
 forceload add -64 7540 64 7660
 forceload add -64 7840 64 7960
