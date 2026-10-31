@@ -68,6 +68,10 @@ execute if score $game mg.st matches 14 run scoreboard players set $game mg.st 7
 execute if score $game mg.st matches 15..19 run scoreboard players operation $sm mg.st = $game mg.st
 execute if score $game mg.st matches 15..19 run scoreboard players remove $sm mg.st 13
 execute if score $game mg.st matches 15..19 run scoreboard players set $game mg.st 7
+# Sheep War 9 « Mini-îles » (254) et 10 « Pont » (255) : petites cartes → jeu 7 + $sm 7..8
+execute if score $game mg.st matches 254..255 run scoreboard players operation $sm mg.st = $game mg.st
+execute if score $game mg.st matches 254..255 run scoreboard players remove $sm mg.st 247
+execute if score $game mg.st matches 254..255 run scoreboard players set $game mg.st 7
 scoreboard players set $sg mg.st 0
 execute if score $game mg.st matches 42 run scoreboard players set $sg mg.st 2
 execute if score $game mg.st matches 42 run scoreboard players set $game mg.st 29
@@ -202,7 +206,9 @@ execute if score $game mg.st matches 7 if score $sm mg.st matches 3 run tellraw 
 execute if score $game mg.st matches 7 if score $sm mg.st matches 4 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"SHEEP WAR 6 — ARCHIPEL BICOLORE","color":"white","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 7 if score $sm mg.st matches 5 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"SHEEP WAR 7 — DOUBLE CANYON","color":"white","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 7 if score $sm mg.st matches 6 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"SHEEP WAR 8 — NUAGES VOXEL","color":"white","bold":true},{"text":" !","color":"gray"}]
-execute if score $game mg.st matches 7 unless score $sm mg.st matches 1..6 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"SHEEP WAR 2 — FORTERESSES","color":"white","bold":true},{"text":" !","color":"gray"}]
+execute if score $game mg.st matches 7 if score $sm mg.st matches 7 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"SHEEP WAR 9 — MINI-ÎLES","color":"white","bold":true},{"text":" !","color":"gray"}]
+execute if score $game mg.st matches 7 if score $sm mg.st matches 8 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"SHEEP WAR 10 — PONT","color":"white","bold":true},{"text":" !","color":"gray"}]
+execute if score $game mg.st matches 7 unless score $sm mg.st matches 1..8 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"SHEEP WAR 2 — FORTERESSES","color":"white","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 20 if score $sg mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"SPLEGG XXL","color":"gold","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 20 unless score $sg mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"SPLEGG","color":"yellow","bold":true},{"text":" !","color":"gray"}]
 execute if score $game mg.st matches 22 if score $sg mg.st matches 1 run tellraw @a [{"selector":"@s","color":"yellow"},{"text":" lance une partie de ","color":"gray"},{"text":"SUMO — ARÈNE COMPLEXE","color":"gold","bold":true},{"text":" !","color":"gray"}]
@@ -398,13 +404,15 @@ execute if score $game mg.st matches 83 run function mg:tel/prepare
 execute if score $game mg.st matches 59 run function mg:party/prepare
 execute if score $game mg.st matches 61 run function mg:kart/prepare
 execute if score $game mg.st matches 75 run function mg:sky/prepare
-execute if score $game mg.st matches 7 unless score $sm mg.st matches 1..6 run function mg:sheepwar2/prepare
+execute if score $game mg.st matches 7 unless score $sm mg.st matches 1..8 run function mg:sheepwar2/prepare
 execute if score $game mg.st matches 7 if score $sm mg.st matches 1 run function mg:sheepwar3/prepare
 execute if score $game mg.st matches 7 if score $sm mg.st matches 2 run function mg:sheepwar4/prepare
 execute if score $game mg.st matches 7 if score $sm mg.st matches 3 run function mg:sheepwar5/prepare
 execute if score $game mg.st matches 7 if score $sm mg.st matches 4 run function mg:sheepwar6/prepare
 execute if score $game mg.st matches 7 if score $sm mg.st matches 5 run function mg:sheepwar7/prepare
 execute if score $game mg.st matches 7 if score $sm mg.st matches 6 run function mg:sheepwar8/prepare
+execute if score $game mg.st matches 7 if score $sm mg.st matches 7 run function mg:sheepwar9/prepare
+execute if score $game mg.st matches 7 if score $sm mg.st matches 8 run function mg:sheepwar10/prepare
 
 # Partie annulée pendant la préparation (ex. Téléphone sans assez de joueurs) : pas de gel ni de titre
 execute if score $state mg.st matches 3 run return 0
