@@ -100,7 +100,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 30"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 31×25",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -120,6 +126,10 @@
       "tooltip": [
         {
           "text": "Saute dans le puits adverse, 5 points pour gagner",
+          "color": "gray"
+        },
+        {
+          "text": " (81×19)",
           "color": "gray"
         }
       ],
@@ -147,6 +157,10 @@
         {
           "text": "Escorte ou bloque le convoi, 2 manches",
           "color": "gray"
+        },
+        {
+          "text": " (145×29)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -172,6 +186,10 @@
       "tooltip": [
         {
           "text": "Tous ensemble contre les monstres",
+          "color": "gray"
+        },
+        {
+          "text": " (145×29)",
           "color": "gray"
         }
       ],
@@ -216,6 +234,10 @@
       "tooltip": [
         {
           "text": "Rouge contre Bleu au sniper et au couteau dans les arènes du duel, packs de soin : 25 frags ou 8 min",
+          "color": "gray"
+        },
+        {
+          "text": " (arènes de 41×141)",
           "color": "gray"
         }
       ],

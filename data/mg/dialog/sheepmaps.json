@@ -39,6 +39,10 @@
         {
           "text": "Grandes plateformes, mur d'obsidienne",
           "color": "gray"
+        },
+        {
+          "text": " (71×43)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -65,6 +69,10 @@
         {
           "text": "Forteresses à étages, escaliers, tours",
           "color": "gray"
+        },
+        {
+          "text": " (83×43)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -90,6 +98,10 @@
       "tooltip": [
         {
           "text": "Forteresses compactes, peu de joueurs",
+          "color": "gray"
+        },
+        {
+          "text": " (59×33)",
           "color": "gray"
         }
       ],
@@ -143,6 +155,10 @@
         {
           "text": "Surface plate, le terrain rétrécit vers le vide",
           "color": "gray"
+        },
+        {
+          "text": " (77×29)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -168,6 +184,10 @@
       "tooltip": [
         {
           "text": "Île de feu contre île de glace",
+          "color": "gray"
+        },
+        {
+          "text": " (81×29)",
           "color": "gray"
         }
       ],
@@ -195,6 +215,10 @@
         {
           "text": "Falaise droite d'un côté, pente douce de l'autre, lave au fond",
           "color": "gray"
+        },
+        {
+          "text": " (101×41)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -220,6 +244,10 @@
       "tooltip": [
         {
           "text": "Gros pavés de laine, béton et quartz flottants",
+          "color": "gray"
+        },
+        {
+          "text": " (81×31)",
           "color": "gray"
         }
       ],
@@ -247,6 +275,10 @@
         {
           "text": "Petite carte : deux îles de laine à 12 blocs, petit muret",
           "color": "gray"
+        },
+        {
+          "text": " (33×13)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -272,6 +304,10 @@
       "tooltip": [
         {
           "text": "Petite carte : deux plateformes reliées par un pont de bois",
+          "color": "gray"
+        },
+        {
+          "text": " (37×9)",
           "color": "gray"
         }
       ],

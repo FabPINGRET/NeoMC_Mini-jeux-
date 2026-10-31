@@ -66,7 +66,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 3"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 27×27",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -86,7 +92,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 13"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 27×27",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -106,6 +118,10 @@
       "tooltip": [
         {
           "text": "Arène PvP sur la carte Poussière (style Dust)",
+          "color": "gray"
+        },
+        {
+          "text": " (41×41)",
           "color": "gray"
         }
       ],
@@ -133,6 +149,10 @@
         {
           "text": "PvP avec classes sur la carte Poussière (style Dust)",
           "color": "gray"
+        },
+        {
+          "text": " (41×41)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -158,6 +178,10 @@
       "tooltip": [
         {
           "text": "Arène PvP sur la carte Mirage (style Mirage)",
+          "color": "gray"
+        },
+        {
+          "text": " (41×41)",
           "color": "gray"
         }
       ],
@@ -185,6 +209,10 @@
         {
           "text": "PvP avec classes sur la carte Mirage (style Mirage)",
           "color": "gray"
+        },
+        {
+          "text": " (41×41)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -211,6 +239,10 @@
         {
           "text": "Arène PvP sur la carte Nuketown (style Nuketown)",
           "color": "gray"
+        },
+        {
+          "text": " (49×35)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -236,6 +268,10 @@
       "tooltip": [
         {
           "text": "PvP avec classes sur la carte Nuketown (style Nuketown)",
+          "color": "gray"
+        },
+        {
+          "text": " (49×35)",
           "color": "gray"
         }
       ],

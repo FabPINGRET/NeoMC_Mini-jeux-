@@ -65,6 +65,10 @@
         {
           "text": "Circuit de glace de 300 blocs, 3 tours, 10 points de passage : le premier qui finit gagne",
           "color": "gray"
+        },
+        {
+          "text": " (94×54)",
+          "color": "gray"
         }
       ],
       "action": {

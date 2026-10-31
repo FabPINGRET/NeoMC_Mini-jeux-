@@ -155,6 +155,10 @@
         {
           "text": "Cache-toi en objet, ou trouve les objets qui bougent",
           "color": "gray"
+        },
+        {
+          "text": " (3 cartes, de 41×31 à 49×33)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -173,6 +177,10 @@
         {
           "text": "Bombarde la ville du ciel, le plus de dégâts gagne, 2 min 30",
           "color": "gray"
+        },
+        {
+          "text": " (ville de 178×179)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -190,6 +198,10 @@
       "tooltip": [
         {
           "text": "Peins-toi aux couleurs du décor et cache-toi, ou chasse les caméléons",
+          "color": "gray"
+        },
+        {
+          "text": " (57×41)",
           "color": "gray"
         }
       ],
@@ -216,6 +228,10 @@
       "tooltip": [
         {
           "text": "Façon Squid Game : avance dos tourné, fige-toi quand la poupée regarde",
+          "color": "gray"
+        },
+        {
+          "text": " (43×99)",
           "color": "gray"
         }
       ],
@@ -261,6 +277,10 @@
         {
           "text": "Parkour de rebonds sur slime, le premier arrivé gagne",
           "color": "gray"
+        },
+        {
+          "text": " (parcours de 12×150)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -286,6 +306,10 @@
       "tooltip": [
         {
           "text": "Par paires : le marcheur est aveugle, le guide le dirige d'en haut (au vocal)",
+          "color": "gray"
+        },
+        {
+          "text": " (18×18)",
           "color": "gray"
         }
       ],
@@ -313,6 +337,10 @@
         {
           "text": "Ordres ultra rapides ; sans « Master dit », c'est un piège !",
           "color": "gray"
+        },
+        {
+          "text": " (21×21)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -338,6 +366,10 @@
       "tooltip": [
         {
           "text": "Un tueur caché, un détective armé : démasquez-le avant qu'il ne vous élimine tous",
+          "color": "gray"
+        },
+        {
+          "text": " (cartes de 41×31 à 49×33)",
           "color": "gray"
         }
       ],
@@ -365,6 +397,10 @@
         {
           "text": "Pose des bombes, casse les briques, ramasse les bonus : dernier debout gagne (2 à 8)",
           "color": "gray"
+        },
+        {
+          "text": " (23×21)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -390,6 +426,10 @@
       "tooltip": [
         {
           "text": "Rouges contre bleus : la dernière équipe debout gagne",
+          "color": "gray"
+        },
+        {
+          "text": " (23×21)",
           "color": "gray"
         }
       ],

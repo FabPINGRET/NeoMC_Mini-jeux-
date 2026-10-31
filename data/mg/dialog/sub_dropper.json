@@ -47,6 +47,10 @@
         {
           "text": "13 grands niveaux à thème enchaînés (spirale, mine, enfer, usine, espace, ballons... et l'arc-en-ciel, le plus dur, pour finir) : le premier qui les finit gagne",
           "color": "gray"
+        },
+        {
+          "text": " (puits de 37×37)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -72,6 +76,10 @@
       "tooltip": [
         {
           "text": "Compétitif : un niveau de l'Aventure tiré au hasard à chaque manche, tout le monde dans le même puits, le premier dans l'eau gagne la manche (premier à 3)",
+          "color": "gray"
+        },
+        {
+          "text": " (puits de 37×37)",
           "color": "gray"
         }
       ],
@@ -99,6 +107,10 @@
         {
           "text": "Chacun pour soi sur les 13 niveaux de l'Aventure : chaque saut compte, le moins d'essais gagne. Records personnel et du serveur",
           "color": "gray"
+        },
+        {
+          "text": " (puits de 37×37)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -124,7 +136,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 23"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : puits de 5×5, 66 blocs de chute",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -144,7 +162,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 25"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : tube de 11×11",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [

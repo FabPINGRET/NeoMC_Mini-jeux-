@@ -56,7 +56,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1005"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Grandes plateformes, mur d'obsidienne (71×43)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -68,7 +74,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1007"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Forteresses à étages, escaliers, tours (83×43)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -80,7 +92,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1014"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Forteresses compactes, peu de joueurs (59×33)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -92,7 +110,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1015"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "2 cubes 25×25 suspendus, 3 étages en béton, façades en grès",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -104,7 +128,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1016"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Surface plate, le terrain rétrécit vers le vide (77×29)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -116,7 +146,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1017"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Île de feu contre île de glace (81×29)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -128,7 +164,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1018"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Falaise droite d'un côté, pente douce de l'autre, lave au fond (101×41)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -140,7 +182,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1019"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Gros pavés de laine, béton et quartz flottants (81×31)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [

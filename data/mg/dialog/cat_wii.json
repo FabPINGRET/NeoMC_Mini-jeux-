@@ -39,6 +39,10 @@
         {
           "text": "8 pistes, 5 frames, vraies règles (strike, spare)",
           "color": "gray"
+        },
+        {
+          "text": " (8 pistes, 68×55)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -57,6 +61,10 @@
         {
           "text": "6 trous (par 23), chacun sa balle, le moins de coups gagne",
           "color": "gray"
+        },
+        {
+          "text": " (199×199)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -74,6 +82,10 @@
       "tooltip": [
         {
           "text": "1 contre 1 sur 4 courts (robot si joueur impair), 3 jeux gagnants",
+          "color": "gray"
+        },
+        {
+          "text": " (4 courts, 160×51)",
           "color": "gray"
         }
       ],

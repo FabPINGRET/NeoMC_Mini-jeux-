@@ -13,7 +13,7 @@ ARENAS = [
     dict(k=2, name='Mirage', col='aqua', size='M', build='mirage/build', z=11300, sp=(6, 18, 84), spawn='0 81 11316', py=100, ky=70,
          items='-24 60 11276 48 40 48', ceil=(-21, 93, 11279, 21, 11321), src='PvP', desc='style Mirage, 43×43, appartements et fenêtre'),
     dict(k=3, name='Nuketown', col='green', size='M', build='nuketown/build', z=11500, sp=(6, 15, 84), spawn='0 81 11513', py=100, ky=70,
-         items='-26 60 11474 52 40 52', ceil=(-25, 92, 11482, 25, 11518), src='PvP', desc='deux maisons face à face, bus au milieu'),
+         items='-26 60 11474 52 40 52', ceil=(-25, 92, 11482, 25, 11518), src='PvP', desc='49×35, deux maisons face à face, bus au milieu'),
     dict(k=4, name='Arène OITC', col='gold', size='S', build='oitc/build', z=5800, sp=(5, 10, 90), spawn='0 81 5800', py=100, ky=70,
          items='-20 70 5780 40 30 40', ceil=None, src='One in the Chamber', desc='25×25, piliers'),
     dict(k=5, name='Château', col='gold', size='M', build='oitc/build_1', z=11700, sp=(5, 17, 84), spawn='0 81 11716', py=106, ky=70,
@@ -64,17 +64,17 @@ FX, FZ = 0, 24300
 # étages : (y, demi-côté, demi-côté du trou ou 0)
 LAYOUTS = [
     dict(k=21, name='Tour de Spleef', col='aqua', floors=[(80, 14, 0), (76, 12, 0), (72, 10, 0), (68, 8, 0)], src='Spleef',
-         desc='4 étages qui rétrécissent (29 → 17)'),
+         desc='4 étages qui rétrécissent (29×29 → 17×17)'),
     dict(k=22, name='Tour de TNT Run', col='red', floors=[(84, 14, 0), (80, 12, 0), (76, 10, 0)], src='TNT Run',
-         desc='3 étages de laine qui rétrécissent'),
+         desc='3 étages de laine qui rétrécissent (29×29 → 21×21)'),
     dict(k=23, name='Cube de Splegg', col='yellow', floors=[(80, 18, 0), (76, 18, 0), (72, 18, 0)], src='Splegg',
          desc='3 grands étages identiques (37×37)'),
     dict(k=24, name='Splegg XXL', col='gold', floors=[(80, 30, 0), (76, 26, 0), (72, 22, 0)], src='Splegg',
-         desc='3 étages géants (61 → 45)'),
+         desc='3 étages géants (61×61 → 45×45)'),
     dict(k=25, name='Pyramide', col='light_purple', floors=[(84, 16, 0), (80, 13, 0), (76, 10, 0), (72, 7, 0), (68, 4, 0)], src='nouveau',
-         desc='5 étages en pyramide, de plus en plus petits'),
+         desc='5 étages en pyramide, de plus en plus petits (33×33 → 9×9)'),
     dict(k=26, name='Anneaux', col='dark_aqua', floors=[(80, 18, 7), (76, 11, 0), (72, 20, 12)], src='nouveau',
-         desc='anneau troué, plateau central, anneau large', ring_spawn=True),
+         desc='anneau troué, plateau central, anneau large (jusqu’à 41×41)', ring_spawn=True),
 ]
 LY = {l['k']: l for l in LAYOUTS}
 FLOOR_MODES = [

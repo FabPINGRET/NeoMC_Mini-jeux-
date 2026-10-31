@@ -46,7 +46,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 22"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : disque de 15×15 à 23×23 selon le nombre de joueurs",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -66,7 +72,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 24"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 31×31",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [

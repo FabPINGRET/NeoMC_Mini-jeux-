@@ -56,7 +56,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1036"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 49×61",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -68,7 +74,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1054"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Paintball 31×41, parties de 1 min 30",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -80,7 +92,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1055"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Paintball 81×101, grosse bataille de 3 minutes",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [

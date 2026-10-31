@@ -46,7 +46,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 36"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 49×61",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [

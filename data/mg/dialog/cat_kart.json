@@ -47,6 +47,10 @@
         {
           "text": "Course de karts maniables : 3 tours, dérapages, boîtes à objets",
           "color": "gray"
+        },
+        {
+          "text": " (280×222)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -73,6 +77,10 @@
         {
           "text": "Grand circuit de 1,6 km : plage, jungle, désert, château de Bowser ; montées, sauts, Thwomps, plantes Piranha, Chomp...",
           "color": "gray"
+        },
+        {
+          "text": " (497×365)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -98,6 +106,10 @@
       "tooltip": [
         {
           "text": "Bataille de ballons dans la Forteresse Bob-omb : 3 ballons chacun, chaque coup en crève un, dernier en lice gagne",
+          "color": "gray"
+        },
+        {
+          "text": " (201×201)",
           "color": "gray"
         }
       ],

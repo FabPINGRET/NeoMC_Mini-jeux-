@@ -40,6 +40,10 @@
         {
           "text": "Plateau de 32 cases, dé, étoiles à 20 pièces, un mini-jeu après chaque tour",
           "color": "gray"
+        },
+        {
+          "text": " (île de 181×181)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -58,6 +62,10 @@
       "tooltip": [
         {
           "text": "Version longue de la Mini Party",
+          "color": "gray"
+        },
+        {
+          "text": " (île de 181×181)",
           "color": "gray"
         }
       ],

@@ -38,7 +38,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 6"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 31×31",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -58,7 +64,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 8"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 31×31",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -78,7 +90,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 9"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 31×31",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -98,7 +116,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 10"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 31×31",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -118,7 +142,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 11"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 31×31",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -138,7 +168,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 12"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 31×31",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -158,6 +194,10 @@
       "tooltip": [
         {
           "text": "Gothique & sang : archers sur les balustrades, chauves-souris Wither, Comte de Sang",
+          "color": "gray"
+        },
+        {
+          "text": " (29×53)",
           "color": "gray"
         }
       ],
@@ -185,6 +225,10 @@
         {
           "text": "Steampunk & poisons : sorcières, creepers chargés, Abomination Toxique",
           "color": "gray"
+        },
+        {
+          "text": " (39×39)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -210,6 +254,10 @@
       "tooltip": [
         {
           "text": "Aquatique : noyés, gardiens, Émissaire du Kraken",
+          "color": "gray"
+        },
+        {
+          "text": " (53×53)",
           "color": "gray"
         }
       ],
@@ -237,6 +285,10 @@
         {
           "text": "Nether & lave : piglins, magma cubes, blazes, Golem de Basalte",
           "color": "gray"
+        },
+        {
+          "text": " (61×61)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -262,6 +314,10 @@
       "tooltip": [
         {
           "text": "Sci-fi & vide : endermites, shulkers, phantoms, Cœur I.A. Corrompu",
+          "color": "gray"
+        },
+        {
+          "text": " (45×45)",
           "color": "gray"
         }
       ],

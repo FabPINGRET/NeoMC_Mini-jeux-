@@ -73,6 +73,10 @@
         {
           "text": "À cheval, saut toutes les 20 s",
           "color": "gray"
+        },
+        {
+          "text": " (101×101)",
+          "color": "gray"
         }
       ],
       "action": {

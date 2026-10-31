@@ -66,7 +66,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 26"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 25×25",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -215,7 +221,7 @@
       ],
       "tooltip": [
         {
-          "text": "Carte PvP : deux maisons face à face, bus au milieu\n",
+          "text": "Carte PvP : 49×35, deux maisons face à face, bus au milieu\n",
           "color": "gray"
         },
         {

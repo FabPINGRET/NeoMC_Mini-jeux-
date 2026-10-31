@@ -69,6 +69,10 @@
         {
           "text": "20 anneaux dans l'ordre, premier arrivé gagne",
           "color": "gray"
+        },
+        {
+          "text": " (zone de 376×743)",
+          "color": "gray"
         }
       ]
     },
@@ -95,6 +99,10 @@
         {
           "text": "Arc et charges de vent : un adversaire touché chute",
           "color": "gray"
+        },
+        {
+          "text": " (zone de 376×743)",
+          "color": "gray"
         }
       ]
     },
@@ -120,6 +128,10 @@
       "tooltip": [
         {
           "text": "Reste en l'air dans la zone qui rétrécit",
+          "color": "gray"
+        },
+        {
+          "text": " (arène de 185×185)",
           "color": "gray"
         }
       ]

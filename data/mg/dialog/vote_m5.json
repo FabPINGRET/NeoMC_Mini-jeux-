@@ -56,7 +56,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1071"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "4 îles de pierre autour du diamant (75×75)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -68,7 +74,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1072"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Volcan de basalte, 4 îlots avec or bonus (87×86)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -80,7 +92,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1073"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Jardin des cerisiers, pagode, terrasses (84×83)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -92,7 +110,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1074"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Glacier, igloos, plaques de glace (91×89)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [

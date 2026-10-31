@@ -47,6 +47,10 @@
         {
           "text": "Le bunker d'origine",
           "color": "gray"
+        },
+        {
+          "text": " (53×53)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -64,6 +68,10 @@
       "tooltip": [
         {
           "text": "Labo tout blanc",
+          "color": "gray"
+        },
+        {
+          "text": " (53×53)",
           "color": "gray"
         }
       ],
@@ -83,6 +91,10 @@
         {
           "text": "Manoir sombre",
           "color": "gray"
+        },
+        {
+          "text": " (53×53)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -100,6 +112,10 @@
       "tooltip": [
         {
           "text": "Usine à 7 salles, tout ouvert",
+          "color": "gray"
+        },
+        {
+          "text": " (75×77)",
           "color": "gray"
         }
       ],
@@ -119,6 +135,10 @@
         {
           "text": "Station à 7 salles, tout ouvert",
           "color": "gray"
+        },
+        {
+          "text": " (101×70)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -136,6 +156,10 @@
       "tooltip": [
         {
           "text": "Hôpital sur deux étages, tout ouvert",
+          "color": "gray"
+        },
+        {
+          "text": " (95×45)",
           "color": "gray"
         }
       ],
@@ -155,6 +179,10 @@
         {
           "text": "Mine à niveaux, tout ouvert",
           "color": "gray"
+        },
+        {
+          "text": " (89×71)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -172,6 +200,10 @@
       "tooltip": [
         {
           "text": "Cryptes en anneau, tout ouvert",
+          "color": "gray"
+        },
+        {
+          "text": " (53×63)",
           "color": "gray"
         }
       ],
@@ -191,6 +223,10 @@
         {
           "text": "Thermes en anneau, tout ouvert",
           "color": "gray"
+        },
+        {
+          "text": " (51×59)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -208,6 +244,10 @@
       "tooltip": [
         {
           "text": "Tous survivants contre des zombies mobs ; touché = infecté",
+          "color": "gray"
+        },
+        {
+          "text": " (53×53)",
           "color": "gray"
         }
       ],
@@ -227,6 +267,10 @@
         {
           "text": "Tous survivants contre des zombies mobs ; touché = infecté",
           "color": "gray"
+        },
+        {
+          "text": " (53×53)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -244,6 +288,10 @@
       "tooltip": [
         {
           "text": "Tous survivants contre des zombies mobs ; touché = infecté",
+          "color": "gray"
+        },
+        {
+          "text": " (53×53)",
           "color": "gray"
         }
       ],

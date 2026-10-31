@@ -115,6 +115,10 @@
         {
           "text": "Prairie vallonnée, rivière, moulin, kiosque",
           "color": "gray"
+        },
+        {
+          "text": " (51×51)",
+          "color": "gray"
         }
       ]
     },
@@ -140,6 +144,10 @@
       "tooltip": [
         {
           "text": "Mesa à plateaux, arche, tunnel, pont suspendu",
+          "color": "gray"
+        },
+        {
+          "text": " (51×51)",
           "color": "gray"
         }
       ]
@@ -167,6 +175,10 @@
         {
           "text": "Toits accessibles, passerelles, clocher",
           "color": "gray"
+        },
+        {
+          "text": " (51×51)",
+          "color": "gray"
         }
       ]
     },
@@ -193,6 +205,10 @@
         {
           "text": "Mer gelée glissante, icebergs enneigés, igloo et pics de glace",
           "color": "gray"
+        },
+        {
+          "text": " (51×51)",
+          "color": "gray"
         }
       ]
     },
@@ -218,6 +234,10 @@
       "tooltip": [
         {
           "text": "Grande patinoire glissante, gradins de neige, buts et sculptures de glace",
+          "color": "gray"
+        },
+        {
+          "text": " (51×51)",
           "color": "gray"
         }
       ]
@@ -437,7 +457,7 @@
       ],
       "tooltip": [
         {
-          "text": "Carte PvP : deux maisons face à face, bus au milieu\n",
+          "text": "Carte PvP : 49×35, deux maisons face à face, bus au milieu\n",
           "color": "gray"
         },
         {

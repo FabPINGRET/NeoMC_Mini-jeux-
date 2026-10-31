@@ -68,7 +68,7 @@ import os
 p = os.path.join(C.D, 'dialog', 'sub_tntrun.json')
 d = json.load(open(p, encoding='utf-8'))
 cmds = [a.get('action', {}).get('command') for a in d['actions']]
-add = [(GS, 'Glacier', 'Même taille que la tour de laine, en glace qui glisse'), (GB, 'Grand glacier', 'Un peu plus grand (35 → 27), en glace qui glisse')]
+add = [(GS, 'Glacier', 'Même taille que la tour de laine, en glace qui glisse'), (GB, 'Grand glacier', 'Un peu plus grand, en glace qui glisse')]
 i = cmds.index('trigger mg.go set 2') + 1
 for g, nm, tip in add:
     if f'trigger mg.go set {g}' not in cmds:

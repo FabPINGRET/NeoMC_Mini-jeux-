@@ -137,6 +137,10 @@
         {
           "text": "Même taille que Néon : pyramide, obélisques et murets de grès",
           "color": "gray"
+        },
+        {
+          "text": " (31×31)",
+          "color": "gray"
         }
       ],
       "action": {

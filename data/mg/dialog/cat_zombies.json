@@ -47,6 +47,10 @@
         {
           "text": "Le bunker d'origine",
           "color": "gray"
+        },
+        {
+          "text": " (53×53)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -64,6 +68,10 @@
       "tooltip": [
         {
           "text": "Labo tout blanc",
+          "color": "gray"
+        },
+        {
+          "text": " (53×53)",
           "color": "gray"
         }
       ],
@@ -83,6 +91,10 @@
         {
           "text": "Manoir sombre",
           "color": "gray"
+        },
+        {
+          "text": " (53×53)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -100,6 +112,10 @@
       "tooltip": [
         {
           "text": "7 salles, 8 portes, deux chemins vers la salle des machines",
+          "color": "gray"
+        },
+        {
+          "text": " (75×77)",
           "color": "gray"
         }
       ],
@@ -119,6 +135,10 @@
         {
           "text": "Quais, galerie et réacteur : 7 salles en boucle",
           "color": "gray"
+        },
+        {
+          "text": " (101×70)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -136,6 +156,10 @@
       "tooltip": [
         {
           "text": "Deux étages, cage d'escalier, galerie au-dessus des urgences",
+          "color": "gray"
+        },
+        {
+          "text": " (95×45)",
           "color": "gray"
         }
       ],
@@ -155,6 +179,10 @@
         {
           "text": "Rampe, terrasses, puits avec un trou vers la galerie basse",
           "color": "gray"
+        },
+        {
+          "text": " (89×71)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -173,6 +201,10 @@
         {
           "text": "8 cryptes en anneau à demi-niveaux, autel central à deux accès",
           "color": "gray"
+        },
+        {
+          "text": " (53×63)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -190,6 +222,10 @@
       "tooltip": [
         {
           "text": "6 salles arrondies en anneau, terrasse et bassins, piscine centrale",
+          "color": "gray"
+        },
+        {
+          "text": " (51×59)",
           "color": "gray"
         }
       ],

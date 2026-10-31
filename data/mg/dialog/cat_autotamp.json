@@ -47,6 +47,10 @@
         {
           "text": "Partie courte et brutale",
           "color": "gray"
+        },
+        {
+          "text": " (47×47)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -73,6 +77,10 @@
         {
           "text": "Le classique",
           "color": "gray"
+        },
+        {
+          "text": " (47×47)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -98,6 +106,10 @@
       "tooltip": [
         {
           "text": "Partie longue",
+          "color": "gray"
+        },
+        {
+          "text": " (47×47)",
           "color": "gray"
         }
       ],

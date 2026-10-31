@@ -47,6 +47,10 @@
         {
           "text": "Colline en gradins, 60 points",
           "color": "gray"
+        },
+        {
+          "text": " (51×51)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -73,6 +77,10 @@
         {
           "text": "Rouge contre Bleu, 90 points",
           "color": "gray"
+        },
+        {
+          "text": " (51×51)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -90,6 +98,10 @@
       "tooltip": [
         {
           "text": "Pyramide de grès dans le sable",
+          "color": "gray"
+        },
+        {
+          "text": " (51×51)",
           "color": "gray"
         }
       ],
@@ -109,6 +121,10 @@
         {
           "text": "Pyramide de grès, Rouge contre Bleu",
           "color": "gray"
+        },
+        {
+          "text": " (51×51)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -127,6 +143,10 @@
         {
           "text": "Colline de glace : ça glisse !",
           "color": "gray"
+        },
+        {
+          "text": " (51×51)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -144,6 +164,10 @@
       "tooltip": [
         {
           "text": "Glacier, Rouge contre Bleu",
+          "color": "gray"
+        },
+        {
+          "text": " (51×51)",
           "color": "gray"
         }
       ],
