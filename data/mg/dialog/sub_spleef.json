@@ -67,6 +67,10 @@
         {
           "text": "Carte d’origine : 4 étages de neige",
           "color": "gray"
+        },
+        {
+          "text": " (29×29)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -139,7 +143,7 @@
       ],
       "tooltip": [
         {
-          "text": "Carte Splegg : 3 étages géants (61 → 45)\n",
+          "text": "Carte Splegg : 3 étages géants (61×61 → 45×45)\n",
           "color": "gray"
         },
         {
@@ -169,7 +173,7 @@
       ],
       "tooltip": [
         {
-          "text": "Carte TNT Run : 3 étages de laine qui rétrécissent\n",
+          "text": "Carte TNT Run : 3 étages de laine qui rétrécissent (29×29 → 21×21)\n",
           "color": "gray"
         },
         {
@@ -199,7 +203,7 @@
       ],
       "tooltip": [
         {
-          "text": "Carte nouveau : 5 étages en pyramide, de plus en plus petits\n",
+          "text": "Carte nouveau : 5 étages en pyramide, de plus en plus petits (33×33 → 9×9)\n",
           "color": "gray"
         },
         {
@@ -229,7 +233,7 @@
       ],
       "tooltip": [
         {
-          "text": "Carte nouveau : anneau troué, plateau central, anneau large\n",
+          "text": "Carte nouveau : anneau troué, plateau central, anneau large (jusqu’à 41×41)\n",
           "color": "gray"
         },
         {

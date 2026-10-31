@@ -118,7 +118,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 28"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 24×24",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -138,6 +144,10 @@
       "tooltip": [
         {
           "text": "Le sol est fait de bandes de couleur",
+          "color": "gray"
+        },
+        {
+          "text": " (24×24)",
           "color": "gray"
         }
       ],
@@ -165,6 +175,10 @@
         {
           "text": "Carrés ou bandes, ça change à chaque manche",
           "color": "gray"
+        },
+        {
+          "text": " (24×24)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -182,6 +196,10 @@
       "tooltip": [
         {
           "text": "Mixte, sans coups ni bousculade entre joueurs",
+          "color": "gray"
+        },
+        {
+          "text": " (24×24)",
           "color": "gray"
         }
       ],

@@ -56,7 +56,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1075"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "20 anneaux dans l'ordre, premier arrivé gagne (zone de 376×743)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -68,7 +74,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1076"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Arc et charges de vent : un adversaire touché chute (zone de 376×743)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -80,7 +92,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1077"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Reste en l'air dans la zone qui rétrécit (arène de 185×185)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [

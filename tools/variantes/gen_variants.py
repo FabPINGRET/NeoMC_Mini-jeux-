@@ -22,7 +22,8 @@ Familles :
 Modules (jamais lancés seuls, chargés ici après VC.init) : var_common.py (écriture des fonctions et des menus, crochets
 idempotents patch / replace), var_data.py (arènes, sols, modes, réglages, liste des variantes), var_combat.py,
 var_floors.py (préparation par mode), var_hooks.py (crochets dans les jeux), var_menus.py + var_cats.py (arbre des
-menus), var_stars.py (noms courts et étoiles), var_votemaps.py (votes par carte), var_voteauto.py (majorité de votes).
+menus), var_stars.py (noms courts et étoiles), var_votemaps.py (votes par carte), var_voteauto.py (majorité de votes),
+var_sizes.py (taille de chaque carte dans les infobulles).
 """
 import os
 import sys
@@ -40,6 +41,7 @@ import var_menus                                                 # noqa: E402
 import var_stars                                                 # noqa: E402
 import var_voteauto                                              # noqa: E402
 import var_votemaps                                              # noqa: E402
+import var_sizes                                                 # noqa: E402
 from var_common import js, stars, w                              # noqa: E402
 from var_data import MODES, SET, VARIANTS                        # noqa: E402
 
@@ -84,6 +86,7 @@ var_menus.run()
 var_stars.run()
 var_votemaps.run()
 var_voteauto.run()
+var_sizes.run()
 
 # ============================================================ récapitulatif (docs)
 md = ['# Variantes (générées par `tools/variantes/gen_variants.py`)', '',

@@ -56,7 +56,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1003"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 27×27",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -68,7 +74,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1044"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Arène PvP sur la carte Poussière (style Dust) (41×41)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -80,7 +92,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1047"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Arène PvP sur la carte Mirage (style Mirage) (41×41)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -92,7 +110,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1050"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Arène PvP sur la carte Nuketown (style Nuketown) (49×35)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [

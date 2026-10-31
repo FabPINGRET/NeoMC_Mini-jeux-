@@ -56,7 +56,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1029"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 21×21",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -68,7 +74,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1042"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 21×21",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [

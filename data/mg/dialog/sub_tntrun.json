@@ -67,6 +67,10 @@
         {
           "text": "Carte d’origine",
           "color": "gray"
+        },
+        {
+          "text": " (29×29)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -93,6 +97,10 @@
         {
           "text": "Même taille que la tour de laine, en glace qui glisse",
           "color": "gray"
+        },
+        {
+          "text": " (29×29)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -117,7 +125,11 @@
       ],
       "tooltip": [
         {
-          "text": "Un peu plus grand (35 → 27), en glace qui glisse",
+          "text": "Un peu plus grand, en glace qui glisse",
+          "color": "gray"
+        },
+        {
+          "text": " (35×35 → 27×27)",
           "color": "gray"
         }
       ],
@@ -161,7 +173,7 @@
       ],
       "tooltip": [
         {
-          "text": "Carte Spleef : 4 étages qui rétrécissent (29 → 17)\n",
+          "text": "Carte Spleef : 4 étages qui rétrécissent (29×29 → 17×17)\n",
           "color": "gray"
         },
         {
@@ -191,7 +203,7 @@
       ],
       "tooltip": [
         {
-          "text": "Carte Splegg : 3 étages géants (61 → 45)\n",
+          "text": "Carte Splegg : 3 étages géants (61×61 → 45×45)\n",
           "color": "gray"
         },
         {
@@ -251,7 +263,7 @@
       ],
       "tooltip": [
         {
-          "text": "Carte nouveau : 5 étages en pyramide, de plus en plus petits\n",
+          "text": "Carte nouveau : 5 étages en pyramide, de plus en plus petits (33×33 → 9×9)\n",
           "color": "gray"
         },
         {
@@ -281,7 +293,7 @@
       ],
       "tooltip": [
         {
-          "text": "Carte nouveau : anneau troué, plateau central, anneau large\n",
+          "text": "Carte nouveau : anneau troué, plateau central, anneau large (jusqu’à 41×41)\n",
           "color": "gray"
         },
         {

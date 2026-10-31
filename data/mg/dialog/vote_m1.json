@@ -56,7 +56,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1001"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte d’origine : 4 étages de neige (29×29)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -67,7 +73,7 @@
       ],
       "tooltip": [
         {
-          "text": "Variante : carte TNT Run (3 étages de laine qui rétrécissent) · réglages : rétrécit après 40 s puis toutes les 12 s",
+          "text": "Variante : carte TNT Run (3 étages de laine qui rétrécissent (29×29 → 21×21)) · réglages : rétrécit après 40 s puis toutes les 12 s",
           "color": "gray"
         }
       ],
@@ -103,7 +109,7 @@
       ],
       "tooltip": [
         {
-          "text": "Variante : carte Splegg (3 étages géants (61 → 45)) · réglages : rétrécit après 50 s puis toutes les 15 s",
+          "text": "Variante : carte Splegg (3 étages géants (61×61 → 45×45)) · réglages : rétrécit après 50 s puis toutes les 15 s",
           "color": "gray"
         }
       ],
@@ -121,7 +127,7 @@
       ],
       "tooltip": [
         {
-          "text": "Variante : carte nouveau (5 étages en pyramide, de plus en plus petits) · réglages : rétrécit après 30 s puis toutes les 9 s",
+          "text": "Variante : carte nouveau (5 étages en pyramide, de plus en plus petits (33×33 → 9×9)) · réglages : rétrécit après 30 s puis toutes les 9 s",
           "color": "gray"
         }
       ],
@@ -139,7 +145,7 @@
       ],
       "tooltip": [
         {
-          "text": "Variante : carte nouveau (anneau troué, plateau central, anneau large) · réglages : rétrécit après 20 s puis toutes les 6 s",
+          "text": "Variante : carte nouveau (anneau troué, plateau central, anneau large (jusqu’à 41×41)) · réglages : rétrécit après 20 s puis toutes les 6 s",
           "color": "gray"
         }
       ],

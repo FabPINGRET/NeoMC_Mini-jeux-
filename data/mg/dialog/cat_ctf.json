@@ -47,6 +47,10 @@
         {
           "text": "Ravin à 3 ponts, tours de guet, tunnels",
           "color": "gray"
+        },
+        {
+          "text": " (85×45)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -73,6 +77,10 @@
         {
           "text": "Même plan, ravin de lave, sol des forêts du Nether",
           "color": "gray"
+        },
+        {
+          "text": " (85×45)",
+          "color": "gray"
         }
       ],
       "action": {
@@ -98,6 +106,10 @@
       "tooltip": [
         {
           "text": "Même plan sur la neige : ravin gelé, allées de glace qui glissent",
+          "color": "gray"
+        },
+        {
+          "text": " (85×45)",
           "color": "gray"
         }
       ],

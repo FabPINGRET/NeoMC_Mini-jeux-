@@ -56,7 +56,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1020"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 37×37",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -68,7 +74,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1021"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 61×61 → 45×45",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -79,7 +91,7 @@
       ],
       "tooltip": [
         {
-          "text": "Variante : carte Spleef (4 étages qui rétrécissent (29 → 17)) · réglages : les œufs volent 2 s",
+          "text": "Variante : carte Spleef (4 étages qui rétrécissent (29×29 → 17×17)) · réglages : les œufs volent 2 s",
           "color": "gray"
         }
       ],
@@ -97,7 +109,7 @@
       ],
       "tooltip": [
         {
-          "text": "Variante : carte TNT Run (3 étages de laine qui rétrécissent) · réglages : les œufs volent 2 s, cratères 3×3",
+          "text": "Variante : carte TNT Run (3 étages de laine qui rétrécissent (29×29 → 21×21)) · réglages : les œufs volent 2 s, cratères 3×3",
           "color": "gray"
         }
       ],
@@ -115,7 +127,7 @@
       ],
       "tooltip": [
         {
-          "text": "Variante : carte nouveau (5 étages en pyramide, de plus en plus petits) · réglages : les œufs volent 2 s, cratères 3×3",
+          "text": "Variante : carte nouveau (5 étages en pyramide, de plus en plus petits (33×33 → 9×9)) · réglages : les œufs volent 2 s, cratères 3×3",
           "color": "gray"
         }
       ],
@@ -133,7 +145,7 @@
       ],
       "tooltip": [
         {
-          "text": "Variante : carte nouveau (anneau troué, plateau central, anneau large) · réglages : les œufs volent 3 s, cratères 3×3",
+          "text": "Variante : carte nouveau (anneau troué, plateau central, anneau large (jusqu’à 41×41)) · réglages : les œufs volent 3 s, cratères 3×3",
           "color": "gray"
         }
       ],

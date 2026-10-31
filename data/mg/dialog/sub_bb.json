@@ -38,7 +38,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 57"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : parcelle de 25×25 par joueur",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -50,7 +56,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.go set 58"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : parcelle de 25×25 par joueur",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [

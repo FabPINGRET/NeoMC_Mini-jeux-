@@ -56,7 +56,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1031"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Arène 31×31 en quartz, pyramide centrale, piliers et murets",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -68,7 +74,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1032"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Très grande arène 61×61 : volcan central, tours de briques du Nether (30 kills)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -80,7 +92,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1033"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Très grande arène 61×61 : temple en ruine et arbres géants (30 kills)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -92,7 +110,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1034"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Même taille que Néon : pyramide, obélisques et murets de grès (31×31)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -104,7 +128,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1035"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Petite arène 19×19 de glace, parties rapides (20 kills)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -116,7 +146,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1043"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Petite carte 41×41 : Long A, Mid, tunnels B, sites A/B surélevés (20 kills, 6 min)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -128,7 +164,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1046"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Petite carte 41×41 : Appartements, Mid, Fenêtre, Jungle, sites A/B (20 kills, 6 min)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -140,7 +182,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1049"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Petite carte 49×35 : deux maisons face à face, bus au milieu, jardins et abri (20 kills, 6 min)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -152,7 +200,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1079"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Sniper : 41×121, deux plateaux face à face, portée 120 blocs",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -164,7 +218,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1080"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Sniper : plaine 101×101, 9 tours à échelles, portée 120 blocs",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [

@@ -56,7 +56,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1067"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Arène plate 31×31, piliers et murets",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -68,7 +74,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1068"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Prairie vallonnée, rivière, moulin, kiosque (51×51)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -80,7 +92,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1069"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Mesa à plateaux, arche, tunnel, pont suspendu (51×51)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -92,7 +110,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1070"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Toits accessibles, passerelles, clocher (51×51)",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -139,7 +163,7 @@
       ],
       "tooltip": [
         {
-          "text": "Variante : carte PvP (deux maisons face à face, bus au milieu) · réglages : bombe normale (10 à 30 s)",
+          "text": "Variante : carte PvP (49×35, deux maisons face à face, bus au milieu) · réglages : bombe normale (10 à 30 s)",
           "color": "gray"
         }
       ],

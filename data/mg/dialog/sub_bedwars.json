@@ -69,6 +69,10 @@
         {
           "text": "4 îles de pierre autour du diamant",
           "color": "gray"
+        },
+        {
+          "text": " (75×75)",
+          "color": "gray"
         }
       ]
     },
@@ -94,6 +98,10 @@
       "tooltip": [
         {
           "text": "Volcan de basalte, 4 îlots avec or bonus",
+          "color": "gray"
+        },
+        {
+          "text": " (87×86)",
           "color": "gray"
         }
       ]
@@ -121,6 +129,10 @@
         {
           "text": "Jardin des cerisiers, pagode, terrasses",
           "color": "gray"
+        },
+        {
+          "text": " (84×83)",
+          "color": "gray"
         }
       ]
     },
@@ -146,6 +158,10 @@
       "tooltip": [
         {
           "text": "Glacier, igloos, plaques de glace",
+          "color": "gray"
+        },
+        {
+          "text": " (91×89)",
           "color": "gray"
         }
       ]

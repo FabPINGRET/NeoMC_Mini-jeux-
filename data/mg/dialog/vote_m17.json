@@ -56,7 +56,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1026"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "Carte : 25×25",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -68,7 +74,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1052"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "One in the Chamber 41×41 : donjon à étage, quatre tours à échelles",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -80,7 +92,13 @@
       "action": {
         "type": "minecraft:run_command",
         "command": "trigger mg.vote set 1053"
-      }
+      },
+      "tooltip": [
+        {
+          "text": "One in the Chamber 71×71 : collines, arbres, ruines et tours de guet",
+          "color": "gray"
+        }
+      ]
     },
     {
       "label": [
@@ -127,7 +145,7 @@
       ],
       "tooltip": [
         {
-          "text": "Variante : carte PvP (deux maisons face à face, bus au milieu) · réglages : flèche enchantée toutes les 30 s, 10 kills",
+          "text": "Variante : carte PvP (49×35, deux maisons face à face, bus au milieu) · réglages : flèche enchantée toutes les 30 s, 10 kills",
           "color": "gray"
         }
       ],
