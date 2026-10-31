@@ -16,8 +16,8 @@
       "type": "minecraft:plain_message",
       "contents": [
         {
-          "text": "[ ⏸ Pause ON/OFF ]",
-          "color": "yellow",
+          "text": "[  ⏸  PAUSE ON/OFF  ]",
+          "color": "red",
           "bold": true,
           "click_event": {
             "action": "run_command",
@@ -222,25 +222,6 @@
     {
       "label": [
         {
-          "text": "🪑 S'asseoir",
-          "color": "gold",
-          "bold": true
-        }
-      ],
-      "tooltip": [
-        {
-          "text": "Sur un banc sous les pieds ou adjacent, sinon par terre (spawn), ou clic droit sur un banc ; Maj ou le même bouton pour se lever",
-          "color": "gray"
-        }
-      ],
-      "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger mg.opt set 76"
-      }
-    },
-    {
-      "label": [
-        {
           "text": "🎉 Emotes ▸",
           "color": "light_purple",
           "bold": true
@@ -248,7 +229,7 @@
       ],
       "tooltip": [
         {
-          "text": "Salut, danse, fête, étourdi : une emote visible autour de toi (spawn)",
+          "text": "Assis, salut, danse, fête, étourdi : une emote visible autour de toi (spawn)",
           "color": "gray"
         }
       ],
