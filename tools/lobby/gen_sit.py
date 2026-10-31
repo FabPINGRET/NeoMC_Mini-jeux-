@@ -211,9 +211,8 @@ write_json('lobby_emotes.json', {
     'columns': 2, 'exit_action': {'label': [{'text': 'Fermer', 'color': 'gray'}]},
     'actions': [act(f'{g} {nm}', c, OPT_EMOTE + k - 1, f'Fait une emote « {nm} »') for k, g, nm, c, *_ in EMOTES] +
                [act('🪑 S\'asseoir / se lever', 'gold', OPT_SIT, 'Sur un banc sous les pieds ou adjacent, sinon par terre, ou clic droit sur un banc ; Maj pour se lever')]})
-add_buttons('main_menu.json', [
-    act('🪑 S\'asseoir', 'gold', OPT_SIT, 'Sur un banc sous les pieds ou adjacent, sinon par terre (spawn), ou clic droit sur un banc ; Maj ou le même bouton pour se lever'),
-    act('🎉 Emotes ▸', 'light_purple', OPT_MENU, 'Salut, danse, fête, étourdi : une emote visible autour de toi (spawn)')],
+add_buttons('main_menu.json', [     # « S'asseoir » est dans la fenêtre des emotes (lobby_emotes), plus dans le menu
+    act('🎉 Emotes ▸', 'light_purple', OPT_MENU, 'Assis, salut, danse, fête, étourdi : une emote visible autour de toi (spawn)')],
     before='trigger mg.sv set 3')
 add_buttons('lobby_events.json', [
     act('🪑 Assis/emotes on/off', 'gold', OPT_TOGGLE, 'Active ou coupe l\'assise et les emotes du lobby (actif par défaut)'),
