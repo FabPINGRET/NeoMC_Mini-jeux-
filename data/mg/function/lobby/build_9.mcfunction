@@ -358,7 +358,6 @@ fill -8 64 -67 -8 64 -66 minecraft:short_grass strict
 setblock -8 64 -58 minecraft:fern strict
 setblock -8 64 -56 minecraft:orange_tulip strict
 fill -8 64 -55 -8 66 -55 minecraft:bamboo[age=0,leaves=none] strict
-fill -8 64 -47 -8 65 -47 minecraft:purpur_pillar strict
 setblock -8 64 -43 minecraft:fern strict
 fill -8 64 -40 -8 67 -40 minecraft:bamboo[age=0,leaves=none] strict
 fill -8 64 -38 -8 66 -38 minecraft:bamboo[age=0,leaves=none] strict
@@ -421,7 +420,6 @@ setblock -6 64 -67 minecraft:short_grass strict
 setblock -6 64 -64 minecraft:red_tulip strict
 setblock -6 64 -56 minecraft:fern strict
 setblock -6 64 -54 minecraft:short_grass strict
-fill -6 64 -48 -6 65 -47 minecraft:crying_obsidian strict
 setblock -6 64 -41 minecraft:azure_bluet strict
 setblock -6 64 -40 minecraft:cornflower strict
 setblock -6 64 -39 minecraft:white_tulip strict
@@ -471,7 +469,6 @@ setblock -5 64 -68 minecraft:short_grass strict
 setblock -5 64 -65 minecraft:short_grass strict
 setblock -5 64 -58 minecraft:short_grass strict
 setblock -5 64 -55 minecraft:short_grass strict
-fill -5 64 -48 -5 73 -47 minecraft:amethyst_block strict
 setblock -5 64 -40 minecraft:red_tulip strict
 setblock -5 64 -39 minecraft:allium strict
 setblock -5 64 -38 minecraft:blue_orchid strict
@@ -613,7 +610,6 @@ fill 4 64 35 4 64 36 minecraft:azalea_leaves[persistent=true] strict
 setblock 4 64 59 minecraft:fern strict
 setblock 5 64 -67 minecraft:poppy strict
 fill 5 64 -59 5 64 -58 minecraft:short_grass strict
-fill 5 64 -48 5 73 -47 minecraft:amethyst_block strict
 setblock 5 64 -40 minecraft:pink_tulip strict
 setblock 5 64 -39 minecraft:poppy strict
 setblock 5 64 -38 minecraft:short_grass strict
@@ -665,7 +661,6 @@ fill 6 64 -66 6 64 -64 minecraft:short_grass strict
 setblock 6 64 -59 minecraft:pink_tulip strict
 setblock 6 64 -54 minecraft:pink_petals[flower_amount=2,facing=south] strict
 setblock 6 64 -53 minecraft:white_tulip strict
-fill 6 64 -48 6 65 -47 minecraft:crying_obsidian strict
 setblock 6 64 -41 minecraft:white_tulip strict
 setblock 6 64 -40 minecraft:oxeye_daisy strict
 setblock 6 64 -38 minecraft:orange_tulip strict
@@ -742,7 +737,6 @@ setblock 8 64 -58 minecraft:pink_petals[flower_amount=3,facing=east] strict
 setblock 8 64 -57 minecraft:pink_petals[flower_amount=3,facing=north] strict
 fill 8 64 -56 8 64 -55 minecraft:short_grass strict
 setblock 8 64 -53 minecraft:short_grass strict
-fill 8 64 -47 8 65 -47 minecraft:purpur_pillar strict
 fill 8 64 -42 8 64 -40 minecraft:short_grass strict
 fill 8 64 -38 8 64 -36 minecraft:short_grass strict
 setblock 8 64 -35 minecraft:azalea_leaves[persistent=true] strict

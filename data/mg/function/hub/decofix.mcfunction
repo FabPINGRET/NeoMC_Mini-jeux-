@@ -2714,18 +2714,19 @@ fill 21 64 -10 21 64 -8 minecraft:air
 setblock 21 64 -7 minecraft:poppy
 setblock 21 64 -6 minecraft:red_tulip
 setblock 21 64 -5 minecraft:lily_of_the_valley
-fill 21 65 -24 21 65 -5 minecraft:air
-fill 21 66 -24 21 66 -5 minecraft:air
-fill 21 67 -24 21 67 -5 minecraft:air
+setblock 21 64 -4 minecraft:flowering_azalea_leaves[persistent=true]
+fill 21 65 -24 21 65 -4 minecraft:air
+fill 21 66 -24 21 66 -4 minecraft:air
+fill 21 67 -24 21 67 -4 minecraft:air
 setblock 21 68 -24 minecraft:air
 fill 21 68 -23 21 68 -18 minecraft:cherry_leaves[persistent=true]
-fill 21 68 -17 21 68 -5 minecraft:air
+fill 21 68 -17 21 68 -4 minecraft:air
 fill 21 69 -24 21 69 -23 minecraft:air
 fill 21 69 -22 21 69 -18 minecraft:cherry_leaves[persistent=true]
-fill 21 69 -17 21 69 -5 minecraft:air
-fill 21 70 -24 21 70 -5 minecraft:air
-fill 21 71 -24 21 71 -5 minecraft:air
-fill 21 72 -24 21 72 -5 minecraft:air
+fill 21 69 -17 21 69 -4 minecraft:air
+fill 21 70 -24 21 70 -4 minecraft:air
+fill 21 71 -24 21 71 -4 minecraft:air
+fill 21 72 -24 21 72 -4 minecraft:air
 fill 21 73 -24 21 73 -4 minecraft:air
 fill 21 74 -24 21 74 -4 minecraft:air
 fill 21 75 -24 21 75 -4 minecraft:air
@@ -2739,8 +2740,7 @@ fill 21 82 -24 21 82 -4 minecraft:air
 fill 21 83 -24 21 83 -4 minecraft:air
 fill 21 84 -24 21 84 -4 minecraft:air
 fill 21 85 -24 21 85 -4 minecraft:air
-fill 22 63 -24 22 63 -13 minecraft:grass_block
-setblock 22 63 -4 minecraft:grass_block
+fill 22 63 -24 22 63 -4 minecraft:grass_block
 setblock 22 64 -24 minecraft:air
 setblock 22 64 -23 minecraft:azure_bluet
 setblock 22 64 -22 minecraft:short_grass
@@ -2756,21 +2756,24 @@ setblock 22 64 -13 minecraft:short_grass
 setblock 22 64 -12 minecraft:fern
 setblock 22 64 -11 minecraft:air
 setblock 22 64 -10 minecraft:short_grass
-fill 22 64 -9 22 64 -8 minecraft:air
-fill 22 65 -24 22 65 -8 minecraft:air
-fill 22 66 -24 22 66 -8 minecraft:air
+fill 22 64 -9 22 64 -7 minecraft:air
+setblock 22 64 -6 minecraft:dandelion
+setblock 22 64 -5 minecraft:short_grass
+setblock 22 64 -4 minecraft:spruce_stairs[facing=north]
+fill 22 65 -24 22 65 -4 minecraft:air
+fill 22 66 -24 22 66 -4 minecraft:air
 fill 22 67 -24 22 67 -20 minecraft:air
 setblock 22 67 -19 minecraft:cherry_leaves[persistent=true]
-fill 22 67 -18 22 67 -8 minecraft:air
+fill 22 67 -18 22 67 -4 minecraft:air
 setblock 22 68 -24 minecraft:air
 fill 22 68 -23 22 68 -17 minecraft:cherry_leaves[persistent=true]
-fill 22 68 -16 22 68 -8 minecraft:air
+fill 22 68 -16 22 68 -4 minecraft:air
 fill 22 69 -24 22 69 -23 minecraft:air
 fill 22 69 -22 22 69 -18 minecraft:cherry_leaves[persistent=true]
-fill 22 69 -17 22 69 -8 minecraft:air
-fill 22 70 -24 22 70 -8 minecraft:air
-fill 22 71 -24 22 71 -5 minecraft:air
-fill 22 72 -24 22 72 -5 minecraft:air
+fill 22 69 -17 22 69 -4 minecraft:air
+fill 22 70 -24 22 70 -4 minecraft:air
+fill 22 71 -24 22 71 -4 minecraft:air
+fill 22 72 -24 22 72 -4 minecraft:air
 fill 22 73 -24 22 73 -4 minecraft:air
 fill 22 74 -24 22 74 -4 minecraft:air
 fill 22 75 -24 22 75 -4 minecraft:air
@@ -2784,8 +2787,7 @@ fill 22 82 -24 22 82 -4 minecraft:air
 fill 22 83 -24 22 83 -4 minecraft:air
 fill 22 84 -24 22 84 -4 minecraft:air
 fill 22 85 -24 22 85 -4 minecraft:air
-fill 23 63 -24 23 63 -13 minecraft:grass_block
-setblock 23 63 -4 minecraft:grass_block
+fill 23 63 -24 23 63 -4 minecraft:grass_block
 fill 23 64 -24 23 64 -23 minecraft:air
 fill 23 64 -22 23 64 -21 minecraft:short_grass
 setblock 23 64 -20 minecraft:cherry_log
@@ -2797,30 +2799,33 @@ setblock 23 64 -14 minecraft:pink_petals[flower_amount=1,facing=east]
 setblock 23 64 -13 minecraft:pink_petals[flower_amount=2,facing=east]
 fill 23 64 -12 23 64 -10 minecraft:short_grass
 setblock 23 64 -9 minecraft:air
-setblock 23 64 -8 minecraft:short_grass
+fill 23 64 -8 23 64 -7 minecraft:short_grass
+setblock 23 64 -6 minecraft:dandelion
+setblock 23 64 -5 minecraft:air
+setblock 23 64 -4 minecraft:spruce_stairs[facing=north]
 fill 23 65 -24 23 65 -21 minecraft:air
 setblock 23 65 -20 minecraft:cherry_log
-fill 23 65 -19 23 65 -8 minecraft:air
+fill 23 65 -19 23 65 -4 minecraft:air
 fill 23 66 -24 23 66 -21 minecraft:air
 setblock 23 66 -20 minecraft:cherry_log
-fill 23 66 -19 23 66 -8 minecraft:air
+fill 23 66 -19 23 66 -4 minecraft:air
 fill 23 67 -24 23 67 -21 minecraft:air
 setblock 23 67 -20 minecraft:cherry_log
 setblock 23 67 -19 minecraft:cherry_leaves[persistent=true]
-fill 23 67 -18 23 67 -8 minecraft:air
+fill 23 67 -18 23 67 -4 minecraft:air
 fill 23 68 -24 23 68 -23 minecraft:air
 fill 23 68 -22 23 68 -18 minecraft:cherry_leaves[persistent=true]
 fill 23 68 -17 23 68 -16 minecraft:air
 fill 23 68 -15 23 68 -14 minecraft:cherry_leaves[persistent=true]
-fill 23 68 -13 23 68 -8 minecraft:air
+fill 23 68 -13 23 68 -4 minecraft:air
 setblock 23 69 -24 minecraft:air
 fill 23 69 -23 23 69 -18 minecraft:cherry_leaves[persistent=true]
 fill 23 69 -17 23 69 -14 minecraft:air
 fill 23 69 -13 23 69 -11 minecraft:cherry_leaves[persistent=true]
-fill 23 69 -10 23 69 -8 minecraft:air
-fill 23 70 -24 23 70 -8 minecraft:air
-fill 23 71 -24 23 71 -5 minecraft:air
-fill 23 72 -24 23 72 -5 minecraft:air
+fill 23 69 -10 23 69 -4 minecraft:air
+fill 23 70 -24 23 70 -4 minecraft:air
+fill 23 71 -24 23 71 -4 minecraft:air
+fill 23 72 -24 23 72 -4 minecraft:air
 fill 23 73 -24 23 73 -4 minecraft:air
 fill 23 74 -24 23 74 -4 minecraft:air
 fill 23 75 -24 23 75 -4 minecraft:air
@@ -2834,8 +2839,7 @@ fill 23 82 -24 23 82 -4 minecraft:air
 fill 23 83 -24 23 83 -4 minecraft:air
 fill 23 84 -24 23 84 -4 minecraft:air
 fill 23 85 -24 23 85 -4 minecraft:air
-fill 24 63 -24 24 63 -13 minecraft:grass_block
-setblock 24 63 -4 minecraft:grass_block
+fill 24 63 -24 24 63 -4 minecraft:grass_block
 fill 24 64 -24 24 64 -22 minecraft:air
 setblock 24 64 -21 minecraft:pink_petals[flower_amount=4,facing=north]
 setblock 24 64 -20 minecraft:pink_petals[flower_amount=4,facing=south]
@@ -2846,24 +2850,27 @@ setblock 24 64 -14 minecraft:short_grass
 setblock 24 64 -13 minecraft:pink_petals[flower_amount=3,facing=north]
 setblock 24 64 -12 minecraft:pink_petals[flower_amount=3,facing=west]
 setblock 24 64 -11 minecraft:pink_petals[flower_amount=3,facing=east]
-fill 24 64 -10 24 64 -8 minecraft:air
-fill 24 65 -24 24 65 -8 minecraft:air
-fill 24 66 -24 24 66 -8 minecraft:air
+fill 24 64 -10 24 64 -7 minecraft:air
+setblock 24 64 -6 minecraft:lily_of_the_valley
+setblock 24 64 -5 minecraft:short_grass
+setblock 24 64 -4 minecraft:spruce_stairs[facing=north]
+fill 24 65 -24 24 65 -4 minecraft:air
+fill 24 66 -24 24 66 -4 minecraft:air
 fill 24 67 -24 24 67 -22 minecraft:air
 setblock 24 67 -21 minecraft:cherry_leaves[persistent=true]
 setblock 24 67 -20 minecraft:cherry_log[axis=x]
-fill 24 67 -19 24 67 -8 minecraft:air
+fill 24 67 -19 24 67 -4 minecraft:air
 fill 24 68 -24 24 68 -23 minecraft:air
 fill 24 68 -22 24 68 -17 minecraft:cherry_leaves[persistent=true]
 setblock 24 68 -16 minecraft:air
 fill 24 68 -15 24 68 -10 minecraft:cherry_leaves[persistent=true]
-fill 24 68 -9 24 68 -8 minecraft:air
+fill 24 68 -9 24 68 -4 minecraft:air
 fill 24 69 -24 24 69 -23 minecraft:air
 fill 24 69 -22 24 69 -10 minecraft:cherry_leaves[persistent=true]
-fill 24 69 -9 24 69 -8 minecraft:air
-fill 24 70 -24 24 70 -8 minecraft:air
-fill 24 71 -24 24 71 -5 minecraft:air
-fill 24 72 -24 24 72 -5 minecraft:air
+fill 24 69 -9 24 69 -4 minecraft:air
+fill 24 70 -24 24 70 -4 minecraft:air
+fill 24 71 -24 24 71 -4 minecraft:air
+fill 24 72 -24 24 72 -4 minecraft:air
 fill 24 73 -24 24 73 -4 minecraft:air
 fill 24 74 -24 24 74 -4 minecraft:air
 fill 24 75 -24 24 75 -4 minecraft:air
@@ -2877,8 +2884,7 @@ fill 24 82 -24 24 82 -4 minecraft:air
 fill 24 83 -24 24 83 -4 minecraft:air
 fill 24 84 -24 24 84 -4 minecraft:air
 fill 24 85 -24 24 85 -4 minecraft:air
-fill 25 63 -24 25 63 -13 minecraft:grass_block
-setblock 25 63 -4 minecraft:grass_block
+fill 25 63 -24 25 63 -4 minecraft:grass_block
 fill 25 64 -24 25 64 -20 minecraft:air
 setblock 25 64 -19 minecraft:fern
 fill 25 64 -18 25 64 -17 minecraft:air
@@ -2890,23 +2896,26 @@ setblock 25 64 -12 minecraft:short_grass
 setblock 25 64 -11 minecraft:pink_petals[flower_amount=2,facing=west]
 setblock 25 64 -10 minecraft:pink_petals[flower_amount=3,facing=west]
 setblock 25 64 -9 minecraft:white_tulip
-setblock 25 64 -8 minecraft:air
-fill 25 65 -24 25 65 -8 minecraft:air
-fill 25 66 -24 25 66 -8 minecraft:air
+fill 25 64 -8 25 64 -7 minecraft:air
+setblock 25 64 -6 minecraft:white_tulip
+setblock 25 64 -5 minecraft:short_grass
+setblock 25 64 -4 minecraft:azalea_leaves[persistent=true]
+fill 25 65 -24 25 65 -4 minecraft:air
+fill 25 66 -24 25 66 -4 minecraft:air
 fill 25 67 -24 25 67 -14 minecraft:air
 fill 25 67 -13 25 67 -12 minecraft:cherry_leaves[persistent=true]
-fill 25 67 -11 25 67 -8 minecraft:air
+fill 25 67 -11 25 67 -4 minecraft:air
 fill 25 68 -24 25 68 -23 minecraft:air
 fill 25 68 -22 25 68 -18 minecraft:cherry_leaves[persistent=true]
 setblock 25 68 -17 minecraft:air
 fill 25 68 -16 25 68 -11 minecraft:cherry_leaves[persistent=true]
-fill 25 68 -10 25 68 -8 minecraft:air
+fill 25 68 -10 25 68 -4 minecraft:air
 setblock 25 69 -24 minecraft:air
 fill 25 69 -23 25 69 -10 minecraft:cherry_leaves[persistent=true]
-fill 25 69 -9 25 69 -8 minecraft:air
-fill 25 70 -24 25 70 -8 minecraft:air
-fill 25 71 -24 25 71 -5 minecraft:air
-fill 25 72 -24 25 72 -5 minecraft:air
+fill 25 69 -9 25 69 -4 minecraft:air
+fill 25 70 -24 25 70 -4 minecraft:air
+fill 25 71 -24 25 71 -4 minecraft:air
+fill 25 72 -24 25 72 -4 minecraft:air
 fill 25 73 -24 25 73 -4 minecraft:air
 fill 25 74 -24 25 74 -4 minecraft:air
 fill 25 75 -24 25 75 -4 minecraft:air
@@ -2921,8 +2930,7 @@ fill 25 83 -24 25 83 -4 minecraft:air
 fill 25 84 -24 25 84 -4 minecraft:air
 fill 25 85 -24 25 85 -4 minecraft:air
 setblock 26 63 -24 minecraft:mossy_cobblestone
-fill 26 63 -23 26 63 -13 minecraft:grass_block
-setblock 26 63 -4 minecraft:grass_block
+fill 26 63 -23 26 63 -4 minecraft:grass_block
 fill 26 64 -24 26 64 -23 minecraft:air
 setblock 26 64 -22 minecraft:fern
 setblock 26 64 -21 minecraft:pink_petals[flower_amount=4,facing=south]
@@ -2936,31 +2944,35 @@ setblock 26 64 -12 minecraft:pink_petals[flower_amount=4,facing=east]
 setblock 26 64 -11 minecraft:pink_petals[flower_amount=4,facing=north]
 setblock 26 64 -10 minecraft:air
 fill 26 64 -9 26 64 -8 minecraft:short_grass
+setblock 26 64 -7 minecraft:red_tulip
+setblock 26 64 -6 minecraft:short_grass
+setblock 26 64 -5 minecraft:poppy
+setblock 26 64 -4 minecraft:flowering_azalea_leaves[persistent=true]
 fill 26 65 -24 26 65 -14 minecraft:air
 setblock 26 65 -13 minecraft:cherry_log
-fill 26 65 -12 26 65 -8 minecraft:air
+fill 26 65 -12 26 65 -4 minecraft:air
 fill 26 66 -24 26 66 -14 minecraft:air
 setblock 26 66 -13 minecraft:cherry_log
-fill 26 66 -12 26 66 -8 minecraft:air
+fill 26 66 -12 26 66 -4 minecraft:air
 fill 26 67 -24 26 67 -14 minecraft:air
 setblock 26 67 -13 minecraft:cherry_log
 setblock 26 67 -12 minecraft:cherry_log[axis=z]
-fill 26 67 -11 26 67 -8 minecraft:air
+fill 26 67 -11 26 67 -4 minecraft:air
 fill 26 68 -24 26 68 -21 minecraft:air
 fill 26 68 -20 26 68 -18 minecraft:cherry_leaves[persistent=true]
 setblock 26 68 -17 minecraft:air
 fill 26 68 -16 26 68 -10 minecraft:cherry_leaves[persistent=true]
-fill 26 68 -9 26 68 -8 minecraft:air
+fill 26 68 -9 26 68 -4 minecraft:air
 fill 26 69 -24 26 69 -23 minecraft:air
 fill 26 69 -22 26 69 -21 minecraft:cherry_leaves[persistent=true]
 fill 26 69 -20 26 69 -19 minecraft:air
 setblock 26 69 -18 minecraft:cherry_leaves[persistent=true]
 setblock 26 69 -17 minecraft:air
 fill 26 69 -16 26 69 -10 minecraft:cherry_leaves[persistent=true]
-fill 26 69 -9 26 69 -8 minecraft:air
-fill 26 70 -24 26 70 -8 minecraft:air
-fill 26 71 -24 26 71 -5 minecraft:air
-fill 26 72 -24 26 72 -5 minecraft:air
+fill 26 69 -9 26 69 -4 minecraft:air
+fill 26 70 -24 26 70 -4 minecraft:air
+fill 26 71 -24 26 71 -4 minecraft:air
+fill 26 72 -24 26 72 -4 minecraft:air
 fill 26 73 -24 26 73 -4 minecraft:air
 fill 26 74 -24 26 74 -4 minecraft:air
 fill 26 75 -24 26 75 -4 minecraft:air
@@ -2988,20 +3000,21 @@ setblock 27 64 -9 minecraft:fern
 fill 27 64 -8 27 64 -7 minecraft:air
 setblock 27 64 -6 minecraft:lily_of_the_valley
 setblock 27 64 -5 minecraft:short_grass
-fill 27 65 -24 27 65 -5 minecraft:air
-fill 27 66 -24 27 66 -5 minecraft:air
+setblock 27 64 -4 minecraft:azalea_leaves[persistent=true]
+fill 27 65 -24 27 65 -4 minecraft:air
+fill 27 66 -24 27 66 -4 minecraft:air
 fill 27 67 -24 27 67 -14 minecraft:air
 setblock 27 67 -13 minecraft:cherry_leaves[persistent=true]
-fill 27 67 -12 27 67 -5 minecraft:air
+fill 27 67 -12 27 67 -4 minecraft:air
 fill 27 68 -24 27 68 -16 minecraft:air
 fill 27 68 -15 27 68 -11 minecraft:cherry_leaves[persistent=true]
-fill 27 68 -10 27 68 -5 minecraft:air
+fill 27 68 -10 27 68 -4 minecraft:air
 fill 27 69 -24 27 69 -17 minecraft:air
 fill 27 69 -16 27 69 -10 minecraft:cherry_leaves[persistent=true]
-fill 27 69 -9 27 69 -5 minecraft:air
-fill 27 70 -24 27 70 -5 minecraft:air
-fill 27 71 -24 27 71 -5 minecraft:air
-fill 27 72 -24 27 72 -5 minecraft:air
+fill 27 69 -9 27 69 -4 minecraft:air
+fill 27 70 -24 27 70 -4 minecraft:air
+fill 27 71 -24 27 71 -4 minecraft:air
+fill 27 72 -24 27 72 -4 minecraft:air
 fill 27 73 -24 27 73 -4 minecraft:air
 fill 27 74 -24 27 74 -4 minecraft:air
 fill 27 75 -24 27 75 -4 minecraft:air
@@ -4659,5 +4672,7 @@ setblock 36 69 -8 minecraft:air
 setblock 36 69 -7 minecraft:air
 setblock 36 70 -9 minecraft:air
 setblock 36 70 -7 minecraft:air
+# ancien socle « élytres libres » (24, -10) : ses panneaux et son élytre flottante (gen_elytra.py ne le construit plus)
+execute positioned 24.5 66 -9.5 run kill @e[tag=mg.elyd,distance=..4]
 execute unless score $ftoff mg.st matches 1 run function mg:foot/labels
-data modify storage mg:lobby decofix3 set value 1b
+data modify storage mg:lobby decofix4 set value 1b

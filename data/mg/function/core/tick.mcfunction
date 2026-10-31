@@ -88,16 +88,14 @@ execute if score $lan mg.t matches 30 unless score $theme mg.st matches 1.. unle
 execute if score $lan mg.t matches 30 unless score $theme mg.st matches 1.. unless data storage mg:lobby theme run kill @e[tag=mg.thnpc]
 function mg:hat/tick
 scoreboard players remove @a[scores={mg.fd=1..}] mg.fd 1
-# Parcours d'élytra : socle de départ, joueurs en vol, objets du parcours jamais conservés
-execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.ely,tag=!mg.pkr,gamemode=adventure,x=16,y=63,z=-9,dx=0.99,dy=2.5,dz=0.99] run function mg:elytra/start
-execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.ely,tag=!mg.pkr,gamemode=adventure,x=32,y=63,z=-15,dx=0.99,dy=2.5,dz=0.99] run function mg:elytra/start2
+# Parcours d'élytra : socle de départ, joueurs en vol (généré par tools/elytra/gen_elytra.py)
+execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.ely,tag=!mg.pkr,gamemode=adventure,x=24,y=63,z=9,dx=0.99,dy=2.5,dz=0.99] run function mg:elytra/start
+execute if score $setup mg.st matches 1 as @a[tag=!mg.play,tag=!mg.surv,tag=!mg.ely,tag=!mg.pkr,gamemode=adventure,x=34,y=63,z=9,dx=0.99,dy=2.5,dz=0.99] run function mg:elytra/start2
 execute as @a[tag=mg.ely] at @s run function mg:elytra/player
-# Élytres libres : socle (une fois par passage), joueurs en vol, objets jamais conservés hors du vol libre
-execute as @a[tag=mg.efp] unless entity @s[x=16,y=63,z=-21,dx=0.99,dy=2.5,dz=0.99] run tag @s remove mg.efp
-execute if score $setup mg.st matches 1 as @a[tag=!mg.efp,tag=!mg.play,tag=!mg.surv,tag=!mg.ely,gamemode=adventure,x=16,y=63,z=-21,dx=0.99,dy=2.5,dz=0.99] run function mg:elytra/free_pad
-execute as @a[tag=mg.elyf] at @s run function mg:elytra/free_tick
-execute if score $lan mg.t matches 20 run clear @a[tag=!mg.elyf] minecraft:elytra[minecraft:custom_data~{mg_elyf:1b}]
-execute if score $lan mg.t matches 20 run clear @a[tag=!mg.elyf] minecraft:firework_rocket[minecraft:custom_data~{mg_elyf:1b}]
+# Équipement permanent du spawn : élytres, fusées, vitesse, saut (gen_elytra.py)
+execute as @a[tag=mg.lgear] run function mg:elytra/gear_tick
+execute if score $setup mg.st matches 1 if score $lan mg.t matches 30 run function mg:elytra/gear_second
+execute if score $lan mg.t matches 20 run clear @a[tag=!mg.lgear] *[minecraft:custom_data~{mg_elyf:1b}]
 # Tableau à droite tournant (lobby) + reconstruction des ajouts du spawn s'ils ont été effacés
 execute if score $setup mg.st matches 1 if score $state mg.st matches 0 if score $sbm mg.st matches 0 run function mg:hall/board_tick
 execute if score $setup mg.st matches 1 if score $lan mg.t matches 5 run function mg:sb/auto

@@ -9,7 +9,7 @@ data remove storage mg:lobby food1
 data remove storage mg:lobby ely4
 data remove storage mg:lobby elyclean6
 data remove storage mg:lobby deco3
-data remove storage mg:lobby decofix3
+data remove storage mg:lobby decofix4
 function mg:lobby/build
 schedule function mg:lobby/food_build 20s
 schedule function mg:elytra/spawn_clean 22s

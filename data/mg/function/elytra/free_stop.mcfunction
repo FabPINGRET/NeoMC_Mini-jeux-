@@ -1,7 +1,4 @@
-# Fin du vol libre (@s) : élytres et fusées retirées, courte protection à l'atterrissage
+# Fin de l'équipement du spawn (@s) : élytres, fusées, ⚡ Vitesse et 🐇 Super saut retirés (appelé aussi à chaque entrée en jeu)
+tag @s remove mg.lgear
 tag @s remove mg.elyf
-clear @s minecraft:elytra[minecraft:custom_data~{mg_elyf:1b}]
-clear @s minecraft:firework_rocket[minecraft:custom_data~{mg_elyf:1b}]
-effect clear @s minecraft:levitation
-effect clear @s minecraft:resistance
-effect give @s minecraft:resistance 5 4 true
+clear @s *[minecraft:custom_data~{mg_elyf:1b}]
